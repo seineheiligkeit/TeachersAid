@@ -15,7 +15,6 @@ from datetime import date
 from pathlib import Path
 
 from .. import config
-from ..demo import strahlung
 from ..llm.client import StructuredGenerator
 from ..rendering.homework import render_homework
 from ..rendering.qa_raster import rasterise
@@ -90,12 +89,18 @@ def _generate_content(
 ):
     if generator is not None or _has_key():
         return generate_body(p, res, generator=generator, extra_notes=extra_notes)
-    # Offline fallback: the hand-authored hero, so the dashboard demos without a key.
-    if res.subject == "Physik" and "strahlung" in p.topic.casefold():
-        return strahlung.build_content()
+    # Offline fallback: serve a curated master-library example (a hand-authored
+    # content object) so the dashboard demos the full content→render→review loop
+    # without an API key. With a key, the same flow generates fresh content.
+    from ..library import find as find_example
+
+    ex = find_example(res.subject, p.topic)
+    if ex is not None:
+        return ex.build()
     raise RuntimeError(
-        "No ANTHROPIC_API_KEY and no offline content for this topic. "
-        "Set a key to generate, or use the Strahlung hero."
+        "No ANTHROPIC_API_KEY and no master-library example for "
+        f"{res.subject} / '{p.topic}'. Set a key to generate live, "
+        "or add the example to teachersaid.library."
     )
 
 

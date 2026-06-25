@@ -59,9 +59,13 @@ def test_request_changes_requeues_content(store):
 
 def test_batch_walks_competence_map(store):
     items = orch.submit_batch(store, "Physik", 4)
-    assert len(items) == 1  # one Kompetenzbereich curated (Strahlung)
-    assert items[0].stage == "idea" and items[0].source == "batch"
-    assert items[0].title.endswith("Strahlung und Radioaktivität")
+    # Physik 4. Kl. has two Kompetenzbereiche in the full catalog:
+    # "Wetter und Klima" and "Strahlung und Radioaktivität".
+    assert len(items) == 2
+    assert all(it.stage == "idea" and it.source == "batch" for it in items)
+    titles = {it.title for it in items}
+    assert any(t.endswith("Strahlung und Radioaktivität") for t in titles)
+    assert any(t.endswith("Wetter und Klima") for t in titles)
 
 
 def test_api_endpoints(tmp_path, monkeypatch):

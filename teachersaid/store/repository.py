@@ -32,9 +32,9 @@ class ReviewStore:
         with _LOCK:
             n = 0
             if self._counter_file.exists():
-                n = int(self._counter_file.read_text() or "0")
+                n = int(self._counter_file.read_text(encoding="utf-8") or "0")
             n += 1
-            self._counter_file.write_text(str(n))
+            self._counter_file.write_text(str(n), encoding="utf-8")
         return f"{stage[:1]}{n:04d}"
 
     def _path(self, item_id: str) -> Path:
@@ -52,14 +52,15 @@ class ReviewStore:
     def _save(self, item: ReviewItem) -> None:
         item.updated_at = _now()
         self._path(item.id).write_text(
-            json.dumps(item.model_dump(), ensure_ascii=False, indent=2)
+            json.dumps(item.model_dump(), ensure_ascii=False, indent=2),
+            encoding="utf-8",
         )
 
     def get(self, item_id: str) -> ReviewItem | None:
         p = self._path(item_id)
         if not p.exists():
             return None
-        return ReviewItem.model_validate_json(p.read_text())
+        return ReviewItem.model_validate_json(p.read_text(encoding="utf-8"))
 
     def save(self, item: ReviewItem) -> ReviewItem:
         self._save(item)
@@ -69,7 +70,7 @@ class ReviewStore:
         items: list[ReviewItem] = []
         for p in self.root.glob("*.json"):
             try:
-                it = ReviewItem.model_validate_json(p.read_text())
+                it = ReviewItem.model_validate_json(p.read_text(encoding="utf-8"))
             except Exception:
                 continue
             if stage and it.stage != stage:

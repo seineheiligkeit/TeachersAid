@@ -23,14 +23,18 @@ The repository has two layers:
 ```bash
 pip install -e .                       # deps: pydantic2, fastapi, uvicorn, anthropic, reportlab,
                                        #       matplotlib, pillow, pyyaml, pymupdf  (pytest for dev)
-python -m pytest -q                    # 30 tests, fully offline (no API key required)
+python -m pytest -q                    # 35 tests, fully offline (no API key required)
+python -m teachersaid seed             # seed the master-library examples into the review queue
 python -m teachersaid                  # dashboard → http://127.0.0.1:8000
 ```
 
+(Python 3.11–3.14; the C-extension deps — reportlab/pymupdf/matplotlib — have 3.14 wheels.)
+
 - **LLM generation** uses the Anthropic SDK with `claude-opus-4-8`, adaptive thinking, effort=high
   (see `teachersaid/config.py`). It activates only when `ANTHROPIC_API_KEY` is set.
-- **Offline fallback:** without a key, the Physik *Strahlung* hero falls back to the hand-authored
-  content object (`teachersaid/demo/strahlung.py`) so the whole loop is demoable with no network.
+- **Offline fallback:** without a key, a request for any **master-library** subject/topic
+  (`teachersaid/library/`) is served from its curated content object, so the whole loop is demoable
+  with no network. `seed` pushes all examples into the dashboard's review queue.
 - Generated PDFs, rasters, and the JSON review store land under `runs/` (git-ignored).
 
 ## Architecture — the load-bearing idea
@@ -101,6 +105,22 @@ HTML/PDF are git-ignored; the parser regenerates the catalog (re-run for the 202
 **To add/correct a subject:** edit the catalog (re-run the parser, or edit `lehrplan/*.json` /
 `subject_models.json`) — no engine code change. *(The earlier Physik-only `grounding/data/*.yaml` stub
 has been removed now that the store reads the full catalog.)*
+
+## Master library (`teachersaid/library/`)
+
+Curated, gold-standard **`WorksheetContent` examples** — the quality bar, the few-shot seeds for LLM
+generation, and the offline demo/review stock. `library/__init__.py` holds a `registry` (`EXAMPLES` +
+`find()` + `seed_library()`); each `library/<subject>_<topic>.py` is a `build_content()` grounded in
+`lehrplan/` (real competence IDs, dimensions ⊆ subject model, verify-clean). The MINT seed:
+Physik *Strahlung*, Biologie *Immunsystem*, Mathematik *Daten/Zufall*.
+
+- `_generate_content` (orchestrator) serves a registered example when there's **no API key**, so the
+  normal dashboard flow demos offline; with a key it generates fresh content seeded by the example.
+- `python -m teachersaid seed` runs every example through the pipeline into the store as a **pending
+  content item** (→ dashboard review queue). `tests/test_library.py` locks every example
+  build/assemble/**verify-clean** against catalog drift — keep it green when editing the catalog.
+- The quality bar + per-subject coverage plan: **`Documents/master-library-plan.md`**. Don't author
+  shallow examples; match the depth of `demo/strahlung.py`.
 
 ## HITL dashboard
 

@@ -11,8 +11,9 @@ v0.5 is specced but out of scope. Working language is English; the product's out
 ## Run the demo
 
 ```bash
-pip install -e .            # or: pip install pydantic fastapi uvicorn anthropic reportlab matplotlib pillow pyyaml pymupdf
-python -m pytest -q         # 30 tests, all offline (no API key needed)
+pip install -e .            # Python 3.11–3.14; or: pip install pydantic fastapi uvicorn anthropic reportlab matplotlib pillow pyyaml pymupdf
+python -m pytest -q         # 35 tests, all offline (no API key needed)
+python -m teachersaid seed  # seed the master-library examples (Physik/Biologie/Mathematik) into the review queue
 python -m teachersaid       # dashboard at http://127.0.0.1:8000
 ```
 
@@ -20,6 +21,10 @@ In the dashboard: create a request (or **Batch über Kompetenzkarte**) → appro
 the engine generates, verifies, assembles and renders → review the **content** (Gate 2) with the derived
 Nachweis (coverage + gaps), the Tiefenprofil, and the embedded student/teacher/homework PDF → approve into
 the material library. **Request changes** re-queues with your feedback.
+
+The **master library** (`teachersaid/library/`) is a growing set of curated *gold* worksheet examples
+per subject — the quality bar, the few-shot seeds for generation, and the offline demo stock. `seed`
+loads them into the review queue. See **[Documents/master-library-plan.md](Documents/master-library-plan.md)**.
 
 - **With `ANTHROPIC_API_KEY` set** (`claude-opus-4-8`, adaptive thinking), generation is live for any
   curated subject/topic. **Without a key**, the Physik *Strahlung* hero falls back to the hand-authored

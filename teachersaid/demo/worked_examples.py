@@ -234,9 +234,9 @@ def build_math_unfair_game() -> WorksheetContent:
         ),
         response={"mode": "artifact", "produces": "Spielregeln + Begründung"},
         cognitive_level="create",
-        dimensions=["modellieren", "begruenden"],
+        dimensions=["MOD", "BEG"],  # catalog dimension codes (Modellieren / Begründen)
         content_area="Daten und Zufall",
-        serves=[{"competence_id": "MA.US.4.DATEN.x", "relation": "exercises"}],
+        serves=[{"competence_id": "MAT.US.4.DAT.02", "relation": "exercises"}],
         est_minutes=20,
         rubric=[
             RubricCriterion(
