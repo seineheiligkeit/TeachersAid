@@ -1,19 +1,21 @@
-"""FastAPI app: pipeline + review endpoints, and the single-page dashboard.
+"""FastAPI app: the brainstorm → content review pipeline + the single-page dashboard.
 
-Generation runs in a BackgroundTask so the UI stays responsive (and GET /status
-reflects in-flight work). The store is JSON-file-backed under RUNS_DIR/store.
+Stages: a `brainstorm` idea (rough, user- or AI-produced) is approved, then *fleshed
+out* into a `content` item (the worksheet — structured blocks + rendered PDFs), which
+is approved into the material library. Offline, generation is served from the master
+library; the store is JSON-file-backed under RUNS_DIR/store.
 """
 
 from __future__ import annotations
 
 from pathlib import Path
 
-from fastapi import BackgroundTasks, FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse, HTMLResponse
 from pydantic import BaseModel
 
 from ..pipeline import orchestrator as orch
-from ..schema.worksheet import BundleRequest
+from ..stats import compute_stats
 from ..store.repository import ReviewStore
 
 app = FastAPI(title="TeachersAid — Review Dashboard")
@@ -22,14 +24,14 @@ _STATIC = Path(__file__).resolve().parent / "static"
 
 
 # --- request bodies ----------------------------------------------------------
-class GenerateBody(BaseModel):
+class BrainstormBody(BaseModel):
     subject: str = "Physik"
     klasse: int = 4
-    topic: str = "Strahlung und Radioaktivität"
-    envelope: str = "doppelstunde"
+    topic: str = ""
+    note: str = ""
 
 
-class BatchBody(BaseModel):
+class SuggestBody(BaseModel):
     subject: str = "Physik"
     klasse: int = 4
 
@@ -44,30 +46,30 @@ def index():
     return (_STATIC / "index.html").read_text(encoding="utf-8")
 
 
-# --- pipeline ----------------------------------------------------------------
-@app.post("/api/generate")
-def generate(body: GenerateBody):
-    req = BundleRequest(
-        subject=body.subject, klasse=body.klasse,
-        topic_raw=body.topic, envelope=body.envelope,
-    )
-    item = orch.submit_on_demand(STORE, req)
-    return item.summary()
+# --- ideation ----------------------------------------------------------------
+@app.post("/api/brainstorm")
+def brainstorm(body: BrainstormBody):
+    if not body.topic.strip():
+        raise HTTPException(400, "topic required")
+    return orch.submit_brainstorm(
+        STORE, body.subject, body.klasse, body.topic.strip(), body.note.strip(),
+        source="user",
+    ).summary()
 
 
-@app.post("/api/batch")
-def batch(body: BatchBody):
-    items = orch.submit_batch(STORE, body.subject, body.klasse)
+@app.post("/api/brainstorm/suggest")
+def suggest(body: SuggestBody):
+    items = orch.suggest_from_catalog(STORE, body.subject, body.klasse)
     return {"created": [i.summary() for i in items]}
 
 
+# --- queues / stats ----------------------------------------------------------
 @app.get("/api/status")
 def status():
-    items = STORE.list()
     return {
         "counts": STORE.status_counts(),
         "library_size": len(STORE.library()),
-        "items": [i.summary() for i in items],
+        "items": [i.summary() for i in STORE.list()],
     }
 
 
@@ -81,56 +83,51 @@ def library():
     return [i.summary() for i in STORE.library()]
 
 
-# --- review ------------------------------------------------------------------
+@app.get("/api/stats")
+def stats():
+    return compute_stats(STORE)
+
+
+# --- item detail + review ----------------------------------------------------
 @app.get("/api/items/{item_id}")
 def get_item(item_id: str):
     item = STORE.get(item_id)
     if item is None:
         raise HTTPException(404, "no such item")
-    d = item.model_dump()
-    # trim the heavy content body for the detail view; keep derived summaries.
-    if item.content is not None:
-        d["content"] = {
-            "meta": item.content.meta.model_dump(),
-            "nachweis": item.content.nachweis.model_dump() if item.content.nachweis else None,
-            "depth_profile": item.content.depth_profile.model_dump() if item.content.depth_profile else None,
-            "n_blocks": sum(1 for _ in item.content.iter_blocks()),
-        }
-    return d
+    return item.model_dump()  # full content (blocks) included for the Blöcke view
 
 
-@app.post("/api/items/{item_id}/approve")
-def approve(item_id: str, background: BackgroundTasks):
+@app.post("/api/items/{item_id}/flesh-out")
+def flesh_out(item_id: str):
     item = STORE.get(item_id)
     if item is None:
         raise HTTPException(404, "no such item")
-    if item.stage == "idea":
-        placeholder = orch.begin_idea_approval(STORE, item_id)
-        background.add_task(orch.fill_content_item, STORE, placeholder.id)
-        return {"approved_idea": item_id, "content_item": placeholder.summary()}
+    if item.stage != "brainstorm":
+        raise HTTPException(400, "only brainstorm ideas can be fleshed out")
+    return orch.flesh_out(STORE, item_id).summary()
+
+
+@app.post("/api/items/{item_id}/approve")
+def approve(item_id: str):
+    item = STORE.get(item_id)
+    if item is None:
+        raise HTTPException(404, "no such item")
+    if item.stage == "brainstorm":
+        return orch.approve_brainstorm(STORE, item_id).summary()
     return orch.approve_content(STORE, item_id).summary()
 
 
 @app.post("/api/items/{item_id}/reject")
 def reject(item_id: str, body: NoteBody):
-    item = STORE.get(item_id)
-    if item is None:
+    if STORE.get(item_id) is None:
         raise HTTPException(404, "no such item")
     return orch.reject(STORE, item_id, body.note).summary()
 
 
 @app.post("/api/items/{item_id}/request-changes")
-def request_changes(item_id: str, body: NoteBody, background: BackgroundTasks):
-    item = STORE.get(item_id)
-    if item is None:
+def request_changes(item_id: str, body: NoteBody):
+    if STORE.get(item_id) is None:
         raise HTTPException(404, "no such item")
-    if item.stage == "content":
-        STORE.append_feedback(item_id, "request-changes", body.note)
-        refreshed = STORE.get(item_id)
-        refreshed.status = "generating"
-        STORE.save(refreshed)
-        background.add_task(orch.fill_content_item, STORE, item_id)
-        return refreshed.summary()
     return orch.request_changes(STORE, item_id, body.note).summary()
 
 

@@ -31,48 +31,51 @@ from .resolve import resolve
 from .verify import verify
 
 
-# --- GATE 1 entry: idea-stage items -----------------------------------------
-def submit_on_demand(
-    store: ReviewStore, request: BundleRequest, *, today: date | None = None
+# --- GATE 1 entry: brainstorm / ideation ------------------------------------
+def submit_brainstorm(
+    store: ReviewStore, subject: str, klasse: int, topic: str, note: str = "",
+    *, source: str = "user",
 ) -> ReviewItem:
-    res = resolve(request, today=today)
-    p = plan(res, request.envelope, topic=request.topic_raw)
+    """A rough idea (user- or AI-produced): subject / Klasse / topic + a free-text
+    note. No resolution or plan yet — those are produced at flesh_out()."""
     item = ReviewItem(
-        id="",
-        stage="idea",
-        source="on_demand",
-        title=f"{request.subject} {request.klasse}. Kl. — {request.topic_raw}",
-        request=request,
-        resolution=res,
-        plan=p,
-        error=None if res.competences else "Keine Kompetenzen aufgelöst (Demo-Grenze).",
+        id="", stage="brainstorm", source=source, status="pending",
+        title=f"{subject} {klasse}. Kl. — {topic}",
+        note=note,
+        request=BundleRequest(subject=subject, klasse=klasse, topic_raw=topic),
     )
     return store.create(item)
 
 
-def submit_batch(
-    store: ReviewStore, subject: str, klasse: int, *, today: date | None = None
+def suggest_from_catalog(
+    store: ReviewStore, subject: str, klasse: int
 ) -> list[ReviewItem]:
-    """Walk the grounded competence map: one candidate idea per Kompetenzbereich."""
+    """AI/Lehrplan suggestions: one brainstorm idea per Kompetenzbereich of the
+    grade that isn't already represented anywhere in the queue/library."""
     from ..grounding import lehrplan_store as ls
 
-    comps = ls.competences_for(subject, klasse)
-    kbs = sorted({c.kompetenzbereich for c in comps})
+    seen = {
+        (i.request.subject.casefold(), i.request.klasse, i.request.topic_raw.casefold())
+        for i in store.list() if i.request
+    }
     out: list[ReviewItem] = []
-    for kb in kbs:
-        req = BundleRequest(subject=subject, klasse=klasse, topic_raw=kb)
-        res = resolve(req, today=today)
-        p = plan(res, "doppelstunde", topic=kb)
-        out.append(
-            store.create(
-                ReviewItem(
-                    id="", stage="idea", source="batch",
-                    title=f"{subject} {klasse}. Kl. — {kb}",
-                    request=req, resolution=res, plan=p,
-                )
-            )
-        )
+    for kb in ls.grade_map(subject).get(klasse, []):
+        if (subject.casefold(), klasse, kb.casefold()) in seen:
+            continue
+        out.append(submit_brainstorm(
+            store, subject, klasse, kb, source="ai",
+            note="Lehrplan-Vorschlag — Kompetenzbereich noch nicht ausgearbeitet.",
+        ))
     return out
+
+
+def approve_brainstorm(store: ReviewStore, item_id: str) -> ReviewItem:
+    item = store.get(item_id)
+    if item is None or item.stage != "brainstorm":
+        raise KeyError(f"no brainstorm item '{item_id}'")
+    item.status = "approved"
+    store.append_feedback(item_id, "approve")
+    return store.save(item)
 
 
 # --- generation (LLM or offline hero fallback) ------------------------------
@@ -125,51 +128,26 @@ def _render_all(item_id: str, content) -> RenderArtifacts:
     )
 
 
-# --- GATE 1 approve -> generate -> GATE 2 content item ----------------------
-def begin_idea_approval(store: ReviewStore, item_id: str) -> ReviewItem:
-    """Mark the idea approved and create a 'generating' placeholder content item.
-    Returns immediately; call fill_content_item() (e.g. in a background task)."""
-    idea = store.get(item_id)
-    if idea is None or idea.stage != "idea":
-        raise KeyError(f"no idea item '{item_id}'")
-    idea.status = "approved"
-    store.append_feedback(item_id, "approve")
-    store.save(idea)
-    placeholder = ReviewItem(
-        id="", stage="content", source=idea.source, status="generating",
-        title=idea.title, request=idea.request, resolution=idea.resolution,
-        plan=idea.plan, parent_id=idea.id,
-    )
-    return store.create(placeholder)
-
-
-def fill_content_item(
+# --- GATE 1 approve -> flesh out into a content item ------------------------
+def flesh_out(
     store: ReviewStore,
-    content_id: str,
+    brainstorm_id: str,
     *,
     generator: StructuredGenerator | None = None,
+    today: date | None = None,
 ) -> ReviewItem:
-    """Run generate→verify→assemble→render for a placeholder content item."""
-    content_item = store.get(content_id)
-    if content_item is None or content_item.stage != "content":
-        raise KeyError(f"no content item '{content_id}'")
-    idea = store.get(content_item.parent_id) if content_item.parent_id else content_item
-    notes = [f.note for f in idea.feedback if f.decision == "request-changes" and f.note]
-    notes += [f.note for f in content_item.feedback if f.decision == "request-changes" and f.note]
-    return _produce_content_item(
-        store, idea, generator=generator, extra_notes=notes, existing=content_item
-    )
-
-
-def approve_idea(
-    store: ReviewStore,
-    item_id: str,
-    *,
-    generator: StructuredGenerator | None = None,
-) -> ReviewItem:
-    """Synchronous convenience: approve + generate in one call (tests/CLI)."""
-    placeholder = begin_idea_approval(store, item_id)
-    return fill_content_item(store, placeholder.id, generator=generator)
+    """Develop an approved brainstorm idea into a worksheet: resolve → plan →
+    generate → verify → assemble(+derive) → render, landing a content item at
+    Gate 2 for review. Offline, generation is served from the master library."""
+    bs = store.get(brainstorm_id)
+    if bs is None or bs.stage != "brainstorm":
+        raise KeyError(f"no brainstorm item '{brainstorm_id}'")
+    bs.status = "approved"
+    bs.resolution = resolve(bs.request, today=today)
+    bs.plan = plan(bs.resolution, bs.request.envelope, topic=bs.request.topic_raw)
+    store.save(bs)
+    notes = [f.note for f in bs.feedback if f.decision == "request-changes" and f.note]
+    return _produce_content_item(store, bs, generator=generator, extra_notes=notes)
 
 
 def _produce_content_item(
@@ -237,7 +215,7 @@ def request_changes(
         raise KeyError(item_id)
     store.append_feedback(item_id, "request-changes", note)
     item = store.get(item_id)
-    if item.stage == "idea":
+    if item.stage == "brainstorm":
         item.status = "changes_requested"
         return store.save(item)
     # content stage: regenerate with the accumulated feedback, re-queue for review

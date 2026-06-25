@@ -126,18 +126,29 @@ Physik *Strahlung*, Biologie *Immunsystem*, Mathematik *Daten/Zufall*.
 - The quality bar + per-subject coverage plan: **`Documents/master-library-plan.md`**. Don't author
   shallow examples; match the depth of `demo/strahlung.py`.
 
-## HITL dashboard
+## HITL dashboard (`api/` + `api/static/index.html`)
 
-Two gates, one `ReviewItem` type (`stage` ∈ idea|content):
+Two review gates, one `ReviewItem` type (`stage` ∈ **brainstorm** | **content**); four tabs.
 
 ```
-request → resolve → plan ─►[Gate 1: idea]─approve─► generate→verify→assemble→render ─►[Gate 2: content]─approve─► library
+Brainstorm (rough idea: topic + note, you or AI) ─approve─► flesh_out
+   (resolve→plan→generate→verify→assemble→render) ─► Content [Gate 2: Blöcke + Vorschau]
+   ─approve─► Bibliothek (material library)
 ```
 
-`request-changes` re-queues with feedback injected into the generation prompt. Both on-demand and
-**batch** (walks the grounded competence map) feed the same gates. The store holds only review items +
-the approved-material library — deliberately **no gradebook, no classroom state, no student PII**
-(scope discipline: we make the material, we don't run the room).
+- **Brainstorm** — rough ideas. `orch.submit_brainstorm` (you) or `orch.suggest_from_catalog` (one per
+  not-yet-covered Kompetenzbereich; `source="ai"`). Approve → `orch.flesh_out` develops it into a content item.
+- **Inhalte** — fleshed-out worksheets shown two ways: **Blöcke** (the structured `WorksheetContent` —
+  blocks, dimensions, `serves`, derived Nachweis/Tiefenprofil — *independent of any rendered document*)
+  and **Vorschau** (the rendered student/teacher/homework PDFs). Approve → library; `request-changes`
+  regenerates with the note injected.
+- **Bibliothek** — approved worksheets. **Statistik** — coverage (`teachersaid/stats.py`): per subject,
+  tasks / worksheets / catalog-competences-covered / what's empty, vs the catalog. "Covered" = a catalog
+  competence served by ≥1 approved worksheet.
+
+Offline, `flesh_out` is served from the master library; with a key it generates live. The store holds
+only review items + the approved library — deliberately **no gradebook, no classroom state, no student
+PII** (we make the material, we don't run the room).
 
 ## Testing
 

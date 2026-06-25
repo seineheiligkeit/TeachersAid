@@ -3,190 +3,268 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>TeachersAid — Review Dashboard</title>
+<title>TeachersAid — Dashboard</title>
 <style>
-  :root { --bg:#f4f1ea; --ink:#1f3a52; --line:#d8d2c4; --accent:#b5651d; --ok:#2e6b3a; --bad:#8a1c1c; }
-  * { box-sizing: border-box; }
+  :root { --bg:#f4f1ea; --ink:#1f3a52; --line:#d8d2c4; --accent:#b5651d; --ok:#2e6b3a; --bad:#8a1c1c; --soft:#eef3f7; }
+  * { box-sizing:border-box; }
   body { margin:0; font:14px/1.45 system-ui,Segoe UI,Roboto,sans-serif; color:#222; background:var(--bg); }
-  header { background:var(--ink); color:#fff; padding:10px 16px; display:flex; gap:18px; align-items:baseline; flex-wrap:wrap; }
+  header { background:var(--ink); color:#fff; padding:9px 16px; display:flex; gap:16px; align-items:baseline; flex-wrap:wrap; }
   header h1 { font-size:16px; margin:0; }
   header .stat { font-size:12px; opacity:.9; }
-  .wrap { display:grid; grid-template-columns: 420px 1fr; gap:0; height:calc(100vh - 44px); }
-  .left { border-right:1px solid var(--line); overflow:auto; padding:12px; }
-  .right { overflow:auto; padding:14px 18px; }
+  nav.tabbar { background:var(--ink); padding:0 12px; display:flex; gap:2px; }
+  nav.tabbar button { border:none; background:none; color:#cdd8e2; padding:8px 14px; font:inherit; cursor:pointer; border-bottom:3px solid transparent; }
+  nav.tabbar button.active { color:#fff; border-bottom-color:var(--accent); font-weight:600; }
+  main { padding:14px 18px; }
+  .grid2 { display:grid; grid-template-columns:minmax(340px,440px) 1fr; gap:14px; align-items:start; }
   .card { background:#fff; border:1px solid var(--line); border-radius:8px; padding:12px; margin-bottom:12px; }
   .card h2 { font-size:13px; margin:0 0 8px; color:var(--ink); text-transform:uppercase; letter-spacing:.04em; }
+  .card h3 { font-size:13px; margin:10px 0 4px; color:var(--ink); }
   label { display:block; font-size:12px; color:#555; margin:6px 0 2px; }
   input, select, textarea { width:100%; padding:6px 8px; border:1px solid var(--line); border-radius:6px; font:inherit; }
   button { font:inherit; padding:6px 12px; border:1px solid var(--ink); background:var(--ink); color:#fff; border-radius:6px; cursor:pointer; }
-  button.ghost { background:#fff; color:var(--ink); }
+  button.ghost { background:#fff; color:var(--ink); } button.ghost.active { background:var(--soft); }
   button.bad { border-color:var(--bad); color:var(--bad); background:#fff; }
   button.ok { border-color:var(--ok); background:var(--ok); }
+  button:disabled { opacity:.45; cursor:default; }
   .row { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+  .between { justify-content:space-between; }
   table { width:100%; border-collapse:collapse; font-size:12.5px; }
   th,td { text-align:left; padding:5px 6px; border-bottom:1px solid var(--line); }
-  tr.sel td { background:#eef3f7; }
-  tr.q { cursor:pointer; }
+  th { color:#555; font-weight:600; }
   .pill { display:inline-block; padding:1px 7px; border-radius:20px; font-size:11px; border:1px solid var(--line); }
   .s-pending{background:#fff7e6;} .s-approved{background:#e7f4ea;color:var(--ok);} .s-rejected{background:#fdecea;color:var(--bad);}
   .s-generating{background:#eef;} .s-changes_requested{background:#fff0f0;color:var(--bad);}
-  .stage-idea{color:var(--accent);} .stage-content{color:var(--ink);}
-  .gap { color:var(--bad); } .cov { color:var(--ok); }
-  iframe { width:100%; height:560px; border:1px solid var(--line); border-radius:6px; background:#fff; }
-  .muted { color:#777; font-size:12px; }
-  .bars span { display:inline-block; height:12px; background:var(--ink); margin-right:2px; border-radius:2px; }
-  .tabset button { border:none; background:none; color:var(--ink); border-bottom:2px solid transparent; border-radius:0; padding:4px 8px; }
-  .tabset button.active { border-bottom-color:var(--accent); font-weight:600; }
-  code { background:#eee; padding:1px 4px; border-radius:4px; }
+  .badge { display:inline-block; padding:1px 6px; border-radius:5px; font-size:11px; background:var(--soft); color:var(--ink); margin-right:4px; }
+  .src-ai{background:#efe9f7;color:#5a3a8a;} .src-user{background:#e9f0f7;color:var(--ink);}
+  .gap { color:var(--bad); } .cov { color:var(--ok); } .muted { color:#777; font-size:12px; }
+  .item { border:1px solid var(--line); border-radius:8px; padding:9px 10px; margin-bottom:8px; background:#fff; cursor:pointer; }
+  .item.sel { outline:2px solid var(--accent); }
+  .blk { border-left:3px solid var(--line); padding:6px 10px; margin:6px 0; background:#fbfaf7; border-radius:0 6px 6px 0; }
+  .blk.task { border-left-color:var(--accent); }
+  .blk.info { border-left-color:#9bb0c2; }
+  .ans { background:#f0f6f0; border-radius:6px; padding:4px 8px; margin-top:4px; font-size:12.5px; }
+  .watch { color:var(--accent); font-size:12px; }
+  iframe { width:100%; height:600px; border:1px solid var(--line); border-radius:6px; background:#fff; }
+  .bars span { display:inline-block; height:11px; background:var(--ink); border-radius:2px; vertical-align:middle; }
+  .prog { height:10px; background:var(--line); border-radius:6px; overflow:hidden; }
+  .prog > i { display:block; height:100%; background:var(--ok); }
+  code { background:#eee; padding:1px 4px; border-radius:4px; font-size:12px; }
 </style>
 </head>
 <body>
 <header>
-  <h1>TeachersAid · Review Dashboard</h1>
+  <h1>TeachersAid · Dashboard</h1>
   <span class="stat" id="counts">…</span>
-  <span class="stat">Bibliothek (freigegeben): <b id="libsize">0</b></span>
-  <span class="stat muted">Gate 1 = Idee · Gate 2 = Inhalt</span>
+  <span class="stat">Bibliothek: <b id="libsize">0</b></span>
 </header>
-<div class="wrap">
-  <div class="left">
-    <div class="card">
-      <h2>Neue Anfrage (Gate 1)</h2>
-      <label>Fach</label><input id="f-subject" value="Physik" />
-      <div class="row">
-        <div style="flex:1"><label>Klasse</label><input id="f-klasse" type="number" value="4" /></div>
-        <div style="flex:1"><label>Zeit</label>
-          <select id="f-env"><option>doppelstunde</option><option>einzelstunde</option><option>block</option></select>
-        </div>
-      </div>
-      <label>Thema</label><input id="f-topic" value="Strahlung und Radioaktivität" />
-      <div class="row" style="margin-top:8px">
-        <button onclick="generate()">Anfrage erstellen</button>
-        <button class="ghost" onclick="batch()">Batch über Kompetenzkarte</button>
-      </div>
-    </div>
-    <div class="card">
-      <div class="tabset row" style="margin-bottom:6px">
-        <button data-f="all" class="active" onclick="setFilter('all',this)">Alle</button>
-        <button data-f="idea" onclick="setFilter('idea',this)">Ideen</button>
-        <button data-f="content" onclick="setFilter('content',this)">Inhalte</button>
-        <button data-f="library" onclick="setFilter('library',this)">Bibliothek</button>
-      </div>
-      <table><thead><tr><th>ID</th><th>Stufe/Status</th><th>Thema</th><th>Deckung</th></tr></thead>
-        <tbody id="queue"></tbody></table>
-    </div>
-  </div>
-  <div class="right" id="detail"><p class="muted">Wähle links einen Eintrag.</p></div>
-</div>
+<nav class="tabbar" id="tabbar"></nav>
+<main id="main"></main>
+
 <script>
-let FILTER="all", SELECTED=null;
+const TABS = [["brainstorm","Brainstorm"],["inhalte","Inhalte"],["bibliothek","Bibliothek"],["statistik","Statistik"]];
+let TAB = "brainstorm", SELECTED = null, VIEW = "bloecke", LASTITEMS = [];
 const $ = s => document.querySelector(s);
+const esc = s => (s==null?"":String(s)).replace(/[&<>]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
 async function jget(u){ return (await fetch(u)).json(); }
 async function jpost(u,b){ return (await fetch(u,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(b||{})})).json(); }
 
-function setFilter(f,el){ FILTER=f; document.querySelectorAll(".tabset button").forEach(b=>b.classList.remove("active")); el.classList.add("active"); refresh(); }
-
-async function generate(){
-  await jpost("/api/generate",{subject:$("#f-subject").value,klasse:+$("#f-klasse").value,topic:$("#f-topic").value,envelope:$("#f-env").value});
-  refresh();
+function renderTabs(){
+  $("#tabbar").innerHTML = TABS.map(([k,l])=>`<button class="${TAB===k?'active':''}" onclick="switchTab('${k}')">${l}</button>`).join("");
 }
-async function batch(){ await jpost("/api/batch",{subject:$("#f-subject").value,klasse:+$("#f-klasse").value}); refresh(); }
+function switchTab(t){ TAB=t; SELECTED=null; renderTabs(); buildShell(); refresh(); }
+
+function buildShell(){
+  if(TAB==="brainstorm"){
+    $("#main").innerHTML = `
+      <div class="grid2">
+        <div>
+          <div class="card"><h2>Neue Idee</h2>
+            <label>Fach</label><input id="b-subject" value="Physik" />
+            <div class="row"><div style="flex:1"><label>Klasse</label><input id="b-klasse" type="number" value="4" /></div>
+              <div style="flex:2"><label>Thema</label><input id="b-topic" placeholder="z. B. Optische Systeme" /></div></div>
+            <label>Notiz (grobe Idee)</label><textarea id="b-note" rows="2" placeholder="Worum geht es? Welcher Kern?"></textarea>
+            <div class="row" style="margin-top:8px"><button onclick="addIdea()">Idee hinzufügen</button></div>
+          </div>
+          <div class="card"><h2>Vorschläge aus Lehrplan</h2>
+            <p class="muted">Erzeugt je Kompetenzbereich der Klasse eine Roh-Idee (sofern noch offen).</p>
+            <div class="row"><div style="flex:2"><label>Fach</label><input id="s-subject" value="Physik" /></div>
+              <div style="flex:1"><label>Klasse</label><input id="s-klasse" type="number" value="4" /></div></div>
+            <div class="row" style="margin-top:8px"><button class="ghost" onclick="suggest()">Vorschläge erzeugen</button></div>
+          </div>
+        </div>
+        <div class="card"><h2>Ideen-Sammlung</h2><div id="bs-list"></div></div>
+      </div>`;
+  } else if(TAB==="inhalte" || TAB==="bibliothek"){
+    $("#main").innerHTML = `
+      <div class="grid2">
+        <div class="card"><h2>${TAB==="inhalte"?"Ausgearbeitet (in Prüfung)":"Bibliothek (freigegeben)"}</h2><div id="content-list"></div></div>
+        <div id="detail" class="card"><p class="muted">Wähle links einen Eintrag.</p></div>
+      </div>`;
+  } else {
+    $("#main").innerHTML = `<div id="stats"><p class="muted">lädt…</p></div>`;
+  }
+}
 
 async function refresh(){
   const st = await jget("/api/status");
   $("#counts").textContent = Object.entries(st.counts).map(([k,v])=>`${k}: ${v}`).join("  ·  ") || "leer";
   $("#libsize").textContent = st.library_size;
-  let items = st.items;
-  if(FILTER==="idea") items = items.filter(i=>i.stage==="idea");
-  else if(FILTER==="content") items = items.filter(i=>i.stage==="content");
-  else if(FILTER==="library") items = items.filter(i=>i.stage==="content" && i.status==="approved");
-  const rows = items.map(i=>{
-    const cov = i.covered==null ? "—" : `<span class="cov">${i.covered}✓</span>${i.gaps?` <span class="gap">${i.gaps}✗</span>`:""}`;
-    return `<tr class="q ${SELECTED===i.id?'sel':''}" onclick="open_('${i.id}')">
-      <td>${i.id}</td>
-      <td><span class="stage-${i.stage}">${i.stage}</span><br><span class="pill s-${i.status}">${i.status}</span></td>
-      <td>${i.topic}<br><span class="muted">${i.subject} ${i.klasse}. Kl. · ${i.source}</span></td>
-      <td>${cov}</td></tr>`;
-  }).join("");
-  $("#queue").innerHTML = rows || `<tr><td colspan=4 class="muted">keine Einträge</td></tr>`;
-  if(SELECTED) open_(SELECTED,true);
+  LASTITEMS = st.items;
+  if(TAB==="brainstorm") renderBrainstorm();
+  else if(TAB==="inhalte") renderContentList(LASTITEMS.filter(i=>i.stage==="content" && i.status!=="approved"));
+  else if(TAB==="bibliothek") renderContentList(LASTITEMS.filter(i=>i.stage==="content" && i.status==="approved"));
+  else if(TAB==="statistik") renderStats();
 }
 
-function bars(by){ if(!by) return ""; const order=["remember","understand","apply","analyze","evaluate","create"];
-  return order.filter(l=>by[l]).map(l=>`<div>${l}: <span class="bars">${"<span style='width:14px'></span>".repeat(by[l])}</span> ${by[l]}</div>`).join(""); }
+/* ---------- Brainstorm ---------- */
+function renderBrainstorm(){
+  const items = LASTITEMS.filter(i=>i.stage==="brainstorm");
+  if(!$("#bs-list")) return;
+  if(!items.length){ $("#bs-list").innerHTML = `<p class="muted">Noch keine Ideen. Füge eine hinzu oder erzeuge Vorschläge.</p>`; return; }
+  $("#bs-list").innerHTML = items.map(i=>{
+    const actions = i.status==="pending" || i.status==="changes_requested"
+      ? `<button class="ok" onclick="act('${i.id}','approve')">Annehmen</button>
+         <button class="bad" onclick="act('${i.id}','reject')">Ablehnen</button>`
+      : i.status==="approved"
+        ? `<button onclick="fleshOut('${i.id}')">Ausarbeiten →</button>`
+        : `<span class="muted">abgelehnt</span>`;
+    return `<div class="item">
+      <div class="row between"><b>${esc(i.topic)}</b><span class="pill s-${i.status}">${i.status}</span></div>
+      <div class="muted">${esc(i.subject)} ${i.klasse}. Kl. · <span class="badge src-${i.source}">${i.source==='ai'?'KI':'manuell'}</span></div>
+      ${i.note?`<div style="margin:4px 0">${esc(i.note)}</div>`:""}
+      <div class="row" style="margin-top:6px">${actions}</div></div>`;
+  }).join("");
+}
+async function addIdea(){
+  const topic = $("#b-topic").value.trim(); if(!topic){ $("#b-topic").focus(); return; }
+  await jpost("/api/brainstorm",{subject:$("#b-subject").value,klasse:+$("#b-klasse").value,topic,note:$("#b-note").value});
+  $("#b-topic").value=""; $("#b-note").value=""; refresh();
+}
+async function suggest(){ await jpost("/api/brainstorm/suggest",{subject:$("#s-subject").value,klasse:+$("#s-klasse").value}); refresh(); }
+async function fleshOut(id){
+  const r = await jpost(`/api/items/${id}/flesh-out`,{});
+  TAB="inhalte"; SELECTED=r.id||null; VIEW="bloecke"; renderTabs(); buildShell(); await refresh(); if(SELECTED) openDetail(SELECTED);
+}
 
-async function open_(id, keep){
-  SELECTED=id; const it = await jget("/api/items/"+id);
-  let h = `<div class="row" style="justify-content:space-between">
-      <div><h2 style="margin:0">${it.title}</h2>
-      <span class="stage-${it.stage}">${it.stage}</span> · <span class="pill s-${it.status}">${it.status}</span></div></div>`;
-  if(it.error) h += `<p class="gap">⚠ ${it.error}</p>`;
+/* ---------- Inhalte / Bibliothek ---------- */
+function renderContentList(items){
+  if(!$("#content-list")) return;
+  $("#content-list").innerHTML = items.length ? items.map(i=>{
+    const cov = i.covered==null?"":`<span class="cov">${i.covered}✓</span>${i.gaps?` <span class="gap">${i.gaps}✗</span>`:""} · ${i.tasks||0} Aufg.`;
+    return `<div class="item ${SELECTED===i.id?'sel':''}" onclick="openDetail('${i.id}')">
+      <div class="row between"><b>${esc(i.topic)}</b><span class="pill s-${i.status}">${i.status}</span></div>
+      <div class="muted">${esc(i.subject)} ${i.klasse}. Kl. · ${cov}</div>
+      ${i.error?`<div class="gap">⚠ ${esc(i.error)}</div>`:""}</div>`;
+  }).join("") : `<p class="muted">keine Einträge</p>`;
+  if(SELECTED && !items.find(i=>i.id===SELECTED) && TAB==="inhalte") { /* keep detail */ }
+}
+function setView(v){ VIEW=v; openDetail(SELECTED); }
+async function openDetail(id){
+  SELECTED=id; if($("#content-list")) renderContentList(LASTITEMS.filter(i=>i.stage==="content" && (TAB==="bibliothek"? i.status==="approved": i.status!=="approved")));
+  const it = await jget("/api/items/"+id);
+  const c = it.content;
+  let h = `<div class="row between"><div><h2 style="margin:0">${esc(it.title)}</h2>
+      <span class="pill s-${it.status}">${it.status}</span></div>
+      <div class="row"><button class="ghost ${VIEW==='bloecke'?'active':''}" onclick="setView('bloecke')">Blöcke</button>
+      <button class="ghost ${VIEW==='vorschau'?'active':''}" onclick="setView('vorschau')">Vorschau</button></div></div>`;
+  if(it.error) h += `<p class="gap">⚠ ${esc(it.error)}</p>`;
+  if(it.status==="generating") h += `<p>⏳ wird ausgearbeitet…</p>`;
 
-  if(it.stage==="idea" && it.plan){
-    const p=it.plan;
-    h += `<div class="card"><h2>Idee / Plan (Gate 1)</h2>
-      <p><b>Kernfrage:</b> ${p.kernfrage}</p>
-      <p class="muted">Budget ~${p.minutes_budget} min · Dimensionen: ${p.dimensions_targeted.join(", ")}</p>
-      <p><b>Fäden:</b></p><ul>${p.threads.map(t=>`<li>${t}</li>`).join("")}</ul>
-      <p><b>Block-Spezifikationen:</b></p><ul>${p.section_specs.flatMap(s=>s.block_specs.map(b=>`<li><code>${b.cognitive_level}</code> ${b.intent} <span class="muted">(dient ${b.serves_competence_id})</span></li>`)).join("")}</ul>
-      ${it.resolution? `<p class="muted">Aufgelöst: ${it.resolution.competences.map(c=>c.id).join(", ")||"—"} · grade_check=${it.resolution.grade_check}</p>`:""}
-      ${it.resolution&&it.resolution.notes.length? `<p class="gap">${it.resolution.notes.join("<br>")}</p>`:""}
-    </div>`;
-  }
-  if(it.stage==="content"){
-    if(it.status==="generating"){ h += `<div class="card"><p>⏳ Generierung läuft… (Seite aktualisiert automatisch)</p></div>`; }
-    const c=it.content;
-    if(c && c.nachweis){
-      const n=c.nachweis;
-      h += `<div class="card"><h2>Nachweis (abgeleitet)</h2><p>${n.statement}</p>
-        <table><thead><tr><th>Kompetenz</th><th>Status</th></tr></thead><tbody>
-        ${n.competence_coverage.map(x=>`<tr><td>${x.competence_id}</td><td>${x.covered?'<span class="cov">✓ abgedeckt</span>':'<span class="gap">✗ LÜCKE</span>'}</td></tr>`).join("")}
-        </tbody></table>
-        ${n.gaps.length?`<p class="gap"><b>Lücken:</b><br>${n.gaps.join("<br>")}</p>`:""}
-        <p class="muted">Übergreifende Themen: ${n.uebergreifende_themen.join(", ")||"—"}</p></div>`;
-    }
-    if(c && c.depth_profile){
-      const d=c.depth_profile;
-      h += `<div class="card"><h2>Tiefenprofil (abgeleitet)</h2>${bars(d.by_level)}
-        <p>Dimensionen: ${Object.entries(d.by_dimension).map(([k,v])=>k+":"+v).join(" · ")}</p>
-        <p>Zeit gesamt ${d.minutes_total} min · materialunabhängig ${d.minutes_resource_independent} min</p></div>`;
-    }
-    if(it.verify_warnings && it.verify_warnings.length) h+=`<div class="card"><h2>Verify-Hinweise</h2><ul>${it.verify_warnings.map(w=>`<li class="muted">${w}</li>`).join("")}</ul></div>`;
-    if(it.verify_problems && it.verify_problems.length) h+=`<div class="card"><h2 class="gap">Verify-Probleme</h2><ul>${it.verify_problems.map(w=>`<li class="gap">${w}</li>`).join("")}</ul></div>`;
-    if(it.artifacts){
-      h += `<div class="card"><h2>Vorschau</h2><div class="row" style="margin-bottom:6px">
-        <button class="ghost" onclick="showpdf('${id}','student')">Schüler</button>
-        <button class="ghost" onclick="showpdf('${id}','teacher')">Lehrkraft</button>
-        <button class="ghost" onclick="showpdf('${id}','homework')">Hausübung</button></div>
-        <iframe id="pdfframe" src="/api/items/${id}/pdf/student"></iframe></div>`;
-    }
-  }
-
-  if(it.feedback && it.feedback.length){
-    h += `<div class="card"><h2>Feedback</h2>${it.feedback.map(f=>`<div class="muted">${f.at} · <b>${f.decision}</b> ${f.note||""}</div>`).join("")}</div>`;
-  }
+  if(VIEW==="vorschau"){
+    h += `<div class="row" style="margin:8px 0"><button class="ghost" onclick="showpdf('${id}','student')">Schüler</button>
+      <button class="ghost" onclick="showpdf('${id}','teacher')">Lehrkraft</button>
+      <button class="ghost" onclick="showpdf('${id}','homework')">Hausübung</button></div>
+      <iframe id="pdfframe" src="/api/items/${id}/pdf/student"></iframe>`;
+  } else if(c){
+    // ---- Blöcke (structured content, independent of rendering) ----
+    h += `<p class="muted">${esc(c.meta.lehrplan_label||"")} · ${esc(c.meta.fassung.bgbl)}</p>`;
+    if(c.meta.kernfrage) h += `<p><b>Kernfrage:</b> ${esc(rt(c.meta.kernfrage))}</p>`;
+    (c.intro||[]).forEach(b=> h += blk(b,null));
+    (c.sections||[]).forEach(sec=>{
+      h += `<h3>${esc(sec.title)}</h3>`;
+      if(sec.teacher_overview && sec.teacher_overview.throughline) h+=`<p class="muted">${esc(sec.teacher_overview.throughline)}</p>`;
+      let n=0; (sec.blocks||[]).forEach(b=> h += blk(b, b.role==="task"?++n:null));
+    });
+    if(c.nachweis) h += nachweis(c.nachweis);
+    if(c.depth_profile) h += depth(c.depth_profile);
+    if(it.verify_problems && it.verify_problems.length) h += `<div class="ans"><b class="gap">Verify-Probleme:</b> ${it.verify_problems.map(esc).join("; ")}</div>`;
+  } else h += `<p class="muted">Noch kein Inhalt.</p>`;
 
   // actions
-  const canApprove = (it.stage==="idea") || (it.stage==="content" && it.status!=="generating" && it.verify_problems.length===0 && it.content);
-  h += `<div class="card"><h2>Aktionen</h2>
+  const inLib = it.status==="approved";
+  const canApprove = c && (it.verify_problems||[]).length===0 && it.status!=="generating" && !inLib;
+  h += `<div class="card" style="margin-top:12px"><h2>Aktionen</h2>
     <textarea id="note" rows="2" placeholder="Notiz für 'Änderungen anfordern'…"></textarea>
     <div class="row" style="margin-top:8px">
-      <button class="ok" ${canApprove?"":"disabled"} onclick="act('${id}','approve')">Freigeben</button>
+      <button class="ok" ${canApprove?"":"disabled"} onclick="act('${id}','approve')">In Bibliothek freigeben</button>
       <button class="ghost" onclick="act('${id}','request-changes')">Änderungen anfordern</button>
-      <button class="bad" onclick="act('${id}','reject')">Ablehnen</button>
-    </div>
-    <p class="muted">Gate 1: Freigabe startet die Generierung. Gate 2: Freigabe nimmt das Material in die Bibliothek auf.</p></div>`;
-
+      <button class="bad" onclick="act('${id}','reject')">Ablehnen</button></div></div>`;
   $("#detail").innerHTML = h;
-  if(!keep) document.querySelectorAll("#queue tr").forEach(r=>r.classList.remove("sel"));
 }
-function showpdf(id,kind){ $("#pdfframe").src=`/api/items/${id}/pdf/${kind}`; }
+function rt(v){ return Array.isArray(v)? v.map(r=>r.text).join("") : v; }
+function blk(b, num){
+  if(b.role==="info"){
+    return `<div class="blk info"><span class="badge">${b.kind}</span>${esc(rt(b.content))}
+      ${(b.watch_outs||[]).map(w=>`<div class="watch">⚠ ${esc(w)}</div>`).join("")}</div>`;
+  }
+  const resp = b.response? ({lines:`${b.response.n} Zeilen`,box:`Box ${b.response.min_height_mm||''}mm`,table:'Tabelle',choices:'Auswahl',none:'mündlich/keine',diagram:'Diagramm',drawing:'Skizze',artifact:'Produkt'}[b.response.mode]||b.response.mode):"";
+  const serves = (b.serves||[]).map(s=>`<code>${s.competence_id}</code>`).join(" ");
+  return `<div class="blk task"><div><b>${num?num+'. ':''}</b>${esc(rt(b.prompt))}</div>
+    <div style="margin-top:4px"><span class="badge">${b.kind}</span><span class="badge">${b.cognitive_level}</span>
+      <span class="badge">Dim ${(b.dimensions||[]).join(",")}</span><span class="badge">~${b.est_minutes}′</span>
+      <span class="badge">Antwort: ${resp}</span></div>
+    ${serves?`<div class="muted" style="margin-top:3px">dient: ${serves}</div>`:""}
+    ${b.answer_key?`<div class="ans"><b>Lösung:</b> ${esc(rt(b.answer_key))}</div>`:""}
+    ${b.acceptable_reasoning?`<div class="ans"><b>Spielraum:</b> ${esc(rt(b.acceptable_reasoning))}</div>`:""}
+    ${(b.rubric||[]).map(r=>`<div class="muted">Kriterium — ${esc(r.criterion)}: ${(r.levels||[]).map(esc).join(" / ")}</div>`).join("")}
+    ${(b.watch_outs||[]).map(w=>`<div class="watch">⚠ ${esc(w)}</div>`).join("")}</div>`;
+}
+function nachweis(n){
+  return `<div class="card" style="margin-top:10px"><h2>Nachweis (abgeleitet)</h2>
+    <table><thead><tr><th>Kompetenz</th><th>Status</th></tr></thead><tbody>
+    ${n.competence_coverage.map(x=>`<tr><td><code>${x.competence_id}</code></td><td>${x.covered?'<span class="cov">✓ abgedeckt</span>':'<span class="gap">✗ Lücke</span>'}</td></tr>`).join("")}
+    </tbody></table>${n.gaps.length?`<p class="gap"><b>Lücken:</b> ${n.gaps.map(esc).join("; ")}</p>`:""}
+    <p class="muted">Übergreifende Themen: ${(n.uebergreifende_themen||[]).join(", ")||"—"}</p></div>`;
+}
+function depth(d){
+  const order=["remember","understand","apply","analyze","evaluate","create"];
+  const bars = order.filter(l=>d.by_level[l]).map(l=>`<div>${l}: <span class="bars" style="width:${14*d.by_level[l]}px"></span> ${d.by_level[l]}</div>`).join("");
+  return `<div class="card" style="margin-top:10px"><h2>Tiefenprofil (abgeleitet)</h2>${bars}
+    <p>Dimensionen: ${Object.entries(d.by_dimension).map(([k,v])=>k+":"+v).join(" · ")}</p>
+    <p class="muted">Zeit gesamt ${d.minutes_total}′ · materialunabhängig ${d.minutes_resource_independent}′</p></div>`;
+}
+function showpdf(id,kind){ const f=$("#pdfframe"); if(f) f.src=`/api/items/${id}/pdf/${kind}`; }
+
+/* ---------- Statistik ---------- */
+async function renderStats(){
+  if(!$("#stats")) return;
+  const s = await jget("/api/stats"); const t = s.totals;
+  let h = `<div class="card"><h2>Master-Bibliothek — Gesamtfortschritt</h2>
+    <div class="row between"><span>${t.covered_competences} / ${t.total_competences} Kompetenzen abgedeckt</span><b>${t.coverage_pct}%</b></div>
+    <div class="prog"><i style="width:${t.coverage_pct}%"></i></div>
+    <p class="muted" style="margin-top:8px">${t.worksheets} Arbeitsblätter · ${t.tasks} Aufgaben · ${t.in_progress} in Prüfung · ${t.subjects_started}/${t.subjects} Fächer begonnen</p></div>
+    <div class="card"><h2>Pro Fach</h2>
+    <table><thead><tr><th>Fach</th><th>Klassen</th><th>Blätter</th><th>Aufgaben</th><th>Abdeckung</th><th>in Prüfung</th></tr></thead><tbody>
+    ${s.subjects.map(r=>`<tr ${r.empty?'class="muted"':''}>
+      <td>${esc(r.name)}</td><td>${(r.klassen||[]).join(",")}</td>
+      <td>${r.worksheets}</td><td>${r.tasks}</td>
+      <td>${r.covered_competences}/${r.total_competences}
+        <div class="prog" style="width:90px;display:inline-block;vertical-align:middle"><i style="width:${r.coverage_pct}%"></i></div></td>
+      <td>${r.in_progress||"—"}</td></tr>`).join("")}
+    </tbody></table>
+    <p class="muted" style="margin-top:8px">„Abdeckung" = Katalog-Kompetenzen, die mind. ein freigegebenes Blatt übt. Leere Fächer sind ausgegraut.</p></div>`;
+  $("#stats").innerHTML = h;
+}
+
+/* ---------- actions ---------- */
 async function act(id,kind){
-  const note = $("#note") ? $("#note").value : "";
-  await jpost(`/api/items/${id}/${kind}`, {note});
-  setTimeout(refresh, 200);
+  const noteEl = $("#note"); const note = noteEl? noteEl.value : "";
+  await jpost(`/api/items/${id}/${kind}`,{note});
+  setTimeout(refresh, 150);
 }
-refresh();
-setInterval(refresh, 4000);
+
+renderTabs(); buildShell(); refresh();
+setInterval(()=>{ if(TAB!=="brainstorm" || !document.activeElement || !["INPUT","TEXTAREA"].includes(document.activeElement.tagName)) refresh(); }, 4000);
 </script>
 </body>
 </html>

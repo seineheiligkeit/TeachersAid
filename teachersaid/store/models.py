@@ -31,12 +31,13 @@ class RenderArtifacts(BaseModel):
 class ReviewItem(BaseModel):
     model_config = ConfigDict(extra="forbid")
     id: str
-    stage: str  # "idea" | "content"
-    status: str = "pending"  # pending | approved | rejected | changes_requested
-    source: str = "on_demand"  # on_demand | batch
+    stage: str  # "brainstorm" | "content"
+    status: str = "pending"  # pending | approved | rejected | changes_requested | generating
+    source: str = "user"  # user | ai
     created_at: str = ""
     updated_at: str = ""
     title: str = ""
+    note: str = ""  # brainstorm: the rough idea / rationale (free text)
     request: BundleRequest
     resolution: LehrplanResolution | None = None
     # idea-stage payload
@@ -50,23 +51,32 @@ class ReviewItem(BaseModel):
     feedback: list[Feedback] = Field(default_factory=list)
     error: str | None = None
 
+    def n_tasks(self) -> int:
+        from ..schema.enums import Role
+        if not self.content:
+            return 0
+        return sum(1 for b in self.content.iter_blocks() if b.role == Role.TASK)
+
     def summary(self) -> dict:
         """A compact dict for the queue/status views (no heavy nested content)."""
-        cov = gaps = None
+        cov = gaps = tasks = None
         if self.content and self.content.nachweis:
             cov = sum(1 for c in self.content.nachweis.competence_coverage if c.covered)
             gaps = len(self.content.nachweis.gaps)
+            tasks = self.n_tasks()
         return {
             "id": self.id,
             "stage": self.stage,
             "status": self.status,
             "source": self.source,
             "title": self.title,
+            "note": self.note,
             "subject": self.request.subject,
             "klasse": self.request.klasse,
             "topic": self.request.topic_raw,
             "covered": cov,
             "gaps": gaps,
+            "tasks": tasks,
             "n_feedback": len(self.feedback),
             "error": self.error,
             "updated_at": self.updated_at,

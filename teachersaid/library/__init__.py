@@ -59,17 +59,19 @@ def find(subject: str, topic: str) -> Example | None:
 
 
 def seed_library(store=None, *, today: date | None = None) -> list:
-    """Run every example through the pipeline into the review store as a pending
-    content item (so it lands in the dashboard's review queue). Returns the items."""
+    """Run every example through the full pipeline (brainstorm → flesh out) into the
+    review store as a pending content item, so it lands in the dashboard's review
+    queue ready for approval into the library. Returns the content items."""
     from ..pipeline import orchestrator as orch
-    from ..schema.worksheet import BundleRequest
     from ..store.repository import ReviewStore
 
     store = store or ReviewStore()
     out = []
     for ex in EXAMPLES:
-        req = BundleRequest(subject=ex.subject, klasse=ex.klasse, topic_raw=ex.topic)
-        idea = orch.submit_on_demand(store, req, today=today)
-        content = orch.approve_idea(store, idea.id)  # offline path serves ex.build()
-        out.append(content)
+        bs = orch.submit_brainstorm(
+            store, ex.subject, ex.klasse, ex.topic,
+            note="Master-Library-Beispiel (kuratiert).", source="ai",
+        )
+        orch.approve_brainstorm(store, bs.id)
+        out.append(orch.flesh_out(store, bs.id, today=today))  # offline path serves ex.build()
     return out

@@ -90,14 +90,17 @@ subject-coverage audit:
 A worksheet is "covered" for a (subject, Klasse, Kompetenzbereich) when ≥1 verify-clean gold example
 exists and has been SME-approved in the dashboard.
 
-## 6 · Workflow (the running pipeline)
+## 6 · Workflow (the running pipeline + dashboard)
 
 ```
-request / batch  → resolve → plan ─►[Gate 1: idea]─approve─►
-   generate (LLM or library) → verify → assemble(+derive Nachweis/Depth) → render ─►[Gate 2: content]─approve─► library
+Brainstorm (rough idea: you or "Vorschläge aus Lehrplan") ─approve─► flesh out
+   (resolve → plan → generate[LLM or library] → verify → assemble(+derive) → render)
+   ─► Content [review Blöcke + Vorschau] ─approve─► Bibliothek (library)
 ```
-- Both gates are in the dashboard; `request-changes` re-queues with feedback injected into the
-  generation prompt. Batch walks the grounded competence map (one candidate per Kompetenzbereich).
+- Four dashboard tabs: **Brainstorm**, **Inhalte** (Blöcke = structured content, Vorschau = rendered
+  PDFs), **Bibliothek**, **Statistik** (coverage vs the catalog — see §1/§5). `request-changes`
+  regenerates with the note injected; "Vorschläge aus Lehrplan" seeds brainstorm ideas for uncovered
+  Kompetenzbereiche, so ideation and the coverage stats feed each other.
 - The store holds only review items + the approved library — no gradebook, no student PII.
 
 ## 7 · Open items / dependencies

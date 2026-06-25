@@ -1,103 +1,94 @@
-"""M5 verification: two-stage HITL loop end-to-end (offline) + API surface."""
+"""HITL pipeline end-to-end (offline): brainstorm → flesh out → content → library."""
 
 from __future__ import annotations
-
-import os
 
 import pytest
 
 from teachersaid.pipeline import orchestrator as orch
-from teachersaid.schema.worksheet import BundleRequest
 from teachersaid.store.repository import ReviewStore
 
 
 @pytest.fixture(autouse=True)
 def _no_key(monkeypatch):
-    # Force the offline hero fallback so the loop runs without network.
+    # Force the offline master-library fallback so the loop runs without network.
     monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
 
 
 @pytest.fixture
 def store(tmp_path, monkeypatch):
-    # Point RUNS_DIR at tmp so renders/store land in the sandbox.
     import teachersaid.config as cfg
-
     monkeypatch.setattr(cfg, "RUNS_DIR", tmp_path)
     return ReviewStore(tmp_path / "store")
 
 
-def test_full_two_stage_loop_offline(store):
-    req = BundleRequest(subject="Physik", klasse=4, topic_raw="Strahlung und Radioaktivität")
-    idea = orch.submit_on_demand(store, req)
-    assert idea.stage == "idea" and idea.status == "pending"
-    assert idea.plan.competence_ids  # idea-stage artifact present
+def test_brainstorm_to_library_loop(store):
+    bs = orch.submit_brainstorm(store, "Physik", 4, "Strahlung und Radioaktivität",
+                                "Energie entscheidet über Gefahr", source="user")
+    assert bs.stage == "brainstorm" and bs.status == "pending" and bs.note
 
-    # Gate 1 approve -> generates content (offline hero), renders, derives.
-    content = orch.approve_idea(store, idea.id)
+    orch.approve_brainstorm(store, bs.id)
+    assert store.get(bs.id).status == "approved"
+
+    # flesh out -> a content item (offline hero), rendered + derived
+    content = orch.flesh_out(store, bs.id)
     assert content.stage == "content"
     assert content.error is None, content.error
     assert content.content.nachweis is not None
     assert content.artifacts.student_pdf and content.artifacts.teacher_pdf
-    # the deliberate STR.01 gap surfaces in the dashboard data
+    assert content.parent_id == bs.id
+    # the deliberate STR.01 gap surfaces
     assert any(g.startswith("PHY.US.4.STR.01") for g in content.content.nachweis.gaps)
 
-    # Gate 2 approve -> enters library.
     approved = orch.approve_content(store, content.id)
     assert approved.status == "approved"
     assert len(store.library()) == 1
 
 
 def test_request_changes_requeues_content(store):
-    req = BundleRequest(subject="Physik", klasse=4, topic_raw="Strahlung und Radioaktivität")
-    idea = orch.submit_on_demand(store, req)
-    content = orch.approve_idea(store, idea.id)
+    bs = orch.submit_brainstorm(store, "Physik", 4, "Strahlung und Radioaktivität")
+    orch.approve_brainstorm(store, bs.id)
+    content = orch.flesh_out(store, bs.id)
     updated = orch.request_changes(store, content.id, "Bitte Aufgabe 6 vereinfachen.")
     assert updated.id == content.id  # same item, regenerated
     assert any(f.decision == "request-changes" for f in updated.feedback)
     assert updated.status == "pending"
 
 
-def test_batch_walks_competence_map(store):
-    items = orch.submit_batch(store, "Physik", 4)
-    # Physik 4. Kl. has two Kompetenzbereiche in the full catalog:
-    # "Wetter und Klima" and "Strahlung und Radioaktivität".
+def test_suggest_from_catalog_walks_kompetenzbereiche(store):
+    items = orch.suggest_from_catalog(store, "Physik", 4)
+    # Physik 4. Kl.: Wetter und Klima + Strahlung und Radioaktivität
     assert len(items) == 2
-    assert all(it.stage == "idea" and it.source == "batch" for it in items)
-    titles = {it.title for it in items}
-    assert any(t.endswith("Strahlung und Radioaktivität") for t in titles)
-    assert any(t.endswith("Wetter und Klima") for t in titles)
+    assert all(i.stage == "brainstorm" and i.source == "ai" for i in items)
+    topics = {i.request.topic_raw for i in items}
+    assert "Strahlung und Radioaktivität" in topics and "Wetter und Klima" in topics
+    # idempotent: a second call adds nothing (already represented)
+    assert orch.suggest_from_catalog(store, "Physik", 4) == []
 
 
 def test_api_endpoints(tmp_path, monkeypatch):
     monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
     import teachersaid.config as cfg
-
     monkeypatch.setattr(cfg, "RUNS_DIR", tmp_path)
     from fastapi.testclient import TestClient
-
     from teachersaid.api import app as appmod
 
-    # rebind the module store to the tmp dir
     appmod.STORE = ReviewStore(tmp_path / "store")
     client = TestClient(appmod.app)
 
-    assert client.get("/").status_code == 200  # dashboard serves
-    r = client.post("/api/generate", json={"subject": "Physik", "klasse": 4,
-                                           "topic": "Strahlung und Radioaktivität"})
-    assert r.status_code == 200
-    idea_id = r.json()["id"]
+    assert client.get("/").status_code == 200
+    bs = client.post("/api/brainstorm", json={"subject": "Physik", "klasse": 4,
+                                              "topic": "Strahlung und Radioaktivität"}).json()
+    client.post(f"/api/items/{bs['id']}/approve")           # approve brainstorm
+    content = client.post(f"/api/items/{bs['id']}/flesh-out").json()  # -> content
+    cid = content["id"]
 
-    # approve idea -> background fill runs synchronously under TestClient
-    r = client.post(f"/api/items/{idea_id}/approve")
-    assert r.status_code == 200
-    content_id = r.json()["content_item"]["id"]
+    item = client.get(f"/api/items/{cid}").json()
+    assert item["content"]["nachweis"]["gaps"]              # STR.01 gap present
+    assert item["content"]["sections"]                      # full blocks served for the Blöcke view
+    assert client.get(f"/api/items/{cid}/pdf/student").status_code == 200
+    assert client.get(f"/api/items/{cid}/pdf/teacher").status_code == 200
 
-    item = client.get(f"/api/items/{content_id}").json()
-    assert item["content"]["nachweis"]["gaps"]  # STR.01 gap present
-    # PDFs are served
-    assert client.get(f"/api/items/{content_id}/pdf/student").status_code == 200
-    assert client.get(f"/api/items/{content_id}/pdf/teacher").status_code == 200
-
-    # gate 2 approve -> library grows
-    client.post(f"/api/items/{content_id}/approve")
+    client.post(f"/api/items/{cid}/approve")                # gate 2 -> library
     assert client.get("/api/status").json()["library_size"] == 1
+    st = client.get("/api/stats").json()
+    assert st["totals"]["worksheets"] == 1 and "subjects" in st

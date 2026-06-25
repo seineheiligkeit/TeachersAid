@@ -17,10 +17,12 @@ python -m teachersaid seed  # seed the master-library examples (Physik/Biologie/
 python -m teachersaid       # dashboard at http://127.0.0.1:8000
 ```
 
-In the dashboard: create a request (or **Batch über Kompetenzkarte**) → approve the **idea** (Gate 1) →
-the engine generates, verifies, assembles and renders → review the **content** (Gate 2) with the derived
-Nachweis (coverage + gaps), the Tiefenprofil, and the embedded student/teacher/homework PDF → approve into
-the material library. **Request changes** re-queues with your feedback.
+The dashboard has four tabs: **Brainstorm** (rough ideas — add your own or "Vorschläge aus Lehrplan",
+approve/decline), **Inhalte** (an approved idea is *fleshed out* into a worksheet, reviewed two ways:
+**Blöcke** = the structured content object, and **Vorschau** = the rendered student/teacher/homework
+PDFs — approve into the library or request changes), **Bibliothek** (approved worksheets), and
+**Statistik** (per-subject coverage of the master library vs the catalog: tasks, worksheets, competences
+covered, what's still empty).
 
 The **master library** (`teachersaid/library/`) is a growing set of curated *gold* worksheet examples
 per subject — the quality bar, the few-shot seeds for generation, and the offline demo stock. `seed`
