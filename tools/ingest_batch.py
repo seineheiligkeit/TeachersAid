@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 from datetime import date
 
 from teachersaid.config import RUNS_DIR
@@ -28,6 +29,9 @@ GEN_DATE = date(2026, 3, 1)  # inside the Fassung window; deterministic
 # common agent key-slips -> schema keys (first-pass normalization)
 _RUBRIC_KEYMAP = {"kriterium": "criterion", "kriterien": "criterion", "stufen": "levels"}
 _VALID_RELATIONS = {"exercises", "builds_prerequisite"}
+_INFO_KEYS = {"role", "id", "kind", "content", "callout_role", "teacher_note",
+              "watch_outs", "optional", "modality", "asset_refs", "flags"}
+_ANSWER_ALIASES = ("answer_text", "loesung", "lösung", "loesungsvorschlag", "musterloesung")
 
 
 def _stringify_level(lv):
@@ -42,28 +46,58 @@ def _stringify_level(lv):
     return str(lv)
 
 
+def _norm_block(b: dict) -> None:
+    """Coerce one block to the generation-view schema (in place)."""
+    if b.get("role") == "info":
+        if "content" not in b and "prompt" in b:   # agent shaped an info block like a task
+            b["content"] = b.pop("prompt")
+        b.setdefault("kind", "prose")
+        for k in [k for k in b if k not in _INFO_KEYS]:  # drop est_minutes/response/etc.
+            b.pop(k, None)
+        return
+    for alias in _ANSWER_ALIASES:                   # answer_text/Lösung -> answer_key
+        if alias in b and not b.get("answer_key"):
+            b["answer_key"] = b.pop(alias)
+        else:
+            b.pop(alias, None)
+    for s in b.get("serves", []):                   # only exercises/builds_prerequisite valid
+        if s.get("relation") not in _VALID_RELATIONS:
+            s["relation"] = "exercises"
+    rub = b.get("rubric")
+    if isinstance(rub, list):                        # German keys + rich level objects
+        fixed = []
+        for r in rub:
+            r = {_RUBRIC_KEYMAP.get(k, k): v for k, v in r.items()}
+            if isinstance(r.get("levels"), list):
+                r["levels"] = [_stringify_level(lv) for lv in r["levels"]]
+            fixed.append(r)
+        b["rubric"] = fixed
+
+
 def _normalize(body: dict) -> dict:
-    """Coerce common agent slips to the schema: German rubric keys, rich level objects,
-    and non-standard `serves.relation` values (only exercises/builds_prerequisite are valid)."""
+    for b in body.get("intro", []):
+        _norm_block(b)
     for sec in body.get("sections", []):
         for b in sec.get("blocks", []):
-            for s in b.get("serves", []):
-                if s.get("relation") not in _VALID_RELATIONS:
-                    s["relation"] = "exercises"
-            rub = b.get("rubric")
-            if isinstance(rub, list):
-                fixed = []
-                for r in rub:
-                    r = {_RUBRIC_KEYMAP.get(k, k): v for k, v in r.items()}
-                    if isinstance(r.get("levels"), list):
-                        r["levels"] = [_stringify_level(lv) for lv in r["levels"]]
-                    fixed.append(r)
-                b["rubric"] = fixed
+            _norm_block(b)
     return body
 
 
-def _load(code: str) -> dict:
-    w = json.loads((RUNS_DIR / "ingest" / f"{code}.json").read_text(encoding="utf-8"))
+# A German quote span opened with „ but CLOSED with a straight " breaks the JSON
+# string (the bare " terminates it). Convert ONLY that closing " to the typographic “.
+# The content class excludes every quote variant so the match can't run past a proper
+# typographic close to the structural quote (which would corrupt valid JSON).
+_GERMAN_QUOTE_FIX = re.compile('„([^"„“”]*)"')
+
+
+def _repair_text(raw: str) -> str:
+    """Repair the agent JSON slip „…" (typographic open U+201E, straight close)."""
+    return _GERMAN_QUOTE_FIX.sub('„\\1“', raw)
+
+
+def _load(path) -> dict:
+    raw = _repair_text(path.read_text(encoding="utf-8"))
+    w = json.loads(raw, strict=False)  # tolerate literal control chars (raw newlines) in strings
     w["body"] = _normalize(w["body"])
     return w
 
@@ -76,54 +110,73 @@ def _resolution(w: dict):
     return resolve_grade(subj, kl, today=GEN_DATE)
 
 
-def dry_run(codes: list[str]) -> None:
-    for code in codes:
-        w = _load(code)
+def dry_run(paths: list) -> None:
+    ok = bad = 0
+    for path in paths:
+        name = path.stem
+        try:
+            w = _load(path)
+        except Exception as e:  # noqa: BLE001
+            print(f"{name}: JSON LOAD ERROR: {str(e)[:200]}"); bad += 1; continue
         res = _resolution(w)
         model = ls.get_subject_model(w["subject"])
         try:
             gb = GenWorksheetBody.model_validate(w["body"])
         except Exception as e:  # noqa: BLE001
-            print(f"{code}: SCHEMA ERROR: {str(e)[:400]}"); continue
+            print(f"{name}: SCHEMA ERROR: {str(e)[:300]}"); bad += 1; continue
         meta = WorksheetMeta(
             title=w["title"], subject=w["subject"], stufe="Unterstufe", klasse=w["klasse"],
             kernfrage=w["kernfrage"], fassung=res.fassung,
             lehrplan_label=f"{w['subject']} · {w['klasse']}. Kl. · "
                            f"{w.get('kompetenzbereich') or w.get('scope_label')}",
         )
+        if w.get("kompetenzbereich"):  # mirror ingest_generated's cross-KB widening
+            served = {s.competence_id for sec in gb.sections for b in sec.blocks
+                      for s in getattr(b, "serves", [])}
+            if served - {c.id for c in res.competences}:
+                gres = resolve_grade(w["subject"], w["klasse"], today=GEN_DATE)
+                if served <= {c.id for c in gres.competences}:
+                    res = gres
         content = body_to_canonical(gb, meta=meta, subject_model=model)
         try:
             assemble(content, res)
             rep = verify(content, res)
         except Exception as e:  # noqa: BLE001
-            print(f"{code}: ASSEMBLE/VERIFY RAISED: {type(e).__name__}: {str(e)[:300]}"); continue
+            print(f"{name}: ASSEMBLE/VERIFY RAISED: {type(e).__name__}: {str(e)[:300]}"); bad += 1; continue
         nt = sum(1 for b in content.iter_blocks() if b.role == "task")
         cov = content.nachweis.competence_coverage
-        print(f"{code}: '{w['title']}'  tasks={nt}  problems={len(rep.problems)}  "
-              f"warnings={len(rep.warnings)}  coverage={sum(c.covered for c in cov)}/{len(cov)}")
+        flag = "OK " if not rep.problems else "!! "
+        print(f"{flag}{name}: '{w['title'][:48]}' kl{w['klasse']} tasks={nt} "
+              f"problems={len(rep.problems)} warnings={len(rep.warnings)} "
+              f"coverage={sum(c.covered for c in cov)}/{len(cov)}")
         for p in rep.problems:
-            print("    PROBLEM:", p)
-        for wn in rep.warnings:
-            print("    warn:", wn)
+            print("      PROBLEM:", p)
+        ok += not rep.problems
+        bad += bool(rep.problems)
+    print(f"\n== {ok} clean, {bad} need attention, {len(paths)} total ==")
 
 
-def persist(codes: list[str]) -> None:
+def persist(paths: list) -> None:
     store, blocks = ReviewStore(), BlockStore()
-    for code in codes:
-        w = _load(code)
+    total = 0
+    for path in paths:
+        w = _load(path)
         item, n = orch.ingest_generated(
             store, blocks, w["subject"], w["klasse"],
             kompetenzbereich=w.get("kompetenzbereich"), scope_label=w.get("scope_label"),
-            title=w["title"], kernfrage=w["kernfrage"], body=w["body"], today=GEN_DATE,
+            title=w["title"], kernfrage=w["kernfrage"], body=w["body"], render=False, today=GEN_DATE,
         )
-        print(f"{code}: id={item.id}  error={item.error}  "
-              f"problems={len(item.verify_problems or [])}  blocks_harvested={n}")
+        total += n
+        print(f"{path.stem}: id={item.id} error={item.error} "
+              f"problems={len(item.verify_problems or [])} blocks={n}")
+    print(f"\n== staged {len(paths)} worksheets, {total} blocks harvested ==")
 
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--dir", default=str(RUNS_DIR / "ingest" / "gen"))
     args = ap.parse_args()
-    manifest = json.loads((RUNS_DIR / "ingest" / "manifest.json").read_text(encoding="utf-8"))
-    codes = [m["code"] for m in manifest]
-    (dry_run if args.dry_run else persist)(codes)
+    from pathlib import Path
+    paths = sorted(Path(args.dir).glob("*.json"))
+    (dry_run if args.dry_run else persist)(paths)

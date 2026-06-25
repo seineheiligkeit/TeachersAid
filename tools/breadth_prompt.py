@@ -1,149 +1,165 @@
-"""Build fully-grounded generation prompts for the breadth push, from the catalog.
+"""Build fully-grounded breadth-generation briefs from the catalog (one per subject).
 
-For each configured subject it writes `runs/ingest/prompt_<CODE>.md` — a self-contained
-brief a subagent follows to emit one AHS-Unterstufe worksheet body (the GenWorksheetBody
-shape) anchored to REAL competence ids. The deterministic grounding (verbatim
-competences, allowed dimensions, allowed kinds, the JSON shape + a worked example) lives
-here so the agent can't invent it. `python -m teachersaid` is not needed; run with the venv:
+Each `runs/ingest/prompt_<CODE>.md` is a self-contained brief: a subagent reads it,
+picks N distinct Kernfragen spanning the subject's themes, and writes one wrapper JSON
+per Kernfrage to `runs/ingest/gen/<CODE>_<n>.json`. The deterministic grounding
+(verbatim competences grouped by Kompetenzbereich + grade, allowed dims/kinds, the JSON
+shape) lives here so agents can't invent it. Run with the venv:
 
-    python tools/breadth_prompt.py            # writes runs/ingest/prompt_*.md
+    python tools/breadth_prompt.py
 """
 from __future__ import annotations
 
 import json
+from collections import defaultdict
 from pathlib import Path
 
 from teachersaid.config import RUNS_DIR
 from teachersaid.grounding import lehrplan_store as ls
 from teachersaid.schema.enums import CORE_TASK_KINDS
 
-# Pilot: the MINT core. (code, subject, klasse, anchor_type, anchor_value, theme, note)
+N_KERNFRAGEN = 5
+
+# code, subject, anchor ("kb" content/skill-KBs | "grade" strand/None-KB), practical(enactive)
 SUBJECTS = [
-    ("PHY", "Physik", 4, "kb", "Wetter und Klima", "Wetter, Klima und Energiehaushalt",
-     "Inhaltlicher Kompetenzbereich — die Aufgaben bedienen die unten gelisteten WET-Kompetenzen."),
-    ("MAT", "Mathematik", 4, "kb", "2: Variablen und Funktionen",
-     "Variablen, Terme und lineare Funktionen",
-     "MAT-Kompetenzen tragen KEINE W/E/S-Dimensionen — ordne jeder Aufgabe genau eine der "
-     "Modell-Dimensionen (MOD/OPE/DAR/BEG) zu, primäre zuerst."),
-    ("CHE", "Chemie", 4, "grade", "Säuren, Basen und Neutralisation",
-     "Säuren, Basen und Neutralisation",
-     "Die Kompetenzen sind PROZESS-Kompetenzen (beobachten, interpretieren, argumentieren, "
-     "bewerten); der Inhalt 'Säuren und Basen' ist das Vehikel. Jede Aufgabe dient einer "
-     "dieser Prozess-Kompetenzen, gezeigt am Säure-Base-Inhalt."),
-    ("BIO", "Biologie", 4, "grade", "Vererbung, DNA und Genetik",
-     "Vererbung, DNA und Genetik",
-     "Prozess-Kompetenzen; Inhalt 'Vererbung/Genetik' als Vehikel. NICHT Immunsystem "
-     "(dieses Arbeitsblatt existiert bereits)."),
+    ("DEU", "Deutsch", "kb", False),
+    ("GWB", "Geographie und wirtschaftliche Bildung", "kb", False),
+    ("GPB", "Geschichte und politische Bildung", "grade", False),
+    ("DGB", "Digitale Grundbildung", "kb", False),
+    ("GEZ", "Geometrisches Zeichnen", "kb", False),
+    ("MUS", "Musik", "kb", True),
+    ("KUG", "Kunst und Gestaltung", "kb", True),
+    ("TED", "Technik und Design", "kb", True),
+    ("BUS", "Bewegung und Sport", "kb", True),
 ]
 
-_TEMPLATE = """# Generierungs-Auftrag: {subject}, {klasse}. Klasse — Thema „{theme}“
+_TEMPLATE = """# Breiten-Generierung: {subject} — {n} Kernfragen
 
-Du erzeugst **ein** Arbeitsblatt für die **AHS-Unterstufe (4. Klasse)** auf österreichischem
-Lehrplan-Niveau. Sprache des Inhalts: **Deutsch**. Niveau: AHS — nicht zu niedrig.
+Du erzeugst **{n} verschiedene** Arbeitsblatt-Inhalte (je eine eigene **Kernfrage**) für die
+**AHS-Unterstufe** auf österreichischem Lehrplan-Niveau. Sprache: **Deutsch**, AHS-Niveau (nicht zu niedrig).
+Wähle **{n} klar unterschiedliche Themen/Bereiche** (Breite!), nicht Varianten desselben Themas.
 
-{note}
-
-## Kompetenzen, an die du verankerst (verbatim — `serves.competence_id` muss eine dieser IDs sein)
+## Kompetenzen (verbatim — `serves.competence_id` MUSS eine dieser IDs sein), gruppiert nach Kompetenzbereich
 {competences}
 
 ## Erlaubte Dimensionen (`dimensions`, primäre zuerst — Teilmenge dieser Codes)
 {dims}
 
-## Erlaubte Aufgaben-`kind`-Werte (genau diese Strings)
+## Erlaubte Aufgaben-`kind`-Werte
 {kinds}
+{ab_block}{anchor_rule}
 
-## Regeln
-- Verankere **jede** Aufgabe mit `serves` an genau einer der oben gelisteten Kompetenz-IDs. Nutze
-  über das Blatt **mehrere verschiedene** Kompetenzen (2–{n_comp}).
-- `dimensions` ⊆ den erlaubten Codes; `kind` ∈ den erlaubten kinds; `cognitive_level` ∈
-  remember/understand/apply/analyze/evaluate/create und **steigt** (eine Leiter, nicht alles „remember“;
-  baue analyze/evaluate/create ein).
-- **Korrektheit by construction:** behaupte nichts Unsicheres. Was eine Lehrkraft beachten muss
-  (häufige Fehlvorstellungen), kommt in `watch_outs` (tragend).
-- **Keine Bilder/Assets:** kein `kind:"figure"`, kein `data_interpretation`, keine `asset_refs`,
-  keine `response.mode` aus {{diagram, drawing, artifact}}. Reiner Text.
-- **Schülertext ist für Schüler:innen:** in `prompt`, Optionen und Intro **niemals** Kompetenz-IDs,
-  Dimensionen oder „Lehrplan“ erwähnen.
-- Pro Aufgabe: `answer_key` (erwartete Lösung) und `watch_outs`. Für offene/Erstellungs-Aufgaben
-  optional `acceptable_reasoning` (akzeptabler Spielraum) und `rubric` — Liste von Objekten der
-  Form `{{"criterion":"...","levels":["...","..."]}}` (**englische Schlüssel**: `criterion`, `levels`).
-- Pro Section die **Lehrkraft-Ebene**: `throughline` (Roter Faden, 1 Satz), `talking_points`
-  (2–4 Gesprächsanker/Fragen für die Klasse), `extensions` (1–3 Vertiefungs-/Differenzierungsideen).
-- Umfang: **5–7 Aufgaben** + optional 1 kurzer Info-Block (Intro). Realistische `est_minutes`
-  (Summe ~ eine Doppelstunde, ~90–110 min).
+## Regeln (für jede der {n} Kernfragen)
+- 5–7 Aufgaben (`blocks` mit role "task") + optional 1 kurzer Info-Block. Realistische `est_minutes`.
+- Verankere **jede** Aufgabe via `serves` an einer der oben gelisteten IDs; nutze mehrere verschiedene.
+- `dimensions` ⊆ erlaubte Codes; `kind` ∈ erlaubte kinds; `cognitive_level` steigt
+  (remember→…→create; baue analyze/evaluate/create ein), nicht alles „remember".
+- **Korrektheit by construction**; Fehlvorstellungen/Hinweise in `watch_outs` (tragend).
+- **Keine Bilder/Assets**: kein `kind:"figure"`, kein `data_interpretation`, keine `asset_refs`,
+  keine `response.mode` ∈ {{diagram, drawing, artifact}}. {modality_note}
+- **Schülertext ist für Schüler:innen** — niemals Kompetenz-IDs/Dimensionen/„Lehrplan" im `prompt`/Intro.
+- Pro Aufgabe `answer_key` + `watch_outs`; optional `acceptable_reasoning` und `rubric`
+  (Liste von `{{"criterion":"...","levels":["...","..."]}}`, **englische Schlüssel**).
+- Pro Section die Lehrkraft-Ebene: `throughline` (Roter Faden), `talking_points` (2–4), `extensions` (1–3).
 
-## Antwort-Formen (`response`) — nutze nur diese
-- `{{"mode":"lines","n":<int>}}`  ·  `{{"mode":"box","min_height_mm":<float>}}`
-- `{{"mode":"table","columns":[...],"rows":<int>}}`  ·  `{{"mode":"choices","options":[...],"select":"one"|"many"}}`
-- `{{"mode":"none"}}`
-
-## Payload (`payload`, optional) — passend zum kind, sonst `null`
-- multiple_choice: `{{"kind":"multiple_choice","options":[...],"select":"one"|"many"}}`
-- true_false_justify: `{{"kind":"true_false_justify","statements":[...]}}`
-- ordering: `{{"kind":"ordering","items":[...]}}`  ·  matching: `{{"kind":"matching","left":[...],"right":[...]}}`
-- table_fill: `{{"kind":"table_fill","columns":[...],"rows":[[<str|null>,...]]}}`  ·  decision_scenario: `{{"kind":"decision_scenario","stem":"..."}}`
+## Antwort-Formen (`response`): `{{"mode":"lines","n":<int>}}` · `{{"mode":"box","min_height_mm":<float>}}` ·
+`{{"mode":"table","columns":[...],"rows":<int>}}` · `{{"mode":"choices","options":[...],"select":"one"|"many"}}` · `{{"mode":"none"}}`
+## Payload (`payload`, optional, sonst null): multiple_choice `{{"kind":"multiple_choice","options":[...],"select":"one"}}` ·
+true_false_justify `{{"kind":"true_false_justify","statements":[...]}}` · ordering `{{"kind":"ordering","items":[...]}}` ·
+matching `{{"kind":"matching","left":[...],"right":[...]}}` · decision_scenario `{{"kind":"decision_scenario","stem":"..."}}`
 
 ## Ausgabe
-Schreibe **ausschließlich** das folgende JSON-Objekt nach `runs/ingest/{code}.json` (kein Fließtext,
-keine ``` Code-Zäune in der Datei):
+Schreibe **{n} Dateien**, eine pro Kernfrage, nach `runs/ingest/gen/{code}_1.json` … `runs/ingest/gen/{code}_{n}.json`.
+Jede Datei ist **ausschließlich** dieses JSON (kein Fließtext, keine ``` Zäune):
 
 ```json
 {{
-  "subject": "{subject}", "klasse": {klasse},
+  "subject": "{subject}", "klasse": <1-4, eine Klasse mit Kompetenzen im gewählten Bereich>,
   {anchor_field}
-  "title": "<prägnanter Titel>",
-  "kernfrage": "<eine Schüler-Kernfrage in Du-Form>",
+  "title": "<prägnanter Titel>", "kernfrage": "<eine Schüler-Kernfrage in Du-Form>",
   "body": {{
-    "intro": [ {{"role":"info","id":"i1","kind":"prose","content":"...","watch_outs":[]}} ],
-    "sections": [ {{
-      "id":"s1","title":"<Abschnittstitel>",
-      "throughline":"...","talking_points":["..."],"extensions":["..."],
-      "blocks":[
-        {{"role":"task","id":"t1","kind":"<kind>","prompt":"...","payload":null,
-         "response":{{"mode":"lines","n":3}},"cognitive_level":"understand",
-         "dimensions":["{dim0}"],"serves":[{{"competence_id":"{ex_comp}","relation":"exercises"}}],
-         "est_minutes":7,"answer_key":"...","acceptable_reasoning":null,"watch_outs":["..."],"rubric":[]}}
-      ]
-    }} ]
+    "intro": [],
+    "sections": [ {{ "id":"s1","title":"...","throughline":"...","talking_points":["..."],"extensions":["..."],
+      "blocks":[ {{"role":"task","id":"t1","kind":"<kind>","prompt":"...","payload":null,
+        "response":{{"mode":"lines","n":3}},"cognitive_level":"understand","dimensions":["{dim0}"],
+        "serves":[{{"competence_id":"<ID>","relation":"exercises"}}],"est_minutes":7,
+        "answer_key":"...","acceptable_reasoning":null,"watch_outs":["..."],"rubric":[]}} ] }} ]
   }}
 }}
 ```
 """
 
+_ANCHOR_KB = ('## Verankerung\nJede Kernfrage gehört zu **einem** Kompetenzbereich; setze im JSON '
+              '`"kompetenzbereich": "<exakter KB-Name>"` und die passende `klasse` (eine Klasse, in der '
+              'dieser KB Kompetenzen hat). Alle Aufgaben dieser Kernfrage dienen Kompetenzen aus diesem '
+              '(KB, Klasse).\n')
+_ANCHOR_GRADE = ('## Verankerung\nDie Kompetenzen sind fachübergreifend/Prozess-Kompetenzen — das Thema '
+                 'liefert der Inhalt. Setze im JSON `"scope_label": "<Thema/Anwendungsbereich>"` und die '
+                 '`klasse`; jede Aufgabe dient einer Kompetenz dieser Klasse (siehe Liste).\n')
 
-def _competence_lines(comps) -> str:
-    out = []
-    for c in comps:
-        dims = ",".join(c.dimensions) if c.dimensions else "—"
-        out.append(f"- `{c.id}` [dims {dims}]: {c.text.strip()}")
-    return "\n".join(out)
+
+def _klassen(subject: str) -> list[int]:
+    """Grades that actually carry competences (robust to None-KB competences, which
+    grade_map drops)."""
+    return [k for k in (1, 2, 3, 4) if ls.competences_for(subject, k)]
+
+
+def _competence_block(subject: str, anchor: str) -> tuple[str, str]:
+    """Returns (competences_grouped_text, anchor_field_template)."""
+    klassen = _klassen(subject)
+    by_kb: dict[str, list] = defaultdict(list)
+    for kl in klassen:
+        for c in ls.competences_for(subject, kl):
+            by_kb[c.kompetenzbereich].append((kl, c))
+    lines = []
+    for kb in sorted(by_kb, key=lambda x: x or ""):
+        lines.append(f"\n### {kb}")
+        seen = set()
+        for kl, c in by_kb[kb]:
+            if c.id in seen:
+                continue
+            seen.add(c.id)
+            dims = ",".join(c.dimensions) if c.dimensions else "—"
+            lines.append(f"- `{c.id}` (Kl {c.klasse}) [dims {dims}]: {c.text.strip()}")
+    field = '"kompetenzbereich": "<KB-Name>",' if anchor == "kb" else '"scope_label": "<Thema>",'
+    return "\n".join(lines), field
+
+
+def _ab_block(subject: str) -> str:
+    items = []
+    for kl in _klassen(subject):
+        ab = ls.anwendungsbereiche_for(subject, kl)
+        if ab:
+            items.append(f"- Kl {kl}: " + " · ".join(ab[:8]))
+    if not items:
+        return ""
+    return "\n## Anwendungsbereiche (Themen-Ideen für die Kernfragen)\n" + "\n".join(items) + "\n"
 
 
 def build():
     outdir = RUNS_DIR / "ingest"
-    outdir.mkdir(parents=True, exist_ok=True)
+    (outdir / "gen").mkdir(parents=True, exist_ok=True)
     manifest = []
-    for code, subject, klasse, atype, avalue, theme, note in SUBJECTS:
+    for code, subject, anchor, practical in SUBJECTS:
         model = ls.get_subject_model(subject)
-        allc = ls.competences_for(subject, klasse)
-        comps = [c for c in allc if c.kompetenzbereich == avalue] if atype == "kb" else allc
+        comps_text, anchor_field = _competence_block(subject, anchor)
         dims = "\n".join(f"- `{d.id}` — {d.label}" for d in model.dimensions)
         kinds = ", ".join(sorted(CORE_TASK_KINDS | set(model.task_kind_extensions)))
-        if atype == "kb":
-            anchor_field = f'"kompetenzbereich": "{avalue}",'
-        else:
-            anchor_field = f'"scope_label": "{theme}",'
+        modality_note = (
+            "Praktisches Fach: nutze `modality` \"enactive\" (Tun/Üben) oder \"oral\" (mündlich) wo "
+            "passend, sonst \"printable\". Beschreibe Tätigkeiten in Worten."
+            if practical else "Reiner Text (modality \"printable\")."
+        )
         prompt = _TEMPLATE.format(
-            subject=subject, klasse=klasse, theme=theme, note=note,
-            competences=_competence_lines(comps), dims=dims, kinds=kinds,
-            n_comp=len(comps), code=code, anchor_field=anchor_field,
-            dim0=model.dimensions[0].id, ex_comp=comps[0].id,
+            subject=subject, n=N_KERNFRAGEN, competences=comps_text, dims=dims, kinds=kinds,
+            ab_block=_ab_block(subject), anchor_rule=(_ANCHOR_KB if anchor == "kb" else _ANCHOR_GRADE),
+            modality_note=modality_note, code=code, anchor_field=anchor_field,
+            dim0=model.dimensions[0].id,
         )
         (outdir / f"prompt_{code}.md").write_text(prompt, encoding="utf-8")
-        manifest.append({"code": code, "subject": subject, "klasse": klasse,
-                         "anchor": atype, "value": avalue, "theme": theme,
-                         "n_competences": len(comps)})
-        print(f"{code}: {len(comps)} competences, {len(model.dimensions)} dims -> prompt_{code}.md")
+        manifest.append({"code": code, "subject": subject, "anchor": anchor, "practical": practical})
+        n_comp = len({c.id for kl in _klassen(subject) for c in ls.competences_for(subject, kl)})
+        print(f"{code}: {n_comp} competences, anchor={anchor} -> prompt_{code}.md")
     (outdir / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2),
                                           encoding="utf-8")
 

@@ -205,6 +205,7 @@ def ingest_generated(
     title: str,
     kernfrage: str,
     body,
+    render: bool = True,
     today: date | None = None,
 ) -> tuple[ReviewItem, int]:
     """Land an LLM-generated worksheet body (a `GenWorksheetBody` or its dict) as a
@@ -245,6 +246,18 @@ def ingest_generated(
     store.create(item)
     try:
         gb = body if isinstance(body, GenWorksheetBody) else GenWorksheetBody.model_validate(body)
+        # A worksheet may legitimately serve competences across KBs (strand subjects like
+        # Sport/Musik); if the chosen KB is too narrow but every serve is grade-valid,
+        # widen the resolution to the whole grade rather than flag a false coverage error.
+        if kompetenzbereich:
+            served = {s.competence_id for sec in gb.sections for b in sec.blocks
+                      for s in getattr(b, "serves", [])}
+            if served - {c.id for c in res.competences}:
+                from .resolve import resolve_grade
+                gres = resolve_grade(subject, klasse, today=today)
+                if served <= {c.id for c in gres.competences}:
+                    res = gres
+                    item.resolution = res
         meta = WorksheetMeta(
             title=title, subtitle="LLM-Entwurf — Erstprüfung",
             subject=subject, stufe="Unterstufe", klasse=klasse,
@@ -254,7 +267,8 @@ def ingest_generated(
         content = body_to_canonical(gb, meta=meta, subject_model=model)
         assemble(content, res)
         report = verify(content, res)
-        item.artifacts = _render_all(item.id, content)
+        # breadth mode renders no PDFs — blocks are the unit, inspected structurally
+        item.artifacts = _render_all(item.id, content) if render else None
         item.content = content
         item.verify_problems = report.problems
         item.verify_warnings = report.warnings
