@@ -57,6 +57,10 @@ demo/        hand-authored hero (Strahlung) + the 3 worked examples.
 is structurally impossible. `rendering/` importing only `schema/` is what guarantees it; **do not let
 `rendering/` reach into `pipeline/` or hold its own copy of task data.**
 
+**Retooling rendering?** The renderer is swappable (ReportLab today; HTML→PDF / Typst / docx are fair
+game). The hand-off contract — entry-point signatures, the three projection rules, and what's free to
+change — is in **`Documents/rendering-handoff-brief.md`**.
+
 ### The pipeline (schema §7), and what is deterministic vs LLM
 
 | Step | Module | Nature |
