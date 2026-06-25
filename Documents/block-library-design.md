@@ -112,7 +112,11 @@ aus Lehrplan" (suggest blocks for the empty cells).
 1. **Library foundation — ✅ built (25 Jun 2026).** `LibraryBlock` (`library/block.py`) + `scope`/`family`;
    `BlockStore` (`store/blockstore.py`); `harvest`/`seed_blocks` (the 3 examples → ~21 blocks); the
    **Bausteine** review tab + the block-level **Statistik** matrix; `tests/test_blocks.py`.
-2. **Dumb composer.** The `compose` stage (§4) + a compose view; render composed worksheets.
+2. **Dumb composer — ✅ built (25 Jun 2026).** `pipeline/compose.py` (select approved blocks → time-fit
+   → ladder order → template framing → `WorksheetContent`); `orch.compose_worksheet`; the **Inhalte**
+   "Arbeitsblatt zusammenstellen" form + `POST /api/compose`; `tests/test_compose.py`. Verified:
+   einzelstunde → 4 tasks/~46 min, block → 7 tasks/~78 min, both verify-clean. (Assets don't travel with
+   blocks yet → figure-info-blocks skipped in composition.)
 3. **Richness + smarter selection.** Populate `scope` variants; better ordering/coherence; begin
    difficulty calibration on the now-reused blocks.
 

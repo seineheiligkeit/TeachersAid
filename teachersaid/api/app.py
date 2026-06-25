@@ -38,6 +38,13 @@ class SuggestBody(BaseModel):
     klasse: int = 4
 
 
+class ComposeBody(BaseModel):
+    subject: str = "Physik"
+    klasse: int = 4
+    topic: str = ""
+    envelope: str = "doppelstunde"
+
+
 class NoteBody(BaseModel):
     note: str = ""
 
@@ -63,6 +70,15 @@ def brainstorm(body: BrainstormBody):
 def suggest(body: SuggestBody):
     items = orch.suggest_from_catalog(STORE, body.subject, body.klasse)
     return {"created": [i.summary() for i in items]}
+
+
+@app.post("/api/compose")
+def compose(body: ComposeBody):
+    if not body.topic.strip():
+        raise HTTPException(400, "topic required")
+    return orch.compose_worksheet(
+        STORE, BLOCKS, body.subject, body.klasse, body.topic.strip(), body.envelope
+    ).summary()
 
 
 # --- queues / stats ----------------------------------------------------------
@@ -94,6 +110,15 @@ def stats():
 @app.get("/api/blocks")
 def blocks(subject: str | None = None, status: str | None = None, role: str | None = None):
     return [b.summary() for b in BLOCKS.list(subject=subject, status=status, role=role)]
+
+
+@app.post("/api/blocks/approve-all")
+def approve_all_blocks():
+    n = 0
+    for b in BLOCKS.list(status="in_review"):
+        BLOCKS.set_status(b.id, "approved")
+        n += 1
+    return {"approved": n}
 
 
 @app.get("/api/blocks/{block_id}")

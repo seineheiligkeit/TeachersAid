@@ -23,7 +23,8 @@ if __name__ == "__main__":
         blocks = seed_blocks()
         print(f"\nHarvested {len(blocks)} blocks into the block library "
               f"({sum(1 for b in blocks if b.role=='task')} tasks, "
-              f"{sum(1 for b in blocks if b.role=='info')} info) — status 'in_review'.")
+              f"{sum(1 for b in blocks if b.role=='info')} info) — status 'approved' "
+              "(curated seed; composable into worksheets).")
         print("\nRun 'python -m teachersaid' and open the dashboard to review them.")
         sys.exit(0)
 

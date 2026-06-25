@@ -139,9 +139,23 @@ Phase 1 (built):
 - `store/blockstore.py::BlockStore` — JSON under `runs/blocks/`; `upsert` is idempotent and **preserves
   review status** (re-seeding never un-approves). `python -m teachersaid seed` harvests the example
   worksheets' blocks (~21) as the seed; `library.seed_blocks()`.
-- Dashboard **Bausteine** tab reviews blocks (approve → library). **Statistik** (`teachersaid/stats.py`)
-  is now the **block matrix**: per subject — task/info blocks, catalog competences covered (≥1 approved
-  task block), cognitive-level spread, what's empty.
+- Dashboard **Bausteine** tab reviews blocks (approve → library; **"Alle in Prüfung freigeben"** =
+  `POST /api/blocks/approve-all`). The curated seed blocks come from the SME-reviewed examples, so
+  `seed_blocks` seeds them **`approved`** (idempotent `upsert` preserves status). **Statistik**
+  (`teachersaid/stats.py`) is the **block matrix**: per subject — task/info blocks, catalog competences
+  covered (≥1 approved task block), cognitive-level spread, what's empty.
+
+## Composition — worksheet from blocks (Phase 2, dumb v1)
+
+`pipeline/compose.py::compose(subject, klasse, topic, envelope, *, block_store)` builds a worksheet from
+**approved** library blocks: select blocks serving the topic's competences (printable), order by
+cognitive level, one per `family`, prefer the `scope` matching the envelope, **greedy time-fit** to the
+envelope budget, pull ≤2 readable info blocks, and add a *template* framing (Kernfrage + intro — no LLM).
+Result is a `WorksheetContent` → the existing `assemble`/`verify`/`render`. `orch.compose_worksheet`
+lands it as a content item (`source="compose"`); dashboard **Inhalte** has an "Arbeitsblatt
+zusammenstellen" form; `POST /api/compose`. **No optimizer, no difficulty calibration** (Phase 3:
+`scope` richness variants + calibration). A composed sheet is still a `WorksheetContent`, so rendering is
+unchanged — assets don't yet travel with blocks, so figure-info-blocks are skipped in composition for now.
 
 ## HITL dashboard (`api/` + `api/static/index.html`)
 

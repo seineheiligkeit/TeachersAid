@@ -150,6 +150,44 @@ def flesh_out(
     return _produce_content_item(store, bs, generator=generator, extra_notes=notes)
 
 
+def compose_worksheet(
+    store: ReviewStore,
+    block_store,
+    subject: str,
+    klasse: int,
+    topic: str,
+    envelope: str = "doppelstunde",
+    *,
+    today: date | None = None,
+) -> ReviewItem:
+    """Assemble a worksheet from approved library blocks (Phase 2) into a content
+    item for Gate-2 review. Selection happens in pipeline/compose; the existing
+    assemble(+derive) / verify / render stages then run unchanged."""
+    from .compose import compose
+
+    item = ReviewItem(
+        id="", stage="content", source="compose",
+        title=f"{subject} {klasse}. Kl. — {topic} (zusammengestellt)",
+        request=BundleRequest(subject=subject, klasse=klasse, topic_raw=topic, envelope=envelope),
+    )
+    store.create(item)
+    try:
+        content, res = compose(subject, klasse, topic, envelope, block_store=block_store, today=today)
+        item.resolution = res
+        assemble(content, res)
+        report = verify(content, res)
+        item.artifacts = _render_all(item.id, content)
+        item.content = content
+        item.verify_problems = report.problems
+        item.verify_warnings = report.warnings
+        item.status = "pending"
+        item.error = None
+    except Exception as exc:  # noqa: BLE001 — surface as an item error, don't crash
+        item.error = f"{type(exc).__name__}: {exc}"
+        item.status = "pending"
+    return store.save(item)
+
+
 def _produce_content_item(
     store: ReviewStore,
     idea: ReviewItem,

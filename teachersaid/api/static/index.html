@@ -101,15 +101,27 @@ function buildShell(){
           <div class="row" style="margin-bottom:8px">
             <select id="blk-status" onchange="refresh()"><option value="">alle Status</option><option value="in_review">in Prüfung</option><option value="approved">freigegeben</option><option value="rejected">abgelehnt</option></select>
             <select id="blk-role" onchange="refresh()"><option value="">alle Typen</option><option value="task">Aufgabe</option><option value="info">Info / Text</option></select>
+            <button class="ghost" onclick="approveAllBlocks()">Alle in Prüfung freigeben</button>
           </div>
           <div id="blk-list"></div></div>
         <div id="detail" class="card"><p class="muted">Wähle links einen Baustein.</p></div>
       </div>`;
   } else if(TAB==="inhalte" || TAB==="bibliothek"){
+    const composer = TAB==="inhalte" ? `
+      <div class="card"><h2>Arbeitsblatt zusammenstellen</h2>
+        <p class="muted">Aus <b>freigegebenen</b> Bausteinen für ein Thema + Dauer (dumb v1: passende Bausteine, nach Niveau geordnet, zeitlich begrenzt).</p>
+        <label>Fach</label><input id="c-subject" value="Physik" />
+        <div class="row"><div style="flex:1"><label>Klasse</label><input id="c-klasse" type="number" value="4" /></div>
+          <div style="flex:1"><label>Dauer</label><select id="c-env"><option>einzelstunde</option><option selected>doppelstunde</option><option>block</option></select></div></div>
+        <label>Thema</label><input id="c-topic" value="Strahlung und Radioaktivität" />
+        <div class="row" style="margin-top:8px"><button onclick="composeSheet()">Zusammenstellen</button></div>
+      </div>` : "";
     $("#main").innerHTML = `
       <div class="grid2">
-        <div class="card"><h2>${TAB==="inhalte"?"Ausgearbeitet (in Prüfung)":"Bibliothek (freigegeben)"}</h2><div id="content-list"></div></div>
-        <div id="detail" class="card"><p class="muted">Wähle links einen Eintrag.</p></div>
+        <div>${composer}
+          <div class="card"><h2>${TAB==="inhalte"?"Arbeitsblätter (in Prüfung)":"Bibliothek (freigegeben)"}</h2><div id="content-list"></div></div>
+        </div>
+        <div id="detail" class="card"><p class="muted">Wähle einen Eintrag.</p></div>
       </div>`;
   } else {
     $("#main").innerHTML = `<div id="stats"><p class="muted">lädt…</p></div>`;
@@ -156,6 +168,11 @@ async function suggest(){ await jpost("/api/brainstorm/suggest",{subject:$("#s-s
 async function fleshOut(id){
   const r = await jpost(`/api/items/${id}/flesh-out`,{});
   TAB="inhalte"; SELECTED=r.id||null; VIEW="bloecke"; renderTabs(); buildShell(); await refresh(); if(SELECTED) openDetail(SELECTED);
+}
+async function composeSheet(){
+  const topic=$("#c-topic").value.trim(); if(!topic){ $("#c-topic").focus(); return; }
+  const r = await jpost("/api/compose",{subject:$("#c-subject").value,klasse:+$("#c-klasse").value,topic,envelope:$("#c-env").value});
+  SELECTED=r.id||null; VIEW="bloecke"; await refresh(); if(SELECTED) openDetail(SELECTED);
 }
 
 /* ---------- Inhalte / Bibliothek ---------- */
@@ -281,6 +298,7 @@ async function openBlock(id){
   $("#detail").innerHTML = h;
 }
 async function actBlock(id,kind){ await jpost(`/api/blocks/${id}/${kind}`,{}); setTimeout(refresh,150); }
+async function approveAllBlocks(){ await jpost("/api/blocks/approve-all",{}); setTimeout(refresh,200); }
 
 /* ---------- Statistik ---------- */
 async function renderStats(){

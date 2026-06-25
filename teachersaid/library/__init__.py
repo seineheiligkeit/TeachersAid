@@ -77,9 +77,11 @@ def seed_library(store=None, *, today: date | None = None) -> list:
     return out
 
 
-def seed_blocks(store=None) -> list:
-    """Harvest every example worksheet's blocks into the block library (idempotent;
-    preserves existing review status). The seed of the master block library."""
+def seed_blocks(store=None, *, status: str = "approved") -> list:
+    """Harvest every example worksheet's blocks into the block library. These come
+    from the curated, SME-reviewed examples, so they seed straight as `approved`
+    (the library the composer draws on). Idempotent: `upsert` preserves the status
+    of blocks that already exist, so this never un-approves or re-approves edits."""
     from .block import harvest
     from ..store.blockstore import BlockStore
 
@@ -87,5 +89,6 @@ def seed_blocks(store=None) -> list:
     out = []
     for ex in EXAMPLES:
         for lb in harvest(ex.build(), example_key=ex.key):
+            lb.status = status
             out.append(store.upsert(lb))
     return out

@@ -46,7 +46,7 @@ def test_blockstore_upsert_preserves_review_status(blockstore):
 
 
 def test_seed_blocks_then_coverage_stats(blockstore):
-    seed_blocks(blockstore)
+    seed_blocks(blockstore, status="in_review")  # test the in-review -> approve flow
     allb = blockstore.list()
     assert len(allb) >= 15 and all(b.status == "in_review" for b in allb)
 
