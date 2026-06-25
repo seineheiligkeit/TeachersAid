@@ -102,7 +102,10 @@ def _response_flowables(b: TaskBlock, S, width):
         guide = getattr(r, "guide", None) or getattr(r, "produces", None) or ""
         lead = {"diagram": "Diagramm zeichnen", "drawing": "Skizze",
                 "artifact": "Produkt"}[mode]
-        out = [rb.para(f"<i>[{lead}{': ' + guide if guide else ''}]</i>", S["meta"])]
+        # raw_para: the <i> tags are intentional markup; escape only the dynamic guide
+        # (rb.para would escape the tags too → literal "<i>" in the PDF).
+        inner = lead + (f": {rb.richtext_markup(guide)}" if guide else "")
+        out = [rb.raw_para(f"<i>[{inner}]</i>", S["meta"])]
         out.append(rb.answer_box(45, width))
         return out
     return []
