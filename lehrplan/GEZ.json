@@ -14,7 +14,38 @@
     10
   ],
   "competence_model": {
-    "handlungsdimensionen": []
+    "handlungsdimensionen": [
+      {
+        "code": "H1",
+        "label": "Analysieren, Abstrahieren und Argumentieren",
+        "modality": "printable"
+      },
+      {
+        "code": "H2",
+        "label": "Darstellen und Operieren",
+        "modality": "printable"
+      },
+      {
+        "code": "H3",
+        "label": "Interpretieren und Reflektieren",
+        "modality": "printable"
+      }
+    ],
+    "content_areas": [
+      {
+        "code": "I1",
+        "label": "Geometrische Objekte und ihre Eigenschaften"
+      },
+      {
+        "code": "I2",
+        "label": "Transformationen von Objekten und Relationen zwischen Objekten"
+      },
+      {
+        "code": "I3",
+        "label": "Projektionen und Risse"
+      }
+    ],
+    "notes": "Realgymnasium, 4. Klasse only. H-dimension is inline-tagged per competence (H1/H2/H3); the competence's kompetenzbereich is its content area (I1/I2/I3). Dynamic-geometry software is an interactive medium."
   },
   "zentrale_konzepte": [
     {
@@ -35,347 +66,6 @@
     }
   ],
   "competences": [
-    {
-      "id": "GEZ.US.x.ALL.01",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Erkennen und Verwenden der Geometrie als Kommunikationsmittel",
-      "dimensions": [],
-      "uebergreifende_themen": [
-        6
-      ],
-      "aria_level": 2,
-      "source_ref": "GEOMETRISCHES ZEICHNEN / Klasse n/a / —"
-    },
-    {
-      "id": "GEZ.US.x.ALL.02",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Erkennen von Strukturen und Eigenschaften geometrischer Objekte",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "GEOMETRISCHES ZEICHNEN / Klasse n/a / —"
-    },
-    {
-      "id": "GEZ.US.x.ALL.03",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "gedankliches Übertragen von realen Objekten in eine idealisierte geometrische Form",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "GEOMETRISCHES ZEICHNEN / Klasse n/a / —"
-    },
-    {
-      "id": "GEZ.US.x.ALL.04",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Lesen und Herstellen von Rissen räumlicher Objekte",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "GEOMETRISCHES ZEICHNEN / Klasse n/a / —"
-    },
-    {
-      "id": "GEZ.US.x.ALL.05",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Transformieren und Bearbeiten von Objekten",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "GEOMETRISCHES ZEICHNEN / Klasse n/a / —"
-    },
-    {
-      "id": "GEZ.US.x.ALL.06",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Anwenden geometrischer Grundkenntnisse auf alltagsrelevante Fragestellungen",
-      "dimensions": [],
-      "uebergreifende_themen": [
-        10
-      ],
-      "aria_level": 2,
-      "source_ref": "GEOMETRISCHES ZEICHNEN / Klasse n/a / —"
-    },
-    {
-      "id": "GEZ.US.x.ALL.07",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Weiterentwickeln des räumlichen Vorstellungsvermögens durch das Arbeiten mit haptischen Modellen und virtuellen geometrischen Objekten",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "GEOMETRISCHES ZEICHNEN / Klasse n/a / —"
-    },
-    {
-      "id": "GEZ.US.x.ALL.08",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Vertiefen konstruktiven Raumdenkens",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "GEOMETRISCHES ZEICHNEN / Klasse n/a / —"
-    },
-    {
-      "id": "GEZ.US.x.ALL.09",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Beherrschen unterschiedlicher Darstellungsformen von geometrischen Sachverhalten",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "GEOMETRISCHES ZEICHNEN / Klasse n/a / —"
-    },
-    {
-      "id": "GEZ.US.x.ALL.10",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "sinnvolles Einsetzen von Freihandskizzen, Konstruktionszeichnungen und Geometrie-Software",
-      "dimensions": [],
-      "uebergreifende_themen": [
-        4
-      ],
-      "aria_level": 2,
-      "source_ref": "GEOMETRISCHES ZEICHNEN / Klasse n/a / —"
-    },
-    {
-      "id": "GEZ.US.x.ALL.11",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Weiterentwickeln der Feinmotorik durch genaues Arbeiten",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "GEOMETRISCHES ZEICHNEN / Klasse n/a / —"
-    },
-    {
-      "id": "GEZ.US.x.ALL.12",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Anfertigen von korrekten digitalen und händischen Konstruktionen",
-      "dimensions": [],
-      "uebergreifende_themen": [
-        4
-      ],
-      "aria_level": 2,
-      "source_ref": "GEOMETRISCHES ZEICHNEN / Klasse n/a / —"
-    },
-    {
-      "id": "GEZ.US.x.ALL.13",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "das Arbeiten mit haptischen Modellen, das den Übergang von der Realität zur Abstraktion unterstützt,",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "GEOMETRISCHES ZEICHNEN / Klasse n/a / —"
-    },
-    {
-      "id": "GEZ.US.x.ALL.14",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "das Anfertigen von Freihandskizzen oder Konstruktionszeichnungen zur Veranschaulichung der Ergebnisse von Denkprozessen zu geometrischen Fragestellungen,",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "GEOMETRISCHES ZEICHNEN / Klasse n/a / —"
-    },
-    {
-      "id": "GEZ.US.x.ALL.15",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "das Einsetzen von Geometrie-Software zur Erstellung von statischen und dynamischen Modellen, die es erlauben, räumliche Situationen und dynamische Vorgänge zu veranschaulichen und nachvollziehbar zu machen.",
-      "dimensions": [],
-      "uebergreifende_themen": [
-        4
-      ],
-      "aria_level": 2,
-      "source_ref": "GEOMETRISCHES ZEICHNEN / Klasse n/a / —"
-    },
-    {
-      "id": "GEZ.US.x.ALL.16",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "korrekte Verwendung der geometrischen Fachsprache",
-      "dimensions": [],
-      "uebergreifende_themen": [
-        10
-      ],
-      "aria_level": 2,
-      "source_ref": "GEOMETRISCHES ZEICHNEN / Klasse n/a / —"
-    },
-    {
-      "id": "GEZ.US.x.ALL.17",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Genauigkeit und Sauberkeit bei der Ausführung der Arbeiten",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "GEOMETRISCHES ZEICHNEN / Klasse n/a / —"
-    },
-    {
-      "id": "GEZ.US.x.ALL.18",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "ansprechende grafische Gestaltung der Arbeiten",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "GEOMETRISCHES ZEICHNEN / Klasse n/a / —"
-    },
-    {
-      "id": "GEZ.US.x.ALL.19",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Korrektheit des computerunterstützten Konstruierens",
-      "dimensions": [],
-      "uebergreifende_themen": [
-        4
-      ],
-      "aria_level": 2,
-      "source_ref": "GEOMETRISCHES ZEICHNEN / Klasse n/a / —"
-    },
-    {
-      "id": "GEZ.US.x.ALL.20",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Förderung von kreativem Arbeiten und selbstständigem Gestalten",
-      "dimensions": [],
-      "uebergreifende_themen": [
-        6
-      ],
-      "aria_level": 2,
-      "source_ref": "GEOMETRISCHES ZEICHNEN / Klasse n/a / —"
-    },
-    {
-      "id": "GEZ.US.x.ALL.21",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Geometrische Objekte und ihre Eigenschaften (I1)",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "GEOMETRISCHES ZEICHNEN / Klasse n/a / —"
-    },
-    {
-      "id": "GEZ.US.x.ALL.22",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Transformationen von Objekten und Relationen zwischen Objekten (I2)",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "GEOMETRISCHES ZEICHNEN / Klasse n/a / —"
-    },
-    {
-      "id": "GEZ.US.x.ALL.23",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Projektionen und Risse (I3)",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "GEOMETRISCHES ZEICHNEN / Klasse n/a / —"
-    },
-    {
-      "id": "GEZ.US.x.ALL.24",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Analysieren, Abstrahieren und Argumentieren (H1)",
-      "dimensions": [],
-      "uebergreifende_themen": [
-        10
-      ],
-      "aria_level": 2,
-      "source_ref": "GEOMETRISCHES ZEICHNEN / Klasse n/a / —"
-    },
-    {
-      "id": "GEZ.US.x.ALL.25",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Darstellen und Operieren (H2)",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "GEOMETRISCHES ZEICHNEN / Klasse n/a / —"
-    },
-    {
-      "id": "GEZ.US.x.ALL.26",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Interpretieren und Reflektieren (H3)",
-      "dimensions": [],
-      "uebergreifende_themen": [
-        10
-      ],
-      "aria_level": 2,
-      "source_ref": "GEOMETRISCHES ZEICHNEN / Klasse n/a / —"
-    },
-    {
-      "id": "GEZ.US.x.ALL.27",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Arbeiten mit haptischen Modellen",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "GEOMETRISCHES ZEICHNEN / Klasse n/a / —"
-    },
-    {
-      "id": "GEZ.US.x.ALL.28",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Anfertigen von Freihandskizzen und Konstruktionszeichnungen",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "GEOMETRISCHES ZEICHNEN / Klasse n/a / —"
-    },
-    {
-      "id": "GEZ.US.x.ALL.29",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Modellieren mit Geometrie-Software",
-      "dimensions": [],
-      "uebergreifende_themen": [
-        4
-      ],
-      "aria_level": 2,
-      "source_ref": "GEOMETRISCHES ZEICHNEN / Klasse n/a / —"
-    },
     {
       "id": "GEZ.US.4.GEO.01",
       "klasse": 4,
@@ -501,6 +191,7 @@
       ]
     }
   ],
+  "vorschlaege_digitale_technologien": [],
   "prose": [
     {
       "section": "lehraufgabe",
@@ -508,9 +199,109 @@
       "text": "Im Unterrichtsgegenstand Geometrisches Zeichnen werden besonders jene Fähigkeiten und Fertigkeiten geschult, welche die Weiterentwicklung des Raumvorstellungsvermögens und des konstruktiven Raumdenkens zum Ziel haben. Damit geht die Förderung der allgemeinen reflexiven Lebensbewältigung in unserer modernen und zukunftsorientierten Gesellschaft einher. Ein gut ausgebildetes Raumvorstellungsvermögen und eine solide Fähigkeit zum konstruktiven Raumdenken sind zudem wichtige Voraussetzungen für analoge und digitale Berufsfelder. Insbesondere sollen die Schülerinnen und Schüler die folgenden maßgeblichen Fähigkeiten erlangen und die nachstehenden zentralen Ziele erreichen:"
     },
     {
+      "section": "lehraufgabe",
+      "label": "",
+      "text": "Erkennen und Verwenden der Geometrie als Kommunikationsmittel"
+    },
+    {
+      "section": "lehraufgabe",
+      "label": "",
+      "text": "Erkennen von Strukturen und Eigenschaften geometrischer Objekte"
+    },
+    {
+      "section": "lehraufgabe",
+      "label": "",
+      "text": "gedankliches Übertragen von realen Objekten in eine idealisierte geometrische Form"
+    },
+    {
+      "section": "lehraufgabe",
+      "label": "",
+      "text": "Lesen und Herstellen von Rissen räumlicher Objekte"
+    },
+    {
+      "section": "lehraufgabe",
+      "label": "",
+      "text": "Transformieren und Bearbeiten von Objekten"
+    },
+    {
+      "section": "lehraufgabe",
+      "label": "",
+      "text": "Anwenden geometrischer Grundkenntnisse auf alltagsrelevante Fragestellungen"
+    },
+    {
+      "section": "lehraufgabe",
+      "label": "",
+      "text": "Weiterentwickeln des räumlichen Vorstellungsvermögens durch das Arbeiten mit haptischen Modellen und virtuellen geometrischen Objekten"
+    },
+    {
+      "section": "lehraufgabe",
+      "label": "",
+      "text": "Vertiefen konstruktiven Raumdenkens"
+    },
+    {
+      "section": "lehraufgabe",
+      "label": "",
+      "text": "Beherrschen unterschiedlicher Darstellungsformen von geometrischen Sachverhalten"
+    },
+    {
+      "section": "lehraufgabe",
+      "label": "",
+      "text": "sinnvolles Einsetzen von Freihandskizzen, Konstruktionszeichnungen und Geometrie-Software"
+    },
+    {
+      "section": "lehraufgabe",
+      "label": "",
+      "text": "Weiterentwickeln der Feinmotorik durch genaues Arbeiten"
+    },
+    {
+      "section": "lehraufgabe",
+      "label": "",
+      "text": "Anfertigen von korrekten digitalen und händischen Konstruktionen"
+    },
+    {
       "section": "didaktik",
       "label": "Didaktische Grundsätze (4. Klasse):",
-      "text": "Raumvorstellung und die Grundlagen der Raumgeometrie bilden das Fundament des Unterrichtsgegenstandes Geometrisches Zeichnen. Aussagen über geometrische Inhalte und Beziehungen sollen vorwiegend aus der jeweiligen Raumsituation entwickelt werden. Der Unterricht ist so zu gestalten, dass sich die Handlungsbereiche des Kompetenzmodells in einem ausgewogenen Verhältnis abwechseln. Je nach Aufgabenstellung und den individuellen Bedürfnissen und Interessen der Schülerinnen und Schüler wird mit unterschiedlichen Hilfsmitteln bzw. Methoden gearbeitet. Damit wird das grundlegende Erfassen von räumlichen Beziehungen und Situationen unterstützt und es werden Grundlagen für ein tiefergehendes Verständnis und weiterführende geometrische Tätigkeiten geschaffen. Folgende Methoden sind den Fragestellungen entsprechend zu wählen und gegebenenfalls zu kombinieren: Im Unterricht ist auf folgende Gestaltungsprinzipien Wert zu legen:"
+      "text": "Raumvorstellung und die Grundlagen der Raumgeometrie bilden das Fundament des Unterrichtsgegenstandes Geometrisches Zeichnen. Aussagen über geometrische Inhalte und Beziehungen sollen vorwiegend aus der jeweiligen Raumsituation entwickelt werden. Der Unterricht ist so zu gestalten, dass sich die Handlungsbereiche des Kompetenzmodells in einem ausgewogenen Verhältnis abwechseln. Je nach Aufgabenstellung und den individuellen Bedürfnissen und Interessen der Schülerinnen und Schüler wird mit unterschiedlichen Hilfsmitteln bzw. Methoden gearbeitet. Damit wird das grundlegende Erfassen von räumlichen Beziehungen und Situationen unterstützt und es werden Grundlagen für ein tiefergehendes Verständnis und weiterführende geometrische Tätigkeiten geschaffen. Folgende Methoden sind den Fragestellungen entsprechend zu wählen und gegebenenfalls zu kombinieren:"
+    },
+    {
+      "section": "didaktik",
+      "label": "",
+      "text": "das Arbeiten mit haptischen Modellen, das den Übergang von der Realität zur Abstraktion unterstützt,"
+    },
+    {
+      "section": "didaktik",
+      "label": "",
+      "text": "das Anfertigen von Freihandskizzen oder Konstruktionszeichnungen zur Veranschaulichung der Ergebnisse von Denkprozessen zu geometrischen Fragestellungen,"
+    },
+    {
+      "section": "didaktik",
+      "label": "",
+      "text": "das Einsetzen von Geometrie-Software zur Erstellung von statischen und dynamischen Modellen, die es erlauben, räumliche Situationen und dynamische Vorgänge zu veranschaulichen und nachvollziehbar zu machen. Im Unterricht ist auf folgende Gestaltungsprinzipien Wert zu legen:"
+    },
+    {
+      "section": "didaktik",
+      "label": "",
+      "text": "korrekte Verwendung der geometrischen Fachsprache"
+    },
+    {
+      "section": "didaktik",
+      "label": "",
+      "text": "Genauigkeit und Sauberkeit bei der Ausführung der Arbeiten"
+    },
+    {
+      "section": "didaktik",
+      "label": "",
+      "text": "ansprechende grafische Gestaltung der Arbeiten"
+    },
+    {
+      "section": "didaktik",
+      "label": "",
+      "text": "Korrektheit des computerunterstützten Konstruierens"
+    },
+    {
+      "section": "didaktik",
+      "label": "",
+      "text": "Förderung von kreativem Arbeiten und selbstständigem Gestalten"
     },
     {
       "section": "didaktik",
@@ -525,7 +316,52 @@
     {
       "section": "kompetenzmodell",
       "label": "Kompetenzmodell und Kompetenzbereiche (4. Klasse):",
-      "text": "Geometrische Kompetenzen sind charakterisiert durch geometrische Inhalte, die in einer Inhaltsdimension erfasst sind, und durch geometrische Tätigkeiten, die in einer Handlungsdimension erfasst sind. Verwandte geometrische Inhalte werden zu Inhaltsbereichen, verwandte geometrische Tätigkeiten zu Handlungsbereichen zusammengefasst. Somit ist jede geometrische Kompetenz als ein Paar eines Inhalts- und eines Handlungsbereichs festgelegt. Um die Inhaltsbereiche und die Handlungsbereiche bei den Kompetenzbeschreibungen deutlich sichtbar zu machen, werden die Inhaltsbereiche mit den Abkürzungen I1 bis I3, die Handlungsbereiche mit H1 bis H3 gekennzeichnet. Die Inhaltsdimension spiegelt strukturiert die wesentlichen Inhalte des Gegenstandes Geometrisches Zeichnen wider. Die Handlungsdimension weist die unterschiedlichen Tätigkeiten aus, die im Geometrieunterricht entwickelt und gefördert werden. Um geometrische Denkleistungen zu unterstützen und zu visualisieren, bieten sich unterschiedliche Methoden an. Diese sind den Fragestellungen entsprechend zu wählen und gegebenenfalls zu kombinieren. Die Kompetenzen werden zu drei Kompetenzbereichen gebündelt, die sich an den Inhaltsbereichen orientieren. Jeder Kompetenzbereich beinhaltet wiederum drei Kompetenzbeschreibungen."
+      "text": "Geometrische Kompetenzen sind charakterisiert durch geometrische Inhalte, die in einer Inhaltsdimension erfasst sind, und durch geometrische Tätigkeiten, die in einer Handlungsdimension erfasst sind. Verwandte geometrische Inhalte werden zu Inhaltsbereichen, verwandte geometrische Tätigkeiten zu Handlungsbereichen zusammengefasst. Somit ist jede geometrische Kompetenz als ein Paar eines Inhalts- und eines Handlungsbereichs festgelegt. Um die Inhaltsbereiche und die Handlungsbereiche bei den Kompetenzbeschreibungen deutlich sichtbar zu machen, werden die Inhaltsbereiche mit den Abkürzungen I1 bis I3, die Handlungsbereiche mit H1 bis H3 gekennzeichnet. Die Inhaltsdimension spiegelt strukturiert die wesentlichen Inhalte des Gegenstandes Geometrisches Zeichnen wider."
+    },
+    {
+      "section": "kompetenzmodell",
+      "label": "",
+      "text": "Geometrische Objekte und ihre Eigenschaften (I1)"
+    },
+    {
+      "section": "kompetenzmodell",
+      "label": "",
+      "text": "Transformationen von Objekten und Relationen zwischen Objekten (I2)"
+    },
+    {
+      "section": "kompetenzmodell",
+      "label": "",
+      "text": "Projektionen und Risse (I3) Die Handlungsdimension weist die unterschiedlichen Tätigkeiten aus, die im Geometrieunterricht entwickelt und gefördert werden."
+    },
+    {
+      "section": "kompetenzmodell",
+      "label": "",
+      "text": "Analysieren, Abstrahieren und Argumentieren (H1)"
+    },
+    {
+      "section": "kompetenzmodell",
+      "label": "",
+      "text": "Darstellen und Operieren (H2)"
+    },
+    {
+      "section": "kompetenzmodell",
+      "label": "",
+      "text": "Interpretieren und Reflektieren (H3) Um geometrische Denkleistungen zu unterstützen und zu visualisieren, bieten sich unterschiedliche Methoden an. Diese sind den Fragestellungen entsprechend zu wählen und gegebenenfalls zu kombinieren."
+    },
+    {
+      "section": "kompetenzmodell",
+      "label": "",
+      "text": "Arbeiten mit haptischen Modellen"
+    },
+    {
+      "section": "kompetenzmodell",
+      "label": "",
+      "text": "Anfertigen von Freihandskizzen und Konstruktionszeichnungen"
+    },
+    {
+      "section": "kompetenzmodell",
+      "label": "",
+      "text": "Modellieren mit Geometrie-Software Die Kompetenzen werden zu drei Kompetenzbereichen gebündelt, die sich an den Inhaltsbereichen orientieren. Jeder Kompetenzbereich beinhaltet wiederum drei Kompetenzbeschreibungen."
     },
     {
       "section": "kompetenzbeschreibungen",

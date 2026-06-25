@@ -3,7 +3,7 @@
   "name": "CHEMIE",
   "stufe": "Unterstufe",
   "type": "pflichtgegenstand",
-  "variant": "Variante 2",
+  "variant": "Wirtschaftskundliches Realgymnasium, vierstündig, 3.–4. Klasse",
   "klassen": [
     3,
     4
@@ -22,7 +22,25 @@
     13
   ],
   "competence_model": {
-    "handlungsdimensionen": []
+    "handlungsdimensionen": [
+      {
+        "code": "W",
+        "label": "Wissen aneignen und kommunizieren",
+        "modality": "printable"
+      },
+      {
+        "code": "E",
+        "label": "Erkenntnisse gewinnen und interpretieren",
+        "modality": "printable"
+      },
+      {
+        "code": "S",
+        "label": "Standpunkte begründen, Entscheidungen treffen und reflektiert handeln",
+        "modality": "printable"
+      }
+    ],
+    "content_areas": null,
+    "notes": "Same W/E/S model as CHE; the WkRG variant runs 3.+4. Klasse with more hours and a broader Lehrstoff."
   },
   "zentrale_konzepte": [
     {
@@ -46,9 +64,12 @@
       "kompetenzbereich_code": "WIS",
       "text": "Vorgänge und Phänomene in Natur, Umwelt und Technik sowie deren Auswirkungen beobachten, erfassen, beschreiben und benennen.",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        10,
+        12
+      ],
       "aria_level": 2,
-      "source_ref": "CHEMIE / Klasse n/a / Wissen aneignen und kommunizieren (W)"
+      "source_ref": "CHEMIE / alle Klassen / Wissen aneignen und kommunizieren (W)"
     },
     {
       "id": "CHE2.US.x.WIS.02",
@@ -57,9 +78,12 @@
       "kompetenzbereich_code": "WIS",
       "text": "unterschiedlichen Medien und Quellen fachspezifische Informationen entnehmen.",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        4,
+        6
+      ],
       "aria_level": 2,
-      "source_ref": "CHEMIE / Klasse n/a / Wissen aneignen und kommunizieren (W)"
+      "source_ref": "CHEMIE / alle Klassen / Wissen aneignen und kommunizieren (W)"
     },
     {
       "id": "CHE2.US.x.WIS.03",
@@ -72,7 +96,7 @@
         10
       ],
       "aria_level": 2,
-      "source_ref": "CHEMIE / Klasse n/a / Wissen aneignen und kommunizieren (W)"
+      "source_ref": "CHEMIE / alle Klassen / Wissen aneignen und kommunizieren (W)"
     },
     {
       "id": "CHE2.US.x.ERK.01",
@@ -83,7 +107,7 @@
       "dimensions": [],
       "uebergreifende_themen": [],
       "aria_level": 2,
-      "source_ref": "CHEMIE / Klasse n/a / Erkenntnisse gewinnen und interpretieren (E)"
+      "source_ref": "CHEMIE / alle Klassen / Erkenntnisse gewinnen und interpretieren (E)"
     },
     {
       "id": "CHE2.US.x.ERK.02",
@@ -94,7 +118,7 @@
       "dimensions": [],
       "uebergreifende_themen": [],
       "aria_level": 2,
-      "source_ref": "CHEMIE / Klasse n/a / Erkenntnisse gewinnen und interpretieren (E)"
+      "source_ref": "CHEMIE / alle Klassen / Erkenntnisse gewinnen und interpretieren (E)"
     },
     {
       "id": "CHE2.US.x.ERK.03",
@@ -105,7 +129,7 @@
       "dimensions": [],
       "uebergreifende_themen": [],
       "aria_level": 2,
-      "source_ref": "CHEMIE / Klasse n/a / Erkenntnisse gewinnen und interpretieren (E)"
+      "source_ref": "CHEMIE / alle Klassen / Erkenntnisse gewinnen und interpretieren (E)"
     },
     {
       "id": "CHE2.US.x.STA.01",
@@ -114,9 +138,12 @@
       "kompetenzbereich_code": "STA",
       "text": "Informationen aus verschiedenen Quellen aus naturwissenschaftlicher Sicht bewerten und Schlüsse daraus ziehen.",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        4,
+        6
+      ],
       "aria_level": 2,
-      "source_ref": "CHEMIE / Klasse n/a / Standpunkte begründen, Entscheidungen treffen und reflektiert handeln (S)"
+      "source_ref": "CHEMIE / alle Klassen / Standpunkte begründen, Entscheidungen treffen und reflektiert handeln (S)"
     },
     {
       "id": "CHE2.US.x.STA.02",
@@ -129,7 +156,7 @@
         10
       ],
       "aria_level": 2,
-      "source_ref": "CHEMIE / Klasse n/a / Standpunkte begründen, Entscheidungen treffen und reflektiert handeln (S)"
+      "source_ref": "CHEMIE / alle Klassen / Standpunkte begründen, Entscheidungen treffen und reflektiert handeln (S)"
     },
     {
       "id": "CHE2.US.x.STA.03",
@@ -138,9 +165,13 @@
       "kompetenzbereich_code": "STA",
       "text": "Bedeutung, Chancen und Risiken der Anwendungen von naturwissenschaftlichen Erkenntnissen für sich persönlich und für die Gesellschaft erkennen, um verantwortungsbewusst zu handeln.",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        1,
+        3,
+        11
+      ],
       "aria_level": 2,
-      "source_ref": "CHEMIE / Klasse n/a / Standpunkte begründen, Entscheidungen treffen und reflektiert handeln (S)"
+      "source_ref": "CHEMIE / alle Klassen / Standpunkte begründen, Entscheidungen treffen und reflektiert handeln (S)"
     },
     {
       "id": "CHE2.US.x.STA.04",
@@ -149,210 +180,46 @@
       "kompetenzbereich_code": "STA",
       "text": "die Bedeutung von Naturwissenschaft und Technik für verschiedene Berufsfelder erfassen, um diese Kenntnis bei der Wahl ihres weiteren Bildungsweges zu verwenden.",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        1,
+        2,
+        13
+      ],
       "aria_level": 2,
-      "source_ref": "CHEMIE / Klasse n/a / Standpunkte begründen, Entscheidungen treffen und reflektiert handeln (S)"
-    },
-    {
-      "id": "CHE2.US.3.ALL.01",
-      "klasse": 3,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Aggregatzustände und Eigenschaften von Stoffen",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "CHEMIE / 3. Klasse / —"
-    },
-    {
-      "id": "CHE2.US.3.ALL.02",
-      "klasse": 3,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Aufbau von Atomen und Periodensystem",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "CHEMIE / 3. Klasse / —"
-    },
-    {
-      "id": "CHE2.US.3.ALL.03",
-      "klasse": 3,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Bindungsmodelle, Strukturen und Wechselwirkungen",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "CHEMIE / 3. Klasse / —"
-    },
-    {
-      "id": "CHE2.US.3.ALL.04",
-      "klasse": 3,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Symbolische und grafische Darstellungen auf Teilchenebene",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "CHEMIE / 3. Klasse / —"
-    },
-    {
-      "id": "CHE2.US.3.ALL.05",
-      "klasse": 3,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Kennzeichen chemischer Reaktionen: stoffliche und energetische Veränderungen",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "CHEMIE / 3. Klasse / —"
-    },
-    {
-      "id": "CHE2.US.3.ALL.06",
-      "klasse": 3,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Darstellung chemischer Reaktionen: Wort- und Formelgleichungen, modellhafte Darstellungen",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "CHEMIE / 3. Klasse / —"
-    },
-    {
-      "id": "CHE2.US.3.ALL.07",
-      "klasse": 3,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Typen chemischer Reaktionen: Säure-Base-Reaktionen, Reduktions-Oxidations-Reaktionen",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "CHEMIE / 3. Klasse / —"
-    },
-    {
-      "id": "CHE2.US.3.ALL.08",
-      "klasse": 3,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Planen, Durchführen, Beobachten, Erfassen, Auswerten und Dokumentieren von Untersuchungen (ua. Trennverfahren, einfache Nachweise, Synthesen und Analysen)",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "CHEMIE / 3. Klasse / —"
-    },
-    {
-      "id": "CHE2.US.3.ALL.09",
-      "klasse": 3,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Verhalten und Sicherheit im Umgang mit Chemikalien im chemischen Labor sowie im Alltag",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "CHEMIE / 3. Klasse / —"
-    },
-    {
-      "id": "CHE2.US.3.ALL.10",
-      "klasse": 3,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Bedeutung der Chemie für Alltag, Wirtschaft, Gesundheit und Umwelt sowie die damit verbundene Verantwortung für eine nachhaltige Zukunft",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "CHEMIE / 3. Klasse / —"
-    },
-    {
-      "id": "CHE2.US.4.ALL.01",
-      "klasse": 4,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Bindungsmodelle, Strukturen und Wechselwirkungen",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "CHEMIE / 4. Klasse / —"
-    },
-    {
-      "id": "CHE2.US.4.ALL.02",
-      "klasse": 4,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Symbolische und grafische Darstellungen auf Teilchenebene",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "CHEMIE / 4. Klasse / —"
-    },
-    {
-      "id": "CHE2.US.4.ALL.03",
-      "klasse": 4,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Darstellung chemischer Reaktionen: Wort- und Formelgleichungen, modellhafte Darstellungen",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "CHEMIE / 4. Klasse / —"
-    },
-    {
-      "id": "CHE2.US.4.ALL.04",
-      "klasse": 4,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Organische Stoffklassen und Typen organischer Reaktionen",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "CHEMIE / 4. Klasse / —"
-    },
-    {
-      "id": "CHE2.US.4.ALL.05",
-      "klasse": 4,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Biochemische Grundlagen",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "CHEMIE / 4. Klasse / —"
-    },
-    {
-      "id": "CHE2.US.4.ALL.06",
-      "klasse": 4,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Planen, Durchführen, Beobachten, Erfassen, Auswerten und Dokumentieren von Untersuchungen (ua. Nachweise, Synthesen und Analysen)",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "CHEMIE / 4. Klasse / —"
-    },
-    {
-      "id": "CHE2.US.4.ALL.07",
-      "klasse": 4,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Verhalten und Sicherheit im Umgang mit Chemikalien im chemischen Labor sowie im Alltag",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "CHEMIE / 4. Klasse / —"
-    },
-    {
-      "id": "CHE2.US.4.ALL.08",
-      "klasse": 4,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Bedeutung der Chemie für Alltag, Wirtschaft, Gesundheit und Umwelt sowie die damit verbundene Verantwortung für eine nachhaltige Zukunft",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "CHEMIE / 4. Klasse / —"
+      "source_ref": "CHEMIE / alle Klassen / Standpunkte begründen, Entscheidungen treffen und reflektiert handeln (S)"
     }
   ],
-  "anwendungsbereiche": [],
+  "anwendungsbereiche": [
+    {
+      "klasse": 3,
+      "items": [
+        "Aggregatzustände und Eigenschaften von Stoffen",
+        "Aufbau von Atomen und Periodensystem",
+        "Bindungsmodelle, Strukturen und Wechselwirkungen",
+        "Symbolische und grafische Darstellungen auf Teilchenebene",
+        "Kennzeichen chemischer Reaktionen: stoffliche und energetische Veränderungen",
+        "Darstellung chemischer Reaktionen: Wort- und Formelgleichungen, modellhafte Darstellungen",
+        "Typen chemischer Reaktionen: Säure-Base-Reaktionen, Reduktions-Oxidations-Reaktionen",
+        "Planen, Durchführen, Beobachten, Erfassen, Auswerten und Dokumentieren von Untersuchungen (ua. Trennverfahren, einfache Nachweise, Synthesen und Analysen)",
+        "Verhalten und Sicherheit im Umgang mit Chemikalien im chemischen Labor sowie im Alltag",
+        "Bedeutung der Chemie für Alltag, Wirtschaft, Gesundheit und Umwelt sowie die damit verbundene Verantwortung für eine nachhaltige Zukunft"
+      ]
+    },
+    {
+      "klasse": 4,
+      "items": [
+        "Bindungsmodelle, Strukturen und Wechselwirkungen",
+        "Symbolische und grafische Darstellungen auf Teilchenebene",
+        "Darstellung chemischer Reaktionen: Wort- und Formelgleichungen, modellhafte Darstellungen",
+        "Organische Stoffklassen und Typen organischer Reaktionen",
+        "Biochemische Grundlagen",
+        "Planen, Durchführen, Beobachten, Erfassen, Auswerten und Dokumentieren von Untersuchungen (ua. Nachweise, Synthesen und Analysen)",
+        "Verhalten und Sicherheit im Umgang mit Chemikalien im chemischen Labor sowie im Alltag",
+        "Bedeutung der Chemie für Alltag, Wirtschaft, Gesundheit und Umwelt sowie die damit verbundene Verantwortung für eine nachhaltige Zukunft"
+      ]
+    }
+  ],
+  "vorschlaege_digitale_technologien": [],
   "prose": [
     {
       "section": "lehraufgabe",
@@ -391,17 +258,7 @@
     },
     {
       "section": "kompetenzbeschreibungen",
-      "label": "",
-      "text": "Die Kompetenzbeschreibungen in den Kompetenzbereichen W, E und S sind mit jeweils geeigneten Anwendungsbereichen zu verknüpfen. Sie ermöglichen die Entwicklung und Anwendung von Kompetenzen, fördern das Verstehen zentraler fachlicher Konzepte und sind verbindlich in Theorie und Praxis umzusetzen. Die Reihung der Anwendungsbereiche versteht sich weder hierarchisch noch chronologisch."
-    },
-    {
-      "section": "kompetenzbeschreibungen",
-      "label": "Einführung in die Allgemeine und Anorganische Chemie",
-      "text": ""
-    },
-    {
-      "section": "kompetenzbeschreibungen",
-      "label": "Einführung in die Organische Chemie und Biochemie",
+      "label": "Die Kompetenzbeschreibungen in den Kompetenzbereichen W, E und S sind mit jeweils geeigneten Anwendungsbereichen zu verknüpfen. Sie ermöglichen die Entwicklung und Anwendung von Kompetenzen, fördern das Verstehen zentraler fachlicher Konzepte und sind verbindlich in Theorie und Praxis umzusetzen. Die Reihung der Anwendungsbereiche versteht sich weder hierarchisch noch chronologisch.",
       "text": ""
     }
   ],

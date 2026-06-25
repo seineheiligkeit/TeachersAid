@@ -25,7 +25,26 @@
     13
   ],
   "competence_model": {
-    "handlungsdimensionen": []
+    "handlungsdimensionen": [
+      {
+        "code": "OK",
+        "label": "Orientierungskompetenz",
+        "modality": "printable"
+      },
+      {
+        "code": "UK",
+        "label": "Urteilskompetenz",
+        "modality": "printable"
+      },
+      {
+        "code": "HK",
+        "label": "Handlungskompetenz",
+        "modality": "printable",
+        "note": "often enactive/simulativ"
+      }
+    ],
+    "content_areas": null,
+    "notes": "Geographie u. wirtschaftliche Bildung. Anforderungsbereiche (Reproduktion/Transfer/Reflexion u. Problemlösung) corroborate the CognitiveLevel ladder. 8 zentrale fachliche Konzepte structure the content."
   },
   "zentrale_konzepte": [],
   "competences": [
@@ -84,7 +103,10 @@
       "kompetenzbereich_code": "LEB",
       "text": "unterschiedliche Vorstellungen von Lebensqualität erkunden und Lebensstile hinsichtlich Nachhaltigkeit reflektieren.",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        11,
+        12
+      ],
       "aria_level": 2,
       "source_ref": "GEOGRAPHIE UND WIRTSCHAFTLICHE BILDUNG / 1. Klasse / Leben und Wirtschaften im eigenen Umfeld"
     },
@@ -95,7 +117,11 @@
       "kompetenzbereich_code": "LEB2",
       "text": "soziale, ökonomische und kulturelle sowie alters- und geschlechtsbedingte Gemeinsamkeiten und Unterschiede im Zusammenhang mit Arbeiten (einfach nachvollziehbare Produktion in Unternehmen), Wohnen und Mobilität in weltweit ausgewählten Fallbeispielen aus Zentren und Peripherien vergleichen und diese mit Geomedien lokalisieren;",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        4,
+        5,
+        12
+      ],
       "aria_level": 2,
       "source_ref": "GEOGRAPHIE UND WIRTSCHAFTLICHE BILDUNG / 1. Klasse / Leben und Wirtschaften in der Welt"
     },
@@ -178,7 +204,10 @@
       "kompetenzbereich_code": "NAC",
       "text": "die Nutzung erneuerbarer und nicht erneuerbarer Energieträger vergleichen und aus den Blickwinkeln von Klimawandel und Nachhaltigkeit reflektieren;",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        11,
+        12
+      ],
       "aria_level": 2,
       "source_ref": "GEOGRAPHIE UND WIRTSCHAFTLICHE BILDUNG / 2. Klasse / Nachhaltiger Umgang mit Energie und Ressourcen"
     },
@@ -215,7 +244,10 @@
       "kompetenzbereich_code": "VER",
       "text": "ausgehend von Berufen und Berufsbildern die Bedeutung und Vielfältigkeit der Arbeitswelt erkunden und vergleichen sowie deren Entwicklung für die eigene Zukunft einschätzen;",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        1,
+        5
+      ],
       "aria_level": 2,
       "source_ref": "GEOGRAPHIE UND WIRTSCHAFTLICHE BILDUNG / 2. Klasse / Vernetztes Wirtschaften zwischen Produktion und Konsum"
     },
@@ -226,7 +258,10 @@
       "kompetenzbereich_code": "VER",
       "text": "arbeitsteiliges und spezialisiertes Produzieren von Gütern und Anbieten von Dienstleistungen sowie das freie Treffen von Produktionsentscheidungen durch Haushalte, Unternehmen und Staat beschreiben;",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        7,
+        13
+      ],
       "aria_level": 2,
       "source_ref": "GEOGRAPHIE UND WIRTSCHAFTLICHE BILDUNG / 2. Klasse / Vernetztes Wirtschaften zwischen Produktion und Konsum"
     },
@@ -237,7 +272,11 @@
       "kompetenzbereich_code": "VER",
       "text": "reflektierte Entscheidungen bei der Nutzung von Bank-, Verkehrs- oder Handelsdienstleistungen treffen und diesbezügliche Auswirkungen der Digitalisierung beschreiben;",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        4,
+        12,
+        13
+      ],
       "aria_level": 2,
       "source_ref": "GEOGRAPHIE UND WIRTSCHAFTLICHE BILDUNG / 2. Klasse / Vernetztes Wirtschaften zwischen Produktion und Konsum"
     },
@@ -285,7 +324,11 @@
       "kompetenzbereich_code": "OST",
       "text": "die Auswirkungen von Selbst- und Fremdbildern auf das gesellschaftliche Zusammenleben beschreiben und dabei die Bedeutung von biologischem Geschlecht, Gender, Alter, Bildung, Einkommen, Wohlstand, Nationalität, Religion oder Kultur hinterfragen.",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        5,
+        6,
+        7
+      ],
       "aria_level": 2,
       "source_ref": "GEOGRAPHIE UND WIRTSCHAFTLICHE BILDUNG / 3. Klasse / Österreichische Gesellschaftsentwicklung"
     },
@@ -296,7 +339,10 @@
       "kompetenzbereich_code": "BIL",
       "text": "sich über die Berufswelt informieren, unterschiedliche Bildungswege, klassische und innovative Berufsbilder sowie selbstständige und unselbstständige Arbeitsmöglichkeiten vergleichen und für den persönlichen Lebensweg reflektieren;",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        2,
+        8
+      ],
       "aria_level": 2,
       "source_ref": "GEOGRAPHIE UND WIRTSCHAFTLICHE BILDUNG / 3. Klasse / Bildungswege und Arbeitswelten"
     },
@@ -305,10 +351,12 @@
       "klasse": 3,
       "kompetenzbereich": "Bildungswege und Arbeitswelten",
       "kompetenzbereich_code": "BIL",
-      "text": "unbezahlte und bezahlte Arbeit, Arbeitslosigkeit, Höhe und Verwendung des Einkommens, Sparen, Finanzieren und Versichern, Rechte und Pflichten von Erwerbstätigen und Konsumierenden einschließlich Konsumentenschutz beschreiben.",
+      "text": "unbezahlte und bezahlte Arbeit , Arbeitslosigkeit, Höhe und Verwendung des Einkommens, Sparen, Finanzieren und Versichern, Rechte und Pflichten von Erwerbstätigen und Konsumierenden einschließlich Konsumentenschutz beschreiben.",
       "dimensions": [],
       "uebergreifende_themen": [
-        8
+        8,
+        1,
+        13
       ],
       "aria_level": 2,
       "source_ref": "GEOGRAPHIE UND WIRTSCHAFTLICHE BILDUNG / 3. Klasse / Bildungswege und Arbeitswelten"
@@ -456,7 +504,10 @@
       "kompetenzbereich_code": "ZEN",
       "text": "mit Hilfe von (Geo-)Medien die Raumnutzungen für Wohnen, Arbeit, Verkehr, Freizeitaktivitäten und Tourismus vergleichen sowie Lösungsansätze der Raumplanung bei Nutzungskonflikten erörtern.",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        4,
+        12
+      ],
       "aria_level": 2,
       "source_ref": "GEOGRAPHIE UND WIRTSCHAFTLICHE BILDUNG / 3. Klasse / Zentren und Peripherien in Österreich"
     },
@@ -467,7 +518,10 @@
       "kompetenzbereich_code": "MEN",
       "text": "das Ausmaß des menschlichen Einflusses auf Natursysteme anhand von Beispielen wie Einbringung von Schadstoffen, Land- und Ressourcennutzung (auch verknüpft mit eigenen Beobachtungen) beschreiben;",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        2,
+        11
+      ],
       "aria_level": 2,
       "source_ref": "GEOGRAPHIE UND WIRTSCHAFTLICHE BILDUNG / 4. Klasse / Mensch und Natursysteme"
     },
@@ -491,7 +545,10 @@
       "kompetenzbereich_code": "MEN",
       "text": "über das sich wandelnde Verhältnis zwischen Mensch und Natur reflektieren, bereits etablierte Maßnahmen und Konzepte zum nachhaltigen Leben und Wirtschaften analysieren und eigene Ideen für nachhaltige Handlungen entwickeln.",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        6,
+        11
+      ],
       "aria_level": 2,
       "source_ref": "GEOGRAPHIE UND WIRTSCHAFTLICHE BILDUNG / 4. Klasse / Mensch und Natursysteme"
     },
@@ -502,7 +559,10 @@
       "kompetenzbereich_code": "EUR",
       "text": "unterschiedliche Gliederungen, Wahrnehmungen und Darstellungen von Europa und der Europäischen Union in ihrer Vielfalt beschreiben, in (Geo-)Medien analysieren und dazu kritisch Stellung beziehen;",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        5,
+        7
+      ],
       "aria_level": 2,
       "source_ref": "GEOGRAPHIE UND WIRTSCHAFTLICHE BILDUNG / 4. Klasse / Europa und europäische Integration"
     },
@@ -526,7 +586,11 @@
       "kompetenzbereich_code": "EUR",
       "text": "Chancen und Herausforderungen der europäischen Integration sowie die Notwendigkeit und Schwierigkeit von gemeinsamen Problemlösungen auf europäischer Ebene in einer globalisierten Welt erörtern.",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        6,
+        7,
+        10
+      ],
       "aria_level": 2,
       "source_ref": "GEOGRAPHIE UND WIRTSCHAFTLICHE BILDUNG / 4. Klasse / Europa und europäische Integration"
     },
@@ -585,7 +649,11 @@
       "kompetenzbereich_code": "EIG",
       "text": "eigene Zukunftsvorstellungen, Wünsche und Bedürfnisse in Bezug auf individuelle Entwicklungsmöglichkeiten, finanzielle Rahmenbedingungen und Handlungsmöglichkeiten, Lebensqualität und gemeinsame Herausforderungen benennen, vergleichen und reflektieren sowie politische Prozesse mitgestalten.",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        2,
+        7,
+        13
+      ],
       "aria_level": 2,
       "source_ref": "GEOGRAPHIE UND WIRTSCHAFTLICHE BILDUNG / 4. Klasse / Das eigene Ich in einer vernetzten Welt"
     }
@@ -649,6 +717,7 @@
       ]
     }
   ],
+  "vorschlaege_digitale_technologien": [],
   "prose": [
     {
       "section": "lehraufgabe",

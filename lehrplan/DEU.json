@@ -25,7 +25,31 @@
     13
   ],
   "competence_model": {
-    "handlungsdimensionen": []
+    "handlungsdimensionen": [
+      {
+        "code": "SPR",
+        "label": "Sprachbewusstsein und Sprachreflexion",
+        "modality": "printable",
+        "note": "integrativ — formuliert über die anderen Bereiche"
+      },
+      {
+        "code": "ZUH",
+        "label": "Zuhören und Sprechen",
+        "modality": "oral"
+      },
+      {
+        "code": "LES",
+        "label": "Lesen",
+        "modality": "printable"
+      },
+      {
+        "code": "SCH",
+        "label": "Schreiben",
+        "modality": "printable"
+      }
+    ],
+    "content_areas": null,
+    "notes": "Four Kompetenzbereiche; each competence's kompetenzbereich_code is one of ZUH/LES/SCH (Sprachbewusstsein is integrative and carries no standalone competences). Zuhören/Sprechen is partly oral → printable_coverage ≈ 0.75."
   },
   "zentrale_konzepte": [
     {
@@ -50,72 +74,6 @@
     }
   ],
   "competences": [
-    {
-      "id": "DEU.US.x.ALL.01",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Schlüssel, sich und die Welt zu verstehen;",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "DEUTSCH / Klasse n/a / —"
-    },
-    {
-      "id": "DEU.US.x.ALL.02",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Weg, sich mit anderen Menschen zu verständigen und Beziehungen zu gestalten;",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "DEUTSCH / Klasse n/a / —"
-    },
-    {
-      "id": "DEU.US.x.ALL.03",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Chance, sich neue und fiktionale Welten zu erschließen;",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "DEUTSCH / Klasse n/a / —"
-    },
-    {
-      "id": "DEU.US.x.ALL.04",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Medium der differenzierten Artikulation von Empfindungen, Erlebnissen und Erfahrungen sowie zur Darstellung von Sachverhalten;",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "DEUTSCH / Klasse n/a / —"
-    },
-    {
-      "id": "DEU.US.x.ALL.05",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Gestaltungsmittel zur Verschränkung von Form und Inhalt;",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "DEUTSCH / Klasse n/a / —"
-    },
-    {
-      "id": "DEU.US.x.ALL.06",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Medium gesellschaftlichen Aushandelns divergierender Interessen.",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "DEUTSCH / Klasse n/a / —"
-    },
     {
       "id": "DEU.US.1.ZUH.01",
       "klasse": 1,
@@ -189,7 +147,7 @@
       "klasse": 1,
       "kompetenzbereich": "Schreiben",
       "kompetenzbereich_code": "SCH",
-      "text": "Erlebnisse, Erfahrungen und Gedanken verschriftlichen sowie persönliche Beziehungen und Absichten ausdrücken, auch in kreativer Form",
+      "text": "Erlebnisse, Erfahrungen und Gedanken verschriftlichen sowie persönliche Beziehungen und Absichten ausdrücken , auch in kreativer Form",
       "dimensions": [],
       "uebergreifende_themen": [
         2
@@ -215,7 +173,10 @@
       "kompetenzbereich_code": "SCH",
       "text": "Textverarbeitungsprogramme zur digitalen Textproduktion einsetzen.",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        4,
+        6
+      ],
       "aria_level": 2,
       "source_ref": "DEUTSCH / 1. Klasse / Schreiben"
     },
@@ -248,7 +209,12 @@
       "kompetenzbereich_code": "ZUH",
       "text": "aus unterschiedlichen Quellen (ua. Bücher, Zeitungen, Zeitschriften, Internet) Informationen einholen, aufbereiten und mündlich präsentieren.",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        3,
+        6,
+        7,
+        9
+      ],
       "aria_level": 2,
       "source_ref": "DEUTSCH / 2. Klasse / Zuhören und Sprechen"
     },
@@ -257,10 +223,12 @@
       "klasse": 2,
       "kompetenzbereich": "Lesen",
       "kompetenzbereich_code": "LES",
-      "text": "Schülerinnen und Schüler könnensinnerfassend und mit gesteigerter Leseflüssigkeit unterschiedliche Texte und Textformate lesen und vorlesen, dabei mittels Lesestrategien Informationen erschließen und aufbereiten;die gestalterischen und inhaltlichen Besonderheiten literarischer Texte und Medienformate (ua. Buch, Film, Theater) erkennen, erschließen und über ihre subjektiven Lesarten mit anderen sprechenBeiträge aus unterschiedlichen medialen Quellen recherchieren, ihre Wirkung erkennen und differenzieren, mit Internetquellen sorgsam und dem Datenschutz gemäß umgehen.",
+      "text": "Schülerinnen und Schüler können sinnerfassend und mit gesteigerter Leseflüssigkeit unterschiedliche Texte und Textformate lesen und vorlesen, dabei mittels Lesestrategien Informationen erschließen und aufbereiten; die gestalterischen und inhaltlichen Besonderheiten literarischer Texte und Medienformate (ua. Buch, Film, Theater) erkennen, erschließen und über ihre subjektiven Lesarten mit anderen sprechen Beiträge aus unterschiedlichen medialen Quellen recherchieren, ihre Wirkung erkennen und differenzieren , mit Internetquellen sorgsam und dem Datenschutz gemäß umgehen.",
       "dimensions": [],
       "uebergreifende_themen": [
-        5
+        5,
+        4,
+        6
       ],
       "aria_level": 1,
       "source_ref": "DEUTSCH / 2. Klasse / Lesen"
@@ -292,10 +260,12 @@
       "klasse": 2,
       "kompetenzbereich": "Lesen",
       "kompetenzbereich_code": "LES",
-      "text": "Beiträge aus unterschiedlichen medialen Quellen recherchieren, ihre Wirkung erkennen und differenzieren, mit Internetquellen sorgsam und dem Datenschutz gemäß umgehen.",
+      "text": "Beiträge aus unterschiedlichen medialen Quellen recherchieren, ihre Wirkung erkennen und differenzieren , mit Internetquellen sorgsam und dem Datenschutz gemäß umgehen.",
       "dimensions": [],
       "uebergreifende_themen": [
-        5
+        5,
+        4,
+        6
       ],
       "aria_level": 2,
       "source_ref": "DEUTSCH / 2. Klasse / Lesen"
@@ -342,9 +312,12 @@
       "klasse": 2,
       "kompetenzbereich": "Schreiben",
       "kompetenzbereich_code": "SCH",
-      "text": "mit Hilfe von Textverarbeitungsprogrammen Texte gestalten und optimieren, zwischen Möglichkeiten und Anforderungen manuellen und computergestützten Schreibens unterscheiden.",
+      "text": "mit Hilfe von Textverarbeitungsprogrammen Texte gestalten und optimieren , zwischen Möglichkeiten und Anforderungen manuellen und computergestützten Schreibens unterscheiden.",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        4,
+        6
+      ],
       "aria_level": 2,
       "source_ref": "DEUTSCH / 2. Klasse / Schreiben"
     },
@@ -380,7 +353,8 @@
       "text": "aus verschiedenen Quellen gezielt Informationen einholen, thematisch aufbereiten und medial unterstützt mündlich präsentieren sowie diskutieren.",
       "dimensions": [],
       "uebergreifende_themen": [
-        6
+        6,
+        4
       ],
       "aria_level": 2,
       "source_ref": "DEUTSCH / 3. Klasse / Zuhören und Sprechen"
@@ -403,7 +377,11 @@
       "kompetenzbereich_code": "LES",
       "text": "eigene Leseinteressen vertiefen, literarische Gattungen unterscheiden, literarästhetische Produkte verstehen und im Hinblick auf die eigene Lebens- und Erfahrungswelt reflektieren",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        3,
+        7,
+        9
+      ],
       "aria_level": 2,
       "source_ref": "DEUTSCH / 3. Klasse / Lesen"
     },
@@ -426,7 +404,8 @@
       "text": "Absichten und Ziele in der Gestaltung von medialen Beiträgen erkennen und einschätzen, Informationssysteme gezielt nutzen und mit digitalen Kommunikationsmedien und Gemeinschaftsforen kritisch umgehen.",
       "dimensions": [],
       "uebergreifende_themen": [
-        6
+        6,
+        4
       ],
       "aria_level": 2,
       "source_ref": "DEUTSCH / 3. Klasse / Lesen"
@@ -462,7 +441,10 @@
       "kompetenzbereich_code": "SCH",
       "text": "mit Hilfe von Textverarbeitungsprogrammen und Formatvorgaben multimediale Texte gestalten und optimieren.",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        4,
+        6
+      ],
       "aria_level": 2,
       "source_ref": "DEUTSCH / 3. Klasse / Schreiben"
     },
@@ -471,10 +453,12 @@
       "klasse": 4,
       "kompetenzbereich": "Zuhören und Sprechen",
       "kompetenzbereich_code": "ZUH",
-      "text": "in unterschiedlichen Beiträgen, im direkten Kontakt oder über Medien vermittelt, Mehrdeutigkeiten und nicht explizit genannte Inhalte erschließen und interpretieren, dabei Absichten und Emotionen reflektieren und situationsbezogen Schlüsse daraus ziehen",
+      "text": "in unterschiedlichen Beiträgen, im direkten Kontakt oder über Medien vermittelt , Mehrdeutigkeiten und nicht explizit genannte Inhalte erschließen und interpretieren, dabei Absichten und Emotionen reflektieren und situationsbezogen Schlüsse daraus ziehen",
       "dimensions": [],
       "uebergreifende_themen": [
-        6
+        6,
+        2,
+        7
       ],
       "aria_level": 2,
       "source_ref": "DEUTSCH / 4. Klasse / Zuhören und Sprechen"
@@ -497,7 +481,11 @@
       "kompetenzbereich_code": "ZUH",
       "text": "aus bewusst gewählten Quellen Informationen gezielt herausfiltern, thematisch aufbereiten und unter Anwendung entsprechender Visualisierungsmethoden mündlich präsentieren.",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        6,
+        7,
+        4
+      ],
       "aria_level": 2,
       "source_ref": "DEUTSCH / 4. Klasse / Zuhören und Sprechen"
     },
@@ -539,9 +527,13 @@
       "klasse": 4,
       "kompetenzbereich": "Lesen",
       "kompetenzbereich_code": "LES",
-      "text": "die Aufbereitung und Gestaltung von Themen und Inhalten medialer Beiträge erkennen und vergleichen und dabei Informationssystemedifferenziert und kritisch nutzen.",
+      "text": "die Aufbereitung und Gestaltung von Themen und Inhalten medialer Beiträge erkennen und vergleichen und dabei Informationssysteme differenziert und kritisch nutzen.",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        4,
+        6,
+        7
+      ],
       "aria_level": 2,
       "source_ref": "DEUTSCH / 4. Klasse / Lesen"
     },
@@ -563,7 +555,10 @@
       "kompetenzbereich_code": "SCH",
       "text": "zu strittigen Sachverhalten, unter Einbeziehung differenzierter Quellen, argumentierend schreiben und auf Gegenargumente eingehen",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        2,
+        7
+      ],
       "aria_level": 2,
       "source_ref": "DEUTSCH / 4. Klasse / Schreiben"
     },
@@ -574,7 +569,10 @@
       "kompetenzbereich_code": "SCH",
       "text": "Textverarbeitungsprogramme zur Gestaltung umfangreicherer multimedialer Texte, auch im Team, nutzen",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        4,
+        6
+      ],
       "aria_level": 2,
       "source_ref": "DEUTSCH / 4. Klasse / Schreiben"
     },
@@ -666,11 +664,42 @@
       ]
     }
   ],
+  "vorschlaege_digitale_technologien": [],
   "prose": [
     {
       "section": "lehraufgabe",
       "label": "Bildungs- und Lehraufgabe (1. bis 4. Klasse):",
       "text": "Sprache ist im Deutschunterricht sowohl Medium als auch Gegenstand. Der Umgang mit Sprache findet über die Auseinandersetzung mit mündlichen, auditiven, schriftlichen und visuellen Ausdrucksformen statt. Der Unterricht begleitet Schülerinnen und Schüler auf ihrem Weg zu sprachkompetenten, sprachsensiblen und sprachbewusst handelnden Individuen. Sie sollen die Vielfalt individueller und kultureller Identitäten und sozialer Realitäten7 reflektieren lernen. Zentrales Ziel ist es, Schülerinnen und Schüler durch die Vermittlung von Grundkompetenzen des Kommunizierens, Lesens und Schreibens in die literale und orale Kultur und Praxis einzuführen und umfassende Sprachhandlungsfähigkeit auszubilden. Die Beschäftigung mit literarischen und pragmatischen Texten und Medienformaten erlaubt es ihnen, unterschiedliche Weltsichten kennenzulernen, einzunehmen und zu hinterfragen. Dadurch werden sie befähigt, sich in einer heterogenen und mehrsprachig geprägten Gesellschaft und deren multimodaler Zeichenwelt zurechtzufinden. Dies soll reflektiertes und wertbezogenes Handeln, die Fähigkeit zur Teilhabe an der Gemeinschaft im privaten und beruflichen Umfeld1, 13 sowie eigenständiges Weiterlernen ermöglichen. Der Deutschunterricht vernetzt also die Möglichkeiten von Sprache als"
+    },
+    {
+      "section": "lehraufgabe",
+      "label": "",
+      "text": "Schlüssel, sich und die Welt zu verstehen;"
+    },
+    {
+      "section": "lehraufgabe",
+      "label": "",
+      "text": "Weg, sich mit anderen Menschen zu verständigen und Beziehungen zu gestalten;"
+    },
+    {
+      "section": "lehraufgabe",
+      "label": "",
+      "text": "Chance, sich neue und fiktionale Welten zu erschließen;"
+    },
+    {
+      "section": "lehraufgabe",
+      "label": "",
+      "text": "Medium der differenzierten Artikulation von Empfindungen, Erlebnissen und Erfahrungen sowie zur Darstellung von Sachverhalten;"
+    },
+    {
+      "section": "lehraufgabe",
+      "label": "",
+      "text": "Gestaltungsmittel zur Verschränkung von Form und Inhalt;"
+    },
+    {
+      "section": "lehraufgabe",
+      "label": "",
+      "text": "Medium gesellschaftlichen Aushandelns divergierender Interessen."
     },
     {
       "section": "didaktik",
@@ -724,8 +753,8 @@
     },
     {
       "section": "kompetenzbeschreibungen",
-      "label": "Integrativer Kompetenzbereich Sprachbewusstsein und Sprachreflexion",
-      "text": ""
+      "label": "",
+      "text": "Die Beschreibungen der zu erreichenden Kompetenzen werden in den Bereichen Zuhören und Sprechen, Lesen, Schreiben integrativ formuliert."
     },
     {
       "section": "kompetenzbeschreibungen",
@@ -734,28 +763,8 @@
     },
     {
       "section": "kompetenzbeschreibungen",
-      "label": "Integrativer Kompetenzbereich Sprachbewusstsein und Sprachreflexion",
-      "text": ""
-    },
-    {
-      "section": "kompetenzbeschreibungen",
       "label": "",
       "text": "Die Beschreibungen der zu erreichenden Kompetenzen werden in den Bereichen Zuhören und Sprechen, Lesen, Schreiben integrativ formuliert."
-    },
-    {
-      "section": "kompetenzbeschreibungen",
-      "label": "Integrativer Kompetenzbereich Sprachbewusstsein und Sprachreflexion",
-      "text": ""
-    },
-    {
-      "section": "kompetenzbeschreibungen",
-      "label": "",
-      "text": "Die Beschreibungen der zu erreichenden Kompetenzen werden in den Bereichen Zuhören und Sprechen, Lesen, Schreiben integrativ formuliert."
-    },
-    {
-      "section": "kompetenzbeschreibungen",
-      "label": "Integrativer Kompetenzbereich Sprachbewusstsein und Sprachreflexion",
-      "text": ""
     },
     {
       "section": "kompetenzbeschreibungen",

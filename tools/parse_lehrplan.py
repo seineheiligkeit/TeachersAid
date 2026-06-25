@@ -79,17 +79,18 @@ def normspace(s: str) -> str:
 
 
 def drop(el):
-    """Remove an element but graft its tail text onto the previous node / parent."""
+    """Remove an element, grafting its tail onto the previous node / parent with a
+    separating space (collapsed later by normspace) so stripping a mid-sentence
+    superscript can't fuse two words, e.g. 'Beziehungen<sup>6</sup> verwenden'."""
     parent = el.getparent()
     if parent is None:
         return
-    tail = el.tail or ""
+    graft = " " + (el.tail or "")
     prev = el.getprevious()
-    if tail:
-        if prev is not None:
-            prev.tail = (prev.tail or "") + tail
-        else:
-            parent.text = (parent.text or "") + tail
+    if prev is not None:
+        prev.tail = (prev.tail or "") + graft
+    else:
+        parent.text = (parent.text or "") + graft
     parent.remove(el)
 
 
@@ -119,10 +120,11 @@ def extract_competence(li):
     """Return (verbatim_text, dimensions[], uebergreifende_themen[]) for a competence <li>."""
     node = copy.deepcopy(li)
     ut, ut_other = [], []
+    # a single Hoch span may hold several refs, e.g. "2, 7" or "8, 13" — take every number
     for s in node.xpath('.//span[contains(@class,"Hoch")]'):
-        t = normspace(s.text_content())
-        if t.isdigit():
-            (ut if 1 <= int(t) <= 13 else ut_other).append(int(t))
+        for d in re.findall(r"\d+", s.text_content() or ""):
+            n = int(d)
+            (ut if 1 <= n <= 13 else ut_other).append(n)
     dims = []
     for s in node.xpath('.//span[contains(@class,"Fett")]'):
         t = normspace(s.text_content())
@@ -130,10 +132,12 @@ def extract_competence(li):
             dims += [x.strip() for x in t.split(",")]
     csel = node.xpath('./div[contains(@class,"content")]')
     base = csel[0] if csel else node
+    # NB: do NOT strip aria-hidden spans — in some subjects (e.g. DGB "(I) …" bullets)
+    # the *entire* competence text sits inside an aria-hidden span. The bullet dash is
+    # inside the SymE marker div, which we strip; Hoch superscripts are stripped explicitly.
     for sel in ('.//span[contains(@class,"sr-only")]',
                 './/div[contains(@class,"SymE")]',
-                './/span[contains(@class,"Hoch")]',
-                './/span[@aria-hidden="true"]'):
+                './/span[contains(@class,"Hoch")]'):
         for e in base.xpath(sel):
             drop(e)
     text = normspace(base.text_content())
@@ -162,15 +166,17 @@ class Subject:
         self.konzepte = []         # [{name,text}]
         self.dimensions = []       # [{code,label,descriptor,items[]}]
         self.competences = []      # [{id,...}]
-        self.anwendung = {}        # klasse(int|0) -> [str]
+        self.anwendung = {}        # klasse(int|0) -> [str]  (Anwendungsbereiche / Lehrstoff)
+        self.vorschlaege = {}      # klasse(int|0) -> [str]  (optional digital-tool suggestions, MINT)
         self.ut_genannt = []
         self.warnings = []
         self._kb_counter = {}      # (klasse,kbcode)->n
         self._kbcode_for_name = {}
 
     def klassen(self):
-        ks = sorted({c["klasse"] for c in self.competences if c["klasse"]})
-        return ks
+        ks = {c["klasse"] for c in self.competences if c["klasse"]}
+        ks |= {k for k in self.anwendung if k}          # cross-class subjects carry grades only here
+        return sorted(ks)
 
     def next_id(self, klasse, kbname):
         code = self._kbcode_for_name.get(kbname)
@@ -208,6 +214,10 @@ class Subject:
                 {"klasse": (k if k else None), "items": v}
                 for k, v in sorted(self.anwendung.items())
             ],
+            "vorschlaege_digitale_technologien": [
+                {"klasse": (k if k else None), "items": v}
+                for k, v in sorted(self.vorschlaege.items())
+            ],
             "prose": self.prose,
             "parse_warnings": self.warnings,
         }
@@ -230,7 +240,8 @@ def parse():
     kbname = None
     cur_dim = None           # active Handlungsdimension dict (in kompetenzmodell)
     cur_concept = None       # active concept dict (in konzepte)
-    list_mode = None         # "competences" | "anwendung"
+    list_mode = None         # "competences" | "anwendung" | "vorschlaege"
+    anwendung_global = False # True when Anwendungsbereiche span all Klassen (cross-class subjects)
     ut_cand = defaultdict(Counter)   # nr -> Counter(label) ; resolved by majority vote
 
     def finalize():
@@ -290,6 +301,7 @@ def parse():
                     variant = f"Variante {n}"
                 cur = Subject(t, code, stype, variant)
                 section = klasse = kbname = cur_dim = cur_concept = list_mode = None
+                anwendung_global = False
                 if n > 1:
                     cur.warnings.append(
                         f"Duplicate subject heading '{t}' — assigned code {code}; "
@@ -299,19 +311,17 @@ def parse():
         if not active or cur is None:
             continue
 
-        # --- competence / application bullets ---
+        # --- bullets: route by section + list_mode ---
         if tag == "li":
             if not li_has_content(el):
                 continue
             text, dims, ut, ut_other = extract_competence(el)
             if not text:
                 continue
-            level = el.get("aria-level")
-            if section == "kompetenzmodell" and cur_dim is not None:
-                cur_dim["items"].append(text)
-            elif list_mode == "anwendung":
-                cur.anwendung.setdefault(klasse if klasse else 0, []).append(text)
-            else:
+            # competences live ONLY in the Kompetenzbeschreibungen section and only while
+            # not collecting Anwendungsbereiche / Vorschläge — this kills the pre-class leak
+            if section == "kompetenzbeschreibungen" and list_mode not in ("anwendung", "vorschlaege"):
+                level = el.get("aria-level")
                 cid, kbc = cur.next_id(klasse, kbname or "Allgemein")
                 comp = {
                     "id": cid,
@@ -322,13 +332,22 @@ def parse():
                     "dimensions": dims,
                     "uebergreifende_themen": ut,
                     "aria_level": int(level) if level and level.isdigit() else None,
-                    "source_ref": f"{cur.name} / {('%d. Klasse' % klasse) if klasse else 'Klasse n/a'} / "
+                    "source_ref": f"{cur.name} / {('%d. Klasse' % klasse) if klasse else 'alle Klassen'} / "
                                   f"{kbname or '—'}",
                 }
                 if ut_other:
-                    # superscripts outside 1..13 — likely exponents/other footnotes, not ÜT refs
-                    comp["superscripts_other"] = ut_other
+                    comp["superscripts_other"] = ut_other   # likely exponents/other footnotes
                 cur.competences.append(comp)
+            elif list_mode == "anwendung":
+                cur.anwendung.setdefault(klasse or 0, []).append(text)
+            elif list_mode == "vorschlaege":
+                cur.vorschlaege.setdefault(klasse or 0, []).append(text)
+            elif section == "kompetenzmodell" and cur_dim is not None:
+                cur_dim["items"].append(text)
+            elif section == "konzepte":
+                cur.konzepte.append({"name": "", "text": text})
+            else:
+                cur.prose.append({"section": section or "_", "label": "", "text": text})
             continue
 
         # --- headings & paragraphs (h1-h4, p) ---
@@ -337,59 +356,94 @@ def parse():
             if not t:
                 continue
             tl = t.lower()
-
-            # section switch?
-            matched_section = None
-            for key, name in SECTION_KEYS:
-                if tl.startswith(key) or key in tl[:40]:
-                    matched_section = name
-                    break
-
             is_heading = ("ErlUeberschr" in c) or tag in ("h2", "h3", "h4")
 
-            # Klasse marker (e.g. "2. Klasse:")
-            mk = re.match(r"^(\d)\.\s*klasse\b", tl)
-            if mk and ("ErlText" in c or "Erl" in c or is_heading or tag == "p"):
+            # Klasse marker — may carry an inline Kompetenzbereich on the same line, e.g.
+            # DGB "1. Klasse: Kompetenzbereich Orientierung: …". The first Klasse marker also
+            # marks the start of the competence-bearing part for class-first subjects.
+            mk = re.match(r"^(\d)\.\s*klasse\b\s*:?\s*(.*)$", t, re.I)
+            if mk and section in ("kompetenzbeschreibungen", "kompetenzmodell", None):
+                section = "kompetenzbeschreibungen"
                 klasse = int(mk.group(1))
-                kbname = None
-                list_mode = None
                 cur_dim = None
+                rest = re.sub(r"^Kompetenzbereich\s+", "", mk.group(2).strip(" :"), flags=re.I).strip()
+                kbname = rest or None
+                list_mode = "anwendung" if anwendung_global else "competences"
                 continue
 
+            # section switch (kompetenzbeschreibungen/lehrstoff may be a plain Abs; others = headings)
+            matched_section = None
+            for key, name in SECTION_KEYS:
+                if tl.startswith(key) or key in tl[:48]:
+                    matched_section = name
+                    break
+            if matched_section == "kompetenzbeschreibungen":
+                section = "kompetenzbeschreibungen"
+                cur_dim = cur_concept = None
+                list_mode = "competences"
+                cur.prose.append({"section": section, "label": t, "text": ""})
+                continue
             if matched_section and is_heading:
                 section = matched_section
-                cur_dim = None
-                cur_concept = None
+                cur_dim = cur_concept = None
                 list_mode = None
                 cur.prose.append({"section": section, "label": t, "text": ""})
                 continue
 
-            # Anwendungsbereiche marker
+            # Anwendungsbereiche marker. It is "global" (Lehrstoff for ALL Klassen, re-walking
+            # them) when it precedes any Klasse OR its own text names a Klasse range, e.g.
+            # "Anwendungsbereiche (1. bis 4. Klasse)" (BIO, MAT) / "(3. und 4. Klasse)" (CHE2).
+            # A bare per-Klasse "Anwendungsbereiche" (Physik) is NOT global.
             if re.match(r"^anwendungsbereich", tl):
                 list_mode = "anwendung"
+                if klasse is None or re.search(r"\d\s*\.?\s*(?:bis|und)\s*\d\s*\.?\s*klasse", tl):
+                    anwendung_global = True
+                continue
+            # optional "Vorschläge für den Einsatz digitaler Technologien" (MINT) — not competences
+            if re.match(r"^vorschl[aä]ge", tl):
+                list_mode = "vorschlaege"
                 continue
 
-            # "Die Schülerinnen und Schüler können"
             if tl.startswith("die schülerinnen und schüler können"):
-                if section != "kompetenzmodell":
+                if section == "kompetenzbeschreibungen" and list_mode not in ("anwendung", "vorschlaege"):
                     list_mode = "competences"
                 continue
 
-            # ÜbergreifendeThemen sentence
+            # "Dieser Lehrplan greift folgende übergreifende Themen auf: …"
             if "übergreifende themen" in tl and "greift" in tl:
                 node = copy.deepcopy(el)
                 for s in node.xpath('.//span[contains(@class,"Hoch")]'):
-                    tt = normspace(s.text_content())
-                    if tt.isdigit():
-                        cur.ut_genannt.append(int(tt))
-                cur.ut_genannt = sorted(set(cur.ut_genannt))
+                    for d in re.findall(r"\d+", s.text_content() or ""):
+                        cur.ut_genannt.append(int(d))
+                cur.ut_genannt = sorted(set(x for x in cur.ut_genannt if 1 <= x <= 13))
                 cur.prose.append({"section": "didaktik", "label": "Übergreifende Themen", "text": t})
                 continue
 
             if is_heading:
-                # Kompetenzbereich heading
+                if section == "kompetenzbeschreibungen":
+                    if anwendung_global:
+                        # global Anwendungsbereiche section (MAT/BIO/CHE2): it re-walks the
+                        # Klassen and reuses the "Kompetenzbereich N: …" headings as Lehrstoff
+                        # group labels — none of it is competences.
+                        continue
+                    if tl.startswith("kompetenzbereich"):
+                        # explicit KB heading — always (re)opens competences, even mid-Anwendung
+                        # (DGB interleaves Anwendungsbereiche between KBs within a Klasse)
+                        kbname = re.sub(r"^Kompetenzbereich\s+", "", t, flags=re.I).strip()
+                        list_mode = "competences"
+                        continue
+                    if list_mode in ("anwendung", "vorschlaege"):
+                        # prefix-less heading inside a Lehrstoff block = sub-label; keep mode
+                        # (CHE2 "Einführung …", MAT content-area labels)
+                        continue
+                    # prefix-less heading while collecting competences = a Kompetenzbereich
+                    kbname = t.strip()
+                    list_mode = "competences"
+                    continue
+                # explicit "Kompetenzbereich …" outside the section opens it
                 if tl.startswith("kompetenzbereich"):
-                    kbname = re.sub(r"^Kompetenzbereich\s+", "", t).strip()
+                    section = "kompetenzbeschreibungen"
+                    kbname = re.sub(r"^Kompetenzbereich\s+", "", t, flags=re.I).strip()
                     list_mode = "competences"
                     continue
                 # Handlungsdimension heading inside Kompetenzmodell, e.g. "Fachwissen anwenden (W)"
@@ -401,12 +455,10 @@ def parse():
                                    "descriptor": "", "items": []}
                         cur.dimensions.append(cur_dim)
                         continue
-                # concept name inside Zentrale fachliche Konzepte
                 if section == "konzepte":
                     cur_concept = {"name": t, "text": ""}
                     cur.konzepte.append(cur_concept)
                     continue
-                # otherwise a generic sub-heading
                 cur.prose.append({"section": section or "_", "label": t, "text": ""})
                 continue
 
@@ -433,16 +485,43 @@ def main():
     subjects, ut_legend = parse()
     OUT.mkdir(exist_ok=True)
 
+    # curated SubjectCompetenceModel overlay (hand-authored from QA) — fills handlungsdimensionen,
+    # content_areas, modality, and variant labels the parser can't reliably auto-detect.
+    models = {}
+    mf = OUT / "subject_models.json"
+    if mf.exists():
+        models = {k: v for k, v in json.loads(mf.read_text(encoding="utf-8")).items()
+                  if not k.startswith("_")}
+
     registry = []
     for s in subjects:
         if args.only and s.code != args.only:
             continue
         d = s.to_dict()
+        ov = models.get(s.code)
+        if ov:
+            auto = {dd["code"]: dd for dd in d["competence_model"]["handlungsdimensionen"]}
+            dims = []
+            for od in ov.get("dimensions", []):
+                m = dict(od)
+                a = auto.get(od["code"], {})
+                if a.get("descriptor"):
+                    m.setdefault("descriptor", a["descriptor"])
+                if a.get("items"):
+                    m.setdefault("items", a["items"])
+                dims.append(m)
+            d["competence_model"] = {
+                "handlungsdimensionen": dims,
+                "content_areas": ov.get("content_areas"),
+                "notes": ov.get("notes", ""),
+            }
+            if ov.get("variant"):
+                d["variant"] = ov["variant"]
         (OUT / f"{s.code}.json").write_text(
             json.dumps(d, ensure_ascii=False, indent=2), encoding="utf-8")
         registry.append({
-            "code": s.code, "name": s.name, "type": s.type, "variant": s.variant,
-            "klassen": s.klassen(), "n_competences": len(s.competences),
+            "code": d["code"], "name": d["name"], "type": d["type"], "variant": d["variant"],
+            "klassen": d["klassen"], "n_competences": len(d["competences"]),
             "file": f"{s.code}.json",
         })
 

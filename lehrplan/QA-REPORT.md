@@ -99,3 +99,26 @@ Only **DGB** and **BUS** under-count (data dropped/misrouted); all other count-m
 - **C. Dropped data** (#7): diagnose DGB `(I)` routing + BUS SGA-contingent; capture with a flag.
 - **D. Audit reconciliation:** apply confirmed corrections (1–6) to `subject-coverage-audit.md`.
 - Re-run → re-QA the previously-broken subjects to confirm green.
+
+## Resolution — fix batch applied 2026-06-25
+
+All of A–D landed. Parser reworked (structure-driven heading/section detection; class+KB lines;
+Abs-level section starts; sticky cross-class Anwendungsbereiche via class-range detection; Vorschläge
+bucket; multi-value ÜT via `\d+`; space-preserving superscript strip; **aria-hidden no longer stripped**
+— that one line was eating DGB's 27 `(I)` competences). Curated model overlay `subject_models.json`
+merged in. Audit corrections written to `subject-coverage-audit.md`.
+
+**Final state:** 571 verbatim competences across 17 catalog files. Completeness reconciled
+(slice bullets = competences + Anwendungsbereiche + Vorschläge + prose; **no competences dropped**).
+Per-subject competence counts now match the QA-verified true numbers (DEU 41, MAT 39, GEZ 9, DGB 72,
+CHE/CHE2 10, BIO 10, GPB 30, GWB 48, FS1 37, FS2 19, LAT 20, MUS/KUG/TED 40, BUS 36, PHY 29). Every
+`competence_model` is populated (dimensions + per-dimension modality; content_areas for MAT/DGB/GEZ/KUG);
+Chemie variants labelled; BUS SGA-contingent competences recovered; multi-value ÜT captured.
+
+**Known residuals (minor, for a later pass):**
+- **MAT** ≈ 3 competences are rendered as `ErlText` paragraphs (not list items) in the source (e.g. the
+  Kl. 2 *Daten und Zufall* competence) → currently land in `prose`, not `competences` (39 vs ~42).
+- **GPB** competences are captured but not yet assigned to their historisch/politisch *strand*
+  (kompetenzbereich grouping); the 7-dimension model is in the overlay.
+- Anwendungsbereiche sub-group labels (e.g. MAT content-area headings) are dropped, not preserved as
+  structure; per-competence ÜT on a few mid-sentence refs may still be incomplete in edge cases.

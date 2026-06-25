@@ -21,43 +21,69 @@
     13
   ],
   "competence_model": {
-    "handlungsdimensionen": []
+    "handlungsdimensionen": [
+      {
+        "code": "HFR",
+        "label": "Historische Fragekompetenz",
+        "modality": "printable",
+        "strang": "historisch"
+      },
+      {
+        "code": "HME",
+        "label": "Historische Methodenkompetenz",
+        "modality": "printable",
+        "strang": "historisch"
+      },
+      {
+        "code": "HOR",
+        "label": "Historische Orientierungskompetenz",
+        "modality": "printable",
+        "strang": "historisch"
+      },
+      {
+        "code": "HSA",
+        "label": "Historische (und politische) Sachkompetenz",
+        "modality": "printable",
+        "strang": "historisch/politisch"
+      },
+      {
+        "code": "PUR",
+        "label": "Politische Urteilskompetenz",
+        "modality": "printable",
+        "strang": "politisch"
+      },
+      {
+        "code": "PME",
+        "label": "Politikbezogene Methodenkompetenz",
+        "modality": "printable",
+        "strang": "politisch"
+      },
+      {
+        "code": "PHA",
+        "label": "Politische Handlungskompetenz",
+        "modality": "printable",
+        "strang": "politisch",
+        "note": "partly simulativ"
+      }
+    ],
+    "content_areas": null,
+    "notes": "Dual model: a historische and a politische Kompetenz-Strang (Sachkompetenz is shared). Anforderungsbereiche (Reproduktion/Transfer/Reflexion) apply. The flat parser does not yet assign each competence to its strand — kompetenzbereich grouping for GPB needs a QA follow-up."
   },
-  "zentrale_konzepte": [],
+  "zentrale_konzepte": [
+    {
+      "name": "",
+      "text": "das Zustandekommen von historischem und politischem Wissen reflektieren (Belegbarkeit, Konstruktivität, Kausalität, Perspektive und Auswahl),"
+    },
+    {
+      "name": "",
+      "text": "Zeit als grundlegendes Konzept des historischen Denkens zwischen Kontinuität und Wandel beachten (Zeitverläufe, Zeiteinteilung, Zeitpunkte),"
+    },
+    {
+      "name": "",
+      "text": "Zusammenhänge des menschlichen Zusammenlebens fokussieren (Struktur, Macht, Kommunikation, Handlungsspielräume, Lebens-/Naturraum, Normen, Arbeit, Diversität und Verteilung)."
+    }
+  ],
   "competences": [
-    {
-      "id": "GPB.US.x.ALL.01",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "das Zustandekommen von historischem und politischem Wissen reflektieren (Belegbarkeit, Konstruktivität, Kausalität, Perspektive und Auswahl),",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "GESCHICHTE UND POLITISCHE BILDUNG / Klasse n/a / —"
-    },
-    {
-      "id": "GPB.US.x.ALL.02",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Zeit als grundlegendes Konzept des historischen Denkens zwischen Kontinuität und Wandel beachten (Zeitverläufe, Zeiteinteilung, Zeitpunkte),",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "GESCHICHTE UND POLITISCHE BILDUNG / Klasse n/a / —"
-    },
-    {
-      "id": "GPB.US.x.ALL.03",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Zusammenhänge des menschlichen Zusammenlebens fokussieren (Struktur, Macht, Kommunikation, Handlungsspielräume, Lebens-/Naturraum, Normen, Arbeit, Diversität und Verteilung).",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "GESCHICHTE UND POLITISCHE BILDUNG / Klasse n/a / —"
-    },
     {
       "id": "GPB.US.2.ALL.01",
       "klasse": 2,
@@ -107,72 +133,72 @@
       "source_ref": "GESCHICHTE UND POLITISCHE BILDUNG / 2. Klasse / —"
     },
     {
-      "id": "GPB.US.2.ALL.05",
+      "id": "GPB.US.2.HIS.01",
       "klasse": 2,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
+      "kompetenzbereich": "Historische Fragekompetenz",
+      "kompetenzbereich_code": "HIS",
       "text": "Fragen zu Kontinuität und Wandel, die in Darstellungen behandelt werden, herausarbeiten (zB Welche Frage steht hinter der Darstellung zum Wandel der Lebensweisen im Mittelalter? Welche Frage hat sich die Schulbuchautorin zur Veränderung im Römischen Reich gestellt?).",
       "dimensions": [],
       "uebergreifende_themen": [],
       "aria_level": 1,
-      "source_ref": "GESCHICHTE UND POLITISCHE BILDUNG / 2. Klasse / —"
+      "source_ref": "GESCHICHTE UND POLITISCHE BILDUNG / 2. Klasse / Historische Fragekompetenz"
     },
     {
-      "id": "GPB.US.2.ALL.06",
+      "id": "GPB.US.2.HIS2.01",
       "klasse": 2,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
+      "kompetenzbereich": "Historische Orientierungskompetenz",
+      "kompetenzbereich_code": "HIS2",
       "text": "über Einsichten, die aus der Beschäftigung mit Quellen und Darstellungen für Gegenwart und Zukunft gewonnen werden, diskutieren und diese nutzen (ua. individuelle Bedeutung von historischen Einsichten aus der Beschäftigung mit Alltagsgeschichte).",
       "dimensions": [],
       "uebergreifende_themen": [],
       "aria_level": 1,
-      "source_ref": "GESCHICHTE UND POLITISCHE BILDUNG / 2. Klasse / —"
+      "source_ref": "GESCHICHTE UND POLITISCHE BILDUNG / 2. Klasse / Historische Orientierungskompetenz"
     },
     {
-      "id": "GPB.US.2.ALL.07",
+      "id": "GPB.US.2.HIS3.01",
       "klasse": 2,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
+      "kompetenzbereich": "Historische und politische Sachkompetenz",
+      "kompetenzbereich_code": "HIS3",
       "text": "fachspezifische Konzepte anwenden, reflektieren und weiterentwickeln (ua. „Darstellung“ und „Quelle“ unterscheiden; Gattungsmerkmale von Quellen erkennen; über den Unterschied zwischen „Vergangenheit“, „Geschichte“ und „Geschichtsschreibung“ reflektieren; „Königin/König“, „Sklavin/Sklave“, „Demokratie“ als Konzepte in unterschiedlichen Kontexten anwenden).",
       "dimensions": [],
       "uebergreifende_themen": [],
       "aria_level": 1,
-      "source_ref": "GESCHICHTE UND POLITISCHE BILDUNG / 2. Klasse / —"
+      "source_ref": "GESCHICHTE UND POLITISCHE BILDUNG / 2. Klasse / Historische und politische Sachkompetenz"
     },
     {
-      "id": "GPB.US.2.ALL.08",
+      "id": "GPB.US.2.POL.01",
       "klasse": 2,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
+      "kompetenzbereich": "Politikbezogene Methodenkompetenz",
+      "kompetenzbereich_code": "POL",
       "text": "politische Manifestationen (zB Internetpostings, Zeitungsartikel, TV-Dokus; Umfrageergebnisse) beschreiben, analysieren und hinterfragen.",
       "dimensions": [],
       "uebergreifende_themen": [
         6
       ],
       "aria_level": 1,
-      "source_ref": "GESCHICHTE UND POLITISCHE BILDUNG / 2. Klasse / —"
+      "source_ref": "GESCHICHTE UND POLITISCHE BILDUNG / 2. Klasse / Politikbezogene Methodenkompetenz"
     },
     {
-      "id": "GPB.US.2.ALL.09",
+      "id": "GPB.US.2.POL2.01",
       "klasse": 2,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
+      "kompetenzbereich": "Politische Urteilskompetenz",
+      "kompetenzbereich_code": "POL2",
       "text": "eigene und fremde Meinungen zu gesellschaftlichen und politischen Fragestellungen erkennen, unterscheiden und analysieren.",
       "dimensions": [],
       "uebergreifende_themen": [],
       "aria_level": 1,
-      "source_ref": "GESCHICHTE UND POLITISCHE BILDUNG / 2. Klasse / —"
+      "source_ref": "GESCHICHTE UND POLITISCHE BILDUNG / 2. Klasse / Politische Urteilskompetenz"
     },
     {
-      "id": "GPB.US.2.ALL.10",
+      "id": "GPB.US.2.POL3.01",
       "klasse": 2,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
+      "kompetenzbereich": "Politische Handlungskompetenz",
+      "kompetenzbereich_code": "POL3",
       "text": "Angebote von politischen Organisationen (zB Parteien, NGOs) nutzen und mit Personen und Institutionen der politischen Öffentlichkeit Kontakt aufnehmen.",
       "dimensions": [],
       "uebergreifende_themen": [],
       "aria_level": 1,
-      "source_ref": "GESCHICHTE UND POLITISCHE BILDUNG / 2. Klasse / —"
+      "source_ref": "GESCHICHTE UND POLITISCHE BILDUNG / 2. Klasse / Politische Handlungskompetenz"
     },
     {
       "id": "GPB.US.3.ALL.01",
@@ -410,20 +436,20 @@
       "klasse": 2,
       "items": [
         "Lebensweltliche Erfahrungen im Umgang mit Geschichte und Vergangenheit („Zeit“ als zentrales Konzept in der Geschichte; Zeiteinteilungen der Geschichte; Anfänge der Menschheitsgeschichte und damit verbundene Vorstellungen von Schülerinnen und Schülern; Herkunft von Vorstellungen über die Vergangenheit)",
-        "Alte Kulturen (Entstehung und Merkmale; Gesellschaftsstruktur und Alltagsleben; Hinterfragen von geschichtskulturellen Produkten, ua. eines Spielfilmausschnitts oder Comics)",
+        "Alte Kulturen (Entstehung und Merkmale; Gesellschaftsstruktur und Alltagsleben; Hinterfragen von geschichtskulturellen Produkten, ua. eines Spielfilmausschnitts oder Comics )",
         "Welt- und Vernetzungsgeschichte zur Zeit der europäischen Antike (transkultureller Austausch und Handel; Vernetzungen des Römischen Reiches im mediterranen Raum und zu asiatischen Kulturen; globaler Querschnitt von Kulturen auf verschiedenen Kontinenten)",
-        "Vergangene und gegenwärtige Herrschafts- und Staatsformen (Beispiele von Herrschaftsformen und Gesellschaftsordnungen von der Antike bis zur Gegenwart, va. Unterschiede, Parallelen; Merkmale von Herrschafts- und Staatsformen und ihre Auswirkungen auf unterschiedliche Bevölkerungsgruppen, ua. Ethnie, Geschlecht, Klasse, Schicht, Behinderung; individuelle Erfahrungen von Menschen in unterschiedlichen Epochen mit Herrschaftsformen), Einfluss des politischen Geschehens, des gesellschaftlichen und kulturellen Lebens durch Religionen und Gesinnungsgemeinschaften",
+        "Vergangene und gegenwärtige Herrschafts- und Staatsformen (Beispiele von Herrschaftsformen und Gesellschaftsordnungen von der Antike bis zur Gegenwart, va. Unterschiede, Parallelen; Merkmale von Herrschafts- und Staatsformen und ihre Auswirkungen auf unterschiedliche Bevölkerungsgruppen, ua. Ethnie, Geschlecht, Klasse, Schicht, Behinderung; individuelle Erfahrungen von Menschen in unterschiedlichen Epochen mit Herrschaftsformen) , Einfluss des politischen Geschehens, des gesellschaftlichen und kulturellen Lebens durch Religionen und Gesinnungsgemeinschaften",
         "Mittelalterliche Lebensformen (Lebensweisen in Stadt und Land; transkulturelle Beziehungen Afrikas oder Asiens zu Europa, ua. Salzhandel, Seidenstraße; Vorstellungen über das Mittelalter in Vergangenheit und Gegenwart)",
         "Begegnungen zwischen dem Eigenen und dem Fremden in der Frühen Neuzeit (Motive, Ursachen und Auswirkungen von Eroberungsreisen; Kolonialismus, Ausbeutung und Zerstörung indigener Gesellschaften und die Auswirkungen auf die Gegenwart; Darstellung kultureller Kontakte in Vergangenheit und Gegenwart)",
         "Geschichte der Ausbeutung als Längsschnitt (von der Antike bis in die Gegenwart) (Sklaverei im historischen Längsschnitt; Ausbeutung von Frauen, Männern und Kindern von der Antike bis zur Gegenwart; individuelle Erfahrungen aus unterschiedlichen sozialen Klassen und Schichten im Zusammenhang mit Sklaverei und Ausbeutung; Durchsetzung von Menschenrechten)",
-        "Möglichkeiten für politisches Handeln in Gegenwart und Zukunft (Ebenen des politischen Handelns – Gemeinde, Land, Bund, EU – und deren Auswirkungen auf Alltag und Lebenswelt und politisches Agieren der Schülerinnen und Schüler), gesellschaftliche und politische Partizipation in der eigenen Lebenswelt; ungleiche Handlungsspielräume der Geschlechter; Erproben und Reflektieren von politischen Handlungen",
-        "Gesetze, Regeln und Werte in Gegenwart und Zukunft (Gesetze und Normen aus der Lebenswelt der Schülerinnen und Schüler; Kinderrechte und deren Bedeutung in Österreich; unterschiedliche Wertvorstellungen zu demokratischen Grundwerten wie Freiheit, Gleichheit, Solidarität, Frieden, Gerechtigkeit);"
+        "Möglichkeiten für politisches Handeln in Gegenwart und Zukunft (Ebenen des politischen Handelns – Gemeinde, Land, Bund, EU – und deren Auswirkungen auf Alltag und Lebenswelt und politisches Agieren der Schülerinnen und Schüler) , gesellschaftliche und politische Partizipation in der eigenen Lebenswelt; ungleiche Handlungsspielräume der Geschlechter; Erproben und Reflektieren von politischen Handlungen",
+        "Gesetze, Regeln und Werte in Gegenwart und Zukunft (Gesetze und Normen aus der Lebenswelt der Schülerinnen und Schüler; Kinderrechte und deren Bedeutung in Österreich; unterschiedliche Wertvorstellungen zu demokratischen Grundwerten wie Freiheit, Gleichheit, Solidarität, Frieden, Gerechtigkeit) ;"
       ]
     },
     {
       "klasse": 3,
       "items": [
-        "Aspekte frühneuzeitlicher Kulturen aus europäischer Perspektive (Renaissance als kulturelle, politische und wirtschaftliche Übergangszeit; Reformation und Gegenreformation; veränderte Sichtweisen auf den Menschen von der Renaissance bis zur Gegenwart anhand menschlichen Erlebens und Zusammenlebens – Umgang mit Strafen in der Gesellschaft, Ausdrucksformen von Liebe und Sexualität, Exklusion und Inklusion von Menschen mit psychischer und physischer Behinderung)",
+        "Aspekte frühneuzeitlicher Kulturen aus europäischer Perspektive (Renaissance als kulturelle, politische und wirtschaftliche Übergangszeit; Reformation und Gegenreformation; veränderte Sichtweisen auf den Menschen von der Renaissance bis zur Gegenwart anhand menschlichen Erlebens und Zusammenlebens – Umgang mit Strafen in der Gesellschaft, Ausdrucksformen von Liebe und Sexualität , Exklusion und Inklusion von Menschen mit psychischer und physischer Behinderung)",
         "Gesellschaftliche und wirtschaftliche Veränderungen in der Neuzeit (Auswirkungen des Absolutismus auf das Leben am Hof und für die Gesellschaft; Frühkapitalismus und seine Folgen – Reichtum und Armut, Wandel der Arbeitswelten)",
         "Revolutionen, Widerstand, Reformen („Revolution“ und „Reform“ und damit verbundene Vorstellungen von Schülerinnen und Schüler; Aspekte der Aufklärung und ihre Bedeutung für Revolutionen und Reformbewegungen; sozialgeschichtliche Aspekte des jüdischen Lebens im 18. und 19. Jahrhundert in Österreich; Auswirkungen der Aufklärung auf gegenwärtige Gesellschaften – demokratischer Verfassungsstaat, Gewaltentrennung, Menschenrechte; Vergleich von politischen Umbrüchen/Revolutionen anhand von Beispielen)",
         "Geschlecht, Ethnien und soziale Klassen im Zeitalter der Industrialisierung (politische Strömungen und ihr Einfluss auf Gesellschaften; Kommunismus und Sozialismus; Nationalismus und Aufkommen eines politischen Antisemitismus und Rassismus in Europa; Vergleich der Industriegesellschaft und gegenwärtiger Lebenswelten; umweltgeschichtliche Betrachtung der Industrialisierung)",
@@ -438,19 +464,20 @@
       "klasse": 4,
       "items": [
         "Demokratie in der Zwischenkriegszeit (Demokratisierung der Gesellschaft in der Ersten Republik Österreich – Verfassung, Sozialgesetzgebung; Auswirkungen der Demokratie auf die Lebenswelten; Wirtschaftskrise und politische Konflikte)",
-        "Faschismus – Nationalsozialismus – Kommunismus (Ausprägungen und Auswirkungen der faschistischen bzw. kommunistischen Diktaturen); „Ständestaat“ („Austrofaschismus“); die Ideologie des Nationalsozialismus und ihre Auswirkungen auf vergangene und gegenwärtige Gesellschaften; Ausgrenzung und Erniedrigung als Instrumente totalitärer Herrschaftssysteme; Alltagswelten in Demokratie und Diktatur; Analyse von Grundlagen, Voraussetzungen und Praxis des Nationalsozialismus in Österreich; Zweiter Weltkrieg und dessen Darstellung in geschichtskulturellen Produkten – ua. TV-Dokumentationen, Computerspiele; Vergleich totalitärer Staatssysteme)",
+        "Faschismus – Nationalsozialismus – Kommunismus (Ausprägungen und Auswirkungen der faschistischen bzw. kommunistischen Diktaturen); „Ständestaat“ („Austrofaschismus“); die Ideologie des Nationalsozialismus und ihre Auswirkungen auf vergangene und gegenwärtige Gesellschaften; Ausgrenzung und Erniedrigung als Instrumente totalitärer Herrschaftssysteme; Alltagswelten in Demokratie und Diktatur; Analyse von Grundlagen, Voraussetzungen und Praxis des Nationalsozialismus in Österreich; Zweiter Weltkrieg und dessen Darstellung in geschichtskulturellen Produkten – ua. TV-Dokumentationen, Computerspiele ; Vergleich totalitärer Staatssysteme)",
         "Holocaust/Shoah und Genozid (Formen des Antisemitismus und des Rassismus; Vernichtungspolitik im Nationalsozialismus – Opfergruppen, industrieller Massenmord, NS-Euthanasie, Verbrechen der Wehrmacht; Perspektiven von Deserteuren, Opfern, Täterinnen und Tätern sowie Mitläuferinnen und Mitläufern; Interviews von Zeitzeuginnen und Zeitzeugen als subjektive Wahrnehmung der Vergangenheit; Beispiele von Genoziden des 20. und 21. Jahrhunderts); 2. Weltkrieg aus europäischer, amerikanischer, afrikanischer und asiatischer Perspektive",
         "Zweite Republik Österreich: Rückstellung und Entschädigung für Opfer des Nationalsozialismus, Demokratisierung der Gesellschaft, Staatsvertrag und Bundesverfassungsgesetz, umfassende Landesverteidigung, Bundesheer; österreichisches Modell der Interessensvertretung und Sozialpartnerschaft unter Bezugnahme auf Arbeiterkammer, Gewerkschaften, Wirtschaftskammer und Landwirtschaftskammer",
         "Soziale Ungleichheiten und Strategien zu deren Überwindung – ua. Wohlfahrtsstaat, Interessenvertretungen, Sozialpartnerschaft; Wandel der Wertehaltungen durch neue Politikfelder – ua. Sozialstaat, Umwelt/Klima, Migration",
         "Geschichtskulturen – Erinnerungskulturen – Erinnerungspolitik (Umgang mit Nationalsozialismus und Holocaust in der Zweiten Republik – Entnazifizierung, Opfermythos und öffentliche Erinnerungskultur; Denkmäler und Gedenkstätten – ua. Vergleich des Umgangs mit dem Zweiten Weltkrieg in Österreich und in Jugoslawien bzw. den Nachfolgestaaten von 1945 bis heute; Instrumentalisierung und Nutzung von Geschichte und Erinnerungen – ua. historische Argumente in der Politik, Habsburgermythos, Tourismus, Medien und Unterhaltung)",
-        "Aspekte von Globalisierung im 20. und 21. Jahrhundert (Friedenssicherung nach 1945 und welt- und wirtschaftspolitische Machtblöcke in globaler Perspektive, „Kalter Krieg“; Befreiungsbewegungen im Globalen Süden (Afrika, Südamerika etc.), politische, ökonomische und gesellschaftliche Phänomene der Globalisierung – ua. Urbanisierung, ökologische Herausforderungen; weltweit sich vernetzende Phänomene – ua. Konsum, Popkultur, Internet/digitale Medien, Seuchen)",
-        "Europäisierung (unterschiedliche historische und gegenwärtige Konzeptionen von Europa; die EU als Wirtschafts- und Friedensprojekt; Ende des geteilten Europas 1989 und die Auswirkungen; Beitritt Österreichs zur EU und die nachfolgenden Veränderungen in Außen-, Sicherheits- und Neutralitätspolitik, in Gesellschaft und Alltag; Einfluss der EU auf die Lebenswelt der Schülerinnen und Schüler)",
+        "Aspekte von Globalisierung im 20. und 21. Jahrhundert (Friedenssicherung nach 1945 und welt- und wirtschaftspolitische Machtblöcke in globaler Perspektive, „Kalter Krieg“; Befreiungsbewegungen im Globalen Süden (Afrika, Südamerika etc.), politische, ökonomische und gesellschaftliche Phänomene der Globalisierung – ua. Urbanisierung, ökologische Herausforderungen; weltweit sich vernetzende Phänomene – ua. Konsum , Popkultur, Internet/digitale Medien, Seuchen)",
+        "Europäisierung (unterschiedliche historische und gegenwärtige Konzeptionen von Europa; die EU als Wirtschafts- und Friedensprojekt ; Ende des geteilten Europas 1989 und die Auswirkungen; Beitritt Österreichs zur EU und die nachfolgenden Veränderungen in Außen-, Sicherheits- und Neutralitätspolitik, in Gesellschaft und Alltag; Einfluss der EU auf die Lebenswelt der Schülerinnen und Schüler)",
         "Gesellschaftlicher Wandel im 20. und 21. Jahrhundert in Österreich (unterschiedliche Jugendkulturen; soziale Bewegungen, ua. Frauenbewegungen, Friedensbewegungen, Umweltbewegungen, antirassistische Bewegungen, und deren öffentlichkeitswirksame Strategien als Beispiele von politischer Partizipation; Formen von Extremismus und Populismus; Erscheinungsformen und Funktionen von Antisemitismus in der Gegenwart; Auswirkungen der Globalisierung auf verschiedene soziale Klassen und Schichten – ua. prekäre Arbeitsverhältnisse, „working poor“)",
         "Politische Mitbestimmung in Gegenwart und Zukunft (demokratische Werte und Grundrechte; Menschenrechte; Minderheitenrechte; Räume, Möglichkeiten und Strategien: politische Institutionen, außerparlamentarische Formen der Mitbestimmung – ua. Aktionen von Bürgerinnen und Bürgern im öffentlichen Raum; Machtungleichheiten in politischen Prozessen, Opposition und Regierung, NGOs); Aufgaben und Kompetenzverteilung von Gemeinden, Ländern und Bund – bundesstaatliches Prinzip/Föderalismus – Zuständigkeiten von Bürgermeistern und Bürgermeisterinnen und Gemeinderat bzw. Landeshauptleuten, Landesregierung und Landtag, Bundesregierung, Parlament und Bundespräsident",
         "Medien und politische Kommunikation in Gegenwart und Zukunft – Öffentlichkeit und Mediendemokratie (Einfluss der Medien auf Politik und Gesellschaft, politische Nutzung/Instrumentalisierung von Medien, Medien als „vierte Macht“); Umgang mit Fake News und digitaler Kommunikation)"
       ]
     }
   ],
+  "vorschlaege_digitale_technologien": [],
   "prose": [
     {
       "section": "lehraufgabe",
@@ -526,36 +553,6 @@
       "section": "kompetenzbeschreibungen",
       "label": "",
       "text": "Historische Methodenkompetenz"
-    },
-    {
-      "section": "kompetenzbeschreibungen",
-      "label": "Historische Fragekompetenz",
-      "text": ""
-    },
-    {
-      "section": "kompetenzbeschreibungen",
-      "label": "Historische Orientierungskompetenz",
-      "text": ""
-    },
-    {
-      "section": "kompetenzbeschreibungen",
-      "label": "Historische und politische Sachkompetenz",
-      "text": ""
-    },
-    {
-      "section": "kompetenzbeschreibungen",
-      "label": "Politikbezogene Methodenkompetenz",
-      "text": ""
-    },
-    {
-      "section": "kompetenzbeschreibungen",
-      "label": "Politische Urteilskompetenz",
-      "text": ""
-    },
-    {
-      "section": "kompetenzbeschreibungen",
-      "label": "Politische Handlungskompetenz",
-      "text": ""
     },
     {
       "section": "kompetenzbeschreibungen",

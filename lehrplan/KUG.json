@@ -26,7 +26,38 @@
     13
   ],
   "competence_model": {
-    "handlungsdimensionen": []
+    "handlungsdimensionen": [
+      {
+        "code": "BIL",
+        "label": "Bildnerische Praxis",
+        "modality": "enactive"
+      },
+      {
+        "code": "WAH",
+        "label": "Wahrnehmen und Reflektieren",
+        "modality": "printable"
+      },
+      {
+        "code": "BK",
+        "label": "Bildsprachen und Kommunizieren",
+        "modality": "printable"
+      }
+    ],
+    "content_areas": [
+      {
+        "code": "BKU",
+        "label": "bildende Kunst"
+      },
+      {
+        "code": "GEU",
+        "label": "gestaltete Umwelt"
+      },
+      {
+        "code": "VIK",
+        "label": "visuelle Kommunikation"
+      }
+    ],
+    "notes": "Bildnerische Praxis (the largest area) is enactive/producing → printable_coverage ≈ 0.33."
   },
   "zentrale_konzepte": [
     {
@@ -76,7 +107,10 @@
       "kompetenzbereich_code": "BIL",
       "text": "ausgehend von Gestaltungsaufgaben Bildideen entwickeln, basierend auf eigenen Erlebnissen, Gedanken, Gefühlen, Vorstellungen und Fantasien.",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        3,
+        9
+      ],
       "aria_level": 2,
       "source_ref": "KUNST UND GESTALTUNG / 1. Klasse / Bildnerische Praxis"
     },
@@ -188,7 +222,10 @@
       "kompetenzbereich_code": "BIL",
       "text": "ausgehend von Gestaltungsaufgaben Bildideen entwickeln, basierend auf eigenen Erlebnissen, Gedanken, Gefühlen, Vorstellungen und Fantasien.",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        3,
+        9
+      ],
       "aria_level": 2,
       "source_ref": "KUNST UND GESTALTUNG / 2. Klasse / Bildnerische Praxis"
     },
@@ -509,11 +546,11 @@
     {
       "klasse": 2,
       "items": [
-        "Bild, Schrift, Zeichen: Gib mir ein Zeichen. Bildnerische Praktiken der Vereinfachung und des pointierten Kommunizierens(ua. Piktogramm, Logo), ggf. unter Einsatz digitaler Medien",
+        "Bild, Schrift, Zeichen: Gib mir ein Zeichen. Bildnerische Praktiken der Vereinfachung und des pointierten Kommunizierens (ua. Piktogramm , Logo), ggf. unter Einsatz digitaler Medien",
         "Mit Bildern erzählen: Eine ganze Geschichte in einem Bild. Wie kommt Erzählung ins Bild? Erlebnisse vermitteln durch Bilder",
         "Zeit, Raum, Kontext: Schätzen, pflegen, bewahren – vergessen, vernachlässigen, zerstören. Kunstwerke und kulturelles Gedächtnis",
         "Orte, Plätze, Körper: Drinnen und Draußen. Funktion, Bedeutung, Symbolik und Einfluss auf Wahrnehmung und Verhalten. Profane und sakrale, öffentliche und private Bauten und Räume (ua. Schulgebäude, Bahnhöfe, Wohnbauten, Industriebauten)",
-        "Rückbezug als Innovation: Nicht in den Müll. Was lässt sich aus Arbeiten, die als misslungen empfunden werden, machen? Scheitern als Chance für alternativ-kreative und nachhaltige Lösungen, Lösungswege erkennen und umsetzen",
+        "Rückbezug als Innovation: Nicht in den Müll. Was lässt sich aus Arbeiten, die als misslungen empfunden werden, machen? Scheitern als Chance für alternativ-kreative und nachhaltige Lösungen , Lösungswege erkennen und umsetzen",
         "Präsentation, Repräsentation, Inszenierung: Kunst und Freiheit. Kunst auf Auftrag, Kunst im öffentlichen Raum. Bilder der Sieger und Verlierer. Kunst im Spannungsfeld von Vorgaben, Verträgen und freier Entfaltung (ua. Auftragskunst, Ausstellungskunst, freie Kunst)"
       ]
     },
@@ -525,7 +562,7 @@
         "Zeit, Raum, Kontext: (Nicht) für die Ewigkeit. Haltbare und vergängliche Materialien in Kunst und Alltagskultur. Einsatz, Funktion, Wirkung",
         "Orte, Plätze, Körper: Positionen und Perspektiven. Wirkung, Bedeutung und Einfluss von Raumdarstellungen im Wandel der Zeit. Einsatz bildnerischer Mittel ggf. unter Einsatz digitaler Medien",
         "Rückbezug als Innovation: Alte Kunst in neuen Kontexten. Ikonen der Kunst in der Alltagskultur. Zitieren, adaptieren, pervertieren. Wirkung und Funktion. Skizzen und Entwürfe als hilfreiche Schritte im Arbeitsprozess",
-        "Präsentation, Repräsentation, Inszenierung: Kunst und Markt. Was kostet Kunstgenuss? Sammeln, kaufen, verkaufen. Wer bestimmt bzw. bestimmte, was Kunst ist und welchen materiellen oder ideellen Wert sie hat? Wie wird Kunst wertvoll? Wer sammelte früher Kunst, wer sammelt heute?Original, Reproduktion, serielle Originale (ua. Drucke), Media Art, Digital Art"
+        "Präsentation, Repräsentation, Inszenierung: Kunst und Markt. Was kostet Kunstgenuss? Sammeln, kaufen, verkaufen. Wer bestimmt bzw. bestimmte, was Kunst ist und welchen materiellen oder ideellen Wert sie hat? Wie wird Kunst wertvoll? Wer sammelte früher Kunst, wer sammelt heute? Original, Reproduktion, serielle Originale (ua. Drucke), Media Art, Digital Art"
       ]
     },
     {
@@ -540,6 +577,7 @@
       ]
     }
   ],
+  "vorschlaege_digitale_technologien": [],
   "prose": [
     {
       "section": "lehraufgabe",

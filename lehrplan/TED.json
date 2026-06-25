@@ -23,7 +23,25 @@
     13
   ],
   "competence_model": {
-    "handlungsdimensionen": []
+    "handlungsdimensionen": [
+      {
+        "code": "ENT",
+        "label": "Entwicklung",
+        "modality": "printable"
+      },
+      {
+        "code": "HER",
+        "label": "Herstellung",
+        "modality": "enactive"
+      },
+      {
+        "code": "REF",
+        "label": "Reflexion",
+        "modality": "printable"
+      }
+    ],
+    "content_areas": null,
+    "notes": "Herstellung is enactive (making) → printable_coverage ≈ 0.33. Ergänzende Anwendungsbereiche are cross-Klassen supplements."
   },
   "zentrale_konzepte": [],
   "competences": [
@@ -128,7 +146,10 @@
       "kompetenzbereich_code": "REF",
       "text": "Technik und Design als Bestandteil der Alltags-, Berufs-, Konsum- und Wirtschaftswelt erkennen.",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        8,
+        13
+      ],
       "aria_level": 2,
       "source_ref": "TECHNIK UND DESIGN / 1. Klasse / Reflexion"
     },
@@ -139,7 +160,10 @@
       "kompetenzbereich_code": "REF",
       "text": "die Gestaltung des eigenen Produkts beschreiben und Entscheidungen begründen.",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        1,
+        2
+      ],
       "aria_level": 2,
       "source_ref": "TECHNIK UND DESIGN / 1. Klasse / Reflexion"
     },
@@ -174,7 +198,10 @@
       "kompetenzbereich_code": "ENT",
       "text": "Probleme erkennen und Lösungswege entwickeln.",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        1,
+        2
+      ],
       "aria_level": 2,
       "source_ref": "TECHNIK UND DESIGN / 2. Klasse / Entwicklung"
     },
@@ -185,7 +212,10 @@
       "kompetenzbereich_code": "ENT",
       "text": "Arbeitsschritte anhand von Skizzen und Modellen planen.",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        1,
+        2
+      ],
       "aria_level": 2,
       "source_ref": "TECHNIK UND DESIGN / 2. Klasse / Entwicklung"
     },
@@ -207,7 +237,10 @@
       "kompetenzbereich_code": "HER",
       "text": "Werkstoffe nachhaltig einsetzen, Bezugsquellen nennen und Entsorgungssysteme richtig verwenden.",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        11,
+        13
+      ],
       "aria_level": 2,
       "source_ref": "TECHNIK UND DESIGN / 2. Klasse / Herstellung"
     },
@@ -343,7 +376,10 @@
       "kompetenzbereich_code": "REF",
       "text": "Alltagsrelevanz und Auswirkungen von Technik und Design erklären.",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        8,
+        10
+      ],
       "aria_level": 2,
       "source_ref": "TECHNIK UND DESIGN / 3. Klasse / Reflexion"
     },
@@ -389,7 +425,11 @@
       "kompetenzbereich_code": "ENT",
       "text": "wirtschaftliche, soziale, kulturelle und ökologische Aspekte zu Produkten und Produktionsbedingungen recherchieren und berichten.",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        8,
+        11,
+        13
+      ],
       "aria_level": 2,
       "source_ref": "TECHNIK UND DESIGN / 4. Klasse / Entwicklung"
     },
@@ -455,7 +495,10 @@
       "kompetenzbereich_code": "REF",
       "text": "Gestaltungskriterien und Herstellungsprozess begründen, dokumentieren und präsentieren.",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        1,
+        2
+      ],
       "aria_level": 2,
       "source_ref": "TECHNIK UND DESIGN / 4. Klasse / Reflexion"
     },
@@ -466,7 +509,10 @@
       "kompetenzbereich_code": "REF",
       "text": "Rohstoffnutzung, Produktion und Produktkreisläufe beschreiben.",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        11,
+        13
+      ],
       "aria_level": 2,
       "source_ref": "TECHNIK UND DESIGN / 4. Klasse / Reflexion"
     },
@@ -524,11 +570,12 @@
         "Bewegung/Mobilität/Mechanik: Antrieb und Fortbewegung, Bionik, Fahren/Fliegen/Schwimmen, Hydraulik/Pneumatik, Hydro- und Aerodynamik",
         "Energie/Elektrizität/Elektronik: Wirkungsweisen einfacher elektronischer Bauteile (zB Diode, Transistor, LED), Energiebereitstellung durch Wasser, Wind oder Licht",
         "Körper/Kleidung/Mode: Accessoires, Funktionstextilien, Gender und Diversität, Konzepte, Normen, Phänomene, Popkultur, Schmuck, Schnittkonstruktion, Textildesign, Textiltechnologie, textile Objekte",
-        "Produkt/Objekt/Spiel: Medien, Möbel, Produktdesign, Reparatur, Re- und Upcycling, Werbung, Werkzeuge, Wirtschaft und Konsum",
-        "Raum/Bauen/Wohnen: analoge und digitale Darstellungsformen für Planungen und Konzepte, Brücken und Bauwerke, Environment, Gestaltung/Dekor, Infrastruktur, Modelle, Ökologie und Nachhaltigkeit, Statik, textile Raumkonzepte, textile Raumobjekte"
+        "Produkt/Objekt/Spiel: Medien , Möbel, Produktdesign, Reparatur, Re- und Upcycling , Werbung, Werkzeuge, Wirtschaft und Konsum",
+        "Raum/Bauen/Wohnen: analoge und digitale Darstellungsformen für Planungen und Konzepte, Brücken und Bauwerke, Environment , Gestaltung/Dekor, Infrastruktur , Modelle, Ökologie und Nachhaltigkeit , Statik, textile Raumkonzepte, textile Raumobjekte"
       ]
     }
   ],
+  "vorschlaege_digitale_technologien": [],
   "prose": [
     {
       "section": "lehraufgabe",

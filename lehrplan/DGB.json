@@ -23,119 +23,83 @@
     13
   ],
   "competence_model": {
-    "handlungsdimensionen": []
+    "handlungsdimensionen": [
+      {
+        "code": "T",
+        "label": "Strukturen und Funktionen digitaler Systeme (technisch-mediale Perspektive)",
+        "modality": "printable"
+      },
+      {
+        "code": "G",
+        "label": "Gesellschaftliche Wechselwirkungen (gesellschaftlich-kulturelle Perspektive)",
+        "modality": "printable"
+      },
+      {
+        "code": "I",
+        "label": "Interaktion: Nutzung, Handlung und Subjektivierung (interaktionsbezogene Perspektive)",
+        "modality": "enactive"
+      }
+    ],
+    "content_areas": [
+      {
+        "code": "ORI",
+        "label": "Orientierung"
+      },
+      {
+        "code": "INF",
+        "label": "Information"
+      },
+      {
+        "code": "KOM",
+        "label": "Kommunikation"
+      },
+      {
+        "code": "PRO",
+        "label": "Produktion (inkl. Programmieren)"
+      },
+      {
+        "code": "HAN",
+        "label": "Handeln"
+      }
+    ],
+    "notes": "Frankfurt Dreieck T/G/I are the dimensions, tagged as a plain-text (T)/(G)/(I) prefix in each competence; the 5 Kompetenzbereiche (ORI/INF/KOM/PRO/HAN) are the content axis and the competences' kompetenzbereich. Much is enactive-on-device → printable_coverage ≈ 0.4."
   },
   "zentrale_konzepte": [],
   "competences": [
     {
-      "id": "DGB.US.x.ALL.01",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Medienbildung umfasst die Beschäftigung mit der Entstehung, Entwicklung und Zukunft digitaler Medienkonstellationen. Reflexion und Kritik betreffen beispielsweise medienbiografische Entwicklungen bzw. Bedingungen der Mediensozialisation sowie digitaler Inklusions- und Exklusionsdynamiken. Medienbildung geht vom Zusammenspiel von Nutzung und Teilnahme an aktueller Medienkultur aus.",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "DIGITALE GRUNDBILDUNG / Klasse n/a / —"
-    },
-    {
-      "id": "DGB.US.x.ALL.02",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Informatische Bildung umfasst das Analysieren, Interagieren, Modellieren, Codieren und Testen im Umgang mit Informatiksystemen, Software, Automatisierung, Daten und Vernetzung. Die Entwicklung informatischer und medientechnischer Kompetenzen orientiert sich besonders an didaktischen Prinzipien der sogenannten 21 Century Skills, der 4 Ks (kritisches Denken, Kreativität, Kommunikation und Kollaboration) und des Computational Thinking (problemorientiertes informatisches Denken).",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "DIGITALE GRUNDBILDUNG / Klasse n/a / —"
-    },
-    {
-      "id": "DGB.US.x.ALL.03",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Gestaltungskompetenz geht von einem Zusammenspiel von informatischer Bildung und Medienbildung aus und bietet vielfältige analytische, produktive und kreative Zugänge zu funktionalen Medieneinsätzen und ästhetischen Medienformaten in globalisierten digitalen Kulturen.",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "DIGITALE GRUNDBILDUNG / Klasse n/a / —"
-    },
-    {
-      "id": "DGB.US.x.ALL.04",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Orientierung: gesellschaftliche Aspekte von Medienwandel und Digitalisierung analysieren und reflektieren",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "DIGITALE GRUNDBILDUNG / Klasse n/a / —"
-    },
-    {
-      "id": "DGB.US.x.ALL.05",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Information: mit Daten, Informationen und Informationssystemen verantwortungsvoll umgehen",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "DIGITALE GRUNDBILDUNG / Klasse n/a / —"
-    },
-    {
-      "id": "DGB.US.x.ALL.06",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Kommunikation: Kommunizieren und Kooperieren unter Nutzung informatischer, medialer Systeme",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "DIGITALE GRUNDBILDUNG / Klasse n/a / —"
-    },
-    {
-      "id": "DGB.US.x.ALL.07",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Produktion: Inhalte digital erstellen und veröffentlichen, Algorithmen entwerfen und Programmieren: Zerlegen von Problemen, Muster erkennen, Verallgemeinern/Abstrahieren und Algorithmen entwerfen",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "DIGITALE GRUNDBILDUNG / Klasse n/a / —"
-    },
-    {
-      "id": "DGB.US.x.ALL.08",
-      "klasse": null,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
-      "text": "Handeln: Angebote und Handlungsmöglichkeiten in einer von Digitalisierung geprägten Welt einschätzen und verantwortungsvoll nutzen",
-      "dimensions": [],
-      "uebergreifende_themen": [],
-      "aria_level": 2,
-      "source_ref": "DIGITALE GRUNDBILDUNG / Klasse n/a / —"
-    },
-    {
-      "id": "DGB.US.1.ALL.01",
+      "id": "DGB.US.1.ORI.01",
       "klasse": 1,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
+      "kompetenzbereich": "Orientierung: gesellschaftliche Aspekte von Medienwandel und Digitalisierung analysieren und reflektieren",
+      "kompetenzbereich_code": "ORI",
       "text": "(T) das Prinzip der Eingabe, Verarbeitung und Ausgabe exemplarisch an den Bestandteilen und der Funktionsweise eines digitalen Endgeräts beschreiben.",
       "dimensions": [],
       "uebergreifende_themen": [],
       "aria_level": 2,
-      "source_ref": "DIGITALE GRUNDBILDUNG / 1. Klasse / —"
+      "source_ref": "DIGITALE GRUNDBILDUNG / 1. Klasse / Orientierung: gesellschaftliche Aspekte von Medienwandel und Digitalisierung analysieren und reflektieren"
     },
     {
-      "id": "DGB.US.1.ALL.02",
+      "id": "DGB.US.1.ORI.02",
       "klasse": 1,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
+      "kompetenzbereich": "Orientierung: gesellschaftliche Aspekte von Medienwandel und Digitalisierung analysieren und reflektieren",
+      "kompetenzbereich_code": "ORI",
       "text": "(G) erkunden, was das Digitale im Unterschied zum Analogen ausmacht, und an interdisziplinären Beispielen aufzeigen, welche Elemente/Komponenten und Funktionen dazugehören.",
       "dimensions": [],
       "uebergreifende_themen": [],
       "aria_level": 2,
-      "source_ref": "DIGITALE GRUNDBILDUNG / 1. Klasse / —"
+      "source_ref": "DIGITALE GRUNDBILDUNG / 1. Klasse / Orientierung: gesellschaftliche Aspekte von Medienwandel und Digitalisierung analysieren und reflektieren"
+    },
+    {
+      "id": "DGB.US.1.ORI.03",
+      "klasse": 1,
+      "kompetenzbereich": "Orientierung: gesellschaftliche Aspekte von Medienwandel und Digitalisierung analysieren und reflektieren",
+      "kompetenzbereich_code": "ORI",
+      "text": "(I) das persönliche Nutzungsverhalten vergleichend analysieren, hinterfragen und sinnvolle Möglichkeiten der Veränderung benennen sowie vergleichen, wie Menschen vor und nach der Einführung oder Übernahme der Digitalisierung leben und arbeiten.",
+      "dimensions": [],
+      "uebergreifende_themen": [
+        3
+      ],
+      "aria_level": 2,
+      "source_ref": "DIGITALE GRUNDBILDUNG / 1. Klasse / Orientierung: gesellschaftliche Aspekte von Medienwandel und Digitalisierung analysieren und reflektieren"
     },
     {
       "id": "DGB.US.1.INF.01",
@@ -160,6 +124,28 @@
       "source_ref": "DIGITALE GRUNDBILDUNG / 1. Klasse / Information: mit Daten, Informationen und Informationssystemen verantwortungsvoll umgehen"
     },
     {
+      "id": "DGB.US.1.INF.03",
+      "klasse": 1,
+      "kompetenzbereich": "Information: mit Daten, Informationen und Informationssystemen verantwortungsvoll umgehen",
+      "kompetenzbereich_code": "INF",
+      "text": "(I) unter Nutzung der grundlegenden Funktionen einer Suchmaschine einfache Internetrecherchen durchführen sowie die Qualität der gefundenen Informationen anhand grundlegender Kriterien einschätzen.",
+      "dimensions": [],
+      "uebergreifende_themen": [],
+      "aria_level": 2,
+      "source_ref": "DIGITALE GRUNDBILDUNG / 1. Klasse / Information: mit Daten, Informationen und Informationssystemen verantwortungsvoll umgehen"
+    },
+    {
+      "id": "DGB.US.1.INF.04",
+      "klasse": 1,
+      "kompetenzbereich": "Information: mit Daten, Informationen und Informationssystemen verantwortungsvoll umgehen",
+      "kompetenzbereich_code": "INF",
+      "text": "(I) mit einem digitalen Gerät Informationen speichern, kopieren, suchen, abrufen, ändern und löschen und die gespeicherten Informationen als Daten definieren.",
+      "dimensions": [],
+      "uebergreifende_themen": [],
+      "aria_level": 2,
+      "source_ref": "DIGITALE GRUNDBILDUNG / 1. Klasse / Information: mit Daten, Informationen und Informationssystemen verantwortungsvoll umgehen"
+    },
+    {
       "id": "DGB.US.1.KOM.01",
       "klasse": 1,
       "kompetenzbereich": "Kommunikation: Kommunizieren und Kooperieren unter Nutzung informatischer, medialer Systeme",
@@ -176,6 +162,17 @@
       "kompetenzbereich": "Kommunikation: Kommunizieren und Kooperieren unter Nutzung informatischer, medialer Systeme",
       "kompetenzbereich_code": "KOM",
       "text": "(G) an Beispielen der Nutzung von Software aufzeigen, wie digitale Technologien neue Formen der Zusammenarbeit ermöglichen, sowie respektvoll und verantwortungsbewusst mit anderen online zusammenarbeiten.",
+      "dimensions": [],
+      "uebergreifende_themen": [],
+      "aria_level": 2,
+      "source_ref": "DIGITALE GRUNDBILDUNG / 1. Klasse / Kommunikation: Kommunizieren und Kooperieren unter Nutzung informatischer, medialer Systeme"
+    },
+    {
+      "id": "DGB.US.1.KOM.03",
+      "klasse": 1,
+      "kompetenzbereich": "Kommunikation: Kommunizieren und Kooperieren unter Nutzung informatischer, medialer Systeme",
+      "kompetenzbereich_code": "KOM",
+      "text": "(I) verschiedene digitale Kommunikationswerkzeuge, Kollaborationswerkzeuge und Kollaborationsdienste benennen, beschreiben und sinnvolle Nutzungsszenarien aufzeigen.",
       "dimensions": [],
       "uebergreifende_themen": [],
       "aria_level": 2,
@@ -206,6 +203,30 @@
       "source_ref": "DIGITALE GRUNDBILDUNG / 1. Klasse / Produktion: Inhalte digital erstellen und veröffentlichen, Algorithmen entwerfen und Programmieren"
     },
     {
+      "id": "DGB.US.1.PRO.03",
+      "klasse": 1,
+      "kompetenzbereich": "Produktion: Inhalte digital erstellen und veröffentlichen, Algorithmen entwerfen und Programmieren",
+      "kompetenzbereich_code": "PRO",
+      "text": "(I) mit Daten einfache Berechnungen durchführen sowie in verschiedenen (visuellen) Formaten sammeln und präsentieren.",
+      "dimensions": [],
+      "uebergreifende_themen": [],
+      "aria_level": 2,
+      "source_ref": "DIGITALE GRUNDBILDUNG / 1. Klasse / Produktion: Inhalte digital erstellen und veröffentlichen, Algorithmen entwerfen und Programmieren"
+    },
+    {
+      "id": "DGB.US.1.PRO.04",
+      "klasse": 1,
+      "kompetenzbereich": "Produktion: Inhalte digital erstellen und veröffentlichen, Algorithmen entwerfen und Programmieren",
+      "kompetenzbereich_code": "PRO",
+      "text": "(I) einzeln und gemeinsam Texte und Präsentationen (unter Einbeziehung von Bildern, Grafiken und anderen Objekten) strukturieren und formatieren.",
+      "dimensions": [],
+      "uebergreifende_themen": [
+        10
+      ],
+      "aria_level": 2,
+      "source_ref": "DIGITALE GRUNDBILDUNG / 1. Klasse / Produktion: Inhalte digital erstellen und veröffentlichen, Algorithmen entwerfen und Programmieren"
+    },
+    {
       "id": "DGB.US.1.HAN.01",
       "klasse": 1,
       "kompetenzbereich": "Handeln: Angebote und Handlungsmöglichkeiten in einer von Digitalisierung geprägten Welt einschätzen und verantwortungsvoll nutzen",
@@ -230,37 +251,64 @@
       "source_ref": "DIGITALE GRUNDBILDUNG / 1. Klasse / Handeln: Angebote und Handlungsmöglichkeiten in einer von Digitalisierung geprägten Welt einschätzen und verantwortungsvoll nutzen"
     },
     {
-      "id": "DGB.US.2.ALL.01",
+      "id": "DGB.US.1.HAN.03",
+      "klasse": 1,
+      "kompetenzbereich": "Handeln: Angebote und Handlungsmöglichkeiten in einer von Digitalisierung geprägten Welt einschätzen und verantwortungsvoll nutzen",
+      "kompetenzbereich_code": "HAN",
+      "text": "(I) Hilfesysteme bei der Problemlösung nutzen.",
+      "dimensions": [],
+      "uebergreifende_themen": [],
+      "aria_level": 2,
+      "source_ref": "DIGITALE GRUNDBILDUNG / 1. Klasse / Handeln: Angebote und Handlungsmöglichkeiten in einer von Digitalisierung geprägten Welt einschätzen und verantwortungsvoll nutzen"
+    },
+    {
+      "id": "DGB.US.2.ORI.01",
       "klasse": 2,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
+      "kompetenzbereich": "Orientierung: gesellschaftliche Aspekte von Medienwandel und Digitalisierung analysieren und reflektieren",
+      "kompetenzbereich_code": "ORI",
       "text": "(T) Möglichkeiten bewerten, wie die Zugänglichkeit und Nutzbarkeit von Technologieprodukten für unterschiedliche Bedürfnisse von Nutzerinnen und Nutzer verbessert werden kann.",
       "dimensions": [],
       "uebergreifende_themen": [],
       "aria_level": 2,
-      "source_ref": "DIGITALE GRUNDBILDUNG / 2. Klasse / —"
+      "source_ref": "DIGITALE GRUNDBILDUNG / 2. Klasse / Orientierung: gesellschaftliche Aspekte von Medienwandel und Digitalisierung analysieren und reflektieren"
     },
     {
-      "id": "DGB.US.2.ALL.02",
+      "id": "DGB.US.2.ORI.02",
       "klasse": 2,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
+      "kompetenzbereich": "Orientierung: gesellschaftliche Aspekte von Medienwandel und Digitalisierung analysieren und reflektieren",
+      "kompetenzbereich_code": "ORI",
       "text": "(G) Interessen und Bedingungen der Medienproduktion und der Veröffentlichung sowie des Medienkonsums analysieren.",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        7,
+        13
+      ],
       "aria_level": 2,
-      "source_ref": "DIGITALE GRUNDBILDUNG / 2. Klasse / —"
+      "source_ref": "DIGITALE GRUNDBILDUNG / 2. Klasse / Orientierung: gesellschaftliche Aspekte von Medienwandel und Digitalisierung analysieren und reflektieren"
     },
     {
-      "id": "DGB.US.2.ALL.03",
+      "id": "DGB.US.2.ORI.03",
       "klasse": 2,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
+      "kompetenzbereich": "Orientierung: gesellschaftliche Aspekte von Medienwandel und Digitalisierung analysieren und reflektieren",
+      "kompetenzbereich_code": "ORI",
       "text": "(G) geeignete Software (auch freie Software) auswählen und bedienen, um unterschiedliche Aufgaben auszuführen.",
       "dimensions": [],
       "uebergreifende_themen": [],
       "aria_level": 2,
-      "source_ref": "DIGITALE GRUNDBILDUNG / 2. Klasse / —"
+      "source_ref": "DIGITALE GRUNDBILDUNG / 2. Klasse / Orientierung: gesellschaftliche Aspekte von Medienwandel und Digitalisierung analysieren und reflektieren"
+    },
+    {
+      "id": "DGB.US.2.ORI.04",
+      "klasse": 2,
+      "kompetenzbereich": "Orientierung: gesellschaftliche Aspekte von Medienwandel und Digitalisierung analysieren und reflektieren",
+      "kompetenzbereich_code": "ORI",
+      "text": "(I) an interdisziplinären Beispielen aufzeigen, inwieweit das Digitale im Vergleich zum Analogen das eigene Leben, die Gesellschaft oder Umwelt verändert. Sie können erkennen, dass Medien und Technologien nie „neutral“ sind.",
+      "dimensions": [],
+      "uebergreifende_themen": [
+        7
+      ],
+      "aria_level": 2,
+      "source_ref": "DIGITALE GRUNDBILDUNG / 2. Klasse / Orientierung: gesellschaftliche Aspekte von Medienwandel und Digitalisierung analysieren und reflektieren"
     },
     {
       "id": "DGB.US.2.INF.01",
@@ -285,6 +333,19 @@
       "source_ref": "DIGITALE GRUNDBILDUNG / 2. Klasse / Information: mit Daten, Informationen und Informationssystemen verantwortungsvoll umgehen"
     },
     {
+      "id": "DGB.US.2.INF.03",
+      "klasse": 2,
+      "kompetenzbereich": "Information: mit Daten, Informationen und Informationssystemen verantwortungsvoll umgehen",
+      "kompetenzbereich_code": "INF",
+      "text": "(I) Lizenzmodelle, insb. offene (Creative Commons, Open Educational Resources, Open Source), benennen, erklären und anwenden.",
+      "dimensions": [],
+      "uebergreifende_themen": [
+        13
+      ],
+      "aria_level": 2,
+      "source_ref": "DIGITALE GRUNDBILDUNG / 2. Klasse / Information: mit Daten, Informationen und Informationssystemen verantwortungsvoll umgehen"
+    },
+    {
       "id": "DGB.US.2.KOM.01",
       "klasse": 2,
       "kompetenzbereich": "Kommunikation: Kommunizieren und Kooperieren unter Nutzung informatischer, medialer Systeme",
@@ -305,6 +366,17 @@
       "uebergreifende_themen": [
         7
       ],
+      "aria_level": 2,
+      "source_ref": "DIGITALE GRUNDBILDUNG / 2. Klasse / Kommunikation: Kommunizieren und Kooperieren unter Nutzung informatischer, medialer Systeme"
+    },
+    {
+      "id": "DGB.US.2.KOM.03",
+      "klasse": 2,
+      "kompetenzbereich": "Kommunikation: Kommunizieren und Kooperieren unter Nutzung informatischer, medialer Systeme",
+      "kompetenzbereich_code": "KOM",
+      "text": "(I) den Begriff „Social Media“ erklären und verstehen, welche Interessen das anbietende Unternehmen hat.",
+      "dimensions": [],
+      "uebergreifende_themen": [],
       "aria_level": 2,
       "source_ref": "DIGITALE GRUNDBILDUNG / 2. Klasse / Kommunikation: Kommunizieren und Kooperieren unter Nutzung informatischer, medialer Systeme"
     },
@@ -344,6 +416,17 @@
       "source_ref": "DIGITALE GRUNDBILDUNG / 2. Klasse / Produktion: Inhalte digital erstellen und veröffentlichen, Algorithmen entwerfen und Programmieren"
     },
     {
+      "id": "DGB.US.2.PRO.04",
+      "klasse": 2,
+      "kompetenzbereich": "Produktion: Inhalte digital erstellen und veröffentlichen, Algorithmen entwerfen und Programmieren",
+      "kompetenzbereich_code": "PRO",
+      "text": "(I) visuelle/audiovisuelle/auditive Inhalte erzeugen, adaptieren und analysieren. Sie können Möglichkeiten der Veröffentlichung benennen.",
+      "dimensions": [],
+      "uebergreifende_themen": [],
+      "aria_level": 2,
+      "source_ref": "DIGITALE GRUNDBILDUNG / 2. Klasse / Produktion: Inhalte digital erstellen und veröffentlichen, Algorithmen entwerfen und Programmieren"
+    },
+    {
       "id": "DGB.US.2.HAN.01",
       "klasse": 2,
       "kompetenzbereich": "Handeln: Angebote und Handlungsmöglichkeiten in einer von Digitalisierung geprägten Welt einschätzen und verantwortungsvoll nutzen",
@@ -379,39 +462,66 @@
       "source_ref": "DIGITALE GRUNDBILDUNG / 2. Klasse / Handeln: Angebote und Handlungsmöglichkeiten in einer von Digitalisierung geprägten Welt einschätzen und verantwortungsvoll nutzen"
     },
     {
-      "id": "DGB.US.3.ALL.01",
+      "id": "DGB.US.2.HAN.04",
+      "klasse": 2,
+      "kompetenzbereich": "Handeln: Angebote und Handlungsmöglichkeiten in einer von Digitalisierung geprägten Welt einschätzen und verantwortungsvoll nutzen",
+      "kompetenzbereich_code": "HAN",
+      "text": "(I) zwischen digitalen Angeboten und eigenen Bedürfnissen abwägen und persönliche Handlungsmöglichkeiten unter Berücksichtigung gesundheitlicher und ökologischer Aspekte gestalten.",
+      "dimensions": [],
+      "uebergreifende_themen": [
+        3,
+        11
+      ],
+      "aria_level": 2,
+      "source_ref": "DIGITALE GRUNDBILDUNG / 2. Klasse / Handeln: Angebote und Handlungsmöglichkeiten in einer von Digitalisierung geprägten Welt einschätzen und verantwortungsvoll nutzen"
+    },
+    {
+      "id": "DGB.US.3.ORI.01",
       "klasse": 3,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
+      "kompetenzbereich": "Orientierung: gesellschaftliche Aspekte von Medienwandel und Digitalisierung analysieren und reflektieren",
+      "kompetenzbereich_code": "ORI",
       "text": "(T) an interdisziplinären Beispielen Anwendungen von Technik in Umwelt und Gesellschaft beschreiben und deren Relevanz für gesellschaftliche Gruppen und kulturelle Kontexte berücksichtigen. Sie können Wechselwirkungen benennen.",
       "dimensions": [],
       "uebergreifende_themen": [
         11
       ],
       "aria_level": 2,
-      "source_ref": "DIGITALE GRUNDBILDUNG / 3. Klasse / —"
+      "source_ref": "DIGITALE GRUNDBILDUNG / 3. Klasse / Orientierung: gesellschaftliche Aspekte von Medienwandel und Digitalisierung analysieren und reflektieren"
     },
     {
-      "id": "DGB.US.3.ALL.02",
+      "id": "DGB.US.3.ORI.02",
       "klasse": 3,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
+      "kompetenzbereich": "Orientierung: gesellschaftliche Aspekte von Medienwandel und Digitalisierung analysieren und reflektieren",
+      "kompetenzbereich_code": "ORI",
       "text": "(T) beschreiben, wie künstliche Intelligenz viele Software- und physische Systeme steuert.",
       "dimensions": [],
       "uebergreifende_themen": [],
       "aria_level": 2,
-      "source_ref": "DIGITALE GRUNDBILDUNG / 3. Klasse / —"
+      "source_ref": "DIGITALE GRUNDBILDUNG / 3. Klasse / Orientierung: gesellschaftliche Aspekte von Medienwandel und Digitalisierung analysieren und reflektieren"
     },
     {
-      "id": "DGB.US.3.ALL.03",
+      "id": "DGB.US.3.ORI.03",
       "klasse": 3,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
+      "kompetenzbereich": "Orientierung: gesellschaftliche Aspekte von Medienwandel und Digitalisierung analysieren und reflektieren",
+      "kompetenzbereich_code": "ORI",
       "text": "(G) Veränderungen des Mediennutzungsverhaltens beschreiben sowie Chancen und Gefahren der personalisierten Mediennutzung analysieren.",
       "dimensions": [],
       "uebergreifende_themen": [],
       "aria_level": 2,
-      "source_ref": "DIGITALE GRUNDBILDUNG / 3. Klasse / —"
+      "source_ref": "DIGITALE GRUNDBILDUNG / 3. Klasse / Orientierung: gesellschaftliche Aspekte von Medienwandel und Digitalisierung analysieren und reflektieren"
+    },
+    {
+      "id": "DGB.US.3.ORI.04",
+      "klasse": 3,
+      "kompetenzbereich": "Orientierung: gesellschaftliche Aspekte von Medienwandel und Digitalisierung analysieren und reflektieren",
+      "kompetenzbereich_code": "ORI",
+      "text": "(I) Kompromisse im Zusammenhang mit digitalen Technologien reflektieren, die sich auf die alltäglichen Aktivitäten und beruflichen Möglichkeiten der Menschen auswirken.",
+      "dimensions": [],
+      "uebergreifende_themen": [
+        1
+      ],
+      "aria_level": 2,
+      "source_ref": "DIGITALE GRUNDBILDUNG / 3. Klasse / Orientierung: gesellschaftliche Aspekte von Medienwandel und Digitalisierung analysieren und reflektieren"
     },
     {
       "id": "DGB.US.3.INF.01",
@@ -419,6 +529,39 @@
       "kompetenzbereich": "Information: mit Daten, Informationen und Informationssystemen verantwortungsvoll umgehen",
       "kompetenzbereich_code": "INF",
       "text": "(G) Bedingungen sowie Vor- und Nachteile von personalisierten Suchroutinen für das eigene Leben bzw. die Gesellschaft erklären.",
+      "dimensions": [],
+      "uebergreifende_themen": [],
+      "aria_level": 2,
+      "source_ref": "DIGITALE GRUNDBILDUNG / 3. Klasse / Information: mit Daten, Informationen und Informationssystemen verantwortungsvoll umgehen"
+    },
+    {
+      "id": "DGB.US.3.INF.02",
+      "klasse": 3,
+      "kompetenzbereich": "Information: mit Daten, Informationen und Informationssystemen verantwortungsvoll umgehen",
+      "kompetenzbereich_code": "INF",
+      "text": "(I) zielgerichtet und selbstständig die Suche nach Informationen und Daten mit Hilfe geeigneter Strategien und Methoden planen und durchführen, geeignete Quellen nutzen und gefundene Informationen vergleichend hinterfragen.",
+      "dimensions": [],
+      "uebergreifende_themen": [],
+      "aria_level": 2,
+      "source_ref": "DIGITALE GRUNDBILDUNG / 3. Klasse / Information: mit Daten, Informationen und Informationssystemen verantwortungsvoll umgehen"
+    },
+    {
+      "id": "DGB.US.3.INF.03",
+      "klasse": 3,
+      "kompetenzbereich": "Information: mit Daten, Informationen und Informationssystemen verantwortungsvoll umgehen",
+      "kompetenzbereich_code": "INF",
+      "text": "(I) Muster in Datendarstellungen wie Diagrammen oder Grafiken erkennen und beschreiben, um Vorhersagen zu treffen.",
+      "dimensions": [],
+      "uebergreifende_themen": [],
+      "aria_level": 2,
+      "source_ref": "DIGITALE GRUNDBILDUNG / 3. Klasse / Information: mit Daten, Informationen und Informationssystemen verantwortungsvoll umgehen"
+    },
+    {
+      "id": "DGB.US.3.INF.04",
+      "klasse": 3,
+      "kompetenzbereich": "Information: mit Daten, Informationen und Informationssystemen verantwortungsvoll umgehen",
+      "kompetenzbereich_code": "INF",
+      "text": "(I) Datenmaterial nutzen, um Ursache-Wirkung-Beziehungen aufzuzeigen oder vorzuschlagen, Ergebnisse vorherzusagen oder eine Idee zu vermitteln.",
       "dimensions": [],
       "uebergreifende_themen": [],
       "aria_level": 2,
@@ -449,6 +592,28 @@
       "source_ref": "DIGITALE GRUNDBILDUNG / 3. Klasse / Kommunikation: Kommunizieren und Kooperieren unter Nutzung informatischer, medialer Systeme"
     },
     {
+      "id": "DGB.US.3.KOM.03",
+      "klasse": 3,
+      "kompetenzbereich": "Kommunikation: Kommunizieren und Kooperieren unter Nutzung informatischer, medialer Systeme",
+      "kompetenzbereich_code": "KOM",
+      "text": "(I) bei der Erstellung digitaler Projekte (digitaler Artefakte) mittels Strategien wie Crowdsourcing oder Umfragen mit mehreren Mitwirkenden zusammenarbeiten.",
+      "dimensions": [],
+      "uebergreifende_themen": [],
+      "aria_level": 2,
+      "source_ref": "DIGITALE GRUNDBILDUNG / 3. Klasse / Kommunikation: Kommunizieren und Kooperieren unter Nutzung informatischer, medialer Systeme"
+    },
+    {
+      "id": "DGB.US.3.KOM.04",
+      "klasse": 3,
+      "kompetenzbereich": "Kommunikation: Kommunizieren und Kooperieren unter Nutzung informatischer, medialer Systeme",
+      "kompetenzbereich_code": "KOM",
+      "text": "(I) eigene digitale Identitäten reflektiert gestalten sowie die eigene digitale Reputation verfolgen und schützen.",
+      "dimensions": [],
+      "uebergreifende_themen": [],
+      "aria_level": 2,
+      "source_ref": "DIGITALE GRUNDBILDUNG / 3. Klasse / Kommunikation: Kommunizieren und Kooperieren unter Nutzung informatischer, medialer Systeme"
+    },
+    {
       "id": "DGB.US.3.PRO.01",
       "klasse": 3,
       "kompetenzbereich": "Produktion: Inhalte digital erstellen und veröffentlichen, Algorithmen entwerfen und Programmieren",
@@ -465,6 +630,30 @@
       "kompetenzbereich": "Produktion: Inhalte digital erstellen und veröffentlichen, Algorithmen entwerfen und Programmieren",
       "kompetenzbereich_code": "PRO",
       "text": "(G) verschiedene populäre Medienkulturen benennen sowie Möglichkeiten verschiedener Darstellungsformen von Inhalten erproben.",
+      "dimensions": [],
+      "uebergreifende_themen": [],
+      "aria_level": 2,
+      "source_ref": "DIGITALE GRUNDBILDUNG / 3. Klasse / Produktion: Inhalte digital erstellen und veröffentlichen, Algorithmen entwerfen und Programmieren"
+    },
+    {
+      "id": "DGB.US.3.PRO.03",
+      "klasse": 3,
+      "kompetenzbereich": "Produktion: Inhalte digital erstellen und veröffentlichen, Algorithmen entwerfen und Programmieren",
+      "kompetenzbereich_code": "PRO",
+      "text": "(I) ihre eigenen medialen Produktionen auf Barrierefreiheit überprüfen und ggf. Barrieren beseitigen.",
+      "dimensions": [],
+      "uebergreifende_themen": [
+        8
+      ],
+      "aria_level": 2,
+      "source_ref": "DIGITALE GRUNDBILDUNG / 3. Klasse / Produktion: Inhalte digital erstellen und veröffentlichen, Algorithmen entwerfen und Programmieren"
+    },
+    {
+      "id": "DGB.US.3.PRO.04",
+      "klasse": 3,
+      "kompetenzbereich": "Produktion: Inhalte digital erstellen und veröffentlichen, Algorithmen entwerfen und Programmieren",
+      "kompetenzbereich_code": "PRO",
+      "text": "(I) Einstellungen in Softwareapplikationen den persönlichen Bedürfnissen entsprechend anpassen.",
       "dimensions": [],
       "uebergreifende_themen": [],
       "aria_level": 2,
@@ -497,28 +686,50 @@
       "source_ref": "DIGITALE GRUNDBILDUNG / 3. Klasse / Handeln: Angebote und Handlungsmöglichkeiten in einer von Digitalisierung geprägten Welt einschätzen und verantwortungsvoll nutzen"
     },
     {
-      "id": "DGB.US.4.ALL.01",
+      "id": "DGB.US.3.HAN.03",
+      "klasse": 3,
+      "kompetenzbereich": "Handeln: Angebote und Handlungsmöglichkeiten in einer von Digitalisierung geprägten Welt einschätzen und verantwortungsvoll nutzen",
+      "kompetenzbereich_code": "HAN",
+      "text": "(I) entsprechende Vorkehrungen treffen, um ihre Geräte und Inhalte vor Viren bzw. Schadsoftware/Malware zu schützen.",
+      "dimensions": [],
+      "uebergreifende_themen": [],
+      "aria_level": 2,
+      "source_ref": "DIGITALE GRUNDBILDUNG / 3. Klasse / Handeln: Angebote und Handlungsmöglichkeiten in einer von Digitalisierung geprägten Welt einschätzen und verantwortungsvoll nutzen"
+    },
+    {
+      "id": "DGB.US.4.ORI.01",
       "klasse": 4,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
+      "kompetenzbereich": "Orientierung: gesellschaftliche Aspekte von Medienwandel und Digitalisierung analysieren und reflektieren",
+      "kompetenzbereich_code": "ORI",
       "text": "(T) die Grenzen und Möglichkeiten von Künstlicher Intelligenz reflektieren.",
       "dimensions": [],
       "uebergreifende_themen": [],
       "aria_level": 2,
-      "source_ref": "DIGITALE GRUNDBILDUNG / 4. Klasse / —"
+      "source_ref": "DIGITALE GRUNDBILDUNG / 4. Klasse / Orientierung: gesellschaftliche Aspekte von Medienwandel und Digitalisierung analysieren und reflektieren"
     },
     {
-      "id": "DGB.US.4.ALL.02",
+      "id": "DGB.US.4.ORI.02",
       "klasse": 4,
-      "kompetenzbereich": null,
-      "kompetenzbereich_code": "ALL",
+      "kompetenzbereich": "Orientierung: gesellschaftliche Aspekte von Medienwandel und Digitalisierung analysieren und reflektieren",
+      "kompetenzbereich_code": "ORI",
       "text": "(G) euphorische und kulturpessimistische Haltungen gegenüber Technologie- und Medienwandel wahrnehmen und ihnen argumentativ begegnen.",
       "dimensions": [],
       "uebergreifende_themen": [
         7
       ],
       "aria_level": 2,
-      "source_ref": "DIGITALE GRUNDBILDUNG / 4. Klasse / —"
+      "source_ref": "DIGITALE GRUNDBILDUNG / 4. Klasse / Orientierung: gesellschaftliche Aspekte von Medienwandel und Digitalisierung analysieren und reflektieren"
+    },
+    {
+      "id": "DGB.US.4.ORI.03",
+      "klasse": 4,
+      "kompetenzbereich": "Orientierung: gesellschaftliche Aspekte von Medienwandel und Digitalisierung analysieren und reflektieren",
+      "kompetenzbereich_code": "ORI",
+      "text": "(I) die Normativität von digitalen Technologien (zB Filterblase) und Medieninhalten (zB Stereotype, Klischees) erkennen und diese kreativ durchbrechen.",
+      "dimensions": [],
+      "uebergreifende_themen": [],
+      "aria_level": 2,
+      "source_ref": "DIGITALE GRUNDBILDUNG / 4. Klasse / Orientierung: gesellschaftliche Aspekte von Medienwandel und Digitalisierung analysieren und reflektieren"
     },
     {
       "id": "DGB.US.4.INF.01",
@@ -540,6 +751,19 @@
       "dimensions": [],
       "uebergreifende_themen": [
         7
+      ],
+      "aria_level": 2,
+      "source_ref": "DIGITALE GRUNDBILDUNG / 4. Klasse / Information: mit Daten, Informationen und Informationssystemen verantwortungsvoll umgehen"
+    },
+    {
+      "id": "DGB.US.4.INF.03",
+      "klasse": 4,
+      "kompetenzbereich": "Information: mit Daten, Informationen und Informationssystemen verantwortungsvoll umgehen",
+      "kompetenzbereich_code": "INF",
+      "text": "(I) Informationen und Inhalte aktualisieren, verbessern sowie zielgruppen-, medienformat- und anwendungsgerecht aufbereiten und inhaltlich, organisatorisch und sprachlich in bestehende Wissensorganisationsformate einbinden.",
+      "dimensions": [],
+      "uebergreifende_themen": [
+        10
       ],
       "aria_level": 2,
       "source_ref": "DIGITALE GRUNDBILDUNG / 4. Klasse / Information: mit Daten, Informationen und Informationssystemen verantwortungsvoll umgehen"
@@ -580,6 +804,17 @@
       "source_ref": "DIGITALE GRUNDBILDUNG / 4. Klasse / Kommunikation: Kommunizieren und Kooperieren unter Nutzung informatischer, medialer Systeme"
     },
     {
+      "id": "DGB.US.4.KOM.04",
+      "klasse": 4,
+      "kompetenzbereich": "Kommunikation: Kommunizieren und Kooperieren unter Nutzung informatischer, medialer Systeme",
+      "kompetenzbereich_code": "KOM",
+      "text": "(I) verantwortungsvoll in digitalen Medien kommunizieren und unter Berücksichtigung des Urheberrechts und des Rechts am eigenen Bild Daten austauschen.",
+      "dimensions": [],
+      "uebergreifende_themen": [],
+      "aria_level": 2,
+      "source_ref": "DIGITALE GRUNDBILDUNG / 4. Klasse / Kommunikation: Kommunizieren und Kooperieren unter Nutzung informatischer, medialer Systeme"
+    },
+    {
       "id": "DGB.US.4.PRO.01",
       "klasse": 4,
       "kompetenzbereich": "Produktion: Inhalte digital erstellen und veröffentlichen, Algorithmen entwerfen und Programmieren",
@@ -596,6 +831,28 @@
       "kompetenzbereich": "Produktion: Inhalte digital erstellen und veröffentlichen, Algorithmen entwerfen und Programmieren",
       "kompetenzbereich_code": "PRO",
       "text": "(G) Möglichkeiten verschiedener Darstellungsformen von Inhalten erproben und deren Einfluss auf die Wahrnehmung des Inhalts hinterfragen.",
+      "dimensions": [],
+      "uebergreifende_themen": [],
+      "aria_level": 2,
+      "source_ref": "DIGITALE GRUNDBILDUNG / 4. Klasse / Produktion: Inhalte digital erstellen und veröffentlichen, Algorithmen entwerfen und Programmieren"
+    },
+    {
+      "id": "DGB.US.4.PRO.03",
+      "klasse": 4,
+      "kompetenzbereich": "Produktion: Inhalte digital erstellen und veröffentlichen, Algorithmen entwerfen und Programmieren",
+      "kompetenzbereich_code": "PRO",
+      "text": "(I) mit bereitgestellten Medien und Software-Applikationen zielgerichtet und kreativ gestaltend kooperieren.",
+      "dimensions": [],
+      "uebergreifende_themen": [],
+      "aria_level": 2,
+      "source_ref": "DIGITALE GRUNDBILDUNG / 4. Klasse / Produktion: Inhalte digital erstellen und veröffentlichen, Algorithmen entwerfen und Programmieren"
+    },
+    {
+      "id": "DGB.US.4.PRO.04",
+      "klasse": 4,
+      "kompetenzbereich": "Produktion: Inhalte digital erstellen und veröffentlichen, Algorithmen entwerfen und Programmieren",
+      "kompetenzbereich_code": "PRO",
+      "text": "(I) einfache Programme oder Webanwendungen mit geeigneten Werkzeugen erstellen, um ein bestimmtes Problem zu lösen oder eine bestimmte Aufgabe zu erfüllen.",
       "dimensions": [],
       "uebergreifende_themen": [],
       "aria_level": 2,
@@ -632,6 +889,19 @@
       "dimensions": [],
       "uebergreifende_themen": [
         7
+      ],
+      "aria_level": 2,
+      "source_ref": "DIGITALE GRUNDBILDUNG / 4. Klasse / Handeln: Angebote und Handlungsmöglichkeiten in einer von Digitalisierung geprägten Welt einschätzen und verantwortungsvoll nutzen"
+    },
+    {
+      "id": "DGB.US.4.HAN.04",
+      "klasse": 4,
+      "kompetenzbereich": "Handeln: Angebote und Handlungsmöglichkeiten in einer von Digitalisierung geprägten Welt einschätzen und verantwortungsvoll nutzen",
+      "kompetenzbereich_code": "HAN",
+      "text": "(I) reflektieren, inwieweit technische Konfigurationen Optionen einschränken und lenken. Sie können Vorkehrungen für ihre Eigenständigkeit und informationelle Selbstbestimmung im Kontext von digitaler Vernetzung treffen.",
+      "dimensions": [],
+      "uebergreifende_themen": [
+        1
       ],
       "aria_level": 2,
       "source_ref": "DIGITALE GRUNDBILDUNG / 4. Klasse / Handeln: Angebote und Handlungsmöglichkeiten in einer von Digitalisierung geprägten Welt einschätzen und verantwortungsvoll nutzen"
@@ -702,6 +972,7 @@
       ]
     }
   ],
+  "vorschlaege_digitale_technologien": [],
   "prose": [
     {
       "section": "lehraufgabe",
@@ -711,7 +982,22 @@
     {
       "section": "didaktik",
       "label": "Didaktische Grundsätze (1. bis 4. Klasse):",
-      "text": "Zur Umsetzung der Digitalen Grundbildung bieten sich didaktische Konzepte und Prozesse an, die einen ganzheitlichen Zugang zu digitalen Artefakten gewährleisten. Dazu gehören ko-konstruktive, erfahrungs-, gestaltungs- sowie reflexions- und problemlösungsorientierte Methoden wie Critical Thinking (kritisches Denken: vernünftiges reflektierendes Denken), Design Thinking (iterative Methode für die Lösung von komplexen Problemen und die Entwicklung neuer Ideen), forschendes Lernen und Playful Learning (spielerisches Lernen angelehnt an die Art und Weise, wie Kleinkinder die Welt entdecken). Digitale Grundbildung erfordert fächerverbindende und fächerübergreifende Arbeitsformen. Die folgenden Bereiche sind dabei in ausgewogener, kreativer und integrativer Weise miteinander zu verknüpfen: Bei der Erarbeitung der unterschiedlichen Kompetenzen ist jeweils von der Lebenswirklichkeit und den Vorkenntnissen der Schülerinnen und Schüler unter Berücksichtigung der Heterogenität individueller Medienbiographien auszugehen. In koedukativen Gruppen ist darauf zu achten, dass Buben und Mädchen gleichberechtigte Zugänge und Möglichkeiten der Teilhabe erhalten. Die Dynamik der digitalen Welt erfordert es, Inhalte und Methoden kontinuierlich zu evaluieren und anzupassen. Die Förderung der Chancengleichheit und der Abbau von stereotypen Zuschreibungen sind stets im Blick zu behalten."
+      "text": "Zur Umsetzung der Digitalen Grundbildung bieten sich didaktische Konzepte und Prozesse an, die einen ganzheitlichen Zugang zu digitalen Artefakten gewährleisten. Dazu gehören ko-konstruktive, erfahrungs-, gestaltungs- sowie reflexions- und problemlösungsorientierte Methoden wie Critical Thinking (kritisches Denken: vernünftiges reflektierendes Denken), Design Thinking (iterative Methode für die Lösung von komplexen Problemen und die Entwicklung neuer Ideen), forschendes Lernen und Playful Learning (spielerisches Lernen angelehnt an die Art und Weise, wie Kleinkinder die Welt entdecken). Digitale Grundbildung erfordert fächerverbindende und fächerübergreifende Arbeitsformen. Die folgenden Bereiche sind dabei in ausgewogener, kreativer und integrativer Weise miteinander zu verknüpfen:"
+    },
+    {
+      "section": "didaktik",
+      "label": "",
+      "text": "Medienbildung umfasst die Beschäftigung mit der Entstehung, Entwicklung und Zukunft digitaler Medienkonstellationen. Reflexion und Kritik betreffen beispielsweise medienbiografische Entwicklungen bzw. Bedingungen der Mediensozialisation sowie digitaler Inklusions- und Exklusionsdynamiken. Medienbildung geht vom Zusammenspiel von Nutzung und Teilnahme an aktueller Medienkultur aus."
+    },
+    {
+      "section": "didaktik",
+      "label": "",
+      "text": "Informatische Bildung umfasst das Analysieren, Interagieren, Modellieren, Codieren und Testen im Umgang mit Informatiksystemen, Software, Automatisierung, Daten und Vernetzung. Die Entwicklung informatischer und medientechnischer Kompetenzen orientiert sich besonders an didaktischen Prinzipien der sogenannten 21 Century Skills, der 4 Ks (kritisches Denken, Kreativität, Kommunikation und Kollaboration) und des Computational Thinking (problemorientiertes informatisches Denken)."
+    },
+    {
+      "section": "didaktik",
+      "label": "",
+      "text": "Gestaltungskompetenz geht von einem Zusammenspiel von informatischer Bildung und Medienbildung aus und bietet vielfältige analytische, produktive und kreative Zugänge zu funktionalen Medieneinsätzen und ästhetischen Medienformaten in globalisierten digitalen Kulturen. Bei der Erarbeitung der unterschiedlichen Kompetenzen ist jeweils von der Lebenswirklichkeit und den Vorkenntnissen der Schülerinnen und Schüler unter Berücksichtigung der Heterogenität individueller Medienbiographien auszugehen. In koedukativen Gruppen ist darauf zu achten, dass Buben und Mädchen gleichberechtigte Zugänge und Möglichkeiten der Teilhabe erhalten. Die Dynamik der digitalen Welt erfordert es, Inhalte und Methoden kontinuierlich zu evaluieren und anzupassen. Die Förderung der Chancengleichheit und der Abbau von stereotypen Zuschreibungen sind stets im Blick zu behalten."
     },
     {
       "section": "didaktik",
@@ -727,6 +1013,31 @@
       "section": "kompetenzmodell",
       "label": "Kompetenzmodell und Kompetenzbereiche (1. bis 4. Klasse):",
       "text": ""
+    },
+    {
+      "section": "kompetenzmodell",
+      "label": "",
+      "text": "Orientierung: gesellschaftliche Aspekte von Medienwandel und Digitalisierung analysieren und reflektieren"
+    },
+    {
+      "section": "kompetenzmodell",
+      "label": "",
+      "text": "Information: mit Daten, Informationen und Informationssystemen verantwortungsvoll umgehen"
+    },
+    {
+      "section": "kompetenzmodell",
+      "label": "",
+      "text": "Kommunikation: Kommunizieren und Kooperieren unter Nutzung informatischer, medialer Systeme"
+    },
+    {
+      "section": "kompetenzmodell",
+      "label": "",
+      "text": "Produktion: Inhalte digital erstellen und veröffentlichen, Algorithmen entwerfen und Programmieren: Zerlegen von Problemen, Muster erkennen, Verallgemeinern/Abstrahieren und Algorithmen entwerfen"
+    },
+    {
+      "section": "kompetenzmodell",
+      "label": "",
+      "text": "Handeln: Angebote und Handlungsmöglichkeiten in einer von Digitalisierung geprägten Welt einschätzen und verantwortungsvoll nutzen"
     },
     {
       "section": "kompetenzbeschreibungen",

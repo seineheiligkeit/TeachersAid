@@ -35,6 +35,13 @@ Verdicts: ● seamless (cognitive/printable competences) · ◐ works with a spe
 | **Bewegung und Sport** (1–4) | physisch/psychisch/sozial/kognitiv — movement competences | — | movement_task, training_log | **almost entirely enactive (physical)** | ○ |
 | *Religion* | governed separately (Konkordat/recognised churches) — not in this competence format | — | — | — | — |
 
+> **⚠ Corrections from the source extraction (2026-06-25, parsing `RIS Dokument.html` / `NOR40264237` into `lehrplan/`).** Three rows above are superseded by what the consolidated Fassung BGBl. II 204/2024 actually contains:
+> 1. **Ethik is Oberstufe-only** in this Fassung. In the Achter Teil it appears solely under *2. Oberstufe → a) Pflichtgegenstände*, never under *1. Unterstufe*. The "Ethik (1–4)" row is therefore **not** an Unterstufe Pflichtgegenstand and is excluded from the Unterstufe foundation (Ethik rolled out Sek-II-first).
+> 2. **Lebende Fremdsprache has no *Sprachmittlung* Kompetenzbereich in the Unterstufe.** The Unterstufe lists only **Hören · Lesen · Sprechen · Schreiben** (confirmed independently on both Erste and Zweite lebende Fremdsprache). Sprachmittlung belongs to the GeR/Oberstufe, not here.
+> 3. **Chemie is two distinct curricula**, not one: **CHE** = AHS (Gymnasium/Realgymnasium), zweistündig, **4. Klasse**; **CHE2** = Wirtschaftskundliches Realgymnasium, vierstündig, **3.+4. Klasse**. Both share the W/E/S Naturwissenschaften model. The "Chemie (4)" row covers only CHE.
+>
+> So the Unterstufe foundation has **15 distinct Pflichtgegenstände** (16 minus Ethik), realised as 17 catalog files once the FS Erste/Zweite and Chemie AHS/WkRG variants are split out. Per-subject competence models recovered by the QA pass are in `lehrplan/subject_models.json`.
+
 ## What the audit revealed
 
 **1. The three sciences share one model.** Physik, Chemie, and Biologie all use the identical

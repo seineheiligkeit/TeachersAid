@@ -21,7 +21,30 @@
     13
   ],
   "competence_model": {
-    "handlungsdimensionen": []
+    "handlungsdimensionen": [
+      {
+        "code": "HOR",
+        "label": "Hören",
+        "modality": "audio"
+      },
+      {
+        "code": "LES",
+        "label": "Lesen",
+        "modality": "printable"
+      },
+      {
+        "code": "SPR",
+        "label": "Sprechen (an Gesprächen teilnehmen und zusammenhängend sprechen)",
+        "modality": "oral"
+      },
+      {
+        "code": "SCH",
+        "label": "Schreiben",
+        "modality": "printable"
+      }
+    ],
+    "content_areas": null,
+    "notes": "GeR/CEFR progression across Klassen (A1/A2 → A2+/B1). Hören needs an audio asset, Sprechen is oral → printable_coverage ≈ 0.5. NB: Sprachmittlung is NOT a Kompetenzbereich in the Unterstufe (contra the earlier audit)."
   },
   "zentrale_konzepte": [
     {
@@ -111,7 +134,10 @@
       "kompetenzbereich_code": "SPR",
       "text": "beim zusammenhängenden Sprechen in einfachen Sätzen über vertraute Themen (ua. Familie, Freunde, Tagesablauf, Hobbys, Schule) sprechen.",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        2,
+        13
+      ],
       "aria_level": 2,
       "source_ref": "ERSTE LEBENDE FREMDSPRACHE / 1. Klasse / Sprechen (an Gesprächen teilnehmen und zusammenhängend sprechen)"
     },
@@ -122,7 +148,10 @@
       "kompetenzbereich_code": "SCH",
       "text": "über sich selbst und vertraute Themen (ua. Familie, Freunde, Tagesablauf, Hobbys, Schule) in einfachen Sätzen schreiben.",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        2,
+        13
+      ],
       "aria_level": 2,
       "source_ref": "ERSTE LEBENDE FREMDSPRACHE / 1. Klasse / Schreiben"
     },
@@ -214,7 +243,10 @@
       "kompetenzbereich_code": "SPR",
       "text": "über vertraute Themen (ua. Dinge, Orte, Personen) sprechen und dabei auch Gefühle, Vorlieben, Stärken und Meinungen auf einfache Weise ausdrücken.",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        2,
+        13
+      ],
       "aria_level": 2,
       "source_ref": "ERSTE LEBENDE FREMDSPRACHE / 2. Klasse / Sprechen (an Gesprächen teilnehmen und zusammenhängend sprechen)"
     },
@@ -332,7 +364,10 @@
       "kompetenzbereich_code": "SCH",
       "text": "kurze zusammenhängende Texte über alltägliche Aspekte des eigenen Umfelds sowie des Lebensalltags von Jugendlichen in verschiedenen Ländern schreiben.",
       "dimensions": [],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        7,
+        12
+      ],
       "aria_level": 2,
       "source_ref": "ERSTE LEBENDE FREMDSPRACHE / 3. Klasse / Schreiben"
     },
@@ -471,6 +506,7 @@
     }
   ],
   "anwendungsbereiche": [],
+  "vorschlaege_digitale_technologien": [],
   "prose": [
     {
       "section": "_",

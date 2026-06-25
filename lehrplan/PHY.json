@@ -25,6 +25,7 @@
       {
         "code": "W",
         "label": "Fachwissen anwenden",
+        "modality": "printable",
         "descriptor": "In diesem Bereich wird physikalisches Fachwissen erworben und in verschiedenen Kontexten angewandt.",
         "items": [
           "Vorgänge und Phänomene in Natur, Alltag und Technik beschreiben und benennen.",
@@ -35,6 +36,7 @@
       {
         "code": "E",
         "label": "Erkenntnisgewinnung und Experimentieren",
+        "modality": "printable",
         "descriptor": "In diesem Bereich werden Fähigkeiten und Fertigkeiten im Umgang mit physikalischen Denk- und Arbeitsweisen erworben.",
         "items": [
           "zu Vorgängen und Phänomenen in Natur, Alltag und Technik naturwissenschaftliche Fragen formulieren und Hypothesen aufstellen.",
@@ -46,6 +48,7 @@
       {
         "code": "S",
         "label": "Standpunkte begründen und aus naturwissenschaftlicher Sicht bewerten",
+        "modality": "printable",
         "descriptor": "In diesem Bereich wird die Fähigkeit erworben, naturwissenschaftlich begründet zu argumentieren und am gesellschaftlichen Diskurs teilzunehmen.",
         "items": [
           "Bedeutung, Chancen und Risiken der Anwendungen von naturwissenschaftlichen Erkenntnissen auf persönlicher, regionaler und globaler Ebene erkennen, um verantwortungsbewusst zu handeln.",
@@ -54,7 +57,9 @@
           "Entscheidungskriterien für das eigene Handeln entwickeln und aus naturwissenschaftlicher Sicht überprüfen."
         ]
       }
-    ]
+    ],
+    "content_areas": null,
+    "notes": "Naturwissenschaften W/E/S (Handlungsdimensionen), inline-tagged per competence. The inhaltliche Kompetenzbereiche are grade-mapped and live as each competence's kompetenzbereich (2. Kl: Sehen u. Hören, Optische Systeme · 3. Kl: Mechanik, Elektrizität u. Magnetismus, Energie · 4. Kl: Wetter u. Klima, Strahlung u. Radioaktivität)."
   },
   "zentrale_konzepte": [
     {
@@ -210,11 +215,14 @@
       "klasse": 3,
       "kompetenzbereich": "Mechanik",
       "kompetenzbereich_code": "MEC",
-      "text": "die (auch mehrdimensionale) Bewegung von Objekten mit geeigneten fachtypischen Darstellungen unter Einbeziehung moderner digitaler Werkzeuge beschreiben und die wesentlichen physikalischen Größen von Bewegungen (Ort, Tempo und Geschwindigkeit) in verschiedenen Kontexten anwenden.(W)",
+      "text": "die (auch mehrdimensionale) Bewegung von Objekten mit geeigneten fachtypischen Darstellungen unter Einbeziehung moderner digitaler Werkzeuge beschreiben und die wesentlichen physikalischen Größen von Bewegungen (Ort, Tempo und Geschwindigkeit) in verschiedenen Kontexten anwenden. (W)",
       "dimensions": [
         "W"
       ],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        4,
+        12
+      ],
       "aria_level": 2,
       "source_ref": "PHYSIK / 3. Klasse / Mechanik"
     },
@@ -412,7 +420,10 @@
       "dimensions": [
         "S"
       ],
-      "uebergreifende_themen": [],
+      "uebergreifende_themen": [
+        11,
+        12
+      ],
       "aria_level": 2,
       "source_ref": "PHYSIK / 4. Klasse / Wetter und Klima"
     },
@@ -536,6 +547,7 @@
       ]
     }
   ],
+  "vorschlaege_digitale_technologien": [],
   "prose": [
     {
       "section": "lehraufgabe",
