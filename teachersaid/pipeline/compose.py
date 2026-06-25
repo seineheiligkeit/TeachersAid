@@ -25,24 +25,41 @@ from ..schema.worksheet import (
     WorksheetMeta,
 )
 from .plan import _ENVELOPE_MINUTES
-from .resolve import resolve
+from .resolve import resolve, resolve_kompetenzbereich
 
 # which scope (richness) suits which envelope
 _SCOPE_FOR = {"einzelstunde": "compact", "doppelstunde": "standard", "block": "extended"}
 
 
-def compose(subject, klasse, topic, envelope="doppelstunde", *, block_store, today: date | None = None):
-    """Return (WorksheetContent, LehrplanResolution). Raises ValueError if the topic
-    can't be served from the approved block library."""
-    req = BundleRequest(subject=subject, klasse=klasse, topic_raw=topic, envelope=envelope)
-    res = resolve(req, today=today)
+def compose(
+    subject, klasse, topic, envelope="doppelstunde",
+    *, kompetenzbereich: str | None = None, block_store, today: date | None = None,
+):
+    """Return (WorksheetContent, LehrplanResolution).
+
+    Targets competences either by an explicit `kompetenzbereich` (deterministic, the
+    robust path — the block library is competence-anchored) or, when none is given, by
+    matching the free-text `topic` against the catalog (works when the title echoes a
+    KB name or an Anwendungsbereich). `topic` is always the worksheet's display title.
+    Raises ValueError if nothing resolves or no approved blocks serve the target."""
+    if kompetenzbereich:
+        res = resolve_kompetenzbereich(subject, klasse, kompetenzbereich, today=today)
+    else:
+        req = BundleRequest(subject=subject, klasse=klasse, topic_raw=topic, envelope=envelope)
+        res = resolve(req, today=today)
     model = ls.get_subject_model(subject)
     if model is None:
         raise ValueError(f"Fach '{subject}' ist nicht im Katalog.")
 
+    display = (topic or "").strip() or kompetenzbereich or "Arbeitsblatt"
     code = ls._code_for(subject)
     target_ids = {c.id for c in res.competences}
     target_kbs = set(res.matched_kompetenzbereiche)
+    if not target_ids and not target_kbs:
+        raise ValueError(
+            f"'{display}' ließ sich keinem Kompetenzbereich von {subject} "
+            f"{klasse}. Kl. zuordnen — bitte einen Kompetenzbereich wählen."
+        )
 
     pool = [
         b for b in block_store.approved()
@@ -57,7 +74,7 @@ def compose(subject, klasse, topic, envelope="doppelstunde", *, block_store, tod
     tasks = [b for b in pool if b.role == "task" and task_matches(b)]
     if not tasks:
         raise ValueError(
-            f"Keine freigegebenen Aufgaben-Bausteine für '{topic}' "
+            f"Keine freigegebenen Aufgaben-Bausteine für '{display}' "
             f"({subject} {klasse}. Kl.). Erst Bausteine erzeugen/freigeben."
         )
     # readable context blocks (no figures yet — assets don't travel with blocks in v1)
@@ -90,22 +107,22 @@ def compose(subject, klasse, topic, envelope="doppelstunde", *, block_store, tod
 
     intro = [InfoBlock(
         id="cmp.intro", kind="prose",
-        content=f"Arbeitsblatt zu '{topic}'. Bearbeite die Aufgaben der Reihe nach.",
+        content=f"Arbeitsblatt zu '{display}'. Bearbeite die Aufgaben der Reihe nach.",
     )]
     intro += [b.block for b in infos[:2]]
     section = Baustein(
-        id="cmp.kern", title=topic,
+        id="cmp.kern", title=display,
         teacher_overview={
             "throughline": f"Aus {len(chosen)} freigegebenen Bausteinen zusammengestellt (~{spent} min).",
         },
         blocks=[b.block for b in chosen],
     )
     meta = WorksheetMeta(
-        title=topic, subtitle="Zusammengestellt aus der Baustein-Bibliothek",
+        title=display, subtitle="Zusammengestellt aus der Baustein-Bibliothek",
         subject=subject, stufe="Unterstufe", klasse=klasse,
-        kernfrage=f"Was solltest du über '{topic}' sicher können?",
+        kernfrage=f"Was solltest du über '{display}' sicher können?",
         fassung=ls.get_fassung(),
-        lehrplan_label=f"{subject} · {klasse}. Klasse · {topic}",
+        lehrplan_label=f"{subject} · {klasse}. Klasse · {display}",
     )
     content = WorksheetContent(meta=meta, subject_model=model, intro=intro, sections=[section])
     return content, res

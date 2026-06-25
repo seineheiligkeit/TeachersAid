@@ -158,21 +158,27 @@ def compose_worksheet(
     topic: str,
     envelope: str = "doppelstunde",
     *,
+    kompetenzbereich: str | None = None,
     today: date | None = None,
 ) -> ReviewItem:
     """Assemble a worksheet from approved library blocks (Phase 2) into a content
-    item for Gate-2 review. Selection happens in pipeline/compose; the existing
-    assemble(+derive) / verify / render stages then run unchanged."""
+    item for Gate-2 review. Selection happens in pipeline/compose (by an explicit
+    Kompetenzbereich when given, else by the topic); the existing assemble(+derive) /
+    verify / render stages then run unchanged."""
     from .compose import compose
 
+    display = (topic or "").strip() or kompetenzbereich or "Arbeitsblatt"
     item = ReviewItem(
         id="", stage="content", source="compose",
-        title=f"{subject} {klasse}. Kl. — {topic} (zusammengestellt)",
-        request=BundleRequest(subject=subject, klasse=klasse, topic_raw=topic, envelope=envelope),
+        title=f"{subject} {klasse}. Kl. — {display} (zusammengestellt)",
+        request=BundleRequest(subject=subject, klasse=klasse, topic_raw=display, envelope=envelope),
     )
     store.create(item)
     try:
-        content, res = compose(subject, klasse, topic, envelope, block_store=block_store, today=today)
+        content, res = compose(
+            subject, klasse, topic, envelope,
+            kompetenzbereich=kompetenzbereich, block_store=block_store, today=today,
+        )
         item.resolution = res
         assemble(content, res)
         report = verify(content, res)

@@ -11,7 +11,12 @@ from __future__ import annotations
 from datetime import date
 
 from ..grounding import lehrplan_store as store
-from ..schema.worksheet import BundleRequest, LehrplanResolution
+from ..schema.worksheet import (
+    BundleRequest,
+    FassungRef,
+    LehrplanResolution,
+    ResolvedCompetence,
+)
 
 
 def _matches_topic(kompetenzbereich: str, topic_raw: str) -> bool:
@@ -24,12 +29,16 @@ def _matches_topic(kompetenzbereich: str, topic_raw: str) -> bool:
     return any(tok in t for tok in kb_tokens)
 
 
-def resolve(req: BundleRequest, *, today: date | None = None) -> LehrplanResolution:
-    today = today or date.today()
+def _resolution_preamble(
+    subject: str, klasse: int, today: date
+) -> tuple[FassungRef, list[str], list[ResolvedCompetence] | None]:
+    """Shared trust-checks for any resolution: Fassung window (handoff §2) + that the
+    subject and grade are actually in the catalog. Returns (fassung, notes,
+    all_for_grade); all_for_grade is None when resolution cannot proceed — the caller
+    then returns an empty, grade_check=False resolution carrying the notes."""
     fassung = store.get_fassung()
     notes: list[str] = []
 
-    # Fassung window check (handoff §2: versioning against Fassung windows).
     if not (
         date.fromisoformat(fassung.valid_from)
         <= today
@@ -41,31 +50,36 @@ def resolve(req: BundleRequest, *, today: date | None = None) -> LehrplanResolut
             "Eine neue Fassung wird benötigt."
         )
 
-    model = store.get_subject_model(req.subject)
-    if model is None:
+    if store.get_subject_model(subject) is None:
         notes.append(
-            f"Fach '{req.subject}' ist im Katalog nicht hinterlegt "
+            f"Fach '{subject}' ist im Katalog nicht hinterlegt "
             f"(verfügbar: {', '.join(store.list_subjects())})."
         )
-        return LehrplanResolution(
-            fassung=fassung, subject=req.subject, klasse=req.klasse,
-            grade_check=False, competences=[], notes=notes,
-        )
+        return fassung, notes, None
 
-    all_for_grade = store.competences_for(req.subject, req.klasse)
+    all_for_grade = store.competences_for(subject, klasse)
     if not all_for_grade:
-        gmap = store.grade_map(req.subject)
+        gmap = store.grade_map(subject)
         if gmap:
             notes.append(
-                f"Für {req.subject} {req.klasse}. Kl. sind im Katalog keine "
+                f"Für {subject} {klasse}. Kl. sind im Katalog keine "
                 f"Kompetenzen hinterlegt (das Fach umfasst die Klassen "
                 f"{', '.join(str(k) for k in sorted(gmap))})."
             )
         else:
             notes.append(
-                f"Für {req.subject} ist nur das Kompetenzmodell hinterlegt, "
+                f"Für {subject} ist nur das Kompetenzmodell hinterlegt, "
                 "noch keine verbatim Kompetenzen (Demo-Grenze)."
             )
+        return fassung, notes, None
+
+    return fassung, notes, all_for_grade
+
+
+def resolve(req: BundleRequest, *, today: date | None = None) -> LehrplanResolution:
+    today = today or date.today()
+    fassung, notes, all_for_grade = _resolution_preamble(req.subject, req.klasse, today)
+    if all_for_grade is None:
         return LehrplanResolution(
             fassung=fassung, subject=req.subject, klasse=req.klasse,
             grade_check=False, competences=[], notes=notes,
@@ -101,6 +115,50 @@ def resolve(req: BundleRequest, *, today: date | None = None) -> LehrplanResolut
         fassung=fassung,
         subject=req.subject,
         klasse=req.klasse,
+        matched_kompetenzbereiche=kompetenzbereiche,
+        grade_check=True,
+        competences=matched,
+        notes=notes,
+    )
+
+
+def resolve_kompetenzbereich(
+    subject: str, klasse: int, kompetenzbereich: str, *, today: date | None = None
+) -> LehrplanResolution:
+    """Deterministic resolution for an explicitly chosen Kompetenzbereich — no topic
+    guessing. The composer targets competences directly (the block library is
+    competence-anchored), so a worksheet's *title* need not textually match the
+    catalog's KB name — which `resolve()` requires and which fails for subjects whose
+    KBs are numbered content areas (MAT) or W/E/S strands (BIO). Falls back to a loose
+    label match so a slightly-off KB string still lands."""
+    today = today or date.today()
+    fassung, notes, all_for_grade = _resolution_preamble(subject, klasse, today)
+    if all_for_grade is None:
+        return LehrplanResolution(
+            fassung=fassung, subject=subject, klasse=klasse,
+            grade_check=False, competences=[], notes=notes,
+        )
+
+    kbf = kompetenzbereich.casefold()
+    matched = [c for c in all_for_grade if c.kompetenzbereich.casefold() == kbf]
+    if not matched:  # tolerate a slightly-off label via token overlap
+        matched = [c for c in all_for_grade if _matches_topic(c.kompetenzbereich, kompetenzbereich)]
+    if not matched:
+        kbs = sorted({c.kompetenzbereich for c in all_for_grade})
+        notes.append(
+            f"Kompetenzbereich '{kompetenzbereich}' nicht in {subject} "
+            f"{klasse}. Kl. gefunden. Vorhanden: {', '.join(kbs)}."
+        )
+        return LehrplanResolution(
+            fassung=fassung, subject=subject, klasse=klasse,
+            grade_check=True, competences=[], notes=notes,
+        )
+
+    kompetenzbereiche = sorted({c.kompetenzbereich for c in matched})
+    return LehrplanResolution(
+        fassung=fassung,
+        subject=subject,
+        klasse=klasse,
         matched_kompetenzbereiche=kompetenzbereiche,
         grade_check=True,
         competences=matched,

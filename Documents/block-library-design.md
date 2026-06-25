@@ -117,6 +117,12 @@ aus Lehrplan" (suggest blocks for the empty cells).
    "Arbeitsblatt zusammenstellen" form + `POST /api/compose`; `tests/test_compose.py`. Verified:
    einzelstunde → 4 tasks/~46 min, block → 7 tasks/~78 min, both verify-clean. (Assets don't travel with
    blocks yet → figure-info-blocks skipped in composition.)
+   - **2.1 — ✅ built (25 Jun 2026).** Composition targets a **Kompetenzbereich** directly
+     (`resolve_kompetenzbereich`) instead of only a fuzzy topic-string match, so subjects whose KBs are
+     numbered content areas (MAT *"4: Daten und Zufall"*) or W/E/S strands (BIO) compose reliably — the
+     topic stays the display title. KB picker in the form + `GET /api/kompetenzbereiche`. Found + fixed a
+     pre-existing rendering escape bug along the way (response-spec product hints printed literal `<i>`
+     tags — `rb.para` → `rb.raw_para` with the dynamic part escaped).
 3. **Richness + smarter selection.** Populate `scope` variants; better ordering/coherence; begin
    difficulty calibration on the now-reused blocks.
 

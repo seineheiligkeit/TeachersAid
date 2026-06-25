@@ -109,11 +109,13 @@ function buildShell(){
   } else if(TAB==="inhalte" || TAB==="bibliothek"){
     const composer = TAB==="inhalte" ? `
       <div class="card"><h2>Arbeitsblatt zusammenstellen</h2>
-        <p class="muted">Aus <b>freigegebenen</b> Bausteinen für ein Thema + Dauer (dumb v1: passende Bausteine, nach Niveau geordnet, zeitlich begrenzt).</p>
-        <label>Fach</label><input id="c-subject" value="Physik" />
-        <div class="row"><div style="flex:1"><label>Klasse</label><input id="c-klasse" type="number" value="4" /></div>
+        <p class="muted">Aus <b>freigegebenen</b> Bausteinen (dumb v1: passende Bausteine, nach Niveau geordnet, zeitlich begrenzt). Ziel über den <b>Kompetenzbereich</b> (robust) — oder per Thema, wenn der Titel zum Katalog passt.</p>
+        <label>Fach</label><input id="c-subject" value="Physik" onchange="loadKBs()" />
+        <div class="row"><div style="flex:1"><label>Klasse</label><input id="c-klasse" type="number" value="4" onchange="loadKBs()" /></div>
           <div style="flex:1"><label>Dauer</label><select id="c-env"><option>einzelstunde</option><option selected>doppelstunde</option><option>block</option></select></div></div>
-        <label>Thema</label><input id="c-topic" value="Strahlung und Radioaktivität" />
+        <label>Kompetenzbereich <span class="muted">(optional)</span></label>
+        <select id="c-kb"><option value="">— per Thema auflösen —</option></select>
+        <label>Thema / Titel</label><input id="c-topic" value="Strahlung und Radioaktivität" />
         <div class="row" style="margin-top:8px"><button onclick="composeSheet()">Zusammenstellen</button></div>
       </div>` : "";
     $("#main").innerHTML = `
@@ -123,6 +125,7 @@ function buildShell(){
         </div>
         <div id="detail" class="card"><p class="muted">Wähle einen Eintrag.</p></div>
       </div>`;
+    if(TAB==="inhalte") loadKBs();
   } else {
     $("#main").innerHTML = `<div id="stats"><p class="muted">lädt…</p></div>`;
   }
@@ -169,9 +172,21 @@ async function fleshOut(id){
   const r = await jpost(`/api/items/${id}/flesh-out`,{});
   TAB="inhalte"; SELECTED=r.id||null; VIEW="bloecke"; renderTabs(); buildShell(); await refresh(); if(SELECTED) openDetail(SELECTED);
 }
+async function loadKBs(){
+  const sel=$("#c-kb"); if(!sel) return;
+  const subject=$("#c-subject").value, klasse=+$("#c-klasse").value, keep=sel.value;
+  try{
+    const r=await jget(`/api/kompetenzbereiche?subject=${encodeURIComponent(subject)}&klasse=${klasse}`);
+    sel.innerHTML = `<option value="">— per Thema auflösen —</option>` +
+      (r.kompetenzbereiche||[]).map(k=>`<option ${k===keep?"selected":""}>${esc(k)}</option>`).join("");
+  }catch(e){ /* leave the topic-only fallback in place */ }
+}
 async function composeSheet(){
-  const topic=$("#c-topic").value.trim(); if(!topic){ $("#c-topic").focus(); return; }
-  const r = await jpost("/api/compose",{subject:$("#c-subject").value,klasse:+$("#c-klasse").value,topic,envelope:$("#c-env").value});
+  const topic=$("#c-topic").value.trim(), kb=$("#c-kb")?$("#c-kb").value:"";
+  if(!topic && !kb){ $("#c-topic").focus(); return; }
+  const r = await jpost("/api/compose",{subject:$("#c-subject").value,klasse:+$("#c-klasse").value,
+    topic,envelope:$("#c-env").value,kompetenzbereich:kb||null});
+  if(r.error){ alert("Konnte nicht zusammenstellen:\n"+r.error); }
   SELECTED=r.id||null; VIEW="bloecke"; await refresh(); if(SELECTED) openDetail(SELECTED);
 }
 

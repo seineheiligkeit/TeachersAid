@@ -147,15 +147,25 @@ Phase 1 (built):
 
 ## Composition — worksheet from blocks (Phase 2, dumb v1)
 
-`pipeline/compose.py::compose(subject, klasse, topic, envelope, *, block_store)` builds a worksheet from
-**approved** library blocks: select blocks serving the topic's competences (printable), order by
-cognitive level, one per `family`, prefer the `scope` matching the envelope, **greedy time-fit** to the
-envelope budget, pull ≤2 readable info blocks, and add a *template* framing (Kernfrage + intro — no LLM).
-Result is a `WorksheetContent` → the existing `assemble`/`verify`/`render`. `orch.compose_worksheet`
-lands it as a content item (`source="compose"`); dashboard **Inhalte** has an "Arbeitsblatt
-zusammenstellen" form; `POST /api/compose`. **No optimizer, no difficulty calibration** (Phase 3:
-`scope` richness variants + calibration). A composed sheet is still a `WorksheetContent`, so rendering is
-unchanged — assets don't yet travel with blocks, so figure-info-blocks are skipped in composition for now.
+`pipeline/compose.py::compose(subject, klasse, topic, envelope, *, kompetenzbereich=None, block_store)`
+builds a worksheet from **approved** library blocks: select blocks serving the target competences
+(printable), order by cognitive level, one per `family`, prefer the `scope` matching the envelope,
+**greedy time-fit** to the envelope budget, pull ≤2 readable info blocks, and add a *template* framing
+(Kernfrage + intro — no LLM). Result is a `WorksheetContent` → the existing `assemble`/`verify`/`render`.
+
+**Targeting (Phase 2.1):** competences come either from an explicit **`kompetenzbereich`**
+(`resolve_kompetenzbereich` — deterministic, the robust path: a worksheet *title* needn't textually echo
+the catalog's KB name) or, when none is given, from matching the free-text `topic` (`resolve` — works
+when the title echoes a KB name like Physik *Strahlung* or an Anwendungsbereich like Biologie
+*Immunsystem*; **fails** for catchy titles like Mathematik *"Das unfaire Spiel"* vs the KB *"4: Daten und
+Zufall"* — that's why the KB path exists). `topic` is always the display title.
+
+`orch.compose_worksheet` lands it as a content item (`source="compose"`); dashboard **Inhalte** has an
+"Arbeitsblatt zusammenstellen" form with a **Kompetenzbereich** picker (`GET /api/kompetenzbereiche`);
+`POST /api/compose` (accepts `topic` and/or `kompetenzbereich`). **No optimizer, no difficulty
+calibration** (Phase 3: `scope` richness variants + calibration). A composed sheet is still a
+`WorksheetContent`, so rendering is unchanged — assets don't yet travel with blocks, so figure-info-blocks
+are skipped in composition for now.
 
 ## HITL dashboard (`api/` + `api/static/index.html`)
 

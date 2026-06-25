@@ -43,6 +43,7 @@ class ComposeBody(BaseModel):
     klasse: int = 4
     topic: str = ""
     envelope: str = "doppelstunde"
+    kompetenzbereich: str | None = None
 
 
 class NoteBody(BaseModel):
@@ -74,11 +75,21 @@ def suggest(body: SuggestBody):
 
 @app.post("/api/compose")
 def compose(body: ComposeBody):
-    if not body.topic.strip():
-        raise HTTPException(400, "topic required")
+    kb = (body.kompetenzbereich or "").strip() or None
+    if not body.topic.strip() and not kb:
+        raise HTTPException(400, "topic or kompetenzbereich required")
     return orch.compose_worksheet(
-        STORE, BLOCKS, body.subject, body.klasse, body.topic.strip(), body.envelope
+        STORE, BLOCKS, body.subject, body.klasse, body.topic.strip(), body.envelope,
+        kompetenzbereich=kb,
     ).summary()
+
+
+@app.get("/api/kompetenzbereiche")
+def kompetenzbereiche(subject: str, klasse: int):
+    """The Kompetenzbereiche of a subject+grade, for the compose form's target picker
+    (verbatim catalog labels, so they match what blocks were tagged with)."""
+    from ..grounding import lehrplan_store as ls
+    return {"kompetenzbereiche": ls.grade_map(subject).get(klasse, [])}
 
 
 # --- queues / stats ----------------------------------------------------------
