@@ -49,6 +49,17 @@ def test_compose_from_approved_blocks_verifies_clean(stores):
     assert all(any(s.competence_id in valid for s in t.serves) for t in tasks)
 
 
+def test_compose_carries_figure_assets(stores):
+    """Phase 3c: a figure block's asset travels into the composition (no longer skipped)."""
+    _, bs = stores
+    content, res = compose("Physik", 4, "Strahlung und Radioaktivität",
+                           kompetenzbereich="Strahlung und Radioaktivität", block_store=bs, today=IN)
+    assert content.assets, "composed sheet should carry the figure block's asset(s)"
+    assert any(a.generator for a in content.assets)  # the code-generated spectrum figure
+    assemble(content, res)
+    assert verify(content, res).problems == []
+
+
 def test_compose_respects_time_envelope(stores):
     _, bs = stores
     short, _ = compose("Physik", 4, "Strahlung und Radioaktivität", "einzelstunde", block_store=bs, today=IN)

@@ -16,6 +16,7 @@ from __future__ import annotations
 from pydantic import BaseModel, ConfigDict, Field
 
 from ..grounding import lehrplan_store as ls
+from ..schema.assets import Asset
 from ..schema.blocks import Block
 from ..schema.enums import Role
 from ..schema.worksheet import WorksheetContent
@@ -38,6 +39,7 @@ class LibraryBlock(BaseModel):
     modality: str = "printable"
     scope: str = "standard"            # compact | standard | extended
     family: str | None = None          # groups richness variants of one concept
+    assets: list[Asset] = Field(default_factory=list)  # asset specs this block's asset_refs point to
     status: str = "in_review"          # in_review | approved | rejected
     provenance: str = ""               # harvested:<key> | authored | llm
     source: str = "ai"                 # user | ai
@@ -68,6 +70,7 @@ def harvest(content: WorksheetContent, *, example_key: str, scope: str = "standa
     """Extract every block of a worksheet into LibraryBlocks, tagged from the
     worksheet meta + the catalog (competence → Kompetenzbereich)."""
     subject, klasse = content.meta.subject, content.meta.klasse
+    by_id = {a.id: a for a in content.assets}  # the worksheet's assets, by id
     out: list[LibraryBlock] = []
     for b in content.iter_blocks():
         is_task = b.role == Role.TASK
@@ -78,6 +81,8 @@ def harvest(content: WorksheetContent, *, example_key: str, scope: str = "standa
             if m and m.get("kompetenzbereich"):
                 kb = m["kompetenzbereich"]
                 break
+        # carry the asset spec(s) this block references, so figures/data travel with it
+        assets = [by_id[ref] for ref in (getattr(b, "asset_refs", None) or []) if ref in by_id]
         out.append(LibraryBlock(
             id=f"{example_key}.{b.id}",
             block=b,
@@ -89,6 +94,7 @@ def harvest(content: WorksheetContent, *, example_key: str, scope: str = "standa
             dimensions=list(getattr(b, "dimensions", []) or []),
             modality=getattr(b, "modality", None) or "printable",
             scope=scope,
+            assets=assets,
             provenance=f"harvested:{example_key}",
             source="ai",
         ))

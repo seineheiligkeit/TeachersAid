@@ -123,8 +123,35 @@ aus Lehrplan" (suggest blocks for the empty cells).
      topic stays the display title. KB picker in the form + `GET /api/kompetenzbereiche`. Found + fixed a
      pre-existing rendering escape bug along the way (response-spec product hints printed literal `<i>`
      tags — `rb.para` → `rb.raw_para` with the dynamic part escaped).
-3. **Richness + smarter selection.** Populate `scope` variants; better ordering/coherence; begin
-   difficulty calibration on the now-reused blocks.
+3. **Richness + smarter selection (the "compose well" phase).** Independently-shippable items, each
+   grounded in a limitation hit during the breadth build (25 Jun 2026). The library is now SME-approved
+   (425 blocks, 64 worksheets, 16 subjects, ~33% catalog coverage), so these operate on real stock.
+   - **3a · Scope/richness variants — the "width" axis.** *Problem:* every block is `scope="standard"`,
+     so envelope→scope is a no-op (**doppelstunde == block**: same tasks, the longer envelope reaches for
+     nothing richer). *Change:* generate `compact`/`extended` siblings (same `family`, different `scope` +
+     `est_minutes`) via the ingest seam; composer already prefers the envelope's scope + dedups by family.
+     *Unlocks:* envelopes differ in depth, not just length. *Size:* medium.
+   - **3b · Angle/Kernfrage-aware composition.** *Problem:* compose-by-KB takes *all* KB blocks and is
+     deterministic → two einzelstunde composes of one KB give the **identical** sheet; no notion of the
+     Kernfrage/angle. *Change:* `compose(..., kernfrage=?, competences=?)` selects only blocks serving the
+     chosen angle and frames with that Kernfrage. *Unlocks:* many distinct, focused worksheets per theme.
+     *Size:* medium.
+   - **3c · Assets travel with blocks — ⏳ NEXT.** *Problem:* assets are code-generated at the worksheet
+     level, not attached to harvested blocks → the composer **skips figure-info-blocks** (e.g. the
+     Strahlung spectrum never appears in a composed sheet). *Change:* `LibraryBlock` carries the `Asset`
+     spec(s) for its `asset_refs`; `harvest()` captures them; `compose()` aggregates the chosen blocks'
+     assets into `WorksheetContent.assets`; the renderer (already asset-aware) builds them. *Unlocks:*
+     composed sheets include their figures/data. *Size:* small–medium, self-contained.
+   - **3d · Difficulty calibration (the open hard problem).** *Problem:* no difficulty signal beyond
+     `cognitive_level` + `est_minutes`. *Change (honest, staged):* a `difficulty` field
+     (LLM/author-estimated, SME-adjustable, e.g. 1–3) surfaced in selection + the DepthProfile; a
+     `DepthTarget` can request a mix. *Caveat:* real psychometric calibration needs student-response data,
+     which we deliberately don't collect — so this stays an SME-refined estimate, not a measured value.
+     *Size:* medium, inherently approximate.
+   - **3e · Coherence & framing pass.** *Problem:* compose framing is a fixed template + generic Kernfrage,
+     no transitions; cross-source coherence is untested. *Change:* an optional LLM framing pass (Kernfrage
+     + intro + transitions for the *chosen* set) — a deliberate shift from the no-LLM composer. *Unlocks:*
+     sheets that read as a lesson, not a pile of on-target tasks. *Size:* medium.
 
 ## 9 · Open questions (for as we build)
 

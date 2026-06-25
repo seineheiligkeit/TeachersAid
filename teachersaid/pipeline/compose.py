@@ -77,10 +77,10 @@ def compose(
             f"Keine freigegebenen Aufgaben-Bausteine für '{display}' "
             f"({subject} {klasse}. Kl.). Erst Bausteine erzeugen/freigeben."
         )
-    # readable context blocks (no figures yet — assets don't travel with blocks in v1)
+    # context blocks incl. figures — their assets now travel with the block (Phase 3c)
     infos = [
         b for b in pool
-        if b.role == "info" and b.kind != "figure"
+        if b.role == "info"
         and (not target_kbs or b.kompetenzbereich in target_kbs or b.kompetenzbereich is None)
     ]
 
@@ -105,11 +105,15 @@ def compose(
             spent += m
     chosen.sort(key=lambda b: COGNITIVE_RANK.get(b.cognitive_level, 9))
 
+    # up to 2 readable infos + up to 1 figure as context (so a figure's asset travels)
+    readable = [b for b in infos if b.kind != "figure"][:2]
+    figures = [b for b in infos if b.kind == "figure"][:1]
+    used_infos = readable + figures
     intro = [InfoBlock(
         id="cmp.intro", kind="prose",
         content=f"Arbeitsblatt zu '{display}'. Bearbeite die Aufgaben der Reihe nach.",
     )]
-    intro += [b.block for b in infos[:2]]
+    intro += [b.block for b in used_infos]
     section = Baustein(
         id="cmp.kern", title=display,
         teacher_overview={
@@ -117,6 +121,13 @@ def compose(
         },
         blocks=[b.block for b in chosen],
     )
+    # the chosen blocks' assets travel with them (figures/data), deduped by id (Phase 3c)
+    seen_a, assets = set(), []
+    for lb in chosen + used_infos:
+        for a in (lb.assets or []):
+            if a.id not in seen_a:
+                seen_a.add(a.id)
+                assets.append(a)
     meta = WorksheetMeta(
         title=display, subtitle="Zusammengestellt aus der Baustein-Bibliothek",
         subject=subject, stufe="Unterstufe", klasse=klasse,
@@ -124,5 +135,7 @@ def compose(
         fassung=ls.get_fassung(),
         lehrplan_label=f"{subject} · {klasse}. Klasse · {display}",
     )
-    content = WorksheetContent(meta=meta, subject_model=model, intro=intro, sections=[section])
+    content = WorksheetContent(
+        meta=meta, subject_model=model, intro=intro, sections=[section], assets=assets,
+    )
     return content, res
