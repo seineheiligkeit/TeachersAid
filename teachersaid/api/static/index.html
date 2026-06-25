@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TeachersAid — Review Dashboard</title>
+<style>
+  :root { --bg:#f4f1ea; --ink:#1f3a52; --line:#d8d2c4; --accent:#b5651d; --ok:#2e6b3a; --bad:#8a1c1c; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:14px/1.45 system-ui,Segoe UI,Roboto,sans-serif; color:#222; background:var(--bg); }
+  header { background:var(--ink); color:#fff; padding:10px 16px; display:flex; gap:18px; align-items:baseline; flex-wrap:wrap; }
+  header h1 { font-size:16px; margin:0; }
+  header .stat { font-size:12px; opacity:.9; }
+  .wrap { display:grid; grid-template-columns: 420px 1fr; gap:0; height:calc(100vh - 44px); }
+  .left { border-right:1px solid var(--line); overflow:auto; padding:12px; }
+  .right { overflow:auto; padding:14px 18px; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:8px; padding:12px; margin-bottom:12px; }
+  .card h2 { font-size:13px; margin:0 0 8px; color:var(--ink); text-transform:uppercase; letter-spacing:.04em; }
+  label { display:block; font-size:12px; color:#555; margin:6px 0 2px; }
+  input, select, textarea { width:100%; padding:6px 8px; border:1px solid var(--line); border-radius:6px; font:inherit; }
+  button { font:inherit; padding:6px 12px; border:1px solid var(--ink); background:var(--ink); color:#fff; border-radius:6px; cursor:pointer; }
+  button.ghost { background:#fff; color:var(--ink); }
+  button.bad { border-color:var(--bad); color:var(--bad); background:#fff; }
+  button.ok { border-color:var(--ok); background:var(--ok); }
+  .row { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+  table { width:100%; border-collapse:collapse; font-size:12.5px; }
+  th,td { text-align:left; padding:5px 6px; border-bottom:1px solid var(--line); }
+  tr.sel td { background:#eef3f7; }
+  tr.q { cursor:pointer; }
+  .pill { display:inline-block; padding:1px 7px; border-radius:20px; font-size:11px; border:1px solid var(--line); }
+  .s-pending{background:#fff7e6;} .s-approved{background:#e7f4ea;color:var(--ok);} .s-rejected{background:#fdecea;color:var(--bad);}
+  .s-generating{background:#eef;} .s-changes_requested{background:#fff0f0;color:var(--bad);}
+  .stage-idea{color:var(--accent);} .stage-content{color:var(--ink);}
+  .gap { color:var(--bad); } .cov { color:var(--ok); }
+  iframe { width:100%; height:560px; border:1px solid var(--line); border-radius:6px; background:#fff; }
+  .muted { color:#777; font-size:12px; }
+  .bars span { display:inline-block; height:12px; background:var(--ink); margin-right:2px; border-radius:2px; }
+  .tabset button { border:none; background:none; color:var(--ink); border-bottom:2px solid transparent; border-radius:0; padding:4px 8px; }
+  .tabset button.active { border-bottom-color:var(--accent); font-weight:600; }
+  code { background:#eee; padding:1px 4px; border-radius:4px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>TeachersAid · Review Dashboard</h1>
+  <span class="stat" id="counts">…</span>
+  <span class="stat">Bibliothek (freigegeben): <b id="libsize">0</b></span>
+  <span class="stat muted">Gate 1 = Idee · Gate 2 = Inhalt</span>
+</header>
+<div class="wrap">
+  <div class="left">
+    <div class="card">
+      <h2>Neue Anfrage (Gate 1)</h2>
+      <label>Fach</label><input id="f-subject" value="Physik" />
+      <div class="row">
+        <div style="flex:1"><label>Klasse</label><input id="f-klasse" type="number" value="4" /></div>
+        <div style="flex:1"><label>Zeit</label>
+          <select id="f-env"><option>doppelstunde</option><option>einzelstunde</option><option>block</option></select>
+        </div>
+      </div>
+      <label>Thema</label><input id="f-topic" value="Strahlung und Radioaktivität" />
+      <div class="row" style="margin-top:8px">
+        <button onclick="generate()">Anfrage erstellen</button>
+        <button class="ghost" onclick="batch()">Batch über Kompetenzkarte</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="tabset row" style="margin-bottom:6px">
+        <button data-f="all" class="active" onclick="setFilter('all',this)">Alle</button>
+        <button data-f="idea" onclick="setFilter('idea',this)">Ideen</button>
+        <button data-f="content" onclick="setFilter('content',this)">Inhalte</button>
+        <button data-f="library" onclick="setFilter('library',this)">Bibliothek</button>
+      </div>
+      <table><thead><tr><th>ID</th><th>Stufe/Status</th><th>Thema</th><th>Deckung</th></tr></thead>
+        <tbody id="queue"></tbody></table>
+    </div>
+  </div>
+  <div class="right" id="detail"><p class="muted">Wähle links einen Eintrag.</p></div>
+</div>
+<script>
+let FILTER="all", SELECTED=null;
+const $ = s => document.querySelector(s);
+async function jget(u){ return (await fetch(u)).json(); }
+async function jpost(u,b){ return (await fetch(u,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(b||{})})).json(); }
+
+function setFilter(f,el){ FILTER=f; document.querySelectorAll(".tabset button").forEach(b=>b.classList.remove("active")); el.classList.add("active"); refresh(); }
+
+async function generate(){
+  await jpost("/api/generate",{subject:$("#f-subject").value,klasse:+$("#f-klasse").value,topic:$("#f-topic").value,envelope:$("#f-env").value});
+  refresh();
+}
+async function batch(){ await jpost("/api/batch",{subject:$("#f-subject").value,klasse:+$("#f-klasse").value}); refresh(); }
+
+async function refresh(){
+  const st = await jget("/api/status");
+  $("#counts").textContent = Object.entries(st.counts).map(([k,v])=>`${k}: ${v}`).join("  ·  ") || "leer";
+  $("#libsize").textContent = st.library_size;
+  let items = st.items;
+  if(FILTER==="idea") items = items.filter(i=>i.stage==="idea");
+  else if(FILTER==="content") items = items.filter(i=>i.stage==="content");
+  else if(FILTER==="library") items = items.filter(i=>i.stage==="content" && i.status==="approved");
+  const rows = items.map(i=>{
+    const cov = i.covered==null ? "—" : `<span class="cov">${i.covered}✓</span>${i.gaps?` <span class="gap">${i.gaps}✗</span>`:""}`;
+    return `<tr class="q ${SELECTED===i.id?'sel':''}" onclick="open_('${i.id}')">
+      <td>${i.id}</td>
+      <td><span class="stage-${i.stage}">${i.stage}</span><br><span class="pill s-${i.status}">${i.status}</span></td>
+      <td>${i.topic}<br><span class="muted">${i.subject} ${i.klasse}. Kl. · ${i.source}</span></td>
+      <td>${cov}</td></tr>`;
+  }).join("");
+  $("#queue").innerHTML = rows || `<tr><td colspan=4 class="muted">keine Einträge</td></tr>`;
+  if(SELECTED) open_(SELECTED,true);
+}
+
+function bars(by){ if(!by) return ""; const order=["remember","understand","apply","analyze","evaluate","create"];
+  return order.filter(l=>by[l]).map(l=>`<div>${l}: <span class="bars">${"<span style='width:14px'></span>".repeat(by[l])}</span> ${by[l]}</div>`).join(""); }
+
+async function open_(id, keep){
+  SELECTED=id; const it = await jget("/api/items/"+id);
+  let h = `<div class="row" style="justify-content:space-between">
+      <div><h2 style="margin:0">${it.title}</h2>
+      <span class="stage-${it.stage}">${it.stage}</span> · <span class="pill s-${it.status}">${it.status}</span></div></div>`;
+  if(it.error) h += `<p class="gap">⚠ ${it.error}</p>`;
+
+  if(it.stage==="idea" && it.plan){
+    const p=it.plan;
+    h += `<div class="card"><h2>Idee / Plan (Gate 1)</h2>
+      <p><b>Kernfrage:</b> ${p.kernfrage}</p>
+      <p class="muted">Budget ~${p.minutes_budget} min · Dimensionen: ${p.dimensions_targeted.join(", ")}</p>
+      <p><b>Fäden:</b></p><ul>${p.threads.map(t=>`<li>${t}</li>`).join("")}</ul>
+      <p><b>Block-Spezifikationen:</b></p><ul>${p.section_specs.flatMap(s=>s.block_specs.map(b=>`<li><code>${b.cognitive_level}</code> ${b.intent} <span class="muted">(dient ${b.serves_competence_id})</span></li>`)).join("")}</ul>
+      ${it.resolution? `<p class="muted">Aufgelöst: ${it.resolution.competences.map(c=>c.id).join(", ")||"—"} · grade_check=${it.resolution.grade_check}</p>`:""}
+      ${it.resolution&&it.resolution.notes.length? `<p class="gap">${it.resolution.notes.join("<br>")}</p>`:""}
+    </div>`;
+  }
+  if(it.stage==="content"){
+    if(it.status==="generating"){ h += `<div class="card"><p>⏳ Generierung läuft… (Seite aktualisiert automatisch)</p></div>`; }
+    const c=it.content;
+    if(c && c.nachweis){
+      const n=c.nachweis;
+      h += `<div class="card"><h2>Nachweis (abgeleitet)</h2><p>${n.statement}</p>
+        <table><thead><tr><th>Kompetenz</th><th>Status</th></tr></thead><tbody>
+        ${n.competence_coverage.map(x=>`<tr><td>${x.competence_id}</td><td>${x.covered?'<span class="cov">✓ abgedeckt</span>':'<span class="gap">✗ LÜCKE</span>'}</td></tr>`).join("")}
+        </tbody></table>
+        ${n.gaps.length?`<p class="gap"><b>Lücken:</b><br>${n.gaps.join("<br>")}</p>`:""}
+        <p class="muted">Übergreifende Themen: ${n.uebergreifende_themen.join(", ")||"—"}</p></div>`;
+    }
+    if(c && c.depth_profile){
+      const d=c.depth_profile;
+      h += `<div class="card"><h2>Tiefenprofil (abgeleitet)</h2>${bars(d.by_level)}
+        <p>Dimensionen: ${Object.entries(d.by_dimension).map(([k,v])=>k+":"+v).join(" · ")}</p>
+        <p>Zeit gesamt ${d.minutes_total} min · materialunabhängig ${d.minutes_resource_independent} min</p></div>`;
+    }
+    if(it.verify_warnings && it.verify_warnings.length) h+=`<div class="card"><h2>Verify-Hinweise</h2><ul>${it.verify_warnings.map(w=>`<li class="muted">${w}</li>`).join("")}</ul></div>`;
+    if(it.verify_problems && it.verify_problems.length) h+=`<div class="card"><h2 class="gap">Verify-Probleme</h2><ul>${it.verify_problems.map(w=>`<li class="gap">${w}</li>`).join("")}</ul></div>`;
+    if(it.artifacts){
+      h += `<div class="card"><h2>Vorschau</h2><div class="row" style="margin-bottom:6px">
+        <button class="ghost" onclick="showpdf('${id}','student')">Schüler</button>
+        <button class="ghost" onclick="showpdf('${id}','teacher')">Lehrkraft</button>
+        <button class="ghost" onclick="showpdf('${id}','homework')">Hausübung</button></div>
+        <iframe id="pdfframe" src="/api/items/${id}/pdf/student"></iframe></div>`;
+    }
+  }
+
+  if(it.feedback && it.feedback.length){
+    h += `<div class="card"><h2>Feedback</h2>${it.feedback.map(f=>`<div class="muted">${f.at} · <b>${f.decision}</b> ${f.note||""}</div>`).join("")}</div>`;
+  }
+
+  // actions
+  const canApprove = (it.stage==="idea") || (it.stage==="content" && it.status!=="generating" && it.verify_problems.length===0 && it.content);
+  h += `<div class="card"><h2>Aktionen</h2>
+    <textarea id="note" rows="2" placeholder="Notiz für 'Änderungen anfordern'…"></textarea>
+    <div class="row" style="margin-top:8px">
+      <button class="ok" ${canApprove?"":"disabled"} onclick="act('${id}','approve')">Freigeben</button>
+      <button class="ghost" onclick="act('${id}','request-changes')">Änderungen anfordern</button>
+      <button class="bad" onclick="act('${id}','reject')">Ablehnen</button>
+    </div>
+    <p class="muted">Gate 1: Freigabe startet die Generierung. Gate 2: Freigabe nimmt das Material in die Bibliothek auf.</p></div>`;
+
+  $("#detail").innerHTML = h;
+  if(!keep) document.querySelectorAll("#queue tr").forEach(r=>r.classList.remove("sel"));
+}
+function showpdf(id,kind){ $("#pdfframe").src=`/api/items/${id}/pdf/${kind}`; }
+async function act(id,kind){
+  const note = $("#note") ? $("#note").value : "";
+  await jpost(`/api/items/${id}/${kind}`, {note});
+  setTimeout(refresh, 200);
+}
+refresh();
+setInterval(refresh, 4000);
+</script>
+</body>
+</html>

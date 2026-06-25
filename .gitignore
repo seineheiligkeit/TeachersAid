@@ -1,7 +1,9 @@
 # Lehrplan source + extracted images — large binary/source assets, kept locally only.
-# The grounding facts derived from these live in the design docs (subject-coverage-audit.md, project-handoff.md).
+# The grounding facts derived from these live in lehrplan/ and the design docs.
 Documents/RIS Dokument.html
 Documents/RIS Dokument_files/
+# Lehrplan source PDF (same document as the HTML; kept local)
+Documents/NOR40264237.pdf
 
 # Byte-identical duplicate of the canonical handoff at the repo root.
 Documents/project-handoff (1).md
@@ -11,12 +13,12 @@ Thumbs.db
 Desktop.ini
 .DS_Store
 
-# recon scratch
+# recon scratch (Lehrplan parser)
 .tmp_*
 
-# python
+# Python + demo runtime artifacts
 __pycache__/
 *.pyc
-
-# Lehrplan source PDF (same document as the HTML; kept local)
-Documents/NOR40264237.pdf
+.pytest_cache/
+*.egg-info/
+runs/

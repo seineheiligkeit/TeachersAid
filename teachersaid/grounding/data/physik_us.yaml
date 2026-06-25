@@ -1,0 +1,53 @@
+# Physik Unterstufe — grounded competence catalogue for the demo subjects.
+# Hand-curated from the design docs (the RIS source HTML is not in the repo):
+#   - handoff §2 (Physik grade map), strahlung-rack.md (STR.01-04 verbatim + ÜT tags).
+# Übergreifende-Themen legend: 6 = Medienbildung, 11 = Umweltbildung.
+#
+# Each competence id is PHY.US.<klasse>.<kompetenzbereich>.<n>. dimensions are
+# DimensionRefs into the Physik (Naturwissenschaften) W/E/S model.
+
+subject: Physik
+stufe: Unterstufe
+
+# grade map (handoff §2) — used by grade_check.
+grade_map:
+  2: ["Sehen und Hören", "Optische Systeme"]
+  3: ["Mechanik", "Elektrizität und Magnetismus", "Energie"]
+  4: ["Wetter und Klima", "Strahlung und Radioaktivität"]
+
+competences:
+  - id: PHY.US.4.STR.01
+    kompetenzbereich: "Strahlung und Radioaktivität"
+    klasse: 4
+    text: >-
+      Energie- und Informationsübertragung durch Strahlung recherchieren und
+      Quellen bewerten.
+    dimensions: ["W", "S"]
+    uebergreifende_themen: [6]
+    source_ref: "strahlung-rack.md · STR.01"
+  - id: PHY.US.4.STR.02
+    kompetenzbereich: "Strahlung und Radioaktivität"
+    klasse: 4
+    text: >-
+      Die Wechselwirkung der Strahlungsarten (sichtbar / UV / IR / ionisierend)
+      mit Materie analysieren und das Risiko bewerten.
+    dimensions: ["E", "S"]
+    uebergreifende_themen: [11]
+    source_ref: "strahlung-rack.md · STR.02"
+  - id: PHY.US.4.STR.03
+    kompetenzbereich: "Strahlung und Radioaktivität"
+    klasse: 4
+    text: >-
+      Radioaktiven Zerfall als Zufallsprozess verstehen und mit Modellen
+      darstellen.
+    dimensions: ["W"]
+    uebergreifende_themen: []
+    source_ref: "strahlung-rack.md · STR.03"
+  - id: PHY.US.4.STR.04
+    kompetenzbereich: "Strahlung und Radioaktivität"
+    klasse: 4
+    text: >-
+      Mit altersgemäßen Informationen zu aktueller Forschung umgehen.
+    dimensions: ["W", "E", "S"]
+    uebergreifende_themen: []
+    source_ref: "strahlung-rack.md · STR.04"

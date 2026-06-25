@@ -1,0 +1,29 @@
+[project]
+name = "teachersaid"
+version = "0.1.0"
+description = "Austrian-Lehrplan-anchored teaching-material generator (demo engine + HITL dashboard)"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2",
+    "fastapi",
+    "uvicorn",
+    "anthropic",
+    "reportlab",
+    "matplotlib",
+    "pillow",
+    "pyyaml",
+    "pymupdf",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["teachersaid*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
