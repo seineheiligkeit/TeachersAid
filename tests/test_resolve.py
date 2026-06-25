@@ -28,12 +28,13 @@ def test_strahlung_resolves_with_grade_check():
     assert "Strahlung und Radioaktivität" in res.matched_kompetenzbereiche
     # verbatim text + ÜT tag preserved
     str02 = next(c for c in res.competences if c.id == "PHY.US.4.STR.02")
-    assert "Wechselwirkung" in str02.text
+    assert "Interaktion" in str02.text  # verbatim from the Fassung (catalog)
     assert 11 in str02.uebergreifende_themen
 
 
 def test_out_of_catalogue_subject_reports_gap():
-    req = BundleRequest(subject="Musik", klasse=2, topic_raw="Rhythmus")
+    # Ethik is Oberstufe-only in this Fassung — not in the Unterstufe catalog.
+    req = BundleRequest(subject="Ethik", klasse=4, topic_raw="Tugend und Glück")
     res = resolve(req, today=IN_WINDOW)
     assert res.grade_check is False
     assert res.competences == []
@@ -41,11 +42,11 @@ def test_out_of_catalogue_subject_reports_gap():
 
 
 def test_subject_known_but_grade_uncurated_reports_gap():
-    # Physik model exists, but only 4. Kl. competences are curated.
-    req = BundleRequest(subject="Physik", klasse=3, topic_raw="Energie")
+    # Physik runs Kl. 2–4; Kl. 1 has no curated competences.
+    req = BundleRequest(subject="Physik", klasse=1, topic_raw="Energie")
     res = resolve(req, today=IN_WINDOW)
     assert res.competences == []
-    assert any("Demo-Katalog" in n for n in res.notes)
+    assert any("keine Kompetenzen" in n for n in res.notes)
 
 
 def test_fassung_window_warning_outside_window():

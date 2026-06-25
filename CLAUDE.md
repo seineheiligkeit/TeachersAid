@@ -78,27 +78,29 @@ is structurally impossible. `rendering/` importing only `schema/` is what guaran
   assemble time; the allowed set is injected into the *prompt*, not encoded as a closed JSON enum.
 - `kind ∈ core ∪ subject_model.task_kind_extensions`; `dimensions ⊆ subject_model.dimension_ids()`.
 
-## Grounding (data-bootstrap)
+## Grounding
 
-The RIS Lehrplan source HTML is **not in the repo** (git-ignored). Grounding facts are hand-curated from
-the design docs into `teachersaid/grounding/data/*.yaml`:
+The engine grounds in the **full competence catalog** at the repo root (`lehrplan/`), produced by a
+deterministic RIS-HTML parser (`tools/parse_lehrplan.py`) — **all 16 Unterstufe Pflichtgegenstände,
+~571 verbatim competences**. `teachersaid/grounding/lehrplan_store.py` reads it and adapts it to the
+engine schema:
 
-- `fassung.yaml` — BGBl. II 204/2024, DokNr NOR40264237, valid 2024-09-01…**2026-08-31** (expires soon;
-  `FassungRef` is stamped on every content object and `resolve` checks the date window).
-- `physik_us.yaml` — the only fully-curated subject: Physik 4. Kl. (`PHY.US.4.STR.01-04` verbatim + ÜT).
-- `competence_models.yaml` — the four subject models (Physik/Deutsch/Math/GWB); the three sciences share
-  the Physik (Naturwissenschaften) W/E/S model via aliasing in `lehrplan_store.py`.
+- `lehrplan/_meta.json` — Fassung (BGBl. II 204/2024, DokNr NOR40264237, valid 2024-09-01…**2026-08-31**;
+  `FassungRef` is stamped on every content object and `resolve` checks the date window) + the ÜT legend
+  + subject registry.
+- `lehrplan/<CODE>.json` — per-subject verbatim competences (id, kompetenzbereich, klasse, text,
+  dimensions, ÜT) + `anwendungsbereiche`. IDs are stable (`PHY.US.4.STR.01`).
+- `lehrplan/subject_models.json` — per-subject `SubjectCompetenceModel` (dimensions + modality +
+  content_areas + task_kind_extensions).
 
-**To add a subject/topic:** add YAML here — no code change.
+`lehrplan_store.py` maps subject **name → catalog code** (alias table + the registry), resolves a
+DimensionRef per competence (inline W/E/S; or the kompetenzbereich where it *is* the dimension; or a
+`(T)`/`(H1)` tag in the text), and treats `klasse: null` as a cross-class competence. The RIS source
+HTML/PDF are git-ignored; the parser regenerates the catalog (re-run for the 2026/27 Fassung).
 
-**Update (data foundation now exists).** A deterministic RIS parser and a full competence catalog were
-built separately and live at the repo root: `tools/parse_lehrplan.py` extracts all 16 Unterstufe
-Pflichtgegenstände from the RIS HTML into `lehrplan/*.json` (~571 verbatim competences, stable IDs,
-dimensions/ÜT), with `lehrplan/subject_models.json` (per-subject models), `lehrplan/_meta.json` (Fassung
-+ ÜT legend), and `lehrplan/QA-REPORT.md`. The `lehrplan/*.json` competence schema matches
-`ResolvedCompetence` exactly. **Next step: wire `lehrplan_store.py` to read `lehrplan/` instead of the
-Physik-only YAML stub** — that grounds the engine in all 16 subjects. The hand-curated YAML remains the
-current source until then.
+**To add/correct a subject:** edit the catalog (re-run the parser, or edit `lehrplan/*.json` /
+`subject_models.json`) — no engine code change. *(The earlier Physik-only `grounding/data/*.yaml` stub
+has been removed now that the store reads the full catalog.)*
 
 ## HITL dashboard
 

@@ -10,6 +10,7 @@ from __future__ import annotations
 
 from pydantic import BaseModel, ConfigDict, Field
 
+from ..grounding import lehrplan_store as store
 from ..schema.derived import DepthTarget
 from ..schema.worksheet import LehrplanResolution
 
@@ -69,6 +70,10 @@ def plan(
 ) -> WorksheetPlan:
     budget = _ENVELOPE_MINUTES.get(envelope, 100)
     comps = resolution.competences
+    # Fall back to the subject model's first dimension (not a hardcoded "W") so
+    # non-science subjects without a per-competence dimension stay valid for verify.
+    _model = store.get_subject_model(resolution.subject)
+    default_dim = _model.dimensions[0].id if _model and _model.dimensions else "W"
     topic = topic or (
         resolution.matched_kompetenzbereiche[0]
         if resolution.matched_kompetenzbereiche
@@ -82,7 +87,7 @@ def plan(
     spec_n = 0
 
     for comp in comps:
-        primary_dim = comp.dimensions[0] if comp.dimensions else "W"
+        primary_dim = comp.dimensions[0] if comp.dimensions else default_dim
         if primary_dim not in dims_targeted:
             dims_targeted.append(primary_dim)
         # one block-spec per competence, climbing the ladder by index

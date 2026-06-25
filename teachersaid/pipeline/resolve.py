@@ -44,7 +44,7 @@ def resolve(req: BundleRequest, *, today: date | None = None) -> LehrplanResolut
     model = store.get_subject_model(req.subject)
     if model is None:
         notes.append(
-            f"Fach '{req.subject}' ist im Demo-Katalog nicht hinterlegt "
+            f"Fach '{req.subject}' ist im Katalog nicht hinterlegt "
             f"(verfügbar: {', '.join(store.list_subjects())})."
         )
         return LehrplanResolution(
@@ -57,9 +57,9 @@ def resolve(req: BundleRequest, *, today: date | None = None) -> LehrplanResolut
         gmap = store.grade_map(req.subject)
         if gmap:
             notes.append(
-                f"Für {req.subject} {req.klasse}. Kl. sind im Demo-Katalog keine "
-                "Kompetenzen hinterlegt. Kuratiert ist nur Physik 4. Kl. "
-                "(Strahlung und Radioaktivität)."
+                f"Für {req.subject} {req.klasse}. Kl. sind im Katalog keine "
+                f"Kompetenzen hinterlegt (das Fach umfasst die Klassen "
+                f"{', '.join(str(k) for k in sorted(gmap))})."
             )
         else:
             notes.append(
@@ -72,6 +72,18 @@ def resolve(req: BundleRequest, *, today: date | None = None) -> LehrplanResolut
         )
 
     matched = [c for c in all_for_grade if _matches_topic(c.kompetenzbereich, req.topic_raw)]
+    if not matched:
+        # Many subjects (sciences, GPB) name their Kompetenzbereiche after the
+        # W/E/S dimensions or competence strands, not the topic — the thematic
+        # content lives in the Anwendungsbereiche. Match there and resolve the
+        # (cross-cutting) competences for the grade.
+        ab = store.anwendungsbereiche_for(req.subject, req.klasse)
+        if any(_matches_topic(item, req.topic_raw) for item in ab):
+            matched = all_for_grade
+            notes.append(
+                f"Thema '{req.topic_raw}' über die Anwendungsbereiche aufgelöst; "
+                "die Kompetenzen dieses Fachs sind fachübergreifend formuliert."
+            )
     if not matched:
         kbs = sorted({c.kompetenzbereich for c in all_for_grade})
         notes.append(

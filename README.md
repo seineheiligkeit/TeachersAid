@@ -42,9 +42,9 @@ A deterministic parser ([tools/parse_lehrplan.py](tools/parse_lehrplan.py)) extr
 Pflichtgegenstände** from the RIS Lehrplan into a per-subject competence catalog — `lehrplan/*.json`
 (~571 verbatim competences with stable IDs, dimensions, übergreifende-Themen), `lehrplan/subject_models.json`
 (per-subject competence models), `lehrplan/_meta.json` (Fassung + ÜT legend), and
-[lehrplan/QA-REPORT.md](lehrplan/QA-REPORT.md). This is the grounding the engine will consume: the catalog's
-competence schema matches the engine's `ResolvedCompetence`. **Currently the engine grounds in a Physik-only
-YAML stub** (`teachersaid/grounding/data/`); wiring `lehrplan_store.py` to the full catalog is the next step.
+[lehrplan/QA-REPORT.md](lehrplan/QA-REPORT.md). **The engine grounds in this catalog** via
+[teachersaid/grounding/lehrplan_store.py](teachersaid/grounding/lehrplan_store.py) — all 16 subjects, not
+just the Physik demo (the catalog's competence schema matches the engine's `ResolvedCompetence`).
 
 ## Start here
 

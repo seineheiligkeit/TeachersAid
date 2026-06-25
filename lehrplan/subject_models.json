@@ -2,184 +2,548 @@
   "_about": "Curated SubjectCompetenceModel overlay, hand-authored from the subagent QA pass (see QA-REPORT.md). The deterministic parser extracts verbatim competences; this supplies the judgment layer it cannot reliably auto-detect across 16 differently-shaped subjects: the Handlungs-/Kompetenzdimensionen, content axes, and per-dimension modality. Merged into each subject's competence_model at parse time. modality ∈ printable|oral|enactive|audio (audit v0.4 delta — enables printable_coverage).",
   "PHY": {
     "dimensions": [
-      {"code": "W", "label": "Fachwissen anwenden", "modality": "printable"},
-      {"code": "E", "label": "Erkenntnisgewinnung und Experimentieren", "modality": "printable"},
-      {"code": "S", "label": "Standpunkte begründen und aus naturwissenschaftlicher Sicht bewerten", "modality": "printable"}
+      {
+        "code": "W",
+        "label": "Fachwissen anwenden",
+        "modality": "printable"
+      },
+      {
+        "code": "E",
+        "label": "Erkenntnisgewinnung und Experimentieren",
+        "modality": "printable"
+      },
+      {
+        "code": "S",
+        "label": "Standpunkte begründen und aus naturwissenschaftlicher Sicht bewerten",
+        "modality": "printable"
+      }
     ],
     "content_areas": null,
-    "notes": "Naturwissenschaften W/E/S (Handlungsdimensionen), inline-tagged per competence. The inhaltliche Kompetenzbereiche are grade-mapped and live as each competence's kompetenzbereich (2. Kl: Sehen u. Hören, Optische Systeme · 3. Kl: Mechanik, Elektrizität u. Magnetismus, Energie · 4. Kl: Wetter u. Klima, Strahlung u. Radioaktivität)."
+    "notes": "Naturwissenschaften W/E/S (Handlungsdimensionen), inline-tagged per competence. The inhaltliche Kompetenzbereiche are grade-mapped and live as each competence's kompetenzbereich (2. Kl: Sehen u. Hören, Optische Systeme · 3. Kl: Mechanik, Elektrizität u. Magnetismus, Energie · 4. Kl: Wetter u. Klima, Strahlung u. Radioaktivität).",
+    "task_kind_extensions": [
+      "experiment_protocol",
+      "source_critique"
+    ]
   },
   "CHE": {
     "variant": "AHS (Gymnasium/Realgymnasium), zweistündig, 4. Klasse",
     "dimensions": [
-      {"code": "W", "label": "Wissen aneignen und kommunizieren", "modality": "printable"},
-      {"code": "E", "label": "Erkenntnisse gewinnen und interpretieren", "modality": "printable"},
-      {"code": "S", "label": "Standpunkte begründen, Entscheidungen treffen und reflektiert handeln", "modality": "printable"}
+      {
+        "code": "W",
+        "label": "Wissen aneignen und kommunizieren",
+        "modality": "printable"
+      },
+      {
+        "code": "E",
+        "label": "Erkenntnisse gewinnen und interpretieren",
+        "modality": "printable"
+      },
+      {
+        "code": "S",
+        "label": "Standpunkte begründen, Entscheidungen treffen und reflektiert handeln",
+        "modality": "printable"
+      }
     ],
     "content_areas": null,
-    "notes": "Naturwissenschaften W/E/S — shared model with Physik/Biologie. Inhaltsdimension via the 3 zentrale fachliche Konzepte (Basiskonzepte)."
+    "notes": "Naturwissenschaften W/E/S — shared model with Physik/Biologie. Inhaltsdimension via the 3 zentrale fachliche Konzepte (Basiskonzepte).",
+    "task_kind_extensions": [
+      "experiment_protocol",
+      "source_critique"
+    ]
   },
   "CHE2": {
     "variant": "Wirtschaftskundliches Realgymnasium, vierstündig, 3.–4. Klasse",
     "dimensions": [
-      {"code": "W", "label": "Wissen aneignen und kommunizieren", "modality": "printable"},
-      {"code": "E", "label": "Erkenntnisse gewinnen und interpretieren", "modality": "printable"},
-      {"code": "S", "label": "Standpunkte begründen, Entscheidungen treffen und reflektiert handeln", "modality": "printable"}
+      {
+        "code": "W",
+        "label": "Wissen aneignen und kommunizieren",
+        "modality": "printable"
+      },
+      {
+        "code": "E",
+        "label": "Erkenntnisse gewinnen und interpretieren",
+        "modality": "printable"
+      },
+      {
+        "code": "S",
+        "label": "Standpunkte begründen, Entscheidungen treffen und reflektiert handeln",
+        "modality": "printable"
+      }
     ],
     "content_areas": null,
-    "notes": "Same W/E/S model as CHE; the WkRG variant runs 3.+4. Klasse with more hours and a broader Lehrstoff."
+    "notes": "Same W/E/S model as CHE; the WkRG variant runs 3.+4. Klasse with more hours and a broader Lehrstoff.",
+    "task_kind_extensions": [
+      "experiment_protocol",
+      "source_critique"
+    ]
   },
   "BIO": {
     "dimensions": [
-      {"code": "W", "label": "Wissen aneignen, anwenden und kommunizieren", "modality": "printable"},
-      {"code": "E", "label": "Erkenntnisse gewinnen", "modality": "printable"},
-      {"code": "S", "label": "Standpunkte begründen und reflektiert handeln", "modality": "printable"}
+      {
+        "code": "W",
+        "label": "Wissen aneignen, anwenden und kommunizieren",
+        "modality": "printable"
+      },
+      {
+        "code": "E",
+        "label": "Erkenntnisse gewinnen",
+        "modality": "printable"
+      },
+      {
+        "code": "S",
+        "label": "Standpunkte begründen und reflektiert handeln",
+        "modality": "printable"
+      }
     ],
     "content_areas": null,
-    "notes": "Naturwissenschaften W/E/S — shared model. Competences are identical across Klassen 1–4; progression comes from the per-Klasse Anwendungsbereiche. 5 Basiskonzepte in zentrale_konzepte."
+    "notes": "Naturwissenschaften W/E/S — shared model. Competences are identical across Klassen 1–4; progression comes from the per-Klasse Anwendungsbereiche. 5 Basiskonzepte in zentrale_konzepte.",
+    "task_kind_extensions": [
+      "experiment_protocol",
+      "source_critique"
+    ]
   },
   "MAT": {
     "dimensions": [
-      {"code": "MOD", "label": "Modellieren und Problemlösen", "modality": "printable"},
-      {"code": "OPE", "label": "Operieren (Rechnen und Konstruieren)", "modality": "printable"},
-      {"code": "DAR", "label": "Darstellen und Interpretieren", "modality": "printable"},
-      {"code": "BEG", "label": "Vermuten und Begründen", "modality": "printable"}
+      {
+        "code": "MOD",
+        "label": "Modellieren und Problemlösen",
+        "modality": "printable"
+      },
+      {
+        "code": "OPE",
+        "label": "Operieren (Rechnen und Konstruieren)",
+        "modality": "printable"
+      },
+      {
+        "code": "DAR",
+        "label": "Darstellen und Interpretieren",
+        "modality": "printable"
+      },
+      {
+        "code": "BEG",
+        "label": "Vermuten und Begründen",
+        "modality": "printable"
+      }
     ],
     "content_areas": [
-      {"code": "ZAH", "label": "Zahlen und Maße"},
-      {"code": "VAR", "label": "Variablen und Funktionen"},
-      {"code": "FIG", "label": "Figuren und Körper"},
-      {"code": "DAT", "label": "Daten und Zufall"}
+      {
+        "code": "ZAH",
+        "label": "Zahlen und Maße"
+      },
+      {
+        "code": "VAR",
+        "label": "Variablen und Funktionen"
+      },
+      {
+        "code": "FIG",
+        "label": "Figuren und Körper"
+      },
+      {
+        "code": "DAT",
+        "label": "Daten und Zufall"
+      }
     ],
-    "notes": "4×4 matrix: 4 process dimensions × 4 content areas. Each competence's kompetenzbereich_code is its content area (ZAH/VAR/FIG/DAT); the process dimension is not separately tagged in the source. Detailed Lehrstoff lives in anwendungsbereiche; digital-tool ideas in vorschlaege_digitale_technologien."
+    "notes": "4×4 matrix: 4 process dimensions × 4 content areas. Each competence's kompetenzbereich_code is its content area (ZAH/VAR/FIG/DAT); the process dimension is not separately tagged in the source. Detailed Lehrstoff lives in anwendungsbereiche; digital-tool ideas in vorschlaege_digitale_technologien.",
+    "task_kind_extensions": [
+      "calculation",
+      "construction",
+      "modelling_task"
+    ]
   },
   "DEU": {
     "dimensions": [
-      {"code": "SPR", "label": "Sprachbewusstsein und Sprachreflexion", "modality": "printable", "note": "integrativ — formuliert über die anderen Bereiche"},
-      {"code": "ZUH", "label": "Zuhören und Sprechen", "modality": "oral"},
-      {"code": "LES", "label": "Lesen", "modality": "printable"},
-      {"code": "SCH", "label": "Schreiben", "modality": "printable"}
+      {
+        "code": "SPR",
+        "label": "Sprachbewusstsein und Sprachreflexion",
+        "modality": "printable",
+        "note": "integrativ — formuliert über die anderen Bereiche"
+      },
+      {
+        "code": "ZUH",
+        "label": "Zuhören und Sprechen",
+        "modality": "oral"
+      },
+      {
+        "code": "LES",
+        "label": "Lesen",
+        "modality": "printable"
+      },
+      {
+        "code": "SCH",
+        "label": "Schreiben",
+        "modality": "printable"
+      }
     ],
     "content_areas": null,
-    "notes": "Four Kompetenzbereiche; each competence's kompetenzbereich_code is one of ZUH/LES/SCH (Sprachbewusstsein is integrative and carries no standalone competences). Zuhören/Sprechen is partly oral → printable_coverage ≈ 0.75."
+    "notes": "Four Kompetenzbereiche; each competence's kompetenzbereich_code is one of ZUH/LES/SCH (Sprachbewusstsein is integrative and carries no standalone competences). Zuhören/Sprechen is partly oral → printable_coverage ≈ 0.75.",
+    "task_kind_extensions": [
+      "text_production",
+      "speaking_task",
+      "text_analysis"
+    ]
   },
   "FS1": {
     "dimensions": [
-      {"code": "HOR", "label": "Hören", "modality": "audio"},
-      {"code": "LES", "label": "Lesen", "modality": "printable"},
-      {"code": "SPR", "label": "Sprechen (an Gesprächen teilnehmen und zusammenhängend sprechen)", "modality": "oral"},
-      {"code": "SCH", "label": "Schreiben", "modality": "printable"}
+      {
+        "code": "HOR",
+        "label": "Hören",
+        "modality": "audio"
+      },
+      {
+        "code": "LES",
+        "label": "Lesen",
+        "modality": "printable"
+      },
+      {
+        "code": "SPR",
+        "label": "Sprechen (an Gesprächen teilnehmen und zusammenhängend sprechen)",
+        "modality": "oral"
+      },
+      {
+        "code": "SCH",
+        "label": "Schreiben",
+        "modality": "printable"
+      }
     ],
     "content_areas": null,
-    "notes": "GeR/CEFR progression across Klassen (A1/A2 → A2+/B1). Hören needs an audio asset, Sprechen is oral → printable_coverage ≈ 0.5. NB: Sprachmittlung is NOT a Kompetenzbereich in the Unterstufe (contra the earlier audit)."
+    "notes": "GeR/CEFR progression across Klassen (A1/A2 → A2+/B1). Hören needs an audio asset, Sprechen is oral → printable_coverage ≈ 0.5. NB: Sprachmittlung is NOT a Kompetenzbereich in the Unterstufe (contra the earlier audit).",
+    "task_kind_extensions": [
+      "listening_task",
+      "speaking_task",
+      "text_production"
+    ]
   },
   "FS2": {
     "dimensions": [
-      {"code": "HOR", "label": "Hören", "modality": "audio"},
-      {"code": "LES", "label": "Lesen", "modality": "printable"},
-      {"code": "SPR", "label": "Sprechen (an Gesprächen teilnehmen und zusammenhängend sprechen)", "modality": "oral"},
-      {"code": "SCH", "label": "Schreiben", "modality": "printable"}
+      {
+        "code": "HOR",
+        "label": "Hören",
+        "modality": "audio"
+      },
+      {
+        "code": "LES",
+        "label": "Lesen",
+        "modality": "printable"
+      },
+      {
+        "code": "SPR",
+        "label": "Sprechen (an Gesprächen teilnehmen und zusammenhängend sprechen)",
+        "modality": "oral"
+      },
+      {
+        "code": "SCH",
+        "label": "Schreiben",
+        "modality": "printable"
+      }
     ],
     "content_areas": null,
-    "notes": "Same model as FS1; starts in 3. Klasse, CEFR target A1/A2 → A2. FS2 Kl.3/4 competences mirror FS1 Kl.1/2."
+    "notes": "Same model as FS1; starts in 3. Klasse, CEFR target A1/A2 → A2. FS2 Kl.3/4 competences mirror FS1 Kl.1/2.",
+    "task_kind_extensions": [
+      "listening_task",
+      "speaking_task",
+      "text_production"
+    ]
   },
   "LAT": {
     "dimensions": [
-      {"code": "SPR", "label": "Sprach- und textbezogene Kompetenzen", "modality": "printable"},
-      {"code": "INH", "label": "Inhalts- und themenbezogene Kompetenzen (Kultur-/Sachkompetenz)", "modality": "printable"}
+      {
+        "code": "SPR",
+        "label": "Sprach- und textbezogene Kompetenzen",
+        "modality": "printable"
+      },
+      {
+        "code": "INH",
+        "label": "Inhalts- und themenbezogene Kompetenzen (Kultur-/Sachkompetenz)",
+        "modality": "printable"
+      }
     ],
     "content_areas": null,
-    "notes": "Latein has no separate Handlungsdimensionen; its two Kompetenzbereiche (SPR/INH) are the competence axis. Content is in the target language."
+    "notes": "Latein has no separate Handlungsdimensionen; its two Kompetenzbereiche (SPR/INH) are the competence axis. Content is in the target language.",
+    "task_kind_extensions": [
+      "translation",
+      "text_analysis"
+    ]
   },
   "GWB": {
     "dimensions": [
-      {"code": "OK", "label": "Orientierungskompetenz", "modality": "printable"},
-      {"code": "UK", "label": "Urteilskompetenz", "modality": "printable"},
-      {"code": "HK", "label": "Handlungskompetenz", "modality": "printable", "note": "often enactive/simulativ"}
+      {
+        "code": "OK",
+        "label": "Orientierungskompetenz",
+        "modality": "printable"
+      },
+      {
+        "code": "UK",
+        "label": "Urteilskompetenz",
+        "modality": "printable"
+      },
+      {
+        "code": "HK",
+        "label": "Handlungskompetenz",
+        "modality": "printable",
+        "note": "often enactive/simulativ"
+      }
     ],
     "content_areas": null,
-    "notes": "Geographie u. wirtschaftliche Bildung. Anforderungsbereiche (Reproduktion/Transfer/Reflexion u. Problemlösung) corroborate the CognitiveLevel ladder. 8 zentrale fachliche Konzepte structure the content."
+    "notes": "Geographie u. wirtschaftliche Bildung. Anforderungsbereiche (Reproduktion/Transfer/Reflexion u. Problemlösung) corroborate the CognitiveLevel ladder. 8 zentrale fachliche Konzepte structure the content.",
+    "task_kind_extensions": [
+      "map_work",
+      "case_study",
+      "position_argument"
+    ]
   },
   "GPB": {
     "dimensions": [
-      {"code": "HFR", "label": "Historische Fragekompetenz", "modality": "printable", "strang": "historisch"},
-      {"code": "HME", "label": "Historische Methodenkompetenz", "modality": "printable", "strang": "historisch"},
-      {"code": "HOR", "label": "Historische Orientierungskompetenz", "modality": "printable", "strang": "historisch"},
-      {"code": "HSA", "label": "Historische (und politische) Sachkompetenz", "modality": "printable", "strang": "historisch/politisch"},
-      {"code": "PUR", "label": "Politische Urteilskompetenz", "modality": "printable", "strang": "politisch"},
-      {"code": "PME", "label": "Politikbezogene Methodenkompetenz", "modality": "printable", "strang": "politisch"},
-      {"code": "PHA", "label": "Politische Handlungskompetenz", "modality": "printable", "strang": "politisch", "note": "partly simulativ"}
+      {
+        "code": "HFR",
+        "label": "Historische Fragekompetenz",
+        "modality": "printable",
+        "strang": "historisch"
+      },
+      {
+        "code": "HME",
+        "label": "Historische Methodenkompetenz",
+        "modality": "printable",
+        "strang": "historisch"
+      },
+      {
+        "code": "HOR",
+        "label": "Historische Orientierungskompetenz",
+        "modality": "printable",
+        "strang": "historisch"
+      },
+      {
+        "code": "HSA",
+        "label": "Historische (und politische) Sachkompetenz",
+        "modality": "printable",
+        "strang": "historisch/politisch"
+      },
+      {
+        "code": "PUR",
+        "label": "Politische Urteilskompetenz",
+        "modality": "printable",
+        "strang": "politisch"
+      },
+      {
+        "code": "PME",
+        "label": "Politikbezogene Methodenkompetenz",
+        "modality": "printable",
+        "strang": "politisch"
+      },
+      {
+        "code": "PHA",
+        "label": "Politische Handlungskompetenz",
+        "modality": "printable",
+        "strang": "politisch",
+        "note": "partly simulativ"
+      }
     ],
     "content_areas": null,
-    "notes": "Dual model: a historische and a politische Kompetenz-Strang (Sachkompetenz is shared). Anforderungsbereiche (Reproduktion/Transfer/Reflexion) apply. The flat parser does not yet assign each competence to its strand — kompetenzbereich grouping for GPB needs a QA follow-up."
+    "notes": "Dual model: a historische and a politische Kompetenz-Strang (Sachkompetenz is shared). Anforderungsbereiche (Reproduktion/Transfer/Reflexion) apply. The flat parser does not yet assign each competence to its strand — kompetenzbereich grouping for GPB needs a QA follow-up.",
+    "task_kind_extensions": [
+      "source_analysis",
+      "position_argument"
+    ]
   },
   "DGB": {
     "dimensions": [
-      {"code": "T", "label": "Strukturen und Funktionen digitaler Systeme (technisch-mediale Perspektive)", "modality": "printable"},
-      {"code": "G", "label": "Gesellschaftliche Wechselwirkungen (gesellschaftlich-kulturelle Perspektive)", "modality": "printable"},
-      {"code": "I", "label": "Interaktion: Nutzung, Handlung und Subjektivierung (interaktionsbezogene Perspektive)", "modality": "enactive"}
+      {
+        "code": "T",
+        "label": "Strukturen und Funktionen digitaler Systeme (technisch-mediale Perspektive)",
+        "modality": "printable"
+      },
+      {
+        "code": "G",
+        "label": "Gesellschaftliche Wechselwirkungen (gesellschaftlich-kulturelle Perspektive)",
+        "modality": "printable"
+      },
+      {
+        "code": "I",
+        "label": "Interaktion: Nutzung, Handlung und Subjektivierung (interaktionsbezogene Perspektive)",
+        "modality": "enactive"
+      }
     ],
     "content_areas": [
-      {"code": "ORI", "label": "Orientierung"},
-      {"code": "INF", "label": "Information"},
-      {"code": "KOM", "label": "Kommunikation"},
-      {"code": "PRO", "label": "Produktion (inkl. Programmieren)"},
-      {"code": "HAN", "label": "Handeln"}
+      {
+        "code": "ORI",
+        "label": "Orientierung"
+      },
+      {
+        "code": "INF",
+        "label": "Information"
+      },
+      {
+        "code": "KOM",
+        "label": "Kommunikation"
+      },
+      {
+        "code": "PRO",
+        "label": "Produktion (inkl. Programmieren)"
+      },
+      {
+        "code": "HAN",
+        "label": "Handeln"
+      }
     ],
-    "notes": "Frankfurt Dreieck T/G/I are the dimensions, tagged as a plain-text (T)/(G)/(I) prefix in each competence; the 5 Kompetenzbereiche (ORI/INF/KOM/PRO/HAN) are the content axis and the competences' kompetenzbereich. Much is enactive-on-device → printable_coverage ≈ 0.4."
+    "notes": "Frankfurt Dreieck T/G/I are the dimensions, tagged as a plain-text (T)/(G)/(I) prefix in each competence; the 5 Kompetenzbereiche (ORI/INF/KOM/PRO/HAN) are the content axis and the competences' kompetenzbereich. Much is enactive-on-device → printable_coverage ≈ 0.4.",
+    "task_kind_extensions": [
+      "programming",
+      "media_analysis"
+    ]
   },
   "GEZ": {
     "dimensions": [
-      {"code": "H1", "label": "Analysieren, Abstrahieren und Argumentieren", "modality": "printable"},
-      {"code": "H2", "label": "Darstellen und Operieren", "modality": "printable"},
-      {"code": "H3", "label": "Interpretieren und Reflektieren", "modality": "printable"}
+      {
+        "code": "H1",
+        "label": "Analysieren, Abstrahieren und Argumentieren",
+        "modality": "printable"
+      },
+      {
+        "code": "H2",
+        "label": "Darstellen und Operieren",
+        "modality": "printable"
+      },
+      {
+        "code": "H3",
+        "label": "Interpretieren und Reflektieren",
+        "modality": "printable"
+      }
     ],
     "content_areas": [
-      {"code": "I1", "label": "Geometrische Objekte und ihre Eigenschaften"},
-      {"code": "I2", "label": "Transformationen von Objekten und Relationen zwischen Objekten"},
-      {"code": "I3", "label": "Projektionen und Risse"}
+      {
+        "code": "I1",
+        "label": "Geometrische Objekte und ihre Eigenschaften"
+      },
+      {
+        "code": "I2",
+        "label": "Transformationen von Objekten und Relationen zwischen Objekten"
+      },
+      {
+        "code": "I3",
+        "label": "Projektionen und Risse"
+      }
     ],
-    "notes": "Realgymnasium, 4. Klasse only. H-dimension is inline-tagged per competence (H1/H2/H3); the competence's kompetenzbereich is its content area (I1/I2/I3). Dynamic-geometry software is an interactive medium."
+    "notes": "Realgymnasium, 4. Klasse only. H-dimension is inline-tagged per competence (H1/H2/H3); the competence's kompetenzbereich is its content area (I1/I2/I3). Dynamic-geometry software is an interactive medium.",
+    "task_kind_extensions": [
+      "construction",
+      "cad_model"
+    ]
   },
   "MUS": {
     "dimensions": [
-      {"code": "SIN", "label": "Singen und Musizieren", "modality": "enactive"},
-      {"code": "TAN", "label": "Tanzen, Bewegen und Darstellen", "modality": "enactive"},
-      {"code": "HOR", "label": "Hören und Erfassen", "modality": "audio"}
+      {
+        "code": "SIN",
+        "label": "Singen und Musizieren",
+        "modality": "enactive"
+      },
+      {
+        "code": "TAN",
+        "label": "Tanzen, Bewegen und Darstellen",
+        "modality": "enactive"
+      },
+      {
+        "code": "HOR",
+        "label": "Hören und Erfassen",
+        "modality": "audio"
+      }
     ],
     "content_areas": null,
-    "notes": "Three Kompetenzbereiche are the axis. 2 of 3 are performed/enactive and Hören needs audio → printable_coverage ≈ 0.33. The Kompetenzmodell also names 11 Handlungsverben (Gestalten, Improvisieren, …)."
+    "notes": "Three Kompetenzbereiche are the axis. 2 of 3 are performed/enactive and Hören needs audio → printable_coverage ≈ 0.33. The Kompetenzmodell also names 11 Handlungsverben (Gestalten, Improvisieren, …).",
+    "task_kind_extensions": [
+      "performance_task",
+      "listening_task"
+    ]
   },
   "KUG": {
     "dimensions": [
-      {"code": "BIL", "label": "Bildnerische Praxis", "modality": "enactive"},
-      {"code": "WAH", "label": "Wahrnehmen und Reflektieren", "modality": "printable"},
-      {"code": "BK", "label": "Bildsprachen und Kommunizieren", "modality": "printable"}
+      {
+        "code": "BIL",
+        "label": "Bildnerische Praxis",
+        "modality": "enactive"
+      },
+      {
+        "code": "WAH",
+        "label": "Wahrnehmen und Reflektieren",
+        "modality": "printable"
+      },
+      {
+        "code": "BK",
+        "label": "Bildsprachen und Kommunizieren",
+        "modality": "printable"
+      }
     ],
     "content_areas": [
-      {"code": "BKU", "label": "bildende Kunst"},
-      {"code": "GEU", "label": "gestaltete Umwelt"},
-      {"code": "VIK", "label": "visuelle Kommunikation"}
+      {
+        "code": "BKU",
+        "label": "bildende Kunst"
+      },
+      {
+        "code": "GEU",
+        "label": "gestaltete Umwelt"
+      },
+      {
+        "code": "VIK",
+        "label": "visuelle Kommunikation"
+      }
     ],
-    "notes": "Bildnerische Praxis (the largest area) is enactive/producing → printable_coverage ≈ 0.33."
+    "notes": "Bildnerische Praxis (the largest area) is enactive/producing → printable_coverage ≈ 0.33.",
+    "task_kind_extensions": [
+      "make_artifact",
+      "image_analysis"
+    ]
   },
   "TED": {
     "dimensions": [
-      {"code": "ENT", "label": "Entwicklung", "modality": "printable"},
-      {"code": "HER", "label": "Herstellung", "modality": "enactive"},
-      {"code": "REF", "label": "Reflexion", "modality": "printable"}
+      {
+        "code": "ENT",
+        "label": "Entwicklung",
+        "modality": "printable"
+      },
+      {
+        "code": "HER",
+        "label": "Herstellung",
+        "modality": "enactive"
+      },
+      {
+        "code": "REF",
+        "label": "Reflexion",
+        "modality": "printable"
+      }
     ],
     "content_areas": null,
-    "notes": "Herstellung is enactive (making) → printable_coverage ≈ 0.33. Ergänzende Anwendungsbereiche are cross-Klassen supplements."
+    "notes": "Herstellung is enactive (making) → printable_coverage ≈ 0.33. Ergänzende Anwendungsbereiche are cross-Klassen supplements.",
+    "task_kind_extensions": [
+      "design_task",
+      "make_artifact"
+    ]
   },
   "BUS": {
     "dimensions": [
-      {"code": "FAC", "label": "Fachkompetenz", "modality": "enactive"},
-      {"code": "MET", "label": "Methodenkompetenz", "modality": "printable"},
-      {"code": "SOZ", "label": "Sozialkompetenz", "modality": "enactive"},
-      {"code": "SEL", "label": "Selbstkompetenz", "modality": "printable"}
+      {
+        "code": "FAC",
+        "label": "Fachkompetenz",
+        "modality": "enactive"
+      },
+      {
+        "code": "MET",
+        "label": "Methodenkompetenz",
+        "modality": "printable"
+      },
+      {
+        "code": "SOZ",
+        "label": "Sozialkompetenz",
+        "modality": "enactive"
+      },
+      {
+        "code": "SEL",
+        "label": "Selbstkompetenz",
+        "modality": "printable"
+      }
     ],
     "content_areas": null,
-    "notes": "Movement competences across sport categories + Sinndimensionen. Core competences are performed → printable_coverage ≈ 0.0; only planning/reflection slices are printable."
+    "notes": "Movement competences across sport categories + Sinndimensionen. Core competences are performed → printable_coverage ≈ 0.0; only planning/reflection slices are printable.",
+    "task_kind_extensions": [
+      "movement_task",
+      "training_log"
+    ]
   }
 }
