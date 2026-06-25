@@ -36,6 +36,16 @@ impossible. See **[CLAUDE.md](CLAUDE.md)** for the codebase guide,
 **[Documents/implementation-notes.md](Documents/implementation-notes.md)** for what was built, and the
 design docs below for the why.
 
+### Data foundation (`lehrplan/`)
+
+A deterministic parser ([tools/parse_lehrplan.py](tools/parse_lehrplan.py)) extracts **all 16 Unterstufe
+Pflichtgegenstände** from the RIS Lehrplan into a per-subject competence catalog — `lehrplan/*.json`
+(~571 verbatim competences with stable IDs, dimensions, übergreifende-Themen), `lehrplan/subject_models.json`
+(per-subject competence models), `lehrplan/_meta.json` (Fassung + ÜT legend), and
+[lehrplan/QA-REPORT.md](lehrplan/QA-REPORT.md). This is the grounding the engine will consume: the catalog's
+competence schema matches the engine's `ResolvedCompetence`. **Currently the engine grounds in a Physik-only
+YAML stub** (`teachersaid/grounding/data/`); wiring `lehrplan_store.py` to the full catalog is the next step.
+
 ## Start here
 
 Read **[project-handoff.md](project-handoff.md)** first — it's the single read-me-first document.

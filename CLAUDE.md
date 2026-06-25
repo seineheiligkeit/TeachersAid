@@ -89,7 +89,16 @@ the design docs into `teachersaid/grounding/data/*.yaml`:
 - `competence_models.yaml` — the four subject models (Physik/Deutsch/Math/GWB); the three sciences share
   the Physik (Naturwissenschaften) W/E/S model via aliasing in `lehrplan_store.py`.
 
-**To add a subject/topic:** add YAML here — no code change. There is no RIS parser yet (out of scope).
+**To add a subject/topic:** add YAML here — no code change.
+
+**Update (data foundation now exists).** A deterministic RIS parser and a full competence catalog were
+built separately and live at the repo root: `tools/parse_lehrplan.py` extracts all 16 Unterstufe
+Pflichtgegenstände from the RIS HTML into `lehrplan/*.json` (~571 verbatim competences, stable IDs,
+dimensions/ÜT), with `lehrplan/subject_models.json` (per-subject models), `lehrplan/_meta.json` (Fassung
++ ÜT legend), and `lehrplan/QA-REPORT.md`. The `lehrplan/*.json` competence schema matches
+`ResolvedCompetence` exactly. **Next step: wire `lehrplan_store.py` to read `lehrplan/` instead of the
+Physik-only YAML stub** — that grounds the engine in all 16 subjects. The hand-curated YAML remains the
+current source until then.
 
 ## HITL dashboard
 
