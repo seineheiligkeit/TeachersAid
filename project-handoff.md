@@ -4,6 +4,13 @@
 for a fresh session taking the project over. Working language is English; the *product's* output is
 German (or a target language for Fremdsprache). Read this, then the docs in the order given in §6.
 
+> **Update (Session 3, 25 June 2026): a runnable demo now exists.** Everything below describes the
+> *design*, which remains the source of truth for intent. The design has since been **implemented** as a
+> Python engine + two-stage human-in-the-loop dashboard in the `teachersaid/` package. For what was built
+> and how it maps to this document, see **[Documents/implementation-notes.md](Documents/implementation-notes.md)**;
+> for the codebase guide and how to run it, see **[CLAUDE.md](CLAUDE.md)** and **[README.md](README.md)**.
+> The "engine / UI deferred" statements in §3, §7 and §8 below are now partially superseded by that build.
+
 ---
 
 ## 0 · Orientation (the 30-second version)

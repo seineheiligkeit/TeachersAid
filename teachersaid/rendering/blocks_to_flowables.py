@@ -1,0 +1,182 @@
+"""Pure Block → ReportLab flowables mapping, parameterised by projection.
+
+This is where the no-drift guarantee becomes concrete: all three projections call
+this one function over the SAME blocks; nothing here holds its own copy of task
+data. Projection ∈ {"student", "teacher", "homework"}.
+"""
+
+from __future__ import annotations
+
+from pathlib import Path
+
+from reportlab.lib.units import mm
+from reportlab.platypus import Image, KeepTogether
+
+from ..schema.blocks import InfoBlock, TaskBlock
+from ..schema.enums import Role
+from ..schema.richtext import plain_text
+from . import reportlab_base as rb
+
+_CALLOUT_LABELS = {
+    "note": "Hinweis", "warning": "Achtung", "reveal": "Auflösung", "tip": "Tipp",
+}
+
+
+def _image(asset_path: Path, max_w: float):
+    img = Image(str(asset_path))
+    if img.imageWidth > max_w:
+        scale = max_w / img.imageWidth
+        img.drawWidth = max_w
+        img.drawHeight = img.imageHeight * scale
+    return img
+
+
+def _info_flowables(b: InfoBlock, projection: str, S, width, assets):
+    out = []
+    if b.kind == "figure" and b.asset_refs:
+        for ref in b.asset_refs:
+            p = assets.get(ref)
+            if p:
+                out.append(_image(p, width))
+        if b.content:
+            out.append(rb.para(b.content, S["meta"]))
+    elif b.kind == "callout":
+        label = _CALLOUT_LABELS.get(b.callout_role or "note", "Hinweis")
+        out.append(rb.raw_para(f"<b>{label}:</b> " + rb.richtext_markup(b.content), S["callout"]))
+    elif b.kind == "key_fact":
+        out.append(rb.raw_para("▸ " + rb.richtext_markup(b.content), S["key_fact"]))
+    else:
+        out.append(rb.para(b.content, S["body"]))
+
+    if projection == "teacher" and b.teacher_note:
+        out.append(rb.para("Lehrkraft: " + rb.richtext_markup(b.teacher_note), S["teacher"]))
+    if b.watch_outs:
+        if projection == "teacher":
+            for w in b.watch_outs:
+                out.append(rb.para("⚠ " + w, S["watch"]))
+        elif projection == "homework":
+            for w in b.watch_outs:
+                out.append(rb.para("Tipp: " + w, S["callout"]))
+    return out
+
+
+def _payload_flowables(b: TaskBlock, S, width):
+    out = []
+    p = b.payload
+    if p is None:
+        return out
+    if p.kind == "true_false_justify":
+        for i, stmt in enumerate(p.statements, 1):
+            out.append(rb.para(f"{i}. {stmt}", S["body"]))
+    elif p.kind == "multiple_choice":
+        for opt in p.options:
+            out.append(rb.para("☐ " + opt, S["body"]))
+    elif p.kind == "ordering":
+        for item in p.items:
+            out.append(rb.para("____  " + item, S["body"]))
+    elif p.kind == "matching":
+        right = p.right or [""] * len(p.left)
+        data = [["", "→", ""]] + [[l, "", r] for l, r in zip(p.left, right)]
+        out.append(rb.grid_table([[c for c in row] for row in data[1:]], width, header=False))
+    elif p.kind == "table_fill":
+        rows = [p.columns] + [["" if c is None else c for c in row] for row in p.rows]
+        out.append(rb.grid_table(rows, width))
+    elif p.kind == "decision_scenario":
+        out.append(rb.para(p.stem, S["body"]))
+    return out
+
+
+def _response_flowables(b: TaskBlock, S, width):
+    r = b.response
+    mode = r.mode
+    if mode == "lines":
+        return [rb.spacer(1), rb.ruled_lines(r.n, width)]
+    if mode == "box":
+        return [rb.spacer(1), rb.answer_box(r.min_height_mm, width)]
+    if mode == "table":
+        rows = [r.columns] + [[""] * len(r.columns) for _ in range(r.rows)]
+        return [rb.spacer(1), rb.grid_table(rows, width)]
+    if mode == "choices":
+        return [rb.para("☐ " + o, S["body"]) for o in r.options]
+    if mode in ("diagram", "drawing", "artifact"):
+        guide = getattr(r, "guide", None) or getattr(r, "produces", None) or ""
+        lead = {"diagram": "Diagramm zeichnen", "drawing": "Skizze",
+                "artifact": "Produkt"}[mode]
+        out = [rb.para(f"<i>[{lead}{': ' + guide if guide else ''}]</i>", S["meta"])]
+        out.append(rb.answer_box(45, width))
+        return out
+    return []
+
+
+def _task_flowables(b: TaskBlock, projection: str, S, width, assets, number):
+    out = [rb.raw_para(f"<b>{number}.</b> " + rb.richtext_markup(b.prompt), S["prompt"])]
+    # data_interpretation: embed the referenced asset
+    if b.payload and b.payload.kind == "data_interpretation":
+        p = assets.get(b.payload.asset_ref)
+        if p:
+            out.append(_image(p, width * 0.75))
+    elif b.asset_refs and b.kind == "data_interpretation":
+        for ref in b.asset_refs:
+            p = assets.get(ref)
+            if p:
+                out.append(_image(p, width * 0.75))
+    out += _payload_flowables(b, S, width)
+    out += _response_flowables(b, S, width)
+
+    if projection == "teacher":
+        dims = ", ".join(b.dimensions)
+        serves = ", ".join(f"{s.competence_id} ({s.relation})" for s in b.serves)
+        out.append(rb.para(
+            f"Niveau: {b.cognitive_level} · Dimension: {dims} · ~{b.est_minutes} min"
+            + (f" · dient: {serves}" if serves else ""),
+            S["meta"],
+        ))
+        if b.answer_key:
+            out.append(rb.raw_para("Lösung: " + rb.richtext_markup(b.answer_key), S["answer"]))
+        if b.acceptable_reasoning:
+            out.append(rb.raw_para(
+                "Akzeptabler Spielraum: " + rb.richtext_markup(b.acceptable_reasoning),
+                S["answer"],
+            ))
+        for crit in b.rubric:
+            out.append(rb.para(
+                f"Kriterium — {crit.criterion}: " + " / ".join(crit.levels), S["teacher"]
+            ))
+        for w in b.watch_outs:
+            out.append(rb.para("⚠ " + w, S["watch"]))
+    elif projection == "homework":
+        for w in b.watch_outs:
+            out.append(rb.para("Tipp: " + w, S["callout"]))
+        if b.self_check:
+            out.append(rb.raw_para(
+                "Selbstkontrolle: " + rb.richtext_markup(b.self_check), S["callout"]
+            ))
+    return out
+
+
+def block_flowables(block, projection, S, width, assets, number=None):
+    """Render one block. `number` is the task counter (only used for TaskBlocks)."""
+    if block.role == Role.INFO:
+        fl = _info_flowables(block, projection, S, width, assets)
+    else:
+        fl = _task_flowables(block, projection, S, width, assets, number)
+    fl.append(rb.spacer(2.5))
+    return [KeepTogether(fl)] if block.role == Role.TASK else fl
+
+
+def should_render(block, projection: str) -> bool:
+    """Projection-level filtering.
+
+    student: drop non-printable (oral/enactive) blocks — they don't print.
+    homework: drop teacher-present / equipment-dependent blocks.
+    teacher: render everything.
+    """
+    if projection == "student":
+        return block.modality == "printable"
+    if projection == "homework":
+        if block.modality != "printable":
+            return False
+        if block.flags and block.flags.equipment_dependent:
+            return False
+        return True
+    return True

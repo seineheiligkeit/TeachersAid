@@ -1,0 +1,47 @@
+# SubjectCompetenceModels — grounded instances (schema §2, verbatim from the Fassung).
+# Modality at the dimension level (v0.4 A2): oral/enactive flagged where the audit
+# (subject-coverage-audit.md) says a worksheet can't fully reach.
+# The three sciences share one model (audit point 1) — Chemie/Biologie ref "Physik".
+
+Physik:
+  subject: Physik
+  stufe: Unterstufe
+  dimensions:
+    - {id: W, label: "Fachwissen anwenden", modality: printable}
+    - {id: E, label: "Erkenntnisgewinnung / Experimentieren", modality: printable}
+    - {id: S, label: "Standpunkte begründen / aus naturwiss. Sicht bewerten", modality: printable}
+  task_kind_extensions: [experiment_protocol, source_critique]
+
+Deutsch:
+  subject: Deutsch
+  stufe: Unterstufe
+  dimensions:
+    - {id: sprachbewusstsein, label: "Sprachbewusstsein und Sprachreflexion", note: "integrativ", modality: printable}
+    - {id: zuhoeren_sprechen, label: "Zuhören und Sprechen", modality: oral}
+    - {id: lesen, label: "Lesen", modality: printable}
+    - {id: schreiben, label: "Schreiben", modality: printable}
+  task_kind_extensions: [text_production, speaking_task, text_analysis]
+
+Mathematik:
+  subject: Mathematik
+  stufe: Unterstufe
+  dimensions:
+    - {id: modellieren, label: "Modellieren und Problemlösen", modality: printable}
+    - {id: operieren, label: "Operieren (Rechnen und Konstruieren)", modality: printable}
+    - {id: darstellen, label: "Darstellen und Interpretieren", modality: printable}
+    - {id: begruenden, label: "Vermuten und Begründen", modality: printable}
+  content_areas:
+    - {id: zahlen, label: "Zahlen und Maße"}
+    - {id: variablen, label: "Variablen und Funktionen"}
+    - {id: figuren, label: "Figuren und Körper"}
+    - {id: daten, label: "Daten und Zufall"}
+  task_kind_extensions: [calculation, construction, modelling_task]
+
+GWB:
+  subject: Geographie und wirtschaftliche Bildung
+  stufe: Unterstufe
+  dimensions:
+    - {id: orientierung, label: "Orientierungskompetenz", modality: printable}
+    - {id: urteil, label: "Urteilskompetenz", modality: printable}
+    - {id: handlung, label: "Handlungskompetenz", note: "often enactive", modality: enactive}
+  task_kind_extensions: [map_work, case_study, position_argument]
