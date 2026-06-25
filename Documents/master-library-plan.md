@@ -5,6 +5,11 @@ worksheet examples — the quality bar, the few-shot seeds for LLM generation, t
 content, and the reviewable starting stock of the material library. Complements the design docs
 (`project-handoff.md`, schema v0.3) and the running engine (`teachersaid/`, see `CLAUDE.md`).
 
+> **Direction update (see [block-library-design.md](block-library-design.md)):** the library unit is
+> shifting from whole worksheets to **blocks** (tasks *and* learn-from texts); a worksheet becomes a
+> *composition* of blocks for a teacher's competence targets + time. The quality bar and coverage ideas
+> below still hold — now applied at block granularity (competence × cognitive level × modality × scope).
+
 ## 1 · Why a master library
 
 Three jobs, one artifact:
