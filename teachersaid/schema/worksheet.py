@@ -25,11 +25,26 @@ class FassungRef(BaseModel):
     valid_to: str
 
 
+class TeacherOverview(BaseModel):
+    """The teacher-facing 'rough guide' for a section — never shown to students.
+
+    Authored (or LLM-generated), not derived. `throughline` is the Roter Faden;
+    `talking_points` are discussion anchors / questions to pose; `extensions` are
+    going-further ideas. `differentiation`/`timing_notes` are optional logistics.
+    """
+    model_config = ConfigDict(extra="forbid")
+    throughline: str | None = None
+    talking_points: list[str] = Field(default_factory=list)
+    extensions: list[str] = Field(default_factory=list)
+    differentiation: str | None = None
+    timing_notes: str | None = None
+
+
 class Baustein(BaseModel):
     model_config = ConfigDict(extra="forbid")
     id: str
     title: str
-    teacher_overview: dict = Field(default_factory=dict)  # throughline/timing/diff
+    teacher_overview: TeacherOverview = Field(default_factory=TeacherOverview)
     blocks: list[Block] = Field(default_factory=list)
 
 

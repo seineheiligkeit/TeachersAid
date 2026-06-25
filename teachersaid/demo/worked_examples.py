@@ -254,7 +254,28 @@ def build_math_unfair_game() -> WorksheetContent:
     section = Baustein(
         id="ug.s",
         title="Fairness messen",
-        teacher_overview={"throughline": "Fairness ist eine Frage der Wahrscheinlichkeit."},
+        teacher_overview={
+            "throughline": "Fairness ist eine Frage der Wahrscheinlichkeit.",
+            "talking_points": [
+                "Fair heißt gleiche Gewinnchance, nicht 'gleiche Regeln' — symmetrische "
+                "Regeln können trotzdem unfair sein.",
+                "Wahrscheinlichkeit quantifizieren statt 'gefühlt fair': günstige/mögliche "
+                "Fälle abzählen (Laplace) oder das Spiel simulieren.",
+                "Auf lange Sicht denken: Wer gewinnt über viele Spiele häufiger? "
+                "Häufigkeit statt Einzelausgang.",
+            ],
+            "extensions": [
+                "Spiele tauschen und gegenseitig die Unfairness aufdecken und "
+                "quantifizieren lassen (Peer-Review der Wahrscheinlichkeiten).",
+                "Simulation: das Spiel viele Male würfeln und die relative Häufigkeit mit "
+                "der berechneten Wahrscheinlichkeit vergleichen (Gesetz der großen Zahlen).",
+            ],
+            "differentiation": (
+                "Basis: ein vorgegebenes einfaches Spiel analysieren (z. B. Summe zweier "
+                "Würfel gerade/ungerade). Leistungsstarke: ein eigenes Spiel mit "
+                "nicht-offensichtlicher Unfairness entwerfen und begründen."
+            ),
+        },
         blocks=[design],
     )
     return WorksheetContent(

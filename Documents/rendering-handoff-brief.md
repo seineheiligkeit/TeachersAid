@@ -42,11 +42,19 @@ guarantee. (`grounding/` is fine if you need labels, but you shouldn't.)
 | | student | teacher | homework |
 |---|---|---|---|
 | blocks shown | `modality == "printable"` only | **all** | `printable` **and not** `flags.equipment_dependent` |
+| **answer write-space** (response lines/box/table) | shown | **omitted** — a guide, not a blank | shown |
 | answer_key / acceptable_reasoning / rubric | hidden | shown | hidden |
 | teacher_note, per-task meta (Niveau/Dimension/min/serves) | hidden | shown | hidden |
 | watch_outs | hidden | shown (`⚠ …`) | shown as student-facing `Tipp: …` |
 | self_check | hidden | — | shown (`Selbstkontrolle: …`) |
+| section **teacher_overview** (Roter Faden + talking points + extensions) | hidden | shown (the "rough guide") | hidden |
+| **Fassung stamp** (BGBl./DokNr.) | hidden | shown | hidden |
 | derived **Nachweis** (coverage + gaps) + **DepthProfile** | — | **appended** | — |
+
+**Audience rule (the spine of 2c):** the student and homework sheets carry *only* student-facing content;
+everything regulatory or pedagogical — the Fassung stamp, competence ids, the Nachweis, and the teacher
+guide layer — is teacher-only. And the teacher guide is a **guide**: it shows the expected answer + talking
+points + extensions and **omits the write-in space** (the teacher already knows the topic).
 
 **2d. Derived fields are READ-ONLY.** `content.nachweis` and `content.depth_profile` are produced by
 `pipeline/assemble.py`. Render them (teacher view) but never compute or mutate them.
@@ -56,7 +64,9 @@ guarantee. (`grounding/` is fine if you need labels, but you shouldn't.)
 All in `teachersaid/schema/` (`extra="forbid"` Pydantic — trust the types):
 - **Document:** `meta` (title, subtitle, subject, klasse, kernfrage, `fassung` stamp, lehrplan_label,
   `content_language`); `intro: list[Block]`; `sections: list[Baustein]` (Baustein = title +
-  `teacher_overview` dict + `blocks`). *(NB: `Baustein` lives in `schema/worksheet.py`, not blocks.py.)*
+  `teacher_overview` + `blocks`). `teacher_overview` is a typed **`TeacherOverview`** (throughline ·
+  talking_points · extensions · differentiation · timing_notes), teacher-only.
+  *(NB: `Baustein`/`TeacherOverview` live in `schema/worksheet.py`, not blocks.py.)*
 - **InfoBlock.kind** ∈ prose · key_fact · example · procedure · figure (`asset_refs`) · data_reference ·
   callout (`callout_role` ∈ note/warning/reveal/tip). Plus `teacher_note`, `watch_outs`.
 - **TaskBlock:** `prompt` (RichText), `payload` (matching · ordering · multiple_choice ·

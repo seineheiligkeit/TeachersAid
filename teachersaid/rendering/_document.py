@@ -67,6 +67,25 @@ def _nachweis_story(content: WorksheetContent, S, width):
     return out
 
 
+def _teacher_overview_story(ov, S):
+    """The section's teacher 'rough guide': Roter Faden + talking points + extensions
+    (+ logistics). Teacher projection only — never reaches the student sheet."""
+    out = []
+    if ov.throughline:
+        out.append(rb.para("Roter Faden: " + ov.throughline, S["teacher"]))
+    if ov.talking_points:
+        out.append(rb.para("Gesprächsanker:", S["label"]))
+        out += [rb.para("• " + tp, S["teacher"]) for tp in ov.talking_points]
+    if ov.extensions:
+        out.append(rb.para("Erweiterung / Vertiefung:", S["label"]))
+        out += [rb.para("• " + ex, S["teacher"]) for ex in ov.extensions]
+    if ov.differentiation:
+        out.append(rb.para("Differenzierung: " + ov.differentiation, S["teacher"]))
+    if ov.timing_notes:
+        out.append(rb.para("Timing: " + ov.timing_notes, S["meta"]))
+    return out
+
+
 def build_pdf(
     content: WorksheetContent,
     projection: str,
@@ -91,9 +110,12 @@ def build_pdf(
     if content.meta.kernfrage:
         story.append(rb.raw_para("Kernfrage: " + rb.richtext_markup(content.meta.kernfrage),
                                  S["kernfrage"]))
-    f = content.meta.fassung
-    story.append(rb.para(f"{f.bgbl} · DokNr {f.doknr} · gültig {f.valid_from}–{f.valid_to}",
-                         S["meta"]))
+    # The Fassung stamp is regulatory provenance for the teacher's copy — students
+    # (and the homework that goes home) don't need it.
+    if projection == "teacher":
+        f = content.meta.fassung
+        story.append(rb.para(f"{f.bgbl} · DokNr {f.doknr} · gültig {f.valid_from}–{f.valid_to}",
+                             S["meta"]))
     story.append(rb.spacer(3))
 
     task_no = 0
@@ -104,9 +126,7 @@ def build_pdf(
     for section in content.sections:
         story.append(rb.para(section.title, S["heading"]))
         if projection == "teacher":
-            tl = section.teacher_overview.get("throughline")
-            if tl:
-                story.append(rb.para("Roter Faden: " + str(tl), S["teacher"]))
+            story += _teacher_overview_story(section.teacher_overview, S)
         for b in section.blocks:
             if not should_render(b, projection):
                 continue

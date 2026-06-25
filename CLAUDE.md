@@ -85,6 +85,23 @@ change — is in **`Documents/rendering-handoff-brief.md`**.
 - **Open sets** (`TaskKind`, `cognitive_level`) are plain strings validated against the subject model at
   assemble time; the allowed set is injected into the *prompt*, not encoded as a closed JSON enum.
 - `kind ∈ core ∪ subject_model.task_kind_extensions`; `dimensions ⊆ subject_model.dimension_ids()`.
+- **`Baustein.teacher_overview` is a typed `TeacherOverview`** (throughline · `talking_points` ·
+  `extensions` · differentiation · timing_notes) — authored/LLM-generated (NOT derived), teacher-only.
+  Generation views mirror throughline/talking_points/extensions; `to_canonical` builds the model.
+
+## Projection audience split (load-bearing)
+
+The three projections are pure functions of one `WorksheetContent`, but **what each shows is split by
+audience** (see `Documents/rendering-handoff-brief.md` §2c for the table):
+
+- **Student & homework = student-facing only.** No Fassung stamp, no competence ids, no Nachweis, no
+  teacher layer. They keep the **write-in space** (response lines/box/table).
+- **Teacher = a guide, not a filled-in clone.** It **omits the write-space** (the topic is known), and
+  shows the expected answer + `acceptable_reasoning` + rubric + `watch_outs`, plus the section
+  `teacher_overview` "rough guide" (Roter Faden + talking points + extensions) and the appended
+  Nachweis/DepthProfile. The Fassung stamp + per-task competence meta are teacher-only.
+- **Generation focuses on the student side + answers**; the teacher talking-points/extensions are a
+  generated section layer (prompts.py asks for them), seeded by the curated examples.
 
 ## Grounding
 

@@ -255,6 +255,26 @@ def build_content() -> WorksheetContent:
         title="Durchdringung ≠ Gefahr",
         teacher_overview={
             "throughline": "Energie entscheidet über Wirkung; Risiko ist eine Frage der Größenordnung.",
+            "talking_points": [
+                "Durchdringung ≠ Gefahr: WLAN- und Mikrowellen durchdringen Materie "
+                "ebenfalls, sind aber nicht-ionisierend. Die Energie entscheidet über die "
+                "Wirkung, nicht ob Strahlung 'durchgeht'.",
+                "Dosis in Größenordnungen denken (Banane → Röntgen → Flug → Jahresdosis): "
+                "die Frage ist nicht 'gefährlich ja/nein', sondern wie viel.",
+                "Radioaktiver Zerfall ist für ein einzelnes Atom unvorhersehbar, für sehr "
+                "viele Atome statistisch exakt — das ist kein Widerspruch.",
+            ],
+            "extensions": [
+                "Aktuelle Anwendungen recherchieren lassen (PET im Krankenhaus, "
+                "Lebensmittelbestrahlung, C-14-Datierung): jeweils Nutzen UND Grenze.",
+                "Zählrohr-Versuch als echte Messung: das Abstandsverhalten qualitativ "
+                "beobachten; ohne Gerät als Trockenübung mit vorgegebenen Werten.",
+            ],
+            "differentiation": (
+                "Basis zuerst absichern: Zerfalls-Statistik und der Unterschied "
+                "ionisierend/nicht-ionisierend. Leistungsstarke: Größenordnungs-Vergleich "
+                "und das kritische Bewerten einer Schlagzeile."
+            ),
             "timing_notes": "Doppelstunde; Versuch (t7) optional/geräteabhängig.",
         },
         blocks=_tasks(),

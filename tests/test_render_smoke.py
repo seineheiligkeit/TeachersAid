@@ -71,6 +71,50 @@ def test_student_hides_keys_teacher_shows_them(built):
     assert "PHY.US.4.STR.01" in t_text
 
 
+def test_projection_audience_split(built):
+    """Student-facing vs teacher-facing: the Fassung stamp and the teacher 'rough
+    guide' layer (talking points / extensions) belong only on the teacher copy."""
+    content, assets, tmp = built
+
+    def text_of(pdf):
+        with fitz.open(pdf) as doc:
+            return "".join(p.get_text() for p in doc)
+
+    s_text = text_of(render_student_sheet(content, tmp / "s2.pdf", assets))
+    t_text = text_of(render_teacher_guide(content, tmp / "t2.pdf", assets))
+
+    assert "DokNr" in t_text and "DokNr" not in s_text          # Fassung: teacher-only
+    assert "Gesprächsanker" in t_text and "Gesprächsanker" not in s_text  # talking points
+    assert "Erweiterung" in t_text and "Erweiterung" not in s_text        # extensions
+
+
+def test_teacher_guide_drops_the_write_space(built):
+    """The teacher knows the topic — the guide omits the student's answer space
+    (ruled lines / box), which renders as a ReportLab Table."""
+    from reportlab.platypus import Table
+
+    from teachersaid.rendering import reportlab_base as rb
+    from teachersaid.rendering.blocks_to_flowables import block_flowables
+
+    content, _, _ = built
+    S = rb.styles()
+    # an open-response task: write-space comes purely from `response` (no payload table)
+    task = next(b for b in content.iter_blocks()
+                if b.role == "task" and b.payload is None
+                and b.response.mode in ("lines", "box"))
+
+    def tables(projection):
+        flat, stack = [], list(block_flowables(task, projection, S, 400, {}, number=1))
+        while stack:
+            f = stack.pop()
+            inner = getattr(f, "_content", None)
+            stack.extend(inner) if inner else flat.append(f)
+        return [f for f in flat if isinstance(f, Table)]
+
+    assert tables("student"), "student should get ruled answer lines / a box"
+    assert not tables("teacher"), "teacher guide should omit the write-in space"
+
+
 def test_intentionally_flawed_guard():
     from teachersaid.schema.assets import Asset, IntentionallyFlawed
 

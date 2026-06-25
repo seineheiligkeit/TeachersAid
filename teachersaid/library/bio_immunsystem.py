@@ -340,13 +340,28 @@ def build_content() -> WorksheetContent:
                 "Erregertyp entscheidet über Wirkung; Resistenz ist gewöhnliche "
                 "Selektion, kein 'Gewöhnen'."
             ),
+            "talking_points": [
+                "Warum hilft ein Antibiotikum bei einer (viralen) Erkältung nicht? Am "
+                "Unterschied Virus/Bakterium festmachen, nicht auswendig lernen lassen.",
+                "Resistenz: Bakterien 'gewöhnen sich' NICHT an — die zufällig "
+                "resistenten überleben und vermehren sich. Diese Fehlvorstellung gezielt "
+                "ansprechen.",
+                "Impfung trainiert das Gedächtnis ohne die Krankheit; die Auffrischung "
+                "hebt den Antikörperspiegel (Anschluss an die Datenaufgabe t3).",
+            ],
+            "extensions": [
+                "Antibiotikaresistenz als Gesundheitsthema (ÜT): warum unnötige "
+                "Einnahme auch der Allgemeinheit schadet.",
+                "Datenaufgabe t3 vertiefen: eine zweite Auffrischung modellieren und das "
+                "Absinken des Antikörperspiegels zwischen den Impfungen deuten.",
+            ],
             "timing_notes": (
                 "Doppelstunde; Datenaufgabe (t3) geräteabhängig, als Trockenübung mit "
                 "den angegebenen Werten möglich."
             ),
-            "diff": (
+            "differentiation": (
                 "Leistungsstarke: t5 (Mikroevolution) und t7 (Standpunkt) vertiefen; "
-                "Basis: t1/t2 sichern den Viren-Bakterien-Unterschied zuerst ab.",
+                "Basis: t1/t2 sichern den Viren-Bakterien-Unterschied zuerst ab."
             ),
         },
         blocks=_tasks(),

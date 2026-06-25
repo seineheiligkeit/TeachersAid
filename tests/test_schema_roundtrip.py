@@ -172,6 +172,8 @@ def test_generation_view_to_canonical():
                     "id": "b1",
                     "title": "Kern",
                     "throughline": "Energie entscheidet.",
+                    "talking_points": ["Durchdringung ≠ Gefahr?"],
+                    "extensions": ["Anwendungen recherchieren."],
                     "blocks": [
                         {
                             "role": "task",
@@ -199,4 +201,7 @@ def test_generation_view_to_canonical():
     assert isinstance(content, WorksheetContent)
     assert content.nachweis is None  # derived later, never generated
     assert content.sections[0].blocks[0].id == "t1"
-    assert content.sections[0].teacher_overview["throughline"] == "Energie entscheidet."
+    ov = content.sections[0].teacher_overview
+    assert ov.throughline == "Energie entscheidet."  # typed TeacherOverview, not a dict
+    assert ov.talking_points == ["Durchdringung ≠ Gefahr?"]
+    assert ov.extensions == ["Anwendungen recherchieren."]

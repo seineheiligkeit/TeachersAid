@@ -27,7 +27,7 @@ from .blocks import (
 )
 from .enums import CalloutRole, InfoKind, Role
 from .response import ResponseSpec
-from .worksheet import Baustein, WorksheetContent
+from .worksheet import Baustein, TeacherOverview, WorksheetContent
 
 
 class GenInfoBlock(BaseModel):
@@ -76,6 +76,8 @@ class GenBaustein(BaseModel):
     id: str
     title: str
     throughline: str = ""
+    talking_points: list[str] = Field(default_factory=list)  # teacher: discussion anchors
+    extensions: list[str] = Field(default_factory=list)  # teacher: going-further ideas
     timing_notes: str | None = None
     differentiation: str | None = None
     blocks: list[GenBlock] = Field(default_factory=list)
@@ -134,15 +136,16 @@ def _block_to_canonical(g: GenBlock):
 
 
 def _baustein_to_canonical(g: GenBaustein) -> Baustein:
-    overview = {"throughline": g.throughline}
-    if g.timing_notes:
-        overview["timing_notes"] = g.timing_notes
-    if g.differentiation:
-        overview["differentiation"] = g.differentiation
     return Baustein(
         id=g.id,
         title=g.title,
-        teacher_overview=overview,
+        teacher_overview=TeacherOverview(
+            throughline=g.throughline or None,
+            talking_points=g.talking_points,
+            extensions=g.extensions,
+            differentiation=g.differentiation,
+            timing_notes=g.timing_notes,
+        ),
         blocks=[_block_to_canonical(b) for b in g.blocks],
     )
 

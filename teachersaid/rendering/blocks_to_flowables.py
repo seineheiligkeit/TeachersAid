@@ -124,7 +124,10 @@ def _task_flowables(b: TaskBlock, projection: str, S, width, assets, number):
             if p:
                 out.append(_image(p, width * 0.75))
     out += _payload_flowables(b, S, width)
-    out += _response_flowables(b, S, width)
+    # The teacher guide is a guide, not a blank to fill in: skip the answer space
+    # (lines/box/table) — the topic is known; the expected answer follows below.
+    if projection != "teacher":
+        out += _response_flowables(b, S, width)
 
     if projection == "teacher":
         dims = ", ".join(b.dimensions)
