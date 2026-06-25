@@ -215,3 +215,32 @@ def competences_for(subject: str, klasse: int) -> list[ResolvedCompetence]:
             )
         )
     return out
+
+
+@lru_cache(maxsize=1)
+def _competence_index() -> dict[str, dict]:
+    """competence_id -> {subject_code, subject, kompetenzbereich, kompetenzbereich_code, klasse}."""
+    idx: dict[str, dict] = {}
+    for s in _meta().get("subjects", []):
+        if s.get("type") != "pflichtgegenstand":
+            continue
+        data = _subject(s["code"]) or {}
+        for c in data.get("competences", []):
+            idx[c["id"]] = {
+                "subject_code": s["code"], "subject": s["name"],
+                "kompetenzbereich": c.get("kompetenzbereich"),
+                "kompetenzbereich_code": c.get("kompetenzbereich_code"),
+                "klasse": c.get("klasse"),
+            }
+    return idx
+
+
+def competence_meta(competence_id: str) -> dict | None:
+    """Look up a single competence's subject/Kompetenzbereich by its catalog id."""
+    return _competence_index().get(competence_id)
+
+
+def competence_count(subject: str) -> int:
+    """Number of catalog competences for a subject (by name or code)."""
+    data = _subject(_code_for(subject))
+    return len(data.get("competences", [])) if data else 0

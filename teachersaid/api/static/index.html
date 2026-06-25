@@ -61,7 +61,7 @@
 <main id="main"></main>
 
 <script>
-const TABS = [["brainstorm","Brainstorm"],["inhalte","Inhalte"],["bibliothek","Bibliothek"],["statistik","Statistik"]];
+const TABS = [["brainstorm","Brainstorm"],["bausteine","Bausteine"],["inhalte","Inhalte"],["bibliothek","Bibliothek"],["statistik","Statistik"]];
 let TAB = "brainstorm", SELECTED = null, VIEW = "bloecke", LASTITEMS = [];
 const $ = s => document.querySelector(s);
 const esc = s => (s==null?"":String(s)).replace(/[&<>]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
@@ -94,6 +94,17 @@ function buildShell(){
         </div>
         <div class="card"><h2>Ideen-Sammlung</h2><div id="bs-list"></div></div>
       </div>`;
+  } else if(TAB==="bausteine"){
+    $("#main").innerHTML = `
+      <div class="grid2">
+        <div class="card"><h2>Baustein-Bibliothek</h2>
+          <div class="row" style="margin-bottom:8px">
+            <select id="blk-status" onchange="refresh()"><option value="">alle Status</option><option value="in_review">in Prüfung</option><option value="approved">freigegeben</option><option value="rejected">abgelehnt</option></select>
+            <select id="blk-role" onchange="refresh()"><option value="">alle Typen</option><option value="task">Aufgabe</option><option value="info">Info / Text</option></select>
+          </div>
+          <div id="blk-list"></div></div>
+        <div id="detail" class="card"><p class="muted">Wähle links einen Baustein.</p></div>
+      </div>`;
   } else if(TAB==="inhalte" || TAB==="bibliothek"){
     $("#main").innerHTML = `
       <div class="grid2">
@@ -111,6 +122,7 @@ async function refresh(){
   $("#libsize").textContent = st.library_size;
   LASTITEMS = st.items;
   if(TAB==="brainstorm") renderBrainstorm();
+  else if(TAB==="bausteine") renderBlocks();
   else if(TAB==="inhalte") renderContentList(LASTITEMS.filter(i=>i.stage==="content" && i.status!=="approved"));
   else if(TAB==="bibliothek") renderContentList(LASTITEMS.filter(i=>i.stage==="content" && i.status==="approved"));
   else if(TAB==="statistik") renderStats();
@@ -235,24 +247,61 @@ function depth(d){
 }
 function showpdf(id,kind){ const f=$("#pdfframe"); if(f) f.src=`/api/items/${id}/pdf/${kind}`; }
 
+/* ---------- Bausteine (block library) ---------- */
+async function renderBlocks(){
+  if(!$("#blk-list")) return;
+  const status = $("#blk-status")? $("#blk-status").value : "";
+  const role = $("#blk-role")? $("#blk-role").value : "";
+  const qs = new URLSearchParams(); if(status) qs.set("status",status); if(role) qs.set("role",role);
+  const blocks = await jget("/api/blocks?"+qs.toString());
+  $("#blk-list").innerHTML = blocks.length ? blocks.map(b=>`
+    <div class="item ${SELECTED===b.id?'sel':''}" onclick="openBlock('${b.id}')">
+      <div class="row between"><b>${b.role==='task'?'🎯':'📖'} ${esc(b.kind)}</b><span class="pill s-${b.status}">${b.status}</span></div>
+      <div>${esc(b.prompt)}</div>
+      <div class="muted">${esc(b.subject)} ${b.klasse||''} · ${esc(b.kompetenzbereich||'—')}
+        ${b.cognitive_level?`<span class="badge">${b.cognitive_level}</span>`:''}<span class="badge">${b.scope}</span>${(b.dimensions||[]).length?`<span class="badge">${b.dimensions.join(',')}</span>`:''}</div>
+    </div>`).join("") : `<p class="muted">keine Bausteine — seed mit <code>python -m teachersaid seed</code></p>`;
+}
+async function openBlock(id){
+  SELECTED=id; renderBlocks();
+  const lb = await jget("/api/blocks/"+id);
+  let h = `<div class="row between"><h2 style="margin:0">${lb.role==='task'?'Aufgabe':'Info / Text'} · ${esc(lb.kind)}</h2><span class="pill s-${lb.status}">${lb.status}</span></div>`;
+  h += `<div style="margin:6px 0">${blk(lb.block, null)}</div>`;
+  h += `<div class="card"><h2>Metadaten</h2>
+    <p><span class="badge">${esc(lb.subject)} ${lb.klasse||''}</span> <span class="badge">KB: ${esc(lb.kompetenzbereich||'—')}</span>
+       <span class="badge">Scope: ${lb.scope}</span>${lb.family?`<span class="badge">Familie: ${esc(lb.family)}</span>`:''}</p>
+    ${lb.competences.length?`<p>dient: ${lb.competences.map(c=>`<code>${c}</code>`).join(' ')}</p>`:''}
+    ${lb.cognitive_level?`<p class="muted">Niveau ${lb.cognitive_level} · Dimension ${(lb.dimensions||[]).join(', ')} · Modalität ${lb.modality}</p>`:''}
+    <p class="muted">Herkunft: ${esc(lb.provenance)} · Quelle: ${lb.source}</p></div>`;
+  const inLib = lb.status==="approved";
+  h += `<div class="card"><h2>Aktionen</h2><div class="row">
+    <button class="ok" ${inLib?'disabled':''} onclick="actBlock('${id}','approve')">In Bibliothek aufnehmen</button>
+    <button class="bad" onclick="actBlock('${id}','reject')">Ablehnen</button></div>
+    <p class="muted">Freigegebene Bausteine bilden die Bibliothek, aus der später Arbeitsblätter zusammengestellt werden.</p></div>`;
+  $("#detail").innerHTML = h;
+}
+async function actBlock(id,kind){ await jpost(`/api/blocks/${id}/${kind}`,{}); setTimeout(refresh,150); }
+
 /* ---------- Statistik ---------- */
 async function renderStats(){
   if(!$("#stats")) return;
   const s = await jget("/api/stats"); const t = s.totals;
-  let h = `<div class="card"><h2>Master-Bibliothek — Gesamtfortschritt</h2>
-    <div class="row between"><span>${t.covered_competences} / ${t.total_competences} Kompetenzen abgedeckt</span><b>${t.coverage_pct}%</b></div>
+  let h = `<div class="card"><h2>Block-Bibliothek — Gesamtfortschritt</h2>
+    <div class="row between"><span>${t.covered_competences} / ${t.total_competences} Kompetenzen durch freigegebene Bausteine abgedeckt</span><b>${t.coverage_pct}%</b></div>
     <div class="prog"><i style="width:${t.coverage_pct}%"></i></div>
-    <p class="muted" style="margin-top:8px">${t.worksheets} Arbeitsblätter · ${t.tasks} Aufgaben · ${t.in_progress} in Prüfung · ${t.subjects_started}/${t.subjects} Fächer begonnen</p></div>
+    <p class="muted" style="margin-top:8px">${t.task_blocks} Aufgaben-Bausteine · ${t.info_blocks} Info/Text-Bausteine · ${t.in_review} in Prüfung ·
+      ${t.subjects_started}/${t.subjects} Fächer begonnen · ${t.worksheets} Arbeitsblätter freigegeben</p></div>
     <div class="card"><h2>Pro Fach</h2>
-    <table><thead><tr><th>Fach</th><th>Klassen</th><th>Blätter</th><th>Aufgaben</th><th>Abdeckung</th><th>in Prüfung</th></tr></thead><tbody>
+    <table><thead><tr><th>Fach</th><th>Kl.</th><th>Aufg.</th><th>Info</th><th>Abdeckung (Komp.)</th><th>Niveaus</th><th>in Prüfung</th></tr></thead><tbody>
     ${s.subjects.map(r=>`<tr ${r.empty?'class="muted"':''}>
       <td>${esc(r.name)}</td><td>${(r.klassen||[]).join(",")}</td>
-      <td>${r.worksheets}</td><td>${r.tasks}</td>
+      <td>${r.task_blocks}</td><td>${r.info_blocks}</td>
       <td>${r.covered_competences}/${r.total_competences}
-        <div class="prog" style="width:90px;display:inline-block;vertical-align:middle"><i style="width:${r.coverage_pct}%"></i></div></td>
-      <td>${r.in_progress||"—"}</td></tr>`).join("")}
+        <div class="prog" style="width:80px;display:inline-block;vertical-align:middle"><i style="width:${r.coverage_pct}%"></i></div></td>
+      <td class="muted">${Object.entries(r.by_level||{}).map(([k,v])=>k.slice(0,4)+":"+v).join(" ")||"—"}</td>
+      <td>${r.in_review||"—"}</td></tr>`).join("")}
     </tbody></table>
-    <p class="muted" style="margin-top:8px">„Abdeckung" = Katalog-Kompetenzen, die mind. ein freigegebenes Blatt übt. Leere Fächer sind ausgegraut.</p></div>`;
+    <p class="muted" style="margin-top:8px">„Abdeckung" = Katalog-Kompetenzen mit ≥1 freigegebenem Aufgaben-Baustein. Leere Fächer sind ausgegraut.</p></div>`;
   $("#stats").innerHTML = h;
 }
 

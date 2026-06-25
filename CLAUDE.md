@@ -126,9 +126,27 @@ Physik *Strahlung*, Biologie *Immunsystem*, Mathematik *Daten/Zufall*.
 - The quality bar + per-subject coverage plan: **`Documents/master-library-plan.md`**. Don't author
   shallow examples; match the depth of `demo/strahlung.py`.
 
+## Block library — the unit of the master library (`teachersaid/library/block.py`)
+
+Per **`Documents/block-library-design.md`**, the **block** (not the whole worksheet) is the durable
+library unit; a worksheet will become a *composition* of blocks (the composer is a later phase).
+Phase 1 (built):
+- `LibraryBlock` (`library/block.py`) = a schema `Block` + library metadata: subject/Klasse/
+  Kompetenzbereich, `serves` competences, `cognitive_level`, `dimensions`, `modality`, **`scope`**
+  (content richness compact|standard|extended — *orthogonal to* `cognitive_level`), `family` (groups
+  richness variants), `status`, `provenance`. `harvest(content)` extracts a worksheet's blocks into
+  LibraryBlocks (a learn-from text is a block too; only the worksheet's framing intro/transitions are not).
+- `store/blockstore.py::BlockStore` — JSON under `runs/blocks/`; `upsert` is idempotent and **preserves
+  review status** (re-seeding never un-approves). `python -m teachersaid seed` harvests the example
+  worksheets' blocks (~21) as the seed; `library.seed_blocks()`.
+- Dashboard **Bausteine** tab reviews blocks (approve → library). **Statistik** (`teachersaid/stats.py`)
+  is now the **block matrix**: per subject — task/info blocks, catalog competences covered (≥1 approved
+  task block), cognitive-level spread, what's empty.
+
 ## HITL dashboard (`api/` + `api/static/index.html`)
 
-Two review gates, one `ReviewItem` type (`stage` ∈ **brainstorm** | **content**); four tabs.
+Two review gates, one `ReviewItem` type (`stage` ∈ **brainstorm** | **content**); five tabs
+(Brainstorm · **Bausteine** · Inhalte · Bibliothek · Statistik — see the Block library section below).
 
 ```
 Brainstorm (rough idea: topic + note, you or AI) ─approve─► flesh_out
@@ -142,9 +160,8 @@ Brainstorm (rough idea: topic + note, you or AI) ─approve─► flesh_out
   blocks, dimensions, `serves`, derived Nachweis/Tiefenprofil — *independent of any rendered document*)
   and **Vorschau** (the rendered student/teacher/homework PDFs). Approve → library; `request-changes`
   regenerates with the note injected.
-- **Bibliothek** — approved worksheets. **Statistik** — coverage (`teachersaid/stats.py`): per subject,
-  tasks / worksheets / catalog-competences-covered / what's empty, vs the catalog. "Covered" = a catalog
-  competence served by ≥1 approved worksheet.
+- **Bibliothek** — approved worksheets. **Bausteine** + **Statistik** are the block library (see below);
+  Statistik is the block-coverage matrix.
 
 Offline, `flesh_out` is served from the master library; with a key it generates live. The store holds
 only review items + the approved library — deliberately **no gradebook, no classroom state, no student

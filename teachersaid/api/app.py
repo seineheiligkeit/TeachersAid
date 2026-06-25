@@ -16,10 +16,12 @@ from pydantic import BaseModel
 
 from ..pipeline import orchestrator as orch
 from ..stats import compute_stats
+from ..store.blockstore import BlockStore
 from ..store.repository import ReviewStore
 
 app = FastAPI(title="TeachersAid — Review Dashboard")
 STORE = ReviewStore()
+BLOCKS = BlockStore()
 _STATIC = Path(__file__).resolve().parent / "static"
 
 
@@ -85,7 +87,35 @@ def library():
 
 @app.get("/api/stats")
 def stats():
-    return compute_stats(STORE)
+    return compute_stats(BLOCKS, STORE)
+
+
+# --- block library -----------------------------------------------------------
+@app.get("/api/blocks")
+def blocks(subject: str | None = None, status: str | None = None, role: str | None = None):
+    return [b.summary() for b in BLOCKS.list(subject=subject, status=status, role=role)]
+
+
+@app.get("/api/blocks/{block_id}")
+def get_block(block_id: str):
+    lb = BLOCKS.get(block_id)
+    if lb is None:
+        raise HTTPException(404, "no such block")
+    return lb.model_dump()
+
+
+@app.post("/api/blocks/{block_id}/approve")
+def approve_block(block_id: str):
+    if BLOCKS.get(block_id) is None:
+        raise HTTPException(404, "no such block")
+    return BLOCKS.set_status(block_id, "approved").summary()
+
+
+@app.post("/api/blocks/{block_id}/reject")
+def reject_block(block_id: str):
+    if BLOCKS.get(block_id) is None:
+        raise HTTPException(404, "no such block")
+    return BLOCKS.set_status(block_id, "rejected").summary()
 
 
 # --- item detail + review ----------------------------------------------------

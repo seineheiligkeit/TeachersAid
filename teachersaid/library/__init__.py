@@ -75,3 +75,17 @@ def seed_library(store=None, *, today: date | None = None) -> list:
         orch.approve_brainstorm(store, bs.id)
         out.append(orch.flesh_out(store, bs.id, today=today))  # offline path serves ex.build()
     return out
+
+
+def seed_blocks(store=None) -> list:
+    """Harvest every example worksheet's blocks into the block library (idempotent;
+    preserves existing review status). The seed of the master block library."""
+    from .block import harvest
+    from ..store.blockstore import BlockStore
+
+    store = store or BlockStore()
+    out = []
+    for ex in EXAMPLES:
+        for lb in harvest(ex.build(), example_key=ex.key):
+            out.append(store.upsert(lb))
+    return out

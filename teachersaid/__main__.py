@@ -13,13 +13,17 @@ import uvicorn
 
 if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "seed":
-        from .library import seed_library
+        from .library import seed_blocks, seed_library
 
         items = seed_library()
-        print(f"Seeded {len(items)} master-library example(s) into the review store:")
+        print(f"Seeded {len(items)} master-library worksheet(s) into the review store:")
         for it in items:
             status = "ERROR: " + it.error if it.error else f"{it.status} (review)"
             print(f"  - {it.id}  {it.title}  — {status}")
+        blocks = seed_blocks()
+        print(f"\nHarvested {len(blocks)} blocks into the block library "
+              f"({sum(1 for b in blocks if b.role=='task')} tasks, "
+              f"{sum(1 for b in blocks if b.role=='info')} info) — status 'in_review'.")
         print("\nRun 'python -m teachersaid' and open the dashboard to review them.")
         sys.exit(0)
 

@@ -109,8 +109,9 @@ aus Lehrplan" (suggest blocks for the empty cells).
 
 ## 8 · Phasing
 
-1. **Library foundation (now).** The `LibraryBlock` model + `scope`/`family`; harvest the 3 examples;
-   block review + the block-level stats matrix in the dashboard. *(the focus)*
+1. **Library foundation — ✅ built (25 Jun 2026).** `LibraryBlock` (`library/block.py`) + `scope`/`family`;
+   `BlockStore` (`store/blockstore.py`); `harvest`/`seed_blocks` (the 3 examples → ~21 blocks); the
+   **Bausteine** review tab + the block-level **Statistik** matrix; `tests/test_blocks.py`.
 2. **Dumb composer.** The `compose` stage (§4) + a compose view; render composed worksheets.
 3. **Richness + smarter selection.** Populate `scope` variants; better ordering/coherence; begin
    difficulty calibration on the now-reused blocks.
