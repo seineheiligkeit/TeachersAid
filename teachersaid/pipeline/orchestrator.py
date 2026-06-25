@@ -288,6 +288,60 @@ def ingest_generated(
     return item, harvested
 
 
+def ingest_scope_variant(
+    block_store, original_id: str, scope: str, body_task, *, today: date | None = None
+) -> tuple[object, list[str]]:
+    """Validate a generated task-block **scope variant** and store it as a LibraryBlock
+    tagged with the original block's id as `family` + the given `scope` (Phase 3a). Also
+    stamps the original block's `family`, so the trio (compact/standard/extended) is one
+    family the composer picks from by envelope. Reuses the verify seam; returns
+    (LibraryBlock | None, problems) — a bad variant is never stored.
+
+    `body_task` is a `GenTaskBlock` (or its dict): the same competence/kind/dimensions/
+    cognitive_level as the original, but more/less content-rich + adjusted est_minutes."""
+    from ..grounding import lehrplan_store as ls
+    from ..library.block import LibraryBlock
+    from ..schema.generation_views import GenTaskBlock, _task_to_canonical
+    from ..schema.worksheet import Baustein, WorksheetContent, WorksheetMeta
+    from .resolve import resolve_grade
+
+    orig = block_store.get(original_id)
+    if orig is None:
+        return None, [f"unknown block '{original_id}'"]
+    model = ls.get_subject_model(orig.subject)
+    res = resolve_grade(orig.subject, orig.klasse, today=today)
+    try:
+        task = _task_to_canonical(
+            body_task if isinstance(body_task, GenTaskBlock) else GenTaskBlock.model_validate(body_task)
+        )
+    except Exception as exc:  # noqa: BLE001
+        return None, [f"schema: {type(exc).__name__}: {exc}"]
+    # validate the single block through the real seam (kinds/dims/serves/level)
+    content = WorksheetContent(
+        meta=WorksheetMeta(title="(variant)", subject=orig.subject, stufe="Unterstufe",
+                           klasse=orig.klasse, fassung=res.fassung, lehrplan_label=""),
+        subject_model=model, sections=[Baustein(id="v", title="v", blocks=[task])],
+    )
+    assemble(content, res)
+    report = verify(content, res)
+    if report.problems:
+        return None, report.problems
+
+    lb = LibraryBlock(
+        id=f"{original_id}#{scope}", block=task, role="task", kind=task.kind,
+        subject=orig.subject, klasse=orig.klasse, kompetenzbereich=orig.kompetenzbereich,
+        competences=[s.competence_id for s in task.serves], cognitive_level=task.cognitive_level,
+        dimensions=list(task.dimensions or []), modality=getattr(task, "modality", "printable") or "printable",
+        scope=scope, family=original_id, status="in_review",
+        provenance=f"variant:{original_id}", source="ai",
+    )
+    block_store.upsert(lb)
+    if orig.family != original_id:        # group the original (standard) with its variants
+        orig.family = original_id
+        block_store.save(orig)
+    return lb, []
+
+
 def _produce_content_item(
     store: ReviewStore,
     idea: ReviewItem,

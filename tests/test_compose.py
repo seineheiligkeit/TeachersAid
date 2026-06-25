@@ -49,6 +49,87 @@ def test_compose_from_approved_blocks_verifies_clean(stores):
     assert all(any(s.competence_id in valid for s in t.serves) for t in tasks)
 
 
+PHY_KB = "Strahlung und Radioaktivität"
+
+
+def _variant_block(scope, mins):
+    """A scope variant of one concept (family 'fam.zerfall'), approved."""
+    from teachersaid.library.block import LibraryBlock
+    from teachersaid.schema.blocks import Serves, TaskBlock
+    from teachersaid.schema.response import LinesResponse
+    task = TaskBlock(
+        id=f"zerfall_{scope}", kind="open_response",
+        prompt=f"({scope}) Erkläre den radioaktiven Zerfall als Zufallsprozess.",
+        response=LinesResponse(n=3), cognitive_level="understand", dimensions=["W"],
+        serves=[Serves(competence_id="PHY.US.4.STR.03", relation="exercises")], est_minutes=mins,
+    )
+    return LibraryBlock(
+        id=f"v.zerfall.{scope}", block=task, role="task", kind="open_response",
+        subject="Physik", klasse=4, kompetenzbereich=PHY_KB, competences=["PHY.US.4.STR.03"],
+        cognitive_level="understand", dimensions=["W"], scope=scope, family="fam.zerfall",
+        status="approved",
+    )
+
+
+def test_compose_scope_variants_differ_by_envelope(tmp_path, monkeypatch):
+    """3a width axis: one family with compact/standard/extended variants — the composer
+    picks the variant whose scope matches the envelope (so einzelstunde != block)."""
+    import teachersaid.config as cfg
+    monkeypatch.setattr(cfg, "RUNS_DIR", tmp_path)
+    bs = BlockStore(tmp_path / "blocks")
+    for scope, mins in (("compact", 4), ("standard", 9), ("extended", 18)):
+        bs.upsert(_variant_block(scope, mins))
+
+    def task_ids(envelope):
+        content, _ = compose("Physik", 4, "Strahlung", kompetenzbereich=PHY_KB,
+                             envelope=envelope, block_store=bs, today=IN)
+        return [b.id for b in content.iter_blocks() if b.role == Role.TASK]
+
+    assert task_ids("einzelstunde") == ["zerfall_compact"]
+    assert task_ids("block") == ["zerfall_extended"]
+
+
+def test_ingest_scope_variant(tmp_path, monkeypatch):
+    """3a seam: a generated variant validates + stores (family=original, given scope),
+    groups the original, rejects an invalid variant, and the composer then differentiates."""
+    import teachersaid.config as cfg
+    monkeypatch.setattr(cfg, "RUNS_DIR", tmp_path)
+    from teachersaid.library.block import LibraryBlock
+    from teachersaid.schema.blocks import Serves, TaskBlock
+    from teachersaid.schema.response import LinesResponse
+    bs = BlockStore(tmp_path / "blocks")
+    orig = TaskBlock(id="t1", kind="open_response", prompt="Standard.", response=LinesResponse(n=3),
+                     cognitive_level="understand", dimensions=["W"],
+                     serves=[Serves(competence_id="PHY.US.4.STR.03", relation="exercises")], est_minutes=9)
+    bs.upsert(LibraryBlock(id="orig.t1", block=orig, role="task", kind="open_response", subject="Physik",
+                           klasse=4, kompetenzbereich=PHY_KB, competences=["PHY.US.4.STR.03"],
+                           cognitive_level="understand", dimensions=["W"], scope="standard", status="approved"))
+
+    def vtask(scope, mins):
+        return {"role": "task", "id": f"t1_{scope}", "kind": "open_response", "prompt": f"({scope}) …",
+                "response": {"mode": "lines", "n": 3}, "cognitive_level": "understand", "dimensions": ["W"],
+                "serves": [{"competence_id": "PHY.US.4.STR.03", "relation": "exercises"}],
+                "est_minutes": mins, "answer_key": "…", "watch_outs": []}
+
+    cpt, p1 = orch.ingest_scope_variant(bs, "orig.t1", "compact", vtask("compact", 4), today=IN)
+    ext, p2 = orch.ingest_scope_variant(bs, "orig.t1", "extended", vtask("extended", 18), today=IN)
+    assert p1 == [] and p2 == []
+    assert cpt.family == "orig.t1" and cpt.scope == "compact" and cpt.status == "in_review"
+    assert ext.scope == "extended"
+    assert bs.get("orig.t1").family == "orig.t1"          # original grouped with its variants
+    _, bad = orch.ingest_scope_variant(bs, "orig.t1", "compact", {**vtask("compact", 4), "kind": "nope"}, today=IN)
+    assert bad and bs.get("orig.t1#compact").scope == "compact"  # invalid kind rejected, good one intact
+
+    for v in (cpt, ext):
+        bs.set_status(v.id, "approved")
+    short, _ = compose("Physik", 4, "Strahlung", kompetenzbereich=PHY_KB, envelope="einzelstunde",
+                       block_store=bs, today=IN)
+    long, _ = compose("Physik", 4, "Strahlung", kompetenzbereich=PHY_KB, envelope="block",
+                      block_store=bs, today=IN)
+    assert [b.id for b in short.iter_blocks() if b.role == Role.TASK] == ["t1_compact"]
+    assert [b.id for b in long.iter_blocks() if b.role == Role.TASK] == ["t1_extended"]
+
+
 def test_compose_carries_figure_assets(stores):
     """Phase 3c: a figure block's asset travels into the composition (no longer skipped)."""
     _, bs = stores

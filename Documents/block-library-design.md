@@ -126,17 +126,20 @@ aus Lehrplan" (suggest blocks for the empty cells).
 3. **Richness + smarter selection (the "compose well" phase).** Independently-shippable items, each
    grounded in a limitation hit during the breadth build (25 Jun 2026). The library is now SME-approved
    (425 blocks, 64 worksheets, 16 subjects, ~33% catalog coverage), so these operate on real stock.
-   - **3a · Scope/richness variants — the "width" axis.** *Problem:* every block is `scope="standard"`,
-     so envelope→scope is a no-op (**doppelstunde == block**: same tasks, the longer envelope reaches for
-     nothing richer). *Change:* generate `compact`/`extended` siblings (same `family`, different `scope` +
-     `est_minutes`) via the ingest seam; composer already prefers the envelope's scope + dedups by family.
-     *Unlocks:* envelopes differ in depth, not just length. *Size:* medium.
+   - **3a · Scope/richness variants — the "width" axis — ✅ built (25 Jun 2026).** *Was:* every block
+     `scope="standard"`, so **doppelstunde == block**. The composer's scope-preference + family-dedup were
+     already built (Phase 2); the missing piece was variants-with-families. Added `orch.ingest_scope_variant`
+     (validate a generated `compact`/`extended` task through the verify seam → store as a LibraryBlock with
+     `family`=original id + the given `scope`, and stamp the original's `family` so the trio is one family)
+     and `tools/scope_variants.py` (brief → subagent → ingest). Demo (Physik *Strahlung*, 7 families):
+     einzelstunde→compact (~45 min) · doppelstunde→standard (~78) · block→extended (~114) — same concepts,
+     scaled richness. `tests/test_compose.py` locks both the composer differentiation and the seam.
    - **3b · Angle/Kernfrage-aware composition.** *Problem:* compose-by-KB takes *all* KB blocks and is
      deterministic → two einzelstunde composes of one KB give the **identical** sheet; no notion of the
      Kernfrage/angle. *Change:* `compose(..., kernfrage=?, competences=?)` selects only blocks serving the
      chosen angle and frames with that Kernfrage. *Unlocks:* many distinct, focused worksheets per theme.
      *Size:* medium.
-   - **3c · Assets travel with blocks — ⏳ NEXT.** *Problem:* assets are code-generated at the worksheet
+   - **3c · Assets travel with blocks — ✅ built (25 Jun 2026).** *Problem:* assets are code-generated at the worksheet
      level, not attached to harvested blocks → the composer **skips figure-info-blocks** (e.g. the
      Strahlung spectrum never appears in a composed sheet). *Change:* `LibraryBlock` carries the `Asset`
      spec(s) for its `asset_refs`; `harvest()` captures them; `compose()` aggregates the chosen blocks'

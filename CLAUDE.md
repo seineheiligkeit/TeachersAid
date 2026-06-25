@@ -180,9 +180,14 @@ Zufall"* — that's why the KB path exists). `topic` is always the display title
 `orch.compose_worksheet` lands it as a content item (`source="compose"`); dashboard **Inhalte** has an
 "Arbeitsblatt zusammenstellen" form with a **Kompetenzbereich** picker (`GET /api/kompetenzbereiche`);
 `POST /api/compose` (accepts `topic` and/or `kompetenzbereich`). **No optimizer, no difficulty
-calibration** (Phase 3: `scope` richness variants + calibration). A composed sheet is still a
-`WorksheetContent`, so rendering is unchanged — assets don't yet travel with blocks, so figure-info-blocks
-are skipped in composition for now.
+calibration yet** (Phase 3d). A composed sheet is a `WorksheetContent`, so rendering is unchanged.
+
+**Phase 3 progress** (see `Documents/block-library-design.md §8`): **3a** (scope/richness variants) and
+**3c** (assets travel with blocks) are built. *3a:* `compact`/`standard`/`extended` siblings share a
+`family`; the composer picks the variant matching the envelope (einzelstunde→compact … block→extended),
+so envelopes differ in depth. Produce variants via `orch.ingest_scope_variant` + `tools/scope_variants.py`.
+*3c:* `LibraryBlock` carries its `Asset` spec(s); `harvest` captures them; `compose` aggregates the chosen
+blocks' assets so figures (e.g. the Strahlung spectrum) now render in composed sheets.
 
 ## Breadth generation — subagents → ingest (the seam, no API key)
 
