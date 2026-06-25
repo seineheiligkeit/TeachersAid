@@ -184,6 +184,26 @@ calibration** (Phase 3: `scope` richness variants + calibration). A composed she
 `WorksheetContent`, so rendering is unchanged — assets don't yet travel with blocks, so figure-info-blocks
 are skipped in composition for now.
 
+## Breadth generation — subagents → ingest (the seam, no API key)
+
+Scaling the library across subjects uses **subagents as the generator** (no `ANTHROPIC_API_KEY` needed —
+they run via Claude Code). Each emits a `GenWorksheetBody` JSON anchored to **real** catalog competences;
+it is validated through the real generation seam and staged for HITL review.
+
+- `tools/breadth_prompt.py` writes a fully-grounded per-subject brief (`runs/ingest/prompt_<CODE>.md`):
+  verbatim competences (+ dims), the allowed dims/kinds, the JSON shape + a worked example. Subagents
+  follow it and write `runs/ingest/<CODE>.json` (`{subject, klasse, kompetenzbereich|scope_label, title,
+  kernfrage, body}`).
+- `tools/ingest_batch.py` normalizes common agent slips (German rubric keys, `{label,description}` levels,
+  off-enum `serves.relation`), then **`--dry-run`** validates (resolve → to_canonical → assemble → verify)
+  or, without it, persists.
+- `orch.ingest_generated(...)` is the backbone: `body_to_canonical → assemble → verify → render`, stage as
+  a pending content item (`source="generated"`) + harvest blocks (`in_review`) — **only if verify-clean**
+  (an invented competence id / kind / dimension surfaces as an error here, never a silent bad block).
+  Anchors via `resolve_kompetenzbereich` (content-KB subjects: PHY/MAT) or `resolve_grade` (strand-KB
+  subjects whose theme lives in the Anwendungsbereiche: BIO/CHE).
+- `GenTaskBlock` now carries `rubric` (so generated worksheets can author teacher rubrics).
+
 ## HITL dashboard (`api/` + `api/static/index.html`)
 
 Two review gates, one `ReviewItem` type (`stage` ∈ **brainstorm** | **content**); five tabs

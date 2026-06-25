@@ -164,3 +164,26 @@ def resolve_kompetenzbereich(
         competences=matched,
         notes=notes,
     )
+
+
+def resolve_grade(
+    subject: str, klasse: int, *, today: date | None = None
+) -> LehrplanResolution:
+    """Resolution over ALL competences of a subject+grade — no topic/KB focus. Used to
+    ingest a generated worksheet whose tasks may serve competences across the W/E/S
+    strands (sciences, GPB), where the thematic focus lives in the Anwendungsbereiche
+    rather than a single Kompetenzbereich (the same all-grade scope `resolve()` reaches
+    via its Anwendungsbereiche fallback)."""
+    today = today or date.today()
+    fassung, notes, all_for_grade = _resolution_preamble(subject, klasse, today)
+    if all_for_grade is None:
+        return LehrplanResolution(
+            fassung=fassung, subject=subject, klasse=klasse,
+            grade_check=False, competences=[], notes=notes,
+        )
+    kbs = sorted({c.kompetenzbereich for c in all_for_grade})
+    return LehrplanResolution(
+        fassung=fassung, subject=subject, klasse=klasse,
+        matched_kompetenzbereiche=kbs, grade_check=True,
+        competences=all_for_grade, notes=notes,
+    )

@@ -194,6 +194,86 @@ def compose_worksheet(
     return store.save(item)
 
 
+def ingest_generated(
+    store: ReviewStore,
+    block_store,
+    subject: str,
+    klasse: int,
+    *,
+    kompetenzbereich: str | None = None,
+    scope_label: str | None = None,
+    title: str,
+    kernfrage: str,
+    body,
+    today: date | None = None,
+) -> tuple[ReviewItem, int]:
+    """Land an LLM-generated worksheet body (a `GenWorksheetBody` or its dict) as a
+    pending content item, and harvest its blocks into the block library (pending) —
+    but only if it verifies clean. Reuses the real generation seam
+    (`body_to_canonical` → assemble → verify → render), so the catalog, the subject
+    model, and the verify rules gatekeep correctness. Returns (item, n_blocks_harvested).
+
+    Anchor the resolution either to a `kompetenzbereich` (content-KB subjects like
+    Physik/Mathe — focused coverage) or, when none is given, to the whole grade
+    (strand-KB subjects like Biologie/Chemie, whose theme lives in the
+    Anwendungsbereiche); `scope_label` is the human theme shown in the label.
+
+    This is the breadth-push backbone: subagents generate the body; this validates and
+    stages it for the two-stage HITL review (a competence id, kind, or dimension the
+    model invented surfaces as an error/verify-problem here, not as a silent bad block)."""
+    from ..grounding import lehrplan_store as ls
+    from ..library.block import harvest
+    from ..schema.generation_views import GenWorksheetBody, body_to_canonical
+    from ..schema.worksheet import WorksheetMeta
+    from .resolve import resolve_grade, resolve_kompetenzbereich
+
+    if kompetenzbereich:
+        res = resolve_kompetenzbereich(subject, klasse, kompetenzbereich, today=today)
+    else:
+        res = resolve_grade(subject, klasse, today=today)
+    model = ls.get_subject_model(subject)
+    if model is None:
+        raise ValueError(f"no subject model for '{subject}'")
+    label = kompetenzbereich or scope_label or f"{klasse}. Klasse"
+
+    item = ReviewItem(
+        id="", stage="content", source="generated",
+        title=f"{subject} {klasse}. Kl. — {title} (generiert)",
+        request=BundleRequest(subject=subject, klasse=klasse, topic_raw=title),
+        resolution=res,
+    )
+    store.create(item)
+    try:
+        gb = body if isinstance(body, GenWorksheetBody) else GenWorksheetBody.model_validate(body)
+        meta = WorksheetMeta(
+            title=title, subtitle="LLM-Entwurf — Erstprüfung",
+            subject=subject, stufe="Unterstufe", klasse=klasse,
+            kernfrage=kernfrage, fassung=res.fassung,
+            lehrplan_label=f"{subject} · {klasse}. Klasse · {label}",
+        )
+        content = body_to_canonical(gb, meta=meta, subject_model=model)
+        assemble(content, res)
+        report = verify(content, res)
+        item.artifacts = _render_all(item.id, content)
+        item.content = content
+        item.verify_problems = report.problems
+        item.verify_warnings = report.warnings
+        item.status = "pending"
+        item.error = None
+    except Exception as exc:  # noqa: BLE001 — surface as an item error, don't crash the batch
+        item.error = f"{type(exc).__name__}: {exc}"
+        item.status = "pending"
+    store.save(item)
+
+    harvested = 0
+    if item.error is None and not (item.verify_problems or []):
+        for lb in harvest(item.content, example_key=item.id):
+            lb.status = "in_review"  # pending block review
+            block_store.upsert(lb)
+            harvested += 1
+    return item, harvested
+
+
 def _produce_content_item(
     store: ReviewStore,
     idea: ReviewItem,

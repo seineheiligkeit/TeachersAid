@@ -21,6 +21,7 @@ from pydantic import BaseModel, ConfigDict, Field
 from .blocks import (
     ContentFlags,
     InfoBlock,
+    RubricCriterion,
     Serves,
     TaskBlock,
     TaskPayload,
@@ -60,6 +61,7 @@ class GenTaskBlock(BaseModel):
     est_minutes: int = 0
     answer_key: str | None = None
     acceptable_reasoning: str | None = None
+    rubric: list[RubricCriterion] = Field(default_factory=list)  # teacher: criterion + levels
     watch_outs: list[str] = Field(default_factory=list)
     self_check: str | None = None
     optional: bool = False
@@ -122,6 +124,7 @@ def _task_to_canonical(g: GenTaskBlock) -> TaskBlock:
         est_minutes=g.est_minutes,
         answer_key=g.answer_key,
         acceptable_reasoning=g.acceptable_reasoning,
+        rubric=g.rubric,
         watch_outs=g.watch_outs,
         self_check=g.self_check,
         optional=g.optional,
