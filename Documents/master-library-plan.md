@@ -11,11 +11,12 @@ content, and the reviewable starting stock of the material library. Complements 
 > below still hold — now applied at block granularity (competence × cognitive level × modality × scope).
 >
 > **Population update (25 Jun 2026):** beyond the 3 hand-authored gold seeds (Physik/Bio/Mathe — still the
-> quality bar), the library has been **populated breadth-first via subagent generation** across **all 16
-> subjects** — 64 worksheets / ~404 blocks, all verify-clean, staged `in_review` for SME approval (see
-> CLAUDE.md "Breadth generation" + `tools/breadth_prompt.py`/`tools/ingest_batch.py`). The plan's jobs #2
-> (few-shot seeds) and #3 (review stock) are thus realized; the human review now decides what enters the
-> approved library.
+> quality bar), the library was **populated breadth-first via subagent generation** across **all 16
+> subjects** and **fully SME-approved** — **64 worksheets / 425 approved blocks**, ~33% catalog coverage
+> (see CLAUDE.md "Breadth generation" + `tools/breadth_prompt.py`/`tools/ingest_batch.py`). The plan's
+> jobs #2 (few-shot seeds) and #3 (review stock) are realized. Scope/richness variants (Phase 3a) are now
+> produced via `tools/scope_variants.py` (demoed on Physik *Strahlung*); scaling them across subjects is
+> the remaining population work.
 
 ## 1 · Why a master library
 

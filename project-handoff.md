@@ -20,15 +20,20 @@ German (or a target language for Fremdsprache). Read this, then the docs in the 
 >    Kompetenzbereich + time-envelope. (Design: [Documents/block-library-design.md].)
 > 4. **Projection audience split** — student/homework sheets carry only student-facing content; the
 >    teacher guide is a *guide* (expected answers + talking points + extensions, no write-space).
-> 5. **Breadth library (generated this session, pending human review)** — **64 worksheets / ~404 blocks**
->    across **all 16 subjects** (incl. Englisch/Französisch/Latein), produced by subagent generators and
->    validated through the real seam (`orch.ingest_generated`; tooling in `tools/breadth_prompt.py` +
->    `tools/ingest_batch.py`). All verify-clean, staged `in_review` in `runs/` for SME approval.
+> 5. **Breadth library — generated AND SME-approved** — **64 worksheets / 425 blocks** across **all 16
+>    subjects** (incl. Englisch/Französisch/Latein), produced by subagent generators, validated through the
+>    real seam (`orch.ingest_generated`; tooling `tools/breadth_prompt.py` + `tools/ingest_batch.py`), and
+>    all approved by the SME (catalog coverage ~33%). Generated content lives in `runs/` (git-ignored).
+> 6. **Phase-3 composer refinements — 3a + 3c built.** *3c:* assets travel with blocks (figures render in
+>    composed sheets). *3a:* scope/richness variants — `compact`/`standard`/`extended` siblings in a
+>    `family`, so an envelope picks the matching depth (einzelstunde→compact … block→extended); seam
+>    `orch.ingest_scope_variant` + `tools/scope_variants.py` (demoed on Physik *Strahlung*).
 >
-> **The immediate next step is the human review** of that breadth batch (approve blocks → library), then
-> Phase-3 composer refinements (scope/richness variants, difficulty calibration, angle/Kernfrage-aware
-> composition) and the 2026/27 Fassung refresh (§2). No `ANTHROPIC_API_KEY` is needed — generation runs
-> via subagents.
+> **Where to pick up next (fresh session):** Phase **3b** (angle/Kernfrage-aware composition), **3d**
+> (difficulty calibration — the open one), **3e** (coherence/LLM framing); scale 3a scope-variants beyond
+> Strahlung (`scope_variants.TARGETS` + a subagent run per KB); and the **2026/27 Fassung refresh** (§2 —
+> the current Fassung expires 2026-08-31). No `ANTHROPIC_API_KEY` needed — generation runs via subagents.
+> Run: `pip install -e ".[dev]"`, `python -m pytest -q` (55 tests), `python -m teachersaid` (dashboard).
 
 ---
 
