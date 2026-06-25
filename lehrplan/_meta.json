@@ -1,0 +1,311 @@
+{
+  "fassung": {
+    "kurztitel": "Lehrplan der allgemeinbildenden höheren Schule (AHS)",
+    "bgbl": "BGBl. II Nr. 204/2024",
+    "stammfassung": "BGBl. Nr. 88/1985",
+    "doknr": "NOR40264237",
+    "valid_from": "2024-09-01",
+    "valid_to": "2026-08-31"
+  },
+  "stufe": "Unterstufe",
+  "scope": "Achter Teil — A. Pflichtgegenstände — 1. Unterstufe",
+  "uebergreifende_themen": [
+    {
+      "nr": 1,
+      "label": "Bildungs-, Berufs- und Lebensorientierung"
+    },
+    {
+      "nr": 2,
+      "label": "Entrepreneurship Education"
+    },
+    {
+      "nr": 3,
+      "label": "Gesundheitsförderung"
+    },
+    {
+      "nr": 4,
+      "label": "Informatische Bildung"
+    },
+    {
+      "nr": 5,
+      "label": "Interkulturelle Bildung"
+    },
+    {
+      "nr": 6,
+      "label": "Medienbildung"
+    },
+    {
+      "nr": 7,
+      "label": "Politische Bildung"
+    },
+    {
+      "nr": 8,
+      "label": "Reflexive Geschlechterpädagogik und Gleichstellung"
+    },
+    {
+      "nr": 9,
+      "label": "Sexualpädagogik"
+    },
+    {
+      "nr": 10,
+      "label": "Sprachliche Bildung und Lesen"
+    },
+    {
+      "nr": 11,
+      "label": "Umweltbildung für nachhaltige Entwicklung"
+    },
+    {
+      "nr": 12,
+      "label": "Verkehrs- und Mobilitätsbildung"
+    },
+    {
+      "nr": 13,
+      "label": "Wirtschafts-, Finanz- und Verbraucher/innenbildung"
+    }
+  ],
+  "id_scheme": "<SUBJ>.US.<KLASSE>.<KB>.<nn>  (KLASSE=1..4 or x; KB=3-letter code from Kompetenzbereich)",
+  "subjects": [
+    {
+      "code": "DEU",
+      "name": "DEUTSCH",
+      "type": "pflichtgegenstand",
+      "variant": null,
+      "klassen": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "n_competences": 47,
+      "file": "DEU.json"
+    },
+    {
+      "code": "DAZ",
+      "name": "LEHRPLANZUSATZ DEUTSCH ALS ZWEITSPRACHE FÜR ORDENTLICHE SCHÜLERINNEN UND SCHÜLER",
+      "type": "zusatz",
+      "variant": null,
+      "klassen": [],
+      "n_competences": 21,
+      "file": "DAZ.json"
+    },
+    {
+      "code": "DAZ2",
+      "name": "LEHRPLANZUSATZ DEUTSCH ALS ZWEITSPRACHE FÜR AUSSERORDENTLICHE SCHÜLERINNEN UND SCHÜLER IM DEUTSCHFÖRDERKURS",
+      "type": "zusatz",
+      "variant": "Variante 2",
+      "klassen": [],
+      "n_competences": 20,
+      "file": "DAZ2.json"
+    },
+    {
+      "code": "FS1",
+      "name": "ERSTE LEBENDE FREMDSPRACHE",
+      "type": "pflichtgegenstand",
+      "variant": null,
+      "klassen": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "n_competences": 37,
+      "file": "FS1.json"
+    },
+    {
+      "code": "FS2",
+      "name": "ZWEITE LEBENDE FREMDSPRACHE",
+      "type": "pflichtgegenstand",
+      "variant": null,
+      "klassen": [
+        3,
+        4
+      ],
+      "n_competences": 19,
+      "file": "FS2.json"
+    },
+    {
+      "code": "LAT",
+      "name": "LATEIN",
+      "type": "pflichtgegenstand",
+      "variant": null,
+      "klassen": [
+        3,
+        4
+      ],
+      "n_competences": 20,
+      "file": "LAT.json"
+    },
+    {
+      "code": "MAT",
+      "name": "MATHEMATIK",
+      "type": "pflichtgegenstand",
+      "variant": null,
+      "klassen": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "n_competences": 285,
+      "file": "MAT.json"
+    },
+    {
+      "code": "GEZ",
+      "name": "GEOMETRISCHES ZEICHNEN",
+      "type": "pflichtgegenstand",
+      "variant": null,
+      "klassen": [
+        4
+      ],
+      "n_competences": 38,
+      "file": "GEZ.json"
+    },
+    {
+      "code": "DGB",
+      "name": "DIGITALE GRUNDBILDUNG",
+      "type": "pflichtgegenstand",
+      "variant": null,
+      "klassen": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "n_competences": 53,
+      "file": "DGB.json"
+    },
+    {
+      "code": "CHE",
+      "name": "CHEMIE",
+      "type": "pflichtgegenstand",
+      "variant": null,
+      "klassen": [
+        4
+      ],
+      "n_competences": 20,
+      "file": "CHE.json"
+    },
+    {
+      "code": "CHE2",
+      "name": "CHEMIE",
+      "type": "pflichtgegenstand",
+      "variant": "Variante 2",
+      "klassen": [
+        3,
+        4
+      ],
+      "n_competences": 28,
+      "file": "CHE2.json"
+    },
+    {
+      "code": "PHY",
+      "name": "PHYSIK",
+      "type": "pflichtgegenstand",
+      "variant": null,
+      "klassen": [
+        2,
+        3,
+        4
+      ],
+      "n_competences": 29,
+      "file": "PHY.json"
+    },
+    {
+      "code": "BIO",
+      "name": "BIOLOGIE UND UMWELTBILDUNG",
+      "type": "pflichtgegenstand",
+      "variant": null,
+      "klassen": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "n_competences": 46,
+      "file": "BIO.json"
+    },
+    {
+      "code": "GPB",
+      "name": "GESCHICHTE UND POLITISCHE BILDUNG",
+      "type": "pflichtgegenstand",
+      "variant": null,
+      "klassen": [
+        2,
+        3,
+        4
+      ],
+      "n_competences": 33,
+      "file": "GPB.json"
+    },
+    {
+      "code": "GWB",
+      "name": "GEOGRAPHIE UND WIRTSCHAFTLICHE BILDUNG",
+      "type": "pflichtgegenstand",
+      "variant": null,
+      "klassen": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "n_competences": 48,
+      "file": "GWB.json"
+    },
+    {
+      "code": "MUS",
+      "name": "MUSIK",
+      "type": "pflichtgegenstand",
+      "variant": null,
+      "klassen": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "n_competences": 40,
+      "file": "MUS.json"
+    },
+    {
+      "code": "KUG",
+      "name": "KUNST UND GESTALTUNG",
+      "type": "pflichtgegenstand",
+      "variant": null,
+      "klassen": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "n_competences": 40,
+      "file": "KUG.json"
+    },
+    {
+      "code": "TED",
+      "name": "TECHNIK UND DESIGN",
+      "type": "pflichtgegenstand",
+      "variant": null,
+      "klassen": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "n_competences": 40,
+      "file": "TED.json"
+    },
+    {
+      "code": "BUS",
+      "name": "BEWEGUNG UND SPORT",
+      "type": "pflichtgegenstand",
+      "variant": null,
+      "klassen": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "n_competences": 58,
+      "file": "BUS.json"
+    }
+  ]
+}
