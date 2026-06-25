@@ -44,6 +44,9 @@
   .blk.info { border-left-color:#9bb0c2; }
   .ans { background:#f0f6f0; border-radius:6px; padding:4px 8px; margin-top:4px; font-size:12.5px; }
   .watch { color:var(--accent); font-size:12px; }
+  .pl { margin:5px 0 5px 6px; padding-left:16px; font-size:13px; }
+  .pl li { margin:2px 0; }
+  table.pl { border-collapse:collapse; margin:6px 0; } table.pl th, table.pl td { border:1px solid var(--line); padding:3px 7px; font-size:12.5px; text-align:left; }
   iframe { width:100%; height:600px; border:1px solid var(--line); border-radius:6px; background:#fff; }
   .bars span { display:inline-block; height:11px; background:var(--ink); border-radius:2px; vertical-align:middle; }
   .prog { height:10px; background:var(--line); border-radius:6px; overflow:hidden; }
@@ -98,7 +101,9 @@ function buildShell(){
     $("#main").innerHTML = `
       <div class="grid2">
         <div class="card"><h2>Baustein-Bibliothek</h2>
-          <div class="row" style="margin-bottom:8px">
+          <div class="row" style="margin-bottom:8px;flex-wrap:wrap;gap:6px">
+            <select id="blk-subject" onchange="refresh()"><option value="">alle Fächer</option></select>
+            <select id="blk-klasse" onchange="refresh()"><option value="">alle Klassen</option><option>1</option><option>2</option><option>3</option><option>4</option></select>
             <select id="blk-status" onchange="refresh()"><option value="">alle Status</option><option value="in_review">in Prüfung</option><option value="approved">freigegeben</option><option value="rejected">abgelehnt</option></select>
             <select id="blk-role" onchange="refresh()"><option value="">alle Typen</option><option value="task">Aufgabe</option><option value="info">Info / Text</option></select>
             <button class="ghost" onclick="approveAllBlocks()">Alle in Prüfung freigeben</button>
@@ -246,6 +251,17 @@ async function openDetail(id){
   $("#detail").innerHTML = h;
 }
 function rt(v){ return Array.isArray(v)? v.map(r=>r.text).join("") : v; }
+function pl(p){
+  // render the task payload — the actual input the student works with
+  if(!p) return "";
+  if(p.kind==="true_false_justify") return `<ol class="pl">${(p.statements||[]).map(s=>`<li>${esc(s)}</li>`).join("")}</ol>`;
+  if(p.kind==="multiple_choice") return `<div class="pl">${(p.options||[]).map(o=>`<div>☐ ${esc(o)}</div>`).join("")}</div>`;
+  if(p.kind==="ordering") return `<div class="pl">${(p.items||[]).map(i=>`<div>____ ${esc(i)}</div>`).join("")}</div>`;
+  if(p.kind==="matching"){ const r=p.right||[]; return `<div class="pl">${(p.left||[]).map((l,i)=>`<div>${esc(l)} → ${esc(r[i]||"____")}</div>`).join("")}</div>`; }
+  if(p.kind==="table_fill"){ const head=(p.columns||[]).map(c=>`<th>${esc(c)}</th>`).join(""); const rows=(p.rows||[]).map(row=>`<tr>${(row||[]).map(c=>`<td>${c==null?"":esc(c)}</td>`).join("")}</tr>`).join(""); return `<table class="pl"><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table>`; }
+  if(p.kind==="decision_scenario") return `<div class="pl">${esc(rt(p.stem))}</div>`;
+  return "";
+}
 function blk(b, num){
   if(b.role==="info"){
     return `<div class="blk info"><span class="badge">${b.kind}</span>${esc(rt(b.content))}
@@ -254,6 +270,7 @@ function blk(b, num){
   const resp = b.response? ({lines:`${b.response.n} Zeilen`,box:`Box ${b.response.min_height_mm||''}mm`,table:'Tabelle',choices:'Auswahl',none:'mündlich/keine',diagram:'Diagramm',drawing:'Skizze',artifact:'Produkt'}[b.response.mode]||b.response.mode):"";
   const serves = (b.serves||[]).map(s=>`<code>${s.competence_id}</code>`).join(" ");
   return `<div class="blk task"><div><b>${num?num+'. ':''}</b>${esc(rt(b.prompt))}</div>
+    ${pl(b.payload)}
     <div style="margin-top:4px"><span class="badge">${b.kind}</span><span class="badge">${b.cognitive_level}</span>
       <span class="badge">Dim ${(b.dimensions||[]).join(",")}</span><span class="badge">~${b.est_minutes}′</span>
       <span class="badge">Antwort: ${resp}</span></div>
@@ -282,17 +299,23 @@ function showpdf(id,kind){ const f=$("#pdfframe"); if(f) f.src=`/api/items/${id}
 /* ---------- Bausteine (block library) ---------- */
 async function renderBlocks(){
   if(!$("#blk-list")) return;
-  const status = $("#blk-status")? $("#blk-status").value : "";
-  const role = $("#blk-role")? $("#blk-role").value : "";
-  const qs = new URLSearchParams(); if(status) qs.set("status",status); if(role) qs.set("role",role);
-  const blocks = await jget("/api/blocks?"+qs.toString());
-  $("#blk-list").innerHTML = blocks.length ? blocks.map(b=>`
+  const all = await jget("/api/blocks");
+  const subjSel = $("#blk-subject");
+  if(subjSel && subjSel.options.length<=1){  // populate subject dropdown once, from the data
+    const subs=[...new Set(all.map(b=>b.subject))].sort();
+    subjSel.innerHTML = `<option value="">alle Fächer</option>`+subs.map(s=>`<option>${esc(s)}</option>`).join("");
+  }
+  const status=$("#blk-status")?$("#blk-status").value:"", role=$("#blk-role")?$("#blk-role").value:"";
+  const subj=subjSel?subjSel.value:"", kl=$("#blk-klasse")?$("#blk-klasse").value:"";
+  const blocks = all.filter(b=>(!status||b.status===status)&&(!role||b.role===role)
+    &&(!subj||b.subject===subj)&&(!kl||String(b.klasse)===kl));
+  $("#blk-list").innerHTML = (blocks.length ? `<p class="muted">${blocks.length} Bausteine</p>` : "") + (blocks.length ? blocks.map(b=>`
     <div class="item ${SELECTED===b.id?'sel':''}" onclick="openBlock('${b.id}')">
       <div class="row between"><b>${b.role==='task'?'🎯':'📖'} ${esc(b.kind)}</b><span class="pill s-${b.status}">${b.status}</span></div>
       <div>${esc(b.prompt)}</div>
       <div class="muted">${esc(b.subject)} ${b.klasse||''} · ${esc(b.kompetenzbereich||'—')}
         ${b.cognitive_level?`<span class="badge">${b.cognitive_level}</span>`:''}<span class="badge">${b.scope}</span>${(b.dimensions||[]).length?`<span class="badge">${b.dimensions.join(',')}</span>`:''}</div>
-    </div>`).join("") : `<p class="muted">keine Bausteine — seed mit <code>python -m teachersaid seed</code></p>`;
+    </div>`).join("") : `<p class="muted">keine Bausteine — kein Treffer für diesen Filter.</p>`);
 }
 async function openBlock(id){
   SELECTED=id; renderBlocks();
