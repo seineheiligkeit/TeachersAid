@@ -191,18 +191,28 @@ they run via Claude Code). Each emits a `GenWorksheetBody` JSON anchored to **re
 it is validated through the real generation seam and staged for HITL review.
 
 - `tools/breadth_prompt.py` writes a fully-grounded per-subject brief (`runs/ingest/prompt_<CODE>.md`):
-  verbatim competences (+ dims), the allowed dims/kinds, the JSON shape + a worked example. Subagents
-  follow it and write `runs/ingest/<CODE>.json` (`{subject, klasse, kompetenzbereich|scope_label, title,
-  kernfrage, body}`).
-- `tools/ingest_batch.py` normalizes common agent slips (German rubric keys, `{label,description}` levels,
-  off-enum `serves.relation`), then **`--dry-run`** validates (resolve → to_canonical → assemble → verify)
-  or, without it, persists.
-- `orch.ingest_generated(...)` is the backbone: `body_to_canonical → assemble → verify → render`, stage as
-  a pending content item (`source="generated"`) + harvest blocks (`in_review`) — **only if verify-clean**
+  verbatim competences grouped by KB across grades, allowed dims/kinds, the JSON shape + worked example,
+  and an instruction to produce N **distinct Kernfragen** (one worksheet each). Per-subject config in
+  `SUBJECTS` (anchor kb|grade; `practical` → enactive/oral modality; `target_language` for FS1/FS2/LAT,
+  which adds a clause: target-language *material*, German instructions + German teacher layer). Subagents
+  (one per subject, Sonnet) write `runs/ingest/<gendir>/<CODE>_<n>.json`.
+- `tools/ingest_batch.py --dir <folder>` validates (`--dry-run`: resolve → to_canonical → assemble →
+  verify) or persists. **Its first-pass normalizer is load-bearing** — hand-written JSON is the real
+  fragility, so it deterministically absorbs the recurring agent slips rather than re-spawning: `„…"`
+  typographic-open/straight-close (a `(?<!\\)`-guarded text repair), literal control chars
+  (`json.loads(strict=False)`), info-blocks shaped like tasks, invalid info `kind` (→ prose),
+  `answer_text`→`answer_key`, German rubric keys, `{label,description}` levels, off-enum
+  `serves.relation`, and nested multi-question `multiple_choice` (folded into the prompt).
+- `orch.ingest_generated(..., render=False)` is the backbone: `body_to_canonical → assemble → verify`
+  (+ render only if asked — **breadth is render-free**; blocks are inspected structurally), stage a
+  pending content item (`source="generated"`) + harvest blocks (`in_review`) — **only if verify-clean**
   (an invented competence id / kind / dimension surfaces as an error here, never a silent bad block).
-  Anchors via `resolve_kompetenzbereich` (content-KB subjects: PHY/MAT) or `resolve_grade` (strand-KB
-  subjects whose theme lives in the Anwendungsbereiche: BIO/CHE).
-- `GenTaskBlock` now carries `rubric` (so generated worksheets can author teacher rubrics).
+  Anchors via `resolve_kompetenzbereich` (content-KB subjects) or `resolve_grade` (strand-KB subjects);
+  a too-narrow KB auto-widens to the grade when serves cross strands (Sport/Musik). `GenTaskBlock` carries
+  `rubric` so generated worksheets author teacher rubrics.
+- **Run to date (25 Jun 2026):** all 16 subjects → **64 worksheets / ~404 blocks**, verify-clean, staged
+  `in_review` for SME approval. Feasibility lesson: subagent *content* is excellent; the constraint is
+  JSON well-formedness, handled by the normalizer (structured output would remove that class at scale).
 
 ## HITL dashboard (`api/` + `api/static/index.html`)
 

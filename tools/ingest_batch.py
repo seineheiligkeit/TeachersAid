@@ -31,6 +31,8 @@ _RUBRIC_KEYMAP = {"kriterium": "criterion", "kriterien": "criterion", "stufen": 
 _VALID_RELATIONS = {"exercises", "builds_prerequisite"}
 _INFO_KEYS = {"role", "id", "kind", "content", "callout_role", "teacher_note",
               "watch_outs", "optional", "modality", "asset_refs", "flags"}
+_VALID_INFO_KINDS = {"prose", "key_fact", "example", "procedure", "figure",
+                     "data_reference", "callout"}
 _ANSWER_ALIASES = ("answer_text", "loesung", "lösung", "loesungsvorschlag", "musterloesung")
 
 
@@ -51,7 +53,8 @@ def _norm_block(b: dict) -> None:
     if b.get("role") == "info":
         if "content" not in b and "prompt" in b:   # agent shaped an info block like a task
             b["content"] = b.pop("prompt")
-        b.setdefault("kind", "prose")
+        if b.get("kind") not in _VALID_INFO_KINDS:  # e.g. "text" -> prose
+            b["kind"] = "prose"
         for k in [k for k in b if k not in _INFO_KEYS]:  # drop est_minutes/response/etc.
             b.pop(k, None)
         return
@@ -60,6 +63,20 @@ def _norm_block(b: dict) -> None:
             b["answer_key"] = b.pop(alias)
         else:
             b.pop(alias, None)
+    p = b.get("payload")                            # nested multi-question MC (options as
+    if isinstance(p, dict) and p.get("kind") == "multiple_choice":  # {question,options} dicts)
+        opts = p.get("options") or []                # -> fold the questions into the prompt
+        if any(isinstance(o, dict) for o in opts):
+            folded = []
+            for o in opts:
+                if isinstance(o, dict):
+                    q = o.get("question") or o.get("frage") or ""
+                    subs = o.get("options") or o.get("choices") or []
+                    folded.append(q + ("  (" + " / ".join(map(str, subs)) + ")" if subs else ""))
+                else:
+                    folded.append(str(o))
+            b["prompt"] = (b.get("prompt", "") + "\n\n" + "\n".join(folded)).strip()
+            b["payload"] = None
     for s in b.get("serves", []):                   # only exercises/builds_prerequisite valid
         if s.get("relation") not in _VALID_RELATIONS:
             s["relation"] = "exercises"
@@ -87,12 +104,13 @@ def _normalize(body: dict) -> dict:
 # string (the bare " terminates it). Convert ONLY that closing " to the typographic “.
 # The content class excludes every quote variant so the match can't run past a proper
 # typographic close to the structural quote (which would corrupt valid JSON).
-_GERMAN_QUOTE_FIX = re.compile('„([^"„“”]*)"')
+_GERMAN_QUOTE_FIX = re.compile(r'„([^"„“”]*)(?<!\\)"')
 
 
 def _repair_text(raw: str) -> str:
-    """Repair the agent JSON slip „…" (typographic open U+201E, straight close)."""
-    return _GERMAN_QUOTE_FIX.sub('„\\1“', raw)
+    """Repair the agent JSON slip „…" (typographic open U+201E, straight close).
+    The (?<!\\) guard leaves a correctly-escaped \\" untouched."""
+    return _GERMAN_QUOTE_FIX.sub(r'„\1“', raw)
 
 
 def _load(path) -> dict:

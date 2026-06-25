@@ -4,12 +4,31 @@
 for a fresh session taking the project over. Working language is English; the *product's* output is
 German (or a target language for Fremdsprache). Read this, then the docs in the order given in §6.
 
-> **Update (Session 3, 25 June 2026): a runnable demo now exists.** Everything below describes the
-> *design*, which remains the source of truth for intent. The design has since been **implemented** as a
-> Python engine + two-stage human-in-the-loop dashboard in the `teachersaid/` package. For what was built
-> and how it maps to this document, see **[Documents/implementation-notes.md](Documents/implementation-notes.md)**;
-> for the codebase guide and how to run it, see **[CLAUDE.md](CLAUDE.md)** and **[README.md](README.md)**.
-> The "engine / UI deferred" statements in §3, §7 and §8 below are now partially superseded by that build.
+> **Update (Session 3, 25 June 2026): the design is now a working, populated system.** Everything below
+> describes the *design*, which remains the source of truth for intent — but the "engine / UI deferred"
+> statements in §3, §7, §8 are **superseded**. What now exists (see **[CLAUDE.md](CLAUDE.md)** for the
+> codebase guide, **[Documents/implementation-notes.md](Documents/implementation-notes.md)** for the
+> design↔code map):
+>
+> 1. **Engine + dashboard** — the `teachersaid/` Python package: resolve→plan→generate→verify→assemble
+>    (+derive Nachweis/DepthProfile)→render pipeline, pure ReportLab projections, a two-stage HITL review
+>    dashboard. ~52 offline tests.
+> 2. **Grounding** — the full **16-subject Unterstufe catalog** (`lehrplan/`, ~571 verbatim competences)
+>    wired into the engine.
+> 3. **Block library** — the master-library unit is the **block** (not the worksheet); worksheets are
+>    *compositions* of blocks. A **composer** (`pipeline/compose.py`) assembles approved blocks for a
+>    Kompetenzbereich + time-envelope. (Design: [Documents/block-library-design.md].)
+> 4. **Projection audience split** — student/homework sheets carry only student-facing content; the
+>    teacher guide is a *guide* (expected answers + talking points + extensions, no write-space).
+> 5. **Breadth library (generated this session, pending human review)** — **64 worksheets / ~404 blocks**
+>    across **all 16 subjects** (incl. Englisch/Französisch/Latein), produced by subagent generators and
+>    validated through the real seam (`orch.ingest_generated`; tooling in `tools/breadth_prompt.py` +
+>    `tools/ingest_batch.py`). All verify-clean, staged `in_review` in `runs/` for SME approval.
+>
+> **The immediate next step is the human review** of that breadth batch (approve blocks → library), then
+> Phase-3 composer refinements (scope/richness variants, difficulty calibration, angle/Kernfrage-aware
+> composition) and the 2026/27 Fassung refresh (§2). No `ANTHROPIC_API_KEY` is needed — generation runs
+> via subagents.
 
 ---
 

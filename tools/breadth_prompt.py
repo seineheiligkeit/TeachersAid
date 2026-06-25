@@ -22,16 +22,17 @@ N_KERNFRAGEN = 5
 
 # code, subject, anchor ("kb" content/skill-KBs | "grade" strand/None-KB), practical(enactive)
 SUBJECTS = [
-    ("DEU", "Deutsch", "kb", False),
-    ("GWB", "Geographie und wirtschaftliche Bildung", "kb", False),
-    ("GPB", "Geschichte und politische Bildung", "grade", False),
-    ("DGB", "Digitale Grundbildung", "kb", False),
-    ("GEZ", "Geometrisches Zeichnen", "kb", False),
-    ("MUS", "Musik", "kb", True),
-    ("KUG", "Kunst und Gestaltung", "kb", True),
-    ("TED", "Technik und Design", "kb", True),
-    ("BUS", "Bewegung und Sport", "kb", True),
+    # (code, subject, anchor, practical, target_language)  — target_language None = German output
+    ("FS1", "Erste lebende Fremdsprache", "kb", False, "Englisch"),
+    ("FS2", "Zweite lebende Fremdsprache", "kb", False, "Französisch"),
+    ("LAT", "Latein", "kb", False, "Latein"),
 ]
+GEN_SUBDIR = "gen_lang"  # this batch writes here so the prior gen/ files aren't re-ingested
+
+# Prior batches (done 2026-06-25), kept for reproducibility:
+#   MINT (single-Kernfrage tool earlier): PHY, CHE, BIO, MAT
+#   German (anchor/practical): DEU·kb, GWB·kb, GPB·grade, DGB·kb, GEZ·kb,
+#                              MUS·kb·practical, KUG·kb·practical, TED·kb·practical, BUS·kb·practical
 
 _TEMPLATE = """# Breiten-Generierung: {subject} — {n} Kernfragen
 
@@ -61,7 +62,7 @@ Wähle **{n} klar unterschiedliche Themen/Bereiche** (Breite!), nicht Varianten 
 - Pro Aufgabe `answer_key` + `watch_outs`; optional `acceptable_reasoning` und `rubric`
   (Liste von `{{"criterion":"...","levels":["...","..."]}}`, **englische Schlüssel**).
 - Pro Section die Lehrkraft-Ebene: `throughline` (Roter Faden), `talking_points` (2–4), `extensions` (1–3).
-
+{lang_clause}
 ## Antwort-Formen (`response`): `{{"mode":"lines","n":<int>}}` · `{{"mode":"box","min_height_mm":<float>}}` ·
 `{{"mode":"table","columns":[...],"rows":<int>}}` · `{{"mode":"choices","options":[...],"select":"one"|"many"}}` · `{{"mode":"none"}}`
 ## Payload (`payload`, optional, sonst null): multiple_choice `{{"kind":"multiple_choice","options":[...],"select":"one"}}` ·
@@ -69,7 +70,7 @@ true_false_justify `{{"kind":"true_false_justify","statements":[...]}}` · order
 matching `{{"kind":"matching","left":[...],"right":[...]}}` · decision_scenario `{{"kind":"decision_scenario","stem":"..."}}`
 
 ## Ausgabe
-Schreibe **{n} Dateien**, eine pro Kernfrage, nach `runs/ingest/gen/{code}_1.json` … `runs/ingest/gen/{code}_{n}.json`.
+Schreibe **{n} Dateien**, eine pro Kernfrage, nach `runs/ingest/{gendir}/{code}_1.json` … `runs/ingest/{gendir}/{code}_{n}.json`.
 Jede Datei ist **ausschließlich** dieses JSON (kein Fließtext, keine ``` Zäune):
 
 ```json
@@ -138,28 +139,40 @@ def _ab_block(subject: str) -> str:
 
 def build():
     outdir = RUNS_DIR / "ingest"
-    (outdir / "gen").mkdir(parents=True, exist_ok=True)
+    (outdir / GEN_SUBDIR).mkdir(parents=True, exist_ok=True)
     manifest = []
-    for code, subject, anchor, practical in SUBJECTS:
+    for code, subject, anchor, practical, target_language in SUBJECTS:
         model = ls.get_subject_model(subject)
         comps_text, anchor_field = _competence_block(subject, anchor)
         dims = "\n".join(f"- `{d.id}` — {d.label}" for d in model.dimensions)
         kinds = ", ".join(sorted(CORE_TASK_KINDS | set(model.task_kind_extensions)))
-        modality_note = (
-            "Praktisches Fach: nutze `modality` \"enactive\" (Tun/Üben) oder \"oral\" (mündlich) wo "
-            "passend, sonst \"printable\". Beschreibe Tätigkeiten in Worten."
-            if practical else "Reiner Text (modality \"printable\")."
-        )
+        lang_clause = ""
+        if target_language:
+            modality_note = (f"Sprech-/Hör-Aufgaben dürfen `modality` \"oral\" sein, schriftliche "
+                             f"\"printable\". Beschreibe alles in Worten (keine Audiodateien).")
+            lang_clause = (
+                f"\n## Sprache (WICHTIG)\nDas **Sprachmaterial** (Texte, Dialoge, Wortschatz, "
+                f"Beispielsätze, die die Schüler:innen bearbeiten) ist in **{target_language}**. "
+                f"Arbeitsanweisungen dürfen Deutsch oder {target_language} sein (Unterstufe: oft Deutsch "
+                f"als Gerüst, später mehr {target_language}). Die **Lehrkraft-Ebene** "
+                f"(throughline/talking_points/extensions) und `watch_outs` bleiben **Deutsch**. "
+                f"`answer_key` in {target_language} (Modelllösung), bei Bedarf mit kurzer deutscher Notiz.\n")
+        elif practical:
+            modality_note = ("Praktisches Fach: nutze `modality` \"enactive\" (Tun/Üben) oder \"oral\" "
+                             "wo passend, sonst \"printable\". Beschreibe Tätigkeiten in Worten.")
+        else:
+            modality_note = "Reiner Text (modality \"printable\")."
         prompt = _TEMPLATE.format(
             subject=subject, n=N_KERNFRAGEN, competences=comps_text, dims=dims, kinds=kinds,
             ab_block=_ab_block(subject), anchor_rule=(_ANCHOR_KB if anchor == "kb" else _ANCHOR_GRADE),
-            modality_note=modality_note, code=code, anchor_field=anchor_field,
-            dim0=model.dimensions[0].id,
+            modality_note=modality_note, lang_clause=lang_clause, gendir=GEN_SUBDIR,
+            code=code, anchor_field=anchor_field, dim0=model.dimensions[0].id,
         )
         (outdir / f"prompt_{code}.md").write_text(prompt, encoding="utf-8")
-        manifest.append({"code": code, "subject": subject, "anchor": anchor, "practical": practical})
+        manifest.append({"code": code, "subject": subject, "anchor": anchor,
+                         "target_language": target_language})
         n_comp = len({c.id for kl in _klassen(subject) for c in ls.competences_for(subject, kl)})
-        print(f"{code}: {n_comp} competences, anchor={anchor} -> prompt_{code}.md")
+        print(f"{code}: {n_comp} competences, {target_language or 'Deutsch'} -> prompt_{code}.md")
     (outdir / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2),
                                           encoding="utf-8")
 
