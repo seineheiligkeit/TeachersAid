@@ -127,3 +127,52 @@ the worksheet core and the template layer are proven — hence **deferred**, rec
 ## Sequencing
 v0.4 (additive worksheet deltas) → the template/shape layer on top of v0.3/v0.4 → **then** v0.5
 (arrangement). Still deferred throughout: the engine, difficulty calibration, Oberstufe resolution.
+
+---
+
+## Post-breadth implementation roadmap (agreed 2026-06-26)
+
+The engine, block library (425 SME-approved blocks, 16 subjects, ~33% coverage), and composer are proven,
+so the two frontiers are **Phase 4 — assets** and **Phase 5 — Lernarrangements** (the v0.5 object above,
+now *unblocked*: its precondition "earned after the worksheet core + template layer are proven" is met).
+
+**Product principle (load-bearing, decided with the SME):** the platform is primarily a **consolidator of
+human-vetted library content**, not a live generator. Generation (LLM *and* diffusion) happens in the
+**library-building stage with a human in the loop**; the *platform* composes from the approved library.
+⇒ Discipline about generation is a **library-entry gate, not a generation ban**. The durable invariant:
+**content-bearing visuals must be correct** (code-generated, or vetted-sourced) — code-gen beats review,
+because subtle wrongness survives a skim — **while decorative visuals must be content-free** (then any
+source, incl. diffusion, vetted once and reused).
+
+### Phase 4 — Asset architecture
+Three asset classes, distinguished by *what is durable*:
+
+| class | examples | production | durable artifact | entry gate |
+|---|---|---|---|---|
+| content / code-gen | number line, graph, geometry, data table, timeline, Punnett, **math formula** | parameterized recipe (reads `Asset.spec`) | the `{generator, spec}` on the block (rebuilt) | auto — it builds ⇒ structurally right |
+| content / sourced | photos, sources, artworks, song/text | external + provenance | the vetted file + rights | human-vet |
+| decorative / content-free | mascots, motifs, icons, spot illustrations | SVG/code · diffusion · curated | the vetted file, tagged + reusable | human-vet once, reuse |
+
+- **Code-generator library (priority muscle):** parameterized, correct-by-construction recipes. Dispatch is
+  **pluggable by backend** — generator id is `<backend>:<recipe>` (`matplotlib:`/`svg:` now; **`diffusion:`**
+  later, fulfilled by the SME's image-gen agent). `Asset(generator, spec)` is the clear declarative request
+  a diffusion pipeline plugs into without touching the model.
+- **Math = a content asset** (`matplotlib:math_formula` via mathtext); store math semantically (LaTeX) so a
+  future HTML renderer could typeset via KaTeX. Audit need first — most Unterstufe math is inline-simple.
+- **Asset-as-reviewed-library** for the decorative + sourced classes (the *file* is durable): an asset store
+  with status + tags + reuse, parallel to the block library. Code-gen assets stay as specs on blocks.
+- **`MediaPolicy` operationalized** as the per-subject entry-gate config (`must_be_code` / `must_be_sourced`
+  / `diffusion_ok`); it also steers generation.
+- Re-enable **asset-bearing task generation** (breadth was text-only by *constraint*; now un-handbraked).
+- **Decorative kit:** content-free, reusable; SVG/code first, diffusion (SME agent) when wired — both vetted.
+
+### Phase 5 — Lernarrangement (v0.5 above, now unblocked)
+Build order: schema → **one hand-authored hero exemplar in Geographie (GWB)** to set the quality bar →
+`renderTeacherOrchestration` (the run-guide; role materials reuse `renderStudentSheet`) → generation. GWB
+chosen because it has rich content KBs *and* the *Handlungskompetenz* dimension a worksheet can't reach —
+showcasing the oral/social/enactive coverage arrangements unlock (extends the Nachweis past
+`printableCoverage`). Hard scope line stands: we generate the material bundle + run-guide; we do **not** run
+the room.
+
+Carry-over from Phase 3: 3b (angle-aware composition), 3d (difficulty), 3e (coherence framing) fold in where
+natural, reprioritized behind Phase 4/5.

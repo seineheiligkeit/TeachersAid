@@ -155,6 +155,14 @@ aus Lehrplan" (suggest blocks for the empty cells).
      no transitions; cross-source coherence is untested. *Change:* an optional LLM framing pass (Kernfrage
      + intro + transitions for the *chosen* set) — a deliberate shift from the no-LLM composer. *Unlocks:*
      sheets that read as a lesson, not a pile of on-target tasks. *Size:* medium.
+4. **Assets (Phase 4) — ⏳ IN PROGRESS (26 Jun 2026).** Operationalize the asset layer: a parameterized,
+   correct-by-construction **code-generator library** (pluggable backends `matplotlib:`/`svg:` now,
+   `diffusion:` via the SME's image-gen agent later), **math-as-asset** (mathtext), an asset library
+   (review/reuse) for decorative + sourced classes, `MediaPolicy` as the entry-gate, and re-enabled
+   asset-bearing task generation. Design + product principle ("platform consolidates a vetted library, not
+   live-generates") in **[schema-roadmap-v0.4-v0.5.md](schema-roadmap-v0.4-v0.5.md)** (Post-breadth roadmap).
+5. **Lernarrangements (Phase 5 = v0.5).** Now unblocked. schema → hand-authored **Geographie (GWB)** hero →
+   `renderTeacherOrchestration` → generation. Reaches the oral/social/enactive competences worksheets can't.
 
 ## 9 · Open questions (for as we build)
 
