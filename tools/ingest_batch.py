@@ -12,12 +12,15 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import tempfile
 from datetime import date
+from pathlib import Path
 
 from teachersaid.config import RUNS_DIR
 from teachersaid.grounding import lehrplan_store as ls
 from teachersaid.pipeline import orchestrator as orch
 from teachersaid.pipeline.assemble import assemble
+from teachersaid.pipeline.assets import GENERATION_RECIPES, build_asset
 from teachersaid.pipeline.resolve import resolve_grade, resolve_kompetenzbereich
 from teachersaid.pipeline.verify import verify
 from teachersaid.schema.generation_views import GenWorksheetBody, body_to_canonical
@@ -157,14 +160,19 @@ def dry_run(paths: list) -> None:
                     res = gres
         content = body_to_canonical(gb, meta=meta, subject_model=model)
         try:
+            adir = Path(tempfile.mkdtemp())  # validate assets build (allowed recipe + renders)
+            for a in content.assets:
+                if a.generator not in GENERATION_RECIPES:
+                    raise ValueError(f"asset '{a.id}': generator {a.generator!r} not allowed")
+                build_asset(a, outdir=adir)
             assemble(content, res)
             rep = verify(content, res)
         except Exception as e:  # noqa: BLE001
-            print(f"{name}: ASSEMBLE/VERIFY RAISED: {type(e).__name__}: {str(e)[:300]}"); bad += 1; continue
+            print(f"{name}: ASSET/ASSEMBLE/VERIFY RAISED: {type(e).__name__}: {str(e)[:300]}"); bad += 1; continue
         nt = sum(1 for b in content.iter_blocks() if b.role == "task")
         cov = content.nachweis.competence_coverage
         flag = "OK " if not rep.problems else "!! "
-        print(f"{flag}{name}: '{w['title'][:48]}' kl{w['klasse']} tasks={nt} "
+        print(f"{flag}{name}: '{w['title'][:46]}' kl{w['klasse']} tasks={nt} figs={len(content.assets)} "
               f"problems={len(rep.problems)} warnings={len(rep.warnings)} "
               f"coverage={sum(c.covered for c in cov)}/{len(cov)}")
         for p in rep.problems:

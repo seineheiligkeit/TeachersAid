@@ -19,21 +19,23 @@ from teachersaid.grounding import lehrplan_store as ls
 from teachersaid.pipeline.assets import GENERATION_RECIPES
 from teachersaid.schema.enums import CORE_TASK_KINDS
 
-N_KERNFRAGEN = 5
+N_KERNFRAGEN = 3
 
-# code, subject, anchor ("kb" content/skill-KBs | "grade" strand/None-KB), practical(enactive)
+# code, subject, anchor ("kb" content/skill-KBs | "grade" strand/None-KB), practical, target_language
+# Figure pass (2026-06-26): figure-heavy subjects, now that asset-bearing generation is enabled (#1).
 SUBJECTS = [
-    # (code, subject, anchor, practical, target_language)  — target_language None = German output
-    ("FS1", "Erste lebende Fremdsprache", "kb", False, "Englisch"),
-    ("FS2", "Zweite lebende Fremdsprache", "kb", False, "Französisch"),
-    ("LAT", "Latein", "kb", False, "Latein"),
+    ("MAT", "Mathematik", "kb", False, None),
+    ("PHY", "Physik", "kb", False, None),
+    ("CHE", "Chemie", "grade", False, None),
+    ("GWB", "Geographie und wirtschaftliche Bildung", "kb", False, None),
 ]
-GEN_SUBDIR = "gen_lang"  # this batch writes here so the prior gen/ files aren't re-ingested
+GEN_SUBDIR = "gen_figs"  # this batch writes here so prior gen/ , gen_lang/ files aren't re-ingested
 
 # Prior batches (done 2026-06-25), kept for reproducibility:
 #   MINT (single-Kernfrage tool earlier): PHY, CHE, BIO, MAT
 #   German (anchor/practical): DEU·kb, GWB·kb, GPB·grade, DGB·kb, GEZ·kb,
 #                              MUS·kb·practical, KUG·kb·practical, TED·kb·practical, BUS·kb·practical
+#   Language: FS1·Englisch, FS2·Französisch, LAT·Latein (gen_lang/)
 
 _TEMPLATE = """# Breiten-Generierung: {subject} — {n} Kernfragen
 
