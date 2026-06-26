@@ -187,5 +187,12 @@ showcasing the oral/social/enactive coverage arrangements unlock (extends the Na
 `printableCoverage`). Hard scope line stands: we generate the material bundle + run-guide; we do **not** run
 the room.
 
+**Phase 5a DONE (26 Jun 2026):** `schema/arrangement.py` (`Lernarrangement` + role/phase/anchor/shared-
+product models) · `pipeline/arrange.py` (`assemble_arrangement` → ⋃ role Nachweise + anchors; aggregate
+depth; `verify_arrangement`) · the GWB Gemeinderat-Planspiel hero `demo/gwb_standort.py` (4 roles serving
+ENT.03/06/07+ZEN.03; ENT.05 anchored to the debate, ENT.01 to the council decision) — verify-clean,
+`tests/test_arrangement.py`. **Next: 5b** `renderTeacherOrchestration` (+ role `renderStudentSheet`), then
+5c dashboard surface, 5d generation.
+
 Carry-over from Phase 3: 3b (angle-aware composition), 3d (difficulty), 3e (coherence framing) fold in where
 natural, reprioritized behind Phase 4/5.

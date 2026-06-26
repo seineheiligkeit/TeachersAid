@@ -2,6 +2,14 @@
 
 from __future__ import annotations
 
+from .arrangement import (
+    ArrangementMeta,
+    ArrangementPhase,
+    ArrangementRole,
+    CompetenceAnchor,
+    Lernarrangement,
+    SharedProduct,
+)
 from .assets import Asset, AssetProvenance, IntentionallyFlawed, MediaPolicy
 from .blocks import (
     Block,
@@ -51,6 +59,12 @@ from .worksheet import (
 )
 
 __all__ = [
+    "Lernarrangement",
+    "ArrangementMeta",
+    "ArrangementRole",
+    "ArrangementPhase",
+    "SharedProduct",
+    "CompetenceAnchor",
     "Asset",
     "AssetProvenance",
     "IntentionallyFlawed",

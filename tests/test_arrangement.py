@@ -1,0 +1,88 @@
+"""Lernarrangement (schema v0.5) — the GWB Gemeinderat hero.
+
+Locks the v0.5 payoff: each role's material is a real worksheet that verifies
+clean, and the arrangement-level Nachweis covers competences NO single worksheet
+reaches (ENT.05 via the debate, ENT.01 via the shared council decision).
+"""
+
+from __future__ import annotations
+
+from datetime import date
+
+from teachersaid.demo import gwb_standort
+from teachersaid.pipeline.arrange import assemble_arrangement, verify_arrangement
+from teachersaid.pipeline.resolve import resolve_grade
+from teachersaid.schema.arrangement import CompetenceAnchor, Lernarrangement
+from teachersaid.schema.enums import Role
+
+IN = date(2026, 3, 1)
+
+
+def _resolved():
+    arr = gwb_standort.build_arrangement()
+    res = resolve_grade(gwb_standort.SUBJECT, gwb_standort.KLASSE, today=IN)
+    assert res.grade_check is True  # GWB grade 3 is catalog-valid
+    assemble_arrangement(arr, res)
+    return arr, res
+
+
+def test_hero_assembles_and_verifies_clean():
+    arr, res = _resolved()
+    rep = verify_arrangement(arr, res)
+    assert rep.problems == [], rep.problems
+    assert len(arr.roles) == 4
+    assert arr.nachweis is not None and arr.depth_profile is not None
+    assert arr.total_minutes() == 80
+
+
+def test_each_role_material_is_a_verified_worksheet():
+    arr, _ = _resolved()
+    for role in arr.roles:
+        assert role.material.nachweis is not None
+        assert role.material.depth_profile is not None
+
+
+def test_nachweis_covers_anchor_only_competences():
+    """The crux of v0.5: ENT.05 and ENT.01 are covered ONLY through the arrangement
+    layer (interaction / shared product), never by a printable role task."""
+    arr, _ = _resolved()
+    cov = {c.competence_id: c for c in arr.nachweis.competence_coverage}
+
+    # role worksheets exercise these (a real block id, not an anchor marker)
+    for cid in ["GWB.US.3.ENT.03", "GWB.US.3.ENT.06", "GWB.US.3.ENT.07", "GWB.US.3.ZEN.03"]:
+        assert cov[cid].covered, cid
+        assert any(not e.startswith("anchor:") for e in cov[cid].exercised_by), cid
+
+    # anchors: covered, but ONLY via the arrangement (no role task touches them)
+    for cid in ["GWB.US.3.ENT.05", "GWB.US.3.ENT.01"]:
+        assert cov[cid].covered, cid
+        assert cov[cid].exercised_by and all(e.startswith("anchor:") for e in cov[cid].exercised_by), cid
+
+    assert "verankert" in arr.nachweis.statement  # statement names the anchor-only count
+
+
+def test_depth_profile_aggregates_all_role_tasks():
+    arr, _ = _resolved()
+    dp = arr.depth_profile
+    task_min = sum(b.est_minutes for r in arr.roles
+                   for b in r.material.iter_blocks() if b.role == Role.TASK)
+    assert sum(dp.by_level.values()) == 8  # 4 roles × 2 tasks
+    assert dp.minutes_total == task_min
+    assert dp.by_dimension.get("OK") and dp.by_dimension.get("UK")  # GWB dims aggregated
+
+
+def test_roundtrip_and_format():
+    arr, _ = _resolved()
+    again = Lernarrangement.model_validate(arr.model_dump())
+    assert again.meta.title == arr.meta.title
+    assert again.meta.format == "simulation_game" and len(again.roles) == 4
+
+
+def test_verify_catches_bad_anchor_and_grouping():
+    arr, res = _resolved()
+    arr.competence_anchors.append(
+        CompetenceAnchor(competence_id="GWB.US.9.XXX.99", dimension="UK", served_by="interaction"))
+    arr.phases[0].grouping = "bogus"
+    rep = verify_arrangement(arr, res)
+    assert any("unknown competence" in p for p in rep.problems)
+    assert any("invalid grouping" in p for p in rep.problems)

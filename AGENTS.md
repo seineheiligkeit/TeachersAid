@@ -189,6 +189,24 @@ so envelopes differ in depth. Produce variants via `orch.ingest_scope_variant` +
 *3c:* `LibraryBlock` carries its `Asset` spec(s); `harvest` captures them; `compose` aggregates the chosen
 blocks' assets so figures (e.g. the Strahlung spectrum) now render in composed sheets.
 
+## Lernarrangement (schema v0.5 — Phase 5, in progress)
+
+A **`Lernarrangement`** (`schema/arrangement.py`) is a composite sibling that *contains* worksheets
+(**has-a**): each `ArrangementRole.material` IS a `WorksheetContent`, so the worksheet stays the
+primitive and a plain worksheet is the n=1 case. Beyond stapled sheets, `competence_anchors` capture the
+**oral/social/enactive** competences a printable sheet can't reach — served by the `interaction`, the
+`debrief`, or the `shared_product` (not by any task). `nachweis`/`depth_profile` are **DERIVED**
+(`pipeline/arrange.py`): `assemble_arrangement` assembles each role's material, then the arrangement
+Nachweis = ⋃ role exercised competences **+ the anchors** (a competence covered *only* by an anchor is the
+v0.5 payoff); `verify_arrangement` verifies every role as a worksheet + arrangement rules (groupings,
+anchor served_by/competence). Rendering will reuse the worksheet path entirely (no second renderer):
+`renderArrangement = renderTeacherOrchestration + roles.map(renderStudentSheet)` (Phase 5b, not built).
+**Scope line:** we make the material bundle + a teacher run-guide; we do **not** run the room.
+**Hero:** `demo/gwb_standort.py` — a GWB grade-3 Gemeinderat-Planspiel (4 roles; ENT.03/06/07+ZEN.03 on
+the sheets; ENT.05 via the debate, ENT.01 via the council decision as anchors). **Phase 5a done:**
+schema + derive/assemble/verify + the hero, verify-clean (`tests/test_arrangement.py`). **Next:** 5b
+renderTeacherOrchestration, 5c dashboard surface, 5d generation.
+
 ## Breadth generation — subagents → ingest (the seam, no API key)
 
 Scaling the library across subjects uses **subagents as the generator** (no `ANTHROPIC_API_KEY` needed —
