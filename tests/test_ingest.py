@@ -89,6 +89,42 @@ def test_ingest_invalid_kind_is_caught_and_harvests_nothing(stores):
     assert blocks.list() == []
 
 
+def _body_with_asset(generator="matplotlib:number_line"):
+    b = _body()
+    b["assets"] = [{"id": "abb1", "role": "figure", "generator": generator,
+                    "spec": {"min": 0, "max": 10, "marks": [{"at": 4, "label": "A"}]}}]
+    b["sections"][0]["blocks"][0]["asset_refs"] = ["abb1"]   # first task references the figure
+    return b
+
+
+def test_ingest_asset_bearing_body(stores):
+    """Phase 4 #1: a generated body may request a figure; it builds, travels with the block,
+    and the worksheet stays verify-clean."""
+    store, blocks = stores
+    item, n = orch.ingest_generated(
+        store, blocks, "Physik", 4, kompetenzbereich=KB,
+        title="Mit Abbildung", kernfrage="Was zeigt der Zahlenstrahl?",
+        body=_body_with_asset(), today=IN,
+    )
+    assert item.error is None, item.error
+    assert item.verify_problems == []
+    assert item.content.assets and item.content.assets[0].generator == "matplotlib:number_line"
+    # the harvested task block carries the asset spec (3c)
+    with_asset = [b for b in blocks.list() if b.role == "task" and b.assets]
+    assert with_asset and with_asset[0].assets[0].id == "abb1"
+
+
+def test_ingest_rejects_disallowed_asset_generator(stores):
+    """An LLM may only request the parameterized recipe library — a bespoke/invented
+    generator is caught, and nothing is harvested."""
+    store, blocks = stores
+    item, n = orch.ingest_generated(
+        store, blocks, "Physik", 4, kompetenzbereich=KB, title="Verboten", kernfrage="?",
+        body=_body_with_asset(generator="matplotlib:em_spectrum"), today=IN,
+    )
+    assert item.error is not None and n == 0
+
+
 def test_ingest_whole_grade_for_strand_subject(stores):
     """Biologie's KBs are W/E/S strands, so ingest resolves the whole grade — a task
     serving any real grade-4 Bio competence verifies clean."""

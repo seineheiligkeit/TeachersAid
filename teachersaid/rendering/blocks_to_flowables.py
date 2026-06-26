@@ -113,16 +113,16 @@ def _response_flowables(b: TaskBlock, S, width):
 
 def _task_flowables(b: TaskBlock, projection: str, S, width, assets, number):
     out = [rb.raw_para(f"<b>{number}.</b> " + rb.richtext_markup(b.prompt), S["prompt"])]
-    # data_interpretation: embed the referenced asset
-    if b.payload and b.payload.kind == "data_interpretation":
-        p = assets.get(b.payload.asset_ref)
+    # embed every referenced asset (any task kind), + a data_interpretation payload's asset
+    refs = list(b.asset_refs or [])
+    if b.payload and getattr(b.payload, "kind", None) == "data_interpretation":
+        ar = getattr(b.payload, "asset_ref", None)
+        if ar and ar not in refs:
+            refs.append(ar)
+    for ref in refs:
+        p = assets.get(ref)
         if p:
             out.append(_image(p, width * 0.75))
-    elif b.asset_refs and b.kind == "data_interpretation":
-        for ref in b.asset_refs:
-            p = assets.get(ref)
-            if p:
-                out.append(_image(p, width * 0.75))
     out += _payload_flowables(b, S, width)
     # The teacher guide is a guide, not a blank to fill in: skip the answer space
     # (lines/box/table) — the topic is known; the expected answer follows below.

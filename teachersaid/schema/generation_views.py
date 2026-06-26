@@ -18,6 +18,7 @@ from typing import Annotated, Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 
+from .assets import Asset
 from .blocks import (
     ContentFlags,
     InfoBlock,
@@ -85,13 +86,25 @@ class GenBaustein(BaseModel):
     blocks: list[GenBlock] = Field(default_factory=list)
 
 
+class GenAsset(BaseModel):
+    """A code-generated asset the LLM may REQUEST (a figure from the recipe library):
+    `generator` is a recipe id, `spec` its parameters; blocks point at it via asset_refs."""
+    model_config = ConfigDict(extra="forbid")
+    id: str
+    role: str = "figure"
+    generator: str
+    spec: dict = Field(default_factory=dict)
+    caption: str | None = None
+
+
 class GenWorksheetBody(BaseModel):
-    """What the LLM generates: intro + sections. Meta/subject_model/assets/fassung
-    come from the pipeline (resolution + plan), not the model."""
+    """What the LLM generates: intro + sections + any requested assets. Meta/subject_model/
+    fassung come from the pipeline (resolution + plan), not the model."""
 
     model_config = ConfigDict(extra="forbid")
     intro: list[GenBlock] = Field(default_factory=list)
     sections: list[GenBaustein] = Field(default_factory=list)
+    assets: list[GenAsset] = Field(default_factory=list)
 
 
 # --- up-conversion -----------------------------------------------------------
@@ -161,11 +174,15 @@ def body_to_canonical(
     Returns a WorksheetContent WITHOUT derived fields; pipeline.assemble() fills
     nachweis/depth_profile.
     """
+    gen_assets = [
+        Asset(id=a.id, role=a.role, generator=a.generator, spec=a.spec, caption=a.caption)
+        for a in body.assets
+    ]
     return WorksheetContent(
         meta=meta,
         subject_model=subject_model,
         intro=[_block_to_canonical(b) for b in body.intro],
         sections=[_baustein_to_canonical(s) for s in body.sections],
-        assets=assets or [],
+        assets=gen_assets + list(assets or []),
         rack=rack,
     )

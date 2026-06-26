@@ -187,6 +187,21 @@ def _honest_axis(asset: Asset, path: Path) -> None:
     plt.close(fig)
 
 
+# Recipes an LLM may REQUEST (parameterized, correct-by-construction). The bespoke
+# figures (em_spectrum, truncated/honest axis) are curated-only and NOT here — a
+# generated worksheet may only ask for these safe, spec-driven recipes.
+GENERATION_RECIPES: dict[str, str] = {
+    "matplotlib:number_line":
+        'Zahlenstrahl — spec {"min":num,"max":num,"step"?:num,"marks"?:[{"at":num,"label"?:str}]}',
+    "matplotlib:bar_chart":
+        'Balkendiagramm — spec {"categories":[str],"values":[num],"title"?:str,"xlabel"?:str,"ylabel"?:str}',
+    "matplotlib:function_graph":
+        'Koordinatensystem/Gerade — spec {"xmin"?,"xmax"?,"m"?,"b"? (Gerade y=mx+b),"points"?:[[x,y]],"ymin"?,"ymax"?,"title"?}',
+    "matplotlib:math_formula":
+        'Formel via LaTeX — spec {"latex":str}',
+}
+
+
 def build_asset(asset: Asset, outdir: Path | None = None) -> Path:
     """Render an asset to a PNG and return its path. Dispatches on the generator id;
     a `diffusion:`/`svg:` backend plugs in by registering builders.

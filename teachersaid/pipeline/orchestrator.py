@@ -265,6 +265,17 @@ def ingest_generated(
             lehrplan_label=f"{subject} · {klasse}. Klasse · {label}",
         )
         content = body_to_canonical(gb, meta=meta, subject_model=model)
+        # validate any LLM-requested assets: allowed recipe + it actually builds
+        # (a bad/invented generator or spec surfaces as an error, never a silent block)
+        if content.assets:
+            from .assets import GENERATION_RECIPES, build_asset
+            adir = config.RUNS_DIR / "store" / item.id / "assets"
+            for a in content.assets:
+                if a.generator not in GENERATION_RECIPES:
+                    raise ValueError(
+                        f"asset '{a.id}': generator {a.generator!r} not in the allowed recipe library"
+                    )
+                build_asset(a, outdir=adir)
         assemble(content, res)
         report = verify(content, res)
         # breadth mode renders no PDFs — blocks are the unit, inspected structurally

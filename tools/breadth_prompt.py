@@ -16,6 +16,7 @@ from pathlib import Path
 
 from teachersaid.config import RUNS_DIR
 from teachersaid.grounding import lehrplan_store as ls
+from teachersaid.pipeline.assets import GENERATION_RECIPES
 from teachersaid.schema.enums import CORE_TASK_KINDS
 
 N_KERNFRAGEN = 5
@@ -56,8 +57,13 @@ Wähle **{n} klar unterschiedliche Themen/Bereiche** (Breite!), nicht Varianten 
 - `dimensions` ⊆ erlaubte Codes; `kind` ∈ erlaubte kinds; `cognitive_level` steigt
   (remember→…→create; baue analyze/evaluate/create ein), nicht alles „remember".
 - **Korrektheit by construction**; Fehlvorstellungen/Hinweise in `watch_outs` (tragend).
-- **Keine Bilder/Assets**: kein `kind:"figure"`, kein `data_interpretation`, keine `asset_refs`,
-  keine `response.mode` ∈ {{diagram, drawing, artifact}}. {modality_note}
+- **Abbildungen nur als Code-Generator** (korrekt by construction): wo eine Abbildung die Aufgabe wirklich
+  verbessert (v.a. Mathematik, Physik, Daten), darfst du eine anfordern — lege sie in `body.assets` und
+  referenziere sie aus einer Aufgabe/Info über `asset_refs`. Reiner Text bleibt völlig ok, wenn keine
+  Abbildung nötig ist. **Erlaubte Generatoren (nur diese):**
+{recipes}
+  Keine freien Bilder/Diffusion, kein `data_interpretation`-Payload, keine `response.mode` ∈
+  {{diagram, drawing, artifact}}. {modality_note}
 - **Schülertext ist für Schüler:innen** — niemals Kompetenz-IDs/Dimensionen/„Lehrplan" im `prompt`/Intro.
 - Pro Aufgabe `answer_key` + `watch_outs`; optional `acceptable_reasoning` und `rubric`
   (Liste von `{{"criterion":"...","levels":["...","..."]}}`, **englische Schlüssel**).
@@ -80,10 +86,11 @@ Jede Datei ist **ausschließlich** dieses JSON (kein Fließtext, keine ``` Zäun
   "title": "<prägnanter Titel>", "kernfrage": "<eine Schüler-Kernfrage in Du-Form>",
   "body": {{
     "intro": [],
+    "assets": [ /* optional: {{"id":"abb1","role":"figure","generator":"matplotlib:number_line","spec":{{"min":0,"max":20,"marks":[{{"at":7,"label":"x"}}]}}}} */ ],
     "sections": [ {{ "id":"s1","title":"...","throughline":"...","talking_points":["..."],"extensions":["..."],
       "blocks":[ {{"role":"task","id":"t1","kind":"<kind>","prompt":"...","payload":null,
         "response":{{"mode":"lines","n":3}},"cognitive_level":"understand","dimensions":["{dim0}"],
-        "serves":[{{"competence_id":"<ID>","relation":"exercises"}}],"est_minutes":7,
+        "serves":[{{"competence_id":"<ID>","relation":"exercises"}}],"est_minutes":7,"asset_refs":[],
         "answer_key":"...","acceptable_reasoning":null,"watch_outs":["..."],"rubric":[]}} ] }} ]
   }}
 }}
@@ -140,6 +147,7 @@ def _ab_block(subject: str) -> str:
 def build():
     outdir = RUNS_DIR / "ingest"
     (outdir / GEN_SUBDIR).mkdir(parents=True, exist_ok=True)
+    recipes = "\n".join(f"  - `{gid}` — {hint}" for gid, hint in GENERATION_RECIPES.items())
     manifest = []
     for code, subject, anchor, practical, target_language in SUBJECTS:
         model = ls.get_subject_model(subject)
@@ -166,7 +174,7 @@ def build():
             subject=subject, n=N_KERNFRAGEN, competences=comps_text, dims=dims, kinds=kinds,
             ab_block=_ab_block(subject), anchor_rule=(_ANCHOR_KB if anchor == "kb" else _ANCHOR_GRADE),
             modality_note=modality_note, lang_clause=lang_clause, gendir=GEN_SUBDIR,
-            code=code, anchor_field=anchor_field, dim0=model.dimensions[0].id,
+            code=code, anchor_field=anchor_field, dim0=model.dimensions[0].id, recipes=recipes,
         )
         (outdir / f"prompt_{code}.md").write_text(prompt, encoding="utf-8")
         manifest.append({"code": code, "subject": subject, "anchor": anchor,
