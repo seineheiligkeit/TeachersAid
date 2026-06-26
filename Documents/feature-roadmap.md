@@ -133,6 +133,37 @@ cited Bevölkerungspyramide on c0094).
 harder, separate licensing question** (most modern text/images aren't freely redistributable → lean on
 public-domain / clearly-licensed there).
 
+### Media & text sources (confirmed 26 Jun 2026 — SME research)
+The PD / clearly-licensed pool is **richer than the earlier "hard tail" framing — but skewed
+historical**, which is exactly what GPB/DEU/LAT/KUG mostly need:
+- **Wikimedia Commons** — the default workhorse; per-file rights tag travels with the file (machine-
+  readable) → PD art + historical imagery.
+- **Europeana** — EU heritage aggregator with *standardized* rights labels (PD Mark / CC0 / CC /
+  rights-reserved) → filter to reusable; Austrian + European collections at once.
+- **ÖNB (Austrian National Library)** — the deep Austrian well: **ANNO** (19M newspaper pages
+  1568–1947, ~all PD), **ABO** (500k+ copyright-free prints 16th–19th c.), **ALEX** (historical legal/
+  official texts), **ÖNB Digital** (picture archive — but ALSO a paid agency → per-item rights check).
+- **Text:** Projekt Gutenberg-**DE** (projekt-gutenberg.org), Zeno.org, Deutsches Textarchiv, Wikisource,
+  ALO (Austrian Literature Online). *Use Gutenberg-DE, not US Gutenberg* (p.m.a. caveat below).
+- **Museums** (Albertina etc.) — open-access varies; what's shown online is often pre-cleared, but per-item.
+
+**Two cautions beyond the numbers case (exactly where naive automation errs):**
+- **PD work ≠ PD reproduction.** An old painting doesn't make *this scan/photo* free — some EU
+  institutions assert rights in reproductions, and ÖNB's picture archive / museums run partly as paid
+  agencies. Capture the **per-item rights label** (Wikimedia/Europeana expose it machine-readably); never
+  infer "looks old → free".
+- **Austrian 70-p.m.a., not US PD.** A title PD in the US (Gutenberg-US) may still be in copyright in
+  Austria. Record the author's death year / rights basis and evaluate against the **AT** rule.
+
+**This reframes phase 5** — sourced text/images for **history (GPB Quellenarbeit), German/Latin
+literature, art history** are feasible *now* for PD material, at two speeds:
+- **(b2) referenced-only — available immediately, no tooling:** point students at ANNO/ALEX/Wikimedia to
+  *find & analyse* a source ("find a newspaper from [date] about [event] on ANNO"). Quellenkritik-as-
+  competence; the inquiry-frame twin of Tier-1 locality.
+- **(b1) redistribute (embed scan/text in the sheet):** needs the per-item rights gate + AT-p.m.a. check
+  — the proper phase-5 build. These archives are the rights-clean supply for the existing **media-policy
+  "vetted-sourced" class**.
+
 ### Phasing (de-risked — cheap proofs before the big build)
 1. **Ship the (c) label first** *(tiny, immediate honesty win):* every figure's data declares
    sourced-vs-illustrative; `verify` warns on unlabelled real-looking numbers. The agents already
