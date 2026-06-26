@@ -333,3 +333,7 @@ Run a single file: `python -m pytest tests/test_derive.py -q`.
 `project-handoff.md` (intent) → `Documents/lehrplan-bundle-schema-v0.3.md` (data model) →
 `teachersaid/schema/` (the model in code) → `teachersaid/pipeline/` (the engine) →
 `teachersaid/demo/strahlung.py` (a complete worked content object).
+
+**What's next / forward-looking features:** `Documents/feature-roadmap.md` — the prioritised capability
+backlog (figure-recipe families · audio · parameterized variants · the **grounded facts & data layer**
+big bet, with confirmed Austrian data + media sources). Has a "Start here tomorrow" section at the top.

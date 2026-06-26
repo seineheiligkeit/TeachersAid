@@ -3,6 +3,24 @@
 Forward-looking *capability* features for TeachersAid. (The schema-version roadmap lives in
 `schema-roadmap-v0.4-v0.5.md`; this tracks product/engine features.)
 
+## ▶ Start here tomorrow (27 Jun 2026)
+
+Strategy is captured; nothing is mid-build; tree is clean. Recommended order:
+
+1. **First strike — the convergent spike** (B + data-layer phase 2 in one): build the
+   **population-pyramid recipe** *and* the `Dataset`/`SourceRef`/`DataRef` schema, proven on
+   **Statistik Austria population-by-age** (CC BY OGD), re-grounding **c0094** with a *real, cited*
+   Bevölkerungspyramide. One dataset proves both the recipe and the data layer end-to-end.
+2. **Quick parallel win — the (c) label** (data-layer phase 1): every figure's data declares
+   `sourced(ref)` vs `illustrative`; `verify` warns on unlabelled real-looking numbers. Small, independent.
+3. **Then the rest of B:** timeline (GPB) + Klimadiagramm dual-axis recipe (share derived-layout machinery).
+
+Standing tracks (no build needed): **geography teacher reviews** the 9 GWB worksheets (c0089–c0097) +
+earlier staged items in the dashboard; **GPB Quellenarbeit via ANNO/ALEX is buildable now** as
+referenced-only (b2) — well-chosen task prompts pointing at the archives, no ingest tooling.
+
+Details for each below ↓
+
 ## Next — agreed, deferred from the GWB figure work (26 Jun 2026)
 
 - **Population-pyramid figure recipe** — back-to-back horizontal age/sex bars. Surfaced as a
