@@ -15,6 +15,7 @@ touching the schema or callers. So: add a recipe = register one function.
 from __future__ import annotations
 
 import html
+import textwrap
 from collections.abc import Callable
 from pathlib import Path
 
@@ -72,22 +73,60 @@ def _number_line(asset: Asset, path: Path) -> None:
     plt.close(fig)
 
 
+def _bar_value_labels(ax, vals, *, horizontal: bool) -> None:
+    """Annotate every bar with its value, so even a tiny bar is readable."""
+    for i, v in enumerate(vals):
+        txt = f"{v:g}"
+        if horizontal:
+            ax.text(v, i, " " + txt, va="center", ha="left", fontsize=8, color="#33506e")
+        else:
+            ax.annotate(txt, (i, v), textcoords="offset points", xytext=(0, 2),
+                        ha="center", va="bottom", fontsize=8, color="#33506e")
+
+
 @_generator("matplotlib:bar_chart")
 def _bar_chart(asset: Asset, path: Path) -> None:
-    """A bar chart. spec: {categories: [...], values: [...], title?, xlabel?, ylabel?}."""
+    """A bar chart. spec: {categories, values, title?, xlabel?, ylabel?, log?, horizontal?}.
+
+    Legibility is part of correctness: long/many labels auto-switch to horizontal bars
+    (full-width labels, no overlap); every bar is value-labelled (no 'invisible' bar);
+    `log` gives a log value-axis for orders-of-magnitude ranges; the title wraps and
+    constrained_layout keeps title/axis labels from colliding."""
     s = asset.spec or {}
-    cats = [str(c) for c in s.get("categories", [])]
+    cats = [str(c).replace("\n", " ") for c in s.get("categories", [])]
     vals = [float(v) for v in s.get("values", [])]
-    fig, ax = plt.subplots(figsize=(5.0, 3.0))
-    ax.bar(cats, vals, color="#4f6f8f", edgecolor="#33506e")
+    n = max(len(cats), 1)
+    log = bool(s.get("log"))
+    horizontal = bool(s.get("horizontal")) or any(len(c) > 10 for c in cats) or n > 6
+
+    if horizontal:
+        fig, ax = plt.subplots(figsize=(6.8, max(2.4, 0.5 * n + 1.1)), layout="constrained")
+        ax.barh(range(n), vals, color="#4f6f8f", edgecolor="#33506e")
+        ax.set_yticks(range(n))
+        ax.set_yticklabels(cats)
+        ax.invert_yaxis()
+        if log:
+            ax.set_xscale("log")
+        if s.get("ylabel"):
+            ax.set_xlabel(s["ylabel"])      # the value axis is horizontal now
+        ax.margins(x=0.12)                  # room for the value labels
+        _bar_value_labels(ax, vals, horizontal=True)
+    else:
+        fig, ax = plt.subplots(figsize=(max(4.0, 0.95 * n + 1.5), 3.3), layout="constrained")
+        ax.bar(range(n), vals, color="#4f6f8f", edgecolor="#33506e")
+        ax.set_xticks(range(n))
+        ax.set_xticklabels(cats)
+        if log:
+            ax.set_yscale("log")
+        if s.get("ylabel"):
+            ax.set_ylabel(s["ylabel"])
+        if s.get("xlabel"):
+            ax.set_xlabel(s["xlabel"])
+        ax.margins(y=0.12)
+        _bar_value_labels(ax, vals, horizontal=False)
     if s.get("title"):
-        ax.set_title(s["title"])
-    if s.get("xlabel"):
-        ax.set_xlabel(s["xlabel"])
-    if s.get("ylabel"):
-        ax.set_ylabel(s["ylabel"])
-    fig.tight_layout()
-    fig.savefig(path, dpi=150, bbox_inches="tight")  # don't clip a long title/labels
+        ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 52)))
+    fig.savefig(path, dpi=150)
     plt.close(fig)
 
 
@@ -98,7 +137,7 @@ def _function_graph(asset: Asset, path: Path) -> None:
     ymin?, ymax?, title?}."""
     s = asset.spec or {}
     xmin, xmax = float(s.get("xmin", -5)), float(s.get("xmax", 5))
-    fig, ax = plt.subplots(figsize=(4.3, 4.0))
+    fig, ax = plt.subplots(figsize=(4.6, 4.2), layout="constrained")
     ax.axhline(0, color="#999", lw=0.8)
     ax.axvline(0, color="#999", lw=0.8)
     ax.grid(True, color="#e6e6e6", lw=0.6)
@@ -119,9 +158,8 @@ def _function_graph(asset: Asset, path: Path) -> None:
     if s.get("ylabel"):
         ax.set_ylabel(s["ylabel"])
     if s.get("title"):
-        ax.set_title(s["title"])
-    fig.tight_layout()
-    fig.savefig(path, dpi=150, bbox_inches="tight")  # don't clip a long title/label
+        ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 46)))
+    fig.savefig(path, dpi=150)  # constrained_layout keeps title/labels from colliding
     plt.close(fig)
 
 
@@ -295,7 +333,9 @@ GENERATION_RECIPES: dict[str, str] = {
     "matplotlib:number_line":
         'Zahlenstrahl — spec {"min":num,"max":num,"step"?:num,"marks"?:[{"at":num,"label"?:str}]}',
     "matplotlib:bar_chart":
-        'Balkendiagramm — spec {"categories":[str],"values":[num],"title"?:str,"xlabel"?:str,"ylabel"?:str}',
+        'Balkendiagramm für einen MENGEN-Vergleich (nicht für eine Ja/Nein-Klassifikation!) — '
+        'spec {"categories":[str],"values":[num],"title"?:str,"xlabel"?:str,"ylabel"?:str,"log"?:bool}. '
+        'Kurze Kategorienamen; bei Werten über mehrere Größenordnungen "log":true setzen.',
     "matplotlib:function_graph":
         'Koordinatensystem/Gerade — spec {"xmin"?,"xmax"?,"m"?,"b"? (Gerade y=mx+b),'
         '"points"?:[[x,y]],"connect"? (Punkte zu einer Kurve verbinden, z. B. v-t-Diagramm),'

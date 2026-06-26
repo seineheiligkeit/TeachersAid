@@ -48,6 +48,12 @@ def verify(
     problems += mp_problems
     warnings += mp_warnings
 
+    # chart representation sanity (a correct number badly represented is still wrong)
+    from .chart_lint import lint_content as _lint_charts
+    cl_problems, cl_warnings = _lint_charts(content)
+    problems += cl_problems
+    warnings += cl_warnings
+
     # coverage: serves must reference resolved competences
     valid_ids = {c.id for c in resolution.competences}
     for b in content.iter_blocks():

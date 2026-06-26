@@ -67,8 +67,11 @@ Wähle **{n} klar unterschiedliche Themen/Bereiche** (Breite!), nicht Varianten 
   **Wichtig — eine Abbildung darf die gesuchte Lösung NICHT verraten:** z. B. KEINE Funktionsgleichung
   als Diagramm-`title`, wenn die Aufgabe ist, sie abzulesen; keine Werte/Beschriftungen anzeigen, die die
   Schüler:innen erst ablesen/bestimmen sollen. Die Abbildung zeigt das Material, nicht die Antwort.
-  Keine freien Bilder/Diffusion, kein `data_interpretation`-Payload, keine `response.mode` ∈
-  {{diagram, drawing, artifact}}. {modality_note}
+  **Wähle die richtige Darstellung (korrekte Zahlen allein genügen NICHT — die Darstellung muss zur
+  Aussage passen und lesbar sein):** ein Balkendiagramm nur für einen MENGEN-Vergleich, NIE für eine
+  Ja/Nein-Klassifikation (dafür Tabelle/Text); kurze Kategorienamen; bei Werten über mehrere
+  Größenordnungen `"log": true`. Keine freien Bilder/Diffusion, kein `data_interpretation`-Payload,
+  keine `response.mode` ∈ {{diagram, drawing, artifact}}. {modality_note}
 - **Schülertext ist für Schüler:innen** — niemals Kompetenz-IDs/Dimensionen/„Lehrplan" im `prompt`/Intro.
 - Pro Aufgabe `answer_key` + `watch_outs`; optional `acceptable_reasoning` und `rubric`
   (Liste von `{{"criterion":"...","levels":["...","..."]}}`, **englische Schlüssel**).
