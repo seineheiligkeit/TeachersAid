@@ -93,12 +93,45 @@ A real-looking, uncited, unlabelled number becomes a verify finding.
 
 ### Schema sketch (mirrors the Lehrplan-catalog pattern)
 - `grounding/data/` — curated **datasets** + **sources**: stable ID, the series/values + units, and a
-  `SourceRef` (publisher, title, URL, retrieval date, "Stand" date, licence). Deterministic ingest
-  where possible — a small fetch+parse tool per source, **no LLM in the fact path** (cf.
-  `tools/parse_lehrplan.py`).
+  `SourceRef` (publisher, title, URL, dataset code, retrieval date, "Stand" date, licence, required
+  attribution string). Deterministic ingest where possible — a small fetch+parse tool per source,
+  **no LLM in the fact path** (cf. `tools/parse_lehrplan.py`).
 - `SourceRef` / `DataRef` on content (cf. `FassungRef`, `Serves`): a figure/task using real data
   carries the dataset ID + the slice it uses; the projection renders the citation.
 - A figure's data declares `sourced(ref)` or `illustrative` — the (c) label.
+
+### Sources & licensing (confirmed 26 Jun 2026 — SME research)
+Licensing — the #1 risk — is **solved for numbers**:
+- **Statistik Austria — OGD portal `data.statistik.gv.at`** (CC BY 4.0, machine-readable, commercial
+  OK): canonical primary source (demography incl. population-by-age, labour, education, prices, energy).
+  Use the **OGD portal, not the STATcube REST API** (API paywalled; portal free).
+- **Eurostat** (free reuse + attribution): harmonised cross-country comparability; cite by the stable
+  **online data code** (e.g. "Source: Eurostat (namq_10_gdp)") — a perfect `DataRef` id. APIs return
+  JSON-stat / SDMX-CSV (Python `pyjstat`). Caveat: 8-digit CN trade data is excluded from free commercial
+  reuse — irrelevant for us.
+- **data.gv.at** (CC BY, varies per publisher): federal/state/municipal + geospatial → the **Tier-2
+  regional** backbone. Gate the licence per dataset, not per portal.
+- **World Bank** (CC BY 4.0) / **Our World in Data** (CC BY): global benchmarking & clean global series
+  (e.g. world urbanization for c0081).
+- **OeNB / WIFO / IHS**: authoritative monetary/economic data but reuse terms less clear / partly behind
+  data services → **cite/reference only, don't redistribute** unless a page-level CC notice allows.
+
+**Refinements this forces:**
+- **Licence = a first-class, per-dataset field AND an ingest gate** — only *redistribute* values under a
+  recorded redistributable licence (CC BY / equiv.); otherwise reference-only.
+- **`SourceRef.attribution`** = the exact citation string the licence requires; the projection renders it verbatim.
+- **(b) splits:** (b1) *redistributed + cited* (needs licence) vs (b2) *referenced-only* (Tier-1 inquiry /
+  teacher note — needs only attribution). Tier-1 locality is (b2).
+- **Verify the licence per dataset at ingest, from the source's own terms** (not a secondary summary) —
+  *select-never-author* applied to the licence itself; compliance is legal, not cosmetic.
+
+**Spike convergence:** the **population-pyramid recipe (B)** and the **data-layer spike (phase 2)** both
+want Statistik Austria *population by age & sex* — build them together as the first real proof (a real,
+cited Bevölkerungspyramide on c0094).
+
+**Scope honesty:** this greenlights the **numbers** phases (3–4). **Text & images (phase 5) remain the
+harder, separate licensing question** (most modern text/images aren't freely redistributable → lean on
+public-domain / clearly-licensed there).
 
 ### Phasing (de-risked — cheap proofs before the big build)
 1. **Ship the (c) label first** *(tiny, immediate honesty win):* every figure's data declares
