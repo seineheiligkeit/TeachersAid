@@ -19,12 +19,14 @@ from ..config import RUNS_DIR
 from ..pipeline import orchestrator as orch
 from ..pipeline.assets import build_asset
 from ..stats import compute_stats
+from ..store.assetstore import AssetStore
 from ..store.blockstore import BlockStore
 from ..store.repository import ReviewStore
 
 app = FastAPI(title="TeachersAid — Review Dashboard")
 STORE = ReviewStore()
 BLOCKS = BlockStore()
+ASSETS = AssetStore()
 _STATIC = Path(__file__).resolve().parent / "static"
 
 
@@ -163,6 +165,38 @@ def assets_overview():
         out.append(e)
     out.sort(key=lambda e: (e["generator"], -e["n_blocks"] - e["n_items"]))
     return out
+
+
+# --- asset library (file-backed: decorative + sourced) -----------------------
+@app.get("/api/asset-library")
+def asset_library(klass: str | None = None, status: str | None = None):
+    return [a.summary() for a in ASSETS.list(klass=klass, status=status)]
+
+
+@app.get("/api/asset-library/{asset_id}/file")
+def asset_library_file(asset_id: str):
+    la = ASSETS.get(asset_id)
+    if la is None or not la.file or not Path(la.file).exists():
+        raise HTTPException(404, "no file for this asset")
+    media = {
+        ".png": "image/png", ".svg": "image/svg+xml", ".jpg": "image/jpeg",
+        ".jpeg": "image/jpeg", ".gif": "image/gif", ".webp": "image/webp",
+    }.get(Path(la.file).suffix.lower(), "application/octet-stream")
+    return FileResponse(la.file, media_type=media)
+
+
+@app.post("/api/asset-library/{asset_id}/approve")
+def approve_asset(asset_id: str):
+    if ASSETS.get(asset_id) is None:
+        raise HTTPException(404, "no such asset")
+    return ASSETS.set_status(asset_id, "approved").summary()
+
+
+@app.post("/api/asset-library/{asset_id}/reject")
+def reject_asset(asset_id: str):
+    if ASSETS.get(asset_id) is None:
+        raise HTTPException(404, "no such asset")
+    return ASSETS.set_status(asset_id, "rejected").summary()
 
 
 # --- block library -----------------------------------------------------------

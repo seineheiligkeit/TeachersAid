@@ -13,7 +13,7 @@ import uvicorn
 
 if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "seed":
-        from .library import seed_blocks, seed_library
+        from .library import seed_assets, seed_blocks, seed_library
 
         items = seed_library()
         print(f"Seeded {len(items)} master-library worksheet(s) into the review store:")
@@ -25,6 +25,9 @@ if __name__ == "__main__":
               f"({sum(1 for b in blocks if b.role=='task')} tasks, "
               f"{sum(1 for b in blocks if b.role=='info')} info) — status 'approved' "
               "(curated seed; composable into worksheets).")
+        kit = seed_assets()
+        print(f"\nSeeded {len(kit)} decorative kit asset(s) into the asset library "
+              "(status 'in_review' — review them in the Abbildungen tab).")
         print("\nRun 'python -m teachersaid' and open the dashboard to review them.")
         sys.exit(0)
 

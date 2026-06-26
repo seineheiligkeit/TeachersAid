@@ -161,6 +161,8 @@ Three asset classes, distinguished by *what is durable*:
   future HTML renderer could typeset via KaTeX. Audit need first — most Unterstufe math is inline-simple.
 - **Asset-as-reviewed-library** for the decorative + sourced classes (the *file* is durable): an asset store
   with status + tags + reuse, parallel to the block library. Code-gen assets stay as specs on blocks.
+  **DONE (Phase 4 #4):** `store/assetstore.py::AssetStore` (mirrors `BlockStore`); `orch.ingest_asset` gates
+  via media-policy + materialises the file + stores a `LibraryAsset`; reviewed in the **Abbildungen** tab.
 - **`MediaPolicy` operationalized** as the per-subject entry-gate config (`must_be_code` / `must_be_sourced`
   / `diffusion_ok`); it also steers generation. **DONE (Phase 4 #3):** `pipeline/media_policy.py` —
   `DEFAULT_MEDIA_POLICY` partitions roles per medium; `classify_source` → code/sourced/diffusion/none;
@@ -168,6 +170,9 @@ Three asset classes, distinguished by *what is durable*:
   content) blocks library entry like any verify problem. All 76 stored items + 33 block specs pass clean.
 - Re-enable **asset-bearing task generation** (breadth was text-only by *constraint*; now un-handbraked).
 - **Decorative kit:** content-free, reusable; SVG/code first, diffusion (SME agent) when wired — both vetted.
+  **DONE (Phase 4 #4):** `library/decorative.py` ships an `svg:` kit (`svg:badge/banner/motif`, rasterised
+  via PyMuPDF — no extra dep); the **`diffusion:` backend seam** (`assets.register_diffusion_backend`)
+  takes the SME's image-gen agent, dispatched by `build_asset` (offline → `DiffusionNotConfigured`).
 
 ### Phase 5 — Lernarrangement (v0.5 above, now unblocked)
 Build order: schema → **one hand-authored hero exemplar in Geographie (GWB)** to set the quality bar →

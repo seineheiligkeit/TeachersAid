@@ -14,9 +14,11 @@ touching the schema or callers. So: add a recipe = register one function.
 """
 from __future__ import annotations
 
+import html
 from collections.abc import Callable
 from pathlib import Path
 
+import fitz  # PyMuPDF — rasterises SVG decorative assets (already a dep; no extra)
 import matplotlib
 
 matplotlib.use("Agg")  # headless
@@ -196,9 +198,99 @@ def _honest_axis(asset: Asset, path: Path) -> None:
     plt.close(fig)
 
 
+# --- decorative kit (svg: backend) -------------------------------------------
+# Decorative assets are CONTENT-FREE and reusable (the media-policy gate enforces
+# that). SVG is the durable artifact (crisp, the SME asked for svg icons); we
+# rasterise it to PNG via PyMuPDF for embedding. These are curated-only — an LLM
+# generating a worksheet never requests decoration (not in GENERATION_RECIPES).
+_SVG_HDR = '<svg xmlns="http://www.w3.org/2000/svg" '
+
+
+def _svg_to_png(svg: str, path: Path, scale: float = 2.0) -> None:
+    doc = fitz.open(stream=svg.encode("utf-8"), filetype="svg")
+    doc[0].get_pixmap(matrix=fitz.Matrix(scale, scale), alpha=True).save(path)
+    doc.close()
+
+
+@_generator("svg:inline")
+def _svg_inline(asset: Asset, path: Path) -> None:
+    """Rasterise raw SVG markup (spec.svg) — for curated/stored decorative assets."""
+    svg = (asset.spec or {}).get("svg", "")
+    if not svg.strip():
+        raise ValueError(f"asset {asset.id}: svg:inline needs spec.svg")
+    _svg_to_png(svg, path)
+
+
+@_generator("svg:badge")
+def _svg_badge(asset: Asset, path: Path) -> None:
+    """A round badge with a short label — a decorative subject/topic marker.
+    spec: {label, color?, text_color?}."""
+    s = asset.spec or {}
+    label = html.escape(str(s.get("label", ""))[:3])
+    color, txt = s.get("color", "#33506e"), s.get("text_color", "#ffffff")
+    svg = (f'{_SVG_HDR}width="120" height="120" viewBox="0 0 120 120">'
+           f'<circle cx="60" cy="60" r="54" fill="{color}"/>'
+           f'<text x="60" y="78" font-size="44" font-family="sans-serif" '
+           f'text-anchor="middle" fill="{txt}">{label}</text></svg>')
+    _svg_to_png(svg, path)
+
+
+@_generator("svg:banner")
+def _svg_banner(asset: Asset, path: Path) -> None:
+    """A decorative header band (dotted rule) — content-free framing. spec: {color?}."""
+    color = (asset.spec or {}).get("color", "#b5651d")
+    dots = "".join(f'<circle cx="{12 + i * 24}" cy="12" r="4" fill="{color}"/>'
+                   for i in range(28))
+    svg = (f'{_SVG_HDR}width="680" height="24" viewBox="0 0 680 24">'
+           f'<rect x="0" y="10" width="680" height="4" fill="{color}" opacity="0.35"/>'
+           f'{dots}</svg>')
+    _svg_to_png(svg, path)
+
+
+@_generator("svg:motif")
+def _svg_motif(asset: Asset, path: Path) -> None:
+    """A geometric corner motif — content-free decoration. spec: {color?}."""
+    color = (asset.spec or {}).get("color", "#4f6f8f")
+    tris = "".join(
+        f'<polygon points="{x},120 {x + 20},120 {x},{100 - x // 3}" '
+        f'fill="{color}" opacity="{0.25 + (x % 60) / 120:.2f}"/>'
+        for x in range(0, 120, 20))
+    svg = f'{_SVG_HDR}width="120" height="120" viewBox="0 0 120 120">{tris}</svg>'
+    _svg_to_png(svg, path)
+
+
+# --- diffusion: backend seam -------------------------------------------------
+# The SME's image-gen agent plugs in here: register_diffusion_backend(fn) where
+# fn(asset, path) writes a PNG for a decorative, content-free asset (the prompt
+# rides in asset.spec). The media-policy gate guarantees only content-free
+# decorative assets ever carry a diffusion id, so this can't smuggle in slop-as-
+# content. Offline (no agent registered) it fails loudly rather than inventing one.
+_DIFFUSION_BACKEND: Callable[[Asset, Path], None] | None = None
+
+
+class DiffusionNotConfigured(RuntimeError):
+    pass
+
+
+def register_diffusion_backend(fn: Callable[[Asset, Path], None]) -> None:
+    """Wire an image-gen pipeline as the `diffusion:` backend (Phase 4 #4)."""
+    global _DIFFUSION_BACKEND
+    _DIFFUSION_BACKEND = fn
+
+
+def _diffusion_dispatch(asset: Asset, path: Path) -> None:
+    if _DIFFUSION_BACKEND is None:
+        raise DiffusionNotConfigured(
+            f"asset {asset.id}: generator {asset.generator!r} needs a diffusion backend — "
+            "register one via assets.register_diffusion_backend (the SME's image-gen agent)"
+        )
+    _DIFFUSION_BACKEND(asset, path)
+
+
 # Recipes an LLM may REQUEST (parameterized, correct-by-construction). The bespoke
-# figures (em_spectrum, truncated/honest axis) are curated-only and NOT here — a
-# generated worksheet may only ask for these safe, spec-driven recipes.
+# figures (em_spectrum, truncated/honest axis), the decorative svg: kit, and the
+# diffusion: backend are curated-only and NOT here — a generated worksheet may only
+# ask for these safe, content-bearing, spec-driven recipes.
 GENERATION_RECIPES: dict[str, str] = {
     "matplotlib:number_line":
         'Zahlenstrahl — spec {"min":num,"max":num,"step"?:num,"marks"?:[{"at":num,"label"?:str}]}',
@@ -224,6 +316,8 @@ def build_asset(asset: Asset, outdir: Path | None = None) -> Path:
     outdir.mkdir(parents=True, exist_ok=True)
     path = outdir / f"{asset.id}.png"
     builder = _GENERATORS.get(asset.generator or "")
+    if builder is None and (asset.generator or "").startswith("diffusion:"):
+        builder = _diffusion_dispatch  # open recipe space → the registered backend
     if builder is None:
         raise ValueError(
             f"no code generator for asset '{asset.id}' (generator={asset.generator!r}); "

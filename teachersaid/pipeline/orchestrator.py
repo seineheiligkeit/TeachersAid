@@ -353,6 +353,42 @@ def ingest_scope_variant(
     return lb, []
 
 
+def ingest_asset(
+    asset_store, asset, *, klass: str, tags=None, source: str = "ai",
+    status: str = "in_review", file=None,
+):
+    """Bring a file-backed asset (decorative or sourced) into the asset library
+    (Phase 4 #4). Runs the media-policy gate first — a decorative asset must be
+    content-free; a sourced one must carry vetted rights — then materialises the
+    durable file (built from the spec for an svg:/diffusion: generator, or copied
+    in for a sourced external file) and stores a LibraryAsset for review + reuse."""
+    import shutil
+
+    from ..store.assetstore import KLASSES, LibraryAsset
+    from .media_policy import check_asset
+
+    if klass not in KLASSES:
+        raise ValueError(f"unknown asset class {klass!r} (expected one of {KLASSES})")
+    problems, _ = check_asset(asset)
+    if problems:
+        raise ValueError("media policy: " + "; ".join(problems))
+
+    dest = None
+    if file is not None:                       # sourced: copy the provided file in
+        src = Path(file)
+        dest = asset_store.files_dir / f"{asset.id}{src.suffix or '.bin'}"
+        shutil.copyfile(src, dest)
+    elif asset.generator:                      # decorative/diffusion: build from the spec
+        build_asset(asset, outdir=asset_store.files_dir)
+        dest = asset_store.files_dir / f"{asset.id}.png"
+
+    la = LibraryAsset(
+        id=asset.id, asset=asset, klass=klass, tags=list(tags or []),
+        file=str(dest) if dest else None, source=source, status=status,
+    )
+    return asset_store.upsert(la)
+
+
 def _produce_content_item(
     store: ReviewStore,
     idea: ReviewItem,

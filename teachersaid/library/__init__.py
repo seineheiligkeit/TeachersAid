@@ -26,6 +26,7 @@ from typing import Callable
 from ..demo import strahlung, worked_examples
 from ..schema.worksheet import WorksheetContent
 from . import bio_immunsystem
+from .decorative import seed_assets  # noqa: F401 — re-exported (decorative kit seeder)
 
 
 @dataclass(frozen=True)
