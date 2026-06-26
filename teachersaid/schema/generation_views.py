@@ -56,6 +56,7 @@ class GenTaskBlock(BaseModel):
     payload: TaskPayload | None = None
     response: ResponseSpec
     cognitive_level: str
+    difficulty: int | None = None  # 1/2/3 author estimate (optional; 3d)
     dimensions: list[str] = Field(default_factory=list)
     content_area: str | None = None
     serves: list[Serves] = Field(default_factory=list)
@@ -131,6 +132,7 @@ def _task_to_canonical(g: GenTaskBlock) -> TaskBlock:
         payload=g.payload,
         response=g.response,
         cognitive_level=g.cognitive_level,
+        difficulty=g.difficulty,
         dimensions=g.dimensions,
         content_area=g.content_area,
         serves=g.serves,

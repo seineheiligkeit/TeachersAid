@@ -179,11 +179,17 @@ Zufall"* — that's why the KB path exists). `topic` is always the display title
 
 `orch.compose_worksheet` lands it as a content item (`source="compose"`); dashboard **Inhalte** has an
 "Arbeitsblatt zusammenstellen" form with a **Kompetenzbereich** picker (`GET /api/kompetenzbereiche`);
-`POST /api/compose` (accepts `topic` and/or `kompetenzbereich`). **No optimizer, no difficulty
-calibration yet** (Phase 3d). A composed sheet is a `WorksheetContent`, so rendering is unchanged.
+`POST /api/compose` (accepts `topic` and/or `kompetenzbereich`). **No optimizer**, but selection is
+now angle-aware (3b) and **difficulty-calibrated** (3d). A composed sheet is a `WorksheetContent`, so
+rendering is unchanged.
 
 **Phase 3 progress** (see `Documents/block-library-design.md §8`): **3a** (scope/richness variants),
-**3b** (angle-aware composition), and **3c** (assets travel with blocks) are built. *3a:* `compact`/
+**3b** (angle-aware composition), **3c** (assets travel with blocks), and **3d** (difficulty calibration)
+are built (only **3e** coherence/LLM-framing remains). *3d:* an honest, never-measured `difficulty` (1–3,
+author/SME estimate; `pipeline/difficulty.py`) — when unset, derived from the cognitive level's
+Anforderungsbereich (Reproduktion 1 / Transfer 2 / Reflexion 3). Surfaced in `DepthProfile.by_difficulty`,
+warned on when flat (verify), and used by `compose` to **seed one block per band** so a tight budget spans
+easy→stretch instead of greedily filling from the easy end. *3a:* `compact`/
 `standard`/`extended` siblings share a `family`; the composer picks the variant matching the envelope
 (einzelstunde→compact … block→extended), so envelopes differ in depth. Produce variants via
 `orch.ingest_scope_variant` + `tools/scope_variants.py`. *3b:* competences fix WHICH blocks are eligible;

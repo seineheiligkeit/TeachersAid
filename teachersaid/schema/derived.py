@@ -20,6 +20,7 @@ class DepthProfile(BaseModel):  # DERIVED over all TaskBlocks
     model_config = ConfigDict(extra="forbid")
     by_level: dict[str, int] = Field(default_factory=dict)
     by_dimension: dict[str, int] = Field(default_factory=dict)
+    by_difficulty: dict[str, int] = Field(default_factory=dict)  # Anforderungsband 1/2/3 (3d)
     minutes_total: int = 0
     minutes_resource_independent: int = 0
 

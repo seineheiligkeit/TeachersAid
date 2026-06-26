@@ -25,6 +25,7 @@ from ..schema.worksheet import (
     WorksheetContent,
     WorksheetMeta,
 )
+from .difficulty import effective_difficulty
 from .plan import _ENVELOPE_MINUTES
 from .resolve import resolve, resolve_kompetenzbereich
 
@@ -131,14 +132,24 @@ def compose(
             seen_family.add(b.family)
         picked.append(b)
 
-    # greedy time-fit (always keep at least one)
+    # difficulty-calibrated time-fit (Phase 3d): seed the top-priority block of each
+    # Anforderungsband (1/2/3) that fits — so a tight budget spans easy→stretch rather
+    # than greedily filling from the easy end — then fill the rest by priority.
     budget = _ENVELOPE_MINUTES.get(envelope, 100)
-    chosen, spent = [], 0
+    chosen, spent, chosen_ids = [], 0, set()
+    for band in (1, 2, 3):
+        cand = next((b for b in picked if b.id not in chosen_ids
+                     and effective_difficulty(b.block) == band), None)
+        if cand:
+            m = getattr(cand.block, "est_minutes", 0) or 0
+            if not chosen or spent + m <= budget:
+                chosen.append(cand); chosen_ids.add(cand.id); spent += m
     for b in picked:
+        if b.id in chosen_ids:
+            continue
         m = getattr(b.block, "est_minutes", 0) or 0
-        if not chosen or spent + m <= budget:
-            chosen.append(b)
-            spent += m
+        if spent + m <= budget:
+            chosen.append(b); chosen_ids.add(b.id); spent += m
     chosen.sort(key=lambda b: COGNITIVE_RANK.get(b.cognitive_level, 9))
 
     # up to 2 readable infos + up to 1 figure as context (so a figure's asset travels);

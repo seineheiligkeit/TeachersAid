@@ -25,21 +25,27 @@ def _task_blocks(content: WorksheetContent):
 
 def compute_depth(content: WorksheetContent) -> DepthProfile:
     """Cognitive profile over all TaskBlocks. by_dimension counts the PRIMARY
-    dimension (dimensions[0]) per task — the 'primary first' convention (§8)."""
+    dimension (dimensions[0]) per task — the 'primary first' convention (§8).
+    by_difficulty (3d) counts the Anforderungsband (effective difficulty 1/2/3)."""
+    from .difficulty import effective_difficulty
+
     by_level: dict[str, int] = defaultdict(int)
     by_dimension: dict[str, int] = defaultdict(int)
+    by_difficulty: dict[str, int] = defaultdict(int)
     minutes_total = 0
     minutes_ri = 0
     for b in _task_blocks(content):
         by_level[b.cognitive_level] += 1
         if b.dimensions:
             by_dimension[b.dimensions[0]] += 1
+        by_difficulty[str(effective_difficulty(b))] += 1
         minutes_total += b.est_minutes
         if not (b.flags and b.flags.equipment_dependent):
             minutes_ri += b.est_minutes
     return DepthProfile(
         by_level=dict(by_level),
         by_dimension=dict(by_dimension),
+        by_difficulty=dict(by_difficulty),
         minutes_total=minutes_total,
         minutes_resource_independent=minutes_ri,
     )

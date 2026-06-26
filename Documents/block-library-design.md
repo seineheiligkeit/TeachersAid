@@ -148,12 +148,15 @@ aus Lehrplan" (suggest blocks for the empty cells).
      spec(s) for its `asset_refs`; `harvest()` captures them; `compose()` aggregates the chosen blocks'
      assets into `WorksheetContent.assets`; the renderer (already asset-aware) builds them. *Unlocks:*
      composed sheets include their figures/data. *Size:* small–medium, self-contained.
-   - **3d · Difficulty calibration (the open hard problem).** *Problem:* no difficulty signal beyond
-     `cognitive_level` + `est_minutes`. *Change (honest, staged):* a `difficulty` field
-     (LLM/author-estimated, SME-adjustable, e.g. 1–3) surfaced in selection + the DepthProfile; a
-     `DepthTarget` can request a mix. *Caveat:* real psychometric calibration needs student-response data,
-     which we deliberately don't collect — so this stays an SME-refined estimate, not a measured value.
-     *Size:* medium, inherently approximate.
+   - **3d · Difficulty calibration — ✅ built (26 Jun 2026).** *Built (honest, staged):* a `difficulty`
+     field (1–3, author/SME estimate, `TaskBlock.difficulty`) — when unset, `pipeline/difficulty.py`
+     derives it from the **Anforderungsbereich** of `cognitive_level` (Reproduktion 1 / Transfer 2 /
+     Reflexion 3), so every task has an *effective* difficulty and an explicit estimate overrides it.
+     Surfaced in `DepthProfile.by_difficulty`; `verify` warns (advisory) on a flat spectrum; `compose`
+     **seeds one block per band** before filling, so a tight budget spans easy→stretch rather than
+     crowding out the stretch. *Caveat (kept):* never measured — we collect no student-response data, so
+     this is an SME-refined estimate, not a psychometric value. (A `DepthTarget` difficulty-mix request is
+     a natural future extension; the default band-spanning calibration is what's built.)
    - **3e · Coherence & framing pass.** *Problem:* compose framing is a fixed template + generic Kernfrage,
      no transitions; cross-source coherence is untested. *Change:* an optional LLM framing pass (Kernfrage
      + intro + transitions for the *chosen* set) — a deliberate shift from the no-LLM composer. *Unlocks:*

@@ -64,6 +64,16 @@ def verify(
         if b.cognitive_level not in COGNITIVE_RANK:
             problems.append(f"{b.id}: invalid cognitive_level '{b.cognitive_level}'")
 
+    # difficulty calibration (3d): flag a flat Anforderungs-spectrum (advisory)
+    from .difficulty import DIFFICULTY_LABEL, effective_difficulty
+    task_blocks = [b for b in content.iter_blocks() if b.role == Role.TASK]
+    diffs = {effective_difficulty(b) for b in task_blocks}
+    if len(task_blocks) >= 3 and len(diffs) == 1:
+        warnings.append(
+            f"Anforderungsniveau flach: alle {len(task_blocks)} Aufgaben auf "
+            f"'{DIFFICULTY_LABEL[next(iter(diffs))]}' — kein Spektrum"
+        )
+
     # depth target met?
     if plan is not None and plan.depth_target.min_at_or_above:
         target = plan.depth_target.min_at_or_above

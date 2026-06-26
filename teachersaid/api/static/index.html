@@ -327,8 +327,11 @@ function nachweis(n){
 function depth(d){
   const order=["remember","understand","apply","analyze","evaluate","create"];
   const bars = order.filter(l=>d.by_level[l]).map(l=>`<div>${l}: <span class="bars" style="width:${14*d.by_level[l]}px"></span> ${d.by_level[l]}</div>`).join("");
+  const dl={1:"leicht",2:"mittel",3:"anspruchsvoll"};
+  const diff=d.by_difficulty?[1,2,3].filter(k=>d.by_difficulty[k]).map(k=>`${dl[k]}: ${d.by_difficulty[k]}`).join(" · "):"";
   return `<div class="card" style="margin-top:10px"><h2>Tiefenprofil (abgeleitet)</h2>${bars}
     <p>Dimensionen: ${Object.entries(d.by_dimension).map(([k,v])=>k+":"+v).join(" · ")}</p>
+    ${diff?`<p>Anforderung (geschätzt): ${diff}</p>`:""}
     <p class="muted">Zeit gesamt ${d.minutes_total}′ · materialunabhängig ${d.minutes_resource_independent}′</p></div>`;
 }
 function showpdf(id,kind){ const f=$("#pdfframe"); if(f) f.src=`/api/items/${id}/pdf/${kind}`; }

@@ -129,6 +129,9 @@ class TaskBlock(BlockBase):
     payload: TaskPayload | None = None
     response: ResponseSpec
     cognitive_level: str  # CognitiveLevel value (the depth contract)
+    difficulty: int | None = None  # 1 leicht · 2 mittel · 3 anspruchsvoll — an author/SME
+    # ESTIMATE (never measured: we collect no student data), orthogonal to cognitive_level;
+    # None ⇒ derived from the Anforderungsbereich of cognitive_level (see pipeline/difficulty.py)
     dimensions: list[DimensionRef] = Field(default_factory=list)  # primary first
     content_area: str | None = None  # subject content axis where it exists (Math)
     serves: list[Serves] = Field(default_factory=list)
@@ -143,6 +146,13 @@ class TaskBlock(BlockBase):
     @classmethod
     def _collapse(cls, v):
         return collapse(v) if v is not None else v
+
+    @field_validator("difficulty")
+    @classmethod
+    def _difficulty_range(cls, v):
+        if v is not None and v not in (1, 2, 3):
+            raise ValueError("difficulty must be 1, 2 or 3 (leicht/mittel/anspruchsvoll)")
+        return v
 
 
 Block = Annotated[InfoBlock | TaskBlock, Field(discriminator="role")]
