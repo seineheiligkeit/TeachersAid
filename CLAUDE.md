@@ -180,12 +180,17 @@ Zufall"* — that's why the KB path exists). `topic` is always the display title
 `orch.compose_worksheet` lands it as a content item (`source="compose"`); dashboard **Inhalte** has an
 "Arbeitsblatt zusammenstellen" form with a **Kompetenzbereich** picker (`GET /api/kompetenzbereiche`);
 `POST /api/compose` (accepts `topic` and/or `kompetenzbereich`). **No optimizer**, but selection is
-now angle-aware (3b) and **difficulty-calibrated** (3d). A composed sheet is a `WorksheetContent`, so
-rendering is unchanged.
+now angle-aware (3b) and **difficulty-calibrated** (3d), and an **optional LLM framing pass** (3e,
+`pipeline/frame.py`, used by `orch.compose_worksheet` when a key/generator is available) writes a coherent
+Kernfrage + intro + per-task transitions AROUND the vetted blocks (tasks untouched → no-drift; offline ⇒
+the template framing stands). A composed sheet is a `WorksheetContent`, so rendering is unchanged.
 
 **Phase 3 progress** (see `Documents/block-library-design.md §8`): **3a** (scope/richness variants),
-**3b** (angle-aware composition), **3c** (assets travel with blocks), and **3d** (difficulty calibration)
-are built (only **3e** coherence/LLM-framing remains). *3d:* an honest, never-measured `difficulty` (1–3,
+**3b** (angle-aware composition), **3c** (assets travel with blocks), **3d** (difficulty calibration), and **3e** (coherence/LLM framing)
+are built — **all Phase-3 composer refinements done.** *3e:* an optional LLM pass (`pipeline/frame.py`,
+graceful no-op offline) writes a coherent Kernfrage + orienting intro + a one-line lead-in before each
+task, purely as connective framing around the fixed blocks — no new tasks/facts, vetted task content
+untouched. *3d:* an honest, never-measured `difficulty` (1–3,
 author/SME estimate; `pipeline/difficulty.py`) — when unset, derived from the cognitive level's
 Anforderungsbereich (Reproduktion 1 / Transfer 2 / Reflexion 3). Surfaced in `DepthProfile.by_difficulty`,
 warned on when flat (verify), and used by `compose` to **seed one block per band** so a tight budget spans

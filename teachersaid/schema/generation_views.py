@@ -235,6 +235,23 @@ class GenArrangementBody(BaseModel):
     competence_anchors: list[GenCompetenceAnchor] = Field(default_factory=list)
 
 
+class GenTransition(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    block_id: str
+    text: str
+
+
+class GenComposeFraming(BaseModel):
+    """Phase 3e: the connective FRAMING an LLM writes AROUND already-vetted, fixed
+    composed blocks — a coherent Kernfrage + orienting intro + a per-task lead-in.
+    Never new tasks/facts (the blocks carry the content); applied by pipeline/frame.py,
+    nothing is up-converted, so the no-drift guarantee holds."""
+    model_config = ConfigDict(extra="forbid")
+    kernfrage: str
+    intro: str
+    transitions: list[GenTransition] = Field(default_factory=list)
+
+
 def arrangement_body_to_canonical(body: GenArrangementBody, *, meta, subject_model):
     """Up-convert a generated arrangement body to a `Lernarrangement` (DERIVED fields
     left empty; pipeline.assemble_arrangement fills them). Each role's material reuses

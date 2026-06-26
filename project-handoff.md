@@ -37,13 +37,21 @@ German (or a target language for Fremdsprache). Read this, then the docs in the 
 >    parallel to the block library), and the dashboard **Abbildungen** asset-review tab. Roadmap +
 >    product principle: [Documents/schema-roadmap-v0.4-v0.5.md].
 >
-> **Where to pick up next (fresh session):** Phase **5 — Lernarrangements** (the v0.5 object, now unblocked):
-> schema → a hand-authored **Geographie (GWB)** hero → `renderTeacherOrchestration` → generation; it reaches
-> the oral/social/enactive competences a worksheet can't. Carry-over from Phase 3 folds in where natural: **3b**
-> (angle/Kernfrage-aware composition), **3d** (difficulty calibration — the open one), **3e** (coherence/LLM
-> framing). Also the **2026/27 Fassung refresh** (§2 — the current Fassung expires 2026-08-31). No
-> `ANTHROPIC_API_KEY` needed — generation runs via subagents. Run: `pip install -e ".[dev]"`,
-> `python -m pytest -q` (79 tests), `python -m teachersaid` (dashboard).
+> 8. **Phase 5 (Lernarrangement v0.5) COMPLETE + all Phase-3 carry-overs (3a–3e) done (26 June 2026).**
+>    The v0.5 sibling object ships end-to-end: schema → the GWB Gemeinderat-Planspiel hero →
+>    `renderTeacherOrchestration` → dashboard **Arrangements** tab → generation (`ingest_arrangement`; a first
+>    subagent push of 4 arrangements). Composer refinements 3a–3e are all built (angle-aware + difficulty-
+>    calibrated selection + an optional LLM framing pass).
+>
+> **Where to pick up next (fresh session):** the engine is feature-complete through v0.5; the live frontiers
+> are **HITL review of the staged library** (the breadth worksheets, figure worksheets, scope-variants,
+> decorative assets, and arrangements all sit `in_review` in the dashboard) and the **content-figure diffusion
+> experiment** (brief at [Documents/diffusion-figures-handover.md] — gauge the hallucination rate, then build
+> the vetting lane). The **2026/27 Fassung refresh** (§2) is **intentionally deferred**: the next Fassung
+> arrives with the new school year and is expected to be a tiny increment; it becomes a real task only when new
+> *foundational* guidelines are published in full text (not yet available). No `ANTHROPIC_API_KEY` needed —
+> generation runs via subagents. Run: `pip install -e ".[dev]"`, `python -m pytest -q` (98 tests),
+> `python -m teachersaid` (dashboard).
 
 ---
 

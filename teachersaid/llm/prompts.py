@@ -8,11 +8,52 @@ enums) so the generation view stays a robust structured-output contract.
 from __future__ import annotations
 
 from ..schema.competence import SubjectCompetenceModel
-from ..schema.enums import CORE_TASK_KINDS
+from ..schema.enums import CORE_TASK_KINDS, Role
 from ..schema.worksheet import LehrplanResolution
 from ..pipeline.plan import WorksheetPlan
 
 _COGNITIVE = ["remember", "understand", "apply", "analyze", "evaluate", "create"]
+
+
+def _prompt_text(b) -> str:
+    raw = getattr(b, "prompt", "") or ""
+    return "".join(getattr(r, "text", "") for r in raw) if isinstance(raw, list) else str(raw)
+
+
+def build_framing_system() -> str:
+    """Phase 3e: the LLM writes connective framing around fixed, vetted composed blocks."""
+    return (
+        "You write the connective FRAMING for a worksheet that has been composed from "
+        "already-vetted, fixed task blocks. Your job is to make the sheet read as one "
+        "coherent lesson. Hard rules:\n"
+        "- German, AHS Unterstufe level, student-facing: never mention competences, "
+        "dimensions, or the Lehrplan.\n"
+        "- DO NOT change, add, remove, answer, or restate the tasks. You write ONLY: a "
+        "`kernfrage` (one driving question for the whole sheet), a 1–2 sentence `intro` "
+        "that orients the student, and a short (≤1 sentence) lead-in before each task "
+        "that connects it to the throughline.\n"
+        "- Introduce NO new facts, numbers, or claims — connective/orienting language "
+        "only (the tasks carry the content). When unsure, stay generic.\n"
+        "- Each transition's `block_id` MUST be one of the given task ids; skip a task "
+        "if you have nothing useful to bridge with."
+    )
+
+
+def build_framing_user(content) -> str:
+    m = content.meta
+    lines = [f"Topic / title: {m.title}", f"Subject: {m.subject}, Klasse {m.klasse}"]
+    for sec in content.sections:
+        ov = getattr(sec, "teacher_overview", None)
+        if ov and ov.throughline:
+            lines.append(f"Intended throughline (teacher's Roter Faden): {ov.throughline}")
+    lines.append("\nThe fixed tasks, in order — write a lead-in for each (by block_id):")
+    for sec in content.sections:
+        for b in sec.blocks:
+            if b.role == Role.TASK:
+                lines.append(f"  - {b.id}: {_prompt_text(b)[:200]}")
+    lines.append("\nWrite the kernfrage, the intro, and one transition per task "
+                 "(block_id + a one-sentence German lead-in).")
+    return "\n".join(lines)
 
 
 def build_system(model: SubjectCompetenceModel) -> str:

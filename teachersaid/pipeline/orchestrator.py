@@ -15,7 +15,7 @@ from datetime import date
 from pathlib import Path
 
 from .. import config
-from ..llm.client import StructuredGenerator
+from ..llm.client import StructuredGenerator, default_generator
 from ..rendering.homework import render_homework
 from ..rendering.qa_raster import rasterise
 from ..rendering.student_sheet import render_student_sheet
@@ -159,13 +159,18 @@ def compose_worksheet(
     envelope: str = "doppelstunde",
     *,
     kompetenzbereich: str | None = None,
+    generator: StructuredGenerator | None = None,
     today: date | None = None,
 ) -> ReviewItem:
     """Assemble a worksheet from approved library blocks (Phase 2) into a content
     item for Gate-2 review. Selection happens in pipeline/compose (by an explicit
-    Kompetenzbereich when given, else by the topic); the existing assemble(+derive) /
-    verify / render stages then run unchanged."""
+    Kompetenzbereich when given, else by the topic). When an LLM is available
+    (`generator` injected or an API key set) an optional **framing pass** (Phase 3e)
+    writes a coherent Kernfrage + intro + transitions around the vetted blocks; offline
+    the deterministic template framing stands. assemble(+derive) / verify / render then
+    run unchanged."""
     from .compose import compose
+    from .frame import frame_composition
 
     display = (topic or "").strip() or kompetenzbereich or "Arbeitsblatt"
     item = ReviewItem(
@@ -179,6 +184,8 @@ def compose_worksheet(
             subject, klasse, topic, envelope,
             kompetenzbereich=kompetenzbereich, block_store=block_store, today=today,
         )
+        if generator is not None or _has_key():
+            frame_composition(content, generator=generator or default_generator())
         item.resolution = res
         assemble(content, res)
         report = verify(content, res)

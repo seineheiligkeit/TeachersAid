@@ -212,5 +212,7 @@ angle (= topic minus the KB's words); `compose` scores blocks by deterministic t
 on-angle ones (fallback to cognitive ordering when no angle). **3d (difficulty calibration) ✅ done
 (26 Jun 2026)** — an honest `difficulty` 1–3 (author/SME estimate; default = the Anforderungsbereich of
 `cognitive_level`), in `DepthProfile.by_difficulty`, verify-warned when flat, and used by `compose` to
-seed one block per band (span easy→stretch). Never measured (no student data). Only **3e** (coherence/LLM
-framing) remains.
+seed one block per band (span easy→stretch). Never measured (no student data). **3e (coherence/LLM
+framing) ✅ done (26 Jun 2026)** — `pipeline/frame.py`, an optional LLM pass (`orch.compose_worksheet`,
+no-op offline) writing a coherent Kernfrage + intro + per-task lead-ins AROUND the vetted blocks (no-drift;
+`GenComposeFraming`, mockable). **All Phase-3 carry-overs (3a–3e) are now complete.**

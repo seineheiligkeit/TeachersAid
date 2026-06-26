@@ -157,10 +157,13 @@ aus Lehrplan" (suggest blocks for the empty cells).
      crowding out the stretch. *Caveat (kept):* never measured — we collect no student-response data, so
      this is an SME-refined estimate, not a psychometric value. (A `DepthTarget` difficulty-mix request is
      a natural future extension; the default band-spanning calibration is what's built.)
-   - **3e · Coherence & framing pass.** *Problem:* compose framing is a fixed template + generic Kernfrage,
-     no transitions; cross-source coherence is untested. *Change:* an optional LLM framing pass (Kernfrage
-     + intro + transitions for the *chosen* set) — a deliberate shift from the no-LLM composer. *Unlocks:*
-     sheets that read as a lesson, not a pile of on-target tasks. *Size:* medium.
+   - **3e · Coherence & framing pass — ✅ built (26 Jun 2026).** *Built:* `pipeline/frame.py::frame_composition`
+     — an OPTIONAL LLM pass (`orch.compose_worksheet` runs it when a generator is injected or a key is set;
+     graceful no-op offline) that writes a coherent Kernfrage + orienting intro + a one-line lead-in before
+     each task. It writes only the connective framing AROUND the vetted blocks — no new tasks/facts, the
+     TaskBlocks (prompts/answers/competences) untouched, so the no-drift guarantee holds. Structured output
+     `GenComposeFraming`; mockable (tests inject a fake generator). *Unlocks:* composed sheets that read as a
+     lesson, not a pile of on-target tasks. **All Phase-3 composer refinements (3a–3e) are now built.**
 4. **Assets (Phase 4) — ✅ COMPLETE (26 Jun 2026).** The asset layer is operationalized: a parameterized,
    correct-by-construction **code-generator library** (pluggable backends — `matplotlib:` content recipes +
    `svg:` decorative kit now; `diffusion:` seam ready for the SME's image-gen agent, brief in
