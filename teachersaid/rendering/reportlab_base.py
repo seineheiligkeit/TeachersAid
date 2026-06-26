@@ -192,5 +192,32 @@ def grid_table(data: list[list[str]], width: float, header: bool = True) -> Tabl
     return t
 
 
+def wrapped_table(data: list[list], col_widths: list[float], *, header: bool = True) -> Table:
+    """A table whose cells WRAP (Paragraph cells) — for longer text than grid_table.
+    A cell may be a plain string (escaped here) or a pre-built Paragraph (e.g. raw_para
+    when you need inline markup)."""
+    bold = f"{BASE_FONT}-Bold" if BASE_FONT == "Carlito" else "Helvetica-Bold"
+    cell = ParagraphStyle("ta_cell", fontName=BASE_FONT, fontSize=9, leading=12)
+    head = ParagraphStyle("ta_cellh", fontName=bold, fontSize=9, leading=12)
+    body = []
+    for i, row in enumerate(data):
+        st = head if (header and i == 0) else cell
+        body.append([c if isinstance(c, Paragraph) else Paragraph(html.escape(str(c)), st)
+                     for c in row])
+    t = Table(body, colWidths=col_widths)
+    cmds = [
+        ("GRID", (0, 0), (-1, -1), 0.5, colors.HexColor("#999999")),
+        ("VALIGN", (0, 0), (-1, -1), "TOP"),
+        ("TOPPADDING", (0, 0), (-1, -1), 3),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 5),
+        ("LEFTPADDING", (0, 0), (-1, -1), 5),
+        ("RIGHTPADDING", (0, 0), (-1, -1), 5),
+    ]
+    if header:
+        cmds.append(("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#eef2f7")))
+    t.setStyle(TableStyle(cmds))
+    return t
+
+
 def spacer(h_mm: float = 2.0) -> Spacer:
     return Spacer(1, h_mm * mm)

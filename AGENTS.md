@@ -199,13 +199,17 @@ primitive and a plain worksheet is the n=1 case. Beyond stapled sheets, `compete
 (`pipeline/arrange.py`): `assemble_arrangement` assembles each role's material, then the arrangement
 Nachweis = ⋃ role exercised competences **+ the anchors** (a competence covered *only* by an anchor is the
 v0.5 payoff); `verify_arrangement` verifies every role as a worksheet + arrangement rules (groupings,
-anchor served_by/competence). Rendering will reuse the worksheet path entirely (no second renderer):
-`renderArrangement = renderTeacherOrchestration + roles.map(renderStudentSheet)` (Phase 5b, not built).
-**Scope line:** we make the material bundle + a teacher run-guide; we do **not** run the room.
+anchor served_by/competence). **Rendering reuses the worksheet path entirely (no second renderer):**
+`render_teacher_orchestration` (`rendering/arrangement.py`, PURE over schema — the run-guide: case,
+phase timeline, roles, shared product + rubric, debrief, the anchor table, derived Nachweis) + each role
+via `render_student_sheet`/`render_teacher_guide`. The asset-building bundle `render_arrangement`
+(`pipeline/arrange.py`) = orchestration + per-role student handout + teacher copy — it lives in the
+pipeline (not `rendering/`) because it builds asset images; the renderers stay pure. **Scope line:** we
+make the material bundle + a teacher run-guide; we do **not** run the room.
 **Hero:** `demo/gwb_standort.py` — a GWB grade-3 Gemeinderat-Planspiel (4 roles; ENT.03/06/07+ZEN.03 on
-the sheets; ENT.05 via the debate, ENT.01 via the council decision as anchors). **Phase 5a done:**
-schema + derive/assemble/verify + the hero, verify-clean (`tests/test_arrangement.py`). **Next:** 5b
-renderTeacherOrchestration, 5c dashboard surface, 5d generation.
+the sheets; ENT.05 via the debate, ENT.01 via the council decision as anchors). **Phase 5a + 5b done:**
+schema + derive/assemble/verify + the hero + the run-guide renderer, verify-clean & rasterised
+(`tests/test_arrangement.py`). **Next:** 5c dashboard surface, 5d generation.
 
 ## Breadth generation — subagents → ingest (the seam, no API key)
 

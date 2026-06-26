@@ -191,8 +191,11 @@ the room.
 product models) · `pipeline/arrange.py` (`assemble_arrangement` → ⋃ role Nachweise + anchors; aggregate
 depth; `verify_arrangement`) · the GWB Gemeinderat-Planspiel hero `demo/gwb_standort.py` (4 roles serving
 ENT.03/06/07+ZEN.03; ENT.05 anchored to the debate, ENT.01 to the council decision) — verify-clean,
-`tests/test_arrangement.py`. **Next: 5b** `renderTeacherOrchestration` (+ role `renderStudentSheet`), then
-5c dashboard surface, 5d generation.
+`tests/test_arrangement.py`. **Phase 5b DONE:** `rendering/arrangement.py::render_teacher_orchestration`
+(PURE — the run-guide: case, phase timeline, roles, shared product + rubric, debrief, the anchor table,
+derived Nachweis) + `pipeline/arrange.py::render_arrangement` (the bundle: orchestration + per-role student
+handout + teacher copy, reusing `render_student_sheet`/`render_teacher_guide`; builds assets, so it lives
+in the pipeline). Run-guide renders + rasterises (4 pp). **Next: 5c** dashboard surface, **5d** generation.
 
 Carry-over from Phase 3: 3b (angle-aware composition), 3d (difficulty), 3e (coherence framing) fold in where
 natural, reprioritized behind Phase 4/5.

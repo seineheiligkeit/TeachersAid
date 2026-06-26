@@ -8,6 +8,7 @@ reaches (ENT.05 via the debate, ENT.01 via the shared council decision).
 from __future__ import annotations
 
 from datetime import date
+from pathlib import Path
 
 from teachersaid.demo import gwb_standort
 from teachersaid.pipeline.arrange import assemble_arrangement, verify_arrangement
@@ -76,6 +77,25 @@ def test_roundtrip_and_format():
     again = Lernarrangement.model_validate(arr.model_dump())
     assert again.meta.title == arr.meta.title
     assert again.meta.format == "simulation_game" and len(again.roles) == 4
+
+
+def test_render_arrangement_bundle(tmp_path):
+    """5b: the run-guide renders + rasterises, and every role yields a student handout
+    and a teacher copy (renderArrangement = orchestration + roles.map(studentSheet))."""
+    from teachersaid.pipeline.arrange import render_arrangement
+    from teachersaid.rendering.qa_raster import rasterise
+
+    arr, _ = _resolved()
+    out = render_arrangement(arr, tmp_path)
+
+    orch = Path(out["orchestration"])
+    assert orch.exists() and orch.stat().st_size > 1500
+    assert len(out["roles"]) == 4
+    for r in out["roles"]:
+        assert Path(r["student"]).exists() and Path(r["teacher"]).exists()
+    # the run-guide is a valid, multi-page PDF
+    pages = rasterise(orch, out_dir=tmp_path / "raster")
+    assert len(pages) >= 2 and all(p.exists() for p in pages)
 
 
 def test_verify_catches_bad_anchor_and_grouping():

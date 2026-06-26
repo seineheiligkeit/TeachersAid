@@ -25,9 +25,11 @@ def _content_width() -> float:
     return A4[0] - 2 * rb.PAGE_MARGIN
 
 
-def _nachweis_story(content: WorksheetContent, S, width):
-    out = [PageBreak(), rb.para("Nachweis (abgeleitet)", S["heading"])]
-    n = content.nachweis
+def nachweis_story(nachweis, depth_profile, S, width, *, page_break: bool = True):
+    """Render a derived Nachweis + DepthProfile. Shared by the worksheet teacher
+    projection and the Lernarrangement run-guide (both carry the same DERIVED types)."""
+    out = ([PageBreak()] if page_break else []) + [rb.para("Nachweis (abgeleitet)", S["heading"])]
+    n = nachweis
     if n is None:
         out.append(rb.para("— nicht berechnet —", S["body"]))
         return out
@@ -51,7 +53,7 @@ def _nachweis_story(content: WorksheetContent, S, width):
             S["meta"],
         ))
 
-    dp = content.depth_profile
+    dp = depth_profile
     if dp is not None:
         out.append(rb.spacer(3))
         out.append(rb.para("Tiefenprofil (abgeleitet)", S["heading"]))
@@ -137,7 +139,7 @@ def build_pdf(
                 story += block_flowables(b, projection, S, width, assets)
 
     if projection == "teacher":
-        story += _nachweis_story(content, S, width)
+        story += nachweis_story(content.nachweis, content.depth_profile, S, width)
 
     doc.build(story)
     return out_path

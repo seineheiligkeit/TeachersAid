@@ -11,6 +11,7 @@ role tasks. As with a worksheet, these DERIVED fields are never authored by hand
 from __future__ import annotations
 
 from collections import defaultdict
+from pathlib import Path
 
 from ..schema.arrangement import GROUPINGS, SERVED_BY, Lernarrangement
 from ..schema.derived import CompetenceCoverage, DepthProfile, Nachweis
@@ -152,3 +153,31 @@ def verify_arrangement(
             problems.append(f"anchor '{a.competence_id}': invalid served_by '{a.served_by}'")
 
     return VerifyReport(ok=not problems, problems=problems, warnings=warnings)
+
+
+def render_arrangement(arr: Lernarrangement, out_dir, assets: dict | None = None) -> dict:
+    """Render the full bundle (the v0.5 contract): the teacher run-guide +, per role,
+    a student handout AND a teacher copy (with answers, for running the room). The
+    role sheets reuse the worksheet renderers untouched, so the no-drift guarantee
+    carries over. This lives in the pipeline (not rendering/) because it builds asset
+    images — the renderers themselves stay pure over schema."""
+    from ..rendering.arrangement import render_teacher_orchestration
+    from ..rendering.student_sheet import render_student_sheet
+    from ..rendering.teacher_guide import render_teacher_guide
+    from .assets import build_asset
+
+    out_dir = Path(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    all_assets: dict = dict(assets or {})
+    roles_out = []
+    for role in arr.roles:
+        radir = out_dir / f"role_{role.id}_assets"
+        rassets = {a.id: build_asset(a, outdir=radir)
+                   for a in role.material.assets if a.generator}
+        all_assets.update(rassets)
+        student = render_student_sheet(role.material, out_dir / f"role_{role.id}_student.pdf", rassets)
+        teacher = render_teacher_guide(role.material, out_dir / f"role_{role.id}_teacher.pdf", rassets)
+        roles_out.append({"id": role.id, "label": role.label,
+                          "student": str(student), "teacher": str(teacher)})
+    orch = render_teacher_orchestration(arr, out_dir / "orchestration.pdf", all_assets)
+    return {"orchestration": str(orch), "roles": roles_out}
