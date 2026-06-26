@@ -155,11 +155,14 @@ aus Lehrplan" (suggest blocks for the empty cells).
      no transitions; cross-source coherence is untested. *Change:* an optional LLM framing pass (Kernfrage
      + intro + transitions for the *chosen* set) — a deliberate shift from the no-LLM composer. *Unlocks:*
      sheets that read as a lesson, not a pile of on-target tasks. *Size:* medium.
-4. **Assets (Phase 4) — ⏳ IN PROGRESS (26 Jun 2026).** Operationalize the asset layer: a parameterized,
-   correct-by-construction **code-generator library** (pluggable backends `matplotlib:`/`svg:` now,
-   `diffusion:` via the SME's image-gen agent later), **math-as-asset** (mathtext), an asset library
-   (review/reuse) for decorative + sourced classes, `MediaPolicy` as the entry-gate, and re-enabled
-   asset-bearing task generation. Design + product principle ("platform consolidates a vetted library, not
+4. **Assets (Phase 4) — ✅ COMPLETE (26 Jun 2026).** The asset layer is operationalized: a parameterized,
+   correct-by-construction **code-generator library** (pluggable backends — `matplotlib:` content recipes +
+   `svg:` decorative kit now; `diffusion:` seam ready for the SME's image-gen agent, brief in
+   **[diffusion-handover.md](diffusion-handover.md)**), **math-as-asset** (mathtext), re-enabled asset-bearing
+   generation (#1), a **`MediaPolicy` entry-gate** (`pipeline/media_policy.py`, in `verify`: content-bearing →
+   code-gen/sourced, decorative → content-free) (#3), the **asset-review surface** (dashboard *Abbildungen*) +
+   an **asset library** for the file-backed decorative/sourced classes (`store/assetstore.py`, parallel to the
+   block library) (#2/#4). Design + product principle ("platform consolidates a vetted library, not
    live-generates") in **[schema-roadmap-v0.4-v0.5.md](schema-roadmap-v0.4-v0.5.md)** (Post-breadth roadmap).
 5. **Lernarrangements (Phase 5 = v0.5).** Now unblocked. schema → hand-authored **Geographie (GWB)** hero →
    `renderTeacherOrchestration` → generation. Reaches the oral/social/enactive competences worksheets can't.

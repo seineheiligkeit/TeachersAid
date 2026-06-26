@@ -28,12 +28,22 @@ German (or a target language for Fremdsprache). Read this, then the docs in the 
 >    composed sheets). *3a:* scope/richness variants — `compact`/`standard`/`extended` siblings in a
 >    `family`, so an envelope picks the matching depth (einzelstunde→compact … block→extended); seam
 >    `orch.ingest_scope_variant` + `tools/scope_variants.py` (demoed on Physik *Strahlung*).
+> 7. **Phase 4 — assets — COMPLETE (26 June 2026).** A pluggable, spec-driven **code-generator library**
+>    (`pipeline/assets.py`; generator id `<backend>:<recipe>`; `matplotlib:` content recipes + `svg:`
+>    decorative kit; `diffusion:` seam for the SME's image-gen agent — see
+>    **[Documents/diffusion-handover.md]**), **math-as-asset** (mathtext), asset-bearing generation re-enabled,
+>    a **`MediaPolicy` entry-gate** (`pipeline/media_policy.py`, runs in `verify`: content→code-gen/sourced,
+>    decorative→content-free), an **asset library** for the file-backed classes (`store/assetstore.py`,
+>    parallel to the block library), and the dashboard **Abbildungen** asset-review tab. Roadmap +
+>    product principle: [Documents/schema-roadmap-v0.4-v0.5.md].
 >
-> **Where to pick up next (fresh session):** Phase **3b** (angle/Kernfrage-aware composition), **3d**
-> (difficulty calibration — the open one), **3e** (coherence/LLM framing); scale 3a scope-variants beyond
-> Strahlung (`scope_variants.TARGETS` + a subagent run per KB); and the **2026/27 Fassung refresh** (§2 —
-> the current Fassung expires 2026-08-31). No `ANTHROPIC_API_KEY` needed — generation runs via subagents.
-> Run: `pip install -e ".[dev]"`, `python -m pytest -q` (55 tests), `python -m teachersaid` (dashboard).
+> **Where to pick up next (fresh session):** Phase **5 — Lernarrangements** (the v0.5 object, now unblocked):
+> schema → a hand-authored **Geographie (GWB)** hero → `renderTeacherOrchestration` → generation; it reaches
+> the oral/social/enactive competences a worksheet can't. Carry-over from Phase 3 folds in where natural: **3b**
+> (angle/Kernfrage-aware composition), **3d** (difficulty calibration — the open one), **3e** (coherence/LLM
+> framing). Also the **2026/27 Fassung refresh** (§2 — the current Fassung expires 2026-08-31). No
+> `ANTHROPIC_API_KEY` needed — generation runs via subagents. Run: `pip install -e ".[dev]"`,
+> `python -m pytest -q` (79 tests), `python -m teachersaid` (dashboard).
 
 ---
 

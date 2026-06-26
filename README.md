@@ -12,17 +12,18 @@ v0.5 is specced but out of scope. Working language is English; the product's out
 
 ```bash
 pip install -e .            # Python 3.11–3.14; or: pip install pydantic fastapi uvicorn anthropic reportlab matplotlib pillow pyyaml pymupdf
-python -m pytest -q         # 35 tests, all offline (no API key needed)
+python -m pytest -q         # 79 tests, all offline (no API key needed)
 python -m teachersaid seed  # seed the master-library examples (Physik/Biologie/Mathematik) into the review queue
 python -m teachersaid       # dashboard at http://127.0.0.1:8000
 ```
 
-The dashboard has four tabs: **Brainstorm** (rough ideas — add your own or "Vorschläge aus Lehrplan",
-approve/decline), **Inhalte** (an approved idea is *fleshed out* into a worksheet, reviewed two ways:
+The dashboard has six tabs: **Brainstorm** (rough ideas — add your own or "Vorschläge aus Lehrplan",
+approve/decline), **Bausteine** (the block library — review/approve the reusable blocks worksheets are
+composed from), **Inhalte** (an approved idea is *fleshed out* into a worksheet, reviewed two ways:
 **Blöcke** = the structured content object, and **Vorschau** = the rendered student/teacher/homework
-PDFs — approve into the library or request changes), **Bibliothek** (approved worksheets), and
-**Statistik** (per-subject coverage of the master library vs the catalog: tasks, worksheets, competences
-covered, what's still empty).
+PDFs — approve into the library or request changes), **Bibliothek** (approved worksheets), **Abbildungen**
+(the asset-review surface — decorative/sourced library assets to approve, plus every code-generated content
+figure rendered inline), and **Statistik** (per-subject coverage of the block library vs the catalog).
 
 The **master library** (`teachersaid/library/`) is a growing set of curated *gold* worksheet examples
 per subject — the quality bar, the few-shot seeds for generation, and the offline demo stock. `seed`

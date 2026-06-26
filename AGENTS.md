@@ -68,8 +68,8 @@ change — is in **`Documents/rendering-handoff-brief.md`**.
 | Resolve | `pipeline/resolve.py` | **deterministic** — verbatim competences + `grade_check` (the trust feature) against curated grounding; honest gap notes for anything uncurated |
 | Plan | `pipeline/plan.py` | mostly deterministic — envelope→minutes, block-spec skeleton + `DepthTarget` ladder. **The plan IS the idea-stage review artifact.** |
 | Generate | `pipeline/generate.py` + `llm/` | **LLM** — `messages.parse()` into a recursion-free generation view, then `to_canonical()` |
-| Assets | `pipeline/assets.py` | code-generated (matplotlib), correct-by-construction; `intentionally_flawed` assets are built **wrong on purpose and never "fixed"** |
-| Verify | `pipeline/verify.py` | rules (kinds/dimensions/coverage/depth/difficulty); LLM fact-check optional |
+| Assets | `pipeline/assets.py` | code-generated (matplotlib), correct-by-construction; `intentionally_flawed` assets are built **wrong on purpose and never "fixed"**. **Pluggable registry (Phase 4):** `Asset(generator, spec)` is a declarative request; builders register against a `<backend>:<recipe>` id (`@_generator`). Parameterized recipes read `spec` (`number_line`, `bar_chart`, `function_graph`, `math_formula` via mathtext); the **`diffusion:` backend** (Phase 4 #4) plugs in the same way: `register_diffusion_backend(fn)` wires the SME's image-gen agent; `build_asset` dispatches `diffusion:*` to it (offline → `DiffusionNotConfigured`, no silent slop). The agent's brief (contract + content-free rule + manifest) is **`Documents/diffusion-handover.md`**. A **decorative kit** (`svg:badge/banner/motif`, content-free, rasterised via PyMuPDF — no extra dep) ships now. **Entry-gate (Phase 4 #3):** `pipeline/media_policy.py` enforces the invariant — *content-bearing visuals must be code-gen or vetted-sourced; decorative must be content-free* — by classifying each asset's role+source against `DEFAULT_MEDIA_POLICY`; runs inside `verify`. **Asset library (Phase 4 #4):** `store/assetstore.py::AssetStore` (parallel to `BlockStore`) holds the **file-backed** classes (decorative + sourced) with tags/status/reuse; `orch.ingest_asset` gates + materialises + stores; `library/decorative.py::seed_assets` seeds the kit. Code-gen content assets stay as specs on blocks. |
+| Verify | `pipeline/verify.py` | rules (kinds/dimensions/coverage/depth/difficulty/**media-policy**); LLM fact-check optional |
 | Assemble + derive | `pipeline/assemble.py`, `pipeline/derive.py` | **deterministic** — `derive_nachweis` (coverage + auto-surfaced gaps), `compute_depth` (DepthProfile), `printable_coverage` |
 | Render | `rendering/*` | **deterministic** pure projections; QA-rastered via PyMuPDF |
 
@@ -180,9 +180,14 @@ Zufall"* — that's why the KB path exists). `topic` is always the display title
 `orch.compose_worksheet` lands it as a content item (`source="compose"`); dashboard **Inhalte** has an
 "Arbeitsblatt zusammenstellen" form with a **Kompetenzbereich** picker (`GET /api/kompetenzbereiche`);
 `POST /api/compose` (accepts `topic` and/or `kompetenzbereich`). **No optimizer, no difficulty
-calibration** (Phase 3: `scope` richness variants + calibration). A composed sheet is still a
-`WorksheetContent`, so rendering is unchanged — assets don't yet travel with blocks, so figure-info-blocks
-are skipped in composition for now.
+calibration yet** (Phase 3d). A composed sheet is a `WorksheetContent`, so rendering is unchanged.
+
+**Phase 3 progress** (see `Documents/block-library-design.md §8`): **3a** (scope/richness variants) and
+**3c** (assets travel with blocks) are built. *3a:* `compact`/`standard`/`extended` siblings share a
+`family`; the composer picks the variant matching the envelope (einzelstunde→compact … block→extended),
+so envelopes differ in depth. Produce variants via `orch.ingest_scope_variant` + `tools/scope_variants.py`.
+*3c:* `LibraryBlock` carries its `Asset` spec(s); `harvest` captures them; `compose` aggregates the chosen
+blocks' assets so figures (e.g. the Strahlung spectrum) now render in composed sheets.
 
 ## Breadth generation — subagents → ingest (the seam, no API key)
 
@@ -216,8 +221,11 @@ it is validated through the real generation seam and staged for HITL review.
 
 ## HITL dashboard (`api/` + `api/static/index.html`)
 
-Two review gates, one `ReviewItem` type (`stage` ∈ **brainstorm** | **content**); five tabs
-(Brainstorm · **Bausteine** · Inhalte · Bibliothek · Statistik — see the Block library section below).
+Two review gates, one `ReviewItem` type (`stage` ∈ **brainstorm** | **content**); six tabs
+(Brainstorm · **Bausteine** · Inhalte · Bibliothek · **Abbildungen** · Statistik — see the Block library
+section below). **Abbildungen** is the asset-review surface (Phase 4 #2/#4): file-backed library assets
+(decorative/sourced, with approve/reject) on top, and below, every code-generated content figure rendered
+inline (deduped by generator+spec, built on demand) for fächerübergreifende correctness/didactics review.
 
 ```
 Brainstorm (rough idea: topic + note, you or AI) ─approve─► flesh_out

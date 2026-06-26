@@ -172,7 +172,12 @@ Three asset classes, distinguished by *what is durable*:
 - **Decorative kit:** content-free, reusable; SVG/code first, diffusion (SME agent) when wired — both vetted.
   **DONE (Phase 4 #4):** `library/decorative.py` ships an `svg:` kit (`svg:badge/banner/motif`, rasterised
   via PyMuPDF — no extra dep); the **`diffusion:` backend seam** (`assets.register_diffusion_backend`)
-  takes the SME's image-gen agent, dispatched by `build_asset` (offline → `DiffusionNotConfigured`).
+  takes the SME's image-gen agent, dispatched by `build_asset` (offline → `DiffusionNotConfigured`). The
+  agent is handed a standalone brief — contract, content-free rule, style guide, asset manifest, review
+  loop — in **[diffusion-handover.md](diffusion-handover.md)** (not wired live; it generates from the doc).
+
+**Phase 4 is COMPLETE (26 Jun 2026): #1 asset-bearing generation, #2 asset-review surface, #3 MediaPolicy
+entry-gate, #4 decorative kit + diffusion seam + asset library. Next frontier: Phase 5.**
 
 ### Phase 5 — Lernarrangement (v0.5 above, now unblocked)
 Build order: schema → **one hand-authored hero exemplar in Geographie (GWB)** to set the quality bar →
