@@ -5,7 +5,9 @@ well-defined surface (the open hard problem), NOT a structural rewrite:
 * structural: task kinds + dimensions legal for the subject model;
 * coverage: every `serves` references a resolved competence;
 * depth: the DepthTarget ladder is actually met;
-* difficulty: every task has a positive time estimate and a cognitive level.
+* difficulty: every task has a positive time estimate and a cognitive level;
+* media policy: each asset satisfies the library-entry gate (content-bearing →
+  code-gen/vetted-sourced; decorative → content-free). See `media_policy.py`.
 An LLM fact-check of VerificationItems is optional and skipped without a key.
 """
 
@@ -17,6 +19,7 @@ from ..schema.enums import COGNITIVE_RANK, Role
 from ..schema.worksheet import LehrplanResolution, WorksheetContent
 from .assemble import validate_against_model
 from .derive import compute_depth
+from .media_policy import check_content
 from .plan import WorksheetPlan
 
 
@@ -38,6 +41,12 @@ def verify(
 
     # structural
     problems += validate_against_model(content)
+
+    # media policy: the asset library-entry gate (content-bearing must be correct,
+    # decorative must be content-free)
+    mp_problems, mp_warnings = check_content(content)
+    problems += mp_problems
+    warnings += mp_warnings
 
     # coverage: serves must reference resolved competences
     valid_ids = {c.id for c in resolution.competences}

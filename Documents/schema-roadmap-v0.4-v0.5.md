@@ -162,7 +162,10 @@ Three asset classes, distinguished by *what is durable*:
 - **Asset-as-reviewed-library** for the decorative + sourced classes (the *file* is durable): an asset store
   with status + tags + reuse, parallel to the block library. Code-gen assets stay as specs on blocks.
 - **`MediaPolicy` operationalized** as the per-subject entry-gate config (`must_be_code` / `must_be_sourced`
-  / `diffusion_ok`); it also steers generation.
+  / `diffusion_ok`); it also steers generation. **DONE (Phase 4 #3):** `pipeline/media_policy.py` —
+  `DEFAULT_MEDIA_POLICY` partitions roles per medium; `classify_source` → code/sourced/diffusion/none;
+  `check_content` runs inside `verify`, so a mis-sourced content asset (or a decorative asset claiming
+  content) blocks library entry like any verify problem. All 76 stored items + 33 block specs pass clean.
 - Re-enable **asset-bearing task generation** (breadth was text-only by *constraint*; now un-handbraked).
 - **Decorative kit:** content-free, reusable; SVG/code first, diffusion (SME agent) when wired — both vetted.
 
