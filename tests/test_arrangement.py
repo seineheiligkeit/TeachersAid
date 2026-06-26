@@ -106,3 +106,51 @@ def test_verify_catches_bad_anchor_and_grouping():
     rep = verify_arrangement(arr, res)
     assert any("unknown competence" in p for p in rep.problems)
     assert any("invalid grouping" in p for p in rep.problems)
+
+
+def test_stage_and_store_roundtrip(tmp_path, monkeypatch):
+    """5c: stage_arrangement assembles + verifies + renders + stores; upsert preserves
+    review status (re-seeding never un-approves)."""
+    import teachersaid.config as cfg
+    monkeypatch.setattr(cfg, "RUNS_DIR", tmp_path)
+    from teachersaid.pipeline.arrange import stage_arrangement
+    from teachersaid.store.arrangementstore import ArrangementStore
+
+    store = ArrangementStore(tmp_path / "arrangements")
+    rec = stage_arrangement(store, gwb_standort.build_arrangement(),
+                            arr_id="gwb", source="curated", today=IN)
+    assert rec.status == "in_review" and rec.verify_problems == []
+    assert rec.artifacts.orchestration and Path(rec.artifacts.orchestration).exists()
+    assert len(rec.artifacts.roles) == 4
+    s = rec.summary()
+    assert s["n_roles"] == 4 and s["n_anchors"] == 2 and s["covered"] >= 6
+
+    store.set_status("gwb", "approved")
+    rec2 = stage_arrangement(store, gwb_standort.build_arrangement(), arr_id="gwb", today=IN)
+    assert rec2.status == "approved"  # idempotent re-stage preserves status
+
+
+def test_api_arrangements(tmp_path, monkeypatch):
+    import teachersaid.config as cfg
+    monkeypatch.setattr(cfg, "RUNS_DIR", tmp_path)
+    from fastapi.testclient import TestClient
+
+    from teachersaid.api import app as appmod
+    from teachersaid.pipeline.arrange import stage_arrangement
+    from teachersaid.store.arrangementstore import ArrangementStore
+
+    appmod.ARRANGEMENTS = ArrangementStore(tmp_path / "arrangements")
+    stage_arrangement(appmod.ARRANGEMENTS, gwb_standort.build_arrangement(),
+                      arr_id="gwb", source="curated", today=IN)
+    client = TestClient(appmod.app)
+
+    lst = client.get("/api/arrangements").json()
+    assert lst and lst[0]["id"] == "gwb" and lst[0]["n_roles"] == 4
+    rec = client.get("/api/arrangements/gwb").json()
+    assert rec["arrangement"]["meta"]["format"] == "simulation_game"
+    # the run-guide + role sheets serve as PDFs
+    assert client.get("/api/arrangements/gwb/pdf/orchestration").status_code == 200
+    assert client.get("/api/arrangements/gwb/pdf/gem/student").status_code == 200
+    assert client.get("/api/arrangements/gwb/pdf/gem/teacher").status_code == 200
+    assert client.get("/api/arrangements/gwb/pdf/nope/student").status_code == 404
+    assert client.post("/api/arrangements/gwb/approve").json()["status"] == "approved"

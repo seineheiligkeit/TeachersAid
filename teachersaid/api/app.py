@@ -19,6 +19,7 @@ from ..config import RUNS_DIR
 from ..pipeline import orchestrator as orch
 from ..pipeline.assets import build_asset
 from ..stats import compute_stats
+from ..store.arrangementstore import ArrangementStore
 from ..store.assetstore import AssetStore
 from ..store.blockstore import BlockStore
 from ..store.repository import ReviewStore
@@ -27,6 +28,7 @@ app = FastAPI(title="TeachersAid — Review Dashboard")
 STORE = ReviewStore()
 BLOCKS = BlockStore()
 ASSETS = AssetStore()
+ARRANGEMENTS = ArrangementStore()
 _STATIC = Path(__file__).resolve().parent / "static"
 
 
@@ -197,6 +199,59 @@ def reject_asset(asset_id: str):
     if ASSETS.get(asset_id) is None:
         raise HTTPException(404, "no such asset")
     return ASSETS.set_status(asset_id, "rejected").summary()
+
+
+# --- Lernarrangements (v0.5) -------------------------------------------------
+@app.get("/api/arrangements")
+def arrangements(status: str | None = None):
+    return [r.summary() for r in ARRANGEMENTS.list(status=status)]
+
+
+@app.get("/api/arrangements/{arr_id}")
+def get_arrangement(arr_id: str):
+    rec = ARRANGEMENTS.get(arr_id)
+    if rec is None:
+        raise HTTPException(404, "no such arrangement")
+    return rec.model_dump()
+
+
+def _arr_pdf(arr_id: str, path: str | None) -> FileResponse:
+    if not path or not Path(path).exists():
+        raise HTTPException(404, "no such PDF")
+    return FileResponse(path, media_type="application/pdf")
+
+
+@app.get("/api/arrangements/{arr_id}/pdf/orchestration")
+def arrangement_orchestration(arr_id: str):
+    rec = ARRANGEMENTS.get(arr_id)
+    if rec is None or rec.artifacts is None:
+        raise HTTPException(404, "no such arrangement")
+    return _arr_pdf(arr_id, rec.artifacts.orchestration)
+
+
+@app.get("/api/arrangements/{arr_id}/pdf/{role_id}/{which}")
+def arrangement_role_pdf(arr_id: str, role_id: str, which: str):
+    rec = ARRANGEMENTS.get(arr_id)
+    if rec is None or rec.artifacts is None:
+        raise HTTPException(404, "no such arrangement")
+    role = next((r for r in rec.artifacts.roles if r.get("id") == role_id), None)
+    if role is None or which not in ("student", "teacher"):
+        raise HTTPException(404, "no such role PDF")
+    return _arr_pdf(arr_id, role.get(which))
+
+
+@app.post("/api/arrangements/{arr_id}/approve")
+def approve_arrangement(arr_id: str):
+    if ARRANGEMENTS.get(arr_id) is None:
+        raise HTTPException(404, "no such arrangement")
+    return ARRANGEMENTS.set_status(arr_id, "approved").summary()
+
+
+@app.post("/api/arrangements/{arr_id}/reject")
+def reject_arrangement(arr_id: str):
+    if ARRANGEMENTS.get(arr_id) is None:
+        raise HTTPException(404, "no such arrangement")
+    return ARRANGEMENTS.set_status(arr_id, "rejected").summary()
 
 
 # --- block library -----------------------------------------------------------

@@ -71,8 +71,8 @@
 <main id="main"></main>
 
 <script>
-const TABS = [["brainstorm","Brainstorm"],["bausteine","Bausteine"],["inhalte","Inhalte"],["bibliothek","Bibliothek"],["abbildungen","Abbildungen"],["statistik","Statistik"]];
-let TAB = "brainstorm", SELECTED = null, VIEW = "bloecke", LASTITEMS = [];
+const TABS = [["brainstorm","Brainstorm"],["bausteine","Bausteine"],["inhalte","Inhalte"],["bibliothek","Bibliothek"],["arrangements","Arrangements"],["abbildungen","Abbildungen"],["statistik","Statistik"]];
+let TAB = "brainstorm", SELECTED = null, VIEW = "bloecke", ARRVIEW = "vorschau", LASTITEMS = [];
 const $ = s => document.querySelector(s);
 const esc = s => (s==null?"":String(s)).replace(/[&<>]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
 async function jget(u){ return (await fetch(u)).json(); }
@@ -138,6 +138,14 @@ function buildShell(){
         <div id="detail" class="card"><p class="muted">Wähle einen Eintrag.</p></div>
       </div>`;
     if(TAB==="inhalte") loadKBs();
+  } else if(TAB==="arrangements"){
+    $("#main").innerHTML = `
+      <div class="grid2">
+        <div class="card"><h2>Lernarrangements</h2>
+          <p class="muted">Komposite Sibling-Objekte (v0.5), die Arbeitsblätter <i>enthalten</i>: Rollen, Phasen, gemeinsames Produkt und die mündlich/sozial/handelnd verankerten Kompetenzen, die ein einzelnes Blatt nicht erreicht.</p>
+          <div id="arr-list"></div></div>
+        <div id="detail" class="card"><p class="muted">Wähle links ein Arrangement.</p></div>
+      </div>`;
   } else if(TAB==="abbildungen"){
     $("#main").innerHTML = `
       <div class="card"><h2>Bibliotheks-Assets — Dekoration & Quellen</h2>
@@ -163,6 +171,7 @@ async function refresh(){
   else if(TAB==="bausteine") renderBlocks();
   else if(TAB==="inhalte") renderContentList(LASTITEMS.filter(i=>i.stage==="content" && i.status!=="approved"));
   else if(TAB==="bibliothek") renderContentList(LASTITEMS.filter(i=>i.stage==="content" && i.status==="approved"));
+  else if(TAB==="arrangements") renderArrangements();
   else if(TAB==="abbildungen") renderAssets();
   else if(TAB==="statistik") renderStats();
 }
@@ -407,6 +416,65 @@ async function renderAssets(){
     </div>`;
   }).join("");
 }
+
+/* ---------- Arrangements (Lernarrangement v0.5) ---------- */
+const _GRP={individual:"Einzeln",role_group:"Gruppen-/Fraktionsarbeit",home_group:"Stammgruppe",plenary:"Plenum"};
+const _SB={interaction:"Interaktion / Debatte",debrief:"Reflexion (Debrief)",shared_product:"Gemeinsames Produkt"};
+function _sbLabel(s,roles){ if(s&&s.startsWith("role:")){ const r=roles.find(x=>x.id===s.slice(5)); return "Rolle: "+(r?rt(r.label):s.slice(5)); } return _SB[s]||s; }
+function _roleServed(role){ const ids=new Set(); (role.material.sections||[]).forEach(s=>(s.blocks||[]).forEach(b=>{ if(b.role==='task')(b.serves||[]).forEach(x=>ids.add(x.competence_id)); })); return [...ids]; }
+async function renderArrangements(){
+  if(!$("#arr-list")) return;
+  const items = await jget("/api/arrangements");
+  $("#arr-list").innerHTML = items.length ? items.map(a=>`
+    <div class="item ${SELECTED===a.id?'sel':''}" onclick="openArrangement('${a.id}')">
+      <div class="row between"><b>${esc(a.title)}</b><span class="pill s-${a.status}">${a.status}</span></div>
+      <div class="muted">${esc(a.subject)} ${a.klasse}. Kl. · <span class="badge">${esc(a.format)}</span>
+        <span class="badge">${a.n_roles} Rollen</span><span class="badge">${a.minutes}′</span>
+        <span class="badge">⚓ ${a.n_anchors}</span>${a.covered!=null?`<span class="cov">${a.covered}✓</span>`:''}${a.gaps?` <span class="gap">${a.gaps}✗</span>`:''}</div>
+      ${a.problems?`<div class="gap">⚠ ${a.problems} Verify-Probleme</div>`:''}</div>`).join("")
+    : `<p class="muted">Noch keine Arrangements — <code>python -m teachersaid seed</code> lädt den GWB-Hero.</p>`;
+}
+function setArrView(v){ ARRVIEW=v; openArrangement(SELECTED); }
+function arrpdf(id,key){ const f=$("#arrframe"); if(f) f.src=`/api/arrangements/${id}/pdf/${key}`; }
+async function openArrangement(id){
+  SELECTED=id; renderArrangements();
+  const rec = await jget("/api/arrangements/"+id); const a=rec.arrangement, m=a.meta, roles=a.roles||[];
+  let h = `<div class="row between"><div><h2 style="margin:0">${esc(m.title)}</h2>
+      <span class="pill s-${rec.status}">${rec.status}</span></div>
+      <div class="row"><button class="ghost ${ARRVIEW==='vorschau'?'active':''}" onclick="setArrView('vorschau')">Vorschau</button>
+      <button class="ghost ${ARRVIEW==='struktur'?'active':''}" onclick="setArrView('struktur')">Struktur</button></div></div>
+    <p class="muted">${esc(m.subject)} ${m.klasse}. Kl. · Format: ${esc(m.format)} · ${a.phases.reduce((s,p)=>s+p.minutes,0)}′ · ${roles.length} Rollen</p>`;
+  if(m.kernfrage) h += `<p><b>Kernfrage:</b> ${esc(rt(m.kernfrage))}</p>`;
+  if((rec.verify_problems||[]).length) h += `<div class="ans"><b class="gap">Verify-Probleme:</b> ${rec.verify_problems.map(esc).join("; ")}</div>`;
+
+  if(ARRVIEW==="vorschau"){
+    const arts = rec.artifacts||{roles:[]};
+    let btns = `<button class="ghost" onclick="arrpdf('${id}','orchestration')">📋 Begleitung (Lehrkraft)</button>`;
+    (arts.roles||[]).forEach(r=> btns += ` <button class="ghost" onclick="arrpdf('${id}','${r.id}/student')">${esc(r.label)} · SuS</button>`
+      + `<button class="ghost" onclick="arrpdf('${id}','${r.id}/teacher')">${esc(r.label)} · LK</button>`);
+    h += `<div class="row" style="margin:8px 0;flex-wrap:wrap;gap:6px">${btns}</div>
+      <iframe id="arrframe" src="/api/arrangements/${id}/pdf/orchestration"></iframe>`;
+  } else {
+    if(a.common_material&&a.common_material.length){ h += `<h3>Der Fall</h3>`; a.common_material.forEach(b=> h += blk(b,null)); }
+    h += `<h3>Ablauf</h3><table><thead><tr><th>#</th><th>Phase</th><th>Sozialform</th><th>Min</th><th>Was passiert</th></tr></thead><tbody>`
+      + a.phases.map((p,i)=>`<tr><td>${i+1}</td><td>${esc(p.label)}</td><td>${_GRP[p.grouping]||p.grouping}</td><td>${p.minutes}</td><td>${esc(rt(p.what_happens))}</td></tr>`).join("") + `</tbody></table>`;
+    h += `<h3>Rollen</h3><table><thead><tr><th>Rolle</th><th>Schwerpunkt-Kompetenzen</th></tr></thead><tbody>`
+      + roles.map(r=>`<tr><td>${esc(rt(r.label))}</td><td>${_roleServed(r).map(c=>`<code>${c}</code>`).join(' ')||'—'}</td></tr>`).join("") + `</tbody></table>`;
+    if(a.shared_product){ h += `<h3>Gemeinsames Produkt</h3><p>${esc(rt(a.shared_product.description))}</p>`;
+      (a.shared_product.rubric||[]).forEach(rc=> h += `<div class="muted">Kriterium — ${esc(rc.criterion)}: ${(rc.levels||[]).map(esc).join(" → ")}</div>`); }
+    if((a.competence_anchors||[]).length){ h += `<h3>Kompetenz-Verankerung <span class="muted">(über die Interaktion)</span></h3>`
+      + `<table><thead><tr><th>Kompetenz</th><th>Dimension</th><th>verankert über</th></tr></thead><tbody>`
+      + a.competence_anchors.map(x=>`<tr><td><code>${x.competence_id}</code></td><td>${esc(x.dimension)}</td><td>${esc(_sbLabel(x.served_by,roles))}</td></tr>`).join("") + `</tbody></table>`; }
+    if(a.nachweis) h += nachweis(a.nachweis);
+    if(a.depth_profile) h += depth(a.depth_profile);
+  }
+  const inLib = rec.status==="approved";
+  h += `<div class="card" style="margin-top:12px"><h2>Aktionen</h2><div class="row">
+    <button class="ok" ${inLib||(rec.verify_problems||[]).length?'disabled':''} onclick="actArrangement('${id}','approve')">In Bibliothek freigeben</button>
+    <button class="bad" onclick="actArrangement('${id}','reject')">Ablehnen</button></div></div>`;
+  $("#detail").innerHTML = h;
+}
+async function actArrangement(id,kind){ await jpost(`/api/arrangements/${id}/${kind}`,{}); setTimeout(refresh,150); }
 
 /* ---------- Statistik ---------- */
 async function renderStats(){

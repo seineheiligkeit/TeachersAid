@@ -207,9 +207,11 @@ via `render_student_sheet`/`render_teacher_guide`. The asset-building bundle `re
 pipeline (not `rendering/`) because it builds asset images; the renderers stay pure. **Scope line:** we
 make the material bundle + a teacher run-guide; we do **not** run the room.
 **Hero:** `demo/gwb_standort.py` — a GWB grade-3 Gemeinderat-Planspiel (4 roles; ENT.03/06/07+ZEN.03 on
-the sheets; ENT.05 via the debate, ENT.01 via the council decision as anchors). **Phase 5a + 5b done:**
-schema + derive/assemble/verify + the hero + the run-guide renderer, verify-clean & rasterised
-(`tests/test_arrangement.py`). **Next:** 5c dashboard surface, 5d generation.
+the sheets; ENT.05 via the debate, ENT.01 via the council decision as anchors). **Phase 5a–5c done:**
+schema + derive/assemble/verify + the hero + the run-guide renderer + the dashboard review surface
+(`store/arrangementstore.py`, `orch.stage_arrangement`/`seed_arrangements`, the **Arrangements** tab,
+`/api/arrangements*`), verify-clean & rasterised (`tests/test_arrangement.py`). **Next:** 5d generation
+(subagent → `stage_arrangement`, like worksheets).
 
 ## Breadth generation — subagents → ingest (the seam, no API key)
 
@@ -243,11 +245,14 @@ it is validated through the real generation seam and staged for HITL review.
 
 ## HITL dashboard (`api/` + `api/static/index.html`)
 
-Two review gates, one `ReviewItem` type (`stage` ∈ **brainstorm** | **content**); six tabs
-(Brainstorm · **Bausteine** · Inhalte · Bibliothek · **Abbildungen** · Statistik — see the Block library
-section below). **Abbildungen** is the asset-review surface (Phase 4 #2/#4): file-backed library assets
-(decorative/sourced, with approve/reject) on top, and below, every code-generated content figure rendered
-inline (deduped by generator+spec, built on demand) for fächerübergreifende correctness/didactics review.
+Two review gates, one `ReviewItem` type (`stage` ∈ **brainstorm** | **content**); seven tabs
+(Brainstorm · **Bausteine** · Inhalte · Bibliothek · **Arrangements** · **Abbildungen** · Statistik — see
+the Block library section below). **Abbildungen** is the asset-review surface (Phase 4 #2/#4): file-backed
+library assets (decorative/sourced, with approve/reject) on top, and below, every code-generated content
+figure rendered inline (deduped by generator+spec, built on demand) for fächerübergreifende review.
+**Arrangements** (Phase 5c) reviews Lernarrangements (`ArrangementStore`): the run-guide + each role's
+student/teacher PDF (Vorschau) and a structural view (phases · roles · shared product · anchors · Nachweis),
+approve/reject. (Arrangements use their own store, not `ReviewItem`.)
 
 ```
 Brainstorm (rough idea: topic + note, you or AI) ─approve─► flesh_out

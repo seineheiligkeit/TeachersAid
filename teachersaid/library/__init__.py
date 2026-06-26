@@ -78,6 +78,20 @@ def seed_library(store=None, *, today: date | None = None) -> list:
     return out
 
 
+def seed_arrangements(store=None, *, today: date | None = None) -> list:
+    """Stage the curated Lernarrangement hero(es) into the arrangement store for
+    review (assemble → verify → render the bundle). Idempotent: `upsert` preserves
+    status. New for v0.5 (Phase 5); the GWB Gemeinderat-Planspiel is the first hero."""
+    from ..demo import gwb_standort
+    from ..pipeline import arrange
+    from ..store.arrangementstore import ArrangementStore
+
+    store = store or ArrangementStore()
+    return [arrange.stage_arrangement(
+        store, gwb_standort.build_arrangement(), arr_id="gwb-standort",
+        source="curated", today=today)]
+
+
 def seed_blocks(store=None, *, status: str = "approved") -> list:
     """Harvest every example worksheet's blocks into the block library. These come
     from the curated, SME-reviewed examples, so they seed straight as `approved`

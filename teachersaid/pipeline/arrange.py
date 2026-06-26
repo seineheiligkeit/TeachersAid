@@ -181,3 +181,25 @@ def render_arrangement(arr: Lernarrangement, out_dir, assets: dict | None = None
                           "student": str(student), "teacher": str(teacher)})
     orch = render_teacher_orchestration(arr, out_dir / "orchestration.pdf", all_assets)
     return {"orchestration": str(orch), "roles": roles_out}
+
+
+def stage_arrangement(store, arr: Lernarrangement, *, arr_id: str | None = None,
+                      source: str = "ai", today=None):
+    """Assemble → verify → render an arrangement and stage it as an ArrangementRecord
+    for HITL review (the v0.5 analogue of orch.ingest_generated for worksheets).
+    `arr_id` gives a stable id for idempotent seeding; otherwise the store assigns one."""
+    from .. import config
+    from ..store.arrangementstore import ArrangementArtifacts, ArrangementRecord
+    from .resolve import resolve_grade
+
+    res = resolve_grade(arr.meta.subject, arr.meta.klasse, today=today)
+    assemble_arrangement(arr, res)
+    report = verify_arrangement(arr, res)
+    rid = arr_id or store.next_id()
+    bundle = render_arrangement(arr, config.RUNS_DIR / "arrangements" / rid)
+    rec = ArrangementRecord(
+        id=rid, arrangement=arr, title=arr.meta.title, source=source,
+        verify_problems=report.problems,
+        artifacts=ArrangementArtifacts(orchestration=bundle["orchestration"], roles=bundle["roles"]),
+    )
+    return store.upsert(rec)

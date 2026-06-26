@@ -195,7 +195,12 @@ ENT.03/06/07+ZEN.03; ENT.05 anchored to the debate, ENT.01 to the council decisi
 (PURE — the run-guide: case, phase timeline, roles, shared product + rubric, debrief, the anchor table,
 derived Nachweis) + `pipeline/arrange.py::render_arrangement` (the bundle: orchestration + per-role student
 handout + teacher copy, reusing `render_student_sheet`/`render_teacher_guide`; builds assets, so it lives
-in the pipeline). Run-guide renders + rasterises (4 pp). **Next: 5c** dashboard surface, **5d** generation.
+in the pipeline). Run-guide renders + rasterises (4 pp). **Phase 5c DONE:** `store/arrangementstore.py` (ArrangementRecord +
+store, mirrors the others) · `orch.stage_arrangement` (assemble→verify→render→store) + `seed_arrangements`
+(stages the GWB hero `in_review`) · `/api/arrangements*` (list/detail/PDF/approve-reject) · the dashboard
+**Arrangements** tab (Vorschau = run-guide + each role's student/teacher PDF; Struktur = phases/roles/shared
+product/anchors/Nachweis; approve→library). **Next: 5d** generation — a subagent emits an arrangement body,
+ingested via `stage_arrangement` (the v0.5 analogue of `ingest_generated`).
 
 Carry-over from Phase 3: 3b (angle-aware composition), 3d (difficulty), 3e (coherence framing) fold in where
 natural, reprioritized behind Phase 4/5.
