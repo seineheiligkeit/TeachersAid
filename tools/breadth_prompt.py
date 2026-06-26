@@ -64,6 +64,9 @@ Wähle **{n} klar unterschiedliche Themen/Bereiche** (Breite!), nicht Varianten 
   referenziere sie aus einer Aufgabe/Info über `asset_refs`. Reiner Text bleibt völlig ok, wenn keine
   Abbildung nötig ist. **Erlaubte Generatoren (nur diese):**
 {recipes}
+  **Wichtig — eine Abbildung darf die gesuchte Lösung NICHT verraten:** z. B. KEINE Funktionsgleichung
+  als Diagramm-`title`, wenn die Aufgabe ist, sie abzulesen; keine Werte/Beschriftungen anzeigen, die die
+  Schüler:innen erst ablesen/bestimmen sollen. Die Abbildung zeigt das Material, nicht die Antwort.
   Keine freien Bilder/Diffusion, kein `data_interpretation`-Payload, keine `response.mode` ∈
   {{diagram, drawing, artifact}}. {modality_note}
 - **Schülertext ist für Schüler:innen** — niemals Kompetenz-IDs/Dimensionen/„Lehrplan" im `prompt`/Intro.

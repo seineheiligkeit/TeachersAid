@@ -187,13 +187,17 @@ def persist(paths: list) -> None:
     total = 0
     for path in paths:
         w = _load(path)
+        # render figure-bearing worksheets so the figures are reviewable in Vorschau;
+        # text-only worksheets stay render-free (blocks are the unit).
+        has_figs = bool(w["body"].get("assets"))
         item, n = orch.ingest_generated(
             store, blocks, w["subject"], w["klasse"],
             kompetenzbereich=w.get("kompetenzbereich"), scope_label=w.get("scope_label"),
-            title=w["title"], kernfrage=w["kernfrage"], body=w["body"], render=False, today=GEN_DATE,
+            title=w["title"], kernfrage=w["kernfrage"], body=w["body"],
+            render=has_figs, today=GEN_DATE,
         )
         total += n
-        print(f"{path.stem}: id={item.id} error={item.error} "
+        print(f"{path.stem}: id={item.id} error={item.error} figs={'y' if has_figs else 'n'} "
               f"problems={len(item.verify_problems or [])} blocks={n}")
     print(f"\n== staged {len(paths)} worksheets, {total} blocks harvested ==")
 
