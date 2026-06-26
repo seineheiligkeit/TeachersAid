@@ -9,6 +9,7 @@ from __future__ import annotations
 
 from pydantic import BaseModel, ConfigDict, Field
 
+from .assets import Asset
 from .blocks import Block
 from .competence import SubjectCompetenceModel, SubjectCompetenceModelRef
 from .derived import DepthProfile, Nachweis
@@ -69,7 +70,7 @@ class WorksheetContent(BaseModel):
     subject_model: SubjectCompetenceModel  # pins dimensions & kinds
     intro: list[Block] = Field(default_factory=list)
     sections: list[Baustein] = Field(default_factory=list)
-    assets: list = Field(default_factory=list)  # list[Asset]
+    assets: list[Asset] = Field(default_factory=list)
     nachweis: Nachweis | None = None  # DERIVED at assemble
     depth_profile: DepthProfile | None = None  # DERIVED at assemble
     rack: ThreadRack | None = None

@@ -52,6 +52,13 @@
   .prog { height:10px; background:var(--line); border-radius:6px; overflow:hidden; }
   .prog > i { display:block; height:100%; background:var(--ok); }
   code { background:#eee; padding:1px 4px; border-radius:4px; font-size:12px; }
+  .figpre { margin:6px 0; }
+  .figpre img { display:block; max-width:min(420px,100%); border:1px solid var(--line); border-radius:6px; background:#fff; padding:4px; }
+  .gallery { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:12px; }
+  .tile { border:1px solid var(--line); border-radius:8px; background:#fff; padding:8px; }
+  .tile img { width:100%; max-height:200px; object-fit:contain; background:#fff; border-radius:4px; }
+  .tile .meta { font-size:11.5px; color:#555; margin-top:6px; }
+  .tile code { font-size:10.5px; }
 </style>
 </head>
 <body>
@@ -64,7 +71,7 @@
 <main id="main"></main>
 
 <script>
-const TABS = [["brainstorm","Brainstorm"],["bausteine","Bausteine"],["inhalte","Inhalte"],["bibliothek","Bibliothek"],["statistik","Statistik"]];
+const TABS = [["brainstorm","Brainstorm"],["bausteine","Bausteine"],["inhalte","Inhalte"],["bibliothek","Bibliothek"],["abbildungen","Abbildungen"],["statistik","Statistik"]];
 let TAB = "brainstorm", SELECTED = null, VIEW = "bloecke", LASTITEMS = [];
 const $ = s => document.querySelector(s);
 const esc = s => (s==null?"":String(s)).replace(/[&<>]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
@@ -131,6 +138,14 @@ function buildShell(){
         <div id="detail" class="card"><p class="muted">Wähle einen Eintrag.</p></div>
       </div>`;
     if(TAB==="inhalte") loadKBs();
+  } else if(TAB==="abbildungen"){
+    $("#main").innerHTML = `
+      <div class="card"><h2>Abbildungen — alle Figuren der Bibliothek</h2>
+        <p class="muted">Jede code-generierte Figur (entdedupliziert nach Generator + Spezifikation), so wie sie im Material erscheint. Hier prüfst du Korrektheit und Didaktik (z. B. dass eine Abbildung die gesuchte Lösung nicht verrät) fächerübergreifend an einer Stelle.</p>
+        <div class="row" style="margin:6px 0;gap:6px">
+          <select id="ass-gen" onchange="renderAssets()"><option value="">alle Generatoren</option></select>
+        </div>
+        <div id="gallery" class="gallery"><p class="muted">lädt…</p></div></div>`;
   } else {
     $("#main").innerHTML = `<div id="stats"><p class="muted">lädt…</p></div>`;
   }
@@ -145,6 +160,7 @@ async function refresh(){
   else if(TAB==="bausteine") renderBlocks();
   else if(TAB==="inhalte") renderContentList(LASTITEMS.filter(i=>i.stage==="content" && i.status!=="approved"));
   else if(TAB==="bibliothek") renderContentList(LASTITEMS.filter(i=>i.stage==="content" && i.status==="approved"));
+  else if(TAB==="abbildungen") renderAssets();
   else if(TAB==="statistik") renderStats();
 }
 
@@ -228,11 +244,12 @@ async function openDetail(id){
     // ---- Blöcke (structured content, independent of rendering) ----
     h += `<p class="muted">${esc(c.meta.lehrplan_label||"")} · ${esc(c.meta.fassung.bgbl)}</p>`;
     if(c.meta.kernfrage) h += `<p><b>Kernfrage:</b> ${esc(rt(c.meta.kernfrage))}</p>`;
-    (c.intro||[]).forEach(b=> h += blk(b,null));
+    const imgSrc = r=>`/api/items/${id}/asset/${encodeURIComponent(r)}`;
+    (c.intro||[]).forEach(b=> h += blk(b,null,imgSrc));
     (c.sections||[]).forEach(sec=>{
       h += `<h3>${esc(sec.title)}</h3>`;
       if(sec.teacher_overview && sec.teacher_overview.throughline) h+=`<p class="muted">${esc(sec.teacher_overview.throughline)}</p>`;
-      let n=0; (sec.blocks||[]).forEach(b=> h += blk(b, b.role==="task"?++n:null));
+      let n=0; (sec.blocks||[]).forEach(b=> h += blk(b, b.role==="task"?++n:null, imgSrc));
     });
     if(c.nachweis) h += nachweis(c.nachweis);
     if(c.depth_profile) h += depth(c.depth_profile);
@@ -262,14 +279,22 @@ function pl(p){
   if(p.kind==="decision_scenario") return `<div class="pl">${esc(rt(p.stem))}</div>`;
   return "";
 }
-function blk(b, num){
+function figs(b, imgSrc){
+  // inline-preview every figure the block references, built on demand from its spec
+  if(!imgSrc) return "";
+  return (b.asset_refs||[]).map(r=>`<div class="figpre"><img src="${imgSrc(r)}" alt="${esc(r)}"
+    loading="lazy" onerror="this.style.display='none'"></div>`).join("");
+}
+function blk(b, num, imgSrc){
   if(b.role==="info"){
     return `<div class="blk info"><span class="badge">${b.kind}</span>${esc(rt(b.content))}
+      ${figs(b, imgSrc)}
       ${(b.watch_outs||[]).map(w=>`<div class="watch">⚠ ${esc(w)}</div>`).join("")}</div>`;
   }
   const resp = b.response? ({lines:`${b.response.n} Zeilen`,box:`Box ${b.response.min_height_mm||''}mm`,table:'Tabelle',choices:'Auswahl',none:'mündlich/keine',diagram:'Diagramm',drawing:'Skizze',artifact:'Produkt'}[b.response.mode]||b.response.mode):"";
   const serves = (b.serves||[]).map(s=>`<code>${s.competence_id}</code>`).join(" ");
   return `<div class="blk task"><div><b>${num?num+'. ':''}</b>${esc(rt(b.prompt))}</div>
+    ${figs(b, imgSrc)}
     ${pl(b.payload)}
     <div style="margin-top:4px"><span class="badge">${b.kind}</span><span class="badge">${b.cognitive_level}</span>
       <span class="badge">Dim ${(b.dimensions||[]).join(",")}</span><span class="badge">~${b.est_minutes}′</span>
@@ -314,14 +339,14 @@ async function renderBlocks(){
       <div class="row between"><b>${b.role==='task'?'🎯':'📖'} ${esc(b.kind)}</b><span class="pill s-${b.status}">${b.status}</span></div>
       <div>${esc(b.prompt)}</div>
       <div class="muted">${esc(b.subject)} ${b.klasse||''} · ${esc(b.kompetenzbereich||'—')}
-        ${b.cognitive_level?`<span class="badge">${b.cognitive_level}</span>`:''}<span class="badge">${b.scope}</span>${(b.dimensions||[]).length?`<span class="badge">${b.dimensions.join(',')}</span>`:''}</div>
+        ${b.cognitive_level?`<span class="badge">${b.cognitive_level}</span>`:''}<span class="badge">${b.scope}</span>${(b.dimensions||[]).length?`<span class="badge">${b.dimensions.join(',')}</span>`:''}${b.assets?`<span class="badge">🖼 ${b.assets}</span>`:''}</div>
     </div>`).join("") : `<p class="muted">keine Bausteine — kein Treffer für diesen Filter.</p>`);
 }
 async function openBlock(id){
   SELECTED=id; renderBlocks();
   const lb = await jget("/api/blocks/"+id);
   let h = `<div class="row between"><h2 style="margin:0">${lb.role==='task'?'Aufgabe':'Info / Text'} · ${esc(lb.kind)}</h2><span class="pill s-${lb.status}">${lb.status}</span></div>`;
-  h += `<div style="margin:6px 0">${blk(lb.block, null)}</div>`;
+  h += `<div style="margin:6px 0">${blk(lb.block, null, r=>`/api/blocks/${encodeURIComponent(id)}/asset/${encodeURIComponent(r)}`)}</div>`;
   h += `<div class="card"><h2>Metadaten</h2>
     <p><span class="badge">${esc(lb.subject)} ${lb.klasse||''}</span> <span class="badge">KB: ${esc(lb.kompetenzbereich||'—')}</span>
        <span class="badge">Scope: ${lb.scope}</span>${lb.family?`<span class="badge">Familie: ${esc(lb.family)}</span>`:''}</p>
@@ -337,6 +362,30 @@ async function openBlock(id){
 }
 async function actBlock(id,kind){ await jpost(`/api/blocks/${id}/${kind}`,{}); setTimeout(refresh,150); }
 async function approveAllBlocks(){ await jpost("/api/blocks/approve-all",{}); setTimeout(refresh,200); }
+
+/* ---------- Abbildungen (asset-review gallery) ---------- */
+async function renderAssets(){
+  if(!$("#gallery")) return;
+  const all = await jget("/api/assets");
+  const genSel = $("#ass-gen");
+  if(genSel && genSel.options.length<=1){
+    const gens=[...new Set(all.map(a=>a.generator))].sort();
+    genSel.innerHTML = `<option value="">alle Generatoren</option>`+gens.map(g=>`<option>${esc(g)}</option>`).join("");
+  }
+  const gen = genSel?genSel.value:"";
+  const assets = all.filter(a=>!gen||a.generator===gen);
+  if(!assets.length){ $("#gallery").innerHTML = `<p class="muted">Noch keine Abbildungen in der Bibliothek.</p>`; return; }
+  $("#gallery").innerHTML = assets.map(a=>{
+    const use = [a.n_blocks?`${a.n_blocks} Baustein${a.n_blocks>1?'e':''}${a.approved?` (${a.approved}✓)`:''}`:"",
+                 a.n_items?`${a.n_items} Arbeitsblatt${a.n_items>1?'…':''}`:""].filter(Boolean).join(" · ");
+    return `<div class="tile">
+      <img src="${a.preview}" alt="${esc(a.generator)}" loading="lazy" onerror="this.style.display='none'">
+      ${a.caption?`<div style="font-size:12px;margin-top:6px">${esc(a.caption)}</div>`:""}
+      <div class="meta"><code>${esc(a.generator)}</code></div>
+      <div class="meta">${esc((a.subjects||[]).join(", "))}${use?` · ${use}`:""}</div>
+    </div>`;
+  }).join("");
+}
 
 /* ---------- Statistik ---------- */
 async function renderStats(){

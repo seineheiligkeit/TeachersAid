@@ -54,6 +54,7 @@ class LibraryBlock(BaseModel):
             "cognitive_level": self.cognitive_level, "dimensions": self.dimensions,
             "modality": self.modality, "scope": self.scope, "family": self.family,
             "status": self.status, "provenance": self.provenance, "source": self.source,
+            "assets": len(self.assets),  # # of figures this block carries (3c)
             "prompt": _block_text(self.block)[:140],
             "updated_at": self.updated_at,
         }

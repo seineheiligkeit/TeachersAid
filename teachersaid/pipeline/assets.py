@@ -85,13 +85,14 @@ def _bar_chart(asset: Asset, path: Path) -> None:
     if s.get("ylabel"):
         ax.set_ylabel(s["ylabel"])
     fig.tight_layout()
-    fig.savefig(path, dpi=150)
+    fig.savefig(path, dpi=150, bbox_inches="tight")  # don't clip a long title/labels
     plt.close(fig)
 
 
 @_generator("matplotlib:function_graph")
 def _function_graph(asset: Asset, path: Path) -> None:
     """A coordinate graph. spec: {xmin?, xmax?, m?, b? (line y=mx+b), points?: [[x,y],…],
+    connect? (join the points with a line, e.g. a v-t graph), xlabel?, ylabel?,
     ymin?, ymax?, title?}."""
     s = asset.spec or {}
     xmin, xmax = float(s.get("xmin", -5)), float(s.get("xmax", 5))
@@ -102,15 +103,23 @@ def _function_graph(asset: Asset, path: Path) -> None:
     if "m" in s:
         m, b = float(s["m"]), float(s.get("b", 0))
         ax.plot([xmin, xmax], [m * xmin + b, m * xmax + b], color="#b03a2e", lw=2)
-    for p in s.get("points", []):
-        ax.plot([p[0]], [p[1]], "o", color="#33506e", ms=6)
+    pts = s.get("points", [])
+    if s.get("connect") and len(pts) >= 2:  # join points into a curve (e.g. a v-t graph)
+        ax.plot([p[0] for p in pts], [p[1] for p in pts], "-o", color="#33506e", lw=2, ms=6)
+    else:
+        for p in pts:
+            ax.plot([p[0]], [p[1]], "o", color="#33506e", ms=6)
     ax.set_xlim(xmin, xmax)
     if "ymin" in s and "ymax" in s:
         ax.set_ylim(float(s["ymin"]), float(s["ymax"]))
+    if s.get("xlabel"):
+        ax.set_xlabel(s["xlabel"])
+    if s.get("ylabel"):
+        ax.set_ylabel(s["ylabel"])
     if s.get("title"):
         ax.set_title(s["title"])
     fig.tight_layout()
-    fig.savefig(path, dpi=150)
+    fig.savefig(path, dpi=150, bbox_inches="tight")  # don't clip a long title/label
     plt.close(fig)
 
 
@@ -196,7 +205,9 @@ GENERATION_RECIPES: dict[str, str] = {
     "matplotlib:bar_chart":
         'Balkendiagramm — spec {"categories":[str],"values":[num],"title"?:str,"xlabel"?:str,"ylabel"?:str}',
     "matplotlib:function_graph":
-        'Koordinatensystem/Gerade — spec {"xmin"?,"xmax"?,"m"?,"b"? (Gerade y=mx+b),"points"?:[[x,y]],"ymin"?,"ymax"?,"title"?}',
+        'Koordinatensystem/Gerade — spec {"xmin"?,"xmax"?,"m"?,"b"? (Gerade y=mx+b),'
+        '"points"?:[[x,y]],"connect"? (Punkte zu einer Kurve verbinden, z. B. v-t-Diagramm),'
+        '"xlabel"?,"ylabel"?,"ymin"?,"ymax"?,"title"?}',
     "matplotlib:math_formula":
         'Formel via LaTeX — spec {"latex":str}',
 }
