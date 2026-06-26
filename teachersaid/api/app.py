@@ -22,6 +22,7 @@ from ..stats import compute_stats
 from ..store.arrangementstore import ArrangementStore
 from ..store.assetstore import AssetStore
 from ..store.blockstore import BlockStore
+from ..store.feedbackstore import FEEDBACK_TAGS, TARGET_KINDS, FeedbackEntry, FeedbackStore
 from ..store.repository import ReviewStore
 
 app = FastAPI(title="TeachersAid — Review Dashboard")
@@ -29,6 +30,7 @@ STORE = ReviewStore()
 BLOCKS = BlockStore()
 ASSETS = AssetStore()
 ARRANGEMENTS = ArrangementStore()
+FEEDBACK = FeedbackStore()
 _STATIC = Path(__file__).resolve().parent / "static"
 
 
@@ -55,6 +57,15 @@ class ComposeBody(BaseModel):
 
 class NoteBody(BaseModel):
     note: str = ""
+
+
+class FeedbackBody(BaseModel):
+    target_kind: str
+    target_id: str
+    rating: int | None = None
+    comment: str = ""
+    tags: list[str] = []
+    revise: bool = False
 
 
 # --- dashboard ---------------------------------------------------------------
@@ -122,6 +133,69 @@ def library():
 @app.get("/api/stats")
 def stats():
     return compute_stats(BLOCKS, STORE)
+
+
+# --- human feedback (the HITL loop) ------------------------------------------
+def _target_meta(kind: str, tid: str) -> tuple[str, str]:
+    """(subject, label) for a feedback target — denormalised so the digest can group
+    without re-reading every store."""
+    if kind == "block":
+        b = BLOCKS.get(tid)
+        if b:
+            return b.subject, f"{b.role}·{b.kind}: {b.summary().get('prompt', '')[:60]}"
+    elif kind == "item":
+        it = STORE.get(tid)
+        if it:
+            subj = it.content.meta.subject if it.content else it.request.subject
+            return subj, it.title
+    elif kind == "arrangement":
+        r = ARRANGEMENTS.get(tid)
+        if r:
+            return r.arrangement.meta.subject, r.title
+    elif kind == "asset":
+        a = ASSETS.get(tid)
+        if a:
+            return "", f"{a.klass}·{a.asset.role}: {a.id}"
+    return "", tid
+
+
+@app.post("/api/feedback")
+def add_feedback(body: FeedbackBody):
+    if body.target_kind not in TARGET_KINDS:
+        raise HTTPException(400, f"target_kind must be one of {TARGET_KINDS}")
+    if body.rating is not None and body.rating not in (1, 2, 3, 4, 5):
+        raise HTTPException(400, "rating must be 1–5")
+    subject, label = _target_meta(body.target_kind, body.target_id)
+    entry = FEEDBACK.add(FeedbackEntry(
+        target_kind=body.target_kind, target_id=body.target_id, subject=subject, label=label,
+        rating=body.rating, comment=body.comment.strip(), tags=body.tags, revise=body.revise))
+    # "revise with feedback": for a worksheet item, also kick the existing regenerate
+    # path (feedback as the note). Other kinds carry the revise flag into the digest,
+    # where the AI picks them up (they have no in-dashboard regenerate path).
+    if body.revise and body.target_kind == "item" and STORE.get(body.target_id) is not None:
+        note = body.comment.strip()
+        if body.tags:
+            note = (note + " [" + ", ".join(body.tags) + "]").strip()
+        try:
+            orch.request_changes(STORE, body.target_id, note or "Überarbeiten (Feedback)")
+        except Exception:  # noqa: BLE001 — feedback is recorded regardless
+            pass
+    return entry.model_dump()
+
+
+@app.get("/api/feedback")
+def feedback_for(target_kind: str, target_id: str):
+    return [e.model_dump() for e in FEEDBACK.for_target(target_kind, target_id)]
+
+
+@app.get("/api/feedback/digest")
+def feedback_digest():
+    return FEEDBACK.digest()
+
+
+@app.get("/api/feedback/tags")
+def feedback_tags():
+    return {"tags": list(FEEDBACK_TAGS)}
 
 
 @app.get("/api/assets")

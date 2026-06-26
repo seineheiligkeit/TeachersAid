@@ -59,6 +59,11 @@
   .tile img { width:100%; max-height:200px; object-fit:contain; background:#fff; border-radius:4px; }
   .tile .meta { font-size:11.5px; color:#555; margin-top:6px; }
   .tile code { font-size:10.5px; }
+  .fb { background:#fcfbf8; }
+  .star { cursor:pointer; color:#e0a800; font-size:17px; line-height:1; }
+  .chip { cursor:pointer; border:1px solid var(--line); border-radius:12px; padding:1px 8px; font-size:11px; color:#555; background:#fff; }
+  .chip.on { background:var(--ink); color:#fff; border-color:var(--ink); }
+  .fb-item { border-left:3px solid var(--line); padding:3px 9px; margin:4px 0; font-size:12.5px; background:#fbfaf7; border-radius:0 5px 5px 0; }
 </style>
 </head>
 <body>
@@ -71,7 +76,8 @@
 <main id="main"></main>
 
 <script>
-const TABS = [["brainstorm","Brainstorm"],["bausteine","Bausteine"],["inhalte","Inhalte"],["bibliothek","Bibliothek"],["arrangements","Arrangements"],["abbildungen","Abbildungen"],["statistik","Statistik"]];
+const TABS = [["brainstorm","Brainstorm"],["bausteine","Bausteine"],["inhalte","Inhalte"],["bibliothek","Bibliothek"],["arrangements","Arrangements"],["abbildungen","Abbildungen"],["statistik","Statistik"],["insights","Insights"]];
+const FB_TAGS = ["zu leicht","zu schwer","Sachfehler","Sprache/Wortwahl","unklar","didaktisch stark","Bild/Abbildung nötig","super"];
 let TAB = "brainstorm", SELECTED = null, VIEW = "bloecke", ARRVIEW = "vorschau", LASTITEMS = [];
 const $ = s => document.querySelector(s);
 const esc = s => (s==null?"":String(s)).replace(/[&<>]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
@@ -157,6 +163,8 @@ function buildShell(){
           <select id="ass-gen" onchange="renderAssets()"><option value="">alle Generatoren</option></select>
         </div>
         <div id="gallery" class="gallery"><p class="muted">lädt…</p></div></div>`;
+  } else if(TAB==="insights"){
+    $("#main").innerHTML = `<div id="insights"><p class="muted">lädt…</p></div>`;
   } else {
     $("#main").innerHTML = `<div id="stats"><p class="muted">lädt…</p></div>`;
   }
@@ -174,6 +182,7 @@ async function refresh(){
   else if(TAB==="arrangements") renderArrangements();
   else if(TAB==="abbildungen") renderAssets();
   else if(TAB==="statistik") renderStats();
+  else if(TAB==="insights") renderInsights();
 }
 
 /* ---------- Brainstorm ---------- */
@@ -277,7 +286,9 @@ async function openDetail(id){
       <button class="ok" ${canApprove?"":"disabled"} onclick="act('${id}','approve')">In Bibliothek freigeben</button>
       <button class="ghost" onclick="act('${id}','request-changes')">Änderungen anfordern</button>
       <button class="bad" onclick="act('${id}','reject')">Ablehnen</button></div></div>`;
+  h += feedbackPanel("item", id);
   $("#detail").innerHTML = h;
+  loadFeedback("item", id);
 }
 function rt(v){ return Array.isArray(v)? v.map(r=>r.text).join("") : v; }
 function pl(p){
@@ -373,7 +384,9 @@ async function openBlock(id){
     <button class="ok" ${inLib?'disabled':''} onclick="actBlock('${id}','approve')">In Bibliothek aufnehmen</button>
     <button class="bad" onclick="actBlock('${id}','reject')">Ablehnen</button></div>
     <p class="muted">Freigegebene Bausteine bilden die Bibliothek, aus der später Arbeitsblätter zusammengestellt werden.</p></div>`;
+  h += feedbackPanel("block", id);
   $("#detail").innerHTML = h;
+  loadFeedback("block", id);
 }
 async function actBlock(id,kind){ await jpost(`/api/blocks/${id}/${kind}`,{}); setTimeout(refresh,150); }
 async function approveAllBlocks(){ await jpost("/api/blocks/approve-all",{}); setTimeout(refresh,200); }
@@ -392,7 +405,7 @@ async function renderAssetLib(){
       ${a.caption?`<div style="font-size:12px;margin-top:6px">${esc(a.caption)}</div>`:""}
       <div class="meta"><span class="pill s-${a.status}">${a.status}</span> <span class="badge">${esc(a.klass)}</span> <code>${esc(a.generator||a.role)}</code></div>
       <div class="meta">${(a.tags||[]).map(t=>`<span class="badge">${esc(t)}</span>`).join("")}</div>
-      ${acts}</div>`;
+      ${acts}${feedbackMini("asset", a.id)}</div>`;
   }).join("");
 }
 async function actAsset(id,kind){ await jpost(`/api/asset-library/${id}/${kind}`,{}); renderAssetLib(); }
@@ -475,9 +488,79 @@ async function openArrangement(id){
   h += `<div class="card" style="margin-top:12px"><h2>Aktionen</h2><div class="row">
     <button class="ok" ${inLib||(rec.verify_problems||[]).length?'disabled':''} onclick="actArrangement('${id}','approve')">In Bibliothek freigeben</button>
     <button class="bad" onclick="actArrangement('${id}','reject')">Ablehnen</button></div></div>`;
+  h += feedbackPanel("arrangement", id);
   $("#detail").innerHTML = h;
+  loadFeedback("arrangement", id);
 }
 async function actArrangement(id,kind){ await jpost(`/api/arrangements/${id}/${kind}`,{}); setTimeout(refresh,150); }
+
+/* ---------- Feedback (rating + comment + tags; the HITL loop) ---------- */
+function _fbk(kind,id){ return (kind+"__"+id).replace(/[^a-zA-Z0-9_]/g,"_"); }
+function feedbackPanel(kind,id){
+  const k=_fbk(kind,id);
+  return `<div class="card fb" data-k="${k}"><h2>Feedback</h2>
+    <div class="row" style="gap:3px;align-items:center"><span class="muted">Bewertung:</span>
+      ${[1,2,3,4,5].map(n=>`<span class="star" onclick="fbStar('${k}',${n})">☆</span>`).join("")}
+      <input type="hidden" id="fbr_${k}"></div>
+    <div class="row" style="gap:5px;flex-wrap:wrap;margin:7px 0">
+      ${FB_TAGS.map(t=>`<span class="chip" onclick="this.classList.toggle('on')">${esc(t)}</span>`).join("")}</div>
+    <textarea id="fbc_${k}" rows="2" placeholder="Kommentar — was ist gut, was fehlt, was ist falsch? (genuines Urteil hilft am meisten)"></textarea>
+    <div class="row" style="margin-top:6px">
+      <button class="ok" onclick="saveFeedback('${kind}','${id}',false)">Feedback speichern</button>
+      ${kind==="item"?`<button class="ghost" onclick="saveFeedback('${kind}','${id}',true)">Mit Feedback überarbeiten →</button>`
+        :`<button class="ghost" onclick="saveFeedback('${kind}','${id}',true)">Zur Überarbeitung vormerken</button>`}</div>
+    <div id="fbl_${k}" style="margin-top:8px"></div></div>`;
+}
+function feedbackMini(kind,id){
+  const k=_fbk(kind,id);
+  return `<div class="fb fbmini" data-k="${k}" style="margin-top:6px;border-top:1px solid var(--line);padding-top:5px">
+    <div class="row" style="gap:2px;align-items:center">${[1,2,3,4,5].map(n=>`<span class="star" onclick="fbStar('${k}',${n})">☆</span>`).join("")}<input type="hidden" id="fbr_${k}"></div>
+    <input id="fbc_${k}" placeholder="kurzer Kommentar…" style="font-size:12px;margin-top:4px">
+    <div class="row" style="margin-top:4px"><button class="ghost" style="font-size:11px;padding:3px 8px" onclick="saveFeedback('${kind}','${id}',false)">Feedback</button></div></div>`;
+}
+function fbStar(k,n){ const el=document.getElementById("fbr_"+k); if(el)el.value=n;
+  const card=document.querySelector(`.fb[data-k="${k}"]`);
+  if(card) card.querySelectorAll(".star").forEach((s,i)=> s.textContent=(i<n)?"★":"☆"); }
+async function saveFeedback(kind,id,revise){
+  const k=_fbk(kind,id), card=document.querySelector(`.fb[data-k="${k}"]`);
+  const rv=document.getElementById("fbr_"+k).value, rating=rv?+rv:null;
+  const comment=document.getElementById("fbc_"+k).value;
+  const tags=card?[...card.querySelectorAll(".chip.on")].map(c=>c.textContent):[];
+  if(rating==null && !comment.trim() && !tags.length && !revise) return;
+  await jpost("/api/feedback",{target_kind:kind,target_id:id,rating,comment,tags,revise});
+  document.getElementById("fbc_"+k).value=""; document.getElementById("fbr_"+k).value="";
+  if(card){ card.querySelectorAll(".chip.on").forEach(c=>c.classList.remove("on"));
+            card.querySelectorAll(".star").forEach(s=>s.textContent="☆"); }
+  if(revise && kind==="item") setTimeout(refresh,200); else loadFeedback(kind,id);
+}
+async function loadFeedback(kind,id){
+  const el=document.getElementById("fbl_"+_fbk(kind,id)); if(!el) return;
+  const fb=await jget(`/api/feedback?target_kind=${kind}&target_id=${encodeURIComponent(id)}`);
+  el.innerHTML = fb.length ? `<div class="muted"><b>Bisheriges Feedback (${fb.length})</b></div>`+fb.map(fbRow).join("")
+    : `<span class="muted">Noch kein Feedback zu diesem Element.</span>`;
+}
+function fbRow(f){
+  const stars="★".repeat(f.rating||0)+"☆".repeat(5-(f.rating||0));
+  const where = f.label?`<b>${esc(f.label)}</b> <span class="badge">${esc(f.target_kind)}</span> ${esc(f.subject||"")}`:"";
+  return `<div class="fb-item">${where} <span class="star">${stars}</span> ${f.revise?'<span class="badge">↻ überarbeiten</span>':''} ${(f.tags||[]).map(t=>`<span class="badge">${esc(t)}</span>`).join("")}${f.comment?`<div>${esc(f.comment)}</div>`:""}<div class="muted">${esc(f.at)}</div></div>`;
+}
+
+/* ---------- Insights (digest of the feedback → refinement signal) ---------- */
+async function renderInsights(){
+  if(!$("#insights")) return;
+  const d=await jget("/api/feedback/digest");
+  if(!d.total){ $("#insights").innerHTML=`<div class="card"><h2>Insights aus deinem Feedback</h2>
+    <p class="muted">Noch kein Feedback. Bewerte und kommentiere Bausteine, Arbeitsblätter, Arrangements oder Assets — hier verdichtet es sich zu Hinweisen, die in neue Ideen und Verbesserungsschritte umgesetzt werden.</p></div>`; return; }
+  let h=`<div class="card"><h2>Insights aus deinem Feedback</h2>
+    <p class="muted">${d.total} Rückmeldungen · ⌀ ${d.avg_rating??"—"} ★ · ${Object.entries(d.by_kind).map(([k,v])=>k+": "+v).join(" · ")}</p>
+    <p class="muted">Das ist die verdichtete menschliche Bewertung, die ich (zwischen den Sitzungen) lese und in Verbesserungen umsetze.</p></div>`;
+  if(d.attention.length) h+=`<div class="card"><h2 class="gap">Zu überarbeiten — Priorität (${d.attention.length})</h2>
+    <p class="muted">Niedrig bewertet, als „überarbeiten" markiert oder mit kritischem Tag (z. B. Sachfehler).</p>${d.attention.map(fbRow).join("")}</div>`;
+  if(d.tags.length) h+=`<div class="card"><h2>Tag-Häufigkeit</h2>${d.tags.map(([t,n])=>`<div>${esc(t)}: <span class="bars" style="width:${14*n}px"></span> ${n}</div>`).join("")}</div>`;
+  if(d.by_subject.length) h+=`<div class="card"><h2>Pro Fach</h2><table><thead><tr><th>Fach</th><th>n</th><th>⌀ ★</th></tr></thead><tbody>${d.by_subject.map(s=>`<tr><td>${esc(s.subject)}</td><td>${s.n}</td><td>${s.avg_rating??"—"}</td></tr>`).join("")}</tbody></table></div>`;
+  if(d.praise.length) h+=`<div class="card"><h2 class="cov">Was funktioniert (${d.praise.length})</h2><p class="muted">Hoch bewertet — das Muster beibehalten.</p>${d.praise.slice(0,8).map(fbRow).join("")}</div>`;
+  $("#insights").innerHTML=h;
+}
 
 /* ---------- Statistik ---------- */
 async function renderStats(){

@@ -263,14 +263,25 @@ it is validated through the real generation seam and staged for HITL review.
 
 ## HITL dashboard (`api/` + `api/static/index.html`)
 
-Two review gates, one `ReviewItem` type (`stage` ∈ **brainstorm** | **content**); seven tabs
-(Brainstorm · **Bausteine** · Inhalte · Bibliothek · **Arrangements** · **Abbildungen** · Statistik — see
-the Block library section below). **Abbildungen** is the asset-review surface (Phase 4 #2/#4): file-backed
-library assets (decorative/sourced, with approve/reject) on top, and below, every code-generated content
-figure rendered inline (deduped by generator+spec, built on demand) for fächerübergreifende review.
-**Arrangements** (Phase 5c) reviews Lernarrangements (`ArrangementStore`): the run-guide + each role's
-student/teacher PDF (Vorschau) and a structural view (phases · roles · shared product · anchors · Nachweis),
-approve/reject. (Arrangements use their own store, not `ReviewItem`.)
+Two review gates, one `ReviewItem` type (`stage` ∈ **brainstorm** | **content**); eight tabs
+(Brainstorm · **Bausteine** · Inhalte · Bibliothek · **Arrangements** · **Abbildungen** · Statistik ·
+**Insights** — see the Block library section below). **Abbildungen** is the asset-review surface (Phase 4
+#2/#4): file-backed library assets (decorative/sourced, with approve/reject) on top, and below, every
+code-generated content figure rendered inline (deduped by generator+spec, built on demand) for
+fächerübergreifende review. **Arrangements** (Phase 5c) reviews Lernarrangements (`ArrangementStore`): the
+run-guide + each role's student/teacher PDF (Vorschau) and a structural view (phases · roles · shared product
+· anchors · Nachweis), approve/reject. (Arrangements use their own store, not `ReviewItem`.)
+
+**Rich feedback loop (`store/feedbackstore.py`).** Beyond approve/reject, every review surface (block ·
+worksheet item · arrangement · asset) carries a feedback panel — a **rating (1–5) + free comment + quick
+tags** — **decoupled from the decision** (you can rate/comment without approving, so partial review still
+accrues signal). It's ONE central append-only store keyed by `(target_kind, target_id)` (not a field on each
+model), so `FeedbackStore.digest()` is a single read. The **Insights** tab renders that digest — a priority
+"zu überarbeiten" worklist (low-rated / revise-flagged / Sachfehler), tag frequencies, per-subject averages,
+and what's working — which the AI consumes between sessions to drive refinement. "Mit Feedback überarbeiten"
+on a worksheet reuses `request_changes` (regenerate with the comment as the note); on other kinds it carries a
+`revise` flag into the digest. API: `POST /api/feedback`, `GET /api/feedback?target_kind&target_id`,
+`GET /api/feedback/digest`, `GET /api/feedback/tags`.
 
 ```
 Brainstorm (rough idea: topic + note, you or AI) ─approve─► flesh_out
