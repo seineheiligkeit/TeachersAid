@@ -151,3 +151,20 @@ def test_ingest_whole_grade_for_strand_subject(stores):
     )
     assert item.error is None and item.verify_problems == [], item.verify_problems
     assert n >= 1 and item.content.nachweis is not None
+
+
+def test_normalizer_coerces_string_blocks_to_prose_info():
+    """Recurring agent slip: framing prose put as a bare string in `intro` (or a blocks
+    list) instead of an info block. The normalizer wraps it as a prose info block."""
+    from tools.ingest_batch import _normalize
+    out = _normalize({
+        "intro": ["Eine orientierende Rahmung."],
+        "sections": [{"id": "s1", "blocks": [
+            "Noch loser Text.",
+            {"role": "task", "id": "t1", "kind": "open_response", "prompt": "x"},
+        ]}],
+    })
+    assert out["intro"][0]["role"] == "info" and out["intro"][0]["kind"] == "prose"
+    assert out["intro"][0]["content"] == "Eine orientierende Rahmung."
+    assert out["sections"][0]["blocks"][0]["role"] == "info"      # string block → prose info
+    assert out["sections"][0]["blocks"][1]["role"] == "task"      # real block untouched

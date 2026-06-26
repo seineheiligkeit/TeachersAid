@@ -23,7 +23,7 @@ The repository has two layers:
 ```bash
 pip install -e .                       # deps: pydantic2, fastapi, uvicorn, anthropic, reportlab,
                                        #       matplotlib, pillow, pyyaml, pymupdf  (pytest for dev)
-python -m pytest -q                    # 109 tests, fully offline (no API key required)
+python -m pytest -q                    # 110 tests, fully offline (no API key required)
 python -m teachersaid seed             # seed the master-library examples into the review queue
 python -m teachersaid                  # dashboard → http://127.0.0.1:8000
 ```
@@ -257,9 +257,14 @@ it is validated through the real generation seam and staged for HITL review.
   Anchors via `resolve_kompetenzbereich` (content-KB subjects) or `resolve_grade` (strand-KB subjects);
   a too-narrow KB auto-widens to the grade when serves cross strands (Sport/Musik). `GenTaskBlock` carries
   `rubric` so generated worksheets author teacher rubrics.
-- **Run to date (25 Jun 2026):** all 16 subjects → **64 worksheets / ~404 blocks**, verify-clean, staged
-  `in_review` for SME approval. Feasibility lesson: subagent *content* is excellent; the constraint is
-  JSON well-formedness, handled by the normalizer (structured output would remove that class at scale).
+- **Run to date (26 Jun 2026):** all 16 subjects → **73 worksheets / ~477 blocks**, verify-clean, staged
+  `in_review` for SME approval. **GWB completed to all 14 Kompetenzbereiche** (the 8 gap KBs, +9 worksheets:
+  per-grade subagent briefs from `tools/breadth_prompt` machinery, **Tier-1 local anchoring** — students
+  investigate their own region, no asserted local facts — and **intent-declared figures**; verify-clean with
+  zero chart-lint warnings). The run doubled as a figure stress test: it cleanly surfaced two missing geography
+  recipes — **population pyramid** and **Klimadiagramm (dual-axis temp-line + precip-bar)** — which the agents
+  approximated honestly and flagged rather than faked. Feasibility lesson: subagent *content* is excellent; the
+  constraint is JSON well-formedness, handled by the normalizer (structured output would remove that class at scale).
 
 ## HITL dashboard (`api/` + `api/static/index.html`)
 

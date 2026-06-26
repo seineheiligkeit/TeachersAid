@@ -116,11 +116,22 @@ def _norm_block(b: dict) -> None:
         b["rubric"] = fixed
 
 
+def _to_block(b, fallback_id: str):
+    """A bare string where a block is expected (agents put framing prose in `intro` or
+    a blocks list) → a prose info block, preserving the text as the intended framing."""
+    if isinstance(b, str):
+        return {"role": "info", "id": fallback_id, "kind": "prose", "content": b}
+    return b
+
+
 def _normalize(body: dict) -> dict:
-    for b in body.get("intro", []):
+    body["intro"] = [_to_block(b, f"intro{i + 1}") for i, b in enumerate(body.get("intro", []))]
+    for b in body["intro"]:
         _norm_block(b)
     for sec in body.get("sections", []):
-        for b in sec.get("blocks", []):
+        sec["blocks"] = [_to_block(b, f"{sec.get('id', 's')}b{i + 1}")
+                         for i, b in enumerate(sec.get("blocks", []))]
+        for b in sec["blocks"]:
             _norm_block(b)
     return body
 
