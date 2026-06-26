@@ -68,7 +68,7 @@ change — is in **`Documents/rendering-handoff-brief.md`**.
 | Resolve | `pipeline/resolve.py` | **deterministic** — verbatim competences + `grade_check` (the trust feature) against curated grounding; honest gap notes for anything uncurated |
 | Plan | `pipeline/plan.py` | mostly deterministic — envelope→minutes, block-spec skeleton + `DepthTarget` ladder. **The plan IS the idea-stage review artifact.** |
 | Generate | `pipeline/generate.py` + `llm/` | **LLM** — `messages.parse()` into a recursion-free generation view, then `to_canonical()` |
-| Assets | `pipeline/assets.py` | code-generated (matplotlib), correct-by-construction; `intentionally_flawed` assets are built **wrong on purpose and never "fixed"** |
+| Assets | `pipeline/assets.py` | code-generated (matplotlib), correct-by-construction; `intentionally_flawed` assets are built **wrong on purpose and never "fixed"**. **Pluggable registry (Phase 4):** `Asset(generator, spec)` is a declarative request; builders register against a `<backend>:<recipe>` id (`@_generator`). Parameterized recipes read `spec` (`number_line`, `bar_chart`, `function_graph`, `math_formula` via mathtext); a future `diffusion:` backend (the SME's image-gen agent, for decorative/content-free assets) plugs in the same way. |
 | Verify | `pipeline/verify.py` | rules (kinds/dimensions/coverage/depth/difficulty); LLM fact-check optional |
 | Assemble + derive | `pipeline/assemble.py`, `pipeline/derive.py` | **deterministic** — `derive_nachweis` (coverage + auto-surfaced gaps), `compute_depth` (DepthProfile), `printable_coverage` |
 | Render | `rendering/*` | **deterministic** pure projections; QA-rastered via PyMuPDF |
