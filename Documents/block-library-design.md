@@ -134,11 +134,14 @@ aus Lehrplan" (suggest blocks for the empty cells).
      and `tools/scope_variants.py` (brief → subagent → ingest). Demo (Physik *Strahlung*, 7 families):
      einzelstunde→compact (~45 min) · doppelstunde→standard (~78) · block→extended (~114) — same concepts,
      scaled richness. `tests/test_compose.py` locks both the composer differentiation and the seam.
-   - **3b · Angle/Kernfrage-aware composition.** *Problem:* compose-by-KB takes *all* KB blocks and is
-     deterministic → two einzelstunde composes of one KB give the **identical** sheet; no notion of the
-     Kernfrage/angle. *Change:* `compose(..., kernfrage=?, competences=?)` selects only blocks serving the
-     chosen angle and frames with that Kernfrage. *Unlocks:* many distinct, focused worksheets per theme.
-     *Size:* medium.
+   - **3b · Angle/Kernfrage-aware composition — ✅ built (26 Jun 2026).** *Was:* compose-by-KB took *all*
+     KB blocks deterministically → two composes of one KB gave the identical sheet; no notion of angle.
+     *Built:* the requested **topic/Kernfrage is the angle** (= topic minus the KB's own words); `compose`
+     scores each eligible block by deterministic term overlap (no LLM) and **prefers on-angle blocks** in
+     selection (family-dedup + time-fit keep the most relevant), with graceful fallback to the old
+     cognitive ordering when there's no distinct angle. Two Kernfragen on one KB now compose different
+     sheets; the throughline reports the angle-relevant count. (Demonstrated on the live Strahlung KB:
+     a "Handystrahlung im Alltag" angle surfaces the WLAN tasks, a "Medizin" angle a different set.)
    - **3c · Assets travel with blocks — ✅ built (25 Jun 2026).** *Problem:* assets are code-generated at the worksheet
      level, not attached to harvested blocks → the composer **skips figure-info-blocks** (e.g. the
      Strahlung spectrum never appears in a composed sheet). *Change:* `LibraryBlock` carries the `Asset`

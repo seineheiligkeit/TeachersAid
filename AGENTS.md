@@ -182,12 +182,16 @@ Zufall"* — that's why the KB path exists). `topic` is always the display title
 `POST /api/compose` (accepts `topic` and/or `kompetenzbereich`). **No optimizer, no difficulty
 calibration yet** (Phase 3d). A composed sheet is a `WorksheetContent`, so rendering is unchanged.
 
-**Phase 3 progress** (see `Documents/block-library-design.md §8`): **3a** (scope/richness variants) and
-**3c** (assets travel with blocks) are built. *3a:* `compact`/`standard`/`extended` siblings share a
-`family`; the composer picks the variant matching the envelope (einzelstunde→compact … block→extended),
-so envelopes differ in depth. Produce variants via `orch.ingest_scope_variant` + `tools/scope_variants.py`.
-*3c:* `LibraryBlock` carries its `Asset` spec(s); `harvest` captures them; `compose` aggregates the chosen
-blocks' assets so figures (e.g. the Strahlung spectrum) now render in composed sheets.
+**Phase 3 progress** (see `Documents/block-library-design.md §8`): **3a** (scope/richness variants),
+**3b** (angle-aware composition), and **3c** (assets travel with blocks) are built. *3a:* `compact`/
+`standard`/`extended` siblings share a `family`; the composer picks the variant matching the envelope
+(einzelstunde→compact … block→extended), so envelopes differ in depth. Produce variants via
+`orch.ingest_scope_variant` + `tools/scope_variants.py`. *3b:* competences fix WHICH blocks are eligible;
+the requested **topic/Kernfrage is the angle** that picks among them — `compose` scores each block by
+deterministic term overlap (no LLM; angle = topic minus the KB's own words) and prefers on-angle blocks,
+so two Kernfragen on one Kompetenzbereich compose **different** sheets (empty/echoes-KB angle ⇒ the old
+cognitive ordering, unchanged). *3c:* `LibraryBlock` carries its `Asset` spec(s); `harvest` captures them;
+`compose` aggregates the chosen blocks' assets so figures (e.g. the Strahlung spectrum) render in composed sheets.
 
 ## Lernarrangement (schema v0.5 — Phase 5, in progress)
 

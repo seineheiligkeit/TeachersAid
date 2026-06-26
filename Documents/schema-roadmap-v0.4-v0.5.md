@@ -207,5 +207,7 @@ off-shape MC-payload coercion). **First push:** 4 subagent-generated arrangement
 Handyverbot Streitgespräch, GWB EU jigsaw, FS1 English class-trip sim) — all verify-clean (2 slips absorbed
 by the normalizer), staged `in_review`. v0.5 Lernarrangement is shipped.
 
-Carry-over from Phase 3: 3b (angle-aware composition), 3d (difficulty), 3e (coherence framing) fold in where
-natural, reprioritized behind Phase 4/5.
+Carry-over from Phase 3: **3b (angle-aware composition) ✅ done (26 Jun 2026)** — the topic/Kernfrage is the
+angle (= topic minus the KB's words); `compose` scores blocks by deterministic term overlap and prefers
+on-angle ones (fallback to cognitive ordering when no angle). **3d** (difficulty calibration) and **3e**
+(coherence/LLM framing) remain.

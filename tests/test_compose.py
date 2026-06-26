@@ -130,6 +130,46 @@ def test_ingest_scope_variant(tmp_path, monkeypatch):
     assert [b.id for b in long.iter_blocks() if b.role == Role.TASK] == ["t1_extended"]
 
 
+def _angle_block(bid, prompt):
+    """An approved task block (same competence, family-free) with a distinctive angle."""
+    from teachersaid.library.block import LibraryBlock
+    from teachersaid.schema.blocks import Serves, TaskBlock
+    from teachersaid.schema.response import LinesResponse
+    task = TaskBlock(
+        id=bid, kind="open_response", prompt=prompt, response=LinesResponse(n=3),
+        cognitive_level="understand", dimensions=["S"],
+        serves=[Serves(competence_id="PHY.US.4.STR.02", relation="exercises")], est_minutes=8)
+    return LibraryBlock(
+        id=f"ang.{bid}", block=task, role="task", kind="open_response", subject="Physik",
+        klasse=4, kompetenzbereich=PHY_KB, competences=["PHY.US.4.STR.02"],
+        cognitive_level="understand", dimensions=["S"], scope="standard", status="approved")
+
+
+def test_compose_is_angle_aware(tmp_path, monkeypatch):
+    """3b: three approved blocks on the SAME Kompetenzbereich + competence but different
+    angles — the composer prefers the block matching the requested topic/Kernfrage, so
+    two Kernfragen on one KB compose different sheets. KB terms don't count as an angle."""
+    import teachersaid.config as cfg
+    monkeypatch.setattr(cfg, "RUNS_DIR", tmp_path)
+    bs = BlockStore(tmp_path / "blocks")
+    bs.upsert(_angle_block("med", "Röntgen in der Medizin: Wie hilft bildgebende Diagnostik den Ärztinnen?"))
+    bs.upsert(_angle_block("alltag", "Handystrahlung und WLAN im Alltag — wie gefährlich ist das zu Hause?"))
+    bs.upsert(_angle_block("uv", "UV-Strahlung, Sonnenbrand und Sonnencreme: Wie schützt du deine Haut?"))
+
+    def first_task(topic):
+        content, _ = compose("Physik", 4, topic, kompetenzbereich=PHY_KB, block_store=bs, today=IN)
+        return [b for b in content.iter_blocks() if b.role == Role.TASK]
+
+    # angle "Medizin / Röntgen / Diagnostik" (KB word "Strahlung" excluded) → medical block leads
+    med = first_task("Strahlung in der Medizin: Röntgen und Diagnostik")
+    assert med[0].id == "med", [t.id for t in med]
+    # a different angle → a different block leads (same competence pool)
+    uv = first_task("UV-Strahlung, Sonnenbrand und Sonnencreme")
+    assert uv[0].id == "uv", [t.id for t in uv]
+    # no distinct angle (topic just echoes the KB) → still composes (angle-blind fallback)
+    assert len(first_task(PHY_KB)) >= 1
+
+
 def test_compose_carries_figure_assets(stores):
     """Phase 3c: a figure block's asset travels into the composition (no longer skipped)."""
     _, bs = stores

@@ -13,6 +13,7 @@ No optimizer, no LLM (offline): framing is a simple template; selection is a fil
 
 from __future__ import annotations
 
+import re
 from datetime import date
 
 from ..grounding import lehrplan_store as ls
@@ -29,6 +30,33 @@ from .resolve import resolve, resolve_kompetenzbereich
 
 # which scope (richness) suits which envelope
 _SCOPE_FOR = {"einzelstunde": "compact", "doppelstunde": "standard", "block": "extended"}
+
+# --- angle-aware selection (Phase 3b) ----------------------------------------
+# Competences fix WHICH blocks are eligible; the requested topic/Kernfrage is the
+# ANGLE that picks among them. Deterministic term overlap (no LLM) — content words
+# of the angle vs. the block's own text — so two Kernfragen on one Kompetenzbereich
+# compose different sheets. Empty/echoes-the-KB angle ⇒ no preference (back-compat).
+_ANGLE_STOP = frozenset((
+    "eine einen einem eines oder aber wenn dann auch noch schon sehr mehr viel viele alle "
+    "beide durch sowie sowohl anhand mithilfe zwischen welche welcher welches dieser diese "
+    "dieses jeder jede jedes kann können soll sollen sollte muss müssen wird werden sind "
+    "waren haben hatte nicht über unter gegen ohne beim vom zum zur aus bei für von das der die "
+    "arbeitsblatt aufgabe aufgaben thema themen beispiel beispiele erkläre erklären beschreibe "
+    "beschreiben nenne begründe begründen beurteile vergleiche ordne schreibe fülle deine "
+    "schüler schülerinnen klasse"
+).split())
+
+
+def _angle_terms(text: str) -> set[str]:
+    return {w for w in re.findall(r"[a-zäöüß]+", (text or "").lower())
+            if len(w) >= 4 and w not in _ANGLE_STOP}
+
+
+def _block_text(lb) -> str:
+    raw = getattr(lb.block, "prompt", None) or getattr(lb.block, "content", None) or ""
+    if isinstance(raw, list):
+        raw = "".join(getattr(r, "text", "") for r in raw)
+    return str(raw)
 
 
 def compose(
@@ -84,9 +112,17 @@ def compose(
         and (not target_kbs or b.kompetenzbereich in target_kbs or b.kompetenzbereich is None)
     ]
 
-    # one variant per family; prefer the scope that fits the envelope; climb the ladder
+    # angle (Phase 3b): the requested topic minus the KB's own words is the angle;
+    # prefer blocks whose text overlaps it. Empty angle ⇒ rel 0 everywhere ⇒ the old
+    # cognitive-ladder ordering, unchanged.
+    angle = _angle_terms(topic) - _angle_terms(kompetenzbereich or "")
+    rel = {b.id: (len(angle & _angle_terms(_block_text(b))) if angle else 0) for b in pool}
+
+    # one variant per family; prefer on-angle blocks, then climb the ladder, then scope
     pref = _SCOPE_FOR.get(envelope, "standard")
-    tasks.sort(key=lambda b: (COGNITIVE_RANK.get(b.cognitive_level, 9), 0 if b.scope == pref else 1))
+    tasks.sort(key=lambda b: (0 if rel[b.id] else 1, -rel[b.id],
+                              COGNITIVE_RANK.get(b.cognitive_level, 9),
+                              0 if b.scope == pref else 1))
     seen_family, picked = set(), []
     for b in tasks:
         if b.family and b.family in seen_family:
@@ -105,7 +141,9 @@ def compose(
             spent += m
     chosen.sort(key=lambda b: COGNITIVE_RANK.get(b.cognitive_level, 9))
 
-    # up to 2 readable infos + up to 1 figure as context (so a figure's asset travels)
+    # up to 2 readable infos + up to 1 figure as context (so a figure's asset travels);
+    # prefer the on-angle ones
+    infos.sort(key=lambda b: -rel[b.id])
     readable = [b for b in infos if b.kind != "figure"][:2]
     figures = [b for b in infos if b.kind == "figure"][:1]
     used_infos = readable + figures
@@ -114,10 +152,13 @@ def compose(
         content=f"Arbeitsblatt zu '{display}'. Bearbeite die Aufgaben der Reihe nach.",
     )]
     intro += [b.block for b in used_infos]
+    on_angle = sum(1 for b in chosen if rel[b.id])
+    focus = f" · auf „{display}“ ausgerichtet ({on_angle}/{len(chosen)} angle-relevant)" if angle else ""
     section = Baustein(
         id="cmp.kern", title=display,
         teacher_overview={
-            "throughline": f"Aus {len(chosen)} freigegebenen Bausteinen zusammengestellt (~{spent} min).",
+            "throughline": f"Aus {len(chosen)} freigegebenen Bausteinen zusammengestellt "
+                           f"(~{spent} min){focus}.",
         },
         blocks=[b.block for b in chosen],
     )
