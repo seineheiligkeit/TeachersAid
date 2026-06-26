@@ -14,7 +14,7 @@ is German (or a target language for Fremdsprache).
 
 ```bash
 pip install -e .            # Python 3.11–3.14; or: pip install pydantic fastapi uvicorn anthropic reportlab matplotlib pillow pyyaml pymupdf
-python -m pytest -q         # 107 tests, all offline (no API key needed)
+python -m pytest -q         # 109 tests, all offline (no API key needed)
 python -m teachersaid seed  # seed the master-library examples (Physik/Biologie/Mathematik) into the review queue
 python -m teachersaid       # dashboard at http://127.0.0.1:8000
 ```

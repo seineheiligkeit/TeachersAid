@@ -88,6 +88,24 @@ def test_lint_flags_wrong_chart_type():
     assert any("Zeitreihe" in x for x in w2)
 
 
+def test_misleading_axis_pair_is_parameterized(tmp_path):
+    # the curated truncated/honest generators now take real data, so a generated
+    # worksheet's "numbers that lie" pair actually differs instead of two identical bars
+    data = {"categories": ["Jän", "Feb", "Mär"], "values": [102, 108, 115], "ylabel": "Stück"}
+    for gen in ("matplotlib:truncated_axis", "matplotlib:honest_axis"):
+        p = build_asset(Asset(id="x", role="figure", generator=gen, spec=data), outdir=tmp_path)
+        assert p.read_bytes()[:8] == PNG and p.stat().st_size > 800
+
+
+def test_number_line_staggers_many_labels(tmp_path):
+    marks = [{"at": v, "label": lab} for v, lab in
+             [(2, "Zitronensaft"), (3, "Essig"), (6.7, "Milch"), (7.4, "Blut"),
+              (8.3, "Backpulver-Lösung"), (11.5, "Ammoniak")]]
+    p = build_asset(Asset(id="nl", role="figure", generator="matplotlib:number_line",
+                          spec={"min": 0, "max": 14, "step": 2, "marks": marks}), outdir=tmp_path)
+    assert p.read_bytes()[:8] == PNG and p.stat().st_size > 800
+
+
 def test_bar_chart_renders_long_labels_and_log(tmp_path):
     long = Asset(id="long", role="figure", generator="matplotlib:bar_chart",
                  spec={"categories": ["Ein sehr langer Kategoriename", "kurz",

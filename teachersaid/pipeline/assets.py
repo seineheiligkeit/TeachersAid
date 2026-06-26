@@ -48,25 +48,31 @@ def _outdir() -> Path:
 # --- parameterized recipes (read asset.spec) ---------------------------------
 @_generator("matplotlib:number_line")
 def _number_line(asset: Asset, path: Path) -> None:
-    """A number line. spec: {min, max, step?, marks?: [{at, label?}]}."""
+    """A number line. spec: {min, max, step?, marks?: [{at, label?}]}. Marked labels
+    are staggered over two levels (with stems) so clustered/long labels stay legible."""
     s = asset.spec or {}
     lo, hi = float(s.get("min", 0)), float(s.get("max", 10))
     step = float(s.get("step", 1)) or 1.0
-    fig, ax = plt.subplots(figsize=(7.2, 1.1))
+    marks = sorted(s.get("marks", []), key=lambda m: float(m["at"]))
+    has_labels = any(m.get("label") for m in marks)
+    fig, ax = plt.subplots(figsize=(7.4, 2.0 if has_labels else 1.1))
     ax.axhline(0, color="#33506e", lw=1.4, zorder=1)
     t = lo
     while t <= hi + 1e-9:
         ax.plot([t, t], [-0.07, 0.07], color="#33506e", lw=1)
         ax.text(t, -0.22, f"{t:g}", ha="center", va="top", fontsize=9)
         t += step
-    for m in s.get("marks", []):
+    levels = (0.18, 0.40, 0.62)                    # cycle 3 heights so clustered labels never collide
+    for i, m in enumerate(marks):
         at = float(m["at"])
         ax.plot([at], [0], "o", color="#b03a2e", ms=9, zorder=3)
         if m.get("label"):
-            ax.text(at, 0.16, str(m["label"]), ha="center", va="bottom",
-                    color="#b03a2e", fontsize=9)
+            y = levels[i % len(levels)]
+            ax.plot([at, at], [0.07, y - 0.04], color="#b03a2e", lw=0.6, zorder=2)
+            ax.text(at, y, str(m["label"]), ha="center", va="bottom",
+                    color="#b03a2e", fontsize=8.5)
     ax.set_xlim(lo - step * 0.6, hi + step * 0.6)
-    ax.set_ylim(-0.5, 0.5)
+    ax.set_ylim(-0.5, 0.95 if has_labels else 0.5)
     ax.axis("off")
     fig.tight_layout()
     fig.savefig(path, dpi=150)
@@ -289,30 +295,36 @@ def _em_spectrum(asset: Asset, path: Path) -> None:
 @_generator("matplotlib:truncated_axis")
 def _truncated_axis(asset: Asset, path: Path) -> None:
     """A bar chart with a TRUNCATED y-axis — intentionally misleading. Do NOT
-    'fix' the axis: the task is to spot the manipulation (geschönte Kurve)."""
-    years = ["2019", "2020", "2021", "2022"]
-    values = [101.0, 101.4, 101.9, 102.3]
-    fig, ax = plt.subplots(figsize=(4.6, 3.0))
-    ax.bar(years, values, color="#c0504d")
-    ax.set_ylim(100.5, 102.5)  # <-- the trick: zoomed axis exaggerates change
-    ax.set_ylabel("Index")
-    ax.set_title("Dramatischer Anstieg?!")
-    fig.tight_layout()
+    'fix' the axis: the task is to spot the manipulation (geschönte Kurve).
+    spec (all optional, else the demo defaults): {categories, values, ymin, ymax,
+    title, ylabel}. ymin defaults just below the smallest value (the zoom trick)."""
+    s = asset.spec or {}
+    cats = [str(c) for c in (s.get("categories") or ["2019", "2020", "2021", "2022"])]
+    values = [float(v) for v in (s.get("values") or [101.0, 101.4, 101.9, 102.3])]
+    fig, ax = plt.subplots(figsize=(4.6, 3.0), layout="constrained")
+    ax.bar(cats, values, color="#c0504d")
+    lo = float(s["ymin"]) if "ymin" in s else min(values) - 0.5  # <-- the trick: zoomed axis
+    hi = float(s["ymax"]) if "ymax" in s else max(values) + 0.2
+    ax.set_ylim(lo, hi)
+    ax.set_ylabel(s.get("ylabel") or "Index")
+    ax.set_title(s.get("title") or "Dramatischer Anstieg?!")
     fig.savefig(path, dpi=150)
     plt.close(fig)
 
 
 @_generator("matplotlib:honest_axis")
 def _honest_axis(asset: Asset, path: Path) -> None:
-    """The same data with a zero-based axis — the teacher-only honest comparison."""
-    years = ["2019", "2020", "2021", "2022"]
-    values = [101.0, 101.4, 101.9, 102.3]
-    fig, ax = plt.subplots(figsize=(4.6, 3.0))
-    ax.bar(years, values, color="#4f6f52")
-    ax.set_ylim(0, 110)  # zero-based: the change is tiny
-    ax.set_ylabel("Index")
-    ax.set_title("Dieselben Daten, ehrliche Achse")
-    fig.tight_layout()
+    """The same data with a ZERO-based axis — the honest comparison. spec mirrors
+    truncated_axis; ymin defaults to 0 (that is the whole point)."""
+    s = asset.spec or {}
+    cats = [str(c) for c in (s.get("categories") or ["2019", "2020", "2021", "2022"])]
+    values = [float(v) for v in (s.get("values") or [101.0, 101.4, 101.9, 102.3])]
+    fig, ax = plt.subplots(figsize=(4.6, 3.0), layout="constrained")
+    ax.bar(cats, values, color="#4f6f52")
+    lo = float(s.get("ymin", 0))  # zero-based: the change is tiny
+    ax.set_ylim(lo, float(s["ymax"]) if "ymax" in s else max(values) * 1.08)
+    ax.set_ylabel(s.get("ylabel") or "Index")
+    ax.set_title(s.get("title") or "Dieselben Daten, ehrliche Achse")
     fig.savefig(path, dpi=150)
     plt.close(fig)
 
