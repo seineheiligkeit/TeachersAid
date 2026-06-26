@@ -211,7 +211,7 @@ def persist(paths: list) -> None:
         w = _load(path)
         # render figure-bearing worksheets so the figures are reviewable in Vorschau;
         # text-only worksheets stay render-free (blocks are the unit).
-        has_figs = bool(w["body"].get("assets"))
+        has_figs = bool(w["body"].get("assets") or w["body"].get("data_figures"))
         item, n = orch.ingest_generated(
             store, blocks, w["subject"], w["klasse"],
             kompetenzbereich=w.get("kompetenzbereich"), scope_label=w.get("scope_label"),

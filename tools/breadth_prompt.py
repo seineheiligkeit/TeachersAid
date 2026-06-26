@@ -59,18 +59,28 @@ Wähle **{n} klar unterschiedliche Themen/Bereiche** (Breite!), nicht Varianten 
 - `dimensions` ⊆ erlaubte Codes; `kind` ∈ erlaubte kinds; `cognitive_level` steigt
   (remember→…→create; baue analyze/evaluate/create ein), nicht alles „remember".
 - **Korrektheit by construction**; Fehlvorstellungen/Hinweise in `watch_outs` (tragend).
-- **Abbildungen nur als Code-Generator** (korrekt by construction): wo eine Abbildung die Aufgabe wirklich
-  verbessert (v.a. Mathematik, Physik, Daten), darfst du eine anfordern — lege sie in `body.assets` und
+- **Abbildungen — Code-generiert, korrekt by construction** (nie freie Bilder/Diffusion): wo eine
+  Abbildung die Aufgabe wirklich verbessert (v.a. Mathematik, Physik, Daten), fordere eine an und
   referenziere sie aus einer Aufgabe/Info über `asset_refs`. Reiner Text bleibt völlig ok, wenn keine
-  Abbildung nötig ist. **Erlaubte Generatoren (nur diese):**
+  Abbildung nötig ist.
+  **Für DATEN: deklariere die ABSICHT, nicht den Diagrammtyp** — lege die Figur in `body.data_figures`;
+  das System wählt daraus die passende, lesbare Darstellung (so wird nicht alles ein Balkendiagramm).
+  Form: `{{"id":str,"intent":str,"title"?,"xlabel"?,"ylabel"?,"categories"?:[str],"values"?:[num],"points"?:[[x,y]],"log"?:bool,"fit"?:bool}}`
+  mit `intent` ∈
+    - `trend` — Verlauf/Entwicklung (oft über die Zeit): `categories`+`values` → Liniendiagramm
+    - `comparison` — MENGEN-Vergleich zwischen Kategorien: `categories`+`values` → Balkendiagramm
+    - `relationship` — Zusammenhang zweier numerischer Größen: `points` (+`fit` für Trendgerade) → Streudiagramm
+    - `distribution` — Häufigkeit/Streuung einer Größe: `values` → Histogramm
+    - `scale` — Position auf einer Skala (z. B. pH-Wert): `categories`+`values` → Zahlenstrahl
+  **Wähle nie selbst „Balken" für eine Zeitreihe, eine Ja/Nein-Klassifikation oder eine Skala** —
+  dafür ist der `intent` da; korrekte Zahlen allein genügen NICHT, die Darstellung muss zur Aussage passen.
+  **Für STRUKTUR-Abbildungen** (Funktionsgraph, Formel, fertiger Zahlenstrahl) nutze `body.assets` mit
+  explizitem Generator — **erlaubte Generatoren (nur diese):**
 {recipes}
   **Wichtig — eine Abbildung darf die gesuchte Lösung NICHT verraten:** z. B. KEINE Funktionsgleichung
   als Diagramm-`title`, wenn die Aufgabe ist, sie abzulesen; keine Werte/Beschriftungen anzeigen, die die
   Schüler:innen erst ablesen/bestimmen sollen. Die Abbildung zeigt das Material, nicht die Antwort.
-  **Wähle die richtige Darstellung (korrekte Zahlen allein genügen NICHT — die Darstellung muss zur
-  Aussage passen und lesbar sein):** ein Balkendiagramm nur für einen MENGEN-Vergleich, NIE für eine
-  Ja/Nein-Klassifikation (dafür Tabelle/Text); kurze Kategorienamen; bei Werten über mehrere
-  Größenordnungen `"log": true`. Keine freien Bilder/Diffusion, kein `data_interpretation`-Payload,
+  Keine freien Bilder/Diffusion, kein `data_interpretation`-Payload,
   keine `response.mode` ∈ {{diagram, drawing, artifact}}. {modality_note}
 - **Schülertext ist für Schüler:innen** — niemals Kompetenz-IDs/Dimensionen/„Lehrplan" im `prompt`/Intro.
 - Pro Aufgabe `answer_key` + `watch_outs`; optional `acceptable_reasoning` und `rubric`
@@ -94,7 +104,8 @@ Jede Datei ist **ausschließlich** dieses JSON (kein Fließtext, keine ``` Zäun
   "title": "<prägnanter Titel>", "kernfrage": "<eine Schüler-Kernfrage in Du-Form>",
   "body": {{
     "intro": [],
-    "assets": [ /* optional: {{"id":"abb1","role":"figure","generator":"matplotlib:number_line","spec":{{"min":0,"max":20,"marks":[{{"at":7,"label":"x"}}]}}}} */ ],
+    "data_figures": [ /* bevorzugt für Daten: {{"id":"abb1","intent":"trend","title":"...","xlabel":"Jahr","ylabel":"%","categories":["1990","2010","2024"],"values":[29,43,57]}} */ ],
+    "assets": [ /* nur Struktur-Figuren: {{"id":"abb2","role":"figure","generator":"matplotlib:function_graph","spec":{{"m":2,"b":1}}}} */ ],
     "sections": [ {{ "id":"s1","title":"...","throughline":"...","talking_points":["..."],"extensions":["..."],
       "blocks":[ {{"role":"task","id":"t1","kind":"<kind>","prompt":"...","payload":null,
         "response":{{"mode":"lines","n":3}},"cognitive_level":"understand","dimensions":["{dim0}"],

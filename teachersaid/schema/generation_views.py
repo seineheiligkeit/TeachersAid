@@ -98,14 +98,46 @@ class GenAsset(BaseModel):
     caption: str | None = None
 
 
+class GenDataFigure(BaseModel):
+    """A data figure declared by INTENT, not chart type: the model says what the data
+    *is* (trend / comparison / relationship / composition / distribution / scale) and the
+    data; `chart_choose.choose_representation` picks the appropriate chart + renders it
+    correct-by-construction. This is how we escape 'everything is a bar chart'."""
+    model_config = ConfigDict(extra="forbid")
+    id: str
+    intent: str                                          # see chart_choose.INTENTS
+    title: str | None = None
+    xlabel: str | None = None
+    ylabel: str | None = None
+    categories: list[str] = Field(default_factory=list)  # comparison / composition / trend / scale
+    values: list[float] = Field(default_factory=list)
+    points: list[list[float]] = Field(default_factory=list)  # relationship / numeric trend
+    log: bool = False
+    fit: bool = False                                    # scatter: draw a linear trend line
+    caption: str | None = None
+
+
+def data_figure_to_asset(g: GenDataFigure) -> Asset:
+    """Compile an intent-declared figure to a concrete code-gen Asset via the chooser."""
+    from .chart_choose import choose_representation
+    gen, spec = choose_representation(g.intent, {
+        "title": g.title, "xlabel": g.xlabel, "ylabel": g.ylabel,
+        "categories": g.categories or None, "values": g.values or None,
+        "points": g.points or None, "log": g.log, "fit": g.fit,
+    })
+    return Asset(id=g.id, role="figure", generator=gen, spec=spec, caption=g.caption)
+
+
 class GenWorksheetBody(BaseModel):
     """What the LLM generates: intro + sections + any requested assets. Meta/subject_model/
-    fassung come from the pipeline (resolution + plan), not the model."""
+    fassung come from the pipeline (resolution + plan), not the model. `data_figures` are
+    declared by intent (preferred for data charts); `assets` are concrete recipe requests."""
 
     model_config = ConfigDict(extra="forbid")
     intro: list[GenBlock] = Field(default_factory=list)
     sections: list[GenBaustein] = Field(default_factory=list)
     assets: list[GenAsset] = Field(default_factory=list)
+    data_figures: list[GenDataFigure] = Field(default_factory=list)
 
 
 # --- up-conversion -----------------------------------------------------------
@@ -180,6 +212,7 @@ def body_to_canonical(
         Asset(id=a.id, role=a.role, generator=a.generator, spec=a.spec, caption=a.caption)
         for a in body.assets
     ]
+    gen_assets += [data_figure_to_asset(g) for g in body.data_figures]  # intent → chosen chart
     return WorksheetContent(
         meta=meta,
         subject_model=subject_model,

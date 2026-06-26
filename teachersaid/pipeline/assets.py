@@ -130,6 +130,87 @@ def _bar_chart(asset: Asset, path: Path) -> None:
     plt.close(fig)
 
 
+@_generator("matplotlib:line")
+def _line(asset: Asset, path: Path) -> None:
+    """A line graph — for a TREND / change over time. spec: a single series via
+    {categories|x, values|y} or several via {series:[{label?, x:[...], y:[...]}]};
+    plus title?, xlabel?, ylabel?, log?. Categorical x (strings) plot over an index."""
+    s = asset.spec or {}
+    series = s.get("series") or [{"x": s.get("x") or s.get("categories"),
+                                  "y": s.get("y") or s.get("values")}]
+    fig, ax = plt.subplots(figsize=(6.2, 3.7), layout="constrained")
+    cat_labels = None
+    for ser in series:
+        y = [float(v) for v in (ser.get("y") or [])]
+        x = ser.get("x")
+        if x and any(isinstance(v, str) for v in x):     # categorical x → index + ticklabels
+            cat_labels = [str(v) for v in x]
+            ax.plot(range(len(y)), y, "-o", lw=2, ms=5, label=ser.get("label"))
+        else:
+            xs = [float(v) for v in (x or range(len(y)))]
+            ax.plot(xs, y, "-o", lw=2, ms=5, label=ser.get("label"))
+    if cat_labels is not None:
+        rot = 30 if any(len(c) > 6 for c in cat_labels) else 0
+        ax.set_xticks(range(len(cat_labels)))
+        ax.set_xticklabels(cat_labels, rotation=rot, ha="right" if rot else "center")
+    if s.get("log"):
+        ax.set_yscale("log")
+    ax.grid(True, color="#e9e9e9", lw=0.6)
+    if s.get("xlabel") or s.get("x_label"):
+        ax.set_xlabel(s.get("xlabel") or s.get("x_label"))
+    if s.get("ylabel") or s.get("y_label"):
+        ax.set_ylabel(s.get("ylabel") or s.get("y_label"))
+    if len(series) > 1 and any(ser.get("label") for ser in series):
+        ax.legend(fontsize=8)
+    if s.get("title"):
+        ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 52)))
+    fig.savefig(path, dpi=150)
+    plt.close(fig)
+
+
+@_generator("matplotlib:scatter")
+def _scatter(asset: Asset, path: Path) -> None:
+    """A scatter plot — for a RELATIONSHIP between two numeric variables. spec:
+    {points:[[x,y],…], xlabel?, ylabel?, title?, fit? (a linear trend line)}."""
+    s = asset.spec or {}
+    pts = s.get("points", [])
+    xs = [float(p[0]) for p in pts]
+    ys = [float(p[1]) for p in pts]
+    fig, ax = plt.subplots(figsize=(5.4, 4.0), layout="constrained")
+    ax.scatter(xs, ys, color="#33506e", s=38, zorder=3)
+    if s.get("fit") and len(xs) >= 2:
+        import numpy as np
+        m, b = np.polyfit(xs, ys, 1)
+        xr = [min(xs), max(xs)]
+        ax.plot(xr, [m * x + b for x in xr], color="#b03a2e", lw=1.5, zorder=2)
+    ax.grid(True, color="#e9e9e9", lw=0.6)
+    if s.get("xlabel") or s.get("x_label"):
+        ax.set_xlabel(s.get("xlabel") or s.get("x_label"))
+    if s.get("ylabel") or s.get("y_label"):
+        ax.set_ylabel(s.get("ylabel") or s.get("y_label"))
+    if s.get("title"):
+        ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 50)))
+    fig.savefig(path, dpi=150)
+    plt.close(fig)
+
+
+@_generator("matplotlib:histogram")
+def _histogram(asset: Asset, path: Path) -> None:
+    """A histogram — for the DISTRIBUTION of a numeric variable. spec:
+    {values:[…], bins?, xlabel?, ylabel?, title?}."""
+    s = asset.spec or {}
+    vals = [float(v) for v in s.get("values", [])]
+    fig, ax = plt.subplots(figsize=(5.6, 3.6), layout="constrained")
+    ax.hist(vals, bins=int(s.get("bins", 8)), color="#4f6f8f", edgecolor="#33506e")
+    if s.get("xlabel") or s.get("x_label"):
+        ax.set_xlabel(s.get("xlabel") or s.get("x_label"))
+    ax.set_ylabel(s.get("ylabel") or s.get("y_label") or "Häufigkeit")
+    if s.get("title"):
+        ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 50)))
+    fig.savefig(path, dpi=150)
+    plt.close(fig)
+
+
 @_generator("matplotlib:function_graph")
 def _function_graph(asset: Asset, path: Path) -> None:
     """A coordinate graph. spec: {xmin?, xmax?, m?, b? (line y=mx+b), points?: [[x,y],…],
@@ -336,6 +417,14 @@ GENERATION_RECIPES: dict[str, str] = {
         'Balkendiagramm für einen MENGEN-Vergleich (nicht für eine Ja/Nein-Klassifikation!) — '
         'spec {"categories":[str],"values":[num],"title"?:str,"xlabel"?:str,"ylabel"?:str,"log"?:bool}. '
         'Kurze Kategorienamen; bei Werten über mehrere Größenordnungen "log":true setzen.',
+    "matplotlib:line":
+        'Liniendiagramm für einen TREND / Verlauf über die Zeit — spec {"categories":[str]|"x":[num],'
+        '"values":[num] | "series":[{"label"?,"x":[...],"y":[...]}],"xlabel"?,"ylabel"?,"title"?,"log"?}',
+    "matplotlib:scatter":
+        'Streudiagramm für einen ZUSAMMENHANG zweier numerischer Größen — '
+        'spec {"points":[[x,y]],"xlabel"?,"ylabel"?,"title"?,"fit"? (Trendgerade)}',
+    "matplotlib:histogram":
+        'Histogramm für die VERTEILUNG einer numerischen Größe — spec {"values":[num],"bins"?,"xlabel"?,"ylabel"?,"title"?}',
     "matplotlib:function_graph":
         'Koordinatensystem/Gerade — spec {"xmin"?,"xmax"?,"m"?,"b"? (Gerade y=mx+b),'
         '"points"?:[[x,y]],"connect"? (Punkte zu einer Kurve verbinden, z. B. v-t-Diagramm),'
