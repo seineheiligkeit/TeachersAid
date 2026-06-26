@@ -37,6 +37,14 @@ _INFO_KEYS = {"role", "id", "kind", "content", "callout_role", "teacher_note",
 _VALID_INFO_KINDS = {"prose", "key_fact", "example", "procedure", "figure",
                      "data_reference", "callout"}
 _ANSWER_ALIASES = ("answer_text", "loesung", "lösung", "loesungsvorschlag", "musterloesung")
+# German cognitive-level words -> the English CognitiveLevel enum
+_COGLEVEL = {"erinnern": "remember", "wissen": "remember", "verstehen": "understand",
+             "anwenden": "apply", "analysieren": "analyze", "analyse": "analyze",
+             "bewerten": "evaluate", "beurteilen": "evaluate", "reflektieren": "evaluate",
+             "erschaffen": "create", "gestalten": "create", "entwickeln": "create",
+             "erstellen": "create"}
+_VALID_PAYLOAD_KINDS = {"matching", "ordering", "multiple_choice", "true_false_justify",
+                        "table_fill", "data_interpretation", "decision_scenario", "other"}
 
 
 def _stringify_level(lv):
@@ -66,6 +74,20 @@ def _norm_block(b: dict) -> None:
             b["answer_key"] = b.pop(alias)
         else:
             b.pop(alias, None)
+    cl = b.get("cognitive_level")                   # German level word -> English enum
+    if isinstance(cl, str) and cl.lower() in _COGLEVEL:
+        b["cognitive_level"] = _COGLEVEL[cl.lower()]
+    p = b.get("payload")                            # off-shape payload (no valid kind) e.g.
+    if isinstance(p, dict) and p.get("kind") not in _VALID_PAYLOAD_KINDS:  # {choices,correct}
+        opts = p.get("options") or p.get("choices")
+        if isinstance(opts, list) and opts:         # -> a proper multiple_choice
+            b["payload"] = {"kind": "multiple_choice",
+                            "options": [str(o) for o in opts], "select": "one"}
+            ans = p.get("correct") or p.get("answer") or p.get("loesung")
+            if ans and not b.get("answer_key"):
+                b["answer_key"] = str(ans)
+        else:
+            b["payload"] = None                     # unrecoverable -> drop (prompt carries it)
     p = b.get("payload")                            # nested multi-question MC (options as
     if isinstance(p, dict) and p.get("kind") == "multiple_choice":  # {question,options} dicts)
         opts = p.get("options") or []                # -> fold the questions into the prompt

@@ -199,8 +199,13 @@ in the pipeline). Run-guide renders + rasterises (4 pp). **Phase 5c DONE:** `sto
 store, mirrors the others) · `orch.stage_arrangement` (assemble→verify→render→store) + `seed_arrangements`
 (stages the GWB hero `in_review`) · `/api/arrangements*` (list/detail/PDF/approve-reject) · the dashboard
 **Arrangements** tab (Vorschau = run-guide + each role's student/teacher PDF; Struktur = phases/roles/shared
-product/anchors/Nachweis; approve→library). **Next: 5d** generation — a subagent emits an arrangement body,
-ingested via `stage_arrangement` (the v0.5 analogue of `ingest_generated`).
+product/anchors/Nachweis; approve→library). **Phase 5d DONE → Phase 5 COMPLETE:** generation seam —
+`GenArrangementBody` + `arrangement_body_to_canonical` (reuses `body_to_canonical` per role) ·
+`arrange.ingest_arrangement` · briefs `tools/arrangement_prompt.py` · ingest `tools/ingest_arrangements.py`
+(reuses the `ingest_batch` normalizer; the shared normalizer gained German cognitive-level → English + an
+off-shape MC-payload coercion). **First push:** 4 subagent-generated arrangements (GPB NATO debate, DEU
+Handyverbot Streitgespräch, GWB EU jigsaw, FS1 English class-trip sim) — all verify-clean (2 slips absorbed
+by the normalizer), staged `in_review`. v0.5 Lernarrangement is shipped.
 
 Carry-over from Phase 3: 3b (angle-aware composition), 3d (difficulty), 3e (coherence framing) fold in where
 natural, reprioritized behind Phase 4/5.

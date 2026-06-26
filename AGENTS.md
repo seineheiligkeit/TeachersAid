@@ -207,11 +207,14 @@ via `render_student_sheet`/`render_teacher_guide`. The asset-building bundle `re
 pipeline (not `rendering/`) because it builds asset images; the renderers stay pure. **Scope line:** we
 make the material bundle + a teacher run-guide; we do **not** run the room.
 **Hero:** `demo/gwb_standort.py` — a GWB grade-3 Gemeinderat-Planspiel (4 roles; ENT.03/06/07+ZEN.03 on
-the sheets; ENT.05 via the debate, ENT.01 via the council decision as anchors). **Phase 5a–5c done:**
+the sheets; ENT.05 via the debate, ENT.01 via the council decision as anchors). **Phase 5 COMPLETE (5a–5d):**
 schema + derive/assemble/verify + the hero + the run-guide renderer + the dashboard review surface
 (`store/arrangementstore.py`, `orch.stage_arrangement`/`seed_arrangements`, the **Arrangements** tab,
-`/api/arrangements*`), verify-clean & rasterised (`tests/test_arrangement.py`). **Next:** 5d generation
-(subagent → `stage_arrangement`, like worksheets).
+`/api/arrangements*`) + **generation** — `GenArrangementBody`→`arrangement_body_to_canonical`,
+`arrange.ingest_arrangement` (the v0.5 analogue of `ingest_generated`); briefs `tools/arrangement_prompt.py`,
+ingest `tools/ingest_arrangements.py` (reuses the worksheet normalizer on each role's `material`). **First
+push:** 4 subagent-generated arrangements (GPB NATO/Neutralität debate, DEU Handyverbot Streitgespräch, GWB
+EU jigsaw, FS1 English class-trip simulation), verify-clean, staged `in_review` (`runs/`, git-ignored).
 
 ## Breadth generation — subagents → ingest (the seam, no API key)
 

@@ -186,3 +186,92 @@ def body_to_canonical(
         assets=gen_assets + list(assets or []),
         rack=rack,
     )
+
+
+# --- Lernarrangement generation view (v0.5) ----------------------------------
+class GenArrangementRole(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    id: str
+    label: str
+    share: str | int = "all"
+    private: bool = False
+    material: GenWorksheetBody          # each role's sheet IS a worksheet body
+
+
+class GenArrangementPhase(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    id: str
+    label: str
+    grouping: str                       # individual | role_group | home_group | plenary
+    minutes: int
+    what_happens: str
+
+
+class GenSharedProduct(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    description: str
+    rubric: list[RubricCriterion] = Field(default_factory=list)
+
+
+class GenCompetenceAnchor(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    competence_id: str
+    dimension: str
+    served_by: str                      # interaction | debrief | shared_product | role:<id>
+
+
+class GenArrangementBody(BaseModel):
+    """What the LLM generates for a Lernarrangement (the `body`). Meta (title/subject/
+    klasse/fassung/format) is supplied by the pipeline from the wrapper, NOT in the body;
+    common_material/debrief are info blocks."""
+    model_config = ConfigDict(extra="forbid")
+    common_material: list[GenInfoBlock] = Field(default_factory=list)
+    roles: list[GenArrangementRole] = Field(default_factory=list)
+    phases: list[GenArrangementPhase] = Field(default_factory=list)
+    shared_product: GenSharedProduct | None = None
+    debrief: list[GenInfoBlock] = Field(default_factory=list)
+    competence_anchors: list[GenCompetenceAnchor] = Field(default_factory=list)
+
+
+def arrangement_body_to_canonical(body: GenArrangementBody, *, meta, subject_model):
+    """Up-convert a generated arrangement body to a `Lernarrangement` (DERIVED fields
+    left empty; pipeline.assemble_arrangement fills them). Each role's material reuses
+    `body_to_canonical`; its WorksheetMeta is derived from the arrangement meta."""
+    from .arrangement import (
+        ArrangementPhase,
+        ArrangementRole,
+        CompetenceAnchor,
+        Lernarrangement,
+        SharedProduct,
+    )
+    from .worksheet import WorksheetMeta
+
+    def _role_meta(label: str) -> WorksheetMeta:
+        return WorksheetMeta(
+            title=label, subject=meta.subject, stufe=meta.stufe, klasse=meta.klasse,
+            kernfrage=meta.kernfrage, fassung=meta.fassung, lehrplan_label=meta.lehrplan_label,
+        )
+
+    roles = [
+        ArrangementRole(
+            id=r.id, label=r.label, share=r.share, private=r.private,
+            material=body_to_canonical(r.material, meta=_role_meta(r.label),
+                                       subject_model=subject_model),
+        )
+        for r in body.roles
+    ]
+    return Lernarrangement(
+        meta=meta,
+        common_material=[_info_to_canonical(b) for b in body.common_material],
+        roles=roles,
+        phases=[ArrangementPhase(id=p.id, label=p.label, grouping=p.grouping,
+                                 minutes=p.minutes, what_happens=p.what_happens)
+                for p in body.phases],
+        shared_product=(SharedProduct(description=body.shared_product.description,
+                                      rubric=body.shared_product.rubric)
+                        if body.shared_product else None),
+        debrief=[_info_to_canonical(b) for b in body.debrief],
+        competence_anchors=[CompetenceAnchor(competence_id=a.competence_id,
+                                             dimension=a.dimension, served_by=a.served_by)
+                            for a in body.competence_anchors],
+    )

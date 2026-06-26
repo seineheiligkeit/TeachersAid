@@ -203,3 +203,24 @@ def stage_arrangement(store, arr: Lernarrangement, *, arr_id: str | None = None,
         artifacts=ArrangementArtifacts(orchestration=bundle["orchestration"], roles=bundle["roles"]),
     )
     return store.upsert(rec)
+
+
+def ingest_arrangement(store, subject: str, klasse: int, *, title: str, kernfrage: str,
+                       format: str, body, arr_id: str | None = None, source: str = "ai",
+                       today=None):
+    """Up-convert a generated arrangement body → a `Lernarrangement` → stage it for
+    review (the v0.5 analogue of `orch.ingest_generated`). `body` is a GenArrangementBody
+    or its dict. Meta/subject_model/fassung come from the catalog, not the model."""
+    from ..grounding import lehrplan_store as ls
+    from ..schema.arrangement import ArrangementMeta
+    from ..schema.generation_views import GenArrangementBody, arrangement_body_to_canonical
+
+    model = ls.get_subject_model(subject)
+    meta = ArrangementMeta(
+        title=title, subject=subject, stufe="Unterstufe", klasse=klasse,
+        kernfrage=kernfrage, fassung=ls.get_fassung(), format=format,
+        lehrplan_label=f"{subject} · {klasse}. Kl.",
+    )
+    gb = body if isinstance(body, GenArrangementBody) else GenArrangementBody.model_validate(body)
+    arr = arrangement_body_to_canonical(gb, meta=meta, subject_model=model)
+    return stage_arrangement(store, arr, arr_id=arr_id, source=source, today=today)

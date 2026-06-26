@@ -154,3 +154,58 @@ def test_api_arrangements(tmp_path, monkeypatch):
     assert client.get("/api/arrangements/gwb/pdf/gem/teacher").status_code == 200
     assert client.get("/api/arrangements/gwb/pdf/nope/student").status_code == 404
     assert client.post("/api/arrangements/gwb/approve").json()["status"] == "approved"
+
+
+def _gen_arr_body():
+    """A minimal-but-real generated GWB grade-3 arrangement body (catalog ids)."""
+    def material(pfx, cid, dim):
+        return {
+            "intro": [{"role": "info", "id": pfx + "i", "kind": "prose",
+                       "content": "Lies dein Rollenblatt und kläre deine Interessen."}],
+            "sections": [{"id": pfx + "s", "title": "Fraktionsarbeit", "throughline": "x",
+                          "talking_points": ["?"], "extensions": [], "blocks": [
+                {"role": "task", "id": pfx + "t1", "kind": "open_response",
+                 "prompt": "Stelle deine Position dar und begründe sie.",
+                 "response": {"mode": "lines", "n": 3}, "cognitive_level": "understand",
+                 "dimensions": [dim], "serves": [{"competence_id": cid, "relation": "exercises"}],
+                 "est_minutes": 7, "answer_key": "Position mit Begründung."}]}],
+            "assets": [],
+        }
+    return {
+        "common_material": [{"role": "info", "id": "case", "kind": "prose",
+                             "content": "Eine Gemeinde streitet über ein Bauprojekt."}],
+        "roles": [
+            {"id": "pro", "label": "Befürworter:innen",
+             "material": material("p", "GWB.US.3.ENT.03", "OK")},
+            {"id": "con", "label": "Gegner:innen",
+             "material": material("c", "GWB.US.3.ZEN.03", "OK")},
+        ],
+        "phases": [{"id": "ph1", "label": "Debatte", "grouping": "plenary", "minutes": 20,
+                    "what_happens": "Moderierte Debatte mit Statements und Repliken."}],
+        "shared_product": {"description": "Ein begründeter Beschluss.",
+                           "rubric": [{"criterion": "Begründung", "levels": ["schwach", "stark"]}]},
+        "debrief": [{"role": "info", "id": "db", "kind": "prose",
+                     "content": "Reflexion: Welcher Konflikt war am schwersten?"}],
+        "competence_anchors": [{"competence_id": "GWB.US.3.ENT.05", "dimension": "UK",
+                                "served_by": "interaction"}],
+    }
+
+
+def test_ingest_arrangement_seam(tmp_path, monkeypatch):
+    """5d: a generated arrangement body up-converts → assembles → verifies clean, with
+    the anchor (ENT.05) covered only through the interaction."""
+    import teachersaid.config as cfg
+    monkeypatch.setattr(cfg, "RUNS_DIR", tmp_path)
+    from teachersaid.pipeline.arrange import ingest_arrangement
+    from teachersaid.store.arrangementstore import ArrangementStore
+
+    store = ArrangementStore(tmp_path / "arrangements")
+    rec = ingest_arrangement(
+        store, "Geographie und wirtschaftliche Bildung", 3, title="Test-Debatte",
+        kernfrage="Soll gebaut werden?", format="role_debate",
+        body=_gen_arr_body(), arr_id="t", today=IN)
+    assert rec.verify_problems == [], rec.verify_problems
+    assert len(rec.arrangement.roles) == 2 and rec.artifacts.orchestration
+    cov = {c.competence_id: c for c in rec.arrangement.nachweis.competence_coverage}
+    assert cov["GWB.US.3.ENT.05"].covered
+    assert all(e.startswith("anchor:") for e in cov["GWB.US.3.ENT.05"].exercised_by)
