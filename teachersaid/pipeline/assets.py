@@ -15,6 +15,7 @@ touching the schema or callers. So: add a recipe = register one function.
 from __future__ import annotations
 
 import html
+import re
 import textwrap
 from collections.abc import Callable
 from pathlib import Path
@@ -43,6 +44,14 @@ def _outdir() -> Path:
     d = RUNS_DIR / "assets"
     d.mkdir(parents=True, exist_ok=True)
     return d
+
+
+_NUMERIC_RE = re.compile(r"-?\d+([.,]\d+)?")
+
+
+def _all_numeric(vals) -> bool:
+    """True when every label is a plain number (e.g. years) — plot on a numeric axis."""
+    return bool(vals) and all(_NUMERIC_RE.fullmatch(str(v).strip()) for v in vals)
 
 
 # --- parameterized recipes (read asset.spec) ---------------------------------
@@ -246,7 +255,9 @@ def _climate_diagram(asset: Asset, path: Path) -> None:
 def _line(asset: Asset, path: Path) -> None:
     """A line graph — for a TREND / change over time. spec: a single series via
     {categories|x, values|y} or several via {series:[{label?, x:[...], y:[...]}]};
-    plus title?, xlabel?, ylabel?, log?. Categorical x (strings) plot over an index."""
+    plus title?, xlabel?, ylabel?, log?. Numeric x (e.g. years) plot on a real numeric
+    axis (clean auto-ticks); true categorical x plots over an index, thinned to ~12 ticks
+    and a marker only when sparse so a long dense series (e.g. 65 yearly points) stays legible."""
     s = asset.spec or {}
     series = s.get("series") or [{"x": s.get("x") or s.get("categories"),
                                   "y": s.get("y") or s.get("values")}]
@@ -255,16 +266,21 @@ def _line(asset: Asset, path: Path) -> None:
     for ser in series:
         y = [float(v) for v in (ser.get("y") or [])]
         x = ser.get("x")
-        if x and any(isinstance(v, str) for v in x):     # categorical x → index + ticklabels
-            cat_labels = [str(v) for v in x]
-            ax.plot(range(len(y)), y, "-o", lw=2, ms=5, label=ser.get("label"))
-        else:
+        marker = "-o" if len(y) <= 24 else "-"          # no dot-soup on long series
+        if x and any(isinstance(v, str) for v in x) and not _all_numeric(x):
+            cat_labels = [str(v) for v in x]            # true categorical → index + ticklabels
+            ax.plot(range(len(y)), y, marker, lw=2, ms=5, label=ser.get("label"))
+        else:                                            # numeric x (years, quantities) → numeric axis
             xs = [float(v) for v in (x or range(len(y)))]
-            ax.plot(xs, y, "-o", lw=2, ms=5, label=ser.get("label"))
+            ax.plot(xs, y, marker, lw=2, ms=5, label=ser.get("label"))
     if cat_labels is not None:
+        n = len(cat_labels)
+        step = max(1, n // 12)                           # thin to ~12 ticks (no overlap smear)
+        idx = list(range(0, n, step))
         rot = 30 if any(len(c) > 6 for c in cat_labels) else 0
-        ax.set_xticks(range(len(cat_labels)))
-        ax.set_xticklabels(cat_labels, rotation=rot, ha="right" if rot else "center")
+        ax.set_xticks(idx)
+        ax.set_xticklabels([cat_labels[i] for i in idx], rotation=rot,
+                           ha="right" if rot else "center")
     if s.get("log"):
         ax.set_yscale("log")
     ax.grid(True, color="#e9e9e9", lw=0.6)

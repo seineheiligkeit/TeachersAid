@@ -90,6 +90,19 @@ def test_timeline_and_climate_render(tmp_path):
         assert p.read_bytes()[:8] == PNG and p.stat().st_size > 1500
 
 
+def test_line_numeric_x_axis_stays_legible(tmp_path):
+    # a long yearly series (65 points) must plot on a numeric axis, not 65 overlapping
+    # category labels — the legibility fix the data re-grounding surfaced
+    from teachersaid.pipeline.assets import _all_numeric
+    assert _all_numeric(["1960", "1990", "2024"]) and not _all_numeric(["a", "b"])
+    years = [str(y) for y in range(1960, 2025)]
+    vals = [7.0 + i * 0.03 for i in range(len(years))]
+    a = Asset(id="pop", role="figure", generator="matplotlib:line",
+              spec={"categories": years, "values": vals, "title": "Lang", "xlabel": "Jahr"})
+    p = build_asset(a, outdir=tmp_path)
+    assert p.read_bytes()[:8] == PNG and p.stat().st_size > 1500
+
+
 def test_chooser_maps_new_intents():
     from teachersaid.schema.chart_choose import choose_representation
     assert choose_representation("timeline", {"categories": ["A"], "values": [1900]})[0] == "matplotlib:timeline"
