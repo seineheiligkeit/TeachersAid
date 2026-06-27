@@ -11,11 +11,13 @@ correct-by-construction (or curation) and making it the durable, reusable asset:
   derived figures (population-pyramid · timeline · climate_diagram). Proven by 22 GWB/MAT/PHY worksheets.
 - **Parametric Maths engine**: sympy recipes → N correct-by-construction variants + worked Rechenweg;
   10 templates across all 4 MAT KBs; inline math typesetting.
-- **Annotated authentic texts** (Deutsch): real rights-cleared PD texts + a vetted annotation layer →
-  derived comprehension/analysis/Medienkritik/writing tasks, line-numbered source rendering, the AT
-  70-p.m.a. rights gate, the Texte tab. Flagships: Heine *Lore-Ley* + Lessing *Rabe und Fuchs*.
+- **Annotated authentic texts** (Deutsch + **Latein**): real rights-cleared PD texts + a vetted
+  annotation layer → derived comprehension/analysis/Medienkritik/writing tasks, line-numbered source
+  rendering, the AT 70-p.m.a. rights gate, the Texte tab. Flagships: Heine *Lore-Ley* + Lessing *Rabe
+  und Fuchs*; **Latein** extends it cleanly (Phaedrus *Vulpes et Corvus*) with `translation`/`grammar`/
+  `culture` annotation kinds (dims SPR/INH). See "Languages" below for FS/audio (planned).
 
-Also: store consolidation (`store/base.py::JsonStore`, the future-DB seam). **159 tests green.**
+Also: store consolidation (`store/base.py::JsonStore`, the future-DB seam). **160 tests green.**
 
 **Recommended next, in order:**
 
@@ -23,20 +25,64 @@ Also: store consolidation (`store/base.py::JsonStore`, the future-DB seam). **15
    geometry-primitive recipe (labeled triangles/polygons, Pythagoras *with a figure*, area/perimeter,
    coordinate geometry, nets) + the `construction` task kind + OPE-Konstruieren. Bigger build (matplotlib,
    no new dep); parametrizable on top of the variant engine.
-2. **Deutsch — scale the annotated-text library:** more annotated PD texts across grades (the
-   subagent-annotation + `tools/ingest_texts.py` path is proven); an **ANNO/OCR fetch tool** for real
-   newspaper/advert *media* texts (the one genre still curated-by-proxy); an optional LLM phrasing pass.
-3. **More parametric recipes + a "Varianten erzeugen" dashboard surface**; expose `orch.compose_variants`.
-4. **Re-ground the old invented-number figures** the (c)-label flags (c0081 urbanisation, c0096 climate,
+2. **Languages — modern FS (English/French): the audio breakthrough** + annotated Realien (the big,
+   design-first track). See the new "Languages (FS / Latein)" section below for the full plan.
+3. **Scale the text libraries:** more annotated PD texts (DE + LAT) across grades (subagent-annotation +
+   `tools/ingest_texts.py` proven); an **ANNO/OCR fetch tool** for real newspaper/advert media texts.
+4. **More parametric recipes + a "Varianten erzeugen" dashboard surface**; expose `orch.compose_variants`.
+5. **Re-ground the old invented-number figures** the (c)-label flags (c0081 urbanisation, c0096 climate,
    c0097 HDI) by curating the few datasets they need; curate **BIO/other-subject** datasets; **Tier-2
    regional** down to Bezirk.
-5. **Audio (A)** — the unserved Hörverstehen modality (design-first; see below).
 
 Standing tracks (no build needed): **geography teacher reviews** the 9 GWB worksheets (c0089–c0097),
 the staged dataset, + earlier staged items in the dashboard; **GPB Quellenarbeit via ANNO/ALEX is
 buildable now** as referenced-only (b2) — well-chosen task prompts pointing at the archives, no ingest tooling.
 
 Details for each below ↓
+
+## Languages (FS / Latein) — the asset class for languages *(planned 27 Jun 2026)*
+
+The catalog splits the languages cleanly, so they get different treatments:
+
+- **Latein — DONE (27 Jun 2026).** All printable (Sprach-/textbezogen + Inhalts-/Kulturkompetenz), with
+  abundant PD source texts — the annotated-authentic-text engine carries it almost directly. Added
+  `translation`/`grammar`/`culture` annotation kinds (dims SPR/INH; task kinds translation/text_analysis/
+  open_response) + the Phaedrus *Vulpes et Corvus* flagship. The same fox-and-flattery fable as the German
+  *Rabe und Fuchs* — one asset class, three languages.
+
+- **Modern FS (Englisch/Französisch) — the trickiest, planned.** Half the Lehrplan is **oral** (Sprechen
+  is the biggest KB, + Hören), it's CEFR/can-do (A1/A2), and the L2 material is the target language. Three
+  structural difficulties German didn't have: (1) the oral core can't be reached on paper; (2) CEFR
+  leveling fights "authentic" — native PD text is the wrong difficulty; (3) modern level-appropriate L2
+  text/audio isn't PD. Two planned tracks:
+
+### Audio — Hörverstehen (the FS breakthrough; design-first, high effort)
+- **The asset:** a *vetted script* → **TTS-generated L2 audio + transcript**. Answers derive from the
+  script (correct by construction — we own it). TTS is legitimately machine-generatable for language
+  (unlike music). The elegant unification: **the transcript IS an `AnnotatedText`** → reuse the engine
+  for Hören *and* Lesen from one asset; the printable transcript is the always-present fallback.
+- **Architecture (mirrors the diffusion seam):** a pluggable `audio:` backend (`register_audio_backend`,
+  the SME wires the TTS), `Asset.medium = audio`, provenance/rights (`machine_generatable` for TTS;
+  sourced real audio carries rights like sourced visuals). A new **non-PDF artifact type** (audio file +
+  transcript PDF), a player/QA step, and a **vetting lane** (the audio analogue of *Abbildungen*).
+- **Effort:** high — breaks the PDF-only output assumption; needs a design pass before building (artifact
+  type, store/review surface, rendering/player). It is the single biggest unmet *modality*, FS the reason.
+
+### Annotated Realien — the CEFR-leveling answer (medium effort, printable, reuses the engine)
+- **The asset:** point the annotated-text engine at **level-appropriate authentic everyday texts** —
+  menus, signs, timetables, short messages/emails, "news-in-levels" snippets — exactly what the can-do
+  Lehrplan asks ("kann einfache Alltagstexte verstehen"). Authentic *and* A1/A2, where native literature
+  is too hard. Annotations: `vocab` (glosses), `comprehension`, and use-tasks; a new `genre`/level tag.
+- **Honest tension:** "select-never-author" vs the need for controlled input. Realien are real *text
+  types* (regenerable from real templates / sourced); where a text must be adapted, label it (the
+  `illustrative` analogue). Modern copyright → lean on Realien + generated audio, not sourced literature.
+
+### Supporting (not the headline)
+- **Verified language-practice engine** — parametrized vocab/grammar/sentence patterns with checkable
+  answers (the Maths-engine analogue). *More* defensible at A1/A2 than for German (controlled practice
+  genuinely builds a language), but a supporting feature — leading with drills rebuilds the boring sheet.
+- **Communicative arrangements** — role-play / info-gap / simulation for Sprechen, already partly served
+  by the Lernarrangement layer (the FS1 class-trip simulation was an early hero).
 
 ## Next — agreed, deferred from the GWB figure work (26 Jun 2026)
 

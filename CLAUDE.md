@@ -23,7 +23,7 @@ The repository has two layers:
 ```bash
 pip install -e .                       # deps: pydantic2, fastapi, uvicorn, anthropic, reportlab,
                                        #       matplotlib, pillow, pyyaml, pymupdf, sympy  (pytest for dev)
-python -m pytest -q                    # 159 tests, fully offline (no API key required)
+python -m pytest -q                    # 160 tests, fully offline (no API key required)
 python -m teachersaid seed             # seed the master-library examples into the review queue
 python -m teachersaid                  # dashboard → http://127.0.0.1:8000
 ```
@@ -224,9 +224,16 @@ One annotated text → many tasks across grades; it compounds like the catalogs.
   `feedback` target kind `text`. `seed_texts` stages the curated flagships.
 - **Curated flagships** (`library/texts.py`): Heine *Die Lore-Ley* (literary — Stilmittel/Interpretation)
   and Lessing *Der Rabe und der Fuchs* (the persuasion/Medienkompetenz angle — the fox's Schmeichelei).
+- **Latein reuses the same engine** (the language where it transfers cleanest): the `translation` /
+  `grammar` / `culture` annotation kinds (dims SPR/INH → task kinds `translation` · `text_analysis` ·
+  `open_response`) drive Übersetzung + Formen/Konstruktion + Inhalt/Kultur. Flagship: Phaedrus *Vulpes et
+  Corvus* (the *same* fox-and-flattery fable as the German one). `_serves_for` matches by dimension code
+  (`.SPR./.INH./.LES./.SCH.`), so the engine is subject-agnostic.
 - **Scaling**: subagents add the annotation layer to a *provided verbatim* PD text → `AnnotatedText` JSON
   → `tools/ingest_texts.py` (validate → rights gate → build → verify → stage); the text is never authored,
   only annotated. A true newspaper/advert media text needs an ANNO/OCR fetch tool (next).
+- **Modern FS (English/French) is the trickier track** — oral-heavy + CEFR-leveled + modern copyright;
+  the plan (audio/Hörverstehen + annotated Realien) is in `Documents/feature-roadmap.md` "Languages".
 
 ## Master library (`teachersaid/library/`)
 
