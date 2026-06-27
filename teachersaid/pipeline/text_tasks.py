@@ -19,26 +19,30 @@ from ..schema.worksheet import Baustein, WorksheetContent, WorksheetMeta
 # annotation kind → (task kind, default dimension, default cognitive level, render order)
 _TASK_KIND = {
     "comprehension": ("open_response", "LES", "understand", 2),
+    "translation": ("translation", "SPR", "apply", 2),       # Latin: Übersetzung
     "structure": ("text_analysis", "LES", "analyze", 3),
+    "grammar": ("text_analysis", "SPR", "analyze", 3),       # Latin: Formen/Konstruktion
     "stilmittel": ("text_analysis", "SPR", "analyze", 4),
     "argument_move": ("text_analysis", "LES", "analyze", 4),
     "media_technique": ("text_analysis", "LES", "evaluate", 5),
+    "culture": ("open_response", "INH", "understand", 5),    # Latin: Kultur-/Sachkompetenz
     "erwartungshorizont": ("text_production", "SCH", "evaluate", 6),
 }
+_BOXED_KINDS = {"text_production", "translation"}            # need writing space, not lines
 
 
 def _serves_for(dim: str, pool: list[Serves]) -> list[Serves]:
-    """Pick a competence from the text's pool matching the task's KB (LES/SCH/ZUH)."""
-    want = {"LES": ".LES.", "SCH": ".SCH.", "SPR": ".LES.", "ZUH": ".ZUH."}.get(dim, "")
-    hit = next((s for s in pool if want in s.competence_id), None)
+    """Pick a competence from the text's pool whose id carries the task's dimension code
+    (.LES./.SCH./.SPR./.INH./.ZUH.); fall back to the first. Subject-agnostic (DE & LAT)."""
+    hit = next((s for s in pool if f".{dim}." in s.competence_id), None)
     return [hit or pool[0]] if pool else []
 
 
 def _prompt_for(kind: str, ann) -> str:
     where = f" (Zeile {ann.zeile})" if ann.zeile else ""
     quote = f" „{ann.span}“" if ann.span else ""
-    if kind == "comprehension":
-        return ann.label
+    if kind == "translation":
+        return f"Übersetze{where}{quote} ins Deutsche."
     if kind == "stilmittel":
         return (f"Welches sprachliche Mittel steckt{where}{quote}? "
                 f"Benenne es und erkläre seine Wirkung.")
@@ -48,7 +52,7 @@ def _prompt_for(kind: str, ann) -> str:
         return f"Welche Funktion hat die Textstelle{where}{quote} im Argumentationsgang?"
     if kind == "structure":
         return f"Beschreibe den Aufbau{where}: {ann.label}"
-    return ann.label                     # erwartungshorizont: the open question is the label
+    return ann.label    # comprehension/grammar/culture/erwartungshorizont: label is the question
 
 
 def build_worksheet(at: AnnotatedText, *, today: date | None = None):
@@ -84,13 +88,13 @@ def build_worksheet(at: AnnotatedText, *, today: date | None = None):
         task_kind, default_dim, default_cl, _ = spec
         dims = a.dimensions or [default_dim]
         n += 1
-        writing = task_kind == "text_production"
+        boxed = task_kind in _BOXED_KINDS
         blocks.append(TaskBlock(
             id=f"t{n}", kind=task_kind, prompt=_prompt_for(a.kind, a),
-            response=BoxResponse(min_height_mm=45) if writing else LinesResponse(n=3),
+            response=BoxResponse(min_height_mm=45) if boxed else LinesResponse(n=3),
             cognitive_level=a.cognitive_level or default_cl, dimensions=dims,
             serves=_serves_for(dims[0], at.serves),
-            est_minutes=8 if writing else 4,
+            est_minutes=8 if task_kind == "text_production" else (6 if boxed else 4),
             answer_key=a.answer,
         ))
 

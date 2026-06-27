@@ -59,6 +59,19 @@ def test_media_text_has_persuasion_annotations():
     assert "media_technique" in kinds and "argument_move" in kinds
 
 
+def test_latin_text_translation_and_valid_dims():
+    from teachersaid.grounding import lehrplan_store as ls
+    from teachersaid.library.texts import VULPES_CORVUS
+    from teachersaid.pipeline.text_tasks import build_worksheet
+    content, res = build_worksheet(VULPES_CORVUS, today=TODAY)
+    tasks = [b for b in content.iter_blocks() if b.role == "task"]
+    assert "translation" in {t.kind for t in tasks}            # the Übersetzung task kind
+    allowed = set(ls.get_subject_model("Latein").dimension_ids())   # {SPR, INH}
+    assert all(set(t.dimensions) <= allowed for t in tasks)    # no German LES/SCH leaking in
+    tr = next(t for t in tasks if t.kind == "translation")
+    assert tr.answer_key and "Rabe" in tr.answer_key           # the model translation is the answer
+
+
 # --- rendering: the line-numbered source text -------------------------------
 def test_source_text_renders_with_line_numbers(tmp_path):
     import fitz

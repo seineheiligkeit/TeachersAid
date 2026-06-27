@@ -176,7 +176,80 @@ RABE_FUCHS = AnnotatedText(
     ],
 )
 
-ANNOTATED_TEXTS: list[AnnotatedText] = [LORELEY, RABE_FUCHS]
+# --- Latein flagship: Phaedrus, "Vulpes et Corvus" (d. ~50 n. Chr. → PD) ------
+# The same fox-and-flattery fable as RABE_FUCHS, in Latin — shows the annotated-text
+# engine carrying Latin: vocab, Übersetzung, Formen/Konstruktion, Inhalt/Kultur.
+_VULPES = """Qui se laudari gaudet verbis subdolis,
+Fere dat poenas turpi paenitentia.
+Cum de fenestra corvus raptum caseum
+Comesse vellet, celsa residens arbore,
+Vulpes hunc vidit, deinde sic coepit loqui:
+O qui tuarum, corve, pennarum est nitor!
+Quantum decoris corpore et vultu geris!
+Si vocem haberes, nulla prior ales foret.
+At ille stultus, dum vult vocem ostendere,
+Emisit ore caseum, quem celeriter
+Dolosa vulpes avidis rapuit dentibus.
+Tunc demum ingemuit corvi deceptus stupor.
+Hac re probatur quantum ingenium valet;
+Virtute semper praevalet sapientia."""
+
+VULPES_CORVUS = AnnotatedText(
+    id="lat-vulpes-corvus", title="Vulpes et Corvus", subject="Latein", klasse=4,
+    genre="Fabel (Versfabel)", textsorte="Fabel", text=_VULPES,
+    source=TextSourceRef(
+        author="Phaedrus", title="Fabulae Aesopiae I,13 (Vulpes et Corvus)", year="~40 n. Chr.",
+        author_death_year=50, rights_basis="public_domain_pma",
+        repository="Perseus Digital Library (ed. L. Mueller, 1876)",
+        url="https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0118:book=1:poem=13",
+        attribution="Phaedrus, Fabulae I,13; gemeinfrei (Perseus Digital Library)."),
+    serves=[Serves(competence_id="LAT.US.4.SPR.06", relation="exercises"),   # Übersetzen/Wiedergabe
+            Serves(competence_id="LAT.US.4.SPR.01", relation="exercises"),   # Kernwortschatz
+            Serves(competence_id="LAT.US.4.SPR.02", relation="exercises"),   # formale Analyse
+            Serves(competence_id="LAT.US.4.INH.01", relation="exercises")],  # Inhalt/Kultur
+    keywords=["Fabel", "Phaedrus", "Übersetzung", "Schmeichelei", "Aesop", "Latein", "Sentenz"],
+    annotations=[
+        Annotation(kind="vocab", label="caseus, -i (m)", answer="der Käse"),
+        Annotation(kind="vocab", label="subdolus, -a, -um", answer="hinterlistig, arglistig"),
+        Annotation(kind="vocab", label="nitor, -oris (m)", answer="der Glanz"),
+        Annotation(kind="vocab", label="dolosus, -a, -um", answer="listig, trügerisch"),
+        Annotation(kind="vocab", label="ingenium, -i (n)", answer="die Klugheit, der Verstand"),
+        Annotation(kind="translation", zeile="3-5",
+                   answer="Als ein Rabe einen vom Fenster geraubten Käse verzehren wollte, während "
+                          "er hoch oben auf einem Baum saß, erblickte ihn ein Fuchs und begann dann "
+                          "so zu sprechen:", label="", cognitive_level="apply", dimensions=["SPR"]),
+        Annotation(kind="translation", zeile="6-8",
+                   answer="„O welch ein Glanz deines Gefieders, Rabe! Wie viel Schönheit trägst du "
+                          "an Körper und Gesicht! Wenn du eine Stimme hättest, wäre kein Vogel dir "
+                          "überlegen.“", label="", cognitive_level="apply", dimensions=["SPR"]),
+        Annotation(kind="grammar", zeile="8", span="haberes",
+                   label="Bestimme die Verbform „haberes“ (Z. 8) und erkläre, warum dieser Modus steht.",
+                   answer="haberes: 2. Person Singular Konjunktiv Imperfekt Aktiv (von habere). "
+                          "Konjunktiv im Irrealis der Gegenwart („wenn du eine Stimme hättest …“).",
+                   cognitive_level="analyze", dimensions=["SPR"]),
+        Annotation(kind="grammar", zeile="11", span="avidis … dentibus",
+                   label="In welchem Kasus steht „avidis dentibus“ (Z. 11) und welche Funktion hat er?",
+                   answer="Ablativ Plural; Ablativus instrumenti: „mit gierigen Zähnen“.",
+                   cognitive_level="analyze", dimensions=["SPR"]),
+        Annotation(kind="culture", zeile="6-8",
+                   label="Wie überredet der Fuchs den Raben? Vergleiche mit der Schmeichelei in der "
+                         "Werbung.",
+                   answer="Durch maßloses Lob (Schmeichelei): Er preist Gefieder und Aussehen und "
+                          "behauptet, nur die Stimme fehle zur Vollkommenheit – so verleitet er den "
+                          "eitlen Raben zum Singen, und der Käse fällt. Dieselbe Technik nutzt Werbung, "
+                          "wenn sie den Käufer:innen schmeichelt.",
+                   cognitive_level="evaluate", dimensions=["INH"]),
+        Annotation(kind="culture", zeile="1-2",
+                   label="Die Fabel wird von einer Sentenz gerahmt (Z. 1–2 und Z. 13–14). Welche Lehre "
+                         "zieht Phaedrus?",
+                   answer="Z. 1–2: Wer sich gern mit hinterlistigen Worten loben lässt, büßt meist mit "
+                          "schimpflicher Reue. Z. 13–14: Klugheit/Weisheit ist mehr wert als (eitle) "
+                          "Vorzüge. Botschaft: Hüte dich vor Schmeichelei.",
+                   cognitive_level="evaluate", dimensions=["INH"]),
+    ],
+)
+
+ANNOTATED_TEXTS: list[AnnotatedText] = [LORELEY, RABE_FUCHS, VULPES_CORVUS]
 
 
 def find_text(text_id: str) -> AnnotatedText | None:

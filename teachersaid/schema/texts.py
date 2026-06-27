@@ -21,13 +21,16 @@ from .richtext import RichText
 
 # annotation kinds → the tasks they license (see pipeline/text_tasks.py)
 AnnotationKind = Literal[
-    "vocab",            # a hard word + gloss (reading scaffold)
+    "vocab",            # a hard word + gloss (reading scaffold; Latin: Vokabel → Bedeutung)
     "comprehension",    # a question answerable from the text + its answer
     "structure",        # a structural part (Einleitung/Strophe/Argumentationsgang)
     "stilmittel",       # a rhetorical/poetic device at a span + its Wirkung
     "argument_move",    # These/Beleg/Gegenargument (argumentative texts)
     "media_technique",  # how the text persuades/constructs (Medienkompetenz)
     "erwartungshorizont",  # expected-answer points for an open interpretation/Stellungnahme
+    "translation",      # (Latin) translate a line/passage → the model translation is the answer
+    "grammar",          # (Latin) determine a form/construction → the answer (SPR analysis)
+    "culture",          # (Latin) content/cultural question → the answer (INH dimension)
 ]
 
 RightsBasis = Literal["public_domain_pma", "cc_by", "cc0", "cleared"]
