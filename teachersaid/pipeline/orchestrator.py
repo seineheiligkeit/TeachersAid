@@ -201,6 +201,39 @@ def compose_worksheet(
     return store.save(item)
 
 
+def compose_variants(store: ReviewStore, template_id: str, n: int = 6,
+                     *, today: date | None = None) -> ReviewItem:
+    """Stage a parametric Maths worksheet (N correct-by-construction variants of a curated
+    template) as a content item for Gate-2 review. The maths is computed (sympy), never
+    authored, so every variant is right and carries its Rechenweg."""
+    from ..library.templates import find_template, variant_worksheet
+
+    t = find_template(template_id)
+    if t is None:
+        raise KeyError(f"no parametric template '{template_id}'")
+    item = ReviewItem(
+        id="", stage="content", source="variants",
+        title=f"{t.subject} {t.klasse}. Kl. — {t.title or t.id} ({n} Varianten)",
+        request=BundleRequest(subject=t.subject, klasse=t.klasse, topic_raw=t.title or t.id),
+    )
+    store.create(item)
+    try:
+        content, res = variant_worksheet(t, n, today=today)
+        item.resolution = res
+        assemble(content, res)
+        report = verify(content, res)
+        item.artifacts = _render_all(item.id, content)
+        item.content = content
+        item.verify_problems = report.problems
+        item.verify_warnings = report.warnings
+        item.status = "pending"
+        item.error = None
+    except Exception as exc:  # noqa: BLE001
+        item.error = f"{type(exc).__name__}: {exc}"
+        item.status = "pending"
+    return store.save(item)
+
+
 def ingest_generated(
     store: ReviewStore,
     block_store,

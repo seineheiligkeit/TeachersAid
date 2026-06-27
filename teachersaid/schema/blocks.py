@@ -116,6 +116,15 @@ class RubricCriterion(BaseModel):  # v0.4 A4
     levels: list[str]  # e.g. ["nicht erreicht", "teilweise", "erreicht"]
 
 
+class SolutionStep(BaseModel):
+    """One line of the worked solution (Rechenweg). DERIVED by the parametric engine
+    (sympy), never hand-authored as the answer — so the maths is correct by construction.
+    Teacher-guide only."""
+    model_config = ConfigDict(extra="forbid")
+    text: RichText                  # what happens in this step
+    expr: str | None = None         # optional LaTeX for the line of working
+
+
 class Serves(BaseModel):
     model_config = ConfigDict(extra="forbid")
     competence_id: str
@@ -139,6 +148,7 @@ class TaskBlock(BlockBase):
     answer_key: RichText | None = None  # knowledge side
     acceptable_reasoning: RichText | None = None  # judgement side — the RANGE
     rubric: list[RubricCriterion] = Field(default_factory=list)  # v0.4 A4
+    solution_steps: list[SolutionStep] = Field(default_factory=list)  # worked Rechenweg (derived)
     watch_outs: list[str] = Field(default_factory=list)
     self_check: RichText | None = None  # homework: no teacher present
 

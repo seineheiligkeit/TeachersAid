@@ -18,11 +18,14 @@ class InlineRun(BaseModel):
     text: str = ""
     mark: Mark | None = None
     ref_block: str | None = None  # v0.4 B2: an intra-sheet reference run
+    math: bool = False            # text is a LaTeX expression, typeset inline (fractions, x², √)
 
     @model_validator(mode="after")
     def _check(self) -> "InlineRun":
         if self.ref_block is not None and self.mark is not None:
             raise ValueError("an InlineRun cannot be both a ref_block and marked")
+        if self.math and (self.ref_block is not None or self.mark is not None):
+            raise ValueError("a math InlineRun carries only LaTeX text")
         if self.ref_block is None and self.text == "":
             raise ValueError("a non-ref InlineRun needs text")
         return self
@@ -48,9 +51,9 @@ def plain_text(value: RichText) -> str:
 
 
 def collapse(value: RichText) -> RichText:
-    """Collapse a single unmarked, non-ref run list back to a plain string."""
+    """Collapse a single unmarked, non-ref, non-math run list back to a plain string."""
     if isinstance(value, list) and len(value) == 1:
         run = value[0]
-        if run.mark is None and run.ref_block is None:
+        if run.mark is None and run.ref_block is None and not run.math:
             return run.text
     return value

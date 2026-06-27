@@ -123,11 +123,22 @@ _MARK_WRAP = {
 
 
 def richtext_markup(value: RichText) -> str:
-    """RichText → ReportLab inline markup (escaped), marks → <b>/<i>/font."""
+    """RichText → ReportLab inline markup (escaped), marks → <b>/<i>/font, math → inline image."""
+    from . import inline_math
+
     parts: list[str] = []
     for run in to_runs(value):
         if run.ref_block:
             parts.append(f"<i>(siehe {html.escape(run.ref_block)})</i>")
+            continue
+        if run.math:
+            m = inline_math.render(run.text)
+            if m:
+                path, w, h = m
+                parts.append(f'<img src="{html.escape(path)}" width="{w:.1f}" '
+                             f'height="{h:.1f}" valign="-2"/>')
+            else:                                    # not configured → readable fallback
+                parts.append(f"<i>{html.escape(run.text)}</i>")
             continue
         txt = html.escape(run.text)
         if run.mark and run.mark in _MARK_WRAP:

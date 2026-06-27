@@ -19,6 +19,7 @@ from .blocks import (
     InfoBlock,
     RubricCriterion,
     Serves,
+    SolutionStep,
     TaskBlock,
     TaskPayload,
 )
@@ -79,6 +80,7 @@ __all__ = [
     "InfoBlock",
     "RubricCriterion",
     "Serves",
+    "SolutionStep",
     "TaskBlock",
     "TaskPayload",
     "CompetenceDimension",

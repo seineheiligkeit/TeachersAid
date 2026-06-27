@@ -14,7 +14,7 @@ from reportlab.platypus import Image, KeepTogether
 
 from ..schema.blocks import InfoBlock, TaskBlock
 from ..schema.enums import Role
-from ..schema.richtext import plain_text
+from ..schema.richtext import InlineRun, plain_text
 from . import reportlab_base as rb
 
 _CALLOUT_LABELS = {
@@ -158,6 +158,13 @@ def _task_flowables(b: TaskBlock, projection: str, S, width, assets, number, cit
                 "Akzeptabler Spielraum: " + rb.richtext_markup(b.acceptable_reasoning),
                 S["answer"],
             ))
+        if b.solution_steps:                          # the derived Rechenweg (Maths)
+            out.append(rb.para("Rechenweg:", S["label"]))
+            for st in b.solution_steps:
+                line = rb.richtext_markup(st.text)
+                if st.expr:
+                    line += "   " + rb.richtext_markup([InlineRun(text=st.expr, math=True)])
+                out.append(rb.raw_para("• " + line, S["teacher"]))
         for crit in b.rubric:
             out.append(rb.para(
                 f"Kriterium — {crit.criterion}: " + " / ".join(crit.levels), S["teacher"]

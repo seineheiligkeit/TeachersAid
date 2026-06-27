@@ -103,6 +103,8 @@ def build_pdf(
     width = _content_width()
     out_path = Path(out_path)
     out_path.parent.mkdir(parents=True, exist_ok=True)
+    from . import inline_math
+    inline_math.configure(out_path.parent / "math")   # inline LaTeX runs → PNGs here
 
     doc = SimpleDocTemplate(
         str(out_path), pagesize=A4,
