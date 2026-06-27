@@ -23,7 +23,7 @@ The repository has two layers:
 ```bash
 pip install -e .                       # deps: pydantic2, fastapi, uvicorn, anthropic, reportlab,
                                        #       matplotlib, pillow, pyyaml, pymupdf  (pytest for dev)
-python -m pytest -q                    # 110 tests, fully offline (no API key required)
+python -m pytest -q                    # 137 tests, fully offline (no API key required)
 python -m teachersaid seed             # seed the master-library examples into the review queue
 python -m teachersaid                  # dashboard → http://127.0.0.1:8000
 ```
@@ -68,9 +68,9 @@ change — is in **`Documents/rendering-handoff-brief.md`**.
 | Resolve | `pipeline/resolve.py` | **deterministic** — verbatim competences + `grade_check` (the trust feature) against curated grounding; honest gap notes for anything uncurated |
 | Plan | `pipeline/plan.py` | mostly deterministic — envelope→minutes, block-spec skeleton + `DepthTarget` ladder. **The plan IS the idea-stage review artifact.** |
 | Generate | `pipeline/generate.py` + `llm/` | **LLM** — `messages.parse()` into a recursion-free generation view, then `to_canonical()` |
-| Assets | `pipeline/assets.py` | code-generated (matplotlib), correct-by-construction; `intentionally_flawed` assets are built **wrong on purpose and never "fixed"**. **Pluggable registry (Phase 4):** `Asset(generator, spec)` is a declarative request; builders register against a `<backend>:<recipe>` id (`@_generator`). Parameterized recipes read `spec` (`number_line`, `bar_chart`, `function_graph`, `math_formula` via mathtext); the **`diffusion:` backend** (Phase 4 #4) plugs in the same way: `register_diffusion_backend(fn)` wires the SME's image-gen agent; `build_asset` dispatches `diffusion:*` to it (offline → `DiffusionNotConfigured`, no silent slop). The agent's brief (contract + content-free rule + manifest) is **`Documents/diffusion-handover.md`**. A **decorative kit** (`svg:badge/banner/motif`, content-free, rasterised via PyMuPDF — no extra dep) ships now. **Entry-gate (Phase 4 #3):** `pipeline/media_policy.py` enforces the invariant — *content-bearing visuals must be code-gen or vetted-sourced; decorative must be content-free* — by classifying each asset's role+source against `DEFAULT_MEDIA_POLICY`; runs inside `verify`. **Asset library (Phase 4 #4):** `store/assetstore.py::AssetStore` (parallel to `BlockStore`) holds the **file-backed** classes (decorative + sourced) with tags/status/reuse; `orch.ingest_asset` gates + materialises + stores; `library/decorative.py::seed_assets` seeds the kit. Code-gen content assets stay as specs on blocks. **Legibility + representation (load-bearing):** *correct numbers are necessary but NOT sufficient — the chart TYPE, scale, and labels must make the data legible and honest.* Recipes self-correct layout (`bar_chart` auto-horizontal for long/many labels, a value label on every bar so none is "invisible", optional `log` for orders-of-magnitude ranges, wrapped titles, `constrained_layout`); `pipeline/chart_lint.py` (run in `verify`) flags misrepresentations — a 0/1 "classification" plotted as bars, an extreme range that begs a log/table decision, or numeric/temporal x-values forced into bars (those are a trend/relationship → line/scatter). **Intent-declared figures (not "everything is a bar"):** the generator declares WHAT the data is, not the chart type — `GenDataFigure(intent ∈ trend·comparison·relationship·composition·distribution·scale, data)` (gen view), and the **deterministic** `schema/chart_choose.py::choose_representation` maps it to the right recipe (trend→`line`, relationship→`scatter` +optional fit, distribution→`histogram`, scale→`number_line`, comparison/composition→`bar_chart`). Same split as everywhere: the LLM declares intent, code guarantees a legible representation. The recipe vocabulary is `number_line·bar_chart·line·scatter·histogram·function_graph·math_formula` (all in `GENERATION_RECIPES`); `body.data_figures` (intent) is preferred for data, `body.assets` (explicit generator) is for structural figures. |
-| Verify | `pipeline/verify.py` | rules (kinds/dimensions/coverage/depth/difficulty/**media-policy**/**chart-sanity**); LLM fact-check optional |
-| Assemble + derive | `pipeline/assemble.py`, `pipeline/derive.py` | **deterministic** — `derive_nachweis` (coverage + auto-surfaced gaps), `compute_depth` (DepthProfile), `printable_coverage` |
+| Assets | `pipeline/assets.py` | code-generated (matplotlib), correct-by-construction; `intentionally_flawed` assets are built **wrong on purpose and never "fixed"**. **Pluggable registry (Phase 4):** `Asset(generator, spec)` is a declarative request; builders register against a `<backend>:<recipe>` id (`@_generator`). Parameterized recipes read `spec` (`number_line`, `bar_chart`, `function_graph`, `math_formula` via mathtext); the **`diffusion:` backend** (Phase 4 #4) plugs in the same way: `register_diffusion_backend(fn)` wires the SME's image-gen agent; `build_asset` dispatches `diffusion:*` to it (offline → `DiffusionNotConfigured`, no silent slop). The agent's brief (contract + content-free rule + manifest) is **`Documents/diffusion-handover.md`**. A **decorative kit** (`svg:badge/banner/motif`, content-free, rasterised via PyMuPDF — no extra dep) ships now. **Entry-gate (Phase 4 #3):** `pipeline/media_policy.py` enforces the invariant — *content-bearing visuals must be code-gen or vetted-sourced; decorative must be content-free* — by classifying each asset's role+source against `DEFAULT_MEDIA_POLICY`; runs inside `verify`. **Asset library (Phase 4 #4):** `store/assetstore.py::AssetStore` (parallel to `BlockStore`) holds the **file-backed** classes (decorative + sourced) with tags/status/reuse; `orch.ingest_asset` gates + materialises + stores; `library/decorative.py::seed_assets` seeds the kit. Code-gen content assets stay as specs on blocks. **Legibility + representation (load-bearing):** *correct numbers are necessary but NOT sufficient — the chart TYPE, scale, and labels must make the data legible and honest.* Recipes self-correct layout (`bar_chart` auto-horizontal for long/many labels, a value label on every bar so none is "invisible", optional `log` for orders-of-magnitude ranges, wrapped titles, `constrained_layout`); `pipeline/chart_lint.py` (run in `verify`) flags misrepresentations — a 0/1 "classification" plotted as bars, an extreme range that begs a log/table decision, or numeric/temporal x-values forced into bars (those are a trend/relationship → line/scatter). **Intent-declared figures (not "everything is a bar"):** the generator declares WHAT the data is, not the chart type — `GenDataFigure(intent ∈ trend·comparison·relationship·composition·distribution·scale, data)` (gen view), and the **deterministic** `schema/chart_choose.py::choose_representation` maps it to the right recipe (trend→`line`, relationship→`scatter` +optional fit, distribution→`histogram`, scale→`number_line`, comparison/composition→`bar_chart`, **demographic→`population_pyramid`**, **timeline→`timeline`**, **climate→`climate_diagram`** [dual-axis temp-line + precip-bar Klimadiagramm]). Same split as everywhere: the LLM declares intent, code guarantees a legible representation. The recipe vocabulary is `number_line·bar_chart·line·scatter·histogram·function_graph·math_formula·population_pyramid·timeline·climate_diagram` (all in `GENERATION_RECIPES`); `body.data_figures` (intent) is preferred for data, `body.assets` (explicit generator) is for structural figures. |
+| Verify | `pipeline/verify.py` | rules (kinds/dimensions/coverage/depth/difficulty/**media-policy**/**chart-sanity**/**(c)-data-label**); LLM fact-check optional. The **(c)-label gate** (`pipeline/figure_lint.py`) warns when a data figure carries real-looking numbers but declares neither `data_source` (sourced+cited) nor `illustrative` (schematic) — the grounded-facts honesty rule. |
+| Assemble + derive | `pipeline/assemble.py`, `pipeline/derive.py` | **deterministic** — `derive_nachweis` (coverage + auto-surfaced gaps), `compute_depth` (DepthProfile), `printable_coverage`; **`data_ground.ground_data`** derives each figure's real values FROM its `data_source` dataset slice + stamps the citation onto the content (so rendering stays pure; *select-never-author* for numbers) |
 | Render | `rendering/*` | **deterministic** pure projections; QA-rastered via PyMuPDF |
 
 ## Schema conventions (important)
@@ -126,6 +126,59 @@ HTML/PDF are git-ignored; the parser regenerates the catalog (re-run for the 202
 **To add/correct a subject:** edit the catalog (re-run the parser, or edit `lehrplan/*.json` /
 `subject_models.json`) — no engine code change. *(The earlier Physik-only `grounding/data/*.yaml` stub
 has been removed now that the store reads the full catalog.)*
+
+## Grounded facts & data layer (`teachersaid/grounding/data/`)
+
+Generalises the grounding discipline from **competences** to **facts**: content states *real,
+cited numbers* instead of LLM-invented ("schematisch") ones — completing "correct by construction"
+from structure to substance. Mirrors the Lehrplan-catalog pattern exactly. **Load-bearing rule:
+select, never author** — facts come from a deterministic tool fetching+parsing a real source, never
+from the model; generation *references* a dataset by stable id (like `serves` → a competence) and may
+*use* a datum, never *invent* one.
+
+- **Schema** (`schema/datasets.py`): `SourceRef` (publisher/title/url/licence/attribution/Stand — the
+  data analogue of `FassungRef`), `DataRef` (a figure pointing at {dataset_id, series}; resolved
+  citation fields cached on it), `Dataset` (the curated in-repo record + **discovery metadata**:
+  `subjects`/`keywords`/`competences` curated tags). `Asset` gains `data_source: DataRef` (→ (b)
+  sourced+cited) and `illustrative: bool` (→ (c) schematic).
+- **Catalog** (`grounding/data/_catalog.json` + `<id>.json`): written by **deterministic, LLM-free**
+  fetch tools (the `parse_lehrplan.py` precedent), one per source, each verifying its licence:
+  `tools/fetch_statistik_austria.py` (population by age×sex + per-Bundesland aggregation, CC BY 4.0),
+  `tools/fetch_worldbank.py` (AT population/aging time series + multi-country urbanisation/GDP-pc/CO₂-pc,
+  CC BY 4.0), `tools/fetch_geosphere.py` (1991–2020 monthly climate normals per station → Klimadiagramm,
+  CC BY 4.0). **8 GWB datasets curated so far.** Add a source = add a fetch tool; each datum is a
+  reviewable item. Numbers only (licensing-clean); text/images are the harder, deferred phase 5.
+- **Resolver** (`grounding/data_store.py`): the data twin of `resolve.py`. `resolve_dataref` fills the
+  citation from the vetted SourceRef (*overwriting* any hand-written attribution — no faked citations);
+  `series_to_spec` maps a series → the recipe's value fields; `relevant_datasets(subject/topic/
+  competences)` is the **discovery** query (deterministic, mirrors compose's angle-scoring) so data ⇄
+  ideas can interplay; honest gap notes for unknown dataset/series.
+- **Data flow is inverted (not bolted on the tail).** The catalog feeds GENERATION: `relevant_datasets`
+  + `format_available_datasets` inject the citable datasets into the brief (`tools/breadth_prompt.py`,
+  subject-scoped) and the live prompt (`llm/prompts.build_user`, topic/competence-scoped) — so tasks are
+  built AROUND real data. At `assemble`, `data_ground.ground_data` then **derives each `data_source`
+  figure's values FROM the dataset slice** (overwriting any authored numbers) and stamps the citation.
+  This makes *select-never-author* true for numbers — not "author then cite".
+- **The invariant `verify` enforces** (`pipeline/figure_lint.py`, the (c)-label gate): every data figure
+  (`bar_chart·line·scatter·histogram·population_pyramid`) is exactly one of (b) `data_source` set /
+  (c) `illustrative=True`; a real-looking unlabelled figure is a warning. Pure-math figures are exempt.
+- **Citations render** purely: `ground_data` (in `assemble`) puts real values + the resolved citation ON
+  the content object; `rendering/` prints "Quelle: …" under the figure (student-visible — Quellenkritik
+  is curriculum).
+- **HITL**: `store/datasetstore.py::DatasetStore` (mirrors `AssetStore`), `orch.ingest_dataset` (gates
+  licence: only redistribute under a recorded redistributable licence + attribution) + `seed_datasets`,
+  the dashboard **Datensätze** tab (`/api/datasets*`, figure preview, approve/reject), `feedback`
+  target kind `dataset`. **Proven end-to-end** by re-grounding GWB **c0094.t2** to a *real, cited
+  Bevölkerungspyramide*, then by a **15-worksheet GWB content pass** (`runs/ingest/gwb_data/`, staged
+  c0104–c0118, 102 blocks) where subagents wrote data-required Kernfragen across all 8 datasets —
+  every figure `data_source`-cited, values derived at assemble, all verify-clean. The full chain held:
+  catalog → brief (`relevant_datasets`/`format_available_datasets` inject citable datasets, subject-
+  scoped) → subagent declares intent + `data_source` (no authored numbers) → `ground_data` fills real
+  values + citation → (c)-label clean → "Quelle: …" renders.
+
+**Where the data layer goes next** (`Documents/feature-roadmap.md`): demand-driven dataset curation
+(numbers first — cleanest licensing), Tier-2 regional data (locality), then sourced text/images (phase
+5, licence-sensitive). Confirmed source/licence research is in the roadmap's "big bet" section.
 
 ## Master library (`teachersaid/library/`)
 
@@ -268,9 +321,11 @@ it is validated through the real generation seam and staged for HITL review.
 
 ## HITL dashboard (`api/` + `api/static/index.html`)
 
-Two review gates, one `ReviewItem` type (`stage` ∈ **brainstorm** | **content**); eight tabs
-(Brainstorm · **Bausteine** · Inhalte · Bibliothek · **Arrangements** · **Abbildungen** · Statistik ·
-**Insights** — see the Block library section below). **Abbildungen** is the asset-review surface (Phase 4
+Two review gates, one `ReviewItem` type (`stage` ∈ **brainstorm** | **content**); nine tabs
+(Brainstorm · **Bausteine** · Inhalte · Bibliothek · **Arrangements** · **Abbildungen** ·
+**Datensätze** · Statistik · **Insights** — see the Block library section below). **Datensätze**
+reviews grounded-facts datasets (`DatasetStore`): source/licence/Stand + a figure preview, approve/reject
+(see the Grounded facts & data layer section). **Abbildungen** is the asset-review surface (Phase 4
 #2/#4): file-backed library assets (decorative/sourced, with approve/reject) on top, and below, every
 code-generated content figure rendered inline (deduped by generator+spec, built on demand) for
 fächerübergreifende review. **Arrangements** (Phase 5c) reviews Lernarrangements (`ArrangementStore`): the
@@ -278,7 +333,7 @@ run-guide + each role's student/teacher PDF (Vorschau) and a structural view (ph
 · anchors · Nachweis), approve/reject. (Arrangements use their own store, not `ReviewItem`.)
 
 **Rich feedback loop (`store/feedbackstore.py`).** Beyond approve/reject, every review surface (block ·
-worksheet item · arrangement · asset) carries a feedback panel — a **rating (1–5) + free comment + quick
+worksheet item · arrangement · asset · dataset) carries a feedback panel — a **rating (1–5) + free comment + quick
 tags** — **decoupled from the decision** (you can rate/comment without approving, so partial review still
 accrues signal). It's ONE central append-only store keyed by `(target_kind, target_id)` (not a field on each
 model), so `FeedbackStore.digest()` is a single read. The **Insights** tab renders that digest — a priority
@@ -319,6 +374,11 @@ Run a single file: `python -m pytest tests/test_derive.py -q`.
 
 ## Conventions & gotchas
 
+- **All stores subclass `store/base.py::JsonStore`** (shared file-I/O + sequential-id counter +
+  status-preserving `upsert`). Add a store by setting `model` + `subdir` + a typed `list()`, **not** by
+  copy-paste. Library stores (Block/Asset/Arrangement/Dataset) use `upsert`; Review uses `create`;
+  Feedback is append-only `add` — each keeps its lifecycle on the same base. This is the seam a future
+  SQLite backend swaps behind (see `Documents/architecture-review.md`).
 - **`Baustein` lives in `schema/worksheet.py`**, not `schema/blocks.py` (easy import slip).
 - In rendering, use `rb.para(value, style)` for RichText (escapes); use `rb.raw_para(markup, style)` when
   you've **already built** inline markup (don't double-escape — that prints literal `<b>` tags).

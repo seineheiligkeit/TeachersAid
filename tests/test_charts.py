@@ -77,6 +77,26 @@ def test_new_recipes_render(tmp_path):
         assert p.read_bytes()[:8] == PNG and p.stat().st_size > 800
 
 
+def test_timeline_and_climate_render(tmp_path):
+    tl = Asset(id="tl", role="figure", generator="matplotlib:timeline",
+               spec={"events": [{"at": 1918, "label": "Republik"}, {"at": 1938, "label": "Anschluss"},
+                                {"at": 1945, "label": "Kriegsende"}, {"at": 1955, "label": "Staatsvertrag"}],
+                     "title": "Österreich 20. Jh."})
+    cd = Asset(id="cd", role="figure", generator="matplotlib:climate_diagram",
+               spec={"temp": [-1, 1, 5, 10, 15, 18, 20, 19, 15, 9, 4, 0],
+                     "precip": [40, 38, 50, 55, 70, 90, 85, 80, 60, 50, 55, 45], "title": "Wien"})
+    for a in (tl, cd):
+        p = build_asset(a, outdir=tmp_path)
+        assert p.read_bytes()[:8] == PNG and p.stat().st_size > 1500
+
+
+def test_chooser_maps_new_intents():
+    from teachersaid.schema.chart_choose import choose_representation
+    assert choose_representation("timeline", {"categories": ["A"], "values": [1900]})[0] == "matplotlib:timeline"
+    assert choose_representation("climate", {"temp": [1] * 12, "precip": [2] * 12})[0] == "matplotlib:climate_diagram"
+    assert choose_representation("demographic", {"male": [1], "female": [2]})[0] == "matplotlib:population_pyramid"
+
+
 def test_lint_flags_wrong_chart_type():
     num = Asset(id="n", role="figure", generator="matplotlib:bar_chart",
                 spec={"categories": ["100", "200", "300", "400"], "values": [4.5, 3.8, 3.2, 2.9]})

@@ -5,30 +5,46 @@ Forward-looking *capability* features for TeachersAid. (The schema-version roadm
 
 ## ▶ Start here tomorrow (27 Jun 2026)
 
-Strategy is captured; nothing is mid-build; tree is clean. Recommended order:
+**DONE 27 Jun 2026 — the convergent spike + the (c) label shipped** (was items 1+2 below):
+the **population-pyramid recipe** (`matplotlib:population_pyramid` + the `demographic` intent), the
+**`Dataset`/`SourceRef`/`DataRef` schema** (`schema/datasets.py`), the deterministic LLM-free fetch tool
+(`tools/fetch_statistik_austria.py`) + curated catalog (`grounding/data/`, first dataset = Statistik
+Austria population by age & sex 1.1.2024, CC BY 4.0), the resolver (`grounding/data_store.py`), the
+**(c)-label verify gate** (`pipeline/figure_lint.py`), citation grounding+rendering ("Quelle: …"), and
+the HITL **`DatasetStore` + Datensätze tab**. Proven by re-grounding **c0094.t2** to a real cited
+Bevölkerungspyramide (watch-out retired); c0094.t1/t3 now correctly flagged as unlabelled. 129 tests
+green. See CLAUDE.md "Grounded facts & data layer".
 
-1. **First strike — the convergent spike** (B + data-layer phase 2 in one): build the
-   **population-pyramid recipe** *and* the `Dataset`/`SourceRef`/`DataRef` schema, proven on
-   **Statistik Austria population-by-age** (CC BY OGD), re-grounding **c0094** with a *real, cited*
-   Bevölkerungspyramide. One dataset proves both the recipe and the data layer end-to-end.
-2. **Quick parallel win — the (c) label** (data-layer phase 1): every figure's data declares
-   `sourced(ref)` vs `illustrative`; `verify` warns on unlabelled real-looking numbers. Small, independent.
-3. **Then the rest of B:** timeline (GPB) + Klimadiagramm dual-axis recipe (share derived-layout machinery).
+Recommended next order:
 
-Standing tracks (no build needed): **geography teacher reviews** the 9 GWB worksheets (c0089–c0097) +
-earlier staged items in the dashboard; **GPB Quellenarbeit via ANNO/ALEX is buildable now** as
-referenced-only (b2) — well-chosen task prompts pointing at the archives, no ingest tooling.
+1. ✅ **DONE 27 Jun 2026 — the rest of B's queued recipes:** `matplotlib:timeline` (GPB chronologies,
+   `timeline` intent) + `matplotlib:climate_diagram` (Klimadiagramm — dual-axis monthly temp-line +
+   precip-bars, `climate` intent). Both render + lint clean, fed by the (c)-label gate. *(Store
+   consolidation — architecture move #2 — also done same day: `store/base.py::JsonStore`.)*
+2. **Demand-driven dataset curation (numbers first)** — ✅ **GWB pass done (27 Jun 2026):** 8 curated
+   datasets (Statistik Austria population by age×sex + per-Bundesland; World Bank AT population/aging +
+   multi-country urbanisation/GDP-pc/CO₂-pc; GeoSphere 1991–2020 climate normals), all CC BY 4.0, via
+   `tools/fetch_{statistik_austria,worldbank,geosphere}.py`. Proven by a **15-worksheet GWB content pass**
+   (c0104–c0118) — every figure cited, verify-clean. *(Next: re-ground c0094.t1/t3 onto these series;
+   curate other subjects — MAT-Statistik, PHY-Klima, BIO.)*
+3. **Tier-2 regional data** (locality) folds in as region-scoped datasets (the per-Bundesland series is a
+   start; Bezirk next); then sourced text (phase 5).
+
+Standing tracks (no build needed): **geography teacher reviews** the 9 GWB worksheets (c0089–c0097),
+the staged dataset, + earlier staged items in the dashboard; **GPB Quellenarbeit via ANNO/ALEX is
+buildable now** as referenced-only (b2) — well-chosen task prompts pointing at the archives, no ingest tooling.
 
 Details for each below ↓
 
 ## Next — agreed, deferred from the GWB figure work (26 Jun 2026)
 
-- **Population-pyramid figure recipe** — back-to-back horizontal age/sex bars. Surfaced as a
-  consistent gap by both GWB demographics worksheets (c0094, c0097); currently approximated by
-  an age-group `comparison` bar and flagged in `watch_outs`.
-- **Klimadiagramm figure recipe** — dual-axis: monthly temperature *line* + precipitation *bars*
-  on two y-axes. The iconic climate/geography figure; not expressible by the current single-axis
-  recipes (hit by c0096). A general **dual-axis combo** recipe would also serve other subjects.
+- **Population-pyramid figure recipe** — ✅ **DONE (27 Jun 2026).** `matplotlib:population_pyramid`
+  (back-to-back horizontal age×sex bars) + the `demographic` intent; proven on c0094 with real cited
+  Statistik-Austria data. *(c0097 — the other demographics worksheet — can now switch to it too.)*
+- **Klimadiagramm figure recipe** — ✅ **DONE (27 Jun 2026).** `matplotlib:climate_diagram` (Walter-
+  Lieth: monthly temp line on the left °C axis + precip bars on the right mm axis, via `twinx`), the
+  `climate` intent. Unblocks c0096. *(The general dual-axis combo for other subjects can reuse the twinx
+  pattern when needed.)*
 - **Locality Tier-2 — curated Austrian regional data** — a vetted Bundesländer (then Bezirke)
   dataset (Statistik Austria; provenance-stamped, HITL-gated like the Lehrplan catalog) so
   geography tasks can assert *real* local facts, not only scaffold inquiry. See memory `teachersaid-locality`.
@@ -183,12 +199,11 @@ literature, art history** are feasible *now* for PD material, at two speeds:
   "vetted-sourced" class**.
 
 ### Phasing (de-risked — cheap proofs before the big build)
-1. **Ship the (c) label first** *(tiny, immediate honesty win):* every figure's data declares
-   sourced-vs-illustrative; `verify` warns on unlabelled real-looking numbers. The agents already
-   reach for "Schematisch" unprompted — formalize it.
-2. **One-dataset design spike:** define `Dataset`/`SourceRef`/`DataRef`; prove end-to-end on a single
-   flagship series — re-ground the GWB urbanization + demographics figures (c0081 / c0094) with real
-   Our-World-in-Data / Statistik-Austria numbers + citations. Learn the schema's edges on something concrete.
+1. ✅ **DONE (27 Jun 2026) — the (c) label** *(honesty win):* `pipeline/figure_lint.py` warns when a
+   data figure declares neither `data_source` (sourced) nor `illustrative` (schematic).
+2. ✅ **DONE (27 Jun 2026) — the one-dataset spike:** `Dataset`/`SourceRef`/`DataRef` defined; proven
+   end-to-end on **Statistik Austria population by age & sex (1.1.2024)**, re-grounding **c0094** with a
+   real cited Bevölkerungspyramide. *(c0081 urbanization with OWID is the natural next dataset.)*
 3. **Demand-driven expansion — numbers first:** curate the open-data series real worksheets need
    (CC-BY: data.gv.at / Statistik Austria, Our World in Data, World Bank, Eurostat). Numbers have the
    cleanest licensing and the highest cross-subject reuse (GWB · MAT-Statistik · PHY-Klima · BIO).
