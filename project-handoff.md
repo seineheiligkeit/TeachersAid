@@ -52,6 +52,34 @@ German (or a target language for Fremdsprache). Read this, then the docs in the 
 > *foundational* guidelines are published in full text (not yet available). No `ANTHROPIC_API_KEY` needed —
 > generation runs via subagents. Run: `pip install -e ".[dev]"`, `python -m pytest -q` (98 tests),
 > `python -m teachersaid` (dashboard).
+>
+> **Update (Session 4, 27 June 2026): two big capabilities shipped — the grounded-facts data layer and
+> the parametric Maths engine.** See **[CLAUDE.md](CLAUDE.md)** (sections "Grounded facts & data layer"
+> and "Parametric variants + solution engine") and **[Documents/architecture-review.md]** (the no-rewrite
+> verdict + the 3 sequenced moves).
+>
+> 1. **Grounded facts & data layer** — the SME-championed "big bet" (now built): generalises grounding from
+>    *competences* to *facts*. `schema/datasets.py` (`SourceRef`/`DataRef`/`Dataset`); `grounding/data/`
+>    catalog written by **deterministic, LLM-free fetch tools** with per-source licence checks
+>    (`tools/fetch_{statistik_austria,worldbank,geosphere}.py`) — **8 curated CC-BY datasets**. The flow is
+>    *inverted*: the catalog is discoverable (`data_store.relevant_datasets`) and feeds generation briefs, and
+>    `data_ground.ground_data` (in `assemble`) **derives each figure's values from the dataset slice** so
+>    *select-never-author* holds for numbers, not "author-then-cite". `figure_lint` enforces the (c) sourced-vs-
+>    illustrative label in `verify`; "Quelle: …" renders. HITL **Datensätze** tab. New figure recipes:
+>    `population_pyramid`, `timeline`, `climate_diagram`. **Proven** by a 22-worksheet GWB/MAT/PHY content pass.
+> 2. **Parametric Maths engine** — `schema/parametric.py` + `pipeline/parametrize.py`: a `@_recipe` registry
+>    (sympy) where each recipe owns sampling + solving → N **correct-by-construction** variants, each with a
+>    derived worked **Rechenweg** (`TaskBlock.solution_steps`). 10 curated templates across all four MAT KBs
+>    (`library/templates.py`); `orch.compose_variants` stages a variant sheet. **Inline math** (a `math`
+>    RichText run → inline mathtext PNG) ends the "fractions as code-symbols" look. Adds **sympy** as a dep.
+> 3. **Architecture review (no rewrite):** the `blocks→content→rendering` discipline held; the only structural
+>    cleanup done was consolidating the 6 stores onto one `store/base.py::JsonStore` (the future-DB seam).
+>    SQLite is deferred until a trigger fires (slow listing / cross-entity queries / multi-user).
+>
+> **Pick up next:** more parametric recipes + a "Varianten erzeugen" dashboard surface; the **geometry/
+> construction recipe family (KB3)** — the biggest remaining Maths coverage gap; more datasets for other
+> subjects (re-ground the old invented-number figures the (c)-label flags); **audio** (the unserved
+> Hörverstehen modality) as the next strategic, design-first track. Run: `python -m pytest -q` (149 tests).
 
 ---
 

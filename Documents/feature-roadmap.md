@@ -3,35 +3,28 @@
 Forward-looking *capability* features for TeachersAid. (The schema-version roadmap lives in
 `schema-roadmap-v0.4-v0.5.md`; this tracks product/engine features.)
 
-## ▶ Start here tomorrow (27 Jun 2026)
+## ▶ Start here (state as of 27 Jun 2026, Session 4)
 
-**DONE 27 Jun 2026 — the convergent spike + the (c) label shipped** (was items 1+2 below):
-the **population-pyramid recipe** (`matplotlib:population_pyramid` + the `demographic` intent), the
-**`Dataset`/`SourceRef`/`DataRef` schema** (`schema/datasets.py`), the deterministic LLM-free fetch tool
-(`tools/fetch_statistik_austria.py`) + curated catalog (`grounding/data/`, first dataset = Statistik
-Austria population by age & sex 1.1.2024, CC BY 4.0), the resolver (`grounding/data_store.py`), the
-**(c)-label verify gate** (`pipeline/figure_lint.py`), citation grounding+rendering ("Quelle: …"), and
-the HITL **`DatasetStore` + Datensätze tab**. Proven by re-grounding **c0094.t2** to a real cited
-Bevölkerungspyramide (watch-out retired); c0094.t1/t3 now correctly flagged as unlabelled. 129 tests
-green. See CLAUDE.md "Grounded facts & data layer".
+**Shipped this session** (details in the dated sub-sections below + CLAUDE.md): the **grounded-facts data
+layer** (schema `Dataset`/`SourceRef`/`DataRef`; 8 curated CC-BY datasets via LLM-free fetch tools;
+discovery feeds generation; `ground_data` derives figure values; (c)-label gate; Datensätze tab) with the
+**population-pyramid · timeline · climate_diagram** recipes — proven by a 22-worksheet GWB/MAT/PHY content
+pass. The **parametric Maths engine** (sympy recipes → N correct-by-construction variants + worked
+Rechenweg; 10 templates across all 4 MAT KBs; inline math typesetting). The **store consolidation**
+(`store/base.py::JsonStore`, the future-DB seam). 149 tests green.
 
-Recommended next order:
+**Recommended next, in order:**
 
-1. ✅ **DONE 27 Jun 2026 — the rest of B's queued recipes:** `matplotlib:timeline` (GPB chronologies,
-   `timeline` intent) + `matplotlib:climate_diagram` (Klimadiagramm — dual-axis monthly temp-line +
-   precip-bars, `climate` intent). Both render + lint clean, fed by the (c)-label gate. *(Store
-   consolidation — architecture move #2 — also done same day: `store/base.py::JsonStore`.)*
-2. **Demand-driven dataset curation (numbers first)** — ✅ **GWB pass done (27 Jun 2026):** 8 curated
-   datasets (Statistik Austria population by age×sex + per-Bundesland; World Bank AT population/aging +
-   multi-country urbanisation/GDP-pc/CO₂-pc; GeoSphere 1991–2020 climate normals), all CC BY 4.0, via
-   `tools/fetch_{statistik_austria,worldbank,geosphere}.py`. Proven by a **15-worksheet GWB content pass**
-   (c0104–c0118) — every figure cited, verify-clean. **Scaled cross-subject (27 Jun 2026):** the 8
-   datasets are cross-tagged GWB + MAT + PHY, and a proof pass generated **6 verify-clean MAT (Daten
-   und Zufall) + PHY (Wetter und Klima) worksheets** (c0119–c0124) on the *same* shared datasets — the
-   interplay isn't GWB-specific. *(Next: re-ground c0094.t1/t3 onto these series; BIO/other datasets;
-   Bezirk-level regional.)*
-3. **Tier-2 regional data** (locality) folds in as region-scoped datasets (the per-Bundesland series is a
-   start; Bezirk next); then sourced text (phase 5).
+1. **Geometry / construction recipe family (KB3)** — the biggest remaining Maths coverage gap: a
+   geometry-primitive recipe (labeled triangles/polygons, Pythagoras *with a figure*, area/perimeter,
+   coordinate geometry, nets) + the `construction` task kind + OPE-Konstruieren. Bigger build (matplotlib,
+   no new dep); parametrizable on top of the variant engine.
+2. **More parametric recipes + a "Varianten erzeugen" dashboard surface** — term simplification, area/
+   volume word problems, simple probability; expose `orch.compose_variants` in the UI.
+3. **Re-ground the old invented-number figures** the (c)-label flags (c0081 urbanisation, c0096 climate,
+   c0097 HDI) by curating the few datasets they need (World Bank world-urban-share-over-time, OWID
+   atmospheric CO₂, UNDP HDI); curate **BIO/other-subject** datasets; **Tier-2 regional** down to Bezirk.
+4. **Audio (A)** — the unserved Hörverstehen modality (design-first; see below).
 
 Standing tracks (no build needed): **geography teacher reviews** the 9 GWB worksheets (c0089–c0097),
 the staged dataset, + earlier staged items in the dashboard; **GPB Quellenarbeit via ANNO/ALEX is
@@ -83,14 +76,16 @@ unmet demand (FS1/FS2 `listening_task` → audio; GPB `source_analysis` → sour
   lib (RDKit, LilyPond/abjad) → weigh the dependency before adding.
 - **Effort:** medium, incremental (one recipe at a time).
 
-### D — Parameterized variant generation — *high-ROI architecture feature*
-- **What:** one competence → N controlled variants (randomized numbers/contexts) + a matching
-  worked solution per instance; enables individualized sheets, A/B versions, practice sets.
-- **Why:** MAT `calculation` + language drills; broadest cross-subject reach; assessment integrity.
-- **Approach:** a parameterized task template (variable slots + constraints + a solution rule);
-  seeded deterministic instantiation → multiple `WorksheetContent`; the answer is *derived* from the
-  same params, preserving the no-drift guarantee.
-- **Effort:** medium; touches schema + `generate`.
+### D — Parameterized variant generation — ✅ **DONE (27 Jun 2026, Maths)**
+- **Built:** `schema/parametric.py` (`ParametricTask`/`Instance`) + `pipeline/parametrize.py` — a
+  `@_recipe` registry where each recipe OWNS sampling + solving via **sympy**, returning the derived
+  answer + worked `SolutionStep`s. `make_variants(task, n)` → N correct-by-construction, deterministic
+  variants, each with a Rechenweg (the number is computed, never authored). Seed recipes:
+  `linear_equation`, `percentage`, `fraction_add`; curated `library/templates.py`; `orch.compose_variants`
+  stages a variant worksheet for review. **Inline math** shipped alongside (a `math` RichText run →
+  inline mathtext PNG), killing the "fractions as code-symbols" look. See CLAUDE.md "Parametric variants".
+- **Next:** more recipes (term simplification, proportions, area/volume word problems), a dashboard
+  "Varianten erzeugen" surface, and parametrized *geometry* once the geometry recipe (KB3) exists.
 
 ### Also surfaced (lower priority / folded elsewhere)
 - **C — sourced-text / source-work** (GPB, DEU, LAT, FS): provided passage + provenance + leveled/

@@ -22,8 +22,8 @@ The repository has two layers:
 
 ```bash
 pip install -e .                       # deps: pydantic2, fastapi, uvicorn, anthropic, reportlab,
-                                       #       matplotlib, pillow, pyyaml, pymupdf  (pytest for dev)
-python -m pytest -q                    # 137 tests, fully offline (no API key required)
+                                       #       matplotlib, pillow, pyyaml, pymupdf, sympy  (pytest for dev)
+python -m pytest -q                    # 149 tests, fully offline (no API key required)
 python -m teachersaid seed             # seed the master-library examples into the review queue
 python -m teachersaid                  # dashboard → http://127.0.0.1:8000
 ```
@@ -181,6 +181,27 @@ from the model; generation *references* a dataset by stable id (like `serves` �
 **Where the data layer goes next** (`Documents/feature-roadmap.md`): demand-driven dataset curation
 (numbers first — cleanest licensing), Tier-2 regional data (locality), then sourced text/images (phase
 5, licence-sensitive). Confirmed source/licence research is in the roadmap's "big bet" section.
+
+## Parametric variants + solution engine (Maths)
+
+The Maths analogue of "correct by construction" extended from the *answer* to the *method*. A
+`ParametricTask` (`schema/parametric.py`) = a prompt with `{slots}` + a `recipe` id. Recipes register
+like asset generators (`@_recipe` in `pipeline/parametrize.py`) and **own both sampling and solving**
+via **sympy**: given a seeded RNG a recipe returns an `Instance` (slot values + the DERIVED answer +
+worked `SolutionStep`s). So `make_variants(task, n)` yields **N correct-by-construction variants**, each
+deterministic per seed and carrying its **Rechenweg** — the number is computed, never authored (directly
+counters the incumbent's "math is wrong" failure). A recipe raises `Unsuitable` to reject a degenerate
+draw (non-integer solution) and resample. Seed recipes: `linear_equation`, `percentage`, `fraction_add`.
+Curated templates live in `library/templates.py` (anchored to real MAT competences); `variant_worksheet`
+wraps N variants into a `WorksheetContent`; `orch.compose_variants(store, template_id, n)` stages it for
+Gate-2 review. `TaskBlock.solution_steps` is the canonical worked-solution field (teacher-guide only,
+DERIVED — never LLM-authored).
+
+**Inline math** — a `RichText` run with `math=True` carries LaTeX, typeset to a small inline PNG via
+mathtext (`rendering/inline_math.py`, the `math_formula` engine) and embedded with ReportLab `<img>`
+in `richtext_markup` (so fractions/exponents/roots stop reading as "code-symbols"). `inline_math.configure`
+is called once per `build_pdf`; results cache by content hash. A `$…$` span in a parametric prompt
+template becomes a math run.
 
 ## Master library (`teachersaid/library/`)
 
