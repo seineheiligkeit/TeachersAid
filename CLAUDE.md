@@ -23,7 +23,7 @@ The repository has two layers:
 ```bash
 pip install -e .                       # deps: pydantic2, fastapi, uvicorn, anthropic, reportlab,
                                        #       matplotlib, pillow, pyyaml, pymupdf, sympy  (pytest for dev)
-python -m pytest -q                    # 149 tests, fully offline (no API key required)
+python -m pytest -q                    # 159 tests, fully offline (no API key required)
 python -m teachersaid seed             # seed the master-library examples into the review queue
 python -m teachersaid                  # dashboard → http://127.0.0.1:8000
 ```
@@ -203,6 +203,31 @@ in `richtext_markup` (so fractions/exponents/roots stop reading as "code-symbols
 is called once per `build_pdf`; results cache by content hash. A `$…$` span in a parametric prompt
 template becomes a math run.
 
+## Annotated authentic texts (the Deutsch asset class)
+
+The reading/writing analogue of the data layer (the Deutsch breakthrough). An **`AnnotatedText`**
+(`schema/texts.py`) = a real, rights-cleared text + a curated annotation layer. Same discipline as the
+data layer: the text is **select-never-author** (an actual PD/licensed text, cited via `TextSourceRef`),
+and each task's answer is **derived from a vetted `Annotation`, never authored at task time** (no
+hallucinated Erwartungshorizont). `pipeline/text_tasks.build_worksheet(at)` → a `WorksheetContent`: the
+text renders as a line-numbered `source_text` block (so tasks reference "Zeile N"), and annotation kinds
+map to tasks — `vocab`→Wortschatz scaffold, `comprehension`/`structure`/`stilmittel`/`argument_move`/
+`media_technique`→analysis tasks (answer = the annotation), `erwartungshorizont`→an open interpretation/
+writing task. "Correct by **curation**" (HITL-vetted), not computation — there's no sympy for German.
+One annotated text → many tasks across grades; it compounds like the catalogs.
+
+- **Rights gate** (the other load-bearing piece): `orch.ingest_text` only stages a text on a clear basis
+  — `TextSourceRef.is_clear(year)` enforces **PD by the AT 70-Jahre-p.m.a. rule** (not US PD; a PD work
+  ≠ a PD scan) or CC. Author death year is captured.
+- **HITL**: `store/textstore.py::TextStore` + the **Texte** tab (`/api/texts*`; review text + rights +
+  annotations; "Arbeitsblatt erzeugen" = `orch.compose_text_worksheet` → a content item in Inhalte);
+  `feedback` target kind `text`. `seed_texts` stages the curated flagships.
+- **Curated flagships** (`library/texts.py`): Heine *Die Lore-Ley* (literary — Stilmittel/Interpretation)
+  and Lessing *Der Rabe und der Fuchs* (the persuasion/Medienkompetenz angle — the fox's Schmeichelei).
+- **Scaling**: subagents add the annotation layer to a *provided verbatim* PD text → `AnnotatedText` JSON
+  → `tools/ingest_texts.py` (validate → rights gate → build → verify → stage); the text is never authored,
+  only annotated. A true newspaper/advert media text needs an ANNO/OCR fetch tool (next).
+
 ## Master library (`teachersaid/library/`)
 
 Curated, gold-standard **`WorksheetContent` examples** — the quality bar, the few-shot seeds for LLM
@@ -344,11 +369,12 @@ it is validated through the real generation seam and staged for HITL review.
 
 ## HITL dashboard (`api/` + `api/static/index.html`)
 
-Two review gates, one `ReviewItem` type (`stage` ∈ **brainstorm** | **content**); nine tabs
+Two review gates, one `ReviewItem` type (`stage` ∈ **brainstorm** | **content**); ten tabs
 (Brainstorm · **Bausteine** · Inhalte · Bibliothek · **Arrangements** · **Abbildungen** ·
-**Datensätze** · Statistik · **Insights** — see the Block library section below). **Datensätze**
+**Datensätze** · **Texte** · Statistik · **Insights** — see the Block library section below). **Datensätze**
 reviews grounded-facts datasets (`DatasetStore`): source/licence/Stand + a figure preview, approve/reject
-(see the Grounded facts & data layer section). **Abbildungen** is the asset-review surface (Phase 4
+(see the Grounded facts & data layer section). **Texte** reviews annotated authentic texts (`TextStore`):
+text + rights + the annotation layer, approve/reject + "Arbeitsblatt erzeugen" (see the Annotated texts section). **Abbildungen** is the asset-review surface (Phase 4
 #2/#4): file-backed library assets (decorative/sourced, with approve/reject) on top, and below, every
 code-generated content figure rendered inline (deduped by generator+spec, built on demand) for
 fächerübergreifende review. **Arrangements** (Phase 5c) reviews Lernarrangements (`ArrangementStore`): the

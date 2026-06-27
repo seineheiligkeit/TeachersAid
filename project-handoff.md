@@ -80,6 +80,20 @@ German (or a target language for Fremdsprache). Read this, then the docs in the 
 > construction recipe family (KB3)** — the biggest remaining Maths coverage gap; more datasets for other
 > subjects (re-ground the old invented-number figures the (c)-label flags); **audio** (the unserved
 > Hörverstehen modality) as the next strategic, design-first track. Run: `python -m pytest -q` (149 tests).
+>
+> **Update (Session 5, 27 June 2026): the Deutsch asset class — annotated authentic texts — shipped.**
+> The reading/writing analogue of the data layer: an **`AnnotatedText`** (`schema/texts.py`) = a real,
+> rights-cleared text + a *curated annotation layer*; `pipeline/text_tasks.build_worksheet` derives a
+> worksheet whose task answers come FROM the vetted annotations (correct by curation, never authored), with
+> the text rendered as a line-numbered `source_text` block. A **rights gate** (`orch.ingest_text`,
+> `TextSourceRef.is_clear`) enforces AT 70-Jahre-p.m.a. / CC. HITL: `TextStore` + the **Texte** tab
+> (`/api/texts*`, "Arbeitsblatt erzeugen") + feedback kind `text`. Flagships (`library/texts.py`): Heine
+> *Die Lore-Ley* (literary) + Lessing *Der Rabe und der Fuchs* (Medienkompetenz/Schmeichelei); a subagent
+> annotation pass + `tools/ingest_texts.py` proved scaling (Grimm *Der süße Brei* staged). The key insight:
+> the Deutsch Lehrplan integrated grammar/orthography into the other KBs (no drill-block to chase) — the
+> real demand is authentic-text reading, media analysis, and source-based writing. 159 tests.
+> **Pick up next (Deutsch):** an **ANNO/OCR fetch tool** for real newspaper/advert media texts; more
+> annotated texts across grades; an optional LLM phrasing pass over derived questions.
 
 ---
 

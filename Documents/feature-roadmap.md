@@ -3,15 +3,19 @@
 Forward-looking *capability* features for TeachersAid. (The schema-version roadmap lives in
 `schema-roadmap-v0.4-v0.5.md`; this tracks product/engine features.)
 
-## ▶ Start here (state as of 27 Jun 2026, Session 4)
+## ▶ Start here (state as of 27 Jun 2026, Sessions 4–5)
 
-**Shipped this session** (details in the dated sub-sections below + CLAUDE.md): the **grounded-facts data
-layer** (schema `Dataset`/`SourceRef`/`DataRef`; 8 curated CC-BY datasets via LLM-free fetch tools;
-discovery feeds generation; `ground_data` derives figure values; (c)-label gate; Datensätze tab) with the
-**population-pyramid · timeline · climate_diagram** recipes — proven by a 22-worksheet GWB/MAT/PHY content
-pass. The **parametric Maths engine** (sympy recipes → N correct-by-construction variants + worked
-Rechenweg; 10 templates across all 4 MAT KBs; inline math typesetting). The **store consolidation**
-(`store/base.py::JsonStore`, the future-DB seam). 149 tests green.
+**Three "asset classes" now exist** — each makes content trustworthy by finding the thing that's
+correct-by-construction (or curation) and making it the durable, reusable asset:
+- **Grounded-facts data layer** (Geography/MINT): real cited numbers from 8 curated CC-BY datasets →
+  derived figures (population-pyramid · timeline · climate_diagram). Proven by 22 GWB/MAT/PHY worksheets.
+- **Parametric Maths engine**: sympy recipes → N correct-by-construction variants + worked Rechenweg;
+  10 templates across all 4 MAT KBs; inline math typesetting.
+- **Annotated authentic texts** (Deutsch): real rights-cleared PD texts + a vetted annotation layer →
+  derived comprehension/analysis/Medienkritik/writing tasks, line-numbered source rendering, the AT
+  70-p.m.a. rights gate, the Texte tab. Flagships: Heine *Lore-Ley* + Lessing *Rabe und Fuchs*.
+
+Also: store consolidation (`store/base.py::JsonStore`, the future-DB seam). **159 tests green.**
 
 **Recommended next, in order:**
 
@@ -19,12 +23,14 @@ Rechenweg; 10 templates across all 4 MAT KBs; inline math typesetting). The **st
    geometry-primitive recipe (labeled triangles/polygons, Pythagoras *with a figure*, area/perimeter,
    coordinate geometry, nets) + the `construction` task kind + OPE-Konstruieren. Bigger build (matplotlib,
    no new dep); parametrizable on top of the variant engine.
-2. **More parametric recipes + a "Varianten erzeugen" dashboard surface** — term simplification, area/
-   volume word problems, simple probability; expose `orch.compose_variants` in the UI.
-3. **Re-ground the old invented-number figures** the (c)-label flags (c0081 urbanisation, c0096 climate,
-   c0097 HDI) by curating the few datasets they need (World Bank world-urban-share-over-time, OWID
-   atmospheric CO₂, UNDP HDI); curate **BIO/other-subject** datasets; **Tier-2 regional** down to Bezirk.
-4. **Audio (A)** — the unserved Hörverstehen modality (design-first; see below).
+2. **Deutsch — scale the annotated-text library:** more annotated PD texts across grades (the
+   subagent-annotation + `tools/ingest_texts.py` path is proven); an **ANNO/OCR fetch tool** for real
+   newspaper/advert *media* texts (the one genre still curated-by-proxy); an optional LLM phrasing pass.
+3. **More parametric recipes + a "Varianten erzeugen" dashboard surface**; expose `orch.compose_variants`.
+4. **Re-ground the old invented-number figures** the (c)-label flags (c0081 urbanisation, c0096 climate,
+   c0097 HDI) by curating the few datasets they need; curate **BIO/other-subject** datasets; **Tier-2
+   regional** down to Bezirk.
+5. **Audio (A)** — the unserved Hörverstehen modality (design-first; see below).
 
 Standing tracks (no build needed): **geography teacher reviews** the 9 GWB worksheets (c0089–c0097),
 the staged dataset, + earlier staged items in the dashboard; **GPB Quellenarbeit via ANNO/ALEX is
