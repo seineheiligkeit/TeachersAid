@@ -76,7 +76,7 @@
 <main id="main"></main>
 
 <script>
-const TABS = [["brainstorm","Brainstorm"],["bausteine","Bausteine"],["inhalte","Inhalte"],["bibliothek","Bibliothek"],["arrangements","Arrangements"],["abbildungen","Abbildungen"],["statistik","Statistik"],["insights","Insights"]];
+const TABS = [["brainstorm","Brainstorm"],["bausteine","Bausteine"],["inhalte","Inhalte"],["bibliothek","Bibliothek"],["arrangements","Arrangements"],["abbildungen","Abbildungen"],["datensaetze","Datensätze"],["statistik","Statistik"],["insights","Insights"]];
 const FB_TAGS = ["zu leicht","zu schwer","Sachfehler","Sprache/Wortwahl","unklar","didaktisch stark","Bild/Abbildung nötig","super"];
 let TAB = "brainstorm", SELECTED = null, VIEW = "bloecke", ARRVIEW = "vorschau", LASTITEMS = [];
 const $ = s => document.querySelector(s);
@@ -163,6 +163,11 @@ function buildShell(){
           <select id="ass-gen" onchange="renderAssets()"><option value="">alle Generatoren</option></select>
         </div>
         <div id="gallery" class="gallery"><p class="muted">lädt…</p></div></div>`;
+  } else if(TAB==="datensaetze"){
+    $("#main").innerHTML = `
+      <div class="card"><h2>Datensätze — geerdete Fakten (Quellen mit Lizenz)</h2>
+        <p class="muted">Kuratierte, zitierte, lizenzgeprüfte öffentliche Daten (deterministisch von Tools geholt, kein LLM im Faktenweg). Inhalte <b>referenzieren</b> einen Datensatz per stabiler ID und dürfen einen Wert <b>verwenden, nie erfinden</b> — wie <code>serves</code> eine Kompetenz referenziert. Hier prüfst du Quelle, Lizenz und Abbildung und gibst frei.</p>
+        <div id="dataset-lib" class="gallery"><p class="muted">lädt…</p></div></div>`;
   } else if(TAB==="insights"){
     $("#main").innerHTML = `<div id="insights"><p class="muted">lädt…</p></div>`;
   } else {
@@ -181,6 +186,7 @@ async function refresh(){
   else if(TAB==="bibliothek") renderContentList(LASTITEMS.filter(i=>i.stage==="content" && i.status==="approved"));
   else if(TAB==="arrangements") renderArrangements();
   else if(TAB==="abbildungen") renderAssets();
+  else if(TAB==="datensaetze") renderDatasets();
   else if(TAB==="statistik") renderStats();
   else if(TAB==="insights") renderInsights();
 }
@@ -409,6 +415,29 @@ async function renderAssetLib(){
   }).join("");
 }
 async function actAsset(id,kind){ await jpost(`/api/asset-library/${id}/${kind}`,{}); renderAssetLib(); }
+
+/* ---------- Datensätze (grounded-facts data layer) ---------- */
+async function renderDatasets(){
+  if(!$("#dataset-lib")) return;
+  const lib = await jget("/api/datasets");
+  if(!lib.length){ $("#dataset-lib").innerHTML = `<p class="muted">Noch keine Datensätze — <code>python tools/fetch_statistik_austria.py</code> holt die Daten, <code>python -m teachersaid seed</code> stellt sie zur Prüfung ein.</p>`; return; }
+  $("#dataset-lib").innerHTML = lib.map(d=>{
+    const acts = d.status==="in_review" ? `<div class="row" style="margin-top:6px">
+        <button class="ok" onclick="actDataset('${d.id}','approve')">Freigeben</button>
+        <button class="bad" onclick="actDataset('${d.id}','reject')">Ablehnen</button></div>` : "";
+    const fig = (d.series&&d.series.length)?`<img src="/api/datasets/${encodeURIComponent(d.id)}/figure?series=${encodeURIComponent(d.series[0])}" alt="${esc(d.id)}" loading="lazy" onerror="this.style.display='none'">`:"";
+    const lic = `<span class="badge">${esc(d.licence||"?")}</span>${d.redistributable?'<span class="cov">einbettbar</span>':'<span class="gap">nur Referenz</span>'}`;
+    return `<div class="tile" style="width:340px">
+      ${fig}
+      <div style="font-size:13px;margin-top:6px"><b>${esc(d.title)}</b></div>
+      <div class="meta"><span class="pill s-${d.status}">${d.status}</span> ${lic}</div>
+      <div class="meta">${esc(d.publisher||"")}${d.stand?` · Stand ${esc(d.stand)}`:""}${d.retrieved?` · geholt ${esc(d.retrieved)}`:""}</div>
+      <div class="meta">Serien: ${(d.series||[]).map(s=>`<span class="badge">${esc(s)}</span>`).join("")}</div>
+      <div class="meta" style="font-size:11px">${esc(d.attribution||"")}${d.url?` · <a href="${esc(d.url)}" target="_blank" rel="noopener">Quelle</a>`:""}</div>
+      ${acts}${feedbackMini("dataset", d.id)}</div>`;
+  }).join("");
+}
+async function actDataset(id,kind){ await jpost(`/api/datasets/${id}/${kind}`,{}); renderDatasets(); }
 async function renderAssets(){
   renderAssetLib();
   if(!$("#gallery")) return;

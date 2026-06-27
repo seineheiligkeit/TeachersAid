@@ -15,6 +15,7 @@ from collections import defaultdict
 from pathlib import Path
 
 from teachersaid.config import RUNS_DIR
+from teachersaid.grounding import data_store as ds
 from teachersaid.grounding import lehrplan_store as ls
 from teachersaid.pipeline.assets import GENERATION_RECIPES
 from teachersaid.schema.enums import CORE_TASK_KINDS
@@ -65,14 +66,15 @@ Wähle **{n} klar unterschiedliche Themen/Bereiche** (Breite!), nicht Varianten 
   Abbildung nötig ist.
   **Für DATEN: deklariere die ABSICHT, nicht den Diagrammtyp** — lege die Figur in `body.data_figures`;
   das System wählt daraus die passende, lesbare Darstellung (so wird nicht alles ein Balkendiagramm).
-  Form: `{{"id":str,"intent":str,"title"?,"xlabel"?,"ylabel"?,"categories"?:[str],"values"?:[num],"points"?:[[x,y]],"log"?:bool,"fit"?:bool}}`
+  Form: `{{"id":str,"intent":str,"title"?,"xlabel"?,"ylabel"?,"categories"?:[str],"values"?:[num],"points"?:[[x,y]],"log"?:bool,"fit"?:bool,"data_source"?:{{"dataset_id":str,"series":str}}}}`
   mit `intent` ∈
     - `trend` — Verlauf/Entwicklung (oft über die Zeit): `categories`+`values` → Liniendiagramm
     - `comparison` — MENGEN-Vergleich zwischen Kategorien: `categories`+`values` → Balkendiagramm
     - `relationship` — Zusammenhang zweier numerischer Größen: `points` (+`fit` für Trendgerade) → Streudiagramm
     - `distribution` — Häufigkeit/Streuung einer Größe: `values` → Histogramm
     - `scale` — Position auf einer Skala (z. B. pH-Wert): `categories`+`values` → Zahlenstrahl
-  **Wähle nie selbst „Balken" für eine Zeitreihe, eine Ja/Nein-Klassifikation oder eine Skala** —
+    - `demographic` — Alter × Geschlecht: `categories` (Altersgruppen)+`male`+`female` → Bevölkerungspyramide
+{data_block}  **Wähle nie selbst „Balken" für eine Zeitreihe, eine Ja/Nein-Klassifikation oder eine Skala** —
   dafür ist der `intent` da; korrekte Zahlen allein genügen NICHT, die Darstellung muss zur Aussage passen.
   **Für STRUKTUR-Abbildungen** (Funktionsgraph, Formel, fertiger Zahlenstrahl) nutze `body.assets` mit
   explizitem Generator — **erlaubte Generatoren (nur diese):**
@@ -189,11 +191,14 @@ def build():
                              "wo passend, sonst \"printable\". Beschreibe Tätigkeiten in Worten.")
         else:
             modality_note = "Reiner Text (modality \"printable\")."
+        data_brief = ds.format_available_datasets(ds.relevant_datasets(subject=code))
+        data_block = ("\n" + data_brief + "\n") if data_brief else ""
         prompt = _TEMPLATE.format(
             subject=subject, n=N_KERNFRAGEN, competences=comps_text, dims=dims, kinds=kinds,
             ab_block=_ab_block(subject), anchor_rule=(_ANCHOR_KB if anchor == "kb" else _ANCHOR_GRADE),
             modality_note=modality_note, lang_clause=lang_clause, gendir=GEN_SUBDIR,
             code=code, anchor_field=anchor_field, dim0=model.dimensions[0].id, recipes=recipes,
+            data_block=data_block,
         )
         (outdir / f"prompt_{code}.md").write_text(prompt, encoding="utf-8")
         manifest.append({"code": code, "subject": subject, "anchor": anchor,

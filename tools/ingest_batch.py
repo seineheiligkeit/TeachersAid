@@ -102,6 +102,10 @@ def _norm_block(b: dict) -> None:
                     folded.append(str(o))
             b["prompt"] = (b.get("prompt", "") + "\n\n" + "\n".join(folded)).strip()
             b["payload"] = None
+    p = b.get("payload")                            # table_fill with rows as an int (N empty
+    if isinstance(p, dict) and p.get("kind") == "table_fill" and isinstance(p.get("rows"), int):
+        ncols = len(p.get("columns") or []) or 1     # rows) — the response-table shape; expand
+        p["rows"] = [[None] * ncols for _ in range(p["rows"])]  # to N blank rows
     for s in b.get("serves", []):                   # only exercises/builds_prerequisite valid
         if s.get("relation") not in _VALID_RELATIONS:
             s["relation"] = "exercises"
@@ -194,6 +198,10 @@ def dry_run(paths: list) -> None:
         content = body_to_canonical(gb, meta=meta, subject_model=model)
         try:
             adir = Path(tempfile.mkdtemp())  # validate assets build (allowed recipe + renders)
+            # ground data_source figures FIRST so real values are filled before build_asset
+            # (climate/population diagrams need temp/precip/etc. from the dataset)
+            from teachersaid.pipeline.data_ground import ground_data
+            ground_data(content)
             for a in content.assets:
                 if a.generator not in GENERATION_RECIPES:
                     raise ValueError(f"asset '{a.id}': generator {a.generator!r} not allowed")

@@ -13,7 +13,13 @@ import uvicorn
 
 if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "seed":
-        from .library import seed_arrangements, seed_assets, seed_blocks, seed_library
+        from .library import (
+            seed_arrangements,
+            seed_assets,
+            seed_blocks,
+            seed_datasets,
+            seed_library,
+        )
 
         items = seed_library()
         print(f"Seeded {len(items)} master-library worksheet(s) into the review store:")
@@ -31,6 +37,9 @@ if __name__ == "__main__":
         arrs = seed_arrangements()
         print(f"\nStaged {len(arrs)} Lernarrangement(s) into the arrangement store "
               f"({', '.join(a.id for a in arrs)} — review them in the Arrangements tab).")
+        data = seed_datasets()
+        print(f"\nStaged {len(data)} grounded-facts dataset(s) into the dataset store "
+              f"({', '.join(d.id for d in data)} — review them in the Datensätze tab).")
         print("\nRun 'python -m teachersaid' and open the dashboard to review them.")
         sys.exit(0)
 

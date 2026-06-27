@@ -272,6 +272,10 @@ def ingest_generated(
             lehrplan_label=f"{subject} · {klasse}. Klasse · {label}",
         )
         content = body_to_canonical(gb, meta=meta, subject_model=model)
+        # ground data_source figures FIRST so their real values are filled before
+        # build_asset is called (climate/population diagrams need temp/precip/etc.)
+        from .data_ground import ground_data
+        ground_data(content)
         # validate any LLM-requested assets: allowed recipe + it actually builds
         # (a bad/invented generator or spec surfaces as an error, never a silent block)
         if content.assets:
@@ -394,6 +398,37 @@ def ingest_asset(
         file=str(dest) if dest else None, source=source, status=status,
     )
     return asset_store.upsert(la)
+
+
+def ingest_dataset(dataset_store, dataset, *, source: str = "curated",
+                   status: str = "in_review"):
+    """Stage a curated grounded-facts dataset for HITL review (the data-layer analogue
+    of ingest_asset). Runs the licence/attribution gate first — a dataset whose values
+    we *embed* must carry a recorded redistributable licence + attribution, the
+    *select-never-author* rule applied to the licence itself — then stores it."""
+    from ..store.datasetstore import DatasetRecord
+
+    src = dataset.source
+    if not src.attribution:
+        raise ValueError(f"dataset {dataset.id}: missing source.attribution (citation string)")
+    if not src.redistributable:
+        raise ValueError(
+            f"dataset {dataset.id}: licence not marked redistributable — embed values only "
+            f"under a recorded redistributable licence (CC BY/equiv.); otherwise reference-only")
+    rec = DatasetRecord(id=dataset.id, dataset=dataset, source=source, status=status)
+    return dataset_store.upsert(rec)
+
+
+def seed_datasets(dataset_store=None, *, status: str = "in_review"):
+    """Stage every dataset in grounding/data/ into the review queue (cf. seed_blocks)."""
+    from ..grounding import data_store as ds
+    from ..store.datasetstore import DatasetStore
+
+    store = dataset_store or DatasetStore()
+    out = []
+    for dataset in ds.list_datasets():
+        out.append(ingest_dataset(store, dataset, status=status))
+    return out
 
 
 def _produce_content_item(

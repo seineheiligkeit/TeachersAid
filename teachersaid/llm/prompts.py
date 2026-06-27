@@ -120,4 +120,14 @@ def build_user(plan: WorksheetPlan, resolution: LehrplanResolution) -> str:
         "\nYou may add a short intro InfoBlock and additional tasks if they raise "
         "depth, but stay within the topic and the allowed kinds/dimensions."
     )
+    # data ⇄ ideas interplay: surface real, citable datasets matched to this topic so a
+    # figure cites real data (data_source) instead of inventing numbers.
+    from ..grounding import data_store as ds
+    from ..grounding import lehrplan_store as ls
+    code = ls._code_for(plan.subject)
+    found = ds.relevant_datasets(subject=code, topic=plan.topic,
+                                 competences=[c.id for c in resolution.competences])
+    brief = ds.format_available_datasets(found)
+    if brief:
+        lines.append("\n" + brief)
     return "\n".join(lines)

@@ -92,6 +92,15 @@ def seed_arrangements(store=None, *, today: date | None = None) -> list:
         source="curated", today=today)]
 
 
+def seed_datasets(store=None, *, status: str = "in_review") -> list:
+    """Stage the curated grounded-facts datasets (grounding/data/) into the dataset
+    store for HITL review. Idempotent: `upsert` preserves status. New for the
+    grounded-facts data layer; the Statistik-Austria population data is the first."""
+    from ..pipeline import orchestrator as orch
+
+    return orch.seed_datasets(store, status=status)
+
+
 def seed_blocks(store=None, *, status: str = "approved") -> list:
     """Harvest every example worksheet's blocks into the block library. These come
     from the curated, SME-reviewed examples, so they seed straight as `approved`

@@ -22,6 +22,7 @@ from ..stats import compute_stats
 from ..store.arrangementstore import ArrangementStore
 from ..store.assetstore import AssetStore
 from ..store.blockstore import BlockStore
+from ..store.datasetstore import DatasetStore
 from ..store.feedbackstore import FEEDBACK_TAGS, TARGET_KINDS, FeedbackEntry, FeedbackStore
 from ..store.repository import ReviewStore
 
@@ -30,6 +31,7 @@ STORE = ReviewStore()
 BLOCKS = BlockStore()
 ASSETS = AssetStore()
 ARRANGEMENTS = ArrangementStore()
+DATASETS = DatasetStore()
 FEEDBACK = FeedbackStore()
 _STATIC = Path(__file__).resolve().parent / "static"
 
@@ -156,6 +158,10 @@ def _target_meta(kind: str, tid: str) -> tuple[str, str]:
         a = ASSETS.get(tid)
         if a:
             return "", f"{a.klass}·{a.asset.role}: {a.id}"
+    elif kind == "dataset":
+        rec = DATASETS.get(tid)
+        if rec:
+            return "", f"{rec.dataset.source.publisher}: {rec.dataset.title}"
     return "", tid
 
 
@@ -273,6 +279,74 @@ def reject_asset(asset_id: str):
     if ASSETS.get(asset_id) is None:
         raise HTTPException(404, "no such asset")
     return ASSETS.set_status(asset_id, "rejected").summary()
+
+
+# --- grounded-facts dataset library ------------------------------------------
+def _dataset_figure_asset(rec, series_key: str):
+    """Build a preview Asset for one series of a dataset (pyramid or a bar of the
+    series' values), so the reviewer sees the actual figure the data produces."""
+    from ..schema.assets import Asset
+
+    series = rec.dataset.series.get(series_key)
+    if not series:
+        return None
+    title = f"{rec.dataset.title} — {series.get('label', series_key)}"
+    if series.get("kind") == "population_pyramid":
+        return Asset(id=f"{rec.id}__{series_key}", role="figure",
+                     generator="matplotlib:population_pyramid",
+                     spec={"age_groups": series.get("age_groups", []),
+                           "male": series.get("male", []), "female": series.get("female", []),
+                           "title": title})
+    if "shares_pct" in series or "counts" in series:
+        vals = series.get("shares_pct") or series.get("counts") or []
+        return Asset(id=f"{rec.id}__{series_key}", role="figure",
+                     generator="matplotlib:bar_chart",
+                     spec={"categories": series.get("groups", []), "values": vals,
+                           "ylabel": "Anteil (%)" if "shares_pct" in series else (rec.dataset.unit or ""),
+                           "title": title})
+    return None
+
+
+@app.get("/api/datasets")
+def datasets(status: str | None = None):
+    return [r.summary() for r in DATASETS.list(status=status)]
+
+
+@app.get("/api/datasets/{dataset_id}")
+def dataset_detail(dataset_id: str):
+    rec = DATASETS.get(dataset_id)
+    if rec is None:
+        raise HTTPException(404, "no such dataset")
+    s = rec.summary()
+    s["series_data"] = rec.dataset.series
+    return s
+
+
+@app.get("/api/datasets/{dataset_id}/figure")
+def dataset_figure(dataset_id: str, series: str):
+    rec = DATASETS.get(dataset_id)
+    if rec is None:
+        raise HTTPException(404, "no such dataset")
+    asset = _dataset_figure_asset(rec, series)
+    if asset is None:
+        raise HTTPException(404, "no figure for this series")
+    out = RUNS_DIR / "datasets_fig"
+    path = build_asset(asset, outdir=out)
+    return FileResponse(path, media_type="image/png")
+
+
+@app.post("/api/datasets/{dataset_id}/approve")
+def approve_dataset(dataset_id: str):
+    if DATASETS.get(dataset_id) is None:
+        raise HTTPException(404, "no such dataset")
+    return DATASETS.set_status(dataset_id, "approved").summary()
+
+
+@app.post("/api/datasets/{dataset_id}/reject")
+def reject_dataset(dataset_id: str):
+    if DATASETS.get(dataset_id) is None:
+        raise HTTPException(404, "no such dataset")
+    return DATASETS.set_status(dataset_id, "rejected").summary()
 
 
 # --- Lernarrangements (v0.5) -------------------------------------------------
