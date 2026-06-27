@@ -19,6 +19,7 @@ from typing import Annotated, Literal
 from pydantic import BaseModel, ConfigDict, Field
 
 from .assets import Asset
+from .datasets import DataRef
 from .blocks import (
     ContentFlags,
     InfoBlock,
@@ -95,6 +96,8 @@ class GenAsset(BaseModel):
     role: str = "figure"
     generator: str
     spec: dict = Field(default_factory=dict)
+    data_source: DataRef | None = None       # references a vetted dataset (b) — cited
+    illustrative: bool = False               # schematic/example data (c) — not real
     caption: str | None = None
 
 
@@ -112,8 +115,16 @@ class GenDataFigure(BaseModel):
     categories: list[str] = Field(default_factory=list)  # comparison / composition / trend / scale
     values: list[float] = Field(default_factory=list)
     points: list[list[float]] = Field(default_factory=list)  # relationship / numeric trend
+    male: list[float] = Field(default_factory=list)      # demographic: men per age band
+    female: list[float] = Field(default_factory=list)    # demographic: women per age band
+    months: list[str] = Field(default_factory=list)      # climate: month labels (12)
+    temp: list[float] = Field(default_factory=list)      # climate: monthly temperature
+    precip: list[float] = Field(default_factory=list)    # climate: monthly precipitation
+    events: list[dict] = Field(default_factory=list)     # timeline: [{at, label}]
     log: bool = False
     fit: bool = False                                    # scatter: draw a linear trend line
+    data_source: DataRef | None = None                  # references a vetted dataset (b) — cited
+    illustrative: bool = False                           # schematic/example data (c) — not real
     caption: str | None = None
 
 
@@ -124,8 +135,12 @@ def data_figure_to_asset(g: GenDataFigure) -> Asset:
         "title": g.title, "xlabel": g.xlabel, "ylabel": g.ylabel,
         "categories": g.categories or None, "values": g.values or None,
         "points": g.points or None, "log": g.log, "fit": g.fit,
+        "age_groups": g.categories or None, "male": g.male or None, "female": g.female or None,
+        "months": g.months or None, "temp": g.temp or None, "precip": g.precip or None,
+        "events": g.events or None,
     })
-    return Asset(id=g.id, role="figure", generator=gen, spec=spec, caption=g.caption)
+    return Asset(id=g.id, role="figure", generator=gen, spec=spec,
+                 data_source=g.data_source, illustrative=g.illustrative, caption=g.caption)
 
 
 class GenWorksheetBody(BaseModel):
@@ -209,7 +224,8 @@ def body_to_canonical(
     nachweis/depth_profile.
     """
     gen_assets = [
-        Asset(id=a.id, role=a.role, generator=a.generator, spec=a.spec, caption=a.caption)
+        Asset(id=a.id, role=a.role, generator=a.generator, spec=a.spec,
+              data_source=a.data_source, illustrative=a.illustrative, caption=a.caption)
         for a in body.assets
     ]
     gen_assets += [data_figure_to_asset(g) for g in body.data_figures]  # intent → chosen chart

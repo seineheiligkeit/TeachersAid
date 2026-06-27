@@ -95,6 +95,10 @@ def build_pdf(
     assets: dict[str, Path] | None = None,
 ) -> Path:
     assets = assets or {}
+    # figure_id → "Quelle: …" line, from each asset's resolved data_source (filled by
+    # assemble). Kept on the content object so this stays a pure projection.
+    citations = {a.id: a.data_source.citation()
+                 for a in content.assets if a.data_source}
     S = rb.styles()
     width = _content_width()
     out_path = Path(out_path)
@@ -123,7 +127,7 @@ def build_pdf(
     task_no = 0
     for b in content.intro:
         if should_render(b, projection):
-            story += block_flowables(b, projection, S, width, assets)
+            story += block_flowables(b, projection, S, width, assets, citations=citations)
 
     for section in content.sections:
         story.append(rb.para(section.title, S["heading"]))
@@ -134,9 +138,10 @@ def build_pdf(
                 continue
             if b.role == "task":
                 task_no += 1
-                story += block_flowables(b, projection, S, width, assets, number=task_no)
+                story += block_flowables(b, projection, S, width, assets,
+                                         number=task_no, citations=citations)
             else:
-                story += block_flowables(b, projection, S, width, assets)
+                story += block_flowables(b, projection, S, width, assets, citations=citations)
 
     if projection == "teacher":
         story += nachweis_story(content.nachweis, content.depth_profile, S, width)

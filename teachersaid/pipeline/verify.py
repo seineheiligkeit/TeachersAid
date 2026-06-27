@@ -54,6 +54,12 @@ def verify(
     problems += cl_problems
     warnings += cl_warnings
 
+    # grounded-facts (c)-label: a data figure must declare sourced vs illustrative
+    from .figure_lint import lint_content as _lint_figures
+    fl_problems, fl_warnings = _lint_figures(content)
+    problems += fl_problems
+    warnings += fl_warnings
+
     # coverage: serves must reference resolved competences
     valid_ids = {c.id for c in resolution.competences}
     for b in content.iter_blocks():

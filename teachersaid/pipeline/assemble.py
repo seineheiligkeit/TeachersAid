@@ -33,7 +33,12 @@ def validate_against_model(content: WorksheetContent) -> list[str]:
 def assemble(
     content: WorksheetContent, resolution: LehrplanResolution
 ) -> WorksheetContent:
-    """Populate derived Nachweis + DepthProfile on a content object."""
+    """Populate derived Nachweis + DepthProfile on a content object, and ground figure
+    data — fill real values + citations from the grounded-facts catalog (so rendering
+    stays pure and sourced figures carry real numbers, not authored ones)."""
+    from .data_ground import ground_data
+
     content.depth_profile = compute_depth(content)
     content.nachweis = derive_nachweis(content, resolution)
+    ground_data(content)
     return content

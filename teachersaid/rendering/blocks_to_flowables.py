@@ -31,7 +31,19 @@ def _image(asset_path: Path, max_w: float):
     return img
 
 
-def _info_flowables(b: InfoBlock, projection: str, S, width, assets):
+def _citation_flowables(refs, citations, S):
+    """A "Quelle: …" line under any figure whose data references a vetted dataset.
+    Student-visible on every projection — citing the source IS curriculum
+    (Quellenkritik / Datenkompetenz)."""
+    out = []
+    for ref in refs:
+        cite = (citations or {}).get(ref)
+        if cite:
+            out.append(rb.para("Quelle: " + cite, S["meta"]))
+    return out
+
+
+def _info_flowables(b: InfoBlock, projection: str, S, width, assets, citations=None):
     out = []
     if b.kind == "figure" and b.asset_refs:
         for ref in b.asset_refs:
@@ -40,6 +52,7 @@ def _info_flowables(b: InfoBlock, projection: str, S, width, assets):
                 out.append(_image(p, width))
         if b.content:
             out.append(rb.para(b.content, S["meta"]))
+        out += _citation_flowables(b.asset_refs, citations, S)
     elif b.kind == "callout":
         label = _CALLOUT_LABELS.get(b.callout_role or "note", "Hinweis")
         out.append(rb.raw_para(f"<b>{label}:</b> " + rb.richtext_markup(b.content), S["callout"]))
@@ -111,7 +124,7 @@ def _response_flowables(b: TaskBlock, S, width):
     return []
 
 
-def _task_flowables(b: TaskBlock, projection: str, S, width, assets, number):
+def _task_flowables(b: TaskBlock, projection: str, S, width, assets, number, citations=None):
     out = [rb.raw_para(f"<b>{number}.</b> " + rb.richtext_markup(b.prompt), S["prompt"])]
     # embed every referenced asset (any task kind), + a data_interpretation payload's asset
     refs = list(b.asset_refs or [])
@@ -123,6 +136,7 @@ def _task_flowables(b: TaskBlock, projection: str, S, width, assets, number):
         p = assets.get(ref)
         if p:
             out.append(_image(p, width * 0.75))
+    out += _citation_flowables(refs, citations, S)
     out += _payload_flowables(b, S, width)
     # The teacher guide is a guide, not a blank to fill in: skip the answer space
     # (lines/box/table) — the topic is known; the expected answer follows below.
@@ -160,12 +174,13 @@ def _task_flowables(b: TaskBlock, projection: str, S, width, assets, number):
     return out
 
 
-def block_flowables(block, projection, S, width, assets, number=None):
-    """Render one block. `number` is the task counter (only used for TaskBlocks)."""
+def block_flowables(block, projection, S, width, assets, number=None, citations=None):
+    """Render one block. `number` is the task counter (only used for TaskBlocks).
+    `citations` maps asset_id → a "Quelle: …" line for figures with vetted data."""
     if block.role == Role.INFO:
-        fl = _info_flowables(block, projection, S, width, assets)
+        fl = _info_flowables(block, projection, S, width, assets, citations)
     else:
-        fl = _task_flowables(block, projection, S, width, assets, number)
+        fl = _task_flowables(block, projection, S, width, assets, number, citations)
     fl.append(rb.spacer(2.5))
     return [KeepTogether(fl)] if block.role == Role.TASK else fl
 

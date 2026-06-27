@@ -11,7 +11,8 @@ from __future__ import annotations
 
 import math
 
-INTENTS = ("trend", "comparison", "relationship", "composition", "distribution", "scale")
+INTENTS = ("trend", "comparison", "relationship", "composition", "distribution",
+           "scale", "demographic", "timeline", "climate")
 
 
 def _clean(d: dict) -> dict:
@@ -41,6 +42,22 @@ def choose_representation(intent: str, data: dict) -> tuple[str, dict]:
     if intent == "distribution":               # spread of one variable → histogram
         return "matplotlib:histogram", _clean(
             {"values": vals, "bins": d.get("bins"), "xlabel": xl, "ylabel": yl, "title": title})
+
+    if intent == "demographic":                # age × sex structure → population pyramid
+        return "matplotlib:population_pyramid", _clean(
+            {"age_groups": d.get("age_groups") or cats, "male": d.get("male"),
+             "female": d.get("female"), "title": title, "xlabel": xl, "ylabel": yl})
+
+    if intent == "timeline":                   # chronological events → timeline
+        events = d.get("events")
+        if not events and cats and vals:
+            events = [{"at": v, "label": c} for c, v in zip(cats, vals)]
+        return "matplotlib:timeline", _clean({"events": events, "title": title, "xlabel": xl})
+
+    if intent == "climate":                    # monthly temp + precip → Klimadiagramm
+        return "matplotlib:climate_diagram", _clean(
+            {"months": d.get("months"), "temp": d.get("temp"), "precip": d.get("precip"),
+             "title": title})
 
     if intent == "scale":                      # a position on a scale (e.g. pH) → number line
         marks = d.get("marks")

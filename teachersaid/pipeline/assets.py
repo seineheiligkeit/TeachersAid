@@ -136,6 +136,112 @@ def _bar_chart(asset: Asset, path: Path) -> None:
     plt.close(fig)
 
 
+@_generator("matplotlib:population_pyramid")
+def _population_pyramid(asset: Asset, path: Path) -> None:
+    """A Bevölkerungspyramide — back-to-back horizontal age×sex bars (men left,
+    women right), the iconic demographic figure a single-axis bar can't show.
+    spec: {age_groups:[str], male:[num], female:[num], title?, xlabel?, ylabel?,
+    male_label?, female_label?}. Youngest band at the bottom; a shared, absolute-
+    valued x-axis so both wings read in real counts (the left side is negative only
+    internally). Use only with real, cited data (the asset's data_source)."""
+    from matplotlib.ticker import FuncFormatter, MaxNLocator
+
+    s = asset.spec or {}
+    groups = [str(g) for g in s.get("age_groups", [])]
+    male = [float(v) for v in s.get("male", [])]
+    female = [float(v) for v in s.get("female", [])]
+    n = max(len(groups), 1)
+    y = list(range(n))
+    fig, ax = plt.subplots(figsize=(6.8, max(3.0, 0.42 * n + 1.0)), layout="constrained")
+    ax.barh(y, [-v for v in male], color="#4f6f8f", edgecolor="#33506e",
+            label=s.get("male_label", "Männer"))
+    ax.barh(y, female, color="#b06b4f", edgecolor="#8a4a33",
+            label=s.get("female_label", "Frauen"))
+    ax.axvline(0, color="#33506e", lw=0.8)
+    ax.set_yticks(y)
+    ax.set_yticklabels(groups)
+    ax.set_ylabel(s.get("ylabel") or "Altersgruppe")
+    ax.xaxis.set_major_locator(MaxNLocator(nbins=6, symmetric=True))
+    ax.xaxis.set_major_formatter(  # both wings show positive counts, German grouping
+        FuncFormatter(lambda x, _: f"{abs(x):,.0f}".replace(",", ".")))
+    ax.set_xlabel(s.get("xlabel") or "Personen")
+    ax.margins(y=0.01)
+    ax.legend(loc="lower right", fontsize=8)
+    if s.get("title"):
+        ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 52)))
+    fig.savefig(path, dpi=150)
+    plt.close(fig)
+
+
+@_generator("matplotlib:timeline")
+def _timeline(asset: Asset, path: Path) -> None:
+    """A horizontal timeline — chronological events on a time axis (GPB history). spec:
+    {events:[{"at":num,"label":str}]} or {categories:[label],"values":[year]}; title?,
+    xlabel?. Event labels stagger above/below the line with stems so they don't collide."""
+    s = asset.spec or {}
+    events = s.get("events")
+    if not events:
+        events = [{"at": v, "label": c}
+                  for c, v in zip(s.get("categories", []), s.get("values", []))]
+    events = sorted(events, key=lambda e: float(e["at"]))
+    xs = [float(e["at"]) for e in events]
+    labels = ["\n".join(textwrap.wrap(str(e.get("label", "")), 18)) for e in events]
+    fig, ax = plt.subplots(figsize=(7.6, 3.0), layout="constrained")
+    ax.axhline(0, color="#33506e", lw=1.6, zorder=1)
+    if xs:
+        span = (max(xs) - min(xs)) or 1.0
+        ax.set_xlim(min(xs) - span * 0.08, max(xs) + span * 0.08)
+        ax.set_xticks(xs)
+        ax.set_xticklabels([f"{x:g}" for x in xs], fontsize=8)
+    for i, (x, lab) in enumerate(zip(xs, labels)):
+        y = 0.62 if i % 2 == 0 else -0.62
+        ax.plot([x], [0], "o", color="#b03a2e", ms=8, zorder=3)
+        ax.plot([x, x], [0, y * 0.78], color="#b03a2e", lw=0.7, zorder=2)
+        ax.annotate(lab, (x, y), ha="center", va="bottom" if y > 0 else "top",
+                    fontsize=8.5, color="#33506e")
+    ax.set_ylim(-1.25, 1.25)
+    ax.set_yticks([])
+    for sp in ("left", "right", "top"):
+        ax.spines[sp].set_visible(False)
+    if s.get("xlabel"):
+        ax.set_xlabel(s["xlabel"])
+    if s.get("title"):
+        ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 52)))
+    fig.savefig(path, dpi=150)
+    plt.close(fig)
+
+
+@_generator("matplotlib:climate_diagram")
+def _climate_diagram(asset: Asset, path: Path) -> None:
+    """A Klimadiagramm — monthly temperature (line) + precipitation (bars) on two y-axes,
+    the iconic geography figure no single-axis recipe can show. spec: {months?:[12],
+    temp:[12], precip:[12], title?}. Walter-Lieth convention: temperature left (°C, red
+    line), precipitation right (mm, blue bars)."""
+    s = asset.spec or {}
+    months = s.get("months") or ["Jän", "Feb", "Mär", "Apr", "Mai", "Jun",
+                                 "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"]
+    temp = [float(v) for v in s.get("temp", [])]
+    precip = [float(v) for v in s.get("precip", [])]
+    n = len(months)
+    fig, ax1 = plt.subplots(figsize=(6.6, 3.8), layout="constrained")
+    ax2 = ax1.twinx()
+    ax2.bar(range(n), precip, color="#6f9fc8", edgecolor="#33506e", width=0.7, zorder=1)
+    ax1.plot(range(n), temp, "-o", color="#b03a2e", lw=2, ms=4, zorder=3)
+    ax1.set_zorder(ax2.get_zorder() + 1)   # draw the temperature line above the bars
+    ax1.patch.set_visible(False)
+    ax1.set_xticks(range(n))
+    ax1.set_xticklabels(months, fontsize=8)
+    ax1.set_ylabel("Temperatur (°C)", color="#b03a2e")
+    ax2.set_ylabel("Niederschlag (mm)", color="#33506e")
+    ax1.tick_params(axis="y", labelcolor="#b03a2e")
+    ax2.tick_params(axis="y", labelcolor="#33506e")
+    ax2.set_ylim(0, max(precip + [1]) * 1.15)
+    if s.get("title"):
+        ax1.set_title("\n".join(textwrap.wrap(str(s["title"]), 52)))
+    fig.savefig(path, dpi=150)
+    plt.close(fig)
+
+
 @_generator("matplotlib:line")
 def _line(asset: Asset, path: Path) -> None:
     """A line graph — for a TREND / change over time. spec: a single series via
@@ -443,6 +549,17 @@ GENERATION_RECIPES: dict[str, str] = {
         '"xlabel"?,"ylabel"?,"ymin"?,"ymax"?,"title"?}',
     "matplotlib:math_formula":
         'Formel via LaTeX — spec {"latex":str}',
+    "matplotlib:population_pyramid":
+        'Bevölkerungspyramide (Alter × Geschlecht, gegenläufige Balken) — '
+        'spec {"age_groups":[str],"male":[num],"female":[num],"title"?:str,"xlabel"?:str}. '
+        'NUR mit echten, zitierten Daten verwenden (data_source auf einen Datensatz setzen).',
+    "matplotlib:timeline":
+        'Zeitleiste (chronologische Ereignisse, GPB) — '
+        'spec {"events":[{"at":num,"label":str}],"title"?:str,"xlabel"?:str}.',
+    "matplotlib:climate_diagram":
+        'Klimadiagramm (Monats-Temperatur als Linie + Niederschlag als Balken, zwei Achsen) — '
+        'spec {"months"?:[12 str],"temp":[12 num],"precip":[12 num],"title"?:str}. '
+        'Echte Klimadaten zitieren (data_source), sonst illustrative=true.',
 }
 
 

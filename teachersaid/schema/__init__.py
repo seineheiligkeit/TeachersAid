@@ -11,6 +11,7 @@ from .arrangement import (
     SharedProduct,
 )
 from .assets import Asset, AssetProvenance, IntentionallyFlawed, MediaPolicy
+from .datasets import DataRef, Dataset, SourceRef
 from .blocks import (
     Block,
     BlockBase,
@@ -69,6 +70,9 @@ __all__ = [
     "AssetProvenance",
     "IntentionallyFlawed",
     "MediaPolicy",
+    "DataRef",
+    "Dataset",
+    "SourceRef",
     "Block",
     "BlockBase",
     "ContentFlags",

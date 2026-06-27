@@ -11,6 +11,7 @@ from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 
+from .datasets import DataRef
 from .enums import Medium
 
 
@@ -39,7 +40,13 @@ class Asset(BaseModel):
     misleading_in_isolation: bool = False  # correct-but-risky-out-of-context
     intentionally_flawed: IntentionallyFlawed | None = None  # wrong on purpose
     machine_generatable: bool = True  # music audio etc. -> False
-    provenance: AssetProvenance | None = None
+    provenance: AssetProvenance | None = None  # FILE provenance (sourced photos/art)
+    # Grounded-facts label: a content figure's data is exactly one of —
+    #   data_source set  → (b) vetted-sourced + cited (real numbers from a dataset), or
+    #   illustrative=True → (c) explicitly schematic/example (clearly not a real figure).
+    # A real-looking, unlabelled figure is a verify finding (see pipeline/figure_lint).
+    data_source: DataRef | None = None
+    illustrative: bool = False
     caption: str | None = None
 
 
