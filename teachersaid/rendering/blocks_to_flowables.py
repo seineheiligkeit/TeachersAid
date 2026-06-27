@@ -58,6 +58,9 @@ def _info_flowables(b: InfoBlock, projection: str, S, width, assets, citations=N
         out.append(rb.raw_para(f"<b>{label}:</b> " + rb.richtext_markup(b.content), S["callout"]))
     elif b.kind == "key_fact":
         out.append(rb.raw_para("▸ " + rb.richtext_markup(b.content), S["key_fact"]))
+    elif b.kind == "source_text":
+        txt = b.content if isinstance(b.content, str) else plain_text(b.content)
+        out.append(rb.numbered_text(txt, S["body"], width))
     else:
         out.append(rb.para(b.content, S["body"]))
 

@@ -181,6 +181,31 @@ def answer_box(min_height_mm: float, width: float) -> Table:
     return t
 
 
+def numbered_text(text: str, body_style: ParagraphStyle, width: float) -> Table:
+    """An authentic text with line numbers (Deutsch source text): a borderless two-column
+    table [Zeile-Nr | Zeile] with a light rule, so tasks can reference "Zeile N"."""
+    num_style = ParagraphStyle("zeilennr", fontName=BASE_FONT, fontSize=8,
+                               textColor=colors.HexColor("#999999"), alignment=2)
+    rows = []
+    i = 0
+    for line in text.split("\n"):
+        if line.strip():                       # number only non-blank lines (verse lines)
+            i += 1
+            rows.append([para(str(i), num_style), para(line, body_style)])
+        else:                                  # blank line = stanza/paragraph gap, no number
+            rows.append([para(" ", num_style), para(" ", body_style)])
+    numw = 12 * mm
+    t = Table(rows, colWidths=[numw, width - numw])
+    t.setStyle(TableStyle([
+        ("VALIGN", (0, 0), (-1, -1), "TOP"),
+        ("LEFTPADDING", (0, 0), (0, -1), 0), ("RIGHTPADDING", (0, 0), (0, -1), 5),
+        ("LEFTPADDING", (1, 0), (1, -1), 7),
+        ("TOPPADDING", (0, 0), (-1, -1), 1.5), ("BOTTOMPADDING", (0, 0), (-1, -1), 1.5),
+        ("LINEBEFORE", (1, 0), (1, -1), 0.5, colors.HexColor("#cccccc")),
+    ]))
+    return t
+
+
 def grid_table(data: list[list[str]], width: float, header: bool = True) -> Table:
     ncols = max(len(r) for r in data)
     col_w = width / ncols

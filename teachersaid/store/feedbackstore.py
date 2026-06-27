@@ -17,7 +17,7 @@ from pydantic import BaseModel, ConfigDict, Field
 
 from .base import JsonStore, now
 
-TARGET_KINDS = ("block", "item", "arrangement", "asset", "dataset")
+TARGET_KINDS = ("block", "item", "arrangement", "asset", "dataset", "text")
 # the offered quick-tag vocabulary (free comments cover anything else)
 FEEDBACK_TAGS = (
     "zu leicht", "zu schwer", "Sachfehler", "Sprache/Wortwahl", "unklar",

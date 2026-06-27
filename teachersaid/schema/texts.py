@@ -1,0 +1,94 @@
+"""Annotated authentic texts (the Deutsch "asset class").
+
+The reading/writing analogue of the grounded-facts data layer: a real, rights-cleared
+text + a *curated annotation layer*. The discipline mirrors the data layer — the text is
+**select, never author** (an actual PD/licensed text, cited), and each task's answer is
+**derived from a vetted annotation, never authored at task time** (no hallucinated
+Erwartungshorizont). One annotated text → many aligned tasks (comprehension, close-reading,
+Medienkritik, materialgestütztes Schreiben) across grades. "Correct by *curation*" (HITL),
+not by computation — there is no sympy for German — but far more trustworthy than free
+LLM authoring, and it compounds like the dataset/competence catalogs.
+"""
+
+from __future__ import annotations
+
+from typing import Literal
+
+from pydantic import BaseModel, ConfigDict, Field
+
+from .blocks import Serves
+from .richtext import RichText
+
+# annotation kinds → the tasks they license (see pipeline/text_tasks.py)
+AnnotationKind = Literal[
+    "vocab",            # a hard word + gloss (reading scaffold)
+    "comprehension",    # a question answerable from the text + its answer
+    "structure",        # a structural part (Einleitung/Strophe/Argumentationsgang)
+    "stilmittel",       # a rhetorical/poetic device at a span + its Wirkung
+    "argument_move",    # These/Beleg/Gegenargument (argumentative texts)
+    "media_technique",  # how the text persuades/constructs (Medienkompetenz)
+    "erwartungshorizont",  # expected-answer points for an open interpretation/Stellungnahme
+]
+
+RightsBasis = Literal["public_domain_pma", "cc_by", "cc0", "cleared"]
+
+
+class TextSourceRef(BaseModel):
+    """Provenance + rights for an authentic text — the text analogue of `SourceRef`,
+    with the copyright nuances the roadmap flagged: a work PD in the US may still be in
+    copyright in Austria (70 Jahre p.m.a.), and a PD work ≠ a PD reproduction."""
+    model_config = ConfigDict(extra="forbid")
+    author: str
+    title: str
+    year: str | None = None                  # year of the work
+    author_death_year: int | None = None     # for the AT 70-Jahre-post-mortem-auctoris rule
+    rights_basis: RightsBasis = "public_domain_pma"
+    licence: str | None = None
+    repository: str                          # Projekt Gutenberg-DE · Wikisource · ANNO/ÖNB …
+    url: str | None = None
+    retrieved: str | None = None
+    attribution: str                         # the citation string rendered under the text
+
+    def is_clear(self, today_year: int) -> tuple[bool, list[str]]:
+        """Whether the text may be redistributed; returns (ok, reasons-if-not)."""
+        if self.rights_basis in ("cc_by", "cc0", "cleared"):
+            return True, []
+        if self.rights_basis == "public_domain_pma":
+            if self.author_death_year is None:
+                return False, ["public_domain_pma but no author_death_year recorded"]
+            if today_year - self.author_death_year < 70:
+                return False, [f"author died {self.author_death_year}: not yet 70 Jahre p.m.a."]
+            return True, []
+        return False, [f"unknown rights_basis {self.rights_basis!r}"]
+
+
+class Annotation(BaseModel):
+    """One curated annotation on the text. Task-bearing kinds carry the vetted `answer`,
+    so a derived task's `answer_key` is the curation, never authored at task time."""
+    model_config = ConfigDict(extra="forbid")
+    kind: AnnotationKind
+    zeile: str | None = None                 # line ref, e.g. "5" or "5-7"
+    span: str | None = None                  # the quoted snippet it refers to
+    label: str                               # the word / question / device name / claim
+    answer: RichText | None = None           # gloss / answer / Wirkung / expected points
+    cognitive_level: str = "understand"      # for the derived task
+    dimensions: list[str] = Field(default_factory=list)   # DEU dims (LES/SCH/SPR)
+
+
+class AnnotatedText(BaseModel):
+    """A real text + its curated annotation layer (the curated in-repo record)."""
+    model_config = ConfigDict(extra="forbid")
+    id: str
+    title: str
+    subject: str = "Deutsch"
+    klasse: int
+    text: str                                # the actual text, newline-separated for Zeilennummern
+    genre: str | None = None                 # Märchen · Gedicht · Fabel · Zeitungsartikel · Reklame
+    textsorte: str | None = None
+    source: TextSourceRef
+    annotations: list[Annotation] = Field(default_factory=list)
+    serves: list[Serves] = Field(default_factory=list)    # DEU competences text+tasks target
+    keywords: list[str] = Field(default_factory=list)
+
+    def line_count(self) -> int:
+        return len(self.text.splitlines())

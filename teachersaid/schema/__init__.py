@@ -12,6 +12,7 @@ from .arrangement import (
 )
 from .assets import Asset, AssetProvenance, IntentionallyFlawed, MediaPolicy
 from .datasets import DataRef, Dataset, SourceRef
+from .texts import AnnotatedText, Annotation, TextSourceRef
 from .blocks import (
     Block,
     BlockBase,
@@ -74,6 +75,9 @@ __all__ = [
     "DataRef",
     "Dataset",
     "SourceRef",
+    "AnnotatedText",
+    "Annotation",
+    "TextSourceRef",
     "Block",
     "BlockBase",
     "ContentFlags",

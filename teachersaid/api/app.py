@@ -23,6 +23,7 @@ from ..store.arrangementstore import ArrangementStore
 from ..store.assetstore import AssetStore
 from ..store.blockstore import BlockStore
 from ..store.datasetstore import DatasetStore
+from ..store.textstore import TextStore
 from ..store.feedbackstore import FEEDBACK_TAGS, TARGET_KINDS, FeedbackEntry, FeedbackStore
 from ..store.repository import ReviewStore
 
@@ -32,6 +33,7 @@ BLOCKS = BlockStore()
 ASSETS = AssetStore()
 ARRANGEMENTS = ArrangementStore()
 DATASETS = DatasetStore()
+TEXTS = TextStore()
 FEEDBACK = FeedbackStore()
 _STATIC = Path(__file__).resolve().parent / "static"
 
@@ -162,6 +164,10 @@ def _target_meta(kind: str, tid: str) -> tuple[str, str]:
         rec = DATASETS.get(tid)
         if rec:
             return "", f"{rec.dataset.source.publisher}: {rec.dataset.title}"
+    elif kind == "text":
+        rec = TEXTS.get(tid)
+        if rec:
+            return rec.text.subject, f"{rec.text.source.author}: {rec.text.title}"
     return "", tid
 
 
@@ -347,6 +353,46 @@ def reject_dataset(dataset_id: str):
     if DATASETS.get(dataset_id) is None:
         raise HTTPException(404, "no such dataset")
     return DATASETS.set_status(dataset_id, "rejected").summary()
+
+
+# --- annotated authentic texts (Deutsch) -------------------------------------
+@app.get("/api/texts")
+def texts(status: str | None = None):
+    return [r.summary() for r in TEXTS.list(status=status)]
+
+
+@app.get("/api/texts/{text_id}")
+def text_detail(text_id: str):
+    rec = TEXTS.get(text_id)
+    if rec is None:
+        raise HTTPException(404, "no such text")
+    s = rec.summary()
+    s["text"] = rec.text.text
+    s["annotations"] = [a.model_dump() for a in rec.text.annotations]
+    return s
+
+
+@app.post("/api/texts/{text_id}/approve")
+def approve_text(text_id: str):
+    if TEXTS.get(text_id) is None:
+        raise HTTPException(404, "no such text")
+    return TEXTS.set_status(text_id, "approved").summary()
+
+
+@app.post("/api/texts/{text_id}/reject")
+def reject_text(text_id: str):
+    if TEXTS.get(text_id) is None:
+        raise HTTPException(404, "no such text")
+    return TEXTS.set_status(text_id, "rejected").summary()
+
+
+@app.post("/api/texts/{text_id}/compose")
+def compose_text(text_id: str):
+    """Derive a worksheet from the annotated text and stage it in Inhalte for review."""
+    if TEXTS.get(text_id) is None:
+        raise HTTPException(404, "no such text")
+    item = orch.compose_text_worksheet(STORE, TEXTS, text_id)
+    return {"id": item.id, "error": item.error, "problems": item.verify_problems}
 
 
 # --- Lernarrangements (v0.5) -------------------------------------------------

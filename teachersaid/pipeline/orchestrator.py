@@ -464,6 +464,65 @@ def seed_datasets(dataset_store=None, *, status: str = "in_review"):
     return out
 
 
+def ingest_text(text_store, annotated_text, *, source: str = "curated",
+                status: str = "in_review", today: date | None = None):
+    """Stage an annotated authentic text for HITL review. Runs the RIGHTS gate first —
+    a text may only be redistributed on a clear basis (PD by the AT 70-Jahre-p.m.a. rule,
+    or CC) — the select-never-author discipline applied to copyright (per the roadmap's
+    PD-work-≠-PD-reproduction / AT-not-US caution)."""
+    from ..store.textstore import TextRecord
+
+    year = (today or date.today()).year
+    ok, reasons = annotated_text.source.is_clear(year)
+    if not ok:
+        raise ValueError(f"rights: {annotated_text.id} not clear to redistribute — "
+                         + "; ".join(reasons))
+    rec = TextRecord(id=annotated_text.id, text=annotated_text, source=source, status=status)
+    return text_store.upsert(rec)
+
+
+def seed_texts(text_store=None, *, status: str = "in_review", today: date | None = None):
+    """Stage the curated annotated texts (library/texts.py) for review (cf. seed_datasets)."""
+    from ..library.texts import ANNOTATED_TEXTS
+    from ..store.textstore import TextStore
+
+    store = text_store or TextStore()
+    return [ingest_text(store, t, status=status, today=today) for t in ANNOTATED_TEXTS]
+
+
+def compose_text_worksheet(store: ReviewStore, text_store, text_id: str,
+                           *, today: date | None = None) -> ReviewItem:
+    """Stage a worksheet derived from an annotated text as a content item for Gate-2
+    review. Tasks' answers come from the vetted annotations (correct by curation)."""
+    from ..pipeline.text_tasks import build_worksheet
+
+    rec = text_store.get(text_id)
+    if rec is None:
+        raise KeyError(f"no annotated text '{text_id}'")
+    at = rec.text
+    item = ReviewItem(
+        id="", stage="content", source="text",
+        title=f"{at.subject} {at.klasse}. Kl. — {at.title}",
+        request=BundleRequest(subject=at.subject, klasse=at.klasse, topic_raw=at.title),
+    )
+    store.create(item)
+    try:
+        content, res = build_worksheet(at, today=today)
+        item.resolution = res
+        assemble(content, res)
+        report = verify(content, res)
+        item.artifacts = _render_all(item.id, content)
+        item.content = content
+        item.verify_problems = report.problems
+        item.verify_warnings = report.warnings
+        item.status = "pending"
+        item.error = None
+    except Exception as exc:  # noqa: BLE001
+        item.error = f"{type(exc).__name__}: {exc}"
+        item.status = "pending"
+    return store.save(item)
+
+
 def _produce_content_item(
     store: ReviewStore,
     idea: ReviewItem,

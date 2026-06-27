@@ -101,6 +101,14 @@ def seed_datasets(store=None, *, status: str = "in_review") -> list:
     return orch.seed_datasets(store, status=status)
 
 
+def seed_texts(store=None, *, status: str = "in_review") -> list:
+    """Stage the curated annotated authentic texts (library/texts.py) into the text
+    store for HITL review (cf. seed_datasets). The Deutsch asset class."""
+    from ..pipeline import orchestrator as orch
+
+    return orch.seed_texts(store, status=status)
+
+
 def seed_blocks(store=None, *, status: str = "approved") -> list:
     """Harvest every example worksheet's blocks into the block library. These come
     from the curated, SME-reviewed examples, so they seed straight as `approved`

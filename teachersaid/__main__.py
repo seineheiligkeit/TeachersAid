@@ -19,6 +19,7 @@ if __name__ == "__main__":
             seed_blocks,
             seed_datasets,
             seed_library,
+            seed_texts,
         )
 
         items = seed_library()
@@ -40,6 +41,9 @@ if __name__ == "__main__":
         data = seed_datasets()
         print(f"\nStaged {len(data)} grounded-facts dataset(s) into the dataset store "
               f"({', '.join(d.id for d in data)} — review them in the Datensätze tab).")
+        texts = seed_texts()
+        print(f"\nStaged {len(texts)} annotated text(s) into the text store "
+              f"({', '.join(t.id for t in texts)} — review them in the Texte tab).")
         print("\nRun 'python -m teachersaid' and open the dashboard to review them.")
         sys.exit(0)
 

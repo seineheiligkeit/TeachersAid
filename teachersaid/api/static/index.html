@@ -76,7 +76,7 @@
 <main id="main"></main>
 
 <script>
-const TABS = [["brainstorm","Brainstorm"],["bausteine","Bausteine"],["inhalte","Inhalte"],["bibliothek","Bibliothek"],["arrangements","Arrangements"],["abbildungen","Abbildungen"],["datensaetze","Datensätze"],["statistik","Statistik"],["insights","Insights"]];
+const TABS = [["brainstorm","Brainstorm"],["bausteine","Bausteine"],["inhalte","Inhalte"],["bibliothek","Bibliothek"],["arrangements","Arrangements"],["abbildungen","Abbildungen"],["datensaetze","Datensätze"],["texte","Texte"],["statistik","Statistik"],["insights","Insights"]];
 const FB_TAGS = ["zu leicht","zu schwer","Sachfehler","Sprache/Wortwahl","unklar","didaktisch stark","Bild/Abbildung nötig","super"];
 let TAB = "brainstorm", SELECTED = null, VIEW = "bloecke", ARRVIEW = "vorschau", LASTITEMS = [];
 const $ = s => document.querySelector(s);
@@ -168,6 +168,11 @@ function buildShell(){
       <div class="card"><h2>Datensätze — geerdete Fakten (Quellen mit Lizenz)</h2>
         <p class="muted">Kuratierte, zitierte, lizenzgeprüfte öffentliche Daten (deterministisch von Tools geholt, kein LLM im Faktenweg). Inhalte <b>referenzieren</b> einen Datensatz per stabiler ID und dürfen einen Wert <b>verwenden, nie erfinden</b> — wie <code>serves</code> eine Kompetenz referenziert. Hier prüfst du Quelle, Lizenz und Abbildung und gibst frei.</p>
         <div id="dataset-lib" class="gallery"><p class="muted">lädt…</p></div></div>`;
+  } else if(TAB==="texte"){
+    $("#main").innerHTML = `
+      <div class="card"><h2>Texte — annotierte authentische Texte (Deutsch)</h2>
+        <p class="muted">Echte, rechtlich geklärte Texte (gemeinfrei nach AT-70-Jahre-Regel oder CC) mit einer <b>geprüften Annotationsebene</b>. Aufgaben werden daraus abgeleitet — die Antworten stammen aus den Annotationen (korrekt durch Kuration, nicht erfunden). „Arbeitsblatt erzeugen“ stellt ein abgeleitetes Arbeitsblatt in <b>Inhalte</b> ein.</p>
+        <div id="text-lib"><p class="muted">lädt…</p></div></div>`;
   } else if(TAB==="insights"){
     $("#main").innerHTML = `<div id="insights"><p class="muted">lädt…</p></div>`;
   } else {
@@ -187,6 +192,7 @@ async function refresh(){
   else if(TAB==="arrangements") renderArrangements();
   else if(TAB==="abbildungen") renderAssets();
   else if(TAB==="datensaetze") renderDatasets();
+  else if(TAB==="texte") renderTexts();
   else if(TAB==="statistik") renderStats();
   else if(TAB==="insights") renderInsights();
 }
@@ -438,6 +444,33 @@ async function renderDatasets(){
   }).join("");
 }
 async function actDataset(id,kind){ await jpost(`/api/datasets/${id}/${kind}`,{}); renderDatasets(); }
+
+/* ---------- Texte (annotated authentic texts, Deutsch) ---------- */
+async function renderTexts(){
+  if(!$("#text-lib")) return;
+  const lib = await jget("/api/texts");
+  if(!lib.length){ $("#text-lib").innerHTML = `<p class="muted">Noch keine Texte — <code>python -m teachersaid seed</code> lädt die annotierten Texte.</p>`; return; }
+  const rows = await Promise.all(lib.map(t=>jget("/api/texts/"+encodeURIComponent(t.id))));
+  $("#text-lib").innerHTML = rows.map(d=>{
+    const acts = d.status==="in_review" ? `<div class="row" style="margin-top:6px">
+        <button class="ok" onclick="actText('${d.id}','approve')">Freigeben</button>
+        <button class="bad" onclick="actText('${d.id}','reject')">Ablehnen</button></div>` : "";
+    const kinds={}; (d.annotations||[]).forEach(a=>kinds[a.kind]=(kinds[a.kind]||0)+1);
+    const kindbadges = Object.entries(kinds).map(([k,n])=>`<span class="badge">${esc(k)} ${n}</span>`).join("");
+    const lines = (d.text||"").split("\n").slice(0,6).map((l,i)=>l.trim()?`<span class="muted">${i+1}</span> ${esc(l)}`:"").join("<br>");
+    const pma = d.rights_basis==="public_domain_pma" ? `<span class="cov">gemeinfrei (†${d.author_death_year})</span>` : `<span class="badge">${esc(d.rights_basis)}</span>`;
+    return `<div class="card" style="margin-bottom:10px">
+      <div class="row between"><b>${esc(d.title)}</b><span class="pill s-${d.status}">${d.status}</span></div>
+      <div class="meta">${esc(d.author)} · ${esc(d.genre||"")} · ${esc(d.subject)} ${d.klasse}. Kl. · ${d.n_lines} Zeilen · ${pma}</div>
+      <div style="font-family:Georgia,serif;font-size:13px;line-height:1.5;margin:6px 0;padding:6px 10px;border-left:2px solid #ccc">${lines}<br><span class="muted">…</span></div>
+      <div class="meta">Annotationen: ${kindbadges}</div>
+      <div class="meta" style="font-size:11px">${esc(d.attribution||"")}${d.url?` · <a href="${esc(d.url)}" target="_blank" rel="noopener">Quelle</a>`:""}</div>
+      <div class="row" style="margin-top:6px"><button onclick="composeText('${d.id}')">Arbeitsblatt erzeugen</button></div>
+      ${acts}${feedbackMini("text", d.id)}</div>`;
+  }).join("");
+}
+async function actText(id,kind){ await jpost(`/api/texts/${id}/${kind}`,{}); renderTexts(); }
+async function composeText(id){ const r=await jpost(`/api/texts/${id}/compose`,{}); alert(r.error?("Fehler: "+r.error):("Arbeitsblatt "+r.id+" in „Inhalte“ erstellt"+(r.problems&&r.problems.length?(" — "+r.problems.length+" Verify-Probleme"):" (verify-clean)"))); }
 async function renderAssets(){
   renderAssetLib();
   if(!$("#gallery")) return;

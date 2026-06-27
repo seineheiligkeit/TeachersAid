@@ -58,6 +58,7 @@ class InfoKind(StrEnum):
     FIGURE = "figure"
     DATA_REFERENCE = "data_reference"
     CALLOUT = "callout"
+    SOURCE_TEXT = "source_text"  # an authentic text rendered with line numbers (Deutsch/Lesen)
 
 
 class CalloutRole(StrEnum):
