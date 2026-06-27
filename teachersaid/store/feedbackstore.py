@@ -11,18 +11,13 @@ refinement — a single read.
 
 from __future__ import annotations
 
-import json
-import threading
-from collections import Counter, defaultdict
-from datetime import datetime, timezone
-from pathlib import Path
+from collections import Counter
 
 from pydantic import BaseModel, ConfigDict, Field
 
-from ..config import RUNS_DIR
+from .base import JsonStore, now
 
-_LOCK = threading.Lock()
-TARGET_KINDS = ("block", "item", "arrangement", "asset")
+TARGET_KINDS = ("block", "item", "arrangement", "asset", "dataset")
 # the offered quick-tag vocabulary (free comments cover anything else)
 FEEDBACK_TAGS = (
     "zu leicht", "zu schwer", "Sachfehler", "Sprache/Wortwahl", "unklar",
@@ -30,10 +25,6 @@ FEEDBACK_TAGS = (
 )
 # tags that, like a low rating or a revise flag, mark something for attention
 _ATTENTION_TAGS = {"sachfehler", "unklar", "zu leicht", "zu schwer", "bild/abbildung nötig"}
-
-
-def _now() -> str:
-    return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
 
 class FeedbackEntry(BaseModel):
@@ -54,35 +45,20 @@ class FeedbackEntry(BaseModel):
                 or any(t.lower() in _ATTENTION_TAGS for t in self.tags))
 
 
-class FeedbackStore:
-    def __init__(self, root: Path | None = None):
-        self.root = Path(root) if root else RUNS_DIR / "feedback"
-        self.root.mkdir(parents=True, exist_ok=True)
-        self._counter = self.root / "_counter.txt"
+class FeedbackStore(JsonStore[FeedbackEntry]):
+    """Append-only: `add` (not upsert) with a generated id; one central log keyed by
+    (target_kind, target_id) over ANY reviewable entity."""
 
-    def _next_id(self) -> str:
-        with _LOCK:
-            n = int(self._counter.read_text(encoding="utf-8") or "0") if self._counter.exists() else 0
-            n += 1
-            self._counter.write_text(str(n), encoding="utf-8")
-        return f"f{n:04d}"
+    model = FeedbackEntry
+    subdir = "feedback"
 
     def add(self, entry: FeedbackEntry) -> FeedbackEntry:
-        entry.id = entry.id or self._next_id()
-        entry.at = entry.at or _now()
-        (self.root / f"{entry.id}.json").write_text(
-            json.dumps(entry.model_dump(), ensure_ascii=False, indent=2), encoding="utf-8")
-        return entry
+        entry.id = entry.id or self._next_seq("f")
+        entry.at = entry.at or now()
+        return self._write(entry)
 
     def list(self) -> list[FeedbackEntry]:
-        out: list[FeedbackEntry] = []
-        for p in self.root.glob("f*.json"):
-            try:
-                out.append(FeedbackEntry.model_validate_json(p.read_text(encoding="utf-8")))
-            except Exception:
-                continue
-        out.sort(key=lambda e: e.at, reverse=True)
-        return out
+        return self._list(sort_key=lambda e: e.at, reverse=True, pattern="f*.json")
 
     def for_target(self, target_kind: str, target_id: str) -> list[FeedbackEntry]:
         return [e for e in self.list()
