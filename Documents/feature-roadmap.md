@@ -17,14 +17,16 @@ correct-by-construction (or curation) and making it the durable, reusable asset:
   und Fuchs*; **Latein** extends it cleanly (Phaedrus *Vulpes et Corvus*) with `translation`/`grammar`/
   `culture` annotation kinds (dims SPR/INH). See "Languages" below for FS/audio (planned).
 
-Also: store consolidation (`store/base.py::JsonStore`, the future-DB seam). **160 tests green.**
+Also: store consolidation (`store/base.py::JsonStore`, the future-DB seam). **162 tests green.**
 
 **Recommended next, in order:**
 
-1. **Geometry / construction recipe family (KB3)** — the biggest remaining Maths coverage gap: a
-   geometry-primitive recipe (labeled triangles/polygons, Pythagoras *with a figure*, area/perimeter,
-   coordinate geometry, nets) + the `construction` task kind + OPE-Konstruieren. Bigger build (matplotlib,
-   no new dep); parametrizable on top of the variant engine.
+1. **Geometry recipe family (KB3)** — ✅ **figures DONE (27 Jun 2026):** `right_triangle` (Pythagoras),
+   `rectangle`, `polygon`, `circle`, `coordinate_plane` (matplotlib, no new dep; labels spec-provided so a
+   figure never leaks the answer; media-policy clean, exempt from the (c)-label as non-empirical). **Still
+   to do:** wire the parametric engine to *emit* a figure per variant (Pythagoras/area "with a figure" —
+   add an optional `figure` to `Instance` → `asset_refs` on the block); `nets` (Netze) of solids; richer
+   construction tasks (the `construction` task kind already exists).
 2. **Languages — modern FS (English/French): the audio breakthrough** + annotated Realien (the big,
    design-first track). See the new "Languages (FS / Latein)" section below for the full plan.
 3. **Scale the text libraries:** more annotated PD texts (DE + LAT) across grades (subagent-annotation +
