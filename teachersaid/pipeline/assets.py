@@ -25,6 +25,7 @@ import matplotlib
 
 matplotlib.use("Agg")  # headless
 import matplotlib.pyplot as plt  # noqa: E402
+from matplotlib.patches import Circle, Polygon  # noqa: E402
 
 from ..config import RUNS_DIR  # noqa: E402
 from ..schema.assets import Asset  # noqa: E402
@@ -384,6 +385,148 @@ def _math_formula(asset: Asset, path: Path) -> None:
     plt.close(fig)
 
 
+# --- geometry recipe family (KB3 Figuren und Körper) -------------------------
+# Correct-by-construction geometric figures; labels are spec-provided so a figure never
+# leaks the answer (e.g. show "c = ?" for a Pythagoras task). Equal aspect, no data axes.
+def _geo_fig(w: float = 4.4, h: float = 3.8):
+    fig, ax = plt.subplots(figsize=(w, h), layout="constrained")
+    ax.set_aspect("equal")
+    ax.axis("off")
+    return fig, ax
+
+
+def _geo_title(ax, s: dict) -> None:
+    if s.get("title"):
+        ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 46)))
+
+
+@_generator("matplotlib:right_triangle")
+def _right_triangle(asset: Asset, path: Path) -> None:
+    """A right triangle for Pythagoras: legs a (bottom) and b (left), right angle marked,
+    hypotenuse c. spec: {a, b, label_a?, label_b?, label_c?, title?}. Labels are strings
+    (e.g. "a = 3 cm" or "c = ?") so the figure shows the task, not the answer."""
+    s = asset.spec or {}
+    a, b = float(s.get("a", 4)), float(s.get("b", 3))
+    fig, ax = _geo_fig(4.2, 3.6)
+    ax.add_patch(Polygon([(0, 0), (a, 0), (0, b)], closed=True,
+                         facecolor="#dce6f2", edgecolor="#33506e", lw=1.8))
+    m = min(a, b) * 0.13                                   # right-angle square at the origin
+    ax.plot([m, m, 0], [0, m, m], color="#33506e", lw=1)
+    ax.text(a / 2, -0.07 * b, str(s.get("label_a", "a")), ha="center", va="top", fontsize=11)
+    ax.text(-0.03 * a, b / 2, str(s.get("label_b", "b")), ha="right", va="center", fontsize=11)
+    ax.text(a / 2 + 0.03 * a, b / 2 + 0.03 * b, str(s.get("label_c", "c")),
+            ha="left", va="bottom", fontsize=11, color="#b03a2e")
+    ax.set_xlim(-0.2 * a, a * 1.12)
+    ax.set_ylim(-0.2 * b, b * 1.12)
+    _geo_title(ax, s)
+    fig.savefig(path, dpi=150)
+    plt.close(fig)
+
+
+@_generator("matplotlib:rectangle")
+def _rectangle_fig(asset: Asset, path: Path) -> None:
+    """A labeled rectangle. spec: {length, width, label_l?, label_w?, title?}."""
+    s = asset.spec or {}
+    le, w = float(s.get("length", 6)), float(s.get("width", 4))
+    fig, ax = _geo_fig(4.8, 3.4)
+    ax.add_patch(Polygon([(0, 0), (le, 0), (le, w), (0, w)], closed=True,
+                         facecolor="#dce6f2", edgecolor="#33506e", lw=1.8))
+    ax.text(le / 2, -0.09 * w, str(s.get("label_l", f"{le:g}")), ha="center", va="top", fontsize=11)
+    ax.text(-0.02 * le, w / 2, str(s.get("label_w", f"{w:g}")), ha="right", va="center", fontsize=11)
+    ax.set_xlim(-0.22 * le, le * 1.08)
+    ax.set_ylim(-0.28 * w, w * 1.12)
+    _geo_title(ax, s)
+    fig.savefig(path, dpi=150)
+    plt.close(fig)
+
+
+@_generator("matplotlib:polygon")
+def _polygon(asset: Asset, path: Path) -> None:
+    """A general labeled polygon (triangles, quadrilaterals, Vielecke). spec:
+    {points:[[x,y],…], vertex_labels?:[str], side_labels?:[str], title?}."""
+    s = asset.spec or {}
+    pts = [(float(x), float(y)) for x, y in s.get("points", [(0, 0), (4, 0), (2, 3)])]
+    fig, ax = _geo_fig()
+    ax.add_patch(Polygon(pts, closed=True, facecolor="#dce6f2", edgecolor="#33506e", lw=1.8))
+    cx = sum(p[0] for p in pts) / len(pts)
+    cy = sum(p[1] for p in pts) / len(pts)
+    span = max(max(p[0] for p in pts) - min(p[0] for p in pts),
+               max(p[1] for p in pts) - min(p[1] for p in pts)) or 1.0
+    for i, (x, y) in enumerate(pts):
+        ax.plot([x], [y], "o", color="#33506e", ms=4)
+        vl = s.get("vertex_labels") or []
+        if i < len(vl):                                    # label outward from the centroid
+            dx, dy = x - cx, y - cy
+            n = (dx * dx + dy * dy) ** 0.5 or 1
+            ax.text(x + 0.12 * span * dx / n, y + 0.12 * span * dy / n, str(vl[i]),
+                    ha="center", va="center", fontsize=11)
+    for i, lab in enumerate(s.get("side_labels") or []):
+        x1, y1 = pts[i]
+        x2, y2 = pts[(i + 1) % len(pts)]
+        ax.text((x1 + x2) / 2, (y1 + y2) / 2, str(lab), ha="center", va="center",
+                fontsize=10, color="#b03a2e",
+                bbox=dict(boxstyle="round,pad=0.1", fc="white", ec="none"))
+    ax.autoscale_view()
+    ax.margins(0.18)
+    _geo_title(ax, s)
+    fig.savefig(path, dpi=150)
+    plt.close(fig)
+
+
+@_generator("matplotlib:circle")
+def _circle(asset: Asset, path: Path) -> None:
+    """A circle with centre + radius. spec: {radius, label_r?, title?}."""
+    s = asset.spec or {}
+    r = float(s.get("radius", 3))
+    fig, ax = _geo_fig(4.0, 4.0)
+    ax.add_patch(Circle((0, 0), r, facecolor="#dce6f2", edgecolor="#33506e", lw=1.8))
+    ax.plot([0], [0], "o", color="#33506e", ms=4)
+    ax.plot([0, r], [0, 0], color="#b03a2e", lw=1.4)       # radius
+    ax.text(r / 2, 0.05 * r, str(s.get("label_r", f"r = {r:g}")), ha="center", va="bottom",
+            fontsize=11, color="#b03a2e")
+    ax.set_xlim(-r * 1.15, r * 1.15)
+    ax.set_ylim(-r * 1.15, r * 1.15)
+    _geo_title(ax, s)
+    fig.savefig(path, dpi=150)
+    plt.close(fig)
+
+
+@_generator("matplotlib:coordinate_plane")
+def _coordinate_plane(asset: Asset, path: Path) -> None:
+    """A cartesian grid with labeled points + optional segments (KB2/3 coordinate geometry).
+    spec: {points:[{x,y,label?}]|[[x,y]], segments?:[[i,j]], xmin?,xmax?,ymin?,ymax?, title?}."""
+    s = asset.spec or {}
+    raw = s.get("points", [])
+    pts = [(p if isinstance(p, dict) else {"x": p[0], "y": p[1]}) for p in raw]
+    xs = [p["x"] for p in pts] or [0]
+    ys = [p["y"] for p in pts] or [0]
+    xmin = int(s.get("xmin", min(0, *xs)))
+    xmax = int(s.get("xmax", max(5, *xs)))
+    ymin = int(s.get("ymin", min(0, *ys)))
+    ymax = int(s.get("ymax", max(5, *ys)))
+    fig, ax = plt.subplots(figsize=(4.6, 4.4), layout="constrained")
+    ax.set_xlim(xmin - 0.5, xmax + 0.5)
+    ax.set_ylim(ymin - 0.5, ymax + 0.5)
+    ax.set_xticks(range(xmin, xmax + 1))
+    ax.set_yticks(range(ymin, ymax + 1))
+    ax.grid(True, color="#e2e2e2", lw=0.6)
+    ax.set_aspect("equal")
+    ax.axhline(0, color="#888", lw=1.0)
+    ax.axvline(0, color="#888", lw=1.0)
+    for i, j in s.get("segments", []):
+        ax.plot([pts[i]["x"], pts[j]["x"]], [pts[i]["y"], pts[j]["y"]], color="#33506e", lw=1.8)
+    for p in pts:
+        ax.plot([p["x"]], [p["y"]], "o", color="#b03a2e", ms=6)
+        if p.get("label"):
+            ax.text(p["x"] + 0.15, p["y"] + 0.15, str(p["label"]), fontsize=9.5, color="#b03a2e")
+    ax.set_xlabel("x")
+    ax.set_ylabel("y")
+    if s.get("title"):
+        ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 46)))
+    fig.savefig(path, dpi=150)
+    plt.close(fig)
+
+
 # --- bespoke figures (kept; correctness lives in the recipe, not params) ------
 @_generator("matplotlib:em_spectrum")
 def _em_spectrum(asset: Asset, path: Path) -> None:
@@ -569,6 +712,20 @@ GENERATION_RECIPES: dict[str, str] = {
         'Bevölkerungspyramide (Alter × Geschlecht, gegenläufige Balken) — '
         'spec {"age_groups":[str],"male":[num],"female":[num],"title"?:str,"xlabel"?:str}. '
         'NUR mit echten, zitierten Daten verwenden (data_source auf einen Datensatz setzen).',
+    "matplotlib:right_triangle":
+        'Rechtwinkliges Dreieck (Pythagoras) — spec {"a":num,"b":num,"label_a"?,"label_b"?,'
+        '"label_c"?,"title"?}. Beschriftungen sind Strings (z. B. "a = 3 cm", "c = ?") — '
+        'die Abbildung darf die Lösung NICHT verraten.',
+    "matplotlib:rectangle":
+        'Rechteck mit Maßen — spec {"length":num,"width":num,"label_l"?,"label_w"?,"title"?}.',
+    "matplotlib:polygon":
+        'Vieleck (Dreieck/Viereck …) — spec {"points":[[x,y]],"vertex_labels"?:[str],'
+        '"side_labels"?:[str],"title"?}.',
+    "matplotlib:circle":
+        'Kreis mit Radius — spec {"radius":num,"label_r"?,"title"?}.',
+    "matplotlib:coordinate_plane":
+        'Koordinatensystem mit Punkten/Strecken — spec {"points":[{"x":num,"y":num,"label"?}],'
+        '"segments"?:[[i,j]],"xmin"?,"xmax"?,"ymin"?,"ymax"?,"title"?}.',
     "matplotlib:timeline":
         'Zeitleiste (chronologische Ereignisse, GPB) — '
         'spec {"events":[{"at":num,"label":str}],"title"?:str,"xlabel"?:str}.',

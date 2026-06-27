@@ -110,6 +110,32 @@ def test_chooser_maps_new_intents():
     assert choose_representation("demographic", {"male": [1], "female": [2]})[0] == "matplotlib:population_pyramid"
 
 
+def test_geometry_recipes_render_and_are_requestable(tmp_path):
+    from teachersaid.pipeline.assets import GENERATION_RECIPES
+    cases = {
+        "matplotlib:right_triangle": {"a": 4, "b": 3, "label_c": "c = ?"},
+        "matplotlib:rectangle": {"length": 6, "width": 4, "label_l": "6 cm"},
+        "matplotlib:polygon": {"points": [[0, 0], [5, 0], [2, 3]], "vertex_labels": ["A", "B", "C"],
+                               "side_labels": ["c", "a", "b"]},
+        "matplotlib:circle": {"radius": 3, "label_r": "r = 3 cm"},
+        "matplotlib:coordinate_plane": {"points": [{"x": 1, "y": 1, "label": "A"},
+                                                   {"x": 4, "y": 3, "label": "B"}], "segments": [[0, 1]]},
+    }
+    for gen, spec in cases.items():
+        assert gen in GENERATION_RECIPES                  # an LLM/composer may request it
+        p = build_asset(Asset(id="g", role="figure", generator=gen, spec=spec), outdir=tmp_path)
+        assert p.read_bytes()[:8] == PNG and p.stat().st_size > 1500
+
+
+def test_geometry_is_code_content_and_not_a_data_figure():
+    from teachersaid.pipeline.figure_lint import lint_content
+    from teachersaid.pipeline.media_policy import check_asset
+    a = Asset(id="t", role="figure", generator="matplotlib:right_triangle", spec={"a": 3, "b": 4})
+    assert not check_asset(a)[0]                           # code-gen content → media policy clean
+    _, w = lint_content(_content(a))                       # geometry isn't empirical data →
+    assert not w                                           # the (c)-label gate doesn't apply
+
+
 def test_lint_flags_wrong_chart_type():
     num = Asset(id="n", role="figure", generator="matplotlib:bar_chart",
                 spec={"categories": ["100", "200", "300", "400"], "values": [4.5, 3.8, 3.2, 2.9]})
