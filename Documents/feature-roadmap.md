@@ -25,8 +25,11 @@ Recommended next order:
    datasets (Statistik Austria population by age×sex + per-Bundesland; World Bank AT population/aging +
    multi-country urbanisation/GDP-pc/CO₂-pc; GeoSphere 1991–2020 climate normals), all CC BY 4.0, via
    `tools/fetch_{statistik_austria,worldbank,geosphere}.py`. Proven by a **15-worksheet GWB content pass**
-   (c0104–c0118) — every figure cited, verify-clean. *(Next: re-ground c0094.t1/t3 onto these series;
-   curate other subjects — MAT-Statistik, PHY-Klima, BIO.)*
+   (c0104–c0118) — every figure cited, verify-clean. **Scaled cross-subject (27 Jun 2026):** the 8
+   datasets are cross-tagged GWB + MAT + PHY, and a proof pass generated **6 verify-clean MAT (Daten
+   und Zufall) + PHY (Wetter und Klima) worksheets** (c0119–c0124) on the *same* shared datasets — the
+   interplay isn't GWB-specific. *(Next: re-ground c0094.t1/t3 onto these series; BIO/other datasets;
+   Bezirk-level regional.)*
 3. **Tier-2 regional data** (locality) folds in as region-scoped datasets (the per-Bundesland series is a
    start; Bezirk next); then sourced text (phase 5).
 

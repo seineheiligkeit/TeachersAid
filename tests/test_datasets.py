@@ -148,7 +148,10 @@ def test_ground_data_stamps_citation_and_fills_real_values():
 # --- discovery: data ⇄ ideas interplay ---------------------------------------
 def test_relevant_datasets_by_subject_topic_competence():
     assert any(d.id == REAL_ID for d in ds.relevant_datasets(subject="GWB"))
-    assert not ds.relevant_datasets(subject="PHY")                          # not tagged
+    # datasets are cross-tagged: MAT (Daten und Zufall) and PHY (Wetter und Klima) too
+    assert ds.relevant_datasets(subject="MAT")
+    assert any(d.id == "geosphere_klima_normal_1991_2020" for d in ds.relevant_datasets(subject="PHY"))
+    assert not ds.relevant_datasets(subject="DEU")                          # not tagged for Deutsch
     assert any(d.id == REAL_ID for d in ds.relevant_datasets(topic="Altersstruktur und Demografie"))
     assert any(d.id == REAL_ID for d in ds.relevant_datasets(competences=["GWB.US.3.OST.01"]))
     assert ds.relevant_datasets()                                           # no filter → all

@@ -87,7 +87,7 @@ def build(retrieved: str) -> dict:
             "retrieved": retrieved, "stand": "1991–2020",
         },
         "unit": "°C / mm",
-        "subjects": ["GWB"],
+        "subjects": ["GWB", "PHY"],
         "keywords": ["Klima", "Klimadiagramm", "Temperatur", "Niederschlag", "Wetter",
                      "Jahreszeiten", "Wien", "Innsbruck", "Bregenz", "Graz", "Alpen"],
         "competences": [],

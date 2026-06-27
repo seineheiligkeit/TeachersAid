@@ -146,8 +146,10 @@ from the model; generation *references* a dataset by stable id (like `serves` �
   `tools/fetch_statistik_austria.py` (population by age×sex + per-Bundesland aggregation, CC BY 4.0),
   `tools/fetch_worldbank.py` (AT population/aging time series + multi-country urbanisation/GDP-pc/CO₂-pc,
   CC BY 4.0), `tools/fetch_geosphere.py` (1991–2020 monthly climate normals per station → Klimadiagramm,
-  CC BY 4.0). **8 GWB datasets curated so far.** Add a source = add a fetch tool; each datum is a
-  reviewable item. Numbers only (licensing-clean); text/images are the harder, deferred phase 5.
+  CC BY 4.0). **8 datasets curated, cross-tagged to serve GWB + MAT (Daten und Zufall) + PHY (Wetter
+  und Klima)** — one curated series is discoverable by every subject whose competences it fits. Add a
+  source = add a fetch tool; each datum is a reviewable item. Numbers only (licensing-clean); text/
+  images are the harder, deferred phase 5.
 - **Resolver** (`grounding/data_store.py`): the data twin of `resolve.py`. `resolve_dataref` fills the
   citation from the vetted SourceRef (*overwriting* any hand-written attribution — no faked citations);
   `series_to_spec` maps a series → the recipe's value fields; `relevant_datasets(subject/topic/
