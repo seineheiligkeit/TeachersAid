@@ -461,7 +461,7 @@ async function renderTexts(){
     const pma = d.rights_basis==="public_domain_pma" ? `<span class="cov">gemeinfrei (†${d.author_death_year})</span>` : `<span class="badge">${esc(d.rights_basis)}</span>`;
     return `<div class="card" style="margin-bottom:10px">
       <div class="row between"><b>${esc(d.title)}</b><span class="pill s-${d.status}">${d.status}</span></div>
-      <div class="meta">${esc(d.author)} · ${esc(d.genre||"")} · ${esc(d.subject)} ${d.klasse}. Kl. · ${d.n_lines} Zeilen · ${pma}</div>
+      <div class="meta">${esc(d.author)} · ${esc(d.genre||"")} · ${esc(d.subject)} ${d.klasse}. Kl. · ${d.n_lines} Zeilen · ${pma}${d.medium==="audio"?' · <span class="badge">🔊 Hörtext (TTS)</span>':''}</div>
       <div style="font-family:Georgia,serif;font-size:13px;line-height:1.5;margin:6px 0;padding:6px 10px;border-left:2px solid #ccc">${lines}<br><span class="muted">…</span></div>
       <div class="meta">Annotationen: ${kindbadges}</div>
       <div class="meta" style="font-size:11px">${esc(d.attribution||"")}${d.url?` · <a href="${esc(d.url)}" target="_blank" rel="noopener">Quelle</a>`:""}</div>

@@ -60,14 +60,32 @@ def build_worksheet(at: AnnotatedText, *, today: date | None = None):
     from ..grounding import lehrplan_store as ls
     from .resolve import resolve_grade
 
-    res = resolve_grade(at.subject, at.klasse, today=today)
-    blocks: list = []
+    from ..schema.assets import Asset
+    from ..schema.enums import Medium
 
-    # 1) the authentic text, line-numbered, with its citation as the caption
+    res = resolve_grade(at.subject, at.klasse, today=today)
+    is_audio = at.medium == "audio"
+    blocks: list = []
+    content_assets: list = []
+
+    # 1a) audio: a printable Höraufgabe pointer (student-visible) + the spoken asset
+    if is_audio:
+        blocks.append(InfoBlock(
+            id="audio", kind="callout", callout_role="note",
+            content=f"🔊 Höre den Hörtext „{at.title}“ (du darfst ihn zweimal hören) und "
+                    f"beantworte danach die Fragen."))
+        content_assets.append(Asset(
+            id=f"{at.id}-audio", role="tts", medium=Medium.AUDIO, generator="audio:tts",
+            spec={"script": at.text, "lang": at.lang, "voice": at.voice},
+            machine_generatable=True, caption=f"Hörtext: {at.title}"))
+
+    # 1b) the text itself, line-numbered. For a listening text the transcript is
+    # teacher-only (modality "oral" → dropped on the student sheet) unless show_transcript.
+    transcript_modality = "oral" if (is_audio and not at.show_transcript) else "printable"
     blocks.append(InfoBlock(
-        id="text", kind="source_text", content=at.text,
+        id="text", kind="source_text", content=at.text, modality=transcript_modality,
         teacher_note=None, watch_outs=[], asset_refs=[]))
-    blocks.append(InfoBlock(id="quelle", kind="prose",
+    blocks.append(InfoBlock(id="quelle", kind="prose", modality=transcript_modality,
                             content=f"Quelle: {at.source.attribution}"))
 
     # 2) vocabulary scaffold (one Wortschatz block from all vocab annotations)
@@ -86,6 +104,8 @@ def build_worksheet(at: AnnotatedText, *, today: date | None = None):
         if spec is None:
             continue
         task_kind, default_dim, default_cl, _ = spec
+        if is_audio and a.kind == "comprehension":     # listening, not reading
+            task_kind, default_dim = "listening_task", "HOR"
         dims = a.dimensions or [default_dim]
         n += 1
         boxed = task_kind in _BOXED_KINDS
@@ -98,15 +118,16 @@ def build_worksheet(at: AnnotatedText, *, today: date | None = None):
             answer_key=a.answer,
         ))
 
+    intro = ("Hör dir den Text gut an und beantworte die Fragen." if is_audio
+             else "Lies den Text aufmerksam. Die Zeilennummern helfen dir, deine Antworten zu belegen.")
     meta = WorksheetMeta(
         title=at.title, subject=at.subject, stufe="Unterstufe", klasse=at.klasse,
-        kernfrage=f"Wir lesen und untersuchen: „{at.title}“", fassung=res.fassung,
-        lehrplan_label=f"{at.subject} · {at.klasse}. Kl."
-        + (f" · {at.genre}" if at.genre else ""))
+        kernfrage=(f"Hörverstehen: „{at.title}“" if is_audio else f"Wir lesen und untersuchen: „{at.title}“"),
+        fassung=res.fassung,
+        lehrplan_label=f"{at.subject} · {at.klasse}. Kl." + (f" · {at.genre}" if at.genre else ""))
     content = WorksheetContent(
         meta=meta, subject_model=ls.get_subject_model(at.subject),
-        intro=[InfoBlock(id="intro", kind="prose",
-                         content="Lies den Text aufmerksam. Die Zeilennummern helfen dir, "
-                                 "deine Antworten zu belegen.")],
-        sections=[Baustein(id="text-arbeit", title=at.title, blocks=blocks)], assets=[])
+        intro=[InfoBlock(id="intro", kind="prose", content=intro)],
+        sections=[Baustein(id="text-arbeit", title=at.title, blocks=blocks)],
+        assets=content_assets)
     return content, res

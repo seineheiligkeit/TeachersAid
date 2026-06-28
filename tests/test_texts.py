@@ -144,3 +144,52 @@ def test_api_texts(tmp_path, monkeypatch):
 def test_feedback_accepts_text_kind():
     from teachersaid.store.feedbackstore import TARGET_KINDS
     assert "text" in TARGET_KINDS
+
+
+# --- audio / Hörverstehen (FS) ----------------------------------------------
+def test_audio_worksheet_transcript_teacher_only_and_listening_tasks():
+    from teachersaid.library.texts import MIA_SCHOOLDAY
+    from teachersaid.pipeline.assemble import assemble
+    from teachersaid.pipeline.text_tasks import build_worksheet
+    from teachersaid.pipeline.verify import verify
+    content, res = build_worksheet(MIA_SCHOOLDAY, today=TODAY)
+    assemble(content, res)
+    assert not verify(content, res).problems
+    audio = [a for a in content.assets if a.medium == "audio"]
+    assert audio and audio[0].generator == "audio:tts" and audio[0].role == "tts"
+    src = next(b for b in content.iter_blocks() if getattr(b, "kind", None) == "source_text")
+    assert src.modality == "oral"                              # transcript hidden from students
+    tasks = [b for b in content.iter_blocks() if b.role == "task"]
+    assert any(t.kind == "listening_task" and t.dimensions == ["HOR"] for t in tasks)
+
+
+def test_show_transcript_flag_makes_it_printable():
+    from teachersaid.pipeline.text_tasks import build_worksheet
+    from teachersaid.library.texts import MIA_SCHOOLDAY
+    at = MIA_SCHOOLDAY.model_copy(update={"show_transcript": True})
+    content, _ = build_worksheet(at, today=TODAY)
+    src = next(b for b in content.iter_blocks() if getattr(b, "kind", None) == "source_text")
+    assert src.modality == "printable"                         # listen-and-read variant
+
+
+def test_audio_backend_seam(tmp_path):
+    from teachersaid.pipeline import assets as A
+    from teachersaid.schema.assets import Asset
+    from teachersaid.schema.enums import Medium
+    a = Asset(id="au", role="tts", medium=Medium.AUDIO, generator="audio:tts", spec={"script": "Hi."})
+    with pytest.raises(A.AudioNotConfigured):
+        A.build_audio(a, outdir=tmp_path)
+    try:
+        A.register_audio_backend(lambda asset, path: path.write_bytes(b"ID3mock"))
+        p = A.build_audio(a, outdir=tmp_path)
+        assert p.exists() and p.suffix == ".mp3"
+    finally:
+        A.register_audio_backend(None)
+
+
+def test_audio_asset_passes_media_policy():
+    from teachersaid.pipeline.media_policy import check_asset
+    from teachersaid.schema.assets import Asset
+    from teachersaid.schema.enums import Medium
+    a = Asset(id="au", role="tts", medium=Medium.AUDIO, generator="audio:tts", spec={"script": "x"})
+    assert not check_asset(a)[0]                               # tts = code backend → policy-clean

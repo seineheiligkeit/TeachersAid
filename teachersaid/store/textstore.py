@@ -26,7 +26,7 @@ class TextRecord(BaseModel):
         t = self.text
         return {
             "id": self.id, "title": t.title, "author": t.source.author,
-            "genre": t.genre, "klasse": t.klasse, "subject": t.subject,
+            "genre": t.genre, "klasse": t.klasse, "subject": t.subject, "medium": t.medium,
             "rights_basis": t.source.rights_basis,
             "author_death_year": t.source.author_death_year,
             "attribution": t.source.attribution, "repository": t.source.repository,

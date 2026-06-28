@@ -114,7 +114,7 @@ def _render_all(item_id: str, content) -> RenderArtifacts:
     assets = {
         a.id: build_asset(a, outdir=out / "assets")
         for a in content.assets
-        if a.generator
+        if a.generator and not a.generator.startswith("audio:")  # audio isn't a PDF image
     }
     student = render_student_sheet(content, out / "student.pdf", assets)
     teacher = render_teacher_guide(content, out / "teacher.pdf", assets)

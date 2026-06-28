@@ -85,10 +85,15 @@ class AnnotatedText(BaseModel):
     title: str
     subject: str = "Deutsch"
     klasse: int
-    text: str                                # the actual text, newline-separated for Zeilennummern
+    text: str                                # the actual text (audio: the transcript), newline-sep
     genre: str | None = None                 # Märchen · Gedicht · Fabel · Zeitungsartikel · Reklame
     textsorte: str | None = None
     source: TextSourceRef
+    # --- audio (Hörverstehen, FS): a spoken text with a transcript ---
+    medium: str = "text"                     # "text" | "audio" (a listening text)
+    show_transcript: bool = False            # audio: also show the transcript to students (A1: listen-and-read)
+    lang: str | None = None                  # BCP-47 hint for TTS, e.g. "en"
+    voice: str | None = None                 # optional TTS voice id
     annotations: list[Annotation] = Field(default_factory=list)
     serves: list[Serves] = Field(default_factory=list)    # DEU competences text+tasks target
     keywords: list[str] = Field(default_factory=list)

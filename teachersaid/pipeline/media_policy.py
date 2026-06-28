@@ -27,8 +27,9 @@ from ..schema.assets import Asset, MediaPolicy, MediaPolicyEntry
 from ..schema.enums import Medium
 
 # Backends that are correct-by-construction (the asset is right because the code
-# built it). `diffusion:` is deliberately NOT here — it can only ever be decorative.
-CODE_BACKENDS = frozenset({"matplotlib", "svg"})
+# built it) — incl. `audio:` (TTS from a vetted script, the machine path for Hören).
+# `diffusion:` is deliberately NOT here — it can only ever be decorative.
+CODE_BACKENDS = frozenset({"matplotlib", "svg", "audio"})
 # Rights that count as cleared for a sourced asset ("unverified" does not).
 VETTED_RIGHTS = frozenset({"public_domain", "licensed", "cleared", "original"})
 

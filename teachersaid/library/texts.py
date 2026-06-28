@@ -249,7 +249,61 @@ VULPES_CORVUS = AnnotatedText(
     ],
 )
 
-ANNOTATED_TEXTS: list[AnnotatedText] = [LORELEY, RABE_FUCHS, VULPES_CORVUS]
+# --- FS1 (Englisch) audio flagship: a Hörverstehen monologue (A2) -------------
+# Audio scripts are AUTHORED-then-vetted (no PD A1/A2 L2 audio to select) — correct by
+# curation. The transcript is teacher-only (students listen); the spoken text is rendered
+# by the TTS backend (audio:tts) — offline it's pending, the transcript is the fallback.
+_MIA = """Hi! My name is Mia. I am twelve years old and I live in Graz, in Austria.
+I go to school by bike. It takes about fifteen minutes.
+My favourite subject is English, because I like reading stories.
+I don't like maths very much — it is too difficult for me.
+After school, I play volleyball with my friends on Tuesdays and Thursdays.
+In the evening, I do my homework and sometimes I watch a film with my family.
+At the weekend, we often visit my grandparents in the countryside.
+My grandmother makes the best apple cake in the world!"""
+
+MIA_SCHOOLDAY = AnnotatedText(
+    id="fs1-mia-schoolday", title="Mia's school day", subject="Erste lebende Fremdsprache",
+    klasse=2, genre="Hörtext (Monolog)", textsorte="Monolog", text=_MIA,
+    medium="audio", lang="en",
+    source=TextSourceRef(
+        author="TeachersAid (Eigenproduktion)", title="Mia's school day (A2 Hörtext)",
+        rights_basis="cleared", repository="TeachersAid",
+        attribution="Eigenproduktion (TeachersAid); Audio via TTS."),
+    serves=[Serves(competence_id="FS1.US.2.HOR.02", relation="exercises"),
+            Serves(competence_id="FS1.US.2.HOR.01", relation="exercises"),
+            Serves(competence_id="FS1.US.2.SCH.01", relation="exercises")],
+    keywords=["Hörverstehen", "listening", "school day", "daily routine", "A2", "Englisch"],
+    annotations=[
+        Annotation(kind="vocab", label="subject", answer="(Schul-)Fach"),
+        Annotation(kind="vocab", label="homework", answer="Hausübung / Hausaufgaben"),
+        Annotation(kind="vocab", label="countryside", answer="das Land, die Landschaft"),
+        Annotation(kind="vocab", label="apple cake", answer="Apfelkuchen"),
+        Annotation(kind="comprehension",
+                   label="How does Mia get to school, and how long does it take?",
+                   answer="By bike; it takes about fifteen minutes.", cognitive_level="understand"),
+        Annotation(kind="comprehension",
+                   label="What is Mia's favourite subject, and why?",
+                   answer="English, because she likes reading stories.", cognitive_level="understand"),
+        Annotation(kind="comprehension",
+                   label="Which subject does Mia find difficult?",
+                   answer="Maths.", cognitive_level="understand"),
+        Annotation(kind="comprehension",
+                   label="What does Mia do on Tuesdays and Thursdays?",
+                   answer="She plays volleyball with her friends.", cognitive_level="understand"),
+        Annotation(kind="comprehension",
+                   label="Where does the family go at the weekend?",
+                   answer="They visit her grandparents in the countryside.", cognitive_level="understand"),
+        Annotation(kind="erwartungshorizont",
+                   label="Write four sentences about your own school day: how you get to school, "
+                         "your favourite subject, and what you do after school.",
+                   answer="Erwartet: simple present, 1. Person; die drei genannten Aspekte (Schulweg, "
+                          "Lieblingsfach, Freizeit nach der Schule); einfache, weitgehend korrekte Sätze.",
+                   cognitive_level="create", dimensions=["SCH"]),
+    ],
+)
+
+ANNOTATED_TEXTS: list[AnnotatedText] = [LORELEY, RABE_FUCHS, VULPES_CORVUS, MIA_SCHOOLDAY]
 
 
 def find_text(text_id: str) -> AnnotatedText | None:

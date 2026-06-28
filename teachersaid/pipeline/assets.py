@@ -683,6 +683,41 @@ def _diffusion_dispatch(asset: Asset, path: Path) -> None:
     _DIFFUSION_BACKEND(asset, path)
 
 
+# --- audio: backend seam (TTS for Hörverstehen) ------------------------------
+# Modern FS is oral-heavy (Hören/Sprechen); a printable sheet can't carry spoken audio.
+# The SME wires a TTS pipeline via register_audio_backend(fn) where fn(asset, path) writes
+# an audio file for asset.spec {script, lang?, voice?}. TTS is legitimately machine-
+# generatable for language (unlike music). Offline → AudioNotConfigured (no silent slop);
+# the transcript is the always-present printable fallback, so a worksheet still works.
+_AUDIO_BACKEND: Callable[[Asset, Path], None] | None = None
+
+
+class AudioNotConfigured(RuntimeError):
+    pass
+
+
+def register_audio_backend(fn: Callable[[Asset, Path], None]) -> None:
+    """Wire a TTS pipeline as the `audio:` backend (the SME's TTS engine)."""
+    global _AUDIO_BACKEND
+    _AUDIO_BACKEND = fn
+
+
+def build_audio(asset: Asset, outdir: Path | None = None) -> Path:
+    """Render an audio asset (audio:tts) to a file via the registered TTS backend and
+    return its path. A separate path from build_asset — audio is not a PDF-embeddable
+    image. Offline → AudioNotConfigured."""
+    outdir = outdir or (RUNS_DIR / "audio")
+    outdir.mkdir(parents=True, exist_ok=True)
+    path = outdir / f"{asset.id}.mp3"
+    if _AUDIO_BACKEND is None:
+        raise AudioNotConfigured(
+            f"asset {asset.id}: generator {asset.generator!r} needs a TTS backend — "
+            "register one via assets.register_audio_backend (the SME's TTS engine)"
+        )
+    _AUDIO_BACKEND(asset, path)
+    return path
+
+
 # Recipes an LLM may REQUEST (parameterized, correct-by-construction). The bespoke
 # figures (em_spectrum, truncated/honest axis), the decorative svg: kit, and the
 # diffusion: backend are curated-only and NOT here — a generated worksheet may only
