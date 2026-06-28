@@ -18,6 +18,7 @@ Request shape:
 from __future__ import annotations
 
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -44,7 +45,11 @@ def main() -> None:
     tmp = out_wav.parent
     tmp.mkdir(parents=True, exist_ok=True)
 
-    kwargs = {"model": req.get("model", "F5TTS_v1_Base"), "device": "cuda"}
+    # Device: request override → env (TEACHERSAID_TTS_DEVICE) → default "cuda".
+    # A CUDA-less host (e.g. an AMD/iGPU machine) sets TEACHERSAID_TTS_DEVICE=cpu;
+    # the cuda default keeps the GPU box unchanged.
+    device = req.get("device") or os.environ.get("TEACHERSAID_TTS_DEVICE", "cuda")
+    kwargs = {"model": req.get("model", "F5TTS_v1_Base"), "device": device}
     if req.get("ckpt"):
         kwargs["ckpt_file"] = req["ckpt"]
     if req.get("vocab"):

@@ -30,12 +30,12 @@ def _matches_topic(kompetenzbereich: str, topic_raw: str) -> bool:
 
 
 def _resolution_preamble(
-    subject: str, klasse: int, today: date
+    subject: str, klasse: int, today: date, stufe: str
 ) -> tuple[FassungRef, list[str], list[ResolvedCompetence] | None]:
     """Shared trust-checks for any resolution: Fassung window (handoff §2) + that the
-    subject and grade are actually in the catalog. Returns (fassung, notes,
-    all_for_grade); all_for_grade is None when resolution cannot proceed — the caller
-    then returns an empty, grade_check=False resolution carrying the notes."""
+    subject and grade are actually in the catalog (of the right stage). Returns (fassung,
+    notes, all_for_grade); all_for_grade is None when resolution cannot proceed — the
+    caller then returns an empty, grade_check=False resolution carrying the notes."""
     fassung = store.get_fassung()
     notes: list[str] = []
 
@@ -50,16 +50,16 @@ def _resolution_preamble(
             "Eine neue Fassung wird benötigt."
         )
 
-    if store.get_subject_model(subject) is None:
+    if store.get_subject_model(subject, stufe) is None:
         notes.append(
-            f"Fach '{subject}' ist im Katalog nicht hinterlegt "
-            f"(verfügbar: {', '.join(store.list_subjects())})."
+            f"Fach '{subject}' ist im {stufe}-Katalog nicht hinterlegt "
+            f"(verfügbar: {', '.join(store.list_subjects(stufe))})."
         )
         return fassung, notes, None
 
-    all_for_grade = store.competences_for(subject, klasse)
+    all_for_grade = store.competences_for(subject, klasse, stufe)
     if not all_for_grade:
-        gmap = store.grade_map(subject)
+        gmap = store.grade_map(subject, stufe)
         if gmap:
             notes.append(
                 f"Für {subject} {klasse}. Kl. sind im Katalog keine "
@@ -78,7 +78,8 @@ def _resolution_preamble(
 
 def resolve(req: BundleRequest, *, today: date | None = None) -> LehrplanResolution:
     today = today or date.today()
-    fassung, notes, all_for_grade = _resolution_preamble(req.subject, req.klasse, today)
+    stufe = store.stufe_for_klasse(req.klasse)  # Klasse fixes the stage (1–4 / 5–8)
+    fassung, notes, all_for_grade = _resolution_preamble(req.subject, req.klasse, today, stufe)
     if all_for_grade is None:
         return LehrplanResolution(
             fassung=fassung, subject=req.subject, klasse=req.klasse,
@@ -91,7 +92,7 @@ def resolve(req: BundleRequest, *, today: date | None = None) -> LehrplanResolut
         # W/E/S dimensions or competence strands, not the topic — the thematic
         # content lives in the Anwendungsbereiche. Match there and resolve the
         # (cross-cutting) competences for the grade.
-        ab = store.anwendungsbereiche_for(req.subject, req.klasse)
+        ab = store.anwendungsbereiche_for(req.subject, req.klasse, stufe)
         if any(_matches_topic(item, req.topic_raw) for item in ab):
             matched = all_for_grade
             notes.append(
@@ -132,7 +133,8 @@ def resolve_kompetenzbereich(
     KBs are numbered content areas (MAT) or W/E/S strands (BIO). Falls back to a loose
     label match so a slightly-off KB string still lands."""
     today = today or date.today()
-    fassung, notes, all_for_grade = _resolution_preamble(subject, klasse, today)
+    stufe = store.stufe_for_klasse(klasse)
+    fassung, notes, all_for_grade = _resolution_preamble(subject, klasse, today, stufe)
     if all_for_grade is None:
         return LehrplanResolution(
             fassung=fassung, subject=subject, klasse=klasse,
@@ -167,23 +169,50 @@ def resolve_kompetenzbereich(
 
 
 def resolve_grade(
-    subject: str, klasse: int, *, today: date | None = None
+    subject: str, klasse: int, *, today: date | None = None,
+    kompetenzmodul: int | None = None, semester: int | None = None,
 ) -> LehrplanResolution:
     """Resolution over ALL competences of a subject+grade — no topic/KB focus. Used to
     ingest a generated worksheet whose tasks may serve competences across the W/E/S
     strands (sciences, GPB), where the thematic focus lives in the Anwendungsbereiche
     rather than a single Kompetenzbereich (the same all-grade scope `resolve()` reaches
-    via its Anwendungsbereiche fallback)."""
+    via its Anwendungsbereiche fallback).
+
+    For the Oberstufe, `kompetenzmodul`/`semester` narrow to one semesterised module
+    (grade-independent `descriptor` competences are always kept — they are exercised across
+    every module)."""
     today = today or date.today()
-    fassung, notes, all_for_grade = _resolution_preamble(subject, klasse, today)
+    stufe = store.stufe_for_klasse(klasse)
+    fassung, notes, all_for_grade = _resolution_preamble(subject, klasse, today, stufe)
     if all_for_grade is None:
         return LehrplanResolution(
             fassung=fassung, subject=subject, klasse=klasse,
             grade_check=False, competences=[], notes=notes,
         )
-    kbs = sorted({c.kompetenzbereich for c in all_for_grade})
+    comps = all_for_grade
+    if kompetenzmodul is not None:
+        comps = [c for c in comps if c.kind == "descriptor" or c.kompetenzmodul == kompetenzmodul]
+        notes.append(f"Auf Kompetenzmodul {kompetenzmodul} eingegrenzt.")
+    if semester is not None:
+        comps = [c for c in comps if c.kind == "descriptor" or (c.semester and semester in c.semester)]
+        notes.append(f"Auf das {semester}. Semester eingegrenzt.")
+    if (kompetenzmodul is not None or semester is not None) and not any(
+        c.kind != "descriptor" for c in comps
+    ):
+        notes.append(
+            "Kein passendes Modul gefunden — nur fachübergreifende Kompetenzmodell-"
+            "Deskriptoren resolved."
+        )
+    kbs = sorted({c.kompetenzbereich for c in comps})
     return LehrplanResolution(
         fassung=fassung, subject=subject, klasse=klasse,
         matched_kompetenzbereiche=kbs, grade_check=True,
-        competences=all_for_grade, notes=notes,
+        competences=comps, notes=notes,
     )
+
+
+def resolve_kompetenzmodul(
+    subject: str, klasse: int, kompetenzmodul: int, *, today: date | None = None
+) -> LehrplanResolution:
+    """Oberstufe convenience: resolve a subject+grade narrowed to one Kompetenzmodul."""
+    return resolve_grade(subject, klasse, today=today, kompetenzmodul=kompetenzmodul)

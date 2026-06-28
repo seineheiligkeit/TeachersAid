@@ -103,6 +103,12 @@ class ResolvedCompetence(BaseModel):
     source_ref: str | None = None
     dimensions: list[str] = Field(default_factory=list)
     uebergreifende_themen: list[int] = Field(default_factory=list)
+    # Oberstufe (Sek II) is semesterised into Kompetenzmodule; these stay None for the
+    # Unterstufe. `kind` distinguishes the grade-independent Kompetenzmodell competences
+    # ("descriptor") from the per-semester Inhaltsbereiche ("lehrstoff").
+    semester: list[int] | None = None
+    kompetenzmodul: int | None = None
+    kind: str | None = None
 
 
 class LehrplanResolution(BaseModel):

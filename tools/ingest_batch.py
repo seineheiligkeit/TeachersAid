@@ -128,15 +128,23 @@ def _to_block(b, fallback_id: str):
     return b
 
 
+def _keep(b: dict) -> bool:
+    """Drop an info block that carries no content — an empty stub (agents sometimes emit
+    `{"role":"info","kind":"prose"}` with no text); the schema requires content."""
+    return not (b.get("role") == "info" and not str(b.get("content") or "").strip())
+
+
 def _normalize(body: dict) -> dict:
     body["intro"] = [_to_block(b, f"intro{i + 1}") for i, b in enumerate(body.get("intro", []))]
     for b in body["intro"]:
         _norm_block(b)
+    body["intro"] = [b for b in body["intro"] if _keep(b)]
     for sec in body.get("sections", []):
         sec["blocks"] = [_to_block(b, f"{sec.get('id', 's')}b{i + 1}")
                          for i, b in enumerate(sec.get("blocks", []))]
         for b in sec["blocks"]:
             _norm_block(b)
+        sec["blocks"] = [b for b in sec["blocks"] if _keep(b)]
     return body
 
 
@@ -177,13 +185,14 @@ def dry_run(paths: list) -> None:
         except Exception as e:  # noqa: BLE001
             print(f"{name}: JSON LOAD ERROR: {str(e)[:200]}"); bad += 1; continue
         res = _resolution(w)
-        model = ls.get_subject_model(w["subject"])
+        stufe = ls.stufe_for_klasse(w["klasse"])
+        model = ls.get_subject_model(w["subject"], stufe)
         try:
             gb = GenWorksheetBody.model_validate(w["body"])
         except Exception as e:  # noqa: BLE001
             print(f"{name}: SCHEMA ERROR: {str(e)[:300]}"); bad += 1; continue
         meta = WorksheetMeta(
-            title=w["title"], subject=w["subject"], stufe="Unterstufe", klasse=w["klasse"],
+            title=w["title"], subject=w["subject"], stufe=stufe, klasse=w["klasse"],
             kernfrage=w["kernfrage"], fassung=res.fassung,
             lehrplan_label=f"{w['subject']} · {w['klasse']}. Kl. · "
                            f"{w.get('kompetenzbereich') or w.get('scope_label')}",

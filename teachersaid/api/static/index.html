@@ -643,11 +643,12 @@ async function renderStats(){
     <div class="row between"><span>${t.covered_competences} / ${t.total_competences} Kompetenzen durch freigegebene Bausteine abgedeckt</span><b>${t.coverage_pct}%</b></div>
     <div class="prog"><i style="width:${t.coverage_pct}%"></i></div>
     <p class="muted" style="margin-top:8px">${t.task_blocks} Aufgaben-Bausteine · ${t.info_blocks} Info/Text-Bausteine · ${t.in_review} in Prüfung ·
-      ${t.subjects_started}/${t.subjects} Fächer begonnen · ${t.worksheets} Arbeitsblätter freigegeben</p></div>
+      ${t.subjects_started}/${t.subjects} Fächer begonnen · ${t.worksheets} Arbeitsblätter freigegeben</p>
+    ${t.by_stufe?`<p class="muted">${["Unterstufe","Oberstufe"].map(st=>{const b=t.by_stufe[st];return `<b>${st}:</b> ${b.covered_competences}/${b.total_competences} Komp. · ${b.task_blocks} Aufg.-Bausteine · ${b.in_review} in Prüfung`;}).join(" &nbsp;|&nbsp; ")}</p>`:""}</div>
     <div class="card"><h2>Pro Fach</h2>
-    <table><thead><tr><th>Fach</th><th>Kl.</th><th>Aufg.</th><th>Info</th><th>Abdeckung (Komp.)</th><th>Niveaus</th><th>in Prüfung</th></tr></thead><tbody>
+    <table><thead><tr><th>Fach</th><th>Stufe</th><th>Kl.</th><th>Aufg.</th><th>Info</th><th>Abdeckung (Komp.)</th><th>Niveaus</th><th>in Prüfung</th></tr></thead><tbody>
     ${s.subjects.map(r=>`<tr ${r.empty?'class="muted"':''}>
-      <td>${esc(r.name)}</td><td>${(r.klassen||[]).join(",")}</td>
+      <td>${esc(r.name)}</td><td>${r.stufe==='Oberstufe'?'OS':'US'}</td><td>${(r.klassen||[]).join(",")}</td>
       <td>${r.task_blocks}</td><td>${r.info_blocks}</td>
       <td>${r.covered_competences}/${r.total_competences}
         <div class="prog" style="width:80px;display:inline-block;vertical-align:middle"><i style="width:${r.coverage_pct}%"></i></div></td>

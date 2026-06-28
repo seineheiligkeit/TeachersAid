@@ -95,6 +95,38 @@ German (or a target language for Fremdsprache). Read this, then the docs in the 
 > **Pick up next (Deutsch):** an **ANNO/OCR fetch tool** for real newspaper/advert media texts; more
 > annotated texts across grades; an optional LLM phrasing pass over derived questions.
 
+> **Update (Session 6, 28 June 2026): the Oberstufe (Sek II) expansion begins — foundation + first build.**
+> The handoff's "Oberstufe is largely legacy prose → deferred" is **superseded**: the consolidated
+> Lehrplan organises the Oberstufe into **semesterised Kompetenzmodule (KM 3–7)**, fully competence-
+> oriented (Physik even reuses the exact W/E/S model). Roadmap + opportunity map:
+> **[Documents/oberstufe-roadmap.md]** (output of a 5-cluster subagent brainstorm over the whole
+> Oberstufe Lehrplan). SME decisions recorded there: mirror the Lehrplan's own dimensions (not the
+> Reifeprüfung Grundkompetenzen-Katalog); the **dilemma asset class is general-purpose** (cross-curricular);
+> curated-code execution (Informatik) is OK.
+>
+> 1. **Phase 0 — the enabler (DONE).** A new parser `tools/parse_lehrplan_oberstufe.py` → the **Oberstufe
+>    catalog** `lehrplan/oberstufe/<CODE>.json` (18 subjects, ~1360 competences) with a typed
+>    `descriptor` (grade-independent Kompetenzmodell competences) / `lehrstoff` (per-semester
+>    Inhaltsbereiche, carrying klasse+Semester+Kompetenzmodul) split; `tools/build_oberstufe_meta.py` →
+>    `lehrplan/oberstufe/_meta.json` + `subject_models.json` (curated per-subject dimension models —
+>    incl. Chemie's **WO/EG/KZ**, not W/E/S). The engine is now **stage-aware**: `grounding/lehrplan_store.py`
+>    takes a `stufe` (default Unterstufe), `stufe_for_klasse` drives it (1–4 US, 5–8 OS); `ResolvedCompetence`
+>    gained `semester`/`kompetenzmodul`/`kind`; `resolve` drives the stage from Klasse and `resolve_grade`
+>    takes `kompetenzmodul`/`semester` filters. Unterstufe untouched.
+> 2. **Phase 1 — Mathematik parametric pack (DONE).** 6 sympy recipes covering all 4 Inhaltsbereiche
+>    (Kurvendiskussion, bestimmtes Integral, LGS 2×/3 Variablen, Binomialverteilung, Skalarprodukt+Winkel)
+>    + 6 curated templates (`mat-os-*`) serving real OS competences; correct-by-construction, renders
+>    SME-clean. **mathtext gotcha**: matplotlib mathtext is a LaTeX subset — `\leq` not `\le`, `\binom`
+>    for column vectors (no `\begin{pmatrix}`/`{cases}`), avoid `ℝ` in plain-text titles.
+> 3. **Breadth push (in progress).** `breadth_prompt.py`/`ingest_batch.py`/`orch.ingest_generated` made
+>    stage-aware; subagents generate Oberstufe worksheets per subject → `runs/ingest/gen_os/` →
+>    `ingest_batch` stages them `in_review` for SME review (the Unterstufe breadth pattern).
+>
+> **Infra (this session):** the repo was cloned to a second PC (offline phase, no API key); the
+> git-ignored generated content (`runs/`) syncs between PCs via **Google Drive** (not GitHub). The
+> **audio/F5-TTS backend can't run on this PC** (no CUDA GPU + Windows Smart App Control blocks torch) —
+> audio stays on the workhorse PC. Run: `python -m pytest -q` (**216 tests**).
+
 ---
 
 ## 0 · Orientation (the 30-second version)

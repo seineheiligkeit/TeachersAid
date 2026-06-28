@@ -23,7 +23,7 @@ The repository has two layers:
 ```bash
 pip install -e .                       # deps: pydantic2, fastapi, uvicorn, anthropic, reportlab,
                                        #       matplotlib, pillow, pyyaml, pymupdf, sympy  (pytest for dev)
-python -m pytest -q                    # 166 tests, fully offline (no API key required)
+python -m pytest -q                    # 216 tests, fully offline (no API key required)
 python -m teachersaid seed             # seed the master-library examples into the review queue
 python -m teachersaid                  # dashboard → http://127.0.0.1:8000
 ```
@@ -126,6 +126,33 @@ HTML/PDF are git-ignored; the parser regenerates the catalog (re-run for the 202
 **To add/correct a subject:** edit the catalog (re-run the parser, or edit `lehrplan/*.json` /
 `subject_models.json`) — no engine code change. *(The earlier Physik-only `grounding/data/*.yaml` stub
 has been removed now that the store reads the full catalog.)*
+
+## Oberstufe (Sek II) — stage-aware grounding (Phase 0/1)
+
+The Oberstufe (Klassen 5–8) is a second catalog under **`lehrplan/oberstufe/`** (18 subjects, ~1360
+competences), produced by a sibling parser **`tools/parse_lehrplan_oberstufe.py`** (the Oberstufe is
+structurally different — semesterised into Kompetenzmodule). Each competence carries a **`kind`**:
+`descriptor` (the grade-independent Kompetenzmodell competences — W/E/S etc., id `<C>.OS.x.<KB>.nn`) or
+`lehrstoff` (per-semester Inhaltsbereiche, carrying `klasse`+`semester`+`kompetenzmodul`). The curated
+judgment layer is built by **`tools/build_oberstufe_meta.py`** → `lehrplan/oberstufe/_meta.json` +
+`subject_models.json` (mirrors the Lehrplan's own dimensions per SME decision — note **Chemie uses
+WO/EG/KZ, not W/E/S**).
+
+**The store + resolver are stage-aware.** `grounding/lehrplan_store.py` functions take a `stufe`
+(default `"Unterstufe"`); **`stufe_for_klasse(klasse)`** is the authority (1–4 → Unterstufe `lehrplan/`,
+5–8 → Oberstufe `lehrplan/oberstufe/`). `ResolvedCompetence` gained `semester`/`kompetenzmodul`/`kind`
+(None for Unterstufe). `pipeline/resolve.py` derives the stage from the requested Klasse;
+`resolve_grade(..., kompetenzmodul=, semester=)` (+ `resolve_kompetenzmodul`) narrow to one module while
+keeping the cross-cutting `descriptor`s. Ingest (`orch.ingest_generated`, `tools/ingest_batch.py`) and
+`library/templates.variant_worksheet` are stage-aware too. The Unterstufe path is unchanged.
+
+**Phase 1 — Mathematik parametric pack.** 6 Oberstufe sympy recipes in `pipeline/parametrize.py`
+(`polynomial_curve`, `definite_integral`, `linear_system_2`, `linear_system_3`, `binomial_distribution`,
+`vector_dot_angle`) + 6 templates (`mat-os-*` in `library/templates.py`) across all 4 Inhaltsbereiche.
+**Inline-math gotcha (load-bearing):** the renderer's matplotlib **mathtext is a LaTeX subset** — use
+`\leq`/`\geq` (not `\le`/`\ge`), `\binom{a}{b}` for column vectors (NOT `\begin{pmatrix}`), no
+`\begin{cases}` (join inline), and avoid `ℝ` (U+211D) in plain-text titles (Carlito tofu). `tests/test_oberstufe.py`
+locks resolution + the pack + a **render** test (assemble/verify don't render, which is how the `\le` slip hid).
 
 ## Grounded facts & data layer (`teachersaid/grounding/data/`)
 

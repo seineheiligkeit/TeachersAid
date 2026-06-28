@@ -1,0 +1,584 @@
+{
+  "_about": "Curated SubjectCompetenceModel overlay for the AHS Oberstufe (hand-authored from the Lehrplan models; SME decision: mirror the Lehrplan dimensions, not the Reifeprüfung Grundkompetenzen-Katalog). dims carry per-dimension modality ∈ printable|oral|enactive|audio. Built by tools/build_oberstufe_meta.py; cross-checked against the parsed descriptor groups.",
+  "BIO": {
+    "dimensions": [
+      {
+        "code": "W",
+        "label": "Fachwissen aneignen und kommunizieren",
+        "modality": "printable"
+      },
+      {
+        "code": "E",
+        "label": "Erkenntnisse gewinnen",
+        "modality": "printable"
+      },
+      {
+        "code": "S",
+        "label": "Standpunkte begründen und reflektiert handeln",
+        "modality": "printable"
+      }
+    ],
+    "content_areas": [
+      "Struktur und Funktion",
+      "Reproduktion",
+      "Kompartimentierung",
+      "Steuerung und Regelung",
+      "Stoff- und Energieumwandlung",
+      "Information und Kommunikation",
+      "Variabilität, Verwandtschaft, Geschichte und Evolution"
+    ],
+    "task_kind_extensions": [
+      "experiment_protocol",
+      "source_critique",
+      "genetics_cross"
+    ],
+    "notes": "Naturwissenschaften W/E/S; descriptors pre-numbered W1–W5/E1–E5/S1–S5 (dimension letter recovered). 7 Basiskonzepte (content_areas). Evolution is a cross-cutting axis (W5/S4)."
+  },
+  "CHE": {
+    "dimensions": [
+      {
+        "code": "WO",
+        "label": "Wissen organisieren: Recherchieren, Darstellen, Kommunizieren",
+        "modality": "printable"
+      },
+      {
+        "code": "EG",
+        "label": "Erkenntnisse gewinnen: Fragen, Untersuchen, Interpretieren",
+        "modality": "printable"
+      },
+      {
+        "code": "KZ",
+        "label": "Konsequenzen ziehen: Bewerten, Entscheiden, Handeln",
+        "modality": "printable"
+      }
+    ],
+    "content_areas": [
+      "Stoff-Teilchen",
+      "Struktur-Eigenschafts",
+      "Donator-Akzeptor",
+      "Energie",
+      "Größen",
+      "Gleichgewicht"
+    ],
+    "task_kind_extensions": [
+      "experiment_protocol",
+      "source_critique",
+      "calculation"
+    ],
+    "notes": "Chemie does NOT use W/E/S — dreidimensionales Modell: Handlungsdimension (Wissen organisieren / Erkenntnisse gewinnen / Konsequenzen ziehen) + Anforderungsdimension Niveau 1/2 + 6 Basiskonzepte (content_areas)."
+  },
+  "DEU": {
+    "dimensions": [
+      {
+        "code": "MK",
+        "label": "Mündliche Kompetenz",
+        "modality": "oral"
+      },
+      {
+        "code": "SK",
+        "label": "Schriftliche Kompetenz",
+        "modality": "printable"
+      },
+      {
+        "code": "TK",
+        "label": "Textkompetenz",
+        "modality": "printable"
+      },
+      {
+        "code": "LB",
+        "label": "Literarische Bildung",
+        "modality": "printable"
+      },
+      {
+        "code": "MB",
+        "label": "Mediale Bildung",
+        "modality": "printable"
+      }
+    ],
+    "content_areas": null,
+    "task_kind_extensions": [
+      "interpretation",
+      "eroerterung",
+      "textanalyse",
+      "zusammenfassung",
+      "kommentar"
+    ],
+    "notes": "6 Kompetenzbereiche; Sprachreflexion (SR) is integrated into the others (marked (SR)), not a standalone dimension. Semesterised by literary epoch."
+  },
+  "DGE": {
+    "dimensions": [
+      {
+        "code": "H1",
+        "label": "Analysieren, Modellbilden, Planen",
+        "modality": "printable"
+      },
+      {
+        "code": "H2",
+        "label": "Operieren (inkl. 3D-CAD)",
+        "modality": "enactive"
+      },
+      {
+        "code": "H3",
+        "label": "Interpretieren (Risse lesen)",
+        "modality": "printable"
+      },
+      {
+        "code": "H4",
+        "label": "Argumentieren, Begründen",
+        "modality": "printable"
+      }
+    ],
+    "content_areas": [
+      "Objekte und Eigenschaften",
+      "Relationen (Schnitte, Boolesche Ops)",
+      "Transformationen",
+      "Abbildungen und Risse (Projektion und Riss)"
+    ],
+    "task_kind_extensions": [
+      "construction",
+      "projection_reading"
+    ],
+    "notes": "(Handlung, Inhalt, Komplexität)-Tupel. H2-Operieren is CAD-bound (do not target as worksheet); H3-Interpretieren / Risse-lesen is the printable sweet spot (new 3D-projection figure backend)."
+  },
+  "ETH": {
+    "dimensions": [
+      {
+        "code": "WP",
+        "label": "Wahrnehmen und Perspektiven einnehmen",
+        "modality": "printable"
+      },
+      {
+        "code": "AR",
+        "label": "Analysieren und Reflektieren",
+        "modality": "printable"
+      },
+      {
+        "code": "AU",
+        "label": "Argumentieren und Urteilen",
+        "modality": "printable"
+      },
+      {
+        "code": "IS",
+        "label": "Interagieren und Sich-Mitteilen",
+        "modality": "oral"
+      },
+      {
+        "code": "HO",
+        "label": "Handlungsoptionen entwickeln",
+        "modality": "printable"
+      }
+    ],
+    "content_areas": null,
+    "task_kind_extensions": [
+      "argumentation",
+      "dilemma",
+      "text_analysis"
+    ],
+    "notes": "Oberstufe-only Pflichtgegenstand. 5 Kompetenzbereiche, all grades; each theme worked through 3 perspectives (personal/gesellschaftlich/ideengeschichtlich). Diversitätsgebot (neutrality is curriculum) → the dilemma asset class."
+  },
+  "FSP": {
+    "dimensions": [
+      {
+        "code": "HOR",
+        "label": "Hören",
+        "modality": "audio"
+      },
+      {
+        "code": "LES",
+        "label": "Lesen",
+        "modality": "printable"
+      },
+      {
+        "code": "AGT",
+        "label": "An Gesprächen teilnehmen",
+        "modality": "oral"
+      },
+      {
+        "code": "ZSP",
+        "label": "Zusammenhängendes Sprechen",
+        "modality": "oral"
+      },
+      {
+        "code": "SCH",
+        "label": "Schreiben",
+        "modality": "printable"
+      }
+    ],
+    "content_areas": null,
+    "task_kind_extensions": [
+      "listening_task",
+      "reading_task",
+      "writing_task",
+      "mediation"
+    ],
+    "notes": "5 GER-Fertigkeiten, gleich gewichtet. CEFR ceiling B2 (FS1) / B1 (FS2). Sprachmittlung is a technique. Target-language material + German teacher layer."
+  },
+  "GPB": {
+    "dimensions": [
+      {
+        "code": "HFK",
+        "label": "Historische Fragekompetenz",
+        "modality": "printable"
+      },
+      {
+        "code": "HMK",
+        "label": "Historische Methodenkompetenz (Re-/De-Konstruktion)",
+        "modality": "printable"
+      },
+      {
+        "code": "HOK",
+        "label": "Historische Orientierungskompetenz",
+        "modality": "printable"
+      },
+      {
+        "code": "HSK",
+        "label": "Historische Sachkompetenz",
+        "modality": "printable"
+      },
+      {
+        "code": "PUK",
+        "label": "Politische Urteilskompetenz",
+        "modality": "printable"
+      },
+      {
+        "code": "PHK",
+        "label": "Politische Handlungskompetenz",
+        "modality": "oral"
+      },
+      {
+        "code": "PMK",
+        "label": "Politische Methodenkompetenz",
+        "modality": "printable"
+      },
+      {
+        "code": "PSK",
+        "label": "Politische Sachkompetenz",
+        "modality": "printable"
+      }
+    ],
+    "content_areas": [
+      "Belegbarkeit",
+      "Konstruktivität",
+      "Kausalität",
+      "Perspektive und Auswahl"
+    ],
+    "task_kind_extensions": [
+      "source_analysis",
+      "dekonstruktion",
+      "argumentation"
+    ],
+    "notes": "Zusammenfassung Geschichte (5./6.) + GPB (7./8.). Historische + politische Kompetenzfamilien; the Sachkompetenz Basiskonzepte are content_areas. Fits history/expression-provenance."
+  },
+  "GRI": {
+    "dimensions": [
+      {
+        "code": "UEB",
+        "label": "Übersetzungskompetenz",
+        "modality": "printable"
+      },
+      {
+        "code": "INT",
+        "label": "Interpretationskompetenz",
+        "modality": "printable"
+      }
+    ],
+    "content_areas": null,
+    "task_kind_extensions": [
+      "translation",
+      "text_analysis",
+      "open_response"
+    ],
+    "notes": "Oberstufe-only; same model as Latein (+ 'Belegen und Nachweisen'). All-PD originals; needs a polytonic-Greek rendering font."
+  },
+  "GWB": {
+    "dimensions": [
+      {
+        "code": "SYN",
+        "label": "Synthesekompetenz",
+        "modality": "printable"
+      },
+      {
+        "code": "KOM",
+        "label": "Kommunikationskompetenz",
+        "modality": "printable"
+      },
+      {
+        "code": "HAN",
+        "label": "Handlungskompetenz",
+        "modality": "enactive"
+      },
+      {
+        "code": "REF",
+        "label": "Reflexionskompetenz",
+        "modality": "printable"
+      }
+    ],
+    "content_areas": [
+      "Raumkonstruktion",
+      "Diversität und Disparität",
+      "Maßstäblichkeit",
+      "Märkte, Regulierung und Deregulierung",
+      "Wachstum und Krise",
+      "Mensch-Umwelt-Beziehungen",
+      "Geoökosysteme",
+      "Kontingenz"
+    ],
+    "task_kind_extensions": [
+      "data_analysis",
+      "source_critique"
+    ],
+    "notes": "16 handlungsorientierte Basiskonzepte (content_areas lists the load-bearing subset). Richer quantitative competences than Unterstufe → grounded data layer. AB II/III throughout."
+  },
+  "HOE": {
+    "dimensions": [
+      {
+        "code": "KQ",
+        "label": "Konsumverhalten und Qualität bewerten",
+        "modality": "printable"
+      },
+      {
+        "code": "RM",
+        "label": "Ressourcen managen",
+        "modality": "printable"
+      },
+      {
+        "code": "CC",
+        "label": "Consumer Citizenship",
+        "modality": "printable"
+      },
+      {
+        "code": "EV",
+        "label": "Essverhalten reflektieren",
+        "modality": "printable"
+      },
+      {
+        "code": "NE",
+        "label": "Sich vollwertig und nachhaltig ernähren",
+        "modality": "enactive"
+      }
+    ],
+    "content_areas": null,
+    "task_kind_extensions": [
+      "calculation",
+      "data_analysis",
+      "source_critique"
+    ],
+    "notes": "Oberstufe-new (5./6. Kl). Printable theory (Energie-/Nährstoffbedarf berechnen → parametric; Ernährungsdaten → data layer). The Praktikum is enactive (out)."
+  },
+  "INF": {
+    "dimensions": [
+      {
+        "code": "WV",
+        "label": "Wissen und Verstehen",
+        "modality": "printable"
+      },
+      {
+        "code": "AG",
+        "label": "Anwenden und Gestalten",
+        "modality": "enactive"
+      },
+      {
+        "code": "RB",
+        "label": "Reflektieren und Bewerten",
+        "modality": "printable"
+      }
+    ],
+    "content_areas": [
+      "Informatik-Mensch-Gesellschaft",
+      "Informatiksysteme",
+      "Angewandte Informatik",
+      "Praktische Informatik"
+    ],
+    "task_kind_extensions": [
+      "algorithm_trace",
+      "query",
+      "argumentation"
+    ],
+    "notes": "Oberstufe-new (Pflicht 5. Kl). Handlungsbereiche map to Reproduktion/Transfer/Reflexion. Printable correct-by-construction core: Praktische Informatik (algorithm-trace, SQL, truth tables — execution-verified). KI/intelligence strand hosts the dilemma class."
+  },
+  "KUG": {
+    "dimensions": [
+      {
+        "code": "BP",
+        "label": "Bildnerische Praxis",
+        "modality": "enactive"
+      },
+      {
+        "code": "DP",
+        "label": "Dokumentation und Präsentation",
+        "modality": "enactive"
+      },
+      {
+        "code": "RE",
+        "label": "Reflexion (Bildanalyse)",
+        "modality": "printable"
+      }
+    ],
+    "content_areas": null,
+    "task_kind_extensions": [
+      "image_analysis"
+    ],
+    "notes": "Marginal. Praxis/Doku are made/performed; only Reflexion (Bildanalyse) is printable, and it needs an annotated-image engine blocked on the deferred sourced-image rights lane."
+  },
+  "LAT": {
+    "dimensions": [
+      {
+        "code": "UEB",
+        "label": "Übersetzungskompetenz",
+        "modality": "printable"
+      },
+      {
+        "code": "INT",
+        "label": "Interpretationskompetenz",
+        "modality": "printable"
+      }
+    ],
+    "content_areas": null,
+    "task_kind_extensions": [
+      "translation",
+      "text_analysis",
+      "open_response"
+    ],
+    "notes": "Reuses the existing Latein annotated-text engine (translation/grammar/culture). Modularised; vier-/sechsjährig variants tagged on lehrstoff."
+  },
+  "MAT": {
+    "dimensions": [
+      {
+        "code": "DM",
+        "label": "Darstellend-modellierendes Arbeiten",
+        "modality": "printable"
+      },
+      {
+        "code": "FO",
+        "label": "Formal-operatives Arbeiten",
+        "modality": "printable"
+      },
+      {
+        "code": "ID",
+        "label": "Interpretierend-dokumentierendes Arbeiten",
+        "modality": "printable"
+      },
+      {
+        "code": "KA",
+        "label": "Kritisch-argumentatives Arbeiten",
+        "modality": "printable"
+      }
+    ],
+    "content_areas": [
+      "Algebra und Geometrie",
+      "Funktionale Abhängigkeiten",
+      "Analysis",
+      "Wahrscheinlichkeit und Statistik"
+    ],
+    "task_kind_extensions": [
+      "calculation",
+      "proof",
+      "construction",
+      "modelling"
+    ],
+    "notes": "3-dim Lehrplan model: Inhaltsdimension (content_areas) × Handlungsdimension (dims) × Komplexitätsdimension (Grundwissen/Verbindungen/Problemlösen). Mirrors the Lehrplan, NOT the Reifeprüfung Grundkompetenzen-Katalog (SME decision)."
+  },
+  "MUS": {
+    "dimensions": [
+      {
+        "code": "MP",
+        "label": "Musikpraxis",
+        "modality": "enactive"
+      },
+      {
+        "code": "MR",
+        "label": "Musikrezeption",
+        "modality": "printable"
+      }
+    ],
+    "content_areas": null,
+    "task_kind_extensions": [
+      "score_analysis"
+    ],
+    "notes": "Marginal. Praxis performed; Rezeption has a printable score-analysis sliver (Notentext), but the core competence is aural and audio is not machine-generatable. Theory is integrated, not a standalone drill block."
+  },
+  "PHY": {
+    "dimensions": [
+      {
+        "code": "W",
+        "label": "Fachwissen anwenden",
+        "modality": "printable"
+      },
+      {
+        "code": "E",
+        "label": "Experimentieren und Erkenntnisgewinnung",
+        "modality": "printable"
+      },
+      {
+        "code": "S",
+        "label": "Standpunkte begründen und aus naturwissenschaftlicher Sicht bewerten",
+        "modality": "printable"
+      }
+    ],
+    "content_areas": null,
+    "task_kind_extensions": [
+      "experiment_protocol",
+      "source_critique"
+    ],
+    "notes": "Naturwissenschaften W/E/S — same model as Unterstufe; Anforderungsniveaus 2 Stufen (Reproduktion/Transfer · Reflexion/Problemlösung). Inhaltsbereiche per Semester; two Lehrstoff variants (>7 / ≤7 Wochenstunden) tagged on each lehrstoff competence."
+  },
+  "PUP": {
+    "dimensions": [
+      {
+        "code": "WIS",
+        "label": "Wissen reproduzieren",
+        "modality": "printable"
+      },
+      {
+        "code": "TRA",
+        "label": "Wissen verknüpfen und transferieren",
+        "modality": "printable"
+      },
+      {
+        "code": "REF",
+        "label": "Reflektieren",
+        "modality": "printable"
+      }
+    ],
+    "content_areas": [
+      "Psychologie",
+      "Philosophie"
+    ],
+    "task_kind_extensions": [
+      "text_analysis",
+      "argumentation",
+      "dilemma"
+    ],
+    "notes": "Oberstufe-only. Dimensions = the 3 Verarbeitungstiefen (depth axis, mirrors cognitive ladder); content split Psychologie (5./6. Sem) / Philosophie (7./8. Sem). Approximate — SME to confirm. Therapy boundary: descriptive only."
+  },
+  "PUP2": {
+    "dimensions": [
+      {
+        "code": "WIS",
+        "label": "Wissen reproduzieren",
+        "modality": "printable"
+      },
+      {
+        "code": "TRA",
+        "label": "Wissen verknüpfen und transferieren",
+        "modality": "printable"
+      },
+      {
+        "code": "REF",
+        "label": "Reflektieren",
+        "modality": "printable"
+      }
+    ],
+    "content_areas": [
+      "Psychologie",
+      "Philosophie"
+    ],
+    "task_kind_extensions": [
+      "text_analysis",
+      "argumentation",
+      "dilemma"
+    ],
+    "notes": "Oberstufe-only. Dimensions = the 3 Verarbeitungstiefen (depth axis, mirrors cognitive ladder); content split Psychologie (5./6. Sem) / Philosophie (7./8. Sem). Approximate — SME to confirm. Therapy boundary: descriptive only. (WkRG variant, incl. Praktika.)",
+    "variant": "Variante 2 (Schulform)"
+  }
+}

@@ -17,20 +17,29 @@ def compute_stats(block_store: BlockStore | None = None,
                   review_store: ReviewStore | None = None) -> dict:
     bs = block_store or BlockStore()
     rs = review_store or ReviewStore()
-    subjects = [s for s in ls._meta().get("subjects", []) if s.get("type") == "pflichtgegenstand"]
 
-    rows: dict[str, dict] = {
-        s["code"]: {
-            "code": s["code"], "name": s["name"], "klassen": s["klassen"],
-            "total_competences": s.get("n_competences", 0),
-            "_covered": set(), "task_blocks": 0, "info_blocks": 0, "in_review": 0,
-            "by_level": {}, "by_scope": {},
-        }
-        for s in subjects
-    }
+    # Both stages, keyed (stufe, code) — the Oberstufe is a second catalog (lehrplan/oberstufe/).
+    rows: dict[tuple[str, str], dict] = {}
+    for stufe in ("Unterstufe", "Oberstufe"):
+        for s in ls._meta(stufe).get("subjects", []):
+            if s.get("type") != "pflichtgegenstand":
+                continue
+            rows[(stufe, s["code"])] = {
+                "code": s["code"], "name": s["name"], "stufe": stufe,
+                "klassen": s.get("klassen", []),
+                "total_competences": s.get("n_competences", 0),
+                "_covered": set(), "task_blocks": 0, "info_blocks": 0, "in_review": 0,
+                "by_level": {}, "by_scope": {},
+            }
 
     for lb in bs.list():
-        row = rows.get(ls._code_for(lb.subject) or "")
+        # route each block to its stage by Klasse (1–4 US, 5–8 OS); the subject code is
+        # resolved against that stage's alias table (Oberstufe-only subjects live only there).
+        stufe = ls.stufe_for_klasse(getattr(lb, "klasse", None))
+        row = rows.get((stufe, ls._code_for(lb.subject, stufe) or ""))
+        if row is None:  # fall back to the other stage (e.g. a block without a Klasse)
+            other = "Oberstufe" if stufe == "Unterstufe" else "Unterstufe"
+            row = rows.get((other, ls._code_for(lb.subject, other) or ""))
         if row is None:
             continue
         if lb.status == "in_review":
@@ -51,7 +60,7 @@ def compute_stats(block_store: BlockStore | None = None,
     for r in rows.values():
         covered, total = len(r["_covered"]), r["total_competences"]
         out.append({
-            "code": r["code"], "name": r["name"], "klassen": r["klassen"],
+            "code": r["code"], "name": r["name"], "stufe": r["stufe"], "klassen": r["klassen"],
             "total_competences": total,
             "covered_competences": covered,
             "coverage_pct": round(100 * covered / total) if total else 0,
@@ -60,7 +69,9 @@ def compute_stats(block_store: BlockStore | None = None,
             "by_level": r["by_level"], "by_scope": r["by_scope"],
             "empty": r["task_blocks"] == 0 and r["info_blocks"] == 0,
         })
-    out.sort(key=lambda x: (-(x["task_blocks"] + x["info_blocks"]), -x["in_review"], x["name"]))
+    # group by stage (Unterstufe first), then by activity within each stage
+    out.sort(key=lambda x: (0 if x["stufe"] == "Unterstufe" else 1,
+                            -(x["task_blocks"] + x["info_blocks"]), -x["in_review"], x["name"]))
 
     totals = {
         "subjects": len(out),
@@ -76,4 +87,14 @@ def compute_stats(block_store: BlockStore | None = None,
         round(100 * totals["covered_competences"] / totals["total_competences"])
         if totals["total_competences"] else 0
     )
+    totals["by_stufe"] = {
+        st: {
+            "subjects": sum(1 for r in out if r["stufe"] == st),
+            "started": sum(1 for r in out if r["stufe"] == st and (r["task_blocks"] or r["info_blocks"])),
+            "covered_competences": sum(r["covered_competences"] for r in out if r["stufe"] == st),
+            "total_competences": sum(r["total_competences"] for r in out if r["stufe"] == st),
+            "task_blocks": sum(r["task_blocks"] for r in out if r["stufe"] == st),
+            "in_review": sum(r["in_review"] for r in out if r["stufe"] == st),
+        } for st in ("Unterstufe", "Oberstufe")
+    }
     return {"subjects": out, "totals": totals}

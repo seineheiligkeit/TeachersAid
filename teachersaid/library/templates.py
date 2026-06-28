@@ -87,6 +87,58 @@ PARAM_TEMPLATES: list[ParametricTask] = [
         prompt_template="Berechne Mittelwert, Median und Spannweite der Datenreihe: {vals}.",
         serves=[Serves(competence_id="MAT.US.1.DAT.02", relation="exercises")],
         dimensions=["DAR"], cognitive_level="apply", kind="calculation", est_minutes=5),
+
+    # --- Oberstufe (Sek II) — the parametric goldmine, all 4 Inhaltsbereiche ---------
+    ParametricTask(
+        id="mat-os-kurvendiskussion", title="Kurvendiskussion (Polynomfunktion 3. Grades)",
+        subject="Mathematik", klasse=7,
+        kompetenzbereich="Grundlagen der Differentialrechnung anhand von Polynomfunktionen",
+        content_area="Analysis", recipe="polynomial_curve",
+        prompt_template="Führe eine Kurvendiskussion durch: Bestimme alle Extrem- und "
+                        "Wendepunkte von $f(x) = {fx}$.",
+        serves=[Serves(competence_id="MAT.OS.7.GRU.06", relation="exercises")],
+        dimensions=["FO"], cognitive_level="analyze", kind="calculation", est_minutes=10),
+    ParametricTask(
+        id="mat-os-integral", title="Bestimmtes Integral (Hauptsatz)",
+        subject="Mathematik", klasse=8, kompetenzbereich="Grundlagen der Integralrechnung",
+        content_area="Analysis", recipe="definite_integral",
+        prompt_template="Berechne das bestimmte Integral der Funktion $f(x) = {f}$ über dem "
+                        "Intervall $[{lo};\\,{hi}]$.",
+        serves=[Serves(competence_id="MAT.OS.8.GRU2.01", relation="exercises")],
+        dimensions=["FO"], cognitive_level="apply", kind="calculation", est_minutes=6),
+    ParametricTask(
+        id="mat-os-lgs2", title="Lineares Gleichungssystem (2 Variablen)",
+        subject="Mathematik", klasse=5, kompetenzbereich="Gleichungen und Gleichungssysteme",
+        content_area="Algebra und Geometrie", recipe="linear_system_2",
+        prompt_template="Löse das lineare Gleichungssystem $ {eq1} $ und $ {eq2} $.",
+        serves=[Serves(competence_id="MAT.OS.5.GLE.02", relation="exercises")],
+        dimensions=["FO"], cognitive_level="apply", kind="calculation", est_minutes=6),
+    ParametricTask(
+        id="mat-os-lgs3", title="Lineares Gleichungssystem (3 Variablen)",
+        subject="Mathematik", klasse=6,
+        kompetenzbereich="Vektoren und analytische Geometrie in ³; Vektoren in n",
+        content_area="Algebra und Geometrie", recipe="linear_system_3",
+        prompt_template="Löse das lineare Gleichungssystem mit drei Variablen: "
+                        "$ {eq1} $; $ {eq2} $; $ {eq3} $.",
+        serves=[Serves(competence_id="MAT.OS.6.VEK2.03", relation="exercises")],
+        dimensions=["FO"], cognitive_level="apply", kind="calculation", est_minutes=8),
+    ParametricTask(
+        id="mat-os-binomial", title="Binomialverteilung",
+        subject="Mathematik", klasse=7, kompetenzbereich="Diskrete Wahrscheinlichkeitsverteilungen",
+        content_area="Wahrscheinlichkeit und Statistik", recipe="binomial_distribution",
+        prompt_template="Ein Bernoulli-Experiment mit Trefferwahrscheinlichkeit $p = {p}$ wird "
+                        "{n}-mal durchgeführt. Berechne $P(X = {k})$, $P(X \\leq {k})$, den "
+                        "Erwartungswert und die Standardabweichung.",
+        serves=[Serves(competence_id="MAT.OS.7.DIS.05", relation="exercises")],
+        dimensions=["DM"], cognitive_level="apply", kind="calculation", est_minutes=8),
+    ParametricTask(
+        id="mat-os-skalarprodukt", title="Skalarprodukt und Winkel (Vektoren in der Ebene)",
+        subject="Mathematik", klasse=5, kompetenzbereich="Vektoren und analytische Geometrie in ²",
+        content_area="Algebra und Geometrie", recipe="vector_dot_angle",
+        prompt_template="Gegeben sind die Vektoren $ {va} $ und $ {vb} $. Berechne das "
+                        "Skalarprodukt, die Beträge und den eingeschlossenen Winkel.",
+        serves=[Serves(competence_id="MAT.OS.5.VEK.03", relation="exercises")],
+        dimensions=["FO"], cognitive_level="apply", kind="calculation", est_minutes=7),
 ]
 
 
@@ -101,16 +153,17 @@ def variant_worksheet(template: ParametricTask, n: int = 6, *, today: date | Non
     from ..pipeline.parametrize import make_variants
     from ..pipeline.resolve import resolve_kompetenzbereich
 
+    stufe = ls.stufe_for_klasse(template.klasse)  # Klasse fixes the stage (1–4 / 5–8)
     res = resolve_kompetenzbereich(template.subject, template.klasse,
                                    template.kompetenzbereich, today=today)
     blocks = make_variants(template, n, seed0=seed0)
     title = template.title or template.id
     meta = WorksheetMeta(
         title=f"Übungsblatt: {title} ({n} Varianten)", subject=template.subject,
-        stufe="Unterstufe", klasse=template.klasse,
+        stufe=stufe, klasse=template.klasse,
         kernfrage=f"Übung: {title}", fassung=res.fassung,
         lehrplan_label=f"{template.subject} · {template.klasse}. Kl. · {template.kompetenzbereich}")
     content = WorksheetContent(
-        meta=meta, subject_model=ls.get_subject_model(template.subject),
+        meta=meta, subject_model=ls.get_subject_model(template.subject, stufe),
         intro=[], sections=[Baustein(id="uebung", title=title, blocks=blocks)], assets=[])
     return content, res

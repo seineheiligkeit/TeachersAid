@@ -10,10 +10,14 @@ to reject a degenerate draw (e.g. a non-integer solution) and be resampled.
 
 from __future__ import annotations
 
+import math
 import random
 import re
 
-from sympy import Eq, Integer, Rational, latex, symbols
+from sympy import (
+    Eq, Integer, Matrix, N, Rational, acos, binomial, diff, integrate, latex,
+    linsolve, pi, solve, sqrt, symbols,
+)
 
 from ..schema.blocks import SolutionStep, TaskBlock
 from ..schema.parametric import Instance, ParametricTask
@@ -293,3 +297,176 @@ def _fraction_add(rng: random.Random) -> Instance:
     ]
     return Instance(params={"f1": latex(f1), "f2": latex(f2)},
                     answer=[_math(latex(total))], steps=steps)
+
+
+# === Oberstufe (Sek II) recipes — Analysis, Stochastik, analytische Geometrie =========
+# These are the parametric goldmine: the Oberstufe is dominated by symbolically-solvable
+# procedures (Ableiten, Integrieren, Gleichungssysteme, Verteilungen, Vektoren), so each
+# template → N correct-by-construction variants with an exact Rechenweg.
+
+def _approx(expr, places: int = 2) -> str:
+    """A rounded decimal string for a teacher-facing ≈ value (German comma)."""
+    return f"{float(N(expr)):.{places}f}".rstrip("0").rstrip(".").replace(".", ",")
+
+
+@_recipe("polynomial_curve")
+def _polynomial_curve(rng: random.Random) -> Instance:
+    """Kurvendiskussion einer Polynomfunktion 3. Grades: Extrem- und Wendepunkte.
+
+    f' is built from two distinct, same-parity integer roots → f is an INTEGER-coefficient
+    cubic whose extrema sit exactly at those roots and whose Wendestelle is integer; sympy
+    then derives the answer from f (so it is correct by construction, not back-filled)."""
+    x = symbols("x")
+    r1, r2 = rng.randint(-4, 4), rng.randint(-4, 4)
+    if r1 == r2 or (r1 + r2) % 2 != 0:
+        raise Unsuitable
+    if r1 > r2:
+        r1, r2 = r2, r1
+    c = rng.choice([-2, -1, 0, 1, 2])
+    f = x**3 - (3 * (r1 + r2) // 2) * x**2 + 3 * r1 * r2 * x + c
+    f1, f2 = diff(f, x), diff(f, x, 2)
+    crit = sorted(solve(f1, x))
+    pts = []  # (kind, x, y)
+    for r in crit:
+        kind = "Tiefpunkt" if f2.subs(x, r) > 0 else "Hochpunkt"
+        pts.append((kind, r, f.subs(x, r)))
+    wx = solve(f2, x)[0]
+    wy = f.subs(x, wx)
+    extrema_tex = ", \\; ".join(
+        f"\\text{{{k[:1]}}}({latex(px)} \\mid {latex(py)})" for k, px, py in pts)
+    steps = [
+        SolutionStep(text="Funktion", expr=latex(Eq(symbols("f(x)"), f))),
+        SolutionStep(text="1. Ableitung; Extremstellen aus f'(x) = 0",
+                     expr=f"f'(x) = {latex(f1)} = 0 \\Rightarrow x \\in \\{{{', '.join(latex(r) for r in crit)}\\}}"),
+        SolutionStep(text="2. Ableitung; Art über das Vorzeichen von f''",
+                     expr=f"f''(x) = {latex(f2)}"),
+        SolutionStep(text="Extrempunkte",
+                     expr=";\\; ".join(f"\\text{{{k}}}\\,({latex(px)} \\mid {latex(py)})" for k, px, py in pts)),
+        SolutionStep(text="Wendestelle aus f''(x) = 0",
+                     expr=f"f''(x) = 0 \\Rightarrow x = {latex(wx)},\\quad W({latex(wx)} \\mid {latex(wy)})"),
+    ]
+    answer = [_math(extrema_tex + f", \\; W({latex(wx)} \\mid {latex(wy)})")]
+    return Instance(params={"fx": latex(f)}, answer=answer, steps=steps)
+
+
+@_recipe("definite_integral")
+def _definite_integral(rng: random.Random) -> Instance:
+    """Bestimmtes Integral einer Polynomfunktion über den Hauptsatz (Stammfunktion einsetzen)."""
+    x = symbols("x")
+    a2, a1, a0 = rng.randint(1, 3), rng.randint(-3, 3), rng.randint(-3, 3)
+    f = a2 * x**2 + a1 * x + a0
+    lo = rng.randint(-2, 2)
+    hi = lo + rng.randint(1, 4)
+    F = integrate(f, x)
+    val = integrate(f, (x, lo, hi))
+    steps = [
+        SolutionStep(text="Stammfunktion bilden", expr=f"F(x) = {latex(F)}"),
+        SolutionStep(text="Hauptsatz: F(obere Grenze) − F(untere Grenze)",
+                     expr=f"\\int_{{{lo}}}^{{{hi}}} ({latex(f)})\\,dx = F({hi}) - F({lo})"),
+        SolutionStep(text="einsetzen und berechnen",
+                     expr=f"= {latex(F.subs(x, hi))} - ({latex(F.subs(x, lo))}) = {latex(val)}"),
+    ]
+    return Instance(params={"f": latex(f), "lo": lo, "hi": hi},
+                    answer=[_math(f"\\int_{{{lo}}}^{{{hi}}} ({latex(f)})\\,dx = {latex(val)}")],
+                    steps=steps)
+
+
+@_recipe("linear_system_2")
+def _linear_system_2(rng: random.Random) -> Instance:
+    """Lineares Gleichungssystem in zwei Variablen (eindeutig lösbar, ganzzahlige Lösung)."""
+    x, y = symbols("x y")
+    x0, y0 = rng.randint(-5, 5), rng.randint(-5, 5)
+    a1, b1 = rng.randint(-4, 4), rng.randint(-4, 4)
+    a2, b2 = rng.randint(-4, 4), rng.randint(-4, 4)
+    if a1 * b2 - a2 * b1 == 0 or (a1 == 0 and b1 == 0) or (a2 == 0 and b2 == 0):
+        raise Unsuitable  # det ≠ 0 → genau eine Lösung
+    c1, c2 = a1 * x0 + b1 * y0, a2 * x0 + b2 * y0
+    eq1, eq2 = Eq(a1 * x + b1 * y, c1), Eq(a2 * x + b2 * y, c2)
+    sol = list(linsolve([eq1, eq2], [x, y]))[0]
+    steps = [
+        SolutionStep(text="Gleichungssystem (I, II)", expr=f"{latex(eq1)};\\quad {latex(eq2)}"),
+        SolutionStep(text="z. B. mit dem Eliminationsverfahren lösen",
+                     expr=f"x = {latex(sol[0])},\\quad y = {latex(sol[1])}"),
+    ]
+    return Instance(params={"eq1": latex(eq1), "eq2": latex(eq2)},
+                    answer=[_math(f"x = {latex(sol[0])},\\; y = {latex(sol[1])}")], steps=steps)
+
+
+@_recipe("linear_system_3")
+def _linear_system_3(rng: random.Random) -> Instance:
+    """Lineares Gleichungssystem in drei Variablen (eindeutig lösbar, ganzzahlige Lösung)."""
+    x, y, z = symbols("x y z")
+    x0, y0, z0 = (rng.randint(-4, 4) for _ in range(3))
+    A = Matrix(3, 3, lambda i, j: rng.randint(-3, 3))
+    if A.det() == 0:
+        raise Unsuitable
+    rhs = A * Matrix([x0, y0, z0])
+    eqs = [Eq(A[i, 0] * x + A[i, 1] * y + A[i, 2] * z, rhs[i]) for i in range(3)]
+    sol = list(linsolve(eqs, [x, y, z]))[0]
+    steps = [
+        SolutionStep(text="Gleichungssystem (I, II, III)",
+                     expr=";\\; ".join(latex(e) for e in eqs)),
+        SolutionStep(text="mit dem Gauß-Verfahren stufenweise eliminieren und rücksubstituieren",
+                     expr=f"x = {latex(sol[0])},\\; y = {latex(sol[1])},\\; z = {latex(sol[2])}"),
+    ]
+    return Instance(params={"eq1": latex(eqs[0]), "eq2": latex(eqs[1]), "eq3": latex(eqs[2])},
+                    answer=[_math(f"x = {latex(sol[0])},\\; y = {latex(sol[1])},\\; z = {latex(sol[2])}")],
+                    steps=steps)
+
+
+@_recipe("binomial_distribution")
+def _binomial_distribution(rng: random.Random) -> Instance:
+    """Binomialverteilung: P(X=k), P(X≤k), Erwartungswert und Standardabweichung (exakt)."""
+    n = rng.choice([5, 6, 8, 10])
+    num, den = rng.choice([(1, 2), (1, 3), (1, 4), (1, 5), (2, 5), (3, 4), (3, 5)])
+    p = Rational(num, den)
+    k = rng.randint(1, n - 1)
+    P = binomial(n, k) * p**k * (1 - p) ** (n - k)
+    Pcum = sum(binomial(n, i) * p**i * (1 - p) ** (n - i) for i in range(k + 1))
+    E = n * p
+    sigma = sqrt(n * p * (1 - p))
+    steps = [
+        SolutionStep(text="Binomialformel",
+                     expr=f"P(X=k) = \\binom{{n}}{{k}} p^k (1-p)^{{n-k}}"),
+        SolutionStep(text=f"n = {n},\\; p = {latex(p)},\\; k = {k} einsetzen",
+                     expr=f"P(X={k}) = \\binom{{{n}}}{{{k}}} \\left({latex(p)}\\right)^{{{k}}} "
+                          f"\\left({latex(1 - p)}\\right)^{{{n - k}}} = {latex(P)} \\approx {_approx(P, 3)}"),
+        SolutionStep(text="Erwartungswert und Standardabweichung",
+                     expr=f"E(X) = n p = {latex(E)};\\quad \\sigma = \\sqrt{{n p (1-p)}} = {latex(sigma)} \\approx {_approx(sigma)}"),
+    ]
+    answer = [
+        _math(f"P(X={k}) = {latex(P)} \\approx {_approx(P, 3)}"),
+        InlineRun(text=";  "),
+        _math(f"P(X \\leq {k}) = {latex(Pcum)} \\approx {_approx(Pcum, 3)}"),
+        InlineRun(text=";  "),
+        _math(f"E(X) = {latex(E)},\\; \\sigma \\approx {_approx(sigma)}"),
+    ]
+    return Instance(params={"n": n, "k": k, "p": latex(p)}, answer=answer, steps=steps)
+
+
+@_recipe("vector_dot_angle")
+def _vector_dot_angle(rng: random.Random) -> Instance:
+    """Skalarprodukt zweier Vektoren in ℝ², Beträge und der eingeschlossene Winkel."""
+    ax, ay = rng.randint(-5, 5), rng.randint(-5, 5)
+    bx, by = rng.randint(-5, 5), rng.randint(-5, 5)
+    if (ax == 0 and ay == 0) or (bx == 0 and by == 0):
+        raise Unsuitable
+    dot = ax * bx + ay * by
+    na, nb = sqrt(ax**2 + ay**2), sqrt(bx**2 + by**2)
+    cos_phi = Rational(dot) / (na * nb)
+    phi_deg = _approx(acos(cos_phi) * 180 / pi, 1)
+    # \binom renders a parenthesised column (mathtext-safe; \begin{pmatrix} is not).
+    va = f"\\vec a = \\binom{{{ax}}}{{{ay}}}"
+    vb = f"\\vec b = \\binom{{{bx}}}{{{by}}}"
+    steps = [
+        SolutionStep(text="Skalarprodukt: komponentenweise multiplizieren und addieren",
+                     expr=f"\\vec a \\cdot \\vec b = {ax}\\cdot{bx} + {ay}\\cdot{by} = {dot}"),
+        SolutionStep(text="Beträge der Vektoren",
+                     expr=f"|\\vec a| = {latex(na)},\\quad |\\vec b| = {latex(nb)}"),
+        SolutionStep(text="Winkel über das Skalarprodukt",
+                     expr=f"\\cos\\varphi = \\frac{{\\vec a \\cdot \\vec b}}{{|\\vec a|\\,|\\vec b|}} "
+                          f"= {latex(cos_phi)} \\Rightarrow \\varphi \\approx {phi_deg}^\\circ"),
+    ]
+    answer = [_math(f"\\vec a \\cdot \\vec b = {dot},\\; |\\vec a| = {latex(na)},\\; "
+                    f"|\\vec b| = {latex(nb)},\\; \\varphi \\approx {phi_deg}^\\circ")]
+    return Instance(params={"va": va, "vb": vb}, answer=answer, steps=steps)

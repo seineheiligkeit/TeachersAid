@@ -315,13 +315,14 @@ def ingest_generated(
     from ..schema.worksheet import WorksheetMeta
     from .resolve import resolve_grade, resolve_kompetenzbereich
 
+    stufe = ls.stufe_for_klasse(klasse)  # Klasse fixes the stage (1–4 / 5–8)
     if kompetenzbereich:
         res = resolve_kompetenzbereich(subject, klasse, kompetenzbereich, today=today)
     else:
         res = resolve_grade(subject, klasse, today=today)
-    model = ls.get_subject_model(subject)
+    model = ls.get_subject_model(subject, stufe)
     if model is None:
-        raise ValueError(f"no subject model for '{subject}'")
+        raise ValueError(f"no subject model for '{subject}' ({stufe})")
     label = kompetenzbereich or scope_label or f"{klasse}. Klasse"
 
     item = ReviewItem(
@@ -347,7 +348,7 @@ def ingest_generated(
                     item.resolution = res
         meta = WorksheetMeta(
             title=title, subtitle="LLM-Entwurf — Erstprüfung",
-            subject=subject, stufe="Unterstufe", klasse=klasse,
+            subject=subject, stufe=stufe, klasse=klasse,
             kernfrage=kernfrage, fassung=res.fassung,
             lehrplan_label=f"{subject} · {klasse}. Klasse · {label}",
         )

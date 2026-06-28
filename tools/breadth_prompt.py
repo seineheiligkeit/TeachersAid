@@ -20,17 +20,32 @@ from teachersaid.grounding import lehrplan_store as ls
 from teachersaid.pipeline.assets import GENERATION_RECIPES
 from teachersaid.schema.enums import CORE_TASK_KINDS
 
-N_KERNFRAGEN = 3
+N_KERNFRAGEN = 2
+
+# Stage of this run (Oberstufe breadth push, 28 Jun 2026). competences_for / get_subject_model /
+# anwendungsbereiche_for are stage-aware; the Klasse range follows the stage.
+STUFE = "Oberstufe"
+KLASSEN = (5, 6, 7, 8) if STUFE == "Oberstufe" else (1, 2, 3, 4)
 
 # code, subject, anchor ("kb" content/skill-KBs | "grade" strand/None-KB), practical, target_language
-# Figure pass (2026-06-26): figure-heavy subjects, now that asset-bearing generation is enabled (#1).
+# Oberstufe breadth set — the strong/partial-tier subjects (Sport out; Musik/Kunst marginal → skipped).
 SUBJECTS = [
     ("MAT", "Mathematik", "kb", False, None),
     ("PHY", "Physik", "kb", False, None),
-    ("CHE", "Chemie", "grade", False, None),
+    ("CHE", "Chemie", "kb", False, None),
+    ("BIO", "Biologie und Umweltbildung", "kb", False, None),
+    ("DEU", "Deutsch", "kb", False, None),
     ("GWB", "Geographie und wirtschaftliche Bildung", "kb", False, None),
+    ("GPB", "Geschichte und politische Bildung", "kb", False, None),
+    ("ETH", "Ethik", "kb", False, None),
+    ("LAT", "Latein", "kb", False, "Latein"),
+    ("GRI", "Griechisch", "kb", False, "Griechisch"),
+    ("FSP", "Lebende Fremdsprache", "kb", False, "Englisch"),
+    ("INF", "Informatik", "kb", False, None),
+    ("HOE", "Haushaltsökonomie und Ernährung", "kb", False, None),
+    ("PUP", "Psychologie und Philosophie", "kb", False, None),
 ]
-GEN_SUBDIR = "gen_figs"  # this batch writes here so prior gen/ , gen_lang/ files aren't re-ingested
+GEN_SUBDIR = "gen_os"  # Oberstufe batch writes here (kept separate from the Unterstufe gen dirs)
 
 # Prior batches (done 2026-06-25), kept for reproducibility:
 #   MINT (single-Kernfrage tool earlier): PHY, CHE, BIO, MAT
@@ -41,7 +56,7 @@ GEN_SUBDIR = "gen_figs"  # this batch writes here so prior gen/ , gen_lang/ file
 _TEMPLATE = """# Breiten-Generierung: {subject} — {n} Kernfragen
 
 Du erzeugst **{n} verschiedene** Arbeitsblatt-Inhalte (je eine eigene **Kernfrage**) für die
-**AHS-Unterstufe** auf österreichischem Lehrplan-Niveau. Sprache: **Deutsch**, AHS-Niveau (nicht zu niedrig).
+**AHS-{stufe_label}** auf österreichischem Lehrplan-Niveau. Sprache: **Deutsch**, AHS-Niveau (anspruchsvoll, Sek II).
 Wähle **{n} klar unterschiedliche Themen/Bereiche** (Breite!), nicht Varianten desselben Themas.
 
 ## Kompetenzen (verbatim — `serves.competence_id` MUSS eine dieser IDs sein), gruppiert nach Kompetenzbereich
@@ -101,7 +116,7 @@ Jede Datei ist **ausschließlich** dieses JSON (kein Fließtext, keine ``` Zäun
 
 ```json
 {{
-  "subject": "{subject}", "klasse": <1-4, eine Klasse mit Kompetenzen im gewählten Bereich>,
+  "subject": "{subject}", "klasse": <{klasse_hint}, eine Klasse mit Kompetenzen im gewählten Bereich>,
   {anchor_field}
   "title": "<prägnanter Titel>", "kernfrage": "<eine Schüler-Kernfrage in Du-Form>",
   "body": {{
@@ -130,7 +145,7 @@ _ANCHOR_GRADE = ('## Verankerung\nDie Kompetenzen sind fachübergreifend/Prozess
 def _klassen(subject: str) -> list[int]:
     """Grades that actually carry competences (robust to None-KB competences, which
     grade_map drops)."""
-    return [k for k in (1, 2, 3, 4) if ls.competences_for(subject, k)]
+    return [k for k in KLASSEN if ls.competences_for(subject, k, STUFE)]
 
 
 def _competence_block(subject: str, anchor: str) -> tuple[str, str]:
@@ -138,7 +153,7 @@ def _competence_block(subject: str, anchor: str) -> tuple[str, str]:
     klassen = _klassen(subject)
     by_kb: dict[str, list] = defaultdict(list)
     for kl in klassen:
-        for c in ls.competences_for(subject, kl):
+        for c in ls.competences_for(subject, kl, STUFE):
             by_kb[c.kompetenzbereich].append((kl, c))
     lines = []
     for kb in sorted(by_kb, key=lambda x: x or ""):
@@ -157,7 +172,7 @@ def _competence_block(subject: str, anchor: str) -> tuple[str, str]:
 def _ab_block(subject: str) -> str:
     items = []
     for kl in _klassen(subject):
-        ab = ls.anwendungsbereiche_for(subject, kl)
+        ab = ls.anwendungsbereiche_for(subject, kl, STUFE)
         if ab:
             items.append(f"- Kl {kl}: " + " · ".join(ab[:8]))
     if not items:
@@ -171,7 +186,7 @@ def build():
     recipes = "\n".join(f"  - `{gid}` — {hint}" for gid, hint in GENERATION_RECIPES.items())
     manifest = []
     for code, subject, anchor, practical, target_language in SUBJECTS:
-        model = ls.get_subject_model(subject)
+        model = ls.get_subject_model(subject, STUFE)
         comps_text, anchor_field = _competence_block(subject, anchor)
         dims = "\n".join(f"- `{d.id}` — {d.label}" for d in model.dimensions)
         kinds = ", ".join(sorted(CORE_TASK_KINDS | set(model.task_kind_extensions)))
@@ -198,12 +213,13 @@ def build():
             ab_block=_ab_block(subject), anchor_rule=(_ANCHOR_KB if anchor == "kb" else _ANCHOR_GRADE),
             modality_note=modality_note, lang_clause=lang_clause, gendir=GEN_SUBDIR,
             code=code, anchor_field=anchor_field, dim0=model.dimensions[0].id, recipes=recipes,
-            data_block=data_block,
+            data_block=data_block, stufe_label=STUFE,
+            klasse_hint=f"{KLASSEN[0]}-{KLASSEN[-1]}",
         )
         (outdir / f"prompt_{code}.md").write_text(prompt, encoding="utf-8")
         manifest.append({"code": code, "subject": subject, "anchor": anchor,
                          "target_language": target_language})
-        n_comp = len({c.id for kl in _klassen(subject) for c in ls.competences_for(subject, kl)})
+        n_comp = len({c.id for kl in _klassen(subject) for c in ls.competences_for(subject, kl, STUFE)})
         print(f"{code}: {n_comp} competences, {target_language or 'Deutsch'} -> prompt_{code}.md")
     (outdir / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2),
                                           encoding="utf-8")
