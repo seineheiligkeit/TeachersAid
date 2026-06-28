@@ -3,9 +3,13 @@ and the generation views up-convert to canonical content."""
 
 from __future__ import annotations
 
+import pytest
+
 from teachersaid.schema import (
     Baustein,
+    BlockProvenance,
     InfoBlock,
+    ProvenanceSource,
     SubjectCompetenceModel,
     TaskBlock,
     WorksheetContent,
@@ -154,6 +158,98 @@ def test_richtext_normalisation():
 
 def test_printable_coverage():
     assert printable_coverage(PHYSIK_MODEL) == 1.0
+
+
+# --- expression provenance (History/GPB asset class) -------------------------
+def test_provenance_obligations_are_derived():
+    # (#1) original-from-facts: a Wikipedia role="facts" source → no obligation, clean render
+    orig = BlockProvenance(
+        expression_origin="original",
+        sources=[ProvenanceSource(
+            title="Wiener Kongress", url="https://de.wikipedia.org/wiki/Wiener_Kongress",
+            publisher="Wikipedia (de)", licence="CC-BY-SA-4.0", retrieved="2026-06-28",
+            role="facts")],
+    )
+    assert orig.attribution_required is False
+    assert orig.share_alike_applies is False           # facts role never triggers ShareAlike
+    assert len(orig.facts_sources()) == 1 and not orig.expression_sources()
+
+    # (#2 adapted) close paraphrase of CC-BY-SA text → derivative: attribution + ShareAlike
+    adapted = BlockProvenance(
+        expression_origin="adapted",
+        sources=[ProvenanceSource(title="Wiener Kongress", licence="CC-BY-SA-4.0",
+                                  role="expression", redistributable=True)],
+    )
+    assert adapted.attribution_required is True
+    assert adapted.share_alike_applies is True
+
+    # (#2 quoted) a short verbatim quote leans on Zitatrecht, not CC-BY-SA → no ShareAlike
+    quoted = BlockProvenance(
+        expression_origin="quoted",
+        sources=[ProvenanceSource(title="Eine PD-Quelle", licence="public-domain",
+                                  role="expression", author_death_year=1859,
+                                  quote_span="… ein wörtliches Zitat …")],
+    )
+    assert quoted.attribution_required is True
+    assert quoted.share_alike_applies is False
+
+
+def test_provenance_derived_booleans_not_authorable():
+    # the obligation booleans are computed — an attempt to author them is absorbed (stripped
+    # + recomputed), never trusted: here a "false" attribution_required on an adapted block is
+    # ignored and recomputed to True.
+    p = BlockProvenance.model_validate({
+        "expression_origin": "adapted", "attribution_required": False,
+        "sources": [{"title": "Q", "licence": "CC-BY-SA-4.0", "role": "expression"}],
+    })
+    assert p.attribution_required is True   # recomputed, not the authored False
+    # a genuinely unknown key still trips extra="forbid"
+    with pytest.raises(ValueError):
+        BlockProvenance.model_validate({"expression_origin": "original", "bogus": 1})
+
+
+def test_provenance_roundtrips_and_serialises_derived():
+    block = InfoBlock(
+        id="wk.intro", kind="prose",
+        content="Der Wiener Kongress ordnete 1814/15 Europa neu.",
+        provenance=BlockProvenance(
+            expression_origin="original",
+            sources=[ProvenanceSource(title="Wiener Kongress", publisher="Wikipedia (de)",
+                                      licence="CC-BY-SA-4.0", role="facts",
+                                      retrieved="2026-06-28")],
+        ),
+    )
+    dumped = block.model_dump()
+    # computed obligation booleans serialise (for the API/review surface), still un-authored
+    assert dumped["provenance"]["attribution_required"] is False
+    # dict and JSON round-trips both preserve the authored fields
+    assert InfoBlock.model_validate(dumped).provenance.expression_origin == "original"
+    reloaded = InfoBlock.model_validate_json(block.model_dump_json())
+    assert reloaded.provenance.expression_origin == "original"
+    assert reloaded.provenance.sources[0].role == "facts"
+    # the cross-subject opt-in flag is available for non-GPB historical prose
+    flagged = InfoBlock(id="x", kind="prose", content="…", flags={"historical_fact": True})
+    assert flagged.flags.historical_fact is True
+
+
+def test_generation_view_carries_provenance():
+    body = GenWorksheetBody.model_validate({
+        "intro": [{
+            "role": "info", "id": "i1", "kind": "prose",
+            "content": "Der Wiener Kongress 1814/15.",
+            "provenance": {
+                "expression_origin": "original",
+                "sources": [{"title": "Wiener Kongress", "publisher": "Wikipedia (de)",
+                             "licence": "CC-BY-SA-4.0", "role": "facts",
+                             "retrieved": "2026-06-28"}],
+            },
+        }],
+        "sections": [],
+    })
+    content = body_to_canonical(body, meta=_minimal_content().meta, subject_model=PHYSIK_MODEL)
+    prov = content.intro[0].provenance
+    assert prov is not None and prov.expression_origin == "original"
+    assert prov.attribution_required is False and prov.sources[0].role == "facts"
 
 
 def test_generation_view_to_canonical():

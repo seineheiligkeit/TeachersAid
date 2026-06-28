@@ -60,6 +60,13 @@ def verify(
     problems += fl_problems
     warnings += fl_warnings
 
+    # expression provenance (History/GPB): a history fact block records its facts-source,
+    # and an embedded source's obligation is coherent (the prose analogue of the (c)-label)
+    from .prose_lint import lint_content as _lint_prose
+    pl_problems, pl_warnings = _lint_prose(content)
+    problems += pl_problems
+    warnings += pl_warnings
+
     # coverage: serves must reference resolved competences
     valid_ids = {c.id for c in resolution.competences}
     for b in content.iter_blocks():

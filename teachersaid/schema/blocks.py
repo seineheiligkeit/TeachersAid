@@ -12,6 +12,7 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 from .competence import DimensionRef
 from .enums import CalloutRole, CoverageRelation, InfoKind, Role
+from .provenance import BlockProvenance
 from .response import ResponseSpec
 from .richtext import RichText, collapse
 
@@ -22,6 +23,9 @@ class ContentFlags(BaseModel):
     freshness_decay: bool = False
     equipment_dependent: bool = False
     local: bool = False
+    historical_fact: bool = False  # opt-in: a prose block asserting real historical claims —
+    # the cross-subject hook (GWB local history, KUG art history) that puts non-GPB blocks under
+    # the prose-provenance gate (which is GPB ∪ historical_fact). See provenance.py.
 
 
 class BlockBase(BaseModel):
@@ -31,6 +35,8 @@ class BlockBase(BaseModel):
     modality: str = "printable"  # default printable
     flags: ContentFlags | None = None
     asset_refs: list[str] = Field(default_factory=list)
+    provenance: BlockProvenance | None = None  # expression provenance (History/GPB asset class);
+    # absent on the common case (math, wholly-original prose). DERIVED obligation booleans live on it.
 
 
 # --- A: information to learn from --------------------------------------------

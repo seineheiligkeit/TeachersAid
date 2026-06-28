@@ -18,6 +18,7 @@ if __name__ == "__main__":
             seed_assets,
             seed_blocks,
             seed_datasets,
+            seed_history,
             seed_library,
             seed_texts,
         )
@@ -44,6 +45,9 @@ if __name__ == "__main__":
         texts = seed_texts()
         print(f"\nStaged {len(texts)} annotated text(s) into the text store "
               f"({', '.join(t.id for t in texts)} — review them in the Texte tab).")
+        hist = seed_history()
+        print(f"\nStaged {len(hist)} History-Flagship (GPB Wiener Kongress) als Inhalt "
+              f"({', '.join(h.id for h in hist)} — Provenienz im Blöcke-Panel prüfen).")
         print("\nRun 'python -m teachersaid' and open the dashboard to review them.")
         sys.exit(0)
 

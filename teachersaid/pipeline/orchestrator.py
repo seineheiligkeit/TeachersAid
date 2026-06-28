@@ -201,6 +201,37 @@ def compose_worksheet(
     return store.save(item)
 
 
+def stage_worksheet(
+    store: ReviewStore, content, res: LehrplanResolution, *,
+    source: str = "curated", title: str | None = None,
+) -> ReviewItem:
+    """Stage a PRE-BUILT, curated `WorksheetContent` as a Gate-2 content item (the
+    library-flagship analogue of compose/ingest, for hand-authored examples like the
+    History flagship). assemble(+derive) / verify / render run unchanged; the rights gate
+    + prose gate ride inside verify, so a curated worksheet is held to the same bar."""
+    item = ReviewItem(
+        id="", stage="content", source=source,
+        title=title or content.meta.title,
+        request=BundleRequest(subject=content.meta.subject, klasse=content.meta.klasse,
+                              topic_raw=content.meta.title),
+        resolution=res,
+    )
+    store.create(item)
+    try:
+        assemble(content, res)
+        report = verify(content, res)
+        item.artifacts = _render_all(item.id, content)
+        item.content = content
+        item.verify_problems = report.problems
+        item.verify_warnings = report.warnings
+        item.status = "pending"
+        item.error = None
+    except Exception as exc:  # noqa: BLE001 — surface as an item error, don't crash
+        item.error = f"{type(exc).__name__}: {exc}"
+        item.status = "pending"
+    return store.save(item)
+
+
 def compose_variants(store: ReviewStore, template_id: str, n: int = 6,
                      *, today: date | None = None) -> ReviewItem:
     """Stage a parametric Maths worksheet (N correct-by-construction variants of a curated
@@ -232,6 +263,22 @@ def compose_variants(store: ReviewStore, template_id: str, n: int = 6,
         item.error = f"{type(exc).__name__}: {exc}"
         item.status = "pending"
     return store.save(item)
+
+
+def _check_provenance_rights(content, today_year: int) -> list[str]:
+    """The expression-provenance ingest gate (History/GPB): every block that embeds
+    source-derived wording (`adapted`/`quoted`) must rest on a redistributable/PD-clear
+    basis (or a short quote under Zitatrecht). `original`/facts-only blocks are always clear.
+    Returns a list of `<block_id>: <reason>` problems — non-empty blocks staging."""
+    out: list[str] = []
+    for b in content.iter_blocks():
+        prov = getattr(b, "provenance", None)
+        if prov is None:
+            continue
+        ok, reasons = prov.rights_gate(today_year)
+        if not ok:
+            out += [f"{b.id}: {r}" for r in reasons]
+    return out
 
 
 def ingest_generated(
@@ -305,6 +352,13 @@ def ingest_generated(
             lehrplan_label=f"{subject} · {klasse}. Klasse · {label}",
         )
         content = body_to_canonical(gb, meta=meta, subject_model=model)
+        # expression-provenance RIGHTS gate (History/GPB): refuse to stage a worksheet that
+        # embeds non-clear source wording — the select-never-author discipline applied to
+        # copyright (compliance is legal, not cosmetic), mirroring ingest_text's rights check.
+        rights_problems = _check_provenance_rights(content, (today or date.today()).year)
+        if rights_problems:
+            raise ValueError("rights: eingebettete Quelle nicht nachnutzbar — "
+                             + "; ".join(rights_problems))
         # ground data_source figures FIRST so their real values are filled before
         # build_asset is called (climate/population diagrams need temp/precip/etc.)
         from .data_ground import ground_data

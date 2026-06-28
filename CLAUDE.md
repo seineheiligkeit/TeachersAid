@@ -243,6 +243,47 @@ One annotated text → many tasks across grades; it compounds like the catalogs.
 - **Still trickier / planned** — annotated **Realien** (CEFR-leveled authentic everyday texts), a real TTS
   backend + an audio review/player surface, and a sourced-audio path; see `feature-roadmap.md` "Languages".
 
+## History / expression provenance (the GPB asset class)
+
+The History analogue of the data layer (the **5th asset class**; design: `Documents/history-facts-provenance-
+design.md`). Where the data layer tracks *fact* provenance for numbers and `TextSourceRef` tracks *rights*
+provenance for whole texts, this adds the third axis — **expression provenance**: *where the wording came
+from*. Copyright protects expression, not facts — so a block authored *fresh from facts* (read off Wikipedia)
+carries no CC-BY-SA obligation, while a paraphrase/quote of the article's wording does. The load-bearing
+reconciliation with *select-never-author*: history prose has no parseable dataset, so it's **correct by
+curation** (like the annotated texts), with a **mandatory-internal** twist — an `original` history fact block
+MUST record a `role="facts"` source so the fact is fact-checked at the review gate, not asserted unchecked.
+
+- **Schema** (`schema/provenance.py`): `BlockProvenance` on `BlockBase` — `expression_origin ∈
+  original·adapted·quoted` + `sources: [ProvenanceSource]` (each `role ∈ facts·expression`). The obligation
+  booleans `attribution_required`/`share_alike_applies` are **DERIVED** `@computed_field`s (present in the
+  serialization schema for the API, absent from the validation schema so the model can't author them; a
+  `mode="before"` validator strips echoed booleans so the JsonStore round-trip stays clean). The generation
+  view mirrors `provenance`; `ContentFlags.historical_fact` is the cross-subject opt-in.
+- **The invariant `verify` enforces** (`pipeline/prose_lint.py`, the prose (c)-label, advisory/warning-lane):
+  **(A)** wherever provenance is present — `adapted`/`quoted` must name a `role="expression"` source, a long
+  `quoted` span exceeds Zitatrecht, CC-BY-SA trips ShareAlike; **(B)** scoped to **GPB ∪ `historical_fact`**
+  (GPB detected by the served competence-id prefix `GPB.`) — an `original` fact block needs a `role="facts"`
+  source, and a fact-bearing InfoBlock (`prose/key_fact/example/source_text`; `callout` exempt) needs *some*
+  provenance.
+- **Rendering** is a pure projection (`rendering/blocks_to_flowables._provenance_flowables`): student/homework
+  get a `Quelle: … Lizenz: …` line **only** when `attribution_required` (`original` renders clean); teacher
+  gets the full sources list incl. the `role="facts"` records hidden from students. No new imports — still
+  schema-only.
+- **Ingest rights gate** (`orch._check_provenance_rights`, run before assemble — the `ingest_text` analogue):
+  `BlockProvenance.rights_gate(year)` / `ProvenanceSource.rights_clear(year)` — embedding `adapted`/`quoted`
+  needs a CC / explicit-redistributable / **AT-70-Jahre-p.m.a.-PD** basis; a short `quoted` span
+  (≤`SHORT_QUOTE_MAX_CHARS=300`) rides the Austrian **Zitatrecht (§42f öUrhG)**. A non-clear block raises →
+  nothing staged/harvested. `tools/fetch_wikipedia.py::fetch_source` is the **deterministic, metadata-only**
+  source-record helper (a permalink to the exact revision; no article prose, **no LLM in the fact path**).
+  The dashboard `prov(b)` panel surfaces provenance for SME fact-checking. **Policy: `adapted` is discouraged**
+  (CC-BY-SA ShareAlike can encumber the whole worksheet) — prefer original-from-facts + a short PD quote.
+- **Flagship** (`library/gpb_wiener_kongress.py`, `library.seed_history()`): GPB 3. Kl. *Der Wiener Kongress*
+  — an original-from-Wikipedia-facts learn text + a real PD primary source (Deutsche Bundesakte Art. I, 1815,
+  Wikisource) `quoted` under Zitatrecht, driving *Quellen und Darstellungen unterscheiden*. Staged via the new
+  `orch.stage_worksheet` (stage a pre-built curated `WorksheetContent`). The quotation is **selected, not
+  authored** (verified verbatim — do NOT fabricate historical wording).
+
 ## Master library (`teachersaid/library/`)
 
 Curated, gold-standard **`WorksheetContent` examples** — the quality bar, the few-shot seeds for LLM

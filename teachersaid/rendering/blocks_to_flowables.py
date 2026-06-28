@@ -43,6 +43,73 @@ def _citation_flowables(refs, citations, S):
     return out
 
 
+# --- expression provenance (History/GPB asset class) -------------------------
+# the licence link the attribution line carries (CC BY-SA's "+ ShareAlike" obligation)
+_LICENCE_URLS = {
+    "CC-BY-SA-4.0": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "CC-BY-4.0": "https://creativecommons.org/licenses/by/4.0/",
+    "CC0-1.0": "https://creativecommons.org/publicdomain/zero/1.0/",
+}
+_LICENCE_LABELS = {
+    "CC-BY-SA-4.0": "CC BY-SA 4.0", "CC-BY-4.0": "CC BY 4.0", "CC0-1.0": "CC0 1.0",
+    "public-domain": "gemeinfrei",
+}
+_ORIGIN_LABELS = {
+    "original": "eigene Formulierung", "adapted": "adaptiert (Paraphrase)",
+    "quoted": "wörtliches Zitat",
+}
+_ROLE_LABELS = {"facts": "Fakten", "expression": "Formulierung"}
+
+
+def _attribution_line(s) -> str:
+    """The student-visible source/licence line for a source whose wording we use."""
+    head = f"Quelle: „{s.title}“"
+    if s.publisher:
+        head += f" ({s.publisher})"
+    lic = (s.licence or "").upper()
+    label = _LICENCE_LABELS.get(s.licence or "", s.licence)
+    url = s.licence_url or _LICENCE_URLS.get(lic)
+    if label:
+        seg = f"Lizenz: {label}"
+        if url:
+            seg += f" ({url})"
+        return head + ". " + seg
+    return head
+
+
+def _provenance_flowables(prov, projection: str, S):
+    """Pure projection of `BlockProvenance`. Student/homework: a source/licence line ONLY
+    when `attribution_required` (original blocks stay clean). Teacher: the full sources list
+    incl. the `role="facts"` records hidden from students — the evidentiary basis to fact-check.
+    """
+    if prov is None or (not prov.sources and not prov.attribution_required):
+        return []
+    if projection == "teacher":
+        head = f"Provenienz: {_ORIGIN_LABELS.get(prov.expression_origin, prov.expression_origin)}"
+        if prov.attribution_required:
+            head += " · Quellenangabe erforderlich"
+        if prov.share_alike_applies:
+            head += " · ShareAlike"
+        out = [rb.para(head, S["meta"])]
+        for s in prov.sources:
+            line = f"– [{_ROLE_LABELS.get(s.role, s.role)}] „{s.title}“"
+            if s.publisher:
+                line += f", {s.publisher}"
+            if s.licence:
+                line += f", {_LICENCE_LABELS.get(s.licence, s.licence)}"
+            if s.retrieved:
+                line += f" (abgerufen {s.retrieved})"
+            if s.url:
+                line += f" — {s.url}"
+            out.append(rb.para(line, S["meta"]))
+        return out
+    # student / homework — only the obligation-bearing line(s)
+    if not prov.attribution_required:
+        return []
+    srcs = prov.expression_sources() or prov.sources
+    return [rb.para(_attribution_line(s), S["meta"]) for s in srcs]
+
+
 def _info_flowables(b: InfoBlock, projection: str, S, width, assets, citations=None):
     out = []
     if b.kind == "figure" and b.asset_refs:
@@ -73,6 +140,7 @@ def _info_flowables(b: InfoBlock, projection: str, S, width, assets, citations=N
         elif projection == "homework":
             for w in b.watch_outs:
                 out.append(rb.para("Tipp: " + w, S["callout"]))
+    out += _provenance_flowables(b.provenance, projection, S)
     return out
 
 
@@ -181,6 +249,7 @@ def _task_flowables(b: TaskBlock, projection: str, S, width, assets, number, cit
             out.append(rb.raw_para(
                 "Selbstkontrolle: " + rb.richtext_markup(b.self_check), S["callout"]
             ))
+    out += _provenance_flowables(b.provenance, projection, S)
     return out
 
 

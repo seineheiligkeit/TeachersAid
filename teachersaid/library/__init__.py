@@ -109,6 +109,21 @@ def seed_texts(store=None, *, status: str = "in_review") -> list:
     return orch.seed_texts(store, status=status)
 
 
+def seed_history(store=None, *, today: date | None = None) -> list:
+    """Stage the curated History asset-class flagship (GPB 'Der Wiener Kongress') as a
+    content item for Gate-2 review. The worksheet carries expression provenance (an
+    original-from-Wikipedia-facts learn text + a real PD primary source quoted under
+    Zitatrecht); verify runs the prose + rights gates. Cf. seed_texts/seed_datasets."""
+    from ..pipeline import orchestrator as orch
+    from ..pipeline.resolve import resolve_grade
+    from ..store.repository import ReviewStore
+    from . import gpb_wiener_kongress as wk
+
+    store = store or ReviewStore()
+    res = resolve_grade(wk.SUBJECT, 3, today=today)
+    return [orch.stage_worksheet(store, wk.build_content(), res, source="curated")]
+
+
 def seed_blocks(store=None, *, status: str = "approved") -> list:
     """Harvest every example worksheet's blocks into the block library. These come
     from the curated, SME-reviewed examples, so they seed straight as `approved`

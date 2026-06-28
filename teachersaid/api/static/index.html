@@ -320,10 +320,20 @@ function figs(b, imgSrc){
   return (b.asset_refs||[]).map(r=>`<div class="figpre"><img src="${imgSrc(r)}" alt="${esc(r)}"
     loading="lazy" onerror="this.style.display='none'"></div>`).join("");
 }
+function prov(b){
+  // expression-provenance panel (History/GPB): origin + obligation + the full sources list,
+  // incl. the role="facts" records hidden from students — the basis the SME fact-checks.
+  const p=b.provenance; if(!p) return "";
+  const tag={original:"eigene Formulierung",adapted:"adaptiert (Paraphrase)",quoted:"wörtliches Zitat"}[p.expression_origin]||p.expression_origin;
+  const flags=(p.attribution_required?' · <b>Quellenangabe erforderlich</b>':'')+(p.share_alike_applies?' · <span class="gap">ShareAlike</span>':'');
+  const rl={facts:"Fakten",expression:"Formulierung"};
+  const src=(p.sources||[]).map(s=>`<div class="muted">– [${rl[s.role]||s.role}] „${esc(s.title)}“${s.publisher?', '+esc(s.publisher):''}${s.licence?', '+esc(s.licence):''}${s.retrieved?' (abgerufen '+esc(s.retrieved)+')':''}${s.url?` — <a href="${esc(s.url)}" target="_blank" rel="noopener">Quelle</a>`:''}</div>`).join("");
+  return `<div style="margin-top:4px;border-left:3px solid #b39ddb;padding-left:6px"><span class="badge">Provenienz: ${esc(tag)}</span>${flags}${src}</div>`;
+}
 function blk(b, num, imgSrc){
   if(b.role==="info"){
     return `<div class="blk info"><span class="badge">${b.kind}</span>${esc(rt(b.content))}
-      ${figs(b, imgSrc)}
+      ${figs(b, imgSrc)}${prov(b)}
       ${(b.watch_outs||[]).map(w=>`<div class="watch">⚠ ${esc(w)}</div>`).join("")}</div>`;
   }
   const resp = b.response? ({lines:`${b.response.n} Zeilen`,box:`Box ${b.response.min_height_mm||''}mm`,table:'Tabelle',choices:'Auswahl',none:'mündlich/keine',diagram:'Diagramm',drawing:'Skizze',artifact:'Produkt'}[b.response.mode]||b.response.mode):"";
@@ -338,6 +348,7 @@ function blk(b, num, imgSrc){
     ${b.answer_key?`<div class="ans"><b>Lösung:</b> ${esc(rt(b.answer_key))}</div>`:""}
     ${b.acceptable_reasoning?`<div class="ans"><b>Spielraum:</b> ${esc(rt(b.acceptable_reasoning))}</div>`:""}
     ${(b.rubric||[]).map(r=>`<div class="muted">Kriterium — ${esc(r.criterion)}: ${(r.levels||[]).map(esc).join(" / ")}</div>`).join("")}
+    ${prov(b)}
     ${(b.watch_outs||[]).map(w=>`<div class="watch">⚠ ${esc(w)}</div>`).join("")}</div>`;
 }
 function nachweis(n){

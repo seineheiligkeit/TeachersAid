@@ -29,6 +29,7 @@ from .blocks import (
     TaskPayload,
 )
 from .enums import CalloutRole, InfoKind, Role
+from .provenance import BlockProvenance
 from .response import ResponseSpec
 from .worksheet import Baustein, TeacherOverview, WorksheetContent
 
@@ -46,6 +47,8 @@ class GenInfoBlock(BaseModel):
     modality: str = "printable"
     asset_refs: list[str] = Field(default_factory=list)
     flags: ContentFlags | None = None
+    provenance: BlockProvenance | None = None  # expression provenance (declared: origin + sources;
+    # the obligation booleans on it are derived/computed, not part of the input schema)
 
 
 class GenTaskBlock(BaseModel):
@@ -71,6 +74,7 @@ class GenTaskBlock(BaseModel):
     modality: str = "printable"
     asset_refs: list[str] = Field(default_factory=list)
     flags: ContentFlags | None = None
+    provenance: BlockProvenance | None = None  # expression provenance (see GenInfoBlock)
 
 
 GenBlock = Annotated[GenInfoBlock | GenTaskBlock, Field(discriminator="role")]
@@ -168,6 +172,7 @@ def _info_to_canonical(g: GenInfoBlock) -> InfoBlock:
         modality=g.modality,
         asset_refs=g.asset_refs,
         flags=g.flags,
+        provenance=g.provenance,
     )
 
 
@@ -193,6 +198,7 @@ def _task_to_canonical(g: GenTaskBlock) -> TaskBlock:
         modality=g.modality,
         asset_refs=g.asset_refs,
         flags=g.flags,
+        provenance=g.provenance,
     )
 
 

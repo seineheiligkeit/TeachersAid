@@ -47,6 +47,7 @@ from .enums import (
     Role,
     Stufe,
 )
+from .provenance import BlockProvenance, ProvenanceSource
 from .response import ResponseSpec
 from .richtext import InlineRun, RichText, plain_text, to_runs
 from .verification import Thread, ThreadRack, VerificationItem
@@ -104,6 +105,8 @@ __all__ = [
     "Modality",
     "Role",
     "Stufe",
+    "BlockProvenance",
+    "ProvenanceSource",
     "ResponseSpec",
     "InlineRun",
     "RichText",
