@@ -11,15 +11,16 @@ and Lernarrangements) across all 16 Unterstufe subjects. Three further capabilit
 facts & data layer** (content states *real, cited numbers* from curated CC-BY datasets — Statistik Austria,
 World Bank, GeoSphere — derived into figures, never LLM-authored); a **parametric Maths engine** (one
 template → N correct-by-construction variants with worked solutions, via sympy, plus inline math
-typesetting); and **annotated authentic texts** (the Deutsch asset class — real, rights-cleared PD texts
-with a vetted annotation layer from which comprehension/analysis/writing tasks are *derived*, answers from
-the annotation not the LLM). Working language is English; the product's output is German (or a target language for Fremdsprache).
+typesetting); and **annotated authentic texts** (the Deutsch/Latein asset class — real, rights-cleared PD texts
+with a vetted annotation layer from which comprehension/analysis/translation/writing tasks are *derived*,
+answers from the annotation not the LLM; with an **audio/Hörverstehen** extension for modern FS — a
+TTS-backend seam + a teacher-only transcript). Working language is English; the product's output is German (or a target language for Fremdsprache).
 
 ## Run the demo
 
 ```bash
 pip install -e .            # Python 3.11–3.14; deps incl. reportlab, matplotlib, pymupdf, sympy
-python -m pytest -q         # 159 tests, all offline (no API key needed)
+python -m pytest -q         # 166 tests, all offline (no API key needed)
 python -m teachersaid seed  # seed the master-library examples + datasets into the review queue
 python -m teachersaid       # dashboard at http://127.0.0.1:8000
 ```

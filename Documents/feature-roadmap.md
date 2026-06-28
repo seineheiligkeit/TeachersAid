@@ -3,36 +3,38 @@
 Forward-looking *capability* features for TeachersAid. (The schema-version roadmap lives in
 `schema-roadmap-v0.4-v0.5.md`; this tracks product/engine features.)
 
-## ▶ Start here (state as of 27 Jun 2026, Sessions 4–5)
+## ▶ Start here (state as of 28 Jun 2026, Sessions 4–6)
 
-**Three "asset classes" now exist** — each makes content trustworthy by finding the thing that's
+**Four "asset classes" now exist** — each makes content trustworthy by finding the thing that's
 correct-by-construction (or curation) and making it the durable, reusable asset:
 - **Grounded-facts data layer** (Geography/MINT): real cited numbers from 8 curated CC-BY datasets →
   derived figures (population-pyramid · timeline · climate_diagram). Proven by 22 GWB/MAT/PHY worksheets.
 - **Parametric Maths engine**: sympy recipes → N correct-by-construction variants + worked Rechenweg;
-  10 templates across all 4 MAT KBs; inline math typesetting.
-- **Annotated authentic texts** (Deutsch + **Latein**): real rights-cleared PD texts + a vetted
-  annotation layer → derived comprehension/analysis/Medienkritik/writing tasks, line-numbered source
-  rendering, the AT 70-p.m.a. rights gate, the Texte tab. Flagships: Heine *Lore-Ley* + Lessing *Rabe
-  und Fuchs*; **Latein** extends it cleanly (Phaedrus *Vulpes et Corvus*) with `translation`/`grammar`/
-  `culture` annotation kinds (dims SPR/INH). See "Languages" below for FS/audio (planned).
+  10 templates across all 4 MAT KBs; inline math typesetting; **+ the geometry figure family (KB3)**
+  (right_triangle · rectangle · polygon · circle · coordinate_plane).
+- **Annotated authentic texts** (Deutsch + **Latein**): real PD texts + a vetted annotation layer →
+  derived comprehension/analysis/Medienkritik/translation/writing tasks, line-numbered source rendering,
+  the AT 70-p.m.a. rights gate, the Texte tab. Flagships: Heine *Lore-Ley*, Lessing *Rabe und Fuchs*,
+  Phaedrus *Vulpes et Corvus* (Latein: `translation`/`grammar`/`culture`).
+- **Audio / Hörverstehen** (modern FS): a `medium="audio"` `AnnotatedText` → spoken `audio:tts` asset +
+  listening tasks (HOR) + **teacher-only transcript**; the `audio:` backend seam (offline
+  `AudioNotConfigured`). Flagship: *Mia's school day* (A2). **Real TTS backend = the SME wires it.**
 
-Also: store consolidation (`store/base.py::JsonStore`, the future-DB seam). **162 tests green.**
+Also: store consolidation (`store/base.py::JsonStore`, the future-DB seam). **166 tests green.**
 
 **Recommended next, in order:**
 
-1. **Geometry recipe family (KB3)** — ✅ **figures DONE (27 Jun 2026):** `right_triangle` (Pythagoras),
-   `rectangle`, `polygon`, `circle`, `coordinate_plane` (matplotlib, no new dep; labels spec-provided so a
-   figure never leaks the answer; media-policy clean, exempt from the (c)-label as non-empirical). **Still
-   to do:** wire the parametric engine to *emit* a figure per variant (Pythagoras/area "with a figure" —
-   add an optional `figure` to `Instance` → `asset_refs` on the block); `nets` (Netze) of solids; richer
-   construction tasks (the `construction` task kind already exists).
-2. **Languages — modern FS (English/French): the audio breakthrough** + annotated Realien (the big,
-   design-first track). See the new "Languages (FS / Latein)" section below for the full plan.
-3. **Scale the text libraries:** more annotated PD texts (DE + LAT) across grades (subagent-annotation +
+1. **Wire a real TTS backend** (`assets.register_audio_backend`) + an **audio review/player surface**
+   (the audio analogue of *Abbildungen*; offline the audio is "pending", transcript is the fallback) —
+   the one audio piece offline can't do. Then a **sourced-audio path** (real recordings + rights).
+2. **Annotated Realien for FS reading** — CEFR-leveled authentic everyday texts (menus, signs, schedules,
+   short messages) via the annotated-text engine; the leveling answer for FS Lesen.
+3. **Geometry — parametric figure emission:** wire the variant engine to *emit* a figure per instance
+   (Pythagoras/area "with a figure" — an optional `figure` on `Instance` → `asset_refs`); `nets`.
+4. **Scale the text libraries:** more annotated PD texts (DE + LAT) across grades (subagent-annotation +
    `tools/ingest_texts.py` proven); an **ANNO/OCR fetch tool** for real newspaper/advert media texts.
-4. **More parametric recipes + a "Varianten erzeugen" dashboard surface**; expose `orch.compose_variants`.
-5. **Re-ground the old invented-number figures** the (c)-label flags (c0081 urbanisation, c0096 climate,
+5. **More parametric recipes + a "Varianten erzeugen" dashboard surface**; expose `orch.compose_variants`.
+6. **Re-ground the old invented-number figures** the (c)-label flags (c0081 urbanisation, c0096 climate,
    c0097 HDI) by curating the few datasets they need; curate **BIO/other-subject** datasets; **Tier-2
    regional** down to Bezirk.
 
@@ -58,17 +60,18 @@ The catalog splits the languages cleanly, so they get different treatments:
   leveling fights "authentic" — native PD text is the wrong difficulty; (3) modern level-appropriate L2
   text/audio isn't PD. Two planned tracks:
 
-### Audio — Hörverstehen (the FS breakthrough; design-first, high effort)
-- **The asset:** a *vetted script* → **TTS-generated L2 audio + transcript**. Answers derive from the
-  script (correct by construction — we own it). TTS is legitimately machine-generatable for language
-  (unlike music). The elegant unification: **the transcript IS an `AnnotatedText`** → reuse the engine
-  for Hören *and* Lesen from one asset; the printable transcript is the always-present fallback.
-- **Architecture (mirrors the diffusion seam):** a pluggable `audio:` backend (`register_audio_backend`,
-  the SME wires the TTS), `Asset.medium = audio`, provenance/rights (`machine_generatable` for TTS;
-  sourced real audio carries rights like sourced visuals). A new **non-PDF artifact type** (audio file +
-  transcript PDF), a player/QA step, and a **vetting lane** (the audio analogue of *Abbildungen*).
-- **Effort:** high — breaks the PDF-only output assumption; needs a design pass before building (artifact
-  type, store/review surface, rendering/player). It is the single biggest unmet *modality*, FS the reason.
+### Audio — Hörverstehen (the FS breakthrough) — ✅ **engine + seam DONE (28 Jun 2026)**
+- **Built:** an `AnnotatedText` with `medium="audio"` → `build_worksheet` attaches a spoken
+  `Asset(role="tts", generator="audio:tts", medium=audio)`, renders a printable audio cue + listening
+  tasks (`listening_task`, dim HOR), and keeps the **transcript teacher-only** (oral-modality `source_text`;
+  `show_transcript=True` → A1 listen-and-read). The **`audio:` backend seam**
+  (`assets.register_audio_backend` / `build_audio` → `.mp3`, offline `AudioNotConfigured`) mirrors the
+  diffusion seam; media-policy admits `tts` as a code backend; transcript = printable fallback. Scripts are
+  **authored-then-vetted** (no PD A1/A2 L2 audio to select). Flagship: *Mia's school day* (A2, FS1 Kl 2).
+  Proven offline with a mock TTS; the transcript-teacher-only projection verified.
+- **Still to do:** wire a **real TTS backend** (the SME's engine — the only thing offline can't do); an
+  **audio review/player surface** (the audio analogue of *Abbildungen*; offline it's "pending"); and a
+  **sourced-audio path** (real recordings + rights, deferred). These are the remaining audio pieces.
 
 ### Annotated Realien — the CEFR-leveling answer (medium effort, printable, reuses the engine)
 - **The asset:** point the annotated-text engine at **level-appropriate authentic everyday texts** —

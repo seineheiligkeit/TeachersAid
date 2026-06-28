@@ -23,7 +23,7 @@ The repository has two layers:
 ```bash
 pip install -e .                       # deps: pydantic2, fastapi, uvicorn, anthropic, reportlab,
                                        #       matplotlib, pillow, pyyaml, pymupdf, sympy  (pytest for dev)
-python -m pytest -q                    # 162 tests, fully offline (no API key required)
+python -m pytest -q                    # 166 tests, fully offline (no API key required)
 python -m teachersaid seed             # seed the master-library examples into the review queue
 python -m teachersaid                  # dashboard → http://127.0.0.1:8000
 ```
@@ -232,8 +232,16 @@ One annotated text → many tasks across grades; it compounds like the catalogs.
 - **Scaling**: subagents add the annotation layer to a *provided verbatim* PD text → `AnnotatedText` JSON
   → `tools/ingest_texts.py` (validate → rights gate → build → verify → stage); the text is never authored,
   only annotated. A true newspaper/advert media text needs an ANNO/OCR fetch tool (next).
-- **Modern FS (English/French) is the trickier track** — oral-heavy + CEFR-leveled + modern copyright;
-  the plan (audio/Hörverstehen + annotated Realien) is in `Documents/feature-roadmap.md` "Languages".
+- **Audio / Hörverstehen (modern FS)** — a listening text is an `AnnotatedText` with `medium="audio"`:
+  `build_worksheet` attaches a spoken `Asset(role="tts", medium=audio, generator="audio:tts")`, renders a
+  printable audio cue + listening tasks (`listening_task`, dim HOR), and makes the transcript **teacher-
+  only** (an `oral`-modality `source_text` → dropped on the student sheet; `show_transcript=True` gives an
+  A1 listen-and-read variant). The **`audio:` backend seam** (`assets.register_audio_backend` /
+  `build_audio` → `.mp3`, offline `AudioNotConfigured`) mirrors the diffusion seam — the SME wires the real
+  TTS; media-policy admits `tts` as a code backend; the transcript is the always-present printable fallback.
+  Scripts are **authored-then-vetted** (no PD A1/A2 L2 audio to select). Flagship: *Mia's school day* (A2).
+- **Still trickier / planned** — annotated **Realien** (CEFR-leveled authentic everyday texts), a real TTS
+  backend + an audio review/player surface, and a sourced-audio path; see `feature-roadmap.md` "Languages".
 
 ## Master library (`teachersaid/library/`)
 
