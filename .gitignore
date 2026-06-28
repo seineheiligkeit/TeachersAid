@@ -24,6 +24,13 @@ __pycache__/
 runs/
 .venv/
 venv/
+.venv-tts/
+.venv-tts-gpu/
+
+# Voice reference audio — re-fetchable from VCTK/FLEURS by tools/fetch_*_voices.py
+# (the provenance JSON in grounding/voices/ is committed; the binaries are not,
+# like the RIS Lehrplan source).
+teachersaid/grounding/voices/audio/
 
 # Scratch / prototype output (not engine output) — kept local only, like runs/
 output/

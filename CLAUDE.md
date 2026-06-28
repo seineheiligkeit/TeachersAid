@@ -236,12 +236,20 @@ One annotated text → many tasks across grades; it compounds like the catalogs.
   `build_worksheet` attaches a spoken `Asset(role="tts", medium=audio, generator="audio:tts")`, renders a
   printable audio cue + listening tasks (`listening_task`, dim HOR), and makes the transcript **teacher-
   only** (an `oral`-modality `source_text` → dropped on the student sheet; `show_transcript=True` gives an
-  A1 listen-and-read variant). The **`audio:` backend seam** (`assets.register_audio_backend` /
-  `build_audio` → `.mp3`, offline `AudioNotConfigured`) mirrors the diffusion seam — the SME wires the real
-  TTS; media-policy admits `tts` as a code backend; the transcript is the always-present printable fallback.
-  Scripts are **authored-then-vetted** (no PD A1/A2 L2 audio to select). Flagship: *Mia's school day* (A2).
-- **Still trickier / planned** — annotated **Realien** (CEFR-leveled authentic everyday texts), a real TTS
-  backend + an audio review/player surface, and a sourced-audio path; see `feature-roadmap.md` "Languages".
+  A1 listen-and-read variant). Media-policy admits `tts` as a code backend; the transcript is the always-
+  present printable fallback. Scripts are **authored-then-vetted** (no PD A1/A2 L2 audio to select).
+  Flagship: *Mia's school day* (A2). **The `audio:` backend is now IMPLEMENTED** (full notes:
+  `Documents/tts-audio-engine.md`): **F5-TTS multi-voice on the local GPU**. Because CUDA torch has no
+  cp314 wheel, the 3.14 core drives a **separate Python 3.12** subprocess — `teachersaid/audio/f5_backend.py`
+  (core, no torch) normalizes the spec into dialogue **`turns`**, resolves each turn's `(lang, persona)` to a
+  curated voice via `grounding/voice_store.py`, calls `teachersaid/audio/f5_render.py` (the GPU worker,
+  *executed* never *imported*), then ffmpeg-encodes mp3. **Voices are selected, never authored:** a rights-
+  gated **voice reference library** (`schema/voices.py` · `grounding/voices/` · `tools/fetch_vctk_voices.py`)
+  of CC-BY young-adult VCTK clips — the audio twin of the data layer. `register()` wires it; offline it stays
+  `AudioNotConfigured` (transcript fallback). Config: `TTS_PYTHON`/`TTS_PYTHON_SITE`/`TTS_FFMPEG`.
+- **Still trickier / planned** — annotated **Realien** (CEFR-leveled authentic everyday texts); the audio
+  **HITL "Stimmen" review tab** + `text_tasks` dialogue-**turns** emission + **FLEURS** refs/`de/fr/it/es`
+  checkpoints; and a sourced-audio path; see `feature-roadmap.md` "Languages" + `tts-audio-engine.md §7`.
 
 ## History / expression provenance (the GPB asset class)
 

@@ -17,16 +17,18 @@ correct-by-construction (or curation) and making it the durable, reusable asset:
   the AT 70-p.m.a. rights gate, the Texte tab. Flagships: Heine *Lore-Ley*, Lessing *Rabe und Fuchs*,
   Phaedrus *Vulpes et Corvus* (Latein: `translation`/`grammar`/`culture`).
 - **Audio / Hörverstehen** (modern FS): a `medium="audio"` `AnnotatedText` → spoken `audio:tts` asset +
-  listening tasks (HOR) + **teacher-only transcript**; the `audio:` backend seam (offline
-  `AudioNotConfigured`). Flagship: *Mia's school day* (A2). **Real TTS backend = the SME wires it.**
+  listening tasks (HOR) + **teacher-only transcript**. The **real TTS backend is now WIRED** — F5-TTS
+  multi-voice on the local GPU, voices selected from a curated rights-gated reference library. See
+  `Documents/tts-audio-engine.md`. Flagship: *Mia's school day* (A2).
 
-Also: store consolidation (`store/base.py::JsonStore`, the future-DB seam). **166 tests green.**
+Also: store consolidation (`store/base.py::JsonStore`, the future-DB seam). **204 tests green.**
 
 **Recommended next, in order:**
 
-1. **Wire a real TTS backend** (`assets.register_audio_backend`) + an **audio review/player surface**
-   (the audio analogue of *Abbildungen*; offline the audio is "pending", transcript is the fallback) —
-   the one audio piece offline can't do. Then a **sourced-audio path** (real recordings + rights).
+1. **Finish the audio product surface** (engine is wired; see `tts-audio-engine.md §7`): a HITL
+   **"Stimmen" review tab** (`VoiceStore`, the *Abbildungen*/*Datensätze* analogue) + call
+   `audio.register()` at dashboard startup; evolve `text_tasks` to emit a **turns** spec from a dialogue
+   `AnnotatedText` (needs a speaker/turn model); add **FLEURS** references + `de/fr/it/es` checkpoints.
 2. **Annotated Realien for FS reading** — CEFR-leveled authentic everyday texts (menus, signs, schedules,
    short messages) via the annotated-text engine; the leveling answer for FS Lesen.
 3. **Geometry — parametric figure emission:** wire the variant engine to *emit* a figure per instance
@@ -60,18 +62,22 @@ The catalog splits the languages cleanly, so they get different treatments:
   leveling fights "authentic" — native PD text is the wrong difficulty; (3) modern level-appropriate L2
   text/audio isn't PD. Two planned tracks:
 
-### Audio — Hörverstehen (the FS breakthrough) — ✅ **engine + seam DONE (28 Jun 2026)**
-- **Built:** an `AnnotatedText` with `medium="audio"` → `build_worksheet` attaches a spoken
+### Audio — Hörverstehen (the FS breakthrough) — ✅ **engine + seam + REAL BACKEND DONE (28 Jun 2026)**
+- **Content layer:** an `AnnotatedText` with `medium="audio"` → `build_worksheet` attaches a spoken
   `Asset(role="tts", generator="audio:tts", medium=audio)`, renders a printable audio cue + listening
   tasks (`listening_task`, dim HOR), and keeps the **transcript teacher-only** (oral-modality `source_text`;
-  `show_transcript=True` → A1 listen-and-read). The **`audio:` backend seam**
-  (`assets.register_audio_backend` / `build_audio` → `.mp3`, offline `AudioNotConfigured`) mirrors the
-  diffusion seam; media-policy admits `tts` as a code backend; transcript = printable fallback. Scripts are
-  **authored-then-vetted** (no PD A1/A2 L2 audio to select). Flagship: *Mia's school day* (A2, FS1 Kl 2).
-  Proven offline with a mock TTS; the transcript-teacher-only projection verified.
-- **Still to do:** wire a **real TTS backend** (the SME's engine — the only thing offline can't do); an
-  **audio review/player surface** (the audio analogue of *Abbildungen*; offline it's "pending"); and a
-  **sourced-audio path** (real recordings + rights, deferred). These are the remaining audio pieces.
+  `show_transcript=True` → A1 listen-and-read). Media-policy admits `tts` as a code backend; transcript =
+  printable fallback. Flagship: *Mia's school day* (A2, FS1 Kl 2).
+- **Real TTS backend — WIRED (full notes: `Documents/tts-audio-engine.md`):** **F5-TTS multi-voice on the
+  local GPU** (RTX 4070, ~4× real-time). Architecture: the 3.14 core drives a **separate Python 3.12**
+  subprocess (CUDA torch has no cp314 wheel) — `audio/f5_backend.py` (core, no torch) resolves each turn's
+  `(lang, persona)` to a curated voice and calls `audio/f5_render.py` (GPU), then ffmpeg-encodes mp3.
+  Voices are **selected, never authored**: a **rights-gated reference library** (`schema/voices.py`,
+  `grounding/voice_store.py`, `tools/fetch_vctk_voices.py`) of CC-BY young-adult VCTK clips. `turns` spec =
+  multi-voice dialogues (the v1 capability). Proven end-to-end via `build_audio`; 8 offline tests added.
+- **Still to do** (see `tts-audio-engine.md §7`): the HITL **"Stimmen" review tab** + `audio.register()` at
+  startup; `text_tasks` **turns** emission from a dialogue text; **FLEURS** refs + `de/fr/it/es` checkpoints;
+  a **sourced-audio path** (real recordings + rights, deferred).
 
 ### Annotated Realien — the CEFR-leveling answer (medium effort, printable, reuses the engine)
 - **The asset:** point the annotated-text engine at **level-appropriate authentic everyday texts** —
