@@ -8,11 +8,12 @@ from teachersaid.pipeline.difficulty import _RANK_TO_BAND
 from teachersaid.schema.enums import CognitiveLevel
 
 
-def test_table_well_formed():
-    assert set(ops.OPERATORS) == {1, 2, 3}
-    for band in (1, 2, 3):
-        assert ops.OPERATORS[band], f"AFB {band} has no operators"
-        assert all(isinstance(v, str) and v for v in ops.OPERATORS[band])
+def test_tables_well_formed():
+    for table in (ops.DEFAULT, ops.DEUTSCH):
+        assert set(table) == {1, 2, 3}
+        for band in (1, 2, 3):
+            assert table[band], f"AFB {band} empty"
+            assert all(isinstance(o, ops.Operator) and o.forms for o in table[band])
 
 
 def test_one_ladder_with_difficulty():
@@ -25,23 +26,34 @@ def test_level_maps_to_band():
     assert ops.afb_for_level(CognitiveLevel.REMEMBER) == 1
     assert ops.afb_for_level(CognitiveLevel.APPLY) == 2
     assert ops.afb_for_level(CognitiveLevel.CREATE) == 3
-    # unknown level falls back exactly as difficulty.py does (rank default 1 → band 1),
-    # never raises
+    # unknown level falls back exactly as difficulty.py does (rank default 1 → band 1)
     assert ops.afb_for_level("nonsense") == 1
-    assert ops.operators_for_level(CognitiveLevel.EVALUATE) == ops.OPERATORS[3]
 
 
-def test_brief_lists_every_band():
-    brief = ops.format_operators_brief()
+def test_deutsch_is_authoritative():
+    assert ops.is_authoritative("Deutsch")
+    assert not ops.is_authoritative("Physik")
+    assert ops.operator_set("Physik") is ops.DEFAULT
+    assert ops.operator_set("Deutsch") is ops.DEUTSCH
+    # the Deutsch catalog carries the official definitions (not just bare verbs)
+    erfoertern = [o for o in ops.DEUTSCH[3] if "erörtern" in o.forms]
+    assert erfoertern and erfoertern[0].definition
+
+
+def test_brief_is_subject_specific():
+    de = ops.format_operators_brief("Deutsch")
     for band in (1, 2, 3):
-        assert ops.AFB_LABEL[band] in brief
-    # a representative operator from each band surfaces
-    assert "beschreiben" in brief and "berechnen" in brief and "beurteilen" in brief
+        assert ops.AFB_LABEL[band] in de
+    assert "erörtern" in de and "Deutsch" in de
+    # a subject without a catalog gets the generic palette, flagged as such
+    phy = ops.format_operators_brief("Physik")
+    assert "berechnen" in phy and "pending" in phy
 
 
 def test_injected_into_generation_prompt():
-    model = ls.get_subject_model("Physik")
-    system = build_system(model)
-    assert "Operatoren" in system
-    assert "Anforderungsbereich" in system
-    assert "beurteilen" in system  # an AFB III verb made it into the brief
+    de_system = build_system(ls.get_subject_model("Deutsch"))
+    assert "Operatoren" in de_system and "Anforderungsbereich" in de_system
+    assert "erörtern" in de_system  # the authoritative Deutsch verb made it in
+    # a non-curated subject still gets a (generic) operator palette
+    phy_system = build_system(ls.get_subject_model("Physik"))
+    assert "Operatoren" in phy_system and "berechnen" in phy_system

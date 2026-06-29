@@ -70,7 +70,7 @@ def build_system(model: SubjectCompetenceModel) -> str:
         f"- Allowed `cognitive_level`: {', '.join(_COGNITIVE)}.\n"
         "- Depth = cognitive demand, not word count. Make tasks climb a ladder and "
         "be resource-independent where possible.\n"
-        f"{format_operators_brief()}\n"
+        f"{format_operators_brief(model.subject)}\n"
         "- Correctness by construction: never assert a fact you are unsure of; put "
         "anything a teacher must watch for in `watch_outs` (load-bearing).\n"
         "- Each task's `serves` must reference one of the given competence ids.\n"
