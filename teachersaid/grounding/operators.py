@@ -43,6 +43,8 @@ Sources (all CC BY via IWG 2022, published by BMBWF/IQS / AECC):
   AECC-Biologie, Univ. Wien, Stand Juni 2018, V3) — the W/E/S tags are read verbatim from
   the catalog's grid. Used as the shared *Naturwissenschaften* base for BIO/PHY/CHE
   (shared W/E/S); PHY/CHE may later refine with their own subject specifics.
+- GWB: *"Operatorenliste"* (Ch. Sitte 2011, GW-Unterricht H. 124, after Fraedrich/Hieber/
+  Lenz) — AFB-banded with definitions.
 """
 
 from __future__ import annotations
@@ -222,9 +224,106 @@ MATHEMATIK: list[Operator] = [
     Operator("zuordnen", answer_format="z"),
 ]
 
+# --- Geographie und wirtschaftliche Bildung (GWB) — Ch. Sitte 2011 --------------------
+# AFB-banded with definitions (after Fraedrich/Hieber/Lenz, varied & extended by Sitte).
+GEOGRAPHIE: list[Operator] = [
+    Operator("aufzeigen", "komplexe Sachverhalte bekannter Problemstellungen in ihren "
+             "Grundaussagen knapp wiedergeben", afb=(1,)),
+    Operator("auswählen", "zutreffende geographische/wirtschaftliche/politische "
+             "Informationen aus einer Antwortvielfalt herausfinden und markieren (MC, "
+             "Zuordnung)", afb=(1,)),
+    Operator("beschreiben", "Materialaussagen und Kenntnisse (unter vorgegebenem Aspekt) "
+             "mit eigenen Worten geordnet und fachsprachlich wiedergeben", afb=(1,)),
+    Operator("durchführen", "Handlungen, Tätigkeiten, Untersuchungen nach genauer "
+             "Anleitung vollziehen (Experiment, Erkundung, Befragung, Diagramm)", afb=(1,)),
+    Operator("eintragen", "Informationen in eine (Karten-)Skizze, Struktur- oder "
+             "Ablaufdiagramm einzeichnen, ergänzen, beschriften", afb=(1,)),
+    Operator("ermitteln / bestimmen", "Informationen und Fakten aus Medien (Sachtexte, "
+             "Statistiken, Karten) entnehmen bzw. feststellen", afb=(1,)),
+    Operator("herausarbeiten", "Informationen und Sachverhalte unter bestimmten "
+             "Gesichtspunkten aus Material entnehmen, wiedergeben oder berechnen", afb=(1,)),
+    Operator("kennzeichnen", "Sachverhalte in einer (Karten-)Skizze oder Grafik "
+             "verdeutlichen (z. B. durch Farben, Pfeile)", afb=(1,)),
+    Operator("kreuze an / unterstreiche", "aus vorgegebenen Informationen die passenden "
+             "auswählen und markieren", afb=(1,)),
+    Operator("lokalisieren / verorten", "die Lage eines Ortes/Standorts/Flusses/Gebirges "
+             "auf einer Karte eintragen oder räumlich beschreiben", afb=(1,)),
+    Operator("nennen / benennen", "Informationen und Sachverhalte aus Material oder "
+             "Kenntnisse ohne Kommentierung wiedergeben", afb=(1,)),
+    Operator("protokollieren", "Beobachtungen oder die Durchführung von Experimenten "
+             "detailgenau und fachsprachlich richtig wiedergeben", afb=(1,)),
+    Operator("wiedergeben", "dem Material gezielt Informationen entnehmen bzw. Erlerntes "
+             "wiedergeben, ohne eigene Meinung, Ergänzung oder Interpretation", afb=(1,)),
+    Operator("zusammenfassen", "Material- bzw. Lerninhalte so wiedergeben, dass in kurzer "
+             "Form die inhaltlichen Schwerpunkte deutlich werden", afb=(1,)),
+    Operator("(zu)ordnen / einordnen", "einen Sachverhalt oder Raum nach Kriterien in eine "
+             "sinnvolle Reihenfolge bzw. ein Ordnungsraster bringen", afb=(1, 2)),
+    Operator("analysieren", "Materialien oder Sachverhalte systematisch untersuchen, "
+             "auswerten und Strukturen oder Zusammenhänge herausarbeiten", afb=(2,)),
+    Operator("anwenden", "Regeln, Theorien oder Modelle mit einem konkreten Fall-/"
+             "Raumbeispiel in Bezug bringen", afb=(2,)),
+    Operator("auswerten", "Sachverhalte aus Medien (Sachtexte, Statistiken, Diagramme, "
+             "Karten) entnehmen und in Beziehung setzen", afb=(2,)),
+    Operator("bestimmen", "geographische Objekte mithilfe von Merkmalen/Daten kennzeichnen "
+             "oder die Zugehörigkeit zu einem Ordnungsmuster feststellen", afb=(2,)),
+    Operator("charakterisieren", "Sachverhalte in ihren Eigenarten beschreiben und "
+             "typische Merkmale gewichtend herausarbeiten", afb=(2,)),
+    Operator("darstellen / formulieren", "Sachverhalte, Zusammenhänge, Methoden in "
+             "angemessener Kommunikationsform strukturiert wiedergeben", afb=(2,)),
+    Operator("erarbeiten", "aus Materialien nicht explizit genannte Sachverhalte "
+             "erschließen und Zusammenhänge herstellen", afb=(2,)),
+    Operator("erklären", "Informationen und Sachverhalte so darstellen, dass Bedingungen, "
+             "Ursachen, Folgen und Gesetzmäßigkeiten verständlich werden", afb=(2,)),
+    Operator("erläutern", "Sachverhalte im Zusammenhang beschreiben und Beziehungen "
+             "deutlich machen", afb=(2,)),
+    Operator("erstellen", "Sachverhalte grafisch darstellen und fachsprachlich beschriften "
+             "(Fließschema, Diagramm, Kartenskizze, Mind Map)", afb=(2,)),
+    Operator("gegenüberstellen", "Informationen, Sachverhalte, Argumente beschreibend "
+             "einander gegenüberstellen (noch ohne Bewertung wie bei „vergleichen“)",
+             afb=(2,)),
+    Operator("gliedern", "Sachverhalte systematisieren, gewichten und durch Abfolge/"
+             "Zuordnung ihre Bedeutung herausstellen", afb=(2,)),
+    Operator("nachweisen / überprüfen", "Gültigkeit von Aussagen, Theorien und "
+             "(Hypo-)Thesen prüfen", afb=(2,)),
+    Operator("planen", "zu einem Problem eine Vorgehensweise erstellen "
+             "(Experimentieranleitung, Befragung, Raumanalyse)", afb=(2,)),
+    Operator("übertragen", "einen bekannten Sachverhalt auf eine neue Problemstellung "
+             "beziehen", afb=(2,)),
+    Operator("vergleichen", "Gemeinsamkeiten und Unterschiede gewichtend gegenüberstellen "
+             "und ein Ergebnis bzw. Fazit formulieren", afb=(2,)),
+    Operator("zeichnen / gestalten", "Sachverhalte in eine grafische Darstellungsform "
+             "bringen (Skizze, Struktur-/Ablaufdiagramm, Mind Map)", afb=(2,)),
+    Operator("ableiten", "begründete Schlussfolgerungen, (Lösungs-)Vorschläge, Maßnahmen, "
+             "Perspektiven unter Beachtung der Gegebenheiten formulieren", afb=(3,)),
+    Operator("begründen", "komplexe Grundgedanken argumentativ schlüssig entwickeln und im "
+             "Zusammenhang darstellen", afb=(3,)),
+    Operator("beurteilen", "Aussagen, Vorschläge, Maßnahmen auf Stichhaltigkeit/"
+             "Angemessenheit prüfen und die Kriterien nennen, ohne persönlich Stellung zu "
+             "beziehen", afb=(3,)),
+    Operator("bewerten", "wie „beurteilen“, aber unter Offenlegung der Wertmaßstäbe und mit "
+             "fachlich abgesicherter persönlicher Stellungnahme", afb=(3,)),
+    Operator("Stellung nehmen", "zu einem Sachverhalt/einer Behauptung differenziert "
+             "argumentierend eine eigene Meinung äußern", afb=(3,)),
+    Operator("entwickeln", "Sachverhalte und Methoden zielgerichtet verknüpfen (Hypothese, "
+             "Untersuchungsplan, Modell entwerfen)", afb=(3,)),
+    Operator("erörtern / diskutieren", "zu einer Problemstellung eigene Gedanken entwickeln "
+             "und ein abgewogenes Sachurteil (über Pro-/Kontra-Argumentation) fällen, "
+             "Standpunkte herausarbeiten und begründen", afb=(3,)),
+    Operator("gestalten", "sich produkt-/rollen-/adressatenorientiert mit einem Problem "
+             "auseinandersetzen (Rede, Streitgespräch, Szenario, Modell entwerfen)",
+             afb=(3,)),
+    Operator("interpretieren", "den Aussagegehalt geographischen/wirtschafts-/"
+             "politikbezogenen Materials erschließen und eine persönliche Deutung "
+             "vornehmen", afb=(3,)),
+    Operator("reflektieren", "im Umgang mit Material und Quellen reflektiert arbeiten und "
+             "das Ergebnis in Bezug zur gewählten Verfahrensweise setzen", afb=(3,)),
+    Operator("überprüfen", "vorgegebene Aussagen/Thesen auf ihre innere Stimmigkeit und "
+             "Angemessenheit untersuchen", afb=(3,)),
+]
+
 # --- Generic fallback — PROVISIONAL (no subject catalog curated yet) ------------------
 # Common German task verbs that span subjects; replace per subject as official catalogs
-# are curated (remaining: GWB, Fremdsprachen, Latein, Geometrisches Zeichnen, …).
+# are curated (remaining: Fremdsprachen, Latein, Geometrisches Zeichnen, Ethik, …).
 DEFAULT: list[Operator] = [
     Operator("nennen", afb=(1,)), Operator("benennen", afb=(1,)),
     Operator("beschreiben", afb=(1,)), Operator("angeben", afb=(1,)),
@@ -242,26 +341,41 @@ DEFAULT: list[Operator] = [
     Operator("entwickeln", afb=(3,)),
 ]
 
-# subject name → authoritative catalog. Subjects absent here use DEFAULT.
-# BIO/PHY/CHE share the Naturwissenschaften catalog (shared W/E/S model); PHY/CHE may
-# later get their own refinements (SME to confirm).
+# Canonical subject CODE → authoritative catalog. Keyed by code (not display name) and
+# resolved via lehrplan_store so any alias / Stufe / display-name a caller passes routes
+# correctly (model.subject is the caller's string, not a canonical code). Codes absent
+# here use DEFAULT. BIO/PHY/CHE share the Naturwissenschaften catalog (shared W/E/S model);
+# PHY/CHE may later get their own refinements (SME to confirm).
 SUBJECT_OPERATORS: dict[str, list[Operator]] = {
-    "Deutsch": DEUTSCH,
-    "Mathematik": MATHEMATIK,
-    "Biologie": NATURWISSENSCHAFTEN,
-    "Physik": NATURWISSENSCHAFTEN,
-    "Chemie": NATURWISSENSCHAFTEN,
+    "DEU": DEUTSCH,
+    "MAT": MATHEMATIK,
+    "BIO": NATURWISSENSCHAFTEN,
+    "PHY": NATURWISSENSCHAFTEN,
+    "CHE": NATURWISSENSCHAFTEN,
+    "GWB": GEOGRAPHIE,
 }
+
+
+def _code(subject: str | None) -> str | None:
+    """Resolve a subject name/alias/display-name to its canonical catalog code."""
+    if not subject:
+        return None
+    from . import lehrplan_store as ls  # local import (mirrors prompts.build_user)
+    for stufe in ("Unterstufe", "Oberstufe"):
+        code = ls._code_for(subject, stufe)
+        if code:
+            return code
+    return None
 
 
 def operator_set(subject: str | None) -> list[Operator]:
     """The operator catalog for a subject — its authoritative list if curated, else the
     generic fallback."""
-    return SUBJECT_OPERATORS.get(subject or "", DEFAULT)
+    return SUBJECT_OPERATORS.get(_code(subject) or "", DEFAULT)
 
 
 def is_authoritative(subject: str | None) -> bool:
-    return (subject or "") in SUBJECT_OPERATORS
+    return _code(subject) in SUBJECT_OPERATORS
 
 
 def is_banded(catalog: list[Operator]) -> bool:

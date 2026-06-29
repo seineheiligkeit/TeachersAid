@@ -9,7 +9,8 @@ from teachersaid.schema.enums import CognitiveLevel
 
 
 def test_catalogs_well_formed():
-    for cat in (ops.DEUTSCH, ops.NATURWISSENSCHAFTEN, ops.MATHEMATIK, ops.DEFAULT):
+    for cat in (ops.DEUTSCH, ops.NATURWISSENSCHAFTEN, ops.MATHEMATIK, ops.GEOGRAPHIE,
+                ops.DEFAULT):
         assert cat and all(isinstance(o, ops.Operator) and o.forms for o in cat)
         for o in cat:
             assert all(b in (1, 2, 3) for b in o.afb)
@@ -32,16 +33,26 @@ def test_level_maps_to_band():
 
 def test_subject_routing():
     assert ops.is_authoritative("Deutsch") and ops.is_authoritative("Physik")
-    assert not ops.is_authoritative("Geschichte und politische Bildung")
+    assert ops.is_authoritative("GWB")
+    assert not ops.is_authoritative("Bewegung und Sport")
     # BIO/PHY/CHE share the Naturwissenschaften catalog
     assert ops.operator_set("Physik") is ops.NATURWISSENSCHAFTEN
     assert ops.operator_set("Chemie") is ops.NATURWISSENSCHAFTEN
     assert ops.operator_set("Mathematik") is ops.MATHEMATIK
-    assert ops.operator_set("Sport") is ops.DEFAULT  # uncurated → fallback
+    assert ops.operator_set("GWB") is ops.GEOGRAPHIE
+    assert ops.operator_set("Bewegung und Sport") is ops.DEFAULT  # uncurated → fallback
+
+
+def test_routing_is_code_based_not_name_based():
+    """The GWB demo passes the long display name, sciences the short name — both must
+    route via canonical code (model.subject is the caller's string, not a code)."""
+    assert ops.operator_set("Geographie und wirtschaftliche Bildung") is ops.GEOGRAPHIE
+    assert ops.is_authoritative("Geographie und wirtschaftliche Bildung")
 
 
 def test_banded_vs_flat():
     assert ops.is_banded(ops.DEUTSCH) and ops.is_banded(ops.NATURWISSENSCHAFTEN)
+    assert ops.is_banded(ops.GEOGRAPHIE)
     assert not ops.is_banded(ops.MATHEMATIK)  # the official math list carries no AFB band
 
 
