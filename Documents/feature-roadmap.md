@@ -5,6 +5,13 @@ Forward-looking *capability* features for TeachersAid. (The schema-version roadm
 
 ## ▶ Start here (state as of 28 Jun 2026, Sessions 4–6)
 
+> **Update (29 Jun 2026): Matura orientation.** The SRDP (Matura) was studied as the competence-
+> model capstone. Two cheap, high-value uses agreed (NOT a new asset class — see
+> `Documents/matura-operators.md`): **#2 harvest the Operatoren — DONE** (a subject-aware grounding
+> table in `grounding/operators.py`, 4 authoritative CC-BY catalogs DEU/GWB/Naturwiss./MAT, wired
+> into the generation brief); **#1 calibration — NEXT** (tune `pipeline/difficulty.py` against real
+> point-weighted Matura items; handoff in that doc's §5, needs released Math AHS exams from the SME).
+
 **Four "asset classes" now exist** — each makes content trustworthy by finding the thing that's
 correct-by-construction (or curation) and making it the durable, reusable asset:
 - **Grounded-facts data layer** (Geography/MINT): real cited numbers from 8 curated CC-BY datasets →

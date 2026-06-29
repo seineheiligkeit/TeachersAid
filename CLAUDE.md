@@ -154,6 +154,23 @@ keeping the cross-cutting `descriptor`s. Ingest (`orch.ingest_generated`, `tools
 `\begin{cases}` (join inline), and avoid `ℝ` (U+211D) in plain-text titles (Carlito tofu). `tests/test_oberstufe.py`
 locks resolution + the pack + a **render** test (assemble/verify don't render, which is how the `\le` slip hid).
 
+## SRDP Operatoren — Matura-orientation vocabulary (`teachersaid/grounding/operators.py`)
+
+The Austrian **Matura** (SRDP) is the competence-model capstone; its standardized **Operatoren**
+(task verbs, banded by Anforderungsbereich) shape *what our tasks ask*. Harvested as **grounding,
+not an asset class** (the decision rule + the full Matura write-up: `Documents/matura-operators.md`):
+a controlled vocabulary injected into the generation brief (`llm/prompts.build_system`) —
+*select, never author*. **Four authoritative CC-BY catalogs**, each stored in its true shape (they
+don't share one): **Deutsch** + **GWB** (AFB-banded + definitions), **Naturwissenschaften**
+(BIO/PHY/CHE — AFB **and** the W/E/S model, read from the source grid; the three sciences share one
+base — SME decision), **Mathematik/AMT** (flat, *not* AFB-banded, + a preferred Antwortformat that
+maps to our `kind`: `mc→multiple_choice·z→matching·k→construction·l→table_fill·o/ho→open_response`).
+`_RANK_TO_AFB` is kept identical to `pipeline/difficulty._RANK_TO_BAND` (one ladder, two surfaces; a
+test locks it). **Routing is by canonical code** (`lehrplan_store._code_for`), not display name, since
+`model.subject` carries the caller's string. Other subjects fall back to a flagged generic palette;
+still to curate: FS/Latein/GZ/Ethik. **Next: #1 calibration** — tune `difficulty.py` against real
+point-weighted Matura items (see the doc's §5 handoff).
+
 ## Grounded facts & data layer (`teachersaid/grounding/data/`)
 
 Generalises the grounding discipline from **competences** to **facts**: content states *real,

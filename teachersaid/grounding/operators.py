@@ -41,8 +41,9 @@ Sources (all CC BY via IWG 2022, published by BMBWF/IQS / AECC):
 - Naturwissenschaften: *"Operatoren in der mündlichen und schriftlichen kompetenz­
   orientierten Reifeprüfung Biologie & Umweltkunde"* (A. Reichstädter & B. Müllner,
   AECC-Biologie, Univ. Wien, Stand Juni 2018, V3) — the W/E/S tags are read verbatim from
-  the catalog's grid. Used as the shared *Naturwissenschaften* base for BIO/PHY/CHE
-  (shared W/E/S); PHY/CHE may later refine with their own subject specifics.
+  the catalog's grid. **The shared *Naturwissenschaften* base for BIO/PHY/CHE** (SME
+  decision, 29 Jun 2026): the three sciences share the W/E/S model verbatim and no separate
+  official PHY/CHE operator catalog exists, so the Bio list serves all three.
 - GWB: *"Operatorenliste"* (Ch. Sitte 2011, GW-Unterricht H. 124, after Fraedrich/Hieber/
   Lenz) — AFB-banded with definitions.
 """
@@ -63,6 +64,17 @@ AFB_LABEL: dict[int, str] = {
 ANSWER_FORMAT_LABEL: dict[str, str] = {
     "o": "offen", "ho": "halboffen", "k": "Konstruktion",
     "mc": "Multiple-Choice", "z": "Zuordnung", "l": "Lückentext",
+}
+
+# Mathematik Antwortformat code → our task `kind` (core ∪ MAT task_kind_extensions), so a
+# Math operator's preferred answer format suggests an apt response affordance.
+FORMAT_TO_KIND: dict[str, str] = {
+    "mc": "multiple_choice",   # core
+    "z": "matching",           # core
+    "l": "table_fill",         # core (Lückentext → structured fill)
+    "k": "construction",       # MAT extension (Konstruktionsformat)
+    "o": "open_response",      # core (offen)
+    "ho": "open_response",     # core (halboffen → short open response)
 }
 
 # cognitive rank (0..5) → AFB band (1..3). Kept IDENTICAL to
@@ -344,8 +356,8 @@ DEFAULT: list[Operator] = [
 # Canonical subject CODE → authoritative catalog. Keyed by code (not display name) and
 # resolved via lehrplan_store so any alias / Stufe / display-name a caller passes routes
 # correctly (model.subject is the caller's string, not a canonical code). Codes absent
-# here use DEFAULT. BIO/PHY/CHE share the Naturwissenschaften catalog (shared W/E/S model);
-# PHY/CHE may later get their own refinements (SME to confirm).
+# here use DEFAULT. BIO/PHY/CHE share the Naturwissenschaften catalog (shared W/E/S model;
+# no separate PHY/CHE catalog exists — SME decision 29 Jun 2026).
 SUBJECT_OPERATORS: dict[str, list[Operator]] = {
     "DEU": DEUTSCH,
     "MAT": MATHEMATIK,
@@ -390,6 +402,17 @@ def afb_for_level(cognitive_level: str) -> int:
     return _RANK_TO_AFB.get(rank, 2)
 
 
+def kinds_for_answer_format(answer_format: str) -> list[str]:
+    """The suggested task ``kind``(s) for a Mathematik Antwortformat string (e.g. "ho/o"
+    or "mc"), in order and de-duplicated."""
+    out: list[str] = []
+    for code in answer_format.split("/"):
+        k = FORMAT_TO_KIND.get(code.strip())
+        if k and k not in out:
+            out.append(k)
+    return out
+
+
 def operators_for_level(cognitive_level: str, subject: str | None = None) -> list[Operator]:
     """The standardized operators that fit a ``cognitive_level`` for a subject. For a
     banded catalog: operators whose AFB band-set includes the level's band. For a flat
@@ -412,8 +435,9 @@ def format_operators_brief(subject: str | None = None) -> str:
         verbs = ", ".join(f"{o.forms} ({o.answer_format})" for o in catalog)
         return (
             f"Standardized SRDP Operatoren ({tag}) — the official list is not AFB-banded; "
-            f"each carries a preferred answer format ({legend}). Use an apt operator per "
-            f"task:\n  {verbs}"
+            f"each carries a preferred answer format ({legend}). The format suggests the "
+            f"task kind (mc→multiple_choice, z→matching, k→construction, l→table_fill, "
+            f"o/ho→open_response). Use an apt operator per task:\n  {verbs}"
         )
 
     lines = [

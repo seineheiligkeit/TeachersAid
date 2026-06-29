@@ -73,6 +73,22 @@ def test_operators_for_level():
     assert ops.operators_for_level(CognitiveLevel.REMEMBER, "Mathematik") is ops.MATHEMATIK
 
 
+def test_math_format_to_kind():
+    from teachersaid.schema.enums import CORE_TASK_KINDS
+    mat_ext = set(ls.get_subject_model("Mathematik").task_kind_extensions)
+    allowed = CORE_TASK_KINDS | mat_ext
+    # every mapped kind is a legal Math kind (core or MAT extension)
+    assert set(ops.FORMAT_TO_KIND.values()) <= allowed
+    assert "construction" in mat_ext  # the k → construction target exists
+    assert ops.kinds_for_answer_format("mc") == ["multiple_choice"]
+    assert ops.kinds_for_answer_format("ho/o") == ["open_response"]  # both → one, deduped
+    assert ops.kinds_for_answer_format("k/ho") == ["construction", "open_response"]
+    # every Math operator's answer format resolves to at least one suggested kind
+    for o in ops.MATHEMATIK:
+        assert ops.kinds_for_answer_format(o.answer_format)
+    assert "→multiple_choice" in ops.format_operators_brief("Mathematik")
+
+
 def test_brief_shapes_per_subject():
     de = ops.format_operators_brief("Deutsch")
     assert "erörtern" in de and all(ops.AFB_LABEL[b] in de for b in (1, 2, 3))
