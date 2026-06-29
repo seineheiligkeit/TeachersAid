@@ -259,7 +259,7 @@ from the model; generation *references* a dataset by stable id (like `serves` �
 (numbers first — cleanest licensing), Tier-2 regional data (locality), then sourced text/images (phase
 5, licence-sensitive). Confirmed source/licence research is in the roadmap's "big bet" section.
 
-## Parametric variants + solution engine (Maths)
+## Parametric variants + solution engine (Maths + Chemistry)
 
 The Maths analogue of "correct by construction" extended from the *answer* to the *method*. A
 `ParametricTask` (`schema/parametric.py`) = a prompt with `{slots}` + a `recipe` id. Recipes register
@@ -279,6 +279,31 @@ mathtext (`rendering/inline_math.py`, the `math_formula` engine) and embedded wi
 in `richtext_markup` (so fractions/exponents/roots stop reading as "code-symbols"). `inline_math.configure`
 is called once per `build_pdf`; results cache by content hash. A `$…$` span in a parametric prompt
 template becomes a math run.
+
+### Chemistry quantitative engine (the same engine, a second domain)
+
+The chemistry twin of the Maths recipes — **same contract, same `_RECIPES` registry**, so
+`make_variants` / templates / `compose_variants` drive chemistry unchanged. The facts side mirrors the
+data layer: **`grounding/chemistry.py`** is the periodic grounding (curated **IUPAC** standard atomic
+weights + a cited `SourceRef`) plus the load-bearing primitive `parse_formula` (handles nesting/hydrates,
+`Ca(OH)2` → `{Ca:1,O:2,H:2}`), `molar_mass`, and `subscript` (display H₂O via the renderer's sub/super
+normalisation). **`pipeline/chemistry.py`** holds `balance_equation` (the element×species conservation
+matrix' **sympy nullspace** → smallest positive integer coefficients; a unique balance ⇔ 1-D nullspace)
+and three recipes registered into the shared engine: **`molar_mass`** (M = Σ count·weight, per-element
+Rechenweg), **`equation_balance`** (resamples trivial all-1 draws via `Unsuitable`), **`stoichiometry`**
+(m→n→mole-ratio→n→m). *Select-never-author for numbers* holds: atomic masses come from grounding, every
+result is computed from them + conservation. Templates `che-os-{molmasse,reaktionsgleichung,stoechiometrie}`
+(`library/templates.py`) anchor to real **Oberstufe Chemie** competences (Kl. 7, KB *Substanz und Energie*,
+dims WO/EG/KZ — **not** W/E/S). **Qualitative recipes (Unterstufe, 4. Kl.)** extend the same idea to
+non-numeric tasks that are *still* correct by construction — DERIVED (`reaction_type` from the balanced
+structure, `atom_count` from `parse_formula`) or CURATED truth (`substance_classification`,
+`separation_method`, `acid_base_neutral` — curated tables in `grounding/chemistry.py`, select-never-author).
+Templates `che-us-*` (Kl. 4, KBs *Erkenntnisse gewinnen (E)* / *Standpunkte begründen (S)*, kind
+`open_response`). **`make_variants` now guarantees distinct prompts** where the draw space allows (small
+finite pools like the qualitative tables would otherwise repeat across independent seeds) — deterministic,
+tops up with repeats only if the pool is genuinely < n. Locked by `tests/test_chemistry.py` (parser, molar
+masses, balancing, curated-truth correctness, variant distinctness, full assemble→verify→**render** for
+both stages). Add an element = one cited row; add a reaction/substance = one curated entry.
 
 ## Annotated authentic texts (the Deutsch asset class)
 
@@ -572,7 +597,11 @@ Run a single file: `python -m pytest tests/test_derive.py -q`.
 - **`Baustein` lives in `schema/worksheet.py`**, not `schema/blocks.py` (easy import slip).
 - In rendering, use `rb.para(value, style)` for RichText (escapes); use `rb.raw_para(markup, style)` when
   you've **already built** inline markup (don't double-escape — that prints literal `<b>` tags).
-- Carlito font is used if installed; otherwise Helvetica fallback (the demo renders anywhere).
+- Carlito (or Calibri, its metric twin) is used if found — `_register_fonts` searches Linux **and
+  Windows** font dirs; else Helvetica fallback (the demo renders anywhere). **Subscripts/superscripts
+  (CO₂, m²) don't depend on the font:** `richtext_markup` normalises sub/super Unicode → ReportLab
+  `<sub>`/`<super>` markup over the plain digit, so they render correctly even in Helvetica (which has no
+  ₂ glyph → was a tofu box before).
 - PDF→PNG QA uses **PyMuPDF** (`fitz`), not `pdftoppm` (no system poppler dependency).
 - Match the surrounding German tone/terminology in product-facing strings; the user is the domain SME
   (physicist, Austrian) and fact-checks the physics and the German.

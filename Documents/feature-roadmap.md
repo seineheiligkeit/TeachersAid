@@ -208,6 +208,11 @@ unmet demand (FS1/FS2 `listening_task` → audio; GPB `source_analysis` → sour
   construction + `chart_lint` coverage per recipe. Start with **timeline** + the two queued geo
   recipes (shared dual-axis/derived-layout machinery). Chem-structures/notation may need a domain
   lib (RDKit, LilyPond/abjad) → weigh the dependency before adding.
+- **Bundle CHE + PHY figures (SME steer, 29 Jun 2026).** The chemistry *content* engine (quantitative +
+  qualitative recipes) is done; **chemistry figures are the remaining CHE gap** and pair naturally with
+  **physics figures** — both are diagram-heavy science visuals (reaction scheme / energy profile / Bohr
+  shells · circuit / ray / vector / free-body) that likely share rendering machinery and a possible domain
+  dependency. Plan them as one MINT-figure sub-track rather than piecemeal.
 - **Effort:** medium, incremental (one recipe at a time).
 
 ### D — Parameterized variant generation — ✅ **DONE (27 Jun 2026, Maths)**
@@ -218,8 +223,16 @@ unmet demand (FS1/FS2 `listening_task` → audio; GPB `source_analysis` → sour
   `linear_equation`, `percentage`, `fraction_add`; curated `library/templates.py`; `orch.compose_variants`
   stages a variant worksheet for review. **Inline math** shipped alongside (a `math` RichText run →
   inline mathtext PNG), killing the "fractions as code-symbols" look. See CLAUDE.md "Parametric variants".
-- **Next:** more recipes (term simplification, proportions, area/volume word problems), a dashboard
-  "Varianten erzeugen" surface, and parametrized *geometry* once the geometry recipe (KB3) exists.
+- **Chemistry engine — ✅ DONE (29 Jun 2026).** The same engine, a second domain. `grounding/chemistry.py`
+  (IUPAC atomic weights + `parse_formula`/`molar_mass`) + `pipeline/chemistry.py` (`balance_equation` via
+  sympy nullspace) drive **quantitative** Oberstufe recipes (`molar_mass`, `equation_balance`,
+  `stoichiometry`; `che-os-*`, Kl. 7) and **qualitative** Unterstufe recipes (`substance_classification`,
+  `separation_method`, `acid_base_neutral`, `reaction_type`, `atom_count`; `che-us-*`, Kl. 4) — all
+  correct-by-construction (derived or curated truth, select-never-author). `make_variants` now guarantees
+  distinct prompts for small finite pools. `tests/test_chemistry.py`; see CLAUDE.md "Parametric variants".
+- **Next:** more recipes (term simplification, proportions, area/volume word problems; chem: concentration
+  c=n/V + dilution, percent-composition, ideal gas, limiting reactant), a dashboard "Varianten erzeugen"
+  surface, and parametrized *geometry* once the geometry recipe (KB3) exists.
 
 ### Also surfaced (lower priority / folded elsewhere)
 - **C — sourced-text / source-work** (GPB, DEU, LAT, FS): provided passage + provenance + leveled/

@@ -89,8 +89,26 @@ def instantiate(task: ParametricTask, seed: int) -> TaskBlock:
 
 
 def make_variants(task: ParametricTask, n: int, *, seed0: int = 1) -> list[TaskBlock]:
-    """N distinct, correct-by-construction variants of one template."""
-    return [instantiate(task, seed0 + i) for i in range(n)]
+    """N variants of one template, preferring distinct prompts. Recipes with a small
+    finite draw space (e.g. the qualitative chemistry tables) can repeat across
+    independent seeds; we skip a seed whose prompt duplicates an earlier one, then top
+    up with repeats if the pool is genuinely smaller than n. Deterministic: same
+    (task, n, seed0) → same list."""
+    out: list[TaskBlock] = []
+    seen: set[str] = set()
+    seed = seed0
+    budget = seed0 + max(n * 20, 40)              # bounded search for distinct prompts
+    while len(out) < n and seed < budget:
+        blk = instantiate(task, seed)
+        seed += 1
+        key = str(blk.prompt)
+        if key not in seen:
+            seen.add(key)
+            out.append(blk)
+    while len(out) < n:                           # pool exhausted → allow repeats
+        out.append(instantiate(task, seed))
+        seed += 1
+    return out
 
 
 # --- recipes (sympy: exact, with a worked Rechenweg) -------------------------
@@ -470,3 +488,8 @@ def _vector_dot_angle(rng: random.Random) -> Instance:
     answer = [_math(f"\\vec a \\cdot \\vec b = {dot},\\; |\\vec a| = {latex(na)},\\; "
                     f"|\\vec b| = {latex(nb)},\\; \\varphi \\approx {phi_deg}^\\circ")]
     return Instance(params={"va": va, "vb": vb}, answer=answer, steps=steps)
+
+
+# Chemistry recipes register into the same _RECIPES (so make_variants/templates drive
+# them uniformly). Imported last so the names above are defined first (no import cycle).
+from . import chemistry as _chemistry  # noqa: E402,F401

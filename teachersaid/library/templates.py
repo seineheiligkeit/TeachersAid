@@ -139,6 +139,80 @@ PARAM_TEMPLATES: list[ParametricTask] = [
                         "Skalarprodukt, die Beträge und den eingeschlossenen Winkel.",
         serves=[Serves(competence_id="MAT.OS.5.VEK.03", relation="exercises")],
         dimensions=["FO"], cognitive_level="apply", kind="calculation", est_minutes=7),
+
+    # --- Chemie (Oberstufe) — the quantitative engine: correct by construction from
+    # the grounded atomic masses + conservation of atoms (pipeline/chemistry.py) -------
+    ParametricTask(
+        id="che-os-molmasse", title="Molare Masse einer Verbindung",
+        subject="Chemie", klasse=7, kompetenzbereich="Substanz und Energie",
+        content_area="Größen", recipe="molar_mass",
+        prompt_template="Berechne die molare Masse der Verbindung {formel}. "
+                        "Verwende die Atommassen aus dem Periodensystem.",
+        serves=[Serves(competence_id="CHE.OS.7.SUB.01", relation="exercises")],
+        dimensions=["EG"], cognitive_level="apply", kind="calculation", est_minutes=5),
+    ParametricTask(
+        id="che-os-reaktionsgleichung", title="Reaktionsgleichung ausgleichen",
+        subject="Chemie", klasse=7, kompetenzbereich="Substanz und Energie",
+        content_area="Größen", recipe="equation_balance",
+        prompt_template="Gleiche die folgende Reaktionsgleichung aus (Massenerhaltung): {schema}",
+        serves=[Serves(competence_id="CHE.OS.7.SUB.01", relation="exercises")],
+        dimensions=["EG"], cognitive_level="apply", kind="calculation", est_minutes=5),
+    ParametricTask(
+        id="che-os-stoechiometrie", title="Stöchiometrische Massenberechnung",
+        subject="Chemie", klasse=7, kompetenzbereich="Substanz und Energie",
+        content_area="Größen", recipe="stoichiometry",
+        prompt_template="Bei der Reaktion {reaktion} werden {masse} g {edukt} vollständig "
+                        "umgesetzt. Berechne die Masse an {produkt}, die dabei entsteht.",
+        serves=[Serves(competence_id="CHE.OS.7.SUB.03", relation="exercises")],
+        dimensions=["EG"], cognitive_level="apply", kind="calculation", est_minutes=8),
+
+    # --- Chemie (Unterstufe, 4. Kl.) — qualitative recipes, still correct by
+    # construction (derived structure / curated truth in grounding/chemistry.py) -------
+    ParametricTask(
+        id="che-us-stoffklassen", title="Reinstoff oder Gemisch?",
+        subject="Chemie", klasse=4,
+        kompetenzbereich="Erkenntnisse gewinnen und interpretieren (E)",
+        recipe="substance_classification",
+        prompt_template="Ordne den folgenden Stoff ein: Ist {stoff} ein Element, eine "
+                        "Verbindung oder ein Gemisch? Begründe deine Entscheidung.",
+        serves=[Serves(competence_id="CHE.US.x.ERK.03", relation="exercises")],
+        dimensions=["E"], cognitive_level="apply", kind="open_response", est_minutes=4),
+    ParametricTask(
+        id="che-us-trennverfahren", title="Trennverfahren wählen",
+        subject="Chemie", klasse=4,
+        kompetenzbereich="Erkenntnisse gewinnen und interpretieren (E)",
+        recipe="separation_method",
+        prompt_template="Mit welchem Trennverfahren lässt sich das Gemisch „{gemisch}“ "
+                        "trennen? Erkläre, welche Eigenschaft der Bestandteile dabei genutzt wird.",
+        serves=[Serves(competence_id="CHE.US.x.ERK.02", relation="exercises")],
+        dimensions=["E"], cognitive_level="apply", kind="open_response", est_minutes=4),
+    ParametricTask(
+        id="che-us-reaktionstyp", title="Reaktionstyp bestimmen",
+        subject="Chemie", klasse=4,
+        kompetenzbereich="Erkenntnisse gewinnen und interpretieren (E)",
+        recipe="reaction_type",
+        prompt_template="Bestimme den Reaktionstyp der folgenden Reaktion: {reaktion}. "
+                        "Begründe deine Zuordnung.",
+        serves=[Serves(competence_id="CHE.US.x.ERK.03", relation="exercises")],
+        dimensions=["E"], cognitive_level="apply", kind="open_response", est_minutes=5),
+    ParametricTask(
+        id="che-us-teilchenanzahl", title="Atome auf der Teilchenebene zählen",
+        subject="Chemie", klasse=4,
+        kompetenzbereich="Erkenntnisse gewinnen und interpretieren (E)",
+        recipe="atom_count",
+        prompt_template="Wie viele Atome jeder Sorte enthält ein Molekül {formel}? "
+                        "Wie viele Atome sind es insgesamt?",
+        serves=[Serves(competence_id="CHE.US.x.ERK.03", relation="exercises")],
+        dimensions=["E"], cognitive_level="apply", kind="open_response", est_minutes=4),
+    ParametricTask(
+        id="che-us-saeure-base", title="Sauer, basisch oder neutral?",
+        subject="Chemie", klasse=4,
+        kompetenzbereich="Standpunkte begründen, Entscheidungen treffen und reflektiert handeln (S)",
+        recipe="acid_base_neutral",
+        prompt_template="Ist die Lösung von „{stoff}“ sauer, basisch oder neutral? "
+                        "Begründe deine Einschätzung.",
+        serves=[Serves(competence_id="CHE.US.x.STA.02", relation="exercises")],
+        dimensions=["S"], cognitive_level="apply", kind="open_response", est_minutes=4),
 ]
 
 
