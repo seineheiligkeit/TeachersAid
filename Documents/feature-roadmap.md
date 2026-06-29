@@ -9,8 +9,10 @@ Forward-looking *capability* features for TeachersAid. (The schema-version roadm
 > model capstone. Two cheap, high-value uses agreed (NOT a new asset class — see
 > `Documents/matura-operators.md`): **#2 harvest the Operatoren — DONE** (a subject-aware grounding
 > table in `grounding/operators.py`, 4 authoritative CC-BY catalogs DEU/GWB/Naturwiss./MAT, wired
-> into the generation brief); **#1 calibration — NEXT** (tune `pipeline/difficulty.py` against real
-> point-weighted Matura items; handoff in that doc's §5, needs released Math AHS exams from the SME).
+> into the generation brief); **#1 calibration — DONE** (`tools/extract_matura.py` extracts the
+> exam archive; calibrated against 6 AHS-Math exams 2014–2025 → the cognitive_level→AFB→difficulty
+> model holds, no change needed; results + the realistic-AFB-mix finding in
+> `Documents/matura-calibration.md`).
 
 **Four "asset classes" now exist** — each makes content trustworthy by finding the thing that's
 correct-by-construction (or curation) and making it the durable, reusable asset:

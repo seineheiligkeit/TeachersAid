@@ -26,8 +26,12 @@ import re
 import sys
 
 # --- filename metadata ----------------------------------------------------------------
+# Two conventions seen across the archive:
+#   modern (≥KL20):  KL25_PT1_AHS_MAT_00_DE_AU   (one file; both Teile inside)
+#   early  (KL14):   KL14_PT1_AHS_MAT_T1_CC_AU   (Teil 1 / Teil 2 in SEPARATE files)
+# The 6th slot is the variant ("00" | "T1" | "T2"); the 7th is the language ("DE" | "CC").
 _NAME_RE = re.compile(
-    r"([A-Za-z]{2})(\d{2})_PT(\d)_([A-Z]{3})_([A-Z]{3})_(\d+)_([A-Z]{2})_(AU|LO)",
+    r"([A-Za-z]{2})(\d{2})_PT(\d)_([A-Z]{3})_([A-Z]{3})_([A-Za-z0-9]+)_([A-Z]{2})_(AU|LO)",
     re.IGNORECASE,
 )
 _TERMIN = {"KL": "Haupttermin", "NT": "Nebentermin", "WT": "Wintertermin"}
@@ -35,18 +39,23 @@ _TERMIN = {"KL": "Haupttermin", "NT": "Nebentermin", "WT": "Wintertermin"}
 
 def parse_filename(name: str) -> dict | None:
     """Pull exam metadata from a stable SRDP filename, e.g.
-    ``KL25_PT1_AHS_MAT_00_DE_AU`` → year 2025, Haupttermin, Teil 1, AHS, MAT, DE, Aufgaben."""
+    ``KL25_PT1_AHS_MAT_00_DE_AU`` → 2025, Haupttermin, AHS, MAT, DE, Aufgaben.
+
+    ``file_teil`` is 1/2 when the file is a single-Teil booklet (early ``_T1_``/``_T2_``
+    naming), else None (modern combined file — the Teil split is in the task headers)."""
     m = _NAME_RE.search(os.path.basename(name))
     if not m:
         return None
-    termin, yy, part, schulform, subject, variant, lang, kind = m.groups()
+    termin, yy, pt, schulform, subject, variant, lang, kind = m.groups()
+    tm = re.fullmatch(r"[Tt](\d)", variant)
     return {
         "termin": _TERMIN.get(termin.upper(), termin.upper()),
         "year": 2000 + int(yy),
-        "teil": int(part),
+        "pruefungsteil": int(pt),
         "schulform": schulform.upper(),
         "subject": subject.upper(),
-        "variant": variant,
+        "variant": variant.upper(),
+        "file_teil": int(tm.group(1)) if tm else None,
         "language": lang.upper(),
         "kind": "aufgaben" if kind.upper() == "AU" else "loesungen",
     }
@@ -159,7 +168,7 @@ def parse_lo_task(nr: int, block: str, header: str = "") -> dict:
 # --- Aufgabenheft (AU) task -----------------------------------------------------------
 _AUFG_RE = re.compile(r"Aufgabenstellung:\s*", re.IGNORECASE)
 _FORMAT_RE = re.compile(r"\[(\d+)\s+aus\s+(\d+)\]")
-_POINTMARK_RE = re.compile(r"\[\s*0\s*/\s*(½\s*/\s*)?1\s*P\.\s*\]")
+_POINTMARK_RE = re.compile(r"\[\s*0\s*/\s*(½\s*/\s*)?1\s*(?:P\.|Punkt)\s*\]")
 # imperative (separable verbs) → operator, e.g. "Kreuzen Sie … an", "Geben Sie … an"
 _IMPERATIVE = [
     (re.compile(r"\bKreuzen\s+Sie\b.*\ban\b", re.S), "ankreuzen"),
@@ -237,16 +246,17 @@ def extract(path: str) -> dict:
     meta = parse_filename(path) or {"kind": "unknown"}
     text = read_pdf_text(path)
     blocks = split_tasks(text)
+    parse = parse_lo_task if meta.get("kind") == "loesungen" else parse_au_task
+    tasks = [parse(nr, b["block"], b["header"]) for nr, b in sorted(blocks.items())]
+    if meta.get("file_teil"):  # single-Teil booklet → the file fixes every task's Teil
+        for t in tasks:
+            t["teil"] = meta["file_teil"]
+    out = {"meta": meta, "source": os.path.basename(path), "tasks": tasks}
     if meta.get("kind") == "loesungen":
-        tasks = [parse_lo_task(nr, b["block"], b["header"])
-                 for nr, b in sorted(blocks.items())]
-        return {"meta": meta, "source": os.path.basename(path),
-                "total_points": (parse_beurteilungsschluessel(text) or [{}])[0].get("max"),
-                "beurteilungsschluessel": parse_beurteilungsschluessel(text),
-                "tasks": tasks}
-    tasks = [parse_au_task(nr, b["block"], b["header"])
-             for nr, b in sorted(blocks.items())]
-    return {"meta": meta, "source": os.path.basename(path), "tasks": tasks}
+        bw = parse_beurteilungsschluessel(text)
+        out["beurteilungsschluessel"] = bw
+        out["total_points"] = max((r["max"] for r in bw), default=None)
+    return out
 
 
 def merge(au: dict, lo: dict) -> dict:
@@ -257,13 +267,19 @@ def merge(au: dict, lo: dict) -> dict:
                           "title": t["title"], "context": t.get("context"),
                           "instruction": t.get("instruction"),
                           "answer_format": t.get("answer_format"),
-                          "operator_au": t.get("operator")}
+                          "operator_au": t.get("operator"),
+                          "half_points": bool(t.get("half_points"))}
     for t in lo.get("tasks", []):
         r = by_nr.setdefault(t["nr"], {"nr": t["nr"], "title": t["title"]})
         r.setdefault("teil", t.get("teil")); r.setdefault("best_of", t.get("best_of"))
-        r.update({"operator": t.get("operator"), "operators": t.get("operators"),
-                  "point_keys": t.get("point_keys"), "half_points": t.get("half_points"),
+        r.update({"operator_lo": t.get("operator"), "operators": t.get("operators"),
+                  "point_keys": t.get("point_keys"),
                   "n_subparts": t.get("n_subparts"), "grundkompetenz": t.get("grundkompetenz")})
+        if t.get("half_points"):
+            r["half_points"] = True
+    # unified operator: prefer the year-stable AU imperative, fall back to the LO point-key
+    for r in by_nr.values():
+        r["operator"] = r.get("operator_au") or r.get("operator_lo")
     meta = dict(lo.get("meta") or au.get("meta") or {})
     meta.pop("kind", None)
     return {"meta": meta,
@@ -274,7 +290,7 @@ def merge(au: dict, lo: dict) -> dict:
 
 def _pair_key(meta: dict | None) -> tuple:
     m = meta or {}
-    return (m.get("year"), m.get("teil"), m.get("schulform"), m.get("subject"),
+    return (m.get("year"), m.get("pruefungsteil"), m.get("schulform"), m.get("subject"),
             m.get("variant"), m.get("language"))
 
 

@@ -92,7 +92,14 @@ Design notes:
   the obvious next integration now the vocabulary is authoritative.
 - **Physik/Chemie refinements** — none planned; the shared Naturwissenschaften base stands.
 
-## 5 · Next — #1 Calibration (the handoff)
+## 5 · #1 Calibration — DONE (results: `Documents/matura-calibration.md`)
+
+> Calibration ran on a 6-exam corpus (AHS Math Haupttermin 2014–2025, 141 tasks). **Outcome:
+> the `cognitive_level → AFB → difficulty` model holds — no `difficulty.py` change warranted.**
+> The data confirms our `DepthTarget` philosophy (reproduction/transfer base, reflection as
+> the apex: Teil 1 ≈ 72 % AFB 1 / 26 % AFB 2 / ~0 % AFB 3) and gap-fills an empirical AFB
+> tendency for the otherwise-unbanded Math operators (kept out of the faithful catalog). Full
+> write-up + honest limits in `matura-calibration.md`. The plan that produced it:
 
 Goal: tune our honest **difficulty** estimate (`pipeline/difficulty.py`, 1–3) and the
 cognitive-level↔AFB ladder against **real, field-tested, point-weighted** Matura items — the

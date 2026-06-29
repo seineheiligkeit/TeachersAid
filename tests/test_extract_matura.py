@@ -10,10 +10,39 @@ from teachersaid.grounding import operators as ops
 
 def test_parse_filename():
     m = ex.parse_filename("bd9a232d-KL25_PT1_AHS_MAT_00_DE_AU.pdf")
-    assert m == {"termin": "Haupttermin", "year": 2025, "teil": 1, "schulform": "AHS",
-                 "subject": "MAT", "variant": "00", "language": "DE", "kind": "aufgaben"}
+    assert (m["year"], m["termin"], m["schulform"], m["subject"]) == \
+        (2025, "Haupttermin", "AHS", "MAT")
+    assert m["variant"] == "00" and m["language"] == "DE" and m["kind"] == "aufgaben"
+    assert m["file_teil"] is None and m["pruefungsteil"] == 1
     assert ex.parse_filename("KL25_PT1_AHS_MAT_00_DE_LO.pdf")["kind"] == "loesungen"
+    # early split-booklet naming: Teil 1/2 in separate files, language CC
+    e = ex.parse_filename("KL14_PT1_AHS_MAT_T2_CC_LO.pdf")
+    assert e["year"] == 2014 and e["variant"] == "T2" and e["file_teil"] == 2
+    assert e["language"] == "CC" and e["kind"] == "loesungen"
     assert ex.parse_filename("not-an-exam.pdf") is None
+
+
+def test_au_pointmarker_variants():
+    # 2025 writes "[0 / 1 P.]", 2020 writes "[0 / ½ / 1 Punkt]" — both must parse
+    half = ex.parse_au_task(1, "T\nAufgabenstellung:\nKreuzen Sie an. [0 / ½ / 1 Punkt]")
+    assert half["half_points"] is True
+    full = ex.parse_au_task(1, "T\nAufgabenstellung:\nGeben Sie an. [0 / 1 P.]")
+    assert full["half_points"] is False
+
+
+def test_merge_unifies_operator_year_stably():
+    """Older Lösungshefte phrase the point-key descriptively (no nominalised operator);
+    the unified operator falls back to the year-stable AU imperative."""
+    au = {"meta": {}, "tasks": [{"nr": 1, "teil": 1, "best_of": False, "title": "T",
+          "context": "", "instruction": "Kreuzen Sie an.", "operator": "ankreuzen",
+          "answer_format": None, "half_points": False}]}
+    lo = {"meta": {"kind": "loesungen"}, "beurteilungsschluessel": [], "total_points": None,
+          "tasks": [{"nr": 1, "teil": 1, "best_of": False, "title": "T", "operator": None,
+                     "operators": [], "point_keys": [], "n_subparts": 0,
+                     "grundkompetenz": None, "half_points": False}]}
+    t = ex.merge(au, lo)["tasks"][0]
+    assert t["operator"] == "ankreuzen" and t["operator_au"] == "ankreuzen"
+    assert t["operator_lo"] is None
 
 
 def test_split_tasks_handles_teil2_headers():
