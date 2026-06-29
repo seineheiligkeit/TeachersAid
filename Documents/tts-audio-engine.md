@@ -168,8 +168,9 @@ asset = Asset(id="demo", role="tts", medium=Medium.AUDIO, generator="audio:tts",
                   {"persona": "youth_f", "text": "Hi Tom! It was good, thanks."}]})
 print(assets.build_audio(asset))              # → runs/audio/demo.mp3
 ```
-Tests: `python -m pytest tests/test_audio.py -q` (offline). Full suite: **204 passed**
-(196 prior + 8 audio). Performance: F5 on the 4070 ≈ **4× real-time** (~1.2 s per turn).
+Tests: `python -m pytest tests/test_audio.py -q` (offline). Full suite: **265 passed**
+(was 204 at the audio milestone; +Matura archive/figures since). Performance: F5 on the 4070
+≈ **4× real-time** (~1.2 s per turn).
 
 ---
 

@@ -3,7 +3,7 @@
 Forward-looking *capability* features for TeachersAid. (The schema-version roadmap lives in
 `schema-roadmap-v0.4-v0.5.md`; this tracks product/engine features.)
 
-## ▶ Start here (state as of 28 Jun 2026, Sessions 4–6)
+## ▶ Start here (state as of 29 Jun 2026, Sessions 4–7)
 
 > **Update (29 Jun 2026): Matura orientation.** The SRDP (Matura) was studied as the competence-
 > model capstone. Two cheap, high-value uses agreed (NOT a new asset class — see
@@ -12,7 +12,8 @@ Forward-looking *capability* features for TeachersAid. (The schema-version roadm
 > into the generation brief); **#1 calibration — DONE** (`tools/extract_matura.py` extracts the
 > exam archive; calibrated against 6 AHS-Math exams 2014–2025 → the cognitive_level→AFB→difficulty
 > model holds, no change needed; results + the realistic-AFB-mix finding in
-> `Documents/matura-calibration.md`).
+> `Documents/matura-calibration.md`). The **full-archive build is now done too** (next block), and
+> the **accessible-Matura figure scan** added the `boxplot` + `tree_diagram` recipes (WS strand).
 
 ### ☑ DONE (home PC, 29 Jun 2026) — automated full Matura-archive extractor
 
@@ -42,6 +43,24 @@ parts shipped, deterministic + no-LLM, on the `matura-archive-extractor` branch:
 (`tests/test_fetch_matura.py`, extended `tests/test_extract_matura.py`). Re-mirror anytime via
 `fetch_matura --all`.
 
+**Corpus run (151 collections) + the demand maps it produced:**
+- **Deutsch (33 exams):** 9 Textsorten + 6 Schreibhandlungen exercised; operators **100 % catalog-
+  covered** across 198 Aufgaben (validates `operators.DEUTSCH` at scale). → `matura-deutsch-coverage.md`.
+- **Latein (41 exams):** ÜT 36 / IT 24 pts stable across *every* exam; surfaced **9 operators with no
+  catalog yet** (the empirical seed for a LAT Operatorenliste) + huge PD source-author breadth. →
+  `matura-latein-coverage.md`.
+- **Languages (41 Englisch booklets):** the full skill×CEFR matrix (Lesen/Hören/Schreiben/
+  Sprachverwendung × B1/B2). → `matura-languages-coverage.md`.
+- **AMT fix:** the 36-exam run showed `operator_set("AMT")` falling to `DEFAULT`; wired AMT→MATHEMATIK
+  (+ alias resolver, locked by a test).
+
+**Accessible-edition figure scan → two new recipes.** `fetch_matura --variant accessibility` pulls the
+Blindheit/Sehbehinderung Math editions, whose linearised RTF exposes real numbers/formulas **and**
+textual figure descriptions. Scanning 14 booklets surfaced two recurring **WS-strand** figure types with
+no recipe — both now built correct-by-construction: **`matplotlib:boxplot`** (five-number summary /
+distribution comparison; new `spread` intent in `chart_choose`) and **`matplotlib:tree_diagram`**
+(Baumdiagramm, spec-provided branch probabilities). See `matura-math-coverage.md`.
+
 **Four "asset classes" now exist** — each makes content trustworthy by finding the thing that's
 correct-by-construction (or curation) and making it the durable, reusable asset:
 - **Grounded-facts data layer** (Geography/MINT): real cited numbers from 8 curated CC-BY datasets →
@@ -58,7 +77,20 @@ correct-by-construction (or curation) and making it the durable, reusable asset:
   multi-voice on the local GPU, voices selected from a curated rights-gated reference library. See
   `Documents/tts-audio-engine.md`. Flagship: *Mia's school day* (A2).
 
-Also: store consolidation (`store/base.py::JsonStore`, the future-DB seam). **204 tests green.**
+Also: store consolidation (`store/base.py::JsonStore`, the future-DB seam). **265 tests green.**
+
+**Matura-backward build targets (newly specced this session — each demand map names its own next step):**
+
+- **Maths · WS-strand recipes** (`matura-math-coverage.md`): the figure half is done (boxplot + tree);
+  the parametric half remains — a **boxplot-from-data** recipe (compute the quartiles + Rechenweg) and a
+  **probability-tree → path/conditional-probability** recipe. Above those in frequency: **exponential /
+  growth-decay / compound interest** (FA) is still the #1 cleanest sympy recipe to add.
+- **Deutsch · genre scaffold** (`matura-deutsch-coverage.md`, step 3): wire the (already-built) Textsorten
+  + Schreibhandlungen grounding into `text_tasks` — emit a *Matura-shaped but scaffolded* worksheet that
+  **teaches** the Textsorte. Frequency-ranked build order (Zusammenfassung/Kommentar/Interpretation lead).
+- **Latein · operator catalog + Wortbildung** (`matura-latein-coverage.md`): curate a faithful SRDP-Latein
+  Operatorenliste (the 9-operator seed is in the doc) and wire `LAT`; add a deterministic **Wortbildung**
+  (Präfix/Suffix) recipe — the one genuinely *computable* Latein task type.
 
 **Recommended next, in order:**
 
@@ -67,12 +99,14 @@ Also: store consolidation (`store/base.py::JsonStore`, the future-DB seam). **20
    `audio.register()` at dashboard startup; evolve `text_tasks` to emit a **turns** spec from a dialogue
    `AnnotatedText` (needs a speaker/turn model); add **FLEURS** references + `de/fr/it/es` checkpoints.
 2. **Annotated Realien for FS reading** — CEFR-leveled authentic everyday texts (menus, signs, schedules,
-   short messages) via the annotated-text engine; the leveling answer for FS Lesen.
+   short messages) via the annotated-text engine; the leveling answer for FS Lesen (confirmed B1+B2 demand,
+   `matura-languages-coverage.md`).
 3. **Geometry — parametric figure emission:** wire the variant engine to *emit* a figure per instance
    (Pythagoras/area "with a figure" — an optional `figure` on `Instance` → `asset_refs`); `nets`.
 4. **Scale the text libraries:** more annotated PD texts (DE + LAT) across grades (subagent-annotation +
    `tools/ingest_texts.py` proven); an **ANNO/OCR fetch tool** for real newspaper/advert media texts.
 5. **More parametric recipes + a "Varianten erzeugen" dashboard surface**; expose `orch.compose_variants`.
+   The Matura-backward targets above are the prioritised recipe queue.
 6. **Re-ground the old invented-number figures** the (c)-label flags (c0081 urbanisation, c0096 climate,
    c0097 HDI) by curating the few datasets they need; curate **BIO/other-subject** datasets; **Tier-2
    regional** down to Bezirk.

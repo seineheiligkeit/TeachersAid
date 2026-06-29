@@ -1,8 +1,9 @@
 # Project Handoff — Austrian Lehrplan-anchored Teaching-Material Generator
 
-**Status: current as of 24 June 2026 (end of Session 2).** This is the single read-me-first document
-for a fresh session taking the project over. Working language is English; the *product's* output is
-German (or a target language for Fremdsprache). Read this, then the docs in the order given in §6.
+**Status: design baseline from Session 2 (24 June 2026); see the dated session updates below for the
+current state (latest: Session 7, 29 June 2026).** This is the single read-me-first document for a fresh
+session taking the project over. Working language is English; the *product's* output is German (or a
+target language for Fremdsprache). Read this, then the docs in the order given in §6.
 
 > **Update (Session 3, 25 June 2026): the design is now a working, populated system.** Everything below
 > describes the *design*, which remains the source of truth for intent — but the "engine / UI deferred"
@@ -126,6 +127,28 @@ German (or a target language for Fremdsprache). Read this, then the docs in the 
 > git-ignored generated content (`runs/`) syncs between PCs via **Google Drive** (not GitHub). The
 > **audio/F5-TTS backend can't run on this PC** (no CUDA GPU + Windows Smart App Control blocks torch) —
 > audio stays on the workhorse PC. Run: `python -m pytest -q` (**216 tests**).
+>
+> **Update (Session 7, 29 June 2026): Matura orientation + the full SRDP-archive build.** The Matura
+> (SRDP) was adopted as the competence-model **horizon that shapes the ladder** — harvested as
+> **grounding, not a new asset class** (the rule + write-up: **[Documents/matura-operators.md]**).
+> What shipped:
+> 1. **SRDP Operatoren grounding** (`grounding/operators.py`) — 4 authoritative CC-BY operator catalogs
+>    (Deutsch/GWB/Naturwiss./Mathematik+AMT), injected into the generation brief; *select, never author*.
+>    **#1 calibration done** ([Documents/matura-calibration.md]): the cognitive_level→AFB→difficulty model
+>    holds (no change); real exams run ~70/25/5 across AFB 1/2/3, validating the `DepthTarget` philosophy.
+> 2. **Full-archive build** (the home-PC TODO, now closed): `tools/fetch_matura.py` (downloads the TYPO3
+>    *tx_downloads*+Solr archive — per-collection `cHash` scraped, CC-BY manifest), the **subject-aware**
+>    `tools/extract_matura.py` (Math/AMT · Deutsch · Latein · modern languages — sciences/GWB have no
+>    Klausur archive, oral), and `tools/matura_demand.py` (per-subject demand maps). Corpus → `runs/matura/`
+>    (git-ignored, Drive-synced). Ran 151 collections → **[Documents/matura-{math,deutsch,latein,languages}-
+>    coverage.md]** (the *Matura-backward design* spec: mine the endpoint, build the scaffolded path earlier).
+> 3. **Accessible-edition figure scan → 2 new recipes.** The Blindheit/Sehbehinderung Math editions
+>    linearise the vector math (real numbers/formulas) + describe figures in words; scanning them surfaced
+>    two WS-strand figure types with no recipe — now built correct-by-construction: **`matplotlib:boxplot`**
+>    (new `spread` intent) + **`matplotlib:tree_diagram`** (Baumdiagramm).
+>
+> **Infra:** all on `main` (pushed). The home network reaches matura.gv.at (the remote session's egress had
+> blocked it). Run: `python -m pytest -q` (**265 tests**).
 
 ---
 
