@@ -57,6 +57,7 @@ def build_framing_user(content) -> str:
 
 
 def build_system(model: SubjectCompetenceModel) -> str:
+    from ..grounding.operators import format_operators_brief
     kinds = sorted(CORE_TASK_KINDS | set(model.task_kind_extensions))
     dims = ", ".join(f"{d.id} ({d.label})" for d in model.dimensions)
     return (
@@ -69,6 +70,7 @@ def build_system(model: SubjectCompetenceModel) -> str:
         f"- Allowed `cognitive_level`: {', '.join(_COGNITIVE)}.\n"
         "- Depth = cognitive demand, not word count. Make tasks climb a ladder and "
         "be resource-independent where possible.\n"
+        f"{format_operators_brief()}\n"
         "- Correctness by construction: never assert a fact you are unsure of; put "
         "anything a teacher must watch for in `watch_outs` (load-bearing).\n"
         "- Each task's `serves` must reference one of the given competence ids.\n"
