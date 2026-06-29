@@ -105,3 +105,11 @@ def test_injected_into_generation_prompt():
     assert "Operatoren" in de_system and "erörtern" in de_system
     mat_system = build_system(ls.get_subject_model("Mathematik"))
     assert "Operatoren" in mat_system and "umformen" in mat_system
+
+
+def test_amt_shares_the_mathematik_catalog():
+    """Angewandte Mathematik isn't in the Lehrplan catalog _code reads (it's BHS), but the
+    operator catalog's own source covers it — resolve by alias / canonical code."""
+    for subject in ("AMT", "Angewandte Mathematik"):
+        assert ops.operator_set(subject) is ops.MATHEMATIK
+        assert ops.is_authoritative(subject)

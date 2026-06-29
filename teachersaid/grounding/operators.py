@@ -361,6 +361,9 @@ DEFAULT: list[Operator] = [
 SUBJECT_OPERATORS: dict[str, list[Operator]] = {
     "DEU": DEUTSCH,
     "MAT": MATHEMATIK,
+    "AMT": MATHEMATIK,  # the catalog's own source covers "SRP Mathematik und die SRDP
+                        # Angewandte Mathematik"; the 36-exam AMT archive run confirms the
+                        # identical operator set (matura-latein/operators docs).
     "BIO": NATURWISSENSCHAFTEN,
     "PHY": NATURWISSENSCHAFTEN,
     "CHE": NATURWISSENSCHAFTEN,
@@ -380,14 +383,32 @@ def _code(subject: str | None) -> str | None:
     return None
 
 
+# Subjects with a curated operator catalog but NO entry in the Lehrplan catalog that ``_code``
+# reads (Angewandte Mathematik is BHS, outside the AHS/Oberstufe catalogs) — resolved by alias
+# or by passing the canonical code itself.
+_OPERATOR_ALIASES: dict[str, str] = {
+    "amt": "AMT", "angewandte mathematik": "AMT",
+}
+
+
+def _resolve_code(subject: str | None) -> str | None:
+    code = _code(subject)
+    if code:
+        return code
+    key = (subject or "").strip()
+    if key.upper() in SUBJECT_OPERATORS:          # the canonical code was passed directly
+        return key.upper()
+    return _OPERATOR_ALIASES.get(key.lower())
+
+
 def operator_set(subject: str | None) -> list[Operator]:
     """The operator catalog for a subject — its authoritative list if curated, else the
     generic fallback."""
-    return SUBJECT_OPERATORS.get(_code(subject) or "", DEFAULT)
+    return SUBJECT_OPERATORS.get(_resolve_code(subject) or "", DEFAULT)
 
 
 def is_authoritative(subject: str | None) -> bool:
-    return _code(subject) in SUBJECT_OPERATORS
+    return _resolve_code(subject) in SUBJECT_OPERATORS
 
 
 def is_banded(catalog: list[Operator]) -> bool:

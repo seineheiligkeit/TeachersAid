@@ -109,9 +109,10 @@ Design notes:
   (`matura-latein-coverage.md`): the IT Arbeitsaufgaben use `finden · trennen (Wortbildung) · zuordnen
   · ergänzen · verfassen · gliedern · ankreuzen (Auswahl) · belegen · auseinandersetzen` (+ generic
   `angeben/vergleichen/analysieren/benennen/beschreiben`) — what a faithful LAT catalog must cover.
-  **Found gap:** `SUBJECT_OPERATORS` wires only `MAT`, not `AMT`, so `operator_set("AMT")` falls to
-  `DEFAULT` though the catalog's own source covers *"SRP Mathematik und die SRDP Angewandte
-  Mathematik"* — a one-line `"AMT": MATHEMATIK` fix (the 36-exam AMT run confirms it's the same operator set).
+  **AMT wiring — FIXED** (the 36-exam AMT run surfaced it): `SUBJECT_OPERATORS` wired only `MAT`,
+  so `operator_set("AMT")` fell to `DEFAULT` though the catalog's own source covers *"SRP Mathematik
+  und die SRDP Angewandte Mathematik"*. Added `"AMT": MATHEMATIK` + an alias resolver (Angewandte
+  Mathematik isn't in the Lehrplan catalog `_code` reads — it's BHS), locked by a test.
 - **Subagent breadth path** (`tools/breadth_prompt.py`) does not yet inject the operators —
   the obvious next integration now the vocabulary is authoritative.
 - **Physik/Chemie refinements** — none planned; the shared Naturwissenschaften base stands.
