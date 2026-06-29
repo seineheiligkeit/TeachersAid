@@ -110,6 +110,40 @@ def test_chooser_maps_new_intents():
     assert choose_representation("demographic", {"male": [1], "female": [2]})[0] == "matplotlib:population_pyramid"
 
 
+def test_spread_intent_maps_to_boxplot():
+    # the WS-strand gap the accessible-Matura figures surfaced: a five-number summary /
+    # distribution comparison is a boxplot, not a histogram
+    from teachersaid.schema.chart_choose import choose_representation
+    g, s = choose_representation("spread", {"summary": {"min": 2, "q1": 5, "median": 7, "q3": 9, "max": 14}})
+    assert g == "matplotlib:boxplot" and s["summary"]["median"] == 7
+    g2, s2 = choose_representation("spread", {"groups": [{"label": "A", "values": [1, 2, 3]}]})
+    assert g2 == "matplotlib:boxplot" and s2["groups"]
+    g3, _ = choose_representation("spread", {"values": [1, 2, 3, 4, 5]})
+    assert g3 == "matplotlib:boxplot"
+
+
+def test_boxplot_and_tree_render(tmp_path):
+    from teachersaid.pipeline.assets import GENERATION_RECIPES
+    # boxplot from an explicit five-number summary (correct-by-construction), a raw-data box,
+    # and a multi-box comparison (Datenliste A vs B — the Matura case)
+    boxes = {
+        "summary": {"summary": {"min": 2, "q1": 5, "median": 7, "q3": 9, "max": 14}, "xlabel": "Punkte"},
+        "values": {"values": [4, 6, 7, 7, 8, 9, 12], "title": "B"},
+        "groups": {"groups": [{"label": "A", "summary": {"min": 4, "q1": 9, "median": 13, "q3": 17, "max": 22}},
+                              {"label": "B", "values": [6, 8, 9, 11, 12, 14, 19]}], "title": "A vs B"},
+    }
+    for spec in boxes.values():
+        p = build_asset(Asset(id="bx", role="figure", generator="matplotlib:boxplot", spec=spec), outdir=tmp_path)
+        assert p.read_bytes()[:8] == PNG and p.stat().st_size > 1500
+    # probability tree (Baumdiagramm) — a two-stage Zufallsversuch, 4 paths
+    tree = {"title": "Zweistufig", "branches": [
+        {"label": "A", "p": "0,3", "children": [{"label": "T", "p": "0,8"}, {"label": "K", "p": "0,2"}]},
+        {"label": "B", "p": "0,7", "children": [{"label": "T", "p": "0,5"}, {"label": "K", "p": "0,5"}]}]}
+    p = build_asset(Asset(id="tr", role="figure", generator="matplotlib:tree_diagram", spec=tree), outdir=tmp_path)
+    assert p.read_bytes()[:8] == PNG and p.stat().st_size > 1500
+    assert "matplotlib:boxplot" in GENERATION_RECIPES and "matplotlib:tree_diagram" in GENERATION_RECIPES
+
+
 def test_geometry_recipes_render_and_are_requestable(tmp_path):
     from teachersaid.pipeline.assets import GENERATION_RECIPES
     cases = {

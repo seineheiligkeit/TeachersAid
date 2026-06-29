@@ -58,3 +58,34 @@ Each is a `@_recipe` (sympy owns sampling + solving + the worked Rechenweg), tur
 checkbox into N correct-by-construction, fully-explained variants for earlier grades. When we
 pick one to build, a couple of accessible-version exams help pin the exact parameter ranges
 and answer-format conventions for that topic.
+
+## The accessible (Blindheit/Sehbehinderung) editions — real numbers + the figure scan
+
+The standard Math PDFs are largely vector/image, so `extract_matura.py` gets *structure*, not the
+formulas. The **accessible editions** (`fetch_matura --subject Mathematik --variant accessibility`)
+solve this: each ships a **linearised RTF Aufgabenheft** where the math is real text —
+`1/(x+1)`, `'w(x^1)` (√), `a*x-5=10`, `'el 'R` (∈ ℝ) — *and* every figure is **described in words**
+for blind candidates. So they expose both the actual numbers and a textual figure inventory the
+vector PDFs hide. (7 AHS editions, 2020/21–2025/26.)
+
+### Figure-category scan (14 accessible booklets) — two gaps, now closed
+Keyword frequencies across the accessible booklets: **Koordinatensystem 108 · Funktionsgraph ~140 ·
+Histogramm 4 · Säulendiagramm 2** — all already covered (`coordinate_plane`/`function_graph`/
+`histogram`/`bar_chart`). But two recurring figure types had **no recipe**, both in the **WS strand**:
+
+- **Boxplot / Kastenschaubild (8×)** — *"Datenliste B als Boxplot dargestellt"*, *"Kreuzen Sie den
+  Boxplot an, der die Daten … wiedergibt"*. A five-number summary / distribution comparison.
+- **Baumdiagramm (4×)** — *"…im nachstehenden Baumdiagramm … zweistufiger Zufallsversuch … 4 Pfade"*.
+  A multi-stage probability tree.
+
+Both are now **built** (`pipeline/assets.py`, correct-by-construction):
+- `matplotlib:boxplot` — from an explicit `{min,q1,median,q3,max}`, raw `values`, or `groups`
+  (compare A vs B); wired as the new **`spread`** intent in `chart_choose` (distribution = histogram
+  for raw shape; **spread = boxplot** for the quartile summary). Horizontal by Austrian convention.
+- `matplotlib:tree_diagram` — a probability tree with spec-provided branch probabilities (it never
+  invents numbers); structural, declared on `body.assets` like the geometry family.
+
+This is the **figure-side** of the WS gap the recipe table above flags (stats/probability ⚠️): the WS
+strand was under-served in *both* parametric recipes *and* figure types. The two figures are the
+first half closed; the parametric WS recipes (Boxplot-from-data with the quartiles computed, tree →
+path/conditional probabilities) remain on the build-order list.

@@ -340,6 +340,48 @@ def _histogram(asset: Asset, path: Path) -> None:
     plt.close(fig)
 
 
+@_generator("matplotlib:boxplot")
+def _boxplot(asset: Asset, path: Path) -> None:
+    """A box-and-whisker plot — the FIVE-NUMBER SUMMARY of a distribution (a WS-strand
+    staple the Matura uses heavily). Correct-by-construction: render from an explicit
+    summary so the figure never invents data. spec:
+    {summary:{min,q1,median,q3,max}} (one box) | {values:[…]} (compute the quartiles) |
+    {groups:[{label, summary|values}, …]} (compare distributions, e.g. Datenliste A vs B);
+    xlabel?, title?, vertical? (default horizontal — the Austrian Kastenschaubild convention)}."""
+    import numpy as np
+    s = asset.spec or {}
+
+    def _stats(item: dict) -> dict:
+        if item.get("summary"):
+            su = item["summary"]
+            return {"whislo": float(su["min"]), "q1": float(su["q1"]),
+                    "med": float(su["median"]), "q3": float(su["q3"]),
+                    "whishi": float(su["max"]), "fliers": [], "label": item.get("label", "")}
+        vals = sorted(float(v) for v in item.get("values", []))
+        q1, med, q3 = (float(np.percentile(vals, p)) for p in (25, 50, 75))
+        return {"whislo": vals[0], "q1": q1, "med": med, "q3": q3, "whishi": vals[-1],
+                "fliers": [], "label": item.get("label", "")}
+
+    groups = s.get("groups") or [s]
+    stats = [_stats(g) for g in groups]
+    horizontal = not s.get("vertical")
+    fig, ax = plt.subplots(figsize=(5.6, 0.9 + 0.7 * len(stats)) if horizontal
+                           else (1.2 + 1.0 * len(stats), 3.8), layout="constrained")
+    ax.bxp(stats, orientation="horizontal" if horizontal else "vertical",
+           showfliers=False, patch_artist=True,
+           boxprops={"facecolor": "#cfe0ee", "edgecolor": "#33506e"},
+           medianprops={"color": "#b03a2e", "linewidth": 2},
+           whiskerprops={"color": "#33506e"}, capprops={"color": "#33506e"})
+    (ax.set_xlabel if horizontal else ax.set_ylabel)(s.get("xlabel") or s.get("x_label") or "")
+    (ax.grid)(True, axis="x" if horizontal else "y", color="#e6e6e6", lw=0.6)
+    if not any(st["label"] for st in stats):
+        (ax.set_yticks if horizontal else ax.set_xticks)([])
+    if s.get("title"):
+        ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 50)))
+    fig.savefig(path, dpi=150)
+    plt.close(fig)
+
+
 @_generator("matplotlib:function_graph")
 def _function_graph(asset: Asset, path: Path) -> None:
     """A coordinate graph. spec: {xmin?, xmax?, m?, b? (line y=mx+b), points?: [[x,y],…],
@@ -382,6 +424,61 @@ def _math_formula(asset: Asset, path: Path) -> None:
     fig = plt.figure(figsize=(0.01, 0.01))
     fig.text(0, 0, f"${s.get('latex', '')}$", fontsize=20)
     fig.savefig(path, dpi=200, bbox_inches="tight", pad_inches=0.15, transparent=True)
+    plt.close(fig)
+
+
+@_generator("matplotlib:tree_diagram")
+def _tree_diagram(asset: Asset, path: Path) -> None:
+    """A probability tree (Baumdiagramm) — a multi-stage Zufallsversuch, a WS-strand staple.
+    Structural (declared on body.assets, like geometry), correct-by-construction: branch
+    probabilities + outcome labels are spec-provided so the figure never invents them.
+    spec: {branches:[{label, p?, children?:[{label, p?, children?…}]}], title?}; p renders as
+    the edge label (e.g. "0,3"). Any depth; parents sit at the mean of their children."""
+    s = asset.spec or {}
+    roots = s.get("branches", []) or []
+    fig, ax = plt.subplots(figsize=(6.0, 3.8), layout="constrained")
+    ax.axis("off")
+    leaf = [0.0]
+    max_depth = [1]
+
+    def place(node: dict, depth: int) -> float:
+        max_depth[0] = max(max_depth[0], depth)
+        kids = node.get("children") or []
+        if kids:
+            y = sum(place(k, depth + 1) for k in kids) / len(kids)
+        else:
+            y = leaf[0]
+            leaf[0] += 1
+        node["_xy"] = (depth, y)
+        return y
+
+    for r in roots:
+        place(r, 1)
+    root_y = sum(r["_xy"][1] for r in roots) / len(roots) if roots else 0
+    root_xy = (0.0, root_y)
+
+    def draw(node: dict, parent_xy: tuple) -> None:
+        x, y = node["_xy"]
+        ax.plot([parent_xy[0], x], [parent_xy[1], y], color="#33506e", lw=1.3, zorder=1)
+        if node.get("p") not in (None, ""):
+            mx, my = (parent_xy[0] + x) / 2, (parent_xy[1] + y) / 2
+            ax.text(mx, my, str(node["p"]), fontsize=9, color="#b03a2e",
+                    ha="center", va="center",
+                    bbox={"boxstyle": "round,pad=0.12", "fc": "white", "ec": "none"})
+        ax.plot([x], [y], "o", color="#33506e", ms=5, zorder=2)
+        ax.text(x + 0.06, y, str(node.get("label", "")), fontsize=10, va="center")
+        for k in node.get("children") or []:
+            draw(k, (x, y))
+
+    if roots:
+        ax.plot([root_xy[0]], [root_xy[1]], "o", color="#33506e", ms=5, zorder=2)
+    for r in roots:
+        draw(r, root_xy)
+    ax.set_xlim(-0.3, max_depth[0] + 0.9)
+    ax.set_ylim(-0.6, max(leaf[0], 1) - 0.4)
+    if s.get("title"):
+        ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 50)))
+    fig.savefig(path, dpi=150)
     plt.close(fig)
 
 
@@ -736,7 +833,17 @@ GENERATION_RECIPES: dict[str, str] = {
         'Streudiagramm für einen ZUSAMMENHANG zweier numerischer Größen — '
         'spec {"points":[[x,y]],"xlabel"?,"ylabel"?,"title"?,"fit"? (Trendgerade)}',
     "matplotlib:histogram":
-        'Histogramm für die VERTEILUNG einer numerischen Größe — spec {"values":[num],"bins"?,"xlabel"?,"ylabel"?,"title"?}',
+        'Histogramm für die VERTEILUNG (Form) der Rohdaten einer numerischen Größe — '
+        'spec {"values":[num],"bins"?,"xlabel"?,"ylabel"?,"title"?}',
+    "matplotlib:boxplot":
+        'Boxplot/Kastenschaubild — Fünf-Punkte-Zusammenfassung (Streuung) bzw. Vergleich von '
+        'Verteilungen (WS). spec {"summary":{"min","q1","median","q3","max"}} ODER {"values":[num]} '
+        'ODER {"groups":[{"label","summary"|"values"}]} (z. B. Datenliste A vs. B); '
+        '"xlabel"?,"title"?,"vertical"? (Standard waagrecht).',
+    "matplotlib:tree_diagram":
+        'Baumdiagramm — mehrstufiger Zufallsversuch (WS). spec {"branches":[{"label","p"? (Astbeschriftung, '
+        'z. B. "0,3"),"children"?:[{"label","p"?,"children"?…}]}],"title"?}. Astwahrscheinlichkeiten '
+        'sind vorgegeben — die Abbildung erfindet keine Zahlen.',
     "matplotlib:function_graph":
         'Koordinatensystem/Gerade — spec {"xmin"?,"xmax"?,"m"?,"b"? (Gerade y=mx+b),'
         '"points"?:[[x,y]],"connect"? (Punkte zu einer Kurve verbinden, z. B. v-t-Diagramm),'

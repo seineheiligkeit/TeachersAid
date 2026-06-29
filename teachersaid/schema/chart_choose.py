@@ -12,7 +12,7 @@ from __future__ import annotations
 import math
 
 INTENTS = ("trend", "comparison", "relationship", "composition", "distribution",
-           "scale", "demographic", "timeline", "climate")
+           "spread", "scale", "demographic", "timeline", "climate")
 
 
 def _clean(d: dict) -> dict:
@@ -39,9 +39,19 @@ def choose_representation(intent: str, data: dict) -> tuple[str, dict]:
         return "matplotlib:scatter", _clean(
             {"points": pts, "xlabel": xl, "ylabel": yl, "title": title, "fit": d.get("fit") or None})
 
-    if intent == "distribution":               # spread of one variable → histogram
+    if intent == "distribution":               # shape of one variable's raw data → histogram
         return "matplotlib:histogram", _clean(
             {"values": vals, "bins": d.get("bins"), "xlabel": xl, "ylabel": yl, "title": title})
+
+    if intent == "spread":                      # five-number summary / compare spreads → boxplot
+        spec = {"xlabel": xl, "title": title}
+        if d.get("groups"):
+            spec["groups"] = d["groups"]
+        elif d.get("summary"):
+            spec["summary"] = d["summary"]
+        else:
+            spec["values"] = vals
+        return "matplotlib:boxplot", _clean(spec)
 
     if intent == "demographic":                # age × sex structure → population pyramid
         return "matplotlib:population_pyramid", _clean(

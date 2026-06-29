@@ -257,7 +257,10 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--all", action="store_true",
                     help="enumerate every subject from the live facet list")
     ap.add_argument("--standard-only", action="store_true",
-                    help="skip translation/accessibility editions")
+                    help="skip translation/accessibility editions (= --variant standard)")
+    ap.add_argument("--variant", choices=("standard", "translation", "accessibility"),
+                    help="keep only this edition. 'accessibility' (Blindheit/Sehbehinderung) "
+                    "linearises the vector math → real numbers + textual figure descriptions.")
     ap.add_argument("--list", action="store_true", help="dry-run: print, don't download")
     ap.add_argument("--extract", action="store_true",
                     help="unzip + run extract_matura on each downloaded pair")
@@ -278,8 +281,9 @@ def main(argv: list[str] | None = None) -> int:
         for c in found:
             c["subject_slug"] = subj
         colls += found
-    if args.standard_only:
-        colls = [c for c in colls if c.get("variant") == "standard"]
+    want_variant = "standard" if args.standard_only else args.variant
+    if want_variant:
+        colls = [c for c in colls if c.get("variant") == want_variant]
 
     print("%d collection(s) found" % len(colls))
     for c in colls:
