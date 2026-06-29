@@ -8,6 +8,7 @@ fall back to Helvetica so the demo renders on any machine.
 from __future__ import annotations
 
 import html
+import re
 from pathlib import Path
 
 from reportlab.lib import colors
@@ -20,57 +21,76 @@ from reportlab.platypus import Paragraph, Spacer, Table, TableStyle
 
 from ..schema.richtext import RichText, to_runs
 
-_CARLITO_DIRS = [
+_FONT_DIRS = [
     "/usr/share/fonts/truetype/crosextra",
     "/usr/share/fonts/truetype/carlito",
     "/usr/share/fonts",
+    # Windows (the user's machine): Carlito ships with LibreOffice; Calibri (its
+    # metric twin) ships with Office. Either gives proper Unicode coverage —
+    # including subscripts — that the Helvetica fallback lacks.
+    str(Path.home() / "AppData/Local/Microsoft/Windows/Fonts"),
+    "C:/Windows/Fonts",
+]
+
+# Each family: (registered-name → on-disk filenames to try, in order). The first
+# family whose regular weight is found wins. Carlito is preferred; Calibri is the
+# metric-compatible Windows fallback.
+_FONT_FAMILIES = [
+    ("Carlito", {
+        "Carlito": ["Carlito-Regular.ttf", "Carlito.ttf"],
+        "Carlito-Bold": ["Carlito-Bold.ttf"],
+        "Carlito-Italic": ["Carlito-Italic.ttf"],
+        "Carlito-BoldItalic": ["Carlito-BoldItalic.ttf"],
+    }),
+    ("Calibri", {
+        "Calibri": ["calibri.ttf"],
+        "Calibri-Bold": ["calibrib.ttf"],
+        "Calibri-Italic": ["calibrii.ttf"],
+        "Calibri-BoldItalic": ["calibriz.ttf"],
+    }),
 ]
 
 
-def _register_fonts() -> str:
-    """Register Carlito if present; return the base font family name to use."""
-    candidates = {
-        "Carlito": "Carlito-Regular.ttf",
-        "Carlito-Bold": "Carlito-Bold.ttf",
-        "Carlito-Italic": "Carlito-Italic.ttf",
-        "Carlito-BoldItalic": "Carlito-BoldItalic.ttf",
-    }
-    found: dict[str, str] = {}
-    for d in _CARLITO_DIRS:
+def _find_font(filenames: list[str]) -> str | None:
+    for d in _FONT_DIRS:
         base = Path(d)
         if not base.exists():
             continue
-        for name, fn in candidates.items():
-            if name in found:
-                continue
+        for fn in filenames:
+            hit = base / fn
+            if hit.exists():
+                return str(hit)
             for p in base.rglob(fn):
-                found[name] = str(p)
-                break
-    if "Carlito" in found:
+                return str(p)
+    return None
+
+
+def _register_fonts() -> str:
+    """Register the first available real font family; return its base name.
+
+    Falls back to Helvetica so the demo renders on any machine. Helvetica lacks
+    subscript glyphs, but `richtext_markup` normalises those to <sub>/<super>
+    markup, so chemistry/units (CO₂, m²) stay correct regardless of the font."""
+    for family, members in _FONT_FAMILIES:
+        regular = _find_font(members[family])
+        if not regular:
+            continue
         try:
-            pdfmetrics.registerFont(TTFont("Carlito", found["Carlito"]))
-            pdfmetrics.registerFont(
-                TTFont("Carlito-Bold", found.get("Carlito-Bold", found["Carlito"]))
-            )
-            pdfmetrics.registerFont(
-                TTFont("Carlito-Italic", found.get("Carlito-Italic", found["Carlito"]))
-            )
-            pdfmetrics.registerFont(
-                TTFont(
-                    "Carlito-BoldItalic",
-                    found.get("Carlito-BoldItalic", found["Carlito"]),
-                )
-            )
+            pdfmetrics.registerFont(TTFont(family, regular))
+            for member, names in members.items():
+                if member == family:
+                    continue
+                pdfmetrics.registerFont(TTFont(member, _find_font(names) or regular))
             pdfmetrics.registerFontFamily(
-                "Carlito",
-                normal="Carlito",
-                bold="Carlito-Bold",
-                italic="Carlito-Italic",
-                boldItalic="Carlito-BoldItalic",
+                family,
+                normal=family,
+                bold=f"{family}-Bold",
+                italic=f"{family}-Italic",
+                boldItalic=f"{family}-BoldItalic",
             )
-            return "Carlito"
+            return family
         except Exception:
-            pass
+            continue
     return "Helvetica"
 
 
@@ -80,7 +100,7 @@ PAGE_MARGIN = 18 * mm
 
 def styles() -> dict[str, ParagraphStyle]:
     ss = getSampleStyleSheet()
-    bold = f"{BASE_FONT}-Bold" if BASE_FONT == "Carlito" else "Helvetica-Bold"
+    bold = "Helvetica-Bold" if BASE_FONT == "Helvetica" else f"{BASE_FONT}-Bold"
 
     def mk(name, **kw):
         return ParagraphStyle(name, parent=ss["Normal"], fontName=BASE_FONT, **kw)
@@ -121,6 +141,22 @@ _MARK_WRAP = {
     "code": ('<font face="Courier">', "</font>"),
 }
 
+# Unicode sub/superscripts (CO₂, H₂O, m², x³ …) are tofu in fonts without those
+# glyphs (e.g. the Helvetica fallback). Map them to ReportLab <sub>/<super> markup
+# over the *plain* digit/operator, so they render correctly in ANY font.
+_SUB_TRANS = str.maketrans("₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎", "0123456789+-=()")
+_SUP_TRANS = str.maketrans("⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾ⁿ", "0123456789+-=()n")
+_SUB_RE = re.compile("[₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎]+")
+_SUP_RE = re.compile("[⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾ⁿ]+")
+
+
+def _normalize_scripts(escaped: str) -> str:
+    """Replace runs of sub/superscript Unicode with <sub>/<super> markup. Runs on
+    already-html-escaped text (these chars survive escaping; the tags are literal)."""
+    escaped = _SUB_RE.sub(lambda m: f"<sub>{m.group().translate(_SUB_TRANS)}</sub>", escaped)
+    escaped = _SUP_RE.sub(lambda m: f"<super>{m.group().translate(_SUP_TRANS)}</super>", escaped)
+    return escaped
+
 
 def richtext_markup(value: RichText) -> str:
     """RichText → ReportLab inline markup (escaped), marks → <b>/<i>/font, math → inline image."""
@@ -140,7 +176,7 @@ def richtext_markup(value: RichText) -> str:
             else:                                    # not configured → readable fallback
                 parts.append(f"<i>{html.escape(run.text)}</i>")
             continue
-        txt = html.escape(run.text)
+        txt = _normalize_scripts(html.escape(run.text))
         if run.mark and run.mark in _MARK_WRAP:
             o, c = _MARK_WRAP[run.mark]
             txt = f"{o}{txt}{c}"

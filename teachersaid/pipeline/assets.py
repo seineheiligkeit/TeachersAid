@@ -131,7 +131,11 @@ def _bar_chart(asset: Asset, path: Path) -> None:
         fig, ax = plt.subplots(figsize=(max(4.0, 0.95 * n + 1.5), 3.3), layout="constrained")
         ax.bar(range(n), vals, color="#4f6f8f", edgecolor="#33506e")
         ax.set_xticks(range(n))
-        ax.set_xticklabels(cats)
+        # Safety net: even below the horizontal-switch thresholds, mid-length or
+        # numerous labels can collide on a vertical axis — rotate them so they never
+        # overlap (constrained_layout then reclaims the space).
+        rot = max((len(c) for c in cats), default=0) > 6 or n >= 5
+        ax.set_xticklabels(cats, rotation=30 if rot else 0, ha="right" if rot else "center")
         if log:
             ax.set_yscale("log")
         if s.get("ylabel"):
