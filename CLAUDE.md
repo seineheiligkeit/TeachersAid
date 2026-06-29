@@ -37,6 +37,19 @@ python -m teachersaid                  # dashboard → http://127.0.0.1:8000
   with no network. `seed` pushes all examples into the dashboard's review queue.
 - Generated PDFs, rasters, and the JSON review store land under `runs/` (git-ignored).
 
+## Invariants (and their boundaries) — read `Documents/invariants.md`
+
+The project's load-bearing rules — and crucially *what each does NOT forbid* — live in
+**`Documents/invariants.md`**. Read it before you let a remembered rule block a good idea; several rules in
+this file are stated in their *strong proxy* form and the boundary matters. The one most often mis-applied:
+
+> **"Select, never author" applies to FACTS, not to EXPRESSION.** The LLM never originates a load-bearing
+> *fact* (numbers, dates, names, quotes, competences — these are selected/computed/curated). It **may** author
+> *expression* — prose, narrative, framing, task wording — *as a projection over a frozen, given fact-set*
+> (the same shape as rendering). Correct-by-construction has **four** mechanisms: computed · selected ·
+> curated · **re-expressed-under-constraint** (authored prose over sourced facts + a deterministic
+> entity-lint). So "never author" ≠ "no prose". See `invariants.md` §3 + `sachverhalt-content-layer-design.md`.
+
 ## Architecture — the load-bearing idea
 
 The design separates **blocks → content → rendering** as three distinct actions, and the package

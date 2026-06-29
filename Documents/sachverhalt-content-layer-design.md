@@ -61,6 +61,17 @@ demands it. The honest reconciliation with select-never-author is a **split**:
   scripts, the text annotations are authored, then SME-vetted) — but **grounded in those structured facts**,
   so every sentence is checkable against a sourced fact, never asserted free-hand.
 
+**This is still correct by construction** (settled 29 Jun 2026 — see §12-Q1). The deeper framing is not
+"select vs. author" but **"select the facts, author the expression."** A Darstellung pass that only sees a
+**frozen, sourced fact-set** and re-expresses it is a *prose renderer of facts* — the exact shape of the
+rendering layer, which everyone trusts precisely because it projects content and cannot reach back and
+invent any. A re-expression pass can only (a) garble an entity (1815→1851) or (b) add a connective claim.
+(a) is killed by a **deterministic entity-lint** (every date/name/quote in the prose must appear in the
+fact-set — regex-level, no LLM); (b), at school level, *is* the standard didactic framing — the value, not a
+leak. So the load-bearing rule is precise: **the LLM never originates a load-bearing FACT; it may originate
+EXPRESSION over facts it was handed.** (The catalog of project hard-rules + their boundaries lives in
+[`invariants.md`](invariants.md).)
+
 That yields didactic richness *and* the honesty discipline. It is **not** in tension with the existing
 philosophy — it is the same philosophy applied to a third kind of material.
 
@@ -132,6 +143,7 @@ class Sachverhalt(BaseModel):
     klasse_range: tuple[int,int]
     kompetenzbereiche: list[str]; competences: list[str]   # discovery tags (cf. Dataset)
     topic: str; leitfrage: RichText
+    sensitive: bool = False                                # → conservative authoring + SME review (§12-Q1)
     sources: list[ProvenanceSource]                        # role="facts" mandatory
     # --- the structured substance (facts) ---
     timeline: list[HistEvent] = []
@@ -157,6 +169,13 @@ subject exercises it).
   `BlockProvenance`. `bedeutung`/`gegenwartsbezug` → closing key_fact blocks. Pure projection, rendered by
   the existing path; the prose-provenance gate already enforces that fact blocks name a `role="facts"`
   source.
+- **The authoring guard (the §12-Q1 mechanism) — `pipeline/sachverhalt_lint.py`.** The Darstellung pass
+  authors freely *over the frozen fact-set*; a **deterministic entity-lint** then verifies every date, year,
+  proper name, and quoted span in the prose appears in the fact-set (regex/string match, no LLM) — so no
+  out-of-set fact can survive. This makes the *authoring itself* correct-by-construction, not just the facts.
+  The teacher guide additionally renders a **Faktenbasis/Belege panel** (the grounded facts + sources) so a
+  quick human read is *aimed*, not forensic. A `sensitive=True` Sachverhalt routes to conservative authoring
+  + a mandatory SME pass (the ~5 topics — NS-Zeit, Österreichs Rolle, … — where *tone* has real stakes).
 - **Figures → DERIVED, correct-by-construction.**
   - `timeline` → `matplotlib:timeline` (**exists**; spec `{events:[{at,label}]}`) straight from `timeline[]`.
   - `causes` → a **new `Wirkungsgefüge`/cause-effect recipe** (boxes + arrows; bundles with the deferred
@@ -211,15 +230,38 @@ tasks**, approve. `orch.ingest_sachverhalt` gates (rights + facts-required) → 
   pattern: subagents emit `Sachverhalt` JSON → `tools/ingest_sachverhalte.py` → rights/facts gate → verify →
   stage). The facts are *selected/sourced*, the narrative *authored-then-vetted* — never invented.
 
-## 12. Open questions / decisions for review
+## 12. Decisions
 
-1. **Narrative authoring:** how much of `darstellung` is hand/subagent-authored vs assembled from
-   templates over the facts? (Lean authored-then-vetted for quality; templated for the deterministic parts.)
-2. **Figure dependency:** the `Wirkungsgefüge` recipe — fold into the deferred **CHE+PHY MINT-figure track**
+**Q1 — Narrative authoring: SETTLED (29 Jun 2026).** *Author freely over a frozen, sourced fact-set.* The
+Darstellung pass is a **prose renderer of the curated facts** — it may add framing, rhythm, connective
+narrative, and standard didactic interpretation, but it only ever sees the fact-set. Rationale: re-expressing
+a fixed, sourced input is the same shape as the rendering layer (a projection that cannot invent content), so
+it stays **correct by construction** — the load-bearing rule is *the LLM never originates a load-bearing
+FACT; it may originate EXPRESSION over facts it was handed* (see [`invariants.md`](invariants.md) #3). Guards:
+
+- a **deterministic entity-lint** (`pipeline/sachverhalt_lint.py`) — every date/year/name/quote in the prose
+  must appear in the fact-set (regex/string, no LLM) → no out-of-set fact can survive. *This is the
+  correct-by-construction guarantee on the authoring itself.*
+- a **visible Faktenbasis/Belege panel** in the teacher guide — a courtesy that *aims* the human read, not a
+  gate (the SME teacher is the final guard, and we point their attention, we don't demand a forensic check).
+- a **`sensitive` flag** → conservative authoring + mandatory SME pass for the ~5 topics (NS-Zeit,
+  Österreichs Rolle, Kolonialismus/Migration, …) where *tone/framing* — not factual contestation — has real
+  stakes (and, for NS, legal edges around glorification).
+
+> We deliberately reject over-strict hedging of the exposition into "manche Historiker:innen meinen…" mush.
+> Standard Austrian school topics are well documented; the standard didactic narrative *is* the Sachkompetenz
+> goal. Multiperspektivität/Kontroversität lives in the **Urteils-tasks** (the `position_argument` layer),
+> not in the factual Darstellung. A worksheet is a teaching tool, not a research citation: conveying *what
+> happened and what it means* outweighs pedantic precision — and the entity-lint keeps the dates right anyway,
+> so we don't even trade them away. (Why this matters and where the line is: [`invariants.md`](invariants.md) #3.)
+
+**Q2 — Figure dependency:** the `Wirkungsgefüge` recipe — fold into the deferred **CHE+PHY MINT-figure track**
    or a parallel "structured-content figure" track? (It's a box-and-arrow diagram, not a chart.)
-3. **Unify with `LibraryBlock`?** A Sachverhalt is, in part, a richer InfoBlock cluster — keep it a separate
-   curated primitive (like `Dataset`) or harvest its Darstellung into library blocks for reuse? (Proposal:
-   separate primitive; harvest the *derived* blocks like any worksheet.)
-4. **Fact-type set:** lock the v0 history fields (§6) now; defer Bio/Geo fact-types to Phase 2.
-5. **Scope line (unchanged):** we make the material; we do not assert an uncited historical claim. Every fact
-   is sourced and SME-fact-checked at the gate.
+**Q3 — Unify with `LibraryBlock`?** A Sachverhalt is, in part, a richer InfoBlock cluster — keep it a separate
+curated primitive (like `Dataset`) or harvest its Darstellung into library blocks for reuse? (Proposal:
+separate primitive; harvest the *derived* blocks like any worksheet.) *(open)*
+
+**Q4 — Fact-type set:** lock the v0 history fields (§6) now; defer Bio/Geo fact-types to Phase 2. *(open)*
+
+**Q5 — Scope line (unchanged):** we make the material; we do not assert an *uncited* historical claim. Every
+fact is sourced and SME-fact-checked at the gate; the authored prose only re-expresses those facts.
