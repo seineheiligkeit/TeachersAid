@@ -14,6 +14,34 @@ Forward-looking *capability* features for TeachersAid. (The schema-version roadm
 > model holds, no change needed; results + the realistic-AFB-mix finding in
 > `Documents/matura-calibration.md`).
 
+### ☐ TODO (home PC) — automated full Matura-archive extractor
+
+**Why home, not here:** the remote session's egress proxy blocks `matura.gv.at` /
+`aufgabenpool.at` (403 on CONNECT), so exams can only be hand-uploaded one zip at a time. On a
+normal home network we can bulk-download and process the whole archive — *the full bandwidth of
+ideas*. The probe is proven on **Maths** (`matura-math-coverage.md`) and **Deutsch**
+(`matura-deutsch-coverage.md`); scaling it gives a **demand map per subject**.
+
+Build, at home:
+1. **Downloader** — fetch the public exam zips (Aufgaben + Korrektur) across **all subjects ×
+   all years × Teil 1/2**, Haupt-/Neben-/Wintertermin, from matura.gv.at + the aufgabenpool.
+   Licence is **CC BY (IWG 2022)** — keep attribution; it's redistribution-clean. Land raw
+   files under `runs/matura/` (git-ignored; sync via Google Drive like other `runs/`).
+2. **Generalize `tools/extract_matura.py`** beyond AHS-Math. It's solid for Maths (Aufgabe N +
+   point-keys + GK); other subjects have different shapes — **Deutsch = Themenpakete →
+   (Textsorte + Textbeilage + operator-driven Arbeitsaufträge)** (parse against
+   `grounding/textsorten.py` + `operators.py`); the **modern languages** = Lesen/Hören/Sprach­
+   verwendung/Schreiben blocks; the **sciences/GWB** oral Beispielaufgaben. Add **subject-aware
+   parsers** behind one CLI; reuse the filename-metadata + Beurteilungsschlüssel machinery.
+3. **Run → per-subject demand maps** — emit a `matura-<subject>-coverage.md` for each: operators
+   used (validate against our catalogs), the genres/recipes/topics demanded, and the resulting
+   **engine-extension priority** (parametric recipes for MINT, Textsorten/scaffolds for the
+   languages, sourced-text/Quellenarbeit for GWB/Geschichte, …). This is the cross-subject
+   guidance the whole task generator feeds on.
+
+**Guards:** no raw PDFs/corpus committed to git (large; `runs/` + Drive). Keep the deterministic,
+no-LLM discipline — a tool fetches & parses; the model never invents an exam fact.
+
 **Four "asset classes" now exist** — each makes content trustworthy by finding the thing that's
 correct-by-construction (or curation) and making it the durable, reusable asset:
 - **Grounded-facts data layer** (Geography/MINT): real cited numbers from 8 curated CC-BY datasets →
