@@ -62,15 +62,18 @@ student learns to *build* what the Klasse-8 Matura merely *checks*.
   Matura's third-party-text caveat needs.
 
 **The gap (the German analogue of "missing parametric recipes"):**
-1. **A Textsorten catalog (grounding)** — the ~10 SRDP Textsorten, each with its
-   Schreibhandlungen, typical operators, word-count band, register, and a structure scaffold
-   (Einleitung/Hauptteil/Schluss conventions). *Select, never author* — sourced from the official
-   SRDP Deutsch Textsortenkatalog (the SME can supply it, as with the operator PDFs).
-2. **A Schreibhandlungen taxonomy** — the macro writing-acts mapped to Textsorten and to our
-   operators (the level the Korrekturheft scores against).
-3. **Integration into `text_tasks`** — emit a *Matura-shaped but scaffolded* worksheet: source
-   text + N operator-driven Arbeitsaufträge → a **target Textsorte**, with the genre taught
-   (not assumed). The annotation-derived answers stay correct-by-curation.
+1. **A Textsorten catalog (grounding) — ✅ DONE** (`grounding/textsorten.py`, from the official
+   *Textsortenkatalog*, Stand Sept. 2020): the 7 SRDP Textsorten, each with definition,
+   Schreibhandlungen, Umfang bands, situativer Kontext, Textbasis (literarisch/nicht-fiktional/
+   pragmatisch), scope. *Select, never author.*
+2. **A Schreibhandlungen taxonomy — ✅ DONE** (same module): the 6 macro writing-acts
+   (Deskription, Narration, Explikation, Argumentation, Rekapitulation, Evaluation) +
+   `SCHREIBHANDLUNG_OPERATORS`, a curated cross-walk to the Deutsch operator catalog (a test
+   locks the targets to real operators). This is the level the Korrekturheft scores against.
+3. **Integration into `text_tasks` — NEXT** — emit a *Matura-shaped but scaffolded* worksheet:
+   source text + N operator-driven Arbeitsaufträge → a **target Textsorte** (via
+   `format_textsorte_brief`), with the genre *taught* (not assumed). Annotation-derived answers
+   stay correct-by-curation.
 
 ## How German differs from Maths (the key cross-subject insight)
 
