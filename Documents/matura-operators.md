@@ -109,3 +109,31 @@ Plan once exams are provided (egress proxy blocks matura.gv.at — the SME suppl
 4. Write the findings as a short calibration note; fold any change into `difficulty.py`.
 
 No new asset class, no stored corpus — calibration tunes existing code + a note.
+
+### The extractor (built — `tools/extract_matura.py`)
+
+A deterministic, no-LLM extractor (the `parse_lehrplan`/`fetch_*` precedent) turns the
+official PDFs into per-task JSON, so the ~10-year archive becomes a usable corpus. The math
+content is largely vector/image, so it captures **structure + text**, not formulas:
+
+- **From the filename** (stable `KL25_PT1_AHS_MAT_00_DE_{AU,LO}`): year, Termin, Teil,
+  Schulform, subject, language, kind.
+- **Aufgabenheft (AU):** per task — title, context, instruction, the **operator** (from the
+  imperative), the **answer format** (`[2 aus 5]`), point marker.
+- **Korrekturheft (LO):** per task — title, the **operator + point scheme** (from the
+  point-key sentence), **Grundkompetenz** where printed, plus the exam **Beurteilungs­
+  schlüssel** (point→grade). AU+LO of one exam are auto-paired and merged.
+
+Pure parsers are unit-tested offline (`tests/test_extract_matura.py`); only PDF reading
+touches PyMuPDF.
+
+**What the 2025 AHS exam yielded** (the shape calibration will work from): 28 tasks
+(24 Teil 1 @ 1 pt + 4 Teil 2, Best-of on 26–28), total 36 pts; every task's operator is one
+of our catalogued **Mathematik** operators (a test locks this), AU↔LO operators agree on 21
+of 28 (the rest are multi-operator Teil-2 tasks); **half-point** tasks flagged. Two honest
+limits: (a) **GK codes are sparse** — the Korrekturheft prints `Grundkompetenz:` only on
+genuinely open-format tasks (3 of 28 in 2025), so a full GK-per-task mapping needs the
+separate Aufgabenpool metadata; (b) **Teil-1 is all 1-point/binary**, so within Teil 1 point
+weight ≠ difficulty — the differentiating signal is the *operator × format × GK*, not points.
+Calibration will therefore lean on operator/format/GK demand, with Teil-2 point allocation as
+the graded-difficulty signal.
