@@ -168,8 +168,10 @@ maps to our `kind`: `mc→multiple_choice·z→matching·k→construction·l→t
 `_RANK_TO_AFB` is kept identical to `pipeline/difficulty._RANK_TO_BAND` (one ladder, two surfaces; a
 test locks it). **Routing is by canonical code** (`lehrplan_store._code_for`), not display name, since
 `model.subject` carries the caller's string. Other subjects fall back to a flagged generic palette;
-still to curate: FS/Latein/GZ/Ethik. **Next: #1 calibration** — tune `difficulty.py` against real
-point-weighted Matura items (see the doc's §5 handoff).
+still to curate: FS/Latein/GZ/Ethik. **Calibration (#1) done** (`tools/extract_matura.py` +
+`Documents/matura-calibration.md`): the cognitive_level→AFB→difficulty model holds, no change. The
+live thread is **Matura-backward design** — mine the SRDP endpoints into rich parametrized worksheets
+for earlier grades; the Maths demand map + recipe-build order is `Documents/matura-math-coverage.md`.
 
 ## Grounded facts & data layer (`teachersaid/grounding/data/`)
 

@@ -1,5 +1,9 @@
 # Matura orientation & the SRDP Operatoren grounding
 
+> **Track index.** This doc = the investigation, decisions, and the Operatoren grounding.
+> Companions: **`matura-calibration.md`** (#1 calibration results) and
+> **`matura-math-coverage.md`** (the Matura→math-engine demand map + *Matura-backward design*).
+
 *Session record + decisions, 29 Jun 2026. The AHS endpoint — the standardisierte kompetenz­
 orientierte Reife- und Diplomprüfung (SRDP / Matura) — is the capstone the whole competence
 model points at. This is what we took from it, and what we deliberately did **not**.*
@@ -42,6 +46,15 @@ model points at. This is what we took from it, and what we deliberately did **no
   time is pedagogically strong (a *usage pattern*, not an asset class).
 - **Operators are GROUNDING, not content** — a controlled vocabulary injected into the
   generation brief, like the competence catalog or the ÜT legend. *Select, never author.*
+- **Matura-backward design (the overarching strategy).** The Matura is the competence
+  *endpoint*, and in the exam it appears in its most minimal form (a checkbox, a one-line
+  task). That terseness is an *assessment* artefact — we **invert** it: take the endpoint the
+  Matura certifies and build the *rich, scaffolded, parametrized, fully-explained path* to it
+  **earlier** in the curriculum (a Klasse-6 worksheet that genuinely teaches what the Klasse-8
+  Matura merely ticks off). The Matura is a **demand signal** (anchors relevance), used
+  backward — *not a template* (no exam-style drill) and *not a ceiling* (worksheets range
+  beyond it). It **generalizes across subjects** (Maths is the first probe). Worked out for
+  Maths in **`Documents/matura-math-coverage.md`** (the demand map + recipe-build order).
 
 ## 3 · What was built — the Operatoren grounding (`teachersaid/grounding/operators.py`)
 
