@@ -1,8 +1,10 @@
 # Matura orientation & the SRDP Operatoren grounding
 
 > **Track index.** This doc = the investigation, decisions, and the Operatoren grounding.
-> Companions: **`matura-calibration.md`** (#1 calibration results) and
-> **`matura-math-coverage.md`** (the Matura→math-engine demand map + *Matura-backward design*).
+> Companions: **`matura-calibration.md`** (#1 calibration results),
+> **`matura-math-coverage.md`** (the Matura→math-engine demand map + *Matura-backward design*),
+> and **`matura-deutsch-coverage.md`** (the same probe applied to Deutsch — Textsorten/
+> Schreibhandlungen on the annotated-text engine; the cross-subject "engine differs in kind" note).
 
 *Session record + decisions, 29 Jun 2026. The AHS endpoint — the standardisierte kompetenz­
 orientierte Reife- und Diplomprüfung (SRDP / Matura) — is the capstone the whole competence
