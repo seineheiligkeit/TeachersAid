@@ -173,6 +173,37 @@ still to curate: FS/Latein/GZ/Ethik. **Calibration (#1) done** (`tools/extract_m
 live thread is **Matura-backward design** — mine the SRDP endpoints into rich parametrized worksheets
 for earlier grades; the Maths demand map + recipe-build order is `Documents/matura-math-coverage.md`.
 
+### Matura archive downloader + subject-aware extractor (the full-archive build)
+
+The home-PC TODO from `feature-roadmap.md` is **done**: the whole public SRDP archive is now reachable
+and parseable (the remote session's egress proxy had blocked `matura.gv.at`/`aufgabenpool.at`; a home
+network reaches both — aufgabenpool's 403 was only User-Agent gating). Three deterministic, **no-LLM**
+tools (the `fetch_*`/`parse_lehrplan` precedent — a tool fetches & parses, the model never invents an
+exam fact):
+
+- **`tools/fetch_matura.py`** — the downloader. matura.gv.at `/downloads` is a TYPO3 *tx_downloads* +
+  Solr archive where **each exam is a "Collection"** served as a zip (e.g. `KL25_PT1_AHS_MAT_00_DE_
+  {AU,LO}.pdf`). Facets: `year` (2013/14…now) × `documentType` (Klausuren | Kompensationsprüfungen) ×
+  `subject` × `schoolType` (AHS/BHS/BRP); results paginate. The download URL carries a per-collection
+  **`cHash`** anti-tamper token (cannot be fabricated → we scrape the real hrefs). `--list` dry-runs,
+  `--all` crawls the curated leaf subjects (`SUBJECT_CODE`), `--standard-only` skips translation/
+  accessibility editions, `--extract` chains the extractor. Idempotent via a **manifest** recording
+  CC-BY (IWG 2022) + *"Datenquelle: Bundesministerium für Bildung"*. Output → `runs/matura/`
+  (git-ignored; Drive-synced). Pure parsing functions are unit-tested offline (`tests/test_fetch_matura.py`).
+- **`tools/extract_matura.py`** — now **subject-aware** (dispatch on the filename's subject code; the
+  load-bearing fix was the language slot, a CEFR code `B1/B2/A2` not `[A-Z]{2}`). Math/AMT keep the
+  task+point parser; **Deutsch** parses the Korrekturheft's labelled fields (Textsorte · Wortanzahl ·
+  Schreibhandlungen · operator-headed Arbeitsaufträge — operators mapped to canonical `operators.DEUTSCH`
+  forms by *earliest-match* = the imperative head, so a trailing adverb can't outvote the lead verb);
+  **Latein/Griechisch** parse the ÜT/IT point split + sources + the numbered IT Arbeitsaufgaben;
+  **modern languages** parse skill × CEFR × item-formats (skill-split booklets, not operator-driven).
+- **`tools/matura_demand.py`** — aggregates `runs/matura/json/` into a per-subject **demand map**:
+  operators validated against the catalogs, Textsorten/Schreibhandlungen (DEU), ÜT/IT + operators (LAT),
+  skill×CEFR coverage (FS), operator×AFB mix (MAT/AMT). Feeds the `matura-<subject>-coverage.md` write-ups.
+
+The sciences/GWB are **not** in this Klausur archive (their Matura is oral/teilstandardisiert) — confirmed,
+no parser. The corpus stays in `runs/` (no raw PDFs in git); re-mirror anytime with `fetch_matura --all`.
+
 ## Grounded facts & data layer (`teachersaid/grounding/data/`)
 
 Generalises the grounding discipline from **competences** to **facts**: content states *real,

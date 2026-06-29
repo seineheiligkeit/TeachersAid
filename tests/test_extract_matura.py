@@ -133,3 +133,108 @@ def test_extracted_operators_are_known_srdp_math_operators():
     for canonical in set(ex._OP_NOMINAL.values()):
         assert canonical.lower() in catalog_text, \
             f"{canonical!r} not in the MAT operator catalog"
+
+
+# --- subject dispatch + the non-math parsers (Phase 2 of the archive build) -----------
+def test_filename_language_cefr_slot():
+    """The language slot is a CEFR code for FS/Latein (B1/B2/A2), not just letters."""
+    lat = ex.parse_filename("KL25_PT1_AHS_LAT_SR_B1_AU.pdf")
+    assert lat["subject"] == "LAT" and lat["language"] == "B1"
+    eng = ex.parse_filename("KL25_PT3_HTL_ENG_SR_B2_AU.pdf")
+    assert eng["subject"] == "ENG" and eng["language"] == "B2"
+    deu = ex.parse_filename("KL25_PT1_ALL_DEU_SR_CC_LO.pdf")
+    assert deu["subject"] == "DEU" and deu["kind"] == "loesungen"
+
+
+def test_subject_kind_dispatch():
+    assert ex.subject_kind("MAT") == "math" and ex.subject_kind("AMT") == "math"
+    assert ex.subject_kind("DEU") == "deutsch"
+    assert ex.subject_kind("LAT") == "latein" and ex.subject_kind("GRI") == "latein"
+    assert ex.subject_kind("ENG") == "language" and ex.subject_kind("SPA") == "language"
+
+
+def test_operator_de_maps_to_catalog_forms():
+    """The Deutsch operator detector returns canonical forms present in operators.DEUTSCH."""
+    forms = {f.strip().lower() for o in ops.DEUTSCH for f in o.forms.split("/")}
+    cases = {
+        "Geben Sie kurz den Inhalt wieder.": "wiedergeben",
+        "Analysieren Sie die sprachliche Gestaltung.": "analysieren / untersuchen",
+        "Deuten Sie die Gedichte vergleichend.": "deuten / interpretieren",
+        "Nehmen Sie zu der These Stellung.": "kommentieren / Stellung nehmen",
+        "Bewerten Sie die Position des Autors.": "bewerten",
+    }
+    for instr, want in cases.items():
+        got = ex.operator_de(instr)
+        assert got == want
+        # every canonical form the detector emits decomposes into catalog forms
+        assert all(p.strip().lower() in forms for p in got.split("/"))
+
+
+DEU_LO_FIXTURE = (
+    "Thema 1 / Aufgabe 1\n"
+    "Textsorte:\nTextinterpretation\n"
+    "Wortanzahl:\n540 – 660\n"
+    "Situation: \nkein abweichender Kontext\n"
+    "Schreibhandlungen, \ndie im Sinne der \nTextsorte erfüllt \nwerden sollen:\n"
+    "Argumentation, Deskription, Explikation\n"
+    "Möglichkeiten zu Arbeitsauftrag 1:  \nGeben Sie kurz den Inhalt wieder.\n"
+    "Möglichkeiten zu Arbeitsauftrag 2:  \nAnalysieren Sie die Gestaltung.\n"
+    "Thema 1 / Aufgabe 2\n"
+    "Textsorte:\nKommentar\nWortanzahl:\n270 – 330\n"
+    "Schreibhandlungen, \nwerden sollen:\nArgumentation, Evaluation\n"
+    "Möglichkeiten zu Arbeitsauftrag 1:  \nNehmen Sie Stellung.\n"
+)
+
+
+def test_parse_deutsch():
+    d = ex.parse_deutsch(DEU_LO_FIXTURE)
+    a = d["aufgaben"]
+    assert len(a) == 2
+    assert a[0]["textsorte"] == "Textinterpretation" and a[0]["wortanzahl"] == "540 – 660"
+    assert "Argumentation" in a[0]["schreibhandlungen"]
+    ops0 = [w["operator"] for w in a[0]["arbeitsauftraege"]]
+    assert ops0 == ["wiedergeben", "analysieren / untersuchen"]
+    assert a[1]["textsorte"] == "Kommentar"
+    assert a[1]["arbeitsauftraege"][0]["operator"] == "kommentieren / Stellung nehmen"
+
+
+LAT_AU_FIXTURE = (
+    "Hinweise: ein Übersetzungstext (ÜT) sowie ein Interpretationstext (IT).\n"
+    "A. Übersetzungstext\n"
+    "Übersetzen Sie den folgenden lateinischen Text. (36 Punkte)\n"
+    "Cum in suo ille fatigatus quiesceret pomario ...\n"
+    "(Petrus Alphonsi, Disciplina Clericalis )\n"
+    "B. Interpretationstext\n"
+    "Lesen Sie und lösen Sie die Arbeitsaufgaben. (24 Punkte)\n"
+    "Veste tegor vili ...\n"
+    "(Ovid, Heroides )\n"
+    "Arbeitsaufgaben zum Interpretationstext\n"
+    "1.\t\nTrennen Sie die folgenden Wörter in ihre Bestandteile. (3 Punkte)\n"
+    "2.\t\nKreuzen Sie die passende Übersetzung an. (2 Punkte)\n"
+    "3.\t\nVergleichen Sie die beiden Texte. (3 Punkte)\n"
+)
+
+
+def test_parse_latein():
+    d = ex.parse_latein(LAT_AU_FIXTURE)
+    assert d["uebersetzung"] == {"operator": "übersetzen", "points": 36,
+                                 "source": "Petrus Alphonsi, Disciplina Clericalis"}
+    assert d["interpretation"]["points"] == 24
+    assert d["interpretation"]["source"] == "Ovid, Heroides"
+    aa = d["arbeitsaufgaben"]
+    assert [a["nr"] for a in aa] == [1, 2, 3]
+    assert aa[0]["operator"] == "trennen (Wortbildung)" and aa[0]["points"] == 3
+    assert aa[1]["operator"] == "ankreuzen" and aa[2]["operator"] == "vergleichen"
+
+
+def test_operator_lat_strips_control_glyphs():
+    # PyMuPDF leaves \x07 bullet glyphs at the head of an instruction
+    assert ex.operator_lat("\x07Trennen Sie die Wörter") == "trennen (Wortbildung)"
+
+
+def test_parse_language_skill_cefr_tasks():
+    text = ("HTL\n14. Jänner 2026\nEnglisch\nSchreiben B2\n"
+            "Dieses Aufgabenheft enthält drei Aufgaben. Bitte bearbeiten Sie alle drei.\n")
+    lang = ex.parse_language({"subject": "ENG"}, text)
+    assert lang["skill"] == "Schreiben" and lang["cefr"] == "B2"
+    assert lang["n_tasks"] == 3

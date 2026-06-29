@@ -1,12 +1,13 @@
 # Matura orientation & the SRDP Operatoren grounding
 
 > **Track index.** This doc = the investigation, decisions, and the Operatoren grounding.
-> Companions: **`matura-calibration.md`** (#1 calibration results),
-> **`matura-math-coverage.md`** (the Matura→math-engine demand map + *Matura-backward design*),
-> and **`matura-deutsch-coverage.md`** (the same probe applied to Deutsch — Textsorten/
-> Schreibhandlungen on the annotated-text engine; the cross-subject "engine differs in kind" note).
-> **Planned (home PC):** an automated full-archive extractor → a demand map per subject — see
-> the ☐ TODO in `feature-roadmap.md` (the remote session's egress blocks bulk downloads).
+> Companions: **`matura-calibration.md`** (#1 calibration results) and the per-subject demand maps —
+> **`matura-math-coverage.md`** (+ *Matura-backward design*), **`matura-deutsch-coverage.md`**
+> (Textsorten/Schreibhandlungen; now scaled to 33 exams), **`matura-latein-coverage.md`** (ÜT/IT +
+> the Latein operator seed) and **`matura-languages-coverage.md`** (skill×CEFR). **Done (home PC,
+> 29 Jun 2026):** the full-archive build — `tools/fetch_matura.py` (downloader), the subject-aware
+> `tools/extract_matura.py`, `tools/matura_demand.py` (aggregator); the ☐ TODO in `feature-roadmap.md`
+> is now ☑ (the home network reaches matura.gv.at, which the remote session's egress had blocked).
 
 *Session record + decisions, 29 Jun 2026. The AHS endpoint — the standardisierte kompetenz­
 orientierte Reife- und Diplomprüfung (SRDP / Matura) — is the capstone the whole competence
@@ -103,8 +104,14 @@ Design notes:
 
 ## 4 · Open / still to curate
 
-- **Remaining operator catalogs** (lower priority, drop the PDF and it slots in the same way):
-  Fremdsprachen, Latein, Geometrisches Zeichnen, Ethik.
+- **Remaining operator catalogs** (drop the PDF and it slots in the same way): Fremdsprachen, Latein,
+  Geometrisches Zeichnen, Ethik. **Latein now has an empirical seed** from the 41-exam archive run
+  (`matura-latein-coverage.md`): the IT Arbeitsaufgaben use `finden · trennen (Wortbildung) · zuordnen
+  · ergänzen · verfassen · gliedern · ankreuzen (Auswahl) · belegen · auseinandersetzen` (+ generic
+  `angeben/vergleichen/analysieren/benennen/beschreiben`) — what a faithful LAT catalog must cover.
+  **Found gap:** `SUBJECT_OPERATORS` wires only `MAT`, not `AMT`, so `operator_set("AMT")` falls to
+  `DEFAULT` though the catalog's own source covers *"SRP Mathematik und die SRDP Angewandte
+  Mathematik"* — a one-line `"AMT": MATHEMATIK` fix (the 36-exam AMT run confirms it's the same operator set).
 - **Subagent breadth path** (`tools/breadth_prompt.py`) does not yet inject the operators —
   the obvious next integration now the vocabulary is authoritative.
 - **Physik/Chemie refinements** — none planned; the shared Naturwissenschaften base stands.

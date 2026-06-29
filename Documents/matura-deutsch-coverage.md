@@ -83,6 +83,33 @@ The Matura-backward method generalizes, but the *engine extension differs in kin
   existing annotated-text engine: **correct-by-curation**, not computation. There is no sympy
   for German — the durable asset is the vetted text + the genre scaffold, not a generator.
 
+## Scaled validation — 33 exams (the full-archive run, 29 Jun 2026)
+
+The original probe read 2 exams; the home-PC archive build (`tools/fetch_matura.py` +
+`tools/matura_demand.py`) now aggregates **33 Deutsch Klausuren** (Haupt-/Herbst-/Nebentermin,
+2014/15–2025/26), **198 Aufgaben**. The 2-exam reading holds and sharpens:
+
+- **Textsorten demanded** (frequency): *Zusammenfassung 38 · Kommentar 36 · Textinterpretation 33 ·
+  Erörterung 24 · Leserbrief 23 · Meinungsrede 20 · Textanalyse 19 · Empfehlung 4 · offener Brief 1*.
+  **9 distinct types** — the whole `grounding/textsorten.py` repertoire is exercised; the long-form
+  analytic four (Interpretation/Analyse/Erörterung/Meinungsrede) and the short pragmatic three
+  (Zusammenfassung/Kommentar/Leserbrief) dominate, exactly as the catalog models. **Build priority =
+  frequency order.**
+- **Schreibhandlungen** (frequency): *Deskription 172 · Rekapitulation 172 · Argumentation 125 ·
+  Explikation 52 · Evaluation 50 · Narration 3*. The six-act taxonomy is confirmed; Deskription +
+  Rekapitulation + Argumentation are the backbone of almost every task — the scaffold layer should
+  teach those first.
+- **Operators — 100 % catalog-covered.** Every operator the parser named across 198 Aufgaben is in
+  `operators.DEUTSCH` (0 not-in-catalog). Leaders: *wiedergeben 99 · beschreiben 90 · analysieren/
+  untersuchen 63 · kommentieren/Stellung nehmen 60 · bewerten 36 · diskutieren/erörtern 34 · deuten/
+  interpretieren 33 · erschließen 32 · (be)nennen 27 · vorschlagen 24*. The Deutsch operator grounding
+  is now **empirically validated at scale**, not just by 2 exams.
+
+The conclusion is unchanged and reinforced: Deutsch needs **no new computational engine** — the
+durable assets (Textsorten catalog ✅, Schreibhandlungen taxonomy ✅, annotated-text engine ✅) are
+in place; the open work is **step 3** (wire the genre scaffold into `text_tasks`), now with a
+frequency-ranked build order.
+
 So the same probe (mine the SRDP endpoints → build rich earlier material) pays off, but tells
 each subject what *kind* of asset to grow. Next subjects to probe: the sciences (W/E/S +
 experiment/Versuch endpoints), GWB, the modern languages (CEFR + the oral wall).
