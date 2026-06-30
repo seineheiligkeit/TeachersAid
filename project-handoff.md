@@ -174,6 +174,33 @@ target language for Fremdsprache). Read this, then the docs in the order given i
 > both cited on the figure, no geo dependency. Run: `python -m pytest -q` (**315 tests**). **Next:** Phase 3
 > — subagent scaling (`tools/ingest_sachverhalte.py`).
 
+> **Update (Session 9, 30 Jun 2026): Sachverhalt Phase 3 + a NEW asset class (Realien) + a persistence
+> policy change.**
+> - **Sachverhalt — Phase 3 (subagent breadth) DONE.** `tools/sachverhalt_prompt.py` (grounded brief) +
+>   `tools/ingest_sachverhalte.py` (normalizer · facts-gate · entity-lint, the `ingest_batch` twin); first
+>   push = 4 verify-clean modules (GPB *Französische Revolution*/*Industrialisierung* timeline, BIO
+>   *Photosynthese*/*Verdauung* process). The content layer is built P1–P3.
+> - **Realien — CEFR-leveled *communicative* FS reading, a new asset class, BUILT P1–P3**
+>   (`Documents/realien-design.md`; extends the `AnnotatedText` engine). The load-bearing reframe is
+>   **purpose-appropriate rigor**: a Realie is a *Sprechanlass, not an Aussage* — a pretext that provokes
+>   language, not a world-claim — so the fact-discipline DEMOTES (facts are invented-coherent fiction guarded
+>   by an *internal-consistency* lint `pipeline/realie_lint.py`, NOT world-grounding; **constructed is the
+>   default**, no source/rights gate), and what stays load-bearing is the **language** (L2 + CEFR level,
+>   SME-gated) and the **communicative-first** task layer (scan · write · a `RolePlayPayload` **Sprechkarte**,
+>   oral). Built: the schema extension + `rb.material_card` (a Realie renders as a real-artifact card, no line
+>   numbers) + the derivation + the lint + **8 Realien** (EN FS1 + FR FS2, A1+A2, 8 genres) with atmosphere +
+>   a reasoning task ladder; the **arrangement wrap** (`pipeline/realie_arrange.py` — speaking as a
+>   `competence_anchor` served by the interaction, the v0.5 payoff); the **breadth seam**
+>   (`tools/realien_prompt.py` + `tools/ingest_realien.py`). *"Invent the timetable, vet the French."*
+>   **DEFERRED by decision:** the *informational*-genre half (news-in-levels / factual texts where fact-care
+>   snaps back — sourced or dataset-grounded; licence-sensitive).
+> - **Persistence policy changed (`.gitignore`).** `runs/` is no longer wholesale-ignored: **git owns the
+>   generated content + review state** (`runs/**/*.json|.md|.txt` — small, diffable, not regenerable for
+>   subagent work, so remote-session output survives in git) and **ignores only the rendered binaries**
+>   (PDF/PNG — large, rebuildable). Same split as `grounding/voices`. Run: `python -m pytest -q`
+>   (**350 tests**). **Next candidates:** SME gate-review of the staged content; informational Realien
+>   (when ready); or a fresh track.
+
 ---
 
 ## 0 · Orientation (the 30-second version)

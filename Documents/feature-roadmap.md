@@ -3,7 +3,26 @@
 Forward-looking *capability* features for TeachersAid. (The schema-version roadmap lives in
 `schema-roadmap-v0.4-v0.5.md`; this tracks product/engine features.)
 
-## ▶ Start here (state as of 29 Jun 2026, Sessions 4–7)
+## ▶ Start here (state as of 30 Jun 2026)
+
+> **Session update (30 Jun 2026).** Two asset lines advanced + one infra change:
+> - **Sachverhalt — Phase 3 (subagent breadth) DONE.** `tools/sachverhalt_prompt.py` +
+>   `tools/ingest_sachverhalte.py`; first push = 4 verify-clean modules (GPB *Französische Revolution*/
+>   *Industrialisierung*, BIO *Photosynthese*/*Verdauung*). The content layer is built P1–P3.
+> - **Realien — a NEW asset class, BUILT P1–P3** (`Documents/realien-design.md`): CEFR-leveled
+>   *communicative* FS reading. The load-bearing reframe is **purpose-appropriate rigor** — a Realie is a
+>   *Sprechanlass, not an Aussage*, so the facts are invented-coherent fiction (an internal-consistency
+>   lint, not world-grounding) and the **language** is what's load-bearing (SME-gated). 8 Realien (EN+FR,
+>   A1+A2, 8 genres), each a real-artifact card with atmosphere + a reasoning task ladder; the
+>   arrangement wrap (speaking as an interaction anchor); the breadth seam (`realien_prompt`/`ingest_realien`).
+>   **Consciously DEFERRED:** the *informational*-genre half (news-in-levels / factual texts where
+>   fact-care snaps back) — needs a sourced/dataset-grounded approach (licence-sensitive); see §"Annotated
+>   Realien".
+> - **Persistence policy changed.** `runs/` is no longer wholesale-ignored: **git owns the generated
+>   content + review state** (`runs/**/*.json|.md|.txt`), **ignores only the binaries** (PDF/PNG renders).
+>   Remote-session work now survives in git; Drive can carry the binaries. (`.gitignore` + `CLAUDE.md`.)
+> - Full suite **350 passed**. Next-session candidates: SME gate-review of the staged content; informational
+>   Realien (when ready); or a fresh track.
 
 > **Big bet — the Sachverhalt content/exposition layer: Phase 1 BUILT (30 Jun 2026).** Design +
 > decisions: `Documents/sachverhalt-content-layer-design.md`; codebase guide: `CLAUDE.md` "Sachverhalt".

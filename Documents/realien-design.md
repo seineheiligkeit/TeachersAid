@@ -179,8 +179,8 @@ without adding any datum a task relies on, so it is **lint-safe by construction*
 *constructed* honesty model intact. Higher-order tasks (decide-under-constraint, opinion, a
 complication) are the next lift — they need no engine change, just richer annotations.
 
-**Later (Phase 2b):** `arrange.py` wraps a Realie as a `Lernarrangement` — the Realie as
-`shared_product`/material, the speaking as an `interaction` anchor — reusing the v0.5 engine whole.
+**Phase 2b (BUILT):** `pipeline/realie_arrange.py` wraps a Realie as a `Lernarrangement` — the Realie
+worksheet as the role material, the speaking as an `interaction` anchor — reusing the v0.5 engine whole.
 
 ## 8. The lint — internal consistency, honest about its limits
 
@@ -259,6 +259,17 @@ Realien scale exactly like the Sachverhalte we just shipped:
   `in_review`. The facts are invented; the SME fact-checks the **L2 and the level** at the gate.
   `tests/test_ingest_realien.py` (6) locks the normalizer + the constructed-source drop + the
   consistency gate offline.
+- **Phase 3b — informational genres. DEFERRED (30 Jun 2026, by decision).** The breadth above is all
+  **hook** genres (§5) — pretexts where the facts are invented. The *other* genre class — **informational**
+  Realien that assert a real-world claim a student could believe (news-in-levels, a factual sign/poster, a
+  country/animal fact sheet, a real-place climate text) — is consciously set aside. There, purpose-appropriate
+  rigor *flips* and fact-care snaps back: the facts must be **sourced** (`origin="sourced"` + the rights gate)
+  or **grounded in a cited `Dataset`/`Sachverhalt`** (the data-layer move, authored in L2 over a frozen
+  fact-set — the same mechanism #4, but with *real* facts). It is licence-sensitive (level-appropriate
+  redistributable L2 text is scarce — "lean on Realien + generated audio, not sourced literature") and matters
+  most at **B1–B2** / for *Quellenkritik*. The cleanest future entry is the **dataset-grounded** informational
+  Realie (no new licensing; reuses the data layer). The communicative half — the higher-frequency, cleaner
+  bulk of A1–A2 FS reading — is what we built; this is a different, more careful mode for later.
 
 ## 12. Decisions (settled with the SME, 30 Jun 2026)
 
