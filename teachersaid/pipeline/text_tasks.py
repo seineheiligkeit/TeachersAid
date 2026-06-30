@@ -84,9 +84,11 @@ def build_worksheet(at: AnnotatedText, *, today: date | None = None):
     # 1b) the text itself, line-numbered. For a listening text the transcript is
     # teacher-only (modality "oral" → dropped on the student sheet) unless show_transcript.
     transcript_modality = "oral" if (is_audio and not at.show_transcript) else "printable"
+    # a Realie renders as a real-artifact card (no line numbers); an authentic text keeps numbers.
+    is_realie = at.scene is not None
     blocks.append(InfoBlock(
         id="text", kind="source_text", content=at.text, modality=transcript_modality,
-        teacher_note=None, watch_outs=[], asset_refs=[]))
+        numbered=not is_realie, teacher_note=None, watch_outs=[], asset_refs=[]))
     # a constructed Realie has no source (invented-coherent fiction) → no Quelle line.
     if at.source is not None:
         blocks.append(InfoBlock(id="quelle", kind="prose", modality=transcript_modality,
@@ -131,7 +133,6 @@ def build_worksheet(at: AnnotatedText, *, today: date | None = None):
             answer_key=a.answer,
         ))
 
-    is_realie = at.scene is not None
     if is_audio:
         intro = "Hör dir den Text gut an und beantworte die Fragen."
         kernfrage = f"Hörverstehen: „{at.title}“"

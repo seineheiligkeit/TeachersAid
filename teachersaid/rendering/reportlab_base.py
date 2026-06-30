@@ -242,6 +242,32 @@ def numbered_text(text: str, body_style: ParagraphStyle, width: float) -> Table:
     return t
 
 
+def material_card(text: str, body_style: ParagraphStyle, width: float) -> Table:
+    """A Realie (menu / departure board / sign) as a real ARTIFACT: a light bordered, padded card
+    with the text's line breaks preserved and NO line numbers — so it reads as itself, not as an
+    exercise text. (Authentic texts with line refs use `numbered_text` instead.) The first non-blank
+    line is treated as a heading (bold)."""
+    bold = f"{BASE_FONT}-Bold" if BASE_FONT == "Carlito" else "Helvetica-Bold"
+    head = ParagraphStyle("mc_head", parent=body_style, fontName=bold, fontSize=12,
+                          textColor=colors.HexColor("#1f3a52"), spaceAfter=2)
+    lines = text.split("\n")
+    first = next((i for i, ln in enumerate(lines) if ln.strip()), None)
+    rows = []
+    for i, ln in enumerate(lines):
+        if not ln.strip():
+            rows.append([Spacer(1, 3)])                       # blank line → a small gap
+        else:
+            rows.append([Paragraph(html.escape(ln), head if i == first else body_style)])
+    t = Table(rows, colWidths=[width])
+    t.setStyle(TableStyle([
+        ("BOX", (0, 0), (-1, -1), 1.0, colors.HexColor("#9aa7b4")),
+        ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#fbfaf6")),   # warm paper tint
+        ("LEFTPADDING", (0, 0), (-1, -1), 12), ("RIGHTPADDING", (0, 0), (-1, -1), 12),
+        ("TOPPADDING", (0, 0), (-1, -1), 1.5), ("BOTTOMPADDING", (0, 0), (-1, -1), 1.5),
+    ]))
+    return t
+
+
 def grid_table(data: list[list], width: float, header: bool = True,
                weights: list[float] | None = None) -> Table:
     """A content table whose cells WRAP (every cell is a Paragraph, so text can never overflow a

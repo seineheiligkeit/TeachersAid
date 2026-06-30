@@ -133,7 +133,10 @@ def _info_flowables(b: InfoBlock, projection: str, S, width, assets, citations=N
         out.append(rb.raw_para("▸ " + rb.richtext_markup(b.content), S["key_fact"]))
     elif b.kind == "source_text":
         txt = b.content if isinstance(b.content, str) else plain_text(b.content)
-        out.append(rb.numbered_text(txt, S["body"], width))
+        # a Realie (numbered=False) renders as a real-artifact card; an authentic text keeps its
+        # line numbers (tasks reference "Zeile N").
+        out.append(rb.numbered_text(txt, S["body"], width) if b.numbered
+                   else rb.material_card(txt, S["body"], width))
     else:
         out.append(rb.para(b.content, S["body"]))
 

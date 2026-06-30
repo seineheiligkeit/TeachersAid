@@ -47,6 +47,8 @@ class InfoBlock(BlockBase):
     callout_role: CalloutRole | None = None
     teacher_note: RichText | None = None  # teacher-projection only
     watch_outs: list[str] = Field(default_factory=list)
+    numbered: bool = True  # source_text: line numbers (poems/fables, so tasks ref "Zeile N").
+    # False = a real-artifact card (a Realie menu/board reads as itself, not an exercise text).
 
     @field_validator("content", "teacher_note")
     @classmethod

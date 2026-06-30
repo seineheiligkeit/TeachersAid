@@ -60,6 +60,18 @@ def test_derivation_builds_scan_write_and_oral_tasks():
     assert {"FS1.US.2.LES.02", "FS1.US.2.SCH.03", "FS1.US.2.SPR.02"} <= serves
 
 
+def test_realie_renders_as_a_card_not_numbered_text():
+    """A Realie reads as a real ARTIFACT (no line numbers → a material card); an authentic text
+    keeps its line numbers (tasks reference "Zeile N")."""
+    content, _ = _build()
+    src = next(b for b in content.iter_blocks() if getattr(b, "kind", None) == "source_text")
+    assert src.numbered is False                 # the departure board → a material card
+    from teachersaid.library.texts import LORELEY
+    poem, _ = build_worksheet(LORELEY, today=IN)
+    psrc = next(b for b in poem.iter_blocks() if getattr(b, "kind", None) == "source_text")
+    assert psrc.numbered is True                 # the poem keeps line numbers
+
+
 def test_worksheet_is_verify_clean():
     content, res = _build()
     report = verify(content, res)

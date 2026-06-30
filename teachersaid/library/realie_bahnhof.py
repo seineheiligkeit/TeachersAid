@@ -15,15 +15,18 @@ from ..schema.texts import AnnotatedText, Annotation, RealieFact
 
 # A constructed departure board. Rows are natural-language ("08:14 to London — Platform 3") so they
 # render legibly in a proportional font (no space-aligned columns that would go ragged).
-_BOARD = """DEPARTURES — Newcastle Central Station
+_BOARD = """NEWCASTLE CENTRAL STATION
+Departures — have a safe journey!
 
-08:14   to London — Platform 3
-08:45   to Edinburgh — Platform 1
-09:10   to Manchester — Platform 2
-09:30   to London — Platform 5
-10:05   to York — Platform 4
+08:14   to London — Platform 3   (on time)
+08:45   to Edinburgh — Platform 1   (on time)
+09:10   to Manchester — Platform 2   (boarding now)
+09:30   to London — Platform 5   (on time)
+10:05   to York — Platform 4   (on time)
 
-Please check the board for last-minute changes."""
+Trains can be busy on Friday afternoons.
+Please keep your luggage with you at all times.
+Need help? Ask at the Information Desk near Platform 1."""
 
 BAHNHOF = AnnotatedText(
     id="fs1-realie-bahnhof", title="At the station", subject="Erste lebende Fremdsprache",

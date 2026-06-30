@@ -17,20 +17,23 @@ from ..schema.texts import AnnotatedText, Annotation, RealieFact
 # A constructed café menu — natural rows ("Tea — £1.50") so it renders legibly in a proportional
 # font (no dotted leaders that would go ragged).
 _MENU = """THE CORNER CAFÉ
+Fresh coffee and homemade cakes — family-run since 1985
 
-Drinks
+DRINKS
 Tea — £1.50
 Coffee — £2.00
 Hot chocolate — £2.50
 Orange juice — £2.50
+(All our drinks are also available to take away.)
 
-Snacks
+SNACKS
 Cheese sandwich — £3.50
-Tomato soup — £4.00
-Apple pie — £3.00
+Tomato soup — £4.00   (served with warm bread)
+Apple pie — £3.00   — our customers' favourite!
 Chocolate cake — £3.50
 
-Thank you and enjoy your visit!"""
+Open every day, morning till evening · Free Wi-Fi
+Thank you, and enjoy your visit!"""
 
 CAFE = AnnotatedText(
     id="fs1-realie-cafe", title="At the café", subject="Erste lebende Fremdsprache",

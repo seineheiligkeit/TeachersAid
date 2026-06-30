@@ -162,10 +162,20 @@ Add to `schema/texts.py`:
 - `communicative` → a printable written task with a model answer in the teacher layer.
 - `roleplay` → a **Sprechkarte** flowable (two cue boxes, A/B), printable; the oral competence is
   served-in-room — surfaced to the teacher, no write-space for the speaking itself.
-- The Realie text renders as the line-/slot-referenced material block (a menu/timetable can render
-  as a small `grid_table`; the legibility discipline of `reportlab_base` applies).
+- The Realie text renders as a **real artifact** — a light bordered, paper-tinted **material card**
+  (`rb.material_card`, no line numbers; `InfoBlock.numbered=False`), so a menu reads as a menu, not
+  an exercise text. (An authentic poem/fable keeps `numbered_text` for "Zeile N" refs.)
 
-**Later (Phase 2):** `arrange.py` wraps a Realie as a `Lernarrangement` — the Realie as
+**Authoring for "life" — atmosphere, not data (Phase 2a SME note).** A bare price list reads like a
+blackboard; a *real* menu/board is what a teacher values having ready-made. The cheapest, highest-feel
+lift is **atmospheric "fluff" that never touches the facts**: a tagline ("family-run since 1985"), a
+status column ("on time" / "boarding now"), flavour notes ("served with warm bread", "our customers'
+favourite!"), opening hours, friendly notices. It expands the text (and the lint's allowed universe)
+without adding any datum a task relies on, so it is **lint-safe by construction** and keeps the
+*constructed* honesty model intact. Higher-order tasks (decide-under-constraint, opinion, a
+complication) are the next lift — they need no engine change, just richer annotations.
+
+**Later (Phase 2b):** `arrange.py` wraps a Realie as a `Lernarrangement` — the Realie as
 `shared_product`/material, the speaking as an `interaction` anchor — reusing the v0.5 engine whole.
 
 ## 8. The lint — internal consistency, honest about its limits
