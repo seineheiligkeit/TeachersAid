@@ -59,17 +59,20 @@ CAFE = AnnotatedText(
         Annotation(kind="vocab", label="the bill", answer="die Rechnung"),
         Annotation(kind="vocab", label="a snack", answer="eine Kleinigkeit zu essen"),
         Annotation(kind="vocab", label="Would you like…?", answer="Möchtest du…? / Hättest du gern…?"),
-        # --- scan warm-up (Lesen): prices read straight off the menu ---
-        Annotation(kind="comprehension", dimensions=["LES"],
-                   label="How much is a cheese sandwich?",
-                   answer="£3.50.", cognitive_level="understand"),
-        Annotation(kind="comprehension", dimensions=["LES"],
-                   label="Name two hot drinks on the menu and their prices.",
-                   answer="Tea (£1.50), coffee (£2.00) or hot chocolate (£2.50).",
-                   cognitive_level="understand"),
-        Annotation(kind="comprehension", dimensions=["LES"], cognitive_level="apply",
-                   label="You order a coffee and an apple pie. How much is that together?",
-                   answer="£2.00 + £3.00 = £5.00."),     # a SHOWN sum → lint-exempt prices
+        # --- a gentle scan to enter (Lesen) ---
+        Annotation(kind="comprehension", dimensions=["LES"], cognitive_level="understand",
+                   label="How much is a cheese sandwich?", answer="£3.50."),
+        # --- decide under a constraint: read the menu against a budget (analyze) ---
+        Annotation(kind="comprehension", dimensions=["LES"], cognitive_level="analyze",
+                   label="You have £4. Can you buy a coffee AND a tomato soup together? "
+                         "Why or why not?",
+                   answer="No: £2.00 + £4.00 = £6.00, and that is more than £4."),
+        # --- recommend with a reason: categorise the menu (evaluate) ---
+        Annotation(kind="comprehension", dimensions=["LES"], cognitive_level="evaluate",
+                   label="Your friend doesn't like sweet things. Which snack would you recommend, "
+                         "and why?",
+                   answer="The cheese sandwich (£3.50) or the tomato soup (£4.00) — they are not "
+                          "sweet, while the apple pie and the chocolate cake are."),
         # --- communicative writing (Schreiben): a written order, with the total shown ---
         Annotation(kind="communicative", dimensions=["SCH"], cognitive_level="apply",
                    label="You have £6. Write a short note to the waiter: order two things from the "

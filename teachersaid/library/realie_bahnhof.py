@@ -49,16 +49,22 @@ BAHNHOF = AnnotatedText(
         Annotation(kind="vocab", label="platform", answer="der Bahnsteig / das Gleis"),
         Annotation(kind="vocab", label="to change (trains)", answer="umsteigen"),
         Annotation(kind="vocab", label="single / return", answer="einfach / hin und zurück"),
-        # --- scan warm-up (Lesen): answers are data read straight off the board ---
-        Annotation(kind="comprehension", dimensions=["LES"],
+        # --- a gentle scan to enter (Lesen) ---
+        Annotation(kind="comprehension", dimensions=["LES"], cognitive_level="understand",
                    label="When does the next train to Edinburgh leave, and from which platform?",
-                   answer="At 08:45, from Platform 1.", cognitive_level="understand"),
-        Annotation(kind="comprehension", dimensions=["LES"],
-                   label="There are two trains to London. What time do they leave?",
-                   answer="At 08:14 and 09:30.", cognitive_level="understand"),
-        Annotation(kind="comprehension", dimensions=["LES"],
-                   label="You want to travel to York. Which platform do you need?",
-                   answer="Platform 4.", cognitive_level="understand"),
+                   answer="At 08:45, from Platform 1."),
+        # --- decide against a deadline: read the board + reason about time (analyze) ---
+        Annotation(kind="comprehension", dimensions=["LES"], cognitive_level="analyze",
+                   label="You must be in London before 09:00. Which train do you take, and why "
+                         "can't you take the 09:30?",
+                   answer="The 08:14 train to London (Platform 3). The 09:30 leaves after 09:00, "
+                          "so you would arrive too late."),
+        # --- use the live status (the 'boarding now' detail becomes the hook) (apply) ---
+        Annotation(kind="comprehension", dimensions=["LES"], cognitive_level="apply",
+                   label="Look at the board. Which train is boarding now, and what should you do "
+                         "if you want to catch it?",
+                   answer="The 09:10 to Manchester (Platform 2) is boarding now — go to Platform 2 "
+                          "quickly."),
         # --- communicative writing (Schreiben): the model answer's data is on the board ---
         Annotation(kind="communicative", dimensions=["SCH"], cognitive_level="apply",
                    label="Your friend is waiting for you in London. Write a short message "

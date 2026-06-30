@@ -138,6 +138,30 @@ def test_lint_exempts_a_shown_sum_but_catches_a_bare_wrong_price():
     assert any("£9.99" in p for p in problems), problems
 
 
+def test_lint_counts_the_task_prompt_so_a_stated_constraint_is_consistent():
+    """Richer tasks introduce a constraint in their OWN prompt (a 09:00 deadline); an answer that
+    references it is consistent. A time that is nowhere (board/facts/prompt) is still caught."""
+    from teachersaid.schema.texts import AnnotatedText, Annotation
+    base = dict(id="x", title="t", subject="Erste lebende Fremdsprache", klasse=2,
+                scene="Am Bahnhof", cefr="A2", text="08:14 to London — Platform 3")
+    ok = AnnotatedText(**base, annotations=[Annotation(
+        kind="comprehension", dimensions=["LES"],
+        label="Be in London before 09:00. Which train, and why not a later one?",
+        answer="The 08:14 train; a later one would arrive after 09:00.")])
+    assert lint(ok) == ([], [])                       # 09:00 comes from the prompt → consistent
+    bad = AnnotatedText(**base, annotations=[Annotation(
+        kind="comprehension", dimensions=["LES"], label="Which train?",
+        answer="The 07:30 train.")])                  # 07:30 is nowhere → flagged
+    assert any("07:30" in p for p in lint(bad)[0])
+
+
+def test_richer_tasks_give_a_real_cognitive_spread():
+    """Lever 1: the flagships are no longer flat lookups — they span understand→analyze→evaluate."""
+    content, _ = _build()
+    levels = {b.cognitive_level for b in content.iter_blocks() if b.role.value == "task"}
+    assert {"understand", "analyze"} <= levels and len(levels) >= 3
+
+
 def test_cafe_second_genre_builds_clean():
     """The engine isn't timetable-locked: the café menu derives the same communicative-first
     layer (scan · write-an-order · Sprechkarte) and verifies clean."""

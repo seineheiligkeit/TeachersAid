@@ -49,20 +49,23 @@ def lint(at: AnnotatedText) -> tuple[list[str], list[str]]:
     A `problem` is a hard contradiction (an answer cites a time/price absent from the Realie);
     there are currently no warnings (names/level/L2 are SME-gated, not machine-checkable)."""
     problems: list[str] = []
-    uni = _universe(at)
-    uni_times, uni_prices = set(_TIME.findall(uni)), _prices(uni)
+    base = _universe(at)
     for a in at.annotations:
         ans = _rt(a.answer)
         if not ans:
             continue
         label = (a.label or a.kind)[:40]
+        # the task's OWN prompt counts too: a constraint it introduces (a deadline "before 09:00",
+        # a budget "£4") may legitimately reappear in the answer.
+        uni = base + "  " + _rt(a.label)
+        uni_times, uni_prices = set(_TIME.findall(uni)), _prices(uni)
         for t in _TIME.findall(ans):
             if t not in uni_times:
                 problems.append(f"Antwort zu „{label}“ nennt die Zeit {t}, die nicht im "
-                                f"Realie-Text/facts steht (interne Inkonsistenz).")
+                                f"Realie-Text/facts/Aufgabe steht (interne Inkonsistenz).")
         if not _SUM.search(ans):       # a shown sum is a computation over the menu (exempt)
             for p in _prices(ans):
                 if p not in uni_prices:
                     problems.append(f"Antwort zu „{label}“ nennt den Preis {p}, der nicht im "
-                                    f"Realie-Text/facts steht (interne Inkonsistenz).")
+                                    f"Realie-Text/facts/Aufgabe steht (interne Inkonsistenz).")
     return problems, []
