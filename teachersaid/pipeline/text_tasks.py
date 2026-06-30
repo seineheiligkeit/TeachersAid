@@ -11,8 +11,8 @@ from __future__ import annotations
 
 from datetime import date
 
-from ..schema.blocks import InfoBlock, Serves, TaskBlock
-from ..schema.response import BoxResponse, LinesResponse
+from ..schema.blocks import InfoBlock, RolePlayPayload, Serves, TaskBlock
+from ..schema.response import BoxResponse, LinesResponse, NoneResponse
 from ..schema.texts import AnnotatedText
 from ..schema.worksheet import Baustein, WorksheetContent, WorksheetMeta
 
@@ -20,6 +20,7 @@ from ..schema.worksheet import Baustein, WorksheetContent, WorksheetMeta
 _TASK_KIND = {
     "comprehension": ("open_response", "LES", "understand", 2),
     "translation": ("translation", "SPR", "apply", 2),       # Latin: Übersetzung
+    "communicative": ("text_production", "SCH", "apply", 3),  # Realien: write a reply/message
     "structure": ("text_analysis", "LES", "analyze", 3),
     "grammar": ("text_analysis", "SPR", "analyze", 3),       # Latin: Formen/Konstruktion
     "stilmittel": ("text_analysis", "SPR", "analyze", 4),
@@ -27,6 +28,7 @@ _TASK_KIND = {
     "media_technique": ("text_analysis", "LES", "evaluate", 5),
     "culture": ("open_response", "INH", "understand", 5),    # Latin: Kultur-/Sachkompetenz
     "erwartungshorizont": ("text_production", "SCH", "evaluate", 6),
+    "roleplay": ("speaking_task", "SPR", "apply", 7),        # Realien: a Sprechkarte (oral, in-room)
 }
 _BOXED_KINDS = {"text_production", "translation"}            # need writing space, not lines
 
@@ -85,8 +87,10 @@ def build_worksheet(at: AnnotatedText, *, today: date | None = None):
     blocks.append(InfoBlock(
         id="text", kind="source_text", content=at.text, modality=transcript_modality,
         teacher_note=None, watch_outs=[], asset_refs=[]))
-    blocks.append(InfoBlock(id="quelle", kind="prose", modality=transcript_modality,
-                            content=f"Quelle: {at.source.attribution}"))
+    # a constructed Realie has no source (invented-coherent fiction) → no Quelle line.
+    if at.source is not None:
+        blocks.append(InfoBlock(id="quelle", kind="prose", modality=transcript_modality,
+                                content=f"Quelle: {at.source.attribution}"))
 
     # 2) vocabulary scaffold (one Wortschatz block from all vocab annotations)
     vocab = [a for a in at.annotations if a.kind == "vocab"]
@@ -109,22 +113,40 @@ def build_worksheet(at: AnnotatedText, *, today: date | None = None):
         dims = a.dimensions or [default_dim]
         n += 1
         boxed = task_kind in _BOXED_KINDS
+        # a roleplay is ORAL: the Sprechkarte cues ARE the surface (NoneResponse, no write-space);
+        # the speaking competence is served in-room (cf. the Lernarrangement interaction anchor).
+        payload = RolePlayPayload(cues=list(a.roles)) if a.kind == "roleplay" else None
+        if a.kind == "roleplay":
+            response = NoneResponse()
+        elif boxed:
+            response = BoxResponse(min_height_mm=45)
+        else:
+            response = LinesResponse(n=3)
         blocks.append(TaskBlock(
             id=f"t{n}", kind=task_kind, prompt=_prompt_for(a.kind, a),
-            response=BoxResponse(min_height_mm=45) if boxed else LinesResponse(n=3),
+            response=response, payload=payload,
             cognitive_level=a.cognitive_level or default_cl, dimensions=dims,
             serves=_serves_for(dims[0], at.serves),
-            est_minutes=8 if task_kind == "text_production" else (6 if boxed else 4),
+            est_minutes=8 if task_kind in ("text_production", "speaking_task") else (6 if boxed else 4),
             answer_key=a.answer,
         ))
 
-    intro = ("Hör dir den Text gut an und beantworte die Fragen." if is_audio
-             else "Lies den Text aufmerksam. Die Zeilennummern helfen dir, deine Antworten zu belegen.")
+    is_realie = at.scene is not None
+    if is_audio:
+        intro = "Hör dir den Text gut an und beantworte die Fragen."
+        kernfrage = f"Hörverstehen: „{at.title}“"
+    elif is_realie:
+        intro = (f"{at.scene}: Sieh dir den Text an, löse die Aufgaben und sprich dann mit "
+                 f"deiner Partnerin oder deinem Partner.")
+        kernfrage = f"{at.scene} — verstehen und sprechen"
+    else:
+        intro = "Lies den Text aufmerksam. Die Zeilennummern helfen dir, deine Antworten zu belegen."
+        kernfrage = f"Wir lesen und untersuchen: „{at.title}“"
+    level = f" · {at.cefr}" if at.cefr else ""
     meta = WorksheetMeta(
         title=at.title, subject=at.subject, stufe="Unterstufe", klasse=at.klasse,
-        kernfrage=(f"Hörverstehen: „{at.title}“" if is_audio else f"Wir lesen und untersuchen: „{at.title}“"),
-        fassung=res.fassung,
-        lehrplan_label=f"{at.subject} · {at.klasse}. Kl." + (f" · {at.genre}" if at.genre else ""))
+        kernfrage=kernfrage, fassung=res.fassung,
+        lehrplan_label=f"{at.subject} · {at.klasse}. Kl.{level}" + (f" · {at.genre}" if at.genre else ""))
     content = WorksheetContent(
         meta=meta, subject_model=ls.get_subject_model(at.subject),
         intro=[InfoBlock(id="intro", kind="prose", content=intro)],

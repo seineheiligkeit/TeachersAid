@@ -1,11 +1,15 @@
 # Annotated Realien — CEFR-leveled communicative reading for modern FS
 
-**Status:** **PLANNED** — design settled with the SME (30 Jun 2026); not yet built. Extends the
-annotated-text engine (`schema/texts.py`, `pipeline/text_tasks.py`) rather than adding a new
-top-level type. Sibling of the Sachverhalt content layer and the grounded-facts data layer, but
-deliberately operated at a **lower fact-rigor** — see §0. Reuses the four correct-by-construction
-mechanisms (`invariants.md §3`) and the Phase-3 breadth seam (`tools/ingest_sachverhalte.py`
-pattern). Author-of-record: SME + Claude.
+**Status:** **Phase 1 BUILT (30 Jun 2026)** — design settled with the SME, flagship shipped.
+Extends the annotated-text engine (`schema/texts.py`, `pipeline/text_tasks.py`) — no new top-level
+type. Built: the `RolePlayPayload` (Sprechkarte) + `rb.cue_cards`; the `AnnotatedText` Realie fields
+(`cefr`/`origin`/`scene`/`facts`, optional `source`) + the `communicative`/`roleplay` annotation
+kinds; the derivation (scan · write-a-message · oral Sprechkarte with no write-space); the
+internal-consistency `pipeline/realie_lint.py`; the simplified rights gate (`orch.ingest_text`);
+the **A2 English "At the station"** flagship (`library/realie_bahnhof.py`); `tests/test_realien.py`
+(9). Verify-clean, all three projections render, full suite green. Sibling of the Sachverhalt
+content layer, deliberately at a **lower fact-rigor** (§0). Reuses the four correct-by-construction
+mechanisms (`invariants.md §3`) and the breadth seam. Author-of-record: SME + Claude.
 
 **Scope of this doc:** the design + the settled decisions (D1–D5) for the **Realien** asset —
 CEFR-leveled, *communicative* reading material for the modern foreign languages (Englisch /
@@ -201,10 +205,13 @@ Realien scale exactly like the Sachverhalte we just shipped:
 
 ## 11. Phasing
 
-- **Phase 1 — one flagship, end-to-end.** An **A2 English "At the station" scene** (FS1): a
-  *fictional* timetable + a vocab scaffold + a scan warm-up + a write-the-reply communicative task
-  + a Sprechkarte A/B pair. Printable, verify-clean, the consistency lint green. Proves the
-  schema + derivation + the simplified honesty model. Tests lock it offline.
+- **Phase 1 — one flagship, end-to-end. DONE (30 Jun 2026).** The **A2 English "At the station"**
+  Realie (`library/realie_bahnhof.py`, FS1 Kl 2): a *constructed* (no-source) departure board + a
+  vocab scaffold + 3 scan tasks (Lesen) + a write-a-message task (Schreiben, boxed) + a Sprechkarte
+  A/B pair (Sprechen, oral — `RolePlayPayload`→`rb.cue_cards`, **no write-space**). Verify-clean,
+  the consistency lint green, all three projections render. `tests/test_realien.py` (9) locks the
+  schema, the derivation, the lint (clean + catches an answer the board can't support), the oral
+  no-write-space affordance, and that constructed rides no rights gate while sourced still does.
 - **Phase 2 — a second genre + the arrangement wrap.** A café-menu A2 scene, then wrap a Realie as
   a Lernarrangement (speaking as an interaction anchor) — proving the two engines compose.
 - **Phase 3 — breadth via the seam.** Menus, signs, messages, schedules, news-in-levels across

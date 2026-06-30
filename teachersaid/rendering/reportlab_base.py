@@ -330,5 +330,29 @@ def connect_blocks(left: list[str], right: list[str], width: float) -> Table:
     return t
 
 
+def cue_cards(cues: list[str], width: float) -> Table:
+    """Role-play cue cards (a Sprechkarte): one bordered box per partner, labelled A/B/…,
+    each carrying that partner's spoken instruction. The activity is ORAL — the cards ARE the
+    surface (no write-space). Cells wrap (Paragraphs), so a long cue can't overflow the frame."""
+    bold = f"{BASE_FONT}-Bold" if BASE_FONT == "Carlito" else "Helvetica-Bold"
+    cell = ParagraphStyle("cue_cell", fontName=BASE_FONT, fontSize=9.5, leading=13)
+    lab = ParagraphStyle("cue_lab", fontName=bold, fontSize=10, leading=13,
+                         textColor=colors.HexColor("#33506e"), alignment=1)
+    rows = [[Paragraph(chr(ord("A") + i), lab), Paragraph(html.escape(str(cue)), cell)]
+            for i, cue in enumerate(cues)]
+    labw = 9 * mm
+    t = Table(rows, colWidths=[labw, width - labw])
+    grey, light, bg = colors.HexColor("#888888"), colors.HexColor("#cccccc"), colors.HexColor("#f6f8fb")
+    t.setStyle(TableStyle([
+        ("VALIGN", (0, 0), (-1, -1), "TOP"),
+        ("BOX", (0, 0), (-1, -1), 0.7, grey),
+        ("INNERGRID", (0, 0), (-1, -1), 0.5, light),
+        ("BACKGROUND", (0, 0), (0, -1), bg),
+        ("TOPPADDING", (0, 0), (-1, -1), 7), ("BOTTOMPADDING", (0, 0), (-1, -1), 7),
+        ("LEFTPADDING", (0, 0), (-1, -1), 6), ("RIGHTPADDING", (0, 0), (-1, -1), 6),
+    ]))
+    return t
+
+
 def spacer(h_mm: float = 2.0) -> Spacer:
     return Spacer(1, h_mm * mm)

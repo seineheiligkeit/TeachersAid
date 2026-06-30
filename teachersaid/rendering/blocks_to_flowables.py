@@ -21,10 +21,11 @@ _CALLOUT_LABELS = {
     "note": "Hinweis", "warning": "Achtung", "reveal": "Auflösung", "tip": "Tipp",
 }
 
-# payloads that ARE their own interaction surface (numbers in blanks · draw-connections · tick-boxes)
-# → no generic write-space underneath; the affordance can't double up. `true_false_justify` is NOT
-# here — its justification genuinely needs lines.
-_SELF_CONTAINED_PAYLOADS = {"ordering", "matching", "multiple_choice"}
+# payloads that ARE their own interaction surface (numbers in blanks · draw-connections · tick-boxes ·
+# spoken role cards) → no generic write-space underneath; the affordance can't double up.
+# `true_false_justify` is NOT here — its justification genuinely needs lines. `role_play` is oral —
+# the cue cards are the surface, the speaking happens in the room (served via an arrangement anchor).
+_SELF_CONTAINED_PAYLOADS = {"ordering", "matching", "multiple_choice", "role_play"}
 
 
 def _image(asset_path: Path, max_w: float):
@@ -172,6 +173,9 @@ def _payload_flowables(b: TaskBlock, S, width):
         out.append(rb.grid_table(rows, width))
     elif p.kind == "decision_scenario":
         out.append(rb.para(p.stem, S["body"]))
+    elif p.kind == "role_play":
+        # a Sprechkarte: one cue card per partner. The cards ARE the response surface (oral).
+        out.append(rb.cue_cards(list(p.cues), width))
     return out
 
 

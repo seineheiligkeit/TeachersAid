@@ -24,13 +24,17 @@ class TextRecord(BaseModel):
 
     def summary(self) -> dict:
         t = self.text
+        s = t.source                        # None for a constructed Realie (no source/rights)
         return {
-            "id": self.id, "title": t.title, "author": t.source.author,
+            "id": self.id, "title": t.title, "author": s.author if s else "—",
             "genre": t.genre, "klasse": t.klasse, "subject": t.subject, "medium": t.medium,
-            "rights_basis": t.source.rights_basis,
-            "author_death_year": t.source.author_death_year,
-            "attribution": t.source.attribution, "repository": t.source.repository,
-            "url": t.source.url, "n_lines": t.line_count(), "n_annotations": len(t.annotations),
+            "origin": t.origin, "cefr": t.cefr, "scene": t.scene,   # Realien tags
+            "rights_basis": s.rights_basis if s else None,
+            "author_death_year": s.author_death_year if s else None,
+            "attribution": s.attribution if s else ("Eigenproduktion (konstruiert)"
+                                                    if t.origin == "constructed" else "—"),
+            "repository": s.repository if s else None,
+            "url": s.url if s else None, "n_lines": t.line_count(), "n_annotations": len(t.annotations),
             "status": self.status, "source": self.source, "updated_at": self.updated_at,
         }
 

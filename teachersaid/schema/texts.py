@@ -22,7 +22,7 @@ from .richtext import RichText
 # annotation kinds → the tasks they license (see pipeline/text_tasks.py)
 AnnotationKind = Literal[
     "vocab",            # a hard word + gloss (reading scaffold; Latin: Vokabel → Bedeutung)
-    "comprehension",    # a question answerable from the text + its answer
+    "comprehension",    # a question answerable from the text + its answer (Realien: the scan warm-up)
     "structure",        # a structural part (Einleitung/Strophe/Argumentationsgang)
     "stilmittel",       # a rhetorical/poetic device at a span + its Wirkung
     "argument_move",    # These/Beleg/Gegenargument (argumentative texts)
@@ -31,9 +31,25 @@ AnnotationKind = Literal[
     "translation",      # (Latin) translate a line/passage → the model translation is the answer
     "grammar",          # (Latin) determine a form/construction → the answer (SPR analysis)
     "culture",          # (Latin) content/cultural question → the answer (INH dimension)
+    "communicative",    # (Realien/FS) a productive written task (write a reply/message) + model answer
+    "roleplay",         # (Realien/FS) a Sprechkarte: an oral pair task; `roles` = the per-partner cues
 ]
 
 RightsBasis = Literal["public_domain_pma", "cc_by", "cc0", "cleared"]
+
+# Realien honesty mode (see Documents/realien-design.md §5). "constructed" is the DEFAULT for the
+# modern-FS Sprechanlass — invented-coherent pedagogical fiction, no source/rights gate; the
+# language (not the facts) is what the SME vets. "sourced"/"adapted" re-acquire the rights gate.
+RealieOrigin = Literal["constructed", "sourced", "adapted"]
+
+
+class RealieFact(BaseModel):
+    """One row of a Realie's light internal fact-set (a timetable row, a menu item). Pure
+    scaffold for INTERNAL CONSISTENCY (`pipeline/realie_lint.py`) — invented-coherent, never
+    world-grounded. The lint checks that a task answer's data tokens appear here or in the text."""
+    model_config = ConfigDict(extra="forbid")
+    label: str                               # e.g. "08:14 to London" / "Tagesmenü"
+    value: str | None = None                 # e.g. "Platform 3" / "€9,50"
 
 
 class TextSourceRef(BaseModel):
@@ -76,6 +92,7 @@ class Annotation(BaseModel):
     answer: RichText | None = None           # gloss / answer / Wirkung / expected points
     cognitive_level: str = "understand"      # for the derived task
     dimensions: list[str] = Field(default_factory=list)   # DEU dims (LES/SCH/SPR)
+    roles: list[str] = Field(default_factory=list)        # (roleplay) per-partner Sprechkarte cues
 
 
 class AnnotatedText(BaseModel):
@@ -86,9 +103,16 @@ class AnnotatedText(BaseModel):
     subject: str = "Deutsch"
     klasse: int
     text: str                                # the actual text (audio: the transcript), newline-sep
-    genre: str | None = None                 # Märchen · Gedicht · Fabel · Zeitungsartikel · Reklame
+    genre: str | None = None                 # Märchen · Gedicht · Fabel · Speisekarte · Fahrplan
     textsorte: str | None = None
-    source: TextSourceRef
+    # `source` is OPTIONAL: a constructed Realie (invented-coherent fiction) has no source and
+    # rides no rights gate — only a `sourced`/`adapted` text must cite + clear (see ingest_text).
+    source: TextSourceRef | None = None
+    # --- Realien (modern-FS communicative reading; Documents/realien-design.md) ---
+    cefr: Literal["A1", "A2", "B1", "B2"] | None = None    # the controlled-input level (SME-judged)
+    origin: RealieOrigin = "constructed"     # honesty mode; "constructed" is the FS default (§5)
+    scene: str | None = None                 # the communicative situation ("At the station")
+    facts: list[RealieFact] = Field(default_factory=list)  # the light internal fact-set (scaffold)
     # --- audio (Hörverstehen, FS): a spoken text with a transcript ---
     medium: str = "text"                     # "text" | "audio" (a listening text)
     show_transcript: bool = False            # audio: also show the transcript to students (A1: listen-and-read)

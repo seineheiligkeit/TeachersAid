@@ -369,15 +369,19 @@ One annotated text → many tasks across grades; it compounds like the catalogs.
   gated **voice reference library** (`schema/voices.py` · `grounding/voices/` · `tools/fetch_vctk_voices.py`)
   of CC-BY young-adult VCTK clips — the audio twin of the data layer. `register()` wires it; offline it stays
   `AudioNotConfigured` (transcript fallback). Config: `TTS_PYTHON`/`TTS_PYTHON_SITE`/`TTS_FFMPEG`.
-- **Realien — CEFR-leveled communicative reading for modern FS (design SETTLED, `Documents/realien-design.md`,
-  D1–D5; not yet built).** Extends this same `AnnotatedText` engine. The load-bearing reframe is
+- **Realien — CEFR-leveled communicative reading for modern FS (Phase 1 BUILT, `Documents/realien-design.md`).**
+  Extends this same `AnnotatedText` engine (no new top-level type). The load-bearing reframe is
   ***purpose-appropriate rigor*:** a Realie is the **Sprechanlass, not the Aussage** — a pretext that
   provokes language, not a world-claim — so the fact-discipline DEMOTES (facts are invented-coherent fiction
-  guarded by an *internal-consistency* lint, not world-grounding; **constructed is the default**, no
-  source/rights gate). What stays load-bearing is the **language** (L2 correctness + CEFR level, SME-gated)
-  and the *communicative-first* task layer (write-a-reply + role-play cue; scan is warm-up); the oral core is
-  served via the Lernarrangement interaction anchor. *"Invent the timetable, vet the French."* Fact-care
-  snaps back only for **informational** genres. Scales via the Phase-3 seam (`realien_prompt`/`ingest_realien`).
+  guarded by `pipeline/realie_lint.py`, an *internal-consistency* check — a scan answer can't cite data the
+  Realie lacks — NOT world-grounding; **constructed is the default**, no source/rights gate). What stays
+  load-bearing is the **language** (L2 correctness + CEFR level, SME-gated) and the *communicative-first* task
+  layer: `AnnotatedText` gains `cefr`/`origin`/`scene`/`facts` + optional `source` and the `communicative`
+  (write-a-reply) / `roleplay` annotation kinds; the derivation builds a scan warm-up (Lesen) + a boxed
+  write task (Schreiben) + a **Sprechkarte** (Sprechen — the new `RolePlayPayload`→`rb.cue_cards`, oral, **no
+  write-space**, served via the Lernarrangement interaction anchor). *"Invent the timetable, vet the French."*
+  Flagship `library/realie_bahnhof.py` (A2 English *At the station*); fact-care snaps back only for
+  **informational** genres. Scales via the Phase-3 seam (`realien_prompt`/`ingest_realien`, not yet built).
 - **Still trickier / planned** — the audio **HITL "Stimmen" review tab** + `text_tasks` dialogue-**turns**
   emission + **FLEURS** refs/`de/fr/it/es` checkpoints; and a sourced-audio path; see `feature-roadmap.md`
   "Languages" + `tts-audio-engine.md §7`.

@@ -527,11 +527,21 @@ def ingest_text(text_store, annotated_text, *, source: str = "curated",
     PD-work-≠-PD-reproduction / AT-not-US caution)."""
     from ..store.textstore import TextRecord
 
-    year = (today or date.today()).year
-    ok, reasons = annotated_text.source.is_clear(year)
-    if not ok:
-        raise ValueError(f"rights: {annotated_text.id} not clear to redistribute — "
-                         + "; ".join(reasons))
+    # A constructed Realie (invented-coherent fiction, no source) rides no rights gate — there is
+    # nothing to clear (Documents/realien-design.md §9). Only a sourced/adapted text must clear.
+    if annotated_text.source is not None:
+        year = (today or date.today()).year
+        ok, reasons = annotated_text.source.is_clear(year)
+        if not ok:
+            raise ValueError(f"rights: {annotated_text.id} not clear to redistribute — "
+                             + "; ".join(reasons))
+    # Realien: the internal-consistency lint (a scan answer can't cite data the Realie lacks).
+    if annotated_text.scene is not None or annotated_text.cefr is not None or annotated_text.facts:
+        from ..pipeline.realie_lint import lint as _realie_lint
+        problems, _warnings = _realie_lint(annotated_text)
+        if problems:
+            raise ValueError(f"Realie {annotated_text.id}: interne Inkonsistenz — "
+                             + "; ".join(problems))
     rec = TextRecord(id=annotated_text.id, text=annotated_text, source=source, status=status)
     return text_store.upsert(rec)
 

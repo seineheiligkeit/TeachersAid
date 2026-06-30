@@ -97,6 +97,14 @@ class DecisionScenarioPayload(_PayloadBase):
     stem: RichText
 
 
+class RolePlayPayload(_PayloadBase):
+    # a Sprechkarte: one cue per partner (A, B, …). The activity is ORAL — the cards ARE
+    # the response surface (no write-space; cf. _SELF_CONTAINED_PAYLOADS). Used by Realien
+    # role-play tasks (the speaking competence is served in-room, not on paper).
+    kind: Literal["role_play"] = "role_play"
+    cues: list[str]
+
+
 class OtherPayload(_PayloadBase):
     # open/extension kinds: the prompt carries the content; optional data bag.
     kind: Literal["other"] = "other"
@@ -111,6 +119,7 @@ TaskPayload = Annotated[
     | TableFillPayload
     | DataInterpretationPayload
     | DecisionScenarioPayload
+    | RolePlayPayload
     | OtherPayload,
     Field(discriminator="kind"),
 ]

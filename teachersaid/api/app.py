@@ -169,7 +169,8 @@ def _target_meta(kind: str, tid: str) -> tuple[str, str]:
     elif kind == "text":
         rec = TEXTS.get(tid)
         if rec:
-            return rec.text.subject, f"{rec.text.source.author}: {rec.text.title}"
+            who = rec.text.source.author if rec.text.source else "Eigenproduktion"
+            return rec.text.subject, f"{who}: {rec.text.title}"
     elif kind == "sachverhalt":
         rec = SACHVERHALTE.get(tid)
         if rec:
