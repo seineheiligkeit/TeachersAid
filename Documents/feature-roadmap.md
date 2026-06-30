@@ -172,13 +172,14 @@ The catalog splits the languages cleanly, so they get different treatments:
   a **sourced-audio path** (real recordings + rights, deferred).
 
 ### Annotated Realien — the CEFR-leveling answer (medium effort, printable, reuses the engine)
-**Phase 1 + 2 BUILT (30 Jun 2026) → [`realien-design.md`](realien-design.md) (D1–D5).** The naive
-"select-never-author" framing was the wrong lens; the design doc reframes it. **Two genre flagships**
-(FS1, A2): *At the station* (a departure board) + *At the café* (a menu — the price path), each a
-real-artifact card with atmospheric "fluff" + a reasoning task ladder; and the **arrangement wrap**
-(`pipeline/realie_arrange.py`) — a Realie → a `Lernarrangement` with the speaking as an interaction
-anchor (covered only by the anchor, the v0.5 payoff). Next: Phase 3 (breadth via
-`realien_prompt`/`ingest_realien`).
+**Phase 1 + 2 + 3 BUILT (30 Jun 2026) → [`realien-design.md`](realien-design.md) (D1–D5).** The naive
+"select-never-author" framing was the wrong lens; the design doc reframes it. **Two flagship genres**
+(FS1, A2): *At the station* + *At the café*, each a real-artifact card with atmospheric "fluff" + a
+reasoning task ladder; the **arrangement wrap** (`pipeline/realie_arrange.py`) — speaking as an
+interaction anchor (covered only by the anchor, the v0.5 payoff); and the **breadth seam**
+(`tools/realien_prompt.py` + `tools/ingest_realien.py`), which produced 6 more verify-clean Realien
+across **EN + FR, A1 + A2, six genres** (invitation · zoo · cinema · weather · boulangerie · bus),
+SME-gated for the L2 + level. The Realien asset class is **complete** through breadth.
 - **The asset:** point the annotated-text engine at **level-appropriate everyday texts** — menus, signs,
   timetables, short messages/emails — exactly what the can-do Lehrplan asks ("kann einfache Alltagstexte
   verstehen"). A1/A2 where native literature is too hard. New `cefr`/`genre`/`scene` tags; the task layer

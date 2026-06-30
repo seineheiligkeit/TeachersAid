@@ -1,7 +1,7 @@
 # Annotated Realien — CEFR-leveled communicative reading for modern FS
 
-**Status:** **Phase 1 + 2 BUILT (30 Jun 2026)** — design settled with the SME; both genre flagships
-+ the arrangement wrap shipped.
+**Status:** **Phase 1 + 2 + 3 BUILT (30 Jun 2026)** — design settled with the SME; both genre
+flagships + the arrangement wrap + the subagent breadth seam shipped.
 Extends the annotated-text engine (`schema/texts.py`, `pipeline/text_tasks.py`) — no new top-level
 type. Built: the `RolePlayPayload` (Sprechkarte) + `rb.cue_cards`; the `AnnotatedText` Realie fields
 (`cefr`/`origin`/`scene`/`facts`, optional `source`) + the `communicative`/`roleplay` annotation
@@ -244,8 +244,21 @@ Realien scale exactly like the Sachverhalte we just shipped:
   render via `pipeline/arrange.py`, no new renderer). Both flagships are seeded as arrangements
   (`library.seed_arrangements`, ids `realie-bahnhof`/`realie-cafe`) → the **Arrangements** tab. The two
   engines compose: a Realie → a run-guide + role sheet, verify-clean.
-- **Phase 3 — breadth via the seam.** Menus, signs, messages, schedules, news-in-levels across
-  A1–B2, EN + FR, subagent-authored, SME-gated for language + level.
+- **Phase 3 — breadth via the seam. DONE (30 Jun 2026).** The modern-FS twin of the Sachverhalt
+  breadth seam: `tools/realien_prompt.py` writes a grounded per-scenario brief (the real FS
+  competences for the grade · genre/scene/level/currency · the load-bearing rules — correct L2 ·
+  internal consistency · atmosphere-without-touching-data · a reasoning task ladder · the JSON
+  shape); a subagent authors one constructed Realie JSON; `tools/ingest_realien.py` (the
+  `ingest_sachverhalte` twin, **constructed-aware**: drops a stray source so it rides no rights gate,
+  canonicalises annotation kinds, runs the **internal-consistency lint**) → schema → lint →
+  `build_worksheet` → `verify` → stage via `orch.ingest_text` + `compose_text_worksheet` — **only if
+  clean**. **First push:** 6 verify-clean Realien across **two languages + two levels + six genres** —
+  FS1 English *A birthday invitation* (A1) · *Sunnyfield Zoo* sign (A1) · *Now Showing* cinema (A2) ·
+  *This week's weather* (A2); FS2 French *Boulangerie du Coin* (A1, € prices) · *Horaire de bus* (A2) —
+  each a real-artifact card with atmosphere and an understand→analyze→evaluate→apply ladder, staged
+  `in_review`. The facts are invented; the SME fact-checks the **L2 and the level** at the gate.
+  `tests/test_ingest_realien.py` (6) locks the normalizer + the constructed-source drop + the
+  consistency gate offline.
 
 ## 12. Decisions (settled with the SME, 30 Jun 2026)
 

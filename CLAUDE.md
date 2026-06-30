@@ -391,8 +391,14 @@ One annotated text → many tasks across grades; it compounds like the catalogs.
   wrap (`pipeline/realie_arrange.py`):** a Realie → a `Lernarrangement` (the worksheet as role material, the
   role-play as the `interaction`, a broader Sprechen competence as a `competence_anchor` served_by the
   interaction — covered ONLY by the anchor, the v0.5 payoff); seeded via `library.seed_arrangements`
-  (`realie-bahnhof`/`realie-cafe`). Fact-care snaps back only for **informational** genres. Scales via the
-  Phase-3 seam (`realien_prompt`/`ingest_realien`, not yet built).
+  (`realie-bahnhof`/`realie-cafe`). Fact-care snaps back only for **informational** genres. **Phase 3 —
+  the breadth seam (`tools/realien_prompt.py` + `tools/ingest_realien.py`, the `ingest_sachverhalte`
+  twin, constructed-aware: drops a stray source → no rights gate, runs the internal-consistency lint):**
+  a subagent authors one constructed Realie JSON → schema → lint → build → verify → stage
+  (`orch.ingest_text` + `compose_text_worksheet`). First push = 6 verify-clean Realien across **EN + FR,
+  A1 + A2, six genres** (invitation · zoo sign · cinema · weather · French boulangerie · French bus),
+  each a real-artifact card with an understand→…→apply ladder; the SME fact-checks the L2 + level at the
+  gate. `tests/test_ingest_realien.py` locks the normalizer + the constructed-source drop + the gate.
 - **Still trickier / planned** — the audio **HITL "Stimmen" review tab** + `text_tasks` dialogue-**turns**
   emission + **FLEURS** refs/`de/fr/it/es` checkpoints; and a sourced-audio path; see `feature-roadmap.md`
   "Languages" + `tts-audio-engine.md §7`.

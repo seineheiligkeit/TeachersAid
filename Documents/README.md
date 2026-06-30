@@ -20,7 +20,7 @@ flagged, not deleted** (they're design history). When two docs seem to disagree,
 | doc | feature |
 |---|---|
 | [`sachverhalt-content-layer-design.md`](sachverhalt-content-layer-design.md) | **The content/exposition layer (History first)** — Sachwissen as a first-class layer. Q1 (authoring) settled. |
-| [`realien-design.md`](realien-design.md) | **CEFR-leveled communicative reading for modern FS** — the Realie as Sprechanlass (*purpose-appropriate rigor*: invent the facts, vet the language). **Phase 1 + 2 built** (A2 *At the station* + *At the café*, + the arrangement wrap). |
+| [`realien-design.md`](realien-design.md) | **CEFR-leveled communicative reading for modern FS** — the Realie as Sprechanlass (*purpose-appropriate rigor*: invent the facts, vet the language). **Phase 1–3 built** (2 flagships + arrangement wrap + the EN/FR breadth seam). |
 | [`history-facts-provenance-design.md`](history-facts-provenance-design.md) | GPB expression-provenance asset class (the machinery Sachverhalt reuses). |
 | [`block-library-design.md`](block-library-design.md) | The block as the durable library unit + the composer. |
 | [`tts-audio-engine.md`](tts-audio-engine.md) | F5-TTS audio / Hörverstehen engine + voice library. |
