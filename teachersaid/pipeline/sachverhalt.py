@@ -8,7 +8,8 @@ The content analogue of `pipeline/text_tasks.build_worksheet`: a `Sachverhalt` �
    sources) attached automatically, so the prose-provenance gate passes by construction.
    `bedeutung`/`gegenwartsbezug` → closing `key_fact` blocks.
 2. **DERIVED figures** — `timeline` → `matplotlib:timeline`; `causes` → `matplotlib:cause_effect`
-   (the Wirkungsgefüge). Correct-by-construction: built straight from the structured facts.
+   (the Wirkungsgefüge); `process` → `matplotlib:process_flow` (Phase 2 — a Bio process/cycle, the
+   undated sibling of the timeline). Correct-by-construction: built straight from the structured facts.
 3. **Sachkompetenz tasks** — the load-bearing correctness property: each task's `answer_key`
    is **computed from the fact-set**, never authored — chronology = the events sorted by `at`;
    `cause_effect_match` / `concept_match` = the pairing straight from `causes` / `concepts`.
@@ -24,7 +25,7 @@ from datetime import date
 
 from ..schema.assets import Asset
 from ..schema.blocks import InfoBlock, MatchingPayload, OrderingPayload, Serves, TaskBlock
-from ..schema.enums import Mark
+from ..schema.enums import CORE_TASK_KINDS, Mark
 from ..schema.provenance import BlockProvenance
 from ..schema.response import BoxResponse, LinesResponse
 from ..schema.richtext import InlineRun, plain_text, to_runs
@@ -64,6 +65,11 @@ def build_worksheet(sv: Sachverhalt, *, klasse: int | None = None,
     res = resolve_grade(sv.subject, kl, today=today)
     res_by_id = {c.id: c for c in res.competences}
     comp_ids = sv.competences or [c.id for c in res.competences]
+    subject_model = ls.get_subject_model(sv.subject)
+    _allowed = set(CORE_TASK_KINDS) | set(subject_model.task_kind_extensions)
+    # the judgment task uses the subject's best available kind (GPB has position_argument; a
+    # science Sachverhalt falls back to the core open_response for a Standpunkt/Bewertung).
+    urteil_kind = "position_argument" if "position_argument" in _allowed else "open_response"
 
     def pick(i: int) -> str | None:
         return comp_ids[i % len(comp_ids)] if comp_ids else None
@@ -119,6 +125,16 @@ def build_worksheet(sv: Sachverhalt, *, klasse: int | None = None,
         blocks.append(InfoBlock(id="sv.fig-wirkung", kind="figure",
                                 asset_refs=["sv-wirkung"],
                                 content="Ursachen und Folgen im Überblick."))
+    if len(sv.process) >= 2:
+        steps = [{"name": st.name, "text": _p(st.text)} for st in sv.process]
+        assets.append(Asset(
+            id="sv-process", role="figure", generator="matplotlib:process_flow",
+            spec={"steps": steps, "cyclic": sv.process_cyclic,
+                  "title": sv.process_name or sv.topic},
+            caption=sv.process_name or f"Ablauf: {sv.topic}"))
+        blocks.append(InfoBlock(id="sv.fig-process", kind="figure",
+                                asset_refs=["sv-process"],
+                                content=f"{sv.process_name or 'Der Ablauf'} im Überblick."))
 
     # 3) Sachkompetenz tasks — answer_key COMPUTED from the fact-set (select, never author)
     n = 0
@@ -137,6 +153,22 @@ def build_worksheet(sv: Sachverhalt, *, klasse: int | None = None,
             serves=[Serves(competence_id=cid, relation="builds_prerequisite")] if cid else [],
             est_minutes=5,
             answer_key=" → ".join(f"{e.label} ({e.at})" for e in ordered)))
+    elif len(sv.process) >= 2:                            # process-ordering (deterministic)
+        ordered_p = sv.process                            # the authored order IS the sequence
+        shown_p = sorted(ordered_p, key=lambda st: str(st.name).casefold())
+        n += 1
+        cid = pick(n - 1)
+        tasks.append(TaskBlock(
+            id=f"sv.t{n}", kind="ordering",
+            prompt=f"Bringe die Schritte von „{sv.process_name or sv.topic}“ in die richtige "
+                   f"Reihenfolge.",
+            payload=OrderingPayload(items=[st.name for st in shown_p]),
+            response=LinesResponse(n=len(shown_p)),
+            cognitive_level="remember", dimensions=dims_for(cid),
+            serves=[Serves(competence_id=cid, relation="builds_prerequisite")] if cid else [],
+            est_minutes=5,
+            answer_key=" → ".join(st.name for st in ordered_p)
+                       + (" → (zurück zum Anfang)" if sv.process_cyclic else "")))
 
     if len(sv.causes) >= 2:                                # cause→effect match (deterministic)
         shown_eff = sorted(sv.causes, key=lambda c: str(c.effect).casefold())
@@ -188,7 +220,8 @@ def build_worksheet(sv: Sachverhalt, *, klasse: int | None = None,
         roles = "; ".join(f"{a.name}: {_p(a.role)}" for a in sv.actors)
         tasks.append(TaskBlock(
             id=f"sv.t{n}", kind="structure_overview",
-            prompt="Nenne die wichtigsten Akteure und beschreibe kurz ihre Rolle.",
+            prompt=f"Nenne die wichtigsten {sv.actor_label} und beschreibe kurz ihre Rolle "
+                   f"bzw. Funktion.",
             response=BoxResponse(min_height_mm=45),
             cognitive_level="understand", dimensions=dims_for(cid),
             serves=[Serves(competence_id=cid, relation="exercises")] if cid else [],
@@ -196,9 +229,9 @@ def build_worksheet(sv: Sachverhalt, *, klasse: int | None = None,
 
     if sv.urteilsfrage:                                    # the high-band Urteils-task
         n += 1
-        cid = pick(n - 1)
+        cid = sv.urteil_competence or pick(n - 1)
         tasks.append(TaskBlock(
-            id=f"sv.t{n}", kind="position_argument", prompt=sv.urteilsfrage,
+            id=f"sv.t{n}", kind=urteil_kind, prompt=sv.urteilsfrage,
             response=BoxResponse(min_height_mm=60),
             cognitive_level="evaluate", dimensions=dims_for(cid, urteil=True),
             serves=[Serves(competence_id=cid, relation="exercises")] if cid else [],
@@ -206,8 +239,8 @@ def build_worksheet(sv: Sachverhalt, *, klasse: int | None = None,
             acceptable_reasoning=("Ein begründetes Urteil in beide Richtungen ist gültig — "
                                   "bewertet wird die Begründung, nicht die Position.")))
 
-    intro = ("Lies zuerst den Darstellungstext: Er fasst zusammen, was geschah und warum es "
-             "wichtig ist. Die Abbildungen ordnen die Ereignisse und ihre Folgen. Bearbeite "
+    intro = ("Lies zuerst den Darstellungstext: Er fasst zusammen, worum es geht und warum es "
+             "wichtig ist. Die Abbildungen ordnen die wichtigsten Zusammenhänge. Bearbeite "
              "danach die Aufgaben.")
     meta = WorksheetMeta(
         title=sv.topic, subject=sv.subject, stufe=ls.stufe_for_klasse(kl), klasse=kl,
@@ -215,7 +248,7 @@ def build_worksheet(sv: Sachverhalt, *, klasse: int | None = None,
         fassung=res.fassung,
         lehrplan_label=f"{sv.subject} · {kl}. Kl. · {sv.topic}")
     content = WorksheetContent(
-        meta=meta, subject_model=ls.get_subject_model(sv.subject),
+        meta=meta, subject_model=subject_model,
         intro=[InfoBlock(id="sv.intro", kind="callout", callout_role="note", content=intro)],
         sections=[Baustein(id="sv.kern", title=sv.topic, blocks=blocks + tasks)],
         assets=assets)

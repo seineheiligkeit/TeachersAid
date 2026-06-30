@@ -1,6 +1,6 @@
 # Sachverhalt — the curated content / exposition layer (History first)
 
-**Status:** **Phase 1 BUILT (30 Jun 2026)** — `schema/sachverhalt.py` · `pipeline/sachverhalt.py`
+**Status:** **Phase 1 (History) + Phase 2 (Biology) BUILT (30 Jun 2026)** — `schema/sachverhalt.py` · `pipeline/sachverhalt.py`
 (derivation) · `pipeline/sachverhalt_lint.py` (entity-lint) · the `matplotlib:cause_effect` Wirkungsgefüge
 recipe · the new GPB Sachkompetenz `task_kind_extensions` · the *Der Wiener Kongress* flagship
 (`library/sachverhalt_wiener_kongress.py`) · the full HITL surface (`SachverhaltStore` ·
@@ -231,9 +231,13 @@ tasks**, approve. `orch.ingest_sachverhalt` gates (rights + facts-required) → 
   cause-effect figure, and the three deterministic Sachkompetenz task kinds — alongside (not replacing) the
   existing Quelle/Darstellung lesson. `SachverhaltStore` + tab + ingest. Tests lock derivation + verify-clean
   + render, and the deterministic graders.
-- **Phase 2 — generalise to one content-heavy science.** Biologie *or* Geographie (both scored worst on
-  expository depth) — add the subject's fact-type(s), prove the container holds. Confirms the schema isn't
-  history-locked.
+- **Phase 2 — generalise to one content-heavy science. DONE (30 Jun 2026, Biology).** *Der Blutkreislauf*
+  (`library/sachverhalt_blutkreislauf.py`, 2./3. Kl.) added the **`Process`/cycle** fact-type — the undated
+  sibling of the dated `timeline` — deriving a `matplotlib:process_flow` cycle figure + a process-ordering
+  task. The derivation auto-selects the judgment kind (Bio → core `open_response`, no `position_argument`)
+  and serves the **W** strand for Sachkompetenz / **S** for the Standpunkt (the science-model split, via the
+  `urteil_competence`/`actor_label` hints). Confirms the schema isn't history-locked. (Geographie, with its
+  maps dependency, is the natural next subject.)
 - **Phase 3 — scale via subagents.** Author **structured modules** from provided/sourced facts (the breadth
   pattern: subagents emit `Sachverhalt` JSON → `tools/ingest_sachverhalte.py` → rights/facts gate → verify →
   stage). The facts are *selected/sourced*, the narrative *authored-then-vetted* — never invented.

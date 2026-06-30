@@ -542,6 +542,69 @@ def _cause_effect(asset: Asset, path: Path) -> None:
     plt.close(fig)
 
 
+@_generator("matplotlib:process_flow")
+def _process_flow(asset: Asset, path: Path) -> None:
+    """A process / cycle — ordered named steps joined by arrows (the Sachverhalt content layer,
+    Biology's undated sibling of the timeline). Structural, correct-by-construction: the steps and
+    their order are spec-provided. spec: {steps:[{name, text?}], cyclic?:bool, title?}. A cyclic
+    process (e.g. der Blutkreislauf) is drawn around a circle with the last step looping back to the
+    first; a linear one flows top→bottom."""
+    import math
+    s = asset.spec or {}
+    steps = [str(st.get("name", "")) for st in (s.get("steps") or []) if st.get("name")]
+    cyclic = bool(s.get("cyclic"))
+    n = len(steps)
+
+    def wrap(t: str) -> str:
+        return "\n".join(textwrap.wrap(t, 18))
+
+    if n == 0:
+        fig, ax = plt.subplots(figsize=(4, 2))
+        ax.axis("off")
+        fig.savefig(path, dpi=150)
+        plt.close(fig)
+        return
+
+    if cyclic and n >= 3:
+        fig, ax = plt.subplots(figsize=(6.6, 6.0), layout="constrained")
+        ax.axis("off")
+        ax.set_aspect("equal")
+        r = 1.0
+        pos = [(r * math.cos(math.pi / 2 - 2 * math.pi * i / n),
+                r * math.sin(math.pi / 2 - 2 * math.pi * i / n)) for i in range(n)]
+        lim = r + 0.65
+        ax.set_xlim(-lim, lim)
+        ax.set_ylim(-lim, lim)
+        for i in range(n):                       # arrows along the cycle (i -> i+1, wrapping)
+            ax.annotate("", xy=pos[(i + 1) % n], xytext=pos[i],
+                        arrowprops={"arrowstyle": "-|>", "color": "#7a7a7a", "lw": 1.3,
+                                    "shrinkA": 26, "shrinkB": 26,
+                                    "connectionstyle": "arc3,rad=0.16"})
+        for i, (x, y) in enumerate(pos):
+            ax.text(x, y, wrap(steps[i]), ha="center", va="center", fontsize=9, zorder=3,
+                    bbox={"boxstyle": "round,pad=0.4", "fc": "#fdecec", "ec": "#b03a2e"})
+    else:
+        fig, ax = plt.subplots(figsize=(5.2, max(2.4, 1.2 * n)), layout="constrained")
+        ax.axis("off")
+        ax.set_xlim(0, 4)
+        ax.set_ylim(0, n + 0.5)
+        ys = [n - i for i in range(n)]           # top to bottom
+        for i in range(n - 1):
+            ax.annotate("", xy=(2, ys[i + 1] + 0.30), xytext=(2, ys[i] - 0.30),
+                        arrowprops={"arrowstyle": "-|>", "color": "#7a7a7a", "lw": 1.3})
+        if cyclic:                               # short process that still loops
+            ax.annotate("", xy=(2, ys[0]), xytext=(2, ys[-1]),
+                        arrowprops={"arrowstyle": "-|>", "color": "#7a7a7a", "lw": 1.0,
+                                    "connectionstyle": "arc3,rad=-0.55"})
+        for i, y in enumerate(ys):
+            ax.text(2, y, wrap(steps[i]), ha="center", va="center", fontsize=9, zorder=3,
+                    bbox={"boxstyle": "round,pad=0.4", "fc": "#eef3f8", "ec": "#33506e"})
+    if s.get("title"):
+        ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 46)))
+    fig.savefig(path, dpi=150)
+    plt.close(fig)
+
+
 # --- geometry recipe family (KB3 Figuren und Körper) -------------------------
 # Correct-by-construction geometric figures; labels are spec-provided so a figure never
 # leaks the answer (e.g. show "c = ?" for a Pythagoras task). Equal aspect, no data axes.

@@ -62,6 +62,9 @@ def _fact_text(sv: Sachverhalt) -> str:
         parts += [c.cause, c.effect]
     for c in sv.concepts:
         parts += [c.term, _p(c.definition)]
+    parts.append(sv.process_name)
+    for st in sv.process:
+        parts += [st.name, _p(st.text)]
     for s in sv.sources:
         parts += [s.title or "", s.quote_span or ""]
     return "  ".join(p for p in parts if p).lower()
@@ -84,6 +87,8 @@ def _fact_keys(sv: Sachverhalt) -> set[str]:
         keys.add(c.term.lower())
     for c in sv.causes:
         keys.update({c.cause.lower(), c.effect.lower(), f"{c.cause} → {c.effect}".lower()})
+    for st in sv.process:
+        keys.add(st.name.lower())
     return keys
 
 

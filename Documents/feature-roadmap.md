@@ -13,9 +13,11 @@ Forward-looking *capability* features for TeachersAid. (The schema-version roadm
 > Sachkompetenz tasks) — the **fourth** correct-by-construction mechanism (*re-expressed under constraint*,
 > `invariants.md` §3): facts selected/sourced, prose authored over the *frozen* fact-set with a
 > deterministic entity-lint (years machine-guaranteed). Flagship *Der Wiener Kongress*; full HITL surface +
-> the **Sachverhalte** tab; 14 tests, verify-clean. **Phase 2** = generalise the container to a content-
-> heavy science (Bio/Geo fact-types, the worst-scoring on expository depth); **Phase 3** = subagent scaling
-> (`tools/ingest_sachverhalte.py`, the breadth pattern).
+> the **Sachverhalte** tab; 18 tests, verify-clean. **Phase 2 DONE (30 Jun 2026, Biology):** *Der
+> Blutkreislauf* added the undated **`Process`/cycle** fact-type (a `matplotlib:process_flow` cycle figure +
+> a process-ordering task) behind the same container — proving it isn't history-locked, with W/S
+> strand-correct anchoring and the judgment kind auto-selected. **Phase 3** = subagent scaling
+> (`tools/ingest_sachverhalte.py`, the breadth pattern); Geographie (maps) the natural next subject.
 
 > **Update (29 Jun 2026): Matura orientation.** The SRDP (Matura) was studied as the competence-
 > model capstone. Two cheap, high-value uses agreed (NOT a new asset class — see

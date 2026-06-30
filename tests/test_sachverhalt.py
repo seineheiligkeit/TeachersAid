@@ -9,6 +9,7 @@ import re
 import fitz  # PyMuPDF
 import pytest
 
+from teachersaid.library.sachverhalt_blutkreislauf import build_sachverhalt as build_bk
 from teachersaid.library.sachverhalt_wiener_kongress import build_sachverhalt
 from teachersaid.pipeline.assemble import assemble
 from teachersaid.pipeline.assets import build_asset
@@ -178,3 +179,44 @@ def test_api_sachverhalte(tmp_path, monkeypatch):
     r = client.post("/api/sachverhalte/sv-wiener-kongress/compose").json()
     assert r["error"] is None and not r["problems"]
     assert client.post("/api/sachverhalte/sv-wiener-kongress/approve").json()["status"] == "approved"
+
+
+# --- Phase 2: the container generalises to Biology (a process/cycle, not a timeline) ---------
+def test_bio_has_process_not_timeline_and_verifies_clean():
+    sv = build_bk()
+    assert not sv.timeline and len(sv.process) >= 4 and sv.process_cyclic   # undated cycle
+    content, res = build_worksheet(sv)
+    assemble(content, res)
+    report = verify(content, res)
+    assert report.ok, report.problems
+
+
+def test_bio_process_figure_and_computed_ordering(tmp_path):
+    sv = build_bk()
+    content, _ = build_worksheet(sv)
+    gens = {a.generator for a in content.assets}
+    assert "matplotlib:process_flow" in gens and "matplotlib:timeline" not in gens
+    proc = next(a for a in content.assets if a.generator == "matplotlib:process_flow")
+    assert build_asset(proc, outdir=tmp_path).stat().st_size > 1000        # the new recipe renders
+    task = _task(content, "ordering")
+    assert task.answer_key.split(" → ")[0] == sv.process[0].name           # computed, authored order
+    assert "zurück zum Anfang" in task.answer_key                          # cyclic marker
+    assert task.payload.items != [s.name for s in sv.process]              # displayed shuffled
+
+
+def test_bio_strand_correct_anchoring():
+    """The judgment task falls back to core open_response (Bio has no position_argument) and
+    serves the S strand; the Sachkompetenz tasks serve the W strand. Dims are strand-correct."""
+    content, _ = build_worksheet(build_bk())
+    tasks = [b for b in content.iter_blocks() if b.role.value == "task"]
+    urteil = next(b for b in tasks if b.cognitive_level == "evaluate")
+    assert urteil.kind == "open_response"
+    assert urteil.serves[0].competence_id == "BIO.US.x.STA.02" and urteil.dimensions == ["S"]
+    sach = [b for b in tasks if b.cognitive_level != "evaluate"]
+    assert sach and all(b.dimensions == ["W"] for b in sach)
+    assert all(s.competence_id.startswith("BIO.US.x.WIS") for b in sach for s in b.serves)
+
+
+def test_bio_entity_lint_clean():
+    problems, _ = lint(build_bk())
+    assert problems == [], problems

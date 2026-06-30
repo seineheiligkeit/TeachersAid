@@ -426,13 +426,15 @@ expression."*
 
 - **Schema** (`schema/sachverhalt.py`): `Sachverhalt` (id · subject · `klasse_range` · discovery tags ·
   `sources` [role="facts" mandatory] · `sensitive` · `sach_dimension`/`urteil_dimension` hints) + the
-  structured facts `HistEvent`/`Actor`/`CausalLink`/`Concept` + `bedeutung`/`gegenwartsbezug`/`urteilsfrage`
+  structured facts `HistEvent`/`Actor`/`CausalLink`/`Concept` (+ a **`Process`/cycle** fact-type for
+  content-heavy sciences, Phase 2) + `bedeutung`/`gegenwartsbezug`/`urteilsfrage`
   + the authored `DarstellungSection`s (`grounded_by` fact keys). Reuses `provenance.ProvenanceSource`/
   `BlockProvenance` wholesale.
 - **Derivation** (`pipeline/sachverhalt.py::build_worksheet`, the `text_tasks` twin): Darstellung →
   `InfoBlock`s with a grounded `expression_origin="original"` provenance attached *by construction* (so
   the existing `prose_lint` passes); **DERIVED figures** (timeline ← `timeline`; **Wirkungsgefüge** ←
-  `causes`, the new `matplotlib:cause_effect` box-and-arrow recipe); and **Sachkompetenz tasks whose
+  `causes` via `matplotlib:cause_effect`; **process/cycle** ← `process` via `matplotlib:process_flow`, the
+  Phase-2 sibling); and **Sachkompetenz tasks whose
   `answer_key` is COMPUTED from the fact-set** — `chronology` (kind `ordering`) = sort by `at`,
   `cause_effect_match`/`concept_match` = the pairing straight from `causes`/`concepts` (the prompt shows a
   deterministically-reordered list; *no grader engine — the module IS the key*), plus open
@@ -456,7 +458,12 @@ expression."*
   Wikipedia (the SME fact-checks history + German at the gate; the entity-lint forces every prose date into
   the timeline first). `tests/test_sachverhalt.py` locks schema · verify-clean · the computed answers · the
   figures · render-purity · the entity-lint (clean + catches a planted year) · the store/ingest/seed/API
-  loop. **Phase 1 done; the container generalises — Bio/Geo fact-types are Phase 2.**
+  loop. **Phase 1 (History) + Phase 2 (Biology) done.** The Bio flagship
+  `library/sachverhalt_blutkreislauf.py` (*Der Blutkreislauf*, 2./3. Kl.) proves the container isn't
+  history-locked: an undated **`Process`/cycle** (the `matplotlib:process_flow` figure + a process-ordering
+  task) stands in for the dated timeline, the derivation auto-selects the judgment kind (Bio → core
+  `open_response`, no `position_argument`) and serves the **W** strand for Sachkompetenz / **S** for the
+  Standpunkt (the science-model split). Phase 3 = subagent scaling (`tools/ingest_sachverhalte.py`).
 
 ## Master library (`teachersaid/library/`)
 

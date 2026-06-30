@@ -72,6 +72,18 @@ class Concept(BaseModel):
     source_ref: str | None = None
 
 
+class ProcessStep(BaseModel):
+    """One step of a PROCESS or CYCLE — the Phase-2 fact-type a content-heavy science needs
+    (Biology, e.g. the Blutkreislauf) where History had a dated `timeline`. The authored LIST
+    ORDER is the correct sequence (the ordering task's answer is computed from it); for a
+    `process_cyclic` Sachverhalt the last step loops back to the first. → a process-flow figure
+    (`matplotlib:process_flow`) + a process-ordering task (kind `ordering`)."""
+    model_config = ConfigDict(extra="forbid")
+    name: str
+    text: RichText = ""              # one-line description (teacher/context)
+    source_ref: str | None = None
+
+
 class DarstellungSection(BaseModel):
     """One section of the authored-then-vetted narrative, grounded in the fact-set.
 
@@ -112,6 +124,11 @@ class Sachverhalt(BaseModel):
     actors: list[Actor] = Field(default_factory=list)
     causes: list[CausalLink] = Field(default_factory=list)
     concepts: list[Concept] = Field(default_factory=list)
+    # a process/cycle (Phase 2 — content-heavy sciences): ordered steps, the undated sibling of
+    # `timeline`. → a process-flow figure + a process-ordering task. `process_cyclic` loops it.
+    process_name: str = ""
+    process: list[ProcessStep] = Field(default_factory=list)
+    process_cyclic: bool = False
     bedeutung: RichText = ""          # significance / Nachwirkung
     gegenwartsbezug: RichText = ""    # the present-day link (Lehrplan-mandated)
     urteilsfrage: RichText = ""       # optional judgment prompt → a high-band Urteils-task.
@@ -121,8 +138,12 @@ class Sachverhalt(BaseModel):
     # competence resolves without its own dimension — see pipeline/sachverhalt.py.
     # (GPB.US.3.* resolve with empty dims, so this is required, not cosmetic.)
     sach_dimension: str | None = None
-    urteil_dimension: str | None = None   # the judgment task's dim (e.g. GPB "HOR"); falls
-    # back to sach_dimension — an Urteils-task is Orientierungs-/Urteilskompetenz, not Sach-
+    urteil_dimension: str | None = None   # the judgment task's dim (e.g. GPB "HOR", BIO "S");
+    # falls back to sach_dimension — an Urteils-task is Orientierungs-/Urteils-/Bewertungs-, not Sach-
+    urteil_competence: str | None = None  # the competence the Urteils-task serves, where ids encode
+    # the strand (e.g. BIO STA.* for S); falls back to the Sachkompetenz pool (fine for GPB's ALL ids).
+    actor_label: str = "Akteure"          # the noun for the structure_overview prompt:
+    # "Akteure" (history) · "Strukturen"/"Bestandteile" (a Bio Sachverhalt — Herz, Arterien, …)
     # --- the authored-then-vetted narrative, grounded in the above ---
     darstellung: list[DarstellungSection] = Field(default_factory=list)
 

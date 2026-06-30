@@ -163,8 +163,11 @@ target language for Fremdsprache). Read this, then the docs in the order given i
 > the GPB Sachkompetenz task kinds, the *Der Wiener Kongress* flagship (alongside the method flagship), and
 > the full HITL surface (`SachverhaltStore` · ingest/seed/compose · `/api/sachverhalte*` · the
 > **Sachverhalte** tab · feedback kind). See `CLAUDE.md` "Sachverhalt" + `Documents/sachverhalt-content-
-> layer-design.md` (Phase 1 BUILT). Run: `python -m pytest -q` (**306 tests**). **Next:** Phase 2 —
-> generalise the container to Bio/Geo; Phase 3 — subagent scaling.
+> layer-design.md` (Phase 1+2 BUILT). **Phase 2 (same session) — the container generalises to Biology:**
+> *Der Blutkreislauf* added a `Process`/cycle fact-type (the undated sibling of the timeline → a
+> `matplotlib:process_flow` cycle figure + a process-ordering task), with W/S strand-correct anchoring and
+> the judgment kind auto-selected (Bio → core `open_response`). Run: `python -m pytest -q` (**310 tests**).
+> **Next:** Phase 3 — subagent scaling; Geographie (maps) as a third subject.
 
 ---
 
