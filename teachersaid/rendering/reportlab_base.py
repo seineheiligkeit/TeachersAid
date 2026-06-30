@@ -242,24 +242,38 @@ def numbered_text(text: str, body_style: ParagraphStyle, width: float) -> Table:
     return t
 
 
-def grid_table(data: list[list[str]], width: float, header: bool = True) -> Table:
+def grid_table(data: list[list], width: float, header: bool = True,
+               weights: list[float] | None = None) -> Table:
+    """A content table whose cells WRAP (every cell is a Paragraph, so text can never overflow a
+    cell horizontally — it grows vertically and the row gets taller instead). `weights` sets
+    relative column widths (default = equal); the widths always sum to `width`, so the table can
+    never exceed the frame. A cell may be a plain string (escaped + wrapped here) or a pre-built
+    Paragraph (e.g. `raw_para`, when you need inline markup)."""
     ncols = max(len(r) for r in data)
-    col_w = width / ncols
-    t = Table(data, colWidths=[col_w] * ncols)
+    if weights and len(weights) == ncols and sum(weights) > 0:
+        col_w = [width * w / sum(weights) for w in weights]
+    else:
+        col_w = [width / ncols] * ncols
+    bold = f"{BASE_FONT}-Bold" if BASE_FONT == "Carlito" else "Helvetica-Bold"
+    cell = ParagraphStyle("gt_cell", fontName=BASE_FONT, fontSize=9, leading=12)
+    head = ParagraphStyle("gt_head", fontName=bold, fontSize=9, leading=12)
+    body = []
+    for i, row in enumerate(data):
+        st = head if (header and i == 0) else cell
+        cells = list(row) + [""] * (ncols - len(row))          # pad short rows to ncols
+        body.append([c if isinstance(c, Paragraph) else Paragraph(html.escape(str(c)), st)
+                     for c in cells])
+    t = Table(body, colWidths=col_w)
     cmds = [
         ("GRID", (0, 0), (-1, -1), 0.5, colors.HexColor("#999999")),
-        ("FONTNAME", (0, 0), (-1, -1), BASE_FONT),
-        ("FONTSIZE", (0, 0), (-1, -1), 9),
         ("VALIGN", (0, 0), (-1, -1), "TOP"),
         ("TOPPADDING", (0, 0), (-1, -1), 3),
         ("BOTTOMPADDING", (0, 0), (-1, -1), 6),
+        ("LEFTPADDING", (0, 0), (-1, -1), 5),
+        ("RIGHTPADDING", (0, 0), (-1, -1), 5),
     ]
     if header:
-        bold = f"{BASE_FONT}-Bold" if BASE_FONT == "Carlito" else "Helvetica-Bold"
-        cmds += [
-            ("FONTNAME", (0, 0), (-1, 0), bold),
-            ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#eef2f7")),
-        ]
+        cmds.append(("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#eef2f7")))
     t.setStyle(TableStyle(cmds))
     return t
 

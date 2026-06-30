@@ -682,6 +682,17 @@ Run a single file: `python -m pytest tests/test_derive.py -q`.
   `<sub>`/`<super>` markup over the plain digit, so they render correctly even in Helvetica (which has no
   ₂ glyph → was a tofu box before).
 - PDF→PNG QA uses **PyMuPDF** (`fitz`), not `pdftoppm` (no system poppler dependency).
+- **Text fitting is measured, not guessed (legibility discipline — the layout analogue of the lints).**
+  *Tables:* `rb.grid_table` wraps every cell in a Paragraph and its `weights` sum column widths to the
+  frame — so content **can't overflow a cell** (it grows vertically). Never hand a raw string to a ReportLab
+  `Table` (it won't wrap → overflow); route content through `grid_table`/`wrapped_table`. *Figures:*
+  `pipeline/figtext.py` is the shared *measure → fit → de-collide* helper — recipes **measure** label extent
+  (`measure_widths`) instead of a magic `textwrap` count; the **timeline lane-packs** measured labels (year
+  folded into each, no colliding axis ticks) and the **choropleth** font-fits big regions and **leaders tiny
+  enclaves out** (Wien below the map). *The lint:* `figtext.overlap_pairs(fig)` + `tests/test_layout.py`
+  assert no label overlaps (per axes) and no table exceeds the frame — so legibility regressions are caught,
+  not eyeballed. A leader is two artists (a line + a plain `ax.text`), **not** an arrow-annotation, so a
+  label's measured bbox is the text alone.
 - Match the surrounding German tone/terminology in product-facing strings; the user is the domain SME
   (physicist, Austrian) and fact-checks the physics and the German.
 - Don't relitigate decisions recorded in `project-handoff.md §4`; they are durable.

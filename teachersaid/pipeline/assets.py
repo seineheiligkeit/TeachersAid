@@ -190,8 +190,12 @@ def _population_pyramid(asset: Asset, path: Path) -> None:
 @_generator("matplotlib:timeline")
 def _timeline(asset: Asset, path: Path) -> None:
     """A horizontal timeline — chronological events on a time axis (GPB history). spec:
-    {events:[{"at":num,"label":str}]} or {categories:[label],"values":[year]}; title?,
-    xlabel?. Event labels stagger above/below the line with stems so they don't collide."""
+    {events:[{"at":num,"label":str}]} or {categories:[label],"values":[year]}; title?. Each label
+    carries its own year and is **measured and lane-packed** above the line with a leader, so
+    clustered dates never overlap and the axis needs no colliding tick labels (the legibility fix —
+    see `pipeline/figtext.py`)."""
+    from .figtext import lane_pack, measure_widths
+
     s = asset.spec or {}
     events = s.get("events")
     if not events:
@@ -199,29 +203,41 @@ def _timeline(asset: Asset, path: Path) -> None:
                   for c, v in zip(s.get("categories", []), s.get("values", []))]
     events = sorted(events, key=lambda e: float(e["at"]))
     xs = [float(e["at"]) for e in events]
-    labels = ["\n".join(textwrap.wrap(str(e.get("label", "")), 18)) for e in events]
-    fig, ax = plt.subplots(figsize=(7.6, 3.0), layout="constrained")
+
+    def _stamp(e) -> str:
+        at = e["at"]
+        return f"{at:g}" if isinstance(at, (int, float)) else str(at)
+
+    labels = ["\n".join(textwrap.wrap(f"{_stamp(e)} — {e.get('label', '')}", 22)) for e in events]
+    fig, ax = plt.subplots(figsize=(8.8, 3.2))           # NOT constrained: stable box for measuring
+    fig.subplots_adjust(left=0.03, right=0.97, top=0.88, bottom=0.05)
     ax.axhline(0, color="#33506e", lw=1.6, zorder=1)
-    if xs:
-        span = (max(xs) - min(xs)) or 1.0
-        ax.set_xlim(min(xs) - span * 0.08, max(xs) + span * 0.08)
-        ax.set_xticks(xs)
-        ax.set_xticklabels([f"{x:g}" for x in xs], fontsize=8)
-    for i, (x, lab) in enumerate(zip(xs, labels)):
-        y = 0.62 if i % 2 == 0 else -0.62
-        ax.plot([x], [0], "o", color="#b03a2e", ms=8, zorder=3)
-        ax.plot([x, x], [0, y * 0.78], color="#b03a2e", lw=0.7, zorder=2)
-        ax.annotate(lab, (x, y), ha="center", va="bottom" if y > 0 else "top",
-                    fontsize=8.5, color="#33506e")
-    ax.set_ylim(-1.25, 1.25)
     ax.set_yticks([])
-    for sp in ("left", "right", "top"):
+    ax.set_xticks([])
+    for sp in ("left", "right", "top", "bottom"):
         ax.spines[sp].set_visible(False)
-    if s.get("xlabel"):
-        ax.set_xlabel(s["xlabel"])
+    if not xs:
+        fig.savefig(path, dpi=150)
+        plt.close(fig)
+        return
+    span = (max(xs) - min(xs)) or 1.0
+    ax.set_xlim(min(xs) - span * 0.12, max(xs) + span * 0.12)
+    ax.set_ylim(-0.4, 1.0)                                # provisional; widened after packing
+    widths = measure_widths(ax, labels, fontsize=8.5)
+    lanes = lane_pack(xs, widths, gap=span * 0.02)
+    nlanes = (max(lanes) + 1) if lanes else 1
+    max_lines = max((lab.count("\n") + 1 for lab in labels), default=1)
+    lane_h = 0.30 * max_lines + 0.30
+    base = 0.42
+    for i, (x, lab) in enumerate(zip(xs, labels)):
+        y = base + lanes[i] * lane_h
+        ax.plot([x], [0], "o", color="#b03a2e", ms=7, zorder=3)
+        ax.plot([x, x], [0.05, y - 0.05], color="#b03a2e", lw=0.7, zorder=2)
+        ax.annotate(lab, (x, y), ha="center", va="bottom", fontsize=8.5, color="#33506e")
+    ax.set_ylim(-0.35, base + (nlanes - 1) * lane_h + 0.30 * max_lines + 0.25)
     if s.get("title"):
-        ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 52)))
-    fig.savefig(path, dpi=150)
+        ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 60)), fontsize=11)
+    fig.savefig(path, dpi=150, bbox_inches="tight")
     plt.close(fig)
 
 
@@ -660,16 +676,19 @@ def _choropleth_map(asset: Asset, path: Path) -> None:
     cmap = plt.get_cmap("YlOrRd")
     xs_all: list[float] = []
     ys_all: list[float] = []
+    cents: dict[str, tuple[float, float]] = {}
+    bboxes: dict[str, tuple[float, float, float, float]] = {}
     for name, geom in geoms.items():
         mp = feature_path(geom)
         val = values.get(name)
         fc = cmap(norm(val)) if val is not None else "#e8e8e8"
         ax.add_patch(PathPatch(mp, facecolor=fc, edgecolor="white", lw=0.7, zorder=2))
-        xs_all += [v[0] for v in mp.vertices]
-        ys_all += [v[1] for v in mp.vertices]
-        cx, cy = _geo_centroid(geom)
-        ax.text(cx, cy, name, ha="center", va="center", fontsize=7.5, color="#222", zorder=4,
-                path_effects=[pe.withStroke(linewidth=2.0, foreground="white")])
+        gx = [v[0] for v in mp.vertices]
+        gy = [v[1] for v in mp.vertices]
+        xs_all += gx
+        ys_all += gy
+        cents[name] = _geo_centroid(geom)
+        bboxes[name] = (min(gx), max(gx), min(gy), max(gy))
     if xs_all:
         mx = (max(xs_all) - min(xs_all)) * 0.03 or 0.1
         my = (max(ys_all) - min(ys_all)) * 0.03 or 0.1
@@ -677,6 +696,34 @@ def _choropleth_map(asset: Asset, path: Path) -> None:
         ax.set_ylim(min(ys_all) - my, max(ys_all) + my)
         mean_lat = (min(ys_all) + max(ys_all)) / 2
         ax.set_aspect(1.0 / max(0.3, math.cos(math.radians(mean_lat))))   # equirectangular fix
+    # labels: a big region's name fits in place (font shrunk to its width); a tiny enclave
+    # (e.g. Wien inside Niederösterreich) is leadered out BELOW the map, so it can never collide
+    # with the enclosing region's label (the small-polygon labelling fix; see figtext.py).
+    if geoms and xs_all:
+        from .figtext import measure_widths
+        areas = {n: (b[1] - b[0]) * (b[3] - b[2]) for n, b in bboxes.items()}
+        amax = max(areas.values()) or 1.0
+        yspan = (max(ys_all) - min(ys_all)) or 1.0
+        small = [n for n in geoms if areas[n] < 0.06 * amax]
+        for name in geoms:
+            cx, cy = cents[name]
+            if name not in small:
+                rw = bboxes[name][1] - bboxes[name][0]
+                fs = 8.0
+                while measure_widths(ax, [name], fs)[0] > rw * 0.94 and fs > 6.0:
+                    fs -= 0.5
+                ax.text(cx, cy, name, ha="center", va="center", fontsize=fs, color="#222",
+                        zorder=4, path_effects=[pe.withStroke(linewidth=2.0, foreground="white")])
+            else:
+                # leader + label as SEPARATE artists (not an arrow-annotation), so the label's
+                # measured bbox is the text alone — the choropleth's small-polygon labelling.
+                ly = min(ys_all) - yspan * 0.02
+                ax.plot([cx, cx], [cy, ly], color="#666", lw=0.7, zorder=5)
+                ax.plot([cx], [cy], "o", ms=2.5, color="#333", zorder=5)
+                ax.text(cx, ly, name, ha="center", va="top", fontsize=7.5, color="#222",
+                        zorder=5, path_effects=[pe.withStroke(linewidth=2.0, foreground="white")])
+        if small:
+            ax.set_ylim(min(ys_all) - yspan * 0.13, max(ys_all) + my)
     if values:
         sm = plt.cm.ScalarMappable(norm=norm, cmap=cmap)
         sm.set_array([])

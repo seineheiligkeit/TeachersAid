@@ -159,9 +159,16 @@ def _payload_flowables(b: TaskBlock, S, width):
         for item in p.items:
             out.append(rb.para("____  " + item, S["body"]))
     elif p.kind == "matching":
-        right = p.right or [""] * len(p.left)
-        data = [["", "→", ""]] + [[l, "", r] for l, r in zip(p.left, right)]
-        out.append(rb.grid_table([[c for c in row] for row in data[1:]], width, header=False))
+        # left = the items (numbered), right = the SHUFFLED options (lettered) — the student writes
+        # the pairing on the response lines below. A neutral two-column grid (no per-row arrow,
+        # which would falsely imply left[i] ↔ right[i]); cells wrap, so nothing overflows.
+        left = list(p.left)
+        right = list(p.right or [""] * len(left))
+        m = max(len(left), len(right))
+        left += [""] * (m - len(left))
+        right += [""] * (m - len(right))
+        rows = [[f"{i + 1}.  {left[i]}", f"{chr(97 + i)})  {right[i]}"] for i in range(m)]
+        out.append(rb.grid_table(rows, width, header=False, weights=[1, 1]))
     elif p.kind == "table_fill":
         rows = [p.columns] + [["" if c is None else c for c in row] for row in p.rows]
         out.append(rb.grid_table(rows, width))
