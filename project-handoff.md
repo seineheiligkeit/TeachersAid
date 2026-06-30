@@ -166,8 +166,13 @@ target language for Fremdsprache). Read this, then the docs in the order given i
 > layer-design.md` (Phase 1+2 BUILT). **Phase 2 (same session) — the container generalises to Biology:**
 > *Der Blutkreislauf* added a `Process`/cycle fact-type (the undated sibling of the timeline → a
 > `matplotlib:process_flow` cycle figure + a process-ordering task), with W/S strand-correct anchoring and
-> the judgment kind auto-selected (Bio → core `open_response`). Run: `python -m pytest -q` (**310 tests**).
-> **Next:** Phase 3 — subagent scaling; Geographie (maps) as a third subject.
+> the judgment kind auto-selected (Bio → core `open_response`). **Geography (same session) — the 3rd
+> subject + the first MAP:** the GWB flagship *Bevölkerung in Österreichs Bundesländern* added a spatial
+> `Region` fact-type → a correct-by-construction **choropleth** (`matplotlib:choropleth_map`); the map's
+> **boundaries** are a sourced CC-BY GeoJSON (the new geo layer `grounding/geo/` + `geo_store.py` +
+> `tools/fetch_geo_boundaries.py`, *boundaries are facts*) and its **values** the cited population dataset —
+> both cited on the figure, no geo dependency. Run: `python -m pytest -q` (**315 tests**). **Next:** Phase 3
+> — subagent scaling (`tools/ingest_sachverhalte.py`).
 
 ---
 

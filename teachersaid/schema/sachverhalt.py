@@ -84,6 +84,17 @@ class ProcessStep(BaseModel):
     source_ref: str | None = None
 
 
+class Region(BaseModel):
+    """A spatial unit — the Geography fact-type (the geographic analogue of `HistEvent`/
+    `ProcessStep`). The `name` keys into a SOURCED boundary set (`geo_id`) for the choropleth;
+    the fill value comes from a CITED dataset (`region_dataset`/`region_series`), never authored.
+    The optional `note` is curated (what's notable about this region)."""
+    model_config = ConfigDict(extra="forbid")
+    name: str
+    note: RichText = ""
+    source_ref: str | None = None
+
+
 class DarstellungSection(BaseModel):
     """One section of the authored-then-vetted narrative, grounded in the fact-set.
 
@@ -129,6 +140,13 @@ class Sachverhalt(BaseModel):
     process_name: str = ""
     process: list[ProcessStep] = Field(default_factory=list)
     process_cyclic: bool = False
+    # a spatial fact set (Phase 2 — Geography): regions of a sourced boundary set, filled by a
+    # CITED dataset → a choropleth map + a rank-by-value task. Names match geo_id + the dataset.
+    regions: list[Region] = Field(default_factory=list)
+    geo_id: str = ""                  # the boundary set in grounding/geo/, e.g. "at_bundeslaender"
+    region_dataset: str | None = None  # the cited dataset id for the fill values
+    region_series: str | None = None   # the series within it
+    region_value_label: str = ""       # the colorbar label, e.g. "Einwohner:innen"
     bedeutung: RichText = ""          # significance / Nachwirkung
     gegenwartsbezug: RichText = ""    # the present-day link (Lehrplan-mandated)
     urteilsfrage: RichText = ""       # optional judgment prompt → a high-band Urteils-task.

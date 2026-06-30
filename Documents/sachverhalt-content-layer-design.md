@@ -1,6 +1,6 @@
 # Sachverhalt — the curated content / exposition layer (History first)
 
-**Status:** **Phase 1 (History) + Phase 2 (Biology) BUILT (30 Jun 2026)** — `schema/sachverhalt.py` · `pipeline/sachverhalt.py`
+**Status:** **Phase 1 (History) + Phase 2 (Biology + Geography) BUILT (30 Jun 2026)** — `schema/sachverhalt.py` · `pipeline/sachverhalt.py`
 (derivation) · `pipeline/sachverhalt_lint.py` (entity-lint) · the `matplotlib:cause_effect` Wirkungsgefüge
 recipe · the new GPB Sachkompetenz `task_kind_extensions` · the *Der Wiener Kongress* flagship
 (`library/sachverhalt_wiener_kongress.py`) · the full HITL surface (`SachverhaltStore` ·

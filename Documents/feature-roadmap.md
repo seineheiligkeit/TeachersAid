@@ -17,7 +17,11 @@ Forward-looking *capability* features for TeachersAid. (The schema-version roadm
 > Blutkreislauf* added the undated **`Process`/cycle** fact-type (a `matplotlib:process_flow` cycle figure +
 > a process-ordering task) behind the same container — proving it isn't history-locked, with W/S
 > strand-correct anchoring and the judgment kind auto-selected. **Phase 3** = subagent scaling
-> (`tools/ingest_sachverhalte.py`, the breadth pattern); Geographie (maps) the natural next subject.
+> (`tools/ingest_sachverhalte.py`, the breadth pattern). **Geographie DONE too (the first MAP):** the GWB
+> flagship *Bevölkerung in Österreichs Bundesländern* added a spatial **`Region`** fact-type + a
+> correct-by-construction **choropleth** (`matplotlib:choropleth_map`) — sourced CC-BY boundaries (the new
+> geo layer `grounding/geo/` + `grounding/geo_store.py` + `tools/fetch_geo_boundaries.py`, *boundaries are
+> facts*) filled by the cited population dataset; pure matplotlib, **no geo dependency**.
 
 > **Update (29 Jun 2026): Matura orientation.** The SRDP (Matura) was studied as the competence-
 > model capstone. Two cheap, high-value uses agreed (NOT a new asset class — see

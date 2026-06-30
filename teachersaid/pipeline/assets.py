@@ -605,6 +605,99 @@ def _process_flow(asset: Asset, path: Path) -> None:
     plt.close(fig)
 
 
+def _geo_centroid(geom: dict) -> tuple[float, float]:
+    """A label anchor — the mean of the largest polygon's exterior ring (good enough; a true
+    area centroid is overkill for placing a region name)."""
+    polys = geom["coordinates"] if geom["type"] == "MultiPolygon" else [geom["coordinates"]]
+    ring = max(polys, key=lambda p: len(p[0]))[0]
+    xs = [pt[0] for pt in ring]
+    ys = [pt[1] for pt in ring]
+    return sum(xs) / len(xs), sum(ys) / len(ys)
+
+
+@_generator("matplotlib:choropleth_map")
+def _choropleth_map(asset: Asset, path: Path) -> None:
+    """A thematic (choropleth) map — regions of a SOURCED boundary set, filled by a CITED value
+    (the map analogue of the grounded-facts figures, GWB). spec: {geo_id, values:{region:number},
+    value_label?, citation?, title?}. Boundaries are FACTS (loaded by `geo_id` from the geo store,
+    never authored); the fill values are sourced + cited. Pure matplotlib polygons — no geo
+    dependency. A hole (e.g. Wien enclosed by Niederösterreich) renders via the even-odd rule."""
+    import math
+
+    import matplotlib.patheffects as pe
+    from matplotlib.colors import Normalize
+    from matplotlib.patches import PathPatch
+    from matplotlib.path import Path as MplPath
+
+    from ..grounding import geo_store
+
+    s = asset.spec or {}
+    geo_id = s.get("geo_id")
+    values = {str(k): float(v) for k, v in (s.get("values") or {}).items() if v is not None}
+    geoms = geo_store.load_boundaries(geo_id) if geo_id else {}
+
+    def feature_path(geom: dict) -> "MplPath":
+        polys = geom["coordinates"] if geom["type"] == "MultiPolygon" else [geom["coordinates"]]
+        verts: list = []
+        codes: list = []
+        for poly in polys:                       # polygon = [exterior, *holes]
+            for ring in poly:
+                if len(ring) < 3:
+                    continue
+                verts.append((ring[0][0], ring[0][1]))
+                codes.append(MplPath.MOVETO)
+                for pt in ring[1:]:
+                    verts.append((pt[0], pt[1]))
+                    codes.append(MplPath.LINETO)
+                verts.append((ring[0][0], ring[0][1]))
+                codes.append(MplPath.CLOSEPOLY)
+        return MplPath(verts, codes)
+
+    fig, ax = plt.subplots(figsize=(7.4, 6.2), layout="constrained")
+    ax.axis("off")
+    norm = Normalize(vmin=min(values.values()) if values else 0.0,
+                     vmax=max(values.values()) if values else 1.0)
+    cmap = plt.get_cmap("YlOrRd")
+    xs_all: list[float] = []
+    ys_all: list[float] = []
+    for name, geom in geoms.items():
+        mp = feature_path(geom)
+        val = values.get(name)
+        fc = cmap(norm(val)) if val is not None else "#e8e8e8"
+        ax.add_patch(PathPatch(mp, facecolor=fc, edgecolor="white", lw=0.7, zorder=2))
+        xs_all += [v[0] for v in mp.vertices]
+        ys_all += [v[1] for v in mp.vertices]
+        cx, cy = _geo_centroid(geom)
+        ax.text(cx, cy, name, ha="center", va="center", fontsize=7.5, color="#222", zorder=4,
+                path_effects=[pe.withStroke(linewidth=2.0, foreground="white")])
+    if xs_all:
+        mx = (max(xs_all) - min(xs_all)) * 0.03 or 0.1
+        my = (max(ys_all) - min(ys_all)) * 0.03 or 0.1
+        ax.set_xlim(min(xs_all) - mx, max(xs_all) + mx)
+        ax.set_ylim(min(ys_all) - my, max(ys_all) + my)
+        mean_lat = (min(ys_all) + max(ys_all)) / 2
+        ax.set_aspect(1.0 / max(0.3, math.cos(math.radians(mean_lat))))   # equirectangular fix
+    if values:
+        sm = plt.cm.ScalarMappable(norm=norm, cmap=cmap)
+        sm.set_array([])
+        cb = fig.colorbar(sm, ax=ax, fraction=0.045, pad=0.02)
+        cb.ax.tick_params(labelsize=7)
+        if s.get("value_label"):
+            cb.set_label(str(s["value_label"]), fontsize=8)
+    if s.get("title"):
+        ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 48)), fontsize=11)
+    cits = []                                    # a map rests on TWO facts: values + boundaries
+    if s.get("citation"):
+        cits.append(f"Daten: {s['citation']}")
+    if geo_id:
+        cits.append(f"Grenzen: {geo_store.citation(geo_id)}")
+    if cits:
+        fig.text(0.5, 0.008, "Quelle — " + " · ".join(cits), ha="center", fontsize=6.5,
+                 color="#555")
+    fig.savefig(path, dpi=150)
+    plt.close(fig)
+
+
 # --- geometry recipe family (KB3 Figuren und Körper) -------------------------
 # Correct-by-construction geometric figures; labels are spec-provided so a figure never
 # leaks the answer (e.g. show "c = ?" for a Pythagoras task). Equal aspect, no data axes.

@@ -117,6 +117,12 @@ def _series_spec(series: dict, generator: str) -> dict:
         cats = series.get("categories") or series.get("labels")
         vals = series.get("values") or series.get("years")
         return {k: v for k, v in {"categories": cats, "values": vals}.items() if v is not None}
+    if g == "choropleth_map":                 # a thematic map: {region_name: value}
+        groups = series.get("groups") or series.get("categories")
+        vals = series.get("counts") or series.get("values") or series.get("shares_pct")
+        if groups and vals:
+            return {"values": {str(k): v for k, v in zip(groups, vals)}}
+        return {}
     return {}
 
 

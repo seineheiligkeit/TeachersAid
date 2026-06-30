@@ -24,6 +24,7 @@ from __future__ import annotations
 from datetime import date
 
 from ..schema.assets import Asset
+from ..schema.datasets import DataRef
 from ..schema.blocks import InfoBlock, MatchingPayload, OrderingPayload, Serves, TaskBlock
 from ..schema.enums import CORE_TASK_KINDS, Mark
 from ..schema.provenance import BlockProvenance
@@ -53,6 +54,30 @@ def _sorted_events(sv: Sachverhalt):
 def _heading(heading: str, body) -> list[InlineRun]:
     """A bold lead-in heading followed by the section body (a grounded projection)."""
     return [InlineRun(text=f"{heading} — ", mark=Mark.BOLD), *to_runs(body)]
+
+
+def _region_values(sv: Sachverhalt) -> tuple[dict, str | None]:
+    """{region: value} + the data citation, pulled from the CITED dataset (select-never-author
+    for the map's numbers). Empty when no dataset is referenced."""
+    if not sv.region_dataset:
+        return {}, None
+    from ..grounding import data_store as ds
+
+    dset = ds.get_dataset(sv.region_dataset)
+    if dset is None:
+        return {}, None
+    series = (dset.series.get(sv.region_series) if sv.region_series
+              else next(iter(dset.series.values()), None))
+    if not series:
+        return {}, None
+    groups = series.get("groups") or series.get("categories") or []
+    counts = series.get("counts") or series.get("values") or []
+    return {str(g): v for g, v in zip(groups, counts)}, dset.source.attribution
+
+
+def _fmt_int(v) -> str:
+    """German thousands grouping (1234567 → '1.234.567')."""
+    return f"{int(round(float(v))):,}".replace(",", ".")
 
 
 def build_worksheet(sv: Sachverhalt, *, klasse: int | None = None,
@@ -87,6 +112,7 @@ def build_worksheet(sv: Sachverhalt, *, klasse: int | None = None,
     facts_sources = sv.facts_sources()
     grounded = (BlockProvenance(expression_origin="original", sources=facts_sources)
                 if facts_sources else None)
+    region_values, region_cit = _region_values(sv)
 
     blocks: list = []
     tasks: list[TaskBlock] = []
@@ -135,6 +161,18 @@ def build_worksheet(sv: Sachverhalt, *, klasse: int | None = None,
         blocks.append(InfoBlock(id="sv.fig-process", kind="figure",
                                 asset_refs=["sv-process"],
                                 content=f"{sv.process_name or 'Der Ablauf'} im Überblick."))
+    if sv.regions and sv.geo_id:
+        spec = {"geo_id": sv.geo_id, "values": region_values,
+                "value_label": sv.region_value_label or "Wert", "title": sv.topic}
+        if region_cit:
+            spec["citation"] = region_cit
+        ref = (DataRef(dataset_id=sv.region_dataset, series=sv.region_series)
+               if sv.region_dataset else None)
+        assets.append(Asset(
+            id="sv-map", role="figure", generator="matplotlib:choropleth_map", spec=spec,
+            data_source=ref, illustrative=(ref is None), caption=f"Karte: {sv.topic}"))
+        blocks.append(InfoBlock(id="sv.fig-map", kind="figure", asset_refs=["sv-map"],
+                                content=f"Karte zu „{sv.topic}“."))
 
     # 3) Sachkompetenz tasks — answer_key COMPUTED from the fact-set (select, never author)
     n = 0
@@ -169,6 +207,21 @@ def build_worksheet(sv: Sachverhalt, *, klasse: int | None = None,
             est_minutes=5,
             answer_key=" → ".join(st.name for st in ordered_p)
                        + (" → (zurück zum Anfang)" if sv.process_cyclic else "")))
+    elif region_values and len(region_values) >= 2:      # rank regions by the cited value
+        ranked = sorted(region_values.items(), key=lambda kv: -float(kv[1]))
+        shown_r = sorted(region_values, key=str.casefold)
+        n += 1
+        cid = pick(n - 1)
+        label = sv.region_value_label or "Wert"
+        tasks.append(TaskBlock(
+            id=f"sv.t{n}", kind="ordering",
+            prompt=f"Ordne die {sv.actor_label} nach {label} — vom größten zum kleinsten.",
+            payload=OrderingPayload(items=shown_r),
+            response=LinesResponse(n=len(shown_r)),
+            cognitive_level="remember", dimensions=dims_for(cid),
+            serves=[Serves(competence_id=cid, relation="builds_prerequisite")] if cid else [],
+            est_minutes=6,
+            answer_key=" > ".join(f"{nm} ({_fmt_int(v)})" for nm, v in ranked)))
 
     if len(sv.causes) >= 2:                                # cause→effect match (deterministic)
         shown_eff = sorted(sv.causes, key=lambda c: str(c.effect).casefold())
@@ -214,14 +267,16 @@ def build_worksheet(sv: Sachverhalt, *, klasse: int | None = None,
             acceptable_reasoning=("Akzeptiere jede Antwort, die die im Lerntext genannte "
                                   "Bedeutung sinngemäß wiedergibt.")))
 
-    if sv.actors:                                          # structure overview (open)
+    named = ([(a.name, _p(a.role)) for a in sv.actors]
+             or [(r.name, _p(r.note)) for r in sv.regions if _p(r.note)])
+    if named:                                              # structure overview (open)
         n += 1
         cid = pick(n - 1)
-        roles = "; ".join(f"{a.name}: {_p(a.role)}" for a in sv.actors)
+        roles = "; ".join(f"{nm}: {desc}" for nm, desc in named)
         tasks.append(TaskBlock(
             id=f"sv.t{n}", kind="structure_overview",
-            prompt=f"Nenne die wichtigsten {sv.actor_label} und beschreibe kurz ihre Rolle "
-                   f"bzw. Funktion.",
+            prompt=f"Nenne die wichtigsten {sv.actor_label} und beschreibe kurz, wodurch sie "
+                   f"sich auszeichnen.",
             response=BoxResponse(min_height_mm=45),
             cognitive_level="understand", dimensions=dims_for(cid),
             serves=[Serves(competence_id=cid, relation="exercises")] if cid else [],

@@ -47,6 +47,16 @@ _NAME_RE = re.compile(
 _QUOTE_RE = re.compile(r"„([^“”\"]{1,})[“”\"]")
 _WORD_RE = re.compile(r"[A-Za-zÄÖÜäöüß]+")
 _PARTICLES = {"von", "van", "zu", "zur", "de", "del", "der", "den", "of", "the", "el", "al"}
+# common German function/numeral words that, capitalised at a sentence start, masquerade as a
+# proper-name head ("Die Karte", "Drei Arten") — excluded so the advisory name check only fires on
+# a genuine multi-token proper name (German capitalises every noun, so this must stay conservative).
+_NAME_STOP = _PARTICLES | {
+    "der", "die", "das", "dem", "den", "ein", "eine", "einen", "einem", "einer", "und", "oder",
+    "aber", "auf", "aus", "bei", "mit", "nach", "vor", "für", "über", "unter", "durch", "gegen",
+    "ohne", "beim", "drei", "zwei", "vier", "fünf", "viele", "manche", "diese", "dieser",
+    "dieses", "jede", "jeder", "jedes", "alle", "auch", "dann", "noch", "schon", "sehr", "mehr",
+    "etwa", "heute", "damals", "dort", "hier", "wenn", "weil", "dass",
+}
 
 
 def _fact_text(sv: Sachverhalt) -> str:
@@ -65,6 +75,8 @@ def _fact_text(sv: Sachverhalt) -> str:
     parts.append(sv.process_name)
     for st in sv.process:
         parts += [st.name, _p(st.text)]
+    for r in sv.regions:
+        parts += [r.name, _p(r.note)]
     for s in sv.sources:
         parts += [s.title or "", s.quote_span or ""]
     return "  ".join(p for p in parts if p).lower()
@@ -89,6 +101,8 @@ def _fact_keys(sv: Sachverhalt) -> set[str]:
         keys.update({c.cause.lower(), c.effect.lower(), f"{c.cause} → {c.effect}".lower()})
     for st in sv.process:
         keys.add(st.name.lower())
+    for r in sv.regions:
+        keys.add(r.name.lower())
     return keys
 
 
@@ -115,8 +129,9 @@ def lint(sv: Sachverhalt) -> tuple[list[str], list[str]]:
         # (2) proper names — ADVISORY (multi-word; flag only if NO token is known)
         for m in _NAME_RE.finditer(body):
             toks = [t for t in _WORD_RE.findall(m.group(0))
-                    if len(t) >= 4 and t.lower() not in _PARTICLES]
-            if toks and all(t.lower() not in vocab for t in toks):
+                    if len(t) >= 4 and t.lower() not in _NAME_STOP]
+            # only a genuine multi-token proper name (>=2 significant tokens, none known) is flagged
+            if len(toks) >= 2 and all(t.lower() not in vocab for t in toks):
                 key = " ".join(toks).lower()
                 if key not in seen_names:
                     seen_names.add(key)

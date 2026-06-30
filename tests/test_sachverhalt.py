@@ -10,6 +10,7 @@ import fitz  # PyMuPDF
 import pytest
 
 from teachersaid.library.sachverhalt_blutkreislauf import build_sachverhalt as build_bk
+from teachersaid.library.sachverhalt_bundeslaender import build_sachverhalt as build_gwb
 from teachersaid.library.sachverhalt_wiener_kongress import build_sachverhalt
 from teachersaid.pipeline.assemble import assemble
 from teachersaid.pipeline.assets import build_asset
@@ -220,3 +221,60 @@ def test_bio_strand_correct_anchoring():
 def test_bio_entity_lint_clean():
     problems, _ = lint(build_bk())
     assert problems == [], problems
+
+
+# --- Phase 2 (Geography): the container generalises to a spatial subject + a MAP -------------
+def test_gwb_choropleth_with_cited_values_verifies_clean(tmp_path):
+    sv = build_gwb()
+    assert sv.regions and sv.geo_id and not sv.timeline and not sv.process   # the spatial fact-type
+    content, res = build_worksheet(sv)
+    assemble(content, res)
+    assert verify(content, res).ok, verify(content, res).problems
+    m = next(a for a in content.assets if a.generator == "matplotlib:choropleth_map")
+    # the fill VALUES are pulled from the cited dataset (select-never-author), not authored
+    assert len(m.spec["values"]) == 9
+    assert m.data_source.dataset_id == "statistik_austria_bundeslaender_2024"
+    assert build_asset(m, outdir=tmp_path).stat().st_size > 1000             # the map renders
+
+
+def test_gwb_rank_by_value_computed_and_strand_correct():
+    content, _ = build_worksheet(build_gwb())
+    rank = _task(content, "ordering")
+    assert rank.answer_key.startswith("Wien")                               # largest first (computed)
+    assert "Burgenland" in rank.answer_key.rsplit(">", 1)[-1]               # smallest last
+    tasks = [b for b in content.iter_blocks() if b.role.value == "task"]
+    sach = [b for b in tasks if b.cognitive_level != "evaluate"]
+    assert sach and all(b.dimensions == ["OK"] for b in sach)               # Orientierungskompetenz
+    urteil = next(b for b in tasks if b.cognitive_level == "evaluate")
+    assert urteil.kind == "position_argument" and urteil.dimensions == ["UK"]
+
+
+def test_gwb_entity_lint_clean():
+    assert lint(build_gwb())[0] == []
+
+
+def test_name_lint_conservative_but_catches_real_names():
+    sv = build_gwb()
+    base = len(lint(sv)[1])
+    sv.darstellung[0].body += " Die Karte und das Diagramm zeigen es deutlich."
+    assert len(lint(sv)[1]) == base                                          # function-word nouns: not flagged
+    sv.darstellung[0].body += " Erfunden: Kaiser Wilhelm von Hohenzollern."
+    assert any("Hohenzollern" in w for w in lint(sv)[1])                     # a real proper name IS flagged
+
+
+def test_geo_store_and_fetch_validator():
+    from teachersaid.grounding import geo_store
+    b = geo_store.load_boundaries("at_bundeslaender")
+    assert len(b) == 9 and "Wien" in b
+    assert "CC BY" in geo_store.citation("at_bundeslaender")
+    # the fetch tool's validator is a pure function (offline, no network)
+    import json
+
+    from tools.fetch_geo_boundaries import BOUNDARIES, validate
+    cfg = BOUNDARIES["at_bundeslaender"]
+    good = json.dumps({"type": "FeatureCollection", "features": [
+        {"properties": {"name": n}, "geometry": {"type": "Polygon",
+         "coordinates": [[[0, 0], [1, 0], [1, 1], [0, 0]]]}} for n in cfg["expected_names"]]})
+    assert validate(good.encode(), cfg)["type"] == "FeatureCollection"
+    with pytest.raises(ValueError):
+        validate(json.dumps({"type": "FeatureCollection", "features": []}).encode(), cfg)

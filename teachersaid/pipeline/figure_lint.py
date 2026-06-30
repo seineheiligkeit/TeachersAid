@@ -22,14 +22,20 @@ from ..schema.worksheet import WorksheetContent
 _DATA_GENERATORS = {
     "matplotlib:bar_chart", "matplotlib:line", "matplotlib:scatter",
     "matplotlib:histogram", "matplotlib:population_pyramid",
-    "matplotlib:timeline", "matplotlib:climate_diagram",
+    "matplotlib:timeline", "matplotlib:climate_diagram", "matplotlib:choropleth_map",
 }
 
 
 def _has_real_numbers(spec: dict) -> bool:
     vals: list[float] = []
+    vmap = spec.get("values")
+    if isinstance(vmap, dict):                # choropleth: {region: number}
+        vals += [float(v) for v in vmap.values() if v not in (None, "")]
     for key in ("values", "male", "female", "temp", "precip"):
-        vals += [float(v) for v in (spec.get(key) or []) if v not in (None, "")]
+        field = spec.get(key)
+        if isinstance(field, dict):
+            continue
+        vals += [float(v) for v in (field or []) if v not in (None, "")]
     for ser in spec.get("series") or []:
         vals += [float(v) for v in (ser.get("y") or []) if v not in (None, "")]
     for p in spec.get("points") or []:
