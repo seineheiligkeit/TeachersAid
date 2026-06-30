@@ -124,6 +124,15 @@ def seed_history(store=None, *, today: date | None = None) -> list:
     return [orch.stage_worksheet(store, wk.build_content(), res, source="curated")]
 
 
+def seed_sachverhalte(store=None, *, status: str = "in_review") -> list:
+    """Stage the curated Sachverhalte (library/sachverhalte.py) into the Sachverhalt store
+    for HITL review (the content/exposition layer — fact-check the facts + sources before a
+    worksheet derives from them). Idempotent: `upsert` preserves status. Cf. seed_texts."""
+    from ..pipeline import orchestrator as orch
+
+    return orch.seed_sachverhalte(store, status=status)
+
+
 def seed_blocks(store=None, *, status: str = "approved") -> list:
     """Harvest every example worksheet's blocks into the block library. These come
     from the curated, SME-reviewed examples, so they seed straight as `approved`

@@ -76,7 +76,7 @@
 <main id="main"></main>
 
 <script>
-const TABS = [["brainstorm","Brainstorm"],["bausteine","Bausteine"],["inhalte","Inhalte"],["bibliothek","Bibliothek"],["arrangements","Arrangements"],["abbildungen","Abbildungen"],["datensaetze","Datensätze"],["texte","Texte"],["statistik","Statistik"],["insights","Insights"]];
+const TABS = [["brainstorm","Brainstorm"],["bausteine","Bausteine"],["inhalte","Inhalte"],["bibliothek","Bibliothek"],["arrangements","Arrangements"],["abbildungen","Abbildungen"],["datensaetze","Datensätze"],["texte","Texte"],["sachverhalte","Sachverhalte"],["statistik","Statistik"],["insights","Insights"]];
 const FB_TAGS = ["zu leicht","zu schwer","Sachfehler","Sprache/Wortwahl","unklar","didaktisch stark","Bild/Abbildung nötig","super"];
 let TAB = "brainstorm", SELECTED = null, VIEW = "bloecke", ARRVIEW = "vorschau", LASTITEMS = [];
 const $ = s => document.querySelector(s);
@@ -173,6 +173,11 @@ function buildShell(){
       <div class="card"><h2>Texte — annotierte authentische Texte (Deutsch)</h2>
         <p class="muted">Echte, rechtlich geklärte Texte (gemeinfrei nach AT-70-Jahre-Regel oder CC) mit einer <b>geprüften Annotationsebene</b>. Aufgaben werden daraus abgeleitet — die Antworten stammen aus den Annotationen (korrekt durch Kuration, nicht erfunden). „Arbeitsblatt erzeugen“ stellt ein abgeleitetes Arbeitsblatt in <b>Inhalte</b> ein.</p>
         <div id="text-lib"><p class="muted">lädt…</p></div></div>`;
+  } else if(TAB==="sachverhalte"){
+    $("#main").innerHTML = `
+      <div class="card"><h2>Sachverhalte — kuratierte Sachwissen-Module (Darstellung + Fakten)</h2>
+        <p class="muted">Strukturierte, belegte Fakten (Zeitleiste · Akteure · Ursache→Folge · Begriffe) plus eine <b>autorisierte Darstellung über dem eingefrorenen Faktenset</b> — jede Jahreszahl ist per Entity-Lint garantiert, kein erfundenes Datum. Ein Modul → drei Projektionen (Darstellung · Abbildungen · Sachkompetenz-Aufgaben). Hier prüfst du <b>Fakten und Quellen</b> und gibst frei; „Arbeitsblatt erzeugen“ stellt es in <b>Inhalte</b> ein.</p>
+        <div id="sach-lib"><p class="muted">lädt…</p></div></div>`;
   } else if(TAB==="insights"){
     $("#main").innerHTML = `<div id="insights"><p class="muted">lädt…</p></div>`;
   } else {
@@ -193,6 +198,7 @@ async function refresh(){
   else if(TAB==="abbildungen") renderAssets();
   else if(TAB==="datensaetze") renderDatasets();
   else if(TAB==="texte") renderTexts();
+  else if(TAB==="sachverhalte") renderSachverhalte();
   else if(TAB==="statistik") renderStats();
   else if(TAB==="insights") renderInsights();
 }
@@ -482,6 +488,38 @@ async function renderTexts(){
 }
 async function actText(id,kind){ await jpost(`/api/texts/${id}/${kind}`,{}); renderTexts(); }
 async function composeText(id){ const r=await jpost(`/api/texts/${id}/compose`,{}); alert(r.error?("Fehler: "+r.error):("Arbeitsblatt "+r.id+" in „Inhalte“ erstellt"+(r.problems&&r.problems.length?(" — "+r.problems.length+" Verify-Probleme"):" (verify-clean)"))); }
+/* ---------- Sachverhalte (the content / exposition layer) ---------- */
+async function renderSachverhalte(){
+  if(!$("#sach-lib")) return;
+  const lib = await jget("/api/sachverhalte");
+  if(!lib.length){ $("#sach-lib").innerHTML = `<p class="muted">Noch keine Sachverhalte — <code>python -m teachersaid seed</code> lädt die Module.</p>`; return; }
+  const rows = await Promise.all(lib.map(s=>jget("/api/sachverhalte/"+encodeURIComponent(s.id))));
+  $("#sach-lib").innerHTML = rows.map(d=>{
+    const acts = d.status==="in_review" ? `<div class="row" style="margin-top:6px">
+        <button class="ok" onclick="actSachverhalt('${d.id}','approve')">Freigeben</button>
+        <button class="bad" onclick="actSachverhalt('${d.id}','reject')">Ablehnen</button></div>` : "";
+    const tl = (d.timeline||[]).map(e=>`<span class="badge">${esc(String(e.at))} ${esc(e.label)}</span>`).join(" ");
+    const ce = (d.causes||[]).map(c=>`<div class="muted">${esc(c.cause)} → ${esc(c.effect)}</div>`).join("");
+    const cs = (d.concepts||[]).map(c=>`<div class="muted"><b>${esc(c.term)}</b>: ${esc(c.definition)}</div>`).join("");
+    const dar = (d.darstellung||[]).map(s=>`<div style="margin:4px 0"><b>${esc(s.heading)}</b> — ${esc(s.body)}</div>`).join("");
+    const src = (d.facts_sources||[]).map(q=>`${esc(q.title)}${q.publisher?` · ${esc(q.publisher)}`:""}${q.licence?` · ${esc(q.licence)}`:""} <span class="badge">role=${esc(q.role)}</span>${q.url?` · <a href="${esc(q.url)}" target="_blank" rel="noopener">Quelle</a>`:""}`).join("<br>");
+    return `<div class="card" style="margin-bottom:10px">
+      <div class="row between"><b>${esc(d.title)}</b><span class="pill s-${d.status}">${d.status}</span></div>
+      <div class="meta">${esc(d.subject)} · ${d.klasse}. Kl.${d.sensitive?' · <span class="badge">⚠ sensibel</span>':''} · ${d.n_timeline} Ereignisse · ${d.n_causes} Wirk.-Verbindungen · ${d.n_concepts} Begriffe · ${d.n_darstellung} Abschnitte</div>
+      <div class="meta" style="margin-top:4px"><b>Leitfrage:</b> ${esc(d.leitfrage||"")}</div>
+      <details style="margin-top:6px"><summary class="muted">Faktenset (prüfen)</summary>
+        <div style="margin:6px 0">${tl}</div>
+        <div style="margin:6px 0">${ce}</div>
+        <div style="margin:6px 0">${cs}</div></details>
+      <details style="margin-top:4px"><summary class="muted">Darstellung (autorisiert über den Fakten)</summary>
+        <div style="font-size:13px;line-height:1.5;margin:6px 0;padding:6px 10px;border-left:2px solid #ccc">${dar}${d.bedeutung?`<div style="margin:4px 0"><b>Bedeutung</b> — ${esc(d.bedeutung)}</div>`:""}${d.gegenwartsbezug?`<div style="margin:4px 0"><b>Gegenwartsbezug</b> — ${esc(d.gegenwartsbezug)}</div>`:""}</div></details>
+      <div class="meta" style="font-size:11px;margin-top:4px">Quellen (role=facts): ${src||"—"}</div>
+      <div class="row" style="margin-top:6px"><button onclick="composeSachverhalt('${d.id}')">Arbeitsblatt erzeugen</button></div>
+      ${acts}${feedbackMini("sachverhalt", d.id)}</div>`;
+  }).join("");
+}
+async function actSachverhalt(id,kind){ await jpost(`/api/sachverhalte/${id}/${kind}`,{}); renderSachverhalte(); }
+async function composeSachverhalt(id){ const r=await jpost(`/api/sachverhalte/${id}/compose`,{}); alert(r.error?("Fehler: "+r.error):("Arbeitsblatt "+r.id+" in „Inhalte“ erstellt"+(r.problems&&r.problems.length?(" — "+r.problems.length+" Verify-Probleme"):" (verify-clean)"))); }
 async function renderAssets(){
   renderAssetLib();
   if(!$("#gallery")) return;

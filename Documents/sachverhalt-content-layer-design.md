@@ -1,6 +1,14 @@
 # Sachverhalt — the curated content / exposition layer (History first)
 
-**Status:** design / planning (29 Jun 2026). Author-of-record: SME + Claude.
+**Status:** **Phase 1 BUILT (30 Jun 2026)** — `schema/sachverhalt.py` · `pipeline/sachverhalt.py`
+(derivation) · `pipeline/sachverhalt_lint.py` (entity-lint) · the `matplotlib:cause_effect` Wirkungsgefüge
+recipe · the new GPB Sachkompetenz `task_kind_extensions` · the *Der Wiener Kongress* flagship
+(`library/sachverhalt_wiener_kongress.py`) · the full HITL surface (`SachverhaltStore` ·
+`orch.ingest/seed/compose_sachverhalt` · `/api/sachverhalte*` · the **Sachverhalte** dashboard tab) ·
+`tests/test_sachverhalt.py` (14 tests). Verify-clean end-to-end; full suite green. **Decisions:** Q1
+settled (below); **Q3 → separate primitive** + harvest derived blocks; **Q4 → v0 history fields locked,
+Bio/Geo fact-types deferred to Phase 2**; **Q2 → built now** (the minimal `cause_effect` recipe).
+The design baseline below stands as the intent record. Author-of-record: SME + Claude.
 **Scope of this doc:** the **History (GPB) extension** is the concrete build (Phase 1); the schema is
 deliberately designed to **generalise across subjects** (Phase 2+), because the gap it closes is
 cross-subject. Sibling docs: `history-facts-provenance-design.md` (the provenance machinery this reuses),

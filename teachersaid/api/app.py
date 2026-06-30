@@ -24,6 +24,7 @@ from ..store.assetstore import AssetStore
 from ..store.blockstore import BlockStore
 from ..store.datasetstore import DatasetStore
 from ..store.textstore import TextStore
+from ..store.sachverhaltstore import SachverhaltStore
 from ..store.feedbackstore import FEEDBACK_TAGS, TARGET_KINDS, FeedbackEntry, FeedbackStore
 from ..store.repository import ReviewStore
 
@@ -34,6 +35,7 @@ ASSETS = AssetStore()
 ARRANGEMENTS = ArrangementStore()
 DATASETS = DatasetStore()
 TEXTS = TextStore()
+SACHVERHALTE = SachverhaltStore()
 FEEDBACK = FeedbackStore()
 _STATIC = Path(__file__).resolve().parent / "static"
 
@@ -168,6 +170,10 @@ def _target_meta(kind: str, tid: str) -> tuple[str, str]:
         rec = TEXTS.get(tid)
         if rec:
             return rec.text.subject, f"{rec.text.source.author}: {rec.text.title}"
+    elif kind == "sachverhalt":
+        rec = SACHVERHALTE.get(tid)
+        if rec:
+            return rec.sachverhalt.subject, rec.sachverhalt.topic
     return "", tid
 
 
@@ -392,6 +398,61 @@ def compose_text(text_id: str):
     if TEXTS.get(text_id) is None:
         raise HTTPException(404, "no such text")
     item = orch.compose_text_worksheet(STORE, TEXTS, text_id)
+    return {"id": item.id, "error": item.error, "problems": item.verify_problems}
+
+
+# --- Sachverhalte (the content / exposition layer) ---------------------------
+def _sv_plain(rt) -> str:
+    from ..schema.richtext import plain_text
+    return plain_text(rt) if rt else ""
+
+
+@app.get("/api/sachverhalte")
+def sachverhalte(status: str | None = None):
+    return [r.summary() for r in SACHVERHALTE.list(status=status)]
+
+
+@app.get("/api/sachverhalte/{sach_id}")
+def sachverhalt_detail(sach_id: str):
+    rec = SACHVERHALTE.get(sach_id)
+    if rec is None:
+        raise HTTPException(404, "no such Sachverhalt")
+    s = rec.summary()
+    sv = rec.sachverhalt
+    s["timeline"] = [{"at": e.at, "label": e.label} for e in sv.timeline]
+    s["actors"] = [{"name": a.name, "role": _sv_plain(a.role)} for a in sv.actors]
+    s["causes"] = [{"cause": c.cause, "effect": c.effect, "kind": c.kind} for c in sv.causes]
+    s["concepts"] = [{"term": c.term, "definition": _sv_plain(c.definition)}
+                     for c in sv.concepts]
+    s["darstellung"] = [{"heading": d.heading, "body": _sv_plain(d.body)}
+                        for d in sv.darstellung]
+    s["bedeutung"] = _sv_plain(sv.bedeutung)
+    s["gegenwartsbezug"] = _sv_plain(sv.gegenwartsbezug)
+    s["facts_sources"] = [{"title": q.title, "publisher": q.publisher, "url": q.url,
+                           "licence": q.licence, "role": q.role} for q in sv.sources]
+    return s
+
+
+@app.post("/api/sachverhalte/{sach_id}/approve")
+def approve_sachverhalt(sach_id: str):
+    if SACHVERHALTE.get(sach_id) is None:
+        raise HTTPException(404, "no such Sachverhalt")
+    return SACHVERHALTE.set_status(sach_id, "approved").summary()
+
+
+@app.post("/api/sachverhalte/{sach_id}/reject")
+def reject_sachverhalt(sach_id: str):
+    if SACHVERHALTE.get(sach_id) is None:
+        raise HTTPException(404, "no such Sachverhalt")
+    return SACHVERHALTE.set_status(sach_id, "rejected").summary()
+
+
+@app.post("/api/sachverhalte/{sach_id}/compose")
+def compose_sachverhalt(sach_id: str):
+    """Derive a worksheet from the Sachverhalt and stage it in Inhalte for review."""
+    if SACHVERHALTE.get(sach_id) is None:
+        raise HTTPException(404, "no such Sachverhalt")
+    item = orch.compose_sachverhalt_worksheet(STORE, SACHVERHALTE, sach_id)
     return {"id": item.id, "error": item.error, "problems": item.verify_problems}
 
 

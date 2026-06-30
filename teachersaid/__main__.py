@@ -20,6 +20,7 @@ if __name__ == "__main__":
             seed_datasets,
             seed_history,
             seed_library,
+            seed_sachverhalte,
             seed_texts,
         )
 
@@ -48,6 +49,9 @@ if __name__ == "__main__":
         hist = seed_history()
         print(f"\nStaged {len(hist)} History-Flagship (GPB Wiener Kongress) als Inhalt "
               f"({', '.join(h.id for h in hist)} — Provenienz im Blöcke-Panel prüfen).")
+        svs = seed_sachverhalte()
+        print(f"\nStaged {len(svs)} Sachverhalt(e) in den Sachverhalt-Store "
+              f"({', '.join(s.id for s in svs)} — Fakten/Quellen im Sachverhalte-Tab prüfen).")
         print("\nRun 'python -m teachersaid' and open the dashboard to review them.")
         sys.exit(0)
 

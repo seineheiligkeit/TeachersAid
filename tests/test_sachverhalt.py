@@ -1,0 +1,180 @@
+"""Sachverhalt content layer (Phase 1) — schema, derivation, computed answers, figures,
+entity-lint, and projection-purity render. The proof that one curated module → three
+trustworthy projections, with the answers COMPUTED from the fact-set (never authored)."""
+
+from __future__ import annotations
+
+import re
+
+import fitz  # PyMuPDF
+import pytest
+
+from teachersaid.library.sachverhalt_wiener_kongress import build_sachverhalt
+from teachersaid.pipeline.assemble import assemble
+from teachersaid.pipeline.assets import build_asset
+from teachersaid.pipeline.sachverhalt import build_worksheet
+from teachersaid.pipeline.sachverhalt_lint import lint
+from teachersaid.pipeline.verify import verify
+from teachersaid.rendering.student_sheet import render_student_sheet
+from teachersaid.rendering.teacher_guide import render_teacher_guide
+from teachersaid.schema.sachverhalt import Sachverhalt
+
+
+def _task(content, kind):
+    return next(b for b in content.iter_blocks() if getattr(b, "kind", "") == kind)
+
+
+def test_schema_roundtrip():
+    sv = build_sachverhalt()
+    assert Sachverhalt.model_validate(sv.model_dump()) == sv
+
+
+def test_build_and_verify_clean():
+    content, res = build_worksheet(build_sachverhalt())
+    assemble(content, res)
+    report = verify(content, res)
+    assert report.ok, report.problems
+    kinds = {b.kind for b in content.iter_blocks() if b.role.value == "task"}
+    assert {"ordering", "cause_effect_match", "concept_match", "content_comprehension",
+            "structure_overview", "position_argument"} <= kinds
+
+
+def test_anforderungs_spread():
+    """A real cognitive ladder (not all one band) — the depth contract."""
+    content, _ = build_worksheet(build_sachverhalt())
+    levels = {b.cognitive_level for b in content.iter_blocks() if b.role.value == "task"}
+    assert {"remember", "analyze", "evaluate"} <= levels
+
+
+def test_chronology_answer_is_computed_not_authored():
+    sv = build_sachverhalt()
+    content, _ = build_worksheet(sv)
+    task = _task(content, "ordering")
+    # the answer is the timeline sorted by `at` — strictly increasing years
+    years = [int(y) for y in re.findall(r"\d{4}", task.answer_key)]
+    assert years == sorted(years) and len(years) == len(sv.timeline)
+    # the DISPLAYED order is not already chronological → it is a real task
+    chrono_labels = [e.label for e in sorted(sv.timeline, key=lambda e: e.at)]
+    assert task.payload.items != chrono_labels
+
+
+def test_matches_are_drawn_from_the_factset():
+    sv = build_sachverhalt()
+    content, _ = build_worksheet(sv)
+    ce = _task(content, "cause_effect_match")
+    assert ce.payload.left == [c.cause for c in sv.causes]
+    for c in sv.causes:                       # every real pairing is in the key
+        assert f"{c.cause} → {c.effect}" in ce.answer_key
+    cm = _task(content, "concept_match")
+    assert cm.payload.left == [c.term for c in sv.concepts]
+    for c in sv.concepts:
+        assert c.term in cm.answer_key
+
+
+def test_derived_figures_present_and_build(tmp_path):
+    content, _ = build_worksheet(build_sachverhalt())
+    gens = {a.generator for a in content.assets}
+    assert {"matplotlib:timeline", "matplotlib:cause_effect"} <= gens
+    # both recipes actually render (proves the new cause_effect recipe)
+    for a in content.assets:
+        p = build_asset(a, outdir=tmp_path / "assets")
+        assert p.exists() and p.stat().st_size > 1000
+
+
+def test_projection_purity_render(tmp_path):
+    """Student + teacher render from the ONE content object; teacher shows reasoning the
+    student sheet hides (the projection-purity guarantee)."""
+    content, res = build_worksheet(build_sachverhalt())
+    assemble(content, res)
+    assets = {a.id: build_asset(a, outdir=tmp_path / "assets") for a in content.assets}
+    sp = render_student_sheet(content, tmp_path / "s.pdf", assets)
+    tp = render_teacher_guide(content, tmp_path / "t.pdf", assets)
+
+    def text_of(pdf):
+        with fitz.open(pdf) as doc:
+            return "".join(page.get_text() for page in doc)
+
+    s_text, t_text = text_of(sp), text_of(tp)
+    assert "Wiener Kongress" in s_text and "Wiener Kongress" in t_text
+    # acceptable_reasoning is strictly teacher-only
+    assert "bewertet wird die Begründung" in t_text
+    assert "bewertet wird die Begründung" not in s_text
+
+
+def test_entity_lint_clean_on_flagship():
+    problems, _warnings = lint(build_sachverhalt())
+    assert problems == [], problems
+
+
+def test_entity_lint_catches_out_of_set_year():
+    sv = build_sachverhalt()
+    # plant the classic 1815→1851 garble in a Darstellung section
+    sv.darstellung[3].body = sv.darstellung[3].body.replace("1815", "1851")
+    problems, _ = lint(sv)
+    assert any("1851" in p for p in problems), problems
+
+
+# --- Stage B: the HITL surface (store · ingest gates · seed · API) -----------
+def test_store_roundtrip_and_status_preserve(tmp_path):
+    from teachersaid.store.sachverhaltstore import SachverhaltRecord, SachverhaltStore
+    store = SachverhaltStore(tmp_path)
+    sv = build_sachverhalt()
+    store.upsert(SachverhaltRecord(id=sv.id, sachverhalt=sv))
+    assert store.get(sv.id).status == "in_review"
+    store.set_status(sv.id, "approved")
+    store.upsert(SachverhaltRecord(id=sv.id, sachverhalt=sv))      # re-seed
+    assert store.get(sv.id).status == "approved"                  # never un-approved
+
+
+def test_ingest_facts_and_entity_gates(tmp_path):
+    from teachersaid.pipeline import orchestrator as orch
+    from teachersaid.store.sachverhaltstore import SachverhaltStore
+    store = SachverhaltStore(tmp_path)
+    assert orch.ingest_sachverhalt(store, build_sachverhalt()).status == "in_review"
+    # facts gate — no role="facts" source
+    no_facts = build_sachverhalt().model_copy(update={"sources": []})
+    with pytest.raises(ValueError, match="facts"):
+        orch.ingest_sachverhalt(store, no_facts)
+    # entity gate — an out-of-set year in the Darstellung blocks staging
+    bad = build_sachverhalt().model_copy(deep=True)
+    bad.darstellung[3].body = bad.darstellung[3].body.replace("1815", "1851")
+    with pytest.raises(ValueError, match="Entity-Lint"):
+        orch.ingest_sachverhalt(store, bad)
+
+
+def test_seed_sachverhalte(tmp_path):
+    from teachersaid.pipeline import orchestrator as orch
+    from teachersaid.store.sachverhaltstore import SachverhaltStore
+    store = SachverhaltStore(tmp_path)
+    recs = orch.seed_sachverhalte(store)
+    assert recs and store.list(status="in_review")
+    store.set_status(recs[0].id, "approved")
+    assert store.approved()
+
+
+def test_feedback_accepts_sachverhalt_kind():
+    from teachersaid.store.feedbackstore import TARGET_KINDS
+    assert "sachverhalt" in TARGET_KINDS
+
+
+def test_api_sachverhalte(tmp_path, monkeypatch):
+    import teachersaid.config as cfg
+    monkeypatch.setattr(cfg, "RUNS_DIR", tmp_path)
+    from fastapi.testclient import TestClient
+
+    from teachersaid.api import app as appmod
+    from teachersaid.store.repository import ReviewStore
+    from teachersaid.store.sachverhaltstore import SachverhaltStore
+    appmod.SACHVERHALTE = SachverhaltStore(tmp_path / "sv")
+    appmod.STORE = ReviewStore(tmp_path / "store")
+    appmod.orch.seed_sachverhalte(appmod.SACHVERHALTE)
+    client = TestClient(appmod.app)
+
+    lst = client.get("/api/sachverhalte").json()
+    assert lst and any(s["id"] == "sv-wiener-kongress" for s in lst)
+    d = client.get("/api/sachverhalte/sv-wiener-kongress").json()
+    assert d["timeline"] and d["darstellung"] and d["facts_sources"]
+    # derive a worksheet → lands in Inhalte, verify-clean
+    r = client.post("/api/sachverhalte/sv-wiener-kongress/compose").json()
+    assert r["error"] is None and not r["problems"]
+    assert client.post("/api/sachverhalte/sv-wiener-kongress/approve").json()["status"] == "approved"

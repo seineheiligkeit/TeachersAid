@@ -150,6 +150,22 @@ target language for Fremdsprache). Read this, then the docs in the order given i
 > **Infra:** all on `main` (pushed). The home network reaches matura.gv.at (the remote session's egress had
 > blocked it). Run: `python -m pytest -q` (**265 tests**).
 
+> **Update (Session 8, 30 Jun 2026): the Sachverhalt content/exposition layer — Phase 1 shipped.** The
+> measured gap (the engine is task-generative and prose-thin everywhere, while the Lehrplan's
+> **Sachkompetenz** pillar demands a didactic *Darstellung*) is closed for History via the **fourth**
+> correct-by-construction mechanism — *re-expressed under constraint* (`Documents/invariants.md` §3): the
+> facts (timeline · actors · cause→effect · Begriffe) are selected/sourced like the data layer's numbers,
+> and the connective **Darstellung is authored over the frozen fact-set**, guarded by a deterministic
+> **entity-lint** (every year in the prose must be in the fact-set — years are a hard guarantee; names are
+> advisory, since German capitalises every noun). One `Sachverhalt` → three projections (Darstellung ·
+> DERIVED timeline + a new `matplotlib:cause_effect` Wirkungsgefüge · Sachkompetenz tasks whose answers are
+> **COMPUTED** from the facts). Built end-to-end: `schema/sachverhalt.py`, `pipeline/sachverhalt{,_lint}.py`,
+> the GPB Sachkompetenz task kinds, the *Der Wiener Kongress* flagship (alongside the method flagship), and
+> the full HITL surface (`SachverhaltStore` · ingest/seed/compose · `/api/sachverhalte*` · the
+> **Sachverhalte** tab · feedback kind). See `CLAUDE.md` "Sachverhalt" + `Documents/sachverhalt-content-
+> layer-design.md` (Phase 1 BUILT). Run: `python -m pytest -q` (**306 tests**). **Next:** Phase 2 —
+> generalise the container to Bio/Geo; Phase 3 — subagent scaling.
+
 ---
 
 ## 0 · Orientation (the 30-second version)

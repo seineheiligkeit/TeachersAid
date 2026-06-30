@@ -578,6 +578,72 @@ def compose_text_worksheet(store: ReviewStore, text_store, text_id: str,
     return store.save(item)
 
 
+def ingest_sachverhalt(sachverhalt_store, sachverhalt, *, source: str = "curated",
+                       status: str = "in_review"):
+    """Stage a curated Sachverhalt for HITL review. Runs the FACTS gate first: at least one
+    `role="facts"` source must be recorded (mandatory-internal, so each fact is fact-checked
+    at the gate), and the entity-lint must be clean (every year in the Darstellung appears in
+    the fact-set). The select-never-author discipline applied to a content module — numbers
+    are guaranteed; the prose is a projection over the frozen facts (`invariants.md` §3)."""
+    from ..pipeline.sachverhalt_lint import lint
+    from ..store.sachverhaltstore import SachverhaltRecord
+
+    if not sachverhalt.facts_sources():
+        raise ValueError(
+            f"Sachverhalt {sachverhalt.id}: keine role='facts'-Quelle — jeder Sachverhalt "
+            f"braucht eine recherchierte, prüfbare Faktenquelle (Pflicht-intern).")
+    problems, _warnings = lint(sachverhalt)
+    if problems:
+        raise ValueError(f"Sachverhalt {sachverhalt.id}: Entity-Lint — " + "; ".join(problems))
+    rec = SachverhaltRecord(id=sachverhalt.id, sachverhalt=sachverhalt, source=source,
+                            status=status)
+    return sachverhalt_store.upsert(rec)
+
+
+def seed_sachverhalte(sachverhalt_store=None, *, status: str = "in_review"):
+    """Stage the curated Sachverhalte (library/sachverhalte.py) for review (cf. seed_texts)."""
+    from ..library.sachverhalte import SACHVERHALTE
+    from ..store.sachverhaltstore import SachverhaltStore
+
+    store = sachverhalt_store or SachverhaltStore()
+    return [ingest_sachverhalt(store, sv, status=status) for sv in SACHVERHALTE]
+
+
+def compose_sachverhalt_worksheet(store: ReviewStore, sachverhalt_store, sach_id: str,
+                                  *, klasse: int | None = None,
+                                  today: date | None = None) -> ReviewItem:
+    """Stage a worksheet derived from a Sachverhalt as a content item for Gate-2 review. The
+    Darstellung is grounded prose; the Sachkompetenz answers are COMPUTED from the facts."""
+    from ..pipeline.sachverhalt import build_worksheet
+
+    rec = sachverhalt_store.get(sach_id)
+    if rec is None:
+        raise KeyError(f"no Sachverhalt '{sach_id}'")
+    sv = rec.sachverhalt
+    item = ReviewItem(
+        id="", stage="content", source="sachverhalt",
+        title=f"{sv.subject} {klasse or sv.default_klasse()}. Kl. — {sv.topic}",
+        request=BundleRequest(subject=sv.subject, klasse=klasse or sv.default_klasse(),
+                              topic_raw=sv.topic),
+    )
+    store.create(item)
+    try:
+        content, res = build_worksheet(sv, klasse=klasse, today=today)
+        item.resolution = res
+        assemble(content, res)
+        report = verify(content, res)
+        item.artifacts = _render_all(item.id, content)
+        item.content = content
+        item.verify_problems = report.problems
+        item.verify_warnings = report.warnings
+        item.status = "pending"
+        item.error = None
+    except Exception as exc:  # noqa: BLE001
+        item.error = f"{type(exc).__name__}: {exc}"
+        item.status = "pending"
+    return store.save(item)
+
+
 def _produce_content_item(
     store: ReviewStore,
     idea: ReviewItem,

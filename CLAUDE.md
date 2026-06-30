@@ -407,6 +407,57 @@ MUST record a `role="facts"` source so the fact is fact-checked at the review ga
   `orch.stage_worksheet` (stage a pre-built curated `WorksheetContent`). The quotation is **selected, not
   authored** (verified verbatim — do NOT fabricate historical wording).
 
+## Sachverhalt — the content / exposition layer (`teachersaid/schema/sachverhalt.py`)
+
+The **third grounding/provenance sibling** (next to the grounded-facts data layer and the annotated
+texts; design + decisions: `Documents/sachverhalt-content-layer-design.md`). It closes a *measured*
+cross-subject gap — the engine was task-generative and **prose-thin** everywhere, while the Lehrplan's
+**Sachkompetenz** pillar demands a didactic *Darstellung* (what happened/works and why it matters). A
+**`Sachverhalt`** is a curated module of structured **Sachwissen** about one topic; **one module → three
+projections** (the same shape as `WorksheetContent` → student/teacher/homework), so the substance stops
+drifting and starts compounding.
+
+The reconciliation with *select, never author* is the **fourth correct-by-construction mechanism**
+(`invariants.md` §3, *re-expressed under constraint*): the **facts** (timeline · actors · cause→effect ·
+Begriffe) are *selected/sourced* exactly like the data layer's numbers (copyright protects expression,
+not facts), and the connective **Darstellung is authored over the *frozen* fact-set** — a projection that
+cannot reach back and invent — guarded by a **deterministic entity-lint**. *"Select the facts, author the
+expression."*
+
+- **Schema** (`schema/sachverhalt.py`): `Sachverhalt` (id · subject · `klasse_range` · discovery tags ·
+  `sources` [role="facts" mandatory] · `sensitive` · `sach_dimension`/`urteil_dimension` hints) + the
+  structured facts `HistEvent`/`Actor`/`CausalLink`/`Concept` + `bedeutung`/`gegenwartsbezug`/`urteilsfrage`
+  + the authored `DarstellungSection`s (`grounded_by` fact keys). Reuses `provenance.ProvenanceSource`/
+  `BlockProvenance` wholesale.
+- **Derivation** (`pipeline/sachverhalt.py::build_worksheet`, the `text_tasks` twin): Darstellung →
+  `InfoBlock`s with a grounded `expression_origin="original"` provenance attached *by construction* (so
+  the existing `prose_lint` passes); **DERIVED figures** (timeline ← `timeline`; **Wirkungsgefüge** ←
+  `causes`, the new `matplotlib:cause_effect` box-and-arrow recipe); and **Sachkompetenz tasks whose
+  `answer_key` is COMPUTED from the fact-set** — `chronology` (kind `ordering`) = sort by `at`,
+  `cause_effect_match`/`concept_match` = the pairing straight from `causes`/`concepts` (the prompt shows a
+  deterministically-reordered list; *no grader engine — the module IS the key*), plus open
+  `content_comprehension`/`structure_overview` and an `urteilsfrage`→`position_argument` high-band task
+  (a real Anforderungs-spread). New GPB `task_kind_extensions` (`lehrplan/subject_models.json`):
+  `cause_effect_match · concept_match · content_comprehension · structure_overview`.
+- **The entity-lint** (`pipeline/sachverhalt_lint.py`, the correct-by-construction guard on *authoring*;
+  runs at ingest on the `Sachverhalt`, **not** in worksheet `verify` where the fact-set is gone):
+  **years are the HARD guarantee** (every 3–4-digit year in the Darstellung must be in the fact-set —
+  catches the 1815→1851 garble); **names are ADVISORY** (German capitalises *every* noun, so the English
+  "capitalised = name" heuristic is useless — only a multi-word phrase with *no* fact-set token is
+  flagged); quoted spans + `grounded_by` are advisory. Numbers are machine-guaranteed; tone/names lean on
+  the SME gate.
+- **HITL**: `store/sachverhaltstore.py::SachverhaltStore` (mirrors `TextStore`); `orch.ingest_sachverhalt`
+  (gate: ≥1 `role="facts"` source + entity-lint clean), `seed_sachverhalte`, `compose_sachverhalt_worksheet`
+  (→ a Gate-2 content item); the dashboard **Sachverhalte** tab (`/api/sachverhalte*`, facts/Darstellung
+  review + "Arbeitsblatt erzeugen"); `feedback` target kind `sachverhalt`. Registry: `library/sachverhalte.py`.
+- **Flagship** (`library/sachverhalt_wiener_kongress.py`): GPB 3./4. Kl. *Der Wiener Kongress*, rebuilt
+  **content-first** (Darstellung + timeline + Wirkungsgefüge + 6 Sachkompetenz-Aufgaben) **alongside** the
+  method flagship `gpb_wiener_kongress.py` (Quelle ≠ Darstellung). Facts sourced `role="facts"` to
+  Wikipedia (the SME fact-checks history + German at the gate; the entity-lint forces every prose date into
+  the timeline first). `tests/test_sachverhalt.py` locks schema · verify-clean · the computed answers · the
+  figures · render-purity · the entity-lint (clean + catches a planted year) · the store/ingest/seed/API
+  loop. **Phase 1 done; the container generalises — Bio/Geo fact-types are Phase 2.**
+
 ## Master library (`teachersaid/library/`)
 
 Curated, gold-standard **`WorksheetContent` examples** — the quality bar, the few-shot seeds for LLM

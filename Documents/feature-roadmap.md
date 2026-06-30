@@ -5,13 +5,17 @@ Forward-looking *capability* features for TeachersAid. (The schema-version roadm
 
 ## ▶ Start here (state as of 29 Jun 2026, Sessions 4–7)
 
-> **Next big bet (planned 29 Jun 2026): the Sachverhalt content/exposition layer** — design doc
-> `Documents/sachverhalt-content-layer-design.md`. A cross-subject finding (measured): the engine is
-> overwhelmingly task-generative with prose as a *thin intro*, so the **didactic content layer**
-> (Sachwissen — what happened/works and why it matters) is under-served everywhere; the Lehrplan's
-> **Sachkompetenz** + content KBs demand the opposite. The fix is a third grounding/provenance sibling
-> (next to datasets & annotated texts): a curated, sourced **Sachverhalt** module (structured facts →
-> Darstellung + figures + Sachkompetenz tasks). **History is Phase 1**; schema designed to generalise.
+> **Big bet — the Sachverhalt content/exposition layer: Phase 1 BUILT (30 Jun 2026).** Design +
+> decisions: `Documents/sachverhalt-content-layer-design.md`; codebase guide: `CLAUDE.md` "Sachverhalt".
+> The measured cross-subject gap (engine task-generative, prose-thin; the Lehrplan's **Sachkompetenz**
+> demands a didactic Darstellung) is closed for **History**: a curated, sourced **Sachverhalt** module
+> (structured facts → grounded Darstellung + DERIVED timeline/Wirkungsgefüge + correct-by-construction
+> Sachkompetenz tasks) — the **fourth** correct-by-construction mechanism (*re-expressed under constraint*,
+> `invariants.md` §3): facts selected/sourced, prose authored over the *frozen* fact-set with a
+> deterministic entity-lint (years machine-guaranteed). Flagship *Der Wiener Kongress*; full HITL surface +
+> the **Sachverhalte** tab; 14 tests, verify-clean. **Phase 2** = generalise the container to a content-
+> heavy science (Bio/Geo fact-types, the worst-scoring on expository depth); **Phase 3** = subagent scaling
+> (`tools/ingest_sachverhalte.py`, the breadth pattern).
 
 > **Update (29 Jun 2026): Matura orientation.** The SRDP (Matura) was studied as the competence-
 > model capstone. Two cheap, high-value uses agreed (NOT a new asset class — see

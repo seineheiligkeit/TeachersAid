@@ -486,6 +486,62 @@ def _tree_diagram(asset: Asset, path: Path) -> None:
     plt.close(fig)
 
 
+@_generator("matplotlib:cause_effect")
+def _cause_effect(asset: Asset, path: Path) -> None:
+    """A Wirkungsgefüge — cause→effect links as labelled boxes joined by arrows (the
+    Sachverhalt content layer, GPB/history). Structural, correct-by-construction: the boxes
+    and arrows are spec-provided, so the figure never invents a relationship. spec:
+    {links:[{"cause":str,"effect":str,"kind"?:str}], title?}. Distinct causes stack on the
+    left, distinct effects on the right; each link draws one arrow (a cause may fan out)."""
+    s = asset.spec or {}
+    links = s.get("links", []) or []
+    causes: list[str] = []
+    effects: list[str] = []
+    for ln in links:
+        c, e = str(ln.get("cause", "")), str(ln.get("effect", ""))
+        if c and c not in causes:
+            causes.append(c)
+        if e and e not in effects:
+            effects.append(e)
+    n = max(len(causes), len(effects), 1)
+    fig, ax = plt.subplots(figsize=(7.8, max(2.6, 1.0 * n)), layout="constrained")
+    ax.axis("off")
+    ax.set_xlim(0, 10)
+    ax.set_ylim(0, n + 0.4)
+
+    def ypos(idx: int, total: int) -> float:
+        if total <= 1:
+            return (n + 0.4) / 2
+        top, bot = n, 0.4
+        return top - (top - bot) * idx / (total - 1)
+
+    def wrap(t: str) -> str:
+        return "\n".join(textwrap.wrap(t, 24))
+
+    cpos: dict[str, float] = {}
+    epos: dict[str, float] = {}
+    for i, c in enumerate(causes):
+        y = ypos(i, len(causes))
+        cpos[c] = y
+        ax.text(1.7, y, wrap(c), ha="center", va="center", fontsize=9,
+                bbox={"boxstyle": "round,pad=0.4", "fc": "#eef3f8", "ec": "#33506e"})
+    for i, e in enumerate(effects):
+        y = ypos(i, len(effects))
+        epos[e] = y
+        ax.text(8.3, y, wrap(e), ha="center", va="center", fontsize=9,
+                bbox={"boxstyle": "round,pad=0.4", "fc": "#fdf0ec", "ec": "#b03a2e"})
+    for ln in links:
+        c, e = str(ln.get("cause", "")), str(ln.get("effect", ""))
+        if c in cpos and e in epos:
+            ax.annotate("", xy=(7.2, epos[e]), xytext=(2.8, cpos[c]),
+                        arrowprops={"arrowstyle": "-|>", "color": "#7a7a7a", "lw": 1.2,
+                                    "shrinkA": 3, "shrinkB": 3})
+    if s.get("title"):
+        ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 52)))
+    fig.savefig(path, dpi=150)
+    plt.close(fig)
+
+
 # --- geometry recipe family (KB3 Figuren und Körper) -------------------------
 # Correct-by-construction geometric figures; labels are spec-provided so a figure never
 # leaks the answer (e.g. show "c = ?" for a Pythagoras task). Equal aspect, no data axes.

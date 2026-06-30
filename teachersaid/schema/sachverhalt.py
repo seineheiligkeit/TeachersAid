@@ -1,0 +1,134 @@
+"""The Sachverhalt content / exposition layer — curated structured Sachwissen.
+
+The third grounding/provenance sibling (next to the grounded-facts data layer and the
+annotated texts; design: `Documents/sachverhalt-content-layer-design.md`). Where the data
+layer tracks fact-provenance for NUMBERS and `AnnotatedText` tracks rights-provenance for
+whole TEXTS, a `Sachverhalt` is a curated module of structured *Sachwissen* about one
+topic — the didactic content layer the engine was missing (measured: it is task-generative
+and prose-thin everywhere, while the Lehrplan's Sachkompetenz pillar demands the opposite).
+
+The honest reconciliation with *select, never author* is a split (see `invariants.md` §3):
+
+* **structured facts are facts** — a date, an actor's role, a cause→effect link, a Begriff.
+  These are curatable and sourced exactly like the data layer's numbers (copyright protects
+  expression, not facts) and fact-checked at the HITL gate.
+* **the connective Darstellung is authored-then-vetted** — but only ever a *projection over
+  the frozen fact-set* (the same shape as the rendering layer), guarded by a deterministic
+  entity-lint (`pipeline/sachverhalt_lint.py`) so the authoring itself is correct-by-
+  construction. *"Select the facts, author the expression."*
+
+One `Sachverhalt` → three projections (`pipeline/sachverhalt.py`): a Darstellung learn-text,
+DERIVED figures (timeline ← `timeline`, Wirkungsgefüge ← `causes`), and several
+correct-by-construction Sachkompetenz tasks (order the real events, match cause→effect,
+Begriff-Zuordnung) — then the usual `assemble`/`verify`/`render` path, so nothing downstream
+changes.
+"""
+
+from __future__ import annotations
+
+from typing import Literal
+
+from pydantic import BaseModel, ConfigDict, Field
+
+from .provenance import BlockProvenance, ProvenanceSource
+from .richtext import RichText
+
+# the role a causal link plays in the Wirkungsgefüge (drives ordering/colour later)
+CausalKind = Literal["voraussetzung", "ursache", "verlauf", "folge", "wirkung"]
+
+
+class HistEvent(BaseModel):
+    """A dated event → the timeline figure + chronology tasks. `at` is numeric where it
+    can be (it drives the timeline axis); a string allows "um 1500" / an ISO date."""
+    model_config = ConfigDict(extra="forbid")
+    at: int | str
+    label: str
+    text: RichText = ""              # one-line description (teacher/context, not the axis)
+    source_ref: str | None = None    # optional key into sources[]
+
+
+class Actor(BaseModel):
+    """Who, and their role in the Sachverhalt (Akteur:innen → structure_overview tasks)."""
+    model_config = ConfigDict(extra="forbid")
+    name: str
+    role: RichText
+    source_ref: str | None = None
+
+
+class CausalLink(BaseModel):
+    """A cause→effect link → the Wirkungsgefüge figure + cause_effect_match tasks."""
+    model_config = ConfigDict(extra="forbid")
+    cause: str
+    effect: str
+    kind: CausalKind = "folge"
+    source_ref: str | None = None
+
+
+class Concept(BaseModel):
+    """A Begriff → concept_match tasks (term ↔ definition)."""
+    model_config = ConfigDict(extra="forbid")
+    term: str
+    definition: RichText
+    source_ref: str | None = None
+
+
+class DarstellungSection(BaseModel):
+    """One section of the authored-then-vetted narrative, grounded in the fact-set.
+
+    `grounded_by` lists the fact keys this paragraph rests on (event label / Begriff /
+    actor name) — the checkability audit. `provenance` is normally left None: the
+    derivation attaches the module's `role="facts"` sources as an
+    `expression_origin="original"` `BlockProvenance`, so the prose-provenance gate
+    (`prose_lint`) passes by construction and the curator cannot forget the facts record.
+    Set it explicitly only for the rare section that embeds a quote."""
+    model_config = ConfigDict(extra="forbid")
+    heading: str
+    body: RichText
+    grounded_by: list[str] = Field(default_factory=list)
+    provenance: BlockProvenance | None = None
+
+
+class Sachverhalt(BaseModel):
+    """A curated module of structured Sachwissen about one topic (the in-repo record,
+    HITL-reviewed). The substance (`timeline`/`actors`/`causes`/`concepts`/`bedeutung`/
+    `gegenwartsbezug`) is *selected/sourced*; the `darstellung` is *authored over the frozen
+    fact-set* (entity-lint guarded). The skeleton is generic — only the fact mix shifts by
+    subject (Phase 2+ adds Bio/Geo fact-types behind the same container)."""
+    model_config = ConfigDict(extra="forbid")
+    id: str
+    subject: str
+    klasse_range: tuple[int, int]
+    topic: str
+    leitfrage: RichText = ""
+    # --- discovery tags (cf. Dataset.subjects/keywords/competences) — NOT facts ---
+    kompetenzbereiche: list[str] = Field(default_factory=list)
+    competences: list[str] = Field(default_factory=list)   # especially-relevant ids
+    keywords: list[str] = Field(default_factory=list)
+    # --- authoring policy ---
+    sensitive: bool = False          # → conservative authoring + mandatory SME pass (§12-Q1)
+    sources: list[ProvenanceSource] = Field(default_factory=list)  # role="facts" mandatory
+    # --- the structured substance (facts) ---
+    timeline: list[HistEvent] = Field(default_factory=list)
+    actors: list[Actor] = Field(default_factory=list)
+    causes: list[CausalLink] = Field(default_factory=list)
+    concepts: list[Concept] = Field(default_factory=list)
+    bedeutung: RichText = ""          # significance / Nachwirkung
+    gegenwartsbezug: RichText = ""    # the present-day link (Lehrplan-mandated)
+    urteilsfrage: RichText = ""       # optional judgment prompt → a high-band Urteils-task.
+    # Multiperspektivität/Kontroversität lives HERE (the Urteils layer), never in the factual
+    # Darstellung (§12) — and it gives the worksheet a real Anforderungs-spread.
+    # subject Sachkompetenz dimension code (e.g. GPB "HSA"); a fallback when a served
+    # competence resolves without its own dimension — see pipeline/sachverhalt.py.
+    # (GPB.US.3.* resolve with empty dims, so this is required, not cosmetic.)
+    sach_dimension: str | None = None
+    urteil_dimension: str | None = None   # the judgment task's dim (e.g. GPB "HOR"); falls
+    # back to sach_dimension — an Urteils-task is Orientierungs-/Urteilskompetenz, not Sach-
+    # --- the authored-then-vetted narrative, grounded in the above ---
+    darstellung: list[DarstellungSection] = Field(default_factory=list)
+
+    def facts_sources(self) -> list[ProvenanceSource]:
+        return [s for s in self.sources if s.role == "facts"]
+
+    def default_klasse(self) -> int:
+        """The grade a worksheet is built for by default — the lower bound of the range."""
+        return self.klasse_range[0]
