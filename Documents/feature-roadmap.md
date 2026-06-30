@@ -16,8 +16,11 @@ Forward-looking *capability* features for TeachersAid. (The schema-version roadm
 > the **Sachverhalte** tab; 18 tests, verify-clean. **Phase 2 DONE (30 Jun 2026, Biology):** *Der
 > Blutkreislauf* added the undated **`Process`/cycle** fact-type (a `matplotlib:process_flow` cycle figure +
 > a process-ordering task) behind the same container — proving it isn't history-locked, with W/S
-> strand-correct anchoring and the judgment kind auto-selected. **Phase 3** = subagent scaling
-> (`tools/ingest_sachverhalte.py`, the breadth pattern). **Geographie DONE too (the first MAP):** the GWB
+> strand-correct anchoring and the judgment kind auto-selected. **Phase 3 DONE (30 Jun 2026):** subagent
+> scaling — `tools/sachverhalt_prompt.py` (grounded per-topic brief) + `tools/ingest_sachverhalte.py`
+> (normalizer/facts-gate/entity-lint, the `ingest_batch` twin); first push = 4 verify-clean modules (GPB
+> *Französische Revolution*/*Industrialisierung* timeline, BIO *Photosynthese*/*Verdauung* process), every
+> prose year backed by a timeline event, staged `in_review`. **Geographie DONE too (the first MAP):** the GWB
 > flagship *Bevölkerung in Österreichs Bundesländern* added a spatial **`Region`** fact-type + a
 > correct-by-construction **choropleth** (`matplotlib:choropleth_map`) — sourced CC-BY boundaries (the new
 > geo layer `grounding/geo/` + `grounding/geo_store.py` + `tools/fetch_geo_boundaries.py`, *boundaries are

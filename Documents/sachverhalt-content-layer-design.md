@@ -1,11 +1,13 @@
 # Sachverhalt — the curated content / exposition layer (History first)
 
-**Status:** **Phase 1 (History) + Phase 2 (Biology + Geography) BUILT (30 Jun 2026)** — `schema/sachverhalt.py` · `pipeline/sachverhalt.py`
+**Status:** **Phase 1 (History) + Phase 2 (Biology + Geography) + Phase 3 (subagent scaling) BUILT (30 Jun 2026)** — `schema/sachverhalt.py` · `pipeline/sachverhalt.py`
 (derivation) · `pipeline/sachverhalt_lint.py` (entity-lint) · the `matplotlib:cause_effect` Wirkungsgefüge
 recipe · the new GPB Sachkompetenz `task_kind_extensions` · the *Der Wiener Kongress* flagship
 (`library/sachverhalt_wiener_kongress.py`) · the full HITL surface (`SachverhaltStore` ·
 `orch.ingest/seed/compose_sachverhalt` · `/api/sachverhalte*` · the **Sachverhalte** dashboard tab) ·
-`tests/test_sachverhalt.py` (14 tests). Verify-clean end-to-end; full suite green. **Decisions:** Q1
+the **breadth seam** (`tools/sachverhalt_prompt.py` brief generator + `tools/ingest_sachverhalte.py`
+normalizer/gate/derive, the `ingest_batch` twin) · `tests/test_sachverhalt.py` + `tests/test_ingest_sachverhalte.py`
+(30 tests). Verify-clean end-to-end; full suite green. **Decisions:** Q1
 settled (below); **Q3 → separate primitive** + harvest derived blocks; **Q4 → v0 history fields locked,
 Bio/Geo fact-types deferred to Phase 2**; **Q2 → built now** (the minimal `cause_effect` recipe).
 The design baseline below stands as the intent record. Author-of-record: SME + Claude.
@@ -238,9 +240,27 @@ tasks**, approve. `orch.ingest_sachverhalt` gates (rights + facts-required) → 
   and serves the **W** strand for Sachkompetenz / **S** for the Standpunkt (the science-model split, via the
   `urteil_competence`/`actor_label` hints). Confirms the schema isn't history-locked. (Geographie, with its
   maps dependency, is the natural next subject.)
-- **Phase 3 — scale via subagents.** Author **structured modules** from provided/sourced facts (the breadth
-  pattern: subagents emit `Sachverhalt` JSON → `tools/ingest_sachverhalte.py` → rights/facts gate → verify →
-  stage). The facts are *selected/sourced*, the narrative *authored-then-vetted* — never invented.
+- **Phase 3 — scale via subagents. DONE (30 Jun 2026).** The content-layer twin of the worksheet breadth
+  seam (`tools/breadth_prompt.py` → `tools/ingest_batch.py`). Two tools:
+  - **`tools/sachverhalt_prompt.py`** writes a fully-grounded per-topic brief (`runs/ingest/sv_prompts/<id>.md`):
+    the real catalog competences for the topic's grade, the **fact-type block** (timeline=History / process=Bio),
+    the **load-bearing dimension hints** (`sach_dimension`/`urteil_dimension`/`urteil_competence`/`actor_label` —
+    GPB/BIO competences resolve with *empty* dims, so these are required not cosmetic), the *select-the-facts-author-
+    the-expression* rules (every prose year must be a timeline event), and a fact-type-shaped JSON example. The
+    curator assigns the topics (`SUBJECTS`) — content-rich, non-sensitive — because the SME fact-checks at the gate.
+  - **`tools/ingest_sachverhalte.py`** is the `ingest_batch` analogue: a load-bearing normalizer absorbs the recurring
+    agent slips (`„…"` quote repair, stray top-level keys vs `extra="forbid"`, `klasse_range` int→range, a source's
+    missing `role`→`facts`, off-enum causal `kind`→`folge`, authored section `provenance` stripped), then
+    JSON→schema→**facts gate** (`facts_sources()`)→**entity-lint**→`build_worksheet`→`assemble`→`verify`. `--dry-run`
+    reports the fact counts + problems; otherwise `orch.ingest_sachverhalt` + `compose_sachverhalt_worksheet` stage it
+    (Sachverhalte tab + Inhalte) — **only if clean** (a bad year / missing facts source surfaces here, never silently).
+  - **First push:** 4 subagent-authored Sachverhalte across the two robust fact-types — GPB *Die Französische
+    Revolution* & *Die Industrialisierung* (timeline), BIO *Die Photosynthese* & *Die Verdauung des Menschen*
+    (process) — each `role="facts"`-sourced to Wikipedia, every prose year backed by a timeline event, **all
+    verify-clean with zero entity-lint warnings**, staged `in_review` (`runs/`, git-ignored). Regions (Geography)
+    stay hand-curated (they need a sourced boundary set + a cited dataset — the Bundesländer flagship); this push
+    proves the seam on the fact-types that need only sourced facts + a Darstellung. The facts are *selected/sourced*,
+    the narrative *authored-then-vetted* — never invented.
 
 ## 12. Decisions
 

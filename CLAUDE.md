@@ -471,7 +471,21 @@ expression."*
   values** come from the cited population dataset (`ground_data` fills them at assemble via the new
   `_series_spec` choropleth case). `matplotlib:choropleth_map` is a first-class data figure (in
   `figure_lint`'s (c)-label set; pure matplotlib `PathPatch` with even-odd holes for the Wien-in-NÖ enclave,
-  latitude-corrected aspect — **no geo dependency**). Phase 3 = subagent scaling (`tools/ingest_sachverhalte.py`).
+  latitude-corrected aspect — **no geo dependency**).
+- **Phase 3 — subagent scaling (the breadth seam, no API key).** The content-layer twin of the worksheet
+  breadth pattern: `tools/sachverhalt_prompt.py` writes a per-topic grounded brief (real competences for the
+  grade · the fact-type block timeline|process · the load-bearing dimension hints · the every-prose-year-must-
+  be-a-timeline-event rule · a fact-type-shaped JSON example); a subagent authors one `Sachverhalt` JSON;
+  `tools/ingest_sachverhalte.py` (the `ingest_batch` twin) **normalizes the recurring agent slips** (German-quote
+  repair · stray keys vs `extra="forbid"` · `klasse_range` int→range · source `role`→`facts` · off-enum causal
+  `kind`→`folge` · authored section `provenance` stripped), then JSON→schema→**facts gate**→**entity-lint**→
+  `build_worksheet`→`assemble`→`verify` and stages via `orch.ingest_sachverhalt`+`compose_sachverhalt_worksheet`
+  — **only if clean** (a bad year / missing facts source surfaces here, never silently). **First push:** 4
+  subagent-authored Sachverhalte — GPB *Französische Revolution* & *Industrialisierung* (timeline), BIO
+  *Photosynthese* & *Verdauung* (process) — Wikipedia-sourced, every prose year backed by a timeline event,
+  verify-clean with zero entity-lint warnings, staged `in_review` (`runs/`, git-ignored). The facts are
+  *selected/sourced*, the Darstellung *authored-then-vetted*; the SME fact-checks at the gate.
+  `tests/test_ingest_sachverhalte.py` locks the normalizer + the facts gate + the entity-lint offline.
 
 ## Master library (`teachersaid/library/`)
 
