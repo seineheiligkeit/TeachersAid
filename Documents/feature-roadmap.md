@@ -172,13 +172,20 @@ The catalog splits the languages cleanly, so they get different treatments:
   a **sourced-audio path** (real recordings + rights, deferred).
 
 ### Annotated Realien — the CEFR-leveling answer (medium effort, printable, reuses the engine)
-- **The asset:** point the annotated-text engine at **level-appropriate authentic everyday texts** —
-  menus, signs, timetables, short messages/emails, "news-in-levels" snippets — exactly what the can-do
-  Lehrplan asks ("kann einfache Alltagstexte verstehen"). Authentic *and* A1/A2, where native literature
-  is too hard. Annotations: `vocab` (glosses), `comprehension`, and use-tasks; a new `genre`/level tag.
-- **Honest tension:** "select-never-author" vs the need for controlled input. Realien are real *text
-  types* (regenerable from real templates / sourced); where a text must be adapted, label it (the
-  `illustrative` analogue). Modern copyright → lean on Realien + generated audio, not sourced literature.
+**Design SETTLED (30 Jun 2026) → [`realien-design.md`](realien-design.md) (D1–D5).** The naive
+"select-never-author" framing was the wrong lens; the design doc reframes it.
+- **The asset:** point the annotated-text engine at **level-appropriate everyday texts** — menus, signs,
+  timetables, short messages/emails — exactly what the can-do Lehrplan asks ("kann einfache Alltagstexte
+  verstehen"). A1/A2 where native literature is too hard. New `cefr`/`genre`/`scene` tags; the task layer
+  is **communicative-first** (write-a-reply + role-play cue; scan/comprehension is warm-up).
+- **The reframe — *purpose-appropriate rigor* (the load-bearing idea):** the Realie is the **Sprechanlass,
+  not the Aussage** — a pretext that provokes language, not a world-claim. So the fact-discipline DEMOTES:
+  the facts are invented-coherent fiction (an internal-consistency lint, not world-grounding), and
+  **constructed is the DEFAULT** (no source/rights gate). What stays load-bearing is the **language** (L2
+  correctness + level — SME-gated) and internal consistency. *"Invent the timetable, vet the French."*
+  Fact-care snaps back only for **informational** genres (news-in-levels, a factual sign). The oral core is
+  served via the **Lernarrangement interaction anchor**, not faked on paper. Scales via the Phase-3 seam
+  (`realien_prompt.py` + `ingest_realien.py`).
 
 ### Supporting (not the headline)
 - **Verified language-practice engine** — parametrized vocab/grammar/sentence patterns with checkable
