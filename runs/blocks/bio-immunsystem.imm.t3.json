@@ -1,0 +1,72 @@
+{
+  "id": "bio-immunsystem.imm.t3",
+  "block": {
+    "id": "imm.t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": {
+      "contested": false,
+      "freshness_decay": false,
+      "equipment_dependent": true,
+      "local": false,
+      "historical_fact": false
+    },
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Im Schullabor habt ihr (vereinfacht) den Antikörper-Spiegel im Blut nach einer Impfung über die Zeit aufgenommen. Messwerte (relative Einheiten): Tag 0 → 1 · Tag 7 → 3 · Tag 14 → 9 · Tag 28 → 8 · nach Auffrischung an Tag 60 → 30. Beschreibe den Verlauf, benenne den Effekt der Auffrischung und erkläre, was die Werte über das Immungedächtnis aussagen.",
+    "payload": {
+      "kind": "other",
+      "data": {
+        "messreihe": "AK-Titer relativ"
+      }
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.ERK.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 16,
+    "answer_key": "Erstkontakt: langsamer Anstieg (Tag 7–14), dann leichtes Absinken (Tag 28). Die Auffrischung führt zu einem viel höheren, schnelleren Anstieg (30) – Beleg für das Immungedächtnis: Der Körper 'kennt' das Antigen schon und reagiert kräftiger. Größenordnungen vergleichen, nicht Einzelwerte.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "🔬 Geräteabhängig: ohne Labor/Datensatz als Trockenübung mit den angegebenen Werten rechenbar. Auf die Form der Kurve achten, nicht auf absolute Zahlen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Biologie",
+  "klasse": 4,
+  "kompetenzbereich": "Erkenntnisse gewinnen (E)",
+  "competences": [
+    "BIO.US.x.ERK.04"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:bio-immunsystem",
+  "source": "ai",
+  "created_at": "2026-06-30T07:32:07+00:00",
+  "updated_at": "2026-06-30T07:32:07+00:00"
+}

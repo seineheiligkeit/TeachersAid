@@ -35,7 +35,14 @@ python -m teachersaid                  # dashboard → http://127.0.0.1:8000
 - **Offline fallback:** without a key, a request for any **master-library** subject/topic
   (`teachersaid/library/`) is served from its curated content object, so the whole loop is demoable
   with no network. `seed` pushes all examples into the dashboard's review queue.
-- Generated PDFs, rasters, and the JSON review store land under `runs/` (git-ignored).
+- Generated content lands under `runs/`. **Persistence policy (`.gitignore`): git owns the
+  *content + review state* (all `runs/**/*.json|.md|.txt` — the generated modules and the HITL
+  store — small, diffable, and NOT regenerable for subagent-authored work, so remote-session
+  output survives in git), and ignores only the rendered *binaries* (`runs/**` PDFs + QA-raster
+  PNGs + sourced asset images — large, churny, rebuildable from the tracked content). Same split
+  as `grounding/voices` (provenance JSON tracked, audio not). Drive can carry the binaries; git
+  carries the text — complementary, not competing. Artifact paths in store JSON are absolute, so
+  renders rebuild on first dashboard load rather than being relied on from git.
 
 ## Invariants (and their boundaries) — read `Documents/invariants.md`
 

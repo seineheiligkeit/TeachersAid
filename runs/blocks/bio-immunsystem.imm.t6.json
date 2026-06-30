@@ -1,0 +1,64 @@
+{
+  "id": "bio-immunsystem.imm.t6",
+  "block": {
+    "id": "imm.t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Ein Familienmitglied sagt: 'Mir geht es nach drei Tagen schon besser, ich höre mit dem Antibiotikum jetzt auf und hebe den Rest für das nächste Mal auf.' Beurteile beide Teile dieser Entscheidung fachlich und gib eine begründete Empfehlung. Verknüpfe deine Begründung mit dem, was du über Resistenzen weißt.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Antibiotika sollen laut ärztlicher Anweisung eingenommen werden; Resistenzen entstehen durch Selektion überlebender Bakterien."
+    },
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.STA.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 11,
+    "answer_key": null,
+    "acceptable_reasoning": "Vorzeitiges Absetzen kann überlebende, weniger empfindliche Bakterien begünstigen → fördert Resistenzen; daher Einnahme nach ärztlicher Anweisung. Reste aufheben und selbst 'beim nächsten Mal' nehmen ist fachlich nicht haltbar (anderer Erreger? falsches Mittel? abgelaufen?). Empfehlung: nach Anweisung zu Ende nehmen, Reste fachgerecht entsorgen, im Zweifel Arzt/Apotheke fragen. (Hinweis: Die Frage der optimalen Therapiedauer ist fachlich differenziert – die Kernaussage 'nicht eigenmächtig steuern' bleibt.)",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "STA.03 will eine begründete Handlungsempfehlung, nicht nur 'ist schlecht'. Auf die Brücke zur Resistenz (Selektion) achten; ausgewogen bleiben."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Biologie",
+  "klasse": 4,
+  "kompetenzbereich": "Standpunkte begründen und reflektiert handeln (S)",
+  "competences": [
+    "BIO.US.x.STA.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:bio-immunsystem",
+  "source": "ai",
+  "created_at": "2026-06-30T07:32:07+00:00",
+  "updated_at": "2026-06-30T07:32:07+00:00"
+}

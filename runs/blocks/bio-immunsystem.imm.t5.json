@@ -1,0 +1,61 @@
+{
+  "id": "bio-immunsystem.imm.t5",
+  "block": {
+    "id": "imm.t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "In einem Krankenhaus tauchen plötzlich Bakterien auf, gegen die ein bestimmtes Antibiotikum kaum noch wirkt. Erkläre Schritt für Schritt, wie so eine Antibiotikaresistenz entsteht – verwende dabei die Begriffe 'zufällige Veränderung (Mutation)', 'Selektion' und 'Vermehrung'. Warum ist das ein Beispiel für Evolution im Kleinen?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.WIS.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": null,
+    "acceptable_reasoning": "In einer großen Bakterienpopulation gibt es durch zufällige Mutationen vereinzelt widerstandsfähige Zellen. Das Antibiotikum tötet die empfindlichen, die resistenten überleben (Selektion) und vermehren sich – die Population wird resistent. Das ist Mikroevolution: Variation + Selektion + Vermehrung verschieben die Häufigkeiten über Generationen. Wichtig: Das Antibiotikum 'macht' die Resistenz nicht, es wählt sie aus.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Verbreiteter Fehler: 'Die Bakterien gewöhnen sich an / wollen überleben'. Genau hier ansetzen: die Variation ist VOR dem Antibiotikum da, das Mittel selektiert nur. Das ist der Kern von WIS.01 (Prinzipien in Beziehung setzen)."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Biologie",
+  "klasse": 4,
+  "kompetenzbereich": "Wissen aneignen, anwenden und kommunizieren (W)",
+  "competences": [
+    "BIO.US.x.WIS.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:bio-immunsystem",
+  "source": "ai",
+  "created_at": "2026-06-30T07:32:07+00:00",
+  "updated_at": "2026-06-30T07:32:07+00:00"
+}

@@ -1,0 +1,63 @@
+{
+  "id": "phy-strahlung.str.t3",
+  "block": {
+    "id": "str.t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "WLAN-Signale gehen durch Wände, schaden dir aber nicht – Gammastrahlung dagegen ist gefährlich. Beide durchdringen Materie. Erkläre den Unterschied.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 3
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "S",
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.4.STR.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": null,
+    "acceptable_reasoning": "Funkwellen = niedrige Energie, durchdringen, verändern aber keine Atome (nicht-ionisierend); Gamma = extrem hohe Energie, ionisierend → Zellschaden. Kernpunkt: Durchdringung ≠ Gefahr.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Lob die Trennung 'durchdringen' vs 'schaden' — genau hier liegt die Einsicht."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Strahlung und Radioaktivität",
+  "competences": [
+    "PHY.US.4.STR.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "S",
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:phy-strahlung",
+  "source": "ai",
+  "created_at": "2026-06-30T07:32:07+00:00",
+  "updated_at": "2026-06-30T07:32:07+00:00"
+}

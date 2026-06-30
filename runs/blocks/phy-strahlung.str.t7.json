@@ -1,0 +1,67 @@
+{
+  "id": "phy-strahlung.str.t7",
+  "block": {
+    "id": "str.t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": {
+      "contested": false,
+      "freshness_decay": false,
+      "equipment_dependent": true,
+      "local": false,
+      "historical_fact": false
+    },
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "experiment_protocol",
+    "prompt": "Versuch (mit Zählrohr): Miss die Zählrate in verschiedenen Abständen zu einer schwachen Schulquelle. Protokolliere Abstand und Zählrate und beschreibe, wie die Rate mit dem Abstand zusammenhängt.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.4.STR.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 22,
+    "answer_key": "Zählrate sinkt mit zunehmendem Abstand (näherungsweise Abstandsgesetz); Abstand ist eine einfache, wirksame Schutzmaßnahme.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "🔬 Nur mit zugelassener Schulquelle und Sicherheitsregeln."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "experiment_protocol",
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Strahlung und Radioaktivität",
+  "competences": [
+    "PHY.US.4.STR.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:phy-strahlung",
+  "source": "ai",
+  "created_at": "2026-06-30T07:32:07+00:00",
+  "updated_at": "2026-06-30T07:32:07+00:00"
+}

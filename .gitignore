@@ -21,11 +21,33 @@ __pycache__/
 *.pyc
 .pytest_cache/
 *.egg-info/
-runs/
 .venv/
 venv/
 .venv-tts/
 .venv-tts-gpu/
+
+# runs/ — pipeline output + the HITL review store. Policy: **git owns the generated CONTENT
+# and review state** (JSON / Markdown / txt — small, diffable, and NOT regenerable for
+# subagent-authored modules, so remote-session work survives in git), and **ignores only the
+# rendered BINARIES** (worksheet PDFs + QA-raster PNGs + sourced asset images — large, churny,
+# and rebuildable from the tracked content). Same split as grounding/voices (provenance JSON
+# tracked, audio binaries not). The `**` form also matches files directly under runs/.
+runs/**/*.pdf
+runs/**/*.png
+runs/**/*.jpg
+runs/**/*.jpeg
+runs/**/*.gif
+runs/**/*.svg
+runs/**/*.webp
+runs/**/*.bmp
+runs/**/*.tif
+runs/**/*.tiff
+runs/**/*.wav
+runs/**/*.mp3
+runs/**/*.flac
+runs/**/*.ogg
+runs/**/*.m4a
+runs/**/*.mp4
 
 # Voice reference audio — re-fetchable from VCTK/FLEURS by tools/fetch_*_voices.py
 # (the provenance JSON in grounding/voices/ is committed; the binaries are not,

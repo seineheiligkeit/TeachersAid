@@ -1,0 +1,61 @@
+{
+  "id": "phy-strahlung.str.t5",
+  "block": {
+    "id": "str.t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Dosen zum Vergleich: 1 Banane ≈ 0,1 µSv · Thorax-Röntgen ≈ 20 µSv · Transatlantikflug ≈ 40 µSv · natürliche Jahresdosis in Österreich ≈ 2–3 mSv. Ordne 'eine Banane essen', 'einmal fliegen' und 'ein Jahr leben' nach Dosis und erkläre, warum Größenordnungen wichtiger sind als Bauchgefühl.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.4.STR.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": null,
+    "acceptable_reasoning": "Banane ≪ Flug ≪ Jahresdosis; der Punkt ist die Größenordnung (µSv vs mSv), nicht das einzelne Ereignis. Sehr kleine Dosen sind fachlich umstritten (LNT) — keine scharfe sicher/unsicher-Schwelle.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Zahlen vor Einsatz prüfen (⏳). Kleine Dosen nicht als scharfe Schwelle."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Strahlung und Radioaktivität",
+  "competences": [
+    "PHY.US.4.STR.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:phy-strahlung",
+  "source": "ai",
+  "created_at": "2026-06-30T07:32:07+00:00",
+  "updated_at": "2026-06-30T07:32:07+00:00"
+}

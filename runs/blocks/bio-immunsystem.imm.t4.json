@@ -1,0 +1,76 @@
+{
+  "id": "bio-immunsystem.imm.t4",
+  "block": {
+    "id": "imm.t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Vier Aussagen aus einer Internetdiskussion über Impfungen. Entscheide jeweils, ob die Aussage naturwissenschaftlich überprüfbar ist oder nicht, und begründe kurz (es geht NICHT darum, ob sie dir gefällt).",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "In einer Studie mit 10 000 Personen erkrankten Geimpfte seltener als Ungeimpfte.",
+        "Impfen ist unnatürlich und deshalb falsch.",
+        "Der Impfstoff enthält den Wirkstoff X in der Menge Y pro Dosis.",
+        "Wer sich impfen lässt, vertraut der Pharmaindustrie blind."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "überprüfbar? (ja/nein)",
+        "Begründung"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "S",
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.STA.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "1 ja (empirisch prüfbar: Daten, Häufigkeiten) · 2 nein ('unnatürlich → falsch' ist ein Werturteil/Naturalistischer Fehlschluss, nicht messbar) · 3 ja (Menge ist messbar) · 4 nein (Unterstellung über Motive, kein naturwissenschaftlicher Satz).",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Kernkompetenz STA.01: naturwissenschaftlich ≠ richtig. Eine Aussage kann prüfbar und falsch sein – oder unüberprüfbar und sympathisch. Trennen!"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Biologie",
+  "klasse": 4,
+  "kompetenzbereich": "Standpunkte begründen und reflektiert handeln (S)",
+  "competences": [
+    "BIO.US.x.STA.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "S",
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:bio-immunsystem",
+  "source": "ai",
+  "created_at": "2026-06-30T07:32:07+00:00",
+  "updated_at": "2026-06-30T07:32:07+00:00"
+}

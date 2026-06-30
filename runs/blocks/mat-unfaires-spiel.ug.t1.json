@@ -1,0 +1,84 @@
+{
+  "id": "mat-unfaires-spiel.ug.t1",
+  "block": {
+    "id": "ug.t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": {
+      "contested": false,
+      "freshness_decay": false,
+      "equipment_dependent": false,
+      "local": false,
+      "historical_fact": false
+    },
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "modelling_task",
+    "prompt": "Erfinde ein einfaches Würfel- oder Münzspiel für zwei Personen, das auf den ersten Blick fair wirkt, in Wahrheit aber eine Person bevorzugt. Beschreibe die Regeln und begründe mit Wahrscheinlichkeiten, warum es unfair ist.",
+    "payload": null,
+    "response": {
+      "mode": "artifact",
+      "produces": "Spielregeln + Begründung"
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "MOD",
+      "BEG"
+    ],
+    "content_area": "Daten und Zufall",
+    "serves": [
+      {
+        "competence_id": "MAT.US.4.DAT.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 20,
+    "answer_key": null,
+    "acceptable_reasoning": "Jedes Spiel mit korrekt berechneter ungleicher Gewinnchance.",
+    "rubric": [
+      {
+        "criterion": "Regeln klar",
+        "levels": [
+          "unklar",
+          "teilweise klar",
+          "klar & vollständig"
+        ]
+      },
+      {
+        "criterion": "Begründung mit Wahrscheinlichkeit",
+        "levels": [
+          "fehlt",
+          "ansatzweise",
+          "korrekt quantifiziert"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "modelling_task",
+  "subject": "Mathematik",
+  "klasse": 4,
+  "kompetenzbereich": "4: Daten und Zufall",
+  "competences": [
+    "MAT.US.4.DAT.02"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "MOD",
+    "BEG"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:mat-unfaires-spiel",
+  "source": "ai",
+  "created_at": "2026-06-30T07:32:07+00:00",
+  "updated_at": "2026-06-30T07:32:07+00:00"
+}

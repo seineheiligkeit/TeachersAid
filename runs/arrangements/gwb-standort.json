@@ -1,0 +1,1653 @@
+{
+  "id": "gwb-standort",
+  "arrangement": {
+    "meta": {
+      "title": "Wohin mit dem neuen Verteilzentrum?",
+      "subtitle": "Ein Gemeinderat-Planspiel zu Standortentscheidung und Raumnutzung",
+      "subject": "Geographie und wirtschaftliche Bildung",
+      "stufe": "Unterstufe",
+      "klasse": 3,
+      "kernfrage": "Soll in unserer Gemeinde ein großes Verteilzentrum gebaut werden — und wenn ja, unter welchen Bedingungen?",
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "format": "simulation_game",
+      "lehrplan_label": "Geographie u. wirtschaftliche Bildung · 3. Kl. · Wirtschaftsstandort & Raumplanung"
+    },
+    "common_material": [
+      {
+        "id": "case",
+        "optional": false,
+        "modality": "printable",
+        "flags": null,
+        "asset_refs": [],
+        "provenance": null,
+        "role": "info",
+        "kind": "prose",
+        "content": "Die Gemeinde Auerbach (rund 4 000 Einwohner:innen, an einer Autobahnauffahrt) hat eine Anfrage: Ein Versandhandels-Unternehmen möchte am Ortsrand auf einer rund 8 Hektar großen Wiese ein Verteilzentrum bauen. Der Gemeinderat muss entscheiden.",
+        "callout_role": null,
+        "teacher_note": null,
+        "watch_outs": []
+      },
+      {
+        "id": "facts",
+        "optional": false,
+        "modality": "printable",
+        "flags": null,
+        "asset_refs": [],
+        "provenance": null,
+        "role": "info",
+        "kind": "key_fact",
+        "content": "Auf dem Tisch liegen: rund 250 Arbeitsplätze · zusätzliche LKW-Fahrten täglich · Versiegelung von 8 ha Grünland · Kommunalsteuer-Einnahmen für die Gemeinde · die Fläche ist heute Acker/Wiese am Ortsrand.",
+        "callout_role": null,
+        "teacher_note": null,
+        "watch_outs": []
+      },
+      {
+        "id": "rules",
+        "optional": false,
+        "modality": "printable",
+        "flags": null,
+        "asset_refs": [],
+        "provenance": null,
+        "role": "info",
+        "kind": "procedure",
+        "content": "Ablauf der Sitzung: (1) Jede Fraktion bereitet ihre Position vor. (2) Jede Fraktion hat 2 Minuten für ihr Eingangsstatement. (3) Offene Debatte mit Fragen und Repliken. (4) Der Gemeinderat fasst einen begründeten Beschluss.",
+        "callout_role": null,
+        "teacher_note": null,
+        "watch_outs": []
+      }
+    ],
+    "roles": [
+      {
+        "id": "gem",
+        "label": "Gemeindeführung",
+        "share": "all",
+        "private": false,
+        "material": {
+          "meta": {
+            "title": "Rollenblatt: Gemeindeführung",
+            "subtitle": "Bürgermeister:in & Gemeindeamt — ihr leitet die Sitzung und tragt für alle Verantwortung",
+            "subject": "Geographie und wirtschaftliche Bildung",
+            "stufe": "Unterstufe",
+            "klasse": 3,
+            "kernfrage": "Soll in unserer Gemeinde ein großes Verteilzentrum gebaut werden — und wenn ja, unter welchen Bedingungen?",
+            "fassung": {
+              "kurztitel": "AHS-Lehrplan (konsolidiert)",
+              "bgbl": "BGBl. II Nr. 204/2024",
+              "doknr": "NOR40264237",
+              "valid_from": "2024-09-01",
+              "valid_to": "2026-08-31"
+            },
+            "lehrplan_label": "Geographie u. wirtschaftliche Bildung · 3. Kl. · Wirtschaftsstandort & Raumplanung",
+            "content_language": "de",
+            "subject_models": []
+          },
+          "subject_model": {
+            "subject": "Geographie und wirtschaftliche Bildung",
+            "stufe": "Unterstufe",
+            "dimensions": [
+              {
+                "id": "OK",
+                "label": "Orientierungskompetenz",
+                "note": null,
+                "modality": "printable"
+              },
+              {
+                "id": "UK",
+                "label": "Urteilskompetenz",
+                "note": null,
+                "modality": "printable"
+              },
+              {
+                "id": "HK",
+                "label": "Handlungskompetenz",
+                "note": "often enactive/simulativ",
+                "modality": "printable"
+              }
+            ],
+            "content_areas": [],
+            "task_kind_extensions": [
+              "map_work",
+              "case_study",
+              "position_argument"
+            ]
+          },
+          "intro": [
+            {
+              "id": "gem.i",
+              "optional": false,
+              "modality": "printable",
+              "flags": null,
+              "asset_refs": [],
+              "provenance": null,
+              "role": "info",
+              "kind": "prose",
+              "content": "Ihr führt die Gemeinde Auerbach und leitet die Gemeinderatssitzung. Ihr müsst das Gesamtwohl im Blick haben: Arbeitsplätze und Einnahmen genauso wie Lebensqualität und Umwelt. Am Ende moderiert ihr die Entscheidung.",
+              "callout_role": null,
+              "teacher_note": null,
+              "watch_outs": []
+            }
+          ],
+          "sections": [
+            {
+              "id": "gem.kern",
+              "title": "Eure Fraktionsarbeit",
+              "teacher_overview": {
+                "throughline": null,
+                "talking_points": [],
+                "extensions": [],
+                "differentiation": null,
+                "timing_notes": null
+              },
+              "blocks": [
+                {
+                  "id": "gem.t1",
+                  "optional": false,
+                  "modality": "printable",
+                  "flags": null,
+                  "asset_refs": [],
+                  "provenance": null,
+                  "role": "task",
+                  "kind": "open_response",
+                  "prompt": "Welche Einnahmen brächte das Verteilzentrum der Gemeinde (z. B. Kommunalsteuer, Arbeitsplätze für Auerbacher:innen) — und welche Folgekosten entstünden ihr (z. B. Straßen, Kinderbetreuung, Instandhaltung)? Stellt Einnahmen und Kosten gegenüber.",
+                  "payload": null,
+                  "response": {
+                    "mode": "lines",
+                    "n": 4
+                  },
+                  "cognitive_level": "understand",
+                  "difficulty": null,
+                  "dimensions": [
+                    "OK"
+                  ],
+                  "content_area": null,
+                  "serves": [
+                    {
+                      "competence_id": "GWB.US.3.ENT.06",
+                      "relation": "exercises"
+                    }
+                  ],
+                  "est_minutes": 8,
+                  "answer_key": "Einnahmen: Kommunalsteuer auf Löhne, evtl. Aufträge für lokale Betriebe, Kaufkraft. Folgekosten: Straßenausbau/Erhaltung, Infrastruktur, evtl. mehr Bedarf an Wohnraum & Betreuung. Steuern finanzieren öffentliche Leistungen — Einnahmen und Folgekosten gehören zusammen gedacht.",
+                  "acceptable_reasoning": null,
+                  "rubric": [],
+                  "solution_steps": [],
+                  "watch_outs": [],
+                  "self_check": null
+                },
+                {
+                  "id": "gem.t2",
+                  "optional": false,
+                  "modality": "printable",
+                  "flags": null,
+                  "asset_refs": [],
+                  "provenance": null,
+                  "role": "task",
+                  "kind": "open_response",
+                  "prompt": "Bereitet drei Fragen vor, die ihr als Vorsitz an die anderen Fraktionen stellt, damit am Ende eine faire, gut begründete Entscheidung möglich ist.",
+                  "payload": null,
+                  "response": {
+                    "mode": "lines",
+                    "n": 3
+                  },
+                  "cognitive_level": "evaluate",
+                  "difficulty": null,
+                  "dimensions": [
+                    "UK",
+                    "OK"
+                  ],
+                  "content_area": null,
+                  "serves": [
+                    {
+                      "competence_id": "GWB.US.3.ENT.03",
+                      "relation": "exercises"
+                    }
+                  ],
+                  "est_minutes": 7,
+                  "answer_key": null,
+                  "acceptable_reasoning": "Gute Fragen zielen auf Folgen und Bedingungen: z. B. nach Lärmschutz, LKW-Route, Ausgleichsflächen, Zahl/Sicherheit der Arbeitsplätze — sie machen Interessen und mögliche Kompromisse sichtbar.",
+                  "rubric": [],
+                  "solution_steps": [],
+                  "watch_outs": [],
+                  "self_check": null
+                }
+              ]
+            }
+          ],
+          "assets": [],
+          "nachweis": {
+            "fassung": {
+              "kurztitel": "AHS-Lehrplan (konsolidiert)",
+              "bgbl": "BGBl. II Nr. 204/2024",
+              "doknr": "NOR40264237",
+              "valid_from": "2024-09-01",
+              "valid_to": "2026-08-31"
+            },
+            "statement": "Diese Materialien adressieren 2 von 17 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
+            "competence_coverage": [
+              {
+                "competence_id": "GWB.US.3.OST.01",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.OST.02",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.BIL.01",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.BIL.02",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.01",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.02",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.03",
+                "exercised_by": [
+                  "gem.t2"
+                ],
+                "prerequisite_by": [],
+                "covered": true
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.04",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.05",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.06",
+                "exercised_by": [
+                  "gem.t1"
+                ],
+                "prerequisite_by": [],
+                "covered": true
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.07",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.08",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.09",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.10",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ZEN.01",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ZEN.02",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ZEN.03",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              }
+            ],
+            "gaps": [
+              "GWB.US.3.OST.01 — aktuelle demografische Strukturen und Prozesse beschreiben und deren mediale Darstellungen interpretieren sowie die Bedeutung für die eigene und gesellschaftliche Zukunft erörtern;",
+              "GWB.US.3.OST.02 — die Auswirkungen von Selbst- und Fremdbildern auf das gesellschaftliche Zusammenleben beschreiben und dabei die Bedeutung von biologischem Geschlecht, Gender, Alter, Bildung, Einkommen, Wohlstand, Nationalität, Religion oder Kultur hinterfragen.",
+              "GWB.US.3.BIL.01 — sich über die Berufswelt informieren, unterschiedliche Bildungswege, klassische und innovative Berufsbilder sowie selbstständige und unselbstständige Arbeitsmöglichkeiten vergleichen und für den persönlichen Lebensweg reflektieren;",
+              "GWB.US.3.BIL.02 — unbezahlte und bezahlte Arbeit , Arbeitslosigkeit, Höhe und Verwendung des Einkommens, Sparen, Finanzieren und Versichern, Rechte und Pflichten von Erwerbstätigen und Konsumierenden einschließlich Konsumentenschutz beschreiben.",
+              "GWB.US.3.ENT.01 — den Wandel von Standortfaktoren und Standortentscheidungen sowie ihre Folgen für die weitere Entwicklung Österreichs erörtern;",
+              "GWB.US.3.ENT.02 — Industrieregionen, Tourismusregionen, landwirtschaftlich geprägte Regionen und Regionen mit anderen wirtschaftlichen Schwerpunkten charakterisieren und verorten;",
+              "GWB.US.3.ENT.04 — Preise von Gütern und Dienstleistungen vergleichen und die Preisbildung auf Märkten unter Berücksichtigung von Angebot und Nachfrage sowie Produktionskosten an einfachen Fallbeispielen aus der eigenen Lebensrealität mit Österreichbezug erläutern;",
+              "GWB.US.3.ENT.05 — die Aufgaben der einzelnen Akteure in der ökosozialen Marktwirtschaft (private Haushalte, Unternehmen, Staat, Banken, Oesterreichische Nationalbank, Sozialpartner etc.) und ihr Zusammenwirken beschreiben, mögliche Interessenskonflikte und Kooperationen analysieren;",
+              "GWB.US.3.ENT.07 — die Bedeutung der österreichischen Unternehmen für die Entwicklung des Wirtschaftsstandorts und erforderliche Rahmenbedingungen einschätzen;",
+              "GWB.US.3.ENT.08 — die Bedeutung von unternehmerischer Innovation für die Entwicklung von Gesellschaft und Wirtschaftsstandort analysieren und erklären;",
+              "GWB.US.3.ENT.09 — die wirtschaftliche Entwicklung Österreichs anhand von Kenngrößen beschreiben (zB Wirtschaftswachstum und BIP, Inflation, Beschäftigung und Arbeitslosigkeit, alternative Wohlstandsindikatoren) und persönliche, gesellschaftliche und ökologische Folgen diskutieren;",
+              "GWB.US.3.ENT.10 — Gründe, Bedeutung sowie ökonomische, gesellschaftliche und ökologische Folgen der außenwirtschaftlichen Verflechtungen (Import/Export) Österreichs mit der EU und der restlichen Welt erläutern.",
+              "GWB.US.3.ZEN.01 — Zentren und Peripherien Österreichs abgrenzen, in Geomedien verorten und die Relativität jeder Abgrenzung erläutern;",
+              "GWB.US.3.ZEN.02 — die Gestaltung von zentralen und peripheren Lebensräumen mit Hilfe von originalen Begegnungen und Geomedien vergleichen und deren Lebensqualität individuell bewerten;",
+              "GWB.US.3.ZEN.03 — mit Hilfe von (Geo-)Medien die Raumnutzungen für Wohnen, Arbeit, Verkehr, Freizeitaktivitäten und Tourismus vergleichen sowie Lösungsansätze der Raumplanung bei Nutzungskonflikten erörtern."
+            ],
+            "zentrale_konzepte": [
+              "Bildungswege und Arbeitswelten",
+              "Entwicklungen am Wirtschaftsstandort Österreich",
+              "Zentren und Peripherien in Österreich",
+              "Österreichische Gesellschaftsentwicklung"
+            ],
+            "uebergreifende_themen": []
+          },
+          "depth_profile": {
+            "by_level": {
+              "understand": 1,
+              "evaluate": 1
+            },
+            "by_dimension": {
+              "OK": 1,
+              "UK": 1
+            },
+            "by_difficulty": {
+              "1": 1,
+              "3": 1
+            },
+            "minutes_total": 15,
+            "minutes_resource_independent": 15
+          },
+          "rack": null
+        }
+      },
+      {
+        "id": "btr",
+        "label": "Das Unternehmen",
+        "share": "all",
+        "private": false,
+        "material": {
+          "meta": {
+            "title": "Rollenblatt: Das Unternehmen",
+            "subtitle": "Projektwerber — ihr wollt das Verteilzentrum bauen",
+            "subject": "Geographie und wirtschaftliche Bildung",
+            "stufe": "Unterstufe",
+            "klasse": 3,
+            "kernfrage": "Soll in unserer Gemeinde ein großes Verteilzentrum gebaut werden — und wenn ja, unter welchen Bedingungen?",
+            "fassung": {
+              "kurztitel": "AHS-Lehrplan (konsolidiert)",
+              "bgbl": "BGBl. II Nr. 204/2024",
+              "doknr": "NOR40264237",
+              "valid_from": "2024-09-01",
+              "valid_to": "2026-08-31"
+            },
+            "lehrplan_label": "Geographie u. wirtschaftliche Bildung · 3. Kl. · Wirtschaftsstandort & Raumplanung",
+            "content_language": "de",
+            "subject_models": []
+          },
+          "subject_model": {
+            "subject": "Geographie und wirtschaftliche Bildung",
+            "stufe": "Unterstufe",
+            "dimensions": [
+              {
+                "id": "OK",
+                "label": "Orientierungskompetenz",
+                "note": null,
+                "modality": "printable"
+              },
+              {
+                "id": "UK",
+                "label": "Urteilskompetenz",
+                "note": null,
+                "modality": "printable"
+              },
+              {
+                "id": "HK",
+                "label": "Handlungskompetenz",
+                "note": "often enactive/simulativ",
+                "modality": "printable"
+              }
+            ],
+            "content_areas": [],
+            "task_kind_extensions": [
+              "map_work",
+              "case_study",
+              "position_argument"
+            ]
+          },
+          "intro": [
+            {
+              "id": "btr.i",
+              "optional": false,
+              "modality": "printable",
+              "flags": null,
+              "asset_refs": [],
+              "provenance": null,
+              "role": "info",
+              "kind": "prose",
+              "content": "Euer Versandhandels-Unternehmen will am Ortsrand von Auerbach ein Verteilzentrum bauen. Euer Ziel in der Sitzung: überzeugend darlegen, warum das gut für die Region ist — sachlich, nicht beschönigend.",
+              "callout_role": null,
+              "teacher_note": null,
+              "watch_outs": []
+            }
+          ],
+          "sections": [
+            {
+              "id": "btr.kern",
+              "title": "Eure Fraktionsarbeit",
+              "teacher_overview": {
+                "throughline": null,
+                "talking_points": [],
+                "extensions": [],
+                "differentiation": null,
+                "timing_notes": null
+              },
+              "blocks": [
+                {
+                  "id": "btr.t1",
+                  "optional": false,
+                  "modality": "printable",
+                  "flags": null,
+                  "asset_refs": [],
+                  "provenance": null,
+                  "role": "task",
+                  "kind": "open_response",
+                  "prompt": "Stellt dar, welche Bedeutung euer Betrieb für die Region hätte: Arbeitsplätze, Aufträge für lokale Firmen, Kaufkraft, Anbindung. Warum ist gerade dieser Standort für euch attraktiv?",
+                  "payload": null,
+                  "response": {
+                    "mode": "lines",
+                    "n": 4
+                  },
+                  "cognitive_level": "understand",
+                  "difficulty": null,
+                  "dimensions": [
+                    "OK"
+                  ],
+                  "content_area": null,
+                  "serves": [
+                    {
+                      "competence_id": "GWB.US.3.ENT.07",
+                      "relation": "exercises"
+                    }
+                  ],
+                  "est_minutes": 8,
+                  "answer_key": "Bedeutung: ~250 Arbeitsplätze, Aufträge an lokale Handwerks-/Dienstleistungsbetriebe, Kaufkraft. Standortvorteile: Autobahnauffahrt, große ebene Fläche, verfügbare Arbeitskräfte. Unternehmen tragen zum Wirtschaftsstandort bei — aber der Nutzen ist gegen die Folgen abzuwägen.",
+                  "acceptable_reasoning": null,
+                  "rubric": [],
+                  "solution_steps": [],
+                  "watch_outs": [],
+                  "self_check": null
+                },
+                {
+                  "id": "btr.t2",
+                  "optional": false,
+                  "modality": "printable",
+                  "flags": null,
+                  "asset_refs": [],
+                  "provenance": null,
+                  "role": "task",
+                  "kind": "open_response",
+                  "prompt": "Welche Bedenken erwartet ihr von Anrainer:innen und der Umweltgruppe? Wählt zwei und bereitet je eine sachliche, ehrliche Antwort vor (kein Schönreden).",
+                  "payload": null,
+                  "response": {
+                    "mode": "lines",
+                    "n": 3
+                  },
+                  "cognitive_level": "evaluate",
+                  "difficulty": null,
+                  "dimensions": [
+                    "UK"
+                  ],
+                  "content_area": null,
+                  "serves": [
+                    {
+                      "competence_id": "GWB.US.3.ENT.03",
+                      "relation": "exercises"
+                    }
+                  ],
+                  "est_minutes": 7,
+                  "answer_key": null,
+                  "acceptable_reasoning": "Erwartbare Bedenken: LKW-Verkehr/Lärm, Boden­versiegelung, Verlust von Grünland. Gute Antworten räumen die Folge ein und nennen eine Maßnahme (Lärmschutzwall, Nacht-LKW-Verbot, Dachbegrünung) — Interessen ernst nehmen statt abwiegeln.",
+                  "rubric": [],
+                  "solution_steps": [],
+                  "watch_outs": [],
+                  "self_check": null
+                }
+              ]
+            }
+          ],
+          "assets": [],
+          "nachweis": {
+            "fassung": {
+              "kurztitel": "AHS-Lehrplan (konsolidiert)",
+              "bgbl": "BGBl. II Nr. 204/2024",
+              "doknr": "NOR40264237",
+              "valid_from": "2024-09-01",
+              "valid_to": "2026-08-31"
+            },
+            "statement": "Diese Materialien adressieren 2 von 17 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
+            "competence_coverage": [
+              {
+                "competence_id": "GWB.US.3.OST.01",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.OST.02",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.BIL.01",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.BIL.02",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.01",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.02",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.03",
+                "exercised_by": [
+                  "btr.t2"
+                ],
+                "prerequisite_by": [],
+                "covered": true
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.04",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.05",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.06",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.07",
+                "exercised_by": [
+                  "btr.t1"
+                ],
+                "prerequisite_by": [],
+                "covered": true
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.08",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.09",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.10",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ZEN.01",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ZEN.02",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ZEN.03",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              }
+            ],
+            "gaps": [
+              "GWB.US.3.OST.01 — aktuelle demografische Strukturen und Prozesse beschreiben und deren mediale Darstellungen interpretieren sowie die Bedeutung für die eigene und gesellschaftliche Zukunft erörtern;",
+              "GWB.US.3.OST.02 — die Auswirkungen von Selbst- und Fremdbildern auf das gesellschaftliche Zusammenleben beschreiben und dabei die Bedeutung von biologischem Geschlecht, Gender, Alter, Bildung, Einkommen, Wohlstand, Nationalität, Religion oder Kultur hinterfragen.",
+              "GWB.US.3.BIL.01 — sich über die Berufswelt informieren, unterschiedliche Bildungswege, klassische und innovative Berufsbilder sowie selbstständige und unselbstständige Arbeitsmöglichkeiten vergleichen und für den persönlichen Lebensweg reflektieren;",
+              "GWB.US.3.BIL.02 — unbezahlte und bezahlte Arbeit , Arbeitslosigkeit, Höhe und Verwendung des Einkommens, Sparen, Finanzieren und Versichern, Rechte und Pflichten von Erwerbstätigen und Konsumierenden einschließlich Konsumentenschutz beschreiben.",
+              "GWB.US.3.ENT.01 — den Wandel von Standortfaktoren und Standortentscheidungen sowie ihre Folgen für die weitere Entwicklung Österreichs erörtern;",
+              "GWB.US.3.ENT.02 — Industrieregionen, Tourismusregionen, landwirtschaftlich geprägte Regionen und Regionen mit anderen wirtschaftlichen Schwerpunkten charakterisieren und verorten;",
+              "GWB.US.3.ENT.04 — Preise von Gütern und Dienstleistungen vergleichen und die Preisbildung auf Märkten unter Berücksichtigung von Angebot und Nachfrage sowie Produktionskosten an einfachen Fallbeispielen aus der eigenen Lebensrealität mit Österreichbezug erläutern;",
+              "GWB.US.3.ENT.05 — die Aufgaben der einzelnen Akteure in der ökosozialen Marktwirtschaft (private Haushalte, Unternehmen, Staat, Banken, Oesterreichische Nationalbank, Sozialpartner etc.) und ihr Zusammenwirken beschreiben, mögliche Interessenskonflikte und Kooperationen analysieren;",
+              "GWB.US.3.ENT.06 — die Funktionen von Steuern und Abgaben sowie deren gesellschaftliche und wirtschaftliche Bedeutung erörtern;",
+              "GWB.US.3.ENT.08 — die Bedeutung von unternehmerischer Innovation für die Entwicklung von Gesellschaft und Wirtschaftsstandort analysieren und erklären;",
+              "GWB.US.3.ENT.09 — die wirtschaftliche Entwicklung Österreichs anhand von Kenngrößen beschreiben (zB Wirtschaftswachstum und BIP, Inflation, Beschäftigung und Arbeitslosigkeit, alternative Wohlstandsindikatoren) und persönliche, gesellschaftliche und ökologische Folgen diskutieren;",
+              "GWB.US.3.ENT.10 — Gründe, Bedeutung sowie ökonomische, gesellschaftliche und ökologische Folgen der außenwirtschaftlichen Verflechtungen (Import/Export) Österreichs mit der EU und der restlichen Welt erläutern.",
+              "GWB.US.3.ZEN.01 — Zentren und Peripherien Österreichs abgrenzen, in Geomedien verorten und die Relativität jeder Abgrenzung erläutern;",
+              "GWB.US.3.ZEN.02 — die Gestaltung von zentralen und peripheren Lebensräumen mit Hilfe von originalen Begegnungen und Geomedien vergleichen und deren Lebensqualität individuell bewerten;",
+              "GWB.US.3.ZEN.03 — mit Hilfe von (Geo-)Medien die Raumnutzungen für Wohnen, Arbeit, Verkehr, Freizeitaktivitäten und Tourismus vergleichen sowie Lösungsansätze der Raumplanung bei Nutzungskonflikten erörtern."
+            ],
+            "zentrale_konzepte": [
+              "Bildungswege und Arbeitswelten",
+              "Entwicklungen am Wirtschaftsstandort Österreich",
+              "Zentren und Peripherien in Österreich",
+              "Österreichische Gesellschaftsentwicklung"
+            ],
+            "uebergreifende_themen": []
+          },
+          "depth_profile": {
+            "by_level": {
+              "understand": 1,
+              "evaluate": 1
+            },
+            "by_dimension": {
+              "OK": 1,
+              "UK": 1
+            },
+            "by_difficulty": {
+              "1": 1,
+              "3": 1
+            },
+            "minutes_total": 15,
+            "minutes_resource_independent": 15
+          },
+          "rack": null
+        }
+      },
+      {
+        "id": "anr",
+        "label": "Anrainer:innen",
+        "share": "all",
+        "private": false,
+        "material": {
+          "meta": {
+            "title": "Rollenblatt: Anrainer:innen",
+            "subtitle": "Bürgerinitiative — ihr wohnt direkt neben der geplanten Fläche",
+            "subject": "Geographie und wirtschaftliche Bildung",
+            "stufe": "Unterstufe",
+            "klasse": 3,
+            "kernfrage": "Soll in unserer Gemeinde ein großes Verteilzentrum gebaut werden — und wenn ja, unter welchen Bedingungen?",
+            "fassung": {
+              "kurztitel": "AHS-Lehrplan (konsolidiert)",
+              "bgbl": "BGBl. II Nr. 204/2024",
+              "doknr": "NOR40264237",
+              "valid_from": "2024-09-01",
+              "valid_to": "2026-08-31"
+            },
+            "lehrplan_label": "Geographie u. wirtschaftliche Bildung · 3. Kl. · Wirtschaftsstandort & Raumplanung",
+            "content_language": "de",
+            "subject_models": []
+          },
+          "subject_model": {
+            "subject": "Geographie und wirtschaftliche Bildung",
+            "stufe": "Unterstufe",
+            "dimensions": [
+              {
+                "id": "OK",
+                "label": "Orientierungskompetenz",
+                "note": null,
+                "modality": "printable"
+              },
+              {
+                "id": "UK",
+                "label": "Urteilskompetenz",
+                "note": null,
+                "modality": "printable"
+              },
+              {
+                "id": "HK",
+                "label": "Handlungskompetenz",
+                "note": "often enactive/simulativ",
+                "modality": "printable"
+              }
+            ],
+            "content_areas": [],
+            "task_kind_extensions": [
+              "map_work",
+              "case_study",
+              "position_argument"
+            ]
+          },
+          "intro": [
+            {
+              "id": "anr.i",
+              "optional": false,
+              "modality": "printable",
+              "flags": null,
+              "asset_refs": [],
+              "provenance": null,
+              "role": "info",
+              "kind": "prose",
+              "content": "Ihr wohnt direkt neben der geplanten Fläche. Euch geht es um Verkehr, Lärm, Lebensqualität und den Wert eurer Häuser — aber auch ihr wisst, dass Arbeitsplätze wichtig sind.",
+              "callout_role": null,
+              "teacher_note": null,
+              "watch_outs": []
+            }
+          ],
+          "sections": [
+            {
+              "id": "anr.kern",
+              "title": "Eure Fraktionsarbeit",
+              "teacher_overview": {
+                "throughline": null,
+                "talking_points": [],
+                "extensions": [],
+                "differentiation": null,
+                "timing_notes": null
+              },
+              "blocks": [
+                {
+                  "id": "anr.t1",
+                  "optional": false,
+                  "modality": "printable",
+                  "flags": null,
+                  "asset_refs": [],
+                  "provenance": null,
+                  "role": "task",
+                  "kind": "open_response",
+                  "prompt": "Welche Veränderungen im Alltag erwartet ihr durch Bau und Betrieb (LKW-Verkehr, Lärm, Licht, Erholungsflächen)? Vergleicht die heutige Nutzung der Fläche mit der künftigen.",
+                  "payload": null,
+                  "response": {
+                    "mode": "lines",
+                    "n": 4
+                  },
+                  "cognitive_level": "understand",
+                  "difficulty": null,
+                  "dimensions": [
+                    "OK"
+                  ],
+                  "content_area": null,
+                  "serves": [
+                    {
+                      "competence_id": "GWB.US.3.ZEN.03",
+                      "relation": "exercises"
+                    }
+                  ],
+                  "est_minutes": 8,
+                  "answer_key": "Heute: Acker/Wiese, ruhig, Naherholung. Künftig: LKW-Verkehr (auch früh/nachts), Lärm, Lichtemissionen, mehr Verkehr auf der Ortsdurchfahrt. Nutzungskonflikt Wohnen ↔ Gewerbe/Verkehr.",
+                  "acceptable_reasoning": null,
+                  "rubric": [],
+                  "solution_steps": [],
+                  "watch_outs": [],
+                  "self_check": null
+                },
+                {
+                  "id": "anr.t2",
+                  "optional": false,
+                  "modality": "printable",
+                  "flags": null,
+                  "asset_refs": [],
+                  "provenance": null,
+                  "role": "task",
+                  "kind": "open_response",
+                  "prompt": "Formuliert eure Position: lehnt ihr ab — oder stimmt ihr unter Bedingungen zu? Nennt zwei konkrete Bedingungen, mit denen ihr leben könntet.",
+                  "payload": null,
+                  "response": {
+                    "mode": "lines",
+                    "n": 3
+                  },
+                  "cognitive_level": "evaluate",
+                  "difficulty": null,
+                  "dimensions": [
+                    "UK"
+                  ],
+                  "content_area": null,
+                  "serves": [
+                    {
+                      "competence_id": "GWB.US.3.ENT.03",
+                      "relation": "exercises"
+                    }
+                  ],
+                  "est_minutes": 7,
+                  "answer_key": null,
+                  "acceptable_reasoning": "Tragfähige Bedingungen: eigene LKW-Zufahrt abseits der Wohnstraßen, Nacht-Fahrverbot, Lärmschutzwall, Grünstreifen. Position sachlich begründen, nicht nur 'dagegen'.",
+                  "rubric": [],
+                  "solution_steps": [],
+                  "watch_outs": [],
+                  "self_check": null
+                }
+              ]
+            }
+          ],
+          "assets": [],
+          "nachweis": {
+            "fassung": {
+              "kurztitel": "AHS-Lehrplan (konsolidiert)",
+              "bgbl": "BGBl. II Nr. 204/2024",
+              "doknr": "NOR40264237",
+              "valid_from": "2024-09-01",
+              "valid_to": "2026-08-31"
+            },
+            "statement": "Diese Materialien adressieren 2 von 17 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
+            "competence_coverage": [
+              {
+                "competence_id": "GWB.US.3.OST.01",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.OST.02",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.BIL.01",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.BIL.02",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.01",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.02",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.03",
+                "exercised_by": [
+                  "anr.t2"
+                ],
+                "prerequisite_by": [],
+                "covered": true
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.04",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.05",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.06",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.07",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.08",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.09",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.10",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ZEN.01",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ZEN.02",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ZEN.03",
+                "exercised_by": [
+                  "anr.t1"
+                ],
+                "prerequisite_by": [],
+                "covered": true
+              }
+            ],
+            "gaps": [
+              "GWB.US.3.OST.01 — aktuelle demografische Strukturen und Prozesse beschreiben und deren mediale Darstellungen interpretieren sowie die Bedeutung für die eigene und gesellschaftliche Zukunft erörtern;",
+              "GWB.US.3.OST.02 — die Auswirkungen von Selbst- und Fremdbildern auf das gesellschaftliche Zusammenleben beschreiben und dabei die Bedeutung von biologischem Geschlecht, Gender, Alter, Bildung, Einkommen, Wohlstand, Nationalität, Religion oder Kultur hinterfragen.",
+              "GWB.US.3.BIL.01 — sich über die Berufswelt informieren, unterschiedliche Bildungswege, klassische und innovative Berufsbilder sowie selbstständige und unselbstständige Arbeitsmöglichkeiten vergleichen und für den persönlichen Lebensweg reflektieren;",
+              "GWB.US.3.BIL.02 — unbezahlte und bezahlte Arbeit , Arbeitslosigkeit, Höhe und Verwendung des Einkommens, Sparen, Finanzieren und Versichern, Rechte und Pflichten von Erwerbstätigen und Konsumierenden einschließlich Konsumentenschutz beschreiben.",
+              "GWB.US.3.ENT.01 — den Wandel von Standortfaktoren und Standortentscheidungen sowie ihre Folgen für die weitere Entwicklung Österreichs erörtern;",
+              "GWB.US.3.ENT.02 — Industrieregionen, Tourismusregionen, landwirtschaftlich geprägte Regionen und Regionen mit anderen wirtschaftlichen Schwerpunkten charakterisieren und verorten;",
+              "GWB.US.3.ENT.04 — Preise von Gütern und Dienstleistungen vergleichen und die Preisbildung auf Märkten unter Berücksichtigung von Angebot und Nachfrage sowie Produktionskosten an einfachen Fallbeispielen aus der eigenen Lebensrealität mit Österreichbezug erläutern;",
+              "GWB.US.3.ENT.05 — die Aufgaben der einzelnen Akteure in der ökosozialen Marktwirtschaft (private Haushalte, Unternehmen, Staat, Banken, Oesterreichische Nationalbank, Sozialpartner etc.) und ihr Zusammenwirken beschreiben, mögliche Interessenskonflikte und Kooperationen analysieren;",
+              "GWB.US.3.ENT.06 — die Funktionen von Steuern und Abgaben sowie deren gesellschaftliche und wirtschaftliche Bedeutung erörtern;",
+              "GWB.US.3.ENT.07 — die Bedeutung der österreichischen Unternehmen für die Entwicklung des Wirtschaftsstandorts und erforderliche Rahmenbedingungen einschätzen;",
+              "GWB.US.3.ENT.08 — die Bedeutung von unternehmerischer Innovation für die Entwicklung von Gesellschaft und Wirtschaftsstandort analysieren und erklären;",
+              "GWB.US.3.ENT.09 — die wirtschaftliche Entwicklung Österreichs anhand von Kenngrößen beschreiben (zB Wirtschaftswachstum und BIP, Inflation, Beschäftigung und Arbeitslosigkeit, alternative Wohlstandsindikatoren) und persönliche, gesellschaftliche und ökologische Folgen diskutieren;",
+              "GWB.US.3.ENT.10 — Gründe, Bedeutung sowie ökonomische, gesellschaftliche und ökologische Folgen der außenwirtschaftlichen Verflechtungen (Import/Export) Österreichs mit der EU und der restlichen Welt erläutern.",
+              "GWB.US.3.ZEN.01 — Zentren und Peripherien Österreichs abgrenzen, in Geomedien verorten und die Relativität jeder Abgrenzung erläutern;",
+              "GWB.US.3.ZEN.02 — die Gestaltung von zentralen und peripheren Lebensräumen mit Hilfe von originalen Begegnungen und Geomedien vergleichen und deren Lebensqualität individuell bewerten;"
+            ],
+            "zentrale_konzepte": [
+              "Bildungswege und Arbeitswelten",
+              "Entwicklungen am Wirtschaftsstandort Österreich",
+              "Zentren und Peripherien in Österreich",
+              "Österreichische Gesellschaftsentwicklung"
+            ],
+            "uebergreifende_themen": [
+              4,
+              12
+            ]
+          },
+          "depth_profile": {
+            "by_level": {
+              "understand": 1,
+              "evaluate": 1
+            },
+            "by_dimension": {
+              "OK": 1,
+              "UK": 1
+            },
+            "by_difficulty": {
+              "1": 1,
+              "3": 1
+            },
+            "minutes_total": 15,
+            "minutes_resource_independent": 15
+          },
+          "rack": null
+        }
+      },
+      {
+        "id": "umw",
+        "label": "Umwelt- & Naturschutzgruppe",
+        "share": "all",
+        "private": false,
+        "material": {
+          "meta": {
+            "title": "Rollenblatt: Umwelt- & Naturschutzgruppe",
+            "subtitle": "ihr vertretet Boden, Wasser, Klima und Natur",
+            "subject": "Geographie und wirtschaftliche Bildung",
+            "stufe": "Unterstufe",
+            "klasse": 3,
+            "kernfrage": "Soll in unserer Gemeinde ein großes Verteilzentrum gebaut werden — und wenn ja, unter welchen Bedingungen?",
+            "fassung": {
+              "kurztitel": "AHS-Lehrplan (konsolidiert)",
+              "bgbl": "BGBl. II Nr. 204/2024",
+              "doknr": "NOR40264237",
+              "valid_from": "2024-09-01",
+              "valid_to": "2026-08-31"
+            },
+            "lehrplan_label": "Geographie u. wirtschaftliche Bildung · 3. Kl. · Wirtschaftsstandort & Raumplanung",
+            "content_language": "de",
+            "subject_models": []
+          },
+          "subject_model": {
+            "subject": "Geographie und wirtschaftliche Bildung",
+            "stufe": "Unterstufe",
+            "dimensions": [
+              {
+                "id": "OK",
+                "label": "Orientierungskompetenz",
+                "note": null,
+                "modality": "printable"
+              },
+              {
+                "id": "UK",
+                "label": "Urteilskompetenz",
+                "note": null,
+                "modality": "printable"
+              },
+              {
+                "id": "HK",
+                "label": "Handlungskompetenz",
+                "note": "often enactive/simulativ",
+                "modality": "printable"
+              }
+            ],
+            "content_areas": [],
+            "task_kind_extensions": [
+              "map_work",
+              "case_study",
+              "position_argument"
+            ]
+          },
+          "intro": [
+            {
+              "id": "umw.i",
+              "optional": false,
+              "modality": "printable",
+              "flags": null,
+              "asset_refs": [],
+              "provenance": null,
+              "role": "info",
+              "kind": "prose",
+              "content": "Ihr vertretet die Interessen von Boden, Wasser, Klima und Natur — die in der Sitzung sonst niemand vertritt. Eure Aufgabe: die ökologischen Folgen sichtbar machen und gangbare Alternativen vorschlagen.",
+              "callout_role": null,
+              "teacher_note": null,
+              "watch_outs": []
+            }
+          ],
+          "sections": [
+            {
+              "id": "umw.kern",
+              "title": "Eure Fraktionsarbeit",
+              "teacher_overview": {
+                "throughline": null,
+                "talking_points": [],
+                "extensions": [],
+                "differentiation": null,
+                "timing_notes": null
+              },
+              "blocks": [
+                {
+                  "id": "umw.t1",
+                  "optional": false,
+                  "modality": "printable",
+                  "flags": null,
+                  "asset_refs": [],
+                  "provenance": null,
+                  "role": "task",
+                  "kind": "open_response",
+                  "prompt": "Was geht durch das Versiegeln von rund 8 Hektar Grünfläche verloren? Denkt an Boden, Versickerung von Regen/Hochwasserschutz, Lebensraum und Acker für Lebensmittel.",
+                  "payload": null,
+                  "response": {
+                    "mode": "lines",
+                    "n": 4
+                  },
+                  "cognitive_level": "understand",
+                  "difficulty": null,
+                  "dimensions": [
+                    "OK"
+                  ],
+                  "content_area": null,
+                  "serves": [
+                    {
+                      "competence_id": "GWB.US.3.ZEN.03",
+                      "relation": "exercises"
+                    }
+                  ],
+                  "est_minutes": 8,
+                  "answer_key": "Versiegelung: Boden ist nicht erneuerbar; Regen versickert nicht mehr → höhere Hochwassergefahr; Verlust von Lebensraum und Ackerfläche; lokal wärmer. Fläche ist eine knappe Ressource mit konkurrierenden Nutzungen.",
+                  "acceptable_reasoning": null,
+                  "rubric": [],
+                  "solution_steps": [],
+                  "watch_outs": [],
+                  "self_check": null
+                },
+                {
+                  "id": "umw.t2",
+                  "optional": false,
+                  "modality": "printable",
+                  "flags": null,
+                  "asset_refs": [],
+                  "provenance": null,
+                  "role": "task",
+                  "kind": "open_response",
+                  "prompt": "Schlagt Alternativen oder Auflagen vor, die die ökologischen Folgen verringern (z. B. Bau auf einer bereits versiegelten Brache, Dachbegrünung, Photovoltaik, Ausgleichsflächen).",
+                  "payload": null,
+                  "response": {
+                    "mode": "lines",
+                    "n": 3
+                  },
+                  "cognitive_level": "evaluate",
+                  "difficulty": null,
+                  "dimensions": [
+                    "UK"
+                  ],
+                  "content_area": null,
+                  "serves": [
+                    {
+                      "competence_id": "GWB.US.3.ENT.03",
+                      "relation": "exercises"
+                    }
+                  ],
+                  "est_minutes": 7,
+                  "answer_key": null,
+                  "acceptable_reasoning": "Sinnvolle Auflagen: Vorrang für Brachflächen/Leerstand, Entsiegelung an anderer Stelle als Ausgleich, Dachbegrünung + PV, Regenrückhaltung. Nachhaltigkeit heißt Folgen für kommende Generationen mitdenken.",
+                  "rubric": [],
+                  "solution_steps": [],
+                  "watch_outs": [],
+                  "self_check": null
+                }
+              ]
+            }
+          ],
+          "assets": [],
+          "nachweis": {
+            "fassung": {
+              "kurztitel": "AHS-Lehrplan (konsolidiert)",
+              "bgbl": "BGBl. II Nr. 204/2024",
+              "doknr": "NOR40264237",
+              "valid_from": "2024-09-01",
+              "valid_to": "2026-08-31"
+            },
+            "statement": "Diese Materialien adressieren 2 von 17 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
+            "competence_coverage": [
+              {
+                "competence_id": "GWB.US.3.OST.01",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.OST.02",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.BIL.01",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.BIL.02",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.01",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.02",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.03",
+                "exercised_by": [
+                  "umw.t2"
+                ],
+                "prerequisite_by": [],
+                "covered": true
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.04",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.05",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.06",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.07",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.08",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.09",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ENT.10",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ZEN.01",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ZEN.02",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "GWB.US.3.ZEN.03",
+                "exercised_by": [
+                  "umw.t1"
+                ],
+                "prerequisite_by": [],
+                "covered": true
+              }
+            ],
+            "gaps": [
+              "GWB.US.3.OST.01 — aktuelle demografische Strukturen und Prozesse beschreiben und deren mediale Darstellungen interpretieren sowie die Bedeutung für die eigene und gesellschaftliche Zukunft erörtern;",
+              "GWB.US.3.OST.02 — die Auswirkungen von Selbst- und Fremdbildern auf das gesellschaftliche Zusammenleben beschreiben und dabei die Bedeutung von biologischem Geschlecht, Gender, Alter, Bildung, Einkommen, Wohlstand, Nationalität, Religion oder Kultur hinterfragen.",
+              "GWB.US.3.BIL.01 — sich über die Berufswelt informieren, unterschiedliche Bildungswege, klassische und innovative Berufsbilder sowie selbstständige und unselbstständige Arbeitsmöglichkeiten vergleichen und für den persönlichen Lebensweg reflektieren;",
+              "GWB.US.3.BIL.02 — unbezahlte und bezahlte Arbeit , Arbeitslosigkeit, Höhe und Verwendung des Einkommens, Sparen, Finanzieren und Versichern, Rechte und Pflichten von Erwerbstätigen und Konsumierenden einschließlich Konsumentenschutz beschreiben.",
+              "GWB.US.3.ENT.01 — den Wandel von Standortfaktoren und Standortentscheidungen sowie ihre Folgen für die weitere Entwicklung Österreichs erörtern;",
+              "GWB.US.3.ENT.02 — Industrieregionen, Tourismusregionen, landwirtschaftlich geprägte Regionen und Regionen mit anderen wirtschaftlichen Schwerpunkten charakterisieren und verorten;",
+              "GWB.US.3.ENT.04 — Preise von Gütern und Dienstleistungen vergleichen und die Preisbildung auf Märkten unter Berücksichtigung von Angebot und Nachfrage sowie Produktionskosten an einfachen Fallbeispielen aus der eigenen Lebensrealität mit Österreichbezug erläutern;",
+              "GWB.US.3.ENT.05 — die Aufgaben der einzelnen Akteure in der ökosozialen Marktwirtschaft (private Haushalte, Unternehmen, Staat, Banken, Oesterreichische Nationalbank, Sozialpartner etc.) und ihr Zusammenwirken beschreiben, mögliche Interessenskonflikte und Kooperationen analysieren;",
+              "GWB.US.3.ENT.06 — die Funktionen von Steuern und Abgaben sowie deren gesellschaftliche und wirtschaftliche Bedeutung erörtern;",
+              "GWB.US.3.ENT.07 — die Bedeutung der österreichischen Unternehmen für die Entwicklung des Wirtschaftsstandorts und erforderliche Rahmenbedingungen einschätzen;",
+              "GWB.US.3.ENT.08 — die Bedeutung von unternehmerischer Innovation für die Entwicklung von Gesellschaft und Wirtschaftsstandort analysieren und erklären;",
+              "GWB.US.3.ENT.09 — die wirtschaftliche Entwicklung Österreichs anhand von Kenngrößen beschreiben (zB Wirtschaftswachstum und BIP, Inflation, Beschäftigung und Arbeitslosigkeit, alternative Wohlstandsindikatoren) und persönliche, gesellschaftliche und ökologische Folgen diskutieren;",
+              "GWB.US.3.ENT.10 — Gründe, Bedeutung sowie ökonomische, gesellschaftliche und ökologische Folgen der außenwirtschaftlichen Verflechtungen (Import/Export) Österreichs mit der EU und der restlichen Welt erläutern.",
+              "GWB.US.3.ZEN.01 — Zentren und Peripherien Österreichs abgrenzen, in Geomedien verorten und die Relativität jeder Abgrenzung erläutern;",
+              "GWB.US.3.ZEN.02 — die Gestaltung von zentralen und peripheren Lebensräumen mit Hilfe von originalen Begegnungen und Geomedien vergleichen und deren Lebensqualität individuell bewerten;"
+            ],
+            "zentrale_konzepte": [
+              "Bildungswege und Arbeitswelten",
+              "Entwicklungen am Wirtschaftsstandort Österreich",
+              "Zentren und Peripherien in Österreich",
+              "Österreichische Gesellschaftsentwicklung"
+            ],
+            "uebergreifende_themen": [
+              4,
+              12
+            ]
+          },
+          "depth_profile": {
+            "by_level": {
+              "understand": 1,
+              "evaluate": 1
+            },
+            "by_dimension": {
+              "OK": 1,
+              "UK": 1
+            },
+            "by_difficulty": {
+              "1": 1,
+              "3": 1
+            },
+            "minutes_total": 15,
+            "minutes_resource_independent": 15
+          },
+          "rack": null
+        }
+      }
+    ],
+    "phases": [
+      {
+        "id": "p1",
+        "label": "Fall & Spielregeln",
+        "grouping": "plenary",
+        "minutes": 10,
+        "what_happens": "Lehrkraft stellt Fall und Kernfrage vor, klärt die Spielregeln und teilt die vier Fraktionen zu."
+      },
+      {
+        "id": "p2",
+        "label": "Fraktionsarbeit",
+        "grouping": "role_group",
+        "minutes": 20,
+        "what_happens": "Jede Fraktion liest ihr Rollenblatt, klärt ihre Interessen und bereitet Position und Argumente vor."
+      },
+      {
+        "id": "p3",
+        "label": "Gemeinderatssitzung (Debatte)",
+        "grouping": "plenary",
+        "minutes": 25,
+        "what_happens": "Eingangsstatements (je 2 Min), dann offene, moderierte Debatte mit Fragen und Repliken zwischen den Fraktionen."
+      },
+      {
+        "id": "p4",
+        "label": "Abstimmung & Beschluss",
+        "grouping": "plenary",
+        "minutes": 10,
+        "what_happens": "Der Gemeinderat formuliert einen Beschluss (Bau / kein Bau / Bau mit Auflagen) samt Begründung."
+      },
+      {
+        "id": "p5",
+        "label": "Reflexion (Rollen verlassen)",
+        "grouping": "plenary",
+        "minutes": 15,
+        "what_happens": "Aus den Rollen heraustreten und den Prozess reflektieren — siehe Debrief."
+      }
+    ],
+    "shared_product": {
+      "description": "Gemeinderatsbeschluss: Haltet schriftlich fest, ob (und wo) das Verteilzentrum gebaut werden darf, die drei wichtigsten Begründungen und — falls ja — welche Auflagen gelten.",
+      "rubric": [
+        {
+          "criterion": "Mehrperspektivität",
+          "levels": [
+            "nur eine Sicht berücksichtigt",
+            "einige Interessen berücksichtigt",
+            "alle vier Interessen abgewogen"
+          ]
+        },
+        {
+          "criterion": "Begründung",
+          "levels": [
+            "Behauptung ohne Begründung",
+            "teilweise begründet",
+            "sachlich und mehrperspektivisch begründet"
+          ]
+        },
+        {
+          "criterion": "Umsetzbarkeit der Auflagen",
+          "levels": [
+            "keine / unrealistisch",
+            "vage",
+            "konkret und umsetzbar"
+          ]
+        }
+      ]
+    },
+    "debrief": [
+      {
+        "id": "db.intro",
+        "optional": false,
+        "modality": "printable",
+        "flags": null,
+        "asset_refs": [],
+        "provenance": null,
+        "role": "info",
+        "kind": "prose",
+        "content": "Tretet aus euren Rollen heraus. Jetzt zählt eure eigene Meinung, nicht die eurer Fraktion.",
+        "callout_role": null,
+        "teacher_note": null,
+        "watch_outs": []
+      },
+      {
+        "id": "db.q",
+        "optional": false,
+        "modality": "printable",
+        "flags": null,
+        "asset_refs": [],
+        "provenance": null,
+        "role": "info",
+        "kind": "prose",
+        "content": "Reflexion im Plenum: Welcher Interessenkonflikt war am schwersten aufzulösen? Wo war ein Kompromiss möglich, wo nicht — und warum? War die getroffene Entscheidung aus deiner Sicht fair? Wie ist es, in einer Demokratie zwischen widersprüchlichen Interessen zu entscheiden?",
+        "callout_role": null,
+        "teacher_note": null,
+        "watch_outs": []
+      }
+    ],
+    "competence_anchors": [
+      {
+        "competence_id": "GWB.US.3.ENT.05",
+        "dimension": "UK",
+        "served_by": "interaction"
+      },
+      {
+        "competence_id": "GWB.US.3.ENT.01",
+        "dimension": "UK",
+        "served_by": "shared_product"
+      }
+    ],
+    "nachweis": {
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "statement": "Dieses Lernarrangement adressiert 6 von 17 verbatim Kompetenzen des Lehrplans (davon 2 über Interaktion, Debrief oder gemeinsames Produkt verankert — nicht über ein einzelnes Arbeitsblatt), gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
+      "competence_coverage": [
+        {
+          "competence_id": "GWB.US.3.OST.01",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "GWB.US.3.OST.02",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "GWB.US.3.BIL.01",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "GWB.US.3.BIL.02",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "GWB.US.3.ENT.01",
+          "exercised_by": [
+            "anchor:shared_product"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "GWB.US.3.ENT.02",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "GWB.US.3.ENT.03",
+          "exercised_by": [
+            "gem:gem.t2",
+            "btr:btr.t2",
+            "anr:anr.t2",
+            "umw:umw.t2"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "GWB.US.3.ENT.04",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "GWB.US.3.ENT.05",
+          "exercised_by": [
+            "anchor:interaction"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "GWB.US.3.ENT.06",
+          "exercised_by": [
+            "gem:gem.t1"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "GWB.US.3.ENT.07",
+          "exercised_by": [
+            "btr:btr.t1"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "GWB.US.3.ENT.08",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "GWB.US.3.ENT.09",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "GWB.US.3.ENT.10",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "GWB.US.3.ZEN.01",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "GWB.US.3.ZEN.02",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "GWB.US.3.ZEN.03",
+          "exercised_by": [
+            "anr:anr.t1",
+            "umw:umw.t1"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        }
+      ],
+      "gaps": [
+        "GWB.US.3.OST.01 — aktuelle demografische Strukturen und Prozesse beschreiben und deren mediale Darstellungen interpretieren sowie die Bedeutung für die eigene und gesellschaftliche Zukunft erörtern;",
+        "GWB.US.3.OST.02 — die Auswirkungen von Selbst- und Fremdbildern auf das gesellschaftliche Zusammenleben beschreiben und dabei die Bedeutung von biologischem Geschlecht, Gender, Alter, Bildung, Einkommen, Wohlstand, Nationalität, Religion oder Kultur hinterfragen.",
+        "GWB.US.3.BIL.01 — sich über die Berufswelt informieren, unterschiedliche Bildungswege, klassische und innovative Berufsbilder sowie selbstständige und unselbstständige Arbeitsmöglichkeiten vergleichen und für den persönlichen Lebensweg reflektieren;",
+        "GWB.US.3.BIL.02 — unbezahlte und bezahlte Arbeit , Arbeitslosigkeit, Höhe und Verwendung des Einkommens, Sparen, Finanzieren und Versichern, Rechte und Pflichten von Erwerbstätigen und Konsumierenden einschließlich Konsumentenschutz beschreiben.",
+        "GWB.US.3.ENT.02 — Industrieregionen, Tourismusregionen, landwirtschaftlich geprägte Regionen und Regionen mit anderen wirtschaftlichen Schwerpunkten charakterisieren und verorten;",
+        "GWB.US.3.ENT.04 — Preise von Gütern und Dienstleistungen vergleichen und die Preisbildung auf Märkten unter Berücksichtigung von Angebot und Nachfrage sowie Produktionskosten an einfachen Fallbeispielen aus der eigenen Lebensrealität mit Österreichbezug erläutern;",
+        "GWB.US.3.ENT.08 — die Bedeutung von unternehmerischer Innovation für die Entwicklung von Gesellschaft und Wirtschaftsstandort analysieren und erklären;",
+        "GWB.US.3.ENT.09 — die wirtschaftliche Entwicklung Österreichs anhand von Kenngrößen beschreiben (zB Wirtschaftswachstum und BIP, Inflation, Beschäftigung und Arbeitslosigkeit, alternative Wohlstandsindikatoren) und persönliche, gesellschaftliche und ökologische Folgen diskutieren;",
+        "GWB.US.3.ENT.10 — Gründe, Bedeutung sowie ökonomische, gesellschaftliche und ökologische Folgen der außenwirtschaftlichen Verflechtungen (Import/Export) Österreichs mit der EU und der restlichen Welt erläutern.",
+        "GWB.US.3.ZEN.01 — Zentren und Peripherien Österreichs abgrenzen, in Geomedien verorten und die Relativität jeder Abgrenzung erläutern;",
+        "GWB.US.3.ZEN.02 — die Gestaltung von zentralen und peripheren Lebensräumen mit Hilfe von originalen Begegnungen und Geomedien vergleichen und deren Lebensqualität individuell bewerten;"
+      ],
+      "zentrale_konzepte": [
+        "Bildungswege und Arbeitswelten",
+        "Entwicklungen am Wirtschaftsstandort Österreich",
+        "Zentren und Peripherien in Österreich",
+        "Österreichische Gesellschaftsentwicklung"
+      ],
+      "uebergreifende_themen": [
+        2,
+        4,
+        12
+      ]
+    },
+    "depth_profile": {
+      "by_level": {
+        "understand": 4,
+        "evaluate": 4
+      },
+      "by_dimension": {
+        "OK": 4,
+        "UK": 4
+      },
+      "by_difficulty": {},
+      "minutes_total": 60,
+      "minutes_resource_independent": 60
+    }
+  },
+  "status": "in_review",
+  "source": "curated",
+  "title": "Wohin mit dem neuen Verteilzentrum?",
+  "artifacts": {
+    "orchestration": "/home/user/TeachersAid/runs/arrangements/gwb-standort/orchestration.pdf",
+    "roles": [
+      {
+        "id": "gem",
+        "label": "Gemeindeführung",
+        "student": "/home/user/TeachersAid/runs/arrangements/gwb-standort/role_gem_student.pdf",
+        "teacher": "/home/user/TeachersAid/runs/arrangements/gwb-standort/role_gem_teacher.pdf"
+      },
+      {
+        "id": "btr",
+        "label": "Das Unternehmen",
+        "student": "/home/user/TeachersAid/runs/arrangements/gwb-standort/role_btr_student.pdf",
+        "teacher": "/home/user/TeachersAid/runs/arrangements/gwb-standort/role_btr_teacher.pdf"
+      },
+      {
+        "id": "anr",
+        "label": "Anrainer:innen",
+        "student": "/home/user/TeachersAid/runs/arrangements/gwb-standort/role_anr_student.pdf",
+        "teacher": "/home/user/TeachersAid/runs/arrangements/gwb-standort/role_anr_teacher.pdf"
+      },
+      {
+        "id": "umw",
+        "label": "Umwelt- & Naturschutzgruppe",
+        "student": "/home/user/TeachersAid/runs/arrangements/gwb-standort/role_umw_student.pdf",
+        "teacher": "/home/user/TeachersAid/runs/arrangements/gwb-standort/role_umw_teacher.pdf"
+      }
+    ]
+  },
+  "verify_problems": [],
+  "created_at": "2026-06-30T07:32:08+00:00",
+  "updated_at": "2026-06-30T07:32:08+00:00"
+}

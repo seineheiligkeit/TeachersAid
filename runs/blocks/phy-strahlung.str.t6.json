@@ -1,0 +1,64 @@
+{
+  "id": "phy-strahlung.str.t6",
+  "block": {
+    "id": "str.t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Eine Schlagzeile behauptet: 'Handystrahlung macht krank!'. Welche EINE Frage würdest du stellen, bevor du das glaubst – und warum entscheidet gerade diese Frage über die Glaubwürdigkeit?",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Funk/Mikrowellen sind nicht-ionisierend; gesicherter Effekt ist Erwärmung."
+    },
+    "response": {
+      "mode": "lines",
+      "n": 3
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.4.STR.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 11,
+    "answer_key": null,
+    "acceptable_reasoning": "Sinnvoll: nach Studienlage/Quelle/Dosis/Mechanismus fragen. 'nicht-ionisierend ≠ harmlos, aber auch ≠ Verschwörung'. (Die echte Quellenbewertung STR.01 wird hier NICHT vertieft — gehört in einen Geschwister-Baustein.)",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Ausgewogen bleiben (⚠): weder verharmlosen noch dramatisieren."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Strahlung und Radioaktivität",
+  "competences": [
+    "PHY.US.4.STR.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:phy-strahlung",
+  "source": "ai",
+  "created_at": "2026-06-30T07:32:07+00:00",
+  "updated_at": "2026-06-30T07:32:07+00:00"
+}
