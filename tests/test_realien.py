@@ -174,6 +174,49 @@ def test_cafe_second_genre_builds_clean():
     assert CAFE.cefr == "A2" and CAFE.origin == "constructed" and CAFE.source is None
 
 
+# --- Phase 2b: the arrangement wrap (the worksheet + arrangement engines compose) ----
+
+def _wrap(at):
+    from teachersaid.pipeline.arrange import assemble_arrangement, verify_arrangement
+    from teachersaid.pipeline.realie_arrange import build_arrangement
+    from teachersaid.pipeline.resolve import resolve_grade
+    arr = build_arrangement(at, today=IN)
+    res = resolve_grade(arr.meta.subject, arr.meta.klasse, today=IN)
+    assemble_arrangement(arr, res)
+    return arr, verify_arrangement(arr, res)
+
+
+def test_realie_wraps_as_a_verify_clean_arrangement():
+    from teachersaid.library.realie_cafe import CAFE
+    arr, rep = _wrap(CAFE)
+    assert rep.problems == [], rep.problems
+    assert arr.meta.format == "simulation_game"
+    assert len(arr.phases) == 3 and arr.total_minutes() == 30
+    assert len(arr.roles) == 1 and arr.roles[0].material.sections   # the Realie worksheet is the material
+
+
+def test_speaking_is_an_anchor_only_competence_the_sheet_cannot_reach():
+    """The v0.5 payoff: a Sprechen competence covered ONLY by the interaction, no printable task."""
+    from teachersaid.library.realie_bahnhof import BAHNHOF
+    arr, _ = _wrap(BAHNHOF)
+    assert arr.competence_anchors and arr.competence_anchors[0].served_by == "interaction"
+    anchor_id = arr.competence_anchors[0].competence_id
+    cov = {e.competence_id: e for e in arr.nachweis.competence_coverage}
+    assert cov[anchor_id].covered and cov[anchor_id].exercised_by == ["anchor:interaction"]
+    served = {s.competence_id for r in arr.roles for b in r.material.iter_blocks()
+              if b.role.value == "task" for s in b.serves}
+    assert anchor_id not in served                  # no task serves it — only the interaction does
+
+
+def test_arrangement_bundle_renders(tmp_path):
+    from teachersaid.pipeline.arrange import render_arrangement
+    from teachersaid.library.realie_cafe import CAFE
+    arr, rep = _wrap(CAFE)
+    assert rep.problems == []
+    bundle = render_arrangement(arr, tmp_path / "arr")   # reuses the worksheet renderers, no new one
+    assert bundle["orchestration"] and bundle["roles"]
+
+
 def test_sourced_text_still_runs_the_rights_gate(tmp_path):
     """The simplified gate didn't weaken the sourced path: a not-yet-PD source still raises."""
     from teachersaid.schema.texts import AnnotatedText, TextSourceRef

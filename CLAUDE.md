@@ -383,10 +383,16 @@ One annotated text → many tasks across grades; it compounds like the catalogs.
   **Two genre flagships** (FS1, A2): `library/realie_bahnhof.py` (*At the station*, a departure board) and
   `library/realie_cafe.py` (*At the café*, a menu — Phase 2a, the **price** path; the lint exempts a *shown*
   sum like "£2.00 + £3.00 = £5.00" but still catches a bare wrong price). Both render as a **real artifact**
-  — a paper-tinted `rb.material_card` (no line numbers; `InfoBlock.numbered=False`) — and carry atmospheric
+  — a paper-tinted `rb.material_card` (no line numbers; `InfoBlock.numbered=False`) — carry atmospheric
   "fluff" (taglines, status, flavour notes) that gives "life" *without touching any datum a task uses*
-  (lint-safe by construction; the *constructed* model intact). Fact-care snaps back only for
-  **informational** genres. Scales via the Phase-3 seam (`realien_prompt`/`ingest_realien`, not yet built).
+  (lint-safe by construction; the *constructed* model intact), and ladder the tasks beyond lookup
+  (decide-under-constraint · recommend · use the live status — Lever 1; the lint's per-answer universe
+  includes the task's own prompt so a stated deadline/budget is consistent). **Phase 2b — the arrangement
+  wrap (`pipeline/realie_arrange.py`):** a Realie → a `Lernarrangement` (the worksheet as role material, the
+  role-play as the `interaction`, a broader Sprechen competence as a `competence_anchor` served_by the
+  interaction — covered ONLY by the anchor, the v0.5 payoff); seeded via `library.seed_arrangements`
+  (`realie-bahnhof`/`realie-cafe`). Fact-care snaps back only for **informational** genres. Scales via the
+  Phase-3 seam (`realien_prompt`/`ingest_realien`, not yet built).
 - **Still trickier / planned** — the audio **HITL "Stimmen" review tab** + `text_tasks` dialogue-**turns**
   emission + **FLEURS** refs/`de/fr/it/es` checkpoints; and a sourced-audio path; see `feature-roadmap.md`
   "Languages" + `tts-audio-engine.md §7`.

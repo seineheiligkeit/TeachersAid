@@ -81,15 +81,25 @@ def seed_library(store=None, *, today: date | None = None) -> list:
 def seed_arrangements(store=None, *, today: date | None = None) -> list:
     """Stage the curated Lernarrangement hero(es) into the arrangement store for
     review (assemble → verify → render the bundle). Idempotent: `upsert` preserves
-    status. New for v0.5 (Phase 5); the GWB Gemeinderat-Planspiel is the first hero."""
+    status. The GWB Gemeinderat-Planspiel is the v0.5 hero; the two FS1 Realien
+    (`realie_arrange.build_arrangement`) are wrapped as Lernarrangements (Realien Phase 2b)
+    — the Realie worksheet as role material, the speaking as an interaction anchor."""
     from ..demo import gwb_standort
     from ..pipeline import arrange
+    from ..pipeline.realie_arrange import build_arrangement as build_realie_arrangement
     from ..store.arrangementstore import ArrangementStore
+    from .realie_bahnhof import BAHNHOF
+    from .realie_cafe import CAFE
 
     store = store or ArrangementStore()
-    return [arrange.stage_arrangement(
+    out = [arrange.stage_arrangement(
         store, gwb_standort.build_arrangement(), arr_id="gwb-standort",
         source="curated", today=today)]
+    for at, rid in [(BAHNHOF, "realie-bahnhof"), (CAFE, "realie-cafe")]:
+        out.append(arrange.stage_arrangement(
+            store, build_realie_arrangement(at, today=today), arr_id=rid,
+            source="curated", today=today))
+    return out
 
 
 def seed_datasets(store=None, *, status: str = "in_review") -> list:

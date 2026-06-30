@@ -1,14 +1,18 @@
 # Annotated Realien — CEFR-leveled communicative reading for modern FS
 
-**Status:** **Phase 1 BUILT (30 Jun 2026)** — design settled with the SME, flagship shipped.
+**Status:** **Phase 1 + 2 BUILT (30 Jun 2026)** — design settled with the SME; both genre flagships
++ the arrangement wrap shipped.
 Extends the annotated-text engine (`schema/texts.py`, `pipeline/text_tasks.py`) — no new top-level
 type. Built: the `RolePlayPayload` (Sprechkarte) + `rb.cue_cards`; the `AnnotatedText` Realie fields
 (`cefr`/`origin`/`scene`/`facts`, optional `source`) + the `communicative`/`roleplay` annotation
 kinds; the derivation (scan · write-a-message · oral Sprechkarte with no write-space); the
 internal-consistency `pipeline/realie_lint.py`; the simplified rights gate (`orch.ingest_text`);
 **two** A2 English flagships — *At the station* (`library/realie_bahnhof.py`, a departure board) and
-*At the café* (`library/realie_cafe.py`, a menu — the **second genre**, Phase 2a); `tests/test_realien.py`
-(11). Verify-clean, all three projections render, full suite green. Sibling of the Sachverhalt
+*At the café* (`library/realie_cafe.py`, a menu, Phase 2a) — each rendered as a real-artifact card with
+atmospheric "fluff" and a reasoning task ladder (Lever 1); plus the **arrangement wrap**
+(`pipeline/realie_arrange.py`, Phase 2b — the Realie as role material, the speaking as an interaction
+anchor). `tests/test_realien.py` (17). Verify-clean, all projections + the arrangement bundle render,
+full suite green. Sibling of the Sachverhalt
 content layer, deliberately at a **lower fact-rigor** (§0). Reuses the four correct-by-construction
 mechanisms (`invariants.md §3`) and the breadth seam. Author-of-record: SME + Claude.
 
@@ -231,8 +235,15 @@ Realien scale exactly like the Sachverhalte we just shipped:
   Kl 2, A2): a constructed menu exercising the **price** path the board didn't (scan a £-price,
   write an order with a shown total, a customer/waiter Sprechkarte). Proves the engine isn't
   timetable-locked and matured the lint (the sum-exemption, §8). Verify-clean, lint green, renders.
-- **Phase 2b — the arrangement wrap (remaining).** Wrap a Realie as a `Lernarrangement` — the Realie
-  as shared material, the speaking as an `interaction` anchor — proving the two engines compose.
+- **Phase 2b — the arrangement wrap. DONE (30 Jun 2026).** `pipeline/realie_arrange.py::build_arrangement(at)`
+  wraps a Realie as a `Lernarrangement`: the Realie worksheet is the single role's material (read · write ·
+  the Sprechkarte), the role-play is the `interaction` phase, and a *broader* Sprechen competence
+  (FS1.US.2.SPR.01, "hold a short everyday conversation") is a `competence_anchor` **served_by the
+  interaction** — covered ONLY by the anchor (`anchor:interaction` in the Nachweis), the v0.5 payoff: a
+  competence no printable task reaches. Reuses the worksheet + arrangement engines whole (assemble / verify /
+  render via `pipeline/arrange.py`, no new renderer). Both flagships are seeded as arrangements
+  (`library.seed_arrangements`, ids `realie-bahnhof`/`realie-cafe`) → the **Arrangements** tab. The two
+  engines compose: a Realie → a run-guide + role sheet, verify-clean.
 - **Phase 3 — breadth via the seam.** Menus, signs, messages, schedules, news-in-levels across
   A1–B2, EN + FR, subagent-authored, SME-gated for language + level.
 
