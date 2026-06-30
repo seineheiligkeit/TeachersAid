@@ -305,5 +305,30 @@ def wrapped_table(data: list[list], col_widths: list[float], *, header: bool = T
     return t
 
 
+def connect_blocks(left: list[str], right: list[str], width: float) -> Table:
+    """Two columns of loose, BOXED blocks with an open gap between — the student draws connecting
+    lines (matching tasks: *connect*, don't write pairs). Each item is its own bordered block; the
+    right column is shuffled, so matches run diagonally across the gap. Cells wrap (Paragraphs)."""
+    cell = ParagraphStyle("cb_cell", fontName=BASE_FONT, fontSize=9, leading=12)
+    m = max(len(left), len(right), 1)
+    left = list(left) + [""] * (m - len(left))
+    right = list(right) + [""] * (m - len(right))
+    lw, gw = width * 0.42, width * 0.16
+    rw = width - lw - gw
+    rows = [[Paragraph(html.escape(str(lft)), cell), "", Paragraph(html.escape(str(rgt)), cell)]
+            for lft, rgt in zip(left, right)]
+    t = Table(rows, colWidths=[lw, gw, rw])
+    grey, light, bg = colors.HexColor("#888888"), colors.HexColor("#cccccc"), colors.HexColor("#f6f8fb")
+    t.setStyle(TableStyle([
+        ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
+        ("BOX", (0, 0), (0, -1), 0.7, grey), ("INNERGRID", (0, 0), (0, -1), 0.7, light),
+        ("BOX", (2, 0), (2, -1), 0.7, grey), ("INNERGRID", (2, 0), (2, -1), 0.7, light),
+        ("BACKGROUND", (0, 0), (0, -1), bg), ("BACKGROUND", (2, 0), (2, -1), bg),
+        ("TOPPADDING", (0, 0), (-1, -1), 8), ("BOTTOMPADDING", (0, 0), (-1, -1), 8),
+        ("LEFTPADDING", (0, 0), (-1, -1), 6), ("RIGHTPADDING", (0, 0), (-1, -1), 6),
+    ]))
+    return t
+
+
 def spacer(h_mm: float = 2.0) -> Spacer:
     return Spacer(1, h_mm * mm)

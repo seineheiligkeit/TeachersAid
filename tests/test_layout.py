@@ -69,6 +69,36 @@ def test_grid_table_never_exceeds_frame():
     from teachersaid.rendering import reportlab_base as rb
     width = A4[0] - 40 * mm
     huge = "Ein extrem langer Begriff der weit breiter ist als eine Spalte und umbrechen muss " * 3
-    t = rb.grid_table([[f"1.  {huge}", f"a)  {huge}"]], width, header=False, weights=[1, 1])
-    w, _h = t.wrap(width, 10_000)
-    assert w <= width + 0.5            # wrapped Paragraph cells → can never overflow the frame
+    for t in (rb.grid_table([[f"1.  {huge}", f"a)  {huge}"]], width, header=False, weights=[1, 1]),
+              rb.connect_blocks([huge, huge], [huge, huge], width)):
+        w, _h = t.wrap(width, 10_000)
+        assert w <= width + 0.5        # wrapped Paragraph cells → can never overflow the frame
+
+
+def test_self_contained_payloads_get_no_redundant_writespace():
+    """ordering / matching / multiple_choice render their OWN interaction surface, so the renderer
+    adds no generic write-space (the redundant lines the SME flagged); open_response still does."""
+    from unittest import mock
+
+    import teachersaid.schema.blocks as B
+    from teachersaid.rendering import blocks_to_flowables as bf
+    from teachersaid.rendering import reportlab_base as rb
+    from teachersaid.schema.response import BoxResponse, LinesResponse
+    S = rb.styles()
+
+    def _writespace_calls(task) -> int:
+        with mock.patch.object(rb, "ruled_lines", wraps=rb.ruled_lines) as ml, \
+                mock.patch.object(rb, "answer_box", wraps=rb.answer_box) as mb:
+            bf._task_flowables(task, "student", S, 400, {}, 1)
+            return ml.call_count + mb.call_count
+
+    ordering = B.TaskBlock(id="o", kind="ordering", prompt="P", cognitive_level="remember",
+                           payload=B.OrderingPayload(items=["a", "b"]), response=LinesResponse(n=2))
+    matching = B.TaskBlock(id="m", kind="matching", prompt="P", cognitive_level="understand",
+                           payload=B.MatchingPayload(left=["x", "y"], right=["p", "q"]),
+                           response=LinesResponse(n=2))
+    open_resp = B.TaskBlock(id="r", kind="open_response", prompt="P", cognitive_level="understand",
+                            response=BoxResponse(min_height_mm=40))
+    assert _writespace_calls(ordering) == 0       # numbers go in the payload's blanks
+    assert _writespace_calls(matching) == 0       # drawn on the connect-blocks
+    assert _writespace_calls(open_resp) == 1      # an open answer DOES need a box

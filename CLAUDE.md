@@ -693,6 +693,14 @@ Run a single file: `python -m pytest tests/test_derive.py -q`.
   assert no label overlaps (per axes) and no table exceeds the frame — so legibility regressions are caught,
   not eyeballed. A leader is two artists (a line + a plain `ax.text`), **not** an arrow-annotation, so a
   label's measured bbox is the text alone.
+- **A task's affordance is its kind, not a separate field (didactic discipline).** A *self-contained*
+  payload IS its own response surface — `ordering` (numbers in `____` blanks) · `matching` (draw lines on
+  `rb.connect_blocks` loose blocks) · `multiple_choice` (tick-boxes) — so `_task_flowables` adds **no**
+  generic write-space for those (`blocks_to_flowables._SELF_CONTAINED_PAYLOADS`); `true_false_justify` is
+  NOT one (its justification needs lines). Don't pair an ordering/matching task with a `LinesResponse` and
+  expect lines — the renderer suppresses them by construction. Likewise generated **prompts** fit the
+  topic's nature, not one template: the Sachverhalt `content_comprehension` close reads "warum war X
+  wichtig" for a `timeline` (event), "wie X abläuft" for a `process`, "was die Karte zeigt" for `regions`.
 - Match the surrounding German tone/terminology in product-facing strings; the user is the domain SME
   (physicist, Austrian) and fact-checks the physics and the German.
 - Don't relitigate decisions recorded in `project-handoff.md §4`; they are durable.

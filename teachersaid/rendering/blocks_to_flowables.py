@@ -21,6 +21,11 @@ _CALLOUT_LABELS = {
     "note": "Hinweis", "warning": "Achtung", "reveal": "Auflösung", "tip": "Tipp",
 }
 
+# payloads that ARE their own interaction surface (numbers in blanks · draw-connections · tick-boxes)
+# → no generic write-space underneath; the affordance can't double up. `true_false_justify` is NOT
+# here — its justification genuinely needs lines.
+_SELF_CONTAINED_PAYLOADS = {"ordering", "matching", "multiple_choice"}
+
 
 def _image(asset_path: Path, max_w: float):
     img = Image(str(asset_path))
@@ -159,16 +164,9 @@ def _payload_flowables(b: TaskBlock, S, width):
         for item in p.items:
             out.append(rb.para("____  " + item, S["body"]))
     elif p.kind == "matching":
-        # left = the items (numbered), right = the SHUFFLED options (lettered) — the student writes
-        # the pairing on the response lines below. A neutral two-column grid (no per-row arrow,
-        # which would falsely imply left[i] ↔ right[i]); cells wrap, so nothing overflows.
-        left = list(p.left)
-        right = list(p.right or [""] * len(left))
-        m = max(len(left), len(right))
-        left += [""] * (m - len(left))
-        right += [""] * (m - len(right))
-        rows = [[f"{i + 1}.  {left[i]}", f"{chr(97 + i)})  {right[i]}"] for i in range(m)]
-        out.append(rb.grid_table(rows, width, header=False, weights=[1, 1]))
+        # connectable loose blocks — the student draws a line from each entry to its match (the
+        # right column is shuffled). The blocks ARE the response surface (no write-space below).
+        out.append(rb.connect_blocks(list(p.left), list(p.right or [""] * len(p.left)), width))
     elif p.kind == "table_fill":
         rows = [p.columns] + [["" if c is None else c for c in row] for row in p.rows]
         out.append(rb.grid_table(rows, width))
@@ -216,9 +214,11 @@ def _task_flowables(b: TaskBlock, projection: str, S, width, assets, number, cit
             out.append(_image(p, width * 0.75))
     out += _citation_flowables(refs, citations, S)
     out += _payload_flowables(b, S, width)
-    # The teacher guide is a guide, not a blank to fill in: skip the answer space
-    # (lines/box/table) — the topic is known; the expected answer follows below.
-    if projection != "teacher":
+    # The teacher guide is a guide, not a blank to fill in: skip the answer space. And a
+    # self-contained payload (ordering/matching/MC) is its OWN response surface — adding generic
+    # write-space would just duplicate it (the redundant lines the SME flagged).
+    pk = getattr(b.payload, "kind", None)
+    if projection != "teacher" and pk not in _SELF_CONTAINED_PAYLOADS:
         out += _response_flowables(b, S, width)
 
     if projection == "teacher":

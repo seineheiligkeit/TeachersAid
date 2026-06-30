@@ -257,9 +257,21 @@ def build_worksheet(sv: Sachverhalt, *, klasse: int | None = None,
     if sv.bedeutung:                                       # content comprehension (open)
         n += 1
         cid = pick(n - 1)
+        # the reflective close adapts to what the module IS (events vs phenomena read differently):
+        # an event "war wichtig"; a phenomenon/process is asked why it MATTERS / what it shows.
+        if sv.timeline:                                    # a historical event (the SME-praised wording)
+            cc = f"Erkläre in eigenen Worten, warum „{sv.topic}“ wichtig war."
+        elif sv.process:                                   # a process / mechanism — how it works
+            cc = (f"Erkläre in eigenen Worten, wie „{sv.process_name or sv.topic}“ abläuft "
+                  f"und warum das wichtig ist.")
+        elif sv.regions:                                   # a spatial phenomenon — what the map shows
+            cc = (f"Erkläre in eigenen Worten, was die Karte über „{sv.topic}“ zeigt "
+                  f"und warum das wichtig ist.")
+        else:
+            cc = (f"Erkläre in eigenen Worten, worum es bei „{sv.topic}“ geht und warum es "
+                  f"wichtig ist.")
         tasks.append(TaskBlock(
-            id=f"sv.t{n}", kind="content_comprehension",
-            prompt=f"Erkläre in eigenen Worten, warum „{sv.topic}“ wichtig war.",
+            id=f"sv.t{n}", kind="content_comprehension", prompt=cc,
             response=BoxResponse(min_height_mm=45),
             cognitive_level="understand", dimensions=dims_for(cid),
             serves=[Serves(competence_id=cid, relation="exercises")] if cid else [],
