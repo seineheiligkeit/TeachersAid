@@ -304,8 +304,10 @@ MIA_SCHOOLDAY = AnnotatedText(
 )
 
 from .realie_bahnhof import BAHNHOF      # Realien flagship (FS1, A2 — constructed Sprechanlass)
+from .realie_cafe import CAFE            # Realien flagship #2 — the café-menu genre
 
-ANNOTATED_TEXTS: list[AnnotatedText] = [LORELEY, RABE_FUCHS, VULPES_CORVUS, MIA_SCHOOLDAY, BAHNHOF]
+ANNOTATED_TEXTS: list[AnnotatedText] = [LORELEY, RABE_FUCHS, VULPES_CORVUS, MIA_SCHOOLDAY,
+                                        BAHNHOF, CAFE]
 
 
 def find_text(text_id: str) -> AnnotatedText | None:

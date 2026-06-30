@@ -172,10 +172,12 @@ The catalog splits the languages cleanly, so they get different treatments:
   a **sourced-audio path** (real recordings + rights, deferred).
 
 ### Annotated Realien — the CEFR-leveling answer (medium effort, printable, reuses the engine)
-**Phase 1 BUILT (30 Jun 2026) → [`realien-design.md`](realien-design.md) (D1–D5).** The naive
-"select-never-author" framing was the wrong lens; the design doc reframes it. Flagship: A2 English
-*At the station* (`library/realie_bahnhof.py`). Next: Phase 2 (a 2nd genre + the arrangement wrap),
-Phase 3 (breadth via `realien_prompt`/`ingest_realien`).
+**Phase 1 + 2a BUILT (30 Jun 2026) → [`realien-design.md`](realien-design.md) (D1–D5).** The naive
+"select-never-author" framing was the wrong lens; the design doc reframes it. **Two genre flagships**
+(FS1, A2): *At the station* (`library/realie_bahnhof.py`, a departure board) + *At the café*
+(`library/realie_cafe.py`, a menu — the price path; the lint matured to exempt a shown order-total).
+Next: Phase 2b (the arrangement wrap — speaking as an interaction anchor), Phase 3 (breadth via
+`realien_prompt`/`ingest_realien`).
 - **The asset:** point the annotated-text engine at **level-appropriate everyday texts** — menus, signs,
   timetables, short messages/emails — exactly what the can-do Lehrplan asks ("kann einfache Alltagstexte
   verstehen"). A1/A2 where native literature is too hard. New `cefr`/`genre`/`scene` tags; the task layer

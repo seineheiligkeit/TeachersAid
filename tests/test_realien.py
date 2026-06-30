@@ -115,6 +115,29 @@ def test_ingest_rejects_an_internally_inconsistent_realie(tmp_path):
         orch.ingest_text(TextStore(tmp_path / "t"), bad, today=IN)
 
 
+def test_lint_exempts_a_shown_sum_but_catches_a_bare_wrong_price():
+    """Café genre: a price shown in a SUM (£2.00 + £3.00 = £5.00) is a computation over the menu
+    (exempt — the £5.00 isn't on the menu); a BARE wrong price is still an inconsistency."""
+    from teachersaid.library.realie_cafe import CAFE
+    assert lint(CAFE) == ([], [])                    # the "= £5.00" order-total task is clean
+    bare = CAFE.model_copy(deep=True)
+    next(a for a in bare.annotations if a.kind == "comprehension").answer = "£9.99."
+    problems, _ = lint(bare)
+    assert any("£9.99" in p for p in problems), problems
+
+
+def test_cafe_second_genre_builds_clean():
+    """The engine isn't timetable-locked: the café menu derives the same communicative-first
+    layer (scan · write-an-order · Sprechkarte) and verifies clean."""
+    from teachersaid.library.realie_cafe import CAFE
+    content, res = build_worksheet(CAFE, today=IN)
+    assemble(content, res)
+    assert verify(content, res).problems == []
+    kinds = {b.kind for b in content.iter_blocks() if b.role.value == "task"}
+    assert {"open_response", "text_production", "speaking_task"} <= kinds
+    assert CAFE.cefr == "A2" and CAFE.origin == "constructed" and CAFE.source is None
+
+
 def test_sourced_text_still_runs_the_rights_gate(tmp_path):
     """The simplified gate didn't weaken the sourced path: a not-yet-PD source still raises."""
     from teachersaid.schema.texts import AnnotatedText, TextSourceRef

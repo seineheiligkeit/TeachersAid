@@ -18,6 +18,10 @@ from ..schema.texts import AnnotatedText
 _TIME = re.compile(r"\b\d{1,2}:\d{2}\b")
 # €9,50 · $12 · 9.50 € · £8 — the price tokens a menu/board answer would reference
 _PRICE = re.compile(r"(?:[€$£]\s?\d+(?:[.,]\d{1,2})?|\b\d+[.,]\d{2}\s?(?:€|EUR|Euro))")
+# an answer that SHOWS a sum ("£2.00 + £3.00 = £5.00", "… altogether") is a computation over the
+# menu, not a literal lookup → its prices are exempt from the presence check (the SME verifies the
+# arithmetic; pedagogically the working should be shown). A BARE price must still be a menu value.
+_SUM = re.compile(r"\+|\b(?:total|together|altogether|insgesamt|zusammen|macht|summe)\b", re.I)
 
 
 def _rt(v) -> str:
@@ -56,8 +60,9 @@ def lint(at: AnnotatedText) -> tuple[list[str], list[str]]:
             if t not in uni_times:
                 problems.append(f"Antwort zu „{label}“ nennt die Zeit {t}, die nicht im "
                                 f"Realie-Text/facts steht (interne Inkonsistenz).")
-        for p in _prices(ans):
-            if p not in uni_prices:
-                problems.append(f"Antwort zu „{label}“ nennt den Preis {p}, der nicht im "
-                                f"Realie-Text/facts steht (interne Inkonsistenz).")
+        if not _SUM.search(ans):       # a shown sum is a computation over the menu (exempt)
+            for p in _prices(ans):
+                if p not in uni_prices:
+                    problems.append(f"Antwort zu „{label}“ nennt den Preis {p}, der nicht im "
+                                    f"Realie-Text/facts steht (interne Inkonsistenz).")
     return problems, []

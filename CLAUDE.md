@@ -380,7 +380,9 @@ One annotated text → many tasks across grades; it compounds like the catalogs.
   (write-a-reply) / `roleplay` annotation kinds; the derivation builds a scan warm-up (Lesen) + a boxed
   write task (Schreiben) + a **Sprechkarte** (Sprechen — the new `RolePlayPayload`→`rb.cue_cards`, oral, **no
   write-space**, served via the Lernarrangement interaction anchor). *"Invent the timetable, vet the French."*
-  Flagship `library/realie_bahnhof.py` (A2 English *At the station*); fact-care snaps back only for
+  **Two genre flagships** (FS1, A2): `library/realie_bahnhof.py` (*At the station*, a departure board) and
+  `library/realie_cafe.py` (*At the café*, a menu — Phase 2a, the **price** path; the lint exempts a *shown*
+  sum like "£2.00 + £3.00 = £5.00" but still catches a bare wrong price). Fact-care snaps back only for
   **informational** genres. Scales via the Phase-3 seam (`realien_prompt`/`ingest_realien`, not yet built).
 - **Still trickier / planned** — the audio **HITL "Stimmen" review tab** + `text_tasks` dialogue-**turns**
   emission + **FLEURS** refs/`de/fr/it/es` checkpoints; and a sourced-audio path; see `feature-roadmap.md`

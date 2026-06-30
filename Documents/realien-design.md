@@ -6,8 +6,9 @@ type. Built: the `RolePlayPayload` (Sprechkarte) + `rb.cue_cards`; the `Annotate
 (`cefr`/`origin`/`scene`/`facts`, optional `source`) + the `communicative`/`roleplay` annotation
 kinds; the derivation (scan · write-a-message · oral Sprechkarte with no write-space); the
 internal-consistency `pipeline/realie_lint.py`; the simplified rights gate (`orch.ingest_text`);
-the **A2 English "At the station"** flagship (`library/realie_bahnhof.py`); `tests/test_realien.py`
-(9). Verify-clean, all three projections render, full suite green. Sibling of the Sachverhalt
+**two** A2 English flagships — *At the station* (`library/realie_bahnhof.py`, a departure board) and
+*At the café* (`library/realie_cafe.py`, a menu — the **second genre**, Phase 2a); `tests/test_realien.py`
+(11). Verify-clean, all three projections render, full suite green. Sibling of the Sachverhalt
 content layer, deliberately at a **lower fact-rigor** (§0). Reuses the four correct-by-construction
 mechanisms (`invariants.md §3`) and the breadth seam. Author-of-record: SME + Claude.
 
@@ -170,10 +171,14 @@ Add to `schema/texts.py`:
 ## 8. The lint — internal consistency, honest about its limits
 
 `pipeline/realie_lint.py` repurposes the Sachverhalt entity-lint, **degraded to internal
-consistency**: every price / time / platform / name referenced in a **task answer** (or
-`grounded_by`) must appear in the shown Realie text or `facts` set (a genre-aware token matcher,
-not the year-regex). It guards "*the worksheet doesn't contradict itself*", **not** "*the facts are
-true*" — because for a hook there is no truth to check.
+consistency**: every clock-time / price referenced in a **task answer** must appear in the shown
+Realie text or `facts` set (a genre-aware token matcher, not the year-regex). It guards "*the
+worksheet doesn't contradict itself*", **not** "*the facts are true*" — because for a hook there is
+no truth to check. **The café genre (Phase 2a) added one refinement:** a price shown in a *sum*
+("£2.00 + £3.00 = £5.00", or "… altogether") is a computation over the menu, so its prices are
+exempt from the literal-presence check (the SME verifies the arithmetic; the working should be
+shown) — while a **bare** wrong price is still caught. Ordering-up-a-total is core café language,
+so the lint matures with the genre rather than blocking it.
 
 It explicitly does **NOT** (and cannot) verify **L2 correctness** or **CEFR level** — those are
 SME-gated (mechanism #3). The doc and the lint say so plainly; we never claim a guarantee we can't
@@ -212,8 +217,12 @@ Realien scale exactly like the Sachverhalte we just shipped:
   the consistency lint green, all three projections render. `tests/test_realien.py` (9) locks the
   schema, the derivation, the lint (clean + catches an answer the board can't support), the oral
   no-write-space affordance, and that constructed rides no rights gate while sourced still does.
-- **Phase 2 — a second genre + the arrangement wrap.** A café-menu A2 scene, then wrap a Realie as
-  a Lernarrangement (speaking as an interaction anchor) — proving the two engines compose.
+- **Phase 2a — a second genre. DONE (30 Jun 2026).** *At the café* (`library/realie_cafe.py`, FS1
+  Kl 2, A2): a constructed menu exercising the **price** path the board didn't (scan a £-price,
+  write an order with a shown total, a customer/waiter Sprechkarte). Proves the engine isn't
+  timetable-locked and matured the lint (the sum-exemption, §8). Verify-clean, lint green, renders.
+- **Phase 2b — the arrangement wrap (remaining).** Wrap a Realie as a `Lernarrangement` — the Realie
+  as shared material, the speaking as an `interaction` anchor — proving the two engines compose.
 - **Phase 3 — breadth via the seam.** Menus, signs, messages, schedules, news-in-levels across
   A1–B2, EN + FR, subagent-authored, SME-gated for language + level.
 
