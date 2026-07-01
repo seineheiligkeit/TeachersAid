@@ -1,0 +1,77 @@
+{
+  "id": "c0026.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "source_analysis",
+    "prompt": "Lies diesen Auszug aus einem österreichischen Schullesebuch für Volksschulen, erschienen 1915:\n\n„Unsere tapferen Soldaten ziehen frohen Mutes in den Kampf für Kaiser und Vaterland. Kinder, ihr könnt helfen: Sammelt Eisenschrott für die Rüstung, spart eure Groschen für Kriegsanleihen, und vergesst nicht, täglich für unsere Helden zu beten. Wer seinem Vaterland hilft, ist selbst ein kleiner Held!“\n\n1. Um welche Art von Text handelt es sich — eine Quelle oder eine Darstellung? Begründe.\n2. Nenne zwei sprachliche Mittel im Text, die Begeisterung für den Krieg erzeugen sollen.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 40.0
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "HME",
+      "PME"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GPB.US.3.ALL.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1. Quelle: Der Text stammt aus der Zeit des Ersten Weltkriegs selbst (1915) und wurde damals für Kinder verfasst. Er ist eine primäre Überlieferung. (Nicht 'Darstellung', da er nicht nachträglich über die Vergangenheit geschrieben wurde.)\n2. Sprachliche Mittel (Auswahl): Direkte Anrede ('Kinder, ihr könnt helfen') — schafft Einbeziehung; Emotionale Aufladung ('tapfere Soldaten', 'frohen Mutes', 'Helden') — Heroisierung; Religiöse Einbindung ('täglich für unsere Helden zu beten') — Legitimation durch Gottesnähe; Verknüpfung von Kindertugend und Kriegsunterstützung ('kleiner Held') — Identifikationsangebot.",
+    "acceptable_reasoning": "Schüler:innen müssen nicht alle Mittel nennen; zwei klar benannte und erklärte reichen.",
+    "rubric": [
+      {
+        "criterion": "Quellenbegriff",
+        "levels": [
+          "Falsche Einordnung oder keine Begründung",
+          "Korrekte Einordnung, Begründung unvollständig",
+          "Korrekt als Quelle identifiziert mit klarer Zeitbezug-Begründung"
+        ]
+      },
+      {
+        "criterion": "Sprachliche Analyse",
+        "levels": [
+          "Keine oder sehr vage Nennung",
+          "Ein Mittel korrekt benannt",
+          "Zwei Mittel benannt und ihre Wirkungsabsicht erklärt"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Häufig wird 'Quelle' mit 'Beweis für Fakten' verwechselt. Klarstellen: Propagandatexte sind Quellen für die Absichten der Verfasser, nicht für die Realität des Krieges.",
+      "Schüler:innen identifizieren sprachliche Mittel manchmal ohne zu erklären, warum sie Wirkung entfalten — auf Wirkungsabsicht hinweisen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "source_analysis",
+  "subject": "Geschichte und politische Bildung",
+  "klasse": 3,
+  "kompetenzbereich": null,
+  "competences": [
+    "GPB.US.3.ALL.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "HME",
+    "PME"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0026",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

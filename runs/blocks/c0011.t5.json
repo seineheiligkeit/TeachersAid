@@ -1,0 +1,83 @@
+{
+  "id": "c0011.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "text_production",
+    "prompt": "Schreibe einen **kurzen argumentierenden Text** (ca. 80–100 Wörter) zu folgendem Thema:\n\n**„Soll in der Schule mehr Zeit für freies Lesen eingeplant werden?“**\n\nDein Text soll enthalten:\n- eine klare Positionierung (These)\n- zwei Argumente für deine Meinung\n- einen kurzen Hinweis auf ein Gegenargument und deine Antwort darauf\n\nSchreibe in vollständigen, zusammenhängenden Sätzen – kein Aufzählungsformat.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "create",
+    "dimensions": [
+      "SCH"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DEU.US.2.SCH.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 14,
+    "answer_key": "Individuelle Antworten. Musterlösung: 'Ich bin der Meinung, dass in der Schule mehr Zeit für freies Lesen eingeplant werden sollte. Erstens fördert regelmäßiges Lesen das Textverständnis und den Wortschatz. Zweitens macht es mehr Freude, ein Buch selbst zu wählen, was die Lesemotivation steigert. Manche meinen, dass diese Zeit für den Unterrichtsstoff fehlt. Allerdings zeigen viele Beispiele, dass Schüler:innen, die gerne lesen, auch in anderen Fächern besser verstehen.'",
+    "acceptable_reasoning": "Auch eine ablehnende Positionierung (gegen mehr Lesezeit) ist vollständig korrekt, wenn sie argumentativ ausgeführt wird.",
+    "rubric": [
+      {
+        "criterion": "Inhaltliche Vollständigkeit",
+        "levels": [
+          "These fehlt oder kein echtes Argument",
+          "These + ein Argument, Gegenargument fehlt",
+          "These + zwei Argumente + Auseinandersetzung mit Gegenargument"
+        ]
+      },
+      {
+        "criterion": "Textkohärenz",
+        "levels": [
+          "Aufzählung oder unverbundene Sätze",
+          "Grundlegende Satzverbindungen vorhanden",
+          "Fließtext mit logischen Verbindungen (allerdings, weil, deshalb, obwohl)"
+        ]
+      },
+      {
+        "criterion": "Sprachrichtigkeit",
+        "levels": [
+          "Zahlreiche Fehler, die das Verständnis erschweren",
+          "Verständlich mit vereinzelten Fehlern",
+          "Weitgehend fehlerfreie, altersgemäße Sprache"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Aufzählungsformat ('Erstens … / Zweitens … / Drittens …' ohne verbindende Sätze) erfüllt die Anforderung 'zusammenhängend' nicht.",
+      "Das Eingehen auf das Gegenargument ('Manche meinen … Allerdings …') ist der schwerste Teil – hier gezielt nachfragen oder Muster an die Tafel schreiben."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "text_production",
+  "subject": "Deutsch",
+  "klasse": 2,
+  "kompetenzbereich": "Schreiben",
+  "competences": [
+    "DEU.US.2.SCH.02"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "SCH"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0011",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

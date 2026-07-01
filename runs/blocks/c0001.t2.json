@@ -1,0 +1,77 @@
+{
+  "id": "c0001.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "experiment_protocol",
+    "prompt": "Du willst untersuchen, ob dunkle Oberflächen mehr Wärmestrahlung absorbieren als helle. Entwirf einen einfachen Versuch, den du in der Schule durchführen könntest. Beschreibe: (a) die Materialien, die du brauchst, (b) was du misst und wie, (c) was du erwartest zu beobachten, und (d) wie du sicherstellen kannst, dass dein Vergleich fair ist (Kontrollvariable).",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "apply",
+    "dimensions": [
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.4.WET.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Vollständiger Versuchsplan: (a) zwei identische Behälter/Becher (einer schwarz beschichtet, einer weiß/silber), Thermometer, Lampe oder direkte Sonneneinstrahlung, Stoppuhr. (b) Temperatur beider Behälter gleich zu Beginn; nach gleicher Zeit messen (z.B. alle 2 min über 10 min). (c) Dunkle Oberfläche absorbiert mehr Strahlung → höherer Temperaturanstieg. (d) Kontrollvariablen: gleiche Ausgangsbedingungen, gleiche Materialmengen, gleicher Abstand zur Lichtquelle, gleiche Belichtungszeit.",
+    "acceptable_reasoning": "Schüler:innen müssen nicht exakt die Fachbegriffe Absorption/Emission verwenden, aber die Idee des kontrollierten Vergleichs (fair test) muss erkennbar sein.",
+    "rubric": [
+      {
+        "criterion": "Messplan",
+        "levels": [
+          "0: Kein Messplan",
+          "1: Messung beschrieben, kein Vergleich",
+          "2: Vergleich zweier Oberflächen mit Messung",
+          "3: Vergleich mit expliziten Kontrollvariablen"
+        ]
+      },
+      {
+        "criterion": "Erwartung begründet",
+        "levels": [
+          "0: Keine Erwartung",
+          "1: Erwartung ohne Begründung",
+          "2: Erwartung mit physikalischer Begründung (Absorption)"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Fehlvorstellung: 'Schwarz ist wärmer, weil es Wärme produziert.' Korrekt: dunkle Flächen absorbieren mehr Strahlung.",
+      "Auf das Prinzip des fairen Vergleichs achten – fehlt die Kontrollvariable, ist das Experiment nicht aussagekräftig.",
+      "Bezug zur Klimaproblematik herstellen: schmelzendes Eis (helle Fläche) wird durch dunkles Wasser ersetzt → mehr Absorption → Verstärkung der Erwärmung (Eis-Albedo-Rückkopplung)."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "experiment_protocol",
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Wetter und Klima",
+  "competences": [
+    "PHY.US.4.WET.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0001",
+  "source": "ai",
+  "created_at": "2026-06-25T11:35:33+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

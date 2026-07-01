@@ -1,0 +1,76 @@
+{
+  "id": "c0032.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne jeder Aufgabe den passenden Wirtschaftsakteur zu. Jeder Akteur kann mehrmals vorkommen.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Legt den Leitzins fest, um die Inflation zu steuern",
+        "Kauft Güter und Dienstleistungen und bezahlt Steuern",
+        "Stellt Arbeitnehmer:innen ein und produziert Waren",
+        "Baut Schulen, Straßen und zahlt Sozialleistungen",
+        "Verhandelt Kollektivverträge für Beschäftigte",
+        "Leiht Geld an Privatpersonen und Unternehmen"
+      ],
+      "right": [
+        "Privater Haushalt",
+        "Unternehmen",
+        "Staat",
+        "Oesterreichische Nationalbank (OeNB)",
+        "Sozialpartner (Gewerkschaft/AK)",
+        "Geschäftsbank"
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "OK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.ENT.05",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "1–OeNB; 2–Privater Haushalt; 3–Unternehmen; 4–Staat; 5–Sozialpartner; 6–Geschäftsbank.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "OeNB und EZB: Die OeNB ist Teil des Europäischen Zentralbanksystems; die Leitzinsentscheidung fällt eigentlich auf EZB-Ebene. Für Klasse 3 vereinfachend korrekt, aber Lehrperson kann das klarstellen.",
+      "Sozialpartner: Schüler:innen verwechseln oft AK (gesetzlich, Pflichtmitgliedschaft) und Gewerkschaft (freiwillig). Beide verhandeln Kollektivverträge, aber unterschiedlich."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Entwicklungen am Wirtschaftsstandort Österreich",
+  "competences": [
+    "GWB.US.3.ENT.05"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "OK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0032",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

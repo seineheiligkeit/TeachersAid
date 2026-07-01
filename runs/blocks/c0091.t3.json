@@ -1,0 +1,135 @@
+{
+  "id": "c0091.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Schau dir Abbildung 1 (Häufigkeit von Naturkatastrophen, 1990–2020) an.\na) Was zeigt das Histogramm? Beschreibe in einem Satz, was auf den Achsen abgetragen ist.\nb) Wie viele Jahre hatten zwischen 400 und 500 Naturkatastrophen?\nc) Was könnte eine mögliche Erklärung für den Anstieg sein? Nenne einen Faktor.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "OK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.1.LEB4.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "a) Das Histogramm zeigt, wie viele Jahre (y-Achse) eine bestimmte Anzahl an Naturkatastrophen pro Jahr (x-Achse) verzeichnet wurden. b) Aus den Werten: etwa 10–12 Jahre hatten zwischen 400 und 500 Katastrophen. c) Mögliche Faktoren: Klimawandel (häufigere Extremwetterereignisse), bessere globale Erfassung und Dokumentation, wachsende Weltbevölkerung in gefährdeten Gebieten.",
+    "acceptable_reasoning": "Die genaue Zahl für (b) hängt von der Darstellung ab — Schüler:innen sollen das Ablesen erklären, nicht eine exakte Zahl treffen.",
+    "rubric": [
+      {
+        "criterion": "Achsenbeschreibung",
+        "levels": [
+          "Keine sinnvolle Beschreibung",
+          "Nur eine Achse korrekt",
+          "Beide Achsen korrekt und in einem vollständigen Satz"
+        ]
+      },
+      {
+        "criterion": "Erklärungsfaktor",
+        "levels": [
+          "Kein Faktor oder unplausibel",
+          "Ein Faktor, vage",
+          "Ein konkreter, begründeter Faktor"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Ein Histogramm ist für viele Schüler:innen in Klasse 1 neu — die Achsenbeschreibung (a) ist bewusst als Schritt eingeplant.",
+      "Achtung auf Überinterpretation: Ein Anstieg der dokumentierten Katastrophen bedeutet nicht zwingend mehr echte Ereignisse — bessere Berichterstattung ist ein Teil der Erklärung. Das ist wissenschaftliche Redlichkeit.",
+      "Das Histogramm zeigt eine Verteilung, keine Zeitreihe — diese wichtige Unterscheidung zum Liniendiagramm (intent: trend) soll explizit angesprochen werden."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 1,
+  "kompetenzbereich": "Leben und Wirtschaften unter Beachtung der natürlichen Prozesse",
+  "competences": [
+    "GWB.US.1.LEB4.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "OK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:histogram",
+      "spec": {
+        "values": [
+          280.0,
+          295.0,
+          310.0,
+          320.0,
+          370.0,
+          400.0,
+          420.0,
+          390.0,
+          350.0,
+          415.0,
+          430.0,
+          445.0,
+          470.0,
+          480.0,
+          490.0,
+          500.0,
+          490.0,
+          510.0,
+          495.0,
+          480.0,
+          460.0,
+          440.0,
+          450.0,
+          480.0,
+          510.0,
+          520.0,
+          530.0,
+          495.0,
+          490.0,
+          475.0,
+          460.0
+        ],
+        "xlabel": "Häufigkeit pro Jahr",
+        "ylabel": "Anzahl Jahre",
+        "title": "Anzahl bedeutender Naturkatastrophen weltweit pro Jahr, 1990–2020"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0091",
+  "source": "ai",
+  "created_at": "2026-06-26T19:02:23+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

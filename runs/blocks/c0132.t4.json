@@ -1,0 +1,102 @@
+{
+  "id": "c0132.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Szenario: Die Gemeinde Grüntal plant, ein nahegelegenes Feuchtgebiet (Moor) zu entwässern, um Ackerland zu gewinnen. Der Bürgermeister argumentiert, das bringe Arbeitsplätze und günstigeres Lebensmittel. Eine Umweltschutzorganisation ist dagegen.\n\na) Nenne je zwei Argumente für und gegen die Entwässerung aus biologischer Sicht.\nb) Welche Entscheidung würdest du treffen, und warum? Beziehe dich auf das Konzept der nachhaltigen Entwicklung.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Entwässerung eines Moores für Ackerland: ökologisch sinnvoll oder unverantwortlich?"
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "S",
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.OS.x.STA.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "BIO.OS.6.KOM3.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "BIO.OS.x.STA.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Argumente für Entwässerung: (1) Gewinn von Ackerland und damit Verbesserung der lokalen Lebensmittelversorgung; (2) wirtschaftliche Entwicklung (Arbeitsplätze, Einnahmen der Gemeinde). Argumente gegen Entwässerung: (1) CO₂-Freisetzung durch Zersetzung des Torfs – Moorboden ist ein wichtiger Kohlenstoffspeicher; (2) Verlust des Feuchtgebietes als einzigartiger Lebensraum für spezialisierte Arten (z. B. Wiesenbrüter, Moorfrösche, Sonnentau); (3) Verlust des natürlichen Wasserspeichers und Hochwasserschutzes. Nachhaltigkeit: Nachhaltige Entwicklung berücksichtigt Ökologie, Ökonomie und Soziales gleichermaßen (Drei-Säulen-Modell). Die Entwässerung maximiert kurzfristig die ökonomische Dimension auf Kosten der ökologischen. Alternativen (z. B. Ökotourismus, nachhaltige Moorlandwirtschaft) wären zu prüfen.",
+    "acceptable_reasoning": "Akzeptabel: Schüler:innen benennen mindestens je ein ökologisch fundiertes Argument auf jeder Seite und beziehen sich explizit auf Nachhaltigkeit. Die Entscheidung selbst kann pro oder contra ausfallen, muss aber begründet sein.",
+    "rubric": [
+      {
+        "criterion": "Biologische Argumente für und gegen die Entwässerung",
+        "levels": [
+          "Weniger als zwei Argumente je Seite",
+          "Je zwei Argumente, aber ohne biologische Fundierung",
+          "Je zwei biologisch korrekte Argumente (inkl. Kohlenstoffspeicher)"
+        ]
+      },
+      {
+        "criterion": "Bezug auf Nachhaltigkeit",
+        "levels": [
+          "Kein Bezug",
+          "Nachhaltigkeit erwähnt, ohne Definition",
+          "Drei-Säulen-Modell angewendet oder Abwägung ökologisch-ökonomisch explizit"
+        ]
+      },
+      {
+        "criterion": "Begründete Entscheidung",
+        "levels": [
+          "Keine Entscheidung oder unbegründet",
+          "Entscheidung mit einem Argument",
+          "Entscheidung mit mehreren verknüpften Argumenten"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen neigen dazu, nur eine Seite zu sehen (entweder rein ökonomisch oder rein ökologisch). Die Aufgabe verlangt explizit beide Perspektiven.",
+      "Nachhaltigkeit ist kein Synonym für 'Umweltschutz' – betonen, dass das Drei-Säulen-Modell alle drei Dimensionen gleichberechtigt berücksichtigt."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 6,
+  "kompetenzbereich": "Standpunkte begründen und reflektiert handeln",
+  "competences": [
+    "BIO.OS.x.STA.02",
+    "BIO.OS.6.KOM3.02",
+    "BIO.OS.x.STA.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "S",
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0132",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:19+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

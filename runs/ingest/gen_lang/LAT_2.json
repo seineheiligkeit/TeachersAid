@@ -1,0 +1,217 @@
+{
+  "subject": "Latein",
+  "klasse": 3,
+  "kompetenzbereich": "Sprach- und textbezogene Kompetenzen",
+  "title": "Verben im Präsens und Perfekt",
+  "kernfrage": "Wie unterscheidest du im Lateinischen, ob etwas gerade passiert oder schon abgeschlossen ist?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Personalformen und Tempora",
+        "throughline": "Schüler:innen unterscheiden Präsens und Perfekt Indikativ Aktiv und können alle sechs Personalformen bilden und übersetzen. Schwerpunkt: Signalmorpheme (-v-/-s-/-u- im Perfektstamm, -i als 1. Sg. Perf.).",
+        "talking_points": [
+          "Latein hat zwei Vergangenheitstempora: Perfekt (abgeschlossene Handlung) und Imperfekt (andauernde Vergangenheit) — hier fokussieren wir auf das Perfekt als 'einfache Vergangenheit'.",
+          "Das Präsens: Stamm + Personalendungen (-o/-m, -s, -t, -mus, -tis, -nt). Schüler:innen recitieren die Endungen.",
+          "Das Perfekt: Perfektstamm + Perfectendungen (-i, -isti, -it, -imus, -istis, -erunt). Das häufige Perfektzeichen '-v-' bei der 1. Konjugation (amāvi, laudāvi) hervorheben.",
+          "Übersetzungsfalle: 'amāvit' = 'er/sie hat geliebt' ODER 'er/sie liebte' — beide Varianten im Deutschen akzeptabel."
+        ],
+        "extensions": [
+          "Lernkarten-Methode: Schüler:innen erstellen je eine Karte pro Verbform (Vorderseite: Latein, Rückseite: Deutsch + Tempus).",
+          "Partnerübung: A liest eine lateinische Verbform vor, B nennt Tempus + Übersetzung — dann tauschen.",
+          "Erweiterung für Schnelle: Das Imperfekt kurz vorstellen (-ba- als Signal) und die drei Tempora in einer Tabelle gegenüberstellen."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "table_fill",
+            "prompt": "Fülle die Tabelle aus: Trage die fehlenden Präsensformen von 'amare' (lieben) ein und übersetze jede Form ins Deutsche.\n\n| Person | Latein | Deutsch |\n|---|---|---|\n| 1. Sg. | amo | |\n| 2. Sg. | | du liebst |\n| 3. Sg. | | |\n| 1. Pl. | amamus | |\n| 2. Pl. | | ihr liebt |\n| 3. Pl. | amant | |",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": ["Person", "Latein", "Deutsch"],
+              "rows": 6
+            },
+            "cognitive_level": "remember",
+            "dimensions": ["SPR"],
+            "serves": [
+              {"competence_id": "LAT.US.3.SPR.04", "relation": "exercises"}
+            ],
+            "est_minutes": 6,
+            "answer_key": "1. Sg.: amo — ich liebe | 2. Sg.: amas — du liebst | 3. Sg.: amat — er/sie/es liebt | 1. Pl.: amamus — wir lieben | 2. Pl.: amatis — ihr liebt | 3. Pl.: amant — sie lieben",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Endung der 1. Sg.: 'amo' (nicht 'amao') — der Stammvokal -a- fällt vor -o- weg (Kontraktion); das ist ein häufiger Fehler.",
+              "2. Pl.: amatis, nicht 'amatis' mit Längenzeichen — Schreibweise einheitlich halten.",
+              "Sicherstellen, dass Schüler:innen 'amat' nicht mit 'amate' (Imperativ Pl.) verwechseln."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "matching",
+            "prompt": "Verbinde die lateinische Verbform mit ihrer deutschen Übersetzung. Achte auch auf das Tempus!\n\nFormen: laudavit · laudat · laudaverunt · laudamus · laudavisti · laudant",
+            "payload": {
+              "kind": "matching",
+              "left": ["laudavit", "laudat", "laudaverunt", "laudamus", "laudavisti", "laudant"],
+              "right": [
+                "er/sie hat gelobt (Perf.)",
+                "er/sie lobt (Präs.)",
+                "sie haben gelobt (Perf.)",
+                "wir loben (Präs.)",
+                "du hast gelobt (Perf.)",
+                "sie loben (Präs.)"
+              ]
+            },
+            "response": {
+              "mode": "table",
+              "columns": ["Lateinische Form", "Deutsche Übersetzung"],
+              "rows": 6
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["SPR"],
+            "serves": [
+              {"competence_id": "LAT.US.3.SPR.04", "relation": "exercises"}
+            ],
+            "est_minutes": 5,
+            "answer_key": "laudavit → er/sie hat gelobt (Perf.) | laudat → er/sie lobt (Präs.) | laudaverunt → sie haben gelobt (Perf.) | laudamus → wir loben (Präs.) | laudavisti → du hast gelobt (Perf.) | laudant → sie loben (Präs.)",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Das -v- als Perfektzeichen hervorheben: laudav- vs. laud-.",
+              "laudaverunt: die lange Endung -erunt ist das sichere Erkennungszeichen der 3. Pl. Perfekt — nicht mit -unt (Präs. 3. Pl.) verwechseln."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "translation",
+            "prompt": "Übersetze die folgenden Sätze ins Deutsche. Gib jeweils an, ob das Verb im Präsens (Präs.) oder Perfekt (Perf.) steht.\n\n1. Puer in horto ludit.\n2. Puella rosam pulchram vidit.\n3. Romani multas terras vicerunt.\n4. Magister discipulos laudat.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 8
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["SPR"],
+            "serves": [
+              {"competence_id": "LAT.US.3.SPR.04", "relation": "exercises"}
+            ],
+            "est_minutes": 8,
+            "answer_key": "1. Der Knabe spielt im Garten. (Präs.) | 2. Das Mädchen sah eine schöne Rose. (Perf.) | 3. Die Römer haben viele Länder besiegt. (Perf.) | 4. Der Lehrer lobt die Schüler. (Präs.)",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "vidit: Perfekt von videre (videre → vidit, nicht 'vidavit') — dies ist ein Perfekt auf -s- (Perfektstamm vid-), kein -v-Perfekt; kurz erklären, dass nicht alle Perfekta -v- enthalten.",
+              "vicerunt: Perfekt von vincere — ebenfalls kein -v-Perfekt; den Stamm vīc- einführen.",
+              "Horto: Ablativ von hortus (im Garten) — zeigt, dass es mehr Kasus gibt als nur Nom. und Akk.; hier genügt 'im Garten' als Übersetzung."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "true_false_justify",
+            "prompt": "Sind die folgenden Aussagen richtig (R) oder falsch (F)? Begründe kurz auf Deutsch.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Die Endung '-erunt' zeigt die 3. Person Plural Perfekt an.",
+                "'Amant' und 'amaverunt' haben dieselbe Bedeutung.",
+                "Das Perfekt auf '-v-' bei der 1. Konjugation heißt: Perfektstamm = Präsensstamm + '-v-'.",
+                "'Videt' ist eine Perfektform."
+              ]
+            },
+            "response": {
+              "mode": "table",
+              "columns": ["Aussage", "R / F", "Begründung"],
+              "rows": 4
+            },
+            "cognitive_level": "analyze",
+            "dimensions": ["SPR"],
+            "serves": [
+              {"competence_id": "LAT.US.3.SPR.04", "relation": "exercises"}
+            ],
+            "est_minutes": 7,
+            "answer_key": "1. R — -erunt ist die Endung der 3. Pl. Perf. Akt. | 2. F — amant (Präs., sie lieben) vs. amaverunt (Perf., sie haben geliebt) — verschiedene Zeitstufen. | 3. R — z.B. laudare: Stamm laud- + -av- = laudav-. | 4. F — videt ist 3. Sg. Präsens (er/sie sieht); das Perfekt wäre vidit.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Aussage 2 zielt auf den häufigen Irrtum ab, Präsens und Perfekt seien austauschbar — im Deutschen gibt es diese Verwischung umgangssprachlich, im Lateinischen ist die Unterscheidung scharf.",
+              "Aussage 4: videt vs. vidit — nur ein Buchstabe Unterschied, aber kategorial verschieden."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "text_analysis",
+            "prompt": "Lies den folgenden kurzen lateinischen Text. Unterstreiche alle Verben und schreibe daneben: Person, Numerus, Tempus und deutsche Bedeutung.\n\n---\nRomulus et Remus Romam condiderunt. Romulus murus urbis aedificavit. Remus murum transsilivit. Romulus fratrem suum necavit. Romani Romulum regem suum amant et laudant.\n---",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 45
+            },
+            "cognitive_level": "analyze",
+            "dimensions": ["SPR"],
+            "serves": [
+              {"competence_id": "LAT.US.3.SPR.04", "relation": "exercises"}
+            ],
+            "est_minutes": 10,
+            "answer_key": "condiderunt: 3. Pl. Perf. — gründeten / haben gegründet | aedificavit: 3. Sg. Perf. — baute / hat gebaut | transsilivit: 3. Sg. Perf. — übersprang / hat übersprungen | necavit: 3. Sg. Perf. — tötete / hat getötet | amant: 3. Pl. Präs. — lieben | laudant: 3. Pl. Präs. — loben",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "condiderunt ist ein Kompositum von condere — Schüler:innen sollen das -erunt als Perfektzeichen erkennen, auch wenn sie das Verb noch nicht kennen.",
+              "transsilivit: unbekanntes Wort — aus dem Kontext erschließen (Romulus baut einen Mauer, Remus überspringt sie). Kontexterschließung explizit loben.",
+              "Der Text ist eine vereinfachte Romulus-und-Remus-Sage — kurzer kultureller Hinweis rundet die Aufgabe ab."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "open_response",
+            "prompt": "Schreibe auf Deutsch: Was passiert in dem Text über Romulus und Remus (Aufgabe 5)? Fasse die Ereignisse in drei bis vier Sätzen zusammen und erkläre, welche Bedeutung diese Geschichte für die Römer hatte.\n\n(Hinweis: Romulus gründete laut Legende Rom im Jahr 753 v. Chr.)",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 40
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": ["SPR", "INH"],
+            "serves": [
+              {"competence_id": "LAT.US.3.SPR.06", "relation": "exercises"}
+            ],
+            "est_minutes": 7,
+            "answer_key": "Romulus und Remus gründeten gemeinsam Rom. Romulus baute die Stadtmauer; Remus übersprang sie (als Zeichen der Missachtung). Daraufhin tötete Romulus seinen Bruder. Die Römer verehrten Romulus als ihren ersten König. — Die Geschichte erklärt den Ursprung Roms und legitimiert Herrschaft durch den Gründungsmythos.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen sollen zwischen Textinhalt und eigener Interpretation unterscheiden.",
+              "Die moralische Dimension (Brudermord) ansprechen — bietet Anknüpfungspunkt für Diskussion über Werte und Macht.",
+              "Nicht zu viel einfordern — einfache, klare deutsche Sätze genügen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Inhaltliche Vollständigkeit",
+                "levels": [
+                  "Alle Hauptereignisse (Gründung, Mauer, Überspringen, Tod) erwähnt.",
+                  "Mindestens drei Ereignisse erwähnt.",
+                  "Nur ein Ereignis oder allgemeine Aussagen ohne Textbezug."
+                ]
+              },
+              {
+                "criterion": "Historischer Kontext",
+                "levels": [
+                  "Bedeutung der Geschichte für die Römer sinnvoll erklärt.",
+                  "Andeutung einer Bedeutung, aber vage.",
+                  "Keine Verbindung zur römischen Kultur hergestellt."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

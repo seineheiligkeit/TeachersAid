@@ -1,0 +1,69 @@
+{
+  "id": "c0003.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Beurteile die folgenden Aussagen über Neutralisation. Kreuze jeweils an, ob die Aussage richtig (R) oder falsch (F) ist, und begründe deine Entscheidung in einem Satz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Bei einer Neutralisation reagiert eine Säure mit einer Base zu Wasser und einem Salz.",
+        "Nach einer vollständigen Neutralisation ist die Lösung immer exakt pH 7.",
+        "Wenn man Magensäure mit Natriumhydrogencarbonat (Backpulver) behandelt, findet eine Neutralisationsreaktion statt.",
+        "Neutralisation ist nur in der Industrie relevant; im menschlichen Körper spielt sie keine Rolle."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "apply",
+    "dimensions": [
+      "W",
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.US.x.STA.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "1. RICHTIG. Allgemeine Reaktionsgleichung: Säure + Base → Salz + Wasser (z. B. HCl + NaOH → NaCl + H₂O). 2. FALSCH. pH 7 gilt nur bei der Neutralisation einer starken Säure mit einer starken Base in stöchiometrischen Mengen. Bei schwachen Säuren oder Basen kann der Gleichgewichts-pH davon abweichen. 3. RICHTIG. HCl (Magensäure) + NaHCO₃ → NaCl + H₂O + CO₂; das CO₂ ist das Gas, das beim Aufstoßen entsteht. 4. FALSCH. Im menschlichen Körper spielt Neutralisation eine zentrale Rolle: Puffersysteme im Blut (u. a. HCO₃⁻/H₂CO₃) halten den pH zwischen 7,35 und 7,45 stabil.",
+    "acceptable_reasoning": "Bei Aussage 2 ist eine vereinfachtere Antwort ('nur bei gleichen Stärken') akzeptabel. Der Kern (nicht immer pH 7) muss erkannt sein.",
+    "rubric": [],
+    "watch_outs": [
+      "Aussage 2 ist eine sehr verbreitete Fehlvorstellung: 'Neutralisation → pH 7'. Unbedingt besprechen. Die exakte Begründung (starke vs. schwache Säure/Base) ist für die 4. Klasse Bonuswissen; das Prinzip ('nicht immer pH 7') ist Pflicht.",
+      "Sicherheitshinweis: Magensäure ist ätzend. Falls das Experiment demonstriert wird, Schutzbrille tragen; keine unverdünnten Säuren im Unterricht ohne Lüftung und Sicherheitsunterweisung.",
+      "Bei Aussage 3: CO₂-Entwicklung als Erkennungsmerkmal der Reaktion hervorheben — Schüler:innen kennen das Phänomen (Aufstoßen), aber nicht die Chemie dahinter."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Chemie",
+  "klasse": 4,
+  "kompetenzbereich": "Standpunkte begründen, Entscheidungen treffen und reflektiert handeln (S)",
+  "competences": [
+    "CHE.US.x.STA.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "W",
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0003",
+  "source": "ai",
+  "created_at": "2026-06-25T11:35:34+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

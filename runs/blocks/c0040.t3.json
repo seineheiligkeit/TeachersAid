@@ -1,0 +1,80 @@
+{
+  "id": "c0040.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Deine Lehrkraft beschreibt zwei Instrumente mit ihren Klangmerkmalen. Notiere für jedes Instrument: (a) seinen Namen, (b) in welche Instrumentenfamilie es gehört und (c) ein Wort, das seinen Klang gut beschreibt (z. B. hell, dunkel, weich, scharf, voll, dünn).\n\nInstrument 1: „Es hat vier Saiten, die mit einem Bogen gestrichen werden; es klingt voll und warm und wird im Orchester sehr häufig eingesetzt.“\nInstrument 2: „Es besteht aus mehreren in einer Reihe angeordneten Metallplatten, die geschlagen werden; der Klang ist hell, metallisch und klingt lange nach.“",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "HOR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MUS.US.2.HOR.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Instrument 1: Violine / Geige (auch Viola/Cello akzeptabel wenn Begründung passt) – Streichinstrument – z. B. warm, voll, singend. Instrument 2: Metallofon (oder Glockenspiel) – Schlaginstrument (Idiophon) – hell, metallisch, klingend.",
+    "acceptable_reasoning": "Cello ist ebenfalls korrekt für Instrument 1 (vier Saiten, Bogen, warmer Klang); Vibraphone für Instrument 2 ebenfalls akzeptabel.",
+    "rubric": [
+      {
+        "criterion": "Instrumentenname",
+        "levels": [
+          "nicht erkannt",
+          "mit Begründung korrekt erkannt"
+        ]
+      },
+      {
+        "criterion": "Instrumentenfamilie",
+        "levels": [
+          "falsch oder fehlend",
+          "korrekte Familie benannt"
+        ]
+      },
+      {
+        "criterion": "Klangbeschreibung",
+        "levels": [
+          "kein passendes Adjektiv",
+          "treffendes Klangadjektiv verwendet"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Klangbeschreibung sollte ein Adjektiv sein, kein Verb – Lehrkraft kann Beispiele geben.",
+      "Metallofon und Xylofon werden verwechselt: Metallofon hat Metallplatten, Xylofon Holzstäbe."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Musik",
+  "klasse": 2,
+  "kompetenzbereich": "Hören und Erfassen",
+  "competences": [
+    "MUS.US.2.HOR.04"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "HOR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0040",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

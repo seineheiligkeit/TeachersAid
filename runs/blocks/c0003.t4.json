@@ -1,0 +1,86 @@
+{
+  "id": "c0003.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Ein Wissenschaftsmagazin berichtet: «Saurer Regen hat in manchen Regionen Deutschlands einen pH-Wert von 4,2. Normaler Regen hat pH 5,6.» Analysiere diese Aussage: (a) Um wie viel unterscheiden sich die beiden pH-Werte auf der pH-Skala? Was bedeutet das für die tatsächliche Konzentration der Säure? (b) Welche Auswirkungen könnte saurer Regen auf Kalkstein-Gebäude haben? Erkläre chemisch, was passiert (Hinweis: Kalkstein besteht aus Calciumcarbonat CaCO₃, das mit Säuren reagiert). (c) Ist die Aussage des Magazins aus naturwissenschaftlicher Sicht vollständig? Was fehlt möglicherweise?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "E",
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.US.x.ERK.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 15,
+    "answer_key": "(a) Der Unterschied beträgt 1,4 pH-Einheiten. Da die pH-Skala logarithmisch ist, bedeutet das, dass saurer Regen (pH 4,2) etwa 25-mal mehr Wasserstoffionen enthält als normaler Regen (pH 5,6). (b) Kalkstein reagiert mit Säuren: CaCO₃ + 2H⁺ → Ca²⁺ + H₂O + CO₂. Der Kalkstein wird aufgelöst (korrodiert), was zu Verwitterung von Gebäudefassaden, Denkmälern und Skulpturen führt. (c) Die Aussage ist unvollständig: Es fehlen Angaben über die Ursache des sauren Regens (SO₂, NOₓ aus Verbrennung), geografische Variabilität, Häufigkeit der Ereignisse und mögliche Folgen für Ökosysteme (Versauerung von Böden und Gewässern).",
+    "acceptable_reasoning": "Bei (a) ist eine näherungsweise Angabe ('etwa 25-fach' oder 'rund 20-fach') akzeptabel; die logarithmische Erklärung muss erkennbar sein. Bei (c) genügt das Nennen von 2 fehlenden Aspekten.",
+    "rubric": [
+      {
+        "criterion": "Logarithmische Skala (a)",
+        "levels": [
+          "vollständig: Logarithmische Natur erklärt, ungefähre Konzentrationsdifferenz korrekt (10- bis 30-fach akzeptiert).",
+          "teilweise: Differenz 1,4 benannt, aber keine Erklärung der logarithmischen Skala.",
+          "unzureichend: Nur lineare Differenz berechnet."
+        ]
+      },
+      {
+        "criterion": "Chemische Reaktion (b)",
+        "levels": [
+          "vollständig: Reaktion von CaCO₃ mit Säure beschrieben, Auflösung des Kalksteins erklärt.",
+          "teilweise: Kalkstein wird angegriffen, aber keine chemische Erklärung.",
+          "unzureichend: Nur allgemeine Aussage ohne chemischen Bezug."
+        ]
+      },
+      {
+        "criterion": "Kritische Bewertung der Quelle (c)",
+        "levels": [
+          "vollständig: Mindestens 2 sachlich korrekte fehlende Aspekte genannt.",
+          "teilweise: 1 fehlender Aspekt genannt.",
+          "unzureichend: Keine sinnvolle kritische Einschätzung."
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen addieren oft einfach die Differenz: 'pH 5,6 − 4,2 = 1,4, also 1,4-mal saurer' — das ist falsch. Die logarithmische Natur der pH-Skala muss thematisiert werden.",
+      "Die Gleichung für die Reaktion von CaCO₃ mit Säure muss nicht vollständig ausgeglichen sein; chemisches Verständnis zählt mehr als formale Korrektheit.",
+      "Teil (c) hat kein eindeutig richtiges Ergebnis — bewerten nach Vollständigkeit und Plausibilität der genannten Lücken."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Chemie",
+  "klasse": 4,
+  "kompetenzbereich": "Erkenntnisse gewinnen und interpretieren (E)",
+  "competences": [
+    "CHE.US.x.ERK.03"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "E",
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0003",
+  "source": "ai",
+  "created_at": "2026-06-25T11:35:34+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

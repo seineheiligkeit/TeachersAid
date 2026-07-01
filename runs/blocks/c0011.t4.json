@@ -1,0 +1,75 @@
+{
+  "id": "c0011.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "multiple_choice",
+    "prompt": "Welche der folgenden Aussagen ist ein **echtes Argument** für die These „Schüler:innen sollten mehr Mitspracherecht bei Schulregeln haben“?",
+    "payload": {
+      "kind": "multiple_choice",
+      "options": [
+        "„Viele Schüler:innen finden die aktuellen Regeln ungerecht.“",
+        "„Wenn Schüler:innen Regeln mitgestalten, halten sie sich eher daran, weil sie sich damit identifizieren.“",
+        "„Auch in anderen Ländern gibt es Schülervertretungen.“",
+        "„Das wäre mal etwas Neues.“"
+      ],
+      "select": "one"
+    },
+    "response": {
+      "mode": "choices",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "select": "one"
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "SCH",
+      "SPR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DEU.US.2.SCH.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "B. Nur Option B enthält eine echte Begründung (Kausalstruktur: wenn … dann … weil …). A ist eine Gefühlsäußerung, C ein Vergleich ohne Erklärung, D eine Leerformel.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Option A klingt überzeugend, weil sie emotional nachvollziehbar ist – aber sie erklärt nicht, *warum* Mitsprache helfen würde.",
+      "Option C ('auch in anderen Ländern') ist ein häufig genutztes, aber schwaches Argument (Analogieschluss ohne inhaltliche Begründung)."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "multiple_choice",
+  "subject": "Deutsch",
+  "klasse": 2,
+  "kompetenzbereich": "Schreiben",
+  "competences": [
+    "DEU.US.2.SCH.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "SCH",
+    "SPR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0011",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

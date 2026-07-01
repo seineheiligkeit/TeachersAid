@@ -1,0 +1,84 @@
+{
+  "id": "c0147.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "formel3"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Berechne den Gesamtenergiebedarf (Leistungsumsatz) für Person A und Person B, wenn:\n- Person A einen Bürojob hat und kaum Sport treibt (PAL 1,4)\n- Person B täglich 1,5 Stunden intensiv Sport treibt und sonst mäßig aktiv ist (PAL 1,75)\n\nVerwende die Ergebnisse aus Aufgabe 1.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "EV",
+      "NE"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "HOE.OS.6.EIG.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "Person A: 1 482 × 1,4 = 2 074,8 ≈ 2 075 kcal/Tag.\nPerson B: 1 892 × 1,75 = 3 311 kcal/Tag.",
+    "acceptable_reasoning": "Multiplikation des jeweiligen Grundumsatzes mit dem angegebenen PAL-Faktor.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen verwechseln manchmal Grundumsatz und Gesamtenergiebedarf im Text.",
+      "PAL-Faktoren sind Näherungswerte; Abweichungen durch Zwischenwerte können diskutiert werden."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Haushaltsökonomie und Ernährung",
+  "klasse": 6,
+  "kompetenzbereich": "Das eigene Essverhalten erkennen, reflektieren und bewerten sowie Zusammenhänge zwischen Ernährungsgewohnheiten, Kulturen, Gesundheit und Wohlbefinden verstehen",
+  "competences": [
+    "HOE.OS.6.EIG.03"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "EV",
+    "NE"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "formel3",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:math_formula",
+      "spec": {
+        "latex": "\\text{Gesamtenergiebedarf} = \\text{Grundumsatz} \\times \\text{PAL-Faktor}"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0147",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:24+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

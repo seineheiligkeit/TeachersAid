@@ -1,0 +1,177 @@
+{
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Projektionen und Risse",
+  "title": "Zentral- und Parallelprojektion",
+  "kernfrage": "Wie entstehen verschiedene Projektionen — und welche wähle ich wann und warum?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Projektionsarten und ihre Eigenschaften",
+        "throughline": "Schüler:innen unterscheiden Zentralprojektion (Perspektive, realitätsnah) und Parallelprojektion (maßstabsgetreu, technisch) als zwei grundlegend verschiedene Abbildungsprinzipien. Das Verstehen des Projektionsprinzips (Strahlenbündel vs. parallele Strahlen) ist das tragende Konzept; darauf aufbauend folgt die Einteilung in Untertypen (Frontal-, Horizontalriss, allgemeiner Parallelriss, Zentralriss).",
+        "talking_points": [
+          "Warum sehen Eisenbahnschienen perspektivisch zusammen, obwohl sie parallel sind — und was hat das mit Zentralprojektion zu tun?",
+          "Warum verwenden Techniker Parallelprojektion statt Perspektive?",
+          "Was ist der Unterschied zwischen einem Frontalriss und einem allgemeinen Parallelriss?"
+        ],
+        "extensions": [
+          "Zwei-Fluchtpunkt-Perspektive als Erweiterung für Interessierte: Was ändert sich, wenn das Objekt schräg zum Betrachter steht?",
+          "Verbindung zur Fotografie: Wie simuliert eine Kamera die Zentralprojektion (Lochkamera)?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "matching",
+            "prompt": "Ordne die Projektionstätigkeiten der richtigen Projektionsart zu.\n\nProjektionsarten: (A) Parallelprojektion, (B) Zentralprojektion\n\nEigenschaften:\n1. Projektionsstrahlen sind parallel zueinander.\n2. Alle Projektionsstrahlen treffen sich in einem einzigen Punkt (Projektionszentrum/Augpunkt).\n3. Parallele Linien im Objekt bleiben parallel im Bild.\n4. Parallele Linien im Objekt laufen auf einen Fluchtpunkt zu.\n5. Maßstabsgetreue Darstellung ist möglich.\n6. Gibt einen natürlichen, räumlichen Eindruck — wie wir die Welt sehen.",
+            "payload": {
+              "kind": "matching",
+              "left": ["(A) Parallelprojektion", "(B) Zentralprojektion"],
+              "right": [
+                "1. Projektionsstrahlen parallel",
+                "2. Strahlen treffen sich in Projektionszentrum",
+                "3. Parallele Linien bleiben parallel",
+                "4. Parallele Linien laufen auf Fluchtpunkt zu",
+                "5. Maßstabsgetreue Darstellung möglich",
+                "6. Natürlicher räumlicher Eindruck"
+              ]
+            },
+            "response": {"mode": "lines", "n": 6},
+            "cognitive_level": "remember",
+            "dimensions": ["H1"],
+            "serves": [{"competence_id": "GEZ.US.4.PRO.01", "relation": "exercises"}],
+            "est_minutes": 6,
+            "answer_key": "A (Parallelprojektion): 1, 3, 5. B (Zentralprojektion): 2, 4, 6.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen glauben manchmal, Parallelprojektion und Zentralprojektion seien nur verschiedene Stile, kein struktureller Unterschied — das Prinzip der Strahlen klar machen.",
+              "Eigenschaft 6 (natürlicher Eindruck) ist die entscheidende Motivation für die Zentralprojektion — z. B. beim Illustrieren, Planen von Räumen, Architekturvisualisierung."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "multiple_choice",
+            "prompt": "Ein Ingenieur will eine technische Zeichnung für die Fertigung eines Bauteils erstellen. Die Zeichnung muss maßstabsgetreu sein und parallele Kanten des Bauteils müssen im Bild parallel erscheinen.\n\nWelche Projektion ist für diesen Zweck geeignet?",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "Zentralprojektion mit einem Fluchtpunkt",
+                "Zentralprojektion mit zwei Fluchtpunkten",
+                "Parallelprojektion (z. B. Orthogonalprojektion oder Kavalierperspektive)",
+                "Jede Projektion ist gleich gut geeignet, da alle maßstabsgetreu sind."
+              ],
+              "select": "one"
+            },
+            "response": {"mode": "choices", "options": ["A", "B", "C", "D"], "select": "one"},
+            "cognitive_level": "understand",
+            "dimensions": ["H1"],
+            "serves": [{"competence_id": "GEZ.US.4.PRO.01", "relation": "exercises"}],
+            "est_minutes": 5,
+            "answer_key": "C — Parallelprojektion. Bei Zentralprojektion laufen parallele Linien auf Fluchtpunkte zu (sie sind nicht mehr parallel im Bild) und Maßverhältnisse sind perspektivisch verzerrt. Nur die Parallelprojektion erhält parallele Kanten und erlaubt maßstabsgetreue Darstellung.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Option D ist eine verlockende Falle — explizit herausarbeiten, dass Zentralprojektion nicht maßstabsgetreu ist.",
+              "Der Begriff „Orthogonalprojektion" als Spezialfall der Parallelprojektion (senkrechte Projektion) kann kurz erklärt werden."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "table_fill",
+            "prompt": "Fülle die Vergleichstabelle der Projektionsarten aus. Trage jeweils „ja" oder „nein" bzw. den gefragten Begriff ein.\n\nSpalten: Projektion | Parallele Strahlen? | Parallele Kanten bleiben parallel? | Fluchtpunkte vorhanden? | Maßstabsgetreu? | Typischer Einsatz",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": ["Projektion", "Parallele Strahlen?", "Parallele Kanten bleiben parallel?", "Fluchtpunkte?", "Maßstabsgetreu?", "Typischer Einsatz"],
+              "rows": 4
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["H1", "H3"],
+            "serves": [{"competence_id": "GEZ.US.4.PRO.01", "relation": "exercises"}],
+            "est_minutes": 9,
+            "answer_key": "Orthogonalriss (Normalprojektion): ja / ja / nein / ja / Technische Zeichnung. Kavalierperspektive: ja / ja (in Frontfläche) / nein / teilweise (Frontfläche ja, Tiefe halbe Länge) / Schrägbild, Lehrbücher. Ein-Fluchtpunkt-Perspektive (Zentralriss): nein / nur Tiefenlinien / ja (1) / nein / Architekturskizzen, Kunst. Zwei-Fluchtpunkt-Perspektive: nein / nein / ja (2) / nein / Architekturvisualisierung, Design.",
+            "acceptable_reasoning": "Schüler:innen, die bei „Maßstabsgetreu?" bei der Kavalierperspektive „nein" schreiben und dies mit der Tiefenverkürzung begründen, erhalten vollen Punkt.",
+            "watch_outs": [
+              "Die Unterscheidung „Normalprojektion" vs. „Kavalierperspektive" liegt darin, wie die Tiefenkanten behandelt werden — das ist ein häufiger Verwirrungspunkt.",
+              "Zwei-Fluchtpunkt-Perspektive ist kein Pflichtstoff, aber taucht in der Tabelle als Erweiterung auf — nach Bedarf weglassen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "construction",
+            "prompt": "Zeichne den Frontalriss (Normalprojektion von vorne) und den Horizontalriss (Normalprojektion von oben) eines geraden Dreiecksprismas mit folgenden Maßen:\n- Grundfläche: gleichseitiges Dreieck mit Seitenlänge 4 cm\n- Höhe des Prismas: 6 cm\n- Das Prisma steht aufrecht, eine Dreieckskante zeigt nach vorne\n\nZeichne sichtbare Kanten als Volllinien, verdeckte Kanten als Strichlinien. Gib die Maße an.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 100},
+            "cognitive_level": "apply",
+            "dimensions": ["H2"],
+            "serves": [{"competence_id": "GEZ.US.4.PRO.02", "relation": "exercises"}],
+            "est_minutes": 14,
+            "answer_key": "Frontalriss: Rechteck der Breite 4 cm (Vorderkante des Dreiecks) und Höhe 6 cm; die hinteren zwei Kanten des Dreiecks erscheinen als eine senkrechte gestrichelte Mittellinie. Horizontalriss: gleichseitiges Dreieck mit Seitenlänge 4 cm (Grundfläche); die Deckfläche ist nicht sichtbar, da deckungsgleich. Maße eingetragen.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Im Frontalriss erscheinen die hinteren beiden Längskanten als eine einzige Linie (sie projizieren übereinander) — das überrascht Schüler:innen.",
+              "Die gestrichelte Mittellinie im Frontalriss (verdeckte hintere Kante) wird oft vergessen."
+            ],
+            "rubric": [
+              {"criterion": "Frontalriss", "levels": ["Falsch oder fehlend", "Form korrekt, aber verdeckte Kante fehlt", "Vollständig korrekt mit Strichlinie"]},
+              {"criterion": "Horizontalriss", "levels": ["Falsch oder fehlend", "Dreieck korrekt, aber Maße fehlen", "Vollständig korrekt mit Maßen"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "decision_scenario",
+            "prompt": "Du sollst für drei verschiedene Situationen die geeignete Projektion wählen:\n(a) Eine Skizze eines Schlafzimmers, die einer Kundin helfen soll, sich den Raum räumlich vorzustellen.\n(b) Eine technische Zeichnung eines Türrahmens für den Schreiner, der ihn exakt bauen soll.\n(c) Eine Darstellung eines Turms für eine Schülerzeitung, die ansprechend und leicht lesbar sein soll.\n\nNenne für jede Situation die geeignete Projektion und begründe kurz.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Wähle jeweils die passende Projektion und begründe geometrisch."
+            },
+            "response": {"mode": "box", "min_height_mm": 55},
+            "cognitive_level": "evaluate",
+            "dimensions": ["H1"],
+            "serves": [{"competence_id": "GEZ.US.4.PRO.01", "relation": "exercises"}],
+            "est_minutes": 9,
+            "answer_key": "(a) Zentralprojektion (1- oder 2-Fluchtpunkt-Perspektive) — gibt den natürlichsten räumlichen Eindruck, wie man den Raum beim Betreten wahrnehmen würde. (b) Parallelprojektion (Orthogonalriss / drei Normalrisse) — maßstabsgetreu, alle Maße direkt ablesbar, Norm-konform. (c) Parallelprojektion (Kavalierperspektive oder Isometrie) — gibt einen guten räumlichen Eindruck, ist leicht zu zeichnen und wirkt klar — Zentralprojektion für eine einfache Illustration unnötig komplex.",
+            "acceptable_reasoning": "Für (c) ist auch Zentralprojektion akzeptabel, wenn gut begründet (z. B. „weil dramatischer").",
+            "watch_outs": [
+              "Situation (b) ist die eindeutigste — hier gibt es keine Diskussion.",
+              "Situation (c) ist bewusst offen gehalten — verschiedene begründete Antworten gelten."
+            ],
+            "rubric": [
+              {"criterion": "Korrekte Wahl und Begründung (je Situation)", "levels": ["Falsche Wahl", "Richtige Wahl ohne Begründung", "Richtige Wahl mit geometrischer Begründung"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "open_response",
+            "prompt": "Gegeben sind die drei Normalrisse (Frontalriss, Horizontalriss, Kreuzriss/Seitenriss) eines Körpers:\n- Frontalriss: T-förmige Fläche (Breite 6 cm, Gesamthöhe 5 cm; der Querbalken ist 6 cm × 2 cm, der senkrechte Balken ist 2 cm × 3 cm, zentriert)\n- Horizontalriss: Rechteck 6 cm × 4 cm\n- Kreuzriss: L-förmige Fläche (4 cm × 5 cm mit einem 2 cm × 3 cm Rechteck herausgenommen aus der oberen Hälfte)\n\nWelchen räumlichen Körper beschreiben diese Risse? Erkläre, wie du auf den Körper geschlossen hast.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 65},
+            "cognitive_level": "analyze",
+            "dimensions": ["H3"],
+            "serves": [{"competence_id": "GEZ.US.4.PRO.03", "relation": "exercises"}],
+            "est_minutes": 12,
+            "answer_key": "Der Körper ist ein großer Quader (6 cm × 4 cm × 2 cm als Sockel) mit einem schmaleren Quader (2 cm × 4 cm × 3 cm) in der Mitte oben aufgesetzt — eine Art „Sockelprofil" oder T-Träger. Frontalriss zeigt die T-Form (Sockelbreite + Steg), Horizontalriss zeigt die volle Grundfläche des Sockels, Kreuzriss zeigt von der Seite das L- bzw. Stufenprofil. Lösungsweg: Höheninformationen aus Frontal- und Kreuzriss kombinieren; Tiefe aus Horizontalriss.",
+            "acceptable_reasoning": "Schüler:innen, die den Körper als Kombination zweier Quader korrekt beschreiben, erhalten vollen Punkt — präzise Benennung ist Bonus.",
+            "watch_outs": [
+              "Diese Aufgabe ist anspruchsvoll (inverses Rissdeuten mit nicht-trivialem Körper) — als abschließende Herausforderungsaufgabe planen.",
+              "Systematisches Vorgehen besprechen: zuerst Höhe aus Frontalriss, Tiefe aus Horizontalriss, Breite aus Kreuzriss; dann zusammensetzen."
+            ],
+            "rubric": [
+              {"criterion": "Körperidentifikation", "levels": ["Falsch oder Grundform falsch", "Grundstruktur erkannt, Details unvollständig", "Vollständig korrekt als Kombination zweier Quader"]},
+              {"criterion": "Lösungsweg", "levels": ["Kein Weg angegeben", "Teilweise erklärt", "Systematisch und vollständig erklärt (welcher Riss liefert welche Information)"]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

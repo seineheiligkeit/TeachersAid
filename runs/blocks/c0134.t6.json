@@ -1,0 +1,100 @@
+{
+  "id": "c0134.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Eine Ernährungsberaterin empfiehlt: „Kaufe nur Produkte ohne E-Nummern – je kürzer die Zutatenliste, desto gesünder.“ Deine Freundin hingegen sagt: „E-Nummern sind streng geprüft, das ist mir egal.“ Beziehe Stellung zu beiden Positionen. Welche Empfehlung würdest du auf Basis chemischen Wissens geben? Berücksichtige dabei sowohl Nutzen als auch mögliche Risiken von Lebensmittelzusatzstoffen.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Zwei extreme Positionen zu E-Nummern: blindes Ablehnen vs. blindes Vertrauen – welche Position ist chemisch fundiert, und was wäre eine differenzierte Haltung?"
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "KZ"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.OS.8.CHE.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "CHE.OS.8.CHE.03",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "CHE.OS.x.KON.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Beide Positionen sind vereinfacht: (1) 'Keine E-Nummern = gesünder' ist nicht chemisch begründet – E300 (Vitamin C) hat eine E-Nummer, ist aber essentiell; viele 'natürliche' Zutaten ohne E-Nummern können problematisch sein. (2) 'Alles geprüft, mir egal' ignoriert individuelle Unverträglichkeiten (z. B. Tartrazin E102 und Hyperaktivität bei manchen Kindern) und den Unterschied zwischen ADI als Bevölkerungsdurchschnittswert und individuellem Bedarf. Differenzierte Empfehlung: Zusatzstoffe nach Funktion und persönlicher Relevanz beurteilen, nicht pauschal ablehnen oder ignorieren. Bei bekannten Unverträglichkeiten Zutaten aktiv lesen; ansonsten gelten zugelassene E-Stoffe als sicher für die Allgemeinbevölkerung.",
+    "acceptable_reasoning": "Schüler:innen, die den Begriff 'kritischer Verbraucherschutz' einführen und zwischen 'populationssicherer Dosis' und 'individuellen Variationen' unterscheiden, zeigen hohe Kompetenz.",
+    "rubric": [
+      {
+        "criterion": "Kritische Auseinandersetzung mit Position 1 (keine E-Nummern = besser)",
+        "levels": [
+          "Konkrete chemische Gegenargumente mit Beispiel",
+          "Ablehnung der Position ohne chemisches Argument",
+          "Position unkritisch übernommen"
+        ]
+      },
+      {
+        "criterion": "Kritische Auseinandersetzung mit Position 2 (alles geprüft, egal)",
+        "levels": [
+          "Individuelle Variabilität und/oder Unverträglichkeiten als Einschränkung genannt",
+          "Einschränkung angedeutet, nicht begründet",
+          "Position unkritisch übernommen"
+        ]
+      },
+      {
+        "criterion": "Differenzierte eigene Empfehlung",
+        "levels": [
+          "Nuancierte, chemisch begründete Empfehlung formuliert",
+          "Empfehlung vorhanden, wenig begründet",
+          "Keine eigene Position"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen neigen dazu, eine der beiden Extrempositionen zu übernehmen, ohne sie zu hinterfragen – das Ziel ist explizit eine differenzierte Antwort.",
+      "Tartrazin (E102): Die Assoziation mit Hyperaktivität ist wissenschaftlich kontrovers und gilt nur für bestimmte Farbstoffmischungen bei empfindlichen Kindern – nicht pauschal als Beweis für Gefährlichkeit aller E-Stoffe verwenden."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Chemie",
+  "klasse": 8,
+  "kompetenzbereich": "Chemische Grundlagen des Lebens",
+  "competences": [
+    "CHE.OS.8.CHE.02",
+    "CHE.OS.8.CHE.03",
+    "CHE.OS.x.KON.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "KZ"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0134",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:20+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

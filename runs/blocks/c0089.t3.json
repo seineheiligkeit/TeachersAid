@@ -1,0 +1,72 @@
+{
+  "id": "c0089.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "ordering",
+    "prompt": "Ordne die folgenden Maßstabsebenen von der kleinsten (lokalsten) zur größten (globalsten) Ebene:",
+    "payload": {
+      "kind": "ordering",
+      "items": [
+        "Kontinent",
+        "Gemeinde",
+        "Bezirk",
+        "Bundesland",
+        "Staat",
+        "Welt"
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 2
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "OK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.1.LEB2.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 4,
+    "answer_key": "Gemeinde → Bezirk → Bundesland → Staat → Kontinent → Welt",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Einige Schüler:innen kennen 'Bezirk' als Verwaltungseinheit möglicherweise noch nicht gut — kurze Erklärung ist sinnvoll.",
+      "In manchen Bundesländern (z. B. Wien) ist Bezirk eine Stadtbezirk-Einheit, kein Bezirk im Sinne der politischen Bezirke — das kann die Reihenfolge verschleiern; hier flexibel bleiben."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "ordering",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 1,
+  "kompetenzbereich": "Leben und Wirtschaften in der Welt",
+  "competences": [
+    "GWB.US.1.LEB2.02"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "OK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0089",
+  "source": "ai",
+  "created_at": "2026-06-26T19:02:20+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

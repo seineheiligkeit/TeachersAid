@@ -1,0 +1,129 @@
+{
+  "id": "c0112.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Die Schweiz hat das höchste BIP pro Kopf aller acht Länder (~104 000 USD), aber nur 3,7 t CO₂ pro Kopf — den niedrigsten Wert unter den reichen Ländern. Wie erklärst du dir diesen Widerspruch? Was könnte die Schweiz richtig machen?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 30.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.4.MEN.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Mögliche Erklärungen: (1) Die Schweiz bezieht einen Großteil des Stroms aus Wasserkraft (CO₂-arm). (2) Die Wirtschaft ist stark auf Dienstleistungen (Banken, Versicherungen, Pharma) ausgerichtet, nicht auf Schwerindustrie. (3) Effizienter ÖPNV reduziert Individualverkehr. Wichtiger Vorbehalt: Die Schweiz importiert viele Waren, deren Emissionen bei der Produktion im Ausland anfallen — der 'graue CO₂-Fußabdruck' ist höher als die offiziellen Zahlen zeigen.",
+    "acceptable_reasoning": "Zwei plausible Erklärungen mit dem Hinweis auf den Vorbehalt (importierte Emissionen) sind ideal, aber der Vorbehalt ist Bonus.",
+    "rubric": [
+      {
+        "criterion": "Erklärung Schweiz plausibel",
+        "levels": [
+          "Zwei oder mehr Gründe",
+          "Einer",
+          "Keiner"
+        ]
+      },
+      {
+        "criterion": "Vorbehalt graue Emissionen erwähnt",
+        "levels": [
+          "Ja",
+          "Nein"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Die offiziellen CO₂-Zahlen zählen nur Emissionen, die im Land entstehen (territoriales Prinzip) — importierte Waren werden nicht berücksichtigt. Das ist ein systematischer blinder Fleck.",
+      "Dienstleistungswirtschaft als 'sauber' zu bezeichnen ist eine Vereinfachung — digitale Infrastruktur, Rechenzentren usw. verbrauchen viel Energie."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 4,
+  "kompetenzbereich": "Mensch und Natursysteme",
+  "competences": [
+    "GWB.US.4.MEN.03"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "title": "CO₂-Ausstoß pro Kopf im Ländervergleich (in t CO₂/Kopf)",
+        "xlabel": "Land",
+        "ylabel": "CO₂-Ausstoß pro Kopf (t/Kopf)",
+        "log": false,
+        "categories": [
+          "Österreich",
+          "Deutschland",
+          "Schweiz",
+          "Italien",
+          "USA",
+          "China",
+          "Indien",
+          "Nigeria"
+        ],
+        "values": [
+          6.3,
+          6.9,
+          3.7,
+          5.1,
+          13.6,
+          9.3,
+          2.2,
+          0.6
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "worldbank_co2_pro_kopf",
+        "series": "vergleich",
+        "note": null,
+        "title": "CO₂-Ausstoß pro Kopf im Ländervergleich",
+        "url": "https://data.worldbank.org/indicator/EN.GHG.CO2.PC.CE.AR5",
+        "attribution": "Datenquelle: World Bank – data.worldbank.org (EN.GHG.CO2.PC.CE.AR5, CC BY 4.0)",
+        "stand": "2024"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0112",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:30+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

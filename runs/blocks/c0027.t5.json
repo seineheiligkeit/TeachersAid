@@ -1,0 +1,68 @@
+{
+  "id": "c0027.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "ordering",
+    "prompt": "Bringe die folgenden historischen Ereignisse in die richtige zeitliche Reihenfolge. Schreibe die Buchstaben in der richtigen Reihenfolge auf.",
+    "payload": {
+      "kind": "ordering",
+      "items": [
+        "A) Nürnberger Rassengesetze werden in NS-Deutschland verabschiedet (1935)",
+        "B) 'Anschluss' Österreichs an das Deutsche Reich (März 1938)",
+        "C) Novemberpogrom ('Reichskristallnacht') — auch in Österreich (November 1938)",
+        "D) Beginn des Zweiten Weltkriegs (September 1939)",
+        "E) Befreiung des Konzentrationslagers Mauthausen durch US-Truppen (Mai 1945)",
+        "F) Unterzeichnung des Österreichischen Staatsvertrags (Mai 1955)"
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 1
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "HSA"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GPB.US.4.ALL.07",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "Richtige Reihenfolge: A → B → C → D → E → F. Zeitlinie: 1935, 1938 (März), 1938 (November), 1939, 1945, 1955.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Manche Schüler:innen verwechseln B und C (Anschluss vor Novemberpogrom — beide 1938, aber Anschluss im März, Pogrom im November).",
+      "Staatsvertrag 1955 oft mit Kriegsende 1945 verwechselt — auf den Unterschied hinweisen: Österreich war nach Kriegsende besetzt, der Staatsvertrag beendete die Besatzung."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "ordering",
+  "subject": "Geschichte und politische Bildung",
+  "klasse": 4,
+  "kompetenzbereich": null,
+  "competences": [
+    "GPB.US.4.ALL.07"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "HSA"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0027",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

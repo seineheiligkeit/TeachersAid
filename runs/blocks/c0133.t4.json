@@ -1,0 +1,102 @@
+{
+  "id": "c0133.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Betrachte die Reaktion in Abb. 2: Zink reagiert mit Kupfer(II)-Ionen. Bestimme die Oxidationszahlen aller beteiligten Elemente vor und nach der Reaktion. Erstelle anschließend zwei Halbgleichungen (eine für die Oxidation, eine für die Reduktion) und bezeichne jeweils, was als Elektronendonator und was als Elektronenakzeptor wirkt.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 8
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "WO",
+      "EG"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.OS.7.UBE.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Oxidationszahlen: Zn (0 → +2), Cu²⁺ (+2 → 0). Oxidation (Elektronendonator Zn): Zn → Zn²⁺ + 2 e⁻. Reduktion (Elektronenakzeptor Cu²⁺): Cu²⁺ + 2 e⁻ → Cu. Zink ist das Reduktionsmittel (Elektronendonator), Cu²⁺ ist das Oxidationsmittel (Elektronenakzeptor).",
+    "acceptable_reasoning": "Schüler:innen können 'Donator/Akzeptor' auch mit 'Reduktionsmittel/Oxidationsmittel' gleichsetzen – das zeigt tieferes Verständnis.",
+    "rubric": [
+      {
+        "criterion": "Korrekte Oxidationszahlen",
+        "levels": [
+          "Alle vier Oxidationszahlen korrekt",
+          "Mindestens zwei korrekt",
+          "Keine korrekte Oxidationszahl"
+        ]
+      },
+      {
+        "criterion": "Korrekte Halbgleichungen",
+        "levels": [
+          "Beide Halbgleichungen mit Elektronenübertragung korrekt",
+          "Eine Halbgleichung korrekt",
+          "Keine korrekte Halbgleichung"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Häufiger Fehler: Oxidation und Reduktion verwechseln. Merkregel: OIL RIG – Oxidation Is Loss (of electrons), Reduction Is Gain.",
+      "Oxidationszahl 0 für elementares Metall wird oft vergessen – Schüler:innen schreiben manchmal '+0' oder lassen es weg.",
+      "Ladungsausgleich in Halbgleichungen prüfen – Elektronen müssen explizit erscheinen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Chemie",
+  "klasse": 7,
+  "kompetenzbereich": "Übertragung",
+  "competences": [
+    "CHE.OS.7.UBE.03"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "WO",
+    "EG"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:math_formula",
+      "spec": {
+        "latex": "\\text{Redox: } \\mathrm{Zn + Cu^{2+} \\rightarrow Zn^{2+} + Cu}"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0133",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:19+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

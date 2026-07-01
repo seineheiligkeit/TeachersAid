@@ -1,0 +1,86 @@
+{
+  "id": "c0122.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Analysiere: Was könnte passieren, wenn die Jahresmitteltemperatur in Wien in den nächsten Jahrzehnten um 2 °C steigt? Nenne mindestens zwei Folgen für das Wetter oder den Alltag und begründe physikalisch.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 40.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.4.WET.03",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.US.4.WET.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Mögliche Folgen (Auswahl): Häufigere und intensivere Hitzewellen im Sommer (Temperaturen über 35 °C öfter); stärkere Konvektion → intensivere Gewitter und Starkregen; weniger Frost- und Eistage → veränderte Vegetationsperioden; höhere Verdunstung → mögliche Sommertrockenheit trotz gleicher Niederschlagsmenge. Physikalische Begründung: Wärmere Luft nimmt mehr Wasserdampf auf (Clausius-Clapeyron), was bei Abkühlung zu stärkerem Niederschlag führt; größere Temperaturgradienten treiben stärkere Winde.",
+    "acceptable_reasoning": "Kreative, physikalisch plausible Überlegungen sind erwünscht; Vollständigkeit nicht erforderlich.",
+    "rubric": [
+      {
+        "criterion": "Physikalische Begründung",
+        "levels": [
+          "Mechanismus klar (z. B. Konvektion, Verdunstung)",
+          "Folge genannt, aber ohne physikalische Begründung",
+          "Nur Allgemeinaussage"
+        ]
+      },
+      {
+        "criterion": "Anzahl Folgen",
+        "levels": [
+          "≥2 plausible Folgen",
+          "1 Folge",
+          "Keine konkreten Folgen"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schülerinnen und Schüler sagen oft nur 'es wird wärmer' — darauf bestehen, dass sie eine Folge für ein Wetter-Phänomen ableiten.",
+      "Keine Wertung, ob Klimawandel 'schlimm' ist, einfordern; physikalische Analyse steht im Vordergrund."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Wetter und Klima",
+  "competences": [
+    "PHY.US.4.WET.03",
+    "PHY.US.4.WET.04"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "W",
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0122",
+  "source": "ai",
+  "created_at": "2026-06-27T15:21:16+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

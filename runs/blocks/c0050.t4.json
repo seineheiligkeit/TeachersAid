@@ -1,0 +1,78 @@
+{
+  "id": "c0050.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "oral",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Your teacher reads five short sentences aloud. Match each sentence (1–5) to the correct situation (A–E) where you might hear it.\n\n[Teacher reads:]\n1. \"Please open your books to page forty-two.\"\n2. \"Your flight to London is now boarding at Gate 7.\"\n3. \"Do you want ketchup or mayonnaise with that?\"\n4. \"The next train to Vienna leaves at eleven fifteen from Platform 3.\"\n5. \"Turn off your phone and take your seat.\"",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "1. Open your books to page 42.",
+        "2. Flight boarding at Gate 7.",
+        "3. Ketchup or mayonnaise?",
+        "4. Train to Vienna at 11:15.",
+        "5. Turn off phone, take seat."
+      ],
+      "right": [
+        "A — at a fast-food restaurant",
+        "B — at a cinema or theatre",
+        "C — at a train station",
+        "D — in an English lesson",
+        "E — at an airport"
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Sentence",
+        "Situation"
+      ],
+      "rows": 5
+    },
+    "cognitive_level": "apply",
+    "dimensions": [
+      "HOR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS1.US.2.HOR.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1–D, 2–E, 3–A, 4–C, 5–B",
+    "acceptable_reasoning": "Sentence 5 könnte auch für Flugzeug/Kino gelten; B ist die beste Zuordnung, da 'take your seat' typisch für Kino/Theater ist.",
+    "rubric": [],
+    "watch_outs": [
+      "Sentence 5 ist mehrdeutig (Flugzeug wäre ebenfalls plausibel); Schüler:innen sollen die BESTE Zuordnung wählen",
+      "Sicherstellen, dass die Lehrkraft langsam und klar liest — Eigennamen (Vienna, London) deutlich aussprechen"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Erste lebende Fremdsprache",
+  "klasse": 2,
+  "kompetenzbereich": "Hören",
+  "competences": [
+    "FS1.US.2.HOR.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "HOR"
+  ],
+  "modality": "oral",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0050",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

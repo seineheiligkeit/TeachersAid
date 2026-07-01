@@ -1,0 +1,65 @@
+{
+  "id": "c0017.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Entscheide, ob die folgenden Aussagen über Algorithmen stimmen, und begründe jeweils in einem Satz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Ein Algorithmus muss immer nach einer endlichen Anzahl von Schritten zu einem Ergebnis kommen.",
+        "Für jedes Problem gibt es genau einen richtigen Algorithmus.",
+        "Ein Algorithmus, der auf Papier geschrieben ist, ist noch kein Computerprogramm.",
+        "Wenn ein Algorithmus für kleine Datenmengen funktioniert, funktioniert er auch für sehr große Datenmengen genauso schnell."
+      ]
+    },
+    "response": {
+      "mode": "none"
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "T"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DGB.US.3.PRO.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "(1) Richtig – Endlichkeit ist eine Grundeigenschaft; Endlosschleifen sind Fehler. (2) Falsch – Es gibt oft viele Algorithmen für dasselbe Problem; sie können sich in Effizienz, Lesbarkeit und Ansatz unterscheiden. (3) Richtig – Ein Algorithmus ist eine Beschreibung; ein Programm ist die Übersetzung in eine Programmiersprache, die ein Computer ausführen kann. (4) Falsch – Manche Algorithmen werden bei großen Datenmengen exponentiell langsamer (Effizienz/Komplexität); das ist ein zentrales Thema der Informatik.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Aussage 4 führt in die Algorithmik/Komplexitätstheorie ein – kein tiefes Wissen nötig, aber das Grundprinzip (Effizienz skaliert nicht linear) ist wichtig.",
+      "Aussage 2 ist eine häufige Fehlvorstellung: Schüler:innen suchen 'die richtige' Lösung – Informatik hat oft viele."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Digitale Grundbildung",
+  "klasse": 3,
+  "kompetenzbereich": "Produktion: Inhalte digital erstellen und veröffentlichen, Algorithmen entwerfen und Programmieren",
+  "competences": [
+    "DGB.US.3.PRO.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "T"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0017",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

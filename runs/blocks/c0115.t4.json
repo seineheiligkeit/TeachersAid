@@ -1,0 +1,149 @@
+{
+  "id": "c0115.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "multiple_choice",
+    "prompt": "Innsbruck liegt in einem engen Tal, umgeben von hohen Gebirgszügen. Was würdest du daher für das Klima erwarten — und passt das zu Abb. 1? Wähle die beste Antwort.",
+    "payload": {
+      "kind": "multiple_choice",
+      "options": [
+        "A) Sehr hoher Jahresniederschlag (über 2000 mm), weil die Berge Feuchtigkeit aufstauen.",
+        "B) Mäßiger Niederschlag, weil die Gebirgszüge ringsum Feuchtigkeit von allen Seiten abhalten.",
+        "C) Sehr trockenes Klima wie eine Wüste, weil kein Regen in das Tal gelangt.",
+        "D) Niederschlag hauptsächlich im Winter als Schnee, kaum im Sommer."
+      ],
+      "select": "one"
+    },
+    "response": {
+      "mode": "choices",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "select": "one"
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "OK",
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.1.LEB4.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "B) Mäßiger Niederschlag, weil die Gebirgszüge ringsum Feuchtigkeit von allen Seiten abhalten. Innsbruck hat ca. 916 mm/Jahr — viel weniger als die staufördernden Lagen am Alpenrand (Bregenz ~1581 mm). Im Sommer kommen dennoch Gewitter durch die erhitzte Luft im Talkessel.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Option A ist die typische Fehlvorstellung: Berge = viel Regen — das gilt nur für die Luvseite (Stau). Im Innern der Alpen (Talkessel) ist es gerade trockener.",
+      "Option D ist falsch, aber verlockend: Das Sommermaximum in Innsbruck widerspricht der Idee 'hauptsächlich Schneeniederschlag im Winter'."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "multiple_choice",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 1,
+  "kompetenzbereich": "Leben und Wirtschaften unter Beachtung der natürlichen Prozesse",
+  "competences": [
+    "GWB.US.1.LEB4.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "OK",
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:climate_diagram",
+      "spec": {
+        "title": "Klimadiagramm Innsbruck (Universität), Normalperiode 1991–2020",
+        "months": [
+          "Jän",
+          "Feb",
+          "Mär",
+          "Apr",
+          "Mai",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Okt",
+          "Nov",
+          "Dez"
+        ],
+        "temp": [
+          -0.4,
+          1.5,
+          6.0,
+          10.3,
+          14.7,
+          18.1,
+          19.6,
+          19.0,
+          14.6,
+          10.0,
+          4.6,
+          0.4
+        ],
+        "precip": [
+          47,
+          36,
+          54,
+          56,
+          82,
+          114,
+          125,
+          139,
+          82,
+          69,
+          59,
+          53
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "geosphere_klima_normal_1991_2020",
+        "series": "innsbruck",
+        "note": null,
+        "title": "Klimanormalwerte österreichischer Stationen (1991–2020)",
+        "url": "https://data.hub.geosphere.at/dataset/klima-v2-1m",
+        "attribution": "Datenquelle: GeoSphere Austria – data.hub.geosphere.at (klima-v2-1m, CC BY 4.0)",
+        "stand": "1991–2020"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0115",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:34+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

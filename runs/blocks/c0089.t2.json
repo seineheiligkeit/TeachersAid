@@ -1,0 +1,154 @@
+{
+  "id": "c0089.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1",
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Schau dir Abbildung 1 (Regionenvergleich) und Abbildung 2 (Zeitverlauf) an.\na) In welcher Region lebt der größte Anteil extrem armer Menschen?\nb) Wie hat sich der weltweite Anteil extrem armer Menschen zwischen 1990 und 2019 verändert? Beschreibe den Trend in einem vollständigen Satz.\nc) Was könnte diese positive Entwicklung erklären? Nenne eine mögliche Ursache.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "OK",
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.1.LEB2.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "a) Subsahara-Afrika (ca. 35,5 %). b) Der Anteil ist deutlich gesunken, von etwa 36 % (1990) auf rund 8 % (2019). c) Mögliche Ursachen: Wirtschaftswachstum (v. a. in China und Indien), bessere Gesundheitsversorgung, Bildungsexpansion, internationale Entwicklungszusammenarbeit.",
+    "acceptable_reasoning": "Jede plausible Erklärung, die an wirtschaftliche, politische oder soziale Faktoren anknüpft, ist akzeptabel. Keine Bewertung der Qualität des Wachstums erwartet.",
+    "rubric": [
+      {
+        "criterion": "Trendaussage",
+        "levels": [
+          "Keine oder falsche Aussage zum Verlauf",
+          "Richtung korrekt, aber unvollständig oder ohne Zahlen",
+          "Vollständiger Satz mit Richtung und (ungefähren) Zahlenwerten"
+        ]
+      },
+      {
+        "criterion": "Ursache",
+        "levels": [
+          "Keine plausible Ursache genannt",
+          "Eine vage Ursache genannt",
+          "Eine konkrete und sinnvolle Ursache mit kurzem Begründungsansatz"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Häufiger Fehler: Schüler:innen lesen nur absolute Werte statt Anteile ab — immer auf die Achsenbeschriftung achten.",
+      "Die Zeitreihenfigur zeigt einen Trend → korrekt als Liniendiagramm dargestellt (nicht als Balken).",
+      "Vorsicht: Der Rückgang bedeutet nicht, dass Armut 'gelöst' ist — 2019 waren noch ~650 Mio. Menschen betroffen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 1,
+  "kompetenzbereich": "Leben und Wirtschaften in der Welt",
+  "competences": [
+    "GWB.US.1.LEB2.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "OK",
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Subsahara-Afrika",
+          "Südasien",
+          "Ostasien/Pazifik",
+          "Lateinamerika",
+          "Europa/Zentralasien"
+        ],
+        "values": [
+          35.5,
+          5.0,
+          1.2,
+          4.5,
+          0.7
+        ],
+        "title": "Anteil extrem armer Menschen an der Bevölkerung (unter 2,15 USD/Tag, 2022)",
+        "xlabel": "Region",
+        "ylabel": "Anteil in %",
+        "log": false
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    },
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:line",
+      "spec": {
+        "title": "Anteil extrem armer Menschen weltweit, 1990–2019",
+        "xlabel": "Jahr",
+        "ylabel": "Anteil in %",
+        "log": false,
+        "categories": [
+          "1990",
+          "2000",
+          "2010",
+          "2015",
+          "2019"
+        ],
+        "values": [
+          36.2,
+          27.8,
+          15.7,
+          10.1,
+          8.4
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0089",
+  "source": "ai",
+  "created_at": "2026-06-26T19:02:20+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

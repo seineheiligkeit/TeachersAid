@@ -1,0 +1,61 @@
+{
+  "id": "phy-strahlung.str.t2#extended",
+  "block": {
+    "id": "phy-strahlung.str.t2_extended",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Entwirf eine Info-Karte (7–8 Sätze) für jüngere Schüler:innen zu einer aktuellen Anwendung von Strahlung. Wähle eine der folgenden Anwendungen:\n• PET (Positronen-Emissions-Tomographie) im Krankenhaus\n• Bestrahlung von Lebensmitteln zur Haltbarmachung\n• C-14-Datierung in der Archäologie\n\nDeine Info-Karte soll:\n1. Die Anwendung kurz erklären (was passiert physikalisch?).\n2. Einen konkreten Nutzen nennen.\n3. Eine wichtige Grenze oder ein Risiko ehrlich benennen.\n4. Am Ende eine Frage stellen, die zum Nachdenken anregt.\n\nAchte auf verständliche Sprache (keine Fachbegriffe ohne Erklärung) und einen sachlichen, nicht reißerischen Ton.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 10
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.4.STR.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 17,
+    "answer_key": null,
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Häufiges Problem: Info-Karte kippt in reine Werbung für die Technik oder in übertriebene Warnung. Abschlussfrage sollte offen und nicht suggestiv sein; SuS neigen zu Ja/Nein-Fragen prüfen"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Strahlung und Radioaktivität",
+  "competences": [
+    "PHY.US.4.STR.04"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "extended",
+  "family": "phy-strahlung.str.t2",
+  "assets": [],
+  "status": "approved",
+  "provenance": "variant:phy-strahlung.str.t2",
+  "source": "ai",
+  "created_at": "2026-06-25T18:13:26+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

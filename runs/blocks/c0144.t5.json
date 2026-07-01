@@ -1,0 +1,101 @@
+{
+  "id": "c0144.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Entscheide für jede Aussage, ob sie richtig (R) oder falsch (F) ist, und begründe deine Entscheidung in einem Satz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Die ionischen Naturphilosophen lehnten alle übernatürlichen Erklärungen vollständig ab.",
+        "ἄτομος bedeutet wörtlich 'das Unteilbare' und geht auf Demokrit zurück.",
+        "Heraklit und Thales vertraten dasselbe Urprinzip.",
+        "Griechische Fachbegriffe in der Wissenschaft sind reiner Zufall – sie hätten auch lateinisch sein können.",
+        "Die Vorsokratiker stellten Fragen, die auch die moderne Physik noch beschäftigen."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "R / F",
+        "Begründung"
+      ],
+      "rows": 5
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "INT"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GRI.OS.7.GRI.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "GRI.OS.7.GRI.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "1. F – Viele Naturphilosophen wie Thales (Wasser als göttlich belebt) oder Anaximenes hielten die ἀρχή für göttlich oder beseelt; vollständige Ablehnung des Göttlichen kam erst später. 2. R – ἄτομος = ἀ- (nicht) + τέμνειν (schneiden), Demokrit 5. Jh. v. Chr. 3. F – Thales: Wasser; Heraklit: Feuer und λόγος. 4. F – Griechisch war Sprache der gebildeten Welt (Koine, Wissenschaft der Antike und des Hellenismus); die Terminologie ist historisch begründet, nicht zufällig. 5. R – Fragen nach dem fundamentalen Baustein der Materie, Raum, Zeit, Bewegung sind zentral in moderner Physik.",
+    "acceptable_reasoning": "Begründungen müssen den inhaltlichen Kern treffen; sprachliche Eleganz ist kein Kriterium.",
+    "rubric": [
+      {
+        "criterion": "Korrekte R/F-Entscheidung",
+        "levels": [
+          "5 von 5 korrekt",
+          "3–4 korrekt",
+          "1–2 korrekt",
+          "0 korrekt"
+        ]
+      },
+      {
+        "criterion": "Qualität der Begründung",
+        "levels": [
+          "Alle Begründungen sachlich korrekt und präzise",
+          "Mehrheitlich korrekt",
+          "Ansätze, aber inhaltliche Fehler",
+          "Keine tragfähige Begründung"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Aussage 1 ist eine Falle: Viele Schüler:innen nehmen an, dass Vorsokratiker grundsätzlich 'atheistisch' waren – das stimmt historisch nicht.",
+      "Aussage 4: Schüler:innen könnten Latein als gleichwertige Alternative nennen – das ist teilweise korrekt (viele Begriffe haben lateinische Entsprechungen), aber die historische Begründung ist anders.",
+      "Begründungen sollten nicht bloß 'weil es falsch ist' enthalten – auf Vollständigkeit drängen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Griechisch",
+  "klasse": 7,
+  "kompetenzbereich": "Das griechische Denken als Fundament der Wissenschaften",
+  "competences": [
+    "GRI.OS.7.GRI.02",
+    "GRI.OS.7.GRI.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "INT"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0144",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:22+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

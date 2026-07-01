@@ -1,0 +1,61 @@
+{
+  "id": "phy-strahlung.str.t7#extended",
+  "block": {
+    "id": "phy-strahlung.str.t7_extended",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "experiment_protocol",
+    "prompt": "Versuch mit Zählrohr und schwacher Schulquelle.\n\n**Vorbereitung:**\nMiss zunächst die Hintergrundstrahlung (ohne Quelle, 1 Minute), um einen Nullwert zu erhalten.\n\n**Messung:**\nMiss die Zählrate (Impulse pro 30 Sekunden) bei mindestens vier verschiedenen Abständen: 5 cm, 10 cm, 15 cm, 20 cm. Trage die Ergebnisse in eine Tabelle ein.\n\n**Auswertung:**\na) Trage deine Messwerte in ein Diagramm ein (Abstand auf der x-Achse, Zählrate auf der y-Achse).\n\nb) Beschreibe den Zusammenhang zwischen Abstand und Zählrate in eigenen Worten.\n\nc) Welche praktische Schlussfolgerung ziehst du daraus für den sicheren Umgang mit Strahlungsquellen?\n\nd) Warum ist es wichtig, die Hintergrundstrahlung vorher zu messen?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 12
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.4.STR.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 30,
+    "answer_key": "Zählrate sinkt mit zunehmendem Abstand (näherungsweise nach dem Abstandsquadratgesetz: Verdoppelung des Abstands → Viertelung der Intensität bei Punktquelle). Hintergrundstrahlung muss abgezogen werden, um die Quellenstrahlung isoliert zu sehen. Schutzmaßnahme: Abstand ist einfach, kostenlos und effektiv.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Abstandsquadratgesetz nicht erzwingen – bei Schulquellen und endlichem Raum nur näherungsweise; Messunsicherheiten thematisieren (Poisson-Statistik bei kleinen Zählraten); Sicherheitshinweis: Schulquellen sind zugelassen und ungefährlich, aber korrektes Protokoll einüben ist das Ziel"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "experiment_protocol",
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Strahlung und Radioaktivität",
+  "competences": [
+    "PHY.US.4.STR.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "extended",
+  "family": "phy-strahlung.str.t7",
+  "assets": [],
+  "status": "approved",
+  "provenance": "variant:phy-strahlung.str.t7",
+  "source": "ai",
+  "created_at": "2026-06-25T18:13:26+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

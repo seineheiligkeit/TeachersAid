@@ -1,0 +1,68 @@
+{
+  "id": "c0002.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Beurteile die folgenden Aussagen über lineare Funktionen. Kreuze an, ob die Aussage richtig oder falsch ist, und begründe deine Entscheidung in einem Satz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Jede lineare Funktion der Form f(x) = mx + b schneidet die y-Achse beim Punkt (0 | b).",
+        "Die Funktion f(x) = −3x + 2 ist streng monoton wachsend.",
+        "Zwei lineare Funktionen mit gleicher Steigung m schneiden sich in genau einem Punkt.",
+        "Die Funktion f(x) = 5 ist eine lineare Funktion (konstante Funktion)."
+      ]
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "BEG",
+      "DAR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.4.VAR.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "1. Richtig: Setzt man x=0 ein, erhält man f(0)=b, also Schnittpunkt mit der y-Achse bei (0|b).\n2. Falsch: Die Steigung m=−3 ist negativ, die Funktion ist streng monoton fallend.\n3. Falsch: Parallele Geraden (gleiche Steigung, verschiedene b) schneiden sich gar nicht.\n4. Richtig: f(x)=5 ist eine lineare Funktion mit m=0 und b=5 (konstante Funktion).",
+    "acceptable_reasoning": "Begründungen müssen die Kernidee enthalten; exakte Fachterminologie (monoton fallend, Parallele) erwünscht aber nicht zwingend.",
+    "rubric": [],
+    "watch_outs": [
+      "Aussage 3: Schüler:innen denken oft, gleiche Steigung bedeutet gleiche Gerade – Unterschied zu parallelen Geraden explizit besprechen.",
+      "Aussage 4: Manche zweifeln, ob eine Konstante eine 'Funktion' ist – Definition: jeder x-Wert hat genau einen y-Wert, erfüllt."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Mathematik",
+  "klasse": 4,
+  "kompetenzbereich": "2: Variablen und Funktionen",
+  "competences": [
+    "MAT.US.4.VAR.03"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "BEG",
+    "DAR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0002",
+  "source": "ai",
+  "created_at": "2026-06-25T11:35:33+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

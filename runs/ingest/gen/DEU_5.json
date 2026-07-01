@@ -1,0 +1,163 @@
+{
+  "subject": "Deutsch",
+  "klasse": 4,
+  "kompetenzbereich": "Schreiben",
+  "title": "Schreiben heute: Digitale Textformen, Stilmittel und Sprachreflexion",
+  "kernfrage": "Wie verändert das digitale Schreiben unsere Sprache – und was bedeutet das für dich als Schreibende/r?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Schriftlichkeit im Wandel: analog, digital, multimodal",
+        "throughline": "Schreiben ist im digitalen Zeitalter nicht weniger geworden, aber anders: kürzer, schneller, multimodaler, oft öffentlicher. Die 4. Klasse ist der Ort, um diese Veränderungen nicht bloß zu erleben, sondern bewusst zu reflektieren – und zwischen den Anforderungen verschiedener Schreibsettings zu unterscheiden.",
+        "talking_points": [
+          "Was schreibst du täglich? (Nachrichten, Kommentare, Posts, Schule) – wie unterscheidet sich das voneinander?",
+          "Wie hat sich Schreiben durch Smartphones verändert? (Abkürzungen, Emojis, Tippfehler als Stil, GIFs als Aussage)",
+          "Was geht verloren, wenn man immer kürzer schreibt – und was gewinnt man?",
+          "Gibt es Situationen, in denen digitale Kürze ein Nachteil ist? (Missverständnisse, fehlende Nuancen)"
+        ],
+        "extensions": [
+          "Textanalyse: Schüler:innen bringen einen anonymisierten Screenshot einer Chatnachricht und eines formellen Briefes mit und vergleichen Sprache, Struktur und Wirkung.",
+          "Schreibexperiment: Dieselbe Mitteilung (z.B. eine Entschuldigung) als WhatsApp-Nachricht, als E-Mail an eine Lehrkraft und als handgeschriebenen Brief – was ändert sich?",
+          "Reflexionstext: 'Meine Schreibbiografie' – welche Textformen beherrsche ich, welche will ich noch lernen?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "table_fill",
+            "prompt": "Fülle die Tabelle aus. Überlege bei jeder Textform: Welches Merkmal trifft zu? Trage jeweils 'ja', 'nein' oder 'manchmal' ein.\n\n**Textformen:** Chat-Nachricht / E-Mail an eine Lehrperson / Schulaufsatz / Instagram-Kommentar / Handgeschriebener Brief",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": ["Textform", "Formelle Sprache?", "Korrekte Rechtschreibung erwartet?", "Emojis üblich?", "Öffentlich lesbar?"],
+              "rows": 5
+            },
+            "cognitive_level": "analyze",
+            "dimensions": ["SCH", "SPR"],
+            "serves": [{ "competence_id": "DEU.US.4.SCH.04", "relation": "exercises" }],
+            "est_minutes": 8,
+            "answer_key": "Chat-Nachricht: nein / manchmal / ja / nein. E-Mail Lehrperson: ja / ja / nein / nein. Schulaufsatz: ja / ja / nein / nein. Instagram-Kommentar: nein / manchmal / ja / ja. Brief: ja / ja / nein / nein. Abweichungen sind diskutierbar – z.B. ob ein öffentlicher Kommentar 'formell' sein kann.",
+            "acceptable_reasoning": "Bei Instagram-Kommentar 'formell?: manchmal' ist akzeptabel (z.B. auf offiziellen Accounts). Diskussionsrunden zu Grenzfällen sind erwünscht.",
+            "watch_outs": [
+              "Schüler:innen unterschätzen oft, dass Instagram-Kommentare öffentlich sind – das ist ein wichtiger Datenschutz-Impuls.",
+              "Die Kategorie 'Rechtschreibung erwartet: manchmal' für Chat ist berechtigt – je nach Kontext (Freund vs. Arbeitgeber-Chat)."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "text_analysis",
+            "prompt": "Lies die beiden folgenden Texte. Beide teilen dieselbe Information mit, aber in sehr unterschiedlichen Schreibweisen.\n\n**Text A (Chat-Nachricht):**\n*hey sorry komm heute nicht, bin krank. meld mich morgen ok? 🤒*\n\n**Text B (formelle E-Mail):**\n*Sehr geehrte Frau Lehrerin, ich möchte Sie darüber informieren, dass ich heute leider aufgrund einer Erkrankung nicht am Unterricht teilnehmen kann. Ich werde mich morgen bei Ihnen melden, um das Versäumte nachzuholen. Mit freundlichen Grüßen, [Name]*\n\nBeantworte:\na) Nenne **drei konkrete sprachliche Unterschiede** (z.B. Anrede, Satzlänge, Wortschatz).\nb) In welchem Kontext ist welcher Text angemessen? Begründe.",
+            "payload": null,
+            "response": { "mode": "lines", "n": 7 },
+            "cognitive_level": "analyze",
+            "dimensions": ["SCH", "SPR"],
+            "serves": [{ "competence_id": "DEU.US.4.SCH.04", "relation": "exercises" }],
+            "est_minutes": 9,
+            "answer_key": "a) Mögliche Unterschiede: (1) Anrede: 'hey' vs. 'Sehr geehrte Frau' (formell/informell). (2) Satzlänge: Kurzfragmente vs. vollständige Satzgefüge. (3) Wortschatz: 'komm nicht' vs. 'nicht am Unterricht teilnehmen kann' (Nominalisierung). (4) Groß-/Kleinschreibung ignoriert vs. normgerecht. (5) Emoji vs. kein Emoji. b) A unter Freunden oder in entspanntem privatem Umfeld; B an Lehrkraft oder in formellen Situationen, wo Professionalität erwartet wird.",
+            "acceptable_reasoning": "Andere sprachliche Unterschiede (Interpunktion, Vollständigkeit des Satzes) sind ebenso gültig.",
+            "watch_outs": [
+              "Schüler:innen nennen oft nur 'kurz vs. lang' – auf konkrete Sprachmerkmale bestehen (Wortschatz, Syntax, Anrede).",
+              "Wichtig: Keinen Text als 'besser' werten, sondern als situationsangemessen/nicht-angemessen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "text_production",
+            "prompt": "Schreibe eine **formelle E-Mail** an eine Lehrperson deiner Schule. Du möchtest höflich anfragen, ob du einen Termin für ein Gespräch über deine letzte Arbeit vereinbaren kannst.\n\nDeine E-Mail soll enthalten:\n- formelle Anrede\n- kurze Erklärung deines Anliegens\n- konkrete Terminvorschläge (erfinde zwei)\n- höfliche Verabschiedung\n\nUmfang: ca. 60–80 Wörter.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 55 },
+            "cognitive_level": "create",
+            "dimensions": ["SCH"],
+            "serves": [{ "competence_id": "DEU.US.4.SCH.01", "relation": "exercises" }],
+            "est_minutes": 12,
+            "answer_key": "Muster: 'Sehr geehrte Frau Mayer, ich möchte Sie höflich anfragen, ob ich einen kurzen Gesprächstermin bezüglich meiner letzten Deutscharbeit vereinbaren könnte. Ich würde mich freuen, wenn dies am Dienstag nach der 5. Stunde oder am Donnerstag in der großen Pause möglich wäre. Ich danke Ihnen im Voraus für Ihre Rückmeldung und freue mich auf das Gespräch. Mit freundlichen Grüßen, [Name]'",
+            "acceptable_reasoning": "Andere Formulierungen sind akzeptabel, solange alle vier strukturellen Elemente vorhanden sind.",
+            "watch_outs": [
+              "Häufige Fehler: 'Sehr geehrter Herr/Frau' ohne Namen (akzeptabel, aber nicht ideal), oder 'Hallo' als Anrede (nicht formal genug).",
+              "Groß- und Kleinschreibung von 'Sie' (Höflichkeitsform) ist für viele noch unsicher – guter Anlass zur Erinnerung: 'Sie', 'Ihr', 'Ihnen' groß."
+            ],
+            "rubric": [
+              { "criterion": "Formale Elemente", "levels": ["1–2 Elemente fehlen", "3 von 4 Elementen vorhanden", "Alle 4 Elemente vorhanden und korrekt angewandt"] },
+              { "criterion": "Ton und Register", "levels": ["Informeller Ton oder Mischung", "Weitgehend formell mit kleinen Brüchen", "Durchgehend formell, höflich und sachlich"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "open_response",
+            "prompt": "Überlege und beantworte in vollständigen Sätzen:\n\nEin bekannter Spruch lautet: „Das Wort ist Silber, Schweigen ist Gold." In der Antike und im Mittelalter war Schreiben ein seltenes, langsames und teures Handwerk.\n\na) Was hat sich durch digitale Medien an der **Menge** des täglichen Schreibens verändert?\nb) Denkst du, dass wir heute besser oder schlechter schreiben als frühere Generationen? Begründe mit mindestens einem Argument und einem Gegenargument.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 50 },
+            "cognitive_level": "evaluate",
+            "dimensions": ["SCH", "SPR"],
+            "serves": [{ "competence_id": "DEU.US.4.SCH.04", "relation": "deepens" }],
+            "est_minutes": 10,
+            "answer_key": "a) Digitale Medien haben die Schreibmenge massiv erhöht (Nachrichten, Kommentare, E-Mails, Posts – täglich hunderte Wörter). b) Argument 'besser': Wir schreiben häufiger, kennen mehr Textformen, haben Rechtschreibhilfen. Gegenargument: Qualität sinkt durch Kürze und Flüchtigkeit; Handschrift, Sorgfalt und stilistische Vielfalt nehmen ab. Alle gut begründeten Positionen akzeptieren.",
+            "acceptable_reasoning": "Es gibt keine 'richtige' Antwort – das ist eine Reflexionsaufgabe. Die Qualität liegt in der Begründungstiefe.",
+            "watch_outs": [
+              "Schüler:innen antworten bei b) oft nur mit einem Aspekt ('heute schreiben wir mehr, also besser'). Explizit auf das Gegenargument hinweisen.",
+              "Der historische Vergleich (mittelalterliches Schreiben) ist möglicherweise unbekannt – kurz erläutern: Schreiben war Mönchen und Gelehrten vorbehalten; ein Brief dauerte Monate."
+            ],
+            "rubric": [
+              { "criterion": "Argumentationstiefe", "levels": ["Nur eine Meinung ohne Begründung", "Ein Argument ohne Gegenargument", "Argument und Gegenargument klar und begründet"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "decision_scenario",
+            "prompt": "Lies die folgende Situation und entscheide:\n\n**Situation:** Deine beste Freundin / dein bester Freund hat gerade erfahren, dass ihre/seine Eltern sich scheiden lassen. Du möchtest ihr/ihm schreiben.\n\n**Deine Entscheidung:** Wie schreibst du? Wähle aus:\n- A: Eine kurze Sprachnachricht (30 Sekunden)\n- B: Eine WhatsApp-Textnachricht (ca. 3–5 Sätze)\n- C: Einen handgeschriebenen Brief\n- D: Eine ausführliche E-Mail\n\nBegründe, welche Form du wählen würdest und warum. Schreibe dann **die ersten zwei Sätze** deiner gewählten Nachricht.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Wie kommunizierst du in einer emotional wichtigen Situation schriftlich – und welche Form passt wann?"
+            },
+            "response": { "mode": "box", "min_height_mm": 50 },
+            "cognitive_level": "evaluate",
+            "dimensions": ["SCH", "SPR"],
+            "serves": [{ "competence_id": "DEU.US.4.SCH.04", "relation": "exercises" }],
+            "est_minutes": 10,
+            "answer_key": "Alle Entscheidungen sind vertretbar, wenn gut begründet. Mögliche Begründungen: A: Nähe und Spontaneität, kein falsches Wort zu suchen. B: Schnell, direkt, man kann Emojis nutzen. C: Handgeschrieben zeigt mehr Aufwand und Sorgfalt, wirkt persönlicher. D: Eher unpassend, zu formell für eine enge Freundschaft. Die ersten zwei Sätze sollen dem gewählten Ton entsprechen.",
+            "acceptable_reasoning": "Es gibt keine falsche Antwort – entscheidend ist die Konsistenz zwischen Begründung und geschriebenen Sätzen.",
+            "watch_outs": [
+              "Schüler:innen wählen manchmal D aus Gewohnheit (Schulkontex) – darauf hinweisen, dass Kontext (enge Freundschaft) entscheidend ist.",
+              "Die 'ersten zwei Sätze' prüfen: Passt der Ton zur gewählten Form? Ist ein Brief-Einstieg bei einer WhatsApp-Entscheidung ein Widerspruch?"
+            ],
+            "rubric": [
+              { "criterion": "Begründung der Formwahl", "levels": ["Keine oder sehr kurze Begründung", "Form benannt, aber Begründung oberflächlich", "Form mit Bezug auf Situation, Beziehung und Kommunikationswirkung begründet"] },
+              { "criterion": "Konsistenz von Form und Text", "levels": ["Gewählte Form und geschriebene Sätze passen nicht zusammen", "Leichte Inkonsistenz im Ton", "Ton der Sätze entspricht der gewählten Form deutlich"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "text_production",
+            "prompt": "Schreibe einen **kurzen Meinungstext** (ca. 100–120 Wörter) zu folgendem Thema:\n\n**„Emojis sind eine neue Sprache – und sie gehören auch ins Schreiben."**\n\nVerteidige oder widerlege diese These. Nutze dabei mindestens ein konkretes Beispiel. Schreibe fließend, keine Stichpunkte.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 65 },
+            "cognitive_level": "create",
+            "dimensions": ["SCH", "SPR"],
+            "serves": [{ "competence_id": "DEU.US.4.SCH.02", "relation": "exercises" }],
+            "est_minutes": 14,
+            "answer_key": "Individuelle Antworten. Bewertungskriterien: (1) klare Positionierung, (2) mindestens ein konkretes Beispiel, (3) fließender Text ohne Aufzählung, (4) zumindest eine Auseinandersetzung mit der Gegenposition (auch implizit). Muster-Pro: 'Ein Herz-Emoji in einer Nachricht ersetzt oft einen ganzen Satz – es drückt Nähe aus, die mit Worten schwerer zu formulieren wäre, ohne kitschig zu klingen.' Muster-Kontra: 'Emojis sind kontextabhängig und mehrdeutig: Ein Zwinkern-Emoji kann Ironie oder Freundlichkeit bedeuten – das ist das Gegenteil von präziser Sprache.'",
+            "acceptable_reasoning": "Beide Positionen (pro und kontra) sind vollständig vertretbar.",
+            "watch_outs": [
+              "Schüler:innen, die kein Beispiel nennen, haben die Aufgabenstellung nicht erfüllt – sanft darauf hinweisen.",
+              "Argumentierende Texte neigen in der 4. Klasse immer noch zu Aufzählungsformat; auf Fließtext bestehen und Kohäsionsmittel nennen (allerdings, deshalb, obwohl, weil)."
+            ],
+            "rubric": [
+              { "criterion": "Positionierung und Argumentation", "levels": ["Keine klare Position oder nur Aufzählung", "Position klar, aber ohne echtes Argument", "Position + Argument + Beispiel, Gegenposition zumindest angesprochen"] },
+              { "criterion": "Sprachliche Qualität und Fließtext", "levels": ["Aufzählung oder stark fragmentarisch", "Versuche eines Fließtexts, aber mit inhaltlichen Sprüngen", "Kohärenter Fließtext mit logischen Verbindungen"] },
+              { "criterion": "Sprachrichtigkeit", "levels": ["Zahlreiche Fehler, die Verständnis erschweren", "Verständlich mit vereinzelten Fehlern", "Weitgehend normgerecht auf AHS-Niveau"] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

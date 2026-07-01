@@ -1,0 +1,61 @@
+{
+  "id": "phy-strahlung.str.t5#extended",
+  "block": {
+    "id": "phy-strahlung.str.t5_extended",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Dosen zum Vergleich:\n• 1 Banane essen ≈ 0,1 µSv\n• Thorax-Röntgen ≈ 20 µSv\n• Transatlantikflug ≈ 40 µSv\n• Natürliche Jahresdosis in Österreich ≈ 2–3 mSv\n\na) Ordne die vier Quellen nach steigender Dosis und rechne alle Werte in dieselbe Einheit um.\n\nb) Um welchen Faktor ist die natürliche Jahresdosis größer als ein einzelner Röntgen-Thorax? Zeige die Rechnung.\n\nc) Warum ist das Vergleichen von Größenordnungen (Zehnerpotenzen) wichtiger als das bloße Ablesen von Zahlen, wenn man Strahlungsdosen bewertet?\n\nd) Ein Bekannter sagt: „Ich fliege nie, weil Flugzeugstrahlung gefährlich ist.“ Kommentiere diese Aussage sachlich mit Hilfe der obigen Daten.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 10
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.4.STR.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 15,
+    "answer_key": "a) In µSv: Banane 0,1 – Röntgen 20 – Flug 40 – Jahresdosis 2000–3000 µSv. b) 2000÷20 = 100× (bis 150×). c) Zahlen ohne Kontext täuschen: 40 klingt viel, ist aber 50– 75× kleiner als die Jahresdosis; erst Größenordnungsvergleich zeigt relative Bedeutung. d) Sachlich: 40 µSv pro Flug ist real, aber marginal im Vergleich zur Jahresdosis; ein Flug entspricht ~1–2 % der ohnehin unvermeidlichen Jahresdosis – kein sinnvoller Grund zum Verzicht, sofern nicht extrem viele Flüge.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "SuS vergessen Einheiten oder rechnen nicht um; d) ist bewusst alltagsnah, aber SuS sollen nicht verharmlosend werden – Sachlichkeit einfordern, nicht Richtungsvorgabe"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Strahlung und Radioaktivität",
+  "competences": [
+    "PHY.US.4.STR.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "extended",
+  "family": "phy-strahlung.str.t5",
+  "assets": [],
+  "status": "approved",
+  "provenance": "variant:phy-strahlung.str.t5",
+  "source": "ai",
+  "created_at": "2026-06-25T18:13:26+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

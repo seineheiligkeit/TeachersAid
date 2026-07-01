@@ -1,0 +1,169 @@
+{
+  "subject": "Musik",
+  "klasse": 1,
+  "kompetenzbereich": "Singen und Musizieren",
+  "title": "Die Stimme – unser erstes Instrument",
+  "kernfrage": "Was kannst du alles mit deiner Stimme machen, und wie setzt du sie bewusst und ausdrucksvoll ein?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Stimmexploration und stimmtechnische Grundlagen",
+        "throughline": "Die eigene Stimme ist das zugänglichste aller Instrumente – und doch wird sie selten bewusst erkundet. Diese Einheit führt von spielerischem Experimentieren zu gezieltem stimmtechnischem Wissen und expressivem Singen.",
+        "talking_points": [
+          "Atemstütze als Fundament: Bauch- statt Brustatmung, ruhige Schultern – kurze Körperübung vor jeder Singphase.",
+          "Stimmlage und Stimmeinsatz unterscheiden: gesprochene Stimme, gesungene Stimme, Flüsterstimme, Kopfstimme – jede hat ihre eigene Qualität.",
+          "Dynamik (laut/leise) und Artikulation (hart/weich, staccato/legato) als erste Ausdrucksmittel.",
+          "Textinhalt und musikalischer Ausdruck hängen zusammen: Wie klingt ein trauriges Lied, wie ein fröhliches? Was ändert sich in der Stimme?"
+        ],
+        "extensions": [
+          "Stimm-Erkundungsrunde: alle stehen im Kreis, jede:r macht einen anderen Klanglaut (Zischen, Summen, Pfeifen, Klicken) – wer kann den ungewöhnlichsten?",
+          "Kurzes Experiment: dasselbe Wort in 5 verschiedenen Emotionen sprechen (fröhlich, traurig, wütend, erschrocken, gelangweilt) – wie verändert sich die Stimme?",
+          "Einführung Kanon: 'Bruder Jakob' oder 'Dona nobis pacem' zweistimmig – was passiert, wenn zwei Stimmen dasselbe versetzt singen?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "performance_task",
+            "prompt": "Stimmexploration: Erkunde deine Stimme und mach alle folgenden Laute nacheinander. Achte dabei, wie sich dein Körper, dein Mund und deine Atmung verändern:\n– Summe leise mit geschlossenem Mund auf einem langen Ton.\n– Sing 'Ah' so hoch wie du kannst (Kopfstimme), dann so tief wie du kannst.\n– Sprich 'Hallo' einmal ganz laut, einmal ganz leise, einmal flüsternd.\n– Mach einen Klanglaut, der ein Tier imitiert.\n\nNotiere danach: Welcher Laut war am schwierigsten? Warum?",
+            "payload": null,
+            "response": {"mode": "lines", "n": 2},
+            "cognitive_level": "remember",
+            "dimensions": ["SIN"],
+            "serves": [{"competence_id": "MUS.US.1.SIN.01", "relation": "exercises"}],
+            "est_minutes": 6,
+            "answer_key": "Offene Antwort; Lernziel ist die bewusste Körperwahrnehmung beim Stimmgebrauch. Lehrkraft beobachtet Körperhaltung und Atemstütze.",
+            "acceptable_reasoning": "Jede ehrliche Reflexion über körperliche Empfindungen akzeptabel.",
+            "watch_outs": [
+              "Manche Schüler:innen schämen sich für ihre Stimme (Mutation beginnend, Unsicherheit). Aufgabe ist spielerisch gehalten, kein Wettbewerb.",
+              "Flüstern ≠ leises Sprechen: Flüstern belastet die Stimmbänder anders – nicht zu lange flüstern lassen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "matching",
+            "prompt": "Ordne jedem Begriff die passende Erklärung zu.",
+            "payload": {
+              "kind": "matching",
+              "left": ["Atemstütze", "Kopfstimme", "Legato", "Staccato", "Dynamik"],
+              "right": [
+                "A – Die Töne sind voneinander abgesetzt und klingen kurz.",
+                "B – Die Töne fließen weich und verbunden ineinander über.",
+                "C – Der gestützte Bauch gibt der Stimme Kraft und Kontrolle.",
+                "D – Die Bezeichnung für laut und leise in der Musik.",
+                "E – Die helle, leichte Stimmlage im oberen Tonbereich."
+              ]
+            },
+            "response": {"mode": "none"},
+            "cognitive_level": "remember",
+            "dimensions": ["SIN"],
+            "serves": [{"competence_id": "MUS.US.1.SIN.01", "relation": "exercises"}],
+            "est_minutes": 4,
+            "answer_key": "Atemstütze → C; Kopfstimme → E; Legato → B; Staccato → A; Dynamik → D",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Legato und gebunden werden synonym verwendet – beide Begriffe akzeptieren.",
+              "Dynamik umfasst mehr als nur laut/leise (auch crescendo/decrescendo), aber für Klasse 1 ist laut/leise die richtige Vereinfachung."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "performance_task",
+            "prompt": "Singe das Lied 'Hänsel und Gretel' (oder ein anderes Lied, das deine Klasse kennt) zunächst einmal ganz normal. Dann singe es ein zweites Mal mit einer der folgenden Änderungen (deine Lehrkraft sagt dir welche):\n– sehr leise (piano)\n– sehr langsam\n– mit übertrieben trauriger Stimme\n\nReflektiere danach schriftlich: Was hat sich verändert? Wie hat es sich für dich als Sänger:in angefühlt?",
+            "payload": null,
+            "response": {"mode": "lines", "n": 3},
+            "cognitive_level": "understand",
+            "dimensions": ["SIN"],
+            "serves": [{"competence_id": "MUS.US.1.SIN.02", "relation": "exercises"}],
+            "est_minutes": 7,
+            "answer_key": "Schüler:innen sollen mindestens einen konkreten Unterschied benennen (z. B. 'Die leise Version klingt geheimnisvoller') und eine Aussage zum Erleben machen.",
+            "acceptable_reasoning": "Jede begründete Beobachtung akzeptabel; auf Fachvokabular (piano, forte, langsam, ausdrucksvoll) hinweisen wenn möglich.",
+            "watch_outs": [
+              "Sehr leises Singen führt oft zu Flüstern statt echtem piano-Singen – Lehrkraft demonstriert den Unterschied.",
+              "Schüler:innen beschreiben oft das Ergebnis, nicht den Prozess – 'Es hat sich komisch angefühlt' ist ein Anfang, Nachfragen lohnt sich."
+            ],
+            "rubric": [
+              {"criterion": "Beobachtung", "levels": ["keine konkrete Aussage", "ein Unterschied benannt", "Unterschied + Fachbegriff"]},
+              {"criterion": "Reflexion", "levels": ["fehlend", "kurze persönliche Aussage", "differenzierte Reflexion mit Begründung"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "true_false_justify",
+            "prompt": "Entscheide, ob die folgenden Aussagen über die Singstimme richtig oder falsch sind. Begründe deine Antwort in einem Satz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Beim Singen ist die Körperhaltung wichtig, weil eine aufrechte Haltung die Atmung unterstützt.",
+                "Laut singen bedeutet immer, die Stimme anzustrengen und zu schreien.",
+                "Die Kopfstimme klingt heller als die Bruststimme.",
+                "Ein Lied kann ausdrucksvoller werden, wenn man Dynamik und Tempo bewusst einsetzt."
+              ]
+            },
+            "response": {"mode": "lines", "n": 4},
+            "cognitive_level": "analyze",
+            "dimensions": ["SIN"],
+            "serves": [{"competence_id": "MUS.US.1.SIN.01", "relation": "exercises"}],
+            "est_minutes": 8,
+            "answer_key": "1 – richtig (aufrechte Haltung, tiefer Atem); 2 – falsch (forte kann mit Stütze ohne Schreien erreicht werden); 3 – richtig (Kopfstimme = oberer Resonanzraum, heller Klang); 4 – richtig (Ausdrucksmittel erzeugen Wirkung).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Aussage 2 ist eine häufige Fehlannahme: 'laut = schreien' muss aktiv thematisiert werden.",
+              "Brust- vs. Kopfstimme ist für Klasse 1 eine vereinfachte Darstellung; Lehrkraft kann erläutern, dass beide Resonanzräume immer beteiligt sind."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "open_response",
+            "prompt": "Wähle ein Lied, das du magst (es kann auf Deutsch, Englisch oder einer anderen Sprache sein). Schreibe:\n– den Titel und worum es im Text geht (2–3 Sätze)\n– warum du dieses Lied ausdrucksvoll findest oder was dich daran bewegt\n– welche Stimmqualität (laut/leise, schnell/langsam, hell/dunkel) zum Inhalt des Liedes passt",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 40},
+            "cognitive_level": "evaluate",
+            "dimensions": ["SIN"],
+            "serves": [{"competence_id": "MUS.US.1.SIN.02", "relation": "exercises"}],
+            "est_minutes": 8,
+            "answer_key": "Offene Antwort; Bewertung: Liedinhalt korrekt zusammengefasst, persönliche Aussage zum Ausdruck, Stimmqualität mit Inhalt in Beziehung gesetzt.",
+            "acceptable_reasoning": "Jedes Lied akzeptabel; Qualität der Begründung zählt, nicht die Liedwahl.",
+            "watch_outs": [
+              "Schüler:innen schreiben manchmal 'das Lied gefällt mir weil es schön ist' – Lehrkraft ermutigt zu konkreten Beobachtungen.",
+              "Textverstehen: Bei anderssprachigen Liedern reicht eine grobe inhaltliche Beschreibung."
+            ],
+            "rubric": [
+              {"criterion": "Inhaltserfassung", "levels": ["fehlend oder falsch", "korrekte Zusammenfassung"]},
+              {"criterion": "Persönlicher Bezug", "levels": ["nur 'gefällt mir'", "konkrete begründete Aussage"]},
+              {"criterion": "Klang-Inhalt-Bezug", "levels": ["kein Bezug", "Stimmqualität + Inhalt verbunden"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "performance_task",
+            "prompt": "Bodypercussion-Runde: Deine Klasse lernt folgendes einfaches Rhythmusmuster mit dem Körper:\n– Klatsch – Klatsch – Oberschenkel – Klatsch\n– (Takt: 4/4, je ein Schlag pro Viertel)\n\nZuerst alle gemeinsam langsam, dann schneller. Dann fügt deine Lehrkraft das Singen einer Melodie dazu. Schreibe danach auf: Was war die größte Herausforderung dabei, gleichzeitig zu singen und Bodypercussion zu machen?",
+            "payload": null,
+            "response": {"mode": "lines", "n": 2},
+            "cognitive_level": "create",
+            "dimensions": ["SIN"],
+            "serves": [{"competence_id": "MUS.US.1.SIN.03", "relation": "exercises"}],
+            "est_minutes": 7,
+            "answer_key": "Offene Reflexion; typische Antworten: Koordination, Tempo halten, Text und Rhythmus gleichzeitig. Lehrkraft bewertet Beteiligung und Reflexionsqualität.",
+            "acceptable_reasoning": "Jede ehrliche Reflexion akzeptabel; Koordination von Melodie und Rhythmus ist das Lernziel.",
+            "watch_outs": [
+              "Schüler:innen mit wenig rhythmischem Vorerfahrung können das Muster erst langsamer üben – Differenzierung einplanen.",
+              "Beim gleichzeitigen Singen und Klopfen leidet oft die Gesangsqualität – das ist normal und sollte angesprochen werden."
+            ],
+            "rubric": []
+          }
+        ]
+      }
+    ]
+  }
+}

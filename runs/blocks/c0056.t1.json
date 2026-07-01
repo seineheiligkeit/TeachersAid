@@ -1,0 +1,73 @@
+{
+  "id": "c0056.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "multiple_choice",
+    "prompt": "Lies die E-Mail und beantworte die Frage.\n\n---\nDe: hugo.martin@mail.fr\nObjet: Mon week-end !\n\nSalut Lena !\n\nComment vas-tu ? Moi, ça va super ! Ce week-end, je suis allé au cinéma avec mes amis. On a regardé un film d'action — c'était génial ! Samedi soir, j'ai mangé une pizza chez moi avec ma famille. Et toi, qu'est-ce que tu as fait ce week-end ?\n\nÀ bientôt,\nHugo\n---\n\nWas hat Hugo am Samstag gemacht? Wähle die richtige Antwort.",
+    "payload": {
+      "kind": "multiple_choice",
+      "options": [
+        "Il est allé au cinéma.",
+        "Il a mangé une pizza avec sa famille.",
+        "Il a joué au football.",
+        "Il a regardé un film chez ses amis."
+      ],
+      "select": "one"
+    },
+    "response": {
+      "mode": "choices",
+      "options": [
+        "Il est allé au cinéma.",
+        "Il a mangé une pizza avec sa famille.",
+        "Il a joué au football.",
+        "Il a regardé un film chez ses amis."
+      ],
+      "select": "one"
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "LES"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS2.US.4.LES.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "Il a mangé une pizza avec sa famille. (Option B) — samedi soir ist der relevante Zeitmarker.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Option A ist verlockend, weil das Kino zuerst erwähnt wird — aber der Zeitmarker 'samedi soir' zeigt, dass Pizza-Essen am Samstag war, Kino vermutlich früher.",
+      "Option D ist eine Mischung aus zwei Textstellen — Schüler:innen, die nicht genau lesen, kombinieren Infos falsch."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "multiple_choice",
+  "subject": "Zweite lebende Fremdsprache",
+  "klasse": 4,
+  "kompetenzbereich": "Lesen",
+  "competences": [
+    "FS2.US.4.LES.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "LES"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0056",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

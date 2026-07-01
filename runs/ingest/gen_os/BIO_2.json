@@ -1,0 +1,260 @@
+{
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 6,
+  "kompetenzbereich": "Kompetenzmodul 4",
+  "title": "Ökosysteme unter Druck: Klimawandel und Nachhaltigkeit",
+  "kernfrage": "Wie verändern menschliche Eingriffe Ökosysteme, und welche Maßnahmen helfen dabei, sie langfristig zu schützen?",
+  "body": {
+    "intro": [
+      "Ein Wald, ein See, eine Wiese – alle diese Lebensräume sind komplexe Systeme, in denen Organismen miteinander und mit ihrer Umgebung in Wechselwirkung stehen. Doch der Klimawandel und andere menschliche Einflüsse bringen diese Gleichgewichte ins Wanken. In diesem Arbeitsblatt analysierst du, wie Ökosysteme funktionieren, wie sie auf Störungen reagieren und was nachhaltiges Handeln konkret bedeutet."
+    ],
+    "data_figures": [
+      {
+        "id": "abb1",
+        "intent": "trend",
+        "title": "Globale Durchschnittstemperatur: Abweichung vom Mittelwert 1951–1980 (Quelle: NASA GISS 2024)",
+        "xlabel": "Jahr",
+        "ylabel": "Temperaturabweichung (°C)",
+        "categories": ["1880", "1900", "1920", "1940", "1960", "1980", "2000", "2010", "2020", "2023"],
+        "values": [-0.16, -0.08, -0.27, 0.09, -0.01, 0.26, 0.42, 0.72, 0.98, 1.17]
+      },
+      {
+        "id": "abb2",
+        "intent": "comparison",
+        "title": "CO₂-Emissionen nach Sektor in Österreich 2022 (Quelle: Umweltbundesamt 2023)",
+        "xlabel": "Sektor",
+        "ylabel": "CO₂-Äquivalent (Mio. t)",
+        "categories": ["Verkehr", "Energie & Industrie", "Gebäude", "Landwirtschaft", "Abfallwirtschaft"],
+        "values": [22.4, 18.7, 12.1, 8.3, 2.1]
+      }
+    ],
+    "assets": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Ökosysteme: Aufbau, Kreisläufe und Störungen",
+        "throughline": "Schüler:innen verstehen, wie Stoff- und Energiekreisläufe in Ökosystemen funktionieren, welche Faktoren sie steuern und wie menschliche Eingriffe diese aus dem Gleichgewicht bringen können.",
+        "talking_points": [
+          "Ökosystem als Einheit aus Biozönose (Lebensgemeinschaft) und Biotop (Lebensraum) einführen; Abiotische und biotische Faktoren unterscheiden.",
+          "Stoff- und Energiefluss im Ökosystem betonen: Energie fließt durch, Stoffe werden recycelt – dieser fundamentale Unterschied ist für das Verständnis von Nachhaltigkeit zentral.",
+          "Sukzession als Beispiel dafür, dass Ökosysteme sich dynamisch verändern und nach Störungen erholen können – bis zu einem Schwellenwert.",
+          "Klimawandel als globalen Eingriff in abiotische Faktoren: Temperatur, Niederschlag, CO₂-Konzentration verändern sich schneller als Ökosysteme sich anpassen können."
+        ],
+        "extensions": [
+          "Fallstudie: Vergleich der Sukzession nach Waldbrand (Yellowstone 1988) mit langsamen Klimaverschiebungen – warum ist die Geschwindigkeit der Störung entscheidend?",
+          "Modellexperiment: Schüler:innen simulieren einen Nährstoffkreislauf mit einem einfachen Terrarium und beobachten, was passiert, wenn ein Glied fehlt.",
+          "Recherche: Welche österreichischen Ökosysteme sind laut aktuellen Studien besonders stark vom Klimawandel betroffen (z. B. alpine Gletscher, Donauauen)?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "matching",
+            "prompt": "Ordne jedem Begriff aus der linken Spalte die passende Erklärung aus der rechten Spalte zu.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Biozönose",
+                "Biotop",
+                "Primärproduktion",
+                "Destruenten",
+                "Sukzession"
+              ],
+              "right": [
+                "Gesamtheit aller Lebewesen in einem Lebensraum",
+                "Unbelebter Lebensraum mit seinen physikalischen und chemischen Eigenschaften",
+                "Aufbau organischer Substanz durch Fotosynthese oder Chemosynthese",
+                "Organismen, die abgestorbenes organisches Material abbauen (z. B. Bakterien, Pilze)",
+                "Gerichtete Abfolge von Lebensgemeinschaften, die einen Lebensraum nach und nach besiedeln"
+              ]
+            },
+            "response": {"mode": "none"},
+            "cognitive_level": "remember",
+            "dimensions": ["W"],
+            "serves": [{"competence_id": "BIO.OS.6.KOM3.01", "relation": "exercises"}],
+            "est_minutes": 5,
+            "asset_refs": [],
+            "answer_key": "Biozönose → Gesamtheit aller Lebewesen in einem Lebensraum; Biotop → Unbelebter Lebensraum mit seinen physikalischen und chemischen Eigenschaften; Primärproduktion → Aufbau organischer Substanz durch Fotosynthese oder Chemosynthese; Destruenten → Organismen, die abgestorbenes organisches Material abbauen; Sukzession → Gerichtete Abfolge von Lebensgemeinschaften",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen verwechseln häufig 'Biozönose' und 'Ökosystem': Das Ökosystem umfasst beides – Biozönose und Biotop zusammen.",
+              "Destruenten werden oft mit Konsumenten verwechselt: Destruenten bauen tote organische Substanz ab (Mineralisierung), während Konsumenten lebende Organismen fressen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "open_response",
+            "prompt": "Der Kohlenstoffkreislauf ist eines der wichtigsten biogeochemischen Systeme der Erde.\n\na) Erkläre in eigenen Worten, wie Kohlenstoff zwischen der Atmosphäre, den Pflanzen, den Tieren und dem Boden zirkuliert. Nutze die Begriffe Fotosynthese, Zellatmung, Zersetzung und CO₂.\nb) Warum gilt Torf (Moorland) als besonders wichtiger Kohlenstoffspeicher, und was passiert, wenn Moore entwässert werden?",
+            "payload": null,
+            "response": {"mode": "lines", "n": 8},
+            "cognitive_level": "understand",
+            "dimensions": ["W", "E"],
+            "serves": [
+              {"competence_id": "BIO.OS.6.KOM3.01", "relation": "exercises"},
+              {"competence_id": "BIO.OS.x.FAC.04", "relation": "exercises"}
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "a) Pflanzen nehmen CO₂ aus der Atmosphäre auf und bauen durch Fotosynthese organische Verbindungen (Biomasse) auf. Tiere nehmen diese organischen Verbindungen durch Fressen auf. Alle Lebewesen (Pflanzen, Tiere, Mikroorganismen) geben durch Zellatmung CO₂ zurück in die Atmosphäre. Wenn Lebewesen sterben, bauen Destruenten (Bakterien, Pilze) das organische Material ab (Zersetzung) und setzen dabei ebenfalls CO₂ frei. Ein Teil des Kohlenstoffs wird langfristig im Boden (Humus) oder in Torf und Kalkgestein gespeichert. b) In Mooren ist die Zersetzung durch die sauren, sauerstoffarmen Bedingungen stark verlangsamt – abgestorbene Pflanzen (Torf) akkumulieren über Jahrtausende und binden so große Mengen Kohlenstoff. Bei Entwässerung gelangen Sauerstoff und Mikroorganismen in den Torf: Die Zersetzung setzt ein, und der gespeicherte Kohlenstoff wird als CO₂ freigesetzt – Moore werden vom Kohlenstoffsenke zur Kohlenstoffquelle.",
+            "acceptable_reasoning": "Akzeptabel: Schüler:innen beschreiben den Kreislauf in korrekter Richtung mit den genannten Prozessen; für Teil b) genügt die Erkenntnis, dass Entwässerung Zersetzung ermöglicht und CO₂ freisetzt.",
+            "watch_outs": [
+              "Häufige Fehlvorstellung: Pflanzen nehmen Kohlenstoff aus dem Boden auf. Tatsächlich stammt der Kohlenstoff der Pflanzenmasse fast ausschließlich aus dem atmosphärischen CO₂ (Fotosynthese).",
+              "Schüler:innen vergessen oft, dass auch Pflanzen selbst atmen (Zellatmung) und dabei CO₂ abgeben – nicht nur Tiere."
+            ],
+            "rubric": [
+              {"criterion": "Kohlenstoffkreislauf korrekt beschrieben (a)", "levels": ["Wesentliche Lücken oder Fehler", "Drei der vier Prozesse korrekt eingebunden", "Alle vier Prozesse (Fotosynthese, Zellatmung, Zersetzung, CO₂) korrekt verknüpft"]},
+              {"criterion": "Moore als Kohlenstoffspeicher erklärt (b)", "levels": ["Kein Bezug zu Zersetzungshemmung", "Torf als Speicher genannt, ohne Mechanismus", "Verlangsamte Zersetzung UND Folge der Entwässerung korrekt erklärt"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "data_interpretation",
+            "prompt": "Betrachte Abbildung 1: den Verlauf der globalen Temperaturabweichung seit 1880.\n\na) Beschreibe den Trend in der Grafik und nenne zwei auffällige Zeiträume.\nb) Analysiere: Ab welchem Jahrzehnt wird die Erwärmung besonders deutlich, und was könnte das mit der Industrialisierung zu tun haben?\nc) Ein Mitschüler behauptet: 'Die Temperaturschwankungen sind normal – das war schon immer so.' Beurteile diese Aussage auf Basis der Grafik und deines Wissens.",
+            "payload": null,
+            "response": {"mode": "lines", "n": 10},
+            "cognitive_level": "analyze",
+            "dimensions": ["E", "S"],
+            "serves": [
+              {"competence_id": "BIO.OS.x.ERK.05", "relation": "exercises"},
+              {"competence_id": "BIO.OS.6.KOM3.02", "relation": "exercises"},
+              {"competence_id": "BIO.OS.x.STA.01", "relation": "exercises"}
+            ],
+            "est_minutes": 12,
+            "asset_refs": ["abb1"],
+            "answer_key": "a) Die Grafik zeigt langfristig einen steigenden Trend der Temperaturabweichung. Bis etwa 1940 schwankt die Kurve um den Nullpunkt, ab den 1980er-Jahren steigt sie deutlich und fast kontinuierlich an; 2023 wird eine Abweichung von +1,17 °C erreicht – ein Rekordwert. b) Ab den 1950er/1960er-Jahren (Nachkriegs-Industrialisierung, 'Great Acceleration') nimmt die Geschwindigkeit der Erwärmung deutlich zu. Gleichzeitig stiegen die globalen CO₂-Emissionen durch Verbrennung fossiler Energieträger stark an. Der Zusammenhang ist durch wissenschaftliche Studien gut belegt (Treibhauseffekt). c) Die Aussage ist zu pauschal: Natürliche Temperaturschwankungen (z. B. Milanković-Zyklen) verlaufen auf Zeitskalen von Zehntausenden Jahren. Die aktuelle Erwärmung von über 1 °C in weniger als 100 Jahren ist historisch beispiellos schnell und korreliert stark mit menschlichen Emissionen. Die Grafik zeigt keine zyklischen Schwankungen, sondern einen einseitigen Anstieg – das entspricht nicht dem Muster natürlicher Klimavariabilität.",
+            "acceptable_reasoning": "Akzeptabel: Schüler:innen erkennen den Trend und kritisieren die Aussage des Mitschülers mit dem Argument der ungewöhnlichen Geschwindigkeit der Erwärmung.",
+            "watch_outs": [
+              "Schüler:innen verwechseln Wetter und Klima: Ein kalter Winter widerlegt den globalen Erwärmungstrend nicht – Klima ist der langfristige Durchschnitt über mindestens 30 Jahre.",
+              "Die Aussage 'das war schon immer so' ist ein häufiges Klimawandel-Gegenargument: Wichtig ist, die Geschwindigkeit der Veränderung als Argument zu nutzen, nicht nur das Ausmaß."
+            ],
+            "rubric": [
+              {"criterion": "Trendbeschreibung und Zeiträume (a)", "levels": ["Kein Trend erkannt", "Trend beschrieben, keine spezifischen Zeiträume", "Trend mit zwei konkreten Zeiträumen und Werten"]},
+              {"criterion": "Ursachenanalyse Industrialisierung (b)", "levels": ["Keine Verbindung hergestellt", "Zusammenhang erwähnt, ohne Mechanismus", "Industrialisierung, fossile Brennstoffe und Treibhauseffekt verknüpft"]},
+              {"criterion": "Kritische Bewertung der Schüleraussage (c)", "levels": ["Aussage unkritisch übernommen oder nur widersprochen", "Widerspruch mit einem Argument", "Widerspruch mit Bezug auf Geschwindigkeit UND Korrelation mit Emissionen"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "decision_scenario",
+            "prompt": "Szenario: Die Gemeinde Grüntal plant, ein nahegelegenes Feuchtgebiet (Moor) zu entwässern, um Ackerland zu gewinnen. Der Bürgermeister argumentiert, das bringe Arbeitsplätze und günstigeres Lebensmittel. Eine Umweltschutzorganisation ist dagegen.\n\na) Nenne je zwei Argumente für und gegen die Entwässerung aus biologischer Sicht.\nb) Welche Entscheidung würdest du treffen, und warum? Beziehe dich auf das Konzept der nachhaltigen Entwicklung.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Entwässerung eines Moores für Ackerland: ökologisch sinnvoll oder unverantwortlich?"
+            },
+            "response": {"mode": "box", "min_height_mm": 55},
+            "cognitive_level": "evaluate",
+            "dimensions": ["S", "W"],
+            "serves": [
+              {"competence_id": "BIO.OS.x.STA.02", "relation": "exercises"},
+              {"competence_id": "BIO.OS.6.KOM3.02", "relation": "exercises"},
+              {"competence_id": "BIO.OS.x.STA.03", "relation": "exercises"}
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "Argumente für Entwässerung: (1) Gewinn von Ackerland und damit Verbesserung der lokalen Lebensmittelversorgung; (2) wirtschaftliche Entwicklung (Arbeitsplätze, Einnahmen der Gemeinde). Argumente gegen Entwässerung: (1) CO₂-Freisetzung durch Zersetzung des Torfs – Moorboden ist ein wichtiger Kohlenstoffspeicher; (2) Verlust des Feuchtgebietes als einzigartiger Lebensraum für spezialisierte Arten (z. B. Wiesenbrüter, Moorfrösche, Sonnentau); (3) Verlust des natürlichen Wasserspeichers und Hochwasserschutzes. Nachhaltigkeit: Nachhaltige Entwicklung berücksichtigt Ökologie, Ökonomie und Soziales gleichermaßen (Drei-Säulen-Modell). Die Entwässerung maximiert kurzfristig die ökonomische Dimension auf Kosten der ökologischen. Alternativen (z. B. Ökotourismus, nachhaltige Moorlandwirtschaft) wären zu prüfen.",
+            "acceptable_reasoning": "Akzeptabel: Schüler:innen benennen mindestens je ein ökologisch fundiertes Argument auf jeder Seite und beziehen sich explizit auf Nachhaltigkeit. Die Entscheidung selbst kann pro oder contra ausfallen, muss aber begründet sein.",
+            "watch_outs": [
+              "Schüler:innen neigen dazu, nur eine Seite zu sehen (entweder rein ökonomisch oder rein ökologisch). Die Aufgabe verlangt explizit beide Perspektiven.",
+              "Nachhaltigkeit ist kein Synonym für 'Umweltschutz' – betonen, dass das Drei-Säulen-Modell alle drei Dimensionen gleichberechtigt berücksichtigt."
+            ],
+            "rubric": [
+              {"criterion": "Biologische Argumente für und gegen die Entwässerung", "levels": ["Weniger als zwei Argumente je Seite", "Je zwei Argumente, aber ohne biologische Fundierung", "Je zwei biologisch korrekte Argumente (inkl. Kohlenstoffspeicher)"]},
+              {"criterion": "Bezug auf Nachhaltigkeit", "levels": ["Kein Bezug", "Nachhaltigkeit erwähnt, ohne Definition", "Drei-Säulen-Modell angewendet oder Abwägung ökologisch-ökonomisch explizit"]},
+              {"criterion": "Begründete Entscheidung", "levels": ["Keine Entscheidung oder unbegründet", "Entscheidung mit einem Argument", "Entscheidung mit mehreren verknüpften Argumenten"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "multiple_choice",
+            "prompt": "Was beschreibt das Konzept der ökologischen Sukzession am besten?",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "A) Die Abfolge geologischer Schichten, die über Millionen Jahre entstanden sind.",
+                "B) Die gerichtete, zeitliche Abfolge verschiedener Lebensgemeinschaften an einem Standort, die sich nach einer Störung oder auf unbesiedeltem Gebiet entwickeln.",
+                "C) Die Wanderbewegung von Tieren durch verschiedene Lebensräume im Laufe eines Jahres.",
+                "D) Die Anpassung einzelner Individuen einer Art an veränderte Umweltbedingungen innerhalb ihrer Lebenszeit."
+              ],
+              "select": "one"
+            },
+            "response": {"mode": "choices", "options": ["A", "B", "C", "D"], "select": "one"},
+            "cognitive_level": "understand",
+            "dimensions": ["W"],
+            "serves": [{"competence_id": "BIO.OS.6.KOM3.01", "relation": "exercises"}],
+            "est_minutes": 4,
+            "asset_refs": [],
+            "answer_key": "B) Die gerichtete, zeitliche Abfolge verschiedener Lebensgemeinschaften an einem Standort. Beispiel: Nach einem Waldbrand siedeln sich zuerst Pionierarten (Moose, Farne) an, dann Sträucher und schließlich der Schlusswald (Klimaxgesellschaft).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Antwort D beschreibt individuelle Anpassung (Akklimatisation), nicht Sukzession und auch nicht Evolution (die auf Populationsebene stattfindet).",
+              "Antwort C (Migration) ist ein häufiger Distraktorfehler: Migration beschreibt räumliche Bewegung, Sukzession beschreibt zeitliche Veränderung von Gemeinschaften."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "data_interpretation",
+            "prompt": "Betrachte Abbildung 2: die CO₂-Emissionen nach Sektoren in Österreich 2022.\n\na) Welcher Sektor emittiert am meisten? Nenne eine mögliche Ursache.\nb) Vergleiche die Sektoren 'Verkehr' und 'Landwirtschaft'. Nenne je eine konkrete Maßnahme, mit der die Emissionen in diesen Sektoren gesenkt werden könnten.\nc) Berechne den prozentualen Anteil des Verkehrssektors an den Gesamtemissionen (gerundet auf eine Dezimalstelle). Gesamtemissionen = Summe aller Sektoren.",
+            "payload": null,
+            "response": {"mode": "lines", "n": 8},
+            "cognitive_level": "analyze",
+            "dimensions": ["E", "W"],
+            "serves": [
+              {"competence_id": "BIO.OS.x.ERK.05", "relation": "exercises"},
+              {"competence_id": "BIO.OS.6.KOM3.02", "relation": "exercises"},
+              {"competence_id": "BIO.OS.x.FAC.03", "relation": "exercises"}
+            ],
+            "est_minutes": 10,
+            "asset_refs": ["abb2"],
+            "answer_key": "a) Verkehr (22,4 Mio. t) emittiert am meisten. Mögliche Ursache: hoher Anteil an PKW-Verkehr mit Verbrennungsmotoren, Transitverkehr durch Österreich, Luftverkehr. b) Verkehr: z. B. Ausbau des öffentlichen Nahverkehrs, Förderung von Elektromobilität, Reduktion von Kurzstreckenflügen; Landwirtschaft: z. B. Reduktion von Methanemissionen durch Anpassung der Rinderhaltung (Fütterung), Förderung ökologischer Landwirtschaft, Reduktion des Einsatzes von Stickstoffdüngern (N₂O-Emissionen). c) Gesamtemissionen = 22,4 + 18,7 + 12,1 + 8,3 + 2,1 = 63,6 Mio. t; Anteil Verkehr = 22,4 / 63,6 × 100 = 35,2 %.",
+            "acceptable_reasoning": "Akzeptabel: Schüler:innen nennen plausible, biologisch oder technisch fundierte Maßnahmen; bei der Berechnung ist der Rechenweg wichtiger als ein exaktes Ergebnis.",
+            "watch_outs": [
+              "Schüler:innen nennen bei der Landwirtschaft oft nur Pestizide als Problem – Treibhausgase in der Landwirtschaft stammen primär aus Methan (Wiederkäuer) und Lachgas (Düngung).",
+              "Ohne Taschenrechner kann die Berechnung herausfordernd sein – ggf. gemeinsam lösen oder als Hausaufgabe setzen."
+            ],
+            "rubric": [
+              {"criterion": "Sektor und Ursache (a)", "levels": ["Falscher Sektor oder keine Ursache", "Richtiger Sektor, unspezifische Ursache", "Richtiger Sektor mit konkreter, plausibler Ursache"]},
+              {"criterion": "Maßnahmen je Sektor (b)", "levels": ["Keine oder falsche Maßnahmen", "Eine korrekte Maßnahme für einen Sektor", "Je eine korrekte, konkrete Maßnahme für beide Sektoren"]},
+              {"criterion": "Prozentberechnung (c)", "levels": ["Fehlender oder falscher Ansatz", "Korrekter Ansatz, Rechenfehler", "Korrektes Ergebnis: 35,2 %"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "create_produce",
+            "prompt": "Du wirst beauftragt, ein kurzes Informationsblatt (ca. 150–200 Wörter) für Mitschüler:innen zu erstellen, das erklärt:\n- Was Nachhaltigkeit in der Biologie bedeutet\n- Ein konkretes Beispiel aus einem österreichischen Ökosystem\n- Einen Appell: Was können Jugendliche konkret tun?\n\nVerwende eine klare Struktur (Überschrift, 2–3 Abschnitte). Das Informationsblatt soll sachlich korrekt und ansprechend formuliert sein.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 70},
+            "cognitive_level": "create",
+            "dimensions": ["W", "S"],
+            "serves": [
+              {"competence_id": "BIO.OS.x.FAC.03", "relation": "exercises"},
+              {"competence_id": "BIO.OS.x.STA.05", "relation": "exercises"},
+              {"competence_id": "BIO.OS.6.KOM3.02", "relation": "exercises"}
+            ],
+            "est_minutes": 15,
+            "asset_refs": [],
+            "answer_key": "Musterlösung (Beispiel): Titel: 'Nachhaltigkeit – mehr als ein Schlagwort'. Abschnitt 1: Nachhaltigkeit bedeutet, die Erde so zu nutzen, dass auch zukünftige Generationen davon leben können. In der Biologie heißt das: Ökosysteme erhalten, Artenvielfalt schützen und Ressourcen nicht schneller verbrauchen, als sie sich erneuern. Abschnitt 2: Die Donauauen bei Wien sind ein Beispiel für ein bedrohtes, aber schützenswertes Ökosystem. Hier leben über 8.000 Tier- und Pflanzenarten, doch Klimawandel und Wasserentnahme gefährden das empfindliche Gleichgewicht. Abschnitt 3: Was kann ich tun? Öffentliche Verkehrsmittel nutzen, saisonale Lebensmittel kaufen, weniger Fleisch essen und Politikerinnen und Politiker auf lokaler Ebene für Umweltschutz sensibilisieren. Jede Handlung zählt.",
+            "acceptable_reasoning": "Akzeptabel: Jedes Informationsblatt, das Nachhaltigkeit biologisch korrekt erklärt, ein reales österreichisches Ökosystem nennt und einen konkreten Handlungsappell enthält.",
+            "watch_outs": [
+              "Nachhaltigkeit darf nicht auf 'Mülltrennung' reduziert werden – systemische Maßnahmen (Ernährung, Mobilität, Energie) sind relevanter.",
+              "Österreichische Ökosysteme: Alpen, Wienerwald, Neusiedler See, Donauauen, Moore – Schüler:innen sollten mindestens eines konkret benennen können."
+            ],
+            "rubric": [
+              {"criterion": "Definition Nachhaltigkeit biologisch korrekt", "levels": ["Fehlt oder rein alltagssprachlich", "Ansatz vorhanden, biologischer Bezug fehlt", "Korrekte biologische Verankerung (Ressourcenerhalt, Ökosysteme)"]},
+              {"criterion": "Österreichisches Ökosystem konkret", "levels": ["Kein konkretes Beispiel", "Beispiel genannt, ohne ökologische Details", "Konkretes Ökosystem mit ökologischer Erläuterung"]},
+              {"criterion": "Handlungsappell", "levels": ["Kein Appell", "Allgemeiner Aufruf ohne Konkretisierung", "Mindestens zwei konkrete, umsetzbare Handlungen für Jugendliche"]},
+              {"criterion": "Sprache und Struktur", "levels": ["Keine Struktur, unverständlich", "Struktur erkennbar, Sprache holprig", "Klare Struktur, adressatengerechte Sprache"]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "id": "c0063.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne das lateinische Wort seinem deutschen Fremdwort (Lehnwort) zu. Achte auf die Bedeutungsähnlichkeit.\n\nLateinische Wörter: scribere, legere, audire, videre, currere, dicere",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "scribere (schreiben)",
+        "legere (lesen/wählen)",
+        "audire (hören)",
+        "videre (sehen)",
+        "currere (laufen)",
+        "dicere (sagen)"
+      ],
+      "right": [
+        "das Skript / skribieren",
+        "die Lektion / das Lektüre",
+        "das Auditorium / das Audit",
+        "die Vision / der Videofilm",
+        "der Kurs / die Kurve",
+        "das Diktat / das Diktum"
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Lateinisches Verb",
+        "Deutsches Fremdwort"
+      ],
+      "rows": 6
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "INH"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "LAT.US.4.INH.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "scribere → Skript/skribieren | legere → Lektion/Lektüre | audire → Auditorium/Audit | videre → Vision/Video | currere → Kurs/Kurve | dicere → Diktat/Diktum",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Currere → Kurs: der Lautübergang c→k und das ausgefallene -rere erklären; curriculum (der Lauf, der Kursplan) ist eine wichtige Ableitung.",
+      "Legere hat zwei Bedeutungen (lesen UND wählen) — Lektion kommt von lesen, aber Auslese und Wahl (vgl. engl. elect) ebenfalls.",
+      "Schüler:innen dazu anregen, weitere Ableitungen zu suchen — es gibt jeweils viele mehr."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Latein",
+  "klasse": 4,
+  "kompetenzbereich": "Inhalts- und themenbezogene Kompetenzen",
+  "competences": [
+    "LAT.US.4.INH.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "INH"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0063",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

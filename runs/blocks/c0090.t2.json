@@ -1,0 +1,127 @@
+{
+  "id": "c0090.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Schau dir Abbildung 1 (CO₂-Äquivalente von Lebensmitteln) an.\na) Welches Lebensmittel verursacht die höchsten, welches die niedrigsten Emissionen pro Kilogramm?\nb) Wie viel mal mehr CO₂eq verursacht ein Kilogramm Rindfleisch im Vergleich zu einem Kilogramm Linsen? Berechne das Verhältnis.\nc) Was fällt dir beim Vergleich von tierischen und pflanzlichen Lebensmitteln generell auf?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "OK",
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.1.LEB3.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "a) Höchste: Rindfleisch (60 kg CO₂eq/kg); niedrigste: Kartoffeln (0,3 kg CO₂eq/kg). b) 60 / 0,9 ≈ 67 — Rindfleisch verursacht etwa 67-mal mehr CO₂eq als Linsen. c) Tierische Produkte haben generell deutlich höhere Emissionen als pflanzliche, besonders Wiederkäuer (Rind, Schaf) durch Methan.",
+    "acceptable_reasoning": "Auch ungefähre Berechnungen (60 ÷ 0,9 ≈ 60–70-fach) sind akzeptabel.",
+    "rubric": [
+      {
+        "criterion": "Ablesung und Vergleich",
+        "levels": [
+          "Falsche Ablesewerte",
+          "Richtige Endwerte, kein Vergleich",
+          "Richtige Ablesewerte und sinnvoller Vergleich"
+        ]
+      },
+      {
+        "criterion": "Verhältnisberechnung",
+        "levels": [
+          "Keine Berechnung",
+          "Ansatz erkennbar, Ergebnis falsch",
+          "Korrekte Division mit Ergebnis ca. 60–70-fach"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Die y-Achse hat große Skalenunterschiede — Schüler:innen sollen explizit auf die genauen Zahlenwerte schauen, nicht nur visuell schätzen.",
+      "Manche Schüler:innen werden das Verhältnis addieren statt dividieren — darauf achten.",
+      "Die Zahlen gelten pro kg Lebensmittel, nicht pro Portion — das verzerrt den direkten Vergleich (Rindfleisch-Portionen sind kleiner als Kartoffelportionen). Diesen Hinweis kann die Lehrkraft als Vertiefung einbringen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 1,
+  "kompetenzbereich": "Leben und Wirtschaften im Hinblick auf nachhaltige Ernährung",
+  "competences": [
+    "GWB.US.1.LEB3.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "OK",
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Rindfleisch",
+          "Käse",
+          "Schweinefleisch",
+          "Geflügel",
+          "Eier",
+          "Milch (1 L)",
+          "Tofu",
+          "Linsen",
+          "Kartoffeln"
+        ],
+        "values": [
+          60.0,
+          21.0,
+          7.6,
+          6.1,
+          4.5,
+          3.2,
+          2.8,
+          0.9,
+          0.3
+        ],
+        "title": "CO₂-Äquivalente ausgewählter Lebensmittel (kg CO₂eq pro kg Lebensmittel)",
+        "xlabel": "Lebensmittel",
+        "ylabel": "kg CO₂eq / kg (log-Skala)",
+        "log": true
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0090",
+  "source": "ai",
+  "created_at": "2026-06-26T19:02:22+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

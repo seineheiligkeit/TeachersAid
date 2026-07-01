@@ -1,0 +1,81 @@
+{
+  "id": "c0044.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Bewertungsreflexion: Ihr habt in dieser Stunde Gruppenbegleitungen entwickelt und präsentiert. Wähle eine andere Gruppe aus und beschreibe, was ihr musikalisch gut gelungen ist – und welchen einen Aspekt du verbessern würdest, wenn du noch eine Minute Zeit hättest. Begründe beide Aussagen.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 35.0
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "SIN"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MUS.US.3.SIN.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "Offene Antwort; Bewertung: ein positiver Aspekt mit konkreter musikalischer Begründung, ein Verbesserungsvorschlag mit Begründung, konstruktive Sprache.",
+    "acceptable_reasoning": "Jede konstruktive Rückmeldung akzeptabel; Fachbegriffe (Puls, Dynamik, Zusammenspiel) werden positiv bewertet.",
+    "rubric": [
+      {
+        "criterion": "Positiver Aspekt",
+        "levels": [
+          "fehlend oder ohne Begründung",
+          "mit musikalischer Begründung"
+        ]
+      },
+      {
+        "criterion": "Verbesserungsvorschlag",
+        "levels": [
+          "fehlend oder 'alles war gut'",
+          "konkret und umsetzbar mit Begründung"
+        ]
+      },
+      {
+        "criterion": "Sprache",
+        "levels": [
+          "wertend/verletzend",
+          "neutral",
+          "konstruktiv und respektvoll"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Feedback-Kultur: Klasse soll wissen, dass 'ich würde verbessern' nicht 'das war schlecht' bedeutet.",
+      "Schüler:innen vermeiden Kritik an Freund:innen – Kriterien als neutralen Anker nutzen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Musik",
+  "klasse": 3,
+  "kompetenzbereich": "Singen und Musizieren",
+  "competences": [
+    "MUS.US.3.SIN.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "SIN"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0044",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

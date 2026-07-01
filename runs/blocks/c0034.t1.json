@@ -1,0 +1,66 @@
+{
+  "id": "c0034.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Entscheide, ob die Aussage richtig oder falsch ist, und begründe deine Antwort.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Alle europäischen Staaten sind Mitglieder der Europäischen Union.",
+        "Die Schweiz ist Mitglied des Schengenraums, aber kein EU-Mitglied.",
+        "Der Euro ist die offizielle Währung aller EU-Mitgliedstaaten.",
+        "Österreich ist seit 1995 Mitglied der Europäischen Union."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "OK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.4.EUR.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Falsch: z. B. Schweiz, Norwegen, Island, Türkei, Ukraine sind nicht EU-Mitglieder. Richtig: Schweiz hat bilaterale Verträge incl. Schengen. Falsch: Dänemark, Schweden, Ungarn, Polen u. a. haben nicht den Euro (Stand 2024). Richtig: Österreich trat der EU am 1. Jänner 1995 bei.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Aussage 2 ist überraschend für viele Schüler:innen – die Schweiz ist trotz Nicht-EU-Mitgliedschaft Teil des Schengenraums (bilaterale Abkommen).",
+      "Aussage 3 ist ein häufiger Irrtum – nicht alle EU-Staaten haben den Euro eingeführt; manche wollen es nicht (Dänemark, Schweden per Opt-out)."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 4,
+  "kompetenzbereich": "Europa und europäische Integration",
+  "competences": [
+    "GWB.US.4.EUR.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "OK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0034",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

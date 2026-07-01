@@ -1,0 +1,86 @@
+{
+  "id": "c0095.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "map_work",
+    "prompt": "Lokale Erkundung: Nimm einen Atlas oder eine digitale Karte (z. B. Google Maps, OpenStreetMap, maps.at).\n\n(a) Markiere auf einer Übersichtskarte deines Bundeslandes: deine Schulgemeinde, die nächste Bezirkshauptstadt und das nächste Oberzentrum (Landeshauptstadt oder große Stadt).\n(b) Miss (schätzungsweise) die Entfernung: Wie weit ist deine Schulgemeinde vom nächsten Oberzentrum entfernt?\n(c) Notiere: Gibt es eine direkte Bahnverbindung? Wie lange dauert die Fahrt mit öffentlichen Verkehrsmitteln?\n(d) Beurteile auf Basis dieser Informationen: Würdest du deine Schulgemeinde eher als Zentrum oder als Peripherie einordnen – und warum?",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Kriterium",
+        "Wert / Beobachtung",
+        "Quelle"
+      ],
+      "rows": 5
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "OK",
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.ZEN.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Individuelle Antworten je nach Standort der Schule. Gütekriterien: korrekte Bezeichnung der Orte, plausible Entfernungsangabe (Schätzung erlaubt), Begründung der Einordnung mit mindestens einem konkreten Kriterium (nicht nur 'weil es klein ist').",
+    "acceptable_reasoning": "Die Aufgabe ist bewusst offen – das Arbeitsblatt behauptet keine Ortsfakten. Die Schüler:innen recherchieren selbst. Die Lehrkraft kann die Aufgabe vorbereiten, indem sie passende Kartenquellen nennt.",
+    "rubric": [
+      {
+        "criterion": "Kartografische Verortung",
+        "levels": [
+          "Keine Orte eingetragen",
+          "Ein bis zwei Orte identifiziert",
+          "Alle drei Orte korrekt benannt und verortet"
+        ]
+      },
+      {
+        "criterion": "Kriterienbasierte Einordnung",
+        "levels": [
+          "Einordnung ohne Begründung",
+          "Begründung mit einem Kriterium",
+          "Begründung mit mehreren Kriterien, Relativität angesprochen"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Nicht alle Schüler:innen haben Erfahrung mit Atlasarbeit oder digitalen Karten – kurze Einführung empfehlenswert. Schüler:innen sollen keine erfundenen Zahlen einsetzen, sondern die Felder leer lassen, wenn sie eine Quelle nicht finden.",
+      "Die Einordnung (Zentrum/Peripherie) ist wertvoll als Gesprächsanlass: Verschiedene Schüler:innen können unterschiedliche Ergebnisse haben, je nachdem welches Kriterium sie priorisieren."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "map_work",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Zentren und Peripherien in Österreich",
+  "competences": [
+    "GWB.US.3.ZEN.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "OK",
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0095",
+  "source": "ai",
+  "created_at": "2026-06-26T19:02:29+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

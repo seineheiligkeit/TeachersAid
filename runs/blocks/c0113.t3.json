@@ -1,0 +1,171 @@
+{
+  "id": "c0113.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Fülle die Tabelle anhand von Abb. 1 aus. Trage für jeden Jahreszeit-Block den wärmsten Monat, seine Temperatur und den höchsten Niederschlag der Jahreszeit ein.",
+    "payload": {
+      "kind": "table_fill",
+      "columns": [
+        "Jahreszeit",
+        "Monate",
+        "Wärmster Monat (ca. °C)",
+        "Höchster Niederschlag (ca. mm)"
+      ],
+      "rows": [
+        [
+          "Winter",
+          "Dez, Jän, Feb",
+          "",
+          ""
+        ],
+        [
+          "Frühling",
+          "Mär, Apr, Mai",
+          "",
+          ""
+        ],
+        [
+          "Sommer",
+          "Jun, Jul, Aug",
+          "",
+          ""
+        ],
+        [
+          "Herbst",
+          "Sep, Okt, Nov",
+          "",
+          ""
+        ]
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Jahreszeit",
+        "Monate",
+        "Wärmster Monat (ca. °C)",
+        "Höchster Niederschlag (ca. mm)"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "OK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.1.LEB4.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Winter: Feb, ca. 2,3 °C, ca. 47 mm (Dez). Frühling: Mai, ca. 15,8 °C, ca. 79 mm. Sommer: Jul, ca. 21,4 °C, ca. 78 mm (Jun). Herbst: Sep, ca. 15,8 °C, ca. 64 mm.",
+    "acceptable_reasoning": "Ablesen mit kleinen Ungenauigkeiten akzeptieren.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen müssen lernen, gleichzeitig auf Linie (Temp.) UND Balken (Niederschlag) zu achten — die häufigste Fehlerquelle ist, beide zu vermischen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 1,
+  "kompetenzbereich": "Leben und Wirtschaften unter Beachtung der natürlichen Prozesse",
+  "competences": [
+    "GWB.US.1.LEB4.01"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "OK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:climate_diagram",
+      "spec": {
+        "title": "Klimadiagramm Wien (Hohe Warte), Normalperiode 1991–2020",
+        "months": [
+          "Jän",
+          "Feb",
+          "Mär",
+          "Apr",
+          "Mai",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Okt",
+          "Nov",
+          "Dez"
+        ],
+        "temp": [
+          0.8,
+          2.3,
+          6.2,
+          11.4,
+          15.8,
+          19.7,
+          21.4,
+          20.9,
+          15.8,
+          10.5,
+          5.8,
+          1.5
+        ],
+        "precip": [
+          42,
+          38,
+          52,
+          42,
+          79,
+          70,
+          78,
+          69,
+          64,
+          47,
+          46,
+          47
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "geosphere_klima_normal_1991_2020",
+        "series": "wien",
+        "note": null,
+        "title": "Klimanormalwerte österreichischer Stationen (1991–2020)",
+        "url": "https://data.hub.geosphere.at/dataset/klima-v2-1m",
+        "attribution": "Datenquelle: GeoSphere Austria – data.hub.geosphere.at (klima-v2-1m, CC BY 4.0)",
+        "stand": "1991–2020"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0113",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:31+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

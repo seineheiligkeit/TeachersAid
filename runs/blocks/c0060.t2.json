@@ -1,0 +1,78 @@
+{
+  "id": "c0060.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne jede lateinische Wortform dem richtigen Kasus zu (Nominativ Singular oder Akkusativ Singular).\n\nWortformen: puella · puellam · servus · servum · via · viam",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "puella",
+        "puellam",
+        "servus",
+        "servum",
+        "via",
+        "viam"
+      ],
+      "right": [
+        "Nominativ Singular (a-Dekl.)",
+        "Akkusativ Singular (a-Dekl.)",
+        "Nominativ Singular (o-Dekl.)",
+        "Akkusativ Singular (o-Dekl.)"
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Wortform",
+        "Kasus"
+      ],
+      "rows": 6
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "SPR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "LAT.US.3.SPR.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "puella → Nom. Sg. (a-Dekl.); puellam → Akk. Sg. (a-Dekl.); servus → Nom. Sg. (o-Dekl.); servum → Akk. Sg. (o-Dekl.); via → Nom. Sg. (a-Dekl.); viam → Akk. Sg. (a-Dekl.).",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Servus/servum: die o-Deklination mit Endungen -us (Nom.) und -um (Akk.) einprägen.",
+      "Via kann auch als Ablativ interpretiert werden (via = 'auf dem Weg' = Abl. der Art und Weise) — in diesem Kontext aber als reiner Nominativ behandeln."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Latein",
+  "klasse": 3,
+  "kompetenzbereich": "Sprach- und textbezogene Kompetenzen",
+  "competences": [
+    "LAT.US.3.SPR.03"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "SPR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0060",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

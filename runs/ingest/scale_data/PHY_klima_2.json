@@ -1,0 +1,205 @@
+{
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Wetter und Klima",
+  "title": "Warum ist es im Westen feuchter? — Bregenz und Wien im Vergleich",
+  "kernfrage": "Warum regnet es in Bregenz so viel mehr als in Wien, obwohl beide Städte in Österreich liegen?",
+  "body": {
+    "intro": [],
+    "data_figures": [
+      {
+        "id": "abb1",
+        "intent": "climate",
+        "title": "Klimadiagramm Wien (Hohe Warte, 1991–2020)",
+        "data_source": {
+          "dataset_id": "geosphere_klima_normal_1991_2020",
+          "series": "wien"
+        }
+      },
+      {
+        "id": "abb2",
+        "intent": "climate",
+        "title": "Klimadiagramm Bregenz (1991–2020)",
+        "data_source": {
+          "dataset_id": "geosphere_klima_normal_1991_2020",
+          "series": "bregenz"
+        }
+      }
+    ],
+    "assets": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Zwei Klimadiagramme vergleichen",
+        "throughline": "Schülerinnen und Schüler lesen und vergleichen zwei Klimadiagramme und erschließen daraus die Rolle von Gebirge und Luftströmungen als physikalische Ursachen für die Niederschlagsverteilung in Österreich.",
+        "talking_points": [
+          "Der Niederschlagsunterschied Wien–Bregenz ist dramatisch: Wien ~674 mm/Jahr, Bregenz ~1581 mm/Jahr — mehr als doppelt so viel. Der Grund liegt nicht in der Temperatur (beide haben ähnliche Mitteltemperaturen), sondern in der Lage: Bregenz liegt am Westrand der Alpen, Wien im Windschatten (Luv-Lee-Effekt).",
+          "Physikalischer Kern: Feuchte Atlantikluft strömt von West nach Ost. Wenn sie an den Alpen aufsteigt, kühlt sie sich adiabatisch ab (trockenadiabatisch 1 K/100 m bis zum Taupunkt, dann feuchtadiabatisch ~0,6 K/100 m), kondensiert und regnet aus (Stauregen). Lee-Seite (Wien) erhält trockene, erwärmte Luft (Föhn-Effekt möglich).",
+          "Für WET.03: Temperaturunterschiede (Luft vs. Gebirge) und die daraus folgenden Luftbewegungen sind der Antrieb — das Gebirge als 'Hindernis' erzwingt Aufstieg und damit Abkühlung und Kondensation.",
+          "Zahlen bereithalten: Bregenz Jun 198 mm, Wien Jun 70 mm; Bregenz Feb 80 mm, Wien Feb 38 mm. Das Verhältnis bleibt über alle Monate hinweg — kein Monat ist in Wien feuchter als in Bregenz."
+        ],
+        "extensions": [
+          "Föhn erklären: Was passiert mit der Luft, wenn sie auf der Lee-Seite wieder absinkt? Warum ist sie dann wärmer und trockener als vorher?",
+          "Vergleich mit Innsbruck-Daten (ebenfalls im Alpenraum, aber im Tal) — warum hat Innsbruck weniger Niederschlag als Bregenz, aber mehr als Wien?",
+          "Stau-Diagramm selbst zeichnen: Luft steigt auf, kühlt ab, regnet — mit Temperaturgradient und Höhe."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "table_fill",
+            "prompt": "Lies aus den beiden Klimadiagrammen (Abb. 1 und Abb. 2) die folgenden Werte ab und trage sie in die Tabelle ein.",
+            "payload": {
+              "kind": "table_fill",
+              "columns": ["Merkmal", "Wien", "Bregenz"],
+              "rows": [
+                ["Wärmster Monat und Temperatur (°C)", "", ""],
+                ["Kältester Monat und Temperatur (°C)", "", ""],
+                ["Monat mit höchstem Niederschlag und Menge (mm)", "", ""],
+                ["Monat mit niedrigstem Niederschlag und Menge (mm)", "", ""]
+              ]
+            },
+            "response": {"mode": "table", "columns": ["Merkmal", "Wien", "Bregenz"], "rows": 4},
+            "cognitive_level": "remember",
+            "dimensions": ["W"],
+            "serves": [{"competence_id": "PHY.US.4.WET.03", "relation": "exercises"}],
+            "est_minutes": 6,
+            "asset_refs": ["abb1", "abb2"],
+            "answer_key": "Wien: wärmster Jul 21,4 °C, kältester Jän 0,8 °C, höchster Niederschlag Mai 79 mm, niedrigster Feb 38 mm. Bregenz: wärmster Jul 19,7 °C, kältester Jän 1,3 °C, höchster Niederschlag Jun 198 mm, niedrigster Feb 80 mm.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Bregenz-Niederschlagsskala ist viel größer als Wien — darauf achten, dass Schülerinnen und Schüler die richtige Achse ablesen.",
+              "Temperatur in Wien und Bregenz ist überraschend ähnlich — das ist ein wichtiges Ergebnis, das die Rolle der Temperaturdifferenz als einzige Ursache ausschließt."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "open_response",
+            "prompt": "Vergleiche die jährlichen Niederschlagsmengen der beiden Städte. Wien erhält in einem Jahr insgesamt etwa 674 mm Niederschlag, Bregenz etwa 1581 mm. Berechne, um wie viel Prozent Bregenz mehr Niederschlag bekommt als Wien.",
+            "payload": null,
+            "response": {"mode": "lines", "n": 4},
+            "cognitive_level": "apply",
+            "dimensions": ["W"],
+            "serves": [{"competence_id": "PHY.US.4.WET.03", "relation": "exercises"}],
+            "est_minutes": 5,
+            "asset_refs": [],
+            "answer_key": "Differenz: 1581 − 674 = 907 mm. Prozentualer Unterschied: 907/674 × 100 ≈ 134,6 %. Bregenz erhält also rund 135 % mehr Niederschlag als Wien (bzw. das 2,3-fache).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Verwechslung 'um x % mehr' vs. 'x % von': 'um 135 % mehr' bedeutet das 2,35-fache, nicht das 1,35-fache.",
+              "Für schwächere Schülerinnen und Schüler reicht der Faktor (≈ 2,3-fach) als alternatives Ergebnis."
+            ],
+            "rubric": [
+              {"criterion": "Rechenweg", "levels": ["Differenz und Prozent korrekt", "Einer der Schritte korrekt", "Keine sinnvolle Rechnung"]},
+              {"criterion": "Einheit/Formulierung", "levels": ["'mehr als' korrekt formuliert", "Zahl richtig, Formulierung verwirrend", "Fehlt"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "open_response",
+            "prompt": "Beide Städte haben ähnliche Jahresmitteltemperaturen (Wien ca. 11,8 °C, Bregenz ca. 10,2 °C). Wenn die Temperatur kaum unterschiedlich ist — was könnte dann die Ursache für den riesigen Unterschied im Niederschlag sein? Formuliere eine begründete Vermutung.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 35},
+            "cognitive_level": "analyze",
+            "dimensions": ["W", "E"],
+            "serves": [
+              {"competence_id": "PHY.US.4.WET.03", "relation": "exercises"},
+              {"competence_id": "PHY.US.4.WET.02", "relation": "exercises"}
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "Erwartete Vermutung (Schülerebene): Die Lage spielt eine Rolle — Bregenz liegt am Bodensee und am westlichen Rand der Alpen. Feuchte Luft, die aus dem Westen (Atlantik) kommt, trifft auf die Berge, muss aufsteigen und kühlt sich ab. Dabei kondensiert der Wasserdampf → Regen. Wien liegt im 'Windschatten' der Alpen und erhält diese Stauregen nicht. Physikalisch: Aufstieg → Abkühlung → Kondensation → Niederschlag (adiabatische Abkühlung).",
+            "acceptable_reasoning": "Kreative Vermutungen (Nähe zum Bodensee, Atlantikwinde, Berge als Barriere) sind alle wertvoll; das physikalische Prinzip muss nicht perfekt formuliert sein.",
+            "watch_outs": [
+              "Schülerinnen und Schüler werden 'Bodensee' als Verdunstungsquelle nennen — das ist ein Beitrag, aber der Hauptfaktor ist die atlantische Luftfeuchtigkeit und der Alpenrand.",
+              "Den Begriff 'Stauregen' nicht einfordern, wenn er nicht eingeführt wurde — Umschreibung ('Wolken stauen sich am Berg') reicht."
+            ],
+            "rubric": [
+              {"criterion": "Lagebezug", "levels": ["Alpen/Wetterlage als Ursache erkannt", "Lage erwähnt, ohne Mechanismus", "Nicht erkannt"]},
+              {"criterion": "Physikalischer Mechanismus", "levels": ["Aufstieg → Abkühlung → Regen skizziert", "Kondensation/Abkühlung erwähnt", "Fehlt"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "open_response",
+            "prompt": "Erkläre den folgenden physikalischen Zusammenhang in eigenen Worten: Wenn feuchte Luft an einem Gebirge aufsteigt, kühlt sie sich ab. Ab einem bestimmten Punkt (dem Taupunkt) kann die Luft weniger Wasserdampf halten, und es bilden sich Wolken, die zu Regen führen. Warum kühlt aufsteigende Luft ab?",
+            "payload": null,
+            "response": {"mode": "lines", "n": 5},
+            "cognitive_level": "understand",
+            "dimensions": ["W"],
+            "serves": [{"competence_id": "PHY.US.4.WET.02", "relation": "exercises"}],
+            "est_minutes": 7,
+            "asset_refs": [],
+            "answer_key": "Aufsteigende Luft gelangt in Bereiche mit geringerem Luftdruck (höher oben ist die Luftsäule darüber leichter). Die Luft dehnt sich aus — dazu muss sie Energie aufwenden. Da keine Wärme von außen zugeführt wird (adiabatischer Prozess), nimmt sie die Energie aus ihrer eigenen inneren Energie → die Temperatur sinkt. Pro 100 m Aufstieg kühlt trockene Luft um ca. 1 °C ab.",
+            "acceptable_reasoning": "Für die Unterstufe genügt die Idee: 'Luft dehnt sich beim Aufsteigen aus und braucht dafür Energie, die als Wärme verloren geht.' Der Begriff 'adiabatisch' ist nicht erforderlich.",
+            "watch_outs": [
+              "Falsche Idee: 'Oben ist es kälter, weil die Luft weiter von der Sonne entfernt ist.' Die Sonne heizt die Erdoberfläche, nicht direkt die Luft — Abkühlung mit Höhe ist ein Expansionseffekt.",
+              "Den Begriff 'Taupunkt' nicht einfordern, wenn nicht eingeführt."
+            ],
+            "rubric": [
+              {"criterion": "Expansionsidee", "levels": ["Ausdehnung → Energieabgabe → Abkühlung erklärt", "Aufstieg → kälter genannt ohne Mechanismus", "Fehlt"]},
+              {"criterion": "Physikalische Korrektheit", "levels": ["Korrekt und vollständig", "Intuitiv richtig mit kleinen Lücken", "Falsch"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "true_false_justify",
+            "prompt": "Kreuze an (wahr/falsch) und begründe kurz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Wien liegt am Alpenrand und erhält deshalb mehr Stauregen als Bregenz.",
+                "Bregenz hat im Sommer mehr Niederschlag als im Winter.",
+                "Die Jahresmitteltemperaturen von Wien und Bregenz unterscheiden sich um mehr als 5 °C.",
+                "Wenn feuchte Luft aufsteigt und abkühlt, kann mehr Wasserdampf in der Luft gehalten werden."
+              ]
+            },
+            "response": {"mode": "none"},
+            "cognitive_level": "analyze",
+            "dimensions": ["W"],
+            "serves": [{"competence_id": "PHY.US.4.WET.03", "relation": "exercises"}],
+            "est_minutes": 7,
+            "asset_refs": ["abb1", "abb2"],
+            "answer_key": "1. FALSCH — Wien liegt im Windschatten (Lee), Bregenz am Alpenrand (Luv) und erhält mehr Stauregen. 2. WAHR — Bregenz: Mai–Aug je >150 mm vs. Jän–Feb je ~80 mm. 3. FALSCH — Wien ~11,8 °C, Bregenz ~10,2 °C, Unterschied nur ~1,6 K. 4. FALSCH — kältere Luft kann weniger Wasserdampf halten (Abkühlung → Kondensation → Regen).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Aussage 3 soll zeigen, dass der Niederschlagsunterschied NICHT durch Temperatur erklärt wird — ein wichtiges Denk-Ergebnis dieser Aufgabe.",
+              "Aussage 4 ist eine zentrale Fehlvorstellung (warme Luft hält mehr, nicht weniger Wasserdampf) — explizit besprechen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "open_response",
+            "prompt": "Österreich plant, eine neue Fußball-Freiluftarena zu bauen, die viele Regentage schlecht vertragen würde. Beurteile auf Basis der Klimadaten, ob Wien oder Bregenz der besser geeignete Standort wäre. Nenne dabei konkrete Zahlen aus den Diagrammen.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 45},
+            "cognitive_level": "evaluate",
+            "dimensions": ["W", "S"],
+            "serves": [
+              {"competence_id": "PHY.US.4.WET.04", "relation": "exercises"}
+            ],
+            "est_minutes": 8,
+            "asset_refs": ["abb1", "abb2"],
+            "answer_key": "Wien ist aus klimatischer Sicht der bessere Standort: Wien ca. 674 mm Jahresniederschlag vs. Bregenz ca. 1581 mm — mehr als doppelt so viel. Kein Monat hat in Wien über 79 mm (Mai), in Bregenz hingegen erreichen Jun–Aug je 188–198 mm. Auch die Anzahl der Regentage (aus dem Diagramm nicht direkt ablesbar, aber proportional) ist in Bregenz höher. Einschränkung: Klimawandel und Variabilität spielen auch eine Rolle; das Klimadiagramm zeigt Mittelwerte, keine Garantie für einzelne Tage.",
+            "acceptable_reasoning": "Jede gut begründete Entscheidung mit Datenbezug ist vollwertig; auch 'Bregenz hat schönere Alpenkulisse' als Gegenargument ist zulässig, solange die physikalischen Fakten stimmen.",
+            "watch_outs": [
+              "Schülerinnen und Schüler müssen aus dem Klimadiagramm konkrete Zahlen nennen — eine Meinung ohne Datenbezug ist keine physikalische Bewertung.",
+              "Den Unterschied zwischen Klimamittelwert und Tagesprognose klar halten: auch Wien kann sehr regnerische Tage haben."
+            ],
+            "rubric": [
+              {"criterion": "Datenbezug", "levels": ["Konkrete Niederschlagszahlen aus beiden Diagrammen", "Ein Diagramm zitiert", "Kein Datenbezug"]},
+              {"criterion": "Schlussfolgerung", "levels": ["Klare, physikalisch begründete Empfehlung", "Empfehlung ohne Begründung", "Fehlt"]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

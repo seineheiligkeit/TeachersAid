@@ -1,0 +1,80 @@
+{
+  "id": "c0121.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Vergleiche Mittelwert (~45 047 USD) und Median (~48 245 USD). Warum liegt hier der Mittelwert UNTER dem Median? Welches Land ist dafuer verantwortlich? Begruende anhand der Zahlen.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "BEG",
+      "DAR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.3.DAT.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Nigeria (1 084 USD) und Indien (2 695 USD) sind extreme Ausreisser nach UNTEN — sie ziehen den Mittelwert nach unten. China (13 303 USD) verstaerkt diesen Effekt. Die drei Niedrigwerte liegen weit unter allen anderen Werten und senken die Summe so stark, dass der Mittelwert (45 047 USD) unter den Median (48 245 USD) faellt. Erklaerung: Wenn die Ausreisser auf der Niedrig-Seite liegen, sinkt der Mittelwert unter den Median. Wenn die Ausreisser auf der Hoch-Seite liegen (wie bei Schweiz), steigt der Mittelwert ueber den Median.",
+    "acceptable_reasoning": "Antwort, die konkret Nigeria/Indien/China als Ursache benennt und 'Ausreisser unten drueckt Mittelwert nach unten' erklaert, ist vollwertig.",
+    "rubric": [
+      {
+        "criterion": "Ausreisser-Laender korrekt identifiziert",
+        "levels": [
+          "Kein Land benannt",
+          "Ein Land genannt",
+          "Alle drei (Nigeria, Indien, China) mit Werten"
+        ]
+      },
+      {
+        "criterion": "Richtung des Effekts erklaert",
+        "levels": [
+          "Richtung falsch oder fehlend",
+          "Korrekt: Niedrigausreisser drueckt Mittelwert unter Median"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Haeufige Fehlannahme: 'Mittelwert immer groesser als Median' — dieser Datensatz widerlegt das.",
+      "Hier kann die Schweiz als Gegenstueck erklaert werden: entfernt man stattdessen Indien und Nigeria und behaelt die Schweiz, wuerde der Mittelwert steigen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Mathematik",
+  "klasse": 3,
+  "kompetenzbereich": "4: Daten und Zufall",
+  "competences": [
+    "MAT.US.3.DAT.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "BEG",
+    "DAR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0121",
+  "source": "ai",
+  "created_at": "2026-06-27T15:21:15+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

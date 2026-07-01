@@ -1,0 +1,146 @@
+{
+  "id": "c0097.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Betrachte Abb. 2 (Streudiagramm Bildungsniveau und Einkommen).\na) Beschreibe den Zusammenhang in eigenen Worten. Was zeigt die Trendgerade?\nb) Welche Schlussfolgerung für deine eigene Bildungsplanung kannst du daraus ziehen?\nc) Warum ist dieser Zusammenhang allein NICHT ausreichend, um individuelle Chancen zu erklären? Nenne zwei Faktoren, die zusätzlich eine Rolle spielen.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "UK",
+      "HK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.4.EIG.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "a) Je mehr Schuljahre im Durchschnitt absolviert werden, desto höher das BIP pro Kopf – ein positiver Zusammenhang. Die Trendgerade zeigt, dass die Beziehung annähernd linear ist (auf dieser vereinfachten Darstellung). b) Bildungsinvestitionen erhöhen langfristig die Einkommenschancen – Schulabschluss und Weiterbildung sind wirtschaftlich bedeutsam. c) Weitere Faktoren: soziale Herkunft und Elterneinkommen (Chancengleichheit nicht vollständig), Geschlecht (Gender Pay Gap), wirtschaftliche Konjunktur, strukturelle Diskriminierung auf dem Arbeitsmarkt, regionale Wirtschaftskraft.",
+    "acceptable_reasoning": "Die Unterscheidung zwischen Korrelation und Kausalität soll hier explizit gemacht werden – 'mehr Bildung = mehr Geld' ist vereinfacht.",
+    "rubric": [
+      {
+        "criterion": "Diagramminterpretation",
+        "levels": [
+          "Kein Zusammenhang erkannt.",
+          "Positiver Zusammenhang beschrieben.",
+          "Zusammenhang klar mit Trendgerade erklärt; Einschränkung der Korrelation thematisiert."
+        ]
+      },
+      {
+        "criterion": "Zusatzfaktoren",
+        "levels": [
+          "Keine Faktoren genannt.",
+          "Ein Faktor genannt.",
+          "Zwei oder mehr konkrete Faktoren mit kurzer Erläuterung."
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Das Streudiagramm zeigt Länderdurchschnitte – es verdeckt die enorme Ungleichheit innerhalb von Ländern.",
+      "Vermeiden, dass die Aufgabe als 'Bildung macht reich' gelesen wird – strukturelle Faktoren sind unbedingt zu thematisieren."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 4,
+  "kompetenzbereich": "Das eigene Ich in einer vernetzten Welt",
+  "competences": [
+    "GWB.US.4.EIG.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "UK",
+    "HK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:scatter",
+      "spec": {
+        "points": [
+          [
+            3.2,
+            1.1
+          ],
+          [
+            4.8,
+            2.3
+          ],
+          [
+            6.1,
+            4.5
+          ],
+          [
+            8.0,
+            8.2
+          ],
+          [
+            10.2,
+            18.5
+          ],
+          [
+            11.5,
+            28.0
+          ],
+          [
+            12.8,
+            42.0
+          ],
+          [
+            13.4,
+            55.0
+          ],
+          [
+            14.0,
+            62.0
+          ],
+          [
+            14.5,
+            72.0
+          ]
+        ],
+        "xlabel": "Durchschnittliche Schuljahre",
+        "ylabel": "BIP pro Kopf in 1000 USD",
+        "title": "Bildungsniveau (Schuljahre) und Einkommen (BIP pro Kopf, 2022)",
+        "fit": true
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0097",
+  "source": "ai",
+  "created_at": "2026-06-26T19:02:31+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

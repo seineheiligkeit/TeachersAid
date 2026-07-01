@@ -1,0 +1,95 @@
+{
+  "id": "c0088.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Beurteile folgende Aussagen über den Treibhauseffekt. Kreuze an und begründe.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Der natürliche Treibhauseffekt ist schädlich und sollte verhindert werden.",
+        "CO₂ lässt Sonnenlicht ungehindert durch, absorbiert aber die Infrarotstrahlung der Erde.",
+        "Mehr CO₂ in der Atmosphäre bedeutet immer mehr Erwärmung.",
+        "Der Treibhauseffekt ist dasselbe wie das Ozonloch."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "richtig",
+        "falsch",
+        "Begründung"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.4.WET.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "1: falsch — der natürliche Treibhauseffekt ist lebenswichtig (ohne ihn wäre die Erde gefroren). 2: richtig — CO₂ ist für Sonnenlicht (kurzwellig) transparent, absorbiert aber Infrarotstrahlung (langwellig). 3: richtig im Prinzip, aber mit Einschränkung — es gibt Sättigungseffekte bei hohen CO₂-Konzentrationen; qualitativ gilt: mehr CO₂ → mehr Erwärmung. 4: falsch — Ozonloch betrifft den UV-Schutz (Ozonabbau durch FCKW), nicht den Wärmerückhalt.",
+    "acceptable_reasoning": "Für Aussage 3: Schüler:innen der Unterstufe müssen Sättigungseffekte nicht kennen; 'prinzipiell richtig' ist volle Punktzahl.",
+    "rubric": [
+      {
+        "criterion": "Korrekte Einschätzung",
+        "levels": [
+          "0–1 korrekt",
+          "2–3 korrekt",
+          "Alle 4 korrekt"
+        ]
+      },
+      {
+        "criterion": "Begründungsqualität",
+        "levels": [
+          "Keine oder oberflächliche Begründung",
+          "Physikalischer Mechanismus angesprochen",
+          "Mechanismus klar erklärt, Verwechslungen explizit ausgeschlossen"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Die Verwechslung Treibhauseffekt / Ozonloch ist sehr verbreitet — beide sind Umweltthemen, aber völlig verschiedene Mechanismen.",
+      "Aussage 1 provoziert: 'Natürlich = gut' ist eine Fehlschluss-Falle. Entscheidend ist der Unterschied natürlicher vs. verstärkter Treibhauseffekt."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Wetter und Klima",
+  "competences": [
+    "PHY.US.4.WET.04"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "W",
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0088",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:20+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

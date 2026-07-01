@@ -1,0 +1,59 @@
+{
+  "id": "c0061.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "text_analysis",
+    "prompt": "Lies den folgenden kurzen lateinischen Text. Unterstreiche alle Verben und schreibe daneben: Person, Numerus, Tempus und deutsche Bedeutung.\n\n---\nRomulus et Remus Romam condiderunt. Romulus murus urbis aedificavit. Remus murum transsilivit. Romulus fratrem suum necavit. Romani Romulum regem suum amant et laudant.\n---",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "SPR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "LAT.US.3.SPR.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "condiderunt: 3. Pl. Perf. — gründeten / haben gegründet | aedificavit: 3. Sg. Perf. — baute / hat gebaut | transsilivit: 3. Sg. Perf. — übersprang / hat übersprungen | necavit: 3. Sg. Perf. — tötete / hat getötet | amant: 3. Pl. Präs. — lieben | laudant: 3. Pl. Präs. — loben",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "condiderunt ist ein Kompositum von condere — Schüler:innen sollen das -erunt als Perfektzeichen erkennen, auch wenn sie das Verb noch nicht kennen.",
+      "transsilivit: unbekanntes Wort — aus dem Kontext erschließen (Romulus baut einen Mauer, Remus überspringt sie). Kontexterschließung explizit loben.",
+      "Der Text ist eine vereinfachte Romulus-und-Remus-Sage — kurzer kultureller Hinweis rundet die Aufgabe ab."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "text_analysis",
+  "subject": "Latein",
+  "klasse": 3,
+  "kompetenzbereich": "Sprach- und textbezogene Kompetenzen",
+  "competences": [
+    "LAT.US.3.SPR.04"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "SPR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0061",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

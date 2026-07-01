@@ -1,0 +1,167 @@
+{
+  "id": "c0107.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Schau dir die Bevölkerungspyramide Österreichs (Abb. 1) an. Beschreibe in zwei bis drei Sätzen, was die senkrechte und die waagrechte Achse jeweils zeigen und welche beiden Seiten du auf der Grafik siehst.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 3
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "OK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.OST.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "Die senkrechte Achse zeigt die Altersgruppen (von 0–4 Jahre unten bis 85+ oben), die waagrechte Achse zeigt die Anzahl der Personen. Links sind die Männer abgetragen, rechts die Frauen.",
+    "acceptable_reasoning": "Schüler:innen können auch 'Alter' statt 'Altersgruppen' sagen; beide Seiten müssen benannt sein.",
+    "rubric": [
+      {
+        "criterion": "Achsenbeschriftung",
+        "levels": [
+          "Beide Achsen korrekt benannt (2P)",
+          "Eine Achse korrekt (1P)",
+          "Keine korrekte Achse (0P)"
+        ]
+      },
+      {
+        "criterion": "Seiten (Geschlecht)",
+        "levels": [
+          "Links Männer, rechts Frauen korrekt benannt (1P)",
+          "Fehlt oder verwechselt (0P)"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Häufige Verwechslung: Schüler:innen denken, links sei 'jünger' und rechts 'älter' — die Seiten zeigen Geschlecht, nicht Alter.",
+      "Manche lesen die Achsen umgekehrt: Die Personenzahl steht waagrecht, das Alter senkrecht — das ist bei Bevölkerungspyramiden weltweit Konvention."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Österreichische Gesellschaftsentwicklung",
+  "competences": [
+    "GWB.US.3.OST.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "OK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:population_pyramid",
+      "spec": {
+        "title": "Bevölkerungspyramide Österreich (1.1.2024)",
+        "xlabel": "Personen",
+        "age_groups": [
+          "0–4",
+          "5–9",
+          "10–14",
+          "15–19",
+          "20–24",
+          "25–29",
+          "30–34",
+          "35–39",
+          "40–44",
+          "45–49",
+          "50–54",
+          "55–59",
+          "60–64",
+          "65–69",
+          "70–74",
+          "75–79",
+          "80–84",
+          "85+"
+        ],
+        "male": [
+          217721,
+          233589,
+          225693,
+          232917,
+          259070,
+          303392,
+          327167,
+          319456,
+          311542,
+          289329,
+          320354,
+          355386,
+          322097,
+          247355,
+          189728,
+          149524,
+          131327,
+          79185
+        ],
+        "female": [
+          206203,
+          220286,
+          212329,
+          217468,
+          241672,
+          283992,
+          311084,
+          310390,
+          309056,
+          293047,
+          329411,
+          357617,
+          331334,
+          272182,
+          223124,
+          190665,
+          185238,
+          148820
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "statistik_austria_bevstand_2024",
+        "series": "pyramide_5j",
+        "note": null,
+        "title": "Bevölkerung Österreichs nach Alter und Geschlecht (1.1.2024)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2024",
+        "attribution": "Datenquelle: Statistik Austria – data.statistik.gv.at (CC BY 4.0)",
+        "stand": "2024-01-01"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0107",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:25+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

@@ -1,0 +1,73 @@
+{
+  "id": "c0152.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Die folgenden medizinischen und wissenschaftlichen Fachbegriffe setzen sich aus lateinischen (oder griechisch-lateinischen) Bestandteilen zusammen. Trage für jeden Begriff den lateinischen Wortstamm / das Präfix, seine Bedeutung und ein weiteres deutsches oder englisches Fachwort mit demselben Bestandteil ein.",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Fachbegriff",
+        "Lat. Bestandteil",
+        "Bedeutung des Bestandteils",
+        "Weiteres Beispielwort"
+      ],
+      "rows": 8
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "UEB"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "LAT.OS.7.FAC.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "LAT.OS.x.UBE.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "1. Appendix (appendix, -icis) — appendere = anhängen → Appendix vermiformis, appendieren; 2. Fraktur (fractura) — frangere = brechen → Fragment, fraktionieren; 3. Corpus delicti (corpus, -oris) — corpus = Körper, Gesamtheit → Corpus Juris, Korpus; 4. Injunktion (injungere) — injungere = auferlegen, hinzufügen → injungieren, Junction; 5. Subtraktion (subtrahere) — sub + trahere = unter + ziehen → subtrahieren, Traktion; 6. Prognose (pro + gnoscere/gnosis) — lat.-griech.: vorher + erkennen → Diagnose, Prognostik; 7. Aquifer (aqua + ferre) — aqua = Wasser, ferre = tragen → Aquarell, Aquädukt; 8. Virus (virus, -i n.) — virus = Saft, Gift → viral, antiviral",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen verwechseln manchmal griechische und lateinische Morpheme — Prognose hat einen griechischen Stamm (gnōsis), der durch lateinisches pro ergänzt wurde; diese Mischformen sind in der Wissenschaftssprache häufig und sollten kommentiert werden.",
+      "Virus ist im Lateinischen ein o-Stamm Neutrum (selten dekliniert) und bedeutet nicht einfach ,Krankheit', sondern ,giftiger Saft/Schleim' — diese Bedeutungsverschiebung ist ein interessanter kulturgeschichtlicher Punkt."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Latein",
+  "klasse": 7,
+  "kompetenzbereich": "Fachsprachen und Fachtexte",
+  "competences": [
+    "LAT.OS.7.FAC.01",
+    "LAT.OS.x.UBE.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "UEB"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0152",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:26+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

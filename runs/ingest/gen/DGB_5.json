@@ -1,0 +1,224 @@
+{
+  "subject": "Digitale Grundbildung",
+  "klasse": 4,
+  "kompetenzbereich": "Orientierung: gesellschaftliche Aspekte von Medienwandel und Digitalisierung analysieren und reflektieren",
+  "title": "Künstliche Intelligenz – Möglichkeiten, Grenzen, gesellschaftliche Verantwortung",
+  "kernfrage": "Was kann Künstliche Intelligenz wirklich – und wo liegt die Verantwortung des Menschen?",
+  "body": {
+    "intro": [
+      {
+        "role": "info",
+        "id": "i1",
+        "prompt": "Künstliche Intelligenz (KI) ist kein Science-Fiction mehr – sie steuert Suchmaschinen, empfiehlt dir Musik, hilft Ärztinnen und Ärzten bei Diagnosen und fährt teilweise Autos. Manche Menschen sehen in der KI eine Revolution, die alles verbessert; andere befürchten, dass sie Arbeitsplätze vernichtet, diskriminiert oder die Kontrolle übernimmt. Beide Haltungen können übertrieben sein. In dieser Einheit lernst du, die Möglichkeiten und Grenzen von KI sachlich zu beurteilen – und die Frage zu stellen: Wer entscheidet, und wer ist verantwortlich?",
+        "est_minutes": 3
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Was KI kann – und was nicht",
+        "throughline": "Schüler:innen unterscheiden zwischen realen Fähigkeiten und medialen Übertreibungen von KI, erkennen strukturelle Grenzen und reflektieren technologische Optimismus und Pessimismus als argumentativ angreifbare Haltungen.",
+        "talking_points": [
+          "KI-Systeme 'lernen' aus Daten (maschinelles Lernen) – sie erkennen Muster, aber verstehen keine Bedeutung. Sie können brillant und völlig falsch liegen.",
+          "Bias in KI: Wenn Trainingsdaten gesellschaftliche Ungleichheiten enthalten, reproduziert und verstärkt die KI diese (z.B. Gesichtserkennungssysteme mit schlechterer Genauigkeit bei dunkler Hautfarbe).",
+          "KI trifft keine 'Entscheidungen' im menschlichen Sinne – sie berechnet Wahrscheinlichkeiten. Verantwortung liegt weiterhin beim Menschen.",
+          "Technologieoptimismus und -pessimismus sind beide argumentierbare Haltungen, aber beide als absolute Positionen problematisch."
+        ],
+        "extensions": [
+          "Schüler:innen testen ein KI-Textgeneratorsystem mit bewusst falschen Prämissen und dokumentieren, wann es 'halluziniert' (falsche Tatsachen erfindet) – kritische Auseinandersetzung mit KI-Grenzen.",
+          "Diskussion: Soll eine KI bei einem Bewerbungsverfahren mitentscheiden? Welche Bedingungen müssten erfüllt sein? Wer haftet bei Fehler?",
+          "Recherche: Welche KI-Regulierung plant die EU (AI Act)? Was bedeutet das für Österreich?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "true_false_justify",
+            "prompt": "Entscheide, ob die folgenden Aussagen über Künstliche Intelligenz stimmen, und begründe jeweils in einem Satz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "KI-Systeme können aus eigener Initiative neue Ziele entwickeln, die ihre Programmierer nicht vorgesehen haben.",
+                "Wenn eine KI mit fehlerhaften oder einseitigen Daten trainiert wird, kann sie diskriminierende Ergebnisse liefern.",
+                "KI ersetzt in jedem Fall menschliches Urteilsvermögen – wer KI nutzt, braucht selbst nicht mehr zu denken.",
+                "Ein KI-System, das in medizinischen Diagnosen sehr gute Ergebnisse liefert, kann dennoch in seltenen Fällen gefährliche Fehler machen."
+              ]
+            },
+            "response": { "mode": "none" },
+            "cognitive_level": "understand",
+            "dimensions": ["T", "G"],
+            "serves": [
+              { "competence_id": "DGB.US.4.ORI.01", "relation": "exercises" }
+            ],
+            "est_minutes": 8,
+            "answer_key": "(1) Falsch – aktuelle KI-Systeme (schwache KI) optimieren festgelegte Ziele; die Idee einer KI, die eigene Ziele entwickelt (starke/allgemeine KI), ist spekulativ und nicht Stand der Technik. (2) Richtig – Bias in Trainingsdaten führt zu verzerrten Ergebnissen (z.B. historische Diskriminierung wird im Modell fortgeschrieben). (3) Falsch – KI unterstützt, ersetzt aber nicht kritisches Denken; KI-Outputs müssen von Menschen geprüft werden ('Halluzinationen'). (4) Richtig – KI arbeitet auf Wahrscheinlichkeiten; bei seltenen oder unbekannten Fällen kann die Fehlrate steigen; menschliche Kontrolle bleibt notwendig.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Aussage 1 greift eine verbreitete Science-Fiction-Vorstellung an – betonen: aktuelle KI ist eng zweckgebunden, keine allgemeine Intelligenz.",
+              "Aussage 3 ist eine Kernfehlvorstellung, die durch KI-Assistenten wie Chatbots genährt wird – immer wieder einfordern: Wer ist verantwortlich für das Ergebnis?"
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "open_response",
+            "prompt": "Erkläre in eigenen Worten, was 'Bias' (Voreingenommenheit) in einem KI-System bedeutet. Beschreibe dann ein konkretes Beispiel, wie ein KI-Bias entstehen kann und welche realen Folgen er haben könnte.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 40 },
+            "cognitive_level": "understand",
+            "dimensions": ["G", "T"],
+            "serves": [
+              { "competence_id": "DGB.US.4.ORI.01", "relation": "exercises" }
+            ],
+            "est_minutes": 9,
+            "answer_key": "Bias: Eine KI-System wird systematisch zu falschen oder ungerechten Ergebnissen verleitet, weil ihre Trainingsdaten nicht repräsentativ oder historisch verzerrt sind. Beispiel: Eine KI zur Bewerberauswahl wird mit Lebensläufen aus den letzten 20 Jahren trainiert, in denen Männer überproportional in Führungspositionen vertreten waren. Die KI lernt: 'Mann = besser geeignet für Führung' – und bevorzugt männliche Bewerber auch dann, wenn Frauen gleichwertige Qualifikationen vorweisen. Folge: Diskriminierung, strukturelle Benachteiligung, Reproduktion historischer Ungleichheiten – diesmal durch eine scheinbar neutrale Maschine.",
+            "acceptable_reasoning": "Andere Beispiele (Gesichtserkennung, Kreditwürdigkeitsprüfung, Polizei-Software) sind gleichwertig, solange Entstehung und Folgen klar sind.",
+            "watch_outs": [
+              "Häufiger Irrtum: 'KI kann nicht diskriminieren, weil sie keine Vorurteile hat' – klar machen: Bias steckt in den Daten, nicht in der Absicht der KI.",
+              "Das Konzept 'Maschine erscheint neutral' ist hier zentral – Neutralität ist ein Mythos, wenn Daten voreingenommen sind."
+            ],
+            "rubric": [
+              {
+                "criterion": "Konkretes Beispiel",
+                "levels": [
+                  "Nur abstrakte Definition ohne Beispiel",
+                  "Beispiel vorhanden, Folgen nicht ausgeführt",
+                  "Entstehung und gesellschaftliche Folge klar erklärt"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "media_analysis",
+            "prompt": "Lies die beiden folgenden fiktiven Aussagen:\n\n**Person A:** „KI wird in 20 Jahren alle menschlichen Probleme gelöst haben – Krankheit, Armut, Klimawandel. Wir stehen am Beginn einer neuen Ära."\n\n**Person B:** „KI ist die größte Bedrohung für die Menschheit. Sie wird Millionen Arbeitsplätze vernichten und uns alle überwachen. Das führt zur totalen Kontrolle."\n\n(a) Welche Denkweise steckt hinter jeder Aussage? Wie nennt man diese zwei Haltungen?\n(b) Nenne für jede Aussage ein Argument, das sie stützt, und ein Argument, das ihr widerspricht.\n(c) Formuliere eine sachliche Einschätzung (2–3 Sätze), die weder Euphorie noch Kulturpessimismus ist.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 50 },
+            "cognitive_level": "evaluate",
+            "dimensions": ["G", "I"],
+            "serves": [
+              { "competence_id": "DGB.US.4.ORI.02", "relation": "exercises" }
+            ],
+            "est_minutes": 12,
+            "answer_key": "(a) Person A: Technikoptimismus/Technikeuphorie – der Glaube, Technologie werde alle Probleme automatisch lösen. Person B: Technikpessimismus/Kulturpessimismus – die Überzeugung, Technologie bedrohe den Menschen fundamental. (b) Für A: KI hilft tatsächlich bei Diagnosen, Klimamodellierung und Forschung. Gegen A: Technologie löst keine politischen und sozialen Ursachen von Problemen; Einsatz hängt von Machtverhältnissen ab. Für B: KI-gestützte Überwachung ist real (China Social Credit; biometrische Massenüberwachung). Gegen B: KI schafft auch neue Berufe, und gesellschaftliche Regulierung (EU AI Act) kann Risiken begrenzen. (c) KI verändert viele Lebensbereiche erheblich und bringt reale Chancen wie Risiken. Welche Auswirkungen überwiegen, hängt nicht von der Technologie allein ab, sondern davon, wie Gesellschaft und Politik sie gestalten. Weder blinder Optimismus noch pauschale Ablehnung helfen bei dieser Entscheidung.",
+            "acceptable_reasoning": "Teil (c) hat keine Musterlösung; jede sachliche, differenzierte Einschätzung ist akzeptabel – Schüler:innen sollen eine Position beziehen, aber begründen.",
+            "watch_outs": [
+              "Schüler:innen neigen dazu, einer der beiden Positionen zuzustimmen statt eine Synthese zu versuchen – Teil (c) gezielt auswerten.",
+              "Den Begriff 'Kulturpessimismus' erklären: Angst, dass eine neue Entwicklung die Kultur oder Gesellschaft fundamental und schlecht verändert."
+            ],
+            "rubric": [
+              {
+                "criterion": "Ausgewogenheit der Einschätzung (Teil c)",
+                "levels": [
+                  "Wiederholung von A oder B ohne Synthese",
+                  "Ansatz einer Synthese, aber einseitig",
+                  "Differenzierte Einschätzung mit Bedingungsfaktoren"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "open_response",
+            "prompt": "Stell dir vor, ein Krankenhaus nutzt eine KI, die auf Basis von Röntgenbildern Lungenkrankheiten diagnostiziert. Die KI hat eine Genauigkeit von 94 % – sie liegt also bei 6 von 100 Fällen falsch.\n\n(a) Wer trägt die Verantwortung, wenn die KI einen Fehler macht und ein Patient falsch behandelt wird – die KI-Entwickler, das Krankenhaus oder die Ärztin/der Arzt?\n(b) Unter welchen Bedingungen wäre der Einsatz dieser KI vertretbar? Nenne mindestens zwei Bedingungen.\n(c) Welche grundlegende Grenze von KI zeigt dieses Beispiel?",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 45 },
+            "cognitive_level": "evaluate",
+            "dimensions": ["G", "I"],
+            "serves": [
+              { "competence_id": "DGB.US.4.ORI.01", "relation": "exercises" }
+            ],
+            "est_minutes": 11,
+            "answer_key": "(a) Geteilte Verantwortung: Entwickler müssen auf Grenzen hinweisen und System korrekt beschreiben; Krankenhaus entscheidet über Einsatz und schuldet klare Prozesse; Ärztin/Arzt trägt letztliche medizinische Verantwortung und darf sich nicht blind auf KI verlassen. (b) Bedingungen: Menschliche Kontrolle bleibt pflichtend (KI als Unterstützung, nicht als Entscheider); Fehlerquote transparent kommuniziert; besondere Aufmerksamkeit bei Grenzfällen; klares Protokoll, wer bei Unsicherheit nachprüft; regelmäßige Evaluation auf neue Patientengruppen. (c) KI arbeitet auf Wahrscheinlichkeiten, nicht auf Verständnis; sie 'weiß' nicht, ob sie falsch liegt. Das unvermeidliche Restrisiko erfordert, dass ein Mensch die Endentscheidung verantwortet.",
+            "acceptable_reasoning": "Für Teil (a) gibt es keine eindeutige Antwort – entscheidend ist, dass Schüler:innen erkennen, dass Verantwortung nicht an eine Maschine delegiert werden kann.",
+            "watch_outs": [
+              "Schüler:innen schreiben oft 'die KI ist schuld' – klar machen: KI ist kein Rechtssubjekt und kann keine Verantwortung tragen.",
+              "94 % klingt hoch – konkretisieren: Bei 1000 Fällen pro Jahr macht die KI 60 Fehler. Ist das akzeptabel? Hängt vom Vergleich mit menschlicher Fehlerrate ab."
+            ],
+            "rubric": [
+              {
+                "criterion": "Verantwortungsanalyse",
+                "levels": [
+                  "Verantwortung einseitig oder der KI zugeschrieben",
+                  "Geteilte Verantwortung erkannt, aber nicht differenziert",
+                  "Drei Akteure differenziert mit jeweiliger Verantwortung"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "open_response",
+            "prompt": "KI-Systeme wie Empfehlungsalgorithmen (auf Streaming-Plattformen oder in sozialen Netzwerken) können eine sogenannte 'Normativität' ausüben – das heißt, sie beeinflussen, was wir für normal, wichtig oder wahr halten.\n\nErkläre anhand eines konkreten Beispiels, wie ein Algorithmus deine Weltsicht beeinflussen kann, ohne dass du es merkst. Beschreibe dann eine konkrete Strategie, wie du dieser Beeinflussung entgegenwirken kannst.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 40 },
+            "cognitive_level": "analyze",
+            "dimensions": ["G", "I"],
+            "serves": [
+              { "competence_id": "DGB.US.4.ORI.03", "relation": "exercises" }
+            ],
+            "est_minutes": 10,
+            "answer_key": "Beispiel: YouTube zeigt nach einem Video über gesunde Ernährung zunehmend radikalere Ernährungsvideos (Orthorexie, extreme Diäten), weil diese höheres Engagement erzeugen. Nach einigen Wochen erscheint das Extrem normal, weil der Algorithmus nichts anderes zeigt. Weltsicht: 'Alle achten so streng auf Essen.' – obwohl das nur der Algorithmus-Fokus ist. Strategie: Bewusst andere Quellen und Perspektiven suchen (Diversifikation); Empfehlungen kritisch hinterfragen ('Warum zeigt mir das die Plattform?'); Anzahl der genutzten Plattformen begrenzen; Mediendiät regelmäßig reflektieren.",
+            "acceptable_reasoning": "Jedes relevante Beispiel (Nachrichten, Sport, Politik, Mode etc.) ist gleichwertig. Strategie muss konkret und handhabbar sein.",
+            "watch_outs": [
+              "Schüler:innen wissen häufig nicht, was 'Normativität' bedeutet – den Begriff mit einem einfachen Beispiel einleiten: 'Was du für normal hältst, kann durch das beeinflusst sein, was du ständig siehst.'",
+              "Filterbubble ist hier eine verwandte, aber nicht identische Idee – Filterbubble betrifft Informationen, Normativität betrifft die Wahrnehmung von Realität und Normalität."
+            ],
+            "rubric": [
+              {
+                "criterion": "Beispiel und Mechanismus",
+                "levels": [
+                  "Beispiel ohne Erklärung des Mechanismus",
+                  "Beispiel mit Erklärung, aber Weltsicht-Bezug fehlt",
+                  "Konkretes Beispiel, Mechanismus und Weltsicht-Einfluss klar erklärt"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "create_produce",
+            "prompt": "Schreibe einen kurzen Kommentar (ca. 150 Wörter) für eine Schüler:innen-Zeitung zum Thema: 'KI in der Schule – sollten wir Angst haben oder neugierig sein?'\n\nDein Kommentar soll: (a) weder rein euphorisch noch rein pessimistisch sein, (b) mindestens ein konkretes Beispiel von KI in der Schule nennen, (c) eine eigene Meinung vertreten und begründen, und (d) mit einem offenen Satz enden, der zum Nachdenken einlädt.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 55 },
+            "cognitive_level": "create",
+            "dimensions": ["G", "I"],
+            "serves": [
+              { "competence_id": "DGB.US.4.ORI.02", "relation": "exercises" }
+            ],
+            "est_minutes": 13,
+            "answer_key": "Musterlösung (Orientierung): 'KI-Schreibassistenten können Schüler:innen helfen, Texte zu überarbeiten – aber das Denken abnehmen können sie nicht. Wer sie blind nutzt, lernt nichts; wer sie als Werkzeug versteht, kann von ihnen profitieren. Meine Meinung: KI ist weder Wunder noch Monster, sondern ein Spiegel unserer eigenen Entscheidungen. Die wirklich wichtige Frage lautet nicht, ob KI in die Schule kommt – sondern: Lernen wir, sie zu hinterfragen?' – Kommentar bewertet nach Argumentationsqualität, nicht nach inhaltlicher Position.",
+            "acceptable_reasoning": "Jede Position ist akzeptabel, solange sie begründet, differenziert und mit konkretem Beispiel belegt ist.",
+            "watch_outs": [
+              "Schüler:innen neigen zu einem der beiden Extreme (meist Enthusiasmus) – die Anforderung der Differenziertheit deutlich betonen.",
+              "Der offene Schlusssatz ist sprachlich anspruchsvoll – ein Beispiel zeigen, ohne den eigenen Inhalt vorzuschreiben."
+            ],
+            "rubric": [
+              {
+                "criterion": "Differenziertheit",
+                "levels": [
+                  "Rein euphorisch oder rein pessimistisch",
+                  "Ansatz von Differenzierung, aber ein Pol überwiegt",
+                  "Ausgewogen mit konkretem Beispiel und begründeter Meinung"
+                ]
+              },
+              {
+                "criterion": "Sprachliche Qualität",
+                "levels": [
+                  "Aufzählung ohne argumentativen Fluss",
+                  "Kommentarform erkennbar, teilweise flüssig",
+                  "Klarer Kommentar-Stil mit Einleitung, Argument und offenem Schluss"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "id": "c0134.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb5"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Die Gleichung in Abb. 5 zeigt die Zellatmung. Erkläre in eigenen Worten: Welche Funktion hat Sauerstoff in diesem Prozess? Welches Prinzip (das ihr aus dem Thema Säure-Base und Redox kennt) liegt hier zugrunde? Verwende dabei die Begriffe 'Oxidation' und 'Elektronenakzeptor'.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "WO"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.OS.8.CHE.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "CHE.OS.8.SUB.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Sauerstoff wirkt als Elektronenakzeptor (Oxidationsmittel). Glucose wird schrittweise oxidiert – die C-Atome geben Elektronen ab (und werden zu CO₂, mit Oxidationsstufe +4). Sauerstoff nimmt diese Elektronen letztlich auf und wird zu Wasser reduziert. Das zugrundeliegende Prinzip ist die Redoxreaktion (Donator-Akzeptor-Konzept): Glucose ist der Elektronendonator, O₂ der Elektronenakzeptor.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen sagen oft 'Sauerstoff verbrennt die Glucose' – das ist eine Analogie, aber chemisch unpräzise. Richtiger: O₂ oxidiert Glucose, indem es als Elektronenakzeptor wirkt.",
+      "Verwechslung: Zellatmung ≠ Atmung (Einatmen). Zellatmung ist ein biochemischer Oxidationsprozess in den Mitochondrien."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Chemie",
+  "klasse": 8,
+  "kompetenzbereich": "Chemische Grundlagen des Lebens",
+  "competences": [
+    "CHE.OS.8.CHE.01",
+    "CHE.OS.8.SUB.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "WO"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb5",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:math_formula",
+      "spec": {
+        "latex": "C_6H_{12}O_6 + 6\\,O_2 \\rightarrow 6\\,CO_2 + 6\\,H_2O + \\text{Energie (ATP)}"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0134",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:20+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

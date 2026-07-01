@@ -1,0 +1,65 @@
+{
+  "id": "c0043.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "ordering",
+    "prompt": "Ordne die folgenden Merkmale den richtigen Musikepochen zu. Schreibe die Buchstaben in die richtige Reihenfolge (älteste Epoche zuerst).\n\nDie Epochen (von alt nach jung): Barock · Wiener Klassik · Romantik · 20. Jahrhundert / Gegenwart",
+    "payload": {
+      "kind": "ordering",
+      "items": [
+        "A – Ornamente (Triller, Verzierungen), Generalbass, J. S. Bach, Händel, ca. 1600–1750",
+        "B – Atonalität, Zwölftonmusik, elektronische Klänge, Schönberg, ca. 1900–heute",
+        "C – Große Orchesterwerke, Chromatik, Programmmusik, Wagner, Brahms, ca. 1820–1900",
+        "D – Klare, symmetrische Formen (Sonate, Sinfonie), Haydn, Mozart, Beethoven, ca. 1750–1820"
+      ]
+    },
+    "response": {
+      "mode": "none"
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "HOR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MUS.US.4.HOR.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "Richtige Reihenfolge: A (Barock) → D (Klassik) → C (Romantik) → B (20. Jh.)",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Beethoven ist eine Grenzfigur – sein Spätwerk gilt als Übergang zur Romantik. Für diese Aufgabe ist er in der Klassik-Kategorie korrekt eingeordnet.",
+      "Schüler:innen verwechseln 'klassische Musik' (Oberbegriff für Kunstmusik) mit der 'Wiener Klassik' (Epoche). Diesen Unterschied klar machen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "ordering",
+  "subject": "Musik",
+  "klasse": 4,
+  "kompetenzbereich": "Hören und Erfassen",
+  "competences": [
+    "MUS.US.4.HOR.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "HOR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0043",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

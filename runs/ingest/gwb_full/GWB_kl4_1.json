@@ -1,0 +1,274 @@
+{
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 4,
+  "kompetenzbereich": "Mensch und Natursysteme",
+  "title": "Das Anthropozän: Wenn der Mensch zur Naturkraft wird",
+  "kernfrage": "Welche Spuren hinterlässt die Menschheit auf der Erde – und was bedeutet das für dein Leben?",
+  "body": {
+    "intro": [
+      "Geologen sprechen heute vom „Anthropozän" – einem Zeitalter, in dem der Mensch selbst zur treibenden Kraft auf der Erde geworden ist. Auf diesem Arbeitsblatt untersuchst du, wie stark der menschliche Einfluss auf Natursysteme wirklich ist, was passiert, wenn Grenzen überschritten werden, und welche Handlungen möglich sind."
+    ],
+    "data_figures": [
+      {
+        "id": "abb1",
+        "intent": "trend",
+        "title": "Globale CO₂-Konzentration in der Atmosphäre (1960–2024)",
+        "xlabel": "Jahr",
+        "ylabel": "CO₂ in ppm",
+        "categories": ["1960", "1970", "1980", "1990", "2000", "2010", "2020", "2024"],
+        "values": [317, 326, 338, 354, 370, 390, 414, 422]
+      },
+      {
+        "id": "abb2",
+        "intent": "relationship",
+        "title": "CO₂-Konzentration und globale Temperaturabweichung (1960–2024)",
+        "xlabel": "CO₂ in ppm",
+        "ylabel": "Temperaturabweichung in °C (gegenüber 1850–1900)",
+        "points": [[317, -0.02], [326, 0.03], [338, 0.27], [354, 0.45], [370, 0.42], [390, 0.72], [414, 1.02], [422, 1.45]],
+        "fit": true
+      },
+      {
+        "id": "abb3",
+        "intent": "comparison",
+        "title": "Ökologischer Fußabdruck ausgewählter Länder (in Erden, 2022)",
+        "xlabel": "Land",
+        "ylabel": "Erden (benötigte Planeten)",
+        "categories": ["Bangladesch", "Indien", "Welt ⌀", "Österreich", "Deutschland", "USA", "Katar"],
+        "values": [0.7, 0.8, 1.7, 3.2, 3.0, 5.1, 9.3]
+      }
+    ],
+    "assets": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Spuren im System: Wie der Mensch Natursysteme verändert",
+        "throughline": "Schülerinnen und Schüler erarbeiten konkrete Beispiele des menschlichen Eingriffs in Natursysteme und verbinden globale Daten mit eigenen Beobachtungen in ihrer Region.",
+        "talking_points": [
+          "Der Begriff 'Anthropozän' ist wissenschaftlich noch nicht offiziell stratigraphisch definiert – das bietet Anlass zur Quellenarbeit und Diskussion über Wissenschaftsgeschichte.",
+          "CO₂-Daten aus Abb. 1 sind vom Mauna-Loa-Observatorium (Keeling-Kurve) – eine der bekanntesten Messreihen der Klimawissenschaft. Die gleichmäßige Steigung zeigt, dass es keine Plateaus gibt.",
+          "Beim lokalen Bezug (Aufgabe 2) sollten Schülerinnen und Schüler konkrete Beobachtungen aus ihrer Alltagswelt einbringen – der Atlas oder lokale Umweltberichte können helfen.",
+          "Die Abbildung Abb. 2 (Streudiagramm CO₂ vs. Temperatur) ist eine vereinfachte Darstellung; die Kausalität ist in der Klimawissenschaft belegt, aber der Graph zeigt Korrelation – ein wichtiger Unterschied."
+        ],
+        "extensions": [
+          "Schülerinnen und Schüler recherchieren den 'Earth Overshoot Day' für Österreich und vergleichen mit dem globalen Datum.",
+          "Vertiefung: Die Grenzen planetarer Belastbarkeit nach Rockström et al. (2009/2023) – wie viele der 9 Grenzen sind bereits überschritten?",
+          "Diskussion: Ist der Begriff 'Anthropozän' eine nüchterne wissenschaftliche Beschreibung oder bereits eine politische Aussage?"
+        ],
+        "blocks": [
+          {
+            "role": "info",
+            "id": "i1",
+            "kind": "prose",
+            "prompt": "**Abb. 1** zeigt, wie die CO₂-Konzentration in der Erdatmosphäre seit 1960 gestiegen ist. **Abb. 2** zeigt denselben Zeitraum als Streudiagramm: Auf der x-Achse steht die CO₂-Konzentration, auf der y-Achse die Abweichung der globalen Durchschnittstemperatur gegenüber dem Zeitraum 1850–1900.",
+            "payload": null,
+            "response": {"mode": "none"},
+            "cognitive_level": "remember",
+            "dimensions": ["OK"],
+            "serves": [{"competence_id": "GWB.US.4.MEN.01", "relation": "supports"}],
+            "est_minutes": 0,
+            "asset_refs": ["abb1", "abb2"],
+            "answer_key": "",
+            "acceptable_reasoning": null,
+            "watch_outs": [],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "data_interpretation",
+            "prompt": "Beschreibe die Entwicklung der CO₂-Konzentration in Abb. 1 in eigenen Worten. In welchem Zeitraum war der Anstieg am stärksten? Welcher menschliche Einfluss ist die Hauptursache für diesen Trend?",
+            "payload": null,
+            "response": {"mode": "lines", "n": 5},
+            "cognitive_level": "understand",
+            "dimensions": ["OK"],
+            "serves": [{"competence_id": "GWB.US.4.MEN.01", "relation": "exercises"}],
+            "est_minutes": 8,
+            "asset_refs": ["abb1"],
+            "answer_key": "Die CO₂-Konzentration steigt kontinuierlich von ca. 317 ppm (1960) auf ca. 422 ppm (2024), also um über 100 ppm in 64 Jahren. Der Anstieg ist im Vergleich 2000–2024 am stärksten (ca. 52 ppm in 24 Jahren gegenüber ca. 37 ppm in den ersten 30 Jahren). Hauptursache: Verbrennung fossiler Energieträger (Kohle, Öl, Erdgas) in Industrie, Verkehr und Heizung.",
+            "acceptable_reasoning": "Auch Entwaldung als Co-Ursache ist korrekt; Methan aus Landwirtschaft ist eine andere Substanz und sollte nicht mit CO₂ verwechselt werden.",
+            "watch_outs": ["CO₂ ist nicht das einzige Treibhausgas – nicht mit Methan oder Lachgas verwechseln; die Aufgabe fragt spezifisch nach CO₂.", "Die Keeling-Kurve zeigt saisonale Schwankungen (Vegationsperioden), die in dieser vereinfachten Darstellung nicht sichtbar sind – erwähnen, falls Schülerinnen und Schüler fragen."],
+            "rubric": [
+              {"criterion": "Beschreibung des Trends", "levels": ["Kein Trend erkannt oder grob falsch.", "Trend korrekt beschrieben (Anstieg), aber kein konkreter Zeitvergleich.", "Trend korrekt beschrieben mit konkretem Zeitvergleich und Zeitraum des stärksten Anstiegs."]},
+              {"criterion": "Benennung der Ursache", "levels": ["Keine oder falsche Ursache.", "Fossile Energieträger genannt, aber unspezifisch.", "Fossile Energieträger mit konkreten Beispielen (Kohle, Öl, Gas) und Sektoren genannt."]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "open_response",
+            "prompt": "Welche Veränderungen in der Natur oder im Klima hast du selbst in deiner Region beobachtet oder von Älteren gehört? Notiere mindestens zwei Beobachtungen und erläutere, welcher menschliche Einfluss sie erklären könnte. (Tipp: Du kannst lokale Berichte, den Atlas oder ältere Familienmitglieder befragen.)",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 45},
+            "cognitive_level": "understand",
+            "dimensions": ["OK", "HK"],
+            "serves": [{"competence_id": "GWB.US.4.MEN.01", "relation": "exercises"}],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Individuelle Antworten; mögliche Beobachtungen: weniger Schnee im Winter, frühere Blüte im Frühjahr, häufigere Hitzeperioden im Sommer, veränderte Tierbestände (Rückgang bestimmter Insekten, Vögel), Veränderungen an lokalen Gewässern. Menschliche Einflüsse: Klimawandel durch Treibhausgase, Pestizideinsatz, Flächenversiegelung, Ressourcenentnahme.",
+            "acceptable_reasoning": "Beobachtungen sollen aus der eigenen Lebenswelt kommen – es gibt keine 'richtige' Antwort, aber die Verknüpfung mit einem Einfluss muss plausibel sein.",
+            "watch_outs": ["Diese Aufgabe ist absichtlich offen – keine konkreten Ortsfakten vorgeben; Schülerinnen und Schüler sollen eigene Beobachtungen einbringen.", "Manche Schülerinnen und Schüler haben kaum Naturerfahrung – Alltagsbeispiele wie veränderte Schneeverhältnisse beim Wintersport oder Insektenschwund sind niedrigschwellig."],
+            "rubric": [
+              {"criterion": "Qualität der Beobachtungen", "levels": ["Keine oder sehr vage Beobachtungen.", "Mindestens eine konkrete Beobachtung aus der eigenen Region.", "Mindestens zwei konkrete Beobachtungen mit lokalem Bezug."]},
+              {"criterion": "Verknüpfung mit Ursache", "levels": ["Keine Verknüpfung.", "Verknüpfung mit allgemeiner Formulierung ('der Klimawandel').", "Verknüpfung mit spezifischem menschlichem Einfluss plausibel begründet."]}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Planetare Grenzen und ihre Konsequenzen",
+        "throughline": "Die Schülerinnen und Schüler analysieren, was passiert, wenn die Tragfähigkeit der Erde überschritten wird, und bewerten Folgen von Klimawandel und Artensterben für Wirtschaft und Gesellschaft.",
+        "talking_points": [
+          "Abb. 2 (Streudiagramm) zeigt die Korrelation zwischen CO₂ und Temperaturabweichung – Schülerinnen und Schüler sollten Korrelation und Kausalität unterscheiden können; hier ist die Kausalität gut wissenschaftlich belegt.",
+          "Abb. 3 zeigt den ökologischen Fußabdruck: '3,2 Erden für Österreich' bedeutet, dass wir 3,2 Planeten Erde bräuchten, wenn alle Menschen so lebten wie wir – eine starke, verständliche Metapher.",
+          "Der Begriff 'Belastungsgrenze' lässt sich an konkreten Beispielen verankern: Überfischung der Meere, Grundwasserspiegel in Nordafrika, Permafrostauftauen als Kippelement.",
+          "Artensterben wird oft unterschätzt: Der Rückgang von Bestäubern (Bienen) hat direkte Konsequenzen für die Nahrungsmittelproduktion – ein konkretes wirtschaftliches Argument."
+        ],
+        "extensions": [
+          "Lektüre: IPCC-Zusammenfassungen für Entscheidungsträger (Summary for Policymakers) – auch als Schulprojekt geeignet.",
+          "Kippelemente der Erde: Welche Prozesse können sich selbst verstärken? (Albedo-Rückkopplung, Permafrost-Methan, Entwaldung des Amazonas)",
+          "Wirtschaftliche Folgekosten: Schülerinnen und Schüler recherchieren die Kosten von Extremwetterereignissen in Österreich in den letzten 10 Jahren (z. B. Überschwemmungen, Muren)."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "data_interpretation",
+            "prompt": "Betrachte Abb. 2 (Streudiagramm CO₂ und Temperatur) und Abb. 3 (ökologischer Fußabdruck). \na) Welchen Zusammenhang zeigt Abb. 2? Erkläre die Trendgerade in einem Satz.\nb) Was bedeutet ein Fußabdruck von 3,2 Erden für Österreich konkret? Was wäre nötig, damit der Wert auf 1,0 sinkt?",
+            "payload": null,
+            "response": {"mode": "lines", "n": 6},
+            "cognitive_level": "analyze",
+            "dimensions": ["UK"],
+            "serves": [{"competence_id": "GWB.US.4.MEN.02", "relation": "exercises"}],
+            "est_minutes": 10,
+            "asset_refs": ["abb2", "abb3"],
+            "answer_key": "a) Je höher die CO₂-Konzentration, desto höher die Temperaturabweichung – die Trendgerade zeigt einen positiven, annähernd linearen Zusammenhang. b) 3,2 Erden bedeutet, dass die Österreicher:innen im Jahr so viele Ressourcen verbrauchen und Abfälle erzeugen, wie 3,2 Planeten Erde regenerieren könnten. Um auf 1,0 zu kommen, müsste der Konsum drastisch reduziert werden (weniger Fleisch, weniger Flugreisen, weniger Ressourcenverbrauch) oder Technologien müssten die Effizienz deutlich steigern.",
+            "acceptable_reasoning": "Schülerinnen und Schüler sollten erkennen, dass Österreich über dem Weltdurchschnitt liegt – der Vergleich mit Bangladesch ist besonders aufschlussreich.",
+            "watch_outs": ["Abb. 2 zeigt Korrelation, nicht allein Kausalität – aber die Kausalität ist wissenschaftlich gut belegt. Dieser Unterschied soll explizit thematisiert werden.", "Der ökologische Fußabdruck ist kein perfektes Maß – er erfasst nicht alle Dimensionen von Nachhaltigkeit. Aber er ist eine eindrucksvolle Heuristik."],
+            "rubric": [
+              {"criterion": "Interpretation Streudiagramm", "levels": ["Kein Zusammenhang erkannt.", "Positiver Zusammenhang beschrieben, aber Trendgerade nicht erklärt.", "Positiver Zusammenhang und Trendgerade klar erklärt; Korrelation vs. Kausalität thematisiert."]},
+              {"criterion": "Interpretation Fußabdruck", "levels": ["Wert nicht oder falsch interpretiert.", "Bedeutung erklärt, aber Maßnahmen nicht benannt.", "Bedeutung erklärt und konkrete Maßnahmen zur Reduktion auf 1,0 genannt."]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "case_study",
+            "prompt": "Das Sterben der Bienen: In vielen Regionen Europas gehen Bienen- und Insektenbestände stark zurück. \na) Welche Folgen hätte ein vollständiger Ausfall der Bestäuber für die Landwirtschaft und damit für die Wirtschaft? Nenne mindestens drei konkrete Folgen.\nb) Welche Ursachen für diesen Rückgang kennst du? Ordne sie den Kategorien „Schadstoffeintrag", „Landnutzung" und „Klimawandel" zu.",
+            "payload": null,
+            "response": {"mode": "table", "columns": ["Folge", "Wirtschaftliche Auswirkung"], "rows": 3},
+            "cognitive_level": "analyze",
+            "dimensions": ["UK", "OK"],
+            "serves": [{"competence_id": "GWB.US.4.MEN.02", "relation": "exercises"}],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Folgen: Ausfall der Bestäubung → keine Früchte/Samen bei vielen Kulturpflanzen (Obst, Gemüse, Ölsaaten) → Nahrungsmittelknappheit und Preisanstieg; Rückgang der Biodiversität in Wildpflanzenpopulationen; wirtschaftliche Verluste für Landwirtschaft (Rückgang der Erntemengen). Ursachen: Schadstoffeintrag: Pestizide (bes. Neonicotinoide); Landnutzung: Monotonen Kulturen, Rückgang von Blühstreifen, Habitatverlust; Klimawandel: veränderte Blühzeiten, Nahrungsknappheit durch Phänologieverschiebung.",
+            "acceptable_reasoning": "Die Tabellenspalten verlangen konkrete, belegbare Angaben – 'es wird weniger Obst' ist zu vage, 'Ausfall der Apfelernte in Obstanbauregionen' ist gut.",
+            "watch_outs": ["Bestäubungsleistung wird auf global ca. 265 Milliarden Euro pro Jahr geschätzt – eine Zahl, die den wirtschaftlichen Bezug eindrücklich macht.", "Achtung: Honigbienen sind nicht die einzigen Bestäuber – Wildbienen, Schmetterlinge und Fliegen spielen ebenfalls eine wichtige Rolle."],
+            "rubric": [
+              {"criterion": "Folgen der Bestäuberkrise", "levels": ["Weniger als zwei Folgen oder sehr vage.", "Zwei konkrete Folgen mit wirtschaftlichem Bezug.", "Drei oder mehr konkrete Folgen mit präzisem wirtschaftlichem Bezug."]},
+              {"criterion": "Ursachenzuordnung", "levels": ["Keine oder falsche Zuordnung.", "Mindestens eine Kategorie korrekt zugeordnet.", "Alle drei Kategorien mit korrekten Beispielen zugeordnet."]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "true_false_justify",
+            "prompt": "Entscheide für jede Aussage, ob sie richtig oder falsch ist, und begründe deine Entscheidung in einem Satz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Der Klimawandel trifft alle Länder der Erde gleich stark.",
+                "Artensterben ist ein natürlicher Vorgang und kein Problem.",
+                "Wenn ein Ökosystem kippt, kann es sich meistens schnell von selbst erholen.",
+                "Ressourcenübernutzung und Klimawandel sind voneinander unabhängige Probleme."
+              ]
+            },
+            "response": {"mode": "lines", "n": 8},
+            "cognitive_level": "evaluate",
+            "dimensions": ["UK"],
+            "serves": [{"competence_id": "GWB.US.4.MEN.02", "relation": "exercises"}],
+            "est_minutes": 9,
+            "asset_refs": [],
+            "answer_key": "1. Falsch – ärmere Länder im Globalen Süden (Tropengürtel, kleine Inselstaaten) sind deutlich stärker betroffen, obwohl sie weniger zum Klimawandel beigetragen haben. 2. Falsch – die aktuelle Aussterbegeschwindigkeit ist 100–1000× über dem natürlichen Hintergrund und ist menschlich verursacht. 3. Falsch – Kippelemente wie der Amazonas-Regenwald oder Korallenriffe können nach Überschreitung eines Schwellenwerts nicht in den Ausgangszustand zurückkehren. 4. Falsch – sie sind eng verknüpft: fossile Energieträger verursachen CO₂, Landnutzungsänderungen zerstören CO₂-Senken (Wälder) und setzen Treibhausgase frei.",
+            "acceptable_reasoning": null,
+            "watch_outs": ["Aussage 2 ist eine häufige Fehlannahme – das natürliche Hintergrundaussterben ist viel langsamer als das aktuelle.", "Aussage 4 erfordert systemisches Denken; Schülerinnen und Schüler, die es als 'richtig' einschätzen, brauchen ein konkretes Beispiel für die Verknüpfung."],
+            "rubric": []
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "Handeln im Anthropozän: Von der Analyse zur eigenen Idee",
+        "throughline": "Schülerinnen und Schüler wechseln von der Beschreibung und Analyse zur Bewertung bestehender Maßnahmen und zur Entwicklung eigener Ideen – die Reflexionskompetenz steht im Vordergrund.",
+        "talking_points": [
+          "Die Unterscheidung zwischen individuellem Handeln ('Ich kaufe weniger Fleisch') und strukturellem Wandel ('Das System muss sich ändern') ist zentral – beide Ebenen sind notwendig, aber keine allein hinreichend.",
+          "Nachhaltige Konzepte wie die 'Donut-Ökonomie' (Kate Raworth) oder 'Cradle to Cradle' eignen sich als vertiefende Beispiele für Maßnahmen, die über individuellen Konsum hinausgehen.",
+          "Beim lokalen Bezug (Aufgabe 7): Es gibt in fast jeder Gemeinde konkrete Initiativen – Gemeinschaftsgärten, Klimabündnis-Gemeinden, lokale Energiegenossenschaften. Die Recherche kann als Hausaufgabe gegeben werden.",
+          "Das Entwickeln eigener Ideen (Aufgabe 7) erfordert Kreativität und Realismus – Schülerinnen und Schüler sollten sowohl träumen als auch die Umsetzbarkeit reflektieren."
+        ],
+        "extensions": [
+          "Projekt: Schülerinnen und Schüler erstellen einen 'Klimaplan' für ihre Schule oder Gemeinde – welche Maßnahmen wären konkret umsetzbar?",
+          "Vertiefung: Die 17 SDGs der UNO – welche betreffen direkt das Mensch-Natur-Verhältnis? Und welche stehen in Spannung zueinander?",
+          "Debatte: Reicht individuelles Handeln aus, oder braucht es staatliche Regulierung? Argumente sammeln und strukturiert diskutieren."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "matching",
+            "prompt": "Ordne jede Maßnahme dem Konzept zu, das sie am besten beschreibt.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Lebensmittel aus der Region kaufen, um Transportemissionen zu vermeiden",
+                "Gesetze, die den Ausstoß von Treibhausgasen begrenzen (z. B. EU-Emissionshandel)",
+                "Produkte so designen, dass alle Materialien vollständig recycelt werden können",
+                "Aufforstungsprojekte, die CO₂ aus der Luft binden",
+                "Auf vegane Ernährung umstellen, um den eigenen ökologischen Fußabdruck zu senken"
+              ],
+              "right": [
+                "Individuelles Konsumverhalten",
+                "Strukturelle/politische Maßnahme",
+                "Kreislaufwirtschaft (Cradle to Cradle)",
+                "Natürliche CO₂-Senke nutzen/stärken",
+                "Regionale Wirtschaft stärken"
+              ]
+            },
+            "response": {"mode": "lines", "n": 5},
+            "cognitive_level": "analyze",
+            "dimensions": ["HK", "UK"],
+            "serves": [{"competence_id": "GWB.US.4.MEN.03", "relation": "exercises"}],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "Lebensmittel regional → Regionale Wirtschaft stärken; EU-Emissionshandel → Strukturelle/politische Maßnahme; Cradle-to-Cradle-Design → Kreislaufwirtschaft; Aufforstung → Natürliche CO₂-Senke; vegane Ernährung → Individuelles Konsumverhalten.",
+            "acceptable_reasoning": "Regionales Einkaufen kann auch als 'individuelles Konsumverhalten' gewertet werden – bei Begründung akzeptabel.",
+            "watch_outs": ["Der EU-Emissionshandel ist ein wichtiges, aber komplexes Instrument – falls Schülerinnen und Schüler fragen: Es ist ein Cap-and-Trade-System, das Unternehmen zur Reduktion von CO₂-Emissionen verpflichtet.", "Aufforstung allein kann den Klimawandel nicht stoppen – das sollte im Gespräch klargestellt werden."],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "create_produce",
+            "prompt": "Entwickle eine eigene Idee für eine nachhaltige Maßnahme, die in deiner Schule oder Gemeinde umgesetzt werden könnte.\na) Beschreibe die Maßnahme konkret (Was genau? Für wen? Wie?)\nb) Welchen Natursystem-Aspekt verbessert sie (z. B. CO₂, Artenvielfalt, Ressourcenverbrauch)?\nc) Welche Hindernisse könntest du bei der Umsetzung erwarten, und wie ließen sie sich überwinden?\n(Tipp: Gibt es in deiner Gemeinde bereits ähnliche Initiativen? Informiere dich – z. B. bei der Gemeindeverwaltung oder online.)",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 60},
+            "cognitive_level": "create",
+            "dimensions": ["HK", "UK"],
+            "serves": [{"competence_id": "GWB.US.4.MEN.03", "relation": "exercises"}],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "Individuelle Antworten. Qualitätskriterien: Die Maßnahme ist konkret und lokal verankerbar (z. B. Schulgarten, Blühfläche am Schulgelände, Energie-Spar-Kampagne, Kleidertauschbörse); der Bezug zu einem Natursystem-Aspekt ist explizit; mindestens ein Hindernis und eine Lösungsidee sind genannt.",
+            "acceptable_reasoning": "Utopische oder schwer realisierbare Ideen sind akzeptabel, wenn sie kreativ begründet werden – die Reflexion über Hindernisse ist das zentrale Element.",
+            "watch_outs": ["Vermeiden, dass Schülerinnen und Schüler nur Allgemeinplätze schreiben ('Weniger Müll produzieren') – eine konkrete Umsetzungsidee ist gefordert.", "Keine konkreten Fakten über lokale Initiativen im Aufgabentext einfügen – Schülerinnen und Schüler sollen selbst erkunden."],
+            "rubric": [
+              {"criterion": "Konkretheit der Maßnahme", "levels": ["Nur allgemein ('Mehr Recycling').", "Maßnahme konkret beschrieben, aber lokal nicht verankerbar.", "Maßnahme konkret, lokal umsetzbar und mit Zielgruppe beschrieben."]},
+              {"criterion": "Natursystem-Bezug", "levels": ["Kein Bezug genannt.", "Bezug vage ('besser für die Natur').", "Spezifischer Aspekt (CO₂, Artenvielfalt, Ressourcen) klar benannt."]},
+              {"criterion": "Reflexion über Hindernisse", "levels": ["Keine Hindernisse genannt.", "Ein Hindernis genannt, keine Lösungsidee.", "Mindestens ein Hindernis mit konkreter Lösungsidee."]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

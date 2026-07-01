@@ -1,0 +1,110 @@
+{
+  "id": "c0085.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb3"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Das Schulbuffet hat eine Woche lang gezählt, wie viele Schüler:innen täglich kommen. Die Daten: Mo 8, Di 15, Mi 12, Do 7, Fr 18. Berechne: (a) den Mittelwert (Durchschnitt), (b) den Median, (c) den Modus (häufigster Wert). Welcher Kennwert beschreibt diese Woche am besten?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "OPE",
+      "DAR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.3.DAT.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "(a) Mittelwert: (8+15+12+7+18)/5 = 60/5 = 12. (b) Geordnete Reihe: 7, 8, 12, 15, 18 → Median = 12 (mittlerer Wert). (c) Modus: kein Modus (alle Werte verschieden). Mittelwert und Median geben hier dasselbe Bild — beide sind 12.",
+    "acceptable_reasoning": "Für Median: erst ordnen, dann den mittleren der 5 Werte ablesen (der 3. Wert).",
+    "rubric": [
+      {
+        "criterion": "Alle drei Kennzahlen korrekt",
+        "levels": [
+          "Keine korrekte",
+          "1–2 korrekt",
+          "Alle drei korrekt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Median ohne Sortierung bestimmen — das geht schief.",
+      "Modus bei keiner Wiederholung: ‚kein Modus' ist die korrekte Antwort, nicht ‚alle'.",
+      "Mittelwert berechnen und vergessen, durch die Anzahl zu dividieren."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Mathematik",
+  "klasse": 3,
+  "kompetenzbereich": "4: Daten und Zufall",
+  "competences": [
+    "MAT.US.3.DAT.01"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "OPE",
+    "DAR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb3",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Montag",
+          "Dienstag",
+          "Mittwoch",
+          "Donnerstag",
+          "Freitag"
+        ],
+        "values": [
+          8,
+          15,
+          12,
+          7,
+          18
+        ],
+        "title": "Besuche im Schulbuffet pro Tag",
+        "xlabel": "Wochentag",
+        "ylabel": "Anzahl Schüler:innen"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0085",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:19+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

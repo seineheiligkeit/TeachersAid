@@ -1,0 +1,73 @@
+{
+  "id": "c0083.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Lena kauft im Schulshop 3 Hefte und bezahlt dafür insgesamt 7,50 €. Alle Hefte kosten gleich viel. Stelle eine Gleichung auf, die diese Situation beschreibt. Verwende den Buchstaben h für den Preis eines Heftes.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 3
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "MOD",
+      "OPE"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.2.VAR.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "3 · h = 7,50 (oder äquivalente Schreibweise, z. B. 3h = 7,50). Lösung: h = 2,50 €.",
+    "acceptable_reasoning": "Jedes Heft kostet gleich viel, also 3 mal der unbekannte Preis ergibt 7,50 €.",
+    "rubric": [
+      {
+        "criterion": "Gleichung korrekt aufgestellt",
+        "levels": [
+          "Gleichung fehlt oder falsch",
+          "Gleichung aufgestellt, kleiner Fehler",
+          "Gleichung vollständig korrekt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Manche Schüler:innen schreiben 7,50 : 3 direkt, ohne erst die Gleichung aufzustellen — auf die Aufgabenstellung hinweisen.",
+      "Einheit (€) nicht vergessen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Mathematik",
+  "klasse": 2,
+  "kompetenzbereich": "2: Variablen und Funktionen",
+  "competences": [
+    "MAT.US.2.VAR.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "MOD",
+    "OPE"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0083",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:17+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

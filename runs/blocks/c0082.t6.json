@@ -1,0 +1,130 @@
+{
+  "id": "c0082.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb3"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Szenario: Eine österreichische Gemeinde will bis 2035 klimaneutral werden. Das Budget reicht nur für eine der folgenden Maßnahmen:\n(A) Ein neues Windpark-Projekt: erzeugt sauberen Strom für 4 000 Haushalte, kostet aber viel und braucht Fläche.\n(B) Förderung von Wärmedämmung für Häuser: reduziert Heizungsenergiebedarf um 40 %, günstiger und schnell umsetzbar.\n(C) Ausbau des Busnetzes: verbindet Dörfer mit der Stadt, reduziert Autofahrten, aber Strom fehlt weiterhin.\nWelche Maßnahme würdest du empfehlen? Begründe deine Entscheidung anhand von Abb. 3.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Die Gemeinde hat Geld nur für eine Maßnahme. Berücksichtige: Wirkungsgrad, Kosten, gesellschaftliche Akzeptanz."
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "HK",
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.2.NAC.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Alle drei Maßnahmen vertretbar mit Begründung. B (Wärmedämmung) hat den schnellsten ROI und adressiert Gebäude (19 % laut Abb. 3) – gut vertretbar. A (Windpark) hat hohen langfristigen Effekt, aber hohe Anfangsinvestition. C (Busnetz) reduziert Transport (29 % – größter Sektor), aber indirekt und langsam. Diagrammbezug bei der Begründung ist Pflicht.",
+    "acceptable_reasoning": "Keine richtige Antwort – Qualität der Argumentation zählt, nicht die Wahl.",
+    "rubric": [
+      {
+        "criterion": "Klare Entscheidung getroffen",
+        "levels": [
+          "Eindeutige Empfehlung",
+          "Empfehlung ohne Begründung",
+          "Keine Entscheidung"
+        ]
+      },
+      {
+        "criterion": "Diagrammbezug",
+        "levels": [
+          "Expliziter Bezug auf Sektor aus Abb. 3",
+          "Indirekter Bezug",
+          "Kein Diagrammbezug"
+        ]
+      },
+      {
+        "criterion": "Abwägung mehrerer Kriterien",
+        "levels": [
+          "Mindestens 2 Kriterien abgewogen",
+          "1 Kriterium",
+          "Keine Abwägung"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen neigen zu A (Windkraft klingt am \"grünsten\") ohne Kosten-Nutzen-Abwägung.",
+      "Diagrammbezug einfordern: Die Aufgabe verlangt explizit, Abb. 3 zu verwenden."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 2,
+  "kompetenzbereich": "Nachhaltiger Umgang mit Energie und Ressourcen",
+  "competences": [
+    "GWB.US.2.NAC.03"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "HK",
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb3",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Transport",
+          "Industrie",
+          "Gebäude/Heizung",
+          "Landwirtschaft",
+          "Strom/Energie",
+          "Sonstiges"
+        ],
+        "values": [
+          29,
+          26,
+          19,
+          10,
+          9,
+          7
+        ],
+        "title": "Treibhausgasemissionen Österreich 2023 nach Sektor (%)",
+        "xlabel": "Sektor",
+        "ylabel": "Anteil in Prozent"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0082",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:17+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

@@ -1,0 +1,271 @@
+{
+  "subject": "Bewegung und Sport",
+  "klasse": 4,
+  "kompetenzbereich": "Selbstkompetenz",
+  "title": "Sport und ich: Warum bewege ich mich — und was bringt mir das?",
+  "kernfrage": "Was bedeutet Sport persönlich für dich — und wie kannst du körperliche Aktivität zu einem sinnvollen Teil deines Lebens machen?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Persönlicher Sinn von Sport und körperlicher Aktivität",
+        "throughline": "Schüler:innen sollen reflektieren, welche Bedeutung körperliche Aktivität für ihr eigenes Wohlbefinden, ihre Gesundheit und ihre Lebensgestaltung hat — und dabei über externe Motivation hinausgehen zu einer internalen, selbstbestimmten Haltung.",
+        "talking_points": [
+          "Intrinsische vs. extrinsische Motivation: 'Ich bewege mich, weil es mir gut tut' ist nachhaltiger als 'Ich mache Sport, weil Eltern/Schule das erwarten.' Langfristig bleiben nur Menschen aktiv, die einen persönlichen Sinn gefunden haben.",
+          "Breites Spektrum körperlicher Aktivität: Sport ist nicht nur Wettkampf — Spazierengehen, Tanzen, Schwimmen, Radfahren, Klettern, Yoga sind alle valide Formen. Bewegungsvorlieben sind individuell.",
+          "Gesundheitliche Aspekte: Ausdauer, Kraft, Koordination, Flexibilität — alle haben Wirkung auf das Alltagsleben. Aber auch psychische Wirkungen (Stressabbau, Selbstwirksamkeit, soziale Einbindung) sind wissenschaftlich belegt.",
+          "Lebensphase Schule: Die Gewohnheiten, die jetzt gebildet werden, prägen die Erwachsenenzeit. Bewegungsbiografien beginnen früh."
+        ],
+        "extensions": [
+          "Kurzinterview: Schüler:innen befragen eine/n Erwachsenen aus der Familie, welche Rolle Sport in deren Leben gespielt hat (früher und heute).",
+          "Diskussion: Welche gesellschaftlichen Barrieren für körperliche Aktivität kennst du (Kosten, Zeit, Zugang, soziale Normen)?",
+          "Mini-Reflexion über 2 Wochen: Schüler:innen notieren täglich 3 Minuten, wann sie sich heute gut in ihrem Körper gefühlt haben."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "multiple_choice",
+            "prompt": "Was ist der wichtigste Unterschied zwischen intrinsischer und extrinsischer Motivation im Sport?",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "A — Intrinsisch bedeutet intensiv, extrinsisch bedeutet entspannt.",
+                "B — Intrinsische Motivation kommt von innen (Freude, persönlicher Sinn), extrinsische von außen (Belohnungen, Druck).",
+                "C — Extrinsische Motivation ist besser, weil sie Leistungen messbar macht.",
+                "D — Intrinsische Motivation entsteht nur im Wettkampf."
+              ],
+              "select": "one"
+            },
+            "response": {
+              "mode": "choices",
+              "options": ["A", "B", "C", "D"],
+              "select": "one"
+            },
+            "cognitive_level": "remember",
+            "dimensions": ["SEL"],
+            "serves": [
+              {"competence_id": "BUS.US.4.SEL.01", "relation": "exercises"}
+            ],
+            "est_minutes": 4,
+            "answer_key": "B — Intrinsisch kommt von innen (Freude, Sinnerleben, persönliche Werte), extrinsisch von außen (Noten, Lob, Vermeidung von Strafe). C ist falsch: extrinsische Motivation kann kurzfristig wirksam sein, ist aber für Langzeitaktivität weniger nachhaltig. A und D sind falsch.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Extrinsische Motivation ist nicht 'schlecht' — sie kann den Start erleichtern. Das Ziel ist, sie mit der Zeit in intrinsische umzuwandeln.",
+              "Schüler:innen verwechseln manchmal 'intensiv' mit 'intrinsisch' (Ähnlichkeit im Klang) — klar differenzieren."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "open_response",
+            "prompt": "Schreibe 3–5 Sätze darüber, welche körperliche Aktivität dir am meisten Spaß macht — und warum. Was genau daran macht dir Freude? (Das Gefühl beim Bewegen? Das Soziale? Den Erfolg? Die Natur?)",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 40
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["SEL"],
+            "modality": "printable",
+            "serves": [
+              {"competence_id": "BUS.US.4.SEL.01", "relation": "exercises"}
+            ],
+            "est_minutes": 8,
+            "answer_key": "Keine einzige richtige Antwort — bewertet werden: Konkretheit (nicht nur 'Fußball macht mir Spaß', sondern warum), Selbstreflexion (Was an der Aktivität genau? Welche Aspekte?), Ehrlichkeit (auch 'ich mag keine Sportart, aber ich laufe gerne' ist valide).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen, die sagen 'ich mag keinen Sport', einladen, über jede Form von Bewegung nachzudenken (Schlendern, Tanzen in der Küche, Klettern auf Spielplätzen).",
+              "Nicht als Quiz behandeln — die Aufgabe ist Selbsterkundung, keine Leistungsmessung."
+            ],
+            "rubric": [
+              {
+                "criterion": "Konkretheit",
+                "levels": ["Sehr vage ('macht mir Spaß')", "Ansatz zur Konkretisierung", "Konkrete Aspekte der Aktivität benannt"]
+              },
+              {
+                "criterion": "Selbstreflexion",
+                "levels": ["Keine Reflexion über das Warum", "Oberflächliches Warum", "Tieferes Nachdenken über persönliche Werte und Motivationen"]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "true_false_justify",
+            "prompt": "Entscheide: richtig oder falsch? Begründe kurz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Nur Menschen, die regelmäßig Sport treiben, können von körperlicher Aktivität profitieren.",
+                "Körperliche Aktivität wirkt sich auch auf die psychische Gesundheit aus — zum Beispiel auf Stress und Stimmung.",
+                "Wer in der Schulzeit keinen Sport mag, wird auch als Erwachsener keinen Sport treiben.",
+                "Es gibt eine für alle Menschen optimale Sportart — man muss sie nur finden."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "analyze",
+            "dimensions": ["SEL"],
+            "serves": [
+              {"competence_id": "BUS.US.4.SEL.01", "relation": "exercises"}
+            ],
+            "est_minutes": 8,
+            "answer_key": "1. Falsch — Auch gelegentliche oder moderate Aktivität (z. B. täglich 30 Min. Gehen) hat nachweisbare gesundheitliche Vorteile. 2. Richtig — körperliche Aktivität reduziert Stress, verbessert Schlaf, fördert positive Stimmung durch Ausschüttung von Neurotransmittern (z. B. Endorphine). 3. Falsch — Bewegungsbiografien können sich ändern; viele Erwachsene entdecken Freude an Bewegung erst später. 4. Falsch — individuelle Vorlieben, körperliche Voraussetzungen und sozialer Kontext sind so verschieden, dass keine universale Optimalsportart existiert.",
+            "acceptable_reasoning": "Statement 1 ist schwierig — 'regelmäßig' ist unscharf. Schüler:innen, die 'Richtig' sagen, aber erläutern, dass Regelmäßigkeit Vorteile verstärkt, teilweise anerkennen.",
+            "watch_outs": [
+              "Statement 3 hat eine fatalistisch-entmutigende Note — explizit gegensteuern: Vorlieben und Identitäten können sich verändern.",
+              "Statement 4: Viele Schüler:innen suchen 'die' Sportart — das Konzept individuell passender Aktivitäten (Vielfalt statt Optimum) stärken."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "training_log",
+            "prompt": "Führe für 5 Schultage ein Mini-Bewegungstagebuch: Notiere täglich in 2–3 Stichwörtern, wie du dich körperlich bewegt hast (auch kleine Dinge zählen: zu Fuß zur Schule, in der Pause herumgelaufen, Treppensteigen). Notiere außerdem: Wie hast du dich dabei gefühlt? Am Ende: Was fällt dir auf?",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": ["Tag", "Bewegungsform(en)", "Wie ich mich dabei gefühlt habe"],
+              "rows": 5
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": ["SEL"],
+            "modality": "printable",
+            "serves": [
+              {"competence_id": "BUS.US.4.SEL.01", "relation": "exercises"}
+            ],
+            "est_minutes": 10,
+            "answer_key": "Kein inhaltlich 'richtiges' Ergebnis — bewertet werden: Vollständigkeit (5 Einträge), Ehrlichkeit (auch 'wenig Bewegung, fühlte mich träge' ist korrekt), Reflexionssatz am Ende (Was fällt auf? Zusammenhang Bewegung–Stimmung? Überraschungen?). Die Schlussreflexion ist das Herzstück.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Hausaufgabe-Aufgabe — außerhalb des Unterrichts geführt. Klarstellen, dass kleine Alltagsbewegungen ausdrücklich zählen.",
+              "Datenschutz: Das Tagebuch gehört den Schüler:innen; Vorlesen ist freiwillig. Keine Noten auf den Inhalt (nur auf das Vorhandensein)."
+            ],
+            "rubric": [
+              {
+                "criterion": "Vollständigkeit",
+                "levels": ["Weniger als 3 Einträge", "3–4 Einträge", "5 vollständige Einträge"]
+              },
+              {
+                "criterion": "Reflexion",
+                "levels": ["Kein Reflexionssatz", "Pauschal ('war ok')", "Konkreter Zusammenhang Bewegung–Befinden reflektiert"]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "decision_scenario",
+            "prompt": "Stell dir vor: Du hast in der letzten Zeit wenig Sport gemacht und merkst, dass du dich energielos und schlecht gelaunt fühlst. Eine Freundin schlägt vor: 'Lass uns ab nächster Woche 3x pro Woche zusammen joggen gehen!' Beschreibe, wie du reagierst und welche Überlegungen du anstellst — ist das eine gute Idee? Was würde dich langfristig am Ball halten?",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Wenig Bewegung, Energielosigkeit, Angebot einer Freundin zum gemeinsamen Joggen 3x/Woche."
+            },
+            "response": {
+              "mode": "box",
+              "min_height_mm": 45
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": ["SEL"],
+            "serves": [
+              {"competence_id": "BUS.US.4.SEL.01", "relation": "exercises"}
+            ],
+            "est_minutes": 8,
+            "answer_key": "Gute Überlegungen: Sozialer Aspekt (gemeinsam mehr Motivation), aber auch: Ist Joggen die richtige Aktivität für mich? Ist 3x/Woche realistisch? Langfristiges Dranbleiben: intrinsische Motivation finden (nicht nur der Freundin zuliebe), Ziel setzen, das über 'nicht krank sein' hinausgeht, Aktivität wählen, die Freude macht. Wichtiger Aspekt: Wenn mir Joggen keinen Spaß macht, werde ich nach 2 Wochen aufhören — Alternative überlegen.",
+            "acceptable_reasoning": "Schüler:innen, die sagen 'ich würde es einfach versuchen' ohne Reflexion, auf Langzeitperspektive hinweisen.",
+            "watch_outs": [
+              "Das Szenario soll zu echter Reflexion einladen, nicht zur 'richtigen' Antwort 'Sport ist gut'. Kritische Gedanken (z. B. 'Joggen liegt mir nicht') sind willkommen.",
+              "Den Zusammenhang Energielosigkeit–Bewegung thematisieren: Bidirektionale Wirkung (Bewegung gibt Energie, Energiemangel hemmt Bewegung)."
+            ],
+            "rubric": [
+              {
+                "criterion": "Selbstreflexion",
+                "levels": ["Keine persönliche Reflexion", "Ansatz vorhanden", "Klare Reflexion über eigene Motivation und Vorlieben"]
+              },
+              {
+                "criterion": "Langzeitperspektive",
+                "levels": ["Keine Überlegung zur Langfristigkeit", "Erwähnt, aber nicht ausgeführt", "Konkrete Überlegung, was langfristig trägt"]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "open_response",
+            "prompt": "Ein Mitschüler sagt: 'Ich sehe keinen Sinn darin, Sport zu machen. Das macht nur Müde und ist anstrengend.' Verfasse eine ehrliche, nicht belehrende Antwort (4–6 Sätze), in der du deinen eigenen Zugang zu körperlicher Aktivität beschreibst — ohne zu sagen, er muss Sport mögen.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 45
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": ["SEL", "SOZ"],
+            "serves": [
+              {"competence_id": "BUS.US.4.SEL.01", "relation": "exercises"}
+            ],
+            "est_minutes": 8,
+            "answer_key": "Gute Antworten: Ich-Perspektive (nicht 'du solltest...'), keine Belehrung, eigene positive oder gemischte Erfahrungen ehrlich beschreiben, eventuell auf breiteres Spektrum (nicht nur Schulsport) hinweisen. Schüler:innen, die selbst wenig Sport mögen, dürfen das sagen — sie sollen trotzdem etwas Authentisches über Bewegung beschreiben, das für sie stimmt.",
+            "acceptable_reasoning": "Antworten, die den Mitschüler respektieren und keine moralische Keule schwingen, sind vollwertig — auch wenn sie wenig 'pro Sport' sind.",
+            "watch_outs": [
+              "Nicht erwünscht: 'Du musst Sport machen, sonst wirst du krank.' — Diese Antwort ist autoritär und nicht selbstreflexiv.",
+              "Das Ziel ist, die eigene Haltung zu reflektieren und zu formulieren, nicht den anderen zu überzeugen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Ich-Perspektive",
+                "levels": ["Keine Ich-Perspektive, belehrend", "Ansatz zur Ich-Form", "Klare Ich-Perspektive, keine Belehrung"]
+              },
+              {
+                "criterion": "Ehrlichkeit",
+                "levels": ["Pauschal, nicht authentisch", "Ansatz zur Authentizität", "Ehrliche, persönliche Aussage über den eigenen Zugang zu Bewegung"]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "create_produce",
+            "prompt": "Entwirf ein persönliches Bewegungsprofil für dich selbst: Was sind meine 3 Lieblingsformen von Bewegung? Was bringt mir jede davon (körperlich, sozial, psychisch)? Was würde ich gerne ausprobieren? Was halte ich für mich realistisch und nachhaltig? Formuliere zum Abschluss einen Satz, der beschreibt, welchen Sinn Sport und Bewegung für dich persönlich hat.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 65
+            },
+            "cognitive_level": "create",
+            "dimensions": ["SEL"],
+            "serves": [
+              {"competence_id": "BUS.US.4.SEL.01", "relation": "exercises"}
+            ],
+            "est_minutes": 12,
+            "answer_key": "Kein inhaltlich vorgeschriebenes Ergebnis — bewertet werden: Vollständigkeit (alle 4 Elemente vorhanden), Differenziertheit (körperlich UND sozial UND psychisch beschrieben), Realismus (nachhaltig ≠ 'täglich 2 Stunden Wettkampftraining'), Abschlusssatz (persönlich formuliert, nicht abgekupfert).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Manche Schüler:innen schreiben, was sie glauben, dass die Lehrkraft hören will — betonen, dass Ehrlichkeit wichtiger als Anpassung ist.",
+              "Schüler:innen, die wenig Sport betreiben, haben oft ein reicheres Bewegungsleben als sie denken (Alltagsbewegung, Tanzen, Spielen) — das sichtbar machen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Vollständigkeit",
+                "levels": ["Weniger als 2 Elemente", "2–3 Elemente", "Alle 4 Elemente vorhanden"]
+              },
+              {
+                "criterion": "Differenziertheit",
+                "levels": ["Nur eine Dimension (z. B. nur 'macht Spaß')", "2 Dimensionen (z. B. körperlich + sozial)", "Alle 3 Dimensionen (körperlich, sozial, psychisch)"]
+              },
+              {
+                "criterion": "Abschlusssatz",
+                "levels": ["Fehlt oder sehr pauschal", "Vorhanden, aber nicht wirklich persönlich", "Authentisch persönlicher Sinn formuliert"]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

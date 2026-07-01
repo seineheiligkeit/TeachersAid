@@ -1,0 +1,200 @@
+{
+  "id": "c0114.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1",
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Vergleiche die Jahrestemperaturen der beiden Städte: Sind die Temperaturen ähnlich oder sehr verschieden? Was fällt dir stärker auf — der Temperaturunterschied oder der Niederschlagsunterschied? Begründe mit Zahlen.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.1.LEB4.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Die Temperaturen sind ähnlich: Bregenz Jul 19,7 °C vs. Wien Jul 21,4 °C — Unterschied nur ca. 1,7 °C. Der Niederschlagsunterschied ist viel dramatischer: 1581 mm vs. 674 mm — Faktor 2,3. Der Niederschlagsunterschied ist also das hervorstechende Merkmal.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen erwarten oft, dass der Westen Österreichs auch kühler ist — das stimmt kaum, da Bregenz am Bodensee ähnliche Temperaturen hat wie Wien.",
+      "Darauf hinweisen, dass Klimavergleiche immer beides betrachten müssen: Temperatur UND Niederschlag."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 1,
+  "kompetenzbereich": "Leben und Wirtschaften unter Beachtung der natürlichen Prozesse",
+  "competences": [
+    "GWB.US.1.LEB4.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:climate_diagram",
+      "spec": {
+        "title": "Klimadiagramm Bregenz (Normalperiode 1991–2020)",
+        "months": [
+          "Jän",
+          "Feb",
+          "Mär",
+          "Apr",
+          "Mai",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Okt",
+          "Nov",
+          "Dez"
+        ],
+        "temp": [
+          1.3,
+          2.0,
+          5.8,
+          10.0,
+          14.4,
+          18.0,
+          19.7,
+          19.0,
+          14.5,
+          10.3,
+          5.4,
+          2.1
+        ],
+        "precip": [
+          81,
+          80,
+          98,
+          103,
+          164,
+          198,
+          188,
+          192,
+          148,
+          116,
+          106,
+          107
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "geosphere_klima_normal_1991_2020",
+        "series": "bregenz",
+        "note": null,
+        "title": "Klimanormalwerte österreichischer Stationen (1991–2020)",
+        "url": "https://data.hub.geosphere.at/dataset/klima-v2-1m",
+        "attribution": "Datenquelle: GeoSphere Austria – data.hub.geosphere.at (klima-v2-1m, CC BY 4.0)",
+        "stand": "1991–2020"
+      },
+      "illustrative": false,
+      "caption": null
+    },
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:climate_diagram",
+      "spec": {
+        "title": "Klimadiagramm Wien – Hohe Warte (Normalperiode 1991–2020)",
+        "months": [
+          "Jän",
+          "Feb",
+          "Mär",
+          "Apr",
+          "Mai",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Okt",
+          "Nov",
+          "Dez"
+        ],
+        "temp": [
+          0.8,
+          2.3,
+          6.2,
+          11.4,
+          15.8,
+          19.7,
+          21.4,
+          20.9,
+          15.8,
+          10.5,
+          5.8,
+          1.5
+        ],
+        "precip": [
+          42,
+          38,
+          52,
+          42,
+          79,
+          70,
+          78,
+          69,
+          64,
+          47,
+          46,
+          47
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "geosphere_klima_normal_1991_2020",
+        "series": "wien",
+        "note": null,
+        "title": "Klimanormalwerte österreichischer Stationen (1991–2020)",
+        "url": "https://data.hub.geosphere.at/dataset/klima-v2-1m",
+        "attribution": "Datenquelle: GeoSphere Austria – data.hub.geosphere.at (klima-v2-1m, CC BY 4.0)",
+        "stand": "1991–2020"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0114",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:32+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

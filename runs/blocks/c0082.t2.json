@@ -1,0 +1,77 @@
+{
+  "id": "c0082.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne jedem Energieträger die passende Beschreibung zu. Jede Beschreibung passt zu genau einem Energieträger.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Wasserkraft",
+        "Windkraft",
+        "Photovoltaik (Solarstrom)",
+        "Erdöl",
+        "Kohle"
+      ],
+      "right": [
+        "Nutzt die Bewegungsenergie von fließendem Wasser in Flüssen oder durch Staudämme",
+        "Wandelt Sonnenlicht direkt in elektrischen Strom um, z.B. auf Hausdächern",
+        "Fossiler Brennstoff aus abgestorbenen Meereslebewesen, wichtig für Treibstoff und Kunststoffe",
+        "Ältester fossiler Brennstoff; sehr viel CO₂ bei der Verbrennung; Einsatz wird in Europa stark reduziert",
+        "Nutzt die kinetische Energie des Windes durch Rotorblätter; keine direkten Emissionen im Betrieb"
+      ]
+    },
+    "response": {
+      "mode": "none"
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "OK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.2.NAC.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Wasserkraft → Nutzt die Bewegungsenergie von fließendem Wasser; Photovoltaik → Wandelt Sonnenlicht direkt in Strom um; Erdöl → Fossiler Brennstoff aus Meereslebewesen; Kohle → Ältester fossiler Brennstoff mit viel CO₂; Windkraft → Nutzt kinetische Energie des Windes.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Windkraft und Wasserkraft werden manchmal verwechselt – die Beschreibungen sind eindeutig, aber sorgfältiges Lesen einfordern.",
+      "Keine direkten Emissionen im Betrieb gilt nur für den Betrieb bei Windkraft: Herstellung der Anlagen verursacht Emissionen – Lifecycle-Denken optional ansprechen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 2,
+  "kompetenzbereich": "Nachhaltiger Umgang mit Energie und Ressourcen",
+  "competences": [
+    "GWB.US.2.NAC.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "OK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0082",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:17+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

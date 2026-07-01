@@ -1,0 +1,79 @@
+{
+  "id": "c0123.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Vergleiche die jährlichen Niederschlagsmengen der beiden Städte. Wien erhält in einem Jahr insgesamt etwa 674 mm Niederschlag, Bregenz etwa 1581 mm. Berechne, um wie viel Prozent Bregenz mehr Niederschlag bekommt als Wien.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.4.WET.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "Differenz: 1581 − 674 = 907 mm. Prozentualer Unterschied: 907/674 × 100 ≈ 134,6 %. Bregenz erhält also rund 135 % mehr Niederschlag als Wien (bzw. das 2,3-fache).",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Rechenweg",
+        "levels": [
+          "Differenz und Prozent korrekt",
+          "Einer der Schritte korrekt",
+          "Keine sinnvolle Rechnung"
+        ]
+      },
+      {
+        "criterion": "Einheit/Formulierung",
+        "levels": [
+          "'mehr als' korrekt formuliert",
+          "Zahl richtig, Formulierung verwirrend",
+          "Fehlt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Verwechslung 'um x % mehr' vs. 'x % von': 'um 135 % mehr' bedeutet das 2,35-fache, nicht das 1,35-fache.",
+      "Für schwächere Schülerinnen und Schüler reicht der Faktor (≈ 2,3-fach) als alternatives Ergebnis."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Wetter und Klima",
+  "competences": [
+    "PHY.US.4.WET.03"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0123",
+  "source": "ai",
+  "created_at": "2026-06-27T15:21:17+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

@@ -1,0 +1,213 @@
+{
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Österreichische Gesellschaftsentwicklung",
+  "title": "Wachstum und Alterung zusammengedacht",
+  "kernfrage": "Wie hängen Bevölkerungswachstum und gesellschaftliche Alterung in Österreich zusammen – und was bedeutet das für die Zukunft?",
+  "body": {
+    "intro": [],
+    "data_figures": [
+      {
+        "id": "abb1",
+        "intent": "trend",
+        "title": "Bevölkerung Österreichs im Zeitverlauf (1960–2024)",
+        "xlabel": "Jahr",
+        "ylabel": "Bevölkerung (Millionen)",
+        "data_source": {"dataset_id": "worldbank_at_bevoelkerung", "series": "verlauf"}
+      },
+      {
+        "id": "abb2",
+        "intent": "trend",
+        "title": "Anteil der über 65-Jährigen in Österreich (1960–2024)",
+        "xlabel": "Jahr",
+        "ylabel": "Anteil 65+ (%)",
+        "data_source": {"dataset_id": "worldbank_at_alterung", "series": "verlauf"}
+      }
+    ],
+    "assets": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Zwei Trends – eine Gesellschaft",
+        "throughline": "Schüler:innen verknüpfen zwei demografische Trends (Bevölkerungswachstum und Alterung) miteinander, erkennen, dass beide gleichzeitig auftreten können, und diskutieren die gesellschaftlichen Folgen dieser Kombination – von der Infrastruktur über die Sozialsysteme bis zur politischen Teilhabe verschiedener Altersgruppen.",
+        "talking_points": [
+          "Österreich wächst (9,2 Mio. 2024 vs. 7,0 Mio. 1960) UND altert gleichzeitig (20,6 % über 65 im Jahr 2024 vs. 12,2 % 1960): Das ist kein Widerspruch, weil das Wachstum v.a. durch Zuwanderung jüngerer Menschen kommt, die Alterung aber durch steigende Lebenserwartung und niedrige Geburtenraten getrieben wird.",
+          "Zuwanderung mildert zwar die Alterung kurzfristig (Zugewanderte sind im Schnitt jünger), löst das strukturelle Problem aber nicht dauerhaft, weil auch sie altern.",
+          "Die Kombination steigende Gesamtbevölkerung + wachsender Anteil Älterer bedeutet: mehr Menschen insgesamt UND mehr Menschen, die Pflege und Pensionsleistungen beanspruchen – eine Doppelbelastung für das System.",
+          "Politische Konsequenz: Ältere Bevölkerungsgruppen werden zur Wählermehrheit; das beeinflusst, welche Themen politisch Priorität bekommen."
+        ],
+        "extensions": [
+          "Prognosen: Die Statistik Austria prognostiziert für 2050 rund 9,5–10 Mio. Einwohner:innen bei weiter steigendem Altersanteil. Diskussion: Was bedeutet das für Schulen, Spitäler, Pflegeeinrichtungen?",
+          "Projekt: Schüler:innen befragen Ältere in ihrem Umfeld über deren Erfahrungen mit dem Pensionssystem und der Pflege.",
+          "Internationale Perspektive: Welche Länder wachsen bei gleichzeitiger Alterung (Österreich, Deutschland)? Welche wachsen ohne Alterung (afrikanische Länder)? Was erklärt den Unterschied?"
+        ],
+        "blocks": [
+          {
+            "role": "info",
+            "id": "i1",
+            "kind": "prose",
+            "prompt": "Die folgende Aufgabe arbeitet mit zwei Diagrammen gleichzeitig (Abb. 1 und Abb. 2). Abb. 1 zeigt, wie viele Menschen in Österreich lebten; Abb. 2 zeigt, wie groß der Anteil der über 65-Jährigen war. Zusammen erzählen sie die Geschichte einer Gesellschaft, die wächst und gleichzeitig älter wird.",
+            "payload": null,
+            "response": {"mode": "none"},
+            "cognitive_level": "remember",
+            "dimensions": ["OK"],
+            "serves": [{"competence_id": "GWB.US.3.OST.01", "relation": "supports"}],
+            "est_minutes": 2,
+            "asset_refs": ["abb1", "abb2"],
+            "answer_key": "",
+            "acceptable_reasoning": null,
+            "watch_outs": [],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "open_response",
+            "prompt": "Beschreibe jeweils in einem Satz: Was zeigt Abb. 1 (Bevölkerungsentwicklung) und was zeigt Abb. 2 (Anteil 65+) über den Zeitraum von 1960 bis 2024?",
+            "payload": null,
+            "response": {"mode": "lines", "n": 4},
+            "cognitive_level": "remember",
+            "dimensions": ["OK"],
+            "serves": [{"competence_id": "GWB.US.3.OST.01", "relation": "exercises"}],
+            "est_minutes": 5,
+            "asset_refs": ["abb1", "abb2"],
+            "answer_key": "Abb. 1: Die Bevölkerung Österreichs ist von rund 7,0 Millionen (1960) auf rund 9,2 Millionen (2024) kontinuierlich gewachsen. Abb. 2: Der Anteil der über 65-Jährigen ist im gleichen Zeitraum von rund 12 % auf über 20 % gestiegen, mit einem kurzen Rückgang in den frühen 1980er Jahren.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Auf korrekte Achsenablesung achten – insbesondere bei Abb. 1 die Millionen-Einheit.",
+              "Schüler:innen sollen die Diagramme separat beschreiben, bevor sie sie verknüpfen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "open_response",
+            "prompt": "Vergleiche die beiden Diagramme: In welchen Zeiträumen verliefen Bevölkerungswachstum und Zunahme des Anteils älterer Menschen parallel? In welchen Phasen schienen sie auseinanderzudriften? Beschreibe eine Gemeinsamkeit und einen Unterschied im Verlauf.",
+            "payload": null,
+            "response": {"mode": "lines", "n": 5},
+            "cognitive_level": "analyze",
+            "dimensions": ["OK", "UK"],
+            "serves": [{"competence_id": "GWB.US.3.OST.01", "relation": "exercises"}],
+            "est_minutes": 8,
+            "asset_refs": ["abb1", "abb2"],
+            "answer_key": "Gemeinsamkeit: Beide Größen zeigen langfristig eine steigende Tendenz von 1960 bis 2024. Unterschied: In den 1970er bis 1980er Jahren stagnierte die Gesamtbevölkerung (Abb. 1, ca. 7,5 Mio.), während der Anteil der Älteren (Abb. 2) in dieser Phase ebenfalls leicht zurückging – ein Hinweis auf die Babyboom-Generation im Erwerbsalter. Ab den 1990ern wuchs die Gesamtbevölkerung wieder stark (Zuwanderung), während der 65+-Anteil weiter stieg – Wachstum und Alterung liefen also gleichzeitig.",
+            "acceptable_reasoning": "Schüler:innen müssen nicht die genauen Jahreszahlen kennen, aber die groben Phasenmuster erkennen.",
+            "watch_outs": [
+              "Viele Schüler:innen denken intuitiv, dass Bevölkerungswachstum und Alterung sich ausschließen – dieser Denkfehler soll hier explizit aufgebrochen werden.",
+              "Den Begriff 'Babyboom' erklären, falls er fällt."
+            ],
+            "rubric": [
+              {"criterion": "Korrekte Beobachtung Gemeinsamkeit", "levels": ["Langfristiger Anstieg beider Größen korrekt festgestellt", "Ansatz, aber unvollständig", "Fehlt"]},
+              {"criterion": "Korrekte Beobachtung Unterschied", "levels": ["Stagnations-/Divergenzphase korrekt benannt", "Allgemein, ohne Phasenbezug", "Fehlt"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "open_response",
+            "prompt": "Österreich wächst (mehr Menschen insgesamt) und altert gleichzeitig (höherer Anteil Älterer). Ein Mitschüler meint: 'Das kann nicht stimmen – wenn viele junge Menschen zuwandern, muss der Anteil der Alten doch sinken.' Hat er Recht? Erkläre, warum beide Trends gleichzeitig möglich sind.",
+            "payload": null,
+            "response": {"mode": "lines", "n": 5},
+            "cognitive_level": "understand",
+            "dimensions": ["UK"],
+            "serves": [{"competence_id": "GWB.US.3.OST.01", "relation": "exercises"}],
+            "est_minutes": 7,
+            "asset_refs": ["abb2"],
+            "answer_key": "Der Mitschüler hat teilweise Recht: Zuwanderung jüngerer Menschen senkt tatsächlich kurzfristig den Anteil der Älteren etwas (sie 'verdünnen' die ältere Bevölkerung). Aber die Alterung wird durch zwei Kräfte angetrieben, die stärker sind: (1) Menschen leben immer länger (steigende Lebenserwartung), was die absolute Zahl der Älteren erhöht. (2) Die Geburtenrate ist seit Jahrzehnten niedrig, sodass wenig 'junge Bevölkerung' nachwächst. Zuwanderung kann diese Effekte mildern, aber nicht dauerhaft neutralisieren – zumal Zugewanderte selbst altern.",
+            "acceptable_reasoning": "Auch Antworten, die den kurzfristigen Effekt von Zuwanderung korrekt anerkennen und gleichzeitig die langfristigen Gegenkräfte benennen, sind vollständig.",
+            "watch_outs": [
+              "Wichtig: Die Antwort soll nicht einfach sagen 'er hat Unrecht', sondern die Nuanciertheit erklären – Zuwanderung hilft kurzfristig, reicht aber langfristig nicht.",
+              "Auf den Unterschied 'absolute Zahl' vs. 'Anteil' hinweisen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "matching",
+            "prompt": "Verbinde die demografischen Begriffe (links) mit ihrer korrekten Erklärung (rechts).",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Geburtenrate",
+                "Lebenserwartung",
+                "Wanderungssaldo",
+                "Demografische Alterung",
+                "Altenquotient"
+              ],
+              "right": [
+                "Durchschnittliches Alter, das ein Mensch bei der Geburt statistisch zu leben erwartet.",
+                "Anzahl der Lebendgeburten pro 1.000 Einwohner:innen in einem Jahr.",
+                "Verhältnis der Personen im Rentenalter zu den Personen im Erwerbsalter.",
+                "Differenz zwischen Zu- und Abwanderung in einem bestimmten Zeitraum.",
+                "Zunahme des Anteils älterer Menschen an der Gesamtbevölkerung."
+              ]
+            },
+            "response": {"mode": "table", "columns": ["Begriff", "Erklärung"], "rows": 5},
+            "cognitive_level": "remember",
+            "dimensions": ["OK"],
+            "serves": [{"competence_id": "GWB.US.3.OST.01", "relation": "exercises"}],
+            "est_minutes": 5,
+            "asset_refs": [],
+            "answer_key": "Geburtenrate → Anzahl der Lebendgeburten pro 1.000 Einwohner:innen in einem Jahr. Lebenserwartung → Durchschnittliches Alter, das ein Mensch bei der Geburt statistisch zu leben erwartet. Wanderungssaldo → Differenz zwischen Zu- und Abwanderung in einem bestimmten Zeitraum. Demografische Alterung → Zunahme des Anteils älterer Menschen an der Gesamtbevölkerung. Altenquotient → Verhältnis der Personen im Rentenalter zu den Personen im Erwerbsalter.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Auf den Unterschied zwischen 'Lebenserwartung bei Geburt' und 'Restlebenserwartung' hinweisen, falls Schüler:innen danach fragen.",
+              "Den Altenquotienten erklären – er ist ein wichtiger Indikator für die Belastbarkeit des Pensionssystems."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "case_study",
+            "prompt": "Die Gemeinde Hallstatt (Oberösterreich, ca. 800 Einwohner:innen) ist bekannt als beliebtes Touristenziel, leidet aber wie viele ländliche Gemeinden unter Abwanderung junger Menschen und einem hohen Anteil älterer Bevölkerung. Analysiere: Welche konkreten Probleme entstehen für eine solche Gemeinde, wenn die Bevölkerung schrumpft und gleichzeitig altert? Nenne mindestens drei Bereiche.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 55},
+            "cognitive_level": "analyze",
+            "dimensions": ["UK", "OK"],
+            "serves": [{"competence_id": "GWB.US.3.ZEN.02", "relation": "exercises"}],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Bereiche mit konkreten Problemen: (1) Infrastruktur: Schulen werden mangels Kindern geschlossen; öffentlicher Verkehr wird ausgedünnt, da weniger Fahrgäste; Geschäfte und Dienstleistungen schließen. (2) Sozialsystem: Mehr Pflegebedarf (alte Bevölkerung), aber weniger Arbeitskräfte im Pflegebereich und geringere Steuer- und Beitragseinnahmen der Gemeinde. (3) Wohnraum und Leerstand: Junge ziehen weg, Häuser stehen leer oder werden zu Ferienwohnungen; die Wohnsituation für Alteingesessene verschlechtert sich. (4) Demokratie und Engagement: Wenige Junge in der Gemeinde, wenig politisches Engagement der Bevölkerung, Vereine sterben aus. Hallstatt ist zudem ein Sonderfall (Tourismus als Einnahmequelle, aber auch als Problem durch Overtourism).",
+            "acceptable_reasoning": "Andere sachlich korrekte Bereiche (z.B. Vereinsleben, Feuerwehr, Gemeindefinanzen) sind zu werten.",
+            "watch_outs": [
+              "Schüler:innen sollen KONKRETE Folgen benennen, nicht allgemein 'es wird schlechter'.",
+              "Auf den Lokalitätsbezug achten – der Fall Hallstatt gibt die Möglichkeit, österreichische Realität zu diskutieren, ohne nicht belegte Fakten zu behaupten."
+            ],
+            "rubric": [
+              {"criterion": "Anzahl der Bereiche", "levels": ["Drei oder mehr konkrete Bereiche", "Zwei Bereiche", "Nur ein Bereich oder sehr allgemein"]},
+              {"criterion": "Konkretion der Folgen", "levels": ["Spezifische, nachvollziehbare Konsequenzen benannt", "Allgemeine Aussagen, wenig konkret", "Kaum inhaltlich"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "position_argument",
+            "prompt": "Stell dir vor, du bist Mitglied einer Jugendorganisation, die in einer Gemeindeversammlung das Wort ergreifen darf. Die Gemeinde diskutiert, ob man Budgetmittel vor allem in Pflegeeinrichtungen für die ältere Bevölkerung oder in Jugendzentren und Schulen für die jüngere Bevölkerung investieren soll. Formuliere ein kurzes Statement (ca. 5–8 Sätze), in dem du deine Position begründest und einen Lösungsvorschlag machst, der beide Altersgruppen berücksichtigt.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 60},
+            "cognitive_level": "create",
+            "dimensions": ["HK", "UK"],
+            "serves": [{"competence_id": "GWB.US.3.OST.02", "relation": "exercises"}],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "Ein vollständiges Statement enthält: (1) Klare Positionierung – z.B. beide Altersgruppen gleich wichtig, oder begründete Priorisierung. (2) Sachliche Argumente: z.B. Pflegeinvestition ist notwendig wegen steigendem 65+-Anteil; Jugendförderung ist Zukunftsinvestition, weil Junge later die Gemeinde tragen. (3) Lösungsvorschlag: z.B. generationenverbindende Projekte (Alte und Junge in einer Einrichtung), Prüfung überregionaler Finanzierung, Förderanträge beim Land. Eine sachliche, die Interessen beider Gruppen achtende Antwort ist voll zu werten.",
+            "acceptable_reasoning": "Kreative Lösungsvorschläge, die über eine simple Entweder-oder-Entscheidung hinausgehen, zeigen besonders hohes Niveau.",
+            "watch_outs": [
+              "Schüler:innen neigen dazu, rein zugunsten der Jugend zu argumentieren – auf die Perspektive älterer Menschen hinweisen und einfordern.",
+              "Das Statement soll rhetorisch formuliert sein (Ansprache, Überzeugung), nicht nur eine Liste.",
+              "Auf sachliche Argumente bestehen, nicht nur auf Meinung."
+            ],
+            "rubric": [
+              {"criterion": "Klare Position mit Begründung", "levels": ["Eindeutige Position mit min. 2 sachlichen Argumenten", "Position vorhanden, Argumente schwach", "Keine klare Position"]},
+              {"criterion": "Berücksichtigung beider Altersgruppen", "levels": ["Beide Perspektiven explizit einbezogen", "Eine Perspektive dominant, andere kurz erwähnt", "Nur eine Altersgruppe"]},
+              {"criterion": "Lösungsvorschlag", "levels": ["Konkreter, sachlich begründeter Vorschlag", "Allgemeiner Vorschlag ohne Begründung", "Kein Lösungsvorschlag"]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "c0063.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Diskutiere: Ein Schüler meint, Latein sei nutzlos, weil niemand es mehr spricht. Ein anderer ist überzeugt, Latein sei die Basis für alles, was man in Schule und Beruf braucht.\n\nWelcher Meinung stimmst du eher zu? Begründe deine Antwort mit mindestens zwei konkreten Beispielen aus dieser Stunde.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Ist Latein heute noch relevant? Welche der zwei Positionen überzeugt dich mehr — und warum?"
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 40.0
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "INH"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "LAT.US.4.INH.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Erwartete Argumente für Relevanz: Latinismen in Deutsch/Englisch erleichtern Wortschatzerwerb; Wissenschaftssprachen (Medizin, Biologie, Recht) sind lateinisch geprägt; lateinische Maximen wie in dubio pro reo sind Grundlage unserer Rechtsordnung; Kulturkompetenz — Texte, Inschriften, Kirchensprache. Gegenargumentation möglich, muss aber mit Belegen gestützt sein.",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Argumentation",
+        "levels": [
+          "Klare Position, zwei oder mehr konkrete Beispiele aus dem Unterricht.",
+          "Position klar, aber nur ein Beispiel oder Beispiele sehr allgemein.",
+          "Keine klare Position oder keine Beispiele."
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Beide Positionen sind vertretbar — Ziel ist argumentatives Denken mit Belegen, nicht eine richtige Meinung.",
+      "Schüler:innen, die Latein kritisch sehen, dürfen das begründen — aber ohne Belege ist das keine akzeptable Antwort.",
+      "Die Lehrkraft sollte moderieren, nicht ihre eigene Meinung aufzwingen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Latein",
+  "klasse": 4,
+  "kompetenzbereich": "Inhalts- und themenbezogene Kompetenzen",
+  "competences": [
+    "LAT.US.4.INH.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "INH"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0063",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

@@ -1,0 +1,61 @@
+{
+  "id": "c0062.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "translation",
+    "prompt": "Lies den folgenden Text über eine römische Familie und übersetze ihn ins Deutsche.\n\n---\nMarcia et Marcus in Roma habitant. Marcus est pater familiae. Marcia est mater. Filius eorum Quintus in ludo discit. Filia eorum Claudia domi manet. Servus aquam portat. Omnes laeti sunt.\n---\n\n(Hilfe: ludo = in der Schule; domi = zu Hause; omnes = alle; laeti = fröhlich)",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 7
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "SPR",
+      "INH"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "LAT.US.3.INH.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Marcia und Marcus wohnen in Rom. Marcus ist der Vater der Familie. Marcia ist die Mutter. Ihr Sohn Quintus lernt in der Schule. Ihre Tochter Claudia bleibt zu Hause. Ein Sklave trägt Wasser. Alle sind fröhlich.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Eorum (ihr / ihrer, Gen. Pl. von is/ea/id) — als Vokabel angeben, nicht selbst erschließen lassen.",
+      "Domi ist ein Lokativ (altertümlicher Kasus) — die Schüler:innen brauchen ihn nicht zu analysieren; 'zu Hause' als feste Wendung einprägen.",
+      "Die Rolle der Tochter (domi manet) vs. des Sohnes (in ludo discit) bietet Anlass für kurze Reflexion über Geschlechterrollen im antiken Rom."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "translation",
+  "subject": "Latein",
+  "klasse": 3,
+  "kompetenzbereich": "Inhalts- und themenbezogene Kompetenzen",
+  "competences": [
+    "LAT.US.3.INH.03"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "SPR",
+    "INH"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0062",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

@@ -1,0 +1,113 @@
+{
+  "id": "c0111.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Lies Abb. 1 ab. Welches Land hat den höchsten Anteil an Stadtbevölkerung, welches den niedrigsten? Ordne alle acht Länder von hoch nach niedrig und notiere die Prozentwerte.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "OK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.4.ENT2.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Rangfolge (absteigend): Schweiz 85,5 % — Deutschland 82,0 % — USA 80,1 % — Italien 69,6 % — Österreich 69,5 % — Nigeria 63,0 % — China 65,9 % — Indien 35,4 %. (Korrekte Reihenfolge: CH, DE, USA, IT, AT, CN, NG, IN — Nigeria und China liegen eng beisammen, China liegt knapp über Nigeria.)",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "China (65,9 %) liegt knapp über Nigeria (63,0 %) — diese Reihenfolge ist nicht intuitiv und wird oft vertauscht.",
+      "Österreich (69,5 %) und Italien (69,6 %) sind nahezu gleich — das ist aus der Grafik kaum zu unterscheiden, kein Fehler wenn vertauscht."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 4,
+  "kompetenzbereich": "Entwicklungen in einer globalisierten Welt",
+  "competences": [
+    "GWB.US.4.ENT2.02"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "OK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "title": "Anteil der Stadtbevölkerung im Ländervergleich (%)",
+        "xlabel": "Land",
+        "ylabel": "Anteil Stadtbevölkerung (%)",
+        "log": false,
+        "categories": [
+          "Österreich",
+          "Deutschland",
+          "Schweiz",
+          "Italien",
+          "USA",
+          "China",
+          "Indien",
+          "Nigeria"
+        ],
+        "values": [
+          69.5,
+          82.0,
+          85.5,
+          69.6,
+          80.1,
+          65.9,
+          35.4,
+          63.0
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "worldbank_urbanisierung",
+        "series": "vergleich",
+        "note": null,
+        "title": "Verstädterung im Ländervergleich (Anteil Stadtbevölkerung)",
+        "url": "https://data.worldbank.org/indicator/SP.URB.TOTL.IN.ZS",
+        "attribution": "Datenquelle: World Bank – data.worldbank.org (SP.URB.TOTL.IN.ZS, CC BY 4.0)",
+        "stand": "2024"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0111",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:29+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

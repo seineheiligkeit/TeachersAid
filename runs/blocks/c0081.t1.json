@@ -1,0 +1,100 @@
+{
+  "id": "c0081.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Sieh dir Abb. 1 an, das die Weltbevölkerung nach Kontinenten zeigt.\na) Auf welchem Kontinent leben die meisten Menschen? Wie viele Milliarden sind es?\nb) Wie viele Menschen leben insgesamt auf der Erde (Wert aus dem Diagramm hochrechnen)?\nc) Europa hat eine ähnlich große Landfläche wie Nordamerika, aber mehr als doppelt so viele Einwohner:innen. Was könnte das erklären?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "OK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.4.ENT2.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "a) Asien mit ca. 4,79 Mrd. Menschen. b) Summe aller Werte ≈ 8,07 Mrd. (entspricht Weltbevölkerung 2024). c) Europa ist historisch dichter besiedelt durch frühe Industrialisierung, gute Agrarflächen, politische Stabilität; Nordamerika wurde erst spät besiedelt und hat große unbewohnbare Flächen (Arktis, Wüsten, Präriegebiete).",
+    "acceptable_reasoning": "Bei c) zählen historisch-geografische Argumente – keine vollständige Liste erwartet.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen übersehen oft, dass das Diagramm absolute Zahlen zeigt, nicht Dichte. Bevölkerungsdichte ist ein eigenes Konzept.",
+      "Vorsicht mit dem Begriff Überbevölkerung – er ist normativ geladen; neutrale Begriffe bevorzugen: Bevölkerungswachstum, Bevölkerungsdynamik."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 4,
+  "kompetenzbereich": "Entwicklungen in einer globalisierten Welt",
+  "competences": [
+    "GWB.US.4.ENT2.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "OK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Afrika",
+          "Asien",
+          "Europa",
+          "Lat.Amerika",
+          "Nordamerika",
+          "Ozeanien"
+        ],
+        "values": [
+          1.46,
+          4.79,
+          0.74,
+          0.66,
+          0.38,
+          0.04
+        ],
+        "title": "Weltbevölkerung nach Kontinenten 2024 (Mrd. Personen)",
+        "xlabel": "Kontinent",
+        "ylabel": "Bevölkerung in Milliarden"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0081",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:16+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

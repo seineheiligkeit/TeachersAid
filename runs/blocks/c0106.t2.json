@@ -1,0 +1,76 @@
+{
+  "id": "c0106.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Entscheide, ob die folgenden Aussagen über Infrastruktur und Bevölkerungsverteilung in Österreich richtig oder falsch sind, und begründe deine Entscheidung.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Je mehr Menschen in einer Region wohnen, desto einfacher ist es, dort eine Buslinie rentabel zu betreiben.",
+        "Für die österreichischen Bundesländer gilt: Größere Bevölkerung bedeutet immer bessere Versorgung.",
+        "Wenn eine Region an Bevölkerung verliert, kann das zu einem Abbau von Schulen und Ärztepraxen führen.",
+        "Die ungleiche Bevölkerungsverteilung hat keine Auswirkungen auf die Steuerpolitik des Bundes."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "Richtig / Falsch",
+        "Begründung"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.OST.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1. RICHTIG – mehr Fahrgäste verteilen die Fixkosten auf mehr Personen, was niedrigere Kosten pro Fahrgast ermöglicht. · 2. FALSCH – größere Bevölkerung erleichtert die Versorgung nicht in jedem Bereich; Verteilung innerhalb des Bundeslandes, Fläche und Infrastruktur spielen ebenfalls eine Rolle (z.B. Tirol: viel Bevölkerung, aber durch die Alpen fragmentiert). · 3. RICHTIG – weniger Schüler:innen/Patient:innen macht Einrichtungen unwirtschaftlich, Schulschließungen und Ärzte-Mangel sind Folgen. · 4. FALSCH – der Finanzausgleich zwischen Bund und Ländern richtet sich u.a. nach Einwohnerzahlen; Wien erhält als bevölkerungsreichste Stadt erheblich mehr Mittel.",
+    "acceptable_reasoning": "Bei Aussage 2 ist eine differenzierte 'teils richtig/teils falsch' Antwort vollwertig, wenn begründet.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Aussage 2 ist eine Falle: 'Mehr Menschen = besser' stimmt pauschal nicht. Tirol hat ~776.000 Einwohner, aber die Alpen machen Versorgung kompliziert.",
+      "Aussage 4 überfordert manche Schüler:innen – den Finanzausgleich kurz vorab erklären oder als Bonus behandeln.",
+      "Begründungen müssen über 'das steht im Text' hinausgehen – eigene Überlegung fördern."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Österreichische Gesellschaftsentwicklung",
+  "competences": [
+    "GWB.US.3.OST.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0106",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:24+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

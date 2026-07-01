@@ -1,0 +1,81 @@
+{
+  "id": "c0114.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Eine Mitschülerin sagt: 'Bregenz ist feuchter als Wien, weil es am Meer liegt.' Stimmt das? Wo liegt Bregenz wirklich, und welche geografischen Ursachen könnte der große Niederschlagsunterschied haben? Nutze den Begriff 'Alpen' in deiner Erklärung.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "OK",
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.1.LEB4.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Nicht ganz richtig: Bregenz liegt am Bodensee (einem Binnensee), nicht am Meer. Aber die grundlegende Richtung stimmt: Atlantische Tiefdruckgebiete bringen feuchte Luft von Westen. Diese feuchte Luft trifft zunächst auf Bregenz und die westlichen Alpen, steigt auf (Staueffekt auf der Luvseite), kühlt sich ab und regnet ab. Wien liegt im Osten hinter den Alpen (Leeseite): Die Alpen halten den größten Teil der Feuchtigkeit ab, sodass weniger Niederschlag ankommt — man spricht vom 'Regenschatten der Alpen'.",
+    "acceptable_reasoning": "Schüler:innen müssen den Mechanismus nicht vollständig formulieren können — es reicht, wenn sie erkennen, dass die Alpen als Barriere wirken und Wien in deren Windschatten liegt.",
+    "rubric": [
+      {
+        "criterion": "Geografische Lage von Bregenz",
+        "levels": [
+          "Falsch (Meer)",
+          "Bodensee korrekt genannt",
+          "Bodensee + Westlage Österreichs erklärt"
+        ]
+      },
+      {
+        "criterion": "Rolle der Alpen",
+        "levels": [
+          "Alpen nicht erwähnt",
+          "Alpen als Barriere erwähnt",
+          "Stau- / Regenschatteneffekt erklärt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Den Irrtum 'Bodensee = Meer' klar korrigieren, aber die Kernidee (Westlage = feucht, Ostlage = trockener) bestätigen.",
+      "Den Begriff 'Regenschatten' nicht zu früh vorgeben — erst die Schüler:innen selbst formulieren lassen, dann ggf. den Fachbegriff einführen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 1,
+  "kompetenzbereich": "Leben und Wirtschaften unter Beachtung der natürlichen Prozesse",
+  "competences": [
+    "GWB.US.1.LEB4.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "OK",
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0114",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:32+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

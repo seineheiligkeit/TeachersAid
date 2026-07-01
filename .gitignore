@@ -48,6 +48,14 @@ runs/**/*.flac
 runs/**/*.ogg
 runs/**/*.m4a
 runs/**/*.mp4
+# Archives anywhere under runs/ are binary + regenerable.
+runs/**/*.zip
+
+# The SRDP Matura corpus (~900 MB) — a large, fully REGENERABLE archive (re-mirror with
+# `tools/fetch_matura --all`): raw zips/PDFs + the accessible RTF booklets + the extracted
+# JSON. It is not authored content — it stays local/Drive, never git. (Same intent CLAUDE.md
+# states; this enforces it — the per-type binary rules above missed the corpus's zip/rtf/json.)
+runs/matura/
 
 # Voice reference audio — re-fetchable from VCTK/FLEURS by tools/fetch_*_voices.py
 # (the provenance JSON in grounding/voices/ is committed; the binaries are not,

@@ -1,0 +1,94 @@
+{
+  "id": "c0092.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne die folgenden Berufe dem richtigen Wirtschaftssektor zu. Trage die Nummer des Berufs in die richtige Spalte der Tabelle ein.\n\nBerufe: 1 Tischlerin  2 Melkerin  3 Krankenpfleger  4 Stahlwerkerin  5 Friseurin  6 Bergbauingenieur  7 Lehrerin  8 Bäckerin",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Tischlerin",
+        "Melkerin",
+        "Krankenpfleger",
+        "Stahlwerkerin",
+        "Friseurin",
+        "Bergbauingenieur",
+        "Lehrerin",
+        "Bäckerin"
+      ],
+      "right": [
+        "Primärsektor",
+        "Sekundärsektor",
+        "Tertiärsektor"
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Primärsektor",
+        "Sekundärsektor",
+        "Tertiärsektor"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "OK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.2.VER.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Primärsektor: Melkerin (2), Bergbauingenieur (6). Sekundärsektor: Tischlerin (1), Stahlwerkerin (4), Bäckerin (8). Tertiärsektor: Krankenpfleger (3), Friseurin (5), Lehrerin (7).",
+    "acceptable_reasoning": "Bei der Bäckerin ist eine Diskussion möglich: Wenn sie Brot selbst bäckt und verkauft, kombiniert sie Sekundär- und Tertiärsektor. Für das Grundschema gilt: Produktion → Sekundär.",
+    "rubric": [
+      {
+        "criterion": "Korrekte Zuordnung",
+        "levels": [
+          "Alle 8 Berufe richtig (1 Punkt je Beruf)",
+          "6–7 richtig",
+          "4–5 richtig",
+          "< 4 richtig"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Bäckerin kann auch als Tertiär eingestuft werden, wenn die Schüler:innen an den Verkauf denken — als Anlass nutzen, um Mischbetriebe zu besprechen.",
+      "Bergbauingenieur wird oft dem Sekundärsektor zugeordnet, da er 'industriell' klingt — Primär = Rohstoffgewinnung aus der Natur."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 2,
+  "kompetenzbereich": "Vernetztes Wirtschaften zwischen Produktion und Konsum",
+  "competences": [
+    "GWB.US.2.VER.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "OK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0092",
+  "source": "ai",
+  "created_at": "2026-06-26T19:02:24+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

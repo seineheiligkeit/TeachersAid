@@ -1,0 +1,127 @@
+{
+  "id": "c0082.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb3"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Abb. 3 zeigt, in welchen Bereichen Österreich die meisten Treibhausgase ausstößt.\na) Welcher Sektor verursacht die meisten Emissionen? Überrascht dich das? Warum (nicht)?\nb) In welchen Bereichen aus dem Diagramm könntest du persönlich am leichtesten etwas verändern? Nenne zwei konkrete Alltagsmaßnahmen mit Bezug auf das Diagramm.\nc) Welche Veränderungen würden den größten Effekt haben, sind aber schwieriger umzusetzen?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 8
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "UK",
+      "HK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.2.NAC.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "a) Transport (29 %) – viele finden das überraschend, weil Strom sauber erscheint; aber Österreich fährt viel Auto und hat viel LKW-Transit. b) Möglich: Gebäude/Heizung (Temperatur senken, Strom sparen) und Transport (Rad statt Auto, Öffi nutzen, seltener fliegen). c) Industrie (26 %) erfordert strukturelle Veränderungen (neue Technologien, staatliche Förderung); Transport braucht bessere Öffi-Infrastruktur in Regionen.",
+    "acceptable_reasoning": "Maßnahmen müssen Diagrammbezug haben – allgemeine Umwelttipps ohne Bezug auf Sektoren nicht vollständig akzeptieren.",
+    "rubric": [
+      {
+        "criterion": "Sektor korrekt identifiziert",
+        "levels": [
+          "Korrekt mit Diagrammbezug",
+          "Korrekt ohne Diagrammbezug",
+          "Falsch"
+        ]
+      },
+      {
+        "criterion": "Persönliche Maßnahmen",
+        "levels": [
+          "2 konkrete, diagrammbezogene Maßnahmen",
+          "1 Maßnahme mit Bezug",
+          "Allgemein ohne Bezug"
+        ]
+      },
+      {
+        "criterion": "Schwierige, wirkungsvolle Maßnahmen",
+        "levels": [
+          "Strukturelle Maßnahme erkannt + begründet",
+          "Maßnahme ohne Begründung",
+          "Nur individuelle Maßnahmen"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Transport ≠ nur Flugzeug. Pkw ist der Haupttreiber in Österreich – ansprechen, ohne zu moralisieren.",
+      "Individuelle Maßnahmen sind wichtig, aber strukturelle Änderungen sind wirkungsvoller – Schüler:innen sollen beides sehen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 2,
+  "kompetenzbereich": "Nachhaltiger Umgang mit Energie und Ressourcen",
+  "competences": [
+    "GWB.US.2.NAC.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "UK",
+    "HK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb3",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Transport",
+          "Industrie",
+          "Gebäude/Heizung",
+          "Landwirtschaft",
+          "Strom/Energie",
+          "Sonstiges"
+        ],
+        "values": [
+          29,
+          26,
+          19,
+          10,
+          9,
+          7
+        ],
+        "title": "Treibhausgasemissionen Österreich 2023 nach Sektor (%)",
+        "xlabel": "Sektor",
+        "ylabel": "Anteil in Prozent"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0082",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:17+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

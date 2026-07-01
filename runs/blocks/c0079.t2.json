@@ -1,0 +1,71 @@
+{
+  "id": "c0079.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Ergänze die fehlenden Angaben in der Tabelle. Nutze das Periodensystem.",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Element",
+        "Symbol",
+        "Ordnungszahl",
+        "Protonenzahl",
+        "Elektronenzahl (neutral)",
+        "Periode"
+      ],
+      "rows": 6
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.US.x.ALL.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Wasserstoff | H | 1 | 1 | 1 | 1 — Helium | He | 2 | 2 | 2 | 1 — Lithium | Li | 3 | 3 | 3 | 2 — Sauerstoff | O | 8 | 8 | 8 | 2 — Natrium | Na | 11 | 11 | 11 | 3 — Chlor | Cl | 17 | 17 | 17 | 3",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen verwechseln Periode und Gruppe — Periode = Zeile, Gruppe = Spalte",
+      "Darauf hinweisen, dass Ordnungszahl = Protonenzahl = Elektronenzahl nur für neutrale Atome gilt (Ionen später)",
+      "Periodensystem bereitstellen oder im Lehrbuch verweisen"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Chemie",
+  "klasse": 4,
+  "kompetenzbereich": null,
+  "competences": [
+    "CHE.US.x.ALL.03"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0079",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:14+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

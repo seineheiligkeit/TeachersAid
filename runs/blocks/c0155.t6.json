@@ -1,0 +1,82 @@
+{
+  "id": "c0155.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Die Internationalen Raumstation ISS umkreist die Erde in einer Höhe von ca. 400 km (Bahnradius r ≈ 6 771 km = 6,771 · 10⁶ m) mit einer Umlaufzeit von etwa 92 min.\na) Berechne die Bahngeschwindigkeit der ISS (Umfang der Kreisbahn ÷ Umlaufzeit). Gib das Ergebnis in m/s und km/h an.\nb) Erkläre: Warum fällt die ISS nicht auf die Erde, obwohl die Gravitation auf sie wirkt?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.OS.5.MEC.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.OS.x.W.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "a) Umfang U = 2π · r = 2π · 6,771 · 10⁶ m ≈ 4,253 · 10⁷ m. T = 92 min = 5 520 s. v = U/T ≈ 4,253 · 10⁷ m / 5 520 s ≈ 7 704 m/s ≈ 27 735 km/h. b) Die ISS fällt ständig in Richtung Erde (Gravitation als Zentripetalkraft), aber ihre Horizontalgeschwindigkeit ist so groß, dass die Erdoberfläche genauso stark „wegkrümmt“ wie die Bahn der ISS abfällt – sie befindet sich dauerhaft im freien Fall um die Erde.",
+    "acceptable_reasoning": "Akzeptiert: Konzept des freien Falls in Verbindung mit Horizontalgeschwindigkeit; Newton'scher Kanonenkugelgedanke ist ebenfalls akzeptabel.",
+    "rubric": [
+      {
+        "criterion": "Berechnung v",
+        "levels": [
+          "Formel, Rechnung und Einheiten korrekt",
+          "Formel richtig, Rechenfehler"
+        ]
+      },
+      {
+        "criterion": "Erklärung Orbit",
+        "levels": [
+          "Freier Fall und Horizontalgeschwindigkeit korrekt verknüpft",
+          "Grobe Richtung stimmt, physikalische Präzision fehlt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Verwechslung: ISS schwebt nicht wegen fehlender Gravitation, sondern weil sie im freien Fall ist.",
+      "Einheitenumrechnung m/s → km/h: × 3,6."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Physik",
+  "klasse": 5,
+  "kompetenzbereich": "Mechanik I",
+  "competences": [
+    "PHY.OS.5.MEC.01",
+    "PHY.OS.x.W.04"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0155",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:27+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

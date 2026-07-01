@@ -1,0 +1,64 @@
+{
+  "id": "c0031.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Die Tabelle vergleicht vier Energieträger nach verschiedenen Kriterien. Fülle die leeren Felder mit „hoch“, „mittel“ oder „niedrig“ aus.\n\n| Energieträger | CO₂-Emissionen (Betrieb) | Versorgungssicherheit | Abbaubarkeit der Ressource |\n|---|---|---|---|\n| Erdgas | hoch | mittel | endlich |\n| Windkraft | | hoch | |\n| Photovoltaik | niedrig | | erneuerbar |\n| Braunkohle | | niedrig | |",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Energieträger",
+        "CO₂-Emissionen",
+        "Versorgungssicherheit",
+        "Abbaubarkeit"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "apply",
+    "dimensions": [
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.2.NAC.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Windkraft: CO₂ niedrig, Versorgungssicherheit hoch (je nach Windaufkommen – mittel wäre auch vertretbar), erneuerbar. Photovoltaik: Versorgungssicherheit mittel (saisonal). Braunkohle: CO₂ sehr hoch (höchste Emissionen aller fossilen Träger), endlich.",
+    "acceptable_reasoning": "Für Windkraft kann Versorgungssicherheit als „mittel“ eingestuft werden, wenn Schüler:innen die Wetterabhängigkeit begründen.",
+    "rubric": [],
+    "watch_outs": [
+      "Versorgungssicherheit ist ein mehrdimensionaler Begriff: technisch (Ausfallsicherheit), politisch (Importabhängigkeit), geografisch (Verfügbarkeit). Explizit ansprechen.",
+      "Schüler:innen setzen CO₂ manchmal mit Giftigkeit oder Schadstoff gleich – CO₂ ist ein natürlicher Bestandteil der Luft, der Problem ist das Mengenverhältnis."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 2,
+  "kompetenzbereich": "Nachhaltiger Umgang mit Energie und Ressourcen",
+  "competences": [
+    "GWB.US.2.NAC.01"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0031",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

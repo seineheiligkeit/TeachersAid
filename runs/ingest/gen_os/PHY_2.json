@@ -1,0 +1,339 @@
+{
+  "subject": "Physik",
+  "klasse": 7,
+  "kompetenzbereich": "Atomphysik",
+  "title": "Licht, Spektren und das Bohr-Modell",
+  "kernfrage": "Was verrät uns das Licht eines Atoms über seinen Aufbau – und wie nutzen Wissenschaftlerinnen und Wissenschaftler das aus?",
+  "body": {
+    "intro": [
+      "Wenn Neonröhren leuchten, Feuerwerke bunte Farben zeigen oder Sterne ihr Spektrum senden – dahinter steckt dasselbe Prinzip: Atome nehmen Energie auf und geben sie als Licht einer ganz bestimmten Farbe wieder ab. Dieses Arbeitsblatt erforscht, wie Licht als Botschafter des Atominneren dient."
+    ],
+    "data_figures": [],
+    "assets": [
+      {
+        "id": "abb1",
+        "role": "figure",
+        "generator": "matplotlib:line",
+        "spec": {
+          "series": [
+            {
+              "label": "H-alpha (rot)",
+              "x": [656],
+              "y": [1]
+            },
+            {
+              "label": "H-beta (blaugrün)",
+              "x": [486],
+              "y": [0.6]
+            },
+            {
+              "label": "H-gamma (violett)",
+              "x": [434],
+              "y": [0.4]
+            },
+            {
+              "label": "H-delta (violett)",
+              "x": [410],
+              "y": [0.2]
+            }
+          ],
+          "xlabel": "Wellenlänge λ in nm",
+          "ylabel": "relative Intensität",
+          "title": "Emissionsspektrum von Wasserstoff (Balmer-Serie, schematisch)"
+        }
+      },
+      {
+        "id": "abb2",
+        "role": "figure",
+        "generator": "matplotlib:timeline",
+        "spec": {
+          "events": [
+            { "at": 1897, "label": "Thomson: Elektron entdeckt" },
+            { "at": 1909, "label": "Rutherford: Kern-Streuexperiment" },
+            { "at": 1913, "label": "Bohr: Schalenmodell H" },
+            { "at": 1924, "label": "de Broglie: Materiewellen" },
+            { "at": 1926, "label": "Schrödinger: Wellengleichung" }
+          ],
+          "title": "Entwicklung der Atommodelle (1897–1926)",
+          "xlabel": "Jahr"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Licht als Energieträger und das elektromagnetische Spektrum",
+        "throughline": "Schüler:innen verstehen, dass Licht gequantelte Energiepakete (Photonen) transportiert und dass die Energie direkt mit der Frequenz (bzw. umgekehrt mit der Wellenlänge) zusammenhängt – Grundlage aller Spektroskopie.",
+        "talking_points": [
+          "E = h · f ist eine der fundamentalsten Gleichungen der modernen Physik; h = 6,626 · 10⁻³⁴ J·s ist das Plancksche Wirkungsquantum.",
+          "Wellenlänge und Frequenz sind über die Lichtgeschwindigkeit verknüpft: c = λ · f mit c ≈ 3 · 10⁸ m/s.",
+          "Der sichtbare Bereich (ca. 380–780 nm) ist nur ein winziger Ausschnitt des elektromagnetischen Spektrums; Gammastrahl bis Radiowelle unterscheiden sich um viele Größenordnungen."
+        ],
+        "extensions": [
+          "Recherche: Wie wird UV-Strahlung bei Dermatologieuntersuchungen genutzt – und wo liegt die Grenze zwischen harmloser und ionisierender Strahlung?",
+          "Vertiefung: Berechne die Energie eines Röntgenphotons (λ ≈ 0,1 nm) und vergleiche sie mit der eines sichtbaren Photons."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "ordering",
+            "prompt": "Ordne die folgenden Strahlungsarten des elektromagnetischen Spektrums nach aufsteigender Wellenlänge (kleinste Wellenlänge zuerst).",
+            "payload": {
+              "kind": "ordering",
+              "items": [
+                "Radiowellen",
+                "Sichtbares Licht",
+                "Ultraviolettstrahlung (UV)",
+                "Röntgenstrahlung",
+                "Gammastrahlung",
+                "Infrarotstrahlung (IR)",
+                "Mikrowellen"
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 3
+            },
+            "cognitive_level": "remember",
+            "dimensions": ["W"],
+            "serves": [
+              { "competence_id": "PHY.OS.7.ATO.01", "relation": "exercises" }
+            ],
+            "est_minutes": 5,
+            "asset_refs": [],
+            "answer_key": "Korrekte Reihenfolge (aufsteigende Wellenlänge): Gammastrahlung → Röntgenstrahlung → Ultraviolett (UV) → Sichtbares Licht → Infrarot (IR) → Mikrowellen → Radiowellen.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "UV und IR werden oft vertauscht; UV hat kürzere Wellenlänge (höhere Energie) als sichtbares Licht, IR längere.",
+              "Mikrowellen liegen zwischen IR und Radiowellen – die Bezeichnung 'micro' täuscht über die lange Wellenlänge hinweg."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "open_response",
+            "prompt": "Rotes Licht hat eine Wellenlänge von etwa 650 nm, violettes Licht von etwa 400 nm. Die Lichtgeschwindigkeit beträgt c = 3,00 · 10⁸ m/s, das Plancksche Wirkungsquantum h = 6,63 · 10⁻³⁴ J·s.\na) Berechne die Frequenz von rotem und violettem Licht.\nb) Berechne die Energie eines Photons der jeweiligen Farbe in Joule.\nc) Welche Farbe hat mehr Energie pro Photon – und was bedeutet das für die biologische Wirkung (z. B. auf die Haut)?",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 60
+            },
+            "cognitive_level": "apply",
+            "dimensions": ["W"],
+            "serves": [
+              { "competence_id": "PHY.OS.7.ATO.01", "relation": "exercises" },
+              { "competence_id": "PHY.OS.x.W.04", "relation": "exercises" }
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "a) f_rot = c/λ = 3,00·10⁸ m/s ÷ 650·10⁻⁹ m ≈ 4,62·10¹⁴ Hz; f_violett = 3,00·10⁸ ÷ 400·10⁻⁹ ≈ 7,50·10¹⁴ Hz. b) E_rot = h·f = 6,63·10⁻³⁴ · 4,62·10¹⁴ ≈ 3,06·10⁻¹⁹ J; E_violett ≈ 6,63·10⁻³⁴ · 7,50·10¹⁴ ≈ 4,97·10⁻¹⁹ J. c) Violettes Licht hat mehr Energie pro Photon (kürzere Wellenlänge → höhere Frequenz → mehr Energie). Höhere Photonenenergie kann biologische Moleküle (z. B. DNA) stärker schädigen – UV-Strahlung (noch höhere Energie) verursacht Sonnenbrand und DNA-Schäden.",
+            "acceptable_reasoning": "Akzeptiert: Nanometer korrekt in Meter umgerechnet (·10⁻⁹); sinnvolle Angabe der biologischen Wirkung.",
+            "watch_outs": [
+              "Einheitenumrechnung nm → m wird häufig vergessen: 650 nm = 650·10⁻⁹ m = 6,50·10⁻⁷ m.",
+              "Viele verwechseln: höhere Frequenz = mehr Energie (nicht weniger). Die Wellenlänge verhält sich umgekehrt zur Energie."
+            ],
+            "rubric": [
+              { "criterion": "Frequenzberechnung", "levels": ["Beide Frequenzen korrekt mit Einheit Hz", "Formel richtig, Umrechnungsfehler"] },
+              { "criterion": "Energieberechnung", "levels": ["Beide Energien korrekt in J", "Formel bekannt, Rechenfehler"] },
+              { "criterion": "Interpretation", "levels": ["Zusammenhang Energie–Wellenlänge–biologische Wirkung korrekt erklärt", "Farbe benannt, keine Begründung"] }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Emissionsspektren und das Bohr-Modell des Wasserstoffatoms",
+        "throughline": "Das Linienspektrum des Wasserstoffs war der entscheidende empirische Befund, der das Bohr-Modell diskreter Energieniveaus begründete – ein Paradebeispiel für theorie-getriebene Erkenntnisgewinnung.",
+        "talking_points": [
+          "Das Emissionsspektrum von Wasserstoff zeigt diskrete Linien, weil Elektronen nur bestimmte Energiezustände (n = 1, 2, 3, …) einnehmen können.",
+          "Beim Übergang n_oben → n_unten wird ein Photon mit genau der Energiedifferenz E = E_oben – E_unten emittiert.",
+          "Absorptionsspektren sind das Negativ: Atome schlucken genau die Wellenlängen, die sie auch emittieren können (Fraunhofer-Linien in der Sonnenspektroskopie)."
+        ],
+        "extensions": [
+          "Recherche: Wie wird Spektroskopie in der Astronomie eingesetzt, um die chemische Zusammensetzung von Sternen zu bestimmen?",
+          "Vertiefung: Warum reicht das Bohr-Modell für Helium (2 Elektronen) nicht mehr exakt aus?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "data_interpretation",
+            "prompt": "Das Diagramm (Abb. 1) zeigt das Emissionsspektrum von Wasserstoff (Balmer-Serie).\na) Nenne die Wellenlängen und Farben der vier sichtbaren Linien (lies aus dem Diagramm ab).\nb) Erkläre, warum das Wasserstoffspektrum nur einzelne Linien zeigt und kein kontinuierliches Spektrum wie eine Glühbirne.\nc) Warum kann dieselbe Apparatur, die Emissionslinien zeigt, auch als Absorptionsspektroskop verwendet werden?",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55
+            },
+            "cognitive_level": "analyze",
+            "dimensions": ["W", "E"],
+            "serves": [
+              { "competence_id": "PHY.OS.7.ATO.01", "relation": "exercises" },
+              { "competence_id": "PHY.OS.x.E.03", "relation": "exercises" }
+            ],
+            "est_minutes": 12,
+            "asset_refs": ["abb1"],
+            "answer_key": "a) H-alpha: 656 nm, rot; H-beta: 486 nm, blaugrün; H-gamma: 434 nm, violett; H-delta: 410 nm, violett. b) Elektronen in Wasserstoff können nur diskrete Energieniveaus (n = 1, 2, 3, …) einnehmen. Photonen werden nur bei Übergängen zwischen diesen Niveaus emittiert – mit exakt der Energiedifferenz. Weil nur wenige solche Übergänge existieren, erscheinen nur einzelne Linien (nicht ein Kontinuum). Eine Glühbirne emittiert thermisch über alle Wellenlängen gleichzeitig. c) Atome können genau die Photonenenergien absorbieren, die ihren Energieübergängen entsprechen. Strahlt man weißes Licht durch Wasserstoffgas, fehlen genau diese Wellenlängen im Transmissionsspektrum (dunkle Absorptionslinien).",
+            "acceptable_reasoning": "Akzeptiert: statt 'diskrete Energieniveaus' auch 'Elektronen auf bestimmten Schalen' im Bohr-Modell.",
+            "watch_outs": [
+              "Schüler:innen verwechseln oft Emissions- und Absorptionsspektrum: Emissionsspektrum = helle Linien auf schwarz; Absorptionsspektrum = dunkle Linien auf Regenbogen.",
+              "Die Energieangabe als Differenz (ΔE = E_n_oben – E_n_unten) ist entscheidend; manche denken, das Photon hat die absolute Energie des Niveaus."
+            ],
+            "rubric": [
+              { "criterion": "Ablesen", "levels": ["Alle vier Linien korrekt mit Farbe und Wellenlänge", "Mindestens zwei korrekt"] },
+              { "criterion": "Diskrete Niveaus", "levels": ["Quantisierung und Übergänge korrekt erklärt", "Nur 'Quantelung' erwähnt, ohne Erklärung"] },
+              { "criterion": "Absorption", "levels": ["Symmetrie von Emission und Absorption korrekt erklärt", "Absorptionsspektrum beschrieben, aber Grund fehlt"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "matching",
+            "prompt": "Ordne den folgenden Übergängen im Bohr-Modell des Wasserstoffs den richtigen Spektralbereich zu. Die Energieniveaus des Wasserstoffs sind E_n = –13,6 eV / n². (1 eV = 1,6 · 10⁻¹⁹ J; h = 6,63 · 10⁻³⁴ J·s; c = 3,00 · 10⁸ m/s)",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "n = 3 → n = 2 (Balmer-Serie)",
+                "n = 2 → n = 1 (Lyman-Serie)",
+                "n = 4 → n = 3 (Paschen-Serie)"
+              ],
+              "right": [
+                "Sichtbares Licht (rot, λ ≈ 656 nm)",
+                "Ultraviolett (λ ≈ 122 nm)",
+                "Nahes Infrarot (λ ≈ 1875 nm)"
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 3
+            },
+            "cognitive_level": "apply",
+            "dimensions": ["W"],
+            "serves": [
+              { "competence_id": "PHY.OS.7.ATO.02", "relation": "exercises" },
+              { "competence_id": "PHY.OS.x.W.04", "relation": "exercises" }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "n=3→2 ↔ Sichtbares Licht (rot, 656 nm); n=2→1 ↔ Ultraviolett (122 nm); n=4→3 ↔ Nahes Infrarot (1875 nm). Begründung: ΔE(3→2) = 13,6(1/4 – 1/9) eV ≈ 1,89 eV → λ = hc/ΔE ≈ 657 nm (rot); ΔE(2→1) = 13,6(1 – 1/4) eV = 10,2 eV → λ ≈ 122 nm (UV); ΔE(4→3) ≈ 0,66 eV → λ ≈ 1876 nm (IR).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Verwechslung: Größere n-Differenz bedeutet nicht zwingend mehr Energie – entscheidend sind die beteiligten Niveaus.",
+              "n=1 ist der Grundzustand mit der niedrigsten (negativsten) Energie; Übergänge dorthin (Lyman-Serie) haben die höchste Photonenenergie."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "open_response",
+            "prompt": "In der Astronomie nutzt man Absorptionsspektren, um die chemische Zusammensetzung von Sternen zu bestimmen. Erkläre schrittweise:\na) Wie entsteht ein Absorptionsspektrum einer Sternatmosphäre?\nb) Warum sind die Absorptionslinien eines Sterns wie ein chemischer Fingerabdruck?\nc) Formuliere eine Frage, die Astronominnen und Astronomen mit dieser Methode beantworten können, und erkläre, wie sie vorgehen würden.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 65
+            },
+            "cognitive_level": "analyze",
+            "dimensions": ["W", "E"],
+            "serves": [
+              { "competence_id": "PHY.OS.7.ATO.02", "relation": "exercises" },
+              { "competence_id": "PHY.OS.x.E.01", "relation": "exercises" }
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "a) Der heiße Sternkern emittiert ein nahezu kontinuierliches Spektrum. Beim Durchgang durch die kühlere Sternatmosphäre absorbieren die dortigen Atome genau die Photonenenergien, die ihren Energieübergängen entsprechen – im Spektrum erscheinen dunkle Linien (Fraunhofer-Linien). b) Jedes Element hat ein einzigartiges Energieniveauschema → einzigartige Wellenlängen der Absorptionslinien. Durch Vergleich mit Laborspektren bekannter Elemente lässt sich das Element eindeutig identifizieren. c) Beispiel: „Enthält dieser Stern Helium?“ Methode: Spektrum aufnehmen, mit bekannten He-Absorptionslinien (z. B. 587,6 nm) vergleichen; stimmen Linien überein → Helium vorhanden.",
+            "acceptable_reasoning": "Akzeptiert: Eigene sinnvolle astronomische Forschungsfrage mit korrekt beschriebenem spektroskopischen Vorgehen.",
+            "watch_outs": [
+              "Schüler:innen verwechseln Emissions- und Absorptionsspektrum; Fraunhofer-Linien sind dunkle Linien im kontinuierlichen Spektrum.",
+              "Das 'Fingerabdruck'-Prinzip basiert auf der Einzigartigkeit der Energieniveaus, nicht auf Farbe allein."
+            ],
+            "rubric": [
+              { "criterion": "Entstehung Absorptionsspektrum", "levels": ["Kontinuierliche Quelle + selektive Absorption korrekt erklärt", "Absorption erwähnt, mechanistischer Zusammenhang fehlt"] },
+              { "criterion": "Fingerabdruck-Prinzip", "levels": ["Einzigartige Energieniveaus als Grundlage korrekt begründet", "Nur Analogie, keine physikalische Erklärung"] },
+              { "criterion": "Forschungsfrage", "levels": ["Sinnvolle Frage + korrektes Vorgehen mit Linienvergleich", "Frage vorhanden, Vorgehen unvollständig"] }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "Modelle der Atomhülle – Grenzen und Erkenntnisgewinn",
+        "throughline": "Das Bohr-Modell ist ein historisch bedeutsames, aber physikalisch unvollständiges Modell – Schüler:innen lernen, Modelle kritisch einzuschätzen und ihre Grenzen zu erkennen.",
+        "talking_points": [
+          "Modelle in der Physik sind immer Vereinfachungen: Das Bohr-Modell erklärt Wasserstoff gut, versagt aber bei Mehrelektronenatomen.",
+          "Die Zeitleiste (Abb. 2) zeigt, wie Atommodelle sich in wenigen Jahrzehnten grundlegend veränderten – Wissenschaft als lebendiger Prozess.",
+          "Das Orbitalmodell (Quantenmechanik) beschreibt Aufenthaltswahrscheinlichkeiten, keine festen Bahnen mehr."
+        ],
+        "extensions": [
+          "Diskussion: Was macht ein physikalisches Modell 'gut'? Erarbeite Kriterien (Vorhersagekraft, Einfachheit, Konsistenz).",
+          "Recherche: Wie hat die Entdeckung der Elektronenbeugung (Davisson-Germer 1927) das Atommodell verändert?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "source_critique",
+            "prompt": "Lies die folgende Aussage aus einem populärwissenschaftlichen Artikel:\n\n„Das Bohr-Modell erklärt, wie Elektronen auf festen Kreisbahnen um den Kern kreisen – genau wie Planeten um die Sonne. Dieses Modell gilt heute als vollständige Beschreibung der Atomhülle.“\n\nBeurteile diese Aussage kritisch:\na) Was ist an der Aussage physikalisch korrekt?\nb) Was ist ungenau oder falsch – und warum?\nc) Wie würde eine wissenschaftlich präzisere Beschreibung lauten?",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 60
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": ["W", "S"],
+            "serves": [
+              { "competence_id": "PHY.OS.7.ATO.02", "relation": "exercises" },
+              { "competence_id": "PHY.OS.x.S.02", "relation": "exercises" },
+              { "competence_id": "PHY.OS.x.S.03", "relation": "exercises" }
+            ],
+            "est_minutes": 12,
+            "asset_refs": ["abb2"],
+            "answer_key": "a) Korrekt: Das Bohr-Modell postuliert diskrete Energieniveaus (Schalen) und erklärt das Wasserstoff-Linienspektrum erfolgreich. b) Ungenau/falsch: (1) Elektronen bewegen sich nicht auf festen Kreisbahnen – das widerspricht der Quantenmechanik (Heisenbergsche Unschärferelation); korrekt sind Aufenthaltswahrscheinlichkeiten (Orbitale). (2) Das Bohr-Modell gilt heute keineswegs als vollständige Beschreibung; es scheitert bei Mehrelektronenatomen und erklärt keine Intensitäten oder Feinstruktur. c) Präziser: 'Im Bohr-Modell werden diskrete Energiezustände des Elektrons im Wasserstoffatom beschrieben, was das Linienspektrum qualitativ erklärt. Das vollständigere quantenmechanische Modell beschreibt Elektronen durch Wellenfunktionen und Aufenthaltswahrscheinlichkeiten (Orbitale).'",
+            "acceptable_reasoning": "Akzeptiert: Verweis auf Heisenbergsche Unschärfe als Begründung für keine festen Bahnen; Verweis auf Mehrelektronenatome als Versagensbereich.",
+            "watch_outs": [
+              "Viele Schulbücher (auch aktuelle) beschreiben das Bohr-Modell zu positiv – Schüler:innen sollten lernen, auch verbreitete Darstellungen kritisch zu lesen.",
+              "Das Planetensystem-Analogon ist didaktisch nützlich, physikalisch aber irreführend: Gravitationskraft ≠ Coulombkraft, und Elektronen sind keine Punktteilchen."
+            ],
+            "rubric": [
+              { "criterion": "Korrekte Elemente", "levels": ["Diskrete Energieniveaus korrekt als gültigen Kern identifiziert", "Nur 'irgendwie stimmt etwas' ohne Konkretisierung"] },
+              { "criterion": "Kritik", "levels": ["Keine festen Bahnen und Grenzen des Modells korrekt benannt", "Nur eine Schwäche genannt"] },
+              { "criterion": "Präzisere Formulierung", "levels": ["Orbitale/Aufenthaltswahrscheinlichkeit korrekt eingebracht", "Verbesserungsversuch ohne physikalische Grundlage"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "open_response",
+            "prompt": "Betrachte die Zeitleiste der Atommodelle (Abb. 2).\na) Beschreibe, welche experimentellen Beobachtungen die Entwicklung vom Thomson- zum Bohr-Modell erzwangen.\nb) Bewerte: Ist es ein Zeichen von Schwäche der Physik, dass Modelle ersetzt werden? Begründe aus wissenschaftstheoretischer Sicht.\nc) Nenne ein weiteres Beispiel aus der Physik oder einem anderen Fach, wo ein Modell durch ein besseres ersetzt wurde.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 65
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": ["W", "S"],
+            "serves": [
+              { "competence_id": "PHY.OS.7.ATO.02", "relation": "exercises" },
+              { "competence_id": "PHY.OS.x.S.01", "relation": "exercises" },
+              { "competence_id": "PHY.OS.x.S.04", "relation": "exercises" }
+            ],
+            "est_minutes": 12,
+            "asset_refs": ["abb2"],
+            "answer_key": "a) Thomson-Modell (Plumpudding): Elektronen eingebettet in positiv geladene Masse. Rutherfords Streuexperiment (1909) zeigte, dass Alpha-Teilchen stark abgelenkt werden → Masse im winzigen Kern konzentriert, nicht gleichmäßig verteilt. Linienspektren des Wasserstoffs konnten mit Rutherfords Kernmodell allein nicht erklärt werden → Bohr (1913) führt diskrete Energieniveaus ein. b) Nein – Modelle werden ersetzt, wenn sie an neuen Experimenten scheitern. Das ist ein Zeichen von Stärke: Wissenschaft ist selbstkorrigierend. Neue Modelle erklären mehr Phänomene, scheitern aber nicht an alten (Prinzip der Korrespondenz). c) Beispiele: Ptolemäisches → Kopernikanisches Weltbild; Phlogiston-Theorie → Lavoisiers Oxidationstheorie; Newtonsche Mechanik → Relativitätstheorie (für hohe Geschwindigkeiten).",
+            "acceptable_reasoning": "Akzeptiert: Jedes korrekte historische Beispiel für Modellablösung mit nachvollziehbarer Begründung.",
+            "watch_outs": [
+              "Schüler:innen neigen dazu, Modellaustausch als 'Irrtum' zu werten – wichtig ist, dass ältere Modelle in ihrem Gültigkeitsbereich weiterhin korrekt sind.",
+              "Rutherfords Experiment wird häufig mit Thomsons Modell verwechselt – sorgfältige Differenzierung nötig."
+            ],
+            "rubric": [
+              { "criterion": "Experimentelle Grundlage", "levels": ["Rutherford-Streuexperiment und Linienspektren korrekt verknüpft", "Nur ein Experiment erwähnt"] },
+              { "criterion": "Wissenschaftstheorie", "levels": ["Selbstkorrektur als Stärke überzeugend begründet", "Intuitive Antwort ohne wissenschaftstheoretisches Argument"] },
+              { "criterion": "Beispiel", "levels": ["Korrekt und mit Erklärung", "Beispiel richtig, aber ohne Begründung"] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

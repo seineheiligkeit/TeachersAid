@@ -1,0 +1,219 @@
+{
+  "id": "c0114.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1",
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "position_argument",
+    "prompt": "Ein Bauer in Bregenz und eine Bäuerin in Wien müssen beide entscheiden, ob sie ihre Getreideernte im Juli einfahren sollen. Der Wetterbericht sagt für die nächste Woche 'wechselhaftes Wetter'. Wer muss sich mehr Sorgen um Regen machen? Begründe deine Antwort mit dem, was du aus den Klimadiagrammen weißt.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 40.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "UK",
+      "HK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.1.LEB4.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Der Bregenzer Bauer muss sich deutlich mehr Sorgen machen: Im Juli fallen in Bregenz im langjährigen Mittel 188 mm Niederschlag — das ist der zweit-niederschlagsreichste Monat. In Wien fallen im Juli nur 78 mm. Ein Klimadiagramm zeigt zwar nicht den konkreten Tag, aber das langjährige Muster: Bregenz hat im Juli generell mit viel mehr Niederschlag zu rechnen als Wien.",
+    "acceptable_reasoning": "Schüler:innen dürfen auf die grundsätzliche Nassheit Bregenz' hinweisen, ohne konkrete Monatszahlen zu nennen — wichtig ist das Verständnis, dass das Klimadiagramm ein Wahrscheinlichkeitsmuster zeigt.",
+    "rubric": [
+      {
+        "criterion": "Positionierung (Bregenz riskanter)",
+        "levels": [
+          "Keine klare Position",
+          "Bregenz als riskanter erkannt",
+          "Bregenz als riskanter mit Zahlen aus den Diagrammen belegt"
+        ]
+      },
+      {
+        "criterion": "Unterschied Klima vs. Wetter",
+        "levels": [
+          "Nicht erwähnt",
+          "Angedeutet",
+          "Explizit: Klimadiagramm = langfristiges Muster, kein Tagesvorhersage"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Betonen: Das Klimadiagramm sagt nichts über den nächsten Mittwoch aus — es zeigt das typische Muster, keine Garantie.",
+      "Schüler:innen, die sagen 'Wetterbericht entscheidet, nicht Klimadiagramm' haben Recht, aber das Klima gibt den Rahmen vor — beide Aussagen sind richtig."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "position_argument",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 1,
+  "kompetenzbereich": "Leben und Wirtschaften unter Beachtung der natürlichen Prozesse",
+  "competences": [
+    "GWB.US.1.LEB4.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "UK",
+    "HK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:climate_diagram",
+      "spec": {
+        "title": "Klimadiagramm Bregenz (Normalperiode 1991–2020)",
+        "months": [
+          "Jän",
+          "Feb",
+          "Mär",
+          "Apr",
+          "Mai",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Okt",
+          "Nov",
+          "Dez"
+        ],
+        "temp": [
+          1.3,
+          2.0,
+          5.8,
+          10.0,
+          14.4,
+          18.0,
+          19.7,
+          19.0,
+          14.5,
+          10.3,
+          5.4,
+          2.1
+        ],
+        "precip": [
+          81,
+          80,
+          98,
+          103,
+          164,
+          198,
+          188,
+          192,
+          148,
+          116,
+          106,
+          107
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "geosphere_klima_normal_1991_2020",
+        "series": "bregenz",
+        "note": null,
+        "title": "Klimanormalwerte österreichischer Stationen (1991–2020)",
+        "url": "https://data.hub.geosphere.at/dataset/klima-v2-1m",
+        "attribution": "Datenquelle: GeoSphere Austria – data.hub.geosphere.at (klima-v2-1m, CC BY 4.0)",
+        "stand": "1991–2020"
+      },
+      "illustrative": false,
+      "caption": null
+    },
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:climate_diagram",
+      "spec": {
+        "title": "Klimadiagramm Wien – Hohe Warte (Normalperiode 1991–2020)",
+        "months": [
+          "Jän",
+          "Feb",
+          "Mär",
+          "Apr",
+          "Mai",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Okt",
+          "Nov",
+          "Dez"
+        ],
+        "temp": [
+          0.8,
+          2.3,
+          6.2,
+          11.4,
+          15.8,
+          19.7,
+          21.4,
+          20.9,
+          15.8,
+          10.5,
+          5.8,
+          1.5
+        ],
+        "precip": [
+          42,
+          38,
+          52,
+          42,
+          79,
+          70,
+          78,
+          69,
+          64,
+          47,
+          46,
+          47
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "geosphere_klima_normal_1991_2020",
+        "series": "wien",
+        "note": null,
+        "title": "Klimanormalwerte österreichischer Stationen (1991–2020)",
+        "url": "https://data.hub.geosphere.at/dataset/klima-v2-1m",
+        "attribution": "Datenquelle: GeoSphere Austria – data.hub.geosphere.at (klima-v2-1m, CC BY 4.0)",
+        "stand": "1991–2020"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0114",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:32+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

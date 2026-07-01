@@ -1,0 +1,60 @@
+{
+  "id": "c0014.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "text_analysis",
+    "prompt": "Lies die beiden folgenden Texte. Beide teilen dieselbe Information mit, aber in sehr unterschiedlichen Schreibweisen.\n\n**Text A (Chat-Nachricht):**\n*hey sorry komm heute nicht, bin krank. meld mich morgen ok? 🤒*\n\n**Text B (formelle E-Mail):**\n*Sehr geehrte Frau Lehrerin, ich möchte Sie darüber informieren, dass ich heute leider aufgrund einer Erkrankung nicht am Unterricht teilnehmen kann. Ich werde mich morgen bei Ihnen melden, um das Versäumte nachzuholen. Mit freundlichen Grüßen, [Name]*\n\nBeantworte:\na) Nenne **drei konkrete sprachliche Unterschiede** (z.B. Anrede, Satzlänge, Wortschatz).\nb) In welchem Kontext ist welcher Text angemessen? Begründe.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 7
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "SCH",
+      "SPR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DEU.US.4.SCH.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "a) Mögliche Unterschiede: (1) Anrede: 'hey' vs. 'Sehr geehrte Frau' (formell/informell). (2) Satzlänge: Kurzfragmente vs. vollständige Satzgefüge. (3) Wortschatz: 'komm nicht' vs. 'nicht am Unterricht teilnehmen kann' (Nominalisierung). (4) Groß-/Kleinschreibung ignoriert vs. normgerecht. (5) Emoji vs. kein Emoji. b) A unter Freunden oder in entspanntem privatem Umfeld; B an Lehrkraft oder in formellen Situationen, wo Professionalität erwartet wird.",
+    "acceptable_reasoning": "Andere sprachliche Unterschiede (Interpunktion, Vollständigkeit des Satzes) sind ebenso gültig.",
+    "rubric": [],
+    "watch_outs": [
+      "Schüler:innen nennen oft nur 'kurz vs. lang' – auf konkrete Sprachmerkmale bestehen (Wortschatz, Syntax, Anrede).",
+      "Wichtig: Keinen Text als 'besser' werten, sondern als situationsangemessen/nicht-angemessen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "text_analysis",
+  "subject": "Deutsch",
+  "klasse": 4,
+  "kompetenzbereich": "Schreiben",
+  "competences": [
+    "DEU.US.4.SCH.04"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "SCH",
+    "SPR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0014",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

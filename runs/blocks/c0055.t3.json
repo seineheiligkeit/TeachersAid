@@ -1,0 +1,70 @@
+{
+  "id": "c0055.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Höre dir den kurzen Schulalltags-Dialog an. Lehrkraft liest vor:\n\n— Madame, est-ce qu'on peut travailler en groupes ?\n— Oui, bien sûr ! Formez des groupes de trois.\n— On a combien de minutes ?\n— Vous avez vingt minutes.\n\nRichtig (vrai) oder falsch (faux)? Kreuze an und schreibe eine kurze Begründung auf Deutsch.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Les élèves travaillent seuls.",
+        "Il y a trois élèves dans chaque groupe.",
+        "Les élèves ont trente minutes."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "vrai / faux",
+        "Begründung"
+      ],
+      "rows": 3
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "HOR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS2.US.3.HOR.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "1. faux (sie arbeiten in Gruppen, nicht allein) | 2. vrai (groupes de trois) | 3. faux (vingt = 20, nicht 30 Minuten)",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "vingt (20) und trente (30) klingen für Anfänger ähnlich — hier liegt ein typischer Hörfehler vor. Zahlen 1–30 als Vorkenntnisse voraussetzen oder kurz wiederholen.",
+      "bien sûr ist eine feste Wendung — nicht als zwei Einzelwörter übersetzen lassen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Zweite lebende Fremdsprache",
+  "klasse": 3,
+  "kompetenzbereich": "Hören",
+  "competences": [
+    "FS2.US.3.HOR.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "HOR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0055",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

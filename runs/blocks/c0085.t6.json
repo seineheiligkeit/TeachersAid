@@ -1,0 +1,81 @@
+{
+  "id": "c0085.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Du sollst eine irreführende Statistik ‚entlarven'. Such dir einen der folgenden Sätze aus und erkläre, warum er täuscht — und wie man ihn fair formulieren würde: (A) ‚Unser Produkt hat 300 % mehr Wirkung!' (B) ‚Die Hälfte aller Ärzte empfiehlt unser Medikament nicht.' (C) ‚Im letzten Jahr haben Einbrüche um 50 % zugenommen.' (nur 2 Einbrüche → 3). Schreibe einen kurzen kritischen Kommentar (ca. 4–6 Sätze).",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "BEG",
+      "DAR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.3.DAT.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Je nach gewähltem Beispiel: (A) ‚300% mehr' klingt riesig, aber wenn der Ausgangswert winzig war (z. B. 1%), ist ‚4%' die reale Größe. (B) Umformulierung: die andere Hälfte empfiehlt es — und niemand sagte, warum die andere Hälfte es nicht empfiehlt. (C) absolute Zahlen vs. Prozentzahlen: 2→3 klingt dramatisch in %, ist aber faktisch ein Einbruch mehr.",
+    "acceptable_reasoning": "Kritisch denken: Ausgangsgröße, Stichprobengröße, absolute vs. relative Veränderung.",
+    "rubric": [
+      {
+        "criterion": "Täuschungsmasche klar benannt",
+        "levels": [
+          "Nicht erkannt",
+          "Allgemein angedeutet",
+          "Konkret und präzise benannt"
+        ]
+      },
+      {
+        "criterion": "Faire Reformulierung",
+        "levels": [
+          "Fehlt",
+          "Versucht, ungenau",
+          "Klar und korrekt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Keine ‚richtige' oder ‚falsche' Antwort — Argumentationsqualität ist das Kriterium.",
+      "Sprachliche Genauigkeit einfordern: ‚mehr als' vs. ‚so viel wie', absolute vs. relative Angabe."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Mathematik",
+  "klasse": 3,
+  "kompetenzbereich": "4: Daten und Zufall",
+  "competences": [
+    "MAT.US.3.DAT.01"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "BEG",
+    "DAR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0085",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:19+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

@@ -1,0 +1,65 @@
+{
+  "id": "c0045.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "enactive",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Halte drei verschiedene Gegenstände aus deinem Schulranzen in den Händen (zum Beispiel ein Heft, einen Bleistift und ein Geodreieck). Beschreibe für jeden Gegenstand: Aus welchem Material besteht er hauptsächlich? Nenne je drei Eigenschaften, die du durch Anfassen, Ansehen oder Hören (Klopfen, Biegen) feststellst.",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Gegenstand",
+        "Material",
+        "Eigenschaft 1",
+        "Eigenschaft 2",
+        "Eigenschaft 3"
+      ],
+      "rows": 3
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "ENT"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "TED.US.1.ENT.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Erwartete Eigenschaften je nach Material: Papier/Karton (Heft): biegsam, glatt, leicht, reißt; Holz (Bleistift): fest, leicht, rund, glatt lackiert, bricht bei starkem Druck; Kunststoff (Geodreieck): transparent/durchsichtig, glatt, leicht, biegbar (leicht), klar. Wichtig: Eigenschaften sollen sinnesbezogen formuliert sein, nicht nur Alltagsbegriffe wie 'schön'.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Schüler:innen verwechseln Material und Farbe (z. B. 'blau' als Eigenschaft des Materials). Korrigieren: Farbe ist eine optische Eigenschaft, aber nicht spezifisch für das Material.",
+      "Viele nennen nur 'hart/weich' — auf weitere Dimensionen hinweisen: Gewicht, Transparenz, Oberfläche, Klang beim Klopfen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Technik und Design",
+  "klasse": 1,
+  "kompetenzbereich": "Entwicklung",
+  "competences": [
+    "TED.US.1.ENT.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "ENT"
+  ],
+  "modality": "enactive",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0045",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

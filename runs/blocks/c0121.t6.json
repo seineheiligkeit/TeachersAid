@@ -1,0 +1,85 @@
+{
+  "id": "c0121.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Entscheide, ob die folgenden Aussagen richtig oder falsch sind. Begruende mit konkreten Zahlen.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Oesterreich liegt mit seinem BIP pro Kopf (58 269 USD) ueber dem Mittelwert der acht Laender.",
+        "Die Spannweite des BIP pro Kopf betraegt mehr als 100 000 USD.",
+        "Der Median ist bei diesem Datensatz immer ein tatsaechlich vorkommender BIP-Wert eines der acht Laender."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "BEG"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.3.DAT.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1. RICHTIG: Oesterreich 58 269 > Mittelwert 45 046,5. 2. RICHTIG: Spannweite = 103 998 - 1 084 = 102 914 USD > 100 000 USD. 3. FALSCH: Bei n = 8 (gerade Anzahl) ist der Median das arithmetische Mittel der 4. und 5. Werte: (40 385 + 56 104) / 2 = 48 244,5 USD. Dieser Wert kommt in keinem der acht Laender tatsaechlich vor. Bei ungerader Anzahl von Werten ist der Median immer ein tatsaechlicher Datenwert, bei gerader Anzahl muss das nicht so sein.",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Alle drei Aussagen korrekt beurteilt",
+        "levels": [
+          "0-1 korrekt",
+          "2 korrekt",
+          "Alle 3 korrekt"
+        ]
+      },
+      {
+        "criterion": "Erklaerung Aussage 3 (Median nicht immer Datenwert)",
+        "levels": [
+          "Nicht erklaert",
+          "Erklaert mit Verweis auf gerade/ungerade n"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Aussage 3 ist das tiefste konzeptionelle Lernziel: der Median ist nicht zwingend ein Datenwert — dieser Irrtum ist sehr verbreitet.",
+      "Aussage 2: sorgfaeltig rechnen; Max = Schweiz (103 998), Min = Nigeria (1 084)."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Mathematik",
+  "klasse": 3,
+  "kompetenzbereich": "4: Daten und Zufall",
+  "competences": [
+    "MAT.US.3.DAT.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "BEG"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0121",
+  "source": "ai",
+  "created_at": "2026-06-27T15:21:15+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

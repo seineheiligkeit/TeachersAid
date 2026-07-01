@@ -1,0 +1,63 @@
+{
+  "id": "c0047.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Analysiere zwei unterschiedliche Gebäude: ein Einfamilienhaus und eine Turnhalle. Vergleiche sie nach den folgenden Kriterien: Funktion, typische Raumgröße, Beleuchtung (natürlich/künstlich), Eingangssituation, Materialien (Außenwand). Trage deine Ergebnisse in die Tabelle ein.",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Kriterium",
+        "Einfamilienhaus",
+        "Turnhalle"
+      ],
+      "rows": 5
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "ENT"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "TED.US.3.ENT.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Einfamilienhaus: Wohnen/Schlafen/Kochen; Zimmer 12–20 m²; natürliches Licht über Fenster; privater Eingang mit Vorgarten; Ziegel/WDVS (Wärmedämmverbundsystem) oder Holzständer. Turnhalle: Sport/Bewegung; große Halle 15×28 m oder mehr; Hochfenster/Kunstlicht; öffentlicher Eingang mit Windfang; Beton/Stahl/Glas oder Holzlamellen. Bewertung: sinnvolle Vergleiche, keine Volltreffer erforderlich.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Schüler:innen denken bei Turnhalle nur an Sporthalle im Schulgebäude — freistehende Turnhalle als Beispiel mitgeben.",
+      "Beleuchtung: Hochfenster in Turnhallen (warum hoch? → Ball trifft keine Fensterscheibe) ist ein guter Designmoment."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Technik und Design",
+  "klasse": 3,
+  "kompetenzbereich": "Entwicklung",
+  "competences": [
+    "TED.US.3.ENT.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "ENT"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0047",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

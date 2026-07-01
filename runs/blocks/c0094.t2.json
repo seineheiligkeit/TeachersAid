@@ -1,0 +1,168 @@
+{
+  "id": "c0094.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Sieh dir die Bevölkerungspyramide Österreichs (Stand 1.1.2024) an. Welche Altersgruppen sind am stärksten besetzt? Was könnte es für die Sozialversicherung (Pensionen, Gesundheit) in den nächsten 10–20 Jahren bedeuten, wenn die heute besonders starken Jahrgänge (die 55- bis 64-Jährigen) in Pension gehen?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.OST.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Am stärksten besetzt sind die Altersgruppen der 55- bis 64-Jährigen (die geburtenstarken Jahrgänge), gefolgt von den 30- bis 44-Jährigen. Die jüngeren Gruppen sind schmäler – die Pyramide steht also nicht mehr „auf breiter Basis“, sondern ist in der Mitte am breitesten. Wenn die starken Jahrgänge der 55–64-Jährigen in Pension gehen, steigt der Anteil der Pensionsbezieher:innen stark, während weniger junge Erwerbstätige nachrücken. Das belastet das Umlagesystem (weniger Beitragszahler:innen pro Pension). Mögliche Maßnahmen: längeres Erwerbsleben, Zuwanderung von Erwerbstätigen, höhere Beiträge.",
+    "acceptable_reasoning": "Schüler:innen brauchen nicht alle Maßnahmen zu nennen; sie sollen die Verbindung Altersstruktur → Finanzierungsproblem herstellen und die starken mittleren Jahrgänge erkennen.",
+    "rubric": [
+      {
+        "criterion": "Ablesen der stärksten Jahrgänge",
+        "levels": [
+          "Jahrgänge nicht identifiziert",
+          "stärkste Gruppe korrekt benannt",
+          "stärkste Jahrgänge benannt und Form der Pyramide beschrieben"
+        ]
+      },
+      {
+        "criterion": "Schlussfolgerung Sozialversicherung",
+        "levels": [
+          "Kein Zusammenhang hergestellt",
+          "Zusammenhang angedeutet",
+          "Zusammenhang klar erläutert mit Begründung"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Die Pyramide zeigt absolute Personenzahlen je Altersgruppe und Geschlecht. Die leichte Asymmetrie im hohen Alter (mehr Frauen) ist die höhere Lebenserwartung der Frauen – ein guter Gesprächsanlass.",
+      "Es ist eine Momentaufnahme (1.1.2024). Für die Frage „in 20 Jahren“ müssen die Schüler:innen die starken Jahrgänge gedanklich nach oben wandern lassen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Österreichische Gesellschaftsentwicklung",
+  "competences": [
+    "GWB.US.3.OST.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:population_pyramid",
+      "spec": {
+        "age_groups": [
+          "0–4",
+          "5–9",
+          "10–14",
+          "15–19",
+          "20–24",
+          "25–29",
+          "30–34",
+          "35–39",
+          "40–44",
+          "45–49",
+          "50–54",
+          "55–59",
+          "60–64",
+          "65–69",
+          "70–74",
+          "75–79",
+          "80–84",
+          "85+"
+        ],
+        "male": [
+          217721,
+          233589,
+          225693,
+          232917,
+          259070,
+          303392,
+          327167,
+          319456,
+          311542,
+          289329,
+          320354,
+          355386,
+          322097,
+          247355,
+          189728,
+          149524,
+          131327,
+          79185
+        ],
+        "female": [
+          206203,
+          220286,
+          212329,
+          217468,
+          241672,
+          283992,
+          311084,
+          310390,
+          309056,
+          293047,
+          329411,
+          357617,
+          331334,
+          272182,
+          223124,
+          190665,
+          185238,
+          148820
+        ],
+        "title": "Bevölkerungspyramide Österreich (1.1.2024)",
+        "xlabel": "Personen"
+      },
+      "correctness_surface": "Werte je Altersgruppe und Geschlecht aus dem zitierten Datensatz (keine erfundenen Zahlen)",
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "statistik_austria_bevstand_2024",
+        "series": "pyramide_5j",
+        "note": "Bevölkerung nach 5-Jahres-Altersgruppen und Geschlecht, Österreich gesamt",
+        "title": "Bevölkerung Österreichs nach Alter und Geschlecht (1.1.2024)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2024",
+        "attribution": "Datenquelle: Statistik Austria – data.statistik.gv.at (CC BY 4.0)",
+        "stand": "2024-01-01"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0094",
+  "source": "ai",
+  "created_at": "2026-06-26T19:02:27+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

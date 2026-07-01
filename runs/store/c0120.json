@@ -1,0 +1,652 @@
+{
+  "id": "c0120",
+  "stage": "content",
+  "status": "approved",
+  "source": "generated",
+  "created_at": "2026-06-27T15:21:14+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00",
+  "title": "Mathematik 3. Kl. — Luegt die Statistik? Diagramme kritisch lesen (generiert)",
+  "note": "",
+  "request": {
+    "subject": "Mathematik",
+    "klasse": 3,
+    "stufe": "Unterstufe",
+    "schulform": null,
+    "topic_raw": "Luegt die Statistik? Diagramme kritisch lesen",
+    "envelope": "doppelstunde",
+    "options": {}
+  },
+  "resolution": {
+    "fassung": {
+      "kurztitel": "AHS-Lehrplan (konsolidiert)",
+      "bgbl": "BGBl. II Nr. 204/2024",
+      "doknr": "NOR40264237",
+      "valid_from": "2024-09-01",
+      "valid_to": "2026-08-31"
+    },
+    "subject": "Mathematik",
+    "klasse": 3,
+    "matched_kompetenzbereiche": [
+      "4: Daten und Zufall"
+    ],
+    "grade_check": true,
+    "competences": [
+      {
+        "id": "MAT.US.3.DAT.01",
+        "kompetenzbereich": "4: Daten und Zufall",
+        "klasse": 3,
+        "text": "statistische Darstellungen erstellen und nutzen ; Manipulationen in statistischen Darstellungen erkennen",
+        "source_ref": "MATHEMATIK / 3. Klasse / 4: Daten und Zufall",
+        "dimensions": [],
+        "uebergreifende_themen": [
+          4,
+          12,
+          6,
+          7
+        ],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      },
+      {
+        "id": "MAT.US.3.DAT.02",
+        "kompetenzbereich": "4: Daten und Zufall",
+        "klasse": 3,
+        "text": "aufbauend auf einem intuitiven Wahrscheinlichkeitsbegriff Wahrscheinlichkeiten in einfachen Zufallsexperimenten ermitteln, vergleichen und interpretieren.",
+        "source_ref": "MATHEMATIK / 3. Klasse / 4: Daten und Zufall",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      }
+    ],
+    "notes": []
+  },
+  "plan": null,
+  "content": {
+    "meta": {
+      "title": "Luegt die Statistik? Diagramme kritisch lesen",
+      "subtitle": "LLM-Entwurf — Erstprüfung",
+      "subject": "Mathematik",
+      "stufe": "Unterstufe",
+      "klasse": 3,
+      "kernfrage": "Wie kann ein Diagramm mit echten Zahlen trotzdem einen falschen Eindruck erwecken — und wie erkennst du das?",
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "lehrplan_label": "Mathematik · 3. Klasse · 4: Daten und Zufall",
+      "content_language": "de",
+      "subject_models": []
+    },
+    "subject_model": {
+      "subject": "Mathematik",
+      "stufe": "Unterstufe",
+      "dimensions": [
+        {
+          "id": "MOD",
+          "label": "Modellieren und Problemlösen",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "OPE",
+          "label": "Operieren (Rechnen und Konstruieren)",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "DAR",
+          "label": "Darstellen und Interpretieren",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "BEG",
+          "label": "Vermuten und Begründen",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "content_areas": [
+        {
+          "id": "ZAH",
+          "label": "Zahlen und Maße",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "VAR",
+          "label": "Variablen und Funktionen",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "FIG",
+          "label": "Figuren und Körper",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "DAT",
+          "label": "Daten und Zufall",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "task_kind_extensions": [
+        "calculation",
+        "construction",
+        "modelling_task"
+      ]
+    },
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Statistische Darstellungen lesen und hinterfragen",
+        "teacher_overview": {
+          "throughline": "Schuelerinnen und Schueler entwickeln einen kritischen Blick auf Diagramme: Sie lernen, den tatsaechlichen Informationsgehalt von dem zu trennen, was eine Darstellung suggeriert. Am Beispiel echte Urbanisierungsdaten werden typische Manipulationstechniken und Kontextfehler herausgearbeitet.",
+          "talking_points": [
+            "Echte Zahlen koennen unehrliche Eindrucke erwecken, wenn Achsen manipuliert, Kontexte fehlen oder der Diagrammtyp falsch gewaehlt wird.",
+            "Urbanisierung ist ein globales Phaenomen mit riesigen Unterschieden: Indien (35,4%) vs. Schweiz (85,5%). Diese Spannweite ist Ausgangspunkt fuer Diskussionen.",
+            "Der Mittelwert beschreibt hier keine 'typische' Nation — er ist stark von der Auswahl der verglichenen Laender abhaengig.",
+            "Medienkompetenz: Wo begegnen Schuelerinnen und Schueler manipulierten Diagrammen? (Werbung, soziale Medien, politische Plakate)"
+          ],
+          "extensions": [
+            "Recherche: Wie hat sich die Urbanisierung in Oesterreich seit 1960 veraendert? (World Bank Daten)",
+            "Eigenes 'manipuliertes' und 'ehrliches' Diagramm zu denselben Daten erstellen und gegenseitig praesentieren.",
+            "Diskussion: Was bedeutet 'Stadtbevoelkerung'? Ist die Definition in allen Laendern gleich?"
+          ],
+          "differentiation": null,
+          "timing_notes": null
+        },
+        "blocks": [
+          {
+            "id": "i1",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "abb1"
+            ],
+            "provenance": null,
+            "role": "info",
+            "kind": "prose",
+            "content": "Das Diagramm zeigt, welcher Anteil der Bevoelkerung in acht Laendern in Staedten lebt (Stand 2024, World Bank). Lies das Diagramm sorgfaeltig und bearbeite die folgenden Aufgaben.",
+            "callout_role": null,
+            "teacher_note": null,
+            "watch_outs": []
+          },
+          {
+            "id": "t1",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "abb1"
+            ],
+            "provenance": null,
+            "role": "task",
+            "kind": "table_fill",
+            "prompt": "Lies die Werte aus dem Diagramm ab und trage sie ein. Runde auf eine Dezimalstelle.",
+            "payload": {
+              "kind": "table_fill",
+              "columns": [
+                "Land",
+                "Anteil Stadtbevoelkerung (%)"
+              ],
+              "rows": [
+                [
+                  "Indien",
+                  ""
+                ],
+                [
+                  "Nigeria",
+                  ""
+                ],
+                [
+                  "Oesterreich",
+                  ""
+                ],
+                [
+                  "Schweiz",
+                  ""
+                ]
+              ]
+            },
+            "response": {
+              "mode": "none"
+            },
+            "cognitive_level": "remember",
+            "difficulty": null,
+            "dimensions": [
+              "DAR"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.3.DAT.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 4,
+            "answer_key": "Indien: 35,4%; Nigeria: 63,0%; Oesterreich: 69,5%; Schweiz: 85,5%.",
+            "acceptable_reasoning": null,
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Dezimalstellen korrekt ablesen: die Werte sind eng beieinander (z. B. Oesterreich 69,5% und Italien 69,6%) — bewusstes Ablesen erforderlich.",
+              "Auf Einheit (%) hinweisen."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t2",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "calculation",
+            "prompt": "Berechne Mittelwert, Median und Spannweite des Urbanisierungsanteils fuer die acht abgebildeten Laender. Nutze die exakten Werte: Oesterreich 69,5% | Deutschland 82,0% | Schweiz 85,5% | Italien 69,6% | USA 80,1% | China 65,9% | Indien 35,4% | Nigeria 63,0%.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "apply",
+            "difficulty": null,
+            "dimensions": [
+              "OPE"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.3.DAT.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Summe: 69,5 + 82,0 + 85,5 + 69,6 + 80,1 + 65,9 + 35,4 + 63,0 = 551,0. Mittelwert: 551,0 / 8 = 68,875% ~ 68,9%. Fuer den Median: geordnete Reihe: 35,4 | 63,0 | 65,9 | 69,5 | 69,6 | 80,1 | 82,0 | 85,5. Bei n=8 (gerade): Median = (69,5 + 69,6) / 2 = 69,55%. Spannweite: 85,5 - 35,4 = 50,1 Prozentpunkte.",
+            "acceptable_reasoning": "Geringe Rundungsfehler (z. B. Mittelwert 68,8% statt 68,9%) sind akzeptabel.",
+            "rubric": [
+              {
+                "criterion": "Mittelwert korrekt",
+                "levels": [
+                  "Falsch",
+                  "Richtig (68,9% +/- 0,2%)"
+                ]
+              },
+              {
+                "criterion": "Median korrekt (69,55%)",
+                "levels": [
+                  "Falsch",
+                  "Richtig"
+                ]
+              },
+              {
+                "criterion": "Spannweite korrekt (50,1 Prozentpunkte)",
+                "levels": [
+                  "Falsch",
+                  "Richtig"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Bei n=8 (gerade) ist der Median das arithmetische Mittel der beiden mittleren Werte — nicht der vierte oder fuenfte Wert allein.",
+              "Unterschied zwischen 'Prozent' und 'Prozentpunkten' bei der Spannweite ansprechen."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t3",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "open_response",
+            "prompt": "Stell dir vor, du siehst ein Diagramm mit denselben Urbanisierungsdaten, aber die senkrechte Achse beginnt nicht bei 0%, sondern bei 30%. Beschreibe, welchen anderen Eindruck das Diagramm dadurch macht — und ob die Zahlen deshalb 'falsch' sind.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "analyze",
+            "difficulty": null,
+            "dimensions": [
+              "BEG",
+              "DAR"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.3.DAT.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 7,
+            "answer_key": "Eindruck: Die Unterschiede zwischen den Laendern wirken viel groesser. Der Balken fuer Indien (35,4%) erscheint sehr klein, der fuer die Schweiz (85,5%) sehr gross — der optische Abstand wird uebertrieben. Die Zahlen selbst sind korrekt — aber die Darstellung suggeriert, Indien sei kaum urbanisiert, waehrend das tatsaechliche Verhaeltnis 35,4 : 85,5 = ca. 2 : 5 ist. Eine abgeschnittene Achse verfaelscht den visuellen Eindruck, nicht die Zahl.",
+            "acceptable_reasoning": "Jede Antwort, die den Unterschied zwischen 'Zahlen korrekt' und 'Eindruck verfaelscht' klar benennt, ist vollwertig.",
+            "rubric": [
+              {
+                "criterion": "Visuelle Verzerrung beschrieben",
+                "levels": [
+                  "Nicht beschrieben",
+                  "Allgemein erwaehnt",
+                  "Konkret mit Beispielwert illustriert"
+                ]
+              },
+              {
+                "criterion": "Unterschied Zahlen vs. Eindruck klar",
+                "levels": [
+                  "Nicht thematisiert",
+                  "Angedeutet",
+                  "Explizit formuliert"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Typischer Fehler: Schuelerinnen und Schueler denken, abgeschnittene Achse bedeute 'falsche Zahlen' — klare Trennung ist Lernziel.",
+              "Diskussion: Wann ist eine abgeschnittene Achse legitim (z. B. beim Vergleich von Borsenkursen) und wann irrefuehrend?"
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t4",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "abb1"
+            ],
+            "provenance": null,
+            "role": "task",
+            "kind": "open_response",
+            "prompt": "In einer Zeitung steht: 'In Europa lebt fast jede zweite Person in einer Stadt.' Pruefe diese Aussage anhand der Daten fuer europaeische Laender im Diagramm (Oesterreich, Deutschland, Schweiz, Italien). Ist die Aussage korrekt, irrefuehrend oder falsch? Begruende.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "evaluate",
+            "difficulty": null,
+            "dimensions": [
+              "BEG",
+              "DAR"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.3.DAT.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Die europaeischen Laender im Diagramm: Oesterreich 69,5%, Deutschland 82,0%, Schweiz 85,5%, Italien 69,6%. Alle vier Werte liegen weit ueber 50%. Die Aussage 'fast jede zweite Person' (also etwa 50%) ist stark untertrieben fuer diese Laender — es leben eher 70–85% in Staedten. Die Aussage ist irrefuehrend: Sie klingt nach einer Mehrheit knapp ueber 50%, trifft aber auf diese Laender nicht zu. Moegliche Erklaerung: Die Aussage bezieht sich moeglicherweise auf einen anderen Europabegriff (inkl. Osteuropa, wo Urbanisierung niedriger ist) oder ist schlicht falsch formuliert.",
+            "acceptable_reasoning": "Jede Antwort, die die vier Werte korrekt einordnet und 'fast jede zweite' (=ca. 50%) mit den echten Werten (ca. 70-85%) vergleicht, ist vollwertig.",
+            "rubric": [
+              {
+                "criterion": "Konkrete Werte zitiert",
+                "levels": [
+                  "Keine Zahlen",
+                  "Min. 2 Werte zitiert",
+                  "Alle 4 europaeischen Werte einbezogen"
+                ]
+              },
+              {
+                "criterion": "Einschaetzung korrekt (irrefuehrend/falsch)",
+                "levels": [
+                  "Aussage unkritisch akzeptiert",
+                  "Richtig eingeschaetzt mit Begruendung"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Schuelerinnen und Schueler tendieren dazu, Zeitungsaussagen zu akzeptieren ohne Pruefung — dieser Schritt der Faktenuntersuchung ist explizit zu foerdern.",
+              "Hinweis: Das Diagramm enthaelt nur 4 europaeische Laender; die Aussage bezieht sich moeglicherweise auf ganz Europa."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t5",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "open_response",
+            "prompt": "Das Diagramm zeigt acht sehr unterschiedliche Laender (z. B. Nigeria und die USA). Warum ist es problematisch, den Mittelwert dieser acht Laender als 'typischen Urbanisierungsgrad' zu bezeichnen? Welche Kennzahl waere hier fairer?",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "evaluate",
+            "difficulty": null,
+            "dimensions": [
+              "BEG"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.3.DAT.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 7,
+            "answer_key": "Problem: Die Auswahl der acht Laender ist nicht repraesentativ — sie enthaelt reiche Industrienationen (USA, Schweiz) und grosse Entwicklungslaender (Indien, Nigeria). Der Mittelwert haengt stark davon ab, WELCHE Laender einbezogen werden. Ausserdem ist Indien mit 35,4% ein starker Ausreisser nach unten. Eine fairere Kennzahl: der Median (69,55%), weil er weniger empfindlich auf extreme Werte reagiert. Noch besser: bevoelkerungsgewichteter Mittelwert, der die Laendergroesse beruecksichtigt.",
+            "acceptable_reasoning": "Antwort, die 'Auswahl der Laender beeinflusst den Mittelwert' und 'Median robuster' benennt, ist vollwertig.",
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Schuelerinnen und Schueler koennen den Begriff 'repraesentativ' kennenlernen — er ist hier intuitiv zugaenglich.",
+              "Bevoelkerungsgewichteter Mittelwert ist eine Erweiterung, nicht Pflichtanforderung."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t6",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "abb1"
+            ],
+            "provenance": null,
+            "role": "task",
+            "kind": "true_false_justify",
+            "prompt": "Beurteile die folgenden Aussagen ueber das Urbanisierungs-Diagramm. Entscheide: richtig, falsch oder irrefuehrend — und erklaere kurz warum.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Die Schweiz ist das am staerksten urbanisierte Land der Welt.",
+                "In allen acht Laendern lebt mehr als ein Drittel der Bevoelkerung in Staedten.",
+                "Der Unterschied zwischen dem hoechsten und niedrigsten Wert betraegt mehr als 50 Prozentpunkte."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "evaluate",
+            "difficulty": null,
+            "dimensions": [
+              "BEG",
+              "DAR"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.3.DAT.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "1. IRREFUEHREND/FALSCH: Die Schweiz ist das hoechste Land im Diagramm (85,5%), aber das Diagramm umfasst nur 8 Laender. Weltweit gibt es laender mit noch hoeherem Urbanisierungsgrad (z.B. Singapur 100%, Katar ~99%). Korrekte Aussage: 'hoechster Wert unter den verglichenen Laendern'. 2. RICHTIG: Niedrigster Wert: Indien 35,4% > 33,3%. Alle Laender ueber einem Drittel. 3. RICHTIG: Spannweite = 85,5 - 35,4 = 50,1 Prozentpunkte > 50.",
+            "acceptable_reasoning": null,
+            "rubric": [
+              {
+                "criterion": "Alle drei korrekt beurteilt",
+                "levels": [
+                  "0-1 korrekt",
+                  "2 korrekt",
+                  "Alle 3 korrekt"
+                ]
+              },
+              {
+                "criterion": "Einschraenkung bei Aussage 1 (nur 8 Laender)",
+                "levels": [
+                  "Nicht erkannt",
+                  "Erkannt und begruendet"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Aussage 1 ist das Kernbeispiel fuer das Verwechseln von 'im Diagramm' mit 'weltweit' — besonders wichtig fuer Medienkompetenz.",
+              "Aussage 3: sorgfaeltig rechnen; 50,1 > 50 ist knapp, also richtig."
+            ],
+            "self_check": null
+          }
+        ]
+      }
+    ],
+    "assets": [
+      {
+        "id": "abb1",
+        "role": "figure",
+        "medium": "visual",
+        "generator": "matplotlib:bar_chart",
+        "spec": {
+          "title": "Anteil der Stadtbevoelkerung im Laendervergleich (2024)",
+          "xlabel": "Land",
+          "ylabel": "Anteil Stadtbevoelkerung (%)",
+          "log": false,
+          "categories": [
+            "Österreich",
+            "Deutschland",
+            "Schweiz",
+            "Italien",
+            "USA",
+            "China",
+            "Indien",
+            "Nigeria"
+          ],
+          "values": [
+            69.5,
+            82.0,
+            85.5,
+            69.6,
+            80.1,
+            65.9,
+            35.4,
+            63.0
+          ]
+        },
+        "correctness_surface": null,
+        "misleading_in_isolation": false,
+        "intentionally_flawed": null,
+        "machine_generatable": true,
+        "provenance": null,
+        "data_source": {
+          "dataset_id": "worldbank_urbanisierung",
+          "series": "vergleich",
+          "note": null,
+          "title": "Verstädterung im Ländervergleich (Anteil Stadtbevölkerung)",
+          "url": "https://data.worldbank.org/indicator/SP.URB.TOTL.IN.ZS",
+          "attribution": "Datenquelle: World Bank – data.worldbank.org (SP.URB.TOTL.IN.ZS, CC BY 4.0)",
+          "stand": "2024"
+        },
+        "illustrative": false,
+        "caption": null
+      }
+    ],
+    "nachweis": {
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "statement": "Diese Materialien adressieren 1 von 2 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
+      "competence_coverage": [
+        {
+          "competence_id": "MAT.US.3.DAT.01",
+          "exercised_by": [
+            "t1",
+            "t2",
+            "t3",
+            "t4",
+            "t5",
+            "t6"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "MAT.US.3.DAT.02",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        }
+      ],
+      "gaps": [
+        "MAT.US.3.DAT.02 — aufbauend auf einem intuitiven Wahrscheinlichkeitsbegriff Wahrscheinlichkeiten in einfachen Zufallsexperimenten ermitteln, vergleichen und interpretieren."
+      ],
+      "zentrale_konzepte": [
+        "4: Daten und Zufall"
+      ],
+      "uebergreifende_themen": [
+        4,
+        6,
+        7,
+        12
+      ]
+    },
+    "depth_profile": {
+      "by_level": {
+        "remember": 1,
+        "apply": 1,
+        "analyze": 1,
+        "evaluate": 3
+      },
+      "by_dimension": {
+        "DAR": 1,
+        "OPE": 1,
+        "BEG": 4
+      },
+      "by_difficulty": {
+        "1": 1,
+        "2": 2,
+        "3": 3
+      },
+      "minutes_total": 42,
+      "minutes_resource_independent": 42
+    },
+    "rack": null
+  },
+  "artifacts": {
+    "student_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0120\\student.pdf",
+    "teacher_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0120\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0120\\homework.pdf",
+    "preview_png": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0120\\raster\\student.p1.png"
+  },
+  "verify_problems": [],
+  "verify_warnings": [],
+  "parent_id": null,
+  "feedback": [],
+  "error": null
+}

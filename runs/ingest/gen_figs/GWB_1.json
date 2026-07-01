@@ -1,0 +1,460 @@
+{
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Entwicklungen am Wirtschaftsstandort Österreich",
+  "title": "Preise und Märkte in Österreich",
+  "kernfrage": "Wie entstehen Preise auf Märkten – und warum kostet dasselbe Produkt manchmal ganz unterschiedlich viel?",
+  "body": {
+    "intro": [],
+    "assets": [
+      {
+        "id": "abb1",
+        "role": "figure",
+        "generator": "matplotlib:bar_chart",
+        "spec": {
+          "categories": [
+            "Ja! Natürlich Bio-Vollmilch 1l",
+            "Ja! Vollmilch 1l",
+            "Nöm Alpenmilch 1l",
+            "Billa Eigenmarke 1l",
+            "Bio-Vollmilch (Marktstand)"
+          ],
+          "values": [
+            1.49,
+            0.99,
+            1.29,
+            0.89,
+            1.85
+          ],
+          "title": "Milchpreise im Vergleich (Wien, 2025)",
+          "xlabel": "Produkt",
+          "ylabel": "Preis in Euro"
+        }
+      },
+      {
+        "id": "abb2",
+        "role": "figure",
+        "generator": "matplotlib:bar_chart",
+        "spec": {
+          "categories": [
+            "100",
+            "200",
+            "300",
+            "400",
+            "500"
+          ],
+          "values": [
+            4.5,
+            3.8,
+            3.2,
+            2.9,
+            2.6
+          ],
+          "title": "Stückpreis eines T-Shirts je nach produzierter Menge (Beispiel)",
+          "xlabel": "Produzierte Stückzahl",
+          "ylabel": "Produktionskosten pro Stück (Euro)"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Preisvergleich im Alltag",
+        "throughline": "Schüler:innen erkennen, dass gleiche Produkte unterschiedliche Preise haben können, und entwickeln erste Erklärungsansätze dafür.",
+        "talking_points": [
+          "Alltagsbeispiele aktivieren: Was hat die Klasse zuletzt gekauft – und wo? Gab es Preisvergleiche?",
+          "Begriffe Angebot und Nachfrage vorsichtig einführen – nicht zu abstrakt, sondern anhand des Supermarktregals.",
+          "Unterschied Eigenmarke vs. Markenprodukt als Gesprächseinstieg: Was rechtfertigt den Preisunterschied?"
+        ],
+        "extensions": [
+          "Schüler:innen recherchieren aktuelle Milchpreise in einem Online-Supermarkt und aktualisieren das Diagramm.",
+          "Diskussion: Fair-Trade-Produkte – warum sind sie teurer, und ist das gerechtfertigt?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "data_interpretation",
+            "prompt": "Schau dir das Diagramm (Abb. 1) mit den Milchpreisen an.\na) Welches Produkt ist am günstigsten, welches am teuersten?\nb) Wie groß ist der Preisunterschied zwischen dem günstigsten und dem teuersten Produkt?\nc) Was könnte deiner Meinung nach erklären, warum die Preise so unterschiedlich sind? Nenne mindestens zwei Gründe.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "remember",
+            "dimensions": [
+              "OK"
+            ],
+            "serves": [
+              {
+                "competence_id": "GWB.US.3.ENT.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 7,
+            "asset_refs": [
+              "abb1"
+            ],
+            "answer_key": "a) Günstigste: Billa Eigenmarke (0,89 €); Teuerste: Bio-Vollmilch Marktstand (1,85 €). b) Preisunterschied: 1,85 € – 0,89 € = 0,96 €. c) Mögliche Gründe: Bio-Zertifizierung erhöht Produktionskosten; Markenprodukte haben höhere Werbekosten; Eigenmarken haben weniger Verpackungsaufwand; Marktstand ohne Zwischenhändler aber mit persönlichem Service.",
+            "acceptable_reasoning": "Schüler:innen sollen nachvollziehbar begründen, nicht die richtige Liste reproduzieren – jede wirtschaftlich plausible Begründung ist akzeptabel.",
+            "watch_outs": [
+              "Viele Schüler:innen glauben, teurer = besser. Darauf hinweisen, dass Preis und Qualität nicht immer korrelieren.",
+              "Bio-Aufschlag erklären: höhere Produktionskosten, strengere Auflagen – nicht Profit des Bauern."
+            ],
+            "rubric": [
+              {
+                "criterion": "Preise korrekt abgelesen",
+                "levels": [
+                  "Beide Werte korrekt",
+                  "Ein Wert korrekt",
+                  "Kein Wert korrekt"
+                ]
+              },
+              {
+                "criterion": "Preisunterschied berechnet",
+                "levels": [
+                  "Korrekte Rechnung und Ergebnis",
+                  "Rechnung erkennbar, Ergebnis falsch",
+                  "Nicht berechnet"
+                ]
+              },
+              {
+                "criterion": "Begründungen wirtschaftlich plausibel",
+                "levels": [
+                  "2+ plausible Gründe",
+                  "1 plausibler Grund",
+                  "Keine plausible Begründung"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "multiple_choice",
+            "prompt": "Welche Aussagen über Preisbildung auf Märkten sind richtig? Wähle alle zutreffenden Antworten aus.",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "Wenn viele Leute ein Produkt wollen, aber wenig davon vorhanden ist, steigt der Preis.",
+                "Der Preis eines Produkts hat nichts mit den Herstellungskosten zu tun.",
+                "Wenn ein Anbieter die Preise erhöht und viele Konkurrenten dasselbe Produkt günstiger anbieten, verliert er Käufer:innen.",
+                "Auf einem Markt bestimmt immer nur der Verkäufer den Preis.",
+                "Hohe Nachfrage bei gleichbleibendem Angebot kann zu Preisanstieg führen."
+              ],
+              "select": "one"
+            },
+            "response": {
+              "mode": "choices",
+              "options": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E"
+              ],
+              "select": "many"
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "UK"
+            ],
+            "serves": [
+              {
+                "competence_id": "GWB.US.3.ENT.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 5,
+            "asset_refs": [],
+            "answer_key": "Richtig: A, C, E. Falsch: B (Produktionskosten beeinflussen den Preis wesentlich), D (auf einem Wettbewerbsmarkt bestimmen Angebot und Nachfrage gemeinsam den Preis).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Aussage D ist die häufigste Fehlvorstellung: Schüler:innen denken, Verkäufer:innen könnten Preise beliebig festlegen. Zeigen, dass zu hohe Preise zu Käufer:innenverlust führen.",
+              "Aussage B klingt für manche plausibel, weil man Herstellungskosten nicht sieht. Gegenbeispiel: Rohstoffpreisanstieg → Brotpreis steigt."
+            ],
+            "rubric": []
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Angebot, Nachfrage und Produktionskosten",
+        "throughline": "Das Zusammenspiel von Angebot, Nachfrage und Kosten als Preistreiber verstehen und auf Fallbeispiele aus Österreich anwenden.",
+        "talking_points": [
+          "Das Prinzip \"je mehr produziert, desto günstiger pro Stück\" (Skalierungseffekte) an Abb. 2 erläutern.",
+          "Reales Beispiel: Tomaten im Sommer (Überangebot → günstig) vs. Winter (Import → teurer).",
+          "Rolle des Staates ansprechen: Mehrwertsteuer als Preisbestandteil – was wäre, wenn sie wegfiele?"
+        ],
+        "extensions": [
+          "Recherche: Welche Lebensmittel haben in Österreich in den letzten zwei Jahren besonders stark im Preis zugelegt? Warum?",
+          "Kurzes Rollenspiel: Schüler:innen sind Bäuerinnen und müssen einen Milchpreis aushandeln."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "data_interpretation",
+            "prompt": "Betrachte Abb. 2, die zeigt, wie sich die Produktionskosten pro T-Shirt verändern, je mehr Stück hergestellt werden.\na) Beschreibe den Trend in eigenen Worten.\nb) Erkläre, warum große Modefirmen T-Shirts viel günstiger anbieten können als kleine Schneidereien.\nc) Welche Folgen hat das für kleine Betriebe in Österreich?",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 7
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "UK",
+              "OK"
+            ],
+            "serves": [
+              {
+                "competence_id": "GWB.US.3.ENT.07",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [
+              "abb2"
+            ],
+            "answer_key": "a) Je mehr Stück produziert werden, desto niedriger sind die Kosten pro Stück (sinkende Stückkosten / Skalierungseffekt). b) Große Firmen verteilen Fixkosten (Maschinen, Fabrik) auf viele Stücke → geringere Kosten pro Stück → können günstiger verkaufen. c) Kleine Betriebe können mit den Preisen großer Konzerne kaum mithalten, es sei denn sie spezialisieren sich (z.B. Maßanfertigung, nachhaltige Produktion, lokale Marke).",
+            "acceptable_reasoning": "Skalierungseffekte müssen nicht mit Fachbegriff benannt werden – wirtschaftlich sinnvolle Formulierungen genügen.",
+            "watch_outs": [
+              "Schüler:innen verwechseln manchmal Preis und Kosten. Klarstellen: Kosten = was die Firma zahlt; Preis = was Käufer:innen zahlen.",
+              "Den Schluss, kleine Firmen seien grundsätzlich schlechter, vermeiden – Spezialisierung als Strategie betonen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Trend korrekt beschrieben",
+                "levels": [
+                  "Klare Beschreibung mit Bezug auf Zahlen",
+                  "Tendenz erkannt, ohne Zahlen",
+                  "Trend nicht erkannt"
+                ]
+              },
+              {
+                "criterion": "Skalierungseffekt erklärt",
+                "levels": [
+                  "Logisch korrekte Erklärung",
+                  "Ansatz erkennbar",
+                  "Nicht erklärt"
+                ]
+              },
+              {
+                "criterion": "Folgen für kleine Betriebe",
+                "levels": [
+                  "Mindestens eine realistische Konsequenz + Strategie",
+                  "Eine Konsequenz ohne Strategie",
+                  "Keine relevante Antwort"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "case_study",
+            "prompt": "Stell dir vor: Ein Supermarkt in Wien erhöht plötzlich den Preis für Sonnenblumenöl von 1,80 € auf 3,50 €, weil der Einkaufspreis gestiegen ist. Gegenüber ist ein anderer Supermarkt, der noch zum alten Preis verkauft.\na) Was werden viele Kundinnen und Kunden wahrscheinlich tun?\nb) Was muss der teurere Supermarkt tun, um wettbewerbsfähig zu bleiben?\nc) Gibt es Situationen, in denen Kund:innen trotzdem beim teureren Anbieter kaufen würden? Begründe.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 7
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "UK",
+              "HK"
+            ],
+            "serves": [
+              {
+                "competence_id": "GWB.US.3.ENT.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "a) Die meisten Kund:innen werden zum günstigeren Anbieter wechseln (Preis als Kaufkriterium). b) Preis senken, Aktionen anbieten, oder andere Qualitätsmerkmale betonen (Service, Frische, Sortiment). c) Ja: wenn der teurere Supermarkt näher liegt, bessere Öffnungszeiten hat, Stammkund:innen-Rabatte gibt, oder wenn das Vertrauen in die Qualität höher ist.",
+            "acceptable_reasoning": "Es gibt keine einzig richtige Antwort – wirtschaftlich plausibles Denken zählt.",
+            "watch_outs": [
+              "Schüler:innen neigen zu absolutem Denken (immer das Günstigste). Realität: Loyalität, Bequemlichkeit, Qualitätswahrnehmung spielen Rollen.",
+              "Fallstrick: Preisanstieg = Gier des Supermarkts. Erklären, dass gestiegene Einkaufspreise weitergegeben werden müssen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "position_argument",
+            "prompt": "Behauptung: \"Wenn alle Unternehmen frei entscheiden dürfen, was sie verlangen, werden die Preise immer gerecht sein – der Staat muss gar nicht eingreifen.\"\nNimm klar Stellung: Stimmst du zu oder lehnst du ab? Begründe deine Position mit mindestens zwei Argumenten und nenne ein konkretes Beispiel aus Österreich, das deine Meinung stützt.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 50
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "UK",
+              "HK"
+            ],
+            "serves": [
+              {
+                "competence_id": "GWB.US.3.ENT.05",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Ablehnung ist gut begründbar: Marktversagen bei natürlichen Monopolen (z.B. Netz-Infrastruktur), sozialer Schutzbedarf (Mietpreisbremse, Mindestlohn), Umweltkosten werden ohne Regulierung nicht eingepreist. Zustimmung mit Einschränkungen möglich: Wettbewerb reguliert viele Märkte effektiv. Konkretes Beispiel: AK-Preismonitor (Konsumentenschutz), Mietpreisregulierung in Wien, staatliche Gaspreisbremse 2022/23.",
+            "acceptable_reasoning": "Beide Positionen akzeptabel, wenn gut begründet. Entscheidend: Argumentationsqualität, nicht die Meinung.",
+            "watch_outs": [
+              "Schüler:innen könnten eine Position unreflektiert übernehmen (zB aus dem Elternhaus). Argumentation einfordern, nicht Meinung.",
+              "Österreich-Bezug ist Pflicht: Beispiele ohne Bezug erhalten Teilpunkte."
+            ],
+            "rubric": [
+              {
+                "criterion": "Klare Positionierung",
+                "levels": [
+                  "Eindeutige Positionierung",
+                  "Unentschieden ohne Begründung",
+                  "Keine erkennbare Position"
+                ]
+              },
+              {
+                "criterion": "Argumente",
+                "levels": [
+                  "2+ wirtschaftlich stichhaltige Argumente",
+                  "1 stichhaltiges Argument",
+                  "Keine überzeugenden Argumente"
+                ]
+              },
+              {
+                "criterion": "Österreich-Bezug",
+                "levels": [
+                  "Konkretes, relevantes Beispiel",
+                  "Vages Österreich-Beispiel",
+                  "Kein Österreich-Bezug"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "Akteure in der Marktwirtschaft",
+        "throughline": "Die Rollen von Haushalten, Unternehmen und Staat im Wirtschaftskreislauf verstehen und mögliche Interessenskonflikte erkennen.",
+        "talking_points": [
+          "Den Wirtschaftskreislauf vereinfacht skizzieren: Haushalte (Arbeit + Konsum) ↔ Unternehmen (Güter + Löhne) ↔ Staat (Steuern + Leistungen).",
+          "Interessenskonflikte konkret machen: Arbeitnehmer:innen wollen hohe Löhne, Unternehmen wollen niedrige Lohnkosten – wie wird das verhandelt? (Kollektivvertrag, Gewerkschaft).",
+          "Sozialpartnerschaft als österreichisches Modell hervorheben – international nicht selbstverständlich."
+        ],
+        "extensions": [
+          "Recherche: Welche Sozialpartner gibt es in Österreich, und welche Interessen vertreten sie?",
+          "Diskussion: Was passiert, wenn Unternehmen keine Steuern zahlen? (Steueroasen, gesellschaftliche Folgen)"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "matching",
+            "prompt": "Ordne den Wirtschaftsakteuren (links) ihre typischen Aufgaben in der österreichischen Marktwirtschaft (rechts) zu. Jede Aufgabe passt zu genau einem Akteur.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Private Haushalte",
+                "Unternehmen",
+                "Staat",
+                "Österreichische Nationalbank (OeNB)",
+                "Sozialpartner (z.B. AK, WKO)"
+              ],
+              "right": [
+                "Stellen Arbeitskraft zur Verfügung und kaufen Güter",
+                "Produzieren Güter und Dienstleistungen, zahlen Löhne",
+                "Erhebt Steuern und stellt öffentliche Güter bereit (z.B. Schulen, Straßen)",
+                "Steuert die Geldmenge und überwacht die Preisstabilität im Euroraum",
+                "Verhandeln Kollektivverträge und vertreten Interessen von Arbeitnehmer:innen und Unternehmen"
+              ]
+            },
+            "response": {
+              "mode": "none"
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "OK"
+            ],
+            "serves": [
+              {
+                "competence_id": "GWB.US.3.ENT.05",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "asset_refs": [],
+            "answer_key": "Private Haushalte → Stellen Arbeitskraft zur Verfügung und kaufen Güter; Unternehmen → Produzieren Güter und Dienstleistungen, zahlen Löhne; Staat → Erhebt Steuern und stellt öffentliche Güter bereit; OeNB → Steuert die Geldmenge; Sozialpartner → Verhandeln Kollektivverträge.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "OeNB: Schüler:innen denken oft, Österreich drucke sein eigenes Geld. Klar stellen: OeNB ist Teil des Eurosystems (EZB).",
+              "Sozialpartner als Begriff oft unbekannt – kurze Erläuterung vor der Aufgabe oder Glossar-Eintrag sinnvoll."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "open_response",
+            "prompt": "Steuern sind für viele Menschen ein unangenehmes Thema – manche finden sie unfair oder zu hoch.\na) Welche Aufgaben übernehmen Steuern und Abgaben in Österreich? Nenne mindestens drei konkrete Beispiele, was mit Steuereinnahmen finanziert wird.\nb) Was würde passieren, wenn der Staat keine Steuern erheben dürfte? Überlege, welche gesellschaftlichen Folgen das hätte.\nc) Erkläre in eigenen Worten, warum Steuern trotz ihrer Unpopularität in einer Gesellschaft notwendig sein können.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55
+            },
+            "cognitive_level": "create",
+            "dimensions": [
+              "UK",
+              "HK"
+            ],
+            "serves": [
+              {
+                "competence_id": "GWB.US.3.ENT.06",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "a) Finanzierung von: Schulen, Krankenhäuser/Gesundheitssystem, Straßen/Öffi, Polizei/Bundesheer, Sozialleistungen (AMS, Pension), Kultureinrichtungen. b) Öffentliche Infrastruktur würde fehlen oder privatisiert (teuer/ungleich zugänglich); soziale Sicherheitsnetze entfallen; gesellschaftliche Ungleichheit würde stark steigen. c) Steuern ermöglichen kollektive Güter, die für alle zugänglich sind und die Einzelne nicht alleine finanzieren könnten (z.B. Schulen); sie ermöglichen Umverteilung und soziale Sicherheit.",
+            "acceptable_reasoning": "Kreative und eigenständige Formulierungen erwünscht – Schüler:innen sollen keine Definition auswendig lernen.",
+            "watch_outs": [
+              "Häufige Fehlvorstellung: \"Steuern = Verschwendung durch den Staat.\" Konkrete Leistungen sichtbar machen.",
+              "Schüler:innen könnten libertäre Argumente einbringen – diese sachlich aufnehmen und durch gesellschaftliche Realität relativieren."
+            ],
+            "rubric": [
+              {
+                "criterion": "Aufgaben von Steuern (3+ Beispiele)",
+                "levels": [
+                  "3+ konkrete und korrekte Beispiele",
+                  "1–2 Beispiele",
+                  "Keine konkreten Beispiele"
+                ]
+              },
+              {
+                "criterion": "Folgenanalyse ohne Steuern",
+                "levels": [
+                  "Mindestens 2 plausible gesellschaftliche Folgen",
+                  "1 plausible Folge",
+                  "Keine relevante Folge"
+                ]
+              },
+              {
+                "criterion": "Eigene Begründung für Notwendigkeit",
+                "levels": [
+                  "Eigenständige, überzeugende Argumentation",
+                  "Ansatz erkennbar",
+                  "Keine eigenständige Begründung"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

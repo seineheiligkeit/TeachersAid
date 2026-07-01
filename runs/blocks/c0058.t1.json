@@ -1,0 +1,75 @@
+{
+  "id": "c0058.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne die Fragen (1–5) den passenden Antworten (A–E) zu. Das sind typische Sätze aus einem Café-Gespräch.\n\nFragen:\n1. Qu'est-ce que vous désirez ?\n2. C'est combien ?\n3. Vous avez une table pour deux ?\n4. L'addition, s'il vous plaît !\n5. Est-ce que vous avez du jus d'orange ?\n\nAntworten:\nA. Oui, bien sûr, par ici !\nB. Oui, voilà l'addition.\nC. Je voudrais un café, s'il vous plaît.\nD. Ça fait trois euros cinquante.\nE. Oui, bien sûr. Voilà !",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Qu'est-ce que vous désirez ?",
+        "C'est combien ?",
+        "Vous avez une table pour deux ?",
+        "L'addition, s'il vous plaît !",
+        "Est-ce que vous avez du jus d'orange ?"
+      ],
+      "right": [
+        "Oui, bien sûr, par ici !",
+        "Oui, voilà l'addition.",
+        "Je voudrais un café, s'il vous plaît.",
+        "Ça fait trois euros cinquante.",
+        "Oui, bien sûr. Voilà !"
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "SPR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS2.US.4.SPR.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "1–C | 2–D | 3–A | 4–B | 5–E",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Je voudrais (ich hätte gern) ist Konditional — nicht als grammatische Form erklären, sondern als feste Höflichkeitsformel einprägen. NICHT: Je veux (das klingt unhöflich).",
+      "L'addition (die Rechnung) — ein Kognate zu 'Addition' (Rechnen), aber die Bedeutung ist 'Rechnung im Restaurant'. Nicht verwechseln lassen.",
+      "Ça fait... (das macht...) für Preise — feste Wendung, die Schüler:innen auswendig lernen sollen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Zweite lebende Fremdsprache",
+  "klasse": 4,
+  "kompetenzbereich": "Sprechen (an Gesprächen teilnehmen und zusammenhängend sprechen)",
+  "competences": [
+    "FS2.US.4.SPR.02"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "SPR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0058",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

@@ -1,0 +1,95 @@
+{
+  "id": "c0086.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Beurteile die folgenden Aussagen über das Elektronengasmodell. Kreuze an (richtig / falsch) und begründe kurz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Im Elektronengasmodell sind die Elektronen im Metall völlig frei und stoßen nie mit dem Gitter zusammen.",
+        "Das Elektronengasmodell erklärt, warum ein metallischer Leiter warm wird, wenn Strom fließt.",
+        "Das Modell gilt gleichermaßen gut für Metalle, Salze und Halbleiter.",
+        "Eine höhere Temperatur eines Metalls erhöht im Allgemeinen seinen Widerstand."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "richtig",
+        "falsch",
+        "Begründung"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.3.ELE.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "1: falsch — Elektronen stoßen mit dem Gitter zusammen, das erzeugt Widerstand. 2: richtig — die Stöße übertragen kinetische Energie auf das Gitter (Erwärmung). 3: falsch — für Halbleiter ist das Modell unzureichend; für Elektrolytlösungen gilt es gar nicht (Ionen statt Elektronen). 4: richtig — mehr Gitterschwingungen → mehr Stöße → höherer Widerstand (bei den meisten Metallen).",
+    "acceptable_reasoning": "Für Aussage 4: Hinweis auf Ausnahmen (NTC-Widerstände, Supraleiter) ist ein Plus, aber nicht Pflicht.",
+    "rubric": [
+      {
+        "criterion": "Korrekte Einschätzung",
+        "levels": [
+          "0–1 richtig",
+          "2–3 richtig",
+          "Alle 4 korrekt"
+        ]
+      },
+      {
+        "criterion": "Begründungsqualität",
+        "levels": [
+          "Keine oder rein auswendig gelernte Begründung",
+          "Begründung zeigt Verständnis des Modells",
+          "Begründung benennt explizit Modellgrenzen"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Aussage 1 klingt plausibel ('frei' = keine Stöße) — darauf hinweisen, dass 'frei' nur das Fehlen der Bindung ans Atom bedeutet.",
+      "Aussage 4 kann Ausnahmen haben; bei Halbleitern sinkt der Widerstand mit der Temperatur — das ist aber Oberstufenstoff."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Physik",
+  "klasse": 3,
+  "kompetenzbereich": "Elektrizität und Magnetismus",
+  "competences": [
+    "PHY.US.3.ELE.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "W",
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0086",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:19+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

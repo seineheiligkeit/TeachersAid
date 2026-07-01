@@ -1,0 +1,73 @@
+{
+  "id": "c0032.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "multiple_choice",
+    "prompt": "Ein plötzlicher Frost zerstört in Spanien fast die gesamte Erdbeernte. Was passiert mit dem Preis für Erdbeeren in österreichischen Supermärkten in den nächsten Wochen – und warum?",
+    "payload": {
+      "kind": "multiple_choice",
+      "options": [
+        "A) Der Preis sinkt, weil die Supermarktketten weniger Erdbeerware einkaufen müssen.",
+        "B) Der Preis steigt, weil das Angebot kleiner wird, die Nachfrage aber gleich bleibt.",
+        "C) Der Preis bleibt gleich, weil der Staat die Preise kontrolliert.",
+        "D) Der Preis sinkt, weil Konsumenten auf andere Früchte ausweichen."
+      ],
+      "select": "one"
+    },
+    "response": {
+      "mode": "choices",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "select": "one"
+    },
+    "cognitive_level": "apply",
+    "dimensions": [
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.ENT.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "B. Bei sinkendem Angebot und gleichbleibender Nachfrage steigt der Marktpreis – klassische Angebots-Nachfrage-Logik. D ist teilweise plausibel (Substitution), aber die unmittelbare Preisreaktion ist Anstieg.",
+    "acceptable_reasoning": "D kann als Teilantwort akzeptiert werden, wenn Schüler:innen die kurzfristige Preissteigerung (B) und die mittelfristige Nachfrageverschiebung (D) unterscheiden.",
+    "rubric": [],
+    "watch_outs": [
+      "Distraktor C ist ein häufiges Missverständnis: In Österreich gibt es für die meisten Güter keine staatliche Preisfestsetzung (Ausnahmen: Mieten, Taxi, einige regulierte Märkte).",
+      "Spanien als Lieferant: Österreich importiert viele Früchte aus Südeuropa – der globale Kontext der Preisbildung ist hier direkt relevant."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "multiple_choice",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Entwicklungen am Wirtschaftsstandort Österreich",
+  "competences": [
+    "GWB.US.3.ENT.04"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0032",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

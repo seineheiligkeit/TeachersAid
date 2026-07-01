@@ -1,0 +1,67 @@
+{
+  "id": "c0015.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Entscheide, ob die folgenden Aussagen zur DSGVO und zum österreichischen Datenschutzgesetz (DSG) stimmen, und begründe deine Entscheidung jeweils in einem Satz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Die DSGVO gilt nur für österreichische Unternehmen mit Sitz in Wien.",
+        "Du hast das Recht, von einem Unternehmen Auskunft darüber zu verlangen, welche Daten es über dich gespeichert hat.",
+        "Wenn du die Nutzungsbedingungen einer App akzeptierst, verlierst du alle Datenschutzrechte.",
+        "Unternehmen dürfen besonders sensible Daten (z.B. Gesundheitsdaten) grundsätzlich nicht ohne ausdrückliche Einwilligung verarbeiten."
+      ]
+    },
+    "response": {
+      "mode": "none"
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "G",
+      "I"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DGB.US.4.INF.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "(1) Falsch – die DSGVO gilt für alle Unternehmen, die Daten von EU-Bürger:innen verarbeiten, unabhängig vom Firmensitz. (2) Richtig – Auskunftsrecht nach Art. 15 DSGVO. (3) Falsch – AGB können Datenschutzrechte nicht aushebeln; die Einwilligung muss freiwillig, informiert und widerrufbar sein. (4) Richtig – Art. 9 DSGVO; Ausnahmen sind eng begrenzt.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Aussage 3 ist eine häufige Alltagsmeinung und zentrale Fehlvorstellung – hier Zeit nehmen.",
+      "Aussage 1 bezieht sich auf das Marktortprinzip (Art. 3 DSGVO): Auch US-Konzerne wie Google/Meta müssen die DSGVO einhalten, wenn sie Daten von EU-Bürger:innen verarbeiten."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Digitale Grundbildung",
+  "klasse": 4,
+  "kompetenzbereich": "Information: mit Daten, Informationen und Informationssystemen verantwortungsvoll umgehen",
+  "competences": [
+    "DGB.US.4.INF.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "G",
+    "I"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0015",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

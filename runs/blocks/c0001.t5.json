@@ -1,0 +1,76 @@
+{
+  "id": "c0001.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "multiple_choice",
+    "prompt": "Der natürliche Treibhauseffekt der Erde beruht auf einem physikalischen Mechanismus. Welche der folgenden Aussagen beschreiben diesen Mechanismus korrekt? (Mehrere Antworten können richtig sein.)",
+    "payload": {
+      "kind": "multiple_choice",
+      "options": [
+        "A) Kurzwellige Sonnenstrahlung (sichtbares Licht und UV) kann die Atmosphäre relativ ungehindert durchdringen und die Erdoberfläche erwärmen.",
+        "B) Die erwärmte Erdoberfläche gibt langwellige Wärmestrahlung (Infrarot) ab.",
+        "C) Treibhausgase wie CO₂ und H₂O absorbieren diese langwellige Strahlung und strahlen einen Teil davon zurück zur Erde.",
+        "D) Die Ozonschicht reflektiert die Sonnenstrahlung und verhindert dadurch eine Überhitzung.",
+        "E) Ohne den Treibhauseffekt wäre die mittlere Oberflächentemperatur der Erde etwa −18 °C statt der heutigen +15 °C."
+      ],
+      "select": "many"
+    },
+    "response": {
+      "mode": "choices",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "select": "many"
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.4.WET.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Richtig: A, B, C, E. Falsch: D – die Ozonschicht filtert UV-Strahlung heraus, ist aber nicht für den Treibhauseffekt verantwortlich; der Treibhauseffekt wird durch Absorption/Reemission langwelliger Strahlung durch Treibhausgase verursacht.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Häufige Verwechslung: Ozonloch ≠ Treibhauseffekt. Ozon filtert UV-B/C; CO₂ und andere Treibhausgase absorbieren IR.",
+      "Der natürliche Treibhauseffekt ist lebenswichtig – erst der verstärkte (anthropogene) Treibhauseffekt ist das Problem.",
+      "Die Temperaturangabe −18 °C ohne Treibhauseffekt ist ein wichtiger Anker – die 33 K Erwärmung durch den natürlichen Treibhauseffekt verdeutlichen seine Größenordnung."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "multiple_choice",
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Wetter und Klima",
+  "competences": [
+    "PHY.US.4.WET.04"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0001",
+  "source": "ai",
+  "created_at": "2026-06-25T11:35:33+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

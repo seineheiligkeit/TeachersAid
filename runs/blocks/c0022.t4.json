@@ -1,0 +1,75 @@
+{
+  "id": "c0022.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "construction",
+    "prompt": "Gegeben sind die drei Risse eines Körpers:\n- Aufriss: Rechteck mit einer Halbkreiskappe oben (Breite 4 cm, Rechteckhöhe 4 cm, Halbkreisradius 2 cm)\n- Grundriss: Rechteck 4 cm × 6 cm\n- Kreuzriss: Rechteck 6 cm × 6 cm\n\nBestimme: Um welchen Körper handelt es sich? Zeichne ein Schrägbild (Kavalierperspektive) des Körpers.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 90.0
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "H3"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GEZ.US.4.PRO.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Es handelt sich um einen Quader (4 cm × 6 cm × 4 cm) mit einem aufgesetzten Halbzylinder (Radius 2 cm, Länge 6 cm) auf der Oberseite. Das Schrägbild zeigt den Quader mit dem aufliegenden Halbzylinder (dessen Schnittellipsen als halbe Ellipsen erscheinen). Alternativ: einfaches Tunnel-/Gewölbeprofil.",
+    "acceptable_reasoning": "Die Identifikation des Körpers ist wichtiger als das technisch perfekte Schrägbild — gute Begründung zur Körperform voll werten.",
+    "rubric": [
+      {
+        "criterion": "Körperidentifikation",
+        "levels": [
+          "Falsch",
+          "Grundkörper richtig, Aufbau falsch",
+          "Vollständig korrekt beschrieben"
+        ]
+      },
+      {
+        "criterion": "Schrägbild",
+        "levels": [
+          "Nicht erkennbar",
+          "Grundkörper erkennbar",
+          "Vollständig mit Halbzylinder"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Diese Aufgabe erfordert „inverses“ Rissdeuten — Schüler:innen müssen von den Rissen auf den Körper zurückschließen. Das ist anspruchsvoller als das Erstellen von Rissen.",
+      "Der Halbzylinder oben ist die Knacknuss: er erscheint im Aufriss als Halbkreis, im Kreuzriss und Grundriss als Rechteck."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "construction",
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Projektionen und Risse (I3)",
+  "competences": [
+    "GEZ.US.4.PRO.03"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "H3"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0022",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

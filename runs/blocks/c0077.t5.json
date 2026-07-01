@@ -1,0 +1,82 @@
+{
+  "id": "c0077.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Saurer Regen hat einen pH-Wert von etwa 4–4,5. Normaler Regen hat pH ≈ 5,6.\n\nErkläre:\na) Wodurch entsteht saurer Regen? (Nenne mindestens eine chemische Ursache.)\nb) Welche Schäden kann saurer Regen an Gebäuden aus Kalkstein verursachen? Erkläre den Vorgang chemisch.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.US.x.ERK.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "a) Schwefeloxide (SO₂, aus Verbrennung von Kohle/Öl) und Stickoxide (NOₓ, aus Autoabgasen) reagieren mit Wasser in der Atmosphäre zu schwefliger Säure bzw. Salpetersäure.\nb) Kalkstein (CaCO₃) reagiert mit der Säure: CaCO₃ + H₂SO₄ → CaSO₄ + H₂O + CO₂. Das Gestein löst sich auf — Gebäude und Statuen verwittern.",
+    "acceptable_reasoning": "Vereinfachte Erklärung ohne genaue Formelgleichungen akzeptabel, wenn Kausalzusammenhang (Säure löst Kalkstein) korrekt ist.",
+    "rubric": [
+      {
+        "criterion": "Ursache saurer Regen",
+        "levels": [
+          "Chemische Verbindung (SO₂ / NOₓ) korrekt genannt",
+          "Nur vage Ursache (\"Industrie\")",
+          "Keine chemische Ursache"
+        ]
+      },
+      {
+        "criterion": "Reaktion mit Kalkstein",
+        "levels": [
+          "Säure-Base-Reaktion korrekt beschrieben mit Produkten",
+          "Auflösung erkannt, Produkte fehlen",
+          "Keine Verbindung zur Chemie"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen verwechseln oft Ursache (Emissionen) und Wirkung (saurer Regen) — Reihenfolge explizit verlangen",
+      "CO₂ löst sich selbst in Wasser zu Kohlensäure — erklärt, warum normaler Regen schon leicht sauer ist (pH 5,6)",
+      "CaSO₄ (Gips) entsteht als Reaktionsprodukt — kann als Belag an Gebäuden sichtbar sein"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Chemie",
+  "klasse": 4,
+  "kompetenzbereich": "Erkenntnisse gewinnen und interpretieren (E)",
+  "competences": [
+    "CHE.US.x.ERK.03"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "W",
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0077",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:13+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

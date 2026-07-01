@@ -1,0 +1,80 @@
+{
+  "id": "c0062.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "text_analysis",
+    "prompt": "Vergleiche: Lies die Aussagen über das römische Familienleben und vergleiche sie mit deiner eigenen Familie oder dem modernen Familienleben in Österreich. Schreibe für jede Aussage, ob sie 'gleich', 'ähnlich' oder 'verschieden' ist — und erkläre kurz, warum.\n\nAussagen:\n1. Der Vater ist das rechtliche Oberhaupt der Familie.\n2. Kinder gehen zur Schule.\n3. Es gibt Haushaltsaufgaben für alle.\n4. Manche Menschen in der Familie sind nicht frei (Sklaven).",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "Gleich / Ähnlich / Verschieden",
+        "Erklärung"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "INH"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "LAT.US.3.INH.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1. Verschieden — heute haben alle Familienmitglieder gleiche Rechte; der pater familias hatte früher absolute Gewalt. | 2. Ähnlich — Kinder gehen heute auch zur Schule, allerdings sind Mädchen und Buben heute gleichberechtigt; im antiken Rom blieben Mädchen oft zu Hause. | 3. Ähnlich — Haushaltsaufgaben gibt es heute auch, aber keine Sklaven. | 4. Verschieden — Sklaverei ist heute verboten und moralisch verurteilt.",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Textverstehen",
+        "levels": [
+          "Alle vier Aussagen korrekt eingeordnet und sinnvoll erklärt.",
+          "Mindestens drei Aussagen korrekt eingeordnet.",
+          "Weniger als drei korrekt oder Erklärungen fehlen."
+        ]
+      },
+      {
+        "criterion": "Lebensweltbezug",
+        "levels": [
+          "Eigener Vergleich mit konkretem Gegenwartsbeispiel.",
+          "Allgemeiner Vergleich ohne persönlichen Bezug.",
+          "Kein Vergleich, nur Wiedergabe des Textes."
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Aussage 4 ist bewusst heikel — die Sklaverei ernst nehmen und nicht verharmlosen. Schüler:innen sollen nicht 'das war halt früher normal' als Entschuldigung gelten lassen.",
+      "Eigene Erfahrungen der Schüler:innen mit Familienleben respektieren — Patchwork-Familien, andere Kulturen etc. gehören zum modernen Kontext."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "text_analysis",
+  "subject": "Latein",
+  "klasse": 3,
+  "kompetenzbereich": "Inhalts- und themenbezogene Kompetenzen",
+  "competences": [
+    "LAT.US.3.INH.03"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "INH"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0062",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

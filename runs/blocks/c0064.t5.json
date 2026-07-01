@@ -1,0 +1,70 @@
+{
+  "id": "c0064.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "ordering",
+    "prompt": "Bringe die Satzteile in eine sinnvolle Reihenfolge und übersetze den Satz. Beide Sätze sollen im Passiv stehen.\n\na) laudantur / a magistro / discipulae / diligentissimae\nb) munita est / a Romanis / via / longissima",
+    "payload": {
+      "kind": "ordering",
+      "items": [
+        "laudantur",
+        "a magistro",
+        "discipulae",
+        "diligentissimae",
+        "munita est",
+        "a Romanis",
+        "via",
+        "longissima"
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "apply",
+    "dimensions": [
+      "SPR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "LAT.US.4.SPR.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "a) Discipulae diligentissimae a magistro laudantur. — Die fleißigsten Schülerinnen werden vom Lehrer gelobt. | b) Via longissima a Romanis munita est. — Der längste Weg wurde von den Römern befestigt.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Andere Wortstellungen sind syntaktisch möglich — wichtig ist, dass Kongruenz (discipulae diligentissimae; via longissima) und das agens-a (a magistro, a Romanis) erhalten bleiben.",
+      "Discipulae ist Nominativ Plural (Femininum) — Superlativ diligentissimae muss kongruieren (Nom. Pl. f.)."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "ordering",
+  "subject": "Latein",
+  "klasse": 4,
+  "kompetenzbereich": "Sprach- und textbezogene Kompetenzen",
+  "competences": [
+    "LAT.US.4.SPR.04"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "SPR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0064",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

@@ -1,0 +1,91 @@
+{
+  "id": "c0050.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Your teacher reads a short voicemail message aloud TWICE. Take notes as you listen, then write a short summary (3–4 sentences) of the most important information.\n\n[Teacher reads:] \"Hi, this is a message for Anna. It's Laura speaking. I'm calling about our plan for Saturday. The swimming pool is closed because of repairs, so we can't go there. Instead, let's meet at the park at two o'clock. Bring a ball and something to drink. If it rains, we'll go to my place instead. Text me if that's okay. Bye!\"",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 35.0
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "HOR",
+      "SCH"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS1.US.2.HOR.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "FS1.US.2.SCH.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Model answer: Laura called Anna about their Saturday plans. The swimming pool is closed for repairs, so they will meet at the park at 2 o'clock instead. Anna should bring a ball and a drink. If it rains, they will go to Laura's house.",
+    "acceptable_reasoning": "Kerninfos: Ort (park), Zeit (2 Uhr), mitbringen (Ball, Drink), Plan B (Laura's place) — alle vier zählen für Vollständigkeit.",
+    "rubric": [
+      {
+        "criterion": "Completeness",
+        "levels": [
+          "All 4 key facts included",
+          "3 facts included",
+          "1–2 facts included"
+        ]
+      },
+      {
+        "criterion": "Accuracy",
+        "levels": [
+          "No factual errors",
+          "Minor errors",
+          "Major errors or misunderstandings"
+        ]
+      },
+      {
+        "criterion": "Language",
+        "levels": [
+          "Clear sentences, mostly correct",
+          "Understandable with errors",
+          "Hard to follow"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen neigen dazu, wörtlich abzuschreiben statt zusammenzufassen — auf Paraphrase achten",
+      "'repairs' als Vokabel ggf. vorab klären oder als unbekanntes Wort tolerieren (Kontext reicht zum Verstehen)",
+      "Die Bedingung ('if it rains') wird oft weggelassen — darauf hinweisen, dass Konditionale wichtige Info sind"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Erste lebende Fremdsprache",
+  "klasse": 2,
+  "kompetenzbereich": "Hören",
+  "competences": [
+    "FS1.US.2.HOR.02",
+    "FS1.US.2.SCH.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "HOR",
+    "SCH"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0050",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

@@ -1,0 +1,61 @@
+{
+  "id": "phy-strahlung.str.t6#extended",
+  "block": {
+    "id": "phy-strahlung.str.t6_extended",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Eine Schlagzeile lautet: „Handystrahlung macht krank!“\n\na) Welche EINE physikalisch entscheidende Frage würdest du stellen, bevor du dieser Schlagzeile glaubst? Erkläre in 2–3 Sätzen, warum gerade diese Frage entscheidet.\n\nb) Formuliere zwei weitere kritische Fragen – eine zur Qualität der Quelle (journalistische Skepsis), eine zur Studie selbst (wissenschaftliche Skepsis).\n\nc) Handy-Strahlung ist nicht-ionisierend. Erkläre, was das für die physikalische Plausibilität einer Gesundheitsgefahr bedeutet – und warum „nicht-ionisierend = sicher“ trotzdem kein abschließendes Urteil ist.\n\nd) Welche Informationsquellen würdest du konsultieren, um eine fundierte Einschätzung zu bekommen (nenne 2 konkrete Beispiele)?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 12
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.4.STR.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 16,
+    "answer_key": "a) „Welche Dosis/Intensität wurde untersucht?“ – ohne Dosis keine Aussage über Wirkung; oder „Ionisierende oder nicht-ionisierende Strahlung?“ – entscheidet physikalischen Schädigungsmechanismus. b) Quelle: „Ist das eine Peer-reviewed-Studie oder ein Pressebericht?“; Studie: „Wurde eine Kontrollgruppe verwendet?“ c) Nicht-ionisierend: keine direkte DNA-Schädigung durch Photoionisation; aber thermische Effekte bei sehr hoher Intensität möglich; Vorsorgeprinzip rechtfertigt Grenzwerte trotzdem. d) WHO-Factsheet Elektromagnetische Felder, Bundesamt für Strahlenschutz (BfS) Deutschland / AGES Österreich.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "c) ist heikel: weder Verharmlosung noch Hysterie; das Vorsorgeprinzip als eigenständiges Konzept einführen; d) konkrete Institutionen – SuS nennen oft nur „Internet“ oder Wikipedia ohne Bewertung der Qualität"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Strahlung und Radioaktivität",
+  "competences": [
+    "PHY.US.4.STR.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "extended",
+  "family": "phy-strahlung.str.t6",
+  "assets": [],
+  "status": "approved",
+  "provenance": "variant:phy-strahlung.str.t6",
+  "source": "ai",
+  "created_at": "2026-06-25T18:13:26+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

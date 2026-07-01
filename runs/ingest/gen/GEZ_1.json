@@ -1,0 +1,172 @@
+{
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Geometrische Objekte und ihre Eigenschaften",
+  "title": "Körper erkennen und beschreiben",
+  "kernfrage": "Wie erkennst du räumliche Körper an ihren Eigenschaften — und wie kannst du sie eindeutig beschreiben?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Eigenschaften geometrischer Körper",
+        "throughline": "Schüler:innen entwickeln ein strukturiertes Vokabular für Körper (Flächen, Kanten, Ecken, Symmetrien) und üben, von der Beschreibung zur Identifikation und zurück zu gehen — Grundlage für alle späteren Riss- und Projektionsarbeiten.",
+        "talking_points": [
+          "Warum reicht eine einzige Ansicht oft nicht, um einen Körper eindeutig zu bestimmen?",
+          "Welche Eigenschaften sind charakteristisch für einen Körper (z. B. Anzahl der Flächen, Parallelität, Symmetrieachsen)?",
+          "Unterschied zwischen einem Prisma und einer Pyramide: Was ist das entscheidende Merkmal?"
+        ],
+        "extensions": [
+          "Eulersche Polyederformel E − K + F = 2 an mehreren Beispielen überprüfen lassen.",
+          "Duale Körperpaare (Würfel ↔ Oktaeder) als Erweiterung für Interessierte vorstellen."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "matching",
+            "prompt": "Verbinde jeden Körper mit seiner korrekten Beschreibung.\n\nKörper: (A) Quader, (B) Quadratische Pyramide, (C) Drehzylinder, (D) Drehkegel\n\nBeschreibungen:\n1. Ein Körper mit einer kreisförmigen Grundfläche und einer Spitze; alle Mantellinien treffen sich in einem Punkt.\n2. Zwei parallele, kongruente rechteckige Flächen, verbunden durch vier weitere Rechtecke.\n3. Zwei parallele, kongruente Kreisflächen, verbunden durch eine gekrümmte Mantelfläche.\n4. Eine quadratische Grundfläche und vier gleichschenklige Dreiecksflächen, die sich in einer Spitze treffen.",
+            "payload": {
+              "kind": "matching",
+              "left": ["(A) Quader", "(B) Quadratische Pyramide", "(C) Drehzylinder", "(D) Drehkegel"],
+              "right": [
+                "Zwei parallele, kongruente rechteckige Flächen, verbunden durch vier weitere Rechtecke.",
+                "Eine quadratische Grundfläche und vier gleichschenklige Dreiecksflächen, die sich in einer Spitze treffen.",
+                "Zwei parallele, kongruente Kreisflächen, verbunden durch eine gekrümmte Mantelfläche.",
+                "Ein Körper mit einer kreisförmigen Grundfläche und einer Spitze; alle Mantellinien treffen sich in einem Punkt."
+              ]
+            },
+            "response": {"mode": "lines", "n": 4},
+            "cognitive_level": "remember",
+            "dimensions": ["H1"],
+            "serves": [{"competence_id": "GEZ.US.4.GEO.01", "relation": "exercises"}],
+            "est_minutes": 6,
+            "answer_key": "A–2, B–4, C–3, D–1",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Quader und Prisma werden oft verwechselt — ein Quader ist ein spezielles (rechtwinkliges) Prisma mit Rechtecken als Grundfläche.",
+              "Drehkegel und Pyramide teilen die Spitze, unterscheiden sich aber in der Grundfläche (Kreis vs. Polygon)."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "table_fill",
+            "prompt": "Fülle die Tabelle für die folgenden Körper aus: Würfel, Dreiecksprisma, Quadratische Pyramide, Oktaeder.\n\nSpalten: Körper | Anzahl Ecken (E) | Anzahl Kanten (K) | Anzahl Flächen (F) | E − K + F",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": ["Körper", "Ecken (E)", "Kanten (K)", "Flächen (F)", "E − K + F"],
+              "rows": 4
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["H1", "H2"],
+            "serves": [{"competence_id": "GEZ.US.4.GEO.01", "relation": "exercises"}],
+            "est_minutes": 8,
+            "answer_key": "Würfel: 8 / 12 / 6 / 2. Dreiecksprisma: 6 / 9 / 5 / 2. Quadrat. Pyramide: 5 / 8 / 5 / 2. Oktaeder: 6 / 12 / 8 / 2. Alle E − K + F = 2 (Eulersche Formel).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen vergessen manchmal die Grundfläche(n) bei Prismen oder Pyramiden beim Zählen der Flächen.",
+              "Das Oktaeder ist unbekannter — kurz Bild oder Netz an die Tafel, falls keine Modelle vorhanden."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "true_false_justify",
+            "prompt": "Beurteile die folgenden Aussagen über geometrische Körper. Schreibe jeweils „wahr" oder „falsch" und begründe kurz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Jede Pyramide hat genau eine Grundfläche und eine Spitze.",
+                "Ein Würfel ist ein Sonderfall des Quaders.",
+                "Ein Drehzylinder hat genau drei Flächen (zwei Kreise und eine Mantelfläche).",
+                "Alle Prismen haben mindestens zwei parallele, kongruente Grundflächen."
+              ]
+            },
+            "response": {"mode": "box", "min_height_mm": 50},
+            "cognitive_level": "understand",
+            "dimensions": ["H1"],
+            "serves": [{"competence_id": "GEZ.US.4.GEO.01", "relation": "exercises"}],
+            "est_minutes": 8,
+            "answer_key": "1. wahr — Definition Pyramide. 2. wahr — Würfel hat alle Seiten gleich lang, aber erfüllt Quaderdefinition. 3. wahr — Mantelfläche ist eine gekrümmte Fläche, die beiden Kreise sind die Deckflächen. 4. wahr — grundlegendes Merkmal aller Prismen.",
+            "acceptable_reasoning": "Bei Aufgabe 3: Diskussion, ob eine gekrümmte Fläche als „eine Fläche" zählt, ist fachlich wertvoll.",
+            "watch_outs": [
+              "Manche Schüler:innen zählen bei Drehkörpern die Mantelfläche als mehrere Flächen.",
+              "Würfel als Sonderfall des Quaders erfordert das Verstehen von Spezialisierung/Inklusion — häufige Quelle von Fehlern."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "open_response",
+            "prompt": "Ein Körper hat genau 5 Flächen, von denen eine ein Rechteck und vier Dreiecke sind. Beschreibe diesen Körper vollständig: Wie heißt er? Wie viele Kanten und Ecken hat er? Welche Form hat seine Grundfläche?",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 40},
+            "cognitive_level": "analyze",
+            "dimensions": ["H1"],
+            "serves": [{"competence_id": "GEZ.US.4.GEO.01", "relation": "exercises"}],
+            "est_minutes": 7,
+            "answer_key": "Es handelt sich um eine Rechteckige Pyramide (auch: quadrilaterale Pyramide mit Rechteck-Grundfläche). Sie hat 5 Ecken, 8 Kanten und 5 Flächen. Die Grundfläche ist ein Rechteck.",
+            "acceptable_reasoning": "Schüler:innen können auch induktiv vorgehen: erst Flächen zählen, dann Körper benennen.",
+            "watch_outs": [
+              "Quadratische vs. rechteckige Pyramide: Wenn die Aufgabe „Rechteck" sagt, ist eine quadratische Grundfläche ein Spezialfall — beide Antworten akzeptieren.",
+              "Schüler:innen könnten ein Prisma mit Dreiecksflächen versuchen — prüfen, ob die 5-Flächen-Bedingung erfüllt wäre (nein: 5-Flächen-Prisma = Dreiecksprisma, 5 Flächen, aber andere Zusammensetzung)."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "decision_scenario",
+            "prompt": "Ein Architekt plant einen Dachaufsatz für ein Gebäude. Zur Auswahl stehen: (A) ein Drehkegel, (B) eine quadratische Pyramide, (C) ein Drehzylinder. Er möchte maximalen Schutz vor Regen auf einer quadratischen Grundfläche und eine möglichst einfache Konstruktion aus geraden Holzbalken. Welchen Körper empfiehlst du? Begründe deine Wahl mit geometrischen Eigenschaften.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Wähle einen der drei Körper und begründe geometrisch."
+            },
+            "response": {"mode": "box", "min_height_mm": 45},
+            "cognitive_level": "evaluate",
+            "dimensions": ["H1"],
+            "serves": [{"competence_id": "GEZ.US.4.GEO.01", "relation": "exercises"}],
+            "est_minutes": 8,
+            "answer_key": "Beste Wahl: (B) Quadratische Pyramide. Gründe: passt auf eine quadratische Grundfläche; die vier Dreiecksflächen leiten Wasser ab; die geraden Kanten lassen sich aus Holzbalken bauen (im Gegensatz zu Kegel oder Zylinder mit gekrümmten Flächen). Drehkegel hat gekrümmte Mantelfläche (schwer zu zimmern); Drehzylinder hat keine Spitze, Wasser sammelt sich oben.",
+            "acceptable_reasoning": "Schüler:innen, die den Kegel wählen und auf die gute Wasserableitung durch die Spitze hinweisen, erhalten Teilpunkte; fehlende Begründung zur Konstruierbarkeit abziehen.",
+            "watch_outs": [
+              "Die Aufgabe ist absichtlich offen — es gibt eine beste Antwort, aber der Argumentation kommt mehr Gewicht zu als der bloßen Wahl.",
+              "Darauf achten, dass geometrische Eigenschaften (nicht Ästhetik) als Hauptargument verwendet werden."
+            ],
+            "rubric": [
+              {"criterion": "Körperwahl", "levels": ["Keine oder falsche Wahl ohne Begründung", "Richtige Wahl ohne geometrische Begründung", "Richtige Wahl mit mindestens einem geometrischen Argument", "Richtige Wahl mit zwei überzeugenden geometrischen Argumenten (Grundfläche + Konstruierbarkeit)"]},
+              {"criterion": "Vergleich der Alternativen", "levels": ["Kein Vergleich", "Eine Alternative kurz erwähnt", "Beide Alternativen mit Grund ausgeschlossen"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "open_response",
+            "prompt": "Erfinde einen eigenen geometrischen Körper, indem du zwei bekannte Grundkörper kombinierst (z. B. Zylinder + Halbkugel). Beschreibe deinen Körper in einem kurzen Text: Aus welchen Teilkörpern besteht er? Wie viele Flächen (inklusive Trennfläche, falls sichtbar) hat er insgesamt? Wo könnte dieser Körper in der Realität vorkommen?",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 55},
+            "cognitive_level": "create",
+            "dimensions": ["H1", "H3"],
+            "serves": [{"competence_id": "GEZ.US.4.GEO.01", "relation": "exercises"}],
+            "est_minutes": 10,
+            "answer_key": "Offene Aufgabe — Beispielantwort: Zylinder + Halbkugel (= Kapsel). Flächen: 1 Kreisfläche (Boden) + 1 Mantelfläche (Zylinder) + 1 Halbkugelfläche (Kappe) = 3 Flächen, davon 2 gekrümmt. Realbeispiel: Pharma-Kapsel, Rakete, Silo.",
+            "acceptable_reasoning": "Jede geometrisch korrekt beschriebene Kombination ist akzeptabel. Beurteilungsschwerpunkt: korrekte Beschreibung der Teile und nachvollziehbares Realbeispiel.",
+            "watch_outs": [
+              "Schüler:innen könnten Schwierigkeiten haben, gekrümmte und ebene Flächen zu unterscheiden — kurze Klärung vorab.",
+              "Die Trennfläche (Schnittkreis zwischen Zylinder und Halbkugel) wird oft vergessen, ist aber im Inneren verborgen — diskutieren, ob man sie zählt."
+            ],
+            "rubric": [
+              {"criterion": "Geometrische Korrektheit", "levels": ["Körper nicht eindeutig beschreibbar", "Körper beschreibbar, aber Flächenanzahl falsch", "Körper korrekt beschrieben und Flächen richtig gezählt"]},
+              {"criterion": "Realweltbezug", "levels": ["Kein Beispiel", "Beispiel genannt, aber kein geometrischer Bezug", "Beispiel mit geometrischer Begründung"]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "id": "c0002.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Gegeben sind die Funktionsgleichungen f(x) = 2x − 3 und g(x) = −½x + 4.\n\nErgänze die Wertetabelle. Trage außerdem Steigung m und y-Achsenabschnitt b ein.",
+    "payload": {
+      "kind": "table_fill",
+      "columns": [
+        "x",
+        "f(x) = 2x − 3",
+        "g(x) = −½x + 4"
+      ],
+      "rows": [
+        [
+          "-2",
+          null,
+          null
+        ],
+        [
+          "0",
+          null,
+          null
+        ],
+        [
+          "2",
+          null,
+          null
+        ],
+        [
+          "4",
+          null,
+          null
+        ],
+        [
+          "Steigung m",
+          null,
+          null
+        ],
+        [
+          "y-Achsenabschnitt b",
+          null,
+          null
+        ]
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "x",
+        "f(x)",
+        "g(x)"
+      ],
+      "rows": 6
+    },
+    "cognitive_level": "apply",
+    "dimensions": [
+      "DAR",
+      "OPE"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.4.VAR.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "f: x=−2 → −7; x=0 → −3; x=2 → 1; x=4 → 5; m=2; b=−3\ng: x=−2 → 5; x=0 → 4; x=2 → 3; x=4 → 2; m=−½; b=4",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Bei g(x): −½·(−2) = +1, nicht −1 – Vorzeichenfehler bei negativem x mit negativer Steigung häufig.",
+      "Steigung m ist der Koeffizient vor x, nicht der Wert f(0) – diese Verwechslung tritt auf."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Mathematik",
+  "klasse": 4,
+  "kompetenzbereich": "2: Variablen und Funktionen",
+  "competences": [
+    "MAT.US.4.VAR.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "DAR",
+    "OPE"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0002",
+  "source": "ai",
+  "created_at": "2026-06-25T11:35:33+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

@@ -1,0 +1,216 @@
+{
+  "subject": "Digitale Grundbildung",
+  "klasse": 2,
+  "kompetenzbereich": "Kommunikation: Kommunizieren und Kooperieren unter Nutzung informatischer, medialer Systeme",
+  "title": "Fake News, Manipulation und Social Media",
+  "kernfrage": "Wie erkennst du, ob eine Nachricht im Internet wirklich stimmt – oder ob du gerade manipuliert wirst?",
+  "body": {
+    "intro": [
+      {
+        "role": "info",
+        "id": "i1",
+        "prompt": "Täglich erscheinen im Internet Millionen neuer Nachrichten, Bilder und Videos. Nicht alles davon ist wahr – manche Inhalte werden gezielt so gestaltet, dass sie Emotionen wecken, Meinungen formen oder in die Irre führen. Wer diese Mechanismen kennt, kann sich besser schützen und andere warnen.",
+        "est_minutes": 3
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Meinungsbildung, Manipulation und Medieninteressen",
+        "throughline": "Schüler:innen lernen, hinter Medieninhalte zu schauen: Wer produziert was, mit welchem Interesse – und welche sprachlichen und visuellen Mittel werden eingesetzt, um Meinungen zu beeinflussen?",
+        "talking_points": [
+          "Manipulation bedeutet nicht immer Lüge: auch Weglassen, Reihenfolge und Bildwahl prägen die Botschaft.",
+          "Social-Media-Plattformen haben ein wirtschaftliches Interesse daran, dass Inhalte Emotionen (v.a. Empörung) auslösen – das erhöht die Verweildauer.",
+          "Meinungsbildung geschieht oft unbewusst; das Wiederholen einer falschen Aussage (auch zur Widerlegung) kann sie verfestigen.",
+          "Öffentlich-rechtliche Medien, Boulevardmedien und Social-Media-Kanäle verfolgen unterschiedliche Geschäftsmodelle und Interessen."
+        ],
+        "extensions": [
+          "Schüler:innen analysieren denselben Nachrichtenwert (z.B. ein lokales Ereignis) in drei verschiedenen Medien (ORF-Website, Boulevardblatt, TikTok-Video) und vergleichen Sprache, Bild und Fokus.",
+          "Übung: Schüler:innen formulieren eine neutrale Meldung und dann drei Varianten (positiv/negativ/reißerisch) – Diskussion über Wirkungsunterschiede.",
+          "Recherche: Welche Instanzen prüfen in Österreich die Einhaltung von Medienstandards (KommAustria, RTR, Presserat)?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "matching",
+            "prompt": "Ordne die Begriffe ihren Erklärungen zu.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Fake News",
+                "Clickbait",
+                "Filterbubble",
+                "Algorithmus (Newsfeed)"
+              ],
+              "right": [
+                "Mechanismus, der dir vor allem Inhalte zeigt, die deine bisherigen Ansichten bestätigen",
+                "Bewusst falsche oder irreführende Nachrichten, die wie echte Berichte aussehen",
+                "Übertriebene oder irreführende Überschrift, die zum Anklicken verleiten soll",
+                "Automatisiertes Programm, das entscheidet, welche Beiträge du in deinem Feed siehst"
+              ]
+            },
+            "response": { "mode": "none" },
+            "cognitive_level": "remember",
+            "dimensions": ["G"],
+            "serves": [
+              { "competence_id": "DGB.US.2.KOM.02", "relation": "exercises" }
+            ],
+            "est_minutes": 5,
+            "answer_key": "Fake News → bewusst falsche oder irreführende Nachrichten ...; Clickbait → übertriebene oder irreführende Überschrift ...; Filterbubble → Mechanismus, der dir vor allem Inhalte zeigt ...; Algorithmus → automatisiertes Programm, das entscheidet ...",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Filterbubble und Echokammer werden oft verwechselt: Die Filterbubble entsteht durch Algorithmen (technisch), die Echokammer durch soziale Bestätigung in Gruppen (sozial).",
+              "Fake News ist kein Synonym für 'Nachrichten, die mir nicht gefallen' – Präzision einfordern."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "media_analysis",
+            "prompt": "Lies die folgende fiktive Schlagzeile und den dazugehörigen ersten Satz genau durch:\n\n**Schlagzeile:** „Wissenschaftler beweisen: Handystrahlung macht dumm!"\n**Erster Satz:** „Eine neue Studie zeigt einen Zusammenhang zwischen der Dauer der Handynutzung und schlechteren Schulnoten bei Jugendlichen."\n\nBeantworte: (a) Stimmt die Schlagzeile mit dem ersten Satz überein? Worin unterscheiden sich die beiden Aussagen? (b) Welches Gefühl soll die Schlagzeile bei dir auslösen? (c) Welche Fragen würdest du stellen, bevor du diesen Inhalt teilst?",
+            "payload": null,
+            "response": { "mode": "lines", "n": 8 },
+            "cognitive_level": "analyze",
+            "dimensions": ["G", "I"],
+            "serves": [
+              { "competence_id": "DGB.US.2.KOM.02", "relation": "exercises" }
+            ],
+            "est_minutes": 10,
+            "answer_key": "(a) Nein: Die Schlagzeile behauptet einen Beweis für direkte Wirkung ('macht dumm'), der erste Satz beschreibt nur eine Korrelation ('Zusammenhang') ohne Kausalität und ohne Qualitätsangabe der Studie. (b) Angst/Schock, eventuell Schuldgefühl, Empörung – emotionale Reaktion soll zum Teilen motivieren. (c) Wo ist die Originalstudie? Wer hat sie durchgeführt und finanziert? Wurde sie in einem begutachteten Journal veröffentlicht? Was bedeutet 'Zusammenhang' (Korrelation ist keine Kausalität)? Schreiben andere Medien darüber?",
+            "acceptable_reasoning": "Schüler:innen müssen den Begriff 'Korrelation' nicht verwenden, aber den Unterschied zwischen 'Zusammenhang' und 'Beweis' klar benennen.",
+            "watch_outs": [
+              "Viele Schüler:innen übernehmen die Schlagzeile als Zusammenfassung des Textes – herausarbeiten: Schlagzeile und Inhalt sind zwei getrennte Elemente mit manchmal gegensätzlicher Aussage.",
+              "Frage (c) zeigt Medienkompetenz: Ermutige dazu, mindestens drei verschiedene Überprüfungsstrategien zu nennen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Erkennen der Diskrepanz",
+                "levels": [
+                  "Kein Unterschied erkannt",
+                  "Unterschied benannt, aber nicht erklärt",
+                  "Korrelation vs. Kausalität oder Fehlen von Belegen klar erklärt"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "open_response",
+            "prompt": "Erkläre in eigenen Worten: Warum zeigt dir Instagram, TikTok oder YouTube vor allem Inhalte, die du dir bereits angesehen hast oder die dir ähnlich sind? Was hat das Unternehmen dabei für ein Interesse?",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 35 },
+            "cognitive_level": "understand",
+            "dimensions": ["G", "T"],
+            "serves": [
+              { "competence_id": "DGB.US.2.KOM.03", "relation": "exercises" }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Plattformen nutzen Algorithmen, die dein bisheriges Verhalten (Likes, Verweildauer, Klicks) analysieren und dann ähnliche Inhalte priorisieren. Ziel: möglichst lange auf der Plattform halten (Engagement). Geschäftsmodell: Je länger du bleibst, desto mehr Werbung siehst du – Werbung ist die Haupteinnahmequelle. Folge: Du siehst vor allem Inhalte, die deine bisherigen Interessen und Meinungen bestätigen (Filterbubble), was dein Weltbild unbewusst formen kann.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen meinen oft, die Plattform 'wählt' bewusst aus – verdeutlichen: Es ist ein automatisiertes System, das auf Verhaltensdaten reagiert, nicht ein Mensch.",
+              "Den Zusammenhang Engagement → Werbeumsatz → Motivation der Plattform explizit herausarbeiten."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "ordering",
+            "prompt": "Bringe die folgenden Schritte zur Überprüfung einer unbekannten Meldung in eine sinnvolle Reihenfolge.",
+            "payload": {
+              "kind": "ordering",
+              "items": [
+                "Schau nach, ob seriöse Nachrichtenmedien (z.B. ORF, APA) über dasselbe Thema berichten.",
+                "Lies nicht nur die Schlagzeile, sondern den gesamten Artikel.",
+                "Überprüfe, wer die Meldung veröffentlicht hat und ob die Quelle bekannt und vertrauenswürdig ist.",
+                "Prüfe Datum und Kontext: Ist die Meldung aktuell, oder wurde ein alter Inhalt aus dem Zusammenhang gerissen?",
+                "Suche mit einer Suchmaschine nach dem Kerninhalt der Meldung und dem Wort 'Faktencheck'."
+              ]
+            },
+            "response": { "mode": "none" },
+            "cognitive_level": "understand",
+            "dimensions": ["I"],
+            "serves": [
+              { "competence_id": "DGB.US.2.KOM.02", "relation": "exercises" }
+            ],
+            "est_minutes": 7,
+            "answer_key": "Eine gut begründete Reihenfolge: (1) Quelle prüfen – wer steckt dahinter? (2) Ganzen Artikel lesen – nicht nur Schlagzeile. (3) Datum und Kontext prüfen. (4) Andere seriöse Medien vergleichen. (5) Gezielter Faktencheck-Suchauftrag. – Andere vertretbare Reihenfolgen akzeptabel, solange Begründung stimmig.",
+            "acceptable_reasoning": "Mehrere Reihenfolgen sind vertretbar; wichtig ist, dass Schüler:innen ihre Entscheidung begründen können.",
+            "watch_outs": [
+              "Schüler:innen starten häufig mit dem Faktencheck-Suchen, obwohl Quelle und Kontext schneller und einfacher zu prüfen sind – das ist diskussionswürdig, nicht falsch.",
+              "Betonen: 'Seriös' heißt nicht 'stimmt mit meiner Meinung überein'."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "decision_scenario",
+            "prompt": "Dein Freund Noah schickt dir über WhatsApp eine Nachricht: „Schau dir das an, mega krass! Chemtrails bewiesen – Regierung gibt es zu!" Der Link führt zu einer Seite mit professionell aussehendem Layout und Fotos von Kondensstreifen.\n\n(a) Welche Warnsignale erkennst du bereits in der Art, wie Noah die Meldung weitergeschickt hat?\n(b) Welche drei Schritte unternimmst du, bevor du die Meldung weiterleitest oder glaubst?\n(c) Wie sprichst du Noah an, ohne dass er sich angegriffen fühlt?",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Verdächtige Nachricht im Freundeskreis – wie reagieren?"
+            },
+            "response": { "mode": "box", "min_height_mm": 45 },
+            "cognitive_level": "evaluate",
+            "dimensions": ["G", "I"],
+            "serves": [
+              { "competence_id": "DGB.US.2.KOM.02", "relation": "exercises" }
+            ],
+            "est_minutes": 11,
+            "answer_key": "(a) Warnsignale: emotionale Sprache ('mega krass'), Ausrufezeichen/Dringlichkeit, außergewöhnliche Behauptung ('Regierung gibt es zu'), Verbreitung über privaten Kanal (Messenger-Chain). (b) Quelle der Webseite prüfen; auf anderen Medien suchen; Faktencheck (APA-Faktencheck, Mimikama). (c) Nicht verurteilen, sondern gemeinsam recherchieren: 'Ich hab das auch gesehen – lass uns kurz schauen, ob das bestätigt ist, bevor wir es weiterleiten.'",
+            "acceptable_reasoning": "Für Teil (c) gibt es keine Musterlösung; jede respektvolle und nicht konfrontative Formulierung ist akzeptabel.",
+            "watch_outs": [
+              "Schüler:innen unterschätzen oft, wie viel Vertrauen das professionelle Aussehen einer Seite erzeugt – Design ist kein Qualitätsmerkmal.",
+              "Das soziale Element (Freundschaft nicht beschädigen) ist real und wichtig: Medienkompetenz muss auch im sozialen Kontext funktionieren."
+            ],
+            "rubric": [
+              {
+                "criterion": "Erkennen von Manipulationsmerkmalen",
+                "levels": [
+                  "Keine oder nur ein Warnsignal benannt",
+                  "Zwei bis drei Warnsignale erkannt",
+                  "Warnsignale strukturiert benannt und erklärt"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "create_produce",
+            "prompt": "Erstelle einen kurzen Leitfaden (als nummerierte Liste) für deine Schulklasse: 'In 5 Schritten – so erkennst du Fake News'. Formuliere jeden Schritt als konkrete Handlungsanweisung. Dein Leitfaden soll auch für Personen verständlich sein, die noch wenig Erfahrung mit dem Thema haben.",
+            "payload": null,
+            "response": { "mode": "lines", "n": 10 },
+            "cognitive_level": "create",
+            "dimensions": ["I", "G"],
+            "serves": [
+              { "competence_id": "DGB.US.2.KOM.02", "relation": "exercises" }
+            ],
+            "est_minutes": 10,
+            "answer_key": "Mögliche Schritte: (1) Quelle prüfen – wer hat das veröffentlicht, ist die Website bekannt? (2) Nicht nur die Überschrift lesen – Überschrift und Inhalt können sich widersprechen. (3) Datum und Kontext kontrollieren – ist die Meldung neu oder aus dem Zusammenhang gerissen? (4) Mehrere seriöse Quellen vergleichen – berichten ORF, APA oder andere Medien dasselbe? (5) Faktencheck-Seiten nutzen (Mimikama.at, APA-Faktencheck). – Leitfaden muss handlungsorientiert und für Laien verständlich sein.",
+            "acceptable_reasoning": "Die fünf Schritte müssen nicht identisch mit der Musterlösung sein; entscheidend ist Konkretheit und Verständlichkeit.",
+            "watch_outs": [
+              "Schüler:innen schreiben häufig 'sei kritisch' – nachfragen: Was heißt das konkret? Welche Handlung führst du aus?",
+              "Österreichische Faktencheck-Ressourcen (Mimikama, APA-Faktencheck) kennen und benennen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Handlungsorientierung",
+                "levels": [
+                  "Abstrakte Ratschläge ohne Handlungsschritte",
+                  "Teilweise konkret, teilweise allgemein",
+                  "Alle fünf Schritte sind klar handlungsorientiert und verständlich"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

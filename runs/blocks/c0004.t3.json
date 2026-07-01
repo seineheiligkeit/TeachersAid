@@ -1,0 +1,80 @@
+{
+  "id": "c0004.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Eine Erbse hat die Samenfarbe Gelb (dominantes Allel G) oder Grün (rezessives Allel g). Zwei heterozygote Pflanzen (Gg × Gg) werden gekreuzt. Fülle das Kreuzungsschema aus und beantworte anschließend die Fragen.\n\nFragen: (a) Welche Genotypen entstehen, und in welchem Verhältnis? (b) Welche Phänotypen entstehen, und in welchem Verhältnis? (c) Wie hoch ist die Wahrscheinlichkeit in Prozent, dass ein Nachkomme grüne Samen hat?",
+    "payload": {
+      "kind": "table_fill",
+      "columns": [
+        "",
+        "G (Gamete Vater)",
+        "g (Gamete Vater)"
+      ],
+      "rows": [
+        [
+          "G (Gamete Mutter)",
+          null,
+          null
+        ],
+        [
+          "g (Gamete Mutter)",
+          null,
+          null
+        ]
+      ]
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 40.0
+    },
+    "cognitive_level": "apply",
+    "dimensions": [
+      "W",
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.WIS.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Tabelle: GG | Gg / Gg | gg. (a) Genotypen: GG : Gg : gg = 1 : 2 : 1. (b) Phänotypen: Gelb (GG + Gg) : Grün (gg) = 3 : 1. (c) Wahrscheinlichkeit für grüne Samen: 25 %.",
+    "acceptable_reasoning": "Schüler:innen müssen die Tabelle korrekt ausfüllen. Für die Fragen sind vollständige Genotyp-Angaben (GG, Gg, gg) erforderlich; alleinige Phänotyp-Angabe ('gelb/grün') ohne Genotyp ist unvollständig.",
+    "rubric": [],
+    "watch_outs": [
+      "Häufiger Fehler: Gg wird als zwei verschiedene Genotypen gezählt (GG und Gg verwechselt). Betonung: Gg ist heterozygot, GG homozygot dominant – beide phänotypisch gelb, aber genetisch verschieden.",
+      "Schüler:innen schreiben manchmal 'G + G = GG' als würden Allele addiert – das ist falsch. Die Allele kommen jeweils von einem Elternteil über die Keimzellen.",
+      "Das 3:1-Verhältnis gilt nur für große Nachkommenszahlen (Wahrscheinlichkeitsaussage). Bei 4 realen Nachkommen muss nicht exakt 3:1 herauskommen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Biologie",
+  "klasse": 4,
+  "kompetenzbereich": "Wissen aneignen, anwenden und kommunizieren (W)",
+  "competences": [
+    "BIO.US.x.WIS.03"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "W",
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0004",
+  "source": "ai",
+  "created_at": "2026-06-25T11:35:34+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

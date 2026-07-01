@@ -1,0 +1,68 @@
+{
+  "id": "c0010.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "ordering",
+    "prompt": "Die folgenden Schritte beschreiben den Weg vom Kaffeebauern zur Tasse – aber sie sind durcheinandergeraten. Bringe sie in die richtige Reihenfolge.",
+    "payload": {
+      "kind": "ordering",
+      "items": [
+        "Die Kaffeebohnen werden geröstet.",
+        "Die Kaffeekirschen werden geerntet.",
+        "Der Kaffee wird gebrüht und getrunken.",
+        "Die Kaffeepflanze blüht und bildet Früchte.",
+        "Die Bohnen werden getrocknet und vom Fruchtfleisch befreit.",
+        "Die gerösteten Bohnen werden gemahlen oder verpackt."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 3
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "LES"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DEU.US.3.LES.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Richtige Reihenfolge: (1) Kaffeepflanze blüht und bildet Früchte → (2) Kaffeekirschen werden geerntet → (3) Bohnen werden getrocknet und vom Fruchtfleisch befreit → (4) Bohnen werden geröstet → (5) Geröstete Bohnen werden gemahlen oder verpackt → (6) Kaffee wird gebrüht und getrunken.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Schüler:innen verwechseln oft 'Trocknen' und 'Rösten' – beides ist Verarbeitung, aber zeitlich klar getrennt.",
+      "Falls jemand 'Mahlen' vor 'Rösten' setzt: auf den Text hinweisen ('erst geröstet … dann gemahlen')."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "ordering",
+  "subject": "Deutsch",
+  "klasse": 3,
+  "kompetenzbereich": "Lesen",
+  "competences": [
+    "DEU.US.3.LES.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "LES"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0010",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

@@ -1,0 +1,58 @@
+{
+  "id": "c0023.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Ein Muster auf einem Wandteppich besteht aus einem Motiv, das durch eine Kombination von Transformationen wiederholt wird. Beschreibe, welche Transformationen (Schiebung, Drehung, Spiegelung — einzeln oder kombiniert) nötig wären, um folgendes Muster zu erzeugen:\n\nDas Grundmotiv ist ein Pfeil, der nach rechts zeigt. Das Muster enthält:\n- Denselben Pfeil, nach rechts zeigend, 3 cm weiter rechts.\n- Einen Pfeil, der nach links zeigt, direkt darunter auf halber Höhe.\n- Denselben Pfeil, nach rechts zeigend, 6 cm weiter rechts als das Original.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "H3"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GEZ.US.4.TRA.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Pfeil 2 (3 cm rechts): Schiebung um Vektor (3|0). Pfeil 3 (darunter, nach links): Spiegelung an einer waagrechten Achse (zwischen den Reihen) und Verschiebung um halbe Höhe nach unten — oder: Drehung um 180° um einen Punkt auf der Mittellinie. Pfeil 4 (6 cm rechts): Schiebung um (6|0). Das Gesamtmuster ist eine Friesgruppe (Translation + Spiegelung).",
+    "acceptable_reasoning": "Verschiedene äquivalente Transformationswege akzeptieren — z. B. Drehung statt Spiegelung + Verschiebung für Pfeil 3.",
+    "rubric": [],
+    "watch_outs": [
+      "Pfeil 3 (nach links) erfordert eine Orientierungsumkehr → Spiegelung oder Drehung um 180°, keine bloße Schiebung.",
+      "Schüler:innen vergessen manchmal, den zweiten Schritt (Verschiebung nach unten) bei Pfeil 3 anzugeben."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Transformationen von Objekten und Relationen zwischen Objekten (I2)",
+  "competences": [
+    "GEZ.US.4.TRA.03"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "H3"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0023",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

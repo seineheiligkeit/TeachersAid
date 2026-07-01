@@ -1,0 +1,136 @@
+{
+  "id": "c0132.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Betrachte Abbildung 2: die CO₂-Emissionen nach Sektoren in Österreich 2022.\n\na) Welcher Sektor emittiert am meisten? Nenne eine mögliche Ursache.\nb) Vergleiche die Sektoren 'Verkehr' und 'Landwirtschaft'. Nenne je eine konkrete Maßnahme, mit der die Emissionen in diesen Sektoren gesenkt werden könnten.\nc) Berechne den prozentualen Anteil des Verkehrssektors an den Gesamtemissionen (gerundet auf eine Dezimalstelle). Gesamtemissionen = Summe aller Sektoren.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 8
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "E",
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.OS.x.ERK.05",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "BIO.OS.6.KOM3.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "BIO.OS.x.FAC.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "a) Verkehr (22,4 Mio. t) emittiert am meisten. Mögliche Ursache: hoher Anteil an PKW-Verkehr mit Verbrennungsmotoren, Transitverkehr durch Österreich, Luftverkehr. b) Verkehr: z. B. Ausbau des öffentlichen Nahverkehrs, Förderung von Elektromobilität, Reduktion von Kurzstreckenflügen; Landwirtschaft: z. B. Reduktion von Methanemissionen durch Anpassung der Rinderhaltung (Fütterung), Förderung ökologischer Landwirtschaft, Reduktion des Einsatzes von Stickstoffdüngern (N₂O-Emissionen). c) Gesamtemissionen = 22,4 + 18,7 + 12,1 + 8,3 + 2,1 = 63,6 Mio. t; Anteil Verkehr = 22,4 / 63,6 × 100 = 35,2 %.",
+    "acceptable_reasoning": "Akzeptabel: Schüler:innen nennen plausible, biologisch oder technisch fundierte Maßnahmen; bei der Berechnung ist der Rechenweg wichtiger als ein exaktes Ergebnis.",
+    "rubric": [
+      {
+        "criterion": "Sektor und Ursache (a)",
+        "levels": [
+          "Falscher Sektor oder keine Ursache",
+          "Richtiger Sektor, unspezifische Ursache",
+          "Richtiger Sektor mit konkreter, plausibler Ursache"
+        ]
+      },
+      {
+        "criterion": "Maßnahmen je Sektor (b)",
+        "levels": [
+          "Keine oder falsche Maßnahmen",
+          "Eine korrekte Maßnahme für einen Sektor",
+          "Je eine korrekte, konkrete Maßnahme für beide Sektoren"
+        ]
+      },
+      {
+        "criterion": "Prozentberechnung (c)",
+        "levels": [
+          "Fehlender oder falscher Ansatz",
+          "Korrekter Ansatz, Rechenfehler",
+          "Korrektes Ergebnis: 35,2 %"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen nennen bei der Landwirtschaft oft nur Pestizide als Problem – Treibhausgase in der Landwirtschaft stammen primär aus Methan (Wiederkäuer) und Lachgas (Düngung).",
+      "Ohne Taschenrechner kann die Berechnung herausfordernd sein – ggf. gemeinsam lösen oder als Hausaufgabe setzen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 6,
+  "kompetenzbereich": "Erkenntnisse gewinnen",
+  "competences": [
+    "BIO.OS.x.ERK.05",
+    "BIO.OS.6.KOM3.02",
+    "BIO.OS.x.FAC.03"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "E",
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Verkehr",
+          "Energie & Industrie",
+          "Gebäude",
+          "Landwirtschaft",
+          "Abfallwirtschaft"
+        ],
+        "values": [
+          22.4,
+          18.7,
+          12.1,
+          8.3,
+          2.1
+        ],
+        "title": "CO₂-Emissionen nach Sektor in Österreich 2022 (Quelle: Umweltbundesamt 2023)",
+        "xlabel": "Sektor",
+        "ylabel": "CO₂-Äquivalent (Mio. t)",
+        "log": false
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0132",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:19+00:00",
+  "updated_at": "2026-06-29T18:17:53+00:00"
+}

@@ -1,0 +1,76 @@
+{
+  "id": "c0052.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Read this short opinion text. Find and write down TWO mistakes in how opinions and reasons are expressed. Then rewrite the two sentences correctly.\n\nText:\n\"I think school uniform is good. Because is comfortable. For example, I believe. I think also no one laughs at your clothes, because that is good, I like uniform.\"",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "SCH"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS1.US.4.SCH.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "Problems in the text:\n1. 'Because is comfortable.' — 'because' cannot start a sentence alone; it needs a main clause. Fix: 'I think school uniform is good because it is comfortable.'\n2. 'For example, I believe.' — 'For example' must be followed by a concrete example, not another opinion phrase. Fix: 'For example, you do not have to worry about what to wear in the morning.'\nBonus: 'because that is good, I like uniform' — vague reason + run-on sentence. Fix: '...because nobody judges you for your clothes.'",
+    "acceptable_reasoning": "Jede sinnvolle Korrektur, die das zugrundeliegende Problem korrekt benennt, wird akzeptiert.",
+    "rubric": [
+      {
+        "criterion": "Error identification",
+        "levels": [
+          "Both problems correctly identified",
+          "One problem correctly identified",
+          "No clear identification"
+        ]
+      },
+      {
+        "criterion": "Rewrite quality",
+        "levels": [
+          "Both rewrites are grammatically correct and logical",
+          "One rewrite correct",
+          "Neither correct"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Der Text enthält mehr als zwei Fehler — Schüler:innen sollen die SCHWERWIEGENDSTEN Strukturfehler identifizieren, nicht Tippfehler",
+      "Klassischer Fehler: 'Because' als Satzanfang — besonders häufig bei deutschsprachigen Schüler:innen, da 'weil' im Deutschen Nebensätze eigenständig stehen können",
+      "Vage Begründungen ('that is good') sind ein eigenes Lernziel — darauf eingehen, dass Gründe konkret und spezifisch sein müssen"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Erste lebende Fremdsprache",
+  "klasse": 4,
+  "kompetenzbereich": "Schreiben",
+  "competences": [
+    "FS1.US.4.SCH.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "SCH"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0052",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

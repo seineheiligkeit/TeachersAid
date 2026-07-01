@@ -1,0 +1,139 @@
+{
+  "id": "c0156.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Betrachte die Zeitleiste der Atommodelle (Abb. 2).\na) Beschreibe, welche experimentellen Beobachtungen die Entwicklung vom Thomson- zum Bohr-Modell erzwangen.\nb) Bewerte: Ist es ein Zeichen von Schwäche der Physik, dass Modelle ersetzt werden? Begründe aus wissenschaftstheoretischer Sicht.\nc) Nenne ein weiteres Beispiel aus der Physik oder einem anderen Fach, wo ein Modell durch ein besseres ersetzt wurde.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 65.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.OS.7.ATO.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.OS.x.S.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.OS.x.S.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "a) Thomson-Modell (Plumpudding): Elektronen eingebettet in positiv geladene Masse. Rutherfords Streuexperiment (1909) zeigte, dass Alpha-Teilchen stark abgelenkt werden → Masse im winzigen Kern konzentriert, nicht gleichmäßig verteilt. Linienspektren des Wasserstoffs konnten mit Rutherfords Kernmodell allein nicht erklärt werden → Bohr (1913) führt diskrete Energieniveaus ein. b) Nein – Modelle werden ersetzt, wenn sie an neuen Experimenten scheitern. Das ist ein Zeichen von Stärke: Wissenschaft ist selbstkorrigierend. Neue Modelle erklären mehr Phänomene, scheitern aber nicht an alten (Prinzip der Korrespondenz). c) Beispiele: Ptolemäisches → Kopernikanisches Weltbild; Phlogiston-Theorie → Lavoisiers Oxidationstheorie; Newtonsche Mechanik → Relativitätstheorie (für hohe Geschwindigkeiten).",
+    "acceptable_reasoning": "Akzeptiert: Jedes korrekte historische Beispiel für Modellablösung mit nachvollziehbarer Begründung.",
+    "rubric": [
+      {
+        "criterion": "Experimentelle Grundlage",
+        "levels": [
+          "Rutherford-Streuexperiment und Linienspektren korrekt verknüpft",
+          "Nur ein Experiment erwähnt"
+        ]
+      },
+      {
+        "criterion": "Wissenschaftstheorie",
+        "levels": [
+          "Selbstkorrektur als Stärke überzeugend begründet",
+          "Intuitive Antwort ohne wissenschaftstheoretisches Argument"
+        ]
+      },
+      {
+        "criterion": "Beispiel",
+        "levels": [
+          "Korrekt und mit Erklärung",
+          "Beispiel richtig, aber ohne Begründung"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen neigen dazu, Modellaustausch als 'Irrtum' zu werten – wichtig ist, dass ältere Modelle in ihrem Gültigkeitsbereich weiterhin korrekt sind.",
+      "Rutherfords Experiment wird häufig mit Thomsons Modell verwechselt – sorgfältige Differenzierung nötig."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Physik",
+  "klasse": 7,
+  "kompetenzbereich": "Atomphysik",
+  "competences": [
+    "PHY.OS.7.ATO.02",
+    "PHY.OS.x.S.01",
+    "PHY.OS.x.S.04"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "W",
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:timeline",
+      "spec": {
+        "events": [
+          {
+            "at": 1897,
+            "label": "Thomson: Elektron entdeckt"
+          },
+          {
+            "at": 1909,
+            "label": "Rutherford: Kern-Streuexperiment"
+          },
+          {
+            "at": 1913,
+            "label": "Bohr: Schalenmodell H"
+          },
+          {
+            "at": 1924,
+            "label": "de Broglie: Materiewellen"
+          },
+          {
+            "at": 1926,
+            "label": "Schrödinger: Wellengleichung"
+          }
+        ],
+        "title": "Entwicklung der Atommodelle (1897–1926)",
+        "xlabel": "Jahr"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0156",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:27+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

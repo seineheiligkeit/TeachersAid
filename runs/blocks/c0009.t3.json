@@ -1,0 +1,66 @@
+{
+  "id": "c0009.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Entscheide: richtig oder falsch? Begründe kurz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Nur Menschen, die regelmäßig Sport treiben, können von körperlicher Aktivität profitieren.",
+        "Körperliche Aktivität wirkt sich auch auf die psychische Gesundheit aus — zum Beispiel auf Stress und Stimmung.",
+        "Wer in der Schulzeit keinen Sport mag, wird auch als Erwachsener keinen Sport treiben.",
+        "Es gibt eine für alle Menschen optimale Sportart — man muss sie nur finden."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "SEL"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BUS.US.4.SEL.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1. Falsch — Auch gelegentliche oder moderate Aktivität (z. B. täglich 30 Min. Gehen) hat nachweisbare gesundheitliche Vorteile. 2. Richtig — körperliche Aktivität reduziert Stress, verbessert Schlaf, fördert positive Stimmung durch Ausschüttung von Neurotransmittern (z. B. Endorphine). 3. Falsch — Bewegungsbiografien können sich ändern; viele Erwachsene entdecken Freude an Bewegung erst später. 4. Falsch — individuelle Vorlieben, körperliche Voraussetzungen und sozialer Kontext sind so verschieden, dass keine universale Optimalsportart existiert.",
+    "acceptable_reasoning": "Statement 1 ist schwierig — 'regelmäßig' ist unscharf. Schüler:innen, die 'Richtig' sagen, aber erläutern, dass Regelmäßigkeit Vorteile verstärkt, teilweise anerkennen.",
+    "rubric": [],
+    "watch_outs": [
+      "Statement 3 hat eine fatalistisch-entmutigende Note — explizit gegensteuern: Vorlieben und Identitäten können sich verändern.",
+      "Statement 4: Viele Schüler:innen suchen 'die' Sportart — das Konzept individuell passender Aktivitäten (Vielfalt statt Optimum) stärken."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Bewegung und Sport",
+  "klasse": 4,
+  "kompetenzbereich": "Selbstkompetenz",
+  "competences": [
+    "BUS.US.4.SEL.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "SEL"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0009",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T13:29:43+00:00"
+}

@@ -1,0 +1,66 @@
+{
+  "id": "c0023.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Entscheide: wahr oder falsch? Begründe jeweils kurz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Bei einer Schiebung (Translation) ändert sich die Orientierung des Objekts.",
+        "Bei einer Spiegelung bleibt die Fläche des Objekts erhalten.",
+        "Eine Drehung um 180° um den Mittelpunkt eines Quadrats ergibt dasselbe Quadrat (Deckabbildung).",
+        "Zwei aufeinanderfolgende Spiegelungen an parallel verlaufenden Geraden ergeben eine Schiebung."
+      ]
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "H1"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GEZ.US.4.TRA.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1. falsch — eine Schiebung verändert Lage, aber nicht Orientierung (kein Umklappen). 2. wahr — Spiegelung ist eine Isometrie: Längen, Winkel und Flächen bleiben erhalten. 3. wahr — ein Quadrat hat eine 180°-Drehdrehsymmetrie um seinen Mittelpunkt. 4. wahr — das ist der Verschiebungssatz (Produkt zweier Spiegelungen an parallelen Achsen = Translation um das Doppelte des Achsenabstands).",
+    "acceptable_reasoning": "Aussage 4 ist fortgeschritten — Teilpunkt für korrekte Intuition ohne Formel.",
+    "rubric": [],
+    "watch_outs": [
+      "Aussage 1: „Orientierung“ bedeutet hier Umlaufsinn (im Uhrzeigersinn / gegen den Uhrzeigersinn) — kurz erklären.",
+      "Aussage 4 ist der Verschiebungssatz — nicht Pflichtstoff, aber eine schöne Einsicht für Neugierige."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Transformationen von Objekten und Relationen zwischen Objekten (I2)",
+  "competences": [
+    "GEZ.US.4.TRA.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "H1"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0023",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

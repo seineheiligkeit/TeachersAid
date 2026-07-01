@@ -1,0 +1,73 @@
+{
+  "id": "c0055.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "multiple_choice",
+    "prompt": "Höre dir den Dialog an. Lehrkraft liest vor:\n\n— Bonjour ! Je m'appelle Léa. Et toi ?\n— Salut ! Moi, c'est Théo.\n— Tu habites où ?\n— J'habite à Lyon. Et toi ?\n— Moi, j'habite à Paris.\n\nWelche Aussage ist richtig?",
+    "payload": {
+      "kind": "multiple_choice",
+      "options": [
+        "Léa habite à Lyon.",
+        "Théo habite à Paris.",
+        "Théo habite à Lyon.",
+        "Léa et Théo habitent à Paris."
+      ],
+      "select": "one"
+    },
+    "response": {
+      "mode": "choices",
+      "options": [
+        "Léa habite à Lyon.",
+        "Théo habite à Paris.",
+        "Théo habite à Lyon.",
+        "Léa et Théo habitent à Paris."
+      ],
+      "select": "one"
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "HOR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS2.US.3.HOR.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "Théo habite à Lyon. (Option C)",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Häufiger Fehler: Schüler:innen verwechseln, wer wo wohnt — die Frage 'Tu habites où?' wird auf die falsche Person bezogen.",
+      "Distraktor A ist plausibel, weil Léa zuerst spricht — Reihenfolge im Dialog bewusst machen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "multiple_choice",
+  "subject": "Zweite lebende Fremdsprache",
+  "klasse": 3,
+  "kompetenzbereich": "Hören",
+  "competences": [
+    "FS2.US.3.HOR.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "HOR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0055",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

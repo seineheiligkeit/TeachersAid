@@ -1,0 +1,77 @@
+{
+  "id": "c0021.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Du hast einen unbekannten Körper vor dir (denk dir einen beliebigen aus) und sollst ihn einer Person beschreiben, die ihn nicht sehen kann. Diese Person soll den Körper anhand deiner Beschreibung zeichnen können.\n\nSchreibe eine vollständige Beschreibung: Welche Darstellungsform wählst du (Netz, Schrägbild, Grundriss + Seitenansichten)? Begründe deine Wahl. Was sind die wesentlichen Maße und Eigenschaften, die du angibst?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "H2",
+      "H3"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GEZ.US.4.GEO.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Offene Aufgabe. Beurteilung: Wahl der Darstellungsform mit Begründung (z. B. „Netz, weil alle Maße maßstabsgetreu“); Angabe der relevanten Maße (Längen, Winkel, Radien); vollständige Beschreibung ohne Mehrdeutigkeit. Bonus: Erkenntnis, dass mehrere Darstellungen zusammen am eindeutigsten sind.",
+    "acceptable_reasoning": "Verschiedene Darstellungsformen sind akzeptabel, wenn die Begründung geometrisch nachvollziehbar ist.",
+    "rubric": [
+      {
+        "criterion": "Wahl und Begründung",
+        "levels": [
+          "Keine Darstellungsform gewählt",
+          "Darstellungsform ohne Begründung",
+          "Darstellungsform mit geometrischer Begründung"
+        ]
+      },
+      {
+        "criterion": "Vollständigkeit der Beschreibung",
+        "levels": [
+          "Unvollständig, Körper nicht rekonstruierbar",
+          "Weitgehend vollständig",
+          "Vollständig und eindeutig rekonstruierbar"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen tendieren dazu, Maße zu vergessen — ohne Maße ist keine eindeutige Darstellung möglich.",
+      "Diese Aufgabe fördert metakognitive Reflexion über Darstellungsformen — Zeit für kurze Diskussion im Plenum nehmen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Geometrische Objekte und ihre Eigenschaften (I1)",
+  "competences": [
+    "GEZ.US.4.GEO.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "H2",
+    "H3"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0021",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

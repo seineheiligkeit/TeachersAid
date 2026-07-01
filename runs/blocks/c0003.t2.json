@@ -1,0 +1,77 @@
+{
+  "id": "c0003.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Du führst folgendes Experiment durch: Du gibst einige Tropfen Rotkohl-Saft (ein natürlicher Indikator) in drei Gläser mit je einer farblosen Flüssigkeit: Glas A (Zitronensaft), Glas B (destilliertes Wasser), Glas C (Natronlauge, stark verdünnt). Glas A färbt sich rot, Glas B blau-violett, Glas C gelblich-grün. Beschreibe, was du in jedem Glas beobachtest, und leite daraus ab, welche Eigenschaft (sauer, neutral, basisch) jede Flüssigkeit hat. Trenne Beobachtung und Schlussfolgerung klar voneinander.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "W",
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.US.x.ALL.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Beobachtung: Glas A → roter Farbton; Glas B → blau-violett; Glas C → gelblich-grün. Schlussfolgerung: Glas A ist sauer (pH < 7), Glas B ist neutral oder leicht sauer (pH ≈ 7), Glas C ist basisch (pH > 7). Volle Punkte nur bei klarer Trennung von Beobachtung ('Der Saft färbt sich rot') und Deutung ('Das bedeutet, die Lösung ist sauer').",
+    "acceptable_reasoning": "Kleine Abweichungen bei den Farbbeschreibungen sind akzeptabel, solange die Zuordnung sauer/neutral/basisch korrekt und die Trennung von Beobachtung und Deutung erkennbar ist.",
+    "rubric": [
+      {
+        "criterion": "Beobachtung",
+        "levels": [
+          "vollständig: Alle drei Farbänderungen korrekt beschrieben, klar als Beobachtung formuliert.",
+          "teilweise: Zwei von drei Beobachtungen korrekt, oder Beobachtung und Deutung teilweise vermischt.",
+          "unzureichend: Weniger als zwei Beobachtungen korrekt oder keine Trennung erkennbar."
+        ]
+      },
+      {
+        "criterion": "Schlussfolgerung",
+        "levels": [
+          "vollständig: Alle drei Flüssigkeiten korrekt als sauer/neutral/basisch identifiziert, logisch aus Beobachtung abgeleitet.",
+          "teilweise: Mindestens zwei korrekt zugeordnet.",
+          "unzureichend: Weniger als zwei korrekt."
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Häufige Fehlvorstellung: 'Rotkohl-Saft ist rot, also zeigt er immer Rot an.' Klarstellen, dass die Ausgangsfarbe des Indikators nicht identisch mit der Anzeige in neutraler Lösung ist.",
+      "Schüler:innen schreiben oft 'Es ist sauer, weil Zitrone sauer ist' — das ist Vorwissen, keine Beobachtung. Auf echte Beobachtungssprache ('ich sehe...') bestehen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Chemie",
+  "klasse": 4,
+  "kompetenzbereich": null,
+  "competences": [
+    "CHE.US.x.ALL.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "W",
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0003",
+  "source": "ai",
+  "created_at": "2026-06-25T11:35:34+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

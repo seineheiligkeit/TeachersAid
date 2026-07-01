@@ -1,0 +1,92 @@
+{
+  "id": "c0081.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Szenario: Eine Großstadt in einem ärmeren Land wächst so schnell, dass Trinkwasser, Schulen und öffentliche Verkehrsmittel nicht mehr für alle reichen. Die Stadtregierung hat begrenzte Mittel und muss Prioritäten setzen.\nWelche Maßnahme würdest du zuerst umsetzen? Begründe deine Entscheidung und erkläre, welche Folgen sie hätte – und welche Folgen du in Kauf nimmst.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Die Stadt hat Geld für genau eine dieser Maßnahmen: (A) Bau neuer Schulen in Randgebieten, (B) Ausbau der Trinkwasserversorgung, (C) Erweiterung des öffentlichen Busnetzes."
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "UK",
+      "HK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.4.ENT2.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Alle drei Entscheidungen sind vertretbar, wenn gut begründet. Musterbegründungen: A (Schulen) – Bildung als langfristige Lösung, reduziert Fertilitätsrate, stärkt Wirtschaft, aber kurzfristig kein direkter Überlebensnutzen. B (Wasser) – unmittelbarster Gesundheitseffekt, rettet Leben, aber löst Bildungs-/Mobilitätsprobleme nicht. C (Busnetz) – verbessert Erreichbarkeit von Arbeit/Schule/Gesundheit, schafft wirtschaftliche Chancen, aber indirekter Effekt.",
+    "acceptable_reasoning": "Keine richtige Antwort – Argumentation und Abwägen von Folgen zählen.",
+    "rubric": [
+      {
+        "criterion": "Klare Entscheidung für eine Maßnahme",
+        "levels": [
+          "Eindeutige Wahl mit Begründung",
+          "Wahl ohne Begründung",
+          "Keine Entscheidung getroffen"
+        ]
+      },
+      {
+        "criterion": "Folgenabwägung",
+        "levels": [
+          "Positive Folge + Nachteil (Trade-off) erkannt",
+          "Nur positive Folge",
+          "Keine Folgenbetrachtung"
+        ]
+      },
+      {
+        "criterion": "Bezug auf Lebensrealität in Wachstumsstadt",
+        "levels": [
+          "Kontext klar einbezogen",
+          "Teilweise",
+          "Kontext ignoriert"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen neigen dazu, alle drei Maßnahmen zu wählen. Die Aufgabe erfordert explizit Priorisierung – einfordern.",
+      "Folgen in Kauf nehmen: explizit fragen, was bei der nicht gewählten Option verloren geht (Trade-off denken)."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 4,
+  "kompetenzbereich": "Entwicklungen in einer globalisierten Welt",
+  "competences": [
+    "GWB.US.4.ENT2.04"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "UK",
+    "HK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0081",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:16+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

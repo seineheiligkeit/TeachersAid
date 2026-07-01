@@ -1,0 +1,81 @@
+{
+  "id": "c0085.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "modelling_task",
+    "prompt": "In einer Klasse mit 20 Schüler:innen werden die Ergebnisse eines Mathematiktests erfasst. 18 Schüler:innen erzielen Ergebnisse zwischen 50 und 70 Punkten, 2 Schüler:innen erzielen 98 und 100 Punkte. (a) Schätze ohne Rechnung: Ist der Mittelwert oder der Median ein besseres Maß für den ‚typischen' Schüler in dieser Klasse? (b) Berechne näherungsweise den Mittelwert (nimm für die 18 Schüler:innen einen typischen Wert von 60 an). (c) Erkläre, welchen Kennwert eine Lehrkraft wählen sollte, wenn sie den Klasse-Schnitt fair beschreiben möchte.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "MOD",
+      "BEG"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.3.DAT.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "(a) Median: die zwei Ausreißer (98, 100) verzerren den Mittelwert. (b) Näherung: (18·60 + 98 + 100)/20 = (1080+198)/20 = 1278/20 = 63,9 Punkte. Ohne Ausreißer wäre der Mittelwert 60. (c) Für ‚typisch' ist der Median besser (er liegt bei ca. 60, der Mittelwert bei knapp 64 — die zwei Ausreißer heben ihn an, obwohl fast alle Schüler:innen deutlich darunter liegen).",
+    "acceptable_reasoning": "Ausreißer-Effekt auf Mittelwert vs. Median; Entscheidung mit Argument.",
+    "rubric": [
+      {
+        "criterion": "Schätzung/Berechnung nachvollziehbar",
+        "levels": [
+          "Keine Berechnung",
+          "Ansatz erkennbar",
+          "Korrekte Näherungsrechnung"
+        ]
+      },
+      {
+        "criterion": "Begründete Empfehlung",
+        "levels": [
+          "Keine Begründung",
+          "Empfehlung ohne Argument",
+          "Empfehlung mit klarem Ausreißer-Argument"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen tendieren dazu, immer den Mittelwert zu wählen, weil er ‚genauer' wirkt.",
+      "‚Näherungsweise' signalisiert: exakte Werte der 18 sind nicht gegeben — Schätzwert 60 ist zulässig."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "modelling_task",
+  "subject": "Mathematik",
+  "klasse": 3,
+  "kompetenzbereich": "4: Daten und Zufall",
+  "competences": [
+    "MAT.US.3.DAT.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "MOD",
+    "BEG"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0085",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:19+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

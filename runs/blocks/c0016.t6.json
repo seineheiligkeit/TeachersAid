@@ -1,0 +1,69 @@
+{
+  "id": "c0016.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Erstelle einen kurzen Leitfaden (als nummerierte Liste) für deine Schulklasse: 'In 5 Schritten – so erkennst du Fake News'. Formuliere jeden Schritt als konkrete Handlungsanweisung. Dein Leitfaden soll auch für Personen verständlich sein, die noch wenig Erfahrung mit dem Thema haben.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 10
+    },
+    "cognitive_level": "create",
+    "dimensions": [
+      "I",
+      "G"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DGB.US.2.KOM.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Mögliche Schritte: (1) Quelle prüfen – wer hat das veröffentlicht, ist die Website bekannt? (2) Nicht nur die Überschrift lesen – Überschrift und Inhalt können sich widersprechen. (3) Datum und Kontext kontrollieren – ist die Meldung neu oder aus dem Zusammenhang gerissen? (4) Mehrere seriöse Quellen vergleichen – berichten ORF, APA oder andere Medien dasselbe? (5) Faktencheck-Seiten nutzen (Mimikama.at, APA-Faktencheck). – Leitfaden muss handlungsorientiert und für Laien verständlich sein.",
+    "acceptable_reasoning": "Die fünf Schritte müssen nicht identisch mit der Musterlösung sein; entscheidend ist Konkretheit und Verständlichkeit.",
+    "rubric": [
+      {
+        "criterion": "Handlungsorientierung",
+        "levels": [
+          "Abstrakte Ratschläge ohne Handlungsschritte",
+          "Teilweise konkret, teilweise allgemein",
+          "Alle fünf Schritte sind klar handlungsorientiert und verständlich"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen schreiben häufig 'sei kritisch' – nachfragen: Was heißt das konkret? Welche Handlung führst du aus?",
+      "Österreichische Faktencheck-Ressourcen (Mimikama, APA-Faktencheck) kennen und benennen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Digitale Grundbildung",
+  "klasse": 2,
+  "kompetenzbereich": "Kommunikation: Kommunizieren und Kooperieren unter Nutzung informatischer, medialer Systeme",
+  "competences": [
+    "DGB.US.2.KOM.02"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "I",
+    "G"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0016",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

@@ -1,0 +1,70 @@
+{
+  "id": "c0060.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "ordering",
+    "prompt": "Bringe die Wörter in eine sinnvolle lateinische Satzreihenfolge (Subjekt — Objekt — Verb ist typisch, aber nicht zwingend). Schreibe dann die deutsche Übersetzung dazu.\n\nWörter: 1) agricola / amat / villam / suam\n         2) puer / videt / lunam / claram",
+    "payload": {
+      "kind": "ordering",
+      "items": [
+        "agricola",
+        "amat",
+        "villam",
+        "suam",
+        "puer",
+        "videt",
+        "lunam",
+        "claram"
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "apply",
+    "dimensions": [
+      "SPR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "LAT.US.3.SPR.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "1) Agricola villam suam amat. — Der Bauer liebt sein Landgut. | 2) Puer lunam claram videt. — Der Knabe sieht den hellen Mond. (Andere Wortstellungen sind möglich, solange Kasus-Kongruenz stimmt.)",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Suam muss zu villam gehören (Akk. Sg. f.) — Possessivpronomen kongruiert mit dem Bezugswort.",
+      "Claram kongruiert mit lunam (Akk. Sg. f.) — nochmals Adjektiv-Kongruenz üben."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "ordering",
+  "subject": "Latein",
+  "klasse": 3,
+  "kompetenzbereich": "Sprach- und textbezogene Kompetenzen",
+  "competences": [
+    "LAT.US.3.SPR.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "SPR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0060",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

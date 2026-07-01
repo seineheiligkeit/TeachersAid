@@ -1,0 +1,125 @@
+{
+  "id": "c0131.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "ordering",
+    "prompt": "Bringe die folgenden Schritte der Genexpression in die richtige Reihenfolge (1 = erster Schritt):\n\nA) Das Ribosom liest die mRNA ab und verknüpft Aminosäuren zu einer Polypeptidkette.\nB) Die RNA-Polymerase bindet an den Promotor des Gens.\nC) Die fertige mRNA verlässt den Zellkern durch Kernporen.\nD) Die prä-mRNA wird gespleißt (Introns entfernt, Exons verknüpft).\nE) Die Polypeptidkette faltet sich zum funktionsfähigen Protein.",
+    "payload": {
+      "kind": "ordering",
+      "items": [
+        "A) Ribosom liest mRNA ab",
+        "B) RNA-Polymerase bindet an Promotor",
+        "C) mRNA verlässt Zellkern",
+        "D) prä-mRNA wird gespleißt",
+        "E) Polypeptid faltet sich"
+      ]
+    },
+    "response": {
+      "mode": "none"
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.OS.8.KOM6.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "Korrekte Reihenfolge: B → D → C → A → E",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Viele Schüler:innen verwechseln die Reihenfolge von Spleißen und Kernexport: Das Spleißen findet noch im Kern statt, bevor die mRNA exportiert wird.",
+      "Häufige Fehlvorstellung: Das Ribosom befindet sich im Kern. Tatsächlich findet die Translation im Zytoplasma statt (außer bei Mitochondrien)."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "ordering",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 8,
+  "kompetenzbereich": "Kompetenzmodul 7",
+  "competences": [
+    "BIO.OS.8.KOM6.02"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:timeline",
+      "spec": {
+        "events": [
+          {
+            "at": 1,
+            "label": "DNA-Doppelhelix"
+          },
+          {
+            "at": 2,
+            "label": "Transkription (Zellkern)"
+          },
+          {
+            "at": 3,
+            "label": "prä-mRNA"
+          },
+          {
+            "at": 4,
+            "label": "RNA-Prozessierung (Spleißen)"
+          },
+          {
+            "at": 5,
+            "label": "reife mRNA"
+          },
+          {
+            "at": 6,
+            "label": "Translation (Ribosom)"
+          },
+          {
+            "at": 7,
+            "label": "Polypeptidkette"
+          },
+          {
+            "at": 8,
+            "label": "Proteinfaltung → Protein"
+          }
+        ],
+        "title": "Stationen der Genexpression (vereinfacht)",
+        "xlabel": "Station"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0131",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:18+00:00",
+  "updated_at": "2026-06-29T18:21:21+00:00"
+}

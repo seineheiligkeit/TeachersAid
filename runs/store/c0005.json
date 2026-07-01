@@ -1,0 +1,510 @@
+{
+  "id": "c0005",
+  "stage": "content",
+  "status": "approved",
+  "source": "generated",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-29T18:40:21+00:00",
+  "title": "Bewegung und Sport 2. Kl. — Fair Play — Was bedeutet es wirklich? (generiert)",
+  "note": "",
+  "request": {
+    "subject": "Bewegung und Sport",
+    "klasse": 2,
+    "stufe": "Unterstufe",
+    "schulform": null,
+    "topic_raw": "Fair Play — Was bedeutet es wirklich?",
+    "envelope": "doppelstunde",
+    "options": {}
+  },
+  "resolution": {
+    "fassung": {
+      "kurztitel": "AHS-Lehrplan (konsolidiert)",
+      "bgbl": "BGBl. II Nr. 204/2024",
+      "doknr": "NOR40264237",
+      "valid_from": "2024-09-01",
+      "valid_to": "2026-08-31"
+    },
+    "subject": "Bewegung und Sport",
+    "klasse": 2,
+    "matched_kompetenzbereiche": [
+      "Sozialkompetenz"
+    ],
+    "grade_check": true,
+    "competences": [
+      {
+        "id": "BUS.US.2.SOZ.01",
+        "kompetenzbereich": "Sozialkompetenz",
+        "klasse": 2,
+        "text": "faires und nicht faires Verhalten differenzieren und sich selbst fair verhalten.",
+        "source_ref": "BEWEGUNG UND SPORT / 2. Klasse / Sozialkompetenz",
+        "dimensions": [
+          "SOZ"
+        ],
+        "uebergreifende_themen": [
+          5,
+          7
+        ],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      }
+    ],
+    "notes": []
+  },
+  "plan": null,
+  "content": {
+    "meta": {
+      "title": "Fair Play — Was bedeutet es wirklich?",
+      "subtitle": "LLM-Entwurf — Erstprüfung",
+      "subject": "Bewegung und Sport",
+      "stufe": "Unterstufe",
+      "klasse": 2,
+      "kernfrage": "Was unterscheidet faires von unfairem Verhalten im Sport, und wie verhältst du dich selbst?",
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "lehrplan_label": "Bewegung und Sport · 2. Klasse · Sozialkompetenz",
+      "content_language": "de",
+      "subject_models": []
+    },
+    "subject_model": {
+      "subject": "Bewegung und Sport",
+      "stufe": "Unterstufe",
+      "dimensions": [
+        {
+          "id": "FAC",
+          "label": "Fachkompetenz",
+          "note": null,
+          "modality": "enactive"
+        },
+        {
+          "id": "MET",
+          "label": "Methodenkompetenz",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "SOZ",
+          "label": "Sozialkompetenz",
+          "note": null,
+          "modality": "enactive"
+        },
+        {
+          "id": "SEL",
+          "label": "Selbstkompetenz",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "content_areas": [],
+      "task_kind_extensions": [
+        "movement_task",
+        "training_log"
+      ]
+    },
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Faires und unfaires Verhalten erkennen",
+        "teacher_overview": {
+          "throughline": "Schüler:innen sollen Fair Play nicht als abstrakte Regel, sondern als aktiv gestaltbare Haltung erleben — vom Erkennen konkreter Situationen bis zur Reflexion des eigenen Verhaltens.",
+          "talking_points": [
+            "Fair Play hat zwei Ebenen: die Einhaltung formaler Regeln (formales Fair Play) und respektvolles, rücksichtsvolles Verhalten über die Regeln hinaus (informales Fair Play).",
+            "Unfaires Verhalten entsteht oft aus Druck, Gewinnwillen oder Unachtsamkeit — nicht immer aus böser Absicht. Das Gespräch darüber öffnet Reflexionsräume.",
+            "Schiedsrichter:innen-Entscheidungen akzeptieren ist eine Kernkompetenz des fairen Sports — auch wenn man anderer Meinung ist.",
+            "Konkrete Beispiele aus dem Schulsport (z. B. beim Volleyball oder Völkerball) erden die Diskussion."
+          ],
+          "extensions": [
+            "Die Klasse entwickelt gemeinsam einen Fairness-Kodex für den eigenen Sportunterricht.",
+            "Schüler:innen beobachten beim nächsten Spieltag gezielt Fair-Play-Momente und notieren sie.",
+            "Recherche: Welche Fair-Play-Auszeichnungen gibt es im österreichischen Sport?"
+          ],
+          "differentiation": null,
+          "timing_notes": null
+        },
+        "blocks": [
+          {
+            "id": "t1",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "true_false_justify",
+            "prompt": "Lies die folgenden Aussagen und entscheide: richtig oder falsch? Begründe deine Entscheidung in einem Satz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Fair Play bedeutet nur, die offiziellen Regeln des Spiels einzuhalten.",
+                "Wenn der Ball im Volleyball die Linie berührt, zählt der Punkt — auch wenn du selbst nicht sicher bist.",
+                "Eine Mannschaft, die verliert, darf das Ergebnis anfechten, wenn sie findet, dass ungerecht gespielt wurde.",
+                "Den gegnerischen Spieler:innen nach dem Spiel die Hand geben ist ein Zeichen von Fair Play."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "remember",
+            "difficulty": null,
+            "dimensions": [
+              "SOZ"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "BUS.US.2.SOZ.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "1. Falsch — Fair Play umfasst auch respektvolles Verhalten über die Regeln hinaus (informales Fair Play). 2. Richtig — die Regel gilt unabhängig von eigener Unsicherheit; Selbstanzeige ist aber ebenfalls fair. 3. Falsch — Ergebnisse können nur durch offizielle Einspruchsverfahren, nicht durch einseitige Anfechtung, korrigiert werden. 4. Richtig — Handschlag nach dem Spiel ist ein klassisches Symbol des informalen Fair Play.",
+            "acceptable_reasoning": "Schüler:innen erkennen die Unterscheidung formal/informal; beim zweiten Statement ist auch 'Richtig, aber Selbstanzeige wäre noch fairer' akzeptabel.",
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Viele Schüler:innen glauben, Fair Play erschöpfe sich in der Regelkonformität — die informal-Ebene explizit ansprechen.",
+              "Statement 3 kann Diskussionen über 'Gerechtigkeit vs. Regeln' auslösen — das ist produktiv, aber moderiert halten."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t2",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "decision_scenario",
+            "prompt": "Stell dir vor: Ihr spielt Volleyball. Beim entscheidenden Punkt berührt der Ball beim Aufschlag knapp die Linie auf eurer Seite — Punkt für die andere Mannschaft. Nur du hast das gesehen, der/die Schiedsrichter:in hat es übersehen und gibt eurer Mannschaft den Punkt. Was tust du? Beschreibe, was du sagst oder machst, und erkläre kurz warum.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Volleyball: Der Ball hat die Linie auf eurer Seite berührt, der/die Schiedsrichter:in hat es nicht gesehen und gibt euch den Punkt."
+            },
+            "response": {
+              "mode": "box",
+              "min_height_mm": 35.0
+            },
+            "cognitive_level": "evaluate",
+            "difficulty": null,
+            "dimensions": [
+              "SOZ"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "BUS.US.2.SOZ.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 7,
+            "answer_key": "Faires Verhalten: Die Spieler:in korrigiert die Schiedsrichter:in und gibt den Punkt ab (Selbstanzeige). Begründung: Fair Play bedeutet, auch dann ehrlich zu sein, wenn es einem selbst schadet. Der Wert des Sieges hängt davon ab, ob er verdient ist.",
+            "acceptable_reasoning": "Antworten, die den inneren Konflikt beschreiben und Fair Play dennoch wählen, sind vollwertig. Antworten, die den Punkt behalten, aber begründen können, warum das problematisch ist, zeigen noch partielle Kompetenz.",
+            "rubric": [
+              {
+                "criterion": "Entscheidung",
+                "levels": [
+                  "Keine klare Entscheidung getroffen",
+                  "Entscheidung getroffen, ohne Begründung",
+                  "Faire Entscheidung mit plausibler Begründung"
+                ]
+              },
+              {
+                "criterion": "Reflexion",
+                "levels": [
+                  "Kein Bezug zu Fair Play",
+                  "Oberflächlicher Bezug",
+                  "Bezug zu Selbstanzeige und Wert des fairen Sieges"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Schüler:innen könnten argumentieren, 'alle anderen machen das auch' — Gruppendenken als Gegenargument ansprechen.",
+              "Nicht moralisieren: Das Szenario soll zum Nachdenken einladen, nicht Schuldgefühle erzeugen."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t3",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "matching",
+            "prompt": "Ordne jede Beschreibung der passenden Fair-Play-Kategorie zu: schreibe den Buchstaben der Kategorie neben die Nummer.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "1. Du spielst den Ball ins Aus, obwohl du glaubst, er war im Feld.",
+                "2. Du gibst der verletzten Gegenspielerin die Hand und fragst, ob sie okay ist.",
+                "3. Du akzeptierst die Entscheidung der Schiedsrichterin, auch wenn du anderer Meinung bist.",
+                "4. Du schreist die Gegenmannschaft nicht an, obwohl ihr verliert.",
+                "5. Du zeigst selbst an, dass du das Netz berührt hast."
+              ],
+              "right": [
+                "A — Formales Fair Play (Regelkonformität)",
+                "B — Informales Fair Play (Respekt und Haltung)",
+                "C — Selbstanzeige (aktive Ehrlichkeit)"
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "understand",
+            "difficulty": null,
+            "dimensions": [
+              "SOZ"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "BUS.US.2.SOZ.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "answer_key": "1–A, 2–B, 3–B, 4–B, 5–C. Hinweis: Einige Schüler:innen werden 1 als C einordnen — das ist akzeptabel, wenn sie erklären, dass ein Ins-Aus-Spielen auch Selbstanzeige sein kann; formal ist es jedoch Regelkonformität.",
+            "acceptable_reasoning": "1–C ist ebenfalls akzeptabel mit Begründung. Mehrfachzuordnungen (z. B. 3 auch A) mit Begründung anerkennen.",
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Die Kategorien sind nicht trennscharf — das ist gewollt und ein gutes Gesprächsthema.",
+              "Schüler:innen kennen 'Selbstanzeige' eventuell noch nicht als Begriff — kurz einführen."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t4",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "open_response",
+            "prompt": "Denk an einen Moment im Sport (Schulsport, Vereinssport, Zuschauen), in dem du unfaires Verhalten beobachtet hast — oder selbst unbeabsichtigt unfair warst. Beschreibe kurz die Situation (3–4 Sätze) und erkläre, was man stattdessen hätte tun können.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 40.0
+            },
+            "cognitive_level": "analyze",
+            "difficulty": null,
+            "dimensions": [
+              "SOZ",
+              "SEL"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "BUS.US.2.SOZ.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Offene Antwort — bewertet werden: Konkretheit der Situationsbeschreibung, ehrliche Selbstreflexion (nicht nur andere beschuldigen), ein realistischer alternativer Handlungsvorschlag.",
+            "acceptable_reasoning": null,
+            "rubric": [
+              {
+                "criterion": "Situationsbeschreibung",
+                "levels": [
+                  "Keine oder sehr vage Beschreibung",
+                  "Situation erkennbar, aber abstrakt",
+                  "Konkrete, nachvollziehbare Situation"
+                ]
+              },
+              {
+                "criterion": "Alternative",
+                "levels": [
+                  "Keine Alternative genannt",
+                  "Alternative genannt, aber nicht begründet",
+                  "Sinnvolle, begründete Alternative"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Vertraulichkeit ansprechen: Mitschüler:innen nicht beim Namen nennen.",
+              "Schüler:innen, die 'nichts Unfaires erlebt haben', sanft auf Situationen wie Meckern, Regelausnutzung oder Sticheln hinweisen."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t5",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "ordering",
+            "prompt": "Bringe die folgenden Reaktionen auf eine Schiedsrichter:innen-Fehlentscheidung in eine Reihenfolge von 'fairstes Verhalten' (1) bis 'unfairstes Verhalten' (5). Begründe kurz, warum du die Reihenfolge so gewählt hast.",
+            "payload": {
+              "kind": "ordering",
+              "items": [
+                "A — Du sagst nichts und spielst weiter.",
+                "B — Du fragst ruhig: 'War das wirklich so?' und akzeptierst die Antwort.",
+                "C — Du schreist: 'Das ist total ungerecht!' und verlässt kurz das Spielfeld.",
+                "D — Du beschwerst dich noch nach dem Spiel lautstark im Gespräch mit anderen.",
+                "E — Du sagst der Schiedsrichterin nach dem Spiel freundlich, was du gesehen hast."
+              ]
+            },
+            "response": {
+              "mode": "box",
+              "min_height_mm": 35.0
+            },
+            "cognitive_level": "evaluate",
+            "difficulty": null,
+            "dimensions": [
+              "SOZ"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "BUS.US.2.SOZ.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Eine mögliche faire Reihenfolge (es gibt vertretbare Varianten): 1–B (ruhige Nachfrage + Akzeptanz), 2–E (freundliches Feedback nach dem Spiel), 3–A (schweigendes Akzeptieren), 4–C (Emotionsausbruch, aber man kehrt zurück), 5–D (anhaltende Beschwerde nach dem Spiel). Wichtig: B und E können auch getauscht werden; Begründungen zählen mehr als die genaue Reihenfolge.",
+            "acceptable_reasoning": "Vertretbare Abweichungen (z. B. A vor E) mit Begründung voll anerkennen.",
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Es gibt keine perfekt 'richtige' Reihenfolge — Ziel ist das Begründen, nicht das Erraten.",
+              "C wird oft als 'gar nicht so schlimm' eingestuft — auf die Wirkung auf Schiedsrichter:innen und Mitspielende hinweisen."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t6",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "create_produce",
+            "prompt": "Erstelle für deine Klasse 3 konkrete Fair-Play-Regeln für den Sportunterricht. Formuliere sie positiv (was ihr tun wollt, nicht was ihr nicht tun sollt). Erkläre bei jeder Regel in einem Satz, warum sie wichtig ist.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "create",
+            "difficulty": null,
+            "dimensions": [
+              "SOZ"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "BUS.US.2.SOZ.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Musterantworten (viele richtige Varianten möglich): 1. 'Wir geben einander nach Fehlern eine ermutigende Rückmeldung.' — Positives Feedback stärkt das Lernklima. 2. 'Wir akzeptieren Entscheidungen der Schiedsrichter:innen und besprechen Zweifel nach dem Spiel.' — Das hält den Spielfluss aufrecht. 3. 'Wir begrüßen und verabschieden die Gegenmannschaft.' — Respekt gehört zum Sport dazu. Bewertung: Positiv formuliert? Realistisch umsetzbar? Begründung sinnvoll?",
+            "acceptable_reasoning": null,
+            "rubric": [
+              {
+                "criterion": "Positive Formulierung",
+                "levels": [
+                  "Regeln negativ formuliert",
+                  "Teilweise positiv formuliert",
+                  "Alle 3 Regeln positiv formuliert"
+                ]
+              },
+              {
+                "criterion": "Begründung",
+                "levels": [
+                  "Keine Begründung",
+                  "Begründung vorhanden, aber pauschal",
+                  "Konkrete, nachvollziehbare Begründung für jede Regel"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Negativ formulierte Regeln ('kein Meckern') durch Umformulierung in Positivversionen verbessern lassen — das ist die eigentliche Lernaufgabe.",
+              "Zu abstrakte Regeln ('immer nett sein') konkretisieren lassen: Wann genau? Was genau?"
+            ],
+            "self_check": null
+          }
+        ]
+      }
+    ],
+    "assets": [],
+    "nachweis": {
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "statement": "Diese Materialien adressieren 1 von 1 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
+      "competence_coverage": [
+        {
+          "competence_id": "BUS.US.2.SOZ.01",
+          "exercised_by": [
+            "t1",
+            "t2",
+            "t3",
+            "t4",
+            "t5",
+            "t6"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        }
+      ],
+      "gaps": [],
+      "zentrale_konzepte": [
+        "Sozialkompetenz"
+      ],
+      "uebergreifende_themen": [
+        5,
+        7
+      ]
+    },
+    "depth_profile": {
+      "by_level": {
+        "remember": 1,
+        "evaluate": 2,
+        "understand": 1,
+        "analyze": 1,
+        "create": 1
+      },
+      "by_dimension": {
+        "SOZ": 6
+      },
+      "by_difficulty": {},
+      "minutes_total": 45,
+      "minutes_resource_independent": 45
+    },
+    "rack": null
+  },
+  "artifacts": {
+    "student_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0005\\student.pdf",
+    "teacher_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0005\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0005\\homework.pdf",
+    "preview_png": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0005\\raster\\student.p1.png"
+  },
+  "verify_problems": [],
+  "verify_warnings": [],
+  "parent_id": null,
+  "feedback": [],
+  "error": null
+}

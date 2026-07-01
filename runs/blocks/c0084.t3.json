@@ -1,0 +1,72 @@
+{
+  "id": "c0084.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "ordering",
+    "prompt": "Ordne die folgenden vier Funktionen nach ihrer Steigung — von der steilsten fallenden bis zur steilsten steigenden Geraden.",
+    "payload": {
+      "kind": "ordering",
+      "items": [
+        "f(x) = 3x − 1",
+        "g(x) = −2x + 4",
+        "h(x) = 0,5x + 2",
+        "k(x) = −x − 3"
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 2
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "DAR",
+      "BEG"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.4.VAR.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "Von steilster Fallend bis steilster Steigend: g(x)=−2x+4 (m=−2), k(x)=−x−3 (m=−1), h(x)=0,5x+2 (m=0,5), f(x)=3x−1 (m=3).",
+    "acceptable_reasoning": "Steigung aus der Gleichung ablesen (Koeffizient vor x); Ordnung nach dem Zahlenwert.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Vorzeichen der Steigung mit dem y-Achsenabschnitt verwechseln.",
+      "‚Steilheit' bedeutet Betrag der Steigung, aber die Richtung (Fallen/Steigen) ist durch das Vorzeichen bestimmt."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "ordering",
+  "subject": "Mathematik",
+  "klasse": 4,
+  "kompetenzbereich": "2: Variablen und Funktionen",
+  "competences": [
+    "MAT.US.4.VAR.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "DAR",
+    "BEG"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0084",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:18+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

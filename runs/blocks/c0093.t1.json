@@ -1,0 +1,86 @@
+{
+  "id": "c0093.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Trage in die Tabelle ein, welche Bank-, Verkehrs- und Handelsdienstleistungen du oder deine Familie in einer typischen Woche nutzt. Fülle mindestens zwei Zeilen pro Spalte aus. Kreuze außerdem an, ob du diese Dienstleistung **persönlich vor Ort** oder **digital (App/Internet)** nutzt.\n\n*(Tipp: Denke an Einkäufe, Fahrten zur Schule, Geldabheben, Online-Bestellungen, Zugtickets, ...)*",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Dienstleistung",
+        "Anbieter (Beispiel)",
+        "Vor Ort / Digital"
+      ],
+      "rows": 9
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "OK",
+      "HK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.2.VER.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Individuelle Antworten. Mögliche Beispiele: Bank — Girokonto eröffnen (vor Ort), Überweisung senden (digital), Geld am Automaten abheben (Mischform). Verkehr — Busfahrt (vor Ort), Zugticket kaufen (digital). Handel — Supermarkteinkauf (vor Ort), Online-Bestellung (digital). Lehrkraft bewertet Vollständigkeit und korrekte Typ-Zuordnung.",
+    "acceptable_reasoning": "Manche Dienste sind Grenzfälle (z. B. Postversand: Verkehr + Handel). Als Anlass nutzen, um zu zeigen, dass Dienstleistungen oft kombiniert werden.",
+    "rubric": [
+      {
+        "criterion": "Vollständigkeit (mind. 2 je Typ)",
+        "levels": [
+          "Alle drei Typen mit ≥ 2 Beispielen",
+          "Zwei Typen vollständig",
+          "Nur ein Typ"
+        ]
+      },
+      {
+        "criterion": "Typ-Zuordnung korrekt",
+        "levels": [
+          "Korrekte Einordnung",
+          "Teils korrekt",
+          "Mehrheitlich falsch"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen schreiben manchmal Firmennamen statt Dienstleistungen (z. B. 'Amazon' statt 'Online-Bestellung') — kurz korrigieren.",
+      "Die Unterscheidung vor Ort / digital ist für manche Dienste nicht eindeutig (z. B. Ticketautomat) — als Diskussionsanlass akzeptieren."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 2,
+  "kompetenzbereich": "Vernetztes Wirtschaften zwischen Produktion und Konsum",
+  "competences": [
+    "GWB.US.2.VER.03"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "OK",
+    "HK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0093",
+  "source": "ai",
+  "created_at": "2026-06-26T19:02:25+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

@@ -1,0 +1,78 @@
+{
+  "id": "c0062.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Stell dir vor, du bist Quintus (oder Claudia) und schreibst einen kurzen Brief an einen Freund (oder eine Freundin) in Griechenland. Beschreibe deinen Alltag in der römischen Familie in 4–5 deutschen Sätzen. Versuche, mindestens drei lateinische Wörter aus dieser Stunde einzubauen (und erkläre sie in Klammern auf Deutsch).",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "create",
+    "dimensions": [
+      "INH",
+      "SPR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "LAT.US.3.INH.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Musterlösung (viele Varianten akzeptabel): 'Salve! Ich bin Quintus, filius (Sohn) des Marcus. Ich lebe in Roma (Rom) in unserem großen domus (Haus). Jeden Tag gehe ich in den ludus (die Schule) und lerne dort. Meine soror (Schwester) Claudia bleibt zu Hause. Meine mater (Mutter) verwaltet den Haushalt. Vale!'",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Lateinische Einschübe",
+        "levels": [
+          "Mindestens drei lateinische Wörter korrekt verwendet und erklärt.",
+          "Ein bis zwei Wörter eingebaut.",
+          "Keine lateinischen Wörter verwendet."
+        ]
+      },
+      {
+        "criterion": "Inhaltliche Plausibilität",
+        "levels": [
+          "Beschreibung passt zum antiken Alltagsleben und ist kreativ.",
+          "Grundelemente vorhanden, aber ohne Bezug zur Antike.",
+          "Brief ohne Bezug zum Thema."
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Die Kreativität steht im Vordergrund — nicht auf perfekte Grammatik bestehen, aber lateinische Einschübe sollen korrekt verwendet sein.",
+      "Schüler:innen die Wahl zwischen Quintus und Claudia geben — das eröffnet Gespräch über Geschlechterperspektiven im antiken Rom.",
+      "Briefformeln: Salve (Gruß) und Vale (Abschied) einführen, falls noch nicht bekannt."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Latein",
+  "klasse": 3,
+  "kompetenzbereich": "Inhalts- und themenbezogene Kompetenzen",
+  "competences": [
+    "LAT.US.3.INH.03"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "INH",
+    "SPR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0062",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

@@ -1,0 +1,80 @@
+{
+  "id": "c0014.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Lies die folgende Situation und entscheide:\n\n**Situation:** Deine beste Freundin / dein bester Freund hat gerade erfahren, dass ihre/seine Eltern sich scheiden lassen. Du möchtest ihr/ihm schreiben.\n\n**Deine Entscheidung:** Wie schreibst du? Wähle aus:\n- A: Eine kurze Sprachnachricht (30 Sekunden)\n- B: Eine WhatsApp-Textnachricht (ca. 3–5 Sätze)\n- C: Einen handgeschriebenen Brief\n- D: Eine ausführliche E-Mail\n\nBegründe, welche Form du wählen würdest und warum. Schreibe dann **die ersten zwei Sätze** deiner gewählten Nachricht.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Wie kommunizierst du in einer emotional wichtigen Situation schriftlich – und welche Form passt wann?"
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "SCH",
+      "SPR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DEU.US.4.SCH.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Alle Entscheidungen sind vertretbar, wenn gut begründet. Mögliche Begründungen: A: Nähe und Spontaneität, kein falsches Wort zu suchen. B: Schnell, direkt, man kann Emojis nutzen. C: Handgeschrieben zeigt mehr Aufwand und Sorgfalt, wirkt persönlicher. D: Eher unpassend, zu formell für eine enge Freundschaft. Die ersten zwei Sätze sollen dem gewählten Ton entsprechen.",
+    "acceptable_reasoning": "Es gibt keine falsche Antwort – entscheidend ist die Konsistenz zwischen Begründung und geschriebenen Sätzen.",
+    "rubric": [
+      {
+        "criterion": "Begründung der Formwahl",
+        "levels": [
+          "Keine oder sehr kurze Begründung",
+          "Form benannt, aber Begründung oberflächlich",
+          "Form mit Bezug auf Situation, Beziehung und Kommunikationswirkung begründet"
+        ]
+      },
+      {
+        "criterion": "Konsistenz von Form und Text",
+        "levels": [
+          "Gewählte Form und geschriebene Sätze passen nicht zusammen",
+          "Leichte Inkonsistenz im Ton",
+          "Ton der Sätze entspricht der gewählten Form deutlich"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen wählen manchmal D aus Gewohnheit (Schulkontex) – darauf hinweisen, dass Kontext (enge Freundschaft) entscheidend ist.",
+      "Die 'ersten zwei Sätze' prüfen: Passt der Ton zur gewählten Form? Ist ein Brief-Einstieg bei einer WhatsApp-Entscheidung ein Widerspruch?"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Deutsch",
+  "klasse": 4,
+  "kompetenzbereich": "Schreiben",
+  "competences": [
+    "DEU.US.4.SCH.04"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "SCH",
+    "SPR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0014",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

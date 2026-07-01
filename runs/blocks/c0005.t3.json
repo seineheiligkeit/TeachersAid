@@ -1,0 +1,72 @@
+{
+  "id": "c0005.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne jede Beschreibung der passenden Fair-Play-Kategorie zu: schreibe den Buchstaben der Kategorie neben die Nummer.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "1. Du spielst den Ball ins Aus, obwohl du glaubst, er war im Feld.",
+        "2. Du gibst der verletzten Gegenspielerin die Hand und fragst, ob sie okay ist.",
+        "3. Du akzeptierst die Entscheidung der Schiedsrichterin, auch wenn du anderer Meinung bist.",
+        "4. Du schreist die Gegenmannschaft nicht an, obwohl ihr verliert.",
+        "5. Du zeigst selbst an, dass du das Netz berührt hast."
+      ],
+      "right": [
+        "A — Formales Fair Play (Regelkonformität)",
+        "B — Informales Fair Play (Respekt und Haltung)",
+        "C — Selbstanzeige (aktive Ehrlichkeit)"
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "SOZ"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BUS.US.2.SOZ.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "1–A, 2–B, 3–B, 4–B, 5–C. Hinweis: Einige Schüler:innen werden 1 als C einordnen — das ist akzeptabel, wenn sie erklären, dass ein Ins-Aus-Spielen auch Selbstanzeige sein kann; formal ist es jedoch Regelkonformität.",
+    "acceptable_reasoning": "1–C ist ebenfalls akzeptabel mit Begründung. Mehrfachzuordnungen (z. B. 3 auch A) mit Begründung anerkennen.",
+    "rubric": [],
+    "watch_outs": [
+      "Die Kategorien sind nicht trennscharf — das ist gewollt und ein gutes Gesprächsthema.",
+      "Schüler:innen kennen 'Selbstanzeige' eventuell noch nicht als Begriff — kurz einführen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Bewegung und Sport",
+  "klasse": 2,
+  "kompetenzbereich": "Sozialkompetenz",
+  "competences": [
+    "BUS.US.2.SOZ.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "SOZ"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0005",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

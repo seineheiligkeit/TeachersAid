@@ -1,0 +1,99 @@
+{
+  "id": "c0083.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Löse die folgende Gleichung durch schrittweises Umkehren der Rechenoperationen. Schreibe jeden Umformungsschritt auf eine eigene Zeile.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "OPE"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.2.VAR.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "3x + 5 = 20 | − 5 → 3x = 15 | ÷ 3 → x = 5. Probe: 3·5+5 = 20 ✓",
+    "acceptable_reasoning": "Zuerst die Addition rückgängig machen (−5), dann die Multiplikation (÷3).",
+    "rubric": [
+      {
+        "criterion": "Umformungsschritte sichtbar",
+        "levels": [
+          "Kein Schritt sichtbar",
+          "Ein Schritt gezeigt",
+          "Alle Schritte korrekt und nachvollziehbar"
+        ]
+      },
+      {
+        "criterion": "Probe durchgeführt",
+        "levels": [
+          "Keine Probe",
+          "Probe versucht, Fehler",
+          "Probe korrekt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Häufiger Fehler: zuerst durch 3 dividieren, statt −5. Reihenfolge der Umkehroperationen thematisieren.",
+      "Probe explizit einfordern."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Mathematik",
+  "klasse": 2,
+  "kompetenzbereich": "2: Variablen und Funktionen",
+  "competences": [
+    "MAT.US.2.VAR.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "OPE"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:math_formula",
+      "spec": {
+        "latex": "3x + 5 = 20"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0083",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:17+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

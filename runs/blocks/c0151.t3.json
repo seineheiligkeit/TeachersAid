@@ -1,0 +1,87 @@
+{
+  "id": "c0151.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "translation",
+    "prompt": "Lies den folgenden Ausschnitt aus Senecas Brief an Lucilius sorgfältig durch und übersetze ihn ins Deutsche. Achte auf einen idiomatischen deutschen Satzbau.\n\n**Textus (Seneca, Epistulae morales ad Lucilium 1,1):**\n*Ita fac, mi Lucili: vindica te tibi.*\n*Omnia, Lucili, aliena sunt, tempus tantum nostrum est.*\n*Ad hanc nos fortuna et rapere et distrahere coegit.*\n\n**Vokabular:** vindico (1) = beanspruchen, befreien; alienus, -a, -um = fremd, einem anderen gehörend; rapere = reißen, fortreißen; distrahere = auseinanderreißen, ablenken.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 35.0
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "UEB"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "LAT.OS.x.UBE.04",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "LAT.OS.x.UBE.05",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Mögliche Modelllösung: „Tue das, mein Lucilius: Beanspruche dich für dich selbst. / Alles, Lucilius, gehört anderen — nur die Zeit ist wirklich unsere. / Uns hat das Schicksal gezwungen, [die Zeit] zu entreißen und auseinanderzureißen [= uns abzulenken].“ — Hinweis: Die letzte Phrase ist elliptisch; das Objekt ,nos' (uns) ist grammatisch Subjekt von coegit; ,ad hanc' bezieht sich auf ,fortuna' und dient als Richtungsangabe, alternativ: ,Zur [Zeit] hat uns das Schicksal gezwungen, sie zu entreißen und uns zu zerstreuen.'",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Semantische Treue",
+        "levels": [
+          "Alle drei Sätze inhaltlich korrekt wiedergegeben",
+          "Zwei Sätze korrekt",
+          "Ein Satz korrekt",
+          "Kaum sinngemäß korrekt"
+        ]
+      },
+      {
+        "criterion": "Zielsprachenidiomatik",
+        "levels": [
+          "Flüssig und klar, deutsche Wortstellung korrekt",
+          "Weitgehend idiomatisch, kleinere Unebenheiten",
+          "Holprig, aber verständlich",
+          "Unverständlich oder wörtlich zu eng"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Vindica te tibi ist ein dativus commodi mit Reflexivpronomen — nicht ,verteidige dich vor dir', sondern ,beanspruche dich für dich selbst'. Dieser Nuancenunterschied ist philosophisch zentral.",
+      "Aliena sunt: Das Adjektiv aliena steht prädikativ ohne Substantiv — Schüler:innen müssen ergänzen: ,sind Fremdes / gehören anderen'.",
+      "Rapere et distrahere sind Infinitive mit coegit als Kontrollverb — das Subjekt ist nos (uns), nicht das Schicksal als Handelnde der Infinitive."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "translation",
+  "subject": "Latein",
+  "klasse": 8,
+  "kompetenzbereich": "Übersetzungskompetenzen",
+  "competences": [
+    "LAT.OS.x.UBE.04",
+    "LAT.OS.x.UBE.05"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "UEB"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0151",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:26+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

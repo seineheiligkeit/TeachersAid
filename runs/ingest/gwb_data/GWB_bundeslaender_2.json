@@ -1,0 +1,202 @@
+{
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Österreichische Gesellschaftsentwicklung",
+  "title": "Wien und Niederösterreich – warum leben so viele Menschen im Osten?",
+  "kernfrage": "Warum wohnen fast 41 % der Österreicherinnen und Österreicher allein in Wien und Niederösterreich – und was zieht die Menschen in Ballungsräume?",
+  "body": {
+    "intro": [
+      {
+        "role": "info",
+        "id": "i1",
+        "kind": "prose",
+        "prompt": "Wer eine Karte Österreichs betrachtet, stellt fest: Die meisten Menschen wohnen im Osten des Landes. Wien (ca. 2,01 Mio. Einwohner:innen) und das umliegende Niederösterreich (ca. 1,72 Mio.) machen zusammen fast 41 % der gesamten österreichischen Bevölkerung aus. Im Vergleich dazu hat das flächenmäßig gleich große Burgenland, das direkt östlich an Niederösterreich grenzt, nur ca. 302.000 Einwohner:innen. Auf diesem Arbeitsblatt untersuchen wir, wie es zu dieser Verteilung kommt und was sie für die Menschen bedeutet.",
+        "asset_refs": ["abb1"],
+        "est_minutes": 3
+      }
+    ],
+    "data_figures": [
+      {
+        "id": "abb1",
+        "intent": "comparison",
+        "title": "Bevölkerung der österreichischen Bundesländer (1.1.2024)",
+        "xlabel": "Bundesland",
+        "ylabel": "Bevölkerung (Personen)",
+        "data_source": {
+          "dataset_id": "statistik_austria_bundeslaender_2024",
+          "series": "bevoelkerung"
+        }
+      }
+    ],
+    "assets": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Bevölkerungsverteilung und Standortfaktoren",
+        "throughline": "Schülerinnen und Schüler analysieren, warum sich Bevölkerung in bestimmten Regionen konzentriert, und lernen Standortfaktoren als Erklärungsrahmen kennen.",
+        "talking_points": [
+          "Einstieg: Kurze Schätzrunde – 'In welchem Bundesland glaubt ihr, leben die meisten Menschen? Warum?' – dann Abbildung aufdecken.",
+          "Standortfaktoren einführen: Was beeinflusst, wohin Menschen ziehen? (Arbeit, Bildung, Verkehr, Wohnkosten, Familie, Natur …)",
+          "Historische Dimension kurz ansprechen: Wien war Hauptstadt eines Großreichs – das erklärt die historisch gewachsene Dominanz.",
+          "Spannungsverhältnis thematisieren: Ballungsraum bietet viele Chancen, schafft aber auch Probleme (Wohnungspreise, Pendeln, Umwelt)."
+        ],
+        "extensions": [
+          "Schüler:innen recherchieren aktuelle Mietpreise in Wien vs. Burgenland und diskutieren, was 'leistbares Wohnen' bedeutet.",
+          "Analyse: Wie hat sich die Bevölkerungszahl Wiens in den letzten 50 Jahren entwickelt? (Trend-Datensatz worldbank_at_bevoelkerung zur Ergänzung).",
+          "Kreative Aufgabe: Entwirf einen Slogan für eine Kampagne, die Menschen ins Burgenland locken soll – welche Standortfaktoren würdest du hervorheben?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "open_response",
+            "prompt": "Schau dir die Abbildung (Abb. 1) an. Wien und Niederösterreich grenzen direkt aneinander. Beschreibe in zwei bis drei Sätzen, wie sich ihre Bevölkerungszahlen unterscheiden, und stelle sie dem Burgenland gegenüber.",
+            "payload": null,
+            "response": {"mode": "lines", "n": 4},
+            "cognitive_level": "understand",
+            "dimensions": ["OK"],
+            "serves": [
+              {"competence_id": "GWB.US.3.OST.01", "relation": "exercises"}
+            ],
+            "est_minutes": 5,
+            "asset_refs": ["abb1"],
+            "answer_key": "Wien hat ca. 2,006 Millionen Einwohner:innen, Niederösterreich ca. 1,724 Millionen – zusammen rund 3,73 Millionen. Das Burgenland, das ebenfalls an Niederösterreich grenzt, hat nur ca. 302.000 Einwohner:innen. Das bedeutet, dass Wien allein mehr als sechsmal so viele Menschen beherbergt wie das Burgenland, obwohl beide Bundesländer im Osten Österreichs liegen.",
+            "acceptable_reasoning": "Jede Antwort mit korrekten Größenverhältnissen (Wien ~ 6–7x so groß wie Burgenland) und dem räumlichen Bezug (beide im Osten) ist akzeptabel.",
+            "watch_outs": [
+              "Nicht 'Wien ist größer wegen seiner Fläche' – Wien ist flächenmäßig das kleinste Bundesland (415 km²), das Burgenland ist viel größer (3.965 km²).",
+              "Schüler:innen sollen explizit vergleichen (nicht nur beschreiben). Den Komparativ verlangen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "matching",
+            "prompt": "Ordne jeden Standortfaktor dem richtigen Oberbegriff zu. Ein Faktor kann auch in mehrere Kategorien passen – entscheide dich für den treffendsten.\n\nStandortfaktoren: Internationale Konzerne haben ihren Sitz in Wien · Kurze Wege zur Universität · Günstige Wohnungen im Umland (Niederösterreich) · Internationaler Flughafen Wien-Schwechat · Donaukanal und Stadtstrände · Gute U-Bahn-Anbindung · Weinbaugebiete in NÖ.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Internationale Konzerne haben ihren Sitz in Wien",
+                "Kurze Wege zur Universität",
+                "Günstige Wohnungen im Umland (NÖ)",
+                "Internationaler Flughafen Wien-Schwechat",
+                "Donaukanal und Stadtstrände",
+                "Gute U-Bahn-Anbindung",
+                "Weinbaugebiete in NÖ"
+              ],
+              "right": [
+                "Wirtschaftlicher Standortfaktor",
+                "Bildungs-Standortfaktor",
+                "Wohn-Standortfaktor",
+                "Infrastruktur-Standortfaktor",
+                "Freizeit-/Lebensqualität-Faktor",
+                "Landwirtschaftlicher Standortfaktor"
+              ]
+            },
+            "response": {
+              "mode": "table",
+              "columns": ["Standortfaktor", "Oberbegriff"],
+              "rows": 7
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["OK", "UK"],
+            "serves": [
+              {"competence_id": "GWB.US.3.ENT.01", "relation": "exercises"}
+            ],
+            "est_minutes": 7,
+            "asset_refs": [],
+            "answer_key": "Konzerne → Wirtschaftlich; Universität → Bildung; Günstige Wohnungen → Wohn-Standortfaktor; Flughafen → Infrastruktur; Donaukanal → Freizeit/Lebensqualität; U-Bahn → Infrastruktur; Weinbaugebiete → Landwirtschaftlich. Kombinationsantworten (z.B. Flughafen = wirtschaftlich UND infrastrukturell) sind ebenfalls korrekt, wenn begründet.",
+            "acceptable_reasoning": "Bei Mehrfachzuordnungen ist Begründung erforderlich.",
+            "watch_outs": [
+              "Manche Schüler:innen ordnen 'Universität' als Wirtschaftsfaktor ein (stimmt teils – Hochschulen schaffen Arbeitsplätze). Das ist ein produktiver Diskussionspunkt.",
+              "Weinbaugebiete werden oft als Freizeit/Tourismus eingestuft – das ist vertretbar, solange begründet.",
+              "Darauf hinweisen, dass Standortfaktoren oft mehrere Dimensionen haben."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "case_study",
+            "prompt": "Familie Huber zieht in Erwägung, von Wien nach Niederösterreich (Gemeinde Tulln, ca. 40 km westlich von Wien) zu übersiedeln. Die Eltern arbeiten beide in Wien. Tochter Lena (16) besucht eine AHS in Wien. Sohn Max (10) geht in die Volksschule.\n\nNenne für Familie Huber je zwei Argumente, die FÜR und GEGEN den Umzug sprechen. Beziehe dich dabei auf die Bevölkerungsverteilung und die Standortfaktoren.",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": ["Pro Umzug", "Contra Umzug"],
+              "rows": 2
+            },
+            "cognitive_level": "apply",
+            "dimensions": ["UK", "HK"],
+            "serves": [
+              {"competence_id": "GWB.US.3.ZEN.02", "relation": "exercises"}
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "PRO: Günstigere Wohnkosten/mehr Platz (NÖ-Mieten und Kaufpreise deutlich niedriger als Wien); ruhigere Umgebung, mehr Grünfläche für Kinder. CONTRA: Lange Pendelzeiten für beide Eltern (Wien-Arbeit); Schulwechsel für Max möglicherweise problematisch; Lena verliert kurze Schulwege zu ihrer AHS in Wien; geringeres Kulturangebot in Tulln.",
+            "acceptable_reasoning": "Andere stichhaltige Argumente (Freundeskreis, Schulwahl, Mobilität) sind vollwertig.",
+            "watch_outs": [
+              "Schüler:innen nennen oft nur Wohnkosten als Pro-Argument – nach weiteren Aspekten fragen.",
+              "Pendeln als Contra ist zentral – darauf eingehen, was tägliches Pendeln bedeutet (Zeit, Kosten, Umwelt).",
+              "Fallbezug erinnern: Die Argumente sollen zur Familie Huber passen, nicht abstrakt bleiben."
+            ],
+            "rubric": [
+              {"criterion": "Argumente", "levels": ["Je 2 konkrete, familienbezogene Argumente auf beiden Seiten", "Je 1 Argument auf beiden Seiten oder 2 einseitig", "Weniger als 2 sachliche Argumente insgesamt"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "open_response",
+            "prompt": "Das Phänomen, dass immer mehr Menschen vom Land in die Städte ziehen, heißt Urbanisierung. Nenne zwei Ursachen für die Urbanisierung, die du auch im Kontext Wien – Bundesländer erkennst, und erkläre, welche Folgen diese für die kleineren Bundesländer (wie Burgenland oder Kärnten) haben können.",
+            "payload": null,
+            "response": {"mode": "lines", "n": 6},
+            "cognitive_level": "analyze",
+            "dimensions": ["UK"],
+            "serves": [
+              {"competence_id": "GWB.US.3.OST.01", "relation": "exercises"}
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "Ursachen: mehr Arbeitsplätze in Städten (insbesondere Dienstleistungssektor); bessere Bildungseinrichtungen (Universitäten, höhere Schulen); Attraktivität des urbanen Lebensstils (Kultur, Mobilität). Folgen für kleine Bundesländer: Abwanderung junger, gut ausgebildeter Menschen (Braindrain); Überalterung der Bevölkerung; Gefahr des Ausdünnens der Infrastruktur (Arztpraxen, Schulen, öffentlicher Verkehr); sinkende Steuereinnahmen für Gemeinden.",
+            "acceptable_reasoning": "Folgen müssen im Bezug auf die kleineren Bundesländer formuliert sein, nicht allgemein.",
+            "watch_outs": [
+              "Urbanisierung nicht mit 'zu viele Menschen' gleichsetzen – der Fokus liegt auf dem Wohnortwechsel vom Land in die Stadt.",
+              "'Folgen für die kleinen Bundesländer' ist der wichtige Teil – viele Schüler:innen schreiben nur Folgen für die Städte.",
+              "Braindrain als Begriff einführen und erklären."
+            ],
+            "rubric": [
+              {"criterion": "Ursachen", "levels": ["2 korrekte, erläuterte Ursachen mit Österreich-Bezug", "1 korrekte Ursache oder 2 unvollständig", "Keine korrekten Ursachen"]},
+              {"criterion": "Folgen", "levels": ["2 konkrete Folgen für kleine Bundesländer", "1 Folge oder zu vage", "Keine Folgen oder falsche Bezugsrichtung"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "position_argument",
+            "prompt": "Ein Bürgermeister eines kleinen Gemeinde im Burgenland sagt: „Wir brauchen dringend Zuzug. Wir bieten Familien günstiges Bauland an – aber wir verlieren trotzdem Einwohnerinnen und Einwohner.“ Nimm Stellung: Was würdest du dem Bürgermeister empfehlen, damit die Maßnahme Erfolg hat? Welche zusätzlichen Voraussetzungen sind nötig?",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 40},
+            "cognitive_level": "evaluate",
+            "dimensions": ["UK", "HK"],
+            "serves": [
+              {"competence_id": "GWB.US.3.ZEN.02", "relation": "exercises"}
+            ],
+            "est_minutes": 9,
+            "asset_refs": [],
+            "answer_key": "Günstiges Bauland allein reicht nicht – entscheidend sind: Arbeitsplätze in der Region oder gute Anbindung an Wien/Ballungsraum (Bahn/Straße); Schulen und Kinderbetreuung; Ärzte und medizinische Versorgung; Breitbandinternet (Homeoffice ermöglicht ländliches Wohnen); Freizeitangebote. Empfehlung: Paketlösung anbieten (Bauland + Infrastruktur-Investitionen + Standortmarketing); mit Unternehmen kooperieren, die remote-Arbeitsplätze anbieten.",
+            "acceptable_reasoning": "Jede Kombination aus Infrastruktur + wirtschaftlicher Anreize + gesellschaftlicher Attraktivität ist akzeptabel.",
+            "watch_outs": [
+              "Reine Wiederholung der Aufgabe ('er soll mehr Bauland anbieten') ist kein Mehrwert – nach zusätzlichen Maßnahmen fragen.",
+              "Homeoffice-Argument aus aktueller Lebenswelt holen – das ist für Klasse-3-Schüler:innen erfahrungsbasiert (Eltern im Homeoffice).",
+              "Bewertung und Empfehlung verlangen – keine reine Beschreibung."
+            ],
+            "rubric": [
+              {"criterion": "Analyse", "levels": ["Erkennt, dass Bauland allein nicht reicht; nennt Strukturgründe", "Ansatz erkennbar, aber oberflächlich", "Keine Analyse der Defizite"]},
+              {"criterion": "Empfehlung", "levels": ["Konkrete, umsetzbare Maßnahmen mit Begründung", "Empfehlung vorhanden, aber vage oder nur eine Maßnahme", "Keine Empfehlung oder nicht umsetzbar"]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

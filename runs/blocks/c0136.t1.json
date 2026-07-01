@@ -1,0 +1,77 @@
+{
+  "id": "c0136.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Lies die folgenden Aussagen zum Begriff der Medienbeeinflussung. Entscheide jeweils, ob die Aussage zutrifft (wahr) oder nicht (falsch), und begründe deine Entscheidung in einem Satz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Jeder Text, der eine Meinung vertritt, ist automatisch manipulativ.",
+        "Bilder können genauso wie Texte zur Meinungsbildung beitragen, ohne dass wir es bewusst wahrnehmen.",
+        "Wenn eine Quelle Fakten nennt, kann sie nicht manipulativ sein.",
+        "Emotionale Sprache ist immer ein Zeichen für Manipulation."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "Wahr / Falsch",
+        "Begründung"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "MB",
+      "TK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DEU.OS.7.MED.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1. Falsch: Meinungsäußerung ist legitim; Manipulation liegt in der Methode (Täuschung, Auslassung, emotionale Überrumpelung), nicht im Meinungscharakter. 2. Wahr: Visuelle Kommunikation wirkt oft vorbewusst und ist daher besonders einflussreich. 3. Falsch: Fakten können selektiv eingesetzt, aus dem Kontext gerissen oder mit irreführenden Schlussfolgerungen verknüpft werden. 4. Falsch: Emotionale Sprache ist ein rhetorisches Mittel, das transparent und legitim eingesetzt werden kann; Manipulation liegt in der Absicht und Methode.",
+    "acceptable_reasoning": "Schüler:innen können auch Grenzfälle benennen und Aussagen als 'teils-teils' einordnen, wenn sie die Bedingung explizit machen.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Häufiges Missverständnis: 'Subjektiv = manipulativ'. Schüler:innen glauben oft, Objektivität sei der einzige Standard für Seriosität. Differenzieren: Es gibt legitime Meinungstexte (Kommentar, Essay) und illegitime Beeinflussung – das Entscheidungskriterium ist Transparenz, nicht Neutralität.",
+      "Gegenläufiges Missverständnis: 'Fakten sind immer neutral'. Cherry-picking und Framing mit wahren Fakten thematisieren."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Deutsch",
+  "klasse": 7,
+  "kompetenzbereich": "Mediale Bildung",
+  "competences": [
+    "DEU.OS.7.MED.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "MB",
+    "TK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0136",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:20+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

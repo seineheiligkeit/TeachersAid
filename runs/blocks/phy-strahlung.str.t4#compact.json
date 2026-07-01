@@ -1,0 +1,61 @@
+{
+  "id": "phy-strahlung.str.t4#compact",
+  "block": {
+    "id": "phy-strahlung.str.t4_compact",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Entscheide: richtig oder falsch? Begründe jeweils in einem Satz oder korrigiere die Aussage.\n\n1. „Nur ionisierende Strahlung kann Zellen schädigen.“\n2. „Alpha-Strahlung hat die geringste Reichweite in Luft.“\n3. „Radiowellen entstehen durch Kernzerfall.“",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.4.STR.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "1. Falsch: UV-Strahlung ist (teilweise) nicht-ionisierend, schädigt aber trotzdem Zellen (DNA-Schäden durch hohe Photonenenergie). 2. Richtig: Alpha-Strahlung wird schon von wenigen Zentimetern Luft oder einem Blatt Papier gestoppt. 3. Falsch: Radiowellen sind elektromagnetische Wellen, die von Antennen (schwingenden Ladungen) erzeugt werden, nicht durch Kernzerfall.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Aussage 1 ist eine bekannte Fehlvorstellung; Aussage 3 verwechselt Strahlungsart mit Entstehungsmechanismus"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Strahlung und Radioaktivität",
+  "competences": [
+    "PHY.US.4.STR.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "compact",
+  "family": "phy-strahlung.str.t4",
+  "assets": [],
+  "status": "approved",
+  "provenance": "variant:phy-strahlung.str.t4",
+  "source": "ai",
+  "created_at": "2026-06-25T18:13:26+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

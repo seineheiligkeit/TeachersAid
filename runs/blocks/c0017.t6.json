@@ -1,0 +1,77 @@
+{
+  "id": "c0017.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Entwirf einen eigenen Algorithmus in Pseudocode für folgendes Problem: Eine Klasse möchte entscheiden, ob der Ausflug heute stattfindet. Die Regel ist: Der Ausflug findet statt, wenn NICHT mehr als 5 Schüler:innen krank sind UND das Wetter gut ist (d.h. keine Warnstufe Gelb oder höher).\n\nSchreibe den Algorithmus so, dass er (a) die Bedingungen prüft und (b) eine klare Ausgabe produziert ('Ausflug findet statt' oder 'Ausflug entfällt'). Ergänze nach dem Pseudocode eine kurze Erklärung (2–3 Sätze), was du beim Entwerfen weglassen musstest (Abstraktion).",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 14
+    },
+    "cognitive_level": "create",
+    "dimensions": [
+      "T",
+      "I"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DGB.US.3.PRO.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Möglicher Pseudocode:\nEingabe: anzahl_krank (Zahl), wetterwarnung (Ja/Nein)\nWENN anzahl_krank ≤ 5 UND wetterwarnung = NEIN:\n  Gib aus: 'Ausflug findet statt'\nSONST:\n  Gib aus: 'Ausflug entfällt'\nEingabe\nAbstraktionserklärung: Es wurde ignoriert, welche Schüler:innen krank sind (Name, Klasse), was genau der Ausflug ist, und ob es andere Gründe geben könnte. Der Algorithmus reagiert nur auf die zwei relevanten Bedingungen.",
+    "acceptable_reasoning": "Varianten mit anderen Strukturen (z.B. zwei getrennte WENN-Abfragen) sind akzeptabel, solange das Ergebnis korrekt ist.",
+    "rubric": [
+      {
+        "criterion": "Logik des Algorithmus",
+        "levels": [
+          "Logikfehler (falsche Verknüpfung oder fehlende Bedingung)",
+          "Beide Bedingungen vorhanden, kleine Formfehler",
+          "Vollständiger Pseudocode mit korrekter Logik und Ausgabe"
+        ]
+      },
+      {
+        "criterion": "Abstraktionserklärung",
+        "levels": [
+          "Keine oder unklare Erklärung",
+          "Eine konkrete Abstraktion benannt",
+          "Mehrere Abstraktionen erklärt und Zweck klar"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "UND vs. ODER verwechseln ist ein häufiger Fehler: Beide Bedingungen müssen erfüllt sein (UND), nicht eine von beiden (ODER).",
+      "Die Abstraktionserklärung wird oft vergessen oder zu kurz – betonen, dass sie Teil der Aufgabe ist."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Digitale Grundbildung",
+  "klasse": 3,
+  "kompetenzbereich": "Produktion: Inhalte digital erstellen und veröffentlichen, Algorithmen entwerfen und Programmieren",
+  "competences": [
+    "DGB.US.3.PRO.01"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "T",
+    "I"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0017",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

@@ -1,0 +1,76 @@
+{
+  "id": "c0028.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne die folgenden Beispiele den richtigen Begriffen zu: **Push-Faktor** (Grund, das Heimatland zu verlassen) oder **Pull-Faktor** (Anziehungskraft des Ziellandes).\n\nSchreibe jeweils 'Push' oder 'Pull' neben das Beispiel.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "A) Hunger und Armut nach einer Missernte",
+        "B) Bessere Lohnmöglichkeiten in einer aufstrebenden Industrieregion",
+        "C) Politische Verfolgung durch ein autoritäres Regime",
+        "D) Familie ist bereits im Zielland",
+        "E) Krieg und Bombardierung der Heimatstadt",
+        "F) Kostenlose Schulbildung und Gesundheitsversorgung im Zielland"
+      ],
+      "right": [
+        "Push-Faktor",
+        "Pull-Faktor"
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Beispiel",
+        "Push oder Pull?"
+      ],
+      "rows": 6
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "HSA"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GPB.US.3.ALL.07",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "A) Push, B) Pull, C) Push, D) Pull, E) Push, F) Pull.",
+    "acceptable_reasoning": "Manche Faktoren können je nach Perspektive beide Rollen spielen (z.B. Sicherheit kann Push aus unsicherem Land und Pull in sicheres Land sein). Wenn Schüler:innen das begründen, ist eine abweichende Zuordnung akzeptabel.",
+    "rubric": [],
+    "watch_outs": [
+      "Achtung: In der Realität sind Push- und Pull-Faktoren selten klar getrennt — die Aufgabe vereinfacht für die Begriffseinführung. Bei fortgeschrittener Diskussion Überlappungen thematisieren.",
+      "Schüler:innen könnten Flucht und Wirtschaftsmigration vermischen — beide können dieselben Faktoren haben, der rechtliche Status ist aber unterschiedlich."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Geschichte und politische Bildung",
+  "klasse": 3,
+  "kompetenzbereich": null,
+  "competences": [
+    "GPB.US.3.ALL.07"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "HSA"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0028",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

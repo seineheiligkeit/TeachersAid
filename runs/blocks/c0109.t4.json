@@ -1,0 +1,99 @@
+{
+  "id": "c0109.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "multiple_choice",
+    "prompt": "Welche der folgenden Maßnahmen kann dazu beitragen, die finanzielle Belastung des Pensionssystems in Österreich zu verringern? (Mehrere Antworten möglich — kreuze alle zutreffenden an und begründe deine Auswahl kurz.)",
+    "payload": {
+      "kind": "multiple_choice",
+      "options": [
+        "Das Pensionsantrittsalter schrittweise erhöhen",
+        "Staatliche Schulden erhöhen, um Pensionen zu finanzieren",
+        "Zuwanderung von Arbeitskräften im erwerbsfähigen Alter ermöglichen",
+        "Die Geburtenrate durch bessere Kinderbetreuung erhöhen",
+        "Pensionen sofort und stark kürzen"
+      ],
+      "select": "many"
+    },
+    "response": {
+      "mode": "choices",
+      "options": [
+        "Das Pensionsantrittsalter schrittweise erhöhen",
+        "Staatliche Schulden erhöhen, um Pensionen zu finanzieren",
+        "Zuwanderung von Arbeitskräften im erwerbsfähigen Alter ermöglichen",
+        "Die Geburtenrate durch bessere Kinderbetreuung erhöhen",
+        "Pensionen sofort und stark kürzen"
+      ],
+      "select": "many"
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "UK",
+      "HK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.OST.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Zutreffend: (1) Pensionsantrittsalter erhöhen — verlängert Beitragszeit und verkürzt Bezugsdauer. (3) Arbeitskräftezuwanderung — erhöht die Zahl der Beitragszahlenden. (4) Geburtenrate erhöhen — langfristig mehr Erwerbstätige. Nicht zutreffend oder problematisch: (2) Schulden erhöhen verschiebt das Problem nur. (5) Starke sofortige Kürzungen sind sozial und politisch kaum vertretbar und lösen das Strukturproblem nicht.",
+    "acceptable_reasoning": "Schüler:innen, die Option 5 als 'auch möglich' sehen, müssen erklären, warum — sofortige starke Kürzungen sind politisch und sozial umstritten und nicht als Musterlösung akzeptiert.",
+    "rubric": [
+      {
+        "criterion": "Korrekte Selektion",
+        "levels": [
+          "Optionen 1, 3 und 4 ausgewählt, 2 und 5 nicht (3P)",
+          "2 richtige ausgewählt (2P)",
+          "1 richtige (1P)",
+          "Keine oder nur falsche (0P)"
+        ]
+      },
+      {
+        "criterion": "Begründungen",
+        "levels": [
+          "Mindestens 2 Begründungen demografisch fundiert (2P)",
+          "1 Begründung (1P)",
+          "Keine Begründung (0P)"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Option 2 (Schulden) klingt wie eine Lösung, ist aber keine strukturelle — das gezielt klären.",
+      "Option 5 kann diskutiert werden, aber 'sofort und stark' ist die entscheidende Einschränkung — schrittweise Anpassungen sind anders zu bewerten."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "multiple_choice",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Österreichische Gesellschaftsentwicklung",
+  "competences": [
+    "GWB.US.3.OST.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "UK",
+    "HK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0109",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:28+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

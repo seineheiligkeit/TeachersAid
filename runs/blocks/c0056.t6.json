@@ -1,0 +1,72 @@
+{
+  "id": "c0056.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Lies die E-Mail von Hugo aus Aufgabe 1 noch einmal. Hugos Wochenende hatte zwei Teile. Welche Information ist in der E-Mail und welche fehlt? Ergänze die Tabelle auf Deutsch.\n\n| Was Hugo getan hat | Mit wem | Wie war es? |\n|---|---|---|\n| ins Kino gegangen | ? | ? |\n| ? | Familie | ? |",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Was Hugo getan hat",
+        "Mit wem",
+        "Wie war es?"
+      ],
+      "rows": 2
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "LES"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS2.US.4.LES.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Zeile 1: ins Kino gegangen | mit Freunden (ses amis) | c'était génial / toll. Zeile 2: Pizza gegessen (mangé une pizza) | mit Familie | keine explizite Bewertung im Text (fehlt).",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Texttreue",
+        "levels": [
+          "Alle Angaben basieren korrekt auf dem Text; fehlende Infos als fehlend markiert",
+          "Meistens texttreu, eine kleine Ergänzung oder Verwechslung",
+          "Eigene Ideen eingefügt, die nicht im Text stehen"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen neigen dazu, fehlende Infos zu erfinden — hier explizit darauf hinweisen, dass 'information fehlt im Text' eine gültige Antwort ist.",
+      "Dies ist eine Analyse-Aufgabe: Schüler:innen müssen zwischen 'im Text' und 'nicht im Text' unterscheiden — eine wichtige Lesekompetenz für selektives Verstehen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Zweite lebende Fremdsprache",
+  "klasse": 4,
+  "kompetenzbereich": "Lesen",
+  "competences": [
+    "FS2.US.4.LES.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "LES"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0056",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

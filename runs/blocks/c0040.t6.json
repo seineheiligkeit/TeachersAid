@@ -1,0 +1,83 @@
+{
+  "id": "c0040.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Erfinde ein neues 'Instrument' aus Alltagsmaterialien (z. B. Gummibänder, eine Schachtel, eine leere Flasche, Münzen). Beschreibe schriftlich:\n– Aus welchem Material besteht es?\n– Wie wird der Klang erzeugt (was schwingt)?\n– Welcher Instrumentenfamilie würde es angehören?\n– Wie klingt es deiner Vorstellung nach?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 40.0
+    },
+    "cognitive_level": "create",
+    "dimensions": [
+      "HOR",
+      "SIN"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MUS.US.2.HOR.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Offene kreative Aufgabe; Bewertung: Klangerzeugung physikalisch plausibel, Instrumentenfamilie korrekt abgeleitet, Klangbeschreibung vorhanden.",
+    "acceptable_reasoning": "Jede physikalisch plausible Konstruktion akzeptabel; Kreativität wird positiv gewertet.",
+    "rubric": [
+      {
+        "criterion": "Physikalische Plausibilität",
+        "levels": [
+          "nicht nachvollziehbar",
+          "plausibel mit Begründung"
+        ]
+      },
+      {
+        "criterion": "Instrumentenfamilien-Zuordnung",
+        "levels": [
+          "falsch",
+          "korrekt abgeleitet"
+        ]
+      },
+      {
+        "criterion": "Klangbeschreibung",
+        "levels": [
+          "fehlend",
+          "ein Merkmal",
+          "mehrere Merkmale lebhaft beschrieben"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen ordnen manchmal alle selbst gebauten Instrumente als 'Schlaginstrument' ein – nachfragen: Was schwingt eigentlich?",
+      "Klangerzeugung und Klangfarbe verwechseln: Erzeugung = Physik, Farbe = wahrgenommene Qualität."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Musik",
+  "klasse": 2,
+  "kompetenzbereich": "Hören und Erfassen",
+  "competences": [
+    "MUS.US.2.HOR.04"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "HOR",
+    "SIN"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0040",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

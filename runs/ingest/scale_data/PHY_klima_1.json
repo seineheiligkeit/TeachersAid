@@ -1,0 +1,188 @@
+{
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Wetter und Klima",
+  "title": "Das Klima in Wien — ein Jahr in Zahlen",
+  "kernfrage": "Was verrät dir das Klimadiagramm über das Klima in Wien, und wie hängt Temperatur mit Wettererscheinungen zusammen?",
+  "body": {
+    "intro": [],
+    "data_figures": [
+      {
+        "id": "abb1",
+        "intent": "climate",
+        "title": "Klimadiagramm Wien (Hohe Warte, 1991–2020)",
+        "data_source": {
+          "dataset_id": "geosphere_klima_normal_1991_2020",
+          "series": "wien"
+        }
+      }
+    ],
+    "assets": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Das Klimadiagramm lesen",
+        "throughline": "Schülerinnen und Schüler erschließen aus dem Klimadiagramm die Charakteristika des Wiener Klimas und verknüpfen Temperaturunterschiede mit physikalischen Antrieben von Wettererscheinungen.",
+        "talking_points": [
+          "Das Klimadiagramm zeigt zwei überlagerte Darstellungen: Monatsmitteltemperaturen als Linie (linke Achse, °C) und Monatsniederschlagssummen als Balken (rechte Achse, mm). Beide Achsen sind nach der Walterschen 2:1-Regel skaliert (20 mm entsprechen 10 °C).",
+          "Die Werte stammen aus der Normalperiode 1991–2020 (GeoSphere Austria). Damit sind sie belastbarer als Einzeljahre, spiegeln aber auch den Klimawandel bereits wider — z. B. ist Juli mit 21,4 °C der wärmste Monat.",
+          "Temperaturunterschiede entstehen durch unterschiedliche Einstrahlung (Sonnenwinkel, Tageslänge). Druckunterschiede, die daraus folgen, treiben Wind und Wettermuster an — das ist der physikalische Kern von WET.03.",
+          "Typischer Fehler: Klimadiagramm mit aktuellem Wetterbericht verwechseln. Klima = langjähriges Mittel; Wetter = aktueller Zustand."
+        ],
+        "extensions": [
+          "Jahresgang der Sonnenscheindauer in Wien recherchieren und mit dem Temperaturgang vergleichen — warum hinkt die Temperatur dem Strahlungsmaximum nach?",
+          "Kontinentalität erklären: Warum sind Wiener Winter kälter und Sommer wärmer als in einer Küstenstadt auf gleicher Breite?",
+          "Anomalie-Diskussion: Was würde passieren, wenn der Juli-Mittelwert um weitere 2 °C steigt — welche Wetterextreme werden wahrscheinlicher?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "open_response",
+            "prompt": "Schau dir das Klimadiagramm Wien an (Abb. 1). Nenne den wärmsten und den kältesten Monat und lies ihre Durchschnittstemperaturen ab.",
+            "payload": null,
+            "response": {"mode": "lines", "n": 3},
+            "cognitive_level": "remember",
+            "dimensions": ["W"],
+            "serves": [{"competence_id": "PHY.US.4.WET.03", "relation": "exercises"}],
+            "est_minutes": 4,
+            "asset_refs": ["abb1"],
+            "answer_key": "Wärmster Monat: Juli (21,4 °C); kältester Monat: Jänner (0,8 °C). Temperaturamplitude: ca. 20,6 K.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schülerinnen und Schüler lesen manchmal August statt Juli als Maximum — beide liegen nah beieinander (Aug 20,9 °C), daher Ablesefehler tolerieren, wenn begründet.",
+              "Einheit nicht vergessen: °C, nicht K (Kelvin) für Temperaturwert."
+            ],
+            "rubric": [
+              {"criterion": "Wärmster Monat korrekt mit Wert", "levels": ["Juli mit ~21 °C genannt", "Monat korrekt, Wert fehlt oder grob falsch", "Beides fehlt"]},
+              {"criterion": "Kältester Monat korrekt mit Wert", "levels": ["Jänner mit ~1 °C genannt", "Monat korrekt, Wert fehlt", "Beides fehlt"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "open_response",
+            "prompt": "Im Klimadiagramm siehst du auch die monatlichen Niederschlagsmengen. Welche zwei Monate haben den höchsten bzw. niedrigsten Niederschlag? Beschreibe außerdem, in welcher Jahreszeit der meiste Regen fällt.",
+            "payload": null,
+            "response": {"mode": "lines", "n": 4},
+            "cognitive_level": "understand",
+            "dimensions": ["W"],
+            "serves": [{"competence_id": "PHY.US.4.WET.03", "relation": "exercises"}],
+            "est_minutes": 5,
+            "asset_refs": ["abb1"],
+            "answer_key": "Höchster Niederschlag: Mai (79 mm) und Juli (78 mm); niedrigster: Februar (38 mm). Der meiste Regen fällt im Spätfrühling bis Sommer (Mai–August), Wien hat also ein kontinentales Niederschlagsmaximum im Sommer.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Wien hat keine gleichmäßige Verteilung wie Atlantikküsten — das kontinentale Muster (Sommerregen durch Konvektion) überrascht manche.",
+              "Schülerinnen und Schüler könnten Oktober statt Februar als Minimum nennen; Feb (38 mm) ist tatsächlich das Minimum."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "open_response",
+            "prompt": "Erkläre in eigenen Worten: Warum ist es in Wien im Winter kälter als im Sommer? Welche physikalische Größe ändert sich dabei, die für Wetter eine entscheidende Rolle spielt?",
+            "payload": null,
+            "response": {"mode": "lines", "n": 5},
+            "cognitive_level": "understand",
+            "dimensions": ["W"],
+            "serves": [{"competence_id": "PHY.US.4.WET.03", "relation": "exercises"}],
+            "est_minutes": 7,
+            "asset_refs": [],
+            "answer_key": "Im Winter steht die Sonne tiefer (flacherer Einfallswinkel, kürzere Tage) → weniger Energie pro Fläche wird eingestrahlt → Erdoberfläche kühlt ab → Luft über der Oberfläche kühlt ab → Temperaturgegensätze entstehen. Temperaturunterschiede erzeugen Luftdruckunterschiede (warme Luft dehnt sich aus → Tiefdruck; kalte Luft ist dichter → Hochdruck). Luftdruckunterschiede treiben Winde und Wetterbewegungen an.",
+            "acceptable_reasoning": "Schülerinnen und Schüler müssen nicht den Begriff 'Luftdruck' perfekt erklären; wichtig ist die Kette Sonneneinstrahlung → Temperatur → Druckunterschied → Bewegung.",
+            "watch_outs": [
+              "Häufige Fehlvorstellung: 'Im Winter ist die Erde weiter von der Sonne entfernt.' Tatsächlich ist die Erde im Jänner sogar am sonnennächsten (Perihel). Die Ursache liegt im Neigungswinkel der Erdachse.",
+              "Den Begriff 'Luftdruck' nicht vorwegnehmen, wenn er noch nicht eingeführt wurde — dann reicht 'Temperaturunterschiede erzeugen Strömungen in der Luft'."
+            ],
+            "rubric": [
+              {"criterion": "Ursache Winkel/Tageslänge", "levels": ["Korrekt erklärt", "Teilweise (nur Tageslänge oder nur Winkel)", "Nicht erkannt"]},
+              {"criterion": "Verbindung zu Wetter/Strömungen", "levels": ["Temperatur → Druck/Strömung genannt", "Nur Temperaturunterschied, kein Antrieb", "Fehlt"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "table_fill",
+            "prompt": "Fülle die Tabelle aus: Berechne die Temperaturdifferenz zwischen dem wärmsten und dem kältesten Monat, und gib an, ob der Niederschlag eher im Sommer oder im Winter höher ist.",
+            "payload": {
+              "kind": "table_fill",
+              "columns": ["Merkmal", "Wien"],
+              "rows": [
+                ["Wärmster Monat (°C)", ""],
+                ["Kältester Monat (°C)", ""],
+                ["Temperaturamplitude (K)", ""],
+                ["Regenreichste Jahreszeit", ""]
+              ]
+            },
+            "response": {"mode": "table", "columns": ["Merkmal", "Wien"], "rows": 4},
+            "cognitive_level": "apply",
+            "dimensions": ["W"],
+            "serves": [{"competence_id": "PHY.US.4.WET.03", "relation": "exercises"}],
+            "est_minutes": 6,
+            "asset_refs": ["abb1"],
+            "answer_key": "Wärmster Monat: 21,4 °C (Juli); kältester Monat: 0,8 °C (Jänner); Temperaturamplitude: 20,6 K; regenreichste Jahreszeit: Sommer (Mai–August).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Differenz in Kelvin (K), nicht °C — fachlich korrekt, weil es eine Temperaturdifferenz ist; beide Einheiten akzeptieren, aber auf den Unterschied hinweisen.",
+              "Nicht die Monatsmitteltemperatur mit der Tagestemperatur verwechseln."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "open_response",
+            "prompt": "Analysiere: Was könnte passieren, wenn die Jahresmitteltemperatur in Wien in den nächsten Jahrzehnten um 2 °C steigt? Nenne mindestens zwei Folgen für das Wetter oder den Alltag und begründe physikalisch.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 40},
+            "cognitive_level": "analyze",
+            "dimensions": ["W", "S"],
+            "serves": [
+              {"competence_id": "PHY.US.4.WET.03", "relation": "exercises"},
+              {"competence_id": "PHY.US.4.WET.04", "relation": "exercises"}
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "Mögliche Folgen (Auswahl): Häufigere und intensivere Hitzewellen im Sommer (Temperaturen über 35 °C öfter); stärkere Konvektion → intensivere Gewitter und Starkregen; weniger Frost- und Eistage → veränderte Vegetationsperioden; höhere Verdunstung → mögliche Sommertrockenheit trotz gleicher Niederschlagsmenge. Physikalische Begründung: Wärmere Luft nimmt mehr Wasserdampf auf (Clausius-Clapeyron), was bei Abkühlung zu stärkerem Niederschlag führt; größere Temperaturgradienten treiben stärkere Winde.",
+            "acceptable_reasoning": "Kreative, physikalisch plausible Überlegungen sind erwünscht; Vollständigkeit nicht erforderlich.",
+            "watch_outs": [
+              "Schülerinnen und Schüler sagen oft nur 'es wird wärmer' — darauf bestehen, dass sie eine Folge für ein Wetter-Phänomen ableiten.",
+              "Keine Wertung, ob Klimawandel 'schlimm' ist, einfordern; physikalische Analyse steht im Vordergrund."
+            ],
+            "rubric": [
+              {"criterion": "Physikalische Begründung", "levels": ["Mechanismus klar (z. B. Konvektion, Verdunstung)", "Folge genannt, aber ohne physikalische Begründung", "Nur Allgemeinaussage"]},
+              {"criterion": "Anzahl Folgen", "levels": ["≥2 plausible Folgen", "1 Folge", "Keine konkreten Folgen"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "open_response",
+            "prompt": "Bewerte: Ist ein Klimadiagramm ein gutes Hilfsmittel, um das Wetter an einem bestimmten Tag vorherzusagen? Begründe deine Antwort.",
+            "payload": null,
+            "response": {"mode": "lines", "n": 5},
+            "cognitive_level": "evaluate",
+            "dimensions": ["W", "S"],
+            "serves": [
+              {"competence_id": "PHY.US.4.WET.04", "relation": "exercises"}
+            ],
+            "est_minutes": 6,
+            "asset_refs": [],
+            "answer_key": "Nein — ein Klimadiagramm zeigt langjährige Mittelwerte (hier 1991–2020), nicht das aktuelle Wetter. Es beschreibt das typische Muster (Klima), aber an jedem konkreten Tag kann das Wetter stark abweichen. Für eine Tagesvorhersage braucht man aktuelle Messdaten aus Wettermodellen (Luftdruck, Luftfeuchtigkeit, Windfelder usw.). Das Klimadiagramm hilft nur, zu sagen, was 'im Durchschnitt' zu erwarten ist.",
+            "acceptable_reasoning": "Wichtig ist die Unterscheidung Klima vs. Wetter; die genaue Begründung kann variieren.",
+            "watch_outs": [
+              "Kernunterschied Klima/Wetter muss explizit genannt werden — nicht nur 'es ändert sich immer'.",
+              "Manche Schülerinnen und Schüler sagen 'ja, man kann ungefähr schätzen' — das als Teilerfolg werten, aber auf die Unzuverlässigkeit für konkrete Tage hinweisen."
+            ],
+            "rubric": [
+              {"criterion": "Klima-Wetter-Unterschied", "levels": ["Klar unterschieden und erklärt", "Angedeutet", "Nicht erkannt"]},
+              {"criterion": "Begründungsqualität", "levels": ["Physikalisch fundiert (Mittelwerte vs. aktueller Zustand)", "Intuitiv richtig ohne Begründung", "Falsch"]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

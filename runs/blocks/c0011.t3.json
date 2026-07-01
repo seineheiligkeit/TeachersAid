@@ -1,0 +1,75 @@
+{
+  "id": "c0011.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "text_production",
+    "prompt": "Wähle eine der folgenden Thesen und schreibe dazu **zwei Argumente** und **ein Gegenargument**. Nutze die Satzanfänge als Hilfe.\n\n**Thesen (wähle eine):**\n- „In der Schule sollte mehr Sport angeboten werden.“\n- „Smartphones sollten im Unterricht erlaubt sein.“\n- „Schüler:innen sollten ihre Noten mitbestimmen dürfen.“\n\n**Satzanfänge:**\n- *Argument 1:* „Dafür spricht, dass …“\n- *Argument 2:* „Außerdem …, weil …“\n- *Gegenargument:* „Kritiker:innen könnten einwenden, dass …“",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "SCH"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DEU.US.2.SCH.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Individuelle Antworten. Bewertungskriterien: (1) Beide Argumente beziehen sich sachlich auf die These. (2) Das Gegenargument stellt die These tatsächlich in Frage (kein Scheingegenargument). (3) Satzanfänge korrekt verwendet oder eigenständig formuliert.",
+    "acceptable_reasoning": "Schüler:innen dürfen eigene Satzanfänge wählen, wenn sie die Funktion (Argument/Gegenargument) klar kennzeichnen.",
+    "rubric": [
+      {
+        "criterion": "Argumentation",
+        "levels": [
+          "Nur Behauptungen, keine echten Begründungen",
+          "Ein echtes Argument, Gegenargument fehlt oder ist kein Gegenargument",
+          "Zwei sachlich begründete Argumente + ein echtes Gegenargument"
+        ]
+      },
+      {
+        "criterion": "Sprachliche Umsetzung",
+        "levels": [
+          "Satzstruktur unklar oder stark fehlerhaft",
+          "Verständlich, aber grammatisch/stilistisch unsicher",
+          "Klar formuliert, Kausalstrukturen (weil/da/denn) korrekt verwendet"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Häufiges Problem: Das 'Gegenargument' ist ein weiteres Pro-Argument. Nachfragen: 'Was könnte jemand sagen, dem diese These nicht gefällt?'",
+      "Manche Schüler:innen schreiben nur Beispiele statt Argumente. Daran erinnern: Das Argument erklärt das Warum, nicht das Wann oder Wer."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "text_production",
+  "subject": "Deutsch",
+  "klasse": 2,
+  "kompetenzbereich": "Schreiben",
+  "competences": [
+    "DEU.US.2.SCH.03"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "SCH"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0011",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

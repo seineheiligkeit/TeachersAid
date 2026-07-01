@@ -1,0 +1,67 @@
+{
+  "id": "c0010.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "text_analysis",
+    "prompt": "Lies den folgenden Textabschnitt aufmerksam durch.\n\n---\n*Kaffee gehört zu den meistgehandelten Rohstoffen der Welt. Die Kaffeepflanze stammt ursprünglich aus Äthiopien und wird heute in über 70 Ländern angebaut. Der größte Produzent ist Brasilien. Die Kaffeebohne ist eigentlich ein Kern der Kaffeekirsche. Nach der Ernte werden die Bohnen aufwendig verarbeitet, getrocknet, geröstet und erst dann gemahlen oder als ganze Bohne verkauft. Der Röstgrad beeinflusst den Geschmack entscheidend: Helle Röstungen betonen fruchtige, dunkle Röstungen bittere und karamellartige Noten.*\n---\n\nMarkiere im Text die **Hauptaussage** des Absatzes. Schreibe sie dann in eigenen Worten auf.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 3
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "LES"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DEU.US.3.LES.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Hauptaussage (Kern): Kaffee ist ein global bedeutsamer Rohstoff, dessen Anbau, Verarbeitung und Röstung seinen Geschmack bestimmen. Eigene Formulierungen sind akzeptabel, solange sie den globalen Anbau und die Verarbeitungskette nennen.",
+    "acceptable_reasoning": "Schüler:innen dürfen auch zwei Teilaussagen nennen (Herkunft/Anbau + Verarbeitung/Geschmack), wenn sie erklären, dass diese zusammengehören.",
+    "rubric": [
+      {
+        "criterion": "Identifikation der Hauptaussage",
+        "levels": [
+          "Hauptaussage nicht erkannt oder reine Teilinformation",
+          "Hauptaussage teilweise erfasst, ein Aspekt fehlt",
+          "Hauptaussage vollständig und in eigenen Worten formuliert"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Viele nennen nur den ersten Satz ('meistgehandelt') als Hauptaussage und übersehen die zweite Hälfte über Verarbeitung.",
+      "Auf Paraphrase achten, nicht wörtliches Abschreiben – bei Abschreiben nachfragen: 'Kannst du das anders sagen?'"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "text_analysis",
+  "subject": "Deutsch",
+  "klasse": 3,
+  "kompetenzbereich": "Lesen",
+  "competences": [
+    "DEU.US.3.LES.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "LES"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0010",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

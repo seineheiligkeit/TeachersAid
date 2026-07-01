@@ -1,0 +1,67 @@
+{
+  "id": "c0037.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "ordering",
+    "prompt": "Bildbetrachtung hat eine Struktur. Bringe die folgenden Schritte einer methodischen Bildanalyse in die richtige Reihenfolge — beginne mit dem, was zuerst getan werden sollte.",
+    "payload": {
+      "kind": "ordering",
+      "items": [
+        "Den persönlichen Eindruck und die eigene Meinung zum Bild formulieren.",
+        "Bildtitel, Entstehungsjahr, Künstler:in und Medium recherchieren oder notieren.",
+        "Genau beschreiben, was auf dem Bild zu sehen ist — ohne zu werten.",
+        "Analysieren, welche Gestaltungsmittel (Komposition, Farbe, Licht) eingesetzt wurden.",
+        "Den Zusammenhang zwischen Absicht und Wirkung des Bildes herstellen."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "WAH"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "KUG.US.3.WAH.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Sinnvolle Reihenfolge: (1) Bildtitel/Kontext notieren, (2) Beschreiben was zu sehen ist, (3) Gestaltungsmittel analysieren, (4) Zusammenhang Absicht/Wirkung herstellen, (5) persönlichen Eindruck formulieren. Variationen sind möglich — Schritt 1 und 2 können tauschen; wichtig ist, dass Beschreibung VOR Interpretation kommt.",
+    "acceptable_reasoning": "Eine alternative Reihenfolge ist akzeptabel, wenn die Begründung zeigt, dass Beschreibung vor Deutung steht.",
+    "rubric": [],
+    "watch_outs": [
+      "Schüler:innen setzen die persönliche Meinung oft an den Anfang — das ist der häufigste Fehler in der Bildanalyse.",
+      "„Kontext recherchieren“ wird manchmal als unwichtig empfunden — erklären, dass das Jahr der Entstehung die Deutung fundamental verändern kann."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "ordering",
+  "subject": "Kunst und Gestaltung",
+  "klasse": 3,
+  "kompetenzbereich": "Wahrnehmen und Reflektieren",
+  "competences": [
+    "KUG.US.3.WAH.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "WAH"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0037",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

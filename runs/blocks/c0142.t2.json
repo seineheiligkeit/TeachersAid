@@ -1,0 +1,139 @@
+{
+  "id": "c0142.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "fig1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Betrachte die Grafik zu den Militärausgaben der USA während des Kalten Krieges (1950–1990).\n\na) Beschreibe den allgemeinen Verlauf: In welchen Phasen stiegen die Ausgaben stark an, wann sanken sie?\nb) Erkläre, mit welchen historischen Ereignissen du die markanten Veränderungen in Anstieg oder Rückgang in Verbindung bringen könntest.\nc) Erkläre, warum die Höhe der Militärausgaben allein noch keine Aussage darüber erlaubt, welche Seite im Kalten Krieg 'stärker' war.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "PMK",
+      "HSK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GPB.OS.7.POL4.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "GPB.OS.7.POL5.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 14,
+    "answer_key": "a) Starker Anstieg 1950–1955 (Koreakrieg-Ära), leichter Rückgang bis ca. 1970 nach Vietnamhochphase, erneuter Anstieg in den 1980ern (Reagans Rüstungsoffensive gegen die UdSSR), Rückgang zum Ende des Kalten Krieges. b) Anstieg 1950er: Koreakrieg, NATO-Aufbau; Rückgang 1970er: Détente, KSZE; Anstieg 1980er: SDI-Programm ('Sternenkrigsprogramm'), Reagan-Doktrin. c) Rüstungsausgaben messen monetären Einsatz, nicht militärische Effizienz; die UdSSR hatte ein ganz anderes Preisniveau; zudem zählen technologischer Vorsprung, Allianzsysteme, Soft Power (Propaganda, Kultureinfluss) und Wirtschaftskraft als eigenständige Machtdimensionen.",
+    "acceptable_reasoning": "Für c) genügen zwei voneinander verschiedene Argumente, die die Grenzen eines Einzelindikators aufzeigen. Schüler:innen mit Wirtschaftsvorwissen können auf Kaufkraftparitäten eingehen.",
+    "rubric": [
+      {
+        "criterion": "Beschreibung des Verlaufs",
+        "levels": [
+          "Keine sinnvolle Beschreibung",
+          "Generelle Tendenz beschrieben, keine Phasen",
+          "Phasen korrekt benannt mit ungefähren Zeitangaben"
+        ]
+      },
+      {
+        "criterion": "Historische Kontextualisierung",
+        "levels": [
+          "Keine historischen Ereignisse benannt",
+          "Ein Ereignis korrekt zugeordnet",
+          "Mehrere Ereignisse mit Phasen kohärent verknüpft"
+        ]
+      },
+      {
+        "criterion": "Kritische Reflexion des Indikators",
+        "levels": [
+          "Keine kritische Reflexion",
+          "Ein Einwand gegen die Aussagekraft benannt",
+          "Mindestens zwei strukturell verschiedene Argumente für die Begrenztheit des Indikators"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen lesen Daten häufig absolut ('mehr Ausgaben = stärker') ohne Kontext (BIP-Anteil, Währungsparität, Preisniveau).",
+      "Datenbeschriftung beachten: Die Grafik zeigt nur US-Daten – Schüler:innen sollten nicht auf UdSSR-Ausgaben schließen, ohne dass diese gezeigt werden."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Geschichte und politische Bildung",
+  "klasse": 7,
+  "kompetenzbereich": "Politikbezogene Methodenkompetenz",
+  "competences": [
+    "GPB.OS.7.POL4.01",
+    "GPB.OS.7.POL5.04"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "PMK",
+    "HSK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "fig1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:line",
+      "spec": {
+        "title": "Militärausgaben USA und UdSSR, 1950–1990 (in Mrd. US-Dollar, Preise 2015)",
+        "xlabel": "Jahr",
+        "ylabel": "Mrd. USD (Preise 2015)",
+        "log": false,
+        "categories": [
+          "1950",
+          "1955",
+          "1960",
+          "1965",
+          "1970",
+          "1975",
+          "1980",
+          "1985",
+          "1990"
+        ],
+        "values": [
+          370.0,
+          490.0,
+          520.0,
+          580.0,
+          530.0,
+          480.0,
+          540.0,
+          650.0,
+          590.0
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0142",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:22+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

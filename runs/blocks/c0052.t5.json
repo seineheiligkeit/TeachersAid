@@ -1,0 +1,89 @@
+{
+  "id": "c0052.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "A classmate wrote the following posting. Read it and give them written feedback in English. Comment on:\n1. What is good about their text?\n2. What could be improved? Give one specific suggestion.\n\nPosting: \"I think homework is bad. Because students are tired. We work a lot at school. Homework is boring. Teachers should stop it. I believe homework is bad.\"",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "SCH"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS1.US.4.SCH.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "FS1.US.4.SCH.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Model feedback:\nGood: The writer has a clear position (homework is bad) and gives some reasons (students are tired, they work a lot).\nImprovement: The text repeats the opinion twice without adding new reasons. A specific example would help (e.g. 'For example, after a 7-hour school day, I have no energy left to concentrate.'). Also, 'Because students are tired.' is not a complete sentence — it should be connected to the main clause.",
+    "acceptable_reasoning": "Schüler:innen müssen eine echte Stärke UND eine echte Verbesserung nennen. Keine Peer-Kritik akzeptieren, die nur Fehler listet ohne etwas Positives.",
+    "rubric": [
+      {
+        "criterion": "Identifies a genuine strength",
+        "levels": [
+          "Specific and accurate",
+          "Vague but fair",
+          "Incorrect or missing"
+        ]
+      },
+      {
+        "criterion": "Improvement suggestion",
+        "levels": [
+          "Specific and actionable",
+          "General but reasonable",
+          "Vague or missing"
+        ]
+      },
+      {
+        "criterion": "Feedback tone",
+        "levels": [
+          "Constructive and clear",
+          "Acceptable but blunt",
+          "Unhelpful or only critical"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Peer-Feedback ist ein anspruchsvolles Genre — Schüler:innen neigen zu entweder übertriebener Kritik ('everything is wrong') oder übertriebener Höflichkeit ('it's very good')",
+      "Das Feedback selbst soll auf Englisch geschrieben werden und klar strukturiert sein",
+      "Wichtig: Schüler:innen sollen eine SPEZIFISCHE Verbesserung vorschlagen, nicht nur 'add more reasons'"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Erste lebende Fremdsprache",
+  "klasse": 4,
+  "kompetenzbereich": "Schreiben",
+  "competences": [
+    "FS1.US.4.SCH.02",
+    "FS1.US.4.SCH.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "SCH"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0052",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

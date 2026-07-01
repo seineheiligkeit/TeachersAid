@@ -1,0 +1,155 @@
+{
+  "subject": "Deutsch",
+  "klasse": 1,
+  "kompetenzbereich": "Lesen",
+  "title": "Lyrik entdecken: Sprache, Rhythmus und eigene Lesarten",
+  "kernfrage": "Was macht ein Gedicht aus – und was bedeutet es für dich persönlich?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Gedichte lesen, verstehen und erleben",
+        "throughline": "Lyrik bietet in der 1. Klasse einen niedrigschwelligen Zugang zur literarischen Kompetenz: kurze Texte mit hoher Verdichtung fordern zur genauen Lektüre auf, ohne inhaltlich zu überfordern. Im Zentrum steht die Ermutigung, eigene Lesarten zu vertrauen und in Sprache zu fassen.",
+        "talking_points": [
+          "Was fällt euch auf, wenn ihr ein Gedicht zum ersten Mal lest? Was klingt anders als ein normaler Satz?",
+          "Muss ein Gedicht sich reimen? Was macht es sonst aus? (Bilder, Rhythmus, Stimmung, Verdichtung)",
+          "Was meint ihr damit, wenn ihr sagt: 'Das Gedicht gefällt mir'? Was genau gefällt?",
+          "Kann ein Gedicht bei verschiedenen Menschen unterschiedliche Bilder oder Gefühle auslösen?"
+        ],
+        "extensions": [
+          "Schüler:innen bringen ein Lieblingsgedicht (oder einen Liedtext) mit und stellen es der Klasse vor.",
+          "Freies Schreiben: ein Kurzgedicht (4–6 Zeilen) zu einem selbst gewählten Bild aus der Natur oder dem Alltag.",
+          "Vergleich zweier kurzer Gedichte zum selben Thema (z.B. Herbst bei verschiedenen Autor:innen): Was ist gleich, was verschieden?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "text_analysis",
+            "prompt": "Lies das folgende Gedicht zweimal aufmerksam durch – zuerst leise für dich, dann noch einmal laut.\n\n---\n**Der Herbst** *(anonym)*\n\nDie Blätter fallen, fallen wie von weit,\nals welkten in den Himmeln ferne Gärten;\nsie fallen mit verneinender Gebärde.\n\nUnd in den Nächten fällt die schwere Erde\naus allen Sternen in die Einsamkeit.\n\nWir alle fallen. Diese Hand da fällt.\nUnd sieh dir andre an: es ist in allen.\n\nUnd doch ist Einer, welcher dieses Fallen\nunendlich sanft in seinen Händen hält.\n*(nach Rainer Maria Rilke: „Herbst", 1902)*\n---\n\na) Welches Wort oder welcher Ausdruck wiederholt sich am häufigsten? Notiere ihn und überlege: Warum könnte die Autorin / der Autor ihn so oft benutzt haben?\nb) Welches Bild aus dem Gedicht bleibt dir besonders im Gedächtnis? Beschreibe es kurz.",
+            "payload": null,
+            "response": { "mode": "lines", "n": 5 },
+            "cognitive_level": "understand",
+            "dimensions": ["LES"],
+            "serves": [{ "competence_id": "DEU.US.1.LES.02", "relation": "exercises" }],
+            "est_minutes": 10,
+            "answer_key": "a) 'Fallen' (in verschiedenen Formen: fallen, fällt, Fallen) – mindestens 6 Mal. Mögliche Deutung: Das Fallen ist das zentrale Thema; die Wiederholung erzeugt einen Sog, ein Rhythmusgefühl wie das Fallen selbst. b) Individuelle Antworten; häufig: 'Blätter wie welkende Gärten im Himmel', 'die Erde fällt aus den Sternen', 'sanft in Händen gehalten'. Alle plausiblen Antworten akzeptieren.",
+            "acceptable_reasoning": "Jede begründete Bildwahrnehmung ist korrekt. Ziel ist nicht eine richtige Interpretation, sondern die Fähigkeit, ein Bild zu benennen und zu beschreiben.",
+            "watch_outs": [
+              "Schüler:innen suchen manchmal nach 'der richtigen Bedeutung' – betonen, dass persönliche Lesarten vollständig gültig sind.",
+              "Bei a) darauf achten, dass sie auch Wortformvarianten ('fällt', 'Fallen') mitzählen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "multiple_choice",
+            "prompt": "Welche Stimmung erzeugt das Gedicht am ehesten?",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "Fröhlich und aufgeregt",
+                "Nachdenklich, ein wenig melancholisch, aber am Ende geborgen",
+                "Wütend und aufgebracht",
+                "Sachlich und neutral"
+              ],
+              "select": "one"
+            },
+            "response": { "mode": "choices", "options": ["A", "B", "C", "D"], "select": "one" },
+            "cognitive_level": "understand",
+            "dimensions": ["LES"],
+            "serves": [{ "competence_id": "DEU.US.1.LES.02", "relation": "exercises" }],
+            "est_minutes": 4,
+            "answer_key": "B. Die Bilder des Fallens und der Einsamkeit erzeugen Melancholie; der letzte Vers ('unendlich sanft … hält') bringt jedoch Trost und Geborgenheit ein. Schüler:innen, die rein die Fallbilder nehmen, landen bei 'melancholisch' ohne 'geborgen' – das ist diskussionswürdig.",
+            "acceptable_reasoning": "Wenn Schüler:innen nur 'melancholisch' wählen und den letzten Vers nicht berücksichtigen, ist das eine valide Teil-Lesart; Gelegenheit für Unterrichtsgespräch.",
+            "watch_outs": [
+              "Nicht als Wissensfrage behandeln ('wer weiß es'). Das ist eine Deutungsaufgabe – begründetes Abweichen von B ist akzeptabel.",
+              "Option D wird manchmal gewählt, weil Rilkes Sprache nüchtern klingt – guter Anlass zu erklären, dass 'sachlich' das Gegenteil von bildreich ist."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "open_response",
+            "prompt": "Stell dir vor, du müsstest jemandem, der das Gedicht noch nie gelesen hat, in 2–3 Sätzen erklären, worum es geht. Schreibe deine Erklärung auf.",
+            "payload": null,
+            "response": { "mode": "lines", "n": 4 },
+            "cognitive_level": "understand",
+            "dimensions": ["LES", "SCH"],
+            "serves": [{ "competence_id": "DEU.US.1.LES.01", "relation": "exercises" }],
+            "est_minutes": 7,
+            "answer_key": "Musterantwort: 'Das Gedicht beschreibt, wie im Herbst alles fällt – nicht nur die Blätter, sondern auch die Menschen und sogar die Erde. Am Ende gibt es aber jemanden, der dieses Fallen sanft auffängt.' Wichtig: keine einzig richtige Antwort; inhaltliches Verständnis ist der Maßstab.",
+            "acceptable_reasoning": "Schüler:innen dürfen die religiöse Dimension des letzten Verses weglassen – sie ist interpretierbar, nicht eindeutig.",
+            "watch_outs": [
+              "Rein wörtliche Wiedergaben ('da fallen Blätter') ohne Deutungsversuch zeigen, dass die übertragende Ebene noch nicht erfasst ist – in einem zweiten Schritt nachfragen: 'Warum fallen die Menschen?'",
+              "Vermeiden, die 'richtige' Interpretation vorzugeben – die Unsicherheit ist produktiv."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "text_analysis",
+            "prompt": "Gedichte benutzen oft **Bilder** (Metaphern), um etwas auszudrücken, das man schwer in normalen Sätzen sagen kann.\n\nDer Vers lautet: *„als welkten in den Himmeln ferne Gärten"*\n\na) Was vergleicht das Bild miteinander? (Was ist wie was?)\nb) Was will der Vers damit ausdrücken? Was könntest du als 'normalen Satz' formulieren?",
+            "payload": null,
+            "response": { "mode": "lines", "n": 5 },
+            "cognitive_level": "analyze",
+            "dimensions": ["LES", "SPR"],
+            "serves": [{ "competence_id": "DEU.US.1.LES.02", "relation": "deepens" }],
+            "est_minutes": 9,
+            "answer_key": "a) Die fallenden Blätter werden mit welkenden Gärten im Himmel verglichen – als ob der Himmel ein ferner Garten wäre, aus dem Blätter herabfallen. b) Normaler Satz (Muster): 'Die Blätter fallen so zahlreich und langsam herab, als würde irgendwo weit oben ein großer Garten verwelken.' Individuelle Formulierungen akzeptabel.",
+            "acceptable_reasoning": "Manche Schüler:innen beschreiben das Bild, ohne es in eine Metaphernstruktur zu bringen – das ist für die 1. Klasse ausreichend.",
+            "watch_outs": [
+              "Den Begriff 'Metapher' nicht einfordern, wenn er noch nicht eingeführt wurde – 'Vergleich' oder 'Bild' reicht hier.",
+              "Bei b) aufpassen: Schüler:innen können frustriert sein, wenn der 'normale Satz' das Bild 'zerstört' – das ist ein guter Gesprächsanlass: Was geht beim Übersetzen verloren?"
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "create_produce",
+            "prompt": "Schreibe deine eigene kleine **Lese-Reaktion** auf das Gedicht. Wähle eine der folgenden Möglichkeiten:\n\n**Option A:** Schreibe 2–4 Sätze darüber, was das Gedicht in dir ausgelöst hat – eine Erinnerung, ein Bild, ein Gefühl.\n**Option B:** Schreibe 4–6 Zeilen, die wie ein Gedicht klingen (kein Reim nötig), in denen du ein eigenes Herbstbild beschreibst.\n\nBeide Optionen sind gleichwertig – wähle, was sich für dich richtig anfühlt.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 55 },
+            "cognitive_level": "create",
+            "dimensions": ["LES", "SCH"],
+            "serves": [{ "competence_id": "DEU.US.1.LES.02", "relation": "deepens" }],
+            "est_minutes": 12,
+            "answer_key": "Individuelle Antworten. Ziel: persönlicher kreativer Zugang zum literarischen Text. Bewertung nicht nach Stil, sondern nach ernsthaftem Versuch, sich sprachlich mit dem Text auseinanderzusetzen.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Nicht nach Rechtschreibfehlern beurteilen – das ist eine Kreativaufgabe.",
+              "Schüler:innen, die 'nichts fühlen', können Option A auch nutzen, um zu beschreiben, dass das Gedicht für sie fremd oder unverständlich wirkt – das ist eine gültige Antwort."
+            ],
+            "rubric": [
+              { "criterion": "Persönlicher Bezug zum Text", "levels": ["Allgemein oder an der Textoberfläche", "Andeutung einer persönlichen Reaktion", "Konkretes Bild, Gefühl oder Erinnerung, die auf das Gedicht reagiert"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "open_response",
+            "prompt": "Gedichte werden oft laut vorgelesen oder vorgetragen. Was verändert sich beim lauten Vorlesen im Vergleich zum stillen Lesen?\n\nNotiere **mindestens zwei Unterschiede**, die du beim lauten Lesen dieses Gedichts bemerkt hast.",
+            "payload": null,
+            "response": { "mode": "lines", "n": 4 },
+            "cognitive_level": "evaluate",
+            "dimensions": ["LES", "ZUH"],
+            "serves": [{ "competence_id": "DEU.US.1.LES.01", "relation": "exercises" }],
+            "est_minutes": 6,
+            "answer_key": "Mögliche Antworten: Man hört den Rhythmus / Klang besser. Pausen und Betonungen werden sichtbar. Manche Wörter klingen anders als erwartet. Das Gefühl der Wiederholung von 'fallen' wird intensiver. Die Stimmung wird spürbarer. Alle plausiblen Beobachtungen akzeptieren.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen, die 'nichts' bemerkt haben, wurden möglicherweise nicht zum echten lauten Lesen ermutigt – kurze Vorlese-Runde in der Klasse einplanen.",
+              "Sprachlich ungenaue Beobachtungen ('klingt schöner') sind als Ausgangspunkt gültig – dann nachfragen: 'Woran genau liegt das?'"
+            ],
+            "rubric": []
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "id": "c0054.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Now write your own short opinion paragraph (50–70 words) on this question:\n\n\"What should schools do about mobile phones?\"\n\nIn your paragraph:\n- State your opinion clearly\n- Give ONE fact or example to support it (real or realistic)\n- Use at least one signal word that shows it is your opinion (I think / I believe / In my view / It seems...)\n- End with a recommendation",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "create",
+    "dimensions": [
+      "SCH",
+      "LES"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS1.US.4.SCH.03",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "FS1.US.4.LES.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Model answer: In my view, schools should allow phones but only during breaks. I think this is fair because students use phones to listen to music and relax, which helps them concentrate better in lessons. Research also shows that a complete ban does not stop phone use — it just moves it outside school. I recommend that schools create clear rules together with students, so that everyone understands why the rules exist.",
+    "acceptable_reasoning": "Beide Positionen (erlauben oder verbieten) sind akzeptabel; entscheidend ist die Struktur: Meinung + Grund + Empfehlung.",
+    "rubric": [
+      {
+        "criterion": "Structure",
+        "levels": [
+          "Opinion + fact/example + recommendation all present",
+          "Two elements present",
+          "Opinion only"
+        ]
+      },
+      {
+        "criterion": "Opinion signal word",
+        "levels": [
+          "Correctly used at least once",
+          "Attempted but incorrect",
+          "Missing"
+        ]
+      },
+      {
+        "criterion": "Language",
+        "levels": [
+          "Clear, mostly correct; 50–70 words",
+          "Understandable with errors; approximate length",
+          "Hard to follow or too short"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen sollen bewusst ein Meinungssignal einsetzen — bei der Korrektur explizit darauf hinweisen, ob es vorhanden und korrekt verwendet ist",
+      "Die Empfehlung am Ende ist häufig die schwächste Stelle — auf 'should / I recommend / I suggest' als Formulierungshilfe hinweisen",
+      "Dieser Text schließt den Kreis zur Fact/Opinion-Arbeit: Schüler:innen haben nun selbst einen Text mit erkennbarer Einstellung verfasst"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Erste lebende Fremdsprache",
+  "klasse": 4,
+  "kompetenzbereich": "Schreiben",
+  "competences": [
+    "FS1.US.4.SCH.03",
+    "FS1.US.4.LES.01"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "SCH",
+    "LES"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0054",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "c0014.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Fülle die Tabelle aus. Überlege bei jeder Textform: Welches Merkmal trifft zu? Trage jeweils 'ja', 'nein' oder 'manchmal' ein.\n\n**Textformen:** Chat-Nachricht / E-Mail an eine Lehrperson / Schulaufsatz / Instagram-Kommentar / Handgeschriebener Brief",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Textform",
+        "Formelle Sprache?",
+        "Korrekte Rechtschreibung erwartet?",
+        "Emojis üblich?",
+        "Öffentlich lesbar?"
+      ],
+      "rows": 5
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "SCH",
+      "SPR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DEU.US.4.SCH.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Chat-Nachricht: nein / manchmal / ja / nein. E-Mail Lehrperson: ja / ja / nein / nein. Schulaufsatz: ja / ja / nein / nein. Instagram-Kommentar: nein / manchmal / ja / ja. Brief: ja / ja / nein / nein. Abweichungen sind diskutierbar – z.B. ob ein öffentlicher Kommentar 'formell' sein kann.",
+    "acceptable_reasoning": "Bei Instagram-Kommentar 'formell?: manchmal' ist akzeptabel (z.B. auf offiziellen Accounts). Diskussionsrunden zu Grenzfällen sind erwünscht.",
+    "rubric": [],
+    "watch_outs": [
+      "Schüler:innen unterschätzen oft, dass Instagram-Kommentare öffentlich sind – das ist ein wichtiger Datenschutz-Impuls.",
+      "Die Kategorie 'Rechtschreibung erwartet: manchmal' für Chat ist berechtigt – je nach Kontext (Freund vs. Arbeitgeber-Chat)."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Deutsch",
+  "klasse": 4,
+  "kompetenzbereich": "Schreiben",
+  "competences": [
+    "DEU.US.4.SCH.04"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "SCH",
+    "SPR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0014",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

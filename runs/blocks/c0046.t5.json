@@ -1,0 +1,80 @@
+{
+  "id": "c0046.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Du hast im Werkraum ein Holzstück bearbeitet und dabei verschiedene Werkzeuge eingesetzt. Schreibe einen kurzen Bericht (5–7 Sätze): Welche Werkzeuge hast du in welcher Reihenfolge verwendet? Was war dabei schwierig? Wie hast du sichergestellt, dass dein Arbeitsplatz ordentlich und sicher war?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "HER"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "TED.US.2.HER.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Erwartete Elemente: Benennung von Werkzeugen in sinnvoller Reihenfolge (Anreißen → Zuschneiden → Schleifen), mindestens eine Schwierigkeit (z. B. gerade Sägelinie halten), mindestens eine Sicherheitsmaßnahme (Werkstück eingespannt, Späne weggefegt, Werkzeuge weggeräumt). Keine Musterlösung — bewertet wird die Reflektionsfähigkeit.",
+    "acceptable_reasoning": "Jede ehrliche Beschreibung des eigenen Arbeitsprozesses mit mindestens einem Sicherheitselement ist akzeptabel.",
+    "rubric": [
+      {
+        "criterion": "Werkzeugabfolge beschrieben",
+        "levels": [
+          "Keine klare Reihenfolge",
+          "Logische Reihenfolge mit Werkzeugnennung"
+        ]
+      },
+      {
+        "criterion": "Sicherheitsaspekt erwähnt",
+        "levels": [
+          "Kein Sicherheitsaspekt",
+          "Mindestens eine konkrete Maßnahme genannt"
+        ]
+      },
+      {
+        "criterion": "Reflexion eigener Schwierigkeiten",
+        "levels": [
+          "Keine Schwierigkeit erwähnt",
+          "Mindestens eine Schwierigkeit ehrlich benannt"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen beschreiben nur das Ergebnis, nicht den Prozess — auf den Weg hinweisen.",
+      "Schwierigkeiten benennen fällt manchen schwer (Perfektionismus) — betonen, dass Fehler und Schwierigkeiten zum Lernen gehören."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Technik und Design",
+  "klasse": 2,
+  "kompetenzbereich": "Herstellung",
+  "competences": [
+    "TED.US.2.HER.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "HER"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0046",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

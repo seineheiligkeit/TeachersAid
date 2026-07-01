@@ -1,0 +1,90 @@
+{
+  "id": "c0106.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Du bist Regionalplanerin in einem Bundesland mit schrumpfender Bevölkerung (z.B. Bezirk Lilienfeld, NÖ, mit ca. 25.000 Einwohner:innen auf 1.020 km²). Entwickle zwei konkrete Maßnahmen, um die Lebensqualität in dieser Region zu erhalten oder zu verbessern. Erkläre für jede Maßnahme: Was genau schlägst du vor? Wen soll sie erreichen? Was kostet sie (grob) und wer zahlt?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "HK",
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.ZEN.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Akzeptable Maßnahmen (Beispiele): Rufbus-System (on-demand, per App buchbar) → Ältere + Jugendliche ohne Führerschein; Finanzierung teils Bund/Land, teils Nutzerbeitrag. Breitbandausbau/5G-Netz → Homeoffice, Telemedizin, E-Government → alle Einwohner:innen; Kofinanzierung EU-Fonds + Land + Telekomanbieter. Gemeinschaftspraxis mit Telemedizin-Station → medizinische Grundversorgung; Land NÖ + Gesundheitskasse. Co-Working-Space + Gewerbehof → Zuzug junger Fachkräfte; Gemeindefonds. Regionale Lebensmittelkooperation + Direktvermarktung → Bauern + Nahversorgung; EU-LEADER-Fonds. Jede Kombination mit konkreter Zielgruppe und Finanzierungsüberlegung ist vollwertig.",
+    "acceptable_reasoning": "Es gibt keine 'falsche' Maßnahme, solange sie auf die Regionalentwicklung und nicht auf Stadtentwicklung ausgerichtet ist. Finanzierungsüberlegungen müssen nicht rechnerisch präzise sein.",
+    "rubric": [
+      {
+        "criterion": "Maßnahme 1",
+        "levels": [
+          "Konkret, regional angemessen, Zielgruppe + Finanzierung genannt",
+          "Maßnahme beschrieben, aber Zielgruppe oder Finanzierung fehlt",
+          "Zu vage oder nicht regional angemessen"
+        ]
+      },
+      {
+        "criterion": "Maßnahme 2",
+        "levels": [
+          "Konkret, regional angemessen, Zielgruppe + Finanzierung genannt",
+          "Maßnahme beschrieben, aber Zielgruppe oder Finanzierung fehlt",
+          "Zu vage oder nicht regional angemessen"
+        ]
+      },
+      {
+        "criterion": "Gesamtkonzept",
+        "levels": [
+          "Zwei verschiedene Bereiche (z.B. Mobilität + Digitales), sinnvoll ergänzend",
+          "Beide Maßnahmen ähnlich, aber begründet",
+          "Maßnahmen passen nicht zur Ausgangslage"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Maßnahmen müssen für einen ländlichen Bezirk mit 25.000 EW realistisch sein – keine Vorstadtbahn vorschlagen.",
+      "Die Frage nach 'wer zahlt' ist eine bewusste Herausforderung – auf die Rolle von EU-Fördermitteln (LEADER, Regionalfonds) hinweisen.",
+      "Kreative, aber unrealistische Vorschläge (z.B. 'Disneyland bauen') ernst nehmen und nach der Realisierbarkeit fragen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Zentren und Peripherien in Österreich",
+  "competences": [
+    "GWB.US.3.ZEN.03"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "HK",
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0106",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:24+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

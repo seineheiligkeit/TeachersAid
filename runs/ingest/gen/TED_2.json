@@ -1,0 +1,185 @@
+{
+  "subject": "Technik und Design",
+  "klasse": 2,
+  "kompetenzbereich": "Herstellung",
+  "title": "Werkzeuge richtig einsetzen: Sicher und fachgerecht arbeiten",
+  "kernfrage": "Welches Werkzeug brauchst du für welche Aufgabe — und wie arbeitest du dabei sicher?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Werkzeuge auswählen und sicher anwenden",
+        "throughline": "Schüler:innen lernen, Werkzeuge anhand der Bearbeitungsaufgabe bewusst auszuwählen, sicher einzusetzen und die Werkraumordnung als Grundlage handwerklicher Praxis zu verstehen — kein Selbstzweck, sondern Voraussetzung für qualitativ gute Arbeit.",
+        "talking_points": [
+          "Das richtige Werkzeug ist kein Detail — falsches Werkzeug erhöht Kraft, Fehlerrate und Verletzungsrisiko zugleich.",
+          "Sicherheitsregeln im Werkraum sind nicht Schikane, sondern direkte Unfallverhütung: konkrete Beispiele nennen (Sägeblatt-Führung, Schutzbrillen).",
+          "Nachhaltiger Werkzeugeinsatz: Pflege verlängert die Lebensdauer, spart Ressourcen und Geld.",
+          "Unterschied Handwerkzeug / Maschine: Maschinen beschleunigen, aber erhöhen auch das Risiko — Einweisung ist Pflicht."
+        ],
+        "extensions": [
+          "Werkzeugkartei erstellen: Schüler:innen dokumentieren jedes eingesetzte Werkzeug mit Foto (oder Zeichnung), Anwendung und Sicherheitsregel.",
+          "Vergleichsversuch: denselben Schnitt mit Säge und Stanleymesser — welches Ergebnis ist präziser, welcher Aufwand größer?",
+          "Exkursion oder Video: Handwerksbetrieb zeigen, der dieselben Grundwerkzeuge in professionellem Kontext einsetzt."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "matching",
+            "prompt": "Verbinde jedes Werkzeug mit der Bearbeitungsaufgabe, für die es am besten geeignet ist. Jede Zuordnung darf nur einmal verwendet werden.",
+            "payload": {
+              "kind": "matching",
+              "left": ["Feinsäge (Japansäge)", "Schleifpapier (Korn 120)", "Raspel", "Akkuschrauber", "Reißnadel"],
+              "right": ["Holzoberfläche glätten", "Linie in Holz anreißen/markieren", "Holz grob abnehmen / formen", "Schraube eindrehen", "gerades Schneiden von Holz"]
+            },
+            "response": {"mode": "none"},
+            "cognitive_level": "remember",
+            "dimensions": ["HER"],
+            "modality": "printable",
+            "serves": [{"competence_id": "TED.US.2.HER.02", "relation": "exercises"}],
+            "est_minutes": 6,
+            "answer_key": "Feinsäge → gerades Schneiden von Holz; Schleifpapier → Holzoberfläche glätten; Raspel → Holz grob abnehmen/formen; Akkuschrauber → Schraube eindrehen; Reißnadel → Linie in Holz anreißen.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Raspel und Schleifpapier werden oft verwechselt — Raspel nimmt Material grob ab (Zähne sichtbar), Schleifpapier glättet. Beide zeigen.",
+              "Reißnadel ist vielen unbekannt — kurz zeigen oder beschreiben."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "ordering",
+            "prompt": "Bringe die folgenden Arbeitsschritte für das Anfertigen eines einfachen Holzrahmens in die richtige Reihenfolge. Schreibe die Nummern 1–6 in die vorgesehenen Felder.",
+            "payload": {
+              "kind": "ordering",
+              "items": [
+                "Holzleisten auf die gewünschte Länge zuschneiden",
+                "Maße mit Maßband und Bleistift anzeichnen",
+                "Verbindungsstellen mit Schleifpapier glätten",
+                "Rahmenteile mit Holzleim und Zwingen zusammenfügen",
+                "Fertige Oberfläche mit Schleifpapier (Korn 180) abschleifen",
+                "Werkzeuge und Abfälle aufräumen, Arbeitsplatz säubern"
+              ]
+            },
+            "response": {"mode": "lines", "n": 6},
+            "cognitive_level": "understand",
+            "dimensions": ["HER"],
+            "modality": "printable",
+            "serves": [{"competence_id": "TED.US.2.HER.02", "relation": "exercises"}],
+            "est_minutes": 7,
+            "answer_key": "Korrekte Reihenfolge: 1. Maße anzeichnen → 2. Zuschneiden → 3. Verbindungsstellen schleifen → 4. Zusammenfügen mit Leim und Zwingen → 5. Oberfläche abschleifen → 6. Aufräumen. Aufräumen kommt immer zuletzt als Teil der Werkraumordnung.",
+            "acceptable_reasoning": "Schritte 3 und 5 könnten in bestimmten Kontexten tauschen — wichtig ist die logische Begründung.",
+            "watch_outs": [
+              "Schüler:innen setzen Aufräumen oft an Position 1 oder vergessen es — thematisieren, dass sauberer Arbeitsplatz Teil des Herstellungsprozesses ist.",
+              "Zuschneiden vor dem Anzeichnen: ein häufiger Fehler in der Praxis, der Material verschwendet."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "true_false_justify",
+            "prompt": "Beurteile die folgenden Aussagen zur Werkraumsicherheit. Stimmt die Aussage? Erkläre in einem Satz, warum.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Beim Sägen soll das Werkstück mit der freien Hand gehalten werden, damit es nicht verrutscht.",
+                "Eine Schutzbrille ist nur nötig, wenn man mit Maschinen arbeitet.",
+                "Werkzeuge sollen nach dem Gebrauch gereinigt und am richtigen Platz aufgehängt werden.",
+                "Wenn ein Werkzeug kaputt ist, darf man es noch kurz weiterverwenden, bevor man die Lehrperson informiert."
+              ]
+            },
+            "response": {"mode": "lines", "n": 8},
+            "cognitive_level": "understand",
+            "dimensions": ["HER"],
+            "modality": "printable",
+            "serves": [{"competence_id": "TED.US.2.HER.03", "relation": "exercises"}],
+            "est_minutes": 8,
+            "answer_key": "1. Falsch: Das Werkstück mit der Einspannhilfe (Schraubstock, Zwinge) fixieren — die freie Hand hält nicht sicher und ist in der Schnittbahn gefährdet. 2. Falsch: Auch beim Sägen von Hand entstehen Späne — Schutzbrille immer. 3. Richtig: Ordnung verhindert Verletzungen durch herumliegende Werkzeuge und verlängert die Lebensdauer. 4. Falsch: Defektes Werkzeug sofort aus dem Verkehr ziehen und Lehrperson informieren — Verletzungsgefahr.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Aussage 1 ist die häufigste Unfallursache im Werkraum — mit Nachdruck thematisieren.",
+              "Aussage 4: Schüler:innen zögern oft, Defekte zu melden — psychologische Sicherheit betonen (kein Tadel)."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "decision_scenario",
+            "prompt": "Du arbeitest im Werkraum und willst ein Brett mit der Handkreissäge schneiden. Die Lehrperson ist kurz hinausgegangen. Dein Mitschüler sagt: „Los, fang schon an, dauert eh nur kurz." Was tust du? Erkläre deine Entscheidung und nenne zwei konkrete Gründe.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Die Lehrperson hat den Raum für einige Minuten verlassen. Ein Mitschüler drängt dich, ohne Aufsicht mit der Handkreissäge zu beginnen."
+            },
+            "response": {"mode": "box", "min_height_mm": 45},
+            "cognitive_level": "evaluate",
+            "dimensions": ["HER"],
+            "modality": "printable",
+            "serves": [{"competence_id": "TED.US.2.HER.03", "relation": "exercises"}],
+            "est_minutes": 8,
+            "answer_key": "Richtige Entscheidung: Nicht beginnen, auf Lehrperson warten. Gründe: (1) Handkreissägen sind Maschinen mit hohem Verletzungsrisiko — die Einweisung und Aufsichtspflicht sind rechtlich und praktisch notwendig. (2) Im Ernstfall (Verletzung) ist niemand da, der hilft. Zusatz: Sozialdruck ('dauert eh kurz') ist eine häufige Unfallursache.",
+            "acceptable_reasoning": "Schüler:innen müssen die Entscheidung nicht nur benennen, sondern mit konkreten Sicherheitsargumenten begründen.",
+            "watch_outs": [
+              "Manche Schüler:innen nennen nur „weil man das nicht darf" — auf inhaltliche Sicherheitsgründe drängen.",
+              "Sozialdruck als Unfallursache explizit ansprechen — peer pressure im Werkraum ist real."
+            ],
+            "rubric": [
+              {"criterion": "Entscheidung klar und richtig", "levels": ["Entscheidung unklar oder falsch begründet", "Nicht-Handeln klar begründet, Sicherheitsargument genannt"]},
+              {"criterion": "Begründungstiefe", "levels": ["Nur Regel zitiert (\"darf man nicht\")", "Konkretes Risiko beschrieben (Verletzung, fehlende Hilfe)"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "open_response",
+            "prompt": "Du hast im Werkraum ein Holzstück bearbeitet und dabei verschiedene Werkzeuge eingesetzt. Schreibe einen kurzen Bericht (5–7 Sätze): Welche Werkzeuge hast du in welcher Reihenfolge verwendet? Was war dabei schwierig? Wie hast du sichergestellt, dass dein Arbeitsplatz ordentlich und sicher war?",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 55},
+            "cognitive_level": "analyze",
+            "dimensions": ["HER"],
+            "modality": "printable",
+            "serves": [{"competence_id": "TED.US.2.HER.02", "relation": "exercises"}],
+            "est_minutes": 10,
+            "answer_key": "Erwartete Elemente: Benennung von Werkzeugen in sinnvoller Reihenfolge (Anreißen → Zuschneiden → Schleifen), mindestens eine Schwierigkeit (z. B. gerade Sägelinie halten), mindestens eine Sicherheitsmaßnahme (Werkstück eingespannt, Späne weggefegt, Werkzeuge weggeräumt). Keine Musterlösung — bewertet wird die Reflektionsfähigkeit.",
+            "acceptable_reasoning": "Jede ehrliche Beschreibung des eigenen Arbeitsprozesses mit mindestens einem Sicherheitselement ist akzeptabel.",
+            "watch_outs": [
+              "Schüler:innen beschreiben nur das Ergebnis, nicht den Prozess — auf den Weg hinweisen.",
+              "Schwierigkeiten benennen fällt manchen schwer (Perfektionismus) — betonen, dass Fehler und Schwierigkeiten zum Lernen gehören."
+            ],
+            "rubric": [
+              {"criterion": "Werkzeugabfolge beschrieben", "levels": ["Keine klare Reihenfolge", "Logische Reihenfolge mit Werkzeugnennung"]},
+              {"criterion": "Sicherheitsaspekt erwähnt", "levels": ["Kein Sicherheitsaspekt", "Mindestens eine konkrete Maßnahme genannt"]},
+              {"criterion": "Reflexion eigener Schwierigkeiten", "levels": ["Keine Schwierigkeit erwähnt", "Mindestens eine Schwierigkeit ehrlich benannt"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "design_task",
+            "prompt": "Du bekommst den Auftrag, einen einfachen Stiftehalter aus Holz herzustellen (Maße: ca. 8 × 8 × 6 cm, mit 5 Bohrungen für Stifte). Welche Werkzeuge brauchst du für jeden Schritt? Erstelle eine Werkzeugliste mit Begründung: Schreibe zu jedem Werkzeug, wofür du es einsetzt und warum gerade dieses Werkzeug.",
+            "payload": null,
+            "response": {"mode": "table", "columns": ["Werkzeug", "Einsatz (Schritt)", "Warum dieses Werkzeug?"], "rows": 5},
+            "cognitive_level": "create",
+            "dimensions": ["HER"],
+            "modality": "printable",
+            "serves": [{"competence_id": "TED.US.2.HER.01", "relation": "exercises"}],
+            "est_minutes": 12,
+            "answer_key": "Mögliche Werkzeuge und Begründungen: Maßband + Bleistift (Maße anzeichnen — präzise Markierung), Handkreissäge oder Feinsäge (Holz auf Maß zuschneiden — gerade Schnittlinie), Standbohrmaschine oder Handbohrmaschine (Löcher bohren — runde, senkrechte Öffnung), Schleifpapier (Oberfläche glätten — splitterfreie Kante), Schraubstock (Werkstück fixieren — Sicherheit). Bewertet: Angemessenheit der Werkzeugwahl + Begründung.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen wählen oft zu viele Werkzeuge — Diskussion: Was ist wirklich nötig?",
+              "Schraubstock wird oft vergessen — als verstecktes Sicherheitswerkzeug thematisieren."
+            ],
+            "rubric": [
+              {"criterion": "Vollständigkeit der Werkzeuge", "levels": ["Weniger als 3 relevante Werkzeuge", "Mindestens 4 relevante Werkzeuge mit Schrittangabe"]},
+              {"criterion": "Begründungsqualität", "levels": ["Begründung nur allgemein ('zum Sägen')", "Begründung werkzeugspezifisch und mit Funktion verknüpft"]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

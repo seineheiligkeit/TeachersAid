@@ -1,0 +1,73 @@
+{
+  "id": "c0027.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Stell dir vor: Wien, Oktober 1938. Dein jüdischer Nachbar — Herr Goldmann, der als Arzt arbeitete — hat gerade seine Zulassung verloren, durfte sein Bankkonto nicht mehr nutzen und wurde von seinem Haus vertrieben. Er steht vor deiner Tür und bittet dich, ihm kurz Unterschlupf zu geben und einen Brief weiterzuleiten.\n\nDu lebst in einem Wohnhaus mit Hauswart, der als überzeugter Nationalsozialist bekannt ist.\n\nWelche Handlungsoptionen hättest du? Nenne mindestens drei Möglichkeiten und erkläre jeweils: Was wären mögliche Konsequenzen — für dich und für Herrn Goldmann?",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Wien, Oktober 1938: Dein jüdischer Nachbar bittet dich um Hilfe. Du lebst unter Überwachung."
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "HOR",
+      "PUR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GPB.US.4.ALL.06",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Mögliche Optionen (keine vollständige Liste):\n1. Ablehnen und Türe schließen — keine persönliche Gefahr, aber Herr Goldmann bleibt ohne Hilfe.\n2. Hereinlassen und kurzfristig helfen — hohes persönliches Risiko (Denunziation durch Hauswart möglich), Herr Goldmann bekommt Unterstützung.\n3. Brief weitergeben, ohne ihn hereinzulassen — geringeres Risiko, aber begrenzte Hilfe.\n4. Hauswart melden — Herr Goldmann droht Verhaftung und Schlimmeres; persönliche Sicherheit durch Loyalitätssignalisierung.\n5. Selbst Hilfe suchen (Pfarrer, andere Nachbarn) — Risiko verteilt sich, aber größerer Aufwand.\n\nWichtig: Es gibt keine 'richtige' Antwort in der Didaktik; Ziel ist das Verstehen von Handlungsspielräumen unter totalitärem Druck.",
+    "acceptable_reasoning": "Alle historisch plausiblen Optionen mit realistischen Konsequenzen sind akzeptabel. Heroische Antworten nicht abwerten, aber realistisch kontextualisieren.",
+    "rubric": [
+      {
+        "criterion": "Optionenvielfalt",
+        "levels": [
+          "Nur eine Option oder ausweichende Antwort",
+          "Zwei Optionen mit Konsequenzen",
+          "Mindestens drei Optionen mit differenzierten Folgenüberlegungen für beide Beteiligten"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Das Szenario darf nicht zur einfachen Heldenphantasie werden ('Ich hätte natürlich geholfen'). Druck, Angst, reale Konsequenzen thematisieren.",
+      "Keine Schüler:innen zu einem bestimmten Urteil drängen — die Aufgabe zielt auf das Erkennen von Komplexität, nicht auf moralische Selbstpositionierung.",
+      "Achtung: Manche Schüler:innen haben selbst Fluchterfahrungen oder Familiengeschichten mit Verfolgung — behutsam moderieren."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Geschichte und politische Bildung",
+  "klasse": 4,
+  "kompetenzbereich": null,
+  "competences": [
+    "GPB.US.4.ALL.06"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "HOR",
+    "PUR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0027",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

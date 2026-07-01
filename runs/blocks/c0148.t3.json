@@ -1,0 +1,75 @@
+{
+  "id": "c0148.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Entscheide, ob die folgenden Aussagen über soziokulturelle und sensorische Einflüsse auf das Essverhalten wahr oder falsch sind, und begründe deine Entscheidung in ein bis zwei Sätzen.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Menschen essen in Gesellschaft anderer in der Regel mehr als wenn sie alleine essen.",
+        "Der Geruch eines Lebensmittels hat keinen nachweisbaren Einfluss auf dessen wahrgenommenen Geschmack.",
+        "Traditionen und Rituale rund ums Essen (z. B. Sonntagsessen, Festtagsgerichte) erfüllen wichtige soziale und identitätsstiftende Funktionen.",
+        "Werbung für Lebensmittel spricht ausschließlich rationale Kaufentscheidungen an."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "Wahr / Falsch",
+        "Begründung"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "EV"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "HOE.OS.6.EIG.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1: WAHR – Soziale Situation verlängert Mahlzeiten und senkt Hemmschwellen; Gruppenessen führt nachweislich zu höherer Kalorienzufuhr. | 2: FALSCH – Geruch ist ein Hauptbestandteil des Geschmacksempfindens; bis zu 80 % des wahrgenommenen Geschmacks entstehen über den Geruchssinn (retronasal). | 3: WAHR – Gemeinsame Mahlzeiten stärken Zugehörigkeitsgefühl, Identität und familiäre Bindungen über Generationen. | 4: FALSCH – Lebensmittelwerbung setzt gezielt auf emotionale Reize (Geborgenheit, Genuss, Zugehörigkeit, Abenteuer), nicht primär auf sachliche Informationen.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Aussage 2 ist ein häufiger Irrtum – viele Schüler:innen trennen Geruch und Geschmack streng voneinander. Auf das Zusammenspiel von Geruchs- und Geschmackssinn hinweisen (retronasal vs. orthonasal).",
+      "Bei Aussage 4 können Schüler:innen argumentieren, dass Werbung manchmal Nährwertinfo enthält – akzeptieren, wenn sie trotzdem die emotionale Hauptstrategie benennen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Haushaltsökonomie und Ernährung",
+  "klasse": 6,
+  "kompetenzbereich": "Das eigene Essverhalten erkennen, reflektieren und bewerten sowie Zusammenhänge zwischen Ernährungsgewohnheiten, Kulturen, Gesundheit und Wohlbefinden verstehen",
+  "competences": [
+    "HOE.OS.6.EIG.04"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "EV"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0148",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:25+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

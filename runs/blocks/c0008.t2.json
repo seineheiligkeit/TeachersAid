@@ -1,0 +1,74 @@
+{
+  "id": "c0008.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne jeden taktischen Begriff seiner Beschreibung zu. Schreibe den Buchstaben der Beschreibung neben die Nummer des Begriffs.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "1. Freilaufen",
+        "2. Decken (Manndeckung)",
+        "3. Absichern",
+        "4. Anbieten",
+        "5. Doppeln"
+      ],
+      "right": [
+        "A — Zwei Abwehrspieler:innen stellen eine Angreiferin/einen Angreifer, um den Ball zu gewinnen.",
+        "B — Eine Spielerin/ein Spieler positioniert sich hinter der/dem Mitspieler:in mit Ball, um bei Ballverlust eingreifen zu können.",
+        "C — Eine Spielerin/ein Spieler bewegt sich aktiv, um eine Passposition zu bekommen, ohne gedeckt zu sein.",
+        "D — Eine Spielerin/ein Spieler bleibt nah an der eigenen Gegenspielerin/dem eigenen Gegenspieler, unabhängig vom Ball.",
+        "E — Eine Spielerin/ein Spieler zeigt durch Körperhaltung und Position, dass sie/er anspielbar ist."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "FAC"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BUS.US.4.FAC.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "1–C (Freilaufen), 2–D (Decken), 3–B (Absichern), 4–E (Anbieten), 5–A (Doppeln). Hinweis: Freilaufen (C) und Anbieten (E) ähneln einander — Freilaufen betont die Bewegung, Anbieten betont das Signal an die/den Passgeber:in.",
+    "acceptable_reasoning": "1–E und 4–C (Tausch) ist akzeptabel, wenn die Schülerin/der Schüler den Unterschied erklären kann.",
+    "rubric": [],
+    "watch_outs": [
+      "'Doppeln' ist in manchen Sportarten regulär (Basketball), in anderen verpönt (Fußball-Pressing vs. Foulspiel) — kontextualisieren.",
+      "Absichern (B) wird oft mit der Verteidigung verwechselt — Absichern kann auch im Angriff stattfinden (z. B. Rückpass-Option)."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Bewegung und Sport",
+  "klasse": 4,
+  "kompetenzbereich": "Fachkompetenz",
+  "competences": [
+    "BUS.US.4.FAC.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "FAC"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0008",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T12:58:20+00:00"
+}

@@ -1,0 +1,151 @@
+{
+  "id": "c0085.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1",
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Vergleiche die beiden Diagramme. Beide zeigen dieselben Daten zu den Verkaufszahlen eines Shops von Jänner bis Mai. (a) Beschreibe den Eindruck, den das erste Diagramm erweckt. (b) Was ist der Unterschied zwischen den beiden Diagrammen? (c) Welches Diagramm ist deiner Meinung nach fairer — und warum?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "DAR",
+      "BEG"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.3.DAT.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "(a) Erste Darstellung: die Balken wachsen dramatisch, der Unterschied wirkt riesig. (b) Das erste Diagramm beginnt die y-Achse nicht bei 0 (Ausschnitt ab ca. 100), das zweite beginnt bei 0. (c) Das zweite ist fairer: der Unterschied von 102 auf 115 ist real nur 13 Stück — im Verhältnis zum Gesamtwert (ca. 13%) ist das mäßig, im ersten wirkt es wie Verdopplung.",
+    "acceptable_reasoning": "Der Tatsächliche Unterschied: 115−102=13 Stück. Prozentsatz: 13/102 ≈ 12,7%.",
+    "rubric": [
+      {
+        "criterion": "Unterschied der Diagramme klar benannt",
+        "levels": [
+          "Kein Unterschied erkannt",
+          "Unterschied erkannt, ungenau",
+          "Präzise: Achsenbeginn als Ursache"
+        ]
+      },
+      {
+        "criterion": "Begründete Bewertung",
+        "levels": [
+          "Keine Begründung",
+          "Meinung ohne Argument",
+          "Klare Argumentation mit Zahlen"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen empfinden die erste Darstellung oft als ‚korrekter', weil sie ‚mehr zeigt' — genau diesen Denkfehler aufgreifen.",
+      "‚Manipuliert' heißt hier nicht gelogen, sondern irreführend gestaltet."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Mathematik",
+  "klasse": 3,
+  "kompetenzbereich": "4: Daten und Zufall",
+  "competences": [
+    "MAT.US.3.DAT.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "DAR",
+    "BEG"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Jän",
+          "Feb",
+          "Mär",
+          "Apr",
+          "Mai"
+        ],
+        "values": [
+          102,
+          105,
+          108,
+          110,
+          115
+        ],
+        "title": "Verkaufszahlen (Ausschnitt)",
+        "xlabel": "Monat",
+        "ylabel": "Stück"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    },
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Jän",
+          "Feb",
+          "Mär",
+          "Apr",
+          "Mai"
+        ],
+        "values": [
+          102,
+          105,
+          108,
+          110,
+          115
+        ],
+        "title": "Verkaufszahlen (vollständige Achse, ab 0)",
+        "xlabel": "Monat",
+        "ylabel": "Stück"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0085",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:19+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

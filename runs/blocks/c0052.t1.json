@@ -1,0 +1,80 @@
+{
+  "id": "c0052.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Match each phrase (1–8) to the correct function (A–D). Some functions may have more than one phrase.\n\nPhrases:\n1. \"I think that...\"\n2. \"because...\"\n3. \"For example,...\"\n4. \"In my opinion,...\"\n5. \"This shows that...\"\n6. \"However,...\"\n7. \"I believe...\"\n8. \"To sum up,...\"",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "1. I think that...",
+        "2. because...",
+        "3. For example,...",
+        "4. In my opinion,...",
+        "5. This shows that...",
+        "6. However,...",
+        "7. I believe...",
+        "8. To sum up,..."
+      ],
+      "right": [
+        "A — expressing an opinion",
+        "B — giving a reason",
+        "C — giving an example or evidence",
+        "D — contrasting or concluding"
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Phrase",
+        "Function (A–D)"
+      ],
+      "rows": 8
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "SCH"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS1.US.4.SCH.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "1–A, 2–B, 3–C, 4–A, 5–C, 6–D, 7–A, 8–D",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "'because' und 'For example' werden häufig verwechselt — betonen, dass 'because' einen Grund einleitet (Kausalität), 'for example' ein konkretes Beispiel (Konkretisierung)",
+      "'This shows that...' kann sowohl Beweis als auch Schlussfolgerung sein — hier als Beispiel/Evidenz eingestuft"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Erste lebende Fremdsprache",
+  "klasse": 4,
+  "kompetenzbereich": "Schreiben",
+  "competences": [
+    "FS1.US.4.SCH.02"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "SCH"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0052",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

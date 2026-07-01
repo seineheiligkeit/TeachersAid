@@ -1,0 +1,275 @@
+{
+  "subject": "Chemie",
+  "klasse": 7,
+  "kompetenzbereich": "Übertragung",
+  "title": "Donator-Akzeptor-Prinzip: Säure-Base- und Redoxreaktionen",
+  "kernfrage": "Wie lassen sich Säure-Base-Reaktionen und Redoxreaktionen als Übertragungs- bzw. Verschiebungsprozesse verstehen, und warum ist dieses Konzept so grundlegend für die Chemie?",
+  "body": {
+    "intro": [
+      "Viele chemische Reaktionen lassen sich nach einem gemeinsamen Prinzip beschreiben: Ein Teilchen gibt etwas ab – ein anderes nimmt es auf. In diesem Arbeitsblatt untersucht ihr, wie das Donator-Akzeptor-Konzept sowohl Protolysen als auch Redoxreaktionen erklärt."
+    ],
+    "data_figures": [],
+    "assets": [
+      {
+        "id": "abb1",
+        "role": "figure",
+        "generator": "matplotlib:math_formula",
+        "spec": {
+          "latex": "\\text{Essigsäure: } \\mathrm{CH_3COOH + H_2O \\rightleftharpoons CH_3COO^- + H_3O^+}"
+        }
+      },
+      {
+        "id": "abb2",
+        "role": "figure",
+        "generator": "matplotlib:math_formula",
+        "spec": {
+          "latex": "\\text{Redox: } \\mathrm{Zn + Cu^{2+} \\rightarrow Zn^{2+} + Cu}"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Säure-Base-Reaktionen als Protonenübertragung",
+        "throughline": "Schüler:innen erkennen, dass Protolysen keine mysteriösen Sonderprozesse sind, sondern das konsequente Anwenden des Donator-Akzeptor-Konzepts auf H⁺-Ionen. Das korrigiert die häufige Fehlvorstellung, eine Säure 'zerfällt einfach'.",
+        "talking_points": [
+          "Brønsted-Definition: Säure = Protonendonator, Base = Protonenakzeptor; beide Partner sind immer gleichzeitig nötig.",
+          "Konjugierte Paare: jede Säure erzeugt ihre konjugierte Base – die Stärke des Paares ist umgekehrt proportional.",
+          "Das Gleichgewicht liegt auf der Seite des schwächeren Protonendonators (schwächere Säure = Produkt bevorzugt).",
+          "Amphotere Stoffe (z. B. Wasser) können je nach Partner als Donator oder Akzeptor auftreten."
+        ],
+        "extensions": [
+          "Recherchiert, wie Lewis-Säuren/-Basen das Donator-Akzeptor-Konzept noch weiter verallgemeinern (Elektronenpaarübertragung).",
+          "Vergleicht pKa-Werte einer Reihe organischer Säuren und erklärt den Trend mithilfe der Elektronegativität der funktionellen Gruppen.",
+          "Untersucht, wie Pufferlösungen im Blut (Hydrogencarbonat-Puffer) das Donator-Akzeptor-Gleichgewicht nutzen."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "open_response",
+            "prompt": "Schau dir Gleichung (Abb. 1) an: Essigsäure reagiert mit Wasser. Benenne für diese Reaktion den Protonendonator und den Protonenakzeptor. Erkläre in zwei bis drei Sätzen, warum man diese Reaktion als 'Übertragungsreaktion' bezeichnen kann.",
+            "payload": null,
+            "response": { "mode": "lines", "n": 4 },
+            "cognitive_level": "understand",
+            "dimensions": ["WO"],
+            "serves": [
+              { "competence_id": "CHE.OS.7.UBE.01", "relation": "exercises" }
+            ],
+            "est_minutes": 5,
+            "asset_refs": ["abb1"],
+            "answer_key": "Protonendonator: CH₃COOH (gibt H⁺ ab); Protonenakzeptor: H₂O (nimmt H⁺ auf). Es handelt sich um eine Übertragungsreaktion, weil ein Proton (H⁺) von einem Teilchen auf ein anderes übertragen wird – kein H⁺ entsteht neu oder verschwindet, es verschiebt sich nur zwischen den Reaktionspartnern.",
+            "acceptable_reasoning": "Schüler:innen können auch formulieren, dass H₂O zum Donator wird (H₃O⁺) und CH₃COO⁻ zur Base – dies zeigt, dass sie konjugierte Paare verstanden haben.",
+            "watch_outs": [
+              "Häufige Fehlvorstellung: 'Die Säure löst sich auf und gibt dabei Wasserstoff ab.' – richtig ist, dass das Proton aktiv auf einen Akzeptor übertragen wird; ohne Akzeptor findet keine Protolyse statt.",
+              "Verwechslung von H (Wasserstoffatom) und H⁺ (Proton) vermeiden; bei der Übertragung geht nur das Proton, nicht das Elektron."
+            ],
+            "rubric": [
+              {
+                "criterion": "Identifikation von Donator und Akzeptor",
+                "levels": [
+                  "Beide korrekt benannt mit chemischer Formel",
+                  "Einer korrekt oder Begriffe verwechselt",
+                  "Keine korrekte Zuordnung"
+                ]
+              },
+              {
+                "criterion": "Erklärung des Übertragungscharakters",
+                "levels": [
+                  "Proton als verschobene Einheit klar beschrieben",
+                  "Übertragung erwähnt, aber ungenau",
+                  "Kein Bezug auf Übertragung"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "true_false_justify",
+            "prompt": "Beurteile die folgenden Aussagen zu Protolysegleichgewichten. Kreuze 'richtig' oder 'falsch' an und begründe kurz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Eine starke Säure hat eine starke konjugierte Base.",
+                "Wasser kann sowohl als Protonendonator als auch als Protonenakzeptor wirken.",
+                "Bei einer Protolyse wird immer ein Proton vernichtet.",
+                "Das Gleichgewicht einer Protolyse liegt bevorzugt auf der Seite der schwächeren Säure."
+              ]
+            },
+            "response": { "mode": "lines", "n": 8 },
+            "cognitive_level": "analyze",
+            "dimensions": ["EG"],
+            "serves": [
+              { "competence_id": "CHE.OS.7.UBE.02", "relation": "exercises" }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "1. Falsch – eine starke Säure hat eine SCHWACHE konjugierte Base (je stärker die Säure, desto weniger neigt die konjugierte Base zur Rückübertragung). 2. Richtig – Wasser ist amphiprotonisch: mit HCl als Base, mit NH₃ als Säure. 3. Falsch – Protonen werden weder vernichtet noch erzeugt, sie werden nur übertragen. 4. Richtig – das Gleichgewicht liegt auf der Seite der schwächeren Säure, da diese das Proton weniger stark abgibt.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Aussage 1 ist eine klassische Fehlvorstellung: Schüler:innen leiten fälschlicherweise ab, dass 'stärker' auf beide Partner übertragbar ist.",
+              "Aussage 3 greift die Fehlvorstellung 'Proton wird verbraucht' auf – betonen, dass Massenerhaltung auch für Ionen gilt."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "open_response",
+            "prompt": "Formuliere die vollständige Reaktionsgleichung für die Protolyse von Ammoniak (NH₃) in Wasser. Gib an, welches konjugierte Säure-Base-Paar du erkennst, und erkläre, warum das Gleichgewicht auf der Seite der Edukte liegt. (Hinweis: pKa von NH₄⁺ ≈ 9,25; pKa von H₂O ≈ 15,7)",
+            "payload": null,
+            "response": { "mode": "lines", "n": 5 },
+            "cognitive_level": "apply",
+            "dimensions": ["WO", "EG"],
+            "serves": [
+              { "competence_id": "CHE.OS.7.UBE.02", "relation": "exercises" },
+              { "competence_id": "CHE.OS.x.WIS.03", "relation": "exercises" }
+            ],
+            "est_minutes": 7,
+            "asset_refs": [],
+            "answer_key": "NH₃ + H₂O ⇌ NH₄⁺ + OH⁻. Konjugierte Paare: NH₃/NH₄⁺ (Base/konjugierte Säure) und H₂O/OH⁻ (Säure/konjugierte Base). Das Gleichgewicht liegt links, weil H₂O (pKa 15,7) eine viel schwächere Säure als NH₄⁺ (pKa 9,25) ist – das Proton verbleibt bevorzugt beim Donator mit dem niedrigeren pKa, also beim NH₄⁺-Produkt, und wird kaum rückübertragen.",
+            "acceptable_reasoning": "Alternativformulierung: 'Das Gleichgewicht liegt auf der Seite der schwächeren Säure (H₂O), also der Eduktseite' ist ebenfalls vollständig korrekt.",
+            "watch_outs": [
+              "Verwechslung der pKa-Logik: ein HÖHERER pKa bedeutet eine SCHWÄCHERE Säure. Schüler:innen denken oft, höherer pKa = stärkere Säure.",
+              "Doppelpfeil (Gleichgewichtszeichen) nicht vergessen – NH₃-Hydrolyse ist kein vollständiger Prozess."
+            ],
+            "rubric": []
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Redoxreaktionen als Elektronenübertragung",
+        "throughline": "Die Parallelstruktur zu Protolysen zeigt: Chemie folgt wiederkehrenden Prinzipien. Das Donator-Akzeptor-Konzept vereint scheinbar verschiedene Reaktionstypen unter einem Dach – ein zentraler Erkenntnisgewinn der Sekundarstufe II.",
+        "talking_points": [
+          "Oxidation = Elektronenabgabe (Reduktionsmittel = Elektronendonator); Reduktion = Elektronenaufnahme (Oxidationsmittel = Elektronenakzeptor).",
+          "Oxidationszahl als buchhalterische Hilfsgröße – sie ist kein Aufladungsgrad, sondern ein Zuweisungswerkzeug.",
+          "Redoxreaktionen können in Halbgleichungen zerlegt werden (Oxidations- und Reduktionshalbreaktion) – praktisch für elektrochemische Systeme.",
+          "Parallele zu Säure-Base: wie bei Protolysen bestimmt die 'Stärke' der Partner (Redoxpotenzial), wo das Gleichgewicht liegt."
+        ],
+        "extensions": [
+          "Übertragt das Konzept auf biologische Redoxketten: Wie funktioniert die Atmungskette als Redoxkaskade?",
+          "Berechnet das Standardpotenzial einer galvanischen Zelle (z. B. Daniell-Element) aus den Halbzellpotenzialien.",
+          "Recherchiert, welche Metalle als Opferanoden zum Korrosionsschutz eingesetzt werden, und erklärt den Zusammenhang mit den Redoxpotenzialen."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "open_response",
+            "prompt": "Betrachte die Reaktion in Abb. 2: Zink reagiert mit Kupfer(II)-Ionen. Bestimme die Oxidationszahlen aller beteiligten Elemente vor und nach der Reaktion. Erstelle anschließend zwei Halbgleichungen (eine für die Oxidation, eine für die Reduktion) und bezeichne jeweils, was als Elektronendonator und was als Elektronenakzeptor wirkt.",
+            "payload": null,
+            "response": { "mode": "lines", "n": 8 },
+            "cognitive_level": "apply",
+            "dimensions": ["WO", "EG"],
+            "serves": [
+              { "competence_id": "CHE.OS.7.UBE.03", "relation": "exercises" }
+            ],
+            "est_minutes": 10,
+            "asset_refs": ["abb2"],
+            "answer_key": "Oxidationszahlen: Zn (0 → +2), Cu²⁺ (+2 → 0). Oxidation (Elektronendonator Zn): Zn → Zn²⁺ + 2 e⁻. Reduktion (Elektronenakzeptor Cu²⁺): Cu²⁺ + 2 e⁻ → Cu. Zink ist das Reduktionsmittel (Elektronendonator), Cu²⁺ ist das Oxidationsmittel (Elektronenakzeptor).",
+            "acceptable_reasoning": "Schüler:innen können 'Donator/Akzeptor' auch mit 'Reduktionsmittel/Oxidationsmittel' gleichsetzen – das zeigt tieferes Verständnis.",
+            "watch_outs": [
+              "Häufiger Fehler: Oxidation und Reduktion verwechseln. Merkregel: OIL RIG – Oxidation Is Loss (of electrons), Reduction Is Gain.",
+              "Oxidationszahl 0 für elementares Metall wird oft vergessen – Schüler:innen schreiben manchmal '+0' oder lassen es weg.",
+              "Ladungsausgleich in Halbgleichungen prüfen – Elektronen müssen explizit erscheinen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Korrekte Oxidationszahlen",
+                "levels": [
+                  "Alle vier Oxidationszahlen korrekt",
+                  "Mindestens zwei korrekt",
+                  "Keine korrekte Oxidationszahl"
+                ]
+              },
+              {
+                "criterion": "Korrekte Halbgleichungen",
+                "levels": [
+                  "Beide Halbgleichungen mit Elektronenübertragung korrekt",
+                  "Eine Halbgleichung korrekt",
+                  "Keine korrekte Halbgleichung"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "decision_scenario",
+            "prompt": "In einem Experiment sollen zwei unbekannte Metallstreifen (Metall A und Metall B) in eine Kupfersulfat-Lösung (CuSO₄) getaucht werden. Nach einer Minute zeigt sich bei Metall A ein roter Kupferbelag, bei Metall B nicht. Erkläre mithilfe des Donator-Akzeptor-Konzepts, was bei Metall A passiert ist. Welche Schlussfolgerung kannst du über die relative Lage von Metall A und B in der Aktivitätsreihe (elektrochemischen Spannungsreihe) ziehen?",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Metall A scheidet Kupfer ab, Metall B nicht. Was sagt das über die Elektronenabgabebereitschaft der beiden Metalle aus?"
+            },
+            "response": { "mode": "box", "min_height_mm": 40 },
+            "cognitive_level": "analyze",
+            "dimensions": ["EG", "KZ"],
+            "serves": [
+              { "competence_id": "CHE.OS.7.UBE.03", "relation": "exercises" },
+              { "competence_id": "CHE.OS.x.ERK.06", "relation": "exercises" }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Bei Metall A überträgt das Metall Elektronen auf Cu²⁺-Ionen (Metall A ist Elektronendonator, Cu²⁺ ist Elektronenakzeptor). Metall A wird dabei oxidiert (löst sich auf), Cu²⁺ wird reduziert (scheidet sich als Cu-Metall ab). Metall A steht in der Aktivitätsreihe 'unedler' als Kupfer (höheres Reduktionspotenzial beim Cu/Cu²⁺-System). Metall B gibt keine Elektronen ab: es ist 'edler' als Kupfer oder reagiert nicht – es steht unterhalb von Kupfer in der Aktivitätsreihe.",
+            "acceptable_reasoning": "Schüler:innen, die formulieren, dass Metall A ein stärkeres Reduktionsmittel als Kupfer ist, zeigen korrektes Verständnis.",
+            "watch_outs": [
+              "Verwechslung: Das Metall, das sich auflöst, wird OXIDIERT – Schüler:innen sagen manchmal 'Kupfer oxidiert das Metall', was umgangssprachlich mehrdeutig ist.",
+              "Achtung: 'Metall B reagiert nicht' bedeutet nicht, dass es gar keine Reaktion gibt – es findet keine Redoxreaktion mit Cu²⁺ statt, weil B nicht unedler genug ist."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "open_response",
+            "prompt": "Beschreibe in einem strukturierten Vergleich (z. B. als Tabelle oder als Fließtext mit klaren Gegenüberstellungen): Welche Gemeinsamkeiten und welche Unterschiede bestehen zwischen Säure-Base-Reaktionen und Redoxreaktionen, wenn man beide als Donator-Akzeptor-Prozesse betrachtet? Nutze konkrete Beispiele.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 55 },
+            "cognitive_level": "evaluate",
+            "dimensions": ["WO", "KZ"],
+            "serves": [
+              { "competence_id": "CHE.OS.7.UBE.01", "relation": "exercises" },
+              { "competence_id": "CHE.OS.x.WIS.02", "relation": "exercises" }
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "Gemeinsamkeiten: In beiden Fällen gibt ein Teilchen (Donator) etwas ab und ein anderes (Akzeptor) nimmt es auf; Konservierungsprinzip (das Übertragene wird nicht erzeugt/vernichtet); Gleichgewichtscharakter (Rückreaktion möglich); die 'Stärke' der Partner bestimmt Gleichgewichtslage. Unterschiede: Bei Protolysen wird H⁺ (Proton) übertragen, bei Redoxreaktionen werden Elektronen übertragen; Säure-Base: Stärke gemessen an pKa/pKb; Redox: Stärke gemessen am Standardelektrodenpotenzial (in Volt). Beispiel Säure-Base: HCl + H₂O → H₃O⁺ + Cl⁻ (H⁺-Übertragung). Beispiel Redox: Fe + 2 HCl → FeCl₂ + H₂ (Elektronenübertragung).",
+            "acceptable_reasoning": "Eine Tabellenform mit den Spalten 'übertragene Einheit / Stärkemaß / Beispiel' ist besonders klar und sollte positiv bewertet werden.",
+            "watch_outs": [
+              "Manche Schüler:innen verwechseln pKa und Redoxpotenzial als gleichwertige 'Stärkemaße' ohne Dimension – darauf hinweisen, dass beide Größen unterschiedliche Einheiten und Messmethoden haben.",
+              "Komplexe Reaktionen (z. B. Fe + HCl) können gleichzeitig Säure-Base- und Redoxcharakter haben – das ist eine Erweiterung, nicht zu erwarten, aber zu belohnen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Gemeinsamkeiten korrekt identifiziert",
+                "levels": [
+                  "Mindestens zwei strukturelle Gemeinsamkeiten mit Begründung",
+                  "Eine Gemeinsamkeit korrekt",
+                  "Keine sinnvolle Gemeinsamkeit genannt"
+                ]
+              },
+              {
+                "criterion": "Unterschiede korrekt dargestellt",
+                "levels": [
+                  "Übertragene Einheit UND Stärkemaß unterschieden",
+                  "Nur übertragene Einheit unterschieden",
+                  "Kein relevanter Unterschied"
+                ]
+              },
+              {
+                "criterion": "Verwendung konkreter Beispiele",
+                "levels": [
+                  "Mindestens je ein Beispiel pro Reaktionstyp korrekt formuliert",
+                  "Ein Beispiel korrekt",
+                  "Kein konkretes Beispiel"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

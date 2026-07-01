@@ -1,0 +1,106 @@
+{
+  "id": "c0154.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "In einer Sportabteilung werden 200 Schüler:innen auf eine seltene Erkrankung getestet. 10 von ihnen sind tatsächlich erkrankt (Ereignis K). Der Test hat folgende Eigenschaften:\n• Bei erkrankten Personen schlägt er in 90 % der Fälle an (positives Ergebnis, Ereignis P).\n• Bei gesunden Personen liefert er in 5 % der Fälle fälschlicherweise ein positives Ergebnis.\n(a) Berechne, wie viele der 200 Personen ein positives Testergebnis erhalten (absolute Zahlen).\n(b) Wie viele der positiv Getesteten sind tatsächlich krank?\n(c) Berechne P(K|P): die Wahrscheinlichkeit, bei positivem Testergebnis tatsächlich krank zu sein.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 70.0
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "FO",
+      "DM"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.OS.6.BES.05",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "MAT.OS.6.BES.06",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Ausgangsdaten: 10 krank, 190 gesund. (a) Positiv krank: 0,9 · 10 = 9. Positiv gesund (falsch positiv): 0,05 · 190 = 9,5 ≈ 9 oder 10 (Rundung akzeptabel, mit Begründung). Gesamt positiv: 9 + 9,5 = 18,5 ≈ 18 oder 19. (b) 9 der positiv Getesteten sind krank. (c) P(K|P) = 9 / 18,5 ≈ 0,486 ≈ 48,6 %. (Exakt: P(K|P) = (0,9 · 10/200) / ((0,9 · 10 + 0,05 · 190)/200) = 9/18,5 ≈ 0,486.) Nur ca. die Hälfte der positiv Getesteten ist wirklich krank.",
+    "acceptable_reasoning": "Natürliche-Häufigkeiten-Ansatz mit absoluten Zahlen ist ausdrücklich erwünscht — er macht den Rechenweg transparenter.",
+    "rubric": [
+      {
+        "criterion": "Absolute Häufigkeiten",
+        "levels": [
+          "Falsch berechnet",
+          "9 krank-positiv und ~9,5 gesund-positiv korrekt"
+        ]
+      },
+      {
+        "criterion": "P(K|P)",
+        "levels": [
+          "Ansatz fehlt",
+          "Ansatz erkennbar, Rechenfehler",
+          "≈ 48,6 % korrekt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Häufige Fehlvorstellung: „Der Test ist zu 90 % genau, also ist ein positives Ergebnis zu 90 % richtig.“ — Das ist falsch; Sensitivität ist nicht gleich positiver Vorhersagewert.",
+      "Rundungsfehler bei 9,5: Schüler:innen sollen angeben, warum sie runden, oder exakt mit Brüchen rechnen.",
+      "P(K|P) ≈ 48,6 % ist das überraschende Ergebnis — hier liegt der pädagogische Schwerpunkt."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Mathematik",
+  "klasse": 6,
+  "kompetenzbereich": "Beschreibende Statistik; Wahrscheinlichkeit",
+  "competences": [
+    "MAT.OS.6.BES.05",
+    "MAT.OS.6.BES.06"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "FO",
+    "DM"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:math_formula",
+      "spec": {
+        "latex": "P(A \\mid B) = \\frac{P(B \\mid A) \\cdot P(A)}{P(B)}"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0154",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:26+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

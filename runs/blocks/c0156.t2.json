@@ -1,0 +1,89 @@
+{
+  "id": "c0156.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Rotes Licht hat eine Wellenlänge von etwa 650 nm, violettes Licht von etwa 400 nm. Die Lichtgeschwindigkeit beträgt c = 3,00 · 10⁸ m/s, das Plancksche Wirkungsquantum h = 6,63 · 10⁻³⁴ J·s.\na) Berechne die Frequenz von rotem und violettem Licht.\nb) Berechne die Energie eines Photons der jeweiligen Farbe in Joule.\nc) Welche Farbe hat mehr Energie pro Photon – und was bedeutet das für die biologische Wirkung (z. B. auf die Haut)?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.OS.7.ATO.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.OS.x.W.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "a) f_rot = c/λ = 3,00·10⁸ m/s ÷ 650·10⁻⁹ m ≈ 4,62·10¹⁴ Hz; f_violett = 3,00·10⁸ ÷ 400·10⁻⁹ ≈ 7,50·10¹⁴ Hz. b) E_rot = h·f = 6,63·10⁻³⁴ · 4,62·10¹⁴ ≈ 3,06·10⁻¹⁹ J; E_violett ≈ 6,63·10⁻³⁴ · 7,50·10¹⁴ ≈ 4,97·10⁻¹⁹ J. c) Violettes Licht hat mehr Energie pro Photon (kürzere Wellenlänge → höhere Frequenz → mehr Energie). Höhere Photonenenergie kann biologische Moleküle (z. B. DNA) stärker schädigen – UV-Strahlung (noch höhere Energie) verursacht Sonnenbrand und DNA-Schäden.",
+    "acceptable_reasoning": "Akzeptiert: Nanometer korrekt in Meter umgerechnet (·10⁻⁹); sinnvolle Angabe der biologischen Wirkung.",
+    "rubric": [
+      {
+        "criterion": "Frequenzberechnung",
+        "levels": [
+          "Beide Frequenzen korrekt mit Einheit Hz",
+          "Formel richtig, Umrechnungsfehler"
+        ]
+      },
+      {
+        "criterion": "Energieberechnung",
+        "levels": [
+          "Beide Energien korrekt in J",
+          "Formel bekannt, Rechenfehler"
+        ]
+      },
+      {
+        "criterion": "Interpretation",
+        "levels": [
+          "Zusammenhang Energie–Wellenlänge–biologische Wirkung korrekt erklärt",
+          "Farbe benannt, keine Begründung"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Einheitenumrechnung nm → m wird häufig vergessen: 650 nm = 650·10⁻⁹ m = 6,50·10⁻⁷ m.",
+      "Viele verwechseln: höhere Frequenz = mehr Energie (nicht weniger). Die Wellenlänge verhält sich umgekehrt zur Energie."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Physik",
+  "klasse": 7,
+  "kompetenzbereich": "Atomphysik",
+  "competences": [
+    "PHY.OS.7.ATO.01",
+    "PHY.OS.x.W.04"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0156",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:27+00:00",
+  "updated_at": "2026-06-29T18:12:15+00:00"
+}

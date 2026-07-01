@@ -1,0 +1,75 @@
+{
+  "id": "c0012.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "multiple_choice",
+    "prompt": "Lies den folgenden Dialog:\n\n*Lehrerin: „Du hast die Hausaufgaben wieder vergessen.“*\n*Schüler: „Ich hatte gestern einen sehr interessanten Nachmittag.“*\n\nWas will der Schüler mit seiner Antwort wahrscheinlich ausdrücken?",
+    "payload": {
+      "kind": "multiple_choice",
+      "options": [
+        "Er erklärt sachlich, warum er die Hausaufgaben nicht gemacht hat.",
+        "Er lenkt vom Thema ab und hofft, dass die Lehrerin die Frage fallen lässt.",
+        "Er antwortet direkt und ehrlich auf den Vorwurf.",
+        "Er gibt zu, dass er die Hausaufgaben absichtlich nicht gemacht hat."
+      ],
+      "select": "one"
+    },
+    "response": {
+      "mode": "choices",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "select": "one"
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "ZUH",
+      "SPR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DEU.US.4.ZUH.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "B. Die Antwort des Schülers ist eine Ausweichstrategie: Er sagt etwas Wahres, das aber nicht auf die implizite Frage 'Warum hast du die Hausaufgaben nicht gemacht?' eingeht. Das ist ein klassisches Beispiel für nicht-kooperatives Sprechen (Grice: Relevanzprinzip verletzt).",
+    "acceptable_reasoning": "Wenn ein/e Schüler:in A wählt und erklärt, der Schüler impliziere, sein Nachmittag habe ihn gehindert – das ist eine sophistiziertere Lesart und akzeptabel, wenn die Ausweichfunktion erklärt wird.",
+    "rubric": [],
+    "watch_outs": [
+      "C ist eine naive Lesart, die den impliziten Kommunikationsgehalt ignoriert – guter Anlass, über Grice'sche Konversationsmaximen (vereinfacht) zu sprechen.",
+      "D ist zu direkt – der Schüler *gibt nichts* zu; er weicht aus."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "multiple_choice",
+  "subject": "Deutsch",
+  "klasse": 4,
+  "kompetenzbereich": "Zuhören und Sprechen",
+  "competences": [
+    "DEU.US.4.ZUH.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "ZUH",
+    "SPR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0012",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

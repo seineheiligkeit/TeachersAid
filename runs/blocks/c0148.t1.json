@@ -1,0 +1,83 @@
+{
+  "id": "c0148.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne jeder Kulturgruppe bzw. Weltreligion (linke Spalte) eine typische Ernährungsregel oder -tradition zu (rechte Spalte). Jede Zuordnung wird nur einmal verwendet.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Islam",
+        "Hinduismus (streng orthodox)",
+        "Judentum",
+        "Buddhismus (bestimmte Schulen)",
+        "Österreich – christliche Fastentradition (Freitag)"
+      ],
+      "right": [
+        "Kein Rindfleisch; viele Anhänger:innen leben vegetarisch",
+        "Halal-Schlachtung; kein Schweinefleisch; Fastenmonat Ramadan",
+        "Traditionell kein Fleisch am Freitag – stattdessen Fisch oder Mehlspeisen",
+        "Koscher: Trennung von Fleisch und Milch; kein Schweinefleisch",
+        "Vegetarismus bis Veganismus aus Mitgefühl mit allen Lebewesen"
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Kulturgruppe / Religion",
+        "Ernährungsregel / -tradition"
+      ],
+      "rows": 5
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "EV"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "HOE.OS.6.EIG.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Islam → Halal-Schlachtung; kein Schweinefleisch; Fastenmonat Ramadan | Hinduismus → Kein Rindfleisch; viele Anhänger:innen leben vegetarisch | Judentum → Koscher: Trennung von Fleisch und Milch; kein Schweinefleisch | Buddhismus (bestimmte Schulen) → Vegetarismus bis Veganismus aus Mitgefühl mit allen Lebewesen | Österreich/Freitag → Traditionell kein Fleisch am Freitag – stattdessen Fisch oder Mehlspeisen",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Viele Schüler:innen kennen 'Halal' als Begriff, verwechseln ihn aber mit 'Haram' (verboten). Klarstellen: Halal = erlaubt nach islamischem Recht.",
+      "Der Freitagsbrauch in Österreich hat christliche, nicht islamische Wurzeln – Verwechslungsgefahr in multikulturellen Klassen ansprechen.",
+      "Buddhismus ist intern sehr heterogen; nicht alle Buddhisten sind vegetarisch – dies als Einschränkung thematisieren."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Haushaltsökonomie und Ernährung",
+  "klasse": 6,
+  "kompetenzbereich": "Das eigene Essverhalten erkennen, reflektieren und bewerten sowie Zusammenhänge zwischen Ernährungsgewohnheiten, Kulturen, Gesundheit und Wohlbefinden verstehen",
+  "competences": [
+    "HOE.OS.6.EIG.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "EV"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0148",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:25+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

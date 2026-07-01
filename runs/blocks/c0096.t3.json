@@ -1,0 +1,175 @@
+{
+  "id": "c0096.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb2",
+      "abb3"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Betrachte Abb. 2 (Streudiagramm CO₂ und Temperatur) und Abb. 3 (ökologischer Fußabdruck). \na) Welchen Zusammenhang zeigt Abb. 2? Erkläre die Trendgerade in einem Satz.\nb) Was bedeutet ein Fußabdruck von 3,2 Erden für Österreich konkret? Was wäre nötig, damit der Wert auf 1,0 sinkt?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.4.MEN.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "a) Je höher die CO₂-Konzentration, desto höher die Temperaturabweichung – die Trendgerade zeigt einen positiven, annähernd linearen Zusammenhang. b) 3,2 Erden bedeutet, dass die Österreicher:innen im Jahr so viele Ressourcen verbrauchen und Abfälle erzeugen, wie 3,2 Planeten Erde regenerieren könnten. Um auf 1,0 zu kommen, müsste der Konsum drastisch reduziert werden (weniger Fleisch, weniger Flugreisen, weniger Ressourcenverbrauch) oder Technologien müssten die Effizienz deutlich steigern.",
+    "acceptable_reasoning": "Schülerinnen und Schüler sollten erkennen, dass Österreich über dem Weltdurchschnitt liegt – der Vergleich mit Bangladesch ist besonders aufschlussreich.",
+    "rubric": [
+      {
+        "criterion": "Interpretation Streudiagramm",
+        "levels": [
+          "Kein Zusammenhang erkannt.",
+          "Positiver Zusammenhang beschrieben, aber Trendgerade nicht erklärt.",
+          "Positiver Zusammenhang und Trendgerade klar erklärt; Korrelation vs. Kausalität thematisiert."
+        ]
+      },
+      {
+        "criterion": "Interpretation Fußabdruck",
+        "levels": [
+          "Wert nicht oder falsch interpretiert.",
+          "Bedeutung erklärt, aber Maßnahmen nicht benannt.",
+          "Bedeutung erklärt und konkrete Maßnahmen zur Reduktion auf 1,0 genannt."
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Abb. 2 zeigt Korrelation, nicht allein Kausalität – aber die Kausalität ist wissenschaftlich gut belegt. Dieser Unterschied soll explizit thematisiert werden.",
+      "Der ökologische Fußabdruck ist kein perfektes Maß – er erfasst nicht alle Dimensionen von Nachhaltigkeit. Aber er ist eine eindrucksvolle Heuristik."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 4,
+  "kompetenzbereich": "Mensch und Natursysteme",
+  "competences": [
+    "GWB.US.4.MEN.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:scatter",
+      "spec": {
+        "points": [
+          [
+            317.0,
+            -0.02
+          ],
+          [
+            326.0,
+            0.03
+          ],
+          [
+            338.0,
+            0.27
+          ],
+          [
+            354.0,
+            0.45
+          ],
+          [
+            370.0,
+            0.42
+          ],
+          [
+            390.0,
+            0.72
+          ],
+          [
+            414.0,
+            1.02
+          ],
+          [
+            422.0,
+            1.45
+          ]
+        ],
+        "xlabel": "CO₂ in ppm",
+        "ylabel": "Temperaturabweichung in °C (gegenüber 1850–1900)",
+        "title": "CO₂-Konzentration und globale Temperaturabweichung (1960–2024)",
+        "fit": true
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    },
+    {
+      "id": "abb3",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Bangladesch",
+          "Indien",
+          "Welt ⌀",
+          "Österreich",
+          "Deutschland",
+          "USA",
+          "Katar"
+        ],
+        "values": [
+          0.7,
+          0.8,
+          1.7,
+          3.2,
+          3.0,
+          5.1,
+          9.3
+        ],
+        "title": "Ökologischer Fußabdruck ausgewählter Länder (in Erden, 2022)",
+        "xlabel": "Land",
+        "ylabel": "Erden (benötigte Planeten)",
+        "log": false
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0096",
+  "source": "ai",
+  "created_at": "2026-06-26T19:02:30+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

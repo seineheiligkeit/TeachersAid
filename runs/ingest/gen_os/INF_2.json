@@ -1,0 +1,324 @@
+{
+  "subject": "Informatik",
+  "klasse": 5,
+  "kompetenzbereich": "Informatiksysteme",
+  "title": "Netzwerke: Wie Computer miteinander sprechen",
+  "kernfrage": "Wie sind Computernetzwerke aufgebaut, und wie stellt das Internet sicher, dass Daten zuverlässig von A nach B gelangen?",
+  "body": {
+    "intro": [
+      {
+        "role": "info",
+        "id": "i1",
+        "content": "Milliarden von Geräten sind weltweit vernetzt. Wenn du eine Website öffnest, eine Datei lädst oder eine Nachricht sendest, werden deine Daten in kleine Pakete zerlegt, durch ein Netz von Geräten geleitet und am Ziel wieder zusammengesetzt – in Millisekunden. Auf diesem Arbeitsblatt lernst du, wie dieses System aufgebaut ist und warum es so zuverlässig funktioniert."
+      }
+    ],
+    "data_figures": [],
+    "assets": [
+      {
+        "id": "abb2",
+        "role": "figure",
+        "generator": "matplotlib:timeline",
+        "spec": {
+          "events": [
+            { "at": 1969, "label": "ARPANET (4 Knoten)" },
+            { "at": 1983, "label": "TCP/IP wird Standard" },
+            { "at": 1991, "label": "World Wide Web (Berners-Lee)" },
+            { "at": 1998, "label": "Google gegründet" },
+            { "at": 2007, "label": "Erstes iPhone / mobiles Internet" },
+            { "at": 2020, "label": "5G-Rollout beginnt" }
+          ],
+          "title": "Meilensteine der Netzwerkgeschichte",
+          "xlabel": "Jahr"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Topologien und Netzwerkkomponenten",
+        "throughline": "Schüler:innen verstehen, warum Netzwerke unterschiedlich aufgebaut sein können und welche Hardwarekomponenten welche Funktion erfüllen.",
+        "talking_points": [
+          "Stern-, Ring-, Bus- und Maschen-Topologie: Vor- und Nachteile in der Praxis (Ausfallsicherheit, Kosten, Skalierbarkeit).",
+          "Switch vs. Router: Switch arbeitet auf Ebene 2 (MAC-Adressen), Router auf Ebene 3 (IP-Adressen) – häufige Verwechslung klären.",
+          "Lokales Netz (LAN) vs. globales Netz (WAN): Das Internet ist ein 'Netz von Netzen'."
+        ],
+        "extensions": [
+          "Schüler:innen zeichnen das Heimnetzwerk zu Hause und identifizieren Geräte und deren Rollen (Router, Switch, WLAN-Access-Point).",
+          "Recherche: Was ist der Unterschied zwischen einem Access Point und einem Router? Wann braucht man einen zusätzlichen Switch?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "matching",
+            "prompt": "Ordne jeder Netzwerkkomponente ihre Hauptaufgabe zu.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Router",
+                "Switch",
+                "Access Point (WLAN)",
+                "Netzwerkkabel (Ethernet)",
+                "Modem"
+              ],
+              "right": [
+                "Verbindet Geräte im lokalen Netz über Funk",
+                "Wandelt digitale Signale in Signale für die Telefonleitung um (und umgekehrt)",
+                "Leitet Datenpakete zwischen verschiedenen Netzen weiter und vergibt IP-Adressen",
+                "Verbindet mehrere Geräte im gleichen Netz und leitet Pakete gezielt weiter (MAC-Adressen)",
+                "Überträgt Daten physisch als elektrische Signale zwischen zwei Geräten"
+              ]
+            },
+            "response": {
+              "mode": "table",
+              "columns": ["Komponente", "Hauptaufgabe"],
+              "rows": 5
+            },
+            "cognitive_level": "remember",
+            "dimensions": ["WV"],
+            "serves": [
+              { "competence_id": "INF.OS.5.INF2.04", "relation": "exercises" }
+            ],
+            "est_minutes": 6,
+            "asset_refs": [],
+            "answer_key": "Router → Leitet Datenpakete zwischen verschiedenen Netzen weiter und vergibt IP-Adressen; Switch → Verbindet mehrere Geräte im gleichen Netz und leitet Pakete gezielt weiter (MAC-Adressen); Access Point → Verbindet Geräte im lokalen Netz über Funk; Netzwerkkabel → Überträgt Daten physisch als elektrische Signale zwischen zwei Geräten; Modem → Wandelt digitale Signale in Signale für die Telefonleitung um.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Router und Switch werden regelmäßig verwechselt: Router = zwischen Netzen, Switch = innerhalb eines Netzes.",
+              "Heimrouter sind meist Kombigeräte (Router + Switch + WLAN-AP + oft Modem) – das kann zu Verwirrung führen; hier konzeptuell trennen.",
+              "Das Modem ist heute oft im Router integriert und wird als eigenes Gerät kaum noch wahrgenommen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "multiple_choice",
+            "prompt": "Ein Schulnetzwerk hat 30 Computer, alle mit einem zentralen Gerät verbunden. Fällt dieses Gerät aus, sind alle Computer vom Netz getrennt. Um welche Topologie handelt es sich, und welche Aussage trifft zu? (Eine Antwort ist richtig.)",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "Bus-Topologie – jeder Computer ist direkt mit jedem anderen verbunden.",
+                "Stern-Topologie – alle Computer sind mit einem zentralen Gerät (Switch/Hub) verbunden; fällt es aus, fällt das gesamte Netz aus.",
+                "Ring-Topologie – die Daten laufen in einem Kreis; fällt ein Gerät aus, trennt es den Ring.",
+                "Maschen-Topologie (Mesh) – jeder Knoten hat mehrere Verbindungen, was maximale Ausfallsicherheit bietet."
+              ],
+              "select": "one"
+            },
+            "response": {
+              "mode": "choices",
+              "options": [
+                "Bus-Topologie – jeder Computer ist direkt mit jedem anderen verbunden.",
+                "Stern-Topologie – alle Computer sind mit einem zentralen Gerät (Switch/Hub) verbunden; fällt es aus, fällt das gesamte Netz aus.",
+                "Ring-Topologie – die Daten laufen in einem Kreis; fällt ein Gerät aus, trennt es den Ring.",
+                "Maschen-Topologie (Mesh) – jeder Knoten hat mehrere Verbindungen, was maximale Ausfallsicherheit bietet."
+              ],
+              "select": "one"
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["WV"],
+            "serves": [
+              { "competence_id": "INF.OS.5.INF2.04", "relation": "exercises" }
+            ],
+            "est_minutes": 4,
+            "asset_refs": [],
+            "answer_key": "Antwort B: Stern-Topologie – alle Computer sind mit einem zentralen Gerät verbunden; fällt es aus, ist das gesamte Netz betroffen. Das ist das typische Single-Point-of-Failure-Problem der Stern-Topologie.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Antwort A ist falsch: Bei der Bus-Topologie teilen sich alle ein gemeinsames Kabel, nicht ein zentrales Gerät.",
+              "Antwort C (Ring) beschreibt korrekt eine Schwäche des Rings (Unterbrechung), passt aber nicht zum Szenario 'zentrales Gerät'.",
+              "Antwort D (Mesh) ist das genaue Gegenteil: hohe Redundanz durch viele Verbindungen."
+            ],
+            "rubric": []
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "IP-Adressen, Protokolle und Datenpakete",
+        "throughline": "Das Schichtenmodell und das Konzept der Paketvermittlung werden als clevere Lösung für zuverlässige Kommunikation über ein unzuverlässiges Netz verstanden.",
+        "talking_points": [
+          "IP-Adresse als 'Postadresse' – IPv4 (32 Bit, ~4 Mrd. Adressen) vs. IPv6 (128 Bit) – Erschöpfung als reales Problem.",
+          "TCP vs. UDP: Wann ist Zuverlässigkeit wichtiger als Geschwindigkeit? (Dateidownload vs. Videoanruf)",
+          "Paketvermittlung (Packet Switching) ermöglicht, dass viele Nutzer dieselbe Leitung teilen – Kernprinzip des Internets."
+        ],
+        "extensions": [
+          "Schüler:innen führen in der Kommandozeile ping und tracert/traceroute aus und interpretieren die Ausgabe.",
+          "Kurze Recherche: Wie viele IPv6-Adressen gibt es? Wie lange würde es dauern, alle aufzuzählen?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "table_fill",
+            "prompt": "Ergänze die Tabelle mit den fehlenden Informationen zu IPv4 und IPv6. Nutze dein Wissen aus dem Unterricht.",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": ["Merkmal", "IPv4", "IPv6"],
+              "rows": 5
+            },
+            "cognitive_level": "remember",
+            "dimensions": ["WV"],
+            "serves": [
+              { "competence_id": "INF.OS.5.INF2.04", "relation": "exercises" }
+            ],
+            "est_minutes": 6,
+            "asset_refs": [],
+            "answer_key": "Adresslänge: IPv4 = 32 Bit, IPv6 = 128 Bit. Schreibweise: IPv4 = 4 Dezimalzahlen, getrennt durch Punkte (z. B. 192.168.1.1), IPv6 = 8 Gruppen zu je 4 Hexadezimalziffern, getrennt durch Doppelpunkte (z. B. 2001:0db8:85a3::8a2e:0370:7334). Maximale Adresszahl: IPv4 ≈ 4,3 Milliarden, IPv6 ≈ 3,4 × 10^38. Grund für IPv6: Erschöpfung des IPv4-Adressraums. Beispiel-Adresse: Plausible Beispiele akzeptieren.",
+            "acceptable_reasoning": "Exakte Potenzen sind nicht erforderlich, aber die Größenordnung (Milliarden vs. undenkbar viele) muss deutlich werden.",
+            "watch_outs": [
+              "IPv4-Adressen sind NICHT hexadezimal – Schüler:innen verwechseln manchmal die Schreibweise.",
+              "Die Erschöpfung des IPv4-Raums ist real: Seit 2011 werden keine neuen Blöcke mehr vergeben (mit NAT als Umgehungslösung).",
+              "IPv6-Adressen dürfen aufeinanderfolgende Nullblöcke als '::' abkürzen – das verwirrt häufig."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "decision_scenario",
+            "prompt": "Du entwickelst zwei Anwendungen:\n\n– **Anwendung A**: Eine App, die Musikdateien von einem Server herunterlädt. Die Datei muss vollständig und fehlerfrei ankommen.\n– **Anwendung B**: Ein Online-Multiplayer-Spiel, das alle 50 Millisekunden die Position der Spielfiguren überträgt. Minimal-Verzögerung ist wichtiger als vollständige Lieferung.\n\nEntscheide für jede Anwendung, ob du TCP oder UDP verwenden würdest, und begründe deine Wahl.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Wähle für jede Anwendung das passende Protokoll (TCP oder UDP) und begründe."
+            },
+            "response": {
+              "mode": "box",
+              "min_height_mm": 40
+            },
+            "cognitive_level": "apply",
+            "dimensions": ["AG", "RB"],
+            "serves": [
+              { "competence_id": "INF.OS.5.INF2.02", "relation": "exercises" }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "Anwendung A → TCP: Der Drei-Wege-Handshake und die Empfangsbestätigungen stellen sicher, dass alle Pakete ankommen und in der richtigen Reihenfolge zusammengesetzt werden – fehlende Pakete werden erneut angefordert. Anwendung B → UDP: Bei Echtzeit-Daten (Spielpositionen) ist Aktualität wichtiger als Vollständigkeit; veraltete Positionsdaten, die zu spät eintreffen, sind wertlos; UDP spart den Overhead der Bestätigungen.",
+            "acceptable_reasoning": "Kernargument muss genannt sein: TCP = Zuverlässigkeit durch Bestätigung; UDP = Geschwindigkeit durch Verzicht auf Bestätigung.",
+            "watch_outs": [
+              "Schüler:innen neigen dazu, TCP immer zu bevorzugen ('ist ja zuverlässiger') – der Trade-off Latenz vs. Zuverlässigkeit muss explizit gemacht werden.",
+              "UDP ist nicht 'unzuverlässig im schlechten Sinne' – es ist eine bewusste Designentscheidung.",
+              "Videostreaming (Netflix) nutzt heute meist TCP oder HTTP/3 (QUIC über UDP) – das Bild ist also nicht so schwarz-weiß; für diese Aufgabe genügt die vereinfachte Darstellung."
+            ],
+            "rubric": [
+              { "criterion": "Korrekte Zuordnung beider Anwendungen", "levels": ["Beide korrekt", "Eine korrekt", "Keine korrekt"] },
+              { "criterion": "Qualität der Begründung", "levels": ["Trade-off klar benannt und auf Anwendungsfall angewendet", "Nur Protokolleigenschaft genannt, kein Bezug zum Szenario", "Fehlt"] }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "Das Internet im historischen und gesellschaftlichen Kontext",
+        "throughline": "Technologische Entwicklung wird mit gesellschaftlichen Konsequenzen verknüpft – kritisches Denken über Chancen und Risiken digitaler Vernetzung.",
+        "talking_points": [
+          "Von ARPANET zum heutigen Internet: Welche Entwurfsprinzipien (Dezentralisierung, Paketvermittlung) haben das Netz robust gemacht?",
+          "Netzneutralität: Dürfen Internetanbieter bestimmte Inhalte bevorzugt oder langsamer übertragen?",
+          "Digitale Spaltung (Digital Divide): Weltweit haben viele Menschen keinen zuverlässigen Internetzugang – welche gesellschaftlichen Folgen hat das?"
+        ],
+        "extensions": [
+          "Schüler:innen recherchieren einen aktuellen Fall zu Netzneutralität in der EU und stellen ihn kurz vor.",
+          "Diskussion: Sollte Internetzugang ein Grundrecht sein? Pro-/Contra-Debatte vorbereiten.",
+          "Analyse der Zeitlinie (abb2): Welche Ereignisse hatten die größte gesellschaftliche Auswirkung?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "ordering",
+            "prompt": "Bringe die Meilensteine der Netzwerkgeschichte in die richtige chronologische Reihenfolge. Ordne die Buchstaben von früh nach spät.",
+            "payload": {
+              "kind": "ordering",
+              "items": [
+                "A – Das World Wide Web wird von Tim Berners-Lee am CERN vorgestellt",
+                "B – ARPANET verbindet erstmals vier Universitäten in den USA",
+                "C – TCP/IP wird zum einheitlichen Kommunikationsprotokoll des Internets",
+                "D – Das erste iPhone bringt das mobile Internet in die breite Öffentlichkeit",
+                "E – 5G-Netze beginnen ihren weltweiten Rollout"
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 2
+            },
+            "cognitive_level": "remember",
+            "dimensions": ["WV"],
+            "serves": [
+              { "competence_id": "INF.OS.5.INF.03", "relation": "exercises" }
+            ],
+            "est_minutes": 5,
+            "asset_refs": ["abb2"],
+            "answer_key": "Korrekte Reihenfolge: B (1969) → C (1983) → A (1991) → D (2007) → E (2020).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen verwechseln ARPANET und WWW häufig – ARPANET ist das Netz, das WWW ist der Dienst darüber.",
+              "TCP/IP (1983) ist früher als das WWW (1991) – das Internet existierte als Netz schon vor dem Web.",
+              "5G ist ein Mobilfunkstandard, kein Internetprotokoll – diese Unterscheidung kann diskutiert werden."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "argumentation",
+            "prompt": "Netzneutralität bedeutet, dass Internetanbieter alle Datenpakete gleich behandeln müssen – unabhängig davon, wer sie sendet oder empfängt.\n\nEin Internetanbieter möchte gegen Aufpreis bestimmten Streaming-Diensten eine 'Überholspur' einrichten, während andere Dienste langsamer übertragen werden.\n\na) Erkläre, was das konkret für Nutzer:innen und kleinere Anbieter bedeuten würde.\nb) Welche Argumente gibt es für und gegen Netzneutralität? Nenne je zwei.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": ["RB"],
+            "serves": [
+              { "competence_id": "INF.OS.5.INF.01", "relation": "exercises" }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "a) Nutzer:innen: Dienste ohne 'Überholspur' laden langsamer, obwohl die Verbindungsqualität dieselbe ist – de facto bezahlt man für das gleiche Produkt unterschiedliche Qualität je nach Anbieter. Kleinere Dienste/Start-ups können sich die Überholspur nicht leisten und werden so strukturell benachteiligt, was Wettbewerb und Innovation hemmt. b) Für Netzneutralität: Gleichbehandlung fördert Wettbewerb und Innovation; verhindert, dass Anbieter bestimmte Inhalte zensieren oder bevorzugen. Gegen Netzneutralität: Anbieter können Netzwerkinvestitionen gezielter finanzieren; Priorisierung könnte bei sensiblen Anwendungen (z. B. Telemedizin) gerechtfertigt sein.",
+            "acceptable_reasoning": "Mindestens je zwei begründete Argumente; einseitige Antworten werden akzeptiert, wenn explizit begründet.",
+            "watch_outs": [
+              "Schüler:innen neigen dazu, das Thema nur als 'Streaming ist langsamer' zu verstehen – die Konsequenz für Wettbewerb und Meinungsvielfalt ist der gesellschaftlich relevante Kern.",
+              "Das Thema ist politisch nicht neutral – beide Seiten verdienen eine faire Darstellung in der Diskussion.",
+              "In der EU ist Netzneutralität seit 2016 durch die Open-Internet-Verordnung geregelt – das kann als konkretes Beispiel eingebracht werden."
+            ],
+            "rubric": [
+              { "criterion": "Erklärung der Konsequenzen (Teil a)", "levels": ["Konsequenzen für Nutzer und kleinere Anbieter klar beschrieben", "Nur eine Seite beschrieben", "Fehlt oder oberflächlich"] },
+              { "criterion": "Argumentation (Teil b)", "levels": ["Je zwei konkrete, sachlich korrekte Argumente", "Nur eine Seite oder nur ein Argument", "Keine konkreten Argumente"] },
+              { "criterion": "Sachlichkeit und Differenziertheit", "levels": ["Ausgewogen oder begründet einseitig", "Tendenz ohne Begründung", "Rein emotional oder inhaltsleer"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "open_response",
+            "prompt": "Digitale Spaltung (Digital Divide) bezeichnet den Unterschied im Internetzugang zwischen verschiedenen Bevölkerungsgruppen oder Regionen.\n\nAnalysiere: Welche zwei gesellschaftlichen Bereiche werden deiner Meinung nach am stärksten durch fehlenden Internetzugang beeinträchtigt? Erkläre, warum, und schlage jeweils eine konkrete Maßnahme vor, die dem entgegenwirken könnte.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 50
+            },
+            "cognitive_level": "analyze",
+            "dimensions": ["RB"],
+            "serves": [
+              { "competence_id": "INF.OS.5.INF.01", "relation": "exercises" }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Mögliche Bereiche (Auswahl): Bildung (Online-Lernplattformen, digitale Hausaufgaben, Zugang zu Informationen), Arbeit (Homeoffice, digitale Bewerbungen, Online-Stellenmärkte), Gesundheit (Telemedizin, digitale Gesundheitsakte, Impfterminbuchung), politische Teilhabe (E-Government, Online-Petitionen). Maßnahmen: Subventionierter Internetzugang für einkommensschwache Haushalte, öffentliche WLAN-Hotspots, Förderung des Breitbandausbaus in ländlichen Gebieten, Ausgabe von subventionierten Geräten an Schüler:innen.",
+            "acceptable_reasoning": "Zwei klar benannte Bereiche mit Erklärung und je einer konkreten (nicht allgemeinen) Maßnahme; 'mehr Internet' ohne Konkretisierung nicht akzeptieren.",
+            "watch_outs": [
+              "Schüler:innen nennen oft nur 'Bildung' ohne zu erklären, warum gerade dieser Bereich besonders betroffen ist – auf Spezifizität bestehen.",
+              "Maßnahmen sollen konkret sein: 'besseres Internet für alle' ist keine Maßnahme, sondern ein Ziel.",
+              "Digitale Spaltung existiert auch innerhalb von Ländern (Stadt/Land, Reich/Arm) – nicht nur zwischen Entwicklungsländern und Industrieländern."
+            ],
+            "rubric": [
+              { "criterion": "Auswahl und Begründung der Bereiche", "levels": ["Zwei Bereiche mit überzeugender Begründung", "Zwei Bereiche, Begründung oberflächlich", "Weniger als zwei Bereiche oder keine Begründung"] },
+              { "criterion": "Konkretheit der Maßnahmen", "levels": ["Beide Maßnahmen konkret und umsetzbar", "Eine konkret, eine vage", "Nur allgemeine Aussagen"] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

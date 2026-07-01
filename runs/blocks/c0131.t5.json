@@ -1,0 +1,78 @@
+{
+  "id": "c0131.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Beurteile folgende Aussagen als richtig oder falsch und begründe deine Entscheidung jeweils in einem Satz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Jede Körperzelle eines Menschen besitzt (im Prinzip) dieselbe DNA-Sequenz.",
+        "Beim Spleißen werden Exons entfernt und Introns zusammengesetzt.",
+        "Ein Codon besteht aus drei aufeinanderfolgenden Nukleotiden der mRNA.",
+        "Die Aminosäuresequenz eines Proteins wird direkt durch die DNA-Sequenz bestimmt.",
+        "tRNA-Moleküle transportieren Aminosäuren zum Ribosom und erkennen das Codon über ihr Anticodon."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 10
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.OS.8.KOM6.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "BIO.OS.x.STA.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "1) Richtig – alle somatischen Zellen stammen durch Mitose von der Zygote ab und tragen dieselbe genetische Information (Ausnahme: Immunzellen durch V(D)J-Rekombination, was nicht verlangt wird). 2) Falsch – es ist umgekehrt: Introns werden entfernt, Exons werden zusammengesetzt (gespleißt). 3) Richtig – ein Codon = drei Nukleotide (Triplett) auf der mRNA, das eine Aminosäure oder ein Stopp-Signal codiert. 4) Richtig im Wesentlichen – die DNA-Sequenz (über mRNA) legt die Aminosäuresequenz fest; posttranslationale Modifikationen können das Protein danach noch verändern. 5) Richtig.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Aussage 2 ist eine klassische Fehlvorstellung: Introns ('Intervening sequences') werden raus-gespleißt, Exons ('Expressed sequences') bleiben in der reifen mRNA – die Merkwörter helfen.",
+      "Aussage 4 ist mit Einschränkung richtig: Epigenetik und posttranslationale Modifikationen können die Proteinstruktur und -funktion verändern, ohne die DNA-Sequenz zu ändern. Klasse 8 sollte diese Nuance zumindest benennen können."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 8,
+  "kompetenzbereich": "Kompetenzmodul 7",
+  "competences": [
+    "BIO.OS.8.KOM6.02",
+    "BIO.OS.x.STA.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "W",
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0131",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:18+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

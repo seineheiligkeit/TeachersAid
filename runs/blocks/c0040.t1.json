@@ -1,0 +1,73 @@
+{
+  "id": "c0040.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne jedem Instrument die Art zu, wie sein Klang erzeugt wird. Ziehe eine Linie von links nach rechts (oder notiere die Buchstaben).",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Geige",
+        "Querflöte",
+        "Kleine Trommel",
+        "Xylofon",
+        "Trompete"
+      ],
+      "right": [
+        "A – eine gespannte Membran (Fell) wird geschlagen",
+        "B – ein Stab oder eine Platte aus Holz/Metall schwingt",
+        "C – eine gespannte Saite schwingt",
+        "D – ein Luftstrom wird durch eine enge Öffnung gelenkt (Mundstück)",
+        "E – Luft wird über eine Schneide geblasen"
+      ]
+    },
+    "response": {
+      "mode": "none"
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "HOR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MUS.US.2.HOR.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "Geige → C; Querflöte → E; Kleine Trommel → A; Xylofon → B; Trompete → D",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Querflöte und Trompete werden oft verwechselt: Bei der Flöte schwingt die Luft an einer Schneide (kein Mundstück mit Lippen), bei der Trompete bringen die Lippen die Luft zum Schwingen.",
+      "Xylofon (Holzstäbe) und Marimbafon verwechseln – hier genügt 'schwingende Platte/Stab'."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Musik",
+  "klasse": 2,
+  "kompetenzbereich": "Hören und Erfassen",
+  "competences": [
+    "MUS.US.2.HOR.04"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "HOR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0040",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

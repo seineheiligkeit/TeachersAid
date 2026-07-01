@@ -1,0 +1,78 @@
+{
+  "id": "c0037.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Das Plakat soll für zwei verschiedene Filme verwendet werden: Version A — ein politischer Thriller über Krieg und Flucht. Version B — ein Actionfilm mit Supehelden. Dein Auftrag: Erkläre, welche Version des Plakats (so wie es beschrieben ist) besser zu welchem Film passt — und was du an der Gestaltung ändern würdest, damit es eindeutig für den jeweils anderen Film funktioniert.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Welchem Film passt das Plakat besser — und was müsste geändert werden, damit es eindeutig für den anderen Film funktioniert?"
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "WAH"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "KUG.US.3.WAH.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Wie beschrieben passt das Plakat besser zum politischen Thriller (Stille, Einsamkeit, Ernst der Silhouette, keine Action-Dynamik). Für den Actionfilm: kräftigere, leuchtendere Farben (Blau/Gold statt Orange/Schwarz), dynamischere Pose der Figur, erkennbares Kostüm/Emblem, größere Typografie. Wichtig: Begründung aus Gestaltungsmitteln ableiten, nicht nur Gefühl.",
+    "acceptable_reasoning": "Auch die umgekehrte Einschätzung (Actionfilm) mit guter Begründung akzeptieren.",
+    "rubric": [
+      {
+        "criterion": "Filmzuordnung begründet",
+        "levels": [
+          "Zuordnung klar, Begründung aus Gestaltungsmitteln",
+          "Zuordnung klar, Begründung vage",
+          "Keine nachvollziehbare Begründung"
+        ]
+      },
+      {
+        "criterion": "Konkretheit der Änderungsvorschläge",
+        "levels": [
+          "Mindestens drei konkrete Gestaltungsänderungen",
+          "Ein bis zwei konkrete Änderungen",
+          "Nur allgemeine Aussagen"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen sollen Gestaltungssprache nutzen, nicht Genrevorwissen. Begründung muss aus dem Bild kommen.",
+      "Konkrete Änderungsvorschläge einfordern — vage Antworten wie „bunter machen“ auf spezifische Elemente herunterbrechen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Kunst und Gestaltung",
+  "klasse": 3,
+  "kompetenzbereich": "Wahrnehmen und Reflektieren",
+  "competences": [
+    "KUG.US.3.WAH.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "WAH"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0037",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

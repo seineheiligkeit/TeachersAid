@@ -1,0 +1,78 @@
+{
+  "id": "c0150.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "multiple_choice",
+    "prompt": "Ein Schulnetzwerk hat 30 Computer, alle mit einem zentralen Gerät verbunden. Fällt dieses Gerät aus, sind alle Computer vom Netz getrennt. Um welche Topologie handelt es sich, und welche Aussage trifft zu? (Eine Antwort ist richtig.)",
+    "payload": {
+      "kind": "multiple_choice",
+      "options": [
+        "Bus-Topologie – jeder Computer ist direkt mit jedem anderen verbunden.",
+        "Stern-Topologie – alle Computer sind mit einem zentralen Gerät (Switch/Hub) verbunden; fällt es aus, fällt das gesamte Netz aus.",
+        "Ring-Topologie – die Daten laufen in einem Kreis; fällt ein Gerät aus, trennt es den Ring.",
+        "Maschen-Topologie (Mesh) – jeder Knoten hat mehrere Verbindungen, was maximale Ausfallsicherheit bietet."
+      ],
+      "select": "one"
+    },
+    "response": {
+      "mode": "choices",
+      "options": [
+        "Bus-Topologie – jeder Computer ist direkt mit jedem anderen verbunden.",
+        "Stern-Topologie – alle Computer sind mit einem zentralen Gerät (Switch/Hub) verbunden; fällt es aus, fällt das gesamte Netz aus.",
+        "Ring-Topologie – die Daten laufen in einem Kreis; fällt ein Gerät aus, trennt es den Ring.",
+        "Maschen-Topologie (Mesh) – jeder Knoten hat mehrere Verbindungen, was maximale Ausfallsicherheit bietet."
+      ],
+      "select": "one"
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "WV"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "INF.OS.5.INF2.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 4,
+    "answer_key": "Antwort B: Stern-Topologie – alle Computer sind mit einem zentralen Gerät verbunden; fällt es aus, ist das gesamte Netz betroffen. Das ist das typische Single-Point-of-Failure-Problem der Stern-Topologie.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Antwort A ist falsch: Bei der Bus-Topologie teilen sich alle ein gemeinsames Kabel, nicht ein zentrales Gerät.",
+      "Antwort C (Ring) beschreibt korrekt eine Schwäche des Rings (Unterbrechung), passt aber nicht zum Szenario 'zentrales Gerät'.",
+      "Antwort D (Mesh) ist das genaue Gegenteil: hohe Redundanz durch viele Verbindungen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "multiple_choice",
+  "subject": "Informatik",
+  "klasse": 5,
+  "kompetenzbereich": "Informatiksysteme",
+  "competences": [
+    "INF.OS.5.INF2.04"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "WV"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0150",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:26+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

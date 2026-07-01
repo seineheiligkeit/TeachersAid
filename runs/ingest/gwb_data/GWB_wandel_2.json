@@ -1,0 +1,181 @@
+{
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Österreichische Gesellschaftsentwicklung",
+  "title": "Österreich altert – der steigende Anteil älterer Menschen",
+  "kernfrage": "Warum wird Österreich immer älter, und was bedeutet das für unser Zusammenleben?",
+  "body": {
+    "intro": [],
+    "data_figures": [
+      {
+        "id": "abb1",
+        "intent": "trend",
+        "title": "Anteil der über 65-Jährigen in Österreich (1960–2024)",
+        "xlabel": "Jahr",
+        "ylabel": "Anteil 65+ (%)",
+        "data_source": {"dataset_id": "worldbank_at_alterung", "series": "verlauf"}
+      }
+    ],
+    "assets": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Den demografischen Wandel verstehen",
+        "throughline": "Schüler:innen lesen und interpretieren den Trend der Bevölkerungsalterung aus realen Daten, verstehen die Ursachen (sinkende Geburtenrate, steigende Lebenserwartung) und diskutieren die gesellschaftlichen Folgen – insbesondere für das Pensionssystem und die Arbeitswelt.",
+        "talking_points": [
+          "Der Anteil der über 65-Jährigen ist in Österreich von rund 12 % (1960) auf über 20 % (2024) gestiegen – fast eine Verdoppelung in 65 Jahren.",
+          "Besonders interessant ist die Delle in den 1980er Jahren: Der Anteil sank kurzzeitig, weil die geburtenstarken Jahrgänge der Nachkriegszeit ('Babyboom') noch im Erwerbsalter waren; erst als diese Kohorten das Rentenalter erreichten, stieg der Anteil wieder stark an.",
+          "Demografische Alterung hat zwei Hauptursachen: steigende Lebenserwartung (Menschen werden älter) und sinkende Geburtenraten (weniger Kinder kommen nach).",
+          "Gesellschaftliche Folgen: Das Verhältnis von Erwerbstätigen zu Pensionist:innen verschiebt sich – das belastet das Umlageverfahren der Pensionsversicherung, erhöht den Pflegebedarf und verändert politische Mehrheiten."
+        ],
+        "extensions": [
+          "Vergleich mit Japan als extremem Beispiel der Bevölkerungsalterung: Wie geht Japan damit um?",
+          "Berechnung des sogenannten 'Altenquotienten': Wie viele Personen im erwerbsfähigen Alter (15–64) stehen wie vielen Älteren (65+) gegenüber?",
+          "Debatte: Soll das gesetzliche Pensionsalter angehoben werden? Welche Argumente sprechen dafür, welche dagegen?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "open_response",
+            "prompt": "Beschreibe anhand von Abb. 1 den Verlauf des Anteils der über 65-Jährigen in Österreich von 1960 bis 2024. Nenne dabei den ungefähren Ausgangswert, den Endwert und eine Besonderheit im Verlauf.",
+            "payload": null,
+            "response": {"mode": "lines", "n": 4},
+            "cognitive_level": "remember",
+            "dimensions": ["OK"],
+            "serves": [{"competence_id": "GWB.US.3.OST.01", "relation": "exercises"}],
+            "est_minutes": 5,
+            "asset_refs": ["abb1"],
+            "answer_key": "Der Anteil der über 65-Jährigen ist von rund 12 % im Jahr 1960 auf über 20 % im Jahr 2024 gestiegen. Eine Besonderheit ist, dass der Anstieg nicht gleichmäßig verlief: In den frühen 1980er Jahren gab es einen vorübergehenden leichten Rückgang (von ca. 15 % auf unter 14,5 %), bevor der Trend wieder nach oben zeigte. Insgesamt hat sich der Anteil innerhalb von 65 Jahren fast verdoppelt.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen sollen das Diagramm lesen, nicht aus dem Gedächtnis antworten – auf die korrekte Achsenbeschriftung hinweisen.",
+              "Nicht alle werden die Delle in den 1980ern als Besonderheit erkennen – als Extrahinweis möglich."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "open_response",
+            "prompt": "Erkläre in eigenen Worten, was 'demografische Alterung' bedeutet und welche zwei Hauptursachen sie hat.",
+            "payload": null,
+            "response": {"mode": "lines", "n": 5},
+            "cognitive_level": "understand",
+            "dimensions": ["OK"],
+            "serves": [{"competence_id": "GWB.US.3.OST.01", "relation": "exercises"}],
+            "est_minutes": 6,
+            "asset_refs": [],
+            "answer_key": "Demografische Alterung bedeutet, dass der Anteil älterer Menschen in der Gesamtbevölkerung zunimmt, während der Anteil jüngerer Menschen sinkt. Die zwei Hauptursachen sind: (1) Steigende Lebenserwartung – dank besserer Medizin, Ernährung und Lebensbedingungen werden Menschen im Durchschnitt immer älter. (2) Sinkende Geburtenraten – weniger Kinder werden geboren, sodass die jüngeren Altersgruppen kleiner werden und die Gesellschaft als Ganzes 'altert'.",
+            "acceptable_reasoning": "Auch Antworten, die Zuwanderung als mildernden Faktor erwähnen, zeigen gutes Verständnis.",
+            "watch_outs": [
+              "Manche Schüler:innen nennen nur eine Ursache – darauf hinweisen, dass beide Faktoren zusammenwirken.",
+              "Den Unterschied zwischen 'absoluter Zahl älterer Menschen' und 'Anteil älterer Menschen' klarstellen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "true_false_justify",
+            "prompt": "Beurteile folgende Aussagen zur Bevölkerungsalterung in Österreich. Kreuze an und begründe kurz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Zwischen 1960 und 2024 hat sich der Anteil der über 65-Jährigen in Österreich fast verdoppelt.",
+                "Ein höherer Anteil älterer Menschen bedeutet automatisch, dass weniger Kinder geboren werden.",
+                "Wenn die Lebenserwartung steigt, aber die Geburtenzahlen gleichbleiben, altert die Bevölkerung trotzdem."
+              ]
+            },
+            "response": {"mode": "table", "columns": ["Aussage", "Richtig/Falsch", "Begründung"], "rows": 3},
+            "cognitive_level": "analyze",
+            "dimensions": ["UK", "OK"],
+            "serves": [{"competence_id": "GWB.US.3.OST.01", "relation": "exercises"}],
+            "est_minutes": 8,
+            "asset_refs": ["abb1"],
+            "answer_key": "1. RICHTIG: Von ca. 12 % (1960) auf über 20 % (2024) – das ist fast eine Verdoppelung. 2. FALSCH: Ein hoher Anteil älterer Menschen ist eine Folge von niedrigen Geburtenraten und hoher Lebenserwartung, aber nicht umgekehrt deren Ursache. Der Anteil älterer Menschen steigt, weil weniger Kinder nachkommen – nicht weil das Vorhandensein älterer Menschen die Geburten verringert. 3. RICHTIG: Wenn Menschen länger leben, akkumulieren sich die älteren Jahrgänge; auch bei gleichbleibenden Geburten sinkt der relative Anteil jüngerer Altersgruppen.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Aussage 2 ist eine häufige Kausalverwechslung – auf Ursache vs. Folge achten.",
+              "Aussage 3 erfordert logisches Schlussfolgern – 'relativ' vs. 'absolut' ist der Schlüssel."
+            ],
+            "rubric": [
+              {"criterion": "Korrekte Einstufung", "levels": ["Alle 3 richtig", "2 von 3 richtig", "1 oder 0 richtig"]},
+              {"criterion": "Qualität der Begründung", "levels": ["Schlüssig und sachlich korrekt begründet", "Begründung vorhanden, aber lückenhaft", "Keine oder falsche Begründung"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "case_study",
+            "prompt": "Das österreichische Pensionssystem funktioniert nach dem 'Umlageverfahren': Die Beiträge der heute Erwerbstätigen finanzieren direkt die Pensionen der heutigen Pensionist:innen. Erkläre, warum die demografische Alterung dieses System unter Druck setzt. Nutze dafür die Informationen aus Abb. 1.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 50},
+            "cognitive_level": "analyze",
+            "dimensions": ["UK"],
+            "serves": [{"competence_id": "GWB.US.3.OST.01", "relation": "exercises"}],
+            "est_minutes": 10,
+            "asset_refs": ["abb1"],
+            "answer_key": "Wenn der Anteil der über 65-Jährigen steigt (laut Abb. 1 von 12 % auf über 20 %), dann gibt es relativ gesehen immer mehr Pensionist:innen, die Leistungen aus dem System beziehen. Gleichzeitig gibt es relativ weniger Erwerbstätige, die Beiträge einzahlen. Das Verhältnis verschiebt sich: Weniger Zahler:innen müssen mehr Empfänger:innen finanzieren. Das bedeutet entweder höhere Beiträge, geringere Pensionen oder eine Verlängerung der Erwerbsarbeitszeit – oder eine Kombination aus allem.",
+            "acceptable_reasoning": "Auch Hinweise auf staatliche Zuschüsse aus Steuermitteln oder Immigration als Ausgleichsmechanismus sind korrekt.",
+            "watch_outs": [
+              "Schüler:innen sollen das Umlageverfahren wirklich erklären, nicht nur 'es gibt ein Problem' schreiben.",
+              "Den Bezug zur Abbildung einfordern: Welche konkreten Werte stützen das Argument?"
+            ],
+            "rubric": [
+              {"criterion": "Verständnis des Umlageverfahrens", "levels": ["Korrekt erklärt, Bezug zur Alterung hergestellt", "Teilweise erklärt", "Nicht oder falsch erklärt"]},
+              {"criterion": "Nutzung der Abbildung", "levels": ["Konkrete Werte oder Trendaussage aus Abb. 1 eingebaut", "Allgemeiner Verweis auf das Diagramm", "Kein Bezug auf Abb. 1"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "position_argument",
+            "prompt": "Eine politische Diskussion: Soll das gesetzliche Pensionsantrittsalter in Österreich auf 67 Jahre angehoben werden, um das Pensionssystem langfristig zu sichern? Nimm Stellung und begründe deine Position mit mindestens zwei Argumenten.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 55},
+            "cognitive_level": "evaluate",
+            "dimensions": ["UK", "HK"],
+            "serves": [{"competence_id": "GWB.US.3.OST.02", "relation": "exercises"}],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "Pro Anhebung: (1) Längere Erwerbstätigkeit bedeutet mehr Beitragseinnahmen und damit mehr Finanzierungsspielraum; (2) Die steigende Lebenserwartung erlaubt längeres Arbeiten – wer mit 65 noch fit ist, kann noch Beiträge leisten; (3) Ohne Anpassung steigt die Belastung der jüngeren Generation stark. Contra Anhebung: (1) Körperlich belastende Berufe (z.B. Pflegepersonal, Bauarbeiter:innen) können nicht bis 67 arbeiten; (2) Ältere Menschen verlieren Arbeitsplätze durch Automatisierung und finden kaum neue; (3) Pensionsalter-Anhebung trifft einkommensschwache Gruppen stärker. Eine ausgewogene Antwort erkennt die Spannung zwischen Systemfinanzierung und sozialer Gerechtigkeit.",
+            "acceptable_reasoning": "Sowohl Befürwortung als auch Ablehnung sind als Position akzeptabel, solange sie mit sachlichen Argumenten belegt werden.",
+            "watch_outs": [
+              "Auf Ausgewogenheit und sachliche Argumentation bestehen – reine Meinungsäußerung ohne Gründe nicht werten.",
+              "Unterschiedliche Betroffenheit je nach Berufsgruppe ist ein wichtiger Aspekt; Schüler:innen sollen erkennen, dass eine Lösung nicht für alle gleich funktioniert."
+            ],
+            "rubric": [
+              {"criterion": "Klare Positionierung", "levels": ["Eindeutige Position erkennbar", "Position angedeutet", "Keine klare Position"]},
+              {"criterion": "Qualität der Argumente", "levels": ["Mindestens 2 sachlich korrekte, differenzierte Argumente", "1 sachlich korrektes Argument", "Keine sachlichen Argumente"]},
+              {"criterion": "Differenziertheit", "levels": ["Gegenargumente oder Einschränkungen berücksichtigt", "Nur eine Perspektive", "Einseitig ohne Begründung"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "open_response",
+            "prompt": "Wie könnte Österreich dem Trend der Bevölkerungsalterung entgegenwirken oder sich besser darauf vorbereiten? Entwickle zwei Maßnahmen – eine, die auf die Geburtenrate zielt, und eine, die auf die Arbeitswelt oder das Pensionssystem abzielt. Begründe beide.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 50},
+            "cognitive_level": "create",
+            "dimensions": ["HK", "UK"],
+            "serves": [{"competence_id": "GWB.US.3.OST.01", "relation": "exercises"}],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Maßnahme Geburtenrate: z.B. Ausbau von Kinderbetreuungseinrichtungen und finanzielle Unterstützung für Familien (Kinderbeihilfe, Karenzmodelle), um die Vereinbarkeit von Familie und Beruf zu verbessern. Begründung: Wenn Eltern nicht zwischen Karriere und Kindern wählen müssen, entscheiden sich mehr für Kinder. Maßnahme Arbeitswelt/Pension: z.B. Förderung von Teilzeitarbeit für ältere Arbeitnehmer:innen als Übergang in die Pension; Förderung von Zuwanderung qualifizierter Arbeitskräfte; oder kapitalgedeckte Zusatzpensionen als Ergänzung zum Umlageverfahren. Andere sachlich begründete Maßnahmen sind ebenfalls korrekt.",
+            "acceptable_reasoning": "Kreative, sachlich fundierte Ideen (z.B. Robotik im Pflegebereich als Entlastung) sollen anerkannt werden.",
+            "watch_outs": [
+              "Beide Maßnahmen müssen explizit dem jeweils geforderten Bereich (Geburtenrate vs. Arbeitswelt) zugeordnet sein.",
+              "Auf Begründung bestehen – Maßnahmen ohne Begründung nur Teilpunkte."
+            ],
+            "rubric": [
+              {"criterion": "Geburtenraten-Maßnahme", "levels": ["Sachlich sinnvoll und begründet", "Vorhanden, aber nicht begründet", "Fehlt oder sachlich falsch"]},
+              {"criterion": "Arbeitswelt/Pensions-Maßnahme", "levels": ["Sachlich sinnvoll und begründet", "Vorhanden, aber nicht begründet", "Fehlt oder sachlich falsch"]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

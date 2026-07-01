@@ -1,0 +1,96 @@
+{
+  "id": "c0077.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Lies die folgenden Aussagen über Säuren und Basen. Entscheide, ob sie richtig (R) oder falsch (F) sind, und verbessere falsche Aussagen.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Je höher der pH-Wert, desto saurer ist eine Lösung.",
+        "Bei der Neutralisation entstehen immer Salz und Wasser.",
+        "Salzsäure gibt beim Auflösen in Wasser H⁺-Ionen ab.",
+        "Alle Säuren schmecken bitter."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "R / F",
+        "Verbesserung (wenn falsch)"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.US.x.STA.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1. F — Je niedriger der pH-Wert, desto saurer (H⁺-Konzentration steigt). 2. R. 3. R (siehe Abb. 2). 4. F — Säuren schmecken sauer (nicht bitter); bitter ist typisch für Basen/Alkaloide.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Aussage 1 ist die häufigste Fehlvorstellung — pH und Säurestärke laufen umgekehrt",
+      "Aussage 4 ist eine klassische Verwechslung: sauer vs. bitter — Essigsäure schmeckt sauer, Aspirin (Acetylsalicylsäure) leicht bitter durch andere Ursache",
+      "Abb. 2 zeigt die HCl-Dissoziation — als Anker für Aussage 3 nutzen"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Chemie",
+  "klasse": 4,
+  "kompetenzbereich": "Standpunkte begründen, Entscheidungen treffen und reflektiert handeln (S)",
+  "competences": [
+    "CHE.US.x.STA.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:math_formula",
+      "spec": {
+        "latex": "\\mathrm{HCl}_{(aq)} \\rightarrow \\mathrm{H}^+ + \\mathrm{Cl}^-"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0077",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:13+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

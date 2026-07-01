@@ -1,0 +1,88 @@
+{
+  "id": "c0078.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "experiment_protocol",
+    "prompt": "Du führst folgendes Experiment durch: Ein Eisennagel wird in einem Reagenzglas mit Wasser bedeckt und eine Woche stehen gelassen. Du beobachtest täglich die Veränderungen.\n\na) Formuliere eine Vermutung (Hypothese): Was wirst du nach einer Woche beobachten?\nb) Beschreibe zwei Beobachtungen, die zeigen würden, dass eine chemische Reaktion stattgefunden hat.\nc) Schreibe eine einfache Wortgleichung für die Rostbildung: Eisen + ___ → ___",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.US.x.ERK.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "a) Der Nagel wird an der Oberfläche braun-rötlich (Rost bildet sich). b) 1. Farbänderung (silbergrau → braun-orange). 2. Oberfläche verändert sich strukturell (brüchig, schuppig). c) Eisen + Sauerstoff (+ Wasser) → Eisenoxid (Rost / Fe₂O₃·nH₂O)",
+    "acceptable_reasoning": "Wortgleichung muss Eisen und Sauerstoff als Edukte und Eisenoxid/Rost als Produkt zeigen; genaue Formel nicht erforderlich.",
+    "rubric": [
+      {
+        "criterion": "Hypothese",
+        "levels": [
+          "Spezifisch und überprüfbar",
+          "Vage aber korrekte Richtung",
+          "Keine sinnvolle Hypothese"
+        ]
+      },
+      {
+        "criterion": "Beobachtungen als chem. Kennzeichen",
+        "levels": [
+          "Zwei Kennzeichen korrekt beschrieben",
+          "Ein Kennzeichen",
+          "Kein Kennzeichen"
+        ]
+      },
+      {
+        "criterion": "Wortgleichung",
+        "levels": [
+          "Edukte und Produkt korrekt",
+          "Nur Edukte oder nur Produkt",
+          "Fehlt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Wasser ist ein Katalysator/Beschleuniger — ohne Wasser rostet Eisen kaum; Schüler:innen darauf hinweisen",
+      "Rost ist kein Eisen mehr — neuer Stoff mit anderen Eigenschaften (spröde, isolierend)",
+      "Hypothese soll überprüfbar sein — auf Präzision achten, nicht nur 'es passiert etwas'"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "experiment_protocol",
+  "subject": "Chemie",
+  "klasse": 4,
+  "kompetenzbereich": "Erkenntnisse gewinnen und interpretieren (E)",
+  "competences": [
+    "CHE.US.x.ERK.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0078",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:13+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

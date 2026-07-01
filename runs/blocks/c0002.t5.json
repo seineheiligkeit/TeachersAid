@@ -1,0 +1,58 @@
+{
+  "id": "c0002.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Löse die folgenden linearen Gleichungssysteme. Verwende mindestens einmal das Gleichsetzungsverfahren und einmal das Additionsverfahren. Gib die Lösung als Koordinatenpaar (x | y) an.\n\na) I: y = 3x − 1\n   II: y = −x + 7\n\nb) I: 2x + 3y = 12\n   II: 4x − 3y = 6",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 10
+    },
+    "cognitive_level": "apply",
+    "dimensions": [
+      "OPE"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.4.VAR.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 14,
+    "answer_key": "a) Gleichsetzung: 3x − 1 = −x + 7 → 4x = 8 → x = 2; y = 3·2 − 1 = 5. Lösung: (2 | 5).\nb) Addition: (2x + 3y) + (4x − 3y) = 12 + 6 → 6x = 18 → x = 3; in I: 6 + 3y = 12 → y = 2. Lösung: (3 | 2).",
+    "acceptable_reasoning": "Auch Einsetzungsverfahren oder andere korrekte Methoden sind akzeptabel, sofern das Verfahren klar erkennbar notiert ist.",
+    "rubric": [],
+    "watch_outs": [
+      "Bei a) Fehler: Term 3x−1 mit −x+7 gleichsetzen, aber Vorzeichen bei −x vergessen → 3x−1 = x+7 statt −x+7.",
+      "Bei b) Additionsverfahren: Sicherstellen, dass man wirklich addiert (nicht subtrahiert) – 3y + (−3y) = 0 korrekt."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Mathematik",
+  "klasse": 4,
+  "kompetenzbereich": "2: Variablen und Funktionen",
+  "competences": [
+    "MAT.US.4.VAR.04"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "OPE"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0002",
+  "source": "ai",
+  "created_at": "2026-06-25T11:35:33+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

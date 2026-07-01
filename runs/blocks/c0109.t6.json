@@ -1,0 +1,133 @@
+{
+  "id": "c0109.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Recherchiere oder überlege: Welche Gruppe der Bevölkerung ist von Altersarmut besonders betroffen, und warum könnte die aktuelle Altersstruktur Österreichs (Abb. 2) dieses Problem in Zukunft verstärken? Beziehe dich auf konkrete Daten.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.OST.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "Besonders betroffen von Altersarmut sind Frauen (niedrigere Pensionen aufgrund von Teilzeit, Kindererziehungszeiten, niedrigeren Löhnen) sowie Menschen mit Migrationshintergrund (unterbrochene Erwerbsbiografien). Die aktuelle Altersstruktur verstärkt das Problem, weil: (a) die Gruppe 75+ (9,7 % = ca. 885.000 Personen) wächst und besonders weiblich ist (Abb. 1 zeigt bei 85+ fast doppelt so viele Frauen wie Männer); (b) wenn das Pensionsniveau sinkt (wegen Systemdruck), treffen Kürzungen arme Pensionist:innen überproportional.",
+    "acceptable_reasoning": "Schüler:innen, die auf die Geschlechterunterschiede in der Pyramide (mehr ältere Frauen) und auf Lohnungleichheit als Ursache hinweisen, zeigen ein vollständiges Verständnis. Ein konkreter Zahlenbezug (9,7 % / 885.000 Personen) oder der Verweis auf das Pyramidenbild ist erforderlich.",
+    "rubric": [
+      {
+        "criterion": "Betroffene Gruppe identifiziert",
+        "levels": [
+          "Konkrete Gruppe (Frauen, Menschen mit Migrationshintergrund) korrekt benannt (2P)",
+          "Vage 'alte Menschen' (1P)",
+          "Nicht benannt (0P)"
+        ]
+      },
+      {
+        "criterion": "Datenbezug",
+        "levels": [
+          "Mindestens ein konkreter Datenpunkt aus Abb. 1 oder 2 (2P)",
+          "Kein Datenbezug (0P)"
+        ]
+      },
+      {
+        "criterion": "Begründung Verstärkungseffekt",
+        "levels": [
+          "Kausalzusammenhang Altersstruktur → Systembdruck → Armut plausibel (2P)",
+          "Ansatz erkennbar (1P)",
+          "Fehlt (0P)"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Altersarmut bei Frauen ist statistisch belegt — Schüler:innen sollen das nicht als Meinung formulieren, sondern als gesellschaftliche Tatsache mit Ursache.",
+      "Nicht alle alten Menschen sind arm — die Aufgabe fragt nach besonders betroffenen Gruppen, nicht nach verallgemeinernden Aussagen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Österreichische Gesellschaftsentwicklung",
+  "competences": [
+    "GWB.US.3.OST.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "title": "Bevölkerung Österreichs nach Altersgruppen — Anteile (1.1.2024)",
+        "xlabel": "Altersgruppe",
+        "ylabel": "Anteil an Gesamtbevölkerung (%)",
+        "log": false,
+        "categories": [
+          "0–14",
+          "15–29",
+          "30–44",
+          "45–59",
+          "60–74",
+          "75+"
+        ],
+        "values": [
+          14.4,
+          16.8,
+          20.6,
+          21.2,
+          17.3,
+          9.7
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "statistik_austria_bevstand_2024",
+        "series": "altersgruppen_breit",
+        "note": null,
+        "title": "Bevölkerung Österreichs nach Alter und Geschlecht (1.1.2024)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2024",
+        "attribution": "Datenquelle: Statistik Austria – data.statistik.gv.at (CC BY 4.0)",
+        "stand": "2024-01-01"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0109",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:28+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

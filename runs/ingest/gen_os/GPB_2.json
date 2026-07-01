@@ -1,0 +1,306 @@
+{
+  "subject": "Geschichte und politische Bildung",
+  "klasse": 7,
+  "kompetenzbereich": "Politische, wirtschaftliche, kulturelle und soziale Entwicklungen vom 1. Weltkrieg bis zur Gegenwart",
+  "title": "Zwei Welten, ein Planet: Das bipolare System des Kalten Krieges und seine Folgen",
+  "kernfrage": "Wie prägte das bipolare Weltsystem des Kalten Krieges das Leben der Menschen – und was blieb davon nach 1989/90?",
+  "body": {
+    "intro": [
+      {
+        "role": "info",
+        "id": "i1",
+        "title": "Hinweis zum Arbeitsblatt",
+        "content": "Der Kalte Krieg (1947–1991) war kein 'heißer' Krieg zwischen den USA und der UdSSR – und trotzdem hat er das Leben von Hunderten Millionen Menschen geprägt: durch Propaganda, Wettrüsten, Stellvertreterkriege und den Alltag hinter dem Eisernen Vorhang. In diesem Arbeitsblatt analysierst du Quellen, Darstellungen und Daten, um zu verstehen, wie dieses bipolare System funktionierte – und warum sein Zusammenbruch die Welt erneut veränderte."
+      }
+    ],
+    "data_figures": [
+      {
+        "id": "fig1",
+        "intent": "trend",
+        "title": "Militärausgaben USA und UdSSR, 1950–1990 (in Mrd. US-Dollar, Preise 2015)",
+        "xlabel": "Jahr",
+        "ylabel": "Mrd. USD (Preise 2015)",
+        "categories": ["1950", "1955", "1960", "1965", "1970", "1975", "1980", "1985", "1990"],
+        "values": [370, 490, 520, 580, 530, 480, 540, 650, 590]
+      }
+    ],
+    "assets": [
+      {
+        "id": "abb2",
+        "role": "figure",
+        "generator": "matplotlib:timeline",
+        "spec": {
+          "events": [
+            {"at": 1947, "label": "Truman-Doktrin / Beginn des Kalten Krieges"},
+            {"at": 1949, "label": "Gründung NATO / Erste sowjetische Atombombe"},
+            {"at": 1955, "label": "Warschauer Pakt gegründet"},
+            {"at": 1961, "label": "Bau der Berliner Mauer"},
+            {"at": 1962, "label": "Kubakrise"},
+            {"at": 1975, "label": "KSZE-Schlussakte Helsinki"},
+            {"at": 1985, "label": "Gorbatschow: Glasnost und Perestroika"},
+            {"at": 1989, "label": "Fall der Berliner Mauer"},
+            {"at": 1991, "label": "Auflösung der UdSSR"}
+          ],
+          "title": "Chronologie des Kalten Krieges (1947–1991)",
+          "xlabel": "Jahr"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Teil 1: Bipolarität – Konzept und Struktur",
+        "throughline": "Schüler:innen erschließen zunächst das Grundprinzip des bipolaren Systems (zwei Supermächte, Systemkonflikt, Einflusssphären, Wettrüsten) und ordnen historische Ereignisse chronologisch ein. Diese konzeptuelle Grundlage ist Voraussetzung für alle weiteren Analysen.",
+        "talking_points": [
+          "Was unterscheidet einen 'kalten' von einem 'heißen' Krieg? Warum vermieden USA und UdSSR eine direkte militärische Konfrontation?",
+          "Das bipolare System kannte viele 'heiße' Stellvertreterkriege (Korea, Vietnam, Angola): Wer kämpfte dort wirklich, und gegen wen?",
+          "Wie erklärt die Zeitleiste, warum der Kalte Krieg nicht in einem einzigen Moment begann oder endete?"
+        ],
+        "extensions": [
+          "Recherchiert die österreichische Neutralität (Staatsvertrag 1955): Welche Rolle spielte Österreich im bipolaren System – war es wirklich neutral, oder war Neutralität selbst eine politische Positionierung?",
+          "Vergleicht die NATO-Osterweiterung nach 1991 mit dem Warschauer Pakt: Welche Kontinuitäten und Brüche zeigen sich in der europäischen Sicherheitsarchitektur?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "ordering",
+            "prompt": "Bringe die folgenden Ereignisse des Kalten Krieges in die richtige chronologische Reihenfolge. Nutze dazu auch die bereitgestellte Zeitleiste.",
+            "payload": {
+              "kind": "ordering",
+              "items": [
+                "Kubakrise und Konfrontation zwischen Kennedy und Chruschtschow",
+                "Truman-Doktrin: USA erklärt Eindämmungspolitik gegenüber dem Kommunismus",
+                "Fall der Berliner Mauer",
+                "Bau der Berliner Mauer",
+                "Gründung des Warschauer Pakts als Gegenbündnis zur NATO",
+                "Auflösung der Sowjetunion"
+              ]
+            },
+            "response": {"mode": "none"},
+            "cognitive_level": "remember",
+            "dimensions": ["HSK"],
+            "serves": [
+              {"competence_id": "GPB.OS.7.POL5.04", "relation": "exercises"}
+            ],
+            "est_minutes": 6,
+            "asset_refs": ["abb2"],
+            "answer_key": "Korrekte Reihenfolge: 1. Truman-Doktrin (1947) → 2. Gründung Warschauer Pakt (1955) → 3. Bau Berliner Mauer (1961) → 4. Kubakrise (1962) → 5. Fall der Berliner Mauer (1989) → 6. Auflösung der UdSSR (1991).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Häufige Verwechslung: Bau der Mauer (1961) und Fall der Mauer (1989) – beide passieren in Berlin, aber 28 Jahre auseinander.",
+              "Die Truman-Doktrin (1947) markiert den Beginn der Eindämmungspolitik, nicht das Kriegsende 1945 – Schüler:innen setzen den Kalten Krieg manchmal direkt nach 1945 an."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "data_interpretation",
+            "prompt": "Betrachte die Grafik zu den Militärausgaben der USA während des Kalten Krieges (1950–1990).\n\na) Beschreibe den allgemeinen Verlauf: In welchen Phasen stiegen die Ausgaben stark an, wann sanken sie?\nb) Erkläre, mit welchen historischen Ereignissen du die markanten Veränderungen in Anstieg oder Rückgang in Verbindung bringen könntest.\nc) Erkläre, warum die Höhe der Militärausgaben allein noch keine Aussage darüber erlaubt, welche Seite im Kalten Krieg 'stärker' war.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 60},
+            "cognitive_level": "analyze",
+            "dimensions": ["PMK", "HSK"],
+            "serves": [
+              {"competence_id": "GPB.OS.7.POL4.01", "relation": "exercises"},
+              {"competence_id": "GPB.OS.7.POL5.04", "relation": "exercises"}
+            ],
+            "est_minutes": 14,
+            "asset_refs": ["fig1"],
+            "answer_key": "a) Starker Anstieg 1950–1955 (Koreakrieg-Ära), leichter Rückgang bis ca. 1970 nach Vietnamhochphase, erneuter Anstieg in den 1980ern (Reagans Rüstungsoffensive gegen die UdSSR), Rückgang zum Ende des Kalten Krieges. b) Anstieg 1950er: Koreakrieg, NATO-Aufbau; Rückgang 1970er: Détente, KSZE; Anstieg 1980er: SDI-Programm ('Sternenkrigsprogramm'), Reagan-Doktrin. c) Rüstungsausgaben messen monetären Einsatz, nicht militärische Effizienz; die UdSSR hatte ein ganz anderes Preisniveau; zudem zählen technologischer Vorsprung, Allianzsysteme, Soft Power (Propaganda, Kultureinfluss) und Wirtschaftskraft als eigenständige Machtdimensionen.",
+            "acceptable_reasoning": "Für c) genügen zwei voneinander verschiedene Argumente, die die Grenzen eines Einzelindikators aufzeigen. Schüler:innen mit Wirtschaftsvorwissen können auf Kaufkraftparitäten eingehen.",
+            "watch_outs": [
+              "Schüler:innen lesen Daten häufig absolut ('mehr Ausgaben = stärker') ohne Kontext (BIP-Anteil, Währungsparität, Preisniveau).",
+              "Datenbeschriftung beachten: Die Grafik zeigt nur US-Daten – Schüler:innen sollten nicht auf UdSSR-Ausgaben schließen, ohne dass diese gezeigt werden."
+            ],
+            "rubric": [
+              {"criterion": "Beschreibung des Verlaufs", "levels": ["Keine sinnvolle Beschreibung", "Generelle Tendenz beschrieben, keine Phasen", "Phasen korrekt benannt mit ungefähren Zeitangaben"]},
+              {"criterion": "Historische Kontextualisierung", "levels": ["Keine historischen Ereignisse benannt", "Ein Ereignis korrekt zugeordnet", "Mehrere Ereignisse mit Phasen kohärent verknüpft"]},
+              {"criterion": "Kritische Reflexion des Indikators", "levels": ["Keine kritische Reflexion", "Ein Einwand gegen die Aussagekraft benannt", "Mindestens zwei strukturell verschiedene Argumente für die Begrenztheit des Indikators"]}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Teil 2: Ideologien und ihre Darstellung – Demokratie versus Totalitarismus",
+        "throughline": "Dieser Abschnitt führt die Systemkonkurrenz auf die ideologische Ebene: Schüler:innen unterscheiden liberale Demokratie und sowjetischen Staatssozialismus analytisch, erkennen Propagandastrategien und üben die kritische Dekonstruktion von Darstellungen des Systemkonflikts.",
+        "talking_points": [
+          "Was versteht man unter 'Totalitarismus'? Lässt sich das Konzept auf beide Blöcke anwenden, oder ist es ideologisch belastet?",
+          "Propagandaplakate, Spielfilme und Schulbücher auf beiden Seiten des Eisernen Vorhangs zeigten die 'Gegenseite' als Bedrohung: Welche Bilder, Symbole und Sprache wurden dabei eingesetzt?",
+          "Wie hängen Geschichtsdarstellungen und politische Legitimation zusammen? (Selektivität, Perspektivität als historische Prinzipien)"
+        ],
+        "extensions": [
+          "Analysiert je ein Propagandaplakat aus den USA und aus der UdSSR derselben Ära nach dem Schema: Bildbeschreibung – Botschaft – Zielgruppe – eingesetzte Mittel (Symbole, Farben, Sprache). Was fällt im Vergleich auf?",
+          "Recherchiert, wie der Kalte Krieg in österreichischen Schulbüchern der 1960er Jahre dargestellt wurde – und vergleicht das mit einer aktuellen Darstellung. Welche Unterschiede erkennt ihr?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "table_fill",
+            "prompt": "Vergleiche liberale Demokratie (westliches Modell) und Staatssozialismus (sowjetisches Modell) anhand der folgenden Kriterien. Fülle die Tabelle auf Basis deiner bisherigen Kenntnisse und deiner Unterlagen aus.",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": ["Kriterium", "Liberale Demokratie (West)", "Staatssozialismus (Ost)"],
+              "rows": 6
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["HSK", "HMK"],
+            "serves": [
+              {"competence_id": "GPB.OS.7.POL5.02", "relation": "exercises"},
+              {"competence_id": "GPB.OS.7.HIS2.01", "relation": "exercises"}
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Kriterien und Musterantworten (vereinfacht): 1. Wirtschaftsordnung: Marktwirtschaft / Planwirtschaft. 2. Parteisystem: Mehrparteiensystem / Einparteiensystem (KPdSU). 3. Eigentumsrecht: Privatbesitz der Produktionsmittel / Kollektives/staatliches Eigentum. 4. Presse- und Meinungsfreiheit: Prinzipiell garantiert (mit Einschränkungen) / Staatliche Zensur. 5. Außenpolitische Doktrin: Eindämmung des Kommunismus (Truman) / Weltrevolution und Blocksolidarität (Breschnew-Doktrin). 6. Demokratieverständnis: Repräsentative, pluralistische Demokratie / 'Volksdemokratie' als Diktatur des Proletariats.",
+            "acceptable_reasoning": "Vereinfachungen sind zulässig; Schüler:innen sollen systemische Unterschiede erfassen, keine erschöpfende wissenschaftliche Analyse liefern. Differenzierungen (z. B. 'Westeuropa hatte unterschiedliche Wohlfahrtsstaatsmodelle') können in der Besprechung eingebracht werden.",
+            "watch_outs": [
+              "Beide Systeme hatten interne Vielfalt: Der 'Westen' umfasste US-Kapitalismus und skandinavische Sozialdemokratie; der 'Osten' umfasste Jugoslawiens Sonderweg, Rumäniens Nationalismus usw.",
+              "Begriffe wie 'Volksdemokratie' waren Selbstbezeichnungen des Ostblocks – Schüler:innen sollten lernen, Eigenbezeichnungen und analytische Begriffe zu unterscheiden."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "dekonstruktion",
+            "prompt": "Eure Lehrperson stellt euch eine Darstellung des Kalten Krieges zur Verfügung (z. B. einen Zeitungsartikel, ein Schulbuchkapitel oder einen Filmausschnitt aus der Zeit des Kalten Krieges oder der unmittelbaren Nachkriegsphase).\n\nDekonstruiere die Darstellung, indem du folgende Fragen beantwortest:\na) Wer hat die Darstellung hergestellt, und in welchem Kontext entstand sie?\nb) Welches Bild des Systemgegners (USA oder UdSSR) wird gezeichnet? Welche Mittel werden eingesetzt (Sprache, Bilder, Auslassungen)?\nc) Welche Perspektive wird bevorzugt? Was kommt in der Darstellung nicht vor oder wird marginalisiert?\nd) Für welche Zielgruppe wurde die Darstellung produziert, und welche Funktion hatte sie?",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 70},
+            "cognitive_level": "analyze",
+            "dimensions": ["HMK", "HFK"],
+            "serves": [
+              {"competence_id": "GPB.OS.7.HIS.03", "relation": "exercises"},
+              {"competence_id": "GPB.OS.7.HIS.04", "relation": "exercises"},
+              {"competence_id": "GPB.OS.7.HIS2.02", "relation": "exercises"}
+            ],
+            "est_minutes": 18,
+            "asset_refs": [],
+            "answer_key": "Keine einzige Musterlösung, da materialabhängig. Bewertungsgrundlage: a) Entstehungskontext (Produzent, Jahr, Medium) korrekt benannt; b) konkrete sprachliche oder visuelle Mittel identifiziert (z. B. Dämonisierung, Schlüsselwörter wie 'Freiheit' vs. 'Tyrannei'); c) Auslassungen und bevorzugte Perspektive erkannt (z. B. fehlt die Sicht der Betroffenen im globalen Süden?); d) Zielgruppe und Funktion (Propaganda, politische Mobilisierung, Legitimation) reflektiert.",
+            "acceptable_reasoning": "Schüler:innen sollen zeigen, dass sie das Analysewerkzeug Dekonstruktion (Perspektivität, Selektivität, Retroperspektivität) anwenden können – nicht dass sie das 'richtige' Ergebnis nennen.",
+            "watch_outs": [
+              "Dekonstruktion bedeutet nicht Ablehnung der Darstellung, sondern systematisches Hinterfragen ihrer Konstruktionsbedingungen – Schüler:innen verwechseln das mit Kritisieren oder Widerlegen.",
+              "Schüler:innen sollten Quellenmerkmale (Quelle = zeitgenössisches Dokument) von Darstellungsmerkmalen (Darstellung = spätere Rekonstruktion) unterscheiden.",
+              "Vorsicht bei tendenziösen Formulierungen der eigenen Analyse – Schüler:innen sollen analytisch, nicht wertend formulieren."
+            ],
+            "rubric": [
+              {"criterion": "Entstehungskontext", "levels": ["Nicht thematisiert", "Produzent oder Entstehungsjahr benannt", "Entstehungskontext vollständig und mit Relevanz für die Analyse erläutert"]},
+              {"criterion": "Analyse der eingesetzten Mittel", "levels": ["Keine konkreten Mittel benannt", "Allgemeine Beobachtungen ohne Textbelege", "Konkrete sprachliche oder bildliche Mittel mit Beispielen aus dem Material belegt"]},
+              {"criterion": "Perspektivität und Auslassungen", "levels": ["Nicht erkannt", "Eine Auslassung oder bevorzugte Perspektive benannt", "Mehrere Perspektivierungen und Auslassungen systematisch herausgearbeitet"]},
+              {"criterion": "Zielgruppe und Funktion", "levels": ["Nicht benannt", "Zielgruppe benannt ohne Begründung", "Zielgruppe und Propagandafunktion kohärent hergeleitet"]}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "Teil 3: 1989/90 – Zusammenbruch, Transformation und Gegenwart",
+        "throughline": "Im dritten Abschnitt untersuchen Schüler:innen die Bedingungen für das Ende des bipolaren Systems, bewerten konkurrierende Erklärungen für den Zusammenbruch der UdSSR und reflektieren die Orientierungsangebote, die historische Darstellungen zum 'Sieg' des Westens oder zur 'Niederlage' des Ostens bieten.",
+        "talking_points": [
+          "War das Ende des Kalten Krieges unvermeidlich? Welche Faktoren (Wirtschaft, Glasnost, Nationalbewegungen, Rüstungsdruck) werden am stärksten betont – und von wem?",
+          "Wie unterschiedlich wird 1989/90 in Österreich, Russland, Polen und den USA bis heute erinnert und erzählt? Was sagt das über Erinnerungskultur aus?",
+          "Wo sind Strukturen oder Konflikte des Kalten Krieges in der heutigen Weltpolitik noch spürbar (z. B. NATO-Russland-Verhältnis, Nuklearrüstung, Blockfreiheit)?"
+        ],
+        "extensions": [
+          "Vergleicht zwei wissenschaftliche oder publizistische Erklärungen für den Zusammenbruch der UdSSR (z. B. Rüstungsdruck vs. innere Reformdynamik vs. Nationalbewegungen): Welche Quellen nutzen die Autoren, welche Perspektive nehmen sie ein?",
+          "Erstellt eine kurze Multimedia-Präsentation (z. B. Erklärvideo-Skript, Infografik-Entwurf) zum Thema: 'Was blieb vom Kalten Krieg? Spuren in der heutigen Weltordnung' – für eine jüngere Zielgruppe (z. B. 10-jährige)."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "multiple_choice",
+            "prompt": "Welche der folgenden Erklärungen für den Zusammenbruch der Sowjetunion werden in der Geschichtswissenschaft diskutiert? (Mehrere Antworten möglich – kreuze alle zutreffenden an und begründe deine Wahl kurz.)",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "Wirtschaftliche Erschöpfung durch das Wettrüsten und die Planwirtschaftskrise",
+                "Glasnost und Perestroika destabilisierten das System, indem sie öffentliche Kritik ermöglichten",
+                "Eine militärische Niederlage der UdSSR im direkten Krieg gegen die USA",
+                "Nationalistische Unabhängigkeitsbewegungen in Unionsrepubliken (z. B. Baltikum, Ukraine)",
+                "Die gezielte Schwächung der UdSSR durch westliche Geheimdienste war die einzige Ursache",
+                "Gesellschaftliche Reformforderungen und wachsende Zivilgesellschaft in Osteuropa"
+              ],
+              "select": "many"
+            },
+            "response": {"mode": "box", "min_height_mm": 40},
+            "cognitive_level": "evaluate",
+            "dimensions": ["HFK", "HOK"],
+            "serves": [
+              {"competence_id": "GPB.OS.7.POL5.04", "relation": "exercises"},
+              {"competence_id": "GPB.OS.7.HIS3.02", "relation": "exercises"}
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Historisch diskutiert und fachwissenschaftlich akzeptiert: Option 1 (Wirtschaftliche Erschöpfung), Option 2 (Glasnost/Perestroika), Option 4 (Nationalbewegungen), Option 6 (Zivilgesellschaft Osteuropa). Option 3 ist falsch (es gab keinen direkten militärischen Konflikt). Option 5 ist eine Überverkürzung – westliche Einflussnahme war ein Faktor, aber keine alleinige oder hinreichende Erklärung; monokausal zu setzen, ist wissenschaftlich nicht haltbar.",
+            "acceptable_reasoning": "Begründungen sollten erklären, warum eine Option plausibel oder unplausibel ist – nicht nur ankreu­zen.",
+            "watch_outs": [
+              "Monokausalität ist die häufigste Fehlvorstellung: 'Die UdSSR verlor den Kalten Krieg, weil Reagan zu viel Geld ausgab' – historische Prozesse haben multiple Ursachen.",
+              "Option 3 (militärische Niederlage) wird von manchen Schüler:innen angekreuzt, weil sie 'Kalten Krieg' mit regulärem Krieg assoziieren."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "argumentation",
+            "prompt": "In manchen Darstellungen wird das Ende des Kalten Krieges als 'Sieg des Westens' und 'Triumph der Demokratie' beschrieben.\n\na) Welches Orientierungsangebot steckt in dieser Formulierung? Was wird damit impliziert?\nb) Formuliere eine alternative oder ergänzende Deutung, die einen anderen Aspekt des Endes des Kalten Krieges hervorhebt. Begründe, warum diese Perspektive wichtig ist.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 55},
+            "cognitive_level": "evaluate",
+            "dimensions": ["HOK", "PUK"],
+            "serves": [
+              {"competence_id": "GPB.OS.7.HIS3.01", "relation": "exercises"},
+              {"competence_id": "GPB.OS.7.POL2.02", "relation": "exercises"}
+            ],
+            "est_minutes": 13,
+            "asset_refs": [],
+            "answer_key": "a) Das Orientierungsangebot 'Sieg des Westens' legt nahe, dass Demokratie und Marktwirtschaft historisch überlegen sind und das Ende des Kalten Krieges ein Erfolg westlicher Strategie war. Es impliziert eine teleologische Sicht (Geschichte hat ein Ziel: die liberale Demokratie) und kann politisch zur Legitimation westlicher Außenpolitik genutzt werden. b) Alternative Deutungen könnten betonen: 1. Die Eigenleistung der osteuropäischen und sowjetischen Bevölkerung (Revolutionen von unten); 2. Ökonomisches Versagen und innere Widersprüche des sowjetischen Systems; 3. Die ambivalenten Folgen für viele Menschen (Armut nach dem Systemwechsel, 'Transformationsverlierer'); 4. Die perspektivische Einschränkung: 'Triumph der Demokratie' aus Sicht der Ukraine oder Georgiens sieht heute anders aus als in den 1990ern.",
+            "acceptable_reasoning": "Jede kohärente alternative Deutung ist akzeptabel, die über die westliche Siegesperspektive hinausgeht und durch historische Argumente gestützt wird.",
+            "watch_outs": [
+              "Schüler:innen neigen dazu, das Orientierungsangebot entweder vollständig zu übernehmen oder pauschal abzulehnen – gefordert ist eine reflektierte, differenzierende Analyse.",
+              "Teleologisches Geschichtsdenken ('Geschichte läuft auf ein Ziel zu') sollte als Deutungsmuster erkannt, nicht als Tatsache übernommen werden.",
+              "Gegenwartsbezug: Die Formulierung 'Triumph der Demokratie' ist besonders im Kontext des russischen Angriffskriegs auf die Ukraine (2022 ff.) politisch aufgeladen – Lehrkraft sollte Raum für vorsichtige, differenzierte Diskussion schaffen."
+            ],
+            "rubric": [
+              {"criterion": "Erkennen des Orientierungsangebots", "levels": ["Kein Orientierungsangebot erkannt", "Deutungsrahmen ('Sieg') benannt ohne Analyse", "Implizite Annahmen (Teleologie, Legitimationsfunktion) klar herausgearbeitet"]},
+              {"criterion": "Alternative Deutung", "levels": ["Keine alternative Deutung formuliert", "Alternative Perspektive benannt, aber nicht begründet", "Alternative Deutung kohärent begründet und durch historisches Argument gestützt"]},
+              {"criterion": "Differenzierung", "levels": ["Schwarz-Weiß-Bewertung", "Teilweise Differenzierung", "Mehrperspektivische, historisch fundierte Reflexion"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "open_response",
+            "prompt": "Gesellschaftliche Veränderungen nach 1945 prägten den Alltag der Menschen auf beiden Seiten des Eisernen Vorhangs: neue Massenmedien, Konsum- und Jugendkultur im Westen, Kollektivismus und staatliche Fürsorge im Osten.\n\nWähle einen Aspekt des Alltags (z. B. Wohnen, Bildung, Medien, Freizeit, Konsumgüter) und erkläre, wie das bipolare System beeinflusste, wie Menschen in den 1960er oder 1970er Jahren in Ost- bzw. Westeuropa damit umgingen. Beziehe dabei soweit möglich Österreich als Sonderfall (neutral, aber westlich eingebunden) ein.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 55},
+            "cognitive_level": "analyze",
+            "dimensions": ["HSK", "HOK"],
+            "serves": [
+              {"competence_id": "GPB.OS.7.POL5.06", "relation": "exercises"},
+              {"competence_id": "GPB.OS.7.HIS3.01", "relation": "exercises"}
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "Beispielantwort Medien: Im Westen (einschließlich Österreich) etablierte sich ab den 1950ern das kommerzielle Fernsehen mit wachsendem US-Kultureinfluss (Serien, Popmusik); im Osten gab es staatlich kontrollierte Sender mit ideologischen Inhalten, aber auch Versuche, westliche Sender (z. B. Radio Free Europe) zu empfangen. Österreich war als neutrales Land mit eigenem ORF westlich orientiert, aber vielen Ostösterreicher:innen zugänglich für tschechoslowakisches oder ungarisches Fernsehen. Das bipolare System spiegelte sich so direkt im Wohnzimmer wider. Andere akzeptable Aspekte: Bildung (westlich: kritisches Denken, östlich: marxistische Staatsbürgerbildung); Konsumgüter (westlich: Wohlstand und Überfluss, östlich: Mangelwirtschaft und Schwarzmarkt); Jugendkultur (Rock'n'Roll als 'westliche Dekadenz' im Osten verboten).",
+            "acceptable_reasoning": "Antworten werden nach Tiefe der Verknüpfung (Alltag ↔ Systemkonflikt) und nach dem Österreich-Bezug bewertet.",
+            "watch_outs": [
+              "Schüler:innen beschreiben den Alltag ohne Verbindung zum Systemkonflikt – die Aufgabe fordert explizit den Zusammenhang.",
+              "Österreich-Bezug nicht vergessen: Österreichs Neutralität bedeutete nicht Isolation – das Land war kulturell und wirtschaftlich stark westlich eingebunden.",
+              "Generalisierungen vermeiden: 'Im Osten war alles schlecht' ist keine historische Analyse; staatliche Bildungssysteme, kostenlose Gesundheitsversorgung usw. waren Stärken mancher Ostblockstaaten."
+            ],
+            "rubric": [
+              {"criterion": "Beschreibung des Alltagsaspekts", "levels": ["Kein spezifischer Aspekt gewählt", "Aspekt beschrieben, aber ohne Systemkonfliktzusammenhang", "Aspekt präzise beschrieben und mit bipolarem System verknüpft"]},
+              {"criterion": "Ost-West-Vergleich", "levels": ["Nur eine Seite berücksichtigt", "Beide Seiten genannt, aber nicht verglichen", "Kontrast klar herausgearbeitet und historisch begründet"]},
+              {"criterion": "Österreich als Sonderfall", "levels": ["Österreich nicht erwähnt", "Österreich erwähnt ohne Einordnung", "Österreichs Neutralität und westliche Einbindung sinnvoll in den Vergleich integriert"]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

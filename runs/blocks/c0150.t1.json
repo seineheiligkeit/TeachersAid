@@ -1,0 +1,83 @@
+{
+  "id": "c0150.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne jeder Netzwerkkomponente ihre Hauptaufgabe zu.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Router",
+        "Switch",
+        "Access Point (WLAN)",
+        "Netzwerkkabel (Ethernet)",
+        "Modem"
+      ],
+      "right": [
+        "Verbindet Geräte im lokalen Netz über Funk",
+        "Wandelt digitale Signale in Signale für die Telefonleitung um (und umgekehrt)",
+        "Leitet Datenpakete zwischen verschiedenen Netzen weiter und vergibt IP-Adressen",
+        "Verbindet mehrere Geräte im gleichen Netz und leitet Pakete gezielt weiter (MAC-Adressen)",
+        "Überträgt Daten physisch als elektrische Signale zwischen zwei Geräten"
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Komponente",
+        "Hauptaufgabe"
+      ],
+      "rows": 5
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "WV"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "INF.OS.5.INF2.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Router → Leitet Datenpakete zwischen verschiedenen Netzen weiter und vergibt IP-Adressen; Switch → Verbindet mehrere Geräte im gleichen Netz und leitet Pakete gezielt weiter (MAC-Adressen); Access Point → Verbindet Geräte im lokalen Netz über Funk; Netzwerkkabel → Überträgt Daten physisch als elektrische Signale zwischen zwei Geräten; Modem → Wandelt digitale Signale in Signale für die Telefonleitung um.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Router und Switch werden regelmäßig verwechselt: Router = zwischen Netzen, Switch = innerhalb eines Netzes.",
+      "Heimrouter sind meist Kombigeräte (Router + Switch + WLAN-AP + oft Modem) – das kann zu Verwirrung führen; hier konzeptuell trennen.",
+      "Das Modem ist heute oft im Router integriert und wird als eigenes Gerät kaum noch wahrgenommen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Informatik",
+  "klasse": 5,
+  "kompetenzbereich": "Informatiksysteme",
+  "competences": [
+    "INF.OS.5.INF2.04"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "WV"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0150",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:26+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

@@ -1,0 +1,100 @@
+{
+  "id": "c0153.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Ein Wasserreservoir wird mit der Füllrate f(t) = 2t + 3 (in m³/min, t in Minuten) befüllt. Zu Beginn (t = 0) enthält das Reservoir bereits 10 m³ Wasser.\n(a) Wie viel Wasser wird in den ersten 5 Minuten zugefüllt? Drücke dies als Integral aus und berechne es.\n(b) Wie viel Wasser befindet sich nach 5 Minuten insgesamt im Reservoir?\n(c) Interpretiere, was das Integral ∫₀ᵀ f(t) dt in diesem Kontext bedeutet, und erkläre, warum man eine Füllrate integrieren muss, um das Gesamtvolumen zu erhalten.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 65.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "ID",
+      "DM"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.OS.8.GRU2.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "MAT.OS.8.GRU2.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "(a) Zugefülltes Wasser = ∫₀⁵ (2t + 3) dt = [t² + 3t]₀⁵ = (25 + 15) − 0 = 40 m³. (b) Gesamtvolumen = 10 + 40 = 50 m³. (c) Das Integral einer Rate über ein Zeitintervall ergibt die gesamte Menge, die in diesem Zeitraum fließt — das ist die Verallgemeinerung von „Menge = Rate × Zeit“ für nicht-konstante Raten. Integration ist die Umkehrung der Differenziation: weil f(t) die Änderungsrate des Volumens ist, liefert das Integral das kumulative Volumen.",
+    "acceptable_reasoning": "Analogie: V = r·t gilt nur für konstante Rate; Integral verallgemeinert auf variable Rate.",
+    "rubric": [
+      {
+        "criterion": "Integralansatz",
+        "levels": [
+          "Fehlt",
+          "Ansatz korrekt aufgestellt"
+        ]
+      },
+      {
+        "criterion": "Berechnung (a)",
+        "levels": [
+          "Rechenfehler",
+          "40 m³ korrekt"
+        ]
+      },
+      {
+        "criterion": "Gesamtvolumen (b)",
+        "levels": [
+          "Anfangsbestand vergessen oder falsch",
+          "50 m³ korrekt"
+        ]
+      },
+      {
+        "criterion": "Interpretation (c)",
+        "levels": [
+          "Keine oder oberflächliche Erklärung",
+          "Rate-Mengen-Zusammenhang erklärt",
+          "Vollständige Erklärung inkl. Analogie zu konstantem Fall"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen vergessen häufig den Anfangsbestand — das Integral gibt nur die Änderung, nicht das Gesamtvolumen.",
+      "Konzeptuelle Lücke: Warum integriert man eine Rate? Diese Frage muss explizit geklärt werden.",
+      "Einheiten konsistent halten: m³/min × min = m³."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Mathematik",
+  "klasse": 8,
+  "kompetenzbereich": "Grundlagen der Integralrechnung",
+  "competences": [
+    "MAT.OS.8.GRU2.02",
+    "MAT.OS.8.GRU2.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "ID",
+    "DM"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0153",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:26+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

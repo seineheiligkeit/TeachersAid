@@ -1,0 +1,77 @@
+{
+  "id": "c0023.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Entwirf ein eigenes regelmäßiges Muster (mindestens 6 Wiederholungen) ausgehend von einem einfachen Grundmotiv (z. B. einem Dreieck oder Buchstaben), das du durch mindestens zwei verschiedene Transformationen erzeugst.\n\nBeschreibe:\n(a) Wie sieht dein Grundmotiv aus?\n(b) Welche Transformationen verwendest du (mit genauen Angaben: Achse, Drehwinkel, Verschiebevektor)?\n(c) Warum lückenlos das gesamte Muster entsteht (d. h. keine Überlappungen, keine Lücken).",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 70.0
+    },
+    "cognitive_level": "create",
+    "dimensions": [
+      "H2",
+      "H1"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GEZ.US.4.TRA.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Offene Aufgabe. Beurteilung: geometrisch beschreibbares Motiv; min. zwei Transformationen mit präzisen Angaben; Begründung für Lückenlosigkeit (z. B. Dreieck + 120°-Drehung füllt 360° → kachelartig). Beispiel: gleichseitiges Dreieck + 3 × 120°-Drehung = Sechseckfliese.",
+    "acceptable_reasoning": "Schüler:innen, die ein Muster beschreiben, das theoretisch funktioniert, aber keine lückenlose Begründung geben, erhalten Teilpunkte.",
+    "rubric": [
+      {
+        "criterion": "Motiv und Transformationen",
+        "levels": [
+          "Unklar oder geometrisch falsch beschrieben",
+          "Motiv klar, Transformationen ungenau",
+          "Motiv klar, min. zwei Transformationen präzise beschrieben"
+        ]
+      },
+      {
+        "criterion": "Begründung Lückenlosigkeit",
+        "levels": [
+          "Fehlend",
+          "Intuitive Begründung",
+          "Geometrische Begründung (Winkel/Abstände)"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Lückenlosigkeit ist eine nichttriviale Anforderung — nicht alle Motive mit beliebigen Transformationen kacheln lückenlos.",
+      "Für die Zeichnung ggf. kariertes Papier oder Dreiecksraster ausgeben."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Transformationen von Objekten und Relationen zwischen Objekten (I2)",
+  "competences": [
+    "GEZ.US.4.TRA.02"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "H2",
+    "H1"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0023",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

@@ -1,0 +1,145 @@
+{
+  "id": "c0113.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Prüfe die folgenden Aussagen anhand von Abb. 1. Kreuze an: richtig oder falsch? Begründe kurz mit einer Zahl aus dem Diagramm.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "In Wien ist der Januar der kälteste Monat des Jahres.",
+        "Im Juni fällt in Wien mehr als 100 mm Niederschlag.",
+        "Die Temperaturen in Wien sind im Winter unter dem Gefrierpunkt (unter 0°C).",
+        "Im Sommer (Jun–Aug) fallen in Wien zusammen mehr als 200 mm Niederschlag."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "Richtig / Falsch",
+        "Begründung (Zahl aus Abb. 1)"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.1.LEB4.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1. Richtig — Jan: 0,8 °C (kältester Monat). 2. Falsch — Juni: 70 mm, nicht über 100 mm. 3. Falsch — Januar hat 0,8 °C (knapp über dem Gefrierpunkt); kein Monat liegt unter 0. 4. Richtig — Jun (70) + Jul (78) + Aug (69) = 217 mm.",
+    "acceptable_reasoning": "Schüler:innen müssen eine Zahl aus dem Diagramm zur Begründung anführen.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Aussage 3 ist eine typische Fehlvorstellung: Wien gilt als winterkalt, aber der Januardurchschnitt liegt mit 0,8 °C knapp über dem Gefrierpunkt — Einzeltage können kälter sein, aber der Monatsmittelwert ist es nicht.",
+      "Bei Aussage 4 müssen Schüler:innen drei Werte addieren — Achtung Rechenfleisß."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 1,
+  "kompetenzbereich": "Leben und Wirtschaften unter Beachtung der natürlichen Prozesse",
+  "competences": [
+    "GWB.US.1.LEB4.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:climate_diagram",
+      "spec": {
+        "title": "Klimadiagramm Wien (Hohe Warte), Normalperiode 1991–2020",
+        "months": [
+          "Jän",
+          "Feb",
+          "Mär",
+          "Apr",
+          "Mai",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Okt",
+          "Nov",
+          "Dez"
+        ],
+        "temp": [
+          0.8,
+          2.3,
+          6.2,
+          11.4,
+          15.8,
+          19.7,
+          21.4,
+          20.9,
+          15.8,
+          10.5,
+          5.8,
+          1.5
+        ],
+        "precip": [
+          42,
+          38,
+          52,
+          42,
+          79,
+          70,
+          78,
+          69,
+          64,
+          47,
+          46,
+          47
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "geosphere_klima_normal_1991_2020",
+        "series": "wien",
+        "note": null,
+        "title": "Klimanormalwerte österreichischer Stationen (1991–2020)",
+        "url": "https://data.hub.geosphere.at/dataset/klima-v2-1m",
+        "attribution": "Datenquelle: GeoSphere Austria – data.hub.geosphere.at (klima-v2-1m, CC BY 4.0)",
+        "stand": "1991–2020"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0113",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:31+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

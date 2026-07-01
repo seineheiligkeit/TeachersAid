@@ -1,0 +1,124 @@
+{
+  "id": "c0097.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Betrachte Abb. 1 (HDI-Vergleich).\na) Was misst der Human Development Index? Nenne zwei Komponenten.\nb) Welchen HDI hat Österreich laut der Abbildung? Was bedeutet das im globalen Vergleich?\nc) Ein Jugendlicher aus Niger und eine Jugendliche aus Österreich haben beide den Wunsch: 'Ich möchte Ärztin werden.' Vergleiche ihre Ausgangsbedingungen. Welche Faktoren beeinflussen ihre Chancen?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 7
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "OK",
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.4.EIG.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "a) HDI misst Lebensqualität anhand von: Lebenserwartung, Bildung (Schuljahre), Einkommen (BNE pro Kopf). b) Österreich hat HDI 0.926 – das entspricht einem sehr hohen Entwicklungsstand; Österreich liegt global im oberen Viertel. c) Ausgangsbedingungen: in Österreich: kostenloser Zugang zu Bildung inkl. Universität, gut ausgebautes Gesundheitssystem, politische Stabilität, hohe Einkommensperspektiven; in Niger: sehr begrenzter Zugang zu Hochschulbildung, Ärztemangel, geringe staatliche Bildungsinvestitionen, wirtschaftliche Instabilität. Einflussfaktoren: Zugang zu Bildungsinstitutionen, staatliche Investitionen, politische Sicherheit, soziale Herkunft.",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "HDI-Verständnis",
+        "levels": [
+          "Keine oder falsche Aussage über den HDI.",
+          "Eine Komponente korrekt, Österreichs Position beschrieben.",
+          "Zwei Komponenten korrekt; globale Einordnung treffend."
+        ]
+      },
+      {
+        "criterion": "Chancenvergleich",
+        "levels": [
+          "Kein Vergleich oder rein oberflächlich.",
+          "Vergleich mit einem Faktor.",
+          "Vergleich mit mindestens zwei strukturellen Faktoren, differenziert formuliert."
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "HDI ist ein Durchschnittswert – er verdeckt interne Ungleichheit (z. B. Geschlecht, ethnische Zugehörigkeit). Das kann als Erweiterung thematisiert werden.",
+      "Aufgabenteil c) erfordert Empathie und Perspektivenwechsel – sicherstellen, dass Schülerinnen und Schüler keine stereotypen Formulierungen verwenden."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 4,
+  "kompetenzbereich": "Das eigene Ich in einer vernetzten Welt",
+  "competences": [
+    "GWB.US.4.EIG.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "OK",
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Niger",
+          "Afghanistan",
+          "Bolivien",
+          "Brasilien",
+          "Türkei",
+          "Österreich",
+          "Schweiz",
+          "Norwegen"
+        ],
+        "values": [
+          0.394,
+          0.462,
+          0.702,
+          0.76,
+          0.855,
+          0.926,
+          0.967,
+          0.97
+        ],
+        "title": "Lebensqualitäts-Index ausgewählter Länder (Human Development Index, 2023)",
+        "xlabel": "Land",
+        "ylabel": "HDI (0–1)",
+        "log": false
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0097",
+  "source": "ai",
+  "created_at": "2026-06-26T19:02:31+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

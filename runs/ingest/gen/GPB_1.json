@@ -1,0 +1,229 @@
+{
+  "subject": "Geschichte und politische Bildung",
+  "klasse": 2,
+  "scope_label": "Alte Kulturen — Gesellschaft und Alltagsleben im Alten Ägypten",
+  "title": "Leben am Nil: Wie wissen wir, was wir über das Alte Ägypten zu wissen glauben?",
+  "kernfrage": "Woher wissen wir eigentlich, wie die Menschen im Alten Ägypten gelebt haben — und kann man diesen Quellen vertrauen?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Quellen und Darstellungen zum Alten Ägypten unterscheiden",
+        "throughline": "Schüler:innen erkennen, dass unser Wissen über das Alte Ägypten aus bestimmten Überresten stammt und dass diese Überreste nicht neutral sind — sie zeigen vor allem das Leben der Eliten und werfen Fragen über die Lücken auf.",
+        "talking_points": [
+          "Was ist überhaupt erhalten geblieben, und warum gerade das? (Stein vs. Holz; Grabbeigaben für Reiche vs. Armut)",
+          "Unterschied: ein Wandrelief aus einem Grab (Quelle) vs. ein Schulbuchtext über Ägypten (Darstellung)",
+          "Wessen Perspektive zeigen Hieroglyphen-Inschriften? (Herrscherideologie, Priester — kaum Bauern/Sklavinnen)",
+          "Was bedeutet es, wenn eine historische Quelle schweigt?"
+        ],
+        "extensions": [
+          "Vergleich mit einem anderen Volk der Antike: Gibt es mehr Quellen über einfache Menschen (z.B. Pompeji-Graffiti)?",
+          "Besuch einer Ägypten-Ausstellung oder virtueller Rundgang durch das Kunsthistorische Museum Wien, Abt. Ägyptisch-Orientalische Sammlung"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "multiple_choice",
+            "prompt": "Ein Forscher findet in einem ägyptischen Grab ein Wandbild, das einen Pharao beim Besiegen seiner Feinde zeigt. Was ist dieses Wandbild am ehesten?\n\nWähle die beste Antwort.",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "A) Eine Quelle, weil es aus der damaligen Zeit stammt und direkt überliefert wurde.",
+                "B) Eine Darstellung, weil es von jemandem später aufgezeichnet wurde.",
+                "C) Ein Beweis dafür, dass der Pharao wirklich gesiegt hat.",
+                "D) Unbrauchbar für die Geschichtsforschung."
+              ],
+              "select": "one"
+            },
+            "response": {
+              "mode": "choices",
+              "options": [
+                "A) Eine Quelle, weil es aus der damaligen Zeit stammt und direkt überliefert wurde.",
+                "B) Eine Darstellung, weil es von jemandem später aufgezeichnet wurde.",
+                "C) Ein Beweis dafür, dass der Pharao wirklich gesiegt hat.",
+                "D) Unbrauchbar für die Geschichtsforschung."
+              ],
+              "select": "one"
+            },
+            "cognitive_level": "remember",
+            "dimensions": ["HME"],
+            "serves": [{ "competence_id": "GPB.US.2.ALL.01", "relation": "exercises" }],
+            "est_minutes": 5,
+            "answer_key": "A) Eine Quelle: Das Wandbild stammt aus der Zeit selbst (es wurde von Zeitgenoss:innen im Grab angebracht) und ist damit eine primäre Überlieferung — also eine Quelle, keine nachträgliche Darstellung.",
+            "acceptable_reasoning": "Akzeptabel ist auch, wenn Schüler:innen zusätzlich erklären, dass Quellen noch keine objektive Wahrheit liefern — das greift T3 vorweg.",
+            "watch_outs": [
+              "Viele Schüler:innen verwechseln 'Quelle' mit 'Beweis' (Option C). Betonen: Eine Quelle kann propagandistisch sein und trotzdem Quelle bleiben.",
+              "Manche wählen B, weil sie 'Darstellung' mit 'Bild' gleichsetzen. Klarstellen: Der Begriff 'Darstellung' ist im Fach technisch belegt (= spätere Aufbereitung für ein Publikum)."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "source_analysis",
+            "prompt": "Lies den folgenden Ausschnitt aus einem ägyptischen Grabtext (ca. 1800 v. Chr.), der im Original als Hieroglyphen auf Papyrus geschrieben war. Ein Ägyptologe hat ihn übersetzt:\n\n„Ich, Amenhotep, Schreiber des Königs, habe mein Amt gerecht ausgeübt. Ich habe den Armen nicht zugelassen zu hungern und den Schwachen nicht zugelassen, Unrecht zu erleiden. Ich verdiene das ewige Leben."\n\n1. Um welche Art von Quelle handelt es sich hier? Nenne eine Eigenschaft dieser Gattung.\n2. Warum ist Vorsicht geboten, wenn du diesen Text als Beweis für die Lebensumstände der Armen verwendest?",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 40
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["HME", "HSA"],
+            "serves": [{ "competence_id": "GPB.US.2.ALL.03", "relation": "exercises" }],
+            "est_minutes": 8,
+            "answer_key": "1. Es handelt sich um einen schriftlichen Grabtext (Jenseitstexte / Rechtfertigungstexte). Typisches Gattungsmerkmal: Selbstdarstellung des Verstorbenen für das Jenseitsgericht — der Text soll Amenhotep rechtfertigen, nicht sachlich über die Gesellschaft informieren.\n2. Der Text ist eine Selbstaussage, die für das Jenseitsgericht formuliert wurde. Amenhotep hatte ein klares Interesse, sich positiv darzustellen. Der Text belegt keine tatsächlichen Zustände, sondern zeigt, welche Tugenden als erstrebenswert galten. Er sagt wenig darüber aus, wie es den Armen wirklich ging.",
+            "acceptable_reasoning": "Schüler:innen müssen nicht den Fachbegriff 'Jenseitstext' kennen; ausreichend ist: 'Es ist ein persönliches Schreiben für religiöse Zwecke' + korrekte Skepsis gegenüber Eigenlobaussagen.",
+            "watch_outs": [
+              "Häufiger Fehler: Schüler:innen nehmen den Textinhalt wörtlich ('Er war ein guter Beamter, weil er das selbst sagt'). Darauf hinweisen: Absicht des Verfassers analysieren.",
+              "Manche verwechseln 'Gattungsmerkmal' mit 'Inhalt' — Gattung bezieht sich auf die Form/Funktion des Textes."
+            ],
+            "rubric": [
+              {
+                "criterion": "Gattungsbestimmung",
+                "levels": [
+                  "Nennt keine oder falsche Gattung",
+                  "Benennt 'Schriftquelle' oder 'Grabtext', ohne Merkmal",
+                  "Nennt Gattung (Grabtext/Jenseitstext) und ein passendes Merkmal (Selbstdarstellung, religiöse Funktion)"
+                ]
+              },
+              {
+                "criterion": "Quellenkritik",
+                "levels": [
+                  "Übernimmt den Text unkritisch als Beleg",
+                  "Erkennt, dass der Text subjektiv ist, ohne Begründung",
+                  "Erklärt das Interesse des Verfassers und leitet daraus methodische Skepsis ab"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "open_response",
+            "prompt": "In vielen Schulbüchern steht: „Im Alten Ägypten gab es eine klare gesellschaftliche Hierarchie: ganz oben der Pharao, darunter Priester und Beamte, dann Handwerker und Bauern, ganz unten die Sklaven."\n\nDiese Aussage stammt aus einem Schulbuch, das 2019 erschienen ist.\n\nFormuliere eine historische Frage, die hinter dieser Schulbuchaussage steckt. Beginne deine Frage mit: „Wie …" oder „Inwiefern …"",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 2
+            },
+            "cognitive_level": "analyze",
+            "dimensions": ["HFR"],
+            "serves": [{ "competence_id": "GPB.US.2.HIS.01", "relation": "exercises" }],
+            "est_minutes": 7,
+            "answer_key": "Musterfragen (mehrere sind korrekt): „Wie war die altägyptische Gesellschaft aufgebaut und nach welchen Kriterien wurden Menschen einer Schicht zugeordnet?" / „Inwiefern unterschied sich das Leben von Menschen in verschiedenen Gesellschaftsschichten im Alten Ägypten?" / „Wie stabil war die gesellschaftliche Hierarchie im Alten Ägypten und gab es Möglichkeiten, aufzusteigen?" Die Frage muss auf Kontinuität/Wandel oder gesellschaftliche Strukturen zielen — keine Faktenfrage ('Wer war Pharao?').",
+            "acceptable_reasoning": "Akzeptabel sind alle Fragen, die über Einzelfakten hinausgehen und eine strukturelle oder vergleichende Perspektive einnehmen.",
+            "watch_outs": [
+              "Schüler:innen formulieren oft Faktenfragen ('Wer waren die Sklaven?') statt Strukturfragen. Unterschied erarbeiten: Historische Fragen fragen nach Zusammenhängen, nicht nur nach Namen/Zahlen.",
+              "Die Kernfrage hinter einer Darstellung herauszuarbeiten ist eine metakognitive Leistung — ggf. mit einem Beispiel vorentlasten."
+            ],
+            "rubric": [
+              {
+                "criterion": "Fragequalität",
+                "levels": [
+                  "Faktenfrage oder keine echte Frage",
+                  "Frage zielt auf Strukturen, ist aber zu weit oder zu eng",
+                  "Frage greift die Kontinuität/den Wandel oder die gesellschaftliche Struktur explizit auf und ist offen formuliert"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "open_response",
+            "prompt": "Über das Leben ägyptischer Bauern und Sklavinnen wissen Historiker:innen weniger als über das Leben der Pharaonen und Priester.\n\nWoher könnte das kommen? Nenne mindestens zwei Gründe und erkläre sie kurz.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 35
+            },
+            "cognitive_level": "analyze",
+            "dimensions": ["HME", "HSA"],
+            "serves": [{ "competence_id": "GPB.US.2.HIS3.01", "relation": "exercises" }],
+            "est_minutes": 8,
+            "answer_key": "Mögliche Gründe: (1) Reiche und Mächtige bauten aus haltbaren Materialien (Stein), Arme lebten in Lehmziegelhäusern, die vergangen sind. (2) Schreiben war ein Privileg — fast nur Schreiber/Beamte/Priester hinterließen schriftliche Quellen; Bauern waren meist Analphabeten. (3) Was erhalten blieb (Gräber, Tempel), spiegelt die Interessen der Auftraggeber (Pharao, Priesterschaft). (4) Archäolog:innen haben historisch häufiger Elitegräber untersucht; Armenviertel wurden weniger freigelegt.",
+            "acceptable_reasoning": "Zwei Gründe genügen, wenn sie klar erklärt werden. Akzeptabel ist jede Antwort, die zeigt, dass historische Überlieferung selektiv ist.",
+            "watch_outs": [
+              "Schüler:innen neigen zur Antwort: 'Die Armen haben nichts Wichtiges getan.' — Darauf eingehen: 'Wichtigkeit' ist eine nachträgliche Wertung; das Problem ist die Überlieferung, nicht die Bedeutungslosigkeit der einfachen Menschen.",
+              "Keine Schülerantwort erwarten, die 'Bias' als Fachbegriff kennt — der Inhalt zählt."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "open_response",
+            "prompt": "Du hast alte ägyptische Quellen und moderne Schulbuch-Darstellungen über das Alte Ägypten kennengelernt.\n\nBeschreibe kurz: Was nimmst du für dein eigenes Leben mit, wenn du weißt, dass historische Quellen immer eine bestimmte Perspektive widerspiegeln? Gib ein Beispiel aus deinem Alltag, wo ähnliches gilt.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 40
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": ["HOR"],
+            "serves": [{ "competence_id": "GPB.US.2.HIS2.01", "relation": "exercises" }],
+            "est_minutes": 8,
+            "answer_key": "Individuelle Antworten sind erwünscht. Erwartbar: Erkenntnis, dass auch heutige Medien (Social Media, Nachrichten, Werbung) eine Perspektive einnehmen und nicht 'die ganze Wahrheit' zeigen. Beispiele: ein Instagram-Post zeigt nur die schönen Momente; eine Werbung zeigt nur Vorteile eines Produkts; ein Zeitungsartikel hat eine Tendenz. Ziel ist die Übertragung der Quellenkritik auf die Gegenwart.",
+            "acceptable_reasoning": "Jede ehrliche Reflexion ist akzeptabel. Das Alltags-Beispiel muss zum Kerngedanken passen (selektive Darstellung/Perspektivität).",
+            "watch_outs": [
+              "Schüler:innen könnten sehr oberflächlich antworten ('Man sollte kritisch sein'). Nachfragen: Woran erkennt man eine einseitige Darstellung?",
+              "Diese Aufgabe ist offen und persönlich — keine 'Musterlösung' einfordern, stattdessen Reflexionstiefe bewerten."
+            ],
+            "rubric": [
+              {
+                "criterion": "Übertragungsleistung",
+                "levels": [
+                  "Keine oder sehr vage Verbindung zur Gegenwart",
+                  "Allgemeine Aussage ohne konkretes Beispiel",
+                  "Konkretes Gegenwartsbeispiel mit Bezug zur Perspektivität historischer Quellen"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "create_produce",
+            "prompt": "Schreibe einen kurzen Text (4–6 Sätze) über das Leben im Alten Ägypten — aber aus der Perspektive einer Bäuerin oder eines Sklaven, nicht aus der Perspektive des Pharaos.\n\nNutze, was du aus den Aufgaben weißt, und kennzeichne in Klammern, ob du eine Stelle erfindest oder ob sie auf einer Quelle beruht. Beispiel: „Die Ernte war hart (erfunden, da kaum Quellen)" oder „Für Rituale brauchte man Steine (Quelle: Wandrelief)."",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 50
+            },
+            "cognitive_level": "create",
+            "dimensions": ["HME", "HOR"],
+            "serves": [{ "competence_id": "GPB.US.2.ALL.04", "relation": "exercises" }],
+            "est_minutes": 12,
+            "answer_key": "Bewertungskriterien: (1) Perspektive einer nicht-elitären Person eingenommen; (2) Quellenangaben vs. Erfindungen unterschieden; (3) historisch plausible Details (Nilüberschwemmung, Felder, Abgaben, Arbeit am Tempel/Grab); (4) kein anachronistischer Fehler (z.B. kein Geld, kein Lesen). Kein festgelegter Mustertext — kreative und historisch kohärente Antworten werden honoriert.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen neigen dazu, Filmbilder (z.B. Hollywoodfilme) als historische Vorlage zu nehmen. Vorab besprechen: Manche Filmdarstellungen sind wenig historisch.",
+              "Die Unterscheidung 'Quelle vs. Erfindung' zu kennzeichnen ist das eigentliche Lernziel — auch wenn der Text selbst bescheiden ist, zeigt die Kennzeichnung historisches Denken.",
+              "Bei Schüler:innen mit Migrationshintergrund kann das Thema 'Sklaverei' persönliche Sensibilitäten berühren — behutsam moderieren."
+            ],
+            "rubric": [
+              {
+                "criterion": "Perspektivwechsel",
+                "levels": [
+                  "Schreibt aus Pharao-/Eliteperspektive oder gar keine Perspektive erkennbar",
+                  "Versucht einfache Perspektive, aber oberflächlich",
+                  "Eindeutig nicht-elitäre Perspektive mit historisch passenden Details"
+                ]
+              },
+              {
+                "criterion": "Quellenreflexion",
+                "levels": [
+                  "Keine Kennzeichnung",
+                  "Einige Stellen gekennzeichnet",
+                  "Konsequente Unterscheidung Quelle/Erfindung mit kurzer Begründung"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

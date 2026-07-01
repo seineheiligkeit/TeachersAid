@@ -1,0 +1,66 @@
+{
+  "id": "c0022.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Beurteile die folgenden Aussagen über Risse und Projektionen. Schreibe „wahr“ oder „falsch“ und begründe.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Im Aufriss eines Würfels sieht man immer ein Quadrat, egal aus welcher Richtung man schaut.",
+        "Verdeckte Kanten werden in Rissen mit einer gestrichelten Linie eingezeichnet.",
+        "Aus dem Grundriss alleine kann man immer auf den genauen Körper schließen.",
+        "Die drei Risse eines Körpers enthalten zusammen alle Informationen über Länge, Breite und Höhe."
+      ]
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "H1"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GEZ.US.4.PRO.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1. wahr — ein Würfel hat von jeder Seite eine quadratische Projektion. 2. wahr — DIN/ÖNORM-Konvention. 3. falsch — gleicher Grundriss kann von verschiedenen Körpern stammen (z. B. Würfel und Zylinder mit gleicher Grundfläche haben denselben kreisförmigen Grundriss, wenn der Zylinder kreisförmig und der Würfel quadratisch ist — oder: zwei Prismen können identischen Grundriss haben). 4. wahr — die drei Projektionen auf die drei Koordinatenebenen decken alle drei Raumrichtungen ab.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Aussage 3 ist eine wichtige Einsicht: ein Riss ist immer eine Informationsreduktion.",
+      "Aussage 4 gilt für „einfache“ Körper ohne Hinterlegungen — bei komplexen Bauteilen können auch drei Risse mehrdeutig sein."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Projektionen und Risse (I3)",
+  "competences": [
+    "GEZ.US.4.PRO.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "H1"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0022",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

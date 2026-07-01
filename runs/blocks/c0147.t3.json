@@ -1,0 +1,159 @@
+{
+  "id": "c0147.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1",
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_analysis",
+    "prompt": "Schau dir die beiden Grafiken (Abb. 1 und Abb. 2) an: Sie zeigen einerseits die empfohlenen Makronährstoff-Anteile (D-A-CH-Referenzwerte) und andererseits den durchschnittlichen tatsächlichen Konsum österreichischer Jugendlicher.\n\na) Beschreibe die Unterschiede zwischen Empfehlung und tatsächlichem Konsum.\nb) Für welchen Nährstoff ist die Abweichung am größten? Berechne den Unterschied in Prozentpunkten.\nc) Erkläre mithilfe deines Vorwissens, welche gesundheitlichen Folgen ein dauerhaft zu hoher Fettanteil haben kann.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "EV",
+      "NE"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "HOE.OS.6.EIG.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "HOE.OS.6.SIC.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "a) Kohlenhydrate: Empfehlung 55 %, tatsächlich 44 % — zu wenig; Fette: Empfehlung 30 %, tatsächlich 38 % — zu viel; Proteine: Empfehlung 15 %, tatsächlich 18 % — leicht erhöht.\nb) Größte Abweichung bei Kohlenhydraten: 55 − 44 = 11 Prozentpunkte (alternativ: Fette 38 − 30 = 8 Pp). Beide Antworten akzeptabel, wenn korrekt begründet.\nc) Dauerhaft zu hohe Fettzufuhr, insbesondere gesättigte Fettsäuren, erhöht das Risiko für Herz-Kreislauf-Erkrankungen, Adipositas und Typ-2-Diabetes; sie kann zu erhöhten LDL-Cholesterin-Werten führen.",
+    "acceptable_reasoning": "Beschreibung muss auf die Grafiken Bezug nehmen; gesundheitliche Folgen müssen wissenschaftlich nachvollziehbar sein.",
+    "rubric": [
+      {
+        "criterion": "Datenbeschreibung",
+        "levels": [
+          "Keine oder unvollständige Beschreibung",
+          "Zwei Nährstoffe korrekt beschrieben",
+          "Alle drei Nährstoffe korrekt mit Richtungsangabe"
+        ]
+      },
+      {
+        "criterion": "Rechenaufgabe",
+        "levels": [
+          "Falsch oder fehlend",
+          "Ergebnis korrekt, aber Einheit fehlt",
+          "Korrekt mit Einheit Prozentpunkte"
+        ]
+      },
+      {
+        "criterion": "Gesundheitsbezug",
+        "levels": [
+          "Keine Verbindung",
+          "Allgemeine Aussage ohne Fachbegriff",
+          "Konkrete Folgen mit Fachbegriffen (z. B. LDL, Adipositas, Typ-2-Diabetes)"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Manche Schüler:innen verwechseln Prozentpunkte mit prozentualer Veränderung.",
+      "Verallgemeinerungen wie 'Fett ist immer schlecht' erfordern Korrektur: ungesättigte Fettsäuren sind essenziell.",
+      "Daten sind als Beispieldaten deklariert — auf Quellenangabe hinweisen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_analysis",
+  "subject": "Haushaltsökonomie und Ernährung",
+  "klasse": 6,
+  "kompetenzbereich": "Das eigene Essverhalten erkennen, reflektieren und bewerten sowie Zusammenhänge zwischen Ernährungsgewohnheiten, Kulturen, Gesundheit und Wohlbefinden verstehen",
+  "competences": [
+    "HOE.OS.6.EIG.02",
+    "HOE.OS.6.SIC.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "EV",
+    "NE"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Kohlenhydrate",
+          "Fette",
+          "Proteine"
+        ],
+        "values": [
+          55.0,
+          30.0,
+          15.0
+        ],
+        "title": "Empfohlene Makronährstoff-Anteile an der Gesamtenergie (D-A-CH-Referenzwerte)",
+        "xlabel": "Makronährstoff",
+        "ylabel": "Anteil an Gesamtenergie (%)",
+        "log": false
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    },
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Kohlenhydrate",
+          "Fette",
+          "Proteine"
+        ],
+        "values": [
+          44.0,
+          38.0,
+          18.0
+        ],
+        "title": "Durchschnittlicher tatsächlicher Makronährstoff-Konsum österreichischer Jugendlicher (Beispieldaten)",
+        "xlabel": "Makronährstoff",
+        "ylabel": "Anteil an Gesamtenergie (%)",
+        "log": false
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0147",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:24+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

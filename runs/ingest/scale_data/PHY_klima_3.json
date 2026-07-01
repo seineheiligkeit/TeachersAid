@@ -1,0 +1,222 @@
+{
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Wetter und Klima",
+  "title": "Wer stößt wie viel CO₂ aus? — Emissionen im Ländervergleich und Klimaschutz",
+  "kernfrage": "Wie unterscheidet sich der CO₂-Ausstoß pro Kopf zwischen verschiedenen Ländern, und was bedeutet das für Klimaschutzmaßnahmen?",
+  "body": {
+    "intro": [],
+    "data_figures": [
+      {
+        "id": "abb1",
+        "intent": "comparison",
+        "title": "CO₂-Ausstoß pro Kopf im Ländervergleich (2024)",
+        "data_source": {
+          "dataset_id": "worldbank_co2_pro_kopf",
+          "series": "vergleich"
+        }
+      }
+    ],
+    "assets": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "CO₂ pro Kopf lesen, einordnen und bewerten",
+        "throughline": "Schülerinnen und Schüler lesen reale Emissionsdaten aus einem Diagramm, verstehen den Unterschied zwischen Pro-Kopf- und Gesamtemissionen, und bewerten Klimaschutzmaßnahmen auf persönlicher, regionaler und globaler Ebene.",
+        "talking_points": [
+          "Datenquelle: World Bank 2024 (EN.GHG.CO2.PC.CE.AR5, CC BY 4.0). Die Werte sind CO₂-Äquivalente pro Kopf: USA 13,6 t, Deutschland 6,9 t, Österreich 6,3 t, Italien 5,1 t, Schweiz 3,7 t, China 9,3 t, Indien 2,2 t, Nigeria 0,6 t.",
+          "Didaktisch wichtig: Pro-Kopf-Daten sind eine von vielen Betrachtungsweisen. China hat hohe Pro-Kopf-Werte (9,3 t), aber auch eine riesige Bevölkerung, was die Gesamtemissionen sehr hoch macht. Nigeria hat winzige Pro-Kopf-Werte (0,6 t), ist aber besonders verletzlich durch den Klimawandel. Diese Spannung ist der Kern von Klimagerechtigkeit.",
+          "Physikalischer Kern (WET.05): Klimaschutzziele (Paris-Abkommen: <2 °C, angestrebt 1,5 °C) brauchen globale Emissionsreduktionen. Pro-Kopf-Sichtweise: reiche Länder müssen stärker reduzieren; Gesamtemissions-Sichtweise: große Volkswirtschaften dominieren. Beides ist physikalisch relevant für die Atmosphärenchemie.",
+          "Vorsicht Bias: Das Balkendiagramm verleitet zu reinen Größenvergleichen. Die Schülerinnen und Schüler sollen immer nach dem 'Was bedeutet das?' fragen, nicht nur nach dem 'Wer ist am größten'."
+        ],
+        "extensions": [
+          "Gesamtemissionen berechnen lassen: Indien 2,2 t/Kopf × 1,4 Mrd. = ? vs. Deutschland 6,9 t × 84 Mio. = ? — überraschende Größenordnungen.",
+          "Historische Emissionen recherchieren: Wer hat historisch am meisten CO₂ in die Atmosphäre gebracht? Wie verändert das die Verantwortungsdiskussion?",
+          "1,5-°C-Budget ausrechnen: Wie viele Tonnen CO₂ dürfte ein Mensch noch ausstoßen, damit das Budget nicht überschritten wird? (≈2,3 t/Kopf bis 2100 nach IPCC-Szenarien)."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "open_response",
+            "prompt": "Sieh dir das Diagramm (Abb. 1) an, das den CO₂-Ausstoß pro Kopf für 8 Länder zeigt. Nenne das Land mit dem höchsten und das Land mit dem niedrigsten Wert und lies die Werte (in Tonnen pro Kopf) so genau wie möglich ab.",
+            "payload": null,
+            "response": {"mode": "lines", "n": 3},
+            "cognitive_level": "remember",
+            "dimensions": ["W"],
+            "serves": [{"competence_id": "PHY.US.4.WET.05", "relation": "exercises"}],
+            "est_minutes": 4,
+            "asset_refs": ["abb1"],
+            "answer_key": "Höchster Wert: USA mit 13,6 t CO₂ pro Kopf. Niedrigster Wert: Nigeria mit 0,6 t CO₂ pro Kopf. (Quelle: World Bank 2024)",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "USA ist klar der Spitzenwert (13,6 t); China (9,3 t) könnte verwechselt werden, wenn die Schülerinnen und Schüler 'China ist das größte Land' denken.",
+              "Einheit beachten: Tonnen pro Kopf, nicht Tonnen gesamt."
+            ],
+            "rubric": [
+              {"criterion": "Höchster Wert", "levels": ["USA mit ~13,6 t genannt", "USA genannt, Wert fehlt", "Falsch"]},
+              {"criterion": "Niedrigster Wert", "levels": ["Nigeria mit ~0,6 t genannt", "Nigeria genannt, Wert fehlt", "Falsch"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "open_response",
+            "prompt": "Österreich stößt laut Diagramm etwa 6,3 Tonnen CO₂ pro Kopf und Jahr aus. Das Pariser Klimaabkommen strebt an, die Erderwärmung auf 1,5 °C zu begrenzen. Wissenschaftlerinnen und Wissenschaftler schätzen, dass dafür der weltweite Pro-Kopf-Ausstoß bis 2050 auf unter 2 Tonnen sinken muss. Um wie viel Prozent müsste Österreich seinen Pro-Kopf-Ausstoß senken?",
+            "payload": null,
+            "response": {"mode": "lines", "n": 4},
+            "cognitive_level": "apply",
+            "dimensions": ["W", "S"],
+            "serves": [
+              {"competence_id": "PHY.US.4.WET.05", "relation": "exercises"},
+              {"competence_id": "PHY.US.4.WET.04", "relation": "exercises"}
+            ],
+            "est_minutes": 6,
+            "asset_refs": [],
+            "answer_key": "Reduktion: 6,3 − 2,0 = 4,3 t. Prozentuale Reduktion: 4,3/6,3 × 100 ≈ 68,3 %. Österreich müsste seinen Pro-Kopf-Ausstoß um rund 68 % senken.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "2-Tonnen-Ziel ist eine vereinfachte Schätzung für den Unterricht — in der Realität gibt es verschiedene Szenarien. Das Ziel ist die Rechnung und das Größenverständnis.",
+              "Verwechslung absolute Reduktion (4,3 t) vs. prozentuale Reduktion (68 %) vermeiden."
+            ],
+            "rubric": [
+              {"criterion": "Rechenweg", "levels": ["Differenz und Prozent korrekt", "Einer der Schritte korrekt", "Keine sinnvolle Rechnung"]},
+              {"criterion": "Einheit und Formulierung", "levels": ["% korrekt verwendet und erklärt", "Zahl richtig, Einheit fehlt", "Fehlt"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "open_response",
+            "prompt": "Indien stößt 2,2 Tonnen CO₂ pro Kopf aus — weit weniger als die USA (13,6 t). Trotzdem gelten Indien und China als 'große Emittenten'. Wie ist das möglich? Erkläre den Unterschied zwischen Pro-Kopf-Emissionen und Gesamtemissionen.",
+            "payload": null,
+            "response": {"mode": "lines", "n": 5},
+            "cognitive_level": "understand",
+            "dimensions": ["W", "S"],
+            "serves": [{"competence_id": "PHY.US.4.WET.05", "relation": "exercises"}],
+            "est_minutes": 7,
+            "asset_refs": ["abb1"],
+            "answer_key": "Gesamtemissionen = Pro-Kopf-Ausstoß × Bevölkerungszahl. Indien hat zwar nur 2,2 t/Kopf, aber ca. 1,4 Milliarden Einwohner: 2,2 × 1,4 Mrd. ≈ 3,1 Mrd. Tonnen CO₂ gesamt. USA: 13,6 × 0,34 Mrd. ≈ 4,6 Mrd. Tonnen. China: 9,3 × 1,4 Mrd. ≈ 13 Mrd. Tonnen (größter Gesamtemittent). Pro-Kopf und Gesamt messen verschiedene Dinge: Pro-Kopf zeigt den individuellen 'Fußabdruck'; Gesamt zeigt den Beitrag zur globalen Konzentration in der Atmosphäre.",
+            "acceptable_reasoning": "Schülerinnen und Schüler müssen keine genauen Bevölkerungszahlen kennen; die Idee (viele Menschen × kleiner Wert = groß) reicht.",
+            "watch_outs": [
+              "Häufige Fehlvorstellung: 'Indien muss auch wenig tun, weil pro Kopf so wenig.' Das ignoriert, dass historisch reiche Länder mehr ausgestoßen haben UND dass Indien sich industriell entwickeln möchte.",
+              "Für die Atmosphäre zählen die absoluten Gesamtmengen — das ist der physikalische Kern."
+            ],
+            "rubric": [
+              {"criterion": "Unterschied erklärt", "levels": ["Pro-Kopf vs. Gesamt klar unterschieden", "Idee angedeutet", "Nicht erkannt"]},
+              {"criterion": "Rechenbeispiel oder Erklärung", "levels": ["Produkt Bevölkerung × Pro-Kopf gezeigt oder beschrieben", "Nur qualitativ", "Fehlt"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "decision_scenario",
+            "prompt": "Ein Staat überlegt, welche Klimaschutzmaßnahme er zuerst einführen soll. Lies die drei Vorschläge und entscheide, welcher deiner Meinung nach am meisten bringt. Begründe mit einem Argument, das auf den Daten aus Abb. 1 aufbaut.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Drei Vorschläge zur Diskussion: (A) Österreich setzt eine CO₂-Steuer ein, um den Pro-Kopf-Ausstoß um 30 % zu senken. (B) Die EU finanziert erneuerbare Energie in Nigeria, um dort den Ausstoß zu verdoppeln (von 0,6 auf 1,2 t/Kopf). (C) Eine internationale Vereinbarung verpflichtet die USA, ihren Ausstoß auf EU-Niveau (ca. 6–7 t) zu senken."
+            },
+            "response": {"mode": "box", "min_height_mm": 45},
+            "cognitive_level": "evaluate",
+            "dimensions": ["S", "W"],
+            "serves": [{"competence_id": "PHY.US.4.WET.05", "relation": "exercises"}],
+            "est_minutes": 10,
+            "asset_refs": ["abb1"],
+            "answer_key": "Musterantwort (physikalisch): Maßnahme C hat den größten absoluten Effekt: USA von 13,6 auf ~6,9 t = −6,7 t × 340 Mio. Einwohner ≈ −2,3 Mrd. t/Jahr weniger. Maßnahme A (Österreich −30 % von 6,3 = −1,89 t × 9 Mio. ≈ −17 Mio. t) hat global kaum Wirkung. Maßnahme B erhöht zwar Nigerias Ausstoß leicht, aber die Grundversorgung mit Energie in einem Entwicklungsland ist gerechtigkeitlich sinnvoll; der absolute Anstieg ist minimal (0,6 t × 220 Mio. ≈ +132 Mio. t). Es gibt keine einzig richtige Antwort — die Fähigkeit, Größenordnungen mit Datenbezug zu vergleichen, ist das Ziel.",
+            "acceptable_reasoning": "Jede Entscheidung mit Datenbezug und physikalischer Begründung ist vollwertig. Politische oder ethische Argumente ergänzen, sollen aber physikalisch-quantitative Argumente nicht ersetzen.",
+            "watch_outs": [
+              "Schülerinnen und Schüler wählen intuitiv A (Österreich — naheliegend), ohne die Größenordnung zu bedenken. Darauf hinweisen, dass der globale Effekt winzig ist.",
+              "Nicht dazu verleiten, ein 'richtiges' Ergebnis zu erwarten — die Qualität der Argumentation zählt, nicht die Wahl.",
+              "Klimagerechtigkeit (historische Emissionen, Entwicklungsrecht) kann kurz angesprochen werden, ohne den physikalischen Kern zu verdrängen."
+            ],
+            "rubric": [
+              {"criterion": "Datenbezug", "levels": ["Konkrete Werte aus Abb. 1 verwendet", "Diagramm erwähnt, keine Zahlen", "Kein Bezug"]},
+              {"criterion": "Größenordnung", "levels": ["Absoluten Effekt abgeschätzt oder verglichen", "Nur relativer Vergleich (größer/kleiner)", "Fehlt"]},
+              {"criterion": "Begründung", "levels": ["Klare physikalisch-quantitative Begründung", "Intuitive Begründung ohne Rechnung", "Meinungsaussage ohne Begründung"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "multiple_choice",
+            "prompt": "Welche der folgenden Aussagen ist physikalisch korrekt? Wähle die EINE richtige Antwort.",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "CO₂ in der Atmosphäre lässt kurzwellige Sonnenstrahlung durch, aber hält langwellige Wärmestrahlung der Erdoberfläche zurück — das wärmt die Erde.",
+                "CO₂ blockiert die Sonnenstrahlung und verhindert, dass Energie auf die Erde gelangt — deshalb kühlt es die Erde.",
+                "CO₂ ist ein Schadstoff, der direkt giftig für Menschen ist und deshalb die Gesundheit schädigt.",
+                "CO₂ in der Atmosphäre hat keinen Einfluss auf die Temperatur, solange die Konzentration unter 1 % bleibt."
+              ],
+              "select": "one"
+            },
+            "response": {"mode": "choices", "options": ["A", "B", "C", "D"], "select": "one"},
+            "cognitive_level": "understand",
+            "dimensions": ["W"],
+            "serves": [{"competence_id": "PHY.US.4.WET.04", "relation": "exercises"}],
+            "est_minutes": 5,
+            "asset_refs": [],
+            "answer_key": "A — CO₂ (und andere Treibhausgase) sind für kurzwellige Sonnenstrahlung (sichtbares Licht, UV) weitgehend transparent, absorbieren aber die langwellige Infrarotstrahlung (Wärmestrahlung), die die Erdoberfläche abstrahlt. Das wird als Treibhauseffekt bezeichnet und führt zur Erwärmung.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Aussage B ist eine häufige Fehlvorstellung — CO₂ blockiert nicht die hereinkommende Strahlung, sondern die hinausgehende.",
+              "Aussage C verwechselt CO₂-Toxizität (relevant erst bei sehr hohen Konzentrationen) mit dem Klimaeffekt.",
+              "Aussage D ist falsch: Bereits die aktuelle Konzentration von ca. 0,042 % (420 ppm) hat erhebliche Klimawirkung. Die Wirkung ist nicht linear mit der Konzentration, sondern logarithmisch."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "open_response",
+            "prompt": "Nenne zwei konkrete Maßnahmen, die du persönlich ergreifen könntest, um deinen CO₂-Ausstoß zu senken. Schätze für jede Maßnahme, ob sie eher viel oder wenig bringt, und begründe kurz.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 40},
+            "cognitive_level": "apply",
+            "dimensions": ["S"],
+            "serves": [{"competence_id": "PHY.US.4.WET.05", "relation": "exercises"}],
+            "est_minutes": 7,
+            "asset_refs": [],
+            "answer_key": "Beispiele mit Richtwerten (zum Vergleich mit 6,3 t/Kopf Österreich): Flugreisen vermeiden (~1,5–3 t pro Langstreckenflug, viel Effekt); auf pflanzliche Ernährung umstellen (~0,5–1 t/Jahr, mittlerer Effekt); mit dem Rad statt Auto fahren (~0,2–0,5 t/Jahr bei durchschnittlicher Nutzung); Raumheizung reduzieren (~0,5 t/Jahr, mittlerer Effekt). Die größten Einzelposten im österreichischen Durchschnitt sind Mobilität (Flugreisen, PKW) und Ernährung.",
+            "acceptable_reasoning": "Kreative, ehrliche Überlegungen sind erwünscht; absolute Zahlenwerte sind nicht erforderlich — die Einordnung 'viel/wenig' und eine physikalische oder logische Begründung reichen.",
+            "watch_outs": [
+              "Schülerinnen und Schüler nennen oft 'Licht ausmachen' — das hat einen Effekt, aber er ist im Vergleich zu Mobilität und Ernährung sehr klein. Darauf hinweisen, ohne zu entmutigen.",
+              "Den individuellen Handlungsspielraum nicht überschätzen: Strukturelle Maßnahmen (z. B. öffentliche Verkehrsmittel ausbauen) haben oft mehr Wirkung als individuelle Verhaltensänderungen. Beide Ebenen anerkennen."
+            ],
+            "rubric": [
+              {"criterion": "Konkretheit", "levels": ["2 konkrete Maßnahmen genannt", "1 konkrete Maßnahme", "Nur vage Aussagen"]},
+              {"criterion": "Einordnung Wirkung", "levels": ["Begründete Einschätzung viel/wenig", "Einschätzung ohne Begründung", "Fehlt"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "open_response",
+            "prompt": "Diskutiere: Ist es gerecht, dass alle Länder gleich viel CO₂ pro Kopf einsparen müssen — oder sollten Länder mit hohem Ausstoß stärker reduzieren? Nutze die Daten aus Abb. 1 für deine Argumentation und nenne mindestens ein physikalisches Argument.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 50},
+            "cognitive_level": "evaluate",
+            "dimensions": ["S", "W"],
+            "serves": [
+              {"competence_id": "PHY.US.4.WET.05", "relation": "exercises"},
+              {"competence_id": "PHY.US.4.WET.04", "relation": "exercises"}
+            ],
+            "est_minutes": 10,
+            "asset_refs": ["abb1"],
+            "answer_key": "Physikalisches Argument für stärkere Reduktion bei Hochemittenten: Das Klima reagiert auf absolute CO₂-Mengen in der Atmosphäre, nicht auf pro-Kopf-Verhältnisse. USA (13,6 t) würde bei gleicher prozentualer Reduktion wie Nigeria (0,6 t) absolut viel mehr beitragen. Gerechtigkeitsargument: Länder mit historisch hohem Ausstoß haben mehr zum Problem beigetragen. Gegenargument: Einheitliche Regeln sind einfacher durchsetzbar. Erwartetes Niveau: Die Schülerinnen und Schüler sollen eine klar formulierte Position einnehmen, diese mit Daten stützen, und mindestens eine Gegenperspektive benennen.",
+            "acceptable_reasoning": "Es gibt keine einzig richtige Meinung — Argumentation und Datenbezug werden bewertet, nicht die Position.",
+            "watch_outs": [
+              "Schülerinnen und Schüler verwechseln manchmal 'gerecht' im moralischen Sinn mit 'physikalisch wirksam' — beide Dimensionen anerkennen und unterscheiden.",
+              "Darauf achten, dass das physikalische Argument (Atmosphärenkonzentration reagiert auf absolute Mengen) explizit genannt wird, nicht nur moralische Überlegungen."
+            ],
+            "rubric": [
+              {"criterion": "Physikalisches Argument", "levels": ["Absoluter Effekt / Atmosphärenkonzentration erwähnt", "Klimawandel allgemein erwähnt", "Kein physikalischer Bezug"]},
+              {"criterion": "Datenbezug", "levels": ["Konkrete Werte aus Abb. 1 (z. B. 13,6 t vs. 0,6 t)", "Diagramm erwähnt ohne Zahlen", "Kein Bezug"]},
+              {"criterion": "Position und Gegenperspektive", "levels": ["Klare Position + Gegenargument", "Position ohne Gegenperspektive", "Keine klare Position"]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

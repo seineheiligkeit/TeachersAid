@@ -1,0 +1,238 @@
+{
+  "subject": "Latein",
+  "klasse": 3,
+  "kompetenzbereich": "Inhalts- und themenbezogene Kompetenzen",
+  "title": "Römisches Alltagsleben: Die Familie und das Haus",
+  "kernfrage": "Wie lebten die Menschen im antiken Rom, und was ist davon in unserer heutigen Welt noch spürbar?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Familia Romana — Texte und Lebensweltbezug",
+        "throughline": "Schüler:innen erschließen einen einfachen lateinischen Text über das römische Familienleben, verknüpfen die Inhalte mit ihrer eigenen Lebenswelt und entdecken Kontinuitäten (Begriffe wie 'Familie', 'Paterfamilias', 'Atrium' in modernen Sprachen und Baustilen).",
+        "talking_points": [
+          "Der 'pater familias' hatte im römischen Recht absolute Gewalt über alle Familienmitglieder (patria potestas) — Vergleich mit heutigem Familienrecht; was hat sich verändert?",
+          "Architektur: Das 'Atrium' als zentraler Raum des römischen Hauses — das Wort lebt weiter in modernen Gebäuden (Atrium im Einkaufszentrum, Krankenhaus).",
+          "Sklaven gehörten zur 'familia' — kritische Auseinandersetzung: Was bedeutete das für die betroffenen Menschen?",
+          "Bezug zur Lebenswelt: Welche lateinischen Wörter für Familienrollen kennen die Schüler:innen? (Mater, Pater, Frater — im Deutschen, Englischen, Französischen)."
+        ],
+        "extensions": [
+          "Recherche-Auftrag: Schüler:innen suchen in einem Atlasband oder Online-Lexikon ein Bild einer römischen Villa und beschriften drei lateinische Raumbezeichnungen.",
+          "Kreativaufgabe: Einen Tagesplan (Schedule) für ein Kind im antiken Rom vs. heute vergleichen — schriftlich auf Deutsch.",
+          "Vergleich römische Familie vs. heutige Familie in Österreich: Rechte von Kindern und Frauen als Diskussionspunkt."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "translation",
+            "prompt": "Lies den folgenden Text über eine römische Familie und übersetze ihn ins Deutsche.\n\n---\nMarcia et Marcus in Roma habitant. Marcus est pater familiae. Marcia est mater. Filius eorum Quintus in ludo discit. Filia eorum Claudia domi manet. Servus aquam portat. Omnes laeti sunt.\n---\n\n(Hilfe: ludo = in der Schule; domi = zu Hause; omnes = alle; laeti = fröhlich)",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 7
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["SPR", "INH"],
+            "serves": [
+              {"competence_id": "LAT.US.3.INH.03", "relation": "exercises"}
+            ],
+            "est_minutes": 8,
+            "answer_key": "Marcia und Marcus wohnen in Rom. Marcus ist der Vater der Familie. Marcia ist die Mutter. Ihr Sohn Quintus lernt in der Schule. Ihre Tochter Claudia bleibt zu Hause. Ein Sklave trägt Wasser. Alle sind fröhlich.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Eorum (ihr / ihrer, Gen. Pl. von is/ea/id) — als Vokabel angeben, nicht selbst erschließen lassen.",
+              "Domi ist ein Lokativ (altertümlicher Kasus) — die Schüler:innen brauchen ihn nicht zu analysieren; 'zu Hause' als feste Wendung einprägen.",
+              "Die Rolle der Tochter (domi manet) vs. des Sohnes (in ludo discit) bietet Anlass für kurze Reflexion über Geschlechterrollen im antiken Rom."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "multiple_choice",
+            "prompt": "Welche Aussage über das Haus im Text ist richtig?\n\nWähle die passende Antwort:",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "a) Die Familie wohnt auf dem Land.",
+                "b) Der Sohn Quintus geht in die Schule.",
+                "c) Marcia trägt das Wasser.",
+                "d) Claudia lernt in der Schule."
+              ],
+              "select": "one"
+            },
+            "response": {
+              "mode": "choices",
+              "options": [
+                "a) Die Familie wohnt auf dem Land.",
+                "b) Der Sohn Quintus geht in die Schule.",
+                "c) Marcia trägt das Wasser.",
+                "d) Claudia lernt in der Schule."
+              ],
+              "select": "one"
+            },
+            "cognitive_level": "remember",
+            "dimensions": ["INH"],
+            "serves": [
+              {"competence_id": "LAT.US.3.INH.03", "relation": "exercises"}
+            ],
+            "est_minutes": 3,
+            "answer_key": "b) Der Sohn Quintus geht in die Schule. (in ludo discit)",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Option d) ist bewusst falsch — Claudia bleibt zu Hause, nicht Quintus. Schüler:innen sollen genau lesen.",
+              "Option a) ist falsch — 'in Roma' zeigt, dass sie in der Stadt wohnen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "open_response",
+            "prompt": "Erkläre auf Deutsch: Was ist ein 'Atrium' in einem römischen Haus? Kennst du das Wort 'Atrium' aus deinem heutigen Alltag? Wo begegnest du ihm?\n\n(Hinweis: Das Atrium war der zentrale offene Innenhof des römischen Hauses, oft mit einem Wasserbecken — dem 'impluvium'.)",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 30
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["INH"],
+            "serves": [
+              {"competence_id": "LAT.US.3.INH.02", "relation": "exercises"}
+            ],
+            "est_minutes": 5,
+            "answer_key": "Im römischen Haus war das Atrium der zentrale, überdachte Eingangshof mit einer Öffnung im Dach (compluvium) und einem Wasserbecken darunter (impluvium). Heute findet man 'Atrium' als Bezeichnung für Innenhöfe in modernen Gebäuden (z. B. Einkaufszentren, Schulen, Krankenhäuser, Hotels).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen dürfen eigene Beispiele aus ihrer Umgebung bringen — das ist ausdrücklich erwünscht.",
+              "Nicht auf vollständige Architekturkenntnis bestehen; der Lebensweltbezug steht im Vordergrund."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "matching",
+            "prompt": "Verbinde das lateinische Wort mit seiner Bedeutung auf Deutsch und suche ein modernes deutsches oder englisches Wort, das davon abstammt.\n\nLateinische Wörter: familia · pater · mater · frater · domus",
+            "payload": {
+              "kind": "matching",
+              "left": ["familia", "pater", "mater", "frater", "domus"],
+              "right": [
+                "Familie, Hausgemeinschaft",
+                "Vater",
+                "Mutter",
+                "Bruder",
+                "Haus, Zuhause"
+              ]
+            },
+            "response": {
+              "mode": "table",
+              "columns": ["Latein", "Deutsch", "Modernes Wort (Deutsch/Englisch)"],
+              "rows": 5
+            },
+            "cognitive_level": "apply",
+            "dimensions": ["INH", "SPR"],
+            "serves": [
+              {"competence_id": "LAT.US.3.INH.02", "relation": "exercises"}
+            ],
+            "est_minutes": 6,
+            "answer_key": "familia — Familie, Hausgemeinschaft — Familie (dt.), family (engl.) | pater — Vater — Pater (Titel), paternal (engl.) | mater — Mutter — maternal (engl.), Alma Mater | frater — Bruder — Fraternität, fraternal (engl.) | domus — Haus, Zuhause — Domizil (dt.), domestic (engl.)",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Weitere Ableitungen sind willkommen — Schüler:innen sollen kreativ suchen.",
+              "Pater: im Deutschen weniger direkt (Vater ist germanischen Ursprungs), aber in Fremdwörtern sehr präsent — das ist der Lernmoment.",
+              "Domus → Domizil: der Weg über das Lateinische ins Deutsche als Fremdwort erklären."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "text_analysis",
+            "prompt": "Vergleiche: Lies die Aussagen über das römische Familienleben und vergleiche sie mit deiner eigenen Familie oder dem modernen Familienleben in Österreich. Schreibe für jede Aussage, ob sie 'gleich', 'ähnlich' oder 'verschieden' ist — und erkläre kurz, warum.\n\nAussagen:\n1. Der Vater ist das rechtliche Oberhaupt der Familie.\n2. Kinder gehen zur Schule.\n3. Es gibt Haushaltsaufgaben für alle.\n4. Manche Menschen in der Familie sind nicht frei (Sklaven).",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": ["Aussage", "Gleich / Ähnlich / Verschieden", "Erklärung"],
+              "rows": 4
+            },
+            "cognitive_level": "analyze",
+            "dimensions": ["INH"],
+            "serves": [
+              {"competence_id": "LAT.US.3.INH.03", "relation": "exercises"}
+            ],
+            "est_minutes": 8,
+            "answer_key": "1. Verschieden — heute haben alle Familienmitglieder gleiche Rechte; der pater familias hatte früher absolute Gewalt. | 2. Ähnlich — Kinder gehen heute auch zur Schule, allerdings sind Mädchen und Buben heute gleichberechtigt; im antiken Rom blieben Mädchen oft zu Hause. | 3. Ähnlich — Haushaltsaufgaben gibt es heute auch, aber keine Sklaven. | 4. Verschieden — Sklaverei ist heute verboten und moralisch verurteilt.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Aussage 4 ist bewusst heikel — die Sklaverei ernst nehmen und nicht verharmlosen. Schüler:innen sollen nicht 'das war halt früher normal' als Entschuldigung gelten lassen.",
+              "Eigene Erfahrungen der Schüler:innen mit Familienleben respektieren — Patchwork-Familien, andere Kulturen etc. gehören zum modernen Kontext."
+            ],
+            "rubric": [
+              {
+                "criterion": "Textverstehen",
+                "levels": [
+                  "Alle vier Aussagen korrekt eingeordnet und sinnvoll erklärt.",
+                  "Mindestens drei Aussagen korrekt eingeordnet.",
+                  "Weniger als drei korrekt oder Erklärungen fehlen."
+                ]
+              },
+              {
+                "criterion": "Lebensweltbezug",
+                "levels": [
+                  "Eigener Vergleich mit konkretem Gegenwartsbeispiel.",
+                  "Allgemeiner Vergleich ohne persönlichen Bezug.",
+                  "Kein Vergleich, nur Wiedergabe des Textes."
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "create_produce",
+            "prompt": "Stell dir vor, du bist Quintus (oder Claudia) und schreibst einen kurzen Brief an einen Freund (oder eine Freundin) in Griechenland. Beschreibe deinen Alltag in der römischen Familie in 4–5 deutschen Sätzen. Versuche, mindestens drei lateinische Wörter aus dieser Stunde einzubauen (und erkläre sie in Klammern auf Deutsch).",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 50
+            },
+            "cognitive_level": "create",
+            "dimensions": ["INH", "SPR"],
+            "serves": [
+              {"competence_id": "LAT.US.3.INH.03", "relation": "exercises"}
+            ],
+            "est_minutes": 10,
+            "answer_key": "Musterlösung (viele Varianten akzeptabel): 'Salve! Ich bin Quintus, filius (Sohn) des Marcus. Ich lebe in Roma (Rom) in unserem großen domus (Haus). Jeden Tag gehe ich in den ludus (die Schule) und lerne dort. Meine soror (Schwester) Claudia bleibt zu Hause. Meine mater (Mutter) verwaltet den Haushalt. Vale!'",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Die Kreativität steht im Vordergrund — nicht auf perfekte Grammatik bestehen, aber lateinische Einschübe sollen korrekt verwendet sein.",
+              "Schüler:innen die Wahl zwischen Quintus und Claudia geben — das eröffnet Gespräch über Geschlechterperspektiven im antiken Rom.",
+              "Briefformeln: Salve (Gruß) und Vale (Abschied) einführen, falls noch nicht bekannt."
+            ],
+            "rubric": [
+              {
+                "criterion": "Lateinische Einschübe",
+                "levels": [
+                  "Mindestens drei lateinische Wörter korrekt verwendet und erklärt.",
+                  "Ein bis zwei Wörter eingebaut.",
+                  "Keine lateinischen Wörter verwendet."
+                ]
+              },
+              {
+                "criterion": "Inhaltliche Plausibilität",
+                "levels": [
+                  "Beschreibung passt zum antiken Alltagsleben und ist kreativ.",
+                  "Grundelemente vorhanden, aber ohne Bezug zur Antike.",
+                  "Brief ohne Bezug zum Thema."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

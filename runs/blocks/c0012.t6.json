@@ -1,0 +1,69 @@
+{
+  "id": "c0012.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Nach den Präsentationen: Wähle **eine** der Präsentationen deiner Mitschüler:innen aus und formuliere **wertschätzendes Feedback** in drei Schritten:\n\n1. **Gelungen:** Was hat dir besonders gut gefallen und warum?\n2. **Verbesserungsvorschlag:** Was könnte noch klarer oder wirkungsvoller sein?\n3. **Frage:** Stelle eine echte Frage zum Inhalt oder zur Gestaltung.\n\nSchreibe in vollständigen Sätzen.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "ZUH",
+      "SPR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DEU.US.4.ZUH.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Individuelle Antworten. Bewertung: (1) Das Gelungene ist spezifisch (nicht 'war gut', sondern warum). (2) Der Vorschlag ist konstruktiv und bezieht sich auf den Inhalt oder die Präsentation, nicht auf die Person. (3) Die Frage ist offen und zeigt echtes Interesse.",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Spezifität und Konstruktivität",
+        "levels": [
+          "Pauschal und allgemein",
+          "Ein Aspekt spezifisch, der andere noch pauschal",
+          "Alle drei Schritte spezifisch, konstruktiv und wertschätzend formuliert"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Pauschales Lob ('war super') nicht als ausreichende Antwort für Punkt 1 akzeptieren.",
+      "Verbesserungsvorschlag: Darauf achten, dass er sich auf die Präsentation bezieht, nicht auf persönliche Eigenschaften ('du redest zu leise' → besser: 'die Lautstärke könnte für das Publikum im hinteren Bereich erhöht werden')."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Deutsch",
+  "klasse": 4,
+  "kompetenzbereich": "Zuhören und Sprechen",
+  "competences": [
+    "DEU.US.4.ZUH.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "ZUH",
+    "SPR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0012",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

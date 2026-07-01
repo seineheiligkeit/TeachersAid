@@ -1,0 +1,144 @@
+{
+  "id": "c0155.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Das Diagramm (Abb. 1) zeigt das v-t-Diagramm eines Fahrzeugs. Lies das Diagramm aus und beantworte die folgenden Fragen:\na) Wie groß ist die Geschwindigkeit nach 3 s?\nb) Berechne die Beschleunigung des Fahrzeugs.\nc) Beschreibe in einem Satz die Art der Bewegung.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.OS.5.MEC.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.OS.x.W.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "a) v(3 s) = 15 m/s. b) a = Δv/Δt = (25 – 0) m/s ÷ 5 s = 5 m/s². c) Es handelt sich um eine gleichmäßig beschleunigte (geradlinige) Bewegung, da die Geschwindigkeit linear mit der Zeit zunimmt.",
+    "acceptable_reasoning": "Akzeptiert: Beschleunigung aus zwei beliebigen Punkten korrekt berechnet (Steigung der Geraden).",
+    "rubric": [
+      {
+        "criterion": "Ablesen",
+        "levels": [
+          "Wert richtig abgelesen",
+          "Wert falsch oder Einheit fehlt"
+        ]
+      },
+      {
+        "criterion": "Berechnung",
+        "levels": [
+          "Formel korrekt angewendet, Einheit stimmt",
+          "Rechenweg erkennbar, aber Fehler"
+        ]
+      },
+      {
+        "criterion": "Beschreibung",
+        "levels": [
+          "Art der Bewegung korrekt benannt",
+          "Unvollständig oder ungenau"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Verwechslung von v-t- und s-t-Diagramm: Im v-t-Diagramm ist die Steigung die Beschleunigung, nicht die Geschwindigkeit.",
+      "Einheit: Beschleunigung in m/s², nicht m/s."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Physik",
+  "klasse": 5,
+  "kompetenzbereich": "Mechanik I",
+  "competences": [
+    "PHY.OS.5.MEC.01",
+    "PHY.OS.x.W.03"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "W",
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:function_graph",
+      "spec": {
+        "xmin": 0,
+        "xmax": 6,
+        "ymin": 0,
+        "ymax": 30,
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            2,
+            10
+          ],
+          [
+            3,
+            15
+          ],
+          [
+            4,
+            20
+          ],
+          [
+            5,
+            25
+          ]
+        ],
+        "connect": true,
+        "xlabel": "Zeit t in s",
+        "ylabel": "Geschwindigkeit v in m/s",
+        "title": "v-t-Diagramm eines Fahrzeugs"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0155",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:27+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

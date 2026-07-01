@@ -1,0 +1,130 @@
+{
+  "id": "c0088.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Österreich plant, bis 2030 seinen Strom zu 100 % aus erneuerbaren Quellen zu erzeugen. Ein Gemeinderat diskutiert, ob in eurer Gemeinde ein neuer Windpark mit 5 Windrädern gebaut werden soll. Lies das Szenario und beantworte die Fragen.\n\nSzenario: Die Gemeinderätin Frau Huber ist dafür: 'Windkraft spart CO₂ und schafft Arbeitsplätze.' Der Gemeinderat Herr Mayr ist dagegen: 'Die Windräder sind laut, zerstören das Landschaftsbild und gefährden Vögel.'\n\n(a) Welche physikalischen Argumente unterstützen Frau Hubers Position? (Nutze die Daten aus Abb. 1.)\n(b) Welche physikalischen und nichtphysikalischen Argumente sprechen für Herrn Mayrs Position?\n(c) Nimm selbst Stellung: Wie würdest du abstimmen, und warum? Begründe mit mindestens zwei Argumenten.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Windparkbau in der Gemeinde: Pro und Contra — faktenbasierte Entscheidung"
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 75.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.4.WET.05",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 13,
+    "answer_key": "(a) Physikalische Argumente für Windkraft: 11 g CO₂eq/kWh — weit unter Kohlekraft (820 g); kein Brennstoffverbrauch; keine Emissionen im Betrieb; Beitrag zu Klimazielen (WET.05). (b) Für Herrn Mayr: Physikalisch — Lärm (Schall, Infraschall); Vogelschlag (nachweisbar, aber Daten zeigen: weit weniger als Katzen oder Glasscheiben). Nichtphysikalisch — Landschaftsbild, Wohnwertminderung, Bürgerbeteiligung. (c) Jede fundierte Stellungnahme akzeptieren; einfordern: mindestens ein physikalisches Argument und Bezug auf Klimaschutzpflichten.",
+    "acceptable_reasoning": "Keine 'richtige' Antwort bei der Stellungnahme — Kriterien sind Argumentationsqualität und physikalischer Bezug.",
+    "rubric": [
+      {
+        "criterion": "Physikalische Argumentation",
+        "levels": [
+          "Keine physikalischen Argumente",
+          "Ein physikalisches Argument (z. B. CO₂-Vergleich)",
+          "Mehrere physikalische Argumente mit Datenbezug"
+        ]
+      },
+      {
+        "criterion": "Multiperspektivität",
+        "levels": [
+          "Nur eine Seite betrachtet",
+          "Beide Seiten erwähnt, unausgewogen",
+          "Beide Seiten fair dargestellt, eigene Position begründet"
+        ]
+      },
+      {
+        "criterion": "Handlungsrelevanz",
+        "levels": [
+          "Keine persönliche Stellungnahme",
+          "Stellungnahme ohne Begründung",
+          "Begründete Stellungnahme mit Bezug auf Klimaschutzziele und physikalische Fakten"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen antworten oft rein emotional ('Ich mag keine Windräder'). Einfordern: Mindestens zwei Argumente, davon eines physikalisch.",
+      "Die Multiperspektivität ist das pädagogische Ziel — beide Seiten sollen fair dargestellt werden, bevor eine eigene Position eingenommen wird."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Wetter und Klima",
+  "competences": [
+    "PHY.US.4.WET.05"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "W",
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Kohlekraft",
+          "Erdgaskraft",
+          "Kernenergie",
+          "Wasserkraft",
+          "Windkraft",
+          "Photovoltaik"
+        ],
+        "values": [
+          820,
+          490,
+          12,
+          4,
+          11,
+          45
+        ],
+        "title": "CO₂-Äquivalent je erzeugter kWh Strom (g CO₂eq/kWh)",
+        "xlabel": "Kraftwerkstyp",
+        "ylabel": "g CO₂-Äquivalent pro kWh"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0088",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:20+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

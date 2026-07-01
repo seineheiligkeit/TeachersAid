@@ -1,0 +1,172 @@
+{
+  "id": "c0115.i1",
+  "block": {
+    "id": "i1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1",
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "info",
+    "kind": "prose",
+    "content": "Innsbruck und Graz sind beide Städte in der Nähe der Alpen — trotzdem unterscheiden sie sich klimatisch. Abb. 1 zeigt das Klimadiagramm für Innsbruck (Universität, Talkessel im Inn-Tal, ~574 m Seehöhe), Abb. 2 für Graz (Universität, Grazer Becken, ~366 m Seehöhe). Beide Diagramme basieren auf Messdaten der Normalperiode 1991–2020 (Datenquelle: GeoSphere Austria).",
+    "callout_role": null,
+    "teacher_note": null,
+    "watch_outs": []
+  },
+  "role": "info",
+  "kind": "prose",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 1,
+  "kompetenzbereich": null,
+  "competences": [],
+  "cognitive_level": null,
+  "dimensions": [],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:climate_diagram",
+      "spec": {
+        "title": "Klimadiagramm Innsbruck (Universität), Normalperiode 1991–2020",
+        "months": [
+          "Jän",
+          "Feb",
+          "Mär",
+          "Apr",
+          "Mai",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Okt",
+          "Nov",
+          "Dez"
+        ],
+        "temp": [
+          -0.4,
+          1.5,
+          6.0,
+          10.3,
+          14.7,
+          18.1,
+          19.6,
+          19.0,
+          14.6,
+          10.0,
+          4.6,
+          0.4
+        ],
+        "precip": [
+          47,
+          36,
+          54,
+          56,
+          82,
+          114,
+          125,
+          139,
+          82,
+          69,
+          59,
+          53
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "geosphere_klima_normal_1991_2020",
+        "series": "innsbruck",
+        "note": null,
+        "title": "Klimanormalwerte österreichischer Stationen (1991–2020)",
+        "url": "https://data.hub.geosphere.at/dataset/klima-v2-1m",
+        "attribution": "Datenquelle: GeoSphere Austria – data.hub.geosphere.at (klima-v2-1m, CC BY 4.0)",
+        "stand": "1991–2020"
+      },
+      "illustrative": false,
+      "caption": null
+    },
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:climate_diagram",
+      "spec": {
+        "title": "Klimadiagramm Graz (Universität), Normalperiode 1991–2020",
+        "months": [
+          "Jän",
+          "Feb",
+          "Mär",
+          "Apr",
+          "Mai",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Okt",
+          "Nov",
+          "Dez"
+        ],
+        "temp": [
+          -0.1,
+          1.8,
+          6.0,
+          11.0,
+          15.5,
+          19.2,
+          20.8,
+          20.1,
+          15.2,
+          10.2,
+          5.2,
+          0.5
+        ],
+        "precip": [
+          20,
+          29,
+          34,
+          51,
+          93,
+          120,
+          123,
+          128,
+          93,
+          63,
+          54,
+          40
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "geosphere_klima_normal_1991_2020",
+        "series": "graz",
+        "note": null,
+        "title": "Klimanormalwerte österreichischer Stationen (1991–2020)",
+        "url": "https://data.hub.geosphere.at/dataset/klima-v2-1m",
+        "attribution": "Datenquelle: GeoSphere Austria – data.hub.geosphere.at (klima-v2-1m, CC BY 4.0)",
+        "stand": "1991–2020"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0115",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:34+00:00",
+  "updated_at": "2026-06-29T18:08:48+00:00"
+}

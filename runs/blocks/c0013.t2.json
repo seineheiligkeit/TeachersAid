@@ -1,0 +1,73 @@
+{
+  "id": "c0013.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "multiple_choice",
+    "prompt": "Welche Stimmung erzeugt das Gedicht am ehesten?",
+    "payload": {
+      "kind": "multiple_choice",
+      "options": [
+        "Fröhlich und aufgeregt",
+        "Nachdenklich, ein wenig melancholisch, aber am Ende geborgen",
+        "Wütend und aufgebracht",
+        "Sachlich und neutral"
+      ],
+      "select": "one"
+    },
+    "response": {
+      "mode": "choices",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "select": "one"
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "LES"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DEU.US.1.LES.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 4,
+    "answer_key": "B. Die Bilder des Fallens und der Einsamkeit erzeugen Melancholie; der letzte Vers ('unendlich sanft … hält') bringt jedoch Trost und Geborgenheit ein. Schüler:innen, die rein die Fallbilder nehmen, landen bei 'melancholisch' ohne 'geborgen' – das ist diskussionswürdig.",
+    "acceptable_reasoning": "Wenn Schüler:innen nur 'melancholisch' wählen und den letzten Vers nicht berücksichtigen, ist das eine valide Teil-Lesart; Gelegenheit für Unterrichtsgespräch.",
+    "rubric": [],
+    "watch_outs": [
+      "Nicht als Wissensfrage behandeln ('wer weiß es'). Das ist eine Deutungsaufgabe – begründetes Abweichen von B ist akzeptabel.",
+      "Option D wird manchmal gewählt, weil Rilkes Sprache nüchtern klingt – guter Anlass zu erklären, dass 'sachlich' das Gegenteil von bildreich ist."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "multiple_choice",
+  "subject": "Deutsch",
+  "klasse": 1,
+  "kompetenzbereich": "Lesen",
+  "competences": [
+    "DEU.US.1.LES.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "LES"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0013",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

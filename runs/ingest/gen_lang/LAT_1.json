@@ -1,0 +1,225 @@
+{
+  "subject": "Latein",
+  "klasse": 3,
+  "kompetenzbereich": "Sprach- und textbezogene Kompetenzen",
+  "title": "Nomen und Kasus: Nominativ und Akkusativ",
+  "kernfrage": "Wie erkennst du, wer im lateinischen Satz handelt und wen oder was die Handlung trifft?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Kasusformen erkennen und benennen",
+        "throughline": "Schüler:innen lernen, Nominativ und Akkusativ in einfachen lateinischen Sätzen sicher zu identifizieren und ihre syntaktische Funktion (Subjekt vs. Objekt) zu benennen. Der Fokus liegt auf der a- und o-Deklination.",
+        "talking_points": [
+          "Warum braucht Latein Endungen, wo das Deutsche Wortstellung nutzt? Kurzer Vergleich: 'Der Hund beißt den Mann' vs. 'Den Hund beißt der Mann' — im Lateinischen löst die Endung die Ambiguität.",
+          "Stammvokal und Endung getrennt sehen: 'puell-a' (Nom.) vs. 'puell-am' (Akk.) — das '-m' als Signalendung für den Akkusativ der a-Deklination einführen.",
+          "Häufiger Fehler: 'serv-us' (Nom.) und 'serv-um' (Akk.) — die Klasse soll die Endungen laut sprechen.",
+          "Übergang zu echten Sätzen: Subjekt handelt → Verb → Objekt empfängt die Handlung."
+        ],
+        "extensions": [
+          "Kurze Gruppenübung: Schüler:innen schreiben drei eigene Sätze auf Deutsch und markieren Subjekt und Objekt; dann Übertragung ins Lateinische mit vorgegebenem Wortschatz.",
+          "Vergleich mit dem Deutschen: Nominativ = 1. Fall, Akkusativ = 4. Fall — welche anderen Fälle kennen die Schüler:innen aus dem Deutschen?",
+          "Wörterbucharbeit: Was steht im Wörterbuch als Grundform? (Nom. Sg.) — kurze Einführung in die Nachschlage-Konvention."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "multiple_choice",
+            "prompt": "Welche Endung zeigt in der a-Deklination den Akkusativ Singular an?\n\nWähle die richtige Antwort:",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "a) -a",
+                "b) -am",
+                "c) -ae",
+                "d) -as"
+              ],
+              "select": "one"
+            },
+            "response": {
+              "mode": "choices",
+              "options": [
+                "a) -a",
+                "b) -am",
+                "c) -ae",
+                "d) -as"
+              ],
+              "select": "one"
+            },
+            "cognitive_level": "remember",
+            "dimensions": ["SPR"],
+            "serves": [
+              {"competence_id": "LAT.US.3.SPR.03", "relation": "exercises"}
+            ],
+            "est_minutes": 3,
+            "answer_key": "b) -am. Die Akkusativ-Singular-Endung der a-Deklination lautet -am (z. B. puellam, viam).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen verwechseln häufig -a (Nom. Sg.) mit -am (Akk. Sg.) — betonen, dass das auslautende -m die entscheidende Markierung ist.",
+              "Die Pluralform -as (Akk. Pl.) nicht mit dem Singular verwechseln lassen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "matching",
+            "prompt": "Ordne jede lateinische Wortform dem richtigen Kasus zu (Nominativ Singular oder Akkusativ Singular).\n\nWortformen: puella · puellam · servus · servum · via · viam",
+            "payload": {
+              "kind": "matching",
+              "left": ["puella", "puellam", "servus", "servum", "via", "viam"],
+              "right": ["Nominativ Singular (a-Dekl.)", "Akkusativ Singular (a-Dekl.)", "Nominativ Singular (o-Dekl.)", "Akkusativ Singular (o-Dekl.)"]
+            },
+            "response": {
+              "mode": "table",
+              "columns": ["Wortform", "Kasus"],
+              "rows": 6
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["SPR"],
+            "serves": [
+              {"competence_id": "LAT.US.3.SPR.03", "relation": "exercises"}
+            ],
+            "est_minutes": 5,
+            "answer_key": "puella → Nom. Sg. (a-Dekl.); puellam → Akk. Sg. (a-Dekl.); servus → Nom. Sg. (o-Dekl.); servum → Akk. Sg. (o-Dekl.); via → Nom. Sg. (a-Dekl.); viam → Akk. Sg. (a-Dekl.).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Servus/servum: die o-Deklination mit Endungen -us (Nom.) und -um (Akk.) einprägen.",
+              "Via kann auch als Ablativ interpretiert werden (via = 'auf dem Weg' = Abl. der Art und Weise) — in diesem Kontext aber als reiner Nominativ behandeln."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "translation",
+            "prompt": "Übersetze die folgenden lateinischen Sätze ins Deutsche. Unterstreiche dabei das Subjekt (Nominativ) und kreise das Objekt (Akkusativ) ein.\n\n1. Puella servum videt.\n2. Servus viam longam intrat.\n3. Dominus puellam laudat.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["SPR"],
+            "serves": [
+              {"competence_id": "LAT.US.3.SPR.02", "relation": "exercises"}
+            ],
+            "est_minutes": 8,
+            "answer_key": "1. Das Mädchen sieht den Sklaven. (puella = Subj.; servum = Obj.) | 2. Der Sklave betritt den langen Weg. (servus = Subj.; viam longam = Obj.) | 3. Der Herr lobt das Mädchen. (dominus = Subj.; puellam = Obj.)",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Adjektiv-Substantiv-Kongruenz: 'viam longam' — beide Wörter stehen im Akkusativ; Schüler:innen vergessen oft, das Adjektiv mitanzupassen.",
+              "Wortstellung: im Deutschen ist sie flexibel, im Lateinischen steht das Verb häufig am Ende — Schüler:innen tendieren dazu, die lateinische Wortstellung ins Deutsche zu übernehmen.",
+              "laudat: 3. Pers. Sg. Präsens von laudare — kurze Erinnerung an die Personalendungen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "true_false_justify",
+            "prompt": "Lies die Aussagen. Entscheide, ob sie richtig (R) oder falsch (F) sind, und begründe kurz auf Deutsch.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "In dem Satz 'Agricola equum ducit' ist 'agricola' das Objekt.",
+                "Das Wort 'rosam' steht im Akkusativ Singular.",
+                "Im Lateinischen bestimmt die Wortstellung allein, ob ein Wort Subjekt oder Objekt ist.",
+                "'Magnus dominus' und 'magnum dominum' bedeuten dasselbe."
+              ]
+            },
+            "response": {
+              "mode": "table",
+              "columns": ["Aussage", "R / F", "Begründung"],
+              "rows": 4
+            },
+            "cognitive_level": "analyze",
+            "dimensions": ["SPR"],
+            "serves": [
+              {"competence_id": "LAT.US.3.SPR.03", "relation": "exercises"}
+            ],
+            "est_minutes": 8,
+            "answer_key": "1. F — 'agricola' steht im Nominativ (Nom. Sg. der a-Dekl. auf -a bei mask. Nomen!) und ist Subjekt; 'equum' ist das Objekt (Akk.). | 2. R — 'rosam' = Akk. Sg. von rosa (a-Dekl.). | 3. F — im Lateinischen bestimmt die Kasusendung die Satzgliedfunktion, nicht die Wortstellung. | 4. F — 'magnus dominus' (Nom., der große Herr = Subjekt) und 'magnum dominum' (Akk., den großen Herrn = Objekt) haben verschiedene syntaktische Funktionen.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Agricola ist ein maskulines Nomen der a-Deklination — das ist für Schüler:innen sehr verwirrend, da die Endung -a typisch für Feminina ist. Diesen Punkt explizit besprechen.",
+              "Aussage 4 zielt auf Kongruenz ab: Adjektiv und Substantiv müssen im gleichen Kasus stehen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "ordering",
+            "prompt": "Bringe die Wörter in eine sinnvolle lateinische Satzreihenfolge (Subjekt — Objekt — Verb ist typisch, aber nicht zwingend). Schreibe dann die deutsche Übersetzung dazu.\n\nWörter: 1) agricola / amat / villam / suam\n         2) puer / videt / lunam / claram",
+            "payload": {
+              "kind": "ordering",
+              "items": ["agricola", "amat", "villam", "suam", "puer", "videt", "lunam", "claram"]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "apply",
+            "dimensions": ["SPR"],
+            "serves": [
+              {"competence_id": "LAT.US.3.SPR.02", "relation": "exercises"}
+            ],
+            "est_minutes": 6,
+            "answer_key": "1) Agricola villam suam amat. — Der Bauer liebt sein Landgut. | 2) Puer lunam claram videt. — Der Knabe sieht den hellen Mond. (Andere Wortstellungen sind möglich, solange Kasus-Kongruenz stimmt.)",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Suam muss zu villam gehören (Akk. Sg. f.) — Possessivpronomen kongruiert mit dem Bezugswort.",
+              "Claram kongruiert mit lunam (Akk. Sg. f.) — nochmals Adjektiv-Kongruenz üben."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "open_response",
+            "prompt": "Schreibe zwei eigene lateinische Sätze. Verwende je ein Nomen der a-Deklination als Subjekt und ein Nomen der o-Deklination als Objekt (oder umgekehrt). Unterstreiche Subjekt und Objekt und gib die deutsche Übersetzung an.\n\nWortschatz-Hilfe: puella, rosa, aqua, via — dominus, servus, puer, equus — amat, videt, vocat, ducit",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 35
+            },
+            "cognitive_level": "create",
+            "dimensions": ["SPR"],
+            "serves": [
+              {"competence_id": "LAT.US.3.SPR.03", "relation": "exercises"}
+            ],
+            "est_minutes": 8,
+            "answer_key": "Musterlösung (viele Varianten möglich): Puella equum amat. — Das Mädchen liebt das Pferd. / Dominus aquam videt. — Der Herr sieht das Wasser.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Prüfen: Kasusendungen stimmen? Subjekt im Nominativ, Objekt im Akkusativ.",
+              "Verb-Kongruenz: 3. Pers. Sg. (er/sie/es) — Endung -t; erinnern, falls Schüler:innen andere Personalformen verwenden.",
+              "Kreative Freiheit zulassen, aber Grammatik muss stimmen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Kasuskorrektheit",
+                "levels": [
+                  "Beide Sätze haben korrekte Nominativ- und Akkusativendungen.",
+                  "Ein Satz korrekt, ein Satz mit kleinem Endungsfehler.",
+                  "Endungen fehlen oder sind durchgehend falsch."
+                ]
+              },
+              {
+                "criterion": "Übersetzung",
+                "levels": [
+                  "Deutsche Übersetzung korrekt und sinnvoll.",
+                  "Übersetzung verständlich, aber ungenau.",
+                  "Übersetzung fehlt oder ist falsch."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "id": "c0017.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Stell dir vor, du möchtest einer Person, die noch nie Waffeln gemacht hat, ein Waffelrezept als Algorithmus erklären – so präzise, dass ein Roboter die Waffeln zubereiten könnte.\n\n(a) Schreibe die ersten fünf Schritte deines Algorithmus als nummerierte Liste. Jeder Schritt muss eindeutig und ausführbar sein.\n(b) Erkläre, warum der Schritt 'Teig gut rühren' für einen Roboter nicht ausreicht und wie du ihn präzisieren würdest.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 10
+    },
+    "cognitive_level": "apply",
+    "dimensions": [
+      "T"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DGB.US.3.PRO.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "(a) Beispiel: (1) Nimm eine Schüssel. (2) Gib 200 g Mehl in die Schüssel. (3) Füge 2 Eier hinzu. (4) Gieße 250 ml Milch dazu. (5) Rühre den Teig mit einem Schneebesen 2 Minuten lang, bis keine Klumpen mehr sichtbar sind. – Wichtig: konkrete Mengenangaben, klare Aktionen, eindeutige Reihenfolge. (b) 'Gut rühren' ist nicht eindeutig – wie lange? Womit? Woran erkennt man, dass es fertig ist? Präzisierung: '2 Minuten mit einem Schneebesen rühren, bis die Mischung glatt ist und keine Mehlklumpen mehr sichtbar sind.'",
+    "acceptable_reasoning": "Andere Rezeptvarianten sind akzeptabel; entscheidend ist die Eindeutigkeit und die Erkenntnis in Teil (b).",
+    "rubric": [
+      {
+        "criterion": "Eindeutigkeit der Schritte",
+        "levels": [
+          "Schritte zu allgemein (z.B. 'Zutaten mischen')",
+          "Teilweise konkret mit Mengenangaben",
+          "Alle Schritte eindeutig, messbar und ausführbar ohne Interpretation"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen schreiben oft alltagssprachliche Schritte ('Teig zubereiten') – immer wieder einfordern: Was genau? Welche Menge? Wie lange?",
+      "Haushaltsroboter oder Küchenroboter als Analogie: Die Maschine kann nicht interpretieren, sie führt nur aus."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Digitale Grundbildung",
+  "klasse": 3,
+  "kompetenzbereich": "Produktion: Inhalte digital erstellen und veröffentlichen, Algorithmen entwerfen und Programmieren",
+  "competences": [
+    "DGB.US.3.PRO.01"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "T"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0017",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

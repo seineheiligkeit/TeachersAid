@@ -1,0 +1,264 @@
+{
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 8,
+  "kompetenzbereich": "Chancen und Gefahren der Globalisierung erörtern",
+  "title": "Globalisierung – wer gewinnt, wer verliert?",
+  "kernfrage": "Welche Chancen und Risiken bringt die wirtschaftliche Globalisierung für dich persönlich, für Unternehmen und für die Gesellschaft – und wie kann nachhaltiges Handeln aussehen?",
+  "body": {
+    "intro": [
+      "Kein Smartphone kommt aus einem einzigen Land, kein T-Shirt hat eine einzige Heimat: Globalisierung durchzieht unseren Alltag. Doch hinter den vernetzten Lieferketten stecken Gewinner und Verlierer – in verschiedenen Ländern, Branchen und sozialen Gruppen. Dieses Arbeitsblatt lädt dich ein, die wirtschaftliche Globalisierung aus verschiedenen Perspektiven zu analysieren: als Konsument:in, als zukünftige:r Arbeitnehmer:in und als Mitglied einer globalen Gesellschaft."
+    ],
+    "data_figures": [
+      {
+        "id": "abb1",
+        "intent": "comparison",
+        "title": "BIP pro Kopf im Ländervergleich (aktuellstes Jahr, in USD)",
+        "xlabel": "Land",
+        "ylabel": "BIP pro Kopf (USD)",
+        "data_source": {"dataset_id": "worldbank_bip_pro_kopf", "series": "vergleich"}
+      },
+      {
+        "id": "abb2",
+        "intent": "comparison",
+        "title": "CO₂-Ausstoß pro Kopf im Ländervergleich (in Tonnen)",
+        "xlabel": "Land",
+        "ylabel": "CO₂-Ausstoß pro Kopf (t)",
+        "data_source": {"dataset_id": "worldbank_co2_pro_kopf", "series": "vergleich"}
+      }
+    ],
+    "assets": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Globalisierung im Alltag – mein Standort in der Weltwirtschaft",
+        "throughline": "Schüler:innen erkennen, dass sie selbst Teil globaler Wirtschaftskreisläufe sind, und reflektieren ihre eigene Betroffenheit.",
+        "talking_points": [
+          "Der Begriff 'Globalisierung' ist nicht einheitlich definiert – technologische, wirtschaftliche, kulturelle und politische Dimensionen auseinanderhalten.",
+          "Globale Wertschöpfungsketten ('Global Value Chains') sind das Kernkonzept: ein Produkt hat viele Produktionsstandorte.",
+          "Die eigene Konsumentscheidung hat globale Wirkung – Macht und Ohnmacht des Einzelnen thematisieren."
+        ],
+        "extensions": [
+          "Lieferketten-Analyse: Schüler:innen wählen ein alltägliches Produkt und recherchieren, wo welche Produktionsstufen stattfinden.",
+          "Vertiefung: Das österreichische Lieferkettensorgfaltspflichtengesetz – was müssen Unternehmen dokumentieren?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "open_response",
+            "prompt": "Überlege: Welche drei Gegenstände, die du täglich benutzt (Kleidung, Elektronik, Lebensmittel etc.), stammen wahrscheinlich von mehreren Produktionsstandorten auf verschiedenen Kontinenten?\n\na) Wähle einen dieser Gegenstände und skizziere, welche Produktionsschritte (z. B. Rohstoffgewinnung, Verarbeitung, Montage, Vertrieb) wo auf der Welt stattfinden könnten.\nb) Welche Chancen (z. B. günstige Preise, Jobs weltweit) und welche Risiken (z. B. Abhängigkeiten, Arbeitsbedingungen) siehst du in dieser globalen Arbeitsteilung?",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 55},
+            "cognitive_level": "analyze",
+            "dimensions": ["REF", "SYN"],
+            "serves": [{"competence_id": "GWB.OS.8.CHA.01", "relation": "exercises"}],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "a) Beispiel Smartphone: Coltan/Lithium aus Afrika/Südamerika → Chip-Produktion Taiwan/Südkorea → Montage China → Vertrieb Europa/USA. b) Chancen: günstige Endprodukte, Beschäftigung in Entwicklungsländern, Technologietransfer; Risiken: Abhängigkeit bei Lieferkettenunterbrechungen (wie COVID-19 gezeigt), schlechte Arbeitsbedingungen in Niedriglohnländern, Ressourcenausbeutung, fehlende Kontrolle. Plausible individuelle Beispiele sind akzeptabel.",
+            "acceptable_reasoning": "Verschiedene Produkte sind akzeptabel; das Prinzip der Wertschöpfungskette soll erkannt werden.",
+            "watch_outs": [
+              "Schüler:innen glauben oft, ein 'österreichisches' Produkt sei vollständig in Österreich hergestellt – Ursprungsland vs. Produktionsland thematisieren.",
+              "Die Gleichsetzung 'billig = schlecht produziert' ist eine Vereinfachung – auch hochwertige Produkte können unter schlechten Bedingungen hergestellt werden."
+            ],
+            "rubric": [
+              {"criterion": "Produktionsstufenanalyse", "levels": ["Keine oder sehr vage Schritte", "2 Schritte mit Ortsangabe", "3+ Schritte mit plausiblen Orten", "Vollständige Kette mit Begründung der Standortwahl"]},
+              {"criterion": "Chancen und Risiken", "levels": ["Nur eine Seite", "Je ein Aspekt genannt", "Je zwei Aspekte mit Erklärung", "Differenziert, mit Bezug auf verschiedene Perspektiven (Konsument, Arbeitende, Umwelt)"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "multiple_choice",
+            "prompt": "Welche der folgenden Aussagen zur wirtschaftlichen Globalisierung sind zutreffend? Wähle alle richtigen Antworten aus und begründe kurz, warum die anderen falsch sind.",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "A) Globalisierung führt in allen Ländern zu steigendem Wohlstand.",
+                "B) Freihandel kann in manchen Sektoren bestimmte Länder benachteiligen.",
+                "C) Globale Lieferketten wurden durch die COVID-19-Pandemie als verletzlich erkannt.",
+                "D) Die Verlagerung von Produktion in Niedriglohnländer ist ausschließlich negativ.",
+                "E) Technologischer Wandel (z. B. Digitalisierung) ist ein wichtiger Treiber der Globalisierung."
+              ],
+              "select": "many"
+            },
+            "response": {"mode": "choices", "options": ["A", "B", "C", "D", "E"], "select": "many"},
+            "cognitive_level": "evaluate",
+            "dimensions": ["REF"],
+            "serves": [{"competence_id": "GWB.OS.8.CHA.03", "relation": "exercises"}],
+            "est_minutes": 7,
+            "asset_refs": [],
+            "answer_key": "Richtig: B, C, E. A ist falsch – Globalisierung erzeugt Gewinner und Verlierer; innerhalb von Ländern und zwischen Ländern entstehen neue Ungleichheiten. D ist falsch – Produktionsverlagerung schafft auch Beschäftigung und Einkommen im Zielland, selbst wenn Arbeitsbedingungen oft verbesserungswürdig sind.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Aussage A ist eine häufige Vereinfachung – Wohlstandsgewinne sind ungleich verteilt, auch innerhalb von Gewinnernationen.",
+              "Aussage D verleitet zu moralisierendem Denken – auf die Komplexität von Beschäftigungseffekten hinweisen."
+            ],
+            "rubric": []
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Wirtschaftliche Ungleichheit und globale Disparitäten",
+        "throughline": "Schüler:innen lernen, ökonomische Ungleichheiten auf globaler Ebene zu quantifizieren und ursächlich zu erklären – inklusive der Rolle von Globalisierung als möglicher Verstärker oder Abschwächer.",
+        "talking_points": [
+          "BIP pro Kopf ist ein Wohlstandsindikator mit bekannten Schwächen (verdeckt Ungleichverteilung, erfasst keine informelle Wirtschaft).",
+          "Globalisierungsskeptiker:innen (z. B. Rodrik) und Globalisierungsbefürworter:innen (z. B. Bhagwati) haben unterschiedliche Diagnosen – beide Seiten kennen und vergleichen.",
+          "Der Zusammenhang zwischen CO₂ pro Kopf und BIP pro Kopf ist real, aber nicht mechanisch – unterschiedliche Energiemixe spielen eine Rolle."
+        ],
+        "extensions": [
+          "Vertiefung: Human Development Index (HDI) als Alternative zum BIP – Vor- und Nachteile vergleichen.",
+          "Diskussion: Sollen Industrieländer mehr Klimaschäden tragen als Entwicklungsländer? (Konzept der 'Common but Differentiated Responsibilities')"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "data_analysis",
+            "prompt": "Vergleiche die Abbildungen 1 und 2 (BIP pro Kopf und CO₂-Ausstoß pro Kopf im Ländervergleich).\n\na) Welcher Zusammenhang fällt dir zwischen wirtschaftlichem Wohlstand und CO₂-Ausstoß auf?\nb) Gibt es Ausreißer – Länder, die viel CO₂ pro Kopf ausstoßen, aber ein vergleichsweise geringes BIP haben (oder umgekehrt)? Was könnte das erklären?\nc) Was bedeutet dieser Zusammenhang für die globale Klimadiskussion: Darf wirtschaftliches Wachstum mit steigenden Emissionen verbunden sein?",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 60},
+            "cognitive_level": "analyze",
+            "dimensions": ["SYN", "REF"],
+            "serves": [{"competence_id": "GWB.OS.8.CHA.02", "relation": "exercises"}, {"competence_id": "GWB.OS.8.POL.01", "relation": "exercises"}],
+            "est_minutes": 12,
+            "asset_refs": ["abb1", "abb2"],
+            "answer_key": "a) Generell gilt: höheres BIP pro Kopf geht mit höherem CO₂-Ausstoß pro Kopf einher – Industrialisierung und Konsum sind energieintensiv. b) Ausreißer: Länder wie Katar/Kuwait (hohes CO₂, hohes BIP durch Ölindustrie); einige Schwellenländer mit kohlebasierter Industrie (z. B. Südafrika, Mongolei) haben hohen CO₂-Ausstoß bei mittlerem BIP; Frankreich hat relativ geringen CO₂-Ausstoß trotz hohem BIP (Kernkraft). c) Aus dieser Datengrundlage lassen sich zwei Positionen ableiten: 1) Wachstum = mehr Emissionen, daher Wachstum begrenzen (Degrowth-Position); 2) Technologischer Wandel entkoppelt Wachstum von Emissionen ('Green Growth'); beide Positionen neutral darstellen.",
+            "acceptable_reasoning": "Schüler:innen können eigene plausible Ausreißer-Hypothesen formulieren.",
+            "watch_outs": [
+              "Korrelation ≠ Kausalität – dieser Zusammenhang wird oft mechanisch als Ursache-Wirkung gedeutet.",
+              "Fehlvorstellung: 'Arme Länder stoßen wenig CO₂ aus, also tragen sie keine Mitverantwortung.' Bestimmte Entwicklungsländer stoßen heute viel CO₂ aus (z. B. China, Indien als Gesamtemittenten)."
+            ],
+            "rubric": [
+              {"criterion": "Zusammenhangserkennung", "levels": ["Kein Zusammenhang erkannt", "Zusammenhang beschrieben ohne Begründung", "Zusammenhang mit Verweis auf Industrialisierung erklärt", "Differenziert mit Ausreißern und Erklärungen"]},
+              {"criterion": "Klimadiskussion", "levels": ["Nicht beantwortet", "Einseitige Position", "Zwei Positionen genannt", "Zwei Positionen erklärt und abgewogen"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "source_critique",
+            "prompt": "Lies die folgenden zwei Aussagen von fiktiven Wirtschaftsexpert:innen zur Globalisierung:\n\n**Position A (Wirtschaftsexpertin Miriam S.):** \u201eGlobalisierung ist der stärkste Mechanismus zur Armutsreduktion in der Geschichte. Länder, die sich geöffnet haben, wachsen schneller. Freihandel nützt allen.\"\n\n**Position B (Entwicklungsökonom Thomas K.):** \u201eFreihandel funktioniert nur, wenn die Startbedingungen gleich sind. Reiche Länder schützen ihre Landwirtschaft mit Subventionen, während sie Entwicklungsländer zwingen, ihre Märkte zu öffnen – das ist strukturelle Benachteiligung.\"\n\na) Welche Argumente hat jede Position für sich? Welche Argumente könnten Kritikerinnen dieser Position vorbringen?\nb) Auf welche Fakten oder Daten stützen sich die Positionen – explizit oder implizit?\nc) Welche Position hältst du für überzeugender und warum? Beziehe dabei auch Gegenargumente ein.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 65},
+            "cognitive_level": "evaluate",
+            "dimensions": ["REF", "KOM"],
+            "serves": [{"competence_id": "GWB.OS.8.CHA.03", "relation": "exercises"}, {"competence_id": "GWB.OS.8.POL.04", "relation": "exercises"}],
+            "est_minutes": 13,
+            "asset_refs": [],
+            "answer_key": "Position A: Argumente – empirische Belege für Armutsreduktion durch Exportwachstum (z. B. Ostasien); Wohlfahrtssteigerung durch Spezialisierung (komparative Vorteile nach Ricardo). Gegenargumente – Wohlstandsgewinne ungleich verteilt, innere Ungleichheit steigt, Umweltkosten nicht eingerechnet. Position B: Argumente – reale Asymmetrien im Welthandel (EU-Agrarsubventionen, US-Stahl-Schutzmaßnahmen); historische Abhängigkeiten. Gegenargumente – vollständige Abschottung schadet oft den ärmsten Ländern mehr; lokale Ineffizienzen bleiben bestehen. Eigene Position: jede fundierte Argumentation akzeptabel, Gegenargumente müssen integriert sein.",
+            "acceptable_reasoning": "Jede gut begründete Position ist akzeptabel. Einseitige Übernahme einer Position ohne Auseinandersetzung mit Gegenargumenten ist nicht ausreichend.",
+            "watch_outs": [
+              "Schüler:innen tendieren zu 'beide haben recht' ohne Analyse – auf das Abwägen beider Argumente auf Basis von Kriterien bestehen.",
+              "Den Unterschied zwischen normativen und empirischen Aussagen verdeutlichen: Was ist eine Tatsachenbehauptung, was eine Wertung?"
+            ],
+            "rubric": [
+              {"criterion": "Quellenanalyse (Argumente pro/contra)", "levels": ["Nur eine Position analysiert", "Beide Positionen aufgelistet", "Beide Positionen mit Pro-Contra", "Beide Positionen mit Pro-Contra und impliziten Annahmen"]},
+              {"criterion": "Eigene Einschätzung", "levels": ["Fehlt", "Position ohne Begründung", "Position mit Argumenten", "Position mit Gegenargumenten und Abwägung"]}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "Nachhaltiges Handeln in der globalisierten Welt",
+        "throughline": "Schüler:innen entwickeln konkrete Handlungsstrategien auf individueller, betrieblicher und gesellschaftlicher Ebene – und erkennen, wo strukturelle Grenzen individuellen Handelns bestehen.",
+        "talking_points": [
+          "Nachhaltigkeit hat drei Dimensionen: ökologisch, sozial, ökonomisch – der Begriff 'nachhaltig' allein reicht nicht.",
+          "Das Dilemma zwischen individuellem Handeln und strukturellen Erfordernissen ist ein Kern des Nachhaltigkeitsdiskurses.",
+          "Instrumente nachhaltiger Wirtschaftspolitik: CO₂-Steuer, EU-Lieferkettengesetz, Green Deal – Vor- und Nachteile abwägen."
+        ],
+        "extensions": [
+          "Projektarbeit: Schüler:innen entwickeln ein fiktives nachhaltiges Geschäftsmodell für eine lokale Firma im globalen Kontext.",
+          "Planspiel: Verhandlung eines fiktiven internationalen Klimaabkommens mit unterschiedlichen nationalen Interessen."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "matching",
+            "prompt": "Ordne den folgenden Handlungsebenen (links) die passenden Beispiele für nachhaltiges Handeln im globalen Kontext (rechts) zu. Jede Ebene kann mehrere Beispiele haben.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Individuelle Ebene",
+                "Betriebliche Ebene",
+                "Staatliche/gesellschaftliche Ebene"
+              ],
+              "right": [
+                "Einführung einer CO₂-Steuer auf Flüge",
+                "Kauf von Produkten mit Fairtrade-Siegel",
+                "Verwendung erneuerbarer Energien in der Produktion",
+                "Ratifizierung des Pariser Klimaabkommens",
+                "Verzicht auf Fast Fashion zugunsten gebrauchter Kleidung",
+                "Offenlegung von Lieferketten gegenüber Behörden",
+                "Einrichtung einer Recyclingstation im Betrieb"
+              ]
+            },
+            "response": {"mode": "table", "columns": ["Handlungsebene", "Passendes Beispiel/Beispiele"], "rows": 3},
+            "cognitive_level": "understand",
+            "dimensions": ["HAN"],
+            "serves": [{"competence_id": "GWB.OS.8.CHA.04", "relation": "exercises"}],
+            "est_minutes": 6,
+            "asset_refs": [],
+            "answer_key": "Individuelle Ebene: Fairtrade-Siegel (B), Fast Fashion vermeiden (E). Betriebliche Ebene: erneuerbare Energien (C), Lieferketten offenlegen (F), Recycling (G). Staatliche Ebene: CO₂-Steuer (A), Pariser Klimaabkommen (D). Hinweis: Einzelne Beispiele können mehreren Ebenen zugeordnet werden (z. B. Lieferkettentransparenz kann staatlich verpflichtet und betrieblich umgesetzt werden).",
+            "acceptable_reasoning": "Begründete Mehrfachzuordnungen sind akzeptabel.",
+            "watch_outs": [
+              "Schüler:innen neigen dazu, staatliche und betriebliche Ebene zu vermischen – Unterschied zwischen Regulierung und unternehmerischer Entscheidung hervorheben."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "open_response",
+            "prompt": "\u201eWenn ich allein nachhaltig einkaufe, ändert das am globalen System nichts.\" – Viele Menschen teilen diese Einschätzung.\n\na) Erkläre, was an dieser Aussage zutreffen könnte (systemische Grenzen individuellen Handelns).\nb) Erkläre, was daran zu einfach gedacht ist (Wirksamkeit kollektiven Handelns, Vorbildwirkung, Marktlogik).\nc) Formuliere eine eigene, differenzierte Position: Welche Rolle sollte individuelles Handeln im Vergleich zu politisch-strukturellem Handeln spielen?",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 60},
+            "cognitive_level": "evaluate",
+            "dimensions": ["REF", "HAN"],
+            "serves": [{"competence_id": "GWB.OS.8.CHA.04", "relation": "exercises"}, {"competence_id": "GWB.OS.8.CHA.02", "relation": "exercises"}],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "a) Systemische Grenzen: Ein Einzelner verändert keine Preissignale; strukturelle Abhängigkeiten (Infrastruktur, Angebotsbeschränkungen) begrenzen individuelle Wahlmöglichkeiten; 'grüner Konsum' kann Greenwashing sein. b) Zu einfach gedacht: Summe individueller Entscheidungen erzeugt Marktdruck (Nachfrageverschiebung); soziale Normen ändern sich durch Vorbild und Kommunikation; Bürger:innenbewegungen entstehen aus individuellen Entscheidungen → politischer Druck. c) Differenzierte Position: individuelles Handeln ist notwendig aber nicht hinreichend; braucht strukturellen Rahmen (Regulierung, Anreize); Parallelität beider Ebenen sinnvoll. Jede gut begründete Position akzeptabel.",
+            "acceptable_reasoning": "Alle kohärenten Positionen sind akzeptabel; einseitige Positionen ohne Auseinandersetzung mit der Gegenseite genügen nicht.",
+            "watch_outs": [
+              "Fehlvorstellung: 'Unternehmen und Politik sind allein verantwortlich, ich nicht.' – Konsument:innen haben reale Marktmacht, auch wenn begrenzt.",
+              "Gegenfehlvorstellung: 'Ich persönlich kann die Welt retten.' – Überindividualisierung des Umweltproblems (Victim Blaming) thematisieren."
+            ],
+            "rubric": [
+              {"criterion": "Systemische Grenzen", "levels": ["Nicht erkannt", "Ein Aspekt genannt", "Zwei Aspekte mit Erklärung", "Differenziert mit Beispielen"]},
+              {"criterion": "Kollektive Wirksamkeit", "levels": ["Nicht erkannt", "Ein Aspekt genannt", "Zwei Aspekte mit Erklärung", "Differenziert mit Mechanismus-Erklärung"]},
+              {"criterion": "Eigene Position", "levels": ["Fehlt oder einseitig", "Position mit einem Argument", "Position mit Abwägung beider Seiten", "Differenzierte Position mit strukturellen und individuellen Aspekten"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "create_produce",
+            "prompt": "Stell dir vor, du bist Teil eines Jugendparlaments und sollst eine kurze Rede (ca. 10 Sätze) halten. Das Thema lautet:\n\n**\u201eWie soll Österreich auf die Herausforderungen der Globalisierung antworten?\"**\n\nFormuliere eine begründete Position, die:\n• einen wirtschaftlichen Aspekt (z. B. Standort, Handel, Unternehmen),\n• einen sozialen oder ökologischen Aspekt,\n• und eine konkrete Forderung an die Politik enthält.\n\nDeine Rede soll überzeugend sein – benutze Argumente, keine bloßen Meinungen.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 75},
+            "cognitive_level": "create",
+            "dimensions": ["KOM", "HAN"],
+            "serves": [{"competence_id": "GWB.OS.8.CHA.05", "relation": "exercises"}, {"competence_id": "GWB.OS.8.CHA.04", "relation": "exercises"}],
+            "est_minutes": 15,
+            "asset_refs": [],
+            "answer_key": "Keine Musterlösung, da kreative Aufgabe. Bewertet werden: klare Position, Verwendung von mindestens einem wirtschaftlichen und einem sozialen/ökologischen Argument, rhetorische Strukturierung, konkrete politische Forderung mit Begründung. Beispiele möglicher Forderungen: Ausbau erneuerbarer Energien zur Stärkung des Wirtschaftsstandorts; stärkere EU-Handelspolitik mit Sozialstandards; Reform des Bildungssystems für digitale Zukunftskompetenzen.",
+            "acceptable_reasoning": "Alle gut begründeten Positionen sind akzeptabel; inhaltliche Korrektheit der verwendeten Fakten prüfen.",
+            "watch_outs": [
+              "Schüler:innen neigen zu Meinungsaussagen ohne Argumente – Unterschied zwischen Argument und Behauptung thematisieren.",
+              "Populistische Vereinfachungen (z. B. 'Grenzen schließen löst das Problem') nicht einfach durchgehen lassen – auf Konsequenzen hinweisen lassen."
+            ],
+            "rubric": [
+              {"criterion": "Inhaltliche Breite", "levels": ["Nur ein Aspekt", "Wirtschaftlich oder sozial/ökologisch, nicht beides", "Beide Aspekte angesprochen", "Beide Aspekte differenziert mit Belegen"]},
+              {"criterion": "Argumentation", "levels": ["Nur Meinungsäußerungen", "Einzelne Argumente ohne Begründung", "Mehrere begründete Argumente", "Argumentationskette mit Einschränkungen und Gegenargumenten"]},
+              {"criterion": "Politische Forderung", "levels": ["Fehlt", "Forderung ohne Begründung", "Forderung mit Begründung", "Forderung mit Begründung und Hinweis auf Umsetzbarkeit"]},
+              {"criterion": "Rhetorische Qualität", "levels": ["Kein Redecharakter", "Ansätze vorhanden", "Klar strukturiert", "Überzeugend strukturiert, ansprechende Sprache"]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

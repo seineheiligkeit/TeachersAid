@@ -1,0 +1,237 @@
+{
+  "subject": "Bewegung und Sport",
+  "klasse": 3,
+  "kompetenzbereich": "Fachkompetenz",
+  "title": "Turnen: Bewegungsmerkmale wahrnehmen und Feedback geben",
+  "kernfrage": "Wie erkennst du, ob eine Turnübung gut ausgeführt ist — und wie gibst du anderen hilfreiche Rückmeldung?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Turnelemente beobachten, beschreiben und beurteilen",
+        "throughline": "Schüler:innen sollen lernen, Bewegungsausführungen nicht nur zu erleben, sondern auch zu beobachten und zu beschreiben — eine Kernkompetenz im Turnen, die sowohl das eigene Lernen als auch die Unterstützung anderer fördert.",
+        "talking_points": [
+          "Sensorisches Feedback (propriozeptive Wahrnehmung): Beim Turnen 'fühlt' man, ob eine Übung stimmt — gestreckter Körper, angespannte Bauchmuskulatur, kontrollierte Landung. Dieses innere Gefühl kann durch Aufmerksamkeit geschärft werden.",
+          "Beobachtung anderer als Lernstrategie: Wer genau beobachtet und beschreibt, versteht die Bewegungsmerkmale tiefer, als wenn man nur selbst übt.",
+          "Qualitatives Feedback ist konstruktiver als 'gut' oder 'schlecht': Was genau? Wann genau? Was könnte besser sein? — Diese Struktur (Beobachtung → Bewertung → Vorschlag) ist übertragbar auf viele Sportarten.",
+          "Sicherheit beim Turnen: Helfen und Sichern sind keine optionale Kür, sondern Teil der Fachkompetenz."
+        ],
+        "extensions": [
+          "Schüler:innen filmen (mit Erlaubnis) gegenseitig eine Übung und analysieren das Video anhand der Merkmalliste.",
+          "Vergleich: Welche Feedback-Struktur nutzen Trainer:innen im Leistungsturnen? (Kurzrecherche oder Beobachtungsaufgabe beim nächsten TV-Turniermitschnitt)",
+          "Eigene Feedback-Karte für eine Bodenübung entwickeln: Welche 5 Merkmale sind dir am wichtigsten?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "multiple_choice",
+            "prompt": "Welches Merkmal beschreibt eine korrekt ausgeführte Rolle vorwärts am Boden am besten?",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "A — Der Kopf bleibt aufrecht und der Blick geht nach vorne.",
+                "B — Das Kinn ist zur Brust gezogen, der Körper ist rund eingerollt.",
+                "C — Die Arme sind gestreckt und übernehmen die Last beim Abrollen.",
+                "D — Das Gewicht liegt auf dem Nacken, damit man schnell rollt."
+              ],
+              "select": "one"
+            },
+            "response": {
+              "mode": "choices",
+              "options": ["A", "B", "C", "D"],
+              "select": "one"
+            },
+            "cognitive_level": "remember",
+            "dimensions": ["FAC"],
+            "serves": [
+              {"competence_id": "BUS.US.3.FAC.05", "relation": "exercises"}
+            ],
+            "est_minutes": 4,
+            "answer_key": "B — Kinn zur Brust, runde Körperhaltung. Erläuterung: A ist falsch — aufrechter Kopf beim Abrollen führt zu Nackenbelastung. C ist falsch — Arme beugen sich beim Abrollen, sie federn, aber übernehmen die Last nicht durch Streckung. D ist falsch und gefährlich — Gewicht auf dem Nacken erzeugt Verletzungsrisiko; korrekt ist das Abrollen über den oberen Rücken.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "D klingt für manche Schüler:innen intuitiv richtig ('schnell rollen'). Das Verletzungsrisiko bei Nackenbelastung klar ansprechen — das ist keine Kleinigkeit.",
+              "C ist eine häufige Fehlvorstellung — die Arme federn, strecken sich aber nicht aktiv; das kurz demonstrieren oder erklären."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "matching",
+            "prompt": "Ordne jedes Merkmal der richtigen Turnübung zu. Schreibe den Buchstaben der Übung neben die Merkmal-Nummer.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "1. Körper gestreckt, Beine geschlossen, Zehenspitzen gestreckt",
+                "2. Kinn zur Brust, runder Rücken, Abrollbewegung über die Wirbelsäule",
+                "3. Hüfte über den Händen, Blick zwischen den Händen, Körper gestreckt",
+                "4. Abstoß vom Boden, Körperspannung, weiche Landung mit leicht gebeugten Knien",
+                "5. Hände schulterbreit, Ellbogen zeigen nach hinten, Körper bildet eine gerade Linie"
+              ],
+              "right": [
+                "A — Rolle vorwärts",
+                "B — Handstand (Annäherung)",
+                "C — Liegestützposition (Stütz)",
+                "D — Strecksprung",
+                "E — Hang am Reck, gestreckt"
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["FAC"],
+            "serves": [
+              {"competence_id": "BUS.US.3.FAC.05", "relation": "exercises"}
+            ],
+            "est_minutes": 7,
+            "answer_key": "1–E (Hang gestreckt), 2–A (Rolle vorwärts), 3–B (Handstand), 4–D (Strecksprung), 5–C (Liegestützposition). Hinweis: Merkmal 5 beschreibt die Ausgangsposition/Stützhaltung, nicht die Drückbewegung selbst.",
+            "acceptable_reasoning": "Wenn Schüler:innen 1 mit D verwechseln (beide haben gestreckte Zehenspitzen): Kontext 'Hang' vs. 'Absprung' herausarbeiten.",
+            "watch_outs": [
+              "Turnübungen sind für viele Schüler:innen im Kl. 3 unterschiedlich vertraut — die Merkmale sind absichtlich beschreibend und nicht auf Kenntnis der Bewegung angewiesen.",
+              "Handstand (B) wird oft mit Kopfstand verwechselt — der Unterschied (Hände tragen das Gewicht, Körper vollständig aufrecht) ist ein gutes Gespräch."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "open_response",
+            "prompt": "Beobachte (oder erinnere dich an) die Ausführung einer Rolle vorwärts durch eine/n Mitschüler:in. Beschreibe in 3–5 Sätzen, was du siehst — ohne zu bewerten (nur beobachten: Was passiert mit dem Kopf? Dem Rücken? Den Beinen? Dem Tempo?). Schreibe dann in einem zweiten Abschnitt: Was läuft gut, was könnte besser sein?",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 50
+            },
+            "cognitive_level": "analyze",
+            "dimensions": ["FAC"],
+            "modality": "enactive",
+            "serves": [
+              {"competence_id": "BUS.US.3.FAC.05", "relation": "exercises"}
+            ],
+            "est_minutes": 10,
+            "answer_key": "Musterbeobachtung: 'Das Kinn ist leicht zur Brust gezogen. Der Rücken rollt gleichmäßig ab, die Wirbelsäule ist gerundet. Die Beine sind beim Abrollen leicht geöffnet. Das Tempo ist konstant.' Musterbewertung: 'Gut: gleichmäßiges Abrollen, kein Kippen zur Seite. Verbesserung: Beine sollten beim Abrollen mehr geschlossen bleiben, Zehenspitzen strecken.' Bewertung: Trennung Beobachtung/Bewertung vorhanden? Beobachtungssprache sachlich?",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen vermischen oft sofort Beobachtung und Wertung ('sah schlecht aus'). Die explizite Trennung in zwei Abschnitte hilft, das zu strukturieren.",
+              "Wenn keine Live-Beobachtung möglich ist: Erinnerung an eine eigene oder gesehene Ausführung ist valide Grundlage."
+            ],
+            "rubric": [
+              {
+                "criterion": "Beobachtungssprache",
+                "levels": ["Nur Wertung, keine Beobachtung", "Beobachtung und Wertung vermischt", "Klare Trennung, sachliche Beobachtungssprache"]
+              },
+              {
+                "criterion": "Inhaltliche Korrektheit",
+                "levels": ["Merkmale nicht erkannt oder falsch", "Teilweise korrekte Merkmale", "Korrekte, relevante Bewegungsmerkmale benannt"]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "true_false_justify",
+            "prompt": "Entscheide: richtig oder falsch? Begründe in einem Satz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Beim Helfen am Reck soll die sichernde Person die Übende/den Übenden am Bauch festhalten, damit er/sie nicht fällt.",
+                "Wer beim Turnen sichert, steht so, dass er/sie im Notfall schnell eingreifen kann — das bedeutet nah genug, aber ohne zu stören.",
+                "Sensorisches Feedback beim Turnen bedeutet, dass man auf die Rückmeldung der Zuschauer hört.",
+                "Um eine Turnübung zu verbessern, reicht es, sie sehr oft zu wiederholen — Qualität ist dabei weniger wichtig."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": ["FAC", "MET"],
+            "serves": [
+              {"competence_id": "BUS.US.3.FAC.05", "relation": "exercises"}
+            ],
+            "est_minutes": 8,
+            "answer_key": "1. Falsch — Die Hilfestellung beim Reck erfolgt typischerweise am Handgelenk/Unterarm und am Rücken/Schulter, nicht am Bauch; die genaue Technik hängt von der Übung ab, aber 'Bauch festhalten' ist keine Standardhilfestellung. 2. Richtig — Nähe zum Eingreifen, aber ohne Bewegungsstörung, ist das Grundprinzip des Sicherns. 3. Falsch — Sensorisches (propriozeptives) Feedback ist das innere Körpergefühl: man 'fühlt', ob der Körper gestreckt, rund oder schief ist. 4. Falsch — Häufige Wiederholung falscher Bewegungen festigt Fehler; Qualität (bewusstes Üben mit Aufmerksamkeit auf Bewegungsmerkmale) ist entscheidend.",
+            "acceptable_reasoning": "Bei Statement 1 sind Antworten, die auf 'Rücken' oder 'Schulter' verweisen, als korrekt zu werten.",
+            "watch_outs": [
+              "Statement 4 ist die wichtigste Fehlvorstellung: 'practice makes perfect' gilt nur bei qualitätsbewusstem Üben.",
+              "Statement 3 kann Verwirrung erzeugen, wenn 'Feedback' im Alltag immer als externe Rückmeldung verstanden wird — Fachbegriff Propriozeption kurz erklären."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "movement_task",
+            "prompt": "Übt zu zweit: Eine Person führt einen Strecksprung aus, die andere beobachtet und gibt danach Feedback nach dieser Struktur: 1. Was habe ich gesehen? (Beobachtung) 2. Was war gut? (Stärke) 3. Was könnte besser werden? (Verbesserung) — Dann tauscht die Rollen. Schreibt die Feedbacks stichwortartig auf.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": ["FAC", "SOZ"],
+            "modality": "enactive",
+            "serves": [
+              {"competence_id": "BUS.US.3.FAC.05", "relation": "exercises"}
+            ],
+            "est_minutes": 12,
+            "answer_key": "Schüler:innen sollen strukturiertes Feedback geben (Sandwich-Methode: Stärke − Verbesserung − Stärke, oder Drei-Schritt oben). Beim Strecksprung relevante Merkmale: Absprung beidbeinig, Körper in der Luft gestreckt (Zehenspitzen, Arme nach oben oder an den Seiten), weiche Landung, Knie leicht gebeugt. Bewertung: Wurde die Struktur eingehalten? Wurden korrekte Merkmale beobachtet?",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Feedback-Gespräche können unangenehm werden, wenn Schüler:innen sich gegenseitig kritisieren — Struktur und 'Ich-Form' ('ich habe gesehen') schützen davor.",
+              "Nicht alle Schüler:innen trauen sich, Kritik zu äußern — Betonen, dass Verbesserungsvorschläge hilfreich sind, nicht negativ."
+            ],
+            "rubric": [
+              {
+                "criterion": "Feedback-Struktur",
+                "levels": ["Keine Struktur erkennbar", "Teile der Struktur vorhanden", "Vollständige Drei-Schritt-Struktur"]
+              },
+              {
+                "criterion": "Fachliche Korrektheit der Beobachtung",
+                "levels": ["Keine relevanten Merkmale genannt", "1 korrektes Merkmal", "2+ korrekte, relevante Merkmale"]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "create_produce",
+            "prompt": "Erstelle eine Beobachtungs-Checkliste für die Rolle vorwärts mit genau 5 Merkmalen. Formuliere jedes Merkmal so, dass man beim Beobachten klar 'ja' oder 'nein' sagen kann (kein vages 'gut gemacht'). Erkläre bei einem Merkmal deiner Wahl, warum es besonders wichtig ist.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 50
+            },
+            "cognitive_level": "create",
+            "dimensions": ["FAC", "MET"],
+            "serves": [
+              {"competence_id": "BUS.US.3.FAC.05", "relation": "exercises"}
+            ],
+            "est_minutes": 10,
+            "answer_key": "Muster-Checkliste (5 Merkmale): 1. Kinn ist zur Brust gezogen. 2. Der Rücken rollt gleichmäßig ab (kein Kippen zur Seite). 3. Die Beine sind beim Abrollen geschlossen. 4. Nach der Rolle wird sicher auf den Füßen gelandet (nicht auf den Knien). 5. Das Tempo ist kontrolliert (kein Überschlagen). Wichtigstes Merkmal (Begründung Beispiel): Merkmal 2 — gleichmäßiges Abrollen verhindert Wirbelbelastung und ist die Grundvoraussetzung für eine sichere Ausführung.",
+            "acceptable_reasoning": "Andere plausible Merkmale (z. B. Armeinsatz, Zehenspitzen) sind vollwertig. Entscheidend: 'ja/nein'-Formulierung, kein vages Werturteil.",
+            "watch_outs": [
+              "Viele Schüler:innen schreiben 'sieht gut aus' oder 'ausgewogen' — darauf bestehen, dass Merkmale beobachtbar und eindeutig überprüfbar sind.",
+              "Die Begründungsaufgabe zeigt, ob sie verstehen, warum das Merkmal wichtig ist — nicht nur was es ist."
+            ],
+            "rubric": [
+              {
+                "criterion": "Überprüfbarkeit",
+                "levels": ["Merkmale vage/bewertend", "Teilweise überprüfbar", "Alle 5 Merkmale klar überprüfbar (ja/nein)"]
+              },
+              {
+                "criterion": "Begründung",
+                "levels": ["Keine oder sehr flache Begründung", "Begründung vorhanden, aber pauschal", "Fachlich fundierte Begründung (Sicherheit, Biomechanik, Lernen)"]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "c0049.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "enactive",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Du baust einen Mechanismus, der nicht so funktioniert wie erwartet: Das Zahnrad klemmt, die Bewegung ist ungleichmäßig, der Stempel bewegt sich schief. Beschreibe drei mögliche Fehlerquellen und erkläre jeweils, wie du den Fehler beheben würdest.",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Fehlerquelle",
+        "Mögliche Ursache",
+        "Lösung"
+      ],
+      "rows": 3
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "HER"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "TED.US.4.HER.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Mögliche Fehlerquellen: (1) Zahnräder klemmen: Achsabstand zu gering — Achsen weiter auseinander stellen, bis Zahnräder frei laufen; (2) Ungleichmäßige Bewegung: Achse nicht gerade eingebaut / schlägt — Achse neu ausrichten, Bohrungen prüfen; (3) Stempel läuft schief: Führungskanal zu weit oder zu eng — Führung nacharbeiten (schleifen) oder Passungen prüfen; (4) Mechanismus blockiert bei bestimmter Position: Totpunkt bei Kurbel-Pleuel — Kurbellage ändern, Massenschwung hinzufügen.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Schüler:innen nennen oft 'zu wenig Kraft' als Ursache — das ist ein Symptom, keine Ursache. Auf die konstruktive Fehlerquelle drängen.",
+      "Totpunkt bei Kurbel-Pleuel ist ein wichtiges Konzept — kurz erläutern, wenn es auftaucht."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Technik und Design",
+  "klasse": 4,
+  "kompetenzbereich": "Herstellung",
+  "competences": [
+    "TED.US.4.HER.04"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "HER"
+  ],
+  "modality": "enactive",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0049",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

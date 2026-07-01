@@ -1,0 +1,80 @@
+{
+  "id": "c0085.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Entscheide, ob die Aussagen wahr oder falsch sind. Begründe jeweils kurz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Der Median einer Datenmenge ist immer kleiner als der Mittelwert.",
+        "Wenn man einem Datensatz einen sehr großen Ausreißer hinzufügt, verändert sich der Mittelwert stärker als der Median.",
+        "Ein Kreisdiagramm eignet sich gut, um Veränderungen über die Zeit darzustellen."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "BEG",
+      "DAR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.3.DAT.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1) Falsch: Gegenbeispiel 1,2,3,4,5 → Mittelwert=3, Median=3 (gleich); oder 1,1,1,1,10 → MW=2,8, Median=1 (MW>Median). 2) Wahr: der Mittelwert reagiert auf jeden Wert gleichmäßig, der Median verschiebt sich kaum (er ist der mittlere Wert). 3) Falsch: Kreisdiagramm zeigt Anteile eines Ganzen; für zeitliche Verläufe ist ein Liniendiagramm geeigneter.",
+    "acceptable_reasoning": "Für 1 und 2 konkrete Zahlenbeispiele; für 3 Zweck der Diagrammtypen vergleichen.",
+    "rubric": [
+      {
+        "criterion": "Begründungsqualität",
+        "levels": [
+          "Kein Argument",
+          "Richtige Antwort ohne Argument",
+          "Richtige Antwort mit Beispiel/Gegenbeispiel"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Aussage 1 ist eine häufige Fehlannahme — Gegenbeispiele sind wichtig.",
+      "Aussage 3: Schüler:innen kennen Kreisdiagramme aus der Volksschule und vertrauen ihnen — reflektierter Einsatz thematisieren."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Mathematik",
+  "klasse": 3,
+  "kompetenzbereich": "4: Daten und Zufall",
+  "competences": [
+    "MAT.US.3.DAT.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "BEG",
+    "DAR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0085",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:19+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

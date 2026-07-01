@@ -1,0 +1,294 @@
+{
+  "subject": "Mathematik",
+  "klasse": 8,
+  "kompetenzbereich": "Grundlagen der Integralrechnung",
+  "title": "Fläche, Weg, Integral — das bestimmte Integral verstehen und berechnen",
+  "kernfrage": "Wie kannst du mit dem bestimmten Integral Flächen und zurückgelegte Wege berechnen — und was hat das mit Ober- und Untersummen zu tun?",
+  "body": {
+    "intro": [
+      "Ein Fahrzeug bremst, ein Wasserstrahl füllt ein Becken, eine Kurve schließt eine Fläche ein — all das lässt sich durch ein einziges mathematisches Objekt beschreiben: das bestimmte Integral. In diesem Arbeitsblatt erforschst du, wie das Integral aus Näherungssummen entsteht, was es geometrisch bedeutet und wie du es mit Hilfe von Stammfunktionen exakt berechnest."
+    ],
+    "data_figures": [],
+    "assets": [
+      {
+        "id": "abb1",
+        "role": "figure",
+        "generator": "matplotlib:function_graph",
+        "spec": {
+          "xmin": 0,
+          "xmax": 4,
+          "ymin": 0,
+          "ymax": 10,
+          "xlabel": "x",
+          "ylabel": "f(x)",
+          "title": "Graph von f — Ober- und Untersummen"
+        }
+      },
+      {
+        "id": "abb2",
+        "role": "figure",
+        "generator": "matplotlib:math_formula",
+        "spec": {
+          "latex": "\\int_a^b f(x)\\,dx = F(b) - F(a), \\quad F'(x) = f(x)"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Von der Summe zum Integral",
+        "throughline": "Schüler:innen erarbeiten, wie Ober- und Untersummen entstehen und warum das bestimmte Integral als Grenzwert dieser Summen definiert wird — der Brückenschlag von diskreter Näherung zu exakter Flächenberechnung.",
+        "talking_points": [
+          "Ober- und Untersummen zeigen Schüler:innen, dass das Integral nicht aus dem Nichts auftaucht, sondern als natürlicher Grenzwert entsteht.",
+          "Betone: Die Breite der Rechtecke (Δx) geht gegen null — das ist der entscheidende Übergang von endlich zu unendlich.",
+          "Der Begriff „Zahl zwischen allen Ober- und Untersummen“ verknüpft geometrische Intuition mit formaler Definition.",
+          "Visualisierung mit abb1 hilft, den Zusammenhang zwischen Teilung und Genauigkeit konkret zu machen."
+        ],
+        "extensions": [
+          "Schüler:innen berechnen Ober- und Untersummen für n = 4, 8, 16 Rechtecke und diskutieren, welches n ausreicht.",
+          "Vergleich: Welche Funktionen führen dazu, dass Ober- und Untersummen besonders schnell konvergieren?",
+          "Einführung in numerische Integration (Trapezregel) als Erweiterung."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "calculation",
+            "prompt": "Gegeben ist die Funktion f(x) = x² auf dem Intervall [0, 2]. Teile das Intervall in n = 4 gleichbreite Teilintervalle (Breite Δx = 0,5). Berechne die Untersumme U₄ und die Obersumme O₄, indem du jeweils den kleinsten bzw. größten Funktionswert im Teilintervall als Rechteckshöhe verwendest. Gib beide Werte an.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 55 },
+            "cognitive_level": "apply",
+            "dimensions": ["FO", "DM"],
+            "serves": [
+              { "competence_id": "MAT.OS.8.GRU2.01", "relation": "exercises" }
+            ],
+            "est_minutes": 10,
+            "asset_refs": ["abb1"],
+            "answer_key": "Teilintervalle: [0; 0,5], [0,5; 1], [1; 1,5], [1,5; 2]. Untersumme: U₄ = 0,5 · (f(0) + f(0,5) + f(1) + f(1,5)) = 0,5 · (0 + 0,25 + 1 + 2,25) = 0,5 · 3,5 = 1,75. Obersumme: O₄ = 0,5 · (f(0,5) + f(1) + f(1,5) + f(2)) = 0,5 · (0,25 + 1 + 2,25 + 4) = 0,5 · 7,5 = 3,75. (Exakter Wert: 8/3 ≈ 2,667.)",
+            "acceptable_reasoning": "Teilintervalle korrekt bestimmt; Minimum und Maximum in jedem Teilintervall identifiziert; Summe gebildet und mit Δx multipliziert.",
+            "watch_outs": [
+              "Häufiger Fehler: Schüler:innen verwechseln Unter- und Obersumme — Untersumme verwendet Minimum, Obersumme Minimum des Teilintervalls am RECHTEN Rand.",
+              "Bei monoton steigendem f gilt: linker Rand → Minimum, rechter Rand → Maximum. Nicht verallgemeinern, ohne Monotonie zu prüfen.",
+              "Einheit von Δx nicht vergessen: Multiplikation mit 0,5 ist zwingend."
+            ],
+            "rubric": [
+              { "criterion": "Teilintervalle und Δx", "levels": ["Nicht angegeben oder falsch", "Korrekt bestimmt"] },
+              { "criterion": "Untersumme", "levels": ["Falsch oder fehlt", "Ansatz richtig, Rechenfehler", "Korrekt (1,75)"] },
+              { "criterion": "Obersumme", "levels": ["Falsch oder fehlt", "Ansatz richtig, Rechenfehler", "Korrekt (3,75)"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "true_false_justify",
+            "prompt": "Entscheide jeweils, ob die folgende Aussage über das bestimmte Integral wahr oder falsch ist, und begründe kurz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Das bestimmte Integral ∫₀² x² dx ist immer eine Zahl, die kleiner als jede Obersumme und größer als jede Untersumme ist.",
+                "Wenn man die Anzahl der Rechtecke n immer weiter erhöht, nähern sich Ober- und Untersumme immer weiter voneinander an.",
+                "Das bestimmte Integral ∫ₐᵇ f(x) dx gibt immer den Flächeninhalt zwischen dem Graphen und der x-Achse an, auch wenn f auf [a, b] negative Werte annimmt."
+              ]
+            },
+            "response": { "mode": "box", "min_height_mm": 50 },
+            "cognitive_level": "evaluate",
+            "dimensions": ["KA", "ID"],
+            "serves": [
+              { "competence_id": "MAT.OS.8.GRU2.01", "relation": "deepens" }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "Aussage 1: WAHR — Definition des bestimmten Integrals als die eindeutige Zahl zwischen allen Unter- und Obersummen. Aussage 2: WAHR — Bei stetigen Funktionen gilt: je feiner die Zerlegung, desto kleiner der Unterschied O_n − U_n. Aussage 3: FALSCH — Das bestimmte Integral gibt den vorzeichenbehafteten Flächeninhalt an; Flächenstücke unter der x-Achse werden negativ gerechnet. Der geometrische Flächeninhalt erfordert Betragsbildung.",
+            "acceptable_reasoning": "Zu Aussage 3 genügt ein Gegenbeispiel: ∫₋₁¹ x dx = 0, obwohl eindeutig eine Fläche eingeschlossen ist.",
+            "watch_outs": [
+              "Sehr verbreitete Fehlvorstellung: Integral = Flächeninhalt ohne Vorzeichen — muss explizit thematisiert werden.",
+              "Schüler:innen sollen den Unterschied zwischen vorzeichenbehaftetem Integral und geometrischem Flächeninhalt sicher benennen können."
+            ],
+            "rubric": [
+              { "criterion": "Aussage 1", "levels": ["Falsch bewertet oder keine Begründung", "Richtig bewertet mit plausibler Begründung"] },
+              { "criterion": "Aussage 2", "levels": ["Falsch bewertet oder keine Begründung", "Richtig bewertet mit plausibler Begründung"] },
+              { "criterion": "Aussage 3", "levels": ["Falsch bewertet oder keine Begründung", "Richtig bewertet; Vorzeichen-Aspekt erwähnt", "Richtig bewertet mit Gegenbeispiel"] }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Stammfunktionen und exakte Berechnung",
+        "throughline": "Schüler:innen wenden Stammfunktionen und elementare Integrationsregeln an, um bestimmte Integrale exakt zu berechnen — Übergang von der Näherung zur analytischen Methode.",
+        "talking_points": [
+          "Stammfunktion als Umkehrung des Ableitens: F'(x) = f(x) — dieser Zusammenhang ist der Kern der Analysis.",
+          "Der Hauptsatz verknüpft zwei scheinbar getrennte Konzepte (Fläche und Ableitung) auf überraschende Weise.",
+          "Beachte: Stammfunktionen sind nicht eindeutig — die Konstante C verschwindet erst beim bestimmten Integral.",
+          "Abb2 zeigt die Formel des Hauptsatzes — Schüler:innen sollen sie nicht nur anwenden, sondern auch erklären können."
+        ],
+        "extensions": [
+          "Wozu braucht man das unbestimmte Integral, wenn wir das bestimmte Integral direkt mit dem Hauptsatz berechnen können?",
+          "Untersuche: Gibt es Funktionen, die keine elementare Stammfunktion besitzen? (Beispiel: e^(−x²))",
+          "Vergleich: Numerische Methode (Trapezregel) vs. analytische Methode — wann ist welche sinnvoll?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "calculation",
+            "prompt": "Bestimme jeweils eine Stammfunktion F von f und berechne dann das bestimmte Integral.\n(a) f(x) = 3x² − 4x + 1, Integral von 0 bis 3\n(b) f(x) = 2x³ − x, Integral von 1 bis 2\n(c) f(x) = 5, Integral von −1 bis 4\nGib bei jeder Teilaufgabe den Rechenweg vollständig an.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 70 },
+            "cognitive_level": "apply",
+            "dimensions": ["FO"],
+            "serves": [
+              { "competence_id": "MAT.OS.8.GRU2.03", "relation": "exercises" },
+              { "competence_id": "MAT.OS.8.GRU2.04", "relation": "exercises" }
+            ],
+            "est_minutes": 12,
+            "asset_refs": ["abb2"],
+            "answer_key": "(a) F(x) = x³ − 2x² + x; ∫₀³ = F(3) − F(0) = (27 − 18 + 3) − 0 = 12. (b) F(x) = x⁴/2 − x²/2; ∫₁² = F(2) − F(1) = (8 − 2) − (1/2 − 1/2) = 6 − 0 = 6. (c) F(x) = 5x; ∫₋₁⁴ = 5·4 − 5·(−1) = 20 + 5 = 25.",
+            "acceptable_reasoning": "Potenzregel korrekt angewandt (xⁿ → xⁿ⁺¹/(n+1)); Einsetzen der Grenzen in korrekter Reihenfolge (obere minus untere); Vorzeichen bei negativer unterer Grenze beachtet.",
+            "watch_outs": [
+              "Typischer Fehler: Vorzeichen bei der unteren Grenze falsch — F(a) wird addiert statt subtrahiert.",
+              "Konstante C nicht in das bestimmte Integral einsetzen — sie kürzt sich heraus und darf weggelassen werden.",
+              "Bei (c): Konstante Funktion hat Stammfunktion F(x) = cx, nicht F(x) = 0."
+            ],
+            "rubric": [
+              { "criterion": "Stammfunktionen", "levels": ["Alle falsch", "1–2 korrekt", "Alle drei korrekt"] },
+              { "criterion": "Einsetzen der Grenzen", "levels": ["Systematischer Fehler", "Teilweise korrekt", "Durchgehend korrekt"] },
+              { "criterion": "Endresultate", "levels": ["Kein korrektes Ergebnis", "1–2 korrekt", "Alle drei korrekt (12; 6; 25)"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "modelling",
+            "prompt": "Ein Fahrzeug fährt mit der Geschwindigkeit v(t) = −t² + 6t (in m/s, t in Sekunden, 0 ≤ t ≤ 6).\n(a) Welche physikalische Bedeutung hat das bestimmte Integral ∫₀⁶ v(t) dt in diesem Zusammenhang?\n(b) Berechne, wie weit das Fahrzeug in den ersten 6 Sekunden zurücklegt.\n(c) Erkläre, warum das Integral in diesem Fall tatsächlich den zurückgelegten Weg angibt (Hinweis: Überprüfe das Vorzeichen von v auf [0, 6]).",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 65 },
+            "cognitive_level": "analyze",
+            "dimensions": ["DM", "ID"],
+            "serves": [
+              { "competence_id": "MAT.OS.8.GRU2.02", "relation": "exercises" },
+              { "competence_id": "MAT.OS.8.GRU2.04", "relation": "exercises" }
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "(a) Das Integral gibt den zurückgelegten Weg des Fahrzeugs in den ersten 6 Sekunden an (in Metern). (b) ∫₀⁶ (−t² + 6t) dt = [−t³/3 + 3t²]₀⁶ = (−216/3 + 108) − 0 = −72 + 108 = 36 m. (c) v(t) = −t² + 6t = t(6 − t) ≥ 0 für alle t ∈ [0, 6], da t ≥ 0 und (6 − t) ≥ 0 auf diesem Intervall. Das Fahrzeug bewegt sich nur vorwärts, also stimmt das Integral mit dem Weg überein (kein vorzeichenbehafteter Unterschied nötig).",
+            "acceptable_reasoning": "Schüler:innen erkennen v(t) ≥ 0 auf [0,6] durch Nullstellenanalyse oder Überprüfung einzelner Werte.",
+            "watch_outs": [
+              "Schüler:innen müssen begründen, warum kein Betrag nötig ist — das gelingt nur durch Vorzeichen-Check von v(t).",
+              "Verwechslung von Weg und Verschiebung: Wenn v Vorzeichen wechselt, muss der Weg mit |v| berechnet werden.",
+              "Rechencheck: ∫₀⁶ −t² dt = −72, ∫₀⁶ 6t dt = 108 → Summe 36."
+            ],
+            "rubric": [
+              { "criterion": "Interpretation des Integrals", "levels": ["Keine oder falsche Angabe", "Korrekt als zurückgelegter Weg identifiziert"] },
+              { "criterion": "Berechnung", "levels": ["Rechenfehler, kein Ergebnis", "Ansatz korrekt, Rechenfehler", "36 m korrekt"] },
+              { "criterion": "Vorzeichen-Argumentation", "levels": ["Fehlt", "Angedeutet", "Vollständig: v(t) ≥ 0 auf [0,6] begründet"] }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "Größen durch Integrale ausdrücken und Flächen berechnen",
+        "throughline": "Schüler:innen lernen, Integrale als Verallgemeinerungen von Produktformeln zu sehen und wenden das Konzept auf Flächenberechnungen zwischen Kurven an — Transfer vom mechanistischen Rechnen zum konzeptuellen Denken.",
+        "talking_points": [
+          "Flächeninhalt zwischen zwei Kurven: erst Schnittpunkte bestimmen, dann ggf. Differenz der Integrale bilden.",
+          "„Integral als Summe von Produkten“: Warum funktioniert das? Weil Δx → dx und Summe → Integral.",
+          "Betone den Unterschied: Fläche zwischen Kurven vs. vorzeichenbehaftetes Integral — je nach Aufgabe ist das eine oder andere gefragt.",
+          "Erweiterbar auf Volumen von Rotationskörpern (Lehrplan Kl. 8 Anwendungen)."
+        ],
+        "extensions": [
+          "Schüler:innen recherchieren: Wie wird das Integral in der Physik für die Berechnung von Arbeit (W = ∫F ds) verwendet?",
+          "Aufgabe: Berechne das Volumen eines Rotationskörpers, der durch Rotation von f(x) = √x um die x-Achse entsteht.",
+          "Diskussion: Kann man das Integral auch für nicht-stetige Funktionen definieren? Was ändert sich?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "calculation",
+            "prompt": "Berechne den Flächeninhalt der Fläche, die von den Graphen g(x) = x und h(x) = x² eingeschlossen wird.\n(a) Bestimme zunächst die Schnittpunkte von g und h.\n(b) Berechne dann den Flächeninhalt A mit Hilfe des Integrals der Differenzfunktion.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 60 },
+            "cognitive_level": "apply",
+            "dimensions": ["FO", "DM"],
+            "serves": [
+              { "competence_id": "MAT.OS.8.GRU2.02", "relation": "exercises" },
+              { "competence_id": "MAT.OS.8.GRU2.04", "relation": "exercises" }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "(a) g(x) = h(x) ⟹ x = x² ⟹ x² − x = 0 ⟹ x(x−1) = 0 ⟹ x₁ = 0, x₂ = 1. (b) Auf [0,1] gilt g(x) ≥ h(x) (da x ≥ x² für x ∈ [0,1]). A = ∫₀¹ (x − x²) dx = [x²/2 − x³/3]₀¹ = 1/2 − 1/3 = 3/6 − 2/6 = 1/6.",
+            "acceptable_reasoning": "Schüler:innen prüfen, welche Funktion auf dem Intervall größer ist, bevor sie die Differenz bilden.",
+            "watch_outs": [
+              "Fehler: Differenz falsch herum (x² − x statt x − x²) → negatives Ergebnis für den Flächeninhalt. Flächeninhalt ist immer ≥ 0.",
+              "Prüfung auf welcher Seite die Kurven liegen nicht vergessen — Einsetzen eines Testpunkts (z. B. x = 0,5) empfohlen.",
+              "Bei mehreren eingeschlossenen Flächen: jede Teilfläche separat integrieren."
+            ],
+            "rubric": [
+              { "criterion": "Schnittpunkte", "levels": ["Falsch oder fehlt", "x₁=0, x₂=1 korrekt"] },
+              { "criterion": "Integral der Differenzfunktion", "levels": ["Falsch angesetzt", "Ansatz richtig, Rechenfehler", "Korrekt: 1/6"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "open_response",
+            "prompt": "Ein Wasserreservoir wird mit der Füllrate f(t) = 2t + 3 (in m³/min, t in Minuten) befüllt. Zu Beginn (t = 0) enthält das Reservoir bereits 10 m³ Wasser.\n(a) Wie viel Wasser wird in den ersten 5 Minuten zugefüllt? Drücke dies als Integral aus und berechne es.\n(b) Wie viel Wasser befindet sich nach 5 Minuten insgesamt im Reservoir?\n(c) Interpretiere, was das Integral ∫₀ᵀ f(t) dt in diesem Kontext bedeutet, und erkläre, warum man eine Füllrate integrieren muss, um das Gesamtvolumen zu erhalten.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 65 },
+            "cognitive_level": "analyze",
+            "dimensions": ["ID", "DM"],
+            "serves": [
+              { "competence_id": "MAT.OS.8.GRU2.02", "relation": "exercises" },
+              { "competence_id": "MAT.OS.8.GRU2.01", "relation": "deepens" }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "(a) Zugefülltes Wasser = ∫₀⁵ (2t + 3) dt = [t² + 3t]₀⁵ = (25 + 15) − 0 = 40 m³. (b) Gesamtvolumen = 10 + 40 = 50 m³. (c) Das Integral einer Rate über ein Zeitintervall ergibt die gesamte Menge, die in diesem Zeitraum fließt — das ist die Verallgemeinerung von „Menge = Rate × Zeit“ für nicht-konstante Raten. Integration ist die Umkehrung der Differenziation: weil f(t) die Änderungsrate des Volumens ist, liefert das Integral das kumulative Volumen.",
+            "acceptable_reasoning": "Analogie: V = r·t gilt nur für konstante Rate; Integral verallgemeinert auf variable Rate.",
+            "watch_outs": [
+              "Schüler:innen vergessen häufig den Anfangsbestand — das Integral gibt nur die Änderung, nicht das Gesamtvolumen.",
+              "Konzeptuelle Lücke: Warum integriert man eine Rate? Diese Frage muss explizit geklärt werden.",
+              "Einheiten konsistent halten: m³/min × min = m³."
+            ],
+            "rubric": [
+              { "criterion": "Integralansatz", "levels": ["Fehlt", "Ansatz korrekt aufgestellt"] },
+              { "criterion": "Berechnung (a)", "levels": ["Rechenfehler", "40 m³ korrekt"] },
+              { "criterion": "Gesamtvolumen (b)", "levels": ["Anfangsbestand vergessen oder falsch", "50 m³ korrekt"] },
+              { "criterion": "Interpretation (c)", "levels": ["Keine oder oberflächliche Erklärung", "Rate-Mengen-Zusammenhang erklärt", "Vollständige Erklärung inkl. Analogie zu konstantem Fall"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "open_response",
+            "prompt": "Überlege dir einen eigenen Anwendungskontext (aus Physik, Wirtschaft oder Alltag), in dem ein bestimmtes Integral sinnvoll eingesetzt werden kann. Beschreibe:\n(a) Was wird durch die Funktion f(x) dargestellt?\n(b) Was bedeutet das Integral ∫ₐᵇ f(x) dx in diesem Kontext?\n(c) Welche Einheiten haben f(x), x und das Integral?\nBewerte abschließend kurz: Ist dein Modell realistisch? Welche Vereinfachungen hast du vorgenommen?",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 70 },
+            "cognitive_level": "create",
+            "dimensions": ["DM", "KA"],
+            "serves": [
+              { "competence_id": "MAT.OS.8.GRU2.02", "relation": "deepens" },
+              { "competence_id": "MAT.OS.x.HAN.01", "relation": "exercises" }
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "Musterlösung (individuell): Zum Beispiel — f(t) = Leistung eines Sonnenpanels in Watt, t in Stunden. ∫₆¹⁸ f(t) dt = erzeugte Energie in Wh. Einheiten: W, h, Wh. Vereinfachung: Wetterverhältnisse als konstant angenommen. Bewertungsmaßstab: Kontext klar beschrieben; Integral sinnvoll interpretiert; Einheiten konsistent; kritische Reflexion vorhanden.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen wählen manchmal Kontexte, in denen das Integral keine sinnvolle Bedeutung hat (z. B. f = Temperatur, x = Ort — Einheiten ergeben keinen physikalischen Sinn).",
+              "Einheitencheck ist hier besonders wichtig: [f] · [x] muss eine sinnvolle Einheit ergeben.",
+              "Förderung von Kreativität: Verschiedene Lösungen akzeptieren, solange die Logik stimmt."
+            ],
+            "rubric": [
+              { "criterion": "Kontext", "levels": ["Unklar oder unpassend", "Verständlich beschrieben", "Originell und vollständig"] },
+              { "criterion": "Interpretation des Integrals", "levels": ["Falsch oder fehlt", "Sachlich korrekt"] },
+              { "criterion": "Einheiten", "levels": ["Fehlen oder inkonsistent", "Konsistent und korrekt"] },
+              { "criterion": "Reflexion/Vereinfachungen", "levels": ["Fehlt", "Mindestens eine Vereinfachung benannt", "Kritische Auseinandersetzung mit Modellgrenzen"] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "id": "c0004.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Lies den folgenden Stammbaum-Text sorgfältig:\n\n„In einer Familie sind Großvater und Großmutter mütterlicherseits beide braun-äugig. Ihre Tochter (die Mutter) ist ebenfalls braun-äugig, ihr Sohn (Onkel) ist blau-äugig. Der Vater im Haushalt ist blau-äugig. Die Kinder des Paares: Kind 1 ist braun-äugig, Kind 2 ist blau-äugig.“\n\nBraune Augen (B) sind dominant, blaue Augen (b) sind rezessiv.\n\n(a) Welchen Genotyp müssen beide Großeltern haben? Begründe.\n(b) Warum ist der Onkel blau-äugig, obwohl beide Eltern (die Großeltern) braune Augen haben?\n(c) Welchen Genotyp hat die Mutter mit Sicherheit? Welchen könnte Kind 1 haben?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "W",
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.ERK.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 14,
+    "answer_key": "(a) Beide Großeltern müssen heterozygot Bb sein: Da ihr Sohn blau-äugig (bb) ist, muss er von jedem Elternteil ein b-Allel geerbt haben. Also haben beide Großeltern mindestens ein b – und da sie braun-äugig sind (B vorhanden), sind sie Bb. (b) Der Onkel hat von jedem Elternteil das rezessive b-Allel erhalten – das ist ein 25 %-Ereignis bei Bb × Bb. Das rezessive Allel war bei den Großeltern verborgen (heterozygot), tritt aber auf, wenn ein Nachkomme zwei b-Allele erhält. (c) Die Mutter ist sicher Bb (weil Vater bb ist und Kind 1 braun-äugig, trägt Kind 1 ein B von der Mutter; die Mutter muss also B haben; und da sie von den Großeltern Bb jeweils ein Allel erbte, ist sie Bb). Kind 1 ist zwingend Bb (ein b vom Vater, ein B von der Mutter).",
+    "acceptable_reasoning": "Für (c): Da Vater bb ist, trägt jedes braun-äugige Kind zwingend Bb. Schüler:innen, die BB für möglich halten, liegen falsch.",
+    "rubric": [],
+    "watch_outs": [
+      "Schüler:innen stolpern oft über den Unterschied 'Genotyp kann man nicht sehen' – der Stammbaum zwingt uns, rückwärts zu schließen, was ungewohnt ist.",
+      "Manche Schüler:innen glauben, wenn beide Eltern braun-äugig sind, müssen alle Kinder braun-äugig sein. Das Gegenbeispiel (blau-äugiger Onkel) ist der zentrale Erkenntnismoment dieser Aufgabe."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Biologie",
+  "klasse": 4,
+  "kompetenzbereich": "Erkenntnisse gewinnen (E)",
+  "competences": [
+    "BIO.US.x.ERK.04"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "W",
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0004",
+  "source": "ai",
+  "created_at": "2026-06-25T11:35:34+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

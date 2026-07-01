@@ -1,0 +1,91 @@
+{
+  "id": "c0135.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "textanalyse",
+    "prompt": "Untersuche das Gedicht auf sprachliche Mittel (z. B. Metaphern, Personifikationen, Vergleiche, Wiederholungen). Fülle die Tabelle aus: Notiere mindestens vier Beispiele, benenne das jeweilige Stilmittel und erkläre in einem Satz, welche Wirkung es im Kontext des Gedichts hat.",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Textstelle (Zitat)",
+        "Stilmittel",
+        "Wirkung/Funktion im Text"
+      ],
+      "rows": 5
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "LB",
+      "TK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DEU.OS.7.LIT.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "DEU.OS.7.TEX.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Textspezifisch; Lehrperson ergänzt passende Beispiele aus dem konkreten Gedicht. Bewertungsrelevant: korrektes Erkennen des Stilmittels, präzises Zitat, und vor allem eine nachvollziehbare Wirkungsaussage (nicht nur 'macht es schöner', sondern z. B. 'vermittelt das Gefühl von Unendlichkeit' oder 'betont die Kluft zwischen Wunsch und Realität').",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Identifikation des Stilmittels",
+        "levels": [
+          "Stilmittel überwiegend falsch benannt",
+          "Stilmittel meist korrekt, gelegentliche Fehler",
+          "Stilmittel durchgehend korrekt identifiziert"
+        ]
+      },
+      {
+        "criterion": "Wirkungsaussage",
+        "levels": [
+          "Wirkung fehlt oder ist zu allgemein ('macht es schöner')",
+          "Wirkung benannt, aber nicht spezifisch auf den Textkontext bezogen",
+          "Wirkung präzise und textspezifisch erläutert"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Häufigster Fehler: Funktion wird zu allgemein beschrieben ('macht es lebendiger'). Einfordern, dass die Wirkung auf den spezifischen Inhalt/die Stimmung dieses Gedichts bezogen wird.",
+      "Schüler:innen verwechseln gelegentlich Metapher und Vergleich. Kurze Wiederholung: Vergleich mit 'wie/als', Metapher ohne explizites Vergleichswort."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "textanalyse",
+  "subject": "Deutsch",
+  "klasse": 7,
+  "kompetenzbereich": "Literarische Bildung",
+  "competences": [
+    "DEU.OS.7.LIT.02",
+    "DEU.OS.7.TEX.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "LB",
+    "TK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0135",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:20+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

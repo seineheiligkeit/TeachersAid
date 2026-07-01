@@ -1,0 +1,90 @@
+{
+  "id": "c0078.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Analysiere den folgenden Vorgang:\nEin Stück Holz wird verbrannt. Danach liegt Asche vor. Die Masse der Asche ist viel geringer als die ursprüngliche Masse des Holzes.\n\na) Handelt es sich um eine chemische Reaktion? Nenne drei Kennzeichen, die du bei der Verbrennung beobachten kannst.\nb) Erkläre, warum die Asche leichter ist als das ursprüngliche Holz — obwohl bei der Verbrennung nichts 'verschwunden' ist.\nc) Formuliere eine Formelgleichung (oder Wortgleichung) für die vollständige Verbrennung von Kohlenstoff.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "E",
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.US.x.ERK.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "a) Ja, chem. Reaktion. Kennzeichen: Lichterscheinung (Flamme), Wärmeentwicklung, neue Stoffe (CO₂, H₂O, Asche), Farbänderung. b) CO₂ und H₂O entweichen als Gase in die Luft — sie sind nicht weg, aber nicht mehr sichtbar als Feststoff. Die Masse der Produkte (CO₂ + H₂O + Asche) entspricht der Masse der Edukte (Holz + Sauerstoff). c) C + O₂ → CO₂ (Wortgleichung: Kohlenstoff + Sauerstoff → Kohlenstoffdioxid)",
+    "acceptable_reasoning": "Schüler:innen müssen die Massenzunahme durch Sauerstoff nicht explizit berechnen; die Aussage 'Gase entweichen' ist ausreichend.",
+    "rubric": [
+      {
+        "criterion": "Kennzeichen der Reaktion",
+        "levels": [
+          "Drei korrekte Kennzeichen",
+          "Zwei korrekte Kennzeichen",
+          "Eines oder keines"
+        ]
+      },
+      {
+        "criterion": "Erklärung Massenänderung",
+        "levels": [
+          "Gase entweichen, Masse bleibt erhalten erklärt",
+          "Gase erwähnt aber unklar",
+          "Keine Erklärung"
+        ]
+      },
+      {
+        "criterion": "Formel/Wortgleichung",
+        "levels": [
+          "Edukte und Produkt korrekt",
+          "Partial korrekt",
+          "Fehlt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen denken oft, Masse 'verschwindet' bei Verbrennung — Massenerhaltung explizit betonen",
+      "Vollständige vs. unvollständige Verbrennung unterscheiden (CO₂ vs. CO) — auf Vollverbrennung beschränken",
+      "Drei Kennzeichen verlangen — Schüler:innen nennen oft nur eines"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Chemie",
+  "klasse": 4,
+  "kompetenzbereich": "Erkenntnisse gewinnen und interpretieren (E)",
+  "competences": [
+    "CHE.US.x.ERK.03"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "E",
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0078",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:13+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

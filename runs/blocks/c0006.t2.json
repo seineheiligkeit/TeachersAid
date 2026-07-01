@@ -1,0 +1,66 @@
+{
+  "id": "c0006.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "ordering",
+    "prompt": "Bringe die folgenden Phasen eines Trainingszyklus in die richtige Reihenfolge (1 = zuerst, 4 = zuletzt). Erkläre in 2–3 Sätzen, was in jeder Phase im Körper passiert.",
+    "payload": {
+      "kind": "ordering",
+      "items": [
+        "A — Erholung: Der Körper repariert und passt sich an.",
+        "B — Ermüdung: Leistungsfähigkeit sinkt kurz nach der Belastung.",
+        "C — Belastung: Training findet statt, der Körper wird gefordert.",
+        "D — Superkompensation: Die Leistungsfähigkeit steigt leicht über das Ausgangsniveau."
+      ]
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 40.0
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "MET"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BUS.US.3.MET.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Reihenfolge: C (Belastung) → B (Ermüdung) → A (Erholung) → D (Superkompensation). Erklärung: Beim Training (C) werden Muskeln beansprucht und kleine Schäden gesetzt, was unmittelbar zur Ermüdung (B) führt. In der Erholungsphase (A) repariert der Körper diese Schäden und baut etwas mehr Kapazität auf als zuvor. Das Ergebnis ist die Superkompensation (D): ein leicht höheres Leistungsniveau, das für das nächste Training ausgenutzt werden soll.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Superkompensation ist ein vereinfachtes Modell — es erklärt das Prinzip, aber einzelne Sportler:innen reagieren unterschiedlich; das kurz erwähnen.",
+      "B (Ermüdung) und A (Erholung) werden manchmal vertauscht — darauf achten, dass Ermüdung unmittelbar nach der Belastung eintritt."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "ordering",
+  "subject": "Bewegung und Sport",
+  "klasse": 3,
+  "kompetenzbereich": "Methodenkompetenz",
+  "competences": [
+    "BUS.US.3.MET.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "MET"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0006",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T12:59:15+00:00"
+}

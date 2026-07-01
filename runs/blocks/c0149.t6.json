@@ -1,0 +1,155 @@
+{
+  "id": "c0149.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Die Grafik zeigt die Anzahl der Vergleiche, die zwei verschiedene Suchalgorithmen für eine Liste der Größe n benötigen. Analysiere den Graphen und beantworte die Fragen:\n\na) Welcher Algorithmus braucht bei n = 10 mehr Vergleiche?\nb) Wie viele Vergleiche benötigt der schnellere Algorithmus ungefähr bei n = 8? Was fällt dir am Wachstum auf?\nc) Erkläre in eigenen Worten, warum der langsamere Algorithmus für große Listen deutlich schlechter wird.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "WV",
+      "RB"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "INF.OS.5.PRA.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "a) Der obere Algorithmus (mit mehr Vergleichen) benötigt bei n=10 mehr Vergleiche (~15 laut Graph). b) Der schnellere Algorithmus benötigt bei n=8 ca. 3 Vergleiche; das Wachstum verdoppelt sich nicht bei jeder Verdopplung der Listengröße – es wächst deutlich langsamer als linear (logarithmisch). c) Der langsamere Algorithmus muss im schlechtesten Fall jeden Eintrag prüfen (lineare Suche): Bei doppelter Listengröße braucht er doppelt so viele Vergleiche. Der schnellere (z. B. binäre Suche) halbiert den Suchbereich bei jedem Schritt.",
+    "acceptable_reasoning": "Sinngemäß korrekt; 'logarithmisch' muss nicht zwingend genannt werden, aber die Idee des halbierenden Suchbereichs sollte erkennbar sein.",
+    "rubric": [
+      {
+        "criterion": "Ablesefähigkeit",
+        "levels": [
+          "Alle Werte korrekt abgelesen",
+          "Ein Fehler beim Ablesen",
+          "Mehrere Fehler"
+        ]
+      },
+      {
+        "criterion": "Erklärung des Wachstumsunterschieds",
+        "levels": [
+          "Halbierungsprinzip oder Äquivalent klar erklärt",
+          "Vage ('ist schneller'), kein Mechanismus",
+          "Fehlt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen lesen Graphen oft nur an Einzelpunkten ab – die Wachstumsrate (Steigung) ist entscheidend.",
+      "Binäre Suche setzt eine sortierte Liste voraus – dieser Vorbedingung Aufmerksamkeit schenken.",
+      "Nicht verwechseln: Anzahl Vergleiche ≠ Ausführungszeit; Vergleiche sind hier ein Proxy für Aufwand."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Informatik",
+  "klasse": 5,
+  "kompetenzbereich": "Praktische Informatik",
+  "competences": [
+    "INF.OS.5.PRA.03"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "WV",
+    "RB"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:function_graph",
+      "spec": {
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            8
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            9,
+            15
+          ],
+          [
+            10,
+            15
+          ]
+        ],
+        "connect": true,
+        "xlabel": "Schritt n",
+        "ylabel": "Vergleiche",
+        "title": "Anzahl der Vergleiche – welche Kurve passt?",
+        "xmin": 0,
+        "xmax": 10,
+        "ymin": 0,
+        "ymax": 16
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0149",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:25+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

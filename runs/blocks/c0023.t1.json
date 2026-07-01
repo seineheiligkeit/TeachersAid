@@ -1,0 +1,67 @@
+{
+  "id": "c0023.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "ordering",
+    "prompt": "Ordne die folgenden Schritte zur zeichnerischen Ausführung einer Spiegelung an einer Geraden g in die richtige Reihenfolge.\n\nSchritte:\n(A) Verbinde jeden Urbildpunkt mit seinem Spiegelbild durch eine gerade Linie — diese Strecken müssen alle die Spiegelachse im rechten Winkel schneiden und auf ihr halbiert werden.\n(B) Zeichne für jeden Eckpunkt P des Originals eine Senkrechte auf die Spiegelachse g.\n(C) Verbinde die Spiegelbildpunkte zum Spiegelbild des Objekts.\n(D) Trage auf der Senkrechten auf der anderen Seite der Achse den gleichen Abstand ab — das ergibt den Spiegelbildpunkt P'.\n(E) Miss den Abstand von P zur Spiegelachse.",
+    "payload": {
+      "kind": "ordering",
+      "items": [
+        "(A) Verbindungslinien zur Kontrolle einzeichnen",
+        "(B) Senkrechte auf die Spiegelachse zeichnen",
+        "(C) Spiegelbildpunkte verbinden",
+        "(D) Abstand auf der anderen Seite abtragen",
+        "(E) Abstand von P zur Achse messen"
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "H2"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GEZ.US.4.TRA.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Korrekte Reihenfolge: B → E → D → A → C (Senkrechte zeichnen → Abstand messen → auf anderer Seite abtragen → Kontrolllinien → Spiegelbild verbinden). Schritt A ist optional als Kontrollschritt, kann auch am Ende stehen.",
+    "acceptable_reasoning": "Reihenfolge B → E → D → C (ohne expliziten Schritt A) ebenfalls akzeptieren.",
+    "rubric": [],
+    "watch_outs": [
+      "Schüler:innen vergessen oft den 90°-Winkel zur Achse — darauf explizit hinweisen.",
+      "Der Abstand muss auf beiden Seiten der Achse gleich sein — häufig wird das nicht kontrolliert."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "ordering",
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Transformationen von Objekten und Relationen zwischen Objekten (I2)",
+  "competences": [
+    "GEZ.US.4.TRA.02"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "H2"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0023",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

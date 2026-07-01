@@ -1,0 +1,80 @@
+{
+  "id": "c0047.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "design_task",
+    "prompt": "Entwirf in Worten einen Grundriss für ein kleines Gartenhaus (ca. 12 m², für Werkzeug + kleinen Arbeitsbereich). Beschreibe: Wie ist das Haus aufgeteilt (Zonen/Bereiche)? Wo sitzt die Tür, wo das Fenster? Welche Gestaltungskriterien haben deine Entscheidungen geleitet? Nenne mindestens drei.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "create",
+    "dimensions": [
+      "ENT"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "TED.US.3.ENT.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Möglicher Entwurf: Lagerbereich (Regale an Wand, ~8 m²) + Arbeitsbereich (Werkbank unter Fenster, ~4 m²). Tür: an der schmaleren Seite, von Garten erreichbar. Fenster: an der Arbeitswerkbank-Wand für natürliches Licht. Gestaltungskriterien: Funktion (getrennte Zonen), Tageslicht (Fenster über Werkbank), Zugänglichkeit (breite Tür für Geräte), Stauraummaximierung (Regale an 3 Wänden). Kein Mustergrundriss — Bewertung nach Konsistenz von Kriterien und Entwurf.",
+    "acceptable_reasoning": "Jeder Entwurf, der die Kriterien explizit mit der Raumanordnung verknüpft, ist akzeptabel.",
+    "rubric": [
+      {
+        "criterion": "Zonierung sinnvoll",
+        "levels": [
+          "Keine Zonierung oder unpraktische Anordnung",
+          "Sinnvolle Aufteilung mit Begründung"
+        ]
+      },
+      {
+        "criterion": "Gestaltungskriterien benannt und verknüpft",
+        "levels": [
+          "Kriterien genannt, aber kein Bezug zum Entwurf",
+          "Kriterien direkt mit Entwurfsentscheidungen verknüpft"
+        ]
+      },
+      {
+        "criterion": "Praktikabilität",
+        "levels": [
+          "Entwurf wäre in der Praxis nicht nutzbar",
+          "Entwurf ist funktional und realistisch"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen vergessen oft die Tür (zu eng für Schubkarren, nach innen aufgehend blockiert Regal) — praktische Konsequenzen thematisieren.",
+      "12 m² ist eine konkrete Vorgabe — darauf bestehen, dass Schüler:innen die Raumgröße realistisch einschätzen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "design_task",
+  "subject": "Technik und Design",
+  "klasse": 3,
+  "kompetenzbereich": "Entwicklung",
+  "competences": [
+    "TED.US.3.ENT.01"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "ENT"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0047",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

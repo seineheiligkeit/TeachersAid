@@ -1,0 +1,100 @@
+{
+  "id": "c0154.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Verwende den Satz von Bayes in seiner Formelform, um das Ergebnis aus der vorigen Aufgabe zu bestätigen. Gegeben sind:\n• P(K) = 10/200 = 0,05 (Prävalenz)\n• P(P|K) = 0,9 (Sensitivität)\n• P(P|K̄) = 0,05 (Falsch-Positiv-Rate)\nBerechne P(K|P) mit der Formel P(K|P) = [P(P|K) · P(K)] / P(P), wobei P(P) = P(P|K) · P(K) + P(P|K̄) · P(K̄).",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "FO"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.OS.6.BES.06",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "P(K̄) = 1 − 0,05 = 0,95. P(P) = 0,9 · 0,05 + 0,05 · 0,95 = 0,045 + 0,0475 = 0,0925. P(K|P) = (0,9 · 0,05) / 0,0925 = 0,045 / 0,0925 ≈ 0,4865 ≈ 48,65 %. Stimmt mit dem Häufigkeitsansatz überein (kleine Abweichung durch Rundung auf 200 Personen).",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "P(P) korrekt berechnet",
+        "levels": [
+          "Fehlt oder falsch",
+          "Teilweise (ein Term fehlt)",
+          "0,0925 korrekt"
+        ]
+      },
+      {
+        "criterion": "P(K|P) Endresultat",
+        "levels": [
+          "Fehlt",
+          "Ansatz richtig, Rechenfehler",
+          "≈ 48,65 % korrekt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen müssen P(P) als Summe aus beiden möglichen Wegen berechnen — häufig wird P(P|K̄) · P(K̄) vergessen.",
+      "Einsetzen in die Formel ohne Verständnis reicht nicht — Ergebnis mit dem Häufigkeitsbaum vergleichen lassen.",
+      "Unterschied zwischen P(P|K) (Sensitivität, Trefferquote) und P(K|P) (positiver Vorhersagewert) explizit thematisieren."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Mathematik",
+  "klasse": 6,
+  "kompetenzbereich": "Beschreibende Statistik; Wahrscheinlichkeit",
+  "competences": [
+    "MAT.OS.6.BES.06"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "FO"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:math_formula",
+      "spec": {
+        "latex": "P(A \\mid B) = \\frac{P(B \\mid A) \\cdot P(A)}{P(B)}"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0154",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:26+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

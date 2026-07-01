@@ -1,0 +1,125 @@
+{
+  "id": "c0077.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Schau dir das Balkendiagramm (Abb. 1) mit den pH-Werten verschiedener Alltagsstoffe an.\n\na) Ordne die sieben Stoffe in drei Gruppen ein: sauer (pH < 7), neutral (pH = 7) und basisch (pH > 7). Trage sie in die Tabelle ein.\nb) Welcher Stoff hat den niedrigsten pH-Wert? Was bedeutet das für seine chemische Eigenschaft?",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Sauer (pH < 7)",
+        "Neutral (pH = 7)",
+        "Basisch (pH > 7)"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.US.x.ALL.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Sauer: Zitronensaft, Essig, saurer Regen, Milch. Neutral: keiner der gezeigten Stoffe liegt exakt bei 7. Basisch: Blut, Backpulver-Lösung, Ammoniak.\nb) Zitronensaft (pH ≈ 2) — stärkste Säure in der Liste; je niedriger der pH-Wert, desto mehr H⁺-Ionen, desto saurer.",
+    "acceptable_reasoning": "Schüler:innen dürfen Blut wegen pH 7,4 als „fast neutral” beschreiben; wichtig ist die korrekte Zuordnung über/unter 7.",
+    "rubric": [
+      {
+        "criterion": "Korrekte Einordnung",
+        "levels": [
+          "Alle 7 Stoffe richtig zugeordnet",
+          "5–6 Stoffe richtig",
+          "Weniger als 5 richtig"
+        ]
+      },
+      {
+        "criterion": "Begründung zu Zitronensaft",
+        "levels": [
+          "H⁺-Ionen / stärkste Säure genannt",
+          "Nur 'niedrigster pH' ohne Erklärung",
+          "Keine sinnvolle Begründung"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Milch mit pH 6,7 ist leicht sauer — viele Schüler:innen erwarten sie als neutral; explizit ansprechen",
+      "Blut mit pH 7,4 ist leicht basisch, nicht neutral — biologisch bedeutsam",
+      "Diagramm ablesen: y-Achse von 0 beginnen — auf korrekte Skalierung achten"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Chemie",
+  "klasse": 4,
+  "kompetenzbereich": null,
+  "competences": [
+    "CHE.US.x.ALL.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Zitronensaft",
+          "Essig",
+          "Regen (sauer)",
+          "Milch",
+          "Blut",
+          "Backpulver-Lösung",
+          "Ammoniak"
+        ],
+        "values": [
+          2.0,
+          3.0,
+          4.5,
+          6.7,
+          7.4,
+          8.3,
+          11.5
+        ],
+        "title": "pH-Werte ausgewählter Alltagsstoffe",
+        "xlabel": "Stoff",
+        "ylabel": "pH-Wert"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0077",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:13+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

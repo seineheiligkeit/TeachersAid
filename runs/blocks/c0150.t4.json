@@ -1,0 +1,85 @@
+{
+  "id": "c0150.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Du entwickelst zwei Anwendungen:\n\n– **Anwendung A**: Eine App, die Musikdateien von einem Server herunterlädt. Die Datei muss vollständig und fehlerfrei ankommen.\n– **Anwendung B**: Ein Online-Multiplayer-Spiel, das alle 50 Millisekunden die Position der Spielfiguren überträgt. Minimal-Verzögerung ist wichtiger als vollständige Lieferung.\n\nEntscheide für jede Anwendung, ob du TCP oder UDP verwenden würdest, und begründe deine Wahl.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Wähle für jede Anwendung das passende Protokoll (TCP oder UDP) und begründe."
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 40.0
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "AG",
+      "RB"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "INF.OS.5.INF2.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Anwendung A → TCP: Der Drei-Wege-Handshake und die Empfangsbestätigungen stellen sicher, dass alle Pakete ankommen und in der richtigen Reihenfolge zusammengesetzt werden – fehlende Pakete werden erneut angefordert. Anwendung B → UDP: Bei Echtzeit-Daten (Spielpositionen) ist Aktualität wichtiger als Vollständigkeit; veraltete Positionsdaten, die zu spät eintreffen, sind wertlos; UDP spart den Overhead der Bestätigungen.",
+    "acceptable_reasoning": "Kernargument muss genannt sein: TCP = Zuverlässigkeit durch Bestätigung; UDP = Geschwindigkeit durch Verzicht auf Bestätigung.",
+    "rubric": [
+      {
+        "criterion": "Korrekte Zuordnung beider Anwendungen",
+        "levels": [
+          "Beide korrekt",
+          "Eine korrekt",
+          "Keine korrekt"
+        ]
+      },
+      {
+        "criterion": "Qualität der Begründung",
+        "levels": [
+          "Trade-off klar benannt und auf Anwendungsfall angewendet",
+          "Nur Protokolleigenschaft genannt, kein Bezug zum Szenario",
+          "Fehlt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen neigen dazu, TCP immer zu bevorzugen ('ist ja zuverlässiger') – der Trade-off Latenz vs. Zuverlässigkeit muss explizit gemacht werden.",
+      "UDP ist nicht 'unzuverlässig im schlechten Sinne' – es ist eine bewusste Designentscheidung.",
+      "Videostreaming (Netflix) nutzt heute meist TCP oder HTTP/3 (QUIC über UDP) – das Bild ist also nicht so schwarz-weiß; für diese Aufgabe genügt die vereinfachte Darstellung."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Informatik",
+  "klasse": 5,
+  "kompetenzbereich": "Informatiksysteme",
+  "competences": [
+    "INF.OS.5.INF2.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "AG",
+    "RB"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0150",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:26+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

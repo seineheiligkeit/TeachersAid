@@ -1,0 +1,61 @@
+{
+  "id": "phy-strahlung.str.t7#compact",
+  "block": {
+    "id": "phy-strahlung.str.t7_compact",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "experiment_protocol",
+    "prompt": "Versuch mit Zählrohr: Miss die Zählrate (Impulse pro Sekunde) bei zwei verschiedenen Abständen zur Schulquelle (z. B. 5 cm und 20 cm). Notiere die Werte und beschreibe in einem Satz, wie die Zählrate mit dem Abstand zusammenhängt.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.4.STR.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Zählrate sinkt mit zunehmendem Abstand; größerer Abstand = weniger Strahlung pro Fläche = einfache Schutzmaßnahme.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Hintergrundstrahlung muss vor dem Experiment gemessen und notiert werden; ohne Nullwert sind Vergleiche irreführend"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "experiment_protocol",
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Strahlung und Radioaktivität",
+  "competences": [
+    "PHY.US.4.STR.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "compact",
+  "family": "phy-strahlung.str.t7",
+  "assets": [],
+  "status": "approved",
+  "provenance": "variant:phy-strahlung.str.t7",
+  "source": "ai",
+  "created_at": "2026-06-25T18:13:26+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

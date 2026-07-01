@@ -1,0 +1,74 @@
+{
+  "id": "c0011.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne jedem Begriff auf der linken Seite die passende Erklärung auf der rechten Seite zu.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "These / Behauptung",
+        "Argument / Begründung",
+        "Beispiel / Beleg",
+        "Gegenargument"
+      ],
+      "right": [
+        "Eine konkrete Situation oder ein Fall, der die Begründung veranschaulicht",
+        "Eine Aussage, die man vertritt und die man begründen möchte",
+        "Eine Einwand, der die eigene Position in Frage stellt",
+        "Eine Erklärung, warum die These stimmt oder sinnvoll ist"
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "SCH",
+      "SPR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DEU.US.2.SCH.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "These → 'Eine Aussage, die man vertritt …'; Argument → 'Eine Erklärung, warum die These stimmt …'; Beispiel → 'Eine konkrete Situation oder ein Fall …'; Gegenargument → 'Ein Einwand, der die eigene Position in Frage stellt'.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "'Argument' und 'Beispiel' werden oft verwechselt: Das Argument erklärt das Warum, das Beispiel zeigt ein konkretes Wann/Wo.",
+      "Bevor Schüler:innen weiterschreiben, sicherstellen, dass diese Unterscheidung sitzt – sie ist das Fundament aller folgenden Aufgaben."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Deutsch",
+  "klasse": 2,
+  "kompetenzbereich": "Schreiben",
+  "competences": [
+    "DEU.US.2.SCH.03"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "SCH",
+    "SPR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0011",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

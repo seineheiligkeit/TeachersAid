@@ -1,0 +1,67 @@
+{
+  "id": "c0053.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "ordering",
+    "prompt": "Look at these sentences. They are parts of a short self-introduction, but they are in the wrong order. Number them 1–5 (1 = first sentence).",
+    "payload": {
+      "kind": "ordering",
+      "items": [
+        "A — My hobbies are football and listening to music.",
+        "B — Hello! My name is Ben and I am eleven years old.",
+        "C — Nice to meet you!",
+        "D — I live in Salzburg, Austria, with my mum, my dad and my sister.",
+        "E — My favourite subject at school is PE."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "SPR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS1.US.1.SPR.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Correct order: B → D → E → A → C (i.e. 2, 4, 5, 1, 3 — or B first, C last; middle order flexible)",
+    "acceptable_reasoning": "Das Grußelement (B) kommt zuerst, der Abschluss (C) zuletzt; die drei Mittelteile können in verschiedener Reihenfolge kommen.",
+    "rubric": [],
+    "watch_outs": [
+      "Es gibt keine einzig richtige Reihenfolge für die Mittelelemente — wichtig ist, dass die Einleitung (B) am Anfang und 'Nice to meet you!' (C) am Ende steht",
+      "Dieses Muster (Begrüßung → Infos → Abschluss) als Vorlage für eigene Vorstellung festhalten"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "ordering",
+  "subject": "Erste lebende Fremdsprache",
+  "klasse": 1,
+  "kompetenzbereich": "Sprechen (an Gesprächen teilnehmen und zusammenhängend sprechen)",
+  "competences": [
+    "FS1.US.1.SPR.03"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "SPR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0053",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

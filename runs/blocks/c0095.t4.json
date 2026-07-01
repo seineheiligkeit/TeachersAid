@@ -1,0 +1,120 @@
+{
+  "id": "c0095.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb3"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Abbildung 3 zeigt die Bevölkerungsentwicklung städtischer Gemeinden (Index: 2000 = 100). Erkläre:\n(a) Was bedeutet es, wenn der Index über 100 steigt?\n(b) Was könnten Ursachen für das stärkere Wachstum der städtischen Gemeinden sein?\n(c) Welche Folgen könnte anhaltende Abwanderung für eine periphere Gemeinde haben?\n\nHinweis: Die Kurve zeigt nur die städtischen Gemeinden. Überlege, wie eine zweite Kurve für periphere Gemeinden aussehen könnte.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 8
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "UK",
+      "OK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.ZEN.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "(a) Index > 100: Bevölkerung ist gewachsen (relativ zu 2000). (b) Ursachen: Arbeitsplätze, Bildungseinrichtungen, Infrastruktur, sozialer Anschluss. (c) Folgen Abwanderung: weniger Steuereinnahmen → Abbau Infrastruktur → weitere Abwanderung (Abwärtsspirale). Schulen und Ärzte werden geschlossen. Immobilienleerstand. Eine periphere Kurve würde wahrscheinlich unter 100 verlaufen oder stagnieren.",
+    "acceptable_reasoning": "Die zweite Kurve (periphere Gemeinden) ist nicht gezeigt – das ist bewusst. Schüler:innen sollen begründet schlussfolgern.",
+    "rubric": [
+      {
+        "criterion": "Indexverständnis",
+        "levels": [
+          "Begriff nicht erklärt",
+          "Erklärung vorhanden aber ungenau",
+          "Korrekte und klare Erklärung"
+        ]
+      },
+      {
+        "criterion": "Schlussfolgerung Abwanderung",
+        "levels": [
+          "Keine Folgen genannt",
+          "Eine Folge genannt",
+          "Mehrere Folgen, Spiraldynamik angedeutet"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Achtung: Abwanderung und Schrumpfung sind sensible Themen – einige Schüler:innen kommen aus betroffenen Regionen. Wertfrei formulieren; peripher ist nicht 'schlechter', sondern 'anders'.",
+      "Die Abbildung zeigt nur städtische Gemeinden – das kann als Lücke thematisiert werden: Warum wurde die periphere Kurve weggelassen? (Datenverfügbarkeit, Vereinfachung)"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Zentren und Peripherien in Österreich",
+  "competences": [
+    "GWB.US.3.ZEN.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "UK",
+    "OK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb3",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:line",
+      "spec": {
+        "title": "Bevölkerungsentwicklung: Städtische Gemeinden vs. periphere Gemeinden Österreichs 2000–2023 (Index: 2000 = 100)",
+        "xlabel": "Jahr",
+        "ylabel": "Index (2000 = 100)",
+        "log": false,
+        "categories": [
+          "2000",
+          "2005",
+          "2010",
+          "2015",
+          "2020",
+          "2023"
+        ],
+        "values": [
+          100.0,
+          104.0,
+          110.0,
+          116.0,
+          122.0,
+          126.0
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0095",
+  "source": "ai",
+  "created_at": "2026-06-26T19:02:29+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

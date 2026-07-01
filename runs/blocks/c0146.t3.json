@@ -1,0 +1,188 @@
+{
+  "id": "c0146.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1",
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_analysis",
+    "prompt": "Vergleiche die Abbildungen 1 und 2 (BIP pro Kopf und CO₂-Ausstoß pro Kopf im Ländervergleich).\n\na) Welcher Zusammenhang fällt dir zwischen wirtschaftlichem Wohlstand und CO₂-Ausstoß auf?\nb) Gibt es Ausreißer – Länder, die viel CO₂ pro Kopf ausstoßen, aber ein vergleichsweise geringes BIP haben (oder umgekehrt)? Was könnte das erklären?\nc) Was bedeutet dieser Zusammenhang für die globale Klimadiskussion: Darf wirtschaftliches Wachstum mit steigenden Emissionen verbunden sein?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "SYN",
+      "REF"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.OS.8.CHA.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "GWB.OS.8.POL.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "a) Generell gilt: höheres BIP pro Kopf geht mit höherem CO₂-Ausstoß pro Kopf einher – Industrialisierung und Konsum sind energieintensiv. b) Ausreißer: Länder wie Katar/Kuwait (hohes CO₂, hohes BIP durch Ölindustrie); einige Schwellenländer mit kohlebasierter Industrie (z. B. Südafrika, Mongolei) haben hohen CO₂-Ausstoß bei mittlerem BIP; Frankreich hat relativ geringen CO₂-Ausstoß trotz hohem BIP (Kernkraft). c) Aus dieser Datengrundlage lassen sich zwei Positionen ableiten: 1) Wachstum = mehr Emissionen, daher Wachstum begrenzen (Degrowth-Position); 2) Technologischer Wandel entkoppelt Wachstum von Emissionen ('Green Growth'); beide Positionen neutral darstellen.",
+    "acceptable_reasoning": "Schüler:innen können eigene plausible Ausreißer-Hypothesen formulieren.",
+    "rubric": [
+      {
+        "criterion": "Zusammenhangserkennung",
+        "levels": [
+          "Kein Zusammenhang erkannt",
+          "Zusammenhang beschrieben ohne Begründung",
+          "Zusammenhang mit Verweis auf Industrialisierung erklärt",
+          "Differenziert mit Ausreißern und Erklärungen"
+        ]
+      },
+      {
+        "criterion": "Klimadiskussion",
+        "levels": [
+          "Nicht beantwortet",
+          "Einseitige Position",
+          "Zwei Positionen genannt",
+          "Zwei Positionen erklärt und abgewogen"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Korrelation ≠ Kausalität – dieser Zusammenhang wird oft mechanisch als Ursache-Wirkung gedeutet.",
+      "Fehlvorstellung: 'Arme Länder stoßen wenig CO₂ aus, also tragen sie keine Mitverantwortung.' Bestimmte Entwicklungsländer stoßen heute viel CO₂ aus (z. B. China, Indien als Gesamtemittenten)."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_analysis",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 8,
+  "kompetenzbereich": "Chancen und Gefahren der Globalisierung erörtern",
+  "competences": [
+    "GWB.OS.8.CHA.02",
+    "GWB.OS.8.POL.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "SYN",
+    "REF"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "title": "BIP pro Kopf im Ländervergleich (aktuellstes Jahr, in USD)",
+        "xlabel": "Land",
+        "ylabel": "BIP pro Kopf (USD)",
+        "log": false,
+        "categories": [
+          "Österreich",
+          "Deutschland",
+          "Schweiz",
+          "Italien",
+          "USA",
+          "China",
+          "Indien",
+          "Nigeria"
+        ],
+        "values": [
+          58269,
+          56104,
+          103998,
+          40385,
+          84534,
+          13303,
+          2695,
+          1084
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "worldbank_bip_pro_kopf",
+        "series": "vergleich",
+        "note": null,
+        "title": "BIP pro Kopf im Ländervergleich",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD",
+        "attribution": "Datenquelle: World Bank – data.worldbank.org (NY.GDP.PCAP.CD, CC BY 4.0)",
+        "stand": "2024"
+      },
+      "illustrative": false,
+      "caption": null
+    },
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "title": "CO₂-Ausstoß pro Kopf im Ländervergleich (in Tonnen)",
+        "xlabel": "Land",
+        "ylabel": "CO₂-Ausstoß pro Kopf (t)",
+        "log": false,
+        "categories": [
+          "Österreich",
+          "Deutschland",
+          "Schweiz",
+          "Italien",
+          "USA",
+          "China",
+          "Indien",
+          "Nigeria"
+        ],
+        "values": [
+          6.3,
+          6.9,
+          3.7,
+          5.1,
+          13.6,
+          9.3,
+          2.2,
+          0.6
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "worldbank_co2_pro_kopf",
+        "series": "vergleich",
+        "note": null,
+        "title": "CO₂-Ausstoß pro Kopf im Ländervergleich",
+        "url": "https://data.worldbank.org/indicator/EN.GHG.CO2.PC.CE.AR5",
+        "attribution": "Datenquelle: World Bank – data.worldbank.org (EN.GHG.CO2.PC.CE.AR5, CC BY 4.0)",
+        "stand": "2024"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0146",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:24+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

@@ -1,0 +1,86 @@
+{
+  "id": "c0124.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Österreich stößt laut Diagramm etwa 6,3 Tonnen CO₂ pro Kopf und Jahr aus. Das Pariser Klimaabkommen strebt an, die Erderwärmung auf 1,5 °C zu begrenzen. Wissenschaftlerinnen und Wissenschaftler schätzen, dass dafür der weltweite Pro-Kopf-Ausstoß bis 2050 auf unter 2 Tonnen sinken muss. Um wie viel Prozent müsste Österreich seinen Pro-Kopf-Ausstoß senken?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.4.WET.05",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.US.4.WET.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Reduktion: 6,3 − 2,0 = 4,3 t. Prozentuale Reduktion: 4,3/6,3 × 100 ≈ 68,3 %. Österreich müsste seinen Pro-Kopf-Ausstoß um rund 68 % senken.",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Rechenweg",
+        "levels": [
+          "Differenz und Prozent korrekt",
+          "Einer der Schritte korrekt",
+          "Keine sinnvolle Rechnung"
+        ]
+      },
+      {
+        "criterion": "Einheit und Formulierung",
+        "levels": [
+          "% korrekt verwendet und erklärt",
+          "Zahl richtig, Einheit fehlt",
+          "Fehlt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "2-Tonnen-Ziel ist eine vereinfachte Schätzung für den Unterricht — in der Realität gibt es verschiedene Szenarien. Das Ziel ist die Rechnung und das Größenverständnis.",
+      "Verwechslung absolute Reduktion (4,3 t) vs. prozentuale Reduktion (68 %) vermeiden."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Wetter und Klima",
+  "competences": [
+    "PHY.US.4.WET.05",
+    "PHY.US.4.WET.04"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "W",
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0124",
+  "source": "ai",
+  "created_at": "2026-06-27T15:21:18+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

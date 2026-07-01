@@ -1,0 +1,86 @@
+{
+  "id": "c0134.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Emulgatoren wie Lecithin (E322) werden eingesetzt, um Öl und Wasser in Lebensmitteln (z. B. Mayonnaise, Schokolade) stabil zu mischen. Erkläre mithilfe der Molekülstruktur von Lecithin (Phospholipid), warum eine solche Mischung ohne Emulgator nicht stabil ist und wie der Emulgator das Problem löst. Beziehe dich dabei auf die Begriffe 'hydrophil' und 'hydrophob'.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 7
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "WO",
+      "EG"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.OS.8.CHE.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "CHE.OS.8.STR2.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Öl und Wasser mischen sich nicht, weil Wasser polar (hydrophil) ist und Öl unpolar (hydrophob) – nach dem Prinzip 'Gleiches löst Gleiches'. Lecithin ist ein Phospholipid mit einem polaren, hydrophilen Kopf (Phosphatgruppe + Cholin) und zwei unpolaren, hydrophoben Fettsäureschwänzen. In der Emulsion lagert sich Lecithin an der Öl-Wasser-Grenzfläche an: Der hydrophobe Schwanz taucht ins Öl, der hydrophile Kopf ins Wasser. So wird die Öltröpfchenoberfläche von Lecithin umhüllt, und die Tröpfchen können sich nicht wieder zusammenlagern – die Emulsion ist stabil.",
+    "acceptable_reasoning": "Schüler:innen, die den Begriff 'amphiphil' (= gleichzeitig hydrophil und hydrophob) verwenden, zeigen erhöhtes Niveau.",
+    "rubric": [
+      {
+        "criterion": "Erklärung der Unmischbarkeit",
+        "levels": [
+          "Polarität / hydrophil-hydrophob-Prinzip korrekt angewendet",
+          "Unmischbarkeit erwähnt, keine Begründung",
+          "Keine Erklärung"
+        ]
+      },
+      {
+        "criterion": "Funktion des Emulgators",
+        "levels": [
+          "Amphiphile Struktur und Grenzflächenwirkung korrekt beschrieben",
+          "Funktion qualitativ richtig, Struktur nicht erklärt",
+          "Keine korrekte Funktionsbeschreibung"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Häufige Fehlvorstellung: 'Der Emulgator löst das Öl auf.' – Er löst es nicht auf, sondern stabilisiert die Grenzfläche. Die Tröpfchen bleiben getrennt, werden aber fein verteilt und stabilisiert.",
+      "Die Fettsäureschwänze sind unpolar wegen der langen Kohlenwasserstoffketten – Schüler:innen sollten dies strukturell begründen können."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Chemie",
+  "klasse": 8,
+  "kompetenzbereich": "Chemische Grundlagen des Lebens",
+  "competences": [
+    "CHE.OS.8.CHE.01",
+    "CHE.OS.8.STR2.01"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "WO",
+    "EG"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0134",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:20+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

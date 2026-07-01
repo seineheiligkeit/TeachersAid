@@ -1,0 +1,77 @@
+{
+  "id": "c0083.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "multiple_choice",
+    "prompt": "Welche der folgenden Gleichungen hat die Lösung x = 5?",
+    "payload": {
+      "kind": "multiple_choice",
+      "options": [
+        "2x + 1 = 10",
+        "3x − 2 = 13",
+        "4x = 20",
+        "x + 7 = 11"
+      ],
+      "select": "many"
+    },
+    "response": {
+      "mode": "choices",
+      "options": [
+        "2x + 1 = 10",
+        "3x − 2 = 13",
+        "4x = 20",
+        "x + 7 = 11"
+      ],
+      "select": "many"
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "OPE"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.2.VAR.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 4,
+    "answer_key": "3x − 2 = 13 (3·5−2=13 ✓) und 4x = 20 (4·5=20 ✓). Die erste (2·5+1=11≠10) und die letzte (5+7=12≠11) sind falsch.",
+    "acceptable_reasoning": "Einsetzen von x = 5 in jede Gleichung und Überprüfen der Gleichheit.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen prüfen häufig nur die erste Option und hören auf — darauf hinweisen, alle zu prüfen.",
+      "Vorzeichen bei 3x − 2 genau beachten."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "multiple_choice",
+  "subject": "Mathematik",
+  "klasse": 2,
+  "kompetenzbereich": "2: Variablen und Funktionen",
+  "competences": [
+    "MAT.US.2.VAR.02"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "OPE"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0083",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:17+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

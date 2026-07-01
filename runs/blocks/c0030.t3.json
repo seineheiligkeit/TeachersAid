@@ -1,0 +1,60 @@
+{
+  "id": "c0030.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Lisa bekommt monatlich 30 € Taschengeld. Die folgende Tabelle zeigt, was sie sich kaufen möchte. Fülle die leeren Felder aus und beantworte die Frage darunter.\n\n| Ausgabe | Betrag (€) | Grundbedürfnis oder Wunsch? |\n|---|---|---|\n| Mittagessen (Schule) | 12,00 | |\n| Kino | 8,50 | |\n| Handy-Kredit | 6,00 | |\n| Sportverein | 5,00 | |\n| **Gesamt** | | |\n\nKann Lisa alles kaufen? Was würdest du ihr empfehlen?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 40.0
+    },
+    "cognitive_level": "apply",
+    "dimensions": [
+      "UK",
+      "HK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.1.LEB.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Mittagessen: Grundbedürfnis (Ernährung); Kino: Wunsch; Handy-Kredit: Wunsch; Sportverein: kann als soziales Bedürfnis oder Wunsch eingestuft werden. Gesamt: 31,50 € > 30 € → Lisa hat 1,50 € zu wenig. Empfehlung: z. B. auf Kino verzichten oder günstigeren Handy-Tarif wählen.",
+    "acceptable_reasoning": "Jede nachvollziehbare Sparempfehlung unter Beibehaltung des Mittagessens gilt.",
+    "rubric": [],
+    "watch_outs": [
+      "Schüler:innen rechnen manchmal falsch (Kommazahlen); Lehrperson kann die Summe an der Tafel bestätigen.",
+      "Sportverein ist bewusst grenzwertig – fördert die Diskussion über soziale Teilhabe als Bedürfnis."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 1,
+  "kompetenzbereich": "Leben und Wirtschaften im eigenen Umfeld",
+  "competences": [
+    "GWB.US.1.LEB.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "UK",
+    "HK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0030",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

@@ -1,0 +1,186 @@
+{
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Österreichische Gesellschaftsentwicklung",
+  "title": "Österreichs Bevölkerung seit 1960",
+  "kernfrage": "Wie hat sich die Bevölkerung Österreichs seit 1960 verändert, und was steckt hinter diesem Wachstum?",
+  "body": {
+    "intro": [],
+    "data_figures": [
+      {
+        "id": "abb1",
+        "intent": "trend",
+        "title": "Bevölkerung Österreichs im Zeitverlauf (1960–2024)",
+        "xlabel": "Jahr",
+        "ylabel": "Bevölkerung (Millionen)",
+        "data_source": {"dataset_id": "worldbank_at_bevoelkerung", "series": "verlauf"}
+      }
+    ],
+    "assets": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Den Trend ablesen und beschreiben",
+        "throughline": "Schüler:innen erschließen den Bevölkerungsverlauf Österreichs aus realen Daten, lernen den Unterschied zwischen Geburtenüberschuss und Zuwanderung als Wachstumstreiber kennen und üben, Diagramminformationen kritisch zu lesen und zu interpretieren.",
+        "talking_points": [
+          "Österreich hatte 1960 rund 7 Millionen Einwohner:innen – heute sind es über 9 Millionen: das entspricht mehr als einem Viertel Zuwachs in 65 Jahren.",
+          "Das Wachstum verlief nicht gleichmäßig: In den 1970er Jahren stagnierte die Bevölkerung sogar leicht, während die 1990er und 2000er Jahre starkes Wachstum durch Zuwanderung brachten.",
+          "Bevölkerungswachstum entsteht durch zwei Quellen: natürliche Bevölkerungsbewegung (Geburten minus Sterbefälle) und Wanderungsbewegung (Zuzug minus Wegzug).",
+          "Für Österreich ist Zuwanderung seit den 1990ern der wichtigere Wachstumsfaktor – der Geburtenüberschuss ist seit Jahrzehnten sehr gering oder sogar negativ."
+        ],
+        "extensions": [
+          "Vergleich mit einem anderen kleinen europäischen Land (z.B. Schweiz oder Tschechien): Zeigen beide ähnliche Muster?",
+          "Recherche: Welche historischen Ereignisse (Gastarbeiterzuwanderung ab den 1960ern, EU-Osterweiterung 2004, Fluchtbewegungen 2015/16) erklären die Wachstumsschübe?",
+          "Diskussion: Ist Bevölkerungswachstum immer ein Zeichen von Stärke? Welche Herausforderungen bringt es mit sich?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "open_response",
+            "prompt": "Beschreibe anhand der Abbildung (Abb. 1) den Verlauf der Bevölkerungsentwicklung in Österreich von 1960 bis 2024 in zwei bis drei Sätzen. Nenne dabei die ungefähren Werte zu Beginn und Ende des dargestellten Zeitraums.",
+            "payload": null,
+            "response": {"mode": "lines", "n": 4},
+            "cognitive_level": "remember",
+            "dimensions": ["OK"],
+            "serves": [{"competence_id": "GWB.US.3.OST.01", "relation": "exercises"}],
+            "est_minutes": 5,
+            "asset_refs": ["abb1"],
+            "answer_key": "Die Bevölkerung Österreichs ist von rund 7,0 Millionen im Jahr 1960 auf rund 9,2 Millionen im Jahr 2024 gewachsen. Das entspricht einem Anstieg um etwa 2,2 Millionen Menschen. Der Zuwachs verlief nicht gleichmäßig: In den 1970er Jahren stagnierte die Bevölkerung vorübergehend, danach stieg sie vor allem ab den 1990er Jahren deutlicher an.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen lesen oft die Y-Achse falsch und geben absolute Zahlen statt Millionen an – auf die Einheit der Achse hinweisen.",
+              "Manche verwechseln den leichten Rückgang in den 1970er Jahren mit einem dauerhaften Trend – im Diagramm sichtbar machen, dass es sich um eine kurze Stagnationsphase handelt."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "multiple_choice",
+            "prompt": "Welche Aussage über die Bevölkerungsentwicklung Österreichs von 1960 bis 2024 ist laut Abb. 1 korrekt?",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "Die Bevölkerung Österreichs ist in jedem Jahr seit 1960 gewachsen.",
+                "Die stärkste Wachstumsphase fand in den 1970er Jahren statt.",
+                "Zwischen ca. 1975 und 1990 verlief das Wachstum deutlich langsamer als davor und danach.",
+                "Die Bevölkerung Österreichs hat sich seit 1960 verdoppelt."
+              ],
+              "select": "one"
+            },
+            "response": {"mode": "choices", "options": ["A", "B", "C", "D"], "select": "one"},
+            "cognitive_level": "understand",
+            "dimensions": ["OK"],
+            "serves": [{"competence_id": "GWB.US.3.OST.01", "relation": "exercises"}],
+            "est_minutes": 4,
+            "asset_refs": ["abb1"],
+            "answer_key": "C – Zwischen ca. 1975 und 1990 verlief das Wachstum deutlich langsamer als davor und danach. In diesem Zeitraum stagnierte die Bevölkerungszahl bei rund 7,5 bis 7,7 Millionen, während in der Nachfolgezeit deutlicheres Wachstum eintrat.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Option A ist falsch: Es gab Ende der 1970er Jahre sogar leichte Rückgänge.",
+              "Option D ist falsch: Von 7,0 auf 9,2 Millionen ist ein Zuwachs von ca. 30%, keine Verdoppelung."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "open_response",
+            "prompt": "Bevölkerungswachstum entsteht durch zwei Quellen: natürliche Bevölkerungsbewegung und Wanderungsbewegung. Erkläre in eigenen Worten, was diese beiden Begriffe bedeuten.",
+            "payload": null,
+            "response": {"mode": "lines", "n": 5},
+            "cognitive_level": "understand",
+            "dimensions": ["OK", "UK"],
+            "serves": [{"competence_id": "GWB.US.3.OST.01", "relation": "exercises"}],
+            "est_minutes": 6,
+            "asset_refs": [],
+            "answer_key": "Natürliche Bevölkerungsbewegung bezeichnet den Unterschied zwischen Geburten und Sterbefällen in einem bestimmten Zeitraum. Wenn mehr Menschen geboren werden als sterben, wächst die Bevölkerung durch natürliches Wachstum. Wanderungsbewegung (Migration) bezeichnet den Unterschied zwischen Zuzug in ein Land (Einwanderung/Zuwanderung) und Wegzug aus einem Land (Auswanderung/Abwanderung). Wenn mehr Menschen zuwandern als abwandern, spricht man von einem positiven Wanderungssaldo.",
+            "acceptable_reasoning": "Auch Formulierungen wie 'Geburtenrate minus Sterberate' oder 'Zuzüge minus Wegzüge' sind korrekt.",
+            "watch_outs": [
+              "Manche Schüler:innen verwechseln 'natürliche Bevölkerungsbewegung' mit 'natürlichem Wachstum' und denken, Zuwanderung sei 'unnatürlich' – dies sachlich korrigieren.",
+              "Auf den Begriff 'Saldo' hinweisen und erklären, dass es sich um eine Differenz handelt."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "true_false_justify",
+            "prompt": "Beurteile die folgenden Aussagen zur Bevölkerungsentwicklung Österreichs. Kreuze an, ob die Aussage richtig oder falsch ist, und begründe deine Entscheidung kurz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Zwischen 1960 und 2024 ist die Bevölkerung Österreichs um mehr als 2 Millionen Menschen gewachsen.",
+                "Wenn ein Land mehr Sterbefälle als Geburten hat, schrumpft seine Bevölkerung immer.",
+                "Zuwanderung kann einen Geburtenrückgang vollständig ausgleichen."
+              ]
+            },
+            "response": {"mode": "table", "columns": ["Aussage", "Richtig/Falsch", "Begründung"], "rows": 3},
+            "cognitive_level": "analyze",
+            "dimensions": ["UK", "OK"],
+            "serves": [{"competence_id": "GWB.US.3.OST.01", "relation": "exercises"}],
+            "est_minutes": 8,
+            "asset_refs": ["abb1"],
+            "answer_key": "1. RICHTIG: Von ca. 7,0 Mio. (1960) auf ca. 9,2 Mio. (2024) sind es rund 2,2 Millionen mehr. 2. FALSCH: Wenn trotz mehr Sterbefällen als Geburten genug Menschen zuwandern, kann die Gesamtbevölkerung trotzdem wachsen. 3. RICHTIG/DISKUTIERBAR: Zuwanderung kann zahlenmäßig einen negativen Geburtenüberschuss ausgleichen – ob das 'vollständig' gilt, hängt vom Umfang der Zuwanderung ab. Österreich ist ein Beispiel dafür.",
+            "acceptable_reasoning": "Bei Aussage 3 sind differenzierte Antworten zu werten: Zuwanderung kann Geburtendefizite rechnerisch ausgleichen, bringt aber auch eigene soziale Herausforderungen mit sich.",
+            "watch_outs": [
+              "Aussage 2 ist eine häufige Fehlvorstellung – Schüler:innen denken, Bevölkerungsrückgang sei die automatische Folge eines negativen Geburtenüberschusses.",
+              "Bei Aussage 3 auf die Qualität der Begründung achten, nicht nur auf 'richtig/falsch'."
+            ],
+            "rubric": [
+              {"criterion": "Korrekte Einstufung (r/f)", "levels": ["Alle 3 korrekt", "2 von 3 korrekt", "1 oder 0 korrekt"]},
+              {"criterion": "Qualität der Begründung", "levels": ["Sachlich korrekte, vollständige Begründung mit Bezug auf die Daten", "Begründung vorhanden, aber unvollständig oder ungenau", "Keine oder sachlich falsche Begründung"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "open_response",
+            "prompt": "Die Bevölkerung Österreichs wächst seit Jahrzehnten vor allem durch Zuwanderung. Diskutiere, welche Folgen ein solches Wachstum für Österreich haben kann – sowohl mögliche Vorteile als auch mögliche Herausforderungen. Nenne je mindestens zwei Aspekte.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 50},
+            "cognitive_level": "evaluate",
+            "dimensions": ["UK", "HK"],
+            "serves": [{"competence_id": "GWB.US.3.OST.02", "relation": "exercises"}],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Mögliche Vorteile: Zuwanderung sichert Arbeitskräfte in Branchen mit Fachkräftemangel; sie gleicht den Bevölkerungsrückgang durch niedrige Geburtenzahlen aus; kulturelle Vielfalt bereichert die Gesellschaft; Zugewanderte zahlen Steuern und Sozialversicherungsbeiträge, die das Pensionssystem mitfinanzieren. Mögliche Herausforderungen: Integration erfordert Investitionen in Sprache, Bildung und Wohnen; bei rascher Zuwanderung kann sozialer Sprengstoff entstehen; die Infrastruktur (Schulen, Wohnungen, Verkehr) muss mit dem Wachstum Schritt halten.",
+            "acceptable_reasoning": "Auch andere sachlich korrekte Aspekte sind zu werten. Die Lehrkraft soll auf ausgewogene Argumentation achten – weder rein positive noch rein negative Sichtweise.",
+            "watch_outs": [
+              "Schüler:innen neigen dazu, Zuwanderung entweder ausschließlich positiv oder ausschließlich negativ zu sehen – auf Ausgewogenheit und sachliche Argumentation bestehen.",
+              "Klischees und Vorurteile sachlich und respektvoll ansprechen; auf den Unterschied zwischen persönlicher Meinung und belegten Fakten hinweisen."
+            ],
+            "rubric": [
+              {"criterion": "Anzahl und Qualität der Aspekte", "levels": ["Mindestens je 2 sachlich korrekte Aspekte auf beiden Seiten", "Mindestens 1 Aspekt je Seite, oder 2 nur auf einer Seite", "Nur eine Seite oder keine sachlichen Argumente"]},
+              {"criterion": "Ausgewogenheit der Darstellung", "levels": ["Bewusst beide Seiten berücksichtigt", "Überwiegend eine Perspektive, andere angedeutet", "Nur eine Sichtweise"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "open_response",
+            "prompt": "Die Bevölkerungszahl Österreichs ist laut Prognosen bis 2050 weiter wachsend. Welche Maßnahmen könnte die Politik ergreifen, um auf dieses Wachstum vorbereitet zu sein? Nenne und begründe zwei konkrete Maßnahmen.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 45},
+            "cognitive_level": "create",
+            "dimensions": ["HK", "UK"],
+            "serves": [{"competence_id": "GWB.US.3.OST.01", "relation": "exercises"}],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Beispiele für akzeptable Maßnahmen: (1) Mehr Schulen und Kindergärten bauen, um der wachsenden Zahl an Kindern und Jugendlichen gerecht zu werden – Begründung: Wachstum bedeutet mehr Nachfrage nach Bildungsinfrastruktur. (2) Integrationsprogramme (Sprachkurse, Berufsanerkennung) ausbauen, damit Zugewanderte rasch am Arbeitsmarkt teilnehmen können – Begründung: Integration sichert wirtschaftliche Teilhabe und vermindert soziale Konflikte. (3) Ausbau des öffentlichen Nahverkehrs und des Wohnungsbaus in Ballungsräumen. Andere sachlich begründete Maßnahmen sind ebenfalls korrekt.",
+            "acceptable_reasoning": "Kreative, sachlich fundierte Vorschläge sollen anerkannt werden, auch wenn sie nicht in der Musterliste stehen.",
+            "watch_outs": [
+              "Maßnahmen ohne Begründung nur mit Teilpunkten werten.",
+              "Darauf achten, dass die Maßnahmen wirklich auf das Bevölkerungswachstum eingehen und nicht allgemein politische Wünsche sind."
+            ],
+            "rubric": [
+              {"criterion": "Sachliche Korrektheit der Maßnahmen", "levels": ["Beide Maßnahmen sachlich korrekt und relevant", "Eine Maßnahme korrekt, die andere ungenau", "Keine sachlich passende Maßnahme"]},
+              {"criterion": "Qualität der Begründung", "levels": ["Logisch und nachvollziehbar begründet", "Begründung vorhanden, aber schwach", "Keine Begründung"]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

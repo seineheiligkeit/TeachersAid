@@ -1,0 +1,82 @@
+{
+  "id": "c0155.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "multiple_choice",
+    "prompt": "Ein Astronaut mit einer Masse von 80 kg befindet sich auf dem Mond (Gravitationsbeschleunigung g_Mond = 1,62 m/s²). Welche der folgenden Aussagen ist korrekt?",
+    "payload": {
+      "kind": "multiple_choice",
+      "options": [
+        "A) Die Masse des Astronauten beträgt auf dem Mond ebenfalls 80 kg, sein Gewicht ist aber geringer als auf der Erde.",
+        "B) Die Masse des Astronauten beträgt auf dem Mond 80 kg ÷ 6 ≈ 13 kg.",
+        "C) Das Gewicht des Astronauten beträgt auf dem Mond 80 N.",
+        "D) Masse und Gewicht sind dasselbe und ändern sich gemeinsam mit der Gravitation."
+      ],
+      "select": "one"
+    },
+    "response": {
+      "mode": "choices",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "select": "one"
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.OS.5.MEC.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.OS.x.W.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "A. Masse ist eine unveränderliche Stoffeigenschaft (80 kg überall). Das Gewicht F_G = m · g_Mond = 80 kg · 1,62 m/s² ≈ 130 N, verglichen mit 784 N auf der Erde – also etwa 1/6.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Extrem verbreitete Fehlvorstellung: Masse = Gewicht. Masse ist skalare Stoffmenge (kg), Gewicht ist eine Kraft (N).",
+      "Option C: 80 N wäre F_G = 80 kg · 1 m/s², was physikalisch falsch ist."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "multiple_choice",
+  "subject": "Physik",
+  "klasse": 5,
+  "kompetenzbereich": "Mechanik I",
+  "competences": [
+    "PHY.OS.5.MEC.01",
+    "PHY.OS.x.W.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0155",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:27+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

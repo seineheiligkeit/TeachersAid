@@ -1,0 +1,85 @@
+{
+  "id": "c0112.i1",
+  "block": {
+    "id": "i1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "info",
+    "kind": "prose",
+    "content": "Der **CO₂-Ausstoß pro Kopf** gibt an, wie viele Tonnen Kohlendioxid im Durchschnitt jede Einwohnerin und jeder Einwohner eines Landes jährlich ausstößt. Er berücksichtigt Emissionen aus Energie, Industrie, Verkehr und Gebäude. Die Weltbank erhebt diese Daten jährlich. **Wichtig:** Der Pro-Kopf-Wert und die **Gesamtemissionen** eines Landes sind zwei verschiedene Dinge. Ein Land mit vielen Menschen kann niedrige Pro-Kopf-Emissionen, aber hohe Gesamtemissionen haben — und umgekehrt. Abb. 1 zeigt die Pro-Kopf-Werte für acht ausgewählte Länder.",
+    "callout_role": null,
+    "teacher_note": null,
+    "watch_outs": []
+  },
+  "role": "info",
+  "kind": "prose",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 4,
+  "kompetenzbereich": null,
+  "competences": [],
+  "cognitive_level": null,
+  "dimensions": [],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "title": "CO₂-Ausstoß pro Kopf im Ländervergleich (in t CO₂/Kopf)",
+        "xlabel": "Land",
+        "ylabel": "CO₂-Ausstoß pro Kopf (t/Kopf)",
+        "log": false,
+        "categories": [
+          "Österreich",
+          "Deutschland",
+          "Schweiz",
+          "Italien",
+          "USA",
+          "China",
+          "Indien",
+          "Nigeria"
+        ],
+        "values": [
+          6.3,
+          6.9,
+          3.7,
+          5.1,
+          13.6,
+          9.3,
+          2.2,
+          0.6
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "worldbank_co2_pro_kopf",
+        "series": "vergleich",
+        "note": null,
+        "title": "CO₂-Ausstoß pro Kopf im Ländervergleich",
+        "url": "https://data.worldbank.org/indicator/EN.GHG.CO2.PC.CE.AR5",
+        "attribution": "Datenquelle: World Bank – data.worldbank.org (EN.GHG.CO2.PC.CE.AR5, CC BY 4.0)",
+        "stand": "2024"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0112",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:30+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

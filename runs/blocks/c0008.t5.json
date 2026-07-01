@@ -1,0 +1,60 @@
+{
+  "id": "c0008.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "enactive",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "movement_task",
+    "prompt": "Spielt ein 3-gegen-3 auf kleinem Feld (Handball oder Basketball). Eine Person aus jeder Gruppe beobachtet und notiert: Welche taktischen Elemente siehst du (Freilaufen, Decken, Absichern, Doppeln)? Wechselt nach 3 Minuten. Beantwortet danach: Welches taktische Element war am häufigsten zu sehen, und warum?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "FAC",
+      "MET"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BUS.US.4.FAC.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Häufigstes Element typischerweise: Freilaufen und Decken (weil beide ständig stattfinden, solange gespielt wird). Doppeln ist seltener und meist in kritischen Situationen (in der Nähe des Tors). Absichern wird oft unbewusst ausgeführt. Schüler:innen sollen ihre Beobachtung konkret beschreiben ('Spieler:in X hat sich dreimal kurz freigelaufen, indem sie/er einen Schritt Richtung Tor machte und dann zurücksprintete').",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Die Beobachterrolle ist für Schüler:innen ungewohnt — klaren Beobachtungsauftrag geben, bevor das Spiel beginnt.",
+      "Taktische Begriffe müssen vor der Aufgabe bekannt sein (z. B. aus t2) — dieses Task baut auf dem Vokabular auf."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "movement_task",
+  "subject": "Bewegung und Sport",
+  "klasse": 4,
+  "kompetenzbereich": "Fachkompetenz",
+  "competences": [
+    "BUS.US.4.FAC.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "FAC",
+    "MET"
+  ],
+  "modality": "enactive",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0008",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T12:58:59+00:00"
+}

@@ -1,0 +1,142 @@
+{
+  "id": "c0104.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "ordering",
+    "prompt": "Bringe die folgenden Bundesländer nach ihrer Bevölkerungsgröße in die richtige Reihenfolge – beginne mit dem bevölkerungsreichsten Bundesland. Verwende dazu die Abbildung (Abb. 1).\n\nBundesländer: Burgenland · Kärnten · Niederösterreich · Oberösterreich · Salzburg · Steiermark · Tirol · Vorarlberg · Wien",
+    "payload": {
+      "kind": "ordering",
+      "items": [
+        "Burgenland",
+        "Kärnten",
+        "Niederösterreich",
+        "Oberösterreich",
+        "Salzburg",
+        "Steiermark",
+        "Tirol",
+        "Vorarlberg",
+        "Wien"
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Rang",
+        "Bundesland"
+      ],
+      "rows": 9
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "OK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.OST.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "1. Wien (ca. 2,006 Mio.) · 2. Niederösterreich (ca. 1,724 Mio.) · 3. Oberösterreich (ca. 1,530 Mio.) · 4. Steiermark (ca. 1,270 Mio.) · 5. Tirol (ca. 776.000) · 6. Salzburg (ca. 571.500) · 7. Kärnten (ca. 569.700) · 8. Vorarlberg (ca. 410.000) · 9. Burgenland (ca. 301.950)",
+    "acceptable_reasoning": "Schüler:innen lesen die Balkenlängen korrekt ab; leichte Abweichungen in der Reihenfolge bei Salzburg und Kärnten (sehr ähnliche Werte: 571.479 vs. 569.744) sind zu thematisieren.",
+    "rubric": [
+      {
+        "criterion": "Reihenfolge",
+        "levels": [
+          "Alle 9 Bundesländer korrekt gereiht (Wien–Burgenland)",
+          "7–8 korrekt gereiht, 1–2 Nachbarplätze vertauscht",
+          "Weniger als 7 korrekt oder grundlegende Fehler"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Salzburg (571.479) und Kärnten (569.744) liegen extrem nahe beieinander – im Diagramm kaum unterscheidbar. Das ist ein produktiver Anlass, über die Grenzen grafischer Darstellungen zu sprechen.",
+      "Nicht 'Wien hat am meisten Fläche' – Wien ist bevölkerungsreich, aber flächenmäßig das kleinste Bundesland.",
+      "Manche Schüler:innen verwechseln Niederösterreich und Oberösterreich. Die geografische Lage kurz klären."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "ordering",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Österreichische Gesellschaftsentwicklung",
+  "competences": [
+    "GWB.US.3.OST.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "OK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "title": "Bevölkerung der österreichischen Bundesländer (1.1.2024)",
+        "xlabel": "Bundesland",
+        "ylabel": "Bevölkerung (Personen)",
+        "log": false,
+        "categories": [
+          "Burgenland",
+          "Kärnten",
+          "Niederösterreich",
+          "Oberösterreich",
+          "Salzburg",
+          "Steiermark",
+          "Tirol",
+          "Vorarlberg",
+          "Wien"
+        ],
+        "values": [
+          3.3,
+          6.2,
+          18.8,
+          16.7,
+          6.2,
+          13.9,
+          8.5,
+          4.5,
+          21.9
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "statistik_austria_bundeslaender_2024",
+        "series": "bevoelkerung",
+        "note": null,
+        "title": "Bevölkerung der österreichischen Bundesländer (1.1.2024)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2024",
+        "attribution": "Datenquelle: Statistik Austria – data.statistik.gv.at (CC BY 4.0)",
+        "stand": "2024-01-01"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0104",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:23+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

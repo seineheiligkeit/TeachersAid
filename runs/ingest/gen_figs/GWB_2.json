@@ -1,0 +1,486 @@
+{
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 4,
+  "kompetenzbereich": "Entwicklungen in einer globalisierten Welt",
+  "title": "Weltbevölkerung und Urbanisierung",
+  "kernfrage": "Warum wächst die Weltbevölkerung so ungleich – und was hat das damit zu tun, wo und wie Menschen wohnen?",
+  "body": {
+    "intro": [],
+    "assets": [
+      {
+        "id": "abb1",
+        "role": "figure",
+        "generator": "matplotlib:bar_chart",
+        "spec": {
+          "categories": [
+            "Afrika",
+            "Asien",
+            "Europa",
+            "Lat.Amerika",
+            "Nordamerika",
+            "Ozeanien"
+          ],
+          "values": [
+            1.46,
+            4.79,
+            0.74,
+            0.66,
+            0.38,
+            0.04
+          ],
+          "title": "Weltbevölkerung nach Kontinenten 2024 (Mrd. Personen)",
+          "xlabel": "Kontinent",
+          "ylabel": "Bevölkerung in Milliarden"
+        }
+      },
+      {
+        "id": "abb2",
+        "role": "figure",
+        "generator": "matplotlib:bar_chart",
+        "spec": {
+          "categories": [
+            "1950",
+            "1970",
+            "1990",
+            "2010",
+            "2024",
+            "2050*"
+          ],
+          "values": [
+            29,
+            36,
+            43,
+            51,
+            57,
+            68
+          ],
+          "title": "Anteil der Stadtbevölkerung an der Weltbevölkerung (%) – *Prognose",
+          "xlabel": "Jahr",
+          "ylabel": "Anteil in Prozent"
+        }
+      },
+      {
+        "id": "abb3",
+        "role": "figure",
+        "generator": "matplotlib:bar_chart",
+        "spec": {
+          "categories": [
+            "Niger",
+            "Mali",
+            "Angola",
+            "DR Kongo",
+            "Somalia",
+            "Deutschland",
+            "Japan",
+            "Österreich",
+            "Südkorea",
+            "Italien"
+          ],
+          "values": [
+            6.8,
+            5.9,
+            5.6,
+            5.3,
+            5.2,
+            1.58,
+            1.2,
+            1.46,
+            0.78,
+            1.24
+          ],
+          "title": "Gesamtfertilitätsrate ausgewählter Länder 2023 (Kinder je Frau)",
+          "xlabel": "Land",
+          "ylabel": "Gesamtfertilitätsrate"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Bevölkerungsverteilung auf der Erde",
+        "throughline": "Schüler:innen lesen Bevölkerungsdaten ab, erkennen die ungleiche Verteilung und stellen erste Fragen nach den Ursachen.",
+        "talking_points": [
+          "Vorwissen aktivieren: Wie viele Menschen leben auf der Erde? Welche Kontinente sind am dichtesten besiedelt? (Intuitionen abfragen, dann mit Diagramm abgleichen.)",
+          "Unterschied Bevölkerungszahl vs. Bevölkerungsdichte ansprechen – Europa hat viel weniger Menschen als Asien, ist aber dichter besiedelt als etwa Australien.",
+          "Demografischen Wandel ankündigen: Warum wächst die Bevölkerung in einigen Regionen rasant, in anderen kaum?"
+        ],
+        "extensions": [
+          "Bevölkerungsdichte berechnen: Fläche Afrikas und Asiens recherchieren und Dichte mit den Diagrammdaten vergleichen.",
+          "Diskussion: Gibt es eine ideale Weltbevölkerungszahl? Was müsste gegeben sein, damit alle Menschen gut leben können?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "data_interpretation",
+            "prompt": "Sieh dir Abb. 1 an, das die Weltbevölkerung nach Kontinenten zeigt.\na) Auf welchem Kontinent leben die meisten Menschen? Wie viele Milliarden sind es?\nb) Wie viele Menschen leben insgesamt auf der Erde (Wert aus dem Diagramm hochrechnen)?\nc) Europa hat eine ähnlich große Landfläche wie Nordamerika, aber mehr als doppelt so viele Einwohner:innen. Was könnte das erklären?",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "remember",
+            "dimensions": [
+              "OK"
+            ],
+            "serves": [
+              {
+                "competence_id": "GWB.US.4.ENT2.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "asset_refs": [
+              "abb1"
+            ],
+            "answer_key": "a) Asien mit ca. 4,79 Mrd. Menschen. b) Summe aller Werte ≈ 8,07 Mrd. (entspricht Weltbevölkerung 2024). c) Europa ist historisch dichter besiedelt durch frühe Industrialisierung, gute Agrarflächen, politische Stabilität; Nordamerika wurde erst spät besiedelt und hat große unbewohnbare Flächen (Arktis, Wüsten, Präriegebiete).",
+            "acceptable_reasoning": "Bei c) zählen historisch-geografische Argumente – keine vollständige Liste erwartet.",
+            "watch_outs": [
+              "Schüler:innen übersehen oft, dass das Diagramm absolute Zahlen zeigt, nicht Dichte. Bevölkerungsdichte ist ein eigenes Konzept.",
+              "Vorsicht mit dem Begriff Überbevölkerung – er ist normativ geladen; neutrale Begriffe bevorzugen: Bevölkerungswachstum, Bevölkerungsdynamik."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "data_interpretation",
+            "prompt": "Abb. 3 zeigt die Gesamtfertilitätsrate (durchschnittliche Kinderzahl je Frau) in ausgewählten Ländern.\na) Beschreibe den Unterschied zwischen den afrikanischen und den europäischen Ländern im Diagramm.\nb) Eine Bevölkerung wächst langfristig, wenn die Fertilitätsrate über etwa 2,1 liegt (Bestandserhaltungsniveau). Welche der dargestellten Länder wachsen, welche schrumpfen?\nc) Was könnten Gründe dafür sein, dass die Fertilitätsrate in manchen Ländern so viel höher ist als in anderen?",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 8
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "UK",
+              "OK"
+            ],
+            "serves": [
+              {
+                "competence_id": "GWB.US.4.ENT2.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "asset_refs": [
+              "abb3"
+            ],
+            "answer_key": "a) Afrikanische Länder haben Raten zwischen ca. 5,2 und 6,8, europäische Länder zwischen ca. 0,78 und 1,58 – ein sehr großer Unterschied. b) Wachsend: alle fünf afrikanischen Länder (>2,1); Schrumpfend: Deutschland, Japan, Österreich, Südkorea, Italien (alle <2,1). c) Gründe für hohe Rate: niedrige Kindersterblichkeit wird erst langsam (demographischer Übergang), Kinder als Altersvorsorge, geringer Zugang zu Verhütung, fehlende Bildung für Frauen, hohe Kindersterblichkeit als kultureller Sicherheitspuffer. Gründe für niedrige Rate: Bildung und Berufstätigkeit von Frauen, hohe Lebenskosten, späte Familienplanung, sicheres Rentensystem.",
+            "acceptable_reasoning": "Einzelne Gründe aus dem demographischen Übergangsmodell genügen – vollständiges Modell nicht gefordert in Kl. 4.",
+            "watch_outs": [
+              "Vermeiden: direkte Verknüpfung Armut = hohe Fertilitätsrate als einfaches Kausalverhältnis. Es geht um Entwicklungsstand, Bildung, Gesundheitsversorgung.",
+              "Südkoreas Wert (0,78) ist der niedrigste der Welt – als Extrembeispiel besonders diskussionswürdig."
+            ],
+            "rubric": [
+              {
+                "criterion": "Unterschied beschrieben",
+                "levels": [
+                  "Klare Beschreibung mit Zahlen",
+                  "Tendenz erkannt ohne Zahlen",
+                  "Nicht erkannt"
+                ]
+              },
+              {
+                "criterion": "Wachsend/schrumpfend korrekt zugeordnet",
+                "levels": [
+                  "Alle 10 Länder korrekt",
+                  "Mindestens 7 korrekt",
+                  "Weniger als 7"
+                ]
+              },
+              {
+                "criterion": "Gründe plausibel erklärt",
+                "levels": [
+                  "Mindestens 2 entwicklungsbezogene Gründe",
+                  "1 Grund",
+                  "Keine plausiblen Gründe"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Urbanisierung – die Welt zieht in die Stadt",
+        "throughline": "Den globalen Trend zur Verstädterung verstehen und seine Ursachen, Chancen und Herausforderungen abwägen.",
+        "talking_points": [
+          "Urbanisierung als globaler Megatrend: 2024 lebt erstmals mehr als die Hälfte der Weltbevölkerung in Städten.",
+          "Mega-Cities vorstellen: Tokio (37 Mio.), Delhi (33 Mio.), Shanghai (29 Mio.) – Dimensionen greifbar machen (Österreichs Bevölkerung als Vergleich: 9 Mio.).",
+          "Unterschied zwischen Urbanisierung in Industrieländern (langsam, geplant) und Ländern des Globalen Südens (schnell, oft ungeplant → informelle Siedlungen) herausarbeiten."
+        ],
+        "extensions": [
+          "Kartenmaterial: Verbreitung von Megastädten auf einer Weltkarte markieren und Muster diskutieren.",
+          "Zukunftsszenario: Welche Stadt Afrikas wird 2100 die größte der Welt sein? (Prognosen recherchieren – Lagos oder Kinshasa.)"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "data_interpretation",
+            "prompt": "Abb. 2 zeigt, wie sich der Anteil der Stadtbevölkerung an der Weltbevölkerung seit 1950 entwickelt hat.\na) Beschreibe den Verlauf des Diagramms in eigenen Worten.\nb) Was bedeutet es, wenn 2050 laut Prognose 68 % der Menschen in Städten leben? Nenne zwei mögliche Herausforderungen und zwei mögliche Vorteile des Stadtlebens.\nc) In welchen Weltregionen verläuft die Urbanisierung aktuell am schnellsten? Warum könnte das so sein?",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 8
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "UK",
+              "OK"
+            ],
+            "serves": [
+              {
+                "competence_id": "GWB.US.4.ENT2.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "asset_refs": [
+              "abb2"
+            ],
+            "answer_key": "a) Kontinuierlicher Anstieg von 29 % (1950) auf 57 % (2024); Prognose 68 % für 2050 – der Trend setzt sich fort. b) Herausforderungen: Wohnungsnot/Slums, Überlastung der Infrastruktur (Wasser, Abwasser, Verkehr), Umweltverschmutzung, soziale Ungleichheit. Vorteile: bessere Jobchancen, Bildung, Gesundheitsversorgung; kulturelle Vielfalt; wirtschaftliche Dynamik. c) Schnellstes Wachstum in Subsahara-Afrika und Südasien – hohe Bevölkerungszuwächse, Landflucht wegen Armut/Klimawandel, Hoffnung auf Arbeit in der Stadt.",
+            "acceptable_reasoning": "Je zwei Punkte pro Kategorie genügen; eigene Formulierungen ausdrücklich willkommen.",
+            "watch_outs": [
+              "Stadtwachstum ≠ Entwicklung: Informelle Siedlungen (Slums) sind Symptom eines ungeplanten Wachstums, kein Fortschritt.",
+              "Österreich-Bezug möglich: Wien wächst durch Zuzug, was ebenfalls Herausforderungen (Wohnungsmarkt) schafft."
+            ],
+            "rubric": [
+              {
+                "criterion": "Trend korrekt beschrieben",
+                "levels": [
+                  "Verlauf mit Zahlen beschrieben",
+                  "Trend erkannt ohne Zahlen",
+                  "Nicht erkannt"
+                ]
+              },
+              {
+                "criterion": "Herausforderungen und Vorteile",
+                "levels": [
+                  "Je 2 plausible Punkte",
+                  "Je 1 Punkt",
+                  "Nur eine Kategorie"
+                ]
+              },
+              {
+                "criterion": "Regionalisierung begründet",
+                "levels": [
+                  "Region korrekt + Begründung",
+                  "Region korrekt ohne Begründung",
+                  "Nicht beantwortet"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "true_false_justify",
+            "prompt": "Beurteile, ob die folgenden Aussagen über Bevölkerungsdynamik und Urbanisierung richtig oder falsch sind, und begründe deine Entscheidung jeweils in einem Satz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Die Weltbevölkerung wächst überall auf der Erde gleich schnell.",
+                "Urbanisierung bedeutet, dass immer mehr Menschen vom Land in die Städte ziehen.",
+                "Eine niedrige Geburtenrate führt automatisch zu einer sinkenden Bevölkerungszahl.",
+                "Megastädte gibt es nur in reichen, industrialisierten Ländern.",
+                "Bevölkerungswachstum und Ressourcenverbrauch hängen eng zusammen."
+              ]
+            },
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Aussage",
+                "Richtig / Falsch",
+                "Begründung"
+              ],
+              "rows": 5
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "UK"
+            ],
+            "serves": [
+              {
+                "competence_id": "GWB.US.4.ENT2.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "1. Falsch – Wachstum ist regional sehr unterschiedlich (schnell in Afrika/Südasien, stagnierend/rückläufig in Europa/Ostasien). 2. Richtig – Definition von Urbanisierung: Zunahme des Anteils der Stadtbevölkerung. 3. Falsch – Migration kann einen Rückgang kompensieren (Zuwanderung erhöht Bevölkerungszahl trotz niedriger Geburtenrate, Beispiel Österreich/Deutschland). 4. Falsch – Viele Megastädte liegen im Globalen Süden (Dhaka, Lagos, Kinshasa, São Paulo). 5. Richtig – mehr Menschen bedeuten mehr Ressourcenbedarf, wenn keine Effizienzgewinne oder nachhaltigere Lebensweise erzielt werden.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Aussage 3 ist eine häufige Fehlvorstellung: Migration wird oft vergessen. Explizit ansprechen.",
+              "Aussage 4 überrascht viele – Liste der größten Städte zeigen, um das zu belegen."
+            ],
+            "rubric": []
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "Globale Herausforderungen durch Bevölkerungsdynamik",
+        "throughline": "Aus Bevölkerungsdaten Konsequenzen ableiten und Handlungsstrategien verschiedener Akteure diskutieren.",
+        "talking_points": [
+          "Ressourcendruck: Wie viel Nahrung, Wasser, Energie brauchen 8 Milliarden Menschen – und wer hat Zugang dazu?",
+          "Klimawandel als Treiber von Migration: Menschen, die wegen Dürre oder Überflutung ihre Heimat verlassen müssen (Klimamigration).",
+          "Lösungsansätze: Bevölkerungspolitik (umstritten), Bildung (v.a. für Mädchen und Frauen), nachhaltige Stadtplanung, internationale Kooperation."
+        ],
+        "extensions": [
+          "Eigene Position formulieren: Sollten reiche Länder demografisch schrumpfende Bevölkerungen durch Zuwanderung ausgleichen?",
+          "Recherche: Was macht die UN-Weltbevölkerungskonferenz und welche Ziele hat sie?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "decision_scenario",
+            "prompt": "Szenario: Eine Großstadt in einem ärmeren Land wächst so schnell, dass Trinkwasser, Schulen und öffentliche Verkehrsmittel nicht mehr für alle reichen. Die Stadtregierung hat begrenzte Mittel und muss Prioritäten setzen.\nWelche Maßnahme würdest du zuerst umsetzen? Begründe deine Entscheidung und erkläre, welche Folgen sie hätte – und welche Folgen du in Kauf nimmst.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Die Stadt hat Geld für genau eine dieser Maßnahmen: (A) Bau neuer Schulen in Randgebieten, (B) Ausbau der Trinkwasserversorgung, (C) Erweiterung des öffentlichen Busnetzes."
+            },
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "UK",
+              "HK"
+            ],
+            "serves": [
+              {
+                "competence_id": "GWB.US.4.ENT2.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Alle drei Entscheidungen sind vertretbar, wenn gut begründet. Musterbegründungen: A (Schulen) – Bildung als langfristige Lösung, reduziert Fertilitätsrate, stärkt Wirtschaft, aber kurzfristig kein direkter Überlebensnutzen. B (Wasser) – unmittelbarster Gesundheitseffekt, rettet Leben, aber löst Bildungs-/Mobilitätsprobleme nicht. C (Busnetz) – verbessert Erreichbarkeit von Arbeit/Schule/Gesundheit, schafft wirtschaftliche Chancen, aber indirekter Effekt.",
+            "acceptable_reasoning": "Keine richtige Antwort – Argumentation und Abwägen von Folgen zählen.",
+            "watch_outs": [
+              "Schüler:innen neigen dazu, alle drei Maßnahmen zu wählen. Die Aufgabe erfordert explizit Priorisierung – einfordern.",
+              "Folgen in Kauf nehmen: explizit fragen, was bei der nicht gewählten Option verloren geht (Trade-off denken)."
+            ],
+            "rubric": [
+              {
+                "criterion": "Klare Entscheidung für eine Maßnahme",
+                "levels": [
+                  "Eindeutige Wahl mit Begründung",
+                  "Wahl ohne Begründung",
+                  "Keine Entscheidung getroffen"
+                ]
+              },
+              {
+                "criterion": "Folgenabwägung",
+                "levels": [
+                  "Positive Folge + Nachteil (Trade-off) erkannt",
+                  "Nur positive Folge",
+                  "Keine Folgenbetrachtung"
+                ]
+              },
+              {
+                "criterion": "Bezug auf Lebensrealität in Wachstumsstadt",
+                "levels": [
+                  "Kontext klar einbezogen",
+                  "Teilweise",
+                  "Kontext ignoriert"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "position_argument",
+            "prompt": "These: \"Bevölkerungswachstum ist das größte Problem der Menschheit – alle anderen Umwelt- und Sozialprobleme entstehen, weil wir zu viele Menschen sind.\"\nNimm Stellung: Stimmst du dieser These zu? Begründe deine Meinung mit mindestens zwei Argumenten. Gehe dabei auch darauf ein, welche anderen Faktoren neben der Bevölkerungszahl eine Rolle spielen könnten.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55
+            },
+            "cognitive_level": "create",
+            "dimensions": [
+              "UK",
+              "HK"
+            ],
+            "serves": [
+              {
+                "competence_id": "GWB.US.4.ENT2.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Die These vereinfacht stark und ist kritisch zu hinterfragen. Argumente für Einschränkung der These: Pro-Kopf-Ressourcenverbrauch in reichen Ländern ist viel höher als in bevölkerungsreichen, ärmeren Ländern (ein US-Amerikaner verursacht 15-mal mehr CO2 als ein Äthiopier); Ungleichverteilung, nicht Zahl, ist das Kernproblem bei Armut/Hunger; technologischer Wandel kann Ressourcenverbrauch entkoppeln. Argumente, die für Bevölkerungsgröße sprechen: absoluter Ressourcenbedarf steigt, Klimadruck, Artensterben. Vollständig ablehnen oder zustimmen jeweils vertretbar – wenn gut argumentiert.",
+            "acceptable_reasoning": "Pro-Kopf-Verbrauch als Konzept muss nicht als Begriff vorkommen – inhaltlich plausible Ausdrucksweise genügt.",
+            "watch_outs": [
+              "Vorsicht vor neo-malthusianischen, rassistisch konnotierten Gedankengängen (Überbevölkerung als Problem des Globalen Südens). Sachliche Korrektur ohne Wertung der Schüler:in.",
+              "Konsum und Lebensstil als Faktoren einbringen – der ökologische Fußabdruck variiert stark zwischen Ländern."
+            ],
+            "rubric": [
+              {
+                "criterion": "Positionierung",
+                "levels": [
+                  "Klare, begründete Position",
+                  "Position erkennbar, kaum begründet",
+                  "Keine Position"
+                ]
+              },
+              {
+                "criterion": "Argumente (mind. 2)",
+                "levels": [
+                  "2+ sachlich korrekte Argumente",
+                  "1 sachliches Argument",
+                  "Keine relevanten Argumente"
+                ]
+              },
+              {
+                "criterion": "Andere Faktoren berücksichtigt",
+                "levels": [
+                  "Mindestens 1 weiterer Faktor (z.B. Konsum, Ungleichheit) klar benannt",
+                  "Angedeutet",
+                  "Nicht berücksichtigt"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "open_response",
+            "prompt": "Österreich hat eine der niedrigsten Geburtenraten Europas und trotzdem wächst die Bevölkerung.\na) Wie ist das möglich? Erkläre in eigenen Worten.\nb) Welche Chancen und welche Herausforderungen bringt das für Österreich mit sich? Nenne je zwei Aspekte.\nc) Welche politischen Maßnahmen könnte Österreich ergreifen, um auf diese Entwicklung zu reagieren?",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 8
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "UK",
+              "HK"
+            ],
+            "serves": [
+              {
+                "competence_id": "GWB.US.4.ENT2.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "a) Wachstum durch Zuwanderung: mehr Menschen ziehen nach Österreich als auswandern (Wanderungsüberschuss) + Anstieg der Lebenserwartung (weniger Sterbefälle). b) Chancen: Arbeitskräfte für Wirtschaft und Sozialversicherungssystem, kulturelle Bereicherung, Ausgleich des demographischen Ungleichgewichts. Herausforderungen: Druck auf Wohnungsmarkt, Integration, soziale Infrastruktur (Schulen, Kitas), gesellschaftliche Debatten. c) Maßnahmen: Integrationspolitik verbessern, Kinderbetreuung ausbauen (erhöht Geburtenrate), qualifizierte Zuwanderung gezielt fördern, Pensionssystem an längere Lebensarbeitszeit anpassen.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Wichtig: Migration neutral und sachlich behandeln – keine wertenden Formulierungen in der Aufgabenstellung oder im Feedback.",
+              "Schüler:innen kennen \"Bevölkerungsrückgang\" oft nur als Negativphänomen – demografischen Wandel als Herausforderung, nicht als Katastrophe einordnen."
+            ],
+            "rubric": []
+          }
+        ]
+      }
+    ]
+  }
+}

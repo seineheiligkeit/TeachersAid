@@ -1,0 +1,91 @@
+{
+  "id": "c0084.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Erfinde eine eigene lineare Funktion, deren Graph durch den Punkt (2 | 7) verläuft und eine negative Steigung hat. Schreibe die Gleichung auf, zeichne den Graphen in ein Koordinatensystem (x von −2 bis 4, y von −2 bis 10) und erkläre, wie du die Gleichung bestimmt hast.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "DAR",
+      "BEG",
+      "OPE"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.4.VAR.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Unendlich viele richtige Antworten. Beispiel: f(x) = −x + 9 (m=−1, b=9; Probe: f(2)=−2+9=7 ✓). Andere Beispiele: −2x+11, −0,5x+8, … Entscheidend: negative Steigung (m<0) und f(2)=7.",
+    "acceptable_reasoning": "m wählen (m<0), dann b = 7 − m·2 bestimmen.",
+    "rubric": [
+      {
+        "criterion": "Negative Steigung",
+        "levels": [
+          "Positive Steigung gewählt",
+          "Null-Steigung",
+          "Negative Steigung korrekt"
+        ]
+      },
+      {
+        "criterion": "Punkt (2|7) liegt auf der Geraden",
+        "levels": [
+          "Nein",
+          "Näherungsweise",
+          "Ja, nachgeprüft"
+        ]
+      },
+      {
+        "criterion": "Herleitung erklärt",
+        "levels": [
+          "Keine Erklärung",
+          "Teilweise",
+          "Vollständig und nachvollziehbar"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Einige Schüler:innen setzen einfach einen Punkt und zeichnen zufällig — Systematik einfordern: erst Gleichung, dann Zeichnung.",
+      "Probe explizit einfordern: Punkt (2|7) wirklich auf der Geraden?"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Mathematik",
+  "klasse": 4,
+  "kompetenzbereich": "2: Variablen und Funktionen",
+  "competences": [
+    "MAT.US.4.VAR.03"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "DAR",
+    "BEG",
+    "OPE"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0084",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:18+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

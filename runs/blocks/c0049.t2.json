@@ -1,0 +1,73 @@
+{
+  "id": "c0049.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Beschreibe, wie ein normales Fahrrad die Kraft der Beine auf das Hinterrad überträgt. Gehe dabei auf folgende Elemente ein: Pedale, Kurbelwelle, Kettenblatt (großes Zahnrad), Kette, Ritzel (kleines Zahnrad am Hinterrad), Hinterradachse. Verwende die Fachbegriffe.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "HER"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "TED.US.4.HER.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Die Beine drücken auf die Pedale. Die Pedale sind an der Kurbelwelle befestigt, die die Kraft in eine Drehbewegung umwandelt. Das Kettenblatt (großes Zahnrad) dreht sich mit der Kurbelwelle. Die Kette überträgt die Drehbewegung auf das Ritzel (kleines Zahnrad am Hinterrad). Da das Ritzel kleiner ist als das Kettenblatt, dreht sich das Hinterrad schneller als die Kurbel. Die Hinterradachse dreht das Rad und treibt das Fahrrad vorwärts.",
+    "acceptable_reasoning": "Jede Beschreibung, die die Kraftübertragung durch alle genannten Elemente in der richtigen Reihenfolge erklärt, ist korrekt.",
+    "rubric": [
+      {
+        "criterion": "Vollständigkeit der Elemente",
+        "levels": [
+          "Weniger als 4 Elemente erwähnt",
+          "Alle 6 Elemente in der Beschreibung"
+        ]
+      },
+      {
+        "criterion": "Übersetzungsprinzip erklärt",
+        "levels": [
+          "Nur Reihenfolge beschrieben, kein Übersetzungsprinzip",
+          "Größenunterschied Kettenblatt/Ritzel als Übersetzungsgrund erklärt"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen beschreiben oft 'Kette dreht das Rad', ohne die Zahnrad-Übersetzung zu erklären — darauf insistieren.",
+      "Ritzel kleiner als Kettenblatt: Hinterrad dreht schneller als Kurbel — das ist der Kern der Übersetzung, nicht übergehen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Technik und Design",
+  "klasse": 4,
+  "kompetenzbereich": "Herstellung",
+  "competences": [
+    "TED.US.4.HER.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "HER"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0049",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

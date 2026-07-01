@@ -1,0 +1,124 @@
+{
+  "id": "c0134.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb3"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Sieh dir das Diagramm (Abb. 3) an, das den Energiegehalt der wichtigsten Makronährstoffe zeigt. Beantworte folgende Fragen:\n(a) Welcher Nährstoff liefert pro Gramm am meisten Energie? Erkläre chemisch, warum das so ist (Hinweis: Oxidationsstufe der Kohlenstoffatome).\n(b) Eine Person isst 50 g Fett, 100 g Kohlenhydrate und 80 g Protein. Berechne die aufgenommene Gesamtenergie in kJ und in kcal (1 kcal ≈ 4,18 kJ).",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 8
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "EG",
+      "WO"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.OS.8.CHE.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "CHE.OS.x.WIS.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "(a) Fette (37 kJ/g). Fette bestehen überwiegend aus langen Kohlenwasserstoffketten, deren C-Atome eine niedrige Oxidationsstufe (im Mittel ca. –2) haben. Bei der Oxidation zu CO₂ (+4) wird sehr viel Energie freigesetzt. Kohlenhydrate dagegen haben bereits höhere mittlere Oxidationsstufen (ca. 0 bei Glucose), daher geringere Energieausbeute. (b) Fett: 50 × 37 = 1850 kJ; KH: 100 × 17 = 1700 kJ; Protein: 80 × 17 = 1360 kJ. Gesamt = 4910 kJ ≈ 1174 kcal.",
+    "acceptable_reasoning": "Schüler:innen, die die Oxidationsstufe von C in Fettsäuren mit –CH₂–-Gruppen (Oxidationsstufe ca. –2) und in Glucose (0) begründen, zeigen tiefes Verständnis.",
+    "rubric": [
+      {
+        "criterion": "Chemische Begründung der Energiedichte von Fett",
+        "levels": [
+          "Oxidationsstufe von C korrekt als Argument verwendet",
+          "Qualitative Aussage ohne Oxidationsstufenargument",
+          "Keine chemische Begründung"
+        ]
+      },
+      {
+        "criterion": "Korrekte Berechnung der Gesamtenergie",
+        "levels": [
+          "Alle drei Werte und Summe korrekt (kJ und kcal)",
+          "Rechnung korrekt, Umrechnung fehlerhaft",
+          "Grundlegende Rechenfehler"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Häufige Fehlvorstellung: 'Fett macht dick, weil es schlecht ist' – hier geht es um chemisch begründete Energiedichte, nicht um moralische Wertung.",
+      "Beim Rechnen: Proteine haben 17 kJ/g, nicht 4 kcal/g pauschal – Schüler:innen verwechseln kJ und kcal. Immer mit einer Einheit arbeiten.",
+      "Die Oxidationsstufe von Kohlenstoff in organischen Verbindungen ist komplex – einfache Faustregel: Je mehr H-Atome am C, desto niedriger die Oxidationsstufe, desto mehr Energie beim Verbrennen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Chemie",
+  "klasse": 8,
+  "kompetenzbereich": "Chemische Grundlagen des Lebens",
+  "competences": [
+    "CHE.OS.8.CHE.01",
+    "CHE.OS.x.WIS.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "EG",
+    "WO"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb3",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Kohlenhydrate",
+          "Proteine",
+          "Fette",
+          "Ballaststoffe",
+          "Alkohol"
+        ],
+        "values": [
+          17.0,
+          17.0,
+          37.0,
+          8.0,
+          29.0
+        ],
+        "title": "Energiegehalt ausgewählter Makronährstoffe (kJ pro Gramm)",
+        "xlabel": "Nährstoff",
+        "ylabel": "Energie (kJ/g)",
+        "log": false
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0134",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:20+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

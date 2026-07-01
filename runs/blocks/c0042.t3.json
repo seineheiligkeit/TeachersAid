@@ -1,0 +1,83 @@
+{
+  "id": "c0042.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "performance_task",
+    "prompt": "Aufwärmübung Bewegungsqualitäten: Die Lehrkraft gibt Musik vor (z. B. ein Stück mit deutlichem Formwechsel A–B–A). Bewege dich spontan dazu:\n– Im Teil A: schwere, langsame Bewegungen (wie ein Baum im Sturm)\n– Im Teil B: leichte, schnelle Bewegungen (wie ein Vogel)\n– Im Teil A wieder: kehre zu schweren Bewegungen zurück\n\nSchreibe danach: Welche musikalischen Hinweise (Tempo, Dynamik, Klangfarbe) haben dir geholfen, die Teile zu erkennen?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 3
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "TAN",
+      "HOR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MUS.US.3.TAN.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Typische Antworten: Teil A hat tiefere Klänge / langsameres Tempo / mehr Lautstärke; Teil B hat höhere Klänge / schnelleres Tempo / leichtere Klangfarbe. Schüler:innen sollen mindestens zwei musikalische Parameter nennen.",
+    "acceptable_reasoning": "Jede Beobachtung, die zeigt, dass das Kind aktiv auf Musik gehört und Bewegung bewusst gewählt hat.",
+    "rubric": [
+      {
+        "criterion": "Musikalische Parameter",
+        "levels": [
+          "kein Parameter genannt",
+          "ein Parameter",
+          "zwei oder mehr Parameter mit Bezug zur Bewegung"
+        ]
+      },
+      {
+        "criterion": "Reflexionstiefe",
+        "levels": [
+          "nur 'ich hab mich bewegt'",
+          "konkreter Zusammenhang Musik–Bewegung"
+        ]
+      },
+      {
+        "criterion": "Beteiligung (Beobachtung durch Lehrkraft)",
+        "levels": [
+          "passiv",
+          "aktiv und konzentriert"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Manche Schüler:innen bewegen sich zufällig und beobachten die Musik nicht – Lehrkraft kann nach der Übung kurz besprechen.",
+      "A-B-A-Form: sicherstellen, dass das ausgewählte Musikstück einen deutlichen Kontrast hat (z. B. Dynamik, Tempo oder Klangfarbe wechselt klar)."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "performance_task",
+  "subject": "Musik",
+  "klasse": 3,
+  "kompetenzbereich": "Tanzen, Bewegen und Darstellen",
+  "competences": [
+    "MUS.US.3.TAN.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "TAN",
+    "HOR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0042",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

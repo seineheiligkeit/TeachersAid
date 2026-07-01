@@ -1,0 +1,85 @@
+{
+  "id": "c0120.i1",
+  "block": {
+    "id": "i1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "info",
+    "kind": "prose",
+    "content": "Das Diagramm zeigt, welcher Anteil der Bevoelkerung in acht Laendern in Staedten lebt (Stand 2024, World Bank). Lies das Diagramm sorgfaeltig und bearbeite die folgenden Aufgaben.",
+    "callout_role": null,
+    "teacher_note": null,
+    "watch_outs": []
+  },
+  "role": "info",
+  "kind": "prose",
+  "subject": "Mathematik",
+  "klasse": 3,
+  "kompetenzbereich": null,
+  "competences": [],
+  "cognitive_level": null,
+  "dimensions": [],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "title": "Anteil der Stadtbevoelkerung im Laendervergleich (2024)",
+        "xlabel": "Land",
+        "ylabel": "Anteil Stadtbevoelkerung (%)",
+        "log": false,
+        "categories": [
+          "Österreich",
+          "Deutschland",
+          "Schweiz",
+          "Italien",
+          "USA",
+          "China",
+          "Indien",
+          "Nigeria"
+        ],
+        "values": [
+          69.5,
+          82.0,
+          85.5,
+          69.6,
+          80.1,
+          65.9,
+          35.4,
+          63.0
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "worldbank_urbanisierung",
+        "series": "vergleich",
+        "note": null,
+        "title": "Verstädterung im Ländervergleich (Anteil Stadtbevölkerung)",
+        "url": "https://data.worldbank.org/indicator/SP.URB.TOTL.IN.ZS",
+        "attribution": "Datenquelle: World Bank – data.worldbank.org (SP.URB.TOTL.IN.ZS, CC BY 4.0)",
+        "stand": "2024"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0120",
+  "source": "ai",
+  "created_at": "2026-06-27T15:21:15+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

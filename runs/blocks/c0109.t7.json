@@ -1,0 +1,222 @@
+{
+  "id": "c0109.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1",
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "position_argument",
+    "prompt": "Ein Politiker sagt: 'Wir müssen die Zuwanderung stark erhöhen, sonst kollabiert unser Pensionssystem.' Ein anderer antwortet: 'Das löst das Problem nicht dauerhaft — auch Zuwanderer werden einmal alt.' Nimm auf Basis der demografischen Daten Stellung: Wer hat Recht, und inwiefern haben beide einen Punkt?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "UK",
+      "HK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.OST.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 11,
+    "answer_key": "Beide haben einen Punkt. Für den ersten: Zuwanderung im erwerbsfähigen Alter (25–44) erhöht kurzfristig die Zahl der Beitragszahlenden — das entlastet das System. Für den zweiten: Auch Zuwanderer werden alt und erwerben Pensionsansprüche — das Problem wird zeitlich verschoben, nicht gelöst. Eine Gesamtlösung braucht mehrere Hebel: Geburtenrate, Zuwanderung, Produktivitätssteigerung, Pensionsalter. Kein einzelner Faktor löst das strukturelle Ungleichgewicht, das aus der Altersstruktur (21,2 % in 45–59 vs. 14,4 % in 0–14) folgt.",
+    "acceptable_reasoning": "Schüler:innen müssen nicht alle Lösungshebel nennen. Entscheidend ist: Beide Positionen mit Datenbezug beurteilt und keine einseitige Übernahme einer Position.",
+    "rubric": [
+      {
+        "criterion": "Beide Positionen bewertet",
+        "levels": [
+          "Beide Positionen sachlich bewertet (2P)",
+          "Nur eine Position (1P)",
+          "Keine klare Bewertung (0P)"
+        ]
+      },
+      {
+        "criterion": "Datenbezug",
+        "levels": [
+          "Mindestens ein konkreter Prozentwert aus den Abbildungen (2P)",
+          "Kein Datenbezug (0P)"
+        ]
+      },
+      {
+        "criterion": "Differenziertes Urteil",
+        "levels": [
+          "Synthese: kein Alleinmittel, mehrere Hebel nötig (2P)",
+          "Einseitige Übernahme (1P)",
+          "Kein Urteil (0P)"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen könnten die Debatte auf politische Lager reduzieren ('der eine hat Recht, weil...'). Den Fokus auf Argumente und Daten, nicht auf politische Sympathie lenken.",
+      "Die Langfristperspektive ist zentral: Zuwanderung hilft kurzfristig, löst aber strukturelle Alterung nicht — das ist eine Kernbotschaft der Demografiedebatte."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "position_argument",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Österreichische Gesellschaftsentwicklung",
+  "competences": [
+    "GWB.US.3.OST.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "UK",
+    "HK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:population_pyramid",
+      "spec": {
+        "title": "Bevölkerungspyramide Österreich (1.1.2024)",
+        "xlabel": "Personen",
+        "age_groups": [
+          "0–4",
+          "5–9",
+          "10–14",
+          "15–19",
+          "20–24",
+          "25–29",
+          "30–34",
+          "35–39",
+          "40–44",
+          "45–49",
+          "50–54",
+          "55–59",
+          "60–64",
+          "65–69",
+          "70–74",
+          "75–79",
+          "80–84",
+          "85+"
+        ],
+        "male": [
+          217721,
+          233589,
+          225693,
+          232917,
+          259070,
+          303392,
+          327167,
+          319456,
+          311542,
+          289329,
+          320354,
+          355386,
+          322097,
+          247355,
+          189728,
+          149524,
+          131327,
+          79185
+        ],
+        "female": [
+          206203,
+          220286,
+          212329,
+          217468,
+          241672,
+          283992,
+          311084,
+          310390,
+          309056,
+          293047,
+          329411,
+          357617,
+          331334,
+          272182,
+          223124,
+          190665,
+          185238,
+          148820
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "statistik_austria_bevstand_2024",
+        "series": "pyramide_5j",
+        "note": null,
+        "title": "Bevölkerung Österreichs nach Alter und Geschlecht (1.1.2024)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2024",
+        "attribution": "Datenquelle: Statistik Austria – data.statistik.gv.at (CC BY 4.0)",
+        "stand": "2024-01-01"
+      },
+      "illustrative": false,
+      "caption": null
+    },
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "title": "Bevölkerung Österreichs nach Altersgruppen — Anteile (1.1.2024)",
+        "xlabel": "Altersgruppe",
+        "ylabel": "Anteil an Gesamtbevölkerung (%)",
+        "log": false,
+        "categories": [
+          "0–14",
+          "15–29",
+          "30–44",
+          "45–59",
+          "60–74",
+          "75+"
+        ],
+        "values": [
+          14.4,
+          16.8,
+          20.6,
+          21.2,
+          17.3,
+          9.7
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "statistik_austria_bevstand_2024",
+        "series": "altersgruppen_breit",
+        "note": null,
+        "title": "Bevölkerung Österreichs nach Alter und Geschlecht (1.1.2024)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2024",
+        "attribution": "Datenquelle: Statistik Austria – data.statistik.gv.at (CC BY 4.0)",
+        "stand": "2024-01-01"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0109",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:28+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

@@ -1,0 +1,75 @@
+{
+  "id": "c0023.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "construction",
+    "prompt": "Zeichne auf Millimeterpapier:\n1. Ein Dreieck ABC mit A(1|2), B(4|2), C(3|5) (Koordinaten in cm).\n2. Spiegle das Dreieck an der senkrechten Geraden x = 5. Beschrifte das Spiegelbild A'B'C'.\n3. Überprüfe deine Konstruktion: Messe je einen Abstand (z. B. |AB|) im Original und im Spiegelbild — sie müssen gleich sein.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 90.0
+    },
+    "cognitive_level": "apply",
+    "dimensions": [
+      "H2"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GEZ.US.4.TRA.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Spiegelachse x = 5: A(1|2) → A'(9|2); B(4|2) → B'(6|2); C(3|5) → C'(7|5). Jeder Punkt wird um den doppelten Abstand zur Achse auf die andere Seite gespiegelt: A hat Abstand 4 zur Achse → A' liegt 4 Einheiten rechts der Achse bei x = 9. Alle Abstände im Spiegelbild gleich wie im Original.",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Spiegelbildpunkte korrekt",
+        "levels": [
+          "Mehr als ein Punkt falsch",
+          "Ein Punkt falsch",
+          "Alle drei Punkte korrekt"
+        ]
+      },
+      {
+        "criterion": "Kontrollmessung",
+        "levels": [
+          "Fehlend",
+          "Vorhanden, aber Ergebnis nicht kommentiert",
+          "Vorhanden mit korrektem Kommentar"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Sehr häufiger Fehler: Schüler:innen spiegeln an der y-Achse statt an x = 5 — den Unterschied explizit machen.",
+      "Die Orientierung des Dreiecks kehrt sich um (Spiegelung ist eine „unechte“ Abbildung) — ansprechen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "construction",
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Transformationen von Objekten und Relationen zwischen Objekten (I2)",
+  "competences": [
+    "GEZ.US.4.TRA.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "H2"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0023",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

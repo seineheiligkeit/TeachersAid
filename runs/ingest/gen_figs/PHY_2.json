@@ -1,0 +1,386 @@
+{
+  "subject": "Physik",
+  "klasse": 3,
+  "kompetenzbereich": "Mechanik",
+  "title": "Kräfte, Bewegung und das Anhalten eines Fahrzeugs",
+  "kernfrage": "Warum kann ein Fahrrad nicht sofort stoppen — und was beeinflusst den Bremsweg?",
+  "body": {
+    "intro": [],
+    "assets": [
+      {
+        "id": "abb1",
+        "role": "figure",
+        "generator": "matplotlib:function_graph",
+        "spec": {
+          "title": "Geschwindigkeit-Zeit-Diagramm: Fahrrad beim Bremsen",
+          "xmin": 0,
+          "xmax": 5,
+          "ymin": 0,
+          "ymax": 25,
+          "points": [
+            [
+              0,
+              20
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "xlabel": "Zeit t in s",
+          "ylabel": "Geschwindigkeit v in km/h"
+        }
+      },
+      {
+        "id": "abb2",
+        "role": "figure",
+        "generator": "matplotlib:bar_chart",
+        "spec": {
+          "categories": [
+            "Trockene Straße",
+            "Nasse Straße",
+            "Laub/Schnee"
+          ],
+          "values": [
+            120,
+            240,
+            480
+          ],
+          "title": "Bremsweg aus 30 km/h — Vergleich Fahrrad",
+          "xlabel": "Untergrundsbedingung",
+          "ylabel": "Bremsweg in cm"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Bewegung beschreiben — das v-t-Diagramm",
+        "throughline": "Schüler:innen lernen, eine gebremste Bewegung im v-t-Diagramm zu lesen und die physikalischen Größen Tempo, Geschwindigkeit und Zeitintervall darin zu identifizieren.",
+        "talking_points": [
+          "Der Unterschied Tempo (skalare Größe, Betrag) und Geschwindigkeit (Vektor, hat Richtung) ist Kl.-3-Stoff — kurz auffrischen, aber nicht überbetonen.",
+          "Im v-t-Diagramm ist die Steigung der Geraden die Beschleunigung (bzw. Verzögerung). Das muss hier nur qualitativ verstanden werden.",
+          "Abb. 1 zeigt eine ideale gleichmäßige Abbremsung — in der Realität ist der Verlauf kurvig; das ist eine gute Modell-Realität-Diskussion."
+        ],
+        "extensions": [
+          "Wie würde das v-t-Diagramm aussehen, wenn das Fahrrad konstant weiterfährt? Wenn es gleichmäßig beschleunigt?",
+          "Digitale Werkzeuge: Handy-Sensor-Apps (z. B. phyphox) können v-t-Diagramme live aufzeichnen — mögliches Experiment."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "data_interpretation",
+            "prompt": "Schau dir Abb. 1 an. Das Diagramm zeigt die Geschwindigkeit eines Fahrrads während eines Bremsvorgangs.\n(a) Wie schnell fährt das Fahrrad zu Beginn des Bremsens?\n(b) Nach wie vielen Sekunden steht das Fahrrad?\n(c) Beschreibe in einem Satz, wie sich die Geschwindigkeit mit der Zeit verändert.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "remember",
+            "dimensions": [
+              "W"
+            ],
+            "serves": [
+              {
+                "competence_id": "PHY.US.3.MEC.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 5,
+            "asset_refs": [
+              "abb1"
+            ],
+            "answer_key": "(a) 20 km/h. (b) Nach 4 Sekunden (Schnittpunkt mit der Zeitachse). (c) Die Geschwindigkeit nimmt gleichmäßig (linear) ab, bis das Fahrrad zum Stillstand kommt.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen lesen manchmal die Achsen vertauscht. Achsenbeschriftungen sorgfältig beachten.",
+              "Die Einheit km/h (nicht m/s) muss aus dem Diagramm übernommen werden — keine freie Einheitenwahl."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "open_response",
+            "prompt": "Das Diagramm zeigt eine ideale Bremsung. Nenne einen Unterschied, den du bei einer echten Bremsung erwarten würdest, und erkläre warum.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 35
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "W",
+              "E"
+            ],
+            "serves": [
+              {
+                "competence_id": "PHY.US.3.MEC.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "asset_refs": [
+              "abb1"
+            ],
+            "answer_key": "Mögliche Antworten: (1) Der Verlauf wäre nicht geradlinig/linear, da die Bremskraft nicht konstant ist (Reaktionszeit, Veränderung des Reifendrucks). (2) Vor dem eigentlichen Bremsen gibt es eine Reaktionszeit — in dieser Zeit fährt das Rad mit konstanter Geschwindigkeit weiter. (3) Der Anfangsabschnitt könnte flacher sein (zögerliches Bremsen) oder steiler (Notbremsung). Alle plausibel begründeten Abweichungen akzeptieren.",
+            "acceptable_reasoning": "Auch Antworten, die auf schwankende Bremskraft oder Straßenunebenheiten hinweisen, sind korrekt.",
+            "watch_outs": [
+              "Die Reaktionszeit (ca. 0,8–1 s bei Erwachsenen) wird häufig vergessen — in der Diskussion gezielt ansprechen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Abweichung benannt",
+                "levels": [
+                  "Keine Abweichung genannt",
+                  "Abweichung genannt, aber ohne Erklärung",
+                  "Abweichung genannt und physikalisch begründet"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Kräfte beim Bremsen — Einwirkung von außen",
+        "throughline": "Schüler:innen untersuchen qualitativ, welche äußere Kraft eine Geschwindigkeitsänderung verursacht, und wenden das auf die Alltagssituation Fahrradstopp an.",
+        "talking_points": [
+          "Newtons 2. Gesetz wird hier qualitativ eingeführt: Je größer die Einwirkung (Kraft), desto stärker die Geschwindigkeitsänderung. Die Formel F=m·a ist Oberstufenstoff.",
+          "Reibungskraft als Hauptbremskraft: Haftreibung (Reifen-Straße) vs. Gleitreibung (blockiertes Rad) — blockiertes Rad bremst schlechter.",
+          "Abb. 2 zeigt, wie stark die Bremswirkung von der Unterlage abhängt — direkter Alltagsbezug zu Sicherheit im Straßenverkehr."
+        ],
+        "extensions": [
+          "ABS (Antiblockiersystem): Warum verhindert es das Blockieren der Räder — und warum ist das kürzer als ohne ABS?",
+          "Experiment: Verschiedene Oberflächen, kleines Modellfahrzeug, Neigungswinkel messen bis zum Rutschen — qualitative Messung der Haftreibung."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "ordering",
+            "prompt": "Die folgenden Ereignisse passieren beim Fahrradunfall nacheinander. Bringe sie in die richtige Reihenfolge.",
+            "payload": {
+              "kind": "ordering",
+              "items": [
+                "Das Fahrrad steht still.",
+                "Die Fahrerin sieht ein Hindernis.",
+                "Die Bremskraft wirkt auf die Räder — die Geschwindigkeit nimmt ab.",
+                "Das Gehirn sendet ein Signal: Bremsen!",
+                "Die Fahrerin fährt weiter (Reaktionszeit).",
+                "Die Hände greifen zu den Bremshebeln."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "W",
+              "S"
+            ],
+            "serves": [
+              {
+                "competence_id": "PHY.US.3.MEC.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 5,
+            "asset_refs": [],
+            "answer_key": "Richtige Reihenfolge: (1) Die Fahrerin sieht ein Hindernis. (2) Das Gehirn sendet ein Signal: Bremsen! (3) Die Fahrerin fährt weiter (Reaktionszeit). (4) Die Hände greifen zu den Bremshebeln. (5) Die Bremskraft wirkt auf die Räder — die Geschwindigkeit nimmt ab. (6) Das Fahrrad steht still.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Die Reaktionszeit (Schritt 3) liegt zwischen Wahrnehmen und Handeln — Schüler:innen lassen sie oft weg oder setzen sie ans Ende."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "data_interpretation",
+            "prompt": "Sieh dir Abb. 2 an. Der Bremsweg ist auf drei Untergründen gemessen worden.\n(a) Auf welchem Untergrund ist der Bremsweg am längsten?\n(b) Um welchen Faktor ist der Bremsweg auf Laub/Schnee länger als auf trockener Straße?\n(c) Welche Konsequenz ziehst du daraus für dein Verhalten als Radfahrer:in im Herbst oder Winter?",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "W",
+              "S"
+            ],
+            "serves": [
+              {
+                "competence_id": "PHY.US.3.MEC.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [
+              "abb2"
+            ],
+            "answer_key": "(a) Laub/Schnee (480 cm). (b) 480 / 120 = 4: der Bremsweg ist viermal so lang. (c) Früher bremsen, langsamer fahren, mehr Abstand halten, auf Laubhaufen/Schneestellen achten. Jede physikalisch begründete Konsequenz akzeptieren.",
+            "acceptable_reasoning": "Faktor-Rechnung; Konsequenzen müssen plausibel und auf die Daten bezogen sein.",
+            "watch_outs": [
+              "Schüler:innen antworten oft pauschal ('Vorsicht fahren') ohne Bezug auf die konkreten Daten. Einfordern: Bezug auf den Faktor 4."
+            ],
+            "rubric": [
+              {
+                "criterion": "Diagrammauswertung",
+                "levels": [
+                  "Falsche oder keine Aussage",
+                  "Qualitativ richtig, keine Zahlen",
+                  "Korrekte Ablesung mit Faktorangabe"
+                ]
+              },
+              {
+                "criterion": "Konsequenzableitung",
+                "levels": [
+                  "Keine Konsequenz",
+                  "Allgemeine Aussage ohne Bezug zu den Daten",
+                  "Konkrete, datenbasierte Handlungsempfehlung"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "Kräfte im Alltag — Wirkung und Gegenwirkung",
+        "throughline": "Das Wechselwirkungsgesetz wird an Alltagsbeispielen entdeckt und auf das Bremssystem übertragen — Übergang von Analyse zu eigenem Erklären und kreativem Anwenden.",
+        "talking_points": [
+          "Wechselwirkungsgesetz (actio = reactio): Zwei Kräfte sind immer paarweise — sie greifen aber an verschiedenen Körpern an. Häufiger Fehler: 'Sie heben sich auf' — nein, weil sie an verschiedenen Objekten wirken.",
+          "Beim Bremsen: Straße übt auf Reifen eine Reibungskraft rückwärts aus; Reifen übt eine Kraft vorwärts auf die Straße aus — die Straße bewegt sich wegen ihrer riesigen Masse nicht.",
+          "Experiment (qualitativ): Zwei Rollbretter, je eine Person — eine Person stößt die andere ab. Beide bewegen sich. Hälfte der Unterrichtszeit für Experimente reservieren."
+        ],
+        "extensions": [
+          "Raketenantrieb als Extrembeispiel: Heiße Gase strömen nach hinten → Rakete fährt nach vorne. Wechselwirkungsgesetz ohne Reibung.",
+          "Kreative Aufgabe: Zeichne ein Kraftpfeil-Diagramm für das Bremsmanöver — Pfeilgröße und -richtung müssen stimmen."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "true_false_justify",
+            "prompt": "Beurteile folgende Aussagen über Kräfte beim Bremsen. Kreuze an (richtig / falsch) und begründe.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Die Bremskraft, die die Straße auf den Reifen ausübt, wirkt in Fahrtrichtung.",
+                "Wenn der Reifen eine Kraft auf die Straße ausübt, übt die Straße eine gleich große, entgegengesetzte Kraft auf den Reifen aus.",
+                "Je mehr Gewicht auf dem Fahrrad liegt (schwerere Person), desto kürzer ist der Bremsweg bei gleicher Bremskraft.",
+                "Ein blockiertes Rad (ABS ausgeschaltet, voll eingebremst) hat kürzeren Bremsweg als ein rollendes, abbremsendes Rad."
+              ]
+            },
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Aussage",
+                "richtig",
+                "falsch",
+                "Begründung"
+              ],
+              "rows": 4
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "W",
+              "E"
+            ],
+            "serves": [
+              {
+                "competence_id": "PHY.US.3.MEC.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "1: falsch — die Bremskraft wirkt entgegen der Fahrtrichtung (rückwärts auf den Reifen). 2: richtig — Wechselwirkungsgesetz (actio = reactio). 3: falsch — mit mehr Gewicht ist zwar die Normalkraft größer (mehr Reibung möglich), aber auch die zu verzögernde Masse ist größer — beides hebt sich im einfachen Modell auf; der Bremsweg bleibt ähnlich (F = μ·m·g, aber auch F = m·a → a = μ·g, unabhängig von m). 4: falsch — blockiertes Rad hat Gleitreibung (kleiner als Haftreibung bei rollendem Rad), also längerer Bremsweg. ABS hält Haftreibung aufrecht.",
+            "acceptable_reasoning": "Für Aussage 3: Schüler:innen der Unterstufe müssen den Beweis nicht formal führen — qualitatives Verständnis ('Bremskraft und Trägheit wachsen beide mit der Masse') reicht.",
+            "watch_outs": [
+              "Aussage 3 ist kontraintuitiv — viele Schüler:innen antworten 'richtig' (schwerer = mehr Reibung = kürzer). Gezielt nachfragen: Was wächst noch mit der Masse?",
+              "Aussage 4 ist ein verbreiteter Alltagsirrtum ('fest bremsen = schneller stoppen'). Hier klare Korrektur: Haftreibung > Gleitreibung."
+            ],
+            "rubric": [
+              {
+                "criterion": "Korrekte Einschätzung",
+                "levels": [
+                  "0–1 korrekt",
+                  "2–3 korrekt",
+                  "Alle 4 korrekt"
+                ]
+              },
+              {
+                "criterion": "Begründungsqualität",
+                "levels": [
+                  "Keine oder rein intuitive Begründung",
+                  "Physikalischer Begriff verwendet",
+                  "Physikalisch vollständig und korrekt begründet"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "create_produce",
+            "prompt": "Entwerfe ein kurzes Sicherheitsplakat (nur Text + Schlagzeilen, keine Zeichnung nötig) für deine Schulklasse zum Thema 'Sicher Radfahren im Herbst und Winter'. Das Plakat soll mindestens zwei physikalische Begriffe aus diesem Arbeitsblatt enthalten und erklären, warum das Verhalten sicher macht. Schreibe deinen Entwurf in das Feld unten.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 65
+            },
+            "cognitive_level": "create",
+            "dimensions": [
+              "W",
+              "S"
+            ],
+            "serves": [
+              {
+                "competence_id": "PHY.US.3.MEC.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Musterlösung (Beispiel): Titel: 'Herbst = viermal länger bremsen!'. Texte: (1) Bremsweg auf nasser/laubbedeckter Straße: bis zu 4× länger als trocken → früher bremsen! (2) Reaktionszeit: Dein Gehirn braucht fast 1 Sekunde — bei 20 km/h fährst du in dieser Zeit 5,5 m weiter. (3) Kräfte: Bremskraft wirkt nur, wenn der Reifen rollt — blockiertes Rad rutscht und stoppt später. Physikalische Begriffe: Bremsweg, Bremskraft, Reaktionszeit, Reibung. Bewertung: kreative Freiheit bei Formulierung, aber physikalische Kernaussagen müssen stimmen.",
+            "acceptable_reasoning": "Jede Kombination physikalisch korrekter Aussagen, die verständlich für Schüler:innen formuliert ist.",
+            "watch_outs": [
+              "Schüler:innen schreiben manchmal nur Verhaltenstipps ohne physikalische Begründung. Mindestens zwei Fachbegriffe mit Erklärung einfordern.",
+              "Auf sprachliche Qualität achten: Das Plakat soll für Gleichaltrige verständlich sein — kein Fachjargon ohne Erklärung."
+            ],
+            "rubric": [
+              {
+                "criterion": "Physikalische Korrektheit",
+                "levels": [
+                  "Keine oder fehlerhafte physikalische Aussagen",
+                  "Mind. eine korrekte Aussage mit Fachbegriff",
+                  "Zwei oder mehr korrekte Aussagen mit Fachbegriffen und Erklärung"
+                ]
+              },
+              {
+                "criterion": "Adressatengerechtheit",
+                "levels": [
+                  "Unverständlich oder zu technisch",
+                  "Verständlich, aber ohne Kontext",
+                  "Klar, verständlich, motivierend für Gleichaltrige"
+                ]
+              },
+              {
+                "criterion": "Handlungsbezug",
+                "levels": [
+                  "Keine konkreten Empfehlungen",
+                  "Allgemeine Tipps",
+                  "Konkrete, physikalisch begründete Handlungsempfehlungen"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

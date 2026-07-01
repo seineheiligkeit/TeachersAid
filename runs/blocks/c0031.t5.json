@@ -1,0 +1,80 @@
+{
+  "id": "c0031.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Du bist Mitglied der Schüler:innenvertretung und kannst einen Vorschlag für die Schulkonferenz einbringen. Wähle EINE der folgenden Maßnahmen, die ihr Schule nachhaltiger im Ressourcenverbrauch machen soll – und begründe deine Entscheidung.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Welche Maßnahme würdest du vorschlagen?\n(A) Abschaffung von Einwegplastik in der Schulkantine\n(B) Installation von Solarpanelen auf dem Schuldach\n(C) Einführung eines Papierlosen Unterrichtstags pro Woche\n(D) Klimaanlage im Sommer durch Beschattungsmaßnahmen ersetzen"
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "UK",
+      "HK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.2.NAC.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Alle Optionen sind vertretbar, wenn die Begründung Ressourcenschonung, Durchführbarkeit und gesellschaftliche Bedeutung gesetzlicher Rahmenbedingungen (Option A entspricht EU-Richtlinie) berücksichtigt. Qualitätsmerkmal: Schüler:innen erkennen Vor- und Nachteile der gewählten Option.",
+    "acceptable_reasoning": "Eine Kombination mehrerer Maßnahmen mit Priorisierungsbegründung ist eine sehr gute Antwort.",
+    "rubric": [
+      {
+        "criterion": "Begründung",
+        "levels": [
+          "fehlt",
+          "eine Begründung",
+          "mehrere Aspekte abgewogen"
+        ]
+      },
+      {
+        "criterion": "Realitätsbezug",
+        "levels": [
+          "abstrakt",
+          "ansatzweise",
+          "konkret und umsetzbar"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Option B klingt für manche Schüler:innen zu groß – Lehrperson kann ergänzen: Viele Schulen in Österreich haben bereits Solarpanelen.",
+      "Option C löst oft Widerstand aus – fruchtbar für Diskussion über digitale vs. analoge Lernmittel."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 2,
+  "kompetenzbereich": "Nachhaltiger Umgang mit Energie und Ressourcen",
+  "competences": [
+    "GWB.US.2.NAC.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "UK",
+    "HK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0031",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

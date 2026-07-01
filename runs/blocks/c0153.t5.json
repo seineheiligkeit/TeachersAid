@@ -1,0 +1,86 @@
+{
+  "id": "c0153.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Berechne den Flächeninhalt der Fläche, die von den Graphen g(x) = x und h(x) = x² eingeschlossen wird.\n(a) Bestimme zunächst die Schnittpunkte von g und h.\n(b) Berechne dann den Flächeninhalt A mit Hilfe des Integrals der Differenzfunktion.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "FO",
+      "DM"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.OS.8.GRU2.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "MAT.OS.8.GRU2.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "(a) g(x) = h(x) ⟹ x = x² ⟹ x² − x = 0 ⟹ x(x−1) = 0 ⟹ x₁ = 0, x₂ = 1. (b) Auf [0,1] gilt g(x) ≥ h(x) (da x ≥ x² für x ∈ [0,1]). A = ∫₀¹ (x − x²) dx = [x²/2 − x³/3]₀¹ = 1/2 − 1/3 = 3/6 − 2/6 = 1/6.",
+    "acceptable_reasoning": "Schüler:innen prüfen, welche Funktion auf dem Intervall größer ist, bevor sie die Differenz bilden.",
+    "rubric": [
+      {
+        "criterion": "Schnittpunkte",
+        "levels": [
+          "Falsch oder fehlt",
+          "x₁=0, x₂=1 korrekt"
+        ]
+      },
+      {
+        "criterion": "Integral der Differenzfunktion",
+        "levels": [
+          "Falsch angesetzt",
+          "Ansatz richtig, Rechenfehler",
+          "Korrekt: 1/6"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Fehler: Differenz falsch herum (x² − x statt x − x²) → negatives Ergebnis für den Flächeninhalt. Flächeninhalt ist immer ≥ 0.",
+      "Prüfung auf welcher Seite die Kurven liegen nicht vergessen — Einsetzen eines Testpunkts (z. B. x = 0,5) empfohlen.",
+      "Bei mehreren eingeschlossenen Flächen: jede Teilfläche separat integrieren."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Mathematik",
+  "klasse": 8,
+  "kompetenzbereich": "Grundlagen der Integralrechnung",
+  "competences": [
+    "MAT.OS.8.GRU2.02",
+    "MAT.OS.8.GRU2.04"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "FO",
+    "DM"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0153",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:26+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

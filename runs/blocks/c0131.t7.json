@@ -1,0 +1,94 @@
+{
+  "id": "c0131.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Stell dir vor, du erklärst einem jüngeren Schüler (11 Jahre alt), wie ein Protein hergestellt wird. Erstelle eine kurze, bildhafte Analogie (ca. 5–8 Sätze), die den Weg von der DNA zum Protein anschaulich beschreibt. Verwende klar erkennbare Alltagsvergleiche (z. B. Rezept, Fabrik, Botschaft …). Achte darauf, dass die biologischen Abläufe in deiner Analogie trotzdem korrekt widergespiegelt werden.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.OS.x.FAC.03",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "BIO.OS.8.KOM6.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Musterlösung (Beispielanalogie): 'Die DNA ist wie ein geheimes Kochbuch, das in der Bibliothek (Zellkern) aufbewahrt wird und nie rausdarf. Wenn ein Gericht (Protein) gebraucht wird, macht ein Assistent (RNA-Polymerase) eine Kopie des Rezepts auf Papier (mRNA). Das Papier wird redigiert – unwichtige Passagen (Introns) werden rausgestrichen – und dann in die Küche (Zytoplasma) geschickt. Dort lesen kleine Küchenmaschinen (Ribosomen) das Rezept und holen sich die passenden Zutaten (Aminosäuren, geliefert von Boten namens tRNA). Am Ende entsteht das fertige Gericht – das Protein – das dann seine Aufgabe im Körper erfüllt.'",
+    "acceptable_reasoning": "Analogien sind kreativ verschieden; akzeptabel ist jede Darstellung, die Kern → Zytoplasma, DNA → mRNA → Protein, und die Rolle des Ribosoms korrekt abbildet.",
+    "rubric": [
+      {
+        "criterion": "Biologische Korrektheit der Analogie",
+        "levels": [
+          "Wesentliche Fehler (z. B. Ort der Translation falsch)",
+          "Kleinere Ungenauigkeiten, Kernablauf korrekt",
+          "Alle Schritte (Transkription, Prozessierung, Translation) korrekt abgebildet"
+        ]
+      },
+      {
+        "criterion": "Verständlichkeit für die Zielgruppe",
+        "levels": [
+          "Fachsprache dominiert, nicht zugänglich",
+          "Teilweise alltagssprachlich",
+          "Durchgängig bildhafte, altersgerechte Sprache"
+        ]
+      },
+      {
+        "criterion": "Vollständigkeit",
+        "levels": [
+          "Nur ein Schritt (z. B. nur Ribosom)",
+          "Zwei Stationen erkennbar",
+          "DNA, mRNA, Ribosom und Protein alle erkennbar"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Häufiger Fehler in Schüleranalogien: Die mRNA wird direkt im Zytoplasma 'geschrieben' – betonen, dass Transkription im Kern stattfindet.",
+      "Qualitätskriterium: Die Analogie darf vereinfachen, aber nicht falsch sein (z. B. 'Das Ribosom geht in den Kern' wäre sachlich falsch)."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 8,
+  "kompetenzbereich": "Fachwissen aneignen und kommunizieren",
+  "competences": [
+    "BIO.OS.x.FAC.03",
+    "BIO.OS.8.KOM6.02"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "W",
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0131",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:18+00:00",
+  "updated_at": "2026-06-29T18:18:43+00:00"
+}

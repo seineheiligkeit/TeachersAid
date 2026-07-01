@@ -1,0 +1,130 @@
+{
+  "id": "c0142.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "ordering",
+    "prompt": "Bringe die folgenden Ereignisse des Kalten Krieges in die richtige chronologische Reihenfolge. Nutze dazu auch die bereitgestellte Zeitleiste.",
+    "payload": {
+      "kind": "ordering",
+      "items": [
+        "Kubakrise und Konfrontation zwischen Kennedy und Chruschtschow",
+        "Truman-Doktrin: USA erklärt Eindämmungspolitik gegenüber dem Kommunismus",
+        "Fall der Berliner Mauer",
+        "Bau der Berliner Mauer",
+        "Gründung des Warschauer Pakts als Gegenbündnis zur NATO",
+        "Auflösung der Sowjetunion"
+      ]
+    },
+    "response": {
+      "mode": "none"
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "HSK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GPB.OS.7.POL5.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Korrekte Reihenfolge: 1. Truman-Doktrin (1947) → 2. Gründung Warschauer Pakt (1955) → 3. Bau Berliner Mauer (1961) → 4. Kubakrise (1962) → 5. Fall der Berliner Mauer (1989) → 6. Auflösung der UdSSR (1991).",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Häufige Verwechslung: Bau der Mauer (1961) und Fall der Mauer (1989) – beide passieren in Berlin, aber 28 Jahre auseinander.",
+      "Die Truman-Doktrin (1947) markiert den Beginn der Eindämmungspolitik, nicht das Kriegsende 1945 – Schüler:innen setzen den Kalten Krieg manchmal direkt nach 1945 an."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "ordering",
+  "subject": "Geschichte und politische Bildung",
+  "klasse": 7,
+  "kompetenzbereich": "Politische, wirtschaftliche, kulturelle und soziale Entwicklungen vom 1. Weltkrieg bis zur Gegenwart",
+  "competences": [
+    "GPB.OS.7.POL5.04"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "HSK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:timeline",
+      "spec": {
+        "events": [
+          {
+            "at": 1947,
+            "label": "Truman-Doktrin / Beginn des Kalten Krieges"
+          },
+          {
+            "at": 1949,
+            "label": "Gründung NATO / Erste sowjetische Atombombe"
+          },
+          {
+            "at": 1955,
+            "label": "Warschauer Pakt gegründet"
+          },
+          {
+            "at": 1961,
+            "label": "Bau der Berliner Mauer"
+          },
+          {
+            "at": 1962,
+            "label": "Kubakrise"
+          },
+          {
+            "at": 1975,
+            "label": "KSZE-Schlussakte Helsinki"
+          },
+          {
+            "at": 1985,
+            "label": "Gorbatschow: Glasnost und Perestroika"
+          },
+          {
+            "at": 1989,
+            "label": "Fall der Berliner Mauer"
+          },
+          {
+            "at": 1991,
+            "label": "Auflösung der UdSSR"
+          }
+        ],
+        "title": "Chronologie des Kalten Krieges (1947–1991)",
+        "xlabel": "Jahr"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0142",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:22+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

@@ -1,0 +1,73 @@
+{
+  "id": "c0156.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "ordering",
+    "prompt": "Ordne die folgenden Strahlungsarten des elektromagnetischen Spektrums nach aufsteigender Wellenlänge (kleinste Wellenlänge zuerst).",
+    "payload": {
+      "kind": "ordering",
+      "items": [
+        "Radiowellen",
+        "Sichtbares Licht",
+        "Ultraviolettstrahlung (UV)",
+        "Röntgenstrahlung",
+        "Gammastrahlung",
+        "Infrarotstrahlung (IR)",
+        "Mikrowellen"
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 3
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.OS.7.ATO.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "Korrekte Reihenfolge (aufsteigende Wellenlänge): Gammastrahlung → Röntgenstrahlung → Ultraviolett (UV) → Sichtbares Licht → Infrarot (IR) → Mikrowellen → Radiowellen.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "UV und IR werden oft vertauscht; UV hat kürzere Wellenlänge (höhere Energie) als sichtbares Licht, IR längere.",
+      "Mikrowellen liegen zwischen IR und Radiowellen – die Bezeichnung 'micro' täuscht über die lange Wellenlänge hinweg."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "ordering",
+  "subject": "Physik",
+  "klasse": 7,
+  "kompetenzbereich": "Atomphysik",
+  "competences": [
+    "PHY.OS.7.ATO.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0156",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:27+00:00",
+  "updated_at": "2026-06-29T18:11:55+00:00"
+}

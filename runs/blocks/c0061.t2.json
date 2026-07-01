@@ -1,0 +1,80 @@
+{
+  "id": "c0061.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Verbinde die lateinische Verbform mit ihrer deutschen Übersetzung. Achte auch auf das Tempus!\n\nFormen: laudavit · laudat · laudaverunt · laudamus · laudavisti · laudant",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "laudavit",
+        "laudat",
+        "laudaverunt",
+        "laudamus",
+        "laudavisti",
+        "laudant"
+      ],
+      "right": [
+        "er/sie hat gelobt (Perf.)",
+        "er/sie lobt (Präs.)",
+        "sie haben gelobt (Perf.)",
+        "wir loben (Präs.)",
+        "du hast gelobt (Perf.)",
+        "sie loben (Präs.)"
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Lateinische Form",
+        "Deutsche Übersetzung"
+      ],
+      "rows": 6
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "SPR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "LAT.US.3.SPR.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "laudavit → er/sie hat gelobt (Perf.) | laudat → er/sie lobt (Präs.) | laudaverunt → sie haben gelobt (Perf.) | laudamus → wir loben (Präs.) | laudavisti → du hast gelobt (Perf.) | laudant → sie loben (Präs.)",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Das -v- als Perfektzeichen hervorheben: laudav- vs. laud-.",
+      "laudaverunt: die lange Endung -erunt ist das sichere Erkennungszeichen der 3. Pl. Perfekt — nicht mit -unt (Präs. 3. Pl.) verwechseln."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Latein",
+  "klasse": 3,
+  "kompetenzbereich": "Sprach- und textbezogene Kompetenzen",
+  "competences": [
+    "LAT.US.3.SPR.04"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "SPR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0061",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

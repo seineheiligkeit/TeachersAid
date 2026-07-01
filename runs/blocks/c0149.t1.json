@@ -1,0 +1,92 @@
+{
+  "id": "c0149.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Entscheide für jede Aussage, ob sie wahr oder falsch ist, und begründe deine Entscheidung in einem Satz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Ein Algorithmus muss nach endlich vielen Schritten enden.",
+        "Ein Algorithmus darf für dieselbe Eingabe manchmal verschiedene Ergebnisse liefern.",
+        "Jedes Computerprogramm ist ein Algorithmus, aber nicht jeder Algorithmus ist ein Computerprogramm.",
+        "Ein Kuchenrezept erfüllt alle Bedingungen eines Algorithmus, sofern die Anweisungen eindeutig sind."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "Wahr / Falsch",
+        "Begründung"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "WV"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "INF.OS.5.PRA.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1: Wahr – Endlichkeit ist eine Kerneigenschaft; ein Algorithmus, der nie endet (unendliche Schleife), löst das Problem nicht. 2: Falsch – Determinismus (Eindeutigkeit) verlangt, dass gleiche Eingabe stets gleiche Ausgabe liefert. 3: Wahr – Algorithmen können z. B. als Struktogramm oder Pseudocode existieren, ohne Programm zu sein. 4: Wahr – solange Mengenangaben, Reihenfolge und Schritte eindeutig sind.",
+    "acceptable_reasoning": "Formulierungen sinngemäß korrekt; wichtig ist die Begründung mit der jeweiligen Eigenschaft (Endlichkeit, Determinismus, Allgemeinheit).",
+    "rubric": [
+      {
+        "criterion": "Korrekte Klassifizierung (w/f)",
+        "levels": [
+          "Alle 4 korrekt",
+          "3 korrekt",
+          "Weniger als 3 korrekt"
+        ]
+      },
+      {
+        "criterion": "Qualität der Begründung",
+        "levels": [
+          "Eigenschaft korrekt benannt und erklärt",
+          "Eigenschaft genannt, aber nicht erklärt",
+          "Fehlt oder fehlerhaft"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Viele Schüler:innen verwechseln Algorithmus und Programm – betonen: Algorithmus = Idee, Programm = Umsetzung.",
+      "Häufiger Irrtum bei Aussage 4: Rezepte sind 'ungenau', also kein Algorithmus – darauf hinweisen, dass Genauigkeit kontextabhängig ist und ein gutes Rezept durchaus algorithmisch sein kann."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Informatik",
+  "klasse": 5,
+  "kompetenzbereich": "Praktische Informatik",
+  "competences": [
+    "INF.OS.5.PRA.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "WV"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0149",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:25+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

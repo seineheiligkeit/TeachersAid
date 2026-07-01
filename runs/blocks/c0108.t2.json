@@ -1,0 +1,125 @@
+{
+  "id": "c0108.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Berechne auf Basis der Gesamtbevölkerung von 9.158.750 Personen, wie viele Menschen in Österreich zur Gruppe der 75-Jährigen und Älteren gehören. Zeige deinen Rechenweg.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "OK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.OST.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "9.158.750 × 0,097 ≈ 884.799 Personen (exakter Datensatzwert: 884.759). Der Anteil 9,7 % entspricht fast 885.000 Menschen — mehr als die Bevölkerung einer mittelgroßen österreichischen Stadt.",
+    "acceptable_reasoning": "Kleinere Rundungsdifferenzen (z. B. 884.000 oder 885.000) sind korrekt; der Rechenweg muss erkennbar sein (Prozentzahl × Gesamtbevölkerung).",
+    "rubric": [
+      {
+        "criterion": "Rechenweg",
+        "levels": [
+          "Rechenweg vollständig und korrekt (2P)",
+          "Ansatz richtig, Rechenfehler (1P)",
+          "Kein sinnvoller Ansatz (0P)"
+        ]
+      },
+      {
+        "criterion": "Ergebnis",
+        "levels": [
+          "Korrekt (± 5.000) (1P)",
+          "Falsch (0P)"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Manche Schüler:innen rechnen 9,7 ÷ 100 nicht um, bevor sie multiplizieren — darauf hinweisen, dass 9,7 % = 0,097 ist.",
+      "Das Ergebnis ist konkret vorstellbar: Fast eine Million Menschen sind in Österreich über 75 — das ist mehr als alle Salzburger und Tiroler zusammen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Österreichische Gesellschaftsentwicklung",
+  "competences": [
+    "GWB.US.3.OST.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "OK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "title": "Bevölkerung Österreichs nach Altersgruppen (1.1.2024)",
+        "xlabel": "Altersgruppe",
+        "ylabel": "Anteil an der Gesamtbevölkerung (%)",
+        "log": false,
+        "categories": [
+          "0–14",
+          "15–29",
+          "30–44",
+          "45–59",
+          "60–74",
+          "75+"
+        ],
+        "values": [
+          14.4,
+          16.8,
+          20.6,
+          21.2,
+          17.3,
+          9.7
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "statistik_austria_bevstand_2024",
+        "series": "altersgruppen_breit",
+        "note": null,
+        "title": "Bevölkerung Österreichs nach Alter und Geschlecht (1.1.2024)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2024",
+        "attribution": "Datenquelle: Statistik Austria – data.statistik.gv.at (CC BY 4.0)",
+        "stand": "2024-01-01"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0108",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:27+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

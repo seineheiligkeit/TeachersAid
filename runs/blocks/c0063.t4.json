@@ -1,0 +1,71 @@
+{
+  "id": "c0063.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Sind die folgenden Aussagen über das Fortleben des Lateinischen richtig (R) oder falsch (F)? Begründe kurz auf Deutsch.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Latein ist heute eine tote Sprache, die nirgendwo mehr gesprochen wird.",
+        "Der Vatikan verwendet Latein als offizielle Amtssprache.",
+        "In der wissenschaftlichen Biologie werden Tier- und Pflanzennamen auf Lateinisch benannt.",
+        "Das deutsche Wort Schule stammt vom lateinischen schola (= Muße, Zeit zum Lernen)."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "R / F",
+        "Begründung"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "INH"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "LAT.US.4.INH.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "1. F — Latein lebt in Fremdwörtern, Wissenschaftssprache, Kirchensprache und in den romanischen Sprachen weiter; der Vatikan spricht Latein. | 2. R — Latein ist die offizielle Amtssprache des Vatikans. | 3. R — Die binominale Nomenklatur (Linné, 18. Jh.) verwendet lateinische/latinisierte Namen. | 4. R — schola stammt aus dem Griechischen (scholē = Muße), wurde aber über das Lateinische ins Deutsche übernommen.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Aussage 1: tote Sprache ist ein irreführender Begriff — Latein hat keine Muttersprachler mehr, lebt aber intensiv weiter. Die Unterscheidung tote Sprache vs. klassische Sprache ansprechen.",
+      "Aussage 4: Schule kommt ursprünglich aus dem Griechischen — das zeigt, dass viele Latinismen eigentlich griechischen Ursprungs sind, nur über das Lateinische vermittelt. Dieser Gedanke ist komplex, aber lohnend."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Latein",
+  "klasse": 4,
+  "kompetenzbereich": "Inhalts- und themenbezogene Kompetenzen",
+  "competences": [
+    "LAT.US.4.INH.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "INH"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0063",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

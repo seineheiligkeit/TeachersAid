@@ -1,0 +1,76 @@
+{
+  "id": "c0063.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Wähle eine Wissenschaft (z. B. Medizin, Biologie, Astronomie, Recht oder Chemie) und nenne mindestens vier lateinische Fachbegriffe aus dieser Wissenschaft. Erkläre, was sie bedeuten, und leite sie von ihren lateinischen Wurzeln ab.\n\nBeispiel (Medizin): Appendix (der Anhang, Wurm) steht für appendere = anhängen.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "create",
+    "dimensions": [
+      "INH"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "LAT.US.4.INH.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Musterlösung (Medizin): Appendix (appendere = anhängen), Corpus (= Körper, Leib), Infektio (inficere = hineinstecken, anstecken), Infarkt (infarctus = gestopft, von farcire), Puls (pulsus = Stoß, von pellere). — Weitere akzeptable Beispiele: Biologie: Homo sapiens, Panthera leo; Astronomie: Luna, Sol, Venus; Recht: Corpus iuris, habeas corpus.",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Anzahl und Korrektheit",
+        "levels": [
+          "Mindestens vier korrekte Fachbegriffe mit sinnvoller Ableitung.",
+          "Zwei bis drei Fachbegriffe, Ableitungen teilweise korrekt.",
+          "Weniger als zwei oder keine Ableitung."
+        ]
+      },
+      {
+        "criterion": "Eigenständigkeit der Recherche",
+        "levels": [
+          "Eigene Auswahl, geht über die Beispiele hinaus.",
+          "Beispiele aus dem Unterricht leicht variiert.",
+          "Nur gegebene Beispiele übernommen."
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Freie Wahl der Wissenschaft fördern — Schüler:innen mit Interesse an Biologie oder Medizin zeigen besonders viel Engagement.",
+      "Wortableitungen müssen nicht exakt sein — vernünftige Vermutungen wertschätzen und dann präzisieren.",
+      "Biologie-Nomenklatur: erklären, dass Gattungsname und Artname zusammen den wissenschaftlichen Artnamen bilden (Homo sapiens = kluger Mensch)."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Latein",
+  "klasse": 4,
+  "kompetenzbereich": "Inhalts- und themenbezogene Kompetenzen",
+  "competences": [
+    "LAT.US.4.INH.03"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "INH"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0063",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

@@ -1,0 +1,119 @@
+{
+  "id": "c0088.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Sieh dir Abb. 1 an. Sie zeigt den CO₂-Ausstoß (als CO₂-Äquivalent) verschiedener Kraftwerkstypen pro erzeugter Kilowattstunde Strom.\n(a) Welche zwei Kraftwerkstypen haben den höchsten CO₂-Ausstoß?\n(b) Um welchen Faktor ist der CO₂-Ausstoß eines Kohlekraftwerks größer als der eines Windkraftwerks?\n(c) Kernkraft und Windkraft haben einen ähnlich niedrigen Wert. Nenne je einen ökologischen und einen ethischen Grund, warum man trotzdem zwischen diesen beiden Technologien unterscheiden sollte.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.4.WET.06",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "(a) Kohlekraft (820 g/kWh) und Erdgaskraft (490 g/kWh). (b) 820 / 11 ≈ 75 — Kohlekraft stößt ca. 75-mal mehr CO₂ aus als Windkraft. (c) Ökologisch: Kernkraft erzeugt radioaktiven Abfall (Endlager-Problem für Jahrtausende), Windkraft beeinflusst Landschaft und Vögel/Fledermäuse. Ethisch: Kernkraft — Haftung bei Unfällen, Proliferationsrisiko (Uranverbreitung), Endlager-Gerechtigkeit gegenüber künftigen Generationen; Windkraft — Bürgerakzeptanz, Lärm für Anwohner:innen. Beide Seiten sind valide.",
+    "acceptable_reasoning": "Andere stichhaltige ökologische/ethische Argumente sind gültig; entscheidend ist die Kategorie (nicht technisch/ökonomisch als 'ethisch' deklarieren).",
+    "rubric": [
+      {
+        "criterion": "Diagrammauswertung",
+        "levels": [
+          "Falsche oder keine Werte",
+          "Richtige Werte, Faktor nicht berechnet",
+          "Richtige Werte und Faktor korrekt berechnet"
+        ]
+      },
+      {
+        "criterion": "Mehrdimensionale Bewertung",
+        "levels": [
+          "Nur eine Dimension (z. B. nur CO₂)",
+          "Zwei Dimensionen (z. B. ökologisch + ökonomisch)",
+          "Mindestens drei Dimensionen mit begründeten Abwägungen"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen setzen 'wenig CO₂' gleich mit 'gut' — darauf hinweisen, dass CO₂ nur eine von mehreren Bewertungsdimensionen ist.",
+      "Kernkraft ist ein sensibles Thema — sachliche Diskussion einfordern, persönliche Meinungen sind ok, müssen aber begründet sein."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Wetter und Klima",
+  "competences": [
+    "PHY.US.4.WET.06"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "W",
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Kohlekraft",
+          "Erdgaskraft",
+          "Kernenergie",
+          "Wasserkraft",
+          "Windkraft",
+          "Photovoltaik"
+        ],
+        "values": [
+          820,
+          490,
+          12,
+          4,
+          11,
+          45
+        ],
+        "title": "CO₂-Äquivalent je erzeugter kWh Strom (g CO₂eq/kWh)",
+        "xlabel": "Kraftwerkstyp",
+        "ylabel": "g CO₂-Äquivalent pro kWh"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0088",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:20+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

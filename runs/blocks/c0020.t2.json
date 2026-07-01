@@ -1,0 +1,67 @@
+{
+  "id": "c0020.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Fülle die Tabelle für die folgenden Körper aus: Würfel, Dreiecksprisma, Quadratische Pyramide, Oktaeder.\n\nSpalten: Körper | Anzahl Ecken (E) | Anzahl Kanten (K) | Anzahl Flächen (F) | E − K + F",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Körper",
+        "Ecken (E)",
+        "Kanten (K)",
+        "Flächen (F)",
+        "E − K + F"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "H1",
+      "H2"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GEZ.US.4.GEO.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Würfel: 8 / 12 / 6 / 2. Dreiecksprisma: 6 / 9 / 5 / 2. Quadrat. Pyramide: 5 / 8 / 5 / 2. Oktaeder: 6 / 12 / 8 / 2. Alle E − K + F = 2 (Eulersche Formel).",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Schüler:innen vergessen manchmal die Grundfläche(n) bei Prismen oder Pyramiden beim Zählen der Flächen.",
+      "Das Oktaeder ist unbekannter — kurz Bild oder Netz an die Tafel, falls keine Modelle vorhanden."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Geometrische Objekte und ihre Eigenschaften (I1)",
+  "competences": [
+    "GEZ.US.4.GEO.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "H1",
+    "H2"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0020",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

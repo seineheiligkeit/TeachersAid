@@ -1,0 +1,89 @@
+{
+  "id": "c0155.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Ein Sportwagen mit einer Masse von 1 200 kg beschleunigt von 0 auf 100 km/h in 4,0 s.\na) Berechne die durchschnittliche Beschleunigung in m/s².\nb) Welche durchschnittliche resultierende Kraft wirkt dabei auf das Fahrzeug?\nc) Würde dieselbe Kraft eine doppelt so schwere Limousine (2 400 kg) gleich stark beschleunigen? Begründe.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.OS.5.MEC.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.OS.x.W.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "a) 100 km/h = 27,78 m/s; a = 27,78 m/s ÷ 4,0 s ≈ 6,94 m/s² ≈ 6,9 m/s². b) F = m · a = 1 200 kg · 6,94 m/s² ≈ 8 330 N ≈ 8,3 kN. c) Nein – dieselbe Kraft auf doppelte Masse ergibt halbe Beschleunigung: a = F/m = 8 330 N / 2 400 kg ≈ 3,47 m/s².",
+    "acceptable_reasoning": "Akzeptiert: Einheitenumrechnung korrekt, Formel explizit angeschrieben, sinnvolle Rundung.",
+    "rubric": [
+      {
+        "criterion": "Umrechnung",
+        "levels": [
+          "km/h korrekt in m/s umgerechnet",
+          "Umrechnung fehlt oder falsch"
+        ]
+      },
+      {
+        "criterion": "Berechnung F",
+        "levels": [
+          "F = m·a korrekt, Einheit N",
+          "Formel bekannt, Rechenfehler"
+        ]
+      },
+      {
+        "criterion": "Argumentation",
+        "levels": [
+          "Halbierung der Beschleunigung korrekt begründet",
+          "Ergebnis ohne Begründung"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Einheitenumrechnung km/h → m/s (÷ 3,6) wird oft vergessen.",
+      "Verwechslung resultierender Kraft mit Antriebskraft: Reibungs- und Luftwiderstand sind bei 'durchschnittlicher resultierender Kraft' schon inkludiert."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Physik",
+  "klasse": 5,
+  "kompetenzbereich": "Mechanik I",
+  "competences": [
+    "PHY.OS.5.MEC.01",
+    "PHY.OS.x.W.04"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0155",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:27+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

@@ -1,0 +1,163 @@
+{
+  "id": "c0091.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Schau dir Abbildung 2 (Einkommen vs. Todesfälle durch Naturkatastrophen) an.\na) Was beschreibt jeder Punkt im Diagramm?\nb) Beschreibe den Zusammenhang zwischen Pro-Kopf-Einkommen und Todesfällen durch Naturkatastrophen in einem vollständigen Satz.\nc) Was schließt du daraus: Ist die Anzahl der Todesopfer bei Naturkatastrophen hauptsächlich eine Frage der Naturgewalt oder eine Frage des Wohlstands? Begründe deine Meinung.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "OK",
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.1.LEB4.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "a) Jeder Punkt steht für ein Land — x-Achse zeigt das Pro-Kopf-Einkommen, y-Achse zeigt die Todesfälle durch Naturkatastrophen pro 100.000 Einwohner. b) Je höher das Pro-Kopf-Einkommen eines Landes, desto weniger Menschen sterben dort (relativ) durch Naturkatastrophen — es gibt einen negativen Zusammenhang (mit Ausreißern). c) Schüler:innen sollen aus dem Diagramm schließen, dass Wohlstand (Bauweise, Frühwarnsysteme, Krankenhäuser, Katastrophenschutz) ein wesentlicher Faktor ist. Die Naturgewalt allein erklärt die Unterschiede nicht.",
+    "acceptable_reasoning": "Eine nuancierte Antwort, die beide Faktoren (Naturgewalt und Wohlstand) anerkennt und das Diagramm als Beleg für den Wohlstandsfaktor nutzt, ist am stärksten.",
+    "rubric": [
+      {
+        "criterion": "Achsenbeschreibung (Punkt-Bedeutung)",
+        "levels": [
+          "Keine sinnvolle Beschreibung",
+          "Nur eine Dimension korrekt",
+          "Beide Dimensionen (x und y) eines Punktes korrekt erklärt"
+        ]
+      },
+      {
+        "criterion": "Zusammenhangsbeschreibung",
+        "levels": [
+          "Falsche Richtung oder kein Zusammenhang erkannt",
+          "Richtige Richtung, ohne Formulierung als Zusammenhang",
+          "Klarer Satz mit Richtung und erkannter Ausreißer-Möglichkeit"
+        ]
+      },
+      {
+        "criterion": "Schlussfolgerung Wohlstand vs. Naturgewalt",
+        "levels": [
+          "Keine oder triviale Schlussfolgerung",
+          "Eine Seite benannt, aber ohne Begründung",
+          "Differenzierter Standpunkt mit Diagrammbezug"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Streudiagramm mit Trendgerade (fit: true) — die Trendgerade zeigt den Zusammenhang, die Punkte die reale Streuung. Beide sollen interpretiert werden.",
+      "Korrelation ≠ Kausalität: Das Diagramm zeigt einen Zusammenhang, keinen Beweis für direkte Verursachung. Strenge Schüler:innen können das diskutieren.",
+      "Die Daten sind plausibel kalibriert auf Basis realer Trends (Our World in Data / EM-DAT), aber stilisiert — keine Ländernamen im Diagramm, um Überidentifikation zu vermeiden."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 1,
+  "kompetenzbereich": "Leben und Wirtschaften unter Beachtung der natürlichen Prozesse",
+  "competences": [
+    "GWB.US.1.LEB4.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "OK",
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:scatter",
+      "spec": {
+        "points": [
+          [
+            1200.0,
+            28.0
+          ],
+          [
+            1800.0,
+            22.5
+          ],
+          [
+            2500.0,
+            18.0
+          ],
+          [
+            3500.0,
+            14.0
+          ],
+          [
+            5000.0,
+            9.5
+          ],
+          [
+            8000.0,
+            6.0
+          ],
+          [
+            12000.0,
+            3.8
+          ],
+          [
+            18000.0,
+            2.5
+          ],
+          [
+            25000.0,
+            1.8
+          ],
+          [
+            35000.0,
+            1.2
+          ],
+          [
+            45000.0,
+            0.9
+          ],
+          [
+            55000.0,
+            0.7
+          ]
+        ],
+        "xlabel": "BIP pro Kopf (USD, kaufkraftbereinigt)",
+        "ylabel": "Todesfälle durch Naturkatastrophen pro 100.000 Einwohner",
+        "title": "Pro-Kopf-Einkommen vs. Todesfälle durch Naturkatastrophen (pro 100.000 Einwohner, ausgewählte Länder, 2000–2020 Mittel)",
+        "fit": true
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0091",
+  "source": "ai",
+  "created_at": "2026-06-26T19:02:23+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

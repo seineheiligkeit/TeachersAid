@@ -1,0 +1,89 @@
+{
+  "id": "c0003.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Szenario: Ein Landwirt misst den pH-Wert seines Ackerbodens und erhält pH 4,8. Für den Anbau von Weizen ist ein pH-Bereich von 6,0–7,0 optimal. Er hat folgende Möglichkeiten: (A) Er streut gelöschten Kalk (Calciumhydroxid, Ca(OH)₂) auf den Boden. (B) Er fügt Schwefel zu, was den Boden noch saurer machen würde. (C) Er wartet ab und hofft, dass sich der pH-Wert von selbst normalisiert. Welche Maßnahme empfiehlst du? Begründe deine Entscheidung chemisch und erkläre, welche Risiken die nicht gewählten Maßnahmen hätten. Berücksichtige dabei auch mögliche Auswirkungen auf die Umwelt.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Ein Landwirt will seinen zu sauren Boden (pH 4,8) für den Weizenanbau (optimal: pH 6,0–7,0) verbessern. Welche Maßnahme wählt er?"
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "S",
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.US.x.STA.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 15,
+    "answer_key": "Empfehlung: Maßnahme A (Kalkung mit Ca(OH)₂). Chemische Begründung: Calciumhydroxid ist eine Base, die mit der Bodensäure reagiert (Neutralisation) und den pH anhebt. Reaktion: Ca(OH)₂ + 2H⁺ → Ca²⁺ + 2H₂O. Risiken von B: Schwefelzugabe senkt den pH noch weiter, macht Boden für Weizen ungeeignet und kann Schwermetalle im Boden mobilisieren. Risiken von C: Böden haben wenig Selbstregulationsvermögen; der pH normalisiert sich nicht von alleine, wenn keine basischen Puffer vorhanden sind. Umweltaspekte: Überdosierung von Kalk kann den Boden zu basisch machen (pH > 7,5), was Nährstoffverfügbarkeit reduziert. Dosierung und Bodenanalyse sind daher entscheidend.",
+    "acceptable_reasoning": "Schüler:innen müssen nicht die Reaktionsgleichung in ausgeglichener Form schreiben; das chemische Prinzip (Base hebt pH an, Neutralisation) muss erkennbar sein. Mindestens ein Umweltaspekt sollte genannt werden.",
+    "rubric": [
+      {
+        "criterion": "Chemische Begründung",
+        "levels": [
+          "vollständig: Kalkung als Neutralisation identifiziert, Prinzip (Base erhöht pH) erklärt.",
+          "teilweise: Richtige Entscheidung ohne chemische Begründung.",
+          "unzureichend: Falsche Entscheidung oder keine Begründung."
+        ]
+      },
+      {
+        "criterion": "Risikobewertung",
+        "levels": [
+          "vollständig: Mindestens ein Risiko der nicht gewählten Maßnahmen korrekt benannt.",
+          "teilweise: Risiken angedeutet, aber unspezifisch.",
+          "unzureichend: Keine Risikobewertung."
+        ]
+      },
+      {
+        "criterion": "Umweltperspektive",
+        "levels": [
+          "vollständig: Mindestens ein Umweltaspekt korrekt berücksichtigt (Überdosierung, Ökosystem, Nährstoffe).",
+          "teilweise: Umwelt erwähnt, aber ohne konkreten Bezug.",
+          "unzureichend: Kein Umweltaspekt."
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Überdosierung von Kalk als Risiko ansprechen — viele Schüler:innen denken, 'mehr hilft mehr'.",
+      "Differenzierung: gelöschter Kalk (Ca(OH)₂) vs. gebrannter Kalk (CaO) vs. Kalkstein (CaCO₃) — alle werden zur Kalkung eingesetzt, aber mit unterschiedlicher Reaktivität. Für die 4. Klasse reicht das Prinzip.",
+      "Falls Schüler:innen biologische Argumente bringen (Bodenleben, Würmer), ist das vollständig korrekt und sollte positiv gewürdigt werden."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Chemie",
+  "klasse": 4,
+  "kompetenzbereich": "Standpunkte begründen, Entscheidungen treffen und reflektiert handeln (S)",
+  "competences": [
+    "CHE.US.x.STA.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "S",
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0003",
+  "source": "ai",
+  "created_at": "2026-06-25T11:35:34+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

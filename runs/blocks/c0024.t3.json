@@ -1,0 +1,68 @@
+{
+  "id": "c0024.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Fülle die Vergleichstabelle der Projektionsarten aus. Trage jeweils „ja“ oder „nein“ bzw. den gefragten Begriff ein.\n\nSpalten: Projektion | Parallele Strahlen? | Parallele Kanten bleiben parallel? | Fluchtpunkte vorhanden? | Maßstabsgetreu? | Typischer Einsatz",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Projektion",
+        "Parallele Strahlen?",
+        "Parallele Kanten bleiben parallel?",
+        "Fluchtpunkte?",
+        "Maßstabsgetreu?",
+        "Typischer Einsatz"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "H1",
+      "H3"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GEZ.US.4.PRO.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "Orthogonalriss (Normalprojektion): ja / ja / nein / ja / Technische Zeichnung. Kavalierperspektive: ja / ja (in Frontfläche) / nein / teilweise (Frontfläche ja, Tiefe halbe Länge) / Schrägbild, Lehrbücher. Ein-Fluchtpunkt-Perspektive (Zentralriss): nein / nur Tiefenlinien / ja (1) / nein / Architekturskizzen, Kunst. Zwei-Fluchtpunkt-Perspektive: nein / nein / ja (2) / nein / Architekturvisualisierung, Design.",
+    "acceptable_reasoning": "Schüler:innen, die bei „Maßstabsgetreu?“ bei der Kavalierperspektive „nein“ schreiben und dies mit der Tiefenverkürzung begründen, erhalten vollen Punkt.",
+    "rubric": [],
+    "watch_outs": [
+      "Die Unterscheidung „Normalprojektion“ vs. „Kavalierperspektive“ liegt darin, wie die Tiefenkanten behandelt werden — das ist ein häufiger Verwirrungspunkt.",
+      "Zwei-Fluchtpunkt-Perspektive ist kein Pflichtstoff, aber taucht in der Tabelle als Erweiterung auf — nach Bedarf weglassen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Projektionen und Risse (I3)",
+  "competences": [
+    "GEZ.US.4.PRO.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "H1",
+    "H3"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0024",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

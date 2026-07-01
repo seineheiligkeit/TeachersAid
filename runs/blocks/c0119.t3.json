@@ -1,0 +1,85 @@
+{
+  "id": "c0119.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Berechne den Mittelwert der Bevoelkerungszahlen aller neun Bundeslaender. Runde auf volle Hundert. Nutze dazu die folgenden exakten Werte:\nBurgenland 301 951 | Kaernten 569 744 | Niederoesterreich 1 723 723 | Oberoesterreich 1 530 349 | Salzburg 571 479 | Steiermark 1 269 801 | Tirol 775 970 | Vorarlberg 409 973 | Wien 2 005 760.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "OPE"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.1.DAT.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Summe: 9 158 750. Mittelwert: 9 158 750 / 9 = 1 017 638,9 ... ~ 1 017 600 (auf volle Hundert gerundet). Saeuberlicher Rechenweg: Summe ausschreiben, dann dividieren.",
+    "acceptable_reasoning": "Schrittweise Addition der neun Werte ist ebenso korrekt wie Gruppenaddition.",
+    "rubric": [
+      {
+        "criterion": "Summe korrekt berechnet",
+        "levels": [
+          "Summe fehlt oder falsch",
+          "Summe richtig (9 158 750)"
+        ]
+      },
+      {
+        "criterion": "Division durch 9",
+        "levels": [
+          "Falsche Divisorzahl",
+          "Durch 9 dividiert"
+        ]
+      },
+      {
+        "criterion": "Ergebnis gerundet",
+        "levels": [
+          "Kein Runden",
+          "Sinnvoll gerundet (ca. 1 017 600 bis 1 017 700)"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Summe der neun Zahlen ergibt 9 158 750 (Gesamtbevoelkerung Oesterreichs); Fehler entstehen oft bei der Addition grosser Zahlen — Nebenrechnung empfehlen.",
+      "Division durch 9 (nicht durch 8 oder 10!) betonen.",
+      "Auf sinnvolle Rundung hinweisen: bei Bevoelkerungszahlen ist 'auf volle Hundert' praxisnaeher als sechs Nachkommastellen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Mathematik",
+  "klasse": 1,
+  "kompetenzbereich": "4: Daten und Zufall",
+  "competences": [
+    "MAT.US.1.DAT.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "OPE"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0119",
+  "source": "ai",
+  "created_at": "2026-06-27T15:21:14+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

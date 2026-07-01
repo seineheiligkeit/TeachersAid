@@ -1,0 +1,77 @@
+{
+  "id": "c0020.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Erfinde einen eigenen geometrischen Körper, indem du zwei bekannte Grundkörper kombinierst (z. B. Zylinder + Halbkugel). Beschreibe deinen Körper in einem kurzen Text: Aus welchen Teilkörpern besteht er? Wie viele Flächen (inklusive Trennfläche, falls sichtbar) hat er insgesamt? Wo könnte dieser Körper in der Realität vorkommen?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "create",
+    "dimensions": [
+      "H1",
+      "H3"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GEZ.US.4.GEO.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Offene Aufgabe — Beispielantwort: Zylinder + Halbkugel (= Kapsel). Flächen: 1 Kreisfläche (Boden) + 1 Mantelfläche (Zylinder) + 1 Halbkugelfläche (Kappe) = 3 Flächen, davon 2 gekrümmt. Realbeispiel: Pharma-Kapsel, Rakete, Silo.",
+    "acceptable_reasoning": "Jede geometrisch korrekt beschriebene Kombination ist akzeptabel. Beurteilungsschwerpunkt: korrekte Beschreibung der Teile und nachvollziehbares Realbeispiel.",
+    "rubric": [
+      {
+        "criterion": "Geometrische Korrektheit",
+        "levels": [
+          "Körper nicht eindeutig beschreibbar",
+          "Körper beschreibbar, aber Flächenanzahl falsch",
+          "Körper korrekt beschrieben und Flächen richtig gezählt"
+        ]
+      },
+      {
+        "criterion": "Realweltbezug",
+        "levels": [
+          "Kein Beispiel",
+          "Beispiel genannt, aber kein geometrischer Bezug",
+          "Beispiel mit geometrischer Begründung"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen könnten Schwierigkeiten haben, gekrümmte und ebene Flächen zu unterscheiden — kurze Klärung vorab.",
+      "Die Trennfläche (Schnittkreis zwischen Zylinder und Halbkugel) wird oft vergessen, ist aber im Inneren verborgen — diskutieren, ob man sie zählt."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Geometrische Objekte und ihre Eigenschaften (I1)",
+  "competences": [
+    "GEZ.US.4.GEO.01"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "H1",
+    "H3"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0020",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

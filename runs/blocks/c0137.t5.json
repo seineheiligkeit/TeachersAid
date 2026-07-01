@@ -1,0 +1,100 @@
+{
+  "id": "c0137.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Beurteile die folgenden Aussagen: Sind sie richtig, falsch oder nur teilweise richtig? Begründe deine Einschätzung in je 1–2 Sätzen.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Wenn alle Menschen auf der Welt so viel konsumieren würden wie Österreicher:innen im Durchschnitt, bräuchten wir die Ressourcen von etwa drei Erden.",
+        "Wer Bio-Produkte kauft, handelt immer nachhaltiger als jemand, der konventionelle Produkte kauft.",
+        "Konsumentinnen und Konsumenten tragen keine Mitverantwortung für die Bedingungen, unter denen Produkte hergestellt werden, solange diese legal sind.",
+        "Nachhaltiger Konsum ist nur für wohlhabende Menschen möglich."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "Richtig / Falsch / Teilweise",
+        "Begründung"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "AR",
+      "AU"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "ETH.OS.x.ANA.03",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "ETH.OS.5.NAT.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "1. Richtig: Österreich hat einen ökologischen Fußabdruck von ca. 4–5 Erden pro Kopf; global hochgerechnet ergäbe das Mehrfaches einer Erde. 2. Teilweise richtig: Bio-Produkte vermeiden Pestizide, können aber bei langen Transportwegen eine schlechtere Klimabilanz als regionale konventionelle Produkte haben. 3. Falsch (aus ethischer Perspektive): Legalität schließt moralische Mitverantwortung nicht aus – ethische Normen können über gesetzliche Mindestnormen hinausgehen. 4. Teilweise richtig: Manche Nachhaltigkeitsoptionen (z. B. Bio, Fairtrade) sind teurer; aber Secondhand-Kauf, Reparieren oder Reduktion des Konsums kosten nicht mehr. Strukturelle Maßnahmen (Subventionen) könnten Nachhaltigkeit zugänglicher machen.",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Korrektheit der Einschätzungen",
+        "levels": [
+          "3–4 Aussagen korrekt eingeschätzt",
+          "1–2 Aussagen korrekt",
+          "Keine korrekte Einschätzung"
+        ]
+      },
+      {
+        "criterion": "Qualität der Begründungen",
+        "levels": [
+          "Alle Begründungen sachlich und nachvollziehbar",
+          "Teils begründet",
+          "Keine oder rein intuitive Begründungen"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Aussage 2 ist ein häufiger Irrtum: 'Bio = immer besser'. Regionale konventionelle Ware kann klimatisch besser als importiertes Bio sein.",
+      "Aussage 3 provoziert: Rechtlicher Rahmen und moralischer Rahmen sind nicht deckungsgleich – dies ist ein Kernelement der Ethik.",
+      "Aussage 4: Nicht pauschal als 'falsch' oder 'richtig' behandeln; Differenzierung nach Art der Nachhaltigkeitsstrategie ist entscheidend."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Ethik",
+  "klasse": 5,
+  "kompetenzbereich": "Analysieren und Reflektieren",
+  "competences": [
+    "ETH.OS.x.ANA.03",
+    "ETH.OS.5.NAT.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "AR",
+    "AU"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0137",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:20+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

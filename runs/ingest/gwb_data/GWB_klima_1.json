@@ -1,0 +1,187 @@
+{
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 1,
+  "kompetenzbereich": "Leben und Wirtschaften unter Beachtung der natürlichen Prozesse",
+  "title": "Wie liest man ein Klimadiagramm? Wien als Beispiel",
+  "kernfrage": "Was verrät dir ein Klimadiagramm über das Wetter in Wien — und was nicht?",
+  "body": {
+    "intro": [],
+    "data_figures": [
+      {
+        "id": "abb1",
+        "intent": "climate",
+        "title": "Klimadiagramm Wien (Hohe Warte), Normalperiode 1991–2020",
+        "data_source": {
+          "dataset_id": "geosphere_klima_normal_1991_2020",
+          "series": "wien"
+        }
+      }
+    ],
+    "assets": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Das Klimadiagramm kennenlernen",
+        "throughline": "Schüler:innen erschließen Schritt für Schritt, was ein Klimadiagramm zeigt — zuerst die zwei Achsen und deren Bedeutung, dann Lesen konkreter Werte, schließlich die Unterscheidung zwischen Klima (Langzeitdurchschnitt) und Wetter (Tagesereignis).",
+        "talking_points": [
+          "Das Klimadiagramm zeigt keine Tageswerte, sondern 30-jährige Monatsmittel (1991–2020) — das ist der Unterschied zwischen Klima und Wetter.",
+          "Linke Achse = Temperatur in °C (rote Linie), rechte Achse = Niederschlag in mm (blaue Balken) — beide Skalen gleichzeitig lesen.",
+          "Wien liegt im Inneralpinen/pannonischen Einflussbereich: relativ trocken (674 mm/Jahr), warme Sommer, kühle Winter.",
+          "Häufige Fehlvorstellung: höhere Säulen bedeuten wärmere Monate — Säulen sind Niederschlag, nicht Temperatur."
+        ],
+        "extensions": [
+          "Warum sind die Klimadaten Mittelwerte aus 30 Jahren? Was würde ein einzelnes Jahr zeigen?",
+          "Vergleich: Wie würde ein Klimadiagramm für eine Wüste oder einen Regenwald aussehen?",
+          "GeoSphere Austria: Welche Stationen messen das Klima in Österreich, und wie?"
+        ],
+        "blocks": [
+          {
+            "role": "info",
+            "id": "i1",
+            "kind": "prose",
+            "prompt": "Ein Klimadiagramm fasst das typische Wetter eines Ortes zusammen — aber nicht den heutigen Tag, sondern den Durchschnitt vieler Jahre. Das Diagramm für Wien (Abb. 1) zeigt Monatsmittelwerte der Normalperiode 1991–2020, gemessen an der Wetterstation Wien Hohe Warte. Die rote Linie zeigt die mittlere Monatstemperatur (°C, linke Achse), die blauen Balken den mittleren monatlichen Niederschlag (mm, rechte Achse).",
+            "asset_refs": ["abb1"]
+          },
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "open_response",
+            "prompt": "Schau dir Abb. 1 genau an. Welche zwei Größen werden in einem Klimadiagramm dargestellt? Erkläre, wofür die linke und die rechte Achse stehen und welche Darstellungsform (Linie oder Balken) für jede Größe verwendet wird.",
+            "payload": null,
+            "response": {"mode": "lines", "n": 4},
+            "cognitive_level": "remember",
+            "dimensions": ["OK"],
+            "serves": [{"competence_id": "GWB.US.1.LEB4.01", "relation": "exercises"}],
+            "est_minutes": 5,
+            "asset_refs": ["abb1"],
+            "answer_key": "Linke Achse: Temperatur in °C, dargestellt als rote Linie. Rechte Achse: Niederschlag in mm, dargestellt als blaue Balken (Säulen).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen verwechseln häufig die Achsen: darauf hinweisen, dass hohe Balken NICHT wärmere Monate bedeuten.",
+              "Manche nennen nur eine Größe — beide (Temperatur UND Niederschlag) müssen benannt werden."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "open_response",
+            "prompt": "Lies aus Abb. 1 ab: (a) In welchem Monat ist Wien am wärmsten? Wie hoch ist die mittlere Temperatur in diesem Monat? (b) In welchem Monat fällt am meisten Niederschlag? Wie viel Millimeter sind es ungefähr?",
+            "payload": null,
+            "response": {"mode": "lines", "n": 4},
+            "cognitive_level": "understand",
+            "dimensions": ["OK"],
+            "serves": [{"competence_id": "GWB.US.1.LEB4.01", "relation": "exercises"}],
+            "est_minutes": 6,
+            "asset_refs": ["abb1"],
+            "answer_key": "(a) Juli ist der wärmste Monat mit ca. 21,4 °C. (b) Mai hat den höchsten Niederschlag mit ca. 79 mm. (Akzeptabel: Juni oder Juli mit 78 bzw. 70 mm, wenn Schüler:innen einen dieser Monate nennen.)",
+            "acceptable_reasoning": "Ablesen mit leichten Ungenauigkeiten (±3 mm, ±0,5 °C) ist vertretbar.",
+            "watch_outs": [
+              "Viele tippen auf August als wärmsten Monat — aber Juli (21,4 °C) ist knapp wärmer als August (20,9 °C). Am Diagramm ist der Unterschied gering.",
+              "Den kältesten Monat (Januar, 0,8 °C) nicht mit dem niederschlagsreichsten verwechseln."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "table_fill",
+            "prompt": "Fülle die Tabelle anhand von Abb. 1 aus. Trage für jeden Jahreszeit-Block den wärmsten Monat, seine Temperatur und den höchsten Niederschlag der Jahreszeit ein.",
+            "payload": {
+              "kind": "table_fill",
+              "columns": ["Jahreszeit", "Monate", "Wärmster Monat (ca. °C)", "Höchster Niederschlag (ca. mm)"],
+              "rows": [
+                ["Winter", "Dez, Jän, Feb", "", ""],
+                ["Frühling", "Mär, Apr, Mai", "", ""],
+                ["Sommer", "Jun, Jul, Aug", "", ""],
+                ["Herbst", "Sep, Okt, Nov", "", ""]
+              ]
+            },
+            "response": {"mode": "table", "columns": ["Jahreszeit", "Monate", "Wärmster Monat (ca. °C)", "Höchster Niederschlag (ca. mm)"], "rows": 4},
+            "cognitive_level": "apply",
+            "dimensions": ["OK"],
+            "serves": [{"competence_id": "GWB.US.1.LEB4.01", "relation": "exercises"}],
+            "est_minutes": 8,
+            "asset_refs": ["abb1"],
+            "answer_key": "Winter: Feb, ca. 2,3 °C, ca. 47 mm (Dez). Frühling: Mai, ca. 15,8 °C, ca. 79 mm. Sommer: Jul, ca. 21,4 °C, ca. 78 mm (Jun). Herbst: Sep, ca. 15,8 °C, ca. 64 mm.",
+            "acceptable_reasoning": "Ablesen mit kleinen Ungenauigkeiten akzeptieren.",
+            "watch_outs": [
+              "Schüler:innen müssen lernen, gleichzeitig auf Linie (Temp.) UND Balken (Niederschlag) zu achten — die häufigste Fehlerquelle ist, beide zu vermischen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "true_false_justify",
+            "prompt": "Prüfe die folgenden Aussagen anhand von Abb. 1. Kreuze an: richtig oder falsch? Begründe kurz mit einer Zahl aus dem Diagramm.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "In Wien ist der Januar der kälteste Monat des Jahres.",
+                "Im Juni fällt in Wien mehr als 100 mm Niederschlag.",
+                "Die Temperaturen in Wien sind im Winter unter dem Gefrierpunkt (unter 0°C).",
+                "Im Sommer (Jun–Aug) fallen in Wien zusammen mehr als 200 mm Niederschlag."
+              ]
+            },
+            "response": {"mode": "table", "columns": ["Aussage", "Richtig / Falsch", "Begründung (Zahl aus Abb. 1)"], "rows": 4},
+            "cognitive_level": "analyze",
+            "dimensions": ["UK"],
+            "serves": [{"competence_id": "GWB.US.1.LEB4.01", "relation": "exercises"}],
+            "est_minutes": 8,
+            "asset_refs": ["abb1"],
+            "answer_key": "1. Richtig — Jan: 0,8 °C (kältester Monat). 2. Falsch — Juni: 70 mm, nicht über 100 mm. 3. Falsch — Januar hat 0,8 °C (knapp über dem Gefrierpunkt); kein Monat liegt unter 0. 4. Richtig — Jun (70) + Jul (78) + Aug (69) = 217 mm.",
+            "acceptable_reasoning": "Schüler:innen müssen eine Zahl aus dem Diagramm zur Begründung anführen.",
+            "watch_outs": [
+              "Aussage 3 ist eine typische Fehlvorstellung: Wien gilt als winterkalt, aber der Januardurchschnitt liegt mit 0,8 °C knapp über dem Gefrierpunkt — Einzeltage können kälter sein, aber der Monatsmittelwert ist es nicht.",
+              "Bei Aussage 4 müssen Schüler:innen drei Werte addieren — Achtung Rechenfleisß."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "open_response",
+            "prompt": "Erkläre in eigenen Worten den Unterschied zwischen „Klima“ und „Wetter“. Warum zeigt das Klimadiagramm Durchschnittswerte aus 30 Jahren und nicht die Messung von gestern?",
+            "payload": null,
+            "response": {"mode": "lines", "n": 5},
+            "cognitive_level": "understand",
+            "dimensions": ["UK"],
+            "serves": [{"competence_id": "GWB.US.1.LEB3.02", "relation": "exercises"}],
+            "est_minutes": 6,
+            "asset_refs": [],
+            "answer_key": "Wetter = aktueller Zustand der Atmosphäre (heute, morgen). Klima = langfristiger Durchschnitt des Wetters an einem Ort über viele Jahre (mind. 30 Jahre). 30 Jahre glätten zufällige Schwankungen (z. B. ein unthewohnlich kalter Sommer), sodass das Diagramm das typische Muster zeigt.",
+            "acceptable_reasoning": "Formulierungen wie 'Klima ist das Erwartete, Wetter das Erlebte' sind zulässig.",
+            "watch_outs": [
+              "Schüler:innen sagen oft 'Klima ist das Langzeitwetter' — das ist inhaltlich richtig, aber bitte auf die Prazision der 30-Jahres-Mittel hinweisen.",
+              "Nicht akzeptieren: 'Klima ist das Wetter im Sommer' — das ist eine Verwechslung mit Jahreszeit."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "open_response",
+            "prompt": "Was kannst du aus dem Klimadiagramm Wien (Abb. 1) NICHT ablesen? Nenne zwei Dinge, die ein Klimadiagramm NICHT zeigt, und begründe kurz.",
+            "payload": null,
+            "response": {"mode": "lines", "n": 4},
+            "cognitive_level": "evaluate",
+            "dimensions": ["UK"],
+            "serves": [{"competence_id": "GWB.US.1.LEB4.01", "relation": "exercises"}],
+            "est_minutes": 5,
+            "asset_refs": [],
+            "answer_key": "Mögliche Antworten: (1) Das Wetter an einem bestimmten Tag (z. B. 15. Juli 2024) — es zeigt nur Monatsmittel. (2) Extreme Ereignisse wie Hitzewellen oder Hochwasser. (3) Luftfeuchtigkeit, Windstärke, Sonnenscheindauer. (4) Klimaentwicklung im Zeitverlauf (nur ein einziger Zeitraum, 1991–2020, wird gezeigt).",
+            "acceptable_reasoning": "Jede Antwort zählt, die eine reale Einschränkung des Diagramms benennt und begründet.",
+            "watch_outs": [
+              "Häufige falsche Antwort: 'Man kann nicht sehen, ob es schneit' — das stimmt teilweise (Niederschlagsform fehlt), aber die Formulierung muss präzisiert werden.",
+              "Schüler:innen, die gar nichts nennen können: nachfragen 'Weist das Diagramm einen Schneetag in Wien nach?'"
+            ],
+            "rubric": [
+              {"criterion": "Benennung einer Einschränkung", "levels": ["Keine Einschränkung genannt", "Eine Einschränkung genannt, ohne Begründung", "Eine Einschränkung klar genannt und begründet", "Zwei Einschränkungen klar genannt und begründet"]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

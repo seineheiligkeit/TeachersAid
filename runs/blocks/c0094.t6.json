@@ -1,0 +1,84 @@
+{
+  "id": "c0094.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Erkundung deiner Schule und Gemeinde: Beobachte oder befrage (anonym, mit Einverständnis der Lehrkraft) Mitschüler:innen zu einer der folgenden Fragen:\n(a) Wie viele verschiedene Erstsprachen werden in eurer Klasse gesprochen?\n(b) Welche Berufe haben eure Eltern / Erziehungsberechtigten (grob: welcher Sektor)?\n\nHalte deine Ergebnisse in einer kurzen Tabelle fest und schreibe einen Satz dazu: Was zeigt das über die gesellschaftliche Vielfalt in deiner Umgebung?",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Kategorie",
+        "Anzahl / Anteil"
+      ],
+      "rows": 6
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "HK",
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.OST.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Individuelle Antworten; Gütekriterien: vollständige Tabelle, korrekte Kategorien, der abschließende Satz verbindet die Zahlen mit einem gesellschaftlichen Konzept (Vielfalt, Heterogenität, Abbild der Gesellschaft).",
+    "acceptable_reasoning": "Wenn eine Befragung nicht möglich ist, kann die Lehrkraft eine anonyme Handzeichen-Abstimmung im Plenum durchführen. Keine persönlichen Daten dokumentieren.",
+    "rubric": [
+      {
+        "criterion": "Vollständigkeit der Tabelle",
+        "levels": [
+          "Leer oder unvollständig",
+          "Teilweise ausgefüllt",
+          "Vollständig und klar beschriftet"
+        ]
+      },
+      {
+        "criterion": "Reflexionssatz",
+        "levels": [
+          "Fehlt",
+          "Vorhanden aber deskriptiv",
+          "Verbindet Daten mit gesellschaftlichem Begriff"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Datenschutz: Keine Namen, keine Fotos, Einverständnis vorab einholen. Die Aufgabe ist offen gestaltet – die Lehrkraft wählt eine der Optionen je nach Klassendynamik. Das Ergebnis wird nicht bewertet, sondern als Gesprächsbasis verwendet."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Österreichische Gesellschaftsentwicklung",
+  "competences": [
+    "GWB.US.3.OST.02"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "HK",
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0094",
+  "source": "ai",
+  "created_at": "2026-06-26T19:02:27+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

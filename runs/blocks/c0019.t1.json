@@ -1,0 +1,67 @@
+{
+  "id": "c0019.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Entscheide, ob die folgenden Aussagen über Künstliche Intelligenz stimmen, und begründe jeweils in einem Satz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "KI-Systeme können aus eigener Initiative neue Ziele entwickeln, die ihre Programmierer nicht vorgesehen haben.",
+        "Wenn eine KI mit fehlerhaften oder einseitigen Daten trainiert wird, kann sie diskriminierende Ergebnisse liefern.",
+        "KI ersetzt in jedem Fall menschliches Urteilsvermögen – wer KI nutzt, braucht selbst nicht mehr zu denken.",
+        "Ein KI-System, das in medizinischen Diagnosen sehr gute Ergebnisse liefert, kann dennoch in seltenen Fällen gefährliche Fehler machen."
+      ]
+    },
+    "response": {
+      "mode": "none"
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "T",
+      "G"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DGB.US.4.ORI.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "(1) Falsch – aktuelle KI-Systeme (schwache KI) optimieren festgelegte Ziele; die Idee einer KI, die eigene Ziele entwickelt (starke/allgemeine KI), ist spekulativ und nicht Stand der Technik. (2) Richtig – Bias in Trainingsdaten führt zu verzerrten Ergebnissen (z.B. historische Diskriminierung wird im Modell fortgeschrieben). (3) Falsch – KI unterstützt, ersetzt aber nicht kritisches Denken; KI-Outputs müssen von Menschen geprüft werden ('Halluzinationen'). (4) Richtig – KI arbeitet auf Wahrscheinlichkeiten; bei seltenen oder unbekannten Fällen kann die Fehlrate steigen; menschliche Kontrolle bleibt notwendig.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Aussage 1 greift eine verbreitete Science-Fiction-Vorstellung an – betonen: aktuelle KI ist eng zweckgebunden, keine allgemeine Intelligenz.",
+      "Aussage 3 ist eine Kernfehlvorstellung, die durch KI-Assistenten wie Chatbots genährt wird – immer wieder einfordern: Wer ist verantwortlich für das Ergebnis?"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Digitale Grundbildung",
+  "klasse": 4,
+  "kompetenzbereich": "Orientierung: gesellschaftliche Aspekte von Medienwandel und Digitalisierung analysieren und reflektieren",
+  "competences": [
+    "DGB.US.4.ORI.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "T",
+    "G"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0019",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

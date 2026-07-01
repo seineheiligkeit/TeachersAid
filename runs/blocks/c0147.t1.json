@@ -1,0 +1,127 @@
+{
+  "id": "c0147.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "formel1",
+      "formel2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Berechne den Grundumsatz für die folgenden beiden Personen mithilfe der Harris-Benedict-Formel (siehe Formeln oben). Runde auf ganze Kilokalorien.\n\nPerson A: weiblich, 17 Jahre, 62 kg, 168 cm\nPerson B: männlich, 17 Jahre, 75 kg, 182 cm",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "EV",
+      "NE"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "HOE.OS.6.EIG.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Person A (Frau): 655,1 + 9,6 × 62 + 1,85 × 168 − 4,68 × 17 = 655,1 + 595,2 + 310,8 − 79,56 = 1 481,54 ≈ 1 482 kcal/Tag.\nPerson B (Mann): 66,5 + 13,75 × 75 + 5,0 × 182 − 6,78 × 17 = 66,5 + 1 031,25 + 910 − 115,26 = 1 892,49 ≈ 1 892 kcal/Tag.",
+    "acceptable_reasoning": "Einsetzen der richtigen Werte in die jeweilige Geschlechterformel; korrekte Vorzeichenbehandlung beim Altersterm.",
+    "rubric": [
+      {
+        "criterion": "Formelauswahl",
+        "levels": [
+          "Falsche Formel verwendet",
+          "Richtige Formel für beide Personen gewählt"
+        ]
+      },
+      {
+        "criterion": "Rechenweg",
+        "levels": [
+          "Nur Ergebnis, kein Rechenweg",
+          "Teilschritte sichtbar",
+          "Vollständiger, korrekter Rechenweg"
+        ]
+      },
+      {
+        "criterion": "Ergebnis",
+        "levels": [
+          "Beide Ergebnisse falsch",
+          "Ein Ergebnis korrekt",
+          "Beide Ergebnisse korrekt (±5 kcal Rundung)"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Häufiger Fehler: Verwechslung der Formeln für Frauen und Männer.",
+      "Einige Schüler:innen vergessen den negativen Altersterm oder rechnen ihn als Addition.",
+      "Einheitenkonsistenz prüfen: Körpermasse in kg, Größe in cm, Alter in Jahren — nicht mischen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Haushaltsökonomie und Ernährung",
+  "klasse": 6,
+  "kompetenzbereich": "Das eigene Essverhalten erkennen, reflektieren und bewerten sowie Zusammenhänge zwischen Ernährungsgewohnheiten, Kulturen, Gesundheit und Wohlbefinden verstehen",
+  "competences": [
+    "HOE.OS.6.EIG.03"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "EV",
+    "NE"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "formel1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:math_formula",
+      "spec": {
+        "latex": "\\text{Grundumsatz (Frauen, Harris-Benedict)} = 655{,}1 + 9{,}6 \\cdot m + 1{,}85 \\cdot h - 4{,}68 \\cdot a"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    },
+    {
+      "id": "formel2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:math_formula",
+      "spec": {
+        "latex": "\\text{Grundumsatz (Männer, Harris-Benedict)} = 66{,}5 + 13{,}75 \\cdot m + 5{,}0 \\cdot h - 6{,}78 \\cdot a"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0147",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:24+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

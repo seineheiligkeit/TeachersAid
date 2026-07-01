@@ -1,0 +1,60 @@
+{
+  "id": "c0002.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "modelling_task",
+    "prompt": "Eine Handywerkstatt berechnet für jede Reparatur eine Grundgebühr von 25 € und zusätzlich 35 € pro Stunde Arbeitszeit.\n\na) Stelle einen Term auf, der den Gesamtpreis P (in Euro) in Abhängigkeit von der Anzahl der Arbeitsstunden h beschreibt.\nb) Wie viele Stunden hat die Reparatur gedauert, wenn der Gesamtpreis 165 € beträgt? Stelle eine Gleichung auf und löse sie.\nc) Erkläre in einem Satz, was der Koeffizient 35 in deinem Term bedeutet.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 40.0
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "MOD",
+      "OPE"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.4.VAR.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "a) P = 35h + 25\nb) 35h + 25 = 165 → 35h = 140 → h = 4; die Reparatur hat 4 Stunden gedauert.\nc) 35 ist der Preis pro Stunde – für jede zusätzliche Stunde steigt der Gesamtpreis um 35 €.",
+    "acceptable_reasoning": "Die Erklärung zu c) kann auch als 'Änderungsrate' oder 'Stundensatz' bezeichnet werden, solange die Bedeutung klar ist.",
+    "rubric": [],
+    "watch_outs": [
+      "Schüler:innen verwechseln Grundgebühr (Konstante) und Stundensatz (Koeffizient): Grundgebühr ist der Wert bei h=0.",
+      "Einheiten: Darauf achten, dass P in Euro und h in Stunden angegeben werden."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "modelling_task",
+  "subject": "Mathematik",
+  "klasse": 4,
+  "kompetenzbereich": "2: Variablen und Funktionen",
+  "competences": [
+    "MAT.US.4.VAR.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "MOD",
+    "OPE"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0002",
+  "source": "ai",
+  "created_at": "2026-06-25T11:35:33+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

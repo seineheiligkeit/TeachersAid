@@ -1,0 +1,78 @@
+{
+  "id": "c0046.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "design_task",
+    "prompt": "Du bekommst den Auftrag, einen einfachen Stiftehalter aus Holz herzustellen (Maße: ca. 8 × 8 × 6 cm, mit 5 Bohrungen für Stifte). Welche Werkzeuge brauchst du für jeden Schritt? Erstelle eine Werkzeugliste mit Begründung: Schreibe zu jedem Werkzeug, wofür du es einsetzt und warum gerade dieses Werkzeug.",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Werkzeug",
+        "Einsatz (Schritt)",
+        "Warum dieses Werkzeug?"
+      ],
+      "rows": 5
+    },
+    "cognitive_level": "create",
+    "dimensions": [
+      "HER"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "TED.US.2.HER.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Mögliche Werkzeuge und Begründungen: Maßband + Bleistift (Maße anzeichnen — präzise Markierung), Handkreissäge oder Feinsäge (Holz auf Maß zuschneiden — gerade Schnittlinie), Standbohrmaschine oder Handbohrmaschine (Löcher bohren — runde, senkrechte Öffnung), Schleifpapier (Oberfläche glätten — splitterfreie Kante), Schraubstock (Werkstück fixieren — Sicherheit). Bewertet: Angemessenheit der Werkzeugwahl + Begründung.",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Vollständigkeit der Werkzeuge",
+        "levels": [
+          "Weniger als 3 relevante Werkzeuge",
+          "Mindestens 4 relevante Werkzeuge mit Schrittangabe"
+        ]
+      },
+      {
+        "criterion": "Begründungsqualität",
+        "levels": [
+          "Begründung nur allgemein ('zum Sägen')",
+          "Begründung werkzeugspezifisch und mit Funktion verknüpft"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen wählen oft zu viele Werkzeuge — Diskussion: Was ist wirklich nötig?",
+      "Schraubstock wird oft vergessen — als verstecktes Sicherheitswerkzeug thematisieren."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "design_task",
+  "subject": "Technik und Design",
+  "klasse": 2,
+  "kompetenzbereich": "Herstellung",
+  "competences": [
+    "TED.US.2.HER.01"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "HER"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0046",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

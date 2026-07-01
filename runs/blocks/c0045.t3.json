@@ -1,0 +1,73 @@
+{
+  "id": "c0045.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Wähle einen Gegenstand aus deiner Umgebung (z. B. eine Schere, eine Trinkflasche oder einen Schulsessel). Erkläre in 3–4 Sätzen: Welche Eigenschaft des Materials macht diesen Gegenstand für seine Aufgabe geeignet? Was würde passieren, wenn er aus einem anderen Material wäre?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 40.0
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "ENT"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "TED.US.1.ENT.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Beispiel Schere: Die Klingen sind aus Stahl — hart, scharf schleifbar, korrosionsbeständig. Wären sie aus Holz, würden sie sich beim ersten Schnitt verformen. Der Griff ist oft aus Kunststoff — leicht, nicht leitend, angenehm zu halten. Das zeigt: Form und Funktion bedingen die Materialwahl.",
+    "acceptable_reasoning": "Jede Antwort, die eine spezifische Eigenschaft benennt und sie mit der Funktion des Gegenstands verknüpft, ist akzeptabel.",
+    "rubric": [
+      {
+        "criterion": "Materialeigenschaft benannt",
+        "levels": [
+          "Eigenschaft nur allgemein ('hart/weich')",
+          "Eigenschaft präzise und funktionsbezogen formuliert"
+        ]
+      },
+      {
+        "criterion": "Verknüpfung Form–Funktion",
+        "levels": [
+          "Funktion genannt, aber keine Verbindung zur Eigenschaft",
+          "Klare Kausalbeziehung zwischen Eigenschaft und Funktion erklärt"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen bleiben auf Alltagssprache ('weil Metall stark ist') — auf präzisere Eigenschaften hinführen ('weil Stahl eine hohe Härte hat und sich schleifen lässt').",
+      "Das Gedankenexperiment 'was wäre wenn' fällt manchen schwer — Lehrkraft kann Beispiel vorzeigen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Technik und Design",
+  "klasse": 1,
+  "kompetenzbereich": "Entwicklung",
+  "competences": [
+    "TED.US.1.ENT.04"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "ENT"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0045",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

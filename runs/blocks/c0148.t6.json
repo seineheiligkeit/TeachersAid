@@ -1,0 +1,91 @@
+{
+  "id": "c0148.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Lukas (17) isst seit Monaten fast täglich Fast Food auf dem Schulweg, schläft schlecht und fühlt sich oft antriebslos. Er sagt: 'Das Essen macht mir Spaß und ich hab keine Zeit für was anderes.'\n\nSein Freund empfiehlt: sofort komplett auf vegane Ernährung umzustellen. Seine Schwester schlägt vor: zunächst einen Tag die Woche bewusst selbst zu kochen.\n\nWelchen Ratschlag würdest du Lukas geben? Beziehe dich auf mindestens zwei Zusammenhänge zwischen Ernährung, Gesundheit und Wohlbefinden. Erkläre außerdem, warum ein radikaler sofortiger Wechsel schwierig sein kann.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Lukas steht zwischen zwei Ratschlägen: sofortiger Wechsel zu veganer Ernährung oder schrittweise ein Tag pro Woche bewusstes Kochen. Welche Empfehlung ist begründbarer – und warum?"
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "EV"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "HOE.OS.6.EIG.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Empfehlung Schwesternratschlag (schrittweise): Zusammenhänge: (1) Häufiger Fast-Food-Konsum liefert viel gesättigte Fettsäuren, Zucker und Salz, was langfristig Konzentration, Schlafqualität und Energielevel beeinträchtigen kann. (2) Schlechter Schlaf und Antriebslosigkeit können u. a. mit einer nährstoffarmen Ernährung zusammenhängen (z. B. niedrige B-Vitamin- oder Eisenzufuhr). Radikaler Wechsel: Verhaltensänderungen scheitern häufig an fehlenden Kochkompetenzen, Zeitmangel, tief verankerten Gewohnheiten und fehlender Motivation. Nachhaltige Veränderung gelingt besser schrittweise und mit positiven Erlebnissen.",
+    "acceptable_reasoning": "Auch eine abwägende Antwort akzeptieren (beide Ratschläge kritisch prüfen), solange mindestens zwei konkrete Ernährungs-Gesundheits-Zusammenhänge sachlich korrekt benannt werden und die Begründung der Empfehlung tragfähig ist.",
+    "rubric": [
+      {
+        "criterion": "Empfehlung mit Begründung",
+        "levels": [
+          "Klare, begründete Empfehlung mit Bezug auf Wohlbefinden (2P)",
+          "Empfehlung ohne ausreichende Begründung (1P)",
+          "Keine klare Position (0P)"
+        ]
+      },
+      {
+        "criterion": "Ernährungs-Gesundheits-Zusammenhänge",
+        "levels": [
+          "Mind. zwei korrekte und konkrete Zusammenhänge benannt (2P)",
+          "Ein Zusammenhang korrekt benannt (1P)",
+          "Keine sachlichen Zusammenhänge (0P)"
+        ]
+      },
+      {
+        "criterion": "Reflexion über radikalen Wechsel",
+        "levels": [
+          "Psychologische oder habituelle Hürden eines abrupten Wechsels erklärt (2P)",
+          "Angedeutet, aber nicht ausgeführt (1P)",
+          "Nicht thematisiert (0P)"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen moralisieren oft ('Fast Food ist schlecht') ohne sachliche Begründung – auf konkrete Zusammenhänge bestehen.",
+      "Vegane Ernährung ist per se keine schlechtere Option; der Kritikpunkt ist die Radikalität und Plötzlichkeit des Wechsels, nicht die vegane Lebensweise selbst – Stigmatisierung vermeiden.",
+      "Lukas' Aussage 'macht mir Spaß' ist ein valider Faktor für psychisches Wohlbefinden – Schüler:innen sollten diesen Aspekt nicht ignorieren."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Haushaltsökonomie und Ernährung",
+  "klasse": 6,
+  "kompetenzbereich": "Das eigene Essverhalten erkennen, reflektieren und bewerten sowie Zusammenhänge zwischen Ernährungsgewohnheiten, Kulturen, Gesundheit und Wohlbefinden verstehen",
+  "competences": [
+    "HOE.OS.6.EIG.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "EV"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0148",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:25+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

@@ -1,0 +1,139 @@
+{
+  "id": "c0156.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "source_critique",
+    "prompt": "Lies die folgende Aussage aus einem populärwissenschaftlichen Artikel:\n\n„Das Bohr-Modell erklärt, wie Elektronen auf festen Kreisbahnen um den Kern kreisen – genau wie Planeten um die Sonne. Dieses Modell gilt heute als vollständige Beschreibung der Atomhülle.“\n\nBeurteile diese Aussage kritisch:\na) Was ist an der Aussage physikalisch korrekt?\nb) Was ist ungenau oder falsch – und warum?\nc) Wie würde eine wissenschaftlich präzisere Beschreibung lauten?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.OS.7.ATO.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.OS.x.S.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.OS.x.S.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "a) Korrekt: Das Bohr-Modell postuliert diskrete Energieniveaus (Schalen) und erklärt das Wasserstoff-Linienspektrum erfolgreich. b) Ungenau/falsch: (1) Elektronen bewegen sich nicht auf festen Kreisbahnen – das widerspricht der Quantenmechanik (Heisenbergsche Unschärferelation); korrekt sind Aufenthaltswahrscheinlichkeiten (Orbitale). (2) Das Bohr-Modell gilt heute keineswegs als vollständige Beschreibung; es scheitert bei Mehrelektronenatomen und erklärt keine Intensitäten oder Feinstruktur. c) Präziser: 'Im Bohr-Modell werden diskrete Energiezustände des Elektrons im Wasserstoffatom beschrieben, was das Linienspektrum qualitativ erklärt. Das vollständigere quantenmechanische Modell beschreibt Elektronen durch Wellenfunktionen und Aufenthaltswahrscheinlichkeiten (Orbitale).'",
+    "acceptable_reasoning": "Akzeptiert: Verweis auf Heisenbergsche Unschärfe als Begründung für keine festen Bahnen; Verweis auf Mehrelektronenatome als Versagensbereich.",
+    "rubric": [
+      {
+        "criterion": "Korrekte Elemente",
+        "levels": [
+          "Diskrete Energieniveaus korrekt als gültigen Kern identifiziert",
+          "Nur 'irgendwie stimmt etwas' ohne Konkretisierung"
+        ]
+      },
+      {
+        "criterion": "Kritik",
+        "levels": [
+          "Keine festen Bahnen und Grenzen des Modells korrekt benannt",
+          "Nur eine Schwäche genannt"
+        ]
+      },
+      {
+        "criterion": "Präzisere Formulierung",
+        "levels": [
+          "Orbitale/Aufenthaltswahrscheinlichkeit korrekt eingebracht",
+          "Verbesserungsversuch ohne physikalische Grundlage"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Viele Schulbücher (auch aktuelle) beschreiben das Bohr-Modell zu positiv – Schüler:innen sollten lernen, auch verbreitete Darstellungen kritisch zu lesen.",
+      "Das Planetensystem-Analogon ist didaktisch nützlich, physikalisch aber irreführend: Gravitationskraft ≠ Coulombkraft, und Elektronen sind keine Punktteilchen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "source_critique",
+  "subject": "Physik",
+  "klasse": 7,
+  "kompetenzbereich": "Atomphysik",
+  "competences": [
+    "PHY.OS.7.ATO.02",
+    "PHY.OS.x.S.02",
+    "PHY.OS.x.S.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "W",
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:timeline",
+      "spec": {
+        "events": [
+          {
+            "at": 1897,
+            "label": "Thomson: Elektron entdeckt"
+          },
+          {
+            "at": 1909,
+            "label": "Rutherford: Kern-Streuexperiment"
+          },
+          {
+            "at": 1913,
+            "label": "Bohr: Schalenmodell H"
+          },
+          {
+            "at": 1924,
+            "label": "de Broglie: Materiewellen"
+          },
+          {
+            "at": 1926,
+            "label": "Schrödinger: Wellengleichung"
+          }
+        ],
+        "title": "Entwicklung der Atommodelle (1897–1926)",
+        "xlabel": "Jahr"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0156",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:27+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

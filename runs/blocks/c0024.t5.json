@@ -1,0 +1,70 @@
+{
+  "id": "c0024.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Du sollst für drei verschiedene Situationen die geeignete Projektion wählen:\n(a) Eine Skizze eines Schlafzimmers, die einer Kundin helfen soll, sich den Raum räumlich vorzustellen.\n(b) Eine technische Zeichnung eines Türrahmens für den Schreiner, der ihn exakt bauen soll.\n(c) Eine Darstellung eines Turms für eine Schülerzeitung, die ansprechend und leicht lesbar sein soll.\n\nNenne für jede Situation die geeignete Projektion und begründe kurz.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Wähle jeweils die passende Projektion und begründe geometrisch."
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "H1"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GEZ.US.4.PRO.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "(a) Zentralprojektion (1- oder 2-Fluchtpunkt-Perspektive) — gibt den natürlichsten räumlichen Eindruck, wie man den Raum beim Betreten wahrnehmen würde. (b) Parallelprojektion (Orthogonalriss / drei Normalrisse) — maßstabsgetreu, alle Maße direkt ablesbar, Norm-konform. (c) Parallelprojektion (Kavalierperspektive oder Isometrie) — gibt einen guten räumlichen Eindruck, ist leicht zu zeichnen und wirkt klar — Zentralprojektion für eine einfache Illustration unnötig komplex.",
+    "acceptable_reasoning": "Für (c) ist auch Zentralprojektion akzeptabel, wenn gut begründet (z. B. „weil dramatischer“).",
+    "rubric": [
+      {
+        "criterion": "Korrekte Wahl und Begründung (je Situation)",
+        "levels": [
+          "Falsche Wahl",
+          "Richtige Wahl ohne Begründung",
+          "Richtige Wahl mit geometrischer Begründung"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Situation (b) ist die eindeutigste — hier gibt es keine Diskussion.",
+      "Situation (c) ist bewusst offen gehalten — verschiedene begründete Antworten gelten."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Projektionen und Risse (I3)",
+  "competences": [
+    "GEZ.US.4.PRO.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "H1"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0024",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

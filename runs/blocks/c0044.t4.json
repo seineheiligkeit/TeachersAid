@@ -1,0 +1,64 @@
+{
+  "id": "c0044.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Das österreichische Volkslied 'Kein schöner Land' steht in F-Dur. Fülle die Tabelle aus – nutze dein Wissen über Tonika (I), Subdominante (IV) und Dominante (V) in F-Dur.\n\nHinweis: In F-Dur ist die Tonika = F, die Subdominante = B (= B-Dur), die Dominante = C (= C-Dur).",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Akkord-Funktion",
+        "Bezeichnung (I/IV/V)",
+        "Dreiklang in F-Dur",
+        "Wirkung auf den Hörer"
+      ],
+      "rows": 3
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "SIN"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MUS.US.3.SIN.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Zeile 1: Tonika | I | F-Dur (F-A-C) | Ruhe, Heimgefühl, Abschluss. Zeile 2: Subdominante | IV | B-Dur (B-D-F) | leichte Weite, Bewegung weg vom Zentrum. Zeile 3: Dominante | V | C-Dur (C-E-G) | Spannung, Erwartung, Drang zur Auflösung.",
+    "acceptable_reasoning": "Dreiklang-Töne müssen korrekt sein; Wirkungsbeschreibungen sind offen, sofern sie die harmonische Funktion korrekt widerspiegeln.",
+    "rubric": [],
+    "watch_outs": [
+      "B-Dur in österreichischer Notation: 'B' = deutsch/österreichisch für das, was im angelsächsischen Raum 'B♭' heißt. Nicht 'H'. Lehrkraft klärt das vor der Aufgabe.",
+      "Manche Schüler:innen können Dreiklänge noch nicht ausrechnen – Lehrkraft gibt die Töne an der Tafel an oder lässt sie ausprobieren."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Musik",
+  "klasse": 3,
+  "kompetenzbereich": "Singen und Musizieren",
+  "competences": [
+    "MUS.US.3.SIN.04"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "SIN"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0044",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

@@ -1,0 +1,95 @@
+{
+  "id": "c0053.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Imagine you are a new student at an English-speaking school. You have to introduce yourself to the class via a short written poster (profile card). Fill in the sections and write 2–3 full sentences about your hobbies and why you like them.\n\nMy Profile:\n- Name:\n- Age:\n- From:\n- Family:\n- Favourite subject:\n- Hobbies: (2–3 sentences in English)",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Section",
+        "Your answer"
+      ],
+      "rows": 6
+    },
+    "cognitive_level": "create",
+    "dimensions": [
+      "SPR",
+      "SCH"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS1.US.1.SPR.03",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "FS1.US.1.SCH.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Hobbies model: I love playing football with my friends after school. I also like reading adventure books because they are exciting. At weekends, I sometimes cook with my mum.\n\n(Any real, personal content is acceptable; 'why I like it' = 'because + reason' is the target construction.)",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Completeness",
+        "levels": [
+          "All sections filled, 2–3 sentences on hobbies",
+          "Most sections filled, 1 sentence on hobbies",
+          "Profile incomplete"
+        ]
+      },
+      {
+        "criterion": "Use of 'because'",
+        "levels": [
+          "Because + reason used at least once",
+          "Reason implied but not structured",
+          "No reasoning"
+        ]
+      },
+      {
+        "criterion": "Personal authenticity",
+        "levels": [
+          "Real, specific personal information",
+          "Generic but understandable",
+          "Copied phrases only"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen neigen dazu, nur zu listen ('I like football, reading, cooking.') — auf 'because + reason' bestehen",
+      "Profilkarte als Klassenausstellung oder Lernkartei verwenden — das motiviert zur sorgfältigen Schreibqualität",
+      "Schreibfehler in Kl.1 tolerieren, solange der Inhalt verständlich ist; Fokus liegt auf dem Sprechen (dieses Blatt als Basis für die mündliche Vorstellung)"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Erste lebende Fremdsprache",
+  "klasse": 1,
+  "kompetenzbereich": "Sprechen (an Gesprächen teilnehmen und zusammenhängend sprechen)",
+  "competences": [
+    "FS1.US.1.SPR.03",
+    "FS1.US.1.SCH.01"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "SPR",
+    "SCH"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0053",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

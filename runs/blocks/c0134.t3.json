@@ -1,0 +1,78 @@
+{
+  "id": "c0134.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne die folgenden Lebensmittelzusatzstoffe ihrer chemischen Funktion zu. Schreibe die passende Nummer hinter jeden Buchstaben.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "A) Ascorbinsäure (E300)",
+        "B) Natriumbenzoat (E211)",
+        "C) Lecithin (E322)",
+        "D) Betacarotin (E160a)",
+        "E) Carrageen (E407)"
+      ],
+      "right": [
+        "1) Verdickungsmittel / Geliermittel (aus Rotalgen)",
+        "2) Antioxidationsmittel (verhindert Oxidation von Fetten und Vitaminen)",
+        "3) Konservierungsstoff (hemmt Schimmel- und Hefepilze im sauren Milieu)",
+        "4) Emulgator (amphiphiles Phospholipid, ermöglicht Öl-Wasser-Mischung)",
+        "5) Farbstoff (orangerot, Provitamin A)"
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "WO"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.OS.8.CHE.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "A-2 (Ascorbinsäure = Antioxidans), B-3 (Natriumbenzoat = Konservierungsstoff), C-4 (Lecithin = Emulgator), D-5 (Betacarotin = Farbstoff), E-1 (Carrageen = Verdickungsmittel).",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Betacarotin ist ein Farbstoff UND Provitamin A – Schüler:innen ordnen es manchmal als 'Vitamin' ein; betonen, dass die E-Nummer-Kategorie die technologische Funktion beschreibt.",
+      "Ascorbinsäure (Vitamin C) als Antioxidans überrascht manche – klarmachen, dass es als Zusatzstoff zur Fettschutzfunktion eingesetzt wird, nicht primär als Vitamin."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Chemie",
+  "klasse": 8,
+  "kompetenzbereich": "Chemische Grundlagen des Lebens",
+  "competences": [
+    "CHE.OS.8.CHE.02"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "WO"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0134",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:20+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

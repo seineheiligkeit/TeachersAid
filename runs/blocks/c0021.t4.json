@@ -1,0 +1,74 @@
+{
+  "id": "c0021.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "construction",
+    "prompt": "Zeichne ein Schrägbild (Kavalierperspektive) eines geraden Drehzylinders mit Radius r = 3 cm und Höhe h = 6 cm.\n\nHinweis: Bei der Kavalierperspektive werden die Tiefenkanten halb so lang wie die tatsächliche Tiefe gezeichnet und im 45°-Winkel zur Waagrechten. Die Kreise der Grund- und Deckfläche erscheinen als Ellipsen.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 90.0
+    },
+    "cognitive_level": "apply",
+    "dimensions": [
+      "H2"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GEZ.US.4.GEO.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Schrägbild: Vordere Ellipse (Grundfläche); senkrechte Linien der Mantelfläche, Länge = h = 6 cm; hintere Ellipse (Deckfläche, nur sichtbarer Teil). Tiefenkante (Versatz): 3 cm × 0,5 = 1,5 cm im 45°-Winkel. Nur die sichtbaren Teile der hinteren Ellipse durchgehend — der verdeckte Teil gestrichelt oder weggelassen.",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Proportionen",
+        "levels": [
+          "Höhe oder Radius deutlich falsch",
+          "Annähernd korrekt",
+          "Korrekte Proportionen"
+        ]
+      },
+      {
+        "criterion": "Verdeckte Kanten",
+        "levels": [
+          "Nicht unterschieden",
+          "Korrekt gestrichelt oder weggelassen"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Ellipsen zu zeichnen ist technisch schwierig ohne Schablone — erklären, dass eine freihandskizzierte Ellipse für diese Aufgabe ausreicht.",
+      "Verdeckte Kanten (hintere Ellipse) sollten gestrichelt sein — dieser Konvention Gewicht beimessen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "construction",
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Geometrische Objekte und ihre Eigenschaften (I1)",
+  "competences": [
+    "GEZ.US.4.GEO.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "H2"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0021",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

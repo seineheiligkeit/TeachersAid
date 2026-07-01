@@ -1,0 +1,88 @@
+{
+  "id": "c0034.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Die EU-Kommission schlägt vor, dass alle EU-Länder gemeinsam Flüchtlinge aufnehmen – also jedes Land eine bestimmte Anzahl gemäß seiner Größe und Wirtschaftskraft. Einige Länder lehnen das ab.\n\nStell dir vor, du bist Mitglied des Europäischen Parlaments. Wie stimmst du – und warum? Berücksichtige dabei sowohl humanitäre als auch politische und praktische Argumente.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Soll die EU einen verbindlichen Verteilungsschlüssel für Flüchtlinge einführen?\n(A) Ja, verbindlich für alle Mitgliedstaaten\n(B) Nein, jedes Land entscheidet selbst\n(C) Ja, aber nur als Empfehlung (freiwillig)"
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "UK",
+      "HK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.4.EUR.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 13,
+    "answer_key": "Keine Musterlösung. Qualitätskriterien: (A) Argumente: Solidarität, gemeinsame Außengrenzen, faire Last; Gegenargument: nationale Souveränität, gesellschaftliche Belastbarkeit. (B) Argumente: Subsidiarität, länderspezifische Kapazitäten; Gegenargument: Trittbrettfahren, unfaire Last für Erstaufnahmeländer. (C) Kompromissposition: flexible Solidarität. Schüler:innen sollen humanitäre, rechtliche und politische Dimensionen benennen.",
+    "acceptable_reasoning": "Eine begründete Position unter Einbeziehung mindestens einer Gegenposition gilt als sehr gut.",
+    "rubric": [
+      {
+        "criterion": "Position klar",
+        "levels": [
+          "unklar",
+          "eine Option gewählt ohne Begründung",
+          "klar begründet"
+        ]
+      },
+      {
+        "criterion": "Perspektivenvielfalt",
+        "levels": [
+          "nur eine Sichtweise",
+          "zwei Sichtweisen",
+          "humanitär + politisch + praktisch"
+        ]
+      },
+      {
+        "criterion": "EU-Kontext",
+        "levels": [
+          "kein Bezug",
+          "allgemein erwähnt",
+          "konkrete EU-Mechanismen benannt"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Dieses Thema berührt sensible politische und familiäre Überzeugungen – Lehrperson moderiert sachlich und ermöglicht alle Positionen ohne Wertung.",
+      "Wichtig: Zwischen EU-Asylrecht (Dublin-Verordnung), nationalen Gesetzen und humanitärem Völkerrecht unterscheiden – für Klasse 4 vereinfachend."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 4,
+  "kompetenzbereich": "Europa und europäische Integration",
+  "competences": [
+    "GWB.US.4.EUR.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "UK",
+    "HK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0034",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

@@ -1,0 +1,90 @@
+{
+  "id": "c0151.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Bestimme die folgenden Verbformen aus Senecas Briefen grammatisch (Modus, Tempus, Person, Numerus, Genus verbi) und übersetze sie.",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Verbform",
+        "Modus",
+        "Tempus",
+        "Person / Num.",
+        "Genus verbi",
+        "Bedeutung"
+      ],
+      "rows": 6
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "UEB"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "LAT.OS.x.UBE.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "1. recede (recedo) — Imperativ Präsens Aktiv, 2. Sg. — „Zieh dich zurück!“; 2. cogitur (cogo) — Indikativ Präsens Passiv, 3. Sg. — „er/sie/es wird gezwungen“; 3. profecisse (proficio) — Infinitiv Perfekt Aktiv — „Fortschritte gemacht zu haben“; 4. viverem (vivo) — Konjunktiv Imperfekt Aktiv, 1. Sg. — „dass ich lebte / ich würde leben“; 5. sequendum est (sequor) — Gerundivum (nd-Form) mit esse, Imperativ/Notwendigkeit — „es muss gefolgt werden“; 6. liberatus eris (libero) — Indikativ Futur II Passiv, 2. Sg. — „du wirst befreit worden sein“",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Korrektheit der grammatischen Bestimmung",
+        "levels": [
+          "Alle 6 Formen vollständig und korrekt bestimmt",
+          "4–5 Formen korrekt",
+          "2–3 Formen korrekt",
+          "0–1 Formen korrekt"
+        ]
+      },
+      {
+        "criterion": "Übersetzungsqualität",
+        "levels": [
+          "Treffend, idiomatisch",
+          "Sinngemäß korrekt",
+          "Teilweise korrekt",
+          "Fehlerhaft"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Sequendum est ist eine Gerundivum-Konstruktion (nd-Form + esse) und drückt eine Notwendigkeit aus — Schüler:innen verwechseln dies oft mit einem Gerundium. Das Gerundivum stimmt mit dem Subjekt oder Objekt überein; hier ist es ein unpersönlicher Ausdruck.",
+      "Profecisse: Infinitiv Perfekt Aktiv von proficio. Das Perfektstammmorphem -isse ist ein häufiger Stolperstein.",
+      "Liberatus eris: Futur II Passiv wird im Deutschen oft umständlich, hier ist die Modellantwort auch ,du wirst frei sein' akzeptabel."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Latein",
+  "klasse": 8,
+  "kompetenzbereich": "Übersetzungskompetenzen",
+  "competences": [
+    "LAT.OS.x.UBE.03"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "UEB"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0151",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:26+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

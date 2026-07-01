@@ -1,0 +1,85 @@
+{
+  "id": "c0004.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "In einer Familie ist die Mutter phänotypisch braun-äugig (heterozygot: Bb), der Vater ist blau-äugig (bb). Braune Augenfarbe ist dominant (B), blaue Augenfarbe rezessiv (b).\n\n(a) Bestimme alle möglichen Genotypen der Kinder dieser Familie und berechne die Wahrscheinlichkeit, mit der ein Kind blaue Augen hat.\n(b) Das erste Kind hat braune Augen. Kann man mit Sicherheit sagen, ob es homozygot oder heterozygot ist? Begründe.\n(c) Wie nennt man eine Kreuzung der Form Bb × bb in der Genetik, und warum ist sie besonders nützlich?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "W",
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.ERK.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 14,
+    "answer_key": "(a) Kreuzung Bb × bb: Nachkommen sind Bb (braun, Wahrscheinlichkeit 50 %) oder bb (blau, Wahrscheinlichkeit 50 %). (b) Nein – ein kind mit braunen Augen kann nur den Genotyp Bb haben (da vom Vater immer b kommt), also ist es in diesem Fall zwingend heterozygot (Bb). Man kann es nicht direkt am Phänotyp erkennen, aber die Kreuzung erlaubt den Rückschluss. (c) Diese Kreuzung heißt Rückkreuzung (Testkreuzung / back-cross): Ein Individuum mit unbekanntem Genotyp (phänotypisch dominant) wird mit einem homozygot rezessiven Individuum gekreuzt. Am Verhältnis der Nachkommen kann man ablesen, ob das unbekannte Elternteil homo- oder heterozygot ist (1:1 → heterozygot; alle dominant → homozygot dominant).",
+    "acceptable_reasoning": "Für (b): Da Vater bb ist, trägt jedes Kind zwingend ein b vom Vater. Das braun-äugige Kind muss also Bb sein – es ist automatisch heterozygot. Schüler:innen, die argumentieren 'man kann es nicht sagen, weil es BB sein könnte', liegen falsch, da BB ein B vom Vater (bb) erfordern würde.",
+    "rubric": [
+      {
+        "criterion": "Kreuzungsschema / Genotypen-Berechnung",
+        "levels": [
+          "vollständig: Beide Genotypen (Bb, bb) korrekt mit 50:50-Verhältnis",
+          "teilweise: Genotypen korrekt, Verhältnis fehlt oder falsch",
+          "unzureichend: Genotypen falsch oder fehlen"
+        ]
+      },
+      {
+        "criterion": "Schluss bei (b)",
+        "levels": [
+          "vollständig: Erkennt, dass Bb zwingend folgt, mit korrekter Begründung über den Vater",
+          "teilweise: Kommt zur richtigen Antwort ohne vollständige Begründung",
+          "unzureichend: Denkt BB wäre möglich"
+        ]
+      },
+      {
+        "criterion": "Begriff und Nutzen der Testkreuzung",
+        "levels": [
+          "vollständig: Begriff korrekt, Nutzen (Genotyp-Bestimmung) klar erklärt",
+          "teilweise: Begriff korrekt, Nutzen nicht erklärt",
+          "unzureichend: Begriff fehlt oder falsch"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Klassischer Irrtum bei (b): Schüler:innen vergessen, dass der Vater nur b-Allele weitergeben kann, und denken ein braun-äugiges Kind könnte BB sein.",
+      "Bei (c): 'Testkreuzung' und 'Rückkreuzung' werden oft synonym verwendet – beide Begriffe sollten anerkannt werden. Der Kern ist das Prinzip, nicht das Label."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Biologie",
+  "klasse": 4,
+  "kompetenzbereich": "Erkenntnisse gewinnen (E)",
+  "competences": [
+    "BIO.US.x.ERK.04"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "W",
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0004",
+  "source": "ai",
+  "created_at": "2026-06-25T11:35:34+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

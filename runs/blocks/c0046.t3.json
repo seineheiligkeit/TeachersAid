@@ -1,0 +1,66 @@
+{
+  "id": "c0046.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Beurteile die folgenden Aussagen zur Werkraumsicherheit. Stimmt die Aussage? Erkläre in einem Satz, warum.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Beim Sägen soll das Werkstück mit der freien Hand gehalten werden, damit es nicht verrutscht.",
+        "Eine Schutzbrille ist nur nötig, wenn man mit Maschinen arbeitet.",
+        "Werkzeuge sollen nach dem Gebrauch gereinigt und am richtigen Platz aufgehängt werden.",
+        "Wenn ein Werkzeug kaputt ist, darf man es noch kurz weiterverwenden, bevor man die Lehrperson informiert."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 8
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "HER"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "TED.US.2.HER.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1. Falsch: Das Werkstück mit der Einspannhilfe (Schraubstock, Zwinge) fixieren — die freie Hand hält nicht sicher und ist in der Schnittbahn gefährdet. 2. Falsch: Auch beim Sägen von Hand entstehen Späne — Schutzbrille immer. 3. Richtig: Ordnung verhindert Verletzungen durch herumliegende Werkzeuge und verlängert die Lebensdauer. 4. Falsch: Defektes Werkzeug sofort aus dem Verkehr ziehen und Lehrperson informieren — Verletzungsgefahr.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Aussage 1 ist die häufigste Unfallursache im Werkraum — mit Nachdruck thematisieren.",
+      "Aussage 4: Schüler:innen zögern oft, Defekte zu melden — psychologische Sicherheit betonen (kein Tadel)."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Technik und Design",
+  "klasse": 2,
+  "kompetenzbereich": "Herstellung",
+  "competences": [
+    "TED.US.2.HER.03"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "HER"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0046",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

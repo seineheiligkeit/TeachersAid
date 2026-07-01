@@ -1,0 +1,76 @@
+{
+  "id": "c0021.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "multiple_choice",
+    "prompt": "Von einem unbekannten Körper sind das Netz und eine Seitenansicht gegeben. Das Netz besteht aus einem gleichseitigen Dreieck in der Mitte und drei weiteren gleichseitigen Dreiecken, die an je einer Seite anliegen. Die Seitenansicht ist ein gleichseitiges Dreieck.\n\nWelcher Körper ist das?",
+    "payload": {
+      "kind": "multiple_choice",
+      "options": [
+        "Dreiecksprisma",
+        "Tetraeder (dreiseitige Pyramide mit gleichseitigen Dreiecksflächen)",
+        "Quadratische Pyramide",
+        "Oktaeder"
+      ],
+      "select": "one"
+    },
+    "response": {
+      "mode": "choices",
+      "options": [
+        "Dreiecksprisma",
+        "Tetraeder",
+        "Quadratische Pyramide",
+        "Oktaeder"
+      ],
+      "select": "one"
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "H2",
+      "H3"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GEZ.US.4.GEO.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Tetraeder (dreiseitige Pyramide mit vier gleichseitigen Dreiecksflächen). Das Netz hat 4 Dreiecke (1 Grundfläche + 3 Seitenflächen), die Seitenansicht ist ein Dreieck.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Dreiecksprisma hat im Netz 5 Flächen (2 Dreiecke + 3 Rechtecke) — sofort ausschließbar.",
+      "Oktaeder hat 8 Dreiecke im Netz — ebenfalls ausschließbar.",
+      "„Tetraeder“ als Begriff ist manchmal neu — im Unterricht einführen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "multiple_choice",
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Geometrische Objekte und ihre Eigenschaften (I1)",
+  "competences": [
+    "GEZ.US.4.GEO.03"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "H2",
+    "H3"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0021",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

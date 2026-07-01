@@ -1,0 +1,67 @@
+{
+  "id": "c0005.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "ordering",
+    "prompt": "Bringe die folgenden Reaktionen auf eine Schiedsrichter:innen-Fehlentscheidung in eine Reihenfolge von 'fairstes Verhalten' (1) bis 'unfairstes Verhalten' (5). Begründe kurz, warum du die Reihenfolge so gewählt hast.",
+    "payload": {
+      "kind": "ordering",
+      "items": [
+        "A — Du sagst nichts und spielst weiter.",
+        "B — Du fragst ruhig: 'War das wirklich so?' und akzeptierst die Antwort.",
+        "C — Du schreist: 'Das ist total ungerecht!' und verlässt kurz das Spielfeld.",
+        "D — Du beschwerst dich noch nach dem Spiel lautstark im Gespräch mit anderen.",
+        "E — Du sagst der Schiedsrichterin nach dem Spiel freundlich, was du gesehen hast."
+      ]
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 35.0
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "SOZ"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BUS.US.2.SOZ.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Eine mögliche faire Reihenfolge (es gibt vertretbare Varianten): 1–B (ruhige Nachfrage + Akzeptanz), 2–E (freundliches Feedback nach dem Spiel), 3–A (schweigendes Akzeptieren), 4–C (Emotionsausbruch, aber man kehrt zurück), 5–D (anhaltende Beschwerde nach dem Spiel). Wichtig: B und E können auch getauscht werden; Begründungen zählen mehr als die genaue Reihenfolge.",
+    "acceptable_reasoning": "Vertretbare Abweichungen (z. B. A vor E) mit Begründung voll anerkennen.",
+    "rubric": [],
+    "watch_outs": [
+      "Es gibt keine perfekt 'richtige' Reihenfolge — Ziel ist das Begründen, nicht das Erraten.",
+      "C wird oft als 'gar nicht so schlimm' eingestuft — auf die Wirkung auf Schiedsrichter:innen und Mitspielende hinweisen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "ordering",
+  "subject": "Bewegung und Sport",
+  "klasse": 2,
+  "kompetenzbereich": "Sozialkompetenz",
+  "competences": [
+    "BUS.US.2.SOZ.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "SOZ"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0005",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

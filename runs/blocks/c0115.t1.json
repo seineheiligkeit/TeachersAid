@@ -1,0 +1,239 @@
+{
+  "id": "c0115.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1",
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Lies die folgenden Klimawerte aus Abb. 1 (Innsbruck) und Abb. 2 (Graz) ab.",
+    "payload": {
+      "kind": "table_fill",
+      "columns": [
+        "Kenngröße",
+        "Innsbruck (Abb. 1)",
+        "Graz (Abb. 2)"
+      ],
+      "rows": [
+        [
+          "Wärmster Monat + Temperatur (°C)",
+          "",
+          ""
+        ],
+        [
+          "Kältester Monat + Temperatur (°C)",
+          "",
+          ""
+        ],
+        [
+          "Niederschlagsreichster Monat + Menge (mm)",
+          "",
+          ""
+        ],
+        [
+          "Niederschlagsärmster Monat + Menge (mm)",
+          "",
+          ""
+        ],
+        [
+          "Niederschlag im Januar (mm)",
+          "",
+          ""
+        ]
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Kenngröße",
+        "Innsbruck (Abb. 1)",
+        "Graz (Abb. 2)"
+      ],
+      "rows": 5
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "OK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.1.LEB4.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Wärmster Monat: Innsbruck Jul ~19,6 °C / Graz Jul ~20,8 °C. Kältester Monat: Innsbruck Jan ~-0,4 °C / Graz Jan ~-0,1 °C. Niederschlagsreichster Monat: Innsbruck Aug ~139 mm / Graz Aug ~128 mm. Niederschlagsärmster Monat: Innsbruck Feb ~36 mm / Graz Jan ~20 mm. Januar-Niederschlag: Innsbruck ~47 mm / Graz ~20 mm.",
+    "acceptable_reasoning": "Ablese-Toleranz ±3 mm / ±0,5 °C akzeptieren.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Innsbruck hat seinen kältesten Monat (Jan) leicht unter 0 °C (-0,4 °C) — das ist ein wichtiger Unterschied zu Wien und Graz, die knapp über 0 liegen.",
+      "Graz Jan 20 mm ist auffällig trocken — darauf hinweisen, dass dieser Wert gleich in einer Aufgabe analysiert wird."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 1,
+  "kompetenzbereich": "Leben und Wirtschaften unter Beachtung der natürlichen Prozesse",
+  "competences": [
+    "GWB.US.1.LEB4.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "OK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:climate_diagram",
+      "spec": {
+        "title": "Klimadiagramm Innsbruck (Universität), Normalperiode 1991–2020",
+        "months": [
+          "Jän",
+          "Feb",
+          "Mär",
+          "Apr",
+          "Mai",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Okt",
+          "Nov",
+          "Dez"
+        ],
+        "temp": [
+          -0.4,
+          1.5,
+          6.0,
+          10.3,
+          14.7,
+          18.1,
+          19.6,
+          19.0,
+          14.6,
+          10.0,
+          4.6,
+          0.4
+        ],
+        "precip": [
+          47,
+          36,
+          54,
+          56,
+          82,
+          114,
+          125,
+          139,
+          82,
+          69,
+          59,
+          53
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "geosphere_klima_normal_1991_2020",
+        "series": "innsbruck",
+        "note": null,
+        "title": "Klimanormalwerte österreichischer Stationen (1991–2020)",
+        "url": "https://data.hub.geosphere.at/dataset/klima-v2-1m",
+        "attribution": "Datenquelle: GeoSphere Austria – data.hub.geosphere.at (klima-v2-1m, CC BY 4.0)",
+        "stand": "1991–2020"
+      },
+      "illustrative": false,
+      "caption": null
+    },
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:climate_diagram",
+      "spec": {
+        "title": "Klimadiagramm Graz (Universität), Normalperiode 1991–2020",
+        "months": [
+          "Jän",
+          "Feb",
+          "Mär",
+          "Apr",
+          "Mai",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Okt",
+          "Nov",
+          "Dez"
+        ],
+        "temp": [
+          -0.1,
+          1.8,
+          6.0,
+          11.0,
+          15.5,
+          19.2,
+          20.8,
+          20.1,
+          15.2,
+          10.2,
+          5.2,
+          0.5
+        ],
+        "precip": [
+          20,
+          29,
+          34,
+          51,
+          93,
+          120,
+          123,
+          128,
+          93,
+          63,
+          54,
+          40
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "geosphere_klima_normal_1991_2020",
+        "series": "graz",
+        "note": null,
+        "title": "Klimanormalwerte österreichischer Stationen (1991–2020)",
+        "url": "https://data.hub.geosphere.at/dataset/klima-v2-1m",
+        "attribution": "Datenquelle: GeoSphere Austria – data.hub.geosphere.at (klima-v2-1m, CC BY 4.0)",
+        "stand": "1991–2020"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0115",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:34+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

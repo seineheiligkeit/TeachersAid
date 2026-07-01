@@ -1,0 +1,113 @@
+{
+  "id": "c0112.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Lies Abb. 1 ab. Welches der acht Länder stößt am meisten CO₂ pro Kopf aus, welches am wenigsten? Notiere die Werte. Um wie viel mal höher ist der höchste Wert als der niedrigste?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "OK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.4.ENT2.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "Höchster Wert: USA mit 13,6 t CO₂/Kopf. Niedrigster Wert: Nigeria mit 0,6 t CO₂/Kopf. Verhältnis: 13,6 ÷ 0,6 ≈ 22,7 — die USA stoßen also pro Kopf mehr als 22-mal so viel CO₂ aus wie Nigeria.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "China (9,3 t) wird häufig als höchster Wert genannt, liegt aber unter den USA (13,6 t) — wichtige Korrektur.",
+      "Das 22-fache Verhältnis ist überraschend groß und emotional wirksam — gut als Diskussionseinstieg."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 4,
+  "kompetenzbereich": "Entwicklungen in einer globalisierten Welt",
+  "competences": [
+    "GWB.US.4.ENT2.04"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "OK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "title": "CO₂-Ausstoß pro Kopf im Ländervergleich (in t CO₂/Kopf)",
+        "xlabel": "Land",
+        "ylabel": "CO₂-Ausstoß pro Kopf (t/Kopf)",
+        "log": false,
+        "categories": [
+          "Österreich",
+          "Deutschland",
+          "Schweiz",
+          "Italien",
+          "USA",
+          "China",
+          "Indien",
+          "Nigeria"
+        ],
+        "values": [
+          6.3,
+          6.9,
+          3.7,
+          5.1,
+          13.6,
+          9.3,
+          2.2,
+          0.6
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "worldbank_co2_pro_kopf",
+        "series": "vergleich",
+        "note": null,
+        "title": "CO₂-Ausstoß pro Kopf im Ländervergleich",
+        "url": "https://data.worldbank.org/indicator/EN.GHG.CO2.PC.CE.AR5",
+        "attribution": "Datenquelle: World Bank – data.worldbank.org (EN.GHG.CO2.PC.CE.AR5, CC BY 4.0)",
+        "stand": "2024"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0112",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:30+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

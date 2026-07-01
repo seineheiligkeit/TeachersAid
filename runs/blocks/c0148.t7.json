@@ -1,0 +1,81 @@
+{
+  "id": "c0148.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "source_critique",
+    "prompt": "Lies die folgenden zwei Textausschnitte zum Thema 'Superfoods' und bewerte sie kritisch.\n\n**Quelle A (Lifestyle-Blog):** 'Chia-Samen sind das Wundermittel für mehr Energie und ein starkes Immunsystem. Studien zeigen: Wer täglich Chia isst, lebt gesünder. Jetzt im Sonderangebot in unserem Online-Shop!'\n\n**Quelle B (Österreichische Gesellschaft für Ernährung, ÖGE):** 'Chia-Samen enthalten Omega-3-Fettsäuren, Ballaststoffe und Mineralstoffe. Sie können als Teil einer abwechslungsreichen Ernährung nützlich sein, ersetzen aber keine Vielfalt an Lebensmitteln. Übertriebene Heilsversprechen sind wissenschaftlich nicht belegt.'\n\n(1) Welche Quelle ist wissenschaftlich vertrauenswürdiger – und woran erkennst du das? Nenne mindestens zwei Kriterien.\n(2) Welche zwei Merkmale von 'Superfoods'-Werbung sollte man grundsätzlich kritisch hinterfragen?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 8
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "EV"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "HOE.OS.6.EIG.07",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "(1) Quelle B (ÖGE) ist vertrauenswürdiger: Sie ist eine unabhängige Fachgesellschaft ohne kommerzielles Interesse, formuliert differenziert und ohne Übertreibung, enthält keine Verkaufsabsicht und stützt sich auf wissenschaftliche Evidenz. Quelle A: klarer Interessenskonflikt (Verkauf), vage Studienbehauptung ohne Quellenangabe oder Methode, Superlative ('Wundermittel'). | (2) Warnsignale: (a) Wer profitiert von der Aussage (Interessenskonflikt)? (b) Werden konkrete, zitierfähige Studien oder nur vage 'Studien zeigen'-Aussagen verwendet? Weitere mögliche Antworten: Absolute statt nuancierte Aussagen; Kombination von Produktinformation und Kaufaufforderung.",
+    "acceptable_reasoning": "Für (1): mind. zwei konkrete Qualitätskriterien für Quelle B benannt UND mind. zwei Schwächen von Quelle A. Für (2): mind. zwei verallgemeinerbare, konkrete Fragen oder Warnsignale.",
+    "rubric": [
+      {
+        "criterion": "Vertrauenswürdigkeitsurteil mit Begründung",
+        "levels": [
+          "Quelle B bevorzugt mit mind. zwei sachlichen Kriterien für B und zwei Schwächen von A (3P)",
+          "Richtige Wahl mit nur einem Kriterium je Seite (2P)",
+          "Richtige Wahl ohne differenzierte Begründung (1P)",
+          "Falsche Wahl oder keine Antwort (0P)"
+        ]
+      },
+      {
+        "criterion": "Warnsignale für Superfoods-Werbung",
+        "levels": [
+          "Mind. zwei konkrete, verallgemeinerbare Fragen oder Warnsignale formuliert (2P)",
+          "Ein relevantes Merkmal (1P)",
+          "Keine sinnvolle Antwort (0P)"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen urteilen manchmal aufgrund von Bekanntheit (ÖGE ist unbekannt) zugunsten von Quelle A – Autorität vs. Popularität als Qualitätskriterium thematisieren.",
+      "Der Begriff 'Studie' in Quelle A klingt wissenschaftlich, ist aber ohne Angabe von Autor:innen, Journal und Methodik wertlos – genau diesen Punkt herausarbeiten.",
+      "Ziel ist nicht Anti-Chia-Propaganda, sondern Quellenbewertungskompetenz – sachliche Distanz zu beiden Quellen einfordern."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "source_critique",
+  "subject": "Haushaltsökonomie und Ernährung",
+  "klasse": 6,
+  "kompetenzbereich": "Das eigene Essverhalten erkennen, reflektieren und bewerten sowie Zusammenhänge zwischen Ernährungsgewohnheiten, Kulturen, Gesundheit und Wohlbefinden verstehen",
+  "competences": [
+    "HOE.OS.6.EIG.07"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "EV"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0148",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:25+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

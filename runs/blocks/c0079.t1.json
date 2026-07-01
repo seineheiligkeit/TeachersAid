@@ -1,0 +1,109 @@
+{
+  "id": "c0079.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Schau dir Abb. 1 an: Sie zeigt die Ordnungszahlen der ersten zehn Elemente.\n\na) Was beschreibt die Ordnungszahl eines Elements genau?\nb) Welches Element hat genauso viele Elektronen wie Protonen und eine Ordnungszahl von 6? Nenne seinen Namen und sein Symbol.\nc) Beschreibe den Zusammenhang zwischen Ordnungszahl und Protonenzahl in einem Satz.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.US.x.ALL.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "a) Die Ordnungszahl gibt die Anzahl der Protonen im Atomkern an (und beim neutralen Atom auch die Anzahl der Elektronen). b) Kohlenstoff, C (Ordnungszahl 6 → 6 Protonen, 6 Elektronen). c) Ordnungszahl = Protonenzahl (bei neutralen Atomen auch = Elektronenzahl).",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Protonenzahl ≠ Massenzahl — Massenzahl enthält auch die Neutronen; dies explizit voneinander abgrenzen",
+      "Isotope (gleiche Protonenzahl, verschiedene Neutronenzahl) können als Erweiterung erwähnt werden, aber nicht prüfungsrelevant in Kl.4",
+      "Abb. 1 zeigt nur die Protonenzahl — nicht die Elektronen-Konfiguration"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Chemie",
+  "klasse": 4,
+  "kompetenzbereich": null,
+  "competences": [
+    "CHE.US.x.ALL.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "H (1)",
+          "He (2)",
+          "Li (3)",
+          "Be (4)",
+          "B (5)",
+          "C (6)",
+          "N (7)",
+          "O (8)",
+          "F (9)",
+          "Ne (10)"
+        ],
+        "values": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "title": "Ordnungszahl (= Protonenzahl) der ersten 10 Elemente",
+        "xlabel": "Element (Symbol, Ordnungszahl)",
+        "ylabel": "Ordnungszahl / Protonenzahl"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0079",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:14+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

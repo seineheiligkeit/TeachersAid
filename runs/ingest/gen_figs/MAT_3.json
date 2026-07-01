@@ -1,0 +1,411 @@
+{
+  "subject": "Mathematik",
+  "klasse": 3,
+  "kompetenzbereich": "4: Daten und Zufall",
+  "title": "Zahlen, die lügen können — Statistik kritisch lesen",
+  "kernfrage": "Wie erkennst du, ob eine statistische Darstellung ehrlich ist oder dich in die Irre führt?",
+  "body": {
+    "intro": [],
+    "assets": [
+      {
+        "id": "abb1",
+        "role": "figure",
+        "generator": "matplotlib:bar_chart",
+        "spec": {
+          "categories": [
+            "Jän",
+            "Feb",
+            "Mär",
+            "Apr",
+            "Mai"
+          ],
+          "values": [
+            102,
+            105,
+            108,
+            110,
+            115
+          ],
+          "title": "Verkaufszahlen (Ausschnitt)",
+          "xlabel": "Monat",
+          "ylabel": "Stück"
+        }
+      },
+      {
+        "id": "abb2",
+        "role": "figure",
+        "generator": "matplotlib:bar_chart",
+        "spec": {
+          "categories": [
+            "Jän",
+            "Feb",
+            "Mär",
+            "Apr",
+            "Mai"
+          ],
+          "values": [
+            102,
+            105,
+            108,
+            110,
+            115
+          ],
+          "title": "Verkaufszahlen (vollständige Achse, ab 0)",
+          "xlabel": "Monat",
+          "ylabel": "Stück"
+        }
+      },
+      {
+        "id": "abb3",
+        "role": "figure",
+        "generator": "matplotlib:bar_chart",
+        "spec": {
+          "categories": [
+            "Montag",
+            "Dienstag",
+            "Mittwoch",
+            "Donnerstag",
+            "Freitag"
+          ],
+          "values": [
+            8,
+            15,
+            12,
+            7,
+            18
+          ],
+          "title": "Besuche im Schulbuffet pro Tag",
+          "xlabel": "Wochentag",
+          "ylabel": "Anzahl Schüler:innen"
+        }
+      },
+      {
+        "id": "abb4",
+        "role": "figure",
+        "generator": "matplotlib:number_line",
+        "spec": {
+          "min": 0,
+          "max": 10,
+          "step": 1,
+          "marks": [
+            {
+              "at": 2,
+              "label": "Min=2"
+            },
+            {
+              "at": 5,
+              "label": "Median=5"
+            },
+            {
+              "at": 6,
+              "label": "MW=6"
+            },
+            {
+              "at": 10,
+              "label": "Max=10"
+            }
+          ]
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Diagramme lesen und manipulierte Darstellungen erkennen",
+        "throughline": "Schüler:innen entwickeln ein kritisches Auge für statistische Darstellungen: Sie lernen, welche Designentscheidungen (Achsenausschnitt, Skalierung, fehlende Beschriftungen) den Eindruck verzerren können, ohne technisch falsch zu sein.",
+        "talking_points": [
+          "Ein Diagramm kann ‚stimmen' und trotzdem täuschen — die Manipulation liegt oft in der Auswahl, nicht im Fehler.",
+          "Der abgeschnittene y-Achsenwert ist der häufigste Trick: kleine Unterschiede wirken riesig.",
+          "Mittelwert, Median und Modus können bei derselben Datenmenge sehr unterschiedliche Werte haben.",
+          "Schüler:innen sollen nicht Statistik misstrauen, sondern sie kompetent lesen."
+        ],
+        "extensions": [
+          "Eigene Datenmenge erfinden, bei der Mittelwert und Median weit auseinanderliegen (z. B. Einkommen mit Ausreißer).",
+          "Beispiele aus Medien/Werbung sammeln und im Unterricht analysieren.",
+          "Wahrscheinlichkeitsrechnung: Wie wahrscheinlich ist es, zweimal hintereinander eine 6 zu würfeln?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "data_interpretation",
+            "prompt": "Vergleiche die beiden Diagramme. Beide zeigen dieselben Daten zu den Verkaufszahlen eines Shops von Jänner bis Mai. (a) Beschreibe den Eindruck, den das erste Diagramm erweckt. (b) Was ist der Unterschied zwischen den beiden Diagrammen? (c) Welches Diagramm ist deiner Meinung nach fairer — und warum?",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 45
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "DAR",
+              "BEG"
+            ],
+            "serves": [
+              {
+                "competence_id": "MAT.US.3.DAT.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [
+              "abb1",
+              "abb2"
+            ],
+            "answer_key": "(a) Erste Darstellung: die Balken wachsen dramatisch, der Unterschied wirkt riesig. (b) Das erste Diagramm beginnt die y-Achse nicht bei 0 (Ausschnitt ab ca. 100), das zweite beginnt bei 0. (c) Das zweite ist fairer: der Unterschied von 102 auf 115 ist real nur 13 Stück — im Verhältnis zum Gesamtwert (ca. 13%) ist das mäßig, im ersten wirkt es wie Verdopplung.",
+            "acceptable_reasoning": "Der Tatsächliche Unterschied: 115−102=13 Stück. Prozentsatz: 13/102 ≈ 12,7%.",
+            "watch_outs": [
+              "Schüler:innen empfinden die erste Darstellung oft als ‚korrekter', weil sie ‚mehr zeigt' — genau diesen Denkfehler aufgreifen.",
+              "‚Manipuliert' heißt hier nicht gelogen, sondern irreführend gestaltet."
+            ],
+            "rubric": [
+              {
+                "criterion": "Unterschied der Diagramme klar benannt",
+                "levels": [
+                  "Kein Unterschied erkannt",
+                  "Unterschied erkannt, ungenau",
+                  "Präzise: Achsenbeginn als Ursache"
+                ]
+              },
+              {
+                "criterion": "Begründete Bewertung",
+                "levels": [
+                  "Keine Begründung",
+                  "Meinung ohne Argument",
+                  "Klare Argumentation mit Zahlen"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "calculation",
+            "prompt": "Das Schulbuffet hat eine Woche lang gezählt, wie viele Schüler:innen täglich kommen. Die Daten: Mo 8, Di 15, Mi 12, Do 7, Fr 18. Berechne: (a) den Mittelwert (Durchschnitt), (b) den Median, (c) den Modus (häufigster Wert). Welcher Kennwert beschreibt diese Woche am besten?",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "apply",
+            "dimensions": [
+              "OPE",
+              "DAR"
+            ],
+            "serves": [
+              {
+                "competence_id": "MAT.US.3.DAT.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 7,
+            "asset_refs": [
+              "abb3"
+            ],
+            "answer_key": "(a) Mittelwert: (8+15+12+7+18)/5 = 60/5 = 12. (b) Geordnete Reihe: 7, 8, 12, 15, 18 → Median = 12 (mittlerer Wert). (c) Modus: kein Modus (alle Werte verschieden). Mittelwert und Median geben hier dasselbe Bild — beide sind 12.",
+            "acceptable_reasoning": "Für Median: erst ordnen, dann den mittleren der 5 Werte ablesen (der 3. Wert).",
+            "watch_outs": [
+              "Median ohne Sortierung bestimmen — das geht schief.",
+              "Modus bei keiner Wiederholung: ‚kein Modus' ist die korrekte Antwort, nicht ‚alle'.",
+              "Mittelwert berechnen und vergessen, durch die Anzahl zu dividieren."
+            ],
+            "rubric": [
+              {
+                "criterion": "Alle drei Kennzahlen korrekt",
+                "levels": [
+                  "Keine korrekte",
+                  "1–2 korrekt",
+                  "Alle drei korrekt"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "true_false_justify",
+            "prompt": "Entscheide, ob die Aussagen wahr oder falsch sind. Begründe jeweils kurz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Der Median einer Datenmenge ist immer kleiner als der Mittelwert.",
+                "Wenn man einem Datensatz einen sehr großen Ausreißer hinzufügt, verändert sich der Mittelwert stärker als der Median.",
+                "Ein Kreisdiagramm eignet sich gut, um Veränderungen über die Zeit darzustellen."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "BEG",
+              "DAR"
+            ],
+            "serves": [
+              {
+                "competence_id": "MAT.US.3.DAT.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "1) Falsch: Gegenbeispiel 1,2,3,4,5 → Mittelwert=3, Median=3 (gleich); oder 1,1,1,1,10 → MW=2,8, Median=1 (MW>Median). 2) Wahr: der Mittelwert reagiert auf jeden Wert gleichmäßig, der Median verschiebt sich kaum (er ist der mittlere Wert). 3) Falsch: Kreisdiagramm zeigt Anteile eines Ganzen; für zeitliche Verläufe ist ein Liniendiagramm geeigneter.",
+            "acceptable_reasoning": "Für 1 und 2 konkrete Zahlenbeispiele; für 3 Zweck der Diagrammtypen vergleichen.",
+            "watch_outs": [
+              "Aussage 1 ist eine häufige Fehlannahme — Gegenbeispiele sind wichtig.",
+              "Aussage 3: Schüler:innen kennen Kreisdiagramme aus der Volksschule und vertrauen ihnen — reflektierter Einsatz thematisieren."
+            ],
+            "rubric": [
+              {
+                "criterion": "Begründungsqualität",
+                "levels": [
+                  "Kein Argument",
+                  "Richtige Antwort ohne Argument",
+                  "Richtige Antwort mit Beispiel/Gegenbeispiel"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "open_response",
+            "prompt": "Sieh dir die Zahlengeraden-Darstellung an. Sie zeigt für einen Datensatz: Minimum, Median, Mittelwert und Maximum. (a) Was kannst du über die Verteilung der Daten sagen — sind die Daten eher symmetrisch oder schief verteilt? (b) Erkläre, warum der Mittelwert höher ist als der Median.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 40
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "DAR",
+              "BEG"
+            ],
+            "serves": [
+              {
+                "competence_id": "MAT.US.3.DAT.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 7,
+            "asset_refs": [
+              "abb4"
+            ],
+            "answer_key": "(a) Der Mittelwert liegt rechts vom Median → die Daten sind rechtsschief (es gibt einige große Werte, die den Mittelwert nach oben ziehen). (b) Große Werte (Ausreißer nach oben) erhöhen den Mittelwert stärker, während der Median als mittlerer Rangwert kaum beeinflusst wird.",
+            "acceptable_reasoning": "Schiefe erkennen: wenn MW > Median, werden die Daten nach rechts (oben) gezogen.",
+            "watch_outs": [
+              "Schüler:innen verwechseln links- und rechtsschiefe — Faustformel: MW > Median → rechtsschief.",
+              "Das Konzept ‚Ausreißer' hier einführen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Schiefe korrekt bestimmt",
+                "levels": [
+                  "Falsch",
+                  "Richtung richtig, Erklärung fehlt",
+                  "Korrekt mit Erklärung"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "modelling_task",
+            "prompt": "In einer Klasse mit 20 Schüler:innen werden die Ergebnisse eines Mathematiktests erfasst. 18 Schüler:innen erzielen Ergebnisse zwischen 50 und 70 Punkten, 2 Schüler:innen erzielen 98 und 100 Punkte. (a) Schätze ohne Rechnung: Ist der Mittelwert oder der Median ein besseres Maß für den ‚typischen' Schüler in dieser Klasse? (b) Berechne näherungsweise den Mittelwert (nimm für die 18 Schüler:innen einen typischen Wert von 60 an). (c) Erkläre, welchen Kennwert eine Lehrkraft wählen sollte, wenn sie den Klasse-Schnitt fair beschreiben möchte.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 50
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "MOD",
+              "BEG"
+            ],
+            "serves": [
+              {
+                "competence_id": "MAT.US.3.DAT.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "asset_refs": [],
+            "answer_key": "(a) Median: die zwei Ausreißer (98, 100) verzerren den Mittelwert. (b) Näherung: (18·60 + 98 + 100)/20 = (1080+198)/20 = 1278/20 = 63,9 Punkte. Ohne Ausreißer wäre der Mittelwert 60. (c) Für ‚typisch' ist der Median besser (er liegt bei ca. 60, der Mittelwert bei knapp 64 — die zwei Ausreißer heben ihn an, obwohl fast alle Schüler:innen deutlich darunter liegen).",
+            "acceptable_reasoning": "Ausreißer-Effekt auf Mittelwert vs. Median; Entscheidung mit Argument.",
+            "watch_outs": [
+              "Schüler:innen tendieren dazu, immer den Mittelwert zu wählen, weil er ‚genauer' wirkt.",
+              "‚Näherungsweise' signalisiert: exakte Werte der 18 sind nicht gegeben — Schätzwert 60 ist zulässig."
+            ],
+            "rubric": [
+              {
+                "criterion": "Schätzung/Berechnung nachvollziehbar",
+                "levels": [
+                  "Keine Berechnung",
+                  "Ansatz erkennbar",
+                  "Korrekte Näherungsrechnung"
+                ]
+              },
+              {
+                "criterion": "Begründete Empfehlung",
+                "levels": [
+                  "Keine Begründung",
+                  "Empfehlung ohne Argument",
+                  "Empfehlung mit klarem Ausreißer-Argument"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "create_produce",
+            "prompt": "Du sollst eine irreführende Statistik ‚entlarven'. Such dir einen der folgenden Sätze aus und erkläre, warum er täuscht — und wie man ihn fair formulieren würde: (A) ‚Unser Produkt hat 300 % mehr Wirkung!' (B) ‚Die Hälfte aller Ärzte empfiehlt unser Medikament nicht.' (C) ‚Im letzten Jahr haben Einbrüche um 50 % zugenommen.' (nur 2 Einbrüche → 3). Schreibe einen kurzen kritischen Kommentar (ca. 4–6 Sätze).",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55
+            },
+            "cognitive_level": "create",
+            "dimensions": [
+              "BEG",
+              "DAR"
+            ],
+            "serves": [
+              {
+                "competence_id": "MAT.US.3.DAT.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Je nach gewähltem Beispiel: (A) ‚300% mehr' klingt riesig, aber wenn der Ausgangswert winzig war (z. B. 1%), ist ‚4%' die reale Größe. (B) Umformulierung: die andere Hälfte empfiehlt es — und niemand sagte, warum die andere Hälfte es nicht empfiehlt. (C) absolute Zahlen vs. Prozentzahlen: 2→3 klingt dramatisch in %, ist aber faktisch ein Einbruch mehr.",
+            "acceptable_reasoning": "Kritisch denken: Ausgangsgröße, Stichprobengröße, absolute vs. relative Veränderung.",
+            "watch_outs": [
+              "Keine ‚richtige' oder ‚falsche' Antwort — Argumentationsqualität ist das Kriterium.",
+              "Sprachliche Genauigkeit einfordern: ‚mehr als' vs. ‚so viel wie', absolute vs. relative Angabe."
+            ],
+            "rubric": [
+              {
+                "criterion": "Täuschungsmasche klar benannt",
+                "levels": [
+                  "Nicht erkannt",
+                  "Allgemein angedeutet",
+                  "Konkret und präzise benannt"
+                ]
+              },
+              {
+                "criterion": "Faire Reformulierung",
+                "levels": [
+                  "Fehlt",
+                  "Versucht, ungenau",
+                  "Klar und korrekt"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

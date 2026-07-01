@@ -1,0 +1,94 @@
+{
+  "id": "c0092.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "**Erkundungsauftrag für deine Umgebung:** Wähle einen Betrieb oder eine Dienstleistung in deiner Schulgemeinde oder deinem Bezirk (z. B. ein Geschäft, einen Handwerksbetrieb, einen Bauernhof).\na) Nenne den Betrieb und ordne ihn einem Wirtschaftssektor zu.\nb) Was bietet dieser Betrieb an (Produkt oder Dienstleistung)? Wer sind typische Kundinnen und Kunden (Nachfrage)?\nc) Nenne einen Faktor, der den Preis dieses Angebots beeinflussen könnte.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "OK",
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.2.VER.04",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "GWB.US.2.VER.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "Individuelle Antworten. Bewertungskriterien: Sektor korrekt zugeordnet; Angebot/Nachfrage sachlich beschrieben; mindestens ein plausibler Preisfaktor genannt (z. B. Rohstoffkosten, Konkurrenz, Saison, Qualität, Standort).",
+    "acceptable_reasoning": "Ortsspezifische Antworten sind erwünscht; die Lehrkraft bewertet nach lokaler Kenntnis. Hauptziel ist die Anwendung des Vokabulars auf die reale Umgebung.",
+    "rubric": [
+      {
+        "criterion": "Sektorzuordnung",
+        "levels": [
+          "Korrekt mit Begründung",
+          "Korrekt ohne Begründung",
+          "Fehlend"
+        ]
+      },
+      {
+        "criterion": "Angebot/Nachfrage",
+        "levels": [
+          "Beide Seiten beschrieben",
+          "Nur eine Seite",
+          "Fehlend"
+        ]
+      },
+      {
+        "criterion": "Preisfaktor",
+        "levels": [
+          "Plausibler Faktor mit wirtschaftlichem Zusammenhang",
+          "Genannter Faktor ohne Begründung",
+          "Fehlend"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen nennen manchmal Betriebe aus dem Medienbereich (YouTube, Instagram) — als digitale Märkte und Dienstleister einordnen, nicht ablehnen.",
+      "Auf Vollständigkeit der drei Teilantworten achten; a) und b) werden oft gut bearbeitet, c) bleibt manchmal leer."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 2,
+  "kompetenzbereich": "Vernetztes Wirtschaften zwischen Produktion und Konsum",
+  "competences": [
+    "GWB.US.2.VER.04",
+    "GWB.US.2.VER.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "OK",
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0092",
+  "source": "ai",
+  "created_at": "2026-06-26T19:02:24+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

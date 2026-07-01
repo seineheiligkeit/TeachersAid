@@ -1,0 +1,115 @@
+{
+  "id": "c0153.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Gegeben ist die Funktion f(x) = x² auf dem Intervall [0, 2]. Teile das Intervall in n = 4 gleichbreite Teilintervalle (Breite Δx = 0,5). Berechne die Untersumme U₄ und die Obersumme O₄, indem du jeweils den kleinsten bzw. größten Funktionswert im Teilintervall als Rechteckshöhe verwendest. Gib beide Werte an.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "FO",
+      "DM"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.OS.8.GRU2.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Teilintervalle: [0; 0,5], [0,5; 1], [1; 1,5], [1,5; 2]. Untersumme: U₄ = 0,5 · (f(0) + f(0,5) + f(1) + f(1,5)) = 0,5 · (0 + 0,25 + 1 + 2,25) = 0,5 · 3,5 = 1,75. Obersumme: O₄ = 0,5 · (f(0,5) + f(1) + f(1,5) + f(2)) = 0,5 · (0,25 + 1 + 2,25 + 4) = 0,5 · 7,5 = 3,75. (Exakter Wert: 8/3 ≈ 2,667.)",
+    "acceptable_reasoning": "Teilintervalle korrekt bestimmt; Minimum und Maximum in jedem Teilintervall identifiziert; Summe gebildet und mit Δx multipliziert.",
+    "rubric": [
+      {
+        "criterion": "Teilintervalle und Δx",
+        "levels": [
+          "Nicht angegeben oder falsch",
+          "Korrekt bestimmt"
+        ]
+      },
+      {
+        "criterion": "Untersumme",
+        "levels": [
+          "Falsch oder fehlt",
+          "Ansatz richtig, Rechenfehler",
+          "Korrekt (1,75)"
+        ]
+      },
+      {
+        "criterion": "Obersumme",
+        "levels": [
+          "Falsch oder fehlt",
+          "Ansatz richtig, Rechenfehler",
+          "Korrekt (3,75)"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Häufiger Fehler: Schüler:innen verwechseln Unter- und Obersumme — Untersumme verwendet Minimum, Obersumme Minimum des Teilintervalls am RECHTEN Rand.",
+      "Bei monoton steigendem f gilt: linker Rand → Minimum, rechter Rand → Maximum. Nicht verallgemeinern, ohne Monotonie zu prüfen.",
+      "Einheit von Δx nicht vergessen: Multiplikation mit 0,5 ist zwingend."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Mathematik",
+  "klasse": 8,
+  "kompetenzbereich": "Grundlagen der Integralrechnung",
+  "competences": [
+    "MAT.OS.8.GRU2.01"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "FO",
+    "DM"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:function_graph",
+      "spec": {
+        "xmin": 0,
+        "xmax": 4,
+        "ymin": 0,
+        "ymax": 10,
+        "xlabel": "x",
+        "ylabel": "f(x)",
+        "title": "Graph von f — Ober- und Untersummen"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0153",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:26+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

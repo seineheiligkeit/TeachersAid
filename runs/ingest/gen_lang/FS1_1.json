@@ -1,0 +1,190 @@
+{
+  "subject": "Erste lebende Fremdsprache",
+  "klasse": 2,
+  "kompetenzbereich": "Hören",
+  "title": "Anweisungen und Auskünfte verstehen",
+  "kernfrage": "Wie gut kannst du gesprochene Anweisungen und Auskünfte auf Englisch verstehen und danach handeln?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Listening for Instructions",
+        "throughline": "Schüler:innen lernen, gesprochene Anweisungen und Auskünfte im Alltag gezielt zu entnehmen — ein zentrales Alltagswerkzeug für Reisen, Schule und Freizeit.",
+        "talking_points": [
+          "Warum ist es im echten Leben wichtig, Anweisungen genau zu verstehen? (Beispiele: Busfahrer, Lehrerin, Arzt)",
+          "Welche Strategien helfen beim Zuhören, wenn man nicht jedes Wort kennt? (Schlüsselwörter, Intonation, Kontext)",
+          "Unterschied zwischen globalen und selektiven Hörverstehensaufgaben besprechen",
+          "Häufige Missverständnisse durch falsche Zahlen oder Richtungsangaben thematisieren"
+        ],
+        "extensions": [
+          "Schüler:innen erfinden selbst eine kurze Wegbeschreibung und lesen sie vor — Partner:in zeichnet die Route",
+          "Authentische Durchsagen (Bahnhof, Flughafen) als Erweiterungstext einsetzen",
+          "Rollenspiel: Telefonisches Auskunftsgespräch (z.B. Kinoprogramm erfragen)"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "listening_task",
+            "prompt": "Your teacher reads the following short announcement aloud TWICE. Listen carefully and answer the questions below.\n\n[Teacher reads:] \"Attention, please. The school library is open Monday to Friday from eight o'clock to four o'clock. On Saturdays it is closed. You can borrow up to three books at a time. Please bring your school ID card. Thank you.\"\n\n1. On which days is the library open?\n2. What time does the library close?\n3. How many books can you borrow?\n4. What do you need to bring?",
+            "payload": null,
+            "response": { "mode": "lines", "n": 4 },
+            "cognitive_level": "remember",
+            "dimensions": ["HOR"],
+            "modality": "oral",
+            "serves": [{ "competence_id": "FS1.US.2.HOR.01", "relation": "exercises" }],
+            "est_minutes": 8,
+            "answer_key": "1. Monday to Friday. 2. Four o'clock (16:00). 3. Three books. 4. Their school ID card.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen verwechseln oft 'borrow' und 'lend' — kurze Klärung vorab empfehlenswert",
+              "Zahlen (drei vs. dreizehn) und Uhrzeiten auf Englisch sind häufige Fehlerquellen; zweimaliges Vorlesen ist Pflicht",
+              "Sicherstellen, dass langsam und deutlich gelesen wird — kein natürliches Sprechtempo für Kl.2"
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "true_false_justify",
+            "prompt": "Your teacher reads a short dialogue aloud TWICE. Then decide: are the sentences below true (T) or false (F)? Write the correct information for false statements.\n\n[Teacher reads:]\nMrs Green: \"Good morning, Tom. Could you please hand out these worksheets to the class?\"\nTom: \"Sure! How many are there?\"\nMrs Green: \"Twenty-five. And please put one on every desk before the lesson starts.\"\nTom: \"No problem. Should I collect the old worksheets too?\"\nMrs Green: \"Yes, please. Put them on my desk.\"",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Mrs Green asks Tom to collect the worksheets.",
+                "There are 25 new worksheets.",
+                "Tom should put the worksheets on the teacher's desk.",
+                "Tom needs to do this after the lesson."
+              ]
+            },
+            "response": { "mode": "table", "columns": ["Statement", "T / F", "Correction (if false)"], "rows": 4 },
+            "cognitive_level": "understand",
+            "dimensions": ["HOR"],
+            "modality": "oral",
+            "serves": [{ "competence_id": "FS1.US.2.HOR.01", "relation": "exercises" }],
+            "est_minutes": 7,
+            "answer_key": "1. F — She asks him to hand OUT the worksheets (and collect the OLD ones). 2. T. 3. F — He puts them on every desk. 4. F — Before the lesson starts.",
+            "acceptable_reasoning": "Schüler:innen dürfen sinngemäß korrigieren, nicht wörtlich.",
+            "watch_outs": [
+              "Statement 1 ist eine klassische Verwechslungsfalle: 'hand out' vs. 'collect' — beide kommen im Text vor",
+              "Statement 3 und 4 prüfen Details zur Zielaktion; auf genaue Formulierung achten"
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "ordering",
+            "prompt": "Your teacher reads a set of directions aloud TWICE. Number the steps in the correct order (1 = first step).\n\n[Teacher reads:] \"To get to the sports hall, first go out of the main entrance. Then turn left and walk straight ahead for about two minutes. You will see a big car park on your right. The sports hall is just behind it. Don't forget to bring your trainers!\"",
+            "payload": {
+              "kind": "ordering",
+              "items": [
+                "Walk straight ahead for two minutes.",
+                "Turn left.",
+                "Go out of the main entrance.",
+                "Find the sports hall behind the car park.",
+                "See the car park on your right."
+              ]
+            },
+            "response": { "mode": "lines", "n": 5 },
+            "cognitive_level": "understand",
+            "dimensions": ["HOR"],
+            "modality": "oral",
+            "serves": [{ "competence_id": "FS1.US.2.HOR.01", "relation": "exercises" }],
+            "est_minutes": 7,
+            "answer_key": "Correct order: 3 → 2 → 1 → 5 → 4",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Wegbeschreibungen erfordern räumliches Vorstellungsvermögen — ggf. kurz mit Gestik/Zeichnung unterstützen",
+              "Nicht das letzte Element ('Trainers') in die Reihenfolge aufnehmen; dieser Hinweis ist kein Schritt"
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "matching",
+            "prompt": "Your teacher reads five short sentences aloud. Match each sentence (1–5) to the correct situation (A–E) where you might hear it.\n\n[Teacher reads:]\n1. \"Please open your books to page forty-two.\"\n2. \"Your flight to London is now boarding at Gate 7.\"\n3. \"Do you want ketchup or mayonnaise with that?\"\n4. \"The next train to Vienna leaves at eleven fifteen from Platform 3.\"\n5. \"Turn off your phone and take your seat.\"",
+            "payload": {
+              "kind": "matching",
+              "left": ["1. Open your books to page 42.", "2. Flight boarding at Gate 7.", "3. Ketchup or mayonnaise?", "4. Train to Vienna at 11:15.", "5. Turn off phone, take seat."],
+              "right": ["A — at a fast-food restaurant", "B — at a cinema or theatre", "C — at a train station", "D — in an English lesson", "E — at an airport"]
+            },
+            "response": { "mode": "table", "columns": ["Sentence", "Situation"], "rows": 5 },
+            "cognitive_level": "apply",
+            "dimensions": ["HOR"],
+            "modality": "oral",
+            "serves": [{ "competence_id": "FS1.US.2.HOR.02", "relation": "exercises" }],
+            "est_minutes": 8,
+            "answer_key": "1–D, 2–E, 3–A, 4–C, 5–B",
+            "acceptable_reasoning": "Sentence 5 könnte auch für Flugzeug/Kino gelten; B ist die beste Zuordnung, da 'take your seat' typisch für Kino/Theater ist.",
+            "watch_outs": [
+              "Sentence 5 ist mehrdeutig (Flugzeug wäre ebenfalls plausibel); Schüler:innen sollen die BESTE Zuordnung wählen",
+              "Sicherstellen, dass die Lehrkraft langsam und klar liest — Eigennamen (Vienna, London) deutlich aussprechen"
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "open_response",
+            "prompt": "Your teacher reads a short voicemail message aloud TWICE. Take notes as you listen, then write a short summary (3–4 sentences) of the most important information.\n\n[Teacher reads:] \"Hi, this is a message for Anna. It's Laura speaking. I'm calling about our plan for Saturday. The swimming pool is closed because of repairs, so we can't go there. Instead, let's meet at the park at two o'clock. Bring a ball and something to drink. If it rains, we'll go to my place instead. Text me if that's okay. Bye!\"",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 35 },
+            "cognitive_level": "analyze",
+            "dimensions": ["HOR", "SCH"],
+            "modality": "printable",
+            "serves": [
+              { "competence_id": "FS1.US.2.HOR.02", "relation": "exercises" },
+              { "competence_id": "FS1.US.2.SCH.01", "relation": "exercises" }
+            ],
+            "est_minutes": 10,
+            "answer_key": "Model answer: Laura called Anna about their Saturday plans. The swimming pool is closed for repairs, so they will meet at the park at 2 o'clock instead. Anna should bring a ball and a drink. If it rains, they will go to Laura's house.",
+            "acceptable_reasoning": "Kerninfos: Ort (park), Zeit (2 Uhr), mitbringen (Ball, Drink), Plan B (Laura's place) — alle vier zählen für Vollständigkeit.",
+            "watch_outs": [
+              "Schüler:innen neigen dazu, wörtlich abzuschreiben statt zusammenzufassen — auf Paraphrase achten",
+              "'repairs' als Vokabel ggf. vorab klären oder als unbekanntes Wort tolerieren (Kontext reicht zum Verstehen)",
+              "Die Bedingung ('if it rains') wird oft weggelassen — darauf hinweisen, dass Konditionale wichtige Info sind"
+            ],
+            "rubric": [
+              { "criterion": "Completeness", "levels": ["All 4 key facts included", "3 facts included", "1–2 facts included"] },
+              { "criterion": "Accuracy", "levels": ["No factual errors", "Minor errors", "Major errors or misunderstandings"] },
+              { "criterion": "Language", "levels": ["Clear sentences, mostly correct", "Understandable with errors", "Hard to follow"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "decision_scenario",
+            "prompt": "You heard a message about changed plans. Now imagine: a friend did NOT hear the message and is still planning to go to the swimming pool.\n\nWhat would you say to help them? Write 3–5 sentences in English explaining what changed and what they should do instead.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Your friend missed the voicemail. What do you tell them about the new plan?"
+            },
+            "response": { "mode": "box", "min_height_mm": 40 },
+            "cognitive_level": "evaluate",
+            "dimensions": ["HOR", "SCH"],
+            "modality": "printable",
+            "serves": [
+              { "competence_id": "FS1.US.2.SCH.03", "relation": "exercises" },
+              { "competence_id": "FS1.US.2.HOR.02", "relation": "reinforces" }
+            ],
+            "est_minutes": 9,
+            "answer_key": "Model answer: Hey! The swimming pool is closed on Saturday because of repairs. We are not going there anymore. Let's meet at the park at two o'clock. Bring a ball and something to drink. If it rains, we will go to Laura's place.",
+            "acceptable_reasoning": "Schüler:innen dürfen informelle Sprache verwenden; wichtig ist der korrekte Transfer der Kerninformation.",
+            "watch_outs": [
+              "Diese Aufgabe prüft, ob die Hörverstehensleistung in produktive Schreibkompetenz transferiert werden kann",
+              "Auf korrekte Zeitform achten (will/going to für zukünftige Pläne)",
+              "Schüler:innen dürfen kreativ sein, sollten aber keine Information erfinden, die im Original nicht vorkam"
+            ],
+            "rubric": [
+              { "criterion": "Information transfer", "levels": ["All key changes correctly communicated", "Most changes communicated", "Key information missing or wrong"] },
+              { "criterion": "Language accuracy", "levels": ["Mostly correct grammar and vocabulary", "Understandable despite errors", "Unclear due to errors"] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "id": "c0138.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "text_analysis",
+    "prompt": "Schau dir die Zeitleiste (Abbildung 1) zur rechtlichen Entwicklung der Sterbehilfe an.\n\na) In welchem Jahr und welchem Land wurde die aktive Sterbehilfe erstmals gesetzlich geregelt?\n\nb) Welche Entwicklung hat Österreich in dieser Frage genommen? Was darf in Österreich seit 2022?\n\nc) Was fällt dir generell an dieser Entwicklung auf? Formuliere eine Beobachtung.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 7
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "WP",
+      "AR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "ETH.OS.7.KRA.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "ETH.OS.x.ANA.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "a) 2002: Niederlande und Belgien regelten aktive Sterbehilfe (Euthanasie) gesetzlich. b) Österreich: Bis 2022 war jede Form der Sterbehilfe verboten; seit 2022 ist assistierter Suizid unter engen Bedingungen (schwere, unheilbare Erkrankung, mehrfache Prüfung) erlaubt – aktive Sterbehilfe bleibt verboten. c) Mögliche Beobachtung: Die Liberalisierung begann in Westeuropa (NL, BE) und hat sich langsam in andere Länder ausgebreitet; der Trend geht in Richtung mehr Selbstbestimmung.",
+    "acceptable_reasoning": "Verschiedene Beobachtungen sind akzeptabel; entscheidend ist, dass sie auf Basis der Zeitleiste begründet werden.",
+    "rubric": [
+      {
+        "criterion": "Zeitleiste korrekt gelesen",
+        "levels": [
+          "Alle drei Fragen korrekt beantwortet",
+          "Zwei korrekt",
+          "Maximal eine korrekte Antwort"
+        ]
+      },
+      {
+        "criterion": "Beobachtung formuliert",
+        "levels": [
+          "Eigenständige, begründete Beobachtung",
+          "Beobachtung vorhanden, ohne Begründung",
+          "Keine Beobachtung"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Österreich: Seit dem VfGH-Erkenntnis 2020 und dem Sterbeverfügungsgesetz 2022 ist assistierter Suizid erlaubt – aber nur unter strengen Voraussetzungen. Aktive Sterbehilfe (Tötung auf Verlangen) bleibt strafbar.",
+      "Schüler:innen verwechseln manchmal 'erlaubt' mit 'verbreitet' – ein Gesetz regelt die Möglichkeit, nicht die Häufigkeit."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "text_analysis",
+  "subject": "Ethik",
+  "klasse": 7,
+  "kompetenzbereich": "Krankheit und Gesundheit, Ende des Lebens",
+  "competences": [
+    "ETH.OS.7.KRA.01",
+    "ETH.OS.x.ANA.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "WP",
+    "AR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:timeline",
+      "spec": {
+        "title": "Rechtliche Entwicklung der Sterbehilfe in ausgewählten Ländern",
+        "xlabel": "Jahr",
+        "events": [
+          {
+            "at": 1941,
+            "label": "Niederlande: erste Diskussionen über aktive Sterbehilfe"
+          },
+          {
+            "at": 1976,
+            "label": "USA: erstes Patientenverfügungs-Gesetz (Kalifornien)"
+          },
+          {
+            "at": 1997,
+            "label": "Niederlande: gerichtlich toleriert (Euthanasie unter Bedingungen)"
+          },
+          {
+            "at": 2002,
+            "label": "NL + Belgien: Euthanasie gesetzlich geregelt"
+          },
+          {
+            "at": 2009,
+            "label": "Luxemburg: aktive Sterbehilfe erlaubt"
+          },
+          {
+            "at": 2015,
+            "label": "Kanada: Supreme Court erlaubt assistierten Suizid"
+          },
+          {
+            "at": 2022,
+            "label": "Österreich: assistierter Suizid unter engen Bedingungen erlaubt"
+          }
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0138",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:21+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

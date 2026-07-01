@@ -1,0 +1,537 @@
+{
+  "id": "c0037",
+  "stage": "content",
+  "status": "approved",
+  "source": "generated",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-29T18:40:28+00:00",
+  "title": "Kunst und Gestaltung 3. Kl. — Bilder lesen — Wie sprechen Bilder zu uns? (generiert)",
+  "note": "",
+  "request": {
+    "subject": "Kunst und Gestaltung",
+    "klasse": 3,
+    "stufe": "Unterstufe",
+    "schulform": null,
+    "topic_raw": "Bilder lesen — Wie sprechen Bilder zu uns?",
+    "envelope": "doppelstunde",
+    "options": {}
+  },
+  "resolution": {
+    "fassung": {
+      "kurztitel": "AHS-Lehrplan (konsolidiert)",
+      "bgbl": "BGBl. II Nr. 204/2024",
+      "doknr": "NOR40264237",
+      "valid_from": "2024-09-01",
+      "valid_to": "2026-08-31"
+    },
+    "subject": "Kunst und Gestaltung",
+    "klasse": 3,
+    "matched_kompetenzbereiche": [
+      "Wahrnehmen und Reflektieren"
+    ],
+    "grade_check": true,
+    "competences": [
+      {
+        "id": "KUG.US.3.WAH.01",
+        "kompetenzbereich": "Wahrnehmen und Reflektieren",
+        "klasse": 3,
+        "text": "Genres, Bildmotive und Darstellungsweisen erfassen sowie verschiedene Funktionen und Zwecke ausgewählter bildnerischer Gestaltungen unterscheiden und untersuchen.",
+        "source_ref": "KUNST UND GESTALTUNG / 3. Klasse / Wahrnehmen und Reflektieren",
+        "dimensions": [
+          "WAH"
+        ],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      },
+      {
+        "id": "KUG.US.3.WAH.02",
+        "kompetenzbereich": "Wahrnehmen und Reflektieren",
+        "klasse": 3,
+        "text": "eigene Arbeiten und jene von Mitschülerinnen und Mitschülern reflektieren und sich wertschätzend darüber austauschen.",
+        "source_ref": "KUNST UND GESTALTUNG / 3. Klasse / Wahrnehmen und Reflektieren",
+        "dimensions": [
+          "WAH"
+        ],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      },
+      {
+        "id": "KUG.US.3.WAH.03",
+        "kompetenzbereich": "Wahrnehmen und Reflektieren",
+        "klasse": 3,
+        "text": "anhand von Beispielen aus Kunst und Alltagsästhetik Funktionen sowie Bildabsichten und Wirkungen untersuchen und begründet beurteilen sowie komplexe Zusammenhänge herstellen.",
+        "source_ref": "KUNST UND GESTALTUNG / 3. Klasse / Wahrnehmen und Reflektieren",
+        "dimensions": [
+          "WAH"
+        ],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      }
+    ],
+    "notes": []
+  },
+  "plan": null,
+  "content": {
+    "meta": {
+      "title": "Bilder lesen — Wie sprechen Bilder zu uns?",
+      "subtitle": "LLM-Entwurf — Erstprüfung",
+      "subject": "Kunst und Gestaltung",
+      "stufe": "Unterstufe",
+      "klasse": 3,
+      "kernfrage": "Wie kannst du herausfinden, was ein Bild sagen will — und wer entscheidet das eigentlich?",
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "lehrplan_label": "Kunst und Gestaltung · 3. Klasse · Wahrnehmen und Reflektieren",
+      "content_language": "de",
+      "subject_models": []
+    },
+    "subject_model": {
+      "subject": "Kunst und Gestaltung",
+      "stufe": "Unterstufe",
+      "dimensions": [
+        {
+          "id": "BIL",
+          "label": "Bildnerische Praxis",
+          "note": null,
+          "modality": "enactive"
+        },
+        {
+          "id": "WAH",
+          "label": "Wahrnehmen und Reflektieren",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "BK",
+          "label": "Bildsprachen und Kommunizieren",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "content_areas": [
+        {
+          "id": "BKU",
+          "label": "bildende Kunst",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "GEU",
+          "label": "gestaltete Umwelt",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "VIK",
+          "label": "visuelle Kommunikation",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "task_kind_extensions": [
+        "make_artifact",
+        "image_analysis"
+      ]
+    },
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Bildsprache entschlüsseln",
+        "teacher_overview": {
+          "throughline": "Bilder sind keine neutralen Dokumente: Sie wurden von jemandem für ein Publikum mit einer Absicht gemacht. Schüler:innen lernen, systematisch zu beschreiben, zu analysieren und zu urteilen — drei verschiedene Schritte, die sich nicht vermischen dürfen.",
+          "talking_points": [
+            "Unterscheide die drei Ebenen explizit: Beschreiben (Was sehe ich?), Analysieren (Wie ist es gemacht?), Interpretieren/Beurteilen (Was bedeutet es / welche Wirkung hat es?).",
+            "Beachte: Schüler:innen springen sofort zur Interpretation — Beschreibungsebene trainieren, bevor die Deutung erlaubt ist.",
+            "Frage: Kann dasselbe Bild verschiedenen Menschen verschiedene Dinge sagen? Warum? (Kontext, Erfahrung, Kultur.)",
+            "Verbinde mit Alltagserfahrung: Werbeplakate, Titelbilder, Memes — alle folgen Gestaltungsprinzipien."
+          ],
+          "extensions": [
+            "Schüler:innen wählen zuhause ein Werbeplakat (Foto auf Handy erlaubt) und analysieren es mit den drei Schritten schriftlich.",
+            "Vergleich: Wie unterscheidet sich die Bildsprache eines historischen Gemäldes von einem modernen Werbefoto? Was bleibt gleich?",
+            "Diskussion: Kann ein Bild lügen? Welche Mittel nutzen Bilder, um zu manipulieren?"
+          ],
+          "differentiation": null,
+          "timing_notes": null
+        },
+        "blocks": [
+          {
+            "id": "t1",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "ordering",
+            "prompt": "Bildbetrachtung hat eine Struktur. Bringe die folgenden Schritte einer methodischen Bildanalyse in die richtige Reihenfolge — beginne mit dem, was zuerst getan werden sollte.",
+            "payload": {
+              "kind": "ordering",
+              "items": [
+                "Den persönlichen Eindruck und die eigene Meinung zum Bild formulieren.",
+                "Bildtitel, Entstehungsjahr, Künstler:in und Medium recherchieren oder notieren.",
+                "Genau beschreiben, was auf dem Bild zu sehen ist — ohne zu werten.",
+                "Analysieren, welche Gestaltungsmittel (Komposition, Farbe, Licht) eingesetzt wurden.",
+                "Den Zusammenhang zwischen Absicht und Wirkung des Bildes herstellen."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "remember",
+            "difficulty": null,
+            "dimensions": [
+              "WAH"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "KUG.US.3.WAH.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "answer_key": "Sinnvolle Reihenfolge: (1) Bildtitel/Kontext notieren, (2) Beschreiben was zu sehen ist, (3) Gestaltungsmittel analysieren, (4) Zusammenhang Absicht/Wirkung herstellen, (5) persönlichen Eindruck formulieren. Variationen sind möglich — Schritt 1 und 2 können tauschen; wichtig ist, dass Beschreibung VOR Interpretation kommt.",
+            "acceptable_reasoning": "Eine alternative Reihenfolge ist akzeptabel, wenn die Begründung zeigt, dass Beschreibung vor Deutung steht.",
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Schüler:innen setzen die persönliche Meinung oft an den Anfang — das ist der häufigste Fehler in der Bildanalyse.",
+              "„Kontext recherchieren“ wird manchmal als unwichtig empfunden — erklären, dass das Jahr der Entstehung die Deutung fundamental verändern kann."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t2",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "open_response",
+            "prompt": "Beschreibungsebene üben: Vor dir (gedacht) hängt ein Plakat für einen Kinofilm. Das Plakat zeigt: im Vordergrund eine einsame menschliche Silhouette, die auf eine brennende Stadt am Horizont blickt. Der Himmel leuchtet in Orange und Dunkelrot, die Silhouette ist vollständig schwarz. Rechts oben steht in weißen Großbuchstaben der Filmtitel. Beschreibe dieses Plakat in 4–5 Sätzen so genau wie möglich — ohne es zu bewerten oder zu deuten.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 50.0
+            },
+            "cognitive_level": "understand",
+            "difficulty": null,
+            "dimensions": [
+              "WAH"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "KUG.US.3.WAH.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Gute Beschreibungen nennen: Bildaufbau (Vordergrund/Hintergrund), Lage der Elemente (unten, Mitte, links/rechts), Farben und Farbverteilung, Kontrast Schwarz/Orange-Rot, Schriftgröße und Platzierung, Verhältnis von Figur zu Hintergrund. Kein Urteil wie „das ist traurig“ oder „die Person ist gut/böse“.",
+            "acceptable_reasoning": null,
+            "rubric": [
+              {
+                "criterion": "Beschreibung ohne Wertung",
+                "levels": [
+                  "Konsequent beschreibend, keine Urteile",
+                  "Meist beschreibend, gelegentlich wertend",
+                  "Überwiegend Interpretation statt Beschreibung"
+                ]
+              },
+              {
+                "criterion": "Vollständigkeit der Beschreibung",
+                "levels": [
+                  "Alle wesentlichen Bildelemente erwähnt",
+                  "Mehrere Elemente beschrieben, einige fehlen",
+                  "Nur ein oder zwei Elemente genannt"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Typischer Fehler: „Das Bild zeigt einen Helden, der die Stadt rettet“ — das ist schon Interpretation. Zur reinen Beschreibung zurücklenken.",
+              "„Brennende Stadt“ ist schon eine kleine Interpretation — akzeptieren, wenn Schüler:innen gleichzeitig die Farbinformation nennen."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t3",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "open_response",
+            "prompt": "Analysiere jetzt das Plakat aus Aufgabe 2 auf der Ebene der Gestaltungsmittel. Beantworte folgende Fragen: (a) Wo liegt der Blick zuerst, wenn man das Plakat sieht — und warum? (b) Welche Wirkung erzeugt die Farbwahl Orange/Dunkelrot? (c) Was bewirkt es, dass die Figur nur als schwarze Silhouette zu sehen ist — ohne Gesicht und Details? Schreibe für jede Frage zwei bis drei Sätze.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 60.0
+            },
+            "cognitive_level": "analyze",
+            "difficulty": null,
+            "dimensions": [
+              "WAH"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "KUG.US.3.WAH.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "answer_key": "(a) Der Blick geht zum stärksten Kontrast: Silhouette gegen den leuchtenden Horizont, dann zum weißen Titel rechts oben. (b) Orange/Dunkelrot: signalisiert Gefahr, Feuer, Bedrohung; erzeugt Dramatik und Spannung; warme Farben wirken alarmierend. (c) Silhouette ohne Gesicht: Betrachter:in kann sich mit der Figur identifizieren (keine definierten Züge = jede Person); erzeugt Einsamkeit und Anonymität; steigert das Mysterium.",
+            "acceptable_reasoning": "Alternative Deutungen der Silhouette (z.B. Einschüchterung, Bedrohlichkeit) akzeptieren, wenn nachvollziehbar begründet.",
+            "rubric": [
+              {
+                "criterion": "Analyse der Kompositionsmittel",
+                "levels": [
+                  "Alle drei Fragen mit nachvollziehbarer Begründung beantwortet",
+                  "Zwei von drei beantwortet",
+                  "Nur eine Frage beantwortet"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Schüler:innen, die nur „sieht gut aus“ schreiben — auf die Frage „warum“ bestehen.",
+              "Farbwirkung und Kompositionswirkung nicht verwischen lassen: (a), (b), (c) getrennt halten."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t4",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "decision_scenario",
+            "prompt": "Das Plakat soll für zwei verschiedene Filme verwendet werden: Version A — ein politischer Thriller über Krieg und Flucht. Version B — ein Actionfilm mit Supehelden. Dein Auftrag: Erkläre, welche Version des Plakats (so wie es beschrieben ist) besser zu welchem Film passt — und was du an der Gestaltung ändern würdest, damit es eindeutig für den jeweils anderen Film funktioniert.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Welchem Film passt das Plakat besser — und was müsste geändert werden, damit es eindeutig für den anderen Film funktioniert?"
+            },
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55.0
+            },
+            "cognitive_level": "evaluate",
+            "difficulty": null,
+            "dimensions": [
+              "WAH"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "KUG.US.3.WAH.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "answer_key": "Wie beschrieben passt das Plakat besser zum politischen Thriller (Stille, Einsamkeit, Ernst der Silhouette, keine Action-Dynamik). Für den Actionfilm: kräftigere, leuchtendere Farben (Blau/Gold statt Orange/Schwarz), dynamischere Pose der Figur, erkennbares Kostüm/Emblem, größere Typografie. Wichtig: Begründung aus Gestaltungsmitteln ableiten, nicht nur Gefühl.",
+            "acceptable_reasoning": "Auch die umgekehrte Einschätzung (Actionfilm) mit guter Begründung akzeptieren.",
+            "rubric": [
+              {
+                "criterion": "Filmzuordnung begründet",
+                "levels": [
+                  "Zuordnung klar, Begründung aus Gestaltungsmitteln",
+                  "Zuordnung klar, Begründung vage",
+                  "Keine nachvollziehbare Begründung"
+                ]
+              },
+              {
+                "criterion": "Konkretheit der Änderungsvorschläge",
+                "levels": [
+                  "Mindestens drei konkrete Gestaltungsänderungen",
+                  "Ein bis zwei konkrete Änderungen",
+                  "Nur allgemeine Aussagen"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Schüler:innen sollen Gestaltungssprache nutzen, nicht Genrevorwissen. Begründung muss aus dem Bild kommen.",
+              "Konkrete Änderungsvorschläge einfordern — vage Antworten wie „bunter machen“ auf spezifische Elemente herunterbrechen."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t5",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "open_response",
+            "prompt": "Werbung analysieren: Beschreibe ein Werbeplakat oder eine Produktverpackung, die dir gut bekannt ist (z.B. ein Plakat in deiner Straße, ein Getränk, ein Sportartikel). Erkläre in 4–5 Sätzen: Welche Gestaltungsmittel setzt die Werbung ein? Welche Zielgruppe soll angesprochen werden? Welche Botschaft wird (bewusst oder unbewusst) vermittelt?",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55.0
+            },
+            "cognitive_level": "analyze",
+            "difficulty": null,
+            "dimensions": [
+              "WAH"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "KUG.US.3.WAH.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "answer_key": "Offene Antwort — bewertet wird die Anwendung der Analyseschritte auf ein selbst gewähltes Beispiel. Gute Antworten nennen konkrete Gestaltungsmittel (Farbe, Schrift, Bildaufbau, Symbole), begründen die Zielgruppe und identifizieren eine explizite UND eine implizite Botschaft.",
+            "acceptable_reasoning": null,
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Schüler:innen wählen oft das Gleiche (Coca-Cola, Nike) — das ist in Ordnung, die Analyse sollte dann aber über das Offensichtliche hinausgehen.",
+              "Zwischen „was die Werbung zeigt“ und „was sie damit sagen will“ unterscheiden lassen."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t6",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "open_response",
+            "prompt": "Bildabsicht und Wirkung: Stell dir vor, du bist Kunstredakteur:in einer Schülerzeitung und musst ein Titelbild auswählen für das Thema „Klimawandel“. Du hast zwei Optionen zur Auswahl: Option A zeigt eine schmelzende Eisskulptur in einem weißen Ausstellungsraum — kühl, still, ästhetisch. Option B zeigt eine Gruppe Jugendlicher, die mit Schildern auf der Straße steht — warm, lebendig, bewegt. Begründe in 4–5 Sätzen, welches Bild du wählen würdest und warum — unter Berücksichtigung von Absicht, Zielgruppe und Wirkung.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55.0
+            },
+            "cognitive_level": "evaluate",
+            "difficulty": null,
+            "dimensions": [
+              "WAH"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "KUG.US.3.WAH.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "answer_key": "Keine vorgeschriebene Wahl — bewertet wird die Begründungsqualität. Option A: ästhetisch distanziert, spricht Reflektion an, weniger aktivierend. Option B: direkte Identifikation, Aktivierung, emotionale Nähe, passend zu Schülerzeitung/Jugendlichem Publikum. Wichtig: Schüler:innen sollen die Spannung zwischen ästhetischer Wirkung und kommunikativer Absicht benennen.",
+            "acceptable_reasoning": "Beide Optionen sind vertretbar — Begründung muss Absicht, Zielgruppe UND Wirkung ansprechen.",
+            "rubric": [
+              {
+                "criterion": "Begründungstiefe",
+                "levels": [
+                  "Absicht, Zielgruppe und Wirkung alle angesprochen",
+                  "Zwei von drei Aspekten angesprochen",
+                  "Nur Geschmacksurteil"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Schüler:innen urteilen oft nach persönlichem Geschmack — auf die Zielgruppenperspektive hinweisen.",
+              "Die Frage nach der Absicht der Schülerzeitung (informieren? mobilisieren?) beeinflusst die Wahl — das aufgreifen."
+            ],
+            "self_check": null
+          }
+        ]
+      }
+    ],
+    "assets": [],
+    "nachweis": {
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "statement": "Diese Materialien adressieren 2 von 3 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
+      "competence_coverage": [
+        {
+          "competence_id": "KUG.US.3.WAH.01",
+          "exercised_by": [
+            "t1",
+            "t2"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "KUG.US.3.WAH.02",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "KUG.US.3.WAH.03",
+          "exercised_by": [
+            "t3",
+            "t4",
+            "t5",
+            "t6"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        }
+      ],
+      "gaps": [
+        "KUG.US.3.WAH.02 — eigene Arbeiten und jene von Mitschülerinnen und Mitschülern reflektieren und sich wertschätzend darüber austauschen."
+      ],
+      "zentrale_konzepte": [
+        "Wahrnehmen und Reflektieren"
+      ],
+      "uebergreifende_themen": []
+    },
+    "depth_profile": {
+      "by_level": {
+        "remember": 1,
+        "understand": 1,
+        "analyze": 2,
+        "evaluate": 2
+      },
+      "by_dimension": {
+        "WAH": 6
+      },
+      "by_difficulty": {},
+      "minutes_total": 53,
+      "minutes_resource_independent": 53
+    },
+    "rack": null
+  },
+  "artifacts": {
+    "student_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0037\\student.pdf",
+    "teacher_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0037\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0037\\homework.pdf",
+    "preview_png": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0037\\raster\\student.p1.png"
+  },
+  "verify_problems": [],
+  "verify_warnings": [],
+  "parent_id": null,
+  "feedback": [],
+  "error": null
+}

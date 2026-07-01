@@ -1,0 +1,741 @@
+{
+  "id": "c0086",
+  "stage": "content",
+  "status": "approved",
+  "source": "generated",
+  "created_at": "2026-06-26T05:59:19+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00",
+  "title": "Physik 3. Kl. — Spannung, Strom und Schutz im Stromkreis (generiert)",
+  "note": "",
+  "request": {
+    "subject": "Physik",
+    "klasse": 3,
+    "stufe": "Unterstufe",
+    "schulform": null,
+    "topic_raw": "Spannung, Strom und Schutz im Stromkreis",
+    "envelope": "doppelstunde",
+    "options": {}
+  },
+  "resolution": {
+    "fassung": {
+      "kurztitel": "AHS-Lehrplan (konsolidiert)",
+      "bgbl": "BGBl. II Nr. 204/2024",
+      "doknr": "NOR40264237",
+      "valid_from": "2024-09-01",
+      "valid_to": "2026-08-31"
+    },
+    "subject": "Physik",
+    "klasse": 3,
+    "matched_kompetenzbereiche": [
+      "Elektrizität und Magnetismus"
+    ],
+    "grade_check": true,
+    "competences": [
+      {
+        "id": "PHY.US.3.ELE.01",
+        "kompetenzbereich": "Elektrizität und Magnetismus",
+        "klasse": 3,
+        "text": "Experimente zum Zusammenhang der Grundgrößen der Elektrizität (Spannung, Stromstärke und Widerstand) und zu den Wirkungen des elektrischen Stroms planen, durchführen, analysieren und dokumentieren. (W, E)",
+        "source_ref": "PHYSIK / 3. Klasse / Elektrizität und Magnetismus",
+        "dimensions": [
+          "W",
+          "E"
+        ],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      },
+      {
+        "id": "PHY.US.3.ELE.02",
+        "kompetenzbereich": "Elektrizität und Magnetismus",
+        "klasse": 3,
+        "text": "die Gefahren der Elektrizität einschätzen und die Bedeutung von Schutzmaßnahmen für den Alltag erläutern. (S)",
+        "source_ref": "PHYSIK / 3. Klasse / Elektrizität und Magnetismus",
+        "dimensions": [
+          "S"
+        ],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      },
+      {
+        "id": "PHY.US.3.ELE.03",
+        "kompetenzbereich": "Elektrizität und Magnetismus",
+        "klasse": 3,
+        "text": "physikalische Modellvorstellungen zum Magnetismus und zum Stromkreis und deren Übereinstimmungen und Unterschiede zu experimentellen Daten diskutieren. (E)",
+        "source_ref": "PHYSIK / 3. Klasse / Elektrizität und Magnetismus",
+        "dimensions": [
+          "E"
+        ],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      },
+      {
+        "id": "PHY.US.3.ELE.04",
+        "kompetenzbereich": "Elektrizität und Magnetismus",
+        "klasse": 3,
+        "text": "physikalische und nichtphysikalische Aspekte von Mobilität und Verkehrssicherheit in verschiedenen Medien recherchieren (W), die Verlässlichkeit der Quellen bewerten, die Ergebnisse diskutieren und Konsequenzen für das eigene Handeln ableiten (S).",
+        "source_ref": "PHYSIK / 3. Klasse / Elektrizität und Magnetismus",
+        "dimensions": [
+          "W",
+          "S"
+        ],
+        "uebergreifende_themen": [
+          12
+        ],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      },
+      {
+        "id": "PHY.US.3.ELE.05",
+        "kompetenzbereich": "Elektrizität und Magnetismus",
+        "klasse": 3,
+        "text": "die Prinzipien des Elektromotors und des Generators qualitativ untersuchen (E) sowie deren Bedeutung für den Alltag recherchieren und kommunizieren (W).",
+        "source_ref": "PHYSIK / 3. Klasse / Elektrizität und Magnetismus",
+        "dimensions": [
+          "E",
+          "W"
+        ],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      }
+    ],
+    "notes": []
+  },
+  "plan": null,
+  "content": {
+    "meta": {
+      "title": "Spannung, Strom und Schutz im Stromkreis",
+      "subtitle": "LLM-Entwurf — Erstprüfung",
+      "subject": "Physik",
+      "stufe": "Unterstufe",
+      "klasse": 3,
+      "kernfrage": "Wie schützt dich ein Sicherheitsschalter — und was passiert in deinem Körper, wenn du eine Leitung berührst?",
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "lehrplan_label": "Physik · 3. Klasse · Elektrizität und Magnetismus",
+      "content_language": "de",
+      "subject_models": []
+    },
+    "subject_model": {
+      "subject": "Physik",
+      "stufe": "Unterstufe",
+      "dimensions": [
+        {
+          "id": "W",
+          "label": "Fachwissen anwenden",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "E",
+          "label": "Erkenntnisgewinnung und Experimentieren",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "S",
+          "label": "Standpunkte begründen und aus naturwissenschaftlicher Sicht bewerten",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "content_areas": [],
+      "task_kind_extensions": [
+        "experiment_protocol",
+        "source_critique"
+      ]
+    },
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Grundgrößen des Stromkreises",
+        "teacher_overview": {
+          "throughline": "Schüler:innen aktivieren ihr Vorwissen zu Spannung, Stromstärke und Widerstand und verknüpfen es mit der Formel U = R·I, bevor sie diese auf konkrete Alltagssituationen anwenden.",
+          "talking_points": [
+            "Spannung ist der Antrieb, Stromstärke ist das, was fließt — der Widerstand bremst. Analogie Wasserdruck / Wasserfluss / enges Rohr.",
+            "Die Einheiten Volt (V), Ampere (A) und Ohm (Ω) sollten sicher sitzen; Messinstrumente Voltmeter (parallel) und Amperemeter (in Reihe) kurz auffrischen.",
+            "Abb. 2 zeigt das ohmschen Dreieck — Schüler:innen sollen es nicht auswendig lernen, sondern durch Umformen selbst herleiten."
+          ],
+          "extensions": [
+            "Warum hat Kupfer einen so viel kleineren Widerstand als Graphit? (Elektronengasmodell — mehr freie Elektronen im Metall)",
+            "Wieviel Strom fließt bei 230 V durch einen 1-kΩ-Widerstand? Berechnung als Vorgeschmack auf quantitatives Arbeiten in Kl. 4."
+          ],
+          "differentiation": null,
+          "timing_notes": null
+        },
+        "blocks": [
+          {
+            "id": "t1",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "multiple_choice",
+            "prompt": "Welche Aussage über den elektrischen Stromkreis ist richtig?",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "Die Spannung gibt an, wie viele Ladungen pro Sekunde fließen.",
+                "Der Widerstand eines Leiters bestimmt, wie stark der Strom bei einer gegebenen Spannung fließt.",
+                "Amperemeter werden parallel zur Verbraucherin geschaltet.",
+                "Die Einheit der Spannung ist Ampere (A)."
+              ],
+              "select": "one"
+            },
+            "response": {
+              "mode": "choices",
+              "options": [
+                "Die Spannung gibt an, wie viele Ladungen pro Sekunde fließen.",
+                "Der Widerstand eines Leiters bestimmt, wie stark der Strom bei einer gegebenen Spannung fließt.",
+                "Amperemeter werden parallel zur Verbraucherin geschaltet.",
+                "Die Einheit der Spannung ist Ampere (A)."
+              ],
+              "select": "one"
+            },
+            "cognitive_level": "remember",
+            "difficulty": null,
+            "dimensions": [
+              "W"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "PHY.US.3.ELE.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 4,
+            "answer_key": "Antwort B ist richtig. Der Widerstand bestimmt bei gegebener Spannung, wie groß die Stromstärke ist (Ohmsches Gesetz).",
+            "acceptable_reasoning": null,
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Häufige Verwechslung: Spannung mit Stromstärke. Spannung (V) ist die treibende Kraft; Stromstärke (A) ist die Folge.",
+              "Amperemeter werden in Reihe geschaltet (niedriger Eigenwiderstand), Voltmeter parallel (hoher Eigenwiderstand)."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t2",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "abb2"
+            ],
+            "provenance": null,
+            "role": "task",
+            "kind": "table_fill",
+            "prompt": "Sieh dir Abb. 2 (Formel U = R · I) an. Fülle die Tabelle aus. Nutze die Formel — forme sie wenn nötig um.",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Spannung U (V)",
+                "Widerstand R (Ω)",
+                "Stromstärke I (A)"
+              ],
+              "rows": 4
+            },
+            "cognitive_level": "apply",
+            "difficulty": null,
+            "dimensions": [
+              "W"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "PHY.US.3.ELE.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Zeile 1: U=12 V, R=6 Ω → I=2 A. Zeile 2: U=230 V, R=1150 Ω → I=0,2 A. Zeile 3: U=?, R=100 Ω, I=0,05 A → U=5 V. Zeile 4: U=9 V, R=?, I=0,03 A → R=300 Ω. (Hinweis an Lehrperson: Zahlenwerte können im Unterricht angepasst werden; Schüler:innen sollen das korrekte Umformen üben.)",
+            "acceptable_reasoning": "Formelumformung I = U/R bzw. R = U/I; korrekte Einheitenbehandlung.",
+            "rubric": [
+              {
+                "criterion": "Formelumformung",
+                "levels": [
+                  "Keine Umformung erkennbar",
+                  "Formel korrekt umgeformt, Rechenfehler",
+                  "Formel korrekt umgeformt und Ergebnis richtig"
+                ]
+              },
+              {
+                "criterion": "Einheiten",
+                "levels": [
+                  "Einheiten fehlen",
+                  "Einheiten teilweise angegeben",
+                  "Alle Einheiten korrekt"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Fehler beim Umformen: Schüler:innen teilen manchmal durch das falsche Größe. Explizit zeigen: U=R·I → I=U/R.",
+              "Einheiten müssen stimmen: V / Ω = A."
+            ],
+            "self_check": null
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Widerstand und Gefahr — was passiert im Körper?",
+        "teacher_overview": {
+          "throughline": "Anhand des Körperwiderstands und des Ohmschen Gesetzes erarbeiten Schüler:innen, warum feuchte Hände den Stromunfall gefährlicher machen — Übergangsstelle von Fachwissen zu Risikobewertung.",
+          "talking_points": [
+            "Abb. 1 zeigt: Der menschliche Körperwiderstand schwankt stark (trocken ~5000 Ω, nass ~1000 Ω). Schon 10–50 mA durch den Herzbereich sind lebensgefährlich.",
+            "230 V / 1000 Ω = 0,23 A = 230 mA — deutlich über der Herzkammerflimmerschwelle. Das ist der Kern der Schutzmaßnahmen-Begründung.",
+            "Schutzmaßnahmen (Isolierung, FI-Schalter, Schutzleiter) nicht als Liste abhaken, sondern physikalisch begründen: Was verringert U, was begrenzt I?"
+          ],
+          "extensions": [
+            "FI-Schalter (Fehlerstromschutzschalter): Wie misst er einen Differenzstrom und wie schnell löst er aus? (~30 mA, <0,3 s)",
+            "Recherche: Welche Schutzklassen gibt es für Elektrogeräte (I, II, III)? Was bedeutet Schutzklasse II (doppelte Isolierung)?"
+          ],
+          "differentiation": null,
+          "timing_notes": null
+        },
+        "blocks": [
+          {
+            "id": "info1",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "abb1"
+            ],
+            "provenance": null,
+            "role": "info",
+            "kind": "prose",
+            "content": "Der menschliche Körper leitet elektrischen Strom. Wie gut er das tut, hängt von der Hautfeuchtigkeit ab. Abb. 1 zeigt den ungefähren elektrischen Widerstand verschiedener Materialien im Vergleich. Bereits ein Strom von etwa 30 Milliampere (0,030 A) durch den Körper kann lebensgefährlich sein.",
+            "callout_role": null,
+            "teacher_note": null,
+            "watch_outs": []
+          },
+          {
+            "id": "t3",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "abb1"
+            ],
+            "provenance": null,
+            "role": "task",
+            "kind": "data_interpretation",
+            "prompt": "Sieh dir Abb. 1 an. Berechne, welche Stromstärke durch einen Menschen fließt, wenn er bei feuchter Haut (Widerstand: 1000 Ω) eine Haushaltssteckdose (230 V) berührt. Ist das gefährlich? Begründe mit der Grenze aus dem Infotext.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 40.0
+            },
+            "cognitive_level": "analyze",
+            "difficulty": null,
+            "dimensions": [
+              "W",
+              "S"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "PHY.US.3.ELE.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "I = U / R = 230 V / 1000 Ω = 0,23 A = 230 mA. Das ist weit über der Gefährdungsgrenze von 30 mA — damit ist diese Situation lebensgefährlich. Bei trockener Haut (5000 Ω): I = 46 mA, immer noch gefährlich.",
+            "acceptable_reasoning": "Korrekte Anwendung von I = U/R; Vergleich mit 30-mA-Grenze; sprachlich klar begründete Gefährdungseinschätzung.",
+            "rubric": [
+              {
+                "criterion": "Berechnung",
+                "levels": [
+                  "Keine Berechnung",
+                  "Formel angewendet, Einheitenfehler",
+                  "Berechnung vollständig und korrekt"
+                ]
+              },
+              {
+                "criterion": "Gefährdungsurteil",
+                "levels": [
+                  "Kein Vergleich mit Grenzwert",
+                  "Grenzwert erwähnt, Vergleich unvollständig",
+                  "Klarer quantitativer Vergleich und begründetes Urteil"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Schüler:innen neigen dazu zu schreiben: 'Das ist ein bisschen gefährlich.' Einfordern: quantitativer Vergleich mit der angegebenen Grenze.",
+              "Einheit Milliampere vs. Ampere — Umrechnung sicherstellen (0,030 A = 30 mA)."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t4",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "matching",
+            "prompt": "Verbinde jede Schutzmaßnahme mit ihrer physikalischen Wirkung.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Isolierung (Kunststoffmantel)",
+                "FI-Schalter (Fehlerstromschutzschalter)",
+                "Schutzleiter (Erdung)",
+                "Schutzkleinspannung (z. B. 12 V)"
+              ],
+              "right": [
+                "Unterbricht den Stromkreis, sobald ein kleiner Differenzstrom festgestellt wird",
+                "Verhindert direkten Kontakt mit dem Leiter — kein Stromfluss durch den Körper",
+                "Leitet Fehlerströme sicher zur Erde ab, schützt das Gehäuse",
+                "Begrenzt die Spannung so weit, dass selbst bei Berührung keine gefährliche Stromstärke entstehen kann"
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "understand",
+            "difficulty": null,
+            "dimensions": [
+              "W",
+              "S"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "PHY.US.3.ELE.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "answer_key": "Isolierung → 'Verhindert direkten Kontakt ...'; FI-Schalter → 'Unterbricht den Stromkreis ...'; Schutzleiter → 'Leitet Fehlerströme ...'; Schutzkleinspannung → 'Begrenzt die Spannung ...'",
+            "acceptable_reasoning": null,
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Schüler:innen verwechseln FI-Schalter und Sicherung: Die Sicherung schützt die Leitung (zu hoher Strom im Normalkreis), der FI-Schalter schützt den Menschen (Differenzstrom)."
+            ],
+            "self_check": null
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "Modell und Experiment — das Elektronengasmodell im Stromkreis",
+        "teacher_overview": {
+          "throughline": "Schüler:innen prüfen kritisch, was das Elektronengasmodell gut erklärt und wo es an Grenzen stößt — Übergang von der Anwendung zur Reflexion über Modelle in der Physik.",
+          "talking_points": [
+            "Das Elektronengasmodell (frei bewegliche Elektronen im Metallgitter) erklärt elektrische Leitung, Erwärmung (Stöße) und Richtungsabhängigkeit des Stroms qualitativ.",
+            "Modellgrenzen: Warum Halbleiter (z. B. Silizium) leiten manchmal und manchmal nicht, erklärt das einfache Modell nicht. Das ist ein ehrlicher Hinweis auf Grenzen.",
+            "Verknüpfung mit Experiment: Was würde sich zeigen, wenn man Strom durch Wasser leitet? (Elektrolyse — andere Ladungsträger als Elektronen.)"
+          ],
+          "extensions": [
+            "Leitungstypen vergleichen: Metall (Elektronen), Elektrolytlösung (Ionen), Halbleiter (Löcher und Elektronen) — kurze Recherche als Hausaufgabe.",
+            "Magnetismus und Elektrizität: Zusammenhang Elektromagnet — Strom erzeugt Magnetfeld (Vorschau auf ELE.05)."
+          ],
+          "differentiation": null,
+          "timing_notes": null
+        },
+        "blocks": [
+          {
+            "id": "t5",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "true_false_justify",
+            "prompt": "Beurteile die folgenden Aussagen über das Elektronengasmodell. Kreuze an (richtig / falsch) und begründe kurz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Im Elektronengasmodell sind die Elektronen im Metall völlig frei und stoßen nie mit dem Gitter zusammen.",
+                "Das Elektronengasmodell erklärt, warum ein metallischer Leiter warm wird, wenn Strom fließt.",
+                "Das Modell gilt gleichermaßen gut für Metalle, Salze und Halbleiter.",
+                "Eine höhere Temperatur eines Metalls erhöht im Allgemeinen seinen Widerstand."
+              ]
+            },
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Aussage",
+                "richtig",
+                "falsch",
+                "Begründung"
+              ],
+              "rows": 4
+            },
+            "cognitive_level": "evaluate",
+            "difficulty": null,
+            "dimensions": [
+              "W",
+              "E"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "PHY.US.3.ELE.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "answer_key": "1: falsch — Elektronen stoßen mit dem Gitter zusammen, das erzeugt Widerstand. 2: richtig — die Stöße übertragen kinetische Energie auf das Gitter (Erwärmung). 3: falsch — für Halbleiter ist das Modell unzureichend; für Elektrolytlösungen gilt es gar nicht (Ionen statt Elektronen). 4: richtig — mehr Gitterschwingungen → mehr Stöße → höherer Widerstand (bei den meisten Metallen).",
+            "acceptable_reasoning": "Für Aussage 4: Hinweis auf Ausnahmen (NTC-Widerstände, Supraleiter) ist ein Plus, aber nicht Pflicht.",
+            "rubric": [
+              {
+                "criterion": "Korrekte Einschätzung",
+                "levels": [
+                  "0–1 richtig",
+                  "2–3 richtig",
+                  "Alle 4 korrekt"
+                ]
+              },
+              {
+                "criterion": "Begründungsqualität",
+                "levels": [
+                  "Keine oder rein auswendig gelernte Begründung",
+                  "Begründung zeigt Verständnis des Modells",
+                  "Begründung benennt explizit Modellgrenzen"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Aussage 1 klingt plausibel ('frei' = keine Stöße) — darauf hinweisen, dass 'frei' nur das Fehlen der Bindung ans Atom bedeutet.",
+              "Aussage 4 kann Ausnahmen haben; bei Halbleitern sinkt der Widerstand mit der Temperatur — das ist aber Oberstufenstoff."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t6",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "experiment_protocol",
+            "prompt": "Plane ein einfaches Experiment, mit dem du überprüfen kannst, ob die Stromstärke in einem Stromkreis wächst, wenn du die Spannung erhöhst (und der Widerstand gleich bleibt). Beschreibe: (a) was du brauchst, (b) wie du vorgehst, (c) welche Größen du misst und wie du sie notierst, (d) was du erwartest.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 60.0
+            },
+            "cognitive_level": "create",
+            "difficulty": null,
+            "dimensions": [
+              "E",
+              "W"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "PHY.US.3.ELE.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 12,
+            "answer_key": "Materialien: variable Spannungsquelle (oder mehrere Batterien), fester Widerstand (z. B. 100 Ω), Voltmeter (parallel), Amperemeter (in Reihe), Verbindungsdrähte. Vorgehen: Spannung schrittweise erhöhen (z. B. 2 V, 4 V, 6 V, 8 V), jeweils Stromstärke ablesen. Messwerte in Tabelle (U, I); Erwartung: linearer Zusammenhang I ~ U (Ohmsches Gesetz), d. h. U/I = const. = R.",
+            "acceptable_reasoning": "Auch ein einfacher qualitativer Ansatz (eine Batterie → mehr Batterien → Lampe leuchtet heller) ist als Erstplanung akzeptabel; vollständige Variablenkontrolle ist das Ziel.",
+            "rubric": [
+              {
+                "criterion": "Variablenkontrolle",
+                "levels": [
+                  "Kein Hinweis auf Konstanthaltung des Widerstands",
+                  "Widerstand als Konstante erwähnt",
+                  "Vollständige Variablenkontrolle beschrieben"
+                ]
+              },
+              {
+                "criterion": "Messplan",
+                "levels": [
+                  "Kein Messplan",
+                  "Messung erwähnt, aber unvollständig",
+                  "Systematischer Messplan mit Tabelle und Wiederholung"
+                ]
+              },
+              {
+                "criterion": "Erwartung/Auswertung",
+                "levels": [
+                  "Keine Erwartung",
+                  "Richtung der Änderung beschrieben",
+                  "Linearer Zusammenhang erwartet und begründet"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Schüler:innen vergessen oft, den Widerstand konstant zu halten (Variablenkontrolle). Gezielt nachfragen: Was veränderst du, was hältst du konstant?",
+              "Messinstrumentenschaltung (Amperemeter in Reihe, Voltmeter parallel) explizit einfordern."
+            ],
+            "self_check": null
+          }
+        ]
+      }
+    ],
+    "assets": [
+      {
+        "id": "abb1",
+        "role": "figure",
+        "medium": "visual",
+        "generator": "matplotlib:bar_chart",
+        "spec": {
+          "categories": [
+            "Kupfer (1 m)",
+            "Eisen (1 m)",
+            "Graphit (1 m)",
+            "Körper (trocken)",
+            "Körper (nass)"
+          ],
+          "values": [
+            0.017,
+            0.12,
+            40,
+            5000,
+            1000
+          ],
+          "title": "Elektrischer Widerstand — Vergleich",
+          "xlabel": "Material / Körperteil",
+          "ylabel": "Widerstand in Ω",
+          "log": true
+        },
+        "correctness_surface": null,
+        "misleading_in_isolation": false,
+        "intentionally_flawed": null,
+        "machine_generatable": true,
+        "provenance": null,
+        "data_source": null,
+        "illustrative": false,
+        "caption": null
+      },
+      {
+        "id": "abb2",
+        "role": "figure",
+        "medium": "visual",
+        "generator": "matplotlib:math_formula",
+        "spec": {
+          "latex": "U = R \\cdot I \\quad \\Longleftrightarrow \\quad I = \\frac{U}{R}"
+        },
+        "correctness_surface": null,
+        "misleading_in_isolation": false,
+        "intentionally_flawed": null,
+        "machine_generatable": true,
+        "provenance": null,
+        "data_source": null,
+        "illustrative": false,
+        "caption": null
+      }
+    ],
+    "nachweis": {
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "statement": "Diese Materialien adressieren 3 von 5 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
+      "competence_coverage": [
+        {
+          "competence_id": "PHY.US.3.ELE.01",
+          "exercised_by": [
+            "t1",
+            "t2",
+            "t6"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "PHY.US.3.ELE.02",
+          "exercised_by": [
+            "t3",
+            "t4"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "PHY.US.3.ELE.03",
+          "exercised_by": [
+            "t5"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "PHY.US.3.ELE.04",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "PHY.US.3.ELE.05",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        }
+      ],
+      "gaps": [
+        "PHY.US.3.ELE.04 — physikalische und nichtphysikalische Aspekte von Mobilität und Verkehrssicherheit in verschiedenen Medien recherchieren (W), die Verlässlichkeit der Quellen bewerten, die Ergebnisse diskutieren und Konsequenzen für das eigene Handeln ableiten (S).",
+        "PHY.US.3.ELE.05 — die Prinzipien des Elektromotors und des Generators qualitativ untersuchen (E) sowie deren Bedeutung für den Alltag recherchieren und kommunizieren (W)."
+      ],
+      "zentrale_konzepte": [
+        "Elektrizität und Magnetismus"
+      ],
+      "uebergreifende_themen": []
+    },
+    "depth_profile": {
+      "by_level": {
+        "remember": 1,
+        "apply": 1,
+        "analyze": 1,
+        "understand": 1,
+        "evaluate": 1,
+        "create": 1
+      },
+      "by_dimension": {
+        "W": 5,
+        "E": 1
+      },
+      "by_difficulty": {},
+      "minutes_total": 48,
+      "minutes_resource_independent": 48
+    },
+    "rack": null
+  },
+  "artifacts": {
+    "student_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0086\\student.pdf",
+    "teacher_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0086\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0086\\homework.pdf",
+    "preview_png": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0086\\raster\\student.p1.png"
+  },
+  "verify_problems": [],
+  "verify_warnings": [],
+  "parent_id": null,
+  "feedback": [],
+  "error": null
+}

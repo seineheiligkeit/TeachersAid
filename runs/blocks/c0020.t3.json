@@ -1,0 +1,66 @@
+{
+  "id": "c0020.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Beurteile die folgenden Aussagen über geometrische Körper. Schreibe jeweils „wahr“ oder „falsch“ und begründe kurz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Jede Pyramide hat genau eine Grundfläche und eine Spitze.",
+        "Ein Würfel ist ein Sonderfall des Quaders.",
+        "Ein Drehzylinder hat genau drei Flächen (zwei Kreise und eine Mantelfläche).",
+        "Alle Prismen haben mindestens zwei parallele, kongruente Grundflächen."
+      ]
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "H1"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GEZ.US.4.GEO.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1. wahr — Definition Pyramide. 2. wahr — Würfel hat alle Seiten gleich lang, aber erfüllt Quaderdefinition. 3. wahr — Mantelfläche ist eine gekrümmte Fläche, die beiden Kreise sind die Deckflächen. 4. wahr — grundlegendes Merkmal aller Prismen.",
+    "acceptable_reasoning": "Bei Aufgabe 3: Diskussion, ob eine gekrümmte Fläche als „eine Fläche“ zählt, ist fachlich wertvoll.",
+    "rubric": [],
+    "watch_outs": [
+      "Manche Schüler:innen zählen bei Drehkörpern die Mantelfläche als mehrere Flächen.",
+      "Würfel als Sonderfall des Quaders erfordert das Verstehen von Spezialisierung/Inklusion — häufige Quelle von Fehlern."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Geometrische Objekte und ihre Eigenschaften (I1)",
+  "competences": [
+    "GEZ.US.4.GEO.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "H1"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0020",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

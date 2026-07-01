@@ -1,0 +1,1376 @@
+{
+  "id": "c0153",
+  "stage": "content",
+  "status": "approved",
+  "source": "generated",
+  "created_at": "2026-06-28T19:03:26+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00",
+  "title": "Mathematik 8. Kl. — Fläche, Weg, Integral — das bestimmte Integral verstehen und berechnen (generiert)",
+  "note": "",
+  "request": {
+    "subject": "Mathematik",
+    "klasse": 8,
+    "stufe": "Unterstufe",
+    "schulform": null,
+    "topic_raw": "Fläche, Weg, Integral — das bestimmte Integral verstehen und berechnen",
+    "envelope": "doppelstunde",
+    "options": {}
+  },
+  "resolution": {
+    "fassung": {
+      "kurztitel": "AHS-Lehrplan (konsolidiert)",
+      "bgbl": "BGBl. II Nr. 204/2024",
+      "doknr": "NOR40264237",
+      "valid_from": "2024-09-01",
+      "valid_to": "2026-08-31"
+    },
+    "subject": "Mathematik",
+    "klasse": 8,
+    "matched_kompetenzbereiche": [
+      "Anwendungen und Exaktifizierungen der Integralrechnung",
+      "Differenzen- und Differentialgleichungen; Grundlagen der Systemdynamik",
+      "Grundlagen der Integralrechnung",
+      "Handlungsdimension: Mathematische Kompetenz erfordert Fertigkeiten und Fähigkeiten bei folgenden Tätigkeiten:",
+      "Kompetenzmodell",
+      "Komplexitätsdimension: Die zur Bewältigung mathematischer Aufgaben- und Problemstellungen notwendigen Anforderungen können stark differieren und gehen von Reproduktion über Vernetzungen hin zur Reflexion.",
+      "Sicherung der Nachhaltigkeit",
+      "Stetige Wahrscheinlichkeitsverteilungen; beurteilende Statistik"
+    ],
+    "grade_check": true,
+    "competences": [
+      {
+        "id": "MAT.OS.x.KOM.01",
+        "kompetenzbereich": "Kompetenzmodell",
+        "klasse": 8,
+        "text": "Mathematische Kompetenzen besitzen eine Inhaltsdimension (auf welche Inhalte sie sich beziehen, also womit etwas getan wird), eine Handlungsdimension (auf welche Art von Tätigkeit sie sich beziehen, also was getan wird) und eine Komplexitätsdimension (bezogen auf die Art und den Grad der Vernetzungen). Unter mathematischen Kompetenzen werden hier längerfristig verfügbare kognitive Fähigkeiten verstanden, die von Lernenden entwickelt werden sollen und sie befähigen, bestimmte Tätigkeiten in variablen Situationen auszuüben, sowie die Bereitschaft, diese Fähigkeiten und Fertigkeiten einzusetzen.",
+        "source_ref": "MATHEMATIK / Kompetenzmodell / Kompetenzmodell",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": "descriptor"
+      },
+      {
+        "id": "MAT.OS.x.HAN.01",
+        "kompetenzbereich": "Handlungsdimension: Mathematische Kompetenz erfordert Fertigkeiten und Fähigkeiten bei folgenden Tätigkeiten:",
+        "klasse": 8,
+        "text": "Darstellend-modellierendes Arbeiten umfasst alle Aktivitäten, die mit der Übersetzung von Situationen, Zuständen und Prozessen aus der Alltagssprache in die Sprache der Mathematik zu tun haben. Auch der innermathematische Wechsel von Darstellungsformen gehört zu diesen Aktivitäten.",
+        "source_ref": "MATHEMATIK / Kompetenzmodell / Handlungsdimension: Mathematische Kompetenz erfordert Fertigkeiten und Fähigkeiten bei folgenden Tätigkeiten:",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": "descriptor"
+      },
+      {
+        "id": "MAT.OS.x.HAN.02",
+        "kompetenzbereich": "Handlungsdimension: Mathematische Kompetenz erfordert Fertigkeiten und Fähigkeiten bei folgenden Tätigkeiten:",
+        "klasse": 8,
+        "text": "Formal-operatives Arbeiten umfasst alle Aktivitäten, die auf Kalkülen bzw. Algorithmen beruhen, also das Anwenden von Verfahren, Rechenmethoden oder Techniken.",
+        "source_ref": "MATHEMATIK / Kompetenzmodell / Handlungsdimension: Mathematische Kompetenz erfordert Fertigkeiten und Fähigkeiten bei folgenden Tätigkeiten:",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": "descriptor"
+      },
+      {
+        "id": "MAT.OS.x.HAN.03",
+        "kompetenzbereich": "Handlungsdimension: Mathematische Kompetenz erfordert Fertigkeiten und Fähigkeiten bei folgenden Tätigkeiten:",
+        "klasse": 8,
+        "text": "Interpretierend-dokumentierendes Arbeiten umfasst alle Aktivitäten, die mit der Übersetzung mathematischer Darstellungen, Zusammenhänge und Sachverhalte in die Alltagssprache sowie der Deutung und Dokumentation von Ergebnissen zu tun haben.",
+        "source_ref": "MATHEMATIK / Kompetenzmodell / Handlungsdimension: Mathematische Kompetenz erfordert Fertigkeiten und Fähigkeiten bei folgenden Tätigkeiten:",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": "descriptor"
+      },
+      {
+        "id": "MAT.OS.x.HAN.04",
+        "kompetenzbereich": "Handlungsdimension: Mathematische Kompetenz erfordert Fertigkeiten und Fähigkeiten bei folgenden Tätigkeiten:",
+        "klasse": 8,
+        "text": "Kritisch-argumentatives Arbeiten umfasst alle Aktivitäten, die mit Argumentieren, Hinterfragen, Ausloten von Grenzen und Begründen zu tun haben. Das Beweisen von Behauptungen oder heuristisch gewonnener Vermutungen ist ein Schwerpunkt dieses Tätigkeitsbereichs.",
+        "source_ref": "MATHEMATIK / Kompetenzmodell / Handlungsdimension: Mathematische Kompetenz erfordert Fertigkeiten und Fähigkeiten bei folgenden Tätigkeiten:",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": "descriptor"
+      },
+      {
+        "id": "MAT.OS.x.KOM2.01",
+        "kompetenzbereich": "Komplexitätsdimension: Die zur Bewältigung mathematischer Aufgaben- und Problemstellungen notwendigen Anforderungen können stark differieren und gehen von Reproduktion über Vernetzungen hin zur Reflexion.",
+        "klasse": 8,
+        "text": "Einsetzen von Grundwissen und Grundfähigkeiten meint die Wiedergabe oder direkte Anwendung von grundlegenden Begriffen, Verfahren oder Darstellungen. In der Regel sind nur reproduktives mathematisches Wissen und Können oder die aus dem Kontext unmittelbar erkennbare direkte Anwendung von Kenntnissen und Fertigkeiten erforderlich.",
+        "source_ref": "MATHEMATIK / Kompetenzmodell / Komplexitätsdimension: Die zur Bewältigung mathematischer Aufgaben- und Problemstellungen notwendigen Anforderungen können stark differieren und gehen von Reproduktion über Vernetzungen hin zur Reflexion.",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": "descriptor"
+      },
+      {
+        "id": "MAT.OS.x.KOM2.02",
+        "kompetenzbereich": "Komplexitätsdimension: Die zur Bewältigung mathematischer Aufgaben- und Problemstellungen notwendigen Anforderungen können stark differieren und gehen von Reproduktion über Vernetzungen hin zur Reflexion.",
+        "klasse": 8,
+        "text": "Herstellen von Verbindungen ist erforderlich, wenn der mathematische Sachverhalt vielschichtiger ist, sodass Begriffe, Sätze, Verfahren und Darstellungen aus einem oder verschiedenen mathematischen Gebieten oder unterschiedliche mathematische Tätigkeiten in geeigneter Weise miteinander verbunden werden müssen.",
+        "source_ref": "MATHEMATIK / Kompetenzmodell / Komplexitätsdimension: Die zur Bewältigung mathematischer Aufgaben- und Problemstellungen notwendigen Anforderungen können stark differieren und gehen von Reproduktion über Vernetzungen hin zur Reflexion.",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": "descriptor"
+      },
+      {
+        "id": "MAT.OS.x.KOM2.03",
+        "kompetenzbereich": "Komplexitätsdimension: Die zur Bewältigung mathematischer Aufgaben- und Problemstellungen notwendigen Anforderungen können stark differieren und gehen von Reproduktion über Vernetzungen hin zur Reflexion.",
+        "klasse": 8,
+        "text": "Problemlösen und Reflektieren: Problemlösen baut auf Eigentätigkeit und heuristischen Strategien in nicht vertrauten Situationen auf. Reflektieren meint das Nachdenken über Zusammenhänge, die sich aus dem dargelegten mathematischen Sachverhalt nicht von selbst ergeben. Reflexionswissen ist ein anhand entsprechender Nachdenkprozesse entwickeltes Wissen über Mathematik.",
+        "source_ref": "MATHEMATIK / Kompetenzmodell / Komplexitätsdimension: Die zur Bewältigung mathematischer Aufgaben- und Problemstellungen notwendigen Anforderungen können stark differieren und gehen von Reproduktion über Vernetzungen hin zur Reflexion.",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": "descriptor"
+      },
+      {
+        "id": "MAT.OS.8.SIC.01",
+        "kompetenzbereich": "Sicherung der Nachhaltigkeit",
+        "klasse": 8,
+        "text": "Notwendiges Vorwissen für die Kompetenzbereiche dieses Moduls wiederholen und aktivieren",
+        "source_ref": "MATHEMATIK / 8. Klasse / Sicherung der Nachhaltigkeit",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": [
+          7
+        ],
+        "kompetenzmodul": 7,
+        "kind": "lehrstoff"
+      },
+      {
+        "id": "MAT.OS.8.SIC.02",
+        "kompetenzbereich": "Sicherung der Nachhaltigkeit",
+        "klasse": 8,
+        "text": "Grundlagen für die Kompetenzbereiche dieses Moduls ergänzen und bereitstellen",
+        "source_ref": "MATHEMATIK / 8. Klasse / Sicherung der Nachhaltigkeit",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": [
+          7
+        ],
+        "kompetenzmodul": 7,
+        "kind": "lehrstoff"
+      },
+      {
+        "id": "MAT.OS.8.SIC.03",
+        "kompetenzbereich": "Sicherung der Nachhaltigkeit",
+        "klasse": 8,
+        "text": "Grundkompetenzen nachhaltig sichern",
+        "source_ref": "MATHEMATIK / 8. Klasse / Sicherung der Nachhaltigkeit",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": [
+          7
+        ],
+        "kompetenzmodul": 7,
+        "kind": "lehrstoff"
+      },
+      {
+        "id": "MAT.OS.8.GRU2.01",
+        "kompetenzbereich": "Grundlagen der Integralrechnung",
+        "klasse": 8,
+        "text": "Das bestimmte Integral kennen und als Zahl „zwischen“ allen Ober- und Untersummen auffassen können sowie näherungsweise als Summe von Produkten auffassen und berechnen können:",
+        "source_ref": "MATHEMATIK / 8. Klasse / Grundlagen der Integralrechnung",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": [
+          7
+        ],
+        "kompetenzmodul": 7,
+        "kind": "lehrstoff"
+      },
+      {
+        "id": "MAT.OS.8.GRU2.02",
+        "kompetenzbereich": "Grundlagen der Integralrechnung",
+        "klasse": 8,
+        "text": "Größen durch Integrale ausdrücken können, insbesondere als Verallgemeinerungen von Formeln mit Produkten (zB für Flächeninhalte oder zurückgelegte Wege)",
+        "source_ref": "MATHEMATIK / 8. Klasse / Grundlagen der Integralrechnung",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": [
+          7
+        ],
+        "kompetenzmodul": 7,
+        "kind": "lehrstoff"
+      },
+      {
+        "id": "MAT.OS.8.GRU2.03",
+        "kompetenzbereich": "Grundlagen der Integralrechnung",
+        "klasse": 8,
+        "text": "Den Begriff Stammfunktion kennen und anwenden können",
+        "source_ref": "MATHEMATIK / 8. Klasse / Grundlagen der Integralrechnung",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": [
+          7
+        ],
+        "kompetenzmodul": 7,
+        "kind": "lehrstoff"
+      },
+      {
+        "id": "MAT.OS.8.GRU2.04",
+        "kompetenzbereich": "Grundlagen der Integralrechnung",
+        "klasse": 8,
+        "text": "Bestimmte Integrale mit Hilfe von Stammfunktionen unter Verwendung elementarer Integrationsregeln berechnen können",
+        "source_ref": "MATHEMATIK / 8. Klasse / Grundlagen der Integralrechnung",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": [
+          7
+        ],
+        "kompetenzmodul": 7,
+        "kind": "lehrstoff"
+      },
+      {
+        "id": "MAT.OS.8.ANW.01",
+        "kompetenzbereich": "Anwendungen und Exaktifizierungen der Integralrechnung",
+        "klasse": 8,
+        "text": "Das bestimmte Integral in verschiedenen Kontexten deuten und entsprechende Sachverhalte durch Integrale beschreiben können (insbesondere Flächeninhalte, Volumina, Weglängen, Geschwindigkeiten, Arbeit und Energie; allenfalls weitere physikalische Deutungen)",
+        "source_ref": "MATHEMATIK / 8. Klasse / Anwendungen und Exaktifizierungen der Integralrechnung",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": [
+          7
+        ],
+        "kompetenzmodul": 7,
+        "kind": "lehrstoff"
+      },
+      {
+        "id": "MAT.OS.8.ANW.02",
+        "kompetenzbereich": "Anwendungen und Exaktifizierungen der Integralrechnung",
+        "klasse": 8,
+        "text": "Die Hauptsätze (bzw. den Hauptsatz) der Differential- und Integralrechnung kennen; den Zusammenhang zwischen Differenzieren und Integrieren erläutern können",
+        "source_ref": "MATHEMATIK / 8. Klasse / Anwendungen und Exaktifizierungen der Integralrechnung",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": [
+          7
+        ],
+        "kompetenzmodul": 7,
+        "kind": "lehrstoff"
+      },
+      {
+        "id": "MAT.OS.8.ANW.03",
+        "kompetenzbereich": "Anwendungen und Exaktifizierungen der Integralrechnung",
+        "klasse": 8,
+        "text": "Das unbestimmte Integral kennen",
+        "source_ref": "MATHEMATIK / 8. Klasse / Anwendungen und Exaktifizierungen der Integralrechnung",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": [
+          7
+        ],
+        "kompetenzmodul": 7,
+        "kind": "lehrstoff"
+      },
+      {
+        "id": "MAT.OS.8.STE.01",
+        "kompetenzbereich": "Stetige Wahrscheinlichkeitsverteilungen; beurteilende Statistik",
+        "klasse": 8,
+        "text": "Die Begriffe „stetige Zufallsvariable“ und „stetige Verteilung“ kennen",
+        "source_ref": "MATHEMATIK / 8. Klasse / Stetige Wahrscheinlichkeitsverteilungen; beurteilende Statistik",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": [
+          7
+        ],
+        "kompetenzmodul": 7,
+        "kind": "lehrstoff"
+      },
+      {
+        "id": "MAT.OS.8.STE.02",
+        "kompetenzbereich": "Stetige Wahrscheinlichkeitsverteilungen; beurteilende Statistik",
+        "klasse": 8,
+        "text": "Die Normalverteilung zur Approximation der Binomialverteilung einsetzen können",
+        "source_ref": "MATHEMATIK / 8. Klasse / Stetige Wahrscheinlichkeitsverteilungen; beurteilende Statistik",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": [
+          7
+        ],
+        "kompetenzmodul": 7,
+        "kind": "lehrstoff"
+      },
+      {
+        "id": "MAT.OS.8.STE.03",
+        "kompetenzbereich": "Stetige Wahrscheinlichkeitsverteilungen; beurteilende Statistik",
+        "klasse": 8,
+        "text": "Die Normalverteilung in anwendungsorientierten Bereichen verwenden können",
+        "source_ref": "MATHEMATIK / 8. Klasse / Stetige Wahrscheinlichkeitsverteilungen; beurteilende Statistik",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": [
+          7
+        ],
+        "kompetenzmodul": 7,
+        "kind": "lehrstoff"
+      },
+      {
+        "id": "MAT.OS.8.STE.04",
+        "kompetenzbereich": "Stetige Wahrscheinlichkeitsverteilungen; beurteilende Statistik",
+        "klasse": 8,
+        "text": "Konfidenzintervalle ermitteln und interpretieren können",
+        "source_ref": "MATHEMATIK / 8. Klasse / Stetige Wahrscheinlichkeitsverteilungen; beurteilende Statistik",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": [
+          7
+        ],
+        "kompetenzmodul": 7,
+        "kind": "lehrstoff"
+      },
+      {
+        "id": "MAT.OS.8.STE.05",
+        "kompetenzbereich": "Stetige Wahrscheinlichkeitsverteilungen; beurteilende Statistik",
+        "klasse": 8,
+        "text": "Einfache statistische Hypothesentests durchführen und deren Ergebnisse interpretieren können",
+        "source_ref": "MATHEMATIK / 8. Klasse / Stetige Wahrscheinlichkeitsverteilungen; beurteilende Statistik",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": [
+          7
+        ],
+        "kompetenzmodul": 7,
+        "kind": "lehrstoff"
+      },
+      {
+        "id": "MAT.OS.8.DIF.01",
+        "kompetenzbereich": "Differenzen- und Differentialgleichungen; Grundlagen der Systemdynamik",
+        "klasse": 8,
+        "text": "Diskrete Veränderungen von Größen durch Differenzengleichungen beschreiben und diese im Kontext deuten können",
+        "source_ref": "MATHEMATIK / 8. Klasse / Differenzen- und Differentialgleichungen; Grundlagen der Systemdynamik",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": [
+          7
+        ],
+        "kompetenzmodul": 7,
+        "kind": "lehrstoff"
+      },
+      {
+        "id": "MAT.OS.8.DIF.02",
+        "kompetenzbereich": "Differenzen- und Differentialgleichungen; Grundlagen der Systemdynamik",
+        "klasse": 8,
+        "text": "Kontinuierliche Veränderungen von Größen durch Differentialgleichungen beschreiben und diese im Kontext deuten können",
+        "source_ref": "MATHEMATIK / 8. Klasse / Differenzen- und Differentialgleichungen; Grundlagen der Systemdynamik",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": [
+          7
+        ],
+        "kompetenzmodul": 7,
+        "kind": "lehrstoff"
+      },
+      {
+        "id": "MAT.OS.8.DIF.03",
+        "kompetenzbereich": "Differenzen- und Differentialgleichungen; Grundlagen der Systemdynamik",
+        "klasse": 8,
+        "text": "Einfache Differentialgleichungen lösen können",
+        "source_ref": "MATHEMATIK / 8. Klasse / Differenzen- und Differentialgleichungen; Grundlagen der Systemdynamik",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": [
+          7
+        ],
+        "kompetenzmodul": 7,
+        "kind": "lehrstoff"
+      },
+      {
+        "id": "MAT.OS.8.DIF.04",
+        "kompetenzbereich": "Differenzen- und Differentialgleichungen; Grundlagen der Systemdynamik",
+        "klasse": 8,
+        "text": "Einfache dynamische Systeme mit Hilfe von Diagrammen oder Differenzengleichungen beschreiben und untersuchen können",
+        "source_ref": "MATHEMATIK / 8. Klasse / Differenzen- und Differentialgleichungen; Grundlagen der Systemdynamik",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": [
+          7
+        ],
+        "kompetenzmodul": 7,
+        "kind": "lehrstoff"
+      },
+      {
+        "id": "MAT.OS.8.SIC.04",
+        "kompetenzbereich": "Sicherung der Nachhaltigkeit",
+        "klasse": 8,
+        "text": "Wiederholen, Vertiefen von Fähigkeiten und Vernetzen von Inhalten, um einen umfassenden Überblick über die Zusammenhänge unterschiedlicher mathematischer Gebiete zu gewinnen",
+        "source_ref": "MATHEMATIK / 8. Klasse / Sicherung der Nachhaltigkeit",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": [
+          8
+        ],
+        "kompetenzmodul": 7,
+        "kind": "lehrstoff"
+      }
+    ],
+    "notes": []
+  },
+  "plan": null,
+  "content": {
+    "meta": {
+      "title": "Fläche, Weg, Integral — das bestimmte Integral verstehen und berechnen",
+      "subtitle": "LLM-Entwurf — Erstprüfung",
+      "subject": "Mathematik",
+      "stufe": "Oberstufe",
+      "klasse": 8,
+      "kernfrage": "Wie kannst du mit dem bestimmten Integral Flächen und zurückgelegte Wege berechnen — und was hat das mit Ober- und Untersummen zu tun?",
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "lehrplan_label": "Mathematik · 8. Klasse · Grundlagen der Integralrechnung",
+      "content_language": "de",
+      "subject_models": []
+    },
+    "subject_model": {
+      "subject": "Mathematik",
+      "stufe": "Oberstufe",
+      "dimensions": [
+        {
+          "id": "DM",
+          "label": "Darstellend-modellierendes Arbeiten",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "FO",
+          "label": "Formal-operatives Arbeiten",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "ID",
+          "label": "Interpretierend-dokumentierendes Arbeiten",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "KA",
+          "label": "Kritisch-argumentatives Arbeiten",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "content_areas": [
+        {
+          "id": "Algebra und Geometrie",
+          "label": "Algebra und Geometrie",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "Funktionale Abhängigkeiten",
+          "label": "Funktionale Abhängigkeiten",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "Analysis",
+          "label": "Analysis",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "Wahrscheinlichkeit und Statistik",
+          "label": "Wahrscheinlichkeit und Statistik",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "task_kind_extensions": [
+        "calculation",
+        "proof",
+        "construction",
+        "modelling"
+      ]
+    },
+    "intro": [
+      {
+        "id": "intro1",
+        "optional": false,
+        "modality": "printable",
+        "flags": null,
+        "asset_refs": [],
+        "provenance": null,
+        "role": "info",
+        "kind": "prose",
+        "content": "Ein Fahrzeug bremst, ein Wasserstrahl füllt ein Becken, eine Kurve schließt eine Fläche ein — all das lässt sich durch ein einziges mathematisches Objekt beschreiben: das bestimmte Integral. In diesem Arbeitsblatt erforschst du, wie das Integral aus Näherungssummen entsteht, was es geometrisch bedeutet und wie du es mit Hilfe von Stammfunktionen exakt berechnest.",
+        "callout_role": null,
+        "teacher_note": null,
+        "watch_outs": []
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Von der Summe zum Integral",
+        "teacher_overview": {
+          "throughline": "Schüler:innen erarbeiten, wie Ober- und Untersummen entstehen und warum das bestimmte Integral als Grenzwert dieser Summen definiert wird — der Brückenschlag von diskreter Näherung zu exakter Flächenberechnung.",
+          "talking_points": [
+            "Ober- und Untersummen zeigen Schüler:innen, dass das Integral nicht aus dem Nichts auftaucht, sondern als natürlicher Grenzwert entsteht.",
+            "Betone: Die Breite der Rechtecke (Δx) geht gegen null — das ist der entscheidende Übergang von endlich zu unendlich.",
+            "Der Begriff „Zahl zwischen allen Ober- und Untersummen“ verknüpft geometrische Intuition mit formaler Definition.",
+            "Visualisierung mit abb1 hilft, den Zusammenhang zwischen Teilung und Genauigkeit konkret zu machen."
+          ],
+          "extensions": [
+            "Schüler:innen berechnen Ober- und Untersummen für n = 4, 8, 16 Rechtecke und diskutieren, welches n ausreicht.",
+            "Vergleich: Welche Funktionen führen dazu, dass Ober- und Untersummen besonders schnell konvergieren?",
+            "Einführung in numerische Integration (Trapezregel) als Erweiterung."
+          ],
+          "differentiation": null,
+          "timing_notes": null
+        },
+        "blocks": [
+          {
+            "id": "t1",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "abb1"
+            ],
+            "provenance": null,
+            "role": "task",
+            "kind": "calculation",
+            "prompt": "Gegeben ist die Funktion f(x) = x² auf dem Intervall [0, 2]. Teile das Intervall in n = 4 gleichbreite Teilintervalle (Breite Δx = 0,5). Berechne die Untersumme U₄ und die Obersumme O₄, indem du jeweils den kleinsten bzw. größten Funktionswert im Teilintervall als Rechteckshöhe verwendest. Gib beide Werte an.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55.0
+            },
+            "cognitive_level": "apply",
+            "difficulty": null,
+            "dimensions": [
+              "FO",
+              "DM"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.OS.8.GRU2.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "answer_key": "Teilintervalle: [0; 0,5], [0,5; 1], [1; 1,5], [1,5; 2]. Untersumme: U₄ = 0,5 · (f(0) + f(0,5) + f(1) + f(1,5)) = 0,5 · (0 + 0,25 + 1 + 2,25) = 0,5 · 3,5 = 1,75. Obersumme: O₄ = 0,5 · (f(0,5) + f(1) + f(1,5) + f(2)) = 0,5 · (0,25 + 1 + 2,25 + 4) = 0,5 · 7,5 = 3,75. (Exakter Wert: 8/3 ≈ 2,667.)",
+            "acceptable_reasoning": "Teilintervalle korrekt bestimmt; Minimum und Maximum in jedem Teilintervall identifiziert; Summe gebildet und mit Δx multipliziert.",
+            "rubric": [
+              {
+                "criterion": "Teilintervalle und Δx",
+                "levels": [
+                  "Nicht angegeben oder falsch",
+                  "Korrekt bestimmt"
+                ]
+              },
+              {
+                "criterion": "Untersumme",
+                "levels": [
+                  "Falsch oder fehlt",
+                  "Ansatz richtig, Rechenfehler",
+                  "Korrekt (1,75)"
+                ]
+              },
+              {
+                "criterion": "Obersumme",
+                "levels": [
+                  "Falsch oder fehlt",
+                  "Ansatz richtig, Rechenfehler",
+                  "Korrekt (3,75)"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Häufiger Fehler: Schüler:innen verwechseln Unter- und Obersumme — Untersumme verwendet Minimum, Obersumme Minimum des Teilintervalls am RECHTEN Rand.",
+              "Bei monoton steigendem f gilt: linker Rand → Minimum, rechter Rand → Maximum. Nicht verallgemeinern, ohne Monotonie zu prüfen.",
+              "Einheit von Δx nicht vergessen: Multiplikation mit 0,5 ist zwingend."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t2",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "true_false_justify",
+            "prompt": "Entscheide jeweils, ob die folgende Aussage über das bestimmte Integral wahr oder falsch ist, und begründe kurz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Das bestimmte Integral ∫₀² x² dx ist immer eine Zahl, die kleiner als jede Obersumme und größer als jede Untersumme ist.",
+                "Wenn man die Anzahl der Rechtecke n immer weiter erhöht, nähern sich Ober- und Untersumme immer weiter voneinander an.",
+                "Das bestimmte Integral ∫ₐᵇ f(x) dx gibt immer den Flächeninhalt zwischen dem Graphen und der x-Achse an, auch wenn f auf [a, b] negative Werte annimmt."
+              ]
+            },
+            "response": {
+              "mode": "box",
+              "min_height_mm": 50.0
+            },
+            "cognitive_level": "evaluate",
+            "difficulty": null,
+            "dimensions": [
+              "KA",
+              "ID"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.OS.8.GRU2.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Aussage 1: WAHR — Definition des bestimmten Integrals als die eindeutige Zahl zwischen allen Unter- und Obersummen. Aussage 2: WAHR — Bei stetigen Funktionen gilt: je feiner die Zerlegung, desto kleiner der Unterschied O_n − U_n. Aussage 3: FALSCH — Das bestimmte Integral gibt den vorzeichenbehafteten Flächeninhalt an; Flächenstücke unter der x-Achse werden negativ gerechnet. Der geometrische Flächeninhalt erfordert Betragsbildung.",
+            "acceptable_reasoning": "Zu Aussage 3 genügt ein Gegenbeispiel: ∫₋₁¹ x dx = 0, obwohl eindeutig eine Fläche eingeschlossen ist.",
+            "rubric": [
+              {
+                "criterion": "Aussage 1",
+                "levels": [
+                  "Falsch bewertet oder keine Begründung",
+                  "Richtig bewertet mit plausibler Begründung"
+                ]
+              },
+              {
+                "criterion": "Aussage 2",
+                "levels": [
+                  "Falsch bewertet oder keine Begründung",
+                  "Richtig bewertet mit plausibler Begründung"
+                ]
+              },
+              {
+                "criterion": "Aussage 3",
+                "levels": [
+                  "Falsch bewertet oder keine Begründung",
+                  "Richtig bewertet; Vorzeichen-Aspekt erwähnt",
+                  "Richtig bewertet mit Gegenbeispiel"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Sehr verbreitete Fehlvorstellung: Integral = Flächeninhalt ohne Vorzeichen — muss explizit thematisiert werden.",
+              "Schüler:innen sollen den Unterschied zwischen vorzeichenbehaftetem Integral und geometrischem Flächeninhalt sicher benennen können."
+            ],
+            "self_check": null
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Stammfunktionen und exakte Berechnung",
+        "teacher_overview": {
+          "throughline": "Schüler:innen wenden Stammfunktionen und elementare Integrationsregeln an, um bestimmte Integrale exakt zu berechnen — Übergang von der Näherung zur analytischen Methode.",
+          "talking_points": [
+            "Stammfunktion als Umkehrung des Ableitens: F'(x) = f(x) — dieser Zusammenhang ist der Kern der Analysis.",
+            "Der Hauptsatz verknüpft zwei scheinbar getrennte Konzepte (Fläche und Ableitung) auf überraschende Weise.",
+            "Beachte: Stammfunktionen sind nicht eindeutig — die Konstante C verschwindet erst beim bestimmten Integral.",
+            "Abb2 zeigt die Formel des Hauptsatzes — Schüler:innen sollen sie nicht nur anwenden, sondern auch erklären können."
+          ],
+          "extensions": [
+            "Wozu braucht man das unbestimmte Integral, wenn wir das bestimmte Integral direkt mit dem Hauptsatz berechnen können?",
+            "Untersuche: Gibt es Funktionen, die keine elementare Stammfunktion besitzen? (Beispiel: e^(−x²))",
+            "Vergleich: Numerische Methode (Trapezregel) vs. analytische Methode — wann ist welche sinnvoll?"
+          ],
+          "differentiation": null,
+          "timing_notes": null
+        },
+        "blocks": [
+          {
+            "id": "t3",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "abb2"
+            ],
+            "provenance": null,
+            "role": "task",
+            "kind": "calculation",
+            "prompt": "Bestimme jeweils eine Stammfunktion F von f und berechne dann das bestimmte Integral.\n(a) f(x) = 3x² − 4x + 1, Integral von 0 bis 3\n(b) f(x) = 2x³ − x, Integral von 1 bis 2\n(c) f(x) = 5, Integral von −1 bis 4\nGib bei jeder Teilaufgabe den Rechenweg vollständig an.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 70.0
+            },
+            "cognitive_level": "apply",
+            "difficulty": null,
+            "dimensions": [
+              "FO"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.OS.8.GRU2.03",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "MAT.OS.8.GRU2.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 12,
+            "answer_key": "(a) F(x) = x³ − 2x² + x; ∫₀³ = F(3) − F(0) = (27 − 18 + 3) − 0 = 12. (b) F(x) = x⁴/2 − x²/2; ∫₁² = F(2) − F(1) = (8 − 2) − (1/2 − 1/2) = 6 − 0 = 6. (c) F(x) = 5x; ∫₋₁⁴ = 5·4 − 5·(−1) = 20 + 5 = 25.",
+            "acceptable_reasoning": "Potenzregel korrekt angewandt (xⁿ → xⁿ⁺¹/(n+1)); Einsetzen der Grenzen in korrekter Reihenfolge (obere minus untere); Vorzeichen bei negativer unterer Grenze beachtet.",
+            "rubric": [
+              {
+                "criterion": "Stammfunktionen",
+                "levels": [
+                  "Alle falsch",
+                  "1–2 korrekt",
+                  "Alle drei korrekt"
+                ]
+              },
+              {
+                "criterion": "Einsetzen der Grenzen",
+                "levels": [
+                  "Systematischer Fehler",
+                  "Teilweise korrekt",
+                  "Durchgehend korrekt"
+                ]
+              },
+              {
+                "criterion": "Endresultate",
+                "levels": [
+                  "Kein korrektes Ergebnis",
+                  "1–2 korrekt",
+                  "Alle drei korrekt (12; 6; 25)"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Typischer Fehler: Vorzeichen bei der unteren Grenze falsch — F(a) wird addiert statt subtrahiert.",
+              "Konstante C nicht in das bestimmte Integral einsetzen — sie kürzt sich heraus und darf weggelassen werden.",
+              "Bei (c): Konstante Funktion hat Stammfunktion F(x) = cx, nicht F(x) = 0."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t4",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "modelling",
+            "prompt": "Ein Fahrzeug fährt mit der Geschwindigkeit v(t) = −t² + 6t (in m/s, t in Sekunden, 0 ≤ t ≤ 6).\n(a) Welche physikalische Bedeutung hat das bestimmte Integral ∫₀⁶ v(t) dt in diesem Zusammenhang?\n(b) Berechne, wie weit das Fahrzeug in den ersten 6 Sekunden zurücklegt.\n(c) Erkläre, warum das Integral in diesem Fall tatsächlich den zurückgelegten Weg angibt (Hinweis: Überprüfe das Vorzeichen von v auf [0, 6]).",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 65.0
+            },
+            "cognitive_level": "analyze",
+            "difficulty": null,
+            "dimensions": [
+              "DM",
+              "ID"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.OS.8.GRU2.02",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "MAT.OS.8.GRU2.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 12,
+            "answer_key": "(a) Das Integral gibt den zurückgelegten Weg des Fahrzeugs in den ersten 6 Sekunden an (in Metern). (b) ∫₀⁶ (−t² + 6t) dt = [−t³/3 + 3t²]₀⁶ = (−216/3 + 108) − 0 = −72 + 108 = 36 m. (c) v(t) = −t² + 6t = t(6 − t) ≥ 0 für alle t ∈ [0, 6], da t ≥ 0 und (6 − t) ≥ 0 auf diesem Intervall. Das Fahrzeug bewegt sich nur vorwärts, also stimmt das Integral mit dem Weg überein (kein vorzeichenbehafteter Unterschied nötig).",
+            "acceptable_reasoning": "Schüler:innen erkennen v(t) ≥ 0 auf [0,6] durch Nullstellenanalyse oder Überprüfung einzelner Werte.",
+            "rubric": [
+              {
+                "criterion": "Interpretation des Integrals",
+                "levels": [
+                  "Keine oder falsche Angabe",
+                  "Korrekt als zurückgelegter Weg identifiziert"
+                ]
+              },
+              {
+                "criterion": "Berechnung",
+                "levels": [
+                  "Rechenfehler, kein Ergebnis",
+                  "Ansatz korrekt, Rechenfehler",
+                  "36 m korrekt"
+                ]
+              },
+              {
+                "criterion": "Vorzeichen-Argumentation",
+                "levels": [
+                  "Fehlt",
+                  "Angedeutet",
+                  "Vollständig: v(t) ≥ 0 auf [0,6] begründet"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Schüler:innen müssen begründen, warum kein Betrag nötig ist — das gelingt nur durch Vorzeichen-Check von v(t).",
+              "Verwechslung von Weg und Verschiebung: Wenn v Vorzeichen wechselt, muss der Weg mit |v| berechnet werden.",
+              "Rechencheck: ∫₀⁶ −t² dt = −72, ∫₀⁶ 6t dt = 108 → Summe 36."
+            ],
+            "self_check": null
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "Größen durch Integrale ausdrücken und Flächen berechnen",
+        "teacher_overview": {
+          "throughline": "Schüler:innen lernen, Integrale als Verallgemeinerungen von Produktformeln zu sehen und wenden das Konzept auf Flächenberechnungen zwischen Kurven an — Transfer vom mechanistischen Rechnen zum konzeptuellen Denken.",
+          "talking_points": [
+            "Flächeninhalt zwischen zwei Kurven: erst Schnittpunkte bestimmen, dann ggf. Differenz der Integrale bilden.",
+            "„Integral als Summe von Produkten“: Warum funktioniert das? Weil Δx → dx und Summe → Integral.",
+            "Betone den Unterschied: Fläche zwischen Kurven vs. vorzeichenbehaftetes Integral — je nach Aufgabe ist das eine oder andere gefragt.",
+            "Erweiterbar auf Volumen von Rotationskörpern (Lehrplan Kl. 8 Anwendungen)."
+          ],
+          "extensions": [
+            "Schüler:innen recherchieren: Wie wird das Integral in der Physik für die Berechnung von Arbeit (W = ∫F ds) verwendet?",
+            "Aufgabe: Berechne das Volumen eines Rotationskörpers, der durch Rotation von f(x) = √x um die x-Achse entsteht.",
+            "Diskussion: Kann man das Integral auch für nicht-stetige Funktionen definieren? Was ändert sich?"
+          ],
+          "differentiation": null,
+          "timing_notes": null
+        },
+        "blocks": [
+          {
+            "id": "t5",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "calculation",
+            "prompt": "Berechne den Flächeninhalt der Fläche, die von den Graphen g(x) = x und h(x) = x² eingeschlossen wird.\n(a) Bestimme zunächst die Schnittpunkte von g und h.\n(b) Berechne dann den Flächeninhalt A mit Hilfe des Integrals der Differenzfunktion.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 60.0
+            },
+            "cognitive_level": "apply",
+            "difficulty": null,
+            "dimensions": [
+              "FO",
+              "DM"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.OS.8.GRU2.02",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "MAT.OS.8.GRU2.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "answer_key": "(a) g(x) = h(x) ⟹ x = x² ⟹ x² − x = 0 ⟹ x(x−1) = 0 ⟹ x₁ = 0, x₂ = 1. (b) Auf [0,1] gilt g(x) ≥ h(x) (da x ≥ x² für x ∈ [0,1]). A = ∫₀¹ (x − x²) dx = [x²/2 − x³/3]₀¹ = 1/2 − 1/3 = 3/6 − 2/6 = 1/6.",
+            "acceptable_reasoning": "Schüler:innen prüfen, welche Funktion auf dem Intervall größer ist, bevor sie die Differenz bilden.",
+            "rubric": [
+              {
+                "criterion": "Schnittpunkte",
+                "levels": [
+                  "Falsch oder fehlt",
+                  "x₁=0, x₂=1 korrekt"
+                ]
+              },
+              {
+                "criterion": "Integral der Differenzfunktion",
+                "levels": [
+                  "Falsch angesetzt",
+                  "Ansatz richtig, Rechenfehler",
+                  "Korrekt: 1/6"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Fehler: Differenz falsch herum (x² − x statt x − x²) → negatives Ergebnis für den Flächeninhalt. Flächeninhalt ist immer ≥ 0.",
+              "Prüfung auf welcher Seite die Kurven liegen nicht vergessen — Einsetzen eines Testpunkts (z. B. x = 0,5) empfohlen.",
+              "Bei mehreren eingeschlossenen Flächen: jede Teilfläche separat integrieren."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t6",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "open_response",
+            "prompt": "Ein Wasserreservoir wird mit der Füllrate f(t) = 2t + 3 (in m³/min, t in Minuten) befüllt. Zu Beginn (t = 0) enthält das Reservoir bereits 10 m³ Wasser.\n(a) Wie viel Wasser wird in den ersten 5 Minuten zugefüllt? Drücke dies als Integral aus und berechne es.\n(b) Wie viel Wasser befindet sich nach 5 Minuten insgesamt im Reservoir?\n(c) Interpretiere, was das Integral ∫₀ᵀ f(t) dt in diesem Kontext bedeutet, und erkläre, warum man eine Füllrate integrieren muss, um das Gesamtvolumen zu erhalten.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 65.0
+            },
+            "cognitive_level": "analyze",
+            "difficulty": null,
+            "dimensions": [
+              "ID",
+              "DM"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.OS.8.GRU2.02",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "MAT.OS.8.GRU2.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "answer_key": "(a) Zugefülltes Wasser = ∫₀⁵ (2t + 3) dt = [t² + 3t]₀⁵ = (25 + 15) − 0 = 40 m³. (b) Gesamtvolumen = 10 + 40 = 50 m³. (c) Das Integral einer Rate über ein Zeitintervall ergibt die gesamte Menge, die in diesem Zeitraum fließt — das ist die Verallgemeinerung von „Menge = Rate × Zeit“ für nicht-konstante Raten. Integration ist die Umkehrung der Differenziation: weil f(t) die Änderungsrate des Volumens ist, liefert das Integral das kumulative Volumen.",
+            "acceptable_reasoning": "Analogie: V = r·t gilt nur für konstante Rate; Integral verallgemeinert auf variable Rate.",
+            "rubric": [
+              {
+                "criterion": "Integralansatz",
+                "levels": [
+                  "Fehlt",
+                  "Ansatz korrekt aufgestellt"
+                ]
+              },
+              {
+                "criterion": "Berechnung (a)",
+                "levels": [
+                  "Rechenfehler",
+                  "40 m³ korrekt"
+                ]
+              },
+              {
+                "criterion": "Gesamtvolumen (b)",
+                "levels": [
+                  "Anfangsbestand vergessen oder falsch",
+                  "50 m³ korrekt"
+                ]
+              },
+              {
+                "criterion": "Interpretation (c)",
+                "levels": [
+                  "Keine oder oberflächliche Erklärung",
+                  "Rate-Mengen-Zusammenhang erklärt",
+                  "Vollständige Erklärung inkl. Analogie zu konstantem Fall"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Schüler:innen vergessen häufig den Anfangsbestand — das Integral gibt nur die Änderung, nicht das Gesamtvolumen.",
+              "Konzeptuelle Lücke: Warum integriert man eine Rate? Diese Frage muss explizit geklärt werden.",
+              "Einheiten konsistent halten: m³/min × min = m³."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t7",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "open_response",
+            "prompt": "Überlege dir einen eigenen Anwendungskontext (aus Physik, Wirtschaft oder Alltag), in dem ein bestimmtes Integral sinnvoll eingesetzt werden kann. Beschreibe:\n(a) Was wird durch die Funktion f(x) dargestellt?\n(b) Was bedeutet das Integral ∫ₐᵇ f(x) dx in diesem Kontext?\n(c) Welche Einheiten haben f(x), x und das Integral?\nBewerte abschließend kurz: Ist dein Modell realistisch? Welche Vereinfachungen hast du vorgenommen?",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 70.0
+            },
+            "cognitive_level": "create",
+            "difficulty": null,
+            "dimensions": [
+              "DM",
+              "KA"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.OS.8.GRU2.02",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "MAT.OS.x.HAN.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 12,
+            "answer_key": "Musterlösung (individuell): Zum Beispiel — f(t) = Leistung eines Sonnenpanels in Watt, t in Stunden. ∫₆¹⁸ f(t) dt = erzeugte Energie in Wh. Einheiten: W, h, Wh. Vereinfachung: Wetterverhältnisse als konstant angenommen. Bewertungsmaßstab: Kontext klar beschrieben; Integral sinnvoll interpretiert; Einheiten konsistent; kritische Reflexion vorhanden.",
+            "acceptable_reasoning": null,
+            "rubric": [
+              {
+                "criterion": "Kontext",
+                "levels": [
+                  "Unklar oder unpassend",
+                  "Verständlich beschrieben",
+                  "Originell und vollständig"
+                ]
+              },
+              {
+                "criterion": "Interpretation des Integrals",
+                "levels": [
+                  "Falsch oder fehlt",
+                  "Sachlich korrekt"
+                ]
+              },
+              {
+                "criterion": "Einheiten",
+                "levels": [
+                  "Fehlen oder inkonsistent",
+                  "Konsistent und korrekt"
+                ]
+              },
+              {
+                "criterion": "Reflexion/Vereinfachungen",
+                "levels": [
+                  "Fehlt",
+                  "Mindestens eine Vereinfachung benannt",
+                  "Kritische Auseinandersetzung mit Modellgrenzen"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Schüler:innen wählen manchmal Kontexte, in denen das Integral keine sinnvolle Bedeutung hat (z. B. f = Temperatur, x = Ort — Einheiten ergeben keinen physikalischen Sinn).",
+              "Einheitencheck ist hier besonders wichtig: [f] · [x] muss eine sinnvolle Einheit ergeben.",
+              "Förderung von Kreativität: Verschiedene Lösungen akzeptieren, solange die Logik stimmt."
+            ],
+            "self_check": null
+          }
+        ]
+      }
+    ],
+    "assets": [
+      {
+        "id": "abb1",
+        "role": "figure",
+        "medium": "visual",
+        "generator": "matplotlib:function_graph",
+        "spec": {
+          "xmin": 0,
+          "xmax": 4,
+          "ymin": 0,
+          "ymax": 10,
+          "xlabel": "x",
+          "ylabel": "f(x)",
+          "title": "Graph von f — Ober- und Untersummen"
+        },
+        "correctness_surface": null,
+        "misleading_in_isolation": false,
+        "intentionally_flawed": null,
+        "machine_generatable": true,
+        "provenance": null,
+        "data_source": null,
+        "illustrative": false,
+        "caption": null
+      },
+      {
+        "id": "abb2",
+        "role": "figure",
+        "medium": "visual",
+        "generator": "matplotlib:math_formula",
+        "spec": {
+          "latex": "\\int_a^b f(x)\\,dx = F(b) - F(a), \\quad F'(x) = f(x)"
+        },
+        "correctness_surface": null,
+        "misleading_in_isolation": false,
+        "intentionally_flawed": null,
+        "machine_generatable": true,
+        "provenance": null,
+        "data_source": null,
+        "illustrative": false,
+        "caption": null
+      }
+    ],
+    "nachweis": {
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "statement": "Diese Materialien adressieren 5 von 28 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
+      "competence_coverage": [
+        {
+          "competence_id": "MAT.OS.x.KOM.01",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "MAT.OS.x.HAN.01",
+          "exercised_by": [
+            "t7"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "MAT.OS.x.HAN.02",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "MAT.OS.x.HAN.03",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "MAT.OS.x.HAN.04",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "MAT.OS.x.KOM2.01",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "MAT.OS.x.KOM2.02",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "MAT.OS.x.KOM2.03",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "MAT.OS.8.SIC.01",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "MAT.OS.8.SIC.02",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "MAT.OS.8.SIC.03",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "MAT.OS.8.GRU2.01",
+          "exercised_by": [
+            "t1",
+            "t2",
+            "t6"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "MAT.OS.8.GRU2.02",
+          "exercised_by": [
+            "t4",
+            "t5",
+            "t6",
+            "t7"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "MAT.OS.8.GRU2.03",
+          "exercised_by": [
+            "t3"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "MAT.OS.8.GRU2.04",
+          "exercised_by": [
+            "t3",
+            "t4",
+            "t5"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "MAT.OS.8.ANW.01",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "MAT.OS.8.ANW.02",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "MAT.OS.8.ANW.03",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "MAT.OS.8.STE.01",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "MAT.OS.8.STE.02",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "MAT.OS.8.STE.03",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "MAT.OS.8.STE.04",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "MAT.OS.8.STE.05",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "MAT.OS.8.DIF.01",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "MAT.OS.8.DIF.02",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "MAT.OS.8.DIF.03",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "MAT.OS.8.DIF.04",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "MAT.OS.8.SIC.04",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        }
+      ],
+      "gaps": [
+        "MAT.OS.x.KOM.01 — Mathematische Kompetenzen besitzen eine Inhaltsdimension (auf welche Inhalte sie sich beziehen, also womit etwas getan wird), eine Handlungsdimension (auf welche Art von Tätigkeit sie sich beziehen, also was getan wird) und eine Komplexitätsdimension (bezogen auf die Art und den Grad der Vernetzungen). Unter mathematischen Kompetenzen werden hier längerfristig verfügbare kognitive Fähigkeiten verstanden, die von Lernenden entwickelt werden sollen und sie befähigen, bestimmte Tätigkeiten in variablen Situationen auszuüben, sowie die Bereitschaft, diese Fähigkeiten und Fertigkeiten einzusetzen.",
+        "MAT.OS.x.HAN.02 — Formal-operatives Arbeiten umfasst alle Aktivitäten, die auf Kalkülen bzw. Algorithmen beruhen, also das Anwenden von Verfahren, Rechenmethoden oder Techniken.",
+        "MAT.OS.x.HAN.03 — Interpretierend-dokumentierendes Arbeiten umfasst alle Aktivitäten, die mit der Übersetzung mathematischer Darstellungen, Zusammenhänge und Sachverhalte in die Alltagssprache sowie der Deutung und Dokumentation von Ergebnissen zu tun haben.",
+        "MAT.OS.x.HAN.04 — Kritisch-argumentatives Arbeiten umfasst alle Aktivitäten, die mit Argumentieren, Hinterfragen, Ausloten von Grenzen und Begründen zu tun haben. Das Beweisen von Behauptungen oder heuristisch gewonnener Vermutungen ist ein Schwerpunkt dieses Tätigkeitsbereichs.",
+        "MAT.OS.x.KOM2.01 — Einsetzen von Grundwissen und Grundfähigkeiten meint die Wiedergabe oder direkte Anwendung von grundlegenden Begriffen, Verfahren oder Darstellungen. In der Regel sind nur reproduktives mathematisches Wissen und Können oder die aus dem Kontext unmittelbar erkennbare direkte Anwendung von Kenntnissen und Fertigkeiten erforderlich.",
+        "MAT.OS.x.KOM2.02 — Herstellen von Verbindungen ist erforderlich, wenn der mathematische Sachverhalt vielschichtiger ist, sodass Begriffe, Sätze, Verfahren und Darstellungen aus einem oder verschiedenen mathematischen Gebieten oder unterschiedliche mathematische Tätigkeiten in geeigneter Weise miteinander verbunden werden müssen.",
+        "MAT.OS.x.KOM2.03 — Problemlösen und Reflektieren: Problemlösen baut auf Eigentätigkeit und heuristischen Strategien in nicht vertrauten Situationen auf. Reflektieren meint das Nachdenken über Zusammenhänge, die sich aus dem dargelegten mathematischen Sachverhalt nicht von selbst ergeben. Reflexionswissen ist ein anhand entsprechender Nachdenkprozesse entwickeltes Wissen über Mathematik.",
+        "MAT.OS.8.SIC.01 — Notwendiges Vorwissen für die Kompetenzbereiche dieses Moduls wiederholen und aktivieren",
+        "MAT.OS.8.SIC.02 — Grundlagen für die Kompetenzbereiche dieses Moduls ergänzen und bereitstellen",
+        "MAT.OS.8.SIC.03 — Grundkompetenzen nachhaltig sichern",
+        "MAT.OS.8.ANW.01 — Das bestimmte Integral in verschiedenen Kontexten deuten und entsprechende Sachverhalte durch Integrale beschreiben können (insbesondere Flächeninhalte, Volumina, Weglängen, Geschwindigkeiten, Arbeit und Energie; allenfalls weitere physikalische Deutungen)",
+        "MAT.OS.8.ANW.02 — Die Hauptsätze (bzw. den Hauptsatz) der Differential- und Integralrechnung kennen; den Zusammenhang zwischen Differenzieren und Integrieren erläutern können",
+        "MAT.OS.8.ANW.03 — Das unbestimmte Integral kennen",
+        "MAT.OS.8.STE.01 — Die Begriffe „stetige Zufallsvariable“ und „stetige Verteilung“ kennen",
+        "MAT.OS.8.STE.02 — Die Normalverteilung zur Approximation der Binomialverteilung einsetzen können",
+        "MAT.OS.8.STE.03 — Die Normalverteilung in anwendungsorientierten Bereichen verwenden können",
+        "MAT.OS.8.STE.04 — Konfidenzintervalle ermitteln und interpretieren können",
+        "MAT.OS.8.STE.05 — Einfache statistische Hypothesentests durchführen und deren Ergebnisse interpretieren können",
+        "MAT.OS.8.DIF.01 — Diskrete Veränderungen von Größen durch Differenzengleichungen beschreiben und diese im Kontext deuten können",
+        "MAT.OS.8.DIF.02 — Kontinuierliche Veränderungen von Größen durch Differentialgleichungen beschreiben und diese im Kontext deuten können",
+        "MAT.OS.8.DIF.03 — Einfache Differentialgleichungen lösen können",
+        "MAT.OS.8.DIF.04 — Einfache dynamische Systeme mit Hilfe von Diagrammen oder Differenzengleichungen beschreiben und untersuchen können",
+        "MAT.OS.8.SIC.04 — Wiederholen, Vertiefen von Fähigkeiten und Vernetzen von Inhalten, um einen umfassenden Überblick über die Zusammenhänge unterschiedlicher mathematischer Gebiete zu gewinnen"
+      ],
+      "zentrale_konzepte": [
+        "Anwendungen und Exaktifizierungen der Integralrechnung",
+        "Differenzen- und Differentialgleichungen; Grundlagen der Systemdynamik",
+        "Grundlagen der Integralrechnung",
+        "Handlungsdimension: Mathematische Kompetenz erfordert Fertigkeiten und Fähigkeiten bei folgenden Tätigkeiten:",
+        "Kompetenzmodell",
+        "Komplexitätsdimension: Die zur Bewältigung mathematischer Aufgaben- und Problemstellungen notwendigen Anforderungen können stark differieren und gehen von Reproduktion über Vernetzungen hin zur Reflexion.",
+        "Sicherung der Nachhaltigkeit",
+        "Stetige Wahrscheinlichkeitsverteilungen; beurteilende Statistik"
+      ],
+      "uebergreifende_themen": []
+    },
+    "depth_profile": {
+      "by_level": {
+        "apply": 3,
+        "evaluate": 1,
+        "analyze": 2,
+        "create": 1
+      },
+      "by_dimension": {
+        "FO": 3,
+        "KA": 1,
+        "DM": 2,
+        "ID": 1
+      },
+      "by_difficulty": {
+        "2": 5,
+        "3": 2
+      },
+      "minutes_total": 74,
+      "minutes_resource_independent": 74
+    },
+    "rack": null
+  },
+  "artifacts": {
+    "student_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0153\\student.pdf",
+    "teacher_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0153\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0153\\homework.pdf",
+    "preview_png": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0153\\raster\\student.p1.png"
+  },
+  "verify_problems": [],
+  "verify_warnings": [],
+  "parent_id": null,
+  "feedback": [],
+  "error": null
+}

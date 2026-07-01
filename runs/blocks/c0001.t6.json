@@ -1,0 +1,80 @@
+{
+  "id": "c0001.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Die österreichische Gemeinde Sonnberg (5 000 Einwohner:innen) will bis 2035 klimaneutral werden. Drei Maßnahmen stehen zur Diskussion:\n\n(1) Bau eines Windparks außerhalb der Gemeinde (Investitionskosten: hoch, CO₂-Einsparung: groß, Akzeptanz in der Bevölkerung: geteilt).\n(2) Förderung von Photovoltaik-Anlagen auf privaten Dächern (Investitionskosten: mittel, CO₂-Einsparung: mittel, Akzeptanz: hoch).\n(3) Umstieg des Gemeinde-Fuhrparks auf Elektrofahrzeuge (Investitionskosten: mittel, CO₂-Einsparung: gering bis mittel je nach Strommix, Akzeptanz: hoch).\n\nWelche Maßnahme würdest du empfehlen, wenn die Gemeinde ihr Budget begrenzt einsetzen und gleichzeitig möglichst viel CO₂ einsparen will? Begründe deine Entscheidung mit physikalischen, ökonomischen und gesellschaftlichen Argumenten.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Gemeinde Sonnberg: Klimaneutralität bis 2035 – Maßnahmenvergleich (Windpark / PV / E-Mobilität)."
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.4.WET.05",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 15,
+    "answer_key": "Es gibt keine einzig richtige Antwort; bewertet wird die Qualität der Argumentation. Mögliche Argumentation für Windpark: höchste absolute CO₂-Einsparung, aber Akzeptanzproblem und hohe Kosten. Für PV: gutes Verhältnis von Kosten zu Einsparung, dezentral, hohe Akzeptanz, fördert Eigenverantwortung. Für E-Mobilität: geringste CO₂-Einsparung, falls Strom nicht erneuerbar ist. Eine starke Antwort kombiniert PV als erste Priorität (Kosten-Nutzen) mit dem Hinweis, dass Windpark mittelfristig die größte Hebelwirkung hat. Wichtig: Begründung muss auf mindestens zwei Dimensionen eingehen (physikalisch + ökonomisch oder gesellschaftlich).",
+    "acceptable_reasoning": "Alle drei Optionen können empfohlen werden, wenn die Begründung schlüssig und mehrdimensional ist.",
+    "rubric": [
+      {
+        "criterion": "Entscheidung begründet",
+        "levels": [
+          "0: Keine Begründung",
+          "1: Begründung nur auf einer Dimension",
+          "2: Begründung auf zwei Dimensionen",
+          "3: Begründung auf allen drei Dimensionen mit Abwägung"
+        ]
+      },
+      {
+        "criterion": "Physikalische Korrektheit",
+        "levels": [
+          "0: Fehler in den physikalischen Grundlagen",
+          "1: Grundlagen korrekt, aber unvollständig",
+          "2: Korrekte und vollständige physikalische Einschätzung"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen sollen nicht 'alle Maßnahmen gleichzeitig' wählen – die Aufgabe verlangt eine Priorisierung bei begrenztem Budget.",
+      "Auf die Strommix-Abhängigkeit von E-Mobilität hinweisen: in Österreich (hoher Anteil erneuerbarer Energie) sinnvoller als in Kohlestrom-dominierten Ländern.",
+      "Gesellschaftliche Akzeptanz ist ein legitimes Argument – NIMBY-Phänomen bei Windrädern ist Realität und physikalisch-planerisch relevant."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Wetter und Klima",
+  "competences": [
+    "PHY.US.4.WET.05"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0001",
+  "source": "ai",
+  "created_at": "2026-06-25T11:35:33+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

@@ -1,0 +1,109 @@
+{
+  "id": "c0087.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Das Diagramm zeigt eine ideale Bremsung. Nenne einen Unterschied, den du bei einer echten Bremsung erwarten würdest, und erkläre warum.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 35.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.3.MEC.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Mögliche Antworten: (1) Der Verlauf wäre nicht geradlinig/linear, da die Bremskraft nicht konstant ist (Reaktionszeit, Veränderung des Reifendrucks). (2) Vor dem eigentlichen Bremsen gibt es eine Reaktionszeit — in dieser Zeit fährt das Rad mit konstanter Geschwindigkeit weiter. (3) Der Anfangsabschnitt könnte flacher sein (zögerliches Bremsen) oder steiler (Notbremsung). Alle plausibel begründeten Abweichungen akzeptieren.",
+    "acceptable_reasoning": "Auch Antworten, die auf schwankende Bremskraft oder Straßenunebenheiten hinweisen, sind korrekt.",
+    "rubric": [
+      {
+        "criterion": "Abweichung benannt",
+        "levels": [
+          "Keine Abweichung genannt",
+          "Abweichung genannt, aber ohne Erklärung",
+          "Abweichung genannt und physikalisch begründet"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Die Reaktionszeit (ca. 0,8–1 s bei Erwachsenen) wird häufig vergessen — in der Diskussion gezielt ansprechen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Physik",
+  "klasse": 3,
+  "kompetenzbereich": "Mechanik",
+  "competences": [
+    "PHY.US.3.MEC.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "W",
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:function_graph",
+      "spec": {
+        "title": "Geschwindigkeit-Zeit-Diagramm: Fahrrad beim Bremsen",
+        "xmin": 0,
+        "xmax": 5,
+        "ymin": 0,
+        "ymax": 25,
+        "points": [
+          [
+            0,
+            20
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        "xlabel": "Zeit t in s",
+        "ylabel": "Geschwindigkeit v in km/h",
+        "connect": true
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0087",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:20+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

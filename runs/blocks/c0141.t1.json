@@ -1,0 +1,129 @@
+{
+  "id": "c0141.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "ordering",
+    "prompt": "Bringe die folgenden Ereignisse der Nachkriegszeit in die richtige chronologische Reihenfolge. Nutze dabei auch die Zeitleiste.",
+    "payload": {
+      "kind": "ordering",
+      "items": [
+        "Beginn der Weltwirtschaftskrise nach dem Börsenkrach in New York",
+        "Unterzeichnung des Vertrags von Versailles",
+        "Ausrufung der Weimarer Republik in Deutschland",
+        "Mussolinis Marsch auf Rom und Machtübernahme in Italien",
+        "Hitler wird Reichskanzler in Deutschland"
+      ]
+    },
+    "response": {
+      "mode": "none"
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "HSK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GPB.OS.7.POL5.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "1. Ausrufung der Weimarer Republik (November 1918) → 2. Unterzeichnung des Vertrags von Versailles (Juni 1919) → 3. Mussolinis Marsch auf Rom (Oktober 1922) → 4. Beginn der Weltwirtschaftskrise (Oktober 1929) → 5. Hitler wird Reichskanzler (Januar 1933).",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen verwechseln häufig das Ende des Krieges (November 1918) mit der Unterzeichnung des Vertrags von Versailles (Juni 1919).",
+      "Die Weltwirtschaftskrise begann 1929 in den USA – ihre Auswirkungen auf Europa wurden erst 1930/31 voll spürbar."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "ordering",
+  "subject": "Geschichte und politische Bildung",
+  "klasse": 7,
+  "kompetenzbereich": "Politische, wirtschaftliche, kulturelle und soziale Entwicklungen vom 1. Weltkrieg bis zur Gegenwart",
+  "competences": [
+    "GPB.OS.7.POL5.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "HSK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:timeline",
+      "spec": {
+        "events": [
+          {
+            "at": 1918,
+            "label": "Ende des Ersten Weltkriegs / Friedensverträge"
+          },
+          {
+            "at": 1919,
+            "label": "Vertrag von Versailles; Weimarer Republik"
+          },
+          {
+            "at": 1922,
+            "label": "Mussolini übernimmt Macht in Italien"
+          },
+          {
+            "at": 1929,
+            "label": "Weltwirtschaftskrise beginnt"
+          },
+          {
+            "at": 1933,
+            "label": "Hitler wird Reichskanzler in Deutschland"
+          },
+          {
+            "at": 1934,
+            "label": "Österreich: Ausschaltung des Parlaments; autoritäres Regime"
+          },
+          {
+            "at": 1936,
+            "label": "Beginn des Spanischen Bürgerkriegs"
+          },
+          {
+            "at": 1938,
+            "label": "Anschluss Österreichs an das Deutsche Reich"
+          },
+          {
+            "at": 1939,
+            "label": "Beginn des Zweiten Weltkriegs"
+          }
+        ],
+        "title": "Europa zwischen den Weltkriegen – Zeitleiste 1918–1939",
+        "xlabel": "Jahr"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0141",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:21+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

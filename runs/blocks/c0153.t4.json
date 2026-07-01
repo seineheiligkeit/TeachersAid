@@ -1,0 +1,94 @@
+{
+  "id": "c0153.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "modelling",
+    "prompt": "Ein Fahrzeug fährt mit der Geschwindigkeit v(t) = −t² + 6t (in m/s, t in Sekunden, 0 ≤ t ≤ 6).\n(a) Welche physikalische Bedeutung hat das bestimmte Integral ∫₀⁶ v(t) dt in diesem Zusammenhang?\n(b) Berechne, wie weit das Fahrzeug in den ersten 6 Sekunden zurücklegt.\n(c) Erkläre, warum das Integral in diesem Fall tatsächlich den zurückgelegten Weg angibt (Hinweis: Überprüfe das Vorzeichen von v auf [0, 6]).",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 65.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "DM",
+      "ID"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.OS.8.GRU2.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "MAT.OS.8.GRU2.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "(a) Das Integral gibt den zurückgelegten Weg des Fahrzeugs in den ersten 6 Sekunden an (in Metern). (b) ∫₀⁶ (−t² + 6t) dt = [−t³/3 + 3t²]₀⁶ = (−216/3 + 108) − 0 = −72 + 108 = 36 m. (c) v(t) = −t² + 6t = t(6 − t) ≥ 0 für alle t ∈ [0, 6], da t ≥ 0 und (6 − t) ≥ 0 auf diesem Intervall. Das Fahrzeug bewegt sich nur vorwärts, also stimmt das Integral mit dem Weg überein (kein vorzeichenbehafteter Unterschied nötig).",
+    "acceptable_reasoning": "Schüler:innen erkennen v(t) ≥ 0 auf [0,6] durch Nullstellenanalyse oder Überprüfung einzelner Werte.",
+    "rubric": [
+      {
+        "criterion": "Interpretation des Integrals",
+        "levels": [
+          "Keine oder falsche Angabe",
+          "Korrekt als zurückgelegter Weg identifiziert"
+        ]
+      },
+      {
+        "criterion": "Berechnung",
+        "levels": [
+          "Rechenfehler, kein Ergebnis",
+          "Ansatz korrekt, Rechenfehler",
+          "36 m korrekt"
+        ]
+      },
+      {
+        "criterion": "Vorzeichen-Argumentation",
+        "levels": [
+          "Fehlt",
+          "Angedeutet",
+          "Vollständig: v(t) ≥ 0 auf [0,6] begründet"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen müssen begründen, warum kein Betrag nötig ist — das gelingt nur durch Vorzeichen-Check von v(t).",
+      "Verwechslung von Weg und Verschiebung: Wenn v Vorzeichen wechselt, muss der Weg mit |v| berechnet werden.",
+      "Rechencheck: ∫₀⁶ −t² dt = −72, ∫₀⁶ 6t dt = 108 → Summe 36."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "modelling",
+  "subject": "Mathematik",
+  "klasse": 8,
+  "kompetenzbereich": "Grundlagen der Integralrechnung",
+  "competences": [
+    "MAT.OS.8.GRU2.02",
+    "MAT.OS.8.GRU2.04"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "DM",
+    "ID"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0153",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:26+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

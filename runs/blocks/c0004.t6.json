@@ -1,0 +1,83 @@
+{
+  "id": "c0004.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Ein Biologe möchte herausfinden, ob sein Meerschweinchen mit schwarzem Fell (dominantes Allel S) homo- oder heterozygot ist. Er weiß, dass weißes Fell dem Genotyp ss entspricht.\n\n(a) Entwirf einen Versuchsplan: Welche Kreuzung würdest du vorschlagen? Begründe, warum genau diese Kreuzung die Frage beantworten kann.\n(b) Erkläre, welche Nachkommen-Ergebnisse du bei welchem Eltern-Genotyp erwartest. Stelle deine Überlegungen in einer Tabelle dar (zwei Szenarien: SS und Ss).\n(c) Nenne eine Grenze deines Versuchsplans: Wann könnte das Ergebnis trotzdem irreführend sein?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 65.0
+    },
+    "cognitive_level": "create",
+    "dimensions": [
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.ERK.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 16,
+    "answer_key": "(a) Testkreuzung: Das schwarze Meerschweinchen (SS oder Ss) wird mit einem weißen Meerschweinchen (ss) gekreuzt. Nur diese Kreuzung trennt die beiden möglichen Eltern-Genotypen eindeutig, weil das weiße Tier ausschließlich s-Allele beisteuert. (b) Szenario 1 – Elterntier ist SS: Alle Nachkommen sind Ss (schwarzes Fell) → 100 % schwarz. Szenario 2 – Elterntier ist Ss: Nachkommen sind Ss oder ss → 50 % schwarz, 50 % weiß. Tabelle: zwei Spalten (SS-Kreuzung / Ss-Kreuzung), Nachkommen-Genotypen und -Phänotypen. (c) Grenze: Bei wenigen Nachkommen kann zufällig kein weißes Tier auftreten, obwohl der Elterntier Ss ist (Zufallsstreuung). Man bräuchte eine große Stichprobe, um sicher zu sein.",
+    "acceptable_reasoning": "Für (c) sind andere valide Grenzen akzeptabel: z.B. 'Die Kreuzung dauert lange (Generationszeit)'; 'Tierschutzaspekte'; 'Das Merkmal könnte komplex vererbt werden'. Jede sachlich begründete Einschränkung zählt.",
+    "rubric": [
+      {
+        "criterion": "Kreuzungsplan und Begründung",
+        "levels": [
+          "vollständig: Testkreuzung mit ss korrekt vorgeschlagen und erklärt, warum nur diese Kreuzung funktioniert",
+          "teilweise: Richtige Kreuzung, aber Begründung fehlt oder unvollständig",
+          "unzureichend: Falsche Kreuzung oder keine Begründung"
+        ]
+      },
+      {
+        "criterion": "Beide Szenarien korrekt ausgearbeitet",
+        "levels": [
+          "vollständig: Beide Szenarien mit Genotypen und Phänotypen korrekt, Tabelle vorhanden",
+          "teilweise: Ein Szenario korrekt, oder Tabelle fehlt",
+          "unzureichend: Beide Szenarien fehlen oder falsch"
+        ]
+      },
+      {
+        "criterion": "Grenze des Versuchsplans",
+        "levels": [
+          "vollständig: Sachlich korrekte, begründete Einschränkung genannt",
+          "teilweise: Einschränkung genannt, aber nicht begründet",
+          "unzureichend: Keine Einschränkung genannt"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen schlagen manchmal SS × SS oder ähnliche Kreuzungen vor, die keine Information liefern. Der Schlüssel ist: Ein Kreuzungspartner muss bekannter Genotyp ss sein.",
+      "Die Grenze (c) wird oft vergessen. Darauf bestehen: Kein biologisches Modell ist absolut sicher – Statistik und kleine Stichproben sind ein echtes Problem."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Biologie",
+  "klasse": 4,
+  "kompetenzbereich": "Erkenntnisse gewinnen (E)",
+  "competences": [
+    "BIO.US.x.ERK.03"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0004",
+  "source": "ai",
+  "created_at": "2026-06-25T11:35:34+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

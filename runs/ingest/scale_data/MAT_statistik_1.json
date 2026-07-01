@@ -1,0 +1,212 @@
+{
+  "subject": "Mathematik",
+  "klasse": 1,
+  "kompetenzbereich": "4: Daten und Zufall",
+  "title": "Wie viele Menschen leben in unserem Bundesland?",
+  "kernfrage": "Was verraten dir Diagramme und statistische Kennzahlen über die Verteilung der Bevölkerung in Österreich?",
+  "body": {
+    "intro": [],
+    "data_figures": [
+      {
+        "id": "abb1",
+        "intent": "comparison",
+        "title": "Bevölkerung der österreichischen Bundesländer (1.1.2024)",
+        "xlabel": "Bundesland",
+        "ylabel": "Einwohnerinnen und Einwohner",
+        "data_source": {
+          "dataset_id": "statistik_austria_bundeslaender_2024",
+          "series": "bevoelkerung"
+        }
+      }
+    ],
+    "assets": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Daten ablesen",
+        "throughline": "Schuelerinnen und Schueler ueben, ein echtes Diagramm zu einem ihnen vertrauten Thema (die neun Bundeslaender) gezielt abzulesen und erste Vergleiche anzustellen, bevor Kennzahlen eingefuehrt werden.",
+        "talking_points": [
+          "Diagramme und Tabellen sind in Alltag und Medien allgegenwaertig; sorgfaeltiges Ablesen ist eine Grundkompetenz.",
+          "Die Groessenunterschiede zwischen den Bundeslaendern (Burgenland vs. Wien) sind ueberraschend gross und regen Gespraech an.",
+          "Beim Ablesen sollte thematisiert werden, wie genau man vom Diagramm ablesen kann und welche Grenzen das hat.",
+          "Einheit und Achsenbeschriftung bewusst wahrnehmen: Millionen vs. Hunderttausende."
+        ],
+        "extensions": [
+          "Wie viel Prozent der Gesamtbevoelkerung lebt in Wien? (Antwort: ca. 21,9 %)",
+          "Vergleich mit der Flaeche der Bundeslaender: Welches Bundesland hat die hoechste Bevoelkerungsdichte? (Hinweis: Wien)",
+          "Recherche: Wie hat sich die Bevoelkerung deines Bundeslandes in den letzten 20 Jahren veraendert?"
+        ],
+        "blocks": [
+          {
+            "role": "info",
+            "id": "i1",
+            "kind": "prose",
+            "prompt": "Das Diagramm zeigt, wie viele Menschen am 1. Jaenner 2024 in jedem der neun oesterreichischen Bundeslaender lebten. Lies das Diagramm sorgfaeltig und beachte die Einheit auf der senkrechten Achse.",
+            "payload": null,
+            "response": {"mode": "none"},
+            "cognitive_level": "remember",
+            "dimensions": ["DAR"],
+            "serves": [{"competence_id": "MAT.US.1.DAT.01", "relation": "introduces"}],
+            "est_minutes": 2,
+            "asset_refs": ["abb1"],
+            "answer_key": null,
+            "acceptable_reasoning": null,
+            "watch_outs": [],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "table_fill",
+            "prompt": "Lies aus dem Diagramm ab und ergaenze die Tabelle. Runde auf volle Tausend.",
+            "payload": {
+              "kind": "table_fill",
+              "columns": ["Bundesland", "Bevoelkerung (gerundet auf 1 000)"],
+              "rows": [
+                ["Burgenland", ""],
+                ["Wien", ""],
+                ["Salzburg", ""],
+                ["Tirol", ""]
+              ]
+            },
+            "response": {"mode": "none"},
+            "cognitive_level": "remember",
+            "dimensions": ["DAR"],
+            "serves": [{"competence_id": "MAT.US.1.DAT.01", "relation": "exercises"}],
+            "est_minutes": 5,
+            "asset_refs": ["abb1"],
+            "answer_key": "Burgenland: ca. 302 000; Wien: ca. 2 006 000; Salzburg: ca. 571 000; Tirol: ca. 776 000. (Exakte Werte gemaess Statistik Austria: Burgenland 301 951, Wien 2 005 760, Salzburg 571 479, Tirol 775 970.)",
+            "acceptable_reasoning": "Ablesen von Diagrammwerten mit unvermeidlicher Ungenauigkeit ist explizit erlaubt; leichte Schwankungen beim Ablesen sind kein Fehler.",
+            "watch_outs": [
+              "Schuelerinnen und Schueler verwechseln haeufig die Groessenordnung (z. B. '302' statt '302 000'); auf die Einheit achten.",
+              "Beim Ablesen eines Balkendiagramms sollte die Ableserichtung (senkrechte Achse) bewusst geuebt werden."
+            ],
+            "rubric": [
+              {"criterion": "Einheit korrekt (Tausend)", "levels": ["Einheit fehlt oder falsch", "Einheit richtig angegeben"]},
+              {"criterion": "Werte plausibel abgelesen (Toleranz +/- 10 000)", "levels": ["Mehr als 2 Werte ausserhalb Toleranz", "Maximal 1 Wert ausserhalb Toleranz", "Alle Werte innerhalb Toleranz"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "open_response",
+            "prompt": "Welches Bundesland hat die meisten Einwohnerinnen und Einwohner, welches die wenigsten? Um wie viele Personen unterscheiden sie sich? (Berechne die Spannweite.)",
+            "payload": null,
+            "response": {"mode": "lines", "n": 3},
+            "cognitive_level": "understand",
+            "dimensions": ["DAR", "OPE"],
+            "serves": [{"competence_id": "MAT.US.1.DAT.02", "relation": "exercises"}],
+            "est_minutes": 5,
+            "asset_refs": ["abb1"],
+            "answer_key": "Meiste: Wien (2 005 760), wenigste: Burgenland (301 951). Spannweite = 2 005 760 - 301 951 = 1 703 809 Personen.",
+            "acceptable_reasoning": "Spannweite = Maximum minus Minimum; Bezeichnung 'Spannweite' muss nicht zwingend verwendet werden, solange die Differenz korrekt berechnet wird.",
+            "watch_outs": [
+              "Spannweite wird haufig mit dem Mittelwert verwechselt; Begriff klar definieren.",
+              "Schuelerinnen und Schueler koennten die Differenz in die falsche Richtung subtrahieren — auf Vorzeichen achten."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "calculation",
+            "prompt": "Berechne den Mittelwert der Bevoelkerungszahlen aller neun Bundeslaender. Runde auf volle Hundert. Nutze dazu die folgenden exakten Werte:\nBurgenland 301 951 | Kaernten 569 744 | Niederoesterreich 1 723 723 | Oberoesterreich 1 530 349 | Salzburg 571 479 | Steiermark 1 269 801 | Tirol 775 970 | Vorarlberg 409 973 | Wien 2 005 760.",
+            "payload": null,
+            "response": {"mode": "lines", "n": 4},
+            "cognitive_level": "apply",
+            "dimensions": ["OPE"],
+            "serves": [{"competence_id": "MAT.US.1.DAT.02", "relation": "exercises"}],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "Summe: 9 158 750. Mittelwert: 9 158 750 / 9 = 1 017 638,9 ... ~ 1 017 600 (auf volle Hundert gerundet). Saeuberlicher Rechenweg: Summe ausschreiben, dann dividieren.",
+            "acceptable_reasoning": "Schrittweise Addition der neun Werte ist ebenso korrekt wie Gruppenaddition.",
+            "watch_outs": [
+              "Summe der neun Zahlen ergibt 9 158 750 (Gesamtbevoelkerung Oesterreichs); Fehler entstehen oft bei der Addition grosser Zahlen — Nebenrechnung empfehlen.",
+              "Division durch 9 (nicht durch 8 oder 10!) betonen.",
+              "Auf sinnvolle Rundung hinweisen: bei Bevoelkerungszahlen ist 'auf volle Hundert' praxisnaeher als sechs Nachkommastellen."
+            ],
+            "rubric": [
+              {"criterion": "Summe korrekt berechnet", "levels": ["Summe fehlt oder falsch", "Summe richtig (9 158 750)"]},
+              {"criterion": "Division durch 9", "levels": ["Falsche Divisorzahl", "Durch 9 dividiert"]},
+              {"criterion": "Ergebnis gerundet", "levels": ["Kein Runden", "Sinnvoll gerundet (ca. 1 017 600 bis 1 017 700)"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "open_response",
+            "prompt": "Der Mittelwert der Bundeslaender-Bevoelkerung betraegt ca. 1 017 600 Personen. Wie viele Bundeslaender liegen UBER diesem Wert, wie viele DARUNTER? Was faellt dir auf?",
+            "payload": null,
+            "response": {"mode": "lines", "n": 4},
+            "cognitive_level": "analyze",
+            "dimensions": ["DAR", "BEG"],
+            "serves": [{"competence_id": "MAT.US.1.DAT.02", "relation": "exercises"}],
+            "est_minutes": 6,
+            "asset_refs": ["abb1"],
+            "answer_key": "Ueber dem Mittelwert: Niederoesterreich (1 723 723), Oberoesterreich (1 530 349), Wien (2 005 760) = 3 Bundeslaender. Darunter: Burgenland, Kaernten, Salzburg, Steiermark, Tirol, Vorarlberg = 6 Bundeslaender. Beobachtung: Die Mehrheit der Bundeslaender (6 von 9) liegt unter dem Mittelwert, weil Wien und die zwei groessten Flaechenlaender den Durchschnitt nach oben ziehen (Wien als Ausreisser).",
+            "acceptable_reasoning": "Beobachtung 'Wien zieht den Mittelwert nach oben' oder 'Mittelwert ist kein typischer Wert' ist vollwertige Antwort.",
+            "watch_outs": [
+              "Schuelerinnen und Schueler nehmen oft an, dass 'die Haelfte' der Daten ueber dem Mittelwert liegt — genau dieses Missverstaendnis aufloesen.",
+              "Unterschied Mittelwert vs. Median kann hier eingefuehrt oder vorbereitet werden."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "open_response",
+            "prompt": "Ordne die neun Bevoelkerungswerte der Groesse nach und bestimme den Median (den mittleren Wert). Wie unterscheidet sich der Median vom Mittelwert? Was koennte der Grund sein?",
+            "payload": null,
+            "response": {"mode": "lines", "n": 5},
+            "cognitive_level": "analyze",
+            "dimensions": ["OPE", "BEG"],
+            "serves": [{"competence_id": "MAT.US.1.DAT.02", "relation": "exercises"}],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "Geordnete Werte: 301 951 | 409 973 | 569 744 | 571 479 | 775 970 | 1 269 801 | 1 530 349 | 1 723 723 | 2 005 760. Bei n = 9 Werten ist der Median der 5. Wert = 775 970 (Tirol). Mittelwert ca. 1 017 600, Median 775 970. Unterschied: ca. 242 000. Grund: Wien (2 005 760) und Niederoesterreich (1 723 723) sind sehr grosse Ausreisser und ziehen den Mittelwert nach oben; der Median reagiert darauf nicht.",
+            "acceptable_reasoning": "Beobachtung, dass der Median robuster gegenueber grossen Ausreissern ist, genuegt als Begruendung.",
+            "watch_outs": [
+              "Bei n = 9 (ungerade Anzahl) ist der Median der mittlere Wert — viele Schuelerinnen und Schueler rechnen das Mittel der beiden mittleren Werte (wie bei n gerade).",
+              "Die Ordnung der Werte muss vollstaendig sein; haeufiger Fehler ist falsches Einordnen einer Zahl wegen grosser Stellenzahl."
+            ],
+            "rubric": [
+              {"criterion": "Korrekte Ordnung", "levels": ["Falsch geordnet", "Richtig geordnet"]},
+              {"criterion": "Median korrekt bestimmt (775 970)", "levels": ["Falscher Median", "Richtiger Median"]},
+              {"criterion": "Unterschied Mittelwert/Median erklaert", "levels": ["Kein Erklaerungsversuch", "Ausreisser-Effekt angesprochen", "Ausreisser klar benannt und Auswirkung erklaert"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "true_false_justify",
+            "prompt": "Entscheide, ob die Aussagen richtig oder falsch sind, und begruende jeweils kurz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Die meisten Oesterreicherinnen und Oesterreicher leben in Bundeslaendern mit weniger als 1 Million Einwohnern.",
+                "Der Median der Bundeslaender-Bevoelkerung ist groesser als der Mittelwert.",
+                "Wenn Wien aus der Statistik herausgenommen wuerde, wuerde der Mittelwert der restlichen 8 Bundeslaender sinken."
+              ]
+            },
+            "response": {"mode": "lines", "n": 6},
+            "cognitive_level": "evaluate",
+            "dimensions": ["BEG", "DAR"],
+            "serves": [{"competence_id": "MAT.US.1.DAT.02", "relation": "exercises"}],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "1. FALSCH: In Bundeslaendern mit unter 1 Mio. leben Burgenland (302k) + Kaernten (570k) + Salzburg (571k) + Tirol (776k) + Vorarlberg (410k) = ca. 2,63 Mio. Die Mehrheit der Bevoelkerung lebt in Bundeslaendern mit ueber 1 Mio. (NÖ + OÖ + Steiermark + Wien = ca. 6,53 Mio.). 2. FALSCH: Median (775 970) < Mittelwert (1 017 600). 3. RICHTIG: Wien ist der groesste Wert. Sein Entfernen senkt die Summe und damit den Mittelwert der 8 verbleibenden Bundeslaender auf ca. (9 158 750 - 2 005 760) / 8 = 894 124.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Aussage 1 erfordert das Aufaddieren von Bevoelkerungsgruppen — Schuelerinnen und Schueler sollten dabei systematisch vorgehen.",
+              "Aussage 3 kann durch einfaches Einsetzen geprueft werden; falls Schuelerinnen und Schueler argumentieren ohne Rechnung, auf konkreten Nachweis bestehen."
+            ],
+            "rubric": [
+              {"criterion": "Alle drei Entscheidungen richtig", "levels": ["0-1 richtig", "2 richtig", "Alle 3 richtig"]},
+              {"criterion": "Begruendung mit Zahlen belegt", "levels": ["Nur Behauptung ohne Zahlen", "Zahlen teilweise verwendet", "Alle Begruendungen mit konkreten Zahlen"]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

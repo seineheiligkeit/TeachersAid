@@ -1,0 +1,73 @@
+{
+  "id": "c0045.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Verbinde jeden Alltagsgegenstand mit dem Material, aus dem er hauptsächlich besteht. Jede Verbindung darf nur einmal verwendet werden.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Fensterscheibe",
+        "Kochtopf",
+        "Tragetasche aus dem Supermarkt",
+        "Holzstuhl",
+        "Gummidichtung an einer Tür"
+      ],
+      "right": [
+        "Metall (Stahl)",
+        "Glas",
+        "Gummi/Elastomer",
+        "Polyethylen (Kunststoff)",
+        "Holz"
+      ]
+    },
+    "response": {
+      "mode": "none"
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "ENT"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "TED.US.1.ENT.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "Fensterscheibe → Glas; Kochtopf → Metall (Stahl); Tragetasche → Polyethylen (Kunststoff); Holzstuhl → Holz; Gummidichtung → Gummi/Elastomer.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Schüler:innen denken, Kochtöpfe seien aus Aluminium — beides ist möglich, aber Stahl (Edelstahl) ist heute am häufigsten. Kurz thematisieren.",
+      "Tragetasche: viele sagen 'Plastik' — korrekt ist Polyethylen. Fachbegriff einführen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Technik und Design",
+  "klasse": 1,
+  "kompetenzbereich": "Entwicklung",
+  "competences": [
+    "TED.US.1.ENT.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "ENT"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0045",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

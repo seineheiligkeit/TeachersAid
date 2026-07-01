@@ -1,0 +1,138 @@
+{
+  "id": "c0095.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb4"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Abbildung 4 zeigt einen Zusammenhang zwischen der Entfernung zum nächsten Oberzentrum und der Arbeitslosenquote in Gemeinden.\n\n(a) Beschreibe den Zusammenhang in einem Satz.\n(b) Die Grafik zeigt eine Korrelation. Bedeutet das, dass große Entfernung die Ursache für Arbeitslosigkeit ist? Welche anderen Faktoren könnten eine Rolle spielen?\n(c) Welche Maßnahme der Raumplanung könnte den Zusammenhang abschwächen – d. h. Arbeitslosigkeit in peripheren Gemeinden senken?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 8
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "UK",
+      "OK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.ZEN.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "(a) Je weiter eine Gemeinde vom nächsten Oberzentrum entfernt ist, desto höher ist tendenziell die Arbeitslosenquote. (b) Korrelation ≠ Kausalität. Andere Faktoren: Branchenstruktur (Tourismus, Landwirtschaft haben eigene Konjunktur), Bildungsangebote, historische Strukturen. (c) Ansiedlung von Arbeitsplätzen (Wirtschaftsförderung), bessere Bahnverbindung, Homeoffice-Infrastruktur.",
+    "acceptable_reasoning": "Schüler:innen müssen den Unterschied Korrelation/Kausalität nicht mit Fachbegriffen benennen, aber inhaltlich verstehen: 'Nur weil zwei Dinge zusammenhängen, muss eines nicht das andere verursachen.'",
+    "rubric": [
+      {
+        "criterion": "Beschreibung des Zusammenhangs",
+        "levels": [
+          "Nicht beschrieben",
+          "Tendenz beschrieben ohne Richtung",
+          "Korrekte Richtung und Tendenz beschrieben"
+        ]
+      },
+      {
+        "criterion": "Kausalitätskritik",
+        "levels": [
+          "Nicht thematisiert",
+          "Anderer Faktor genannt",
+          "Kausalitätsproblem explizit benannt mit Alternativfaktor"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Die Daten sind schematisch. Nicht als reale Österreich-Daten ausgeben. Schüler:innen sollen die Aussage des Diagramms interpretieren, nicht die genauen Werte ablesen.",
+      "Der Kausalitäts-Punkt ist anspruchsvoll – kurze Erklärung im Plenum empfohlen, bevor Schüler:innen alleine arbeiten."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Zentren und Peripherien in Österreich",
+  "competences": [
+    "GWB.US.3.ZEN.03"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "UK",
+    "OK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb4",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:scatter",
+      "spec": {
+        "points": [
+          [
+            5.0,
+            4.2
+          ],
+          [
+            12.0,
+            4.8
+          ],
+          [
+            20.0,
+            5.3
+          ],
+          [
+            30.0,
+            5.9
+          ],
+          [
+            45.0,
+            6.4
+          ],
+          [
+            60.0,
+            7.1
+          ],
+          [
+            80.0,
+            7.8
+          ],
+          [
+            110.0,
+            8.5
+          ]
+        ],
+        "xlabel": "Entfernung zum nächsten Oberzentrum (km)",
+        "ylabel": "Arbeitslosenquote (%)",
+        "title": "Entfernung zum nächsten Oberzentrum und Arbeitslosigkeit (schematisch, Gemeinden Österreichs)",
+        "fit": true
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0095",
+  "source": "ai",
+  "created_at": "2026-06-26T19:02:29+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

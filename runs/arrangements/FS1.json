@@ -1,0 +1,1404 @@
+{
+  "id": "FS1",
+  "arrangement": {
+    "meta": {
+      "title": "Let's Plan Our Class Trip!",
+      "subtitle": null,
+      "subject": "Englisch",
+      "stufe": "Unterstufe",
+      "klasse": 3,
+      "kernfrage": "Wie einigst du dich mit anderen auf Englisch auf einen gemeinsamen Plan, wenn jeder andere Interessen hat?",
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "format": "simulation_game",
+      "lehrplan_label": "Englisch · 3. Kl."
+    },
+    "common_material": [
+      {
+        "id": "case",
+        "optional": false,
+        "modality": "printable",
+        "flags": null,
+        "asset_refs": [],
+        "provenance": null,
+        "role": "info",
+        "kind": "prose",
+        "content": "Your class wants to go on a two-day trip at the end of the school year. There is a budget of €80 per person. You need to agree on a destination, two activities, and the travel dates.\n\nEach person in your group has a different role. Read your role card carefully. You will have a meeting in English to make a plan that everyone can agree on.\n\nYour group must make a final decision together.",
+        "callout_role": null,
+        "teacher_note": null,
+        "watch_outs": []
+      },
+      {
+        "id": "rules",
+        "optional": false,
+        "modality": "printable",
+        "flags": null,
+        "asset_refs": [],
+        "provenance": null,
+        "role": "info",
+        "kind": "procedure",
+        "content": "Spielregeln / How the meeting works:\n1. Each person introduces their role and their most important wish (1–2 sentences each).\n2. Discuss the options. Listen to each other. Ask questions.\n3. Make compromises — you will not get everything you want.\n4. At the end, your group writes down your final plan together.\n\nUseful phrases are printed on your role card. Use them!",
+        "callout_role": null,
+        "teacher_note": null,
+        "watch_outs": []
+      }
+    ],
+    "roles": [
+      {
+        "id": "r1",
+        "label": "Travel Agent",
+        "share": "all",
+        "private": false,
+        "material": {
+          "meta": {
+            "title": "Travel Agent",
+            "subtitle": null,
+            "subject": "Englisch",
+            "stufe": "Unterstufe",
+            "klasse": 3,
+            "kernfrage": "Wie einigst du dich mit anderen auf Englisch auf einen gemeinsamen Plan, wenn jeder andere Interessen hat?",
+            "fassung": {
+              "kurztitel": "AHS-Lehrplan (konsolidiert)",
+              "bgbl": "BGBl. II Nr. 204/2024",
+              "doknr": "NOR40264237",
+              "valid_from": "2024-09-01",
+              "valid_to": "2026-08-31"
+            },
+            "lehrplan_label": "Englisch · 3. Kl.",
+            "content_language": "de",
+            "subject_models": []
+          },
+          "subject_model": {
+            "subject": "Englisch",
+            "stufe": "Unterstufe",
+            "dimensions": [
+              {
+                "id": "HOR",
+                "label": "Hören",
+                "note": null,
+                "modality": "oral"
+              },
+              {
+                "id": "LES",
+                "label": "Lesen",
+                "note": null,
+                "modality": "printable"
+              },
+              {
+                "id": "SPR",
+                "label": "Sprechen (an Gesprächen teilnehmen und zusammenhängend sprechen)",
+                "note": null,
+                "modality": "oral"
+              },
+              {
+                "id": "SCH",
+                "label": "Schreiben",
+                "note": null,
+                "modality": "printable"
+              }
+            ],
+            "content_areas": [],
+            "task_kind_extensions": [
+              "listening_task",
+              "speaking_task",
+              "text_production"
+            ]
+          },
+          "intro": [
+            {
+              "id": "r1i",
+              "optional": false,
+              "modality": "printable",
+              "flags": null,
+              "asset_refs": [],
+              "provenance": null,
+              "role": "info",
+              "kind": "prose",
+              "content": "You are the Travel Agent. You know all about possible destinations and transport options. Your job: present two destination options clearly and help the group decide.\n\nYour favourite destination: **Vienna** (museums, city tour, theatre visit).\nYour second option: **Salzburg** (old town, Mozart, day trip to a lake).\n\nUseful phrases:\n- \"I recommend ... because ...\"\n- \"The train to ... takes about ... hours and costs ...\"\n- \"In my opinion, ... is a better choice because ...\"\n- \"What do you think about ...?\"",
+              "callout_role": null,
+              "teacher_note": null,
+              "watch_outs": []
+            }
+          ],
+          "sections": [
+            {
+              "id": "r1s",
+              "title": "Rollenarbeit: Travel Agent",
+              "teacher_overview": {
+                "throughline": "Schüler:innen trainieren, Informationen strukturiert auf Englisch zu präsentieren und eine Empfehlung zu begründen — eine zentrale Sprachkompetenz für Alltagssituationen wie Reiseplanung.",
+                "talking_points": [
+                  "Warum ist es wichtig, eine Empfehlung mit Gründen zu stützen? (Unterschied: 'I like Vienna' vs. 'I recommend Vienna because it has ...')",
+                  "Wie präsentiert man Alternativen fair, auch wenn man selbst eine Meinung hat?",
+                  "Auf korrekte Verwendung von Komparativ/Superlativ hinweisen (better, the best option)"
+                ],
+                "extensions": [
+                  "Schüler:innen recherchieren eine dritte Destination eigenständig und präsentieren sie kurz",
+                  "Mini-Debatte: Wer überzeugt die Gruppe mit den besseren Argumenten?"
+                ],
+                "differentiation": null,
+                "timing_notes": null
+              },
+              "blocks": [
+                {
+                  "id": "r1t1",
+                  "optional": false,
+                  "modality": "printable",
+                  "flags": null,
+                  "asset_refs": [],
+                  "provenance": null,
+                  "role": "task",
+                  "kind": "text_production",
+                  "prompt": "Read the two destination descriptions below. Then write a short presentation (4–6 sentences) for the meeting. Recommend ONE destination and give TWO reasons why it is the best choice for your class.\n\n**Vienna:** Austria's capital city. You can visit the Natural History Museum, take a city tour by tram, and see a performance at the famous Burgtheater. Travel time by train: about 2.5 hours. Cost per person (train + hostel): approx. €65.\n\n**Salzburg:** A beautiful historic city near the mountains. You can walk through the old town, visit Mozart's birthplace, and take a short bus trip to a nearby lake. Travel time by train: about 1.5 hours. Cost per person (train + hostel): approx. €55.",
+                  "payload": null,
+                  "response": {
+                    "mode": "box",
+                    "min_height_mm": 40.0
+                  },
+                  "cognitive_level": "evaluate",
+                  "difficulty": null,
+                  "dimensions": [
+                    "LES",
+                    "SCH"
+                  ],
+                  "content_area": null,
+                  "serves": [
+                    {
+                      "competence_id": "FS1.US.3.LES.01",
+                      "relation": "exercises"
+                    },
+                    {
+                      "competence_id": "FS1.US.3.SCH.02",
+                      "relation": "exercises"
+                    }
+                  ],
+                  "est_minutes": 10,
+                  "answer_key": "Model: \"I recommend Vienna for our class trip. First, it has a great museum where we can learn a lot. Second, we can take a tram tour and see the whole city. The price is a little higher than Salzburg, but there is more to do. I think Vienna is the best choice for us.\"",
+                  "acceptable_reasoning": "Jede begründete Empfehlung für eine der beiden Städte mit mindestens zwei Argumenten ist akzeptabel. Salzburg-Empfehlungen sind gleichwertig gültig.",
+                  "rubric": [
+                    {
+                      "criterion": "Recommendation",
+                      "levels": [
+                        "Clear recommendation with 2 reasons",
+                        "Recommendation with 1 reason",
+                        "No clear recommendation"
+                      ]
+                    },
+                    {
+                      "criterion": "Language",
+                      "levels": [
+                        "Mostly correct, fluent phrasing",
+                        "Understandable despite errors",
+                        "Hard to follow"
+                      ]
+                    }
+                  ],
+                  "solution_steps": [],
+                  "watch_outs": [
+                    "Schüler:innen schreiben oft 'I like Vienna' statt 'I recommend Vienna because' — auf Begründungsstruktur achten",
+                    "Komparativformen (cheaper, more interesting) werden häufig falsch gebildet — ggf. kurze Visualisierung an der Tafel",
+                    "Der Text soll Präsentation vorbereiten, nicht einfach die Beschreibung abschreiben"
+                  ],
+                  "self_check": null
+                }
+              ]
+            }
+          ],
+          "assets": [],
+          "nachweis": {
+            "fassung": {
+              "kurztitel": "AHS-Lehrplan (konsolidiert)",
+              "bgbl": "BGBl. II Nr. 204/2024",
+              "doknr": "NOR40264237",
+              "valid_from": "2024-09-01",
+              "valid_to": "2026-08-31"
+            },
+            "statement": "Diese Materialien adressieren 2 von 9 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
+            "competence_coverage": [
+              {
+                "competence_id": "FS1.US.3.HOR.01",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "FS1.US.3.LES.01",
+                "exercised_by": [
+                  "r1t1"
+                ],
+                "prerequisite_by": [],
+                "covered": true
+              },
+              {
+                "competence_id": "FS1.US.3.LES.02",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "FS1.US.3.SPR.01",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "FS1.US.3.SPR.02",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "FS1.US.3.SPR.03",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "FS1.US.3.SCH.01",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "FS1.US.3.SCH.02",
+                "exercised_by": [
+                  "r1t1"
+                ],
+                "prerequisite_by": [],
+                "covered": true
+              },
+              {
+                "competence_id": "FS1.US.3.SCH.03",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              }
+            ],
+            "gaps": [
+              "FS1.US.3.HOR.01 — einfache Gespräche, Erzählungen und kurze Medienbeiträge verstehen.",
+              "FS1.US.3.LES.02 — in einfachen Texten Wünsche und Gefühle verstehen.",
+              "FS1.US.3.SPR.01 — ein Gespräch beginnen, weiterführen und beenden sowie einfache Sprecherwechsel durchführen.",
+              "FS1.US.3.SPR.02 — Vereinbarungen treffen, Ratschläge erbitten und geben, einfache Begründungen, Meinungen und Gefühle ausdrücken und darauf reagieren.",
+              "FS1.US.3.SPR.03 — über vertraute Themenbereiche erzählen und einfache (Buch-)Präsentationen halten.",
+              "FS1.US.3.SCH.01 — kurze zusammenhängende Texte über alltägliche Aspekte des eigenen Umfelds sowie des Lebensalltags von Jugendlichen in verschiedenen Ländern schreiben.",
+              "FS1.US.3.SCH.03 — kurz über ihre Eindrücke und Meinungen zu altersadäquaten Geschichten sowie zu Kinder- und Jugendliteratur schreiben."
+            ],
+            "zentrale_konzepte": [
+              "Hören",
+              "Lesen",
+              "Schreiben",
+              "Sprechen (an Gesprächen teilnehmen und zusammenhängend sprechen)"
+            ],
+            "uebergreifende_themen": []
+          },
+          "depth_profile": {
+            "by_level": {
+              "evaluate": 1
+            },
+            "by_dimension": {
+              "LES": 1
+            },
+            "by_difficulty": {},
+            "minutes_total": 10,
+            "minutes_resource_independent": 10
+          },
+          "rack": null
+        }
+      },
+      {
+        "id": "r2",
+        "label": "Budget Controller",
+        "share": "all",
+        "private": false,
+        "material": {
+          "meta": {
+            "title": "Budget Controller",
+            "subtitle": null,
+            "subject": "Englisch",
+            "stufe": "Unterstufe",
+            "klasse": 3,
+            "kernfrage": "Wie einigst du dich mit anderen auf Englisch auf einen gemeinsamen Plan, wenn jeder andere Interessen hat?",
+            "fassung": {
+              "kurztitel": "AHS-Lehrplan (konsolidiert)",
+              "bgbl": "BGBl. II Nr. 204/2024",
+              "doknr": "NOR40264237",
+              "valid_from": "2024-09-01",
+              "valid_to": "2026-08-31"
+            },
+            "lehrplan_label": "Englisch · 3. Kl.",
+            "content_language": "de",
+            "subject_models": []
+          },
+          "subject_model": {
+            "subject": "Englisch",
+            "stufe": "Unterstufe",
+            "dimensions": [
+              {
+                "id": "HOR",
+                "label": "Hören",
+                "note": null,
+                "modality": "oral"
+              },
+              {
+                "id": "LES",
+                "label": "Lesen",
+                "note": null,
+                "modality": "printable"
+              },
+              {
+                "id": "SPR",
+                "label": "Sprechen (an Gesprächen teilnehmen und zusammenhängend sprechen)",
+                "note": null,
+                "modality": "oral"
+              },
+              {
+                "id": "SCH",
+                "label": "Schreiben",
+                "note": null,
+                "modality": "printable"
+              }
+            ],
+            "content_areas": [],
+            "task_kind_extensions": [
+              "listening_task",
+              "speaking_task",
+              "text_production"
+            ]
+          },
+          "intro": [
+            {
+              "id": "r2i",
+              "optional": false,
+              "modality": "printable",
+              "flags": null,
+              "asset_refs": [],
+              "provenance": null,
+              "role": "info",
+              "kind": "prose",
+              "content": "You are the Budget Controller. Your job: make sure the trip stays within the budget of €80 per person. You check all costs and say if something is too expensive.\n\nYour rule: transport + accommodation must not cost more than €60. That leaves €20 for activities and food.\n\nUseful phrases:\n- \"That costs ... euros per person.\"\n- \"I'm sorry, but that is too expensive.\"\n- \"Can we find a cheaper option?\"\n- \"If we choose ..., we can save ... euros.\"\n- \"The total cost would be ...\"",
+              "callout_role": null,
+              "teacher_note": null,
+              "watch_outs": []
+            }
+          ],
+          "sections": [
+            {
+              "id": "r2s",
+              "title": "Rollenarbeit: Budget Controller",
+              "teacher_overview": {
+                "throughline": "Schüler:innen üben, auf Englisch Zahlen und Preise zu kommunizieren, Bedingungen zu formulieren und höflich Einschränkungen zu äußern — sprachlich und mathematisch verankert.",
+                "talking_points": [
+                  "Wie formuliert man auf Englisch höflich Ablehnung oder Einschränkungen? ('I'm afraid that's too expensive' vs. 'No, that's too much')",
+                  "Unterschied zwischen 'total cost', 'per person', 'per night' klären",
+                  "Strategien zur Kostensenkung besprechen: Früh buchen, günstigere Unterkunft wählen, Aktivitäten priorisieren"
+                ],
+                "extensions": [
+                  "Schüler:innen erstellen ein einfaches Budget-Spreadsheet auf Englisch",
+                  "Rollenspiel: Budget Controller erklärt den Eltern schriftlich, warum eine teurere Option abgelehnt wurde"
+                ],
+                "differentiation": null,
+                "timing_notes": null
+              },
+              "blocks": [
+                {
+                  "id": "r2t1",
+                  "optional": false,
+                  "modality": "printable",
+                  "flags": null,
+                  "asset_refs": [],
+                  "provenance": null,
+                  "role": "task",
+                  "kind": "table_fill",
+                  "prompt": "Look at the cost information below. Fill in the table to calculate the total cost for each destination option. Then write one sentence saying which option fits the budget and why.\n\nCost information:\n- Vienna: train (return) €22 · hostel (1 night) €40 · museum entry €8 · tram tour €6\n- Salzburg: train (return) €16 · hostel (1 night) €36 · old town walk (free) · lake trip €12",
+                  "payload": {
+                    "kind": "table_fill",
+                    "columns": [
+                      "Item",
+                      "Vienna (€)",
+                      "Salzburg (€)"
+                    ],
+                    "rows": [
+                      [
+                        "Train (return)",
+                        "",
+                        ""
+                      ],
+                      [
+                        "Hostel (1 night)",
+                        "",
+                        ""
+                      ],
+                      [
+                        "Activity 1",
+                        "",
+                        ""
+                      ],
+                      [
+                        "Activity 2",
+                        "",
+                        ""
+                      ],
+                      [
+                        "TOTAL",
+                        "",
+                        ""
+                      ]
+                    ]
+                  },
+                  "response": {
+                    "mode": "table",
+                    "columns": [
+                      "Item",
+                      "Vienna (€)",
+                      "Salzburg (€)"
+                    ],
+                    "rows": 5
+                  },
+                  "cognitive_level": "apply",
+                  "difficulty": null,
+                  "dimensions": [
+                    "LES",
+                    "SCH"
+                  ],
+                  "content_area": null,
+                  "serves": [
+                    {
+                      "competence_id": "FS1.US.3.LES.02",
+                      "relation": "exercises"
+                    },
+                    {
+                      "competence_id": "FS1.US.3.SCH.01",
+                      "relation": "exercises"
+                    }
+                  ],
+                  "est_minutes": 10,
+                  "answer_key": "Vienna: 22+40+8+6 = €76. Salzburg: 16+36+0+12 = €64. Both options are within the €80 budget. Salzburg is cheaper and leaves more money for food (€16 spare vs. €4 spare). Model sentence: 'Salzburg fits our budget better because it costs only €64, so we have €16 left for food.'",
+                  "acceptable_reasoning": "Schüler:innen können Vienna auch als akzeptabel einstufen (€76 < €80), solange die Begründung korrekt ist.",
+                  "rubric": [],
+                  "solution_steps": [],
+                  "watch_outs": [
+                    "Der 'old town walk' ist gratis — Schüler:innen tragen oft trotzdem einen Betrag ein; auf '0' oder 'free' hinweisen",
+                    "Verwechslung von Gesamt- und Pro-Kopf-Kosten vermeiden — alle Preise sind bereits pro Person angegeben",
+                    "Satz am Ende: Vergleichsform ('cheaper', 'less expensive') soll verwendet werden"
+                  ],
+                  "self_check": null
+                }
+              ]
+            }
+          ],
+          "assets": [],
+          "nachweis": {
+            "fassung": {
+              "kurztitel": "AHS-Lehrplan (konsolidiert)",
+              "bgbl": "BGBl. II Nr. 204/2024",
+              "doknr": "NOR40264237",
+              "valid_from": "2024-09-01",
+              "valid_to": "2026-08-31"
+            },
+            "statement": "Diese Materialien adressieren 2 von 9 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
+            "competence_coverage": [
+              {
+                "competence_id": "FS1.US.3.HOR.01",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "FS1.US.3.LES.01",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "FS1.US.3.LES.02",
+                "exercised_by": [
+                  "r2t1"
+                ],
+                "prerequisite_by": [],
+                "covered": true
+              },
+              {
+                "competence_id": "FS1.US.3.SPR.01",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "FS1.US.3.SPR.02",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "FS1.US.3.SPR.03",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "FS1.US.3.SCH.01",
+                "exercised_by": [
+                  "r2t1"
+                ],
+                "prerequisite_by": [],
+                "covered": true
+              },
+              {
+                "competence_id": "FS1.US.3.SCH.02",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "FS1.US.3.SCH.03",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              }
+            ],
+            "gaps": [
+              "FS1.US.3.HOR.01 — einfache Gespräche, Erzählungen und kurze Medienbeiträge verstehen.",
+              "FS1.US.3.LES.01 — einfache und konkrete Artikel in Magazinen und Jugendzeitschriften, altersadäquate Kinder- und Jugendbücher, Geschichten und Sachtexte sowie persönliche Texte, die sich auf altersgerechte Aspekte der zielsprachlichen Kultur(en) beziehen, verstehen.",
+              "FS1.US.3.SPR.01 — ein Gespräch beginnen, weiterführen und beenden sowie einfache Sprecherwechsel durchführen.",
+              "FS1.US.3.SPR.02 — Vereinbarungen treffen, Ratschläge erbitten und geben, einfache Begründungen, Meinungen und Gefühle ausdrücken und darauf reagieren.",
+              "FS1.US.3.SPR.03 — über vertraute Themenbereiche erzählen und einfache (Buch-)Präsentationen halten.",
+              "FS1.US.3.SCH.02 — kurze Beschreibungen von Ereignissen, vergangenen und zukünftigen Handlungen und persönlichen Erfahrungen verfassen und dabei auch Meinungen und Gefühle ausdrücken.",
+              "FS1.US.3.SCH.03 — kurz über ihre Eindrücke und Meinungen zu altersadäquaten Geschichten sowie zu Kinder- und Jugendliteratur schreiben."
+            ],
+            "zentrale_konzepte": [
+              "Hören",
+              "Lesen",
+              "Schreiben",
+              "Sprechen (an Gesprächen teilnehmen und zusammenhängend sprechen)"
+            ],
+            "uebergreifende_themen": [
+              7,
+              12
+            ]
+          },
+          "depth_profile": {
+            "by_level": {
+              "apply": 1
+            },
+            "by_dimension": {
+              "LES": 1
+            },
+            "by_difficulty": {},
+            "minutes_total": 10,
+            "minutes_resource_independent": 10
+          },
+          "rack": null
+        }
+      },
+      {
+        "id": "r3",
+        "label": "Activity Planner",
+        "share": "all",
+        "private": false,
+        "material": {
+          "meta": {
+            "title": "Activity Planner",
+            "subtitle": null,
+            "subject": "Englisch",
+            "stufe": "Unterstufe",
+            "klasse": 3,
+            "kernfrage": "Wie einigst du dich mit anderen auf Englisch auf einen gemeinsamen Plan, wenn jeder andere Interessen hat?",
+            "fassung": {
+              "kurztitel": "AHS-Lehrplan (konsolidiert)",
+              "bgbl": "BGBl. II Nr. 204/2024",
+              "doknr": "NOR40264237",
+              "valid_from": "2024-09-01",
+              "valid_to": "2026-08-31"
+            },
+            "lehrplan_label": "Englisch · 3. Kl.",
+            "content_language": "de",
+            "subject_models": []
+          },
+          "subject_model": {
+            "subject": "Englisch",
+            "stufe": "Unterstufe",
+            "dimensions": [
+              {
+                "id": "HOR",
+                "label": "Hören",
+                "note": null,
+                "modality": "oral"
+              },
+              {
+                "id": "LES",
+                "label": "Lesen",
+                "note": null,
+                "modality": "printable"
+              },
+              {
+                "id": "SPR",
+                "label": "Sprechen (an Gesprächen teilnehmen und zusammenhängend sprechen)",
+                "note": null,
+                "modality": "oral"
+              },
+              {
+                "id": "SCH",
+                "label": "Schreiben",
+                "note": null,
+                "modality": "printable"
+              }
+            ],
+            "content_areas": [],
+            "task_kind_extensions": [
+              "listening_task",
+              "speaking_task",
+              "text_production"
+            ]
+          },
+          "intro": [
+            {
+              "id": "r3i",
+              "optional": false,
+              "modality": "printable",
+              "flags": null,
+              "asset_refs": [],
+              "provenance": null,
+              "role": "info",
+              "kind": "prose",
+              "content": "You are the Activity Planner. Your job: suggest two activities for the trip that are fun and interesting for the whole class. You want activities where everyone can take part.\n\nYour ideas: a guided city tour, a sports afternoon, a cooking workshop, a museum visit, a lake swim, a film evening.\n\nUseful phrases:\n- \"I suggest ... because it is fun for everyone.\"\n- \"We could also ...\"\n- \"What about ...? Does everyone agree?\"\n- \"I think ... is more interesting than ...\"\n- \"Can we vote on this?\"",
+              "callout_role": null,
+              "teacher_note": null,
+              "watch_outs": []
+            }
+          ],
+          "sections": [
+            {
+              "id": "r3s",
+              "title": "Rollenarbeit: Activity Planner",
+              "teacher_overview": {
+                "throughline": "Schüler:innen üben, Vorschläge auf Englisch zu machen, Begründungen zu geben und auf die Meinungen anderer einzugehen — Kernkompetenzen für gelingende Gruppeninteraktion.",
+                "talking_points": [
+                  "Unterschied zwischen Vorschlag ('I suggest ...') und Meinung ('I think ...') im Englischen",
+                  "Wie bittet man höflich um Zustimmung oder fragt nach Meinungen? ('What do you think?' / 'Does everyone agree?')",
+                  "Auf Gruppenverträglichkeit achten: Aktivitäten sollen für alle geeignet sein — was bedeutet das sprachlich ('suitable for everyone', 'something for everyone')?"
+                ],
+                "extensions": [
+                  "Schüler:innen schreiben eine kurze E-Mail an die Lehrperson mit den vorgeschlagenen Aktivitäten und Begründungen",
+                  "Mini-Abstimmung in der Gruppe: jede Person hat zwei Stimmen — welche Aktivitäten gewinnen?"
+                ],
+                "differentiation": null,
+                "timing_notes": null
+              },
+              "blocks": [
+                {
+                  "id": "r3t1",
+                  "optional": false,
+                  "modality": "printable",
+                  "flags": null,
+                  "asset_refs": [],
+                  "provenance": null,
+                  "role": "task",
+                  "kind": "decision_scenario",
+                  "prompt": "Read the activity options below. Choose TWO activities for the class trip. For each activity, write one or two sentences explaining why you chose it.\n\nActivity options:\n- Guided city tour (2 hours, €6 per person) — walk through the city with a guide, learn about history\n- Sports afternoon (3 hours, free) — volleyball, football, or frisbee in the park\n- Cooking workshop (2 hours, €10 per person) — learn to make a local dish together\n- Museum visit (1.5 hours, €8 per person) — natural history or art museum\n- Lake swim (half day, free if near Salzburg) — swimming and relaxing at the lake\n- Film evening (1.5 hours, free at hostel) — watch a film together in the evening",
+                  "payload": {
+                    "kind": "decision_scenario",
+                    "stem": "Which two activities do you recommend for the class trip? Give reasons."
+                  },
+                  "response": {
+                    "mode": "box",
+                    "min_height_mm": 40.0
+                  },
+                  "cognitive_level": "evaluate",
+                  "difficulty": null,
+                  "dimensions": [
+                    "LES",
+                    "SCH"
+                  ],
+                  "content_area": null,
+                  "serves": [
+                    {
+                      "competence_id": "FS1.US.3.SCH.02",
+                      "relation": "exercises"
+                    },
+                    {
+                      "competence_id": "FS1.US.3.LES.01",
+                      "relation": "exercises"
+                    }
+                  ],
+                  "est_minutes": 10,
+                  "answer_key": "Model: 'I suggest the guided city tour because we can learn about the history of the city together. I also recommend the film evening because it is free and relaxing after a busy day.' Any two activities with reasons are acceptable.",
+                  "acceptable_reasoning": "Alle Kombinationen sind akzeptabel, solange zwei Aktivitäten benannt und begründet werden. Budget-Bewusstsein (Gesamtaktivitäten ≤ €20) ist ein Plus, aber nicht gefordert.",
+                  "rubric": [
+                    {
+                      "criterion": "Selection",
+                      "levels": [
+                        "Two activities clearly named and reasoned",
+                        "Two activities named, one reason missing",
+                        "Only one activity or no reasons"
+                      ]
+                    },
+                    {
+                      "criterion": "Language",
+                      "levels": [
+                        "Correct use of 'I suggest/recommend because'",
+                        "Partial use of target phrases",
+                        "No use of suggestion phrases"
+                      ]
+                    }
+                  ],
+                  "solution_steps": [],
+                  "watch_outs": [
+                    "Schüler:innen nennen oft nur die Aktivität ohne Begründung — darauf bestehen, dass 'because' verwendet wird",
+                    "Auf sprachliche Qualität achten: 'I choose' vs. 'I suggest' — Aufgabenstellung fragt nach Empfehlung",
+                    "Nicht alle Aktivitäten sind bei beiden Städten gleich verfügbar (lake swim nur bei Salzburg) — das ist in der Meeting-Phase eine sinnvolle Diskussionsgrundlage"
+                  ],
+                  "self_check": null
+                }
+              ]
+            }
+          ],
+          "assets": [],
+          "nachweis": {
+            "fassung": {
+              "kurztitel": "AHS-Lehrplan (konsolidiert)",
+              "bgbl": "BGBl. II Nr. 204/2024",
+              "doknr": "NOR40264237",
+              "valid_from": "2024-09-01",
+              "valid_to": "2026-08-31"
+            },
+            "statement": "Diese Materialien adressieren 2 von 9 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
+            "competence_coverage": [
+              {
+                "competence_id": "FS1.US.3.HOR.01",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "FS1.US.3.LES.01",
+                "exercised_by": [
+                  "r3t1"
+                ],
+                "prerequisite_by": [],
+                "covered": true
+              },
+              {
+                "competence_id": "FS1.US.3.LES.02",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "FS1.US.3.SPR.01",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "FS1.US.3.SPR.02",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "FS1.US.3.SPR.03",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "FS1.US.3.SCH.01",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "FS1.US.3.SCH.02",
+                "exercised_by": [
+                  "r3t1"
+                ],
+                "prerequisite_by": [],
+                "covered": true
+              },
+              {
+                "competence_id": "FS1.US.3.SCH.03",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              }
+            ],
+            "gaps": [
+              "FS1.US.3.HOR.01 — einfache Gespräche, Erzählungen und kurze Medienbeiträge verstehen.",
+              "FS1.US.3.LES.02 — in einfachen Texten Wünsche und Gefühle verstehen.",
+              "FS1.US.3.SPR.01 — ein Gespräch beginnen, weiterführen und beenden sowie einfache Sprecherwechsel durchführen.",
+              "FS1.US.3.SPR.02 — Vereinbarungen treffen, Ratschläge erbitten und geben, einfache Begründungen, Meinungen und Gefühle ausdrücken und darauf reagieren.",
+              "FS1.US.3.SPR.03 — über vertraute Themenbereiche erzählen und einfache (Buch-)Präsentationen halten.",
+              "FS1.US.3.SCH.01 — kurze zusammenhängende Texte über alltägliche Aspekte des eigenen Umfelds sowie des Lebensalltags von Jugendlichen in verschiedenen Ländern schreiben.",
+              "FS1.US.3.SCH.03 — kurz über ihre Eindrücke und Meinungen zu altersadäquaten Geschichten sowie zu Kinder- und Jugendliteratur schreiben."
+            ],
+            "zentrale_konzepte": [
+              "Hören",
+              "Lesen",
+              "Schreiben",
+              "Sprechen (an Gesprächen teilnehmen und zusammenhängend sprechen)"
+            ],
+            "uebergreifende_themen": []
+          },
+          "depth_profile": {
+            "by_level": {
+              "evaluate": 1
+            },
+            "by_dimension": {
+              "LES": 1
+            },
+            "by_difficulty": {},
+            "minutes_total": 10,
+            "minutes_resource_independent": 10
+          },
+          "rack": null
+        }
+      },
+      {
+        "id": "r4",
+        "label": "Class Representative",
+        "share": "all",
+        "private": false,
+        "material": {
+          "meta": {
+            "title": "Class Representative",
+            "subtitle": null,
+            "subject": "Englisch",
+            "stufe": "Unterstufe",
+            "klasse": 3,
+            "kernfrage": "Wie einigst du dich mit anderen auf Englisch auf einen gemeinsamen Plan, wenn jeder andere Interessen hat?",
+            "fassung": {
+              "kurztitel": "AHS-Lehrplan (konsolidiert)",
+              "bgbl": "BGBl. II Nr. 204/2024",
+              "doknr": "NOR40264237",
+              "valid_from": "2024-09-01",
+              "valid_to": "2026-08-31"
+            },
+            "lehrplan_label": "Englisch · 3. Kl.",
+            "content_language": "de",
+            "subject_models": []
+          },
+          "subject_model": {
+            "subject": "Englisch",
+            "stufe": "Unterstufe",
+            "dimensions": [
+              {
+                "id": "HOR",
+                "label": "Hören",
+                "note": null,
+                "modality": "oral"
+              },
+              {
+                "id": "LES",
+                "label": "Lesen",
+                "note": null,
+                "modality": "printable"
+              },
+              {
+                "id": "SPR",
+                "label": "Sprechen (an Gesprächen teilnehmen und zusammenhängend sprechen)",
+                "note": null,
+                "modality": "oral"
+              },
+              {
+                "id": "SCH",
+                "label": "Schreiben",
+                "note": null,
+                "modality": "printable"
+              }
+            ],
+            "content_areas": [],
+            "task_kind_extensions": [
+              "listening_task",
+              "speaking_task",
+              "text_production"
+            ]
+          },
+          "intro": [
+            {
+              "id": "r4i",
+              "optional": false,
+              "modality": "printable",
+              "flags": null,
+              "asset_refs": [],
+              "provenance": null,
+              "role": "info",
+              "kind": "prose",
+              "content": "You are the Class Representative. Your job: make sure the plan works for everyone in the class. You speak for the students who might have worries — for example, students who do not like big cities, students who get homesick, or students who have allergies.\n\nYour concerns: some classmates prefer nature over cities; the trip should not be too exhausting.\n\nUseful phrases:\n- \"Some of my classmates would prefer ...\"\n- \"I am worried that ... might be too ...\"\n- \"Could we include ...? That would be better for ...\"\n- \"Is it possible to ...?\"\n- \"I agree with ... , but I also think we need to consider ...\"",
+              "callout_role": null,
+              "teacher_note": null,
+              "watch_outs": []
+            }
+          ],
+          "sections": [
+            {
+              "id": "r4s",
+              "title": "Rollenarbeit: Class Representative",
+              "teacher_overview": {
+                "throughline": "Schüler:innen lernen, auf Englisch die Perspektive anderer zu vertreten, Bedenken höflich einzubringen und Kompromisse anzustreben — soziale und sprachliche Schlüsselkompetenz.",
+                "talking_points": [
+                  "Wie unterscheidet man auf Englisch eigene Meinung und die Meinung anderer? ('I think' vs. 'Some of my classmates think')",
+                  "Wie äußert man Bedenken höflich? Unterschied zwischen 'That is bad' und 'I am worried that this might be difficult for some students'",
+                  "Strategien für Kompromisse: 'What if we...?', 'Could we...?', 'Maybe we could also...'"
+                ],
+                "extensions": [
+                  "Schüler:innen schreiben einen kurzen Brief an die Klasse, der den endgültigen Plan erklärt und auf Bedenken eingeht",
+                  "Diskussion: Was ist wichtiger — Mehrheitsentscheid oder Einigkeit? Schüler:innen argumentieren auf Englisch"
+                ],
+                "differentiation": null,
+                "timing_notes": null
+              },
+              "blocks": [
+                {
+                  "id": "r4t1",
+                  "optional": false,
+                  "modality": "printable",
+                  "flags": null,
+                  "asset_refs": [],
+                  "provenance": null,
+                  "role": "task",
+                  "kind": "open_response",
+                  "prompt": "A survey was done in your class before the trip. Read the results and write 3–5 sentences about what you need to say at the meeting to make sure these students are heard.\n\nSurvey results (25 students answered):\n- 14 students prefer nature/outdoor activities over city sightseeing.\n- 9 students say they get tired easily after long walks.\n- 6 students cannot eat shellfish or nuts (food allergies).\n- 18 students think the trip should include free time.",
+                  "payload": null,
+                  "response": {
+                    "mode": "box",
+                    "min_height_mm": 45.0
+                  },
+                  "cognitive_level": "analyze",
+                  "difficulty": null,
+                  "dimensions": [
+                    "LES",
+                    "SPR"
+                  ],
+                  "content_area": null,
+                  "serves": [
+                    {
+                      "competence_id": "FS1.US.3.LES.02",
+                      "relation": "exercises"
+                    },
+                    {
+                      "competence_id": "FS1.US.3.SPR.02",
+                      "relation": "exercises"
+                    }
+                  ],
+                  "est_minutes": 10,
+                  "answer_key": "Model: 'Most of my classmates prefer outdoor activities, so I think we should include something in nature. Some students get tired easily, so we should not plan too many long walks. We also need to check the menu at the cooking workshop because some students have food allergies. And I think it is really important that we have some free time — 18 students said so!'",
+                  "acceptable_reasoning": "Schüler:innen müssen nicht alle vier Punkte ansprechen; drei begründete Punkte sind ausreichend. Hauptsache: sie sprechen für andere, nicht nur für sich selbst.",
+                  "rubric": [
+                    {
+                      "criterion": "Perspective-taking",
+                      "levels": [
+                        "Speaks for others with evidence from survey",
+                        "Partially uses survey data",
+                        "Writes only own opinion"
+                      ]
+                    },
+                    {
+                      "criterion": "Concerns raised",
+                      "levels": [
+                        "3–4 concerns with reasons",
+                        "1–2 concerns",
+                        "No concerns raised"
+                      ]
+                    },
+                    {
+                      "criterion": "Language",
+                      "levels": [
+                        "Varied phrases for representing others",
+                        "Some attempt at hedging/representing",
+                        "Only direct statements"
+                      ]
+                    }
+                  ],
+                  "solution_steps": [],
+                  "watch_outs": [
+                    "Häufiger Fehler: Schüler:innen schreiben 'I want outdoor activities' statt 'Most students prefer outdoor activities' — Rollenperspektive einfordern",
+                    "Die Allergie-Information wird oft ignoriert, da sie für viele Schüler:innen ungewohnt ist — explizit darauf hinweisen, dass sie wichtig ist",
+                    "Auf die Unterscheidung zwischen Mehrheit (14 von 25, 18 von 25) und Minderheit (6 von 25) achten — Interpretation der Zahlen üben"
+                  ],
+                  "self_check": null
+                }
+              ]
+            }
+          ],
+          "assets": [],
+          "nachweis": {
+            "fassung": {
+              "kurztitel": "AHS-Lehrplan (konsolidiert)",
+              "bgbl": "BGBl. II Nr. 204/2024",
+              "doknr": "NOR40264237",
+              "valid_from": "2024-09-01",
+              "valid_to": "2026-08-31"
+            },
+            "statement": "Diese Materialien adressieren 2 von 9 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
+            "competence_coverage": [
+              {
+                "competence_id": "FS1.US.3.HOR.01",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "FS1.US.3.LES.01",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "FS1.US.3.LES.02",
+                "exercised_by": [
+                  "r4t1"
+                ],
+                "prerequisite_by": [],
+                "covered": true
+              },
+              {
+                "competence_id": "FS1.US.3.SPR.01",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "FS1.US.3.SPR.02",
+                "exercised_by": [
+                  "r4t1"
+                ],
+                "prerequisite_by": [],
+                "covered": true
+              },
+              {
+                "competence_id": "FS1.US.3.SPR.03",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "FS1.US.3.SCH.01",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "FS1.US.3.SCH.02",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              },
+              {
+                "competence_id": "FS1.US.3.SCH.03",
+                "exercised_by": [],
+                "prerequisite_by": [],
+                "covered": false
+              }
+            ],
+            "gaps": [
+              "FS1.US.3.HOR.01 — einfache Gespräche, Erzählungen und kurze Medienbeiträge verstehen.",
+              "FS1.US.3.LES.01 — einfache und konkrete Artikel in Magazinen und Jugendzeitschriften, altersadäquate Kinder- und Jugendbücher, Geschichten und Sachtexte sowie persönliche Texte, die sich auf altersgerechte Aspekte der zielsprachlichen Kultur(en) beziehen, verstehen.",
+              "FS1.US.3.SPR.01 — ein Gespräch beginnen, weiterführen und beenden sowie einfache Sprecherwechsel durchführen.",
+              "FS1.US.3.SPR.03 — über vertraute Themenbereiche erzählen und einfache (Buch-)Präsentationen halten.",
+              "FS1.US.3.SCH.01 — kurze zusammenhängende Texte über alltägliche Aspekte des eigenen Umfelds sowie des Lebensalltags von Jugendlichen in verschiedenen Ländern schreiben.",
+              "FS1.US.3.SCH.02 — kurze Beschreibungen von Ereignissen, vergangenen und zukünftigen Handlungen und persönlichen Erfahrungen verfassen und dabei auch Meinungen und Gefühle ausdrücken.",
+              "FS1.US.3.SCH.03 — kurz über ihre Eindrücke und Meinungen zu altersadäquaten Geschichten sowie zu Kinder- und Jugendliteratur schreiben."
+            ],
+            "zentrale_konzepte": [
+              "Hören",
+              "Lesen",
+              "Schreiben",
+              "Sprechen (an Gesprächen teilnehmen und zusammenhängend sprechen)"
+            ],
+            "uebergreifende_themen": []
+          },
+          "depth_profile": {
+            "by_level": {
+              "analyze": 1
+            },
+            "by_dimension": {
+              "LES": 1
+            },
+            "by_difficulty": {},
+            "minutes_total": 10,
+            "minutes_resource_independent": 10
+          },
+          "rack": null
+        }
+      }
+    ],
+    "phases": [
+      {
+        "id": "p1",
+        "label": "Einführung & Rollenlektüre",
+        "grouping": "individual",
+        "minutes": 10,
+        "what_happens": "Lehrkraft stellt das Szenario und die Spielregeln vor; Schüler:innen lesen ihre Rollenkarte still durch und markieren ihre wichtigsten Argumente."
+      },
+      {
+        "id": "p2",
+        "label": "Einzelarbeit: Rollen vorbereiten",
+        "grouping": "individual",
+        "minutes": 12,
+        "what_happens": "Schüler:innen bearbeiten die Aufgabe auf ihrem Rollenblatt (schriftliche Vorbereitung) — das ist die Basis für die mündliche Meeting-Phase."
+      },
+      {
+        "id": "p3",
+        "label": "Rollen-Briefing in Gleichrollen-Gruppen",
+        "grouping": "role_group",
+        "minutes": 8,
+        "what_happens": "Alle Travel Agents, alle Budget Controllers usw. treffen sich kurz: sie vergleichen ihre Antworten, einigen sich auf eine gemeinsame Position und üben ihre Eröffnungsstatements (1–2 Sätze pro Person)."
+      },
+      {
+        "id": "p4",
+        "label": "Das Meeting: Klassenfahrt planen",
+        "grouping": "home_group",
+        "minutes": 20,
+        "what_happens": "In gemischten Vierer-Gruppen (eine Rolle pro Person) findet das Planungsmeeting auf Englisch statt: Vorstellung, Diskussion, Kompromissfindung — Ergebnis wird auf dem gemeinsamen Ergebnisblatt festgehalten."
+      },
+      {
+        "id": "p5",
+        "label": "Präsentation & Vergleich",
+        "grouping": "plenary",
+        "minutes": 8,
+        "what_happens": "Jede Gruppe stellt im Plenum ihren Beschluss in 2–3 Sätzen vor; Lehrkraft hält Gemeinsamkeiten und Unterschiede an der Tafel fest."
+      },
+      {
+        "id": "p6",
+        "label": "Debrief & Reflexion",
+        "grouping": "plenary",
+        "minutes": 7,
+        "what_happens": "Gemeinsame Reflexion auf Deutsch: Was war schwierig? Welche englischen Phrasen haben gut funktioniert? Wo gab es Missverständnisse?"
+      }
+    ],
+    "shared_product": {
+      "description": "Jede Gruppe füllt gemeinsam ein Ergebnisblatt aus (auf Englisch): gewählte Destination, zwei Aktivitäten, Gesamtkosten pro Person, und ein Satz, der erklärt, warum diese Entscheidung für alle passt.",
+      "rubric": [
+        {
+          "criterion": "Decision completeness",
+          "levels": [
+            "Destination, 2 activities, and total cost all recorded correctly",
+            "Two of three elements complete",
+            "Only one element or incomplete"
+          ]
+        },
+        {
+          "criterion": "Justification",
+          "levels": [
+            "Clear sentence explaining why the decision suits everyone",
+            "Partial justification",
+            "No justification"
+          ]
+        },
+        {
+          "criterion": "Budget check",
+          "levels": [
+            "Total cost correctly calculated and within €80",
+            "Minor calculation error but within budget logic",
+            "Budget not checked or exceeded without comment"
+          ]
+        },
+        {
+          "criterion": "Group English use",
+          "levels": [
+            "Meeting conducted mostly in English, useful phrases used",
+            "Mix of English and German, some phrases used",
+            "Mostly German, no use of target phrases"
+          ]
+        }
+      ]
+    },
+    "debrief": [
+      {
+        "id": "db1",
+        "optional": false,
+        "modality": "printable",
+        "flags": null,
+        "asset_refs": [],
+        "provenance": null,
+        "role": "info",
+        "kind": "prose",
+        "content": "Reflexionsfragen für das Plenum (auf Deutsch):\n\n1. Welche Rolle war am schwierigsten zu spielen — und warum?\n2. Wo musstest du einen Kompromiss eingehen? Wie hast du das auf Englisch ausgedrückt?\n3. Was hat in eurer Gruppe gut funktioniert? Was würdet ihr beim nächsten Mal anders machen?\n4. Welche englischen Phrasen aus den Rollenkarten habt ihr am meisten benutzt?",
+        "callout_role": null,
+        "teacher_note": null,
+        "watch_outs": []
+      },
+      {
+        "id": "db2",
+        "optional": false,
+        "modality": "printable",
+        "flags": null,
+        "asset_refs": [],
+        "provenance": null,
+        "role": "info",
+        "kind": "key_fact",
+        "content": "Lehrkraft-Hinweis: Der Debrief ist bewusst auf Deutsch, damit Schüler:innen über ihre Sprachverwendung reflektieren können, ohne von der Metaebene sprachlich überfordert zu werden. Ziel: Bewusstmachung der kommunikativen Strategien, die im Meeting eingesetzt wurden.",
+        "callout_role": null,
+        "teacher_note": null,
+        "watch_outs": []
+      }
+    ],
+    "competence_anchors": [
+      {
+        "competence_id": "FS1.US.3.SPR.01",
+        "dimension": "SPR",
+        "served_by": "interaction"
+      },
+      {
+        "competence_id": "FS1.US.3.SPR.02",
+        "dimension": "SPR",
+        "served_by": "interaction"
+      },
+      {
+        "competence_id": "FS1.US.3.SPR.03",
+        "dimension": "SPR",
+        "served_by": "debrief"
+      }
+    ],
+    "nachweis": {
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "statement": "Dieses Lernarrangement adressiert 7 von 9 verbatim Kompetenzen des Lehrplans (davon 2 über Interaktion, Debrief oder gemeinsames Produkt verankert — nicht über ein einzelnes Arbeitsblatt), gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
+      "competence_coverage": [
+        {
+          "competence_id": "FS1.US.3.HOR.01",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "FS1.US.3.LES.01",
+          "exercised_by": [
+            "r1:r1t1",
+            "r3:r3t1"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "FS1.US.3.LES.02",
+          "exercised_by": [
+            "r2:r2t1",
+            "r4:r4t1"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "FS1.US.3.SPR.01",
+          "exercised_by": [
+            "anchor:interaction"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "FS1.US.3.SPR.02",
+          "exercised_by": [
+            "r4:r4t1",
+            "anchor:interaction"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "FS1.US.3.SPR.03",
+          "exercised_by": [
+            "anchor:debrief"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "FS1.US.3.SCH.01",
+          "exercised_by": [
+            "r2:r2t1"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "FS1.US.3.SCH.02",
+          "exercised_by": [
+            "r1:r1t1",
+            "r3:r3t1"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "FS1.US.3.SCH.03",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        }
+      ],
+      "gaps": [
+        "FS1.US.3.HOR.01 — einfache Gespräche, Erzählungen und kurze Medienbeiträge verstehen.",
+        "FS1.US.3.SCH.03 — kurz über ihre Eindrücke und Meinungen zu altersadäquaten Geschichten sowie zu Kinder- und Jugendliteratur schreiben."
+      ],
+      "zentrale_konzepte": [
+        "Hören",
+        "Lesen",
+        "Schreiben",
+        "Sprechen (an Gesprächen teilnehmen und zusammenhängend sprechen)"
+      ],
+      "uebergreifende_themen": [
+        7,
+        12
+      ]
+    },
+    "depth_profile": {
+      "by_level": {
+        "evaluate": 2,
+        "apply": 1,
+        "analyze": 1
+      },
+      "by_dimension": {
+        "LES": 4
+      },
+      "by_difficulty": {},
+      "minutes_total": 40,
+      "minutes_resource_independent": 40
+    }
+  },
+  "status": "approved",
+  "source": "generated",
+  "title": "Let's Plan Our Class Trip!",
+  "artifacts": {
+    "orchestration": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\arrangements\\FS1\\orchestration.pdf",
+    "roles": [
+      {
+        "id": "r1",
+        "label": "Travel Agent",
+        "student": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\arrangements\\FS1\\role_r1_student.pdf",
+        "teacher": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\arrangements\\FS1\\role_r1_teacher.pdf"
+      },
+      {
+        "id": "r2",
+        "label": "Budget Controller",
+        "student": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\arrangements\\FS1\\role_r2_student.pdf",
+        "teacher": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\arrangements\\FS1\\role_r2_teacher.pdf"
+      },
+      {
+        "id": "r3",
+        "label": "Activity Planner",
+        "student": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\arrangements\\FS1\\role_r3_student.pdf",
+        "teacher": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\arrangements\\FS1\\role_r3_teacher.pdf"
+      },
+      {
+        "id": "r4",
+        "label": "Class Representative",
+        "student": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\arrangements\\FS1\\role_r4_student.pdf",
+        "teacher": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\arrangements\\FS1\\role_r4_teacher.pdf"
+      }
+    ]
+  },
+  "verify_problems": [],
+  "created_at": "2026-06-26T08:34:00+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

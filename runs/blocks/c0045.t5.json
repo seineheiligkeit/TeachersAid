@@ -1,0 +1,73 @@
+{
+  "id": "c0045.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "design_task",
+    "prompt": "Stell dir vor, du sollst einen Becher entwerfen, der heiße Suppe transportieren kann, ohne dass sich die Person die Finger verbrennt. Welches Material (oder welche Kombination von Materialien) würdest du wählen? Skizziere deinen Becher in Worten (kein Bild nötig): Beschreibe Form, Material und warum du dich für dieses Material entschieden hast.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "ENT"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "TED.US.1.ENT.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Mögliche Lösungen: Keramikbecher mit Griff (Keramik leitet Wärme schlecht; Griff aus Keramik oder Holz); Pappe-Becher mit Pappmanschette (Einwegbecher, Luft in der Pappschicht isoliert); doppelwandiger Edelstahlbecher (Vakuum oder Luftschicht zwischen den Wänden). Bewertungskriterium: Schüler:innen müssen die Eigenschaft 'geringe Wärmeleitfähigkeit' (in Alltagssprache: leitet Wärme schlecht) als Entscheidungsgrund nennen.",
+    "acceptable_reasoning": "Alle Antworten sind akzeptabel, die mindestens ein Material nennen, seine wärmeisolierende Eigenschaft beschreiben und eine sinnvolle Form vorschlagen.",
+    "rubric": [
+      {
+        "criterion": "Materialwahl begründet",
+        "levels": [
+          "Material genannt, aber keine Eigenschaft als Begründung",
+          "Eigenschaft des Materials (Isolation, geringe Wärmeleitung) explizit als Grund genannt"
+        ]
+      },
+      {
+        "criterion": "Funktionalität",
+        "levels": [
+          "Entwurf würde praktisch nicht funktionieren",
+          "Entwurf ist funktional plausibel"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen wählen Metall für den ganzen Becher ohne Isolierung — Gelegenheit, Wärmeleitfähigkeit zu thematisieren.",
+      "Erwartung nicht zu hoch: Fachbegriff 'Wärmeleitfähigkeit' muss nicht fallen; gemeint ist die Alltagserfahrung."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "design_task",
+  "subject": "Technik und Design",
+  "klasse": 1,
+  "kompetenzbereich": "Entwicklung",
+  "competences": [
+    "TED.US.1.ENT.04"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "ENT"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0045",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

@@ -1,0 +1,79 @@
+{
+  "id": "c0122.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Erkläre in eigenen Worten: Warum ist es in Wien im Winter kälter als im Sommer? Welche physikalische Größe ändert sich dabei, die für Wetter eine entscheidende Rolle spielt?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.4.WET.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Im Winter steht die Sonne tiefer (flacherer Einfallswinkel, kürzere Tage) → weniger Energie pro Fläche wird eingestrahlt → Erdoberfläche kühlt ab → Luft über der Oberfläche kühlt ab → Temperaturgegensätze entstehen. Temperaturunterschiede erzeugen Luftdruckunterschiede (warme Luft dehnt sich aus → Tiefdruck; kalte Luft ist dichter → Hochdruck). Luftdruckunterschiede treiben Winde und Wetterbewegungen an.",
+    "acceptable_reasoning": "Schülerinnen und Schüler müssen nicht den Begriff 'Luftdruck' perfekt erklären; wichtig ist die Kette Sonneneinstrahlung → Temperatur → Druckunterschied → Bewegung.",
+    "rubric": [
+      {
+        "criterion": "Ursache Winkel/Tageslänge",
+        "levels": [
+          "Korrekt erklärt",
+          "Teilweise (nur Tageslänge oder nur Winkel)",
+          "Nicht erkannt"
+        ]
+      },
+      {
+        "criterion": "Verbindung zu Wetter/Strömungen",
+        "levels": [
+          "Temperatur → Druck/Strömung genannt",
+          "Nur Temperaturunterschied, kein Antrieb",
+          "Fehlt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Häufige Fehlvorstellung: 'Im Winter ist die Erde weiter von der Sonne entfernt.' Tatsächlich ist die Erde im Jänner sogar am sonnennächsten (Perihel). Die Ursache liegt im Neigungswinkel der Erdachse.",
+      "Den Begriff 'Luftdruck' nicht vorwegnehmen, wenn er noch nicht eingeführt wurde — dann reicht 'Temperaturunterschiede erzeugen Strömungen in der Luft'."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Wetter und Klima",
+  "competences": [
+    "PHY.US.4.WET.03"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0122",
+  "source": "ai",
+  "created_at": "2026-06-27T15:21:16+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

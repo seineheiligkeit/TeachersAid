@@ -1,0 +1,112 @@
+{
+  "id": "c0003.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Die folgende Tabelle zeigt den pH-Wert verschiedener Alltagsflüssigkeiten. Ergänze die fehlenden Einträge (markiert mit '?'): Trage in die leeren Felder 'sauer', 'neutral' oder 'basisch' ein, und schätze, ob der Stoff eher im Haushalt, im menschlichen Körper oder in der Natur vorkommt. Begründe abschließend in einem Satz, warum Magensaft einen so niedrigen pH-Wert benötigt.",
+    "payload": {
+      "kind": "table_fill",
+      "columns": [
+        "Stoff",
+        "pH-Wert",
+        "Eigenschaft (sauer/neutral/basisch)",
+        "Verwendung/Vorkommen"
+      ],
+      "rows": [
+        [
+          "Salzsäure (Magensaft)",
+          "1–2",
+          "?",
+          "?"
+        ],
+        [
+          "Zitronensaft",
+          "2–3",
+          "?",
+          "?"
+        ],
+        [
+          "Kaffee",
+          "5",
+          "?",
+          "?"
+        ],
+        [
+          "destilliertes Wasser",
+          "7",
+          "?",
+          "?"
+        ],
+        [
+          "Seifenlauge",
+          "9–10",
+          "?",
+          "?"
+        ],
+        [
+          "Natronlauge (Haushaltsreiniger)",
+          "13",
+          "?",
+          "?"
+        ]
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Stoff",
+        "pH-Wert",
+        "Eigenschaft",
+        "Verwendung/Vorkommen"
+      ],
+      "rows": 6
+    },
+    "cognitive_level": "apply",
+    "dimensions": [
+      "W",
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.US.x.ERK.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Salzsäure: sauer, menschlicher Körper (Magen). Zitronensaft: sauer, Natur/Küche. Kaffee: sauer, Haushalt/Genuss. Destilliertes Wasser: neutral, Technik/Labor. Seifenlauge: basisch, Haushalt. Natronlauge: basisch, Haushalt/Reinigung. Begründung Magensaft: Der niedrige pH (stark sauer) aktiviert das Enzym Pepsin und tötet Krankheitserreger in der Nahrung ab.",
+    "acceptable_reasoning": "Bei der Kategorie 'Verwendung/Vorkommen' sind sinnvolle Alternativen akzeptabel (z. B. 'Lebensmittel' statt 'Küche'). Die Eigenschaft sauer/neutral/basisch muss exakt stimmen.",
+    "rubric": [],
+    "watch_outs": [
+      "Häufige Fehlvorstellung: 'Destilliertes Wasser ist basisch, weil es rein ist.' Klarstellen: Reinheit ≠ basisch; pH 7 ist neutral.",
+      "Schüler:innen unterschätzen oft, wie sauer pH 1–2 ist. Vergleich anbieten: Magensaft hat ähnlichen pH wie Salzsäure im Labor."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Chemie",
+  "klasse": 4,
+  "kompetenzbereich": "Erkenntnisse gewinnen und interpretieren (E)",
+  "competences": [
+    "CHE.US.x.ERK.03"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "W",
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0003",
+  "source": "ai",
+  "created_at": "2026-06-25T11:35:34+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

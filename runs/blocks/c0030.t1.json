@@ -1,0 +1,66 @@
+{
+  "id": "c0030.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Entscheide bei jeder Aussage: Stimmt sie oder stimmt sie nicht? Begründe deine Antwort kurz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Ein Smartphone ist ein Grundbedürfnis.",
+        "Wasser und Nahrung sind Grundbedürfnisse.",
+        "Jeder Mensch hat dieselben Wünsche.",
+        "Knappheit bedeutet, dass es von etwas zu wenig gibt."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.1.LEB.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Falsch (begründet: Smartphone ist ein Wunsch, kein Grundbedürfnis – Menschen lebten Jahrtausende ohne ihn). Richtig. Falsch (Wünsche sind individuell und kulturell unterschiedlich). Richtig (Knappheit = begrenzte Verfügbarkeit relativ zum Bedarf).",
+    "acceptable_reasoning": "Jede sachlich begründete Einschätzung, die zwischen Bedürfnis und Wunsch differenziert, gilt.",
+    "rubric": [],
+    "watch_outs": [
+      "Häufige Verwechslung: Schüler:innen setzen Gewohnheit mit Bedürfnis gleich (z. B. tägliche Handy-Nutzung).",
+      "Aussage 3 löst Diskussionen aus – das ist erwünscht; Grundbedürfnisse (Maslow) sind universell, Wünsche kulturell geprägt."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 1,
+  "kompetenzbereich": "Leben und Wirtschaften im eigenen Umfeld",
+  "competences": [
+    "GWB.US.1.LEB.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0030",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

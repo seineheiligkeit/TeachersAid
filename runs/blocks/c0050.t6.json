@@ -1,0 +1,86 @@
+{
+  "id": "c0050.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "You heard a message about changed plans. Now imagine: a friend did NOT hear the message and is still planning to go to the swimming pool.\n\nWhat would you say to help them? Write 3–5 sentences in English explaining what changed and what they should do instead.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Your friend missed the voicemail. What do you tell them about the new plan?"
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 40.0
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "HOR",
+      "SCH"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS1.US.2.SCH.03",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "FS1.US.2.HOR.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "Model answer: Hey! The swimming pool is closed on Saturday because of repairs. We are not going there anymore. Let's meet at the park at two o'clock. Bring a ball and something to drink. If it rains, we will go to Laura's place.",
+    "acceptable_reasoning": "Schüler:innen dürfen informelle Sprache verwenden; wichtig ist der korrekte Transfer der Kerninformation.",
+    "rubric": [
+      {
+        "criterion": "Information transfer",
+        "levels": [
+          "All key changes correctly communicated",
+          "Most changes communicated",
+          "Key information missing or wrong"
+        ]
+      },
+      {
+        "criterion": "Language accuracy",
+        "levels": [
+          "Mostly correct grammar and vocabulary",
+          "Understandable despite errors",
+          "Unclear due to errors"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Diese Aufgabe prüft, ob die Hörverstehensleistung in produktive Schreibkompetenz transferiert werden kann",
+      "Auf korrekte Zeitform achten (will/going to für zukünftige Pläne)",
+      "Schüler:innen dürfen kreativ sein, sollten aber keine Information erfinden, die im Original nicht vorkam"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Erste lebende Fremdsprache",
+  "klasse": 2,
+  "kompetenzbereich": "Schreiben",
+  "competences": [
+    "FS1.US.2.SCH.03",
+    "FS1.US.2.HOR.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "HOR",
+    "SCH"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0050",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

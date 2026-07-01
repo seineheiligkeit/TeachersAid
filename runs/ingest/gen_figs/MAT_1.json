@@ -1,0 +1,375 @@
+{
+  "subject": "Mathematik",
+  "klasse": 2,
+  "kompetenzbereich": "2: Variablen und Funktionen",
+  "title": "Die Waage im Kopf — Gleichungen verstehen und lösen",
+  "kernfrage": "Wie findest du heraus, welcher Wert für die Unbekannte eine Gleichung wahr macht?",
+  "body": {
+    "intro": [],
+    "assets": [
+      {
+        "id": "abb1",
+        "role": "figure",
+        "generator": "matplotlib:math_formula",
+        "spec": {
+          "latex": "3x + 5 = 20"
+        }
+      },
+      {
+        "id": "abb2",
+        "role": "figure",
+        "generator": "matplotlib:math_formula",
+        "spec": {
+          "latex": "\\frac{x}{4} - 3 = 2"
+        }
+      },
+      {
+        "id": "abb3",
+        "role": "figure",
+        "generator": "matplotlib:number_line",
+        "spec": {
+          "min": -5,
+          "max": 15,
+          "step": 1,
+          "marks": [
+            {
+              "at": 0,
+              "label": "0"
+            },
+            {
+              "at": 5,
+              "label": "Lösung?"
+            }
+          ]
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Gleichungen aufstellen und deuten",
+        "throughline": "Schüler:innen erkennen, dass eine Gleichung eine Aussage über eine unbekannte Zahl macht, und üben, aus Sachsituationen Gleichungen aufzustellen.",
+        "talking_points": [
+          "Eine Gleichung ist wie eine Waage: beide Seiten müssen gleich schwer sein.",
+          "Die Variable steht stellvertretend für eine bestimmte, noch unbekannte Zahl.",
+          "Nicht jede Gleichung hat eine Lösung — das ist auch eine wichtige Erkenntnis."
+        ],
+        "extensions": [
+          "Eigene Sachsituationen erfinden, die zu einer gegebenen Gleichung passen.",
+          "Gleichungen mit zwei Variablen skizzieren: Was passiert, wenn man eine Variable festlegt?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "open_response",
+            "prompt": "Lena kauft im Schulshop 3 Hefte und bezahlt dafür insgesamt 7,50 €. Alle Hefte kosten gleich viel. Stelle eine Gleichung auf, die diese Situation beschreibt. Verwende den Buchstaben h für den Preis eines Heftes.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 3
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "MOD",
+              "OPE"
+            ],
+            "serves": [
+              {
+                "competence_id": "MAT.US.2.VAR.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 5,
+            "asset_refs": [],
+            "answer_key": "3 · h = 7,50 (oder äquivalente Schreibweise, z. B. 3h = 7,50). Lösung: h = 2,50 €.",
+            "acceptable_reasoning": "Jedes Heft kostet gleich viel, also 3 mal der unbekannte Preis ergibt 7,50 €.",
+            "watch_outs": [
+              "Manche Schüler:innen schreiben 7,50 : 3 direkt, ohne erst die Gleichung aufzustellen — auf die Aufgabenstellung hinweisen.",
+              "Einheit (€) nicht vergessen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Gleichung korrekt aufgestellt",
+                "levels": [
+                  "Gleichung fehlt oder falsch",
+                  "Gleichung aufgestellt, kleiner Fehler",
+                  "Gleichung vollständig korrekt"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "multiple_choice",
+            "prompt": "Welche der folgenden Gleichungen hat die Lösung x = 5?",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "2x + 1 = 10",
+                "3x − 2 = 13",
+                "4x = 20",
+                "x + 7 = 11"
+              ],
+              "select": "many"
+            },
+            "response": {
+              "mode": "choices",
+              "options": [
+                "2x + 1 = 10",
+                "3x − 2 = 13",
+                "4x = 20",
+                "x + 7 = 11"
+              ],
+              "select": "many"
+            },
+            "cognitive_level": "remember",
+            "dimensions": [
+              "OPE"
+            ],
+            "serves": [
+              {
+                "competence_id": "MAT.US.2.VAR.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 4,
+            "asset_refs": [],
+            "answer_key": "3x − 2 = 13 (3·5−2=13 ✓) und 4x = 20 (4·5=20 ✓). Die erste (2·5+1=11≠10) und die letzte (5+7=12≠11) sind falsch.",
+            "acceptable_reasoning": "Einsetzen von x = 5 in jede Gleichung und Überprüfen der Gleichheit.",
+            "watch_outs": [
+              "Schüler:innen prüfen häufig nur die erste Option und hören auf — darauf hinweisen, alle zu prüfen.",
+              "Vorzeichen bei 3x − 2 genau beachten."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "calculation",
+            "prompt": "Löse die folgende Gleichung durch schrittweises Umkehren der Rechenoperationen. Schreibe jeden Umformungsschritt auf eine eigene Zeile.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "apply",
+            "dimensions": [
+              "OPE"
+            ],
+            "serves": [
+              {
+                "competence_id": "MAT.US.2.VAR.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "asset_refs": [
+              "abb1"
+            ],
+            "answer_key": "3x + 5 = 20 | − 5 → 3x = 15 | ÷ 3 → x = 5. Probe: 3·5+5 = 20 ✓",
+            "acceptable_reasoning": "Zuerst die Addition rückgängig machen (−5), dann die Multiplikation (÷3).",
+            "watch_outs": [
+              "Häufiger Fehler: zuerst durch 3 dividieren, statt −5. Reihenfolge der Umkehroperationen thematisieren.",
+              "Probe explizit einfordern."
+            ],
+            "rubric": [
+              {
+                "criterion": "Umformungsschritte sichtbar",
+                "levels": [
+                  "Kein Schritt sichtbar",
+                  "Ein Schritt gezeigt",
+                  "Alle Schritte korrekt und nachvollziehbar"
+                ]
+              },
+              {
+                "criterion": "Probe durchgeführt",
+                "levels": [
+                  "Keine Probe",
+                  "Probe versucht, Fehler",
+                  "Probe korrekt"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "calculation",
+            "prompt": "Löse diese Gleichung und mache die Probe.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "apply",
+            "dimensions": [
+              "OPE"
+            ],
+            "serves": [
+              {
+                "competence_id": "MAT.US.2.VAR.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "asset_refs": [
+              "abb2"
+            ],
+            "answer_key": "x/4 − 3 = 2 | +3 → x/4 = 5 | ·4 → x = 20. Probe: 20/4−3 = 5−3 = 2 ✓",
+            "acceptable_reasoning": "Erst +3, dann ·4 — Umkehrreihenfolge von rechts nach links.",
+            "watch_outs": [
+              "x/4 wird manchmal als x−4 missverstanden — Bruchschreibweise erklären.",
+              "Multiplikation mit 4 auf beiden Seiten vergessen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "modelling_task",
+            "prompt": "Ein Rechteck hat den Umfang 36 cm. Die Länge ist doppelt so groß wie die Breite. Stelle eine Gleichung für die Breite b auf und löse sie. Wie groß ist die Länge?",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 40
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "MOD",
+              "OPE"
+            ],
+            "serves": [
+              {
+                "competence_id": "MAT.US.2.VAR.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "Umfang: 2·(l + b) = 36, mit l = 2b: 2·(2b + b) = 36 → 6b = 36 → b = 6 cm. Länge: l = 12 cm.",
+            "acceptable_reasoning": "Umfangsformel aufstellen, Längenbedingung einsetzen, auflösen.",
+            "watch_outs": [
+              "Viele stellen 2b + b = 36 auf (Halbumfang vergessen) — Umfangsformel wiederholen.",
+              "Ergebnis rückprüfen: 2·(12+6) = 36 ✓"
+            ],
+            "rubric": [
+              {
+                "criterion": "Gleichung korrekt aufgestellt",
+                "levels": [
+                  "Keine Gleichung",
+                  "Gleichung mit Fehler",
+                  "Gleichung korrekt"
+                ]
+              },
+              {
+                "criterion": "Lösung vollständig (b und l)",
+                "levels": [
+                  "Nur b oder nur l",
+                  "Beide angegeben, Fehler",
+                  "Beide korrekt mit Einheit"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "true_false_justify",
+            "prompt": "Entscheide, ob die folgenden Aussagen wahr oder falsch sind, und begründe jeweils kurz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Die Gleichung 2x + 4 = 4 hat die Lösung x = 0.",
+                "Multipliziert man beide Seiten einer Gleichung mit 0, bleibt die Gleichung gleichwertig.",
+                "Die Gleichung x + 3 = x + 5 hat keine Lösung."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "BEG",
+              "OPE"
+            ],
+            "serves": [
+              {
+                "competence_id": "MAT.US.2.VAR.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "1) Wahr: 2·0+4=4 ✓. 2) Falsch: Multiplikation mit 0 ergibt 0=0 (alle Zahlen wären Lösungen), keine Äquivalenzumformung. 3) Wahr: 3 ≠ 5, Widerspruch, keine Lösung.",
+            "acceptable_reasoning": "Für 1: einsetzen; für 2: Gegenbeispiel oder Argument der Äquivalenz; für 3: Vereinfachung 3=5 ist unmöglich.",
+            "watch_outs": [
+              "Aussage 2 ist eine häufige Fehlvorstellung — Multiplikation mit 0 als Nicht-Äquivalenzumformung explizit besprechen.",
+              "Aussage 3 erfordert das Konzept ‚keine Lösung' — nicht alle Gleichungen sind lösbar."
+            ],
+            "rubric": [
+              {
+                "criterion": "Begründungsqualität",
+                "levels": [
+                  "Kein Argument",
+                  "Ergebnis ohne Begründung",
+                  "Nachvollziehbare Begründung"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "create_produce",
+            "prompt": "Erfinde selbst eine Sachaufgabe (eine Geschichte), bei der die Gleichung 5x − 8 = 22 passt. Erkläre, was x in deiner Geschichte bedeutet, und löse die Gleichung.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 50
+            },
+            "cognitive_level": "create",
+            "dimensions": [
+              "MOD",
+              "BEG"
+            ],
+            "serves": [
+              {
+                "competence_id": "MAT.US.2.VAR.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Jede sinnvolle Geschichte, in der 5 gleiche Einheiten von x und ein Abzug/Rabatt von 8 ein Ergebnis von 22 ergibt. Lösung: 5x = 30 → x = 6. Plausible Beispiele: 5 Bücher à x €, minus 8 € Gutschein, ergibt 22 € Gesamtpreis.",
+            "acceptable_reasoning": "Die Geschichte muss die Struktur der Gleichung widerspiegeln — Multiplikation und Subtraktion.",
+            "watch_outs": [
+              "Manche Schüler:innen erfinden eine Geschichte, die nicht zur Gleichung passt — auf die Struktur achten.",
+              "Die Einheit/Bedeutung von x muss klar benannt sein."
+            ],
+            "rubric": [
+              {
+                "criterion": "Geschichte passt zur Gleichung",
+                "levels": [
+                  "Kein Bezug",
+                  "Teils passend",
+                  "Vollständig passend und sinnvoll"
+                ]
+              },
+              {
+                "criterion": "Gleichung korrekt gelöst",
+                "levels": [
+                  "Falsch",
+                  "Rechenfehler, Weg erkennbar",
+                  "Korrekt mit Probe"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

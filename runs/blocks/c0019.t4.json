@@ -1,0 +1,69 @@
+{
+  "id": "c0019.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Stell dir vor, ein Krankenhaus nutzt eine KI, die auf Basis von Röntgenbildern Lungenkrankheiten diagnostiziert. Die KI hat eine Genauigkeit von 94 % – sie liegt also bei 6 von 100 Fällen falsch.\n\n(a) Wer trägt die Verantwortung, wenn die KI einen Fehler macht und ein Patient falsch behandelt wird – die KI-Entwickler, das Krankenhaus oder die Ärztin/der Arzt?\n(b) Unter welchen Bedingungen wäre der Einsatz dieser KI vertretbar? Nenne mindestens zwei Bedingungen.\n(c) Welche grundlegende Grenze von KI zeigt dieses Beispiel?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "G",
+      "I"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DGB.US.4.ORI.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 11,
+    "answer_key": "(a) Geteilte Verantwortung: Entwickler müssen auf Grenzen hinweisen und System korrekt beschreiben; Krankenhaus entscheidet über Einsatz und schuldet klare Prozesse; Ärztin/Arzt trägt letztliche medizinische Verantwortung und darf sich nicht blind auf KI verlassen. (b) Bedingungen: Menschliche Kontrolle bleibt pflichtend (KI als Unterstützung, nicht als Entscheider); Fehlerquote transparent kommuniziert; besondere Aufmerksamkeit bei Grenzfällen; klares Protokoll, wer bei Unsicherheit nachprüft; regelmäßige Evaluation auf neue Patientengruppen. (c) KI arbeitet auf Wahrscheinlichkeiten, nicht auf Verständnis; sie 'weiß' nicht, ob sie falsch liegt. Das unvermeidliche Restrisiko erfordert, dass ein Mensch die Endentscheidung verantwortet.",
+    "acceptable_reasoning": "Für Teil (a) gibt es keine eindeutige Antwort – entscheidend ist, dass Schüler:innen erkennen, dass Verantwortung nicht an eine Maschine delegiert werden kann.",
+    "rubric": [
+      {
+        "criterion": "Verantwortungsanalyse",
+        "levels": [
+          "Verantwortung einseitig oder der KI zugeschrieben",
+          "Geteilte Verantwortung erkannt, aber nicht differenziert",
+          "Drei Akteure differenziert mit jeweiliger Verantwortung"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen schreiben oft 'die KI ist schuld' – klar machen: KI ist kein Rechtssubjekt und kann keine Verantwortung tragen.",
+      "94 % klingt hoch – konkretisieren: Bei 1000 Fällen pro Jahr macht die KI 60 Fehler. Ist das akzeptabel? Hängt vom Vergleich mit menschlicher Fehlerrate ab."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Digitale Grundbildung",
+  "klasse": 4,
+  "kompetenzbereich": "Orientierung: gesellschaftliche Aspekte von Medienwandel und Digitalisierung analysieren und reflektieren",
+  "competences": [
+    "DGB.US.4.ORI.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "G",
+    "I"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0019",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

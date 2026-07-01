@@ -1,0 +1,255 @@
+{
+  "subject": "Zweite lebende Fremdsprache",
+  "klasse": 4,
+  "kompetenzbereich": "Sprechen",
+  "title": "Au café et en ville — Im Alltag auf Französisch kommunizieren",
+  "kernfrage": "Kannst du dich in einfachen Alltagssituationen auf Französisch verständigen — im Café, in der Stadt, beim Einkaufen?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Alltagsgespräche führen — Informationen geben, fragen und aushandeln",
+        "throughline": "Schüler:innen erarbeiten die sprachlichen Mittel für typische Begegnungssituationen des Alltags (Café, Straße, Geschäft). Im Zentrum stehen Kommunikationsstrategien: wie fragt man nach, wenn man etwas nicht versteht? Wie reagiert man höflich? Das Rollenspiel als Methode macht Sprechen greifbar und überwindbar.",
+        "talking_points": [
+          "Kommunikationsstrategien explizit benennen: Pardon? / Vous pouvez répéter, s'il vous plaît? / Je ne comprends pas. — diese Sätze retten jedes Gespräch und sollen automatisiert werden",
+          "tu vs. vous in Alltagssituationen: im Café/Geschäft zu Erwachsenen vous verwenden — kurze Regel: Gleichaltrige → tu; Erwachsene/Unbekannte → vous",
+          "Höflichkeit im Französischen: s'il vous plaît / s'il te plaît, merci, de rien, avec plaisir — kulturelle Dimension: Franzosen legen Wert auf Höflichkeitsformeln beim Eintreten (Bonjour madame/monsieur)",
+          "Melodie und Intonation: Fragesätze steigen am Ende (Est-ce que tu viens?) oder fallen bei Inversionsfragen (Viens-tu?) — Schüler:innen zunächst nur Est-ce que-Fragen und Intonationsfragen (tu viens?) ohne Inversion verwenden"
+        ],
+        "extensions": [
+          "Rollenspiel-Erweiterung: ein Problem im Gespräch lösen — das Café hat das Bestellte nicht, man muss eine Alternative wählen",
+          "Franzophone Café-Kultur: Ein Café crème oder un café au lait bestellen, der Unterschied zu österreichischem Kaffee — kurze interkulturelle Reflexion",
+          "Skript eines Gesprächs aufschreiben und mit einem anderen Paar tauschen — das fremde Skript vorlesen/vorspielen übt Improvisation"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "matching",
+            "prompt": "Ordne die Fragen (1–5) den passenden Antworten (A–E) zu. Das sind typische Sätze aus einem Café-Gespräch.\n\nFragen:\n1. Qu'est-ce que vous désirez ?\n2. C'est combien ?\n3. Vous avez une table pour deux ?\n4. L'addition, s'il vous plaît !\n5. Est-ce que vous avez du jus d'orange ?\n\nAntworten:\nA. Oui, bien sûr, par ici !\nB. Oui, voilà l'addition.\nC. Je voudrais un café, s'il vous plaît.\nD. Ça fait trois euros cinquante.\nE. Oui, bien sûr. Voilà !",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Qu'est-ce que vous désirez ?",
+                "C'est combien ?",
+                "Vous avez une table pour deux ?",
+                "L'addition, s'il vous plaît !",
+                "Est-ce que vous avez du jus d'orange ?"
+              ],
+              "right": [
+                "Oui, bien sûr, par ici !",
+                "Oui, voilà l'addition.",
+                "Je voudrais un café, s'il vous plaît.",
+                "Ça fait trois euros cinquante.",
+                "Oui, bien sûr. Voilà !"
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "remember",
+            "dimensions": ["SPR"],
+            "serves": [
+              { "competence_id": "FS2.US.4.SPR.02", "relation": "exercises" }
+            ],
+            "est_minutes": 5,
+            "answer_key": "1–C | 2–D | 3–A | 4–B | 5–E",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Je voudrais (ich hätte gern) ist Konditional — nicht als grammatische Form erklären, sondern als feste Höflichkeitsformel einprägen. NICHT: Je veux (das klingt unhöflich).",
+              "L'addition (die Rechnung) — ein Kognate zu 'Addition' (Rechnen), aber die Bedeutung ist 'Rechnung im Restaurant'. Nicht verwechseln lassen.",
+              "Ça fait... (das macht...) für Preise — feste Wendung, die Schüler:innen auswendig lernen sollen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "ordering",
+            "prompt": "Bringe die Sätze dieses Café-Gesprächs in die richtige Reihenfolge.\n\nA. — Merci, bonne journée !\nB. — Qu'est-ce que vous désirez ?\nC. — Bonjour madame !\nD. — Ça fait deux euros quatre-vingts.\nE. — Je voudrais un chocolat chaud, s'il vous plaît.\nF. — Voilà, bonne journée à vous aussi !",
+            "payload": {
+              "kind": "ordering",
+              "items": [
+                "Merci, bonne journée !",
+                "Qu'est-ce que vous désirez ?",
+                "Bonjour madame !",
+                "Ça fait deux euros quatre-vingts.",
+                "Je voudrais un chocolat chaud, s'il vous plaît.",
+                "Voilà, bonne journée à vous aussi !"
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["SPR"],
+            "serves": [
+              { "competence_id": "FS2.US.4.SPR.02", "relation": "exercises" }
+            ],
+            "est_minutes": 5,
+            "answer_key": "C → B → E → D → A → F",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "quatre-vingts (80) ist für Anfänger schwierig auszusprechen und zu schreiben — hier als Preis in der Reihenfolge-Aufgabe weniger problematisch, aber für spätere Preisnennung merken.",
+              "bonne journée (schönen Tag) vs. au revoir (Wiedersehen) — Franzosen verwenden beides beim Abschied; bonne journée ist herzlicher."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "speaking_task",
+            "prompt": "Partnerübung: Spielt ein Gespräch im Café nach. Eine Person ist Kellner:in, die andere ist Gast. Benutzt die Redemittel-Karte:\n\nGast:\n- Bonjour ! Je voudrais...\n- C'est combien ?\n- Merci !\n\nKellner:in:\n- Bonjour ! Qu'est-ce que vous désirez ?\n- Voilà !\n- Ça fait... euros.\n- De rien / À votre service !\n\nWählt mindestens 3 Dinge aus dieser Getränkekarte:\nUn café — 2,50 € | Un thé — 2,00 € | Un jus d'orange — 3,00 € | Un chocolat chaud — 2,80 € | Une eau minérale — 1,50 €\n\nSpielt das Gespräch (ohne alles abzulesen!) und tauscht dann die Rollen.",
+            "payload": null,
+            "response": {
+              "mode": "none"
+            },
+            "cognitive_level": "apply",
+            "dimensions": ["SPR"],
+            "serves": [
+              { "competence_id": "FS2.US.4.SPR.01", "relation": "exercises" },
+              { "competence_id": "FS2.US.4.SPR.02", "relation": "exercises" }
+            ],
+            "est_minutes": 10,
+            "answer_key": "Musterkonversation: — Bonjour ! Je voudrais un café et un jus d'orange, s'il vous plaît. — Voilà ! — C'est combien ? — Ça fait cinq euros cinquante. — Merci ! — De rien, bonne journée ! (Bewertung nach Verständlichkeit und Mut zum Sprechen, nicht nach Perfektion.)",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen lesen alles vom Blatt ab — nach der Vorbereitung explizit zum freien Sprechen auffordern; Redemittel-Karte als Krücke, nicht als Skript.",
+              "Schüchterne Schüler:innen brauchen eine 'erlaubte' Fehlermöglichkeit — explizit sagen: 'Fehler machen ist erlaubt, Hauptsache ihr versucht es.'",
+              "Wenn Schüler:innen ins Deutsche wechseln: kurz zurücklenken mit 'En français, s'il vous plaît!'"
+            ],
+            "rubric": [
+              {
+                "criterion": "Kommunikationserfolg",
+                "levels": [
+                  "Gespräch verläuft von Begrüßung bis Verabschiedung verständlich",
+                  "Gespräch stockt, wird aber fortgeführt; Partner helfen sich gegenseitig",
+                  "Gespräch bricht ab oder wechselt ins Deutsche"
+                ]
+              },
+              {
+                "criterion": "Aussprache und Intonation",
+                "levels": [
+                  "Mehrheitlich verständlich; bonjour, je voudrais, merci korrekt betont",
+                  "Einige unklare Stellen, aber verständlich",
+                  "Aussprache erschwert das Verstehen deutlich"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "open_response",
+            "prompt": "Schau dir diese Situation an: Du bist in Paris und fragst jemanden nach dem Weg zum Eiffelturm. Die Person antwortet:\n\n— Alors, vous allez tout droit, puis vous tournez à gauche et c'est à cinq minutes à pied.\n\nWas würdest du als nächstes sagen? Schreibe 2 mögliche Reaktionen auf Französisch.\n\nHilfe: Pardon ? | Merci beaucoup ! | Je ne comprends pas. | Pouvez-vous répéter s'il vous plaît ?",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 2
+            },
+            "cognitive_level": "apply",
+            "dimensions": ["SPR"],
+            "serves": [
+              { "competence_id": "FS2.US.4.SPR.01", "relation": "exercises" }
+            ],
+            "est_minutes": 6,
+            "answer_key": "Mögliche Antworten: Merci beaucoup ! / Pardon, pouvez-vous répéter ? / Je ne comprends pas, merci. (Jede höfliche, kontextuell passende Reaktion auf Französisch ist korrekt — nicht nur die Muster-Wörter.)",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen neigen dazu, komplexe Wegbeschreibungen zu 'lösen' statt auf die Kommunikationssituation zu reagieren — der Fokus liegt hier auf der Reaktion, nicht auf dem Verstehen der Wegbeschreibung.",
+              "tout droit (geradeaus), à gauche (links), à droite (rechts) — Richtungsvokabular ist nützlich, muss aber nicht abgefragt werden; Fokus bleibt auf dem kommunikativen Reagieren."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "speaking_task",
+            "prompt": "Monologue : Stell dir vor, du besuchst Paris für ein Wochenende. Erzähle deiner Klasse auf Französisch (2–3 Minuten), was du machen möchtest. Benutze:\n\n- Je voudrais visiter... (ich möchte besuchen)\n- J'aimerais manger... (ich würde gerne essen)\n- Je pense que c'est... (ich denke, es ist...)\n- Mon endroit préféré, c'est... (mein Lieblingsort ist...)\n\nÄußere auch deine Meinung: Pourquoi Paris est intéressant pour toi ?",
+            "payload": null,
+            "response": {
+              "mode": "none"
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": ["SPR"],
+            "serves": [
+              { "competence_id": "FS2.US.4.SPR.03", "relation": "exercises" }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Musterpräsentation: Je voudrais visiter la Tour Eiffel et le Louvre. J'aimerais manger des croissants et du fromage. Mon endroit préféré, c'est la Seine. Je pense que Paris est très beau et romantique. (Individuelle Antworten akzeptieren; Meinung muss erkennbar sein.)",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Je voudrais und J'aimerais sind beide Konditional — als feste Phrasen einprägen, keine grammatische Erklärung nötig auf A1-Niveau.",
+              "Je pense que (ich denke, dass) — das 'que' wird oft weggelassen (Je pense c'est...) — beides akzeptieren, aber die Vollform zeigen.",
+              "Schüler:innen, die Paris nicht kennen, dürfen eine andere Stadt oder einen fiktiven Ort wählen — Flexibilität ist hier wichtig."
+            ],
+            "rubric": [
+              {
+                "criterion": "Meinung ausdrücken",
+                "levels": [
+                  "Mindestens eine klare Meinungsäußerung mit Begründung (je pense que, j'aime parce que...)",
+                  "Meinung geäußert, aber ohne Begründung",
+                  "Nur Fakten aufgelistet, keine Meinung erkennbar"
+                ]
+              },
+              {
+                "criterion": "Sprechfluss",
+                "levels": [
+                  "Spricht weitgehend ohne lange Pausen; nutzt Redemittel als Brücke",
+                  "Einige Pausen, aber kommt voran",
+                  "Bricht häufig ab oder liest nur vor"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "create_produce",
+            "prompt": "Schreibe ein kurzes Skript (6–8 Zeilen) für ein Gespräch zwischen zwei Personen: eine Person möchte ein Geschenk für ihren Freund / ihre Freundin kaufen, die andere Person hilft bei der Auswahl. Das Gespräch findet in einem kleinen Laden in Frankreich statt.\n\nTipps für das Skript:\n- Begrüßung und Verabschiedung nicht vergessen\n- Eine Person fragt nach dem Preis\n- Eine Person äußert eine Meinung (C'est bien ! / C'est trop cher !)\n\nIhr könnt das Skript danach zu zweit vorspielen.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55.0
+            },
+            "cognitive_level": "create",
+            "dimensions": ["SPR", "SCH"],
+            "serves": [
+              { "competence_id": "FS2.US.4.SPR.02", "relation": "exercises" },
+              { "competence_id": "FS2.US.4.SPR.03", "relation": "supports" }
+            ],
+            "est_minutes": 10,
+            "answer_key": "Musterskript: — Bonjour ! Je cherche un cadeau pour mon ami. — Qu'est-ce qu'il aime ? — Il aime la musique. — Alors, peut-être ce livre sur la musique ? C'est douze euros. — C'est bien ! Je le prends. Merci ! — De rien, bonne journée ! (Bewertung: Konversationsstruktur, Meinungsausdruck, Höflichkeit.)",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Je le prends (ich nehme es) ist ein Pronominalsatz — Schüler:innen werden eher Je prends ça sagen, was auch akzeptiert wird; le prends ist eine Bonusstruktur.",
+              "trop cher (zu teuer) — trop als Verstärker (zu...) ist wichtig, darf nicht mit très (sehr) verwechselt werden.",
+              "Beim Vorspielen: Schüler:innen ermutigen, das Skript nur als Stütze zu benutzen, nicht komplett vorzulesen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Gesprächsstruktur",
+                "levels": [
+                  "Begrüßung, Kern-Gespräch (Suche, Preis, Meinung), Verabschiedung vorhanden",
+                  "Kern-Gespräch vorhanden, Rahmung (Begrüßung/Abschied) fehlt teils",
+                  "Nur einzelne Sätze, keine Gesprächslogik"
+                ]
+              },
+              {
+                "criterion": "Meinungsausdruck",
+                "levels": [
+                  "Klare Bewertung (C'est bien ! / C'est trop cher !) oder ähnliches",
+                  "Bewertung angedeutet, aber sprachlich unklar",
+                  "Keine Meinung im Dialog"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

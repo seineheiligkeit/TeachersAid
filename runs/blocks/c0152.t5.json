@@ -1,0 +1,72 @@
+{
+  "id": "c0152.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "multiple_choice",
+    "prompt": "Welche der folgenden Aussagen über Latein als Wissenschaftssprache sind korrekt? Wähle alle zutreffenden Antworten aus.",
+    "payload": {
+      "kind": "multiple_choice",
+      "options": [
+        "Carl von Linné führte die lateinische Binomialnomenklatur für Tier- und Pflanzenarten ein, die bis heute verwendet wird.",
+        "Isaac Newton schrieb seine Principia Mathematica auf Englisch, weil er ein breiteres Publikum erreichen wollte.",
+        "Medizinische Fachbegriffe wie ,Appendix', ,Femur' oder ,Mandibula' stammen direkt aus dem Lateinischen.",
+        "Latein war im Mittelalter in ganz Europa die Bildungssprache, unabhängig von der jeweiligen Volkssprache.",
+        "Der Begriff ,Algebra' ist lateinischen Ursprungs und geht auf die Römer zurück.",
+        "Juristische Begriffe wie ,in dubio pro reo' oder ,habeas corpus' sind noch heute in Rechtssystemen weltweit in Gebrauch."
+      ],
+      "select": "many"
+    },
+    "response": {
+      "mode": "none"
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "INT"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "LAT.OS.7.FAC.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Korrekt: 1 (Linné, binomiale Nomenklatur), 3 (Appendix/Femur/Mandibula aus Latein), 4 (Latein als Bildungssprache im Mittelalter), 6 (in dubio pro reo, habeas corpus heute noch in Gebrauch). Falsch: 2 (Newton schrieb Principia auf Latein, nicht Englisch), 5 (Algebra stammt vom arabischen ,al-jabr', nicht vom Lateinischen — obwohl es ins Lateinische übernommen und weitervermittelt wurde).",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Aussage 5 ist eine häufige Fehlvorstellung: Algebra klingt nicht lateinisch und ist es auch nicht — der Begriff geht auf Muhammad ibn Musa al-Chwarizmi zurück und kam über arabisch-lateinische Übersetzungen ins Europäische. Diese arabisch-lateinische Transmissionsgeschichte ist ein interessanter Unterrichtspunkt.",
+      "Aussage 2 ist gezielt falsch formuliert, um die bekannte Fehlvorstellung anzusprechen, dass Newton auf Englisch schrieb — tatsächlich schrieb er die Principia bewusst auf Latein, um ein gesamteuropäisches Publikum zu erreichen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "multiple_choice",
+  "subject": "Latein",
+  "klasse": 7,
+  "kompetenzbereich": "Fachsprachen und Fachtexte",
+  "competences": [
+    "LAT.OS.7.FAC.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "INT"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0152",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:26+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

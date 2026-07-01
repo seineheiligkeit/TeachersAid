@@ -1,0 +1,66 @@
+{
+  "id": "c0003.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "ordering",
+    "prompt": "Ein Schüler gibt Universalindikator-Lösung nacheinander in fünf verschiedene Alltagsflüssigkeiten. Er notiert folgende Farben: gelb, rot, grün, blau, orange. Ordne diese fünf Beobachtungen vom niedrigsten zum höchsten pH-Wert (d. h. von der stärksten Säure zur stärksten Base). Nutze nur die Farbanzeige des Universalindikators: rot ≈ pH 1–3, orange ≈ pH 4–5, gelb ≈ pH 6, grün ≈ pH 7, blau ≈ pH 8–11.",
+    "payload": {
+      "kind": "ordering",
+      "items": [
+        "blau",
+        "grün",
+        "gelb",
+        "orange",
+        "rot"
+      ]
+    },
+    "response": {
+      "mode": "none"
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.US.x.ERK.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Richtige Reihenfolge (niedrigster → höchster pH): rot → orange → gelb → grün → blau. Begründung: rot entspricht dem niedrigsten pH (stark sauer), blau dem höchsten (basisch).",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Schüler:innen verwechseln häufig, dass 'rot = sauer' und 'blau = basisch' gilt — nicht umgekehrt. Dies explizit klären.",
+      "Der Universalindikator zeigt nur einen ungefähren pH-Bereich; er ist kein Messgerät. Nicht als exakte Angabe werten."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "ordering",
+  "subject": "Chemie",
+  "klasse": 4,
+  "kompetenzbereich": "Erkenntnisse gewinnen und interpretieren (E)",
+  "competences": [
+    "CHE.US.x.ERK.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0003",
+  "source": "ai",
+  "created_at": "2026-06-25T11:35:34+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

@@ -1,0 +1,64 @@
+{
+  "id": "c0064.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "text_analysis",
+    "prompt": "Lies den folgenden lateinischen Text. Unterstreiche alle passiven Verbformen und alle Komparativ- oder Superlativformen. Schreibe sie mit Analyse (Passiv: Person/Numerus/Tempus; Steigerung: Grad + Grundform) in eine Tabelle.\n\n---\nRoma, urbs maxima Italiae, ab omnibus laudatur. Muri altissimi a civibus aedificantur. Via Appia, longissima viarum, a Romanis munita est. Caesar, fortissimus imperatorum, a militibus suis amatur. Hostes, tamen, a Romanis fortiores non timent.\n---\n\n(munita est = wurde befestigt / ist befestigt worden; hostes = die Feinde; tamen = jedoch)",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Form im Text",
+        "Art (Passiv / Steigerung)",
+        "Analyse"
+      ],
+      "rows": 8
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "SPR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "LAT.US.4.SPR.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "laudatur: Passiv, 3. Sg. Präs. Pass. (wird gelobt) | aedificantur: Passiv, 3. Pl. Präs. Pass. (werden gebaut) | munita est: Passiv, 3. Sg. Perf. Pass. (wurde befestigt) | amatur: Passiv, 3. Sg. Präs. Pass. (wird geliebt) | maxima: Superlativ von magnus (die größte) | altissimi: Superlativ von altus (die höchsten) | longissima: Superlativ von longus (die längste) | fortissimus: Superlativ von fortis (der tapferste) | fortiores: Komparativ von fortis (tapferer — als die Römer tapfer sind)",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "munita est: Das Perfekt Passiv (PPP + esse) ist für Klasse 4 einzuführen — kurz erklären, falls noch nicht bekannt.",
+      "fortiores: Komparativ (nicht Superlativ!) — 'tapferer' im Sinne 'die Feinde sind tapferer als die Römer' — Vergleichssatz ohne 'quam', weil Ablativus comparationis möglich ist ('Romanis' im Ablativ).",
+      "Der Text enthält bewusst beide Formen (Passiv + Komparation) im selben Kontext — das übt die simultane Identifikation mehrerer Strukturen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "text_analysis",
+  "subject": "Latein",
+  "klasse": 4,
+  "kompetenzbereich": "Sprach- und textbezogene Kompetenzen",
+  "competences": [
+    "LAT.US.4.SPR.03"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "SPR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0064",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

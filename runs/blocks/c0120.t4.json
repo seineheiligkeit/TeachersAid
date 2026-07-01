@@ -1,0 +1,131 @@
+{
+  "id": "c0120.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "In einer Zeitung steht: 'In Europa lebt fast jede zweite Person in einer Stadt.' Pruefe diese Aussage anhand der Daten fuer europaeische Laender im Diagramm (Oesterreich, Deutschland, Schweiz, Italien). Ist die Aussage korrekt, irrefuehrend oder falsch? Begruende.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "BEG",
+      "DAR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.3.DAT.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Die europaeischen Laender im Diagramm: Oesterreich 69,5%, Deutschland 82,0%, Schweiz 85,5%, Italien 69,6%. Alle vier Werte liegen weit ueber 50%. Die Aussage 'fast jede zweite Person' (also etwa 50%) ist stark untertrieben fuer diese Laender — es leben eher 70–85% in Staedten. Die Aussage ist irrefuehrend: Sie klingt nach einer Mehrheit knapp ueber 50%, trifft aber auf diese Laender nicht zu. Moegliche Erklaerung: Die Aussage bezieht sich moeglicherweise auf einen anderen Europabegriff (inkl. Osteuropa, wo Urbanisierung niedriger ist) oder ist schlicht falsch formuliert.",
+    "acceptable_reasoning": "Jede Antwort, die die vier Werte korrekt einordnet und 'fast jede zweite' (=ca. 50%) mit den echten Werten (ca. 70-85%) vergleicht, ist vollwertig.",
+    "rubric": [
+      {
+        "criterion": "Konkrete Werte zitiert",
+        "levels": [
+          "Keine Zahlen",
+          "Min. 2 Werte zitiert",
+          "Alle 4 europaeischen Werte einbezogen"
+        ]
+      },
+      {
+        "criterion": "Einschaetzung korrekt (irrefuehrend/falsch)",
+        "levels": [
+          "Aussage unkritisch akzeptiert",
+          "Richtig eingeschaetzt mit Begruendung"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schuelerinnen und Schueler tendieren dazu, Zeitungsaussagen zu akzeptieren ohne Pruefung — dieser Schritt der Faktenuntersuchung ist explizit zu foerdern.",
+      "Hinweis: Das Diagramm enthaelt nur 4 europaeische Laender; die Aussage bezieht sich moeglicherweise auf ganz Europa."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Mathematik",
+  "klasse": 3,
+  "kompetenzbereich": "4: Daten und Zufall",
+  "competences": [
+    "MAT.US.3.DAT.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "BEG",
+    "DAR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "title": "Anteil der Stadtbevoelkerung im Laendervergleich (2024)",
+        "xlabel": "Land",
+        "ylabel": "Anteil Stadtbevoelkerung (%)",
+        "log": false,
+        "categories": [
+          "Österreich",
+          "Deutschland",
+          "Schweiz",
+          "Italien",
+          "USA",
+          "China",
+          "Indien",
+          "Nigeria"
+        ],
+        "values": [
+          69.5,
+          82.0,
+          85.5,
+          69.6,
+          80.1,
+          65.9,
+          35.4,
+          63.0
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "worldbank_urbanisierung",
+        "series": "vergleich",
+        "note": null,
+        "title": "Verstädterung im Ländervergleich (Anteil Stadtbevölkerung)",
+        "url": "https://data.worldbank.org/indicator/SP.URB.TOTL.IN.ZS",
+        "attribution": "Datenquelle: World Bank – data.worldbank.org (SP.URB.TOTL.IN.ZS, CC BY 4.0)",
+        "stand": "2024"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0120",
+  "source": "ai",
+  "created_at": "2026-06-27T15:21:15+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

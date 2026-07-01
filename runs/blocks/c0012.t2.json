@@ -1,0 +1,60 @@
+{
+  "id": "c0012.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "text_analysis",
+    "prompt": "Lies die folgenden Sätze. Entscheide bei jedem: Wird die Aussage **ernst gemeint** oder **ironisch** verwendet? Schreibe auf, woran du es erkennst.\n\na) *„Das war ja eine atemberaubende Unterrichtsstunde“* – gesagt von einer Schülerin, nachdem sie 45 Minuten lang Arbeitsblätter ausgefüllt hat.\nb) *„Natürlich habe ich Zeit, heute noch zehn Seiten zu lesen“* – getippt um 23 Uhr.\nc) *„Was für ein Wetter!“* – gesagt von jemandem, der mit einem Regenschirm ins Zimmer kommt.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "ZUH",
+      "SPR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DEU.US.4.ZUH.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Alle drei sind ironisch gemeint. a) 'atemberaubend' steht in Kontrast zur beschriebenen Monotonie (Arbeitsblätter). b) 'Natürlich' + Uhrzeit ergeben eine unmögliche Situation. c) Die Situation (Regen, nasser Schirm) widerspricht einer positiven Bewertung des Wetters. In allen Fällen: Kontextwissen + Tonfall/Situation machen die Ironie erkennbar.",
+    "acceptable_reasoning": "Schüler:innen, die b) als ernst werten und begründen (Sarkasmus auf Kosten eigener Erschöpfung), liegen im Grenzbereich – Diskussionswürdig.",
+    "rubric": [],
+    "watch_outs": [
+      "Ironie im geschriebenen Text ist schwerer zu erkennen als im gesprochenen (kein Tonfall) – darauf explizit hinweisen.",
+      "Manche Schüler:innen erkennen Ironie intuitiv, können aber nicht erklären, *woran* – die Erklärung ist hier der Kern der Aufgabe."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "text_analysis",
+  "subject": "Deutsch",
+  "klasse": 4,
+  "kompetenzbereich": "Zuhören und Sprechen",
+  "competences": [
+    "DEU.US.4.ZUH.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "ZUH",
+    "SPR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0012",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

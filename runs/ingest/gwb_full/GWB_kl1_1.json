@@ -1,0 +1,253 @@
+{
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 1,
+  "kompetenzbereich": "Leben und Wirtschaften in der Welt",
+  "title": "Arm und Reich — eine Frage des Maßstabs?",
+  "kernfrage": "Wie lässt sich Armut und Reichtum messen — und was verändert sich, wenn du von der Welt auf deine eigene Region schaust?",
+  "body": {
+    "intro": [],
+    "data_figures": [
+      {
+        "id": "abb1",
+        "intent": "comparison",
+        "title": "Anteil extrem armer Menschen an der Bevölkerung (unter 2,15 USD/Tag, 2022)",
+        "xlabel": "Region",
+        "ylabel": "Anteil in %",
+        "categories": ["Subsahara-Afrika", "Südasien", "Ostasien/Pazifik", "Lateinamerika", "Europa/Zentralasien"],
+        "values": [35.5, 5.0, 1.2, 4.5, 0.7]
+      },
+      {
+        "id": "abb2",
+        "intent": "trend",
+        "title": "Anteil extrem armer Menschen weltweit, 1990–2019",
+        "xlabel": "Jahr",
+        "ylabel": "Anteil in %",
+        "categories": ["1990", "2000", "2010", "2015", "2019"],
+        "values": [36.2, 27.8, 15.7, 10.1, 8.4]
+      }
+    ],
+    "assets": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Was bedeutet Armut? Was bedeutet Reichtum?",
+        "throughline": "Schüler:innen erarbeiten zunächst, dass Armut und Reichtum keine eindeutigen Begriffe sind, sondern von Kriterien und Maßstäben abhängen. Die Einstiegsaufgaben fördern konzeptuelles Denken vor der Konfrontation mit Daten.",
+        "talking_points": [
+          "Einstieg: Welche Dinge braucht ein Mensch, um 'gut zu leben'? Sammlung an der Tafel, dann Unterscheidung materielle vs. immaterielle Bedürfnisse.",
+          "Armutsgrenzen sind Konventionen, keine Naturgesetze — die 2,15-USD-Grenze ist international, aber innerhalb Österreichs gilt ein völlig anderer Maßstab (60 % des Medianeinkommens).",
+          "Wichtig: 'arm' und 'reich' sind relationale Begriffe — arm im globalen Süden bedeutet etwas anderes als arm in Wien. Das ist keine Wertung, sondern Grundlage für das Verständnis von Maßstabsebenen."
+        ],
+        "extensions": [
+          "Recherche: Wie hoch ist die offizielle Armutsgefährdungsschwelle in Österreich aktuell? (Statistik Austria) — Vergleich mit der globalen Grenze.",
+          "Diskussion: Kann man die globale Armutsgrenze auf Österreich anwenden? Was fehlt dabei?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "multiple_choice",
+            "prompt": "Welche der folgenden Kriterien können zur Messung von Armut verwendet werden? Wähle alle zutreffenden Antworten aus.",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "Tageseinkommen unter einem bestimmten Geldbetrag",
+                "Zugang zu sauberem Trinkwasser",
+                "Anzahl der Geschwister",
+                "Zugang zu Bildung und Gesundheitsversorgung",
+                "Wohnverhältnisse (z. B. Fläche pro Person)",
+                "Hautfarbe der Person"
+              ],
+              "select": "many"
+            },
+            "response": {"mode": "choices", "options": ["Tageseinkommen unter einem bestimmten Geldbetrag", "Zugang zu sauberem Trinkwasser", "Anzahl der Geschwister", "Zugang zu Bildung und Gesundheitsversorgung", "Wohnverhältnisse (z. B. Fläche pro Person)", "Hautfarbe der Person"], "select": "many"},
+            "cognitive_level": "remember",
+            "dimensions": ["OK"],
+            "serves": [{"competence_id": "GWB.US.1.LEB2.02", "relation": "exercises"}],
+            "est_minutes": 5,
+            "asset_refs": [],
+            "answer_key": "Richtig: Tageseinkommen (Einkommensarmut), Trinkwasser, Bildung/Gesundheit, Wohnverhältnisse. Falsch: Anzahl der Geschwister (kein Armutsindikator per se), Hautfarbe (biologisch irrelevant, diskriminierend).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Manche Schüler:innen verwechseln Ursachen von Armut (z. B. Diskriminierung) mit Messgrößen — hier klar trennen: Ein Kriterium muss messbar und mit dem Lebensstandard verbunden sein.",
+              "Die Option 'Anzahl der Geschwister' dient als Distraktor; große Familien sind kein direktes Armutsmaß, auch wenn ein Zusammenhang existieren kann."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "data_interpretation",
+            "prompt": "Schau dir Abbildung 1 (Regionenvergleich) und Abbildung 2 (Zeitverlauf) an.\na) In welcher Region lebt der größte Anteil extrem armer Menschen?\nb) Wie hat sich der weltweite Anteil extrem armer Menschen zwischen 1990 und 2019 verändert? Beschreibe den Trend in einem vollständigen Satz.\nc) Was könnte diese positive Entwicklung erklären? Nenne eine mögliche Ursache.",
+            "payload": null,
+            "response": {"mode": "lines", "n": 5},
+            "cognitive_level": "understand",
+            "dimensions": ["OK", "UK"],
+            "serves": [{"competence_id": "GWB.US.1.LEB2.02", "relation": "exercises"}],
+            "est_minutes": 8,
+            "asset_refs": ["abb1", "abb2"],
+            "answer_key": "a) Subsahara-Afrika (ca. 35,5 %). b) Der Anteil ist deutlich gesunken, von etwa 36 % (1990) auf rund 8 % (2019). c) Mögliche Ursachen: Wirtschaftswachstum (v. a. in China und Indien), bessere Gesundheitsversorgung, Bildungsexpansion, internationale Entwicklungszusammenarbeit.",
+            "acceptable_reasoning": "Jede plausible Erklärung, die an wirtschaftliche, politische oder soziale Faktoren anknüpft, ist akzeptabel. Keine Bewertung der Qualität des Wachstums erwartet.",
+            "watch_outs": [
+              "Häufiger Fehler: Schüler:innen lesen nur absolute Werte statt Anteile ab — immer auf die Achsenbeschriftung achten.",
+              "Die Zeitreihenfigur zeigt einen Trend → korrekt als Liniendiagramm dargestellt (nicht als Balken).",
+              "Vorsicht: Der Rückgang bedeutet nicht, dass Armut 'gelöst' ist — 2019 waren noch ~650 Mio. Menschen betroffen."
+            ],
+            "rubric": [
+              {"criterion": "Trendaussage", "levels": ["Keine oder falsche Aussage zum Verlauf", "Richtung korrekt, aber unvollständig oder ohne Zahlen", "Vollständiger Satz mit Richtung und (ungefähren) Zahlenwerten"]},
+              {"criterion": "Ursache", "levels": ["Keine plausible Ursache genannt", "Eine vage Ursache genannt", "Eine konkrete und sinnvolle Ursache mit kurzem Begründungsansatz"]}
+            ]
+          },
+          {
+            "role": "info",
+            "id": "i1",
+            "kind": "prose",
+            "prompt": "**Absolute und relative Armut**\nDie Weltbank definiert *extreme (absolute) Armut* als ein Tageseinkommen von weniger als 2,15 US-Dollar (kaufkraftbereinigt). Diese Grenze gilt weltweit als Mindestmaß zum Überleben.\n*Relative Armut* misst Armut im Vergleich zum Lebensstandard eines Landes: In Österreich gilt als armutsgefährdet, wer weniger als 60 % des mittleren Einkommens (Median) zur Verfügung hat. Dasselbe Einkommen, das in Österreich als 'arm' gilt, wäre in vielen Ländern ein sehr hoher Lebensstandard.",
+            "payload": null,
+            "response": {"mode": "none"},
+            "cognitive_level": "remember",
+            "dimensions": ["OK"],
+            "serves": [{"competence_id": "GWB.US.1.LEB2.02", "relation": "introduces"}],
+            "est_minutes": 3,
+            "asset_refs": [],
+            "answer_key": "",
+            "acceptable_reasoning": null,
+            "watch_outs": [],
+            "rubric": []
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Maßstabsebenen: Welt — Region — Gemeinde",
+        "throughline": "Der zweite Teil verankert die abstrakten Begriffe in der eigenen Lebenswelt. Schüler:innen wechseln aktiv zwischen globaler, nationaler und lokaler Maßstabsebene — ein zentrales geographisches Denkmuster (Scaling). Der Lokalbezug ist bewusst offen gelassen, damit Schüler:innen eigene Daten erheben.",
+        "talking_points": [
+          "Der Maßstabswechsel ist ein Kernprinzip der Geographie: Was auf globaler Ebene stimmt, muss auf lokaler Ebene nicht dasselbe bedeuten.",
+          "Reichtum ist relational und ortsgebunden — ein Haushalt mit österreichischem Medianeinkommen wäre in Subsahara-Afrika ein sehr reicher Haushalt.",
+          "Für die lokale Recherche (t4, t5): Statistik-Austria-Website oder Gemeindeseite; Lehrkraft kann vorab relevante Kennzahlen für die Schulgemeinde bereitstellen."
+        ],
+        "extensions": [
+          "Karte: Schüler:innen markieren auf einer stummen Weltkarte drei Länder mit hoher und drei mit niedriger extremer Armut — Lokalisierung mit dem Atlas.",
+          "Erweiterung: Was ist der Human Development Index (HDI)? Warum misst er mehr als nur das Einkommen?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "ordering",
+            "prompt": "Ordne die folgenden Maßstabsebenen von der kleinsten (lokalsten) zur größten (globalsten) Ebene:",
+            "payload": {
+              "kind": "ordering",
+              "items": ["Kontinent", "Gemeinde", "Bezirk", "Bundesland", "Staat", "Welt"]
+            },
+            "response": {"mode": "lines", "n": 2},
+            "cognitive_level": "remember",
+            "dimensions": ["OK"],
+            "serves": [{"competence_id": "GWB.US.1.LEB2.02", "relation": "exercises"}],
+            "est_minutes": 4,
+            "asset_refs": [],
+            "answer_key": "Gemeinde → Bezirk → Bundesland → Staat → Kontinent → Welt",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Einige Schüler:innen kennen 'Bezirk' als Verwaltungseinheit möglicherweise noch nicht gut — kurze Erklärung ist sinnvoll.",
+              "In manchen Bundesländern (z. B. Wien) ist Bezirk eine Stadtbezirk-Einheit, kein Bezirk im Sinne der politischen Bezirke — das kann die Reihenfolge verschleiern; hier flexibel bleiben."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "table_fill",
+            "prompt": "Erkunde deine eigene Gemeinde oder deinen Bezirk! Fülle die Tabelle mithilfe des Schulatlas, der Website deiner Gemeinde oder der Statistik-Austria-Seite (statistik.at) aus. Wenn du einen Wert nicht findest, trage '?' ein.\n\n| Merkmal | Deine Gemeinde/dein Bezirk | Österreich (Vergleich) |\n|---|---|---|\n| Einwohnerzahl | | ca. 9,1 Mio. |\n| Bundesland | | — |\n| Größte Wirtschaftsbranche (falls bekannt) | | Dienstleistungen |\n| Armutsgefährdungsquote (falls regional verfügbar) | | ca. 14–15 % |",
+            "payload": null,
+            "response": {"mode": "table", "columns": ["Merkmal", "Deine Gemeinde/dein Bezirk", "Österreich (Vergleich)"], "rows": 4},
+            "cognitive_level": "understand",
+            "dimensions": ["OK", "HK"],
+            "serves": [{"competence_id": "GWB.US.1.LEB2.02", "relation": "exercises"}],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Schüler:innen-abhängige Antworten; Lehrkraft prüft Plausibilität und korrekte Quelle. Wichtig: '?' ist eine legitime Antwort, wenn regionale Armutsdaten nicht frei zugänglich sind.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Regionale Armutsdaten sind nicht für jede Gemeinde einzeln verfügbar — nur auf Landesebene. Schüler:innen sollen das '?' als Erkenntnis werten: Nicht alle Daten sind öffentlich zugänglich.",
+              "Quellenangabe einfordern — das Arbeitsblatt verankert wissenschaftliche Praxis.",
+              "Keine konkreten Ortsfakten vorgeben — nur das Gerüst."
+            ],
+            "rubric": [
+              {"criterion": "Vollständigkeit und Quellenangabe", "levels": ["Weniger als 2 Felder ausgefüllt, keine Quelle", "2–3 Felder plausibel ausgefüllt oder Quelle angegeben", "Alle recherchierbaren Felder ausgefüllt und Quelle angegeben"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "open_response",
+            "prompt": "Vergleiche die Lebenssituation von Menschen in einem reichen Zentrum (z. B. Wien, München) mit der in einer ländlichen Peripherie in Österreich oder in einem sehr armen Land:\na) Nenne je ein Beispiel für einen Unterschied im Bereich Wohnen, Arbeit und Mobilität.\nb) Was denkst du: Welche dieser Unterschiede existieren auch zwischen deiner Region und einer Großstadt in Österreich?",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 40},
+            "cognitive_level": "analyze",
+            "dimensions": ["UK", "OK"],
+            "serves": [{"competence_id": "GWB.US.1.LEB2.01", "relation": "exercises"}],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "a) Wohnen: Zentrum = Mietwohnungen, hohe Preise, klein; Peripherie = Eigenheim, niedrigere Preise, aber weniger Infrastruktur. Arbeit: Zentrum = viele Dienstleistungsjobs; Peripherie = Landwirtschaft, Industrie, Pendelarbeit. Mobilität: Zentrum = öffentlicher Nahverkehr; Peripherie = Pkw-Abhängigkeit. b) Offen — Schüler:innen sollen lokale Bezüge herstellen.",
+            "acceptable_reasoning": "Jeder plausible Vergleich, der auf beobachtbare Unterschiede eingeht, ist akzeptabel. Kein globaler Vergleich zwingend.",
+            "watch_outs": [
+              "Schüler:innen aus städtischen Schulen vs. Landschulen haben sehr verschiedene Ausgangsperspektiven — das ist ein pädagogischer Mehrwert, nicht ein Problem.",
+              "Zentrum/Peripherie ist ein geographisches Konzept, keine Wertung — explizit betonen, dass 'Peripherie' nicht 'schlechter' bedeutet."
+            ],
+            "rubric": [
+              {"criterion": "Vergleich Wohnen/Arbeit/Mobilität", "levels": ["Kein strukturierter Vergleich", "Ein Bereich mit Beispiel", "Zwei oder drei Bereiche mit konkreten Beispielen"]},
+              {"criterion": "Lokaler Bezug", "levels": ["Kein Lokalbezug", "Lokalbezug vage angedeutet", "Konkreter Lokalbezug mit Begründung"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "position_argument",
+            "prompt": "Lies folgende Aussage und nimm Stellung:\n\"Ein Mensch in Österreich, der unter der nationalen Armutsgrenze lebt, ist eigentlich nicht arm — verglichen mit Menschen in Subsahara-Afrika hat er ein sehr hohes Einkommen.\"\n\nStimmst du dieser Aussage zu oder nicht? Begründe deine Meinung mit mindestens zwei Argumenten.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 45},
+            "cognitive_level": "evaluate",
+            "dimensions": ["UK"],
+            "serves": [{"competence_id": "GWB.US.1.LEB2.02", "relation": "exercises"}],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Eine einseitige 'Ja'-Antwort greift zu kurz. Starke Antworten erkennen: (1) Relative Armut ist im nationalen Kontext real — Menschen können in Österreich von sozialer Teilhabe ausgeschlossen sein, auch wenn sie global gesehen 'reich' wären. (2) Armut ist nicht nur absolutes Überleben, sondern gesellschaftliche Teilhabe (Bildung, Gesundheit, sozialer Status). (3) Der Vergleich hinkt: Er nutzt unterschiedliche Maßstäbe. Eine differenzierte Antwort akzeptiert beide Seiten.",
+            "acceptable_reasoning": "Sowohl Pro- als auch Contra-Argumente sind akzeptabel, wenn sie mit dem Unterschied absolute/relative Armut oder mit gesellschaftlicher Teilhabe begründet werden.",
+            "watch_outs": [
+              "Vorsicht vor unreflektiertem Relativismus: 'Armut in Österreich ist kein echtes Problem' ist eine problematische Vereinfachung, die zu korrigieren ist.",
+              "Die Aufgabe zielt nicht auf eine 'richtige' Meinung, sondern auf die Qualität der Begründung und das Verständnis beider Maßstäbe."
+            ],
+            "rubric": [
+              {"criterion": "Verwendung von absolutem vs. relativem Armutsbegriff", "levels": ["Kein Bezug auf diese Unterscheidung", "Ein Begriff erwähnt, aber nicht erklärt", "Beide Begriffe korrekt angewandt und auf die Aussage bezogen"]},
+              {"criterion": "Qualität der Argumentation", "levels": ["Meinung ohne Begründung", "Ein Argument, vage", "Zwei oder mehr stichhaltige Argumente, klar formuliert"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "create_produce",
+            "prompt": "Erstelle eine kurze 'Armutsskala' für deine Region:\n1. Notiere drei Merkmale, die in deiner Region auf relative Armut hinweisen könnten (z. B. Zugang zu bestimmten Einrichtungen, Pendelwege, Durchschnittseinkommen — recherchiere wenn möglich einen Wert).\n2. Vergleiche diese Merkmale mit der globalen Perspektive: Wie würden dieselben Merkmale auf globaler Ebene bewertet?\n3. Was schließt du daraus: Warum ist es wichtig, den Maßstab bei Armutsmessungen immer anzugeben?",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 55},
+            "cognitive_level": "create",
+            "dimensions": ["UK", "HK"],
+            "serves": [{"competence_id": "GWB.US.1.LEB2.02", "relation": "exercises"}],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "Offene Schöpfungsaufgabe; Lehrkraft bewertet nach: Plausibilität der Merkmale, Qualität des Maßstabswechsels, Schlussfolgerung. Zentrale Einsicht: Armut ohne Maßstabsangabe ist kein aussagekräftiger Begriff.",
+            "acceptable_reasoning": "Merkmale müssen nicht perfekt sein — wichtig ist, dass Schüler:innen explizit den Maßstab benennen und wechseln.",
+            "watch_outs": [
+              "Schüler:innen könnten 'Armutsskala' wörtlich als Zahlenskala missverstehen — explizit sagen, dass eine Liste von Merkmalen gemeint ist.",
+              "Recherchierte Werte sollen mit Quelle angegeben werden; '?' ist erlaubt, wenn nichts gefunden wird."
+            ],
+            "rubric": [
+              {"criterion": "Merkmale und lokaler Bezug", "levels": ["Keine plausiblen Merkmale", "1–2 Merkmale ohne Lokalbezug", "3 Merkmale mit erkennbarem Lokalbezug und Quellenversuch"]},
+              {"criterion": "Maßstabswechsel", "levels": ["Kein Wechsel", "Wechsel beschrieben, aber unerklärt", "Expliziter und begründeter Maßstabswechsel"]},
+              {"criterion": "Schlussfolgerung", "levels": ["Keine oder triviale Schlussfolgerung", "Schlussfolgerung erkennbar", "Klare, eigenständige Schlussfolgerung zur Bedeutung des Maßstabs"]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

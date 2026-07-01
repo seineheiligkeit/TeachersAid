@@ -1,0 +1,993 @@
+[
+  {
+    "id": "fig-phy-1",
+    "subject": "Physik",
+    "worksheet": "c0088 — Treibhauseffekt, Energiehaushalt und Klimaschutz",
+    "where": "info1 / t1 — 'Kurzwellige Sonnenstrahlung … Infrarotstrahlung … Treibhausgase absorbieren … strahlen zurück'",
+    "figure": "Schematischer Querschnitt Erde–Atmosphäre mit beschrifteten Strahlungspfeilen: kurzwellig (Sonne→Boden), langwellig (Boden→Atmosphäre), Rückstrahlung (Atmosphäre→Boden), reflektierter Anteil ins All",
+    "why": "Die Reihenfolge-Aufgabe t1 ordnet fünf Schritte; ohne ein Bild bleibt der Mechanismus abstrakt. Die Abbildung verankert den Unterschied kurzwellig/langwellig und macht die Pfeile sichtbar, auf die t1 und t2 direkt Bezug nehmen.",
+    "route": "illustration",
+    "recipe_or_reason": "Räumliche Geometrie (Erde, Atmosphärenhülle, Pfeile mit unterschiedlicher Wellenlänge) und narrative Richtungslogik — kein matplotlib-Recipe bildet das ab; die Pfeile sind inhaltlich, nicht datengetrieben.",
+    "labels": [
+      "Sonnenstrahlung (kurzwellig)",
+      "Reflexion",
+      "Absorption (Boden)",
+      "Infrarotstrahlung (langwellig)",
+      "Treibhausgase (CO₂, H₂O, CH₄)",
+      "Rückstrahlung",
+      "Temperaturerhöhung"
+    ],
+    "content_risk": "Pfeildichte und -breite können falsche Mengenverhältnisse suggerieren (z. B. zu viel Reflexion). Vetter muss prüfen: Rückstrahlung in beide Richtungen (nicht nur nach unten); Atmosphärenschicht nicht zu dick/dünn; Ozonschicht nicht mit Treibhausgasschicht verwechselt darstellen.",
+    "caption": "Natürlicher Treibhauseffekt: Sonnenlicht (kurzwellig) erreicht die Erdoberfläche; diese gibt Wärmestrahlung (langwellig) ab, die Treibhausgase teilweise zurückwerfen.",
+    "bucket": "nawi"
+  },
+  {
+    "id": "fig-phy-2",
+    "subject": "Physik",
+    "worksheet": "c0086 — Spannung, Strom und Schutz im Stromkreis",
+    "where": "s2/info1 + t3 — 'Der menschliche Körper leitet elektrischen Strom … Widerstand … 230 V / 1000 Ω = 230 mA'",
+    "figure": "Vereinfachter Stromkreis-Schaltplan: Netz (230 V, Phase + Nullleiter), Mensch als Widerstand (R_Körper), Erdanschluss — zeigt den geschlossenen Stromkreis durch den Körper beim Berühren einer Leitung",
+    "why": "t3 verlangt I = U/R mit Körperwiderstand 1000 Ω; Schüler:innen sollen erkennen, dass der Körper den Stromkreis schließt. Ohne Schaltplan bleibt unklar, wo der Strom ein- und austritt — die Rechnung hängt in der Luft.",
+    "route": "illustration",
+    "recipe_or_reason": "Schaltplan-Notation mit Körpersymbol, Widerstandssymbol und Spannungsquelle — nicht als matplotlib-Grafik darstellbar; erfordert normgerechte Schaltzeichen.",
+    "labels": [
+      "Phase (L)",
+      "Nullleiter (N)",
+      "R_Körper (trocken ~5000 Ω, nass ~1000 Ω)",
+      "Erde",
+      "I (gefährlich ab 30 mA)"
+    ],
+    "content_risk": "Schaltplan muss physikalisch korrekt sein: Stromfluss Phase→Körper→Erde (nicht N→Körper). Vetter prüft: Pfeilrichtung des konventionellen Stroms; Schutzleiter (PE) separat von N darstellen, um FI-Schalter-Wirkung nicht vorwegzunehmen.",
+    "caption": "Wie schließt sich der Stromkreis durch den Körper? Bei Berühren der Phase fließt Strom von Phase durch den Körper zur Erde.",
+    "bucket": "nawi"
+  },
+  {
+    "id": "fig-phy-3",
+    "subject": "Physik",
+    "worksheet": "c0086 — Spannung, Strom und Schutz im Stromkreis",
+    "where": "s3/t5 + teacher_overview — 'Elektronengasmodell: frei bewegliche Elektronen im Metallgitter … Stöße → Erwärmung'",
+    "figure": "Schematische Darstellung des Elektronengasmodells: Metallgitter (positiv geladene Ionenrümpfe als Kreise angeordnet), freie Elektronen als Punkte zwischen den Gitterplätzen, Pfeil für Driftbewegung der Elektronen in Feldrichtung, Stoß-Symbol an einem Gitterpunkt",
+    "why": "t5 beurteilt vier Aussagen über das Modell (Stöße, Erwärmung, Grenzen). Ohne ein Bild bleibt 'frei' und 'Stoß' abstrakt; das Modell ist Grundlage für alle vier Aussagen und für die spätere Unterscheidung Metall/Halbleiter/Elektrolyt.",
+    "route": "illustration",
+    "recipe_or_reason": "Diskrete Gitterstruktur mit überlagerten Teilchenbewegungen — kein chart/graph-Recipe; erfordert symbolische Darstellung von Atom-Ionen und Elektronen-Positionen.",
+    "labels": [
+      "Metallion (positiv)",
+      "freies Elektron",
+      "Driftrichtung (Strom)",
+      "Stoß → Erwärmung",
+      "Gitterpunkt"
+    ],
+    "content_risk": "Das Modell vereinfacht stark: Elektronen bewegen sich nicht geradlinig zwischen Stößen. Vetter prüft: Elektronen nicht als 'Faden' darstellbar — mehrere ungerichtete Elektronen zeigen; Drift-Pfeil nur als Nettorichtung; Modell gilt nur für Metalle — kein Halbleiter-Kontext.",
+    "caption": "Das Elektronengasmodell: Freie Elektronen stoßen mit den Gitterionen — das überträgt Energie (Erwärmung) und ist die Ursache des elektrischen Widerstands.",
+    "bucket": "nawi"
+  },
+  {
+    "id": "fig-phy-4",
+    "subject": "Physik",
+    "worksheet": "c0087 — Kräfte, Bewegung und das Anhalten eines Fahrzeugs",
+    "where": "s3/t5 + extensions — 'Wechselwirkungsgesetz … Straße übt auf Reifen Reibungskraft rückwärts aus … Kraftpfeil-Diagramm'",
+    "figure": "Kräftediagramm eines bremsenden Fahrrads: Fahrrad-Silhouette von der Seite, Kraftpfeile am Rad-Boden-Kontaktpunkt: Bremskraft (rückwärts, auf Reifen), Gegenkraft (vorwärts, auf Straße); Gewichtskraft (senkrecht nach unten), Normalkraft (senkrecht nach oben)",
+    "why": "t5 bewertet vier Aussagen über Bremskraft und Wechselwirkungsgesetz; die extensions nennen explizit 'Kraftpfeil-Diagramm zeichnen' als Erweiterungsaufgabe. Die Abbildung macht das Wechselwirkungspaar für Schüler:innen sichtbar und ist Bezugspunkt für Aussage 1 und 2 in t5.",
+    "route": "illustration",
+    "recipe_or_reason": "Figurdarstellung mit Vektorpfeilen unterschiedlicher Länge und Richtung — kein Datendiagramm; erfordert relative Pfeilgrößen, die den physikalischen Sachverhalt korrekt zeigen.",
+    "labels": [
+      "Bremskraft (rückwärts auf Reifen)",
+      "Gegenkraft auf Straße (Reaktion)",
+      "Gewichtskraft (mg)",
+      "Normalkraft (N)",
+      "Fahrtrichtung"
+    ],
+    "content_risk": "Pfeilgröße und -position sind kritisch: Bremskraft und Reaktionskraft müssen gleich groß (actio = reactio) und an verschiedenen Körpern angreifen. Vetter prüft: Bremskraft greift am Reifen (nicht am Fahrrad-Rahmen) an; Wechselwirkungspfeil auf der Straße, nicht auf dem Fahrrad — sonst wird das Gesetz falsch gelesen.",
+    "caption": "Kräfte beim Bremsen: Die Straße bremst den Reifen (Reibungskraft rückwärts) — und nach dem Wechselwirkungsgesetz drückt der Reifen gleichzeitig vorwärts auf die Straße.",
+    "bucket": "nawi"
+  },
+  {
+    "id": "fig-phy-5",
+    "subject": "Physik",
+    "worksheet": "c0087 — Kräfte, Bewegung und das Anhalten eines Fahrzeugs",
+    "where": "s2/t3 + t4 — Reaktionszeit-Sequenz 'Wahrnehmen → Gehirnsignal → Bremshebel → Verzögerung → Stillstand'; Bremsweg auf drei Untergründen",
+    "figure": "Beschriftete Strecken-Zeitlinie (Reaktionsweg + Bremsweg) aus 30 km/h auf drei Untergründen; horizontale Balken zeigen Reaktionsstrecke (konstant) + Bremsweg (variiert nach Untergrund) als gestapeltes Segment-Diagramm mit Zahlenwerten",
+    "why": "Der vorhandene abb2 (bar_chart) zeigt nur Bremsweg. Die Zeitlinie fügt den Reaktionsweg hinzu, den t3 (Reihenfolge) und der teacher_overview explizit als Kernkonzept nennen — und macht den Gesamtanhalteweg als Summe zweier Phasen sichtbar.",
+    "route": "code_gen",
+    "recipe_or_reason": "matplotlib:bar_chart als horizontales gestapeltes Diagramm mit zwei Segmenten (Reaktionsweg ≈ 8 m bei 20 km/h / 1 s; Bremsweg variiert); Werte sind bekannt und korrekt berechenbar.",
+    "labels": [
+      "Reaktionsweg (~8 m)",
+      "Bremsweg trocken (~3,3 m)",
+      "Bremsweg nass (~6,7 m)",
+      "Bremsweg Laub/Schnee (~13,3 m)"
+    ],
+    "content_risk": "korrekt durch Konstruktion — Werte müssen intern konsistent mit abb2 sein (Bremsweg aus 30 km/h = 120/240/480 cm); Reaktionsweg aus v × t_R (20 km/h × 1 s ≈ 5,5 m) separat zu abb2 berechnen.",
+    "caption": "Gesamtanhalteweg aus 20 km/h: Reaktionsweg (konstant) + Bremsweg (je nach Untergrund). Bei Laub/Schnee ist der Anhalteweg mehr als dreimal so lang wie auf trockener Straße.",
+    "bucket": "nawi"
+  },
+  {
+    "id": "fig-che-1",
+    "subject": "Chemie",
+    "worksheet": "c0078 — Verbrennung, Rost und Licht — Chemische Reaktionen erkennen und beschreiben",
+    "where": "s1/t2 — 'Kerzenverbrennung … Wachs verdampft … reagiert mit Sauerstoff … Wärme und Licht'",
+    "figure": "Querschnitt einer brennenden Kerze: Docht, Schmelzzone (flüssiges Wachs), Verdampfungszone, leuchtende Flamme mit Bereichen beschriftet (Reaktionszone, Verbrennungsprodukte CO₂ + H₂O oben), Sauerstoffzufuhr von den Seiten",
+    "why": "t2 (Reihenfolge der Verbrennungsschritte) und der watch_out 'Schüler:innen glauben oft, Wachs brennt direkt — tatsächlich brennen die Gase' machen diese Fehlvorstellung zum zentralen Lernziel. Die Abbildung zeigt räumlich, wo Verdampfung und wo Verbrennung stattfinden.",
+    "route": "illustration",
+    "recipe_or_reason": "Querschnitt mit mehreren Zonen und beschrifteten chemischen Vorgängen — nicht als Datendiagramm darstellbar; erfordert farblich unterschiedliche Flammenbereiche (blau innen / gelb außen) und Materialfluss-Pfeile.",
+    "labels": [
+      "Docht",
+      "flüssiges Wachs (Schmelzzone)",
+      "Wachsdampf",
+      "Reaktionszone (O₂ + Wachsdampf)",
+      "CO₂ + H₂O (Reaktionsprodukte)",
+      "Luft (Sauerstoffzufuhr)"
+    ],
+    "content_risk": "Flammengeometrie ist vereinfacht. Vetter prüft: innerer dunkler Bereich (unverbrannter Dampf) muss erkennbar sein; äußerer leuchtender Bereich (vollständige Verbrennung) separat beschriftet; Sauerstoffpfeile zeigen von außen nach innen (nicht von unten — Konvektion nicht falsch dargestellt).",
+    "caption": "Querschnitt einer Kerzenflamme: Nicht das Wachs selbst brennt, sondern der verdampfte Wachsdampf, der in der Reaktionszone mit Sauerstoff reagiert.",
+    "bucket": "nawi"
+  },
+  {
+    "id": "fig-che-2",
+    "subject": "Chemie",
+    "worksheet": "c0078 — Verbrennung, Rost und Licht — Chemische Reaktionen erkennen und beschreiben",
+    "where": "s1/t6 — 'Eisennägel in drei Reagenzgläsern … Wasser + Luft / kein Wasser / kein Sauerstoff … Rostbildung vergleichen'",
+    "figure": "Beschriftete Darstellung von drei nebeneinanderstehenden Reagenzgläsern mit je einem Eisennagel: (1) Nagel + Wasser + Luft → Rost sichtbar, (2) Nagel + Trockenmittel (kein Wasser) → kein Rost, (3) Nagel + abgekochtes Wasser (kein O₂) + Ölschicht → kein Rost",
+    "why": "t6 verlangt, dass Schüler:innen diesen Drei-Bedingungen-Versuch selbst planen. Die Abbildung liefert kein Ergebnis (das sollen sie erarbeiten), dient aber als Versuchsaufbau-Referenz — ein klassischer Experimentier-Scaffold. Die Kontrollbedingung (ein Nagel rostet, zwei nicht) ist das pädagogische Herz.",
+    "route": "illustration",
+    "recipe_or_reason": "Dreidimensionales Laborglasmaterial mit unterschiedlichem Füllstand und Inhalt; Rost-Farbgebung am Nagel; die Darstellung ist instruktiv/schematisch, kein echter Foto nötig.",
+    "labels": [
+      "Reagenzglas 1: Wasser + Luft → rostet",
+      "Reagenzglas 2: Trockenmittel (CaCl₂) → kein Rost",
+      "Reagenzglas 3: abgekochtes Wasser + Öl → kein Rost",
+      "Eisennagel",
+      "Ölschicht (O₂-Barriere)"
+    ],
+    "content_risk": "Rost-Darstellung: Vetter prüft, dass nur Reagenzglas 1 Rostfarbe (braun-orange) am Nagel zeigt — nicht alle drei. Öl-Schicht in Glas 3 muss klar als Sauerstoffbarriere erkennbar sein (Schichtung). Beschriftung muss die Variable (Wasser / Sauerstoff) klar benennen, nicht nur das Ergebnis.",
+    "caption": "Drei-Bedingungen-Versuch zur Rostbildung: Nur bei gleichzeitiger Anwesenheit von Wasser und Sauerstoff rostet der Eisennagel (Glas 1).",
+    "bucket": "nawi"
+  },
+  {
+    "id": "fig-che-3",
+    "subject": "Chemie",
+    "worksheet": "c0079 — Atome, Elektronen und das Periodensystem — Bausteine der Materie verstehen",
+    "where": "s1/t3 + t4 — 'Proton, Neutron, Elektron, Atomhülle, Valenzelektronen … Na gibt 1 Valenzelektron ab … Cl nimmt es auf'",
+    "figure": "Zwei nebeneinander gestellte Bohr-Schalenmodelle: Natrium (Na, Z=11) mit 2+8+1 Elektronen auf drei Schalen; Chlor (Cl, Z=17) mit 2+8+7 Elektronen auf drei Schalen — Pfeil zeigt Elektronenübertragung von Na-Valenzschale zu Cl-Valenzschale, Produkte Na⁺ und Cl⁻ beschriftet",
+    "why": "t4 verlangt Erklärung der Na+Cl-Reaktion über Valenzelektronen und Edelgaszustand. t3 ordnet Begriffe zu. Das Schalenmodell ist das kanonische Bild dieser Kompetenz (Atombau, Kl.4 Chemie) und fehlt vollständig im Arbeitsblatt.",
+    "route": "illustration",
+    "recipe_or_reason": "Kreisförmige Schalendiagramme mit diskreten Elektronenpunkten auf Ringen — keine matplotlib-Funktion bildet Atommodelle ab; erfordert konzentrische Kreise mit Elektronenanzahl pro Schale.",
+    "labels": [
+      "Na (Z=11): 2 / 8 / 1",
+      "Cl (Z=17): 2 / 8 / 7",
+      "Valenzelektron wird abgegeben",
+      "Na⁺ (Edelgaszustand: 8 VE)",
+      "Cl⁻ (Edelgaszustand: 8 VE)",
+      "Neon-Konfiguration",
+      "Argon-Konfiguration"
+    ],
+    "content_risk": "Elektronenzahlen pro Schale sind exakt bekannt — kein Halluzinationsrisiko für die Zahlen selbst. Vetter prüft: Schalenbesetzung nach Aufbauprinzip (2/8/8-Regel korrekt angewendet); Pfeilrichtung (von Na zu Cl, nicht umgekehrt); Ladungszeichen (Na⁺, Cl⁻) korrekt eingezeichnet.",
+    "caption": "Elektronenübertragung bei der Bildung von Natriumchlorid: Natrium gibt sein Valenzelektron ab, Chlor nimmt es auf — beide erreichen die stabile Edelgaskonfiguration mit 8 Außenelektronen.",
+    "bucket": "nawi"
+  },
+  {
+    "id": "fig-bio-1",
+    "subject": "Biologie",
+    "worksheet": "c0004 — Erbanlagen, DNA und Vererbungsregeln",
+    "where": "s1/intro — 'DNA … in Abschnitte (Gene) unterteilt … Von jedem Gen zwei Varianten (Allele) — eine vom Vater, eine von der Mutter'",
+    "figure": "Schematisches Chromosomenpaar (homologe Chromosomen): zwei identisch geformte Chromosomen nebeneinander, je ein Locus für das betrachtete Gen markiert, Allele beschriftet (z. B. B auf einem, b auf dem anderen), Herkunft (von Vater / von Mutter) mit Pfeil",
+    "why": "t1 (Begriffe-Matching) unterscheidet Gen, Allel, homologe Chromosomen, Genotyp — alles Konzepte, die räumlich am Chromosom hängen. Der häufigste watch_out 'Schüler:innen setzen Gen und Allel gleich' wird durch eine Abbildung gelöst, die zeigt: Das Gen ist der Ort, das Allel ist die Variante an diesem Ort.",
+    "route": "illustration",
+    "recipe_or_reason": "Biologisches Chromosomen-Schema mit strukturellen Elementen (Centromer, Arme, Locus-Markierung) — keine quantitativen Daten; erfordert symbolische Darstellung der DNA-Doppelstruktur und Locus-Position.",
+    "labels": [
+      "Chromosom (väterlich)",
+      "Chromosom (mütterlich)",
+      "Gen-Locus (z. B. Augenfarbe)",
+      "Allel B (dominant)",
+      "Allel b (rezessiv)",
+      "Genotyp: Bb (heterozygot)",
+      "Centromer"
+    ],
+    "content_risk": "Chromosomenmorphologie: Vetter prüft Centromerlage (nicht immer in der Mitte — metazentrisch als didaktische Vereinfachung ok, aber nicht sublateral oder akrozentrisch darstellen ohne Hinweis); Anzahl der markierten Loci auf 1 beschränken (mehr Loci auf einem Chromosom würden die Abbildung überladen und ein falsches Bild von Gendichte geben).",
+    "caption": "Homologe Chromosomen tragen an derselben Position (Locus) je ein Allel — eines vom Vater, eines von der Mutter. Dieser Mensch ist heterozygot (Bb).",
+    "bucket": "nawi"
+  },
+  {
+    "id": "fig-bio-2",
+    "subject": "Biologie",
+    "worksheet": "c0004 — Erbanlagen, DNA und Vererbungsregeln",
+    "where": "s2/t3 — 'Zwei heterozygote Pflanzen (Gg × Gg) werden gekreuzt … Kreuzungsschema ausfüllen'",
+    "figure": "Vollständig beschriftetes Kreuzungsschema (Punnet-Quadrat) für Gg × Gg mit vier Feldern, darüber und links die Elterngameten (G und g), Genotyp in jedem Feld, darunter Phänotyp-Legende: GG + Gg = gelbe Samen, gg = grüne Samen — als Referenz-Muster, das Schüler:innen für eigene Kreuzungen adaptieren",
+    "why": "t3 stellt ein leeres Kreuzungsschema bereit; die Vorlage-Abbildung zeigt die Notation korrekt (Gameten als Zeilen/Spaltenköpfe, nicht als Kreuzungsprodukte) und verhindert den häufigsten Fehler ('G + G = GG' als Additionsproblem statt Elternteil-Kombination).",
+    "route": "illustration",
+    "recipe_or_reason": "Tabellengrafik mit Genetik-spezifischer Notation (Allel-Schreibweise, Phänotyp-Farbcodierung für Erbsen) — nicht als generisches chart darstellbar; erfordert Farb- und Symbol-Konventionen der Genetik.",
+    "labels": [
+      "Gameten Vater: G / g",
+      "Gameten Mutter: G / g",
+      "GG (homozygot dominant — gelb)",
+      "Gg (heterozygot — gelb)",
+      "gg (homozygot rezessiv — grün)",
+      "Phänotyp-Verhältnis 3:1"
+    ],
+    "content_risk": "Punnet-Quadrate haben keine anatomische Fehlerquelle, aber didaktische: Vetter prüft, dass die Eltern-Gameten-Spalten/Zeilen eindeutig als Gameten (haploide Schreibweise G oder g, nicht GG/gg) beschriftet sind. Phänotyp-Farbcodierung (gelb für GG und Gg) darf nicht als Genotyp-Identität missverstanden werden.",
+    "caption": "Kreuzungsschema (Gg × Gg): Von vier möglichen Nachkommen-Genotypen sind drei gelb und einer grün — das klassische 3:1-Verhältnis nach Mendel.",
+    "bucket": "nawi"
+  },
+  {
+    "id": "fig-bio-3",
+    "subject": "Biologie",
+    "worksheet": "c0004 — Erbanlagen, DNA und Vererbungsregeln",
+    "where": "s1/intro + t2 — 'DNA: langes Molekül im Zellkern … Gen: Abschnitt der DNA … Chromosom: fadenförmige Struktur im Zellkern'",
+    "figure": "Hierarchische Einbettungs-Grafik (Zelle → Zellkern → Chromosom → DNA-Doppelhelix → Gen-Abschnitt) als 'zoom-in'-Schema mit fünf verschachtelten Darstellungsebenen und Dimensionsangaben",
+    "why": "Die Begriffe Zelle / Zellkern / Chromosom / DNA / Gen sind die Grundstruktur des gesamten Arbeitsblatts; kein Block erklärt das Größenverhältnis. Ohne dieses Bild bleibt unklar, wie ein Gen auf einem Chromosom sitzt oder warum das Chromosom 'aus DNA besteht'. Der intro-Text beschreibt genau diese Hierarchie.",
+    "route": "illustration",
+    "recipe_or_reason": "Biologische Strukturhierarchie mit stark unterschiedlichen Größenskalen und abstrakten Repräsentationen (Zelle als Kreis, Zellkern als Blase, Chromosom als Stäbchen, Doppelhelix als Symbol) — kein Datendiagramm; erfordert mehrere Darstellungsstile in einer Abbildung.",
+    "labels": [
+      "Zelle (~10 µm)",
+      "Zellkern",
+      "Chromosom",
+      "DNA-Doppelhelix",
+      "Gen (Abschnitt ~1000 Basenpaare)",
+      "Allel"
+    ],
+    "content_risk": "Größenverhältnisse sind bei vereinfachten Schemata immer irreführend. Vetter prüft: keine realistischen Größenverhältnisse suggerieren (nur symbolisch); Doppelhelix muss rechtsgängig gezeichnet sein (die meisten Lehr-Illustrationen sind korrekt, aber KI-Generationen verwechseln dies manchmal); DNA-Stränge müssen antiparallel sein — bei reiner Schemadarstellung ist dieser Fehler latent.",
+    "caption": "Von der Zelle zum Gen: Die DNA ist in Chromosomen verpackt und enthält Gene als funktionale Abschnitte — Allele sind verschiedene Varianten desselben Gens.",
+    "bucket": "nawi"
+  },
+  {
+    "id": "fig-gwb-1",
+    "subject": "Geographie und wirtschaftliche Bildung",
+    "worksheet": "c0080 — Preise und Märkte in Österreich",
+    "where": "t6 — 'Den Wirtschaftskreislauf vereinfacht skizzieren: Haushalte (Arbeit + Konsum) ↔ Unternehmen (Güter + Löhne) ↔ Staat (Steuern + Leistungen).'",
+    "figure": "Schematischer Wirtschaftskreislauf: drei Akteure (Haushalte, Unternehmen, Staat) mit beschrifteten Pfeilen für Geld- und Güterflüsse",
+    "why": "Der Kreislauf ist das Kernkonzept von ENT.05, wird im teacher_overview explizit als Skizze empfohlen, aber kein Asset existiert. Ohne Bild müssen Schüler:innen ein abstraktes Pfeilnetz aus reinem Text verstehen — die Visualisierung macht die Gegenrichtigkeit der Flüsse sofort sichtbar.",
+    "route": "illustration",
+    "recipe_or_reason": "Stilisiertes Schemadiagramm: drei Boxen (Haushalte, Unternehmen, Staat) in Dreiecksanordnung, Doppelpfeile mit Beschriftung (Arbeit/Lohn, Güter/Geld, Steuern/öffentliche Leistungen). Kein reales Referenzobjekt, rein schematisch.",
+    "labels": [
+      "Haushalte",
+      "Unternehmen",
+      "Staat",
+      "Arbeit",
+      "Löhne",
+      "Steuern",
+      "öffentliche Leistungen"
+    ],
+    "content_risk": "Pfeile könnten falsch gerichtet sein (z.B. Güterfluss vs. Geldfluss verwechselt); OeNB und Sozialpartner nicht im Kern-Dreieck — Vetter muss Vollständigkeit und Pfeilrichtungen prüfen.",
+    "caption": "Abb. X: Der einfache Wirtschaftskreislauf — Haushalte, Unternehmen und Staat im Zusammenspiel",
+    "bucket": "geo_gesch"
+  },
+  {
+    "id": "fig-gwb-2",
+    "subject": "Geographie und wirtschaftliche Bildung",
+    "worksheet": "c0081 — Weltbevölkerung und Urbanisierung",
+    "where": "t5 — 'Szenario: Eine Großstadt in einem ärmeren Land wächst so schnell, dass Trinkwasser, Schulen und öffentliche Verkehrsmittel nicht mehr für alle reichen.'",
+    "figure": "Stilisierte Querschnittskizze einer wachsenden Megastadt: Stadtzentrum mit Hochhäusern, angrenzende informelle Siedlungen (Wellblechhütten) am Rand, sichtbarer Kontrast in Bebauungs- und Infrastrukturdichte",
+    "why": "Das Entscheidungsszenario t5 verlangt, Handlungsoptionen in einer konkreten städtischen Wachstumssituation abzuwägen. Eine Visualisierung macht den räumlichen Druck greifbar (dichte Besiedlung, fehlende Infrastruktur am Rand) ohne Zahlen zu wiederholen — stärkt die Urteilsaufgabe konkret.",
+    "route": "illustration",
+    "recipe_or_reason": "Generische illustrative Querschnittsdarstellung einer Megastadt im Globalen Süden: kein Stadtname, keine Flagge, keine erkennbaren Wahrzeichen. Kontrast Innenstadt (Wolkenkratzer, Straßen, Wasserturm) vs. Peripherie (informelle Hütten, fehlende Kanalisation sichtbar durch fehlende Anschlüsse).",
+    "labels": [
+      "Stadtzentrum",
+      "Wohnviertel",
+      "informelle Siedlung",
+      "keine Wasserversorgung",
+      "keine Schulen"
+    ],
+    "content_risk": "Gefahr der stereotypen Darstellung von Städten im Globalen Süden als rückständig; Vetter muss sicherstellen, dass die Illustration nicht diskriminierend wirkt und beide Pole (auch die Chancen der Stadt) zeigt oder zumindest nicht einseitig negativ konnotiert.",
+    "caption": "Abb. X: Wachstum einer Großstadt im Globalen Süden — Stadtzentrum und informelle Siedlung im Vergleich (schematisch)",
+    "bucket": "geo_gesch"
+  },
+  {
+    "id": "fig-gwb-3",
+    "subject": "Geographie und wirtschaftliche Bildung",
+    "worksheet": "c0082 — Energie und Klimawandel",
+    "where": "t6 — 'Szenario: Eine österreichische Gemeinde will bis 2035 klimaneutral werden… (A) Windpark… (B) Wärmedämmung… (C) Busnetz'",
+    "figure": "Vogelperspektivskizze einer österreichischen Kleingemeinde (ca. 2000 Einwohner) mit Dorfkern, Wohnhäusern, Feldern am Rand — drei überlagerte Symbole für die drei Maßnahmen (Windrad, gedämmtes Haus mit Heizsymbol, Busroute)",
+    "why": "Die drei Optionen im Szenario bleiben abstrakt ohne räumliche Einbettung. Eine stilisierte Gemeindeansicht macht die Maßnahmen sofort verortet und die räumlichen Trade-offs sichtbar (Windrad braucht Fläche am Rand; Dämmung betrifft den Wohnbestand; Busnetz verbindet Ortsteile).",
+    "route": "illustration",
+    "recipe_or_reason": "Vogelperspektive / leicht isometrische Skizze. Kein konkreter Ortsname, keine Straßenschilder. Stilisierte Häuser, ein kleiner Dorfplatz, Felder, eine Zufahrtsstraße. Drei eingefärbte Overlay-Symbole für die drei Optionen.",
+    "labels": [
+      "Windpark (A)",
+      "Wärmedämmung (B)",
+      "Busnetz (C)",
+      "Wohngebiet",
+      "Ortsrand"
+    ],
+    "content_risk": "Symbole müssen neutral und eindeutig zuordnungsfähig sein. Kein Risiko falscher Fakten, da rein schematisch. Vetter prüft, ob Windrad-Symbol nicht übermäßig dominant oder negativ wirkt.",
+    "caption": "Abb. X: Drei Maßnahmen für eine klimaneutrale Gemeinde — Wo würden sie wirken? (schematisch)",
+    "bucket": "geo_gesch"
+  },
+  {
+    "id": "fig-gwb-4",
+    "subject": "Geographie und wirtschaftliche Bildung",
+    "worksheet": "c0033 — Berufe, Bildungswege und Arbeitsleben in Österreich",
+    "where": "GWB.US.3.BIL.01 — Bildungswege nach der AHS; das Arbeitsblatt behandelt Bildungswege und Berufsbilder in Österreich",
+    "figure": "Schematische Darstellung des österreichischen Bildungswegsystems nach der 4. Klasse AHS: Matura → Universität/FH/PH, Lehre → Berufsschule/Betrieb, BMS/BHS-Alternativen — als Baumdiagramm oder Flussdiagramm",
+    "why": "GWB.US.3.BIL.01 verlangt explizit den Vergleich verschiedener Bildungswege. Ohne Grafik müssen Schüler:innen Pfade aus Texten rekonstruieren. Ein Überblicksdiagramm gibt sofort Orientierung über Verzweigungen und macht Vergleiche (Dauer, Abschlüsse) möglich.",
+    "route": "illustration",
+    "recipe_or_reason": "Strukturdiagramm / Baumgraph. Kein reales Foto, kein Verweis auf spezifische Institutionen. Generische Boxen: AHS-Abschluss als Ausgangspunkt, drei Hauptäste (Universitäten/FH, berufsbildende Schulen, Lehre), Endknoten (Abschlüsse). Österreich-spezifisch aber nicht markengebunden.",
+    "labels": [
+      "Matura",
+      "Universität",
+      "Fachhochschule",
+      "Lehrausbildung",
+      "BHS",
+      "Berufseinstieg"
+    ],
+    "content_risk": "Österreichisches Bildungssystem ändert sich gelegentlich. Vetter prüft, ob aktuelle Bezeichnungen korrekt sind (z.B. BAfEP, HTL, HAK als BHS-Typen); keine erfundenen Institutionen.",
+    "caption": "Abb. X: Bildungswege in Österreich nach der AHS-Unterstufe (vereinfachte Übersicht)",
+    "bucket": "geo_gesch"
+  },
+  {
+    "id": "fig-gwb-5",
+    "subject": "Geographie und wirtschaftliche Bildung",
+    "worksheet": "c0034 — Die Europäische Union: Werte, Grundfreiheiten und Herausforderungen",
+    "where": "GWB.US.4.EUR.02 — 'vier Grundfreiheiten (Waren, Personen, Kapital und Dienstleistungen)' im Hinblick auf das eigene Leben reflektieren",
+    "figure": "Schematische Karte Europas (stilisiert, nicht als Realatlas) mit den vier Grundfreiheiten als Pfeil-Overlays — Waren-LKW, Personen-Silhouette, Geldpfeil, Dienstleistungs-Symbol über einem vereinfachten EU-Umriss",
+    "why": "Die vier Grundfreiheiten sind das abstrakte Herzstück des EU-Themas. Eine Visualisierung, die sie gleichzeitig auf einen Europaumriss projiziert, macht das 'freie Fließen über Grenzen hinweg' konkret und anschaulich — deutlich besser als vier Fachbegriffe im Fließtext.",
+    "route": "illustration",
+    "recipe_or_reason": "Stilisierte Umrisskarte der EU-Mitgliedsstaaten (kein fotografischer Atlas, keine Beschriftung einzelner Länder außer DE/AT/FR als Ankerpunkte), vier farbkodierte Pfeil-Overlay-Symbole. Explizit KEIN realer Kartenatlas, da keine geografische Präzision gefordert — rein schematisch.",
+    "labels": [
+      "Waren",
+      "Personen",
+      "Kapital",
+      "Dienstleistungen"
+    ],
+    "content_risk": "Karte muss aktuelle EU-Mitgliedsstaaten zeigen (z.B. kein UK nach Brexit). Vetter prüft EU-Grenzen und stellt sicher, dass keine Nicht-Mitglieder als EU dargestellt werden.",
+    "caption": "Abb. X: Die vier Grundfreiheiten der EU — freier Verkehr über Grenzen hinweg (schematisch)",
+    "bucket": "geo_gesch"
+  },
+  {
+    "id": "fig-gwb-6",
+    "subject": "Geographie und wirtschaftliche Bildung",
+    "worksheet": "c0030 — Bedürfnisse, Geld und mein Wohnort",
+    "where": "t4 — 'Beschreibe in 4–5 Sätzen, wie du von deiner Wohnung zur Schule kommst. Nenne dabei mindestens zwei Orientierungspunkte'",
+    "figure": "Stilisierter Stadtplan-Ausschnitt eines fiktiven österreichischen Stadtviertels: Schule markiert, Wohnblöcke, Platz, Supermarkt — mit eingezeichneter Himmelsrose und Maßstabsbalken",
+    "why": "t4–t7 bauen auf Kartenlesekompetenz auf (GWB.US.1.LEB.03). Ohne Kartenausschnitt lesen Schüler:innen über Kartenelemente (Maßstab, Legende, Himmelsrichtungen), ohne ein Beispiel vor sich zu haben. Ein fiktiver, überschaubarer Stadtplan macht alle Begriffe sofort anwendbar.",
+    "route": "illustration",
+    "recipe_or_reason": "Fiktiver Stadtplan ca. 1:5000. Kein realer Ortsname, keine echten Straßen. Generische Symbole: Schule (Flagge), Supermarkt (S), Parkanlage (grün), drei Straßen. Himmelsrose in Ecke, Maßstabsbalken.",
+    "labels": [
+      "Schule",
+      "Supermarkt",
+      "Park",
+      "Wohnhaus",
+      "N/S/O/W"
+    ],
+    "content_risk": "Kein Risiko falscher Fakten, da fiktiv. Vetter prüft nur ob Legende konsistent und Maßstabsbalken plausibel ist.",
+    "caption": "Abb. X: Stadtplan-Ausschnitt (fiktiv, M 1:5 000) — Übe deine Orientierung!",
+    "bucket": "geo_gesch"
+  },
+  {
+    "id": "fig-gpb-1",
+    "subject": "Geschichte und politische Bildung",
+    "worksheet": "c0025 — Leben am Nil: Wie wissen wir, was wir über das Alte Ägypten zu wissen glauben?",
+    "where": "t1 — 'Ein Forscher findet in einem ägyptischen Grab ein Wandbild, das einen Pharao beim Besiegen seiner Feinde zeigt.'",
+    "figure": "Vereinfachte Rekonstruktionszeichnung eines ägyptischen Grabwandreliefs: Pharao in Triumphpose mit Bogen, stilisierte Feinde — mit sichtbarer Hieroglyphen-Begleitung am Rand, in grafischer Stilisierung (nicht fotorealistisch)",
+    "why": "t1 fragt explizit nach der Einordnung eines Grab-Wandbilds als Quelle. Ohne Bild müssen Schüler:innen eine hypothetische Quelle einordnen. Mit einer stilisierten Rekonstruktionszeichnung können sie gleichzeitig die Propagandafunktion visual analysieren (Perspektivität: Pharao groß, Feinde klein).",
+    "route": "illustration",
+    "recipe_or_reason": "Stilisierte Rekonstruktionszeichnung im Stil ägyptischer Flachreliefs (Linearzeichnung, Seitenansicht, typische Körperdarstellung). NICHT ein Foto eines echten Reliefs (das wäre sourced). Kein Urheberrecht, da erfunden. Bewusst schematisch um typische propagandistische Bildmittel zu zeigen (Größenverhältnisse, Triumphpose).",
+    "labels": [
+      "Pharao",
+      "Feinde",
+      "Hieroglyphen (Beischrift)",
+      "— Diese Darstellung ist eine Quelle. Was zeigt sie? Was zeigt sie nicht?"
+    ],
+    "content_risk": "Anachronismen im Bildstil möglich (falsche Rüstung, moderne Proportionen). Vetter — idealerweise mit Ägyptologie-Wissen — prüft ob Figurenkanon (Frontalsicht Augen/Schultern, Seitenansicht Beine) und typische Attribute (Doppelkrone, Bogen) korrekt stilisiert sind. Keine Verwechslung mit spezifischem historischen Ereignis.",
+    "caption": "Abb. X: Stilisierte Rekonstruktionszeichnung eines ägyptischen Triumphreliefs — Was zeigt diese Darstellung, und was lässt sie offen?",
+    "bucket": "geo_gesch"
+  },
+  {
+    "id": "fig-gpb-2",
+    "subject": "Geschichte und politische Bildung",
+    "worksheet": "c0026 — Krieg als Helden-Abenteuer? Wie Kinder und Jugendliche im Ersten Weltkrieg den Krieg erleben sollten",
+    "where": "t1 — 'Lies diesen Auszug aus einem österreichischen Schullesebuch für Volksschulen, erschienen 1915'",
+    "figure": "Stilisierter Propagandaentwurf: ein einfaches, schwarz-weiß gehaltenes Kinderbuchbild im Stil von 1914–1918 — Soldat mit Gewehr winkt, Kinder jubeln mit erhobenen Händen, vereinfachte Linienzeichnung ohne Gewaltdarstellung",
+    "why": "t1 analysiert Propaganda-Sprache, aber hat keinen visuellen Anker. Kriegskinderpropaganda nutzte Bilder genauso wie Texte. Eine stilisierte Illustration im Stil der Zeit zeigt sofort die Emotionalisierungs-Strategie (Heroisierung, Jubelstimmung) und ergänzt die Textanalyse um die Bildebene, die GPB.US.3.ALL.02 explizit umfasst ('Bilder, Gegenstände').",
+    "route": "illustration",
+    "recipe_or_reason": "Linienzeichnung im Stil von Kinderillustration ca. 1910–1920 (flache Perspektive, vereinfachte Gesichter, patriotische Symbole wie Fahne). NICHT eine Reproduktion eines echten Plakats (das wäre sourced). Kein Blut, keine Gewalt — reine Jubel-Heimatfront-Szene. Bewusst in der 'harmlosen' Propaganda-Ästhetik gehalten, um den Kontrast zur Kriegsrealität spürbar zu machen.",
+    "labels": [
+      "— Welche Mittel nutzt dieses Bild, um Begeisterung zu erzeugen?"
+    ],
+    "content_risk": "Gefahr, unbeabsichtigt tatsächliche Kriegsverherrlichung zu reproduzieren. Vetter muss prüfen: Keine erkennbaren Uniformen echter Armeen, keine Flaggen mit historischer Spezifizität (kein k.u.k. Adler). Stilisiert genug, dass es als Beispiel-Objekt erkennbar ist, nicht als Authentikum.",
+    "caption": "Abb. X: Typische Kriegspropaganda für Kinder im Ersten Weltkrieg — stilisierte Illustration (kein historisches Original)",
+    "bucket": "geo_gesch"
+  },
+  {
+    "id": "fig-gpb-3",
+    "subject": "Geschichte und politische Bildung",
+    "worksheet": "c0027 — Mitmachen, Wegsehen, Widersetzen: Wie verhielten sich Menschen in Österreich während der NS-Herrschaft?",
+    "where": "t5 — 'A) Nürnberger Rassengesetze 1935, B) Anschluss März 1938, C) Novemberpogrom November 1938, D) Kriegsbeginn 1939, E) Befreiung Mauthausen Mai 1945, F) Staatsvertrag Mai 1955'",
+    "figure": "Horizontale Zeitleiste 1933–1955 mit den sechs Ereignissen als beschriftete Markierungen, farbliche Phasen (NS-Herrschaft grau schattiert, Besatzungszeit gestrichelt, Zweite Republik hell)",
+    "why": "t5 ist eine Ordnungsaufgabe über sechs Ereignisse in 20 Jahren — ohne Zeitstrahl haben Schüler:innen keine Möglichkeit, ihren Antwortversuch visuell zu kontrollieren. Ein leerer/halbgefüllter Zeitstrahl als Aufgaben-Gerüst würde die Aufgabe um eine Verortungskompetenz bereichern und die chronologische Orientierung stützen.",
+    "route": "code_gen",
+    "recipe_or_reason": "matplotlib:timeline oder number_line — horizontale Achse 1933–1960, sechs Markierungspunkte mit kurzen Labels, farbige Hintergrundbereiche für Phasen. Alle Werte bekannt, deterministisch generierbar.",
+    "labels": [
+      "1935 Nürnberger Gesetze",
+      "1938 Anschluss",
+      "1938 Novemberpogrom",
+      "1939 Kriegsbeginn",
+      "1945 Befreiung Mauthausen",
+      "1955 Staatsvertrag"
+    ],
+    "content_risk": "Keine inhaltlichen Risiken bei code_gen — Jahreszahlen sind historisch gesichert. Vetter prüft nur Beschriftung auf korrekte Kurzform.",
+    "caption": "Abb. X: Zeitleiste — Österreich 1933–1955",
+    "bucket": "geo_gesch"
+  },
+  {
+    "id": "fig-gpb-4",
+    "subject": "Geschichte und politische Bildung",
+    "worksheet": "c0028 — Aufbrechen, Ankommen, Dazugehören: Was bedeutet Migration gestern und heute?",
+    "where": "t4 — Vergleichstabelle Arbeitsmigration vs. Flucht; teacher_overview — 'Push-Faktoren vs. Pull-Faktoren: kaum eine Migrationsentscheidung ist entweder/oder'",
+    "figure": "Schematische Darstellung einer Migrationsbiografie: Ausgangspunkt (Dorf/Stadt im Herkunftsland) → Grenzübergang → Ankunft (Fabrik/Stadtviertel im Zielland). Push-Symbole links (Dürre, Bomben, Armut-Symbol), Pull-Symbole rechts (Arbeit, Familie, Schule-Symbol). Stilisierte Silhouetten, kein spezifisches Land.",
+    "why": "t1 und t4 arbeiten mit Push/Pull-Konzepten und Migrationstypen — ein schematisches Migrationsdiagramm macht sofort sichtbar, dass Migration ein Prozess ist (nicht nur ein Zustand) und dass Push und Pull gleichzeitig wirken. Stärkt das konzeptuelle Verständnis für die Vergleichstabelle in t4.",
+    "route": "illustration",
+    "recipe_or_reason": "Schematisches Prozessdiagramm, kein Foto. Zwei stilisierte Länder-Boxen mit generischen Silhouetten und Icon-Symbolen. Keine Flaggen, keine erkennbaren Gebäude. Neutrale Farbgebung. Pfeil in der Mitte als Migrationsbewegung.",
+    "labels": [
+      "Herkunftsland",
+      "Zielland",
+      "Push: Armut / Krieg / Verfolgung",
+      "Pull: Arbeit / Familie / Sicherheit"
+    ],
+    "content_risk": "Keine spezifischen Nationalitäten oder Ethnien. Vetter prüft auf stereotypisierende Symbole (z.B. kein Schlauchboot — das würde eine bestimmte Fluchtroute implizieren). Symbole müssen für viele Migrationsformen anwendbar bleiben.",
+    "caption": "Abb. X: Migration — Warum brechen Menschen auf? Push- und Pull-Faktoren (schematisch)",
+    "bucket": "geo_gesch"
+  },
+  {
+    "id": "fig-gpb-5",
+    "subject": "Geschichte und politische Bildung",
+    "worksheet": "c0028 — Aufbrechen, Ankommen, Dazugehören: Was bedeutet Migration gestern und heute?",
+    "where": "t2 — Brief eines Tiroler Auswanderers aus New York 1872; teacher_overview — 'Tiroler Auswanderer nach Amerika, Gastarbeiter aus Jugoslawien und der Türkei'",
+    "figure": "Schematische Karte Europa–Amerika mit Migrationspfeilen: 1) dicker Pfeil Tirol → New York (1860er–1900er), 2) Pfeil Jugoslawien/Türkei → Österreich (1960er–70er) — auf stilisiertem Atlantik-Ausschnitt ohne fotografische Topografie",
+    "why": "Das Arbeitsblatt behandelt österreichische Migrationsgeschichte über mehrere Epochen. Ein schematischer Vergleich der Richtungen (Österreicher raus nach Amerika im 19. Jh.; Menschen rein in den 1960ern) macht die Umkehrung der Migrationsrichtung sichtbar — ein zentrales Lernmoment, das aus dem Text allein schwer greifbar ist.",
+    "route": "sourced",
+    "recipe_or_reason": "Benötigt eine ECHTE Basiskarte Europa–Nordamerika mit korrekt verorteten Städten/Regionen (Tirol, Wien, Belgrad, Istanbul, New York). Eine diffusion-generierte Karte könnte Länder oder Küstenlinien verfälschen. Authentizität der geografischen Lage ist didaktisch relevant — Schüler:innen sollen lernen, Entfernungen zu schätzen.",
+    "labels": [
+      "Tirol → New York (19. Jh.)",
+      "Jugoslawien/Türkei → Österreich (1960er–70er)"
+    ],
+    "content_risk": "Sourced-Risiko: Eine echte Karte muss Küstenlinien, Ländergrenzen und Städtelagen korrekt zeigen. Kein Diffusions-Fake. Vetter prüft Korrektheit der historischen Grenzen (Jugoslawien, nicht ex-jugoslawische Einzelstaaten).",
+    "caption": "Abb. X: Österreichische Migrationsgeschichte — Auswanderung und Einwanderung im Vergleich",
+    "bucket": "geo_gesch"
+  },
+  {
+    "id": "fig-gpb-6",
+    "subject": "Geschichte und politische Bildung",
+    "worksheet": "c0029 — Vom besetzten Land zur EU-Mitgliedschaft: Wie wurde Österreich zu dem Staat, der es heute ist?",
+    "where": "t2 — Staatsvertrag 1955 und Neutralitätserklärung; teacher_overview — 'Vier-Mächte-Besatzung: USA, Sowjetunion, Frankreich, Großbritannien'",
+    "figure": "Schematische Karte Österreichs 1945–1955 mit den vier Besatzungszonen: US (grün), UK (blau), Frankreich (orange), Sowjetunion (rot), Wien geteilt markiert — im Stil einer historischen Verwaltungsskizze",
+    "why": "Die Vier-Mächte-Besatzung ist das räumliche Fundament des Staatsvertrags-Themas. Schüler:innen, die nie eine Karte der Besatzungszonen gesehen haben, bleiben bei abstrakten Begriffen. Die Zonenkarte macht sofort sichtbar, warum die Sowjetzone (Niederösterreich, Burgenland, Mühlviertel) besonders relevant war und Wien als Insellage besondere Bedeutung hatte.",
+    "route": "sourced",
+    "recipe_or_reason": "Benötigt eine ECHTE geografisch korrekte Österreichkarte mit korrekten Bundeslandgrenzen 1945 und akkurater Zonenabgrenzung. Die Besatzungszonen sind historisch dokumentiert; eine diffusion-generierte Karte könnte Grenzen erfinden oder Zonen falsch verorten. Das wäre ein historisch-sachlicher Fehler mit direkter Lernrelevanz. Quelle: Historische Atlanten, Österreichisches Staatsarchiv.",
+    "labels": [
+      "Amerikanische Zone",
+      "Britische Zone",
+      "Französische Zone",
+      "Sowjetische Zone",
+      "Wien (international verwaltet)"
+    ],
+    "content_risk": "Hoches Risiko bei Diffusion: falsche Zonenabgrenzung, fehlende Bundeslandgrenzen, Wien-Sonderstatus nicht korrekt. Authentizität ist hier zwingend — die Karte ist eine historische Tatsache, keine Illustration. Vetter prüft gegen historische Quellen (z.B. Österreichischer Staatsarchiv-Digitalisat).",
+    "caption": "Abb. X: Österreich unter Vier-Mächte-Besatzung 1945–1955 — die Besatzungszonen",
+    "bucket": "geo_gesch"
+  },
+  {
+    "id": "fig-gpb-7",
+    "subject": "Geschichte und politische Bildung",
+    "worksheet": "c0026 — Krieg als Helden-Abenteuer? Wie Kinder und Jugendliche im Ersten Weltkrieg den Krieg erleben sollten",
+    "where": "t6 — 'Du sollst einen kurzen eigenen Text schreiben aus der Perspektive eines 12-jährigen Mädchens, das in Wien 1915 lebt'",
+    "figure": "Stilisierte Illustration einer Wiener Wohnküche um 1915: Frau am Herd, Brief auf dem Tisch, Zeitungsseite mit Kriegsmeldungen sichtbar, spartanisches Mobiliar — Heimatfront-Atmosphäre ohne Gewaltdarstellung",
+    "why": "t6 verlangt historisch plausibles Perspektivschreiben. Die teacher_overview warnt vor Anachronismen (kein Telefon, kein TV). Eine Illustration der Heimatfront-Lebenswelt 1915 (was vorhanden ist, was fehlt) gibt visuelle Hinweise auf historisch korrekte Details und verhindert Anachronismen beim Schreiben.",
+    "route": "illustration",
+    "recipe_or_reason": "Stilisierte Innenraumszene, kein Foto. Gründerzeit-Ästhetik (Kachelofen, einfache Möbel, kein elektrisches Licht sichtbar). Bewusst kein Foto einer echten historischen Szene (wäre sourced und müsste urheberrechtlich geprüft werden). Zeitung auf dem Tisch als Informationsmedium 1915 gut erkennbar.",
+    "labels": [
+      "Kachelofen",
+      "Brief vom Vater",
+      "Zeitung (Kriegsmeldungen)"
+    ],
+    "content_risk": "Anachronismen möglich: elektrisches Licht gab es in Wien 1915 teilweise bereits (Gaslampen vs. Strom je nach Viertel). Keine spezifischen Uniformen oder erkennbaren Personen. Vetter mit Wien-1915-Kenntnissen prüft Details der Ausstattung. Kein Risiko erfundener Fakten, da fiktive Szene.",
+    "caption": "Abb. X: Wiener Wohnküche um 1915 — Alltag an der Heimatfront (stilisierte Illustration)",
+    "bucket": "geo_gesch"
+  },
+  {
+    "id": "fig-gwb-7",
+    "subject": "Geographie und wirtschaftliche Bildung",
+    "worksheet": "c0032 — Preise, Märkte und Wirtschaftsakteure in Österreich",
+    "where": "GWB.US.3.ENT.02 — 'Industrieregionen, Tourismusregionen, landwirtschaftlich geprägte Regionen und Regionen mit anderen wirtschaftlichen Schwerpunkten charakterisieren und verorten'",
+    "figure": "Schematische Österreichkarte mit farbig markierten Wirtschaftsregionstypen: Industrieregion (z.B. Oberösterreich/Steiermark, grau), Tourismusregion (Tirol/Salzburg/Vorarlberg, türkis), landwirtschaftliche Region (Burgenland/Niederösterreich, gelb), Wien als Dienstleistungszentrum (lila)",
+    "why": "ENT.02 verlangt explizit Charakterisierung UND Verortung. Ohne Karte können Schüler:innen nur die erste Hälfte der Kompetenz erfüllen. Die Regionalkarte macht die räumliche Dimension der Wirtschaftsschwerpunkte unmittelbar greifbar und trainiert geografische Orientierung.",
+    "route": "sourced",
+    "recipe_or_reason": "Benötigt eine geografisch korrekte Österreichkarte mit akkuraten Bundeslandgrenzen. Wirtschaftszuordnungen sind vereinfacht (für didaktische Zwecke), aber die geografische Lage der Bundesländer muss stimmen. Eine diffusion-erzeugte Karte könnte Bundeslandgrenzen oder Landeshauptstädte falsch verorten — das wäre sachlich falsch für GWB. Basiert auf realen Wirtschaftsdaten, keine Erfindung.",
+    "labels": [
+      "Industrieregion",
+      "Tourismusregion",
+      "Landwirtschaft",
+      "Dienstleistung/Handel"
+    ],
+    "content_risk": "Vereinfachung: Wirtschaftsregionen überlappen in der Realität stark (Steiermark = Industrie + Tourismus). Vetter muss prüfen, ob vereinfachte Kategorisierung für Kl. 3 didaktisch vertretbar ist und keine faktisch falschen Aussagen suggeriert. Bundeslandgrenzen müssen korrekt sein.",
+    "caption": "Abb. X: Wirtschaftsschwerpunkte der österreichischen Bundesländer (vereinfachte Übersicht)",
+    "bucket": "geo_gesch"
+  },
+  {
+    "id": "fig-fs1-1",
+    "subject": "Erste lebende Fremdsprache",
+    "worksheet": "c0050 — Anweisungen und Auskünfte verstehen",
+    "where": "t3 — 'To get to the sports hall, first go out of the main entrance. Then turn left and walk straight ahead for about two minutes. You will see a big car park on your right.'",
+    "figure": "Simple top-down school grounds map showing main entrance, a left turn, a straight path, a car park on the right, and a sports hall behind it — no labels, or labels in neutral icons only (no English text in the image)",
+    "why": "The ordering task requires pupils to sequence five spatial steps purely from the heard description. A schematic map gives them a concrete spatial anchor for the route without pre-solving the task; it scaffolds the weakest spatial visualisers without giving the answer away because the steps are still unlabelled.",
+    "route": "illustration",
+    "recipe_or_reason": "Generic top-down school-grounds scene: entrance gate, path, car park rectangle, sports-hall rectangle. No embedded text. Neutral, culturally generic.",
+    "labels": [
+      "route",
+      "school-grounds",
+      "top-down",
+      "spatial"
+    ],
+    "content_risk": "low — generic layout, no real place, no text in image",
+    "caption": "Schulgelände: Finde den Weg zur Sporthalle.",
+    "bucket": "sprachen"
+  },
+  {
+    "id": "fig-fs1-2",
+    "subject": "Erste lebende Fremdsprache",
+    "worksheet": "c0053 — Sich vorstellen und über sich sprechen",
+    "where": "t4 — 'Prepare a short self-introduction (5–7 sentences). Include: Your name and age / Where you live / family / Your favourite subject / One hobby or interest / A closing sentence. Practise saying it ALOUD first.'",
+    "figure": "Two teenagers in a casual school setting (corridor or classroom doorway) facing each other mid-conversation — one gesturing to speak, the other attentive. No speech bubbles, no text in image.",
+    "why": "The speaking task asks Kl.1 beginners to deliver a real self-introduction. A scene showing two peers in lively conversation models the social context, reduces speaking anxiety by normalising the situation, and gives the class something to point at when setting up partner work.",
+    "route": "illustration",
+    "recipe_or_reason": "Generic school social scene: two adolescent figures, gender-neutral styling, light background. No speech bubbles or embedded text (diffusion garbles text). Culturally neutral — no flags, uniforms, or specific country markers.",
+    "labels": [
+      "speaking",
+      "peer-conversation",
+      "school-corridor"
+    ],
+    "content_risk": "low — generic scene, no text, no culturally specific markers needed",
+    "caption": "Sich vorstellen — stell dich deiner Partnerin / deinem Partner vor.",
+    "bucket": "sprachen"
+  },
+  {
+    "id": "fig-fs1-3",
+    "subject": "Erste lebende Fremdsprache",
+    "worksheet": "c0051 — Wünsche und Gefühle in Texten erkennen",
+    "where": "i1 — Emma's pen-pal letter: 'My big dream is to travel. I have never been outside the UK and I want to see mountains, ancient cities, and maybe try food I have never heard of. I follow lots of travel accounts online, but looking at other people's photos makes me feel both excited and a little sad at the same time.'",
+    "figure": "A collage-style vignette: a teenager at a desk looking at a glowing screen that shows a distant snow-capped mountain range and a silhouette of ancient columns — dreamy, slightly wistful atmosphere. No text on screen, no brand logos.",
+    "why": "The reading tasks ask pupils to infer Emma's mixed feelings (excited + sad) from her letter. A visual showing the 'travel-dream gap' — a young person at home looking at faraway places — externalises that emotional tension and gives the whole worksheet a motivating visual hook before the reading.",
+    "route": "illustration",
+    "recipe_or_reason": "Scene: young person at desk, screen glow, distant mountain and ruin silhouette in the screen glow. No embedded text on screen. Atmosphere is key, not factual accuracy. Culturally generic mountains/ruins — no specific landmarks (no Eiffel Tower, no Acropolis label).",
+    "labels": [
+      "reading",
+      "emotions",
+      "travel-dream",
+      "teenager"
+    ],
+    "content_risk": "low — generic dreamy scene; no real place, no text required in image",
+    "caption": "Emma träumt von fernen Ländern — was fühlt sie dabei?",
+    "bucket": "sprachen"
+  },
+  {
+    "id": "fig-fs2-1",
+    "subject": "Zweite lebende Fremdsprache",
+    "worksheet": "c0058 — Au café et en ville — Im Alltag auf Französisch kommunizieren",
+    "where": "t3 — 'Partnerübung: Spielt ein Gespräch im Café nach. Eine Person ist Kellner:in, die andere ist Gast ... Wählt mindestens 3 Dinge aus dieser Getränkekarte: Un café — 2,50 € | Un thé — 2,00 € | Un jus d'orange ...'",
+    "figure": "A warm French pavement café scene: small round tables with chairs, a waiter figure approaching, a menu-board visible in the background but with no readable text — just chalk-mark shapes suggesting a list. Sunny street backdrop.",
+    "why": "The roleplay task asks pupils to improvise a full café conversation. A scene that shows the setting — tables, waiter, relaxed café atmosphere — activates the social script before speaking starts and helps pupils visualise the situation they are acting out.",
+    "route": "illustration",
+    "recipe_or_reason": "Generic French café scene: pavement tables, umbrella, waiter silhouette, background menu-board with no legible text. No specific Paris landmarks. Warm Mediterranean palette. Diffusion risk: menu-board must be blurry/unreadable — this is intentional.",
+    "labels": [
+      "speaking",
+      "café",
+      "France",
+      "roleplay"
+    ],
+    "content_risk": "low — generic café; no text in image required; menu board deliberately illegible",
+    "caption": "Au café — Bestellst du bitte für uns beide?",
+    "bucket": "sprachen"
+  },
+  {
+    "id": "fig-fs2-2",
+    "subject": "Zweite lebende Fremdsprache",
+    "worksheet": "c0058 — Au café et en ville — Im Alltag auf Französisch kommunizieren",
+    "where": "t4 — 'Du bist in Paris und fragst jemanden nach dem Weg zum Eiffelturm. Die Person antwortet: Alors, vous allez tout droit, puis vous tournez à gauche et c'est à cinq minutes à pied.'",
+    "figure": "A generic Parisian street corner scene viewed from pedestrian eye-level: a wide pavement, a street stretching straight ahead, a crossing, and a figure pointing left. Landmark-free — no visible Eiffel Tower in frame (the destination is around the corner).",
+    "why": "The task is about communicative reaction to a direction, not navigation per se. A street scene anchors the 'asking a stranger for directions' social context and makes the spoken interaction feel real. Placing the Eiffel Tower out of frame keeps the scene generic and avoids the task giving itself away.",
+    "route": "illustration",
+    "recipe_or_reason": "Generic city street with French architectural style (Haussmann-style building facades, but no text on storefronts). A figure with an outstretched arm pointing. No signs or street names readable. Diffusion often renders storefronts with garbled text — instruct: no storefronts with visible lettering.",
+    "labels": [
+      "speaking",
+      "directions",
+      "street-scene",
+      "Paris-generic"
+    ],
+    "content_risk": "low-medium — Paris is named in the task; street should be 'Haussmann-style generic city' with no text on buildings; vetter checks no accidental landmarks are wrong",
+    "caption": "Entschuldigung, wie komme ich zum Eiffelturm?",
+    "bucket": "sprachen"
+  },
+  {
+    "id": "fig-fs2-3",
+    "subject": "Zweite lebende Fremdsprache",
+    "worksheet": "c0055 — Wer bist du? — Kurze Dialoge verstehen",
+    "where": "t2 — '[Teacher reads:] Bonjour ! Je m'appelle Emma. J'ai treize ans. J'habite à Vienne. Mon hobby, c'est la musique. — Salut Emma ! Moi, c'est Lucas. J'ai quatorze ans. J'habite à Graz. J'aime le football.' [pupils fill a table: Prénom / Âge / Ville / Hobby]",
+    "figure": "Two teenagers side by side in a friendly first-meeting pose — one holding a small football, the other with headphones around her neck. City skylines visible but not identifiable in the background.",
+    "why": "The table-fill task extracts info about two characters the pupils only hear. A visual pairing Emma (music) and Lucas (football) before the listening activates the character schema, making the auditory retrieval task more tractable for A1 beginners while not giving away any factual answers (no text, no city labels).",
+    "route": "illustration",
+    "recipe_or_reason": "Two adolescent figures, casual dress. One holds a football (Lucas), one has headphones (Emma). Background: vague urban skyline, no readable text. Gender presentation: one girl-presenting, one boy-presenting per the names in the text.",
+    "labels": [
+      "listening",
+      "characters",
+      "introduction",
+      "A1"
+    ],
+    "content_risk": "low — generic characters; no text; no specific city required",
+    "caption": "Wer ist wer? Emma und Lucas stellen sich vor.",
+    "bucket": "sprachen"
+  },
+  {
+    "id": "fig-fs2-4",
+    "subject": "Zweite lebende Fremdsprache",
+    "worksheet": "c0057 — Ma famille et mes loisirs — Über Familie und Hobbys schreiben",
+    "where": "t3 — 'Schreibe 4–5 Sätze auf Französisch über deine Familie. Benutze die Satzanfänge: Dans ma famille, il y a... / Ma mère / Mon père s'appelle... / J'ai un frère / une sœur. Il/Elle a ... ans.'",
+    "figure": "A simple, warm family scene: two adults and two children of varied ages sitting together at a table or in a garden. Generic and inclusive — no specific cultural markers, no single 'ideal' family model. No text anywhere.",
+    "why": "The writing task asks pupils to produce sentences about their own family using sentence starters. A welcoming, generic family image contextualises the topic, makes the writing feel personal, and models the family constellation the text is about — without prescribing any one family structure.",
+    "route": "illustration",
+    "recipe_or_reason": "Generic multi-generational family group, two adults and two children. Outdoors/garden setting or neutral interior. No national flags, no culturally specific clothing. Warm, positive palette. No text in image.",
+    "labels": [
+      "writing",
+      "family",
+      "context-illustration",
+      "A1"
+    ],
+    "content_risk": "low — generic family scene; vetter checks for diverse representation and absence of specific cultural markers",
+    "caption": "Ma famille — schreibe über deine Familie auf Französisch.",
+    "bucket": "sprachen"
+  },
+  {
+    "id": "fig-lat-1",
+    "subject": "Latein",
+    "worksheet": "c0062 — Römisches Alltagsleben: Die Familie und das Haus",
+    "where": "t1 — 'Marcia et Marcus in Roma habitant ... Filius eorum Quintus in ludo discit. Filia eorum Claudia domi manet. Servus aquam portat.' / t3 — 'Was ist ein Atrium in einem römischen Haus? ... Das Atrium war der zentrale offene Innenhof des römischen Hauses, oft mit einem Wasserbecken — dem impluvium.'",
+    "figure": "Cutaway or simplified isometric view of a Roman domus showing: entrance corridor (fauces), atrium with impluvium (small pool), tablinum (master's room opening off atrium), and garden (hortus) at the rear. Figures at scale for proportion but not labelled in the image itself.",
+    "why": "The worksheet asks pupils to translate a text about a Roman family AND answer about the atrium. An architectural cross-section/cutaway makes the spatial vocabulary (atrium, impluvium, domus) immediately intuitive and grounds the translation task in a visible world. It also feeds t5's compare-and-contrast task (Roman house vs. today).",
+    "route": "illustration",
+    "recipe_or_reason": "Roman domus isometric cutaway. No embedded Latin or German labels in the image (all labels in worksheet text below the figure). Architecturally plausible but stylised; no photo. Anachronism risk: moderate — instruct no modern elements (no glass windows, no chimneys). Vetter checks: correct impluvium position, compluvium opening above, tablinum open to atrium.",
+    "labels": [
+      "Roman-domus",
+      "atrium",
+      "architecture",
+      "culture-context"
+    ],
+    "content_risk": "medium — architectural illustration has factual content; vetter must check impluvium placement is correct and no anachronistic details (electricity, modern furniture) slip in",
+    "caption": "Eine römische Domus: Das Atrium mit Impluvium im Zentrum des Hauses.",
+    "bucket": "sprachen"
+  },
+  {
+    "id": "fig-lat-2",
+    "subject": "Latein",
+    "worksheet": "c0062 — Römisches Alltagsleben: Die Familie und das Haus",
+    "where": "t6 — 'Stell dir vor, du bist Quintus (oder Claudia) und schreibst einen kurzen Brief an einen Freund in Griechenland. Beschreibe deinen Alltag in der römischen Familie in 4–5 deutschen Sätzen.'",
+    "figure": "A Roman child at a wooden writing tablet (tabula cerata) — sitting cross-legged on a low bench in a simply furnished Roman room, stylus in hand, concentrating. Through an arched doorway in the background, an atrium/garden is just visible.",
+    "why": "The creative writing task asks pupils to write a letter as Quintus or Claudia. A warm illustration of a Roman child writing grounds the empathy task and cues the right cognitive frame (first-person, historical, personal). It visually separates this 'create' task from the preceding analytical blocks.",
+    "route": "illustration",
+    "recipe_or_reason": "Roman child writing scene. Tabula cerata (wax tablet) held in lap; stylus visible. No text on the tablet. Room: simple Roman interior (tiled floor, plastered walls). Warm oil-lamp light. No anachronisms. Gender-ambiguous or clearly child-presenting — ideally one of each presented as two small vignettes to match Quintus/Claudia choice.",
+    "labels": [
+      "Roman-daily-life",
+      "child",
+      "writing",
+      "empathy"
+    ],
+    "content_risk": "low-medium — Roman setting, no factual claims; vetter checks: no anachronisms, correct stylus/tablet prop, not a realistic photo of a child",
+    "caption": "Quintus oder Claudia schreibt einen Brief — wie sah ein Tag in einer römischen Familie aus?",
+    "bucket": "sprachen"
+  },
+  {
+    "id": "fig-lat-3",
+    "subject": "Latein",
+    "worksheet": "c0060 — Nomen und Kasus: Nominativ und Akkusativ",
+    "where": "t3 — 'Übersetze die folgenden lateinischen Sätze ins Deutsche. Unterstreiche dabei das Subjekt (Nominativ) und kreise das Objekt (Akkusativ) ein. 1. Puella servum videt. 2. Servus viam longam intrat. 3. Dominus puellam laudat.'",
+    "figure": "Three simple comic-strip panels illustrating the three sentences: (1) a girl looking at a slave figure; (2) a man walking onto/entering a wide road; (3) a man gesturing approvingly toward a girl. Stick-figure or line-art style — no text inside the panels.",
+    "why": "The core difficulty of this kasus worksheet is understanding who acts (Nominativ subject) on whom (Akkusativ object) — a purely grammatical abstraction. Small action scenes make the semantic roles concrete before the grammatical terms are applied, supporting the understand→apply progression from t3 onward.",
+    "route": "illustration",
+    "recipe_or_reason": "Three minimal comic panels, line-art. Roman-ish dress (simple tunics) but non-specific era markers. Directional arrows of gaze/action implicit in the scene composition. No text bubbles, no labels in image. Simple enough that diffusion is unlikely to introduce garbled text.",
+    "labels": [
+      "grammar",
+      "Nominativ",
+      "Akkusativ",
+      "comic-panels",
+      "action-scene"
+    ],
+    "content_risk": "low — line-art action panels; no factual claims; vetter checks: consistent simple Roman tunic style, no anachronisms, actions clearly directional",
+    "caption": "Wer handelt? Wer wird betroffen? Erkenne Nominativ und Akkusativ in den Bildern.",
+    "bucket": "sprachen"
+  },
+  {
+    "id": "fig-deu-1",
+    "subject": "Deutsch",
+    "worksheet": "c0013 — Lyrik entdecken: Sprache, Rhythmus und eigene Lesarten",
+    "where": "worksheet intro / t1 area — the entire worksheet is built around pupils encountering and responding to a poem. No existing visual anchor.",
+    "figure": "Abstract atmospheric illustration evoking 'the feeling of reading poetry': an open book with soft light radiating, surrounded by floating word-shapes (no readable words — abstract letter-fragment silhouettes only), autumn leaves or similar evocative natural elements.",
+    "why": "A Lyrik worksheet for Kl.1 benefits from a title-page image that sets a contemplative mood and signals 'this is creative, not just analytical'. The abstract book-with-light-and-fragments image does this without prescribing any poem's imagery, leaving the pupil's imagination open — which is precisely what the worksheet's Kernfrage ('Was bedeutet es für dich persönlich?') asks.",
+    "route": "illustration",
+    "recipe_or_reason": "Abstract/atmospheric. Open book, warm glow, floating abstract letterform shapes (deliberately blurred — no readable words, avoiding diffusion text-garbling). Natural elements (leaf, feather, light beam). Soft palette. No specific poem illustrated.",
+    "labels": [
+      "poetry",
+      "atmosphere",
+      "reading",
+      "abstract"
+    ],
+    "content_risk": "low — fully abstract; no factual referent; no text needed in image",
+    "caption": "Lyrik entdecken — was löst ein Gedicht in dir aus?",
+    "bucket": "sprachen"
+  },
+  {
+    "id": "fig-deu-2",
+    "subject": "Deutsch",
+    "worksheet": "c0011 — Argumentieren und informierendes Schreiben: Meinungen begründen",
+    "where": "t3 — 'Wähle eine der folgenden Thesen und schreibe dazu zwei Argumente und ein Gegenargument: „In der Schule sollte mehr Sport angeboten werden.“ / „Smartphones sollten im Unterricht erlaubt sein.“ / „Schüler:innen sollten ihre Noten mitbestimmen dürfen.“'",
+    "figure": "A simple three-panel comic-strip showing the structure of an argument: panel 1 = a figure stating a bold position (speech bubble blank/empty); panel 2 = same figure offering a reason with a second figure listening; panel 3 = a third figure raising a counter-point. No text in bubbles.",
+    "why": "The hardest skill in this worksheet is structuring These → Argument → Gegenargument. A visual diagram of the three-move structure, placed before t3, gives pupils a memorable mental model. Comic format keeps it age-appropriate for Kl.2.",
+    "route": "illustration",
+    "recipe_or_reason": "Three-panel comic strip. Three adolescent figures in a circle or row. Speech bubbles visibly present but blank (speech-bubble shapes only). Arrows or numbering (1, 2, 3) outside the image area (in worksheet caption, not in image). No text in bubbles — diffusion safety.",
+    "labels": [
+      "argumentation",
+      "diagram",
+      "three-move",
+      "comic"
+    ],
+    "content_risk": "low — abstract process illustration; speech bubbles intentionally blank; no text required in image",
+    "caption": "These — Argument — Gegenargument: So ist ein Argument aufgebaut.",
+    "bucket": "sprachen"
+  },
+  {
+    "id": "fig-ged-1",
+    "subject": "Geometrisches Zeichnen",
+    "worksheet": "c0022 — Grund-, Auf- und Kreuzriss",
+    "where": "s1/t1 — 'Wie kannst du aus drei Ansichten … den räumlichen Körper vollständig erfassen'",
+    "figure": "Dreitafelprojektion eines einfachen L-förmigen Körpers mit beschrifteten Ansichten (Grundriss oben, Aufriss vorne, Kreuzriss rechts) und Koordinationslinien",
+    "why": "Das Dreitafelbild ist das Kernobjekt des gesamten Arbeitsblatts; Schüler:innen sollen Risse lesen (H3) und herstellen (H2). Ohne eine Referenzskizze zum Ablesen des Prinzips fehlt der Einstieg für alle Folgeaufgaben.",
+    "route": "code_gen",
+    "recipe_or_reason": "matplotlib/SVG orthographic-projection schematic: L-shaped solid, three views arranged in standard first-angle layout with construction lines; labelled Grundriss/Aufriss/Kreuzriss",
+    "labels": [
+      "Grundriss",
+      "Aufriss",
+      "Kreuzriss",
+      "Koordinationslinien"
+    ],
+    "content_risk": "none — purely geometric construction, no factual claim",
+    "caption": "Dreitafelprojektion eines L-förmigen Körpers: Grundriss (oben), Aufriss (vorne) und Kreuzriss (rechts) mit Koordinationslinien",
+    "bucket": "rest"
+  },
+  {
+    "id": "fig-ged-2",
+    "subject": "Geometrisches Zeichnen",
+    "worksheet": "c0020 — Körper erkennen und beschreiben",
+    "where": "s1/t1 — 'geometrische Objekte analysieren, ihre Eigenschaften erfassen'",
+    "figure": "Tabellarische Übersicht der fünf Grundkörper (Würfel, Quader, Prisma, Pyramide, Zylinder, Kegel, Kugel) als schematische Schrägbilder mit beschrifteten Elementen (Flächen, Kanten, Ecken)",
+    "why": "Das Arbeitsblatt behandelt das Erkennen und Beschreiben von Körpern; eine Referenzübersicht der Grundkörper vermeidet, dass Schüler:innen bei Fachbegriffen (z.B. Grundfläche, Mantelfläche) raten müssen.",
+    "route": "code_gen",
+    "recipe_or_reason": "matplotlib 3D axes or SVG: oblique projections of the 7 standard solids, each labelled with Flächen/Kanten/Ecken count in a grid layout",
+    "labels": [
+      "Würfel",
+      "Quader",
+      "Prisma",
+      "Pyramide",
+      "Zylinder",
+      "Kegel",
+      "Kugel"
+    ],
+    "content_risk": "none — standard geometric solids, no factual claim",
+    "caption": "Die sieben geometrischen Grundkörper mit Anzahl der Flächen, Kanten und Ecken",
+    "bucket": "rest"
+  },
+  {
+    "id": "fig-ted-1",
+    "subject": "Technik und Design",
+    "worksheet": "c0049 — Mechanismen und Bewegung: Übertragung von Kräften verstehen und anwenden",
+    "where": "s1/t1 — matching 'Kurbel + Pleuelstange → Drehbewegung zu Hin-und-her-Bewegung'",
+    "figure": "Schematische Schnittzeichnung eines Kurbel-Pleuel-Mechanismus mit beschrifteten Teilen (Kurbelzapfen, Pleuelstange, Kolben/Stempel, Führungskanal) und eingezeichnetem Bewegungspfeil",
+    "why": "Der Kurbel-Pleuel-Mechanismus ist das schwierigste Element in t1; das Umwandlungsprinzip (Rotation → Translation) lässt sich ohne Skizze kaum schriftlich verdeutlichen, und t4 fordert Schüler:innen auf, genau diesen Mechanismus zu entwerfen.",
+    "route": "code_gen",
+    "recipe_or_reason": "SVG/matplotlib schematic: crank at 45°, connecting rod, piston in guide channel; arrow showing rotational input and linear output; parts labelled in German",
+    "labels": [
+      "Kurbelzapfen",
+      "Pleuelstange",
+      "Kolben",
+      "Führungskanal",
+      "Drehbewegung",
+      "Hubbewegung"
+    ],
+    "content_risk": "none — generic mechanical schematic, no real-world object reference required",
+    "caption": "Kurbel-Pleuel-Mechanismus: Drehbewegung (Eingang) wird in Hin-und-her-Bewegung (Ausgang) umgewandelt",
+    "bucket": "rest"
+  },
+  {
+    "id": "fig-ted-2",
+    "subject": "Technik und Design",
+    "worksheet": "c0049 — Mechanismen und Bewegung: Übertragung von Kräften verstehen und anwenden",
+    "where": "s1/t1 — 'Zahnradgetriebe (großes auf kleines Rad) → Dreht schneller, aber mit weniger Kraft'",
+    "figure": "Schematisches Zahnradpaar mit eingezeichneten Zähnezahlen (z.B. 36 und 12) und Drehzahlpfeil; Übersetzungsverhältnis 3:1 beschriftet",
+    "why": "t3 verlangt explizit die Auswahl des richtigen Zahnrads (36 vs. 12 Zähne) für Antrieb und Abtrieb; eine Referenzdarstellung macht das Übersetzungsprinzip konkret und löst die häufigste Fehlvorstellung (watch_out: Schüler:innen denken, kleineres Rad = mehr Kraft).",
+    "route": "code_gen",
+    "recipe_or_reason": "SVG: two meshing gear circles, large (36T) with slow arrow, small (12T) with fast arrow; gear teeth drawn schematically; ratio label '36:12 = 3:1'",
+    "labels": [
+      "36 Zähne (Antrieb)",
+      "12 Zähne (Abtrieb)",
+      "Übersetzung 3:1",
+      "langsam",
+      "schnell"
+    ],
+    "content_risk": "none — generic schematic",
+    "caption": "Zahnradübersetzung: Das große Antriebsrad (36 Zähne) treibt das kleine Abtriebsrad (12 Zähne) an — Übersetzung 3:1",
+    "bucket": "rest"
+  },
+  {
+    "id": "fig-kug-1",
+    "subject": "Kunst und Gestaltung",
+    "worksheet": "c0035 — Farbe als Ausdrucksmittel",
+    "where": "s1/t1 — 'Komplementärfarben stehen sich im Farbkreis direkt gegenüber'",
+    "figure": "Zwölfteiliger Farbkreis (Primär-, Sekundär- und Tertiärfarben) mit eingezeichneten Komplementärfarbenpaaren und Beschriftung warm/kalt",
+    "why": "t1 fragt explizit nach Komplementärfarben und Farbmischung; die teacher_overview sagt 'Erkläre den Unterschied zwischen Primär-, Sekundär- und Tertiärfarben am Farbkreis (verbal beschreiben, kein Bild nötig)' — aber genau ein solches Referenzbild würde t1 und t3 (Warm/Kalt-Stimmung) deutlich besser stützen.",
+    "route": "code_gen",
+    "recipe_or_reason": "matplotlib polar color wheel: 12 segments filled with correct hues (HSV interpolation), labelled Primär/Sekundär/Tertiär, complementary pairs connected by diameter lines, warm/kalt halves annotated",
+    "labels": [
+      "Primärfarben",
+      "Sekundärfarben",
+      "Tertiärfarben",
+      "Komplementärpaare",
+      "warm",
+      "kalt"
+    ],
+    "content_risk": "none — generic color theory diagram",
+    "caption": "Farbkreis mit Primär-, Sekundär- und Tertiärfarben; Komplementärfarbenpaare gegenüberstehend; warme und kühle Farben",
+    "bucket": "rest"
+  },
+  {
+    "id": "fig-kug-2",
+    "subject": "Kunst und Gestaltung",
+    "worksheet": "c0039 — Selbstporträts — Ich zeigen, Ich erfinden",
+    "where": "s1 — tasks comparing self-portraits by Dürer, van Gogh, Frida Kahlo",
+    "figure": "Reproduction of Albrecht Dürer, Selbstbildnis im Pelzrock (1500, Alte Pinakothek München)",
+    "why": "The worksheet is about analysing and comparing self-portraits. Dürer's 1500 self-portrait is the canonical reference for art history self-portraiture in Austrian schools; without the actual image the analysis task is a hypothetical exercise rather than a real encounter with the artwork.",
+    "route": "sourced",
+    "recipe_or_reason": "Public domain (pre-1928 work). Source: Wikimedia Commons — https://commons.wikimedia.org/wiki/File:Albrecht_D%C3%BCrer_-_1500_self-portrait_(High_resolution_and_detail).jpg. Vetter must confirm image licence is PD-Art.",
+    "labels": [
+      "Albrecht Dürer",
+      "Selbstbildnis im Pelzrock",
+      "1500",
+      "Alte Pinakothek"
+    ],
+    "content_risk": "Correct attribution required; must not be replaced by AI-generated fake of the painting. Vetter checks: correct Wikimedia file, PD-Art tag, not a cropped/altered derivative.",
+    "caption": "Albrecht Dürer: Selbstbildnis im Pelzrock (1500), Alte Pinakothek München (gemeinfrei)",
+    "bucket": "rest"
+  },
+  {
+    "id": "fig-mus-1",
+    "subject": "Musik",
+    "worksheet": "c0040 — Instrumente – Klang, Bau und Spielweise",
+    "where": "s1/t1 — matching 5 instruments (Geige, Querflöte, Kleine Trommel, Xylofon, Trompete) to Klangerzeugung",
+    "figure": "Fotografien der fünf Instrumente aus t1 in einer Bildleiste (Geige, Querflöte, Kleine Trommel, Xylofon, Trompete) mit je einem Buchstaben zur Zuordnung",
+    "why": "t1 is a matching task that assumes visual recognition of instruments; Schüler:innen in Klasse 2 may not know all five instruments by name. A photo strip removes name-recognition as a confound and focuses the task on physical reasoning about sound production.",
+    "route": "sourced",
+    "recipe_or_reason": "All five instruments are real physical objects; a diffusion illustration would be unreliable for identifying physical details (e.g. Querflöte side-blown embouchure hole vs Trompete mouthpiece). Source: Wikimedia Commons instrument photos (Violin, Flute, Snare drum, Xylophone, Trumpet) — all PD or CC-BY. Vetter checks: correct instrument shown (e.g. concert-pitch Querflöte not Blockflöte), no brand logos visible.",
+    "labels": [
+      "Geige",
+      "Querflöte",
+      "Kleine Trommel",
+      "Xylofon",
+      "Trompete"
+    ],
+    "content_risk": "Instrument identity must be unambiguous. Vetter must verify: Querflöte (transverse flute, not recorder), Xylofon (wood bars, not Metallofon), Kleine Trommel (not Pauke). Licence check per image.",
+    "caption": "Die fünf Instrumente aus Aufgabe 1: Geige, Querflöte, Kleine Trommel, Xylofon, Trompete",
+    "bucket": "rest"
+  },
+  {
+    "id": "fig-mus-2",
+    "subject": "Musik",
+    "worksheet": "c0043 — Musik und Geschichte – Vom Barock zum Gegenwartspop",
+    "where": "s1/t3 — 'Beethoven strich die Widmung an Napoleon wütend aus'",
+    "figure": "Faksimile der Titelseite der Eroica-Partitur (Beethoven, op. 55) mit der durchgestrichenen Widmung an Napoleon Bonaparte",
+    "why": "t3 is built around this exact historical episode; the actual manuscript facsimile transforms a verbal anecdote into a primary source and demonstrates that music history is documented. The tear and pencil crossings are visible and pedagogically powerful.",
+    "route": "sourced",
+    "recipe_or_reason": "The Eroica title-page facsimile is widely reproduced. The Gesellschaft der Musikfreunde Wien holds the manuscript (Mus.Hs.16.003). High-quality public-domain reproduction available e.g. from IMSLP or Wikimedia. Vetter must confirm: correct manuscript page showing crossed-out 'Buonaparte', not a modern typeset copy.",
+    "labels": [
+      "Ludwig van Beethoven",
+      "Sinfonie Nr. 3 Es-Dur op. 55",
+      "Eroica",
+      "durchgestrichene Widmung"
+    ],
+    "content_risk": "Must be the actual manuscript facsimile, not a reconstruction or AI fake. Attribution: Gesellschaft der Musikfreunde Wien. Confirm PD status (pre-1928 document).",
+    "caption": "Titelseite von Beethovens Eroica (op. 55): Die Widmung an 'Buonaparte' wurde vom Komponisten wütend durchgestrichen (Facsimile, Gesellschaft der Musikfreunde Wien)",
+    "bucket": "rest"
+  },
+  {
+    "id": "fig-bus-1",
+    "subject": "Bewegung und Sport",
+    "worksheet": "c0006 — Trainieren mit System: Prinzipien des sportlichen Übens",
+    "where": "s1/t2 — ordering Belastung → Ermüdung → Erholung → Superkompensation",
+    "figure": "Superkompensationskurve: Leistungsfähigkeit (y-Achse) über Zeit (x-Achse) mit beschrifteten Phasen (Belastung, Ermüdung, Erholung, Superkompensation) und dem optimalen Zeitpunkt für die nächste Trainingseinheit",
+    "why": "t2 asks students to sequence the four training phases AND explain what happens in each; the ordering task is trivially easy with the diagram visible, but used AFTER the task (or as Musterlösung) it locks in the correct model. The teacher overview explicitly discusses Superkompensation as a core concept. This is the canonical sports science diagram.",
+    "route": "code_gen",
+    "recipe_or_reason": "matplotlib line chart: smooth curve starting at baseline, dipping (Ermüdung), rising above baseline (Superkompensation), returning to baseline if no next stimulus; colour-coded phase bands; labelled in German",
+    "labels": [
+      "Belastung",
+      "Ermüdung",
+      "Erholung",
+      "Superkompensation",
+      "nächste Trainingseinheit",
+      "Leistungsfähigkeit"
+    ],
+    "content_risk": "none — simplified physiological model diagram; teacher_overview notes it is a simplified model, so caption should say 'vereinfachtes Modell'",
+    "caption": "Superkompensation: vereinfachtes Modell der Leistungsfähigkeit nach einer Trainingsbelastung (Zeitpunkt für die nächste Einheit zum optimalen Nutzen markiert)",
+    "bucket": "rest"
+  },
+  {
+    "id": "fig-bus-2",
+    "subject": "Bewegung und Sport",
+    "worksheet": "c0007 — Turnen: Bewegungsmerkmale wahrnehmen und Feedback geben",
+    "where": "s1/t2 — matching 5 Turnübungen (Rolle vorwärts, Handstand, Liegestützposition, Strecksprung, Hang) to Bewegungsmerkmalen",
+    "figure": "Fünf stilisierte Linienfiguren der Turnübungen aus t2: Rolle vorwärts (eingerollt), Handstandannäherung (Hände am Boden, Körper aufrecht), Liegestützposition, Strecksprung (Körper in der Luft gestreckt), Hang am Reck",
+    "why": "t2 is a matching task linking verbal Merkmal descriptions to exercise names. Students unfamiliar with all five exercises by name would benefit from visual cues. A simple line-figure (Strichmännchen-Stil) for each position removes name-recall as a confound and trains observation of body positions, directly serving BUS.US.3.FAC.05.",
+    "route": "illustration",
+    "recipe_or_reason": "Stylised instructional stick-figures (generic, no real athlete reference needed): 5 positions in a horizontal strip, each labelled A–E matching t2's right column. No photorealism required or desired — generic illustrative style is exactly appropriate here.",
+    "labels": [
+      "A – Rolle vorwärts",
+      "B – Handstand (Annäherung)",
+      "C – Liegestützposition",
+      "D – Strecksprung",
+      "E – Hang am Reck"
+    ],
+    "content_risk": "Low. Figures must be anatomically plausible for the exercise; reviewer checks that body proportions and postures are correct (e.g. Handstand: arms vertical, body straight, NOT bent). No specific athlete depicted, no gender cues needed.",
+    "caption": "Fünf Turnübungen als Linienfiguren (A–E) zur Zuordnung der Bewegungsmerkmale in Aufgabe 2",
+    "bucket": "rest"
+  },
+  {
+    "id": "fig-bus-3",
+    "subject": "Bewegung und Sport",
+    "worksheet": "c0008 — Spieltaktik: Angriff, Verteidigung und Teamorganisation",
+    "where": "s1/t4 — table comparing Angriff vs. Verteidigung on criterion 'Raumnutzung: Räume schaffen (auseinanderlaufen) vs. Räume schließen (zusammenrücken)'",
+    "figure": "Vereinfachter Hallenplan (Basketball/Handball) von oben: linke Hälfte zeigt Angriffsspieler:innen die sich auseinanderbewegen (Pfeile nach außen), rechte Hälfte zeigt Verteidiger:innen die zusammenrücken (Pfeile nach innen)",
+    "why": "t4's hardest row is 'Raumnutzung' — the watch_out explicitly says 'Raumnutzung ist ein anspruchsvolles Konzept — mit konkretem Beispiel (Basketball: Zone vs. Manndeckung) verdeutlichen'. A top-down court diagram with arrows makes the spatial abstraction immediately concrete.",
+    "route": "code_gen",
+    "recipe_or_reason": "SVG or matplotlib: simplified rectangular court outline (half-court each side), 4 player dots per side with directional arrows; labelled 'Angriff: Räume schaffen' and 'Verteidigung: Räume schließen'",
+    "labels": [
+      "Angriff: Räume schaffen",
+      "Verteidigung: Räume schließen"
+    ],
+    "content_risk": "none — abstract tactical diagram, no specific sport rules depicted",
+    "caption": "Raumnutzung im Sportspiel: Angreifer:innen vergrößern den Raum (auseinanderlaufen), Verteidiger:innen verkleinern ihn (zusammenrücken)",
+    "bucket": "rest"
+  },
+  {
+    "id": "fig-dgb-1",
+    "subject": "Digitale Grundbildung",
+    "worksheet": "c0017 — Computational Thinking und Algorithmen",
+    "where": "s1/t3 — pseudocode loop 'SOLANGE Zahl ≤ 10 MACHE … Zahl ← Zahl + 1'",
+    "figure": "Flussdiagramm des Pseudocode-Algorithmus aus t3: Start → Zahl=1 → Bedingungsraute (Zahl ≤ 10?) → Ja: Prüfe gerade (Zahl mod 2 = 0?) → Ja: ausgeben → Zahl+1 → zurück; Nein: Ende",
+    "why": "t3c asks 'Was passiert, wenn du Zahl ← Zahl + 1 vergisst?' — the Endlosschleife is best understood visually as a loop arrow that never exits. The watch_out notes this is the central concept. A flowchart makes loop structure and the missing increment visually salient.",
+    "route": "code_gen",
+    "recipe_or_reason": "SVG flowchart with standard symbols: rectangle (process), diamond (decision), arrows including back-loop; German labels matching the pseudocode; missing-increment path annotated with red arrow to show infinite loop",
+    "labels": [
+      "Start",
+      "Zahl ← 1",
+      "Zahl ≤ 10?",
+      "Zahl gerade?",
+      "Zahl ausgeben",
+      "Zahl ← Zahl + 1",
+      "Ende",
+      "Endlosschleife wenn dieser Schritt fehlt"
+    ],
+    "content_risk": "none — abstract flowchart",
+    "caption": "Flussdiagramm des Algorithmus aus Aufgabe 3: Die Schleife endet nur, wenn Zahl ← Zahl + 1 ausgeführt wird (roter Pfeil = Endlosschleife ohne diesen Schritt)",
+    "bucket": "rest"
+  },
+  {
+    "id": "fig-dgb-2",
+    "subject": "Digitale Grundbildung",
+    "worksheet": "c0015 — Daten, Überwachung und Datenschutz",
+    "where": "s1 — 'Gefahren der Erhebung, Auswertung und Verknüpfung von Nutzerdaten … erklären' (DGB.US.4.INF.02)",
+    "figure": "Generisches Datenfluss-Schema: Nutzer:in (links) → App/Plattform → Datenhändler (Data Broker) → Werbenetzwerk / Behörde / Versicherung (rechts); Datenkategorien beschriftet (Standort, Suchanfragen, Kaufverhalten, Gesundheit)",
+    "why": "The worksheet's core competence is explaining how user data is collected, linked, and misused. An abstract flow diagram (no real company logos or names) makes the chain concrete — without it, the explanation remains purely verbal and harder to reason about.",
+    "route": "code_gen",
+    "recipe_or_reason": "SVG flow diagram: 4-column left-to-right layout; generic icons (person silhouette, smartphone, server, building); labelled arrows for data categories; deliberately generic (no brand names) so the diagram stays durable and content-neutral",
+    "labels": [
+      "Nutzer:in",
+      "App / Plattform",
+      "Datenhändler",
+      "Weitergabe an…",
+      "Standortdaten",
+      "Suchanfragen",
+      "Kaufverhalten"
+    ],
+    "content_risk": "none — generic schematic with no real company names. Vetter checks: diagram does not accidentally imply a specific company is responsible; labels remain generic.",
+    "caption": "Wie Nutzerdaten fließen: Von der App über Datenhändler zu Dritten (vereinfachtes, generisches Schema)",
+    "bucket": "rest"
+  }
+]

@@ -1,0 +1,133 @@
+{
+  "id": "c0108.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "position_argument",
+    "prompt": "Eine Schülerzeitung schreibt: 'Österreich vergreist — es gibt immer mehr alte und immer weniger junge Menschen.' Beziehe auf Basis der Daten (Abb. 1) Stellung zu dieser Aussage: Was stimmt daran, was ist vereinfacht oder übertrieben?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.OST.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Richtig ist: Die Gruppe der über 60-Jährigen macht zusammen 17,3 + 9,7 = 27 % aus, während die 0–14-Jährigen nur 14,4 % stellen — die Altersstruktur ist tatsächlich nicht mehr jung. Vereinfacht/übertrieben: 'Vergreisung' klingt dramatisch und einseitig. Österreich hat noch fast ein Drittel unter 30-Jährige (31,2 %). Außerdem ist steigende Lebenserwartung ein Erfolg, kein Versagen. Der Trend ist real (Altersgruppe 45–59 am stärksten), aber mediale Panikmache hilft nicht bei der Lösungssuche.",
+    "acceptable_reasoning": "Schüler:innen sollten mindestens eine korrekte Beobachtung aus den Daten als Beleg und eine kritische Einordnung des Begriffs 'Vergreisung' liefern.",
+    "rubric": [
+      {
+        "criterion": "Datenbezug",
+        "levels": [
+          "Mindestens zwei Prozentwerte aus Abb. 1 korrekt zitiert (2P)",
+          "Ein Wert (1P)",
+          "Kein Datenbezug (0P)"
+        ]
+      },
+      {
+        "criterion": "Differenzierung",
+        "levels": [
+          "Was stimmt UND was ist übertrieben klar unterschieden (2P)",
+          "Nur eine Seite (1P)",
+          "Keine Differenzierung (0P)"
+        ]
+      },
+      {
+        "criterion": "Sprachkritik",
+        "levels": [
+          "Begriff 'Vergreisung' hinterfragt oder als wertend erkannt (1P)",
+          "Nicht thematisiert (0P)"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen könnten die Aussage unkritisch übernehmen — gezielt fragen: Was sagen die Zahlen genau?",
+      "Den Begriff 'Vergreisung' hinterfragen lassen: Wessen Perspektive steckt dahinter? Welche Wertung transportiert er?"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "position_argument",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Österreichische Gesellschaftsentwicklung",
+  "competences": [
+    "GWB.US.3.OST.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "title": "Bevölkerung Österreichs nach Altersgruppen (1.1.2024)",
+        "xlabel": "Altersgruppe",
+        "ylabel": "Anteil an der Gesamtbevölkerung (%)",
+        "log": false,
+        "categories": [
+          "0–14",
+          "15–29",
+          "30–44",
+          "45–59",
+          "60–74",
+          "75+"
+        ],
+        "values": [
+          14.4,
+          16.8,
+          20.6,
+          21.2,
+          17.3,
+          9.7
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "statistik_austria_bevstand_2024",
+        "series": "altersgruppen_breit",
+        "note": null,
+        "title": "Bevölkerung Österreichs nach Alter und Geschlecht (1.1.2024)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2024",
+        "attribution": "Datenquelle: Statistik Austria – data.statistik.gv.at (CC BY 4.0)",
+        "stand": "2024-01-01"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0108",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:27+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

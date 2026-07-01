@@ -1,0 +1,236 @@
+{
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 2,
+  "kompetenzbereich": "Vernetztes Wirtschaften zwischen Produktion und Konsum",
+  "title": "Dienstleistungen klug nutzen — von der Bank bis zum Online-Shop",
+  "kernfrage": "Welche Dienstleistungen nutzt du täglich, wie haben sie sich durch die Digitalisierung verändert — und könntest du selbst eine anbieten?",
+  "body": {
+    "intro": [],
+    "data_figures": [
+      {
+        "id": "abb1",
+        "intent": "trend",
+        "title": "Online-Banking-Nutzung in Österreich (Anteil der Bevölkerung, 2010–2023)",
+        "xlabel": "Jahr",
+        "ylabel": "Anteil in %",
+        "categories": ["2010", "2013", "2016", "2019", "2022", "2023"],
+        "values": [37, 44, 51, 58, 66, 70]
+      },
+      {
+        "id": "abb2",
+        "intent": "comparison",
+        "title": "Häufigste Zahlungsmethoden beim Online-Einkauf in Österreich (ca. 2023)",
+        "xlabel": "Zahlungsmethode",
+        "ylabel": "Anteil der Transaktionen in %",
+        "categories": ["Kreditkarte", "PayPal / digitale Wallet", "Banküberweisung", "Nachnahme / Rechnung", "Sonstiges"],
+        "values": [28, 34, 22, 12, 4]
+      }
+    ],
+    "assets": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Bank-, Verkehrs- und Handelsdienstleistungen im Alltag",
+        "throughline": "Schüler:innen kartieren systematisch, welche Dienstleistungen sie täglich nutzen, und klassifizieren sie nach den drei Haupttypen.",
+        "talking_points": [
+          "Dienstleistung vs. Gut als Ausgangspunkt: Eine Dienstleistung ist immateriell, nicht lagerfähig, und wird im Moment des Konsums erbracht.",
+          "Drei Dienstleistungstypen für diesen KB: Bank (Geld verwahren, leihen, überweisen), Verkehr (Personen/Güter transportieren), Handel (Güter kaufen/verkaufen).",
+          "Digitale Dienstleistungen: Viele Bankgeschäfte laufen heute über Apps — das ist immer noch eine Bankdienstleistung, nur der Kanal hat sich verändert.",
+          "Persönlicher Bezug stärken: Schüler:innen nutzen täglich Verkehrsdienstleistungen (Bus, Bahn) und Handelsdienstleistungen (Supermarkt, Online-Shop)."
+        ],
+        "extensions": [
+          "Exkursion: Besuch einer lokalen Bankfiliale oder Postfiliale; Schüler:innen interviewen eine Mitarbeiterin zu veränderten Aufgaben durch Digitalisierung.",
+          "Karte der Dienstleistungsinfrastruktur in der Schulgemeinde: Wer hat eine Bank, wer muss viele Kilometer fahren? (Daseinsvorsorge-Diskussion)",
+          "Vergleich städtisch vs. ländlich: Welche Dienstleistungen sind digital ersetzbar, welche brauchen physische Präsenz?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "table_fill",
+            "prompt": "Trage in die Tabelle ein, welche Bank-, Verkehrs- und Handelsdienstleistungen du oder deine Familie in einer typischen Woche nutzt. Fülle mindestens zwei Zeilen pro Spalte aus. Kreuze außerdem an, ob du diese Dienstleistung **persönlich vor Ort** oder **digital (App/Internet)** nutzt.\n\n*(Tipp: Denke an Einkäufe, Fahrten zur Schule, Geldabheben, Online-Bestellungen, Zugtickets, ...)*",
+            "payload": null,
+            "response": {"mode": "table", "columns": ["Dienstleistung", "Anbieter (Beispiel)", "Vor Ort / Digital"], "rows": 9},
+            "cognitive_level": "remember",
+            "dimensions": ["OK", "HK"],
+            "serves": [{"competence_id": "GWB.US.2.VER.03", "relation": "exercises"}],
+            "est_minutes": 7,
+            "asset_refs": [],
+            "answer_key": "Individuelle Antworten. Mögliche Beispiele: Bank — Girokonto eröffnen (vor Ort), Überweisung senden (digital), Geld am Automaten abheben (Mischform). Verkehr — Busfahrt (vor Ort), Zugticket kaufen (digital). Handel — Supermarkteinkauf (vor Ort), Online-Bestellung (digital). Lehrkraft bewertet Vollständigkeit und korrekte Typ-Zuordnung.",
+            "acceptable_reasoning": "Manche Dienste sind Grenzfälle (z. B. Postversand: Verkehr + Handel). Als Anlass nutzen, um zu zeigen, dass Dienstleistungen oft kombiniert werden.",
+            "watch_outs": ["Schüler:innen schreiben manchmal Firmennamen statt Dienstleistungen (z. B. 'Amazon' statt 'Online-Bestellung') — kurz korrigieren.", "Die Unterscheidung vor Ort / digital ist für manche Dienste nicht eindeutig (z. B. Ticketautomat) — als Diskussionsanlass akzeptieren."],
+            "rubric": [
+              {"criterion": "Vollständigkeit (mind. 2 je Typ)", "levels": ["Alle drei Typen mit ≥ 2 Beispielen", "Zwei Typen vollständig", "Nur ein Typ"]},
+              {"criterion": "Typ-Zuordnung korrekt", "levels": ["Korrekte Einordnung", "Teils korrekt", "Mehrheitlich falsch"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "data_interpretation",
+            "prompt": "Schau dir Abbildung 1 (Online-Banking-Nutzung) und Abbildung 2 (Zahlungsmethoden) an.\na) Beschreibe in einem Satz, wie sich Online-Banking in Österreich seit 2010 entwickelt hat.\nb) Welche digitale Zahlungsmethode wird am häufigsten genutzt? Nenne den Prozentwert.\nc) Was könnten Gründe sein, weshalb manche Menschen NICHT auf Online-Banking umsteigen?",
+            "payload": null,
+            "response": {"mode": "lines", "n": 6},
+            "cognitive_level": "analyze",
+            "dimensions": ["OK", "UK"],
+            "serves": [{"competence_id": "GWB.US.2.VER.03", "relation": "exercises"}],
+            "est_minutes": 8,
+            "asset_refs": ["abb1", "abb2"],
+            "answer_key": "a) Die Online-Banking-Nutzung ist von ca. 37 % (2010) auf ca. 70 % (2023) kontinuierlich gestiegen. b) PayPal/digitale Wallet, ca. 34 %. c) Mögliche Gründe: mangelndes Vertrauen in Datensicherheit; technische Unsicherheit (ältere Bevölkerung); kein Smartphone/Computer; Präferenz für persönlichen Kontakt; Angst vor Betrug.",
+            "acceptable_reasoning": "Für c) sind alle plausiblen Hindernisse (technische, finanzielle, soziokulturelle) akzeptabel; mehrere Perspektiven sind ein Zeichen von Reflexionskompetenz.",
+            "watch_outs": ["Schüler:innen lesen manchmal absolute Zahlen, obwohl die Grafik Prozentanteile zeigt — explizit auf die Achsenbeschriftung hinweisen.", "Frage c) kann Schüler:innen verleiten, pauschal 'alte Leute' zu nennen — zur Differenzierung auffordern (Datenschutz, Bildung, Infrastruktur)."],
+            "rubric": [
+              {"criterion": "Trendaussage", "levels": ["Richtung + Zeitraum + Zahlen", "Richtung ohne Zahlen", "Fehlend"]},
+              {"criterion": "Ablesekompetenz Abb. 2", "levels": ["Korrekte Methode und Wert", "Richtige Methode, falscher Wert", "Falsch/fehlend"]},
+              {"criterion": "Reflexion Hindernisse", "levels": ["Zwei oder mehr plausible Gründe aus unterschiedlichen Perspektiven", "Ein Grund", "Fehlend"]}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Digitalisierung und ihre Auswirkungen auf Dienstleistungen",
+        "throughline": "Schüler:innen analysieren Chancen und Risiken der Digitalisierung für Dienstleistungsberufe und entwickeln eine eigene begründete Haltung.",
+        "talking_points": [
+          "Digitalisierung als Querschnittstrend: Sie verändert Bank-, Verkehrs- UND Handelsdienstleistungen gleichzeitig.",
+          "Chancen vs. Risiken bewusst getrennt behandeln, bevor die Schüler:innen beides abwägen.",
+          "Berufsrelevanz: Welche Jobs verschwinden, welche entstehen neu? (Kassiererin vs. App-Entwicklerin) — Brücke zu VER.01.",
+          "Daten als neue Ressource: Online-Dienste sind oft 'kostenlos', weil die Nutzer:innen mit ihren Daten 'zahlen' — kritisches Konsumverhalten thematisieren."
+        ],
+        "extensions": [
+          "Debatte: 'Bankfilialen sind überflüssig' — Pro/Kontra-Diskussion in der Klasse.",
+          "Recherche: Welche Berufe in der Verkehrsbranche könnten durch autonome Fahrzeuge verändert werden? Schüler:innen präsentieren Ergebnisse.",
+          "Verbraucherschutz im Internet: Was tun bei Online-Betrug? (Hilfreiche Institutionen: AK, WKO, Polizei)"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "case_study",
+            "prompt": "**Fallbeispiel: Das Verschwinden der Bankfiliale**\n\nIn einer Kleinstadt mit 4.000 Einwohnern schließt die letzte Bankfiliale. Die Bank verweist ihre Kund:innen auf ihre Smartphone-App und die nächste Filiale 18 km entfernt. Geldautomaten bleiben vorerst bestehen.\n\na) Welche Personengruppen sind von dieser Schließung besonders betroffen? Nenne zwei.\nb) Welche Vorteile hat die App-Lösung aus Sicht der Bank? Nenne zwei wirtschaftliche Gründe.\nc) Wie könnte die Gemeinde reagieren, um die Grundversorgung mit Bankdienstleistungen sicherzustellen? Nenne einen Lösungsvorschlag.",
+            "payload": {"kind": "decision_scenario", "stem": "Die letzte Bankfiliale in einer Kleinstadt schließt. Wäge Chancen und Herausforderungen ab."},
+            "response": {"mode": "box", "min_height_mm": 60},
+            "cognitive_level": "analyze",
+            "dimensions": ["UK", "HK"],
+            "serves": [{"competence_id": "GWB.US.2.VER.03", "relation": "exercises"}],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "a) Betroffene: ältere Menschen ohne Smartphone; Menschen ohne Auto (schwierige Erreichbarkeit der Filiale 18 km entfernt); Menschen mit eingeschränkten Deutschkenntnissen, die auf persönliche Beratung angewiesen sind; Menschen ohne Internetzugang/Smartphone. b) Wirtschaftliche Vorteile für die Bank: Mietersparnis (kein Gebäude); weniger Personalkosten (kein Filialteam); skalierbar (eine App bedient tausende Kund:innen gleichzeitig). c) Mögliche Lösungen: Mobilbank (Bus kommt einmal wöchentlich); Kooperation mit der Poststelle; kommunale Unterstützung für digitale Grundkompetenz (Kurs für ältere Menschen); Videochat-Beratung als Alternative.",
+            "acceptable_reasoning": "Alle plausibler Vorschläge für c) sind akzeptabel, auch kreative; Bewertung nach wirtschaftlicher Machbarkeit und sozialer Treffsicherheit.",
+            "watch_outs": ["Schüler:innen antworten auf a) oft nur 'alte Menschen' — zur Differenzierung anregen (auch Familien ohne Auto, Migrant:innen, Menschen mit Behinderung).", "Bei b) werden manchmal 'bessere Qualität' oder 'moderneres Image' genannt — diese Argumente gelten, aber wirtschaftlich zentral sind Kostenersparnisse."],
+            "rubric": [
+              {"criterion": "Betroffene Gruppen", "levels": ["Zwei differenzierte Gruppen mit Begründung", "Zwei Gruppen ohne Begründung", "Nur eine Gruppe", "Fehlend"]},
+              {"criterion": "Wirtschaftliche Vorteile", "levels": ["Zwei Vorteile mit wirtschaftlichem Zusammenhang", "Zwei ohne Zusammenhang", "Einer", "Fehlend"]},
+              {"criterion": "Lösungsvorschlag", "levels": ["Konkreter, plausibler Vorschlag", "Vager Vorschlag", "Fehlend"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "decision_scenario",
+            "prompt": "**Entscheidungssituation:** Du möchtest für ein Schulfest Karten verkaufen. Du hast zwei Möglichkeiten:\n- **Option A:** Du druckst Karten aus und verkaufst sie an der Schule persönlich.\n- **Option B:** Du nutzt eine Ticket-App (z. B. einen QR-Code-Dienst), und Mitschüler:innen bezahlen digital.\n\nWelche Option würdest du wählen? Begründe deine Entscheidung, indem du je **einen Vorteil und einen Nachteil** beider Optionen nennst.",
+            "payload": {"kind": "decision_scenario", "stem": "Kartenverkauf für das Schulfest: persönlich oder digital?"},
+            "response": {"mode": "box", "min_height_mm": 55},
+            "cognitive_level": "evaluate",
+            "dimensions": ["UK", "HK"],
+            "serves": [{"competence_id": "GWB.US.2.VER.03", "relation": "exercises"}],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "Option A — Vorteil: kein technisches Problem möglich; alle können mitmachen (auch ohne Smartphone). Nachteil: Aufwand (drucken, Wechselgeld, Verlustrisiko). Option B — Vorteil: schnell, kein Wechselgeld nötig, automatische Rückmeldung über Verkaufszahlen. Nachteil: nicht alle Mitschüler:innen haben ein Smartphone oder eine Bezahl-App; Datenschutz/Gebühren des Dienstleisters. Jede konsistente Argumentation ist wertvoll.",
+            "acceptable_reasoning": "Kein Richtig/Falsch bei der Wahl — die Qualität der Begründung zählt. Schüler:innen, die beide Optionen kombinieren ('hybrid'), sollten ebenfalls Punkte erhalten.",
+            "watch_outs": ["Schüler:innen schreiben oft nur ihre Wahl ohne Nachteile zu nennen — darauf bestehen, dass sie explizit auch die Schwäche ihrer gewählten Option benennen.", "Die Frage nach Option B kann zu einer Debatte über Datenschutz führen — wertvoll, aber auf die wirtschaftliche Dimension lenken."],
+            "rubric": [
+              {"criterion": "Vorteil Option A", "levels": ["Plausibel und begründet", "Genannt, nicht begründet", "Fehlend"]},
+              {"criterion": "Nachteil Option A", "levels": ["Plausibel und begründet", "Genannt, nicht begründet", "Fehlend"]},
+              {"criterion": "Vorteil Option B", "levels": ["Plausibel und begründet", "Genannt, nicht begründet", "Fehlend"]},
+              {"criterion": "Nachteil Option B", "levels": ["Plausibel und begründet", "Genannt, nicht begründet", "Fehlend"]},
+              {"criterion": "Eigene Position", "levels": ["Klare Wahl mit kohärenter Begründung", "Wahl ohne Begründung", "Fehlend"]}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "Eine eigene Dienstleistungsidee entwickeln",
+        "throughline": "Schüler:innen wenden Grundbegriffe aus Angebot/Nachfrage und Dienstleistungsdenken an, indem sie selbst eine mini-unternehmerische Idee strukturieren.",
+        "talking_points": [
+          "Entrepreneurship Education: Die Aufgabe ist kein Aufsatz, sondern ein strukturiertes Miniprojekt — Business-Denken in kleinem Rahmen.",
+          "Nachfrage vor Idee: Gute Gründer:innen schauen zunächst, was gebraucht wird, und entwickeln dann das Angebot. Dieses Prinzip explizit betonen.",
+          "Knappheit und Ressourcen: Was brauchen die Schüler:innen, um die Idee umzusetzen? Zeit, Material, Können — das sind reale Ressourcen.",
+          "Reflexion: Was kann schiefgehen? Die Fähigkeit, Risiken vorauszudenken, ist ein Kernaspekt wirtschaftlichen Denkens."
+        ],
+        "extensions": [
+          "Klassen-Pitch: Jede Gruppe präsentiert ihre Idee in 2 Minuten; die Klasse gibt strukturiertes Feedback (Stärken/Fragen).",
+          "Verbindung zu 'Jugend Innovativ' oder 'School of Business Austria': Schüler:innen erfahren, dass ihre Ideen echte Wettbewerbsformate haben.",
+          "Marktforschung: Schüler:innen befragen 5 Mitschüler:innen zu ihrer Zahlungsbereitschaft für die Idee und werten die Ergebnisse aus."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "open_response",
+            "prompt": "**Erkundungsauftrag:** Gehe mit offenen Augen durch deine Schulgemeinde oder deinen Bezirk.\na) Welche Dienstleistung fehlt deiner Meinung nach oder könnte besser sein? (Du musst das nicht selbst anbieten — beobachte einfach.)\nb) Wen würde diese Dienstleistung ansprechen (potenzielle Nachfrager:innen)?\nc) Wer bietet heute etwas Ähnliches an — und was macht deine Idee anders?\n\n*(Quellen: eigene Beobachtung, Gespräch mit Eltern/Bekannten, Gemeindewebseite)*",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 55},
+            "cognitive_level": "analyze",
+            "dimensions": ["OK", "UK"],
+            "serves": [{"competence_id": "GWB.US.2.VER.05", "relation": "exercises"}, {"competence_id": "GWB.US.2.VER.04", "relation": "exercises"}],
+            "est_minutes": 9,
+            "asset_refs": [],
+            "answer_key": "Individuelle, ortsbezogene Antworten. Bewertungskriterien: Konkrete Dienstleistungslücke identifiziert; Zielgruppe (Nachfrage) klar benannt; mindestens ein Differenzierungsmerkmal oder ein Hinweis auf Wettbewerb. Kreativität und Realitätsnähe werden gleichwertig bewertet.",
+            "acceptable_reasoning": "Keine falsche Antwort möglich, solange die wirtschaftliche Logik (Angebot/Nachfrage/Differenzierung) erkennbar ist. Ortsspezifische Beispiele, die die Lehrkraft nicht kennt, sind besonders wertvoll.",
+            "watch_outs": ["Schüler:innen nennen manchmal sehr globale Lücken ('besseres Internet') statt lokaler Dienstleistungen — zur Konkretisierung auffordern.", "Auf Teil c) (Wettbewerb) besonders achten — er wird häufig ausgelassen, ist aber wirtschaftlich zentral."],
+            "rubric": [
+              {"criterion": "Identifizierte Lücke", "levels": ["Konkret, lokal, plausibel", "Vage oder global", "Fehlend"]},
+              {"criterion": "Zielgruppe", "levels": ["Konkret mit Begründung der Nachfrage", "Genannt ohne Begründung", "Fehlend"]},
+              {"criterion": "Differenzierung", "levels": ["Unterschied zu bestehenden Angeboten klar", "Angedeutet", "Fehlend"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "create_produce",
+            "prompt": "Entwickle eine kleine Dienstleistungsidee für deine Schule oder Gemeinde. Fülle den folgenden Projektplan aus:\n\n**Meine Dienstleistungsidee:** ___________\n**Was ich anbiete (Beschreibung in 1–2 Sätzen):** ___________\n**Wer würde das nutzen (Zielgruppe/Nachfrage)?** ___________\n**Was brauche ich dafür (Ressourcen: Zeit, Material, Können)?** ___________\n**Welchen Preis würde ich verlangen — und warum?** ___________\n**Was könnte schiefgehen (ein Risiko)?** ___________",
+            "payload": null,
+            "response": {"mode": "table", "columns": ["Element", "Meine Antwort"], "rows": 6},
+            "cognitive_level": "create",
+            "dimensions": ["HK", "UK"],
+            "serves": [{"competence_id": "GWB.US.2.VER.05", "relation": "exercises"}],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "Individuelle Antworten. Bewertungskriterien: Idee beschreibbar und umsetzbar (auch wenn klein); Zielgruppe klar; Ressourcen realistisch eingeschätzt; Preisbegründung mit wirtschaftlicher Logik (Kosten, Zahlungsbereitschaft, Wettbewerb); Risikonennung zeigt Reflexion.",
+            "acceptable_reasoning": "Jede kreative, intern konsistente Idee verdient volle Punktzahl; die Bewertung liegt auf wirtschaftlichem Denken, nicht auf Originalität der Idee. Beispiel-Ideen: Nachhilfe, Schul-Newsletter, Pflanzenverkauf, Reparaturservice für Fahrräder.",
+            "watch_outs": ["Schüler:innen setzen den Preis oft auf 'gratis', um möglichst viele Kund:innen anzuziehen — thematisieren, dass auch Ressourcen und Arbeitszeit einen Wert haben.", "Bei der Risikonennung bleibt die Spalte oft leer — die Fähigkeit, Risiken vorwegzudenken, als eigene Kompetenz betonen."],
+            "rubric": [
+              {"criterion": "Vollständigkeit des Plans", "levels": ["Alle 6 Felder ausgefüllt", "4–5 Felder", "< 4 Felder"]},
+              {"criterion": "Realisierbarkeit", "levels": ["Idee umsetzbar mit genannten Ressourcen", "Vage oder unrealistisch", "Keine Einschätzung"]},
+              {"criterion": "Preisbegründung", "levels": ["Wirtschaftliche Logik erkennbar (Kosten, Nachfrage, Wettbewerb)", "Preis genannt ohne Begründung", "Fehlend"]},
+              {"criterion": "Risikoreflexion", "levels": ["Plausibles Risiko mit Konsequenz", "Risiko genannt ohne Konsequenz", "Fehlend"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "position_argument",
+            "prompt": "\"Wer eine App nutzt, um Dienstleistungen zu buchen oder zu bezahlen, wird für die Daten, die er dabei hinterlässt, eigentlich auch bezahlt — nur nicht in Geld.\"\n\nStimmst du dieser Aussage zu oder nicht? Erkläre deine Haltung mit einem Beispiel aus deinem Alltag.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 50},
+            "cognitive_level": "evaluate",
+            "dimensions": ["UK", "HK"],
+            "serves": [{"competence_id": "GWB.US.2.VER.03", "relation": "exercises"}, {"competence_id": "GWB.US.2.VER.05", "relation": "introduces"}],
+            "est_minutes": 9,
+            "asset_refs": [],
+            "answer_key": "Die Aussage ist wirtschaftlich korrekt: Viele digitale Dienstleistungen (Social-Media-Plattformen, Navigations-Apps, kostenlose Suchmaschinen) finanzieren sich durch personalisierte Werbung, die auf gesammelten Nutzer:innen-Daten basiert. Die Nutzenden 'bezahlen' mit ihren Daten (Standort, Kaufverhalten, Interessen), die an Werbekund:innen verkauft werden. Eigenes Beispiel: Instagram zeigt Werbung, die zum eigenen Kaufverhalten passt — die App ist 'gratis', weil sie Daten sammelt. Alternativposition (auch akzeptabel): Nutzende wissen das oft nicht und haben keine echte Wahl — das ist kein freiwilliger Tausch, sondern eine versteckte Gebühr.",
+            "acceptable_reasoning": "Beide Positionen (Zustimmung mit Erklärung des Datenhandels; Ablehnung mit dem Argument fehlender informierter Einwilligung) sind vollwertige Antworten, solange ein wirtschaftliches Prinzip erkennbar ist.",
+            "watch_outs": ["Schüler:innen antworten manchmal emotional ('Das ist unfair') ohne wirtschaftliche Analyse — zur Erklärung des Geschäftsmodells auffordern.", "Das Konzept 'Daten als Ressource' ist neu für viele Schüler:innen — die Verbindung zu Angebot/Nachfrage (Werbeangebot, Werbenachfrage) explizit machen."],
+            "rubric": [
+              {"criterion": "Verständnis des Datenhandel-Prinzips", "levels": ["Korrektes Geschäftsmodell erklärt", "Angedeutet", "Fehlend oder falsch"]},
+              {"criterion": "Eigenes Beispiel", "levels": ["Konkretes Alltagsbeispiel mit Bezug zur Aussage", "Beispiel ohne Bezug", "Fehlend"]},
+              {"criterion": "Position", "levels": ["Klare Haltung mit Begründung", "Haltung ohne Begründung", "Fehlend"]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

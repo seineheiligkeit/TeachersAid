@@ -1,0 +1,117 @@
+{
+  "intro": [],
+  "sections": [
+    {
+      "id": "wk.s",
+      "title": "Europa wird neu geordnet",
+      "throughline": "Eine Friedensordnung nach dem Prinzip des Gleichgewichts — und ihr Preis.",
+      "talking_points": [
+        "Warum 'Gleichgewicht'?",
+        "Quelle oder Darstellung?"
+      ],
+      "extensions": [
+        "Vergleich mit Friedensordnungen nach 1918/1945."
+      ],
+      "blocks": [
+        {
+          "role": "info",
+          "id": "wk.lern",
+          "kind": "prose",
+          "content": "Nach der endgültigen Niederlage Napoleons trafen sich 1814/15 Vertreter der europäischen Mächte in Wien, um die Landkarte des Kontinents neu zu ordnen. Leitend war der Gedanke eines Gleichgewichts der Großmächte, damit kein Staat wieder so übermächtig würde wie Frankreich unter Napoleon. Viele Fürsten kehrten an die Macht zurück; an die Stelle des aufgelösten Reichs trat ein lockerer Deutscher Bund. Diese Ordnung prägte Europa für Jahrzehnte und wird oft als Beginn einer Zeit der Restauration beschrieben.",
+          "provenance": {
+            "expression_origin": "original",
+            "sources": [
+              {
+                "title": "Wiener Kongress",
+                "url": "https://de.wikipedia.org/w/index.php?title=Wiener_Kongress&oldid=267935028",
+                "publisher": "Wikipedia (de)",
+                "licence": "CC-BY-SA-4.0",
+                "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+                "retrieved": "2026-06-28",
+                "role": "facts",
+                "redistributable": false,
+                "author_death_year": null,
+                "quote_span": null
+              }
+            ]
+          }
+        },
+        {
+          "role": "task",
+          "id": "wk.t0",
+          "kind": "ordering",
+          "prompt": "Bringe die Ereignisse in die richtige zeitliche Reihenfolge.",
+          "payload": {
+            "kind": "ordering",
+            "items": [
+              "Napoleons endgültige Niederlage",
+              "Beginn des Wiener Kongresses",
+              "Gründung des Deutschen Bundes"
+            ]
+          },
+          "response": {
+            "mode": "lines",
+            "n": 3
+          },
+          "cognitive_level": "remember",
+          "dimensions": [
+            "HSA"
+          ],
+          "serves": [
+            {
+              "competence_id": "GPB.US.3.ALL.05",
+              "relation": "builds_prerequisite"
+            }
+          ],
+          "est_minutes": 5,
+          "answer_key": "1. Napoleons Niederlage · 2. Beginn des Kongresses · 3. Deutscher Bund"
+        },
+        {
+          "role": "task",
+          "id": "wk.t1",
+          "kind": "source_analysis",
+          "prompt": "Der verlinkte Wikipedia-Artikel ist eine Darstellung, keine Quelle aus der Zeit. Untersuche ihn: Nach welchem Leitprinzip wird Europa neu geordnet, und woran erkennst du, dass es sich um eine Darstellung handelt? Belege mit zwei Beobachtungen.",
+          "response": {
+            "mode": "lines",
+            "n": 6
+          },
+          "cognitive_level": "analyze",
+          "dimensions": [
+            "HME"
+          ],
+          "serves": [
+            {
+              "competence_id": "GPB.US.3.ALL.01",
+              "relation": "exercises"
+            }
+          ],
+          "est_minutes": 12,
+          "answer_key": "Leitprinzip: Gleichgewicht der Mächte. Darstellung erkennbar an: rückblickende Wertung, Einordnung ('Restauration'), keine zeitgenössische Stimme.",
+          "acceptable_reasoning": "Akzeptiere jede Begründung, die zwischen einer späteren Deutung und einer zeitgenössischen Quelle unterscheidet."
+        },
+        {
+          "role": "task",
+          "id": "wk.t2",
+          "kind": "position_argument",
+          "prompt": "'Der Wiener Kongress brachte vor allem Stabilität.' Nimm Stellung: Was spricht dafür, was dagegen? Begründe dein Urteil.",
+          "response": {
+            "mode": "box",
+            "min_height_mm": 60
+          },
+          "cognitive_level": "evaluate",
+          "dimensions": [
+            "HOR"
+          ],
+          "serves": [
+            {
+              "competence_id": "GPB.US.3.ALL.06",
+              "relation": "exercises"
+            }
+          ],
+          "est_minutes": 13,
+          "acceptable_reasoning": "Stabilität (Gleichgewicht, lange Friedensphase) vs. Preis (Restauration, unterdrückte nationale/liberale Anliegen). Ein begründetes Urteil in beide Richtungen gilt."
+        }
+      ]
+    }
+  ]
+}

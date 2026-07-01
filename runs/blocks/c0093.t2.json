@@ -1,0 +1,163 @@
+{
+  "id": "c0093.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1",
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Schau dir Abbildung 1 (Online-Banking-Nutzung) und Abbildung 2 (Zahlungsmethoden) an.\na) Beschreibe in einem Satz, wie sich Online-Banking in Österreich seit 2010 entwickelt hat.\nb) Welche digitale Zahlungsmethode wird am häufigsten genutzt? Nenne den Prozentwert.\nc) Was könnten Gründe sein, weshalb manche Menschen NICHT auf Online-Banking umsteigen?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "OK",
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.2.VER.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "a) Die Online-Banking-Nutzung ist von ca. 37 % (2010) auf ca. 70 % (2023) kontinuierlich gestiegen. b) PayPal/digitale Wallet, ca. 34 %. c) Mögliche Gründe: mangelndes Vertrauen in Datensicherheit; technische Unsicherheit (ältere Bevölkerung); kein Smartphone/Computer; Präferenz für persönlichen Kontakt; Angst vor Betrug.",
+    "acceptable_reasoning": "Für c) sind alle plausiblen Hindernisse (technische, finanzielle, soziokulturelle) akzeptabel; mehrere Perspektiven sind ein Zeichen von Reflexionskompetenz.",
+    "rubric": [
+      {
+        "criterion": "Trendaussage",
+        "levels": [
+          "Richtung + Zeitraum + Zahlen",
+          "Richtung ohne Zahlen",
+          "Fehlend"
+        ]
+      },
+      {
+        "criterion": "Ablesekompetenz Abb. 2",
+        "levels": [
+          "Korrekte Methode und Wert",
+          "Richtige Methode, falscher Wert",
+          "Falsch/fehlend"
+        ]
+      },
+      {
+        "criterion": "Reflexion Hindernisse",
+        "levels": [
+          "Zwei oder mehr plausible Gründe aus unterschiedlichen Perspektiven",
+          "Ein Grund",
+          "Fehlend"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen lesen manchmal absolute Zahlen, obwohl die Grafik Prozentanteile zeigt — explizit auf die Achsenbeschriftung hinweisen.",
+      "Frage c) kann Schüler:innen verleiten, pauschal 'alte Leute' zu nennen — zur Differenzierung auffordern (Datenschutz, Bildung, Infrastruktur)."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 2,
+  "kompetenzbereich": "Vernetztes Wirtschaften zwischen Produktion und Konsum",
+  "competences": [
+    "GWB.US.2.VER.03"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "OK",
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:line",
+      "spec": {
+        "title": "Online-Banking-Nutzung in Österreich (Anteil der Bevölkerung, 2010–2023)",
+        "xlabel": "Jahr",
+        "ylabel": "Anteil in %",
+        "log": false,
+        "categories": [
+          "2010",
+          "2013",
+          "2016",
+          "2019",
+          "2022",
+          "2023"
+        ],
+        "values": [
+          37.0,
+          44.0,
+          51.0,
+          58.0,
+          66.0,
+          70.0
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    },
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Kreditkarte",
+          "PayPal / digitale Wallet",
+          "Banküberweisung",
+          "Nachnahme / Rechnung",
+          "Sonstiges"
+        ],
+        "values": [
+          28.0,
+          34.0,
+          22.0,
+          12.0,
+          4.0
+        ],
+        "title": "Häufigste Zahlungsmethoden beim Online-Einkauf in Österreich (ca. 2023)",
+        "xlabel": "Zahlungsmethode",
+        "ylabel": "Anteil der Transaktionen in %",
+        "log": false
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0093",
+  "source": "ai",
+  "created_at": "2026-06-26T19:02:25+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

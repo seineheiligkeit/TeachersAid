@@ -1,0 +1,63 @@
+{
+  "id": "c0055.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Höre dir den zweiten Dialog an. Lehrkraft liest vor:\n\n— Bonjour ! Je m'appelle Emma. J'ai treize ans. J'habite à Vienne. Mon hobby, c'est la musique.\n— Salut Emma ! Moi, c'est Lucas. J'ai quatorze ans. J'habite à Graz. J'aime le football.\n\nFülle die Tabelle auf Französisch aus.",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "",
+        "Emma",
+        "Lucas"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "HOR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS2.US.3.HOR.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Prénom: Emma / Lucas | Âge: 13 ans / 14 ans | Ville: Vienne / Graz | Hobby: la musique / le football. (Schüler:innen dürfen auch treize/quatorze ans schreiben.)",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Schüler:innen schreiben oft die Zahlen als Ziffern (13, 14) statt als Wörter — beides akzeptieren, aber treize/quatorze einüben.",
+      "Vienne kann verwechselt werden (auch eine Stadt in Frankreich) — kurze Anmerkung, dass hier die österreichische Hauptstadt gemeint ist."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Zweite lebende Fremdsprache",
+  "klasse": 3,
+  "kompetenzbereich": "Hören",
+  "competences": [
+    "FS2.US.3.HOR.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "HOR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0055",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

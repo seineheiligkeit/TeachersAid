@@ -1,0 +1,169 @@
+{
+  "subject": "Deutsch",
+  "klasse": 3,
+  "kompetenzbereich": "Lesen",
+  "title": "Lesestrategien: Sachtexte erschließen und verknüpfen",
+  "kernfrage": "Wie kannst du aus einem Sachtext das Wesentliche herausarbeiten und mit deinem eigenen Wissen verbinden?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Strategisches Lesen und Informationssicherung",
+        "throughline": "Schüler:innen erkennen, dass Lesen ein aktiver Prozess ist: Markieren, Strukturieren und Verknüpfen sind keine Extraschritte, sondern das Lesen selbst. Der Fokus liegt auf der Übertragbarkeit der Strategien auf beliebige Sachtexte.",
+        "talking_points": [
+          "Was ist der Unterschied zwischen globalem (orientierendem) und selektivem (suchendem) Lesen?",
+          "Warum helfen Überschriften und Absatzstrukturen beim schnellen Orientieren?",
+          "Wie unterscheidet man Hauptaussage von Beispiel oder Begründung in einem Absatz?",
+          "Welche Strategien habt ihr schon im Unterricht kennengelernt – und wann setzt ihr sie ein?"
+        ],
+        "extensions": [
+          "Die Schüler:innen erhalten einen zweiten, kürzeren Sachtext zum selben Thema und vergleichen, welche Informationen übereinstimmen und welche neu sind.",
+          "Erstellung eines Concept-Maps zu einem selbst gewählten Sachtext aus einer Tages- oder Schülerzeitung.",
+          "Diskussion: Welche Informationen aus dem Text könntet ihr für einen eigenen Kurzvortrag verwenden?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "text_analysis",
+            "prompt": "Lies den folgenden Textabschnitt aufmerksam durch.\n\n---\n*Kaffee gehört zu den meistgehandelten Rohstoffen der Welt. Die Kaffeepflanze stammt ursprünglich aus Äthiopien und wird heute in über 70 Ländern angebaut. Der größte Produzent ist Brasilien. Die Kaffeebohne ist eigentlich ein Kern der Kaffeekirsche. Nach der Ernte werden die Bohnen aufwendig verarbeitet, getrocknet, geröstet und erst dann gemahlen oder als ganze Bohne verkauft. Der Röstgrad beeinflusst den Geschmack entscheidend: Helle Röstungen betonen fruchtige, dunkle Röstungen bittere und karamellartige Noten.*\n---\n\nMarkiere im Text die **Hauptaussage** des Absatzes. Schreibe sie dann in eigenen Worten auf.",
+            "payload": null,
+            "response": { "mode": "lines", "n": 3 },
+            "cognitive_level": "understand",
+            "dimensions": ["LES"],
+            "serves": [{ "competence_id": "DEU.US.3.LES.01", "relation": "exercises" }],
+            "est_minutes": 8,
+            "answer_key": "Hauptaussage (Kern): Kaffee ist ein global bedeutsamer Rohstoff, dessen Anbau, Verarbeitung und Röstung seinen Geschmack bestimmen. Eigene Formulierungen sind akzeptabel, solange sie den globalen Anbau und die Verarbeitungskette nennen.",
+            "acceptable_reasoning": "Schüler:innen dürfen auch zwei Teilaussagen nennen (Herkunft/Anbau + Verarbeitung/Geschmack), wenn sie erklären, dass diese zusammengehören.",
+            "watch_outs": [
+              "Viele nennen nur den ersten Satz ('meistgehandelt') als Hauptaussage und übersehen die zweite Hälfte über Verarbeitung.",
+              "Auf Paraphrase achten, nicht wörtliches Abschreiben – bei Abschreiben nachfragen: 'Kannst du das anders sagen?'"
+            ],
+            "rubric": [
+              { "criterion": "Identifikation der Hauptaussage", "levels": ["Hauptaussage nicht erkannt oder reine Teilinformation", "Hauptaussage teilweise erfasst, ein Aspekt fehlt", "Hauptaussage vollständig und in eigenen Worten formuliert"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "ordering",
+            "prompt": "Die folgenden Schritte beschreiben den Weg vom Kaffeebauern zur Tasse – aber sie sind durcheinandergeraten. Bringe sie in die richtige Reihenfolge.",
+            "payload": {
+              "kind": "ordering",
+              "items": [
+                "Die Kaffeebohnen werden geröstet.",
+                "Die Kaffeekirschen werden geerntet.",
+                "Der Kaffee wird gebrüht und getrunken.",
+                "Die Kaffeepflanze blüht und bildet Früchte.",
+                "Die Bohnen werden getrocknet und vom Fruchtfleisch befreit.",
+                "Die gerösteten Bohnen werden gemahlen oder verpackt."
+              ]
+            },
+            "response": { "mode": "lines", "n": 3 },
+            "cognitive_level": "understand",
+            "dimensions": ["LES"],
+            "serves": [{ "competence_id": "DEU.US.3.LES.01", "relation": "exercises" }],
+            "est_minutes": 6,
+            "answer_key": "Richtige Reihenfolge: (1) Kaffeepflanze blüht und bildet Früchte → (2) Kaffeekirschen werden geerntet → (3) Bohnen werden getrocknet und vom Fruchtfleisch befreit → (4) Bohnen werden geröstet → (5) Geröstete Bohnen werden gemahlen oder verpackt → (6) Kaffee wird gebrüht und getrunken.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen verwechseln oft 'Trocknen' und 'Rösten' – beides ist Verarbeitung, aber zeitlich klar getrennt.",
+              "Falls jemand 'Mahlen' vor 'Rösten' setzt: auf den Text hinweisen ('erst geröstet … dann gemahlen')."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "text_analysis",
+            "prompt": "Im Text stehen Fachbegriffe. Erkläre in eigenen Worten, was die folgenden Wörter im Zusammenhang des Textes bedeuten:\n\na) Rohstoff\nb) Röstgrad\nc) Verarbeitung",
+            "payload": null,
+            "response": { "mode": "lines", "n": 5 },
+            "cognitive_level": "understand",
+            "dimensions": ["LES", "SPR"],
+            "serves": [{ "competence_id": "DEU.US.3.LES.01", "relation": "exercises" }],
+            "est_minutes": 7,
+            "answer_key": "a) Rohstoff: ein natürliches Ausgangsmaterial, das weiterverarbeitet wird (hier: die Kaffeebohne/-kirsche). b) Röstgrad: wie stark die Bohnen erhitzt/geröstet wurden; beeinflusst den Geschmack (hell = fruchtig, dunkel = bitter/karamellartig). c) Verarbeitung: alle Schritte, die das Naturprodukt zum verkaufsfertigen Produkt machen (trocknen, rösten, mahlen).",
+            "acceptable_reasoning": "Umschreibungen und Beispiele aus dem Text sind willkommen; Nachschlagen im Wörterbuch ist erlaubt.",
+            "watch_outs": [
+              "'Rohstoff' wird oft mit 'Lebensmittel' gleichgesetzt – der Begriff ist weiter: auch Öl, Holz, Metalle sind Rohstoffe.",
+              "Bei 'Röstgrad' darauf hinweisen, dass das Wort aus 'Rösten' + 'Grad' (= Stufe/Ausmaß) zusammengesetzt ist."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "open_response",
+            "prompt": "Überlege: Was weißt du aus dem Alltag oder aus dem Unterricht über das Thema Kaffee oder über das Thema globaler Handel? Notiere mindestens **zwei Dinge**, die du bereits wusstest und die zum Text passen, und **ein Ding**, das dich überrascht hat.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 35 },
+            "cognitive_level": "analyze",
+            "dimensions": ["LES"],
+            "serves": [{ "competence_id": "DEU.US.3.LES.01", "relation": "deepens" }],
+            "est_minutes": 8,
+            "answer_key": "Individuelle Antworten. Ziel ist das explizite Verknüpfen von Vorwissen mit Textinformation. Akzeptabel: Erwähnungen von Welthandel, fair trade, Herkunftsländern, Eigengeschmack von Kaffeesorten. Das 'Überraschende' zeigt metakognitive Aktivierung.",
+            "acceptable_reasoning": "Alle inhaltlich plausiblen Verbindungen zwischen Textwissen und Alltagswissen sind akzeptabel.",
+            "watch_outs": [
+              "Schüler:innen, die keine Verbindung ziehen können, haben möglicherweise das Vorwissen aktiviert, aber nicht verschriftlicht – mündlich nachfragen.",
+              "Nicht als 'falsch' abwerten, wenn das Vorwissen ungenau ist – es geht um die Verknüpfungsstrategie."
+            ],
+            "rubric": [
+              { "criterion": "Vorwissen-Textverknüpfung", "levels": ["Keine oder rein textnahe Wiederholung ohne eigenen Bezug", "Ein Vorwissensaspekt benannt, Überraschendes fehlt", "Zwei Vorwissensaspekte + Überraschendes plausibel benannt und erklärt"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "true_false_justify",
+            "prompt": "Entscheide bei jeder Aussage: **Richtig** oder **Falsch**? Begründe deine Entscheidung mit einer Textstelle.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Brasilien ist das einzige Land, in dem Kaffee angebaut wird.",
+                "Die Kaffeebohne ist der Kern der Kaffeekirsche.",
+                "Helle Röstungen schmecken bitterer als dunkle.",
+                "Kaffee zählt zu den bedeutendsten Handelsgütern weltweit."
+              ]
+            },
+            "response": { "mode": "lines", "n": 5 },
+            "cognitive_level": "analyze",
+            "dimensions": ["LES"],
+            "serves": [{ "competence_id": "DEU.US.3.LES.01", "relation": "exercises" }],
+            "est_minutes": 8,
+            "answer_key": "1. Falsch – 'über 70 Ländern'; Brasilien ist größter Produzent, nicht einziges Land. 2. Richtig – 'Die Kaffeebohne ist eigentlich ein Kern der Kaffeekirsche.' 3. Falsch – helle Röstungen betonen fruchtige Noten, dunkle betonen bittere/karamellartige. 4. Richtig – 'meistgehandelten Rohstoffen der Welt'.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Aussage 1 ist eine typische Übertreibungsfalle – 'größter Produzent' ≠ 'einziger'.",
+              "Aussage 3 ist eine Umkehrung; Schüler:innen lesen manchmal zu schnell und kehren die Zuordnung um."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "open_response",
+            "prompt": "Erstelle eine kurze **Zusammenfassung** des Textes in 3–5 Sätzen. Verwende dabei die W-Fragen: *Was* wird beschrieben? *Wo* kommt es her? *Wie* wird es verarbeitet? Schreibe in vollständigen Sätzen.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 45 },
+            "cognitive_level": "create",
+            "dimensions": ["LES", "SCH"],
+            "serves": [{ "competence_id": "DEU.US.3.LES.01", "relation": "deepens" }],
+            "est_minutes": 10,
+            "answer_key": "Musterantwort: Kaffee ist einer der wichtigsten Rohstoffe im Welthandel. Die Kaffeepflanze stammt aus Äthiopien und wird in mehr als 70 Ländern angebaut, am meisten in Brasilien. Die Kaffeebohne ist der Kern der Kaffeekirsche und wird nach der Ernte getrocknet, geröstet und gemahlen. Der Röstgrad bestimmt den Geschmack: Helle Röstungen schmecken fruchtig, dunkle eher bitter und karamellartig.",
+            "acceptable_reasoning": "Zusammenfassungen dürfen kürzer sein, müssen aber alle drei W-Fragen ansprechen.",
+            "watch_outs": [
+              "Häufiger Fehler: Schüler:innen übernehmen fast wörtlich den Originaltext – auf Umformulierung bestehen.",
+              "Die W-Fragen-Struktur ist eine Scaffolding-Hilfe; wer ohne auskommt, kann sie überspringen."
+            ],
+            "rubric": [
+              { "criterion": "Vollständigkeit (drei W-Fragen)", "levels": ["Eine oder keine W-Frage berücksichtigt", "Zwei W-Fragen berücksichtigt", "Alle drei W-Fragen klar und in eigenen Worten beantwortet"] },
+              { "criterion": "Sprachliche Qualität", "levels": ["Fragmentarisch oder nahezu wörtlich abgeschrieben", "Weitgehend eigene Formulierung, kleinere Schwächen", "Flüssig formuliert, kohärent, vollständige Sätze"] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

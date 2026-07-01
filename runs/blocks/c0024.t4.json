@@ -1,0 +1,75 @@
+{
+  "id": "c0024.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "construction",
+    "prompt": "Zeichne den Frontalriss (Normalprojektion von vorne) und den Horizontalriss (Normalprojektion von oben) eines geraden Dreiecksprismas mit folgenden Maßen:\n- Grundfläche: gleichseitiges Dreieck mit Seitenlänge 4 cm\n- Höhe des Prismas: 6 cm\n- Das Prisma steht aufrecht, eine Dreieckskante zeigt nach vorne\n\nZeichne sichtbare Kanten als Volllinien, verdeckte Kanten als Strichlinien. Gib die Maße an.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 100.0
+    },
+    "cognitive_level": "apply",
+    "dimensions": [
+      "H2"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GEZ.US.4.PRO.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 14,
+    "answer_key": "Frontalriss: Rechteck der Breite 4 cm (Vorderkante des Dreiecks) und Höhe 6 cm; die hinteren zwei Kanten des Dreiecks erscheinen als eine senkrechte gestrichelte Mittellinie. Horizontalriss: gleichseitiges Dreieck mit Seitenlänge 4 cm (Grundfläche); die Deckfläche ist nicht sichtbar, da deckungsgleich. Maße eingetragen.",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Frontalriss",
+        "levels": [
+          "Falsch oder fehlend",
+          "Form korrekt, aber verdeckte Kante fehlt",
+          "Vollständig korrekt mit Strichlinie"
+        ]
+      },
+      {
+        "criterion": "Horizontalriss",
+        "levels": [
+          "Falsch oder fehlend",
+          "Dreieck korrekt, aber Maße fehlen",
+          "Vollständig korrekt mit Maßen"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Im Frontalriss erscheinen die hinteren beiden Längskanten als eine einzige Linie (sie projizieren übereinander) — das überrascht Schüler:innen.",
+      "Die gestrichelte Mittellinie im Frontalriss (verdeckte hintere Kante) wird oft vergessen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "construction",
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Projektionen und Risse (I3)",
+  "competences": [
+    "GEZ.US.4.PRO.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "H2"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0024",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

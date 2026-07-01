@@ -1,0 +1,98 @@
+{
+  "id": "c0147.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Lena, 16 Jahre, trainiert fünfmal pro Woche Leistungssport (Handball) und hört, ihre Mitschülerin esse sehr kohlenhydratarm, weil das 'gesünder' sei. Lena überlegt, dasselbe zu tun.\n\nNimm Stellung: Ist eine kohlenhydratarme Ernährung für Lena sinnvoll? Begründe mit ernährungswissenschaftlichen Argumenten.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Lena, 16 Jahre, Leistungssportlerin (Handball, 5× pro Woche), erwägt eine kohlenhydratarme Diät."
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "EV",
+      "NE"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "HOE.OS.6.EIG.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "HOE.OS.6.SIC.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Nein, für eine Leistungssportlerin ist eine kohlenhydratarme Diät nicht empfehlenswert: Kohlenhydrate sind der wichtigste Energielieferant für intensive körperliche Belastung (Glykogen als schnell verfügbarer Energiespeicher in Muskeln und Leber). Niedrige Kohlenhydratzufuhr führt zu schnellerer Erschöpfung, schlechteren Leistungen und verlangsamter Regeneration. Der Gesamtenergiebedarf einer aktiven 16-Jährigen ist außerdem hoch; ein pauschales Kopieren der Ernährung der Mitschülerin ohne individuelle Bedarfserhebung ist wissenschaftlich nicht fundiert.",
+    "acceptable_reasoning": "Argumentation muss auf den erhöhten Glykogenbedarf bei Ausdauer-/Intervallsport eingehen und die Personenabhängigkeit von Ernährungsempfehlungen betonen.",
+    "rubric": [
+      {
+        "criterion": "Position",
+        "levels": [
+          "Keine klare Position",
+          "Position vorhanden, aber unbegründet",
+          "Klare Position mit ernährungswissenschaftlicher Begründung"
+        ]
+      },
+      {
+        "criterion": "Fachlichkeit",
+        "levels": [
+          "Keine Fachbegriffe",
+          "Ein Fachbegriff korrekt verwendet",
+          "Mehrere Fachbegriffe korrekt (z. B. Glykogen, Energiesubstrat, Regeneration)"
+        ]
+      },
+      {
+        "criterion": "Kontextbezug",
+        "levels": [
+          "Kein Bezug auf Lenas Situation",
+          "Teilweiser Bezug",
+          "Vollständiger Bezug auf Alter, Aktivitätsniveau, Geschlecht"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Low-Carb-Ernährung wird in Medien oft unkritisch positiv dargestellt — Schüler:innen bringen diese Annahmen häufig mit.",
+      "Wichtig: klar zwischen Ausdauer-/Hochleistungssport und sitzender Tätigkeit differenzieren.",
+      "Schüler:innen sollen nicht 'alle Diäten sind schlecht' generalisieren, sondern kontextbezogen argumentieren."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Haushaltsökonomie und Ernährung",
+  "klasse": 6,
+  "kompetenzbereich": "Das eigene Essverhalten erkennen, reflektieren und bewerten sowie Zusammenhänge zwischen Ernährungsgewohnheiten, Kulturen, Gesundheit und Wohlbefinden verstehen",
+  "competences": [
+    "HOE.OS.6.EIG.02",
+    "HOE.OS.6.SIC.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "EV",
+    "NE"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0147",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:24+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

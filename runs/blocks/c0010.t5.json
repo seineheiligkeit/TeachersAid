@@ -1,0 +1,66 @@
+{
+  "id": "c0010.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Entscheide bei jeder Aussage: **Richtig** oder **Falsch**? Begründe deine Entscheidung mit einer Textstelle.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Brasilien ist das einzige Land, in dem Kaffee angebaut wird.",
+        "Die Kaffeebohne ist der Kern der Kaffeekirsche.",
+        "Helle Röstungen schmecken bitterer als dunkle.",
+        "Kaffee zählt zu den bedeutendsten Handelsgütern weltweit."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "LES"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DEU.US.3.LES.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1. Falsch – 'über 70 Ländern'; Brasilien ist größter Produzent, nicht einziges Land. 2. Richtig – 'Die Kaffeebohne ist eigentlich ein Kern der Kaffeekirsche.' 3. Falsch – helle Röstungen betonen fruchtige Noten, dunkle betonen bittere/karamellartige. 4. Richtig – 'meistgehandelten Rohstoffen der Welt'.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Aussage 1 ist eine typische Übertreibungsfalle – 'größter Produzent' ≠ 'einziger'.",
+      "Aussage 3 ist eine Umkehrung; Schüler:innen lesen manchmal zu schnell und kehren die Zuordnung um."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Deutsch",
+  "klasse": 3,
+  "kompetenzbereich": "Lesen",
+  "competences": [
+    "DEU.US.3.LES.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "LES"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0010",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

@@ -1,0 +1,89 @@
+{
+  "id": "c0089.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Erstelle eine kurze 'Armutsskala' für deine Region:\n1. Notiere drei Merkmale, die in deiner Region auf relative Armut hinweisen könnten (z. B. Zugang zu bestimmten Einrichtungen, Pendelwege, Durchschnittseinkommen — recherchiere wenn möglich einen Wert).\n2. Vergleiche diese Merkmale mit der globalen Perspektive: Wie würden dieselben Merkmale auf globaler Ebene bewertet?\n3. Was schließt du daraus: Warum ist es wichtig, den Maßstab bei Armutsmessungen immer anzugeben?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "UK",
+      "HK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.1.LEB2.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Offene Schöpfungsaufgabe; Lehrkraft bewertet nach: Plausibilität der Merkmale, Qualität des Maßstabswechsels, Schlussfolgerung. Zentrale Einsicht: Armut ohne Maßstabsangabe ist kein aussagekräftiger Begriff.",
+    "acceptable_reasoning": "Merkmale müssen nicht perfekt sein — wichtig ist, dass Schüler:innen explizit den Maßstab benennen und wechseln.",
+    "rubric": [
+      {
+        "criterion": "Merkmale und lokaler Bezug",
+        "levels": [
+          "Keine plausiblen Merkmale",
+          "1–2 Merkmale ohne Lokalbezug",
+          "3 Merkmale mit erkennbarem Lokalbezug und Quellenversuch"
+        ]
+      },
+      {
+        "criterion": "Maßstabswechsel",
+        "levels": [
+          "Kein Wechsel",
+          "Wechsel beschrieben, aber unerklärt",
+          "Expliziter und begründeter Maßstabswechsel"
+        ]
+      },
+      {
+        "criterion": "Schlussfolgerung",
+        "levels": [
+          "Keine oder triviale Schlussfolgerung",
+          "Schlussfolgerung erkennbar",
+          "Klare, eigenständige Schlussfolgerung zur Bedeutung des Maßstabs"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen könnten 'Armutsskala' wörtlich als Zahlenskala missverstehen — explizit sagen, dass eine Liste von Merkmalen gemeint ist.",
+      "Recherchierte Werte sollen mit Quelle angegeben werden; '?' ist erlaubt, wenn nichts gefunden wird."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 1,
+  "kompetenzbereich": "Leben und Wirtschaften in der Welt",
+  "competences": [
+    "GWB.US.1.LEB2.02"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "UK",
+    "HK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0089",
+  "source": "ai",
+  "created_at": "2026-06-26T19:02:20+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

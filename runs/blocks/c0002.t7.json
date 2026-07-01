@@ -1,0 +1,77 @@
+{
+  "id": "c0002.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Entwirf selbst eine kurze Sachaufgabe (3–4 Sätze) aus dem Alltag, die sich mit einem linearen Gleichungssystem in zwei Variablen lösen lässt. Stelle das Gleichungssystem auf und löse es. Erkläre abschließend in einem Satz, was die Lösung in deiner Situation bedeutet.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 70.0
+    },
+    "cognitive_level": "create",
+    "dimensions": [
+      "MOD",
+      "BEG"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.4.VAR.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 18,
+    "answer_key": "Musterlösung (Beispiel): 'Ein Kiosk verkauft Äpfel für 0,80 € und Birnen für 1,20 € das Stück. Anna kauft insgesamt 10 Früchte und zahlt 10,00 €. Wie viele Äpfel und wie viele Birnen hat sie gekauft?' I: x + y = 10; II: 0,80x + 1,20y = 10,00. Lösung: x = 5, y = 5. Anna kaufte 5 Äpfel und 5 Birnen.",
+    "acceptable_reasoning": "Jede Sachsituation ist akzeptabel, die korrekt zu einem linearen Gleichungssystem in zwei Variablen führt, das eine eindeutige Lösung hat. Die Lösung muss korrekt und im Sachkontext interpretiert sein.",
+    "rubric": [
+      {
+        "criterion": "Sachaufgabe sinnvoll und vollständig",
+        "levels": [
+          "vollständig: Situation klar, zwei Unbekannte erkennbar, beide Bedingungen formuliert.",
+          "teilweise: Situation vorhanden, aber nur eine Bedingung oder Unbekannte unklar.",
+          "nicht erreicht: Keine verwertbare Aufgabe."
+        ]
+      },
+      {
+        "criterion": "Gleichungssystem und Lösung",
+        "levels": [
+          "vollständig: System korrekt aufgestellt, Lösung richtig, Interpretation vorhanden.",
+          "teilweise: System korrekt, aber Rechenfehler oder Interpretation fehlt.",
+          "nicht erreicht: System falsch oder nicht lösbar."
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Häufig konstruieren Schüler:innen ein System, das nur eine Gleichung in einer Unbekannten ergibt – darauf hinweisen, dass zwei unabhängige Bedingungen nötig sind.",
+      "Sachkontext soll sinnvoll sein: negative oder nicht-ganzzahlige Lösungen können mathematisch korrekt sein, müssen aber zur Situation passen (z. B. keine halben Personen)."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Mathematik",
+  "klasse": 4,
+  "kompetenzbereich": "2: Variablen und Funktionen",
+  "competences": [
+    "MAT.US.4.VAR.04"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "MOD",
+    "BEG"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0002",
+  "source": "ai",
+  "created_at": "2026-06-25T11:35:33+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

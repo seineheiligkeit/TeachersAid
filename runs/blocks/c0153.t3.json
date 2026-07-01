@@ -1,0 +1,113 @@
+{
+  "id": "c0153.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Bestimme jeweils eine Stammfunktion F von f und berechne dann das bestimmte Integral.\n(a) f(x) = 3x² − 4x + 1, Integral von 0 bis 3\n(b) f(x) = 2x³ − x, Integral von 1 bis 2\n(c) f(x) = 5, Integral von −1 bis 4\nGib bei jeder Teilaufgabe den Rechenweg vollständig an.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 70.0
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "FO"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.OS.8.GRU2.03",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "MAT.OS.8.GRU2.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "(a) F(x) = x³ − 2x² + x; ∫₀³ = F(3) − F(0) = (27 − 18 + 3) − 0 = 12. (b) F(x) = x⁴/2 − x²/2; ∫₁² = F(2) − F(1) = (8 − 2) − (1/2 − 1/2) = 6 − 0 = 6. (c) F(x) = 5x; ∫₋₁⁴ = 5·4 − 5·(−1) = 20 + 5 = 25.",
+    "acceptable_reasoning": "Potenzregel korrekt angewandt (xⁿ → xⁿ⁺¹/(n+1)); Einsetzen der Grenzen in korrekter Reihenfolge (obere minus untere); Vorzeichen bei negativer unterer Grenze beachtet.",
+    "rubric": [
+      {
+        "criterion": "Stammfunktionen",
+        "levels": [
+          "Alle falsch",
+          "1–2 korrekt",
+          "Alle drei korrekt"
+        ]
+      },
+      {
+        "criterion": "Einsetzen der Grenzen",
+        "levels": [
+          "Systematischer Fehler",
+          "Teilweise korrekt",
+          "Durchgehend korrekt"
+        ]
+      },
+      {
+        "criterion": "Endresultate",
+        "levels": [
+          "Kein korrektes Ergebnis",
+          "1–2 korrekt",
+          "Alle drei korrekt (12; 6; 25)"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Typischer Fehler: Vorzeichen bei der unteren Grenze falsch — F(a) wird addiert statt subtrahiert.",
+      "Konstante C nicht in das bestimmte Integral einsetzen — sie kürzt sich heraus und darf weggelassen werden.",
+      "Bei (c): Konstante Funktion hat Stammfunktion F(x) = cx, nicht F(x) = 0."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Mathematik",
+  "klasse": 8,
+  "kompetenzbereich": "Grundlagen der Integralrechnung",
+  "competences": [
+    "MAT.OS.8.GRU2.03",
+    "MAT.OS.8.GRU2.04"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "FO"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:math_formula",
+      "spec": {
+        "latex": "\\int_a^b f(x)\\,dx = F(b) - F(a), \\quad F'(x) = f(x)"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0153",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:26+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

@@ -1,0 +1,85 @@
+{
+  "id": "c0014.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "text_production",
+    "prompt": "Schreibe einen **kurzen Meinungstext** (ca. 100–120 Wörter) zu folgendem Thema:\n\n**„Emojis sind eine neue Sprache – und sie gehören auch ins Schreiben.“**\n\nVerteidige oder widerlege diese These. Nutze dabei mindestens ein konkretes Beispiel. Schreibe fließend, keine Stichpunkte.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 65.0
+    },
+    "cognitive_level": "create",
+    "dimensions": [
+      "SCH",
+      "SPR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DEU.US.4.SCH.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 14,
+    "answer_key": "Individuelle Antworten. Bewertungskriterien: (1) klare Positionierung, (2) mindestens ein konkretes Beispiel, (3) fließender Text ohne Aufzählung, (4) zumindest eine Auseinandersetzung mit der Gegenposition (auch implizit). Muster-Pro: 'Ein Herz-Emoji in einer Nachricht ersetzt oft einen ganzen Satz – es drückt Nähe aus, die mit Worten schwerer zu formulieren wäre, ohne kitschig zu klingen.' Muster-Kontra: 'Emojis sind kontextabhängig und mehrdeutig: Ein Zwinkern-Emoji kann Ironie oder Freundlichkeit bedeuten – das ist das Gegenteil von präziser Sprache.'",
+    "acceptable_reasoning": "Beide Positionen (pro und kontra) sind vollständig vertretbar.",
+    "rubric": [
+      {
+        "criterion": "Positionierung und Argumentation",
+        "levels": [
+          "Keine klare Position oder nur Aufzählung",
+          "Position klar, aber ohne echtes Argument",
+          "Position + Argument + Beispiel, Gegenposition zumindest angesprochen"
+        ]
+      },
+      {
+        "criterion": "Sprachliche Qualität und Fließtext",
+        "levels": [
+          "Aufzählung oder stark fragmentarisch",
+          "Versuche eines Fließtexts, aber mit inhaltlichen Sprüngen",
+          "Kohärenter Fließtext mit logischen Verbindungen"
+        ]
+      },
+      {
+        "criterion": "Sprachrichtigkeit",
+        "levels": [
+          "Zahlreiche Fehler, die Verständnis erschweren",
+          "Verständlich mit vereinzelten Fehlern",
+          "Weitgehend normgerecht auf AHS-Niveau"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen, die kein Beispiel nennen, haben die Aufgabenstellung nicht erfüllt – sanft darauf hinweisen.",
+      "Argumentierende Texte neigen in der 4. Klasse immer noch zu Aufzählungsformat; auf Fließtext bestehen und Kohäsionsmittel nennen (allerdings, deshalb, obwohl, weil)."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "text_production",
+  "subject": "Deutsch",
+  "klasse": 4,
+  "kompetenzbereich": "Schreiben",
+  "competences": [
+    "DEU.US.4.SCH.02"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "SCH",
+    "SPR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0014",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

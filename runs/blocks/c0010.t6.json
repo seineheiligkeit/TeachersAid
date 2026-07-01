@@ -1,0 +1,77 @@
+{
+  "id": "c0010.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Erstelle eine kurze **Zusammenfassung** des Textes in 3–5 Sätzen. Verwende dabei die W-Fragen: *Was* wird beschrieben? *Wo* kommt es her? *Wie* wird es verarbeitet? Schreibe in vollständigen Sätzen.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "create",
+    "dimensions": [
+      "LES",
+      "SCH"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DEU.US.3.LES.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Musterantwort: Kaffee ist einer der wichtigsten Rohstoffe im Welthandel. Die Kaffeepflanze stammt aus Äthiopien und wird in mehr als 70 Ländern angebaut, am meisten in Brasilien. Die Kaffeebohne ist der Kern der Kaffeekirsche und wird nach der Ernte getrocknet, geröstet und gemahlen. Der Röstgrad bestimmt den Geschmack: Helle Röstungen schmecken fruchtig, dunkle eher bitter und karamellartig.",
+    "acceptable_reasoning": "Zusammenfassungen dürfen kürzer sein, müssen aber alle drei W-Fragen ansprechen.",
+    "rubric": [
+      {
+        "criterion": "Vollständigkeit (drei W-Fragen)",
+        "levels": [
+          "Eine oder keine W-Frage berücksichtigt",
+          "Zwei W-Fragen berücksichtigt",
+          "Alle drei W-Fragen klar und in eigenen Worten beantwortet"
+        ]
+      },
+      {
+        "criterion": "Sprachliche Qualität",
+        "levels": [
+          "Fragmentarisch oder nahezu wörtlich abgeschrieben",
+          "Weitgehend eigene Formulierung, kleinere Schwächen",
+          "Flüssig formuliert, kohärent, vollständige Sätze"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Häufiger Fehler: Schüler:innen übernehmen fast wörtlich den Originaltext – auf Umformulierung bestehen.",
+      "Die W-Fragen-Struktur ist eine Scaffolding-Hilfe; wer ohne auskommt, kann sie überspringen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Deutsch",
+  "klasse": 3,
+  "kompetenzbereich": "Lesen",
+  "competences": [
+    "DEU.US.3.LES.01"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "LES",
+    "SCH"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0010",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

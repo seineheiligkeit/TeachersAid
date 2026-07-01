@@ -1,0 +1,76 @@
+{
+  "id": "c0147.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Fülle die Tabelle aus: Ordne jedem Nährstoff seine Hauptfunktion im Körper, einen typischen Mangel bei Jugendlichen (ja/nein) und eine gute Nahrungsquelle zu. Ergänze die fehlenden Felder (mit den angegebenen Werten arbeiten, wo vorhanden).\n\n| Nährstoff | Hauptfunktion | Mangel bei Jugendl. häufig? | Gute Quelle |\n|---|---|---|---|\n| Eisen | ? | Ja | ? |\n| Kalzium | ? | ? | Milchprodukte, Brokkoli |\n| Vitamin D | ? | Ja | ? |\n| Jod | Schilddrüsenfunktion | ? | ? |",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Nährstoff",
+        "Hauptfunktion",
+        "Mangel bei Jugendl. häufig?",
+        "Gute Quelle"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "EV",
+      "NE"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "HOE.OS.6.SIC.04",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "HOE.OS.6.EIG.07",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Eisen: Sauerstofftransport (Hämoglobin), Mangel häufig Ja (v. a. bei Mädchen), Quellen: rotes Fleisch, Hülsenfrüchte, Vollkornprodukte.\nKalzium: Knochenaufbau und -erhalt, Nervenfunktion; Mangel häufig: bedingt Ja (Versorgungslage variabel); Quelle: Milchprodukte, Brokkoli (vorgegeben).\nVitamin D: Kalziumaufnahme, Immunsystem, Knochengesundheit; Mangel häufig Ja; Quellen: Sonnenlicht (Eigenproduktion), fetter Fisch, angereicherte Lebensmittel.\nJod: Schilddrüsenfunktion (vorgegeben); Mangel: Ja (in Binnenländern häufig); Quellen: jodiertes Speisesalz, Seefisch, Meeresfrüchte.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Vitamin D: Schüler:innen geben oft nur 'Sonne' an — darauf hinweisen, dass Sonnenlicht Eigenproduktion auslöst, aber kein Lebensmittel ist.",
+      "Eisen-Mangel ist bei Mädchen/Frauen signifikant häufiger — Gelegenheit für Differenzierung nach Geschlecht.",
+      "Jodmangel ist in Österreich durch jodiertes Salz rückläufig, aber nicht verschwunden."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Haushaltsökonomie und Ernährung",
+  "klasse": 6,
+  "kompetenzbereich": "Sich vollwertig und nachhaltig ernähren",
+  "competences": [
+    "HOE.OS.6.SIC.04",
+    "HOE.OS.6.EIG.07"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "EV",
+    "NE"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0147",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:24+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

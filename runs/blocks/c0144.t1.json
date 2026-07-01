@@ -1,0 +1,129 @@
+{
+  "id": "c0144.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "ordering",
+    "prompt": "Bringe die folgenden Denker und ihre Grundprinzipien in die richtige zeitliche Reihenfolge (frühester zuerst). Nutze die Zeitleiste (Abb. 1) als Hilfe.",
+    "payload": {
+      "kind": "ordering",
+      "items": [
+        "Demokrit – ἄτομος (das Unteilbare) als Baustoff der Welt",
+        "Thales – ὕδωρ (Wasser) als Urprinzip",
+        "Heraklit – πῦρ (Feuer) und λόγος (Vernunft) als Prinzip des Wandels",
+        "Anaximenes – ἀήρ (Luft) als Urprinzip",
+        "Anaximander – τὸ ἄπειρον (das Unbegrenzte) als Urprinzip"
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "INT"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GRI.OS.7.GRI.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "1. Thales (~624 v. Chr.); 2. Anaximander (~610 v. Chr.); 3. Anaximenes (~570 v. Chr.); 4. Heraklit (~500 v. Chr.); 5. Demokrit (~460 v. Chr.)",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Korrekte Reihenfolge",
+        "levels": [
+          "Alle 5 korrekt",
+          "4 korrekt",
+          "2–3 korrekt",
+          "0–1 korrekt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen verwechseln Anaximander und Anaximenes – die Namen klingen ähnlich; auf die Geburtsdaten in der Zeitleiste hinweisen.",
+      "Heraklit wird oft als 'erster' gesetzt, weil sein Name bekannter ist – genaue Zeitleistenlektüre ist erforderlich.",
+      "τὸ ἄπειρον (das Unbegrenzte) bei Anaximander ist das abstrakteste Konzept und oft unverstanden – kurze Erklärung vorab sinnvoll."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "ordering",
+  "subject": "Griechisch",
+  "klasse": 7,
+  "kompetenzbereich": "Das griechische Denken als Fundament der Wissenschaften",
+  "competences": [
+    "GRI.OS.7.GRI.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "INT"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:timeline",
+      "spec": {
+        "events": [
+          {
+            "at": -624,
+            "label": "Thales von Milet (geb. ~624 v. Chr.)"
+          },
+          {
+            "at": -610,
+            "label": "Anaximander (geb. ~610 v. Chr.)"
+          },
+          {
+            "at": -585,
+            "label": "Thales sagt Sonnenfinsternis voraus"
+          },
+          {
+            "at": -570,
+            "label": "Anaximenes (geb. ~570 v. Chr.)"
+          },
+          {
+            "at": -500,
+            "label": "Heraklit (~500 v. Chr.)"
+          },
+          {
+            "at": -460,
+            "label": "Demokrit (geb. ~460 v. Chr.)"
+          }
+        ],
+        "title": "Die ionischen Naturphilosophen: Zeittafel",
+        "xlabel": "Jahr v. Chr."
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0144",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:22+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

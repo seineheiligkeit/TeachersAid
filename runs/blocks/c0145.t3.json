@@ -1,0 +1,75 @@
+{
+  "id": "c0145.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Beurteile die folgenden Aussagen: Sind sie richtig oder falsch? Begründe deine Einschätzung jeweils in einem kurzen Satz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Eine höhere Geburtenrate allein würde die Alterung der Bevölkerung sofort umkehren.",
+        "Im Umlageverfahren zahlen die aktuell Erwerbstätigen die Pensionen der aktuellen Pensionist:innen.",
+        "Eine alternde Bevölkerung bedeutet automatisch, dass die Gesamtbevölkerung schrumpft.",
+        "Wenn mehr ältere Menschen erwerbstätig bleiben, könnte das die Belastung des Pensionssystems lindern."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "Richtig/Falsch",
+        "Begründung"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "REF"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.OS.7.DEM.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1. Falsch – eine höhere Geburtenrate wirkt erst nach 20 Jahren auf den Arbeitsmarkt; die kurzfristige Altersstruktur bleibt unverändert. 2. Richtig – das Umlageprinzip bedeutet: Beiträge der Erwerbstätigen fließen direkt als Pensionen aus. 3. Falsch – Alterung und Schrumpfung sind unabhängig: Österreichs Bevölkerung wächst durch Zuwanderung, altert aber dennoch. 4. Richtig – höheres Pensionsantrittsalter bzw. längere Erwerbstätigkeit erhöht die Zahl der Beitragszahler und senkt die Rentenlaufzeit.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Aussage 1 ist häufige Fehlvorstellung – Zeitverzögerung von Geburtenrate auf Arbeitsmarktbeteiligung betonen.",
+      "Aussage 3: Schüler:innen verwechseln häufig Alterung mit Bevölkerungsrückgang."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 7,
+  "kompetenzbereich": "Demographische Entwicklung und gesellschaftspolitische Implikationen beurteilen",
+  "competences": [
+    "GWB.OS.7.DEM.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "REF"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0145",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:23+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

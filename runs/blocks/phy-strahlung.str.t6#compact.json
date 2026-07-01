@@ -1,0 +1,61 @@
+{
+  "id": "phy-strahlung.str.t6#compact",
+  "block": {
+    "id": "phy-strahlung.str.t6_compact",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Eine Schlagzeile lautet: „Handystrahlung macht krank!“ Welche EINE Frage würdest du stellen, bevor du das glaubst – und warum ist gerade diese Frage entscheidend?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 3
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.4.STR.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Musterantworten: „Welche Dosis wurde untersucht?“ (Dosis macht das Gift) oder „Wurde das in einer unabhängigen Studie gezeigt?“ (Reliabilität) oder „Was für eine Strahlung ist gemeint?“ (ionisierend vs. nicht-ionisierend). Entscheidend: Dosis/Art bestimmt, ob Schaden physikalisch plausibel ist.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Keine einzige „richtige“ Frage – unterschiedliche Antworten alle diskutieren; Schlagzeilen-Pauschalzustimmung wie auch Pauschalablehnung sind gleich problematisch"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Strahlung und Radioaktivität",
+  "competences": [
+    "PHY.US.4.STR.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "compact",
+  "family": "phy-strahlung.str.t6",
+  "assets": [],
+  "status": "approved",
+  "provenance": "variant:phy-strahlung.str.t6",
+  "source": "ai",
+  "created_at": "2026-06-25T18:13:26+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

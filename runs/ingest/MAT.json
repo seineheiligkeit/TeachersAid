@@ -1,0 +1,294 @@
+{
+  "subject": "Mathematik",
+  "klasse": 4,
+  "kompetenzbereich": "2: Variablen und Funktionen",
+  "title": "Terme, lineare Funktionen und Gleichungssysteme",
+  "kernfrage": "Wie kannst du reale Situationen mit Termen, Funktionen und Gleichungen beschreiben und damit rechnen?",
+  "body": {
+    "intro": [
+      {
+        "role": "info",
+        "id": "i1",
+        "kind": "prose",
+        "content": "In diesem Arbeitsblatt untersuchst du, wie mathematische Terme und Funktionen genutzt werden, um reale Situationen zu beschreiben. Du arbeitest mit Termen und Formeln, erkennst lineare Zusammenhänge in verschiedenen Darstellungsformen, analysierst lineare Funktionen und löst Gleichungssysteme. Notiere deine Lösungswege vollständig.",
+        "watch_outs": []
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Terme und Gleichungen in Situationen",
+        "throughline": "Schüler:innen übersetzen verbale und tabellarische Situationen in Terme und Gleichungen und lösen diese systematisch.",
+        "talking_points": [
+          "Was bedeutet es, eine Variable in einem Term zu verwenden – was ändert sich, was bleibt gleich?",
+          "Wie prüfst du, ob dein aufgestellter Term zur Situation passt?",
+          "Welche Strategie wählst du, um eine Gleichung umzuformen – und warum ist die Reihenfolge wichtig?",
+          "Gibt es Situationen, in denen eine Gleichung keine oder mehrere Lösungen hat?"
+        ],
+        "extensions": [
+          "Aufgabe 1 erweitern: Schüler:innen stellen selbst eine Situation auf, die zum Term 3x − 7 = 14 passt.",
+          "Aufgabe 2 vertiefen: Welche Terme beschreiben denselben Wert für alle x? Einführung Äquivalenzumformung als Beweis."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "calculation",
+            "prompt": "Löse die folgenden Gleichungen nach x auf. Notiere jeden Umformungsschritt.\n\na) 4x − 9 = 19\nb) 3(2x + 1) = 27\nc) 5x + 7 = 2x − 8",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 9
+            },
+            "cognitive_level": "apply",
+            "dimensions": ["OPE"],
+            "serves": [
+              {"competence_id": "MAT.US.4.VAR.01", "relation": "exercises"}
+            ],
+            "est_minutes": 10,
+            "answer_key": "a) 4x = 28 → x = 7\nb) 6x + 3 = 27 → 6x = 24 → x = 4\nc) 3x = −15 → x = −5",
+            "acceptable_reasoning": "Jeder algebraisch korrekte Umformungsweg ist akzeptabel, solange alle Schritte notiert und das Ergebnis korrekt ist.",
+            "watch_outs": [
+              "Bei c) häufiger Fehler: Vorzeichen beim Subtrahieren von 2x vergessen → 3x statt 5x−2x korrekt zusammenfassen.",
+              "Bei b) Distributivgesetz: 3·1 = 3, nicht 0 oder vergessen – Klammer vollständig auflösen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "modelling_task",
+            "prompt": "Eine Handywerkstatt berechnet für jede Reparatur eine Grundgebühr von 25 € und zusätzlich 35 € pro Stunde Arbeitszeit.\n\na) Stelle einen Term auf, der den Gesamtpreis P (in Euro) in Abhängigkeit von der Anzahl der Arbeitsstunden h beschreibt.\nb) Wie viele Stunden hat die Reparatur gedauert, wenn der Gesamtpreis 165 € beträgt? Stelle eine Gleichung auf und löse sie.\nc) Erkläre in einem Satz, was der Koeffizient 35 in deinem Term bedeutet.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 40
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["MOD", "OPE"],
+            "serves": [
+              {"competence_id": "MAT.US.4.VAR.01", "relation": "exercises"}
+            ],
+            "est_minutes": 12,
+            "answer_key": "a) P = 35h + 25\nb) 35h + 25 = 165 → 35h = 140 → h = 4; die Reparatur hat 4 Stunden gedauert.\nc) 35 ist der Preis pro Stunde – für jede zusätzliche Stunde steigt der Gesamtpreis um 35 €.",
+            "acceptable_reasoning": "Die Erklärung zu c) kann auch als 'Änderungsrate' oder 'Stundensatz' bezeichnet werden, solange die Bedeutung klar ist.",
+            "watch_outs": [
+              "Schüler:innen verwechseln Grundgebühr (Konstante) und Stundensatz (Koeffizient): Grundgebühr ist der Wert bei h=0.",
+              "Einheiten: Darauf achten, dass P in Euro und h in Stunden angegeben werden."
+            ],
+            "rubric": []
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Darstellungsformen linearer Funktionen",
+        "throughline": "Schüler:innen wechseln zwischen Wertetabelle, Graph-Beschreibung und Funktionsgleichung und erkennen dabei Steigung und y-Achsenabschnitt als strukturtragende Parameter.",
+        "talking_points": [
+          "Was siehst du in einer Wertetabelle, das dir verrät, ob ein Zusammenhang linear ist?",
+          "Wie hängen Steigung m und y-Achsenabschnitt b mit dem Verhalten des Graphen zusammen?",
+          "Kann zwei verschiedene Funktionen dieselbe Steigung haben? Was bedeutet das geometrisch?",
+          "Welche Darstellungsform ist am nützlichsten – und wann?"
+        ],
+        "extensions": [
+          "Schüler:innen bestimmen aus einer selbst erstellten Wertetabelle, ob der Zusammenhang linear, quadratisch oder keines von beidem ist.",
+          "Vertiefung: Geradengleichung durch zwei gegebene Punkte bestimmen (Zwei-Punkte-Form)."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "table_fill",
+            "prompt": "Gegeben sind die Funktionsgleichungen f(x) = 2x − 3 und g(x) = −½x + 4.\n\nErgänze die Wertetabelle. Trage außerdem Steigung m und y-Achsenabschnitt b ein.",
+            "payload": {
+              "kind": "table_fill",
+              "columns": ["x", "f(x) = 2x − 3", "g(x) = −½x + 4"],
+              "rows": [
+                ["-2", null, null],
+                ["0", null, null],
+                ["2", null, null],
+                ["4", null, null],
+                ["Steigung m", null, null],
+                ["y-Achsenabschnitt b", null, null]
+              ]
+            },
+            "response": {
+              "mode": "table",
+              "columns": ["x", "f(x)", "g(x)"],
+              "rows": 6
+            },
+            "cognitive_level": "apply",
+            "dimensions": ["DAR", "OPE"],
+            "serves": [
+              {"competence_id": "MAT.US.4.VAR.02", "relation": "exercises"}
+            ],
+            "est_minutes": 10,
+            "answer_key": "f: x=−2 → −7; x=0 → −3; x=2 → 1; x=4 → 5; m=2; b=−3\ng: x=−2 → 5; x=0 → 4; x=2 → 3; x=4 → 2; m=−½; b=4",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Bei g(x): −½·(−2) = +1, nicht −1 – Vorzeichenfehler bei negativem x mit negativer Steigung häufig.",
+              "Steigung m ist der Koeffizient vor x, nicht der Wert f(0) – diese Verwechslung tritt auf."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "true_false_justify",
+            "prompt": "Beurteile die folgenden Aussagen über lineare Funktionen. Kreuze an, ob die Aussage richtig oder falsch ist, und begründe deine Entscheidung in einem Satz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Jede lineare Funktion der Form f(x) = mx + b schneidet die y-Achse beim Punkt (0 | b).",
+                "Die Funktion f(x) = −3x + 2 ist streng monoton wachsend.",
+                "Zwei lineare Funktionen mit gleicher Steigung m schneiden sich in genau einem Punkt.",
+                "Die Funktion f(x) = 5 ist eine lineare Funktion (konstante Funktion)."
+              ]
+            },
+            "response": {
+              "mode": "box",
+              "min_height_mm": 50
+            },
+            "cognitive_level": "analyze",
+            "dimensions": ["BEG", "DAR"],
+            "serves": [
+              {"competence_id": "MAT.US.4.VAR.03", "relation": "exercises"}
+            ],
+            "est_minutes": 12,
+            "answer_key": "1. Richtig: Setzt man x=0 ein, erhält man f(0)=b, also Schnittpunkt mit der y-Achse bei (0|b).\n2. Falsch: Die Steigung m=−3 ist negativ, die Funktion ist streng monoton fallend.\n3. Falsch: Parallele Geraden (gleiche Steigung, verschiedene b) schneiden sich gar nicht.\n4. Richtig: f(x)=5 ist eine lineare Funktion mit m=0 und b=5 (konstante Funktion).",
+            "acceptable_reasoning": "Begründungen müssen die Kernidee enthalten; exakte Fachterminologie (monoton fallend, Parallele) erwünscht aber nicht zwingend.",
+            "watch_outs": [
+              "Aussage 3: Schüler:innen denken oft, gleiche Steigung bedeutet gleiche Gerade – Unterschied zu parallelen Geraden explizit besprechen.",
+              "Aussage 4: Manche zweifeln, ob eine Konstante eine 'Funktion' ist – Definition: jeder x-Wert hat genau einen y-Wert, erfüllt."
+            ],
+            "rubric": []
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "Lineare Gleichungssysteme",
+        "throughline": "Schüler:innen stellen aus realen Situationen Gleichungssysteme auf und lösen diese algebraisch; sie interpretieren die Lösung im Sachkontext.",
+        "talking_points": [
+          "Was bedeutet die Lösung eines Gleichungssystems geometrisch – was passiert mit den Geraden?",
+          "Wann hat ein Gleichungssystem keine Lösung, wann unendlich viele?",
+          "Welche Lösungsmethode (Gleichsetzung, Einsetzung, Addition) eignet sich wann am besten?",
+          "Wie kannst du deine Lösung schnell überprüfen, ohne alles neu zu rechnen?"
+        ],
+        "extensions": [
+          "Schüler:innen untersuchen, ob das System 2x + 3y = 6 und 4x + 6y = 10 lösbar ist und erklären das Ergebnis geometrisch.",
+          "Erweiterung: Gleichungssystem aus einem wirtschaftlichen Kontext aufstellen (Mischungsaufgabe)."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "calculation",
+            "prompt": "Löse die folgenden linearen Gleichungssysteme. Verwende mindestens einmal das Gleichsetzungsverfahren und einmal das Additionsverfahren. Gib die Lösung als Koordinatenpaar (x | y) an.\n\na) I: y = 3x − 1\n   II: y = −x + 7\n\nb) I: 2x + 3y = 12\n   II: 4x − 3y = 6",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 10
+            },
+            "cognitive_level": "apply",
+            "dimensions": ["OPE"],
+            "serves": [
+              {"competence_id": "MAT.US.4.VAR.04", "relation": "exercises"}
+            ],
+            "est_minutes": 14,
+            "answer_key": "a) Gleichsetzung: 3x − 1 = −x + 7 → 4x = 8 → x = 2; y = 3·2 − 1 = 5. Lösung: (2 | 5).\nb) Addition: (2x + 3y) + (4x − 3y) = 12 + 6 → 6x = 18 → x = 3; in I: 6 + 3y = 12 → y = 2. Lösung: (3 | 2).",
+            "acceptable_reasoning": "Auch Einsetzungsverfahren oder andere korrekte Methoden sind akzeptabel, sofern das Verfahren klar erkennbar notiert ist.",
+            "watch_outs": [
+              "Bei a) Fehler: Term 3x−1 mit −x+7 gleichsetzen, aber Vorzeichen bei −x vergessen → 3x−1 = x+7 statt −x+7.",
+              "Bei b) Additionsverfahren: Sicherstellen, dass man wirklich addiert (nicht subtrahiert) – 3y + (−3y) = 0 korrekt."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "modelling_task",
+            "prompt": "Zwei Züge fahren auf parallelen Gleisen von verschiedenen Bahnhöfen gleichzeitig los. Zug A fährt mit konstant 120 km/h, Zug B mit konstant 90 km/h. Nach t Stunden hat Zug A die Strecke s_A = 120t km zurückgelegt, Zug B startet 60 km weiter entfernt vom Zielbahnhof und legt s_B = 90t + 60 km zurück.\n\na) Stelle ein Gleichungssystem auf: Wann (nach wie vielen Stunden) haben beide Züge dieselbe Strecke zurückgelegt?\nb) Löse das Gleichungssystem und interpretiere das Ergebnis: Was bedeutet dein Ergebnis für die Situation?\nc) Begründe: Ist es sinnvoll, dieses Gleichungssystem als ein System mit zwei Gleichungen in zwei Unbekannten aufzustellen? Oder reicht eine Gleichung?",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": ["MOD", "BEG"],
+            "serves": [
+              {"competence_id": "MAT.US.4.VAR.04", "relation": "applies"}
+            ],
+            "est_minutes": 15,
+            "answer_key": "a) I: s = 120t; II: s = 90t + 60; Gleichsetzung: 120t = 90t + 60 → 30t = 60 → t = 2 h.\nb) Nach 2 Stunden haben beide Züge dieselbe Strecke (240 km) zurückgelegt.\nc) Hier reicht tatsächlich eine Gleichung (120t = 90t + 60), da s aus t bestimmbar ist. Ein Gleichungssystem mit s und t als Unbekannte ist aber auch korrekt und zeigt die Struktur klarer.",
+            "acceptable_reasoning": "Bei c) sind verschiedene Begründungen akzeptabel, sofern sie die Anzahl der Unbekannten und Gleichungen korrekt diskutieren.",
+            "watch_outs": [
+              "Die Formulierung 'dieselbe Strecke zurückgelegt' bedeutet s_A = s_B, nicht dasselbe absolute Tempo.",
+              "Einheit beachten: t in Stunden, s in km – Ergebnis ohne Einheit ist unvollständig.",
+              "Teil c) ist offen; Schüler:innen mit schwächerem algebraischem Verständnis könnten 'ja, zwei Gleichungen braucht man immer' antworten – nachhaken."
+            ],
+            "rubric": [
+              {
+                "criterion": "Gleichungssystem aufstellen",
+                "levels": [
+                  {"label": "vollständig", "description": "Beide Gleichungen korrekt und mit Variablen beschriftet."},
+                  {"label": "teilweise", "description": "Eine Gleichung korrekt oder Variablen fehlen."},
+                  {"label": "nicht erreicht", "description": "Kein verwertbarer Ansatz."}
+                ]
+              },
+              {
+                "criterion": "Lösung und Interpretation",
+                "levels": [
+                  {"label": "vollständig", "description": "Rechnerisch korrekt, Ergebnis mit Einheit und Sachbezug interpretiert."},
+                  {"label": "teilweise", "description": "Rechnerisch korrekt, aber Interpretation fehlt oder unvollständig."},
+                  {"label": "nicht erreicht", "description": "Rechenfehler oder keine Lösung."}
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "open_response",
+            "prompt": "Entwirf selbst eine kurze Sachaufgabe (3–4 Sätze) aus dem Alltag, die sich mit einem linearen Gleichungssystem in zwei Variablen lösen lässt. Stelle das Gleichungssystem auf und löse es. Erkläre abschließend in einem Satz, was die Lösung in deiner Situation bedeutet.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 70
+            },
+            "cognitive_level": "create",
+            "dimensions": ["MOD", "BEG"],
+            "serves": [
+              {"competence_id": "MAT.US.4.VAR.04", "relation": "applies"}
+            ],
+            "est_minutes": 18,
+            "answer_key": "Musterlösung (Beispiel): 'Ein Kiosk verkauft Äpfel für 0,80 € und Birnen für 1,20 € das Stück. Anna kauft insgesamt 10 Früchte und zahlt 10,00 €. Wie viele Äpfel und wie viele Birnen hat sie gekauft?' I: x + y = 10; II: 0,80x + 1,20y = 10,00. Lösung: x = 5, y = 5. Anna kaufte 5 Äpfel und 5 Birnen.",
+            "acceptable_reasoning": "Jede Sachsituation ist akzeptabel, die korrekt zu einem linearen Gleichungssystem in zwei Variablen führt, das eine eindeutige Lösung hat. Die Lösung muss korrekt und im Sachkontext interpretiert sein.",
+            "watch_outs": [
+              "Häufig konstruieren Schüler:innen ein System, das nur eine Gleichung in einer Unbekannten ergibt – darauf hinweisen, dass zwei unabhängige Bedingungen nötig sind.",
+              "Sachkontext soll sinnvoll sein: negative oder nicht-ganzzahlige Lösungen können mathematisch korrekt sein, müssen aber zur Situation passen (z. B. keine halben Personen)."
+            ],
+            "rubric": [
+              {
+                "criterion": "Sachaufgabe sinnvoll und vollständig",
+                "levels": [
+                  {"label": "vollständig", "description": "Situation klar, zwei Unbekannte erkennbar, beide Bedingungen formuliert."},
+                  {"label": "teilweise", "description": "Situation vorhanden, aber nur eine Bedingung oder Unbekannte unklar."},
+                  {"label": "nicht erreicht", "description": "Keine verwertbare Aufgabe."}
+                ]
+              },
+              {
+                "criterion": "Gleichungssystem und Lösung",
+                "levels": [
+                  {"label": "vollständig", "description": "System korrekt aufgestellt, Lösung richtig, Interpretation vorhanden."},
+                  {"label": "teilweise", "description": "System korrekt, aber Rechenfehler oder Interpretation fehlt."},
+                  {"label": "nicht erreicht", "description": "System falsch oder nicht lösbar."}
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

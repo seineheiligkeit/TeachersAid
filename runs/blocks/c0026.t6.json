@@ -1,0 +1,78 @@
+{
+  "id": "c0026.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Du sollst einen kurzen eigenen Text (5–8 Sätze) über den Ersten Weltkrieg schreiben — aber diesmal aus der Perspektive eines 12-jährigen Mädchens, das in Wien 1915 lebt und dessen Vater an der Front ist.\n\nDein Text soll zeigen, was diese Person weiß, was sie nicht weiß, und was sie sich vielleicht wünscht. Nutze mindestens eine Information, die auf einer Quelle beruht, und kennzeichne sie mit (Quelle).",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "create",
+    "dimensions": [
+      "HME",
+      "HOR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GPB.US.3.ALL.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Erwartete Elemente: Heimatfront-Lebenswelt (Lebensmittelknappheit ab 1916, Kriegsanleihen); emotionale Distanz zur Front; Propagandaeinfluss in Schule vs. eigene Sorge um den Vater; fehlende Informationen über Kriegsrealität. Quellenbeleg z.B.: 'In der Schule lasen wir, dass unsere Soldaten tapfer kämpfen (Quelle: Schullesebuch 1915).' Kreativer Spielraum ist erwünscht, solange historische Plausibilität gewahrt bleibt.",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Historische Plausibilität",
+        "levels": [
+          "Mehrere Anachronismen oder falsche Kontextinformationen",
+          "Weitgehend plausibel, kleinere Fehler",
+          "Historisch kohärent, sprachlich in der Zeit verankert"
+        ]
+      },
+      {
+        "criterion": "Quellenbeleg",
+        "levels": [
+          "Kein Beleg",
+          "Beleg vorhanden, aber nicht korrekt gekennzeichnet",
+          "Klar gekennzeichneter Quellenbeleg mit kurzem Kontext"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Anachronismen vermeiden: kein Telefon, kein Internet, kein Fernsehen; Zeitung und Briefe als Informationsquellen.",
+      "Geschlechterrollen 1915 nicht romantisieren, aber auch nicht modern überformen — Frauen hatten stark eingeschränkten öffentlichen Raum.",
+      "Quellenbeleg einfordern — das ist das methodische Kernelement dieser Aufgabe."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Geschichte und politische Bildung",
+  "klasse": 3,
+  "kompetenzbereich": null,
+  "competences": [
+    "GPB.US.3.ALL.03"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "HME",
+    "HOR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0026",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

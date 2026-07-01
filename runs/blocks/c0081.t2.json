@@ -1,0 +1,135 @@
+{
+  "id": "c0081.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb3"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Abb. 3 zeigt die Gesamtfertilitätsrate (durchschnittliche Kinderzahl je Frau) in ausgewählten Ländern.\na) Beschreibe den Unterschied zwischen den afrikanischen und den europäischen Ländern im Diagramm.\nb) Eine Bevölkerung wächst langfristig, wenn die Fertilitätsrate über etwa 2,1 liegt (Bestandserhaltungsniveau). Welche der dargestellten Länder wachsen, welche schrumpfen?\nc) Was könnten Gründe dafür sein, dass die Fertilitätsrate in manchen Ländern so viel höher ist als in anderen?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 8
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "UK",
+      "OK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.4.ENT2.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "a) Afrikanische Länder haben Raten zwischen ca. 5,2 und 6,8, europäische Länder zwischen ca. 0,78 und 1,58 – ein sehr großer Unterschied. b) Wachsend: alle fünf afrikanischen Länder (>2,1); Schrumpfend: Deutschland, Japan, Österreich, Südkorea, Italien (alle <2,1). c) Gründe für hohe Rate: niedrige Kindersterblichkeit wird erst langsam (demographischer Übergang), Kinder als Altersvorsorge, geringer Zugang zu Verhütung, fehlende Bildung für Frauen, hohe Kindersterblichkeit als kultureller Sicherheitspuffer. Gründe für niedrige Rate: Bildung und Berufstätigkeit von Frauen, hohe Lebenskosten, späte Familienplanung, sicheres Rentensystem.",
+    "acceptable_reasoning": "Einzelne Gründe aus dem demographischen Übergangsmodell genügen – vollständiges Modell nicht gefordert in Kl. 4.",
+    "rubric": [
+      {
+        "criterion": "Unterschied beschrieben",
+        "levels": [
+          "Klare Beschreibung mit Zahlen",
+          "Tendenz erkannt ohne Zahlen",
+          "Nicht erkannt"
+        ]
+      },
+      {
+        "criterion": "Wachsend/schrumpfend korrekt zugeordnet",
+        "levels": [
+          "Alle 10 Länder korrekt",
+          "Mindestens 7 korrekt",
+          "Weniger als 7"
+        ]
+      },
+      {
+        "criterion": "Gründe plausibel erklärt",
+        "levels": [
+          "Mindestens 2 entwicklungsbezogene Gründe",
+          "1 Grund",
+          "Keine plausiblen Gründe"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Vermeiden: direkte Verknüpfung Armut = hohe Fertilitätsrate als einfaches Kausalverhältnis. Es geht um Entwicklungsstand, Bildung, Gesundheitsversorgung.",
+      "Südkoreas Wert (0,78) ist der niedrigste der Welt – als Extrembeispiel besonders diskussionswürdig."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 4,
+  "kompetenzbereich": "Entwicklungen in einer globalisierten Welt",
+  "competences": [
+    "GWB.US.4.ENT2.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "UK",
+    "OK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb3",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Niger",
+          "Mali",
+          "Angola",
+          "DR Kongo",
+          "Somalia",
+          "Deutschland",
+          "Japan",
+          "Österreich",
+          "Südkorea",
+          "Italien"
+        ],
+        "values": [
+          6.8,
+          5.9,
+          5.6,
+          5.3,
+          5.2,
+          1.58,
+          1.2,
+          1.46,
+          0.78,
+          1.24
+        ],
+        "title": "Gesamtfertilitätsrate ausgewählter Länder 2023 (Kinder je Frau)",
+        "xlabel": "Land",
+        "ylabel": "Gesamtfertilitätsrate"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0081",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:16+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

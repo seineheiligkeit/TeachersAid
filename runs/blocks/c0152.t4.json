@@ -1,0 +1,149 @@
+{
+  "id": "c0152.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Betrachte die Zeitleiste (Abbildung 1) zur Geschichte des Lateinischen als Wissenschaftssprache. Beantworte folgende Fragen:\n1. In welchem Zeitraum war Latein unumstritten die zentrale Wissenschaftssprache Europas?\n2. Nenne zwei bedeutende Werke auf der Zeitleiste und erkläre in je einem Satz, warum sie in die Geschichte der Wissenschaft eingegangen sind.\n3. Wann und warum begann Latein als Wissenschaftssprache seine Vorrangstellung zu verlieren? Formuliere eine begründete Hypothese.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 8
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "INT"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "LAT.OS.7.FAC.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "LAT.OS.x.INT.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "1. Ungefähr von der Spätantike bis ca. 1750 / Ende 18. Jahrhundert war Latein die dominierende Wissenschaftssprache. 2. Beispiele: Vesalius' De humani corporis fabrica (1543) legte mit präzisen anatomischen Zeichnungen den Grundstein der modernen Anatomie; Newtons Principia Mathematica (1687) formulierte die Grundgesetze der Mechanik und Gravitation. 3. Hypothese: Mit dem Aufkommen der Nationalstaaten und der Aufklärung (18. Jh.) entstand ein Bedürfnis nach volksnaher Wissenschaftskommunikation; Gelehrte schrieben zunehmend in Landessprachen, um breitere Kreise zu erreichen; zudem förderte der Buchdruck die Nationalsprachen. (Alle begründeten Hypothesen akzeptieren.)",
+    "acceptable_reasoning": "Bei Frage 3 sind verschiedene Hypothesen akzeptabel, sofern sie historisch plausibel sind (Nationalstaaten, Aufklärung, Buchdruck, Bildungsreformen).",
+    "rubric": [
+      {
+        "criterion": "Beantwortung Frage 1 (Zeitraum)",
+        "levels": [
+          "Korrekt mit plausiblem Zeitraum",
+          "Ungefähr korrekt",
+          "Falsch"
+        ]
+      },
+      {
+        "criterion": "Beantwortung Frage 2 (Werke)",
+        "levels": [
+          "Zwei Werke korrekt identifiziert und erläutert",
+          "Ein Werk korrekt erläutert",
+          "Nur genannt, nicht erläutert",
+          "Falsch oder fehlend"
+        ]
+      },
+      {
+        "criterion": "Hypothese Frage 3",
+        "levels": [
+          "Begründet und historisch plausibel",
+          "Ansatz vorhanden, nicht vollständig begründet",
+          "Vage, ohne Begründung",
+          "Fehlend"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen könnten meinen, Latein habe mit dem Untergang des Weströmischen Reiches (476) aufgehört — aber als Wissenschaftssprache blieb es noch über 1000 Jahre lebendig. Diese Fehlvorstellung ist weit verbreitet und sollte korrigiert werden.",
+      "Galileis Sidereus Nuncius ist auf Latein verfasst, aber sein späteres Werk (Dialogo) auf Italienisch — diese Zweisprachigkeit von Galileis Werk illustriert den Übergang gut."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Latein",
+  "klasse": 7,
+  "kompetenzbereich": "Fachsprachen und Fachtexte",
+  "competences": [
+    "LAT.OS.7.FAC.02",
+    "LAT.OS.x.INT.03"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "INT"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:timeline",
+      "spec": {
+        "events": [
+          {
+            "at": -150,
+            "label": "Latinisierung der Wissenschaftssprache (Rom)"
+          },
+          {
+            "at": 77,
+            "label": "Plinius d. Ä.: Naturalis Historia"
+          },
+          {
+            "at": 160,
+            "label": "Galen: Medizinische Werke (lat. Übersetzung)"
+          },
+          {
+            "at": 1543,
+            "label": "Vesalius: De humani corporis fabrica"
+          },
+          {
+            "at": 1623,
+            "label": "Galilei: Sidereus Nuncius (lat.)"
+          },
+          {
+            "at": 1687,
+            "label": "Newton: Principia Mathematica (lat.)"
+          },
+          {
+            "at": 1753,
+            "label": "Linné: Species Plantarum (lat.)"
+          },
+          {
+            "at": 1800,
+            "label": "Latein verliert Status als Wissenschaftssprache"
+          }
+        ],
+        "title": "Latein als Wissenschaftssprache: Zeitleiste",
+        "xlabel": "Jahr (n. Chr. / v. Chr.)"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0152",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:26+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

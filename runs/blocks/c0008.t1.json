@@ -1,0 +1,73 @@
+{
+  "id": "c0008.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "multiple_choice",
+    "prompt": "Im Basketball hat dein Team den Ball und ihr spielt im Angriff. Du bist ohne Ball und deine/r Gegenspieler:in steht zwischen dir und dem Korb. Welche Bewegung ist taktisch am sinnvollsten?",
+    "payload": {
+      "kind": "multiple_choice",
+      "options": [
+        "A — Stillstehen und warten, bis du den Ball zugespielt bekommst.",
+        "B — Freilaufen: kurz in eine Richtung täuschen, dann schnell in die andere Richtung lossprinten, um frei zu stehen.",
+        "C — Direkt auf den Korb zulaufen, damit du schnell zum Abschluss kommst.",
+        "D — Zur Ballführerin/zum Ballführer laufen, um ihr/ihm zu helfen."
+      ],
+      "select": "one"
+    },
+    "response": {
+      "mode": "choices",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "select": "one"
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "FAC"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BUS.US.4.FAC.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 4,
+    "answer_key": "B — Freilaufen mit Täuschungsbewegung ist die Kernindividualtaktik im Angriff ohne Ball. A führt zu Passivität und erleichtert Gegnern die Arbeit. C ignoriert das Decken und führt direkt in die Gegnerin/den Gegner. D verengt das Spielfeld und behindert die ballführende Person.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "C klingt 'aggressiv und mutig' — es ist aber taktisch meist falsch, wenn man gedeckt ist.",
+      "Die Täuschungsbewegung bei B ist für viele Schüler:innen neu als explizites Konzept, auch wenn sie sie intuitiv schon ausgeführt haben."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "multiple_choice",
+  "subject": "Bewegung und Sport",
+  "klasse": 4,
+  "kompetenzbereich": "Fachkompetenz",
+  "competences": [
+    "BUS.US.4.FAC.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "FAC"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0008",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T12:58:08+00:00"
+}

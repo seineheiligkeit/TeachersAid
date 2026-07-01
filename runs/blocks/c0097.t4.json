@@ -1,0 +1,86 @@
+{
+  "id": "c0097.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Erstelle ein vereinfachtes Monatsbudget für eine Person, die in deinem Wunschberuf arbeitet (in Österreich). Recherchiere das Nettoeinkommen (Tipp: Gehaltsrechner auf www.statistik.at oder Gewerkschaftswebsites) und schätze reale Ausgaben. Vervollständige die Tabelle und prüfe: Bleibt am Monatsende etwas übrig?",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Posten",
+        "Betrag in € / Monat",
+        "Pflicht oder frei wählbar?"
+      ],
+      "rows": 8
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "HK",
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.4.EIG.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Individuelle Antworten. Typische Pflichtposten: Miete (in Österreich ca. 600–1200 € für eine Kleinwohnung), Strom/Heizung (ca. 100–200 €), Lebensmittel (ca. 300–400 €), Versicherungen (ca. 50–100 €), Mobilität (öffentliche Verkehrsmittel oder Auto). Frei wählbar: Freizeit, Kleidung, Hobbys, Ersparnisse. Wichtig: Bruttogehalt ≠ Nettogehalt – die Lohnsteuer und Sozialabgaben sind abzuziehen.",
+    "acceptable_reasoning": "Schülerinnen und Schüler, die keinen konkreten Wunschberuf nennen, sollen einen realistischen Beruf wählen – Fantasieberufe mit unrealistischen Gehältern nicht akzeptieren.",
+    "rubric": [
+      {
+        "criterion": "Realismus des Budgets",
+        "levels": [
+          "Gehalt oder Ausgaben unrealistisch hoch oder niedrig ohne Begründung.",
+          "Grob realistisch, ein oder zwei Posten fehlen.",
+          "Realistisches Budget mit Pflicht- und freien Posten; Netto-Einkommen wird verwendet."
+        ]
+      },
+      {
+        "criterion": "Brutto/Netto-Unterscheidung",
+        "levels": [
+          "Kein Hinweis auf Brutto/Netto.",
+          "Unterschied erwähnt, aber nicht angewendet.",
+          "Nettogehalt korrekt berechnet oder angegeben."
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schülerinnen und Schüler unterschätzen oft Pflichtausgaben (v. a. Miete) dramatisch – das ist eine wichtige Lernerfahrung.",
+      "Brutto/Netto-Unterschied ist hier zentral: In Österreich beträgt der Unterschied für mittlere Einkommen ca. 25–30 %. Ohne diese Korrektur entsteht ein verzerrtes Bild."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 4,
+  "kompetenzbereich": "Das eigene Ich in einer vernetzten Welt",
+  "competences": [
+    "GWB.US.4.EIG.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "HK",
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0097",
+  "source": "ai",
+  "created_at": "2026-06-26T19:02:31+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

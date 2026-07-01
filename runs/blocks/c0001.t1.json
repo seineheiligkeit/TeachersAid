@@ -1,0 +1,73 @@
+{
+  "id": "c0001.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne jedem Beispiel die richtige Art der Wärmeübertragung zu. Jede Übertragungsart kann mehrfach verwendet werden.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "A) Eine Bratpfanne wird am Herd heiß und der Griff wird warm.",
+        "B) Heißluft steigt vom Heizkörper an der Wand zur Zimmerdecke auf.",
+        "C) Die Sonne wärmt deine Haut, obwohl du im Schatten stehst (indirektes Licht).",
+        "D) Konvektion in der Atmosphäre transportiert warme Luft vom Äquator zu den Polen.",
+        "E) Ein Stein, auf dem du sitzt, wärmt sich durch deinen Körper auf."
+      ],
+      "right": [
+        "1) Wärmeleitung (Konduktion)",
+        "2) Wärmeströmung (Konvektion)",
+        "3) Wärmestrahlung (Radiation)"
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.4.WET.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "A→1 (Wärmeleitung: Metall ist Wärmeleiter), B→2 (Konvektion: Dichteunterschiede warmer/kalter Luft), C→3 (Strahlung: elektromagnetische Wellen, kein Medium nötig), D→2 (großräumige atmosphärische Konvektion), E→1 (direkter Kontakt zwischen Körper und Stein).",
+    "acceptable_reasoning": "Bei C ist auch 3+2 akzeptabel mit Begründung, dass Strahlung absorbiert wird und Luft dann konvektiert.",
+    "rubric": [],
+    "watch_outs": [
+      "Häufige Fehlvorstellung: Wärme 'fließt' immer nach oben. Konvektion bewegt Fluide; Leitung und Strahlung haben keine Vorzugsrichtung.",
+      "Strahlung braucht kein Medium – viele Schüler:innen denken, Luft sei notwendig für Wärmeübertragung allgemein.",
+      "Konvektion findet nur in Flüssigkeiten und Gasen statt, nicht in Feststoffen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Wetter und Klima",
+  "competences": [
+    "PHY.US.4.WET.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0001",
+  "source": "ai",
+  "created_at": "2026-06-25T11:35:33+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

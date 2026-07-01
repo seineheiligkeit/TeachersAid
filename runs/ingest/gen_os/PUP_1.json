@@ -1,0 +1,257 @@
+{
+  "subject": "Psychologie und Philosophie",
+  "klasse": 7,
+  "kompetenzbereich": "Kognitive Prozesse und Lernen",
+  "title": "Wie lernt unser Gehirn? Gedächtnis, Vergessen und Lernstrategien",
+  "kernfrage": "Warum vergisst du so vieles kurz nach dem Lernen – und was kannst du dagegen tun?",
+  "body": {
+    "intro": [
+      "Du hast einen Lernabend hinter dir, kennst den Stoff – und am nächsten Tag ist vieles weg. Kein Einzelfall. Die Psychologie hat in den letzten 150 Jahren untersucht, wie Erinnerungen entstehen, gespeichert werden und wieder verloren gehen. In diesem Arbeitsblatt analysierst du Modelle zum Gedächtnis, vergleichst sie mit deiner eigenen Lernerfahrung und bewertest, welche Strategien wirklich helfen."
+    ],
+    "data_figures": [
+      {
+        "id": "abb1",
+        "intent": "trend",
+        "title": "Ebbinghaus' Vergessenskurve (illustrativ, schematisch)",
+        "xlabel": "Zeit nach dem Lernen",
+        "ylabel": "Behaltensleistung (%)",
+        "categories": ["0 h", "1 h", "8 h", "1 Tag", "2 Tage", "6 Tage", "1 Monat"],
+        "values": [100, 58, 44, 33, 28, 25, 21]
+      }
+    ],
+    "assets": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Gedächtnismodelle und der Weg vom Reiz zur Erinnerung",
+        "throughline": "Schüler:innen verstehen, dass Gedächtnis kein passiver Speicher ist, sondern ein mehrstufiger Verarbeitungsprozess – und dass Modelle vereinfachte Erklärungsrahmen sind, keine fotografischen Abbilder der Realität.",
+        "talking_points": [
+          "Das Mehrspeichermodell (Atkinson & Shiffrin, 1968) unterscheidet sensorisches Register, Kurzzeit- und Langzeitgedächtnis – ein klassisches, lehrplantaugliches Modell, das aber stark vereinfacht.",
+          "Baddeley & Hitchs Arbeitsgedächtnismodell (1974) ersetzt den Begriff Kurzzeitgedächtnis durch ein aktives Verarbeitungssystem mit phonologischer Schleife, visuell-räumlichem Notizblock und zentraler Exekutive.",
+          "Wichtig: Modelle sind theoretische Konstrukte; kein Modell bildet das Gedächtnis vollständig ab.",
+          "Die Kapazitätsbeschränkung des Arbeitsgedächtnisses (ca. 4–7 Einheiten gleichzeitig) hat direkte Konsequenzen für Lernstrategien wie Chunking."
+        ],
+        "extensions": [
+          "Vertiefung: Tulvings Unterscheidung von episodischem und semantischem Gedächtnis einführen.",
+          "Rechercheprojekt: Schüler:innen suchen eine populärwissenschaftliche Darstellung eines Gedächtnismodells und beurteilen, ob es korrekt vereinfacht.",
+          "Verbindung zur Neurobiologie: Wie hängt Langzeitpotenzierung (LTP) mit dem Langzeitgedächtnis zusammen?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "ordering",
+            "prompt": "Bringe die folgenden Stationen, die ein Sinneseindruck durchläuft, in die richtige Reihenfolge – vom ersten Reiz bis zur dauerhaften Erinnerung. Nummeriere von 1 (zuerst) bis 5 (zuletzt).",
+            "payload": {
+              "kind": "ordering",
+              "items": [
+                "Langzeitgedächtnis: Information dauerhaft gespeichert",
+                "Sensorisches Register: flüchtiger Sinneseindruck (Millisekunden)",
+                "Enkodierung: bedeutungsvolle Verarbeitung der Information",
+                "Arbeits-/Kurzzeitgedächtnis: bewusste, begrenzte Verarbeitung",
+                "Aufmerksamkeitsselektion: Auswahl relevanter Reize"
+              ]
+            },
+            "response": { "mode": "none" },
+            "cognitive_level": "remember",
+            "dimensions": ["WIS"],
+            "serves": [{ "competence_id": "PUP.OS.7.KOG.01", "relation": "exercises" }],
+            "est_minutes": 5,
+            "asset_refs": [],
+            "answer_key": "Korrekte Reihenfolge: 1 – Sensorisches Register, 2 – Aufmerksamkeitsselektion, 3 – Arbeits-/Kurzzeitgedächtnis, 4 – Enkodierung, 5 – Langzeitgedächtnis.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Viele Schüler:innen verwechseln Kurzzeitgedächtnis und Arbeitsgedächtnis – darauf hinweisen, dass das Arbeitsgedächtnismodell aktive Verarbeitung betont, nicht bloße Speicherung.",
+              "Enkodierung wird häufig mit bloßem Wiederholen gleichgesetzt; tatsächlich meint elaborierte Enkodierung das Verknüpfen mit Vorwissen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "text_analysis",
+            "prompt": "Lies den folgenden Kurztext und beantworte danach die Fragen.\n\n---\n„Maya lernt für eine Prüfung, indem sie den Stoff zehnmal liest. Ihr Freund Leon schreibt nach jeder Leseeinheit stichwortartig auf, was er behalten hat, und testet sich selbst. Beide verwenden die gleiche Zeit."\n---\n\n(a) Welches Gedächtnisprinzip nutzt Leon, das Maya vernachlässigt? Erkläre in zwei bis drei Sätzen.\n(b) Warum ist wiederholtes Lesen als alleinige Strategie laut psychologischer Forschung weniger wirksam als Selbsttests?",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 50 },
+            "cognitive_level": "understand",
+            "dimensions": ["WIS", "TRA"],
+            "serves": [{ "competence_id": "PUP.OS.7.KOG.01", "relation": "exercises" }],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "(a) Leon nutzt den Testungseffekt (Retrieval Practice): aktives Abrufen aus dem Gedächtnis stärkt die Erinnerungsspur stärker als passives Wiederlesen. (b) Passives Lesen erzeugt Vertrautheit (Fluency Illusion), aber keine belastbaren Abrufwege. Aktiver Abruf (Self-Testing) trainiert genau den Prozess, der in der Prüfung benötigt wird, und identifiziert Wissenslücken.",
+            "acceptable_reasoning": "Akzeptabel: Schüler:innen benennen Testungseffekt oder aktives Abrufen; erklären, dass Lesen kein echtes Lernen erzwingt.",
+            "watch_outs": [
+              "Häufige Fehlvorstellung: Wiederholtes Lesen fühlt sich vertraut an und wird deshalb fälschlicherweise als effektiv erlebt (Fluency Illusion).",
+              "Kein Verweis auf konkrete Studienzahlen – nur das Prinzip erklären."
+            ],
+            "rubric": [
+              { "criterion": "Benennung des Testungseffekts", "levels": ["Nicht genannt", "Genannt, aber unvollständig erklärt", "Klar benannt und erklärt"] },
+              { "criterion": "Erklärung der Schwäche des Wiederholungslesens", "levels": ["Fehlt", "Oberflächlich (z. B. nur: langweilig)", "Fluency Illusion oder fehlende Abrufübung als Grund genannt"] }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Vergessen – Feind oder Freund?",
+        "throughline": "Vergessen wird häufig nur negativ gesehen; die psychologische Perspektive zeigt, dass selektives Vergessen eine Funktion hat und dass Interferenz ein wichtiger Mechanismus ist.",
+        "talking_points": [
+          "Hermann Ebbinghaus (1885) beschrieb die Vergessenskurve auf Basis von Selbstversuchen mit bedeutungslosem Material – Übertragbarkeit auf bedeutungshaltiges Lernen ist begrenzt.",
+          "Interferenztheorie: Proaktive Interferenz (Altes stört Neues) und retroaktive Interferenz (Neues stört Altes) erklären viele Alltagsvergessens-Phänomene.",
+          "Vergessen als adaptiver Mechanismus: Nicht alle Informationen zu behalten ist funktional – Priorisierung ermöglicht Handlungsfähigkeit.",
+          "Abstands-Effekt (Spacing Effect): Verteiltes Lernen wirkt der Vergessenskurve effektiv entgegen."
+        ],
+        "extensions": [
+          "Kritische Quelle: Ebbinghaus' Methode und ihre Grenzen diskutieren (Selbstversuch, sinnloses Material).",
+          "Anwendung: Schüler:innen erstellen einen konkreten Lernplan für das nächste Schuljahr, der den Spacing Effect nutzt.",
+          "Vertiefung: Das Konzept der Gedächtniskonsolidierung im Schlaf einführen."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "data_interpretation",
+            "prompt": "Schau dir die Vergessenskurve (Abbildung 1) an. Sie zeigt schematisch, wie viel von einer gelernten Information nach einer bestimmten Zeit noch erinnert wird.\n\n(a) Beschreibe den Verlauf der Kurve in eigenen Worten: Wann ist der Verlust am größten?\n(b) Was bedeutet dieser Verlauf für den sinnvollen Zeitpunkt einer Wiederholung?\n(c) Nenne einen wichtigen Unterschied zwischen dem Originalbefund von Ebbinghaus und typischen Lernmaterialien im Schulalltag.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 55 },
+            "cognitive_level": "analyze",
+            "dimensions": ["TRA", "REF"],
+            "serves": [{ "competence_id": "PUP.OS.7.KOG.02", "relation": "exercises" }],
+            "est_minutes": 10,
+            "asset_refs": ["abb1"],
+            "answer_key": "(a) Der stärkste Vergessensrückgang erfolgt in den ersten Stunden nach dem Lernen; danach flacht die Kurve ab. (b) Eine erste Wiederholung sollte bald nach dem Lernen stattfinden (z. B. nach 1–2 Tagen), weitere im zunehmenden Abstand (Spacing). (c) Ebbinghaus verwendete sinnloses Silbenmaterial; im Schulalltag lernt man bedeutungshaltige Inhalte, die mit Vorwissen verknüpft werden – dadurch verläuft die Vergessenskurve in der Realität flacher.",
+            "acceptable_reasoning": "Akzeptabel: Schüler:innen nennen frühen Zeitpunkt der größten Verlustes; schlussfolgern auf frühe Wiederholung; benennen sinnloses Material als Einschränkung.",
+            "watch_outs": [
+              "Nicht verallgemeinern: Die genauen Prozentwerte sind Illustration, keine gemessene Universalkonstante.",
+              "Häufiger Fehler: Schüler:innen glauben, nach einem Monat sei alles vergessen – die Kurve zeigt Behaltensleistung, nicht Totalverlust."
+            ],
+            "rubric": [
+              { "criterion": "Beschreibung des Kurvenverlaufs", "levels": ["Fehlt oder falsch", "Nur grob (viel wird vergessen)", "Zeitlicher Verlauf (anfangs steil, dann flacher) korrekt beschrieben"] },
+              { "criterion": "Schlussfolgerung für die Wiederholung", "levels": ["Fehlt", "Allgemein (öfter wiederholen)", "Zeitlich konkretisiert (früh und verteilt)"] },
+              { "criterion": "Einschränkung des Befunds", "levels": ["Fehlt", "Vage (andere Situation)", "Sinnloses Material als spezifische Einschränkung genannt"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "true_false_justify",
+            "prompt": "Beurteile die folgenden Aussagen als richtig oder falsch und begründe jeweils deine Entscheidung in einem Satz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Proaktive Interferenz bedeutet, dass neues Lernmaterial altes Material verdrängt.",
+                "Der Spacing Effect besagt, dass verteiltes Lernen über mehrere Tage dem gebündelten Lernen (Lernen auf einmal) überlegen ist.",
+                "Vergessen ist grundsätzlich ein Zeichen schlechten Lernens und hat keinen Nutzen.",
+                "Das sensorische Register speichert Informationen über mehrere Minuten, damit man sie verarbeiten kann."
+              ]
+            },
+            "response": { "mode": "table", "columns": ["Aussage", "Richtig / Falsch", "Begründung"], "rows": 4 },
+            "cognitive_level": "understand",
+            "dimensions": ["WIS", "TRA"],
+            "serves": [{ "competence_id": "PUP.OS.7.KOG.01", "relation": "exercises" }],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "1 – Falsch: Proaktive Interferenz bedeutet, dass ALTES Material das Lernen von NEUEM stört (nicht umgekehrt; das wäre retroaktive Interferenz). 2 – Richtig: Verteiltes Lernen führt zu besserer Langzeitbehaltensleistung als Massenlernen. 3 – Falsch: Selektives Vergessen ist adaptiv; es schützt das Gedächtnis vor Überflutung und priorisiert relevante Information. 4 – Falsch: Das sensorische Register hält Eindrücke nur für Millisekunden bis maximal ca. 3 Sekunden (ikonisch/echoisch) bereit.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Proaktive vs. retroaktive Interferenz werden häufig verwechselt – die Richtung der Störung ist entscheidend.",
+              "Aussage 3 greift eine verbreitete Alltagsannahme auf; Schüler:innen brauchen den Hinweis, dass Vergessen eine Funktion hat.",
+              "Aussage 4: Schüler:innen überschätzen oft die Kapazitätsdauer des sensorischen Registers."
+            ],
+            "rubric": []
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "Lernen, Denken und der Transfer in die Praxis",
+        "throughline": "Schüler:innen verbinden psychologische Erkenntnisse mit ihrem eigenen Lernverhalten und entwickeln eine kritische, aber konstruktive Haltung gegenüber populären Lernmythen.",
+        "talking_points": [
+          "Lernstile (visuell, auditiv, kinästhetisch) sind als starre Kategorien wissenschaftlich nicht belegt – Vielfalt der Methoden hilft trotzdem.",
+          "Denkverzerrungen (Cognitive Biases) wie der Bestätigungsfehler (Confirmation Bias) beeinflussen auch das Lernen.",
+          "Metakognition – das Nachdenken über das eigene Denken – ist ein zentraler Faktor für erfolgreiches Lernen.",
+          "Psychologie will beschreiben und erklären, nicht vorschreiben: Schüler:innen sollen Erkenntnisse reflektiert anwenden, nicht unkritisch übernehmen."
+        ],
+        "extensions": [
+          "Debatte: Sind Lernstilkonzepte trotz mangelnder empirischer Basis nützlich? Argumente pro und contra sammeln.",
+          "Praxisprojekt: Schüler:innen führen eine Woche lang ein Lerntagebuch und reflektieren ihre Strategien im Licht der Modulinhalte.",
+          "Verbindung zur Erkenntnistheorie: Wie unterscheidet sich psychologisches Wissen über Lernen von Alltagstheorien?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "open_response",
+            "prompt": "„Jeder Mensch hat einen festen Lernstil – wer visuell lernt, sollte immer mit Bildern lernen." – Diese Aussage hört man häufig. Erkläre, was an ihr problematisch ist, und formuliere eine differenziertere Empfehlung für effektives Lernen.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 60 },
+            "cognitive_level": "evaluate",
+            "dimensions": ["TRA", "REF"],
+            "serves": [{ "competence_id": "PUP.OS.7.KOG.02", "relation": "exercises" }],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Problematisch: Das Konzept fester Lernstile ist wissenschaftlich nicht gut belegt; empirische Studien zeigen, dass das Anpassen des Lernmaterials an einen angeblichen Lernstil die Leistung nicht systematisch verbessert. Differenziertere Empfehlung: Vielfalt der Methoden (multimodales Lernen) nutzen; bewährt sind Strategien wie aktives Abrufen (Testing), verteiltes Lernen (Spacing) und Elaboration (Verknüpfung mit Vorwissen) – unabhängig von einem fixen Stil.",
+            "acceptable_reasoning": "Akzeptabel: Schüler:innen benennen fehlende empirische Belege; schlagen methodische Vielfalt oder evidenzbasierte Strategien als Alternative vor.",
+            "watch_outs": [
+              "Nicht in therapeutischen Ratschlag verfallen – die Aufgabe bleibt deskriptiv-analytisch.",
+              "Lernstile völlig negieren ist ebenfalls vereinfacht: Individuelle Präferenzen existieren, aber sie bestimmen nicht starr den Lernerfolg.",
+              "Schüler:innen sollen psychologische Erkenntnisse reflektieren, nicht als absolute Wahrheiten übernehmen."
+            ],
+            "rubric": [
+              { "criterion": "Kritik am Lernstil-Konzept", "levels": ["Fehlt oder nur Meinung", "Schwach (z. B. nur: nicht für alle gleich)", "Empirische Schwäche benannt (fehlende Belege / Forschungslage)"] },
+              { "criterion": "Differenzierte Empfehlung", "levels": ["Fehlt", "Allgemein (z. B. mehrere Methoden)", "Mindestens eine evidenzbasierte Strategie (Testing, Spacing, Elaboration) konkret genannt"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "argumentation",
+            "prompt": "Stell dir vor, deine Schule überlegt, das Lernen mit Karteikarten durch eine App zu ersetzen, die automatisch den richtigen Wiederholungszeitpunkt berechnet (Spaced-Repetition-System, SRS). Der Schulleiter fragt dich: „Macht das psychologisch gesehen Sinn?"\n\nSchreibe eine kurze, strukturierte Stellungnahme (ca. 8–10 Sätze), in der du:\n(a) das zugrundeliegende psychologische Prinzip erklärst,\n(b) einen möglichen Einwand formulierst,\n(c) eine begründete Empfehlung abgibst.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 70 },
+            "cognitive_level": "evaluate",
+            "dimensions": ["TRA", "REF"],
+            "serves": [{ "competence_id": "PUP.OS.7.KOG.03", "relation": "exercises" }],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "(a) SRS nutzt den Spacing Effect und den Testungseffekt: Wiederholungen werden algorithmisch zum optimalen Zeitpunkt angesetzt, kurz bevor die Information vergessen würde. Das entspricht psychologischen Erkenntnissen zur Langzeitbehaltensleistung. (b) Einwände: SRS-Apps decken nur deklaratives Faktenwissen gut ab; tiefes Verstehen, Vernetzung von Konzepten und kreatives Denken werden kaum gefördert. Auch Eigenverantwortung und Metakognition könnten durch reine App-Steuerung geschwächt werden. (c) Empfehlung: Einsatz als ergänzendes Werkzeug für Vokabel- und Faktenwissen sinnvoll; kein Ersatz für verstehendes Lernen und eigenständige Lernplanung.",
+            "acceptable_reasoning": "Akzeptabel: Schüler:innen benennen Spacing/Testing; formulieren einen inhaltlichen Einwand (kein bloßes Technikproblem); geben eine begründete Empfehlung.",
+            "watch_outs": [
+              "Reine Pro/Kontra-Listen ohne Begründung reichen nicht – die Aufgabe verlangt psychologische Fundierung.",
+              "Nicht in allgemeine Medienkritik abdriften; Fokus bleibt auf dem psychologischen Prinzip."
+            ],
+            "rubric": [
+              { "criterion": "Psychologisches Prinzip erklärt", "levels": ["Fehlt", "Nur Stichwort (Spacing)", "Spacing + Testing korrekt und verständlich erklärt"] },
+              { "criterion": "Einwand formuliert", "levels": ["Fehlt", "Technischer Einwand (App-Probleme)", "Inhaltlich-psychologischer Einwand (Grenzen für tiefes Verständnis)"] },
+              { "criterion": "Empfehlung begründet", "levels": ["Fehlt oder unbegründet", "Empfehlung ohne psychologische Begründung", "Begründete Empfehlung mit Bezug auf psychologische Erkenntnisse"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "open_response",
+            "prompt": "Reflexionsaufgabe: Wähle eine Lernstrategie aus diesem Arbeitsblatt (z. B. Selbsttests, verteiltes Lernen, Elaboration) und erkläre, wie du sie konkret in deinen Schulalltag integrieren könntest. Geh auch darauf ein, welche Hindernisse dabei auftreten könnten und wie du damit umgehst.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 65 },
+            "cognitive_level": "create",
+            "dimensions": ["REF"],
+            "serves": [{ "competence_id": "PUP.OS.7.KOG.02", "relation": "exercises" }],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Offene Aufgabe – individuelle Antworten. Bewertet wird: klare Strategie benannt, konkreter Umsetzungsplan (Wann? Wie? Wie oft?), realistisches Hindernis benannt (z. B. Zeitdruck, Gewohnheit), konstruktiver Umgang damit beschrieben. Psychologisches Prinzip hinter der Strategie sollte erkennbar sein.",
+            "acceptable_reasoning": "Akzeptabel: Jede evidenzbasierte Strategie aus dem Arbeitsblatt; individuelle, reflektierte Planung; keine Verpflichtung auf eine bestimmte Antwort.",
+            "watch_outs": [
+              "Nicht in therapeutische Sprache verfallen (z. B. keine Ratschläge zu mentaler Gesundheit geben) – Fokus liegt auf Lernstrategien.",
+              "Schüler:innen die Freiheit lassen, auch kritisch zu sein (z. B. warum eine Strategie für sie schwer umsetzbar ist)."
+            ],
+            "rubric": [
+              { "criterion": "Konkretheit der Planung", "levels": ["Vage oder allgemein", "Strategie genannt, aber kein Plan", "Konkreter, realisierbarer Plan mit Zeitangaben oder Kontext"] },
+              { "criterion": "Reflexion von Hindernissen", "levels": ["Fehlt", "Hindernis genannt, kein Umgang", "Hindernis und konstruktiver Umgang beschrieben"] },
+              { "criterion": "Bezug zur Psychologie", "levels": ["Fehlt", "Implizit vorhanden", "Psychologisches Prinzip explizit benannt und mit Plan verknüpft"] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

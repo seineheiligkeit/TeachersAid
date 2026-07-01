@@ -1,0 +1,79 @@
+{
+  "id": "c0020.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Ein Architekt plant einen Dachaufsatz für ein Gebäude. Zur Auswahl stehen: (A) ein Drehkegel, (B) eine quadratische Pyramide, (C) ein Drehzylinder. Er möchte maximalen Schutz vor Regen auf einer quadratischen Grundfläche und eine möglichst einfache Konstruktion aus geraden Holzbalken. Welchen Körper empfiehlst du? Begründe deine Wahl mit geometrischen Eigenschaften.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Wähle einen der drei Körper und begründe geometrisch."
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "H1"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GEZ.US.4.GEO.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Beste Wahl: (B) Quadratische Pyramide. Gründe: passt auf eine quadratische Grundfläche; die vier Dreiecksflächen leiten Wasser ab; die geraden Kanten lassen sich aus Holzbalken bauen (im Gegensatz zu Kegel oder Zylinder mit gekrümmten Flächen). Drehkegel hat gekrümmte Mantelfläche (schwer zu zimmern); Drehzylinder hat keine Spitze, Wasser sammelt sich oben.",
+    "acceptable_reasoning": "Schüler:innen, die den Kegel wählen und auf die gute Wasserableitung durch die Spitze hinweisen, erhalten Teilpunkte; fehlende Begründung zur Konstruierbarkeit abziehen.",
+    "rubric": [
+      {
+        "criterion": "Körperwahl",
+        "levels": [
+          "Keine oder falsche Wahl ohne Begründung",
+          "Richtige Wahl ohne geometrische Begründung",
+          "Richtige Wahl mit mindestens einem geometrischen Argument",
+          "Richtige Wahl mit zwei überzeugenden geometrischen Argumenten (Grundfläche + Konstruierbarkeit)"
+        ]
+      },
+      {
+        "criterion": "Vergleich der Alternativen",
+        "levels": [
+          "Kein Vergleich",
+          "Eine Alternative kurz erwähnt",
+          "Beide Alternativen mit Grund ausgeschlossen"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Die Aufgabe ist absichtlich offen — es gibt eine beste Antwort, aber der Argumentation kommt mehr Gewicht zu als der bloßen Wahl.",
+      "Darauf achten, dass geometrische Eigenschaften (nicht Ästhetik) als Hauptargument verwendet werden."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Geometrische Objekte und ihre Eigenschaften (I1)",
+  "competences": [
+    "GEZ.US.4.GEO.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "H1"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0020",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

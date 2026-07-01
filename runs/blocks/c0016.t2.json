@@ -1,0 +1,69 @@
+{
+  "id": "c0016.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "media_analysis",
+    "prompt": "Lies die folgende fiktive Schlagzeile und den dazugehörigen ersten Satz genau durch:\n\n**Schlagzeile:** „Wissenschaftler beweisen: Handystrahlung macht dumm!“\n**Erster Satz:** „Eine neue Studie zeigt einen Zusammenhang zwischen der Dauer der Handynutzung und schlechteren Schulnoten bei Jugendlichen.“\n\nBeantworte: (a) Stimmt die Schlagzeile mit dem ersten Satz überein? Worin unterscheiden sich die beiden Aussagen? (b) Welches Gefühl soll die Schlagzeile bei dir auslösen? (c) Welche Fragen würdest du stellen, bevor du diesen Inhalt teilst?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 8
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "G",
+      "I"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DGB.US.2.KOM.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "(a) Nein: Die Schlagzeile behauptet einen Beweis für direkte Wirkung ('macht dumm'), der erste Satz beschreibt nur eine Korrelation ('Zusammenhang') ohne Kausalität und ohne Qualitätsangabe der Studie. (b) Angst/Schock, eventuell Schuldgefühl, Empörung – emotionale Reaktion soll zum Teilen motivieren. (c) Wo ist die Originalstudie? Wer hat sie durchgeführt und finanziert? Wurde sie in einem begutachteten Journal veröffentlicht? Was bedeutet 'Zusammenhang' (Korrelation ist keine Kausalität)? Schreiben andere Medien darüber?",
+    "acceptable_reasoning": "Schüler:innen müssen den Begriff 'Korrelation' nicht verwenden, aber den Unterschied zwischen 'Zusammenhang' und 'Beweis' klar benennen.",
+    "rubric": [
+      {
+        "criterion": "Erkennen der Diskrepanz",
+        "levels": [
+          "Kein Unterschied erkannt",
+          "Unterschied benannt, aber nicht erklärt",
+          "Korrelation vs. Kausalität oder Fehlen von Belegen klar erklärt"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Viele Schüler:innen übernehmen die Schlagzeile als Zusammenfassung des Textes – herausarbeiten: Schlagzeile und Inhalt sind zwei getrennte Elemente mit manchmal gegensätzlicher Aussage.",
+      "Frage (c) zeigt Medienkompetenz: Ermutige dazu, mindestens drei verschiedene Überprüfungsstrategien zu nennen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "media_analysis",
+  "subject": "Digitale Grundbildung",
+  "klasse": 2,
+  "kompetenzbereich": "Kommunikation: Kommunizieren und Kooperieren unter Nutzung informatischer, medialer Systeme",
+  "competences": [
+    "DGB.US.2.KOM.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "G",
+    "I"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0016",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

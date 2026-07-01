@@ -1,0 +1,88 @@
+{
+  "id": "c0008.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Stell dir vor: Ihr spielt 4-gegen-4 Handball. Dein Team führt mit einem Tor, es sind noch 2 Minuten zu spielen. Die Gegenmannschaft hat gerade den Ball und greift an. Als Kapitänin/Kapitän rufst du eine kurze Auszeit. Beschreibe: Welche taktische Anweisung gibst du deinem Team — Angriff oder Verteidigung fokussieren? Welche Aufgaben gibst du den einzelnen Spieler:innen? Begründe deine Entscheidung.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Handball 4-gegen-4, eigenes Team führt mit 1 Tor, 2 Minuten verbleibend, Gegenmannschaft hat den Ball."
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "FAC",
+      "SOZ"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BUS.US.4.FAC.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Gute Antworten enthalten: Fokus auf Verteidigung (das Tor halten ist wichtiger als ein weiteres schießen), klare Rollenverteilung (wer deckt wen?), Anweisung Zeit zu lassen verstreichen (kein riskantes Kontern ohne Notwendigkeit). Bonus: Erwähnung, dass die Gegenmannschaft Druck machen wird und man nicht in Panik verfallen soll; Kommunikation im Team (Ansprechen, Positionieren). Bewertet werden: Taktische Logik, Rollenverteilung, Begründung.",
+    "acceptable_reasoning": "Auch eine offensive Strategie ('sofort Konter, wenn wir den Ball bekommen') ist vertretbar, wenn sie plausibel begründet wird.",
+    "rubric": [
+      {
+        "criterion": "Taktische Logik",
+        "levels": [
+          "Keine nachvollziehbare Taktik",
+          "Ansatz vorhanden, aber nicht zu Ende gedacht",
+          "Kohärente, situationsgerechte Taktik"
+        ]
+      },
+      {
+        "criterion": "Rollenverteilung",
+        "levels": [
+          "Keine Rollen genannt",
+          "Rollen grob erwähnt",
+          "Klare, sinnvolle Rollenverteilung für alle Spieler:innen"
+        ]
+      },
+      {
+        "criterion": "Begründung",
+        "levels": [
+          "Keine Begründung",
+          "Begründung vorhanden, aber pauschal",
+          "Situationsbezogene, überzeugende Begründung"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen neigen zur 'attack is the best defense'-Antwort ohne Begründung — Begründungspflicht einfordern.",
+      "Rollenverteilung wird oft vergessen — explizit darauf hinweisen, dass 'wir verteidigen' keine vollständige Taktik ist."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Bewegung und Sport",
+  "klasse": 4,
+  "kompetenzbereich": "Fachkompetenz",
+  "competences": [
+    "BUS.US.4.FAC.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "FAC",
+    "SOZ"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0008",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T12:58:41+00:00"
+}

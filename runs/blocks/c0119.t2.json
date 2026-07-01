@@ -1,0 +1,117 @@
+{
+  "id": "c0119.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Welches Bundesland hat die meisten Einwohnerinnen und Einwohner, welches die wenigsten? Um wie viele Personen unterscheiden sie sich? (Berechne die Spannweite.)",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 3
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "DAR",
+      "OPE"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.1.DAT.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "Meiste: Wien (2 005 760), wenigste: Burgenland (301 951). Spannweite = 2 005 760 - 301 951 = 1 703 809 Personen.",
+    "acceptable_reasoning": "Spannweite = Maximum minus Minimum; Bezeichnung 'Spannweite' muss nicht zwingend verwendet werden, solange die Differenz korrekt berechnet wird.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Spannweite wird haufig mit dem Mittelwert verwechselt; Begriff klar definieren.",
+      "Schuelerinnen und Schueler koennten die Differenz in die falsche Richtung subtrahieren — auf Vorzeichen achten."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Mathematik",
+  "klasse": 1,
+  "kompetenzbereich": "4: Daten und Zufall",
+  "competences": [
+    "MAT.US.1.DAT.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "DAR",
+    "OPE"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "title": "Bevölkerung der österreichischen Bundesländer (1.1.2024)",
+        "xlabel": "Bundesland",
+        "ylabel": "Einwohnerinnen und Einwohner",
+        "log": false,
+        "categories": [
+          "Burgenland",
+          "Kärnten",
+          "Niederösterreich",
+          "Oberösterreich",
+          "Salzburg",
+          "Steiermark",
+          "Tirol",
+          "Vorarlberg",
+          "Wien"
+        ],
+        "values": [
+          3.3,
+          6.2,
+          18.8,
+          16.7,
+          6.2,
+          13.9,
+          8.5,
+          4.5,
+          21.9
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "statistik_austria_bundeslaender_2024",
+        "series": "bevoelkerung",
+        "note": null,
+        "title": "Bevölkerung der österreichischen Bundesländer (1.1.2024)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2024",
+        "attribution": "Datenquelle: Statistik Austria – data.statistik.gv.at (CC BY 4.0)",
+        "stand": "2024-01-01"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0119",
+  "source": "ai",
+  "created_at": "2026-06-27T15:21:14+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

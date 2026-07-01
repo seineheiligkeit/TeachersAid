@@ -1,0 +1,81 @@
+{
+  "id": "c0157.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "text_analysis",
+    "prompt": "Lies den folgenden Kurztext und beantworte danach die Fragen.\n\n---\n„Maya lernt für eine Prüfung, indem sie den Stoff zehnmal liest. Ihr Freund Leon schreibt nach jeder Leseeinheit stichwortartig auf, was er behalten hat, und testet sich selbst. Beide verwenden die gleiche Zeit.“\n---\n\n(a) Welches Gedächtnisprinzip nutzt Leon, das Maya vernachlässigt? Erkläre in zwei bis drei Sätzen.\n(b) Warum ist wiederholtes Lesen als alleinige Strategie laut psychologischer Forschung weniger wirksam als Selbsttests?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "WIS",
+      "TRA"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PUP.OS.7.KOG.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "(a) Leon nutzt den Testungseffekt (Retrieval Practice): aktives Abrufen aus dem Gedächtnis stärkt die Erinnerungsspur stärker als passives Wiederlesen. (b) Passives Lesen erzeugt Vertrautheit (Fluency Illusion), aber keine belastbaren Abrufwege. Aktiver Abruf (Self-Testing) trainiert genau den Prozess, der in der Prüfung benötigt wird, und identifiziert Wissenslücken.",
+    "acceptable_reasoning": "Akzeptabel: Schüler:innen benennen Testungseffekt oder aktives Abrufen; erklären, dass Lesen kein echtes Lernen erzwingt.",
+    "rubric": [
+      {
+        "criterion": "Benennung des Testungseffekts",
+        "levels": [
+          "Nicht genannt",
+          "Genannt, aber unvollständig erklärt",
+          "Klar benannt und erklärt"
+        ]
+      },
+      {
+        "criterion": "Erklärung der Schwäche des Wiederholungslesens",
+        "levels": [
+          "Fehlt",
+          "Oberflächlich (z. B. nur: langweilig)",
+          "Fluency Illusion oder fehlende Abrufübung als Grund genannt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Häufige Fehlvorstellung: Wiederholtes Lesen fühlt sich vertraut an und wird deshalb fälschlicherweise als effektiv erlebt (Fluency Illusion).",
+      "Kein Verweis auf konkrete Studienzahlen – nur das Prinzip erklären."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "text_analysis",
+  "subject": "Psychologie und Philosophie",
+  "klasse": 7,
+  "kompetenzbereich": "Kognitive Prozesse und Lernen",
+  "competences": [
+    "PUP.OS.7.KOG.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "WIS",
+    "TRA"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0157",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:28+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

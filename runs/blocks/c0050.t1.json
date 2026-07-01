@@ -1,0 +1,59 @@
+{
+  "id": "c0050.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "oral",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "listening_task",
+    "prompt": "Your teacher reads the following short announcement aloud TWICE. Listen carefully and answer the questions below.\n\n[Teacher reads:] \"Attention, please. The school library is open Monday to Friday from eight o'clock to four o'clock. On Saturdays it is closed. You can borrow up to three books at a time. Please bring your school ID card. Thank you.\"\n\n1. On which days is the library open?\n2. What time does the library close?\n3. How many books can you borrow?\n4. What do you need to bring?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "HOR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS1.US.2.HOR.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1. Monday to Friday. 2. Four o'clock (16:00). 3. Three books. 4. Their school ID card.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Schüler:innen verwechseln oft 'borrow' und 'lend' — kurze Klärung vorab empfehlenswert",
+      "Zahlen (drei vs. dreizehn) und Uhrzeiten auf Englisch sind häufige Fehlerquellen; zweimaliges Vorlesen ist Pflicht",
+      "Sicherstellen, dass langsam und deutlich gelesen wird — kein natürliches Sprechtempo für Kl.2"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "listening_task",
+  "subject": "Erste lebende Fremdsprache",
+  "klasse": 2,
+  "kompetenzbereich": "Hören",
+  "competences": [
+    "FS1.US.2.HOR.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "HOR"
+  ],
+  "modality": "oral",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0050",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

@@ -1,0 +1,93 @@
+{
+  "id": "c0079.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Stell dir vor, Wissenschaftler entdecken ein neues Element mit der Ordnungszahl 119. Es steht direkt unter Francium (Fr, Gruppe 1, Periode 7) im Periodensystem.\n\na) In welcher Gruppe und Periode steht das neue Element?\nb) Welche Eigenschaften würdest du diesem Element vorhersagen? (Nenne: Metallisch/nichtmetallisch, Anzahl Valenzelektronen, wahrscheinlich reaktiv oder reaktionsträge?)\nc) Welche Annahme liegt deiner Vorhersage zugrunde? Ist das naturwissenschaftlich gültig?",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Element 119 ist entdeckt worden — was kannst du über seine Eigenschaften vorhersagen?"
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "E",
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.US.x.STA.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 11,
+    "answer_key": "a) Gruppe 1, Periode 8. b) Metall (alle Alkalimetalle sind Metalle); 1 Valenzelektron; sehr reaktiv (Alkalimetalle sind die reaktivsten Metalle, reagieren heftig mit Wasser). c) Die Annahme: Elemente in derselben Gruppe zeigen ähnliche Eigenschaften (Periodizität). Das ist naturwissenschaftlich gültig — experimentell bestätigt für alle bisherigen Elemente. [Hinweis: Element 119 (Ununennium) existiert tatsächlich noch nicht, aber Theorie sagt genau das voraus]",
+    "acceptable_reasoning": "Schüler:innen dürfen unsicher formulieren ('wahrscheinlich', 'laut PSE zu erwarten') — das ist wissenschaftlich korrekt für Vorhersagen.",
+    "rubric": [
+      {
+        "criterion": "Gruppe/Periode korrekt",
+        "levels": [
+          "Gruppe 1 / Periode 8 korrekt",
+          "Nur Gruppe oder Periode",
+          "Beides falsch"
+        ]
+      },
+      {
+        "criterion": "Eigenschaftsvorhersage",
+        "levels": [
+          "Drei sinnvolle Eigenschaften mit Begründung",
+          "Zwei Eigenschaften",
+          "Eine oder keine"
+        ]
+      },
+      {
+        "criterion": "Kritische Reflexion",
+        "levels": [
+          "Periodizität als Annahme korrekt benannt und bewertet",
+          "Annahme benannt ohne Bewertung",
+          "Keine Reflexion"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Element 119 ist ein echtes offenes Problem der Physik/Chemie — motivierend zu erwähnen",
+      "Vorhersage ≠ Gewissheit — explizit betonen, dass PSE-Trends extrapoliert werden",
+      "Schüler:innen könnten nach Francium suchen — Francium ist radioaktiv und extrem selten; kurzer Hinweis sinnvoll"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Chemie",
+  "klasse": 4,
+  "kompetenzbereich": "Standpunkte begründen, Entscheidungen treffen und reflektiert handeln (S)",
+  "competences": [
+    "CHE.US.x.STA.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "E",
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0079",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:14+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

@@ -1,0 +1,178 @@
+{
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Geometrische Objekte und ihre Eigenschaften",
+  "title": "Körper zeichnerisch darstellen",
+  "kernfrage": "Wie stellst du räumliche Körper so zeichnerisch dar, dass andere sie eindeutig erkennen können?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Vom Körper zur Darstellung",
+        "throughline": "Schüler:innen erproben verschiedene zeichnerische Darstellungsformen (Netz, Schrägbild, Draufsicht-Skizze) und erkennen, dass verschiedene Darstellungen unterschiedliche Eigenschaften sichtbar machen — Grundlage für das spätere systematische Rissezeichnen.",
+        "talking_points": [
+          "Warum gibt es verschiedene Darstellungsformen — reicht nicht eine einzige?",
+          "Was zeigt ein Netz, was zeigt ein Schrägbild, was zeigt keines von beiden?",
+          "Welche Darstellung ist am besten geeignet, wenn man den Körper bauen will? Wenn man ihn jemandem erklären will?"
+        ],
+        "extensions": [
+          "Vergleich Schrägbild vs. isometrische Darstellung (Karopapier mit 60°-Raster): Welche wirkt „echter"?",
+          "Netze falten und kleben lassen — welche Netze funktionieren, welche nicht?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "matching",
+            "prompt": "Ordne jeder Beschreibung die passende Darstellungsform zu.\n\nDarstellungsformen: (A) Netz, (B) Schrägbild (Kavalierperspektive), (C) Grundriss (Draufsicht), (D) Seitenansicht\n\nBeschreibungen:\n1. Zeigt den Körper von oben als Fläche — Tiefe geht verloren.\n2. Alle Seitenflächen werden aufgeklappt und in einer Ebene ausgebreitet dargestellt.\n3. Gibt einen räumlichen Eindruck durch schräg gezeichnete Tiefenkanten.\n4. Zeigt die linke oder rechte Seite des Körpers als ebene Fläche.",
+            "payload": {
+              "kind": "matching",
+              "left": ["(A) Netz", "(B) Schrägbild", "(C) Grundriss", "(D) Seitenansicht"],
+              "right": [
+                "Zeigt den Körper von oben als Fläche — Tiefe geht verloren.",
+                "Alle Seitenflächen werden aufgeklappt und in einer Ebene ausgebreitet dargestellt.",
+                "Gibt einen räumlichen Eindruck durch schräg gezeichnete Tiefenkanten.",
+                "Zeigt die linke oder rechte Seite des Körpers als ebene Fläche."
+              ]
+            },
+            "response": {"mode": "lines", "n": 4},
+            "cognitive_level": "remember",
+            "dimensions": ["H2"],
+            "serves": [{"competence_id": "GEZ.US.4.GEO.02", "relation": "exercises"}],
+            "est_minutes": 5,
+            "answer_key": "A–2, B–3, C–1, D–4",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schrägbild und isometrische Darstellung werden verwechselt — bei der Kavalierperspektive sind die Tiefenkanten halb so lang und im 45°-Winkel.",
+              "„Grundriss" im technischen Sinne ist eine ebene Projektion von oben — nicht dasselbe wie ein Architektengrundriss mit Maßketten."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "true_false_justify",
+            "prompt": "Beurteile, ob die folgenden Aussagen über Darstellungsformen zutreffen. Begründe jeweils kurz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Aus dem Netz eines Körpers kann man immer die genaue Form aller Seitenflächen ablesen.",
+                "Ein Schrägbild zeigt immer die wahren Maße aller Kanten.",
+                "Für denselben Körper kann es mehrere verschiedene gültige Netze geben.",
+                "Eine Draufsicht (Grundriss) reicht immer aus, um einen Körper vollständig zu beschreiben."
+              ]
+            },
+            "response": {"mode": "box", "min_height_mm": 50},
+            "cognitive_level": "understand",
+            "dimensions": ["H2", "H3"],
+            "serves": [{"competence_id": "GEZ.US.4.GEO.02", "relation": "exercises"}],
+            "est_minutes": 8,
+            "answer_key": "1. wahr — das Netz zeigt alle Seitenflächen in wahrer Größe und Form. 2. falsch — beim Schrägbild sind Tiefenkanten verkürzt (Kavalierperspektive: halbe Länge); die Frontfläche ist maßstabsgetreu. 3. wahr — viele Körper haben mehrere topologisch verschiedene Netze (z. B. Würfel: 11 verschiedene). 4. falsch — z. B. Würfel und Zylinder mit gleicher Grundfläche haben denselben kreisförmigen Grundriss.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Aussage 2 ist eine sehr häufige Fehlervorstellung — explizit herausarbeiten.",
+              "Aussage 4 ist die Überleitung zum Kernthema: eine Ansicht reicht nicht."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "construction",
+            "prompt": "Zeichne das Netz eines geraden quadratischen Prismas (Quader) mit folgenden Maßen auf kariertem Papier: Grundfläche 4 cm × 3 cm, Höhe 5 cm.\n\nAchtung: Beschrifte alle Flächen (G = Grundfläche, D = Deckfläche, S1 bis S4 = Seitenflächen) und gib die Maße an den entsprechenden Kanten an.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 80},
+            "cognitive_level": "apply",
+            "dimensions": ["H2"],
+            "serves": [{"competence_id": "GEZ.US.4.GEO.02", "relation": "exercises"}],
+            "est_minutes": 10,
+            "answer_key": "Netz: Mittelstreifen aus 4 cm × 5 cm + 3 cm × 5 cm + 4 cm × 5 cm + 3 cm × 5 cm (umlaufend), plus je eine 4 cm × 3 cm Fläche oben und unten (Grund- und Deckfläche). Mehrere topologisch verschiedene Anordnungen sind korrekt, sofern das Netz faltbar ist.",
+            "acceptable_reasoning": "Verschiedene gültige Netzanordnungen akzeptieren — wichtig ist, dass das Netz lückenlos und überlappungsfrei ist und die Maße stimmen.",
+            "watch_outs": [
+              "Häufiger Fehler: Grundfläche und Deckfläche an der falschen Position → Netz lässt sich nicht korrekt zusammenfalten.",
+              "Maße an den Kanten anfangs vergessen — darauf bestehen, dass Bemaßung Teil der Aufgabe ist."
+            ],
+            "rubric": [
+              {"criterion": "Netzstruktur", "levels": ["Netz nicht faltbar", "Netz prinzipiell richtig, aber ein Fehler bei Flächen", "Vollständiges, korrekt faltbares Netz"]},
+              {"criterion": "Bemaßung und Beschriftung", "levels": ["Fehlend", "Teilweise vorhanden", "Vollständig und korrekt"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "construction",
+            "prompt": "Zeichne ein Schrägbild (Kavalierperspektive) eines geraden Drehzylinders mit Radius r = 3 cm und Höhe h = 6 cm.\n\nHinweis: Bei der Kavalierperspektive werden die Tiefenkanten halb so lang wie die tatsächliche Tiefe gezeichnet und im 45°-Winkel zur Waagrechten. Die Kreise der Grund- und Deckfläche erscheinen als Ellipsen.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 90},
+            "cognitive_level": "apply",
+            "dimensions": ["H2"],
+            "serves": [{"competence_id": "GEZ.US.4.GEO.02", "relation": "exercises"}],
+            "est_minutes": 12,
+            "answer_key": "Schrägbild: Vordere Ellipse (Grundfläche); senkrechte Linien der Mantelfläche, Länge = h = 6 cm; hintere Ellipse (Deckfläche, nur sichtbarer Teil). Tiefenkante (Versatz): 3 cm × 0,5 = 1,5 cm im 45°-Winkel. Nur die sichtbaren Teile der hinteren Ellipse durchgehend — der verdeckte Teil gestrichelt oder weggelassen.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Ellipsen zu zeichnen ist technisch schwierig ohne Schablone — erklären, dass eine freihandskizzierte Ellipse für diese Aufgabe ausreicht.",
+              "Verdeckte Kanten (hintere Ellipse) sollten gestrichelt sein — dieser Konvention Gewicht beimessen."
+            ],
+            "rubric": [
+              {"criterion": "Proportionen", "levels": ["Höhe oder Radius deutlich falsch", "Annähernd korrekt", "Korrekte Proportionen"]},
+              {"criterion": "Verdeckte Kanten", "levels": ["Nicht unterschieden", "Korrekt gestrichelt oder weggelassen"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "multiple_choice",
+            "prompt": "Von einem unbekannten Körper sind das Netz und eine Seitenansicht gegeben. Das Netz besteht aus einem gleichseitigen Dreieck in der Mitte und drei weiteren gleichseitigen Dreiecken, die an je einer Seite anliegen. Die Seitenansicht ist ein gleichseitiges Dreieck.\n\nWelcher Körper ist das?",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "Dreiecksprisma",
+                "Tetraeder (dreiseitige Pyramide mit gleichseitigen Dreiecksflächen)",
+                "Quadratische Pyramide",
+                "Oktaeder"
+              ],
+              "select": "one"
+            },
+            "response": {"mode": "choices", "options": ["Dreiecksprisma", "Tetraeder", "Quadratische Pyramide", "Oktaeder"], "select": "one"},
+            "cognitive_level": "analyze",
+            "dimensions": ["H2", "H3"],
+            "serves": [{"competence_id": "GEZ.US.4.GEO.03", "relation": "exercises"}],
+            "est_minutes": 6,
+            "answer_key": "Tetraeder (dreiseitige Pyramide mit vier gleichseitigen Dreiecksflächen). Das Netz hat 4 Dreiecke (1 Grundfläche + 3 Seitenflächen), die Seitenansicht ist ein Dreieck.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Dreiecksprisma hat im Netz 5 Flächen (2 Dreiecke + 3 Rechtecke) — sofort ausschließbar.",
+              "Oktaeder hat 8 Dreiecke im Netz — ebenfalls ausschließbar.",
+              "„Tetraeder" als Begriff ist manchmal neu — im Unterricht einführen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "open_response",
+            "prompt": "Du hast einen unbekannten Körper vor dir (denk dir einen beliebigen aus) und sollst ihn einer Person beschreiben, die ihn nicht sehen kann. Diese Person soll den Körper anhand deiner Beschreibung zeichnen können.\n\nSchreibe eine vollständige Beschreibung: Welche Darstellungsform wählst du (Netz, Schrägbild, Grundriss + Seitenansichten)? Begründe deine Wahl. Was sind die wesentlichen Maße und Eigenschaften, die du angibst?",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 60},
+            "cognitive_level": "evaluate",
+            "dimensions": ["H2", "H3"],
+            "serves": [{"competence_id": "GEZ.US.4.GEO.02", "relation": "exercises"}],
+            "est_minutes": 10,
+            "answer_key": "Offene Aufgabe. Beurteilung: Wahl der Darstellungsform mit Begründung (z. B. „Netz, weil alle Maße maßstabsgetreu"); Angabe der relevanten Maße (Längen, Winkel, Radien); vollständige Beschreibung ohne Mehrdeutigkeit. Bonus: Erkenntnis, dass mehrere Darstellungen zusammen am eindeutigsten sind.",
+            "acceptable_reasoning": "Verschiedene Darstellungsformen sind akzeptabel, wenn die Begründung geometrisch nachvollziehbar ist.",
+            "watch_outs": [
+              "Schüler:innen tendieren dazu, Maße zu vergessen — ohne Maße ist keine eindeutige Darstellung möglich.",
+              "Diese Aufgabe fördert metakognitive Reflexion über Darstellungsformen — Zeit für kurze Diskussion im Plenum nehmen."
+            ],
+            "rubric": [
+              {"criterion": "Wahl und Begründung", "levels": ["Keine Darstellungsform gewählt", "Darstellungsform ohne Begründung", "Darstellungsform mit geometrischer Begründung"]},
+              {"criterion": "Vollständigkeit der Beschreibung", "levels": ["Unvollständig, Körper nicht rekonstruierbar", "Weitgehend vollständig", "Vollständig und eindeutig rekonstruierbar"]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

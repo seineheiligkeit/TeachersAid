@@ -1,0 +1,492 @@
+{
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Wetter und Klima",
+  "title": "Treibhauseffekt, Energiehaushalt und Klimaschutz",
+  "kernfrage": "Wie verändert der Mensch den Energiehaushalt der Erde — und was kann ich selbst dagegen tun?",
+  "body": {
+    "intro": [],
+    "assets": [
+      {
+        "id": "abb1",
+        "role": "figure",
+        "generator": "matplotlib:bar_chart",
+        "spec": {
+          "categories": [
+            "Kohlekraft",
+            "Erdgaskraft",
+            "Kernenergie",
+            "Wasserkraft",
+            "Windkraft",
+            "Photovoltaik"
+          ],
+          "values": [
+            820,
+            490,
+            12,
+            4,
+            11,
+            45
+          ],
+          "title": "CO₂-Äquivalent je erzeugter kWh Strom (g CO₂eq/kWh)",
+          "xlabel": "Kraftwerkstyp",
+          "ylabel": "g CO₂-Äquivalent pro kWh"
+        }
+      },
+      {
+        "id": "abb2",
+        "role": "figure",
+        "generator": "matplotlib:function_graph",
+        "spec": {
+          "title": "Mittlere globale Oberflächentemperatur (Abweichung vom Mittel 1961–1990)",
+          "xmin": 1880,
+          "xmax": 2024,
+          "ymin": -0.6,
+          "ymax": 1.4,
+          "points": [
+            [
+              1880,
+              -0.3
+            ],
+            [
+              1900,
+              -0.25
+            ],
+            [
+              1920,
+              -0.2
+            ],
+            [
+              1940,
+              -0.05
+            ],
+            [
+              1960,
+              -0.05
+            ],
+            [
+              1980,
+              0.15
+            ],
+            [
+              2000,
+              0.4
+            ],
+            [
+              2010,
+              0.6
+            ],
+            [
+              2020,
+              1.0
+            ],
+            [
+              2023,
+              1.3
+            ]
+          ],
+          "xlabel": "Jahr",
+          "ylabel": "Temperaturabweichung in °C"
+        }
+      },
+      {
+        "id": "abb3",
+        "role": "figure",
+        "generator": "matplotlib:math_formula",
+        "spec": {
+          "latex": "\\Delta T_{\\text{Erde}} \\approx \\frac{S_0 (1 - \\alpha)}{4 \\sigma} - T_{\\text{ohne Treibhaus}}"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Der Energiehaushalt der Erde — natürlicher Treibhauseffekt",
+        "throughline": "Schüler:innen verstehen den natürlichen Treibhauseffekt als physikalischen Mechanismus (Einstrahlung, Absorption, Rückstrahlung) bevor sie die menschliche Verstärkung davon unterscheiden — Trennung von Phänomen und Wertung.",
+        "talking_points": [
+          "Ohne den natürlichen Treibhauseffekt wäre die mittlere Erdoberflächentemperatur ca. −18 °C statt +15 °C — der Effekt ist nicht per se schlecht, er ermöglicht Leben.",
+          "Kurzwellige Sonnenstrahlung (sichtbar) durchdringt die Atmosphäre; die Erde emittiert langwellige IR-Strahlung — die Treibhausgase absorbieren diese und strahlen zurück. Das ist der Kern.",
+          "Albedo (Rückstrahlvermögen): Eis/Schnee ~0,8; Wald ~0,15; Ozean ~0,06. Schmelzendes Eis senkt die Albedo → positive Rückkopplung."
+        ],
+        "extensions": [
+          "Strahlungsbilanz quantitativ: Einstrahlung S₀ = 1361 W/m²; effektive Fläche = πR²; Abstrahlung über 4πR². Daraus folgt die Gleichgewichtstemperatur ohne Atmosphäre (~255 K). Abb. 3 gibt die Formel — für interessierte Schüler:innen.",
+          "Vergleich Treibhauseffekt Erde / Venus: Venus hat 96 % CO₂-Atmosphäre → 465 °C Oberflächentemperatur. Extrembeispiel für Rückkopplung."
+        ],
+        "blocks": [
+          {
+            "role": "info",
+            "id": "info1",
+            "kind": "prose",
+            "prompt": "Die Sonne schickt Energie zur Erde — vor allem als sichtbares Licht. Die Erdoberfläche erwärmt sich und gibt die Energie als Wärmestrahlung (Infrarotstrahlung) wieder ab. Bestimmte Gase in der Atmosphäre (Wasserdampf, CO₂, Methan) absorbieren diese Wärmestrahlung und strahlen einen Teil davon zurück zur Erde. Dadurch ist die Erde wärmer als sie es ohne Atmosphäre wäre. Dieser Vorgang heißt natürlicher Treibhauseffekt. Durch menschliche Aktivitäten (vor allem die Verbrennung fossiler Brennstoffe) steigt der CO₂-Gehalt der Luft — der Treibhauseffekt wird verstärkt.",
+            "payload": null,
+            "response": {
+              "mode": "none"
+            },
+            "cognitive_level": "remember",
+            "dimensions": [
+              "W"
+            ],
+            "serves": [
+              {
+                "competence_id": "PHY.US.4.WET.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 2,
+            "asset_refs": [],
+            "answer_key": "",
+            "acceptable_reasoning": null,
+            "watch_outs": [],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "ordering",
+            "prompt": "Bringe die Schritte des natürlichen Treibhauseffekts in die richtige Reihenfolge.",
+            "payload": {
+              "kind": "ordering",
+              "items": [
+                "CO₂ und andere Gase absorbieren die Infrarotstrahlung.",
+                "Die Erdoberfläche erwärmt sich und gibt Infrarotstrahlung ab.",
+                "Die Treibhausgase strahlen einen Teil der Energie zurück zur Erdoberfläche.",
+                "Sonnenlicht (kurzwellig) trifft auf die Erdoberfläche.",
+                "Die Erde ist wärmer als ohne Atmosphäre."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "W"
+            ],
+            "serves": [
+              {
+                "competence_id": "PHY.US.4.WET.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 5,
+            "asset_refs": [],
+            "answer_key": "Richtige Reihenfolge: (1) Sonnenlicht trifft auf die Erdoberfläche. (2) Die Erdoberfläche erwärmt sich und gibt Infrarotstrahlung ab. (3) CO₂ und andere Gase absorbieren die Infrarotstrahlung. (4) Die Treibhausgase strahlen einen Teil zurück. (5) Die Erde ist wärmer als ohne Atmosphäre.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Verwechslung: Schüler:innen denken, die Sonne strahlt Infrarot ab und das wird absorbiert. Klarstellung: Die Erde selbst strahlt IR ab — die Sonne strahlt vor allem sichtbares Licht.",
+              "Kurzwellig (Sonne) ≠ langwellig (Erde) — diese Unterscheidung ist der physikalische Kern des Mechanismus."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "true_false_justify",
+            "prompt": "Beurteile folgende Aussagen über den Treibhauseffekt. Kreuze an und begründe.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Der natürliche Treibhauseffekt ist schädlich und sollte verhindert werden.",
+                "CO₂ lässt Sonnenlicht ungehindert durch, absorbiert aber die Infrarotstrahlung der Erde.",
+                "Mehr CO₂ in der Atmosphäre bedeutet immer mehr Erwärmung.",
+                "Der Treibhauseffekt ist dasselbe wie das Ozonloch."
+              ]
+            },
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Aussage",
+                "richtig",
+                "falsch",
+                "Begründung"
+              ],
+              "rows": 4
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "W",
+              "S"
+            ],
+            "serves": [
+              {
+                "competence_id": "PHY.US.4.WET.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "asset_refs": [],
+            "answer_key": "1: falsch — der natürliche Treibhauseffekt ist lebenswichtig (ohne ihn wäre die Erde gefroren). 2: richtig — CO₂ ist für Sonnenlicht (kurzwellig) transparent, absorbiert aber Infrarotstrahlung (langwellig). 3: richtig im Prinzip, aber mit Einschränkung — es gibt Sättigungseffekte bei hohen CO₂-Konzentrationen; qualitativ gilt: mehr CO₂ → mehr Erwärmung. 4: falsch — Ozonloch betrifft den UV-Schutz (Ozonabbau durch FCKW), nicht den Wärmerückhalt.",
+            "acceptable_reasoning": "Für Aussage 3: Schüler:innen der Unterstufe müssen Sättigungseffekte nicht kennen; 'prinzipiell richtig' ist volle Punktzahl.",
+            "watch_outs": [
+              "Die Verwechslung Treibhauseffekt / Ozonloch ist sehr verbreitet — beide sind Umweltthemen, aber völlig verschiedene Mechanismen.",
+              "Aussage 1 provoziert: 'Natürlich = gut' ist eine Fehlschluss-Falle. Entscheidend ist der Unterschied natürlicher vs. verstärkter Treibhauseffekt."
+            ],
+            "rubric": [
+              {
+                "criterion": "Korrekte Einschätzung",
+                "levels": [
+                  "0–1 korrekt",
+                  "2–3 korrekt",
+                  "Alle 4 korrekt"
+                ]
+              },
+              {
+                "criterion": "Begründungsqualität",
+                "levels": [
+                  "Keine oder oberflächliche Begründung",
+                  "Physikalischer Mechanismus angesprochen",
+                  "Mechanismus klar erklärt, Verwechslungen explizit ausgeschlossen"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Temperaturentwicklung und Quellen bewerten",
+        "throughline": "Schüler:innen werten das globale Temperaturgraphik aus und üben kritische Quellenbeurteilung — Übergangsstelle zwischen Fachwissen und der Fähigkeit, Informationen aus unterschiedlichen Quellen zu bewerten.",
+        "talking_points": [
+          "Abb. 2 zeigt Messdaten (Anomalie relativ zu 1961–1990). Der Trend ist klar, aber kein einzelnes Jahr beweist die Klimaerwärmung — Klima ist ein Langzeittrend, Wetter ist kurzfristig.",
+          "Quellenkritik: Wer misst die Temperaturdaten? (NASA, NOAA, Met Office — international unabhängig.) Warum sind Klimadaten verlässlicher als viele andere Quellen?",
+          "Korrelation ≠ Kausalität: Der CO₂-Anstieg korreliert mit dem Temperaturanstieg — der physikalische Mechanismus (Infrarotabsorption) belegt auch die Kausalität."
+        ],
+        "extensions": [
+          "Eiskerne aus der Antarktis: CO₂-Gehalt und Temperatur über 800.000 Jahre — wie werden diese Daten gewonnen?",
+          "Klimamodelle: Warum können Wissenschaftler:innen trotz der Komplexität Vorhersagen machen? (Physikalische Grundgesetze + Supercomputer)"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "data_interpretation",
+            "prompt": "Schau dir Abb. 2 an. Das Diagramm zeigt, wie die mittlere Erdoberflächentemperatur von 1880 bis 2023 von einem Vergleichswert (Mittel 1961–1990) abgewichen ist.\n(a) In welchem der angegebenen Jahre war die Temperatur am höchsten?\n(b) Um wie viel Grad hat sich die Temperatur von 1880 bis 2023 insgesamt ungefähr verändert?\n(c) Beschreibe den Verlauf der Kurve: Gibt es einen eindeutigen Trend? Ab wann wird er besonders deutlich?",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "W"
+            ],
+            "serves": [
+              {
+                "competence_id": "PHY.US.4.WET.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 7,
+            "asset_refs": [
+              "abb2"
+            ],
+            "answer_key": "(a) 2023 (ca. +1,3 °C). (b) Ungefähr 1,6 °C (von −0,3 auf +1,3 °C). (c) Der Trend ist eindeutig ansteigend. Bis ca. 1960 schwankt die Temperatur um den Vergleichswert; ab den 1980er-Jahren ist der Anstieg besonders deutlich und beschleunigt sich.",
+            "acceptable_reasoning": "Abweichungen von ±0,1 °C beim Ablesen sind akzeptabel.",
+            "watch_outs": [
+              "Schüler:innen interpretieren manchmal einzelne Kaltjahre als 'Beweis gegen Klimawandel'. Erklären: Klimatrend = Langzeittrend, nicht einzelne Jahre.",
+              "Die Abweichung (Anomalie) vs. absolute Temperatur unterscheiden — das Diagramm zeigt Abweichungen, nicht absolute °C-Werte."
+            ],
+            "rubric": [
+              {
+                "criterion": "Korrekte Ablesung",
+                "levels": [
+                  "Falsche oder keine Werte",
+                  "Annähernd richtige Werte mit Einheitenfehler",
+                  "Korrekte Werte mit Einheiten"
+                ]
+              },
+              {
+                "criterion": "Trendanalyse",
+                "levels": [
+                  "Kein Trend erkannt",
+                  "Trend erwähnt, aber ungenau",
+                  "Trend korrekt beschrieben mit Zeitraum"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "source_critique",
+            "prompt": "Ein Schüler findet im Internet zwei Quellen über den Klimawandel:\nQuelle A: Artikel auf der Website einer internationalen Klimaforschungsorganisation (peer-reviewed, Daten aus Satellitenmessungen und Wetterstationen, zuletzt aktualisiert 2024).\nQuelle B: Blogbeitrag einer unbekannten Person, ohne Quellenangaben, mit dem Titel 'Die Klimapanik ist erfunden!'.\nBeurteile beide Quellen nach drei Kriterien und erkläre, welcher du mehr vertrauen würdest und warum.",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Kriterium",
+                "Quelle A",
+                "Quelle B"
+              ],
+              "rows": 4
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "W",
+              "S"
+            ],
+            "serves": [
+              {
+                "competence_id": "PHY.US.4.STR.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "Mögliche Kriterien: (1) Autor/Institution: A = etablierte Forschungsorganisation, B = unbekannte Person → A deutlich vertrauenswürdiger. (2) Quellenbelege: A = peer-reviewed, Datenquellen benannt; B = keine Belege → A überlegen. (3) Aktualität: A = 2024; B = unklar → A besser. (4) Sprache/Ton: A sachlich; B emotional/reißerisch → A seriöser. Schlussfolgerung: Quelle A ist deutlich vertrauenswürdiger. Wichtig: auch Quelle A kritisch lesen — wer finanziert die Organisation? Interessenkonflikte?",
+            "acceptable_reasoning": "Drei beliebige der genannten Kriterien; Hauptsache, die Begründung bezieht sich auf konkrete Merkmale der Quellen.",
+            "watch_outs": [
+              "Schüler:innen antworten oft nur 'Quelle A ist besser' ohne Kriterien zu nennen. Explizit nach Kriterien fragen.",
+              "Wichtig: Auch wissenschaftliche Quellen können fehlerhaft sein — Quellenkritik gilt immer, nicht nur für Blogs."
+            ],
+            "rubric": [
+              {
+                "criterion": "Kriterienauswahl",
+                "levels": [
+                  "Kein Kriterium oder nur ein Kriterium",
+                  "Zwei relevante Kriterien",
+                  "Drei oder mehr relevante Kriterien"
+                ]
+              },
+              {
+                "criterion": "Begründungstiefe",
+                "levels": [
+                  "Pauschalurteil ohne Begründung",
+                  "Begründung auf ein Merkmal bezogen",
+                  "Differenzierte Begründung mit Bezug auf konkrete Quellenmerkmale"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "Kraftwerke und Klimaschutz — Bewertung und Handeln",
+        "throughline": "Mit Abb. 1 (CO₂-Vergleich der Kraftwerkstypen) bewerten Schüler:innen Energiequellen aus drei Perspektiven und leiten persönliche und gesellschaftliche Maßnahmen ab — höchste Reflexionsstufe.",
+        "talking_points": [
+          "Abb. 1 zeigt Lebenszyklusanalysen (g CO₂eq/kWh) — Kernenergie und Erneuerbare schneiden ähnlich gut ab, fossile Brennstoffe weit schlechter. Das ist eine überraschende Erkenntnis für viele.",
+          "Drei Bewertungsperspektiven: ökologisch (CO₂, Eingriff in Natur), ökonomisch (Baukosten, Betriebskosten, Energiesicherheit), ethisch (Risiko, Gerechtigkeit zwischen Generationen, Endlagerung).",
+          "Klimaschutzziele: Österreich hat sich verpflichtet, bis 2040 klimaneutral zu sein. Was bedeutet das für den Stromsektor? (100 % erneuerbarer Strom bis 2030 — bereits im Gesetz)."
+        ],
+        "extensions": [
+          "Rechnung: Wenn ein österreichischer Haushalt 3500 kWh/Jahr verbraucht — wie viel CO₂ entsteht je nach Strommix? Vergleich A-Mix 2024 vs. reiner Kohlestrom.",
+          "Pumpspeicherkraftwerke als Speicher für erneuerbare Energie: Wie funktioniert das physikalisch (potentielle Energie)? Warum ist Österreich in einer Sonderrolle?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "data_interpretation",
+            "prompt": "Sieh dir Abb. 1 an. Sie zeigt den CO₂-Ausstoß (als CO₂-Äquivalent) verschiedener Kraftwerkstypen pro erzeugter Kilowattstunde Strom.\n(a) Welche zwei Kraftwerkstypen haben den höchsten CO₂-Ausstoß?\n(b) Um welchen Faktor ist der CO₂-Ausstoß eines Kohlekraftwerks größer als der eines Windkraftwerks?\n(c) Kernkraft und Windkraft haben einen ähnlich niedrigen Wert. Nenne je einen ökologischen und einen ethischen Grund, warum man trotzdem zwischen diesen beiden Technologien unterscheiden sollte.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 50
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "W",
+              "S"
+            ],
+            "serves": [
+              {
+                "competence_id": "PHY.US.4.WET.06",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "asset_refs": [
+              "abb1"
+            ],
+            "answer_key": "(a) Kohlekraft (820 g/kWh) und Erdgaskraft (490 g/kWh). (b) 820 / 11 ≈ 75 — Kohlekraft stößt ca. 75-mal mehr CO₂ aus als Windkraft. (c) Ökologisch: Kernkraft erzeugt radioaktiven Abfall (Endlager-Problem für Jahrtausende), Windkraft beeinflusst Landschaft und Vögel/Fledermäuse. Ethisch: Kernkraft — Haftung bei Unfällen, Proliferationsrisiko (Uranverbreitung), Endlager-Gerechtigkeit gegenüber künftigen Generationen; Windkraft — Bürgerakzeptanz, Lärm für Anwohner:innen. Beide Seiten sind valide.",
+            "acceptable_reasoning": "Andere stichhaltige ökologische/ethische Argumente sind gültig; entscheidend ist die Kategorie (nicht technisch/ökonomisch als 'ethisch' deklarieren).",
+            "watch_outs": [
+              "Schüler:innen setzen 'wenig CO₂' gleich mit 'gut' — darauf hinweisen, dass CO₂ nur eine von mehreren Bewertungsdimensionen ist.",
+              "Kernkraft ist ein sensibles Thema — sachliche Diskussion einfordern, persönliche Meinungen sind ok, müssen aber begründet sein."
+            ],
+            "rubric": [
+              {
+                "criterion": "Diagrammauswertung",
+                "levels": [
+                  "Falsche oder keine Werte",
+                  "Richtige Werte, Faktor nicht berechnet",
+                  "Richtige Werte und Faktor korrekt berechnet"
+                ]
+              },
+              {
+                "criterion": "Mehrdimensionale Bewertung",
+                "levels": [
+                  "Nur eine Dimension (z. B. nur CO₂)",
+                  "Zwei Dimensionen (z. B. ökologisch + ökonomisch)",
+                  "Mindestens drei Dimensionen mit begründeten Abwägungen"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "decision_scenario",
+            "prompt": "Österreich plant, bis 2030 seinen Strom zu 100 % aus erneuerbaren Quellen zu erzeugen. Ein Gemeinderat diskutiert, ob in eurer Gemeinde ein neuer Windpark mit 5 Windrädern gebaut werden soll. Lies das Szenario und beantworte die Fragen.\n\nSzenario: Die Gemeinderätin Frau Huber ist dafür: 'Windkraft spart CO₂ und schafft Arbeitsplätze.' Der Gemeinderat Herr Mayr ist dagegen: 'Die Windräder sind laut, zerstören das Landschaftsbild und gefährden Vögel.'\n\n(a) Welche physikalischen Argumente unterstützen Frau Hubers Position? (Nutze die Daten aus Abb. 1.)\n(b) Welche physikalischen und nichtphysikalischen Argumente sprechen für Herrn Mayrs Position?\n(c) Nimm selbst Stellung: Wie würdest du abstimmen, und warum? Begründe mit mindestens zwei Argumenten.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Windparkbau in der Gemeinde: Pro und Contra — faktenbasierte Entscheidung"
+            },
+            "response": {
+              "mode": "box",
+              "min_height_mm": 75
+            },
+            "cognitive_level": "create",
+            "dimensions": [
+              "W",
+              "S"
+            ],
+            "serves": [
+              {
+                "competence_id": "PHY.US.4.WET.05",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 13,
+            "asset_refs": [
+              "abb1"
+            ],
+            "answer_key": "(a) Physikalische Argumente für Windkraft: 11 g CO₂eq/kWh — weit unter Kohlekraft (820 g); kein Brennstoffverbrauch; keine Emissionen im Betrieb; Beitrag zu Klimazielen (WET.05). (b) Für Herrn Mayr: Physikalisch — Lärm (Schall, Infraschall); Vogelschlag (nachweisbar, aber Daten zeigen: weit weniger als Katzen oder Glasscheiben). Nichtphysikalisch — Landschaftsbild, Wohnwertminderung, Bürgerbeteiligung. (c) Jede fundierte Stellungnahme akzeptieren; einfordern: mindestens ein physikalisches Argument und Bezug auf Klimaschutzpflichten.",
+            "acceptable_reasoning": "Keine 'richtige' Antwort bei der Stellungnahme — Kriterien sind Argumentationsqualität und physikalischer Bezug.",
+            "watch_outs": [
+              "Schüler:innen antworten oft rein emotional ('Ich mag keine Windräder'). Einfordern: Mindestens zwei Argumente, davon eines physikalisch.",
+              "Die Multiperspektivität ist das pädagogische Ziel — beide Seiten sollen fair dargestellt werden, bevor eine eigene Position eingenommen wird."
+            ],
+            "rubric": [
+              {
+                "criterion": "Physikalische Argumentation",
+                "levels": [
+                  "Keine physikalischen Argumente",
+                  "Ein physikalisches Argument (z. B. CO₂-Vergleich)",
+                  "Mehrere physikalische Argumente mit Datenbezug"
+                ]
+              },
+              {
+                "criterion": "Multiperspektivität",
+                "levels": [
+                  "Nur eine Seite betrachtet",
+                  "Beide Seiten erwähnt, unausgewogen",
+                  "Beide Seiten fair dargestellt, eigene Position begründet"
+                ]
+              },
+              {
+                "criterion": "Handlungsrelevanz",
+                "levels": [
+                  "Keine persönliche Stellungnahme",
+                  "Stellungnahme ohne Begründung",
+                  "Begründete Stellungnahme mit Bezug auf Klimaschutzziele und physikalische Fakten"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

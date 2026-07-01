@@ -1,0 +1,125 @@
+{
+  "id": "c0080.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Betrachte Abb. 2, die zeigt, wie sich die Produktionskosten pro T-Shirt verändern, je mehr Stück hergestellt werden.\na) Beschreibe den Trend in eigenen Worten.\nb) Erkläre, warum große Modefirmen T-Shirts viel günstiger anbieten können als kleine Schneidereien.\nc) Welche Folgen hat das für kleine Betriebe in Österreich?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 7
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "UK",
+      "OK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.ENT.07",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "a) Je mehr Stück produziert werden, desto niedriger sind die Kosten pro Stück (sinkende Stückkosten / Skalierungseffekt). b) Große Firmen verteilen Fixkosten (Maschinen, Fabrik) auf viele Stücke → geringere Kosten pro Stück → können günstiger verkaufen. c) Kleine Betriebe können mit den Preisen großer Konzerne kaum mithalten, es sei denn sie spezialisieren sich (z.B. Maßanfertigung, nachhaltige Produktion, lokale Marke).",
+    "acceptable_reasoning": "Skalierungseffekte müssen nicht mit Fachbegriff benannt werden – wirtschaftlich sinnvolle Formulierungen genügen.",
+    "rubric": [
+      {
+        "criterion": "Trend korrekt beschrieben",
+        "levels": [
+          "Klare Beschreibung mit Bezug auf Zahlen",
+          "Tendenz erkannt, ohne Zahlen",
+          "Trend nicht erkannt"
+        ]
+      },
+      {
+        "criterion": "Skalierungseffekt erklärt",
+        "levels": [
+          "Logisch korrekte Erklärung",
+          "Ansatz erkennbar",
+          "Nicht erklärt"
+        ]
+      },
+      {
+        "criterion": "Folgen für kleine Betriebe",
+        "levels": [
+          "Mindestens eine realistische Konsequenz + Strategie",
+          "Eine Konsequenz ohne Strategie",
+          "Keine relevante Antwort"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen verwechseln manchmal Preis und Kosten. Klarstellen: Kosten = was die Firma zahlt; Preis = was Käufer:innen zahlen.",
+      "Den Schluss, kleine Firmen seien grundsätzlich schlechter, vermeiden – Spezialisierung als Strategie betonen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Entwicklungen am Wirtschaftsstandort Österreich",
+  "competences": [
+    "GWB.US.3.ENT.07"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "UK",
+    "OK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "100",
+          "200",
+          "300",
+          "400",
+          "500"
+        ],
+        "values": [
+          4.5,
+          3.8,
+          3.2,
+          2.9,
+          2.6
+        ],
+        "title": "Stückpreis eines T-Shirts je nach produzierter Menge (Beispiel)",
+        "xlabel": "Produzierte Stückzahl",
+        "ylabel": "Produktionskosten pro Stück (Euro)"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0080",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:15+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

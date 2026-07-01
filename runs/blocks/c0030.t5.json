@@ -1,0 +1,73 @@
+{
+  "id": "c0030.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "multiple_choice",
+    "prompt": "Welche der folgenden Aussagen über Karten und Luftbilder ist richtig?",
+    "payload": {
+      "kind": "multiple_choice",
+      "options": [
+        "A) Ein Luftbild zeigt immer, welche Straßen für Autos gesperrt sind.",
+        "B) Eine Karte vereinfacht die Wirklichkeit und stellt sie nach einem bestimmten Zweck dar.",
+        "C) Karten sind immer vollständig und zeigen alles, was an einem Ort vorhanden ist.",
+        "D) Luftbilder sind für die Orientierung nutzlos, weil man keine Straßennamen sieht."
+      ],
+      "select": "one"
+    },
+    "response": {
+      "mode": "choices",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "select": "one"
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "OK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.1.LEB.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 4,
+    "answer_key": "B. Karten sind immer eine vereinfachte, zweckgebundene Darstellung der Wirklichkeit (Generalisierung, Projektion, thematische Auswahl).",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Distraktor C ist beliebt – viele Schüler:innen glauben, Karten seien vollständig. Das ist ein Kernmissverständnis der Kartographie.",
+      "Distraktor D sollte zu Widerspruch motivieren – Luftbilder sind sehr wohl für die Orientierung (visuelle Wiedererkennung) nützlich."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "multiple_choice",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 1,
+  "kompetenzbereich": "Leben und Wirtschaften im eigenen Umfeld",
+  "competences": [
+    "GWB.US.1.LEB.03"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "OK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0030",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

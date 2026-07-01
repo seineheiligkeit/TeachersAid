@@ -1,0 +1,72 @@
+{
+  "id": "c0021.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne jeder Beschreibung die passende Darstellungsform zu.\n\nDarstellungsformen: (A) Netz, (B) Schrägbild (Kavalierperspektive), (C) Grundriss (Draufsicht), (D) Seitenansicht\n\nBeschreibungen:\n1. Zeigt den Körper von oben als Fläche — Tiefe geht verloren.\n2. Alle Seitenflächen werden aufgeklappt und in einer Ebene ausgebreitet dargestellt.\n3. Gibt einen räumlichen Eindruck durch schräg gezeichnete Tiefenkanten.\n4. Zeigt die linke oder rechte Seite des Körpers als ebene Fläche.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "(A) Netz",
+        "(B) Schrägbild",
+        "(C) Grundriss",
+        "(D) Seitenansicht"
+      ],
+      "right": [
+        "Zeigt den Körper von oben als Fläche — Tiefe geht verloren.",
+        "Alle Seitenflächen werden aufgeklappt und in einer Ebene ausgebreitet dargestellt.",
+        "Gibt einen räumlichen Eindruck durch schräg gezeichnete Tiefenkanten.",
+        "Zeigt die linke oder rechte Seite des Körpers als ebene Fläche."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "H2"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GEZ.US.4.GEO.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "A–2, B–3, C–1, D–4",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Schrägbild und isometrische Darstellung werden verwechselt — bei der Kavalierperspektive sind die Tiefenkanten halb so lang und im 45°-Winkel.",
+      "„Grundriss“ im technischen Sinne ist eine ebene Projektion von oben — nicht dasselbe wie ein Architektengrundriss mit Maßketten."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Geometrische Objekte und ihre Eigenschaften (I1)",
+  "competences": [
+    "GEZ.US.4.GEO.02"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "H2"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0021",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

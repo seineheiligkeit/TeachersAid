@@ -1,0 +1,92 @@
+{
+  "id": "c0144.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "translation",
+    "prompt": "Deine Lehrkraft stellt dir einen kurzen deutschen Sachtext (oder eine Übersetzung aus dem Griechischen) über Demokrits Atomlehre bereit. Darin kommen folgende griechische Fachbegriffe vor: ἄτομος, κενόν (das Leere), κίνησις (die Bewegung), σώμα (der Körper/die Materie). Übersetze und erkläre jeden Begriff: (a) Gib die wörtliche Bedeutung an. (b) Erläutere, welche Rolle der Begriff in Demokrits Theorie spielt.",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Griech. Begriff",
+        "Wörtliche Bedeutung",
+        "Rolle in Demokrits Theorie"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "UEB"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GRI.OS.7.GRI.03",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "GRI.OS.7.GRI.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "ἄτομος: wörtl. 'das Unteilbare' (ἀ- = nicht, τέμνειν = schneiden); bei Demokrit: die kleinste, nicht weiter teilbare Materie-Einheit. κενόν: wörtl. 'das Leere'; bei Demokrit: der leere Raum, in dem die Atome sich bewegen – notwendige Bedingung für Bewegung. κίνησις: wörtl. 'die Bewegung' (vgl. Kino); bei Demokrit: die Atome sind in ewiger Bewegung, woraus alle Veränderung folgt. σώμα: wörtl. 'Körper, Materie'; bei Demokrit: alles Körperliche besteht aus Atomen.",
+    "acceptable_reasoning": "Umschreibungen der Rolle sind ausreichend, wenn die Kernidee (Atom als Baustein, Leere als Voraussetzung für Bewegung) korrekt erfasst ist.",
+    "rubric": [
+      {
+        "criterion": "Wörtliche Bedeutung",
+        "levels": [
+          "4 von 4 korrekt",
+          "2–3 korrekt",
+          "1 korrekt",
+          "Keine korrekte Angabe"
+        ]
+      },
+      {
+        "criterion": "Rolle in der Theorie",
+        "levels": [
+          "Alle 4 Rollen klar erklärt",
+          "2–3 Rollen korrekt",
+          "Ansätze erkennbar",
+          "Fehlt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "κενόν (das Leere) ist kontraintuitiv: Demokrit setzt 'Nichts' als physikalisch real voraus – das ist für Schüler:innen philosophisch fordernd.",
+      "σώμα (Körper) wird im Neugriechischen und im Bibelgriechischen anders verwendet als bei Demokrit – Kontextabhängigkeit betonen.",
+      "κίνησις → Kino: Der Bezug zum modernen 'Kino' (bewegte Bilder) ist ein hilfreicher Merkanker, aber die ursprüngliche philosophische Bedeutung nicht verwischen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "translation",
+  "subject": "Griechisch",
+  "klasse": 7,
+  "kompetenzbereich": "Das griechische Denken als Fundament der Wissenschaften",
+  "competences": [
+    "GRI.OS.7.GRI.03",
+    "GRI.OS.7.GRI.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "UEB"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0144",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:22+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

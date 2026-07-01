@@ -1,0 +1,204 @@
+{
+  "subject": "Geschichte und politische Bildung",
+  "klasse": 3,
+  "scope_label": "Migration vom 19. Jahrhundert bis in die Gegenwart — Lebensgeschichten und gesellschaftliche Herausforderungen",
+  "title": "Aufbrechen, Ankommen, Dazugehören: Was bedeutet Migration gestern und heute?",
+  "kernfrage": "Warum sind Menschen seit dem 19. Jahrhundert auf der ganzen Welt gewandert — und was bedeutet das für das Zusammenleben in der Gesellschaft heute?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Migration verstehen: Ursachen, Erfahrungen, Folgen",
+        "throughline": "Schüler:innen erarbeiten, dass Migration kein neues Phänomen ist, sondern ein konstanter Teil menschlicher Geschichte — von Wirtschaftsmigration im 19. Jahrhundert bis zur Gegenwart. Sie lernen, zwischen Push- und Pull-Faktoren zu unterscheiden, Lebensgeschichten quellenkritisch zu lesen und eigene oder familiäre Migrationserfahrungen zu kontextualisieren ohne zu stigmatisieren.",
+        "talking_points": [
+          "Push-Faktoren (Vertreibung, Armut, Krieg, Verfolgung) vs. Pull-Faktoren (Arbeit, Sicherheit, Familiennachzug, bessere Perspektiven): kaum eine Migrationsentscheidung ist entweder/oder.",
+          "Kontinuität: Österreicher:innen wanderten aus (nach Amerika, nach Deutschland) und ein (Arbeitsmigration aus dem Balkan, aus der Türkei in den 1960/70er Jahren). Migration ist keine Einbahnstraße.",
+          "Herausforderungen für Einwanderungs- und Auswanderungsländer: Fachkräftemangel vs. Braindrain; Integration; sozialer Zusammenhalt.",
+          "Lebensgeschichten als historische Quelle: Was können sie leisten, was können sie nicht? (Subjektivität, Erinnerungslücken, Erzählstrategien)"
+        ],
+        "extensions": [
+          "Interview mit einer Person mit Migrationshintergrund im näheren Umfeld (mit deren Einverständnis) — Leitfaden in der Klasse erarbeiten.",
+          "Vergleich historischer Auswanderer-Briefe aus dem 19. Jahrhundert (z.B. aus Tirol oder der Steiermark nach Amerika) mit heutigen Nachrichten oder SMS aus der Migration."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "matching",
+            "prompt": "Ordne die folgenden Beispiele den richtigen Begriffen zu: **Push-Faktor** (Grund, das Heimatland zu verlassen) oder **Pull-Faktor** (Anziehungskraft des Ziellandes).\n\nSchreibe jeweils 'Push' oder 'Pull' neben das Beispiel.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "A) Hunger und Armut nach einer Missernte",
+                "B) Bessere Lohnmöglichkeiten in einer aufstrebenden Industrieregion",
+                "C) Politische Verfolgung durch ein autoritäres Regime",
+                "D) Familie ist bereits im Zielland",
+                "E) Krieg und Bombardierung der Heimatstadt",
+                "F) Kostenlose Schulbildung und Gesundheitsversorgung im Zielland"
+              ],
+              "right": [
+                "Push-Faktor",
+                "Pull-Faktor"
+              ]
+            },
+            "response": {
+              "mode": "table",
+              "columns": ["Beispiel", "Push oder Pull?"],
+              "rows": 6
+            },
+            "cognitive_level": "remember",
+            "dimensions": ["HSA"],
+            "serves": [{ "competence_id": "GPB.US.3.ALL.07", "relation": "exercises" }],
+            "est_minutes": 6,
+            "answer_key": "A) Push, B) Pull, C) Push, D) Pull, E) Push, F) Pull.",
+            "acceptable_reasoning": "Manche Faktoren können je nach Perspektive beide Rollen spielen (z.B. Sicherheit kann Push aus unsicherem Land und Pull in sicheres Land sein). Wenn Schüler:innen das begründen, ist eine abweichende Zuordnung akzeptabel.",
+            "watch_outs": [
+              "Achtung: In der Realität sind Push- und Pull-Faktoren selten klar getrennt — die Aufgabe vereinfacht für die Begriffseinführung. Bei fortgeschrittener Diskussion Überlappungen thematisieren.",
+              "Schüler:innen könnten Flucht und Wirtschaftsmigration vermischen — beide können dieselben Faktoren haben, der rechtliche Status ist aber unterschiedlich."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "source_analysis",
+            "prompt": "Lies diesen Auszug aus einem Brief eines Tiroler Auswanderers, geschrieben 1872 aus New York an seine Familie in Österreich:\n\n„Liebe Eltern, ich bin gut angekommen, Gott sei Dank. Die Reise war lang und die Überfahrt beschwerlich. New York ist groß und laut. Die anderen Tiroler hier helfen sich gegenseitig, man findet Arbeit in den Fabriken. Das Geld ist noch nicht so viel, wie ich gehofft hatte, aber es ist mehr als zuhause. Ich vermisse euch und das Dorf. Vielleicht komme ich zurück, wenn ich genug gespart habe. Ich bete für euch täglich."\n\n1. Was sind die Gründe, die den Mann zur Auswanderung bewegt haben könnten? (Schließe aus dem Brief und dem historischen Kontext.)\n2. Welche Informationen gibt dir dieser Brief NICHT, und warum könnte das so sein?",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 40
+            },
+            "cognitive_level": "analyze",
+            "dimensions": ["HME", "HSA"],
+            "serves": [{ "competence_id": "GPB.US.3.ALL.02", "relation": "exercises" }],
+            "est_minutes": 8,
+            "answer_key": "1. Push-Faktoren: 'zuhause' war weniger Geld — Armut, wirtschaftliche Not in Tirol (Industrialisierung, Agrarkrise im 19. Jh.). Pull-Faktoren: Höherer Verdienst, Fabrikarbeit in New York, Migrantennetzwerke ('andere Tiroler helfen sich'). 2. Fehlende Infos: Lebensumstände in der Fabrik (Arbeitsbedingungen, Ausbeutung); politische Gründe (falls vorhanden); Informationen über Menschen aus anderen Ländern in New York; Diskriminierungserfahrungen. Mögliche Gründe: Der Brief ist an die Eltern gerichtet — man schreibt das Schlechte nicht, um sie nicht zu beunruhigen; soziale Erwartungen (man soll 'es schaffen'); Scham oder Selbstschutz.",
+            "acceptable_reasoning": "Zwei Punkte bei jeder Teilfrage sind ausreichend.",
+            "watch_outs": [
+              "Schüler:innen lesen Briefe oft unkritisch als Tatsachenbericht. Auf die Kommunikationssituation (Empfänger: Eltern!) und Selbstdarstellungsfunktion hinweisen.",
+              "Historischer Kontext zu Tiroler Auswanderung: In der zweiten Hälfte des 19. Jh. wanderten Hunderttausende Österreicher aus, vor allem nach Amerika — das ist ein wenig bekanntes Kapitel österreichischer Geschichte."
+            ],
+            "rubric": [
+              {
+                "criterion": "Quellenkritische Analyse",
+                "levels": [
+                  "Übernimmt Brief unkritisch",
+                  "Erkennt Lücken, ohne den Adressatenbezug zu erklären",
+                  "Erklärt, warum der Brief Lücken hat (Kommunikationssituation, Selbstdarstellung)"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "open_response",
+            "prompt": "In den 1960er und 1970er Jahren warb Österreich aktiv 'Gastarbeiter' aus Jugoslawien und der Türkei an — für Fabriken und den Aufbau des Wohlfahrtsstaats. Ursprünglich war die Idee: Sie kommen kurz, verdienen Geld und gehen dann zurück.\n\nWas an dieser Idee hat sich als falsch erwiesen? Erkläre in 3–5 Sätzen.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 35
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["HSA", "HOR"],
+            "serves": [{ "competence_id": "GPB.US.3.ALL.07", "relation": "exercises" }],
+            "est_minutes": 7,
+            "answer_key": "Die Idee des 'Gastarbeiters' als temporäre Arbeitskraft hat sich als Illusion erwiesen: Menschen, die einige Jahre in einem Land gelebt haben, bauen Bindungen auf — Kinder gehen in die Schule, Netzwerke entstehen, die Rückkehr wird immer schwieriger. Viele blieben dauerhaft, holten Familien nach. Die Gesellschaft war auf diese dauerhafte Einwanderung nicht vorbereitet: Sprach- und Integrationsangebote fehlten; Wohnverhältnisse waren oft unzumutbar. Der Begriff 'Gast' verdeckte die Tatsache, dass es sich um dauerhafte Einwanderung handelte.",
+            "acceptable_reasoning": "Zwei klar erklärte Punkte reichen.",
+            "watch_outs": [
+              "Begriff 'Gastarbeiter' ist historisch — heute wird 'Migrantische Arbeitnehmer:innen' oder einfach 'Zugewanderte' bevorzugt. Kurze Diskussion über Sprache und ihre Implikationen wertvoll.",
+              "Keine Schüler:innen zu bewerten, deren Familien Teil dieser Geschichte sind."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "table_fill",
+            "prompt": "Fülle die Tabelle aus: Vergleiche zwei verschiedene Formen von Migration anhand der vorgegebenen Merkmale.\n\nWähle als Beispiele: (1) Arbeitsmigration (z.B. jemand zieht für einen besseren Job ins Ausland) und (2) Flucht (jemand verlässt sein Land wegen Krieges oder Verfolgung).",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": ["Merkmal", "Arbeitsmigration", "Flucht"],
+              "rows": 4
+            },
+            "cognitive_level": "analyze",
+            "dimensions": ["HSA", "PME"],
+            "serves": [{ "competence_id": "GPB.US.3.ALL.07", "relation": "exercises" }],
+            "est_minutes": 8,
+            "answer_key": "Erwartete Inhalte (nicht vollständig):\n- Hauptmotiv: Wirtschaftliche Verbesserung / Sicherheit, Überleben\n- Entscheidungsfreiheit: Meistens frei wählbar / Keine Wahl oder stark eingeschränkt\n- Möglichkeit zur Rückkehr: Oft möglich / Oft nicht möglich oder gefährlich\n- Rechtlicher Status im Zielland: Arbeitsvisa, Niederlassungsrecht / Asylverfahren, Schutzstatus\nVariationen akzeptabel, solange die Kernunterschiede klar sind.",
+            "acceptable_reasoning": "Schüler:innen, die auf Überlappungen hinweisen (manche Flüchtlinge suchen auch Arbeit; manche Wirtschaftsmigrant:innen können nicht zurück) erhalten Zusatzpunkte.",
+            "watch_outs": [
+              "Vorsicht vor Wertung: Arbeitsmigration ist nicht automatisch 'freiwillig' — strukturelle Armut kann Entscheidungsfreiheit stark einschränken.",
+              "Sensibel: Schüler:innen in der Klasse könnten eigene Flucht- oder Migrationserfahrungen haben."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "open_response",
+            "prompt": "Ein österreichisches Nachrichtenmagazin titelt: „Migrationskrise — Österreich am Limit!"\n\nEin NGO-Bericht über dieselbe Situation trägt den Titel: „Schutzsuchende in Europa: Humanitäre Herausforderungen und Lösungsansätze."\n\nAnalysiere: Welche unterschiedlichen Haltungen zeigen die beiden Texte durch ihre Sprache? Was sagen dir die Titel über die Absichten der Verfasser?",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 40
+            },
+            "cognitive_level": "analyze",
+            "dimensions": ["PME", "PUR"],
+            "serves": [{ "competence_id": "GPB.US.3.ALL.08", "relation": "exercises" }],
+            "est_minutes": 9,
+            "answer_key": "Magazin-Titel: 'Krise' suggeriert eine Notlage, Bedrohung; 'am Limit' verstärkt Dringlichkeit und emotionale Aufladung — Österreich als Opfer einer Überwältigung. Zielt auf Leser:innen, die sich durch Migration belastet fühlen. NGO-Titel: 'Schutzsuchende' positioniert Migrant:innen als vulnerabel (nicht als Bedrohung); 'humanitäre Herausforderung' fokussiert auf Pflicht der Aufnahmegesellschaft; 'Lösungsansätze' signalisiert konstruktiven Umgang. Unterschiedliche Standort- und Interessengebundenheit: Magazin = politisch/ökonomisch motivierte Zielgruppenorientierung; NGO = Advocacy für Schutzsuchende.",
+            "acceptable_reasoning": "Schüler:innen müssen nicht alle Punkte nennen; eine klare Analyse der Sprache + kurze Aussage zur Absicht der Verfasser reicht.",
+            "watch_outs": [
+              "Nicht eine Darstellung als 'die Wahrheit' präsentieren — beide haben Interessen und Perspektiven.",
+              "Migration ist ein politisch kontroverses Thema — Kontroversitätsprinzip anwenden: Im Unterricht keine eindeutige politische Position vorgeben, aber Fakten von Meinungen trennen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Sprachanalyse",
+                "levels": [
+                  "Keine oder sehr oberflächliche Beschreibung",
+                  "Unterschied in der Sprache erkannt, aber nicht begründet",
+                  "Konkrete sprachliche Mittel benannt und mit Absicht der Verfasser verbunden"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "position_argument",
+            "prompt": "These: „Migration hat Österreich und Europa hauptsächlich bereichert."\n\nNimm Stellung: Ist diese Aussage deiner Meinung nach zutreffend, zu positiv oder zu negativ? Nenn je ein Argument, das für, und ein Argument, das gegen eine vollständige Zustimmung spricht. Formuliere am Ende eine differenzierte eigene Aussage.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 50
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": ["PUR", "HOR"],
+            "serves": [{ "competence_id": "GPB.US.3.ALL.09", "relation": "exercises" }],
+            "est_minutes": 10,
+            "answer_key": "Argument für Bereicherung: Kulturelle, wirtschaftliche, demografische Beiträge — Migrant:innen haben Wirtschaft aufgebaut, Pflegeberufe besetzt, kulturelle Vielfalt eingebracht. Gegen vollständige Zustimmung: Das Wort 'hauptsächlich' ist vereinfachend; Migration stellt auch Gesellschaften vor Integrationsaufgaben; nicht alle Gruppen profitieren gleichmäßig; Braindrain-Effekte für Herkunftsländer. Differenzierte Aussage: Migration ist ein komplexes Phänomen mit positiven und herausfordernden Aspekten — pauschale Bewertungen (weder 'Bereicherung' noch 'Bedrohung') sind nicht hilfreich.",
+            "acceptable_reasoning": "Alle gut begründeten Positionen sind akzeptabel. Wichtig: Die Antwort muss über 'gut/schlecht' hinausgehen.",
+            "watch_outs": [
+              "These bewusst vereinfacht formuliert, um Reflexion anzuregen. Nicht als Meinung der Lehrkraft verstehen.",
+              "Schüler:innen mit Migrationserfahrung könnten sehr persönlich antworten — das ist wertvoll, aber Raum für alle Perspektiven lassen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Differenziertheit",
+                "levels": [
+                  "Einseitige Zustimmung oder Ablehnung ohne Begründung",
+                  "Beide Seiten angedeutet",
+                  "Klar begründete Argumente auf beiden Seiten und differenzierte Schlussaussage"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "subject": "Musik",
+  "klasse": 3,
+  "kompetenzbereich": "Singen und Musizieren",
+  "title": "Improvisation und Arrangement – Musik selbst gestalten",
+  "kernfrage": "Wie kannst du aus einer Idee oder einem Bild ein eigenes Klangstück entwickeln?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Von der Idee zum Klang: Improvisation, Arrangement und harmonische Grundlagen",
+        "throughline": "Kreativität in der Musik ist keine magische Begabung – sie folgt erlernbaren Prinzipien. Diese Einheit führt Schüler:innen von geleiteter Improvisation über strukturierte Gruppenarbeit zu einem selbstständigen Arrangement, das auf einem außermusikalischen Bild oder Text basiert.",
+        "talking_points": [
+          "Improvisation heißt nicht 'alles ist erlaubt' – Regeln (Tonleiter, Rhythmusraster, Dynamikvorgabe) machen Improvisation erst möglich und klingend.",
+          "Arrangement vs. Komposition: Arrangement = ein vorhandenes Stück für neue Besetzung/Kontext bearbeiten; Komposition = eigene neue Musik schreiben. Beide sind kreative Leistungen.",
+          "Harmonische Grundstrukturen für Klasse 3: Tonika (I), Subdominante (IV), Dominante (V) – die Dreiklangsfamilie, auf der unzählige Lieder aufgebaut sind.",
+          "Außermusikalische Inhalte als Inspirationsquelle: Stimmungsbilder, Naturszenen, Geschichten, Gedichte. Wie überträgt man eine Bildstimmung in Klang (Tempo, Lautstärke, Klangfarbe)?"
+        ],
+        "extensions": [
+          "12-Bar-Blues-Schema an die Tafel: Schüler:innen singen einen Blues-Text zum vorgegebenen Harmonieverlauf (I-I-I-I-IV-IV-I-I-V-IV-I-I) – auch ohne Instrumente mit Stimme möglich.",
+          "Soundscape-Projekt: ein Naturgeräusch (z. B. Gewitter) mit Stimme, Körperpercussion und Alltagsgegenständen vertonen – Gruppenarbeit, 5 Minuten Ergebnis.",
+          "Einführung Pentatonik: auf dem Klavier nur die schwarzen Tasten spielen – jede Kombination klingt 'gut'. Warum ist das so? (Keine Halbtonschritte = keine Dissonanzen.)"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "matching",
+            "prompt": "Ordne den musikalischen Begriffen die richtigen Erklärungen zu.",
+            "payload": {
+              "kind": "matching",
+              "left": ["Improvisation", "Arrangement", "Tonika", "Dominante", "Pentatonik"],
+              "right": [
+                "A – Die fünfte Stufe der Tonleiter; erzeugt Spannung und will zur Tonika zurück.",
+                "B – Eine Tonleiter aus fünf Tönen; klingt harmonisch, weil keine Halbtonschritte enthalten sind.",
+                "C – Spontanes, nicht im Vorhinein festgelegtes Musizieren nach bestimmten Regeln.",
+                "D – Die erste Stufe der Tonleiter; der 'Ruhepol', der sich anfühlt wie 'nach Hause kommen'.",
+                "E – Ein vorhandenes Musikstück für eine neue Besetzung oder einen neuen Kontext bearbeiten."
+              ]
+            },
+            "response": {"mode": "none"},
+            "cognitive_level": "remember",
+            "dimensions": ["SIN"],
+            "serves": [{"competence_id": "MUS.US.3.SIN.04", "relation": "exercises"}],
+            "est_minutes": 4,
+            "answer_key": "Improvisation → C; Arrangement → E; Tonika → D; Dominante → A; Pentatonik → B",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Tonika/Dominante sind für Klasse 3 neue Begriffe – Lehrkraft kann sie vorher am Klavier hörend demonstrieren (Spannung-Auflösung).",
+              "Pentatonik: die Abwesenheit von Halbtonschritten erklärt den 'Wohlklang', aber das ist eine Vereinfachung – für Klasse 3 ausreichend."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "performance_task",
+            "prompt": "Pentatonik-Improvisation (mündlich/praktisch): Die Lehrkraft gibt die C-Dur-Pentatonik vor (Töne: C – D – E – G – A). Alle Schüler:innen summen oder singen reihum je eine kurze Melodiephrase (4–8 Töne), die mit dem letzten Ton des Vorredners beginnt.\n\nRegeln:\n– Nur die fünf Töne der Pentatonik verwenden.\n– Nicht zu schnell – kurze Pause zwischen den Personen.\n– Jede:r ist dran, kein Überspringen.\n\nNotiere danach: Welche Strategie hast du bei deiner Phrase angewandt (z. B. Töne wiederholt, Sprünge gemacht, Rhythmus verändert)?",
+            "payload": null,
+            "response": {"mode": "lines", "n": 2},
+            "cognitive_level": "understand",
+            "dimensions": ["SIN"],
+            "serves": [{"competence_id": "MUS.US.3.SIN.01", "relation": "exercises"}],
+            "est_minutes": 7,
+            "answer_key": "Offene Reflexion; Lernziel: erste bewusste Improvisationserfahrung, Nachdenken über eigene Strategie. Typische Strategien: Töne wiederholen, Muster des Vorgängers variieren, Sprünge, Step-wise Bewegung.",
+            "acceptable_reasoning": "Jede ehrliche Reflexion über die eigene Strategie akzeptabel.",
+            "watch_outs": [
+              "Schüler:innen mit wenig Singerfahrung singen oft sehr leise – Übung ist niederschwellig gehalten (Summen ausreichend).",
+              "Der Anschlusstöne-Aspekt (letzte Ton des Vorgängers) fördert Aufmerksamkeit – Lehrkraft kann das Prinzip des 'aktiven Zuhörens' benennen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "open_response",
+            "prompt": "Das folgende Gedicht beschreibt eine Herbststimmung:\n\n'Blätter fallen leise,\nder Wald hält seinen Atem an,\nein letztes Licht, golden und schwer,\nsinkt in die Stille.'  \n\nBeantworte:\n1. Welches Tempo (schnell / mittel / langsam) würde zu diesem Gedicht passen? Begründe.\n2. Welche Dynamik (laut / mittel / leise) passt? Begründe.\n3. Nenne zwei Instrumente oder Klänge (auch Körperpercussion oder Alltagsgegenstände), die die Stimmung gut einfangen könnten. Begründe je in einem Satz.",
+            "payload": null,
+            "response": {"mode": "lines", "n": 6},
+            "cognitive_level": "analyze",
+            "dimensions": ["SIN"],
+            "serves": [{"competence_id": "MUS.US.3.SIN.01", "relation": "exercises"}],
+            "est_minutes": 7,
+            "answer_key": "1. Langsames Tempo – Wörter wie 'leise', 'Stille', 'sinkt' suggerieren Langsamkeit und Ruhe. 2. Leise bis sehr leise – 'hält den Atem an', 'Stille' – kein lauter Akzent im Bild. 3. Beispiele: Cello (warmer, dunkler Klang), Glockenspiel (vereinzeltes Kling), raschelndes Papier (Blättergeräusch), gedämpftes Klavier. Begründung muss Klangfarbe und Stimmung verknüpfen.",
+            "acceptable_reasoning": "Jede gut begründete Antwort akzeptabel; unerwartete Instrumente sind willkommen, wenn die Begründung den Stimmungsbezug herstellt.",
+            "watch_outs": [
+              "Schüler:innen wählen manchmal laute Instrumente (Schlagzeug) und geben keine Begründung – Lehrkraft erinnert an die Begründungspflicht.",
+              "Dynamik und Tempo nicht verwechseln: leise ≠ langsam (ein Stück kann leise und schnell sein)."
+            ],
+            "rubric": [
+              {"criterion": "Tempo-Begründung", "levels": ["kein Bezug zum Gedicht", "Bezug vorhanden", "Bezug mit konkretem Textzitat"]},
+              {"criterion": "Dynamik-Begründung", "levels": ["kein Bezug", "Stimmung benannt", "Stimmung + Textstelle"]},
+              {"criterion": "Instrumentenwahl", "levels": ["kein Stimmungsbezug", "ein Instrument begründet", "beide Instrumente mit Klangfarbe begründet"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "table_fill",
+            "prompt": "Das österreichische Volkslied 'Kein schöner Land' steht in F-Dur. Fülle die Tabelle aus – nutze dein Wissen über Tonika (I), Subdominante (IV) und Dominante (V) in F-Dur.\n\nHinweis: In F-Dur ist die Tonika = F, die Subdominante = B (= B-Dur), die Dominante = C (= C-Dur).",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": ["Akkord-Funktion", "Bezeichnung (I/IV/V)", "Dreiklang in F-Dur", "Wirkung auf den Hörer"],
+              "rows": 3
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["SIN"],
+            "serves": [{"competence_id": "MUS.US.3.SIN.04", "relation": "exercises"}],
+            "est_minutes": 7,
+            "answer_key": "Zeile 1: Tonika | I | F-Dur (F-A-C) | Ruhe, Heimgefühl, Abschluss. Zeile 2: Subdominante | IV | B-Dur (B-D-F) | leichte Weite, Bewegung weg vom Zentrum. Zeile 3: Dominante | V | C-Dur (C-E-G) | Spannung, Erwartung, Drang zur Auflösung.",
+            "acceptable_reasoning": "Dreiklang-Töne müssen korrekt sein; Wirkungsbeschreibungen sind offen, sofern sie die harmonische Funktion korrekt widerspiegeln.",
+            "watch_outs": [
+              "B-Dur in österreichischer Notation: 'B' = deutsch/österreichisch für das, was im angelsächsischen Raum 'B♭' heißt. Nicht 'H'. Lehrkraft klärt das vor der Aufgabe.",
+              "Manche Schüler:innen können Dreiklänge noch nicht ausrechnen – Lehrkraft gibt die Töne an der Tafel an oder lässt sie ausprobieren."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "create_produce",
+            "prompt": "Gruppenaufgabe (3–4 Personen): Ihr erhaltet eine kurze Textzeile (z. B. 'Der Regen klopft ans Fenster') und sollt dazu eine einfache Begleitung erfinden. Ihr dürft dazu verwenden:\n– Bodypercussion (Klatsch, Oberschenkel, Stampfen)\n– Stimme (Summen, Silben, gesungene Töne)\n– Alltagsgegenstände (Stift klopfen, Papier rascheln)\n\nBedingungen:\n– Mindestens eine Stimme singt die Textzeile als Melodie.\n– Die Begleitung muss einen gleichmäßigen Puls haben.\n– Es gibt einen Anfang und ein Ende.\n\nSchreibe nach der Gruppenarbeit: Wie habt ihr die Begleitung entwickelt? Was habt ihr ausprobiert und verworfen?",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 40},
+            "cognitive_level": "create",
+            "dimensions": ["SIN"],
+            "serves": [{"competence_id": "MUS.US.3.SIN.03", "relation": "exercises"}],
+            "est_minutes": 12,
+            "answer_key": "Offene Aufgabe; Bewertung: gleichmäßiger Puls vorhanden, Melodie singbar, klarer Anfang/Ende, Reflexion beschreibt mindestens einen Entwicklungsschritt und ein verworfenes Element.",
+            "acceptable_reasoning": "Jedes in sich schlüssige Arrangement akzeptabel; kreative Lösungen (unerwartete Materialien) werden positiv bewertet.",
+            "watch_outs": [
+              "Gleichmäßiger Puls ist für manche Gruppen schwierig – Lehrkraft kann einen Puls vorgeben (leises Klatschen) als Hilfe.",
+              "Textzeile: Lehrkraft kann alternativ einen anderen Satz wählen, der für die Klasse passender ist.",
+              "Reflexion: 'Was habt ihr verworfen' ist wichtig – es trainiert das Bewusstsein, dass Kreativität Entscheidungen beinhaltet."
+            ],
+            "rubric": [
+              {"criterion": "Musikalische Vollständigkeit", "levels": ["kein Puls / keine Melodie", "Puls oder Melodie", "Puls + Melodie + Anfang/Ende"]},
+              {"criterion": "Materialvielfalt", "levels": ["nur eine Klangquelle", "zwei Klangquellen", "drei oder mehr Klangquellen sinnvoll kombiniert"]},
+              {"criterion": "Reflexionsqualität", "levels": ["nur 'hat Spaß gemacht'", "ein Entwicklungsschritt beschrieben", "Entwicklung + konkret Verworfenes + Begründung"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "open_response",
+            "prompt": "Bewertungsreflexion: Ihr habt in dieser Stunde Gruppenbegleitungen entwickelt und präsentiert. Wähle eine andere Gruppe aus und beschreibe, was ihr musikalisch gut gelungen ist – und welchen einen Aspekt du verbessern würdest, wenn du noch eine Minute Zeit hättest. Begründe beide Aussagen.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 35},
+            "cognitive_level": "evaluate",
+            "dimensions": ["SIN"],
+            "serves": [{"competence_id": "MUS.US.3.SIN.03", "relation": "exercises"}],
+            "est_minutes": 5,
+            "answer_key": "Offene Antwort; Bewertung: ein positiver Aspekt mit konkreter musikalischer Begründung, ein Verbesserungsvorschlag mit Begründung, konstruktive Sprache.",
+            "acceptable_reasoning": "Jede konstruktive Rückmeldung akzeptabel; Fachbegriffe (Puls, Dynamik, Zusammenspiel) werden positiv bewertet.",
+            "watch_outs": [
+              "Feedback-Kultur: Klasse soll wissen, dass 'ich würde verbessern' nicht 'das war schlecht' bedeutet.",
+              "Schüler:innen vermeiden Kritik an Freund:innen – Kriterien als neutralen Anker nutzen."
+            ],
+            "rubric": [
+              {"criterion": "Positiver Aspekt", "levels": ["fehlend oder ohne Begründung", "mit musikalischer Begründung"]},
+              {"criterion": "Verbesserungsvorschlag", "levels": ["fehlend oder 'alles war gut'", "konkret und umsetzbar mit Begründung"]},
+              {"criterion": "Sprache", "levels": ["wertend/verletzend", "neutral", "konstruktiv und respektvoll"]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

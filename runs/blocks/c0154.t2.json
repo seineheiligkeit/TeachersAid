@@ -1,0 +1,98 @@
+{
+  "id": "c0154.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Entscheide, ob die folgende Aussage wahr oder falsch ist, und begründe deine Entscheidung kurz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Wenn eine Münze 10-mal geworfen wird und 8-mal Kopf zeigt, ist es beim 11. Wurf wahrscheinlicher, dass Zahl kommt.",
+        "Die relative Häufigkeit eines Ereignisses nähert sich bei einer sehr großen Anzahl von Versuchen immer mehr der Wahrscheinlichkeit dieses Ereignisses an.",
+        "Eine Wahrscheinlichkeit von 0 bedeutet, dass ein Ereignis unmöglich ist und niemals eintreten kann."
+      ]
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "KA"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.OS.6.BES.03",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "MAT.OS.6.BES.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Aussage 1: FALSCH — Gambler's Fallacy. Jeder Münzwurf ist unabhängig vom vorherigen; P(Zahl) = 0,5 bleibt konstant. Aussage 2: WAHR — Gesetz der großen Zahlen; bei mehr Versuchen konvergiert die relative Häufigkeit gegen die echte Wahrscheinlichkeit. Aussage 3: FALSCH (mit Nuance) — In der Mathematik (bei Laplace-Experimenten) bedeutet P = 0 meist Unmöglichkeit. Bei stetigen Verteilungen kann ein einzelner Wert die Wahrscheinlichkeit 0 haben und trotzdem eintreten. Im Kontext der Oberstufe (diskret): FALSCH ist eine akzeptable Antwort, wenn die Begründung auf Unmöglichkeit vs. Gewissheit abhebt.",
+    "acceptable_reasoning": "Zu Aussage 1: Schüler:innen sollen das Stichwort „Unabhängigkeit“ verwenden. Zu Aussage 3 genügt: P = 0 heißt unmöglich; P = 1 heißt sicher — und Unabhängigkeit der Versuche.",
+    "rubric": [
+      {
+        "criterion": "Aussage 1 (Gambler's Fallacy)",
+        "levels": [
+          "Falsch bewertet oder keine Begründung",
+          "Richtig mit Unabhängigkeitsargument"
+        ]
+      },
+      {
+        "criterion": "Aussage 2 (Konvergenz)",
+        "levels": [
+          "Falsch bewertet",
+          "Richtig, Begründung vage",
+          "Richtig mit Gesetz der großen Zahlen"
+        ]
+      },
+      {
+        "criterion": "Aussage 3 (P=0)",
+        "levels": [
+          "Falsch bewertet ohne Begründung",
+          "Richtig bewertet, Begründung vorhanden"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Gambler's Fallacy (Aussage 1) ist eine der häufigsten Fehlvorstellungen — explizit thematisieren und mit dem Begriff Unabhängigkeit verknüpfen.",
+      "Aussage 3 hat im diskreten Fall eine klare Antwort; im stetigen Fall ist es komplizierter — je nach Klasse anpassen.",
+      "Schüler:innen sollen Begriffe korrekt verwenden: Unmöglichkeit vs. geringe Wahrscheinlichkeit."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Mathematik",
+  "klasse": 6,
+  "kompetenzbereich": "Beschreibende Statistik; Wahrscheinlichkeit",
+  "competences": [
+    "MAT.OS.6.BES.03",
+    "MAT.OS.6.BES.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "KA"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0154",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:26+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

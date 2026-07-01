@@ -1,0 +1,74 @@
+{
+  "id": "c0007.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne jedes Merkmal der richtigen Turnübung zu. Schreibe den Buchstaben der Übung neben die Merkmal-Nummer.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "1. Körper gestreckt, Beine geschlossen, Zehenspitzen gestreckt",
+        "2. Kinn zur Brust, runder Rücken, Abrollbewegung über die Wirbelsäule",
+        "3. Hüfte über den Händen, Blick zwischen den Händen, Körper gestreckt",
+        "4. Abstoß vom Boden, Körperspannung, weiche Landung mit leicht gebeugten Knien",
+        "5. Hände schulterbreit, Ellbogen zeigen nach hinten, Körper bildet eine gerade Linie"
+      ],
+      "right": [
+        "A — Rolle vorwärts",
+        "B — Handstand (Annäherung)",
+        "C — Liegestützposition (Stütz)",
+        "D — Strecksprung",
+        "E — Hang am Reck, gestreckt"
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "FAC"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BUS.US.3.FAC.05",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "1–E (Hang gestreckt), 2–A (Rolle vorwärts), 3–B (Handstand), 4–D (Strecksprung), 5–C (Liegestützposition). Hinweis: Merkmal 5 beschreibt die Ausgangsposition/Stützhaltung, nicht die Drückbewegung selbst.",
+    "acceptable_reasoning": "Wenn Schüler:innen 1 mit D verwechseln (beide haben gestreckte Zehenspitzen): Kontext 'Hang' vs. 'Absprung' herausarbeiten.",
+    "rubric": [],
+    "watch_outs": [
+      "Turnübungen sind für viele Schüler:innen im Kl. 3 unterschiedlich vertraut — die Merkmale sind absichtlich beschreibend und nicht auf Kenntnis der Bewegung angewiesen.",
+      "Handstand (B) wird oft mit Kopfstand verwechselt — der Unterschied (Hände tragen das Gewicht, Körper vollständig aufrecht) ist ein gutes Gespräch."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Bewegung und Sport",
+  "klasse": 3,
+  "kompetenzbereich": "Fachkompetenz",
+  "competences": [
+    "BUS.US.3.FAC.05"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "FAC"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0007",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T12:57:36+00:00"
+}

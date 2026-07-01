@@ -1,0 +1,547 @@
+{
+  "id": "c0020",
+  "stage": "content",
+  "status": "approved",
+  "source": "generated",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-29T18:40:24+00:00",
+  "title": "Geometrisches Zeichnen 4. Kl. — Körper erkennen und beschreiben (generiert)",
+  "note": "",
+  "request": {
+    "subject": "Geometrisches Zeichnen",
+    "klasse": 4,
+    "stufe": "Unterstufe",
+    "schulform": null,
+    "topic_raw": "Körper erkennen und beschreiben",
+    "envelope": "doppelstunde",
+    "options": {}
+  },
+  "resolution": {
+    "fassung": {
+      "kurztitel": "AHS-Lehrplan (konsolidiert)",
+      "bgbl": "BGBl. II Nr. 204/2024",
+      "doknr": "NOR40264237",
+      "valid_from": "2024-09-01",
+      "valid_to": "2026-08-31"
+    },
+    "subject": "Geometrisches Zeichnen",
+    "klasse": 4,
+    "matched_kompetenzbereiche": [
+      "Geometrische Objekte und ihre Eigenschaften (I1)"
+    ],
+    "grade_check": true,
+    "competences": [
+      {
+        "id": "GEZ.US.4.GEO.01",
+        "kompetenzbereich": "Geometrische Objekte und ihre Eigenschaften (I1)",
+        "klasse": 4,
+        "text": "geometrische Objekte analysieren, ihre Eigenschaften erfassen und beschreiben sowie die Verwendung eines bestimmten geometrischen Objekts begründen. (H1)",
+        "source_ref": "GEOMETRISCHES ZEICHNEN / 4. Klasse / Geometrische Objekte und ihre Eigenschaften (I1)",
+        "dimensions": [
+          "H1"
+        ],
+        "uebergreifende_themen": [
+          10
+        ],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      },
+      {
+        "id": "GEZ.US.4.GEO.02",
+        "kompetenzbereich": "Geometrische Objekte und ihre Eigenschaften (I1)",
+        "klasse": 4,
+        "text": "unterschiedliche Darstellungsformen von geometrischen Objekten erstellen. (H2)",
+        "source_ref": "GEOMETRISCHES ZEICHNEN / 4. Klasse / Geometrische Objekte und ihre Eigenschaften (I1)",
+        "dimensions": [
+          "H2"
+        ],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      },
+      {
+        "id": "GEZ.US.4.GEO.03",
+        "kompetenzbereich": "Geometrische Objekte und ihre Eigenschaften (I1)",
+        "klasse": 4,
+        "text": "die Gestalt von Objekten aus unterschiedlichen Darstellungsformen erkennen und beschreiben. (H3)",
+        "source_ref": "GEOMETRISCHES ZEICHNEN / 4. Klasse / Geometrische Objekte und ihre Eigenschaften (I1)",
+        "dimensions": [
+          "H3"
+        ],
+        "uebergreifende_themen": [
+          10
+        ],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      }
+    ],
+    "notes": []
+  },
+  "plan": null,
+  "content": {
+    "meta": {
+      "title": "Körper erkennen und beschreiben",
+      "subtitle": "LLM-Entwurf — Erstprüfung",
+      "subject": "Geometrisches Zeichnen",
+      "stufe": "Unterstufe",
+      "klasse": 4,
+      "kernfrage": "Wie erkennst du räumliche Körper an ihren Eigenschaften — und wie kannst du sie eindeutig beschreiben?",
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "lehrplan_label": "Geometrisches Zeichnen · 4. Klasse · Geometrische Objekte und ihre Eigenschaften",
+      "content_language": "de",
+      "subject_models": []
+    },
+    "subject_model": {
+      "subject": "Geometrisches Zeichnen",
+      "stufe": "Unterstufe",
+      "dimensions": [
+        {
+          "id": "H1",
+          "label": "Analysieren, Abstrahieren und Argumentieren",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "H2",
+          "label": "Darstellen und Operieren",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "H3",
+          "label": "Interpretieren und Reflektieren",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "content_areas": [
+        {
+          "id": "I1",
+          "label": "Geometrische Objekte und ihre Eigenschaften",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "I2",
+          "label": "Transformationen von Objekten und Relationen zwischen Objekten",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "I3",
+          "label": "Projektionen und Risse",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "task_kind_extensions": [
+        "construction",
+        "cad_model"
+      ]
+    },
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Eigenschaften geometrischer Körper",
+        "teacher_overview": {
+          "throughline": "Schüler:innen entwickeln ein strukturiertes Vokabular für Körper (Flächen, Kanten, Ecken, Symmetrien) und üben, von der Beschreibung zur Identifikation und zurück zu gehen — Grundlage für alle späteren Riss- und Projektionsarbeiten.",
+          "talking_points": [
+            "Warum reicht eine einzige Ansicht oft nicht, um einen Körper eindeutig zu bestimmen?",
+            "Welche Eigenschaften sind charakteristisch für einen Körper (z. B. Anzahl der Flächen, Parallelität, Symmetrieachsen)?",
+            "Unterschied zwischen einem Prisma und einer Pyramide: Was ist das entscheidende Merkmal?"
+          ],
+          "extensions": [
+            "Eulersche Polyederformel E − K + F = 2 an mehreren Beispielen überprüfen lassen.",
+            "Duale Körperpaare (Würfel ↔ Oktaeder) als Erweiterung für Interessierte vorstellen."
+          ],
+          "differentiation": null,
+          "timing_notes": null
+        },
+        "blocks": [
+          {
+            "id": "t1",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "matching",
+            "prompt": "Verbinde jeden Körper mit seiner korrekten Beschreibung.\n\nKörper: (A) Quader, (B) Quadratische Pyramide, (C) Drehzylinder, (D) Drehkegel\n\nBeschreibungen:\n1. Ein Körper mit einer kreisförmigen Grundfläche und einer Spitze; alle Mantellinien treffen sich in einem Punkt.\n2. Zwei parallele, kongruente rechteckige Flächen, verbunden durch vier weitere Rechtecke.\n3. Zwei parallele, kongruente Kreisflächen, verbunden durch eine gekrümmte Mantelfläche.\n4. Eine quadratische Grundfläche und vier gleichschenklige Dreiecksflächen, die sich in einer Spitze treffen.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "(A) Quader",
+                "(B) Quadratische Pyramide",
+                "(C) Drehzylinder",
+                "(D) Drehkegel"
+              ],
+              "right": [
+                "Zwei parallele, kongruente rechteckige Flächen, verbunden durch vier weitere Rechtecke.",
+                "Eine quadratische Grundfläche und vier gleichschenklige Dreiecksflächen, die sich in einer Spitze treffen.",
+                "Zwei parallele, kongruente Kreisflächen, verbunden durch eine gekrümmte Mantelfläche.",
+                "Ein Körper mit einer kreisförmigen Grundfläche und einer Spitze; alle Mantellinien treffen sich in einem Punkt."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "remember",
+            "difficulty": null,
+            "dimensions": [
+              "H1"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "GEZ.US.4.GEO.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "answer_key": "A–2, B–4, C–3, D–1",
+            "acceptable_reasoning": null,
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Quader und Prisma werden oft verwechselt — ein Quader ist ein spezielles (rechtwinkliges) Prisma mit Rechtecken als Grundfläche.",
+              "Drehkegel und Pyramide teilen die Spitze, unterscheiden sich aber in der Grundfläche (Kreis vs. Polygon)."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t2",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "table_fill",
+            "prompt": "Fülle die Tabelle für die folgenden Körper aus: Würfel, Dreiecksprisma, Quadratische Pyramide, Oktaeder.\n\nSpalten: Körper | Anzahl Ecken (E) | Anzahl Kanten (K) | Anzahl Flächen (F) | E − K + F",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Körper",
+                "Ecken (E)",
+                "Kanten (K)",
+                "Flächen (F)",
+                "E − K + F"
+              ],
+              "rows": 4
+            },
+            "cognitive_level": "understand",
+            "difficulty": null,
+            "dimensions": [
+              "H1",
+              "H2"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "GEZ.US.4.GEO.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Würfel: 8 / 12 / 6 / 2. Dreiecksprisma: 6 / 9 / 5 / 2. Quadrat. Pyramide: 5 / 8 / 5 / 2. Oktaeder: 6 / 12 / 8 / 2. Alle E − K + F = 2 (Eulersche Formel).",
+            "acceptable_reasoning": null,
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Schüler:innen vergessen manchmal die Grundfläche(n) bei Prismen oder Pyramiden beim Zählen der Flächen.",
+              "Das Oktaeder ist unbekannter — kurz Bild oder Netz an die Tafel, falls keine Modelle vorhanden."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t3",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "true_false_justify",
+            "prompt": "Beurteile die folgenden Aussagen über geometrische Körper. Schreibe jeweils „wahr“ oder „falsch“ und begründe kurz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Jede Pyramide hat genau eine Grundfläche und eine Spitze.",
+                "Ein Würfel ist ein Sonderfall des Quaders.",
+                "Ein Drehzylinder hat genau drei Flächen (zwei Kreise und eine Mantelfläche).",
+                "Alle Prismen haben mindestens zwei parallele, kongruente Grundflächen."
+              ]
+            },
+            "response": {
+              "mode": "box",
+              "min_height_mm": 50.0
+            },
+            "cognitive_level": "understand",
+            "difficulty": null,
+            "dimensions": [
+              "H1"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "GEZ.US.4.GEO.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "1. wahr — Definition Pyramide. 2. wahr — Würfel hat alle Seiten gleich lang, aber erfüllt Quaderdefinition. 3. wahr — Mantelfläche ist eine gekrümmte Fläche, die beiden Kreise sind die Deckflächen. 4. wahr — grundlegendes Merkmal aller Prismen.",
+            "acceptable_reasoning": "Bei Aufgabe 3: Diskussion, ob eine gekrümmte Fläche als „eine Fläche“ zählt, ist fachlich wertvoll.",
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Manche Schüler:innen zählen bei Drehkörpern die Mantelfläche als mehrere Flächen.",
+              "Würfel als Sonderfall des Quaders erfordert das Verstehen von Spezialisierung/Inklusion — häufige Quelle von Fehlern."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t4",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "open_response",
+            "prompt": "Ein Körper hat genau 5 Flächen, von denen eine ein Rechteck und vier Dreiecke sind. Beschreibe diesen Körper vollständig: Wie heißt er? Wie viele Kanten und Ecken hat er? Welche Form hat seine Grundfläche?",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 40.0
+            },
+            "cognitive_level": "analyze",
+            "difficulty": null,
+            "dimensions": [
+              "H1"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "GEZ.US.4.GEO.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 7,
+            "answer_key": "Es handelt sich um eine Rechteckige Pyramide (auch: quadrilaterale Pyramide mit Rechteck-Grundfläche). Sie hat 5 Ecken, 8 Kanten und 5 Flächen. Die Grundfläche ist ein Rechteck.",
+            "acceptable_reasoning": "Schüler:innen können auch induktiv vorgehen: erst Flächen zählen, dann Körper benennen.",
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Quadratische vs. rechteckige Pyramide: Wenn die Aufgabe „Rechteck“ sagt, ist eine quadratische Grundfläche ein Spezialfall — beide Antworten akzeptieren.",
+              "Schüler:innen könnten ein Prisma mit Dreiecksflächen versuchen — prüfen, ob die 5-Flächen-Bedingung erfüllt wäre (nein: 5-Flächen-Prisma = Dreiecksprisma, 5 Flächen, aber andere Zusammensetzung)."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t5",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "decision_scenario",
+            "prompt": "Ein Architekt plant einen Dachaufsatz für ein Gebäude. Zur Auswahl stehen: (A) ein Drehkegel, (B) eine quadratische Pyramide, (C) ein Drehzylinder. Er möchte maximalen Schutz vor Regen auf einer quadratischen Grundfläche und eine möglichst einfache Konstruktion aus geraden Holzbalken. Welchen Körper empfiehlst du? Begründe deine Wahl mit geometrischen Eigenschaften.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Wähle einen der drei Körper und begründe geometrisch."
+            },
+            "response": {
+              "mode": "box",
+              "min_height_mm": 45.0
+            },
+            "cognitive_level": "evaluate",
+            "difficulty": null,
+            "dimensions": [
+              "H1"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "GEZ.US.4.GEO.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Beste Wahl: (B) Quadratische Pyramide. Gründe: passt auf eine quadratische Grundfläche; die vier Dreiecksflächen leiten Wasser ab; die geraden Kanten lassen sich aus Holzbalken bauen (im Gegensatz zu Kegel oder Zylinder mit gekrümmten Flächen). Drehkegel hat gekrümmte Mantelfläche (schwer zu zimmern); Drehzylinder hat keine Spitze, Wasser sammelt sich oben.",
+            "acceptable_reasoning": "Schüler:innen, die den Kegel wählen und auf die gute Wasserableitung durch die Spitze hinweisen, erhalten Teilpunkte; fehlende Begründung zur Konstruierbarkeit abziehen.",
+            "rubric": [
+              {
+                "criterion": "Körperwahl",
+                "levels": [
+                  "Keine oder falsche Wahl ohne Begründung",
+                  "Richtige Wahl ohne geometrische Begründung",
+                  "Richtige Wahl mit mindestens einem geometrischen Argument",
+                  "Richtige Wahl mit zwei überzeugenden geometrischen Argumenten (Grundfläche + Konstruierbarkeit)"
+                ]
+              },
+              {
+                "criterion": "Vergleich der Alternativen",
+                "levels": [
+                  "Kein Vergleich",
+                  "Eine Alternative kurz erwähnt",
+                  "Beide Alternativen mit Grund ausgeschlossen"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Die Aufgabe ist absichtlich offen — es gibt eine beste Antwort, aber der Argumentation kommt mehr Gewicht zu als der bloßen Wahl.",
+              "Darauf achten, dass geometrische Eigenschaften (nicht Ästhetik) als Hauptargument verwendet werden."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t6",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "open_response",
+            "prompt": "Erfinde einen eigenen geometrischen Körper, indem du zwei bekannte Grundkörper kombinierst (z. B. Zylinder + Halbkugel). Beschreibe deinen Körper in einem kurzen Text: Aus welchen Teilkörpern besteht er? Wie viele Flächen (inklusive Trennfläche, falls sichtbar) hat er insgesamt? Wo könnte dieser Körper in der Realität vorkommen?",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55.0
+            },
+            "cognitive_level": "create",
+            "difficulty": null,
+            "dimensions": [
+              "H1",
+              "H3"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "GEZ.US.4.GEO.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "answer_key": "Offene Aufgabe — Beispielantwort: Zylinder + Halbkugel (= Kapsel). Flächen: 1 Kreisfläche (Boden) + 1 Mantelfläche (Zylinder) + 1 Halbkugelfläche (Kappe) = 3 Flächen, davon 2 gekrümmt. Realbeispiel: Pharma-Kapsel, Rakete, Silo.",
+            "acceptable_reasoning": "Jede geometrisch korrekt beschriebene Kombination ist akzeptabel. Beurteilungsschwerpunkt: korrekte Beschreibung der Teile und nachvollziehbares Realbeispiel.",
+            "rubric": [
+              {
+                "criterion": "Geometrische Korrektheit",
+                "levels": [
+                  "Körper nicht eindeutig beschreibbar",
+                  "Körper beschreibbar, aber Flächenanzahl falsch",
+                  "Körper korrekt beschrieben und Flächen richtig gezählt"
+                ]
+              },
+              {
+                "criterion": "Realweltbezug",
+                "levels": [
+                  "Kein Beispiel",
+                  "Beispiel genannt, aber kein geometrischer Bezug",
+                  "Beispiel mit geometrischer Begründung"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Schüler:innen könnten Schwierigkeiten haben, gekrümmte und ebene Flächen zu unterscheiden — kurze Klärung vorab.",
+              "Die Trennfläche (Schnittkreis zwischen Zylinder und Halbkugel) wird oft vergessen, ist aber im Inneren verborgen — diskutieren, ob man sie zählt."
+            ],
+            "self_check": null
+          }
+        ]
+      }
+    ],
+    "assets": [],
+    "nachweis": {
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "statement": "Diese Materialien adressieren 1 von 3 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
+      "competence_coverage": [
+        {
+          "competence_id": "GEZ.US.4.GEO.01",
+          "exercised_by": [
+            "t1",
+            "t2",
+            "t3",
+            "t4",
+            "t5",
+            "t6"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "GEZ.US.4.GEO.02",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "GEZ.US.4.GEO.03",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        }
+      ],
+      "gaps": [
+        "GEZ.US.4.GEO.02 — unterschiedliche Darstellungsformen von geometrischen Objekten erstellen. (H2)",
+        "GEZ.US.4.GEO.03 — die Gestalt von Objekten aus unterschiedlichen Darstellungsformen erkennen und beschreiben. (H3)"
+      ],
+      "zentrale_konzepte": [
+        "Geometrische Objekte und ihre Eigenschaften (I1)"
+      ],
+      "uebergreifende_themen": [
+        10
+      ]
+    },
+    "depth_profile": {
+      "by_level": {
+        "remember": 1,
+        "understand": 2,
+        "analyze": 1,
+        "evaluate": 1,
+        "create": 1
+      },
+      "by_dimension": {
+        "H1": 6
+      },
+      "by_difficulty": {},
+      "minutes_total": 47,
+      "minutes_resource_independent": 47
+    },
+    "rack": null
+  },
+  "artifacts": {
+    "student_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0020\\student.pdf",
+    "teacher_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0020\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0020\\homework.pdf",
+    "preview_png": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0020\\raster\\student.p1.png"
+  },
+  "verify_problems": [],
+  "verify_warnings": [],
+  "parent_id": null,
+  "feedback": [],
+  "error": null
+}

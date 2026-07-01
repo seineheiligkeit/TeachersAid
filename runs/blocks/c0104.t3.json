@@ -1,0 +1,140 @@
+{
+  "id": "c0104.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Berechne den prozentualen Anteil der drei bevölkerungsreichsten Bundesländer an der Gesamtbevölkerung Österreichs (9.158.750 Personen, 1.1.2024). Runde auf eine Dezimalstelle.\n\nFormel: Anteil (%) = (Bevölkerung Bundesland ÷ 9.158.750) × 100",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Bundesland",
+        "Bevölkerung (Personen)",
+        "Anteil an Österreich (%)"
+      ],
+      "rows": 3
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "OK",
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.OST.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Wien: 2.005.760 Personen → 21,9 % · Niederösterreich: 1.723.723 Personen → 18,8 % · Oberösterreich: 1.530.349 Personen → 16,7 %. Zusammen wohnen rund 57,4 % der österreichischen Bevölkerung in diesen drei Bundesländern.",
+    "acceptable_reasoning": "Kleine Rundungsfehler (±0,2 Prozentpunkte) sind akzeptabel. Die Summe der drei Anteile beträgt ca. 57,4 %.",
+    "rubric": [
+      {
+        "criterion": "Rechnung",
+        "levels": [
+          "Alle drei Anteile korrekt berechnet (±0,2 %)",
+          "Zwei von drei korrekt",
+          "Formel angewendet, aber systematischer Fehler oder nur eines korrekt"
+        ]
+      },
+      {
+        "criterion": "Angabe",
+        "levels": [
+          "Angabe mit Einheit (%) und sinnvoller Rundung",
+          "Ergebnis vorhanden, aber ohne Einheit oder ungerundet",
+          "Kein verwertbares Ergebnis"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Häufiger Fehler: Division durch 100 statt Multiplikation mit 100 (ergibt 0,219 statt 21,9).",
+      "Manche Schüler:innen verwechseln Nenner und Zähler. Die Formelstruktur an der Tafel zeigen.",
+      "Wenn die Summe der drei Anteile deutlich über 60 % liegt, haben Schüler:innen wahrscheinlich die falschen Bundesländer gewählt."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Österreichische Gesellschaftsentwicklung",
+  "competences": [
+    "GWB.US.3.OST.01"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "OK",
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "title": "Bevölkerung der österreichischen Bundesländer (1.1.2024)",
+        "xlabel": "Bundesland",
+        "ylabel": "Bevölkerung (Personen)",
+        "log": false,
+        "categories": [
+          "Burgenland",
+          "Kärnten",
+          "Niederösterreich",
+          "Oberösterreich",
+          "Salzburg",
+          "Steiermark",
+          "Tirol",
+          "Vorarlberg",
+          "Wien"
+        ],
+        "values": [
+          3.3,
+          6.2,
+          18.8,
+          16.7,
+          6.2,
+          13.9,
+          8.5,
+          4.5,
+          21.9
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "statistik_austria_bundeslaender_2024",
+        "series": "bevoelkerung",
+        "note": null,
+        "title": "Bevölkerung der österreichischen Bundesländer (1.1.2024)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2024",
+        "attribution": "Datenquelle: Statistik Austria – data.statistik.gv.at (CC BY 4.0)",
+        "stand": "2024-01-01"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0104",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:23+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

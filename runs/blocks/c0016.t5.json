@@ -1,0 +1,72 @@
+{
+  "id": "c0016.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Dein Freund Noah schickt dir über WhatsApp eine Nachricht: „Schau dir das an, mega krass! Chemtrails bewiesen – Regierung gibt es zu!“ Der Link führt zu einer Seite mit professionell aussehendem Layout und Fotos von Kondensstreifen.\n\n(a) Welche Warnsignale erkennst du bereits in der Art, wie Noah die Meldung weitergeschickt hat?\n(b) Welche drei Schritte unternimmst du, bevor du die Meldung weiterleitest oder glaubst?\n(c) Wie sprichst du Noah an, ohne dass er sich angegriffen fühlt?",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Verdächtige Nachricht im Freundeskreis – wie reagieren?"
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "G",
+      "I"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DGB.US.2.KOM.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 11,
+    "answer_key": "(a) Warnsignale: emotionale Sprache ('mega krass'), Ausrufezeichen/Dringlichkeit, außergewöhnliche Behauptung ('Regierung gibt es zu'), Verbreitung über privaten Kanal (Messenger-Chain). (b) Quelle der Webseite prüfen; auf anderen Medien suchen; Faktencheck (APA-Faktencheck, Mimikama). (c) Nicht verurteilen, sondern gemeinsam recherchieren: 'Ich hab das auch gesehen – lass uns kurz schauen, ob das bestätigt ist, bevor wir es weiterleiten.'",
+    "acceptable_reasoning": "Für Teil (c) gibt es keine Musterlösung; jede respektvolle und nicht konfrontative Formulierung ist akzeptabel.",
+    "rubric": [
+      {
+        "criterion": "Erkennen von Manipulationsmerkmalen",
+        "levels": [
+          "Keine oder nur ein Warnsignal benannt",
+          "Zwei bis drei Warnsignale erkannt",
+          "Warnsignale strukturiert benannt und erklärt"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen unterschätzen oft, wie viel Vertrauen das professionelle Aussehen einer Seite erzeugt – Design ist kein Qualitätsmerkmal.",
+      "Das soziale Element (Freundschaft nicht beschädigen) ist real und wichtig: Medienkompetenz muss auch im sozialen Kontext funktionieren."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Digitale Grundbildung",
+  "klasse": 2,
+  "kompetenzbereich": "Kommunikation: Kommunizieren und Kooperieren unter Nutzung informatischer, medialer Systeme",
+  "competences": [
+    "DGB.US.2.KOM.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "G",
+    "I"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0016",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

@@ -1,0 +1,125 @@
+{
+  "id": "c0094.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb4"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "position_argument",
+    "prompt": "Abbildung 4 zeigt einen schematischen Zusammenhang zwischen Bildungsabschluss und Einkommen. Beurteile: Bedeutet ein höherer Bildungsabschluss automatisch ein höheres Einkommen? Gibt es Faktoren, die diesen Zusammenhang abschwächen oder verzerren könnten? Nenne mindestens zwei. Beziehe auch die Kategorien Geschlecht und Herkunft in deine Überlegung ein.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "UK",
+      "HK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.OST.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Tendenz stimmt: Höhere Bildung korreliert statistisch mit höherem Einkommen. Aber: 1) Geschlechtsspezifischer Lohnunterschied (Gender Pay Gap) – gleiche Bildung, unterschiedliches Einkommen. 2) Herkunft und soziales Netzwerk beeinflussen Jobzugang. 3) Berufsfeld (Sozialarbeit vs. Ingenieurswesen – ähnliche Ausbildungsdauer, sehr unterschiedliche Gehälter). 4) Diskriminierung auf dem Arbeitsmarkt.",
+    "acceptable_reasoning": "Zwei plausible Faktoren mit kurzer Begründung genügen; die Einbeziehung von Geschlecht oder Herkunft ist explizit verlangt und soll bewertet werden.",
+    "rubric": [
+      {
+        "criterion": "Einbeziehung von Geschlecht oder Herkunft",
+        "levels": [
+          "Nicht erwähnt",
+          "Erwähnt aber nicht ausgeführt",
+          "Klar ausgeführt mit Argument"
+        ]
+      },
+      {
+        "criterion": "Qualität der Faktoren",
+        "levels": [
+          "Kein oder nur ein Faktor",
+          "Zwei Faktoren, aber pauschal",
+          "Zwei fundierte Faktoren mit Erläuterung"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Die Abbildung ist schematisch und zeigt keine realen Personendaten – das muss kommuniziert werden. Schüler:innen sollen keine absoluten Einkommensversprechen ableiten. Gender Pay Gap ist in Österreich empirisch gut dokumentiert (~18 %)."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "position_argument",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Österreichische Gesellschaftsentwicklung",
+  "competences": [
+    "GWB.US.3.OST.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "UK",
+    "HK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb4",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:scatter",
+      "spec": {
+        "points": [
+          [
+            9.0,
+            1600.0
+          ],
+          [
+            12.0,
+            2100.0
+          ],
+          [
+            13.0,
+            2400.0
+          ],
+          [
+            16.0,
+            2900.0
+          ],
+          [
+            18.0,
+            3500.0
+          ]
+        ],
+        "xlabel": "Bildungsjahre (nach Abschluss, schematisch)",
+        "ylabel": "Medianeinkommen (€/Monat, schematisch)",
+        "title": "Bildungsabschluss und Einkommen in Österreich (Schematisch: Medianeinkommen nach höchstem Abschluss)",
+        "fit": true
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0094",
+  "source": "ai",
+  "created_at": "2026-06-26T19:02:27+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

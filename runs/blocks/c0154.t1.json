@@ -1,0 +1,85 @@
+{
+  "id": "c0154.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne jedem der folgenden Beispiele die passende Methode zur Bestimmung der Wahrscheinlichkeit zu.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Ein fairer Würfel wird geworfen. Die Wahrscheinlichkeit, eine 3 zu werfen, beträgt 1/6.",
+        "In einer Stichprobe von 500 Befragten trinken 180 Kaffee. Die Wahrscheinlichkeit, dass eine zufällige Person Kaffee trinkt, wird mit 36 % angegeben.",
+        "Ein Meteorologe schätzt, dass die Regenwahrscheinlichkeit morgen 70 % beträgt.",
+        "Bei 10.000 Würfen eines verdächtigen Würfels fiel die 6 genau 2.100-mal. Die Wahrscheinlichkeit wird mit 21 % angegeben."
+      ],
+      "right": [
+        "Relative Häufigkeit durch Versuchsserie",
+        "Subjektives Vertrauen (Expertenmeinung)",
+        "Laplace-Wahrscheinlichkeit (gleich wahrscheinliche Ergebnisse)",
+        "Bestimmung eines relativen Anteils (in einer Stichprobe)"
+      ]
+    },
+    "response": {
+      "mode": "none"
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "ID"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.OS.6.BES.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "1 → Laplace-Wahrscheinlichkeit; 2 → Bestimmung eines relativen Anteils; 3 → Subjektives Vertrauen; 4 → Relative Häufigkeit durch Versuchsserie.",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Zuordnung",
+        "levels": [
+          "0–1 richtig",
+          "2–3 richtig",
+          "Alle 4 richtig"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen verwechseln relative Häufigkeit (Versuchsserie) mit relativen Anteil (Stichprobe) — beide sind empirisch, aber der Kontext unterscheidet sie.",
+      "Subjektives Vertrauen ist eine legitime Methode, keine Schätzung ins Blaue — Schüler:innen unterschätzen oft deren Validität bei Experten.",
+      "Laplace-Wahrscheinlichkeit setzt gleich wahrscheinliche Ergebnisse voraus — diese Voraussetzung ist zu betonen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Mathematik",
+  "klasse": 6,
+  "kompetenzbereich": "Beschreibende Statistik; Wahrscheinlichkeit",
+  "competences": [
+    "MAT.OS.6.BES.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "ID"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0154",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:26+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

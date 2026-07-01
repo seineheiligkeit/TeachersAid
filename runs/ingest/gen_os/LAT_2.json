@@ -1,0 +1,286 @@
+{
+  "subject": "Latein",
+  "klasse": 7,
+  "kompetenzbereich": "Fachsprachen und Fachtexte",
+  "title": "Lingua Latina scientiarum — Latein als Sprache der Wissenschaft",
+  "kernfrage": "Wie hat das Lateinische die Sprache der Wissenschaft, Medizin und des Rechts bis heute geprägt — und was kannst du mit diesem Wissen anfangen?",
+  "body": {
+    "intro": [
+      {
+        "role": "info",
+        "id": "i1",
+        "body": "Latein ist seit der Antike die Sprache der Wissenschaft gewesen. Noch bis ins 18. Jahrhundert wurden wissenschaftliche Werke (Isaac Newton, Galileo Galilei, Carl von Linné) auf Latein verfasst. Bis heute prägen lateinische Begriffe die Fachsprachen der Medizin, des Rechts, der Naturwissenschaften und der Mathematik. Wer Latein kann, hat einen echten Schlüssel zu diesen Wissensgebieten — oft versteht man ein Fachwort auf den ersten Blick, ohne es je gelernt zu haben."
+      }
+    ],
+    "data_figures": [],
+    "assets": [
+      {
+        "id": "abb1",
+        "role": "figure",
+        "generator": "matplotlib:timeline",
+        "spec": {
+          "events": [
+            { "at": -150, "label": "Latinisierung der Wissenschaftssprache (Rom)" },
+            { "at": 77, "label": "Plinius d. Ä.: Naturalis Historia" },
+            { "at": 160, "label": "Galen: Medizinische Werke (lat. Übersetzung)" },
+            { "at": 1543, "label": "Vesalius: De humani corporis fabrica" },
+            { "at": 1623, "label": "Galilei: Sidereus Nuncius (lat.)" },
+            { "at": 1687, "label": "Newton: Principia Mathematica (lat.)" },
+            { "at": 1753, "label": "Linné: Species Plantarum (lat.)" },
+            { "at": 1800, "label": "Latein verliert Status als Wissenschaftssprache" }
+          ],
+          "title": "Latein als Wissenschaftssprache: Zeitleiste",
+          "xlabel": "Jahr (n. Chr. / v. Chr.)"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Wortbildung und Fachtermini erschließen",
+        "throughline": "Schüler:innen erkennen, dass lateinisches Wortbildungswissen direkt auf moderne Fachsprachen übertragbar ist — und entwickeln damit eine produktive Erschließungsstrategie.",
+        "talking_points": [
+          "Wortbildungslehre ist nicht Selbstzweck: Wer ,cardio-' und ,vascular' als lateinisch-griechische Morpheme kennt, kann ,cardiovascular' sofort erschließen.",
+          "Die meisten medizinischen, juristischen und naturwissenschaftlichen Termini sind lateinisch oder griechisch-lateinisch — dieser Transfer motiviert Schüler:innen.",
+          "Präfixe wie sub-, inter-, trans-, contra- wirken identisch im Deutschen, Englischen, Französischen und Spanischen — Latein als Metasprache der Bildungssprachen."
+        ],
+        "extensions": [
+          "Schüler:innen wählen ein Fachgebiet (Medizin, Recht, Biologie) und erstellen ein illustriertes Mini-Lexikon von zehn lateinischen Fachbegriffen mit Worterklärung.",
+          "Fächerübergreifend: Zusammenarbeit mit dem Biologielehrer/der Biologielehrerin — welche lateinischen Bezeichnungen werden im Biologieunterricht verwendet? (Binomiale Nomenklatur nach Linné)"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "table_fill",
+            "prompt": "Die folgenden medizinischen und wissenschaftlichen Fachbegriffe setzen sich aus lateinischen (oder griechisch-lateinischen) Bestandteilen zusammen. Trage für jeden Begriff den lateinischen Wortstamm / das Präfix, seine Bedeutung und ein weiteres deutsches oder englisches Fachwort mit demselben Bestandteil ein.",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": ["Fachbegriff", "Lat. Bestandteil", "Bedeutung des Bestandteils", "Weiteres Beispielwort"],
+              "rows": 8
+            },
+            "cognitive_level": "remember",
+            "dimensions": ["UEB"],
+            "serves": [
+              { "competence_id": "LAT.OS.7.FAC.01", "relation": "exercises" },
+              { "competence_id": "LAT.OS.x.UBE.01", "relation": "exercises" }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "1. Appendix (appendix, -icis) — appendere = anhängen → Appendix vermiformis, appendieren; 2. Fraktur (fractura) — frangere = brechen → Fragment, fraktionieren; 3. Corpus delicti (corpus, -oris) — corpus = Körper, Gesamtheit → Corpus Juris, Korpus; 4. Injunktion (injungere) — injungere = auferlegen, hinzufügen → injungieren, Junction; 5. Subtraktion (subtrahere) — sub + trahere = unter + ziehen → subtrahieren, Traktion; 6. Prognose (pro + gnoscere/gnosis) — lat.-griech.: vorher + erkennen → Diagnose, Prognostik; 7. Aquifer (aqua + ferre) — aqua = Wasser, ferre = tragen → Aquarell, Aquädukt; 8. Virus (virus, -i n.) — virus = Saft, Gift → viral, antiviral",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen verwechseln manchmal griechische und lateinische Morpheme — Prognose hat einen griechischen Stamm (gnōsis), der durch lateinisches pro ergänzt wurde; diese Mischformen sind in der Wissenschaftssprache häufig und sollten kommentiert werden.",
+              "Virus ist im Lateinischen ein o-Stamm Neutrum (selten dekliniert) und bedeutet nicht einfach ,Krankheit', sondern ,giftiger Saft/Schleim' — diese Bedeutungsverschiebung ist ein interessanter kulturgeschichtlicher Punkt."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "matching",
+            "prompt": "Ordne die lateinischen Rechtsbegriffe (wie sie noch heute in der Rechtspraxis, z. B. im österreichischen ABGB oder in Gerichtsentscheidungen, verwendet werden) ihren deutschen Erklärungen zu.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "in dubio pro reo",
+                "habeas corpus",
+                "prima facie",
+                "pacta sunt servanda",
+                "ex nunc",
+                "bona fides",
+                "ultra vires"
+              ],
+              "right": [
+                "guter Glaube; Redlichkeit",
+                "Verträge müssen eingehalten werden",
+                "im Zweifel für den Angeklagten",
+                "auf den ersten Blick (dem ersten Anschein nach)",
+                "du sollst den Körper haben (Vorführungsgebot vor Gericht)",
+                "ab jetzt (für die Zukunft geltend)",
+                "über die Befugnis / Macht hinaus (unbefugt)"
+              ]
+            },
+            "response": {
+              "mode": "none"
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["INT"],
+            "serves": [
+              { "competence_id": "LAT.OS.7.FAC.01", "relation": "exercises" }
+            ],
+            "est_minutes": 7,
+            "asset_refs": [],
+            "answer_key": "in dubio pro reo → im Zweifel für den Angeklagten; habeas corpus → du sollst den Körper haben (Vorführungsgebot vor Gericht); prima facie → auf den ersten Blick (dem ersten Anschein nach); pacta sunt servanda → Verträge müssen eingehalten werden; ex nunc → ab jetzt (für die Zukunft geltend); bona fides → guter Glaube; Redlichkeit; ultra vires → über die Befugnis / Macht hinaus (unbefugt)",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Habeas corpus ist eine Formel des englischen Common Law (Magna Carta 1215), aber in lateinischer Sprache — diese historische Dimension überrascht Schüler:innen oft und ist diskussionswürdig.",
+              "Bona fides: Schüler:innen denken manchmal an ,gute Idee' oder ,guter Fund' — der juristische Begriff bezeichnet Redlichkeit/Gutgläubigkeit im Vertragsrecht. Österreichisches ABGB § 328 f. ist ein konkreter Anknüpfungspunkt."
+            ],
+            "rubric": []
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Lateinische Fachtexte lesen und verstehen",
+        "throughline": "Schüler:innen begegnen authentischen lateinischen Wissenschaftstexten und verstehen Latein als lebendige Wissenschaftssprache mit eigenem Charakter.",
+        "talking_points": [
+          "Plinius der Ältere ist ein zentraler Autor für Fachtexte — seine Naturalis Historia war im Mittelalter die wichtigste Enzyklopädie der Naturkunde.",
+          "Der Sachtext-Stil unterscheidet sich von der literarischen Prosa: präzise Definitionen, Klassifikationen, Aufzählungen — eine eigene Textkompetenz.",
+          "Die Lehrkraft kann die Zeitleiste (Abbildung) nutzen, um den historischen Kontext zu verankern, bevor der Text gelesen wird."
+        ],
+        "extensions": [
+          "Schüler:innen suchen einen weiteren wissenschaftlichen Terminus aus ihrem Biologiebuch und erklären seinen lateinischen Ursprung — mündliche Kurzpräsentation.",
+          "Vergleich: Wie hat Isaac Newton mathematische Sätze auf Latein formuliert? Ein kurzer Satz aus den Principia Mathematica (in Übersetzung) zeigt, wie Latein als Wissenschaftssprache noch 1687 selbstverständlich war."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "translation",
+            "prompt": "Lies den folgenden Textausschnitt aus Plinius dem Älteren (Naturalis Historia). Der Text wurde für diese Aufgabe leicht vereinfacht. Übersetze ihn ins Deutsche und achte dabei auf Verständlichkeit für einen modernen Leser.\n\n**Textus (nach Plinius, Naturalis Historia VII, 1):**\n*Principium iure tribuetur homini. Cuius causa omnia alia genuit natura.*\n*Animalia cetera sua sibi munera haec. Homo autem sine ullo praesidio nascitur.*\n*Nudus in nuda terra positus, statim vagitu et fletu incipit.*\n\n**Vokabular:** principium, -i n. = der Anfang, der Vorrang; tribuo (3) = zuweisen, zuerkennen; gigno (3) = erzeugen, hervorbringen; praesidium, -i n. = Schutz, Stärke; vagitus, -us m. = das Weinen (des Neugeborenen); fletus, -us m. = das Weinen, die Tränen.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 40
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["UEB"],
+            "serves": [
+              { "competence_id": "LAT.OS.7.FAC.02", "relation": "exercises" },
+              { "competence_id": "LAT.OS.x.UBE.04", "relation": "exercises" },
+              { "competence_id": "LAT.OS.x.UBE.05", "relation": "exercises" }
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "Mögliche Modelllösung: „Den ersten Platz wird man zu Recht dem Menschen zuweisen, um dessentwillen die Natur alles andere erzeugt hat. Die übrigen Tiere verfügen von Natur aus über ihre eigenen Gaben. Der Mensch aber wird ohne jeden Schutz geboren. Nackt auf nackter Erde liegend, beginnt er sofort mit Weinen und Schluchzen.“ — Hinweis: ,sua sibi munera' ist ein Ellipse (ohne Verb); sinngemäß: ,(Die Tiere haben/besitzen) ihre Gaben für sich selbst.' Schüler:innen können auch ,sind mit ihren Gaben ausgestattet' formulieren.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Cuius causa ist ein Genitivus causae (,um dessentwillen') — wird oft als ,wessen Sache' falsch übersetzt. Die Konstruktion ist für Klasse 7 anspruchsvoll; Lehrkraft kann Hinweis geben: ,cuius = dessen, causa = wegen/um … willen'.",
+              "Nudus in nuda terra ist eine rhetorische Figur (Polyptoton / figura etymologica) — das stilistische Mittel kann in der Interpretation besprochen werden.",
+              "Der Satz ,Animalia cetera sua sibi munera haec' ist eine Ellipse ohne Prädikat — Schüler:innen müssen ein Verb ergänzen. Das ist typisch für Plinius' gedrängten Stil."
+            ],
+            "rubric": [
+              { "criterion": "Semantische Treue", "levels": ["Alle drei Sätze korrekt und vollständig übersetzt", "Zwei Sätze korrekt", "Ein Satz korrekt", "Keine sinngemäß korrekte Übersetzung"] },
+              { "criterion": "Zielsprachenidiomatik", "levels": ["Flüssig und modern lesbar", "Weitgehend idiomatisch, kleinere Unebenheiten", "Holprig, aber verständlich", "Unverständlich"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "data_interpretation",
+            "prompt": "Betrachte die Zeitleiste (Abbildung 1) zur Geschichte des Lateinischen als Wissenschaftssprache. Beantworte folgende Fragen:\n1. In welchem Zeitraum war Latein unumstritten die zentrale Wissenschaftssprache Europas?\n2. Nenne zwei bedeutende Werke auf der Zeitleiste und erkläre in je einem Satz, warum sie in die Geschichte der Wissenschaft eingegangen sind.\n3. Wann und warum begann Latein als Wissenschaftssprache seine Vorrangstellung zu verlieren? Formuliere eine begründete Hypothese.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 8
+            },
+            "cognitive_level": "analyze",
+            "dimensions": ["INT"],
+            "serves": [
+              { "competence_id": "LAT.OS.7.FAC.02", "relation": "exercises" },
+              { "competence_id": "LAT.OS.x.INT.03", "relation": "exercises" }
+            ],
+            "est_minutes": 10,
+            "asset_refs": ["abb1"],
+            "answer_key": "1. Ungefähr von der Spätantike bis ca. 1750 / Ende 18. Jahrhundert war Latein die dominierende Wissenschaftssprache. 2. Beispiele: Vesalius' De humani corporis fabrica (1543) legte mit präzisen anatomischen Zeichnungen den Grundstein der modernen Anatomie; Newtons Principia Mathematica (1687) formulierte die Grundgesetze der Mechanik und Gravitation. 3. Hypothese: Mit dem Aufkommen der Nationalstaaten und der Aufklärung (18. Jh.) entstand ein Bedürfnis nach volksnaher Wissenschaftskommunikation; Gelehrte schrieben zunehmend in Landessprachen, um breitere Kreise zu erreichen; zudem förderte der Buchdruck die Nationalsprachen. (Alle begründeten Hypothesen akzeptieren.)",
+            "acceptable_reasoning": "Bei Frage 3 sind verschiedene Hypothesen akzeptabel, sofern sie historisch plausibel sind (Nationalstaaten, Aufklärung, Buchdruck, Bildungsreformen).",
+            "watch_outs": [
+              "Schüler:innen könnten meinen, Latein habe mit dem Untergang des Weströmischen Reiches (476) aufgehört — aber als Wissenschaftssprache blieb es noch über 1000 Jahre lebendig. Diese Fehlvorstellung ist weit verbreitet und sollte korrigiert werden.",
+              "Galileis Sidereus Nuncius ist auf Latein verfasst, aber sein späteres Werk (Dialogo) auf Italienisch — diese Zweisprachigkeit von Galileis Werk illustriert den Übergang gut."
+            ],
+            "rubric": [
+              { "criterion": "Beantwortung Frage 1 (Zeitraum)", "levels": ["Korrekt mit plausiblem Zeitraum", "Ungefähr korrekt", "Falsch"] },
+              { "criterion": "Beantwortung Frage 2 (Werke)", "levels": ["Zwei Werke korrekt identifiziert und erläutert", "Ein Werk korrekt erläutert", "Nur genannt, nicht erläutert", "Falsch oder fehlend"] },
+              { "criterion": "Hypothese Frage 3", "levels": ["Begründet und historisch plausibel", "Ansatz vorhanden, nicht vollständig begründet", "Vage, ohne Begründung", "Fehlend"] }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "Transfer und kritische Reflexion",
+        "throughline": "Schüler:innen wenden ihr Wissen über lateinische Fachsprache kreativ und kritisch an und reflektieren Nutzen und Grenzen von Latein als Wissenschaftssprache.",
+        "talking_points": [
+          "Der Transferschritt zeigt den konkreten Alltagsnutzen: Wer Latein kann, erschließt Fachbegriffe schneller — in Medizin, Recht, Naturwissenschaft.",
+          "Die kritische Dimension: Latein als Wissenschaftssprache hatte auch Exklusionsfunktion (nur für Gebildete zugänglich) — eine spannende gesellschaftliche Debatte.",
+          "Die Produktionsaufgabe (t6) gibt Schüler:innen die Möglichkeit, eigenes Fachinteresse einzubringen, und ist damit motivierend differenzierbar."
+        ],
+        "extensions": [
+          "Debatte: Sollte es wieder eine gemeinsame internationale Wissenschaftssprache geben? (Latein / Englisch / Esperanto — Argumente sammeln und diskutieren.)",
+          "Exkursion oder Recherche: Welche lateinischen Inschriften gibt es in eurer Stadt, an Gebäuden, auf Münzen, in Wappen? Was bedeuten sie?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "multiple_choice",
+            "prompt": "Welche der folgenden Aussagen über Latein als Wissenschaftssprache sind korrekt? Wähle alle zutreffenden Antworten aus.",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "Carl von Linné führte die lateinische Binomialnomenklatur für Tier- und Pflanzenarten ein, die bis heute verwendet wird.",
+                "Isaac Newton schrieb seine Principia Mathematica auf Englisch, weil er ein breiteres Publikum erreichen wollte.",
+                "Medizinische Fachbegriffe wie ,Appendix', ,Femur' oder ,Mandibula' stammen direkt aus dem Lateinischen.",
+                "Latein war im Mittelalter in ganz Europa die Bildungssprache, unabhängig von der jeweiligen Volkssprache.",
+                "Der Begriff ,Algebra' ist lateinischen Ursprungs und geht auf die Römer zurück.",
+                "Juristische Begriffe wie ,in dubio pro reo' oder ,habeas corpus' sind noch heute in Rechtssystemen weltweit in Gebrauch."
+              ],
+              "select": "many"
+            },
+            "response": {
+              "mode": "none"
+            },
+            "cognitive_level": "analyze",
+            "dimensions": ["INT"],
+            "serves": [
+              { "competence_id": "LAT.OS.7.FAC.02", "relation": "exercises" }
+            ],
+            "est_minutes": 7,
+            "asset_refs": [],
+            "answer_key": "Korrekt: 1 (Linné, binomiale Nomenklatur), 3 (Appendix/Femur/Mandibula aus Latein), 4 (Latein als Bildungssprache im Mittelalter), 6 (in dubio pro reo, habeas corpus heute noch in Gebrauch). Falsch: 2 (Newton schrieb Principia auf Latein, nicht Englisch), 5 (Algebra stammt vom arabischen ,al-jabr', nicht vom Lateinischen — obwohl es ins Lateinische übernommen und weitervermittelt wurde).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Aussage 5 ist eine häufige Fehlvorstellung: Algebra klingt nicht lateinisch und ist es auch nicht — der Begriff geht auf Muhammad ibn Musa al-Chwarizmi zurück und kam über arabisch-lateinische Übersetzungen ins Europäische. Diese arabisch-lateinische Transmissionsgeschichte ist ein interessanter Unterrichtspunkt.",
+              "Aussage 2 ist gezielt falsch formuliert, um die bekannte Fehlvorstellung anzusprechen, dass Newton auf Englisch schrieb — tatsächlich schrieb er die Principia bewusst auf Latein, um ein gesamteuropäisches Publikum zu erreichen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "create_produce",
+            "prompt": "Stell dir vor, du bist Wissenschaftsjournalist:in und schreibst für eine Schülerzeitung einen kurzen Artikel (ca. 120–150 Wörter) mit dem Titel: „Warum du eigentlich schon ein bisschen Latein kannst — und es gar nicht weißt.“ Erkläre deinen Lesern anhand von mindestens vier konkreten Beispielen aus Medizin, Recht oder Naturwissenschaft, wie lateinische Wörter in modernen Fachsprachen weiterleben. Schreibe auf Deutsch, verwende aber die lateinischen Fachbegriffe kursiv und erkläre sie kurz.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 65
+            },
+            "cognitive_level": "create",
+            "dimensions": ["INT"],
+            "serves": [
+              { "competence_id": "LAT.OS.7.FAC.01", "relation": "exercises" },
+              { "competence_id": "LAT.OS.7.FAC.02", "relation": "exercises" },
+              { "competence_id": "LAT.OS.x.INT.03", "relation": "exercises" }
+            ],
+            "est_minutes": 18,
+            "asset_refs": [],
+            "answer_key": "Individuelle Produktion; Kriterien: Mindestens 4 lateinische Fachbegriffe aus verschiedenen Bereichen, korrekte Erklärung, journalistisch lesbarer Stil (nicht zu trocken, Leseransprache), korrekte Verwendung der kursiven Markierung.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen neigen zu Aufzählungen statt zu einem echten Artikel — die Aufgabe verlangt einen Fließtext mit journalistischem Anspruch. Lehrkraft kann als Impuls geben: ,Stell dir vor, du schreibst für jemanden, der noch nie Latein hatte — wie erklärst du, warum es ihn trotzdem betrifft?'",
+              "Falsche Etymologien vermeiden: Schüler:innen sollten nur Begriffe verwenden, deren lateinische Herkunft sie aus dem Unterricht kennen oder kurz nachschlagen können."
+            ],
+            "rubric": [
+              { "criterion": "Fachliche Korrektheit der Beispiele", "levels": ["Vier oder mehr korrekte lateinische Fachbegriffe mit richtiger Erklärung", "Drei korrekte Begriffe", "Zwei korrekte Begriffe", "Weniger als zwei"] },
+              { "criterion": "Journalistischer Stil und Leseransprache", "levels": ["Klar, ansprechend, direkte Leseransprache, gut lesbar", "Weitgehend lesbar, aber wenig ansprechend", "Eher listenförmig, kein journalistischer Charakter", "Keine erkennbare Struktur"] },
+              { "criterion": "Breite der Fachbereiche", "levels": ["Beispiele aus mindestens zwei verschiedenen Bereichen (z. B. Medizin + Recht)", "Alle Beispiele aus einem Bereich", "Keine erkennbare fachliche Verortung"] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,257 @@
+{
+  "subject": "Haushaltsökonomie und Ernährung",
+  "klasse": 6,
+  "kompetenzbereich": "Das eigene Essverhalten erkennen, reflektieren und bewerten sowie Zusammenhänge zwischen Ernährungsgewohnheiten, Kulturen, Gesundheit und Wohlbefinden verstehen",
+  "title": "Wie viel Energie brauche ich wirklich?",
+  "kernfrage": "Wie berechnest du deinen persönlichen Energie- und Nährstoffbedarf und was sagen diese Zahlen über deine Ernährung aus?",
+  "body": {
+    "intro": [
+      "Unser Körper benötigt täglich eine bestimmte Menge an Energie und Nährstoffen, um alle Funktionen aufrechtzuerhalten. Diese Menge ist von Mensch zu Mensch verschieden und hängt von Faktoren wie Alter, Geschlecht, Körpergewicht und Aktivitätsniveau ab. In diesem Arbeitsblatt berechnest du deinen eigenen Grundumsatz und Gesamtenergiebedarf, wertest Nährstoffanteile aus und diskutierst, was ausgewogene Ernährung wissenschaftlich bedeutet."
+    ],
+    "data_figures": [
+      {
+        "id": "abb1",
+        "intent": "comparison",
+        "title": "Empfohlene Makronährstoff-Anteile an der Gesamtenergie (D-A-CH-Referenzwerte)",
+        "xlabel": "Makronährstoff",
+        "ylabel": "Anteil an Gesamtenergie (%)",
+        "categories": ["Kohlenhydrate", "Fette", "Proteine"],
+        "values": [55, 30, 15]
+      },
+      {
+        "id": "abb2",
+        "intent": "comparison",
+        "title": "Durchschnittlicher tatsächlicher Makronährstoff-Konsum österreichischer Jugendlicher (Beispieldaten)",
+        "xlabel": "Makronährstoff",
+        "ylabel": "Anteil an Gesamtenergie (%)",
+        "categories": ["Kohlenhydrate", "Fette", "Proteine"],
+        "values": [44, 38, 18]
+      }
+    ],
+    "assets": [
+      {
+        "id": "formel1",
+        "role": "figure",
+        "generator": "matplotlib:math_formula",
+        "spec": {
+          "latex": "\\text{Grundumsatz (Frauen, Harris-Benedict)} = 655{,}1 + 9{,}6 \\cdot m + 1{,}85 \\cdot h - 4{,}68 \\cdot a"
+        }
+      },
+      {
+        "id": "formel2",
+        "role": "figure",
+        "generator": "matplotlib:math_formula",
+        "spec": {
+          "latex": "\\text{Grundumsatz (Männer, Harris-Benedict)} = 66{,}5 + 13{,}75 \\cdot m + 5{,}0 \\cdot h - 6{,}78 \\cdot a"
+        }
+      },
+      {
+        "id": "formel3",
+        "role": "figure",
+        "generator": "matplotlib:math_formula",
+        "spec": {
+          "latex": "\\text{Gesamtenergiebedarf} = \\text{Grundumsatz} \\times \\text{PAL-Faktor}"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Grundumsatz und Gesamtenergiebedarf berechnen",
+        "throughline": "Schüler:innen lernen, den Grundumsatz und den tatsächlichen Energiebedarf anhand wissenschaftlich anerkannter Formeln zu berechnen und die Ergebnisse auf reale Alltagssituationen zu beziehen.",
+        "talking_points": [
+          "Der Grundumsatz (Basal Metabolic Rate) beschreibt den Energiebedarf in vollständiger Ruhe; im Alltag liegt der Bedarf stets höher.",
+          "PAL-Faktoren (Physical Activity Level) erlauben die Anpassung an das tatsächliche Aktivitätsniveau: sitzend ca. 1,4; mäßig aktiv ca. 1,6; sehr aktiv ca. 1,9.",
+          "Harris-Benedict-Formel: Werte m (Körpermasse in kg), h (Körpergröße in cm), a (Alter in Jahren).",
+          "Ergebnisse sind Schätzwerte; individuelle Abweichungen von ±10 % sind normal."
+        ],
+        "extensions": [
+          "Recherchiere neuere Formeln (z. B. Mifflin-St-Jeor) und vergleiche die Ergebnisse mit Harris-Benedict.",
+          "Untersuche, wie sich Muskelaufbau oder Abnehmen auf den Grundumsatz auswirken (Körperzusammensetzung).",
+          "Diskutiere, warum App-basierte Kalorienzählung problematisch sein kann."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "calculation",
+            "prompt": "Berechne den Grundumsatz für die folgenden beiden Personen mithilfe der Harris-Benedict-Formel (siehe Formeln oben). Runde auf ganze Kilokalorien.\n\nPerson A: weiblich, 17 Jahre, 62 kg, 168 cm\nPerson B: männlich, 17 Jahre, 75 kg, 182 cm",
+            "payload": null,
+            "response": { "mode": "lines", "n": 6 },
+            "cognitive_level": "apply",
+            "dimensions": ["EV", "NE"],
+            "serves": [{ "competence_id": "HOE.OS.6.EIG.03", "relation": "exercises" }],
+            "est_minutes": 8,
+            "asset_refs": ["formel1", "formel2"],
+            "answer_key": "Person A (Frau): 655,1 + 9,6 × 62 + 1,85 × 168 − 4,68 × 17 = 655,1 + 595,2 + 310,8 − 79,56 = 1 481,54 ≈ 1 482 kcal/Tag.\nPerson B (Mann): 66,5 + 13,75 × 75 + 5,0 × 182 − 6,78 × 17 = 66,5 + 1 031,25 + 910 − 115,26 = 1 892,49 ≈ 1 892 kcal/Tag.",
+            "acceptable_reasoning": "Einsetzen der richtigen Werte in die jeweilige Geschlechterformel; korrekte Vorzeichenbehandlung beim Altersterm.",
+            "watch_outs": [
+              "Häufiger Fehler: Verwechslung der Formeln für Frauen und Männer.",
+              "Einige Schüler:innen vergessen den negativen Altersterm oder rechnen ihn als Addition.",
+              "Einheitenkonsistenz prüfen: Körpermasse in kg, Größe in cm, Alter in Jahren — nicht mischen."
+            ],
+            "rubric": [
+              { "criterion": "Formelauswahl", "levels": ["Falsche Formel verwendet", "Richtige Formel für beide Personen gewählt"] },
+              { "criterion": "Rechenweg", "levels": ["Nur Ergebnis, kein Rechenweg", "Teilschritte sichtbar", "Vollständiger, korrekter Rechenweg"] },
+              { "criterion": "Ergebnis", "levels": ["Beide Ergebnisse falsch", "Ein Ergebnis korrekt", "Beide Ergebnisse korrekt (±5 kcal Rundung)"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "calculation",
+            "prompt": "Berechne den Gesamtenergiebedarf (Leistungsumsatz) für Person A und Person B, wenn:\n- Person A einen Bürojob hat und kaum Sport treibt (PAL 1,4)\n- Person B täglich 1,5 Stunden intensiv Sport treibt und sonst mäßig aktiv ist (PAL 1,75)\n\nVerwende die Ergebnisse aus Aufgabe 1.",
+            "payload": null,
+            "response": { "mode": "lines", "n": 4 },
+            "cognitive_level": "apply",
+            "dimensions": ["EV", "NE"],
+            "serves": [{ "competence_id": "HOE.OS.6.EIG.03", "relation": "exercises" }],
+            "est_minutes": 5,
+            "asset_refs": ["formel3"],
+            "answer_key": "Person A: 1 482 × 1,4 = 2 074,8 ≈ 2 075 kcal/Tag.\nPerson B: 1 892 × 1,75 = 3 311 kcal/Tag.",
+            "acceptable_reasoning": "Multiplikation des jeweiligen Grundumsatzes mit dem angegebenen PAL-Faktor.",
+            "watch_outs": [
+              "Schüler:innen verwechseln manchmal Grundumsatz und Gesamtenergiebedarf im Text.",
+              "PAL-Faktoren sind Näherungswerte; Abweichungen durch Zwischenwerte können diskutiert werden."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "data_analysis",
+            "prompt": "Schau dir die beiden Grafiken (Abb. 1 und Abb. 2) an: Sie zeigen einerseits die empfohlenen Makronährstoff-Anteile (D-A-CH-Referenzwerte) und andererseits den durchschnittlichen tatsächlichen Konsum österreichischer Jugendlicher.\n\na) Beschreibe die Unterschiede zwischen Empfehlung und tatsächlichem Konsum.\nb) Für welchen Nährstoff ist die Abweichung am größten? Berechne den Unterschied in Prozentpunkten.\nc) Erkläre mithilfe deines Vorwissens, welche gesundheitlichen Folgen ein dauerhaft zu hoher Fettanteil haben kann.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 55 },
+            "cognitive_level": "analyze",
+            "dimensions": ["EV", "NE"],
+            "serves": [
+              { "competence_id": "HOE.OS.6.EIG.02", "relation": "exercises" },
+              { "competence_id": "HOE.OS.6.SIC.02", "relation": "exercises" }
+            ],
+            "est_minutes": 10,
+            "asset_refs": ["abb1", "abb2"],
+            "answer_key": "a) Kohlenhydrate: Empfehlung 55 %, tatsächlich 44 % — zu wenig; Fette: Empfehlung 30 %, tatsächlich 38 % — zu viel; Proteine: Empfehlung 15 %, tatsächlich 18 % — leicht erhöht.\nb) Größte Abweichung bei Kohlenhydraten: 55 − 44 = 11 Prozentpunkte (alternativ: Fette 38 − 30 = 8 Pp). Beide Antworten akzeptabel, wenn korrekt begründet.\nc) Dauerhaft zu hohe Fettzufuhr, insbesondere gesättigte Fettsäuren, erhöht das Risiko für Herz-Kreislauf-Erkrankungen, Adipositas und Typ-2-Diabetes; sie kann zu erhöhten LDL-Cholesterin-Werten führen.",
+            "acceptable_reasoning": "Beschreibung muss auf die Grafiken Bezug nehmen; gesundheitliche Folgen müssen wissenschaftlich nachvollziehbar sein.",
+            "watch_outs": [
+              "Manche Schüler:innen verwechseln Prozentpunkte mit prozentualer Veränderung.",
+              "Verallgemeinerungen wie 'Fett ist immer schlecht' erfordern Korrektur: ungesättigte Fettsäuren sind essenziell.",
+              "Daten sind als Beispieldaten deklariert — auf Quellenangabe hinweisen."
+            ],
+            "rubric": [
+              { "criterion": "Datenbeschreibung", "levels": ["Keine oder unvollständige Beschreibung", "Zwei Nährstoffe korrekt beschrieben", "Alle drei Nährstoffe korrekt mit Richtungsangabe"] },
+              { "criterion": "Rechenaufgabe", "levels": ["Falsch oder fehlend", "Ergebnis korrekt, aber Einheit fehlt", "Korrekt mit Einheit Prozentpunkte"] },
+              { "criterion": "Gesundheitsbezug", "levels": ["Keine Verbindung", "Allgemeine Aussage ohne Fachbegriff", "Konkrete Folgen mit Fachbegriffen (z. B. LDL, Adipositas, Typ-2-Diabetes)"] }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Nährstoffbedarf für besondere Lebenssituationen",
+        "throughline": "Verschiedene Lebenssituationen (Wachstum, Sport, Schwangerschaft, Krankheit) verändern den Nährstoffbedarf erheblich; Schüler:innen lernen, zielgruppenorientierte Ernährungsempfehlungen abzuleiten und kritisch zu hinterfragen.",
+        "talking_points": [
+          "Jugendliche im Wachstum haben einen erhöhten Kalzium- und Eisenbedarf.",
+          "Leistungssport erhöht den Bedarf an Kohlenhydraten als primärem Energiesubstrat sowie an Proteinen für Muskelregeneration.",
+          "D-A-CH-Referenzwerte sind Durchschnittswerte für Bevölkerungsgruppen, keine individualisierten Vorgaben.",
+          "Ernährungsempfehlungen können sich durch neue Studienlage ändern — kritischer Umgang mit Quellen ist notwendig."
+        ],
+        "extensions": [
+          "Erstelle einen Tagesernährungsplan für Person B (aus Aufgabe 2) mit dem berechneten Energiebedarf und nenne konkrete Lebensmittel mit ungefähren Portionsgrößen.",
+          "Recherchiere die AGES-Österreich-Empfehlungen für Jugendliche und vergleiche sie mit den D-A-CH-Werten.",
+          "Diskutiere, warum 'Diäten' mit sehr niedrigem Energiegehalt langfristig oft scheitern (Stichwort: Jojo-Effekt, Grundumsatzanpassung)."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "decision_scenario",
+            "prompt": "Lena, 16 Jahre, trainiert fünfmal pro Woche Leistungssport (Handball) und hört, ihre Mitschülerin esse sehr kohlenhydratarm, weil das 'gesünder' sei. Lena überlegt, dasselbe zu tun.\n\nNimm Stellung: Ist eine kohlenhydratarme Ernährung für Lena sinnvoll? Begründe mit ernährungswissenschaftlichen Argumenten.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Lena, 16 Jahre, Leistungssportlerin (Handball, 5× pro Woche), erwägt eine kohlenhydratarme Diät."
+            },
+            "response": { "mode": "box", "min_height_mm": 50 },
+            "cognitive_level": "evaluate",
+            "dimensions": ["EV", "NE"],
+            "serves": [
+              { "competence_id": "HOE.OS.6.EIG.02", "relation": "exercises" },
+              { "competence_id": "HOE.OS.6.SIC.02", "relation": "exercises" }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Nein, für eine Leistungssportlerin ist eine kohlenhydratarme Diät nicht empfehlenswert: Kohlenhydrate sind der wichtigste Energielieferant für intensive körperliche Belastung (Glykogen als schnell verfügbarer Energiespeicher in Muskeln und Leber). Niedrige Kohlenhydratzufuhr führt zu schnellerer Erschöpfung, schlechteren Leistungen und verlangsamter Regeneration. Der Gesamtenergiebedarf einer aktiven 16-Jährigen ist außerdem hoch; ein pauschales Kopieren der Ernährung der Mitschülerin ohne individuelle Bedarfserhebung ist wissenschaftlich nicht fundiert.",
+            "acceptable_reasoning": "Argumentation muss auf den erhöhten Glykogenbedarf bei Ausdauer-/Intervallsport eingehen und die Personenabhängigkeit von Ernährungsempfehlungen betonen.",
+            "watch_outs": [
+              "Low-Carb-Ernährung wird in Medien oft unkritisch positiv dargestellt — Schüler:innen bringen diese Annahmen häufig mit.",
+              "Wichtig: klar zwischen Ausdauer-/Hochleistungssport und sitzender Tätigkeit differenzieren.",
+              "Schüler:innen sollen nicht 'alle Diäten sind schlecht' generalisieren, sondern kontextbezogen argumentieren."
+            ],
+            "rubric": [
+              { "criterion": "Position", "levels": ["Keine klare Position", "Position vorhanden, aber unbegründet", "Klare Position mit ernährungswissenschaftlicher Begründung"] },
+              { "criterion": "Fachlichkeit", "levels": ["Keine Fachbegriffe", "Ein Fachbegriff korrekt verwendet", "Mehrere Fachbegriffe korrekt (z. B. Glykogen, Energiesubstrat, Regeneration)"] },
+              { "criterion": "Kontextbezug", "levels": ["Kein Bezug auf Lenas Situation", "Teilweiser Bezug", "Vollständiger Bezug auf Alter, Aktivitätsniveau, Geschlecht"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "table_fill",
+            "prompt": "Fülle die Tabelle aus: Ordne jedem Nährstoff seine Hauptfunktion im Körper, einen typischen Mangel bei Jugendlichen (ja/nein) und eine gute Nahrungsquelle zu. Ergänze die fehlenden Felder (mit den angegebenen Werten arbeiten, wo vorhanden).\n\n| Nährstoff | Hauptfunktion | Mangel bei Jugendl. häufig? | Gute Quelle |\n|---|---|---|---|\n| Eisen | ? | Ja | ? |\n| Kalzium | ? | ? | Milchprodukte, Brokkoli |\n| Vitamin D | ? | Ja | ? |\n| Jod | Schilddrüsenfunktion | ? | ? |",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": ["Nährstoff", "Hauptfunktion", "Mangel bei Jugendl. häufig?", "Gute Quelle"],
+              "rows": 4
+            },
+            "cognitive_level": "remember",
+            "dimensions": ["EV", "NE"],
+            "serves": [
+              { "competence_id": "HOE.OS.6.SIC.04", "relation": "exercises" },
+              { "competence_id": "HOE.OS.6.EIG.07", "relation": "exercises" }
+            ],
+            "est_minutes": 7,
+            "asset_refs": [],
+            "answer_key": "Eisen: Sauerstofftransport (Hämoglobin), Mangel häufig Ja (v. a. bei Mädchen), Quellen: rotes Fleisch, Hülsenfrüchte, Vollkornprodukte.\nKalzium: Knochenaufbau und -erhalt, Nervenfunktion; Mangel häufig: bedingt Ja (Versorgungslage variabel); Quelle: Milchprodukte, Brokkoli (vorgegeben).\nVitamin D: Kalziumaufnahme, Immunsystem, Knochengesundheit; Mangel häufig Ja; Quellen: Sonnenlicht (Eigenproduktion), fetter Fisch, angereicherte Lebensmittel.\nJod: Schilddrüsenfunktion (vorgegeben); Mangel: Ja (in Binnenländern häufig); Quellen: jodiertes Speisesalz, Seefisch, Meeresfrüchte.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Vitamin D: Schüler:innen geben oft nur 'Sonne' an — darauf hinweisen, dass Sonnenlicht Eigenproduktion auslöst, aber kein Lebensmittel ist.",
+              "Eisen-Mangel ist bei Mädchen/Frauen signifikant häufiger — Gelegenheit für Differenzierung nach Geschlecht.",
+              "Jodmangel ist in Österreich durch jodiertes Salz rückläufig, aber nicht verschwunden."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "open_response",
+            "prompt": "Stell dir vor, du könntest die Schulmensa für eine Woche beraten. Du weißt: Die meisten Schüler:innen Eurer Schule sind 15–18 Jahre alt, viele bewegen sich wenig, und der Eisenmangel ist in der Altersgruppe verbreitet.\n\nFormuliere drei konkrete Empfehlungen für den Speiseplan der Mensa, die auf wissenschaftlichen Grundlagen beruhen. Begründe jede Empfehlung.",
+            "payload": null,
+            "response": { "mode": "lines", "n": 12 },
+            "cognitive_level": "create",
+            "dimensions": ["EV", "NE"],
+            "serves": [
+              { "competence_id": "HOE.OS.6.EIG.03", "relation": "exercises" },
+              { "competence_id": "HOE.OS.6.BEW2.01", "relation": "exercises" },
+              { "competence_id": "HOE.OS.6.SIC.06", "relation": "exercises" }
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "Beispielempfehlungen (variabel, Begründung muss fachlich korrekt sein):\n1. Regelmäßiges Angebot von Hülsenfrüchten (z. B. Linsensuppe, Kidneybohnen): hoher Eisengehalt, pflanzliches Protein; Kombination mit Vitamin-C-Quelle (Paprika, Orangensaft) erhöht Eisenresorption.\n2. Vollkornvarianten als Standard (Vollkornnudeln, -brot): höherer Ballaststoffgehalt, länger sättigend, stabilisiert Blutzucker — relevant für wenig aktive Schüler:innen.\n3. Angebot eines eisenreichen Desserts oder Snacks (z. B. getrocknete Aprikosen, Kürbiskerne): Eisenreserven ergänzen, ohne Kalorien drastisch zu erhöhen.",
+            "acceptable_reasoning": "Empfehlungen müssen mit einem konkreten Nährstoff oder Gesundheitsziel begründet sein. Kreative Alternativen sind zulässig, solange die Begründung stimmt.",
+            "watch_outs": [
+              "Schüler:innen nennen manchmal 'gesund' ohne Begründung — Fachbegriff und Wirkungsmechanismus verlangen.",
+              "Darauf achten, dass Empfehlungen realistisch und für eine Schulkantine umsetzbar sind.",
+              "Hinweis: Vitamin-C-Kombination steigert Eisenresorption signifikant — ein häufig übersehener Mechanismus."
+            ],
+            "rubric": [
+              { "criterion": "Anzahl der Empfehlungen", "levels": ["Weniger als 2", "Genau 2", "3 oder mehr"] },
+              { "criterion": "Wissenschaftliche Begründung", "levels": ["Keine Begründung", "Allgemeine Aussage", "Konkrete Nährstoff- oder Wirkungsbegründung je Empfehlung"] },
+              { "criterion": "Zielgruppenorientierung", "levels": ["Kein Bezug auf Schüler:innen-Gruppe", "Teilweise Bezug", "Alle Empfehlungen explizit an Zielgruppe (Alter, Aktivität, Eisenmangel) angepasst"] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

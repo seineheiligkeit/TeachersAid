@@ -1,0 +1,77 @@
+{
+  "id": "c0086.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "multiple_choice",
+    "prompt": "Welche Aussage über den elektrischen Stromkreis ist richtig?",
+    "payload": {
+      "kind": "multiple_choice",
+      "options": [
+        "Die Spannung gibt an, wie viele Ladungen pro Sekunde fließen.",
+        "Der Widerstand eines Leiters bestimmt, wie stark der Strom bei einer gegebenen Spannung fließt.",
+        "Amperemeter werden parallel zur Verbraucherin geschaltet.",
+        "Die Einheit der Spannung ist Ampere (A)."
+      ],
+      "select": "one"
+    },
+    "response": {
+      "mode": "choices",
+      "options": [
+        "Die Spannung gibt an, wie viele Ladungen pro Sekunde fließen.",
+        "Der Widerstand eines Leiters bestimmt, wie stark der Strom bei einer gegebenen Spannung fließt.",
+        "Amperemeter werden parallel zur Verbraucherin geschaltet.",
+        "Die Einheit der Spannung ist Ampere (A)."
+      ],
+      "select": "one"
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.3.ELE.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 4,
+    "answer_key": "Antwort B ist richtig. Der Widerstand bestimmt bei gegebener Spannung, wie groß die Stromstärke ist (Ohmsches Gesetz).",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Häufige Verwechslung: Spannung mit Stromstärke. Spannung (V) ist die treibende Kraft; Stromstärke (A) ist die Folge.",
+      "Amperemeter werden in Reihe geschaltet (niedriger Eigenwiderstand), Voltmeter parallel (hoher Eigenwiderstand)."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "multiple_choice",
+  "subject": "Physik",
+  "klasse": 3,
+  "kompetenzbereich": "Elektrizität und Magnetismus",
+  "competences": [
+    "PHY.US.3.ELE.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0086",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:19+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

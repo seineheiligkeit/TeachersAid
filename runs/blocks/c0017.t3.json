@@ -1,0 +1,76 @@
+{
+  "id": "c0017.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Betrachte folgenden Algorithmus in Pseudocode:\n\n```\nSTART\n  Zahl ← 1\n  SOLANGE Zahl ≤ 10 MACHE:\n    WENN Zahl durch 2 teilbar IST:\n      Gib Zahl aus\n    Zahl ← Zahl + 1\nENDE\n```\n\n(a) Was gibt dieser Algorithmus aus? Schreibe alle Zahlen auf.\n(b) Wie würdest du den Algorithmus ändern, sodass er alle Zahlen von 1 bis 20 ausgibt, die durch 3 teilbar sind?\n(c) Was passiert, wenn du die Zeile 'Zahl ← Zahl + 1' vergisst? Beschreibe das Problem.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 8
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "T"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DGB.US.3.PRO.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "(a) Ausgabe: 2, 4, 6, 8, 10. (b) Änderungen: 'SOLANGE Zahl ≤ 20' und 'WENN Zahl durch 3 teilbar IST'. Ausgabe: 3, 6, 9, 12, 15, 18. (c) Ohne 'Zahl ← Zahl + 1' bleibt Zahl immer 1. Die Bedingung 'SOLANGE Zahl ≤ 10' ist immer wahr → der Algorithmus hört nie auf = Endlosschleife. Das Programm 'hängt sich auf'.",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Algorithmus lesen (Teil a+b)",
+        "levels": [
+          "Falsche Ausgabe",
+          "Richtige Ausgabe für (a), Änderung für (b) teilweise korrekt",
+          "Beide Ausgaben korrekt; Änderung vollständig"
+        ]
+      },
+      {
+        "criterion": "Fehleranalyse (Teil c)",
+        "levels": [
+          "Fehler nicht erkannt oder falsch beschrieben",
+          "Endlosschleife erkannt, aber nicht erklärt",
+          "Endlosschleife erklärt und Konsequenz benannt"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Pseudocode ist für viele Schüler:innen das erste Mal – Schreibweise (←, SOLANGE, MACHE) erklären, nicht als bekannt voraussetzen.",
+      "Endlosschleife ist ein zentrales Konzept: betonen, dass Programme abstürzen oder den Computer blockieren können – kein abstrakes Problem.",
+      "'Durch 2 teilbar' bedeutet: Rest der Division durch 2 ist 0 (Modulo-Konzept) – kann in dieser Stufe intuitiv erklärt werden."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Digitale Grundbildung",
+  "klasse": 3,
+  "kompetenzbereich": "Produktion: Inhalte digital erstellen und veröffentlichen, Algorithmen entwerfen und Programmieren",
+  "competences": [
+    "DGB.US.3.PRO.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "T"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0017",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

@@ -1,0 +1,83 @@
+{
+  "id": "c0043.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "listening_task",
+    "prompt": "Die Lehrkraft beschreibt oder spielt kurz zwei sehr unterschiedliche Musikstücke:\n– Stück 1: Ein Werk aus dem Barock (z. B. eine Bach-Invention: polyphon, ornamentiert, Cembalo-Klang)\n– Stück 2: Ein Rocksong aus den 1970ern (z. B. stark verzerrte E-Gitarre, regelmäßiger Schlagzeugrhythmus, Gesang)\n\nBeschreibe für jedes Stück mindestens drei Merkmale, die dir beim Hören auffallen. Verwende Fachbegriffe, wo möglich.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "HOR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MUS.US.4.HOR.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Barock: z. B. polyphon (mehrere gleichzeitige Melodiestimmen), Ornamente, Cembalo-Klang (hell, metallisch), kein Schlagzeug, gleichmäßige Bewegung. Rock: E-Gitarre (verzerrt), Schlagzeug mit Backbeat (2 und 4), Gesangsstimme, laut/kraftvoll, homophon.",
+    "acceptable_reasoning": "Drei korrekte und begründete Merkmale pro Stück reichen; Fachbegriffe werden positiv bewertet.",
+    "rubric": [
+      {
+        "criterion": "Anzahl Merkmale",
+        "levels": [
+          "weniger als 3 Merkmale",
+          "3 Merkmale",
+          "3+ Merkmale mit Fachbegriff"
+        ]
+      },
+      {
+        "criterion": "Korrektheit",
+        "levels": [
+          "Fehler in der Beschreibung",
+          "korrekt aber vage",
+          "korrekt und präzise"
+        ]
+      },
+      {
+        "criterion": "Epochenbezug",
+        "levels": [
+          "kein Bezug zur Epoche",
+          "Epoche erkannt",
+          "Epoche mit historischem Kontext verknüpft"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Polyphonie vs. Homophonie: kurze Definition vor der Aufgabe einblenden oder Begriffe in den Arbeitsauftrag einarbeiten.",
+      "Backbeat (Betonung auf 2 und 4 im 4/4-Takt) ist ein Rockmusik-Merkmal, das oft übersehen wird – explizit thematisieren."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "listening_task",
+  "subject": "Musik",
+  "klasse": 4,
+  "kompetenzbereich": "Hören und Erfassen",
+  "competences": [
+    "MUS.US.4.HOR.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "HOR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0043",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

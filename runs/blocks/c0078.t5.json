@@ -1,0 +1,82 @@
+{
+  "id": "c0078.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "source_critique",
+    "prompt": "Lies folgenden Zeitungstext:\n\n„Wissenschaftler haben eine neue Substanz entwickelt, die Metall schützt und Rosten für immer verhindert — ganz ohne chemische Reaktion. Das Mittel bildet eine unsichtbare Schicht auf dem Metall.”\n\nBewerte den Text aus chemischer Sicht:\na) Welcher Satz im Text ist chemisch widersprüchlich? Erkläre.\nb) Wie nennt man Schutzmaßnahmen gegen Rosten? Nenne zwei aus dem Alltag.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 40.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "S",
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.US.x.STA.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "a) „Ganz ohne chemische Reaktion” ist widersprüchlich — das Aufbringen der Schicht selbst ist entweder eine physikalische Barriere ODER ein chem. Prozess (Passivierung). Die Schutzwirkung verhindert die Oxidationsreaktion, ist aber selbst das Ergebnis eines chemischen oder physikalischen Prozesses. b) Lackieren/Anstreichen (physikalische Barriere), Verzinken (Galvanisierung), Edelstahllegierung, Ölen.",
+    "acceptable_reasoning": "Schüler:innen müssen den genauen Widerspruch benennen — entweder 'Schutzschicht bilden ist selbst ein Vorgang' oder 'Rostverhütung bedeutet die chem. Reaktion wird verhindert, nicht dass keine Chemie stattfindet'.",
+    "rubric": [
+      {
+        "criterion": "Widerspruch identifiziert",
+        "levels": [
+          "Konkreter chemischer Widerspruch klar benannt",
+          "Vage Kritik",
+          "Kein Widerspruch erkannt"
+        ]
+      },
+      {
+        "criterion": "Schutzmaßnahmen",
+        "levels": [
+          "Zwei korrekte Beispiele",
+          "Ein Beispiel",
+          "Keines"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Zeitungssprache ist oft unscharf — hier explizit üben, Fachbegriffe von Umgangssprache zu trennen",
+      "Verzinken als Beispiel: Zink oxidiert bevorzugt und schützt so das Eisen (Opferanode) — kann als Erweiterung erklärt werden",
+      "Schüler:innen sollen nicht das gesamte Produkt ablehnen, sondern den spezifischen Widerspruch benennen"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "source_critique",
+  "subject": "Chemie",
+  "klasse": 4,
+  "kompetenzbereich": "Standpunkte begründen, Entscheidungen treffen und reflektiert handeln (S)",
+  "competences": [
+    "CHE.US.x.STA.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "S",
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0078",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:13+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

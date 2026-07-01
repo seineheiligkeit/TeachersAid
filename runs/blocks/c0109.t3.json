@@ -1,0 +1,133 @@
+{
+  "id": "c0109.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Schau dir das Balkendiagramm (Abb. 2) an: Die Gruppe der 45- bis 59-Jährigen macht 21,2 % aus, die der 0- bis 14-Jährigen nur 14,4 %. Was bedeutet das konkret für den Generationenvertrag im Pensionssystem, wenn sich diese Relation in 20–25 Jahren verändert?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.OST.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "In 20–25 Jahren sind die heutigen 45- bis 59-Jährigen (21,2 % der Bevölkerung) großteils im Pensionsalter (65–80 Jahre), also in den Gruppen 60–74 und 75+. Gleichzeitig sind die heutigen 0- bis 14-Jährigen (14,4 %) dann im Erwerbsalter. Das Verhältnis von Erwerbstätigen zu Pensionierten verschlechtert sich: mehr Pensionist:innen müssen durch weniger Erwerbstätige finanziert werden. Der Generationenvertrag kommt unter Druck — mögliche Reaktionen sind höhere Beiträge, niedrigere Pensionen oder ein höheres Pensionsantrittsalter.",
+    "acceptable_reasoning": "Schüler:innen müssen nicht alle Maßnahmen nennen; die Kernlogik (mehr Pensionierte, weniger Beitragszahler) muss klar sein. Eigene Lösungsideen werden als Bonus gewertet.",
+    "rubric": [
+      {
+        "criterion": "Korrekte Zukunftsprojektion",
+        "levels": [
+          "Richtige Altersgruppe in 20–25 Jahren (2P)",
+          "Vage / fehlerhafte Angabe (1P)",
+          "Fehlt (0P)"
+        ]
+      },
+      {
+        "criterion": "Systemlogik Generationenvertrag",
+        "levels": [
+          "Mehr Pensionierte, weniger Erwerbstätige klar beschrieben (2P)",
+          "Ansatz erkennbar (1P)",
+          "Fehlt (0P)"
+        ]
+      },
+      {
+        "criterion": "Konsequenzen",
+        "levels": [
+          "Mindestens eine konkrete Maßnahme / Folge genannt (1P)",
+          "Keine (0P)"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen verwechseln oft Ursache und Wirkung: Nicht die Demografie 'verursacht' Armut, sondern sie stellt Systeme vor Anpassungsbedarf.",
+      "Darauf hinweisen, dass Migration und steigende Geburtenraten die Prognose verändern können — Demografie ist kein starres Schicksal."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Österreichische Gesellschaftsentwicklung",
+  "competences": [
+    "GWB.US.3.OST.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "title": "Bevölkerung Österreichs nach Altersgruppen — Anteile (1.1.2024)",
+        "xlabel": "Altersgruppe",
+        "ylabel": "Anteil an Gesamtbevölkerung (%)",
+        "log": false,
+        "categories": [
+          "0–14",
+          "15–29",
+          "30–44",
+          "45–59",
+          "60–74",
+          "75+"
+        ],
+        "values": [
+          14.4,
+          16.8,
+          20.6,
+          21.2,
+          17.3,
+          9.7
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "statistik_austria_bevstand_2024",
+        "series": "altersgruppen_breit",
+        "note": null,
+        "title": "Bevölkerung Österreichs nach Alter und Geschlecht (1.1.2024)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2024",
+        "attribution": "Datenquelle: Statistik Austria – data.statistik.gv.at (CC BY 4.0)",
+        "stand": "2024-01-01"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0109",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:28+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

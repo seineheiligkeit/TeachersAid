@@ -1,0 +1,72 @@
+{
+  "id": "c0133.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "In einem Experiment sollen zwei unbekannte Metallstreifen (Metall A und Metall B) in eine Kupfersulfat-Lösung (CuSO₄) getaucht werden. Nach einer Minute zeigt sich bei Metall A ein roter Kupferbelag, bei Metall B nicht. Erkläre mithilfe des Donator-Akzeptor-Konzepts, was bei Metall A passiert ist. Welche Schlussfolgerung kannst du über die relative Lage von Metall A und B in der Aktivitätsreihe (elektrochemischen Spannungsreihe) ziehen?",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Metall A scheidet Kupfer ab, Metall B nicht. Was sagt das über die Elektronenabgabebereitschaft der beiden Metalle aus?"
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 40.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "EG",
+      "KZ"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.OS.7.UBE.03",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "CHE.OS.x.ERK.06",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Bei Metall A überträgt das Metall Elektronen auf Cu²⁺-Ionen (Metall A ist Elektronendonator, Cu²⁺ ist Elektronenakzeptor). Metall A wird dabei oxidiert (löst sich auf), Cu²⁺ wird reduziert (scheidet sich als Cu-Metall ab). Metall A steht in der Aktivitätsreihe 'unedler' als Kupfer (höheres Reduktionspotenzial beim Cu/Cu²⁺-System). Metall B gibt keine Elektronen ab: es ist 'edler' als Kupfer oder reagiert nicht – es steht unterhalb von Kupfer in der Aktivitätsreihe.",
+    "acceptable_reasoning": "Schüler:innen, die formulieren, dass Metall A ein stärkeres Reduktionsmittel als Kupfer ist, zeigen korrektes Verständnis.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Verwechslung: Das Metall, das sich auflöst, wird OXIDIERT – Schüler:innen sagen manchmal 'Kupfer oxidiert das Metall', was umgangssprachlich mehrdeutig ist.",
+      "Achtung: 'Metall B reagiert nicht' bedeutet nicht, dass es gar keine Reaktion gibt – es findet keine Redoxreaktion mit Cu²⁺ statt, weil B nicht unedler genug ist."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Chemie",
+  "klasse": 7,
+  "kompetenzbereich": "Übertragung",
+  "competences": [
+    "CHE.OS.7.UBE.03",
+    "CHE.OS.x.ERK.06"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "EG",
+    "KZ"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0133",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:19+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

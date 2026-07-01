@@ -1,0 +1,69 @@
+{
+  "id": "c0055.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "ordering",
+    "prompt": "Höre dir den Dialog noch einmal an. Lehrkraft liest vor:\n\nA. — Salut, je m'appelle Hugo.\nB. — Moi, j'ai treize ans. Et toi ?\nC. — Enchanté, Hugo ! Moi, c'est Marie.\nD. — J'ai douze ans.\nE. — Tu as quel âge ?\n\nBringe die Sätze in die richtige Reihenfolge des Gesprächs.",
+    "payload": {
+      "kind": "ordering",
+      "items": [
+        "Salut, je m'appelle Hugo.",
+        "Moi, j'ai treize ans. Et toi ?",
+        "Enchanté, Hugo ! Moi, c'est Marie.",
+        "J'ai douze ans.",
+        "Tu as quel âge ?"
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "HOR",
+      "SPR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS2.US.3.HOR.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Richtige Reihenfolge: A → C → E → B → D (Hugo stellt sich vor → Marie antwortet und stellt sich vor → fragt nach Alter → Marie gibt ihr Alter an → Hugo antwortet)",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Enchanté ist eine wichtige Höflichkeitsformel — Schüler:innen erkennen sie möglicherweise noch nicht; ggf. vor der Aufgabe kurz einführen.",
+      "Et toi? als Rückfrage ist eine typische Gesprächsstrategie — diese dialogische Logik bewusst machen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "ordering",
+  "subject": "Zweite lebende Fremdsprache",
+  "klasse": 3,
+  "kompetenzbereich": "Hören",
+  "competences": [
+    "FS2.US.3.HOR.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "HOR",
+    "SPR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0055",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

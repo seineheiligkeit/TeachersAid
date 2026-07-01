@@ -1,0 +1,130 @@
+{
+  "id": "c0124.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Indien stößt 2,2 Tonnen CO₂ pro Kopf aus — weit weniger als die USA (13,6 t). Trotzdem gelten Indien und China als 'große Emittenten'. Wie ist das möglich? Erkläre den Unterschied zwischen Pro-Kopf-Emissionen und Gesamtemissionen.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.4.WET.05",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Gesamtemissionen = Pro-Kopf-Ausstoß × Bevölkerungszahl. Indien hat zwar nur 2,2 t/Kopf, aber ca. 1,4 Milliarden Einwohner: 2,2 × 1,4 Mrd. ≈ 3,1 Mrd. Tonnen CO₂ gesamt. USA: 13,6 × 0,34 Mrd. ≈ 4,6 Mrd. Tonnen. China: 9,3 × 1,4 Mrd. ≈ 13 Mrd. Tonnen (größter Gesamtemittent). Pro-Kopf und Gesamt messen verschiedene Dinge: Pro-Kopf zeigt den individuellen 'Fußabdruck'; Gesamt zeigt den Beitrag zur globalen Konzentration in der Atmosphäre.",
+    "acceptable_reasoning": "Schülerinnen und Schüler müssen keine genauen Bevölkerungszahlen kennen; die Idee (viele Menschen × kleiner Wert = groß) reicht.",
+    "rubric": [
+      {
+        "criterion": "Unterschied erklärt",
+        "levels": [
+          "Pro-Kopf vs. Gesamt klar unterschieden",
+          "Idee angedeutet",
+          "Nicht erkannt"
+        ]
+      },
+      {
+        "criterion": "Rechenbeispiel oder Erklärung",
+        "levels": [
+          "Produkt Bevölkerung × Pro-Kopf gezeigt oder beschrieben",
+          "Nur qualitativ",
+          "Fehlt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Häufige Fehlvorstellung: 'Indien muss auch wenig tun, weil pro Kopf so wenig.' Das ignoriert, dass historisch reiche Länder mehr ausgestoßen haben UND dass Indien sich industriell entwickeln möchte.",
+      "Für die Atmosphäre zählen die absoluten Gesamtmengen — das ist der physikalische Kern."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Wetter und Klima",
+  "competences": [
+    "PHY.US.4.WET.05"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "W",
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "title": "CO₂-Ausstoß pro Kopf im Ländervergleich (2024)",
+        "log": false,
+        "categories": [
+          "Österreich",
+          "Deutschland",
+          "Schweiz",
+          "Italien",
+          "USA",
+          "China",
+          "Indien",
+          "Nigeria"
+        ],
+        "values": [
+          6.3,
+          6.9,
+          3.7,
+          5.1,
+          13.6,
+          9.3,
+          2.2,
+          0.6
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "worldbank_co2_pro_kopf",
+        "series": "vergleich",
+        "note": null,
+        "title": "CO₂-Ausstoß pro Kopf im Ländervergleich",
+        "url": "https://data.worldbank.org/indicator/EN.GHG.CO2.PC.CE.AR5",
+        "attribution": "Datenquelle: World Bank – data.worldbank.org (EN.GHG.CO2.PC.CE.AR5, CC BY 4.0)",
+        "stand": "2024"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0124",
+  "source": "ai",
+  "created_at": "2026-06-27T15:21:18+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

@@ -1,0 +1,90 @@
+{
+  "id": "c0106.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Die folgende Tabelle zeigt vereinfachte Daten zu zwei österreichischen Bundesländern (fiktive Werte, orientiert an realen Größenordnungen):\n\n| | Wien | Kärnten |\n|---|---|---|\n| Einwohner:innen (2024) | ca. 2.006.000 | ca. 570.000 |\n| Fläche (km²) | 415 | 9.536 |\n| Buslinien (öffentlich) | 122 | 38 |\n| Hausärzt:innen | ca. 890 | ca. 490 |\n\na) Berechne für Wien und Kärnten: Wie viele Einwohner:innen kommen je auf eine Buslinie? Wie viele auf eine Hausarztpraxis?\nb) Welches Bundesland ist besser mit Bussen versorgt – bezogen auf die Einwohnerzahl? Bezogen auf die Fläche?\nc) Erkläre in zwei Sätzen, warum Vergleiche zwischen Stadt und Land bei der Infrastrukturversorgung schwierig sind.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 8
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "OK",
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.ZEN.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "a) Wien: 2.006.000 ÷ 122 ≈ 16.400 EW/Buslinie; 2.006.000 ÷ 890 ≈ 2.253 EW/Hausarzt. Kärnten: 570.000 ÷ 38 ≈ 15.000 EW/Buslinie; 570.000 ÷ 490 ≈ 1.163 EW/Hausarzt. b) Pro Einwohner:in: Kärnten leicht besser (15.000 vs. 16.400 EW/Linie). Pro Fläche: Wien viel besser (122 Linien auf 415 km² vs. 38 auf 9.536 km²). c) Fläche und Einwohnerzahl ergeben zusammen die Erreichbarkeit (Dichte); in der Stadt sind kurze Wege zum Bus normal, am Land müssen Buslinien riesige Gebiete abdecken, was sie teuer und selten macht – ein Zähler (Linienanzahl) reicht nicht als Vergleichsgröße.",
+    "acceptable_reasoning": "Kleine Rechenfehler akzeptabel (±300). Der Kern liegt auf Teil b) und c).",
+    "rubric": [
+      {
+        "criterion": "Rechnung (a)",
+        "levels": [
+          "Alle 4 Quotienten korrekt berechnet",
+          "2–3 korrekt",
+          "Weniger als 2 korrekt"
+        ]
+      },
+      {
+        "criterion": "Vergleich (b)",
+        "levels": [
+          "Beide Perspektiven (EW und Fläche) korrekt mit unterschiedlichem Ergebnis",
+          "Eine Perspektive korrekt",
+          "Vergleich fehlt oder nur absolute Zahlen"
+        ]
+      },
+      {
+        "criterion": "Erklärung (c)",
+        "levels": [
+          "Erkennt, dass ein Maßstab (EW oder Fläche) allein nicht reicht; erklärt ländliche Nachteile",
+          "Ansatz erkennbar, aber unvollständig",
+          "Keine inhaltliche Erklärung"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Häufiger Fehler: Schüler:innen vergleichen absolute Zahlen (122 > 38) und schließen daraus 'Wien ist viel besser versorgt' – das ist der falsche Maßstab.",
+      "Teil c) ist anspruchsvoll: Schüler:innen sollen erkennen, dass 'Versorgung' von mehreren Indikatoren gleichzeitig abhängt.",
+      "Einheit bei Berechnungen angeben lassen (EW/Buslinie, nicht bloß Zahlen)."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Zentren und Peripherien in Österreich",
+  "competences": [
+    "GWB.US.3.ZEN.03"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "OK",
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0106",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:24+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

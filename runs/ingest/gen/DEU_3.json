@@ -1,0 +1,177 @@
+{
+  "subject": "Deutsch",
+  "klasse": 4,
+  "kompetenzbereich": "Zuhören und Sprechen",
+  "title": "Zwischen den Zeilen: Mehrdeutigkeit, Sprachregister und Präsentation",
+  "kernfrage": "Wie erkennst du, was in einem Text oder Gespräch nicht direkt gesagt wird, und wie passt du deine Sprache bewusst an Situation und Publikum an?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Implizites verstehen, Register wählen, präsentieren",
+        "throughline": "Sprache kommuniziert immer mehr als das Gesagte: Ironie, Implikaturen, Tonfall, Register und nonverbale Signale sind allesamt Träger von Bedeutung. Die 4. Klasse ist der richtige Ort, um diese Schicht bewusst zu machen und auf das eigene Sprechen zurückzuwenden.",
+        "talking_points": [
+          "Was bedeutet es, 'zwischen den Zeilen zu lesen' – und funktioniert das auch beim Hören?",
+          "Woran erkennt man Ironie? (Kontext, Tonfall, Übertreibung, Kontradiktion zum Inhalt)",
+          "Welche sprachlichen Register kennt ihr? (Standard-, Bildungs-, Umgangssprache, Dialekt, Fachsprache) – Wann wählt man welches?",
+          "Was verändert sich an einer mündlichen Präsentation, wenn ihr das Register wechselt?"
+        ],
+        "extensions": [
+          "Kurzpräsentation (2 Minuten) zu einem selbst gewählten Thema: einmal in Umgangssprache, einmal in Bildungssprache – Klasse gibt Feedback zu Wirkung und Verständlichkeit.",
+          "Analyse eines kurzen Redezugs aus einer TV-Diskussion oder einem Podcast: Welche Absicht steckt hinter der gewählten Formulierung?",
+          "Schreiben eines Minimonologs (ca. 60 Wörter) aus der Perspektive einer Figur, die etwas *nicht* direkt sagt, aber klar meint."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "multiple_choice",
+            "prompt": "Lies den folgenden Dialog:\n\n*Lehrerin: „Du hast die Hausaufgaben wieder vergessen."*\n*Schüler: „Ich hatte gestern einen sehr interessanten Nachmittag."*\n\nWas will der Schüler mit seiner Antwort wahrscheinlich ausdrücken?",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "Er erklärt sachlich, warum er die Hausaufgaben nicht gemacht hat.",
+                "Er lenkt vom Thema ab und hofft, dass die Lehrerin die Frage fallen lässt.",
+                "Er antwortet direkt und ehrlich auf den Vorwurf.",
+                "Er gibt zu, dass er die Hausaufgaben absichtlich nicht gemacht hat."
+              ],
+              "select": "one"
+            },
+            "response": { "mode": "choices", "options": ["A", "B", "C", "D"], "select": "one" },
+            "cognitive_level": "analyze",
+            "dimensions": ["ZUH", "SPR"],
+            "serves": [{ "competence_id": "DEU.US.4.ZUH.01", "relation": "exercises" }],
+            "est_minutes": 5,
+            "answer_key": "B. Die Antwort des Schülers ist eine Ausweichstrategie: Er sagt etwas Wahres, das aber nicht auf die implizite Frage 'Warum hast du die Hausaufgaben nicht gemacht?' eingeht. Das ist ein klassisches Beispiel für nicht-kooperatives Sprechen (Grice: Relevanzprinzip verletzt).",
+            "acceptable_reasoning": "Wenn ein/e Schüler:in A wählt und erklärt, der Schüler impliziere, sein Nachmittag habe ihn gehindert – das ist eine sophistiziertere Lesart und akzeptabel, wenn die Ausweichfunktion erklärt wird.",
+            "watch_outs": [
+              "C ist eine naive Lesart, die den impliziten Kommunikationsgehalt ignoriert – guter Anlass, über Grice'sche Konversationsmaximen (vereinfacht) zu sprechen.",
+              "D ist zu direkt – der Schüler *gibt nichts* zu; er weicht aus."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "text_analysis",
+            "prompt": "Lies die folgenden Sätze. Entscheide bei jedem: Wird die Aussage **ernst gemeint** oder **ironisch** verwendet? Schreibe auf, woran du es erkennst.\n\na) *„Das war ja eine atemberaubende Unterrichtsstunde"* – gesagt von einer Schülerin, nachdem sie 45 Minuten lang Arbeitsblätter ausgefüllt hat.\nb) *„Natürlich habe ich Zeit, heute noch zehn Seiten zu lesen"* – getippt um 23 Uhr.\nc) *„Was für ein Wetter!"* – gesagt von jemandem, der mit einem Regenschirm ins Zimmer kommt.",
+            "payload": null,
+            "response": { "mode": "lines", "n": 6 },
+            "cognitive_level": "analyze",
+            "dimensions": ["ZUH", "SPR"],
+            "serves": [{ "competence_id": "DEU.US.4.ZUH.01", "relation": "exercises" }],
+            "est_minutes": 8,
+            "answer_key": "Alle drei sind ironisch gemeint. a) 'atemberaubend' steht in Kontrast zur beschriebenen Monotonie (Arbeitsblätter). b) 'Natürlich' + Uhrzeit ergeben eine unmögliche Situation. c) Die Situation (Regen, nasser Schirm) widerspricht einer positiven Bewertung des Wetters. In allen Fällen: Kontextwissen + Tonfall/Situation machen die Ironie erkennbar.",
+            "acceptable_reasoning": "Schüler:innen, die b) als ernst werten und begründen (Sarkasmus auf Kosten eigener Erschöpfung), liegen im Grenzbereich – Diskussionswürdig.",
+            "watch_outs": [
+              "Ironie im geschriebenen Text ist schwerer zu erkennen als im gesprochenen (kein Tonfall) – darauf explizit hinweisen.",
+              "Manche Schüler:innen erkennen Ironie intuitiv, können aber nicht erklären, *woran* – die Erklärung ist hier der Kern der Aufgabe."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "matching",
+            "prompt": "Ordne jedem Sprachregister auf der linken Seite eine typische Kommunikationssituation auf der rechten Seite zu.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Standardsprache",
+                "Bildungssprache",
+                "Umgangssprache",
+                "Dialekt",
+                "Fachsprache"
+              ],
+              "right": [
+                "Gespräch mit Großeltern auf einem Familientreffen in Niederösterreich",
+                "Mündliche Prüfung oder offizielle Rede",
+                "Erklärung eines Arztes an eine Kollegin über eine Diagnose",
+                "Wissenschaftlicher Vortrag oder Schulaufsatz",
+                "Gespräch mit Freunden in der Pause"
+              ]
+            },
+            "response": { "mode": "lines", "n": 5 },
+            "cognitive_level": "understand",
+            "dimensions": ["ZUH", "SPR"],
+            "serves": [{ "competence_id": "DEU.US.4.ZUH.02", "relation": "exercises" }],
+            "est_minutes": 6,
+            "answer_key": "Standardsprache → mündliche Prüfung/offizielle Rede. Bildungssprache → wissenschaftlicher Vortrag/Schulaufsatz. Umgangssprache → Gespräch mit Freunden in der Pause. Dialekt → Gespräch mit Großeltern. Fachsprache → Arzt an Kollegin über Diagnose.",
+            "acceptable_reasoning": "Standard- und Bildungssprache können in manchen Situationen überlappen – wenn Schüler:innen begründen, warum sie tauschen, akzeptieren.",
+            "watch_outs": [
+              "Häufige Verwechslung: Bildungssprache ≠ Standardsprache. Bildungssprache ist spezifischer: abstrakte Nomen, Passivkonstruktionen, Fachbegriffe in nicht-fachlichem Kontext.",
+              "Fachsprache wird oft mit Bildungssprache gleichgesetzt – Unterschied: Fachsprache ist domänenspezifisch und unter Fachleuten präziser als umgangssprachlich."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "text_production",
+            "prompt": "Formuliere denselben Sachverhalt zweimal: einmal in **Umgangssprache**, einmal in **Bildungssprache**.\n\n**Sachverhalt:** Ein Jugendlicher erklärt, warum er lieber Podcasts hört als Bücher liest.\n\n*Version A (Umgangssprache):* Schreibe, wie der Jugendliche das einem Freund erzählen würde.\n*Version B (Bildungssprache):* Schreibe, wie er das in einem Schulaufsatz formulieren würde.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 55 },
+            "cognitive_level": "create",
+            "dimensions": ["ZUH", "SPR"],
+            "serves": [{ "competence_id": "DEU.US.4.ZUH.02", "relation": "deepens" }],
+            "est_minutes": 12,
+            "answer_key": "Version A (Muster): 'Also ehrlich gesagt – Podcasts sind halt viel entspannter. Du kannst dabei Wäsche falten oder spazieren gehen. Mit nem Buch musst du einfach dasitzen und konzentrieren, das ist mir zu langweilig.' Version B (Muster): 'Audiobeiträge wie Podcasts bieten den Vorteil, dass sie parallel zu anderen Tätigkeiten rezipiert werden können. Im Gegensatz dazu erfordert die Lektüre von Büchern eine hohe visuelle Konzentration, was für viele Jugendliche als zeitintensiver empfunden wird.'",
+            "acceptable_reasoning": "Die genauen Inhalte sind frei; entscheidend ist der erkennbare Registerwechsel.",
+            "watch_outs": [
+              "Viele Schüler:innen schreiben Version B nur leicht förmlicher als Version A – konkrete Merkmale der Bildungssprache nennen: nominalisierte Verben, Passiv, komplexere Satzgefüge.",
+              "Version A darf Dialektfärbungen enthalten, sollte aber verständlich bleiben – ist kein Diktat-Fehler."
+            ],
+            "rubric": [
+              { "criterion": "Registerwechsel erkennbar", "levels": ["Kaum Unterschied zwischen A und B", "Ansatzweiser Unterschied in Wortwahl oder Satzlänge", "Klarer Unterschied in Wortwahl, Syntax und Stil"] },
+              { "criterion": "Bildungssprache: Merkmale", "levels": ["Keine typischen Merkmale", "1–2 Merkmale (z.B. Nominalisierung oder Passiv)", "Mehrere Merkmale konsequent verwendet"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "speaking_task",
+            "prompt": "Bereite eine **Kurzpräsentation** (2–3 Minuten) zu einem der folgenden Themen vor. Du präsentierst vor der Klasse.\n\n**Themen (wähle eines):**\n- Warum ich ein bestimmtes Buch, einen Film oder eine Serie empfehle (oder ausdrücklich nicht empfehle)\n- Ein Thema aus dem Unterricht, das mich besonders beschäftigt hat\n\n**Vorbereitung:** Notiere hier Stichpunkte für deinen Einstieg, deine zwei bis drei Hauptpunkte und deinen Abschluss. Überlege: Welches Register passt zu diesem Anlass?",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 50 },
+            "cognitive_level": "create",
+            "dimensions": ["ZUH"],
+            "serves": [{ "competence_id": "DEU.US.4.ZUH.03", "relation": "exercises" }],
+            "est_minutes": 15,
+            "answer_key": "Individuelle Antworten. Beurteilung: Strukturiertheit der Stichpunkte (Einstieg / Hauptpunkte / Schluss), erkennbare Registerüberlegung, Vollständigkeit der Planung. Die mündliche Präsentation selbst wird im Unterricht bewertet.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen neigen dazu, zu viele Details zu notieren und dann vorzulesen – darauf hinweisen, dass Stichpunkte zum freien Sprechen animieren sollen, nicht zum Ablesen.",
+              "Registerentscheidung explizit einfordern ('Hast du überlegt, welches Register passt?') – wird sonst übergangen."
+            ],
+            "rubric": [
+              { "criterion": "Struktur der Notizen", "levels": ["Keine erkennbare Struktur", "Ansatzweise Gliederung (Einstieg oder Schluss fehlt)", "Dreiteilig (Einstieg / Hauptpunkte / Schluss) erkennbar"] },
+              { "criterion": "Registerreflexion", "levels": ["Keine Überlegung zum Register", "Register benannt, aber nicht begründet", "Register benannt und situationsangemessen begründet"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "open_response",
+            "prompt": "Nach den Präsentationen: Wähle **eine** der Präsentationen deiner Mitschüler:innen aus und formuliere **wertschätzendes Feedback** in drei Schritten:\n\n1. **Gelungen:** Was hat dir besonders gut gefallen und warum?\n2. **Verbesserungsvorschlag:** Was könnte noch klarer oder wirkungsvoller sein?\n3. **Frage:** Stelle eine echte Frage zum Inhalt oder zur Gestaltung.\n\nSchreibe in vollständigen Sätzen.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 45 },
+            "cognitive_level": "evaluate",
+            "dimensions": ["ZUH", "SPR"],
+            "serves": [{ "competence_id": "DEU.US.4.ZUH.01", "relation": "deepens" }],
+            "est_minutes": 8,
+            "answer_key": "Individuelle Antworten. Bewertung: (1) Das Gelungene ist spezifisch (nicht 'war gut', sondern warum). (2) Der Vorschlag ist konstruktiv und bezieht sich auf den Inhalt oder die Präsentation, nicht auf die Person. (3) Die Frage ist offen und zeigt echtes Interesse.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Pauschales Lob ('war super') nicht als ausreichende Antwort für Punkt 1 akzeptieren.",
+              "Verbesserungsvorschlag: Darauf achten, dass er sich auf die Präsentation bezieht, nicht auf persönliche Eigenschaften ('du redest zu leise' → besser: 'die Lautstärke könnte für das Publikum im hinteren Bereich erhöht werden')."
+            ],
+            "rubric": [
+              { "criterion": "Spezifität und Konstruktivität", "levels": ["Pauschal und allgemein", "Ein Aspekt spezifisch, der andere noch pauschal", "Alle drei Schritte spezifisch, konstruktiv und wertschätzend formuliert"] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

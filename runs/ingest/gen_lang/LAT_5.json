@@ -1,0 +1,202 @@
+{
+  "subject": "Latein",
+  "klasse": 4,
+  "kompetenzbereich": "Sprach- und textbezogene Kompetenzen",
+  "title": "Passiv und Komparation: Formen erkennen und übersetzen",
+  "kernfrage": "Wie verändert das Passiv den Blick auf eine Handlung — und wie drückt Latein Steigerung aus?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Passivformen und Komparation im Überblick",
+        "throughline": "Schüler:innen lernen die aktiven und passiven Indikativformen im Präsens und Perfekt zu unterscheiden und zu übersetzen; parallel dazu werden Adjektiv-Steigerungsformen (Komparativ und Superlativ) eingeführt und in Texten angewendet. Beides sind typische Strukturen des Klasse-4-Lehrplans.",
+        "talking_points": [
+          "Aktiv vs. Passiv: 'Romanus Galliam vincit' (Aktiv: Der Römer besiegt Gallien) vs. 'Gallia a Romano vincitur' (Passiv: Gallien wird vom Römer besiegt). Der Fokus verschiebt sich — im Passiv steht das Objekt im Vordergrund. Warum wählt ein Autor das eine oder andere?",
+          "Passivzeichen im Präsens: Die Personalendungen ändern sich: -r (1. Sg.), -ris, -tur, -mur, -mini, -ntur. Das '-r' als Passiv-Signal einprägen.",
+          "Komparation: Positiv → Komparativ (-ior/-ius) → Superlativ (-issimus/-a/-um). Vergleichssatz mit 'quam' (als) einführen.",
+          "Textstrategie: In einem Text zuerst Verbformen markieren (Aktiv/Passiv), dann Adjektive und ihre Steigerungsformen — erst dann übersetzen."
+        ],
+        "extensions": [
+          "Erweiterung Passiv: Das Perfekt Passiv (PPP + esse) kurz vorstellen: 'Gallia victa est' (Gallien wurde besiegt / ist besiegt worden) — für Schüler:innen, die früher fertig sind.",
+          "Komparation im Deutschen vs. Latein: Vergleich der Superlativbildung (schnell → schneller → schnellst; celer → celerior → celerrimus). Unregelmäßige Formen (bonus → melior → optimus) für Interessierte.",
+          "Stilübung: Schüler:innen schreiben einen Satz aktiv und wandeln ihn ins Passiv um — auf Latein und auf Deutsch."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "table_fill",
+            "prompt": "Fülle die Passivformen von 'amare' (Infinitiv Präsens Passiv: amari) im Präsens Indikativ Passiv aus.\n\n| Person | Aktiv | Passiv |\n|---|---|---|\n| 1. Sg. | amo | |\n| 2. Sg. | amas | |\n| 3. Sg. | amat | amatur |\n| 1. Pl. | amamus | |\n| 2. Pl. | amatis | |\n| 3. Pl. | amant | |",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": ["Person", "Aktiv", "Passiv"],
+              "rows": 6
+            },
+            "cognitive_level": "remember",
+            "dimensions": ["SPR"],
+            "serves": [
+              {"competence_id": "LAT.US.4.SPR.03", "relation": "exercises"}
+            ],
+            "est_minutes": 5,
+            "answer_key": "1. Sg.: amor | 2. Sg.: amaris | 3. Sg.: amatur | 1. Pl.: amamur | 2. Pl.: amamini | 3. Pl.: amantur",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "1. Sg. Passiv: 'amor' (nicht 'amor') — aber Homonymie mit amor (= die Liebe, Subst.) ist eine klassische Falle: 'amor' kann sowohl 'ich werde geliebt' als auch 'die Liebe' bedeuten — nur der Kontext entscheidet.",
+              "2. Pl.: amamini — diese Form ist ungewöhnlich und wird oft falsch gebildet; explizit einprägen.",
+              "Das '-r'-Signal konsequent betonen: jede Passivform endet auf -r oder enthält -r-."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "translation",
+            "prompt": "Übersetze die folgenden Sätze ins Deutsche. Gib jeweils an, ob das Verb Aktiv (A) oder Passiv (P) ist.\n\n1. Caesar Galliam vincit.\n2. Gallia a Caesare vincitur.\n3. Discipuli a magistro laudantur.\n4. Magister discipulos diligentes laudat.\n5. Urbs magna a Romanis aedificatur.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 10
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["SPR"],
+            "serves": [
+              {"competence_id": "LAT.US.4.SPR.03", "relation": "exercises"}
+            ],
+            "est_minutes": 8,
+            "answer_key": "1. Caesar besiegt Gallien. (A) | 2. Gallien wird von Caesar besiegt. (P) | 3. Die Schüler werden vom Lehrer gelobt. (P) | 4. Der Lehrer lobt die fleißigen Schüler. (A) | 5. Eine große Stadt wird von den Römern gebaut. (P)",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Agens-Angabe: 'a Caesare' = von Caesar — das 'a/ab' + Ablativ als Ausdruck des Urhebers im Passiv einprägen.",
+              "Satz 3 und 4 kontrastieren Passiv und Aktiv mit denselben Beteiligten — das ist didaktisch wertvoll.",
+              "Diligentes (fleißig, Akkusativ Plural) — Adjektivkongruenz im Akkusativ Plural üben."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "table_fill",
+            "prompt": "Bilde Komparativ und Superlativ der folgenden Adjektive und übersetze alle drei Formen ins Deutsche.\n\n| Positiv | Bedeutung | Komparativ | Superlativ |\n|---|---|---|---|\n| magnus | groß | | |\n| longus | lang | | |\n| pulcher | schön | | |\n| fortis | tapfer/stark | | |",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": ["Positiv (Dt.)", "Komparativ (Lat. + Dt.)", "Superlativ (Lat. + Dt.)"],
+              "rows": 4
+            },
+            "cognitive_level": "apply",
+            "dimensions": ["SPR"],
+            "serves": [
+              {"competence_id": "LAT.US.4.SPR.04", "relation": "exercises"}
+            ],
+            "est_minutes": 7,
+            "answer_key": "magnus (groß) → maior (größer) → maximus (am größten / sehr groß) | longus (lang) → longior (länger) → longissimus (am längsten) | pulcher (schön) → pulchrior (schöner) → pulcherrimus (am schönsten) | fortis (tapfer) → fortior (tapferer) → fortissimus (am tapfersten)",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Magnus hat einen unregelmäßigen Komparativ: maior (nicht 'magnior') und Superlativ maximus — auswendig lernen!",
+              "Pulcherrimus: der Superlativ auf -errimus bei Adjektiven auf -er ist eine Besonderheit; nicht '-issimus' annehmen.",
+              "Fortissimus ist regelmäßig (-issimus) — als Kontrast zu pulcherrimus zeigen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "text_analysis",
+            "prompt": "Lies den folgenden lateinischen Text. Unterstreiche alle passiven Verbformen und alle Komparativ- oder Superlativformen. Schreibe sie mit Analyse (Passiv: Person/Numerus/Tempus; Steigerung: Grad + Grundform) in eine Tabelle.\n\n---\nRoma, urbs maxima Italiae, ab omnibus laudatur. Muri altissimi a civibus aedificantur. Via Appia, longissima viarum, a Romanis munita est. Caesar, fortissimus imperatorum, a militibus suis amatur. Hostes, tamen, a Romanis fortiores non timent.\n---\n\n(munita est = wurde befestigt / ist befestigt worden; hostes = die Feinde; tamen = jedoch)",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": ["Form im Text", "Art (Passiv / Steigerung)", "Analyse"],
+              "rows": 8
+            },
+            "cognitive_level": "analyze",
+            "dimensions": ["SPR"],
+            "serves": [
+              {"competence_id": "LAT.US.4.SPR.03", "relation": "exercises"}
+            ],
+            "est_minutes": 10,
+            "answer_key": "laudatur: Passiv, 3. Sg. Präs. Pass. (wird gelobt) | aedificantur: Passiv, 3. Pl. Präs. Pass. (werden gebaut) | munita est: Passiv, 3. Sg. Perf. Pass. (wurde befestigt) | amatur: Passiv, 3. Sg. Präs. Pass. (wird geliebt) | maxima: Superlativ von magnus (die größte) | altissimi: Superlativ von altus (die höchsten) | longissima: Superlativ von longus (die längste) | fortissimus: Superlativ von fortis (der tapferste) | fortiores: Komparativ von fortis (tapferer — als die Römer tapfer sind)",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "munita est: Das Perfekt Passiv (PPP + esse) ist für Klasse 4 einzuführen — kurz erklären, falls noch nicht bekannt.",
+              "fortiores: Komparativ (nicht Superlativ!) — 'tapferer' im Sinne 'die Feinde sind tapferer als die Römer' — Vergleichssatz ohne 'quam', weil Ablativus comparationis möglich ist ('Romanis' im Ablativ).",
+              "Der Text enthält bewusst beide Formen (Passiv + Komparation) im selben Kontext — das übt die simultane Identifikation mehrerer Strukturen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "ordering",
+            "prompt": "Bringe die Satzteile in eine sinnvolle Reihenfolge und übersetze den Satz. Beide Sätze sollen im Passiv stehen.\n\na) laudantur / a magistro / discipulae / diligentissimae\nb) munita est / a Romanis / via / longissima",
+            "payload": {
+              "kind": "ordering",
+              "items": ["laudantur", "a magistro", "discipulae", "diligentissimae", "munita est", "a Romanis", "via", "longissima"]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "apply",
+            "dimensions": ["SPR"],
+            "serves": [
+              {"competence_id": "LAT.US.4.SPR.04", "relation": "exercises"}
+            ],
+            "est_minutes": 6,
+            "answer_key": "a) Discipulae diligentissimae a magistro laudantur. — Die fleißigsten Schülerinnen werden vom Lehrer gelobt. | b) Via longissima a Romanis munita est. — Der längste Weg wurde von den Römern befestigt.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Andere Wortstellungen sind syntaktisch möglich — wichtig ist, dass Kongruenz (discipulae diligentissimae; via longissima) und das agens-a (a magistro, a Romanis) erhalten bleiben.",
+              "Discipulae ist Nominativ Plural (Femininum) — Superlativ diligentissimae muss kongruieren (Nom. Pl. f.)."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "open_response",
+            "prompt": "Überlege und erkläre auf Deutsch: Warum wählt ein Autor manchmal das Passiv, statt aktiv zu formulieren? Gib zwei mögliche Gründe an und illustriere jeden mit einem Beispiel (auf Latein oder Deutsch).",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 40
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": ["SPR"],
+            "serves": [
+              {"competence_id": "LAT.US.4.SPR.02", "relation": "exercises"}
+            ],
+            "est_minutes": 8,
+            "answer_key": "Mögliche Gründe: 1) Der Handelnde ist unbekannt oder unwichtig — z. B. 'Roma aedificata est' (Rom wurde gebaut — von wem, bleibt offen). 2) Der Fokus soll auf dem Betroffenen liegen, nicht auf dem Handelnden — z. B. 'Caesar laudatur' (Caesar wird gelobt — wer ihn lobt, ist sekundär). 3) Stilistik: Distanz und Objektivität im Bericht — häufig in historischen Texten und Wissenschaftssprache.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Keine einzige 'richtige' Antwort — kreative und sinnvolle Überlegungen wertschätzen.",
+              "Verbindung zur modernen Sprache: auch im Deutschen und Englischen wird das Passiv für Objektivität genutzt (z. B. Wissenschaftstexte, Zeitungssprache — 'Es wurde beschlossen, dass...').",
+              "Diese Aufgabe fördert metasprachliches Bewusstsein — ein wichtiges Ziel des Lateinunterrichts."
+            ],
+            "rubric": [
+              {
+                "criterion": "Begründungstiefe",
+                "levels": [
+                  "Zwei plausible Gründe mit konkreten Beispielen.",
+                  "Ein plausibler Grund mit Beispiel.",
+                  "Allgemeine Aussage ohne Begründung oder Beispiel."
+                ]
+              },
+              {
+                "criterion": "Sprachreflexion",
+                "levels": [
+                  "Verbindung zur deutschen oder englischen Passivverwendung hergestellt.",
+                  "Nur auf das Lateinische bezogen.",
+                  "Kein Sprachbewusstsein erkennbar."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

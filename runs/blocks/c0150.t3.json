@@ -1,0 +1,68 @@
+{
+  "id": "c0150.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Ergänze die Tabelle mit den fehlenden Informationen zu IPv4 und IPv6. Nutze dein Wissen aus dem Unterricht.",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Merkmal",
+        "IPv4",
+        "IPv6"
+      ],
+      "rows": 5
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "WV"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "INF.OS.5.INF2.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Adresslänge: IPv4 = 32 Bit, IPv6 = 128 Bit. Schreibweise: IPv4 = 4 Dezimalzahlen, getrennt durch Punkte (z. B. 192.168.1.1), IPv6 = 8 Gruppen zu je 4 Hexadezimalziffern, getrennt durch Doppelpunkte (z. B. 2001:0db8:85a3::8a2e:0370:7334). Maximale Adresszahl: IPv4 ≈ 4,3 Milliarden, IPv6 ≈ 3,4 × 10^38. Grund für IPv6: Erschöpfung des IPv4-Adressraums. Beispiel-Adresse: Plausible Beispiele akzeptieren.",
+    "acceptable_reasoning": "Exakte Potenzen sind nicht erforderlich, aber die Größenordnung (Milliarden vs. undenkbar viele) muss deutlich werden.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "IPv4-Adressen sind NICHT hexadezimal – Schüler:innen verwechseln manchmal die Schreibweise.",
+      "Die Erschöpfung des IPv4-Raums ist real: Seit 2011 werden keine neuen Blöcke mehr vergeben (mit NAT als Umgehungslösung).",
+      "IPv6-Adressen dürfen aufeinanderfolgende Nullblöcke als '::' abkürzen – das verwirrt häufig."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Informatik",
+  "klasse": 5,
+  "kompetenzbereich": "Informatiksysteme",
+  "competences": [
+    "INF.OS.5.INF2.04"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "WV"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0150",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:26+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

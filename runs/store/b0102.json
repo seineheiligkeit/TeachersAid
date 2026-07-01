@@ -1,0 +1,130 @@
+{
+  "id": "b0102",
+  "stage": "brainstorm",
+  "status": "approved",
+  "source": "ai",
+  "created_at": "2026-06-27T12:02:51+00:00",
+  "updated_at": "2026-06-27T12:02:51+00:00",
+  "title": "Mathematik 4. Kl. — Daten und Zufall",
+  "note": "Master-Library-Beispiel (kuratiert).",
+  "request": {
+    "subject": "Mathematik",
+    "klasse": 4,
+    "stufe": "Unterstufe",
+    "schulform": null,
+    "topic_raw": "Daten und Zufall",
+    "envelope": "doppelstunde",
+    "options": {}
+  },
+  "resolution": {
+    "fassung": {
+      "kurztitel": "AHS-Lehrplan (konsolidiert)",
+      "bgbl": "BGBl. II Nr. 204/2024",
+      "doknr": "NOR40264237",
+      "valid_from": "2024-09-01",
+      "valid_to": "2026-08-31"
+    },
+    "subject": "Mathematik",
+    "klasse": 4,
+    "matched_kompetenzbereiche": [
+      "4: Daten und Zufall"
+    ],
+    "grade_check": true,
+    "competences": [
+      {
+        "id": "MAT.US.4.DAT.01",
+        "kompetenzbereich": "4: Daten und Zufall",
+        "klasse": 4,
+        "text": "Kreuztabellen erstellen und interpretieren,",
+        "source_ref": "MATHEMATIK / 4. Klasse / 4: Daten und Zufall",
+        "dimensions": [],
+        "uebergreifende_themen": [
+          10
+        ]
+      },
+      {
+        "id": "MAT.US.4.DAT.02",
+        "kompetenzbereich": "4: Daten und Zufall",
+        "klasse": 4,
+        "text": "Wahrscheinlichkeiten bei ein- und zweistufigen Zufallsexperimenten ermitteln und interpretieren.",
+        "source_ref": "MATHEMATIK / 4. Klasse / 4: Daten und Zufall",
+        "dimensions": [],
+        "uebergreifende_themen": [
+          4,
+          10
+        ]
+      }
+    ],
+    "notes": []
+  },
+  "plan": {
+    "subject": "Mathematik",
+    "klasse": 4,
+    "topic": "Daten und Zufall",
+    "kernfrage": "Was sollte man über 'Daten und Zufall' wirklich verstehen?",
+    "competence_ids": [
+      "MAT.US.4.DAT.01",
+      "MAT.US.4.DAT.02"
+    ],
+    "dimensions_targeted": [
+      "MOD"
+    ],
+    "threads": [
+      "MAT.US.4.DAT.01: Kreuztabellen erstellen und interpretieren,…",
+      "MAT.US.4.DAT.02: Wahrscheinlichkeiten bei ein- und zweistufigen Zufallsexperimenten erm…"
+    ],
+    "depth_target": {
+      "min_at_or_above": {
+        "level": "analyze",
+        "count": 2
+      },
+      "require_resource_independent_minutes": 60,
+      "dimensions_required": [
+        "MOD"
+      ]
+    },
+    "section_specs": [
+      {
+        "id": "sec.1",
+        "title": "4: Daten und Zufall",
+        "throughline": "Kreuztabellen erstellen und interpretieren,",
+        "block_specs": [
+          {
+            "suggested_id": "01.b1",
+            "kind": "open_response",
+            "cognitive_level": "understand",
+            "dimension": "MOD",
+            "serves_competence_id": "MAT.US.4.DAT.01",
+            "est_minutes": 10,
+            "intent": "Grundidee in eigenen Worten erklären (Bezug: 4: Daten und Zufall)"
+          }
+        ]
+      },
+      {
+        "id": "sec.2",
+        "title": "4: Daten und Zufall",
+        "throughline": "Wahrscheinlichkeiten bei ein- und zweistufigen Zufallsexperimenten ermitteln und interpretieren.",
+        "block_specs": [
+          {
+            "suggested_id": "02.b2",
+            "kind": "open_response",
+            "cognitive_level": "apply",
+            "dimension": "MOD",
+            "serves_competence_id": "MAT.US.4.DAT.02",
+            "est_minutes": 10,
+            "intent": "das Konzept auf eine neue Alltagssituation anwenden (Bezug: 4: Daten und Zufall)"
+          }
+        ]
+      }
+    ],
+    "minutes_budget": 100,
+    "notes": []
+  },
+  "content": null,
+  "artifacts": null,
+  "verify_problems": [],
+  "verify_warnings": [],
+  "parent_id": null,
+  "feedback": [],
+  "error": null
+}

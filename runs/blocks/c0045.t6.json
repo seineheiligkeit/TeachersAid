@@ -1,0 +1,80 @@
+{
+  "id": "c0045.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "enactive",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Geh zu einem Gegenstand im Klassenzimmer oder Schulgebäude (z. B. Türklinke, Fensterrahmen, Tischplatte) und untersuche ihn genau. Notiere: (a) Aus welchen verschiedenen Materialien besteht er? (b) Welche Eigenschaft hat jedes Material, die es für seinen Teil des Gegenstands geeignet macht? (c) Gibt es einen Teil, der aus einem anderen Material hergestellt werden könnte? Begründe.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "ENT"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "TED.US.1.ENT.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Beispiel Türklinke: Griff aus Metall (Stahl/Aluminium) — hart, hygienisch reinigbar, formstabil; Schrauben aus Stahl — Festigkeit; Rosette (Abdeckung) manchmal aus Kunststoff — günstiger, leichter. Alternativmaterial z. B.: Griff aus Holz (wärmer anzufassen, aber weniger hygienisch). Bewertung: Schüler:innen sollen mindestens 2 verschiedene Materialien erkennen und je eine Eigenschaft begründet nennen.",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Materialvielfalt erkannt",
+        "levels": [
+          "Nur ein Material genannt",
+          "Mindestens zwei verschiedene Materialien korrekt identifiziert"
+        ]
+      },
+      {
+        "criterion": "Eigenschaft–Funktion-Verknüpfung",
+        "levels": [
+          "Eigenschaft nur allgemein",
+          "Eigenschaft präzise und Funktion erklärt"
+        ]
+      },
+      {
+        "criterion": "Reflexion Alternativmaterial",
+        "levels": [
+          "Kein Alternativvorschlag",
+          "Sinnvoller Alternativvorschlag mit Begründung"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Manche Schüler:innen beschreiben nur die Farbe, nicht das Material — nachfragen.",
+      "Teil (c) kann offen bleiben, wenn Schüler:innen kein sinnvolles Alternativmaterial finden — dann gemeinsam im Plenum besprechen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Technik und Design",
+  "klasse": 1,
+  "kompetenzbereich": "Entwicklung",
+  "competences": [
+    "TED.US.1.ENT.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "ENT"
+  ],
+  "modality": "enactive",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0045",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

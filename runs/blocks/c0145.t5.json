@@ -1,0 +1,91 @@
+{
+  "id": "c0145.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Stell dir vor, du bist Mitglied einer fiktiven 'Zukunftskommission', die der österreichischen Regierung Empfehlungen zur Bewältigung des demographischen Wandels erarbeiten soll. Euch stehen drei Handlungsfelder zur Verfügung:\n\n1. **Familienpolitik**: Ausbau der Kinderbetreuung, finanzielle Anreize für Familien → mehr Geburten langfristig\n2. **Migrationspolitik**: Gezielte Zuwanderung qualifizierter Fachkräfte → schnellere Wirkung auf den Arbeitsmarkt\n3. **Arbeitsmarktpolitik**: Förderung der Erwerbstätigkeit älterer Menschen und Frauen → höhere Erwerbsquote\n\nWähle zwei dieser Handlungsfelder und begründe, warum du sie priorisierst. Gehe dabei auf Wirkungszeiträume, gesellschaftliche Akzeptanz und mögliche Zielkonflikte ein.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Empfehle zwei von drei Handlungsfeldern an die Zukunftskommission und begründe deine Wahl."
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 65.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "HAN",
+      "REF"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.OS.7.DEM.03",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "GWB.OS.7.DEM.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Keine Musterlösung: Alle Kombinationen sind akzeptabel, sofern gut begründet. Zentrale Aspekte: Familienpolitik wirkt erst in 20+ Jahren; Migration wirkt kurzfristig, kann aber zu gesellschaftlichen Spannungen führen; Arbeitsmarktpolitik ist relativ schnell wirksam, stößt aber auf Widerstand (körperliche Belastung). Zielkonflikte: Migration vs. gesellschaftliche Akzeptanz; Familienpolitik vs. Kosten. Gut begründete Antworten berücksichtigen Zeithorizonte.",
+    "acceptable_reasoning": "Jede gut argumentierte Wahl ist akzeptabel.",
+    "rubric": [
+      {
+        "criterion": "Wahl und Begründung",
+        "levels": [
+          "Keine Begründung",
+          "Wahl mit oberflächlicher Begründung",
+          "Wahl mit Bezug auf Wirkungszeitraum oder Akzeptanz",
+          "Wahl mit differenzierter Abwägung von Wirkung, Zeitraum und Zielkonflikten"
+        ]
+      },
+      {
+        "criterion": "Zielkonflikte",
+        "levels": [
+          "Nicht thematisiert",
+          "Ein Konflikt benannt",
+          "Zwei Konflikte benannt",
+          "Konflikte erklärt und in Entscheidung integriert"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen wählen oft 'alles davon' – darauf hinweisen, dass Priorisierung Ressourcen voraussetzt.",
+      "Wirkungszeiträume werden oft ignoriert – explizit einfordern."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 7,
+  "kompetenzbereich": "Demographische Entwicklung und gesellschaftspolitische Implikationen beurteilen",
+  "competences": [
+    "GWB.OS.7.DEM.03",
+    "GWB.OS.7.DEM.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "HAN",
+    "REF"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0145",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:23+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

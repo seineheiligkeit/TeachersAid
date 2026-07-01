@@ -1,0 +1,71 @@
+{
+  "id": "c0084.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Wahr oder falsch? Begründe jeweils.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Zwei verschiedene lineare Funktionen können denselben y-Achsenabschnitt haben.",
+        "Eine lineare Funktion mit m = 0 ist eine waagrechte Gerade.",
+        "Die Gerade y = 3x + 5 hat einen steileren Anstieg als y = 5x + 3."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "BEG",
+      "DAR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.4.VAR.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "1) Wahr: z. B. y=2x+5 und y=−x+5 haben beide b=5. 2) Wahr: y=0·x+b=b, konstanter Wert. 3) Falsch: m=3 < m=5, y=5x+3 ist steiler.",
+    "acceptable_reasoning": "Steigung ablesen (Koeffizient vor x), Beispiele oder Gegenbeispiele nennen.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Aussage 3: Steigung mit y-Achsenabschnitt verwechseln (3 und 5 tauschen die Rollen in beiden Gleichungen).",
+      "Aussage 2: m=0 als ‚keine Funktion' missverstehen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Mathematik",
+  "klasse": 4,
+  "kompetenzbereich": "2: Variablen und Funktionen",
+  "competences": [
+    "MAT.US.4.VAR.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "BEG",
+    "DAR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0084",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:18+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

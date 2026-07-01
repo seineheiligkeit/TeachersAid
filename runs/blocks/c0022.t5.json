@@ -1,0 +1,78 @@
+{
+  "id": "c0022.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Ein Maschinenteil soll für ein Ersatzteilkatalog dokumentiert werden. Der Konstrukteur überlegt, ob er (A) ein einziges Schrägbild oder (B) drei orthogonale Risse (Grundriss, Aufriss, Kreuzriss) in die Dokumentation aufnimmt.\n\nWelche Variante empfiehlst du für die technische Dokumentation und welche für die Verständnishilfe im Katalog? Begründe deine Empfehlung mit den spezifischen Vor- und Nachteilen beider Darstellungsformen.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Wähle für jede Situation die geeignetere Darstellung und begründe geometrisch."
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "H1"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GEZ.US.4.PRO.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "Technische Dokumentation: Drei orthogonale Risse — maßstabsgetreu, eindeutig, alle Maße ableitbar, Normenkonform (ÖNORM/ISO). Verständnishilfe: Schrägbild — gibt räumlichen Eindruck, leichter lesbar für Nicht-Fachleute, aber keine genauen Maße ablesbar. Ideallösung: beide kombinieren.",
+    "acceptable_reasoning": "Schüler:innen, die auch die Kombination beider Darstellungen als beste Lösung nennen, erhalten vollen Punkt.",
+    "rubric": [
+      {
+        "criterion": "Technische Dokumentation",
+        "levels": [
+          "Falsche Wahl",
+          "Richtige Wahl ohne Begründung",
+          "Richtige Wahl mit geometrischer Begründung"
+        ]
+      },
+      {
+        "criterion": "Verständnishilfe",
+        "levels": [
+          "Falsche Wahl",
+          "Richtige Wahl ohne Begründung",
+          "Richtige Wahl mit geometrischer Begründung"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen tendieren dazu, das Schrägbild für alles zu bevorzugen — herausarbeiten, dass es Maße verzerrt.",
+      "Den Normbezug (ISO-Risse in technischen Zeichnungen) als Motivation für das Risszeichen-System einbringen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Projektionen und Risse (I3)",
+  "competences": [
+    "GEZ.US.4.PRO.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "H1"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0022",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

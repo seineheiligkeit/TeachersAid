@@ -1,0 +1,80 @@
+{
+  "id": "c0041.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Wähle ein Lied, das du magst (es kann auf Deutsch, Englisch oder einer anderen Sprache sein). Schreibe:\n– den Titel und worum es im Text geht (2–3 Sätze)\n– warum du dieses Lied ausdrucksvoll findest oder was dich daran bewegt\n– welche Stimmqualität (laut/leise, schnell/langsam, hell/dunkel) zum Inhalt des Liedes passt",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 40.0
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "SIN"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MUS.US.1.SIN.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Offene Antwort; Bewertung: Liedinhalt korrekt zusammengefasst, persönliche Aussage zum Ausdruck, Stimmqualität mit Inhalt in Beziehung gesetzt.",
+    "acceptable_reasoning": "Jedes Lied akzeptabel; Qualität der Begründung zählt, nicht die Liedwahl.",
+    "rubric": [
+      {
+        "criterion": "Inhaltserfassung",
+        "levels": [
+          "fehlend oder falsch",
+          "korrekte Zusammenfassung"
+        ]
+      },
+      {
+        "criterion": "Persönlicher Bezug",
+        "levels": [
+          "nur 'gefällt mir'",
+          "konkrete begründete Aussage"
+        ]
+      },
+      {
+        "criterion": "Klang-Inhalt-Bezug",
+        "levels": [
+          "kein Bezug",
+          "Stimmqualität + Inhalt verbunden"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen schreiben manchmal 'das Lied gefällt mir weil es schön ist' – Lehrkraft ermutigt zu konkreten Beobachtungen.",
+      "Textverstehen: Bei anderssprachigen Liedern reicht eine grobe inhaltliche Beschreibung."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Musik",
+  "klasse": 1,
+  "kompetenzbereich": "Singen und Musizieren",
+  "competences": [
+    "MUS.US.1.SIN.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "SIN"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0041",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

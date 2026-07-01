@@ -1,0 +1,404 @@
+{
+  "subject": "Mathematik",
+  "klasse": 4,
+  "kompetenzbereich": "2: Variablen und Funktionen",
+  "title": "Geraden lesen — lineare Funktionen im Koordinatensystem",
+  "kernfrage": "Was verrät dir der Graph einer linearen Funktion über das Verhalten einer Größe?",
+  "body": {
+    "intro": [],
+    "assets": [
+      {
+        "id": "abb1",
+        "role": "figure",
+        "generator": "matplotlib:function_graph",
+        "spec": {
+          "xmin": -3,
+          "xmax": 6,
+          "ymin": -4,
+          "ymax": 10,
+          "m": 2,
+          "b": 1
+        }
+      },
+      {
+        "id": "abb2",
+        "role": "figure",
+        "generator": "matplotlib:function_graph",
+        "spec": {
+          "xmin": 0,
+          "xmax": 5,
+          "ymin": 0,
+          "ymax": 12,
+          "m": 2,
+          "b": 3,
+          "points": [
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              3,
+              9
+            ],
+            [
+              4,
+              11
+            ]
+          ]
+        }
+      },
+      {
+        "id": "abb3",
+        "role": "figure",
+        "generator": "matplotlib:function_graph",
+        "spec": {
+          "xmin": -4,
+          "xmax": 4,
+          "ymin": -6,
+          "ymax": 6,
+          "m": -1,
+          "b": 2
+        }
+      },
+      {
+        "id": "abb4",
+        "role": "figure",
+        "generator": "matplotlib:math_formula",
+        "spec": {
+          "latex": "y = m \\cdot x + b \\quad (m = \\text{Steigung},\\; b = \\text{y-Achsenabschnitt})"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Graphen lesen und beschreiben",
+        "throughline": "Schüler:innen lernen, aus dem Graphen einer linearen Funktion die Steigung und den y-Achsenabschnitt abzulesen und zu interpretieren, bevor sie zur Formel übergehen.",
+        "talking_points": [
+          "Ein Graph ist eine Darstellungsform — er zeigt dasselbe wie die Formel, nur als Bild.",
+          "Steigung bedeutet: um wie viel ändert sich y, wenn x um 1 wächst?",
+          "Der y-Achsenabschnitt ist der Startwert — der Wert bei x = 0.",
+          "Negative Steigung heißt: die Gerade fällt von links nach rechts."
+        ],
+        "extensions": [
+          "Verschiedene Graphen mit gleichem y-Achsenabschnitt, aber unterschiedlicher Steigung zeichnen und vergleichen.",
+          "Den Begriff ‚Proportionalität' einführen: Was bedeutet b = 0 geometrisch?"
+        ],
+        "blocks": [
+          {
+            "role": "info",
+            "id": "info1",
+            "kind": "prose",
+            "prompt": "Jede lineare Funktion hat die Form y = m · x + b. Dabei gibt m an, wie steil die Gerade ist (Steigung), und b zeigt, wo die Gerade die y-Achse schneidet (y-Achsenabschnitt). Aus einem Graphen kannst du beide Werte direkt ablesen.",
+            "payload": null,
+            "response": {
+              "mode": "none"
+            },
+            "cognitive_level": "remember",
+            "dimensions": [
+              "DAR"
+            ],
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.VAR.03",
+                "relation": "introduces"
+              }
+            ],
+            "est_minutes": 2,
+            "asset_refs": [
+              "abb4"
+            ],
+            "answer_key": "",
+            "acceptable_reasoning": null,
+            "watch_outs": [],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "data_interpretation",
+            "prompt": "Sieh dir den Graphen an. Lies ab: (a) Wo schneidet die Gerade die y-Achse? (b) Um wie viel steigt y, wenn x um 1 zunimmt? (c) Gib die Funktionsgleichung an.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "DAR",
+              "OPE"
+            ],
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.VAR.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "asset_refs": [
+              "abb1"
+            ],
+            "answer_key": "(a) y-Achsenabschnitt: b = 1. (b) Steigung: m = 2 (pro x-Einheit +2). (c) f(x) = 2x + 1.",
+            "acceptable_reasoning": "Ablesepunkte z. B. (0,1) und (1,3) → Steigung = (3−1)/(1−0) = 2.",
+            "watch_outs": [
+              "Steigung und y-Achsenabschnitt verwechseln — klar unterscheiden: b ist der Punkt auf der y-Achse, m ist die Veränderungsrate.",
+              "Ablesen von nicht ganzzahligen Koordinaten ohne Taschenrechner schwierig — hier bewusst ganzzahlige Werte gewählt."
+            ],
+            "rubric": [
+              {
+                "criterion": "Steigung korrekt abgelesen",
+                "levels": [
+                  "Falsch",
+                  "Ansatz erkennbar",
+                  "Korrekt"
+                ]
+              },
+              {
+                "criterion": "Gleichung vollständig angegeben",
+                "levels": [
+                  "Fehlt",
+                  "Teilweise",
+                  "Vollständig und korrekt"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "calculation",
+            "prompt": "Ein Taxiunternehmen berechnet 3 € Grundgebühr und 2 € pro gefahrenem Kilometer. (a) Schreibe die Kostenfunktion K(km) auf. (b) Lies aus dem Graphen ab: Was kostet eine Fahrt von 3 km? (c) Für wie viele Kilometer reichen 15 €?",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "apply",
+            "dimensions": [
+              "MOD",
+              "OPE"
+            ],
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.VAR.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [
+              "abb2"
+            ],
+            "answer_key": "(a) K(km) = 2·km + 3. (b) K(3) = 2·3 + 3 = 9 €. (c) 2·km + 3 = 15 → km = 6.",
+            "acceptable_reasoning": "Graph ablesen für (b): bei x=3 liegt die Gerade bei y=9. Für (c) Gleichung aufstellen.",
+            "watch_outs": [
+              "Grundgebühr als Steigung interpretieren statt als y-Achsenabschnitt.",
+              "Einheiten (€, km) nicht vergessen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Sachkontext korrekt modelliert",
+                "levels": [
+                  "Keine Gleichung",
+                  "Gleichung mit einem Fehler",
+                  "Vollständig korrekt"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "ordering",
+            "prompt": "Ordne die folgenden vier Funktionen nach ihrer Steigung — von der steilsten fallenden bis zur steilsten steigenden Geraden.",
+            "payload": {
+              "kind": "ordering",
+              "items": [
+                "f(x) = 3x − 1",
+                "g(x) = −2x + 4",
+                "h(x) = 0,5x + 2",
+                "k(x) = −x − 3"
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 2
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "DAR",
+              "BEG"
+            ],
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.VAR.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 5,
+            "asset_refs": [],
+            "answer_key": "Von steilster Fallend bis steilster Steigend: g(x)=−2x+4 (m=−2), k(x)=−x−3 (m=−1), h(x)=0,5x+2 (m=0,5), f(x)=3x−1 (m=3).",
+            "acceptable_reasoning": "Steigung aus der Gleichung ablesen (Koeffizient vor x); Ordnung nach dem Zahlenwert.",
+            "watch_outs": [
+              "Vorzeichen der Steigung mit dem y-Achsenabschnitt verwechseln.",
+              "‚Steilheit' bedeutet Betrag der Steigung, aber die Richtung (Fallen/Steigen) ist durch das Vorzeichen bestimmt."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "modelling_task",
+            "prompt": "Der Graph zeigt die Funktion g(x) = −x + 2. (a) Bei welchem x-Wert schneidet die Gerade die x-Achse? Rechne und lies nach. (b) In welchem Punkt schneiden sich die Geraden f(x) = 2x + 1 aus der ersten Aufgabe und g(x) = −x + 2? Stelle ein Gleichungssystem auf und löse es.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 50
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "OPE",
+              "MOD"
+            ],
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.VAR.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [
+              "abb3"
+            ],
+            "answer_key": "(a) x-Achsenschnitt: −x + 2 = 0 → x = 2. (b) Gleichsetzen: 2x + 1 = −x + 2 → 3x = 1 → x = 1/3; y = 2·(1/3)+1 = 5/3. Schnittpunkt: (1/3 | 5/3).",
+            "acceptable_reasoning": "Für (a) y=0 setzen. Für (b) beide Ausdrücke gleichsetzen, nach x auflösen, y einsetzen.",
+            "watch_outs": [
+              "x-Achsenschnitt ≠ y-Achsenschnitt — viele setzen x=0 statt y=0.",
+              "Bruchrechnung beim Schnittpunkt — darauf vorbereiten, dass das Ergebnis nicht ganzzahlig sein muss."
+            ],
+            "rubric": [
+              {
+                "criterion": "x-Achsenschnitt korrekt",
+                "levels": [
+                  "Falsch",
+                  "Methode erkennbar, Fehler",
+                  "Korrekt"
+                ]
+              },
+              {
+                "criterion": "Gleichungssystem aufgestellt und gelöst",
+                "levels": [
+                  "Nicht versucht",
+                  "Aufgestellt, Fehler",
+                  "Vollständig korrekt"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "true_false_justify",
+            "prompt": "Wahr oder falsch? Begründe jeweils.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Zwei verschiedene lineare Funktionen können denselben y-Achsenabschnitt haben.",
+                "Eine lineare Funktion mit m = 0 ist eine waagrechte Gerade.",
+                "Die Gerade y = 3x + 5 hat einen steileren Anstieg als y = 5x + 3."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "BEG",
+              "DAR"
+            ],
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.VAR.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 7,
+            "asset_refs": [],
+            "answer_key": "1) Wahr: z. B. y=2x+5 und y=−x+5 haben beide b=5. 2) Wahr: y=0·x+b=b, konstanter Wert. 3) Falsch: m=3 < m=5, y=5x+3 ist steiler.",
+            "acceptable_reasoning": "Steigung ablesen (Koeffizient vor x), Beispiele oder Gegenbeispiele nennen.",
+            "watch_outs": [
+              "Aussage 3: Steigung mit y-Achsenabschnitt verwechseln (3 und 5 tauschen die Rollen in beiden Gleichungen).",
+              "Aussage 2: m=0 als ‚keine Funktion' missverstehen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "create_produce",
+            "prompt": "Erfinde eine eigene lineare Funktion, deren Graph durch den Punkt (2 | 7) verläuft und eine negative Steigung hat. Schreibe die Gleichung auf, zeichne den Graphen in ein Koordinatensystem (x von −2 bis 4, y von −2 bis 10) und erkläre, wie du die Gleichung bestimmt hast.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 60
+            },
+            "cognitive_level": "create",
+            "dimensions": [
+              "DAR",
+              "BEG",
+              "OPE"
+            ],
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.VAR.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Unendlich viele richtige Antworten. Beispiel: f(x) = −x + 9 (m=−1, b=9; Probe: f(2)=−2+9=7 ✓). Andere Beispiele: −2x+11, −0,5x+8, … Entscheidend: negative Steigung (m<0) und f(2)=7.",
+            "acceptable_reasoning": "m wählen (m<0), dann b = 7 − m·2 bestimmen.",
+            "watch_outs": [
+              "Einige Schüler:innen setzen einfach einen Punkt und zeichnen zufällig — Systematik einfordern: erst Gleichung, dann Zeichnung.",
+              "Probe explizit einfordern: Punkt (2|7) wirklich auf der Geraden?"
+            ],
+            "rubric": [
+              {
+                "criterion": "Negative Steigung",
+                "levels": [
+                  "Positive Steigung gewählt",
+                  "Null-Steigung",
+                  "Negative Steigung korrekt"
+                ]
+              },
+              {
+                "criterion": "Punkt (2|7) liegt auf der Geraden",
+                "levels": [
+                  "Nein",
+                  "Näherungsweise",
+                  "Ja, nachgeprüft"
+                ]
+              },
+              {
+                "criterion": "Herleitung erklärt",
+                "levels": [
+                  "Keine Erklärung",
+                  "Teilweise",
+                  "Vollständig und nachvollziehbar"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

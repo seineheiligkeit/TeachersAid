@@ -1,0 +1,58 @@
+{
+  "id": "c0049.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "enactive",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Du hast ein Baukasten-Set mit folgenden Teilen: 2 Zahnräder (eines mit 12 Zähnen, eines mit 36 Zähnen), eine Achse, einen Rahmen, Schrauben. Beschreibe in Worten, wie du einen Mechanismus bauen würdest, der eine langsame Kurbelumdrehung in eine schnelle Achsendrehung umwandelt. Erkläre: Welches Zahnrad kommt auf die Kurbelseite, welches auf die Abtriebsseite — und warum?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "HER"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "TED.US.4.HER.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Das große Zahnrad (36 Zähne) kommt auf die Antriebsseite (Kurbel). Das kleine Zahnrad (12 Zähne) kommt auf die Abtriebsseite. Begründung: Das Verhältnis ist 36:12 = 3:1, das heißt, das kleine Zahnrad dreht dreimal so schnell wie das große. Eine langsame Kurbelumdrehung erzeugt drei schnelle Umdrehungen auf der Abtriebsachse. Aufbau: Beide Zahnräder auf parallele Achsen im Rahmen montieren, ineinandergreifend ausrichten.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Schüler:innen verwechseln Antrieb und Abtrieb — klar definieren: Antrieb = wo Kraft eingeht (Kurbel); Abtrieb = wo Kraft herauskommt.",
+      "Verhältnis 3:1 muss nicht als Bruch berechnet werden — Zählen der Zähne und Vergleich ist ausreichend."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Technik und Design",
+  "klasse": 4,
+  "kompetenzbereich": "Herstellung",
+  "competences": [
+    "TED.US.4.HER.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "HER"
+  ],
+  "modality": "enactive",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0049",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

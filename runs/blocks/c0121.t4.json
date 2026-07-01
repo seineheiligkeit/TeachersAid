@@ -1,0 +1,86 @@
+{
+  "id": "c0121.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Berechne den Mittelwert OHNE die Schweiz (also fuer die verbleibenden 7 Laender). Um wie viel veraendert sich der Mittelwert? Was zeigt das?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "OPE",
+      "BEG"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.3.DAT.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Summe ohne Schweiz: 360 372 - 103 998 = 256 374. Mittelwert: 256 374 / 7 = 36 624,86 USD ~ 36 625 USD. Veraenderung: 45 047 - 36 625 = 8 422 USD. Das zeigt: Ein einziger Ausreisser (Schweiz) erhoeht den Mittelwert um mehr als 8 000 USD. Der Median der 8 Laender war 48 244,5 USD; der Median ohne Schweiz (n=7, mittlerer = 4. Wert) ist 40 385 USD (Italien). Der Median veraendert sich also staerker, weil bei 7 Werten der mittlere Wert einem anderen Wert entspricht.",
+    "acceptable_reasoning": "Beobachtung, dass der Mittelwert stark reagiert, genuegt; genaue Medianberechnung ohne Schweiz ist optionale Erweiterung.",
+    "rubric": [
+      {
+        "criterion": "Neue Summe korrekt (256 374)",
+        "levels": [
+          "Falsch",
+          "Richtig"
+        ]
+      },
+      {
+        "criterion": "Division durch 7",
+        "levels": [
+          "Durch 8 dividiert (Fehler)",
+          "Durch 7 dividiert"
+        ]
+      },
+      {
+        "criterion": "Veraenderung beschrieben",
+        "levels": [
+          "Keine Interpretation",
+          "Veraenderung quantifiziert und Bedeutung erklaert"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Die Summe ohne Schweiz korrekt berechnen: 360 372 - 103 998 = 256 374.",
+      "Division durch 7 (nicht durch 8): betonen, dass sich auch der Nenner aendert."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Mathematik",
+  "klasse": 3,
+  "kompetenzbereich": "4: Daten und Zufall",
+  "competences": [
+    "MAT.US.3.DAT.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "OPE",
+    "BEG"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0121",
+  "source": "ai",
+  "created_at": "2026-06-27T15:21:15+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

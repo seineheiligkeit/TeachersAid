@@ -1,0 +1,76 @@
+{
+  "id": "c0012.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne jedem Sprachregister auf der linken Seite eine typische Kommunikationssituation auf der rechten Seite zu.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Standardsprache",
+        "Bildungssprache",
+        "Umgangssprache",
+        "Dialekt",
+        "Fachsprache"
+      ],
+      "right": [
+        "Gespräch mit Großeltern auf einem Familientreffen in Niederösterreich",
+        "Mündliche Prüfung oder offizielle Rede",
+        "Erklärung eines Arztes an eine Kollegin über eine Diagnose",
+        "Wissenschaftlicher Vortrag oder Schulaufsatz",
+        "Gespräch mit Freunden in der Pause"
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "ZUH",
+      "SPR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DEU.US.4.ZUH.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Standardsprache → mündliche Prüfung/offizielle Rede. Bildungssprache → wissenschaftlicher Vortrag/Schulaufsatz. Umgangssprache → Gespräch mit Freunden in der Pause. Dialekt → Gespräch mit Großeltern. Fachsprache → Arzt an Kollegin über Diagnose.",
+    "acceptable_reasoning": "Standard- und Bildungssprache können in manchen Situationen überlappen – wenn Schüler:innen begründen, warum sie tauschen, akzeptieren.",
+    "rubric": [],
+    "watch_outs": [
+      "Häufige Verwechslung: Bildungssprache ≠ Standardsprache. Bildungssprache ist spezifischer: abstrakte Nomen, Passivkonstruktionen, Fachbegriffe in nicht-fachlichem Kontext.",
+      "Fachsprache wird oft mit Bildungssprache gleichgesetzt – Unterschied: Fachsprache ist domänenspezifisch und unter Fachleuten präziser als umgangssprachlich."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Deutsch",
+  "klasse": 4,
+  "kompetenzbereich": "Zuhören und Sprechen",
+  "competences": [
+    "DEU.US.4.ZUH.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "ZUH",
+    "SPR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0012",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

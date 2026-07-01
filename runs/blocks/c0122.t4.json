@@ -1,0 +1,160 @@
+{
+  "id": "c0122.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Fülle die Tabelle aus: Berechne die Temperaturdifferenz zwischen dem wärmsten und dem kältesten Monat, und gib an, ob der Niederschlag eher im Sommer oder im Winter höher ist.",
+    "payload": {
+      "kind": "table_fill",
+      "columns": [
+        "Merkmal",
+        "Wien"
+      ],
+      "rows": [
+        [
+          "Wärmster Monat (°C)",
+          ""
+        ],
+        [
+          "Kältester Monat (°C)",
+          ""
+        ],
+        [
+          "Temperaturamplitude (K)",
+          ""
+        ],
+        [
+          "Regenreichste Jahreszeit",
+          ""
+        ]
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Merkmal",
+        "Wien"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.4.WET.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Wärmster Monat: 21,4 °C (Juli); kältester Monat: 0,8 °C (Jänner); Temperaturamplitude: 20,6 K; regenreichste Jahreszeit: Sommer (Mai–August).",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Differenz in Kelvin (K), nicht °C — fachlich korrekt, weil es eine Temperaturdifferenz ist; beide Einheiten akzeptieren, aber auf den Unterschied hinweisen.",
+      "Nicht die Monatsmitteltemperatur mit der Tagestemperatur verwechseln."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Wetter und Klima",
+  "competences": [
+    "PHY.US.4.WET.03"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:climate_diagram",
+      "spec": {
+        "title": "Klimadiagramm Wien (Hohe Warte, 1991–2020)",
+        "months": [
+          "Jän",
+          "Feb",
+          "Mär",
+          "Apr",
+          "Mai",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Okt",
+          "Nov",
+          "Dez"
+        ],
+        "temp": [
+          0.8,
+          2.3,
+          6.2,
+          11.4,
+          15.8,
+          19.7,
+          21.4,
+          20.9,
+          15.8,
+          10.5,
+          5.8,
+          1.5
+        ],
+        "precip": [
+          42,
+          38,
+          52,
+          42,
+          79,
+          70,
+          78,
+          69,
+          64,
+          47,
+          46,
+          47
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "geosphere_klima_normal_1991_2020",
+        "series": "wien",
+        "note": null,
+        "title": "Klimanormalwerte österreichischer Stationen (1991–2020)",
+        "url": "https://data.hub.geosphere.at/dataset/klima-v2-1m",
+        "attribution": "Datenquelle: GeoSphere Austria – data.hub.geosphere.at (klima-v2-1m, CC BY 4.0)",
+        "stand": "1991–2020"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0122",
+  "source": "ai",
+  "created_at": "2026-06-27T15:21:16+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

@@ -1,0 +1,219 @@
+[
+  {
+    "original_id": "phy-strahlung.str.t1",
+    "compact": {
+      "role": "task",
+      "id": "phy-strahlung.str.t1_compact",
+      "kind": "open_response",
+      "prompt": "Beim radioaktiven Zerfall kann man für ein einzelnes Atom nicht sagen, wann es zerfällt – für sehr viele Atome aber sehr genau, wie viele pro Sekunde zerfallen. Erkläre kurz, warum das kein Widerspruch ist.",
+      "payload": null,
+      "response": {"mode": "lines", "n": 3},
+      "cognitive_level": "understand",
+      "dimensions": ["W"],
+      "serves": [{"competence_id": "PHY.US.4.STR.03", "relation": "exercises"}],
+      "est_minutes": 5,
+      "answer_key": "Zerfall ist ein Zufallsprozess pro Atom; über sehr viele Atome mittelt sich der Zufall zu einer stabilen Rate – das Gesetz der großen Zahlen macht die Halbwertszeit messbar.",
+      "watch_outs": ["Verwechslung von Einzelatom-Unvorhersagbarkeit mit fehlender Gesetzmäßigkeit; darauf hinweisen, dass Statistik keine Ausnahme vom Zufall ist"]
+    },
+    "extended": {
+      "role": "task",
+      "id": "phy-strahlung.str.t1_extended",
+      "kind": "open_response",
+      "prompt": "Beim radioaktiven Zerfall kann man für ein einzelnes Atom nicht sagen, wann es zerfällt – für sehr viele Atome aber sehr genau, wie viele pro Sekunde zerfallen.\n\na) Erkläre, warum das kein Widerspruch ist. Nutze in deiner Antwort die Begriffe „Zufall“, „Halbwertszeit“ und „Statistik“.\n\nb) Ein Vergleich aus dem Alltag: Du weißt nicht, wann genau eine bestimmte Glühbirne durchbrennt – aber du kannst verlässlich sagen, dass von 1000 gleichen Glühbirnen nach 1000 Stunden etwa die Hälfte noch leuchtet. Erkläre, inwiefern dieser Vergleich zum radioaktiven Zerfall passt – und wo er hinkt.\n\nc) Warum ist die Halbwertszeit trotz des Zufalls eine nützliche Größe für Wissenschaft und Technik?",
+      "payload": null,
+      "response": {"mode": "lines", "n": 8},
+      "cognitive_level": "understand",
+      "dimensions": ["W"],
+      "serves": [{"competence_id": "PHY.US.4.STR.03", "relation": "exercises"}],
+      "est_minutes": 13,
+      "answer_key": "a) Einzelatom: reiner Zufall, keine Vorhersage möglich. Viele Atome: statistische Gesetzmäßigkeit, Halbwertszeit stabil. b) Passend: Wahrscheinlichkeit + große Zahl → stabile Rate. Hinkend: Glühbirnen altern (Wolfram-Verdampfung), Atome altern nicht – Zerfall ist gedächtnislos. c) Halbwertszeit erlaubt Altersbestimmung (C-14), Dosisplanung in der Medizin, Sicherheitsabschätzungen für Nuklearabfälle.",
+      "watch_outs": ["Viele SuS denken, Atome „altern“ und werden mit der Zeit zerfallsbereiter – explizit ansprechen; Gedächtnislosigkeit des Zerfalls ist ein Kernkonzept"]
+    }
+  },
+  {
+    "original_id": "phy-strahlung.str.t2",
+    "compact": {
+      "role": "task",
+      "id": "phy-strahlung.str.t2_compact",
+      "kind": "create_produce",
+      "prompt": "Schreibe 3–4 Sätze für jüngere Schüler:innen zu einer Anwendung von Strahlung (z. B. PET im Krankenhaus oder C-14-Datierung). Nenne einen klaren Nutzen und eine Grenze dieser Anwendung.",
+      "payload": null,
+      "response": {"mode": "lines", "n": 5},
+      "cognitive_level": "create",
+      "dimensions": ["W"],
+      "serves": [{"competence_id": "PHY.US.4.STR.04", "relation": "exercises"}],
+      "est_minutes": 7,
+      "answer_key": null,
+      "watch_outs": ["Auf ausgewogene Darstellung achten: Nutzen ohne Beschönigung, Grenze ohne übertriebene Angst; reine Gefahrendarstellung ist ebenso unausgewogen wie reines Lob"]
+    },
+    "extended": {
+      "role": "task",
+      "id": "phy-strahlung.str.t2_extended",
+      "kind": "create_produce",
+      "prompt": "Entwirf eine Info-Karte (7–8 Sätze) für jüngere Schüler:innen zu einer aktuellen Anwendung von Strahlung. Wähle eine der folgenden Anwendungen:\n• PET (Positronen-Emissions-Tomographie) im Krankenhaus\n• Bestrahlung von Lebensmitteln zur Haltbarmachung\n• C-14-Datierung in der Archäologie\n\nDeine Info-Karte soll:\n1. Die Anwendung kurz erklären (was passiert physikalisch?).\n2. Einen konkreten Nutzen nennen.\n3. Eine wichtige Grenze oder ein Risiko ehrlich benennen.\n4. Am Ende eine Frage stellen, die zum Nachdenken anregt.\n\nAchte auf verständliche Sprache (keine Fachbegriffe ohne Erklärung) und einen sachlichen, nicht reißerischen Ton.",
+      "payload": null,
+      "response": {"mode": "lines", "n": 10},
+      "cognitive_level": "create",
+      "dimensions": ["W"],
+      "serves": [{"competence_id": "PHY.US.4.STR.04", "relation": "exercises"}],
+      "est_minutes": 17,
+      "answer_key": null,
+      "watch_outs": ["Häufiges Problem: Info-Karte kippt in reine Werbung für die Technik oder in übertriebene Warnung. Abschlussfrage sollte offen und nicht suggestiv sein; SuS neigen zu Ja/Nein-Fragen prüfen"]
+    }
+  },
+  {
+    "original_id": "phy-strahlung.str.t3",
+    "compact": {
+      "role": "task",
+      "id": "phy-strahlung.str.t3_compact",
+      "kind": "open_response",
+      "prompt": "WLAN-Signale gehen durch Wände, schaden dir aber nicht – Gammastrahlung ist gefährlich. Beide durchdringen Materie. Erkläre den entscheidenden Unterschied in einem kurzen Satz.",
+      "payload": null,
+      "response": {"mode": "lines", "n": 2},
+      "cognitive_level": "analyze",
+      "dimensions": ["S", "W"],
+      "serves": [{"competence_id": "PHY.US.4.STR.02", "relation": "exercises"}],
+      "est_minutes": 4,
+      "answer_key": "WLAN ist nicht-ionisierende Strahlung (zu wenig Energie, um Moleküle aufzubrechen); Gammastrahlung ist ionisierend und kann DNA und Zellen schädigen.",
+      "watch_outs": ["SuS verwechseln Durchdringungsvermögen mit Schädlichkeit; klar trennen: durch Materie gehen ≠ Materie schädigen"]
+    },
+    "extended": {
+      "role": "task",
+      "id": "phy-strahlung.str.t3_extended",
+      "kind": "open_response",
+      "prompt": "WLAN-Signale gehen durch Wände, schaden dir aber nicht – Gammastrahlung dagegen ist gefährlich. Beide „durchdringen“ Materie.\n\na) Was ist der entscheidende physikalische Unterschied zwischen WLAN-Strahlung und Gammastrahlung? Nenne den Fachbegriff und erkläre ihn in einem Satz.\n\nb) Ordne folgende Strahlungsarten danach ein, ob sie ionisierend oder nicht-ionisierend sind:\n   – sichtbares Licht\n   – UV-Strahlung\n   – Röntgenstrahlung\n   – Radiowellen\n\nc) Warum reicht „durchdringt Materie“ allein nicht aus, um eine Strahlung als gefährlich einzustufen?",
+      "payload": null,
+      "response": {"mode": "lines", "n": 8},
+      "cognitive_level": "analyze",
+      "dimensions": ["S", "W"],
+      "serves": [{"competence_id": "PHY.US.4.STR.02", "relation": "exercises"}],
+      "est_minutes": 10,
+      "answer_key": "a) Ionisierende vs. nicht-ionisierende Strahlung: Gammastrahlung hat genug Energie, um Elektronen aus Atomen zu schlagen; WLAN nicht. b) Nicht-ionisierend: sichtbares Licht, Radiowellen; Grenzbereich: UV (kurzwelliges UV ist ionisierend); ionisierend: Röntgenstrahlung. c) Durchdringen sagt nur, wie tief Strahlung eindringt, nicht, ob sie dabei chemische Bindungen aufbrechen kann – das entscheidet die Energie pro Photon.",
+      "watch_outs": ["UV-Strahlung ist ein häufiger Stolperstein (nicht-ionisierend im sichtbaren Bereich, ionisierend im kurzwelligen UV) – Grenze thematisieren; SuS neigen dazu, Frequenz und Energie nicht zu verknüpfen"]
+    }
+  },
+  {
+    "original_id": "phy-strahlung.str.t4",
+    "compact": {
+      "role": "task",
+      "id": "phy-strahlung.str.t4_compact",
+      "kind": "true_false_justify",
+      "prompt": "Entscheide: richtig oder falsch? Begründe jeweils in einem Satz oder korrigiere die Aussage.\n\n1. „Nur ionisierende Strahlung kann Zellen schädigen.“\n2. „Alpha-Strahlung hat die geringste Reichweite in Luft.“\n3. „Radiowellen entstehen durch Kernzerfall.“",
+      "payload": null,
+      "response": {"mode": "lines", "n": 4},
+      "cognitive_level": "evaluate",
+      "dimensions": ["S"],
+      "serves": [{"competence_id": "PHY.US.4.STR.02", "relation": "exercises"}],
+      "est_minutes": 6,
+      "answer_key": "1. Falsch: UV-Strahlung ist (teilweise) nicht-ionisierend, schädigt aber trotzdem Zellen (DNA-Schäden durch hohe Photonenenergie). 2. Richtig: Alpha-Strahlung wird schon von wenigen Zentimetern Luft oder einem Blatt Papier gestoppt. 3. Falsch: Radiowellen sind elektromagnetische Wellen, die von Antennen (schwingenden Ladungen) erzeugt werden, nicht durch Kernzerfall.",
+      "watch_outs": ["Aussage 1 ist eine bekannte Fehlvorstellung; Aussage 3 verwechselt Strahlungsart mit Entstehungsmechanismus"]
+    },
+    "extended": {
+      "role": "task",
+      "id": "phy-strahlung.str.t4_extended",
+      "kind": "true_false_justify",
+      "prompt": "Entscheide für jede Aussage: richtig oder falsch? Begründe ausführlich oder korrigiere.\n\n1. „Nur ionisierende Strahlung kann Zellen schädigen.“\n2. „Alpha-Strahlung hat die geringste Reichweite in Luft, ist aber bei innerer Kontamination besonders gefährlich.“\n3. „Funkwellen (z. B. Handy, WLAN) entstehen durch Kernzerfall.“\n4. „Je höher die Dosis ionisierender Strahlung, desto sicher krank – auch bei sehr kleinen Mengen.“\n\nErkläre bei jeder falschen Aussage, welcher Denkfehler dahintersteckt.",
+      "payload": null,
+      "response": {"mode": "lines", "n": 10},
+      "cognitive_level": "evaluate",
+      "dimensions": ["S"],
+      "serves": [{"competence_id": "PHY.US.4.STR.02", "relation": "exercises"}],
+      "est_minutes": 13,
+      "answer_key": "1. Falsch: UV kann trotz geringer Ionisierungswirkung DNA schädigen; Denkfehler: ionisierend = einzige Schadensursache. 2. Richtig (zweiteilig): geringe Außenreichweite, aber hohe biologische Wirksamkeit (RBE ~20) bei Inhalation/Ingestion. 3. Falsch: Funkwellen sind elektromagnetische Wellen aus beschleunigten Elektronen in Antennen; Kernzerfall erzeugt Alpha-/Beta-/Gammastrahlung. 4. Falsch/umstritten: Unter der natürlichen Hintergrundstrahlung gibt es keine nachweisbaren Gesundheitsschäden; das Linearmodell ohne Schwellenwert (LNT) ist eine konservative Schutzhypothese, keine gesicherte Wirkung bei kleinen Dosen.",
+      "watch_outs": ["Aussage 4 ist bewusst schwierig: SuS tendieren zu absolutem „immer gefährlich“. Wichtig: Unterschied zwischen konservativem Schutzprinzip und gesichertem Wirkungsmechanismus thematisieren; kein Verharmlosung, aber keine Übertreibung"]
+    }
+  },
+  {
+    "original_id": "phy-strahlung.str.t5",
+    "compact": {
+      "role": "task",
+      "id": "phy-strahlung.str.t5_compact",
+      "kind": "open_response",
+      "prompt": "Dosen zum Vergleich:\n• 1 Banane essen ≈ 0,1 µSv\n• Thorax-Röntgen ≈ 20 µSv\n• Transatlantikflug ≈ 40 µSv\n• Natürliche Jahresdosis in Österreich ≈ 2–3 mSv\n\nOrdne die vier Quellen nach steigender Dosis. Um welchen Faktor ist die Jahresdosis größer als ein einzelner Röntgen-Thorax?",
+      "payload": null,
+      "response": {"mode": "lines", "n": 3},
+      "cognitive_level": "analyze",
+      "dimensions": ["S"],
+      "serves": [{"competence_id": "PHY.US.4.STR.02", "relation": "exercises"}],
+      "est_minutes": 5,
+      "answer_key": "Reihenfolge: Banane (0,1 µSv) < Röntgen (20 µSv) < Flug (40 µSv) < Jahresdosis (2000–3000 µSv). Faktor Jahresdosis/Röntgen: 2000/20 = 100 bis 3000/20 = 150.",
+      "watch_outs": ["Einheitenumrechnung µSv ↔ mSv ist fehleranfällig; Umrechnung 1 mSv = 1000 µSv explizit ansprechen"]
+    },
+    "extended": {
+      "role": "task",
+      "id": "phy-strahlung.str.t5_extended",
+      "kind": "open_response",
+      "prompt": "Dosen zum Vergleich:\n• 1 Banane essen ≈ 0,1 µSv\n• Thorax-Röntgen ≈ 20 µSv\n• Transatlantikflug ≈ 40 µSv\n• Natürliche Jahresdosis in Österreich ≈ 2–3 mSv\n\na) Ordne die vier Quellen nach steigender Dosis und rechne alle Werte in dieselbe Einheit um.\n\nb) Um welchen Faktor ist die natürliche Jahresdosis größer als ein einzelner Röntgen-Thorax? Zeige die Rechnung.\n\nc) Warum ist das Vergleichen von Größenordnungen (Zehnerpotenzen) wichtiger als das bloße Ablesen von Zahlen, wenn man Strahlungsdosen bewertet?\n\nd) Ein Bekannter sagt: „Ich fliege nie, weil Flugzeugstrahlung gefährlich ist.“ Kommentiere diese Aussage sachlich mit Hilfe der obigen Daten.",
+      "payload": null,
+      "response": {"mode": "lines", "n": 10},
+      "cognitive_level": "analyze",
+      "dimensions": ["S"],
+      "serves": [{"competence_id": "PHY.US.4.STR.02", "relation": "exercises"}],
+      "est_minutes": 15,
+      "answer_key": "a) In µSv: Banane 0,1 – Röntgen 20 – Flug 40 – Jahresdosis 2000–3000 µSv. b) 2000÷20 = 100× (bis 150×). c) Zahlen ohne Kontext täuschen: 40 klingt viel, ist aber 50– 75× kleiner als die Jahresdosis; erst Größenordnungsvergleich zeigt relative Bedeutung. d) Sachlich: 40 µSv pro Flug ist real, aber marginal im Vergleich zur Jahresdosis; ein Flug entspricht ~1–2 % der ohnehin unvermeidlichen Jahresdosis – kein sinnvoller Grund zum Verzicht, sofern nicht extrem viele Flüge.",
+      "watch_outs": ["SuS vergessen Einheiten oder rechnen nicht um; d) ist bewusst alltagsnah, aber SuS sollen nicht verharmlosend werden – Sachlichkeit einfordern, nicht Richtungsvorgabe"]
+    }
+  },
+  {
+    "original_id": "phy-strahlung.str.t6",
+    "compact": {
+      "role": "task",
+      "id": "phy-strahlung.str.t6_compact",
+      "kind": "decision_scenario",
+      "prompt": "Eine Schlagzeile lautet: „Handystrahlung macht krank!“ Welche EINE Frage würdest du stellen, bevor du das glaubst – und warum ist gerade diese Frage entscheidend?",
+      "payload": null,
+      "response": {"mode": "lines", "n": 3},
+      "cognitive_level": "evaluate",
+      "dimensions": ["S"],
+      "serves": [{"competence_id": "PHY.US.4.STR.02", "relation": "exercises"}],
+      "est_minutes": 6,
+      "answer_key": "Musterantworten: „Welche Dosis wurde untersucht?“ (Dosis macht das Gift) oder „Wurde das in einer unabhängigen Studie gezeigt?“ (Reliabilität) oder „Was für eine Strahlung ist gemeint?“ (ionisierend vs. nicht-ionisierend). Entscheidend: Dosis/Art bestimmt, ob Schaden physikalisch plausibel ist.",
+      "watch_outs": ["Keine einzige „richtige“ Frage – unterschiedliche Antworten alle diskutieren; Schlagzeilen-Pauschalzustimmung wie auch Pauschalablehnung sind gleich problematisch"]
+    },
+    "extended": {
+      "role": "task",
+      "id": "phy-strahlung.str.t6_extended",
+      "kind": "decision_scenario",
+      "prompt": "Eine Schlagzeile lautet: „Handystrahlung macht krank!“\n\na) Welche EINE physikalisch entscheidende Frage würdest du stellen, bevor du dieser Schlagzeile glaubst? Erkläre in 2–3 Sätzen, warum gerade diese Frage entscheidet.\n\nb) Formuliere zwei weitere kritische Fragen – eine zur Qualität der Quelle (journalistische Skepsis), eine zur Studie selbst (wissenschaftliche Skepsis).\n\nc) Handy-Strahlung ist nicht-ionisierend. Erkläre, was das für die physikalische Plausibilität einer Gesundheitsgefahr bedeutet – und warum „nicht-ionisierend = sicher“ trotzdem kein abschließendes Urteil ist.\n\nd) Welche Informationsquellen würdest du konsultieren, um eine fundierte Einschätzung zu bekommen (nenne 2 konkrete Beispiele)?",
+      "payload": null,
+      "response": {"mode": "lines", "n": 12},
+      "cognitive_level": "evaluate",
+      "dimensions": ["S"],
+      "serves": [{"competence_id": "PHY.US.4.STR.02", "relation": "exercises"}],
+      "est_minutes": 16,
+      "answer_key": "a) „Welche Dosis/Intensität wurde untersucht?“ – ohne Dosis keine Aussage über Wirkung; oder „Ionisierende oder nicht-ionisierende Strahlung?“ – entscheidet physikalischen Schädigungsmechanismus. b) Quelle: „Ist das eine Peer-reviewed-Studie oder ein Pressebericht?“; Studie: „Wurde eine Kontrollgruppe verwendet?“ c) Nicht-ionisierend: keine direkte DNA-Schädigung durch Photoionisation; aber thermische Effekte bei sehr hoher Intensität möglich; Vorsorgeprinzip rechtfertigt Grenzwerte trotzdem. d) WHO-Factsheet Elektromagnetische Felder, Bundesamt für Strahlenschutz (BfS) Deutschland / AGES Österreich.",
+      "watch_outs": ["c) ist heikel: weder Verharmlosung noch Hysterie; das Vorsorgeprinzip als eigenständiges Konzept einführen; d) konkrete Institutionen – SuS nennen oft nur „Internet“ oder Wikipedia ohne Bewertung der Qualität"]
+    }
+  },
+  {
+    "original_id": "phy-strahlung.str.t7",
+    "compact": {
+      "role": "task",
+      "id": "phy-strahlung.str.t7_compact",
+      "kind": "experiment_protocol",
+      "prompt": "Versuch mit Zählrohr: Miss die Zählrate (Impulse pro Sekunde) bei zwei verschiedenen Abständen zur Schulquelle (z. B. 5 cm und 20 cm). Notiere die Werte und beschreibe in einem Satz, wie die Zählrate mit dem Abstand zusammenhängt.",
+      "payload": null,
+      "response": {"mode": "lines", "n": 4},
+      "cognitive_level": "apply",
+      "dimensions": ["E"],
+      "serves": [{"competence_id": "PHY.US.4.STR.02", "relation": "exercises"}],
+      "est_minutes": 12,
+      "answer_key": "Zählrate sinkt mit zunehmendem Abstand; größerer Abstand = weniger Strahlung pro Fläche = einfache Schutzmaßnahme.",
+      "watch_outs": ["Hintergrundstrahlung muss vor dem Experiment gemessen und notiert werden; ohne Nullwert sind Vergleiche irreführend"]
+    },
+    "extended": {
+      "role": "task",
+      "id": "phy-strahlung.str.t7_extended",
+      "kind": "experiment_protocol",
+      "prompt": "Versuch mit Zählrohr und schwacher Schulquelle.\n\n**Vorbereitung:**\nMiss zunächst die Hintergrundstrahlung (ohne Quelle, 1 Minute), um einen Nullwert zu erhalten.\n\n**Messung:**\nMiss die Zählrate (Impulse pro 30 Sekunden) bei mindestens vier verschiedenen Abständen: 5 cm, 10 cm, 15 cm, 20 cm. Trage die Ergebnisse in eine Tabelle ein.\n\n**Auswertung:**\na) Trage deine Messwerte in ein Diagramm ein (Abstand auf der x-Achse, Zählrate auf der y-Achse).\n\nb) Beschreibe den Zusammenhang zwischen Abstand und Zählrate in eigenen Worten.\n\nc) Welche praktische Schlussfolgerung ziehst du daraus für den sicheren Umgang mit Strahlungsquellen?\n\nd) Warum ist es wichtig, die Hintergrundstrahlung vorher zu messen?",
+      "payload": null,
+      "response": {"mode": "lines", "n": 12},
+      "cognitive_level": "apply",
+      "dimensions": ["E"],
+      "serves": [{"competence_id": "PHY.US.4.STR.02", "relation": "exercises"}],
+      "est_minutes": 30,
+      "answer_key": "Zählrate sinkt mit zunehmendem Abstand (näherungsweise nach dem Abstandsquadratgesetz: Verdoppelung des Abstands → Viertelung der Intensität bei Punktquelle). Hintergrundstrahlung muss abgezogen werden, um die Quellenstrahlung isoliert zu sehen. Schutzmaßnahme: Abstand ist einfach, kostenlos und effektiv.",
+      "watch_outs": ["Abstandsquadratgesetz nicht erzwingen – bei Schulquellen und endlichem Raum nur näherungsweise; Messunsicherheiten thematisieren (Poisson-Statistik bei kleinen Zählraten); Sicherheitshinweis: Schulquellen sind zugelassen und ungefährlich, aber korrektes Protokoll einüben ist das Ziel"]
+    }
+  }
+]

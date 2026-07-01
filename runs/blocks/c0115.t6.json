@@ -1,0 +1,87 @@
+{
+  "id": "c0115.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Du hast jetzt vier österreichische Klimadiagramme kennengelernt: Wien, Bregenz, Innsbruck und Graz. Erstelle eine kurze Rangliste der vier Städte nach (a) Jahresniederschlag (größter zuerst) und (b) Temperatur im wärmsten Monat (wärmste zuerst). Was überrascht dich an dieser Rangliste?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.1.LEB4.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "(a) Jahresniederschlag: 1. Bregenz (~1581 mm) 2. Innsbruck (~916 mm) 3. Graz (~848 mm) 4. Wien (~674 mm). (b) Wärmster Monat (Juli): 1. Wien (21,4 °C) 2. Graz (20,8 °C) 3. Bregenz (19,7 °C) 4. Innsbruck (19,6 °C). Überraschung: Bregenz (am feuchtesten) ist im Sommer kühler als Wien (am trockensten). Innsbruck liegt zwar in den Bergen, ist aber im Sommer kaum kühler als Bregenz. Die Annahme 'Gebirge = kälter + nasser' gilt so pauschal nicht.",
+    "acceptable_reasoning": "Kleine Abweichungen aus Ablesefehlern akzeptieren; wichtig ist das Erkennen der Gegenläufigkeit von Niederschlag und Temperatur.",
+    "rubric": [
+      {
+        "criterion": "Rangliste Niederschlag",
+        "levels": [
+          "Fehlt oder falsch",
+          "Reihenfolge korrekt mit zwei Städten",
+          "Vollständige korrekte Reihenfolge aller vier Städte"
+        ]
+      },
+      {
+        "criterion": "Rangliste Temperatur",
+        "levels": [
+          "Fehlt oder falsch",
+          "Reihenfolge korrekt mit zwei Städten",
+          "Vollständige korrekte Reihenfolge aller vier Städte"
+        ]
+      },
+      {
+        "criterion": "Reflexion / Überraschung",
+        "levels": [
+          "Keine Aussage",
+          "Überraschung benannt ohne Bezug zu Zahlen",
+          "Gegenläufigkeit von Niederschlag und Temperatur erkannt und mit Zahlen belegt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen erwarten oft, dass die nasseste Stadt auch die kühlste ist — das ist in Österreich nicht der Fall (Wien ist am trockensten UND am wärmsten im Sommer).",
+      "Die Rangliste nach Niederschlag und nach Temperatur zeigt gegenläufige Reihenfolgen — das ist ein wichtiges Lernmoment."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 1,
+  "kompetenzbereich": "Leben und Wirtschaften unter Beachtung der natürlichen Prozesse",
+  "competences": [
+    "GWB.US.1.LEB4.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0115",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:34+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

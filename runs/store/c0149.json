@@ -1,0 +1,805 @@
+{
+  "id": "c0149",
+  "stage": "content",
+  "status": "approved",
+  "source": "generated",
+  "created_at": "2026-06-28T19:03:25+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00",
+  "title": "Informatik 5. Kl. — Algorithmen Schritt für Schritt (generiert)",
+  "note": "",
+  "request": {
+    "subject": "Informatik",
+    "klasse": 5,
+    "stufe": "Unterstufe",
+    "schulform": null,
+    "topic_raw": "Algorithmen Schritt für Schritt",
+    "envelope": "doppelstunde",
+    "options": {}
+  },
+  "resolution": {
+    "fassung": {
+      "kurztitel": "AHS-Lehrplan (konsolidiert)",
+      "bgbl": "BGBl. II Nr. 204/2024",
+      "doknr": "NOR40264237",
+      "valid_from": "2024-09-01",
+      "valid_to": "2026-08-31"
+    },
+    "subject": "Informatik",
+    "klasse": 5,
+    "matched_kompetenzbereiche": [
+      "Praktische Informatik"
+    ],
+    "grade_check": true,
+    "competences": [
+      {
+        "id": "INF.OS.5.PRA.01",
+        "kompetenzbereich": "Praktische Informatik",
+        "klasse": 5,
+        "text": "Begriffe und Konzepte der Informatik verstehen und Methoden und Arbeitsweisen anwenden können",
+        "source_ref": "INFORMATIK / 5. Klasse / Praktische Informatik",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": [
+          1,
+          2
+        ],
+        "kompetenzmodul": null,
+        "kind": "lehrstoff"
+      },
+      {
+        "id": "INF.OS.5.PRA.02",
+        "kompetenzbereich": "Praktische Informatik",
+        "klasse": 5,
+        "text": "Algorithmen erklären, entwerfen, darstellen und in einer Programmiersprache implementieren können",
+        "source_ref": "INFORMATIK / 5. Klasse / Praktische Informatik",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": [
+          1,
+          2
+        ],
+        "kompetenzmodul": null,
+        "kind": "lehrstoff"
+      },
+      {
+        "id": "INF.OS.5.PRA.03",
+        "kompetenzbereich": "Praktische Informatik",
+        "klasse": 5,
+        "text": "Grundprinzipien von Automaten, Algorithmen, Datenstrukturen und Programmen erklären können",
+        "source_ref": "INFORMATIK / 5. Klasse / Praktische Informatik",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": [
+          1,
+          2
+        ],
+        "kompetenzmodul": null,
+        "kind": "lehrstoff"
+      },
+      {
+        "id": "INF.OS.5.PRA.04",
+        "kompetenzbereich": "Praktische Informatik",
+        "klasse": 5,
+        "text": "Datenbanken benutzen und einfache Datenmodelle entwerfen können",
+        "source_ref": "INFORMATIK / 5. Klasse / Praktische Informatik",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": [
+          1,
+          2
+        ],
+        "kompetenzmodul": null,
+        "kind": "lehrstoff"
+      }
+    ],
+    "notes": []
+  },
+  "plan": null,
+  "content": {
+    "meta": {
+      "title": "Algorithmen Schritt für Schritt",
+      "subtitle": "LLM-Entwurf — Erstprüfung",
+      "subject": "Informatik",
+      "stufe": "Oberstufe",
+      "klasse": 5,
+      "kernfrage": "Wie beschreibst du einen Lösungsweg so genau, dass ihn jeder – auch ein Computer – fehlerfrei ausführen kann?",
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "lehrplan_label": "Informatik · 5. Klasse · Praktische Informatik",
+      "content_language": "de",
+      "subject_models": []
+    },
+    "subject_model": {
+      "subject": "Informatik",
+      "stufe": "Oberstufe",
+      "dimensions": [
+        {
+          "id": "WV",
+          "label": "Wissen und Verstehen",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "AG",
+          "label": "Anwenden und Gestalten",
+          "note": null,
+          "modality": "enactive"
+        },
+        {
+          "id": "RB",
+          "label": "Reflektieren und Bewerten",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "content_areas": [
+        {
+          "id": "Informatik-Mensch-Gesellschaft",
+          "label": "Informatik-Mensch-Gesellschaft",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "Informatiksysteme",
+          "label": "Informatiksysteme",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "Angewandte Informatik",
+          "label": "Angewandte Informatik",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "Praktische Informatik",
+          "label": "Praktische Informatik",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "task_kind_extensions": [
+        "algorithm_trace",
+        "query",
+        "argumentation"
+      ]
+    },
+    "intro": [
+      {
+        "id": "i1",
+        "optional": false,
+        "modality": "printable",
+        "flags": null,
+        "asset_refs": [],
+        "provenance": null,
+        "role": "info",
+        "kind": "prose",
+        "content": "Ein Algorithmus ist eine endliche, eindeutige Folge von Anweisungen zur Lösung eines Problems. Algorithmen begegnen dir überall: beim Kochen, beim Navigieren, beim Sortieren von Karten – und natürlich in jedem Computerprogramm. Auf diesem Arbeitsblatt untersuchst, entwickelst und bewertest du Algorithmen und lernst, wie man sie präzise darstellt.",
+        "callout_role": null,
+        "teacher_note": null,
+        "watch_outs": []
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Was ist ein Algorithmus?",
+        "teacher_overview": {
+          "throughline": "Schüler:innen schärfen den Algorithmusbegriff und unterscheiden ihn von unstrukturierten Handlungsanleitungen – Grundlage für alle weiteren Aufgaben.",
+          "talking_points": [
+            "Drei klassische Eigenschaften: Endlichkeit, Eindeutigkeit, Ausführbarkeit – diskutieren, warum alle drei nötig sind.",
+            "Alltagsbeispiele (Kuchenrezept, Ikea-Aufbauanleitung) auf Algorithmuseigenschaften prüfen.",
+            "Unterschied Algorithmus ↔ Programm: Algorithmus ist sprachunabhängig; Programm ist eine konkrete Implementierung."
+          ],
+          "extensions": [
+            "Schüler:innen formulieren eine Handlungsanleitung aus dem Alltag und prüfen sie auf alle drei Eigenschaften.",
+            "Recherche: Woher kommt das Wort ‚Algorithmus'? (al-Chwarizmi)"
+          ],
+          "differentiation": null,
+          "timing_notes": null
+        },
+        "blocks": [
+          {
+            "id": "t1",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "true_false_justify",
+            "prompt": "Entscheide für jede Aussage, ob sie wahr oder falsch ist, und begründe deine Entscheidung in einem Satz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Ein Algorithmus muss nach endlich vielen Schritten enden.",
+                "Ein Algorithmus darf für dieselbe Eingabe manchmal verschiedene Ergebnisse liefern.",
+                "Jedes Computerprogramm ist ein Algorithmus, aber nicht jeder Algorithmus ist ein Computerprogramm.",
+                "Ein Kuchenrezept erfüllt alle Bedingungen eines Algorithmus, sofern die Anweisungen eindeutig sind."
+              ]
+            },
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Aussage",
+                "Wahr / Falsch",
+                "Begründung"
+              ],
+              "rows": 4
+            },
+            "cognitive_level": "understand",
+            "difficulty": null,
+            "dimensions": [
+              "WV"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "INF.OS.5.PRA.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "1: Wahr – Endlichkeit ist eine Kerneigenschaft; ein Algorithmus, der nie endet (unendliche Schleife), löst das Problem nicht. 2: Falsch – Determinismus (Eindeutigkeit) verlangt, dass gleiche Eingabe stets gleiche Ausgabe liefert. 3: Wahr – Algorithmen können z. B. als Struktogramm oder Pseudocode existieren, ohne Programm zu sein. 4: Wahr – solange Mengenangaben, Reihenfolge und Schritte eindeutig sind.",
+            "acceptable_reasoning": "Formulierungen sinngemäß korrekt; wichtig ist die Begründung mit der jeweiligen Eigenschaft (Endlichkeit, Determinismus, Allgemeinheit).",
+            "rubric": [
+              {
+                "criterion": "Korrekte Klassifizierung (w/f)",
+                "levels": [
+                  "Alle 4 korrekt",
+                  "3 korrekt",
+                  "Weniger als 3 korrekt"
+                ]
+              },
+              {
+                "criterion": "Qualität der Begründung",
+                "levels": [
+                  "Eigenschaft korrekt benannt und erklärt",
+                  "Eigenschaft genannt, aber nicht erklärt",
+                  "Fehlt oder fehlerhaft"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Viele Schüler:innen verwechseln Algorithmus und Programm – betonen: Algorithmus = Idee, Programm = Umsetzung.",
+              "Häufiger Irrtum bei Aussage 4: Rezepte sind 'ungenau', also kein Algorithmus – darauf hinweisen, dass Genauigkeit kontextabhängig ist und ein gutes Rezept durchaus algorithmisch sein kann."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t2",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "algorithm_trace",
+            "prompt": "Verfolge den folgenden Pseudocode Schritt für Schritt für die Eingabe a = 48, b = 18. Fülle die Tabelle aus und gib das Ergebnis an.\n\n```\nALGORITHMUS ggt(a, b):\n  SOLANGE b ≠ 0:\n    r ← a MOD b\n    a ← b\n    b ← r\n  AUSGABE a\n```\n\n(MOD = Rest der ganzzahligen Division, z. B. 17 MOD 5 = 2)",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Schritt",
+                "a",
+                "b",
+                "r = a MOD b"
+              ],
+              "rows": 5
+            },
+            "cognitive_level": "apply",
+            "difficulty": null,
+            "dimensions": [
+              "WV",
+              "AG"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "INF.OS.5.PRA.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "answer_key": "Schritt 1: a=48, b=18, r=48 MOD 18=12 → a=18, b=12. Schritt 2: a=18, b=12, r=18 MOD 12=6 → a=12, b=6. Schritt 3: a=12, b=6, r=12 MOD 6=0 → a=6, b=0. Schleife endet: Ausgabe a=6. ggT(48,18)=6.",
+            "acceptable_reasoning": null,
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Schüler:innen verwechseln häufig MOD mit ganzzahliger Division (DIV); Beispiel 48 MOD 18 = 48 – 2×18 = 12 nochmals verdeutlichen.",
+              "Fehler beim gleichzeitigen Aktualisieren von a und b: r muss zuerst berechnet werden, bevor a überschrieben wird – die Reihenfolge der Zuweisung ist entscheidend.",
+              "Ergebnis 6 muss als ggT interpretiert werden: Probe 48/6=8, 18/6=3 (ganze Zahlen) anbieten."
+            ],
+            "self_check": null
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Algorithmen darstellen: Struktogramm und Pseudocode",
+        "teacher_overview": {
+          "throughline": "Zwei standardisierte Darstellungsformen werden geübt und verglichen – zentrale Methoden des Informatikunterrichts für die Kommunikation über Algorithmen.",
+          "talking_points": [
+            "Struktogramm (Nassi-Shneiderman): visuelle Darstellung, besonders gut für Schleifen und Verzweigungen; keine Sprungbefehle möglich – fördert strukturiertes Denken.",
+            "Pseudocode: textnah, sprachunabhängig, flexibel; erleichtert den Übergang zu echter Programmierung.",
+            "Beide Darstellungen dienen der Kommunikation: Man spricht über Algorithmen, bevor man sie programmiert."
+          ],
+          "extensions": [
+            "Schüler:innen zeichnen das Struktogramm zum ggT-Algorithmus aus t2.",
+            "Vergleich mit Flussdiagramm: Wann ist welche Darstellung übersichtlicher?"
+          ],
+          "differentiation": null,
+          "timing_notes": null
+        },
+        "blocks": [
+          {
+            "id": "t3",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "matching",
+            "prompt": "Ordne jedem Struktogramm-Element die richtige Beschreibung zu.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Rechteck (einfacher Block)",
+                "Verzweigung (Raute / geteiltes Rechteck)",
+                "Schleife mit Vorbedingung (SOLANGE … TUE)",
+                "Schleife mit Nachbedingung (TUE … BIS)"
+              ],
+              "right": [
+                "Wird mindestens einmal ausgeführt; Abbruchbedingung am Ende",
+                "Einfache Anweisung, z. B. eine Zuweisung oder Ausgabe",
+                "Bedingung wird vor jedem Durchlauf geprüft; kann 0-mal ausgeführt werden",
+                "Führt je nach Bedingung einen von zwei Zweigen aus"
+              ]
+            },
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Element",
+                "Beschreibung"
+              ],
+              "rows": 4
+            },
+            "cognitive_level": "remember",
+            "difficulty": null,
+            "dimensions": [
+              "WV"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "INF.OS.5.PRA.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 5,
+            "answer_key": "Rechteck → Einfache Anweisung; Verzweigung → Führt je nach Bedingung einen von zwei Zweigen aus; Schleife mit Vorbedingung → Bedingung wird vor jedem Durchlauf geprüft; Schleife mit Nachbedingung → Wird mindestens einmal ausgeführt.",
+            "acceptable_reasoning": null,
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Schüler:innen verwechseln häufig Vor- und Nachbedingungsschleife – das Schlüsselmerkmal 'mindestens einmal' bei der Nachbedingungsschleife herausstellen.",
+              "Verzweigung kann auch mehr als zwei Zweige haben (Mehrfachauswahl/CASE) – hier zunächst auf den zweiteiligen Fall beschränken."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t4",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "create_produce",
+            "prompt": "Schreibe einen Algorithmus in Pseudocode, der eine Liste von fünf Ganzzahlen einliest und das Minimum (den kleinsten Wert) ausgibt. Nutze folgende Bausteine: EINGABE, AUSGABE, SOLANGE, WENN … DANN, Zuweisungen mit ←.\n\nHinweis: Überlege, welchen Startwert du für dein bisheriges Minimum verwendest.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55.0
+            },
+            "cognitive_level": "create",
+            "difficulty": null,
+            "dimensions": [
+              "AG"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "INF.OS.5.PRA.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 12,
+            "answer_key": "Musterlösung (eine von mehreren möglichen korrekten Varianten):\n```\nAlgorithmus minimum():\n  EINGABE: zahlen[1..5]\n  min ← zahlen[1]\n  i ← 2\n  SOLANGE i ≤ 5:\n    WENN zahlen[i] < min DANN\n      min ← zahlen[i]\n    i ← i + 1\n  AUSGABE min\n```\nAlternativ auch mit Schleife über alle Elemente ab Index 1 mit Startwert zahlen[0] akzeptabel, falls klar begründet.",
+            "acceptable_reasoning": "Korrekt: Liste vollständig durchlaufen, Startwert sinnvoll gewählt (z. B. zahlen[1] oder ein sehr großer Wert), Vergleich und Aktualisierung vorhanden, Ausgabe am Ende.",
+            "rubric": [
+              {
+                "criterion": "Korrektheit des Algorithmus",
+                "levels": [
+                  "Vollständig korrekt, alle Fälle abgedeckt",
+                  "Kleiner Fehler (z. B. Indexfehler), Logik aber richtig",
+                  "Grundidee erkennbar, aber nicht ausführbar",
+                  "Nicht erkennbar"
+                ]
+              },
+              {
+                "criterion": "Verwendung der vorgegebenen Pseudocode-Bausteine",
+                "levels": [
+                  "Alle relevanten Bausteine korrekt verwendet",
+                  "Größtenteils korrekt, kleine Abweichungen",
+                  "Kaum Bausteine verwendet"
+                ]
+              },
+              {
+                "criterion": "Lesbarkeit und Einrückung",
+                "levels": [
+                  "Klar strukturiert, Blöcke erkennbar",
+                  "Teilweise strukturiert",
+                  "Unleserlich"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Häufiger Fehler: Startwert min ← 0 – funktioniert nicht für Listen mit ausschließlich positiven oder ausschließlich negativen Zahlen.",
+              "Schüler:innen vergessen oft den Laufindex hochzuzählen (i ← i + 1), was zu einer Endlosschleife führt.",
+              "Manche beginnen den Vergleich ab i=1 statt i=2 – ist korrekt, wenn min ← 0 als Startwert vermieden wird."
+            ],
+            "self_check": null
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "Effizienz und Vergleich von Algorithmen",
+        "teacher_overview": {
+          "throughline": "Schüler:innen erkennen, dass es mehrere Lösungsalgorithmen für dasselbe Problem geben kann, die sich in Effizienz und Verständlichkeit unterscheiden – Grundlage für kritisches Denken über Software.",
+          "talking_points": [
+            "Laufzeit: Wie wächst der Aufwand mit der Eingabegröße? Informelle Einführung lineares vs. quadratisches Wachstum am Sortierbeispiel.",
+            "Bubble Sort vs. binäre Suche: Wann lohnt Vorarbeit (Sortieren), um später schneller suchen zu können?",
+            "Effizienz ist nicht nur Geschwindigkeit: Speicherbedarf, Lesbarkeit, Wartbarkeit sind ebenfalls Kriterien."
+          ],
+          "extensions": [
+            "Schüler:innen implementieren Bubble Sort in einer einfachen Programmiersprache (z. B. Python) und messen die Laufzeit für unterschiedliche Listengrößen.",
+            "Recherche: Was bedeutet O(n), O(n²)? Kurze informelle Einführung in Landau-Notation.",
+            "Vergleich Insertion Sort vs. Bubble Sort: Welcher ist für fast-sortierte Listen besser?"
+          ],
+          "differentiation": null,
+          "timing_notes": null
+        },
+        "blocks": [
+          {
+            "id": "t5",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "algorithm_trace",
+            "prompt": "Bubble Sort vertauscht benachbarte Elemente, wenn sie in der falschen Reihenfolge sind, und wiederholt dies, bis keine Vertauschung mehr nötig ist.\n\nWende Bubble Sort auf die Liste [5, 3, 8, 1, 4] an. Zeige jeden Durchlauf (Pass) vollständig in einer Zeile der Tabelle. Markiere Vertauschungen mit einem ↔.",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Pass",
+                "Liste nach diesem Pass",
+                "Anzahl Vertauschungen"
+              ],
+              "rows": 5
+            },
+            "cognitive_level": "apply",
+            "difficulty": null,
+            "dimensions": [
+              "WV",
+              "AG"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "INF.OS.5.PRA.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "answer_key": "Pass 1: [5,3,8,1,4] → 5↔3→[3,5,8,1,4]; 8↔1→[3,5,1,8,4]; 8↔4→[3,5,1,4,8]; Vertauschungen: 3; Liste: [3,5,1,4,8]. Pass 2: 5↔1→[3,1,5,4,8]; 5↔4→[3,1,4,5,8]; Vertauschungen: 2; Liste: [3,1,4,5,8]. Pass 3: 3↔1→[1,3,4,5,8]; Vertauschungen: 1. Pass 4: Keine Vertauschungen; Liste fertig sortiert: [1,3,4,5,8].",
+            "acceptable_reasoning": null,
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Schüler:innen vergleichen oft nur benachbarte Paare von links nach rechts, vergessen aber das Ende der Liste – den Durchlaufbereich pro Pass klarmachen (nach Pass k ist das k-größte Element garantiert an der richtigen Stelle).",
+              "Häufig wird der letzte Pass (keine Vertauschungen) vergessen, der beweist, dass die Liste sortiert ist.",
+              "Verwechslung: Bubble Sort 'blubbert' große Elemente nach rechts, nicht Kleine nach links."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t6",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "abb1"
+            ],
+            "provenance": null,
+            "role": "task",
+            "kind": "data_interpretation",
+            "prompt": "Die Grafik zeigt die Anzahl der Vergleiche, die zwei verschiedene Suchalgorithmen für eine Liste der Größe n benötigen. Analysiere den Graphen und beantworte die Fragen:\n\na) Welcher Algorithmus braucht bei n = 10 mehr Vergleiche?\nb) Wie viele Vergleiche benötigt der schnellere Algorithmus ungefähr bei n = 8? Was fällt dir am Wachstum auf?\nc) Erkläre in eigenen Worten, warum der langsamere Algorithmus für große Listen deutlich schlechter wird.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "analyze",
+            "difficulty": null,
+            "dimensions": [
+              "WV",
+              "RB"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "INF.OS.5.PRA.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "a) Der obere Algorithmus (mit mehr Vergleichen) benötigt bei n=10 mehr Vergleiche (~15 laut Graph). b) Der schnellere Algorithmus benötigt bei n=8 ca. 3 Vergleiche; das Wachstum verdoppelt sich nicht bei jeder Verdopplung der Listengröße – es wächst deutlich langsamer als linear (logarithmisch). c) Der langsamere Algorithmus muss im schlechtesten Fall jeden Eintrag prüfen (lineare Suche): Bei doppelter Listengröße braucht er doppelt so viele Vergleiche. Der schnellere (z. B. binäre Suche) halbiert den Suchbereich bei jedem Schritt.",
+            "acceptable_reasoning": "Sinngemäß korrekt; 'logarithmisch' muss nicht zwingend genannt werden, aber die Idee des halbierenden Suchbereichs sollte erkennbar sein.",
+            "rubric": [
+              {
+                "criterion": "Ablesefähigkeit",
+                "levels": [
+                  "Alle Werte korrekt abgelesen",
+                  "Ein Fehler beim Ablesen",
+                  "Mehrere Fehler"
+                ]
+              },
+              {
+                "criterion": "Erklärung des Wachstumsunterschieds",
+                "levels": [
+                  "Halbierungsprinzip oder Äquivalent klar erklärt",
+                  "Vage ('ist schneller'), kein Mechanismus",
+                  "Fehlt"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Schüler:innen lesen Graphen oft nur an Einzelpunkten ab – die Wachstumsrate (Steigung) ist entscheidend.",
+              "Binäre Suche setzt eine sortierte Liste voraus – dieser Vorbedingung Aufmerksamkeit schenken.",
+              "Nicht verwechseln: Anzahl Vergleiche ≠ Ausführungszeit; Vergleiche sind hier ein Proxy für Aufwand."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t7",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "argumentation",
+            "prompt": "Ein Schüler behauptet: „Bubble Sort ist nutzlos, weil es immer bessere Algorithmen gibt. Man sollte ihn gar nicht mehr lernen.“\n\nNimm Stellung zu dieser Aussage. Berücksichtige dabei: Wann kann Bubble Sort trotzdem sinnvoll sein? Welchen Lernwert hat der Algorithmus? Nenne mindestens zwei konkrete Argumente.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 45.0
+            },
+            "cognitive_level": "evaluate",
+            "difficulty": null,
+            "dimensions": [
+              "RB"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "INF.OS.5.PRA.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Mögliche Argumente für den Lehrwert: (1) Bubble Sort ist einfach zu verstehen und zu implementieren – ideal zum Erlernen von Schleifen, Vergleichen und Vertauschen. (2) Bei sehr kleinen Listen oder fast sortierten Listen ist der Aufwand akzeptabel und der Algorithmus leicht nachvollziehbar zu debuggen. (3) Das Studieren ineffizienter Algorithmen lehrt, warum Effizienz überhaupt wichtig ist – ohne Vergleich keine Bewertung. (4) Konzepte wie Pass-Anzahl und Abbruchbedingung lassen sich direkt auf komplexere Algorithmen übertragen.",
+            "acceptable_reasoning": "Mindestens zwei stichhaltige, voneinander unabhängige Argumente; rein emotionale oder inhaltlose Aussagen nicht akzeptieren.",
+            "rubric": [
+              {
+                "criterion": "Anzahl und Qualität der Argumente",
+                "levels": [
+                  "Zwei oder mehr konkrete, gut begründete Argumente",
+                  "Ein konkretes Argument, ein vages",
+                  "Nur vage Aussagen ohne Begründung"
+                ]
+              },
+              {
+                "criterion": "Differenziertheit der Stellungnahme",
+                "levels": [
+                  "Beide Seiten berücksichtigt oder begründet fokussiert",
+                  "Einseitig, aber schlüssig",
+                  "Keine erkennbare Position"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Schüler:innen neigen zu Ein-Satz-Antworten ('er ist gut zum Lernen') ohne Konkretisierung – auf Begründungstiefe bestehen.",
+              "Die Frage zielt auf kritisches Denken, nicht auf eine vorgegebene 'richtige' Meinung – beide Seiten sind vertretbar, wenn gut begründet."
+            ],
+            "self_check": null
+          }
+        ]
+      }
+    ],
+    "assets": [
+      {
+        "id": "abb1",
+        "role": "figure",
+        "medium": "visual",
+        "generator": "matplotlib:function_graph",
+        "spec": {
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              6,
+              8
+            ],
+            [
+              7,
+              12
+            ],
+            [
+              8,
+              12
+            ],
+            [
+              9,
+              15
+            ],
+            [
+              10,
+              15
+            ]
+          ],
+          "connect": true,
+          "xlabel": "Schritt n",
+          "ylabel": "Vergleiche",
+          "title": "Anzahl der Vergleiche – welche Kurve passt?",
+          "xmin": 0,
+          "xmax": 10,
+          "ymin": 0,
+          "ymax": 16
+        },
+        "correctness_surface": null,
+        "misleading_in_isolation": false,
+        "intentionally_flawed": null,
+        "machine_generatable": true,
+        "provenance": null,
+        "data_source": null,
+        "illustrative": false,
+        "caption": null
+      }
+    ],
+    "nachweis": {
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "statement": "Diese Materialien adressieren 3 von 4 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
+      "competence_coverage": [
+        {
+          "competence_id": "INF.OS.5.PRA.01",
+          "exercised_by": [
+            "t1",
+            "t7"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "INF.OS.5.PRA.02",
+          "exercised_by": [
+            "t2",
+            "t4"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "INF.OS.5.PRA.03",
+          "exercised_by": [
+            "t3",
+            "t5",
+            "t6"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "INF.OS.5.PRA.04",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        }
+      ],
+      "gaps": [
+        "INF.OS.5.PRA.04 — Datenbanken benutzen und einfache Datenmodelle entwerfen können"
+      ],
+      "zentrale_konzepte": [
+        "Praktische Informatik"
+      ],
+      "uebergreifende_themen": []
+    },
+    "depth_profile": {
+      "by_level": {
+        "understand": 1,
+        "apply": 2,
+        "remember": 1,
+        "create": 1,
+        "analyze": 1,
+        "evaluate": 1
+      },
+      "by_dimension": {
+        "WV": 5,
+        "AG": 1,
+        "RB": 1
+      },
+      "by_difficulty": {
+        "1": 2,
+        "2": 3,
+        "3": 2
+      },
+      "minutes_total": 61,
+      "minutes_resource_independent": 61
+    },
+    "rack": null
+  },
+  "artifacts": {
+    "student_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0149\\student.pdf",
+    "teacher_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0149\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0149\\homework.pdf",
+    "preview_png": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0149\\raster\\student.p1.png"
+  },
+  "verify_problems": [],
+  "verify_warnings": [],
+  "parent_id": null,
+  "feedback": [],
+  "error": null
+}

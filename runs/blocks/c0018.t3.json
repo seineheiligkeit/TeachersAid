@@ -1,0 +1,72 @@
+{
+  "id": "c0018.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Mia ist 12 Jahre alt und möchte einem Online-Spiel beitreten. Beim Anmelden fragt das Spiel nach: Vorname, Geburtsdatum, E-Mail-Adresse, Handynummer, Wohnort und einem Profilbild.\n\n(a) Welche dieser Angaben wären für ein Onlinespiel notwendig? Welche wären übermäßig?\n(b) Was rätst du Mia, bevor sie sich anmeldet?\n(c) Welche Angabe ist besonders heikel, wenn jemand online schreiben sollte: 'Wow Mia, du wohnst also in Graz – ich wohne auch dort!'?",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Registrierung beim Onlinespiel – was darf man angeben?"
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 40.0
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "I",
+      "G"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DGB.US.1.KOM.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "(a) Notwendig: E-Mail-Adresse (für Konto-Bestätigung), evtl. Geburtsdatum (Altersprüfung). Übermäßig: Handynummer (kein offensichtlicher Zweck), Wohnort (zu spezifisch), Profilbild (nicht spielnotwendig). (b) Eltern fragen; Nutzungsbedingungen überfliegen; Nickname statt Echtnamen verwenden; Eltern-E-Mail-Adresse nutzen; kein Profilbild mit echtem Gesicht hochladen. (c) Wohnort ist besonders heikel: Jemand Unbekanntes weiß jetzt, wo Mia wohnt – das kann zu einem Treffen in der realen Welt führen ('Grooming'-Gefahr).",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Risikobeurteilung",
+        "levels": [
+          "Kein Unterschied zwischen notwendig und übermäßig erkannt",
+          "Teilweise richtige Einstufung",
+          "Klare Begründung für jede Angabe; Wohnort als besonderes Risiko erkannt"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Manche Schüler:innen sehen im Wohnort kein Problem – klar machen: Online-Bekanntschaften kennen Mia nicht wirklich, und die Kombination Vorname + Wohnort + Alter erlaubt es, jemanden in der realen Welt zu finden.",
+      "Das Thema Grooming kann behutsam eingeführt werden: Erwachsene, die online vorgeben, Gleichaltrige zu sein – kein Detail, aber das Bewusstsein schärfen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Digitale Grundbildung",
+  "klasse": 1,
+  "kompetenzbereich": "Kommunikation: Kommunizieren und Kooperieren unter Nutzung informatischer, medialer Systeme",
+  "competences": [
+    "DGB.US.1.KOM.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "I",
+    "G"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0018",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

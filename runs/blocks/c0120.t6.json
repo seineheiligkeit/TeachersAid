@@ -1,0 +1,138 @@
+{
+  "id": "c0120.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Beurteile die folgenden Aussagen ueber das Urbanisierungs-Diagramm. Entscheide: richtig, falsch oder irrefuehrend — und erklaere kurz warum.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Die Schweiz ist das am staerksten urbanisierte Land der Welt.",
+        "In allen acht Laendern lebt mehr als ein Drittel der Bevoelkerung in Staedten.",
+        "Der Unterschied zwischen dem hoechsten und niedrigsten Wert betraegt mehr als 50 Prozentpunkte."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "BEG",
+      "DAR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.3.DAT.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1. IRREFUEHREND/FALSCH: Die Schweiz ist das hoechste Land im Diagramm (85,5%), aber das Diagramm umfasst nur 8 Laender. Weltweit gibt es laender mit noch hoeherem Urbanisierungsgrad (z.B. Singapur 100%, Katar ~99%). Korrekte Aussage: 'hoechster Wert unter den verglichenen Laendern'. 2. RICHTIG: Niedrigster Wert: Indien 35,4% > 33,3%. Alle Laender ueber einem Drittel. 3. RICHTIG: Spannweite = 85,5 - 35,4 = 50,1 Prozentpunkte > 50.",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Alle drei korrekt beurteilt",
+        "levels": [
+          "0-1 korrekt",
+          "2 korrekt",
+          "Alle 3 korrekt"
+        ]
+      },
+      {
+        "criterion": "Einschraenkung bei Aussage 1 (nur 8 Laender)",
+        "levels": [
+          "Nicht erkannt",
+          "Erkannt und begruendet"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Aussage 1 ist das Kernbeispiel fuer das Verwechseln von 'im Diagramm' mit 'weltweit' — besonders wichtig fuer Medienkompetenz.",
+      "Aussage 3: sorgfaeltig rechnen; 50,1 > 50 ist knapp, also richtig."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Mathematik",
+  "klasse": 3,
+  "kompetenzbereich": "4: Daten und Zufall",
+  "competences": [
+    "MAT.US.3.DAT.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "BEG",
+    "DAR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "title": "Anteil der Stadtbevoelkerung im Laendervergleich (2024)",
+        "xlabel": "Land",
+        "ylabel": "Anteil Stadtbevoelkerung (%)",
+        "log": false,
+        "categories": [
+          "Österreich",
+          "Deutschland",
+          "Schweiz",
+          "Italien",
+          "USA",
+          "China",
+          "Indien",
+          "Nigeria"
+        ],
+        "values": [
+          69.5,
+          82.0,
+          85.5,
+          69.6,
+          80.1,
+          65.9,
+          35.4,
+          63.0
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "worldbank_urbanisierung",
+        "series": "vergleich",
+        "note": null,
+        "title": "Verstädterung im Ländervergleich (Anteil Stadtbevölkerung)",
+        "url": "https://data.worldbank.org/indicator/SP.URB.TOTL.IN.ZS",
+        "attribution": "Datenquelle: World Bank – data.worldbank.org (SP.URB.TOTL.IN.ZS, CC BY 4.0)",
+        "stand": "2024"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0120",
+  "source": "ai",
+  "created_at": "2026-06-27T15:21:15+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

@@ -1,0 +1,175 @@
+{
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Projektionen und Risse",
+  "title": "Grund-, Auf- und Kreuzriss",
+  "kernfrage": "Wie kannst du aus drei Ansichten (Grundriss, Aufriss, Kreuzriss) den räumlichen Körper vollständig erfassen und umgekehrt?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Das Drei-Tafeln-System",
+        "throughline": "Schüler:innen verstehen das orthogonale Drei-Tafeln-System als Grundlage technischer Zeichnungen: jeder Riss ist eine maßstabsgetreue Parallelprojektion auf eine der drei Hauptebenen. Das Hin- und Herwechseln zwischen Rissen und Körper ist das zentrale Kompetenzraster dieses Unterrichtsblocks.",
+        "talking_points": [
+          "Warum braucht man in der Technik genau drei Risse — wäre einer nicht einfacher?",
+          "Was bedeutet „maßstabsgetreu" beim Riss, und was ist beim Schrägbild anders?",
+          "Wie erkennt man verdeckte Kanten in einem Riss, und warum werden sie gestrichelt eingezeichnet?"
+        ],
+        "extensions": [
+          "Einfache technische Zeichnung (z. B. einer Schraube oder eines Stuhlbeins) zeigen und die drei Risse identifizieren lassen.",
+          "Kreuzprojektion als Übung: Schüler:innen zeichnen aus einem Schrägbild die drei Risse auf kariertem Papier."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "multiple_choice",
+            "prompt": "Das orthogonale Drei-Tafeln-System liefert für jeden Körper drei Risse. Welche Aussage beschreibt die Zuordnung korrekt?",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "Grundriss = Ansicht von vorne; Aufriss = Ansicht von oben; Kreuzriss = Ansicht von der Seite.",
+                "Grundriss = Ansicht von oben; Aufriss = Ansicht von vorne; Kreuzriss = Ansicht von der Seite.",
+                "Grundriss = Ansicht von der Seite; Aufriss = Ansicht von oben; Kreuzriss = Ansicht von vorne.",
+                "Grundriss = Ansicht von vorne; Aufriss = Ansicht von der Seite; Kreuzriss = Ansicht von oben."
+              ],
+              "select": "one"
+            },
+            "response": {"mode": "choices", "options": ["A", "B", "C", "D"], "select": "one"},
+            "cognitive_level": "remember",
+            "dimensions": ["H1"],
+            "serves": [{"competence_id": "GEZ.US.4.PRO.01", "relation": "exercises"}],
+            "est_minutes": 4,
+            "answer_key": "B — Grundriss ist die Projektion auf die waagrechte Ebene (von oben); Aufriss auf die senkrechte Frontebene (von vorne); Kreuzriss auf die senkrechte Seitenebene (von rechts oder links).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "„Grundriss" wird im Alltag (Architektur) für Draufsicht verwendet — das stimmt mit dem technischen Begriff überein, aber Schüler:innen glauben manchmal, Grundriss = Vorderansicht.",
+              "Die Blickrichtungen für Aufriss und Kreuzriss verwechseln Schüler:innen häufig — ein Merksatz hilft: Aufriss = Auf den Körper draufschauen von vorne."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "true_false_justify",
+            "prompt": "Beurteile die folgenden Aussagen über Risse und Projektionen. Schreibe „wahr" oder „falsch" und begründe.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Im Aufriss eines Würfels sieht man immer ein Quadrat, egal aus welcher Richtung man schaut.",
+                "Verdeckte Kanten werden in Rissen mit einer gestrichelten Linie eingezeichnet.",
+                "Aus dem Grundriss alleine kann man immer auf den genauen Körper schließen.",
+                "Die drei Risse eines Körpers enthalten zusammen alle Informationen über Länge, Breite und Höhe."
+              ]
+            },
+            "response": {"mode": "box", "min_height_mm": 50},
+            "cognitive_level": "understand",
+            "dimensions": ["H1"],
+            "serves": [{"competence_id": "GEZ.US.4.PRO.01", "relation": "exercises"}],
+            "est_minutes": 8,
+            "answer_key": "1. wahr — ein Würfel hat von jeder Seite eine quadratische Projektion. 2. wahr — DIN/ÖNORM-Konvention. 3. falsch — gleicher Grundriss kann von verschiedenen Körpern stammen (z. B. Würfel und Zylinder mit gleicher Grundfläche haben denselben kreisförmigen Grundriss, wenn der Zylinder kreisförmig und der Würfel quadratisch ist — oder: zwei Prismen können identischen Grundriss haben). 4. wahr — die drei Projektionen auf die drei Koordinatenebenen decken alle drei Raumrichtungen ab.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Aussage 3 ist eine wichtige Einsicht: ein Riss ist immer eine Informationsreduktion.",
+              "Aussage 4 gilt für „einfache" Körper ohne Hinterlegungen — bei komplexen Bauteilen können auch drei Risse mehrdeutig sein."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "construction",
+            "prompt": "Zeichne die drei Risse (Grundriss, Aufriss, Kreuzriss) eines geraden quadratischen Prismas (Quader) mit den Maßen Länge = 6 cm, Breite = 4 cm, Höhe = 3 cm.\n\nAnleitung:\n1. Zeichne den Aufriss (Vorderansicht) in der Mitte des Blatts.\n2. Projiziere daraus den Grundriss (nach unten, mit Hilfslinien).\n3. Projiziere den Kreuzriss (nach rechts, mit Hilfslinien).\n4. Zeichne alle sichtbaren Kanten mit einer Volllinie, verdeckte Kanten mit einer Strichlinie.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 110},
+            "cognitive_level": "apply",
+            "dimensions": ["H2"],
+            "serves": [{"competence_id": "GEZ.US.4.PRO.02", "relation": "exercises"}],
+            "est_minutes": 15,
+            "answer_key": "Aufriss: Rechteck 6 cm × 3 cm. Grundriss (unter dem Aufriss): Rechteck 6 cm × 4 cm. Kreuzriss (rechts neben dem Aufriss): Rechteck 4 cm × 3 cm. Beim Quader gibt es keine verdeckten Kanten in den Rissen. Hilfslinien zur Projektion sichtbar.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Häufiger Fehler: Länge und Breite im Grundriss vertauscht — klären, welche Richtung im Grundriss der Breite (Tiefe) entspricht.",
+              "Hilfslinien weglassen ist ein typischer Flüchtigkeitsfehler — erklären, dass sie Teil der geometrischen Konstruktion sind."
+            ],
+            "rubric": [
+              {"criterion": "Risse korrekt", "levels": ["Mehr als ein Riss falsch", "Ein Riss falsch oder fehlende Maße", "Alle drei Risse geometrisch korrekt"]},
+              {"criterion": "Linienarten", "levels": ["Nicht unterschieden", "Teilweise unterschieden", "Vollständig korrekt (Volllinien / Strichlinien)"]},
+              {"criterion": "Hilfslinien", "levels": ["Fehlend", "Teilweise sichtbar", "Vollständig und korrekt eingezeichnet"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "construction",
+            "prompt": "Gegeben sind die drei Risse eines Körpers:\n- Aufriss: Rechteck mit einer Halbkreiskappe oben (Breite 4 cm, Rechteckhöhe 4 cm, Halbkreisradius 2 cm)\n- Grundriss: Rechteck 4 cm × 6 cm\n- Kreuzriss: Rechteck 6 cm × 6 cm\n\nBestimme: Um welchen Körper handelt es sich? Zeichne ein Schrägbild (Kavalierperspektive) des Körpers.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 90},
+            "cognitive_level": "analyze",
+            "dimensions": ["H3"],
+            "serves": [{"competence_id": "GEZ.US.4.PRO.03", "relation": "exercises"}],
+            "est_minutes": 12,
+            "answer_key": "Es handelt sich um einen Quader (4 cm × 6 cm × 4 cm) mit einem aufgesetzten Halbzylinder (Radius 2 cm, Länge 6 cm) auf der Oberseite. Das Schrägbild zeigt den Quader mit dem aufliegenden Halbzylinder (dessen Schnittellipsen als halbe Ellipsen erscheinen). Alternativ: einfaches Tunnel-/Gewölbeprofil.",
+            "acceptable_reasoning": "Die Identifikation des Körpers ist wichtiger als das technisch perfekte Schrägbild — gute Begründung zur Körperform voll werten.",
+            "watch_outs": [
+              "Diese Aufgabe erfordert „inverses" Rissdeuten — Schüler:innen müssen von den Rissen auf den Körper zurückschließen. Das ist anspruchsvoller als das Erstellen von Rissen.",
+              "Der Halbzylinder oben ist die Knacknuss: er erscheint im Aufriss als Halbkreis, im Kreuzriss und Grundriss als Rechteck."
+            ],
+            "rubric": [
+              {"criterion": "Körperidentifikation", "levels": ["Falsch", "Grundkörper richtig, Aufbau falsch", "Vollständig korrekt beschrieben"]},
+              {"criterion": "Schrägbild", "levels": ["Nicht erkennbar", "Grundkörper erkennbar", "Vollständig mit Halbzylinder"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "decision_scenario",
+            "prompt": "Ein Maschinenteil soll für ein Ersatzteilkatalog dokumentiert werden. Der Konstrukteur überlegt, ob er (A) ein einziges Schrägbild oder (B) drei orthogonale Risse (Grundriss, Aufriss, Kreuzriss) in die Dokumentation aufnimmt.\n\nWelche Variante empfiehlst du für die technische Dokumentation und welche für die Verständnishilfe im Katalog? Begründe deine Empfehlung mit den spezifischen Vor- und Nachteilen beider Darstellungsformen.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Wähle für jede Situation die geeignetere Darstellung und begründe geometrisch."
+            },
+            "response": {"mode": "box", "min_height_mm": 55},
+            "cognitive_level": "evaluate",
+            "dimensions": ["H1"],
+            "serves": [{"competence_id": "GEZ.US.4.PRO.01", "relation": "exercises"}],
+            "est_minutes": 9,
+            "answer_key": "Technische Dokumentation: Drei orthogonale Risse — maßstabsgetreu, eindeutig, alle Maße ableitbar, Normenkonform (ÖNORM/ISO). Verständnishilfe: Schrägbild — gibt räumlichen Eindruck, leichter lesbar für Nicht-Fachleute, aber keine genauen Maße ablesbar. Ideallösung: beide kombinieren.",
+            "acceptable_reasoning": "Schüler:innen, die auch die Kombination beider Darstellungen als beste Lösung nennen, erhalten vollen Punkt.",
+            "watch_outs": [
+              "Schüler:innen tendieren dazu, das Schrägbild für alles zu bevorzugen — herausarbeiten, dass es Maße verzerrt.",
+              "Den Normbezug (ISO-Risse in technischen Zeichnungen) als Motivation für das Risszeichen-System einbringen."
+            ],
+            "rubric": [
+              {"criterion": "Technische Dokumentation", "levels": ["Falsche Wahl", "Richtige Wahl ohne Begründung", "Richtige Wahl mit geometrischer Begründung"]},
+              {"criterion": "Verständnishilfe", "levels": ["Falsche Wahl", "Richtige Wahl ohne Begründung", "Richtige Wahl mit geometrischer Begründung"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "open_response",
+            "prompt": "Entwirf einen einfachen, selbst gewählten Gegenstand (z. B. ein Buchstütze, ein Briefbeschwerer, eine Ablagebox) und beschreibe ihn so, dass jemand die drei Risse zeichnen könnte. Gib an: (a) den Namen und die Grundform des Körpers, (b) die Maße in cm, (c) was man im Aufriss, Grundriss und Kreuzriss sehen würde. Du musst nicht zeichnen — eine präzise Beschreibung genügt.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 65},
+            "cognitive_level": "create",
+            "dimensions": ["H2", "H1"],
+            "serves": [{"competence_id": "GEZ.US.4.PRO.02", "relation": "exercises"}],
+            "est_minutes": 12,
+            "answer_key": "Offene Aufgabe. Beurteilung: klare Körperbeschreibung, realistische Maße, korrekte Beschreibung der drei Risse (was erscheint als welche Form in welchem Riss). Beispiel: Buchstütze = Quader + Winkel; Aufriss: L-Form; Grundriss: Rechteck; Kreuzriss: Rechteck.",
+            "acceptable_reasoning": "Schüler:innen, die komplexere Formen wählen, aber die Risse korrekt beschreiben, erhalten vollen Punkt — Komplexität nicht erzwingen.",
+            "watch_outs": [
+              "Schüler:innen wählen manchmal zu komplexe Formen und scheitern dann an der Beschreibung — einfachen Körper empfehlen und dann steigern.",
+              "Maße plausibel überprüfen: ein Briefbeschwerer mit 50 cm Höhe ist unrealistisch — diesen Alltagsbezug explizit machen."
+            ],
+            "rubric": [
+              {"criterion": "Körperbeschreibung", "levels": ["Unklar oder geometrisch falsch", "Beschreibbar, aber unvollständig", "Eindeutig und vollständig"]},
+              {"criterion": "Risse korrekt beschrieben", "levels": ["Kein Riss korrekt", "Ein bis zwei Risse korrekt", "Alle drei Risse korrekt beschrieben"]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

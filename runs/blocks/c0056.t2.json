@@ -1,0 +1,70 @@
+{
+  "id": "c0056.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Lies die E-Mail nochmals. Sind die Aussagen richtig (vrai) oder falsch (faux)? Begründe auf Deutsch.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Hugo hat das Wochenende allein verbracht.",
+        "Das Kino-Erlebnis hat Hugo gefallen.",
+        "Hugo fragt Lena nach ihrem Wochenende."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "vrai / faux",
+        "Begründung (Deutsch)"
+      ],
+      "rows": 3
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "LES"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS2.US.4.LES.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "1. faux (il est allé au cinéma avec ses amis, pizza mit Familie) | 2. vrai (c'était génial!) | 3. vrai (qu'est-ce que tu as fait ce week-end?)",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "c'était génial ist die entscheidende Bewertungsaussage — Schüler:innen müssen génial als positives Adjektiv kennen oder erschließen.",
+      "Aussage 1: Schüler:innen müssen verstehen, dass 'avec mes amis' und 'avec ma famille' zwei verschiedene Aktivitäten sind — nicht eine gemeinsame."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Zweite lebende Fremdsprache",
+  "klasse": 4,
+  "kompetenzbereich": "Lesen",
+  "competences": [
+    "FS2.US.4.LES.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "LES"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0056",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

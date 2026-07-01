@@ -1,0 +1,95 @@
+{
+  "id": "c0154.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "In einer Urne befinden sich 5 rote und 3 blaue Kugeln. Es werden nacheinander 2 Kugeln ohne Zurücklegen gezogen.\n(a) Berechne die Wahrscheinlichkeit, dass beide Kugeln rot sind.\n(b) Berechne die Wahrscheinlichkeit, dass die erste Kugel rot und die zweite blau ist.\n(c) Berechne die Wahrscheinlichkeit, dass genau eine der beiden Kugeln rot ist.\n(d) Sind die Ereignisse „erste Kugel rot“ und „zweite Kugel rot“ stochastisch unabhängig? Begründe.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 75.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "FO",
+      "KA"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.OS.6.BES.04",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "MAT.OS.6.BES.05",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "(a) P(RR) = 5/8 · 4/7 = 20/56 = 5/14 ≈ 0,357. (b) P(RB) = 5/8 · 3/7 = 15/56 ≈ 0,268. (c) P(genau eine rot) = P(RB) + P(BR) = 15/56 + (3/8 · 5/7) = 15/56 + 15/56 = 30/56 = 15/28 ≈ 0,536. (d) NEIN — weil P(zweite rot | erste rot) = 4/7 ≠ 5/8 = P(zweite rot). Das Ergebnis der ersten Ziehung beeinflusst die zweite (Ziehung ohne Zurücklegen).",
+    "acceptable_reasoning": "Für (d) genügt der Nachweis P(A∩B) ≠ P(A)·P(B): P(RR) = 5/14 ≠ 5/8 · 5/8 = 25/64.",
+    "rubric": [
+      {
+        "criterion": "Teilaufgabe (a)",
+        "levels": [
+          "Falsch",
+          "Ansatz korrekt, Fehler",
+          "5/14 korrekt"
+        ]
+      },
+      {
+        "criterion": "Teilaufgabe (c)",
+        "levels": [
+          "Nur einen Pfad berücksichtigt",
+          "Beide Pfade, Rechenfehler",
+          "15/28 korrekt"
+        ]
+      },
+      {
+        "criterion": "Unabhängigkeit (d)",
+        "levels": [
+          "Behauptung ohne Berechnung",
+          "Rechnung vorhanden, Schluss fehlt",
+          "Vollständige Begründung mit Berechnung"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Verwechslung von mit/ohne Zurücklegen ist sehr häufig — explizit thematisieren, warum sich der Nenner ändert.",
+      "Bei (c) müssen beide günstigen Pfade (RB und BR) addiert werden — Additionsregel.",
+      "Unabhängigkeit: Schüler:innen sollen eine konkrete Rechnung angeben, nicht nur behaupten — Ziehung ohne Zurücklegen macht Abhängigkeit intuitiv klar."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Mathematik",
+  "klasse": 6,
+  "kompetenzbereich": "Beschreibende Statistik; Wahrscheinlichkeit",
+  "competences": [
+    "MAT.OS.6.BES.04",
+    "MAT.OS.6.BES.05"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "FO",
+    "KA"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0154",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:26+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

@@ -1,0 +1,85 @@
+{
+  "id": "c0091.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Du bist Mitglied eines fiktiven österreichischen Hilfskomitees. Nach einer schweren Überschwemmung in einer Küstenregion eines einkommensschwachen Landes stehen euch 500.000 Euro zur Verfügung. Ihr könnt das Geld auf folgende Möglichkeiten aufteilen:\n\n**A) Soforthilfe:** Nahrungsmittel, Zelte, medizinische Versorgung — hilft sofort, aber nur kurzfristig.\n**B) Wiederaufbau:** erdbeben-/hochwassersichere Häuser und Schulen bauen — langfristig, aber langsamer.\n**C) Prävention:** Frühwarnsystem und Schutzdeiche finanzieren — schützt vor künftigen Ereignissen, aber hilft jetzt kaum.\n\nWie teilst du die 500.000 Euro auf? Begründe deine Entscheidung.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Wie viel Prozent des Budgets gibst du für Soforthilfe (A), Wiederaufbau (B) und Prävention (C) aus? Begründe deine Aufteilung."
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "UK",
+      "HK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.1.LEB4.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Keine einzige richtige Lösung — die Aufgabe misst die Qualität der Begründung. Typische starke Antworten: Mindestens etwas für Soforthilfe (Menschen in unmittelbarer Not); Schwerpunkt langfristig (B+C) zeigt systemisches Denken. Schwache Antworten: 100 % Soforthilfe ohne Begründung.",
+    "acceptable_reasoning": "Jede begründete Aufteilung ist akzeptabel. Die Begründung muss einen Trade-off benennen (kurzfristig vs. langfristig, Bedarf vs. Wirkung).",
+    "rubric": [
+      {
+        "criterion": "Aufteilung begründet",
+        "levels": [
+          "Keine Aufteilung oder keine Begründung",
+          "Aufteilung vorhanden, aber Begründung fehlt",
+          "Aufteilung mit explizitem Trade-off-Argument"
+        ]
+      },
+      {
+        "criterion": "Langfristperspektive",
+        "levels": [
+          "Nur Soforthilfe, keine Langfristperspektive",
+          "Langfristperspektive erwähnt",
+          "Ausgewogene Abwägung kurz- vs. langfristig mit Begründung"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Kein moralisches Urteil über die Entscheidung — es gibt keine objektiv richtige Antwort, und das ist die pädagogische Pointe.",
+      "Schüler:innen können in Zweiergruppen diskutieren, bevor sie aufschreiben — das fördert die Urteilsfähigkeit.",
+      "Der Szenario-Text ist absichtlich vereinfacht; die Realität der Katastrophenhilfe ist komplexer (lokale Partner, Koordination etc.). Das kann als Erweiterung thematisiert werden."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 1,
+  "kompetenzbereich": "Leben und Wirtschaften unter Beachtung der natürlichen Prozesse",
+  "competences": [
+    "GWB.US.1.LEB4.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "UK",
+    "HK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0091",
+  "source": "ai",
+  "created_at": "2026-06-26T19:02:23+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

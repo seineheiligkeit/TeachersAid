@@ -1,0 +1,75 @@
+{
+  "id": "c0057.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Schreibe auf Französisch, was du magst und was du nicht magst. Benutze:\n\n✓ J'aime... / J'adore...\n✗ Je n'aime pas... / Je déteste...\n\nSchreibe mindestens 4 Sätze — 2 Dinge, die du magst, und 2, die du nicht magst.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 40.0
+    },
+    "cognitive_level": "create",
+    "dimensions": [
+      "SCH"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS2.US.3.SCH.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Beispiellösung: J'aime jouer au football. J'adore la musique. Je n'aime pas les maths. Je déteste me lever tôt. (Individuelle Antworten akzeptieren; auf ne...pas-Struktur und korrekte Infinitive achten.)",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Verwendung von Verneinung",
+        "levels": [
+          "ne...pas korrekt gebildet (auch n' vor Vokal)",
+          "Verneinung erkennbar, Elision oder Position fehlt",
+          "Verneinung fehlt oder unverständlich"
+        ]
+      },
+      {
+        "criterion": "Bandbreite",
+        "levels": [
+          "Mindestens 4 verschiedene Sätze mit unterschiedlichem Vokabular",
+          "4 Sätze, aber mit sehr ähnlichem Vokabular",
+          "Weniger als 4 Sätze"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Negation ne...pas umschließt das Verb: Je n'aime pas (NICHT Je aime pas oder J'aime ne pas) — die Elision n' vor Vokal und die Zweiteiligkeit der Negation sind fehleranfällig.",
+      "J'adore (ich liebe sehr) ist expressiver als J'aime — Schüler:innen gerne ermutigen, es zu verwenden, es ist ein nützliches Wort im Alltagsfranzösisch."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Zweite lebende Fremdsprache",
+  "klasse": 3,
+  "kompetenzbereich": "Schreiben",
+  "competences": [
+    "FS2.US.3.SCH.02"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "SCH"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0057",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

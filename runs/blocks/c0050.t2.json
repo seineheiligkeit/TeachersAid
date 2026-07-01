@@ -1,0 +1,71 @@
+{
+  "id": "c0050.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "oral",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Your teacher reads a short dialogue aloud TWICE. Then decide: are the sentences below true (T) or false (F)? Write the correct information for false statements.\n\n[Teacher reads:]\nMrs Green: \"Good morning, Tom. Could you please hand out these worksheets to the class?\"\nTom: \"Sure! How many are there?\"\nMrs Green: \"Twenty-five. And please put one on every desk before the lesson starts.\"\nTom: \"No problem. Should I collect the old worksheets too?\"\nMrs Green: \"Yes, please. Put them on my desk.\"",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Mrs Green asks Tom to collect the worksheets.",
+        "There are 25 new worksheets.",
+        "Tom should put the worksheets on the teacher's desk.",
+        "Tom needs to do this after the lesson."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Statement",
+        "T / F",
+        "Correction (if false)"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "HOR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS1.US.2.HOR.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "1. F — She asks him to hand OUT the worksheets (and collect the OLD ones). 2. T. 3. F — He puts them on every desk. 4. F — Before the lesson starts.",
+    "acceptable_reasoning": "Schüler:innen dürfen sinngemäß korrigieren, nicht wörtlich.",
+    "rubric": [],
+    "watch_outs": [
+      "Statement 1 ist eine klassische Verwechslungsfalle: 'hand out' vs. 'collect' — beide kommen im Text vor",
+      "Statement 3 und 4 prüfen Details zur Zielaktion; auf genaue Formulierung achten"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Erste lebende Fremdsprache",
+  "klasse": 2,
+  "kompetenzbereich": "Hören",
+  "competences": [
+    "FS1.US.2.HOR.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "HOR"
+  ],
+  "modality": "oral",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0050",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

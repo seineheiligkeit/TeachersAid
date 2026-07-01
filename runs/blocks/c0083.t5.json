@@ -1,0 +1,81 @@
+{
+  "id": "c0083.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "modelling_task",
+    "prompt": "Ein Rechteck hat den Umfang 36 cm. Die Länge ist doppelt so groß wie die Breite. Stelle eine Gleichung für die Breite b auf und löse sie. Wie groß ist die Länge?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 40.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "MOD",
+      "OPE"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.2.VAR.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Umfang: 2·(l + b) = 36, mit l = 2b: 2·(2b + b) = 36 → 6b = 36 → b = 6 cm. Länge: l = 12 cm.",
+    "acceptable_reasoning": "Umfangsformel aufstellen, Längenbedingung einsetzen, auflösen.",
+    "rubric": [
+      {
+        "criterion": "Gleichung korrekt aufgestellt",
+        "levels": [
+          "Keine Gleichung",
+          "Gleichung mit Fehler",
+          "Gleichung korrekt"
+        ]
+      },
+      {
+        "criterion": "Lösung vollständig (b und l)",
+        "levels": [
+          "Nur b oder nur l",
+          "Beide angegeben, Fehler",
+          "Beide korrekt mit Einheit"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Viele stellen 2b + b = 36 auf (Halbumfang vergessen) — Umfangsformel wiederholen.",
+      "Ergebnis rückprüfen: 2·(12+6) = 36 ✓"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "modelling_task",
+  "subject": "Mathematik",
+  "klasse": 2,
+  "kompetenzbereich": "2: Variablen und Funktionen",
+  "competences": [
+    "MAT.US.2.VAR.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "MOD",
+    "OPE"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0083",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:17+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

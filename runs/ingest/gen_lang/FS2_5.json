@@ -1,0 +1,237 @@
+{
+  "subject": "Zweite lebende Fremdsprache",
+  "klasse": 4,
+  "kompetenzbereich": "Schreiben",
+  "title": "Mon passé, mes rêves — Vergangenes und Zukünftiges schreiben",
+  "kernfrage": "Kannst du auf Französisch über Dinge schreiben, die du erlebt hast, und über deine Pläne und Wünsche für die Zukunft?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Über Vergangenes und Zukünftiges schreiben — passé composé und Zukunftsausdruck",
+        "throughline": "Schüler:innen erweitern ihren schriftlichen Ausdruck über das Präsens hinaus: Sie lernen, abgeschlossene Ereignisse im passé composé zu beschreiben und Pläne/Wünsche mit aller/voudroir + Infinitiv auszudrücken. Dies ermöglicht echte Kommunikation über Zeit und ist ein zentraler Schritt vom Anfänger- zum fortgeschrittenen Anfängerniveau (A1→A2).",
+        "talking_points": [
+          "passé composé als 'Vergangenheitsform des Alltags': avoir/être + Partizip — die Wahl des Hilfsverbs (avoir vs. être) ist die wichtigste Fehlerquelle; Eselsbrücke: Bewegungsverben und reflexive Verben nehmen être (aller, venir, partir...)",
+          "Partizipbildung: regelmäßige Verben (manger → mangé; finir → fini; prendre → pris) — unregelmäßige Partizipien einführen, aber auf Häufiges beschränken (faire → fait; voir → vu; avoir → eu)",
+          "Zukunft einfach ausdrücken: aller + Infinitiv (futur proche) als Alltagsform statt futur simple — Je vais manger ist für A1/A2 viel wichtiger als Je mangerai",
+          "Meinungen begründen: parce que (weil) als einfachste Konjunktion für Begründungen einführen — J'aime Paris parce que c'est beau"
+        ],
+        "extensions": [
+          "Mini-Journal: Schüler:innen schreiben 3 Tage lang täglich 3 Sätze auf Französisch über ihren Tag (was haben sie gegessen, gemacht, gesehen) — Schreibfluss aufbauen",
+          "Zeitstrahl: Schüler:innen zeichnen einen persönlichen Zeitstrahl mit 3 Ereignissen aus der Vergangenheit und 3 Plänen für die Zukunft — auf Französisch beschriften",
+          "Tandem-Schreiben: Schüler:innen beginnen eine Geschichte im Präsens, der/die Partner:in setzt sie im passé composé fort"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "matching",
+            "prompt": "Ordne die Infinitive (1–6) ihren Partizipformen (A–F) zu.\n\nInfinitive:\n1. manger\n2. finir\n3. faire\n4. aller\n5. voir\n6. prendre\n\nPartizipformen:\nA. fini\nB. pris\nC. allé\nD. fait\nE. vu\nF. mangé",
+            "payload": {
+              "kind": "matching",
+              "left": ["manger", "finir", "faire", "aller", "voir", "prendre"],
+              "right": ["fini", "pris", "allé", "fait", "vu", "mangé"]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "remember",
+            "dimensions": ["SCH"],
+            "serves": [
+              { "competence_id": "FS2.US.4.SCH.03", "relation": "exercises" }
+            ],
+            "est_minutes": 5,
+            "answer_key": "1–F | 2–A | 3–D | 4–C | 5–E | 6–B",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "allé (von aller) wird im passé composé mit être gebildet (je suis allé), nicht mit avoir — dieser Unterschied kommt in der nächsten Aufgabe; hier erst die Partizipform einüben.",
+              "vu (von voir) und eu (von avoir) klingen ähnlich — Aussprache klar machen: vu = wie im Deutschen 'ü'; eu = offenes 'ö'."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "table_fill",
+            "prompt": "Ergänze die passé-composé-Sätze. Wähle das richtige Hilfsverb (avoir oder être) und schreibe die vollständige Form.\n\nRegel: Die meisten Verben nehmen avoir. Bewegungsverben wie aller, venir, partir, arriver nehmen être. Bei être-Verben passt sich das Partizip dem Subjekt an (allé / allée / allés / allées).\n\n1. Hier, j'___ (manger) une pizza.\n2. Samedi, elle ___ (aller) au marché.\n3. Nous ___ (finir) les devoirs.\n4. Il ___ (voir) un film super.\n5. Elles ___ (partir) à huit heures.",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": ["Nr.", "Satz vollständig ausgefüllt"],
+              "rows": 5
+            },
+            "cognitive_level": "apply",
+            "dimensions": ["SCH"],
+            "serves": [
+              { "competence_id": "FS2.US.4.SCH.03", "relation": "exercises" }
+            ],
+            "est_minutes": 8,
+            "answer_key": "1. j'ai mangé | 2. elle est allée (mit -e, da féminin) | 3. nous avons fini | 4. il a vu | 5. elles sont parties (mit -es, da Pl. féminin)",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Genusanpassung bei être-Verben: elle est allée (mit -e), ils sont allés (mit -s), elles sont allées (mit -es) — dies ist systematisch, nicht eine Ausnahme; explizit als Regel einführen.",
+              "Schüler:innen schreiben oft 'elle a allée' — das Hilfsverb-Partizip-Mismatch ist der häufigste passé-composé-Fehler; gezielt darauf hinweisen.",
+              "partir → parti (regelmäßig nach -ir), aber die Vokalveränderung kann überraschen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "open_response",
+            "prompt": "Lies diesen Text über Léas Wochenende.\n\n---\nCe week-end, j'ai fait beaucoup de choses ! Vendredi soir, j'ai regardé un film avec ma sœur. On a mangé du popcorn — délicieux ! Samedi, je suis allée chez ma grand-mère. Elle a fait un gâteau au chocolat. Dimanche, j'ai lu un livre et j'ai dormi jusqu'à midi. C'était parfait !\n---\n\nBeantworte die Fragen auf Französisch.\n1. Was hat Léa am Freitagabend gemacht?\n2. Wohin ist sie am Samstag gegangen?\n3. Wie bewertet Léa ihr Wochenende?",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 3
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["SCH", "LES"],
+            "serves": [
+              { "competence_id": "FS2.US.4.LES.01", "relation": "supports" },
+              { "competence_id": "FS2.US.4.SCH.03", "relation": "exercises" }
+            ],
+            "est_minutes": 7,
+            "answer_key": "1. Elle a regardé un film avec sa sœur. (et mangé du popcorn) | 2. Elle est allée chez sa grand-mère. | 3. C'était parfait ! (Es war perfekt.)",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "j'ai lu (von lire) und j'ai dormi (von dormir) sind unregelmäßige Partizipien — wenn Schüler:innen sie nicht kennen, können sie aus dem Kontext erschlossen werden; nicht als Fehler werten, wenn sie es nicht kennen.",
+              "jusqu'à midi (bis Mittag) ist eine wichtige Zeitangabe; Schüler:innen müssen midi kennen (12 Uhr = Mittag, nicht Mitternacht)."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "create_produce",
+            "prompt": "Schreibe 4–5 Sätze über ein Wochenende, das du hattest (oder erfunden hast). Benutze das passé composé.\n\nTipps:\n- Wann? (Vendredi / Samedi / Dimanche)\n- Was gemacht? (j'ai + Partizip / je suis + Partizip)\n- Mit wem? (avec mes amis / avec ma famille)\n- Wie war es? (C'était... / J'ai trouvé ça...)\n\nBenutze mindestens 3 verschiedene Verben im passé composé.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 50.0
+            },
+            "cognitive_level": "create",
+            "dimensions": ["SCH"],
+            "serves": [
+              { "competence_id": "FS2.US.4.SCH.03", "relation": "exercises" }
+            ],
+            "est_minutes": 10,
+            "answer_key": "Beispiellösung: Samedi, j'ai joué au football avec mes amis. C'était super ! Le soir, nous avons mangé des pizzas. Dimanche, je suis allé(e) au cinéma avec ma famille. Nous avons vu un film d'aventure. J'ai trouvé ça génial ! (3+ verschiedene Verben im p.c.; Genusmarkierung bei être-Verben beachten.)",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen, die ihren eigenen Namen oder ihr eigenes Geschlecht beim Partizip vergessen: an die Genusanpassung bei être-Verben erinnern.",
+              "Zeitangaben an den Satzanfang stellen ist eine typisch französische Struktur (Samedi, j'ai...) — ermutigen, da es den Text fließender macht.",
+              "j'ai trouvé ça... (ich fand das...) ist eine nützliche Bewertungsstruktur, die über c'était hinausgeht."
+            ],
+            "rubric": [
+              {
+                "criterion": "Zeitform",
+                "levels": [
+                  "Mindestens 3 korrekte passé-composé-Formen (Hilfsverb + Partizip)",
+                  "2 korrekte Formen oder systematischer Fehler bei einer Kategorie (z.B. immer avoir statt être)",
+                  "Passé composé kaum oder gar nicht verwendet"
+                ]
+              },
+              {
+                "criterion": "Bandbreite",
+                "levels": [
+                  "Mindestens 3 verschiedene Verben; Zeitangaben und Bewertung vorhanden",
+                  "2–3 verschiedene Verben, keine Bewertung",
+                  "Nur 1–2 Verben, sehr wenige Details"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "text_production",
+            "prompt": "Schreibe eine kurze E-Mail (8–10 Sätze) an deine(n) Brieffreund(in) in Frankreich. Erzähle:\n1. Was du letztes Wochenende gemacht hast (mindestens 3 Sätze im passé composé)\n2. Was du in den nächsten Ferien machen möchtest (mindestens 2 Sätze mit Je vais... oder Je voudrais...)\n3. Eine Frage an deinen Brieffreund / deine Brieffreundin\n\nVergiss Anrede und Verabschiedung nicht!\n\nAnrede: Cher Paul, / Chère Marie,\nVerabschiedung: À bientôt ! / Bisous,",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 70.0
+            },
+            "cognitive_level": "create",
+            "dimensions": ["SCH"],
+            "serves": [
+              { "competence_id": "FS2.US.4.SCH.03", "relation": "exercises" },
+              { "competence_id": "FS2.US.4.SCH.01", "relation": "supports" }
+            ],
+            "est_minutes": 14,
+            "answer_key": "Musterlösung:\nChère Marie,\nComment vas-tu ? Moi, ça va bien ! Ce week-end, j'ai joué au volleyball avec mes amis. Samedi soir, nous avons regardé un film. C'était super ! Je suis allé(e) chez mes grands-parents dimanche.\nPendant les vacances, je vais aller à la mer avec ma famille. Je voudrais aussi visiter Paris un jour !\nEt toi, qu'est-ce que tu fais pendant les vacances ?\nÀ bientôt !\n[Vorname]\n(Bewertung nach Struktur, Zeitformen, Meinungsausdruck und Frage an den Briefpartner.)",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Cher (für Jungen) vs. Chère (für Mädchen) — Genusanpassung des Adjektivs in der Anrede; häufig falsch.",
+              "Je vais + Infinitiv: das Verb bleibt im Infinitiv (je vais aller, NICHT je vais allé) — der Infinitiv nach dem Modalausdruck ist ein systematischer Fehler.",
+              "Frage am Ende: Schüler:innen vergessen oft die abschließende Frage — sie ist konventionell in Briefen und zeigt Interesse am Gegenüber.",
+              "14 Minuten sind knapp für schwächere Schüler:innen — ggf. als Hausaufgabe weiterführen oder Schritt 1 (Vergangenheit) im Unterricht, Schritt 2–3 zuhause."
+            ],
+            "rubric": [
+              {
+                "criterion": "Briefstruktur",
+                "levels": [
+                  "Anrede, alle drei inhaltlichen Teile (Vergangenheit, Zukunft, Frage), Verabschiedung vorhanden",
+                  "Zwei von drei inhaltlichen Teilen; Anrede oder Verabschiedung fehlt",
+                  "Nur ein Teil; keine Briefstruktur erkennbar"
+                ]
+              },
+              {
+                "criterion": "Zeitformen",
+                "levels": [
+                  "Passé composé und futur proche korrekt und unterschieden verwendet",
+                  "Eine Zeitform überwiegend korrekt, die andere fehlt oder ist fehlerhaft",
+                  "Nur Präsens; keine Zeitformen verwendet"
+                ]
+              },
+              {
+                "criterion": "Sprachliche Richtigkeit",
+                "levels": [
+                  "Verben, Genus und Negation weitgehend korrekt (max. 3 Kleinigkeiten)",
+                  "Verständlich, aber systematische Fehler in einer Kategorie",
+                  "Schwer verständlich durch viele Fehler"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "open_response",
+            "prompt": "Schreibe deine Meinung auf Französisch. Benutze die Satzanfänge.\n\n1. Je pense que les vacances en été sont... parce que...\n2. À mon avis, mon pays préféré est... parce que...\n3. Je trouve que les réseaux sociaux sont... parce que...\n\nSchreibe je einen vollständigen Satz für jeden Punkt (deutsch: Ich denke, dass... / Meiner Meinung nach... / Ich finde, dass...).",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 3
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": ["SCH"],
+            "serves": [
+              { "competence_id": "FS2.US.4.SCH.02", "relation": "exercises" }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Beispielantworten: 1. Je pense que les vacances en été sont super parce que je peux nager et me reposer. | 2. À mon avis, mon pays préféré est l'Autriche parce que c'est beau et calme. | 3. Je trouve que les réseaux sociaux sont intéressants parce qu'on peut communiquer avec des amis. (Individuelle Meinungen akzeptieren, solange begründet.)",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "parce que + Subjekt + Verb — Schüler:innen schreiben oft parce que + Adjektiv ohne Verb (parce que beau). Sicherstellen, dass nach parce que ein vollständiger Satz folgt.",
+              "à mon avis (meiner Meinung nach) ist eine feste Formel ohne Verb — der anschließende Hauptsatz hat das Verb (À mon avis, c'est bien).",
+              "Réseaux sociaux (soziale Netzwerke) ist ein Begriff, den Schüler:innen aus dem Alltag kennen — sie können ihn auf Französisch kennenlernen, aber auch Social Media oder Instagram als Bezug nutzen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Meinung und Begründung",
+                "levels": [
+                  "Alle drei Sätze mit erkennbarer Meinung und parce que-Begründung",
+                  "Zwei Sätze mit Meinung und Begründung",
+                  "Meinung ohne Begründung oder nur ein Satz"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

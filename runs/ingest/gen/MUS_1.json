@@ -1,0 +1,179 @@
+{
+  "subject": "Musik",
+  "klasse": 2,
+  "kompetenzbereich": "Hören und Erfassen",
+  "title": "Instrumente – Klang, Bau und Spielweise",
+  "kernfrage": "Wie erkennst du ein Instrument an seinem Klang, und was verrät dir sein Bau über seinen Klang?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Instrumentenfamilien und ihre Klangerzeugung",
+        "throughline": "Die Schüler:innen bauen ein systematisches Verständnis dafür auf, wie Klang physikalisch entsteht (schwingende Saite, Luft, Fell, Platte) und wie sich das im Klangbild niederschlägt – der Ausgangspunkt für jedes bewusste Hören.",
+        "talking_points": [
+          "Klang entsteht immer durch Schwingung: Was schwingt bei Geige, Trompete, Trommel, Xylofon?",
+          "Bauweise und Material bestimmen den Klang: Holz klingt anders als Metall, kurze Saite anders als lange.",
+          "Die Systematik der Hornbostel-Sachs-Klassifikation (Chordophone, Aerophone, Membranophone, Idiophone, Elektrophone) als Orientierungsrahmen – nicht als Auswendiglernstoff.",
+          "Akustische Merkmale (hell/dunkel, weich/scharf, lang/kurz ausklingend) als Fachvokabular einführen."
+        ],
+        "extensions": [
+          "Schüler:innen bringen Objekte von zu Hause mit und untersuchen, ob sie als Instrumente funktionieren – welcher Instrumentenfamilie würden sie angehören?",
+          "Vergleich: dasselbe Lied auf Gitarre und Harfe – warum klingt es trotzdem anders?",
+          "Kurzrecherche: Welche Instrumente sind typisch für die österreichische Volksmusik – und warum wohl?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "matching",
+            "prompt": "Ordne jedem Instrument die Art zu, wie sein Klang erzeugt wird. Ziehe eine Linie von links nach rechts (oder notiere die Buchstaben).",
+            "payload": {
+              "kind": "matching",
+              "left": ["Geige", "Querflöte", "Kleine Trommel", "Xylofon", "Trompete"],
+              "right": [
+                "A – eine gespannte Membran (Fell) wird geschlagen",
+                "B – ein Stab oder eine Platte aus Holz/Metall schwingt",
+                "C – eine gespannte Saite schwingt",
+                "D – ein Luftstrom wird durch eine enge Öffnung gelenkt (Mundstück)",
+                "E – Luft wird über eine Schneide geblasen"
+              ]
+            },
+            "response": {"mode": "none"},
+            "cognitive_level": "remember",
+            "dimensions": ["HOR"],
+            "serves": [{"competence_id": "MUS.US.2.HOR.04", "relation": "exercises"}],
+            "est_minutes": 5,
+            "answer_key": "Geige → C; Querflöte → E; Kleine Trommel → A; Xylofon → B; Trompete → D",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Querflöte und Trompete werden oft verwechselt: Bei der Flöte schwingt die Luft an einer Schneide (kein Mundstück mit Lippen), bei der Trompete bringen die Lippen die Luft zum Schwingen.",
+              "Xylofon (Holzstäbe) und Marimbafon verwechseln – hier genügt 'schwingende Platte/Stab'."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "multiple_choice",
+            "prompt": "Du hörst, wie deine Lehrkraft kurz nacheinander drei Instrumente spielt oder deren Klang beschreibt: ein Cello, eine Oboe und ein Tamburin. Welche Aussage stimmt?",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "A – Alle drei sind Saiteninstrumente.",
+                "B – Cello und Oboe sind Blasinstrumente, das Tamburin ist ein Schlaginstrument.",
+                "C – Das Cello ist ein Saiteninstrument, die Oboe ein Blasinstrument, das Tamburin ein Schlaginstrument.",
+                "D – Cello und Tamburin gehören zur selben Instrumentenfamilie."
+              ],
+              "select": "one"
+            },
+            "response": {"mode": "none"},
+            "cognitive_level": "understand",
+            "dimensions": ["HOR"],
+            "serves": [{"competence_id": "MUS.US.2.HOR.04", "relation": "exercises"}],
+            "est_minutes": 4,
+            "answer_key": "C – Das Cello ist ein Streichinstrument (Saite + Bogen), die Oboe ein Holzblasinstrument (Rohrblatt), das Tamburin ein Schlaginstrument mit Membran.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen nennen die Oboe gelegentlich 'Flöte', weil sie aus Holz ist. Merkmal ist das Doppelrohrblatt.",
+              "Tamburin hat manchmal Schellen – es bleibt ein Schlaginstrument (Membranophon + Idiophon-Schellen)."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "open_response",
+            "prompt": "Deine Lehrkraft beschreibt zwei Instrumente mit ihren Klangmerkmalen. Notiere für jedes Instrument: (a) seinen Namen, (b) in welche Instrumentenfamilie es gehört und (c) ein Wort, das seinen Klang gut beschreibt (z. B. hell, dunkel, weich, scharf, voll, dünn).\n\nInstrument 1: „Es hat vier Saiten, die mit einem Bogen gestrichen werden; es klingt voll und warm und wird im Orchester sehr häufig eingesetzt."\nInstrument 2: „Es besteht aus mehreren in einer Reihe angeordneten Metallplatten, die geschlagen werden; der Klang ist hell, metallisch und klingt lange nach."",
+            "payload": null,
+            "response": {"mode": "lines", "n": 4},
+            "cognitive_level": "understand",
+            "dimensions": ["HOR"],
+            "serves": [{"competence_id": "MUS.US.2.HOR.04", "relation": "exercises"}],
+            "est_minutes": 6,
+            "answer_key": "Instrument 1: Violine / Geige (auch Viola/Cello akzeptabel wenn Begründung passt) – Streichinstrument – z. B. warm, voll, singend. Instrument 2: Metallofon (oder Glockenspiel) – Schlaginstrument (Idiophon) – hell, metallisch, klingend.",
+            "acceptable_reasoning": "Cello ist ebenfalls korrekt für Instrument 1 (vier Saiten, Bogen, warmer Klang); Vibraphone für Instrument 2 ebenfalls akzeptabel.",
+            "watch_outs": [
+              "Klangbeschreibung sollte ein Adjektiv sein, kein Verb – Lehrkraft kann Beispiele geben.",
+              "Metallofon und Xylofon werden verwechselt: Metallofon hat Metallplatten, Xylofon Holzstäbe."
+            ],
+            "rubric": [
+              {"criterion": "Instrumentenname", "levels": ["nicht erkannt", "mit Begründung korrekt erkannt"]},
+              {"criterion": "Instrumentenfamilie", "levels": ["falsch oder fehlend", "korrekte Familie benannt"]},
+              {"criterion": "Klangbeschreibung", "levels": ["kein passendes Adjektiv", "treffendes Klangadjektiv verwendet"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "listening_task",
+            "prompt": "Die Lehrkraft spielt auf einem Instrument (oder beschreibt es akustisch) und gibt drei Höraufgaben:\n1. Ist der Klang eher hell oder dunkel?\n2. Klingt der Ton lange nach, oder endet er abrupt?\n3. Welchem der folgenden Instrumente ähnelt der Klang am ehesten: Gitarre – Klarinette – Becken?\n\nHöre genau hin und notiere deine Antworten.",
+            "payload": null,
+            "response": {"mode": "lines", "n": 3},
+            "cognitive_level": "analyze",
+            "dimensions": ["HOR"],
+            "serves": [{"competence_id": "MUS.US.2.HOR.01", "relation": "exercises"}],
+            "est_minutes": 7,
+            "answer_key": "Musterantwort (je nach gespieltem Instrument): 1. hell/dunkel – begründete Aussage zählt; 2. langer/kurzer Nachklang – begründete Aussage zählt; 3. passendes Instrument mit Begründung. Lehrkraft legt Erwartungsantwort vor der Aufgabe fest.",
+            "acceptable_reasoning": "Jede gut begründete Antwort, die zeigt, dass das Kind bewusst auf Klangfarbe und Klangnachklang gehört hat.",
+            "watch_outs": [
+              "Schüler:innen beschreiben oft den Inhalt (z. B. 'schön', 'laut') statt die Klangfarbe. Lehrkraft lenkt auf 'hell/dunkel, weich/scharf' um.",
+              "Aufgabe 3 ist eine Analogie – es gibt keine eindeutig 'falsche' Antwort, wenn die Begründung klangbezogen ist."
+            ],
+            "rubric": [
+              {"criterion": "Klangfarben-Beschreibung", "levels": ["nur 'schön/laut'", "hell/dunkel + ein weiteres Merkmal"]},
+              {"criterion": "Nachklangbeobachtung", "levels": ["keine Aussage", "richtig mit kurzem Nachweis"]},
+              {"criterion": "Klanganalogie", "levels": ["keine Begründung", "Instrument + klangbezogene Begründung"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "open_response",
+            "prompt": "Wähle ein Instrument, das du interessant findest (aus dem Unterricht oder aus eigener Erfahrung). Beschreibe es in 3–4 Sätzen: Wie wird der Klang erzeugt? Wie klingt es (verwende Klangadjektive)? Wo wird dieses Instrument typischerweise eingesetzt (z. B. Orchester, Band, Volksmusik)?",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 35},
+            "cognitive_level": "evaluate",
+            "dimensions": ["HOR"],
+            "serves": [{"competence_id": "MUS.US.2.HOR.04", "relation": "exercises"}],
+            "est_minutes": 8,
+            "answer_key": "Offene Antwort; Bewertungskriterien: (1) Klangerzeugung physikalisch korrekt beschrieben, (2) mindestens zwei Klangadjektive, (3) realistischer Einsatzbereich genannt.",
+            "acceptable_reasoning": "Exotische oder Weltmusik-Instrumente sind willkommen – Klangerzeugung muss dem Instrument entsprechen.",
+            "watch_outs": [
+              "Gitarre: Saiten schwingen, kein Bogen – Schüler:innen schreiben manchmal fälschlich 'gestrichen'.",
+              "Klavier ist ein Sonderfall: Saiten werden von Hämmern angeschlagen (Chordophon/Schlaginstrument) – beide Kategorisierungen korrekt."
+            ],
+            "rubric": [
+              {"criterion": "Klangerzeugung", "levels": ["falsch oder fehlend", "physikalisch korrekt und vollständig"]},
+              {"criterion": "Klangbeschreibung", "levels": ["kein Adjektiv", "ein Adjektiv", "zwei oder mehr treffende Adjektive"]},
+              {"criterion": "Einsatzbereich", "levels": ["fehlend oder falsch", "realistisch und konkret"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "create_produce",
+            "prompt": "Erfinde ein neues 'Instrument' aus Alltagsmaterialien (z. B. Gummibänder, eine Schachtel, eine leere Flasche, Münzen). Beschreibe schriftlich:\n– Aus welchem Material besteht es?\n– Wie wird der Klang erzeugt (was schwingt)?\n– Welcher Instrumentenfamilie würde es angehören?\n– Wie klingt es deiner Vorstellung nach?",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 40},
+            "cognitive_level": "create",
+            "dimensions": ["HOR", "SIN"],
+            "serves": [{"competence_id": "MUS.US.2.HOR.04", "relation": "exercises"}],
+            "est_minutes": 8,
+            "answer_key": "Offene kreative Aufgabe; Bewertung: Klangerzeugung physikalisch plausibel, Instrumentenfamilie korrekt abgeleitet, Klangbeschreibung vorhanden.",
+            "acceptable_reasoning": "Jede physikalisch plausible Konstruktion akzeptabel; Kreativität wird positiv gewertet.",
+            "watch_outs": [
+              "Schüler:innen ordnen manchmal alle selbst gebauten Instrumente als 'Schlaginstrument' ein – nachfragen: Was schwingt eigentlich?",
+              "Klangerzeugung und Klangfarbe verwechseln: Erzeugung = Physik, Farbe = wahrgenommene Qualität."
+            ],
+            "rubric": [
+              {"criterion": "Physikalische Plausibilität", "levels": ["nicht nachvollziehbar", "plausibel mit Begründung"]},
+              {"criterion": "Instrumentenfamilien-Zuordnung", "levels": ["falsch", "korrekt abgeleitet"]},
+              {"criterion": "Klangbeschreibung", "levels": ["fehlend", "ein Merkmal", "mehrere Merkmale lebhaft beschrieben"]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

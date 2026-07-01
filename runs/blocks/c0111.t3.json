@@ -1,0 +1,130 @@
+{
+  "id": "c0111.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Nigeria hat eine Urbanisierungsrate von 63 %, obwohl es ein deutlich ärmeres Land ist als Österreich (69,5 %) oder Deutschland (82 %). Wie erklärst du dir das? Was könnte der Unterschied zwischen Verstädterung in reichen und in ärmeren Ländern sein?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 35.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.4.ENT2.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Urbanisierung und Wohlstand sind nicht dasselbe. In ärmeren Ländern treiben oft Landflucht und fehlende wirtschaftliche Perspektiven auf dem Land die Menschen in die Städte — oft in informelle Siedlungen (Slums) ohne Infrastruktur. In reichen Ländern entstand Urbanisierung durch industrielle Entwicklung und stabile Arbeitsmärkte in Städten. Nigerias hohe Rate erklärt sich durch Lagos als eine der am schnellsten wachsenden Megacitys der Welt, aber viele Stadtbewohner leben in Armut.",
+    "acceptable_reasoning": "Jede Antwort, die den Unterschied zwischen erzwungener Landflucht und wirtschaftlich getriebener Urbanisierung anspricht, ist vollwertig.",
+    "rubric": [
+      {
+        "criterion": "Unterschied zwischen Urbanisierungstypen erkannt",
+        "levels": [
+          "Klar differenziert",
+          "Ansatzweise",
+          "Nicht erkannt"
+        ]
+      },
+      {
+        "criterion": "Nigeria-Erklärung plausibel",
+        "levels": [
+          "Kausal begründet",
+          "Beschreibend",
+          "Nicht beantwortet"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schülerinnen und Schüler könnten annehmen, hohe Urbanisierung = reich — dieser Trugschluss muss aktiv aufgebrochen werden.",
+      "Der Begriff 'informelle Siedlungen' oder 'Slums' sollte sensibel eingeführt werden."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 4,
+  "kompetenzbereich": "Entwicklungen in einer globalisierten Welt",
+  "competences": [
+    "GWB.US.4.ENT2.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "title": "Anteil der Stadtbevölkerung im Ländervergleich (%)",
+        "xlabel": "Land",
+        "ylabel": "Anteil Stadtbevölkerung (%)",
+        "log": false,
+        "categories": [
+          "Österreich",
+          "Deutschland",
+          "Schweiz",
+          "Italien",
+          "USA",
+          "China",
+          "Indien",
+          "Nigeria"
+        ],
+        "values": [
+          69.5,
+          82.0,
+          85.5,
+          69.6,
+          80.1,
+          65.9,
+          35.4,
+          63.0
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "worldbank_urbanisierung",
+        "series": "vergleich",
+        "note": null,
+        "title": "Verstädterung im Ländervergleich (Anteil Stadtbevölkerung)",
+        "url": "https://data.worldbank.org/indicator/SP.URB.TOTL.IN.ZS",
+        "attribution": "Datenquelle: World Bank – data.worldbank.org (SP.URB.TOTL.IN.ZS, CC BY 4.0)",
+        "stand": "2024"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0111",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:29+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

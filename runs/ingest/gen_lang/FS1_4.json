@@ -1,0 +1,198 @@
+{
+  "subject": "Erste lebende Fremdsprache",
+  "klasse": 1,
+  "kompetenzbereich": "Sprechen",
+  "title": "Sich vorstellen und über sich sprechen",
+  "kernfrage": "Wie kannst du dich auf Englisch vorstellen und einfache Fragen über dich selbst stellen und beantworten?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Introducing Yourself and Your World",
+        "throughline": "Schüler:innen erarbeiten die Grundbausteine mündlicher Kommunikation: Selbstvorstellung, einfache Fragen und Antworten zu Person, Familie und Hobbys. Das ist die erste Sprechkompetenz und Grundlage für alle weiteren Sprechsituationen.",
+        "talking_points": [
+          "Was ist beim ersten Vorstellen wichtig? (Name, Alter, Herkunft — aber auch Körpersprache und Blickkontakt)",
+          "Welche Fragen sind höflich, welche zu persönlich? Kurze Kulturvergleich DE/AT vs. UK/US",
+          "Wie reagiert man, wenn man ein Wort nicht versteht? ('Sorry, could you say that again, please?')",
+          "Fehler machen ist normal und wichtig — Mut zur Kommunikation ist das Ziel, nicht Perfektion"
+        ],
+        "extensions": [
+          "Speed-Dating-Aktivität: Schüler:innen haben 60 Sekunden, um sich einer neuen Person vorzustellen",
+          "„Lügen-Vorstellung\": Schüler:innen erfinden 2 wahre und 1 falsche Aussage über sich — Klasse rät welche",
+          "Klassenprofil erstellen: Ergebnisse als Tabelle (Lieblingsessen, Hobbys) auf Englisch zusammenfassen"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "matching",
+            "prompt": "Match the question (1–6) to the correct answer (A–F).",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "1. What is your name?",
+                "2. How old are you?",
+                "3. Where are you from?",
+                "4. Do you have any brothers or sisters?",
+                "5. What is your favourite subject?",
+                "6. What do you like doing in your free time?"
+              ],
+              "right": [
+                "A — I am from Vienna, Austria.",
+                "B — My name is Julia.",
+                "C — I like playing football and reading.",
+                "D — I have one brother. He is twelve.",
+                "E — I am eleven years old.",
+                "F — My favourite subject is English!"
+              ]
+            },
+            "response": { "mode": "table", "columns": ["Question", "Answer"], "rows": 6 },
+            "cognitive_level": "remember",
+            "dimensions": ["SPR"],
+            "modality": "printable",
+            "serves": [{ "competence_id": "FS1.US.1.SPR.02", "relation": "exercises" }],
+            "est_minutes": 5,
+            "answer_key": "1–B, 2–E, 3–A, 4–D, 5–F, 6–C",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen verwechseln 'name' (What is your name?) mit 'How' — die Form der Frage und die Form der Antwort zusammen üben",
+              "Auf 'I am eleven' vs. 'I have eleven' achten — 'have' ist ein typischer Transferfehler aus dem Deutschen"
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "speaking_task",
+            "prompt": "Practise with a partner. Ask each other these questions and answer them about yourself. Try to speak in full sentences!\n\n1. What is your name?\n2. How old are you?\n3. Where are you from?\n4. What is your favourite food?\n5. Do you have any pets?\n6. What do you like doing at the weekend?\n\nAfter the conversation: write down TWO things you learned about your partner.",
+            "payload": null,
+            "response": { "mode": "lines", "n": 2 },
+            "cognitive_level": "understand",
+            "dimensions": ["SPR"],
+            "modality": "oral",
+            "serves": [
+              { "competence_id": "FS1.US.1.SPR.01", "relation": "exercises" },
+              { "competence_id": "FS1.US.1.SPR.02", "relation": "exercises" }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Example: My partner is called Max. He is twelve years old and likes playing video games. / My partner's name is Sara. She has a cat and likes swimming at the weekend.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen neigen dazu, kurz mit 'yes' oder 'no' zu antworten — auf vollständige Sätze bestehen ('Yes, I have a dog.')",
+              "Kein Druck bei Aussprache in Kl.1 — Verständlichkeit ist das Ziel; Korrekturen sanft und nach dem Gespräch",
+              "Bei der schriftlichen Notiz: Schüler:innen dürfen auf Englisch kurze Stichworte notieren — kein vollständiger Satz nötig"
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "ordering",
+            "prompt": "Look at these sentences. They are parts of a short self-introduction, but they are in the wrong order. Number them 1–5 (1 = first sentence).",
+            "payload": {
+              "kind": "ordering",
+              "items": [
+                "A — My hobbies are football and listening to music.",
+                "B — Hello! My name is Ben and I am eleven years old.",
+                "C — Nice to meet you!",
+                "D — I live in Salzburg, Austria, with my mum, my dad and my sister.",
+                "E — My favourite subject at school is PE."
+              ]
+            },
+            "response": { "mode": "lines", "n": 5 },
+            "cognitive_level": "understand",
+            "dimensions": ["SPR"],
+            "modality": "printable",
+            "serves": [{ "competence_id": "FS1.US.1.SPR.03", "relation": "exercises" }],
+            "est_minutes": 6,
+            "answer_key": "Correct order: B → D → E → A → C (i.e. 2, 4, 5, 1, 3 — or B first, C last; middle order flexible)",
+            "acceptable_reasoning": "Das Grußelement (B) kommt zuerst, der Abschluss (C) zuletzt; die drei Mittelteile können in verschiedener Reihenfolge kommen.",
+            "watch_outs": [
+              "Es gibt keine einzig richtige Reihenfolge für die Mittelelemente — wichtig ist, dass die Einleitung (B) am Anfang und 'Nice to meet you!' (C) am Ende steht",
+              "Dieses Muster (Begrüßung → Infos → Abschluss) als Vorlage für eigene Vorstellung festhalten"
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "speaking_task",
+            "prompt": "Now it is your turn! Prepare a short self-introduction (5–7 sentences). Include:\n- Your name and age\n- Where you live / your family\n- Your favourite subject\n- One hobby or interest\n- A closing sentence\n\nPractise saying it ALOUD first. Then present it to your partner or to the class.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 40 },
+            "cognitive_level": "apply",
+            "dimensions": ["SPR"],
+            "modality": "oral",
+            "serves": [{ "competence_id": "FS1.US.1.SPR.03", "relation": "exercises" }],
+            "est_minutes": 10,
+            "answer_key": "Model: Hello! My name is Anna and I am twelve years old. I live in Graz with my mum and my two brothers. My favourite subject is Art. I love drawing and watching films. Nice to meet you!\n\n(Schüler:innen dürfen ihre Notizen beim Vortragen ansehen — Sprechen ist das Ziel, nicht auswendig lernen.)",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "In Kl.1 sind Notizen beim Sprechen vollkommen in Ordnung — das erleichtert Sicherheit und Fluss",
+              "Auf den Abschlusssatz achten — viele hören einfach mit Informationen auf, ohne eine Höflichkeitsformel",
+              "Keine Korrektur während des Vortrags — danach kurzes positivefeedback + eine Verbesserung"
+            ],
+            "rubric": [
+              { "criterion": "Content", "levels": ["Name/age + family + subject + hobby + closing", "3–4 elements present", "1–2 elements only"] },
+              { "criterion": "Comprehensibility", "levels": ["Clearly understandable", "Mostly understandable", "Hard to follow"] },
+              { "criterion": "Courage and effort", "levels": ["Speaks confidently and tries", "Speaks with some hesitation", "Very limited attempt"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "open_response",
+            "prompt": "Listen to your partner's self-introduction. Then answer these questions IN ENGLISH:\n\n1. What is your partner's name?\n2. How old is your partner?\n3. What is their favourite subject?\n4. What hobby do they have?\n5. Write ONE question you would like to ask them.",
+            "payload": null,
+            "response": { "mode": "lines", "n": 5 },
+            "cognitive_level": "analyze",
+            "dimensions": ["SPR", "HOR"],
+            "modality": "printable",
+            "serves": [
+              { "competence_id": "FS1.US.1.SPR.01", "relation": "exercises" },
+              { "competence_id": "FS1.US.1.HOR.01", "relation": "exercises" }
+            ],
+            "est_minutes": 7,
+            "answer_key": "Answers depend on the partner's introduction. Question 5: any relevant, grammatically reasonable question accepted (e.g. 'Do you have any brothers?', 'What is your favourite film?').",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Diese Aufgabe verknüpft Sprechen und Hören — die Schüler:innen müssen aktiv zuhören, während der/die Partner:in spricht",
+              "Frage 5 ist kreativ: Schüler:innen müssen eine echte Frage formulieren, die noch nicht gestellt wurde — auf Frageform (Do you...? / What is...?) achten",
+              "Bei Fehler in Frage 5 auf die richtige Fragewortstellung hinweisen: 'Do you like...?' nicht 'You like...?'"
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "create_produce",
+            "prompt": "Imagine you are a new student at an English-speaking school. You have to introduce yourself to the class via a short written poster (profile card). Fill in the sections and write 2–3 full sentences about your hobbies and why you like them.\n\nMy Profile:\n- Name:\n- Age:\n- From:\n- Family:\n- Favourite subject:\n- Hobbies: (2–3 sentences in English)",
+            "payload": null,
+            "response": { "mode": "table", "columns": ["Section", "Your answer"], "rows": 6 },
+            "cognitive_level": "create",
+            "dimensions": ["SPR", "SCH"],
+            "modality": "printable",
+            "serves": [
+              { "competence_id": "FS1.US.1.SPR.03", "relation": "exercises" },
+              { "competence_id": "FS1.US.1.SCH.01", "relation": "exercises" }
+            ],
+            "est_minutes": 10,
+            "answer_key": "Hobbies model: I love playing football with my friends after school. I also like reading adventure books because they are exciting. At weekends, I sometimes cook with my mum.\n\n(Any real, personal content is acceptable; 'why I like it' = 'because + reason' is the target construction.)",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen neigen dazu, nur zu listen ('I like football, reading, cooking.') — auf 'because + reason' bestehen",
+              "Profilkarte als Klassenausstellung oder Lernkartei verwenden — das motiviert zur sorgfältigen Schreibqualität",
+              "Schreibfehler in Kl.1 tolerieren, solange der Inhalt verständlich ist; Fokus liegt auf dem Sprechen (dieses Blatt als Basis für die mündliche Vorstellung)"
+            ],
+            "rubric": [
+              { "criterion": "Completeness", "levels": ["All sections filled, 2–3 sentences on hobbies", "Most sections filled, 1 sentence on hobbies", "Profile incomplete"] },
+              { "criterion": "Use of 'because'", "levels": ["Because + reason used at least once", "Reason implied but not structured", "No reasoning"] },
+              { "criterion": "Personal authenticity", "levels": ["Real, specific personal information", "Generic but understandable", "Copied phrases only"] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

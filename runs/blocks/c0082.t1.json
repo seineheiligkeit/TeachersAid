@@ -1,0 +1,106 @@
+{
+  "id": "c0082.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Schau dir Abb. 1 an, die zeigt, wie Österreich 2023 seinen Strom erzeugt hat.\na) Welcher Energieträger liefert den größten Anteil? Wie viel Prozent sind das?\nb) Welche der dargestellten Energieträger sind erneuerbar, welche sind nicht erneuerbar? Ordne sie in eine Tabelle ein.\nc) Wie viel Prozent des österreichischen Stroms kommt insgesamt aus erneuerbaren Quellen?",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Erneuerbar",
+        "Nicht erneuerbar"
+      ],
+      "rows": 5
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "OK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.2.NAC.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "a) Wasserkraft mit 62 %. b) Erneuerbar: Wasserkraft, Windkraft, Photovoltaik (Solar), Biomasse; Nicht erneuerbar: Erdgas, Erdöl, Kohle. c) 62 + 10 + 6 + 11 = 89 % erneuerbar (je nach Einordnung von Biomasse als erneuerbar – korrekte Diskussion erwünscht).",
+    "acceptable_reasoning": "Biomasse ist fachlich als erneuerbar klassifiziert, hat aber Besonderheiten (CO2-Freisetzung bei Verbrennung) – Schüler:innen, die das ansprechen, erhalten Bonuspunkte.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Biomasse ist erneuerbar, aber nicht emissionsfrei – das ist eine wichtige Unterscheidung für spätere Aufgaben.",
+      "Strom ≠ Gesamtenergie: Österreich ist beim Gesamtenergieverbrauch weniger grün als beim Strom (Öl für Verkehr, Gas für Heizung). Nicht in dieser Aufgabe vertiefen, aber im Unterricht ansprechen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 2,
+  "kompetenzbereich": "Nachhaltiger Umgang mit Energie und Ressourcen",
+  "competences": [
+    "GWB.US.2.NAC.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "OK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Wasserkraft",
+          "Windkraft",
+          "Photovoltaik",
+          "Biomasse",
+          "Erdgas",
+          "Erdöl",
+          "Kohle"
+        ],
+        "values": [
+          62,
+          10,
+          6,
+          11,
+          6,
+          3,
+          1
+        ],
+        "title": "Stromerzeugung in Österreich 2023 nach Energieträgern (%)",
+        "xlabel": "Energieträger",
+        "ylabel": "Anteil in Prozent"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0082",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:17+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

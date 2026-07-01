@@ -1,0 +1,77 @@
+{
+  "id": "c0048.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Stell dir vor, du bist in einem Designteam, das einen neuen Rucksack für Schüler:innen entwickelt. Ihr habt den Auftrag, ihn so zu gestalten, dass er möglichst kreislauffähig ist. Beschreibe drei konkrete Designentscheidungen, die ihr treffen würdet, und erkläre jeweils, wie diese Entscheidung den Kreislauf verbessert.",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Designentscheidung",
+        "Wie das den Kreislauf verbessert"
+      ],
+      "rows": 3
+    },
+    "cognitive_level": "create",
+    "dimensions": [
+      "REF"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "TED.US.4.REF.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Mögliche Entscheidungen: (1) Modulare Konstruktion (austauschbarer Boden, Reißverschlüsse separat erhältlich) → Reparatur möglich, Lebensdauer verlängert; (2) Einmaterial-Design (alles aus demselben Kunststoff) → einfacheres Recycling, keine Trennaufwand; (3) Rücknahmeprogramm des Herstellers → Kreislauffähigkeit sichergestellt, Rohstoffe bleiben im System; (4) Verzicht auf Nieten/Metall-Applikationen → kein Mischstoff, besseres Recycling; (5) Pflanzlich gegerbtes Leder oder Biobaumwolle statt Synthetics → geringerer ökolog. Fußabdruck. Mindestens 3 mit plausiblem Bezug zum Kreislauf.",
+    "acceptable_reasoning": "Jede Entscheidung, die einen nachvollziehbaren Mechanismus zur Kreislauffähigkeit erklärt, ist korrekt.",
+    "rubric": [
+      {
+        "criterion": "Konkretheit der Maßnahmen",
+        "levels": [
+          "Allgemeine Maßnahmen (\"nachhaltige Materialien\")",
+          "Spezifische Maßnahmen mit konkreter Umsetzung"
+        ]
+      },
+      {
+        "criterion": "Kreislaufmechanismus erklärt",
+        "levels": [
+          "Kreislaufbezug fehlt oder unklar",
+          "Klarer kausaler Zusammenhang zwischen Maßnahme und Kreislaufeffekt"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen nennen oft 'Recycling' als Entscheidung — darauf bestehen, dass Recycling am Ende steht; Reparierbarkeit und Wiederverwendung kommen davor.",
+      "Einmaterial-Design vs. Verbundmaterial: konkret erklären, warum Verbundmaterialien (z. B. Laminat) das Recycling erschweren."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Technik und Design",
+  "klasse": 4,
+  "kompetenzbereich": "Reflexion",
+  "competences": [
+    "TED.US.4.REF.01"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "REF"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0048",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

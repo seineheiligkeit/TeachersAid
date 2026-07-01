@@ -1,0 +1,70 @@
+{
+  "id": "c0133.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Beurteile die folgenden Aussagen zu Protolysegleichgewichten. Kreuze 'richtig' oder 'falsch' an und begründe kurz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Eine starke Säure hat eine starke konjugierte Base.",
+        "Wasser kann sowohl als Protonendonator als auch als Protonenakzeptor wirken.",
+        "Bei einer Protolyse wird immer ein Proton vernichtet.",
+        "Das Gleichgewicht einer Protolyse liegt bevorzugt auf der Seite der schwächeren Säure."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 8
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "EG"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.OS.7.UBE.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1. Falsch – eine starke Säure hat eine SCHWACHE konjugierte Base (je stärker die Säure, desto weniger neigt die konjugierte Base zur Rückübertragung). 2. Richtig – Wasser ist amphiprotonisch: mit HCl als Base, mit NH₃ als Säure. 3. Falsch – Protonen werden weder vernichtet noch erzeugt, sie werden nur übertragen. 4. Richtig – das Gleichgewicht liegt auf der Seite der schwächeren Säure, da diese das Proton weniger stark abgibt.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Aussage 1 ist eine klassische Fehlvorstellung: Schüler:innen leiten fälschlicherweise ab, dass 'stärker' auf beide Partner übertragbar ist.",
+      "Aussage 3 greift die Fehlvorstellung 'Proton wird verbraucht' auf – betonen, dass Massenerhaltung auch für Ionen gilt."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Chemie",
+  "klasse": 7,
+  "kompetenzbereich": "Übertragung",
+  "competences": [
+    "CHE.OS.7.UBE.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "EG"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0133",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:19+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

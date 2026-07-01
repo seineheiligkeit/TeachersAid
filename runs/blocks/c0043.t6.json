@@ -1,0 +1,82 @@
+{
+  "id": "c0043.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Entwirf eine kurze 'Musik-Zeitkapsel': Wähle zwei Musikstücke aus, die deiner Meinung nach das heutige Leben und die heutige Gesellschaft am besten beschreiben. Schreibe für jedes Stück:\n– Titel und Künstler:in\n– In einem Satz: Worum geht es in dem Lied oder Stück?\n– In zwei Sätzen: Welchen Aspekt des heutigen Lebens zeigt dieses Stück einem Menschen in 100 Jahren?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "create",
+    "dimensions": [
+      "HOR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MUS.US.4.HOR.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Offene kreative Aufgabe; Bewertung: Inhaltsbeschreibung korrekt, gesellschaftlicher Bezug plausibel und konkret, keine Lücken in der Argumentation.",
+    "acceptable_reasoning": "Jedes Stück akzeptabel – Qualität der Begründung (gesellschaftlicher Zeugniswert) zählt.",
+    "rubric": [
+      {
+        "criterion": "Inhaltsbeschreibung",
+        "levels": [
+          "falsch oder sehr vage",
+          "korrekt und knapp"
+        ]
+      },
+      {
+        "criterion": "Gesellschaftlicher Bezug",
+        "levels": [
+          "kein Bezug zur Gesellschaft",
+          "Bezug benannt",
+          "Bezug konkret und überzeugend begründet"
+        ]
+      },
+      {
+        "criterion": "Zukunftsperspektive",
+        "levels": [
+          "fehlend",
+          "vorhanden aber trivial",
+          "originell und reflektiert"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen neigen zu sehr persönlichen Lieblingsliedern ohne gesellschaftlichen Bezug – Lehrkraft erinnert an die Frage 'Was sagt es über unsere Zeit?'",
+      "Klasse kann danach in Paaren ihre Zeitkapseln vergleichen – entsteht ein gemeinsames Bild der Gegenwart?"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Musik",
+  "klasse": 4,
+  "kompetenzbereich": "Hören und Erfassen",
+  "competences": [
+    "MUS.US.4.HOR.01"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "HOR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0043",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

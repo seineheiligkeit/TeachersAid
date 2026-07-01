@@ -1,0 +1,80 @@
+{
+  "id": "c0053.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Match the question (1–6) to the correct answer (A–F).",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "1. What is your name?",
+        "2. How old are you?",
+        "3. Where are you from?",
+        "4. Do you have any brothers or sisters?",
+        "5. What is your favourite subject?",
+        "6. What do you like doing in your free time?"
+      ],
+      "right": [
+        "A — I am from Vienna, Austria.",
+        "B — My name is Julia.",
+        "C — I like playing football and reading.",
+        "D — I have one brother. He is twelve.",
+        "E — I am eleven years old.",
+        "F — My favourite subject is English!"
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Question",
+        "Answer"
+      ],
+      "rows": 6
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "SPR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS1.US.1.SPR.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "1–B, 2–E, 3–A, 4–D, 5–F, 6–C",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Schüler:innen verwechseln 'name' (What is your name?) mit 'How' — die Form der Frage und die Form der Antwort zusammen üben",
+      "Auf 'I am eleven' vs. 'I have eleven' achten — 'have' ist ein typischer Transferfehler aus dem Deutschen"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Erste lebende Fremdsprache",
+  "klasse": 1,
+  "kompetenzbereich": "Sprechen (an Gesprächen teilnehmen und zusammenhängend sprechen)",
+  "competences": [
+    "FS1.US.1.SPR.02"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "SPR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0053",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

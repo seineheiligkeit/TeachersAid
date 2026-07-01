@@ -1,0 +1,176 @@
+{
+  "id": "c0107.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "position_argument",
+    "prompt": "Eine Politikerin sagt: 'Die Bevölkerungspyramide zeigt, dass Österreich in einer demografischen Krise steckt.' Ein Journalist antwortet: 'Das ist übertrieben — Österreich hat noch nie so viele Menschen gehabt.' Nimm auf Basis der Pyramide (Abb. 1) Stellung: Wer hat Recht, und warum?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.OST.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Beide Aussagen sind teilweise richtig: Die Gesamtbevölkerung ist tatsächlich hoch (9,16 Mio.), aber die Altersstruktur zeigt ein Ungleichgewicht: Die stark besetzten mittleren Jahrgänge (45–59) werden in 20–30 Jahren im Rentenalter sein, während die jüngeren Generationen (0–29: ca. 32 % der Bevölkerung) kleiner sind. Das bedeutet nicht zwingend Krise, aber strukturelle Herausforderungen für Pensionssystem und Pflegeversorgung.",
+    "acceptable_reasoning": "Akzeptiert werden Positionen, die beide Seiten berücksichtigen und mit konkreten Beobachtungen aus der Pyramide belegt sind. Reine Meinungsaussagen ohne Datenbezug sind nicht ausreichend.",
+    "rubric": [
+      {
+        "criterion": "Bezug auf beide Positionen",
+        "levels": [
+          "Beide Aussagen berücksichtigt (2P)",
+          "Nur eine Seite (1P)",
+          "Kein klarer Bezug (0P)"
+        ]
+      },
+      {
+        "criterion": "Datenbezug",
+        "levels": [
+          "Mindestens zwei konkrete Beobachtungen aus der Pyramide (2P)",
+          "Eine Beobachtung (1P)",
+          "Keine konkreten Daten (0P)"
+        ]
+      },
+      {
+        "criterion": "Urteil",
+        "levels": [
+          "Differenziertes Urteil mit Einschränkungen (2P)",
+          "Einseitiges Urteil (1P)",
+          "Kein Urteil (0P)"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen sollen nicht nur eine Seite unkritisch übernehmen — die Aufgabe zielt auf differenziertes Urteilen.",
+      "Der Begriff 'Krise' ist normativ — Schüler:innen sollten ihn hinterfragen, nicht unreflektiert verwenden."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "position_argument",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Österreichische Gesellschaftsentwicklung",
+  "competences": [
+    "GWB.US.3.OST.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:population_pyramid",
+      "spec": {
+        "title": "Bevölkerungspyramide Österreich (1.1.2024)",
+        "xlabel": "Personen",
+        "age_groups": [
+          "0–4",
+          "5–9",
+          "10–14",
+          "15–19",
+          "20–24",
+          "25–29",
+          "30–34",
+          "35–39",
+          "40–44",
+          "45–49",
+          "50–54",
+          "55–59",
+          "60–64",
+          "65–69",
+          "70–74",
+          "75–79",
+          "80–84",
+          "85+"
+        ],
+        "male": [
+          217721,
+          233589,
+          225693,
+          232917,
+          259070,
+          303392,
+          327167,
+          319456,
+          311542,
+          289329,
+          320354,
+          355386,
+          322097,
+          247355,
+          189728,
+          149524,
+          131327,
+          79185
+        ],
+        "female": [
+          206203,
+          220286,
+          212329,
+          217468,
+          241672,
+          283992,
+          311084,
+          310390,
+          309056,
+          293047,
+          329411,
+          357617,
+          331334,
+          272182,
+          223124,
+          190665,
+          185238,
+          148820
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "statistik_austria_bevstand_2024",
+        "series": "pyramide_5j",
+        "note": null,
+        "title": "Bevölkerung Österreichs nach Alter und Geschlecht (1.1.2024)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2024",
+        "attribution": "Datenquelle: Statistik Austria – data.statistik.gv.at (CC BY 4.0)",
+        "stand": "2024-01-01"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0107",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:25+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

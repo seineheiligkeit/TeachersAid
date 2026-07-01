@@ -1,0 +1,64 @@
+{
+  "id": "c0061.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Fülle die Tabelle aus: Trage die fehlenden Präsensformen von 'amare' (lieben) ein und übersetze jede Form ins Deutsche.\n\n| Person | Latein | Deutsch |\n|---|---|---|\n| 1. Sg. | amo | |\n| 2. Sg. | | du liebst |\n| 3. Sg. | | |\n| 1. Pl. | amamus | |\n| 2. Pl. | | ihr liebt |\n| 3. Pl. | amant | |",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Person",
+        "Latein",
+        "Deutsch"
+      ],
+      "rows": 6
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "SPR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "LAT.US.3.SPR.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "1. Sg.: amo — ich liebe | 2. Sg.: amas — du liebst | 3. Sg.: amat — er/sie/es liebt | 1. Pl.: amamus — wir lieben | 2. Pl.: amatis — ihr liebt | 3. Pl.: amant — sie lieben",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Endung der 1. Sg.: 'amo' (nicht 'amao') — der Stammvokal -a- fällt vor -o- weg (Kontraktion); das ist ein häufiger Fehler.",
+      "2. Pl.: amatis, nicht 'amatis' mit Längenzeichen — Schreibweise einheitlich halten.",
+      "Sicherstellen, dass Schüler:innen 'amat' nicht mit 'amate' (Imperativ Pl.) verwechseln."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Latein",
+  "klasse": 3,
+  "kompetenzbereich": "Sprach- und textbezogene Kompetenzen",
+  "competences": [
+    "LAT.US.3.SPR.04"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "SPR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0061",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

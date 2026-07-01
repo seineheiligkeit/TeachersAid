@@ -1,0 +1,91 @@
+{
+  "id": "c0051.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "text_production",
+    "prompt": "Imagine you are a pen pal from Austria. Write a short reply to Emma (5–7 sentences). Introduce yourself briefly, react to something Emma said, and ask her one question.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "create",
+    "dimensions": [
+      "SCH",
+      "LES"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS1.US.3.SCH.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "FS1.US.3.LES.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Model answer: Dear Emma, my name is Lukas and I am from Vienna, Austria. I really enjoyed reading your letter! I also find Maths difficult, so I completely understand how you feel. I love football and hiking in the mountains — maybe that is something you could do when you visit Austria one day! I have a question for you: what kind of art do you like to make? I hope to hear from you soon!\n\nLukas",
+    "acceptable_reasoning": "Schüler:innen sollen auf etwas Konkretes aus Emmas Brief eingehen — nicht nur eine generische Vorstellung.",
+    "rubric": [
+      {
+        "criterion": "Task completion",
+        "levels": [
+          "Introduction + reaction + question all present",
+          "Two of three elements present",
+          "Only one element present"
+        ]
+      },
+      {
+        "criterion": "Engagement with Emma's text",
+        "levels": [
+          "Clear, specific reference to Emma's letter",
+          "Vague reference",
+          "No reference"
+        ]
+      },
+      {
+        "criterion": "Language",
+        "levels": [
+          "Mostly correct, natural tone",
+          "Understandable with errors",
+          "Unclear or very limited"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Häufiger Fehler: Schüler:innen schreiben eine neue Präsentation, ohne auf Emma einzugehen — auf 'react to something Emma said' hinweisen",
+      "Brief soll auf Englisch sein; Grußformeln (Dear…, Yours, Best wishes) üben",
+      "Keine Bewertung von Rechtschreibung im Sinne von Abzügen — Kommunikationsqualität zählt"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "text_production",
+  "subject": "Erste lebende Fremdsprache",
+  "klasse": 3,
+  "kompetenzbereich": "Schreiben",
+  "competences": [
+    "FS1.US.3.SCH.01",
+    "FS1.US.3.LES.01"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "SCH",
+    "LES"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0051",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

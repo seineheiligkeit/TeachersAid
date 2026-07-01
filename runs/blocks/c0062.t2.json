@@ -1,0 +1,73 @@
+{
+  "id": "c0062.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "multiple_choice",
+    "prompt": "Welche Aussage über das Haus im Text ist richtig?\n\nWähle die passende Antwort:",
+    "payload": {
+      "kind": "multiple_choice",
+      "options": [
+        "a) Die Familie wohnt auf dem Land.",
+        "b) Der Sohn Quintus geht in die Schule.",
+        "c) Marcia trägt das Wasser.",
+        "d) Claudia lernt in der Schule."
+      ],
+      "select": "one"
+    },
+    "response": {
+      "mode": "choices",
+      "options": [
+        "a) Die Familie wohnt auf dem Land.",
+        "b) Der Sohn Quintus geht in die Schule.",
+        "c) Marcia trägt das Wasser.",
+        "d) Claudia lernt in der Schule."
+      ],
+      "select": "one"
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "INH"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "LAT.US.3.INH.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 3,
+    "answer_key": "b) Der Sohn Quintus geht in die Schule. (in ludo discit)",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Option d) ist bewusst falsch — Claudia bleibt zu Hause, nicht Quintus. Schüler:innen sollen genau lesen.",
+      "Option a) ist falsch — 'in Roma' zeigt, dass sie in der Stadt wohnen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "multiple_choice",
+  "subject": "Latein",
+  "klasse": 3,
+  "kompetenzbereich": "Inhalts- und themenbezogene Kompetenzen",
+  "competences": [
+    "LAT.US.3.INH.03"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "INH"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0062",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

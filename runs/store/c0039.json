@@ -1,0 +1,561 @@
+{
+  "id": "c0039",
+  "stage": "content",
+  "status": "approved",
+  "source": "generated",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-29T18:40:28+00:00",
+  "title": "Kunst und Gestaltung 4. Kl. — Selbstporträts — Ich zeigen, Ich erfinden (generiert)",
+  "note": "",
+  "request": {
+    "subject": "Kunst und Gestaltung",
+    "klasse": 4,
+    "stufe": "Unterstufe",
+    "schulform": null,
+    "topic_raw": "Selbstporträts — Ich zeigen, Ich erfinden",
+    "envelope": "doppelstunde",
+    "options": {}
+  },
+  "resolution": {
+    "fassung": {
+      "kurztitel": "AHS-Lehrplan (konsolidiert)",
+      "bgbl": "BGBl. II Nr. 204/2024",
+      "doknr": "NOR40264237",
+      "valid_from": "2024-09-01",
+      "valid_to": "2026-08-31"
+    },
+    "subject": "Kunst und Gestaltung",
+    "klasse": 4,
+    "matched_kompetenzbereiche": [
+      "Wahrnehmen und Reflektieren"
+    ],
+    "grade_check": true,
+    "competences": [
+      {
+        "id": "KUG.US.4.WAH.01",
+        "kompetenzbereich": "Wahrnehmen und Reflektieren",
+        "klasse": 4,
+        "text": "Genres, Bildmotive, Darstellungsweisen erfassen sowie unterschiedliche Funktionen und Zwecke ausgewählter bildnerischer Gestaltungen unterscheiden und analysieren.",
+        "source_ref": "KUNST UND GESTALTUNG / 4. Klasse / Wahrnehmen und Reflektieren",
+        "dimensions": [
+          "WAH"
+        ],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      },
+      {
+        "id": "KUG.US.4.WAH.02",
+        "kompetenzbereich": "Wahrnehmen und Reflektieren",
+        "klasse": 4,
+        "text": "eigene Arbeiten und jene von Mitschülerinnen und Mitschülern reflektieren und analysieren.",
+        "source_ref": "KUNST UND GESTALTUNG / 4. Klasse / Wahrnehmen und Reflektieren",
+        "dimensions": [
+          "WAH"
+        ],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      },
+      {
+        "id": "KUG.US.4.WAH.03",
+        "kompetenzbereich": "Wahrnehmen und Reflektieren",
+        "klasse": 4,
+        "text": "anhand von Beispielen aus Kunst und Alltagsästhetik Funktionen sowie Bildabsichten und Wirkungen untersuchen und begründet beurteilen sowie komplexe Zusammenhänge herstellen.",
+        "source_ref": "KUNST UND GESTALTUNG / 4. Klasse / Wahrnehmen und Reflektieren",
+        "dimensions": [
+          "WAH"
+        ],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      }
+    ],
+    "notes": []
+  },
+  "plan": null,
+  "content": {
+    "meta": {
+      "title": "Selbstporträts — Ich zeigen, Ich erfinden",
+      "subtitle": "LLM-Entwurf — Erstprüfung",
+      "subject": "Kunst und Gestaltung",
+      "stufe": "Unterstufe",
+      "klasse": 4,
+      "kernfrage": "Was verrät ein Selbstporträt über den Menschen, der es geschaffen hat — und was verschweigt es?",
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "lehrplan_label": "Kunst und Gestaltung · 4. Klasse · Wahrnehmen und Reflektieren",
+      "content_language": "de",
+      "subject_models": []
+    },
+    "subject_model": {
+      "subject": "Kunst und Gestaltung",
+      "stufe": "Unterstufe",
+      "dimensions": [
+        {
+          "id": "BIL",
+          "label": "Bildnerische Praxis",
+          "note": null,
+          "modality": "enactive"
+        },
+        {
+          "id": "WAH",
+          "label": "Wahrnehmen und Reflektieren",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "BK",
+          "label": "Bildsprachen und Kommunizieren",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "content_areas": [
+        {
+          "id": "BKU",
+          "label": "bildende Kunst",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "GEU",
+          "label": "gestaltete Umwelt",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "VIK",
+          "label": "visuelle Kommunikation",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "task_kind_extensions": [
+        "make_artifact",
+        "image_analysis"
+      ]
+    },
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Selbstdarstellung gestern und heute",
+        "teacher_overview": {
+          "throughline": "Das Selbstporträt ist eine der ältesten und ehrlichsten Formen der Kunst — und zugleich eine der kontrollierbarsten. Schüler:innen untersuchen, wie Künstler:innen sich zeigen und verbergen, und verbinden das mit zeitgenössischen Fragen zu Selbstdarstellung in sozialen Medien.",
+          "talking_points": [
+            "Einstiegsfrage: Was ist der Unterschied zwischen einem Selfie und einem Selbstporträt? Diskussion führen, bevor die Frage beantwortet wird.",
+            "Historische Dimension einführen: Selbstporträts entstanden erst, als Spiegel erschwinglich wurden (15./16. Jh.); seither ist das Genre ein Spiegel von Selbstwahrnehmung, Selbstinszenierung und gesellschaftlichem Wandel.",
+            "Zentrale Spannung: Ein Selbstporträt ist nicht einfach das, was man sieht — es ist eine Entscheidung darüber, was andere sehen sollen.",
+            "Gegenwartsrelevanz: Profilbilder, Avatare, Instagram-Posts — alle folgen denselben Inszenierungslogiken wie historische Porträts."
+          ],
+          "extensions": [
+            "Schüler:innen vergleichen das Profilbild einer prominenten Person (Politiker:in, Sportler:in) auf verschiedenen Plattformen: Was verändert sich, was bleibt gleich? Warum?",
+            "Vertiefung: Albrecht Dürer malte sich 1500 als Christusfigur — warum war das damals provokant? Was würde heute eine entsprechende Selbstinszenierung bedeuten?",
+            "Fortgeschrittene diskutieren: Kann ein Selbstporträt objektiv sein? Oder ist Selbstdarstellung immer eine Konstruktion?"
+          ],
+          "differentiation": null,
+          "timing_notes": null
+        },
+        "blocks": [
+          {
+            "id": "t1",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "multiple_choice",
+            "prompt": "Was charakterisiert ein Selbstporträt als eigene Kunstgattung? Wähle die zwei zutreffendsten Aussagen aus.",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "Künstler:innen und dargestellte Person sind identisch.",
+                "Selbstporträts zeigen immer das Gesicht frontal und vollständig.",
+                "Das Werk enthält bewusste Entscheidungen darüber, was gezeigt und was verborgen wird.",
+                "Selbstporträts sind nur in der Malerei, nicht in der Fotografie möglich.",
+                "Selbstporträts entstanden erst im 20. Jahrhundert durch die Erfindung des Spiegels."
+              ],
+              "select": "many"
+            },
+            "response": {
+              "mode": "choices",
+              "options": [
+                "Künstler:innen und dargestellte Person sind identisch.",
+                "Selbstporträts zeigen immer das Gesicht frontal und vollständig.",
+                "Das Werk enthält bewusste Entscheidungen darüber, was gezeigt und was verborgen wird.",
+                "Selbstporträts sind nur in der Malerei, nicht in der Fotografie möglich.",
+                "Selbstporträts entstanden erst im 20. Jahrhundert durch die Erfindung des Spiegels."
+              ],
+              "select": "many"
+            },
+            "cognitive_level": "remember",
+            "difficulty": null,
+            "dimensions": [
+              "WAH"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "KUG.US.4.WAH.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 5,
+            "answer_key": "Korrekt: Option 1 (Identität von Künstler:in und Dargestelltem) und Option 3 (bewusste Inszenierungsentscheidung). Falsch: Option 2 (Selbstporträts zeigen Profil, Hände, Körper etc.); Option 4 (Fotografie-Selfies sind zeitgenössische Selbstporträts); Option 5 (Spiegel existierten bereits in der Antike; polierte Metallspiegel in Mesopotamien ab ca. 4000 v. Chr.; der Bezahlbare Glasspiegel etablierte sich im 15./16. Jh.).",
+            "acceptable_reasoning": null,
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Option 5 enthält einen absichtlichen historischen Fehler (20. Jahrhundert statt 15./16. Jh.) — Schüler:innen, die Kunstgeschichte kennen, erkennen ihn leicht; für andere ist es eine Lernchance.",
+              "Option 2 klingt plausibel (man denkt an frontale Porträtmalerei) — auf die Vielfalt hinweisen: Rückenfigur (Caspar David Friedrich), Profil, Körperfragmente (Schiele)."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t2",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "open_response",
+            "prompt": "Drei Selbstporträts im Vergleich: Lies die drei folgenden Beschreibungen und stelle fest, was sie über die Person oder die Zeit aussagen könnten.\n\nPorträt A (um 1500): Ein junger Mann in dunkler Kleidung schaut frontal in die Mitte des Bildes. Sein Blick ist direkt, sein Ausdruck ernst. Die Hände sind gefaltet. Das Licht fällt weich von der Seite.\n\nPorträt B (um 1920): Eine Frau sitzt in einem kahlen Raum, leicht nach vorne gebeugt. Ihr Blick ist weder in die Kamera noch weg — er ist nach innen gekehrt. Das Gesicht wirkt ungeschönt, Falten sind deutlich sichtbar.\n\nPorträt C (Heute): Eine Person hat sich selbst auf einem Handy fotografiert, leicht von oben, mit einem kleinen Lächeln. Das Bild ist stark bearbeitet — der Hintergrund weichgezeichnet, die Haut glattgestellt.\n\nAnalysiere: Was zeigt jedes Porträt über das Selbstbild der dargestellten Person? Was sagt die Darstellungsform über die Zeit und die Absicht aus? Schreibe 4–5 Sätze.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 65.0
+            },
+            "cognitive_level": "analyze",
+            "difficulty": null,
+            "dimensions": [
+              "WAH"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "KUG.US.4.WAH.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 12,
+            "answer_key": "Porträt A: Würde, Ernsthaftigkeit, religiöse oder gesellschaftliche Konvention; gefaltete Hände signalisieren Demut oder Gottesanbetung; frontales Format beansprucht Gleichwertigkeit (Renaissance-Selbstbewusstsein). Porträt B: Expressionismus/Neue Sachlichkeit; Ehrlichkeit über Schönheitsideal; Bruch mit der repräsentativen Funktion des Porträts; innere Wahrheit statt sozialer Pose. Porträt C: Selbstoptimierung als soziale Norm; digitale Bearbeitung als neues Werkzeug der Inszenierung; der leicht obere Blickwinkel (klassische Selfie-Pose) ist ein erlerntes Muster; Weichzeichnung = Angleichung an Filter-Schönheitsstandards.",
+            "acceptable_reasoning": "Schüler:innen, die Porträt A nicht auf die Renaissance datieren, aber die Würde-Konvention erkennen, volle Kredit geben.",
+            "rubric": [
+              {
+                "criterion": "Analyse aller drei Porträts",
+                "levels": [
+                  "Alle drei mit Zeit, Selbstbild und Absicht analysiert",
+                  "Zwei von drei ausführlich analysiert",
+                  "Nur ein Porträt analysiert"
+                ]
+              },
+              {
+                "criterion": "Verbindung von Form und Bedeutung",
+                "levels": [
+                  "Konkrete Gestaltungsmerkmale mit Bedeutung verknüpft",
+                  "Bedeutung beschrieben, wenig formale Analyse",
+                  "Nur allgemeine Beschreibung"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Schüler:innen werten Porträt C oft als „oberflächlich“ — das als Meinung akzeptieren, aber analytisch fragen: Was sagt das über unsere Zeit?",
+              "Porträt B wird oft als „traurig“ gelesen — darauf hinweisen, dass Expressionismus Wahrhaftigkeit, nicht Traurigkeit ausdrückt."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t3",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "open_response",
+            "prompt": "Selbstporträt und soziale Medien: Öffne (gedanklich) dein Profilbild auf einer App, die du nutzt — oder stell dir eines vor. Beantworte: Welches Bild von dir zeigst du dort? Was hast du bewusst gewählt (Kleidung, Blickwinkel, Hintergrund, Ausdruck)? Was lässt du weg? Würde jemand, der dich nicht kennt, anhand dieses Bildes eine zutreffende Vorstellung von dir bekommen — oder eine konstruierte?",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55.0
+            },
+            "cognitive_level": "analyze",
+            "difficulty": null,
+            "dimensions": [
+              "WAH"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "KUG.US.4.WAH.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "answer_key": "Offene Reflexion — bewertet wird die Bereitschaft zur Selbstanalyse mit Fachbegriffen: Was wurde bewusst gewählt (Inszenierung), was ausgelassen (Selektion), was konstruiert (Selbstbild als Produkt). Schüler:innen, die ehrlich eine Spannung zwischen „echtem Ich“ und „online Ich“ benennen, arbeiten auf hohem Niveau.",
+            "acceptable_reasoning": null,
+            "rubric": [
+              {
+                "criterion": "Reflexionstiefe",
+                "levels": [
+                  "Inszenierung, Selektion und Konstruktion des Selbstbildes benannt",
+                  "Zwei Aspekte angesprochen",
+                  "Nur allgemeine Antwort"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Manche Schüler:innen haben kein Profilbild oder keine Social-Media-Präsenz — die Aufgabe explizit für ein imaginiertes Profilbild öffnen.",
+              "Datenschutz: Schüler:innen sollen keine echten Bilder zeigen oder beschreiben — nur im Kopf analysieren.",
+              "Die Frage ist persönlich — Atmosphäre der Offenheit und Nicht-Bewertung schaffen."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t4",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "make_artifact",
+            "prompt": "Selbstporträt-Skizze: Setze dich vor eine reflektierende Oberfläche (Handy-Kamera, Spiegel) oder arbeite aus der Erinnerung. Skizziere dein Gesicht mit Bleistift — kein Kunstwerk, eine Arbeitsskizze. Dann: Wähle einen Bildausschnitt (das ganze Gesicht? Nur die Augen? Profil? Dreiviertelansicht?). Schreibe darunter: Warum hast du diesen Ausschnitt gewählt? Was soll betont werden, was nicht zu sehen sein?",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 90.0
+            },
+            "cognitive_level": "apply",
+            "difficulty": null,
+            "dimensions": [
+              "WAH"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "KUG.US.4.WAH.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 15,
+            "answer_key": "Keine einzige richtige Ausführung — bewertet wird die Begründung der Ausschnittswahl als bewusste Inszenierungsentscheidung. Beispiel: „Ich habe nur die Augen gezeigt, weil ich nicht erkannt werden will“ (Anonymität als Thema) oder „Ich habe das Dreiviertel-Profil gewählt, weil meine Augen so intensiver wirken als frontal“ (kompositorisches Bewusstsein).",
+            "acceptable_reasoning": null,
+            "rubric": [
+              {
+                "criterion": "Begründung der Ausschnittswahl",
+                "levels": [
+                  "Ausschnitt bewusst gewählt und mit Inszenierungsabsicht begründet",
+                  "Ausschnitt erklärt, aber Begründung vage",
+                  "Kein Bezug zur Inszenierung"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Schüler:innen, die keine zeichnerische Selbstsicherheit haben, ermutigen: die Skizze ist ein Denkinstrument, kein Meisterwerk.",
+              "Wichtig: Die schriftliche Begründung ist gleichwertig mit der Zeichnung — beide müssen vorhanden sein."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t5",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "open_response",
+            "prompt": "Kunstgeschichtliche Reflexion: Egon Schiele malte in den frühen 1900er Jahren Selbstporträts, die für seine Zeit extrem provokant waren: verzerrte Körper, harte Linien, keine Schönheit im traditionellen Sinn. Zeitgenossen nannten seine Bilder „hässlich“. Heute gelten sie als Meisterwerke und hängen in den bedeutendsten Museen der Welt. Erkläre in 4–5 Sätzen: Was könnte Schiele mit diesen Selbstporträts ausgedrückt haben? Warum hat sich unser Urteil darüber verändert? Was sagt das darüber aus, wer entscheidet, was „gute Kunst“ ist?",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 65.0
+            },
+            "cognitive_level": "evaluate",
+            "difficulty": null,
+            "dimensions": [
+              "WAH"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "KUG.US.4.WAH.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 12,
+            "answer_key": "Schiele: Verzerrung als Ausdruck innerer psychischer Zustände; Ablehnung des akademischen Schönheitsideals; Körper als Ort von Angst, Verletzlichkeit, Sexualität (tabuisiert um 1910). Urteilswandel: Kunstmarkt, Museen und Kunstkritik schaffen und verändern Kanons; was einst schockiert, wird mit zeitlichem Abstand als mutig bewertet; gesellschaftliche Normen verschieben sich. Wer entscheidet: Kurator:innen, Gallerist:innen, Kunstmarkt, Publikum — Kunstwert ist ein sozialer Konstruktionsprozess, kein absolutes Urteil.",
+            "acceptable_reasoning": "Schüler:innen, die die Wien-Secession oder den Jugendstil erwähnen, zeigen erweitertes Hintergrundwissen — honorieren.",
+            "rubric": [
+              {
+                "criterion": "Ausdrucksintention",
+                "levels": [
+                  "Innerer Ausdruck und Bruch mit Schönheitsideal erklärt",
+                  "Allgemeine Aussage zu Expressionismus",
+                  "Nur Beschreibung ohne Deutung"
+                ]
+              },
+              {
+                "criterion": "Urteilswandel und Konstruktion von Kunstwert",
+                "levels": [
+                  "Sozialer Konstruktionsprozess des Kunsturteils benannt",
+                  "Urteilswandel beschrieben, aber nicht erklärt",
+                  "Keine Reflexion auf Kunstwert"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Schüler:innen, die Schiele nicht kennen, werden die Frage trotzdem beantworten können — die Beschreibung ist selbsterklärend.",
+              "Die Frage nach dem „Wer entscheidet“ ist die wichtigste — sicherstellen, dass sie nicht übergangen wird.",
+              "Schieles Werk ist für AHS-Kl 4 altersgemäß zu besprechen, insbesondere seine Selbstporträts ohne explizit erotischen Inhalt."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t6",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "open_response",
+            "prompt": "Dein eigenes Statement: Wie würdest du dich selbst in einem Selbstporträt zeigen, das in 100 Jahren in einem Museum hängen soll — und das wirklich etwas über dich und deine Zeit aussagt? Beschreibe in 5–6 Sätzen: Was würde dein Bild zeigen? Welche Gestaltungsmittel (Ausschnitt, Farben, Medium, Technik) würdest du wählen? Was soll in 100 Jahren noch erkennbar sein über das, was es heute bedeutet, ein junger Mensch in Österreich zu sein?",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 65.0
+            },
+            "cognitive_level": "create",
+            "difficulty": null,
+            "dimensions": [
+              "WAH"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "KUG.US.4.WAH.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 12,
+            "answer_key": "Offene, kreative Aufgabe — bewertet wird: Konkretheit der Beschreibung, Verbindung von persönlicher Aussage mit zeithistorischem Kontext, begründete Wahl der Gestaltungsmittel. Sehr gute Antworten benennen einen konkreten Zeitaspekt (Digitalisierung, Klimaangst, Mehrsprachigkeit, Körperbilder in sozialen Medien) und erklären, wie ein spezifisches Gestaltungsmittel diesen ausdrückt.",
+            "acceptable_reasoning": null,
+            "rubric": [
+              {
+                "criterion": "Konkretheit der Gestaltungsidee",
+                "levels": [
+                  "Medium, Gestaltungsmittel und Absicht klar benannt und begründet",
+                  "Gestaltungsidee vorhanden, wenig begründet",
+                  "Nur allgemeine Beschreibung"
+                ]
+              },
+              {
+                "criterion": "Zeitgeschichtliche Dimension",
+                "levels": [
+                  "Konkreter Zeitaspekt benannt und mit Gestaltung verbunden",
+                  "Zeitaspekt erwähnt, kein Gestaltungsbezug",
+                  "Kein zeitgeschichtlicher Bezug"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Schüler:innen, die „ich weiß nicht“ schreiben — mit einem Gesprächsimpuls starten: Was wäre in 100 Jahren das Typischste an unserem Leben heute? Dann: Wie würde ein Bild das zeigen?",
+              "Überschwängliche Antworten ohne Gestaltungsbezug zurück zur Handwerksebene lenken: Welches Medium? Welche Farben? Warum?"
+            ],
+            "self_check": null
+          }
+        ]
+      }
+    ],
+    "assets": [],
+    "nachweis": {
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "statement": "Diese Materialien adressieren 3 von 3 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
+      "competence_coverage": [
+        {
+          "competence_id": "KUG.US.4.WAH.01",
+          "exercised_by": [
+            "t1",
+            "t2"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "KUG.US.4.WAH.02",
+          "exercised_by": [
+            "t3",
+            "t4",
+            "t6"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "KUG.US.4.WAH.03",
+          "exercised_by": [
+            "t5"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        }
+      ],
+      "gaps": [],
+      "zentrale_konzepte": [
+        "Wahrnehmen und Reflektieren"
+      ],
+      "uebergreifende_themen": []
+    },
+    "depth_profile": {
+      "by_level": {
+        "remember": 1,
+        "analyze": 2,
+        "apply": 1,
+        "evaluate": 1,
+        "create": 1
+      },
+      "by_dimension": {
+        "WAH": 6
+      },
+      "by_difficulty": {},
+      "minutes_total": 65,
+      "minutes_resource_independent": 65
+    },
+    "rack": null
+  },
+  "artifacts": {
+    "student_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0039\\student.pdf",
+    "teacher_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0039\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0039\\homework.pdf",
+    "preview_png": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0039\\raster\\student.p1.png"
+  },
+  "verify_problems": [],
+  "verify_warnings": [],
+  "parent_id": null,
+  "feedback": [],
+  "error": null
+}

@@ -1,0 +1,94 @@
+{
+  "id": "c0093.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "case_study",
+    "prompt": "**Fallbeispiel: Das Verschwinden der Bankfiliale**\n\nIn einer Kleinstadt mit 4.000 Einwohnern schließt die letzte Bankfiliale. Die Bank verweist ihre Kund:innen auf ihre Smartphone-App und die nächste Filiale 18 km entfernt. Geldautomaten bleiben vorerst bestehen.\n\na) Welche Personengruppen sind von dieser Schließung besonders betroffen? Nenne zwei.\nb) Welche Vorteile hat die App-Lösung aus Sicht der Bank? Nenne zwei wirtschaftliche Gründe.\nc) Wie könnte die Gemeinde reagieren, um die Grundversorgung mit Bankdienstleistungen sicherzustellen? Nenne einen Lösungsvorschlag.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Die letzte Bankfiliale in einer Kleinstadt schließt. Wäge Chancen und Herausforderungen ab."
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "UK",
+      "HK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.2.VER.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "a) Betroffene: ältere Menschen ohne Smartphone; Menschen ohne Auto (schwierige Erreichbarkeit der Filiale 18 km entfernt); Menschen mit eingeschränkten Deutschkenntnissen, die auf persönliche Beratung angewiesen sind; Menschen ohne Internetzugang/Smartphone. b) Wirtschaftliche Vorteile für die Bank: Mietersparnis (kein Gebäude); weniger Personalkosten (kein Filialteam); skalierbar (eine App bedient tausende Kund:innen gleichzeitig). c) Mögliche Lösungen: Mobilbank (Bus kommt einmal wöchentlich); Kooperation mit der Poststelle; kommunale Unterstützung für digitale Grundkompetenz (Kurs für ältere Menschen); Videochat-Beratung als Alternative.",
+    "acceptable_reasoning": "Alle plausibler Vorschläge für c) sind akzeptabel, auch kreative; Bewertung nach wirtschaftlicher Machbarkeit und sozialer Treffsicherheit.",
+    "rubric": [
+      {
+        "criterion": "Betroffene Gruppen",
+        "levels": [
+          "Zwei differenzierte Gruppen mit Begründung",
+          "Zwei Gruppen ohne Begründung",
+          "Nur eine Gruppe",
+          "Fehlend"
+        ]
+      },
+      {
+        "criterion": "Wirtschaftliche Vorteile",
+        "levels": [
+          "Zwei Vorteile mit wirtschaftlichem Zusammenhang",
+          "Zwei ohne Zusammenhang",
+          "Einer",
+          "Fehlend"
+        ]
+      },
+      {
+        "criterion": "Lösungsvorschlag",
+        "levels": [
+          "Konkreter, plausibler Vorschlag",
+          "Vager Vorschlag",
+          "Fehlend"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen antworten auf a) oft nur 'alte Menschen' — zur Differenzierung anregen (auch Familien ohne Auto, Migrant:innen, Menschen mit Behinderung).",
+      "Bei b) werden manchmal 'bessere Qualität' oder 'moderneres Image' genannt — diese Argumente gelten, aber wirtschaftlich zentral sind Kostenersparnisse."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "case_study",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 2,
+  "kompetenzbereich": "Vernetztes Wirtschaften zwischen Produktion und Konsum",
+  "competences": [
+    "GWB.US.2.VER.03"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "UK",
+    "HK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0093",
+  "source": "ai",
+  "created_at": "2026-06-26T19:02:25+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

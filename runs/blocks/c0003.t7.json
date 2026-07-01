@@ -1,0 +1,86 @@
+{
+  "id": "c0003.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Erstelle eine kurze, verständliche Erklärung (ca. 8–12 Sätze) für jüngere Schüler:innen der 2. Klasse, die noch nichts über Säuren und Basen wissen. Erkläre: Was ist eine Säure? Was ist eine Base? Was passiert bei einer Neutralisation? Nenne je ein konkretes Beispiel aus dem Alltag. Deine Erklärung soll fachlich korrekt sein, aber ohne Fachbegriffe wie 'pH-Skala' oder 'Ionen' auskommen — nutze stattdessen Alltagssprache und Bilder aus dem Alltag. Füge am Ende einen Satz hinzu, der erklärt, warum dieses Wissen im Alltag nützlich ist.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 70.0
+    },
+    "cognitive_level": "create",
+    "dimensions": [
+      "W",
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.US.x.ALL.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 18,
+    "answer_key": "Musterlösung (Orientierung): Eine Säure ist ein Stoff, der 'beißend' auf andere Stoffe wirkt — wie Zitronensaft oder Essig, die sich auf der Zunge scharf anfühlen. Eine Base ist das Gegenteil: Sie wirkt 'glatt' und 'seifig', wie Backpulver oder Seife. Wenn eine Säure und eine Base aufeinandertreffen, löschen sie sich gegenseitig aus — das nennt man Neutralisation, und dabei entsteht oft Wasser und ein Salz, das gar nicht mehr sauer oder seifig ist. Ein Beispiel aus dem Alltag: Wenn dir der Magen wehtut (weil er zu viel Säure produziert), helfen Magenmedikamente, die eine Base enthalten — sie neutralisieren die Säure im Magen. Das ist wichtig im Alltag, weil wir so verstehen, wie Reinigungsmittel wirken, warum Lebensmittel schmecken, wie sie schmecken, und wie unser Körper sich selbst schützt.",
+    "acceptable_reasoning": "Bewertet wird die Verständlichkeit für Jüngere (keine unnötigen Fachbegriffe), die fachliche Korrektheit (keine falschen Aussagen) und die Qualität des Alltagsbeispiels. Kreative Formulierungen und eigene Analogien werden positiv bewertet, solange sie chemisch korrekt sind.",
+    "rubric": [
+      {
+        "criterion": "Zielgruppenadäquatheit",
+        "levels": [
+          "vollständig: Sprache klar für 2. Klasse, keine unerkläerten Fachbegriffe.",
+          "teilweise: Überwiegend verständlich, einzelne Fachbegriffe ohne Erklärung.",
+          "unzureichend: Sprache deutlich zu komplex für die Zielgruppe."
+        ]
+      },
+      {
+        "criterion": "Fachliche Korrektheit",
+        "levels": [
+          "vollständig: Alle Kernaussagen zu Säure, Base und Neutralisation korrekt.",
+          "teilweise: Leichte Ungenauigkeiten, aber kein grober Fehler.",
+          "unzureichend: Wesentliche Fehler in der Chemie."
+        ]
+      },
+      {
+        "criterion": "Alltagsbeispiel und Nutzen",
+        "levels": [
+          "vollständig: Mindestens ein treffendes Alltagsbeispiel und plausibler Nutzensatz.",
+          "teilweise: Beispiel vorhanden, aber wenig überzeugend oder kein Nutzensatz.",
+          "unzureichend: Kein Beispiel oder Nutzensatz fehlt."
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Häufiger Fehler: Schüler:innen schreiben für Gleichaltrige, nicht für Jüngere — auf die Zielgruppe achten.",
+      "Prüfen, ob fachliche Kernaussagen korrekt sind: Neutralisation erzeugt Salz und Wasser (nicht 'nichts'); Säure und Base 'heben sich auf' ist akzeptabel als Vereinfachung, aber nicht 'verschwinden'.",
+      "Falls Schüler:innen 'giftig' oder 'gefährlich' als Synonym für 'sauer' verwenden: klarstellen, dass Zitronensaft sauer, aber nicht gefährlich ist — Konzentration ist entscheidend."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Chemie",
+  "klasse": 4,
+  "kompetenzbereich": null,
+  "competences": [
+    "CHE.US.x.ALL.03"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "W",
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0003",
+  "source": "ai",
+  "created_at": "2026-06-25T11:35:34+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

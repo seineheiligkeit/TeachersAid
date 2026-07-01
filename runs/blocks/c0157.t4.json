@@ -1,0 +1,78 @@
+{
+  "id": "c0157.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Beurteile die folgenden Aussagen als richtig oder falsch und begründe jeweils deine Entscheidung in einem Satz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Proaktive Interferenz bedeutet, dass neues Lernmaterial altes Material verdrängt.",
+        "Der Spacing Effect besagt, dass verteiltes Lernen über mehrere Tage dem gebündelten Lernen (Lernen auf einmal) überlegen ist.",
+        "Vergessen ist grundsätzlich ein Zeichen schlechten Lernens und hat keinen Nutzen.",
+        "Das sensorische Register speichert Informationen über mehrere Minuten, damit man sie verarbeiten kann."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "Richtig / Falsch",
+        "Begründung"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "WIS",
+      "TRA"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PUP.OS.7.KOG.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1 – Falsch: Proaktive Interferenz bedeutet, dass ALTES Material das Lernen von NEUEM stört (nicht umgekehrt; das wäre retroaktive Interferenz). 2 – Richtig: Verteiltes Lernen führt zu besserer Langzeitbehaltensleistung als Massenlernen. 3 – Falsch: Selektives Vergessen ist adaptiv; es schützt das Gedächtnis vor Überflutung und priorisiert relevante Information. 4 – Falsch: Das sensorische Register hält Eindrücke nur für Millisekunden bis maximal ca. 3 Sekunden (ikonisch/echoisch) bereit.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Proaktive vs. retroaktive Interferenz werden häufig verwechselt – die Richtung der Störung ist entscheidend.",
+      "Aussage 3 greift eine verbreitete Alltagsannahme auf; Schüler:innen brauchen den Hinweis, dass Vergessen eine Funktion hat.",
+      "Aussage 4: Schüler:innen überschätzen oft die Kapazitätsdauer des sensorischen Registers."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Psychologie und Philosophie",
+  "klasse": 7,
+  "kompetenzbereich": "Kognitive Prozesse und Lernen",
+  "competences": [
+    "PUP.OS.7.KOG.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "WIS",
+    "TRA"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0157",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:28+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

@@ -1,0 +1,69 @@
+{
+  "id": "c0017.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Du möchtest einen einfachen Algorithmus entwerfen, der für eine Liste von Schüler:innen-Noten (z.B. 2, 4, 1, 3, 5, 2) die beste Note (also die niedrigste Zahl, da 1 = Sehr gut) ermittelt.\n\n(a) Beschreibe den Algorithmus in Worten oder Pseudocode – Schritt für Schritt.\n(b) Wende deinen Algorithmus manuell auf die Liste 2, 4, 1, 3, 5, 2 an und zeige jeden Schritt.\n(c) Erkläre, was 'Abstraktion' bei diesem Problem bedeutet – was hast du weggelassen, damit der Algorithmus allgemein anwendbar ist?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "apply",
+    "dimensions": [
+      "T",
+      "I"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DGB.US.3.PRO.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 13,
+    "answer_key": "(a) Algorithmus: (1) Setze 'Minimum' auf den ersten Wert der Liste. (2) Für jeden weiteren Wert in der Liste: Wenn dieser Wert kleiner als 'Minimum' ist, setze 'Minimum' auf diesen Wert. (3) Nach dem Durchlauf: Gib 'Minimum' aus. (b) Start: Minimum = 2. Vergleich mit 4: 4 > 2, kein Tausch. Vergleich mit 1: 1 < 2, Minimum = 1. Vergleich mit 3: 3 > 1, kein Tausch. Vergleich mit 5: 5 > 1, kein Tausch. Vergleich mit 2: 2 > 1, kein Tausch. Ergebnis: 1. (c) Abstraktion: Es ist egal, was die Zahlen bedeuten (Noten, Temperaturen, Preise) – der Algorithmus arbeitet auf beliebigen Zahlenlisten. Details wie Schüler:innen-Namen, Fächer etc. wurden weggelassen.",
+    "acceptable_reasoning": "Pseudocode-Varianten sind akzeptabel; entscheidend ist die korrekte Logik des Minimums-Algorithmus.",
+    "rubric": [
+      {
+        "criterion": "Korrektheit des Algorithmus",
+        "levels": [
+          "Algorithmus funktioniert nicht allgemein",
+          "Algorithmus korrekt, aber nicht ausreichend beschrieben",
+          "Vollständiger, allgemeiner und korrekter Algorithmus"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Häufiger Fehler: 'Durchsuche die Liste nach der 1' – das setzt voraus, dass man das Ergebnis schon kennt. Der Algorithmus muss allgemein sein.",
+      "Abstraktion bei Teil (c): Schüler:innen nennen oft nur eine Abstraktion – mehrere einfordern (Notenbezeichnung, Schüler:innen-Name, Fach)."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Digitale Grundbildung",
+  "klasse": 3,
+  "kompetenzbereich": "Produktion: Inhalte digital erstellen und veröffentlichen, Algorithmen entwerfen und Programmieren",
+  "competences": [
+    "DGB.US.3.PRO.01"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "T",
+    "I"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0017",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

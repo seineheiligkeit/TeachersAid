@@ -1,0 +1,75 @@
+{
+  "id": "c0033.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Die Tabelle zeigt das Bruttogehalt von vier Personen und ihre monatlichen Abzüge. Berechne das Nettogehalt und trage es ein. (Vereinfachung: Gesamtabzüge = 37 % des Bruttogehalts.)\n\n| Person | Bruttogehalt (€) | Abzüge (37 %) | Nettogehalt (€) |\n|---|---|---|---|\n| Lehrling (1. Jahr) | 800,00 | | |\n| Verkäuferin | 2 100,00 | | |\n| Krankenpfleger | 3 400,00 | | |\n| Informatikerin (Senior) | 5 200,00 | | |\n\nWelche Schlussfolgerung kannst du aus den Zahlen ziehen – z. B. in Bezug auf die gesellschaftliche Wertschätzung von Berufen?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.BIL.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Lehrling: 504 €; Verkäuferin: 1 323 €; Krankenpfleger: 2 142 €; Informatikerin: 3 276 €. Schlussfolgerung: Pflegeberufe (systemrelevant, körperlich und emotional anspruchsvoll) werden deutlich schlechter bezahlt als IT-Berufe; Lehrlingsentlohnung sehr niedrig – gesellschaftliche Wertschätzung spiegelt sich nicht immer im Lohn wider.",
+    "acceptable_reasoning": "Auch Aussagen über Einkommensungleichheit zwischen Berufsfeldern oder Geschlechtern (Gender Pay Gap) sind valide Schlussfolgerungen.",
+    "rubric": [
+      {
+        "criterion": "Rechnung korrekt",
+        "levels": [
+          "keine Berechnung",
+          "Fehler",
+          "alle korrekt"
+        ]
+      },
+      {
+        "criterion": "Schlussfolgerung",
+        "levels": [
+          "fehlt",
+          "oberflächlich",
+          "sozialkritisch und begründet"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "37 % ist eine starke Vereinfachung (real: progressiver Lohnsteuertarif + Sozialversicherung variiert); für Klasse 3 ausreichend genau.",
+      "Lehrlingsentlohnung: Lehrlingseinkommen in Österreich liegt nach Branche und Lehrjahr sehr unterschiedlich; 800 € ist ein vereinfachter Beispielwert."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Bildungswege und Arbeitswelten",
+  "competences": [
+    "GWB.US.3.BIL.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0033",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

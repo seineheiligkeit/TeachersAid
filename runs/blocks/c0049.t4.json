@@ -1,0 +1,80 @@
+{
+  "id": "c0049.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "enactive",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "design_task",
+    "prompt": "Du sollst einen Mechanismus bauen, der eine Kurbeldrehung in eine Auf-und-Ab-Bewegung (zum Beispiel für einen Hammer oder einen Stempel) umwandelt. Beschreibe in Worten (kein Bild nötig): Welche Bauteile brauchst du? Wie sind sie verbunden? Erkläre Schritt für Schritt, wie der Mechanismus funktioniert.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "create",
+    "dimensions": [
+      "HER"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "TED.US.4.HER.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Mögliche Lösungen: (1) Kurbel + Pleuelstange: Kurbel (exzentrischer Zapfen an Achse) dreht sich, Pleuelstange verbindet Zapfen mit dem Stempel, der sich im Führungskanal auf-und-ab bewegt. (2) Nockenwelle: Unrunder Nocken dreht sich, hebt und senkt einen Stößel. Beide Lösungen sind korrekt. Bewertung: Bauteile benannt, Verbindungsprinzip erklärt, Bewegungsumwandlung (Rotation → Translation) beschrieben.",
+    "acceptable_reasoning": "Jede mechanisch funktionierende Lösung (Kurbel-Pleuel, Nocken, Exzenter) ist akzeptabel, solange die Bewegungsumwandlung klar beschrieben ist.",
+    "rubric": [
+      {
+        "criterion": "Bauteile vollständig benannt",
+        "levels": [
+          "Weniger als 3 relevante Bauteile",
+          "Alle wesentlichen Bauteile (Kurbel, Verbindungselement, Abtrieb, Führung)"
+        ]
+      },
+      {
+        "criterion": "Bewegungsumwandlung erklärt",
+        "levels": [
+          "Nur beschrieben, nicht erklärt",
+          "Rotation → Translation als Prinzip erklärt"
+        ]
+      },
+      {
+        "criterion": "Konstruktive Machbarkeit",
+        "levels": [
+          "Mechanismus wäre so nicht baubar",
+          "Mechanismus ist konstruktiv plausibel"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen beschreiben manchmal eine Anordnung, die konstruktiv nicht funktioniert (z. B. zwei Achsen parallel, ohne Verbindung) — iterativ nachfragen.",
+      "Führungskanal für den Stempel oft vergessen — ohne Führung bewegt sich der Stempel nicht geradlinig."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "design_task",
+  "subject": "Technik und Design",
+  "klasse": 4,
+  "kompetenzbereich": "Herstellung",
+  "competences": [
+    "TED.US.4.HER.01"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "HER"
+  ],
+  "modality": "enactive",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0049",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

@@ -1,0 +1,104 @@
+{
+  "id": "c0086.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Sieh dir Abb. 2 (Formel U = R · I) an. Fülle die Tabelle aus. Nutze die Formel — forme sie wenn nötig um.",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Spannung U (V)",
+        "Widerstand R (Ω)",
+        "Stromstärke I (A)"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.3.ELE.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Zeile 1: U=12 V, R=6 Ω → I=2 A. Zeile 2: U=230 V, R=1150 Ω → I=0,2 A. Zeile 3: U=?, R=100 Ω, I=0,05 A → U=5 V. Zeile 4: U=9 V, R=?, I=0,03 A → R=300 Ω. (Hinweis an Lehrperson: Zahlenwerte können im Unterricht angepasst werden; Schüler:innen sollen das korrekte Umformen üben.)",
+    "acceptable_reasoning": "Formelumformung I = U/R bzw. R = U/I; korrekte Einheitenbehandlung.",
+    "rubric": [
+      {
+        "criterion": "Formelumformung",
+        "levels": [
+          "Keine Umformung erkennbar",
+          "Formel korrekt umgeformt, Rechenfehler",
+          "Formel korrekt umgeformt und Ergebnis richtig"
+        ]
+      },
+      {
+        "criterion": "Einheiten",
+        "levels": [
+          "Einheiten fehlen",
+          "Einheiten teilweise angegeben",
+          "Alle Einheiten korrekt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Fehler beim Umformen: Schüler:innen teilen manchmal durch das falsche Größe. Explizit zeigen: U=R·I → I=U/R.",
+      "Einheiten müssen stimmen: V / Ω = A."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Physik",
+  "klasse": 3,
+  "kompetenzbereich": "Elektrizität und Magnetismus",
+  "competences": [
+    "PHY.US.3.ELE.01"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:math_formula",
+      "spec": {
+        "latex": "U = R \\cdot I \\quad \\Longleftrightarrow \\quad I = \\frac{U}{R}"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0086",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:19+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

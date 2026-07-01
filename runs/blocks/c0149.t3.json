@@ -1,0 +1,80 @@
+{
+  "id": "c0149.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne jedem Struktogramm-Element die richtige Beschreibung zu.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Rechteck (einfacher Block)",
+        "Verzweigung (Raute / geteiltes Rechteck)",
+        "Schleife mit Vorbedingung (SOLANGE … TUE)",
+        "Schleife mit Nachbedingung (TUE … BIS)"
+      ],
+      "right": [
+        "Wird mindestens einmal ausgeführt; Abbruchbedingung am Ende",
+        "Einfache Anweisung, z. B. eine Zuweisung oder Ausgabe",
+        "Bedingung wird vor jedem Durchlauf geprüft; kann 0-mal ausgeführt werden",
+        "Führt je nach Bedingung einen von zwei Zweigen aus"
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Element",
+        "Beschreibung"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "WV"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "INF.OS.5.PRA.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "Rechteck → Einfache Anweisung; Verzweigung → Führt je nach Bedingung einen von zwei Zweigen aus; Schleife mit Vorbedingung → Bedingung wird vor jedem Durchlauf geprüft; Schleife mit Nachbedingung → Wird mindestens einmal ausgeführt.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen verwechseln häufig Vor- und Nachbedingungsschleife – das Schlüsselmerkmal 'mindestens einmal' bei der Nachbedingungsschleife herausstellen.",
+      "Verzweigung kann auch mehr als zwei Zweige haben (Mehrfachauswahl/CASE) – hier zunächst auf den zweiteiligen Fall beschränken."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Informatik",
+  "klasse": 5,
+  "kompetenzbereich": "Praktische Informatik",
+  "competences": [
+    "INF.OS.5.PRA.03"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "WV"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0149",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:25+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

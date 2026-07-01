@@ -1,0 +1,143 @@
+{
+  "id": "c0124.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Diskutiere: Ist es gerecht, dass alle Länder gleich viel CO₂ pro Kopf einsparen müssen — oder sollten Länder mit hohem Ausstoß stärker reduzieren? Nutze die Daten aus Abb. 1 für deine Argumentation und nenne mindestens ein physikalisches Argument.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "S",
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.4.WET.05",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.US.4.WET.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Physikalisches Argument für stärkere Reduktion bei Hochemittenten: Das Klima reagiert auf absolute CO₂-Mengen in der Atmosphäre, nicht auf pro-Kopf-Verhältnisse. USA (13,6 t) würde bei gleicher prozentualer Reduktion wie Nigeria (0,6 t) absolut viel mehr beitragen. Gerechtigkeitsargument: Länder mit historisch hohem Ausstoß haben mehr zum Problem beigetragen. Gegenargument: Einheitliche Regeln sind einfacher durchsetzbar. Erwartetes Niveau: Die Schülerinnen und Schüler sollen eine klar formulierte Position einnehmen, diese mit Daten stützen, und mindestens eine Gegenperspektive benennen.",
+    "acceptable_reasoning": "Es gibt keine einzig richtige Meinung — Argumentation und Datenbezug werden bewertet, nicht die Position.",
+    "rubric": [
+      {
+        "criterion": "Physikalisches Argument",
+        "levels": [
+          "Absoluter Effekt / Atmosphärenkonzentration erwähnt",
+          "Klimawandel allgemein erwähnt",
+          "Kein physikalischer Bezug"
+        ]
+      },
+      {
+        "criterion": "Datenbezug",
+        "levels": [
+          "Konkrete Werte aus Abb. 1 (z. B. 13,6 t vs. 0,6 t)",
+          "Diagramm erwähnt ohne Zahlen",
+          "Kein Bezug"
+        ]
+      },
+      {
+        "criterion": "Position und Gegenperspektive",
+        "levels": [
+          "Klare Position + Gegenargument",
+          "Position ohne Gegenperspektive",
+          "Keine klare Position"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schülerinnen und Schüler verwechseln manchmal 'gerecht' im moralischen Sinn mit 'physikalisch wirksam' — beide Dimensionen anerkennen und unterscheiden.",
+      "Darauf achten, dass das physikalische Argument (Atmosphärenkonzentration reagiert auf absolute Mengen) explizit genannt wird, nicht nur moralische Überlegungen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Wetter und Klima",
+  "competences": [
+    "PHY.US.4.WET.05",
+    "PHY.US.4.WET.04"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "S",
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "title": "CO₂-Ausstoß pro Kopf im Ländervergleich (2024)",
+        "log": false,
+        "categories": [
+          "Österreich",
+          "Deutschland",
+          "Schweiz",
+          "Italien",
+          "USA",
+          "China",
+          "Indien",
+          "Nigeria"
+        ],
+        "values": [
+          6.3,
+          6.9,
+          3.7,
+          5.1,
+          13.6,
+          9.3,
+          2.2,
+          0.6
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "worldbank_co2_pro_kopf",
+        "series": "vergleich",
+        "note": null,
+        "title": "CO₂-Ausstoß pro Kopf im Ländervergleich",
+        "url": "https://data.worldbank.org/indicator/EN.GHG.CO2.PC.CE.AR5",
+        "attribution": "Datenquelle: World Bank – data.worldbank.org (EN.GHG.CO2.PC.CE.AR5, CC BY 4.0)",
+        "stand": "2024"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0124",
+  "source": "ai",
+  "created_at": "2026-06-27T15:21:18+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

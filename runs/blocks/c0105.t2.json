@@ -1,0 +1,88 @@
+{
+  "id": "c0105.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne jeden Standortfaktor dem richtigen Oberbegriff zu. Ein Faktor kann auch in mehrere Kategorien passen – entscheide dich für den treffendsten.\n\nStandortfaktoren: Internationale Konzerne haben ihren Sitz in Wien · Kurze Wege zur Universität · Günstige Wohnungen im Umland (Niederösterreich) · Internationaler Flughafen Wien-Schwechat · Donaukanal und Stadtstrände · Gute U-Bahn-Anbindung · Weinbaugebiete in NÖ.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Internationale Konzerne haben ihren Sitz in Wien",
+        "Kurze Wege zur Universität",
+        "Günstige Wohnungen im Umland (NÖ)",
+        "Internationaler Flughafen Wien-Schwechat",
+        "Donaukanal und Stadtstrände",
+        "Gute U-Bahn-Anbindung",
+        "Weinbaugebiete in NÖ"
+      ],
+      "right": [
+        "Wirtschaftlicher Standortfaktor",
+        "Bildungs-Standortfaktor",
+        "Wohn-Standortfaktor",
+        "Infrastruktur-Standortfaktor",
+        "Freizeit-/Lebensqualität-Faktor",
+        "Landwirtschaftlicher Standortfaktor"
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Standortfaktor",
+        "Oberbegriff"
+      ],
+      "rows": 7
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "OK",
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.ENT.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Konzerne → Wirtschaftlich; Universität → Bildung; Günstige Wohnungen → Wohn-Standortfaktor; Flughafen → Infrastruktur; Donaukanal → Freizeit/Lebensqualität; U-Bahn → Infrastruktur; Weinbaugebiete → Landwirtschaftlich. Kombinationsantworten (z.B. Flughafen = wirtschaftlich UND infrastrukturell) sind ebenfalls korrekt, wenn begründet.",
+    "acceptable_reasoning": "Bei Mehrfachzuordnungen ist Begründung erforderlich.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Manche Schüler:innen ordnen 'Universität' als Wirtschaftsfaktor ein (stimmt teils – Hochschulen schaffen Arbeitsplätze). Das ist ein produktiver Diskussionspunkt.",
+      "Weinbaugebiete werden oft als Freizeit/Tourismus eingestuft – das ist vertretbar, solange begründet.",
+      "Darauf hinweisen, dass Standortfaktoren oft mehrere Dimensionen haben."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Entwicklungen am Wirtschaftsstandort Österreich",
+  "competences": [
+    "GWB.US.3.ENT.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "OK",
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0105",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:23+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

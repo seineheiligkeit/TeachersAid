@@ -1,0 +1,90 @@
+{
+  "id": "c0059.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "text_production",
+    "prompt": "Schreibe eine kurze E-Mail (8–10 Sätze) an deine(n) Brieffreund(in) in Frankreich. Erzähle:\n1. Was du letztes Wochenende gemacht hast (mindestens 3 Sätze im passé composé)\n2. Was du in den nächsten Ferien machen möchtest (mindestens 2 Sätze mit Je vais... oder Je voudrais...)\n3. Eine Frage an deinen Brieffreund / deine Brieffreundin\n\nVergiss Anrede und Verabschiedung nicht!\n\nAnrede: Cher Paul, / Chère Marie,\nVerabschiedung: À bientôt ! / Bisous,",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 70.0
+    },
+    "cognitive_level": "create",
+    "dimensions": [
+      "SCH"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS2.US.4.SCH.03",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "FS2.US.4.SCH.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 14,
+    "answer_key": "Musterlösung:\nChère Marie,\nComment vas-tu ? Moi, ça va bien ! Ce week-end, j'ai joué au volleyball avec mes amis. Samedi soir, nous avons regardé un film. C'était super ! Je suis allé(e) chez mes grands-parents dimanche.\nPendant les vacances, je vais aller à la mer avec ma famille. Je voudrais aussi visiter Paris un jour !\nEt toi, qu'est-ce que tu fais pendant les vacances ?\nÀ bientôt !\n[Vorname]\n(Bewertung nach Struktur, Zeitformen, Meinungsausdruck und Frage an den Briefpartner.)",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Briefstruktur",
+        "levels": [
+          "Anrede, alle drei inhaltlichen Teile (Vergangenheit, Zukunft, Frage), Verabschiedung vorhanden",
+          "Zwei von drei inhaltlichen Teilen; Anrede oder Verabschiedung fehlt",
+          "Nur ein Teil; keine Briefstruktur erkennbar"
+        ]
+      },
+      {
+        "criterion": "Zeitformen",
+        "levels": [
+          "Passé composé und futur proche korrekt und unterschieden verwendet",
+          "Eine Zeitform überwiegend korrekt, die andere fehlt oder ist fehlerhaft",
+          "Nur Präsens; keine Zeitformen verwendet"
+        ]
+      },
+      {
+        "criterion": "Sprachliche Richtigkeit",
+        "levels": [
+          "Verben, Genus und Negation weitgehend korrekt (max. 3 Kleinigkeiten)",
+          "Verständlich, aber systematische Fehler in einer Kategorie",
+          "Schwer verständlich durch viele Fehler"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Cher (für Jungen) vs. Chère (für Mädchen) — Genusanpassung des Adjektivs in der Anrede; häufig falsch.",
+      "Je vais + Infinitiv: das Verb bleibt im Infinitiv (je vais aller, NICHT je vais allé) — der Infinitiv nach dem Modalausdruck ist ein systematischer Fehler.",
+      "Frage am Ende: Schüler:innen vergessen oft die abschließende Frage — sie ist konventionell in Briefen und zeigt Interesse am Gegenüber.",
+      "14 Minuten sind knapp für schwächere Schüler:innen — ggf. als Hausaufgabe weiterführen oder Schritt 1 (Vergangenheit) im Unterricht, Schritt 2–3 zuhause."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "text_production",
+  "subject": "Zweite lebende Fremdsprache",
+  "klasse": 4,
+  "kompetenzbereich": "Schreiben",
+  "competences": [
+    "FS2.US.4.SCH.03",
+    "FS2.US.4.SCH.01"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "SCH"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0059",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

@@ -1,0 +1,93 @@
+{
+  "id": "c0143.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "text_analysis",
+    "prompt": "Betrachte die folgenden deutschen Fachwörter: Philosophie, Biographie, Anthropologie, Demokratie, Geographie. Zerlege jedes Wort in seine griechischen Bestandteile und erkläre die wörtliche Bedeutung jedes Teils. Nutze die Tabelle.",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Fachwort",
+        "Bestandteil 1 (griech.)",
+        "Bestandteil 2 (griech.)",
+        "Wörtliche Bedeutung"
+      ],
+      "rows": 5
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "INT"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GRI.OS.5.KLA.04",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "GRI.OS.5.KLA.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Philosophie: φιλεῖν (lieben) + σοφία (Weisheit) = Liebe zur Weisheit; Biographie: βίος (Leben) + γράφειν (schreiben) = Lebensbeschreibung; Anthropologie: ἄνθρωπος (Mensch) + λόγος (Lehre) = Menschenlehre; Demokratie: δῆμος (Volk) + κρατεῖν (herrschen) = Volksherrschaft; Geographie: γῆ (Erde) + γράφειν (schreiben) = Erdbeschreibung",
+    "acceptable_reasoning": "Umschreibungen, die Kern der Bedeutung treffen, auch wenn Schreibung abweicht.",
+    "rubric": [
+      {
+        "criterion": "Korrekte Zerlegung",
+        "levels": [
+          "5 von 5 vollständig korrekt",
+          "3–4 vollständig korrekt",
+          "1–2 korrekt",
+          "Keine korrekte Zerlegung"
+        ]
+      },
+      {
+        "criterion": "Bedeutungserklärung",
+        "levels": [
+          "Alle Bedeutungen treffend formuliert",
+          "Mehrheitlich korrekt",
+          "Ansätze erkennbar",
+          "Fehlt oder falsch"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen verwechseln φιλεῖν (lieben) mit φύλλον (Blatt) – phonetische Ähnlichkeit im Deutschen irreführend.",
+      "δῆμος (Volk) wird manchmal mit 'Demonstration' assoziiert, was zwar etymologisch verwandt, aber ablenkend ist.",
+      "γράφειν erscheint in zwei Wörtern (Bio-graphie, Geo-graphie) – das Muster soll erkannt werden."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "text_analysis",
+  "subject": "Griechisch",
+  "klasse": 5,
+  "kompetenzbereich": "5. Klasse",
+  "competences": [
+    "GRI.OS.5.KLA.04",
+    "GRI.OS.5.KLA.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "INT"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0143",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:22+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

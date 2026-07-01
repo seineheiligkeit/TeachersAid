@@ -1,0 +1,331 @@
+{
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Wetter und Klima",
+  "title": "Wetter, Klima und Energiehaushalt der Erde",
+  "kernfrage": "Wie hängen Wärmeübertragung, Luftdruck und der Energiehaushalt der Erde zusammen – und was hat das mit deinem Alltag und dem Klimawandel zu tun?",
+  "body": {
+    "intro": [
+      {
+        "role": "info",
+        "id": "i1",
+        "kind": "prose",
+        "content": "Die Erde empfängt ständig Energie von der Sonne – und gibt sie auch wieder ab. Dieses Gleichgewicht aus eintreffender und abgestrahlter Energie bestimmt unser Klima. Wärme überträgt sich dabei auf drei Wegen: durch Wärmeleitung (Konduktion), Wärmeströmung (Konvektion) und Wärmestrahlung (Radiation). Unterschiede in Temperatur und Luftdruck sind der Motor hinter Wind, Wolken und Niederschlag. Wie gut wir dieses System verstehen, entscheidet darüber, wie wirksam wir Klimaschutzmaßnahmen planen können.",
+        "watch_outs": []
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Wärmeübertragung und ihre Bedeutung",
+        "throughline": "Schüler:innen unterscheiden die drei Arten der Wärmeübertragung und verknüpfen sie mit konkreten Alltagssituationen sowie der Klimaproblematik.",
+        "talking_points": [
+          "Warum wird ein Metalllöffel im heißen Tee schneller warm als ein Holzlöffel?",
+          "Wie unterscheidet sich der Wärmetransport in einem Heizkörper von dem in einer Ofenplatte?",
+          "Welche Rolle spielt die Wärmestrahlung bei der Erwärmung der Erdoberfläche durch die Sonne?"
+        ],
+        "extensions": [
+          "Vertiefung: Schüler:innen recherchieren, warum Doppelglasfenster effektiver dämmen als Einfachglas – alle drei Übertragungsarten einbeziehen.",
+          "Differenzierung: Leistungsstärkere Schüler:innen erkunden den Unterschied zwischen Wärmestrahlung (IR) und sichtbarem Licht im Kontext des Treibhauseffekts."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "matching",
+            "prompt": "Ordne jedem Beispiel die richtige Art der Wärmeübertragung zu. Jede Übertragungsart kann mehrfach verwendet werden.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "A) Eine Bratpfanne wird am Herd heiß und der Griff wird warm.",
+                "B) Heißluft steigt vom Heizkörper an der Wand zur Zimmerdecke auf.",
+                "C) Die Sonne wärmt deine Haut, obwohl du im Schatten stehst (indirektes Licht).",
+                "D) Konvektion in der Atmosphäre transportiert warme Luft vom Äquator zu den Polen.",
+                "E) Ein Stein, auf dem du sitzt, wärmt sich durch deinen Körper auf."
+              ],
+              "right": [
+                "1) Wärmeleitung (Konduktion)",
+                "2) Wärmeströmung (Konvektion)",
+                "3) Wärmestrahlung (Radiation)"
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["E"],
+            "serves": [
+              {
+                "competence_id": "PHY.US.4.WET.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "A→1 (Wärmeleitung: Metall ist Wärmeleiter), B→2 (Konvektion: Dichteunterschiede warmer/kalter Luft), C→3 (Strahlung: elektromagnetische Wellen, kein Medium nötig), D→2 (großräumige atmosphärische Konvektion), E→1 (direkter Kontakt zwischen Körper und Stein).",
+            "acceptable_reasoning": "Bei C ist auch 3+2 akzeptabel mit Begründung, dass Strahlung absorbiert wird und Luft dann konvektiert.",
+            "watch_outs": [
+              "Häufige Fehlvorstellung: Wärme 'fließt' immer nach oben. Konvektion bewegt Fluide; Leitung und Strahlung haben keine Vorzugsrichtung.",
+              "Strahlung braucht kein Medium – viele Schüler:innen denken, Luft sei notwendig für Wärmeübertragung allgemein.",
+              "Konvektion findet nur in Flüssigkeiten und Gasen statt, nicht in Feststoffen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "experiment_protocol",
+            "prompt": "Du willst untersuchen, ob dunkle Oberflächen mehr Wärmestrahlung absorbieren als helle. Entwirf einen einfachen Versuch, den du in der Schule durchführen könntest. Beschreibe: (a) die Materialien, die du brauchst, (b) was du misst und wie, (c) was du erwartest zu beobachten, und (d) wie du sicherstellen kannst, dass dein Vergleich fair ist (Kontrollvariable).",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55
+            },
+            "cognitive_level": "apply",
+            "dimensions": ["E"],
+            "serves": [
+              {
+                "competence_id": "PHY.US.4.WET.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 12,
+            "answer_key": "Vollständiger Versuchsplan: (a) zwei identische Behälter/Becher (einer schwarz beschichtet, einer weiß/silber), Thermometer, Lampe oder direkte Sonneneinstrahlung, Stoppuhr. (b) Temperatur beider Behälter gleich zu Beginn; nach gleicher Zeit messen (z.B. alle 2 min über 10 min). (c) Dunkle Oberfläche absorbiert mehr Strahlung → höherer Temperaturanstieg. (d) Kontrollvariablen: gleiche Ausgangsbedingungen, gleiche Materialmengen, gleicher Abstand zur Lichtquelle, gleiche Belichtungszeit.",
+            "acceptable_reasoning": "Schüler:innen müssen nicht exakt die Fachbegriffe Absorption/Emission verwenden, aber die Idee des kontrollierten Vergleichs (fair test) muss erkennbar sein.",
+            "watch_outs": [
+              "Fehlvorstellung: 'Schwarz ist wärmer, weil es Wärme produziert.' Korrekt: dunkle Flächen absorbieren mehr Strahlung.",
+              "Auf das Prinzip des fairen Vergleichs achten – fehlt die Kontrollvariable, ist das Experiment nicht aussagekräftig.",
+              "Bezug zur Klimaproblematik herstellen: schmelzendes Eis (helle Fläche) wird durch dunkles Wasser ersetzt → mehr Absorption → Verstärkung der Erwärmung (Eis-Albedo-Rückkopplung)."
+            ],
+            "rubric": [
+              {
+                "kriterium": "Messplan",
+                "stufen": ["0: Kein Messplan", "1: Messung beschrieben, kein Vergleich", "2: Vergleich zweier Oberflächen mit Messung", "3: Vergleich mit expliziten Kontrollvariablen"]
+              },
+              {
+                "kriterium": "Erwartung begründet",
+                "stufen": ["0: Keine Erwartung", "1: Erwartung ohne Begründung", "2: Erwartung mit physikalischer Begründung (Absorption)"]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Luftdruck, Temperatur und Wettergeschehen",
+        "throughline": "Schüler:innen erkennen, dass Temperaturunterschiede Dichteunterschiede und damit Luftdruckunterschiede erzeugen, die Wind und Wetterphänomene antreiben.",
+        "talking_points": [
+          "Warum weht an der Meeresküste tagsüber Wind vom Meer zum Land, nachts aber umgekehrt?",
+          "Was passiert mit dem Luftdruck, wenn Luft erwärmt wird – und warum?",
+          "Wie hängen Tiefdruckgebiete mit schlechtem Wetter zusammen?"
+        ],
+        "extensions": [
+          "Vertiefung: Föhn in Österreich – Schüler:innen erklären, warum Luft auf der Leeseite der Alpen trockener und wärmer ankommt.",
+          "Differenzierung: Zusammenhang von Luftdruck und Siedepunkt des Wassers (Hochgebirge): Warum kocht Wasser auf dem Großglockner bei niedrigerer Temperatur?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "true_false_justify",
+            "prompt": "Beurteile die folgenden Aussagen. Schreibe jeweils 'Richtig' oder 'Falsch' und begründe deine Entscheidung in einem Satz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Warme Luft ist dichter als kalte Luft bei gleichem Druck.",
+                "In einem Tiefdruckgebiet steigt Luft auf und es bilden sich häufig Wolken.",
+                "Wind entsteht, weil Luft von Gebieten mit hohem Druck zu Gebieten mit niedrigem Druck strömt.",
+                "Die Passatwinde entstehen durch Temperaturunterschiede zwischen Äquator und den gemäßigten Breiten."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 8
+            },
+            "cognitive_level": "analyze",
+            "dimensions": ["W"],
+            "serves": [
+              {
+                "competence_id": "PHY.US.4.WET.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 12,
+            "answer_key": "1) Falsch – warme Luft ist weniger dicht (geringere Dichte bei höherer Temperatur, Teilchen bewegen sich schneller und weiter auseinander). 2) Richtig – im Tief steigt wärmere, leichtere Luft auf, kühlt sich ab, Wasserdampf kondensiert → Wolken und Niederschlag. 3) Richtig – Luftdruck ist die treibende Kraft; Luft bewegt sich vom Hoch (hoher Druck) zum Tief (niedrigem Druck), die Corioliskraft lenkt sie ab. 4) Richtig – am Äquator erwärmt sich Luft stark, steigt auf (Tiefdruckzone); in ca. 30° Breite kühlt sie ab und sinkt (Hochdruckzone); die bodennahe Rückströmung sind die Passatwinde.",
+            "acceptable_reasoning": "Bei Aussage 3 ist ein Hinweis auf die Corioliskraft nicht zwingend erforderlich für die Grundbewertung.",
+            "watch_outs": [
+              "Häufige Fehlvorstellung: 'Warme Luft ist schwerer' – tatsächlich ist warme Luft leichter (weniger dicht).",
+              "Tiefdruckgebiet ≠ tiefer Luftdruck am Boden bedeutet 'wenig Luft da'. Der Druck am Boden ist tatsächlich geringer, weil die Luft aufsteigt.",
+              "Schüler:innen verwechseln oft Luftdruck mit Luftmasse; klarstellen, dass Druck auch von der Temperatursäule darüber abhängt."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "open_response",
+            "prompt": "An einem Sommertag in Österreich misst man um 14 Uhr in Wien 32 °C und am Alpenrand (in 1 000 m Höhe) nur 22 °C. Erkläre, welche Auswirkungen dieser Temperaturunterschied auf den Luftdruck und die Windverhältnisse zwischen diesen beiden Orten haben kann. Gehe dabei auf die physikalischen Zusammenhänge ein.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 45
+            },
+            "cognitive_level": "analyze",
+            "dimensions": ["W"],
+            "serves": [
+              {
+                "competence_id": "PHY.US.4.WET.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "answer_key": "In Wien (wärmer) erwärmt sich die bodennahe Luft stärker: sie dehnt sich aus, wird leichter (geringere Dichte) und steigt auf → Luftdruck am Boden in Wien sinkt (Tiefdruck-Tendenz). Am Alpenrand (kühler) bleibt die Luft dichter und schwerer → höherer Luftdruck (Hochdruck-Tendenz). Luft strömt in Bodennähe vom Hochdruckgebiet (Alpenrand) zum Tiefdruckgebiet (Wien) → Wind aus Richtung der Alpen. Zusätzlich spielt die Höhe eine Rolle: mit zunehmender Höhe nimmt der Luftdruck generell ab (ca. 1 hPa pro 8–10 m Höhenzunahme), was den Druckunterschied überlagert.",
+            "acceptable_reasoning": "Der Höheneffekt auf den Luftdruck muss nicht zwingend quantitativ beschrieben werden. Kernpunkte: Wärme → geringe Dichte → steigt auf → Tiefdruck; Luft strömt von Hoch zu Tief.",
+            "watch_outs": [
+              "Nicht den Luftdruckunterschied mit dem Höhenunterschied verwechseln – der Temperaturunterschied ist die zu analysierende Variable.",
+              "Schüler:innen sollten explizit Ursache (Temperaturdifferenz) → Wirkung (Druckgradient) → Folge (Wind) formulieren."
+            ],
+            "rubric": []
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "Energiehaushalt der Erde und Klimawandel",
+        "throughline": "Schüler:innen erschließen den Treibhauseffekt als physikalischen Mechanismus, bewerten menschliche Einflüsse auf den Energiehaushalt der Erde und diskutieren Klimaschutzmaßnahmen auf verschiedenen Ebenen.",
+        "talking_points": [
+          "Warum ist der natürliche Treibhauseffekt für Leben auf der Erde lebensnotwendig – und was macht den verstärkten Treibhauseffekt zum Problem?",
+          "Welche konkreten Maßnahmen könntest du selbst ergreifen, die einen messbaren Effekt haben?",
+          "Wie unterscheiden sich die Hebel auf persönlicher, nationaler und globaler Ebene in ihrer Wirksamkeit?"
+        ],
+        "extensions": [
+          "Vertiefung: Berechnung des persönlichen CO₂-Fußabdrucks mit einem Online-Rechner (z.B. wwf.at) und Diskussion der Ergebnisse.",
+          "Differenzierung: Schüler:innen recherchieren das Pariser Abkommen und die österreichischen Klimaziele 2030 – wie weit ist Österreich?",
+          "Vernetzung: Verknüpfung mit Geographie (Klimazonen) und Biologie (Ökosysteme und Klimawandel)."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "multiple_choice",
+            "prompt": "Der natürliche Treibhauseffekt der Erde beruht auf einem physikalischen Mechanismus. Welche der folgenden Aussagen beschreiben diesen Mechanismus korrekt? (Mehrere Antworten können richtig sein.)",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "A) Kurzwellige Sonnenstrahlung (sichtbares Licht und UV) kann die Atmosphäre relativ ungehindert durchdringen und die Erdoberfläche erwärmen.",
+                "B) Die erwärmte Erdoberfläche gibt langwellige Wärmestrahlung (Infrarot) ab.",
+                "C) Treibhausgase wie CO₂ und H₂O absorbieren diese langwellige Strahlung und strahlen einen Teil davon zurück zur Erde.",
+                "D) Die Ozonschicht reflektiert die Sonnenstrahlung und verhindert dadurch eine Überhitzung.",
+                "E) Ohne den Treibhauseffekt wäre die mittlere Oberflächentemperatur der Erde etwa −18 °C statt der heutigen +15 °C."
+              ],
+              "select": "many"
+            },
+            "response": {
+              "mode": "choices",
+              "options": ["A", "B", "C", "D", "E"],
+              "select": "many"
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["W"],
+            "serves": [
+              {
+                "competence_id": "PHY.US.4.WET.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Richtig: A, B, C, E. Falsch: D – die Ozonschicht filtert UV-Strahlung heraus, ist aber nicht für den Treibhauseffekt verantwortlich; der Treibhauseffekt wird durch Absorption/Reemission langwelliger Strahlung durch Treibhausgase verursacht.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Häufige Verwechslung: Ozonloch ≠ Treibhauseffekt. Ozon filtert UV-B/C; CO₂ und andere Treibhausgase absorbieren IR.",
+              "Der natürliche Treibhauseffekt ist lebenswichtig – erst der verstärkte (anthropogene) Treibhauseffekt ist das Problem.",
+              "Die Temperaturangabe −18 °C ohne Treibhauseffekt ist ein wichtiger Anker – die 33 K Erwärmung durch den natürlichen Treibhauseffekt verdeutlichen seine Größenordnung."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "decision_scenario",
+            "prompt": "Die österreichische Gemeinde Sonnberg (5 000 Einwohner:innen) will bis 2035 klimaneutral werden. Drei Maßnahmen stehen zur Diskussion:\n\n(1) Bau eines Windparks außerhalb der Gemeinde (Investitionskosten: hoch, CO₂-Einsparung: groß, Akzeptanz in der Bevölkerung: geteilt).\n(2) Förderung von Photovoltaik-Anlagen auf privaten Dächern (Investitionskosten: mittel, CO₂-Einsparung: mittel, Akzeptanz: hoch).\n(3) Umstieg des Gemeinde-Fuhrparks auf Elektrofahrzeuge (Investitionskosten: mittel, CO₂-Einsparung: gering bis mittel je nach Strommix, Akzeptanz: hoch).\n\nWelche Maßnahme würdest du empfehlen, wenn die Gemeinde ihr Budget begrenzt einsetzen und gleichzeitig möglichst viel CO₂ einsparen will? Begründe deine Entscheidung mit physikalischen, ökonomischen und gesellschaftlichen Argumenten.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Gemeinde Sonnberg: Klimaneutralität bis 2035 – Maßnahmenvergleich (Windpark / PV / E-Mobilität)."
+            },
+            "response": {
+              "mode": "box",
+              "min_height_mm": 60
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": ["S"],
+            "serves": [
+              {
+                "competence_id": "PHY.US.4.WET.05",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 15,
+            "answer_key": "Es gibt keine einzig richtige Antwort; bewertet wird die Qualität der Argumentation. Mögliche Argumentation für Windpark: höchste absolute CO₂-Einsparung, aber Akzeptanzproblem und hohe Kosten. Für PV: gutes Verhältnis von Kosten zu Einsparung, dezentral, hohe Akzeptanz, fördert Eigenverantwortung. Für E-Mobilität: geringste CO₂-Einsparung, falls Strom nicht erneuerbar ist. Eine starke Antwort kombiniert PV als erste Priorität (Kosten-Nutzen) mit dem Hinweis, dass Windpark mittelfristig die größte Hebelwirkung hat. Wichtig: Begründung muss auf mindestens zwei Dimensionen eingehen (physikalisch + ökonomisch oder gesellschaftlich).",
+            "acceptable_reasoning": "Alle drei Optionen können empfohlen werden, wenn die Begründung schlüssig und mehrdimensional ist.",
+            "watch_outs": [
+              "Schüler:innen sollen nicht 'alle Maßnahmen gleichzeitig' wählen – die Aufgabe verlangt eine Priorisierung bei begrenztem Budget.",
+              "Auf die Strommix-Abhängigkeit von E-Mobilität hinweisen: in Österreich (hoher Anteil erneuerbarer Energie) sinnvoller als in Kohlestrom-dominierten Ländern.",
+              "Gesellschaftliche Akzeptanz ist ein legitimes Argument – NIMBY-Phänomen bei Windrädern ist Realität und physikalisch-planerisch relevant."
+            ],
+            "rubric": [
+              {
+                "kriterium": "Entscheidung begründet",
+                "stufen": ["0: Keine Begründung", "1: Begründung nur auf einer Dimension", "2: Begründung auf zwei Dimensionen", "3: Begründung auf allen drei Dimensionen mit Abwägung"]
+              },
+              {
+                "kriterium": "Physikalische Korrektheit",
+                "stufen": ["0: Fehler in den physikalischen Grundlagen", "1: Grundlagen korrekt, aber unvollständig", "2: Korrekte und vollständige physikalische Einschätzung"]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "create_produce",
+            "prompt": "Stell dir vor, du hast fünf Minuten Redezeit vor dem österreichischen Nationalrat, um für eine konkrete klimapolitische Maßnahme zu plädieren. Wähle eine Maßnahme (z.B. CO₂-Steuer, Ausbau erneuerbarer Energie, Sanierungsoffensive für Gebäude, Reduktion des Flugverkehrs) und verfasse eine kurze, überzeugende Rede (ca. 150–200 Wörter). Die Rede muss:\n• einen physikalischen Zusammenhang erklären (warum wirkt die Maßnahme?)\n• die Umsetzbarkeit auf nationaler Ebene beurteilen\n• auf einen möglichen Einwand eingehen und ihn entkräften.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 75
+            },
+            "cognitive_level": "create",
+            "dimensions": ["S"],
+            "serves": [
+              {
+                "competence_id": "PHY.US.4.WET.05",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 20,
+            "answer_key": "Bewertet werden Struktur (These – Argumentation – Einwandbehandlung), physikalische Korrektheit der Erklärung (z.B. CO₂-Steuer → Lenkungswirkung → weniger Emissionen → weniger Treibhausgase → abgeschwächter Treibhauseffekt), Überzeugungskraft und Vollständigkeit der drei Anforderungen. Beispiel-Einwand bei CO₂-Steuer: 'Das belastet sozial Schwache.' Entkräftung: Rückverteilung der Einnahmen als Klimabonus (wie in Österreich seit 2022).",
+            "acceptable_reasoning": "Schüler:innen dürfen jede der genannten oder eine andere sinnvolle Maßnahme wählen, sofern alle drei Anforderungen erfüllt werden.",
+            "watch_outs": [
+              "Physikalischer Zusammenhang darf nicht fehlen – eine rein politische Rede ohne Physik erfüllt die Aufgabe nicht.",
+              "Auf Vollständigkeit der drei Anforderungen achten; häufig wird der Einwand vergessen.",
+              "Klimabonus (Österreich) ist ein konkretes, Österreich-spezifisches Beispiel das Schüler:innen kennen sollten."
+            ],
+            "rubric": [
+              {
+                "kriterium": "Physikalischer Zusammenhang",
+                "stufen": ["0: Fehlt oder falsch", "1: Vorhanden aber ungenau", "2: Korrekt und klar erklärt"]
+              },
+              {
+                "kriterium": "Nationale Umsetzbarkeit",
+                "stufen": ["0: Nicht thematisiert", "1: Erwähnt ohne Begründung", "2: Mit konkretem Argument bewertet"]
+              },
+              {
+                "kriterium": "Einwand und Entkräftung",
+                "stufen": ["0: Fehlt", "1: Einwand genannt, nicht entkräftet", "2: Einwand sinnvoll entkräftet"]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

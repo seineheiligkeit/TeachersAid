@@ -1,0 +1,66 @@
+{
+  "id": "c0045.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Beurteile die folgenden Aussagen über Materialien: Stimmt die Aussage, oder stimmt sie nicht? Erkläre deine Entscheidung jeweils in einem Satz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Holz ist immer schwerer als Metall.",
+        "Glas ist transparent, weil es aus Sand hergestellt wird.",
+        "Ein Material kann gleichzeitig fest und biegsam sein.",
+        "Kunststoffe werden immer aus Erdöl gewonnen."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 8
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "ENT"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "TED.US.1.ENT.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "1. Falsch: Manche Hölzer (z. B. Balsaholz) sind sehr leicht, manche Metalle (z. B. Aluminium) ebenfalls. Dichte variiert stark. 2. Nicht direkt: Die Transparenz entsteht durch die Kristallstruktur des Glases beim Schmelzen, nicht durch den Sand selbst. Vereinfacht akzeptabel: teils richtig, teils unvollständig. 3. Richtig: Federstahl, kohlenstofffaserverstärkter Kunststoff, Bambus. 4. Falsch: Biopolymere aus Stärke oder Zucker sind möglich; Anteil wächst.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Aussage 1 ist eine häufige Fehlvorstellung — konkrete Beispiele (Balsa, Aluminium) mitbringen.",
+      "Aussage 4: Viele Schüler:innen kennen nur Erdöl-Kunststoffe. Bioplastik kurz erläutern."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Technik und Design",
+  "klasse": 1,
+  "kompetenzbereich": "Entwicklung",
+  "competences": [
+    "TED.US.1.ENT.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "ENT"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0045",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

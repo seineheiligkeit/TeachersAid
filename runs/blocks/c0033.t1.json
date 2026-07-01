@@ -1,0 +1,74 @@
+{
+  "id": "c0033.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne jede Schule oder Ausbildung ihrer typischen Beschreibung zu.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "HTL (Höhere Technische Lehranstalt)",
+        "Lehre (duale Ausbildung)",
+        "HAK (Handelsakademie)",
+        "Universität",
+        "FH (Fachhochschule)"
+      ],
+      "right": [
+        "Praktische Ausbildung im Betrieb + Berufsschule; Abschluss: Gesellenbrief.",
+        "Technisch-naturwissenschaftliche BHS; Abschluss: Matura + Berufsreife.",
+        "Kaufmännische BHS mit Schwerpunkt Wirtschaft und Rechnungswesen; Abschluss: Matura.",
+        "Akademische Einrichtung; Abschluss: Bachelor/Master/Doktorat; stark forschungsorientiert.",
+        "Praxisorientierter Hochschulbereich; Abschluss: Bachelor/Master; stark berufsorientiert."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "OK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.BIL.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "HTL – technisch-naturwiss. BHS; Lehre – Betrieb + Berufsschule; HAK – kaufmännische BHS; Universität – forschungsorientiert; FH – praxisorientiert.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "HTL und HAK werden oft verwechselt – der Unterschied ist der Fachbereich (technisch vs. kaufmännisch), nicht das Niveau.",
+      "FH vs. Universität: Beide sind Hochschulen, aber FH ist stärker berufsfeldbezogen; Abschlüsse (Bachelor/Master) sind formal gleichwertig."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Bildungswege und Arbeitswelten",
+  "competences": [
+    "GWB.US.3.BIL.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "OK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0033",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

@@ -1,0 +1,95 @@
+{
+  "id": "c0092.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "ordering",
+    "prompt": "Ein Schokoriegel durchläuft viele Produktionsschritte, bevor er bei dir im Regal liegt. Bringe die folgenden Schritte in die richtige Reihenfolge (1 = erster Schritt, 6 = letzter Schritt).\n\nSchritte:\nA) Kakaopflanzerin erntet Kakaofrüchte.\nB) Händlerin lagert Schokoriegel im Supermarktregal ein.\nC) Transportunternehmen liefert Kakaobohnen in die Fabrik.\nD) Fabrikarbeiterin mischt Kakaomasse, Zucker und Milch.\nE) Bäuerin fermentiert und trocknet Kakaobohnen.\nF) Supermarktmitarbeiterin kassiert den Kaufpreis.",
+    "payload": {
+      "kind": "ordering",
+      "items": [
+        "Kakaopflanzerin erntet Kakaofrüchte.",
+        "Händlerin lagert Schokoriegel im Supermarktregal ein.",
+        "Transportunternehmen liefert Kakaobohnen in die Fabrik.",
+        "Fabrikarbeiterin mischt Kakaomasse, Zucker und Milch.",
+        "Bäuerin fermentiert und trocknet Kakaobohnen.",
+        "Supermarktmitarbeiterin kassiert den Kaufpreis."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Schritt",
+        "Buchstabe",
+        "Wirtschaftssektor"
+      ],
+      "rows": 6
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "OK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.2.VER.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Reihenfolge: A (1) → E (2) → C (3) → D (4) → B (5) → F (6). Sektoren: A, E = Primär; C, D = Sekundär (Transport kann auch Tertiär); B, F = Tertiär.",
+    "acceptable_reasoning": "Transport (C) kann als Tertiär eingeordnet werden — akzeptabel. Der Ablauf macht deutlich, dass kein Schritt allein ausreicht.",
+    "rubric": [
+      {
+        "criterion": "Reihenfolge",
+        "levels": [
+          "Alle 6 richtig",
+          "4–5 richtig",
+          "2–3 richtig",
+          "< 2 richtig"
+        ]
+      },
+      {
+        "criterion": "Sektorzuordnung",
+        "levels": [
+          "Alle korrekt",
+          "Teils korrekt mit nachvollziehbarer Begründung",
+          "Fehlend"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen übersehen oft den Fermentierungsschritt E und setzen D direkt nach A — die Zwischenschritte verdeutlichen, wie viel Arbeitsteilung stattfindet.",
+      "Beim Sektor für Transport und Handel entstehen erfahrungsgemäß Diskussionen — als Lernchance nutzen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "ordering",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 2,
+  "kompetenzbereich": "Vernetztes Wirtschaften zwischen Produktion und Konsum",
+  "competences": [
+    "GWB.US.2.VER.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "OK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0092",
+  "source": "ai",
+  "created_at": "2026-06-26T19:02:24+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

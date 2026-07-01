@@ -1,0 +1,80 @@
+{
+  "id": "c0148.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Lisa ist 16 Jahre alt, 165 cm groß und wiegt 58 kg. Sie treibt an drei Tagen pro Woche Sport (mittlere Intensität).\n\nBerechne ihren ungefähren täglichen Energiebedarf in Kilokalorien mithilfe der folgenden vereinfachten Formel. Zeige deinen Rechenweg.\n\n**Schritt 1 – Grundumsatz (GU) nach Harris-Benedict (vereinfacht, für Frauen):**\nGU = 655 + (9,6 × Körpergewicht in kg) + (1,8 × Körpergröße in cm) − (4,7 × Alter in Jahren)\n\n**Schritt 2 – Gesamtumsatz (GES):**\nMultipliziere den GU mit dem passenden Aktivitätsfaktor:\n- 1–2× Sport/Woche → Faktor 1,375\n- 3–5× Sport/Woche → Faktor 1,55\n- 6–7× Sport/Woche → Faktor 1,725\n\nRunde das Ergebnis auf ganze Kilokalorien.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "EV"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "HOE.OS.6.EIG.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "GU = 655 + (9,6 × 58) + (1,8 × 165) − (4,7 × 16) = 655 + 556,8 + 297 − 75,2 = 1.433,6 kcal. Aktivitätsfaktor für 3× Sport/Woche: 1,55. GES = 1.433,6 × 1,55 ≈ 2.222 kcal/Tag.",
+    "acceptable_reasoning": "Rechenweg muss sichtbar sein; Rundungsdifferenzen ±10 kcal akzeptabel. Beide Schritte müssen nachvollziehbar dargestellt sein.",
+    "rubric": [
+      {
+        "criterion": "Grundumsatz korrekt berechnet",
+        "levels": [
+          "GU-Wert korrekt mit vollständigem Rechenweg (2P)",
+          "Rechenweg erkennbar, kleiner Rechenfehler (1P)",
+          "Falsches Ergebnis ohne nachvollziehbaren Weg (0P)"
+        ]
+      },
+      {
+        "criterion": "Gesamtumsatz korrekt berechnet",
+        "levels": [
+          "GES korrekt als GU × 1,55 mit richtiger Faktorwahl (2P)",
+          "Falscher Faktor oder fehlende Multiplikation (1P)",
+          "Kein GES berechnet (0P)"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Häufiger Fehler: Schüler:innen subtrahieren den Altersterm nicht (Vorzeichenfehler beim letzten Summanden). Den negativen Term beim GU explizit hervorheben.",
+      "Die Harris-Benedict-Formel ist eine Schätzformel; darauf hinweisen, dass individuelle Unterschiede (Muskelmasse, Hormonstatus, Thermogenese) nicht abgebildet werden.",
+      "Einheit nicht vergessen: kcal/Tag, nicht kJ – oder wenn kJ, dann umrechnen (× 4,184)."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Haushaltsökonomie und Ernährung",
+  "klasse": 6,
+  "kompetenzbereich": "Das eigene Essverhalten erkennen, reflektieren und bewerten sowie Zusammenhänge zwischen Ernährungsgewohnheiten, Kulturen, Gesundheit und Wohlbefinden verstehen",
+  "competences": [
+    "HOE.OS.6.EIG.03"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "EV"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0148",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:25+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

@@ -1,0 +1,69 @@
+{
+  "id": "c0019.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Erkläre in eigenen Worten, was 'Bias' (Voreingenommenheit) in einem KI-System bedeutet. Beschreibe dann ein konkretes Beispiel, wie ein KI-Bias entstehen kann und welche realen Folgen er haben könnte.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 40.0
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "G",
+      "T"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DGB.US.4.ORI.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "Bias: Eine KI-System wird systematisch zu falschen oder ungerechten Ergebnissen verleitet, weil ihre Trainingsdaten nicht repräsentativ oder historisch verzerrt sind. Beispiel: Eine KI zur Bewerberauswahl wird mit Lebensläufen aus den letzten 20 Jahren trainiert, in denen Männer überproportional in Führungspositionen vertreten waren. Die KI lernt: 'Mann = besser geeignet für Führung' – und bevorzugt männliche Bewerber auch dann, wenn Frauen gleichwertige Qualifikationen vorweisen. Folge: Diskriminierung, strukturelle Benachteiligung, Reproduktion historischer Ungleichheiten – diesmal durch eine scheinbar neutrale Maschine.",
+    "acceptable_reasoning": "Andere Beispiele (Gesichtserkennung, Kreditwürdigkeitsprüfung, Polizei-Software) sind gleichwertig, solange Entstehung und Folgen klar sind.",
+    "rubric": [
+      {
+        "criterion": "Konkretes Beispiel",
+        "levels": [
+          "Nur abstrakte Definition ohne Beispiel",
+          "Beispiel vorhanden, Folgen nicht ausgeführt",
+          "Entstehung und gesellschaftliche Folge klar erklärt"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Häufiger Irrtum: 'KI kann nicht diskriminieren, weil sie keine Vorurteile hat' – klar machen: Bias steckt in den Daten, nicht in der Absicht der KI.",
+      "Das Konzept 'Maschine erscheint neutral' ist hier zentral – Neutralität ist ein Mythos, wenn Daten voreingenommen sind."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Digitale Grundbildung",
+  "klasse": 4,
+  "kompetenzbereich": "Orientierung: gesellschaftliche Aspekte von Medienwandel und Digitalisierung analysieren und reflektieren",
+  "competences": [
+    "DGB.US.4.ORI.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "G",
+    "T"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0019",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

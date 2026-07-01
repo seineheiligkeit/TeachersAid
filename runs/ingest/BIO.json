@@ -1,0 +1,385 @@
+{
+  "subject": "Biologie",
+  "klasse": 4,
+  "scope_label": "Vererbung, DNA und Genetik",
+  "title": "Erbanlagen, DNA und Vererbungsregeln",
+  "kernfrage": "Wie bestimmt die DNA, welche Merkmale du von deinen Eltern geerbt hast?",
+  "body": {
+    "intro": [
+      {
+        "role": "info",
+        "id": "i1",
+        "kind": "prose",
+        "content": "Alle Lebewesen geben ihre Eigenschaften an die Nachkommen weiter – doch wie genau funktioniert das? Der Schlüssel liegt in der DNA: einem langen Molekül im Zellkern, das in Abschnitte (Gene) unterteilt ist. Jedes Gen trägt die Information für ein bestimmtes Merkmal. Von jedem Gen besitzen wir zwei Varianten (Allele) – eine vom Vater, eine von der Mutter. Welche Merkmalsvariante sich zeigt, hängt davon ab, ob ein Allel dominant oder rezessiv ist. In diesem Arbeitsblatt untersuchst du die Grundprinzipien der Vererbung, lernst Erbgänge vorherzusagen und diskutierst, was genetische Informationen für uns bedeuten.",
+        "watch_outs": []
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Was ist Vererbung? — Begriffe und Strukturen",
+        "throughline": "Schüler:innen bauen das Basisvokabular der Genetik auf, das alle weiteren Aufgaben trägt.",
+        "talking_points": [
+          "Was unterscheidet ein Gen von einem Allel? Wo im Zellkern sitzt die DNA genau?",
+          "Warum haben wir von jedem Gen zwei Allele – und woher kommen sie jeweils?",
+          "Wie verhalten sich Chromosomen bei der Zellteilung? (optional: Verbindung zur Mitose/Meiose)"
+        ],
+        "extensions": [
+          "Vergleich Prokaryoten vs. Eukaryoten: Wo sitzt die DNA, und was ändert sich strukturell?",
+          "Recherche: Wie viele Gene hat der Mensch ungefähr, und wie viele Basenpaare?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "matching",
+            "prompt": "Ordne jeden Begriff seiner zutreffenden Erklärung zu. Schreibe die passende Buchstabenziffer neben den Begriff.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Gen",
+                "Allel",
+                "Chromosom",
+                "Homologe Chromosomen",
+                "Genotyp",
+                "Phänotyp"
+              ],
+              "right": [
+                "A – Abschnitt der DNA, der die Information für ein bestimmtes Merkmal trägt",
+                "B – Eine von zwei (oder mehr) Varianten eines Gens, die an einem bestimmten Ort auf dem Chromosom sitzen",
+                "C – Fadenförmige Struktur im Zellkern, die aus dicht gepackter DNA und Proteinen besteht",
+                "D – Chromosomenpaar, das gleiche Gene (an gleichen Positionen) trägt – je eines von Mutter und Vater",
+                "E – Die Gesamtheit der Allele eines Organismus (seine genetische Ausstattung)",
+                "F – Das sichtbare oder messbare Erscheinungsbild eines Organismus als Ergebnis von Genotyp und Umwelt"
+              ]
+            },
+            "response": {
+              "mode": "none"
+            },
+            "cognitive_level": "remember",
+            "dimensions": ["W"],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.WIS.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Gen → A; Allel → B; Chromosom → C; Homologe Chromosomen → D; Genotyp → E; Phänotyp → F",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Häufige Verwechslung: Schüler:innen setzen 'Gen' und 'Allel' gleich. Betonung: Das Gen ist der Ort/die Funktion, das Allel ist die konkrete Variante an diesem Ort.",
+              "Der Unterschied Genotyp/Phänotyp verwischt oft: Genotyp ist unsichtbar (DNA), Phänotyp ist beobachtbar. Umwelteinflüsse (Epigenetik) können denselben Genotyp zu verschiedenen Phänotypen führen – das hier noch nicht vertiefen, aber nicht als Fehler werten, wenn jemand darauf kommt."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "true_false_justify",
+            "prompt": "Entscheide für jede Aussage, ob sie richtig (R) oder falsch (F) ist, und begründe deine Entscheidung in einem Satz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Jede Körperzelle eines Menschen enthält dieselbe DNA wie alle anderen Körperzellen.",
+                "Ein dominantes Allel setzt sich immer gegenüber einem rezessiven Allel durch, auch wenn nur eine Kopie vorhanden ist.",
+                "Der Phänotyp eines Organismus hängt ausschließlich vom Genotyp ab.",
+                "Bei der Keimzellenbildung (Meiose) werden die homologen Chromosomenpaare getrennt, sodass jede Keimzelle nur ein Chromosom aus jedem Paar erhält."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 8
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["W"],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.WIS.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "answer_key": "1 – R: Alle Körperzellen entstehen durch Mitose aus der Zygote und tragen denselben Chromosomensatz. 2 – R: Dominanz bedeutet genau das – ein Allel reicht aus, um den Phänotyp zu bestimmen (heterozygot + dominant = dominanter Phänotyp). 3 – F: Der Phänotyp wird von Genotyp UND Umwelteinflüssen bestimmt (Beispiel: Körpergröße, Hautfarbe durch UV). 4 – R: Das ist das Prinzip der Meiose / Mendels Trennungsregel.",
+            "acceptable_reasoning": "Für Aussage 3 ist jede korrekte Umwelteinfluss-Begründung akzeptabel (z.B. Zwillinge mit gleichem Genotyp, aber unterschiedlicher Ernährung).",
+            "watch_outs": [
+              "Aussage 3 ist die häufigste Fehlvorstellung: Schüler:innen denken, Gene bestimmen alles. Umwelt und Epigenetik klar hervorheben.",
+              "Für Aussage 1: Ausnahmen (Rote Blutkörperchen haben keinen Zellkern; Immunzellen haben somatische Rekombination) sind AHS-4-Niveau zu vertieft – nicht als Fehler werten, aber als Bonuswissen anerkennen."
+            ],
+            "rubric": []
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Erbgänge berechnen — Mendels Regeln anwenden",
+        "throughline": "Schüler:innen wenden die Trennungs- und Kombinationsregel an, um Erbgänge vorherzusagen und zu erklären.",
+        "talking_points": [
+          "Wie lässt sich ein Erbgang in einer Tabelle (Kreuzungsschema) darstellen, ohne eine Zeichnung zu machen?",
+          "Was bedeutet es, wenn eine Eigenschaft in der F1-Generation 'verschwindet' und in der F2 wieder auftaucht?",
+          "Warum sind die 3:1-Verhältnisse Wahrscheinlichkeiten, keine Garantien?"
+        ],
+        "extensions": [
+          "Intermediäre Vererbung als Erweiterung: Was passiert, wenn keines der Allele vollständig dominant ist? (Beispiel: Löwenmäulchen, Fellfarbe bei Rindern)",
+          "Zweifaktorkreuzung (dihybrid) für Leistungsstarke: Zwei unabhängige Merkmale gleichzeitig verfolgen (9:3:3:1)."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "table_fill",
+            "prompt": "Eine Erbse hat die Samenfarbe Gelb (dominantes Allel G) oder Grün (rezessives Allel g). Zwei heterozygote Pflanzen (Gg × Gg) werden gekreuzt. Fülle das Kreuzungsschema aus und beantworte anschließend die Fragen.\n\nFragen: (a) Welche Genotypen entstehen, und in welchem Verhältnis? (b) Welche Phänotypen entstehen, und in welchem Verhältnis? (c) Wie hoch ist die Wahrscheinlichkeit in Prozent, dass ein Nachkomme grüne Samen hat?",
+            "payload": {
+              "kind": "table_fill",
+              "columns": ["", "G (Gamete Vater)", "g (Gamete Vater)"],
+              "rows": [
+                ["G (Gamete Mutter)", null, null],
+                ["g (Gamete Mutter)", null, null]
+              ]
+            },
+            "response": {
+              "mode": "box",
+              "min_height_mm": 40
+            },
+            "cognitive_level": "apply",
+            "dimensions": ["W", "E"],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.WIS.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 12,
+            "answer_key": "Tabelle: GG | Gg / Gg | gg. (a) Genotypen: GG : Gg : gg = 1 : 2 : 1. (b) Phänotypen: Gelb (GG + Gg) : Grün (gg) = 3 : 1. (c) Wahrscheinlichkeit für grüne Samen: 25 %.",
+            "acceptable_reasoning": "Schüler:innen müssen die Tabelle korrekt ausfüllen. Für die Fragen sind vollständige Genotyp-Angaben (GG, Gg, gg) erforderlich; alleinige Phänotyp-Angabe ('gelb/grün') ohne Genotyp ist unvollständig.",
+            "watch_outs": [
+              "Häufiger Fehler: Gg wird als zwei verschiedene Genotypen gezählt (GG und Gg verwechselt). Betonung: Gg ist heterozygot, GG homozygot dominant – beide phänotypisch gelb, aber genetisch verschieden.",
+              "Schüler:innen schreiben manchmal 'G + G = GG' als würden Allele addiert – das ist falsch. Die Allele kommen jeweils von einem Elternteil über die Keimzellen.",
+              "Das 3:1-Verhältnis gilt nur für große Nachkommenszahlen (Wahrscheinlichkeitsaussage). Bei 4 realen Nachkommen muss nicht exakt 3:1 herauskommen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "open_response",
+            "prompt": "In einer Familie ist die Mutter phänotypisch braun-äugig (heterozygot: Bb), der Vater ist blau-äugig (bb). Braune Augenfarbe ist dominant (B), blaue Augenfarbe rezessiv (b).\n\n(a) Bestimme alle möglichen Genotypen der Kinder dieser Familie und berechne die Wahrscheinlichkeit, mit der ein Kind blaue Augen hat.\n(b) Das erste Kind hat braune Augen. Kann man mit Sicherheit sagen, ob es homozygot oder heterozygot ist? Begründe.\n(c) Wie nennt man eine Kreuzung der Form Bb × bb in der Genetik, und warum ist sie besonders nützlich?",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55
+            },
+            "cognitive_level": "analyze",
+            "dimensions": ["W", "E"],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.ERK.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 14,
+            "answer_key": "(a) Kreuzung Bb × bb: Nachkommen sind Bb (braun, Wahrscheinlichkeit 50 %) oder bb (blau, Wahrscheinlichkeit 50 %). (b) Nein – ein kind mit braunen Augen kann nur den Genotyp Bb haben (da vom Vater immer b kommt), also ist es in diesem Fall zwingend heterozygot (Bb). Man kann es nicht direkt am Phänotyp erkennen, aber die Kreuzung erlaubt den Rückschluss. (c) Diese Kreuzung heißt Rückkreuzung (Testkreuzung / back-cross): Ein Individuum mit unbekanntem Genotyp (phänotypisch dominant) wird mit einem homozygot rezessiven Individuum gekreuzt. Am Verhältnis der Nachkommen kann man ablesen, ob das unbekannte Elternteil homo- oder heterozygot ist (1:1 → heterozygot; alle dominant → homozygot dominant).",
+            "acceptable_reasoning": "Für (b): Da Vater bb ist, trägt jedes Kind zwingend ein b vom Vater. Das braun-äugige Kind muss also Bb sein – es ist automatisch heterozygot. Schüler:innen, die argumentieren 'man kann es nicht sagen, weil es BB sein könnte', liegen falsch, da BB ein B vom Vater (bb) erfordern würde.",
+            "watch_outs": [
+              "Klassischer Irrtum bei (b): Schüler:innen vergessen, dass der Vater nur b-Allele weitergeben kann, und denken ein braun-äugiges Kind könnte BB sein.",
+              "Bei (c): 'Testkreuzung' und 'Rückkreuzung' werden oft synonym verwendet – beide Begriffe sollten anerkannt werden. Der Kern ist das Prinzip, nicht das Label."
+            ],
+            "rubric": [
+              {
+                "criterion": "Kreuzungsschema / Genotypen-Berechnung",
+                "levels": [
+                  {"label": "vollständig", "description": "Beide Genotypen (Bb, bb) korrekt mit 50:50-Verhältnis"},
+                  {"label": "teilweise", "description": "Genotypen korrekt, Verhältnis fehlt oder falsch"},
+                  {"label": "unzureichend", "description": "Genotypen falsch oder fehlen"}
+                ]
+              },
+              {
+                "criterion": "Schluss bei (b)",
+                "levels": [
+                  {"label": "vollständig", "description": "Erkennt, dass Bb zwingend folgt, mit korrekter Begründung über den Vater"},
+                  {"label": "teilweise", "description": "Kommt zur richtigen Antwort ohne vollständige Begründung"},
+                  {"label": "unzureichend", "description": "Denkt BB wäre möglich"}
+                ]
+              },
+              {
+                "criterion": "Begriff und Nutzen der Testkreuzung",
+                "levels": [
+                  {"label": "vollständig", "description": "Begriff korrekt, Nutzen (Genotyp-Bestimmung) klar erklärt"},
+                  {"label": "teilweise", "description": "Begriff korrekt, Nutzen nicht erklärt"},
+                  {"label": "unzureichend", "description": "Begriff fehlt oder falsch"}
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "Informationen erschließen und modellieren",
+        "throughline": "Schüler:innen lesen Erbgänge aus Informationsdarstellungen heraus und erstellen selbst ein Modell eines Stammbaums.",
+        "talking_points": [
+          "Was kann man aus einem Stammbaum ablesen – und was nicht? Welche Informationen fehlen immer noch?",
+          "Wie unterscheidet sich ein Modell (vereinfachte Darstellung) von der Realität? Was kann ein Stammbaum nicht abbilden?",
+          "Gibt es Merkmale, die sich nicht nach dem einfachen dominant/rezessiv-Schema vererben? (Einstieg in die Grenzen des Modells)"
+        ],
+        "extensions": [
+          "Geschlechtsgebundene Vererbung: Farbenblindheit als Beispiel – das Allel liegt auf dem X-Chromosom. Warum sind Männer häufiger betroffen?",
+          "Recherche-Auftrag: Zystische Fibrose als Beispiel für autosomal-rezessiven Erbgang – wie häufig ist die Erkrankung, und warum können beide Eltern gesund sein?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "open_response",
+            "prompt": "Lies den folgenden Stammbaum-Text sorgfältig:\n\n„In einer Familie sind Großvater und Großmutter mütterlicherseits beide braun-äugig. Ihre Tochter (die Mutter) ist ebenfalls braun-äugig, ihr Sohn (Onkel) ist blau-äugig. Der Vater im Haushalt ist blau-äugig. Die Kinder des Paares: Kind 1 ist braun-äugig, Kind 2 ist blau-äugig.“\n\nBraune Augen (B) sind dominant, blaue Augen (b) sind rezessiv.\n\n(a) Welchen Genotyp müssen beide Großeltern haben? Begründe.\n(b) Warum ist der Onkel blau-äugig, obwohl beide Eltern (die Großeltern) braune Augen haben?\n(c) Welchen Genotyp hat die Mutter mit Sicherheit? Welchen könnte Kind 1 haben?",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55
+            },
+            "cognitive_level": "analyze",
+            "dimensions": ["W", "E"],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.ERK.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 14,
+            "answer_key": "(a) Beide Großeltern müssen heterozygot Bb sein: Da ihr Sohn blau-äugig (bb) ist, muss er von jedem Elternteil ein b-Allel geerbt haben. Also haben beide Großeltern mindestens ein b – und da sie braun-äugig sind (B vorhanden), sind sie Bb. (b) Der Onkel hat von jedem Elternteil das rezessive b-Allel erhalten – das ist ein 25 %-Ereignis bei Bb × Bb. Das rezessive Allel war bei den Großeltern verborgen (heterozygot), tritt aber auf, wenn ein Nachkomme zwei b-Allele erhält. (c) Die Mutter ist sicher Bb (weil Vater bb ist und Kind 1 braun-äugig, trägt Kind 1 ein B von der Mutter; die Mutter muss also B haben; und da sie von den Großeltern Bb jeweils ein Allel erbte, ist sie Bb). Kind 1 ist zwingend Bb (ein b vom Vater, ein B von der Mutter).",
+            "acceptable_reasoning": "Für (c): Da Vater bb ist, trägt jedes braun-äugige Kind zwingend Bb. Schüler:innen, die BB für möglich halten, liegen falsch.",
+            "watch_outs": [
+              "Schüler:innen stolpern oft über den Unterschied 'Genotyp kann man nicht sehen' – der Stammbaum zwingt uns, rückwärts zu schließen, was ungewohnt ist.",
+              "Manche Schüler:innen glauben, wenn beide Eltern braun-äugig sind, müssen alle Kinder braun-äugig sein. Das Gegenbeispiel (blau-äugiger Onkel) ist der zentrale Erkenntnismoment dieser Aufgabe."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "create_produce",
+            "prompt": "Ein Biologe möchte herausfinden, ob sein Meerschweinchen mit schwarzem Fell (dominantes Allel S) homo- oder heterozygot ist. Er weiß, dass weißes Fell dem Genotyp ss entspricht.\n\n(a) Entwirf einen Versuchsplan: Welche Kreuzung würdest du vorschlagen? Begründe, warum genau diese Kreuzung die Frage beantworten kann.\n(b) Erkläre, welche Nachkommen-Ergebnisse du bei welchem Eltern-Genotyp erwartest. Stelle deine Überlegungen in einer Tabelle dar (zwei Szenarien: SS und Ss).\n(c) Nenne eine Grenze deines Versuchsplans: Wann könnte das Ergebnis trotzdem irreführend sein?",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 65
+            },
+            "cognitive_level": "create",
+            "dimensions": ["E"],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.ERK.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 16,
+            "answer_key": "(a) Testkreuzung: Das schwarze Meerschweinchen (SS oder Ss) wird mit einem weißen Meerschweinchen (ss) gekreuzt. Nur diese Kreuzung trennt die beiden möglichen Eltern-Genotypen eindeutig, weil das weiße Tier ausschließlich s-Allele beisteuert. (b) Szenario 1 – Elterntier ist SS: Alle Nachkommen sind Ss (schwarzes Fell) → 100 % schwarz. Szenario 2 – Elterntier ist Ss: Nachkommen sind Ss oder ss → 50 % schwarz, 50 % weiß. Tabelle: zwei Spalten (SS-Kreuzung / Ss-Kreuzung), Nachkommen-Genotypen und -Phänotypen. (c) Grenze: Bei wenigen Nachkommen kann zufällig kein weißes Tier auftreten, obwohl der Elterntier Ss ist (Zufallsstreuung). Man bräuchte eine große Stichprobe, um sicher zu sein.",
+            "acceptable_reasoning": "Für (c) sind andere valide Grenzen akzeptabel: z.B. 'Die Kreuzung dauert lange (Generationszeit)'; 'Tierschutzaspekte'; 'Das Merkmal könnte komplex vererbt werden'. Jede sachlich begründete Einschränkung zählt.",
+            "watch_outs": [
+              "Schüler:innen schlagen manchmal SS × SS oder ähnliche Kreuzungen vor, die keine Information liefern. Der Schlüssel ist: Ein Kreuzungspartner muss bekannter Genotyp ss sein.",
+              "Die Grenze (c) wird oft vergessen. Darauf bestehen: Kein biologisches Modell ist absolut sicher – Statistik und kleine Stichproben sind ein echtes Problem."
+            ],
+            "rubric": [
+              {
+                "criterion": "Kreuzungsplan und Begründung",
+                "levels": [
+                  {"label": "vollständig", "description": "Testkreuzung mit ss korrekt vorgeschlagen und erklärt, warum nur diese Kreuzung funktioniert"},
+                  {"label": "teilweise", "description": "Richtige Kreuzung, aber Begründung fehlt oder unvollständig"},
+                  {"label": "unzureichend", "description": "Falsche Kreuzung oder keine Begründung"}
+                ]
+              },
+              {
+                "criterion": "Beide Szenarien korrekt ausgearbeitet",
+                "levels": [
+                  {"label": "vollständig", "description": "Beide Szenarien mit Genotypen und Phänotypen korrekt, Tabelle vorhanden"},
+                  {"label": "teilweise", "description": "Ein Szenario korrekt, oder Tabelle fehlt"},
+                  {"label": "unzureichend", "description": "Beide Szenarien fehlen oder falsch"}
+                ]
+              },
+              {
+                "criterion": "Grenze des Versuchsplans",
+                "levels": [
+                  {"label": "vollständig", "description": "Sachlich korrekte, begründete Einschränkung genannt"},
+                  {"label": "teilweise", "description": "Einschränkung genannt, aber nicht begründet"},
+                  {"label": "unzureichend", "description": "Keine Einschränkung genannt"}
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s4",
+        "title": "Genetik und Gesellschaft — Standpunkte begründen",
+        "throughline": "Schüler:innen wenden ihr Wissen ethisch an: Sie unterscheiden Fakten von Wertungen und entwickeln begründete Positionen zu genetischen Fragen.",
+        "talking_points": [
+          "Was ist der Unterschied zwischen einer biologischen Tatsache ('Das Gen ist vorhanden') und einer ethischen Bewertung ('Darf man das nutzen?')?",
+          "Welche Interessen haben verschiedene Gruppen bei genetischen Tests (Versicherungen, Arbeitgeber, Betroffene)?",
+          "Was würde 'genetische Diskriminierung' bedeuten – und gibt es Gesetze dagegen in Österreich?"
+        ],
+        "extensions": [
+          "Recherche: Das österreichische Gentechnikgesetz (GTG) – was darf man, was nicht?",
+          "Diskussion: Pränatale Gentests – wer sollte Zugang zu welchen Informationen haben, und wer sollte Entscheidungen treffen?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "decision_scenario",
+            "prompt": "Lies das folgende Szenario und beantworte dann die Fragen.\n\nSzenario: Maria ist 30 Jahre alt. In ihrer Familie ist bekannt, dass eine Erbkrankheit vorkommt, die autosomal-dominant vererbt wird. Das bedeutet: Wer ein einziges verändertes Allel trägt, erkrankt im Laufe des Lebens mit hoher Wahrscheinlichkeit. Ein Gentest würde zeigen, ob Maria das veränderte Allel geerbt hat. Maria steht vor der Frage, ob sie den Test machen soll.\n\n(a) Nenne zwei naturwissenschaftliche Argumente, die für eine Testung sprechen könnten.\n(b) Nenne ein ethisches Argument, das gegen eine Testung sprechen könnte.\n(c) Maria entscheidet sich, den Test zu machen, und das Ergebnis ist positiv (sie trägt das veränderte Allel). Muss sie dieses Ergebnis ihrer Krankenkasse mitteilen? Formuliere deinen Standpunkt und begründe ihn mit einem ethischen Prinzip.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Maria, 30 Jahre, steht vor der Entscheidung, einen prädiktiven Gentest für eine autosomal-dominant erbliche Erkrankung in ihrer Familie zu machen."
+            },
+            "response": {
+              "mode": "box",
+              "min_height_mm": 65
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": ["S"],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.STA.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 16,
+            "answer_key": "(a) Naturwissenschaftliche Argumente für Testung: 1. Frühzeitige medizinische Vorsorge / Prävention ist möglich (z.B. regelmäßige Kontrollen, frühzeitige Behandlung). 2. Reproduktive Entscheidungen: Maria kann entscheiden, ob und wie sie Kinder bekommen möchte, und ggf. pränatale Tests in Betracht ziehen. (b) Ethisches Argument gegen Testung: Das Recht auf Nichtwissen – Menschen haben das Recht, nicht zu wissen, ob sie eine schwere Erkrankung entwickeln werden, da dieses Wissen die Lebensqualität belasten kann, ohne dass eine Heilung möglich ist. (c) Nein – Maria sollte nicht verpflichtet sein, dieses Ergebnis ihrer Krankenkasse zu melden. Ethisches Prinzip: Datenschutz / Recht auf informationelle Selbstbestimmung (jede Person bestimmt selbst, wer Zugang zu ihren Gesundheitsdaten hat). Diskriminierungsverbot: Genetische Information darf nicht zu Benachteiligungen führen. (In Österreich schützt das Gentechnikgesetz tatsächlich vor solcher Verpflichtung – als Bonusinformation, nicht als Erwartung.)",
+            "acceptable_reasoning": "Für (c): Alle ethisch kohärent begründeten Positionen zählen (auch eine Gegenposition, wenn sie schlüssig argumentiert ist). Das Ziel ist nicht die 'richtige' Meinung, sondern nachvollziehbare Argumentation mit einem ethischen Prinzip.",
+            "watch_outs": [
+              "Schüler:innen vermischen naturwissenschaftliche Fakten ('Das Allel ist dominant') mit ethischen Wertungen ('Sie sollte den Test machen'). Die Aufgabe zielt darauf ab, diesen Unterschied bewusst zu machen.",
+              "Manche Schüler:innen argumentieren rein emotional. Darauf hinweisen, dass in (c) explizit ein ethisches Prinzip gefordert ist – emotionale Argumente alleine reichen nicht.",
+              "Vorsicht: Diese Aufgabe kann persönliche Betroffenheit berühren. Sensibel moderieren; keine Schüler:in soll persönliche Familiensituation offenlegen müssen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Naturwissenschaftliche Argumente (a)",
+                "levels": [
+                  {"label": "vollständig", "description": "Zwei sachlich korrekte naturwissenschaftliche Argumente für Testung"},
+                  {"label": "teilweise", "description": "Ein Argument, oder Argumente sind nicht naturwissenschaftlich begründet"},
+                  {"label": "unzureichend", "description": "Keine oder rein emotionale Argumente"}
+                ]
+              },
+              {
+                "criterion": "Ethisches Argument (b)",
+                "levels": [
+                  {"label": "vollständig", "description": "Recht auf Nichtwissen oder anderes valides ethisches Prinzip klar benannt und erklärt"},
+                  {"label": "teilweise", "description": "Argument erkennbar, aber nicht als ethisches Prinzip formuliert"},
+                  {"label": "unzureichend", "description": "Fehlt oder rein emotional"}
+                ]
+              },
+              {
+                "criterion": "Standpunkt mit ethischem Prinzip (c)",
+                "levels": [
+                  {"label": "vollständig", "description": "Klarer Standpunkt, ethisches Prinzip explizit benannt, kohärente Begründung"},
+                  {"label": "teilweise", "description": "Standpunkt vorhanden, Prinzip implizit oder unvollständig"},
+                  {"label": "unzureichend", "description": "Kein Standpunkt oder keine Begründung"}
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

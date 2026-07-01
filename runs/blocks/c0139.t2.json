@@ -1,0 +1,93 @@
+{
+  "id": "c0139.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Read the statements below. Decide whether each one is TRUE or FALSE according to Text A, and write one sentence from the text that justifies your answer.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "The writer has lived in their building for more than a decade.",
+        "The survey mentioned in the text found that older adults feel lonelier than young adults.",
+        "Amsterdam and Vienna are trying to redesign parts of their cities to encourage social contact.",
+        "According to the writer, people on public transport are rude to each other.",
+        "The writer believes that cities cause loneliness."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Statement",
+        "True / False",
+        "Evidence from text"
+      ],
+      "rows": 5
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "LES"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FSP.OS.7.LES.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "1. TRUE — \"I have lived in London for eleven years.\" 2. FALSE — The text says the figure \"rises sharply among 18- to 34-year-olds,\" meaning young adults feel lonelier than older ones. 3. TRUE — \"City planners in Amsterdam and Vienna have recently begun experimenting with what they call 'social infrastructure'.\" 4. FALSE — The writer explicitly says \"This is not rudeness; it is a coping mechanism.\" 5. FALSE — The writer concludes: \"The city does not make us lonely. It makes us overwhelmed.\"",
+    "acceptable_reasoning": "Für Statement 2 ist eine Fehlinterpretation häufig (siehe watch_outs). Akzeptiere jede Antwort, die erkennt, dass Jüngere höhere Einsamkeitswerte haben als ältere Kohorten.",
+    "rubric": [
+      {
+        "criterion": "Factual accuracy (T/F judgement)",
+        "levels": [
+          "Correct judgement based on text",
+          "Plausible but text evidence contradicts",
+          "Incorrect, no basis in text"
+        ]
+      },
+      {
+        "criterion": "Quality of textual evidence",
+        "levels": [
+          "Precise quotation directly supports judgement",
+          "Quotation relevant but indirect",
+          "Paraphrase or no quotation"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Statement 2 ist eine häufige Falle: 'rises sharply among 18- to 34-year-olds' bedeutet, dass junge Erwachsene einsamer sind als ältere — der Gegensatz zu Erwartung. Schüler:innen verwechseln oft Subjekt und Referenzgruppe des Vergleichs.",
+      "Schüler:innen neigen dazu, die Begründung mit eigenen Worten zu formulieren statt eine Textstelle zu zitieren. Aufgabenstellung nochmals klären."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Lebende Fremdsprache",
+  "klasse": 7,
+  "kompetenzbereich": "Lesen",
+  "competences": [
+    "FSP.OS.7.LES.03"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "LES"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0139",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:21+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

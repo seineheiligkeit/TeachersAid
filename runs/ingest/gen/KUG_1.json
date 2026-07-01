@@ -1,0 +1,225 @@
+{
+  "subject": "Kunst und Gestaltung",
+  "klasse": 2,
+  "kompetenzbereich": "Bildnerische Praxis",
+  "title": "Farbe als Ausdrucksmittel",
+  "kernfrage": "Wie kannst du mit Farben Stimmungen erzeugen und Wirkungen gezielt einsetzen?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Farben wahrnehmen und benennen",
+        "throughline": "Schüler:innen bauen ein bewusstes Vokabular für Farbe auf — von einfachen Farbbeziehungen zur gezielten Ausdrucksabsicht.",
+        "talking_points": [
+          "Beginne mit der Frage: Welche Farben verbindet ihr mit Wärme, welche mit Kälte? Sammle Antworten unkommentiert.",
+          "Erkläre den Unterschied zwischen Primär-, Sekundär- und Tertiärfarben am Farbkreis (verbal beschreiben, kein Bild nötig).",
+          "Betone: Es gibt keine „falschen“ Farbgefühle — die Wirkung von Farbe ist kulturell und persönlich, aber es gibt handwerkliche Regeln.",
+          "Verbinde Farbtheorie mit konkreter Malerfahrung: Mischen ist Forschen."
+        ],
+        "extensions": [
+          "Schüler:innen suchen zuhause drei Gegenstände, deren Farbe sie als „warm“ oder „kalt“ empfinden, und bringen sie in die nächste Stunde.",
+          "Kurze Recherche: Welche Farben verwendet die österreichische Nationalflagge, und warum hat man diese gewählt?",
+          "Vergleiche Farbsymbolik in verschiedenen Kulturen (z.B. Weiß als Trauerfarbe in manchen asiatischen Ländern)."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "true_false_justify",
+            "prompt": "Lies die folgenden Aussagen über Farben durch. Entscheide jeweils, ob die Aussage stimmt oder nicht, und begründe deine Entscheidung in einem Satz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Rot und Blau ergeben zusammen gemischt die Farbe Grün.",
+                "Farben können Stimmungen in einem Bild stark beeinflussen.",
+                "Komplementärfarben stehen sich im Farbkreis direkt gegenüber.",
+                "Eine Farbe wirkt immer gleich, egal auf welchem Hintergrund sie steht."
+              ]
+            },
+            "response": {
+              "mode": "table",
+              "columns": ["Aussage", "Wahr / Falsch", "Begründung"],
+              "rows": 4
+            },
+            "cognitive_level": "remember",
+            "dimensions": ["BIL"],
+            "serves": [
+              {
+                "competence_id": "KUG.US.2.BIL.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "1. Falsch — Rot + Blau = Violett/Lila; Grün entsteht aus Blau + Gelb. 2. Wahr — warme Farben (Rot, Orange) wirken lebhaft/aufregend; kühle Farben (Blau, Grün) wirken beruhigend/distanziert. 3. Wahr — Komplementärfarben (z.B. Rot–Grün, Blau–Orange) verstärken sich gegenseitig optisch. 4. Falsch — simultaner Farbkontrast: eine Farbe wirkt auf hellem Hintergrund dunkler, auf dunklem heller.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Häufige Verwechslung: Schüler:innen nennen Lila oft als Komplementär zu Gelb — klären, dass Lila/Violett keine Primärfarbe ist.",
+              "Der Simultankontrast ist für Kl 2 eine Neuheit — kurze Demonstration mit einem grauen Quadrat auf weißem vs. schwarzem Hintergrund genügt (verbal beschreibbar)."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "make_artifact",
+            "prompt": "Farbmisch-Experiment: Nimm Wasserfarben oder Deckfarben. Mische jeweils zwei Primärfarben (Rot, Gelb, Blau) miteinander und male das Ergebnis in ein kleines Feld (ca. 4×4 cm). Beschrifte jedes Feld: Welche Farben hast du gemischt? Was ist entstanden? Mische anschließend eine der Sekundärfarben mit Weiß — was beobachtest du?",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 60
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["BIL"],
+            "serves": [
+              {
+                "competence_id": "KUG.US.2.BIL.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 12,
+            "answer_key": "Rot + Gelb = Orange; Rot + Blau = Violett/Lila; Gelb + Blau = Grün. Sekundärfarbe + Weiß ergibt eine hellere, „pastelligere“ Tönung (Tint). Schüler:innen sollen saubere, gleichmäßig gemischte Felder anlegen und korrekt beschriften.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Pigmente verhalten sich anders als Lichtfarben (subtraktive Mischung) — Schüler:innen, die mit digitalen Medien vertraut sind, können verwirrt sein, warum Rot+Grün nicht Gelb ergibt.",
+              "Auf ausreichend Wasseranteil achten: zu trockene Farbe lässt sich nicht sauber mischen.",
+              "Pinsel zwischen den Farben gründlich auswaschen, sonst trüben sich alle Mischungen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Farbmischung korrekt",
+                "levels": ["Alle drei Sekundärfarben korrekt benannt und erzeugt", "Zwei von drei korrekt", "Weniger als zwei korrekt"]
+              },
+              {
+                "criterion": "Sorgfalt der Ausführung",
+                "levels": ["Felder sauber, gleichmäßig, beschriftet", "Felder erkennbar, Beschriftung unvollständig", "Unordentlich, kaum beschriftet"]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "open_response",
+            "prompt": "Warm oder kalt? Stelle dir zwei Gemälde vor: Das erste zeigt eine Winterlandschaft mit viel Weiß, Hellblau und Grauviolett. Das zweite zeigt einen Sonnenuntergang mit Orange, Rot und sattem Gelb. Beschreibe, welche Stimmung jedes Bild auf dich wirken würde und warum. Verwende die Begriffe „warme Farben“ und „kühle Farben“ in deiner Antwort.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 50
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["BIL"],
+            "serves": [
+              {
+                "competence_id": "KUG.US.2.BIL.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Winterlandschaft (kühle Farben): wirkt ruhig, kalt, vielleicht einsam oder friedlich; kühle Farben treten optisch zurück. Sonnenuntergang (warme Farben): wirkt energetisch, einladend, emotional aufwühlend oder wohlig; warme Farben treten optisch vor. Wichtig: Schüler:innen sollen die Farbwirkung mit konkreten Farbbezeichnungen verbinden.",
+            "acceptable_reasoning": "Persönliche Assoziationen sind valide, solange die Grundunterscheidung warm/kalt korrekt angewendet wird.",
+            "watch_outs": [
+              "Manche Schüler:innen beschreiben den Inhalt (Schnee, Sonne) statt die Farbwirkung — zur Farbebene hinführen.",
+              "Grauviolett ist technisch kühl, wirkt aber manchmal mystisch/warm im Empfinden — das als individuellen Kontrast zulassen und besprechen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "make_artifact",
+            "prompt": "Stimmungsbild: Wähle eine Emotion (z.B. Aufregung, Traurigkeit, Geborgenheit oder Angst). Male ein abstraktes Bild, das ausschließlich durch Farben und Farbflächen diese Emotion ausdrückt — ohne erkennbare Gegenstände oder Figuren. Schreibe unter das Bild: Welche Emotion wolltest du ausdrücken? Welche Farben hast du eingesetzt und warum?",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 80
+            },
+            "cognitive_level": "apply",
+            "dimensions": ["BIL"],
+            "serves": [
+              {
+                "competence_id": "KUG.US.2.BIL.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 18,
+            "answer_key": "Kein einziges „richtiges“ Ergebnis — bewertet wird die Kohärenz zwischen gewählter Emotion, eingesetzten Farben und der schriftlichen Begründung. Ein Bild zu „Angst“ mit satten Warntönen (Rot, Schwarz, Dunkelviolett) wäre überzeugend; ein Bild zu „Geborgenheit“ mit gedämpften Erdtönen und Weiß ebenso.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen tendieren dazu, bekannte Symbole zu malen (Herz, Träne) statt abstrakt zu arbeiten — sanft zurücklenken zur reinen Farbfläche.",
+              "Die schriftliche Begründung ist Pflicht: ohne sie bleibt das Bild ohne Nachweis der Intentionalität."
+            ],
+            "rubric": [
+              {
+                "criterion": "Farbwahl zur Emotion passend",
+                "levels": ["Farben überzeugend zur Emotion begründet", "Begründung vorhanden, aber wenig überzeugend", "Kein erkennbarer Zusammenhang"]
+              },
+              {
+                "criterion": "Abstraktion durchgehalten",
+                "levels": ["Keine Gegenstände/Figuren, reine Farbflächen", "Weitgehend abstrakt mit kleinen Elementen", "Hauptsächlich gegenständlich"]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "open_response",
+            "prompt": "Farbe in der Werbung: Denke an eine Werbeanzeige oder ein Produktdesign, das dir gut bekannt ist (z.B. eine Getränkedose, ein Schokoladenpackung oder ein Sportartikel). Beschreibe, welche Farben dort verwendet werden. Überlege: Warum könnten die Gestalter:innen genau diese Farben gewählt haben? Was sollen die Farben beim Betrachter auslösen?",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "analyze",
+            "dimensions": ["BIL"],
+            "serves": [
+              {
+                "competence_id": "KUG.US.2.BIL.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Beispiel: Coca-Cola — Rot signalisiert Energie, Aufmerksamkeit, Appetit; Weiß/Silber erzeugt Kontrast und Frische. Milka — Lila (ungewöhnlich für Lebensmittel) erzeugt Wiedererkennungswert und suggeriert Exklusivität/Sanftheit. Wichtig ist, dass Schüler:innen eine bewusste Intention der Gestalter:innen beschreiben.",
+            "acceptable_reasoning": "Alle nachvollziehbaren Begründungen akzeptieren — keine einzige „richtige“ Antwort, da Farbwirkung kulturell variiert.",
+            "watch_outs": [
+              "Schüler:innen kennen viele Marken, aber benennen die Farbe oft ungenau („ein Blau“) — zur genauen Farbbezeichnung anhalten.",
+              "Manche verwechseln Form- und Farbwirkung — nur auf die Farbe fokussieren lassen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "open_response",
+            "prompt": "Reflexion: Blicke auf dein Stimmungsbild zurück (Aufgabe 4). Erkläre in 3–4 Sätzen: Was ist dir bei der Arbeit gelungen? Was würdest du beim nächsten Mal anders machen, um die Wirkung zu verstärken? Welchen Rat würdest du einer Mitschülerin / einem Mitschüler geben, die/der Farben einsetzen möchte, um Stimmungen zu erzeugen?",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 45
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": ["BIL"],
+            "serves": [
+              {
+                "competence_id": "KUG.US.2.BIL.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 7,
+            "answer_key": "Offene Reflexion — bewertet wird Selbstwahrnehmung, konkrete Benennung von Stärken/Schwächen, und ein praxistauglicher Rat. Gute Antworten nennen spezifische Farben und Wirkungen, nicht nur „es war gut / schlecht“.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen schreiben oft nur „es hat mir gut gefallen“ — nach konkreten Beobachtungen fragen.",
+              "Der „Rat an Mitschüler:innen“ aktiviert Transferdenken — darauf bestehen, auch wenn es schwer fällt."
+            ],
+            "rubric": [
+              {
+                "criterion": "Qualität der Selbstreflexion",
+                "levels": ["Konkrete Stärken und Verbesserungswünsche mit Fachbegriffen", "Allgemeine Reflexion ohne Fachbegriffe", "Nur Bewertung ohne Begründung"]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

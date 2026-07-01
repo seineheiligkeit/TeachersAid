@@ -1,0 +1,190 @@
+{
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 4,
+  "kompetenzbereich": "Entwicklungen in einer globalisierten Welt",
+  "title": "Stadt oder Land? Verstädterung im Ländervergleich",
+  "kernfrage": "Wie stark sind die Menschen in verschiedenen Ländern der Welt in Städten konzentriert — und was hat das mit Entwicklung zu tun?",
+  "body": {
+    "intro": [],
+    "data_figures": [
+      {
+        "id": "abb1",
+        "intent": "comparison",
+        "title": "Anteil der Stadtbevölkerung im Ländervergleich (%)",
+        "xlabel": "Land",
+        "ylabel": "Anteil Stadtbevölkerung (%)",
+        "data_source": {"dataset_id": "worldbank_urbanisierung", "series": "vergleich"}
+      }
+    ],
+    "assets": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Wie urban ist die Welt?",
+        "throughline": "Schülerinnen und Schüler lesen Urbanisierungsraten ab, erkennen die Bandbreite zwischen Ländern wie der Schweiz (85,5 %) und Indien (35,4 %), und verknüpfen Verstädterung mit Entwicklungsprozessen und gesellschaftlichen Konsequenzen.",
+        "talking_points": [
+          "Die Schweiz mit 85,5 % und Deutschland mit 82 % sind stark urbanisiert — aber 'Stadt' wird in jedem Land unterschiedlich definiert (Mindesteinwohnerzahl variiert von 200 bis 50 000).",
+          "Indien mit 35,4 % ist trotz riesiger Megacitys (Mumbai, Delhi) gering urbanisiert, weil die absolute Landbevölkerung gigantisch ist — hier zeigt sich, dass Urbanisierungsrate und Stadtgröße verschiedene Dinge sind.",
+          "Nigeria (63 %) liegt überraschend höher als oft erwartet — Lagos ist eine der am schnellsten wachsenden Megacitys der Welt. Schnelle Urbanisierung ohne ausreichende Infrastruktur schafft andere Probleme als in Europa.",
+          "China (65,9 %) hat in den letzten 40 Jahren eine der größten Landflucht-Bewegungen der Geschichte erlebt — Hunderte Millionen Menschen zogen in die Städte."
+        ],
+        "extensions": [
+          "Recherchiert die Definition von 'Stadt' in Österreich, Deutschland und Indien — was sind die Unterschiede, und was bedeutet das für die Vergleichbarkeit der Zahlen?",
+          "Sucht Bilder von urbanem Leben in Lagos, Mumbai und Wien — was fällt euch auf? Welche Gemeinsamkeiten und Unterschiede seht ihr?",
+          "Erstellt eine Weltkarte, auf der ihr die acht Länder nach Urbanisierungsgrad einfärbt (z. B. Ampelfarben). Welche Muster ergeben sich weltweit?"
+        ],
+        "blocks": [
+          {
+            "role": "info",
+            "id": "i1",
+            "kind": "prose",
+            "prompt": "Als **Urbanisierung** bezeichnet man den Prozess, durch den immer mehr Menschen in Städten leben. Die **Urbanisierungsrate** gibt an, welcher Anteil der Bevölkerung eines Landes in Städten wohnt (in Prozent). Weltweit lebt heute erstmals mehr als die Hälfte der Menschheit in Städten. Dieser Anteil variiert aber stark: Während in manchen Ländern fast die gesamte Bevölkerung städtisch lebt, ist es in anderen weniger als die Hälfte. Abb. 1 zeigt die Anteile der Stadtbevölkerung für acht ausgewählte Länder.",
+            "asset_refs": ["abb1"],
+            "est_minutes": 3
+          },
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "open_response",
+            "prompt": "Lies Abb. 1 ab. Welches Land hat den höchsten Anteil an Stadtbevölkerung, welches den niedrigsten? Ordne alle acht Länder von hoch nach niedrig und notiere die Prozentwerte.",
+            "payload": null,
+            "response": {"mode": "lines", "n": 5},
+            "cognitive_level": "remember",
+            "dimensions": ["OK"],
+            "serves": [{"competence_id": "GWB.US.4.ENT2.02", "relation": "exercises"}],
+            "est_minutes": 6,
+            "asset_refs": ["abb1"],
+            "answer_key": "Rangfolge (absteigend): Schweiz 85,5 % — Deutschland 82,0 % — USA 80,1 % — Italien 69,6 % — Österreich 69,5 % — Nigeria 63,0 % — China 65,9 % — Indien 35,4 %. (Korrekte Reihenfolge: CH, DE, USA, IT, AT, CN, NG, IN — Nigeria und China liegen eng beisammen, China liegt knapp über Nigeria.)",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "China (65,9 %) liegt knapp über Nigeria (63,0 %) — diese Reihenfolge ist nicht intuitiv und wird oft vertauscht.",
+              "Österreich (69,5 %) und Italien (69,6 %) sind nahezu gleich — das ist aus der Grafik kaum zu unterscheiden, kein Fehler wenn vertauscht."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "open_response",
+            "prompt": "Erkläre mit eigenen Worten, was es bedeutet, wenn ein Land eine niedrige Urbanisierungsrate hat. Nenne ein Beispiel aus Abb. 1 und beschreibe, wie das Leben auf dem Land in diesem Land aussehen könnte.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 30},
+            "cognitive_level": "understand",
+            "dimensions": ["UK"],
+            "serves": [{"competence_id": "GWB.US.4.ENT2.02", "relation": "exercises"}],
+            "est_minutes": 7,
+            "asset_refs": ["abb1"],
+            "answer_key": "Niedrige Urbanisierungsrate bedeutet, dass der Großteil der Menschen außerhalb von Städten lebt — in Dörfern, auf dem Land, in der Landwirtschaft. Beispiel Indien (35,4 %): Fast zwei Drittel der indischen Bevölkerung (~900 Millionen Menschen) leben auf dem Land, oft in kleineren Gemeinden mit Subsistenzlandwirtschaft, begrenztem Zugang zu Infrastruktur, Gesundheitsversorgung und Bildung. Das Leben auf dem Land kann aber auch Vorteile haben (Gemeinschaft, Selbstversorgung, Nähe zur Natur).",
+            "acceptable_reasoning": "Andere plausible Beschreibungen des ländlichen Lebens im genannten Land sind korrekt — auch wenn sie von der Musterlösung abweichen.",
+            "watch_outs": [
+              "Niedrige Urbanisierungsrate nicht automatisch mit 'Armut' gleichsetzen — differenzierte Sichtweise fördern.",
+              "Indien ist trotz niedriger Rate das Land mit den zweitgrößten städtischen Bevölkerungszahlen der Welt (absolute Zahlen vs. Anteile)."
+            ],
+            "rubric": [
+              {"criterion": "Bedeutung erklärt", "levels": ["Klar und korrekt", "Ansatzweise", "Nicht erkannt"]},
+              {"criterion": "Beispiel mit Beschreibung", "levels": ["Konkretes Beispiel mit Lebensbeschreibung", "Beispiel ohne Beschreibung", "Kein Beispiel"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "open_response",
+            "prompt": "Nigeria hat eine Urbanisierungsrate von 63 %, obwohl es ein deutlich ärmeres Land ist als Österreich (69,5 %) oder Deutschland (82 %). Wie erklärst du dir das? Was könnte der Unterschied zwischen Verstädterung in reichen und in ärmeren Ländern sein?",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 35},
+            "cognitive_level": "analyze",
+            "dimensions": ["UK"],
+            "serves": [{"competence_id": "GWB.US.4.ENT2.02", "relation": "exercises"}],
+            "est_minutes": 8,
+            "asset_refs": ["abb1"],
+            "answer_key": "Urbanisierung und Wohlstand sind nicht dasselbe. In ärmeren Ländern treiben oft Landflucht und fehlende wirtschaftliche Perspektiven auf dem Land die Menschen in die Städte — oft in informelle Siedlungen (Slums) ohne Infrastruktur. In reichen Ländern entstand Urbanisierung durch industrielle Entwicklung und stabile Arbeitsmärkte in Städten. Nigerias hohe Rate erklärt sich durch Lagos als eine der am schnellsten wachsenden Megacitys der Welt, aber viele Stadtbewohner leben in Armut.",
+            "acceptable_reasoning": "Jede Antwort, die den Unterschied zwischen erzwungener Landflucht und wirtschaftlich getriebener Urbanisierung anspricht, ist vollwertig.",
+            "watch_outs": [
+              "Schülerinnen und Schüler könnten annehmen, hohe Urbanisierung = reich — dieser Trugschluss muss aktiv aufgebrochen werden.",
+              "Der Begriff 'informelle Siedlungen' oder 'Slums' sollte sensibel eingeführt werden."
+            ],
+            "rubric": [
+              {"criterion": "Unterschied zwischen Urbanisierungstypen erkannt", "levels": ["Klar differenziert", "Ansatzweise", "Nicht erkannt"]},
+              {"criterion": "Nigeria-Erklärung plausibel", "levels": ["Kausal begründet", "Beschreibend", "Nicht beantwortet"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "true_false_justify",
+            "prompt": "Beurteile die folgenden Aussagen als richtig oder falsch und begründe deine Entscheidung jeweils kurz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Indien ist das am wenigsten verstädterte Land in der Grafik.",
+                "Die Schweiz hat eine höhere Urbanisierungsrate als Deutschland.",
+                "China lebt weniger stark in Städten als die USA.",
+                "Eine höhere Urbanisierungsrate bedeutet immer einen höheren Lebensstandard."
+              ]
+            },
+            "response": {"mode": "table", "columns": ["Aussage", "Richtig/Falsch", "Begründung"], "rows": 4},
+            "cognitive_level": "evaluate",
+            "dimensions": ["UK"],
+            "serves": [{"competence_id": "GWB.US.4.ENT2.02", "relation": "exercises"}],
+            "est_minutes": 8,
+            "asset_refs": ["abb1"],
+            "answer_key": "1. RICHTIG — Indien hat mit 35,4 % die niedrigste Rate. 2. RICHTIG — Schweiz 85,5 % > Deutschland 82,0 %. 3. RICHTIG — China 65,9 % < USA 80,1 %. 4. FALSCH — Nigeria zeigt, dass hohe Urbanisierung mit Armut zusammengehen kann; der Zusammenhang ist nicht linear.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Aussage 4 ist die kritischste — sie fordert Urteilsvermögen über den Automatismus 'urban = entwickelt'.",
+              "China vs. USA (Aussage 3) ist eine häufige Fehlerquelle — China ist weniger urbanisiert als oft angenommen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "open_response",
+            "prompt": "Stell dir vor, eine Familie aus einem Dorf in Indien zieht in eine Großstadt wie Mumbai. Welche Chancen und welche Risiken bringt dieser Schritt für die Familie mit sich? Nenne je zwei.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 35},
+            "cognitive_level": "analyze",
+            "dimensions": ["UK", "HK"],
+            "serves": [{"competence_id": "GWB.US.4.ENT2.04", "relation": "exercises"}],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "Chancen: (1) Zugang zu Arbeitsplätzen und höherem Einkommen. (2) Bessere Bildungs- und Gesundheitseinrichtungen. Risiken: (1) Hohe Mietkosten, mögliche Wohnungsnot / Leben in informellen Siedlungen. (2) Verlust sozialer Netzwerke, Heimweh, kulturelle Entwurzelung. Andere plausible Chancen/Risiken sind ebenfalls korrekt.",
+            "acceptable_reasoning": "Zwei fundierte Chancen und zwei fundierte Risiken mit kurzer Begründung genügen.",
+            "watch_outs": [
+              "Schülerinnen und Schüler idealisieren oft die Stadt oder die Landflucht — beide Seiten sollen realitätsnah reflektiert werden.",
+              "Mumbai ist eine gute Konkretisierung, da es von vielen Schülerinnen und Schülern bekannt ist."
+            ],
+            "rubric": [
+              {"criterion": "Chancen (2 genannt)", "levels": ["Beide mit Begründung", "Beide ohne Begründung", "Nur eine"]},
+              {"criterion": "Risiken (2 genannt)", "levels": ["Beide mit Begründung", "Beide ohne Begründung", "Nur eine"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "position_argument",
+            "prompt": "Ist Urbanisierung gut oder schlecht für ein Land? Entwickle eine begründete Antwort, indem du sowohl Vorteile als auch Nachteile nennst und dann eine abgewogene Schlussfolgerung formulierst.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 50},
+            "cognitive_level": "evaluate",
+            "dimensions": ["UK", "HK"],
+            "serves": [{"competence_id": "GWB.US.4.ENT2.04", "relation": "exercises"}],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Vorteile: Konzentration von Wirtschaft, Innovation, Bildung und Gesundheitsversorgung in Städten; effizientere Infrastruktur pro Kopf; sozialer Aufstieg möglich. Nachteile: Überlastung der Infrastruktur, Luftverschmutzung, Wohnungsnot, Verlust ländlicher Strukturen, Ungleichheit innerhalb der Städte. Schlussfolgerung: Urbanisierung ist weder per se gut noch schlecht — entscheidend ist, wie sie gestaltet wird (Stadtplanung, soziale Absicherung, Infrastruktur).",
+            "acceptable_reasoning": "Jede abgewogene Antwort mit mindestens zwei Vor- und Nachteilen und einer Schlussfolgerung ist vollwertig.",
+            "watch_outs": [
+              "Schülerinnen und Schüler sollen über eine 'Gut/Schlecht'-Dichotomie hinausgehen — die Qualität der Urbanisierung ist entscheidend.",
+              "Österreichische Perspektive einbeziehen: Was bedeutet Urbanisierung für Österreich (Abwanderung aus der Peripherie)?"
+            ],
+            "rubric": [
+              {"criterion": "Vorteile genannt", "levels": ["Zwei oder mehr, begründet", "Einer, begründet", "Keine"]},
+              {"criterion": "Nachteile genannt", "levels": ["Zwei oder mehr, begründet", "Einer, begründet", "Keine"]},
+              {"criterion": "Schlussfolgerung", "levels": ["Abgewogen und differenziert", "Einseitig", "Nicht vorhanden"]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

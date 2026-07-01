@@ -1,0 +1,67 @@
+{
+  "id": "c0052.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "ordering",
+    "prompt": "The sentences below form a short opinion text, but they are in the wrong order. Number them from 1 (first) to 5 (last) to make a well-structured text.",
+    "payload": {
+      "kind": "ordering",
+      "items": [
+        "A — For example, when I do sport every day, I sleep better and feel more energetic at school.",
+        "B — In conclusion, I strongly believe that doing sport every day is good for teenagers.",
+        "C — In my opinion, teenagers should do some kind of sport every day.",
+        "D — However, not everyone has time for sport — so even a short walk counts.",
+        "E — I think this because regular exercise is good for both the body and the mind."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "SCH"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS1.US.4.SCH.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Correct order: C → E → A → D → B (i.e. 3, 5, 1, 4, 2)",
+    "acceptable_reasoning": "Die logische Struktur ist: These (C) → Begründung (E) → Beispiel (A) → Einschränkung (D) → Fazit (B). Variante C–E–D–A–B ist ebenfalls akzeptabel, wenn Schüler:innen die Einschränkung vor dem Beispiel platzieren.",
+    "rubric": [],
+    "watch_outs": [
+      "Schüler:innen erkennen oft das Fazit (B) korrekt, haben aber Schwierigkeiten mit der Reihenfolge von Begründung und Beispiel",
+      "Die Einschränkung (D) mit 'However' ist ein Schlüsselindikator für die Textstruktur — auf dieses Signal hinweisen"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "ordering",
+  "subject": "Erste lebende Fremdsprache",
+  "klasse": 4,
+  "kompetenzbereich": "Schreiben",
+  "competences": [
+    "FS1.US.4.SCH.03"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "SCH"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0052",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

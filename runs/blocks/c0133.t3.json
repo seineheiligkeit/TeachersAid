@@ -1,0 +1,69 @@
+{
+  "id": "c0133.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Formuliere die vollständige Reaktionsgleichung für die Protolyse von Ammoniak (NH₃) in Wasser. Gib an, welches konjugierte Säure-Base-Paar du erkennst, und erkläre, warum das Gleichgewicht auf der Seite der Edukte liegt. (Hinweis: pKa von NH₄⁺ ≈ 9,25; pKa von H₂O ≈ 15,7)",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "WO",
+      "EG"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.OS.7.UBE.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "CHE.OS.x.WIS.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "NH₃ + H₂O ⇌ NH₄⁺ + OH⁻. Konjugierte Paare: NH₃/NH₄⁺ (Base/konjugierte Säure) und H₂O/OH⁻ (Säure/konjugierte Base). Das Gleichgewicht liegt links, weil H₂O (pKa 15,7) eine viel schwächere Säure als NH₄⁺ (pKa 9,25) ist – das Proton verbleibt bevorzugt beim Donator mit dem niedrigeren pKa, also beim NH₄⁺-Produkt, und wird kaum rückübertragen.",
+    "acceptable_reasoning": "Alternativformulierung: 'Das Gleichgewicht liegt auf der Seite der schwächeren Säure (H₂O), also der Eduktseite' ist ebenfalls vollständig korrekt.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Verwechslung der pKa-Logik: ein HÖHERER pKa bedeutet eine SCHWÄCHERE Säure. Schüler:innen denken oft, höherer pKa = stärkere Säure.",
+      "Doppelpfeil (Gleichgewichtszeichen) nicht vergessen – NH₃-Hydrolyse ist kein vollständiger Prozess."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Chemie",
+  "klasse": 7,
+  "kompetenzbereich": "Übertragung",
+  "competences": [
+    "CHE.OS.7.UBE.02",
+    "CHE.OS.x.WIS.03"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "WO",
+    "EG"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0133",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:19+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

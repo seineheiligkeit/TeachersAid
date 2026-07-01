@@ -1,0 +1,61 @@
+{
+  "id": "phy-strahlung.str.t4#extended",
+  "block": {
+    "id": "phy-strahlung.str.t4_extended",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Entscheide für jede Aussage: richtig oder falsch? Begründe ausführlich oder korrigiere.\n\n1. „Nur ionisierende Strahlung kann Zellen schädigen.“\n2. „Alpha-Strahlung hat die geringste Reichweite in Luft, ist aber bei innerer Kontamination besonders gefährlich.“\n3. „Funkwellen (z. B. Handy, WLAN) entstehen durch Kernzerfall.“\n4. „Je höher die Dosis ionisierender Strahlung, desto sicher krank – auch bei sehr kleinen Mengen.“\n\nErkläre bei jeder falschen Aussage, welcher Denkfehler dahintersteckt.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 10
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.4.STR.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 13,
+    "answer_key": "1. Falsch: UV kann trotz geringer Ionisierungswirkung DNA schädigen; Denkfehler: ionisierend = einzige Schadensursache. 2. Richtig (zweiteilig): geringe Außenreichweite, aber hohe biologische Wirksamkeit (RBE ~20) bei Inhalation/Ingestion. 3. Falsch: Funkwellen sind elektromagnetische Wellen aus beschleunigten Elektronen in Antennen; Kernzerfall erzeugt Alpha-/Beta-/Gammastrahlung. 4. Falsch/umstritten: Unter der natürlichen Hintergrundstrahlung gibt es keine nachweisbaren Gesundheitsschäden; das Linearmodell ohne Schwellenwert (LNT) ist eine konservative Schutzhypothese, keine gesicherte Wirkung bei kleinen Dosen.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Aussage 4 ist bewusst schwierig: SuS tendieren zu absolutem „immer gefährlich“. Wichtig: Unterschied zwischen konservativem Schutzprinzip und gesichertem Wirkungsmechanismus thematisieren; kein Verharmlosung, aber keine Übertreibung"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Strahlung und Radioaktivität",
+  "competences": [
+    "PHY.US.4.STR.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "extended",
+  "family": "phy-strahlung.str.t4",
+  "assets": [],
+  "status": "approved",
+  "provenance": "variant:phy-strahlung.str.t4",
+  "source": "ai",
+  "created_at": "2026-06-25T18:13:26+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

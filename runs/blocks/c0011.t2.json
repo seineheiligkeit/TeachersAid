@@ -1,0 +1,68 @@
+{
+  "id": "c0011.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Lies die folgenden Textstellen. Entscheide jeweils: Handelt es sich um eine **These**, ein **Argument** oder ein **Beispiel**? Begründe.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "„Hausaufgaben sollten abgeschafft werden.“",
+        "„Viele Schüler:innen haben nachmittags Sport, Musikunterricht oder müssen im Haushalt helfen.“",
+        "„Hausaufgaben stehlen Freizeit, die Kinder für ihre Entwicklung brauchen.“",
+        "„Studien zeigen, dass Hausaufgaben in der Volksschule kaum Lerneffekte haben.“"
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "SCH",
+      "SPR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DEU.US.2.SCH.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1. These ('sollten … werden' = Position/Forderung). 2. Beispiel (konkrete Alltagssituation, die die Belastung veranschaulicht). 3. Argument (erklärt das Warum: Freizeit ist entwicklungsnotwendig). 4. Argument mit Beleg/Verweis auf Studien (stärkstes Argument, weil empirisch gestützt).",
+    "acceptable_reasoning": "Satz 4 kann auch als 'Beleg' klassifiziert werden – beide Antworten sind akzeptabel, wenn die Schüler:innen erklären, dass er die These stützt.",
+    "rubric": [],
+    "watch_outs": [
+      "Satz 2 wird oft als Argument gewertet – hier nachfragen: Erklärt er wirklich, *warum* Hausaufgaben schlecht sind, oder zeigt er nur *wer* davon betroffen ist?",
+      "Satz 4 ist das einzige empirisch gestützte Argument; diese Unterscheidung (Alltagsbeobachtung vs. wissenschaftlicher Beleg) lohnt eine kurze Diskussion."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Deutsch",
+  "klasse": 2,
+  "kompetenzbereich": "Schreiben",
+  "competences": [
+    "DEU.US.2.SCH.03"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "SCH",
+    "SPR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0011",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

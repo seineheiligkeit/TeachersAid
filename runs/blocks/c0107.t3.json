@@ -1,0 +1,177 @@
+{
+  "id": "c0107.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Beurteile die folgenden Aussagen zur Bevölkerungspyramide Österreichs (Abb. 1) als richtig oder falsch und begründe jede Entscheidung kurz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "In Österreich leben mehr Frauen als Männer.",
+        "Die Altersgruppe der 0- bis 14-Jährigen ist die größte Altersgruppe.",
+        "Bei den über 75-Jährigen überwiegen deutlich die Frauen."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.OST.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1. RICHTIG: Es gibt 4.643.918 Frauen und 4.514.832 Männer — Differenz ca. 129.000. 2. FALSCH: Die Gruppe der 45- bis 59-Jährigen ist mit ca. 21,2 % deutlich größer als die 0- bis 14-Jährigen (14,4 %). 3. RICHTIG: Bei 75+ stehen ca. 149.000 Männer und ca. 190.000 Frauen (75–79) bzw. noch stärker bei 80–84 und 85+; Frauen haben eine höhere Lebenserwartung.",
+    "acceptable_reasoning": "Für Aussage 3 genügt der Hinweis auf höhere Lebenserwartung der Frauen und sichtbares Übergewicht im rechten Teil des Diagramms.",
+    "rubric": [
+      {
+        "criterion": "Korrekte Einschätzungen (3×)",
+        "levels": [
+          "Alle drei richtig (3P)",
+          "Zwei richtig (2P)",
+          "Eine richtig (1P)",
+          "Keine richtig (0P)"
+        ]
+      },
+      {
+        "criterion": "Begründungen",
+        "levels": [
+          "Alle drei begründet mit Bezug auf die Grafik (3P)",
+          "Zwei begründet (2P)",
+          "Eine begründet (1P)",
+          "Keine Begründung (0P)"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Aussage 2 ist eine klassische Falle: Schüler:innen glauben, dass Österreich jung sei, weil sie 'Pyramide' mit jungem Volk assoziieren.",
+      "Bei Aussage 1 sollten Schüler:innen die Gesamtzahlen aus der Abbildung ablesen, nicht schätzen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Österreichische Gesellschaftsentwicklung",
+  "competences": [
+    "GWB.US.3.OST.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:population_pyramid",
+      "spec": {
+        "title": "Bevölkerungspyramide Österreich (1.1.2024)",
+        "xlabel": "Personen",
+        "age_groups": [
+          "0–4",
+          "5–9",
+          "10–14",
+          "15–19",
+          "20–24",
+          "25–29",
+          "30–34",
+          "35–39",
+          "40–44",
+          "45–49",
+          "50–54",
+          "55–59",
+          "60–64",
+          "65–69",
+          "70–74",
+          "75–79",
+          "80–84",
+          "85+"
+        ],
+        "male": [
+          217721,
+          233589,
+          225693,
+          232917,
+          259070,
+          303392,
+          327167,
+          319456,
+          311542,
+          289329,
+          320354,
+          355386,
+          322097,
+          247355,
+          189728,
+          149524,
+          131327,
+          79185
+        ],
+        "female": [
+          206203,
+          220286,
+          212329,
+          217468,
+          241672,
+          283992,
+          311084,
+          310390,
+          309056,
+          293047,
+          329411,
+          357617,
+          331334,
+          272182,
+          223124,
+          190665,
+          185238,
+          148820
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "statistik_austria_bevstand_2024",
+        "series": "pyramide_5j",
+        "note": null,
+        "title": "Bevölkerung Österreichs nach Alter und Geschlecht (1.1.2024)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2024",
+        "attribution": "Datenquelle: Statistik Austria – data.statistik.gv.at (CC BY 4.0)",
+        "stand": "2024-01-01"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0107",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:25+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

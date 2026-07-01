@@ -1,0 +1,76 @@
+{
+  "id": "c0078.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Sieh dir Abb. 1 an. Sie zeigt, welche Vorgänge chemische Reaktionen sind und welche nicht. Lies dann die folgenden Aussagen und entscheide: richtig (R) oder falsch (F)? Verbessere falsche Aussagen.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Das Kochen von Wasser ist eine chemische Reaktion, weil Wasser heiß wird.",
+        "Verbrennung ist eine chemische Reaktion, weil ein neuer Stoff (Kohlenstoffdioxid) entsteht.",
+        "Das Schmelzen von Eis ist eine chemische Reaktion, weil sich der Aggregatzustand ändert.",
+        "Beim Rosten von Eisen entstehen neue Stoffe — das ist eine chemische Reaktion."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "R / F",
+        "Verbesserung (wenn falsch)"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.US.x.ALL.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1. F — Kochen ist eine physikalische Änderung (Aggregatzustandswechsel); kein neuer Stoff entsteht. 2. R. 3. F — Schmelzen ist physikalisch; H₂O bleibt H₂O, nur der Zustand ändert sich. 4. R.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen verwechseln häufig Aggregatzustandsänderung (physikalisch) mit chemischer Reaktion — klar herausarbeiten",
+      "Abb. 1 dient als visueller Anker — Schüler:innen auf das Diagramm hinweisen, bevor sie die Aussagen bearbeiten",
+      "Aussage 2 als Modellfall nehmen: Warum reicht 'es wird heiß' nicht als Beweis für chem. Reaktion?"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Chemie",
+  "klasse": 4,
+  "kompetenzbereich": null,
+  "competences": [
+    "CHE.US.x.ALL.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0078",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:13+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

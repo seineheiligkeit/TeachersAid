@@ -1,0 +1,134 @@
+{
+  "id": "c0104.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Beschreibe in zwei bis drei Sätzen, was dir beim Blick auf die Abbildung (Abb. 1) auffällt. Welches Bundesland sticht besonders heraus – und warum könnte das so sein?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "OK",
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.OST.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "Wien sticht klar heraus: mit rund 2 Millionen Menschen leben dort mehr als doppelt so viele Menschen wie im zweitgrößten Bundesland Niederösterreich (ca. 1,72 Mio.). Das liegt an Wiens Rolle als Bundeshauptstadt mit vielen Arbeitsplätzen, Universitäten und Kulturangeboten. Das kleinste Bundesland Burgenland hat nur ca. 302.000 Einwohner:innen.",
+    "acceptable_reasoning": "Jede Antwort, die Wien als Ausreißer benennt und einen plausiblen Grund nennt (Hauptstadt, Wirtschaft, Geschichte), ist akzeptabel.",
+    "rubric": [
+      {
+        "criterion": "Beobachtung",
+        "levels": [
+          "Benennt Wien als Ausreißer mit korrekten Zahlenangaben",
+          "Benennt Wien, aber ohne Zahlen oder ungenaue Zahlen",
+          "Keine klare Beobachtung erkennbar"
+        ]
+      },
+      {
+        "criterion": "Erklärungsansatz",
+        "levels": [
+          "Nennt einen plausiblen Grund (Hauptstadt, Wirtschaft, Bildung, ...)",
+          "Ansatz vorhanden, aber vage oder unvollständig",
+          "Kein Erklärungsversuch"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen sagen eventuell 'Wien ist so groß, weil es die meiste Fläche hat' – das ist falsch. Wien ist das flächenmäßig kleinste Bundesland.",
+      "Manche beschreiben nur, ohne zu erklären. Darauf hinweisen, dass 'warum' eine wichtige geographische Frage ist."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Österreichische Gesellschaftsentwicklung",
+  "competences": [
+    "GWB.US.3.OST.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "OK",
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "title": "Bevölkerung der österreichischen Bundesländer (1.1.2024)",
+        "xlabel": "Bundesland",
+        "ylabel": "Bevölkerung (Personen)",
+        "log": false,
+        "categories": [
+          "Burgenland",
+          "Kärnten",
+          "Niederösterreich",
+          "Oberösterreich",
+          "Salzburg",
+          "Steiermark",
+          "Tirol",
+          "Vorarlberg",
+          "Wien"
+        ],
+        "values": [
+          3.3,
+          6.2,
+          18.8,
+          16.7,
+          6.2,
+          13.9,
+          8.5,
+          4.5,
+          21.9
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "statistik_austria_bundeslaender_2024",
+        "series": "bevoelkerung",
+        "note": null,
+        "title": "Bevölkerung der österreichischen Bundesländer (1.1.2024)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2024",
+        "attribution": "Datenquelle: Statistik Austria – data.statistik.gv.at (CC BY 4.0)",
+        "stand": "2024-01-01"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0104",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:23+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

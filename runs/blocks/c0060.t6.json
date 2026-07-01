@@ -1,0 +1,76 @@
+{
+  "id": "c0060.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Schreibe zwei eigene lateinische Sätze. Verwende je ein Nomen der a-Deklination als Subjekt und ein Nomen der o-Deklination als Objekt (oder umgekehrt). Unterstreiche Subjekt und Objekt und gib die deutsche Übersetzung an.\n\nWortschatz-Hilfe: puella, rosa, aqua, via — dominus, servus, puer, equus — amat, videt, vocat, ducit",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 35.0
+    },
+    "cognitive_level": "create",
+    "dimensions": [
+      "SPR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "LAT.US.3.SPR.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Musterlösung (viele Varianten möglich): Puella equum amat. — Das Mädchen liebt das Pferd. / Dominus aquam videt. — Der Herr sieht das Wasser.",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Kasuskorrektheit",
+        "levels": [
+          "Beide Sätze haben korrekte Nominativ- und Akkusativendungen.",
+          "Ein Satz korrekt, ein Satz mit kleinem Endungsfehler.",
+          "Endungen fehlen oder sind durchgehend falsch."
+        ]
+      },
+      {
+        "criterion": "Übersetzung",
+        "levels": [
+          "Deutsche Übersetzung korrekt und sinnvoll.",
+          "Übersetzung verständlich, aber ungenau.",
+          "Übersetzung fehlt oder ist falsch."
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Prüfen: Kasusendungen stimmen? Subjekt im Nominativ, Objekt im Akkusativ.",
+      "Verb-Kongruenz: 3. Pers. Sg. (er/sie/es) — Endung -t; erinnern, falls Schüler:innen andere Personalformen verwenden.",
+      "Kreative Freiheit zulassen, aber Grammatik muss stimmen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Latein",
+  "klasse": 3,
+  "kompetenzbereich": "Sprach- und textbezogene Kompetenzen",
+  "competences": [
+    "LAT.US.3.SPR.03"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "SPR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0060",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

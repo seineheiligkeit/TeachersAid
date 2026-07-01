@@ -1,0 +1,126 @@
+{
+  "id": "c0112.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Beurteile die folgenden Aussagen als richtig oder falsch und begründe kurz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "China verursacht mehr CO₂ pro Kopf als die USA.",
+        "Ein Land mit niedrigem BIP pro Kopf hat immer auch niedrige CO₂-Emissionen pro Kopf.",
+        "Die Schweiz hat unter den reichen Ländern in der Grafik die niedrigsten CO₂-Emissionen pro Kopf.",
+        "Indien und Nigeria sind stärker vom Klimawandel betroffen, obwohl sie weniger dazu beitragen."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "Richtig/Falsch",
+        "Begründung"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.4.ENT2.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1. FALSCH — USA 13,6 t > China 9,3 t. 2. FALSCH — China hat niedrigeres BIP pro Kopf als Österreich, aber höhere CO₂-Emissionen. 3. RICHTIG — Schweiz 3,7 t < Österreich 6,3 t < Deutschland 6,9 t. 4. RICHTIG — laut Daten und Klimafolgenforschung sind äquatornahe, arme Länder stärker betroffen (Hitzewellen, Überschwemmungen, Ernteausfälle).",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Aussage 1 wird häufig falsch als richtig bewertet (China-Gesamtemissionen vs. Pro-Kopf-Wert verwechselt).",
+      "Aussage 2 könnte als richtig gelten für Nigeria/Indien — aber China widerlegt die Aussage: sie ist als allgemeine Regel falsch."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 4,
+  "kompetenzbereich": "Entwicklungen in einer globalisierten Welt",
+  "competences": [
+    "GWB.US.4.ENT2.04"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "title": "CO₂-Ausstoß pro Kopf im Ländervergleich (in t CO₂/Kopf)",
+        "xlabel": "Land",
+        "ylabel": "CO₂-Ausstoß pro Kopf (t/Kopf)",
+        "log": false,
+        "categories": [
+          "Österreich",
+          "Deutschland",
+          "Schweiz",
+          "Italien",
+          "USA",
+          "China",
+          "Indien",
+          "Nigeria"
+        ],
+        "values": [
+          6.3,
+          6.9,
+          3.7,
+          5.1,
+          13.6,
+          9.3,
+          2.2,
+          0.6
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "worldbank_co2_pro_kopf",
+        "series": "vergleich",
+        "note": null,
+        "title": "CO₂-Ausstoß pro Kopf im Ländervergleich",
+        "url": "https://data.worldbank.org/indicator/EN.GHG.CO2.PC.CE.AR5",
+        "attribution": "Datenquelle: World Bank – data.worldbank.org (EN.GHG.CO2.PC.CE.AR5, CC BY 4.0)",
+        "stand": "2024"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0112",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:30+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

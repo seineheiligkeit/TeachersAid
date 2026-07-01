@@ -1,0 +1,75 @@
+{
+  "id": "c0039.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "multiple_choice",
+    "prompt": "Was charakterisiert ein Selbstporträt als eigene Kunstgattung? Wähle die zwei zutreffendsten Aussagen aus.",
+    "payload": {
+      "kind": "multiple_choice",
+      "options": [
+        "Künstler:innen und dargestellte Person sind identisch.",
+        "Selbstporträts zeigen immer das Gesicht frontal und vollständig.",
+        "Das Werk enthält bewusste Entscheidungen darüber, was gezeigt und was verborgen wird.",
+        "Selbstporträts sind nur in der Malerei, nicht in der Fotografie möglich.",
+        "Selbstporträts entstanden erst im 20. Jahrhundert durch die Erfindung des Spiegels."
+      ],
+      "select": "many"
+    },
+    "response": {
+      "mode": "choices",
+      "options": [
+        "Künstler:innen und dargestellte Person sind identisch.",
+        "Selbstporträts zeigen immer das Gesicht frontal und vollständig.",
+        "Das Werk enthält bewusste Entscheidungen darüber, was gezeigt und was verborgen wird.",
+        "Selbstporträts sind nur in der Malerei, nicht in der Fotografie möglich.",
+        "Selbstporträts entstanden erst im 20. Jahrhundert durch die Erfindung des Spiegels."
+      ],
+      "select": "many"
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "WAH"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "KUG.US.4.WAH.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "Korrekt: Option 1 (Identität von Künstler:in und Dargestelltem) und Option 3 (bewusste Inszenierungsentscheidung). Falsch: Option 2 (Selbstporträts zeigen Profil, Hände, Körper etc.); Option 4 (Fotografie-Selfies sind zeitgenössische Selbstporträts); Option 5 (Spiegel existierten bereits in der Antike; polierte Metallspiegel in Mesopotamien ab ca. 4000 v. Chr.; der Bezahlbare Glasspiegel etablierte sich im 15./16. Jh.).",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Option 5 enthält einen absichtlichen historischen Fehler (20. Jahrhundert statt 15./16. Jh.) — Schüler:innen, die Kunstgeschichte kennen, erkennen ihn leicht; für andere ist es eine Lernchance.",
+      "Option 2 klingt plausibel (man denkt an frontale Porträtmalerei) — auf die Vielfalt hinweisen: Rückenfigur (Caspar David Friedrich), Profil, Körperfragmente (Schiele)."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "multiple_choice",
+  "subject": "Kunst und Gestaltung",
+  "klasse": 4,
+  "kompetenzbereich": "Wahrnehmen und Reflektieren",
+  "competences": [
+    "KUG.US.4.WAH.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "WAH"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0039",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

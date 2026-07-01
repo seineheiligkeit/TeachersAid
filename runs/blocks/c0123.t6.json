@@ -1,0 +1,219 @@
+{
+  "id": "c0123.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1",
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Österreich plant, eine neue Fußball-Freiluftarena zu bauen, die viele Regentage schlecht vertragen würde. Beurteile auf Basis der Klimadaten, ob Wien oder Bregenz der besser geeignete Standort wäre. Nenne dabei konkrete Zahlen aus den Diagrammen.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.4.WET.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Wien ist aus klimatischer Sicht der bessere Standort: Wien ca. 674 mm Jahresniederschlag vs. Bregenz ca. 1581 mm — mehr als doppelt so viel. Kein Monat hat in Wien über 79 mm (Mai), in Bregenz hingegen erreichen Jun–Aug je 188–198 mm. Auch die Anzahl der Regentage (aus dem Diagramm nicht direkt ablesbar, aber proportional) ist in Bregenz höher. Einschränkung: Klimawandel und Variabilität spielen auch eine Rolle; das Klimadiagramm zeigt Mittelwerte, keine Garantie für einzelne Tage.",
+    "acceptable_reasoning": "Jede gut begründete Entscheidung mit Datenbezug ist vollwertig; auch 'Bregenz hat schönere Alpenkulisse' als Gegenargument ist zulässig, solange die physikalischen Fakten stimmen.",
+    "rubric": [
+      {
+        "criterion": "Datenbezug",
+        "levels": [
+          "Konkrete Niederschlagszahlen aus beiden Diagrammen",
+          "Ein Diagramm zitiert",
+          "Kein Datenbezug"
+        ]
+      },
+      {
+        "criterion": "Schlussfolgerung",
+        "levels": [
+          "Klare, physikalisch begründete Empfehlung",
+          "Empfehlung ohne Begründung",
+          "Fehlt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schülerinnen und Schüler müssen aus dem Klimadiagramm konkrete Zahlen nennen — eine Meinung ohne Datenbezug ist keine physikalische Bewertung.",
+      "Den Unterschied zwischen Klimamittelwert und Tagesprognose klar halten: auch Wien kann sehr regnerische Tage haben."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Wetter und Klima",
+  "competences": [
+    "PHY.US.4.WET.04"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "W",
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:climate_diagram",
+      "spec": {
+        "title": "Klimadiagramm Wien (Hohe Warte, 1991–2020)",
+        "months": [
+          "Jän",
+          "Feb",
+          "Mär",
+          "Apr",
+          "Mai",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Okt",
+          "Nov",
+          "Dez"
+        ],
+        "temp": [
+          0.8,
+          2.3,
+          6.2,
+          11.4,
+          15.8,
+          19.7,
+          21.4,
+          20.9,
+          15.8,
+          10.5,
+          5.8,
+          1.5
+        ],
+        "precip": [
+          42,
+          38,
+          52,
+          42,
+          79,
+          70,
+          78,
+          69,
+          64,
+          47,
+          46,
+          47
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "geosphere_klima_normal_1991_2020",
+        "series": "wien",
+        "note": null,
+        "title": "Klimanormalwerte österreichischer Stationen (1991–2020)",
+        "url": "https://data.hub.geosphere.at/dataset/klima-v2-1m",
+        "attribution": "Datenquelle: GeoSphere Austria – data.hub.geosphere.at (klima-v2-1m, CC BY 4.0)",
+        "stand": "1991–2020"
+      },
+      "illustrative": false,
+      "caption": null
+    },
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:climate_diagram",
+      "spec": {
+        "title": "Klimadiagramm Bregenz (1991–2020)",
+        "months": [
+          "Jän",
+          "Feb",
+          "Mär",
+          "Apr",
+          "Mai",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Okt",
+          "Nov",
+          "Dez"
+        ],
+        "temp": [
+          1.3,
+          2.0,
+          5.8,
+          10.0,
+          14.4,
+          18.0,
+          19.7,
+          19.0,
+          14.5,
+          10.3,
+          5.4,
+          2.1
+        ],
+        "precip": [
+          81,
+          80,
+          98,
+          103,
+          164,
+          198,
+          188,
+          192,
+          148,
+          116,
+          106,
+          107
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "geosphere_klima_normal_1991_2020",
+        "series": "bregenz",
+        "note": null,
+        "title": "Klimanormalwerte österreichischer Stationen (1991–2020)",
+        "url": "https://data.hub.geosphere.at/dataset/klima-v2-1m",
+        "attribution": "Datenquelle: GeoSphere Austria – data.hub.geosphere.at (klima-v2-1m, CC BY 4.0)",
+        "stand": "1991–2020"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0123",
+  "source": "ai",
+  "created_at": "2026-06-27T15:21:17+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

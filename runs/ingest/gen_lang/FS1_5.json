@@ -1,0 +1,215 @@
+{
+  "subject": "Erste lebende Fremdsprache",
+  "klasse": 4,
+  "kompetenzbereich": "Lesen",
+  "title": "Einstellungen in einem Sachtext erkennen und beurteilen",
+  "kernfrage": "Wie erkennst du in einem englischen Sachtext die Einstellung des Autors und kannst sie von Tatsachen unterscheiden?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Reading Between the Lines: Facts and Attitudes",
+        "throughline": "Schüler:innen lernen, in einfachen englischen Sachtexten Tatsachen von Meinungen und Autoreneinstellungen zu unterscheiden — eine kritische Lesekompetenz, die weit über das Englischlernen hinausgeht.",
+        "talking_points": [
+          "Was ist der Unterschied zwischen Fact und Opinion? Einige Beispielsätze an der Tafel klassifizieren lassen",
+          "Welche Sprachsignale zeigen eine Einstellung? (clearly, unfortunately, surprisingly, should, must, too much, only, just) — bewusst auf Modalität und Wertladung hinweisen",
+          "Warum ist es bei Onlinetexten, Nachrichten und Social Media wichtig, Fakten von Meinungen zu trennen?",
+          "Medienbildung: Wer schreibt diesen Text? Für wen? Mit welchem Ziel? — einfache Quellenkritik einführen"
+        ],
+        "extensions": [
+          "Schüler:innen suchen selbst einen kurzen englischen Artikel (z.B. aus einer Jugendzeitschrift) und markieren Fakten und Meinungen farbig",
+          "Kurze Debatte: 'Social media is mostly good / mostly bad for teenagers' — Schüler:innen sollen Fakten und Meinungen in ihrer Argumentation bewusst trennen",
+          "Vergleich: Denselben Sachverhalt (z.B. Schuluniformen) aus zwei verschiedenen Quellen lesen und die Einstellungen der Autoren vergleichen"
+        ],
+        "blocks": [
+          {
+            "role": "info",
+            "id": "i1",
+            "kind": "text",
+            "prompt": "Read the following article from a school magazine carefully.\n\n---\n\nToo Much Screen Time? The Truth About Teenagers and Technology\n\nResearch shows that teenagers in Europe spend an average of six hours per day on screens — including phones, tablets, and computers. That is a significant number. But what does it actually mean for young people's health and learning?\n\nMost experts agree that not all screen time is equal. Watching educational videos or communicating with friends is clearly different from passively scrolling through social media. Unfortunately, the latter seems to be more popular. According to a 2023 study, 72% of teenagers between 13 and 17 check their phones within five minutes of waking up.\n\nSome people argue that technology helps young people develop important digital skills. After all, the future of work will require comfort with technology. However, the same study found that teenagers who spend more than four hours on social media report higher levels of stress and worse sleep quality.\n\nIt seems obvious that teenagers need better guidance — not just rules. Schools and parents should work together to help young people make smarter choices about how and when they use their devices. Simply banning phones is unlikely to solve the problem. The goal should be digital balance, not digital fear.\n\n— Written by a student journalist, Vienna International School Magazine, 2024",
+            "payload": null,
+            "response": { "mode": "none" },
+            "cognitive_level": "remember",
+            "dimensions": ["LES"],
+            "modality": "printable",
+            "serves": [{ "competence_id": "FS1.US.4.LES.01", "relation": "exercises" }],
+            "est_minutes": 5,
+            "answer_key": null,
+            "acceptable_reasoning": null,
+            "watch_outs": [],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "true_false_justify",
+            "prompt": "Read the article again. Are these statements TRUE or FALSE? Write T or F and correct the false ones.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Teenagers in Europe spend an average of six hours a day on screens.",
+                "The author thinks that all screen time is equally bad.",
+                "72% of teenagers check their phones within five minutes of waking up.",
+                "The article says that banning phones is the best solution."
+              ]
+            },
+            "response": { "mode": "table", "columns": ["Statement", "T / F", "Correction (if false)"], "rows": 4 },
+            "cognitive_level": "understand",
+            "dimensions": ["LES"],
+            "modality": "printable",
+            "serves": [{ "competence_id": "FS1.US.4.LES.02", "relation": "exercises" }],
+            "est_minutes": 7,
+            "answer_key": "1. T. 2. F — The author says not all screen time is equal; educational use is different from passive scrolling. 3. T. 4. F — The article says banning phones is 'unlikely to solve the problem'; the goal should be 'digital balance'.",
+            "acceptable_reasoning": "Sinngemäße Korrekturen akzeptieren; Direktzitate sind ebenfalls gültig.",
+            "watch_outs": [
+              "Statement 2 ist der entscheidende Test: Schüler:innen müssen die Nuancierung des Autors erkennen — er ist nicht pauschal gegen Bildschirmzeit",
+              "Statement 4 ist ebenfalls eine Meinungsfalle: 'unlikely to solve' ist eine Einschätzung, keine Tatsache — hier kann Fact/Opinion-Unterscheidung geübt werden"
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "multiple_choice",
+            "prompt": "Choose the best answer.",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                {
+                  "question": "1. What is the main purpose of this article?",
+                  "choices": ["A — To show that technology is always harmful.", "B — To present research and argue for a balanced approach to screen time.", "C — To tell teenagers to use their phones less.", "D — To advertise a new study about sleep quality."]
+                },
+                {
+                  "question": "2. Which phrase best shows the author's own opinion rather than a fact?",
+                  "choices": ["A — \"teenagers in Europe spend an average of six hours per day on screens\"", "B — \"72% of teenagers check their phones within five minutes of waking up\"", "C — \"It seems obvious that teenagers need better guidance\"", "D — \"a 2023 study found that teenagers who spend more than four hours...\""]
+                }
+              ],
+              "select": "one"
+            },
+            "response": { "mode": "choices", "options": ["A", "B", "C", "D"], "select": "one" },
+            "cognitive_level": "understand",
+            "dimensions": ["LES"],
+            "modality": "printable",
+            "serves": [{ "competence_id": "FS1.US.4.LES.01", "relation": "exercises" }],
+            "est_minutes": 7,
+            "answer_key": "1 — B, 2 — C",
+            "acceptable_reasoning": "Frage 2: C ist korrekt wegen 'It seems obvious' — das ist eine Wertung des Autors, keine Tatsachenaussage. A, B, D sind alle mit Quellen/Daten belegt.",
+            "watch_outs": [
+              "Frage 2 ist das Kernziel dieser Kernfrage — auf die Signalwörter ('seems obvious', 'unfortunately', 'should') im Text hinweisen",
+              "Frage 1: Schüler:innen wählen oft A oder C, weil sie den letzten Abschnitt im Gedächtnis haben — auf den gesamten Artikelaufbau hinweisen"
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "table_fill",
+            "prompt": "Find FOUR sentences or phrases from the article. Decide whether each one is a FACT (based on data/research) or an OPINION/ATTITUDE (based on the author's view). Write them in the correct column.",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": ["Fact (with source/data)", "Opinion / Attitude (author's view)"],
+              "rows": 4
+            },
+            "cognitive_level": "analyze",
+            "dimensions": ["LES"],
+            "modality": "printable",
+            "serves": [{ "competence_id": "FS1.US.4.LES.01", "relation": "exercises" }],
+            "est_minutes": 10,
+            "answer_key": "Facts (examples): 'teenagers in Europe spend an average of six hours per day on screens'; '72% of teenagers check their phones within five minutes of waking up'; 'teenagers who spend more than four hours on social media report higher levels of stress and worse sleep quality'.\nOpinions/Attitudes (examples): 'Unfortunately, the latter seems to be more popular'; 'It seems obvious that teenagers need better guidance'; 'Simply banning phones is unlikely to solve the problem'; 'The goal should be digital balance, not digital fear.'",
+            "acceptable_reasoning": "Schüler:innen müssen nicht dieselben Stellen wählen — entscheidend ist, dass die Klassifikation korrekt und kurz begründbar ist.",
+            "watch_outs": [
+              "Manche Sätze sind bewusst gemischt ('Most experts agree' — Meinung, aber von Experten; trotzdem keine eigene Forschungsdaten) — Grenzfälle im Unterrichtsgespräch klären",
+              "'Unfortunately' ist ein klassisches Einstellungssignal (Adverb der Bewertung) — explizit darauf hinweisen",
+              "Schüler:innen neigen dazu, Zahlen immer als Fakten zu sehen; betonen, dass auch Statistiken einen Kontext und Interpretation haben"
+            ],
+            "rubric": [
+              { "criterion": "Fact identification", "levels": ["2 accurate facts with source reference", "1 accurate fact", "None accurate"] },
+              { "criterion": "Attitude identification", "levels": ["2 attitudes with clear signal word identified", "1 attitude identified", "None identified"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "open_response",
+            "prompt": "The author writes: \"The goal should be digital balance, not digital fear.\"\n\nExplain in your own words what you think the author means by this. Do you agree? Write 3–5 sentences in English.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 50 },
+            "cognitive_level": "evaluate",
+            "dimensions": ["LES", "SCH"],
+            "modality": "printable",
+            "serves": [
+              { "competence_id": "FS1.US.4.LES.01", "relation": "exercises" },
+              { "competence_id": "FS1.US.4.SCH.02", "relation": "exercises" }
+            ],
+            "est_minutes": 10,
+            "answer_key": "Model answer: I think the author means that we should not be afraid of technology, but we should use it carefully. 'Digital balance' means using screens for a healthy amount of time and for useful things. 'Digital fear' means trying to avoid all technology, which is probably impossible. I agree, because technology is a big part of modern life and we cannot just ignore it — we need to learn how to use it well.",
+            "acceptable_reasoning": "Jede sinnvolle Paraphrase und jede begründete Meinung (Zustimmung oder Ablehnung) ist akzeptabel.",
+            "watch_outs": [
+              "Schüler:innen neigen dazu, die Frage nur zu paraphrasieren ohne eine eigene Position einzunehmen — auf den zweiten Teil ('Do you agree?') hinweisen",
+              "Die Metapher 'fear' ist für A2-Schüler:innen anspruchsvoll — kurze Vorentlastung im Unterrichtsgespräch empfohlen",
+              "Kein Abzug für Fehler in der Argumentation selbst, solange die Antwort in Englisch ist und versucht, die Frage zu beantworten"
+            ],
+            "rubric": [
+              { "criterion": "Paraphrase quality", "levels": ["Meaning accurately explained in own words", "Partially correct paraphrase", "Copied phrase from text, no explanation"] },
+              { "criterion": "Personal response", "levels": ["Clear position with reason given", "Position stated but no reason", "No personal response"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "open_response",
+            "prompt": "This article was written by a student journalist at an international school. How might the article be DIFFERENT if it were written by:\na) a smartphone company\nb) a worried parent\n\nFor each one, write 1–2 sentences explaining what they might stress or leave out.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 45 },
+            "cognitive_level": "evaluate",
+            "dimensions": ["LES"],
+            "modality": "printable",
+            "serves": [{ "competence_id": "FS1.US.4.LES.01", "relation": "exercises" }],
+            "est_minutes": 9,
+            "answer_key": "a) A smartphone company might focus on the benefits of technology (digital skills, communication) and downplay or ignore the negative research about stress and sleep. They might say that teenagers need to use technology to be ready for the future.\nb) A worried parent might focus mainly on the negative effects (stress, bad sleep, phone addiction) and argue for stricter limits or a complete ban on phones — they might leave out the parts about digital balance.",
+            "acceptable_reasoning": "Verschiedene plausible Antworten akzeptieren; wichtig ist, dass Schüler:innen erkennen, dass Autorenidentität die Auswahl und Gewichtung von Informationen beeinflusst.",
+            "watch_outs": [
+              "Dies ist eine Perspektivenwechsel-Aufgabe (Medienbildung) — Schüler:innen erstmals mit dem Konzept 'Wer schreibt, beeinflusst was geschrieben wird' konfrontieren",
+              "Keine einzig richtige Antwort — die Qualität liegt in der Plausibilität der Begründung",
+              "Auf Englisch schreiben lassen, aber der Fokus liegt auf dem Denken, nicht auf der Sprachproduktion"
+            ],
+            "rubric": [
+              { "criterion": "Perspective a)", "levels": ["Plausible and specific (what they emphasise/omit)", "Vague but reasonable", "Implausible or missing"] },
+              { "criterion": "Perspective b)", "levels": ["Plausible and specific (what they emphasise/omit)", "Vague but reasonable", "Implausible or missing"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "create_produce",
+            "prompt": "Now write your own short opinion paragraph (50–70 words) on this question:\n\n\"What should schools do about mobile phones?\"\n\nIn your paragraph:\n- State your opinion clearly\n- Give ONE fact or example to support it (real or realistic)\n- Use at least one signal word that shows it is your opinion (I think / I believe / In my view / It seems...)\n- End with a recommendation",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 60 },
+            "cognitive_level": "create",
+            "dimensions": ["SCH", "LES"],
+            "modality": "printable",
+            "serves": [
+              { "competence_id": "FS1.US.4.SCH.03", "relation": "exercises" },
+              { "competence_id": "FS1.US.4.LES.01", "relation": "reinforces" }
+            ],
+            "est_minutes": 12,
+            "answer_key": "Model answer: In my view, schools should allow phones but only during breaks. I think this is fair because students use phones to listen to music and relax, which helps them concentrate better in lessons. Research also shows that a complete ban does not stop phone use — it just moves it outside school. I recommend that schools create clear rules together with students, so that everyone understands why the rules exist.",
+            "acceptable_reasoning": "Beide Positionen (erlauben oder verbieten) sind akzeptabel; entscheidend ist die Struktur: Meinung + Grund + Empfehlung.",
+            "watch_outs": [
+              "Schüler:innen sollen bewusst ein Meinungssignal einsetzen — bei der Korrektur explizit darauf hinweisen, ob es vorhanden und korrekt verwendet ist",
+              "Die Empfehlung am Ende ist häufig die schwächste Stelle — auf 'should / I recommend / I suggest' als Formulierungshilfe hinweisen",
+              "Dieser Text schließt den Kreis zur Fact/Opinion-Arbeit: Schüler:innen haben nun selbst einen Text mit erkennbarer Einstellung verfasst"
+            ],
+            "rubric": [
+              { "criterion": "Structure", "levels": ["Opinion + fact/example + recommendation all present", "Two elements present", "Opinion only"] },
+              { "criterion": "Opinion signal word", "levels": ["Correctly used at least once", "Attempted but incorrect", "Missing"] },
+              { "criterion": "Language", "levels": ["Clear, mostly correct; 50–70 words", "Understandable with errors; approximate length", "Hard to follow or too short"] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "id": "c0078.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Entwirf ein einfaches Experiment, mit dem du zeigen kannst, dass die Rostbildung von Sauerstoff und Wasser abhängt.\n\nDein Versuchsplan soll enthalten:\n- Materialien (Eisennägel + mindestens 3 unterschiedliche Bedingungen)\n- Was du in jedes Reagenzglas gibst\n- Was du nach einer Woche beobachtest und woraus du schließt\n- Eine Kontrollbedingung (Vergleich)\n\nSchreibe den Plan vollständig auf.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "E",
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.US.x.ERK.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Modellplan: 3 Reagenzgläser — (1) Nagel + Wasser + Luft (Kontrolle → rostet), (2) Nagel + getrocknetes Calciumchlorid (kein Wasser → rostet kaum), (3) Nagel + gekochtes (sauerstofffreies) Wasser + abgedichtet (kein O₂ → rostet kaum). Beobachtung: nur Glas 1 zeigt starke Rostbildung → beides (O₂ + H₂O) nötig.",
+    "acceptable_reasoning": "Schüler:innen müssen nicht die exakten Chemikalien kennen — Konzept 'trocken halten' vs. 'Luft abschließen' reicht.",
+    "rubric": [
+      {
+        "criterion": "Versuchsaufbau",
+        "levels": [
+          "Drei sinnvolle Bedingungen inkl. Kontrolle",
+          "Zwei Bedingungen",
+          "Eine oder keine"
+        ]
+      },
+      {
+        "criterion": "Kausalschluss",
+        "levels": [
+          "Schluss aus Vergleich korrekt formuliert",
+          "Schluss vage",
+          "Kein Schluss"
+        ]
+      },
+      {
+        "criterion": "Kontrollbedingung",
+        "levels": [
+          "Klar benannt und begründet",
+          "Erwähnt aber unklar",
+          "Fehlt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Kontrollbedingung ist das Herzstück des Experiments — explizit auf deren Bedeutung hinweisen",
+      "Schüler:innen planen oft zu viele Variablen gleichzeitig — nur je eine Variable ändern (ceteris paribus)",
+      "Sicherheitshinweis: Calciumchlorid ist ein Trocknungsmittel; Schüler:innen sollen es nicht anfassen"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Chemie",
+  "klasse": 4,
+  "kompetenzbereich": "Erkenntnisse gewinnen und interpretieren (E)",
+  "competences": [
+    "CHE.US.x.ERK.02"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "E",
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0078",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:13+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

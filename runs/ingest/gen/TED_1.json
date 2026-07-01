@@ -1,0 +1,172 @@
+{
+  "subject": "Technik und Design",
+  "klasse": 1,
+  "kompetenzbereich": "Entwicklung",
+  "title": "Materialien kennenlernen: Was steckt in unseren Gegenständen?",
+  "kernfrage": "Wie erkennst du, aus welchem Material ein Gegenstand gemacht ist, und warum wurde genau dieses Material gewählt?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Materialien wahrnehmen und beschreiben",
+        "throughline": "Schüler:innen entwickeln ein differenziertes Vokabular für Materialeigenschaften und verknüpfen es mit konkreten Alltagsgegenständen — Grundlage für alle weiteren Entwurfs- und Herstellungsschritte.",
+        "talking_points": [
+          "Was meinen wir eigentlich mit 'Material'? Unterschied: Stoff (Holz, Metall, Kunststoff) vs. Werkstoff (bearbeitet, zugerichtet).",
+          "Eigenschaften sind messbar und beschreibbar — Präzision üben: nicht 'hart', sondern 'ritzt Glas nicht / lässt sich mit dem Fingernagel ritzen'.",
+          "Warum wählen Konstrukteur:innen ein bestimmtes Material? Form folgt Funktion — und Material folgt Funktion.",
+          "Fehlvorstellung ansprechen: 'Natürlich ist immer besser' — Kunststoff kann in bestimmten Kontexten die nachhaltigere Wahl sein."
+        ],
+        "extensions": [
+          "Materialbibliothek anlegen: Schüler:innen bringen je ein Materialstück mit und beschriften es mit Eigenschaftskarten.",
+          "Blinde Materialprüfung: Proben ertasten, ohne zu sehen — schärft die haptische Wahrnehmung.",
+          "Recherche: Welche Materialien wurden früher für Alltagsgegenstände verwendet, die heute anders gebaut werden? (z. B. Bakelittelefon vs. Smartphone-Gehäuse)"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "open_response",
+            "prompt": "Halte drei verschiedene Gegenstände aus deinem Schulranzen in den Händen (zum Beispiel ein Heft, einen Bleistift und ein Geodreieck). Beschreibe für jeden Gegenstand: Aus welchem Material besteht er hauptsächlich? Nenne je drei Eigenschaften, die du durch Anfassen, Ansehen oder Hören (Klopfen, Biegen) feststellst.",
+            "payload": null,
+            "response": {"mode": "table", "columns": ["Gegenstand", "Material", "Eigenschaft 1", "Eigenschaft 2", "Eigenschaft 3"], "rows": 3},
+            "cognitive_level": "remember",
+            "dimensions": ["ENT"],
+            "modality": "enactive",
+            "serves": [{"competence_id": "TED.US.1.ENT.01", "relation": "exercises"}],
+            "est_minutes": 8,
+            "answer_key": "Erwartete Eigenschaften je nach Material: Papier/Karton (Heft): biegsam, glatt, leicht, reißt; Holz (Bleistift): fest, leicht, rund, glatt lackiert, bricht bei starkem Druck; Kunststoff (Geodreieck): transparent/durchsichtig, glatt, leicht, biegbar (leicht), klar. Wichtig: Eigenschaften sollen sinnesbezogen formuliert sein, nicht nur Alltagsbegriffe wie 'schön'.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen verwechseln Material und Farbe (z. B. 'blau' als Eigenschaft des Materials). Korrigieren: Farbe ist eine optische Eigenschaft, aber nicht spezifisch für das Material.",
+              "Viele nennen nur 'hart/weich' — auf weitere Dimensionen hinweisen: Gewicht, Transparenz, Oberfläche, Klang beim Klopfen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "matching",
+            "prompt": "Verbinde jeden Alltagsgegenstand mit dem Material, aus dem er hauptsächlich besteht. Jede Verbindung darf nur einmal verwendet werden.",
+            "payload": {
+              "kind": "matching",
+              "left": ["Fensterscheibe", "Kochtopf", "Tragetasche aus dem Supermarkt", "Holzstuhl", "Gummidichtung an einer Tür"],
+              "right": ["Metall (Stahl)", "Glas", "Gummi/Elastomer", "Polyethylen (Kunststoff)", "Holz"]
+            },
+            "response": {"mode": "none"},
+            "cognitive_level": "remember",
+            "dimensions": ["ENT"],
+            "modality": "printable",
+            "serves": [{"competence_id": "TED.US.1.ENT.01", "relation": "exercises"}],
+            "est_minutes": 5,
+            "answer_key": "Fensterscheibe → Glas; Kochtopf → Metall (Stahl); Tragetasche → Polyethylen (Kunststoff); Holzstuhl → Holz; Gummidichtung → Gummi/Elastomer.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen denken, Kochtöpfe seien aus Aluminium — beides ist möglich, aber Stahl (Edelstahl) ist heute am häufigsten. Kurz thematisieren.",
+              "Tragetasche: viele sagen 'Plastik' — korrekt ist Polyethylen. Fachbegriff einführen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "open_response",
+            "prompt": "Wähle einen Gegenstand aus deiner Umgebung (z. B. eine Schere, eine Trinkflasche oder einen Schulsessel). Erkläre in 3–4 Sätzen: Welche Eigenschaft des Materials macht diesen Gegenstand für seine Aufgabe geeignet? Was würde passieren, wenn er aus einem anderen Material wäre?",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 40},
+            "cognitive_level": "understand",
+            "dimensions": ["ENT"],
+            "modality": "printable",
+            "serves": [{"competence_id": "TED.US.1.ENT.04", "relation": "exercises"}],
+            "est_minutes": 8,
+            "answer_key": "Beispiel Schere: Die Klingen sind aus Stahl — hart, scharf schleifbar, korrosionsbeständig. Wären sie aus Holz, würden sie sich beim ersten Schnitt verformen. Der Griff ist oft aus Kunststoff — leicht, nicht leitend, angenehm zu halten. Das zeigt: Form und Funktion bedingen die Materialwahl.",
+            "acceptable_reasoning": "Jede Antwort, die eine spezifische Eigenschaft benennt und sie mit der Funktion des Gegenstands verknüpft, ist akzeptabel.",
+            "watch_outs": [
+              "Schüler:innen bleiben auf Alltagssprache ('weil Metall stark ist') — auf präzisere Eigenschaften hinführen ('weil Stahl eine hohe Härte hat und sich schleifen lässt').",
+              "Das Gedankenexperiment 'was wäre wenn' fällt manchen schwer — Lehrkraft kann Beispiel vorzeigen."
+            ],
+            "rubric": [
+              {"criterion": "Materialeigenschaft benannt", "levels": ["Eigenschaft nur allgemein ('hart/weich')", "Eigenschaft präzise und funktionsbezogen formuliert"]},
+              {"criterion": "Verknüpfung Form–Funktion", "levels": ["Funktion genannt, aber keine Verbindung zur Eigenschaft", "Klare Kausalbeziehung zwischen Eigenschaft und Funktion erklärt"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "true_false_justify",
+            "prompt": "Beurteile die folgenden Aussagen über Materialien: Stimmt die Aussage, oder stimmt sie nicht? Erkläre deine Entscheidung jeweils in einem Satz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Holz ist immer schwerer als Metall.",
+                "Glas ist transparent, weil es aus Sand hergestellt wird.",
+                "Ein Material kann gleichzeitig fest und biegsam sein.",
+                "Kunststoffe werden immer aus Erdöl gewonnen."
+              ]
+            },
+            "response": {"mode": "lines", "n": 8},
+            "cognitive_level": "understand",
+            "dimensions": ["ENT"],
+            "modality": "printable",
+            "serves": [{"competence_id": "TED.US.1.ENT.01", "relation": "exercises"}],
+            "est_minutes": 10,
+            "answer_key": "1. Falsch: Manche Hölzer (z. B. Balsaholz) sind sehr leicht, manche Metalle (z. B. Aluminium) ebenfalls. Dichte variiert stark. 2. Nicht direkt: Die Transparenz entsteht durch die Kristallstruktur des Glases beim Schmelzen, nicht durch den Sand selbst. Vereinfacht akzeptabel: teils richtig, teils unvollständig. 3. Richtig: Federstahl, kohlenstofffaserverstärkter Kunststoff, Bambus. 4. Falsch: Biopolymere aus Stärke oder Zucker sind möglich; Anteil wächst.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Aussage 1 ist eine häufige Fehlvorstellung — konkrete Beispiele (Balsa, Aluminium) mitbringen.",
+              "Aussage 4: Viele Schüler:innen kennen nur Erdöl-Kunststoffe. Bioplastik kurz erläutern."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "design_task",
+            "prompt": "Stell dir vor, du sollst einen Becher entwerfen, der heiße Suppe transportieren kann, ohne dass sich die Person die Finger verbrennt. Welches Material (oder welche Kombination von Materialien) würdest du wählen? Skizziere deinen Becher in Worten (kein Bild nötig): Beschreibe Form, Material und warum du dich für dieses Material entschieden hast.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 50},
+            "cognitive_level": "analyze",
+            "dimensions": ["ENT"],
+            "modality": "printable",
+            "serves": [{"competence_id": "TED.US.1.ENT.04", "relation": "exercises"}],
+            "est_minutes": 10,
+            "answer_key": "Mögliche Lösungen: Keramikbecher mit Griff (Keramik leitet Wärme schlecht; Griff aus Keramik oder Holz); Pappe-Becher mit Pappmanschette (Einwegbecher, Luft in der Pappschicht isoliert); doppelwandiger Edelstahlbecher (Vakuum oder Luftschicht zwischen den Wänden). Bewertungskriterium: Schüler:innen müssen die Eigenschaft 'geringe Wärmeleitfähigkeit' (in Alltagssprache: leitet Wärme schlecht) als Entscheidungsgrund nennen.",
+            "acceptable_reasoning": "Alle Antworten sind akzeptabel, die mindestens ein Material nennen, seine wärmeisolierende Eigenschaft beschreiben und eine sinnvolle Form vorschlagen.",
+            "watch_outs": [
+              "Schüler:innen wählen Metall für den ganzen Becher ohne Isolierung — Gelegenheit, Wärmeleitfähigkeit zu thematisieren.",
+              "Erwartung nicht zu hoch: Fachbegriff 'Wärmeleitfähigkeit' muss nicht fallen; gemeint ist die Alltagserfahrung."
+            ],
+            "rubric": [
+              {"criterion": "Materialwahl begründet", "levels": ["Material genannt, aber keine Eigenschaft als Begründung", "Eigenschaft des Materials (Isolation, geringe Wärmeleitung) explizit als Grund genannt"]},
+              {"criterion": "Funktionalität", "levels": ["Entwurf würde praktisch nicht funktionieren", "Entwurf ist funktional plausibel"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "open_response",
+            "prompt": "Geh zu einem Gegenstand im Klassenzimmer oder Schulgebäude (z. B. Türklinke, Fensterrahmen, Tischplatte) und untersuche ihn genau. Notiere: (a) Aus welchen verschiedenen Materialien besteht er? (b) Welche Eigenschaft hat jedes Material, die es für seinen Teil des Gegenstands geeignet macht? (c) Gibt es einen Teil, der aus einem anderen Material hergestellt werden könnte? Begründe.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 55},
+            "cognitive_level": "evaluate",
+            "dimensions": ["ENT"],
+            "modality": "enactive",
+            "serves": [{"competence_id": "TED.US.1.ENT.01", "relation": "exercises"}],
+            "est_minutes": 12,
+            "answer_key": "Beispiel Türklinke: Griff aus Metall (Stahl/Aluminium) — hart, hygienisch reinigbar, formstabil; Schrauben aus Stahl — Festigkeit; Rosette (Abdeckung) manchmal aus Kunststoff — günstiger, leichter. Alternativmaterial z. B.: Griff aus Holz (wärmer anzufassen, aber weniger hygienisch). Bewertung: Schüler:innen sollen mindestens 2 verschiedene Materialien erkennen und je eine Eigenschaft begründet nennen.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Manche Schüler:innen beschreiben nur die Farbe, nicht das Material — nachfragen.",
+              "Teil (c) kann offen bleiben, wenn Schüler:innen kein sinnvolles Alternativmaterial finden — dann gemeinsam im Plenum besprechen."
+            ],
+            "rubric": [
+              {"criterion": "Materialvielfalt erkannt", "levels": ["Nur ein Material genannt", "Mindestens zwei verschiedene Materialien korrekt identifiziert"]},
+              {"criterion": "Eigenschaft–Funktion-Verknüpfung", "levels": ["Eigenschaft nur allgemein", "Eigenschaft präzise und Funktion erklärt"]},
+              {"criterion": "Reflexion Alternativmaterial", "levels": ["Kein Alternativvorschlag", "Sinnvoller Alternativvorschlag mit Begründung"]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "id": "c0141.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Entscheide, ob die folgenden Aussagen zum nationalsozialistischen System und zum Holocaust zutreffen. Begründe deine Entscheidung jeweils in einem oder zwei Sätzen.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Die Nürnberger Rassengesetze von 1935 verboten Jüdinnen und Juden sofort die Ausreise aus Deutschland.",
+        "Der Holocaust war ein von der NS-Führung zentral geplantes und organisiertes Vernichtungsprogramm, an dem staatliche Behörden und Unternehmen beteiligt waren.",
+        "Die Wannsee-Konferenz im Januar 1942 war die erste Sitzung, auf der überhaupt über die Vernichtung der europäischen Jüdinnen und Juden gesprochen wurde.",
+        "Erinnerungskulturen sind immer neutral und zeigen die historische Wahrheit unverfälscht."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "Wahr / Falsch",
+        "Begründung"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "HSK",
+      "HOK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GPB.OS.7.POL5.03",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "GPB.OS.7.HIS3.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "1. Falsch – Die Nürnberger Gesetze entzogen Jüdinnen und Juden die Staatsbürgerschaft und verboten Ehen mit Nichtjuden; ein Ausreiseverbot wurde erst 1941 ausgesprochen. Zunächst sollten Jüdinnen und Juden zur Auswanderung gedrängt werden. 2. Wahr – Der Holocaust war ein staatlich organisiertes Vernichtungsprogramm unter Beteiligung von SS, Wehrmacht, Bürokratie und Unternehmen; er war keine spontane Gewaltaktion, sondern planmäßig durchgeführt. 3. Falsch – Die Wannsee-Konferenz koordinierte und synchronisierte die bereits laufenden Vernichtungsmaßnahmen; Massenerschießungen und erste Vernichtungslager existierten bereits vor Januar 1942. 4. Falsch – Erinnerungskulturen sind immer perspektivisch und von nationalen, politischen und gesellschaftlichen Interessen geprägt; sie sind Konstruktionen, keine neutralen Spiegel der Vergangenheit.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Aussage 1 führt oft zu Verwechslungen, weil Schüler:innen die 'Stufenpolitik' nicht kennen: Die NS-Judenpolitik steigerte sich schrittweise von Diskriminierung über Ausgrenzung zur Vernichtung.",
+      "Aussage 3 ist eine häufige Fehlannahme: Die Wannsee-Konferenz war keine 'Erfindung' des Holocaust, sondern eine bürokratische Koordinierungssitzung.",
+      "Aussage 4 sollte Anlass geben, über Erinnerungskultur als Konstrukt zu sprechen – nicht um die Fakten des Holocaust zu relativieren, sondern um das Konzept 'Erinnerung als politischer Prozess' zu verstehen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Geschichte und politische Bildung",
+  "klasse": 7,
+  "kompetenzbereich": "Politische, wirtschaftliche, kulturelle und soziale Entwicklungen vom 1. Weltkrieg bis zur Gegenwart",
+  "competences": [
+    "GPB.OS.7.POL5.03",
+    "GPB.OS.7.HIS3.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "HSK",
+    "HOK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0141",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:21+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

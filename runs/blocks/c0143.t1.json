@@ -1,0 +1,95 @@
+{
+  "id": "c0143.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne jedem griechischen Buchstaben seinen korrekten deutschen Lautwert zu. Ziehe Linien oder trage die Ziffern in die rechte Spalte ein.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "α",
+        "γ",
+        "θ",
+        "φ",
+        "ψ",
+        "ξ"
+      ],
+      "right": [
+        "ph (= f)",
+        "a",
+        "ks",
+        "ps",
+        "g (vor a/o/u)",
+        "th (= t mit Hauch)"
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Griechischer Buchstabe",
+        "Lautwert (Nummer)"
+      ],
+      "rows": 6
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "UEB"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GRI.OS.5.KLA.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "α → a; γ → g (vor a/o/u); θ → th; φ → ph (= f); ψ → ps; ξ → ks",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Korrektheit",
+        "levels": [
+          "Alle 6 richtig",
+          "4–5 richtig",
+          "2–3 richtig",
+          "0–1 richtig"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen verwechseln häufig φ (ph/f) mit π (p) – auf die Schreibung achten.",
+      "θ wird manchmal als 'd' gelesen (englischer Einfluss) – im Altgriechischen ist es immer aspiriertes t.",
+      "ψ und ξ als Doppelkonsonanten brauchen besondere Aufmerksamkeit."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Griechisch",
+  "klasse": 5,
+  "kompetenzbereich": "5. Klasse",
+  "competences": [
+    "GRI.OS.5.KLA.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "UEB"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0143",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:22+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

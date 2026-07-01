@@ -1,0 +1,81 @@
+{
+  "id": "c0040.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Wähle ein Instrument, das du interessant findest (aus dem Unterricht oder aus eigener Erfahrung). Beschreibe es in 3–4 Sätzen: Wie wird der Klang erzeugt? Wie klingt es (verwende Klangadjektive)? Wo wird dieses Instrument typischerweise eingesetzt (z. B. Orchester, Band, Volksmusik)?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 35.0
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "HOR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MUS.US.2.HOR.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Offene Antwort; Bewertungskriterien: (1) Klangerzeugung physikalisch korrekt beschrieben, (2) mindestens zwei Klangadjektive, (3) realistischer Einsatzbereich genannt.",
+    "acceptable_reasoning": "Exotische oder Weltmusik-Instrumente sind willkommen – Klangerzeugung muss dem Instrument entsprechen.",
+    "rubric": [
+      {
+        "criterion": "Klangerzeugung",
+        "levels": [
+          "falsch oder fehlend",
+          "physikalisch korrekt und vollständig"
+        ]
+      },
+      {
+        "criterion": "Klangbeschreibung",
+        "levels": [
+          "kein Adjektiv",
+          "ein Adjektiv",
+          "zwei oder mehr treffende Adjektive"
+        ]
+      },
+      {
+        "criterion": "Einsatzbereich",
+        "levels": [
+          "fehlend oder falsch",
+          "realistisch und konkret"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Gitarre: Saiten schwingen, kein Bogen – Schüler:innen schreiben manchmal fälschlich 'gestrichen'.",
+      "Klavier ist ein Sonderfall: Saiten werden von Hämmern angeschlagen (Chordophon/Schlaginstrument) – beide Kategorisierungen korrekt."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Musik",
+  "klasse": 2,
+  "kompetenzbereich": "Hören und Erfassen",
+  "competences": [
+    "MUS.US.2.HOR.04"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "HOR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0040",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

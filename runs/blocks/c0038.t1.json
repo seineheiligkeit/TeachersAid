@@ -1,0 +1,72 @@
+{
+  "id": "c0038.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Räume und ihre Wirkung: Verbinde jede Raumbeschreibung mit der Funktion oder Bedeutung, die am besten passt.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Ein hoher, langer Raum mit kleinen Fenstern und gedämpftem Licht — die Decke ist weit entfernt.",
+        "Ein enger, langer Korridor mit gleichen Türen auf beiden Seiten — kein natürliches Licht.",
+        "Ein weiter, offener Platz mit Bänken und Bäumen, umgeben von Gebäuden.",
+        "Ein kleiner Raum mit niedrigen Decken, Holzmöbeln, Kamingeruch."
+      ],
+      "right": [
+        "Sakraler oder zeremonieller Raum — erzeugt Ehrfurcht und Stille",
+        "Privatheit und Geborgenheit — persönliche Rückzugsmöglichkeit",
+        "Öffentliche Begegnungszone — lädt zur Kommunikation ein",
+        "Verwaltung oder Institution — Effizienz, Anonymität, Ordnung"
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "WAH"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "KUG.US.2.WAH.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Hoher Raum mit kleinen Fenstern → Sakraler Raum; enger Korridor → Verwaltung/Institution; offener Platz → Öffentliche Begegnungszone; kleiner Raum mit Holzmöbeln → Privatheit/Geborgenheit.",
+    "acceptable_reasoning": "Begründungen, die von der Musterlösung abweichen, aber mit Raumqualitäten argumentieren, akzeptieren.",
+    "rubric": [],
+    "watch_outs": [
+      "Schüler:innen verbinden hohe Räume manchmal mit Büros (wegen Wolkenkratzern) — die Beschreibung betont gezielt sakrale Merkmale.",
+      "Der enge Korridor kann auch als Gefängnis interpretiert werden — als Variante diskutieren, aber „Institution/Verwaltung“ ist die Ziellösung."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Kunst und Gestaltung",
+  "klasse": 2,
+  "kompetenzbereich": "Wahrnehmen und Reflektieren",
+  "competences": [
+    "KUG.US.2.WAH.03"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "WAH"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0038",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

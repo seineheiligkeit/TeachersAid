@@ -1,0 +1,71 @@
+{
+  "id": "c0060.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Lies die Aussagen. Entscheide, ob sie richtig (R) oder falsch (F) sind, und begründe kurz auf Deutsch.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "In dem Satz 'Agricola equum ducit' ist 'agricola' das Objekt.",
+        "Das Wort 'rosam' steht im Akkusativ Singular.",
+        "Im Lateinischen bestimmt die Wortstellung allein, ob ein Wort Subjekt oder Objekt ist.",
+        "'Magnus dominus' und 'magnum dominum' bedeuten dasselbe."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "R / F",
+        "Begründung"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "SPR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "LAT.US.3.SPR.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1. F — 'agricola' steht im Nominativ (Nom. Sg. der a-Dekl. auf -a bei mask. Nomen!) und ist Subjekt; 'equum' ist das Objekt (Akk.). | 2. R — 'rosam' = Akk. Sg. von rosa (a-Dekl.). | 3. F — im Lateinischen bestimmt die Kasusendung die Satzgliedfunktion, nicht die Wortstellung. | 4. F — 'magnus dominus' (Nom., der große Herr = Subjekt) und 'magnum dominum' (Akk., den großen Herrn = Objekt) haben verschiedene syntaktische Funktionen.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Agricola ist ein maskulines Nomen der a-Deklination — das ist für Schüler:innen sehr verwirrend, da die Endung -a typisch für Feminina ist. Diesen Punkt explizit besprechen.",
+      "Aussage 4 zielt auf Kongruenz ab: Adjektiv und Substantiv müssen im gleichen Kasus stehen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Latein",
+  "klasse": 3,
+  "kompetenzbereich": "Sprach- und textbezogene Kompetenzen",
+  "competences": [
+    "LAT.US.3.SPR.03"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "SPR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0060",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

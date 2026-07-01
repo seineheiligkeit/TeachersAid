@@ -1,0 +1,71 @@
+{
+  "id": "c0061.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Sind die folgenden Aussagen richtig (R) oder falsch (F)? Begründe kurz auf Deutsch.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Die Endung '-erunt' zeigt die 3. Person Plural Perfekt an.",
+        "'Amant' und 'amaverunt' haben dieselbe Bedeutung.",
+        "Das Perfekt auf '-v-' bei der 1. Konjugation heißt: Perfektstamm = Präsensstamm + '-v-'.",
+        "'Videt' ist eine Perfektform."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "R / F",
+        "Begründung"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "SPR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "LAT.US.3.SPR.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "1. R — -erunt ist die Endung der 3. Pl. Perf. Akt. | 2. F — amant (Präs., sie lieben) vs. amaverunt (Perf., sie haben geliebt) — verschiedene Zeitstufen. | 3. R — z.B. laudare: Stamm laud- + -av- = laudav-. | 4. F — videt ist 3. Sg. Präsens (er/sie sieht); das Perfekt wäre vidit.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Aussage 2 zielt auf den häufigen Irrtum ab, Präsens und Perfekt seien austauschbar — im Deutschen gibt es diese Verwischung umgangssprachlich, im Lateinischen ist die Unterscheidung scharf.",
+      "Aussage 4: videt vs. vidit — nur ein Buchstabe Unterschied, aber kategorial verschieden."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Latein",
+  "klasse": 3,
+  "kompetenzbereich": "Sprach- und textbezogene Kompetenzen",
+  "competences": [
+    "LAT.US.3.SPR.04"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "SPR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0061",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

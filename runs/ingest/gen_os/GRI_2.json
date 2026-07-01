@@ -1,0 +1,330 @@
+{
+  "subject": "Griechisch",
+  "klasse": 7,
+  "kompetenzbereich": "Das griechische Denken als Fundament der Wissenschaften",
+  "title": "Die Naturphilosophen und die Sprache der Wissenschaft",
+  "kernfrage": "Wie haben die Griechen begonnen, die Welt zu erklären – und warum sprechen wir in der Wissenschaft noch heute Griechisch?",
+  "body": {
+    "intro": [
+      {
+        "role": "info",
+        "id": "i1",
+        "content": "Die ionischen Naturphilosophen (6./5. Jh. v. Chr.) waren die ersten, die die Welt nicht durch Mythen, sondern durch rationale Prinzipien erklären wollten. Ihre Begriffe leben in der modernen Wissenschaft weiter. In diesem Arbeitsblatt liest du Texte und Begriffe, die deine Lehrkraft bereitstellt, analysierst Argumente und erforschst, wie griechisches Denken bis heute nachwirkt."
+      }
+    ],
+    "data_figures": [],
+    "assets": [
+      {
+        "id": "abb1",
+        "role": "figure",
+        "generator": "matplotlib:timeline",
+        "spec": {
+          "events": [
+            {"at": -624, "label": "Thales von Milet (geb. ~624 v. Chr.)"},
+            {"at": -610, "label": "Anaximander (geb. ~610 v. Chr.)"},
+            {"at": -585, "label": "Thales sagt Sonnenfinsternis voraus"},
+            {"at": -570, "label": "Anaximenes (geb. ~570 v. Chr.)"},
+            {"at": -500, "label": "Heraklit (~500 v. Chr.)"},
+            {"at": -460, "label": "Demokrit (geb. ~460 v. Chr.)"}
+          ],
+          "title": "Die ionischen Naturphilosophen: Zeittafel",
+          "xlabel": "Jahr v. Chr."
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Teil A – Die Ursprungsprinzipien (ἀρχή)",
+        "throughline": "Der Begriff ἀρχή (Anfang, Prinzip, Ursprung) ist Schlüsselwort der Vorsokratik und Ausgangspunkt für das Verständnis wissenschaftlichen Denkens; Schüler:innen lernen, philosophische Argumente zu identifizieren und zu bewerten.",
+        "talking_points": [
+          "ἀρχή bedeutet wörtlich 'Anfang' und 'Herrschaft' – in der Philosophie: das zugrundeliegende Prinzip der Wirklichkeit. Das Wort lebt in 'Archiv', 'Monarchie', 'Anarchie' fort.",
+          "Thales (Wasser), Anaximenes (Luft), Heraklit (Feuer/Logos), Demokrit (Atome) geben verschiedene Antworten auf dieselbe Frage – das ist das Muster rationaler Debatte.",
+          "Die Frage 'Woraus besteht alles?' ist heute noch Physik; der Unterschied liegt in Methode (Experiment statt Spekulation), nicht in der Frage selbst."
+        ],
+        "extensions": [
+          "Schüler:innen diskutieren: Ist das Modell von Demokrit (ἄτομος = Unteilbares) 'richtiger' als das von Thales? Was macht eine wissenschaftliche Erklärung besser?",
+          "Recherche: Welche Vorstellungen aus der ionischen Naturphilosophie haben sich in der modernen Physik oder Chemie bewahrheitet?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "ordering",
+            "prompt": "Bringe die folgenden Denker und ihre Grundprinzipien in die richtige zeitliche Reihenfolge (frühester zuerst). Nutze die Zeitleiste (Abb. 1) als Hilfe.",
+            "payload": {
+              "kind": "ordering",
+              "items": [
+                "Demokrit – ἄτομος (das Unteilbare) als Baustoff der Welt",
+                "Thales – ὕδωρ (Wasser) als Urprinzip",
+                "Heraklit – πῦρ (Feuer) und λόγος (Vernunft) als Prinzip des Wandels",
+                "Anaximenes – ἀήρ (Luft) als Urprinzip",
+                "Anaximander – τὸ ἄπειρον (das Unbegrenzte) als Urprinzip"
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "remember",
+            "dimensions": ["INT"],
+            "serves": [
+              {"competence_id": "GRI.OS.7.GRI.01", "relation": "exercises"}
+            ],
+            "est_minutes": 6,
+            "asset_refs": ["abb1"],
+            "answer_key": "1. Thales (~624 v. Chr.); 2. Anaximander (~610 v. Chr.); 3. Anaximenes (~570 v. Chr.); 4. Heraklit (~500 v. Chr.); 5. Demokrit (~460 v. Chr.)",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen verwechseln Anaximander und Anaximenes – die Namen klingen ähnlich; auf die Geburtsdaten in der Zeitleiste hinweisen.",
+              "Heraklit wird oft als 'erster' gesetzt, weil sein Name bekannter ist – genaue Zeitleistenlektüre ist erforderlich.",
+              "τὸ ἄπειρον (das Unbegrenzte) bei Anaximander ist das abstrakteste Konzept und oft unverstanden – kurze Erklärung vorab sinnvoll."
+            ],
+            "rubric": [
+              {"criterion": "Korrekte Reihenfolge", "levels": ["Alle 5 korrekt", "4 korrekt", "2–3 korrekt", "0–1 korrekt"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "text_analysis",
+            "prompt": "Deine Lehrkraft stellt dir einen kurzen deutschen Sachtext (oder eine Übersetzung) zu Thales' Aussage vor, dass alles aus Wasser besteht, bereit. Lies ihn sorgfältig und beantworte dann: (a) Was genau behauptet Thales – und wie begründet er es? (b) Inwiefern unterscheidet sich seine Erklärung von einer mythologischen Erklärung (z. B. durch Poseidon)? (c) Nenne einen modernen wissenschaftlichen Begriff aus der Chemie oder Physik, der zeigt, dass die Frage nach dem Urprinzip noch heute gestellt wird.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 50
+            },
+            "cognitive_level": "analyze",
+            "dimensions": ["INT"],
+            "serves": [
+              {"competence_id": "GRI.OS.7.GRI.01", "relation": "exercises"},
+              {"competence_id": "GRI.OS.7.GRI.02", "relation": "exercises"}
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "(a) Thales behauptet, Wasser sei das Urprinzip (ἀρχή) aller Dinge; er beobachtet, dass Wasser in fester, flüssiger und gasförmiger Form vorkommt und für alles Leben notwendig ist. (b) Eine mythologische Erklärung personalisiert Naturkräfte (Poseidon = Meer als göttliches Wesen mit Willen); Thales erklärt Natur durch Natur, ohne göttliche Eingriffe. (c) Beispiele: 'Molekül', 'Element', 'Atom' – die Suche nach dem fundamentalen Baustein setzt die vorsokratische Frage fort.",
+            "acceptable_reasoning": "Jeder Vergleich, der 'rational/empirisch' vs. 'personal/mythisch' trifft, gilt für (b). Für (c) genügt ein nachvollziehbares Beispiel.",
+            "watch_outs": [
+              "Schüler:innen neigen dazu, Thales' Aussage als 'falsch' abzutun; der didaktische Schwerpunkt liegt auf der Methode, nicht auf dem Ergebnis.",
+              "Den Unterschied mythologisch/rational klar herausarbeiten – ohne ihn zu bewerten (Mythos hat andere Funktionen als Wissenschaft).",
+              "Teil (c) überfordert manchmal – notfalls als optionale Aufgabe behandeln."
+            ],
+            "rubric": [
+              {"criterion": "Analyse der Behauptung (a)", "levels": ["Behauptung und Begründung klar benannt", "Behauptung korrekt, Begründung vage", "Nur Behauptung"]},
+              {"criterion": "Vergleich mythologisch/rational (b)", "levels": ["Unterschied präzise und begründet", "Unterschied genannt, nicht begründet", "Kein klarer Unterschied"]},
+              {"criterion": "Moderner Bezug (c)", "levels": ["Treffendes Beispiel mit Erklärung", "Beispiel ohne Erklärung", "Fehlt"]}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Teil B – Griechisch als Sprache der Wissenschaft",
+        "throughline": "Schüler:innen erkennen, dass die Wissenschaftssprache kein Zufall ist: Griechische Wortbildung ist ein systematisches Werkzeug, das sie aktiv nutzen können.",
+        "talking_points": [
+          "Demokrits ἄτομος (a-tomos = un-teilbar) ist der Prototyp eines wissenschaftlichen Terminus: eine präzise, kompositorische Benennung.",
+          "Präfix ἀ-/ἀν- (Negation), μικρο- (klein), μακρο- (groß), βιο- (Leben), γεω- (Erde) sind heute produktiv in allen Wissenschaften.",
+          "Das Suffix -λογία macht aus jedem Gegenstandsbereich eine 'Lehre'; -γραφία eine 'Beschreibung/Aufzeichnung'."
+        ],
+        "extensions": [
+          "Schüler:innen analysieren die Namen ihrer Lieblings-Naturwissenschaft: Was sagen die griechischen Bestandteile über den Gegenstand der Disziplin aus?",
+          "Kurzrecherche: Welche modernen Fachtermini wurden erst im 19./20. Jh. nach griechischem Muster gebildet (z. B. 'Elektron', 'Photon', 'Gen')?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "matching",
+            "prompt": "Verbinde den griechischen Fachbegriff mit seiner wissenschaftlichen Bedeutung und der modernen Disziplin, in der er vorkommt.",
+            "payload": {
+              "kind": "matching",
+              "left": ["ἄτομος (a-tomos)", "μικρόβιος (mikro-bios)", "γεωλογία (geo-logia)", "φωτοσύνθεσις (photo-synthesis)", "ψυχολογία (psycho-logia)"],
+              "right": [
+                "das Zusammensetzen mittels Licht → Biologie/Biochemie",
+                "das Unteilbare → Physik/Chemie (Atomlehre)",
+                "Lehre von der Erde → Geowissenschaft",
+                "Lehre von der Seele → Humanwissenschaft",
+                "kleines Lebewesen → Mikrobiologie"
+              ]
+            },
+            "response": {
+              "mode": "table",
+              "columns": ["Griechischer Begriff", "Bedeutung + Disziplin (Buchstabe)"],
+              "rows": 5
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["UEB"],
+            "serves": [
+              {"competence_id": "GRI.OS.7.GRI.03", "relation": "exercises"},
+              {"competence_id": "GRI.OS.7.GRI.04", "relation": "exercises"}
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "ἄτομος → das Unteilbare → Physik/Chemie; μικρόβιος → kleines Lebewesen → Mikrobiologie; γεωλογία → Lehre von der Erde → Geowissenschaft; φωτοσύνθεσις → Zusammensetzen mittels Licht → Biologie/Biochemie; ψυχολογία → Lehre von der Seele → Humanwissenschaft",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "φωτοσύνθεσις: φωτο- (Licht, von φῶς) und σύνθεσις (Zusammensetzung) – nicht mit φωτογραφία (Fotografie) verwechseln.",
+              "ψυχή (Seele/Atem) hat keine direkte deutsche Entsprechung; Schüler:innen assoziieren oft 'Psycho' mit 'verrückt' – die neutrale Bedeutung klären.",
+              "γεωλογία vs. γεωγραφία: -λογία (Lehre) ≠ -γραφία (Schreiben/Beschreiben) – ein häufig verwischter Unterschied."
+            ],
+            "rubric": [
+              {"criterion": "Korrektheit der Zuordnung", "levels": ["5 von 5 korrekt", "3–4 korrekt", "1–2 korrekt", "0 korrekt"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "translation",
+            "prompt": "Deine Lehrkraft stellt dir einen kurzen deutschen Sachtext (oder eine Übersetzung aus dem Griechischen) über Demokrits Atomlehre bereit. Darin kommen folgende griechische Fachbegriffe vor: ἄτομος, κενόν (das Leere), κίνησις (die Bewegung), σώμα (der Körper/die Materie). Übersetze und erkläre jeden Begriff: (a) Gib die wörtliche Bedeutung an. (b) Erläutere, welche Rolle der Begriff in Demokrits Theorie spielt.",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": ["Griech. Begriff", "Wörtliche Bedeutung", "Rolle in Demokrits Theorie"],
+              "rows": 4
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["UEB"],
+            "serves": [
+              {"competence_id": "GRI.OS.7.GRI.03", "relation": "exercises"},
+              {"competence_id": "GRI.OS.7.GRI.01", "relation": "exercises"}
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "ἄτομος: wörtl. 'das Unteilbare' (ἀ- = nicht, τέμνειν = schneiden); bei Demokrit: die kleinste, nicht weiter teilbare Materie-Einheit. κενόν: wörtl. 'das Leere'; bei Demokrit: der leere Raum, in dem die Atome sich bewegen – notwendige Bedingung für Bewegung. κίνησις: wörtl. 'die Bewegung' (vgl. Kino); bei Demokrit: die Atome sind in ewiger Bewegung, woraus alle Veränderung folgt. σώμα: wörtl. 'Körper, Materie'; bei Demokrit: alles Körperliche besteht aus Atomen.",
+            "acceptable_reasoning": "Umschreibungen der Rolle sind ausreichend, wenn die Kernidee (Atom als Baustein, Leere als Voraussetzung für Bewegung) korrekt erfasst ist.",
+            "watch_outs": [
+              "κενόν (das Leere) ist kontraintuitiv: Demokrit setzt 'Nichts' als physikalisch real voraus – das ist für Schüler:innen philosophisch fordernd.",
+              "σώμα (Körper) wird im Neugriechischen und im Bibelgriechischen anders verwendet als bei Demokrit – Kontextabhängigkeit betonen.",
+              "κίνησις → Kino: Der Bezug zum modernen 'Kino' (bewegte Bilder) ist ein hilfreicher Merkanker, aber die ursprüngliche philosophische Bedeutung nicht verwischen."
+            ],
+            "rubric": [
+              {"criterion": "Wörtliche Bedeutung", "levels": ["4 von 4 korrekt", "2–3 korrekt", "1 korrekt", "Keine korrekte Angabe"]},
+              {"criterion": "Rolle in der Theorie", "levels": ["Alle 4 Rollen klar erklärt", "2–3 Rollen korrekt", "Ansätze erkennbar", "Fehlt"]}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "Teil C – Philosophische Fragen damals und heute",
+        "throughline": "Die Naturphilosophen stellten Fragen, die bis heute offen sind; Schüler:innen üben sich im strukturierten philosophischen Argumentieren (Sokrates-Methode als Vorstufe).",
+        "talking_points": [
+          "Heraklits Aussage πάντα ῥεῖ (alles fließt) ist nicht beweisbar im naturwissenschaftlichen Sinn – sie ist eine philosophische These. Der Unterschied Empirie vs. Spekulation ist hier lehrreich.",
+          "Die Frage 'Was ist die Wirklichkeit?' (ὄν, das Seiende) verbindet Parmenides, Platon und die moderne Quantenphysik.",
+          "Schüler:innen sollen lernen, zwischen Behauptung, Begründung und Schluss zu unterscheiden – eine Grundkompetenz der Wissenschaft."
+        ],
+        "extensions": [
+          "Lektüre (in Übersetzung): Platons 'Timaios' als Folgetext – wie baut Platon auf den Vorsokratikern auf?",
+          "Diskussion im Plenum: Ist die Frage 'Woraus besteht alles?' überhaupt beantwortbar? Schüler:innen formulieren Pro-/Kontra-Argumente."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "true_false_justify",
+            "prompt": "Entscheide für jede Aussage, ob sie richtig (R) oder falsch (F) ist, und begründe deine Entscheidung in einem Satz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Die ionischen Naturphilosophen lehnten alle übernatürlichen Erklärungen vollständig ab.",
+                "ἄτομος bedeutet wörtlich 'das Unteilbare' und geht auf Demokrit zurück.",
+                "Heraklit und Thales vertraten dasselbe Urprinzip.",
+                "Griechische Fachbegriffe in der Wissenschaft sind reiner Zufall – sie hätten auch lateinisch sein können.",
+                "Die Vorsokratiker stellten Fragen, die auch die moderne Physik noch beschäftigen."
+              ]
+            },
+            "response": {
+              "mode": "table",
+              "columns": ["Aussage", "R / F", "Begründung"],
+              "rows": 5
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": ["INT"],
+            "serves": [
+              {"competence_id": "GRI.OS.7.GRI.02", "relation": "exercises"},
+              {"competence_id": "GRI.OS.7.GRI.01", "relation": "exercises"}
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "1. F – Viele Naturphilosophen wie Thales (Wasser als göttlich belebt) oder Anaximenes hielten die ἀρχή für göttlich oder beseelt; vollständige Ablehnung des Göttlichen kam erst später. 2. R – ἄτομος = ἀ- (nicht) + τέμνειν (schneiden), Demokrit 5. Jh. v. Chr. 3. F – Thales: Wasser; Heraklit: Feuer und λόγος. 4. F – Griechisch war Sprache der gebildeten Welt (Koine, Wissenschaft der Antike und des Hellenismus); die Terminologie ist historisch begründet, nicht zufällig. 5. R – Fragen nach dem fundamentalen Baustein der Materie, Raum, Zeit, Bewegung sind zentral in moderner Physik.",
+            "acceptable_reasoning": "Begründungen müssen den inhaltlichen Kern treffen; sprachliche Eleganz ist kein Kriterium.",
+            "watch_outs": [
+              "Aussage 1 ist eine Falle: Viele Schüler:innen nehmen an, dass Vorsokratiker grundsätzlich 'atheistisch' waren – das stimmt historisch nicht.",
+              "Aussage 4: Schüler:innen könnten Latein als gleichwertige Alternative nennen – das ist teilweise korrekt (viele Begriffe haben lateinische Entsprechungen), aber die historische Begründung ist anders.",
+              "Begründungen sollten nicht bloß 'weil es falsch ist' enthalten – auf Vollständigkeit drängen."
+            ],
+            "rubric": [
+              {"criterion": "Korrekte R/F-Entscheidung", "levels": ["5 von 5 korrekt", "3–4 korrekt", "1–2 korrekt", "0 korrekt"]},
+              {"criterion": "Qualität der Begründung", "levels": ["Alle Begründungen sachlich korrekt und präzise", "Mehrheitlich korrekt", "Ansätze, aber inhaltliche Fehler", "Keine tragfähige Begründung"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "open_response",
+            "prompt": "Heraklit soll gesagt haben: πάντα ῥεῖ καὶ οὐδὲν μένει (alles fließt und nichts bleibt). Deine Lehrkraft erklärt dir diese Aussage und gibt dir einen kurzen Sachtext dazu. Schreibe dann eine strukturierte Stellungnahme (ca. 8–12 Sätze): (a) Erkläre Heraklits Aussage in eigenen Worten. (b) Nenne ein Beispiel aus der Natur und eines aus der menschlichen Gesellschaft, das seine These stützt. (c) Formuliere ein Gegenargument: Gibt es etwas, das wirklich beständig ist? Begründe.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 60
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": ["INT"],
+            "serves": [
+              {"competence_id": "GRI.OS.7.GRI.02", "relation": "exercises"},
+              {"competence_id": "GRI.OS.7.GRI.01", "relation": "exercises"}
+            ],
+            "est_minutes": 15,
+            "asset_refs": [],
+            "answer_key": "(a) Heraklit versteht die Wirklichkeit als beständigen Wandel; nichts hat eine feste, unveränderliche Existenz – auch der Mensch ist nie derselbe (der Fluss-Vergleich: man steigt nicht zweimal in denselben Fluss). (b) Natur: der Lauf eines Flusses (Erosion, wechselnde Wassermassen); Gesellschaft: politische Systeme, Kulturen, Sprachen verändern sich. (c) Gegenargument: Naturgesetze (Gravitation, Lichtgeschwindigkeit), mathematische Wahrheiten, logische Prinzipien scheinen beständig – oder: Parmenides' Gegenthese: Das Sein ist unveränderlich.",
+            "acceptable_reasoning": "Jede philosophisch kohärente Stellungnahme mit nachvollziehbarer Struktur (These – Beispiel – Gegenargument) gilt.",
+            "watch_outs": [
+              "πάντα ῥεῖ ist möglicherweise nicht wörtlich von Heraklit, sondern eine Zusammenfassung durch Nachfolger – diese philologische Nuance kann erwähnt, muss aber nicht bewertet werden.",
+              "Schüler:innen tendieren dazu, nur zuzustimmen oder nur abzulehnen – die Aufgabe verlangt ausdrücklich ein Gegenargument.",
+              "Naturgesetze als 'Beständiges' sind eine starke Antwort; Schüler:innen, die abstrakte Konzepte wie 'Logik' nennen, zeigen hohe Kompetenz."
+            ],
+            "rubric": [
+              {"criterion": "Erklärung der These (a)", "levels": ["Kernidee des Wandels klar und eigenständig formuliert", "Inhaltlich korrekt, aber nahe am Ausgangstext", "Vage oder missverständlich"]},
+              {"criterion": "Beispiele (b)", "levels": ["Zwei treffende Beispiele mit Bezug zur These", "Ein Beispiel treffend", "Beispiele ohne klaren Bezug"]},
+              {"criterion": "Gegenargument (c)", "levels": ["Kohärent, sachlich korrekt und begründet", "Vorhanden, aber nicht begründet", "Fehlt oder widersprüchlich"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "decision_scenario",
+            "prompt": "Stell dir vor, du bist Mitglied einer Jury, die entscheiden soll, wessen Theorie über den Grundbaustein der Welt – Thales' Wasser, Anaximenes' Luft, Heraklits Feuer/Logos oder Demokrits Atom – die wissenschaftlich überzeugendste für das 5. Jh. v. Chr. war. Entscheide dich für eine Theorie und begründe deine Entscheidung mit mindestens drei Argumenten. Bedenke: Es geht nicht darum, wer aus heutiger Sicht 'Recht hat', sondern darum, welche Theorie methodisch überzeugender argumentiert.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Jury-Entscheidung: Welche vorsokratische Theorie ist für das 5. Jh. v. Chr. methodisch überzeugender – und warum?"
+            },
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55
+            },
+            "cognitive_level": "create",
+            "dimensions": ["INT"],
+            "serves": [
+              {"competence_id": "GRI.OS.7.GRI.02", "relation": "exercises"},
+              {"competence_id": "GRI.OS.7.GRI.01", "relation": "exercises"}
+            ],
+            "est_minutes": 15,
+            "asset_refs": [],
+            "answer_key": "Musterlösung (Demokrit): Demokrits Atomtheorie ist methodisch am überzeugendsten, weil (1) sie das Prinzip der Unteilbarkeit konsequent zu Ende denkt und eine klare Grenze setzt; (2) sie Bewegung (κενόν) systematisch einbezieht, was andere Theorien vernachlässigen; (3) sie prinzipiell durch Beobachtung von Auflösungsprozessen (Staub, Verdampfen) gestützt werden kann. Andere Lösungen sind möglich und gleichwertig, wenn sie methodische Kriterien benennen.",
+            "acceptable_reasoning": "Jede klar begründete Entscheidung mit mindestens drei sachlich korrekten Argumenten gilt als vollwertig. Wichtiger als die Wahl der Theorie ist die Qualität der Argumentation.",
+            "watch_outs": [
+              "Schüler:innen wählen oft Demokrit, weil sie wissen, dass Atome 'richtig' sind – das soll explizit entkoppelt werden (Aufgabenstellung!). Die Begründung muss auf 5. Jh. v. Chr.-Maßstäben basieren.",
+              "Schwächere Antworten listen nur Fakten auf, ohne zu argumentieren – auf den Unterschied Auflistung vs. Argumentation hinweisen.",
+              "Heraklit ist eine anspruchsvolle Wahl (λόγος ist abstrakter als materielle Prinzipien) – solche Antworten verdienen besondere Würdigung."
+            ],
+            "rubric": [
+              {"criterion": "Entscheidung klar formuliert", "levels": ["Klare, eindeutige Entscheidung", "Entscheidung erkennbar, aber unklar formuliert", "Keine klare Entscheidung"]},
+              {"criterion": "Qualität der Argumente", "levels": ["Mindestens 3 methodisch bezogene Argumente", "2 Argumente mit methodischem Bezug", "1 Argument oder nur Faktenauflistung", "Keine Argumente"]},
+              {"criterion": "Historische Perspektive (nicht modernes 'Recht haben')", "levels": ["Konsequent aus 5. Jh. v. Chr. Perspektive argumentiert", "Teilweise modern, teilweise historisch", "Nur modernes Urteil"]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

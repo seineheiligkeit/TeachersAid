@@ -1,0 +1,71 @@
+{
+  "id": "c0038.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Architektur und Gesellschaft: Entscheide jeweils, ob die Aussage stimmt oder nicht, und begründe deine Antwort in einem kurzen Satz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Öffentliche Gebäude wie Rathäuser oder Parlamente sollen oft Macht und Stabilität ausstrahlen.",
+        "Ein Gebäude aus Glas sendet immer eine Botschaft von Transparenz und Offenheit.",
+        "Sakrale Bauten (Kirchen, Moscheen, Synagogen) nutzen Höhe und Licht, um eine besondere Stimmung zu erzeugen.",
+        "Wie ein Gebäude aussieht, hat keinen Einfluss darauf, wie sich Menschen darin fühlen."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "Wahr / Falsch",
+        "Begründung"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "WAH"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "KUG.US.2.WAH.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1. Wahr — klassische Architektur mit Säulen, Symmetrie, Treppen symbolisiert Würde und staatliche Macht (z.B. Parlament Wien). 2. Falsch (differenziert) — Glas kann auch Kälte, Überwachung oder Verletzlichkeit ausstrahlen (z.B. gläsernes Gefängnis als Metapher). 3. Wahr — Kathedralengotik nutzt Höhe und Lichtbrechung durch Buntglas bewusst für spirituelle Wirkung. 4. Falsch — Raumpsychologie belegt, dass Deckenhöhe, Farbe, Licht und Material Stimmung und Verhalten messbar beeinflussen.",
+    "acceptable_reasoning": "Aussage 2 ist eine differenzierte Falsch-Antwort — Schüler:innen, die „wahr“ mit einer nuancierten Begründung wählen, vollen Kredit geben.",
+    "rubric": [],
+    "watch_outs": [
+      "Aussage 4 klingt offensichtlich falsch — sicherstellen, dass Schüler:innen konkrete Belege nennen, nicht nur „stimmt nicht“.",
+      "Aussage 2 ist die schwierigste — die Falle ist, dass Glasfassaden als Symbol für Transparenz allgegenwärtig sind, der Kontext aber entscheidend ist."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Kunst und Gestaltung",
+  "klasse": 2,
+  "kompetenzbereich": "Wahrnehmen und Reflektieren",
+  "competences": [
+    "KUG.US.2.WAH.03"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "WAH"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0038",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

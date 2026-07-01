@@ -1,0 +1,69 @@
+{
+  "id": "c0048.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "ordering",
+    "prompt": "Bringe die folgenden Stationen des Lebenswegs eines Baumwoll-T-Shirts in die richtige Reihenfolge — vom Rohstoff bis zur Entsorgung.",
+    "payload": {
+      "kind": "ordering",
+      "items": [
+        "Baumwollpflanze wächst auf dem Feld (Anbau mit Bewässerung und Pestiziden)",
+        "Rohbaumwolle wird zur Faser verarbeitet (Entkörnung, Spinnen zu Garn)",
+        "Garn wird zu Stoff gewebt oder gestrickt",
+        "Stoff wird in einer Fabrik zugeschnitten und genäht",
+        "T-Shirt wird per Schiff und LKW in den Handel transportiert",
+        "Käufer:in trägt das T-Shirt mehrere Jahre",
+        "T-Shirt landet im Altkleidercontainer oder im Restmüll"
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 7
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "REF"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "TED.US.4.REF.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Korrekte Reihenfolge: 1. Anbau → 2. Faserverarbeitung → 3. Stoff → 4. Nähen → 5. Transport → 6. Nutzung → 7. Entsorgung. Schüler:innen sollen die Reihenfolge der Nummern notieren.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Schüler:innen setzen Transport ans Ende — Transport findet tatsächlich an mehreren Stellen statt (Rohstoff → Fabrik → Handel → Entsorgungsort). Vereinfachung hier akzeptabel.",
+      "Entsorgung: viele denken an 'wegwerfen' — Altkleidercontainer als Zwischenstufe (nicht automatisch Recycling) ansprechen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "ordering",
+  "subject": "Technik und Design",
+  "klasse": 4,
+  "kompetenzbereich": "Reflexion",
+  "competences": [
+    "TED.US.4.REF.02"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "REF"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0048",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

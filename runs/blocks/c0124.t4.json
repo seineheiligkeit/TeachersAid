@@ -1,0 +1,142 @@
+{
+  "id": "c0124.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Ein Staat überlegt, welche Klimaschutzmaßnahme er zuerst einführen soll. Lies die drei Vorschläge und entscheide, welcher deiner Meinung nach am meisten bringt. Begründe mit einem Argument, das auf den Daten aus Abb. 1 aufbaut.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Drei Vorschläge zur Diskussion: (A) Österreich setzt eine CO₂-Steuer ein, um den Pro-Kopf-Ausstoß um 30 % zu senken. (B) Die EU finanziert erneuerbare Energie in Nigeria, um dort den Ausstoß zu verdoppeln (von 0,6 auf 1,2 t/Kopf). (C) Eine internationale Vereinbarung verpflichtet die USA, ihren Ausstoß auf EU-Niveau (ca. 6–7 t) zu senken."
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "S",
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.4.WET.05",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Musterantwort (physikalisch): Maßnahme C hat den größten absoluten Effekt: USA von 13,6 auf ~6,9 t = −6,7 t × 340 Mio. Einwohner ≈ −2,3 Mrd. t/Jahr weniger. Maßnahme A (Österreich −30 % von 6,3 = −1,89 t × 9 Mio. ≈ −17 Mio. t) hat global kaum Wirkung. Maßnahme B erhöht zwar Nigerias Ausstoß leicht, aber die Grundversorgung mit Energie in einem Entwicklungsland ist gerechtigkeitlich sinnvoll; der absolute Anstieg ist minimal (0,6 t × 220 Mio. ≈ +132 Mio. t). Es gibt keine einzig richtige Antwort — die Fähigkeit, Größenordnungen mit Datenbezug zu vergleichen, ist das Ziel.",
+    "acceptable_reasoning": "Jede Entscheidung mit Datenbezug und physikalischer Begründung ist vollwertig. Politische oder ethische Argumente ergänzen, sollen aber physikalisch-quantitative Argumente nicht ersetzen.",
+    "rubric": [
+      {
+        "criterion": "Datenbezug",
+        "levels": [
+          "Konkrete Werte aus Abb. 1 verwendet",
+          "Diagramm erwähnt, keine Zahlen",
+          "Kein Bezug"
+        ]
+      },
+      {
+        "criterion": "Größenordnung",
+        "levels": [
+          "Absoluten Effekt abgeschätzt oder verglichen",
+          "Nur relativer Vergleich (größer/kleiner)",
+          "Fehlt"
+        ]
+      },
+      {
+        "criterion": "Begründung",
+        "levels": [
+          "Klare physikalisch-quantitative Begründung",
+          "Intuitive Begründung ohne Rechnung",
+          "Meinungsaussage ohne Begründung"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schülerinnen und Schüler wählen intuitiv A (Österreich — naheliegend), ohne die Größenordnung zu bedenken. Darauf hinweisen, dass der globale Effekt winzig ist.",
+      "Nicht dazu verleiten, ein 'richtiges' Ergebnis zu erwarten — die Qualität der Argumentation zählt, nicht die Wahl.",
+      "Klimagerechtigkeit (historische Emissionen, Entwicklungsrecht) kann kurz angesprochen werden, ohne den physikalischen Kern zu verdrängen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Wetter und Klima",
+  "competences": [
+    "PHY.US.4.WET.05"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "S",
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "title": "CO₂-Ausstoß pro Kopf im Ländervergleich (2024)",
+        "log": false,
+        "categories": [
+          "Österreich",
+          "Deutschland",
+          "Schweiz",
+          "Italien",
+          "USA",
+          "China",
+          "Indien",
+          "Nigeria"
+        ],
+        "values": [
+          6.3,
+          6.9,
+          3.7,
+          5.1,
+          13.6,
+          9.3,
+          2.2,
+          0.6
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "worldbank_co2_pro_kopf",
+        "series": "vergleich",
+        "note": null,
+        "title": "CO₂-Ausstoß pro Kopf im Ländervergleich",
+        "url": "https://data.worldbank.org/indicator/EN.GHG.CO2.PC.CE.AR5",
+        "attribution": "Datenquelle: World Bank – data.worldbank.org (EN.GHG.CO2.PC.CE.AR5, CC BY 4.0)",
+        "stand": "2024"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0124",
+  "source": "ai",
+  "created_at": "2026-06-27T15:21:18+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

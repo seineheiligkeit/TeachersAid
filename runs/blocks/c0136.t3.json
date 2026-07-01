@@ -1,0 +1,91 @@
+{
+  "id": "c0136.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "textanalyse",
+    "prompt": "Deine Lehrperson legt euch zwei Kurztexte zum selben Ereignis vor (z. B. zwei Onlineartikel aus verschiedenen Quellen). Analysiere beide Texte: Welche Sprache wird jeweils gewählt (neutral, emotional, wertend)? Welche Informationen enthält der eine Text, die der andere weglässt? Welches Bild des Ereignisses entsteht jeweils? Halte deine Beobachtungen in der Tabelle fest.",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Kriterium",
+        "Text 1",
+        "Text 2"
+      ],
+      "rows": 5
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "MB",
+      "TK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DEU.OS.7.MED.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "DEU.OS.7.TEX.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 14,
+    "answer_key": "Lehrperson wählt passende Texte (z. B. Bericht über ein politisches Ereignis in zwei Zeitungen unterschiedlicher Linie, oder einen boulevardesken vs. qualitätsjournalistischen Artikel). Kriterien für die Tabelle: Wortfeld/Vokabular, Quellen/Stimmen (wer kommt zu Wort?), Auslassungen, Überschrift, Emotionalisierung. Das Ziel ist nicht, einen Text als 'richtig' und den anderen als 'falsch' zu klassifizieren, sondern Differenzen sichtbar zu machen.",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Textbeobachtungen",
+        "levels": [
+          "Kaum konkrete Beobachtungen, vage Eindrücke",
+          "Einige Beobachtungen mit Textbezug, aber lückenhaft",
+          "Systematische, konkrete Beobachtungen mit präzisen Belegen"
+        ]
+      },
+      {
+        "criterion": "Vergleichstiefe",
+        "levels": [
+          "Texte werden nacheinander beschrieben, kaum verglichen",
+          "Vergleich punktuell vorhanden",
+          "Systematischer Vergleich der Gemeinsamkeiten und Unterschiede"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen neigen dazu, sofort zu werten ('dieser Text lügt'), bevor sie analysiert haben. Den analytischen Schritt klar vom Urteilsschritt trennen: erst beschreiben, dann bewerten.",
+      "Qualitätsunterschiede dürfen am Ende durchaus benannt werden – aber auf Basis nachgewiesener Kriterien, nicht aufgrund von Vorurteilen über bestimmte Medien."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "textanalyse",
+  "subject": "Deutsch",
+  "klasse": 7,
+  "kompetenzbereich": "Mediale Bildung",
+  "competences": [
+    "DEU.OS.7.MED.02",
+    "DEU.OS.7.TEX.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "MB",
+    "TK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0136",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:20+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

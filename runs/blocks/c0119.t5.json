@@ -1,0 +1,87 @@
+{
+  "id": "c0119.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Ordne die neun Bevoelkerungswerte der Groesse nach und bestimme den Median (den mittleren Wert). Wie unterscheidet sich der Median vom Mittelwert? Was koennte der Grund sein?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "OPE",
+      "BEG"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.1.DAT.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Geordnete Werte: 301 951 | 409 973 | 569 744 | 571 479 | 775 970 | 1 269 801 | 1 530 349 | 1 723 723 | 2 005 760. Bei n = 9 Werten ist der Median der 5. Wert = 775 970 (Tirol). Mittelwert ca. 1 017 600, Median 775 970. Unterschied: ca. 242 000. Grund: Wien (2 005 760) und Niederoesterreich (1 723 723) sind sehr grosse Ausreisser und ziehen den Mittelwert nach oben; der Median reagiert darauf nicht.",
+    "acceptable_reasoning": "Beobachtung, dass der Median robuster gegenueber grossen Ausreissern ist, genuegt als Begruendung.",
+    "rubric": [
+      {
+        "criterion": "Korrekte Ordnung",
+        "levels": [
+          "Falsch geordnet",
+          "Richtig geordnet"
+        ]
+      },
+      {
+        "criterion": "Median korrekt bestimmt (775 970)",
+        "levels": [
+          "Falscher Median",
+          "Richtiger Median"
+        ]
+      },
+      {
+        "criterion": "Unterschied Mittelwert/Median erklaert",
+        "levels": [
+          "Kein Erklaerungsversuch",
+          "Ausreisser-Effekt angesprochen",
+          "Ausreisser klar benannt und Auswirkung erklaert"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Bei n = 9 (ungerade Anzahl) ist der Median der mittlere Wert — viele Schuelerinnen und Schueler rechnen das Mittel der beiden mittleren Werte (wie bei n gerade).",
+      "Die Ordnung der Werte muss vollstaendig sein; haeufiger Fehler ist falsches Einordnen einer Zahl wegen grosser Stellenzahl."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Mathematik",
+  "klasse": 1,
+  "kompetenzbereich": "4: Daten und Zufall",
+  "competences": [
+    "MAT.US.1.DAT.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "OPE",
+    "BEG"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0119",
+  "source": "ai",
+  "created_at": "2026-06-27T15:21:14+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

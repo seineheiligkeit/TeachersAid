@@ -1,0 +1,293 @@
+{
+  "subject": "Mathematik",
+  "klasse": 6,
+  "kompetenzbereich": "Beschreibende Statistik; Wahrscheinlichkeit",
+  "title": "Zufall, Wahrscheinlichkeit und der Satz von Bayes",
+  "kernfrage": "Wie kannst du Wahrscheinlichkeiten mithilfe von Baumdiagrammen und dem Satz von Bayes berechnen — und was bedeutet es, wenn ein Test positiv ausfällt?",
+  "body": {
+    "intro": [
+      "Tests, die angeblich 99 % zuverlässig sind, Wettervorhersagen in Prozent, Lottozahlen, Versicherungsrisiken — Wahrscheinlichkeitsrechnung begegnet uns überall. In diesem Arbeitsblatt lernst du, wie man mit Baumdiagrammen Schritt für Schritt durch mehrstufige Zufallsexperimente denkt, und wie man mithilfe des Satzes von Bayes eine überraschende Frage beantworten kann: Wie wahrscheinlich ist es, wirklich krank zu sein, wenn ein Test positiv ist?"
+    ],
+    "data_figures": [],
+    "assets": [
+      {
+        "id": "abb1",
+        "role": "figure",
+        "generator": "matplotlib:math_formula",
+        "spec": {
+          "latex": "P(A \\mid B) = \\frac{P(B \\mid A) \\cdot P(A)}{P(B)}"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Grundbegriffe: Zufallsversuch, Ereignis und Wahrscheinlichkeit",
+        "throughline": "Schüler:innen klären die Kernbegriffe der Wahrscheinlichkeitsrechnung und erkennen, dass Wahrscheinlichkeiten auf verschiedene Weisen ermittelt werden können — jede mit ihren Grenzen.",
+        "talking_points": [
+          "Unterscheide klar: Laplace-Wahrscheinlichkeit (gleich wahrscheinliche Ergebnisse) vs. relative Häufigkeit (empirisch) vs. subjektives Vertrauen — alle drei sind legitime Methoden mit unterschiedlichen Anwendungsbereichen.",
+          "Relative Häufigkeit nähert sich bei großen Versuchsreihen der Wahrscheinlichkeit an — das ist das Gesetz der großen Zahlen (ohne formal zu beweisen).",
+          "Betone: Wahrscheinlichkeiten liegen immer in [0,1]; P(Ω) = 1; P(∅) = 0.",
+          "Schüler:innen neigen dazu, Wahrscheinlichkeit mit Sicherheit gleichzusetzen — das braucht explizite Korrektur."
+        ],
+        "extensions": [
+          "Klassendiskussion: Wie verlässlich ist eine relative Häufigkeit nach 10 Würfen? Nach 1000? Was sagt das über Sportwetten aus?",
+          "Recherche: Wie bestimmen Versicherungen Wahrscheinlichkeiten für Schäden — welche Methode verwenden sie?",
+          "Paradoxon: Das Geburtstagsparadoxon — ab wie vielen Personen ist die Wahrscheinlichkeit, dass zwei denselben Geburtstag haben, größer als 50 %?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "matching",
+            "prompt": "Ordne jedem der folgenden Beispiele die passende Methode zur Bestimmung der Wahrscheinlichkeit zu.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Ein fairer Würfel wird geworfen. Die Wahrscheinlichkeit, eine 3 zu werfen, beträgt 1/6.",
+                "In einer Stichprobe von 500 Befragten trinken 180 Kaffee. Die Wahrscheinlichkeit, dass eine zufällige Person Kaffee trinkt, wird mit 36 % angegeben.",
+                "Ein Meteorologe schätzt, dass die Regenwahrscheinlichkeit morgen 70 % beträgt.",
+                "Bei 10.000 Würfen eines verdächtigen Würfels fiel die 6 genau 2.100-mal. Die Wahrscheinlichkeit wird mit 21 % angegeben."
+              ],
+              "right": [
+                "Relative Häufigkeit durch Versuchsserie",
+                "Subjektives Vertrauen (Expertenmeinung)",
+                "Laplace-Wahrscheinlichkeit (gleich wahrscheinliche Ergebnisse)",
+                "Bestimmung eines relativen Anteils (in einer Stichprobe)"
+              ]
+            },
+            "response": { "mode": "none" },
+            "cognitive_level": "understand",
+            "dimensions": ["ID"],
+            "serves": [
+              { "competence_id": "MAT.OS.6.BES.02", "relation": "exercises" }
+            ],
+            "est_minutes": 6,
+            "asset_refs": [],
+            "answer_key": "1 → Laplace-Wahrscheinlichkeit; 2 → Bestimmung eines relativen Anteils; 3 → Subjektives Vertrauen; 4 → Relative Häufigkeit durch Versuchsserie.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen verwechseln relative Häufigkeit (Versuchsserie) mit relativen Anteil (Stichprobe) — beide sind empirisch, aber der Kontext unterscheidet sie.",
+              "Subjektives Vertrauen ist eine legitime Methode, keine Schätzung ins Blaue — Schüler:innen unterschätzen oft deren Validität bei Experten.",
+              "Laplace-Wahrscheinlichkeit setzt gleich wahrscheinliche Ergebnisse voraus — diese Voraussetzung ist zu betonen."
+            ],
+            "rubric": [
+              { "criterion": "Zuordnung", "levels": ["0–1 richtig", "2–3 richtig", "Alle 4 richtig"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "true_false_justify",
+            "prompt": "Entscheide, ob die folgende Aussage wahr oder falsch ist, und begründe deine Entscheidung kurz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Wenn eine Münze 10-mal geworfen wird und 8-mal Kopf zeigt, ist es beim 11. Wurf wahrscheinlicher, dass Zahl kommt.",
+                "Die relative Häufigkeit eines Ereignisses nähert sich bei einer sehr großen Anzahl von Versuchen immer mehr der Wahrscheinlichkeit dieses Ereignisses an.",
+                "Eine Wahrscheinlichkeit von 0 bedeutet, dass ein Ereignis unmöglich ist und niemals eintreten kann."
+              ]
+            },
+            "response": { "mode": "box", "min_height_mm": 45 },
+            "cognitive_level": "evaluate",
+            "dimensions": ["KA"],
+            "serves": [
+              { "competence_id": "MAT.OS.6.BES.03", "relation": "exercises" },
+              { "competence_id": "MAT.OS.6.BES.02", "relation": "deepens" }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "Aussage 1: FALSCH — Gambler's Fallacy. Jeder Münzwurf ist unabhängig vom vorherigen; P(Zahl) = 0,5 bleibt konstant. Aussage 2: WAHR — Gesetz der großen Zahlen; bei mehr Versuchen konvergiert die relative Häufigkeit gegen die echte Wahrscheinlichkeit. Aussage 3: FALSCH (mit Nuance) — In der Mathematik (bei Laplace-Experimenten) bedeutet P = 0 meist Unmöglichkeit. Bei stetigen Verteilungen kann ein einzelner Wert die Wahrscheinlichkeit 0 haben und trotzdem eintreten. Im Kontext der Oberstufe (diskret): FALSCH ist eine akzeptable Antwort, wenn die Begründung auf Unmöglichkeit vs. Gewissheit abhebt.",
+            "acceptable_reasoning": "Zu Aussage 1: Schüler:innen sollen das Stichwort „Unabhängigkeit“ verwenden. Zu Aussage 3 genügt: P = 0 heißt unmöglich; P = 1 heißt sicher — und Unabhängigkeit der Versuche.",
+            "watch_outs": [
+              "Gambler's Fallacy (Aussage 1) ist eine der häufigsten Fehlvorstellungen — explizit thematisieren und mit dem Begriff Unabhängigkeit verknüpfen.",
+              "Aussage 3 hat im diskreten Fall eine klare Antwort; im stetigen Fall ist es komplizierter — je nach Klasse anpassen.",
+              "Schüler:innen sollen Begriffe korrekt verwenden: Unmöglichkeit vs. geringe Wahrscheinlichkeit."
+            ],
+            "rubric": [
+              { "criterion": "Aussage 1 (Gambler's Fallacy)", "levels": ["Falsch bewertet oder keine Begründung", "Richtig mit Unabhängigkeitsargument"] },
+              { "criterion": "Aussage 2 (Konvergenz)", "levels": ["Falsch bewertet", "Richtig, Begründung vage", "Richtig mit Gesetz der großen Zahlen"] },
+              { "criterion": "Aussage 3 (P=0)", "levels": ["Falsch bewertet ohne Begründung", "Richtig bewertet, Begründung vorhanden"] }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Baumdiagramme und Additions- bzw. Multiplikationsregel",
+        "throughline": "Schüler:innen lernen, mehrstufige Zufallsexperimente systematisch durch Baumdiagramme darzustellen und Wahrscheinlichkeiten durch die Multiplikationsregel (entlang eines Pfades) und die Additionsregel (mehrere Pfade) zu berechnen.",
+        "talking_points": [
+          "Pfadwahrscheinlichkeit = Produkt der Kantenwahrscheinlichkeiten — das ist die Multiplikationsregel im Baumdiagramm.",
+          "Mehrere günstige Pfade → Additionsregel: P(A) = Summe der Pfadwahrscheinlichkeiten, die zu A führen.",
+          "Vollständigkeitscheck: Alle Äste einer Ebene müssen sich zu 1 aufaddieren.",
+          "Baumdiagramme sind besonders wertvoll für bedingte Wahrscheinlichkeiten — ein Ast ist schon eine Bedingung."
+        ],
+        "extensions": [
+          "Aufgabe: Vergleiche das Baumdiagramm mit der Formel für bedingte Wahrscheinlichkeit — was liest du am Baum ab?",
+          "Untersuche: Was ändert sich am Baum, wenn die Ziehung mit Zurücklegen statt ohne Zurücklegen stattfindet?",
+          "Schüler:innen erstellen für ein selbst gewähltes Alltagsbeispiel ein vollständiges Baumdiagramm."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "calculation",
+            "prompt": "In einer Klasse sind 30 Schüler:innen: 18 machen Sport (Ereignis S), 12 nicht. Von den 18 Sportler:innen spielen 10 auch ein Instrument (Ereignis I). Von den 12 Nicht-Sportler:innen spielen 4 ein Instrument.\n(a) Stelle diese Situation als vollständiges zweistufiges Baumdiagramm dar. Trage alle Wahrscheinlichkeiten an den Ästen ein.\n(b) Berechne die Wahrscheinlichkeit, dass eine zufällig gewählte Person Sport macht UND ein Instrument spielt.\n(c) Berechne die Wahrscheinlichkeit, dass eine zufällig gewählte Person ein Instrument spielt (unabhängig vom Sport).",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 80 },
+            "cognitive_level": "apply",
+            "dimensions": ["DM", "FO"],
+            "serves": [
+              { "competence_id": "MAT.OS.6.BES.04", "relation": "exercises" }
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "(a) Erste Ebene: P(S) = 18/30 = 3/5; P(S̄) = 12/30 = 2/5. Zweite Ebene: P(I|S) = 10/18 = 5/9; P(Ī|S) = 8/18 = 4/9; P(I|S̄) = 4/12 = 1/3; P(Ī|S̄) = 8/12 = 2/3. (b) P(S ∩ I) = P(S) · P(I|S) = 3/5 · 5/9 = 15/45 = 1/3 ≈ 0,333. (c) P(I) = P(S∩I) + P(S̄∩I) = 1/3 + (2/5 · 1/3) = 1/3 + 2/15 = 5/15 + 2/15 = 7/15 ≈ 0,467. Probe: 14 von 30 Schüler:innen spielen Instrument → 14/30 = 7/15. ✓",
+            "acceptable_reasoning": "Schüler:innen können alternativ direkt mit absoluten Zahlen rechnen und am Ende durch 30 dividieren.",
+            "watch_outs": [
+              "Häufiger Fehler: Wahrscheinlichkeiten der zweiten Ebene (bedingte Ws.) statt absoluter Häufigkeiten eintragen — im Baum immer bedingte Ws. an Folgeäste.",
+              "Probe durch Rückrechnung auf absolute Häufigkeiten empfehlen: 7/15 · 30 = 14 — stimmt mit Ausgangsdaten überein.",
+              "Vollständigkeitscheck der Äste erinnern: 5/9 + 4/9 = 1 ✓"
+            ],
+            "rubric": [
+              { "criterion": "Baumdiagramm (Äste und Ws.)", "levels": ["Fehlt oder falsch aufgebaut", "Aufbau korrekt, Ws. fehlerhaft", "Vollständig korrekt"] },
+              { "criterion": "P(S∩I)", "levels": ["Falscher Ansatz", "Ansatz richtig, Rechenfehler", "1/3 korrekt"] },
+              { "criterion": "P(I) gesamt", "levels": ["Fehlt", "Additionsregel angewandt, Rechenfehler", "7/15 korrekt"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "calculation",
+            "prompt": "In einer Urne befinden sich 5 rote und 3 blaue Kugeln. Es werden nacheinander 2 Kugeln ohne Zurücklegen gezogen.\n(a) Berechne die Wahrscheinlichkeit, dass beide Kugeln rot sind.\n(b) Berechne die Wahrscheinlichkeit, dass die erste Kugel rot und die zweite blau ist.\n(c) Berechne die Wahrscheinlichkeit, dass genau eine der beiden Kugeln rot ist.\n(d) Sind die Ereignisse „erste Kugel rot“ und „zweite Kugel rot“ stochastisch unabhängig? Begründe.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 75 },
+            "cognitive_level": "analyze",
+            "dimensions": ["FO", "KA"],
+            "serves": [
+              { "competence_id": "MAT.OS.6.BES.04", "relation": "exercises" },
+              { "competence_id": "MAT.OS.6.BES.05", "relation": "exercises" }
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "(a) P(RR) = 5/8 · 4/7 = 20/56 = 5/14 ≈ 0,357. (b) P(RB) = 5/8 · 3/7 = 15/56 ≈ 0,268. (c) P(genau eine rot) = P(RB) + P(BR) = 15/56 + (3/8 · 5/7) = 15/56 + 15/56 = 30/56 = 15/28 ≈ 0,536. (d) NEIN — weil P(zweite rot | erste rot) = 4/7 ≠ 5/8 = P(zweite rot). Das Ergebnis der ersten Ziehung beeinflusst die zweite (Ziehung ohne Zurücklegen).",
+            "acceptable_reasoning": "Für (d) genügt der Nachweis P(A∩B) ≠ P(A)·P(B): P(RR) = 5/14 ≠ 5/8 · 5/8 = 25/64.",
+            "watch_outs": [
+              "Verwechslung von mit/ohne Zurücklegen ist sehr häufig — explizit thematisieren, warum sich der Nenner ändert.",
+              "Bei (c) müssen beide günstigen Pfade (RB und BR) addiert werden — Additionsregel.",
+              "Unabhängigkeit: Schüler:innen sollen eine konkrete Rechnung angeben, nicht nur behaupten — Ziehung ohne Zurücklegen macht Abhängigkeit intuitiv klar."
+            ],
+            "rubric": [
+              { "criterion": "Teilaufgabe (a)", "levels": ["Falsch", "Ansatz korrekt, Fehler", "5/14 korrekt"] },
+              { "criterion": "Teilaufgabe (c)", "levels": ["Nur einen Pfad berücksichtigt", "Beide Pfade, Rechenfehler", "15/28 korrekt"] },
+              { "criterion": "Unabhängigkeit (d)", "levels": ["Behauptung ohne Berechnung", "Rechnung vorhanden, Schluss fehlt", "Vollständige Begründung mit Berechnung"] }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "Bedingte Wahrscheinlichkeit und der Satz von Bayes",
+        "throughline": "Schüler:innen erarbeiten die bedingte Wahrscheinlichkeit als Grundlage des Satzes von Bayes und wenden ihn auf das medizinische Testproblem an — ein Kontext, der fundamentale Fehlinterpretationen von Testergebnissen aufdeckt.",
+        "talking_points": [
+          "P(A|B) ist die Wahrscheinlichkeit von A, wenn wir wissen, dass B eingetreten ist — Einschränkung des Ergebnisraums.",
+          "Der Satz von Bayes dreht die Konditionierung um: aus P(positiv|krank) berechnen wir P(krank|positiv).",
+          "Schockierende Erkenntnis: Selbst ein 99%-Test liefert bei seltenen Krankheiten überwiegend falsche positive Ergebnisse — Grundrate (Prävalenz) ist entscheidend.",
+          "Visualisierung durch Häufigkeitsbaum mit absoluten Zahlen erleichtert das Verständnis erheblich (Natürliche Häufigkeiten statt Prozente)."
+        ],
+        "extensions": [
+          "Schüler:innen recherchieren: Welche Sensitivität und Spezifität haben reale Medizintests (z. B. Schnelltest auf COVID-19)?",
+          "Diskussion: Wann lohnt es sich, einen Test zu machen? Ab welcher Prävalenz ist ein positives Ergebnis aussagekräftig?",
+          "Aufgabe: Wie verändert sich P(krank|positiv), wenn die Prävalenz von 1 % auf 10 % steigt? Berechne und interpretiere."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "calculation",
+            "prompt": "In einer Sportabteilung werden 200 Schüler:innen auf eine seltene Erkrankung getestet. 10 von ihnen sind tatsächlich erkrankt (Ereignis K). Der Test hat folgende Eigenschaften:\n• Bei erkrankten Personen schlägt er in 90 % der Fälle an (positives Ergebnis, Ereignis P).\n• Bei gesunden Personen liefert er in 5 % der Fälle fälschlicherweise ein positives Ergebnis.\n(a) Berechne, wie viele der 200 Personen ein positives Testergebnis erhalten (absolute Zahlen).\n(b) Wie viele der positiv Getesteten sind tatsächlich krank?\n(c) Berechne P(K|P): die Wahrscheinlichkeit, bei positivem Testergebnis tatsächlich krank zu sein.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 70 },
+            "cognitive_level": "apply",
+            "dimensions": ["FO", "DM"],
+            "serves": [
+              { "competence_id": "MAT.OS.6.BES.05", "relation": "exercises" },
+              { "competence_id": "MAT.OS.6.BES.06", "relation": "exercises" }
+            ],
+            "est_minutes": 12,
+            "asset_refs": ["abb1"],
+            "answer_key": "Ausgangsdaten: 10 krank, 190 gesund. (a) Positiv krank: 0,9 · 10 = 9. Positiv gesund (falsch positiv): 0,05 · 190 = 9,5 ≈ 9 oder 10 (Rundung akzeptabel, mit Begründung). Gesamt positiv: 9 + 9,5 = 18,5 ≈ 18 oder 19. (b) 9 der positiv Getesteten sind krank. (c) P(K|P) = 9 / 18,5 ≈ 0,486 ≈ 48,6 %. (Exakt: P(K|P) = (0,9 · 10/200) / ((0,9 · 10 + 0,05 · 190)/200) = 9/18,5 ≈ 0,486.) Nur ca. die Hälfte der positiv Getesteten ist wirklich krank.",
+            "acceptable_reasoning": "Natürliche-Häufigkeiten-Ansatz mit absoluten Zahlen ist ausdrücklich erwünscht — er macht den Rechenweg transparenter.",
+            "watch_outs": [
+              "Häufige Fehlvorstellung: „Der Test ist zu 90 % genau, also ist ein positives Ergebnis zu 90 % richtig.“ — Das ist falsch; Sensitivität ist nicht gleich positiver Vorhersagewert.",
+              "Rundungsfehler bei 9,5: Schüler:innen sollen angeben, warum sie runden, oder exakt mit Brüchen rechnen.",
+              "P(K|P) ≈ 48,6 % ist das überraschende Ergebnis — hier liegt der pädagogische Schwerpunkt."
+            ],
+            "rubric": [
+              { "criterion": "Absolute Häufigkeiten", "levels": ["Falsch berechnet", "9 krank-positiv und ~9,5 gesund-positiv korrekt"] },
+              { "criterion": "P(K|P)", "levels": ["Ansatz fehlt", "Ansatz erkennbar, Rechenfehler", "≈ 48,6 % korrekt"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "open_response",
+            "prompt": "Verwende den Satz von Bayes in seiner Formelform, um das Ergebnis aus der vorigen Aufgabe zu bestätigen. Gegeben sind:\n• P(K) = 10/200 = 0,05 (Prävalenz)\n• P(P|K) = 0,9 (Sensitivität)\n• P(P|K̄) = 0,05 (Falsch-Positiv-Rate)\nBerechne P(K|P) mit der Formel P(K|P) = [P(P|K) · P(K)] / P(P), wobei P(P) = P(P|K) · P(K) + P(P|K̄) · P(K̄).",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 55 },
+            "cognitive_level": "apply",
+            "dimensions": ["FO"],
+            "serves": [
+              { "competence_id": "MAT.OS.6.BES.06", "relation": "exercises" }
+            ],
+            "est_minutes": 8,
+            "asset_refs": ["abb1"],
+            "answer_key": "P(K̄) = 1 − 0,05 = 0,95. P(P) = 0,9 · 0,05 + 0,05 · 0,95 = 0,045 + 0,0475 = 0,0925. P(K|P) = (0,9 · 0,05) / 0,0925 = 0,045 / 0,0925 ≈ 0,4865 ≈ 48,65 %. Stimmt mit dem Häufigkeitsansatz überein (kleine Abweichung durch Rundung auf 200 Personen).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen müssen P(P) als Summe aus beiden möglichen Wegen berechnen — häufig wird P(P|K̄) · P(K̄) vergessen.",
+              "Einsetzen in die Formel ohne Verständnis reicht nicht — Ergebnis mit dem Häufigkeitsbaum vergleichen lassen.",
+              "Unterschied zwischen P(P|K) (Sensitivität, Trefferquote) und P(K|P) (positiver Vorhersagewert) explizit thematisieren."
+            ],
+            "rubric": [
+              { "criterion": "P(P) korrekt berechnet", "levels": ["Fehlt oder falsch", "Teilweise (ein Term fehlt)", "0,0925 korrekt"] },
+              { "criterion": "P(K|P) Endresultat", "levels": ["Fehlt", "Ansatz richtig, Rechenfehler", "≈ 48,65 % korrekt"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "decision_scenario",
+            "prompt": "Stell dir vor, du bist Ärztin oder Arzt. Ein Patient kommt zu dir und sein Test auf eine seltene Erkrankung ist positiv ausgefallen. Der Test hat eine Sensitivität von 90 % und eine Falsch-Positiv-Rate von 5 %. Die Erkrankung tritt in der Bevölkerung bei 1 von 100 Personen auf (Prävalenz 1 %).\n(a) Berechne P(krank | positiver Test) für diese neue Situation.\n(b) Solltest du dem Patienten mitteilen, dass er wahrscheinlich krank ist? Begründe deine Entscheidung auf Basis deiner Rechnung.\n(c) Überlege: Wie könnte man die Aussagekraft des Tests verbessern, ohne den Test selbst zu verändern?",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Positiver Test bei 1 % Prävalenz — wie überzeugend ist das Ergebnis?"
+            },
+            "response": { "mode": "box", "min_height_mm": 80 },
+            "cognitive_level": "evaluate",
+            "dimensions": ["ID", "KA"],
+            "serves": [
+              { "competence_id": "MAT.OS.6.BES.06", "relation": "deepens" },
+              { "competence_id": "MAT.OS.x.HAN.04", "relation": "exercises" }
+            ],
+            "est_minutes": 14,
+            "asset_refs": [],
+            "answer_key": "(a) P(K) = 0,01; P(K̄) = 0,99. P(P) = 0,9 · 0,01 + 0,05 · 0,99 = 0,009 + 0,0495 = 0,0585. P(K|P) = 0,009 / 0,0585 ≈ 0,154 ≈ 15,4 %. (b) Nein — bei positivem Test ist der Patient nur mit ca. 15 % Wahrscheinlichkeit wirklich krank. Eine Diagnose auf Basis dieses Ergebnisses allein wäre voreilig. Weitere Tests oder Untersuchungen sind erforderlich. (c) Möglichkeiten: Präselektion (Test nur bei Risikopersonen durchführen → höhere Prävalenz in der getesteten Gruppe); Bestätigungstest (zweiter, unabhängiger Test); genaueren Test mit niedrigerer Falsch-Positiv-Rate verwenden.",
+            "acceptable_reasoning": "Für (c) ist jede begründete Antwort akzeptabel, die zeigt, dass Schüler:innen den Einfluss der Prävalenz auf den Vorhersagewert verstehen.",
+            "watch_outs": [
+              "Zentrales Lernziel dieser Aufgabe: Prävalenz (Grundrate) ist entscheidend — ohne sie kann man P(K|P) nicht beurteilen.",
+              "Schüler:innen sollen erkennen, dass ein Test mit hoher Sensitivität trotzdem einen niedrigen positiven Vorhersagewert haben kann.",
+              "Für (b): Die Frage ist normativ, nicht nur rechnerisch — Schüler:innen sollen mathematisch begründete Urteile formulieren.",
+              "Achte auf sprachliche Sorgfalt: 'Der Test ist positiv' ≠ 'Der Patient ist krank'."
+            ],
+            "rubric": [
+              { "criterion": "P(K|P) Berechnung", "levels": ["Fehlt oder falscher Ansatz", "Ansatz erkennbar, Rechenfehler", "≈ 15,4 % korrekt"] },
+              { "criterion": "Entscheidung (b)", "levels": ["Keine oder unbegründete Entscheidung", "Entscheidung mit Verweis auf Rechenergebnis", "Differenzierte Argumentation (weiterer Test empfohlen)"] },
+              { "criterion": "Verbesserungsvorschläge (c)", "levels": ["Keine oder unsinnige Vorschläge", "1 sinnvoller Vorschlag", "2+ begründete Vorschläge, Prävalenz-Argument erkennbar"] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

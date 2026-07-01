@@ -1,0 +1,83 @@
+{
+  "id": "c0022.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "construction",
+    "prompt": "Zeichne die drei Risse (Grundriss, Aufriss, Kreuzriss) eines geraden quadratischen Prismas (Quader) mit den Maßen Länge = 6 cm, Breite = 4 cm, Höhe = 3 cm.\n\nAnleitung:\n1. Zeichne den Aufriss (Vorderansicht) in der Mitte des Blatts.\n2. Projiziere daraus den Grundriss (nach unten, mit Hilfslinien).\n3. Projiziere den Kreuzriss (nach rechts, mit Hilfslinien).\n4. Zeichne alle sichtbaren Kanten mit einer Volllinie, verdeckte Kanten mit einer Strichlinie.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 110.0
+    },
+    "cognitive_level": "apply",
+    "dimensions": [
+      "H2"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GEZ.US.4.PRO.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 15,
+    "answer_key": "Aufriss: Rechteck 6 cm × 3 cm. Grundriss (unter dem Aufriss): Rechteck 6 cm × 4 cm. Kreuzriss (rechts neben dem Aufriss): Rechteck 4 cm × 3 cm. Beim Quader gibt es keine verdeckten Kanten in den Rissen. Hilfslinien zur Projektion sichtbar.",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Risse korrekt",
+        "levels": [
+          "Mehr als ein Riss falsch",
+          "Ein Riss falsch oder fehlende Maße",
+          "Alle drei Risse geometrisch korrekt"
+        ]
+      },
+      {
+        "criterion": "Linienarten",
+        "levels": [
+          "Nicht unterschieden",
+          "Teilweise unterschieden",
+          "Vollständig korrekt (Volllinien / Strichlinien)"
+        ]
+      },
+      {
+        "criterion": "Hilfslinien",
+        "levels": [
+          "Fehlend",
+          "Teilweise sichtbar",
+          "Vollständig und korrekt eingezeichnet"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Häufiger Fehler: Länge und Breite im Grundriss vertauscht — klären, welche Richtung im Grundriss der Breite (Tiefe) entspricht.",
+      "Hilfslinien weglassen ist ein typischer Flüchtigkeitsfehler — erklären, dass sie Teil der geometrischen Konstruktion sind."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "construction",
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Projektionen und Risse (I3)",
+  "competences": [
+    "GEZ.US.4.PRO.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "H2"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0022",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

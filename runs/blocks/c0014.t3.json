@@ -1,0 +1,75 @@
+{
+  "id": "c0014.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "text_production",
+    "prompt": "Schreibe eine **formelle E-Mail** an eine Lehrperson deiner Schule. Du möchtest höflich anfragen, ob du einen Termin für ein Gespräch über deine letzte Arbeit vereinbaren kannst.\n\nDeine E-Mail soll enthalten:\n- formelle Anrede\n- kurze Erklärung deines Anliegens\n- konkrete Terminvorschläge (erfinde zwei)\n- höfliche Verabschiedung\n\nUmfang: ca. 60–80 Wörter.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "create",
+    "dimensions": [
+      "SCH"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DEU.US.4.SCH.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Muster: 'Sehr geehrte Frau Mayer, ich möchte Sie höflich anfragen, ob ich einen kurzen Gesprächstermin bezüglich meiner letzten Deutscharbeit vereinbaren könnte. Ich würde mich freuen, wenn dies am Dienstag nach der 5. Stunde oder am Donnerstag in der großen Pause möglich wäre. Ich danke Ihnen im Voraus für Ihre Rückmeldung und freue mich auf das Gespräch. Mit freundlichen Grüßen, [Name]'",
+    "acceptable_reasoning": "Andere Formulierungen sind akzeptabel, solange alle vier strukturellen Elemente vorhanden sind.",
+    "rubric": [
+      {
+        "criterion": "Formale Elemente",
+        "levels": [
+          "1–2 Elemente fehlen",
+          "3 von 4 Elementen vorhanden",
+          "Alle 4 Elemente vorhanden und korrekt angewandt"
+        ]
+      },
+      {
+        "criterion": "Ton und Register",
+        "levels": [
+          "Informeller Ton oder Mischung",
+          "Weitgehend formell mit kleinen Brüchen",
+          "Durchgehend formell, höflich und sachlich"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Häufige Fehler: 'Sehr geehrter Herr/Frau' ohne Namen (akzeptabel, aber nicht ideal), oder 'Hallo' als Anrede (nicht formal genug).",
+      "Groß- und Kleinschreibung von 'Sie' (Höflichkeitsform) ist für viele noch unsicher – guter Anlass zur Erinnerung: 'Sie', 'Ihr', 'Ihnen' groß."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "text_production",
+  "subject": "Deutsch",
+  "klasse": 4,
+  "kompetenzbereich": "Schreiben",
+  "competences": [
+    "DEU.US.4.SCH.01"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "SCH"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0014",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

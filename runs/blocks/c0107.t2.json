@@ -1,0 +1,168 @@
+{
+  "id": "c0107.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Österreich hatte am 1.1.2024 insgesamt 9.158.750 Einwohnerinnen und Einwohner. Nenne die drei breitesten Bänder in der Pyramide (Abb. 1) — also die Altersgruppen mit den meisten Menschen — und erkläre, warum diese Jahrgänge besonders zahlreich sind.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "OK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.OST.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Die stärksten Bänder sind 50–54, 55–59 und 45–49 (jeweils über 600.000 Personen zusammen). Diese Jahrgänge wurden in den 1960er- und frühen 1970er-Jahren geboren — einer Phase hoher Geburtenzahlen ('Babyboom'). Seitdem sind die Geburtenzahlen gesunken, weshalb die jüngeren Bänder schmaler sind.",
+    "acceptable_reasoning": "Schüler:innen können auch 35–39 oder 40–44 nennen, da diese ebenfalls stark besetzt sind. Entscheidend ist die Erklärung: höhere Geburtenzahlen in früheren Jahrzehnten.",
+    "rubric": [
+      {
+        "criterion": "Richtige Altersgruppen benannt",
+        "levels": [
+          "Drei starke Bänder korrekt (2P)",
+          "Zwei korrekt (1P)",
+          "Keines korrekt (0P)"
+        ]
+      },
+      {
+        "criterion": "Erklärung Babyboom",
+        "levels": [
+          "Geburtenkohorte / Babyboom erwähnt (2P)",
+          "Vage Andeutung (1P)",
+          "Keine Erklärung (0P)"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen könnten die breiten Bänder im mittleren Alter (45–59) mit Einwanderung erklären — das ist möglich, aber der wichtigste Faktor ist die Geburtenkohorte der 1960er Jahre.",
+      "Nicht die senkrechte Höhe der Balken verwechseln: Es geht um die Länge (= Anzahl Personen), nicht die Breite des Streifens."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Österreichische Gesellschaftsentwicklung",
+  "competences": [
+    "GWB.US.3.OST.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "OK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:population_pyramid",
+      "spec": {
+        "title": "Bevölkerungspyramide Österreich (1.1.2024)",
+        "xlabel": "Personen",
+        "age_groups": [
+          "0–4",
+          "5–9",
+          "10–14",
+          "15–19",
+          "20–24",
+          "25–29",
+          "30–34",
+          "35–39",
+          "40–44",
+          "45–49",
+          "50–54",
+          "55–59",
+          "60–64",
+          "65–69",
+          "70–74",
+          "75–79",
+          "80–84",
+          "85+"
+        ],
+        "male": [
+          217721,
+          233589,
+          225693,
+          232917,
+          259070,
+          303392,
+          327167,
+          319456,
+          311542,
+          289329,
+          320354,
+          355386,
+          322097,
+          247355,
+          189728,
+          149524,
+          131327,
+          79185
+        ],
+        "female": [
+          206203,
+          220286,
+          212329,
+          217468,
+          241672,
+          283992,
+          311084,
+          310390,
+          309056,
+          293047,
+          329411,
+          357617,
+          331334,
+          272182,
+          223124,
+          190665,
+          185238,
+          148820
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "statistik_austria_bevstand_2024",
+        "series": "pyramide_5j",
+        "note": null,
+        "title": "Bevölkerung Österreichs nach Alter und Geschlecht (1.1.2024)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2024",
+        "attribution": "Datenquelle: Statistik Austria – data.statistik.gv.at (CC BY 4.0)",
+        "stand": "2024-01-01"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0107",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:25+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

@@ -1,0 +1,99 @@
+{
+  "id": "c0079.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Entwirf eine übersichtliche Informationskarte (wie eine Sammelkarte) für das Element Eisen (Fe, Ordnungszahl 26).\n\nDeine Karte soll folgende Informationen enthalten:\n- Name, Symbol, Ordnungszahl\n- Protonenzahl, Elektronenzahl, Massenzahl (ca. 56)\n- Periode und Gruppe im PSE\n- Mindestens zwei chemische/physikalische Eigenschaften\n- Eine alltägliche Verwendung\n- Eine Verbindung, die Eisen eingeht (z.B. Rost, Stahl, Eisenchlorid)\n\nGestalte die Karte so, dass ein:e Mitschüler:in sie zum Lernen verwenden kann.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 65.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.US.x.ALL.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Musterkarte: Fe — Eisen — Z=26 — 26 Protonen, 26 Elektronen, Massenzahl ≈56 (26+30 Neutronen) — Periode 4, Gruppe 8 — Eigenschaften: Metall, magnetisch, hoher Schmelzpunkt (1538°C), silbergrau, gute Wärmeleitung — Verwendung: Bau (Stahl), Magnete, Fahrzeuge — Verbindung: Fe₂O₃ (Rost), FeCl₃ (Eisenchlorid), Stahl (Fe + C-Legierung).",
+    "acceptable_reasoning": "Gruppe 8 ist korrekt (Eisen steht in Gruppe 8 der Nebengruppen); vereinfacht kann auch 'Übergangsmetal' akzeptiert werden.",
+    "rubric": [
+      {
+        "criterion": "Vollständigkeit der Atomdaten",
+        "levels": [
+          "Alle Kerndaten korrekt (Z, A, Periode, Gruppe)",
+          "3–4 Angaben korrekt",
+          "Weniger als 3"
+        ]
+      },
+      {
+        "criterion": "Eigenschaften und Verwendung",
+        "levels": [
+          "Zwei Eigenschaften + Verwendung korrekt",
+          "Eine Eigenschaft oder Verwendung",
+          "Fehlt"
+        ]
+      },
+      {
+        "criterion": "Verbindung",
+        "levels": [
+          "Verbindung korrekt mit Formel oder Namen",
+          "Verbindung erwähnt ohne Detail",
+          "Fehlt"
+        ]
+      },
+      {
+        "criterion": "Darstellung",
+        "levels": [
+          "Übersichtlich und lerngerecht gestaltet",
+          "Informationen vorhanden, unübersichtlich",
+          "Unlesbar"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Massenzahl ≠ Ordnungszahl — explizit unterscheiden: A = Z + N (Protonen + Neutronen)",
+      "Eisen ist ein Übergangsmetall (d-Block) — Gruppe 8, aber Schüler:innen müssen das nicht tief verstehen",
+      "Kreativität bei der Gestaltung fördern — Sammelkarten-Format macht die Aufgabe motivierend",
+      "Stahl ist eine Legierung (kein reines Element) — korrekte Formulierung einfordern"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Chemie",
+  "klasse": 4,
+  "kompetenzbereich": null,
+  "competences": [
+    "CHE.US.x.ALL.03"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "W",
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0079",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:14+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

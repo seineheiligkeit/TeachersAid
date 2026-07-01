@@ -1,0 +1,123 @@
+{
+  "id": "c0080.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Schau dir das Diagramm (Abb. 1) mit den Milchpreisen an.\na) Welches Produkt ist am günstigsten, welches am teuersten?\nb) Wie groß ist der Preisunterschied zwischen dem günstigsten und dem teuersten Produkt?\nc) Was könnte deiner Meinung nach erklären, warum die Preise so unterschiedlich sind? Nenne mindestens zwei Gründe.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "OK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.ENT.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "a) Günstigste: Billa Eigenmarke (0,89 €); Teuerste: Bio-Vollmilch Marktstand (1,85 €). b) Preisunterschied: 1,85 € – 0,89 € = 0,96 €. c) Mögliche Gründe: Bio-Zertifizierung erhöht Produktionskosten; Markenprodukte haben höhere Werbekosten; Eigenmarken haben weniger Verpackungsaufwand; Marktstand ohne Zwischenhändler aber mit persönlichem Service.",
+    "acceptable_reasoning": "Schüler:innen sollen nachvollziehbar begründen, nicht die richtige Liste reproduzieren – jede wirtschaftlich plausible Begründung ist akzeptabel.",
+    "rubric": [
+      {
+        "criterion": "Preise korrekt abgelesen",
+        "levels": [
+          "Beide Werte korrekt",
+          "Ein Wert korrekt",
+          "Kein Wert korrekt"
+        ]
+      },
+      {
+        "criterion": "Preisunterschied berechnet",
+        "levels": [
+          "Korrekte Rechnung und Ergebnis",
+          "Rechnung erkennbar, Ergebnis falsch",
+          "Nicht berechnet"
+        ]
+      },
+      {
+        "criterion": "Begründungen wirtschaftlich plausibel",
+        "levels": [
+          "2+ plausible Gründe",
+          "1 plausibler Grund",
+          "Keine plausible Begründung"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Viele Schüler:innen glauben, teurer = besser. Darauf hinweisen, dass Preis und Qualität nicht immer korrelieren.",
+      "Bio-Aufschlag erklären: höhere Produktionskosten, strengere Auflagen – nicht Profit des Bauern."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Entwicklungen am Wirtschaftsstandort Österreich",
+  "competences": [
+    "GWB.US.3.ENT.04"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "OK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Ja! Natürlich Bio-Vollmilch 1l",
+          "Ja! Vollmilch 1l",
+          "Nöm Alpenmilch 1l",
+          "Billa Eigenmarke 1l",
+          "Bio-Vollmilch (Marktstand)"
+        ],
+        "values": [
+          1.49,
+          0.99,
+          1.29,
+          0.89,
+          1.85
+        ],
+        "title": "Milchpreise im Vergleich (Wien, 2025)",
+        "xlabel": "Produkt",
+        "ylabel": "Preis in Euro"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0080",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:15+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

@@ -1,0 +1,95 @@
+{
+  "id": "c0087.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Beurteile folgende Aussagen über Kräfte beim Bremsen. Kreuze an (richtig / falsch) und begründe.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Die Bremskraft, die die Straße auf den Reifen ausübt, wirkt in Fahrtrichtung.",
+        "Wenn der Reifen eine Kraft auf die Straße ausübt, übt die Straße eine gleich große, entgegengesetzte Kraft auf den Reifen aus.",
+        "Je mehr Gewicht auf dem Fahrrad liegt (schwerere Person), desto kürzer ist der Bremsweg bei gleicher Bremskraft.",
+        "Ein blockiertes Rad (ABS ausgeschaltet, voll eingebremst) hat kürzeren Bremsweg als ein rollendes, abbremsendes Rad."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "richtig",
+        "falsch",
+        "Begründung"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.3.MEC.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "1: falsch — die Bremskraft wirkt entgegen der Fahrtrichtung (rückwärts auf den Reifen). 2: richtig — Wechselwirkungsgesetz (actio = reactio). 3: falsch — mit mehr Gewicht ist zwar die Normalkraft größer (mehr Reibung möglich), aber auch die zu verzögernde Masse ist größer — beides hebt sich im einfachen Modell auf; der Bremsweg bleibt ähnlich (F = μ·m·g, aber auch F = m·a → a = μ·g, unabhängig von m). 4: falsch — blockiertes Rad hat Gleitreibung (kleiner als Haftreibung bei rollendem Rad), also längerer Bremsweg. ABS hält Haftreibung aufrecht.",
+    "acceptable_reasoning": "Für Aussage 3: Schüler:innen der Unterstufe müssen den Beweis nicht formal führen — qualitatives Verständnis ('Bremskraft und Trägheit wachsen beide mit der Masse') reicht.",
+    "rubric": [
+      {
+        "criterion": "Korrekte Einschätzung",
+        "levels": [
+          "0–1 korrekt",
+          "2–3 korrekt",
+          "Alle 4 korrekt"
+        ]
+      },
+      {
+        "criterion": "Begründungsqualität",
+        "levels": [
+          "Keine oder rein intuitive Begründung",
+          "Physikalischer Begriff verwendet",
+          "Physikalisch vollständig und korrekt begründet"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Aussage 3 ist kontraintuitiv — viele Schüler:innen antworten 'richtig' (schwerer = mehr Reibung = kürzer). Gezielt nachfragen: Was wächst noch mit der Masse?",
+      "Aussage 4 ist ein verbreiteter Alltagsirrtum ('fest bremsen = schneller stoppen'). Hier klare Korrektur: Haftreibung > Gleitreibung."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Physik",
+  "klasse": 3,
+  "kompetenzbereich": "Mechanik",
+  "competences": [
+    "PHY.US.3.MEC.03"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "W",
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0087",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:20+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

@@ -1,0 +1,88 @@
+{
+  "id": "c0119.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Entscheide, ob die Aussagen richtig oder falsch sind, und begruende jeweils kurz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Die meisten Oesterreicherinnen und Oesterreicher leben in Bundeslaendern mit weniger als 1 Million Einwohnern.",
+        "Der Median der Bundeslaender-Bevoelkerung ist groesser als der Mittelwert.",
+        "Wenn Wien aus der Statistik herausgenommen wuerde, wuerde der Mittelwert der restlichen 8 Bundeslaender sinken."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "BEG",
+      "DAR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.1.DAT.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1. FALSCH: In Bundeslaendern mit unter 1 Mio. leben Burgenland (302k) + Kaernten (570k) + Salzburg (571k) + Tirol (776k) + Vorarlberg (410k) = ca. 2,63 Mio. Die Mehrheit der Bevoelkerung lebt in Bundeslaendern mit ueber 1 Mio. (NÖ + OÖ + Steiermark + Wien = ca. 6,53 Mio.). 2. FALSCH: Median (775 970) < Mittelwert (1 017 600). 3. RICHTIG: Wien ist der groesste Wert. Sein Entfernen senkt die Summe und damit den Mittelwert der 8 verbleibenden Bundeslaender auf ca. (9 158 750 - 2 005 760) / 8 = 894 124.",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Alle drei Entscheidungen richtig",
+        "levels": [
+          "0-1 richtig",
+          "2 richtig",
+          "Alle 3 richtig"
+        ]
+      },
+      {
+        "criterion": "Begruendung mit Zahlen belegt",
+        "levels": [
+          "Nur Behauptung ohne Zahlen",
+          "Zahlen teilweise verwendet",
+          "Alle Begruendungen mit konkreten Zahlen"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Aussage 1 erfordert das Aufaddieren von Bevoelkerungsgruppen — Schuelerinnen und Schueler sollten dabei systematisch vorgehen.",
+      "Aussage 3 kann durch einfaches Einsetzen geprueft werden; falls Schuelerinnen und Schueler argumentieren ohne Rechnung, auf konkreten Nachweis bestehen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Mathematik",
+  "klasse": 1,
+  "kompetenzbereich": "4: Daten und Zufall",
+  "competences": [
+    "MAT.US.1.DAT.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "BEG",
+    "DAR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0119",
+  "source": "ai",
+  "created_at": "2026-06-27T15:21:14+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

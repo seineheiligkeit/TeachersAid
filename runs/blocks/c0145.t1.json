@@ -1,0 +1,171 @@
+{
+  "id": "c0145.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Sieh dir Abbildung 2 (Bevölkerungspyramide Österreich 2024) an.\n\na) Beschreibe die Form der Pyramide in 2–3 Sätzen: Welche Altersgruppen sind besonders stark vertreten, welche schwach?\nb) Was sagt diese Form über die demographische Vergangenheit und die Zukunft Österreichs aus?\nc) Erkläre den Begriff „Abhängigkeitsquotient\" und berechne ihn grob: Wie viele Menschen im erwerbsfähigen Alter (20–64 Jahre) stehen einer Person über 65 gegenüber?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "SYN",
+      "REF"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.OS.7.DEM.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "a) Die Pyramide hat eine schmale Basis (wenige Kinder/Jugendliche), eine breite Mitte (starke Jahrgänge der Babyboomer, ca. 55–70 Jahre) und ein zunehmendes Gewicht im oberen Bereich – typische 'Urnen'- oder 'Pilzform'. b) Die breite Mitte spiegelt die geburtenstarken Nachkriegsjahrzehnte wider; in den nächsten 20–30 Jahren werden diese Jahrgänge ins Rentenalter wechseln, was den Anteil der über 65-Jährigen stark erhöht. Die Basis ist seit den 1970er Jahren geschrumpft (sinkende Geburtenrate). c) Der Abhängigkeitsquotient (alte Bevölkerung) = Bevölkerung 65+ / Bevölkerung 20–64. Aus der Pyramide ergibt sich grob ein Verhältnis von ca. 1:3,5 (Näherungswert je nach Jahresstand); d.h. auf jede Person über 65 kommen etwa 3–4 Erwerbstätige. Dieser Wert wird bis 2040–2050 auf unter 1:2 sinken.",
+    "acceptable_reasoning": "Plausible Schätzungen beim Abhängigkeitsquotienten auf Basis der Grafik sind akzeptabel; exakte Zahlen nicht erwartet.",
+    "rubric": [
+      {
+        "criterion": "Beschreibung der Pyramidenform",
+        "levels": [
+          "Keine oder falsche Beschreibung",
+          "Nennt eine Auffälligkeit ohne Begründung",
+          "Beschreibt Form korrekt und benennt auffällige Altersgruppen",
+          "Beschreibt vollständig und verknüpft Form mit demographischem Prozess"
+        ]
+      },
+      {
+        "criterion": "Berechnung/Schätzung Abhängigkeitsquotient",
+        "levels": [
+          "Kein Versuch",
+          "Begriff erklärt, keine Schätzung",
+          "Sinnvolle Schätzung mit nachvollziehbarem Ablesen",
+          "Korrekte Schätzung mit Einordnung der Bedeutung"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Viele Schüler:innen verwechseln Bevölkerungspyramide und Altersverteilung im engeren Sinn – klären, dass die Pyramide beide Dimensionen (Alter + Geschlecht) zeigt.",
+      "Fehlvorstellung: 'Österreichs Bevölkerung schrumpft.' Tatsächlich wächst sie durch Zuwanderung – der Altersstrukturwandel ist ein eigenständiges Phänomen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 7,
+  "kompetenzbereich": "Demographische Entwicklung und gesellschaftspolitische Implikationen beurteilen",
+  "competences": [
+    "GWB.OS.7.DEM.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "SYN",
+    "REF"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:population_pyramid",
+      "spec": {
+        "title": "Bevölkerungspyramide Österreich (1.1.2024)",
+        "age_groups": [
+          "0–4",
+          "5–9",
+          "10–14",
+          "15–19",
+          "20–24",
+          "25–29",
+          "30–34",
+          "35–39",
+          "40–44",
+          "45–49",
+          "50–54",
+          "55–59",
+          "60–64",
+          "65–69",
+          "70–74",
+          "75–79",
+          "80–84",
+          "85+"
+        ],
+        "male": [
+          217721,
+          233589,
+          225693,
+          232917,
+          259070,
+          303392,
+          327167,
+          319456,
+          311542,
+          289329,
+          320354,
+          355386,
+          322097,
+          247355,
+          189728,
+          149524,
+          131327,
+          79185
+        ],
+        "female": [
+          206203,
+          220286,
+          212329,
+          217468,
+          241672,
+          283992,
+          311084,
+          310390,
+          309056,
+          293047,
+          329411,
+          357617,
+          331334,
+          272182,
+          223124,
+          190665,
+          185238,
+          148820
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "statistik_austria_bevstand_2024",
+        "series": "pyramide_5j",
+        "note": null,
+        "title": "Bevölkerung Österreichs nach Alter und Geschlecht (1.1.2024)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2024",
+        "attribution": "Datenquelle: Statistik Austria – data.statistik.gv.at (CC BY 4.0)",
+        "stand": "2024-01-01"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0145",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:23+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

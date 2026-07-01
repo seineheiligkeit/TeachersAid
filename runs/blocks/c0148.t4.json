@@ -1,0 +1,131 @@
+{
+  "id": "c0148.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_analysis",
+    "prompt": "Die Abbildung zeigt, wie häufig Jugendliche verschiedene Lebensmittelgruppen täglich konsumieren (fiktive Stichprobe).\n\na) Welche drei Lebensmittelgruppen werden am häufigsten täglich konsumiert?\nb) Vergleiche den Anteil bei 'Hülsenfrüchten' mit dem bei 'Süßigkeiten/Snacks'. Welche sozialen oder sensorischen Faktoren könnten diesen Unterschied erklären?\nc) Welche Einschränkung hat eine solche Selbstauskunft-Erhebung? Erkläre den Begriff 'soziale Erwünschtheit' in diesem Zusammenhang.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 10
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "EV"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "HOE.OS.6.EIG.04",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "HOE.OS.6.EIG.07",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "a) Süßigkeiten/Snacks (74 %), Fleisch/Wurst (61 %), Obst (52 %). | b) Hülsenfrüchte 14 % vs. Süßigkeiten 74 %: Süßigkeiten sind leicht zugänglich, intensiv beworben und kurzfristig sensorisch befriedigend (Zucker, Salz, Fett als angeborene Vorlieben). Hülsenfrüchte werden von Jugendlichen oft als 'uncool' oder ungewohnt wahrgenommen und erfordern mehr Zubereitung. | c) Bei Selbstauskunft neigen Befragte dazu, sozial erwünschtes Verhalten zu übertreiben (mehr Gemüse, weniger Süßes) und unerwünschtes Verhalten zu untertreiben. 'Soziale Erwünschtheit' bezeichnet die Tendenz, Antworten so zu formulieren, wie man glaubt, dass andere sie erwarten – dadurch sind die tatsächlichen Werte für Süßigkeiten und Fast Food möglicherweise noch höher.",
+    "acceptable_reasoning": "Für b): mind. ein sensorischer UND ein sozialer Faktor. Für c): 'soziale Erwünschtheit' muss inhaltlich korrekt erklärt und mit der Selbstauskunft-Methode verknüpft sein.",
+    "rubric": [
+      {
+        "criterion": "Datenlesung (a)",
+        "levels": [
+          "Alle drei Gruppen korrekt und in richtiger Reihenfolge benannt (2P)",
+          "Zwei Gruppen korrekt (1P)",
+          "Fehler oder keine Antwort (0P)"
+        ]
+      },
+      {
+        "criterion": "Erklärung des Unterschieds (b)",
+        "levels": [
+          "Mind. je ein sensorischer und sozialer Faktor sachlich erklärt (2P)",
+          "Nur eine Dimension genannt (1P)",
+          "Keine oder unzutreffende Erklärung (0P)"
+        ]
+      },
+      {
+        "criterion": "Methodenkritik (c)",
+        "levels": [
+          "Soziale Erwünschtheit korrekt definiert und Konsequenz für Datenqualität benannt (2P)",
+          "Grundidee erkannt, aber unvollständig (1P)",
+          "Keine sinnvolle Antwort (0P)"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen lesen bei a) manchmal den zweithöchsten Balken falsch ab – auf genaues Ablesen der Prozentwerte aus der Abbildung bestehen.",
+      "Für c) den Begriff 'soziale Erwünschtheit' eventuell vorab kurz einführen, wenn er noch nicht im Unterricht vorgekommen ist."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_analysis",
+  "subject": "Haushaltsökonomie und Ernährung",
+  "klasse": 6,
+  "kompetenzbereich": "Das eigene Essverhalten erkennen, reflektieren und bewerten sowie Zusammenhänge zwischen Ernährungsgewohnheiten, Kulturen, Gesundheit und Wohlbefinden verstehen",
+  "competences": [
+    "HOE.OS.6.EIG.04",
+    "HOE.OS.6.EIG.07"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "EV"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Gemüse/Salat",
+          "Obst",
+          "Fleisch/Wurst",
+          "Hülsenfrüchte",
+          "Süßigkeiten/Snacks",
+          "Fast Food"
+        ],
+        "values": [
+          38.0,
+          52.0,
+          61.0,
+          14.0,
+          74.0,
+          43.0
+        ],
+        "title": "Täglicher Konsum ausgewählter Lebensmittelgruppen bei Jugendlichen (fiktive Stichprobe, n=200)",
+        "xlabel": "Lebensmittelgruppe",
+        "ylabel": "Anteil Jugendlicher mit täglichem Konsum (%)",
+        "log": false
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0148",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:25+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

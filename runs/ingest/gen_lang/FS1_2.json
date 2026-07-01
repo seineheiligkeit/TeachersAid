@@ -1,0 +1,228 @@
+{
+  "subject": "Erste lebende Fremdsprache",
+  "klasse": 3,
+  "kompetenzbereich": "Lesen",
+  "title": "Wünsche und Gefühle in Texten erkennen",
+  "kernfrage": "Wie erkennst du in einem englischen Text, was jemand fühlt oder sich wünscht, auch wenn es nicht direkt gesagt wird?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Reading for Feelings and Wishes",
+        "throughline": "Schüler:innen erschließen implizite Emotionen und Wünsche in einem authentisch wirkenden Jugendbrieftext — eine Kernkompetenz für literarisches Lesen und empathisches Textverstehen.",
+        "talking_points": [
+          "Woran erkennt man Gefühle in Texten? Nicht nur direkte Aussagen ('I am sad'), sondern auch Wortwahl, Satzbau, was jemand beschreibt oder vermeidet",
+          "Was ist der Unterschied zwischen dem, was ein Charakter SAGt, und dem, was er/sie wirklich FÜHLT oder WILL?",
+          "Wie helfen uns Texte über Jugendliche aus anderen Ländern, Gemeinsamkeiten und Unterschiede im Alltag zu entdecken?",
+          "Strategien für unbekannte Wörter: Kontext erschließen statt Wörterbuch"
+        ],
+        "extensions": [
+          "Schüler:innen schreiben eine kurze Antwort auf den Brief im Text",
+          "Vergleich: Wie würde ein Jugendbrieftext auf Deutsch aussehen? Welche Gefühle werden offen/versteckt ausgedrückt?",
+          "Ähnlichen Text aus einer englischsprachigen Jugendzeitschrift (z.B. National Geographic Kids) mitbringen"
+        ],
+        "blocks": [
+          {
+            "role": "info",
+            "id": "i1",
+            "kind": "text",
+            "prompt": "Read the following letter carefully. Emma is fifteen and lives in Manchester, England. She wrote this letter to a pen pal magazine.\n\n---\n\nDear Pen Pal Magazine,\n\nMy name is Emma and I am in Year 10 at school. I have always wanted to write to someone from another country, but I never found the right moment. Well, here I am!\n\nI live with my mum and my little brother Jake (he is ten and really annoying, but I guess I love him). My dad works in another city and only comes home at weekends. I miss him during the week, but we video-call every evening, which helps.\n\nAt school, I like Art and PE, but honestly, Maths is a nightmare. My teacher says I am \"improving\", which I think means I am still not very good. I wish I could just draw all day instead.\n\nMy big dream is to travel. I have never been outside the UK and I want to see mountains, ancient cities, and maybe try food I have never heard of. I follow lots of travel accounts online, but looking at other people's photos makes me feel both excited and a little sad at the same time.\n\nIf you are reading this — please write back! I promise I am a good friend.\n\nEmma",
+            "payload": null,
+            "response": { "mode": "none" },
+            "cognitive_level": "remember",
+            "dimensions": ["LES"],
+            "modality": "printable",
+            "serves": [{ "competence_id": "FS1.US.3.LES.02", "relation": "exercises" }],
+            "est_minutes": 4,
+            "answer_key": null,
+            "acceptable_reasoning": null,
+            "watch_outs": [],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "multiple_choice",
+            "prompt": "Read Emma's letter again. Choose the best answer for each question.",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                {
+                  "question": "1. Why did Emma write to the magazine?",
+                  "choices": ["A — She had to write it for school.", "B — She has wanted a pen pal from another country for a long time.", "C — Her teacher told her to write.", "D — She wants to practise her English."]
+                },
+                {
+                  "question": "2. How does Emma feel about her brother?",
+                  "choices": ["A — She finds him very annoying and dislikes him.", "B — She loves him very much and they never argue.", "C — She finds him annoying but still cares about him.", "D — She does not mention her feelings about him."]
+                },
+                {
+                  "question": "3. What does Emma wish she could do at school?",
+                  "choices": ["A — Be better at Maths.", "B — Skip school entirely.", "C — Spend all her time drawing or doing art.", "D — Travel with her class."]
+                }
+              ],
+              "select": "one"
+            },
+            "response": { "mode": "choices", "options": ["A", "B", "C", "D"], "select": "one" },
+            "cognitive_level": "understand",
+            "dimensions": ["LES"],
+            "modality": "printable",
+            "serves": [{ "competence_id": "FS1.US.3.LES.02", "relation": "exercises" }],
+            "est_minutes": 7,
+            "answer_key": "1 — B, 2 — C, 3 — C",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Frage 2: Schüler:innen wählen oft A, weil das Wort 'annoying' dominant ist — darauf hinweisen, den ganzen Satz zu lesen ('I guess I love him')",
+              "Frage 3: Schüler:innen dürfen A wählen (Maths verbessern), aber der Text zeigt, dass Emma das als Lehrerwunsch liest, nicht als ihren eigenen Wunsch"
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "true_false_justify",
+            "prompt": "Read the statements about Emma. Write T (true) or F (false). For FALSE statements, write the correct information.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Emma's dad lives with the family every day.",
+                "Emma thinks she is good at Maths.",
+                "Emma has already travelled outside the UK.",
+                "Looking at travel photos makes Emma feel only happy."
+              ]
+            },
+            "response": { "mode": "table", "columns": ["Statement", "T / F", "Correction (if false)"], "rows": 4 },
+            "cognitive_level": "understand",
+            "dimensions": ["LES"],
+            "modality": "printable",
+            "serves": [{ "competence_id": "FS1.US.3.LES.01", "relation": "exercises" }],
+            "est_minutes": 8,
+            "answer_key": "1. F — He only comes home at weekends / works in another city during the week. 2. F — She thinks she is still not very good. 3. F — She has never been outside the UK. 4. F — It makes her feel both excited and a little sad.",
+            "acceptable_reasoning": "Sinngemäße Korrekturen sind akzeptabel; Direktzitate aus dem Text sind ebenfalls gültig.",
+            "watch_outs": [
+              "Statement 4 ist die wichtigste Aufgabe zur Emotionserkennung: 'both … and' zeigt ambivalente Gefühle — kein einfaches Entweder-Oder",
+              "Schüler:innen neigen dazu, nur 'excited' zu notieren und 'sad' zu übersehen"
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "open_response",
+            "prompt": "Emma does not always say directly how she feels. Find TWO examples in the letter where her feelings are shown indirectly (not with the words 'I feel' or 'I am'). Write the quote and explain what feeling it shows.\n\nExample format:\nQuote: \"...\"\nThis shows that Emma feels ...",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 45 },
+            "cognitive_level": "analyze",
+            "dimensions": ["LES"],
+            "modality": "printable",
+            "serves": [{ "competence_id": "FS1.US.3.LES.02", "relation": "exercises" }],
+            "est_minutes": 10,
+            "answer_key": "Possible answers (any two accepted):\n- \"I miss him during the week\" → shows she feels lonely / sad without her dad.\n- \"I wish I could just draw all day\" → shows frustration with Maths and a strong love of art.\n- \"I have never been outside the UK and I want to see...\" → shows longing / desire for adventure.\n- \"looking at other people's photos makes me feel both excited and a little sad\" → directly names mixed feelings (but the tension is implicit: desire + frustration at not being able to travel).",
+            "acceptable_reasoning": "Schüler:innen können auch andere Stellen zitieren, solange die Interpretation sinnvoll begründet ist.",
+            "watch_outs": [
+              "Zentrales Lernziel dieser Aufgabe: Unterschied zwischen expliziten und impliziten Emotionsangaben",
+              "Schüler:innen neigen zu Stellen, die DIREKT ein Gefühl nennen ('I miss him') — das ist okay, aber auch auf subtilere Stellen hinweisen",
+              "Die Antwort muss auf Englisch sein; deutsche Erklärungen sind NICHT akzeptabel"
+            ],
+            "rubric": [
+              { "criterion": "Quoting", "levels": ["Accurate quote from text", "Quote approximated", "No clear quote"] },
+              { "criterion": "Interpretation", "levels": ["Feeling clearly identified and plausible", "Feeling vague but reasonable", "Misinterpretation or missing"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "matching",
+            "prompt": "Match each phrase from Emma's letter (left column) with the feeling or wish it best expresses (right column).",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "1. \"I have always wanted to write to someone from another country\"",
+                "2. \"Maths is a nightmare\"",
+                "3. \"I miss him during the week\"",
+                "4. \"My big dream is to travel\"",
+                "5. \"please write back! I promise I am a good friend.\""
+              ],
+              "right": [
+                "A — longing to connect with someone new",
+                "B — sadness about being apart from family",
+                "C — hope and eagerness for a response",
+                "D — ambition and desire for adventure",
+                "E — frustration or dislike of something difficult"
+              ]
+            },
+            "response": { "mode": "table", "columns": ["Phrase", "Feeling / Wish"], "rows": 5 },
+            "cognitive_level": "analyze",
+            "dimensions": ["LES"],
+            "modality": "printable",
+            "serves": [{ "competence_id": "FS1.US.3.LES.02", "relation": "exercises" }],
+            "est_minutes": 8,
+            "answer_key": "1–A, 2–E, 3–B, 4–D, 5–C",
+            "acceptable_reasoning": "Überschneidungen (z.B. 1 auch C) sind diskutierbar; Best-Fit-Prinzip anwenden.",
+            "watch_outs": [
+              "1 und 5 können verwechselt werden (beide zeigen Wunsch nach Kontakt) — Schüler:innen sollen die BESTE Zuordnung begründen können",
+              "Nicht alle Antworten haben dieselbe Schwierigkeitsstufe; 2 und 3 sind direkter, 1 und 4 erfordern mehr Inferenz"
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "open_response",
+            "prompt": "Think about what you have read. Do you think Emma is generally happy or unhappy? Use at least THREE pieces of evidence from the letter to support your answer. Write 4–6 sentences.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 50 },
+            "cognitive_level": "evaluate",
+            "dimensions": ["LES", "SCH"],
+            "modality": "printable",
+            "serves": [
+              { "competence_id": "FS1.US.3.LES.02", "relation": "exercises" },
+              { "competence_id": "FS1.US.3.SCH.03", "relation": "exercises" }
+            ],
+            "est_minutes": 12,
+            "answer_key": "Model answer (happy reading): Emma seems mostly happy but has some sad moments. She loves Art and PE and has dreams for the future, which shows a positive attitude. However, she misses her dad during the week and feels frustrated about Maths. She also feels a little sad when she looks at travel photos because she cannot go herself. Overall, she seems like a positive person who is looking forward to making a new friend.\n\n(Both 'mainly happy' and 'mixed feelings' are defensible — what matters is evidence from the text.)",
+            "acceptable_reasoning": "Jede Position (glücklich/unglücklich/gemischt) ist akzeptabel, solange 3+ Textevidenz korrekt zitiert oder paraphrasiert werden.",
+            "watch_outs": [
+              "Dies ist eine Bewertungsaufgabe (evaluate) — es gibt keine einzig richtige Antwort, aber die Begründung muss textbasiert sein",
+              "Auf korrekte Verwendung von 'because', 'however', 'also' als Verbindungswörter achten",
+              "Schüler:innen, die keine Position einnehmen wollen ('she has good and bad feelings') sind auf dem richtigen Weg — auf Präzision der Belege achten"
+            ],
+            "rubric": [
+              { "criterion": "Position", "levels": ["Clear, defensible position stated", "Position implied but not clear", "No position"] },
+              { "criterion": "Evidence", "levels": ["3+ pieces of text evidence used", "2 pieces used", "1 or fewer"] },
+              { "criterion": "Language", "levels": ["Mostly correct, clear sentences", "Understandable with errors", "Unclear"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "text_production",
+            "prompt": "Imagine you are a pen pal from Austria. Write a short reply to Emma (5–7 sentences). Introduce yourself briefly, react to something Emma said, and ask her one question.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 55 },
+            "cognitive_level": "create",
+            "dimensions": ["SCH", "LES"],
+            "modality": "printable",
+            "serves": [
+              { "competence_id": "FS1.US.3.SCH.01", "relation": "exercises" },
+              { "competence_id": "FS1.US.3.LES.01", "relation": "reinforces" }
+            ],
+            "est_minutes": 12,
+            "answer_key": "Model answer: Dear Emma, my name is Lukas and I am from Vienna, Austria. I really enjoyed reading your letter! I also find Maths difficult, so I completely understand how you feel. I love football and hiking in the mountains — maybe that is something you could do when you visit Austria one day! I have a question for you: what kind of art do you like to make? I hope to hear from you soon!\n\nLukas",
+            "acceptable_reasoning": "Schüler:innen sollen auf etwas Konkretes aus Emmas Brief eingehen — nicht nur eine generische Vorstellung.",
+            "watch_outs": [
+              "Häufiger Fehler: Schüler:innen schreiben eine neue Präsentation, ohne auf Emma einzugehen — auf 'react to something Emma said' hinweisen",
+              "Brief soll auf Englisch sein; Grußformeln (Dear…, Yours, Best wishes) üben",
+              "Keine Bewertung von Rechtschreibung im Sinne von Abzügen — Kommunikationsqualität zählt"
+            ],
+            "rubric": [
+              { "criterion": "Task completion", "levels": ["Introduction + reaction + question all present", "Two of three elements present", "Only one element present"] },
+              { "criterion": "Engagement with Emma's text", "levels": ["Clear, specific reference to Emma's letter", "Vague reference", "No reference"] },
+              { "criterion": "Language", "levels": ["Mostly correct, natural tone", "Understandable with errors", "Unclear or very limited"] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

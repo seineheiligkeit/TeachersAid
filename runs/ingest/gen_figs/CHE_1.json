@@ -1,0 +1,385 @@
+{
+  "subject": "Chemie",
+  "klasse": 4,
+  "scope_label": "Säure-Base-Reaktionen — Kl 4",
+  "title": "Sauer, basisch oder neutral? Der pH-Wert im Alltag",
+  "kernfrage": "Wie kannst du mithilfe des pH-Werts erklären, warum manche Alltagsstoffe ätzend wirken und andere harmlos sind?",
+  "body": {
+    "intro": [],
+    "assets": [
+      {
+        "id": "abb1",
+        "role": "figure",
+        "generator": "matplotlib:bar_chart",
+        "spec": {
+          "categories": [
+            "Zitronensaft",
+            "Essig",
+            "Regen (sauer)",
+            "Milch",
+            "Blut",
+            "Backpulver-Lösung",
+            "Ammoniak"
+          ],
+          "values": [
+            2.0,
+            3.0,
+            4.5,
+            6.7,
+            7.4,
+            8.3,
+            11.5
+          ],
+          "title": "pH-Werte ausgewählter Alltagsstoffe",
+          "xlabel": "Stoff",
+          "ylabel": "pH-Wert"
+        }
+      },
+      {
+        "id": "abb2",
+        "role": "figure",
+        "generator": "matplotlib:math_formula",
+        "spec": {
+          "latex": "\\mathrm{HCl}_{(aq)} \\rightarrow \\mathrm{H}^+ + \\mathrm{Cl}^-"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Den pH-Wert lesen und einordnen",
+        "throughline": "Schüler:innen erschließen den pH-Wert als Messgröße und ordnen Alltagsstoffe auf der pH-Skala ein — Grundlage für alle weiteren Aufgaben.",
+        "talking_points": [
+          "Warum hat die pH-Skala genau die Werte 0–14? (Kurze Erklärung: logarithmisch, Konzentration von H⁺-Ionen)",
+          "Welche Alltagserfahrungen zeigen uns, dass ein Stoff sauer ist? (Geschmack, Brennen, Entfärben von Stoff)",
+          "Neutralisation als Alltagsphänomen: Sodbrennen und Antazida — Säure wird durch Base neutralisiert",
+          "Sicherheitsaspekt: ab welchem pH-Wert ist Vorsicht geboten? (pH < 2 oder pH > 12 = ätzend)"
+        ],
+        "extensions": [
+          "Schüler:innen messen zuhause drei Flüssigkeiten mit Universalindikatorpapier und protokollieren die Ergebnisse",
+          "Recherche: Welchen pH-Wert hat Magenssäure und warum schadet sie der Speiseröhre nicht?",
+          "Erweiterung: logarithmische Skala erklären — pH 3 ist zehnmal saurer als pH 4"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "data_interpretation",
+            "prompt": "Schau dir das Balkendiagramm (Abb. 1) mit den pH-Werten verschiedener Alltagsstoffe an.\n\na) Ordne die sieben Stoffe in drei Gruppen ein: sauer (pH < 7), neutral (pH = 7) und basisch (pH > 7). Trage sie in die Tabelle ein.\nb) Welcher Stoff hat den niedrigsten pH-Wert? Was bedeutet das für seine chemische Eigenschaft?",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Sauer (pH < 7)",
+                "Neutral (pH = 7)",
+                "Basisch (pH > 7)"
+              ],
+              "rows": 4
+            },
+            "cognitive_level": "remember",
+            "dimensions": [
+              "W"
+            ],
+            "serves": [
+              {
+                "competence_id": "CHE.US.x.ALL.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 7,
+            "asset_refs": [
+              "abb1"
+            ],
+            "answer_key": "Sauer: Zitronensaft, Essig, saurer Regen, Milch. Neutral: keiner der gezeigten Stoffe liegt exakt bei 7. Basisch: Blut, Backpulver-Lösung, Ammoniak.\nb) Zitronensaft (pH ≈ 2) — stärkste Säure in der Liste; je niedriger der pH-Wert, desto mehr H⁺-Ionen, desto saurer.",
+            "acceptable_reasoning": "Schüler:innen dürfen Blut wegen pH 7,4 als „fast neutral” beschreiben; wichtig ist die korrekte Zuordnung über/unter 7.",
+            "watch_outs": [
+              "Milch mit pH 6,7 ist leicht sauer — viele Schüler:innen erwarten sie als neutral; explizit ansprechen",
+              "Blut mit pH 7,4 ist leicht basisch, nicht neutral — biologisch bedeutsam",
+              "Diagramm ablesen: y-Achse von 0 beginnen — auf korrekte Skalierung achten"
+            ],
+            "rubric": [
+              {
+                "criterion": "Korrekte Einordnung",
+                "levels": [
+                  "Alle 7 Stoffe richtig zugeordnet",
+                  "5–6 Stoffe richtig",
+                  "Weniger als 5 richtig"
+                ]
+              },
+              {
+                "criterion": "Begründung zu Zitronensaft",
+                "levels": [
+                  "H⁺-Ionen / stärkste Säure genannt",
+                  "Nur 'niedrigster pH' ohne Erklärung",
+                  "Keine sinnvolle Begründung"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "matching",
+            "prompt": "Ordne jeden Stoff seiner Wirkung auf Indikatoren zu. Schreibe den richtigen Buchstaben neben den Stoff.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Salzsäure (pH 1)",
+                "destilliertes Wasser (pH 7)",
+                "Natronlauge (pH 13)",
+                "Orangensaft (pH 4)",
+                "Seifenlauge (pH 9)"
+              ],
+              "right": [
+                "A — Lackmuspapier wird rot",
+                "B — Lackmuspapier bleibt violett",
+                "C — Lackmuspapier wird blau",
+                "D — Phenolphthalein färbt sich pink",
+                "E — Phenolphthalein bleibt farblos"
+              ]
+            },
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Stoff",
+                "Wirkung auf Indikator"
+              ],
+              "rows": 5
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "W",
+              "E"
+            ],
+            "serves": [
+              {
+                "competence_id": "CHE.US.x.ERK.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "Salzsäure → A (rot). Destilliertes Wasser → B (violett/farblos, neutral). Natronlauge → C (blau) und D (pink). Orangensaft → A (rot) und E (farblos). Seifenlauge → C (blau) und D (pink). [Akzeptiere: Salzsäure→A, Wasser→B, Natronlauge→C+D, Orangensaft→A+E, Seifenlauge→C+D]",
+            "acceptable_reasoning": "Phenolphthalein reagiert ab pH ≈ 8,2; Schüler:innen dürfen vereinfacht schreiben 'basisch = pink'.",
+            "watch_outs": [
+              "Phenolphthalein und Lackmus sind verschiedene Indikatoren — nicht verwechseln",
+              "Destilliertes Wasser lässt Lackmus violett (nicht blau/rot) — wichtiger Unterschied zu zeigen",
+              "Seifenlauge ist basisch (pH 9) — Schüler:innen denken oft 'Seife = neutral'"
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "true_false_justify",
+            "prompt": "Lies die folgenden Aussagen über Säuren und Basen. Entscheide, ob sie richtig (R) oder falsch (F) sind, und verbessere falsche Aussagen.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Je höher der pH-Wert, desto saurer ist eine Lösung.",
+                "Bei der Neutralisation entstehen immer Salz und Wasser.",
+                "Salzsäure gibt beim Auflösen in Wasser H⁺-Ionen ab.",
+                "Alle Säuren schmecken bitter."
+              ]
+            },
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Aussage",
+                "R / F",
+                "Verbesserung (wenn falsch)"
+              ],
+              "rows": 4
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "W"
+            ],
+            "serves": [
+              {
+                "competence_id": "CHE.US.x.STA.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [
+              "abb2"
+            ],
+            "answer_key": "1. F — Je niedriger der pH-Wert, desto saurer (H⁺-Konzentration steigt). 2. R. 3. R (siehe Abb. 2). 4. F — Säuren schmecken sauer (nicht bitter); bitter ist typisch für Basen/Alkaloide.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Aussage 1 ist die häufigste Fehlvorstellung — pH und Säurestärke laufen umgekehrt",
+              "Aussage 4 ist eine klassische Verwechslung: sauer vs. bitter — Essigsäure schmeckt sauer, Aspirin (Acetylsalicylsäure) leicht bitter durch andere Ursache",
+              "Abb. 2 zeigt die HCl-Dissoziation — als Anker für Aussage 3 nutzen"
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "experiment_protocol",
+            "prompt": "Du willst herausfinden, ob verschiedene Haushaltsflüssigkeiten (Wasser, Essig, Backpulver-Lösung, Orangensaft) sauer, neutral oder basisch sind.\n\nPlanung:\na) Welches Hilfsmittel brauchst du für die Messung? Nenne zwei Möglichkeiten.\nb) Erstelle eine Tabelle, in die du deine Beobachtungen eintragen kannst (Stoff, Farbe des Indikators, Schluss: sauer/neutral/basisch).\nc) Welche Sicherheitsregel gilt beim Umgang mit unbekannten Lösungen?",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 50
+            },
+            "cognitive_level": "apply",
+            "dimensions": [
+              "E"
+            ],
+            "serves": [
+              {
+                "competence_id": "CHE.US.x.ERK.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "a) Universalindikatorpapier (Lackmuspapier) ODER pH-Meter. b) Tabelle: Stoff | Indikatorfarbe | sauer/neutral/basisch — mit 4 Zeilen. c) Niemals unbekannte Lösungen kosten; Schutzbrille tragen; Haut bei Kontakt sofort mit Wasser spülen.",
+            "acceptable_reasoning": "Schüler:innen dürfen statt Universalindikator auch Rotkohlsaft (Haushaltsindikator) nennen.",
+            "watch_outs": [
+              "Experimente mit echten Säuren/Basen erfordern Aufsicht — Schüler:innen explizit auf Sicherheit hinweisen",
+              "Backpulver-Lösung ist schwach basisch (pH ~8) — nicht mit Natron-Lauge verwechseln",
+              "Protokollvorlage vor dem Experiment besprechen — sonst werden Beobachtungen nicht klar dokumentiert"
+            ],
+            "rubric": [
+              {
+                "criterion": "Messmittel",
+                "levels": [
+                  "Zwei korrekte Methoden genannt",
+                  "Eine korrekte Methode",
+                  "Keine korrekte Methode"
+                ]
+              },
+              {
+                "criterion": "Tabellenstruktur",
+                "levels": [
+                  "Vollständige Tabelle mit allen vier Spalteninhalten",
+                  "Tabelle unvollständig",
+                  "Keine Tabelle"
+                ]
+              },
+              {
+                "criterion": "Sicherheit",
+                "levels": [
+                  "Mindestens eine korrekte Sicherheitsregel",
+                  "Vage Antwort",
+                  "Keine Antwort"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "open_response",
+            "prompt": "Saurer Regen hat einen pH-Wert von etwa 4–4,5. Normaler Regen hat pH ≈ 5,6.\n\nErkläre:\na) Wodurch entsteht saurer Regen? (Nenne mindestens eine chemische Ursache.)\nb) Welche Schäden kann saurer Regen an Gebäuden aus Kalkstein verursachen? Erkläre den Vorgang chemisch.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 45
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "W",
+              "E"
+            ],
+            "serves": [
+              {
+                "competence_id": "CHE.US.x.ERK.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "a) Schwefeloxide (SO₂, aus Verbrennung von Kohle/Öl) und Stickoxide (NOₓ, aus Autoabgasen) reagieren mit Wasser in der Atmosphäre zu schwefliger Säure bzw. Salpetersäure.\nb) Kalkstein (CaCO₃) reagiert mit der Säure: CaCO₃ + H₂SO₄ → CaSO₄ + H₂O + CO₂. Das Gestein löst sich auf — Gebäude und Statuen verwittern.",
+            "acceptable_reasoning": "Vereinfachte Erklärung ohne genaue Formelgleichungen akzeptabel, wenn Kausalzusammenhang (Säure löst Kalkstein) korrekt ist.",
+            "watch_outs": [
+              "Schüler:innen verwechseln oft Ursache (Emissionen) und Wirkung (saurer Regen) — Reihenfolge explizit verlangen",
+              "CO₂ löst sich selbst in Wasser zu Kohlensäure — erklärt, warum normaler Regen schon leicht sauer ist (pH 5,6)",
+              "CaSO₄ (Gips) entsteht als Reaktionsprodukt — kann als Belag an Gebäuden sichtbar sein"
+            ],
+            "rubric": [
+              {
+                "criterion": "Ursache saurer Regen",
+                "levels": [
+                  "Chemische Verbindung (SO₂ / NOₓ) korrekt genannt",
+                  "Nur vage Ursache (\"Industrie\")",
+                  "Keine chemische Ursache"
+                ]
+              },
+              {
+                "criterion": "Reaktion mit Kalkstein",
+                "levels": [
+                  "Säure-Base-Reaktion korrekt beschrieben mit Produkten",
+                  "Auflösung erkannt, Produkte fehlen",
+                  "Keine Verbindung zur Chemie"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "decision_scenario",
+            "prompt": "In einem Zeitungsartikel wird behauptet: „Basische Wässer mit pH 9 sind gesünder als normales Leitungswasser, weil sie den Körper entbasischern und Krankheiten vorbeugen.”\n\nBewerte diese Aussage aus naturwissenschaftlicher Sicht:\na) Was stimmt an der Aussage chemisch nicht?\nb) Welche Körpermechanismen regulieren den Blut-pH tatsächlich?\nc) Ist die Werbebotschaft aus deiner Sicht wissenschaftlich haltbar? Begründe.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Ist die Werbebotschaft für basisches Wasser wissenschaftlich begründet?"
+            },
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "S"
+            ],
+            "serves": [
+              {
+                "competence_id": "CHE.US.x.STA.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "a) „Entbasischern” ist kein Fachbegriff; der Körper kann Säuren nicht einfach durch Trinken neutralisieren. b) Blut-pH wird durch Puffersysteme (Bicarbonat/CO₂) und Nieren/Lunge konstant bei ~7,4 gehalten — basisches Wasser verändert den Blut-pH nicht. c) Nicht wissenschaftlich haltbar: Magenssäure (pH ~2) neutralisiert getrunkenes Wasser sofort; keine belastbaren Studien belegen einen Gesundheitsnutzen.",
+            "acceptable_reasoning": "Schüler:innen müssen nicht alle Puffersysteme kennen; die Aussage 'Magen neutralisiert das Wasser sofort' ist ausreichend.",
+            "watch_outs": [
+              "Werbebotschaften verwenden pseudo-wissenschaftliche Sprache — hier explizit üben, wissenschaftliche von nicht-wissenschaftlicher Argumentation zu unterscheiden",
+              "Schüler:innen sollen nicht einfach 'nein, das stimmt nicht' schreiben — sie müssen begründen",
+              "Blut-pH-Regulation ist Biologie-Inhalt — interdisziplinäre Verbindung aktiv nutzen"
+            ],
+            "rubric": [
+              {
+                "criterion": "Fachliche Kritik",
+                "levels": [
+                  "Mindestens einen konkreten chemischen Fehler identifiziert",
+                  "Allgemeine Skepsis ohne Begründung",
+                  "Keine Kritik"
+                ]
+              },
+              {
+                "criterion": "Körpermechanismus",
+                "levels": [
+                  "Puffer/Magen/Niere korrekt erwähnt",
+                  "Vage Aussage über Körperregulation",
+                  "Kein Bezug zu Körper"
+                ]
+              },
+              {
+                "criterion": "Schlussfolgerung",
+                "levels": [
+                  "Klare Bewertung mit Begründung",
+                  "Bewertung ohne Begründung",
+                  "Keine Bewertung"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

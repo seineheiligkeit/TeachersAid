@@ -1,0 +1,99 @@
+{
+  "id": "c0154.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Stell dir vor, du bist Ärztin oder Arzt. Ein Patient kommt zu dir und sein Test auf eine seltene Erkrankung ist positiv ausgefallen. Der Test hat eine Sensitivität von 90 % und eine Falsch-Positiv-Rate von 5 %. Die Erkrankung tritt in der Bevölkerung bei 1 von 100 Personen auf (Prävalenz 1 %).\n(a) Berechne P(krank | positiver Test) für diese neue Situation.\n(b) Solltest du dem Patienten mitteilen, dass er wahrscheinlich krank ist? Begründe deine Entscheidung auf Basis deiner Rechnung.\n(c) Überlege: Wie könnte man die Aussagekraft des Tests verbessern, ohne den Test selbst zu verändern?",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Positiver Test bei 1 % Prävalenz — wie überzeugend ist das Ergebnis?"
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 80.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "ID",
+      "KA"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.OS.6.BES.06",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "MAT.OS.x.HAN.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 14,
+    "answer_key": "(a) P(K) = 0,01; P(K̄) = 0,99. P(P) = 0,9 · 0,01 + 0,05 · 0,99 = 0,009 + 0,0495 = 0,0585. P(K|P) = 0,009 / 0,0585 ≈ 0,154 ≈ 15,4 %. (b) Nein — bei positivem Test ist der Patient nur mit ca. 15 % Wahrscheinlichkeit wirklich krank. Eine Diagnose auf Basis dieses Ergebnisses allein wäre voreilig. Weitere Tests oder Untersuchungen sind erforderlich. (c) Möglichkeiten: Präselektion (Test nur bei Risikopersonen durchführen → höhere Prävalenz in der getesteten Gruppe); Bestätigungstest (zweiter, unabhängiger Test); genaueren Test mit niedrigerer Falsch-Positiv-Rate verwenden.",
+    "acceptable_reasoning": "Für (c) ist jede begründete Antwort akzeptabel, die zeigt, dass Schüler:innen den Einfluss der Prävalenz auf den Vorhersagewert verstehen.",
+    "rubric": [
+      {
+        "criterion": "P(K|P) Berechnung",
+        "levels": [
+          "Fehlt oder falscher Ansatz",
+          "Ansatz erkennbar, Rechenfehler",
+          "≈ 15,4 % korrekt"
+        ]
+      },
+      {
+        "criterion": "Entscheidung (b)",
+        "levels": [
+          "Keine oder unbegründete Entscheidung",
+          "Entscheidung mit Verweis auf Rechenergebnis",
+          "Differenzierte Argumentation (weiterer Test empfohlen)"
+        ]
+      },
+      {
+        "criterion": "Verbesserungsvorschläge (c)",
+        "levels": [
+          "Keine oder unsinnige Vorschläge",
+          "1 sinnvoller Vorschlag",
+          "2+ begründete Vorschläge, Prävalenz-Argument erkennbar"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Zentrales Lernziel dieser Aufgabe: Prävalenz (Grundrate) ist entscheidend — ohne sie kann man P(K|P) nicht beurteilen.",
+      "Schüler:innen sollen erkennen, dass ein Test mit hoher Sensitivität trotzdem einen niedrigen positiven Vorhersagewert haben kann.",
+      "Für (b): Die Frage ist normativ, nicht nur rechnerisch — Schüler:innen sollen mathematisch begründete Urteile formulieren.",
+      "Achte auf sprachliche Sorgfalt: 'Der Test ist positiv' ≠ 'Der Patient ist krank'."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Mathematik",
+  "klasse": 6,
+  "kompetenzbereich": "Beschreibende Statistik; Wahrscheinlichkeit",
+  "competences": [
+    "MAT.OS.6.BES.06",
+    "MAT.OS.x.HAN.04"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "ID",
+    "KA"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0154",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:26+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

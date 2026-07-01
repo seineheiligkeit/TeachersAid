@@ -1,0 +1,66 @@
+{
+  "id": "c0005.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Lies die folgenden Aussagen und entscheide: richtig oder falsch? Begründe deine Entscheidung in einem Satz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Fair Play bedeutet nur, die offiziellen Regeln des Spiels einzuhalten.",
+        "Wenn der Ball im Volleyball die Linie berührt, zählt der Punkt — auch wenn du selbst nicht sicher bist.",
+        "Eine Mannschaft, die verliert, darf das Ergebnis anfechten, wenn sie findet, dass ungerecht gespielt wurde.",
+        "Den gegnerischen Spieler:innen nach dem Spiel die Hand geben ist ein Zeichen von Fair Play."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "SOZ"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BUS.US.2.SOZ.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1. Falsch — Fair Play umfasst auch respektvolles Verhalten über die Regeln hinaus (informales Fair Play). 2. Richtig — die Regel gilt unabhängig von eigener Unsicherheit; Selbstanzeige ist aber ebenfalls fair. 3. Falsch — Ergebnisse können nur durch offizielle Einspruchsverfahren, nicht durch einseitige Anfechtung, korrigiert werden. 4. Richtig — Handschlag nach dem Spiel ist ein klassisches Symbol des informalen Fair Play.",
+    "acceptable_reasoning": "Schüler:innen erkennen die Unterscheidung formal/informal; beim zweiten Statement ist auch 'Richtig, aber Selbstanzeige wäre noch fairer' akzeptabel.",
+    "rubric": [],
+    "watch_outs": [
+      "Viele Schüler:innen glauben, Fair Play erschöpfe sich in der Regelkonformität — die informal-Ebene explizit ansprechen.",
+      "Statement 3 kann Diskussionen über 'Gerechtigkeit vs. Regeln' auslösen — das ist produktiv, aber moderiert halten."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Bewegung und Sport",
+  "klasse": 2,
+  "kompetenzbereich": "Sozialkompetenz",
+  "competences": [
+    "BUS.US.2.SOZ.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "SOZ"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0005",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

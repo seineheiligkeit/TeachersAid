@@ -1,0 +1,71 @@
+{
+  "id": "c0054.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Read the article again. Are these statements TRUE or FALSE? Write T or F and correct the false ones.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Teenagers in Europe spend an average of six hours a day on screens.",
+        "The author thinks that all screen time is equally bad.",
+        "72% of teenagers check their phones within five minutes of waking up.",
+        "The article says that banning phones is the best solution."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Statement",
+        "T / F",
+        "Correction (if false)"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "understand",
+    "dimensions": [
+      "LES"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS1.US.4.LES.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "1. T. 2. F — The author says not all screen time is equal; educational use is different from passive scrolling. 3. T. 4. F — The article says banning phones is 'unlikely to solve the problem'; the goal should be 'digital balance'.",
+    "acceptable_reasoning": "Sinngemäße Korrekturen akzeptieren; Direktzitate sind ebenfalls gültig.",
+    "rubric": [],
+    "watch_outs": [
+      "Statement 2 ist der entscheidende Test: Schüler:innen müssen die Nuancierung des Autors erkennen — er ist nicht pauschal gegen Bildschirmzeit",
+      "Statement 4 ist ebenfalls eine Meinungsfalle: 'unlikely to solve' ist eine Einschätzung, keine Tatsache — hier kann Fact/Opinion-Unterscheidung geübt werden"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Erste lebende Fremdsprache",
+  "klasse": 4,
+  "kompetenzbereich": "Lesen",
+  "competences": [
+    "FS1.US.4.LES.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "LES"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0054",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

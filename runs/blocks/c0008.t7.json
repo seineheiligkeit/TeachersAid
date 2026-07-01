@@ -1,0 +1,77 @@
+{
+  "id": "c0008.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Entwickle für ein 4-gegen-4-Spiel eurer Wahl (Handball, Basketball oder Volleyball) ein einfaches Angriffsmuster: Zeichne es NICHT als Diagramm, sondern beschreibe es in Textform als Anweisung für dein Team (wie ein Trainingszettel). Das Muster soll mindestens 3 Schritte haben und jeweils erklären, was jede/r Spieler:in macht.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "create",
+    "dimensions": [
+      "FAC",
+      "SOZ"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BUS.US.4.FAC.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Musterlösung Basketball: Schritt 1: Aufbauspieler:in hat Ball in der Mitte, die anderen 3 verteilen sich auf Flügel und unter dem Korb. Schritt 2: Aufbauspieler:in täuscht Pass nach rechts an und spielt dann nach links zum Flügel, der/die sich freigelaufen hat. Schritt 3: Flügelspieler:in nimmt Ball an, zieht Richtung Korb, Mitspieler:in unter dem Korb stellt Block, um die Verteidigung abzulenken. Abschluss oder Weiterspiel. Bewertung: 3+ Schritte, jede Spieler:in hat eine Aufgabe, taktische Logik erkennbar.",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Struktur",
+        "levels": [
+          "Weniger als 3 Schritte",
+          "3 Schritte, aber nicht alle Spieler:innen einbezogen",
+          "3+ Schritte, alle Spieler:innen mit Aufgabe"
+        ]
+      },
+      {
+        "criterion": "Taktische Logik",
+        "levels": [
+          "Kein erkennbares taktisches Ziel",
+          "Ziel erkennbar, aber Ausführung unklar",
+          "Kohärentes Muster mit nachvollziehbarer Logik"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Kein Diagramm erlaubt — Textbeschreibung fordert präzise Sprache, was eine wichtige Kompetenz ist.",
+      "Schüler:innen neigen zu 'Spieler:in A passt zu B, B schießt' — auf Tiefe (Freilaufbewegung, Ablenken der Verteidigung) hinweisen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Bewegung und Sport",
+  "klasse": 4,
+  "kompetenzbereich": "Fachkompetenz",
+  "competences": [
+    "BUS.US.4.FAC.01"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "FAC",
+    "SOZ"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0008",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T12:59:11+00:00"
+}

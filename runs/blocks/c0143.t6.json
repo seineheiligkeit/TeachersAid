@@ -1,0 +1,133 @@
+{
+  "id": "c0143.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Schau dir die Zeitleiste (Abb. 1) an. Erkläre in 3–5 Sätzen: Welche Bedeutung hat das Griechische für die europäische Kulturgeschichte? Nenne mindestens zwei konkrete Beispiele aus dem Alltag (Sprache, Wissenschaft, Kunst o. Ä.), die zeigen, dass das Griechische bis heute lebt.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 40.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "INT"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GRI.OS.5.KLA.03",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "GRI.OS.5.KLA.05",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Musterlösung (Deutsch): Das Griechische ist Grundlage der europäischen Wissenschaftssprache – fast alle Fachbegriffe in Medizin, Philosophie, Mathematik und Naturwissenschaften stammen aus dem Griechischen. Beispiele: 'Demokratie' als politisches Konzept und Wort; medizinische Terminologie (Diagnose, Therapie, Chirurgie); die griechische Mythologie prägt Literatur und Kunst bis heute (Ödipuskomplex, Achillesferse). Die Zeitleiste zeigt, dass das Griechische von der Archaik über die Klassik, den Hellenismus und die Koine bis ins Mittelalter und in die Neuzeit nachwirkte.",
+    "acceptable_reasoning": "Jeder sachlich korrekte Bezug auf Sprache, Wissenschaft, Philosophie, Literatur, Kunst oder Politik gilt.",
+    "rubric": [
+      {
+        "criterion": "Inhaltliche Korrektheit",
+        "levels": [
+          "Zwei oder mehr korrekte, gut begründete Beispiele",
+          "Ein Beispiel korrekt, eines vage",
+          "Nur allgemeine Aussage ohne Beispiele",
+          "Keine sinnvolle Antwort"
+        ]
+      },
+      {
+        "criterion": "Bezug zur Zeitleiste",
+        "levels": [
+          "Zeitleiste explizit einbezogen",
+          "Implizit auf Zeitverlauf bezogen",
+          "Zeitleiste ignoriert"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen nennen oft nur 'Mathematik' und 'Medizin' – sie sollen auf die Breite des Einflusses hingewiesen werden.",
+      "Zeitleiste: Schüler:innen lesen v. Chr. oft als n. Chr. – Zeitachse muss explizit besprochen werden.",
+      "Qualitative Antworten dürfen nicht nur auflisten – ein erklärender Satz zur Wirkung wird erwartet."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Griechisch",
+  "klasse": 5,
+  "kompetenzbereich": "5. Klasse",
+  "competences": [
+    "GRI.OS.5.KLA.03",
+    "GRI.OS.5.KLA.05"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "INT"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:timeline",
+      "spec": {
+        "events": [
+          {
+            "at": -800,
+            "label": "Homerische Epen"
+          },
+          {
+            "at": -500,
+            "label": "Attische Klassik"
+          },
+          {
+            "at": -323,
+            "label": "Tod Alexanders / Hellenismus"
+          },
+          {
+            "at": -146,
+            "label": "Römische Provinz Achaia"
+          },
+          {
+            "at": 0,
+            "label": "Koine / NT"
+          },
+          {
+            "at": 1453,
+            "label": "Fall Konstantinopels"
+          }
+        ],
+        "title": "Zeitleiste: Griechische Sprachgeschichte",
+        "xlabel": "Jahr (v./n. Chr.)"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0143",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:22+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

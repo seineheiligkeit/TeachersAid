@@ -1,0 +1,73 @@
+{
+  "id": "c0015.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne den folgenden Datentypen die passende Beschreibung zu.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Standortdaten",
+        "Kaufhistorie",
+        "Suchanfragen",
+        "Gerätekennungen (z.B. IMEI, Werbe-ID)"
+      ],
+      "right": [
+        "Verraten, wofür du dich interessierst und welche Informationen du suchst",
+        "Zeigen, wo du dich wann befunden hast – auch routinemäßig (Wohnadresse, Arbeitsplatz, Arzt)",
+        "Ermöglichen es, dein Gerät eindeutig zu identifizieren, auch wenn du die App neu installierst",
+        "Lassen Rückschlüsse auf Einkommen, Ernährungsgewohnheiten und Lebensweise zu"
+      ]
+    },
+    "response": {
+      "mode": "none"
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "T",
+      "G"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DGB.US.4.INF.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Standortdaten → Zeigen, wo du dich wann befunden hast ...; Kaufhistorie → Lassen Rückschlüsse auf Einkommen ...; Suchanfragen → Verraten, wofür du dich interessierst ...; Gerätekennungen → Ermöglichen es, dein Gerät eindeutig zu identifizieren ...",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Viele Schüler:innen unterschätzen Gerätekennungen – betonen, dass diese nach einem App-Neuinstall oder Gerätereset oft weiter bestehen.",
+      "Standortdaten gelten laut DSGVO nicht pauschal als besonders sensibel; aber Ärzte-/Kirchenbesuche machen sie faktisch sensibel – gute Diskussionsstelle."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Digitale Grundbildung",
+  "klasse": 4,
+  "kompetenzbereich": "Information: mit Daten, Informationen und Informationssystemen verantwortungsvoll umgehen",
+  "competences": [
+    "DGB.US.4.INF.02"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "T",
+    "G"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0015",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

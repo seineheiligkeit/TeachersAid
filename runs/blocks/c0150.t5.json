@@ -1,0 +1,119 @@
+{
+  "id": "c0150.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "ordering",
+    "prompt": "Bringe die Meilensteine der Netzwerkgeschichte in die richtige chronologische Reihenfolge. Ordne die Buchstaben von früh nach spät.",
+    "payload": {
+      "kind": "ordering",
+      "items": [
+        "A – Das World Wide Web wird von Tim Berners-Lee am CERN vorgestellt",
+        "B – ARPANET verbindet erstmals vier Universitäten in den USA",
+        "C – TCP/IP wird zum einheitlichen Kommunikationsprotokoll des Internets",
+        "D – Das erste iPhone bringt das mobile Internet in die breite Öffentlichkeit",
+        "E – 5G-Netze beginnen ihren weltweiten Rollout"
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 2
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "WV"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "INF.OS.5.INF.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "Korrekte Reihenfolge: B (1969) → C (1983) → A (1991) → D (2007) → E (2020).",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen verwechseln ARPANET und WWW häufig – ARPANET ist das Netz, das WWW ist der Dienst darüber.",
+      "TCP/IP (1983) ist früher als das WWW (1991) – das Internet existierte als Netz schon vor dem Web.",
+      "5G ist ein Mobilfunkstandard, kein Internetprotokoll – diese Unterscheidung kann diskutiert werden."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "ordering",
+  "subject": "Informatik",
+  "klasse": 5,
+  "kompetenzbereich": "Informatik, Mensch und Gesellschaft",
+  "competences": [
+    "INF.OS.5.INF.03"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "WV"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:timeline",
+      "spec": {
+        "events": [
+          {
+            "at": 1969,
+            "label": "ARPANET (4 Knoten)"
+          },
+          {
+            "at": 1983,
+            "label": "TCP/IP wird Standard"
+          },
+          {
+            "at": 1991,
+            "label": "World Wide Web (Berners-Lee)"
+          },
+          {
+            "at": 1998,
+            "label": "Google gegründet"
+          },
+          {
+            "at": 2007,
+            "label": "Erstes iPhone / mobiles Internet"
+          },
+          {
+            "at": 2020,
+            "label": "5G-Rollout beginnt"
+          }
+        ],
+        "title": "Meilensteine der Netzwerkgeschichte",
+        "xlabel": "Jahr"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0150",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:26+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

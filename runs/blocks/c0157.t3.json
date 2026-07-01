@@ -1,0 +1,130 @@
+{
+  "id": "c0157.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Schau dir die Vergessenskurve (Abbildung 1) an. Sie zeigt schematisch, wie viel von einer gelernten Information nach einer bestimmten Zeit noch erinnert wird.\n\n(a) Beschreibe den Verlauf der Kurve in eigenen Worten: Wann ist der Verlust am größten?\n(b) Was bedeutet dieser Verlauf für den sinnvollen Zeitpunkt einer Wiederholung?\n(c) Nenne einen wichtigen Unterschied zwischen dem Originalbefund von Ebbinghaus und typischen Lernmaterialien im Schulalltag.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "TRA",
+      "REF"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PUP.OS.7.KOG.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "(a) Der stärkste Vergessensrückgang erfolgt in den ersten Stunden nach dem Lernen; danach flacht die Kurve ab. (b) Eine erste Wiederholung sollte bald nach dem Lernen stattfinden (z. B. nach 1–2 Tagen), weitere im zunehmenden Abstand (Spacing). (c) Ebbinghaus verwendete sinnloses Silbenmaterial; im Schulalltag lernt man bedeutungshaltige Inhalte, die mit Vorwissen verknüpft werden – dadurch verläuft die Vergessenskurve in der Realität flacher.",
+    "acceptable_reasoning": "Akzeptabel: Schüler:innen nennen frühen Zeitpunkt der größten Verlustes; schlussfolgern auf frühe Wiederholung; benennen sinnloses Material als Einschränkung.",
+    "rubric": [
+      {
+        "criterion": "Beschreibung des Kurvenverlaufs",
+        "levels": [
+          "Fehlt oder falsch",
+          "Nur grob (viel wird vergessen)",
+          "Zeitlicher Verlauf (anfangs steil, dann flacher) korrekt beschrieben"
+        ]
+      },
+      {
+        "criterion": "Schlussfolgerung für die Wiederholung",
+        "levels": [
+          "Fehlt",
+          "Allgemein (öfter wiederholen)",
+          "Zeitlich konkretisiert (früh und verteilt)"
+        ]
+      },
+      {
+        "criterion": "Einschränkung des Befunds",
+        "levels": [
+          "Fehlt",
+          "Vage (andere Situation)",
+          "Sinnloses Material als spezifische Einschränkung genannt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Nicht verallgemeinern: Die genauen Prozentwerte sind Illustration, keine gemessene Universalkonstante.",
+      "Häufiger Fehler: Schüler:innen glauben, nach einem Monat sei alles vergessen – die Kurve zeigt Behaltensleistung, nicht Totalverlust."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Psychologie und Philosophie",
+  "klasse": 7,
+  "kompetenzbereich": "Kognitive Prozesse und Lernen",
+  "competences": [
+    "PUP.OS.7.KOG.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "TRA",
+    "REF"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:line",
+      "spec": {
+        "title": "Ebbinghaus' Vergessenskurve (illustrativ, schematisch)",
+        "xlabel": "Zeit nach dem Lernen",
+        "ylabel": "Behaltensleistung (%)",
+        "log": false,
+        "categories": [
+          "0 h",
+          "1 h",
+          "8 h",
+          "1 Tag",
+          "2 Tage",
+          "6 Tage",
+          "1 Monat"
+        ],
+        "values": [
+          100.0,
+          58.0,
+          44.0,
+          33.0,
+          28.0,
+          25.0,
+          21.0
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0157",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:28+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

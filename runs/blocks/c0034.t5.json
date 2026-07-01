@@ -1,0 +1,86 @@
+{
+  "id": "c0034.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "case_study",
+    "prompt": "Fallbeispiel: Die österreichische Studentin Sophie möchte ein Auslandssemester in Spanien machen. Sie nutzt das Erasmus-Programm der EU.\n\n(a) Was ist Erasmus – und welchem EU-Grundwert entspricht es?\n(b) Sophie bemerkt, dass ihr österreichisches Handyguthaben in Spanien genauso viel kostet wie zuhause. Welche EU-Regelung macht das möglich?\n(c) Sophie kauft in einem spanischen Online-Shop eine Jacke. Nach zwei Wochen funktioniert der Reißverschluss nicht mehr. Welche Rechte hat sie?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "apply",
+    "dimensions": [
+      "UK",
+      "HK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.4.EUR.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "(a) Erasmus ist ein EU-Bildungsaustauschprogramm (seit 1987); entspricht dem Wert der Bildungskooperation und Freizügigkeit – Ziel: europäische Identität und Kompetenzen stärken. (b) Roaming-Verordnung der EU (abgeschafft seit 2017 – no-roaming-charges im EU/EWR-Raum). (c) Gewährleistungsrecht (EU-weit 2 Jahre gesetzlich): Sophie kann Reparatur, Austausch oder Preisminderung verlangen; Kaufdatum war vor 2 Wochen → eindeutig im Gewährleistungszeitraum.",
+    "acceptable_reasoning": "Für (c) gilt auch die Antwort „Rückgabe“ wenn sie zusätzlich das Fernkaufrecht (14-Tage-Widerruf) nennt – ist hier nicht direkt relevant, weil der Mangel nach dem Kauf auftrat.",
+    "rubric": [
+      {
+        "criterion": "Erasmus erklärt (a)",
+        "levels": [
+          "falsch",
+          "unvollständig",
+          "korrekt mit EU-Wert"
+        ]
+      },
+      {
+        "criterion": "Roaming erklärt (b)",
+        "levels": [
+          "fehlt",
+          "Begriff ohne Erklärung",
+          "korrekt erklärt"
+        ]
+      },
+      {
+        "criterion": "Verbraucherrecht (c)",
+        "levels": [
+          "falsch",
+          "ansatzweise",
+          "korrekt und vollständig"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Erasmus: Schüler:innen verwechseln manchmal Erasmus+ (breiteres Programm seit 2014) mit dem klassischen Hochschulaustausch; beide sind valide.",
+      "Roaming: Gilt im EU/EWR-Raum; für die Türkei, Schweiz, UK (nach Brexit) gelten andere Regeln.",
+      "Gewährleistung: Beweislast liegt in den ersten 12 Monaten beim Verkäufer (in Österreich/EU) – für Klasse 4 nicht unbedingt nötig, aber interessant."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "case_study",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 4,
+  "kompetenzbereich": "Europa und europäische Integration",
+  "competences": [
+    "GWB.US.4.EUR.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "UK",
+    "HK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0034",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

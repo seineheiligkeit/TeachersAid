@@ -1,0 +1,75 @@
+{
+  "id": "c0021.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "construction",
+    "prompt": "Zeichne das Netz eines geraden quadratischen Prismas (Quader) mit folgenden Maßen auf kariertem Papier: Grundfläche 4 cm × 3 cm, Höhe 5 cm.\n\nAchtung: Beschrifte alle Flächen (G = Grundfläche, D = Deckfläche, S1 bis S4 = Seitenflächen) und gib die Maße an den entsprechenden Kanten an.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 80.0
+    },
+    "cognitive_level": "apply",
+    "dimensions": [
+      "H2"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GEZ.US.4.GEO.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Netz: Mittelstreifen aus 4 cm × 5 cm + 3 cm × 5 cm + 4 cm × 5 cm + 3 cm × 5 cm (umlaufend), plus je eine 4 cm × 3 cm Fläche oben und unten (Grund- und Deckfläche). Mehrere topologisch verschiedene Anordnungen sind korrekt, sofern das Netz faltbar ist.",
+    "acceptable_reasoning": "Verschiedene gültige Netzanordnungen akzeptieren — wichtig ist, dass das Netz lückenlos und überlappungsfrei ist und die Maße stimmen.",
+    "rubric": [
+      {
+        "criterion": "Netzstruktur",
+        "levels": [
+          "Netz nicht faltbar",
+          "Netz prinzipiell richtig, aber ein Fehler bei Flächen",
+          "Vollständiges, korrekt faltbares Netz"
+        ]
+      },
+      {
+        "criterion": "Bemaßung und Beschriftung",
+        "levels": [
+          "Fehlend",
+          "Teilweise vorhanden",
+          "Vollständig und korrekt"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Häufiger Fehler: Grundfläche und Deckfläche an der falschen Position → Netz lässt sich nicht korrekt zusammenfalten.",
+      "Maße an den Kanten anfangs vergessen — darauf bestehen, dass Bemaßung Teil der Aufgabe ist."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "construction",
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Geometrische Objekte und ihre Eigenschaften (I1)",
+  "competences": [
+    "GEZ.US.4.GEO.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "H2"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0021",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

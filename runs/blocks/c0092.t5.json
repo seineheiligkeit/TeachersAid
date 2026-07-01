@@ -1,0 +1,93 @@
+{
+  "id": "c0092.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Beurteile die folgenden Aussagen über Märkte und Preisbildung. Kreuze an (richtig / falsch) und begründe deine Antwort jeweils in einem Satz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Wenn viele Menschen ein Produkt wollen, aber nur wenige angeboten werden, steigt der Preis.",
+        "Ein Markt ist immer ein konkreter Ort, an dem Waren ausgestellt werden.",
+        "Auf dem Arbeitsmarkt trifft die Nachfrage nach Arbeitsstellen auf das Angebot an Arbeitsstellen.",
+        "Sinkende Nachfrage bei gleichbleibendem Angebot führt meist zu sinkenden Preisen."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "Richtig/Falsch",
+        "Begründung"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.2.VER.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1) Richtig — Knappheit treibt den Preis nach oben (Grundprinzip Angebot/Nachfrage). 2) Falsch — ein Markt ist ein wirtschaftliches Zusammentreffen von Angebot und Nachfrage; das kann auch online oder telefonisch stattfinden. 3) Teils richtig/Formulierung klären — auf dem Arbeitsmarkt suchen Arbeitgeber:innen Arbeitnehmer:innen (Nachfrage nach Arbeit) und Arbeitnehmer:innen bieten ihre Arbeitskraft an (Angebot); die Aussage dreht Angebot und Nachfrage um, je nach Perspektive. 4) Richtig — Überangebot (Nachfrage sinkt, Angebot konstant) → Preissenkung.",
+    "acceptable_reasoning": "Aussage 3 ist didaktisch heikel: Je nach Perspektive (Wer sucht wen?) kann 'Angebot' und 'Nachfrage' getauscht sein. Beide Deutungen mit Begründung akzeptieren.",
+    "rubric": [
+      {
+        "criterion": "Richtigkeit der Einschätzung",
+        "levels": [
+          "4/4 korrekt",
+          "3/4 korrekt",
+          "2/4 korrekt",
+          "< 2 korrekt"
+        ]
+      },
+      {
+        "criterion": "Qualität der Begründungen",
+        "levels": [
+          "Alle mit wirtschaftlichem Kausalzusammenhang",
+          "Teils mit Begründung",
+          "Fehlende oder reine Behauptungen"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Aussage 2 erzeugt oft die Antwort 'richtig' — Schüler:innen denken an Wochenmarkt oder Supermarkt. Die Abstraktion 'Markt als Prinzip' braucht ein konkretes Gegenbeispiel (z. B. Online-Plattform, Börse).",
+      "Aussage 3 über den Arbeitsmarkt ist sprachlich verwirrend — als Diskussionsanlass nutzen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 2,
+  "kompetenzbereich": "Vernetztes Wirtschaften zwischen Produktion und Konsum",
+  "competences": [
+    "GWB.US.2.VER.04"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0092",
+  "source": "ai",
+  "created_at": "2026-06-26T19:02:24+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

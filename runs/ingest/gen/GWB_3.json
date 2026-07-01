@@ -1,0 +1,217 @@
+{
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Entwicklungen am Wirtschaftsstandort Österreich",
+  "title": "Preise, Märkte und Wirtschaftsakteure in Österreich",
+  "kernfrage": "Wer bestimmt, was etwas kostet – und wer hat in der Wirtschaft das Sagen?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Preisbildung: Angebot und Nachfrage",
+        "throughline": "Schüler:innen verstehen das Grundprinzip der Preisbildung auf Märkten und können es auf Alltagsbeispiele aus ihrem Umfeld anwenden – von der Schülerdienstleistung bis zum Wohnungsmarkt.",
+        "talking_points": [
+          "Was ist ein Markt? Nicht nur der Wochenmarkt – jeder Ort (physisch oder digital), an dem Angebot und Nachfrage zusammentreffen.",
+          "Grundgesetz: steigt die Nachfrage, steigt bei gleichem Angebot der Preis – und umgekehrt. Ceteris-paribus-Annahme explizit machen.",
+          "Fallbeispiel: Wohnungspreise in Wien vs. Güssing – warum so unterschiedlich? Nachfrage (Arbeit, Infrastruktur) trifft auf begrenztes Angebot (Wohnraum).",
+          "Produktionskosten als zweite Preistriebkraft: Steigende Energiepreise → höhere Herstellungskosten → höhere Preise im Supermarkt."
+        ],
+        "extensions": [
+          "Simulation „Straußenmarkt“: Schüler:innen spielen Käufer und Verkäufer von fiktiven Gütern und erleben Preisbildung am eigenen Leib.",
+          "Recherche: Warum kosten Erdbeeren im Jänner mehr als im Juni? Saisonalität, Import, Energiekosten für Gewächshäuser.",
+          "Vertiefung: Monopson (z. B. ein großer Lebensmitteleinzelhändler als einziger Käufer für regionale Produzenten) – wer hat hier die Marktmacht?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "multiple_choice",
+            "prompt": "Ein plötzlicher Frost zerstört in Spanien fast die gesamte Erdbeernte. Was passiert mit dem Preis für Erdbeeren in österreichischen Supermärkten in den nächsten Wochen – und warum?",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "A) Der Preis sinkt, weil die Supermarktketten weniger Erdbeerware einkaufen müssen.",
+                "B) Der Preis steigt, weil das Angebot kleiner wird, die Nachfrage aber gleich bleibt.",
+                "C) Der Preis bleibt gleich, weil der Staat die Preise kontrolliert.",
+                "D) Der Preis sinkt, weil Konsumenten auf andere Früchte ausweichen."
+              ],
+              "select": "one"
+            },
+            "response": { "mode": "choices", "options": ["A", "B", "C", "D"], "select": "one" },
+            "cognitive_level": "apply",
+            "dimensions": ["UK"],
+            "serves": [{ "competence_id": "GWB.US.3.ENT.04", "relation": "exercises" }],
+            "est_minutes": 5,
+            "answer_key": "B. Bei sinkendem Angebot und gleichbleibender Nachfrage steigt der Marktpreis – klassische Angebots-Nachfrage-Logik. D ist teilweise plausibel (Substitution), aber die unmittelbare Preisreaktion ist Anstieg.",
+            "acceptable_reasoning": "D kann als Teilantwort akzeptiert werden, wenn Schüler:innen die kurzfristige Preissteigerung (B) und die mittelfristige Nachfrageverschiebung (D) unterscheiden.",
+            "watch_outs": [
+              "Distraktor C ist ein häufiges Missverständnis: In Österreich gibt es für die meisten Güter keine staatliche Preisfestsetzung (Ausnahmen: Mieten, Taxi, einige regulierte Märkte).",
+              "Spanien als Lieferant: Österreich importiert viele Früchte aus Südeuropa – der globale Kontext der Preisbildung ist hier direkt relevant."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "table_fill",
+            "prompt": "Die Tabelle zeigt verschiedene Situationen auf dem Wohnungsmarkt in einer österreichischen Stadt. Entscheide jeweils, ob der Mietpreis steigt, sinkt oder gleich bleibt, und erkläre kurz warum.\n\n| Situation | Mietpreis-Veränderung | Begründung |\n|---|---|---|\n| Großes Unternehmen eröffnet neue Niederlassung und bringt 500 Arbeitsplätze | | |\n| Neues Wohnviertel mit 300 Wohnungen wird fertiggestellt | | |\n| Bevölkerung der Stadt sinkt durch Abwanderung | | |\n| Zinserhöhung durch Nationalbank macht Wohnungskäufe teurer | | |",
+            "payload": null,
+            "response": { "mode": "table", "columns": ["Situation", "Veränderung", "Begründung"], "rows": 4 },
+            "cognitive_level": "analyze",
+            "dimensions": ["UK"],
+            "serves": [{ "competence_id": "GWB.US.3.ENT.04", "relation": "exercises" }],
+            "est_minutes": 10,
+            "answer_key": "1) Steigt – höhere Nachfrage durch Zuzug von Arbeitnehmer:innen. 2) Sinkt – Angebot steigt, Nachfrage gleich. 3) Sinkt – Nachfrage sinkt, Leerstand entsteht. 4) Steigt (Mietmarkt) – weniger Menschen können sich Eigentum leisten und weichen in Mietwohnungen aus; alternativ sinkt (Gesamtnachfrage schwächt sich ab). Beide Richtungen für Punkt 4 akzeptabel mit Begründung.",
+            "acceptable_reasoning": "Situation 4 ist komplex – Zinserhöhung hat gegenläufige Effekte; jede begründete Antwort ist valide.",
+            "watch_outs": [
+              "Wohnungsmarkt ist für Klasse-3-Schüler:innen oft abstrakt – Lehrperson kann Wien vs. Ostösterreich als konkretes Beispiel einführen.",
+              "Situation 4 ist bewusst mehrdeutig gesetzt, um kritisches Denken zu fördern."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "case_study",
+            "prompt": "Fallbeispiel: Der Lebensmitteldiscounter „Sparbo“ plant, in der Kleinstadt Freistadt (OÖ, 8 000 Einwohner:innen) eine neue Filiale zu eröffnen. Bislang gibt es dort nur zwei kleinere lokale Lebensmittelläden.\n\n(a) Welche Folgen könnte die Eröffnung für die Preise in Freistadt haben?\n(b) Welche Folgen könnte sie für die bestehenden lokalen Geschäfte haben?\n(c) Wer profitiert, wer verliert – und ist das insgesamt „gut“ für Freistadt?",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 55 },
+            "cognitive_level": "evaluate",
+            "dimensions": ["UK", "HK"],
+            "serves": [{ "competence_id": "GWB.US.3.ENT.04", "relation": "exercises" }],
+            "est_minutes": 12,
+            "answer_key": "(a) Preise sinken durch Wettbewerb; Discounter kann günstiger einkaufen (Skaleneffekte). (b) Kleine Läden verlieren Kund:innen; können ggf. schließen; Nische (Bioladen, spezialisiertes Sortiment) überlebt besser. (c) Konsument:innen profitieren (günstigere Preise); lokale Händler:innen und ihre Mitarbeiter:innen verlieren; Steuereinnahmen: Discounter zahlt Steuern, aber Gewinne fließen oft aus der Region ab. Gesamtbewertung: Abwägung – kein eindeutiges „gut“ oder „schlecht“.",
+            "acceptable_reasoning": "Schüler:innen, die eine Position beziehen und sie mit Argumenten stützen, ohne die andere Seite zu ignorieren, erhalten volle Punktzahl.",
+            "watch_outs": [
+              "Lehrperson sollte den Begriff „Skaleneffekte“ (economies of scale) ggf. kurz erklären.",
+              "Steuerliche Aspekte (Gewinnabfluss aus der Region) sind für Klasse 3 anspruchsvoll, aber möglich – als Erweiterung einbringen."
+            ],
+            "rubric": [
+              { "criterion": "Perspektivenvielfalt (a–c)", "levels": ["nur Konsumenten", "Konsumenten + Händler", "alle Stakeholder berücksichtigt"] },
+              { "criterion": "Gesamturteil (c)", "levels": ["einseitig", "abwägend aber unbegründet", "abwägend und begründet"] }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Wirtschaftsakteure und ihre Rollen",
+        "throughline": "Schüler:innen beschreiben die Aufgaben der wichtigsten Akteure in der österreichischen ökosoziale Marktwirtschaft und analysieren Interessenskonflikte und Kooperationen zwischen ihnen.",
+        "talking_points": [
+          "Die vier Hauptakteure: private Haushalte (Konsumenten + Arbeitnehmer:innen), Unternehmen (Produzenten + Arbeitgeber:innen), Staat (Rahmenbedingungen, Umverteilung), Banken/OeNB (Geldversorgung, Zinsen).",
+          "Sozialpartnerschaft als österreichisches Besonderheit: Wirtschaftskammer + Arbeiterkammer + Gewerkschaft + Landwirtschaftskammer – kollektive Interessenvertretung.",
+          "Interessenskonflikte: Unternehmen wollen niedrige Löhne, Arbeitnehmer:innen hohe; beide wollen stabile Preise, aber der Mechanismus ist umstritten.",
+          "Ökosozialer Aspekt: Staat greift ein, wenn Markt versagt (Umweltverschmutzung, Monopole, soziale Ungerechtigkeit)."
+        ],
+        "extensions": [
+          "Lehrperson lädt eine:n Betriebsrat:rätin oder Arbeiterkammer-Vertreter:in ein – Gespräch über reale Interessenvertretung.",
+          "Vertiefung: Was passiert, wenn Sozialpartner sich nicht einigen? – Streikrecht in Österreich (selten aber existent).",
+          "Vergleich: Wie funktioniert die Sozialpartnerschaft in anderen EU-Ländern (z. B. Großbritannien ohne starke Gewerkschafts-Einbindung)?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "matching",
+            "prompt": "Ordne jeder Aufgabe den passenden Wirtschaftsakteur zu. Jeder Akteur kann mehrmals vorkommen.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Legt den Leitzins fest, um die Inflation zu steuern",
+                "Kauft Güter und Dienstleistungen und bezahlt Steuern",
+                "Stellt Arbeitnehmer:innen ein und produziert Waren",
+                "Baut Schulen, Straßen und zahlt Sozialleistungen",
+                "Verhandelt Kollektivverträge für Beschäftigte",
+                "Leiht Geld an Privatpersonen und Unternehmen"
+              ],
+              "right": [
+                "Privater Haushalt",
+                "Unternehmen",
+                "Staat",
+                "Oesterreichische Nationalbank (OeNB)",
+                "Sozialpartner (Gewerkschaft/AK)",
+                "Geschäftsbank"
+              ]
+            },
+            "response": { "mode": "lines", "n": 6 },
+            "cognitive_level": "remember",
+            "dimensions": ["OK"],
+            "serves": [{ "competence_id": "GWB.US.3.ENT.05", "relation": "exercises" }],
+            "est_minutes": 7,
+            "answer_key": "1–OeNB; 2–Privater Haushalt; 3–Unternehmen; 4–Staat; 5–Sozialpartner; 6–Geschäftsbank.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "OeNB und EZB: Die OeNB ist Teil des Europäischen Zentralbanksystems; die Leitzinsentscheidung fällt eigentlich auf EZB-Ebene. Für Klasse 3 vereinfachend korrekt, aber Lehrperson kann das klarstellen.",
+              "Sozialpartner: Schüler:innen verwechseln oft AK (gesetzlich, Pflichtmitgliedschaft) und Gewerkschaft (freiwillig). Beide verhandeln Kollektivverträge, aber unterschiedlich."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "open_response",
+            "prompt": "Ein Automobilwerk will in einer österreichischen Kleinstadt eine neue Fabrik bauen. Erkläre, welche Interessen die folgenden Akteure in dieser Situation haben – und wo mögliche Konflikte entstehen könnten:\n- Die Fabrikbesitzer:innen\n- Die Gemeinde\n- Die künftigen Mitarbeiter:innen\n- Umweltschutzorganisationen",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 55 },
+            "cognitive_level": "analyze",
+            "dimensions": ["UK"],
+            "serves": [{ "competence_id": "GWB.US.3.ENT.05", "relation": "exercises" }],
+            "est_minutes": 12,
+            "answer_key": "Fabrikbesitzer:innen: Gewinn maximieren, günstige Standortbedingungen, niedrige Steuern. Gemeinde: Arbeitsplätze, Steuereinnahmen, Infrastrukturbelastung. Mitarbeiter:innen: sichere, gut bezahlte Jobs, Arbeitnehmerrechte. Umweltschutz: Emissionen, Flächenversiegelung, Lärm. Konflikte: Umweltschutz vs. Arbeitsplätze; Steuervorteile für Unternehmen vs. Gemeindeinteressen; Löhne vs. Gewinne.",
+            "acceptable_reasoning": "Schüler:innen, die Kompromissszenarien (Auflagen, Umweltverträglichkeitsprüfung) nennen, erhalten Bonus.",
+            "watch_outs": [
+              "Typische Fehlantwort: Alle wollen die Fabrik – Schüler:innen übersehen Umwelt- und Verteilungskonflikte.",
+              "Umweltverträglichkeitsprüfung (UVP) in Österreich kann als Beispiel eingebracht werden."
+            ],
+            "rubric": [
+              { "criterion": "Akteure vollständig berücksichtigt", "levels": ["1–2 Akteure", "3 Akteure", "alle 4 Akteure"] },
+              { "criterion": "Konflikte erkannt", "levels": ["keine", "ein Konflikt", "mehrere Konflikte differenziert"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "position_argument",
+            "prompt": "Österreich hat eine „ökosoziale Marktwirtschaft“. Das bedeutet, dass der Staat in die Wirtschaft eingreift, um Umwelt und soziale Gerechtigkeit zu schützen.\n\nManche sagen: „Der Staat soll sich aus der Wirtschaft heraushalten – Märkte regeln sich selbst am besten.“\nAndere sagen: „Ohne staatliche Regeln würden Unternehmen die Umwelt zerstören und Arbeitnehmer:innen ausbeuten.“\n\nNimm eine begründete Stellung ein.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 50 },
+            "cognitive_level": "evaluate",
+            "dimensions": ["UK", "HK"],
+            "serves": [{ "competence_id": "GWB.US.3.ENT.05", "relation": "exercises" }],
+            "est_minutes": 11,
+            "answer_key": "Beide Positionen sind ideologisch verankert. Argumente für staatliche Regulierung: Marktversagen bei externen Kosten (Umweltverschmutzung), Machtungleichgewichte, soziale Sicherung. Argumente für weniger Eingriff: Bürokratie hemmt Innovation, Überregulierung verteuert Produkte, Eigenverantwortung stärken. Österreich ist historisch stark sozialpartnerschaftlich geprägt – ein ausgewogenes Urteil, das beide Seiten kennt, ist das Ziel.",
+            "acceptable_reasoning": "Eine klar positionierte Antwort, die die Gegenargumente zumindest benennt, gilt als sehr gut.",
+            "watch_outs": [
+              "Ideologische Schlagworte (Kommunismus, Kapitalismus) nicht unkritisch übernehmen – Lehrperson führt auf sachliche Ebene zurück.",
+              "Österreichische Besonderheit: Sozialpartnerschaft ist breiter gesellschaftlicher Konsens, kein Politikum – das sollte im Unterricht neutral dargestellt werden."
+            ],
+            "rubric": [
+              { "criterion": "Position klar", "levels": ["fehlt", "implizit", "klar formuliert"] },
+              { "criterion": "Gegenargumente bekannt", "levels": ["ignoriert", "erwähnt", "ernsthaft diskutiert"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "open_response",
+            "prompt": "Erkläre in 3–4 Sätzen, wozu Steuern und Abgaben dienen. Nenne zwei konkrete Beispiele, wofür der österreichische Staat Steuereinnahmen verwendet.",
+            "payload": null,
+            "response": { "mode": "lines", "n": 5 },
+            "cognitive_level": "understand",
+            "dimensions": ["UK"],
+            "serves": [{ "competence_id": "GWB.US.3.ENT.06", "relation": "exercises" }],
+            "est_minutes": 6,
+            "answer_key": "Steuern finanzieren öffentliche Güter und Dienstleistungen, die alle nutzen: Schulen, Spitäler, Straßen, Polizei, Sozialleistungen (Arbeitslosengeld, Pension). Steuern ermöglichen auch Umverteilung von Reich zu Arm. Konkrete Beispiele: Bildung (kostenlose Pflichtschule), Gesundheitsversorgung (Krankenversicherung), öffentlicher Verkehr (Förderung der ÖBB).",
+            "acceptable_reasoning": "Auch Sicherheit, Feuerwehr, Verwaltung sind valide Beispiele.",
+            "watch_outs": [
+              "Häufige Fehlauffassung: Steuern seien „verschwendetes Geld“ – Lehrperson kann Gegenbeispiele aus dem Alltag nennen.",
+              "Unterschied Steuer (kein direktes Gegenleistungsversprechen) vs. Gebühr (z. B. Rundfunkgebühr) kann kurz erwähnt werden."
+            ],
+            "rubric": []
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "id": "c0107.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "In der Pyramide (Abb. 1) ist der Unterschied zwischen Männern und Frauen bei jungen Altersgruppen (0–29 Jahre) anders als bei alten Altersgruppen (75+). Beschreibe diesen Unterschied und erkläre ihn mit zwei verschiedenen Gründen.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.OST.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "Bei jungen Altersgruppen (0–29) überwiegen leicht die Männer (z. B. 0–4: 217.721 Männer vs. 206.203 Frauen). Bei alten Altersgruppen (75+) überwiegen deutlich die Frauen (z. B. 85+: 79.185 Männer vs. 148.820 Frauen — fast doppelt so viele). Gründe: (1) Frauen haben biologisch eine höhere Lebenserwartung. (2) Historische Verluste: Die Männer des Jahrgangs 1939 oder früher erlitten im Zweiten Weltkrieg überproportionale Sterblichkeit — das ist in der Pyramide noch sichtbar.",
+    "acceptable_reasoning": "Für die Erklärung genügt ein biologischer Grund (Lebenserwartung) und ein historischer oder sozialer Grund (Krieg, höheres Unfallrisiko bei Männern, etc.).",
+    "rubric": [
+      {
+        "criterion": "Beschreibung des Unterschieds",
+        "levels": [
+          "Beide Enden korrekt beschrieben (2P)",
+          "Ein Ende korrekt (1P)",
+          "Nicht beschrieben (0P)"
+        ]
+      },
+      {
+        "criterion": "Zwei Gründe",
+        "levels": [
+          "Zwei plausible Gründe (2P)",
+          "Ein Grund (1P)",
+          "Kein Grund (0P)"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen könnten den Unterschied bei Jungen/Männern übersehen und nur den bei 75+ nennen — beide Altersenden gezielt ansprechen.",
+      "Den historischen Kriegsgrund sollen Schüler:innen nicht erfinden müssen; er kann als Denkanstoß eingeführt werden."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Österreichische Gesellschaftsentwicklung",
+  "competences": [
+    "GWB.US.3.OST.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:population_pyramid",
+      "spec": {
+        "title": "Bevölkerungspyramide Österreich (1.1.2024)",
+        "xlabel": "Personen",
+        "age_groups": [
+          "0–4",
+          "5–9",
+          "10–14",
+          "15–19",
+          "20–24",
+          "25–29",
+          "30–34",
+          "35–39",
+          "40–44",
+          "45–49",
+          "50–54",
+          "55–59",
+          "60–64",
+          "65–69",
+          "70–74",
+          "75–79",
+          "80–84",
+          "85+"
+        ],
+        "male": [
+          217721,
+          233589,
+          225693,
+          232917,
+          259070,
+          303392,
+          327167,
+          319456,
+          311542,
+          289329,
+          320354,
+          355386,
+          322097,
+          247355,
+          189728,
+          149524,
+          131327,
+          79185
+        ],
+        "female": [
+          206203,
+          220286,
+          212329,
+          217468,
+          241672,
+          283992,
+          311084,
+          310390,
+          309056,
+          293047,
+          329411,
+          357617,
+          331334,
+          272182,
+          223124,
+          190665,
+          185238,
+          148820
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "statistik_austria_bevstand_2024",
+        "series": "pyramide_5j",
+        "note": null,
+        "title": "Bevölkerung Österreichs nach Alter und Geschlecht (1.1.2024)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2024",
+        "attribution": "Datenquelle: Statistik Austria – data.statistik.gv.at (CC BY 4.0)",
+        "stand": "2024-01-01"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0107",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:25+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

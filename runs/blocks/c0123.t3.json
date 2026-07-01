@@ -1,0 +1,86 @@
+{
+  "id": "c0123.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Beide Städte haben ähnliche Jahresmitteltemperaturen (Wien ca. 11,8 °C, Bregenz ca. 10,2 °C). Wenn die Temperatur kaum unterschiedlich ist — was könnte dann die Ursache für den riesigen Unterschied im Niederschlag sein? Formuliere eine begründete Vermutung.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 35.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.4.WET.03",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.US.4.WET.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Erwartete Vermutung (Schülerebene): Die Lage spielt eine Rolle — Bregenz liegt am Bodensee und am westlichen Rand der Alpen. Feuchte Luft, die aus dem Westen (Atlantik) kommt, trifft auf die Berge, muss aufsteigen und kühlt sich ab. Dabei kondensiert der Wasserdampf → Regen. Wien liegt im 'Windschatten' der Alpen und erhält diese Stauregen nicht. Physikalisch: Aufstieg → Abkühlung → Kondensation → Niederschlag (adiabatische Abkühlung).",
+    "acceptable_reasoning": "Kreative Vermutungen (Nähe zum Bodensee, Atlantikwinde, Berge als Barriere) sind alle wertvoll; das physikalische Prinzip muss nicht perfekt formuliert sein.",
+    "rubric": [
+      {
+        "criterion": "Lagebezug",
+        "levels": [
+          "Alpen/Wetterlage als Ursache erkannt",
+          "Lage erwähnt, ohne Mechanismus",
+          "Nicht erkannt"
+        ]
+      },
+      {
+        "criterion": "Physikalischer Mechanismus",
+        "levels": [
+          "Aufstieg → Abkühlung → Regen skizziert",
+          "Kondensation/Abkühlung erwähnt",
+          "Fehlt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schülerinnen und Schüler werden 'Bodensee' als Verdunstungsquelle nennen — das ist ein Beitrag, aber der Hauptfaktor ist die atlantische Luftfeuchtigkeit und der Alpenrand.",
+      "Den Begriff 'Stauregen' nicht einfordern, wenn er nicht eingeführt wurde — Umschreibung ('Wolken stauen sich am Berg') reicht."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Wetter und Klima",
+  "competences": [
+    "PHY.US.4.WET.03",
+    "PHY.US.4.WET.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "W",
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0123",
+  "source": "ai",
+  "created_at": "2026-06-27T15:21:17+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

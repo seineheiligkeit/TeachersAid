@@ -1,0 +1,223 @@
+{
+  "subject": "Digitale Grundbildung",
+  "klasse": 4,
+  "kompetenzbereich": "Information: mit Daten, Informationen und Informationssystemen verantwortungsvoll umgehen",
+  "title": "Daten, Überwachung und Datenschutz",
+  "kernfrage": "Welche Spuren hinterlässt du im Netz – und wer nutzt diese Daten, auf welche Weise?",
+  "body": {
+    "intro": [
+      {
+        "role": "info",
+        "id": "i1",
+        "prompt": "Jedes Mal, wenn du eine App öffnest, eine Website besuchst oder einen Suchbegriff eintippst, werden Daten über dich gesammelt. Diese Daten können gespeichert, verkauft, ausgewertet und mit anderen Datensätzen verknüpft werden – oft ohne dass du es merkst. In Österreich und der gesamten EU regelt die Datenschutz-Grundverordnung (DSGVO), welche Rechte du dabei hast.",
+        "est_minutes": 3
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Was Unternehmen über dich wissen",
+        "throughline": "Schüler:innen erkennen konkret, welche Datenkategorien gesammelt werden und wie deren Verknüpfung ein detailliertes Persönlichkeitsprofil ergeben kann – der Kern des Datenschutzproblems.",
+        "talking_points": [
+          "Einzelne Datenpunkte wirken harmlos (Standort, Kaufhistorie, Suchverlauf), aber kombiniert ergeben sie ein präzises Profil – sogenanntes Profiling.",
+          "Unternehmen verdienen Geld, indem sie Profile für zielgerichtete Werbung verkaufen; die Nutzer:in ist das Produkt, nicht der Kunde.",
+          "Die DSGVO unterscheidet zwischen gewöhnlichen und besonders sensiblen Datenkategorien (Gesundheit, Religion, politische Meinung).",
+          "Fahrlässigkeit (versehentliche Datenlecks) und Missbrauch (bewusster Verkauf ohne Einwilligung) sind zwei verschiedene Risiken."
+        ],
+        "extensions": [
+          "Schüler:innen recherchieren den konkreten Datenschutzscan eines Geräts ihrer Wahl (z.B. mit dem Tool \"Exodus Privacy\" für Android-Apps) und präsentieren die Ergebnisse.",
+          "Vergleich: DSGVO-Rechte in Österreich vs. Datenschutzrecht in den USA (kein einheitliches Bundesgesetz) – was ändert sich für Nutzer:innen?",
+          "Lektüre und Diskussion eines realen Datenskandals (z.B. Cambridge Analytica) und Reflexion: Was hätte die DSGVO daran verhindert?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "matching",
+            "prompt": "Ordne den folgenden Datentypen die passende Beschreibung zu.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Standortdaten",
+                "Kaufhistorie",
+                "Suchanfragen",
+                "Gerätekennungen (z.B. IMEI, Werbe-ID)"
+              ],
+              "right": [
+                "Verraten, wofür du dich interessierst und welche Informationen du suchst",
+                "Zeigen, wo du dich wann befunden hast – auch routinemäßig (Wohnadresse, Arbeitsplatz, Arzt)",
+                "Ermöglichen es, dein Gerät eindeutig zu identifizieren, auch wenn du die App neu installierst",
+                "Lassen Rückschlüsse auf Einkommen, Ernährungsgewohnheiten und Lebensweise zu"
+              ]
+            },
+            "response": { "mode": "none" },
+            "cognitive_level": "remember",
+            "dimensions": ["T", "G"],
+            "serves": [
+              { "competence_id": "DGB.US.4.INF.02", "relation": "exercises" }
+            ],
+            "est_minutes": 6,
+            "answer_key": "Standortdaten → Zeigen, wo du dich wann befunden hast ...; Kaufhistorie → Lassen Rückschlüsse auf Einkommen ...; Suchanfragen → Verraten, wofür du dich interessierst ...; Gerätekennungen → Ermöglichen es, dein Gerät eindeutig zu identifizieren ...",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Viele Schüler:innen unterschätzen Gerätekennungen – betonen, dass diese nach einem App-Neuinstall oder Gerätereset oft weiter bestehen.",
+              "Standortdaten gelten laut DSGVO nicht pauschal als besonders sensibel; aber Ärzte-/Kirchenbesuche machen sie faktisch sensibel – gute Diskussionsstelle."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "open_response",
+            "prompt": "Ein Unternehmen kennt folgende Daten von dir: deinen genauen Standort in den letzten 30 Tagen, deine Suchanfragen der letzten sechs Monate, deine Kaufhistorie bei einer Supermarkt-App und die Liste aller Apps auf deinem Smartphone. Erkläre, welche Rückschlüsse das Unternehmen aus der Kombination dieser Daten auf dein Leben ziehen könnte. Nenne mindestens drei konkrete Beispiele.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 45 },
+            "cognitive_level": "analyze",
+            "dimensions": ["G", "I"],
+            "serves": [
+              { "competence_id": "DGB.US.4.INF.02", "relation": "exercises" }
+            ],
+            "est_minutes": 10,
+            "answer_key": "Mögliche Rückschlüsse: (1) Regelmäßige Standortmuster → Wohn- und Arbeitsadresse, evtl. Arzt- oder Gottesdienstbesuche (sensible Kategorien). (2) Suchanfragen → Krankheitssymptome, politische Interessen, Beziehungsstatus, finanzielle Sorgen. (3) Kaufhistorie → Ernährungsweise (vegan? Diät?), wirtschaftliche Lage, Haushaltsgröße. (4) App-Liste → Religionszugehörigkeit (Gebets-App), politische Einstellung (Partei-App), Gesundheitszustand (Medikamenten-App). Kombination ermöglicht Profiling für Werbe- und ggf. Versicherungszwecke.",
+            "acceptable_reasoning": "Jedes gut begründete Beispiel zählt; Schüler:innen müssen nicht alle Kategorien nennen, aber die Logik der Verknüpfung (1+1+1 > 3) muss deutlich werden.",
+            "watch_outs": [
+              "Häufiger Fehler: Schüler:innen nennen Datentypen statt Schlussfolgerungen – nachfragen: 'Was weiß das Unternehmen über dich, nicht: Was hat das Unternehmen?'",
+              "Betonen: Nicht alle Daten sind gleich sensibel; die DSGVO schützt bestimmte Kategorien (Art. 9) stärker."
+            ],
+            "rubric": [
+              {
+                "criterion": "Qualität der Rückschlüsse",
+                "levels": [
+                  "Nur oberflächlich (z.B. 'weiß, was man kauft')",
+                  "Konkrete Beispiele mit Bezug zu Lebensbereichen",
+                  "Verknüpfungslogik explizit benannt; sensible Kategorien erkannt"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "true_false_justify",
+            "prompt": "Entscheide, ob die folgenden Aussagen zur DSGVO und zum österreichischen Datenschutzgesetz (DSG) stimmen, und begründe deine Entscheidung jeweils in einem Satz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Die DSGVO gilt nur für österreichische Unternehmen mit Sitz in Wien.",
+                "Du hast das Recht, von einem Unternehmen Auskunft darüber zu verlangen, welche Daten es über dich gespeichert hat.",
+                "Wenn du die Nutzungsbedingungen einer App akzeptierst, verlierst du alle Datenschutzrechte.",
+                "Unternehmen dürfen besonders sensible Daten (z.B. Gesundheitsdaten) grundsätzlich nicht ohne ausdrückliche Einwilligung verarbeiten."
+              ]
+            },
+            "response": { "mode": "none" },
+            "cognitive_level": "understand",
+            "dimensions": ["G", "I"],
+            "serves": [
+              { "competence_id": "DGB.US.4.INF.02", "relation": "exercises" }
+            ],
+            "est_minutes": 8,
+            "answer_key": "(1) Falsch – die DSGVO gilt für alle Unternehmen, die Daten von EU-Bürger:innen verarbeiten, unabhängig vom Firmensitz. (2) Richtig – Auskunftsrecht nach Art. 15 DSGVO. (3) Falsch – AGB können Datenschutzrechte nicht aushebeln; die Einwilligung muss freiwillig, informiert und widerrufbar sein. (4) Richtig – Art. 9 DSGVO; Ausnahmen sind eng begrenzt.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Aussage 3 ist eine häufige Alltagsmeinung und zentrale Fehlvorstellung – hier Zeit nehmen.",
+              "Aussage 1 bezieht sich auf das Marktortprinzip (Art. 3 DSGVO): Auch US-Konzerne wie Google/Meta müssen die DSGVO einhalten, wenn sie Daten von EU-Bürger:innen verarbeiten."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "decision_scenario",
+            "prompt": "Lena nutzt eine kostenlose Fitness-App. Bei der Installation fragt die App nach Zugriff auf: (a) Standort (immer aktiv), (b) Kamera, (c) Kontakte, (d) Mikrofon. Lena fragt sich, welche Berechtigungen sie wirklich gewähren soll.\n\nAnalysiere: Welche Berechtigungen sind für eine Fitness-App sinnvoll, welche sind übermäßig? Begründe deine Einschätzung und beschreibe, welches Risiko die übermäßigen Berechtigungen mit sich bringen.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Fitness-App verlangt weitreichende Berechtigungen – was tun?"
+            },
+            "response": { "mode": "box", "min_height_mm": 40 },
+            "cognitive_level": "evaluate",
+            "dimensions": ["I", "G"],
+            "serves": [
+              { "competence_id": "DGB.US.4.INF.02", "relation": "exercises" }
+            ],
+            "est_minutes": 10,
+            "answer_key": "Sinnvoll: Standort (eingeschränkt, z.B. nur bei Nutzung) für GPS-Tracking von Routen. Übermäßig: Kamera (eine Fitness-App braucht keine Fotos), Kontakte (kein erkennbarer Zweck), Mikrofon (kein Sprachfeature nötig). Risiko: Kontakte → Adressbuch wird an Dritte weitergegeben; Mikrofon → Mithören von Gesprächen möglich; Kamera → ungewollte Bildaufnahmen. Datenschutzprinzip der Datensparsamkeit (Art. 5 Abs. 1 lit. c DSGVO): nur so viele Daten wie nötig.",
+            "acceptable_reasoning": "Schüler:innen müssen nicht die DSGVO-Artikelnummer kennen, aber das Prinzip der Datensparsamkeit erkennen und anwenden.",
+            "watch_outs": [
+              "Manche Schüler:innen finden den Standort-Dauerzugriff normal – herausarbeiten, dass 'nur bei Nutzung' ausreicht und Dauerzugriff ein erhebliches Tracking ermöglicht.",
+              "Kontakte-Berechtigung wird oft unterschätzt: Die gesammelten Kontaktdaten betreffen auch andere Personen, die der Datenerhebung nie zugestimmt haben."
+            ],
+            "rubric": [
+              {
+                "criterion": "Begründungsqualität",
+                "levels": [
+                  "Pauschalurteil ohne Begründung",
+                  "Begründung anhand konkreter App-Funktionen",
+                  "Datensparsamkeitsprinzip erkannt und auf alle vier Berechtigungen angewendet"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "open_response",
+            "prompt": "Erkläre den Unterschied zwischen Fahrlässigkeit und Missbrauch beim Umgang mit Nutzerdaten. Erfinde dazu je ein konkretes Beispiel und beschreibe, wie ein Unternehmen in beiden Fällen verantwortungsvoll handeln könnte.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 40 },
+            "cognitive_level": "analyze",
+            "dimensions": ["G"],
+            "serves": [
+              { "competence_id": "DGB.US.4.INF.02", "relation": "exercises" }
+            ],
+            "est_minutes": 9,
+            "answer_key": "Fahrlässigkeit (Beispiel): Ein Onlineshop speichert Passwörter unverschlüsselt – bei einem Datenleck werden sie öffentlich. Missbrauch (Beispiel): Ein Unternehmen verkauft heimlich Nutzungsprofile an eine Versicherung, obwohl die AGB dies nicht vorsehen. Verantwortungsvolles Handeln: Sicherheitsstandards (Verschlüsselung, regelmäßige Audits); klare, verständliche Datenschutzerklärung; keine Weitergabe ohne Einwilligung; Meldepflicht bei Datenpannen (Art. 33 DSGVO: 72h).",
+            "acceptable_reasoning": "Eigene Beispiele sind gleichwertig, wenn das Prinzip (ungewollter Fehler vs. absichtliche Verletzung) klar wird.",
+            "watch_outs": [
+              "Der Unterschied Fahrlässigkeit/Missbrauch ist juristisch relevant (Haftung), aber Schüler:innen müssen keine Rechtsbegriffe verwenden – das konzeptuelle Verständnis zählt.",
+              "Bei Missbrauch unbedingt klar machen, dass dieser auch bei Zustimmung zu den AGB rechtswidrig sein kann."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "create_produce",
+            "prompt": "Verfasse eine kurze, prägnante Checkliste (5–7 Punkte) für Gleichaltrige mit dem Titel 'Meine digitalen Schutzmaßnahmen'. Jeder Punkt soll eine konkrete Handlung beschreiben, die man selbst umsetzen kann, um die eigene informationelle Selbstbestimmung zu stärken. Formuliere die Punkte so, dass sie auch jemand versteht, der sich noch nie mit dem Thema beschäftigt hat.",
+            "payload": null,
+            "response": { "mode": "lines", "n": 10 },
+            "cognitive_level": "create",
+            "dimensions": ["I"],
+            "serves": [
+              { "competence_id": "DGB.US.4.INF.02", "relation": "exercises" }
+            ],
+            "est_minutes": 12,
+            "answer_key": "Mögliche Punkte: App-Berechtigungen regelmäßig prüfen und einschränken; Standort nur bei Nutzung freigeben; Für verschiedene Dienste unterschiedliche E-Mail-Adressen/Passwörter verwenden; Zwei-Faktor-Authentifizierung aktivieren; Datenschutzeinstellungen sozialer Netzwerke auf 'privat' setzen; Keine sensiblen Daten (Ausweisfoto, Gesundheitsdaten) in Apps eingeben, die sie nicht benötigen; Vor dem Installieren einer App prüfen, welche Berechtigungen sie verlangt und ob ein kostenloser Dienst Daten als Gegenleistung sammelt.",
+            "acceptable_reasoning": "Checkliste muss konkret und handlungsorientiert sein; abstrakte Ratschläge wie 'Datenschutz beachten' ohne Konkretisierung nicht akzeptieren.",
+            "watch_outs": [
+              "Schüler:innen produzieren häufig zu allgemeine Punkte ('Sei vorsichtig im Internet') – einfordern: Was genau tun?",
+              "Darauf achten, dass die Maßnahmen realistisch umsetzbar sind – keine Ratschläge, die technisches Expertenwissen voraussetzen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Handlungsorientierung",
+                "levels": [
+                  "Allgemeine Aussagen ohne konkreten Handlungsschritt",
+                  "Konkrete Schritte, teilweise verständlich formuliert",
+                  "Alle Punkte konkret, klar und zielgruppengerecht formuliert"
+                ]
+              },
+              {
+                "criterion": "Thematiache Breite",
+                "levels": [
+                  "Nur ein Aspekt (z.B. nur Passwörter)",
+                  "Zwei bis drei verschiedene Schutzebenen abgedeckt",
+                  "Technische, soziale und rechtliche Schutzmaßnahmen kombiniert"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

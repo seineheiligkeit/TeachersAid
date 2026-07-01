@@ -1,0 +1,364 @@
+{
+  "subject": "Chemie",
+  "klasse": 8,
+  "kompetenzbereich": "Chemische Grundlagen des Lebens",
+  "title": "Lebensmittelchemie: Zusatzstoffe, Nährstoffe und gesunde Ernährung",
+  "kernfrage": "Welche chemischen Hintergründe stecken hinter Lebensmittelzusatzstoffen und Nährstoffen – und wie hilft dir dieses Wissen, Ernährungsempfehlungen kritisch zu beurteilen?",
+  "body": {
+    "intro": [
+      "Auf jeder Lebensmittelverpackung stehen Zutaten und Nährstoffe – aber was bedeuten diese Angaben wirklich? In diesem Arbeitsblatt verbindet ihr chemische Kenntnisse mit Alltagsfragen rund um Ernährung und Gesundheit."
+    ],
+    "data_figures": [
+      {
+        "id": "abb3",
+        "intent": "comparison",
+        "title": "Energiegehalt ausgewählter Makronährstoffe (kJ pro Gramm)",
+        "xlabel": "Nährstoff",
+        "ylabel": "Energie (kJ/g)",
+        "categories": ["Kohlenhydrate", "Proteine", "Fette", "Ballaststoffe", "Alkohol"],
+        "values": [17, 17, 37, 8, 29]
+      },
+      {
+        "id": "abb4",
+        "intent": "comparison",
+        "title": "Häufigkeit von E-Nummern-Gruppen in verarbeiteten Lebensmitteln (Beispieldaten)",
+        "xlabel": "Zusatzstoffkategorie",
+        "ylabel": "Anteil der untersuchten Produkte (%)",
+        "categories": ["Farbstoffe", "Konservierungsstoffe", "Antioxidantien", "Emulgatoren", "Süßungsmittel", "Verdickungsmittel"],
+        "values": [22, 38, 15, 47, 19, 33]
+      }
+    ],
+    "assets": [
+      {
+        "id": "abb5",
+        "role": "figure",
+        "generator": "matplotlib:math_formula",
+        "spec": {
+          "latex": "C_6H_{12}O_6 + 6\\,O_2 \\rightarrow 6\\,CO_2 + 6\\,H_2O + \\text{Energie (ATP)}"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Makronährstoffe und Energiestoffwechsel",
+        "throughline": "Schüler:innen knüpfen chemische Strukturen (Kohlenhydrate, Fette, Proteine) an biochemische Funktion und Energiebilanz – sie lernen, Nährwertangaben nicht als Marketingbegriffe, sondern als chemische Fakten zu lesen.",
+        "talking_points": [
+          "Makronährstoffe unterscheiden sich strukturell (Monosaccharide/Polysaccharide; Triglyzeride; Aminosäureketten) und damit in Energiedichte und Stoffwechselweg.",
+          "Zellatmung (Abb. 5) als zentraler Oxidationsprozess: Glucoseabbau liefert ATP; der chemische Energiegehalt (kJ/g) ist messbar und vergleichbar.",
+          "Ballaststoffe liefern wenig Energie, weil der menschliche Darm die β-glykosidischen Bindungen nicht spaltet – ein strukturelles Argument.",
+          "Alkohol hat einen hohen Energiegehalt (29 kJ/g), wird aber nicht als Nährstoff eingestuft, da er keinen Baustoffwechsel-Zweck erfüllt."
+        ],
+        "extensions": [
+          "Berechnet den theoretischen Energiegehalt von 100 g eines Lebensmittels aus dem angegebenen Nährwert-Panel und vergleicht mit dem deklarierten Wert.",
+          "Recherchiert, warum der glykämische Index (GI) nicht allein vom Kohlenhydratgehalt abhängt, sondern auch von Molekülstruktur und Lebensmittelmatrix.",
+          "Untersucht, wie Fettoxidation (β-Oxidation) chemisch verläuft und warum Fette energiedichter als Kohlenhydrate sind."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "data_interpretation",
+            "prompt": "Sieh dir das Diagramm (Abb. 3) an, das den Energiegehalt der wichtigsten Makronährstoffe zeigt. Beantworte folgende Fragen:\n(a) Welcher Nährstoff liefert pro Gramm am meisten Energie? Erkläre chemisch, warum das so ist (Hinweis: Oxidationsstufe der Kohlenstoffatome).\n(b) Eine Person isst 50 g Fett, 100 g Kohlenhydrate und 80 g Protein. Berechne die aufgenommene Gesamtenergie in kJ und in kcal (1 kcal ≈ 4,18 kJ).",
+            "payload": null,
+            "response": { "mode": "lines", "n": 8 },
+            "cognitive_level": "analyze",
+            "dimensions": ["EG", "WO"],
+            "serves": [
+              { "competence_id": "CHE.OS.8.CHE.01", "relation": "exercises" },
+              { "competence_id": "CHE.OS.x.WIS.02", "relation": "exercises" }
+            ],
+            "est_minutes": 10,
+            "asset_refs": ["abb3"],
+            "answer_key": "(a) Fette (37 kJ/g). Fette bestehen überwiegend aus langen Kohlenwasserstoffketten, deren C-Atome eine niedrige Oxidationsstufe (im Mittel ca. –2) haben. Bei der Oxidation zu CO₂ (+4) wird sehr viel Energie freigesetzt. Kohlenhydrate dagegen haben bereits höhere mittlere Oxidationsstufen (ca. 0 bei Glucose), daher geringere Energieausbeute. (b) Fett: 50 × 37 = 1850 kJ; KH: 100 × 17 = 1700 kJ; Protein: 80 × 17 = 1360 kJ. Gesamt = 4910 kJ ≈ 1174 kcal.",
+            "acceptable_reasoning": "Schüler:innen, die die Oxidationsstufe von C in Fettsäuren mit –CH₂–-Gruppen (Oxidationsstufe ca. –2) und in Glucose (0) begründen, zeigen tiefes Verständnis.",
+            "watch_outs": [
+              "Häufige Fehlvorstellung: 'Fett macht dick, weil es schlecht ist' – hier geht es um chemisch begründete Energiedichte, nicht um moralische Wertung.",
+              "Beim Rechnen: Proteine haben 17 kJ/g, nicht 4 kcal/g pauschal – Schüler:innen verwechseln kJ und kcal. Immer mit einer Einheit arbeiten.",
+              "Die Oxidationsstufe von Kohlenstoff in organischen Verbindungen ist komplex – einfache Faustregel: Je mehr H-Atome am C, desto niedriger die Oxidationsstufe, desto mehr Energie beim Verbrennen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Chemische Begründung der Energiedichte von Fett",
+                "levels": [
+                  "Oxidationsstufe von C korrekt als Argument verwendet",
+                  "Qualitative Aussage ohne Oxidationsstufenargument",
+                  "Keine chemische Begründung"
+                ]
+              },
+              {
+                "criterion": "Korrekte Berechnung der Gesamtenergie",
+                "levels": [
+                  "Alle drei Werte und Summe korrekt (kJ und kcal)",
+                  "Rechnung korrekt, Umrechnung fehlerhaft",
+                  "Grundlegende Rechenfehler"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "open_response",
+            "prompt": "Die Gleichung in Abb. 5 zeigt die Zellatmung. Erkläre in eigenen Worten: Welche Funktion hat Sauerstoff in diesem Prozess? Welches Prinzip (das ihr aus dem Thema Säure-Base und Redox kennt) liegt hier zugrunde? Verwende dabei die Begriffe 'Oxidation' und 'Elektronenakzeptor'.",
+            "payload": null,
+            "response": { "mode": "lines", "n": 5 },
+            "cognitive_level": "understand",
+            "dimensions": ["WO"],
+            "serves": [
+              { "competence_id": "CHE.OS.8.CHE.01", "relation": "exercises" },
+              { "competence_id": "CHE.OS.8.SUB.02", "relation": "exercises" }
+            ],
+            "est_minutes": 6,
+            "asset_refs": ["abb5"],
+            "answer_key": "Sauerstoff wirkt als Elektronenakzeptor (Oxidationsmittel). Glucose wird schrittweise oxidiert – die C-Atome geben Elektronen ab (und werden zu CO₂, mit Oxidationsstufe +4). Sauerstoff nimmt diese Elektronen letztlich auf und wird zu Wasser reduziert. Das zugrundeliegende Prinzip ist die Redoxreaktion (Donator-Akzeptor-Konzept): Glucose ist der Elektronendonator, O₂ der Elektronenakzeptor.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen sagen oft 'Sauerstoff verbrennt die Glucose' – das ist eine Analogie, aber chemisch unpräzise. Richtiger: O₂ oxidiert Glucose, indem es als Elektronenakzeptor wirkt.",
+              "Verwechslung: Zellatmung ≠ Atmung (Einatmen). Zellatmung ist ein biochemischer Oxidationsprozess in den Mitochondrien."
+            ],
+            "rubric": []
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Lebensmittelzusatzstoffe: Chemie hinter den E-Nummern",
+        "throughline": "Schüler:innen erkennen, dass E-Nummern keine Bedrohung per se sind, sondern chemisch definierte Substanzen mit spezifischen Funktionen. Kritisches Denken bedeutet, die Funktion und das Risikoprofil zu kennen – nicht pauschal abzulehnen.",
+        "talking_points": [
+          "E-Nummern sind EU-weit zugelassene Zusatzstoffe mit festgelegtem ADI-Wert (Acceptable Daily Intake) – das ist Risikoabschätzung, nicht Willkür.",
+          "Antioxidantien (z. B. Ascorbinsäure E300) schützen vor Oxidation – dasselbe Reaktionsprinzip wie bei Korrosionsschutz, nur in Lebensmitteln.",
+          "Emulgatoren (z. B. Lecithin E322) ermöglichen stabile Öl-Wasser-Mischungen dank amphiphiler Molekülstruktur (Phospholipide).",
+          "Nicht alle als 'natürlich' vermarkteten Stoffe sind unbedenklich, und nicht alle Zusatzstoffe sind bedenklich – chemische Substanzidentität, nicht Herkunft, entscheidet."
+        ],
+        "extensions": [
+          "Recherchiert den ADI-Wert für Natriumbenzoat (E211) und berechnet, wie viele Liter eines Softdrinks ihr täglich trinken müsstet, um diesen Wert zu überschreiten.",
+          "Untersucht die Emulgatorfunktion von Lecithin: Zeichnet ein Phospholipid-Molekül und erklärt, wie der hydrophile Kopf und der hydrophobe Schwanz eine Emulsion stabilisieren.",
+          "Vergleicht die chemische Struktur von Saccharin (E954) und Aspartam (E951) und diskutiert, warum ihre Süßkraft die von Saccharose um ein Vielfaches übersteigt."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "matching",
+            "prompt": "Ordne die folgenden Lebensmittelzusatzstoffe ihrer chemischen Funktion zu. Schreibe die passende Nummer hinter jeden Buchstaben.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "A) Ascorbinsäure (E300)",
+                "B) Natriumbenzoat (E211)",
+                "C) Lecithin (E322)",
+                "D) Betacarotin (E160a)",
+                "E) Carrageen (E407)"
+              ],
+              "right": [
+                "1) Verdickungsmittel / Geliermittel (aus Rotalgen)",
+                "2) Antioxidationsmittel (verhindert Oxidation von Fetten und Vitaminen)",
+                "3) Konservierungsstoff (hemmt Schimmel- und Hefepilze im sauren Milieu)",
+                "4) Emulgator (amphiphiles Phospholipid, ermöglicht Öl-Wasser-Mischung)",
+                "5) Farbstoff (orangerot, Provitamin A)"
+              ]
+            },
+            "response": { "mode": "lines", "n": 5 },
+            "cognitive_level": "remember",
+            "dimensions": ["WO"],
+            "serves": [
+              { "competence_id": "CHE.OS.8.CHE.02", "relation": "exercises" }
+            ],
+            "est_minutes": 5,
+            "asset_refs": [],
+            "answer_key": "A-2 (Ascorbinsäure = Antioxidans), B-3 (Natriumbenzoat = Konservierungsstoff), C-4 (Lecithin = Emulgator), D-5 (Betacarotin = Farbstoff), E-1 (Carrageen = Verdickungsmittel).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Betacarotin ist ein Farbstoff UND Provitamin A – Schüler:innen ordnen es manchmal als 'Vitamin' ein; betonen, dass die E-Nummer-Kategorie die technologische Funktion beschreibt.",
+              "Ascorbinsäure (Vitamin C) als Antioxidans überrascht manche – klarmachen, dass es als Zusatzstoff zur Fettschutzfunktion eingesetzt wird, nicht primär als Vitamin."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "source_critique",
+            "prompt": "Lies die folgende Schlagzeile aus einem Online-Artikel: „E-Nummern sind Chemie pur – deshalb sind sie gefährlich für unsere Gesundheit!" Beurteile diese Aussage aus chemisch-naturwissenschaftlicher Sicht. Nutze dabei:\n(a) das Argument der chemischen Substanzidentität,\n(b) das Konzept des ADI-Werts (Acceptable Daily Intake),\n(c) ein konkretes Beispiel eines unbedenklichen E-Stoffs.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 50 },
+            "cognitive_level": "evaluate",
+            "dimensions": ["KZ", "WO"],
+            "serves": [
+              { "competence_id": "CHE.OS.8.CHE.02", "relation": "exercises" },
+              { "competence_id": "CHE.OS.x.KON.04", "relation": "exercises" },
+              { "competence_id": "CHE.OS.x.WIS.03", "relation": "exercises" }
+            ],
+            "est_minutes": 12,
+            "asset_refs": ["abb4"],
+            "answer_key": "(a) Substanzidentität: Eine chemische Verbindung ist unabhängig von ihrer Herkunft (synthetisch oder natürlich) dieselbe Substanz mit denselben Eigenschaften. 'Chemie' ist nicht gleichbedeutend mit 'gefährlich' – jeder Stoff ist Chemie, auch Wasser. (b) ADI-Wert: Die Europäische Behörde für Lebensmittelsicherheit (EFSA) legt für jeden Zusatzstoff einen ADI fest, der selbst bei lebenslangem täglichen Konsum keine schädigende Wirkung hat. Das ist das Gegenteil von willkürlicher Zulassung. (c) Beispiel: Ascorbinsäure (E300 = Vitamin C) ist eines der bekanntesten Antioxidantien und ein essentieller Nährstoff – die Gleichsetzung 'E-Nummer = gefährlich' ist sachlich falsch.",
+            "acceptable_reasoning": "Andere E-Stoffe als Beispiel (z. B. Citronensäure E330, Lecithin E322) sind ebenfalls akzeptabel, wenn die Argumentation chemisch korrekt ist.",
+            "watch_outs": [
+              "Schüler:innen neigen dazu, 'natürlich = sicher, synthetisch = gefährlich' zu übernehmen – das ist die Naturalismusfehler-Heuristik. Konkrete Gegenbeispiele nennen (z. B. Botulinum-Toxin ist natürlich und hochgiftig; Aspirin ist synthetisch und therapeutisch).",
+              "ADI-Wert-Berechnung: Schüler:innen sollten verstehen, dass der ADI bereits einen Sicherheitsfaktor von 100 enthält (10 für Speziesunterschiede × 10 für individuelle Variation)."
+            ],
+            "rubric": [
+              {
+                "criterion": "Substanzidentitäts-Argument",
+                "levels": [
+                  "Klar formuliert: Herkunft ≠ Eigenschaft",
+                  "Angedeutet, aber unvollständig",
+                  "Nicht vorhanden"
+                ]
+              },
+              {
+                "criterion": "ADI-Konzept korrekt erklärt",
+                "levels": [
+                  "ADI als Grenzwert mit Sicherheitsmarge erklärt",
+                  "ADI erwähnt, aber Funktion unklar",
+                  "ADI nicht erwähnt"
+                ]
+              },
+              {
+                "criterion": "Konkretes Beispiel",
+                "levels": [
+                  "Beispiel korrekt benannt und chemisch kommentiert",
+                  "Beispiel genannt, kein chemischer Kommentar",
+                  "Kein Beispiel"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "open_response",
+            "prompt": "Emulgatoren wie Lecithin (E322) werden eingesetzt, um Öl und Wasser in Lebensmitteln (z. B. Mayonnaise, Schokolade) stabil zu mischen. Erkläre mithilfe der Molekülstruktur von Lecithin (Phospholipid), warum eine solche Mischung ohne Emulgator nicht stabil ist und wie der Emulgator das Problem löst. Beziehe dich dabei auf die Begriffe 'hydrophil' und 'hydrophob'.",
+            "payload": null,
+            "response": { "mode": "lines", "n": 7 },
+            "cognitive_level": "apply",
+            "dimensions": ["WO", "EG"],
+            "serves": [
+              { "competence_id": "CHE.OS.8.CHE.01", "relation": "exercises" },
+              { "competence_id": "CHE.OS.8.STR2.01", "relation": "exercises" }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "Öl und Wasser mischen sich nicht, weil Wasser polar (hydrophil) ist und Öl unpolar (hydrophob) – nach dem Prinzip 'Gleiches löst Gleiches'. Lecithin ist ein Phospholipid mit einem polaren, hydrophilen Kopf (Phosphatgruppe + Cholin) und zwei unpolaren, hydrophoben Fettsäureschwänzen. In der Emulsion lagert sich Lecithin an der Öl-Wasser-Grenzfläche an: Der hydrophobe Schwanz taucht ins Öl, der hydrophile Kopf ins Wasser. So wird die Öltröpfchenoberfläche von Lecithin umhüllt, und die Tröpfchen können sich nicht wieder zusammenlagern – die Emulsion ist stabil.",
+            "acceptable_reasoning": "Schüler:innen, die den Begriff 'amphiphil' (= gleichzeitig hydrophil und hydrophob) verwenden, zeigen erhöhtes Niveau.",
+            "watch_outs": [
+              "Häufige Fehlvorstellung: 'Der Emulgator löst das Öl auf.' – Er löst es nicht auf, sondern stabilisiert die Grenzfläche. Die Tröpfchen bleiben getrennt, werden aber fein verteilt und stabilisiert.",
+              "Die Fettsäureschwänze sind unpolar wegen der langen Kohlenwasserstoffketten – Schüler:innen sollten dies strukturell begründen können."
+            ],
+            "rubric": [
+              {
+                "criterion": "Erklärung der Unmischbarkeit",
+                "levels": [
+                  "Polarität / hydrophil-hydrophob-Prinzip korrekt angewendet",
+                  "Unmischbarkeit erwähnt, keine Begründung",
+                  "Keine Erklärung"
+                ]
+              },
+              {
+                "criterion": "Funktion des Emulgators",
+                "levels": [
+                  "Amphiphile Struktur und Grenzflächenwirkung korrekt beschrieben",
+                  "Funktion qualitativ richtig, Struktur nicht erklärt",
+                  "Keine korrekte Funktionsbeschreibung"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "decision_scenario",
+            "prompt": "Eine Ernährungsberaterin empfiehlt: „Kaufe nur Produkte ohne E-Nummern – je kürzer die Zutatenliste, desto gesünder." Deine Freundin hingegen sagt: „E-Nummern sind streng geprüft, das ist mir egal." Beziehe Stellung zu beiden Positionen. Welche Empfehlung würdest du auf Basis chemischen Wissens geben? Berücksichtige dabei sowohl Nutzen als auch mögliche Risiken von Lebensmittelzusatzstoffen.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Zwei extreme Positionen zu E-Nummern: blindes Ablehnen vs. blindes Vertrauen – welche Position ist chemisch fundiert, und was wäre eine differenzierte Haltung?"
+            },
+            "response": { "mode": "box", "min_height_mm": 60 },
+            "cognitive_level": "evaluate",
+            "dimensions": ["KZ"],
+            "serves": [
+              { "competence_id": "CHE.OS.8.CHE.02", "relation": "exercises" },
+              { "competence_id": "CHE.OS.8.CHE.03", "relation": "exercises" },
+              { "competence_id": "CHE.OS.x.KON.03", "relation": "exercises" }
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "Beide Positionen sind vereinfacht: (1) 'Keine E-Nummern = gesünder' ist nicht chemisch begründet – E300 (Vitamin C) hat eine E-Nummer, ist aber essentiell; viele 'natürliche' Zutaten ohne E-Nummern können problematisch sein. (2) 'Alles geprüft, mir egal' ignoriert individuelle Unverträglichkeiten (z. B. Tartrazin E102 und Hyperaktivität bei manchen Kindern) und den Unterschied zwischen ADI als Bevölkerungsdurchschnittswert und individuellem Bedarf. Differenzierte Empfehlung: Zusatzstoffe nach Funktion und persönlicher Relevanz beurteilen, nicht pauschal ablehnen oder ignorieren. Bei bekannten Unverträglichkeiten Zutaten aktiv lesen; ansonsten gelten zugelassene E-Stoffe als sicher für die Allgemeinbevölkerung.",
+            "acceptable_reasoning": "Schüler:innen, die den Begriff 'kritischer Verbraucherschutz' einführen und zwischen 'populationssicherer Dosis' und 'individuellen Variationen' unterscheiden, zeigen hohe Kompetenz.",
+            "watch_outs": [
+              "Schüler:innen neigen dazu, eine der beiden Extrempositionen zu übernehmen, ohne sie zu hinterfragen – das Ziel ist explizit eine differenzierte Antwort.",
+              "Tartrazin (E102): Die Assoziation mit Hyperaktivität ist wissenschaftlich kontrovers und gilt nur für bestimmte Farbstoffmischungen bei empfindlichen Kindern – nicht pauschal als Beweis für Gefährlichkeit aller E-Stoffe verwenden."
+            ],
+            "rubric": [
+              {
+                "criterion": "Kritische Auseinandersetzung mit Position 1 (keine E-Nummern = besser)",
+                "levels": [
+                  "Konkrete chemische Gegenargumente mit Beispiel",
+                  "Ablehnung der Position ohne chemisches Argument",
+                  "Position unkritisch übernommen"
+                ]
+              },
+              {
+                "criterion": "Kritische Auseinandersetzung mit Position 2 (alles geprüft, egal)",
+                "levels": [
+                  "Individuelle Variabilität und/oder Unverträglichkeiten als Einschränkung genannt",
+                  "Einschränkung angedeutet, nicht begründet",
+                  "Position unkritisch übernommen"
+                ]
+              },
+              {
+                "criterion": "Differenzierte eigene Empfehlung",
+                "levels": [
+                  "Nuancierte, chemisch begründete Empfehlung formuliert",
+                  "Empfehlung vorhanden, wenig begründet",
+                  "Keine eigene Position"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "open_response",
+            "prompt": "Wähle eine der folgenden Situationen und entwickle eine kurze, faktenbasierte Argumentation (4–6 Sätze), die du einer Person gegenüber vertreten könntest:\n(A) Du sprichst mit jemandem, der überzeugt ist, dass 'Bio-Produkte keine Chemie enthalten'.\n(B) Du erklärst einer Person, warum es sinnvoll sein kann, auf Transfettsäuren zu achten – und was das chemisch bedeutet.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 45 },
+            "cognitive_level": "create",
+            "dimensions": ["KZ", "WO"],
+            "serves": [
+              { "competence_id": "CHE.OS.8.CHE.03", "relation": "exercises" },
+              { "competence_id": "CHE.OS.x.WIS.03", "relation": "exercises" },
+              { "competence_id": "CHE.OS.x.KON.07", "relation": "exercises" }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Situation A: Alle Materie ist Chemie – auch Bio-Tomaten bestehen aus chemischen Verbindungen (Wasser, Saccharose, Lycopin, Ascorbinsäure …). 'Keine Chemie' ist kein möglicher Zustand für ein Lebensmittel. Der Unterschied liegt im Einsatz bestimmter synthetischer Pestizide und Dünger – nicht im Chemie-Gehalt. Situation B: Transfettsäuren entstehen u. a. bei der industriellen Teilhydrierung von Pflanzenölen. Ihre besondere Molekülgeometrie (trans-Konfiguration der C=C-Doppelbindung) führt dazu, dass sie sich ungünstig in Zellmembranen einlagern und den LDL-Cholesterin-Spiegel erhöhen können. Die Weltgesundheitsorganisation empfiehlt, industrielle Transfettsäuren weitgehend aus der Ernährung zu eliminieren.",
+            "acceptable_reasoning": "Beide Situationen sind gleichwertig; Schüler:innen müssen nur eine wählen. Schlüsselkriterium: sachlich korrekte, fachsprachlich angemessene Argumentation.",
+            "watch_outs": [
+              "Situation A: Schüler:innen verwechseln oft 'chemisch frei' mit 'pestizidfrei' – klären, dass Bio-Landwirtschaft zugelassene Pestizide (oft mineralisch/biologisch) verwendet, nicht 'keine Chemie'.",
+              "Situation B: Trans-Fette natürlichen Ursprungs (z. B. in Milchfett) gelten als weniger problematisch als industriell erzeugte – eine wichtige Nuance für höhere Bewertungsstufen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Fachliche Korrektheit",
+                "levels": [
+                  "Kernaussage chemisch korrekt und präzise",
+                  "Grundaussage richtig, Ungenauigkeiten vorhanden",
+                  "Wesentliche Fehler oder Missverständnisse"
+                ]
+              },
+              {
+                "criterion": "Adressatengerechte Kommunikation",
+                "levels": [
+                  "Argument verständlich formuliert, Fachbegriffe erklärt",
+                  "Argumentation vorhanden, aber schwer nachvollziehbar",
+                  "Kein erkennbarer Kommunikationsversuch"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,252 @@
+{
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 8,
+  "kompetenzbereich": "Kompetenzmodul 7",
+  "title": "Vom Gen zum Protein: Transkription und Translation",
+  "kernfrage": "Wie wird die in deiner DNA gespeicherte Information Schritt für Schritt in ein funktionsfähiges Protein umgewandelt?",
+  "body": {
+    "intro": [
+      "Jede Zelle deines Körpers enthält dieselbe DNA – dennoch ist eine Muskelzelle völlig anders als eine Nervenzelle. Das liegt daran, welche Gene gerade abgelesen werden. In diesem Arbeitsblatt verfolgst du den Weg der genetischen Information: von der DNA über die mRNA bis hin zum fertigen Protein."
+    ],
+    "data_figures": [
+      {
+        "id": "abb1",
+        "intent": "trend",
+        "title": "Anzahl aktiver Ribosomen pro Zelle während der Proteinsynthese (schematisch)",
+        "xlabel": "Zeitpunkt nach Induktion (Minuten)",
+        "ylabel": "Aktive Ribosomen (×1000)",
+        "categories": ["0", "5", "10", "15", "20", "30", "45", "60"],
+        "values": [2, 4, 9, 16, 22, 25, 24, 23]
+      }
+    ],
+    "assets": [
+      {
+        "id": "abb2",
+        "role": "figure",
+        "generator": "matplotlib:timeline",
+        "spec": {
+          "events": [
+            {"at": 1, "label": "DNA-Doppelhelix"},
+            {"at": 2, "label": "Transkription (Zellkern)"},
+            {"at": 3, "label": "prä-mRNA"},
+            {"at": 4, "label": "RNA-Prozessierung (Spleißen)"},
+            {"at": 5, "label": "reife mRNA"},
+            {"at": 6, "label": "Translation (Ribosom)"},
+            {"at": 7, "label": "Polypeptidkette"},
+            {"at": 8, "label": "Proteinfaltung → Protein"}
+          ],
+          "title": "Stationen der Genexpression (vereinfacht)",
+          "xlabel": "Station"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Grundlagen der Genexpression",
+        "throughline": "Schüler:innen erarbeiten die molekularen Grundlagen der Proteinsynthese und ordnen Transkription und Translation räumlich und zeitlich korrekt ein.",
+        "talking_points": [
+          "Die zentrale Aussage der Molekularbiologie (DNA → RNA → Protein) als Orientierungsrahmen einführen.",
+          "Den Unterschied zwischen Transkription (Kern) und Translation (Zytoplasma/Ribosom) betonen.",
+          "Codon-Anticodon-Paarung als Schlüsselmechanismus der Informationsübersetzung hervorheben.",
+          "Prozessierung der prä-mRNA (Spleißen, 5'-Cap, Poly-A-Schwanz) als regulatorische Ebene ansprechen."
+        ],
+        "extensions": [
+          "Recherche: Welche Auswirkungen hat eine Punktmutation im Startcodon auf die Proteinproduktion?",
+          "Vergleich mit viraler RNA-Replikation: Warum brauchen RNA-Viren eine eigene RNA-Polymerase?",
+          "Diskussion: Warum lohnt es sich, die Genexpression auf mehreren Ebenen zu regulieren (Transkription, Translation, posttranslational)?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "ordering",
+            "prompt": "Bringe die folgenden Schritte der Genexpression in die richtige Reihenfolge (1 = erster Schritt):\n\nA) Das Ribosom liest die mRNA ab und verknüpft Aminosäuren zu einer Polypeptidkette.\nB) Die RNA-Polymerase bindet an den Promotor des Gens.\nC) Die fertige mRNA verlässt den Zellkern durch Kernporen.\nD) Die prä-mRNA wird gespleißt (Introns entfernt, Exons verknüpft).\nE) Die Polypeptidkette faltet sich zum funktionsfähigen Protein.",
+            "payload": {
+              "kind": "ordering",
+              "items": ["A) Ribosom liest mRNA ab", "B) RNA-Polymerase bindet an Promotor", "C) mRNA verlässt Zellkern", "D) prä-mRNA wird gespleißt", "E) Polypeptid faltet sich"]
+            },
+            "response": {"mode": "none"},
+            "cognitive_level": "remember",
+            "dimensions": ["W"],
+            "serves": [{"competence_id": "BIO.OS.8.KOM6.02", "relation": "exercises"}],
+            "est_minutes": 5,
+            "asset_refs": ["abb2"],
+            "answer_key": "Korrekte Reihenfolge: B → D → C → A → E",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Viele Schüler:innen verwechseln die Reihenfolge von Spleißen und Kernexport: Das Spleißen findet noch im Kern statt, bevor die mRNA exportiert wird.",
+              "Häufige Fehlvorstellung: Das Ribosom befindet sich im Kern. Tatsächlich findet die Translation im Zytoplasma statt (außer bei Mitochondrien)."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "table_fill",
+            "prompt": "Ergänze die folgende Tabelle, die Transkription und Translation vergleicht. Trage jeweils den korrekten Begriff, den Ort oder das Produkt ein.",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": ["Merkmal", "Transkription", "Translation"],
+              "rows": 5
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["W"],
+            "serves": [{"competence_id": "BIO.OS.8.KOM6.02", "relation": "exercises"}],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "Merkmal / Transkription / Translation: Ort → Zellkern / Zytoplasma (Ribosom); Vorlage → DNA (Matritzenstrang) / mRNA; Produkt → prä-mRNA (→ reife mRNA) / Polypeptidkette; Enzym → RNA-Polymerase / Ribosom (+ Enzyme); Basenpaare → A-U, T-A, G-C / Codon-Anticodon (A-U, G-C)",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen nennen oft 'Polymerase' ohne Unterscheidung: DNA-Polymerase kopiert DNA bei der Replikation, RNA-Polymerase transkribiert DNA in RNA – das sind verschiedene Enzyme.",
+              "Vorsicht bei der Basenpaarung: In der RNA gibt es Uracil (U) statt Thymin (T). Bei der Transkription paart T im DNA-Matrizenstrang mit U in der mRNA."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "open_response",
+            "prompt": "Der folgende DNA-Matritzenstrang soll transkribiert werden:\n\nDNA (Matrize, 3'→5'): 3'-TAC-GGA-CTC-ATT-ACG-5'\n\na) Schreibe die entstehende mRNA-Sequenz (5'→3') auf.\nb) Bestimme mithilfe der Codon-Tabelle (Anhang) die entsprechende Aminosäuresequenz.\nc) Welche Aminosäure steht am Anfang – und warum ist das kein Zufall?",
+            "payload": null,
+            "response": {"mode": "lines", "n": 6},
+            "cognitive_level": "apply",
+            "dimensions": ["W", "E"],
+            "serves": [
+              {"competence_id": "BIO.OS.8.KOM6.02", "relation": "exercises"},
+              {"competence_id": "BIO.OS.x.FAC.04", "relation": "exercises"}
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "a) mRNA (5'→3'): 5'-AUG-CCU-GAG-UAA-UGC-3'. Hinweis: UAA ist ein Stoppcodon. b) Aminosäuresequenz: Met – Pro – Glu – STOP (UGC wird nicht mehr übersetzt). c) AUG codiert Methionin und ist gleichzeitig das Startcodon: Die Translation beginnt immer mit AUG, daher steht Methionin (oft als Formyl-Met bei Prokaryoten) an erster Stelle. Das ist biologisch sinnvoll, da das Ribosom einen eindeutigen Startpunkt benötigt.",
+            "acceptable_reasoning": "Akzeptabel: Schüler:innen erkennen, dass AUG sowohl für Methionin codiert als auch als Startsignal fungiert, auch wenn sie 'Formyl-Methionin' nicht nennen.",
+            "watch_outs": [
+              "Häufiger Fehler: Schüler:innen lesen den kodierenden Strang statt den Matrizenstrang ab. Betonen, dass die RNA-Polymerase am Matrizenstrang (antisense) entlangläuft und die mRNA komplementär dazu aufbaut.",
+              "Stoppcodons (UAA, UAG, UGA) codieren keine Aminosäure – sie terminieren die Translation. Schüler:innen fügen hier manchmal fälschlicherweise eine Aminosäure ein."
+            ],
+            "rubric": [
+              {"criterion": "mRNA-Sequenz korrekt", "levels": ["Fehlerhaft oder fehlend", "1–2 Tippfehler in der Basenpaarung", "Vollständig korrekt"]},
+              {"criterion": "Aminosäuresequenz korrekt abgeleitet", "levels": ["Fehlend oder falsch", "Methionin und ein weiterer Treffer", "Met-Pro-Glu-STOP vollständig"]},
+              {"criterion": "Funktion des Startcodons erklärt", "levels": ["Keine Erklärung", "AUG genannt ohne Funktionserklärung", "AUG als Startcodon UND Methionin-Codon erklärt"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "data_interpretation",
+            "prompt": "Schau dir die Grafik (Abb. 1) an, die zeigt, wie sich die Zahl aktiver Ribosomen nach Induktion der Proteinsynthese verändert.\n\na) Beschreibe den Verlauf der Kurve in eigenen Worten.\nb) Erkläre, warum die Zahl aktiver Ribosomen zunächst stark ansteigt und dann in ein Plateau übergeht.\nc) Was würde deiner Meinung nach passieren, wenn man einen Transkriptions-Hemmer (z. B. Rifampicin) nach 20 Minuten hinzufügt? Begründe.",
+            "payload": null,
+            "response": {"mode": "lines", "n": 8},
+            "cognitive_level": "analyze",
+            "dimensions": ["E", "W"],
+            "serves": [
+              {"competence_id": "BIO.OS.x.ERK.05", "relation": "exercises"},
+              {"competence_id": "BIO.OS.8.KOM6.02", "relation": "exercises"}
+            ],
+            "est_minutes": 12,
+            "asset_refs": ["abb1"],
+            "answer_key": "a) Die Zahl aktiver Ribosomen steigt in den ersten 20 Minuten steil an (von ca. 2.000 auf 22.000), verlangsamt sich dann und pendelt sich ab Minute 30 auf einem Plateau von ca. 23.000–25.000 ein. b) Zunächst werden immer mehr mRNA-Moleküle transkribiert, was mehr Ribosomen an mRNA binden lässt → Anstieg. Das Plateau entsteht, wenn Synthese und Abbau der mRNA ins Gleichgewicht kommen und die Ribosomen-Kapazität der Zelle ausgeschöpft ist. c) Ohne neue mRNA-Synthese werden vorhandene mRNA-Moleküle abgebaut, ohne dass neue nachgeliefert werden → die Zahl aktiver Ribosomen würde nach einer Verzögerung (Abbau der bereits vorhandenen mRNA) deutlich sinken.",
+            "acceptable_reasoning": "Akzeptabel: Schüler:innen erkennen die Kopplung von Transkription und Translation sowie das dynamische Gleichgewicht, auch ohne alle Fachbegriffe präzise zu verwenden.",
+            "watch_outs": [
+              "Schüler:innen verwechseln manchmal Ursache und Wirkung: Nicht die Ribosomenzahl steigt zuerst, sondern die mRNA-Menge treibt die Ribosomen-Besetzung.",
+              "Rifampicin hemmt die bakterielle RNA-Polymerase, nicht die eukaryotische – im Unterricht kann das als Modell genutzt werden, aber der Unterschied sollte erwähnt werden."
+            ],
+            "rubric": [
+              {"criterion": "Verlaufsbeschreibung (a)", "levels": ["Keine oder falsche Beschreibung", "Anstieg erkannt, Plateau nicht erwähnt", "Anstieg und Plateau mit Werten beschrieben"]},
+              {"criterion": "Mechanismus des Plateaus (b)", "levels": ["Keine Erklärung", "Gleichgewicht erwähnt, ohne molekulare Begründung", "mRNA-Synthese/Abbau-Gleichgewicht und Ribosomen-Kapazität genannt"]},
+              {"criterion": "Vorhersage Hemmer (c)", "levels": ["Keine oder falsche Vorhersage", "Rückgang vorhergesagt ohne Begründung", "Rückgang mit Verweis auf mRNA-Abbau ohne Nachlieferung begründet"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "true_false_justify",
+            "prompt": "Beurteile folgende Aussagen als richtig oder falsch und begründe deine Entscheidung jeweils in einem Satz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Jede Körperzelle eines Menschen besitzt (im Prinzip) dieselbe DNA-Sequenz.",
+                "Beim Spleißen werden Exons entfernt und Introns zusammengesetzt.",
+                "Ein Codon besteht aus drei aufeinanderfolgenden Nukleotiden der mRNA.",
+                "Die Aminosäuresequenz eines Proteins wird direkt durch die DNA-Sequenz bestimmt.",
+                "tRNA-Moleküle transportieren Aminosäuren zum Ribosom und erkennen das Codon über ihr Anticodon."
+              ]
+            },
+            "response": {"mode": "lines", "n": 10},
+            "cognitive_level": "evaluate",
+            "dimensions": ["W", "S"],
+            "serves": [
+              {"competence_id": "BIO.OS.8.KOM6.02", "relation": "exercises"},
+              {"competence_id": "BIO.OS.x.STA.01", "relation": "exercises"}
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "1) Richtig – alle somatischen Zellen stammen durch Mitose von der Zygote ab und tragen dieselbe genetische Information (Ausnahme: Immunzellen durch V(D)J-Rekombination, was nicht verlangt wird). 2) Falsch – es ist umgekehrt: Introns werden entfernt, Exons werden zusammengesetzt (gespleißt). 3) Richtig – ein Codon = drei Nukleotide (Triplett) auf der mRNA, das eine Aminosäure oder ein Stopp-Signal codiert. 4) Richtig im Wesentlichen – die DNA-Sequenz (über mRNA) legt die Aminosäuresequenz fest; posttranslationale Modifikationen können das Protein danach noch verändern. 5) Richtig.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Aussage 2 ist eine klassische Fehlvorstellung: Introns ('Intervening sequences') werden raus-gespleißt, Exons ('Expressed sequences') bleiben in der reifen mRNA – die Merkwörter helfen.",
+              "Aussage 4 ist mit Einschränkung richtig: Epigenetik und posttranslationale Modifikationen können die Proteinstruktur und -funktion verändern, ohne die DNA-Sequenz zu ändern. Klasse 8 sollte diese Nuance zumindest benennen können."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "open_response",
+            "prompt": "Epigenetik und Genregulation: Nicht alle Gene sind in jeder Zelle aktiv.\n\na) Erkläre am Beispiel einer Muskelzelle und einer Leberzelle, warum trotz identischer DNA sehr unterschiedliche Proteine produziert werden.\nb) Nenne zwei molekulare Mechanismen, durch die die Genaktivität reguliert werden kann.\nc) Bewerte: Ist die klassische Aussage 'Ein Gen – ein Protein' noch zeitgemäß? Begründe mit einem konkreten Argument.",
+            "payload": null,
+            "response": {"mode": "lines", "n": 10},
+            "cognitive_level": "evaluate",
+            "dimensions": ["W", "S"],
+            "serves": [
+              {"competence_id": "BIO.OS.8.KOM6.02", "relation": "exercises"},
+              {"competence_id": "BIO.OS.x.STA.02", "relation": "exercises"},
+              {"competence_id": "BIO.OS.x.FAC.05", "relation": "exercises"}
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "a) Muskelzellen exprimieren vor allem Aktin, Myosin und Strukturproteine des Sarkomers; Leberzellen exprimieren vorwiegend Enzyme des Stoffwechsels (z. B. Leberenzyme), Gerinnungsfaktoren und Albumin. Die Genexpression wird durch Transkriptionsfaktoren, Chromatin-Remodeling und epigenetische Markierungen zellspezifisch gesteuert. b) Mögliche Mechanismen: Methylierung der DNA (→ Gensilencing), Histonmodifikation (Acetylierung → aktiviert, Deacetylierung/Methylierung → hemmt), Transkriptionsfaktoren, RNA-Interferenz (miRNA). c) Die 'Ein Gen – ein Protein'-Hypothese (Beadle & Tatum, 1941) ist nicht mehr zeitgemäß: Durch alternatives Spleißen kann ein einziges Gen für mehrere verschiedene Proteine codieren (z. B. das Drosophila-Gen DSCAM produziert durch alternatives Spleißen theoretisch über 38.000 verschiedene Isoformen). Außerdem können posttranslationale Modifikationen ein Protein in viele Varianten umwandeln.",
+            "acceptable_reasoning": "Akzeptabel: Schüler:innen nennen alternatives Spleißen oder Epigenetik als Argument gegen die Eins-zu-eins-Entsprechung, auch ohne alle Details.",
+            "watch_outs": [
+              "Schüler:innen argumentieren oft, verschiedene Zellen hätten verschiedene Gene – das ist falsch. Die Genregulation (welche Gene wann transkribiert werden) ist der Schlüssel zur Zelldifferenzierung.",
+              "Epigenetik meint hier nicht 'Vererbung durch Erfahrung' im Laien-Sinn, sondern molekulare Markierungen (Methylgruppen, Histonmodifikationen), die die Zugänglichkeit der DNA regulieren."
+            ],
+            "rubric": [
+              {"criterion": "Zelldifferenzierung trotz gleicher DNA erklärt (a)", "levels": ["Keine oder falsche Erklärung", "Genregulation erwähnt ohne Mechanismus", "Zellspezifische Genexpression mit Beispiel und Mechanismus erklärt"]},
+              {"criterion": "Regulationsmechanismen genannt (b)", "levels": ["Keiner genannt", "Ein Mechanismus korrekt", "Zwei oder mehr korrekte Mechanismen"]},
+              {"criterion": "Kritische Bewertung 'Ein Gen – ein Protein' (c)", "levels": ["Keine Stellungnahme", "Kritik ohne konkretes Argument", "Konkretes Gegenbeispiel (z. B. alternatives Spleißen) mit Begründung"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "create_produce",
+            "prompt": "Stell dir vor, du erklärst einem jüngeren Schüler (11 Jahre alt), wie ein Protein hergestellt wird. Erstelle eine kurze, bildhafte Analogie (ca. 5–8 Sätze), die den Weg von der DNA zum Protein anschaulich beschreibt. Verwende klar erkennbare Alltagsvergleiche (z. B. Rezept, Fabrik, Botschaft …). Achte darauf, dass die biologischen Abläufe in deiner Analogie trotzdem korrekt widergespiegelt werden.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 50},
+            "cognitive_level": "create",
+            "dimensions": ["W", "S"],
+            "serves": [
+              {"competence_id": "BIO.OS.x.FAC.03", "relation": "exercises"},
+              {"competence_id": "BIO.OS.8.KOM6.02", "relation": "exercises"}
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Musterlösung (Beispielanalogie): 'Die DNA ist wie ein geheimes Kochbuch, das in der Bibliothek (Zellkern) aufbewahrt wird und nie rausdarf. Wenn ein Gericht (Protein) gebraucht wird, macht ein Assistent (RNA-Polymerase) eine Kopie des Rezepts auf Papier (mRNA). Das Papier wird redigiert – unwichtige Passagen (Introns) werden rausgestrichen – und dann in die Küche (Zytoplasma) geschickt. Dort lesen kleine Küchenmaschinen (Ribosomen) das Rezept und holen sich die passenden Zutaten (Aminosäuren, geliefert von Boten namens tRNA). Am Ende entsteht das fertige Gericht – das Protein – das dann seine Aufgabe im Körper erfüllt.'",
+            "acceptable_reasoning": "Analogien sind kreativ verschieden; akzeptabel ist jede Darstellung, die Kern → Zytoplasma, DNA → mRNA → Protein, und die Rolle des Ribosoms korrekt abbildet.",
+            "watch_outs": [
+              "Häufiger Fehler in Schüleranalogien: Die mRNA wird direkt im Zytoplasma 'geschrieben' – betonen, dass Transkription im Kern stattfindet.",
+              "Qualitätskriterium: Die Analogie darf vereinfachen, aber nicht falsch sein (z. B. 'Das Ribosom geht in den Kern' wäre sachlich falsch)."
+            ],
+            "rubric": [
+              {"criterion": "Biologische Korrektheit der Analogie", "levels": ["Wesentliche Fehler (z. B. Ort der Translation falsch)", "Kleinere Ungenauigkeiten, Kernablauf korrekt", "Alle Schritte (Transkription, Prozessierung, Translation) korrekt abgebildet"]},
+              {"criterion": "Verständlichkeit für die Zielgruppe", "levels": ["Fachsprache dominiert, nicht zugänglich", "Teilweise alltagssprachlich", "Durchgängig bildhafte, altersgerechte Sprache"]},
+              {"criterion": "Vollständigkeit", "levels": ["Nur ein Schritt (z. B. nur Ribosom)", "Zwei Stationen erkennbar", "DNA, mRNA, Ribosom und Protein alle erkennbar"]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

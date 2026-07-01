@@ -1,0 +1,66 @@
+{
+  "id": "c0048.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Beurteile die folgenden Aussagen über Produkte, Konsum und Kreisläufe. Stimmt die Aussage? Begründe jeweils in einem Satz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Recycling löst das Müllproblem vollständig, weil alle Materialien wiederverwendet werden können.",
+        "Ein Produkt, das sehr günstig ist, kann trotzdem hohe versteckte Kosten haben.",
+        "Kleidung, die im Altkleidercontainer landet, wird immer zu neuer Kleidung recycelt.",
+        "Wenn ein Produkt lange hält, ist das immer nachhaltiger als eines, das man öfter kaufen muss."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 8
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "REF"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "TED.US.4.REF.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "1. Falsch: Recycling verbraucht Energie, viele Materialien können nicht beliebig oft recycelt werden (Downcycling), und nicht alle Produkte haben sinnvolle Recyclingwege. 2. Richtig: Soziale Kosten (Lohn, Arbeitsbedingungen), ökologische Kosten (Wasserverbrauch, Pestizide), Qualitätskosten (kürze Lebensdauer) sind nicht im Verkaufspreis abgebildet. 3. Falsch: Nur ca. 1% der Altkleider wird zu neuer Kleidung; viel wird nach Afrika/Asien exportiert (Second-Hand-Export), weiteres wird als Putzlappen verwendet oder landet im Müll. 4. Meist richtig, aber nicht immer: Langlebigkeit ist ein Faktor, aber Ressourcenverbrauch in der Herstellung (z. B. Elektronikmüll) kann ebenfalls hoch sein.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Aussage 3 löst oft Erstaunen aus — 1%-Zahl mit Quelle belegen (Ellen MacArthur Foundation 2017).",
+      "Aussage 4 ist bewusst differenziert — nicht als Falle einsetzen, sondern als Anlass für Nuancierung."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Technik und Design",
+  "klasse": 4,
+  "kompetenzbereich": "Reflexion",
+  "competences": [
+    "TED.US.4.REF.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "REF"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0048",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

@@ -1,0 +1,149 @@
+{
+  "id": "c0122.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Schau dir das Klimadiagramm Wien an (Abb. 1). Nenne den wärmsten und den kältesten Monat und lies ihre Durchschnittstemperaturen ab.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 3
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.4.WET.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 4,
+    "answer_key": "Wärmster Monat: Juli (21,4 °C); kältester Monat: Jänner (0,8 °C). Temperaturamplitude: ca. 20,6 K.",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Wärmster Monat korrekt mit Wert",
+        "levels": [
+          "Juli mit ~21 °C genannt",
+          "Monat korrekt, Wert fehlt oder grob falsch",
+          "Beides fehlt"
+        ]
+      },
+      {
+        "criterion": "Kältester Monat korrekt mit Wert",
+        "levels": [
+          "Jänner mit ~1 °C genannt",
+          "Monat korrekt, Wert fehlt",
+          "Beides fehlt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schülerinnen und Schüler lesen manchmal August statt Juli als Maximum — beide liegen nah beieinander (Aug 20,9 °C), daher Ablesefehler tolerieren, wenn begründet.",
+      "Einheit nicht vergessen: °C, nicht K (Kelvin) für Temperaturwert."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Wetter und Klima",
+  "competences": [
+    "PHY.US.4.WET.03"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:climate_diagram",
+      "spec": {
+        "title": "Klimadiagramm Wien (Hohe Warte, 1991–2020)",
+        "months": [
+          "Jän",
+          "Feb",
+          "Mär",
+          "Apr",
+          "Mai",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Okt",
+          "Nov",
+          "Dez"
+        ],
+        "temp": [
+          0.8,
+          2.3,
+          6.2,
+          11.4,
+          15.8,
+          19.7,
+          21.4,
+          20.9,
+          15.8,
+          10.5,
+          5.8,
+          1.5
+        ],
+        "precip": [
+          42,
+          38,
+          52,
+          42,
+          79,
+          70,
+          78,
+          69,
+          64,
+          47,
+          46,
+          47
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "geosphere_klima_normal_1991_2020",
+        "series": "wien",
+        "note": null,
+        "title": "Klimanormalwerte österreichischer Stationen (1991–2020)",
+        "url": "https://data.hub.geosphere.at/dataset/klima-v2-1m",
+        "attribution": "Datenquelle: GeoSphere Austria – data.hub.geosphere.at (klima-v2-1m, CC BY 4.0)",
+        "stand": "1991–2020"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0122",
+  "source": "ai",
+  "created_at": "2026-06-27T15:21:16+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

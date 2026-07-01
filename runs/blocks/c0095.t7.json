@@ -1,0 +1,96 @@
+{
+  "id": "c0095.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Lokale Raumnutzungsanalyse: Untersuche die Umgebung deiner Schule oder deiner Gemeinde.\n\n(a) Nenne für jede der folgenden Nutzungsarten ein konkretes Beispiel aus deiner direkten Umgebung (Schulumgebung, Wohnort):\n– Wohnen\n– Arbeit / Gewerbe\n– Verkehr\n– Freizeit\n– Tourismus (falls vorhanden; sonst: Natur/Grünfläche)\n\n(b) Beschreibe einen Nutzungskonflikt, den du in deiner Region wahrnimmst oder aus eigener Erfahrung kennst. (Beispiel: „Der Parkplatz beim Supermarkt wurde auf einer ehemaligen Grünfläche gebaut.\") Nenne: Wer profitiert? Wer ist benachteiligt?\n\n(c) Schlage einen Lösungsansatz vor, der beide Interessen zumindest teilweise berücksichtigt.",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Raumnutzung",
+        "Konkretes Beispiel aus meiner Region",
+        "Notiz"
+      ],
+      "rows": 6
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "HK",
+      "UK",
+      "OK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.ZEN.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 13,
+    "answer_key": "Individuelle Antworten. Gütekriterien: (a) alle fünf Nutzungsarten mit konkretem, ortsgebundenem Beispiel (nicht abstrakt); (b) Konflikt mit klar benannten Parteien (wer profitiert, wer verliert); (c) Lösungsansatz, der einen Kompromiss versucht – keine utopische Ideallösung.",
+    "acceptable_reasoning": "Die Aufgabe ist offen und ortsgebunden – das Arbeitsblatt behauptet keine Ortsfakten. Schüler:innen bringen ihr Alltagswissen ein. Wenn sie keinen Tourismusfall kennen, kann Natur/Grünfläche eingesetzt werden.",
+    "rubric": [
+      {
+        "criterion": "Ortskonkrete Beispiele (Teil a)",
+        "levels": [
+          "Abstrakt oder nicht ortsgebunden",
+          "Teilweise ortskonkret",
+          "Alle fünf Kategorien mit ortskonkretem Beispiel"
+        ]
+      },
+      {
+        "criterion": "Konfliktanalyse (Teil b)",
+        "levels": [
+          "Kein Konflikt benannt",
+          "Konflikt benannt ohne Parteien",
+          "Konflikt mit Gewinner:innen und Benachteiligten"
+        ]
+      },
+      {
+        "criterion": "Lösungsansatz (Teil c)",
+        "levels": [
+          "Kein Vorschlag",
+          "Einseitiger Vorschlag",
+          "Kompromissansatz mit Begründung"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen aus städtischen und ländlichen Schulen werden sehr unterschiedliche Beispiele nennen – das ist Methode, nicht Problem. Die Verschiedenheit der Beispiele ist ein Unterrichtsgespräch wert.",
+      "Lösungsansatz soll realistisch sein, nicht nur politische Forderungen (z. B. 'der Bürgermeister muss...') ohne konkrete Idee."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Zentren und Peripherien in Österreich",
+  "competences": [
+    "GWB.US.3.ZEN.03"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "HK",
+    "UK",
+    "OK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0095",
+  "source": "ai",
+  "created_at": "2026-06-26T19:02:29+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

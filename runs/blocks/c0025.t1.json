@@ -1,0 +1,73 @@
+{
+  "id": "c0025.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "multiple_choice",
+    "prompt": "Ein Forscher findet in einem ägyptischen Grab ein Wandbild, das einen Pharao beim Besiegen seiner Feinde zeigt. Was ist dieses Wandbild am ehesten?\n\nWähle die beste Antwort.",
+    "payload": {
+      "kind": "multiple_choice",
+      "options": [
+        "A) Eine Quelle, weil es aus der damaligen Zeit stammt und direkt überliefert wurde.",
+        "B) Eine Darstellung, weil es von jemandem später aufgezeichnet wurde.",
+        "C) Ein Beweis dafür, dass der Pharao wirklich gesiegt hat.",
+        "D) Unbrauchbar für die Geschichtsforschung."
+      ],
+      "select": "one"
+    },
+    "response": {
+      "mode": "choices",
+      "options": [
+        "A) Eine Quelle, weil es aus der damaligen Zeit stammt und direkt überliefert wurde.",
+        "B) Eine Darstellung, weil es von jemandem später aufgezeichnet wurde.",
+        "C) Ein Beweis dafür, dass der Pharao wirklich gesiegt hat.",
+        "D) Unbrauchbar für die Geschichtsforschung."
+      ],
+      "select": "one"
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "HME"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GPB.US.2.ALL.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "A) Eine Quelle: Das Wandbild stammt aus der Zeit selbst (es wurde von Zeitgenoss:innen im Grab angebracht) und ist damit eine primäre Überlieferung — also eine Quelle, keine nachträgliche Darstellung.",
+    "acceptable_reasoning": "Akzeptabel ist auch, wenn Schüler:innen zusätzlich erklären, dass Quellen noch keine objektive Wahrheit liefern — das greift T3 vorweg.",
+    "rubric": [],
+    "watch_outs": [
+      "Viele Schüler:innen verwechseln 'Quelle' mit 'Beweis' (Option C). Betonen: Eine Quelle kann propagandistisch sein und trotzdem Quelle bleiben.",
+      "Manche wählen B, weil sie 'Darstellung' mit 'Bild' gleichsetzen. Klarstellen: Der Begriff 'Darstellung' ist im Fach technisch belegt (= spätere Aufbereitung für ein Publikum)."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "multiple_choice",
+  "subject": "Geschichte und politische Bildung",
+  "klasse": 2,
+  "kompetenzbereich": null,
+  "competences": [
+    "GPB.US.2.ALL.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "HME"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0025",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

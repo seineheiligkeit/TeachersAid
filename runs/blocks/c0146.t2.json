@@ -1,0 +1,79 @@
+{
+  "id": "c0146.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "multiple_choice",
+    "prompt": "Welche der folgenden Aussagen zur wirtschaftlichen Globalisierung sind zutreffend? Wähle alle richtigen Antworten aus und begründe kurz, warum die anderen falsch sind.",
+    "payload": {
+      "kind": "multiple_choice",
+      "options": [
+        "A) Globalisierung führt in allen Ländern zu steigendem Wohlstand.",
+        "B) Freihandel kann in manchen Sektoren bestimmte Länder benachteiligen.",
+        "C) Globale Lieferketten wurden durch die COVID-19-Pandemie als verletzlich erkannt.",
+        "D) Die Verlagerung von Produktion in Niedriglohnländer ist ausschließlich negativ.",
+        "E) Technologischer Wandel (z. B. Digitalisierung) ist ein wichtiger Treiber der Globalisierung."
+      ],
+      "select": "many"
+    },
+    "response": {
+      "mode": "choices",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "select": "many"
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "REF"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.OS.8.CHA.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Richtig: B, C, E. A ist falsch – Globalisierung erzeugt Gewinner und Verlierer; innerhalb von Ländern und zwischen Ländern entstehen neue Ungleichheiten. D ist falsch – Produktionsverlagerung schafft auch Beschäftigung und Einkommen im Zielland, selbst wenn Arbeitsbedingungen oft verbesserungswürdig sind.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Aussage A ist eine häufige Vereinfachung – Wohlstandsgewinne sind ungleich verteilt, auch innerhalb von Gewinnernationen.",
+      "Aussage D verleitet zu moralisierendem Denken – auf die Komplexität von Beschäftigungseffekten hinweisen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "multiple_choice",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 8,
+  "kompetenzbereich": "Chancen und Gefahren der Globalisierung erörtern",
+  "competences": [
+    "GWB.OS.8.CHA.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "REF"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0146",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:24+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

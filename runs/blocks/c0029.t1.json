@@ -1,0 +1,68 @@
+{
+  "id": "c0029.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "ordering",
+    "prompt": "Bringe die folgenden Ereignisse der österreichischen Nachkriegsgeschichte in die richtige zeitliche Reihenfolge. Schreibe die Buchstaben in der richtigen Reihenfolge auf.",
+    "payload": {
+      "kind": "ordering",
+      "items": [
+        "A) Ende des Zweiten Weltkriegs und Beginn der Vier-Mächte-Besatzung Österreichs",
+        "B) Unterzeichnung des Österreichischen Staatsvertrags in Wien (Schloss Belvedere)",
+        "C) Österreich tritt den Vereinten Nationen bei",
+        "D) Österreich stellt Antrag auf EG/EU-Mitgliedschaft",
+        "E) Volksabstimmung über EU-Beitritt (66,6% Ja-Stimmen)",
+        "F) Österreich tritt der Europäischen Union bei (1. Jänner)"
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 1
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "HSA"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GPB.US.4.ALL.07",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "Richtige Reihenfolge: A (1945) → B (Mai 1955) → C (Dezember 1955) → D (1989) → E (Juni 1994) → F (Jänner 1995).",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "B und C liegen beide im Jahr 1955 — Staatsvertrag (Mai) vor UN-Beitritt (Dezember). Schüler:innen könnten B und C vertauschen.",
+      "D (EU-Antrag 1989) überrascht viele — erklärt durch das Ende des Kalten Krieges (Mauerfall 1989), das Neutralität neu definierbar machte."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "ordering",
+  "subject": "Geschichte und politische Bildung",
+  "klasse": 4,
+  "kompetenzbereich": null,
+  "competences": [
+    "GPB.US.4.ALL.07"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "HSA"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0029",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

@@ -1,0 +1,130 @@
+{
+  "id": "c0110.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Schau dir Abb. 1 genau an. Welches der acht Länder hat das höchste BIP pro Kopf, welches das niedrigste? Notiere die ungefähren Werte und berechne, wie viel mal größer der höchste Wert ist als der niedrigste.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "OK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.4.ENT2.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Höchster Wert: Schweiz (~104 000 USD). Niedrigster Wert: Nigeria (~1 080 USD). Verhältnis: 104 000 ÷ 1 080 ≈ 96 — die Schweiz produziert pro Kopf fast 100-mal so viel wie Nigeria.",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Höchstes/niedrigstes Land korrekt",
+        "levels": [
+          "Beide korrekt",
+          "Eines korrekt",
+          "Keines korrekt"
+        ]
+      },
+      {
+        "criterion": "Verhältnis berechnet",
+        "levels": [
+          "Korrekte Größenordnung (80–110-fach)",
+          "Ansatz erkennbar, Wert ungenau",
+          "Kein Rechenversuch"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Viele Schülerinnen und Schüler nennen die USA als reichstes Land — die Schweiz liegt hier deutlich höher.",
+      "Beim Verhältnis genügt eine Näherungsrechnung; wichtig ist, dass die Größenordnung (fast 100-fach) verstanden wird."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 4,
+  "kompetenzbereich": "Entwicklungen in einer globalisierten Welt",
+  "competences": [
+    "GWB.US.4.ENT2.04"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "OK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "title": "BIP pro Kopf im Ländervergleich (in US-Dollar)",
+        "xlabel": "Land",
+        "ylabel": "BIP pro Kopf (US-Dollar)",
+        "log": false,
+        "categories": [
+          "Österreich",
+          "Deutschland",
+          "Schweiz",
+          "Italien",
+          "USA",
+          "China",
+          "Indien",
+          "Nigeria"
+        ],
+        "values": [
+          58269,
+          56104,
+          103998,
+          40385,
+          84534,
+          13303,
+          2695,
+          1084
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "worldbank_bip_pro_kopf",
+        "series": "vergleich",
+        "note": null,
+        "title": "BIP pro Kopf im Ländervergleich",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD",
+        "attribution": "Datenquelle: World Bank – data.worldbank.org (NY.GDP.PCAP.CD, CC BY 4.0)",
+        "stand": "2024"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0110",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:29+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

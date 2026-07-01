@@ -1,0 +1,70 @@
+{
+  "id": "c0096.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Entscheide für jede Aussage, ob sie richtig oder falsch ist, und begründe deine Entscheidung in einem Satz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Der Klimawandel trifft alle Länder der Erde gleich stark.",
+        "Artensterben ist ein natürlicher Vorgang und kein Problem.",
+        "Wenn ein Ökosystem kippt, kann es sich meistens schnell von selbst erholen.",
+        "Ressourcenübernutzung und Klimawandel sind voneinander unabhängige Probleme."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 8
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.4.MEN.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "1. Falsch – ärmere Länder im Globalen Süden (Tropengürtel, kleine Inselstaaten) sind deutlich stärker betroffen, obwohl sie weniger zum Klimawandel beigetragen haben. 2. Falsch – die aktuelle Aussterbegeschwindigkeit ist 100–1000× über dem natürlichen Hintergrund und ist menschlich verursacht. 3. Falsch – Kippelemente wie der Amazonas-Regenwald oder Korallenriffe können nach Überschreitung eines Schwellenwerts nicht in den Ausgangszustand zurückkehren. 4. Falsch – sie sind eng verknüpft: fossile Energieträger verursachen CO₂, Landnutzungsänderungen zerstören CO₂-Senken (Wälder) und setzen Treibhausgase frei.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Aussage 2 ist eine häufige Fehlannahme – das natürliche Hintergrundaussterben ist viel langsamer als das aktuelle.",
+      "Aussage 4 erfordert systemisches Denken; Schülerinnen und Schüler, die es als 'richtig' einschätzen, brauchen ein konkretes Beispiel für die Verknüpfung."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 4,
+  "kompetenzbereich": "Mensch und Natursysteme",
+  "competences": [
+    "GWB.US.4.MEN.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0096",
+  "source": "ai",
+  "created_at": "2026-06-26T19:02:30+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

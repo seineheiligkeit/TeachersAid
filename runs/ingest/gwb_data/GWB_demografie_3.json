@@ -1,0 +1,240 @@
+{
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Österreichische Gesellschaftsentwicklung",
+  "title": "Altersstruktur und Zukunft: Was bedeutet Österreichs Demografie für Pensionen und Gesellschaft?",
+  "kernfrage": "Was sagen die Bevölkerungsdaten über Österreichs Zukunft — und welche Weichenstellungen braucht es?",
+  "body": {
+    "intro": [],
+    "data_figures": [
+      {
+        "id": "abb1",
+        "intent": "demographic",
+        "title": "Bevölkerungspyramide Österreich (1.1.2024)",
+        "xlabel": "Personen",
+        "data_source": {
+          "dataset_id": "statistik_austria_bevstand_2024",
+          "series": "pyramide_5j"
+        }
+      },
+      {
+        "id": "abb2",
+        "intent": "comparison",
+        "title": "Bevölkerung Österreichs nach Altersgruppen — Anteile (1.1.2024)",
+        "xlabel": "Altersgruppe",
+        "ylabel": "Anteil an Gesamtbevölkerung (%)",
+        "data_source": {
+          "dataset_id": "statistik_austria_bevstand_2024",
+          "series": "altersgruppen_breit"
+        }
+      }
+    ],
+    "assets": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Demografie und gesellschaftliche Folgen",
+        "throughline": "Schüler:innen nutzen reale Bevölkerungsdaten, um gesellschaftliche Systeme (Pensionen, Pflege, Bildung) zu hinterfragen und eigene begründete Positionen zu entwickeln — Demografie als Grundlage für politische Entscheidungen.",
+        "talking_points": [
+          "Der 'Generationenvertrag' ist das Prinzip des österreichischen Pensionssystems: Erwerbstätige zahlen für aktuelle Pensionist:innen — das funktioniert, wenn genügend Junge nachkommen.",
+          "Der 'Altenquotient' (Verhältnis 65+ zu 20–64) ist eine Schlüsselgröße: Je höher er ist, desto belasteter ist das System — Österreich 2024: ca. 30 % (Statistik Austria).",
+          "Migration kann die Altersstruktur beeinflussen: Zuwanderer sind im Durchschnitt jünger und erwerbstätig — ein Grund für die starke Gruppe der 25–39-Jährigen.",
+          "Politische Maßnahmen: Erhöhung des Pensionsantrittsalters, Pflegegeldsysteme, Kinderbetreuungsausbau — alle haben demografische Grundlagen, die mit solchen Daten belegt werden."
+        ],
+        "extensions": [
+          "Schüler:innen recherchieren das aktuelle österreichische Pensionsantrittsalter und diskutieren, ob eine Erhöhung gerecht ist.",
+          "Planspiel: Schüler:innen spielen Rollen (Gewerkschaft, Arbeitgeberverband, Pensionist:innenverbände, Jugendorganisation) in einer Debatte über Pensionsreform.",
+          "Vergleich mit einem Land mit anderem demografischen Profil (z. B. Deutschland mit noch stärkerem Alterungstrend oder Frankreich mit höheren Geburtenraten)."
+        ],
+        "blocks": [
+          {
+            "role": "info",
+            "id": "i1",
+            "kind": "prose",
+            "prompt": "Das österreichische Pensionssystem basiert auf dem **Generationenvertrag**: Die erwerbstätigen Personen zahlen heute Beiträge, die direkt an die aktuellen Pensionist:innen ausgezahlt werden — nicht angespart. Dieses System hängt von einem ausgewogenen Verhältnis zwischen Erwerbstätigen und Pensionierten ab. Am 1.1.2024 lebten in Österreich 9.158.750 Menschen.",
+            "asset_refs": [],
+            "est_minutes": 2
+          },
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "open_response",
+            "prompt": "Lies aus der Bevölkerungspyramide (Abb. 1) ab: Wie viele Menschen sind in den Altersgruppen 20–24, 25–29 und 30–34 zusammen (Männer + Frauen)? Zeige deinen Rechenweg.",
+            "payload": null,
+            "response": {"mode": "lines", "n": 5},
+            "cognitive_level": "remember",
+            "dimensions": ["OK"],
+            "serves": [{"competence_id": "GWB.US.3.OST.01", "relation": "exercises"}],
+            "est_minutes": 6,
+            "asset_refs": ["abb1"],
+            "answer_key": "20–24: 259.070 (m) + 241.672 (w) = 500.742. 25–29: 303.392 (m) + 283.992 (w) = 587.384. 30–34: 327.167 (m) + 311.084 (w) = 638.251. Gesamt: 500.742 + 587.384 + 638.251 = 1.726.377 Personen.",
+            "acceptable_reasoning": "Kleinere Ablesefehler (± 10.000 pro Gruppe) sind akzeptabel, wenn der Rechenweg stimmt. Die Summe der drei Gruppen liegt bei ca. 1.726.000.",
+            "watch_outs": [
+              "Schüler:innen müssen Männer und Frauen für jede Gruppe addieren — nur eine Seite zu lesen ist ein klassischer Fehler.",
+              "Die Pyramide zeigt absolute Zahlen (Personen), keine Prozentsätze — nicht mit den Prozentwerten aus Abb. 2 verwechseln."
+            ],
+            "rubric": [
+              {"criterion": "Ablesen je Gruppe", "levels": ["Alle 3 Gruppen beidgeschlechtlich korrekt (3P)", "2 Gruppen korrekt (2P)", "1 Gruppe korrekt (1P)", "Keine korrekte Gruppe (0P)"]},
+              {"criterion": "Gesamtsumme", "levels": ["Richtig summiert (1P)", "Fehler (0P)"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "open_response",
+            "prompt": "Erkläre in eigenen Worten: Warum könnte die Altersgruppe der 25- bis 39-Jährigen in Österreich stärker besetzt sein, als man aufgrund der Geburtenzahlen der 1980er- und 1990er-Jahre erwarten würde? Nenne einen möglichen Grund.",
+            "payload": null,
+            "response": {"mode": "lines", "n": 4},
+            "cognitive_level": "understand",
+            "dimensions": ["UK"],
+            "serves": [{"competence_id": "GWB.US.3.OST.02", "relation": "exercises"}],
+            "est_minutes": 6,
+            "asset_refs": ["abb1"],
+            "answer_key": "Die Gruppe der 25- bis 39-Jährigen (in der Pyramide: 25–29, 30–34, 35–39) ist relativ stark besetzt. Ein möglicher Grund ist Zuwanderung: Viele Menschen aus dem EU-Ausland (z. B. Deutschland, Rumänien, Ungarn) oder aus anderen Ländern sind in jungen Erwachsenenjahren nach Österreich gezogen und leben und arbeiten hier. Das erhöht die Zahl dieser Altersgruppen über die bloßen Geburtenraten in Österreich hinaus.",
+            "acceptable_reasoning": "Schüler:innen können auch EU-Freizügigkeit, Arbeitsmigration oder Studienzuwanderung nennen. Wichtig ist die Erkenntnis, dass Bevölkerungszusammensetzung nicht nur von Geburten, sondern auch von Migration abhängt.",
+            "watch_outs": [
+              "Schüler:innen neigen dazu, Migration nur mit Asyl zu verbinden — gezielt auf Arbeitsmigration und EU-Freizügigkeit hinweisen.",
+              "Die Aufgabe fragt nach einem möglichen Grund — es gibt keine eine richtige Antwort; Offenheit für unterschiedliche Argumente."
+            ],
+            "rubric": [
+              {"criterion": "Plausibilität", "levels": ["Plausible Begründung mit demografischem Bezug (2P)", "Vage Andeutung (1P)", "Keine plausible Erklärung (0P)"]},
+              {"criterion": "Fachsprache", "levels": ["Begriff 'Migration' oder 'Zuwanderung' korrekt verwendet (1P)", "Nicht verwendet (0P)"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "open_response",
+            "prompt": "Schau dir das Balkendiagramm (Abb. 2) an: Die Gruppe der 45- bis 59-Jährigen macht 21,2 % aus, die der 0- bis 14-Jährigen nur 14,4 %. Was bedeutet das konkret für den Generationenvertrag im Pensionssystem, wenn sich diese Relation in 20–25 Jahren verändert?",
+            "payload": null,
+            "response": {"mode": "lines", "n": 5},
+            "cognitive_level": "analyze",
+            "dimensions": ["UK"],
+            "serves": [{"competence_id": "GWB.US.3.OST.01", "relation": "exercises"}],
+            "est_minutes": 9,
+            "asset_refs": ["abb2"],
+            "answer_key": "In 20–25 Jahren sind die heutigen 45- bis 59-Jährigen (21,2 % der Bevölkerung) großteils im Pensionsalter (65–80 Jahre), also in den Gruppen 60–74 und 75+. Gleichzeitig sind die heutigen 0- bis 14-Jährigen (14,4 %) dann im Erwerbsalter. Das Verhältnis von Erwerbstätigen zu Pensionierten verschlechtert sich: mehr Pensionist:innen müssen durch weniger Erwerbstätige finanziert werden. Der Generationenvertrag kommt unter Druck — mögliche Reaktionen sind höhere Beiträge, niedrigere Pensionen oder ein höheres Pensionsantrittsalter.",
+            "acceptable_reasoning": "Schüler:innen müssen nicht alle Maßnahmen nennen; die Kernlogik (mehr Pensionierte, weniger Beitragszahler) muss klar sein. Eigene Lösungsideen werden als Bonus gewertet.",
+            "watch_outs": [
+              "Schüler:innen verwechseln oft Ursache und Wirkung: Nicht die Demografie 'verursacht' Armut, sondern sie stellt Systeme vor Anpassungsbedarf.",
+              "Darauf hinweisen, dass Migration und steigende Geburtenraten die Prognose verändern können — Demografie ist kein starres Schicksal."
+            ],
+            "rubric": [
+              {"criterion": "Korrekte Zukunftsprojektion", "levels": ["Richtige Altersgruppe in 20–25 Jahren (2P)", "Vage / fehlerhafte Angabe (1P)", "Fehlt (0P)"]},
+              {"criterion": "Systemlogik Generationenvertrag", "levels": ["Mehr Pensionierte, weniger Erwerbstätige klar beschrieben (2P)", "Ansatz erkennbar (1P)", "Fehlt (0P)"]},
+              {"criterion": "Konsequenzen", "levels": ["Mindestens eine konkrete Maßnahme / Folge genannt (1P)", "Keine (0P)"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "multiple_choice",
+            "prompt": "Welche der folgenden Maßnahmen kann dazu beitragen, die finanzielle Belastung des Pensionssystems in Österreich zu verringern? (Mehrere Antworten möglich — kreuze alle zutreffenden an und begründe deine Auswahl kurz.)",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "Das Pensionsantrittsalter schrittweise erhöhen",
+                "Staatliche Schulden erhöhen, um Pensionen zu finanzieren",
+                "Zuwanderung von Arbeitskräften im erwerbsfähigen Alter ermöglichen",
+                "Die Geburtenrate durch bessere Kinderbetreuung erhöhen",
+                "Pensionen sofort und stark kürzen"
+              ],
+              "select": "many"
+            },
+            "response": {"mode": "choices", "options": ["Das Pensionsantrittsalter schrittweise erhöhen", "Staatliche Schulden erhöhen, um Pensionen zu finanzieren", "Zuwanderung von Arbeitskräften im erwerbsfähigen Alter ermöglichen", "Die Geburtenrate durch bessere Kinderbetreuung erhöhen", "Pensionen sofort und stark kürzen"], "select": "many"},
+            "cognitive_level": "evaluate",
+            "dimensions": ["UK", "HK"],
+            "serves": [{"competence_id": "GWB.US.3.OST.01", "relation": "exercises"}],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "Zutreffend: (1) Pensionsantrittsalter erhöhen — verlängert Beitragszeit und verkürzt Bezugsdauer. (3) Arbeitskräftezuwanderung — erhöht die Zahl der Beitragszahlenden. (4) Geburtenrate erhöhen — langfristig mehr Erwerbstätige. Nicht zutreffend oder problematisch: (2) Schulden erhöhen verschiebt das Problem nur. (5) Starke sofortige Kürzungen sind sozial und politisch kaum vertretbar und lösen das Strukturproblem nicht.",
+            "acceptable_reasoning": "Schüler:innen, die Option 5 als 'auch möglich' sehen, müssen erklären, warum — sofortige starke Kürzungen sind politisch und sozial umstritten und nicht als Musterlösung akzeptiert.",
+            "watch_outs": [
+              "Option 2 (Schulden) klingt wie eine Lösung, ist aber keine strukturelle — das gezielt klären.",
+              "Option 5 kann diskutiert werden, aber 'sofort und stark' ist die entscheidende Einschränkung — schrittweise Anpassungen sind anders zu bewerten."
+            ],
+            "rubric": [
+              {"criterion": "Korrekte Selektion", "levels": ["Optionen 1, 3 und 4 ausgewählt, 2 und 5 nicht (3P)", "2 richtige ausgewählt (2P)", "1 richtige (1P)", "Keine oder nur falsche (0P)"]},
+              {"criterion": "Begründungen", "levels": ["Mindestens 2 Begründungen demografisch fundiert (2P)", "1 Begründung (1P)", "Keine Begründung (0P)"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "decision_scenario",
+            "prompt": "Stell dir vor, du sitzt in einem Ausschuss, der Empfehlungen für die österreichische Pensionspolitik machen soll. Basierend auf der Bevölkerungsstruktur (Abb. 1 und Abb. 2) schlägst du zwei konkrete Maßnahmen vor. Beschreibe jede Maßnahme in zwei bis drei Sätzen und erkläre, welche Gruppe davon profitiert und welche Gruppe möglicherweise Nachteile hat.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Österreich 2044: Die Baby-Boomer-Generation ist im Rentenalter. Die Zahl der Pensionist:innen steigt stark an, während die erwerbstätige Bevölkerung nicht mitgewachsen ist. Der Ausschuss muss zwei Maßnahmen empfehlen."
+            },
+            "response": {"mode": "box", "min_height_mm": 55},
+            "cognitive_level": "evaluate",
+            "dimensions": ["UK", "HK"],
+            "serves": [{"competence_id": "GWB.US.3.OST.01", "relation": "exercises"}],
+            "est_minutes": 10,
+            "asset_refs": ["abb1", "abb2"],
+            "answer_key": "Erwartete Qualitätselemente: (1) Maßnahme mit klarem demografischem Bezug (z. B. Pensionsantrittsalter, Kinderbetreuungsausbau, Arbeitskräftezuwanderung). (2) Für jede Maßnahme: Wer profitiert (z. B. jüngere Generation, Staatskassa) und wer hat Nachteile (z. B. Menschen mit körperlich anstrengenden Berufen bei Pensionsalter-Erhöhung). Wichtig: Abwägungen, keine einseitigen 'Wunderlösungen'.",
+            "acceptable_reasoning": "Kreative Maßnahmen (z. B. Pflegeroboter, verstärkte Automatisierung) können anerkannt werden, wenn sie demografisch argumentiert sind. Nicht als Musterlösung vorgeben.",
+            "watch_outs": [
+              "Schüler:innen neigen zu einfachen Lösungen ('einfach mehr einwandern lassen') — gezielt nach Verteilungseffekten und Widerständen fragen.",
+              "Auf Interessenskonflikte hinweisen: Ältere Arbeitnehmer:innen mit Schwerarbeit profitieren nicht von höherem Pensionsalter."
+            ],
+            "rubric": [
+              {"criterion": "Zwei Maßnahmen benannt", "levels": ["Beide Maßnahmen klar beschrieben (2P)", "Eine Maßnahme (1P)", "Keine konkrete Maßnahme (0P)"]},
+              {"criterion": "Demografischer Bezug", "levels": ["Mindestens eine Maßnahme mit Bezug auf Bevölkerungsdaten begründet (2P)", "Vager Bezug (1P)", "Kein Datenbezug (0P)"]},
+              {"criterion": "Interessensabwägung", "levels": ["Für beide Maßnahmen: Gewinner und Verlierer benannt (2P)", "Für eine Maßnahme (1P)", "Keine Abwägung (0P)"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "open_response",
+            "prompt": "Recherchiere oder überlege: Welche Gruppe der Bevölkerung ist von Altersarmut besonders betroffen, und warum könnte die aktuelle Altersstruktur Österreichs (Abb. 2) dieses Problem in Zukunft verstärken? Beziehe dich auf konkrete Daten.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 45},
+            "cognitive_level": "analyze",
+            "dimensions": ["UK"],
+            "serves": [{"competence_id": "GWB.US.3.OST.02", "relation": "exercises"}],
+            "est_minutes": 9,
+            "asset_refs": ["abb2"],
+            "answer_key": "Besonders betroffen von Altersarmut sind Frauen (niedrigere Pensionen aufgrund von Teilzeit, Kindererziehungszeiten, niedrigeren Löhnen) sowie Menschen mit Migrationshintergrund (unterbrochene Erwerbsbiografien). Die aktuelle Altersstruktur verstärkt das Problem, weil: (a) die Gruppe 75+ (9,7 % = ca. 885.000 Personen) wächst und besonders weiblich ist (Abb. 1 zeigt bei 85+ fast doppelt so viele Frauen wie Männer); (b) wenn das Pensionsniveau sinkt (wegen Systemdruck), treffen Kürzungen arme Pensionist:innen überproportional.",
+            "acceptable_reasoning": "Schüler:innen, die auf die Geschlechterunterschiede in der Pyramide (mehr ältere Frauen) und auf Lohnungleichheit als Ursache hinweisen, zeigen ein vollständiges Verständnis. Ein konkreter Zahlenbezug (9,7 % / 885.000 Personen) oder der Verweis auf das Pyramidenbild ist erforderlich.",
+            "watch_outs": [
+              "Altersarmut bei Frauen ist statistisch belegt — Schüler:innen sollen das nicht als Meinung formulieren, sondern als gesellschaftliche Tatsache mit Ursache.",
+              "Nicht alle alten Menschen sind arm — die Aufgabe fragt nach besonders betroffenen Gruppen, nicht nach verallgemeinernden Aussagen."
+            ],
+            "rubric": [
+              {"criterion": "Betroffene Gruppe identifiziert", "levels": ["Konkrete Gruppe (Frauen, Menschen mit Migrationshintergrund) korrekt benannt (2P)", "Vage 'alte Menschen' (1P)", "Nicht benannt (0P)"]},
+              {"criterion": "Datenbezug", "levels": ["Mindestens ein konkreter Datenpunkt aus Abb. 1 oder 2 (2P)", "Kein Datenbezug (0P)"]},
+              {"criterion": "Begründung Verstärkungseffekt", "levels": ["Kausalzusammenhang Altersstruktur → Systembdruck → Armut plausibel (2P)", "Ansatz erkennbar (1P)", "Fehlt (0P)"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "position_argument",
+            "prompt": "Ein Politiker sagt: 'Wir müssen die Zuwanderung stark erhöhen, sonst kollabiert unser Pensionssystem.' Ein anderer antwortet: 'Das löst das Problem nicht dauerhaft — auch Zuwanderer werden einmal alt.' Nimm auf Basis der demografischen Daten Stellung: Wer hat Recht, und inwiefern haben beide einen Punkt?",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 55},
+            "cognitive_level": "evaluate",
+            "dimensions": ["UK", "HK"],
+            "serves": [{"competence_id": "GWB.US.3.OST.01", "relation": "exercises"}],
+            "est_minutes": 11,
+            "asset_refs": ["abb1", "abb2"],
+            "answer_key": "Beide haben einen Punkt. Für den ersten: Zuwanderung im erwerbsfähigen Alter (25–44) erhöht kurzfristig die Zahl der Beitragszahlenden — das entlastet das System. Für den zweiten: Auch Zuwanderer werden alt und erwerben Pensionsansprüche — das Problem wird zeitlich verschoben, nicht gelöst. Eine Gesamtlösung braucht mehrere Hebel: Geburtenrate, Zuwanderung, Produktivitätssteigerung, Pensionsalter. Kein einzelner Faktor löst das strukturelle Ungleichgewicht, das aus der Altersstruktur (21,2 % in 45–59 vs. 14,4 % in 0–14) folgt.",
+            "acceptable_reasoning": "Schüler:innen müssen nicht alle Lösungshebel nennen. Entscheidend ist: Beide Positionen mit Datenbezug beurteilt und keine einseitige Übernahme einer Position.",
+            "watch_outs": [
+              "Schüler:innen könnten die Debatte auf politische Lager reduzieren ('der eine hat Recht, weil...'). Den Fokus auf Argumente und Daten, nicht auf politische Sympathie lenken.",
+              "Die Langfristperspektive ist zentral: Zuwanderung hilft kurzfristig, löst aber strukturelle Alterung nicht — das ist eine Kernbotschaft der Demografiedebatte."
+            ],
+            "rubric": [
+              {"criterion": "Beide Positionen bewertet", "levels": ["Beide Positionen sachlich bewertet (2P)", "Nur eine Position (1P)", "Keine klare Bewertung (0P)"]},
+              {"criterion": "Datenbezug", "levels": ["Mindestens ein konkreter Prozentwert aus den Abbildungen (2P)", "Kein Datenbezug (0P)"]},
+              {"criterion": "Differenziertes Urteil", "levels": ["Synthese: kein Alleinmittel, mehrere Hebel nötig (2P)", "Einseitige Übernahme (1P)", "Kein Urteil (0P)"]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

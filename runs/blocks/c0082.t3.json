@@ -1,0 +1,137 @@
+{
+  "id": "c0082.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Abb. 2 zeigt, wie viel CO₂ bei der Erzeugung von einer Kilowattstunde Strom aus verschiedenen Energieträgern entsteht.\na) Welcher Energieträger verursacht die meisten CO₂-Emissionen pro kWh, welcher die wenigsten (außer Wasser)?\nb) Berechne: Ein Haushalt verbraucht 3 500 kWh Strom pro Jahr. Wie viel CO₂ entsteht, wenn dieser Strom aus Kohle kommt? Wie viel, wenn er aus Windkraft kommt?\nc) Was bedeutet das Ergebnis aus b) für die Klimabilanz des Haushalts?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 7
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "UK",
+      "OK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.2.NAC.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "a) Meiste Emissionen: Kohle (820 g/kWh); Wenigste (außer Wasser): Windkraft (11 g/kWh). b) Kohle: 3 500 kWh × 820 g/kWh = 2 870 000 g = 2 870 kg ≈ 2,87 t CO₂; Wind: 3 500 × 11 g/kWh = 38 500 g ≈ 38,5 kg CO₂. c) Wechsel von Kohle zu Windstrom spart ca. 2,83 t CO₂ pro Haushalt und Jahr – das entspricht etwa dem Jahresausstoß eines Mittelklasse-Autos.",
+    "acceptable_reasoning": "Rechenweg muss sichtbar sein; gerundete Ergebnisse akzeptabel.",
+    "rubric": [
+      {
+        "criterion": "Werte korrekt abgelesen",
+        "levels": [
+          "Beide Extremwerte korrekt",
+          "Einer korrekt",
+          "Keiner korrekt"
+        ]
+      },
+      {
+        "criterion": "Berechnung Kohle",
+        "levels": [
+          "Korrekt mit Einheit",
+          "Rechnung erkennbar, Einheit fehlt",
+          "Falsch"
+        ]
+      },
+      {
+        "criterion": "Berechnung Wind",
+        "levels": [
+          "Korrekt mit Einheit",
+          "Rechnung erkennbar, Einheit fehlt",
+          "Falsch"
+        ]
+      },
+      {
+        "criterion": "Schlussfolgerung für Klimabilanz",
+        "levels": [
+          "Klarer Bezug zur Einsparung",
+          "Vage Schlussfolgerung",
+          "Keine"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Einheitenkonversion ist eine typische Fehlerquelle: g → kg → t. Rechenweg einfordern.",
+      "Wasser hat nur 4 g/kWh – das ist weniger als Wind. Schüler:innen erkennen das Diagramm evtl. nicht – Abb. 2 genau lesen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 2,
+  "kompetenzbereich": "Nachhaltiger Umgang mit Energie und Ressourcen",
+  "competences": [
+    "GWB.US.2.NAC.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "UK",
+    "OK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Kohle",
+          "Erdöl",
+          "Erdgas",
+          "Biomasse",
+          "Wind",
+          "Solar",
+          "Wasser"
+        ],
+        "values": [
+          820,
+          650,
+          490,
+          230,
+          11,
+          48,
+          4
+        ],
+        "title": "CO₂-Emissionen verschiedener Energieträger (g CO₂ pro kWh)",
+        "xlabel": "Energieträger",
+        "ylabel": "g CO₂ pro kWh"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0082",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:17+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

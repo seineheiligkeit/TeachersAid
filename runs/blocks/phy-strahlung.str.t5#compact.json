@@ -1,0 +1,61 @@
+{
+  "id": "phy-strahlung.str.t5#compact",
+  "block": {
+    "id": "phy-strahlung.str.t5_compact",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Dosen zum Vergleich:\n• 1 Banane essen ≈ 0,1 µSv\n• Thorax-Röntgen ≈ 20 µSv\n• Transatlantikflug ≈ 40 µSv\n• Natürliche Jahresdosis in Österreich ≈ 2–3 mSv\n\nOrdne die vier Quellen nach steigender Dosis. Um welchen Faktor ist die Jahresdosis größer als ein einzelner Röntgen-Thorax?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 3
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.4.STR.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "Reihenfolge: Banane (0,1 µSv) < Röntgen (20 µSv) < Flug (40 µSv) < Jahresdosis (2000–3000 µSv). Faktor Jahresdosis/Röntgen: 2000/20 = 100 bis 3000/20 = 150.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Einheitenumrechnung µSv ↔ mSv ist fehleranfällig; Umrechnung 1 mSv = 1000 µSv explizit ansprechen"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Strahlung und Radioaktivität",
+  "competences": [
+    "PHY.US.4.STR.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "compact",
+  "family": "phy-strahlung.str.t5",
+  "assets": [],
+  "status": "approved",
+  "provenance": "variant:phy-strahlung.str.t5",
+  "source": "ai",
+  "created_at": "2026-06-25T18:13:26+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

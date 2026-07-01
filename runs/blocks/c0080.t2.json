@@ -1,0 +1,79 @@
+{
+  "id": "c0080.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "multiple_choice",
+    "prompt": "Welche Aussagen über Preisbildung auf Märkten sind richtig? Wähle alle zutreffenden Antworten aus.",
+    "payload": {
+      "kind": "multiple_choice",
+      "options": [
+        "Wenn viele Leute ein Produkt wollen, aber wenig davon vorhanden ist, steigt der Preis.",
+        "Der Preis eines Produkts hat nichts mit den Herstellungskosten zu tun.",
+        "Wenn ein Anbieter die Preise erhöht und viele Konkurrenten dasselbe Produkt günstiger anbieten, verliert er Käufer:innen.",
+        "Auf einem Markt bestimmt immer nur der Verkäufer den Preis.",
+        "Hohe Nachfrage bei gleichbleibendem Angebot kann zu Preisanstieg führen."
+      ],
+      "select": "one"
+    },
+    "response": {
+      "mode": "choices",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "select": "many"
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.ENT.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "Richtig: A, C, E. Falsch: B (Produktionskosten beeinflussen den Preis wesentlich), D (auf einem Wettbewerbsmarkt bestimmen Angebot und Nachfrage gemeinsam den Preis).",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Aussage D ist die häufigste Fehlvorstellung: Schüler:innen denken, Verkäufer:innen könnten Preise beliebig festlegen. Zeigen, dass zu hohe Preise zu Käufer:innenverlust führen.",
+      "Aussage B klingt für manche plausibel, weil man Herstellungskosten nicht sieht. Gegenbeispiel: Rohstoffpreisanstieg → Brotpreis steigt."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "multiple_choice",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Entwicklungen am Wirtschaftsstandort Österreich",
+  "competences": [
+    "GWB.US.3.ENT.04"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0080",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:15+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

@@ -1,0 +1,113 @@
+{
+  "id": "c0110.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Überlege: Was könnten Gründe dafür sein, dass China ein deutlich höheres BIP pro Kopf hat als Indien oder Nigeria, obwohl alle drei Länder noch deutlich unter europäischem Niveau liegen? Nenne und erkläre zwei mögliche Ursachen.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 35.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.4.ENT2.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Mögliche Ursachen: (1) Chinas staatlich gelenkte Industrialisierung seit den 1980ern (Sonderwirtschaftszonen, Export-Wachstum). (2) Höhere Urbanisierungsrate als Indien (~66 % vs. ~35 %) — Städte sind produktiver. (3) Stärkere Integration in den Weltmarkt (WTO-Beitritt 2001). (4) Investitionen in Infrastruktur und Bildung. Andere fundierte Ursachen sind ebenfalls korrekt.",
+    "acceptable_reasoning": "Zwei plausible, begründete Ursachen sind ausreichend — die Erklärung muss kausal sein, nicht nur beschreibend.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "China wird von Schülerinnen und Schülern oft als 'sozialistisch = arm' eingeordnet — der tatsächliche wirtschaftliche Aufstieg ist didaktisch wichtig.",
+      "Die Verbindung Urbanisierung–Produktivität ist nicht selbstverständlich und kann im Unterrichtsgespräch vertieft werden."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 4,
+  "kompetenzbereich": "Entwicklungen in einer globalisierten Welt",
+  "competences": [
+    "GWB.US.4.ENT2.03"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "title": "BIP pro Kopf im Ländervergleich (in US-Dollar)",
+        "xlabel": "Land",
+        "ylabel": "BIP pro Kopf (US-Dollar)",
+        "log": false,
+        "categories": [
+          "Österreich",
+          "Deutschland",
+          "Schweiz",
+          "Italien",
+          "USA",
+          "China",
+          "Indien",
+          "Nigeria"
+        ],
+        "values": [
+          58269,
+          56104,
+          103998,
+          40385,
+          84534,
+          13303,
+          2695,
+          1084
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "worldbank_bip_pro_kopf",
+        "series": "vergleich",
+        "note": null,
+        "title": "BIP pro Kopf im Ländervergleich",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD",
+        "attribution": "Datenquelle: World Bank – data.worldbank.org (NY.GDP.PCAP.CD, CC BY 4.0)",
+        "stand": "2024"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0110",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:29+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

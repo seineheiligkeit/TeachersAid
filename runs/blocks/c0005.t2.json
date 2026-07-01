@@ -1,0 +1,78 @@
+{
+  "id": "c0005.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Stell dir vor: Ihr spielt Volleyball. Beim entscheidenden Punkt berührt der Ball beim Aufschlag knapp die Linie auf eurer Seite — Punkt für die andere Mannschaft. Nur du hast das gesehen, der/die Schiedsrichter:in hat es übersehen und gibt eurer Mannschaft den Punkt. Was tust du? Beschreibe, was du sagst oder machst, und erkläre kurz warum.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Volleyball: Der Ball hat die Linie auf eurer Seite berührt, der/die Schiedsrichter:in hat es nicht gesehen und gibt euch den Punkt."
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 35.0
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "SOZ"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BUS.US.2.SOZ.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Faires Verhalten: Die Spieler:in korrigiert die Schiedsrichter:in und gibt den Punkt ab (Selbstanzeige). Begründung: Fair Play bedeutet, auch dann ehrlich zu sein, wenn es einem selbst schadet. Der Wert des Sieges hängt davon ab, ob er verdient ist.",
+    "acceptable_reasoning": "Antworten, die den inneren Konflikt beschreiben und Fair Play dennoch wählen, sind vollwertig. Antworten, die den Punkt behalten, aber begründen können, warum das problematisch ist, zeigen noch partielle Kompetenz.",
+    "rubric": [
+      {
+        "criterion": "Entscheidung",
+        "levels": [
+          "Keine klare Entscheidung getroffen",
+          "Entscheidung getroffen, ohne Begründung",
+          "Faire Entscheidung mit plausibler Begründung"
+        ]
+      },
+      {
+        "criterion": "Reflexion",
+        "levels": [
+          "Kein Bezug zu Fair Play",
+          "Oberflächlicher Bezug",
+          "Bezug zu Selbstanzeige und Wert des fairen Sieges"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen könnten argumentieren, 'alle anderen machen das auch' — Gruppendenken als Gegenargument ansprechen.",
+      "Nicht moralisieren: Das Szenario soll zum Nachdenken einladen, nicht Schuldgefühle erzeugen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Bewegung und Sport",
+  "klasse": 2,
+  "kompetenzbereich": "Sozialkompetenz",
+  "competences": [
+    "BUS.US.2.SOZ.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "SOZ"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0005",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

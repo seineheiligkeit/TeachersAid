@@ -1,0 +1,74 @@
+{
+  "id": "c0034.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne jedes Alltagsbeispiel der passenden EU-Grundfreiheit zu.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Eine Wienerin zieht nach München und arbeitet dort als Ärztin.",
+        "Ein Linzer Unternehmen verkauft seine Produkte ohne Zoll nach Frankreich.",
+        "Eine österreichische Bank eröffnet eine Filiale in Prag.",
+        "Ein IT-Unternehmen aus Wien entwickelt Software für Kunden in ganz Europa."
+      ],
+      "right": [
+        "Freier Warenverkehr",
+        "Freier Personenverkehr",
+        "Freier Dienstleistungsverkehr",
+        "Freier Kapitalverkehr"
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "apply",
+    "dimensions": [
+      "OK",
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.4.EUR.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Ärztin in München – Personenverkehr; Produkte nach Frankreich – Warenverkehr; Bankfiliale in Prag – Kapitalverkehr; IT-Software – Dienstleistungsverkehr.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Bankfiliale könnte auch als Dienstleistung klassifiziert werden – beide Antworten mit Begründung akzeptieren.",
+      "Dienstleistungsverkehr vs. Personenverkehr: Ein Freelancer, der ins Ausland reist, um dort Dienstleistungen zu erbringen, ist beides. Diese Überlappung ist ein echtes EU-Rechtsproblem (Entsenderichtlinie)."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 4,
+  "kompetenzbereich": "Europa und europäische Integration",
+  "competences": [
+    "GWB.US.4.EUR.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "OK",
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0034",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

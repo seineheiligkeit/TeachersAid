@@ -1,0 +1,85 @@
+{
+  "id": "c0121.i1",
+  "block": {
+    "id": "i1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "info",
+    "kind": "prose",
+    "content": "Das Bruttoinlandsprodukt (BIP) pro Kopf ist ein Mass fuer den wirtschaftlichen Wohlstand eines Landes: Es gibt an, wie viel Wirtschaftsleistung — umgerechnet in US-Dollar — rechnerisch auf eine Person entfaellt. Das Diagramm zeigt die Werte fuer acht Laender im Jahr 2024 (Quelle: World Bank).",
+    "callout_role": null,
+    "teacher_note": null,
+    "watch_outs": []
+  },
+  "role": "info",
+  "kind": "prose",
+  "subject": "Mathematik",
+  "klasse": 3,
+  "kompetenzbereich": null,
+  "competences": [],
+  "cognitive_level": null,
+  "dimensions": [],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "title": "BIP pro Kopf im Laendervergleich (2024, USD)",
+        "xlabel": "Land",
+        "ylabel": "BIP pro Kopf (US-Dollar)",
+        "log": false,
+        "categories": [
+          "Österreich",
+          "Deutschland",
+          "Schweiz",
+          "Italien",
+          "USA",
+          "China",
+          "Indien",
+          "Nigeria"
+        ],
+        "values": [
+          58269,
+          56104,
+          103998,
+          40385,
+          84534,
+          13303,
+          2695,
+          1084
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "worldbank_bip_pro_kopf",
+        "series": "vergleich",
+        "note": null,
+        "title": "BIP pro Kopf im Ländervergleich",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD",
+        "attribution": "Datenquelle: World Bank – data.worldbank.org (NY.GDP.PCAP.CD, CC BY 4.0)",
+        "stand": "2024"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0121",
+  "source": "ai",
+  "created_at": "2026-06-27T15:21:15+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

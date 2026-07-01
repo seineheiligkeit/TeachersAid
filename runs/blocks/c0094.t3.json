@@ -1,0 +1,102 @@
+{
+  "id": "c0094.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb3"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Abbildung 3 zeigt die Entwicklung des Anteils der über 65-Jährigen bis 2040 als Prognose. Was bedeutet es, dass ein Teil der Daten eine Vorhersage (Prognose) ist? Wie verlässlich sind solche Prognosen? Nenne einen Faktor, der die tatsächliche Entwicklung stark verändern könnte.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.OST.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Eine Prognose beruht auf Annahmen (z. B. über Geburtenrate, Lebenserwartung, Migration) und ist keine Garantie. Sie kann sich irren, wenn sich diese Faktoren ändern. Faktoren, die die Entwicklung verändern könnten: starke Zuwanderung junger Menschen, Medizinfortschritt (höhere Lebenserwartung), Pandemien, wirtschaftliche Krisen (niedrigere Geburtenrate).",
+    "acceptable_reasoning": "Schüler:innen müssen den Begriff Prognose inhaltlich korrekt verwenden und mindestens einen plausiblen Einflussfaktor nennen.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Prognosedaten werden oft wie Fakten behandelt – explizit auf die Unterscheidung hinweisen. Die Linie für 2030/2040 ist gestrichelt darzustellen, wenn die Abbildung renderbar ist."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Österreichische Gesellschaftsentwicklung",
+  "competences": [
+    "GWB.US.3.OST.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb3",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:line",
+      "spec": {
+        "title": "Anteil der über 65-Jährigen an der Bevölkerung Österreichs 1950–2040 (Prognose) — Prognose (schematisch)",
+        "xlabel": "Jahr",
+        "ylabel": "Anteil 65+ (%)",
+        "log": false,
+        "categories": [
+          "1950",
+          "1970",
+          "1990",
+          "2010",
+          "2024",
+          "2030",
+          "2040"
+        ],
+        "values": [
+          12.0,
+          14.5,
+          15.1,
+          17.6,
+          20.0,
+          22.4,
+          25.8
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": true,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0094",
+  "source": "ai",
+  "created_at": "2026-06-26T19:02:27+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

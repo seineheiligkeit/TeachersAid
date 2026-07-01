@@ -1,0 +1,91 @@
+{
+  "id": "c0156.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "In der Astronomie nutzt man Absorptionsspektren, um die chemische Zusammensetzung von Sternen zu bestimmen. Erkläre schrittweise:\na) Wie entsteht ein Absorptionsspektrum einer Sternatmosphäre?\nb) Warum sind die Absorptionslinien eines Sterns wie ein chemischer Fingerabdruck?\nc) Formuliere eine Frage, die Astronominnen und Astronomen mit dieser Methode beantworten können, und erkläre, wie sie vorgehen würden.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 65.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.OS.7.ATO.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.OS.x.E.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "a) Der heiße Sternkern emittiert ein nahezu kontinuierliches Spektrum. Beim Durchgang durch die kühlere Sternatmosphäre absorbieren die dortigen Atome genau die Photonenenergien, die ihren Energieübergängen entsprechen – im Spektrum erscheinen dunkle Linien (Fraunhofer-Linien). b) Jedes Element hat ein einzigartiges Energieniveauschema → einzigartige Wellenlängen der Absorptionslinien. Durch Vergleich mit Laborspektren bekannter Elemente lässt sich das Element eindeutig identifizieren. c) Beispiel: „Enthält dieser Stern Helium?“ Methode: Spektrum aufnehmen, mit bekannten He-Absorptionslinien (z. B. 587,6 nm) vergleichen; stimmen Linien überein → Helium vorhanden.",
+    "acceptable_reasoning": "Akzeptiert: Eigene sinnvolle astronomische Forschungsfrage mit korrekt beschriebenem spektroskopischen Vorgehen.",
+    "rubric": [
+      {
+        "criterion": "Entstehung Absorptionsspektrum",
+        "levels": [
+          "Kontinuierliche Quelle + selektive Absorption korrekt erklärt",
+          "Absorption erwähnt, mechanistischer Zusammenhang fehlt"
+        ]
+      },
+      {
+        "criterion": "Fingerabdruck-Prinzip",
+        "levels": [
+          "Einzigartige Energieniveaus als Grundlage korrekt begründet",
+          "Nur Analogie, keine physikalische Erklärung"
+        ]
+      },
+      {
+        "criterion": "Forschungsfrage",
+        "levels": [
+          "Sinnvolle Frage + korrektes Vorgehen mit Linienvergleich",
+          "Frage vorhanden, Vorgehen unvollständig"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen verwechseln Emissions- und Absorptionsspektrum; Fraunhofer-Linien sind dunkle Linien im kontinuierlichen Spektrum.",
+      "Das 'Fingerabdruck'-Prinzip basiert auf der Einzigartigkeit der Energieniveaus, nicht auf Farbe allein."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Physik",
+  "klasse": 7,
+  "kompetenzbereich": "Atomphysik",
+  "competences": [
+    "PHY.OS.7.ATO.02",
+    "PHY.OS.x.E.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "W",
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0156",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:27+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

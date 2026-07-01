@@ -1,0 +1,99 @@
+{
+  "id": "c0133.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Schau dir Gleichung (Abb. 1) an: Essigsäure reagiert mit Wasser. Benenne für diese Reaktion den Protonendonator und den Protonenakzeptor. Erkläre in zwei bis drei Sätzen, warum man diese Reaktion als 'Übertragungsreaktion' bezeichnen kann.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "WO"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.OS.7.UBE.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "Protonendonator: CH₃COOH (gibt H⁺ ab); Protonenakzeptor: H₂O (nimmt H⁺ auf). Es handelt sich um eine Übertragungsreaktion, weil ein Proton (H⁺) von einem Teilchen auf ein anderes übertragen wird – kein H⁺ entsteht neu oder verschwindet, es verschiebt sich nur zwischen den Reaktionspartnern.",
+    "acceptable_reasoning": "Schüler:innen können auch formulieren, dass H₂O zum Donator wird (H₃O⁺) und CH₃COO⁻ zur Base – dies zeigt, dass sie konjugierte Paare verstanden haben.",
+    "rubric": [
+      {
+        "criterion": "Identifikation von Donator und Akzeptor",
+        "levels": [
+          "Beide korrekt benannt mit chemischer Formel",
+          "Einer korrekt oder Begriffe verwechselt",
+          "Keine korrekte Zuordnung"
+        ]
+      },
+      {
+        "criterion": "Erklärung des Übertragungscharakters",
+        "levels": [
+          "Proton als verschobene Einheit klar beschrieben",
+          "Übertragung erwähnt, aber ungenau",
+          "Kein Bezug auf Übertragung"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Häufige Fehlvorstellung: 'Die Säure löst sich auf und gibt dabei Wasserstoff ab.' – richtig ist, dass das Proton aktiv auf einen Akzeptor übertragen wird; ohne Akzeptor findet keine Protolyse statt.",
+      "Verwechslung von H (Wasserstoffatom) und H⁺ (Proton) vermeiden; bei der Übertragung geht nur das Proton, nicht das Elektron."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Chemie",
+  "klasse": 7,
+  "kompetenzbereich": "Übertragung",
+  "competences": [
+    "CHE.OS.7.UBE.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "WO"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:math_formula",
+      "spec": {
+        "latex": "\\text{Essigsäure: } \\mathrm{CH_3COOH + H_2O \\rightleftharpoons CH_3COO^- + H_3O^+}"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0133",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:19+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

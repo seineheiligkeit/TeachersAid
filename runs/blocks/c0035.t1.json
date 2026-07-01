@@ -1,0 +1,71 @@
+{
+  "id": "c0035.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Lies die folgenden Aussagen über Farben durch. Entscheide jeweils, ob die Aussage stimmt oder nicht, und begründe deine Entscheidung in einem Satz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Rot und Blau ergeben zusammen gemischt die Farbe Grün.",
+        "Farben können Stimmungen in einem Bild stark beeinflussen.",
+        "Komplementärfarben stehen sich im Farbkreis direkt gegenüber.",
+        "Eine Farbe wirkt immer gleich, egal auf welchem Hintergrund sie steht."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "Wahr / Falsch",
+        "Begründung"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "BIL"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "KUG.US.2.BIL.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1. Falsch — Rot + Blau = Violett/Lila; Grün entsteht aus Blau + Gelb. 2. Wahr — warme Farben (Rot, Orange) wirken lebhaft/aufregend; kühle Farben (Blau, Grün) wirken beruhigend/distanziert. 3. Wahr — Komplementärfarben (z.B. Rot–Grün, Blau–Orange) verstärken sich gegenseitig optisch. 4. Falsch — simultaner Farbkontrast: eine Farbe wirkt auf hellem Hintergrund dunkler, auf dunklem heller.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Häufige Verwechslung: Schüler:innen nennen Lila oft als Komplementär zu Gelb — klären, dass Lila/Violett keine Primärfarbe ist.",
+      "Der Simultankontrast ist für Kl 2 eine Neuheit — kurze Demonstration mit einem grauen Quadrat auf weißem vs. schwarzem Hintergrund genügt (verbal beschreibbar)."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Kunst und Gestaltung",
+  "klasse": 2,
+  "kompetenzbereich": "Bildnerische Praxis",
+  "competences": [
+    "KUG.US.2.BIL.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "BIL"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0035",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

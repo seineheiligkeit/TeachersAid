@@ -1,0 +1,64 @@
+{
+  "id": "c0064.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Bilde Komparativ und Superlativ der folgenden Adjektive und übersetze alle drei Formen ins Deutsche.\n\n| Positiv | Bedeutung | Komparativ | Superlativ |\n|---|---|---|---|\n| magnus | groß | | |\n| longus | lang | | |\n| pulcher | schön | | |\n| fortis | tapfer/stark | | |",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Positiv (Dt.)",
+        "Komparativ (Lat. + Dt.)",
+        "Superlativ (Lat. + Dt.)"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "apply",
+    "dimensions": [
+      "SPR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "LAT.US.4.SPR.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "magnus (groß) → maior (größer) → maximus (am größten / sehr groß) | longus (lang) → longior (länger) → longissimus (am längsten) | pulcher (schön) → pulchrior (schöner) → pulcherrimus (am schönsten) | fortis (tapfer) → fortior (tapferer) → fortissimus (am tapfersten)",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Magnus hat einen unregelmäßigen Komparativ: maior (nicht 'magnior') und Superlativ maximus — auswendig lernen!",
+      "Pulcherrimus: der Superlativ auf -errimus bei Adjektiven auf -er ist eine Besonderheit; nicht '-issimus' annehmen.",
+      "Fortissimus ist regelmäßig (-issimus) — als Kontrast zu pulcherrimus zeigen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Latein",
+  "klasse": 4,
+  "kompetenzbereich": "Sprach- und textbezogene Kompetenzen",
+  "competences": [
+    "LAT.US.4.SPR.04"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "SPR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0064",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

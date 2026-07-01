@@ -1,0 +1,73 @@
+{
+  "id": "c0006.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "multiple_choice",
+    "prompt": "Welche Aussage beschreibt das Prinzip des wirksamen Trainingsreizes am besten?",
+    "payload": {
+      "kind": "multiple_choice",
+      "options": [
+        "A — Je öfter man trainiert, desto besser wird man — Menge ist das Wichtigste.",
+        "B — Der Körper passt sich nur an, wenn die Belastung etwas über dem gewohnten Niveau liegt.",
+        "C — Training ist am effektivsten, wenn man immer gleich hart trainiert.",
+        "D — Erholung ist wichtiger als das Training selbst."
+      ],
+      "select": "one"
+    },
+    "response": {
+      "mode": "choices",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "select": "one"
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "MET"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BUS.US.3.MET.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 4,
+    "answer_key": "B — Belastung über dem Gewohnten löst Anpassung aus (Überladungsprinzip / Prinzip des wirksamen Reizes). A ist falsch: pure Menge ohne ausreichenden Reiz bringt keine Verbesserung. C ist falsch: gleich bleibende Belastung führt zu Stagnation. D enthält einen Wahrheitskern (Erholung ist wichtig), ist aber in dieser Absolutheit falsch.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Schüler:innen wählen oft A ('mehr = besser') — das ist die häufigste Fehlvorstellung im Sportbereich.",
+      "D klingt plausibel, da Erholung im Unterricht oft betont wird — den Unterschied zwischen 'wichtig' und 'wichtiger als Training' herausarbeiten."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "multiple_choice",
+  "subject": "Bewegung und Sport",
+  "klasse": 3,
+  "kompetenzbereich": "Methodenkompetenz",
+  "competences": [
+    "BUS.US.3.MET.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "MET"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0006",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T12:59:13+00:00"
+}

@@ -1,0 +1,387 @@
+{
+  "subject": "Chemie",
+  "klasse": 4,
+  "scope_label": "Kennzeichen chemischer Reaktionen — Kl 4",
+  "title": "Verbrennung, Rost und Licht — Chemische Reaktionen erkennen und beschreiben",
+  "kernfrage": "Woran erkennst du, dass bei einem Vorgang eine chemische Reaktion und keine physikalische Änderung stattfindet?",
+  "body": {
+    "intro": [],
+    "assets": [
+      {
+        "id": "abb1",
+        "role": "figure",
+        "generator": "matplotlib:bar_chart",
+        "spec": {
+          "categories": [
+            "Verbrennung\n(Kerze)",
+            "Rosten\n(Eisennagel)",
+            "Backen\n(Kuchen)",
+            "Kochen\n(Wasser)",
+            "Schmelzen\n(Eis)"
+          ],
+          "values": [
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "title": "Chemische Reaktion (1) oder physikalische Änderung (0)?",
+          "xlabel": "Vorgang",
+          "ylabel": "Reaktion? (1=ja, 0=nein)"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Chemische vs. physikalische Vorgänge unterscheiden",
+        "throughline": "Schüler:innen lernen die Kennzeichen chemischer Reaktionen (Energieänderung, neue Stoffe, Unumkehrbarkeit) und grenzen sie von physikalischen Änderungen ab — Kernkompetenz für die gesamte Chemie.",
+        "talking_points": [
+          "Warum ist die Unterscheidung chemisch/physikalisch grundlegend? (Anknüpfung: Trennung von Gemischen war physikalisch — neue Stoffe entstehen jetzt)",
+          "Die drei Hauptkennzeichen einer chem. Reaktion gemeinsam erarbeiten: Energieabgabe/-aufnahme, neue Stoffe mit neuen Eigenschaften, meistens nicht einfach umkehrbar",
+          "Verbrennung als Paradigma: Sauerstoff wird verbraucht, CO₂ und H₂O entstehen, Energie wird freigesetzt",
+          "Schüler:innen kennen Rosten aus dem Alltag — hier in die Sprache der Chemie übersetzen: Oxidation von Eisen"
+        ],
+        "extensions": [
+          "Exotherme vs. endotherme Reaktionen: Handwärmer (exotherm) vs. Kühlkompresse (endotherm) als Alltagsbeispiele",
+          "Messung der Reaktionsgeschwindigkeit: Warum rostet nasses Eisen schneller als trockenes?",
+          "Recherche-Auftrag: Katalysatoren im Alltag (Autokatalysator, Enzyme in der Leber)"
+        ],
+        "blocks": [
+          {
+            "role": "info",
+            "id": "i1",
+            "kind": "prose",
+            "prompt": "**Kennzeichen einer chemischen Reaktion:**\nBei einer chemischen Reaktion entstehen immer neue Stoffe mit neuen Eigenschaften. Meistens ist die Reaktion mit einer Energieänderung verbunden (Wärme, Licht, Schall). Typische Anzeichen sind: Farbänderung, Gasentwicklung, Niederschlag (Feststoff in Lösung), Temperaturänderung oder Lichterscheinung. Chemische Reaktionen sind meist nicht einfach umkehrbar — Verbranntes Holz wird nicht wieder zu Holz.",
+            "payload": null,
+            "response": {
+              "mode": "none"
+            },
+            "cognitive_level": "remember",
+            "dimensions": [
+              "W"
+            ],
+            "serves": [
+              {
+                "competence_id": "CHE.US.x.ALL.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 3,
+            "asset_refs": [],
+            "answer_key": "",
+            "acceptable_reasoning": null,
+            "watch_outs": [],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "true_false_justify",
+            "prompt": "Sieh dir Abb. 1 an. Sie zeigt, welche Vorgänge chemische Reaktionen sind und welche nicht. Lies dann die folgenden Aussagen und entscheide: richtig (R) oder falsch (F)? Verbessere falsche Aussagen.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Das Kochen von Wasser ist eine chemische Reaktion, weil Wasser heiß wird.",
+                "Verbrennung ist eine chemische Reaktion, weil ein neuer Stoff (Kohlenstoffdioxid) entsteht.",
+                "Das Schmelzen von Eis ist eine chemische Reaktion, weil sich der Aggregatzustand ändert.",
+                "Beim Rosten von Eisen entstehen neue Stoffe — das ist eine chemische Reaktion."
+              ]
+            },
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Aussage",
+                "R / F",
+                "Verbesserung (wenn falsch)"
+              ],
+              "rows": 4
+            },
+            "cognitive_level": "remember",
+            "dimensions": [
+              "W"
+            ],
+            "serves": [
+              {
+                "competence_id": "CHE.US.x.ALL.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [
+              "abb1"
+            ],
+            "answer_key": "1. F — Kochen ist eine physikalische Änderung (Aggregatzustandswechsel); kein neuer Stoff entsteht. 2. R. 3. F — Schmelzen ist physikalisch; H₂O bleibt H₂O, nur der Zustand ändert sich. 4. R.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen verwechseln häufig Aggregatzustandsänderung (physikalisch) mit chemischer Reaktion — klar herausarbeiten",
+              "Abb. 1 dient als visueller Anker — Schüler:innen auf das Diagramm hinweisen, bevor sie die Aussagen bearbeiten",
+              "Aussage 2 als Modellfall nehmen: Warum reicht 'es wird heiß' nicht als Beweis für chem. Reaktion?"
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "ordering",
+            "prompt": "Bringe die folgenden Schritte der Kerzenverbrennung in die richtige Reihenfolge (1 = zuerst).",
+            "payload": {
+              "kind": "ordering",
+              "items": [
+                "Wachs (Paraffin) wird durch die Flamme erhitzt und verdampft.",
+                "Der Kerzendocht wird angezündet.",
+                "Wasserdampf und Kohlenstoffdioxid werden als Reaktionsprodukte abgegeben.",
+                "Wachsdampf reagiert mit Sauerstoff aus der Luft.",
+                "Energie wird als Wärme und Licht freigesetzt."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "W",
+              "E"
+            ],
+            "serves": [
+              {
+                "competence_id": "CHE.US.x.ERK.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 7,
+            "asset_refs": [],
+            "answer_key": "Richtige Reihenfolge: 2 → 1 → 4 → 5 → 3 (Anzünden → Verdampfen → Reaktion mit O₂ → Energiefreisetzung → Produkte entstehen)",
+            "acceptable_reasoning": "Schritte 4 und 5 finden gleichzeitig statt — beides akzeptabel wenn Reihenfolge sonst stimmt.",
+            "watch_outs": [
+              "Schüler:innen glauben oft, Wachs 'brennt' direkt — tatsächlich brennen die Gase (Wachsdampf)",
+              "Reaktionsprodukte (CO₂ + H₂O) sind oft unbekannt — als Merksatz einführen"
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "experiment_protocol",
+            "prompt": "Du führst folgendes Experiment durch: Ein Eisennagel wird in einem Reagenzglas mit Wasser bedeckt und eine Woche stehen gelassen. Du beobachtest täglich die Veränderungen.\n\na) Formuliere eine Vermutung (Hypothese): Was wirst du nach einer Woche beobachten?\nb) Beschreibe zwei Beobachtungen, die zeigen würden, dass eine chemische Reaktion stattgefunden hat.\nc) Schreibe eine einfache Wortgleichung für die Rostbildung: Eisen + ___ → ___",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 50
+            },
+            "cognitive_level": "apply",
+            "dimensions": [
+              "E"
+            ],
+            "serves": [
+              {
+                "competence_id": "CHE.US.x.ERK.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "a) Der Nagel wird an der Oberfläche braun-rötlich (Rost bildet sich). b) 1. Farbänderung (silbergrau → braun-orange). 2. Oberfläche verändert sich strukturell (brüchig, schuppig). c) Eisen + Sauerstoff (+ Wasser) → Eisenoxid (Rost / Fe₂O₃·nH₂O)",
+            "acceptable_reasoning": "Wortgleichung muss Eisen und Sauerstoff als Edukte und Eisenoxid/Rost als Produkt zeigen; genaue Formel nicht erforderlich.",
+            "watch_outs": [
+              "Wasser ist ein Katalysator/Beschleuniger — ohne Wasser rostet Eisen kaum; Schüler:innen darauf hinweisen",
+              "Rost ist kein Eisen mehr — neuer Stoff mit anderen Eigenschaften (spröde, isolierend)",
+              "Hypothese soll überprüfbar sein — auf Präzision achten, nicht nur 'es passiert etwas'"
+            ],
+            "rubric": [
+              {
+                "criterion": "Hypothese",
+                "levels": [
+                  "Spezifisch und überprüfbar",
+                  "Vage aber korrekte Richtung",
+                  "Keine sinnvolle Hypothese"
+                ]
+              },
+              {
+                "criterion": "Beobachtungen als chem. Kennzeichen",
+                "levels": [
+                  "Zwei Kennzeichen korrekt beschrieben",
+                  "Ein Kennzeichen",
+                  "Kein Kennzeichen"
+                ]
+              },
+              {
+                "criterion": "Wortgleichung",
+                "levels": [
+                  "Edukte und Produkt korrekt",
+                  "Nur Edukte oder nur Produkt",
+                  "Fehlt"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "open_response",
+            "prompt": "Analysiere den folgenden Vorgang:\nEin Stück Holz wird verbrannt. Danach liegt Asche vor. Die Masse der Asche ist viel geringer als die ursprüngliche Masse des Holzes.\n\na) Handelt es sich um eine chemische Reaktion? Nenne drei Kennzeichen, die du bei der Verbrennung beobachten kannst.\nb) Erkläre, warum die Asche leichter ist als das ursprüngliche Holz — obwohl bei der Verbrennung nichts 'verschwunden' ist.\nc) Formuliere eine Formelgleichung (oder Wortgleichung) für die vollständige Verbrennung von Kohlenstoff.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "E",
+              "W"
+            ],
+            "serves": [
+              {
+                "competence_id": "CHE.US.x.ERK.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "a) Ja, chem. Reaktion. Kennzeichen: Lichterscheinung (Flamme), Wärmeentwicklung, neue Stoffe (CO₂, H₂O, Asche), Farbänderung. b) CO₂ und H₂O entweichen als Gase in die Luft — sie sind nicht weg, aber nicht mehr sichtbar als Feststoff. Die Masse der Produkte (CO₂ + H₂O + Asche) entspricht der Masse der Edukte (Holz + Sauerstoff). c) C + O₂ → CO₂ (Wortgleichung: Kohlenstoff + Sauerstoff → Kohlenstoffdioxid)",
+            "acceptable_reasoning": "Schüler:innen müssen die Massenzunahme durch Sauerstoff nicht explizit berechnen; die Aussage 'Gase entweichen' ist ausreichend.",
+            "watch_outs": [
+              "Schüler:innen denken oft, Masse 'verschwindet' bei Verbrennung — Massenerhaltung explizit betonen",
+              "Vollständige vs. unvollständige Verbrennung unterscheiden (CO₂ vs. CO) — auf Vollverbrennung beschränken",
+              "Drei Kennzeichen verlangen — Schüler:innen nennen oft nur eines"
+            ],
+            "rubric": [
+              {
+                "criterion": "Kennzeichen der Reaktion",
+                "levels": [
+                  "Drei korrekte Kennzeichen",
+                  "Zwei korrekte Kennzeichen",
+                  "Eines oder keines"
+                ]
+              },
+              {
+                "criterion": "Erklärung Massenänderung",
+                "levels": [
+                  "Gase entweichen, Masse bleibt erhalten erklärt",
+                  "Gase erwähnt aber unklar",
+                  "Keine Erklärung"
+                ]
+              },
+              {
+                "criterion": "Formel/Wortgleichung",
+                "levels": [
+                  "Edukte und Produkt korrekt",
+                  "Partial korrekt",
+                  "Fehlt"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "source_critique",
+            "prompt": "Lies folgenden Zeitungstext:\n\n„Wissenschaftler haben eine neue Substanz entwickelt, die Metall schützt und Rosten für immer verhindert — ganz ohne chemische Reaktion. Das Mittel bildet eine unsichtbare Schicht auf dem Metall.”\n\nBewerte den Text aus chemischer Sicht:\na) Welcher Satz im Text ist chemisch widersprüchlich? Erkläre.\nb) Wie nennt man Schutzmaßnahmen gegen Rosten? Nenne zwei aus dem Alltag.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 40
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "S",
+              "W"
+            ],
+            "serves": [
+              {
+                "competence_id": "CHE.US.x.STA.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "asset_refs": [],
+            "answer_key": "a) „Ganz ohne chemische Reaktion” ist widersprüchlich — das Aufbringen der Schicht selbst ist entweder eine physikalische Barriere ODER ein chem. Prozess (Passivierung). Die Schutzwirkung verhindert die Oxidationsreaktion, ist aber selbst das Ergebnis eines chemischen oder physikalischen Prozesses. b) Lackieren/Anstreichen (physikalische Barriere), Verzinken (Galvanisierung), Edelstahllegierung, Ölen.",
+            "acceptable_reasoning": "Schüler:innen müssen den genauen Widerspruch benennen — entweder 'Schutzschicht bilden ist selbst ein Vorgang' oder 'Rostverhütung bedeutet die chem. Reaktion wird verhindert, nicht dass keine Chemie stattfindet'.",
+            "watch_outs": [
+              "Zeitungssprache ist oft unscharf — hier explizit üben, Fachbegriffe von Umgangssprache zu trennen",
+              "Verzinken als Beispiel: Zink oxidiert bevorzugt und schützt so das Eisen (Opferanode) — kann als Erweiterung erklärt werden",
+              "Schüler:innen sollen nicht das gesamte Produkt ablehnen, sondern den spezifischen Widerspruch benennen"
+            ],
+            "rubric": [
+              {
+                "criterion": "Widerspruch identifiziert",
+                "levels": [
+                  "Konkreter chemischer Widerspruch klar benannt",
+                  "Vage Kritik",
+                  "Kein Widerspruch erkannt"
+                ]
+              },
+              {
+                "criterion": "Schutzmaßnahmen",
+                "levels": [
+                  "Zwei korrekte Beispiele",
+                  "Ein Beispiel",
+                  "Keines"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "create_produce",
+            "prompt": "Entwirf ein einfaches Experiment, mit dem du zeigen kannst, dass die Rostbildung von Sauerstoff und Wasser abhängt.\n\nDein Versuchsplan soll enthalten:\n- Materialien (Eisennägel + mindestens 3 unterschiedliche Bedingungen)\n- Was du in jedes Reagenzglas gibst\n- Was du nach einer Woche beobachtest und woraus du schließt\n- Eine Kontrollbedingung (Vergleich)\n\nSchreibe den Plan vollständig auf.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 60
+            },
+            "cognitive_level": "create",
+            "dimensions": [
+              "E",
+              "S"
+            ],
+            "serves": [
+              {
+                "competence_id": "CHE.US.x.ERK.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "Modellplan: 3 Reagenzgläser — (1) Nagel + Wasser + Luft (Kontrolle → rostet), (2) Nagel + getrocknetes Calciumchlorid (kein Wasser → rostet kaum), (3) Nagel + gekochtes (sauerstofffreies) Wasser + abgedichtet (kein O₂ → rostet kaum). Beobachtung: nur Glas 1 zeigt starke Rostbildung → beides (O₂ + H₂O) nötig.",
+            "acceptable_reasoning": "Schüler:innen müssen nicht die exakten Chemikalien kennen — Konzept 'trocken halten' vs. 'Luft abschließen' reicht.",
+            "watch_outs": [
+              "Kontrollbedingung ist das Herzstück des Experiments — explizit auf deren Bedeutung hinweisen",
+              "Schüler:innen planen oft zu viele Variablen gleichzeitig — nur je eine Variable ändern (ceteris paribus)",
+              "Sicherheitshinweis: Calciumchlorid ist ein Trocknungsmittel; Schüler:innen sollen es nicht anfassen"
+            ],
+            "rubric": [
+              {
+                "criterion": "Versuchsaufbau",
+                "levels": [
+                  "Drei sinnvolle Bedingungen inkl. Kontrolle",
+                  "Zwei Bedingungen",
+                  "Eine oder keine"
+                ]
+              },
+              {
+                "criterion": "Kausalschluss",
+                "levels": [
+                  "Schluss aus Vergleich korrekt formuliert",
+                  "Schluss vage",
+                  "Kein Schluss"
+                ]
+              },
+              {
+                "criterion": "Kontrollbedingung",
+                "levels": [
+                  "Klar benannt und begründet",
+                  "Erwähnt aber unklar",
+                  "Fehlt"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

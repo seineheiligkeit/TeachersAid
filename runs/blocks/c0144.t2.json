@@ -1,0 +1,93 @@
+{
+  "id": "c0144.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "text_analysis",
+    "prompt": "Deine Lehrkraft stellt dir einen kurzen deutschen Sachtext (oder eine Übersetzung) zu Thales' Aussage vor, dass alles aus Wasser besteht, bereit. Lies ihn sorgfältig und beantworte dann: (a) Was genau behauptet Thales – und wie begründet er es? (b) Inwiefern unterscheidet sich seine Erklärung von einer mythologischen Erklärung (z. B. durch Poseidon)? (c) Nenne einen modernen wissenschaftlichen Begriff aus der Chemie oder Physik, der zeigt, dass die Frage nach dem Urprinzip noch heute gestellt wird.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "INT"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GRI.OS.7.GRI.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "GRI.OS.7.GRI.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "(a) Thales behauptet, Wasser sei das Urprinzip (ἀρχή) aller Dinge; er beobachtet, dass Wasser in fester, flüssiger und gasförmiger Form vorkommt und für alles Leben notwendig ist. (b) Eine mythologische Erklärung personalisiert Naturkräfte (Poseidon = Meer als göttliches Wesen mit Willen); Thales erklärt Natur durch Natur, ohne göttliche Eingriffe. (c) Beispiele: 'Molekül', 'Element', 'Atom' – die Suche nach dem fundamentalen Baustein setzt die vorsokratische Frage fort.",
+    "acceptable_reasoning": "Jeder Vergleich, der 'rational/empirisch' vs. 'personal/mythisch' trifft, gilt für (b). Für (c) genügt ein nachvollziehbares Beispiel.",
+    "rubric": [
+      {
+        "criterion": "Analyse der Behauptung (a)",
+        "levels": [
+          "Behauptung und Begründung klar benannt",
+          "Behauptung korrekt, Begründung vage",
+          "Nur Behauptung"
+        ]
+      },
+      {
+        "criterion": "Vergleich mythologisch/rational (b)",
+        "levels": [
+          "Unterschied präzise und begründet",
+          "Unterschied genannt, nicht begründet",
+          "Kein klarer Unterschied"
+        ]
+      },
+      {
+        "criterion": "Moderner Bezug (c)",
+        "levels": [
+          "Treffendes Beispiel mit Erklärung",
+          "Beispiel ohne Erklärung",
+          "Fehlt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen neigen dazu, Thales' Aussage als 'falsch' abzutun; der didaktische Schwerpunkt liegt auf der Methode, nicht auf dem Ergebnis.",
+      "Den Unterschied mythologisch/rational klar herausarbeiten – ohne ihn zu bewerten (Mythos hat andere Funktionen als Wissenschaft).",
+      "Teil (c) überfordert manchmal – notfalls als optionale Aufgabe behandeln."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "text_analysis",
+  "subject": "Griechisch",
+  "klasse": 7,
+  "kompetenzbereich": "Das griechische Denken als Fundament der Wissenschaften",
+  "competences": [
+    "GRI.OS.7.GRI.01",
+    "GRI.OS.7.GRI.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "INT"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0144",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:22+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

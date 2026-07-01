@@ -1,0 +1,128 @@
+{
+  "id": "c0137.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Schau dir die Grafik zum CO₂-Fußabdruck verschiedener Produkte an (Abbildung 1).\n\na) Welches Produkt hat den höchsten CO₂-Ausstoß pro Einheit? Welches den niedrigsten?\n\nb) Vergleiche den CO₂-Fußabdruck von 1 kg Rindfleisch mit 1 kg Tofu. Was fällt dir auf?\n\nc) Erkläre in eigenen Worten, was der Begriff 'CO₂-Fußabdruck' bedeutet.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 8
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "WP",
+      "AR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "ETH.OS.5.NAT.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "a) Höchster CO₂-Fußabdruck: 1 Flug Wien–London (ca. 200 kg CO₂e); niedrigster: 1 kg Tofu (ca. 2 kg CO₂e). b) Rindfleisch (27 kg) hat einen ca. 13,5-mal höheren CO₂-Fußabdruck als Tofu (2 kg) – vor allem durch Methanemissionen der Rinder und Flächennutzung. c) Der CO₂-Fußabdruck misst alle Treibhausgasemissionen (in CO₂-Äquivalenten), die bei Herstellung, Transport und Entsorgung eines Produkts entstehen.",
+    "acceptable_reasoning": "Schüler:innen können eigene Formulierungen verwenden; entscheidend ist, dass die Vergleichsdimension (Gesamtemissionen entlang der Prozesskette) erfasst wird.",
+    "rubric": [
+      {
+        "criterion": "Daten korrekt gelesen",
+        "levels": [
+          "Beide Extremwerte korrekt benannt",
+          "Nur ein Extremwert korrekt",
+          "Fehlerhaft oder nicht beantwortet"
+        ]
+      },
+      {
+        "criterion": "Vergleich Rindfleisch/Tofu",
+        "levels": [
+          "Unterschied quantifiziert und ursächlich erklärt",
+          "Unterschied benannt, aber nicht erklärt",
+          "Vergleich fehlt oder falsch"
+        ]
+      },
+      {
+        "criterion": "Definition CO₂-Fußabdruck",
+        "levels": [
+          "Vollständig: Prozesskette und Äquivalente genannt",
+          "Teilweise: nur Transport oder nur Produktion",
+          "Fehlt oder grundlegend falsch"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Häufiger Irrtum: Der CO₂-Fußabdruck misst nur den Ausstoß beim Transport. Richtig: Er umfasst die gesamte Produktionskette (Landwirtschaft, Verarbeitung, Transport, Verpackung).",
+      "Manche Schüler:innen verwechseln CO₂-Fußabdruck mit ökologischem Fußabdruck – letzterer ist breiter und umfasst z. B. auch Wasserverbrauch und Flächennutzung."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Ethik",
+  "klasse": 5,
+  "kompetenzbereich": "Natur und Wirtschaft",
+  "competences": [
+    "ETH.OS.5.NAT.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "WP",
+    "AR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "1 kg Rindfleisch",
+          "1 kg Hühnerfleisch",
+          "1 kg Tofu",
+          "1 Jeans (Neuware)",
+          "1 T-Shirt (Neuware)",
+          "1 Flug Wien–London (einfach)"
+        ],
+        "values": [
+          27.0,
+          6.9,
+          2.0,
+          33.4,
+          10.0,
+          200.0
+        ],
+        "title": "CO₂-Fußabdruck ausgewählter Konsumgüter (kg CO₂ pro Einheit)",
+        "xlabel": "Produkt",
+        "ylabel": "kg CO₂-Äquivalent",
+        "log": false
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0137",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:20+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

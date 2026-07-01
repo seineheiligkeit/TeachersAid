@@ -1,0 +1,77 @@
+{
+  "id": "c0029.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Ein TV-Kommentator sagt: „Der 15. Mai 1955 ist der wichtigste Tag der österreichischen Geschichte des 20. Jahrhunderts.“\n\nEin Historiker hält dagegen: „Der 12. März 1938 hat Österreich grundlegender verändert als der Staatsvertrag.“\n\nMit welcher der beiden Aussagen stimmst du mehr überein — oder siehst du es ganz anders? Begründe deine Antwort mit historischen Argumenten. Mache deutlich, was du für das entscheidende Kriterium hältst, um historische Bedeutung zu messen.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "PUR",
+      "HOR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GPB.US.4.ALL.06",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Für den 15. Mai 1955 (Staatsvertrag): Ende der Besatzung, Wiederherstellung der Souveränität, Beginn einer eigenständigen Demokratie, Grundlage des Wohlfahrtsstaats und späteren EU-Beitritts. Für den 12. März 1938 (Anschluss): Drastischster Einschnitt — Ende der parlamentarischen Demokratie, Beginn der NS-Herrschaft, Shoah an österreichischen Jüdinnen und Juden, Verlust nationaler Unabhängigkeit. Mögliches Kriterium: 'Tiefe des Einschnitts in Leben der Menschen' → 1938; 'Bedeutung für die Zukunft und den Aufbau' → 1955. Beide Positionen und Kombinationen sind vertretbar, wenn begründet.",
+    "acceptable_reasoning": "Auch eine dritte Position ist akzeptabel (z.B. 1945 als Befreiung, 1919 als Gründung der Republik). Kriterium für historische Bedeutung muss explizit gemacht werden.",
+    "rubric": [
+      {
+        "criterion": "Historische Begründung",
+        "levels": [
+          "Keine Begründung oder nur Meinung",
+          "Begründung mit einem historischen Fakt",
+          "Begründung mit mehreren Fakten und explizitem Kriterium für 'Bedeutung'"
+        ]
+      },
+      {
+        "criterion": "Reflexivität",
+        "levels": [
+          "Übernimmt eine Position unreflektiert",
+          "Erkennt, dass beide Positionen Argumente haben",
+          "Entwickelt eigenes Kriterium und wendet es kohärent an"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen neigen zu 'Der Staatsvertrag war natürlich wichtiger, weil positiv' — auf die analytische Qualität, nicht moralische Wertung des Ereignisses hinweisen.",
+      "Keine 'richtige Antwort' geben — Ziel ist historisches Denken, nicht Meinungskonformität."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Geschichte und politische Bildung",
+  "klasse": 4,
+  "kompetenzbereich": null,
+  "competences": [
+    "GPB.US.4.ALL.06"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "PUR",
+    "HOR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0029",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

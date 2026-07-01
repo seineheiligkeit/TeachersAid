@@ -1,0 +1,81 @@
+{
+  "id": "c0083.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Erfinde selbst eine Sachaufgabe (eine Geschichte), bei der die Gleichung 5x − 8 = 22 passt. Erkläre, was x in deiner Geschichte bedeutet, und löse die Gleichung.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "MOD",
+      "BEG"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.2.VAR.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Jede sinnvolle Geschichte, in der 5 gleiche Einheiten von x und ein Abzug/Rabatt von 8 ein Ergebnis von 22 ergibt. Lösung: 5x = 30 → x = 6. Plausible Beispiele: 5 Bücher à x €, minus 8 € Gutschein, ergibt 22 € Gesamtpreis.",
+    "acceptable_reasoning": "Die Geschichte muss die Struktur der Gleichung widerspiegeln — Multiplikation und Subtraktion.",
+    "rubric": [
+      {
+        "criterion": "Geschichte passt zur Gleichung",
+        "levels": [
+          "Kein Bezug",
+          "Teils passend",
+          "Vollständig passend und sinnvoll"
+        ]
+      },
+      {
+        "criterion": "Gleichung korrekt gelöst",
+        "levels": [
+          "Falsch",
+          "Rechenfehler, Weg erkennbar",
+          "Korrekt mit Probe"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Manche Schüler:innen erfinden eine Geschichte, die nicht zur Gleichung passt — auf die Struktur achten.",
+      "Die Einheit/Bedeutung von x muss klar benannt sein."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Mathematik",
+  "klasse": 2,
+  "kompetenzbereich": "2: Variablen und Funktionen",
+  "competences": [
+    "MAT.US.2.VAR.01"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "MOD",
+    "BEG"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0083",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:17+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

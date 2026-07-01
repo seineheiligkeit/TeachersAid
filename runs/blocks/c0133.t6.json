@@ -1,0 +1,94 @@
+{
+  "id": "c0133.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Beschreibe in einem strukturierten Vergleich (z. B. als Tabelle oder als Fließtext mit klaren Gegenüberstellungen): Welche Gemeinsamkeiten und welche Unterschiede bestehen zwischen Säure-Base-Reaktionen und Redoxreaktionen, wenn man beide als Donator-Akzeptor-Prozesse betrachtet? Nutze konkrete Beispiele.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "WO",
+      "KZ"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.OS.7.UBE.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "CHE.OS.x.WIS.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Gemeinsamkeiten: In beiden Fällen gibt ein Teilchen (Donator) etwas ab und ein anderes (Akzeptor) nimmt es auf; Konservierungsprinzip (das Übertragene wird nicht erzeugt/vernichtet); Gleichgewichtscharakter (Rückreaktion möglich); die 'Stärke' der Partner bestimmt Gleichgewichtslage. Unterschiede: Bei Protolysen wird H⁺ (Proton) übertragen, bei Redoxreaktionen werden Elektronen übertragen; Säure-Base: Stärke gemessen an pKa/pKb; Redox: Stärke gemessen am Standardelektrodenpotenzial (in Volt). Beispiel Säure-Base: HCl + H₂O → H₃O⁺ + Cl⁻ (H⁺-Übertragung). Beispiel Redox: Fe + 2 HCl → FeCl₂ + H₂ (Elektronenübertragung).",
+    "acceptable_reasoning": "Eine Tabellenform mit den Spalten 'übertragene Einheit / Stärkemaß / Beispiel' ist besonders klar und sollte positiv bewertet werden.",
+    "rubric": [
+      {
+        "criterion": "Gemeinsamkeiten korrekt identifiziert",
+        "levels": [
+          "Mindestens zwei strukturelle Gemeinsamkeiten mit Begründung",
+          "Eine Gemeinsamkeit korrekt",
+          "Keine sinnvolle Gemeinsamkeit genannt"
+        ]
+      },
+      {
+        "criterion": "Unterschiede korrekt dargestellt",
+        "levels": [
+          "Übertragene Einheit UND Stärkemaß unterschieden",
+          "Nur übertragene Einheit unterschieden",
+          "Kein relevanter Unterschied"
+        ]
+      },
+      {
+        "criterion": "Verwendung konkreter Beispiele",
+        "levels": [
+          "Mindestens je ein Beispiel pro Reaktionstyp korrekt formuliert",
+          "Ein Beispiel korrekt",
+          "Kein konkretes Beispiel"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Manche Schüler:innen verwechseln pKa und Redoxpotenzial als gleichwertige 'Stärkemaße' ohne Dimension – darauf hinweisen, dass beide Größen unterschiedliche Einheiten und Messmethoden haben.",
+      "Komplexe Reaktionen (z. B. Fe + HCl) können gleichzeitig Säure-Base- und Redoxcharakter haben – das ist eine Erweiterung, nicht zu erwarten, aber zu belohnen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Chemie",
+  "klasse": 7,
+  "kompetenzbereich": "Übertragung",
+  "competences": [
+    "CHE.OS.7.UBE.01",
+    "CHE.OS.x.WIS.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "WO",
+    "KZ"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0133",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:19+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

@@ -1,0 +1,72 @@
+{
+  "id": "c0015.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Lena nutzt eine kostenlose Fitness-App. Bei der Installation fragt die App nach Zugriff auf: (a) Standort (immer aktiv), (b) Kamera, (c) Kontakte, (d) Mikrofon. Lena fragt sich, welche Berechtigungen sie wirklich gewähren soll.\n\nAnalysiere: Welche Berechtigungen sind für eine Fitness-App sinnvoll, welche sind übermäßig? Begründe deine Einschätzung und beschreibe, welches Risiko die übermäßigen Berechtigungen mit sich bringen.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Fitness-App verlangt weitreichende Berechtigungen – was tun?"
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 40.0
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "I",
+      "G"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DGB.US.4.INF.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Sinnvoll: Standort (eingeschränkt, z.B. nur bei Nutzung) für GPS-Tracking von Routen. Übermäßig: Kamera (eine Fitness-App braucht keine Fotos), Kontakte (kein erkennbarer Zweck), Mikrofon (kein Sprachfeature nötig). Risiko: Kontakte → Adressbuch wird an Dritte weitergegeben; Mikrofon → Mithören von Gesprächen möglich; Kamera → ungewollte Bildaufnahmen. Datenschutzprinzip der Datensparsamkeit (Art. 5 Abs. 1 lit. c DSGVO): nur so viele Daten wie nötig.",
+    "acceptable_reasoning": "Schüler:innen müssen nicht die DSGVO-Artikelnummer kennen, aber das Prinzip der Datensparsamkeit erkennen und anwenden.",
+    "rubric": [
+      {
+        "criterion": "Begründungsqualität",
+        "levels": [
+          "Pauschalurteil ohne Begründung",
+          "Begründung anhand konkreter App-Funktionen",
+          "Datensparsamkeitsprinzip erkannt und auf alle vier Berechtigungen angewendet"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Manche Schüler:innen finden den Standort-Dauerzugriff normal – herausarbeiten, dass 'nur bei Nutzung' ausreicht und Dauerzugriff ein erhebliches Tracking ermöglicht.",
+      "Kontakte-Berechtigung wird oft unterschätzt: Die gesammelten Kontaktdaten betreffen auch andere Personen, die der Datenerhebung nie zugestimmt haben."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Digitale Grundbildung",
+  "klasse": 4,
+  "kompetenzbereich": "Information: mit Daten, Informationen und Informationssystemen verantwortungsvoll umgehen",
+  "competences": [
+    "DGB.US.4.INF.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "I",
+    "G"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0015",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

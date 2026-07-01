@@ -1,0 +1,89 @@
+{
+  "id": "c0158.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "text_analysis",
+    "prompt": "Lies den folgenden Fall und beantworte die Fragen:\n\n---\nEin selbstfahrendes Auto kann in einem Notfall entweder scharf bremsen (Risiko: die Insassen werden verletzt) oder ausweichen (Risiko: eine Person auf dem Gehsteig wird getroffen). Das Fahrzeug muss in Sekundenbruchteilen entscheiden.\n---\n\n(a) Wie würde ein Utilitarist dieses Szenario analysieren? Welche Frage stellt er zuerst?\n(b) Wie würde ein Kantianer das Szenario bewerten – und warum kommt er möglicherweise zu einer anderen Schlussfolgerung?\n(c) Welche Schwierigkeit zeigt dieses Szenario für eine rein konsequentialistische Entscheidung in der Praxis auf?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 65.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "WIS",
+      "TRA"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PUP.OS.8.GRU2.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "(a) Der Utilitarist fragt zuerst: Welche Handlungsoption maximiert das Gesamtwohl (minimiert den Gesamtschaden)? Er würde versuchen, Wahrscheinlichkeiten und Ausmaß der Schäden zu vergleichen. (b) Ein Kantianischer Ansatz betrachtet die Instrumentalisierung von Personen als moralisches Problem: Das gezielte Ausweichen hin zu einer bestimmten Person würde diese als Mittel zum Zweck (Schutz der Insassen) verwenden – was dem Respekt vor der Würde jedes Menschen widerspricht. Manche Kantianer würden deshalb die Handlungs-Unterlassung (Bremsen, ohne jemanden aktiv zu gefährden) bevorzugen. (c) In der Praxis fehlen die Informationen für eine präzise Folgenabwägung: Wahrscheinlichkeiten sind unklar, Schäden sind nicht sicher vorhersagbar, und der Algorithmus müsste vorab Menschenleben gewichten – eine normativ problematische Vorentscheidung.",
+    "acceptable_reasoning": "Akzeptabel: Schüler:innen beschreiben die unterschiedlichen Ausgangsfragen beider Theorien; benennen Instrumentalisierung als kantianisches Problem; formulieren mindestens eine Praxis-Schwierigkeit des Utilitarismus.",
+    "rubric": [
+      {
+        "criterion": "Utilitaristische Analyse",
+        "levels": [
+          "Fehlt oder falsch",
+          "Folgenorientierung genannt, aber ungenau",
+          "Maximierung des Gesamtwohls korrekt als Ausgangsfrage benannt"
+        ]
+      },
+      {
+        "criterion": "Kantianische Perspektive",
+        "levels": [
+          "Fehlt",
+          "Pflicht oder Gesetz allgemein erwähnt",
+          "Instrumentalisierungsverbot konkret auf den Fall angewendet"
+        ]
+      },
+      {
+        "criterion": "Praxis-Schwierigkeit benannt",
+        "levels": [
+          "Fehlt",
+          "Vage (zu schwierig)",
+          "Konkrete Schwierigkeit (Informationsmangel, Vorab-Gewichtung) formuliert"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Das Szenario ist philosophisch kontrovers – es gibt keine eindeutige richtige Antwort; Ziel ist die Anwendung der Theorien, nicht die Lösung des Dilemmas.",
+      "Schüler:innen neigen dazu, nur die Anzahl der Personen zu zählen (Utilitarismus) und den kantianischen Ansatz zu vergessen – beide Perspektiven einfordern."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "text_analysis",
+  "subject": "Psychologie und Philosophie",
+  "klasse": 8,
+  "kompetenzbereich": "Grundfragen der Ethik",
+  "competences": [
+    "PUP.OS.8.GRU2.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "WIS",
+    "TRA"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0158",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:28+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

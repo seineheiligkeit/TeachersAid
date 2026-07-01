@@ -1,0 +1,71 @@
+{
+  "id": "c0149.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "algorithm_trace",
+    "prompt": "Verfolge den folgenden Pseudocode Schritt für Schritt für die Eingabe a = 48, b = 18. Fülle die Tabelle aus und gib das Ergebnis an.\n\n```\nALGORITHMUS ggt(a, b):\n  SOLANGE b ≠ 0:\n    r ← a MOD b\n    a ← b\n    b ← r\n  AUSGABE a\n```\n\n(MOD = Rest der ganzzahligen Division, z. B. 17 MOD 5 = 2)",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Schritt",
+        "a",
+        "b",
+        "r = a MOD b"
+      ],
+      "rows": 5
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "WV",
+      "AG"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "INF.OS.5.PRA.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Schritt 1: a=48, b=18, r=48 MOD 18=12 → a=18, b=12. Schritt 2: a=18, b=12, r=18 MOD 12=6 → a=12, b=6. Schritt 3: a=12, b=6, r=12 MOD 6=0 → a=6, b=0. Schleife endet: Ausgabe a=6. ggT(48,18)=6.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen verwechseln häufig MOD mit ganzzahliger Division (DIV); Beispiel 48 MOD 18 = 48 – 2×18 = 12 nochmals verdeutlichen.",
+      "Fehler beim gleichzeitigen Aktualisieren von a und b: r muss zuerst berechnet werden, bevor a überschrieben wird – die Reihenfolge der Zuweisung ist entscheidend.",
+      "Ergebnis 6 muss als ggT interpretiert werden: Probe 48/6=8, 18/6=3 (ganze Zahlen) anbieten."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "algorithm_trace",
+  "subject": "Informatik",
+  "klasse": 5,
+  "kompetenzbereich": "Praktische Informatik",
+  "competences": [
+    "INF.OS.5.PRA.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "WV",
+    "AG"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0149",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:25+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

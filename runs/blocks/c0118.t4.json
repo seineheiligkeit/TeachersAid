@@ -1,0 +1,82 @@
+{
+  "id": "c0118.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Verbinde die demografischen Begriffe (links) mit ihrer korrekten Erklärung (rechts).",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Geburtenrate",
+        "Lebenserwartung",
+        "Wanderungssaldo",
+        "Demografische Alterung",
+        "Altenquotient"
+      ],
+      "right": [
+        "Durchschnittliches Alter, das ein Mensch bei der Geburt statistisch zu leben erwartet.",
+        "Anzahl der Lebendgeburten pro 1.000 Einwohner:innen in einem Jahr.",
+        "Verhältnis der Personen im Rentenalter zu den Personen im Erwerbsalter.",
+        "Differenz zwischen Zu- und Abwanderung in einem bestimmten Zeitraum.",
+        "Zunahme des Anteils älterer Menschen an der Gesamtbevölkerung."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Begriff",
+        "Erklärung"
+      ],
+      "rows": 5
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "OK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.OST.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "Geburtenrate → Anzahl der Lebendgeburten pro 1.000 Einwohner:innen in einem Jahr. Lebenserwartung → Durchschnittliches Alter, das ein Mensch bei der Geburt statistisch zu leben erwartet. Wanderungssaldo → Differenz zwischen Zu- und Abwanderung in einem bestimmten Zeitraum. Demografische Alterung → Zunahme des Anteils älterer Menschen an der Gesamtbevölkerung. Altenquotient → Verhältnis der Personen im Rentenalter zu den Personen im Erwerbsalter.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Auf den Unterschied zwischen 'Lebenserwartung bei Geburt' und 'Restlebenserwartung' hinweisen, falls Schüler:innen danach fragen.",
+      "Den Altenquotienten erklären – er ist ein wichtiger Indikator für die Belastbarkeit des Pensionssystems."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Österreichische Gesellschaftsentwicklung",
+  "competences": [
+    "GWB.US.3.OST.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "OK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0118",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:37+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

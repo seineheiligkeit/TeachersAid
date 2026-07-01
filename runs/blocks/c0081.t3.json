@@ -1,0 +1,127 @@
+{
+  "id": "c0081.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Abb. 2 zeigt, wie sich der Anteil der Stadtbevölkerung an der Weltbevölkerung seit 1950 entwickelt hat.\na) Beschreibe den Verlauf des Diagramms in eigenen Worten.\nb) Was bedeutet es, wenn 2050 laut Prognose 68 % der Menschen in Städten leben? Nenne zwei mögliche Herausforderungen und zwei mögliche Vorteile des Stadtlebens.\nc) In welchen Weltregionen verläuft die Urbanisierung aktuell am schnellsten? Warum könnte das so sein?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 8
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "UK",
+      "OK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.4.ENT2.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "a) Kontinuierlicher Anstieg von 29 % (1950) auf 57 % (2024); Prognose 68 % für 2050 – der Trend setzt sich fort. b) Herausforderungen: Wohnungsnot/Slums, Überlastung der Infrastruktur (Wasser, Abwasser, Verkehr), Umweltverschmutzung, soziale Ungleichheit. Vorteile: bessere Jobchancen, Bildung, Gesundheitsversorgung; kulturelle Vielfalt; wirtschaftliche Dynamik. c) Schnellstes Wachstum in Subsahara-Afrika und Südasien – hohe Bevölkerungszuwächse, Landflucht wegen Armut/Klimawandel, Hoffnung auf Arbeit in der Stadt.",
+    "acceptable_reasoning": "Je zwei Punkte pro Kategorie genügen; eigene Formulierungen ausdrücklich willkommen.",
+    "rubric": [
+      {
+        "criterion": "Trend korrekt beschrieben",
+        "levels": [
+          "Verlauf mit Zahlen beschrieben",
+          "Trend erkannt ohne Zahlen",
+          "Nicht erkannt"
+        ]
+      },
+      {
+        "criterion": "Herausforderungen und Vorteile",
+        "levels": [
+          "Je 2 plausible Punkte",
+          "Je 1 Punkt",
+          "Nur eine Kategorie"
+        ]
+      },
+      {
+        "criterion": "Regionalisierung begründet",
+        "levels": [
+          "Region korrekt + Begründung",
+          "Region korrekt ohne Begründung",
+          "Nicht beantwortet"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Stadtwachstum ≠ Entwicklung: Informelle Siedlungen (Slums) sind Symptom eines ungeplanten Wachstums, kein Fortschritt.",
+      "Österreich-Bezug möglich: Wien wächst durch Zuzug, was ebenfalls Herausforderungen (Wohnungsmarkt) schafft."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 4,
+  "kompetenzbereich": "Entwicklungen in einer globalisierten Welt",
+  "competences": [
+    "GWB.US.4.ENT2.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "UK",
+    "OK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "1950",
+          "1970",
+          "1990",
+          "2010",
+          "2024",
+          "2050*"
+        ],
+        "values": [
+          29,
+          36,
+          43,
+          51,
+          57,
+          68
+        ],
+        "title": "Anteil der Stadtbevölkerung an der Weltbevölkerung (%) – *Prognose",
+        "xlabel": "Jahr",
+        "ylabel": "Anteil in Prozent"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0081",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:16+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

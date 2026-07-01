@@ -1,0 +1,87 @@
+{
+  "id": "c0155.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Sicherheitsexperten diskutieren, ob Sicherheitsgurte im Auto immer verpflichtend sein sollten. Eine Person argumentiert: „Bei niedrigen Geschwindigkeiten ist kein Gurt nötig, weil die Kräfte beim Aufprall ja klein sind.“ Beurteile dieses Argument aus physikalischer Sicht und formuliere eine fundierte Gegenposition.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Ist das Argument physikalisch haltbar? Entwickle eine begründete Gegenposition."
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.OS.5.MEC.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.OS.x.S.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Das Argument ist physikalisch nicht haltbar. Beim Aufprall wird die Geschwindigkeit in sehr kurzer Zeit auf null reduziert; die Kraft F = m · Δv/Δt hängt von der Verzögerungszeit ab, nicht nur von der Ausgangsgeschwindigkeit. Bereits bei 30 km/h kann die Aufprallkraft ein Vielfaches des Körpergewichts betragen, wenn die Knautschzone fehlt. Der Gurt verlängert die Bremszeit und verteilt die Kraft auf große Körperflächen – ohne Gurt prallt der Kopf ungebremst auf Lenkrad oder Windschutzscheibe.",
+    "acceptable_reasoning": "Akzeptiert: Impulssatz F · Δt = m · Δv als Grundlage, Verweis auf Trägheit und kurze Bremszeiten.",
+    "rubric": [
+      {
+        "criterion": "Physikalische Argumentation",
+        "levels": [
+          "F = m·a oder Impuls korrekt angewendet",
+          "Allgemeiner Verweis ohne Formel"
+        ]
+      },
+      {
+        "criterion": "Bewertung",
+        "levels": [
+          "Argument klar widerlegt und Gegenposition formuliert",
+          "Widerlegung ohne eigene Position"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen reduzieren Gefährlichkeit oft auf Geschwindigkeit allein, ignorieren Bremsdauer.",
+      "Impulssatz/Impuls-Erhaltung kann hier als Brücke zu späterer Mechanik II genutzt werden."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Physik",
+  "klasse": 5,
+  "kompetenzbereich": "Mechanik I",
+  "competences": [
+    "PHY.OS.5.MEC.01",
+    "PHY.OS.x.S.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "W",
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0155",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:27+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

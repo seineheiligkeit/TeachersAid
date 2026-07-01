@@ -1,0 +1,94 @@
+{
+  "id": "c0153.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Entscheide jeweils, ob die folgende Aussage über das bestimmte Integral wahr oder falsch ist, und begründe kurz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Das bestimmte Integral ∫₀² x² dx ist immer eine Zahl, die kleiner als jede Obersumme und größer als jede Untersumme ist.",
+        "Wenn man die Anzahl der Rechtecke n immer weiter erhöht, nähern sich Ober- und Untersumme immer weiter voneinander an.",
+        "Das bestimmte Integral ∫ₐᵇ f(x) dx gibt immer den Flächeninhalt zwischen dem Graphen und der x-Achse an, auch wenn f auf [a, b] negative Werte annimmt."
+      ]
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "KA",
+      "ID"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.OS.8.GRU2.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Aussage 1: WAHR — Definition des bestimmten Integrals als die eindeutige Zahl zwischen allen Unter- und Obersummen. Aussage 2: WAHR — Bei stetigen Funktionen gilt: je feiner die Zerlegung, desto kleiner der Unterschied O_n − U_n. Aussage 3: FALSCH — Das bestimmte Integral gibt den vorzeichenbehafteten Flächeninhalt an; Flächenstücke unter der x-Achse werden negativ gerechnet. Der geometrische Flächeninhalt erfordert Betragsbildung.",
+    "acceptable_reasoning": "Zu Aussage 3 genügt ein Gegenbeispiel: ∫₋₁¹ x dx = 0, obwohl eindeutig eine Fläche eingeschlossen ist.",
+    "rubric": [
+      {
+        "criterion": "Aussage 1",
+        "levels": [
+          "Falsch bewertet oder keine Begründung",
+          "Richtig bewertet mit plausibler Begründung"
+        ]
+      },
+      {
+        "criterion": "Aussage 2",
+        "levels": [
+          "Falsch bewertet oder keine Begründung",
+          "Richtig bewertet mit plausibler Begründung"
+        ]
+      },
+      {
+        "criterion": "Aussage 3",
+        "levels": [
+          "Falsch bewertet oder keine Begründung",
+          "Richtig bewertet; Vorzeichen-Aspekt erwähnt",
+          "Richtig bewertet mit Gegenbeispiel"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Sehr verbreitete Fehlvorstellung: Integral = Flächeninhalt ohne Vorzeichen — muss explizit thematisiert werden.",
+      "Schüler:innen sollen den Unterschied zwischen vorzeichenbehaftetem Integral und geometrischem Flächeninhalt sicher benennen können."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Mathematik",
+  "klasse": 8,
+  "kompetenzbereich": "Grundlagen der Integralrechnung",
+  "competences": [
+    "MAT.OS.8.GRU2.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "KA",
+    "ID"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0153",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:26+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

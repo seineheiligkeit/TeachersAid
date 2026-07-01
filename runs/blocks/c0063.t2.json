@@ -1,0 +1,63 @@
+{
+  "id": "c0063.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "text_analysis",
+    "prompt": "Lies diesen kurzen Zeitungsausschnitt (fiktiv). Unterstreiche alle Latinismen (Wörter, die aus dem Lateinischen stammen) und schreibe sie mit ihrem lateinischen Ursprungswort in die Tabelle.\n\n---\nDie neue Kurrikulum-Reform wird im Herbst implementiert. Das Ministerium hat ein Konsultationsverfahren initiiert. Experten aus dem akademischen Sektor sowie Vertreter der Zivilgesellschaft können ihre Positionen per E-Mail kommunizieren. Das finale Dokument soll im Januar publiziert werden. Status quo bleibt bis dahin erhalten.\n---",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Latinismus im Text",
+        "Lateinisches Ursprungswort (Vermutung)"
+      ],
+      "rows": 8
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "INH"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "LAT.US.4.INH.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Kurrikulum ← curriculum (Lauf, Kursplan) | implementiert ← implere (erfüllen, einbauen) | Konsultation ← consulere (beraten, befragen) | initiiert ← initiare (beginnen, einweihen) | akademisch ← academia (griech.-lat.) | kommunizieren ← communicare (teilen, mitteilen) | finale ← finalis (abschließend, von finis = Ende) | publiziert ← publicare (veröffentlichen) | Status quo ← status quo = der Zustand, wie er ist",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Schüler:innen sollen nicht alle Etymologien perfekt kennen — Vermutungen sind ausdrücklich erlaubt; der Analyseprozess ist das Lernziel.",
+      "Sektor kommt auch aus dem Lateinischen (secare = schneiden), ist aber als Hinweis weniger offensichtlich — Bonus für Entdeckung.",
+      "Status quo als gesamte Phrase unterstreichen, nicht nur Status allein."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "text_analysis",
+  "subject": "Latein",
+  "klasse": 4,
+  "kompetenzbereich": "Inhalts- und themenbezogene Kompetenzen",
+  "competences": [
+    "LAT.US.4.INH.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "INH"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0063",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

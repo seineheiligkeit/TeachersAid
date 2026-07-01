@@ -1,0 +1,238 @@
+{
+  "subject": "Digitale Grundbildung",
+  "klasse": 3,
+  "kompetenzbereich": "Produktion: Inhalte digital erstellen und veröffentlichen, Algorithmen entwerfen und Programmieren",
+  "title": "Computational Thinking und Algorithmen",
+  "kernfrage": "Wie denken Computer – und wie kannst du Probleme so aufteilen, dass ein Computer sie lösen kann?",
+  "body": {
+    "intro": [
+      {
+        "role": "info",
+        "id": "i1",
+        "prompt": "Computer können keine Probleme 'denken' – sie führen nur genaue Anweisungen aus. Um ein Problem mit einem Computer zu lösen, muss man es zerlegen, Muster erkennen, unwichtige Details weglassen und klare Schritt-für-Schritt-Anleitungen (Algorithmen) formulieren. Diese Denkweise nennt man Computational Thinking. Sie ist nicht nur beim Programmieren nützlich, sondern hilft dir auch im Alltag, komplexe Probleme zu strukturieren.",
+        "est_minutes": 3
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Probleme zerlegen, Muster erkennen, Algorithmen formulieren",
+        "throughline": "Schüler:innen entwickeln die vier Kernkompetenzen des Computational Thinkings (Dekomposition, Mustererkennung, Abstraktion, Algorithmisierung) anhand konkreter Alltagsbeispiele und übertragen sie auf einfache Programmiersituationen.",
+        "talking_points": [
+          "Computational Thinking ist kein Programmieren – es ist eine Denkweise, die dem Programmieren vorausgeht.",
+          "Dekomposition: Ein großes Problem wird in kleinere, lösbare Teilprobleme zerlegt (z.B. 'Website bauen' → Struktur, Design, Inhalt, Technik).",
+          "Abstraktion bedeutet, unwichtige Details wegzulassen – eine Landkarte zeigt nicht jeden Stein, aber die wichtigsten Straßen.",
+          "Algorithmen müssen eindeutig, endlich und ausführbar sein – ohne Eindeutigkeit kann der Computer nicht entscheiden."
+        ],
+        "extensions": [
+          "Schüler:innen entwickeln einen Algorithmus für einen echten Schulprozess (z.B. Stundenwahl im Wahlpflichtfach) und diskutieren, wo Algorithmen gerecht oder ungerecht sein können.",
+          "Fehlersuche (Debugging) als Spiel: Schüler:innen erhalten einen Algorithmus mit genau einem Fehler und müssen ihn finden und korrigieren.",
+          "Einstieg in textbasiertes Programmieren: Schüler:innen übersetzen ihren selbst entwickelten Algorithmus in Pseudocode oder eine einfache Programmiersprache (z.B. Python mit Turtle)."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "matching",
+            "prompt": "Ordne die vier Grundbegriffe des Computational Thinkings ihren Erklärungen zu.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Dekomposition",
+                "Mustererkennung",
+                "Abstraktion",
+                "Algorithmisierung"
+              ],
+              "right": [
+                "Unwichtige Details weglassen und das Wesentliche eines Problems herausarbeiten",
+                "Ein komplexes Problem in kleinere, handhabbare Teilprobleme aufteilen",
+                "Eine klare, eindeutige Schritt-für-Schritt-Anleitung zur Lösung eines Problems formulieren",
+                "Gemeinsamkeiten und wiederkehrende Strukturen in Daten oder Problemen erkennen"
+              ]
+            },
+            "response": { "mode": "none" },
+            "cognitive_level": "remember",
+            "dimensions": ["T"],
+            "serves": [
+              { "competence_id": "DGB.US.3.PRO.01", "relation": "exercises" }
+            ],
+            "est_minutes": 5,
+            "answer_key": "Dekomposition → Ein komplexes Problem in kleinere ... aufteilen; Mustererkennung → Gemeinsamkeiten und wiederkehrende Strukturen ...; Abstraktion → Unwichtige Details weglassen ...; Algorithmisierung → Eine klare, eindeutige Schritt-für-Schritt-Anleitung ...",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Abstraktion wird leicht mit Vereinfachung verwechselt – betonen: Es geht nicht darum, es einfacher zu machen, sondern die richtigen Details auszuwählen.",
+              "Mustererkennung wird oft mit Mustererstellung verwechselt – hier geht es ums Erkennen bestehender Strukturen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "open_response",
+            "prompt": "Stell dir vor, du möchtest einer Person, die noch nie Waffeln gemacht hat, ein Waffelrezept als Algorithmus erklären – so präzise, dass ein Roboter die Waffeln zubereiten könnte.\n\n(a) Schreibe die ersten fünf Schritte deines Algorithmus als nummerierte Liste. Jeder Schritt muss eindeutig und ausführbar sein.\n(b) Erkläre, warum der Schritt 'Teig gut rühren' für einen Roboter nicht ausreicht und wie du ihn präzisieren würdest.",
+            "payload": null,
+            "response": { "mode": "lines", "n": 10 },
+            "cognitive_level": "apply",
+            "dimensions": ["T"],
+            "serves": [
+              { "competence_id": "DGB.US.3.PRO.01", "relation": "exercises" }
+            ],
+            "est_minutes": 10,
+            "answer_key": "(a) Beispiel: (1) Nimm eine Schüssel. (2) Gib 200 g Mehl in die Schüssel. (3) Füge 2 Eier hinzu. (4) Gieße 250 ml Milch dazu. (5) Rühre den Teig mit einem Schneebesen 2 Minuten lang, bis keine Klumpen mehr sichtbar sind. – Wichtig: konkrete Mengenangaben, klare Aktionen, eindeutige Reihenfolge. (b) 'Gut rühren' ist nicht eindeutig – wie lange? Womit? Woran erkennt man, dass es fertig ist? Präzisierung: '2 Minuten mit einem Schneebesen rühren, bis die Mischung glatt ist und keine Mehlklumpen mehr sichtbar sind.'",
+            "acceptable_reasoning": "Andere Rezeptvarianten sind akzeptabel; entscheidend ist die Eindeutigkeit und die Erkenntnis in Teil (b).",
+            "watch_outs": [
+              "Schüler:innen schreiben oft alltagssprachliche Schritte ('Teig zubereiten') – immer wieder einfordern: Was genau? Welche Menge? Wie lange?",
+              "Haushaltsroboter oder Küchenroboter als Analogie: Die Maschine kann nicht interpretieren, sie führt nur aus."
+            ],
+            "rubric": [
+              {
+                "criterion": "Eindeutigkeit der Schritte",
+                "levels": [
+                  "Schritte zu allgemein (z.B. 'Zutaten mischen')",
+                  "Teilweise konkret mit Mengenangaben",
+                  "Alle Schritte eindeutig, messbar und ausführbar ohne Interpretation"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "open_response",
+            "prompt": "Betrachte folgenden Algorithmus in Pseudocode:\n\n```\nSTART\n  Zahl ← 1\n  SOLANGE Zahl ≤ 10 MACHE:\n    WENN Zahl durch 2 teilbar IST:\n      Gib Zahl aus\n    Zahl ← Zahl + 1\nENDE\n```\n\n(a) Was gibt dieser Algorithmus aus? Schreibe alle Zahlen auf.\n(b) Wie würdest du den Algorithmus ändern, sodass er alle Zahlen von 1 bis 20 ausgibt, die durch 3 teilbar sind?\n(c) Was passiert, wenn du die Zeile 'Zahl ← Zahl + 1' vergisst? Beschreibe das Problem.",
+            "payload": null,
+            "response": { "mode": "lines", "n": 8 },
+            "cognitive_level": "analyze",
+            "dimensions": ["T"],
+            "serves": [
+              { "competence_id": "DGB.US.3.PRO.01", "relation": "exercises" }
+            ],
+            "est_minutes": 12,
+            "answer_key": "(a) Ausgabe: 2, 4, 6, 8, 10. (b) Änderungen: 'SOLANGE Zahl ≤ 20' und 'WENN Zahl durch 3 teilbar IST'. Ausgabe: 3, 6, 9, 12, 15, 18. (c) Ohne 'Zahl ← Zahl + 1' bleibt Zahl immer 1. Die Bedingung 'SOLANGE Zahl ≤ 10' ist immer wahr → der Algorithmus hört nie auf = Endlosschleife. Das Programm 'hängt sich auf'.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Pseudocode ist für viele Schüler:innen das erste Mal – Schreibweise (←, SOLANGE, MACHE) erklären, nicht als bekannt voraussetzen.",
+              "Endlosschleife ist ein zentrales Konzept: betonen, dass Programme abstürzen oder den Computer blockieren können – kein abstrakes Problem.",
+              "'Durch 2 teilbar' bedeutet: Rest der Division durch 2 ist 0 (Modulo-Konzept) – kann in dieser Stufe intuitiv erklärt werden."
+            ],
+            "rubric": [
+              {
+                "criterion": "Algorithmus lesen (Teil a+b)",
+                "levels": [
+                  "Falsche Ausgabe",
+                  "Richtige Ausgabe für (a), Änderung für (b) teilweise korrekt",
+                  "Beide Ausgaben korrekt; Änderung vollständig"
+                ]
+              },
+              {
+                "criterion": "Fehleranalyse (Teil c)",
+                "levels": [
+                  "Fehler nicht erkannt oder falsch beschrieben",
+                  "Endlosschleife erkannt, aber nicht erklärt",
+                  "Endlosschleife erklärt und Konsequenz benannt"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "true_false_justify",
+            "prompt": "Entscheide, ob die folgenden Aussagen über Algorithmen stimmen, und begründe jeweils in einem Satz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Ein Algorithmus muss immer nach einer endlichen Anzahl von Schritten zu einem Ergebnis kommen.",
+                "Für jedes Problem gibt es genau einen richtigen Algorithmus.",
+                "Ein Algorithmus, der auf Papier geschrieben ist, ist noch kein Computerprogramm.",
+                "Wenn ein Algorithmus für kleine Datenmengen funktioniert, funktioniert er auch für sehr große Datenmengen genauso schnell."
+              ]
+            },
+            "response": { "mode": "none" },
+            "cognitive_level": "understand",
+            "dimensions": ["T"],
+            "serves": [
+              { "competence_id": "DGB.US.3.PRO.01", "relation": "exercises" }
+            ],
+            "est_minutes": 8,
+            "answer_key": "(1) Richtig – Endlichkeit ist eine Grundeigenschaft; Endlosschleifen sind Fehler. (2) Falsch – Es gibt oft viele Algorithmen für dasselbe Problem; sie können sich in Effizienz, Lesbarkeit und Ansatz unterscheiden. (3) Richtig – Ein Algorithmus ist eine Beschreibung; ein Programm ist die Übersetzung in eine Programmiersprache, die ein Computer ausführen kann. (4) Falsch – Manche Algorithmen werden bei großen Datenmengen exponentiell langsamer (Effizienz/Komplexität); das ist ein zentrales Thema der Informatik.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Aussage 4 führt in die Algorithmik/Komplexitätstheorie ein – kein tiefes Wissen nötig, aber das Grundprinzip (Effizienz skaliert nicht linear) ist wichtig.",
+              "Aussage 2 ist eine häufige Fehlvorstellung: Schüler:innen suchen 'die richtige' Lösung – Informatik hat oft viele."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "open_response",
+            "prompt": "Du möchtest einen einfachen Algorithmus entwerfen, der für eine Liste von Schüler:innen-Noten (z.B. 2, 4, 1, 3, 5, 2) die beste Note (also die niedrigste Zahl, da 1 = Sehr gut) ermittelt.\n\n(a) Beschreibe den Algorithmus in Worten oder Pseudocode – Schritt für Schritt.\n(b) Wende deinen Algorithmus manuell auf die Liste 2, 4, 1, 3, 5, 2 an und zeige jeden Schritt.\n(c) Erkläre, was 'Abstraktion' bei diesem Problem bedeutet – was hast du weggelassen, damit der Algorithmus allgemein anwendbar ist?",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 50 },
+            "cognitive_level": "apply",
+            "dimensions": ["T", "I"],
+            "serves": [
+              { "competence_id": "DGB.US.3.PRO.01", "relation": "exercises" }
+            ],
+            "est_minutes": 13,
+            "answer_key": "(a) Algorithmus: (1) Setze 'Minimum' auf den ersten Wert der Liste. (2) Für jeden weiteren Wert in der Liste: Wenn dieser Wert kleiner als 'Minimum' ist, setze 'Minimum' auf diesen Wert. (3) Nach dem Durchlauf: Gib 'Minimum' aus. (b) Start: Minimum = 2. Vergleich mit 4: 4 > 2, kein Tausch. Vergleich mit 1: 1 < 2, Minimum = 1. Vergleich mit 3: 3 > 1, kein Tausch. Vergleich mit 5: 5 > 1, kein Tausch. Vergleich mit 2: 2 > 1, kein Tausch. Ergebnis: 1. (c) Abstraktion: Es ist egal, was die Zahlen bedeuten (Noten, Temperaturen, Preise) – der Algorithmus arbeitet auf beliebigen Zahlenlisten. Details wie Schüler:innen-Namen, Fächer etc. wurden weggelassen.",
+            "acceptable_reasoning": "Pseudocode-Varianten sind akzeptabel; entscheidend ist die korrekte Logik des Minimums-Algorithmus.",
+            "watch_outs": [
+              "Häufiger Fehler: 'Durchsuche die Liste nach der 1' – das setzt voraus, dass man das Ergebnis schon kennt. Der Algorithmus muss allgemein sein.",
+              "Abstraktion bei Teil (c): Schüler:innen nennen oft nur eine Abstraktion – mehrere einfordern (Notenbezeichnung, Schüler:innen-Name, Fach)."
+            ],
+            "rubric": [
+              {
+                "criterion": "Korrektheit des Algorithmus",
+                "levels": [
+                  "Algorithmus funktioniert nicht allgemein",
+                  "Algorithmus korrekt, aber nicht ausreichend beschrieben",
+                  "Vollständiger, allgemeiner und korrekter Algorithmus"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "create_produce",
+            "prompt": "Entwirf einen eigenen Algorithmus in Pseudocode für folgendes Problem: Eine Klasse möchte entscheiden, ob der Ausflug heute stattfindet. Die Regel ist: Der Ausflug findet statt, wenn NICHT mehr als 5 Schüler:innen krank sind UND das Wetter gut ist (d.h. keine Warnstufe Gelb oder höher).\n\nSchreibe den Algorithmus so, dass er (a) die Bedingungen prüft und (b) eine klare Ausgabe produziert ('Ausflug findet statt' oder 'Ausflug entfällt'). Ergänze nach dem Pseudocode eine kurze Erklärung (2–3 Sätze), was du beim Entwerfen weglassen musstest (Abstraktion).",
+            "payload": null,
+            "response": { "mode": "lines", "n": 14 },
+            "cognitive_level": "create",
+            "dimensions": ["T", "I"],
+            "serves": [
+              { "competence_id": "DGB.US.3.PRO.01", "relation": "exercises" }
+            ],
+            "est_minutes": 12,
+            "answer_key": "Möglicher Pseudocode:\nEingabe: anzahl_krank (Zahl), wetterwarnung (Ja/Nein)\nWENN anzahl_krank ≤ 5 UND wetterwarnung = NEIN:\n  Gib aus: 'Ausflug findet statt'\nSONST:\n  Gib aus: 'Ausflug entfällt'\nEingabe\nAbstraktionserklärung: Es wurde ignoriert, welche Schüler:innen krank sind (Name, Klasse), was genau der Ausflug ist, und ob es andere Gründe geben könnte. Der Algorithmus reagiert nur auf die zwei relevanten Bedingungen.",
+            "acceptable_reasoning": "Varianten mit anderen Strukturen (z.B. zwei getrennte WENN-Abfragen) sind akzeptabel, solange das Ergebnis korrekt ist.",
+            "watch_outs": [
+              "UND vs. ODER verwechseln ist ein häufiger Fehler: Beide Bedingungen müssen erfüllt sein (UND), nicht eine von beiden (ODER).",
+              "Die Abstraktionserklärung wird oft vergessen oder zu kurz – betonen, dass sie Teil der Aufgabe ist."
+            ],
+            "rubric": [
+              {
+                "criterion": "Logik des Algorithmus",
+                "levels": [
+                  "Logikfehler (falsche Verknüpfung oder fehlende Bedingung)",
+                  "Beide Bedingungen vorhanden, kleine Formfehler",
+                  "Vollständiger Pseudocode mit korrekter Logik und Ausgabe"
+                ]
+              },
+              {
+                "criterion": "Abstraktionserklärung",
+                "levels": [
+                  "Keine oder unklare Erklärung",
+                  "Eine konkrete Abstraktion benannt",
+                  "Mehrere Abstraktionen erklärt und Zweck klar"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

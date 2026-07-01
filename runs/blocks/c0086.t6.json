@@ -1,0 +1,89 @@
+{
+  "id": "c0086.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "experiment_protocol",
+    "prompt": "Plane ein einfaches Experiment, mit dem du überprüfen kannst, ob die Stromstärke in einem Stromkreis wächst, wenn du die Spannung erhöhst (und der Widerstand gleich bleibt). Beschreibe: (a) was du brauchst, (b) wie du vorgehst, (c) welche Größen du misst und wie du sie notierst, (d) was du erwartest.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "E",
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.3.ELE.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Materialien: variable Spannungsquelle (oder mehrere Batterien), fester Widerstand (z. B. 100 Ω), Voltmeter (parallel), Amperemeter (in Reihe), Verbindungsdrähte. Vorgehen: Spannung schrittweise erhöhen (z. B. 2 V, 4 V, 6 V, 8 V), jeweils Stromstärke ablesen. Messwerte in Tabelle (U, I); Erwartung: linearer Zusammenhang I ~ U (Ohmsches Gesetz), d. h. U/I = const. = R.",
+    "acceptable_reasoning": "Auch ein einfacher qualitativer Ansatz (eine Batterie → mehr Batterien → Lampe leuchtet heller) ist als Erstplanung akzeptabel; vollständige Variablenkontrolle ist das Ziel.",
+    "rubric": [
+      {
+        "criterion": "Variablenkontrolle",
+        "levels": [
+          "Kein Hinweis auf Konstanthaltung des Widerstands",
+          "Widerstand als Konstante erwähnt",
+          "Vollständige Variablenkontrolle beschrieben"
+        ]
+      },
+      {
+        "criterion": "Messplan",
+        "levels": [
+          "Kein Messplan",
+          "Messung erwähnt, aber unvollständig",
+          "Systematischer Messplan mit Tabelle und Wiederholung"
+        ]
+      },
+      {
+        "criterion": "Erwartung/Auswertung",
+        "levels": [
+          "Keine Erwartung",
+          "Richtung der Änderung beschrieben",
+          "Linearer Zusammenhang erwartet und begründet"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen vergessen oft, den Widerstand konstant zu halten (Variablenkontrolle). Gezielt nachfragen: Was veränderst du, was hältst du konstant?",
+      "Messinstrumentenschaltung (Amperemeter in Reihe, Voltmeter parallel) explizit einfordern."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "experiment_protocol",
+  "subject": "Physik",
+  "klasse": 3,
+  "kompetenzbereich": "Elektrizität und Magnetismus",
+  "competences": [
+    "PHY.US.3.ELE.01"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "E",
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0086",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:19+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

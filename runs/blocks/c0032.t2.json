@@ -1,0 +1,63 @@
+{
+  "id": "c0032.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Die Tabelle zeigt verschiedene Situationen auf dem Wohnungsmarkt in einer österreichischen Stadt. Entscheide jeweils, ob der Mietpreis steigt, sinkt oder gleich bleibt, und erkläre kurz warum.\n\n| Situation | Mietpreis-Veränderung | Begründung |\n|---|---|---|\n| Großes Unternehmen eröffnet neue Niederlassung und bringt 500 Arbeitsplätze | | |\n| Neues Wohnviertel mit 300 Wohnungen wird fertiggestellt | | |\n| Bevölkerung der Stadt sinkt durch Abwanderung | | |\n| Zinserhöhung durch Nationalbank macht Wohnungskäufe teurer | | |",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Situation",
+        "Veränderung",
+        "Begründung"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.ENT.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "1) Steigt – höhere Nachfrage durch Zuzug von Arbeitnehmer:innen. 2) Sinkt – Angebot steigt, Nachfrage gleich. 3) Sinkt – Nachfrage sinkt, Leerstand entsteht. 4) Steigt (Mietmarkt) – weniger Menschen können sich Eigentum leisten und weichen in Mietwohnungen aus; alternativ sinkt (Gesamtnachfrage schwächt sich ab). Beide Richtungen für Punkt 4 akzeptabel mit Begründung.",
+    "acceptable_reasoning": "Situation 4 ist komplex – Zinserhöhung hat gegenläufige Effekte; jede begründete Antwort ist valide.",
+    "rubric": [],
+    "watch_outs": [
+      "Wohnungsmarkt ist für Klasse-3-Schüler:innen oft abstrakt – Lehrperson kann Wien vs. Ostösterreich als konkretes Beispiel einführen.",
+      "Situation 4 ist bewusst mehrdeutig gesetzt, um kritisches Denken zu fördern."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Entwicklungen am Wirtschaftsstandort Österreich",
+  "competences": [
+    "GWB.US.3.ENT.04"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0032",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

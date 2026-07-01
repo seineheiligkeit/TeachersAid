@@ -1,0 +1,82 @@
+{
+  "id": "c0155.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Eine Person (Masse 70 kg) steht auf einer Waage.\na) Erkläre mithilfe von Newtons drittem Gesetz (Actio-Reactio), welche Kräfte zwischen Person und Waage wirken. Nenne jeweils Kraft, Gegenkraft und an welchem Körper sie angreift.\nb) Die Waage zeigt plötzlich 0 an, obwohl die Person noch draufsteht. Erkläre, wie das möglich ist (nenne eine konkrete physikalische Situation).",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.OS.5.MEC.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.OS.x.W.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "a) Kraft: Gravitation der Erde auf Person (70 kg · 9,81 m/s² ≈ 687 N, nach unten, greift an Person an). Gegenkraft (Actio-Reactio zur Normalkraft): Waage drückt Person nach oben mit ca. 687 N; Person drückt Waage nach unten mit 687 N (Newton 3. Gesetz). b) Im freien Fall (z. B. Aufzug reißt Seil, Sprung) beschleunigt die Waage gleich stark wie die Person → keine Normalkraft → Anzeige 0 (Schwerelosigkeit).",
+    "acceptable_reasoning": "Akzeptiert: Statt freiem Fall auch korrekte Nennung anderer äquivalenter Situationen (z. B. Raumstation im Orbit).",
+    "rubric": [
+      {
+        "criterion": "Kräftepaar",
+        "levels": [
+          "Beide Kräfte korrekt mit Angriffskörper benannt",
+          "Nur eine Kraft oder Angriffskörper fehlt"
+        ]
+      },
+      {
+        "criterion": "Erklärung Nullanzeige",
+        "levels": [
+          "Physikalisch korrekte Situation benannt und erklärt",
+          "Situation genannt, aber keine physikalische Begründung"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Häufiger Fehler: Actio und Reactio als dasselbe Kräftepaar an einem Körper – sie greifen immer an verschiedenen Körpern an.",
+      "Waagenanzeige 0 bedeutet Gewichtslosigkeit, nicht masselos."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Physik",
+  "klasse": 5,
+  "kompetenzbereich": "Mechanik I",
+  "competences": [
+    "PHY.OS.5.MEC.01",
+    "PHY.OS.x.W.03"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0155",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:27+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

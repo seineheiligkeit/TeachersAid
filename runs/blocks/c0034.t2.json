@@ -1,0 +1,75 @@
+{
+  "id": "c0034.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "In einer Schulzeitung steht: „Europa ist das reichste und mächtigste Gebiet der Welt.“ Beurteile diese Aussage kritisch. Stimmt sie – und für wen gilt sie? Nenne konkrete Gegenbeispiele oder Einschränkungen.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.4.EUR.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "Teilweise richtig: Die EU ist gemessen am BIP eine der größten Wirtschaftsräume (nach USA und China). Einschränkungen: Großes Wohlstandsgefälle innerhalb der EU (Westeuropa vs. Osteuropa; LU vs. BG). Mächtig: politisch ja, aber militärisch weniger kohärent (NATO). Reichstes Gebiet: nur wenn man nach Bruttowerten schaut; Kaufkraft ist ungleich verteilt. Außerdem: US-amerikanische Technologiekonzerne dominieren, was EU-Souveränität einschränkt.",
+    "acceptable_reasoning": "Schüler:innen, die die Verallgemeinerung als problematisch erkennen und mindestens eine begründete Einschränkung nennen, erhalten volle Punktzahl.",
+    "rubric": [
+      {
+        "criterion": "Kritische Prüfung",
+        "levels": [
+          "keine",
+          "oberflächlich",
+          "konkret und differenziert"
+        ]
+      },
+      {
+        "criterion": "Gegenbeispiele",
+        "levels": [
+          "keine",
+          "ein Beispiel",
+          "mehrere verschiedene"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen neigen zu unkritischer Zustimmung (Eurozentrismus) oder pauschaler Ablehnung – differenziertes Urteil fördern.",
+      "BIP-Zahlen sind für Klasse 4 zugänglich; absolute vs. pro-Kopf-BIP als wichtige Unterscheidung einführen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 4,
+  "kompetenzbereich": "Europa und europäische Integration",
+  "competences": [
+    "GWB.US.4.EUR.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0034",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

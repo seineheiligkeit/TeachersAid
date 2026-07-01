@@ -1,0 +1,83 @@
+{
+  "id": "c0058.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Schreibe ein kurzes Skript (6–8 Zeilen) für ein Gespräch zwischen zwei Personen: eine Person möchte ein Geschenk für ihren Freund / ihre Freundin kaufen, die andere Person hilft bei der Auswahl. Das Gespräch findet in einem kleinen Laden in Frankreich statt.\n\nTipps für das Skript:\n- Begrüßung und Verabschiedung nicht vergessen\n- Eine Person fragt nach dem Preis\n- Eine Person äußert eine Meinung (C'est bien ! / C'est trop cher !)\n\nIhr könnt das Skript danach zu zweit vorspielen.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "create",
+    "dimensions": [
+      "SPR",
+      "SCH"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS2.US.4.SPR.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "FS2.US.4.SPR.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Musterskript: — Bonjour ! Je cherche un cadeau pour mon ami. — Qu'est-ce qu'il aime ? — Il aime la musique. — Alors, peut-être ce livre sur la musique ? C'est douze euros. — C'est bien ! Je le prends. Merci ! — De rien, bonne journée ! (Bewertung: Konversationsstruktur, Meinungsausdruck, Höflichkeit.)",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Gesprächsstruktur",
+        "levels": [
+          "Begrüßung, Kern-Gespräch (Suche, Preis, Meinung), Verabschiedung vorhanden",
+          "Kern-Gespräch vorhanden, Rahmung (Begrüßung/Abschied) fehlt teils",
+          "Nur einzelne Sätze, keine Gesprächslogik"
+        ]
+      },
+      {
+        "criterion": "Meinungsausdruck",
+        "levels": [
+          "Klare Bewertung (C'est bien ! / C'est trop cher !) oder ähnliches",
+          "Bewertung angedeutet, aber sprachlich unklar",
+          "Keine Meinung im Dialog"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Je le prends (ich nehme es) ist ein Pronominalsatz — Schüler:innen werden eher Je prends ça sagen, was auch akzeptiert wird; le prends ist eine Bonusstruktur.",
+      "trop cher (zu teuer) — trop als Verstärker (zu...) ist wichtig, darf nicht mit très (sehr) verwechselt werden.",
+      "Beim Vorspielen: Schüler:innen ermutigen, das Skript nur als Stütze zu benutzen, nicht komplett vorzulesen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Zweite lebende Fremdsprache",
+  "klasse": 4,
+  "kompetenzbereich": "Sprechen (an Gesprächen teilnehmen und zusammenhängend sprechen)",
+  "competences": [
+    "FS2.US.4.SPR.02",
+    "FS2.US.4.SPR.03"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "SPR",
+    "SCH"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0058",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

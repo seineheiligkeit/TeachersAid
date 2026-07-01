@@ -1,0 +1,63 @@
+{
+  "id": "phy-strahlung.str.t3#extended",
+  "block": {
+    "id": "phy-strahlung.str.t3_extended",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "WLAN-Signale gehen durch Wände, schaden dir aber nicht – Gammastrahlung dagegen ist gefährlich. Beide „durchdringen“ Materie.\n\na) Was ist der entscheidende physikalische Unterschied zwischen WLAN-Strahlung und Gammastrahlung? Nenne den Fachbegriff und erkläre ihn in einem Satz.\n\nb) Ordne folgende Strahlungsarten danach ein, ob sie ionisierend oder nicht-ionisierend sind:\n   – sichtbares Licht\n   – UV-Strahlung\n   – Röntgenstrahlung\n   – Radiowellen\n\nc) Warum reicht „durchdringt Materie“ allein nicht aus, um eine Strahlung als gefährlich einzustufen?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 8
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "S",
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.4.STR.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "a) Ionisierende vs. nicht-ionisierende Strahlung: Gammastrahlung hat genug Energie, um Elektronen aus Atomen zu schlagen; WLAN nicht. b) Nicht-ionisierend: sichtbares Licht, Radiowellen; Grenzbereich: UV (kurzwelliges UV ist ionisierend); ionisierend: Röntgenstrahlung. c) Durchdringen sagt nur, wie tief Strahlung eindringt, nicht, ob sie dabei chemische Bindungen aufbrechen kann – das entscheidet die Energie pro Photon.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "UV-Strahlung ist ein häufiger Stolperstein (nicht-ionisierend im sichtbaren Bereich, ionisierend im kurzwelligen UV) – Grenze thematisieren; SuS neigen dazu, Frequenz und Energie nicht zu verknüpfen"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Strahlung und Radioaktivität",
+  "competences": [
+    "PHY.US.4.STR.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "S",
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "extended",
+  "family": "phy-strahlung.str.t3",
+  "assets": [],
+  "status": "approved",
+  "provenance": "variant:phy-strahlung.str.t3",
+  "source": "ai",
+  "created_at": "2026-06-25T18:13:26+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

@@ -1,0 +1,154 @@
+{
+  "id": "c0119.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Lies aus dem Diagramm ab und ergaenze die Tabelle. Runde auf volle Tausend.",
+    "payload": {
+      "kind": "table_fill",
+      "columns": [
+        "Bundesland",
+        "Bevoelkerung (gerundet auf 1 000)"
+      ],
+      "rows": [
+        [
+          "Burgenland",
+          ""
+        ],
+        [
+          "Wien",
+          ""
+        ],
+        [
+          "Salzburg",
+          ""
+        ],
+        [
+          "Tirol",
+          ""
+        ]
+      ]
+    },
+    "response": {
+      "mode": "none"
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "DAR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.1.DAT.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "Burgenland: ca. 302 000; Wien: ca. 2 006 000; Salzburg: ca. 571 000; Tirol: ca. 776 000. (Exakte Werte gemaess Statistik Austria: Burgenland 301 951, Wien 2 005 760, Salzburg 571 479, Tirol 775 970.)",
+    "acceptable_reasoning": "Ablesen von Diagrammwerten mit unvermeidlicher Ungenauigkeit ist explizit erlaubt; leichte Schwankungen beim Ablesen sind kein Fehler.",
+    "rubric": [
+      {
+        "criterion": "Einheit korrekt (Tausend)",
+        "levels": [
+          "Einheit fehlt oder falsch",
+          "Einheit richtig angegeben"
+        ]
+      },
+      {
+        "criterion": "Werte plausibel abgelesen (Toleranz +/- 10 000)",
+        "levels": [
+          "Mehr als 2 Werte ausserhalb Toleranz",
+          "Maximal 1 Wert ausserhalb Toleranz",
+          "Alle Werte innerhalb Toleranz"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schuelerinnen und Schueler verwechseln haeufig die Groessenordnung (z. B. '302' statt '302 000'); auf die Einheit achten.",
+      "Beim Ablesen eines Balkendiagramms sollte die Ableserichtung (senkrechte Achse) bewusst geuebt werden."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Mathematik",
+  "klasse": 1,
+  "kompetenzbereich": "4: Daten und Zufall",
+  "competences": [
+    "MAT.US.1.DAT.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "DAR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "title": "Bevölkerung der österreichischen Bundesländer (1.1.2024)",
+        "xlabel": "Bundesland",
+        "ylabel": "Einwohnerinnen und Einwohner",
+        "log": false,
+        "categories": [
+          "Burgenland",
+          "Kärnten",
+          "Niederösterreich",
+          "Oberösterreich",
+          "Salzburg",
+          "Steiermark",
+          "Tirol",
+          "Vorarlberg",
+          "Wien"
+        ],
+        "values": [
+          3.3,
+          6.2,
+          18.8,
+          16.7,
+          6.2,
+          13.9,
+          8.5,
+          4.5,
+          21.9
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "statistik_austria_bundeslaender_2024",
+        "series": "bevoelkerung",
+        "note": null,
+        "title": "Bevölkerung der österreichischen Bundesländer (1.1.2024)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2024",
+        "attribution": "Datenquelle: Statistik Austria – data.statistik.gv.at (CC BY 4.0)",
+        "stand": "2024-01-01"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0119",
+  "source": "ai",
+  "created_at": "2026-06-27T15:21:14+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

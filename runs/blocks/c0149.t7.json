@@ -1,0 +1,79 @@
+{
+  "id": "c0149.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "argumentation",
+    "prompt": "Ein Schüler behauptet: „Bubble Sort ist nutzlos, weil es immer bessere Algorithmen gibt. Man sollte ihn gar nicht mehr lernen.“\n\nNimm Stellung zu dieser Aussage. Berücksichtige dabei: Wann kann Bubble Sort trotzdem sinnvoll sein? Welchen Lernwert hat der Algorithmus? Nenne mindestens zwei konkrete Argumente.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "RB"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "INF.OS.5.PRA.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Mögliche Argumente für den Lehrwert: (1) Bubble Sort ist einfach zu verstehen und zu implementieren – ideal zum Erlernen von Schleifen, Vergleichen und Vertauschen. (2) Bei sehr kleinen Listen oder fast sortierten Listen ist der Aufwand akzeptabel und der Algorithmus leicht nachvollziehbar zu debuggen. (3) Das Studieren ineffizienter Algorithmen lehrt, warum Effizienz überhaupt wichtig ist – ohne Vergleich keine Bewertung. (4) Konzepte wie Pass-Anzahl und Abbruchbedingung lassen sich direkt auf komplexere Algorithmen übertragen.",
+    "acceptable_reasoning": "Mindestens zwei stichhaltige, voneinander unabhängige Argumente; rein emotionale oder inhaltlose Aussagen nicht akzeptieren.",
+    "rubric": [
+      {
+        "criterion": "Anzahl und Qualität der Argumente",
+        "levels": [
+          "Zwei oder mehr konkrete, gut begründete Argumente",
+          "Ein konkretes Argument, ein vages",
+          "Nur vage Aussagen ohne Begründung"
+        ]
+      },
+      {
+        "criterion": "Differenziertheit der Stellungnahme",
+        "levels": [
+          "Beide Seiten berücksichtigt oder begründet fokussiert",
+          "Einseitig, aber schlüssig",
+          "Keine erkennbare Position"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen neigen zu Ein-Satz-Antworten ('er ist gut zum Lernen') ohne Konkretisierung – auf Begründungstiefe bestehen.",
+      "Die Frage zielt auf kritisches Denken, nicht auf eine vorgegebene 'richtige' Meinung – beide Seiten sind vertretbar, wenn gut begründet."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "argumentation",
+  "subject": "Informatik",
+  "klasse": 5,
+  "kompetenzbereich": "Praktische Informatik",
+  "competences": [
+    "INF.OS.5.PRA.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "RB"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0149",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:25+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

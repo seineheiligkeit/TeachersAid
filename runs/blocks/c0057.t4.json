@@ -1,0 +1,74 @@
+{
+  "id": "c0057.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Verbinde das Hobby mit dem passenden französischen Satz.\n\nHobbys: 1. Fußball spielen | 2. Musik hören | 3. Lesen | 4. Schwimmen | 5. Mit Freunden abhängen\n\nSätze:\nA. J'aime nager.\nB. J'aime jouer au football.\nC. J'aime lire.\nD. J'aime écouter de la musique.\nE. J'aime passer du temps avec mes amis.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Fußball spielen",
+        "Musik hören",
+        "Lesen",
+        "Schwimmen",
+        "Mit Freunden abhängen"
+      ],
+      "right": [
+        "J'aime nager.",
+        "J'aime jouer au football.",
+        "J'aime lire.",
+        "J'aime écouter de la musique.",
+        "J'aime passer du temps avec mes amis."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "apply",
+    "dimensions": [
+      "SCH"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS2.US.3.SCH.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "1–B | 2–D | 3–C | 4–A | 5–E",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "jouer au football (mit unbestimmtem Artikel au = à + le) vs. jouer de la guitare — die Präposition hängt vom Hobby-Typ ab (Sport: au; Instrument: de la). Hier nur 'au football' einführen.",
+      "écouter ist ein Kognate zu 'hören' aber nicht offensichtlich — Schüler:innen aus dem Deutschen kennen es möglicherweise nicht."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Zweite lebende Fremdsprache",
+  "klasse": 3,
+  "kompetenzbereich": "Schreiben",
+  "competences": [
+    "FS2.US.3.SCH.01"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "SCH"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0057",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

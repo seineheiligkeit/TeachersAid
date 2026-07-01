@@ -1,0 +1,85 @@
+{
+  "id": "c0079.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne jedem Fachbegriff die richtige Beschreibung zu.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Proton",
+        "Neutron",
+        "Elektron",
+        "Atomkern",
+        "Atomhülle",
+        "Valenzelektronen"
+      ],
+      "right": [
+        "A — Positiv geladenes Teilchen im Kern",
+        "B — Elektronen in der äußersten Schale — bestimmen chemisches Verhalten",
+        "C — Negativ geladenes Teilchen, umkreist den Kern",
+        "D — Enthält Protonen und Neutronen; sehr kleine, dichte Masse",
+        "E — Ungeladenes Teilchen im Kern",
+        "F — Bereich um den Kern, wo Elektronen angeordnet sind"
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Begriff",
+        "Beschreibung"
+      ],
+      "rows": 6
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.US.x.ALL.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Proton → A. Neutron → E. Elektron → C. Atomkern → D. Atomhülle → F. Valenzelektronen → B.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Valenzelektronen ist ein neuer Begriff — vor der Aufgabe kurz einführen oder im Info-Block erklären",
+      "Schüler:innen verwechseln Neutron und Proton — Eselsbrücke: Proton = positiv (p wie positiv)",
+      "Die Beschreibung D (Atomkern) könnte mit Proton verwechselt werden — klar formuliert halten"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Chemie",
+  "klasse": 4,
+  "kompetenzbereich": null,
+  "competences": [
+    "CHE.US.x.ALL.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0079",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:14+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

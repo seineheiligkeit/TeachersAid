@@ -1,0 +1,62 @@
+{
+  "id": "c0047.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Schau dir die folgende Beschreibung eines Gebäudes an und nenne vier Gestaltungskriterien, die bei seinem Entwurf eine Rolle gespielt haben müssen. Erkläre für jedes Kriterium kurz, warum es wichtig ist.\n\nBeschreibung: Eine Volksschule in einer österreichischen Kleinstadt. Das Gebäude hat große Fenster an allen Klassenzimmern, breite Flure, eine Rampe neben der Eingangstreppe, einen überdachten Bereich vor dem Eingang und einen Pausenhof mit Bäumen.",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Gestaltungskriterium",
+        "Warum wichtig für dieses Gebäude?"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "ENT"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "TED.US.3.ENT.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Mögliche Kriterien: Tageslicht (große Fenster → Konzentration, Energiesparen); Barrierefreiheit (Rampe → Rollstuhlzugang, gesetzliche Anforderung); Witterungsschutz (überdachter Eingang → trockenes Ankommen); Aufenthaltsqualität (Bäume, Pausenhof → Wohlbefinden, Erholung); Raumgröße (breite Flure → Brandschutz, Sicherheit bei Schulentleerung). Mindestens 4 mit sinnvoller Begründung.",
+    "acceptable_reasoning": "Jedes Kriterium, das sich plausibel aus der Beschreibung ableiten lässt, ist akzeptabel.",
+    "rubric": [],
+    "watch_outs": [
+      "Schüler:innen nennen oft nur Ästhetik — darauf hinweisen, dass Ästhetik ein Kriterium ist, aber Funktion und Sicherheit Vorrang haben.",
+      "Rampe wird oft übersehen — Barrierefreiheit als gesetzliche Anforderung (nicht nur Freundlichkeit) erläutern."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Technik und Design",
+  "klasse": 3,
+  "kompetenzbereich": "Entwicklung",
+  "competences": [
+    "TED.US.3.ENT.02"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "ENT"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0047",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

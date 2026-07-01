@@ -1,0 +1,73 @@
+{
+  "id": "c0049.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Verbinde jeden Mechanismus mit der Art der Bewegungsänderung, die er bewirkt.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Zahnradgetriebe (großes auf kleines Rad)",
+        "Kurbel + Pleuelstange",
+        "Flaschenzug mit 2 Rollen",
+        "Hebel (Abstand Last > Abstand Kraft)",
+        "Nockenwelle"
+      ],
+      "right": [
+        "Dreht langsamer, aber mit mehr Kraft",
+        "Halbiert die nötige Kraft (verdoppelt aber den Weg)",
+        "Drehbewegung wird zu Hin-und-her-Bewegung",
+        "Dreht schneller, aber mit weniger Kraft",
+        "Drehbewegung wird in ungleichmäßige Hubbewegung umgewandelt"
+      ]
+    },
+    "response": {
+      "mode": "none"
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "HER"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "TED.US.4.HER.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Zahnradgetriebe groß→klein → Dreht schneller, aber mit weniger Kraft; Kurbel + Pleuel → Drehbewegung zu Hin-und-her; Flaschenzug 2 Rollen → Kraft halbiert; Hebel (Lastabstand > Kraftabstand) → Dreht langsamer, mehr Kraft; Nockenwelle → ungleichmäßige Hubbewegung.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Zahnradübersetzung: viele Schüler:innen denken, kleineres Rad → mehr Kraft. Korrekt: kleineres angetriebenes Rad dreht schneller, NICHT mehr Kraft. Richtung der Kraftübertragung betonen.",
+      "Flaschenzug: 'Kraft halbiert' gilt für 2-Rollen-System — mehr Rollen = mehr Vorteil, aber längerer Weg."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Technik und Design",
+  "klasse": 4,
+  "kompetenzbereich": "Herstellung",
+  "competences": [
+    "TED.US.4.HER.03"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "HER"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0049",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

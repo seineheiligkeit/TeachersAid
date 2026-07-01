@@ -1,0 +1,62 @@
+{
+  "id": "c0120.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Das Diagramm zeigt acht sehr unterschiedliche Laender (z. B. Nigeria und die USA). Warum ist es problematisch, den Mittelwert dieser acht Laender als 'typischen Urbanisierungsgrad' zu bezeichnen? Welche Kennzahl waere hier fairer?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "BEG"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.3.DAT.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Problem: Die Auswahl der acht Laender ist nicht repraesentativ — sie enthaelt reiche Industrienationen (USA, Schweiz) und grosse Entwicklungslaender (Indien, Nigeria). Der Mittelwert haengt stark davon ab, WELCHE Laender einbezogen werden. Ausserdem ist Indien mit 35,4% ein starker Ausreisser nach unten. Eine fairere Kennzahl: der Median (69,55%), weil er weniger empfindlich auf extreme Werte reagiert. Noch besser: bevoelkerungsgewichteter Mittelwert, der die Laendergroesse beruecksichtigt.",
+    "acceptable_reasoning": "Antwort, die 'Auswahl der Laender beeinflusst den Mittelwert' und 'Median robuster' benennt, ist vollwertig.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schuelerinnen und Schueler koennen den Begriff 'repraesentativ' kennenlernen — er ist hier intuitiv zugaenglich.",
+      "Bevoelkerungsgewichteter Mittelwert ist eine Erweiterung, nicht Pflichtanforderung."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Mathematik",
+  "klasse": 3,
+  "kompetenzbereich": "4: Daten und Zufall",
+  "competences": [
+    "MAT.US.3.DAT.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "BEG"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0120",
+  "source": "ai",
+  "created_at": "2026-06-27T15:21:15+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

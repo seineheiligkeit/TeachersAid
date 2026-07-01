@@ -1,0 +1,71 @@
+{
+  "id": "c0086.info1",
+  "block": {
+    "id": "info1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "info",
+    "kind": "prose",
+    "content": "Der menschliche Körper leitet elektrischen Strom. Wie gut er das tut, hängt von der Hautfeuchtigkeit ab. Abb. 1 zeigt den ungefähren elektrischen Widerstand verschiedener Materialien im Vergleich. Bereits ein Strom von etwa 30 Milliampere (0,030 A) durch den Körper kann lebensgefährlich sein.",
+    "callout_role": null,
+    "teacher_note": null,
+    "watch_outs": []
+  },
+  "role": "info",
+  "kind": "prose",
+  "subject": "Physik",
+  "klasse": 3,
+  "kompetenzbereich": null,
+  "competences": [],
+  "cognitive_level": null,
+  "dimensions": [],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Kupfer (1 m)",
+          "Eisen (1 m)",
+          "Graphit (1 m)",
+          "Körper (trocken)",
+          "Körper (nass)"
+        ],
+        "values": [
+          0.017,
+          0.12,
+          40,
+          5000,
+          1000
+        ],
+        "title": "Elektrischer Widerstand — Vergleich",
+        "xlabel": "Material / Körperteil",
+        "ylabel": "Widerstand in Ω",
+        "log": true
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0086",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:19+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

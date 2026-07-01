@@ -1,0 +1,84 @@
+{
+  "id": "c0001.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Stell dir vor, du hast fünf Minuten Redezeit vor dem österreichischen Nationalrat, um für eine konkrete klimapolitische Maßnahme zu plädieren. Wähle eine Maßnahme (z.B. CO₂-Steuer, Ausbau erneuerbarer Energie, Sanierungsoffensive für Gebäude, Reduktion des Flugverkehrs) und verfasse eine kurze, überzeugende Rede (ca. 150–200 Wörter). Die Rede muss:\n• einen physikalischen Zusammenhang erklären (warum wirkt die Maßnahme?)\n• die Umsetzbarkeit auf nationaler Ebene beurteilen\n• auf einen möglichen Einwand eingehen und ihn entkräften.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 75.0
+    },
+    "cognitive_level": "create",
+    "dimensions": [
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.4.WET.05",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 20,
+    "answer_key": "Bewertet werden Struktur (These – Argumentation – Einwandbehandlung), physikalische Korrektheit der Erklärung (z.B. CO₂-Steuer → Lenkungswirkung → weniger Emissionen → weniger Treibhausgase → abgeschwächter Treibhauseffekt), Überzeugungskraft und Vollständigkeit der drei Anforderungen. Beispiel-Einwand bei CO₂-Steuer: 'Das belastet sozial Schwache.' Entkräftung: Rückverteilung der Einnahmen als Klimabonus (wie in Österreich seit 2022).",
+    "acceptable_reasoning": "Schüler:innen dürfen jede der genannten oder eine andere sinnvolle Maßnahme wählen, sofern alle drei Anforderungen erfüllt werden.",
+    "rubric": [
+      {
+        "criterion": "Physikalischer Zusammenhang",
+        "levels": [
+          "0: Fehlt oder falsch",
+          "1: Vorhanden aber ungenau",
+          "2: Korrekt und klar erklärt"
+        ]
+      },
+      {
+        "criterion": "Nationale Umsetzbarkeit",
+        "levels": [
+          "0: Nicht thematisiert",
+          "1: Erwähnt ohne Begründung",
+          "2: Mit konkretem Argument bewertet"
+        ]
+      },
+      {
+        "criterion": "Einwand und Entkräftung",
+        "levels": [
+          "0: Fehlt",
+          "1: Einwand genannt, nicht entkräftet",
+          "2: Einwand sinnvoll entkräftet"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Physikalischer Zusammenhang darf nicht fehlen – eine rein politische Rede ohne Physik erfüllt die Aufgabe nicht.",
+      "Auf Vollständigkeit der drei Anforderungen achten; häufig wird der Einwand vergessen.",
+      "Klimabonus (Österreich) ist ein konkretes, Österreich-spezifisches Beispiel das Schüler:innen kennen sollten."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Wetter und Klima",
+  "competences": [
+    "PHY.US.4.WET.05"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0001",
+  "source": "ai",
+  "created_at": "2026-06-25T11:35:33+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

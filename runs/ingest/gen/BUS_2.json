@@ -1,0 +1,221 @@
+{
+  "subject": "Bewegung und Sport",
+  "klasse": 3,
+  "kompetenzbereich": "Methodenkompetenz",
+  "title": "Trainieren mit System: Prinzipien des sportlichen Übens",
+  "kernfrage": "Wie muss Training aufgebaut sein, damit du wirklich besser wirst — und warum reicht 'einfach viel machen' nicht?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Grundprinzipien des Trainings verstehen und anwenden",
+        "throughline": "Schüler:innen sollen erkennen, dass sportliche Verbesserung kein Zufallsprodukt ist, sondern auf identifizierbaren Prinzipien beruht — und dass sie diese Prinzipien auf ihr eigenes Üben anwenden können.",
+        "talking_points": [
+          "Das Prinzip des wirksamen Reizes: Nur wenn die Belastung die gewohnte überschreitet (Überladungsprinzip), entsteht eine Anpassung — zu wenig Reiz = kein Fortschritt.",
+          "Superkompensation als Kernidee: Nach einer Belastung braucht der Körper Erholung, in der er sich nicht nur erholt, sondern leicht über das Ausgangsniveau anhebt. Zu früh wieder belasten = kein Nutzen; zu spät = Anpassung geht verloren.",
+          "Variabilität und Spezifität: Allgemeines Training baut eine Basis, sportartspezifisches Training schärft sie. Beides hat seinen Platz.",
+          "Reversibilität: Wer aufhört zu trainieren, verliert die Anpassung — das ist normale Biologie, kein Versagen."
+        ],
+        "extensions": [
+          "Schüler:innen planen für 2 Wochen ein eigenes Mini-Trainingstagebuch für eine Fähigkeit ihrer Wahl (z. B. Liegestütze, Sprungweite).",
+          "Vergleich: Wie unterscheidet sich das Training eines Sprinters von dem einer Ausdauerläuferin? (Spezifitätsprinzip)",
+          "Diskussion: Warum können auch Profisportler:innen nicht jeden Tag Wettkampfbelastungen trainieren?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "multiple_choice",
+            "prompt": "Welche Aussage beschreibt das Prinzip des wirksamen Trainingsreizes am besten?",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "A — Je öfter man trainiert, desto besser wird man — Menge ist das Wichtigste.",
+                "B — Der Körper passt sich nur an, wenn die Belastung etwas über dem gewohnten Niveau liegt.",
+                "C — Training ist am effektivsten, wenn man immer gleich hart trainiert.",
+                "D — Erholung ist wichtiger als das Training selbst."
+              ],
+              "select": "one"
+            },
+            "response": {
+              "mode": "choices",
+              "options": ["A", "B", "C", "D"],
+              "select": "one"
+            },
+            "cognitive_level": "remember",
+            "dimensions": ["MET"],
+            "serves": [
+              {"competence_id": "BUS.US.3.MET.01", "relation": "exercises"}
+            ],
+            "est_minutes": 4,
+            "answer_key": "B — Belastung über dem Gewohnten löst Anpassung aus (Überladungsprinzip / Prinzip des wirksamen Reizes). A ist falsch: pure Menge ohne ausreichenden Reiz bringt keine Verbesserung. C ist falsch: gleich bleibende Belastung führt zu Stagnation. D enthält einen Wahrheitskern (Erholung ist wichtig), ist aber in dieser Absolutheit falsch.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen wählen oft A ('mehr = besser') — das ist die häufigste Fehlvorstellung im Sportbereich.",
+              "D klingt plausibel, da Erholung im Unterricht oft betont wird — den Unterschied zwischen 'wichtig' und 'wichtiger als Training' herausarbeiten."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "ordering",
+            "prompt": "Bringe die folgenden Phasen eines Trainingszyklus in die richtige Reihenfolge (1 = zuerst, 4 = zuletzt). Erkläre in 2–3 Sätzen, was in jeder Phase im Körper passiert.",
+            "payload": {
+              "kind": "ordering",
+              "items": [
+                "A — Erholung: Der Körper repariert und passt sich an.",
+                "B — Ermüdung: Leistungsfähigkeit sinkt kurz nach der Belastung.",
+                "C — Belastung: Training findet statt, der Körper wird gefordert.",
+                "D — Superkompensation: Die Leistungsfähigkeit steigt leicht über das Ausgangsniveau."
+              ]
+            },
+            "response": {
+              "mode": "box",
+              "min_height_mm": 40
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["MET"],
+            "serves": [
+              {"competence_id": "BUS.US.3.MET.01", "relation": "exercises"}
+            ],
+            "est_minutes": 8,
+            "answer_key": "Reihenfolge: C (Belastung) → B (Ermüdung) → A (Erholung) → D (Superkompensation). Erklärung: Beim Training (C) werden Muskeln beansprucht und kleine Schäden gesetzt, was unmittelbar zur Ermüdung (B) führt. In der Erholungsphase (A) repariert der Körper diese Schäden und baut etwas mehr Kapazität auf als zuvor. Das Ergebnis ist die Superkompensation (D): ein leicht höheres Leistungsniveau, das für das nächste Training ausgenutzt werden soll.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Superkompensation ist ein vereinfachtes Modell — es erklärt das Prinzip, aber einzelne Sportler:innen reagieren unterschiedlich; das kurz erwähnen.",
+              "B (Ermüdung) und A (Erholung) werden manchmal vertauscht — darauf achten, dass Ermüdung unmittelbar nach der Belastung eintritt."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "table_fill",
+            "prompt": "Fülle die Tabelle aus: Nenne für jede Trainingssituation das Prinzip, das verletzt oder angewendet wird, und erkläre kurz die Konsequenz.",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": ["Situation", "Verletztes/angewendetes Prinzip", "Konsequenz"],
+              "rows": 4
+            },
+            "cognitive_level": "analyze",
+            "dimensions": ["MET"],
+            "serves": [
+              {"competence_id": "BUS.US.3.FAC.02", "relation": "exercises"}
+            ],
+            "est_minutes": 10,
+            "answer_key": "Situation 1: 'Lena trainiert täglich 2 Stunden, ohne Ruhetage' → Verletzung des Erholungsprinzips → Leistungsabfall, Übertraining, Verletzungsrisiko. Situation 2: 'Max läuft jeden Tag die gleiche Strecke im gleichen Tempo' → Verletzung des Progressionsprinzips → Stagnation, kein weiterer Fortschritt. Situation 3: 'Sophie trainiert 3x pro Woche Fußball mit steigender Intensität und baut Ruhetage ein' → Anwendung von Überladungs- und Erholungsprinzip → kontinuierliche Verbesserung. Situation 4: 'Tom hört nach 3 Monaten Training abrupt auf' → Reversibilitätsprinzip → erworbene Anpassungen gehen nach einigen Wochen verloren.",
+            "acceptable_reasoning": "Fachbegriffe müssen nicht exakt sein, wenn die Erklärung das Prinzip korrekt beschreibt.",
+            "watch_outs": [
+              "Situation 1 wird oft als 'sehr fleißig' bewertet — Übertraining als physiologisches Phänomen, nicht als moralische Schwäche, einführen.",
+              "Reversibilität (Situation 4) ist Schüler:innen oft nicht bekannt — kann als kurze Einleitung vor der Aufgabe erklärt werden."
+            ],
+            "rubric": [
+              {
+                "criterion": "Prinzip benennen",
+                "levels": ["Kein Prinzip erkannt", "Prinzip vage beschrieben", "Prinzip klar und korrekt benannt"]
+              },
+              {
+                "criterion": "Konsequenz erklären",
+                "levels": ["Keine Konsequenz genannt", "Pauschal ('ist schlecht')", "Physiologisch plausible Konsequenz erklärt"]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "open_response",
+            "prompt": "Stell dir vor, eine Mitschülerin sagt: 'Ich trainiere seit 3 Monaten jeden Tag Liegestütze — 20 Stück — und ich werde einfach nicht stärker!' Erkläre ihr anhand von mindestens 2 Trainingsprinzipien, was das Problem ist und was sie ändern sollte.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 45
+            },
+            "cognitive_level": "analyze",
+            "dimensions": ["MET"],
+            "serves": [
+              {"competence_id": "BUS.US.3.MET.01", "relation": "exercises"}
+            ],
+            "est_minutes": 10,
+            "answer_key": "Hauptproblem 1 — Progression fehlt: 20 Liegestütze täglich ist nach der Angewöhnung kein ausreichender Reiz mehr (Verletzung des Prinzips des wirksamen Reizes / Überladungsprinzip). Lösung: Anzahl oder Schwierigkeitsgrad schrittweise steigern. Hauptproblem 2 — Eventuell kein Erholungstag: täglich trainieren ohne Pause verhindert die Superkompensation. Lösung: z. B. 3–4x/Woche trainieren. Bonus: Variabilität einbauen (Varianten: enge Liegestütze, Liegestütze auf einer Hand etc.).",
+            "acceptable_reasoning": "Schüler:innen, die Supercompensation nicht benennen, aber korrekt erklären ('der Körper braucht Pause zum Aufbauen'), voll anerkennen.",
+            "watch_outs": [
+              "Schüler:innen denken oft, das Problem sei 'zu wenig Trainingszeit' — auf die Qualität (Reizintensität) vs. Quantität hinweisen.",
+              "Das Beispiel mit Liegestützen ist absichtlich körpernah gewählt — keine Geräte nötig, jede:r kann es nachvollziehen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Prinzipien identifiziert",
+                "levels": ["Kein Prinzip genannt", "1 Prinzip korrekt", "2+ Prinzipien korrekt benannt"]
+              },
+              {
+                "criterion": "Lösungsvorschlag",
+                "levels": ["Kein Vorschlag", "Vorschlag ohne Bezug zu Prinzipien", "Konkreter, prinzipienbasierter Vorschlag"]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "movement_task",
+            "prompt": "Führe folgendes Mini-Experiment durch: Mache so viele Liegestütze (oder Kniebeugen) in einer Minute, wie du kannst, und notiere die Zahl. Mache dann 3 Minuten Pause. Wiederhole die Übung und notiere erneut. Beantworte danach: Hat sich die Zahl verändert? Was sagt dir das über Ermüdung und Erholung?",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": ["MET", "SEL"],
+            "modality": "enactive",
+            "serves": [
+              {"competence_id": "BUS.US.3.MET.01", "relation": "exercises"}
+            ],
+            "est_minutes": 10,
+            "answer_key": "Die meisten Schüler:innen werden beim zweiten Durchgang weniger schaffen als beim ersten (Ermüdung überwiegt 3-Minuten-Pause). Die Reflexion sollte enthalten: Ermüdung tritt schnell ein, vollständige Erholung dauert länger als 3 Minuten. Dies veranschaulicht, warum zwischen intensiven Trainingseinheiten genügend Erholungszeit nötig ist.",
+            "acceptable_reasoning": "Wenn jemand beim zweiten Durchgang gleich viele oder mehr schafft: Trainingseffekt ausschließen (möglicherweise besser eingewärmt) — das ist ebenfalls eine wertvolle Beobachtung.",
+            "watch_outs": [
+              "Vorher fragen, ob gesundheitliche Einschränkungen vorliegen; Kniebeugen als Alternative anbieten.",
+              "Schüler:innen neigen dazu, 'ich weiß nicht' zu schreiben — ermutigen, die Zahlen konkret zu nennen und zu vergleichen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "create_produce",
+            "prompt": "Entwirf einen 2-Wochen-Trainingsplan (Überblick) für eine/n Mitschüler:in, der/die in 6 Wochen beim Sportfest die 400-Meter-Runde möglichst schnell laufen möchte. Der Plan soll mindestens 3 Trainingsprinzipien sichtbar machen. Erkläre in 2–3 Sätzen, welche Prinzipien du eingebaut hast.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55
+            },
+            "cognitive_level": "create",
+            "dimensions": ["MET"],
+            "serves": [
+              {"competence_id": "BUS.US.3.MET.01", "relation": "exercises"}
+            ],
+            "est_minutes": 12,
+            "answer_key": "Ein guter Plan enthält: Progressionsprinzip (steigende Belastung von Woche 1 zu Woche 2), Erholungsprinzip (z. B. nicht mehr als 2 intensive Einheiten in Folge, Ruhetage), Spezifitätsprinzip (Lauftraining, kein reines Krafttraining). Bonus: Grundlage-Ausdauer in Woche 1 (ruhigeres Tempo), Tempoläufe in Woche 2. Bewertung: Erklärt der/die Schüler:in die eingebauten Prinzipien korrekt? Sind die Belastungen für eine 10–14-Jährige/n realistisch?",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Pläne dürfen nicht zu intensiv sein — täglich maximale Belastung ist physiologisch falsch und im Sinne der Aufgabe ein Fehler.",
+              "Die Erklärung der Prinzipien ist wichtiger als die genaue Stundenanzahl des Plans."
+            ],
+            "rubric": [
+              {
+                "criterion": "Prinzipien angewendet",
+                "levels": ["Keine Prinzipien erkennbar", "1–2 Prinzipien erkennbar", "3+ Prinzipien klar erkennbar und erklärt"]
+              },
+              {
+                "criterion": "Realismus",
+                "levels": ["Unrealistisch (täglich maximal)", "Ansatzweise realistisch", "Altersgemäß realistischer Plan"]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

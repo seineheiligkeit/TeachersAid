@@ -1,0 +1,84 @@
+{
+  "id": "c0095.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Lies die folgende Situation und beantworte die Fragen.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Die Gemeinde Bergtal (fiktiv, periphere Lage, ca. 800 Einwohner:innen) hat drei Probleme: (1) Der einzige Arzt geht in Pension, kein Nachfolger in Sicht. (2) Der letzte Lebensmittelladen hat geschlossen. (3) Die Jugendlichen verlassen die Gemeinde nach der Schule.\n\nDer Gemeinderat diskutiert vier Maßnahmen:\n(A) Breitbandausbau für Homeoffice-Förderung, um Familien anzulocken\n(B) Staatliche Förderung für einen Dorfarzt\n(C) Kooperation mit Nachbargemeinden für einen gemeinsamen Einkaufsbus\n(D) Keine Maßnahmen: natürliche Entwicklung zulassen\n\nWelche Maßnahme würdest du empfehlen – und warum? Du kannst auch mehrere kombinieren."
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "UK",
+      "HK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.ZEN.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Keine Musterlösung; Gütekriterien: Schüler:innen begründen ihre Wahl mit mindestens einem Argument; sie bedenken mögliche Nachteile oder Grenzen der gewählten Maßnahme. Kombination von Maßnahmen ist realistisch und soll gewürdigt werden. Maßnahme D (keine Eingriffe) kann argumentiert werden, wenn die Begründung kohärent ist (Ressourcen sollen in wachsende Regionen fließen).",
+    "acceptable_reasoning": "Es gibt keine falsche Antwort – aber jede Antwort braucht eine begründete Argumentation. Die Fähigkeit, Vor- und Nachteile gegeneinander abzuwägen, ist das Lernziel.",
+    "rubric": [
+      {
+        "criterion": "Begründung der Maßnahme",
+        "levels": [
+          "Keine Begründung",
+          "Begründung vorhanden",
+          "Begründung mit Vor- und Nachteilen"
+        ]
+      },
+      {
+        "criterion": "Realismus und Umsetzbarkeit",
+        "levels": [
+          "Maßnahme nicht plausibel",
+          "Plausibel aber ohne Einschränkungen",
+          "Plausibel mit realistischer Einschätzung von Grenzen"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Dieses Szenario ist fiktiv – keine reale Gemeinde verwenden. Wenn Schüler:innen eigene Gemeindeprobleme einbringen, ist das wertvoll, aber die Diskussion sollte nicht persönlich werden.",
+      "Maßnahme A (Breitband) ist eine reale politische Priorität in Österreich (Breitbandmilliarde) – kann als Anknüpfungspunkt dienen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Zentren und Peripherien in Österreich",
+  "competences": [
+    "GWB.US.3.ZEN.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "UK",
+    "HK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0095",
+  "source": "ai",
+  "created_at": "2026-06-26T19:02:29+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

@@ -1,0 +1,82 @@
+{
+  "id": "c0042.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Stell dir vor, du sollst eine kurze Tanzszene (ca. 30 Sekunden) zu einem Musikstück gestalten, das eine Geschichte erzählt (z. B. ein Gewitter, eine Begegnung zweier Personen, ein Tag am Meer).\n\nWähle ein Bild oder eine Stimmung und beantworte:\n1. Welche Geschichte / Stimmung hast du gewählt?\n2. Welche zwei Bewegungsqualitäten (aus: leicht/schwer, schnell/langsam, weit/eng) passen dazu?\n3. Wie verändert sich die Bewegung im Verlauf – gibt es eine Steigerung, einen Höhepunkt, eine Auflösung?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 40.0
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "TAN"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MUS.US.3.TAN.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Offene Antwort; Bewertung: Stimmung klar formuliert, Bewegungsqualitäten stimmig begründet, dramaturgische Kurve (Steigerung/Höhepunkt/Auflösung) zumindest angedeutet.",
+    "acceptable_reasoning": "Jede in sich schlüssige Wahl akzeptabel; die Begründung (Warum passen diese Qualitäten?) zählt.",
+    "rubric": [
+      {
+        "criterion": "Stimmungswahl",
+        "levels": [
+          "unklar",
+          "konkret und bildhaft formuliert"
+        ]
+      },
+      {
+        "criterion": "Bewegungsqualitäten",
+        "levels": [
+          "fehlend",
+          "genannt ohne Begründung",
+          "genannt und mit Stimmung verknüpft"
+        ]
+      },
+      {
+        "criterion": "Dramaturgie",
+        "levels": [
+          "keine Kurve erkennbar",
+          "Steigerung oder Höhepunkt erwähnt",
+          "vollständige Kurve mit Auflösung"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Dramaturgische Kurve ist für Klasse 3 anspruchsvoll – Lehrkraft kann Beispiel aus einem Filmmusik-Ausschnitt vorzeigen.",
+      "Schüler:innen planen oft sehr viele Details und vergessen, auf die Bewegungsqualitäten zu fokussieren."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Musik",
+  "klasse": 3,
+  "kompetenzbereich": "Tanzen, Bewegen und Darstellen",
+  "competences": [
+    "MUS.US.3.TAN.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "TAN"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0042",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

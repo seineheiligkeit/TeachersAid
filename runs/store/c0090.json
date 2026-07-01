@@ -1,0 +1,760 @@
+{
+  "id": "c0090",
+  "stage": "content",
+  "status": "approved",
+  "source": "generated",
+  "created_at": "2026-06-26T19:02:20+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00",
+  "title": "Geographie und wirtschaftliche Bildung 1. Kl. — Was unser Essen mit dem Klima zu tun hat (generiert)",
+  "note": "",
+  "request": {
+    "subject": "Geographie und wirtschaftliche Bildung",
+    "klasse": 1,
+    "stufe": "Unterstufe",
+    "schulform": null,
+    "topic_raw": "Was unser Essen mit dem Klima zu tun hat",
+    "envelope": "doppelstunde",
+    "options": {}
+  },
+  "resolution": {
+    "fassung": {
+      "kurztitel": "AHS-Lehrplan (konsolidiert)",
+      "bgbl": "BGBl. II Nr. 204/2024",
+      "doknr": "NOR40264237",
+      "valid_from": "2024-09-01",
+      "valid_to": "2026-08-31"
+    },
+    "subject": "Geographie und wirtschaftliche Bildung",
+    "klasse": 1,
+    "matched_kompetenzbereiche": [
+      "Leben und Wirtschaften im Hinblick auf nachhaltige Ernährung"
+    ],
+    "grade_check": true,
+    "competences": [
+      {
+        "id": "GWB.US.1.LEB3.01",
+        "kompetenzbereich": "Leben und Wirtschaften im Hinblick auf nachhaltige Ernährung",
+        "klasse": 1,
+        "text": "ausgehend von individuellen Ernährungsgewohnheiten (land)wirtschaftliche Produktion, deren gesellschaftliche, wirtschaftliche und naturräumliche Bedingungen sowie deren Wandel an weltweit ausgewählten Fallbeispielen verorten und vergleichen;",
+        "source_ref": "GEOGRAPHIE UND WIRTSCHAFTLICHE BILDUNG / 1. Klasse / Leben und Wirtschaften im Hinblick auf nachhaltige Ernährung",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      },
+      {
+        "id": "GWB.US.1.LEB3.02",
+        "kompetenzbereich": "Leben und Wirtschaften im Hinblick auf nachhaltige Ernährung",
+        "klasse": 1,
+        "text": "grundlegende Phänomene und Prozesse beschreiben, die für das Verständnis des Klimawandels und seiner gesellschaftlichen, wirtschaftlichen und ökologischen Folgen wichtig sind;",
+        "source_ref": "GEOGRAPHIE UND WIRTSCHAFTLICHE BILDUNG / 1. Klasse / Leben und Wirtschaften im Hinblick auf nachhaltige Ernährung",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      },
+      {
+        "id": "GWB.US.1.LEB3.03",
+        "kompetenzbereich": "Leben und Wirtschaften im Hinblick auf nachhaltige Ernährung",
+        "klasse": 1,
+        "text": "den Einfluss des Klimawandels auf die Erzeugung von ausreichenden und gesunden Nahrungsmitteln an Fallbeispielen erörtern.",
+        "source_ref": "GEOGRAPHIE UND WIRTSCHAFTLICHE BILDUNG / 1. Klasse / Leben und Wirtschaften im Hinblick auf nachhaltige Ernährung",
+        "dimensions": [],
+        "uebergreifende_themen": [
+          11
+        ],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      }
+    ],
+    "notes": []
+  },
+  "plan": null,
+  "content": {
+    "meta": {
+      "title": "Was unser Essen mit dem Klima zu tun hat",
+      "subtitle": "LLM-Entwurf — Erstprüfung",
+      "subject": "Geographie und wirtschaftliche Bildung",
+      "stufe": "Unterstufe",
+      "klasse": 1,
+      "kernfrage": "Wie beeinflusst unser Essalltag das Klima — und was hat der Klimawandel umgekehrt mit unserer Ernährung zu tun?",
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "lehrplan_label": "Geographie und wirtschaftliche Bildung · 1. Klasse · Leben und Wirtschaften im Hinblick auf nachhaltige Ernährung",
+      "content_language": "de",
+      "subject_models": []
+    },
+    "subject_model": {
+      "subject": "Geographie und wirtschaftliche Bildung",
+      "stufe": "Unterstufe",
+      "dimensions": [
+        {
+          "id": "OK",
+          "label": "Orientierungskompetenz",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "UK",
+          "label": "Urteilskompetenz",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "HK",
+          "label": "Handlungskompetenz",
+          "note": "often enactive/simulativ",
+          "modality": "printable"
+        }
+      ],
+      "content_areas": [],
+      "task_kind_extensions": [
+        "map_work",
+        "case_study",
+        "position_argument"
+      ]
+    },
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Unser Essalltag und seine Klimaspuren",
+        "teacher_overview": {
+          "throughline": "Einstieg über die eigene Lebenswelt: Was essen Schüler:innen täglich? Dann Konfrontation mit CO₂-Daten und der Erkenntnis, dass Ernährung ein messbarer Klimafaktor ist. Die Daten sind korrekt und peer-reviewed (Our World in Data / Poore & Nemecek 2018).",
+          "talking_points": [
+            "CO₂eq (Kohlendioxidäquivalent) fasst alle Treibhausgase in einer einheitlichen Maßgröße zusammen — Methan aus Rindern ist ca. 28× stärker als CO₂ auf 100-Jahres-Sicht.",
+            "Die Abbildung zeigt Medianwerte — es gibt große Streuung je nach Produktionsmethode, Herkunftsland und Transport. Das ist kein Fehler, sondern inhärente Datenkomplexität.",
+            "Wichtig: Kein Moralismus. Das Ziel ist das Verstehen von Zusammenhängen, nicht das Verurteilen von Ernährungsweisen."
+          ],
+          "extensions": [
+            "Schüler:innen berechnen den ungefähren CO₂-Fußabdruck ihres gestrigen Abendessens (grobe Schätzung mit den Diagramm-Werten).",
+            "Vergleich: Welche anderen Alltagsaktivitäten erzeugen ähnlich viel CO₂ wie ein Kilogramm Rindfleisch? (Recherche)"
+          ],
+          "differentiation": null,
+          "timing_notes": null
+        },
+        "blocks": [
+          {
+            "id": "t1",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "open_response",
+            "prompt": "Überlege: Was hast du gestern zum Mittagessen gegessen? Schreibe die drei Hauptzutaten auf. Wo könnten diese Zutaten herkommen (welches Land, welcher Kontinent)?",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "remember",
+            "difficulty": null,
+            "dimensions": [
+              "OK"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "GWB.US.1.LEB3.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 5,
+            "answer_key": "Offene Schüler:innen-Antwort. Erwünschte Erkenntnis: Viele alltägliche Lebensmittel kommen aus weit entfernten Regionen (Kakao aus Westafrika, Soja aus Südamerika, Tomaten aus Spanien/Marokko).",
+            "acceptable_reasoning": null,
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Einstiegsaufgabe — keine 'richtige' Antwort. Ziel ist die Sensibilisierung für die globale Herkunft von Lebensmitteln.",
+              "Religiöse oder kulturelle Ernährungsbesonderheiten respektieren — kein Pflicht-Mahlzeitenformat vorgeben."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t2",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "abb1"
+            ],
+            "provenance": null,
+            "role": "task",
+            "kind": "data_interpretation",
+            "prompt": "Schau dir Abbildung 1 (CO₂-Äquivalente von Lebensmitteln) an.\na) Welches Lebensmittel verursacht die höchsten, welches die niedrigsten Emissionen pro Kilogramm?\nb) Wie viel mal mehr CO₂eq verursacht ein Kilogramm Rindfleisch im Vergleich zu einem Kilogramm Linsen? Berechne das Verhältnis.\nc) Was fällt dir beim Vergleich von tierischen und pflanzlichen Lebensmitteln generell auf?",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "understand",
+            "difficulty": null,
+            "dimensions": [
+              "OK",
+              "UK"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "GWB.US.1.LEB3.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "a) Höchste: Rindfleisch (60 kg CO₂eq/kg); niedrigste: Kartoffeln (0,3 kg CO₂eq/kg). b) 60 / 0,9 ≈ 67 — Rindfleisch verursacht etwa 67-mal mehr CO₂eq als Linsen. c) Tierische Produkte haben generell deutlich höhere Emissionen als pflanzliche, besonders Wiederkäuer (Rind, Schaf) durch Methan.",
+            "acceptable_reasoning": "Auch ungefähre Berechnungen (60 ÷ 0,9 ≈ 60–70-fach) sind akzeptabel.",
+            "rubric": [
+              {
+                "criterion": "Ablesung und Vergleich",
+                "levels": [
+                  "Falsche Ablesewerte",
+                  "Richtige Endwerte, kein Vergleich",
+                  "Richtige Ablesewerte und sinnvoller Vergleich"
+                ]
+              },
+              {
+                "criterion": "Verhältnisberechnung",
+                "levels": [
+                  "Keine Berechnung",
+                  "Ansatz erkennbar, Ergebnis falsch",
+                  "Korrekte Division mit Ergebnis ca. 60–70-fach"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Die y-Achse hat große Skalenunterschiede — Schüler:innen sollen explizit auf die genauen Zahlenwerte schauen, nicht nur visuell schätzen.",
+              "Manche Schüler:innen werden das Verhältnis addieren statt dividieren — darauf achten.",
+              "Die Zahlen gelten pro kg Lebensmittel, nicht pro Portion — das verzerrt den direkten Vergleich (Rindfleisch-Portionen sind kleiner als Kartoffelportionen). Diesen Hinweis kann die Lehrkraft als Vertiefung einbringen."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t3",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "abb2"
+            ],
+            "provenance": null,
+            "role": "task",
+            "kind": "true_false_justify",
+            "prompt": "Beurteile folgende Aussagen über den Klimawandel als richtig oder falsch und begründe kurz:",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Der Klimawandel wird hauptsächlich durch Treibhausgase wie CO₂ und Methan verursacht, die durch menschliche Aktivitäten freigesetzt werden.",
+                "Die globale Durchschnittstemperatur ist seit 1900 gleichmäßig gesunken.",
+                "Der Treibhauseffekt ist ein natürlicher Prozess — erst die Verstärkung durch den Menschen macht ihn zum Problem.",
+                "Wenn der Klimawandel die Temperaturen erhöht, werden alle Regionen der Erde mehr Nahrung produzieren können."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 8
+            },
+            "cognitive_level": "understand",
+            "difficulty": null,
+            "dimensions": [
+              "OK"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "GWB.US.1.LEB3.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "answer_key": "1. Richtig — CO₂ aus Verbrennung fossiler Brennstoffe, Methan aus Landwirtschaft/Viehzucht etc. sind die Haupttreiber. 2. Falsch — die Temperatur ist gestiegen (Abb. 2 zeigt klaren Aufwärtstrend). 3. Richtig — der natürliche Treibhauseffekt ist lebensnotwendig; die anthropogene Verstärkung ist das Problem. 4. Falsch — Regionen wie Nordafrika, Subsahara, Südostasien werden durch Hitze, Dürre und extreme Wetterereignisse Ernteverluste erleiden; nur wenige nördliche Hochlagen profitieren kurzfristig.",
+            "acceptable_reasoning": null,
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Aussage 3 ist eine wichtige Präzisierung — der Treibhauseffekt an sich ist nicht schlecht, sondern sein anthropogene Verstärkung. Das ist eine häufige Fehlvorstellung.",
+              "Aussage 4 zielt auf eine verbreitete Vereinfachung — 'wärmer = mehr Essen' stimmt nur für bestimmte kühle Regionen, nicht global.",
+              "Die Zeitreihe in Abb. 2 dient als Beleg für Aussage 2 — Schüler:innen sollen explizit darauf verwiesen werden."
+            ],
+            "self_check": null
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Klimawandel und Ernährungssicherheit — lokal und global",
+        "teacher_overview": {
+          "throughline": "Im zweiten Teil verbinden Schüler:innen die abstrakten Klimadaten mit konkreten Folgen für die Nahrungsmittelproduktion — am globalen Fallbeispiel und in Bezug auf ihre eigene Region. Die Abschlussaufgabe verlangt kreativ-produktorientiertes Denken.",
+          "talking_points": [
+            "Ernährungssicherheit (food security) hat vier Dimensionen: Verfügbarkeit, Zugang, Nutzung und Stabilität — alle können durch den Klimawandel beeinträchtigt werden.",
+            "Österreich ist als Alpenstaat besonders betroffen: Gletscherschwund, Extremwetterereignisse, Spätfröste, Trockensommer — mit direkten Auswirkungen auf Landwirtschaft.",
+            "Fallbeispiel Sahel/Ostafrika ist ein Kontrastfall: wenige CO₂-Emissionen, sehr hohe Betroffenheit — Grundlage für den Gerechtigkeitsaspekt."
+          ],
+          "extensions": [
+            "Recherche: Welche landwirtschaftlichen Kulturen werden in deinem Bundesland hauptsächlich angebaut? Welche Risiken bringt der Klimawandel für diese Kulturen?",
+            "Diskussion: Was bedeutet 'Klimagerechtigkeit' — warum sind ärmere Länder oft stärker betroffen, obwohl sie weniger zum Klimawandel beigetragen haben?"
+          ],
+          "differentiation": null,
+          "timing_notes": null
+        },
+        "blocks": [
+          {
+            "id": "t4",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "case_study",
+            "prompt": "Fallbeispiel: Die Sahelzone (Westafrika)\nDie Sahelzone ist eine Übergangszone zwischen der Sahara und den Savannen Afrikas. Die Bevölkerung lebt hauptsächlich von Subsistenzlandwirtschaft und Viehzucht. Seit den 1970er-Jahren treten Dürreperioden häufiger auf. Die Regenzeit wird kürzer und unregelmäßiger. Der Klimawandel verstärkt diese Entwicklung.\n\na) Beschreibe zwei konkrete Auswirkungen des Klimawandels auf die Nahrungsmittelproduktion in der Sahelzone.\nb) Welche Menschen und Gesellschaftsgruppen sind in dieser Region besonders betroffen? Begründe deine Antwort.\nc) Vergleiche: Welche Auswirkungen könnte ein ähnlicher Trockenheitstrend auf die Landwirtschaft in deiner Region haben?",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 50.0
+            },
+            "cognitive_level": "analyze",
+            "difficulty": null,
+            "dimensions": [
+              "OK",
+              "UK"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "GWB.US.1.LEB3.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 12,
+            "answer_key": "a) Z. B.: Ernteausfälle durch Dürre; Weideland schrumpft, Vieh verhungert; kürzere Anbausaison; stärkere Überschwemmungen in der kurzen Regenzeit zerstören Ernten. b) Besonders betroffen: Kleinbauernfamilien ohne technische Bewässerung, Frauen (oft hauptverantwortlich für Subsistenzanbau), Kinder (Unterernährung), Nomaden. c) Schüler:innen-abhängig; mögliche Antworten: Obst- und Weinanbau in Ostösterreich gefährdet durch Spätfröste und Trockenheit; Weizen leidet bei Hitzestress.",
+            "acceptable_reasoning": "Für (b): Jede begründete Aussage über spezifische Verwundbarkeit (z. B. fehlende finanzielle Ressourcen, Abhängigkeit von Niederschlag) ist akzeptabel.",
+            "rubric": [
+              {
+                "criterion": "Zwei Auswirkungen Sahelzone",
+                "levels": [
+                  "Keine oder eine nicht plausible Auswirkung",
+                  "Eine Auswirkung mit Begründung",
+                  "Zwei plausible Auswirkungen, klar auf Nahrungsmittelproduktion bezogen"
+                ]
+              },
+              {
+                "criterion": "Besondere Betroffenheit",
+                "levels": [
+                  "Keine Differenzierung",
+                  "Eine Gruppe genannt, aber nicht begründet",
+                  "Mindestens eine Gruppe mit plausibler Begründung der Verwundbarkeit"
+                ]
+              },
+              {
+                "criterion": "Lokaler Bezug",
+                "levels": [
+                  "Kein Bezug auf eigene Region",
+                  "Vager Bezug ohne Inhalt",
+                  "Konkreter und plausibel begründeter Vergleich mit eigener Region"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Das Fallbeispiel enthält keine erfundenen Fakten über spezifische Gemeinden — nur die wissenschaftlich belegte Klimatendenz.",
+              "Für (c): Region-agnostisch bleiben — Schüler:innen können aus eigener Beobachtung oder Atlas schöpfen; keine Ortsangabe vorschreiben.",
+              "Achtung auf Eurozentrismus: Afrika ist nicht 'das Problem', sondern das Opfer eines Problems, zu dem Europa maßgeblich beigetragen hat."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t5",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "abb3"
+            ],
+            "provenance": null,
+            "role": "task",
+            "kind": "data_interpretation",
+            "prompt": "Schau dir Abbildung 3 (Emissionen nach Ernährungsweise) an.\na) Welche Ernährungsweise erzeugt die geringsten, welche die höchsten Treibhausgasemissionen?\nb) Wie viel Prozent weniger Emissionen hat eine vegetarische im Vergleich zu einer durchschnittlichen österreichischen Ernährung?\nc) Ist eine Änderung der Ernährungsweise ein wirksames Mittel gegen den Klimawandel? Nenne ein Argument dafür und eines dagegen.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "evaluate",
+            "difficulty": null,
+            "dimensions": [
+              "UK"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "GWB.US.1.LEB3.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "answer_key": "a) Geringste: vegan (42); höchste: Fleisch-betont (130). b) 100 - 55 = 45 Indexpunkte weniger, also 45 % Reduktion. c) Dafür: Der Effekt ist messbar, jeder kann selbst handeln, kein technischer Aufwand. Dagegen: Individuelle Ernährungsänderungen allein reichen nicht — strukturelle Änderungen in Landwirtschaft und Industrie sind nötiger; Ernährung ist kulturell und sozioökonomisch nicht für alle gleich steuerbar.",
+            "acceptable_reasoning": "Für (c): Beide Seiten müssen nicht perfekt sein — entscheidend ist, dass Schüler:innen einen gesellschaftlichen und einen individuellen Aspekt abwägen.",
+            "rubric": [
+              {
+                "criterion": "Ablesung und Berechnung",
+                "levels": [
+                  "Falsche Ablesewerte oder keine Berechnung",
+                  "Richtige Endwerte, falsche Prozentzahl",
+                  "Richtige Ablesewerte und korrekte Berechnung"
+                ]
+              },
+              {
+                "criterion": "Pro-/Contra-Argument",
+                "levels": [
+                  "Nur eine Seite oder keine",
+                  "Beide Seiten genannt, aber vage",
+                  "Beide Seiten mit je einem konkreten, sachlich fundierten Argument"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Der Index (Durchschnitt = 100) kann verwirren — explizit erklären, dass 100 dem durchschnittlichen österreichischen Haushalt entspricht.",
+              "Die Frage nach 'wirksam' ist eine echte Debatte — keine Seite einseitig als 'richtig' bewerten.",
+              "Die Daten sind Durchschnittswerte; individuelle Ernährung ist komplexer (Bio vs. konventionell, Saisonalität etc.)."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t6",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "open_response",
+            "prompt": "Erkundige dich: Welche landwirtschaftlichen Produkte werden in deiner Region oder deinem Bundesland typischerweise angebaut oder erzeugt? (Frage zuhause nach, schaue auf der Website deines Bundeslandes oder im Atlas nach.)\n\nNotiere zwei Produkte und erkläre in 2–3 Sätzen, welche Auswirkungen häufigere Dürren oder extreme Hitze-Sommer auf die Ernte dieser Produkte haben könnten.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 40.0
+            },
+            "cognitive_level": "analyze",
+            "difficulty": null,
+            "dimensions": [
+              "OK",
+              "HK"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "GWB.US.1.LEB3.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "answer_key": "Schüler:innen-abhängig je nach Region. Beispiele: Wein (Burgenland, Niederösterreich) — hitzeempfindlich bei Blüte, profitiert kurzfristig, leidet bei extremer Trockenheit; Äpfel (Steiermark) — Spätfrost-Risiko steigt; Milchwirtschaft (Tirol, Vorarlberg) — Almen trocknen aus, Futtermittelpreise steigen.",
+            "acceptable_reasoning": null,
+            "rubric": [
+              {
+                "criterion": "Regionale Verankerung",
+                "levels": [
+                  "Kein Regionalbezug",
+                  "Ein Produkt ohne Regionalbezug",
+                  "Zwei Produkte mit erkennbarem Regionalbezug"
+                ]
+              },
+              {
+                "criterion": "Klimafolgenanalyse",
+                "levels": [
+                  "Keine sinnvolle Verbindung zu Klimafolgen",
+                  "Vage Aussage (z. B. 'wird schlechter')",
+                  "Zwei konkrete und plausible Auswirkungen mit Begründung"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Keine konkreten Ortsfakten vorgeben — nur Gerüst. Schüler:innen aus verschiedenen Bundesländern werden völlig verschiedene Produkte nennen.",
+              "Die Quellenangabe (z. B. 'Auskunft Eltern', 'AMA-Website', 'Schulatlas') einfordern — auch mündliche Quellen sind gültig."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t7",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "abb1"
+            ],
+            "provenance": null,
+            "role": "task",
+            "kind": "create_produce",
+            "prompt": "Entwirf eine 'klimabewusste Wochenspeisekarte' für deine Klasse (nur Mittagessen, 5 Tage):\n1. Jedes Gericht soll sowohl nahrhaft als auch klimafreundlicher sein als das aktuelle Durchschnittsgericht.\n2. Markiere bei jedem Gericht, welche Hauptzutat die größte CO₂-Reduktion bringt.\n3. Überlege: Welche Zutaten könnten aus deiner Region stammen? Markiere sie mit einem Stern (★).\nHinweis: Du musst nicht alle Zutaten kennen — es geht um die Idee und Begründung.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 60.0
+            },
+            "cognitive_level": "create",
+            "difficulty": null,
+            "dimensions": [
+              "UK",
+              "HK"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "GWB.US.1.LEB3.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 12,
+            "answer_key": "Offene Schöpfungsaufgabe. Bewertet wird: Kohärenz (Gerichte sind essbar und sinnvoll), erkennbarer CO₂-Gedanke (weniger Fleisch/mehr pflanzlich), Lokalbezug (auch wenn unvollständig). Musterlösung: Z. B. Mo: Linseneintopf ★ (Linsen ev. regional; sehr niedrig CO₂); Di: Kartoffelgulasch ★; Mi: Nudeln mit Tomatensoße; Do: Gemüsecurry; Fr: Kaiserschmarrn (Eier, aber kein Fleisch).",
+            "acceptable_reasoning": null,
+            "rubric": [
+              {
+                "criterion": "Klimabewusstsein (CO₂-Gedanke erkennbar)",
+                "levels": [
+                  "Keine erkennbare Klimarücksicht",
+                  "Weniger Fleisch, aber keine Begründung",
+                  "Explizite Begründung mit Bezug auf Abb. 1"
+                ]
+              },
+              {
+                "criterion": "Regionale Zutaten",
+                "levels": [
+                  "Kein Stern-Versuch",
+                  "Mindestens ein Stern mit plausibler Zutat",
+                  "Mehrere Sterne mit kurzer Erklärung"
+                ]
+              },
+              {
+                "criterion": "Kreativität und Kohärenz",
+                "levels": [
+                  "Unfertige oder unplausible Speisekarte",
+                  "5 Gerichte, aber ohne roten Faden",
+                  "Stimmige, ausgewogene Speisekarte mit erkennbarer Konzeption"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Keine Ernährungsvorschriften oder Moralismus — vegan ist nicht Pflicht; Reduktion ist das Ziel.",
+              "Schüler:innen ohne Kochwissen können auf einfache Gerichte zurückgreifen — das ist ausdrücklich erlaubt.",
+              "Der Stern (★) für regionale Zutaten hat keinen festen Antwortschlüssel — Lokalität ist region-abhängig."
+            ],
+            "self_check": null
+          }
+        ]
+      }
+    ],
+    "assets": [
+      {
+        "id": "abb1",
+        "role": "figure",
+        "medium": "visual",
+        "generator": "matplotlib:bar_chart",
+        "spec": {
+          "categories": [
+            "Rindfleisch",
+            "Käse",
+            "Schweinefleisch",
+            "Geflügel",
+            "Eier",
+            "Milch (1 L)",
+            "Tofu",
+            "Linsen",
+            "Kartoffeln"
+          ],
+          "values": [
+            60.0,
+            21.0,
+            7.6,
+            6.1,
+            4.5,
+            3.2,
+            2.8,
+            0.9,
+            0.3
+          ],
+          "title": "CO₂-Äquivalente ausgewählter Lebensmittel (kg CO₂eq pro kg Lebensmittel)",
+          "xlabel": "Lebensmittel",
+          "ylabel": "kg CO₂eq / kg (log-Skala)",
+          "log": true
+        },
+        "correctness_surface": null,
+        "misleading_in_isolation": false,
+        "intentionally_flawed": null,
+        "machine_generatable": true,
+        "provenance": null,
+        "data_source": null,
+        "illustrative": false,
+        "caption": null
+      },
+      {
+        "id": "abb2",
+        "role": "figure",
+        "medium": "visual",
+        "generator": "matplotlib:line",
+        "spec": {
+          "title": "Globale Durchschnittstemperatur-Anomalie gegenüber 1850–1900 Mittelwert",
+          "xlabel": "Jahr",
+          "ylabel": "Temperaturabweichung in °C",
+          "log": false,
+          "categories": [
+            "1900",
+            "1920",
+            "1940",
+            "1960",
+            "1980",
+            "2000",
+            "2010",
+            "2020",
+            "2023"
+          ],
+          "values": [
+            -0.1,
+            -0.1,
+            0.1,
+            0.0,
+            0.3,
+            0.6,
+            0.8,
+            1.1,
+            1.45
+          ]
+        },
+        "correctness_surface": null,
+        "misleading_in_isolation": false,
+        "intentionally_flawed": null,
+        "machine_generatable": true,
+        "provenance": null,
+        "data_source": null,
+        "illustrative": false,
+        "caption": null
+      },
+      {
+        "id": "abb3",
+        "role": "figure",
+        "medium": "visual",
+        "generator": "matplotlib:bar_chart",
+        "spec": {
+          "categories": [
+            "Fleisch-betont",
+            "Durchschnitt (AT)",
+            "Wenig Fleisch",
+            "Vegetarisch",
+            "Vegan"
+          ],
+          "values": [
+            130.0,
+            100.0,
+            78.0,
+            55.0,
+            42.0
+          ],
+          "title": "Anteil der Treibhausgasemissionen verschiedener Ernährungsweisen (Index: 'alles' = 100)",
+          "xlabel": "Ernährungsweise",
+          "ylabel": "Relative Emissionen (Index)",
+          "log": false
+        },
+        "correctness_surface": null,
+        "misleading_in_isolation": false,
+        "intentionally_flawed": null,
+        "machine_generatable": true,
+        "provenance": null,
+        "data_source": null,
+        "illustrative": false,
+        "caption": null
+      }
+    ],
+    "nachweis": {
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "statement": "Diese Materialien adressieren 3 von 3 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
+      "competence_coverage": [
+        {
+          "competence_id": "GWB.US.1.LEB3.01",
+          "exercised_by": [
+            "t1",
+            "t6"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "GWB.US.1.LEB3.02",
+          "exercised_by": [
+            "t2",
+            "t3"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "GWB.US.1.LEB3.03",
+          "exercised_by": [
+            "t4",
+            "t5",
+            "t7"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        }
+      ],
+      "gaps": [],
+      "zentrale_konzepte": [
+        "Leben und Wirtschaften im Hinblick auf nachhaltige Ernährung"
+      ],
+      "uebergreifende_themen": [
+        11
+      ]
+    },
+    "depth_profile": {
+      "by_level": {
+        "remember": 1,
+        "understand": 2,
+        "analyze": 2,
+        "evaluate": 1,
+        "create": 1
+      },
+      "by_dimension": {
+        "OK": 5,
+        "UK": 2
+      },
+      "by_difficulty": {
+        "1": 3,
+        "2": 2,
+        "3": 2
+      },
+      "minutes_total": 67,
+      "minutes_resource_independent": 67
+    },
+    "rack": null
+  },
+  "artifacts": {
+    "student_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0090\\student.pdf",
+    "teacher_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0090\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0090\\homework.pdf",
+    "preview_png": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0090\\raster\\student.p1.png"
+  },
+  "verify_problems": [],
+  "verify_warnings": [],
+  "parent_id": null,
+  "feedback": [],
+  "error": null
+}

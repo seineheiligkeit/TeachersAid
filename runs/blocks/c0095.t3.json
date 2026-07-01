@@ -1,0 +1,133 @@
+{
+  "id": "c0095.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1",
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Abbildungen 1 und 2 zeigen schematisch, wie ausgewählte Lebensqualitäts-Indikatoren in einem Zentrum (Index 100) und einer peripheren Gemeinde abschneiden.\n\n(a) Beschreibe in zwei Sätzen: Wo liegen die größten Unterschiede zwischen Zentrum und Peripherie?\n(b) Überlege: Sind alle Unterschiede automatisch Nachteile für die periphere Gemeinde? Nenne einen Indikator, der je nach Perspektive auch als Vorteil gesehen werden könnte.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.ZEN.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "(a) Größte Unterschiede: Ärztedichte (42 vs. 100), ÖV-Anbindung (38 vs. 100). (b) Leerstand: aus Sicht eines Investors oder Zuziehenden kann günstiger Wohnraum ein Vorteil sein (z. B. für Homeoffice, Umzug). Medianeinkommen-Unterschied kann durch niedrigere Lebenshaltungskosten teilweise ausgeglichen werden.",
+    "acceptable_reasoning": "Schüler:innen müssen nicht auf alle Indikatoren eingehen; wichtig ist die Fähigkeit, einen vermeintlichen Nachteil aus einer anderen Perspektive als Vorteil zu lesen.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Die Daten sind schematisch – das muss kommuniziert werden. Echte Daten variieren stark je nach konkreter Gemeinde. Schüler:innen sollen keine realen Schlüsse aus den Index-Werten ziehen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Zentren und Peripherien in Österreich",
+  "competences": [
+    "GWB.US.3.ZEN.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Ärzte pro 1000 Einw.",
+          "ÖV-Minuten zu nächster Stadt",
+          "Leerstandsquote Wohnungen",
+          "Breitband-Versorgung",
+          "Medianeinkommen"
+        ],
+        "values": [
+          100.0,
+          100.0,
+          100.0,
+          100.0,
+          100.0
+        ],
+        "title": "Ausgewählte Indikatoren für Lebensqualität: Vergleich Zentrum vs. Peripherie (schematische Werte, Österreich, ca. 2022)",
+        "xlabel": "Indikator",
+        "ylabel": "Indexwert (Zentrum = 100)",
+        "log": false
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    },
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Ärzte pro 1000 Einw.",
+          "ÖV-Minuten zu nächster Stadt (inv.)",
+          "Leerstandsquote Wohnungen (inv.)",
+          "Breitband-Versorgung",
+          "Medianeinkommen"
+        ],
+        "values": [
+          42.0,
+          38.0,
+          160.0,
+          71.0,
+          78.0
+        ],
+        "title": "Dasselbe wie abb1, aber für eine periphere Gemeinde (schematisch, Index relativ zu Zentrum = 100)",
+        "xlabel": "Indikator",
+        "ylabel": "Indexwert (periphere Gemeinde, Zentrum = 100)",
+        "log": false
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0095",
+  "source": "ai",
+  "created_at": "2026-06-26T19:02:29+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

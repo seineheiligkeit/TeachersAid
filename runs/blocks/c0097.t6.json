@@ -1,0 +1,84 @@
+{
+  "id": "c0097.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Lies das folgende Szenario und beantworte die Fragen.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Du bist 18 Jahre alt und wirst in drei Wochen zum ersten Mal bei einer Gemeinderatswahl in deiner Gemeinde wählen. Im Wahlkampf gibt es Debatten über: (1) Ausbau eines neuen Einkaufszentrums auf einer bisher landwirtschaftlichen Fläche, (2) ein neues Jugendzentrum, das jedoch die Gemeindeschulden erhöhen würde, und (3) eine Petition einer Bürgergruppe für mehr Radwege. Du hast unterschiedliche Wünsche und Werte: Du willst Jobchancen, eine lebenswerte Gemeinde und nachhaltige Entwicklung."
+    },
+    "response": {
+      "mode": "lines",
+      "n": 8
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "HK",
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.4.EIG.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Individuelle Antworten. Qualitätskriterien: Die Schülerinnen und Schüler benennen Konflikte zwischen den Zielen (Wirtschaft vs. Nachhaltigkeit, Schulden vs. Lebensqualität); sie begründen ihre Entscheidung mit eigenen Werten UND zeigen Verständnis für andere Positionen; sie erkennen, dass es keine widerspruchsfreie Lösung gibt.",
+    "acceptable_reasoning": "Wer das Einkaufszentrum befürwortet, hat ebenso legitime Argumente wie jemand, der die Fläche erhalten will – solange die Abwägung nachvollziehbar ist.",
+    "rubric": [
+      {
+        "criterion": "Erkennen von Zielkonflikten",
+        "levels": [
+          "Kein Konflikt erkannt.",
+          "Ein Konflikt erkannt.",
+          "Mindestens zwei Zielkonflikte explizit benannt."
+        ]
+      },
+      {
+        "criterion": "Begründung der Entscheidung",
+        "levels": [
+          "Keine Begründung.",
+          "Entscheidung begründet, aber nur mit eigenen Wünschen.",
+          "Entscheidung begründet mit eigenen Werten UND Blick auf andere Interessen."
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Das Szenario ist bewusst lokal und konkret gehalten – es gibt keine 'richtige' Lösung, das ist pädagogisch beabsichtigt.",
+      "Schülerinnen und Schüler, die 'alle drei' wählen, sollen zur Priorisierung aufgefordert werden – Ressourcen sind begrenzt."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 4,
+  "kompetenzbereich": "Das eigene Ich in einer vernetzten Welt",
+  "competences": [
+    "GWB.US.4.EIG.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "HK",
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0097",
+  "source": "ai",
+  "created_at": "2026-06-26T19:02:31+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

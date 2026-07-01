@@ -1,0 +1,151 @@
+{
+  "id": "c0156.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Das Diagramm (Abb. 1) zeigt das Emissionsspektrum von Wasserstoff (Balmer-Serie).\na) Nenne die Wellenlängen und Farben der vier sichtbaren Linien (lies aus dem Diagramm ab).\nb) Erkläre, warum das Wasserstoffspektrum nur einzelne Linien zeigt und kein kontinuierliches Spektrum wie eine Glühbirne.\nc) Warum kann dieselbe Apparatur, die Emissionslinien zeigt, auch als Absorptionsspektroskop verwendet werden?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.OS.7.ATO.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.OS.x.E.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "a) H-alpha: 656 nm, rot; H-beta: 486 nm, blaugrün; H-gamma: 434 nm, violett; H-delta: 410 nm, violett. b) Elektronen in Wasserstoff können nur diskrete Energieniveaus (n = 1, 2, 3, …) einnehmen. Photonen werden nur bei Übergängen zwischen diesen Niveaus emittiert – mit exakt der Energiedifferenz. Weil nur wenige solche Übergänge existieren, erscheinen nur einzelne Linien (nicht ein Kontinuum). Eine Glühbirne emittiert thermisch über alle Wellenlängen gleichzeitig. c) Atome können genau die Photonenenergien absorbieren, die ihren Energieübergängen entsprechen. Strahlt man weißes Licht durch Wasserstoffgas, fehlen genau diese Wellenlängen im Transmissionsspektrum (dunkle Absorptionslinien).",
+    "acceptable_reasoning": "Akzeptiert: statt 'diskrete Energieniveaus' auch 'Elektronen auf bestimmten Schalen' im Bohr-Modell.",
+    "rubric": [
+      {
+        "criterion": "Ablesen",
+        "levels": [
+          "Alle vier Linien korrekt mit Farbe und Wellenlänge",
+          "Mindestens zwei korrekt"
+        ]
+      },
+      {
+        "criterion": "Diskrete Niveaus",
+        "levels": [
+          "Quantisierung und Übergänge korrekt erklärt",
+          "Nur 'Quantelung' erwähnt, ohne Erklärung"
+        ]
+      },
+      {
+        "criterion": "Absorption",
+        "levels": [
+          "Symmetrie von Emission und Absorption korrekt erklärt",
+          "Absorptionsspektrum beschrieben, aber Grund fehlt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen verwechseln oft Emissions- und Absorptionsspektrum: Emissionsspektrum = helle Linien auf schwarz; Absorptionsspektrum = dunkle Linien auf Regenbogen.",
+      "Die Energieangabe als Differenz (ΔE = E_n_oben – E_n_unten) ist entscheidend; manche denken, das Photon hat die absolute Energie des Niveaus."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Physik",
+  "klasse": 7,
+  "kompetenzbereich": "Atomphysik",
+  "competences": [
+    "PHY.OS.7.ATO.01",
+    "PHY.OS.x.E.03"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "W",
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:line",
+      "spec": {
+        "series": [
+          {
+            "label": "H-alpha (rot)",
+            "x": [
+              656
+            ],
+            "y": [
+              1
+            ]
+          },
+          {
+            "label": "H-beta (blaugrün)",
+            "x": [
+              486
+            ],
+            "y": [
+              0.6
+            ]
+          },
+          {
+            "label": "H-gamma (violett)",
+            "x": [
+              434
+            ],
+            "y": [
+              0.4
+            ]
+          },
+          {
+            "label": "H-delta (violett)",
+            "x": [
+              410
+            ],
+            "y": [
+              0.2
+            ]
+          }
+        ],
+        "xlabel": "Wellenlänge λ in nm",
+        "ylabel": "relative Intensität",
+        "title": "Emissionsspektrum von Wasserstoff (Balmer-Serie, schematisch)"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0156",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:27+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

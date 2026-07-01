@@ -1,0 +1,107 @@
+{
+  "id": "c0132.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Du wirst beauftragt, ein kurzes Informationsblatt (ca. 150–200 Wörter) für Mitschüler:innen zu erstellen, das erklärt:\n- Was Nachhaltigkeit in der Biologie bedeutet\n- Ein konkretes Beispiel aus einem österreichischen Ökosystem\n- Einen Appell: Was können Jugendliche konkret tun?\n\nVerwende eine klare Struktur (Überschrift, 2–3 Abschnitte). Das Informationsblatt soll sachlich korrekt und ansprechend formuliert sein.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 70.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.OS.x.FAC.03",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "BIO.OS.x.STA.05",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "BIO.OS.6.KOM3.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 15,
+    "answer_key": "Musterlösung (Beispiel): Titel: 'Nachhaltigkeit – mehr als ein Schlagwort'. Abschnitt 1: Nachhaltigkeit bedeutet, die Erde so zu nutzen, dass auch zukünftige Generationen davon leben können. In der Biologie heißt das: Ökosysteme erhalten, Artenvielfalt schützen und Ressourcen nicht schneller verbrauchen, als sie sich erneuern. Abschnitt 2: Die Donauauen bei Wien sind ein Beispiel für ein bedrohtes, aber schützenswertes Ökosystem. Hier leben über 8.000 Tier- und Pflanzenarten, doch Klimawandel und Wasserentnahme gefährden das empfindliche Gleichgewicht. Abschnitt 3: Was kann ich tun? Öffentliche Verkehrsmittel nutzen, saisonale Lebensmittel kaufen, weniger Fleisch essen und Politikerinnen und Politiker auf lokaler Ebene für Umweltschutz sensibilisieren. Jede Handlung zählt.",
+    "acceptable_reasoning": "Akzeptabel: Jedes Informationsblatt, das Nachhaltigkeit biologisch korrekt erklärt, ein reales österreichisches Ökosystem nennt und einen konkreten Handlungsappell enthält.",
+    "rubric": [
+      {
+        "criterion": "Definition Nachhaltigkeit biologisch korrekt",
+        "levels": [
+          "Fehlt oder rein alltagssprachlich",
+          "Ansatz vorhanden, biologischer Bezug fehlt",
+          "Korrekte biologische Verankerung (Ressourcenerhalt, Ökosysteme)"
+        ]
+      },
+      {
+        "criterion": "Österreichisches Ökosystem konkret",
+        "levels": [
+          "Kein konkretes Beispiel",
+          "Beispiel genannt, ohne ökologische Details",
+          "Konkretes Ökosystem mit ökologischer Erläuterung"
+        ]
+      },
+      {
+        "criterion": "Handlungsappell",
+        "levels": [
+          "Kein Appell",
+          "Allgemeiner Aufruf ohne Konkretisierung",
+          "Mindestens zwei konkrete, umsetzbare Handlungen für Jugendliche"
+        ]
+      },
+      {
+        "criterion": "Sprache und Struktur",
+        "levels": [
+          "Keine Struktur, unverständlich",
+          "Struktur erkennbar, Sprache holprig",
+          "Klare Struktur, adressatengerechte Sprache"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Nachhaltigkeit darf nicht auf 'Mülltrennung' reduziert werden – systemische Maßnahmen (Ernährung, Mobilität, Energie) sind relevanter.",
+      "Österreichische Ökosysteme: Alpen, Wienerwald, Neusiedler See, Donauauen, Moore – Schüler:innen sollten mindestens eines konkret benennen können."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 6,
+  "kompetenzbereich": "Fachwissen aneignen und kommunizieren",
+  "competences": [
+    "BIO.OS.x.FAC.03",
+    "BIO.OS.x.STA.05",
+    "BIO.OS.6.KOM3.02"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "W",
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0132",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:19+00:00",
+  "updated_at": "2026-06-29T18:19:28+00:00"
+}

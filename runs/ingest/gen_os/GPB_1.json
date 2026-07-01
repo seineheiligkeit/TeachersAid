@@ -1,0 +1,299 @@
+{
+  "subject": "Geschichte und politische Bildung",
+  "klasse": 7,
+  "kompetenzbereich": "Politische, wirtschaftliche, kulturelle und soziale Entwicklungen vom 1. Weltkrieg bis zur Gegenwart",
+  "title": "Demokratie oder Diktatur? Europa in der Zwischenkriegszeit 1918–1939",
+  "kernfrage": "Warum scheiterten nach dem Ersten Weltkrieg so viele Demokratien in Europa – und was können wir daraus für heute lernen?",
+  "body": {
+    "intro": [
+      {
+        "role": "info",
+        "id": "i1",
+        "title": "Arbeitshinweis",
+        "content": "In diesem Arbeitsblatt untersuchst du, warum die Zeit zwischen den beiden Weltkriegen so viele politische Umbrüche brachte und wie unterschiedliche Staatssysteme in Europa entstanden. Arbeite die Aufgaben in der angegebenen Reihenfolge durch; bei Quellenarbeit erhältst du die Texte von deiner Lehrperson."
+      }
+    ],
+    "data_figures": [
+      {
+        "id": "df1",
+        "intent": "trend",
+        "title": "Demokratien und Diktaturen in Europa 1918–1939",
+        "xlabel": "Jahr",
+        "ylabel": "Anzahl europäischer Staaten",
+        "categories": ["1918", "1922", "1926", "1930", "1933", "1936", "1939"],
+        "values": [15, 12, 10, 8, 7, 6, 5]
+      }
+    ],
+    "assets": [
+      {
+        "id": "abb1",
+        "role": "figure",
+        "generator": "matplotlib:timeline",
+        "spec": {
+          "events": [
+            {"at": 1918, "label": "Ende des Ersten Weltkriegs / Friedensverträge"},
+            {"at": 1919, "label": "Vertrag von Versailles; Weimarer Republik"},
+            {"at": 1922, "label": "Mussolini übernimmt Macht in Italien"},
+            {"at": 1929, "label": "Weltwirtschaftskrise beginnt"},
+            {"at": 1933, "label": "Hitler wird Reichskanzler in Deutschland"},
+            {"at": 1934, "label": "Österreich: Ausschaltung des Parlaments; autoritäres Regime"},
+            {"at": 1936, "label": "Beginn des Spanischen Bürgerkriegs"},
+            {"at": 1938, "label": "Anschluss Österreichs an das Deutsche Reich"},
+            {"at": 1939, "label": "Beginn des Zweiten Weltkriegs"}
+          ],
+          "title": "Europa zwischen den Weltkriegen – Zeitleiste 1918–1939",
+          "xlabel": "Jahr"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Teil 1: Die Nachkriegsordnung und ihre Schwächen",
+        "throughline": "Schüler:innen erarbeiten zunächst den Kontext: Wie sollten die Friedensverträge nach 1918 Europa neu ordnen, und welche Spannungen entstanden dadurch? Dieser Abschnitt legt die Grundlage für das Verständnis der politischen Krisen der Zwischenkriegszeit.",
+        "talking_points": [
+          "Welche Ziele verfolgten die Siegermächte mit dem Vertrag von Versailles – und warum empfanden viele Deutsche ihn als 'Diktat'? Welche Folgen hatte das für die Weimarer Republik?",
+          "Wie entstanden die neuen Nationalstaaten in Mittel- und Osteuropa nach 1918, und welche Minderheitenprobleme brachte das mit sich?",
+          "Inwiefern waren die Friedensverträge nach 1918 ein Kompromiss, der letztlich niemanden zufriedenstellte?"
+        ],
+        "extensions": [
+          "Recherchiert die 'Vierzehn Punkte' von US-Präsident Wilson: Welche davon wurden im Vertrag von Versailles umgesetzt, welche nicht? Welche Rolle spielte Österreich dabei?",
+          "Vergleicht den Vertrag von Versailles mit dem Staatsvertrag von Wien (1955): Welche Gemeinsamkeiten und Unterschiede gibt es in Bezug auf die Behandlung des besiegten Landes?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "ordering",
+            "prompt": "Bringe die folgenden Ereignisse der Nachkriegszeit in die richtige chronologische Reihenfolge. Nutze dabei auch die Zeitleiste.",
+            "payload": {
+              "kind": "ordering",
+              "items": [
+                "Beginn der Weltwirtschaftskrise nach dem Börsenkrach in New York",
+                "Unterzeichnung des Vertrags von Versailles",
+                "Ausrufung der Weimarer Republik in Deutschland",
+                "Mussolinis Marsch auf Rom und Machtübernahme in Italien",
+                "Hitler wird Reichskanzler in Deutschland"
+              ]
+            },
+            "response": {"mode": "none"},
+            "cognitive_level": "remember",
+            "dimensions": ["HSK"],
+            "serves": [
+              {"competence_id": "GPB.OS.7.POL5.01", "relation": "exercises"}
+            ],
+            "est_minutes": 5,
+            "asset_refs": ["abb1"],
+            "answer_key": "1. Ausrufung der Weimarer Republik (November 1918) → 2. Unterzeichnung des Vertrags von Versailles (Juni 1919) → 3. Mussolinis Marsch auf Rom (Oktober 1922) → 4. Beginn der Weltwirtschaftskrise (Oktober 1929) → 5. Hitler wird Reichskanzler (Januar 1933).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen verwechseln häufig das Ende des Krieges (November 1918) mit der Unterzeichnung des Vertrags von Versailles (Juni 1919).",
+              "Die Weltwirtschaftskrise begann 1929 in den USA – ihre Auswirkungen auf Europa wurden erst 1930/31 voll spürbar."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "open_response",
+            "prompt": "Erkläre in eigenen Worten, welche wirtschaftlichen und politischen Folgen der Vertrag von Versailles für Deutschland hatte. Gehe dabei auf mindestens zwei konkrete Bestimmungen des Vertrags ein.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 45},
+            "cognitive_level": "understand",
+            "dimensions": ["HSK"],
+            "serves": [
+              {"competence_id": "GPB.OS.7.POL5.01", "relation": "exercises"}
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "Der Vertrag von Versailles legte Deutschland strenge Bedingungen auf: (1) Die 'Kriegsschuldklausel' (Art. 231) machte Deutschland allein für den Krieg verantwortlich und verpflichtete es zu hohen Reparationszahlungen (ursprünglich 132 Milliarden Goldmark), die die Wirtschaft schwer belasteten. (2) Deutschland verlor Gebiete (z. B. Elsass-Lothringen an Frankreich, das Sudetenland blieb außen vor, 'polnischer Korridor'). (3) Die Streitkräfte wurden auf 100.000 Mann begrenzt. Politisch nährte der Vertrag das Gefühl nationaler Demütigung, das radikale Parteien – insbesondere die NSDAP – ausnutzten.",
+            "acceptable_reasoning": "Antworten sollten mindestens zwei der folgenden Elemente konkret benennen: Kriegsschuldklausel und Reparationen, Gebietsverluste, Rüstungsbeschränkungen, Mandatsverlust in den Kolonien. Der Zusammenhang zwischen Demütigungsgefühl und politischer Radikalisierung ist ein wichtiges Verbindungselement.",
+            "watch_outs": [
+              "Vorsicht vor Pauschalurteilen wie 'Versailles hat Hitler an die Macht gebracht' – der Vertrag war ein Faktor unter mehreren; Weltwirtschaftskrise, Schwächen der Weimarer Republik und politisches Kalkül der Eliten spielten ebenfalls eine große Rolle.",
+              "Schüler:innen sollten zwischen den Vertragsbedingungen selbst und ihrer propagandistischen Nutzung durch die Nationalsozialisten unterscheiden."
+            ],
+            "rubric": [
+              {"criterion": "Konkrete Vertragsbestimmungen", "levels": ["Keine konkreten Bestimmungen genannt", "Eine Bestimmung korrekt benannt", "Mindestens zwei Bestimmungen präzise und korrekt dargestellt"]},
+              {"criterion": "Politische Folgen", "levels": ["Folgen nicht thematisiert", "Allgemeiner Hinweis auf Schwächung Deutschlands", "Zusammenhang zwischen Vertragsbedingungen, Demütigungsgefühl und politischer Radikalisierung hergestellt"]}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Teil 2: Demokratie und Diktatur – Staatssysteme im Vergleich",
+        "throughline": "Schüler:innen erarbeiten die Unterschiede zwischen demokratischen, autoritären und totalitären Systemen anhand konkreter europäischer Beispiele. Sie üben, Merkmale von Staatssystemen zu erkennen und zu klassifizieren.",
+        "talking_points": [
+          "Was unterscheidet ein autoritäres von einem totalitären Regime? Wo liegt die Grenze – und warum ist die Unterscheidung für Historiker:innen wichtig?",
+          "Warum konnten extremistische Bewegungen in der Zwischenkriegszeit so stark werden – was haben Faschismus und Nationalsozialismus trotz ihrer Unterschiede gemeinsam?",
+          "Österreich 1934: War das Regime von Dollfuß/Schuschnigg autoritär oder totalitär? Welche Argumente gibt es für beide Seiten?"
+        ],
+        "extensions": [
+          "Analysiert eine zeitgenössische Propagandadarstellung (z. B. ein Plakat oder Filmplakat aus dem faschistischen Italien oder NS-Deutschland): Welche Symbole und Botschaften werden eingesetzt? Was soll beim Publikum ausgelöst werden?",
+          "Recherchiert die politischen Ideologien des Austrofaschismus im Vergleich zum Nationalsozialismus: Was waren die wichtigsten Unterschiede in Bezug auf Nationalismus, Religion und die Stellung des Individuums?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "table_fill",
+            "prompt": "Fülle die folgende Tabelle aus: Ordne den drei Staatssystemen – parlamentarische Demokratie, autoritäres Regime, totalitäres Regime – die passenden Merkmale zu. Nutze dein Wissen aus dem Unterricht.",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": ["Merkmal", "Parlamentarische Demokratie", "Autoritäres Regime", "Totalitäres Regime"],
+              "rows": 5
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["HSK", "PMK"],
+            "serves": [
+              {"competence_id": "GPB.OS.7.POL5.02", "relation": "exercises"},
+              {"competence_id": "GPB.OS.7.HIS2.02", "relation": "exercises"}
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Merkmale und Zuordnung: (1) Freie Wahlen und Parteienvielfalt → Demokratie: ja; autoritär: nein/eingeschränkt; totalitär: nein. (2) Pressefreiheit → Demokratie: ja; autoritär: stark eingeschränkt; totalitär: nein, staatliche Kontrolle. (3) Herrschaft über den öffentlichen Bereich → Demokratie: begrenzt durch Rechte; autoritär: stark; totalitär: auch Privatleben und Gedanken. (4) Ideologische Mobilisierung der Bevölkerung → Demokratie: nein; autoritär: teilweise; totalitär: ja, zentral. (5) Unabhängige Justiz → Demokratie: ja; autoritär: eingeschränkt; totalitär: nein.",
+            "acceptable_reasoning": "Schüler:innen können eigene Merkmale wählen; entscheidend ist, dass die Unterscheidung zwischen autoritär (kein Pluralismus, aber kein Totalanspruch auf das Privatleben) und totalitär (umfassender Durchherrschaftsanspruch inklusive Gedanken- und Gewissenskontrolle) klar wird.",
+            "watch_outs": [
+              "Häufige Verwechslung: 'Diktatur' und 'Totalitarismus' werden synonym verwendet. Der Begriff 'totalitär' bezeichnet Regime, die auch das Privatleben, die Kultur und das Denken kontrollieren wollen – das unterscheidet sie von 'nur' autoritären Regimen.",
+              "Stalinismus als totalitäres Regime von links sollte erwähnt werden, um zu zeigen, dass Totalitarismus keine rein rechte Erscheinung ist."
+            ],
+            "rubric": [
+              {"criterion": "Unterscheidung autoritär vs. totalitär", "levels": ["Kein Unterschied erkannt", "Unterschied wird angedeutet", "Klarer, begründeter Unterschied mit korrekten Beispielen"]},
+              {"criterion": "Vollständigkeit der Tabelle", "levels": ["Weniger als 3 Merkmale korrekt zugeordnet", "3–4 Merkmale korrekt", "5 oder mehr Merkmale korrekt und differenziert zugeordnet"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "source_analysis",
+            "prompt": "Deine Lehrperson stellt dir einen zeitgenössischen Text oder ein Propagandaplakat aus der Zwischenkriegszeit zur Verfügung (z. B. aus dem faschistischen Italien, dem NS-Deutschland oder dem österreichischen Ständestaat 1934–1938).\n\na) Beschreibe das Material: Was stellst du auf den ersten Blick fest (Inhalt, Form, verwendete Symbole)?\nb) Analysiere die Botschaft: Welches Staatssystem und welche Ideologie werden vermittelt oder verteidigt?\nc) Hinterfrage die Perspektivität: Wer hat dieses Material erstellt, und welche Absicht steckt dahinter?",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 60},
+            "cognitive_level": "analyze",
+            "dimensions": ["HMK", "HSK"],
+            "serves": [
+              {"competence_id": "GPB.OS.7.POL5.02", "relation": "exercises"},
+              {"competence_id": "GPB.OS.7.HIS.01", "relation": "exercises"}
+            ],
+            "est_minutes": 15,
+            "asset_refs": [],
+            "answer_key": "a) Beschreibung: je nach Material – typische Merkmale sind Heldenbilder, starke Symbole (Hakenkreuz, Liktorenbündel), Massenszenen, vereinfachte Feindbilder. b) Analyse: Die Botschaft glorifiziert die Führerpersönlichkeit, stellt den Staat als organische Einheit dar, diskreditiert Demokratie als Schwäche und präsentiert Gewalt als legitimes Mittel. c) Perspektivität: Das Material wurde vom Regime selbst oder seinem Propagandaapparat erstellt; Ziel ist Mobilisierung, Legitimation der Herrschaft und Ausschaltung von Widerspruch. Kein neutrales Dokument, sondern intentionale Überzeugungsarbeit.",
+            "acceptable_reasoning": "Zentral ist, dass Schüler:innen die Quelle als intentional konstruiert erkennen und nicht als neutrale Beschreibung der Realität werten. Die Fähigkeit, Propaganda als Gattung zu identifizieren, ist ein Kernziel.",
+            "watch_outs": [
+              "Schüler:innen neigen dazu, Propagandamaterial inhaltlich 'ernst zu nehmen' und die Botschaft unkritisch zu paraphrasieren statt zu analysieren.",
+              "Wichtig: Propagandaanalyse ist keine moralische Verurteilung der dargestellten Gruppe, sondern eine Methode zur Quellenkritik."
+            ],
+            "rubric": [
+              {"criterion": "Beschreibung des Materials", "levels": ["Keine oder fehlerhafte Beschreibung", "Oberflächliche Beschreibung ohne Formanalyse", "Präzise Beschreibung mit Hinweis auf Form, Symbole und Gestaltungsmittel"]},
+              {"criterion": "Analyse der ideologischen Botschaft", "levels": ["Botschaft nicht erkannt oder nur paraphrasiert", "Ideologie benannt, aber nicht analysiert", "Botschaft und zugrundeliegende Ideologie kritisch analysiert"]},
+              {"criterion": "Perspektivität und Intention", "levels": ["Keine Auseinandersetzung mit Urheber/Absicht", "Urheber benannt", "Entstehungskontext und Intention überzeugend herausgearbeitet"]}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "Teil 3: Holocaust und Erinnerungskultur",
+        "throughline": "Schüler:innen setzen sich mit dem nationalsozialistischen Vernichtungssystem und den Formen des Erinnerns in Gegenwart und Vergangenheit auseinander. Der Abschnitt zielt auf Analyse und begründetes Urteilen ab.",
+        "talking_points": [
+          "Was meint man mit 'Stufenpolitik' der Nationalsozialisten gegenüber den Jüdinnen und Juden – von der Diskriminierung bis zur Vernichtung? Wie war das möglich?",
+          "Warum ist das Erinnern an den Holocaust auch heute noch politisch und gesellschaftlich bedeutsam? Was bedeutet 'Erinnerungskultur'?",
+          "Wie unterscheiden sich verschiedene nationale Erinnerungskulturen (z. B. Deutschland, Österreich, Polen)? Warum gibt es Unterschiede?"
+        ],
+        "extensions": [
+          "Recherchiert ein Mahnmal oder eine Gedenkstätte zum Holocaust in Österreich oder Deutschland: Wann wurde es errichtet, welche Debatten gab es um seine Gestaltung, und was soll es vermitteln?",
+          "Diskutiert in der Klasse: Österreich bezeichnete sich lange als 'erstes Opfer' des Nationalsozialismus. Welche historischen Argumente sprechen dafür, welche dagegen?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "true_false_justify",
+            "prompt": "Entscheide, ob die folgenden Aussagen zum nationalsozialistischen System und zum Holocaust zutreffen. Begründe deine Entscheidung jeweils in einem oder zwei Sätzen.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Die Nürnberger Rassengesetze von 1935 verboten Jüdinnen und Juden sofort die Ausreise aus Deutschland.",
+                "Der Holocaust war ein von der NS-Führung zentral geplantes und organisiertes Vernichtungsprogramm, an dem staatliche Behörden und Unternehmen beteiligt waren.",
+                "Die Wannsee-Konferenz im Januar 1942 war die erste Sitzung, auf der überhaupt über die Vernichtung der europäischen Jüdinnen und Juden gesprochen wurde.",
+                "Erinnerungskulturen sind immer neutral und zeigen die historische Wahrheit unverfälscht."
+              ]
+            },
+            "response": {"mode": "table", "columns": ["Aussage", "Wahr / Falsch", "Begründung"], "rows": 4},
+            "cognitive_level": "evaluate",
+            "dimensions": ["HSK", "HOK"],
+            "serves": [
+              {"competence_id": "GPB.OS.7.POL5.03", "relation": "exercises"},
+              {"competence_id": "GPB.OS.7.HIS3.02", "relation": "exercises"}
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "1. Falsch – Die Nürnberger Gesetze entzogen Jüdinnen und Juden die Staatsbürgerschaft und verboten Ehen mit Nichtjuden; ein Ausreiseverbot wurde erst 1941 ausgesprochen. Zunächst sollten Jüdinnen und Juden zur Auswanderung gedrängt werden. 2. Wahr – Der Holocaust war ein staatlich organisiertes Vernichtungsprogramm unter Beteiligung von SS, Wehrmacht, Bürokratie und Unternehmen; er war keine spontane Gewaltaktion, sondern planmäßig durchgeführt. 3. Falsch – Die Wannsee-Konferenz koordinierte und synchronisierte die bereits laufenden Vernichtungsmaßnahmen; Massenerschießungen und erste Vernichtungslager existierten bereits vor Januar 1942. 4. Falsch – Erinnerungskulturen sind immer perspektivisch und von nationalen, politischen und gesellschaftlichen Interessen geprägt; sie sind Konstruktionen, keine neutralen Spiegel der Vergangenheit.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Aussage 1 führt oft zu Verwechslungen, weil Schüler:innen die 'Stufenpolitik' nicht kennen: Die NS-Judenpolitik steigerte sich schrittweise von Diskriminierung über Ausgrenzung zur Vernichtung.",
+              "Aussage 3 ist eine häufige Fehlannahme: Die Wannsee-Konferenz war keine 'Erfindung' des Holocaust, sondern eine bürokratische Koordinierungssitzung.",
+              "Aussage 4 sollte Anlass geben, über Erinnerungskultur als Konstrukt zu sprechen – nicht um die Fakten des Holocaust zu relativieren, sondern um das Konzept 'Erinnerung als politischer Prozess' zu verstehen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "argumentation",
+            "prompt": "Lies die folgende These aufmerksam und nimm schriftlich Stellung:\n\n*'Das Erinnern an den Holocaust ist eine Aufgabe, die nur die direkt betroffenen Länder (Deutschland, Österreich, Polen usw.) angeht. Andere Länder und jüngere Generationen müssen sich damit nicht auseinandersetzen.'*\n\nFormuliere ein begründetes Urteil (4–6 Sätze): Stimme zu, lehne ab oder nimm eine differenzierte Position ein. Stütze deine Argumentation auf historische und gegenwärtige Beispiele.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 55},
+            "cognitive_level": "evaluate",
+            "dimensions": ["HOK", "PUK"],
+            "serves": [
+              {"competence_id": "GPB.OS.7.POL5.03", "relation": "exercises"},
+              {"competence_id": "GPB.OS.7.HIS3.01", "relation": "exercises"}
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "Erwartet wird keine Einheitsmeinung, sondern ein begründetes Urteil. Mögliche Argumente gegen die These: (1) Der Holocaust war ein menschheitsgeschichtliches Verbrechen, das universale Normen (Menschenrechte, Genozidverbot) geprägt hat – daher geht er alle Menschen an. (2) Erinnerung ist kein Erbe nur der Tätergesellschaften, sondern dient der Prävention künftiger Verbrechen. (3) Antisemitismus und Genozide gibt es in vielen Teilen der Welt. Mögliche differenzierte Position: Die Form der Erinnerung mag länderspezifisch sein, die universale Pflicht zur Auseinandersetzung gilt aber für alle.",
+            "acceptable_reasoning": "Bewertet wird die Qualität der Begründung, die Fähigkeit, unterschiedliche Perspektiven zu berücksichtigen, und die Einbeziehung von historischen oder gegenwärtigen Beispielen. Eine rein emotionale Ablehnung ohne Begründung ist nicht ausreichend.",
+            "watch_outs": [
+              "Schüler:innen könnten die These ablehnen, ohne zu begründen warum – hier ist explizit Argumentationskompetenz gefragt.",
+              "Achtung: Erinnerungskultur ist kein Synonym für 'Schuldgefühl' – die Auseinandersetzung mit der Geschichte ist eine intellektuelle und moralische Aufgabe, keine emotionale Bürde."
+            ],
+            "rubric": [
+              {"criterion": "Klare Positionierung", "levels": ["Keine Stellungnahme", "Position erkennbar, aber nicht begründet", "Klar formulierte, begründete Position"]},
+              {"criterion": "Historische Belege", "levels": ["Keine Belege", "Allgemeine Verweise ohne Konkretion", "Mindestens zwei spezifische historische oder aktuelle Beispiele"]},
+              {"criterion": "Differenzierung und Perspektivenwechsel", "levels": ["Einseitige Argumentation", "Teilweise Berücksichtigung anderer Sichtweisen", "Abgewogene, mehrperspektivische Argumentation"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "create_produce",
+            "prompt": "Entwirf ein Konzept für eine schulische Gedenkveranstaltung zum 27. Januar (Internationaler Tag des Gedenkens an die Opfer des Holocaust).\n\nBeschreibe in 5–8 Sätzen:\n- Welche Form die Veranstaltung haben soll (z. B. Ausstellung, Vortrag, künstlerisches Projekt, Zeitzeugengespräch)\n- Welche Botschaft du vermitteln möchtest\n- Welche Zielgruppe du ansprichst\n- Wie du sicherstellen willst, dass die Veranstaltung keine Klischees reproduziert, sondern differenziert und respektvoll ist",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 60},
+            "cognitive_level": "create",
+            "dimensions": ["HOK", "PHK"],
+            "serves": [
+              {"competence_id": "GPB.OS.7.POL5.03", "relation": "exercises"},
+              {"competence_id": "GPB.OS.7.HIS3.01", "relation": "exercises"}
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "Keine Musterlösung; erwartet wird ein Konzept, das: (1) eine konkrete Veranstaltungsform wählt und begründet, (2) die zentrale Botschaft klar formuliert (z. B. Würde der Opfer, universale Relevanz, Prävention), (3) die Zielgruppe berücksichtigt (Mitschüler:innen, Schulgemeinschaft), (4) Reflexion über Risiken wie Klischees, Voyeurismus oder Verharmlosung einschließt. Qualitätsmerkmal: Die Schüler:innen zeigen, dass Erinnerungskultur ein aktiver, gestalteter Prozess ist – kein bloßes Abspielen von Dokumentarfilmen.",
+            "acceptable_reasoning": "Sehr unterschiedliche Konzepte sind akzeptabel (von künstlerischen Projekten bis zu Zeitzeugengesprächen per Video), solange die didaktische Reflexion erkennbar ist.",
+            "watch_outs": [
+              "Vorsicht vor Konzepten, die Opfer auf ihre Opferrolle reduzieren oder die Täter:innen dämonisieren statt zu historisieren.",
+              "Das Konzept sollte zeigen, dass Schüler:innen Erinnerungskultur als Konstruktionsprozess verstehen, der bewusste Entscheidungen erfordert."
+            ],
+            "rubric": [
+              {"criterion": "Konkrete Veranstaltungsform und Begründung", "levels": ["Keine Form gewählt oder nicht begründet", "Form gewählt, Begründung oberflächlich", "Form und Begründung kohärent und überzeugend"]},
+              {"criterion": "Reflexion über Zielgruppe und Botschaft", "levels": ["Zielgruppe/Botschaft nicht thematisiert", "Zielgruppe oder Botschaft benannt", "Beide Elemente klar und differenziert entwickelt"]},
+              {"criterion": "Kritische Reflexion über Risiken und Qualität", "levels": ["Keine Reflexion über mögliche Probleme", "Ein mögliches Problem benannt", "Differenzierte Auseinandersetzung mit Risiken und Qualitätskriterien der Erinnerungsarbeit"]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

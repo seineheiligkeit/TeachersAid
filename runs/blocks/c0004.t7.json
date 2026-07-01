@@ -1,0 +1,87 @@
+{
+  "id": "c0004.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Lies das folgende Szenario und beantworte dann die Fragen.\n\nSzenario: Maria ist 30 Jahre alt. In ihrer Familie ist bekannt, dass eine Erbkrankheit vorkommt, die autosomal-dominant vererbt wird. Das bedeutet: Wer ein einziges verändertes Allel trägt, erkrankt im Laufe des Lebens mit hoher Wahrscheinlichkeit. Ein Gentest würde zeigen, ob Maria das veränderte Allel geerbt hat. Maria steht vor der Frage, ob sie den Test machen soll.\n\n(a) Nenne zwei naturwissenschaftliche Argumente, die für eine Testung sprechen könnten.\n(b) Nenne ein ethisches Argument, das gegen eine Testung sprechen könnte.\n(c) Maria entscheidet sich, den Test zu machen, und das Ergebnis ist positiv (sie trägt das veränderte Allel). Muss sie dieses Ergebnis ihrer Krankenkasse mitteilen? Formuliere deinen Standpunkt und begründe ihn mit einem ethischen Prinzip.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Maria, 30 Jahre, steht vor der Entscheidung, einen prädiktiven Gentest für eine autosomal-dominant erbliche Erkrankung in ihrer Familie zu machen."
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 65.0
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.STA.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 16,
+    "answer_key": "(a) Naturwissenschaftliche Argumente für Testung: 1. Frühzeitige medizinische Vorsorge / Prävention ist möglich (z.B. regelmäßige Kontrollen, frühzeitige Behandlung). 2. Reproduktive Entscheidungen: Maria kann entscheiden, ob und wie sie Kinder bekommen möchte, und ggf. pränatale Tests in Betracht ziehen. (b) Ethisches Argument gegen Testung: Das Recht auf Nichtwissen – Menschen haben das Recht, nicht zu wissen, ob sie eine schwere Erkrankung entwickeln werden, da dieses Wissen die Lebensqualität belasten kann, ohne dass eine Heilung möglich ist. (c) Nein – Maria sollte nicht verpflichtet sein, dieses Ergebnis ihrer Krankenkasse zu melden. Ethisches Prinzip: Datenschutz / Recht auf informationelle Selbstbestimmung (jede Person bestimmt selbst, wer Zugang zu ihren Gesundheitsdaten hat). Diskriminierungsverbot: Genetische Information darf nicht zu Benachteiligungen führen. (In Österreich schützt das Gentechnikgesetz tatsächlich vor solcher Verpflichtung – als Bonusinformation, nicht als Erwartung.)",
+    "acceptable_reasoning": "Für (c): Alle ethisch kohärent begründeten Positionen zählen (auch eine Gegenposition, wenn sie schlüssig argumentiert ist). Das Ziel ist nicht die 'richtige' Meinung, sondern nachvollziehbare Argumentation mit einem ethischen Prinzip.",
+    "rubric": [
+      {
+        "criterion": "Naturwissenschaftliche Argumente (a)",
+        "levels": [
+          "vollständig: Zwei sachlich korrekte naturwissenschaftliche Argumente für Testung",
+          "teilweise: Ein Argument, oder Argumente sind nicht naturwissenschaftlich begründet",
+          "unzureichend: Keine oder rein emotionale Argumente"
+        ]
+      },
+      {
+        "criterion": "Ethisches Argument (b)",
+        "levels": [
+          "vollständig: Recht auf Nichtwissen oder anderes valides ethisches Prinzip klar benannt und erklärt",
+          "teilweise: Argument erkennbar, aber nicht als ethisches Prinzip formuliert",
+          "unzureichend: Fehlt oder rein emotional"
+        ]
+      },
+      {
+        "criterion": "Standpunkt mit ethischem Prinzip (c)",
+        "levels": [
+          "vollständig: Klarer Standpunkt, ethisches Prinzip explizit benannt, kohärente Begründung",
+          "teilweise: Standpunkt vorhanden, Prinzip implizit oder unvollständig",
+          "unzureichend: Kein Standpunkt oder keine Begründung"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen vermischen naturwissenschaftliche Fakten ('Das Allel ist dominant') mit ethischen Wertungen ('Sie sollte den Test machen'). Die Aufgabe zielt darauf ab, diesen Unterschied bewusst zu machen.",
+      "Manche Schüler:innen argumentieren rein emotional. Darauf hinweisen, dass in (c) explizit ein ethisches Prinzip gefordert ist – emotionale Argumente alleine reichen nicht.",
+      "Vorsicht: Diese Aufgabe kann persönliche Betroffenheit berühren. Sensibel moderieren; keine Schüler:in soll persönliche Familiensituation offenlegen müssen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Biologie",
+  "klasse": 4,
+  "kompetenzbereich": "Standpunkte begründen und reflektiert handeln (S)",
+  "competences": [
+    "BIO.US.x.STA.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0004",
+  "source": "ai",
+  "created_at": "2026-06-25T11:35:34+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

@@ -1,0 +1,72 @@
+{
+  "id": "c0024.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne die Projektionstätigkeiten der richtigen Projektionsart zu.\n\nProjektionsarten: (A) Parallelprojektion, (B) Zentralprojektion\n\nEigenschaften:\n1. Projektionsstrahlen sind parallel zueinander.\n2. Alle Projektionsstrahlen treffen sich in einem einzigen Punkt (Projektionszentrum/Augpunkt).\n3. Parallele Linien im Objekt bleiben parallel im Bild.\n4. Parallele Linien im Objekt laufen auf einen Fluchtpunkt zu.\n5. Maßstabsgetreue Darstellung ist möglich.\n6. Gibt einen natürlichen, räumlichen Eindruck — wie wir die Welt sehen.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "(A) Parallelprojektion",
+        "(B) Zentralprojektion"
+      ],
+      "right": [
+        "1. Projektionsstrahlen parallel",
+        "2. Strahlen treffen sich in Projektionszentrum",
+        "3. Parallele Linien bleiben parallel",
+        "4. Parallele Linien laufen auf Fluchtpunkt zu",
+        "5. Maßstabsgetreue Darstellung möglich",
+        "6. Natürlicher räumlicher Eindruck"
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "H1"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GEZ.US.4.PRO.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "A (Parallelprojektion): 1, 3, 5. B (Zentralprojektion): 2, 4, 6.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "Schüler:innen glauben manchmal, Parallelprojektion und Zentralprojektion seien nur verschiedene Stile, kein struktureller Unterschied — das Prinzip der Strahlen klar machen.",
+      "Eigenschaft 6 (natürlicher Eindruck) ist die entscheidende Motivation für die Zentralprojektion — z. B. beim Illustrieren, Planen von Räumen, Architekturvisualisierung."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Projektionen und Risse (I3)",
+  "competences": [
+    "GEZ.US.4.PRO.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "H1"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0024",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

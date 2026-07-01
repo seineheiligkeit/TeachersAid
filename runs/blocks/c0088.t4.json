@@ -1,0 +1,86 @@
+{
+  "id": "c0088.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "source_critique",
+    "prompt": "Ein Schüler findet im Internet zwei Quellen über den Klimawandel:\nQuelle A: Artikel auf der Website einer internationalen Klimaforschungsorganisation (peer-reviewed, Daten aus Satellitenmessungen und Wetterstationen, zuletzt aktualisiert 2024).\nQuelle B: Blogbeitrag einer unbekannten Person, ohne Quellenangaben, mit dem Titel 'Die Klimapanik ist erfunden!'.\nBeurteile beide Quellen nach drei Kriterien und erkläre, welcher du mehr vertrauen würdest und warum.",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Kriterium",
+        "Quelle A",
+        "Quelle B"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.4.STR.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Mögliche Kriterien: (1) Autor/Institution: A = etablierte Forschungsorganisation, B = unbekannte Person → A deutlich vertrauenswürdiger. (2) Quellenbelege: A = peer-reviewed, Datenquellen benannt; B = keine Belege → A überlegen. (3) Aktualität: A = 2024; B = unklar → A besser. (4) Sprache/Ton: A sachlich; B emotional/reißerisch → A seriöser. Schlussfolgerung: Quelle A ist deutlich vertrauenswürdiger. Wichtig: auch Quelle A kritisch lesen — wer finanziert die Organisation? Interessenkonflikte?",
+    "acceptable_reasoning": "Drei beliebige der genannten Kriterien; Hauptsache, die Begründung bezieht sich auf konkrete Merkmale der Quellen.",
+    "rubric": [
+      {
+        "criterion": "Kriterienauswahl",
+        "levels": [
+          "Kein Kriterium oder nur ein Kriterium",
+          "Zwei relevante Kriterien",
+          "Drei oder mehr relevante Kriterien"
+        ]
+      },
+      {
+        "criterion": "Begründungstiefe",
+        "levels": [
+          "Pauschalurteil ohne Begründung",
+          "Begründung auf ein Merkmal bezogen",
+          "Differenzierte Begründung mit Bezug auf konkrete Quellenmerkmale"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen antworten oft nur 'Quelle A ist besser' ohne Kriterien zu nennen. Explizit nach Kriterien fragen.",
+      "Wichtig: Auch wissenschaftliche Quellen können fehlerhaft sein — Quellenkritik gilt immer, nicht nur für Blogs."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "source_critique",
+  "subject": "Physik",
+  "klasse": 4,
+  "kompetenzbereich": "Strahlung und Radioaktivität",
+  "competences": [
+    "PHY.US.4.STR.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "W",
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0088",
+  "source": "ai",
+  "created_at": "2026-06-26T05:59:20+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

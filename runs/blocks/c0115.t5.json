@@ -1,0 +1,132 @@
+{
+  "id": "c0115.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Vergleiche den Januar-Niederschlag von Graz (~20 mm) mit dem von Wien (~42 mm) und Bregenz (~81 mm). Warum könnte ausgerechnet Graz im Winter so wenig Niederschlag bekommen — obwohl es im Sommer sehr feucht ist? Stelle eine Vermutung an.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.1.LEB4.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Graz liegt am Alpenrand nach Südosten hin offen — im Sommer bringt warme, feuchte Luft aus dem Adriaraum und vom Balkan viel Niederschlag (Konvektion, Sommergewitter). Im Winter überwiegt kontinentaler Hochdruckeinfluss aus dem Osten/Nordosten (wie im pannonischen Raum): trockene, kalte Luft aus dem Osten = wenig Niederschlag. Graz hat also saisonalen Wechsel der Luftmassenherkunft: Sommer = feucht von Süden/Südosten; Winter = trocken von Osten.",
+    "acceptable_reasoning": "Schüler:innen müssen den Fachbegriff 'pannonisch' oder 'kontinental' nicht kennen — eine Vermutung in Richtung 'im Winter kommt trockene Luft aus dem Osten' ist ausgezeichnet.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Diese Aufgabe geht über das hinaus, was direkt aus dem Diagramm ablesbar ist — es geht um Hypothesenbildung, nicht um Ablesen.",
+      "Keine falsche Antwort sanktionieren, wenn die Logik stimmt und zur Geografie passt."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 1,
+  "kompetenzbereich": "Leben und Wirtschaften unter Beachtung der natürlichen Prozesse",
+  "competences": [
+    "GWB.US.1.LEB4.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:climate_diagram",
+      "spec": {
+        "title": "Klimadiagramm Graz (Universität), Normalperiode 1991–2020",
+        "months": [
+          "Jän",
+          "Feb",
+          "Mär",
+          "Apr",
+          "Mai",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Okt",
+          "Nov",
+          "Dez"
+        ],
+        "temp": [
+          -0.1,
+          1.8,
+          6.0,
+          11.0,
+          15.5,
+          19.2,
+          20.8,
+          20.1,
+          15.2,
+          10.2,
+          5.2,
+          0.5
+        ],
+        "precip": [
+          20,
+          29,
+          34,
+          51,
+          93,
+          120,
+          123,
+          128,
+          93,
+          63,
+          54,
+          40
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "geosphere_klima_normal_1991_2020",
+        "series": "graz",
+        "note": null,
+        "title": "Klimanormalwerte österreichischer Stationen (1991–2020)",
+        "url": "https://data.hub.geosphere.at/dataset/klima-v2-1m",
+        "attribution": "Datenquelle: GeoSphere Austria – data.hub.geosphere.at (klima-v2-1m, CC BY 4.0)",
+        "stand": "1991–2020"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "approved",
+  "provenance": "harvested:c0115",
+  "source": "ai",
+  "created_at": "2026-06-27T13:26:34+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

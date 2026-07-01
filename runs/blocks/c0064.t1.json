@@ -1,0 +1,64 @@
+{
+  "id": "c0064.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Fülle die Passivformen von 'amare' (Infinitiv Präsens Passiv: amari) im Präsens Indikativ Passiv aus.\n\n| Person | Aktiv | Passiv |\n|---|---|---|\n| 1. Sg. | amo | |\n| 2. Sg. | amas | |\n| 3. Sg. | amat | amatur |\n| 1. Pl. | amamus | |\n| 2. Pl. | amatis | |\n| 3. Pl. | amant | |",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Person",
+        "Aktiv",
+        "Passiv"
+      ],
+      "rows": 6
+    },
+    "cognitive_level": "remember",
+    "dimensions": [
+      "SPR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "LAT.US.4.SPR.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "1. Sg.: amor | 2. Sg.: amaris | 3. Sg.: amatur | 1. Pl.: amamur | 2. Pl.: amamini | 3. Pl.: amantur",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "watch_outs": [
+      "1. Sg. Passiv: 'amor' (nicht 'amor') — aber Homonymie mit amor (= die Liebe, Subst.) ist eine klassische Falle: 'amor' kann sowohl 'ich werde geliebt' als auch 'die Liebe' bedeuten — nur der Kontext entscheidet.",
+      "2. Pl.: amamini — diese Form ist ungewöhnlich und wird oft falsch gebildet; explizit einprägen.",
+      "Das '-r'-Signal konsequent betonen: jede Passivform endet auf -r oder enthält -r-."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Latein",
+  "klasse": 4,
+  "kompetenzbereich": "Sprach- und textbezogene Kompetenzen",
+  "competences": [
+    "LAT.US.4.SPR.03"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "SPR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0064",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

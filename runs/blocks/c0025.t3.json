@@ -1,0 +1,67 @@
+{
+  "id": "c0025.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "In vielen Schulbüchern steht: „Im Alten Ägypten gab es eine klare gesellschaftliche Hierarchie: ganz oben der Pharao, darunter Priester und Beamte, dann Handwerker und Bauern, ganz unten die Sklaven.“\n\nDiese Aussage stammt aus einem Schulbuch, das 2019 erschienen ist.\n\nFormuliere eine historische Frage, die hinter dieser Schulbuchaussage steckt. Beginne deine Frage mit: „Wie …“ oder „Inwiefern …“",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 2
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "HFR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GPB.US.2.HIS.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Musterfragen (mehrere sind korrekt): „Wie war die altägyptische Gesellschaft aufgebaut und nach welchen Kriterien wurden Menschen einer Schicht zugeordnet?“ / „Inwiefern unterschied sich das Leben von Menschen in verschiedenen Gesellschaftsschichten im Alten Ägypten?“ / „Wie stabil war die gesellschaftliche Hierarchie im Alten Ägypten und gab es Möglichkeiten, aufzusteigen?“ Die Frage muss auf Kontinuität/Wandel oder gesellschaftliche Strukturen zielen — keine Faktenfrage ('Wer war Pharao?').",
+    "acceptable_reasoning": "Akzeptabel sind alle Fragen, die über Einzelfakten hinausgehen und eine strukturelle oder vergleichende Perspektive einnehmen.",
+    "rubric": [
+      {
+        "criterion": "Fragequalität",
+        "levels": [
+          "Faktenfrage oder keine echte Frage",
+          "Frage zielt auf Strukturen, ist aber zu weit oder zu eng",
+          "Frage greift die Kontinuität/den Wandel oder die gesellschaftliche Struktur explizit auf und ist offen formuliert"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen formulieren oft Faktenfragen ('Wer waren die Sklaven?') statt Strukturfragen. Unterschied erarbeiten: Historische Fragen fragen nach Zusammenhängen, nicht nur nach Namen/Zahlen.",
+      "Die Kernfrage hinter einer Darstellung herauszuarbeiten ist eine metakognitive Leistung — ggf. mit einem Beispiel vorentlasten."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Geschichte und politische Bildung",
+  "klasse": 2,
+  "kompetenzbereich": "Historische Fragekompetenz",
+  "competences": [
+    "GPB.US.2.HIS.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "HFR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0025",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

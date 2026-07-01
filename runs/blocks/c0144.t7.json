@@ -1,0 +1,97 @@
+{
+  "id": "c0144.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Stell dir vor, du bist Mitglied einer Jury, die entscheiden soll, wessen Theorie über den Grundbaustein der Welt – Thales' Wasser, Anaximenes' Luft, Heraklits Feuer/Logos oder Demokrits Atom – die wissenschaftlich überzeugendste für das 5. Jh. v. Chr. war. Entscheide dich für eine Theorie und begründe deine Entscheidung mit mindestens drei Argumenten. Bedenke: Es geht nicht darum, wer aus heutiger Sicht 'Recht hat', sondern darum, welche Theorie methodisch überzeugender argumentiert.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Jury-Entscheidung: Welche vorsokratische Theorie ist für das 5. Jh. v. Chr. methodisch überzeugender – und warum?"
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "INT"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GRI.OS.7.GRI.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "GRI.OS.7.GRI.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 15,
+    "answer_key": "Musterlösung (Demokrit): Demokrits Atomtheorie ist methodisch am überzeugendsten, weil (1) sie das Prinzip der Unteilbarkeit konsequent zu Ende denkt und eine klare Grenze setzt; (2) sie Bewegung (κενόν) systematisch einbezieht, was andere Theorien vernachlässigen; (3) sie prinzipiell durch Beobachtung von Auflösungsprozessen (Staub, Verdampfen) gestützt werden kann. Andere Lösungen sind möglich und gleichwertig, wenn sie methodische Kriterien benennen.",
+    "acceptable_reasoning": "Jede klar begründete Entscheidung mit mindestens drei sachlich korrekten Argumenten gilt als vollwertig. Wichtiger als die Wahl der Theorie ist die Qualität der Argumentation.",
+    "rubric": [
+      {
+        "criterion": "Entscheidung klar formuliert",
+        "levels": [
+          "Klare, eindeutige Entscheidung",
+          "Entscheidung erkennbar, aber unklar formuliert",
+          "Keine klare Entscheidung"
+        ]
+      },
+      {
+        "criterion": "Qualität der Argumente",
+        "levels": [
+          "Mindestens 3 methodisch bezogene Argumente",
+          "2 Argumente mit methodischem Bezug",
+          "1 Argument oder nur Faktenauflistung",
+          "Keine Argumente"
+        ]
+      },
+      {
+        "criterion": "Historische Perspektive (nicht modernes 'Recht haben')",
+        "levels": [
+          "Konsequent aus 5. Jh. v. Chr. Perspektive argumentiert",
+          "Teilweise modern, teilweise historisch",
+          "Nur modernes Urteil"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen wählen oft Demokrit, weil sie wissen, dass Atome 'richtig' sind – das soll explizit entkoppelt werden (Aufgabenstellung!). Die Begründung muss auf 5. Jh. v. Chr.-Maßstäben basieren.",
+      "Schwächere Antworten listen nur Fakten auf, ohne zu argumentieren – auf den Unterschied Auflistung vs. Argumentation hinweisen.",
+      "Heraklit ist eine anspruchsvolle Wahl (λόγος ist abstrakter als materielle Prinzipien) – solche Antworten verdienen besondere Würdigung."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Griechisch",
+  "klasse": 7,
+  "kompetenzbereich": "Das griechische Denken als Fundament der Wissenschaften",
+  "competences": [
+    "GRI.OS.7.GRI.02",
+    "GRI.OS.7.GRI.01"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "INT"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0144",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:22+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

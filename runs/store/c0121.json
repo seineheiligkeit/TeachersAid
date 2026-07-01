@@ -1,0 +1,663 @@
+{
+  "id": "c0121",
+  "stage": "content",
+  "status": "approved",
+  "source": "generated",
+  "created_at": "2026-06-27T15:21:15+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00",
+  "title": "Mathematik 3. Kl. — Reich und arm im Laendervergleich: Was sagen uns Mittelwert und Median? (generiert)",
+  "note": "",
+  "request": {
+    "subject": "Mathematik",
+    "klasse": 3,
+    "stufe": "Unterstufe",
+    "schulform": null,
+    "topic_raw": "Reich und arm im Laendervergleich: Was sagen uns Mittelwert und Median?",
+    "envelope": "doppelstunde",
+    "options": {}
+  },
+  "resolution": {
+    "fassung": {
+      "kurztitel": "AHS-Lehrplan (konsolidiert)",
+      "bgbl": "BGBl. II Nr. 204/2024",
+      "doknr": "NOR40264237",
+      "valid_from": "2024-09-01",
+      "valid_to": "2026-08-31"
+    },
+    "subject": "Mathematik",
+    "klasse": 3,
+    "matched_kompetenzbereiche": [
+      "4: Daten und Zufall"
+    ],
+    "grade_check": true,
+    "competences": [
+      {
+        "id": "MAT.US.3.DAT.01",
+        "kompetenzbereich": "4: Daten und Zufall",
+        "klasse": 3,
+        "text": "statistische Darstellungen erstellen und nutzen ; Manipulationen in statistischen Darstellungen erkennen",
+        "source_ref": "MATHEMATIK / 3. Klasse / 4: Daten und Zufall",
+        "dimensions": [],
+        "uebergreifende_themen": [
+          4,
+          12,
+          6,
+          7
+        ],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      },
+      {
+        "id": "MAT.US.3.DAT.02",
+        "kompetenzbereich": "4: Daten und Zufall",
+        "klasse": 3,
+        "text": "aufbauend auf einem intuitiven Wahrscheinlichkeitsbegriff Wahrscheinlichkeiten in einfachen Zufallsexperimenten ermitteln, vergleichen und interpretieren.",
+        "source_ref": "MATHEMATIK / 3. Klasse / 4: Daten und Zufall",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      }
+    ],
+    "notes": []
+  },
+  "plan": null,
+  "content": {
+    "meta": {
+      "title": "Reich und arm im Laendervergleich: Was sagen uns Mittelwert und Median?",
+      "subtitle": "LLM-Entwurf — Erstprüfung",
+      "subject": "Mathematik",
+      "stufe": "Unterstufe",
+      "klasse": 3,
+      "kernfrage": "Wie veraendert ein einziger Ausreisser den Mittelwert — und warum ist der Median manchmal ehrlicher?",
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "lehrplan_label": "Mathematik · 3. Klasse · 4: Daten und Zufall",
+      "content_language": "de",
+      "subject_models": []
+    },
+    "subject_model": {
+      "subject": "Mathematik",
+      "stufe": "Unterstufe",
+      "dimensions": [
+        {
+          "id": "MOD",
+          "label": "Modellieren und Problemlösen",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "OPE",
+          "label": "Operieren (Rechnen und Konstruieren)",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "DAR",
+          "label": "Darstellen und Interpretieren",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "BEG",
+          "label": "Vermuten und Begründen",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "content_areas": [
+        {
+          "id": "ZAH",
+          "label": "Zahlen und Maße",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "VAR",
+          "label": "Variablen und Funktionen",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "FIG",
+          "label": "Figuren und Körper",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "DAT",
+          "label": "Daten und Zufall",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "task_kind_extensions": [
+        "calculation",
+        "construction",
+        "modelling_task"
+      ]
+    },
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Kennzahlen und Ausreisser",
+        "teacher_overview": {
+          "throughline": "Am Beispiel des BIP pro Kopf — mit dem markanten Ausreisser Schweiz (103 998 USD) — entwickeln Schuelerinnen und Schueler ein tiefes Verstaendnis dafuer, wann Mittelwert und Median unterschiedliche Aussagen machen und welche Kennzahl in welchem Kontext fairer ist. Dieser Kontext ist reich an Anknuepfungspunkten zu Gesellschafts- und Wirtschaftskunde.",
+          "talking_points": [
+            "BIP pro Kopf ist eine mittlere Groesse — es beschreibt nicht, wie reich eine einzelne Person ist, sondern teilt das gesamte Bruttoinlandsprodukt durch die Bevoelkerungszahl.",
+            "Die Schweiz liegt mit 103 998 USD fast doppelt so hoch wie Oesterreich (58 269 USD) und beinahe 100-mal so hoch wie Nigeria (1 084 USD) — die Groessenordnungen sind schwer vorstellbar.",
+            "Der Ausreisser-Effekt ist hier gut quantifizierbar: Mittelwert ohne Schweiz sinkt von 45 047 auf 36 625 USD.",
+            "Warum vergleicht man BIP pro Kopf und nicht das Gesamt-BIP? (Bevoelkerungsgroesse spielt eine entscheidende Rolle.)"
+          ],
+          "extensions": [
+            "Welches Diagramm waere besser geeignet: logarithmische Achse? Warum? (Probe: log-Skala laesst alle Werte gut erkennbar darstellen.)",
+            "Was misst das BIP pro Kopf NICHT? (Einkommensverteilung, Lebensqualitaet, Umwelt) — Alternativen wie Human Development Index recherchieren.",
+            "Bevölkerungsgewichteter Durchschnitt: Wuerde Indien (fast 1,4 Mrd. Einwohner) den Mittelwert stark verschieben?"
+          ],
+          "differentiation": null,
+          "timing_notes": null
+        },
+        "blocks": [
+          {
+            "id": "i1",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "abb1"
+            ],
+            "provenance": null,
+            "role": "info",
+            "kind": "prose",
+            "content": "Das Bruttoinlandsprodukt (BIP) pro Kopf ist ein Mass fuer den wirtschaftlichen Wohlstand eines Landes: Es gibt an, wie viel Wirtschaftsleistung — umgerechnet in US-Dollar — rechnerisch auf eine Person entfaellt. Das Diagramm zeigt die Werte fuer acht Laender im Jahr 2024 (Quelle: World Bank).",
+            "callout_role": null,
+            "teacher_note": null,
+            "watch_outs": []
+          },
+          {
+            "id": "t1",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "abb1"
+            ],
+            "provenance": null,
+            "role": "task",
+            "kind": "ordering",
+            "prompt": "Ordne die acht Laender nach ihrem BIP pro Kopf, vom kleinsten zum groessten Wert. Nutze die folgenden Werte: Oesterreich 58 269 | Deutschland 56 104 | Schweiz 103 998 | Italien 40 385 | USA 84 534 | China 13 303 | Indien 2 695 | Nigeria 1 084 (alle Angaben in USD).",
+            "payload": {
+              "kind": "ordering",
+              "items": [
+                "Oesterreich",
+                "Deutschland",
+                "Schweiz",
+                "Italien",
+                "USA",
+                "China",
+                "Indien",
+                "Nigeria"
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 3
+            },
+            "cognitive_level": "remember",
+            "difficulty": null,
+            "dimensions": [
+              "DAR",
+              "OPE"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.3.DAT.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 4,
+            "answer_key": "Aufsteigend: Nigeria (1 084) | Indien (2 695) | China (13 303) | Italien (40 385) | Deutschland (56 104) | Oesterreich (58 269) | USA (84 534) | Schweiz (103 998).",
+            "acceptable_reasoning": null,
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Fehler beim Vergleich vielstelliger Zahlen: Schuelerinnen und Schueler vergleichen ziffernweise statt nach Stellenwert.",
+              "Darauf achten, dass 56 104 (Deutschland) < 58 269 (Oesterreich): der Unterschied ist relativ gering."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t2",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "calculation",
+            "prompt": "Berechne den Mittelwert und den Median des BIP pro Kopf fuer alle acht Laender. Zeige deinen Rechenweg.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "apply",
+            "difficulty": null,
+            "dimensions": [
+              "OPE"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.3.DAT.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Summe: 1 084 + 2 695 + 13 303 + 40 385 + 56 104 + 58 269 + 84 534 + 103 998 = 360 372. Mittelwert: 360 372 / 8 = 45 046,5 USD. Fuer den Median: geordnete Reihe (n = 8, gerade): Nigeria 1 084 | Indien 2 695 | China 13 303 | Italien 40 385 | Deutschland 56 104 | Oesterreich 58 269 | USA 84 534 | Schweiz 103 998. Median = (40 385 + 56 104) / 2 = 96 489 / 2 = 48 244,50 USD.",
+            "acceptable_reasoning": "Geringe Rechenfehler bei der Summe grosser Zahlen bis +/- 1 000 sind mit Punktabzug akzeptabel, sofern der Rechenweg korrekt ist.",
+            "rubric": [
+              {
+                "criterion": "Mittelwert korrekt (45 046,5 USD)",
+                "levels": [
+                  "Falsch",
+                  "Richtig (+/- 500 USD)"
+                ]
+              },
+              {
+                "criterion": "Median korrekt (48 244,5 USD)",
+                "levels": [
+                  "Falscher Wert oder Methode",
+                  "Richtig"
+                ]
+              },
+              {
+                "criterion": "Rechenweg nachvollziehbar",
+                "levels": [
+                  "Nur Ergebnis, kein Weg",
+                  "Weg teilweise sichtbar",
+                  "Vollstaendiger Weg"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Bei n=8 (gerade) Median = Mittelwert der 4. und 5. geordneten Werte (40 385 und 56 104), nicht der 4. Wert allein.",
+              "Summe pruefen: 360 372 — Fehler entstehen typischerweise bei der Addition von 103 998.",
+              "Mittelwert (45 047 USD) liegt unterhalb des Medians (48 244 USD) — das ist ungewoehnlich und Ausgangspunkt fuer t3."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t3",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "open_response",
+            "prompt": "Vergleiche Mittelwert (~45 047 USD) und Median (~48 245 USD). Warum liegt hier der Mittelwert UNTER dem Median? Welches Land ist dafuer verantwortlich? Begruende anhand der Zahlen.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "analyze",
+            "difficulty": null,
+            "dimensions": [
+              "BEG",
+              "DAR"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.3.DAT.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 7,
+            "answer_key": "Nigeria (1 084 USD) und Indien (2 695 USD) sind extreme Ausreisser nach UNTEN — sie ziehen den Mittelwert nach unten. China (13 303 USD) verstaerkt diesen Effekt. Die drei Niedrigwerte liegen weit unter allen anderen Werten und senken die Summe so stark, dass der Mittelwert (45 047 USD) unter den Median (48 245 USD) faellt. Erklaerung: Wenn die Ausreisser auf der Niedrig-Seite liegen, sinkt der Mittelwert unter den Median. Wenn die Ausreisser auf der Hoch-Seite liegen (wie bei Schweiz), steigt der Mittelwert ueber den Median.",
+            "acceptable_reasoning": "Antwort, die konkret Nigeria/Indien/China als Ursache benennt und 'Ausreisser unten drueckt Mittelwert nach unten' erklaert, ist vollwertig.",
+            "rubric": [
+              {
+                "criterion": "Ausreisser-Laender korrekt identifiziert",
+                "levels": [
+                  "Kein Land benannt",
+                  "Ein Land genannt",
+                  "Alle drei (Nigeria, Indien, China) mit Werten"
+                ]
+              },
+              {
+                "criterion": "Richtung des Effekts erklaert",
+                "levels": [
+                  "Richtung falsch oder fehlend",
+                  "Korrekt: Niedrigausreisser drueckt Mittelwert unter Median"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Haeufige Fehlannahme: 'Mittelwert immer groesser als Median' — dieser Datensatz widerlegt das.",
+              "Hier kann die Schweiz als Gegenstueck erklaert werden: entfernt man stattdessen Indien und Nigeria und behaelt die Schweiz, wuerde der Mittelwert steigen."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t4",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "calculation",
+            "prompt": "Berechne den Mittelwert OHNE die Schweiz (also fuer die verbleibenden 7 Laender). Um wie viel veraendert sich der Mittelwert? Was zeigt das?",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "analyze",
+            "difficulty": null,
+            "dimensions": [
+              "OPE",
+              "BEG"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.3.DAT.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 7,
+            "answer_key": "Summe ohne Schweiz: 360 372 - 103 998 = 256 374. Mittelwert: 256 374 / 7 = 36 624,86 USD ~ 36 625 USD. Veraenderung: 45 047 - 36 625 = 8 422 USD. Das zeigt: Ein einziger Ausreisser (Schweiz) erhoeht den Mittelwert um mehr als 8 000 USD. Der Median der 8 Laender war 48 244,5 USD; der Median ohne Schweiz (n=7, mittlerer = 4. Wert) ist 40 385 USD (Italien). Der Median veraendert sich also staerker, weil bei 7 Werten der mittlere Wert einem anderen Wert entspricht.",
+            "acceptable_reasoning": "Beobachtung, dass der Mittelwert stark reagiert, genuegt; genaue Medianberechnung ohne Schweiz ist optionale Erweiterung.",
+            "rubric": [
+              {
+                "criterion": "Neue Summe korrekt (256 374)",
+                "levels": [
+                  "Falsch",
+                  "Richtig"
+                ]
+              },
+              {
+                "criterion": "Division durch 7",
+                "levels": [
+                  "Durch 8 dividiert (Fehler)",
+                  "Durch 7 dividiert"
+                ]
+              },
+              {
+                "criterion": "Veraenderung beschrieben",
+                "levels": [
+                  "Keine Interpretation",
+                  "Veraenderung quantifiziert und Bedeutung erklaert"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Die Summe ohne Schweiz korrekt berechnen: 360 372 - 103 998 = 256 374.",
+              "Division durch 7 (nicht durch 8): betonen, dass sich auch der Nenner aendert."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t5",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "abb1"
+            ],
+            "provenance": null,
+            "role": "task",
+            "kind": "open_response",
+            "prompt": "Stell dir vor, ein Politiker sagt: 'Das BIP pro Kopf betraegt im Schnitt ueber 45 000 USD — damit sind alle acht Laender im Vergleich wohlhabend.' Erklaere, warum diese Aussage irrefuehrend ist. Welche Kennzahl wuerde ein ehrlicheres Bild liefern?",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "evaluate",
+            "difficulty": null,
+            "dimensions": [
+              "BEG",
+              "DAR"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.3.DAT.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 7,
+            "answer_key": "Irrefuehrend, weil: Nigeria hat 1 084 USD/Kopf und Indien 2 695 USD/Kopf — beide liegen weit unter dem Mittelwert. 5 der 8 Laender liegen UNTER dem Mittelwert (45 047 USD). Der hohe Mittelwert kommt durch Laender wie Schweiz (103 998) und USA (84 534), die ihn nach oben ziehen. Ein ehrlicherer Wert waere der Median (48 244,5 USD), der zeigt, dass die Haelfte der Laender unter diesem Wert liegt. Noch ehrlicher: einzelne Werte zeigen, wie extrem die Unterschiede sind (Faktor 96 zwischen Schweiz und Nigeria).",
+            "acceptable_reasoning": "Antwort, die konkret Laender unter dem Mittelwert benennt und Median als Alternative vorschlaegt, ist vollwertig.",
+            "rubric": [
+              {
+                "criterion": "Konkrete Laender unter Mittelwert benannt",
+                "levels": [
+                  "Kein Beispiel",
+                  "1 Beispiel",
+                  "Mindestens 2 (Nigeria, Indien)"
+                ]
+              },
+              {
+                "criterion": "Median als Alternative vorgeschlagen",
+                "levels": [
+                  "Kein Alternativvorschlag",
+                  "Median oder andere valide Alternative genannt"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Schuelerinnen und Schueler neigen dazu, den Mittelwert als 'Norm' zu sehen — Bewusstsein schaffen, dass er kein typischer Wert ist.",
+              "Verbindung zu Aussage 1 (t3): der Mittelwert ist hier aus zwei Richtungen verzerrt."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t6",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "true_false_justify",
+            "prompt": "Entscheide, ob die folgenden Aussagen richtig oder falsch sind. Begruende mit konkreten Zahlen.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Oesterreich liegt mit seinem BIP pro Kopf (58 269 USD) ueber dem Mittelwert der acht Laender.",
+                "Die Spannweite des BIP pro Kopf betraegt mehr als 100 000 USD.",
+                "Der Median ist bei diesem Datensatz immer ein tatsaechlich vorkommender BIP-Wert eines der acht Laender."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "evaluate",
+            "difficulty": null,
+            "dimensions": [
+              "BEG"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.3.DAT.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "1. RICHTIG: Oesterreich 58 269 > Mittelwert 45 046,5. 2. RICHTIG: Spannweite = 103 998 - 1 084 = 102 914 USD > 100 000 USD. 3. FALSCH: Bei n = 8 (gerade Anzahl) ist der Median das arithmetische Mittel der 4. und 5. Werte: (40 385 + 56 104) / 2 = 48 244,5 USD. Dieser Wert kommt in keinem der acht Laender tatsaechlich vor. Bei ungerader Anzahl von Werten ist der Median immer ein tatsaechlicher Datenwert, bei gerader Anzahl muss das nicht so sein.",
+            "acceptable_reasoning": null,
+            "rubric": [
+              {
+                "criterion": "Alle drei Aussagen korrekt beurteilt",
+                "levels": [
+                  "0-1 korrekt",
+                  "2 korrekt",
+                  "Alle 3 korrekt"
+                ]
+              },
+              {
+                "criterion": "Erklaerung Aussage 3 (Median nicht immer Datenwert)",
+                "levels": [
+                  "Nicht erklaert",
+                  "Erklaert mit Verweis auf gerade/ungerade n"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Aussage 3 ist das tiefste konzeptionelle Lernziel: der Median ist nicht zwingend ein Datenwert — dieser Irrtum ist sehr verbreitet.",
+              "Aussage 2: sorgfaeltig rechnen; Max = Schweiz (103 998), Min = Nigeria (1 084)."
+            ],
+            "self_check": null
+          }
+        ]
+      }
+    ],
+    "assets": [
+      {
+        "id": "abb1",
+        "role": "figure",
+        "medium": "visual",
+        "generator": "matplotlib:bar_chart",
+        "spec": {
+          "title": "BIP pro Kopf im Laendervergleich (2024, USD)",
+          "xlabel": "Land",
+          "ylabel": "BIP pro Kopf (US-Dollar)",
+          "log": false,
+          "categories": [
+            "Österreich",
+            "Deutschland",
+            "Schweiz",
+            "Italien",
+            "USA",
+            "China",
+            "Indien",
+            "Nigeria"
+          ],
+          "values": [
+            58269,
+            56104,
+            103998,
+            40385,
+            84534,
+            13303,
+            2695,
+            1084
+          ]
+        },
+        "correctness_surface": null,
+        "misleading_in_isolation": false,
+        "intentionally_flawed": null,
+        "machine_generatable": true,
+        "provenance": null,
+        "data_source": {
+          "dataset_id": "worldbank_bip_pro_kopf",
+          "series": "vergleich",
+          "note": null,
+          "title": "BIP pro Kopf im Ländervergleich",
+          "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD",
+          "attribution": "Datenquelle: World Bank – data.worldbank.org (NY.GDP.PCAP.CD, CC BY 4.0)",
+          "stand": "2024"
+        },
+        "illustrative": false,
+        "caption": null
+      }
+    ],
+    "nachweis": {
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "statement": "Diese Materialien adressieren 1 von 2 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
+      "competence_coverage": [
+        {
+          "competence_id": "MAT.US.3.DAT.01",
+          "exercised_by": [
+            "t1",
+            "t2",
+            "t3",
+            "t4",
+            "t5",
+            "t6"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "MAT.US.3.DAT.02",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        }
+      ],
+      "gaps": [
+        "MAT.US.3.DAT.02 — aufbauend auf einem intuitiven Wahrscheinlichkeitsbegriff Wahrscheinlichkeiten in einfachen Zufallsexperimenten ermitteln, vergleichen und interpretieren."
+      ],
+      "zentrale_konzepte": [
+        "4: Daten und Zufall"
+      ],
+      "uebergreifende_themen": [
+        4,
+        6,
+        7,
+        12
+      ]
+    },
+    "depth_profile": {
+      "by_level": {
+        "remember": 1,
+        "apply": 1,
+        "analyze": 2,
+        "evaluate": 2
+      },
+      "by_dimension": {
+        "DAR": 1,
+        "OPE": 2,
+        "BEG": 3
+      },
+      "by_difficulty": {
+        "1": 1,
+        "2": 3,
+        "3": 2
+      },
+      "minutes_total": 41,
+      "minutes_resource_independent": 41
+    },
+    "rack": null
+  },
+  "artifacts": {
+    "student_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0121\\student.pdf",
+    "teacher_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0121\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0121\\homework.pdf",
+    "preview_png": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0121\\raster\\student.p1.png"
+  },
+  "verify_problems": [],
+  "verify_warnings": [],
+  "parent_id": null,
+  "feedback": [],
+  "error": null
+}

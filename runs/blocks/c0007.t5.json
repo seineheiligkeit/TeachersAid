@@ -1,0 +1,77 @@
+{
+  "id": "c0007.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "enactive",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "movement_task",
+    "prompt": "Übt zu zweit: Eine Person führt einen Strecksprung aus, die andere beobachtet und gibt danach Feedback nach dieser Struktur: 1. Was habe ich gesehen? (Beobachtung) 2. Was war gut? (Stärke) 3. Was könnte besser werden? (Verbesserung) — Dann tauscht die Rollen. Schreibt die Feedbacks stichwortartig auf.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "FAC",
+      "SOZ"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BUS.US.3.FAC.05",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Schüler:innen sollen strukturiertes Feedback geben (Sandwich-Methode: Stärke − Verbesserung − Stärke, oder Drei-Schritt oben). Beim Strecksprung relevante Merkmale: Absprung beidbeinig, Körper in der Luft gestreckt (Zehenspitzen, Arme nach oben oder an den Seiten), weiche Landung, Knie leicht gebeugt. Bewertung: Wurde die Struktur eingehalten? Wurden korrekte Merkmale beobachtet?",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Feedback-Struktur",
+        "levels": [
+          "Keine Struktur erkennbar",
+          "Teile der Struktur vorhanden",
+          "Vollständige Drei-Schritt-Struktur"
+        ]
+      },
+      {
+        "criterion": "Fachliche Korrektheit der Beobachtung",
+        "levels": [
+          "Keine relevanten Merkmale genannt",
+          "1 korrektes Merkmal",
+          "2+ korrekte, relevante Merkmale"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Feedback-Gespräche können unangenehm werden, wenn Schüler:innen sich gegenseitig kritisieren — Struktur und 'Ich-Form' ('ich habe gesehen') schützen davor.",
+      "Nicht alle Schüler:innen trauen sich, Kritik zu äußern — Betonen, dass Verbesserungsvorschläge hilfreich sind, nicht negativ."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "movement_task",
+  "subject": "Bewegung und Sport",
+  "klasse": 3,
+  "kompetenzbereich": "Fachkompetenz",
+  "competences": [
+    "BUS.US.3.FAC.05"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "FAC",
+    "SOZ"
+  ],
+  "modality": "enactive",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0007",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T12:57:54+00:00"
+}

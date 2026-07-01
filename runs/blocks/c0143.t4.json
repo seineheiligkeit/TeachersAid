@@ -1,0 +1,77 @@
+{
+  "id": "c0143.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "multiple_choice",
+    "prompt": "Deine Lehrkraft liest einen griechischen Satz vor (oder zeigt ihn): Ein Schüler soll das unterstrichene Nomen im richtigen Kasus identifizieren. Welche Antwort ist korrekt für die Form τοῦ λόγου?",
+    "payload": {
+      "kind": "multiple_choice",
+      "options": [
+        "A) Nominativ Singular – Subjekt des Satzes",
+        "B) Genitiv Singular – Zugehörigkeit oder Partitiv",
+        "C) Dativ Singular – indirektes Objekt",
+        "D) Akkusativ Singular – direktes Objekt"
+      ],
+      "select": "one"
+    },
+    "response": {
+      "mode": "choices",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "select": "one"
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "UEB"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GRI.OS.5.XXX.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 4,
+    "answer_key": "B) Genitiv Singular – τοῦ ist der bestimmte Artikel im Genitiv mask. Sg.; λόγου zeigt die Genitivendung -ου.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen erkennen τοῦ oft nicht als Artikelform – der Artikel ist Schlüssel zur Kasusbestimmung und sollte immer mitgelernt werden.",
+      "Verwechslung mit τόν (Akk.) ist häufig – Betonung auf die Endungsunterschiede legen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "multiple_choice",
+  "subject": "Griechisch",
+  "klasse": 5,
+  "kompetenzbereich": "–",
+  "competences": [
+    "GRI.OS.5.XXX.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "UEB"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0143",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:22+00:00",
+  "updated_at": "2026-06-29T18:41:06+00:00"
+}

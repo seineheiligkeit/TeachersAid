@@ -1,0 +1,101 @@
+{
+  "id": "c0153.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Überlege dir einen eigenen Anwendungskontext (aus Physik, Wirtschaft oder Alltag), in dem ein bestimmtes Integral sinnvoll eingesetzt werden kann. Beschreibe:\n(a) Was wird durch die Funktion f(x) dargestellt?\n(b) Was bedeutet das Integral ∫ₐᵇ f(x) dx in diesem Kontext?\n(c) Welche Einheiten haben f(x), x und das Integral?\nBewerte abschließend kurz: Ist dein Modell realistisch? Welche Vereinfachungen hast du vorgenommen?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 70.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "DM",
+      "KA"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.OS.8.GRU2.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "MAT.OS.x.HAN.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Musterlösung (individuell): Zum Beispiel — f(t) = Leistung eines Sonnenpanels in Watt, t in Stunden. ∫₆¹⁸ f(t) dt = erzeugte Energie in Wh. Einheiten: W, h, Wh. Vereinfachung: Wetterverhältnisse als konstant angenommen. Bewertungsmaßstab: Kontext klar beschrieben; Integral sinnvoll interpretiert; Einheiten konsistent; kritische Reflexion vorhanden.",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Kontext",
+        "levels": [
+          "Unklar oder unpassend",
+          "Verständlich beschrieben",
+          "Originell und vollständig"
+        ]
+      },
+      {
+        "criterion": "Interpretation des Integrals",
+        "levels": [
+          "Falsch oder fehlt",
+          "Sachlich korrekt"
+        ]
+      },
+      {
+        "criterion": "Einheiten",
+        "levels": [
+          "Fehlen oder inkonsistent",
+          "Konsistent und korrekt"
+        ]
+      },
+      {
+        "criterion": "Reflexion/Vereinfachungen",
+        "levels": [
+          "Fehlt",
+          "Mindestens eine Vereinfachung benannt",
+          "Kritische Auseinandersetzung mit Modellgrenzen"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen wählen manchmal Kontexte, in denen das Integral keine sinnvolle Bedeutung hat (z. B. f = Temperatur, x = Ort — Einheiten ergeben keinen physikalischen Sinn).",
+      "Einheitencheck ist hier besonders wichtig: [f] · [x] muss eine sinnvolle Einheit ergeben.",
+      "Förderung von Kreativität: Verschiedene Lösungen akzeptieren, solange die Logik stimmt."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Mathematik",
+  "klasse": 8,
+  "kompetenzbereich": "Grundlagen der Integralrechnung",
+  "competences": [
+    "MAT.OS.8.GRU2.02",
+    "MAT.OS.x.HAN.01"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "DM",
+    "KA"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "approved",
+  "provenance": "harvested:c0153",
+  "source": "ai",
+  "created_at": "2026-06-28T19:03:26+00:00",
+  "updated_at": "2026-06-29T18:41:07+00:00"
+}

@@ -1,0 +1,80 @@
+{
+  "id": "c0054.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Find FOUR sentences or phrases from the article. Decide whether each one is a FACT (based on data/research) or an OPINION/ATTITUDE (based on the author's view). Write them in the correct column.",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Fact (with source/data)",
+        "Opinion / Attitude (author's view)"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "analyze",
+    "dimensions": [
+      "LES"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS1.US.4.LES.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Facts (examples): 'teenagers in Europe spend an average of six hours per day on screens'; '72% of teenagers check their phones within five minutes of waking up'; 'teenagers who spend more than four hours on social media report higher levels of stress and worse sleep quality'.\nOpinions/Attitudes (examples): 'Unfortunately, the latter seems to be more popular'; 'It seems obvious that teenagers need better guidance'; 'Simply banning phones is unlikely to solve the problem'; 'The goal should be digital balance, not digital fear.'",
+    "acceptable_reasoning": "Schüler:innen müssen nicht dieselben Stellen wählen — entscheidend ist, dass die Klassifikation korrekt und kurz begründbar ist.",
+    "rubric": [
+      {
+        "criterion": "Fact identification",
+        "levels": [
+          "2 accurate facts with source reference",
+          "1 accurate fact",
+          "None accurate"
+        ]
+      },
+      {
+        "criterion": "Attitude identification",
+        "levels": [
+          "2 attitudes with clear signal word identified",
+          "1 attitude identified",
+          "None identified"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Manche Sätze sind bewusst gemischt ('Most experts agree' — Meinung, aber von Experten; trotzdem keine eigene Forschungsdaten) — Grenzfälle im Unterrichtsgespräch klären",
+      "'Unfortunately' ist ein klassisches Einstellungssignal (Adverb der Bewertung) — explizit darauf hinweisen",
+      "Schüler:innen neigen dazu, Zahlen immer als Fakten zu sehen; betonen, dass auch Statistiken einen Kontext und Interpretation haben"
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Erste lebende Fremdsprache",
+  "klasse": 4,
+  "kompetenzbereich": "Lesen",
+  "competences": [
+    "FS1.US.4.LES.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "LES"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0054",
+  "source": "ai",
+  "created_at": "2026-06-25T12:51:35+00:00",
+  "updated_at": "2026-06-25T16:44:07+00:00"
+}

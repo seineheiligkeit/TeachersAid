@@ -1,0 +1,380 @@
+{
+  "subject": "Chemie",
+  "klasse": 4,
+  "scope_label": "Säuren, Basen und Neutralisation",
+  "title": "Säuren, Basen und Neutralisation im Alltag",
+  "kernfrage": "Wie erkennst du Säuren und Basen im Alltag, und was passiert, wenn sie aufeinandertreffen?",
+  "body": {
+    "intro": [
+      {
+        "role": "info",
+        "id": "i1",
+        "kind": "prose",
+        "content": "Säuren und Basen begegnen uns täglich: im Essig, in Reinigungsmitteln, im Magen, in Seife. Ob eine Lösung sauer, neutral oder basisch ist, lässt sich mit dem pH-Wert beschreiben — einer Skala von 0 bis 14. Unterhalb von 7 ist eine Lösung sauer, bei 7 neutral, oberhalb von 7 basisch. Indikatoren wie Lackmus oder Universalindikator zeigen durch Farbwechsel an, in welchem Bereich eine Lösung liegt. Wenn eine Säure und eine Base zusammentreffen, reagieren sie miteinander — das nennt man Neutralisation.",
+        "watch_outs": []
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Beobachten und Beschreiben",
+        "throughline": "Schüler:innen schulen den genauen Blick auf chemische Phänomene und üben, Beobachtungen präzise in Fachsprache zu formulieren.",
+        "talking_points": [
+          "Was ist der Unterschied zwischen einer Beobachtung und einer Erklärung? Welche Informationen liefert allein die Farbe eines Indikators?",
+          "Warum ist es in der Chemie wichtig, Beobachtungen von Deutungen zu trennen?",
+          "Welche Alltagsphänomene kennt ihr, bei denen ein Farbumschlag auf eine chemische Veränderung hinweist?"
+        ],
+        "extensions": [
+          "Erweiterung: Schüler:innen recherchieren weitere Naturfarbstoffe als Indikatoren (z. B. Rotkohl, Holundersaft) und beschreiben deren Farbspektrum.",
+          "Vertiefung: Unterschied zwischen Indikator (qualitativ) und pH-Meter (quantitativ) erarbeiten."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "ordering",
+            "prompt": "Ein Schüler gibt Universalindikator-Lösung nacheinander in fünf verschiedene Alltagsflüssigkeiten. Er notiert folgende Farben: gelb, rot, grün, blau, orange. Ordne diese fünf Beobachtungen vom niedrigsten zum höchsten pH-Wert (d. h. von der stärksten Säure zur stärksten Base). Nutze nur die Farbanzeige des Universalindikators: rot ≈ pH 1–3, orange ≈ pH 4–5, gelb ≈ pH 6, grün ≈ pH 7, blau ≈ pH 8–11.",
+            "payload": {
+              "kind": "ordering",
+              "items": ["blau", "grün", "gelb", "orange", "rot"]
+            },
+            "response": {
+              "mode": "none"
+            },
+            "cognitive_level": "remember",
+            "dimensions": ["W"],
+            "serves": [
+              {
+                "competence_id": "CHE.US.x.ERK.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Richtige Reihenfolge (niedrigster → höchster pH): rot → orange → gelb → grün → blau. Begründung: rot entspricht dem niedrigsten pH (stark sauer), blau dem höchsten (basisch).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schüler:innen verwechseln häufig, dass 'rot = sauer' und 'blau = basisch' gilt — nicht umgekehrt. Dies explizit klären.",
+              "Der Universalindikator zeigt nur einen ungefähren pH-Bereich; er ist kein Messgerät. Nicht als exakte Angabe werten."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "open_response",
+            "prompt": "Du führst folgendes Experiment durch: Du gibst einige Tropfen Rotkohl-Saft (ein natürlicher Indikator) in drei Gläser mit je einer farblosen Flüssigkeit: Glas A (Zitronensaft), Glas B (destilliertes Wasser), Glas C (Natronlauge, stark verdünnt). Glas A färbt sich rot, Glas B blau-violett, Glas C gelblich-grün. Beschreibe, was du in jedem Glas beobachtest, und leite daraus ab, welche Eigenschaft (sauer, neutral, basisch) jede Flüssigkeit hat. Trenne Beobachtung und Schlussfolgerung klar voneinander.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 45
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["W", "E"],
+            "serves": [
+              {
+                "competence_id": "CHE.US.x.ALL.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "answer_key": "Beobachtung: Glas A → roter Farbton; Glas B → blau-violett; Glas C → gelblich-grün. Schlussfolgerung: Glas A ist sauer (pH < 7), Glas B ist neutral oder leicht sauer (pH ≈ 7), Glas C ist basisch (pH > 7). Volle Punkte nur bei klarer Trennung von Beobachtung ('Der Saft färbt sich rot') und Deutung ('Das bedeutet, die Lösung ist sauer').",
+            "acceptable_reasoning": "Kleine Abweichungen bei den Farbbeschreibungen sind akzeptabel, solange die Zuordnung sauer/neutral/basisch korrekt und die Trennung von Beobachtung und Deutung erkennbar ist.",
+            "watch_outs": [
+              "Häufige Fehlvorstellung: 'Rotkohl-Saft ist rot, also zeigt er immer Rot an.' Klarstellen, dass die Ausgangsfarbe des Indikators nicht identisch mit der Anzeige in neutraler Lösung ist.",
+              "Schüler:innen schreiben oft 'Es ist sauer, weil Zitrone sauer ist' — das ist Vorwissen, keine Beobachtung. Auf echte Beobachtungssprache ('ich sehe...') bestehen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Beobachtung",
+                "levels": [
+                  {"label": "vollständig", "description": "Alle drei Farbänderungen korrekt beschrieben, klar als Beobachtung formuliert."},
+                  {"label": "teilweise", "description": "Zwei von drei Beobachtungen korrekt, oder Beobachtung und Deutung teilweise vermischt."},
+                  {"label": "unzureichend", "description": "Weniger als zwei Beobachtungen korrekt oder keine Trennung erkennbar."}
+                ]
+              },
+              {
+                "criterion": "Schlussfolgerung",
+                "levels": [
+                  {"label": "vollständig", "description": "Alle drei Flüssigkeiten korrekt als sauer/neutral/basisch identifiziert, logisch aus Beobachtung abgeleitet."},
+                  {"label": "teilweise", "description": "Mindestens zwei korrekt zugeordnet."},
+                  {"label": "unzureichend", "description": "Weniger als zwei korrekt."}
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Analysieren und Interpretieren",
+        "throughline": "Schüler:innen werten Messdaten zur pH-Skala aus, erkennen Muster und ziehen begründete Schlüsse über die Stärke von Säuren und Basen.",
+        "talking_points": [
+          "Die pH-Skala ist logarithmisch — was bedeutet das konkret? pH 4 ist zehnmal saurer als pH 5. Wie verändert das unsere Einschätzung von 'ein bisschen saurer'?",
+          "Welche Alltagsflüssigkeiten findet ihr überraschend sauer oder basisch? Was könnte das für den Körper bedeuten?",
+          "Warum messen wir überhaupt quantitativ (pH-Wert), wenn der Indikator uns qualitativ schon etwas sagt?"
+        ],
+        "extensions": [
+          "Differenzierung: Die Formel pH = -log[H⁺] einführen und mit konkreten Zahlen rechnen lassen (z. B. [H⁺] = 10⁻³ mol/L → pH 3).",
+          "Erweiterung: Schüler:innen erstellen eine eigene illustrierte pH-Skala mit 10 Alltagsstoffen.",
+          "Recherche-Aufgabe: pH-Wert des menschlichen Blutes und warum der Körper diesen so eng reguliert."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "table_fill",
+            "prompt": "Die folgende Tabelle zeigt den pH-Wert verschiedener Alltagsflüssigkeiten. Ergänze die fehlenden Einträge (markiert mit '?'): Trage in die leeren Felder 'sauer', 'neutral' oder 'basisch' ein, und schätze, ob der Stoff eher im Haushalt, im menschlichen Körper oder in der Natur vorkommt. Begründe abschließend in einem Satz, warum Magensaft einen so niedrigen pH-Wert benötigt.",
+            "payload": {
+              "kind": "table_fill",
+              "columns": ["Stoff", "pH-Wert", "Eigenschaft (sauer/neutral/basisch)", "Verwendung/Vorkommen"],
+              "rows": [
+                ["Salzsäure (Magensaft)", "1–2", "?", "?"],
+                ["Zitronensaft", "2–3", "?", "?"],
+                ["Kaffee", "5", "?", "?"],
+                ["destilliertes Wasser", "7", "?", "?"],
+                ["Seifenlauge", "9–10", "?", "?"],
+                ["Natronlauge (Haushaltsreiniger)", "13", "?", "?"]
+              ]
+            },
+            "response": {
+              "mode": "table",
+              "columns": ["Stoff", "pH-Wert", "Eigenschaft", "Verwendung/Vorkommen"],
+              "rows": 6
+            },
+            "cognitive_level": "apply",
+            "dimensions": ["W", "E"],
+            "serves": [
+              {
+                "competence_id": "CHE.US.x.ERK.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 12,
+            "answer_key": "Salzsäure: sauer, menschlicher Körper (Magen). Zitronensaft: sauer, Natur/Küche. Kaffee: sauer, Haushalt/Genuss. Destilliertes Wasser: neutral, Technik/Labor. Seifenlauge: basisch, Haushalt. Natronlauge: basisch, Haushalt/Reinigung. Begründung Magensaft: Der niedrige pH (stark sauer) aktiviert das Enzym Pepsin und tötet Krankheitserreger in der Nahrung ab.",
+            "acceptable_reasoning": "Bei der Kategorie 'Verwendung/Vorkommen' sind sinnvolle Alternativen akzeptabel (z. B. 'Lebensmittel' statt 'Küche'). Die Eigenschaft sauer/neutral/basisch muss exakt stimmen.",
+            "watch_outs": [
+              "Häufige Fehlvorstellung: 'Destilliertes Wasser ist basisch, weil es rein ist.' Klarstellen: Reinheit ≠ basisch; pH 7 ist neutral.",
+              "Schüler:innen unterschätzen oft, wie sauer pH 1–2 ist. Vergleich anbieten: Magensaft hat ähnlichen pH wie Salzsäure im Labor."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "open_response",
+            "prompt": "Ein Wissenschaftsmagazin berichtet: «Saurer Regen hat in manchen Regionen Deutschlands einen pH-Wert von 4,2. Normaler Regen hat pH 5,6.» Analysiere diese Aussage: (a) Um wie viel unterscheiden sich die beiden pH-Werte auf der pH-Skala? Was bedeutet das für die tatsächliche Konzentration der Säure? (b) Welche Auswirkungen könnte saurer Regen auf Kalkstein-Gebäude haben? Erkläre chemisch, was passiert (Hinweis: Kalkstein besteht aus Calciumcarbonat CaCO₃, das mit Säuren reagiert). (c) Ist die Aussage des Magazins aus naturwissenschaftlicher Sicht vollständig? Was fehlt möglicherweise?",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 60
+            },
+            "cognitive_level": "analyze",
+            "dimensions": ["E", "S"],
+            "serves": [
+              {
+                "competence_id": "CHE.US.x.ERK.03",
+                "relation": "demonstrates"
+              }
+            ],
+            "est_minutes": 15,
+            "answer_key": "(a) Der Unterschied beträgt 1,4 pH-Einheiten. Da die pH-Skala logarithmisch ist, bedeutet das, dass saurer Regen (pH 4,2) etwa 25-mal mehr Wasserstoffionen enthält als normaler Regen (pH 5,6). (b) Kalkstein reagiert mit Säuren: CaCO₃ + 2H⁺ → Ca²⁺ + H₂O + CO₂. Der Kalkstein wird aufgelöst (korrodiert), was zu Verwitterung von Gebäudefassaden, Denkmälern und Skulpturen führt. (c) Die Aussage ist unvollständig: Es fehlen Angaben über die Ursache des sauren Regens (SO₂, NOₓ aus Verbrennung), geografische Variabilität, Häufigkeit der Ereignisse und mögliche Folgen für Ökosysteme (Versauerung von Böden und Gewässern).",
+            "acceptable_reasoning": "Bei (a) ist eine näherungsweise Angabe ('etwa 25-fach' oder 'rund 20-fach') akzeptabel; die logarithmische Erklärung muss erkennbar sein. Bei (c) genügt das Nennen von 2 fehlenden Aspekten.",
+            "watch_outs": [
+              "Schüler:innen addieren oft einfach die Differenz: 'pH 5,6 − 4,2 = 1,4, also 1,4-mal saurer' — das ist falsch. Die logarithmische Natur der pH-Skala muss thematisiert werden.",
+              "Die Gleichung für die Reaktion von CaCO₃ mit Säure muss nicht vollständig ausgeglichen sein; chemisches Verständnis zählt mehr als formale Korrektheit.",
+              "Teil (c) hat kein eindeutig richtiges Ergebnis — bewerten nach Vollständigkeit und Plausibilität der genannten Lücken."
+            ],
+            "rubric": [
+              {
+                "criterion": "Logarithmische Skala (a)",
+                "levels": [
+                  {"label": "vollständig", "description": "Logarithmische Natur erklärt, ungefähre Konzentrationsdifferenz korrekt (10- bis 30-fach akzeptiert)."},
+                  {"label": "teilweise", "description": "Differenz 1,4 benannt, aber keine Erklärung der logarithmischen Skala."},
+                  {"label": "unzureichend", "description": "Nur lineare Differenz berechnet."}
+                ]
+              },
+              {
+                "criterion": "Chemische Reaktion (b)",
+                "levels": [
+                  {"label": "vollständig", "description": "Reaktion von CaCO₃ mit Säure beschrieben, Auflösung des Kalksteins erklärt."},
+                  {"label": "teilweise", "description": "Kalkstein wird angegriffen, aber keine chemische Erklärung."},
+                  {"label": "unzureichend", "description": "Nur allgemeine Aussage ohne chemischen Bezug."}
+                ]
+              },
+              {
+                "criterion": "Kritische Bewertung der Quelle (c)",
+                "levels": [
+                  {"label": "vollständig", "description": "Mindestens 2 sachlich korrekte fehlende Aspekte genannt."},
+                  {"label": "teilweise", "description": "1 fehlender Aspekt genannt."},
+                  {"label": "unzureichend", "description": "Keine sinnvolle kritische Einschätzung."}
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "Neutralisation und ihre Anwendungen",
+        "throughline": "Schüler:innen verstehen Neutralisation als gezielte Reaktion zwischen Säure und Base und erkennen ihre Bedeutung in Alltag, Medizin und Technik.",
+        "talking_points": [
+          "Was bedeutet 'neutral' wirklich? pH 7 — aber wie kommt man genau dahin? Geht das immer auf?",
+          "Warum ist es manchmal wichtig, etwas zu neutralisieren — im Körper, in der Umwelt, in der Industrie?",
+          "Kennt ihr Beispiele, wo zu viel oder zu wenig Neutralisation gefährlich sein kann?"
+        ],
+        "extensions": [
+          "Praktische Erweiterung: Titration im Versuch durchführen — schrittweise Zugabe von Natronlauge zu Salzsäure, pH-Wert messen und Kurve zeichnen.",
+          "Differenzierung: Schwache vs. starke Säuren einführen — warum ist Essigsäure (pH ~3) bei gleicher Konzentration weniger gefährlich als Salzsäure (pH ~1)?",
+          "Alltagsbezug: Bodenverbesserung in der Landwirtschaft durch Kalkung — Schüler:innen recherchieren, warum zu saure Böden problematisch sind."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "true_false_justify",
+            "prompt": "Beurteile die folgenden Aussagen über Neutralisation. Kreuze jeweils an, ob die Aussage richtig (R) oder falsch (F) ist, und begründe deine Entscheidung in einem Satz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Bei einer Neutralisation reagiert eine Säure mit einer Base zu Wasser und einem Salz.",
+                "Nach einer vollständigen Neutralisation ist die Lösung immer exakt pH 7.",
+                "Wenn man Magensäure mit Natriumhydrogencarbonat (Backpulver) behandelt, findet eine Neutralisationsreaktion statt.",
+                "Neutralisation ist nur in der Industrie relevant; im menschlichen Körper spielt sie keine Rolle."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "apply",
+            "dimensions": ["W", "E"],
+            "serves": [
+              {
+                "competence_id": "CHE.US.x.STA.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 12,
+            "answer_key": "1. RICHTIG. Allgemeine Reaktionsgleichung: Säure + Base → Salz + Wasser (z. B. HCl + NaOH → NaCl + H₂O). 2. FALSCH. pH 7 gilt nur bei der Neutralisation einer starken Säure mit einer starken Base in stöchiometrischen Mengen. Bei schwachen Säuren oder Basen kann der Gleichgewichts-pH davon abweichen. 3. RICHTIG. HCl (Magensäure) + NaHCO₃ → NaCl + H₂O + CO₂; das CO₂ ist das Gas, das beim Aufstoßen entsteht. 4. FALSCH. Im menschlichen Körper spielt Neutralisation eine zentrale Rolle: Puffersysteme im Blut (u. a. HCO₃⁻/H₂CO₃) halten den pH zwischen 7,35 und 7,45 stabil.",
+            "acceptable_reasoning": "Bei Aussage 2 ist eine vereinfachtere Antwort ('nur bei gleichen Stärken') akzeptabel. Der Kern (nicht immer pH 7) muss erkannt sein.",
+            "watch_outs": [
+              "Aussage 2 ist eine sehr verbreitete Fehlvorstellung: 'Neutralisation → pH 7'. Unbedingt besprechen. Die exakte Begründung (starke vs. schwache Säure/Base) ist für die 4. Klasse Bonuswissen; das Prinzip ('nicht immer pH 7') ist Pflicht.",
+              "Sicherheitshinweis: Magensäure ist ätzend. Falls das Experiment demonstriert wird, Schutzbrille tragen; keine unverdünnten Säuren im Unterricht ohne Lüftung und Sicherheitsunterweisung.",
+              "Bei Aussage 3: CO₂-Entwicklung als Erkennungsmerkmal der Reaktion hervorheben — Schüler:innen kennen das Phänomen (Aufstoßen), aber nicht die Chemie dahinter."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "decision_scenario",
+            "prompt": "Szenario: Ein Landwirt misst den pH-Wert seines Ackerbodens und erhält pH 4,8. Für den Anbau von Weizen ist ein pH-Bereich von 6,0–7,0 optimal. Er hat folgende Möglichkeiten: (A) Er streut gelöschten Kalk (Calciumhydroxid, Ca(OH)₂) auf den Boden. (B) Er fügt Schwefel zu, was den Boden noch saurer machen würde. (C) Er wartet ab und hofft, dass sich der pH-Wert von selbst normalisiert. Welche Maßnahme empfiehlst du? Begründe deine Entscheidung chemisch und erkläre, welche Risiken die nicht gewählten Maßnahmen hätten. Berücksichtige dabei auch mögliche Auswirkungen auf die Umwelt.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Ein Landwirt will seinen zu sauren Boden (pH 4,8) für den Weizenanbau (optimal: pH 6,0–7,0) verbessern. Welche Maßnahme wählt er?"
+            },
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": ["S", "E"],
+            "serves": [
+              {
+                "competence_id": "CHE.US.x.STA.03",
+                "relation": "demonstrates"
+              }
+            ],
+            "est_minutes": 15,
+            "answer_key": "Empfehlung: Maßnahme A (Kalkung mit Ca(OH)₂). Chemische Begründung: Calciumhydroxid ist eine Base, die mit der Bodensäure reagiert (Neutralisation) und den pH anhebt. Reaktion: Ca(OH)₂ + 2H⁺ → Ca²⁺ + 2H₂O. Risiken von B: Schwefelzugabe senkt den pH noch weiter, macht Boden für Weizen ungeeignet und kann Schwermetalle im Boden mobilisieren. Risiken von C: Böden haben wenig Selbstregulationsvermögen; der pH normalisiert sich nicht von alleine, wenn keine basischen Puffer vorhanden sind. Umweltaspekte: Überdosierung von Kalk kann den Boden zu basisch machen (pH > 7,5), was Nährstoffverfügbarkeit reduziert. Dosierung und Bodenanalyse sind daher entscheidend.",
+            "acceptable_reasoning": "Schüler:innen müssen nicht die Reaktionsgleichung in ausgeglichener Form schreiben; das chemische Prinzip (Base hebt pH an, Neutralisation) muss erkennbar sein. Mindestens ein Umweltaspekt sollte genannt werden.",
+            "watch_outs": [
+              "Überdosierung von Kalk als Risiko ansprechen — viele Schüler:innen denken, 'mehr hilft mehr'.",
+              "Differenzierung: gelöschter Kalk (Ca(OH)₂) vs. gebrannter Kalk (CaO) vs. Kalkstein (CaCO₃) — alle werden zur Kalkung eingesetzt, aber mit unterschiedlicher Reaktivität. Für die 4. Klasse reicht das Prinzip.",
+              "Falls Schüler:innen biologische Argumente bringen (Bodenleben, Würmer), ist das vollständig korrekt und sollte positiv gewürdigt werden."
+            ],
+            "rubric": [
+              {
+                "criterion": "Chemische Begründung",
+                "levels": [
+                  {"label": "vollständig", "description": "Kalkung als Neutralisation identifiziert, Prinzip (Base erhöht pH) erklärt."},
+                  {"label": "teilweise", "description": "Richtige Entscheidung ohne chemische Begründung."},
+                  {"label": "unzureichend", "description": "Falsche Entscheidung oder keine Begründung."}
+                ]
+              },
+              {
+                "criterion": "Risikobewertung",
+                "levels": [
+                  {"label": "vollständig", "description": "Mindestens ein Risiko der nicht gewählten Maßnahmen korrekt benannt."},
+                  {"label": "teilweise", "description": "Risiken angedeutet, aber unspezifisch."},
+                  {"label": "unzureichend", "description": "Keine Risikobewertung."}
+                ]
+              },
+              {
+                "criterion": "Umweltperspektive",
+                "levels": [
+                  {"label": "vollständig", "description": "Mindestens ein Umweltaspekt korrekt berücksichtigt (Überdosierung, Ökosystem, Nährstoffe)."},
+                  {"label": "teilweise", "description": "Umwelt erwähnt, aber ohne konkreten Bezug."},
+                  {"label": "unzureichend", "description": "Kein Umweltaspekt."}
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "create_produce",
+            "prompt": "Erstelle eine kurze, verständliche Erklärung (ca. 8–12 Sätze) für jüngere Schüler:innen der 2. Klasse, die noch nichts über Säuren und Basen wissen. Erkläre: Was ist eine Säure? Was ist eine Base? Was passiert bei einer Neutralisation? Nenne je ein konkretes Beispiel aus dem Alltag. Deine Erklärung soll fachlich korrekt sein, aber ohne Fachbegriffe wie 'pH-Skala' oder 'Ionen' auskommen — nutze stattdessen Alltagssprache und Bilder aus dem Alltag. Füge am Ende einen Satz hinzu, der erklärt, warum dieses Wissen im Alltag nützlich ist.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 70
+            },
+            "cognitive_level": "create",
+            "dimensions": ["W", "S"],
+            "serves": [
+              {
+                "competence_id": "CHE.US.x.ALL.03",
+                "relation": "demonstrates"
+              }
+            ],
+            "est_minutes": 18,
+            "answer_key": "Musterlösung (Orientierung): Eine Säure ist ein Stoff, der 'beißend' auf andere Stoffe wirkt — wie Zitronensaft oder Essig, die sich auf der Zunge scharf anfühlen. Eine Base ist das Gegenteil: Sie wirkt 'glatt' und 'seifig', wie Backpulver oder Seife. Wenn eine Säure und eine Base aufeinandertreffen, löschen sie sich gegenseitig aus — das nennt man Neutralisation, und dabei entsteht oft Wasser und ein Salz, das gar nicht mehr sauer oder seifig ist. Ein Beispiel aus dem Alltag: Wenn dir der Magen wehtut (weil er zu viel Säure produziert), helfen Magenmedikamente, die eine Base enthalten — sie neutralisieren die Säure im Magen. Das ist wichtig im Alltag, weil wir so verstehen, wie Reinigungsmittel wirken, warum Lebensmittel schmecken, wie sie schmecken, und wie unser Körper sich selbst schützt.",
+            "acceptable_reasoning": "Bewertet wird die Verständlichkeit für Jüngere (keine unnötigen Fachbegriffe), die fachliche Korrektheit (keine falschen Aussagen) und die Qualität des Alltagsbeispiels. Kreative Formulierungen und eigene Analogien werden positiv bewertet, solange sie chemisch korrekt sind.",
+            "watch_outs": [
+              "Häufiger Fehler: Schüler:innen schreiben für Gleichaltrige, nicht für Jüngere — auf die Zielgruppe achten.",
+              "Prüfen, ob fachliche Kernaussagen korrekt sind: Neutralisation erzeugt Salz und Wasser (nicht 'nichts'); Säure und Base 'heben sich auf' ist akzeptabel als Vereinfachung, aber nicht 'verschwinden'.",
+              "Falls Schüler:innen 'giftig' oder 'gefährlich' als Synonym für 'sauer' verwenden: klarstellen, dass Zitronensaft sauer, aber nicht gefährlich ist — Konzentration ist entscheidend."
+            ],
+            "rubric": [
+              {
+                "criterion": "Zielgruppenadäquatheit",
+                "levels": [
+                  {"label": "vollständig", "description": "Sprache klar für 2. Klasse, keine unerkläerten Fachbegriffe."},
+                  {"label": "teilweise", "description": "Überwiegend verständlich, einzelne Fachbegriffe ohne Erklärung."},
+                  {"label": "unzureichend", "description": "Sprache deutlich zu komplex für die Zielgruppe."}
+                ]
+              },
+              {
+                "criterion": "Fachliche Korrektheit",
+                "levels": [
+                  {"label": "vollständig", "description": "Alle Kernaussagen zu Säure, Base und Neutralisation korrekt."},
+                  {"label": "teilweise", "description": "Leichte Ungenauigkeiten, aber kein grober Fehler."},
+                  {"label": "unzureichend", "description": "Wesentliche Fehler in der Chemie."}
+                ]
+              },
+              {
+                "criterion": "Alltagsbeispiel und Nutzen",
+                "levels": [
+                  {"label": "vollständig", "description": "Mindestens ein treffendes Alltagsbeispiel und plausibler Nutzensatz."},
+                  {"label": "teilweise", "description": "Beispiel vorhanden, aber wenig überzeugend oder kein Nutzensatz."},
+                  {"label": "unzureichend", "description": "Kein Beispiel oder Nutzensatz fehlt."}
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "id": "c0008.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Ein Sportkommentator sagt: 'Diese Mannschaft spielt ohne Taktik — sie rennen einfach hinter dem Ball her!' Was meint er damit? Beschreibe in 4–5 Sätzen, was eine Mannschaft ohne erkennbare Taktik auszeichnet, und erkläre, welche zwei taktischen Grundprinzipien das Spiel sofort verbessern würden.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "evaluate",
+    "dimensions": [
+      "FAC"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BUS.US.4.FAC.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Merkmale ohne Taktik: alle Spieler:innen laufen zum Ball (Ballhaufen), keine Rollenverteilung, keine Raumnutzung, unkoordinierte Übergänge Angriff-Verteidigung. Zwei Verbesserungen (Beispiele): 1. Freilaufen/Raumaufteilung — nicht alle zum Ball, sondern Positionen halten und Räume schaffen. 2. Übergabe Angriff/Verteidigung klären — wer sichert ab, wenn der Ball verloren geht?",
+    "acceptable_reasoning": "Andere plausible taktische Prinzipien (Kommunikation, Manndeckung) sind vollwertig.",
+    "rubric": [
+      {
+        "criterion": "Beschreibung Taktiklosigkeit",
+        "levels": [
+          "Keine oder falsche Beschreibung",
+          "Vage Beschreibung",
+          "Konkrete, treffende Merkmale genannt"
+        ]
+      },
+      {
+        "criterion": "Prinzipien und Begründung",
+        "levels": [
+          "Keine Prinzipien",
+          "Prinzipien genannt, ohne Begründung",
+          "2 Prinzipien mit plausiblen Verbesserungen erklärt"
+        ]
+      }
+    ],
+    "watch_outs": [
+      "Schüler:innen kennen den 'Ballhaufen' aus dem Kinderfußball — dieses Beispiel hilft als Aufhänger.",
+      "Die Begründung der zwei Prinzipien ist der Kern der Aufgabe — nicht nur benennen, sondern erklären, was sich verbessert."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Bewegung und Sport",
+  "klasse": 4,
+  "kompetenzbereich": "Fachkompetenz",
+  "competences": [
+    "BUS.US.4.FAC.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "FAC"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "status": "approved",
+  "provenance": "harvested:c0008",
+  "source": "ai",
+  "created_at": "2026-06-25T12:23:57+00:00",
+  "updated_at": "2026-06-25T12:59:06+00:00"
+}
