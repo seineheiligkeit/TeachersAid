@@ -23,6 +23,7 @@ flagged, not deleted** (they're design history). When two docs seem to disagree,
 | [`realien-design.md`](realien-design.md) | **CEFR-leveled communicative reading for modern FS** — the Realie as Sprechanlass (*purpose-appropriate rigor*: invent the facts, vet the language). **Phase 1–3 built** (2 flagships + arrangement wrap + the EN/FR breadth seam). |
 | [`history-facts-provenance-design.md`](history-facts-provenance-design.md) | GPB expression-provenance asset class (the machinery Sachverhalt reuses). |
 | [`block-library-design.md`](block-library-design.md) | The block as the durable library unit + the composer. |
+| [`figure-styleguide.md`](figure-styleguide.md) | **The figure styleguide + the scene engine** — semantic colour roles + a dash ramp (survives B/W photocopy), and a composable `Scene` of primitives (geometry construction + the sympy analysis family). |
 | [`tts-audio-engine.md`](tts-audio-engine.md) | F5-TTS audio / Hörverstehen engine + voice library. |
 | [`oberstufe-roadmap.md`](oberstufe-roadmap.md) | Extending to AHS Sek II (5.–8. Kl.). |
 | [`schema-roadmap-v0.4-v0.5.md`](schema-roadmap-v0.4-v0.5.md) | Schema version roadmap (v0.5 Lernarrangement). |

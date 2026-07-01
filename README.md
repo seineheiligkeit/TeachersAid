@@ -20,7 +20,7 @@ TTS-backend seam + a teacher-only transcript). Working language is English; the 
 
 ```bash
 pip install -e .            # Python 3.11–3.14; deps incl. reportlab, matplotlib, pymupdf, sympy
-python -m pytest -q         # 216 tests, all offline (no API key needed)
+python -m pytest -q         # 368 tests, all offline (no API key needed)
 python -m teachersaid seed  # seed the master-library examples + datasets into the review queue
 python -m teachersaid       # dashboard at http://127.0.0.1:8000
 ```

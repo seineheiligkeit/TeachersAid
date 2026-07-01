@@ -174,6 +174,32 @@ target language for Fremdsprache). Read this, then the docs in the order given i
 > both cited on the figure, no geo dependency. Run: `python -m pytest -q` (**315 tests**). **Next:** Phase 3
 > — subagent scaling (`tools/ingest_sachverhalte.py`).
 
+> **Update (Session 10, 1 Jul 2026): the figure engine — a styleguide + a composable scene engine.**
+> Design + full guide: `Documents/figure-styleguide.md` (+ a new `CLAUDE.md` subsection). Two problems were
+> separated and fixed: figures looked the same (palette hard-coded in ~25 recipes) AND couldn't be composed
+> (monolithic recipes).
+> - **`pipeline/figstyle.py` — the styleguide.** One source of truth: **semantic colour ROLES** (colour
+>   MEANS something — `focus` is *always* the unknown/result/region of interest), a **categorical hue ramp**
+>   (multi-series stops using matplotlib defaults) and a **dash ramp** (`DASHES`/`line_kind` — a hue+dash
+>   PAIR per family, *redundant* so a dense figure survives a **black-and-white photocopy**), a type scale,
+>   and the **document font** matched to the worksheet body (Carlito/Calibri, not DejaVu — figures stop
+>   reading as "pasted in"). `house_rc()` scopes it (the scene renderer uses it); `use_house_style()` is the
+>   global apply for the eventual **port** of the legacy recipes.
+> - **`pipeline/scene.py` — the scene engine.** A figure as data: a `Scene` = `Canvas` + ordered typed
+>   layers (`Polyline·Line·PointMark·CircleShape·Arc·Region·Label`), one `render_scene`. A rich figure is
+>   **composed** from primitives, not written as a new recipe, and the SAME scene renders at different
+>   **densities** (a step-by-step construction worksheet from one computed object). **Two-tier** like
+>   `choose_representation`: the LLM never authors a Scene; a **didactic recipe COMPUTES** it.
+> - **First recipes (correct-by-construction; value labels maskable → task/solution split):**
+>   `pipeline/constructions.py::triangle_construction` (the *merkwürdige Punkte des Dreiecks* — Umkreis/
+>   Inkreis/Schwerpunkt/Höhenschnittpunkt/Eulergerade/Feuerbachkreis, all from 3 vertices; `stage` 1–6) and
+>   the `pipeline/calculus.py` **analysis family** via **sympy** (`tangent_slope`/`definite_integral` the
+>   tested core): `function_plot·integral_area·tangent·riemann_sum·extrema·area_between·distribution`.
+> - Run: `python -m pytest -q` (**368 tests**; `tests/test_scene.py`+`test_calculus.py` lock geometry
+>   properties + computed values vs ground truth). **Next candidates:** port the ~25 legacy recipes to
+>   `figstyle`; more scene recipes (physics vectors, annotated "label-the-parts" diagrams); a density/stage
+>   selector on scenes.
+
 > **Update (Session 9, 30 Jun 2026): Sachverhalt Phase 3 + a NEW asset class (Realien) + a persistence
 > policy change.**
 > - **Sachverhalt — Phase 3 (subagent breadth) DONE.** `tools/sachverhalt_prompt.py` (grounded brief) +

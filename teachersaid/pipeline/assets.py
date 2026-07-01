@@ -29,6 +29,10 @@ from matplotlib.patches import Circle, Polygon  # noqa: E402
 
 from ..config import RUNS_DIR  # noqa: E402
 from ..schema.assets import Asset  # noqa: E402
+from .calculus import (area_between_scene, distribution_scene, extrema_scene,  # noqa: E402
+                       function_scene, integral_scene, riemann_scene, tangent_scene)
+from .constructions import construction_scene, triangle_geometry  # noqa: E402
+from .scene import scene_to_png  # noqa: E402
 
 # generator id ("<backend>:<recipe>")  ->  builder(asset, path) -> writes the PNG
 _GENERATORS: dict[str, Callable[[Asset, Path], None]] = {}
@@ -887,6 +891,103 @@ def _coordinate_plane(asset: Asset, path: Path) -> None:
     plt.close(fig)
 
 
+# --- scene-engine recipes (composed: a Scene of primitives, not one bespoke figure) ----
+@_generator("matplotlib:triangle_construction")
+def _triangle_construction(asset: Asset, path: Path) -> None:
+    """The triangle's notable points (merkwürdige Punkte) as a step-by-step construction —
+    the first scene-engine recipe. spec: {vertices:[[x,y],[x,y],[x,y]], stage?:1–6, title?}.
+    Everything (centres, circles, angles) is COMPUTED from the vertices; `stage` selects how
+    far the construction has progressed (so one scene → the whole construction worksheet)."""
+    s = asset.spec or {}
+    verts = s.get("vertices") or [[0, 0], [8, 0], [1.5, 4.0]]
+    g = triangle_geometry(*[tuple(v) for v in verts])
+    scene = construction_scene(g, int(s.get("stage", 6)))
+    if s.get("title"):
+        scene.canvas.title = str(s["title"])
+    scene_to_png(scene, path)
+
+
+@_generator("matplotlib:function_plot")
+def _function_plot(asset: Asset, path: Path) -> None:
+    """A function graph y = f(x) over an interval (an ARBITRARY function via sympy — what the
+    line/point `function_graph` can't do). spec: {expr, xmin?, xmax?, ymin?, ymax?, label?, title?}."""
+    s = asset.spec or {}
+    scene_to_png(function_scene(s.get("expr", "x"), float(s.get("xmin", -5)),
+                                float(s.get("xmax", 5)), **_drop(s, "expr", "xmin", "xmax")), path)
+
+
+@_generator("matplotlib:integral_area")
+def _integral_area(asset: Asset, path: Path) -> None:
+    """f(x) with the area under it on [a,b] shaded — the definite integral; the value is COMPUTED
+    (sympy) and maskable. spec: {expr, a, b, xmin?, xmax?, show_value?, label?, title?}."""
+    s = asset.spec or {}
+    scene_to_png(integral_scene(s.get("expr", "x"), float(s["a"]), float(s["b"]),
+                                s.get("xmin"), s.get("xmax"),
+                                show_value=s.get("show_value", True), **_drop(s, "expr", "a", "b",
+                                "xmin", "xmax", "show_value")), path)
+
+
+@_generator("matplotlib:tangent")
+def _tangent(asset: Asset, path: Path) -> None:
+    """f(x) with the tangent at x0 — the derivative as slope, k = f'(x0) COMPUTED (sympy) and
+    maskable. spec: {expr, x0, xmin?, xmax?, show_slope?, slope_triangle?, label?, title?}."""
+    s = asset.spec or {}
+    scene_to_png(tangent_scene(s.get("expr", "x**2"), float(s["x0"]), s.get("xmin"), s.get("xmax"),
+                               show_slope=s.get("show_slope", True),
+                               slope_triangle=s.get("slope_triangle", True),
+                               **_drop(s, "expr", "x0", "xmin", "xmax", "show_slope",
+                               "slope_triangle")), path)
+
+
+@_generator("matplotlib:riemann_sum")
+def _riemann_sum(asset: Asset, path: Path) -> None:
+    """The definite integral approximated by n rectangles (motivates ∫; Ober-/Untersumme).
+    spec: {expr, a, b, n?, mode?:left|right|mid, xmin?, xmax?, title?}. Sum + exact value COMPUTED."""
+    s = asset.spec or {}
+    scene_to_png(riemann_scene(s.get("expr", "x"), float(s["a"]), float(s["b"]),
+                               int(s.get("n", 6)), s.get("mode", "left"), s.get("xmin"),
+                               s.get("xmax"), **_drop(s, "expr", "a", "b", "n", "mode",
+                               "xmin", "xmax")), path)
+
+
+@_generator("matplotlib:extrema")
+def _extrema(asset: Asset, path: Path) -> None:
+    """f(x) with local extrema (Hoch-/Tiefpunkt) marked + horizontal tangents — from f'(x)=0
+    COMPUTED. spec: {expr, xmin?, xmax?, title?}."""
+    s = asset.spec or {}
+    scene_to_png(extrema_scene(s.get("expr", "x**3-3*x"), float(s.get("xmin", -5)),
+                               float(s.get("xmax", 5)), **_drop(s, "expr", "xmin", "xmax")), path)
+
+
+@_generator("matplotlib:area_between")
+def _area_between(asset: Asset, path: Path) -> None:
+    """The area between two curves f and g — A = ∫|f−g| dx COMPUTED. spec: {expr, expr2, a?, b?
+    (default the outer intersections), xmin?, xmax?, show_value?, title?}."""
+    s = asset.spec or {}
+    scene_to_png(area_between_scene(s.get("expr", "x"), s.get("expr2", "0"), s.get("a"),
+                                    s.get("b"), s.get("xmin"), s.get("xmax"),
+                                    show_value=s.get("show_value", True),
+                                    **_drop(s, "expr", "expr2", "a", "b", "xmin", "xmax",
+                                    "show_value")), path)
+
+
+@_generator("matplotlib:distribution")
+def _distribution(asset: Asset, path: Path) -> None:
+    """A normal density N(μ,σ) with a probability region shaded — area = probability COMPUTED
+    (WS). spec: {mu?, sigma?, a?, b?, mode?:between|le|ge, show_value?, title?}."""
+    s = asset.spec or {}
+    scene_to_png(distribution_scene(float(s.get("mu", 0)), float(s.get("sigma", 1)),
+                                    a=s.get("a"), b=s.get("b"), mode=s.get("mode", "between"),
+                                    show_value=s.get("show_value", True),
+                                    **_drop(s, "mu", "sigma", "a", "b", "mode", "show_value")),
+                 path)
+
+
+def _drop(d: dict, *keys) -> dict:
+    """The remaining spec keys (label/title/ymin/ymax) passed through to a scene builder."""
+    return {k: v for k, v in d.items() if k not in keys}
+
+
 # --- bespoke figures (kept; correctness lives in the recipe, not params) ------
 @_generator("matplotlib:em_spectrum")
 def _em_spectrum(asset: Asset, path: Path) -> None:
@@ -1131,6 +1232,35 @@ GENERATION_RECIPES: dict[str, str] = {
     "matplotlib:coordinate_plane":
         'Koordinatensystem mit Punkten/Strecken — spec {"points":[{"x":num,"y":num,"label"?}],'
         '"segments"?:[[i,j]],"xmin"?,"xmax"?,"ymin"?,"ymax"?,"title"?}.',
+    "matplotlib:triangle_construction":
+        'Dreieckskonstruktion (merkwürdige Punkte) — spec {"vertices":[[x,y],[x,y],[x,y]],'
+        '"stage"?:1–6,"title"?}. stage 1 Dreieck · 2 Umkreis · 3 Inkreis · 4 Schwerpunkt · '
+        '5 Höhenschnittpunkt · 6 Eulergerade+Feuerbachkreis. Mittelpunkte, Kreise und Winkel '
+        'werden aus den Eckpunkten BERECHNET — die Abbildung erfindet nichts.',
+    "matplotlib:function_plot":
+        'Funktionsgraph y = f(x) (BELIEBIGE Funktion via Term) — spec {"expr":str (z. B. '
+        '"0.25*x**2-1" oder "sin(x)"),"xmin"?,"xmax"?,"ymin"?,"ymax"?,"label"?,"title"?}.',
+    "matplotlib:integral_area":
+        'Fläche unter der Kurve (bestimmtes Integral) — spec {"expr":str,"a":num,"b":num,'
+        '"xmin"?,"xmax"?,"show_value"?:bool (false → "A = ?" als Aufgabe),"title"?}. '
+        'Der Flächenwert wird aus dem Term BERECHNET (sympy), nicht erfunden.',
+    "matplotlib:tangent":
+        'Tangente an f in x0 (Ableitung als Steigung) — spec {"expr":str,"x0":num,"xmin"?,'
+        '"xmax"?,"show_slope"?:bool (false → "k = ?"),"slope_triangle"?:bool,"title"?}. '
+        'Die Steigung k = f\'(x0) wird BERECHNET (sympy).',
+    "matplotlib:riemann_sum":
+        'Rechteck-Näherung des Integrals (Ober-/Untersumme) — spec {"expr":str,"a":num,"b":num,'
+        '"n"?:int,"mode"?:"left"|"right"|"mid","title"?}. Summe UND exakter Wert berechnet.',
+    "matplotlib:extrema":
+        'Extremstellen (Hoch-/Tiefpunkt) mit waagrechten Tangenten — spec {"expr":str,"xmin"?,'
+        '"xmax"?,"title"?}. Aus f\'(x)=0 berechnet und mit f\'\'(x) klassifiziert.',
+    "matplotlib:area_between":
+        'Fläche zwischen zwei Kurven — spec {"expr":str,"expr2":str,"a"?:num,"b"?:num '
+        '(Standard: äußere Schnittpunkte),"show_value"?:bool,"title"?}. A = ∫|f−g| berechnet.',
+    "matplotlib:distribution":
+        'Normalverteilung N(μ,σ) mit schraffierter Wahrscheinlichkeit (WS) — spec {"mu"?:num,'
+        '"sigma"?:num,"a"?:num,"b"?:num,"mode"?:"between"|"le"|"ge","show_value"?:bool,"title"?}. '
+        'Fläche = Wahrscheinlichkeit, berechnet.',
     "matplotlib:timeline":
         'Zeitleiste (chronologische Ereignisse, GPB) — '
         'spec {"events":[{"at":num,"label":str}],"title"?:str,"xlabel"?:str}.',

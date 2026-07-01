@@ -3,7 +3,23 @@
 Forward-looking *capability* features for TeachersAid. (The schema-version roadmap lives in
 `schema-roadmap-v0.4-v0.5.md`; this tracks product/engine features.)
 
-## ▶ Start here (state as of 30 Jun 2026)
+## ▶ Start here (state as of 1 Jul 2026)
+
+> **Session update (1 Jul 2026) — the figure engine.** A styleguide + a scene engine (design:
+> `Documents/figure-styleguide.md`). **`pipeline/figstyle.py`** centralises the visual language —
+> semantic colour ROLES (colour MEANS something: `focus` = the unknown/result/region of interest), a
+> categorical hue ramp and a **dash ramp** (a redundant hue+dash pair per family, so a dense figure
+> survives a B/W photocopy), and the document font matched to the worksheet body (Carlito/Calibri, not
+> DejaVu). **`pipeline/scene.py`** makes a figure a composable `Scene` of typed primitives
+> (`Polyline·Line·PointMark·CircleShape·Arc·Region·Label`) with one house-styled renderer — so a rich
+> figure is *composed*, not hand-coded, and the SAME scene renders at different **densities** (a
+> step-by-step construction worksheet from one computed object). First recipes, correct-by-construction
+> with value labels **maskable** (task/solution split): **geometry** `triangle_construction` (the
+> merkwürdige Punkte des Dreiecks, `stage` 1–6) and the **analysis family** via sympy —
+> `function_plot·integral_area·tangent·riemann_sum·extrema·area_between·distribution`. Full suite **368**.
+> **Next candidates:** port the ~25 legacy recipes to `figstyle` (the deferred styleguide port); more
+> scene recipes (physics vectors, annotated "label-the-parts" diagrams, node-link consolidation); a
+> first-class density/stage selector on scenes.
 
 > **Session update (30 Jun 2026).** Two asset lines advanced + one infra change:
 > - **Sachverhalt — Phase 3 (subagent breadth) DONE.** `tools/sachverhalt_prompt.py` +

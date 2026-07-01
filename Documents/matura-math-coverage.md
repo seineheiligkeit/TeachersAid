@@ -89,3 +89,16 @@ This is the **figure-side** of the WS gap the recipe table above flags (stats/pr
 strand was under-served in *both* parametric recipes *and* figure types. The two figures are the
 first half closed; the parametric WS recipes (Boxplot-from-data with the quartiles computed, tree →
 path/conditional probabilities) remain on the build-order list.
+
+### The analysis figure family — built via the scene engine (Session 10)
+
+The **Funktionsgraph (~140×)** and the AN/FA operations the accessible booklets demand (Fläche unter
+der Kurve, Tangente/Ableitung, Extrema, Fläche zwischen Kurven, WS-Verteilungsfläche) are now a
+correct-by-construction figure family, built on the new **scene engine** (`pipeline/scene.py` +
+`pipeline/calculus.py`; design: `Documents/figure-styleguide.md`): `function_plot` (an ARBITRARY term,
+which the old line/point `function_graph` couldn't draw) · `integral_area` · `tangent` · `riemann_sum`
+· `extrema` · `area_between` · `distribution` (normal density → probability = area). Everything is
+computed via **sympy** (`tangent_slope`/`definite_integral`), and value labels **mask**
+(`show_value=False` → "A = ?") so one scene is both the student task and the teacher solution. This is
+the figure side of the AN/FA demand; the parametric AN/FA *task* recipes (differentiation atoms, growth)
+remain on the build-order list above.
