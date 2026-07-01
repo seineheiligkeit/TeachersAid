@@ -19,14 +19,18 @@ import math
 from dataclasses import dataclass, field
 from pathlib import Path
 
-import numpy as np
-from PIL import Image
-from sympy import Plane, Point3D
+import matplotlib
 
-from teachersaid.config import RUNS_DIR
-from teachersaid.pipeline import figstyle as fs
-from teachersaid.pipeline.scene import (Canvas, Label, Line, PointMark, Polyline,
-                                        Region, Scene, scene_to_png)
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt  # noqa: E402
+import numpy as np  # noqa: E402
+from PIL import Image  # noqa: E402
+from sympy import Plane, Point3D, Rational, ilcm  # noqa: E402
+
+from teachersaid.config import RUNS_DIR  # noqa: E402
+from teachersaid.pipeline import figstyle as fs  # noqa: E402
+from teachersaid.pipeline.scene import (Canvas, Label, Line, PointMark, Polyline,  # noqa: E402
+                                        Region, Scene, render_scene, scene_to_png)
 
 P3 = tuple[float, float, float]
 
@@ -90,9 +94,10 @@ def _quad_roots(a: float, b: float, c: float) -> list:
     return [(-b - s) / (2 * a), (-b + s) / (2 * a)]
 
 
-def cone_occluder(k: float, zmax: float, eps: float = 1e-3):
-    """Predicate: is point P hidden behind the cone x²+y²=(k·z)², 0≤z≤zmax, seen along d?
-    Cast the ray P + t·d toward the camera (t>eps); a hit inside the finite nappe occludes."""
+def cone_occluder(k: float, zmax: float, zmin: float = 0.0, eps: float = 1e-3):
+    """Predicate: is point P hidden behind the cone x²+y²=(k·z)², zmin≤z≤zmax, seen along d?
+    Cast the ray P + t·d toward the camera (t>eps); a hit inside the finite nappe(s) occludes.
+    zmin=-zmax gives the DOUBLE cone (both nappes), needed for the hyperbola."""
     def hidden(P, d) -> bool:
         px, py, pz = P
         dx, dy, dz = d
@@ -100,7 +105,7 @@ def cone_occluder(k: float, zmax: float, eps: float = 1e-3):
         b = 2 * (px * dx + py * dy - k * k * pz * dz)
         c = px * px + py * py - k * k * pz * pz
         for t in _quad_roots(a, b, c):
-            if t > eps and -eps <= (pz + t * dz) <= zmax:
+            if t > eps and zmin - eps <= (pz + t * dz) <= zmax + eps:
                 return True
         return False
     return hidden
@@ -404,6 +409,116 @@ def scene_cone_section() -> Scene:
     return to_scene(items, title="Kegelschnitt:  Kegel ∩ Ebene ε  =  Ellipse")
 
 
+# --- Figure D: the three Kegelschnitte from one cone -------------------------
+def double_cone_items(k: float, zmax: float) -> list:
+    """A double cone (both nappes, apex at O) as light fill + rims + silhouette generators."""
+    R = k * zmax
+
+    def rim(z):
+        return [(R * math.cos(s), R * math.sin(s), z)
+                for s in np.linspace(0, 2 * math.pi, 120)]
+
+    items: list = []
+    for z in (zmax, -zmax):
+        r = rim(z)
+        items.append(Fill3([(0, 0, 0)] + r, color="muted", alpha=0.10, z=1))
+        items.append(Path3(r, role="muted", width=1.1, closed=True, z=2))
+        rp = [project(p) for p in r]
+        for pick in (min, max):
+            i = pick(range(len(r)), key=lambda j: rp[j][0])
+            items.append(Seg3((0, 0, 0), r[i], role="muted", width=1.2, z=2))
+    return items
+
+
+def cone_section_curve(k, m, c, zmax, zmin=0.0, n=420) -> list:
+    """The cone ∩ plane {z=c+m·y}, solved as x² = A·y² + B·y + C and sampled by y. Returns a
+    list of curves (1 closed loop = ellipse; 1 open arc = parabola; 2 branches = hyperbola),
+    each computed — the SAME machinery, the conic TYPE decided by sign(A) = sign(k²m²−1)."""
+    A, B, C = k * k * m * m - 1.0, 2 * k * k * c * m, k * k * c * c
+    ylo, yhi = sorted(((zmin - c) / m, (zmax - c) / m))
+    runs, cur = [], []
+    for y in np.linspace(ylo, yhi, n):
+        if A * y * y + B * y + C >= 0:
+            cur.append(float(y))
+        elif len(cur) > 1:
+            runs.append(cur); cur = []
+    if len(cur) > 1:
+        runs.append(cur)
+    curves = []
+    for ys in runs:
+        top = [(math.sqrt(max(0.0, A * y * y + B * y + C)), y, c + m * y) for y in ys]
+        bot = [(-x, y, z) for (x, y, z) in reversed(top)]
+        curves.append(top + bot)
+    return curves
+
+
+def scene_cone_conic(kind: str) -> Scene:
+    """One double cone, one cutting plane whose tilt m decides the conic: |m|<1/k ellipse,
+    m=1/k parabola, |m|>1/k hyperbola. Section computed + occluded against the cone."""
+    k, zmax = 0.6, 3.2
+    m, c, zmin = {"ellipse": (0.35, 1.7, 0.0),
+                  "parabola": (1.0 / k, 1.4, 0.0),
+                  "hyperbola": (2.4, 0.5, -zmax)}[kind]
+    curves = cone_section_curve(k, m, c, zmax, zmin)
+
+    items = double_cone_items(k, zmax)
+    pts = [p for cv in curves for p in cv]
+    cen = np.mean(np.array(pts), axis=0)
+    ex, ey = np.array([1.0, 0, 0]), _unit(np.array([0, 1.0, m]))
+    sx = max(abs(p[0]) for p in pts) + 0.9
+    sy = max(abs(float(np.dot(np.array(p) - cen, ey))) for p in pts) + 0.9
+    corners = [cen + sx * ex + sy * ey, cen - sx * ex + sy * ey,
+               cen - sx * ex - sy * ey, cen + sx * ex - sy * ey]
+    items.append(Patch3([tuple(p) for p in corners], color="primary", alpha=0.13, z=3))
+    # the section curve(s), hidden arcs dashed (occluded by the double cone)
+    d = view_direction()
+    occ = [cone_occluder(k, zmax, zmin)]
+    for curve in curves:
+        for visible, run in split_visibility(curve, occ, d):
+            if len(run) < 2:
+                continue
+            items.append(Path3(run, role="focus", width=2.6 if visible else 1.4,
+                               dash="solid" if visible else (0, (3, 3)), z=6))
+    return to_scene(items, pad=0.5)
+
+
+# --- Figure E: the 2D conic-plus-tangent (the working representation) ---------
+def scene_ellipse_tangent(show_equation: bool = True) -> Scene:
+    """The Kl. 7 task surface: an ellipse in the coordinate plane + the tangent at a point P,
+    with the tangent equation COMPUTED (cleared to integers via sympy Rational). Pure 2D — it
+    drops straight into the EXISTING scene engine, no 3D machinery. Maskable (show_equation)."""
+    a, b = 4.0, 2.5
+    x0, y0 = 2.4, 2.0                     # a rational point ON the ellipse: (0.6)²+(0.8)²=1
+    ct, st = x0 / a, y0 / b               # tangent dir from d/dt (a cosθ, b sinθ)
+    tdir = _unit(np.array([-a * st, b * ct]))
+    p1 = (x0 - 3.4 * tdir[0], y0 - 3.4 * tdir[1])
+    p2 = (x0 + 3.4 * tdir[0], y0 + 3.4 * tdir[1])
+    ell = [(a * math.cos(t), b * math.sin(t)) for t in np.linspace(0, 2 * math.pi, 240)]
+    cf = math.sqrt(a * a - b * b)         # foci — the ellipse's defining points
+
+    sc = Scene(canvas=Canvas(figsize=(5.9, 4.9), aspect="equal", frame="center", grid=True,
+                             xlim=(-a - 1.8, a + 2.1), ylim=(-b - 1.8, b + 2.1),
+                             title="Ellipse mit Tangente im Punkt P"))
+    sc.add(Polyline(ell, role="primary", width=2.3, closed=True, z=4))
+    sc.add(PointMark((cf, 0), label="$F_2$", role="muted", size=3.5,
+                     label_offset=(0.12, -0.5), bold=False, z=5),
+           PointMark((-cf, 0), label="$F_1$", role="muted", size=3.5,
+                     label_offset=(-0.12, -0.5), bold=False, z=5))
+    sc.add(Line(p1, p2, role="focus", width=2.0, z=5))
+    sc.add(PointMark((x0, y0), label="$P$", role="focus", size=6,
+                     label_offset=(0.4, 0.35), bold=True, z=6))
+    if show_equation:                     # tangent x·x₀/a² + y·y₀/b² = 1, cleared to integers
+        cx, cy = Rational(str(x0)) / Rational(str(a)) ** 2, Rational(str(y0)) / Rational(str(b)) ** 2
+        den = ilcm(cx.q, cy.q)
+        eqtxt = f"t:  {cx * den}x + {cy * den}y = {den}"
+    else:
+        eqtxt = "t:  ?"
+    sc.add(Label((-a - 1.5, b + 1.4), eqtxt, role="focus", size=11.5, bold=True, ha="left", z=7))
+    sc.add(Label((a + 1.7, -b - 1.1), r"$\frac{x^2}{16}+\frac{y^2}{6{,}25}=1$", role="primary",
+                 size=11, ha="right", z=7))
+    return sc
+
+
 # --- render (colour + greyscale) + a contact sheet ---------------------------
 def _greyscale(png: Path) -> Path:
     out = png.with_name(png.stem + "_bw.png")
@@ -430,6 +545,36 @@ def _render(builder, name: str, dpi: int = 170) -> None:
     print("wrote", col.name, "+", bw.name)
 
 
+def render_triptych(path: Path, dpi: int = 150) -> None:
+    """The three Kegelschnitte as ONE worksheet figure: one cone, three cutting planes.
+    Rendered in the 3/4 view (cones read better with depth than in a strict Schrägriss)."""
+    use_projection(AXO_34)
+    panels = [("Ellipse", scene_cone_conic("ellipse")),
+              ("Parabel", scene_cone_conic("parabola")),
+              ("Hyperbel", scene_cone_conic("hyperbola"))]
+    # a COMMON view box from the cone, so all three cones render identically sized (the
+    # planes just run to the frame edge — they're infinite anyway)
+    R = 0.6 * 3.2
+    box = [project((R * math.cos(s), R * math.sin(s), z))
+           for z in (3.2, -3.2) for s in np.linspace(0, 2 * math.pi, 60)]
+    bx, by = [p[0] for p in box], [p[1] for p in box]
+    px, py = (max(bx) - min(bx)) * 0.16, (max(by) - min(by)) * 0.06
+    for _, scene in panels:
+        scene.canvas.xlim = (min(bx) - px, max(bx) + px)
+        scene.canvas.ylim = (min(by) - py, max(by) + py)
+    with plt.rc_context(fs.house_rc()):
+        fig, axes = plt.subplots(1, 3, figsize=(13.8, 5.0))
+        for ax, (name, scene) in zip(axes, panels):
+            render_scene(scene, ax)
+            ax.set_title(name, fontsize=fs.TYPE.title, color=fs.PALETTE.ink)
+        fig.suptitle("Die drei Kegelschnitte — ein Kegel, drei Schnittebenen ε",
+                     fontsize=fs.TYPE.title + 2, color=fs.PALETTE.ink, y=0.99)
+        fig.savefig(path, dpi=dpi, bbox_inches="tight")
+        plt.close(fig)
+    _greyscale(path)
+    print("wrote", path.name)
+
+
 def main() -> None:
     RUNS_DIR.mkdir(parents=True, exist_ok=True)
     planes = [("plane3d_normal", scene_plane_normal),
@@ -437,11 +582,13 @@ def main() -> None:
     use_projection(AXO_34)                       # the 3/4 view (for comparison)
     for name, builder in planes:
         _render(builder, name)
-    use_projection(SCHRAEGRISS)                  # the strict Schrägriss
+    use_projection(SCHRAEGRISS)                  # the strict Schrägriss (house default)
     for name, builder in planes:
         _render(builder, name + "_schraeg")
-    use_projection(AXO_34)                        # the Kegelschnitt
+    use_projection(AXO_34)                        # the standalone (detailed) Kegelschnitt
     _render(scene_cone_section, "kegelschnitt_ellipse")
+    render_triptych(RUNS_DIR / "kegelschnitte_drei.png")      # the 3-conic worksheet figure
+    _render(scene_ellipse_tangent, "ellipse_tangente_2d")     # the 2D working representation
 
 
 if __name__ == "__main__":
