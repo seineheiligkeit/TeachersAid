@@ -111,11 +111,13 @@ def cone_occluder(k: float, zmax: float, zmin: float = 0.0, eps: float = 1e-3):
     return hidden
 
 
-def split_visibility(pts: list, occluders: list, d: np.ndarray) -> list:
-    """Split a sampled curve into contiguous (visible: bool, run_pts) segments. For a closed
-    curve, rotate to a visibility boundary first so no run is severed at the seam."""
+def split_visibility(pts: list, occluders: list, d: np.ndarray, closed: bool = False) -> list:
+    """Split a sampled curve into contiguous (visible: bool, run_pts) segments; adjacent runs
+    share the boundary point so there is no gap at a visible↔hidden transition. A CLOSED curve
+    is rotated to a boundary first (so no run is severed at the seam); an OPEN curve is not —
+    rotating it would connect its two loose ends with a spurious chord."""
     vis = [not any(occ(p, d) for occ in occluders) for p in pts]
-    if any(vis[i] != vis[i - 1] for i in range(len(vis))):
+    if closed and any(vis[i] != vis[i - 1] for i in range(len(vis))):
         b0 = next(i for i in range(len(vis)) if vis[i] != vis[i - 1])
         pts, vis = pts[b0:] + pts[:b0], vis[b0:] + vis[:b0]
     runs, i, n = [], 0, len(pts)
@@ -123,7 +125,8 @@ def split_visibility(pts: list, occluders: list, d: np.ndarray) -> list:
         j = i
         while j + 1 < n and vis[j + 1] == vis[i]:
             j += 1
-        runs.append((vis[i], pts[i:j + 1]))
+        end = j + 1 if j + 1 < n else j          # include the transition point → no gap
+        runs.append((vis[i], pts[i:end + 1]))
         i = j + 1
     return runs
 
@@ -393,7 +396,7 @@ def scene_cone_section() -> Scene:
     # the section curve — the Kegelschnitt itself; its BACK half is hidden behind the
     # cone's near wall, computed by ray-casting each sample against the cone (hidden→dashed)
     d = view_direction()
-    for visible, run in split_visibility(section, [cone_occluder(k, zmax)], d):
+    for visible, run in split_visibility(section, [cone_occluder(k, zmax)], d, closed=True):
         if len(run) < 2:
             continue
         if visible:
@@ -430,25 +433,43 @@ def double_cone_items(k: float, zmax: float) -> list:
     return items
 
 
-def cone_section_curve(k, m, c, zmax, zmin=0.0, n=420) -> list:
-    """The cone ∩ plane {z=c+m·y}, solved as x² = A·y² + B·y + C and sampled by y. Returns a
-    list of curves (1 closed loop = ellipse; 1 open arc = parabola; 2 branches = hyperbola),
-    each computed — the SAME machinery, the conic TYPE decided by sign(A) = sign(k²m²−1)."""
+def _nonneg_intervals(A, B, C, ylo, yhi):
+    """Sub-intervals of [ylo,yhi] where P(y)=A·y²+B·y+C ≥ 0, each tagged (ya, yb, nat_a, nat_b);
+    nat_* marks an endpoint that is a ROOT of P (a genuine turning point where x=0) vs a clip by
+    the cone height. Split [ylo,yhi] at the interior roots and keep the non-negative pieces."""
+    roots = _quad_roots(A, B, C)
+    breaks = [ylo] + sorted(r for r in roots if ylo < r < yhi) + [yhi]
+    out = []
+    for a, b in zip(breaks[:-1], breaks[1:]):
+        if b - a > 1e-9 and A * ((a + b) / 2) ** 2 + B * ((a + b) / 2) + C >= 0:
+            na = any(abs(a - r) < 1e-9 for r in roots)
+            nb = any(abs(b - r) < 1e-9 for r in roots)
+            out.append((a, b, na, nb))
+    return out
+
+
+def cone_section_curve(k, m, c, zmax, zmin=0.0, n=200) -> list:
+    """The cone ∩ plane {z=c+m·y}, solved as x² = A·y² + B·y + C and sampled by y. Returns a list
+    of (closed: bool, points): the conic TYPE falls out of sign(A)=sign(k²m²−1) — an ellipse is
+    ONE closed loop; a parabola one OPEN arc; a hyperbola two OPEN branches. The two x=±√ arms are
+    joined ONLY at genuine vertices (roots, x=0), never across a clipped end — so an open conic
+    stays open (no spurious chord)."""
     A, B, C = k * k * m * m - 1.0, 2 * k * k * c * m, k * k * c * c
     ylo, yhi = sorted(((zmin - c) / m, (zmax - c) / m))
-    runs, cur = [], []
-    for y in np.linspace(ylo, yhi, n):
-        if A * y * y + B * y + C >= 0:
-            cur.append(float(y))
-        elif len(cur) > 1:
-            runs.append(cur); cur = []
-    if len(cur) > 1:
-        runs.append(cur)
     curves = []
-    for ys in runs:
-        top = [(math.sqrt(max(0.0, A * y * y + B * y + C)), y, c + m * y) for y in ys]
-        bot = [(-x, y, z) for (x, y, z) in reversed(top)]
-        curves.append(top + bot)
+    for (ya, yb, na, nb) in _nonneg_intervals(A, B, C, ylo, yhi):
+        ys = np.linspace(ya, yb, n)
+        plus = [(math.sqrt(max(0.0, A * y * y + B * y + C)), float(y), c + m * float(y)) for y in ys]
+        minus = [(-x, y, z) for (x, y, z) in plus]
+        if na and nb:                                   # both ends are vertices → closed (ellipse)
+            curves.append((True, plus + minus[::-1]))
+        elif na:                                        # vertex at ya → open arc joined there
+            curves.append((False, plus[::-1] + minus))
+        elif nb:                                        # vertex at yb → open arc joined there
+            curves.append((False, plus + minus[::-1]))
+        else:                                           # no vertex in view → two disjoint arms
+            curves.append((False, plus))
+            curves.append((False, minus))
     return curves
 
 
@@ -462,7 +483,7 @@ def scene_cone_conic(kind: str) -> Scene:
     curves = cone_section_curve(k, m, c, zmax, zmin)
 
     items = double_cone_items(k, zmax)
-    pts = [p for cv in curves for p in cv]
+    pts = [p for _, cvpts in curves for p in cvpts]
     cen = np.mean(np.array(pts), axis=0)
     ex, ey = np.array([1.0, 0, 0]), _unit(np.array([0, 1.0, m]))
     sx = max(abs(p[0]) for p in pts) + 0.9
@@ -473,8 +494,8 @@ def scene_cone_conic(kind: str) -> Scene:
     # the section curve(s), hidden arcs dashed (occluded by the double cone)
     d = view_direction()
     occ = [cone_occluder(k, zmax, zmin)]
-    for curve in curves:
-        for visible, run in split_visibility(curve, occ, d):
+    for closed, cvpts in curves:
+        for visible, run in split_visibility(cvpts, occ, d, closed=closed):
             if len(run) < 2:
                 continue
             items.append(Path3(run, role="focus", width=2.6 if visible else 1.4,
