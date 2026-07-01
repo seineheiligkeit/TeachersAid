@@ -30,21 +30,37 @@ from teachersaid.pipeline.scene import (Canvas, Label, Line, PointMark, Polyline
 
 P3 = tuple[float, float, float]
 
-# --- the projection: one fixed axonometric map ℝ³ → ℝ² (a Schrägbild) --------
+# --- the projection: one fixed linear map ℝ³ → ℝ² (a Schrägbild) -------------
 # Columns are the screen images of the unit axes x̂, ŷ, ẑ. The SAME linear map is applied
 # to every point, so it is a consistent parallel projection — exactly what a textbook draws
-# on the board. These six numbers are the only "camera" dial; tuned for a 3/4 view from
-# the upper front-left (depth axis receding to the lower-left).
-AXO = {
-    "x": np.array([-0.80, -0.40]),   # x̂ recedes to the lower-left (the depth axis)
-    "y": np.array([0.96, -0.18]),    # ŷ to the right, slightly down
-    "z": np.array([0.00, 1.00]),     # ẑ straight up
+# on the board. These six numbers are the only "camera" dial. Two conventions to compare:
+#
+#   AXO_34       a general axonometric 3/4 view (depth axis receding to the lower-left).
+#   SCHRAEGRISS  the strict Austrian Schrägriss (Kabinettprojektion): ŷ horizontal, ẑ
+#                vertical, x̂ (the receding depth axis) at 45° lower-left, foreshortened ½.
+AXO_34 = {
+    "x": np.array([-0.80, -0.40]),
+    "y": np.array([0.96, -0.18]),
+    "z": np.array([0.00, 1.00]),
 }
+_S = 0.5 * math.cos(math.radians(45))
+SCHRAEGRISS = {
+    "x": np.array([-_S, -_S]),
+    "y": np.array([1.00, 0.00]),
+    "z": np.array([0.00, 1.00]),
+}
+_ACTIVE = {"axo": AXO_34}
+
+
+def use_projection(axo: dict) -> None:
+    """Swap the active projection (all builders read it via `project`)."""
+    _ACTIVE["axo"] = axo
 
 
 def project(p) -> tuple[float, float]:
+    axo = _ACTIVE["axo"]
     x, y, z = float(p[0]), float(p[1]), float(p[2])
-    v = x * AXO["x"] + y * AXO["y"] + z * AXO["z"]
+    v = x * axo["x"] + y * axo["y"] + z * axo["z"]
     return (float(v[0]), float(v[1]))
 
 
@@ -66,6 +82,12 @@ class Patch3:
     planes stay distinguishable in a black-and-white photocopy."""
     corners: list; color: str = "primary"; alpha: float = 0.26
     dash: object = "solid"; z: int = 2
+
+
+@dataclass
+class Fill3:
+    """A filled polygon with no boundary — a soft body fill (e.g. the cone silhouette)."""
+    corners: list; color: str = "surface"; alpha: float = 0.14; z: int = 1
 
 
 @dataclass
@@ -123,6 +145,10 @@ def to_scene(items: list, *, title: str | None = None, pad: float = 0.6) -> Scen
             layers.append(Region(pts, role=it.color, alpha=it.alpha, z=it.z))
             layers.append(Polyline(pts, role=it.color, width=1.4, dash=it.dash,
                                    closed=True, z=it.z + 1))
+            note(*pts)
+        elif isinstance(it, Fill3):
+            pts = [project(p) for p in it.corners]
+            layers.append(Region(pts, role=it.color, alpha=it.alpha, z=it.z))
             note(*pts)
         elif isinstance(it, Arrow3):
             a, b = project(it.a), project(it.b)
@@ -257,6 +283,60 @@ def scene_two_planes() -> Scene:
     return to_scene(items, title="Schnitt zweier Ebenen — die Schnittgerade g")
 
 
+# --- Figure C: a Kegelschnitt — a cone sliced by a plane ---------------------
+def scene_cone_section() -> Scene:
+    """The literal Kegelschnitt: a plane cuts a cone, and the section is an ELLIPSE whose
+    shape is computed from the two equations (correct-by-construction). Cone x²+y²=(k·z)²
+    (apex at O, opening up); cutting plane z = c + m·y (an ellipse iff |m| < 1/k). Substituting
+    the plane into the cone gives A·x² + B·y² + D·y + F = 0, solved here for the ellipse's
+    centre and semi-axes, sampled, lifted back to 3D, and projected."""
+    k, zmax = 0.62, 3.4          # cone: tan(half-angle), height
+    m, c = 0.35, 1.7             # cutting plane z = c + m·y  (gentle tilt → open ellipse)
+
+    B = 1.0 - k * k * m * m      # cone ∩ plane → A x² + B y² + D y + F = 0  (A = 1)
+    D = -2.0 * k * k * c * m
+    F = -k * k * c * c
+    y0 = -D / (2 * B)                                   # ellipse centre (in y)
+    rhs = -F + B * y0 * y0
+    axs, ays = math.sqrt(rhs), math.sqrt(rhs / B)      # semi-axes in x, y
+    ts = np.linspace(0, 2 * math.pi, 200)
+    section = [(axs * math.cos(t), y0 + ays * math.sin(t),
+                c + m * (y0 + ays * math.sin(t))) for t in ts]
+
+    R = k * zmax                                        # rim circle at the top
+    rim = [(R * math.cos(s), R * math.sin(s), zmax)
+           for s in np.linspace(0, 2 * math.pi, 120)]
+    rp = [project(p) for p in rim]
+    iL = min(range(len(rim)), key=lambda i: rp[i][0])  # silhouette generators = the
+    iR = max(range(len(rim)), key=lambda i: rp[i][0])  # extreme-x rim points
+
+    items: list = []
+    items += ground_grid(-2, 2)
+    items += coord_frame(3.9)
+    items.append(Fill3([(0, 0, 0)] + rim, color="muted", alpha=0.12, z=1))     # cone body
+    items.append(Path3(rim, role="muted", width=1.2, closed=True, z=2))        # rim
+    items.append(Seg3((0, 0, 0), rim[iL], role="muted", width=1.3, z=2))       # generators
+    items.append(Seg3((0, 0, 0), rim[iR], role="muted", width=1.3, z=2))
+    items.append(Text3(rim[iR], "Kegel", role="muted", size=9.5, z=3))
+    # the cutting plane ε
+    cen = np.array([0.0, y0, c + m * y0])
+    ex, ey = np.array([1.0, 0, 0]), _unit(np.array([0, 1.0, m]))
+    corners = [cen + 2.3 * ex + 2.3 * ey, cen - 2.3 * ex + 2.3 * ey,
+               cen - 2.3 * ex - 2.3 * ey, cen + 2.3 * ex - 2.3 * ey]
+    items.append(Patch3([tuple(p) for p in corners], color="primary", alpha=0.15, z=3))
+    items.append(Text3(tuple(cen - 2.3 * ex + 2.3 * ey), "ε", role="primary", size=13,
+                       bold=True, z=7))
+    # the section curve — the Kegelschnitt itself (focus, on top)
+    items.append(Path3(section, role="focus", width=2.8, closed=True, z=6))
+    # label just outside the ellipse on its left, so it never sits on the curve
+    ctr = np.array([0.0, y0, c + m * y0])
+    sp = [project(p) for p in section]
+    iLbl = min(range(len(section)), key=lambda i: sp[i][0])
+    lbl = np.array(section[iLbl]) + 0.8 * _unit(np.array(section[iLbl]) - ctr)
+    items.append(Text3(tuple(lbl), "Ellipse", role="focus", size=12, bold=True, z=7))
+    return to_scene(items, title="Kegelschnitt:  Kegel ∩ Ebene ε  =  Ellipse")
+
+
 # --- render (colour + greyscale) + a contact sheet ---------------------------
 def _greyscale(png: Path) -> Path:
     out = png.with_name(png.stem + "_bw.png")
@@ -277,17 +357,24 @@ def _contact_sheet(pairs: list[tuple[Path, Path]], out: Path) -> Path:
     return out
 
 
+def _render(builder, name: str, dpi: int = 170) -> None:
+    col = scene_to_png(builder(), RUNS_DIR / f"{name}.png", dpi=dpi)
+    bw = _greyscale(col)
+    print("wrote", col.name, "+", bw.name)
+
+
 def main() -> None:
     RUNS_DIR.mkdir(parents=True, exist_ok=True)
-    pairs = []
-    for name, builder in (("plane3d_normal", scene_plane_normal),
-                          ("plane3d_intersection", scene_two_planes)):
-        col = scene_to_png(builder(), RUNS_DIR / f"{name}.png", dpi=170)
-        bw = _greyscale(col)
-        pairs.append((col, bw))
-        print("wrote", col, "and", bw)
-    sheet = _contact_sheet(pairs, RUNS_DIR / "plane3d_contact.png")
-    print("contact sheet:", sheet)
+    planes = [("plane3d_normal", scene_plane_normal),
+              ("plane3d_intersection", scene_two_planes)]
+    use_projection(AXO_34)                       # the 3/4 view (for comparison)
+    for name, builder in planes:
+        _render(builder, name)
+    use_projection(SCHRAEGRISS)                  # the strict Schrägriss
+    for name, builder in planes:
+        _render(builder, name + "_schraeg")
+    use_projection(AXO_34)                        # the Kegelschnitt
+    _render(scene_cone_section, "kegelschnitt_ellipse")
 
 
 if __name__ == "__main__":
