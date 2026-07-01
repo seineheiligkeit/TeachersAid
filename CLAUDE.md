@@ -124,6 +124,18 @@ Two additions make figures **consistent** and **composable**. Full design doc:
   - `tests/test_scene.py` + `tests/test_calculus.py` lock the geometry's defining properties (circumcentre
     equidistant, incircle tangent, U·S·H collinear) and the computed values against ground truth. Visual
     reference: the `tools/*_specimen.py` scripts (re-runnable; render to `runs/`).
+  - **3D analytic geometry (Oberstufe MAT, validated prototype — `Documents/scene3d-geometry-design.md`):**
+    the scene engine reaches **ℝ³** by modelling in 3D (sympy computes planes · Normalvektoren ·
+    `E.intersection(F)` Schnittgerade · `angle_between` · Kegelschnitte), then applying a fixed
+    **axonometric projection** (Schrägriss default) that emits ordinary 2D `scene` primitives — so the whole
+    renderer + `figstyle` are reused (no `mplot3d`, print-first). **Hidden-line occlusion** is robust for a
+    curve vs one analytic body (parallel projection ⇒ view dir = null vector of the projection matrix; one
+    closed-form ray predicate per surface type; hidden runs dashed) — *bounded away from* many-opaque-body
+    mutual hidden-surface (use translucency there). Kegelschnitte: one cone-slice recipe gives all three
+    conics (`sign(k²m²−1)`), arms joined only at genuine vertices so open conics stay open; the actual Kl. 7
+    task surface is the **2D** conic-plus-tangent, which needs no 3D machinery. Lives in
+    `tools/plane3d_specimen.py` (`Scene3D` + `project` + occlusion); promotion path → `pipeline/scene3d.py` +
+    `@_generator` recipes in the design doc.
 
 ## Schema conventions (important)
 

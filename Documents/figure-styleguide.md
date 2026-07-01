@@ -147,5 +147,10 @@ it. `tangent_slope` and `definite_integral` are the tested computational core.
 - **More scene recipes**, now compose-not-plumb: physics vectors/free-body diagrams, annotated
   "label the parts" diagrams (the leader-callout pattern), a node-link consolidation of
   `tree_diagram`/`cause_effect`/`process_flow`.
+- **3D analytic geometry (validated prototype — `scene3d-geometry-design.md`).** The scene model
+  extends to ℝ³ by projecting a 3D situation (sympy-computed planes/normals/Schnittgerade,
+  Kegelschnitte) through a fixed **Schrägriss** map into these same 2D primitives — so `render_scene`
+  + `figstyle` are reused wholesale. Adds **hidden-line occlusion** (robust for a curve vs one
+  analytic body; bounded away from general hidden-surface). Prototype: `tools/plane3d_specimen.py`.
 - **A first-class density/stage selector** on scenes (toggleable layer groups) so a worksheet
   dials how much of a construction it shows.

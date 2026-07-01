@@ -24,6 +24,7 @@ flagged, not deleted** (they're design history). When two docs seem to disagree,
 | [`history-facts-provenance-design.md`](history-facts-provenance-design.md) | GPB expression-provenance asset class (the machinery Sachverhalt reuses). |
 | [`block-library-design.md`](block-library-design.md) | The block as the durable library unit + the composer. |
 | [`figure-styleguide.md`](figure-styleguide.md) | **The figure styleguide + the scene engine** — semantic colour roles + a dash ramp (survives B/W photocopy), and a composable `Scene` of primitives (geometry construction + the sympy analysis family). |
+| [`scene3d-geometry-design.md`](scene3d-geometry-design.md) | **3D analytic geometry as projected Schrägbild scenes** — planes/normals/Schnittgerade + Kegelschnitte, sympy-computed and projected into the 2D `Scene` (occlusion for hidden lines). **Validated prototype** (`tools/plane3d_specimen.py`); promotion path documented. |
 | [`tts-audio-engine.md`](tts-audio-engine.md) | F5-TTS audio / Hörverstehen engine + voice library. |
 | [`oberstufe-roadmap.md`](oberstufe-roadmap.md) | Extending to AHS Sek II (5.–8. Kl.). |
 | [`schema-roadmap-v0.4-v0.5.md`](schema-roadmap-v0.4-v0.5.md) | Schema version roadmap (v0.5 Lernarrangement). |
