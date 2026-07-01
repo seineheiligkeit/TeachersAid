@@ -64,6 +64,65 @@ def project(p) -> tuple[float, float]:
     return (float(v[0]), float(v[1]))
 
 
+# --- occlusion: hidden-line determination against analytic surfaces ----------
+# Parallel projection ⇒ the projection rays are ONE fixed 3D direction (the null vector of
+# the 2×3 AXO matrix). "In front" is a global sort along it; visibility of a curve point is a
+# closed-form ray/surface test. One write-once predicate per surface TYPE (cone, plane,
+# sphere…), then a generic curve-splitter — not case-by-case per figure.
+def view_direction() -> np.ndarray:
+    """The 3D direction the projection collapses (points differing along it overlap on
+    screen), oriented toward the above-front camera."""
+    axo = _ACTIVE["axo"]
+    r1 = np.array([axo["x"][0], axo["y"][0], axo["z"][0]])
+    r2 = np.array([axo["x"][1], axo["y"][1], axo["z"][1]])
+    d = np.cross(r1, r2)
+    d = d / (np.linalg.norm(d) or 1.0)
+    return -d if d[2] < 0 else d
+
+
+def _quad_roots(a: float, b: float, c: float) -> list:
+    if abs(a) < 1e-12:
+        return [] if abs(b) < 1e-12 else [-c / b]
+    disc = b * b - 4 * a * c
+    if disc < 0:
+        return []
+    s = math.sqrt(disc)
+    return [(-b - s) / (2 * a), (-b + s) / (2 * a)]
+
+
+def cone_occluder(k: float, zmax: float, eps: float = 1e-3):
+    """Predicate: is point P hidden behind the cone x²+y²=(k·z)², 0≤z≤zmax, seen along d?
+    Cast the ray P + t·d toward the camera (t>eps); a hit inside the finite nappe occludes."""
+    def hidden(P, d) -> bool:
+        px, py, pz = P
+        dx, dy, dz = d
+        a = dx * dx + dy * dy - k * k * dz * dz
+        b = 2 * (px * dx + py * dy - k * k * pz * dz)
+        c = px * px + py * py - k * k * pz * pz
+        for t in _quad_roots(a, b, c):
+            if t > eps and -eps <= (pz + t * dz) <= zmax:
+                return True
+        return False
+    return hidden
+
+
+def split_visibility(pts: list, occluders: list, d: np.ndarray) -> list:
+    """Split a sampled curve into contiguous (visible: bool, run_pts) segments. For a closed
+    curve, rotate to a visibility boundary first so no run is severed at the seam."""
+    vis = [not any(occ(p, d) for occ in occluders) for p in pts]
+    if any(vis[i] != vis[i - 1] for i in range(len(vis))):
+        b0 = next(i for i in range(len(vis)) if vis[i] != vis[i - 1])
+        pts, vis = pts[b0:] + pts[:b0], vis[b0:] + vis[:b0]
+    runs, i, n = [], 0, len(pts)
+    while i < n:
+        j = i
+        while j + 1 < n and vis[j + 1] == vis[i]:
+            j += 1
+        runs.append((vis[i], pts[i:j + 1]))
+        i = j + 1
+    return runs
+
+
 # --- a tiny 3D scene vocabulary (projects into the existing 2D primitives) ----
 @dataclass
 class Seg3:
@@ -299,7 +358,7 @@ def scene_cone_section() -> Scene:
     y0 = -D / (2 * B)                                   # ellipse centre (in y)
     rhs = -F + B * y0 * y0
     axs, ays = math.sqrt(rhs), math.sqrt(rhs / B)      # semi-axes in x, y
-    ts = np.linspace(0, 2 * math.pi, 200)
+    ts = np.linspace(0, 2 * math.pi, 240, endpoint=False)
     section = [(axs * math.cos(t), y0 + ays * math.sin(t),
                 c + m * (y0 + ays * math.sin(t))) for t in ts]
 
@@ -326,8 +385,16 @@ def scene_cone_section() -> Scene:
     items.append(Patch3([tuple(p) for p in corners], color="primary", alpha=0.15, z=3))
     items.append(Text3(tuple(cen - 2.3 * ex + 2.3 * ey), "ε", role="primary", size=13,
                        bold=True, z=7))
-    # the section curve — the Kegelschnitt itself (focus, on top)
-    items.append(Path3(section, role="focus", width=2.8, closed=True, z=6))
+    # the section curve — the Kegelschnitt itself; its BACK half is hidden behind the
+    # cone's near wall, computed by ray-casting each sample against the cone (hidden→dashed)
+    d = view_direction()
+    for visible, run in split_visibility(section, [cone_occluder(k, zmax)], d):
+        if len(run) < 2:
+            continue
+        if visible:
+            items.append(Path3(run, role="focus", width=2.8, z=6))
+        else:
+            items.append(Path3(run, role="focus", width=1.5, dash=(0, (3, 3)), z=6))
     # label just outside the ellipse on its left, so it never sits on the curve
     ctr = np.array([0.0, y0, c + m * y0])
     sp = [project(p) for p in section]
