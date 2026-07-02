@@ -18,11 +18,13 @@ from pydantic import BaseModel
 from ..config import RUNS_DIR
 from ..pipeline import orchestrator as orch
 from ..pipeline.assets import build_asset
-from ..stats import compute_stats
+from ..stats import campaign_gaps, compute_stats, coverage_map
 from ..store.arrangementstore import ArrangementStore
 from ..store.assetstore import AssetStore
 from ..store.blockstore import BlockStore
 from ..store.datasetstore import DatasetStore
+from ..store.demandstore import STATUSES as DEMAND_STATUSES
+from ..store.demandstore import DemandStore
 from ..store.textstore import TextStore
 from ..store.sachverhaltstore import SachverhaltStore
 from ..store.feedbackstore import FEEDBACK_TAGS, TARGET_KINDS, FeedbackEntry, FeedbackStore
@@ -31,6 +33,7 @@ from ..store.repository import ReviewStore
 app = FastAPI(title="TeachersAid — Review Dashboard")
 STORE = ReviewStore()
 BLOCKS = BlockStore()
+DEMAND = DemandStore()
 ASSETS = AssetStore()
 ARRANGEMENTS = ArrangementStore()
 DATASETS = DatasetStore()
@@ -63,6 +66,18 @@ class ComposeBody(BaseModel):
 
 class NoteBody(BaseModel):
     note: str = ""
+
+
+class DeliverBody(BaseModel):
+    subject: str = "Physik"
+    klasse: int = 4
+    topic: str = ""
+    envelope: str = "doppelstunde"
+    kompetenzbereich: str | None = None
+
+
+class DemandStatusBody(BaseModel):
+    status: str
 
 
 class FeedbackBody(BaseModel):
@@ -139,6 +154,50 @@ def library():
 @app.get("/api/stats")
 def stats():
     return compute_stats(BLOCKS, STORE)
+
+
+# --- the offline-first program: coverage planner + delivery loop ---------------
+@app.get("/api/coverage")
+def coverage():
+    """Track 1 #1 — the campaign planner: per-KB cells with band spread + status."""
+    return coverage_map(BLOCKS)
+
+
+@app.get("/api/coverage/gaps")
+def coverage_gaps(stufe: str | None = None, subject: str | None = None):
+    """The exportable gap list (campaign-brief anchors: verbatim competence ids)."""
+    return {"gaps": campaign_gaps(BLOCKS, stufe=stufe, subject=subject)}
+
+
+@app.post("/api/deliver")
+def deliver_endpoint(body: DeliverBody):
+    """Track 2 #4/#5 — the LLM-free delivery loop: vetted sheet › composed › honest
+    gap into the demand queue (invariants §10). Read-only against the corpus."""
+    from ..pipeline.deliver import deliver
+    kb = (body.kompetenzbereich or "").strip() or None
+    if not body.topic.strip() and not kb:
+        raise HTTPException(400, "topic or kompetenzbereich required")
+    r = deliver(body.subject, body.klasse, body.topic.strip(), body.envelope,
+                kompetenzbereich=kb, review_store=STORE, block_store=BLOCKS,
+                demand_store=DEMAND)
+    return {"mode": r.mode, "note": r.note, "title": r.title, "item_id": r.item_id,
+            "demand_id": r.demand_id, "n_tasks": r.n_tasks, "est_minutes": r.est_minutes,
+            "verify_warnings": r.verify_warnings}
+
+
+@app.get("/api/demand")
+def demand_list(status: str | None = None):
+    return [r.model_dump() for r in DEMAND.list(status=status)]
+
+
+@app.post("/api/demand/{rec_id}/status")
+def demand_set_status(rec_id: str, body: DemandStatusBody):
+    if body.status not in DEMAND_STATUSES:
+        raise HTTPException(400, f"status must be one of {DEMAND_STATUSES}")
+    try:
+        return DEMAND.set_status(rec_id, body.status).model_dump()
+    except KeyError:
+        raise HTTPException(404, "unbekannter Wunsch")
 
 
 # --- human feedback (the HITL loop) ------------------------------------------

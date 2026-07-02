@@ -60,6 +60,13 @@ def verify(
     problems += fl_problems
     warnings += fl_warnings
 
+    # numeric claims: task prose next to a SOURCED figure must derive from the
+    # cited dataset slice (the last authored-number hole; also the anti-rot check)
+    from .number_lint import lint_content as _lint_numbers
+    nl_problems, nl_warnings = _lint_numbers(content)
+    problems += nl_problems
+    warnings += nl_warnings
+
     # expression provenance (History/GPB): a history fact block records its facts-source,
     # and an embedded source's obligation is coherent (the prose analogue of the (c)-label)
     from .prose_lint import lint_content as _lint_prose

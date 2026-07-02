@@ -694,7 +694,52 @@ async function renderStats(){
       <td>${r.in_review||"—"}</td></tr>`).join("")}
     </tbody></table>
     <p class="muted" style="margin-top:8px">„Abdeckung" = Katalog-Kompetenzen mit ≥1 freigegebenem Aufgaben-Baustein. Leere Fächer sind ausgegraut.</p></div>`;
+
+  // --- Kampagnen-Planer (offline-first: der Korpus-Fortschrittsbalken) ---
+  const STATCOL={gruen:"#2e7d32",teil:"#b26a00",leer:"#999"};
+  const cov = await jget("/api/coverage"); const ct = cov.totals;
+  const covbar=(g,t,n)=>{const pg=n?100*g/n:0, pt=n?100*t/n:0;
+    return `<span style="display:inline-block;width:110px;height:9px;background:#eee;border-radius:5px;overflow:hidden;vertical-align:middle;white-space:nowrap;font-size:0"><i style="display:inline-block;height:9px;background:${STATCOL.gruen};width:${pg}%"></i><i style="display:inline-block;height:9px;background:#f0ad4e;width:${pt}%"></i></span>`;};
+  h += `<div class="card"><h2>Kampagnen-Planer — Kompetenzbereich-Zellen</h2>
+    <div class="row between"><span><b style="color:${STATCOL.gruen}">${ct.gruen} grün</b> · <b style="color:${STATCOL.teil}">${ct.teil} teilweise</b> · <span class="muted">${ct.leer} leer</span> von ${ct.cells} Zellen (Stufe·Fach·Klasse·KB)</span><b>${ct.ready_pct}% grün</b></div>
+    <p class="muted">grün = ≥${cov.green_min_tasks} freigegebene Aufgaben-Bausteine UND alle 3 Anforderungsbänder (leicht/mittel/anspruchsvoll) — dann kann compose ein Blatt von leicht bis anspruchsvoll bestücken. Nicht-grüne Zellen sind die Kampagnen-Warteschlange (<code>GET /api/coverage/gaps</code> liefert die Brief-Anker).</p>
+    ${cov.subjects.filter(x=>x.cells_total).map(x=>`<details style="margin:4px 0"><summary style="cursor:pointer"><b>${esc(x.name)}</b> <span class="muted">(${x.stufe==='Oberstufe'?'OS':'US'})</span> ${covbar(x.gruen,x.teil,x.cells_total)} <span class="muted">${x.gruen}/${x.cells_total} grün</span></summary>
+      <table style="margin-top:6px"><thead><tr><th>Kl.</th><th>Kompetenzbereich</th><th>Komp.</th><th>Aufg.</th><th>Bänder 1·2·3</th><th>fehlt</th><th>Status</th></tr></thead><tbody>
+      ${x.cells.map(c=>`<tr><td>${c.klasse}</td><td>${esc(c.kompetenzbereich)}</td><td class="muted">${c.n_competences}</td><td>${c.task_blocks}</td>
+        <td class="muted">${c.bands["1"]}·${c.bands["2"]}·${c.bands["3"]}</td><td class="muted">${(c.missing_bands||[]).join(",")||"—"}</td>
+        <td><b style="color:${STATCOL[c.status]}">${c.status}</b></td></tr>`).join("")}
+      </tbody></table></details>`).join("")}</div>`;
+
+  // --- Lieferung + Wunschliste (die LLM-freie Delivery-Schleife, invariants §10) ---
+  const dem = await jget("/api/demand");
+  h += `<div class="card"><h2>Lieferung testen &amp; Wunschliste</h2>
+    <p class="muted">Deterministische Lieferung: geprüftes Blatt › aus Bausteinen komponiert › ehrliche Lücke → Wunsch. Kein LLM-Aufruf.</p>
+    <div class="row" style="flex-wrap:wrap;gap:6px">
+      <input id="dl-subject" placeholder="Fach" value="Physik" style="width:150px">
+      <input id="dl-klasse" type="number" min="1" max="8" value="4" style="width:56px">
+      <input id="dl-topic" placeholder="Thema / Kernfrage" style="width:230px">
+      <select id="dl-envelope"><option>einzelstunde</option><option selected>doppelstunde</option><option>block</option></select>
+      <button onclick="deliverTest()">Liefern</button></div>
+    <p id="dl-result" class="muted"></p>
+    ${dem.length?`<table><thead><tr><th>Id</th><th>Fach</th><th>Kl.</th><th>Thema/KB</th><th>Status</th><th></th></tr></thead><tbody>
+      ${dem.map(r=>`<tr><td>${r.id}</td><td>${esc(r.subject)}</td><td>${r.klasse}</td><td>${esc(r.topic||r.kompetenzbereich||"")}</td><td>${r.status}</td>
+        <td>${r.status==="open"?`<button onclick="demandStatus('${r.id}','planned')">planen</button> <button class="ghost" onclick="demandStatus('${r.id}','dismissed')">verwerfen</button>`:(r.status==="planned"?`<button onclick="demandStatus('${r.id}','fulfilled')">erfüllt</button>`:"")}</td></tr>`).join("")}
+    </tbody></table>`:`<p class="muted">Keine Wünsche — Lücken bei der Lieferung landen hier und speisen die nächste Kampagne.</p>`}</div>`;
   $("#stats").innerHTML = h;
+}
+
+async function deliverTest(){
+  const body={subject:$("#dl-subject").value,klasse:+$("#dl-klasse").value,
+    topic:$("#dl-topic").value,envelope:$("#dl-envelope").value};
+  try{
+    const r=await jpost("/api/deliver",body);
+    const extra=r.mode==="gap"?"":` — ${r.n_tasks} Aufgaben, ~${r.est_minutes} min`;
+    $("#dl-result").textContent=`[${r.mode}] ${r.note}${extra}`;
+    if(r.mode==="gap") setTimeout(refresh,150);
+  }catch(e){ $("#dl-result").textContent="Fehler: "+e; }
+}
+async function demandStatus(id,status){
+  await jpost(`/api/demand/${id}/status`,{status}); setTimeout(refresh,150);
 }
 
 /* ---------- actions ---------- */
