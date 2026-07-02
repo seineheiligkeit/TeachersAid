@@ -740,15 +740,18 @@ it is validated through the real generation seam and staged for HITL review.
 
 ## HITL dashboard (`api/` + `api/static/index.html`)
 
-Two review gates, one `ReviewItem` type (`stage` ∈ **brainstorm** | **content**); ten tabs
-(Brainstorm · **Bausteine** · Inhalte · Bibliothek · **Arrangements** · **Abbildungen** ·
-**Datensätze** · **Texte** · Statistik · **Insights** — see the Block library section below). **Datensätze**
+Two review gates, one `ReviewItem` type (`stage` ∈ **brainstorm** | **content**); four stations
+(**Planen** — Ideen + Kampagnen-Planer + Wunschliste + the delivery probe ("Lieferung testen", whose
+gaps feed the Wunschliste) · **Prüfen** — the unified tier-laned gate (all
+kinds, keyboard flow, worksheet→block approval cascade) · **Korpus** — the approved library with
+sub-views (Arbeitsblätter · Bausteine · Arrangements · Abbildungen · Datensätze · Texte · Sachverhalte)
++ the compose form · **Einblicke** — feedback digest + block matrix). **Korpus → Datensätze**
 reviews grounded-facts datasets (`DatasetStore`): source/licence/Stand + a figure preview, approve/reject
-(see the Grounded facts & data layer section). **Texte** reviews annotated authentic texts (`TextStore`):
-text + rights + the annotation layer, approve/reject + "Arbeitsblatt erzeugen" (see the Annotated texts section). **Abbildungen** is the asset-review surface (Phase 4
+(see the Grounded facts & data layer section). **Korpus → Texte** reviews annotated authentic texts (`TextStore`):
+text + rights + the annotation layer, approve/reject + "Arbeitsblatt erzeugen" (see the Annotated texts section). **Korpus → Abbildungen** is the asset-review surface (Phase 4
 #2/#4): file-backed library assets (decorative/sourced, with approve/reject) on top, and below, every
 code-generated content figure rendered inline (deduped by generator+spec, built on demand) for
-fächerübergreifende review. **Arrangements** (Phase 5c) reviews Lernarrangements (`ArrangementStore`): the
+fächerübergreifende review. **Korpus → Arrangements** (Phase 5c) reviews Lernarrangements (`ArrangementStore`): the
 run-guide + each role's student/teacher PDF (Vorschau) and a structural view (phases · roles · shared product
 · anchors · Nachweis), approve/reject. (Arrangements use their own store, not `ReviewItem`.)
 
@@ -756,7 +759,7 @@ run-guide + each role's student/teacher PDF (Vorschau) and a structural view (ph
 worksheet item · arrangement · asset · dataset) carries a feedback panel — a **rating (1–5) + free comment + quick
 tags** — **decoupled from the decision** (you can rate/comment without approving, so partial review still
 accrues signal). It's ONE central append-only store keyed by `(target_kind, target_id)` (not a field on each
-model), so `FeedbackStore.digest()` is a single read. The **Insights** tab renders that digest — a priority
+model), so `FeedbackStore.digest()` is a single read. The **Einblicke** station renders that digest — a priority
 "zu überarbeiten" worklist (low-rated / revise-flagged / Sachfehler), tag frequencies, per-subject averages,
 and what's working — which the AI consumes between sessions to drive refinement. "Mit Feedback überarbeiten"
 on a worksheet reuses `request_changes` (regenerate with the comment as the note); on other kinds it carries a
@@ -764,19 +767,19 @@ on a worksheet reuses `request_changes` (regenerate with the comment as the note
 `GET /api/feedback/digest`, `GET /api/feedback/tags`.
 
 ```
-Brainstorm (rough idea: topic + note, you or AI) ─approve─► flesh_out
-   (resolve→plan→generate→verify→assemble→render) ─► Content [Gate 2: Blöcke + Vorschau]
-   ─approve─► Bibliothek (material library)
+Planen (rough idea: topic + note, you or AI) ─approve─► flesh_out
+   (resolve→plan→generate→verify→assemble→render) ─► Content [Gate 2: Prüfen]
+   ─approve─► Korpus (material library)
 ```
 
-- **Brainstorm** — rough ideas. `orch.submit_brainstorm` (you) or `orch.suggest_from_catalog` (one per
+- **Planen** — rough ideas. `orch.submit_brainstorm` (you) or `orch.suggest_from_catalog` (one per
   not-yet-covered Kompetenzbereich; `source="ai"`). Approve → `orch.flesh_out` develops it into a content item.
-- **Inhalte** — fleshed-out worksheets shown two ways: **Blöcke** (the structured `WorksheetContent` —
+- **Korpus → Arbeitsblätter** — worksheets shown two ways: **Blöcke** (the structured `WorksheetContent` —
   blocks, dimensions, `serves`, derived Nachweis/Tiefenprofil — *independent of any rendered document*)
   and **Vorschau** (the rendered student/teacher/homework PDFs). Approve → library; `request-changes`
   regenerates with the note injected.
-- **Bibliothek** — approved worksheets. **Bausteine** + **Statistik** are the block library (see below);
-  Statistik is the block-coverage matrix.
+- **Korpus** — the approved material; the **Bausteine** sub-view + **Einblicke** are the block library (see below);
+  **Einblicke** carries the block-coverage matrix.
 
 Offline, `flesh_out` is served from the master library; with a key it generates via the API — in both
 cases into **Gate 2 review**, never to delivery (corpus loop; invariants §10). The store holds

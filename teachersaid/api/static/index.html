@@ -76,9 +76,10 @@
 <main id="main"></main>
 
 <script>
-const TABS = [["brainstorm","Brainstorm"],["pruefen","Prüfen"],["bausteine","Bausteine"],["inhalte","Inhalte"],["bibliothek","Bibliothek"],["arrangements","Arrangements"],["abbildungen","Abbildungen"],["datensaetze","Datensätze"],["texte","Texte"],["sachverhalte","Sachverhalte"],["statistik","Statistik"],["insights","Insights"]];
+const TABS = [["planen","Planen"],["pruefen","Prüfen"],["korpus","Korpus"],["einblicke","Einblicke"]];
+const KORPUS_VIEWS = [["blaetter","Arbeitsblätter"],["bausteine","Bausteine"],["arrangements","Arrangements"],["abbildungen","Abbildungen"],["datensaetze","Datensätze"],["texte","Texte"],["sachverhalte","Sachverhalte"]];
 const FB_TAGS = ["zu leicht","zu schwer","Sachfehler","Sprache/Wortwahl","unklar","didaktisch stark","Bild/Abbildung nötig","super"];
-let TAB = "brainstorm", SELECTED = null, VIEW = "bloecke", ARRVIEW = "vorschau", LASTITEMS = [];
+let TAB = "planen", KORPUS_VIEW = "blaetter", SELECTED = null, VIEW = "bloecke", ARRVIEW = "vorschau", LASTITEMS = [];
 const $ = s => document.querySelector(s);
 const esc = s => (s==null?"":String(s)).replace(/[&<>]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
 async function jget(u){ return (await fetch(u)).json(); }
@@ -90,7 +91,7 @@ function renderTabs(){
 function switchTab(t){ TAB=t; SELECTED=null; renderTabs(); buildShell(); refresh(); }
 
 function buildShell(){
-  if(TAB==="brainstorm"){
+  if(TAB==="planen"){
     $("#main").innerHTML = `
       <div class="grid2">
         <div>
@@ -109,101 +110,109 @@ function buildShell(){
           </div>
         </div>
         <div class="card"><h2>Ideen-Sammlung</h2><div id="bs-list"></div></div>
-      </div>`;
-  } else if(TAB==="bausteine"){
-    $("#main").innerHTML = `
-      <div class="grid2">
-        <div class="card"><h2>Baustein-Bibliothek</h2>
-          <div class="row" style="margin-bottom:8px;flex-wrap:wrap;gap:6px">
-            <select id="blk-subject" onchange="refresh()"><option value="">alle Fächer</option></select>
-            <select id="blk-klasse" onchange="refresh()"><option value="">alle Klassen</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select>
-            <select id="blk-status" onchange="refresh()"><option value="">alle Status</option><option value="in_review">in Prüfung</option><option value="approved">freigegeben</option><option value="rejected">abgelehnt</option></select>
-            <select id="blk-role" onchange="refresh()"><option value="">alle Typen</option><option value="task">Aufgabe</option><option value="info">Info / Text</option></select>
-            <button class="ghost" onclick="approveAllBlocks()">Alle in Prüfung freigeben</button>
-          </div>
-          <div id="blk-list"></div></div>
-        <div id="detail" class="card"><p class="muted">Wähle links einen Baustein.</p></div>
-      </div>`;
-  } else if(TAB==="inhalte" || TAB==="bibliothek"){
-    const composer = TAB==="inhalte" ? `
-      <div class="card"><h2>Arbeitsblatt zusammenstellen</h2>
-        <p class="muted">Aus <b>freigegebenen</b> Bausteinen (dumb v1: passende Bausteine, nach Niveau geordnet, zeitlich begrenzt). Ziel über den <b>Kompetenzbereich</b> (robust) — oder per Thema, wenn der Titel zum Katalog passt.</p>
-        <label>Fach</label><input id="c-subject" value="Physik" onchange="loadKBs()" />
-        <div class="row"><div style="flex:1"><label>Klasse</label><input id="c-klasse" type="number" value="4" onchange="loadKBs()" /></div>
-          <div style="flex:1"><label>Dauer</label><select id="c-env"><option>einzelstunde</option><option selected>doppelstunde</option><option>block</option></select></div></div>
-        <label>Kompetenzbereich <span class="muted">(optional)</span></label>
-        <select id="c-kb"><option value="">— per Thema auflösen —</option></select>
-        <label>Thema / Titel</label><input id="c-topic" value="Strahlung und Radioaktivität" />
-        <div class="row" style="margin-top:8px"><button onclick="composeSheet()">Zusammenstellen</button></div>
-      </div>` : "";
-    $("#main").innerHTML = `
-      <div class="grid2">
-        <div>${composer}
-          <div class="card"><h2>${TAB==="inhalte"?"Arbeitsblätter (in Prüfung)":"Bibliothek (freigegeben)"}</h2><div id="content-list"></div></div>
-        </div>
-        <div id="detail" class="card"><p class="muted">Wähle einen Eintrag.</p></div>
-      </div>`;
-    if(TAB==="inhalte") loadKBs();
-  } else if(TAB==="arrangements"){
-    $("#main").innerHTML = `
-      <div class="grid2">
-        <div class="card"><h2>Lernarrangements</h2>
-          <p class="muted">Komposite Sibling-Objekte (v0.5), die Arbeitsblätter <i>enthalten</i>: Rollen, Phasen, gemeinsames Produkt und die mündlich/sozial/handelnd verankerten Kompetenzen, die ein einzelnes Blatt nicht erreicht.</p>
-          <div id="arr-list"></div></div>
-        <div id="detail" class="card"><p class="muted">Wähle links ein Arrangement.</p></div>
-      </div>`;
+      </div>
+      <div id="planner"><p class="muted">lädt…</p></div>`;
   } else if(TAB==="pruefen"){
     $("#main").innerHTML = `<div id="pruefen"><p class="muted">lädt…</p></div>`;
-  } else if(TAB==="abbildungen"){
+  } else if(TAB==="korpus"){
     $("#main").innerHTML = `
-      <div class="card"><h2>Bibliotheks-Assets — Dekoration & Quellen</h2>
-        <p class="muted">Datei-basierte Assets: <b>dekorativ</b> (inhaltsfrei, wiederverwendbar — svg/Code jetzt, Diffusion wenn das Bild-Agent angebunden ist) oder <b>extern mit Quelle/Rechten</b>. Hier prüfst und gibst du sie frei. Die Medien-Policy lässt nur inhaltsfreie Deko aus beliebiger Quelle zu.</p>
-        <div id="asset-lib" class="gallery"><p class="muted">lädt…</p></div></div>
-      <div class="card"><h2>Abbildungen aus Bausteinen & Arbeitsblättern</h2>
-        <p class="muted">Jede code-generierte Inhalts-Figur (entdedupliziert nach Generator + Spezifikation), so wie sie im Material erscheint — fächerübergreifend an einer Stelle prüfbar (Korrektheit, Didaktik). Diese werden mit ihrem Baustein/Arbeitsblatt freigegeben.</p>
-        <div class="row" style="margin:6px 0;gap:6px">
-          <select id="ass-gen" onchange="renderAssets()"><option value="">alle Generatoren</option></select>
-        </div>
-        <div id="gallery" class="gallery"><p class="muted">lädt…</p></div></div>`;
-  } else if(TAB==="datensaetze"){
-    $("#main").innerHTML = `
-      <div class="card"><h2>Datensätze — geerdete Fakten (Quellen mit Lizenz)</h2>
-        <p class="muted">Kuratierte, zitierte, lizenzgeprüfte öffentliche Daten (deterministisch von Tools geholt, kein LLM im Faktenweg). Inhalte <b>referenzieren</b> einen Datensatz per stabiler ID und dürfen einen Wert <b>verwenden, nie erfinden</b> — wie <code>serves</code> eine Kompetenz referenziert. Hier prüfst du Quelle, Lizenz und Abbildung und gibst frei.</p>
-        <div id="dataset-lib" class="gallery"><p class="muted">lädt…</p></div></div>`;
-  } else if(TAB==="texte"){
-    $("#main").innerHTML = `
-      <div class="card"><h2>Texte — annotierte authentische Texte (Deutsch)</h2>
-        <p class="muted">Echte, rechtlich geklärte Texte (gemeinfrei nach AT-70-Jahre-Regel oder CC) mit einer <b>geprüften Annotationsebene</b>. Aufgaben werden daraus abgeleitet — die Antworten stammen aus den Annotationen (korrekt durch Kuration, nicht erfunden). „Arbeitsblatt erzeugen“ stellt ein abgeleitetes Arbeitsblatt in <b>Inhalte</b> ein.</p>
-        <div id="text-lib"><p class="muted">lädt…</p></div></div>`;
-  } else if(TAB==="sachverhalte"){
-    $("#main").innerHTML = `
-      <div class="card"><h2>Sachverhalte — kuratierte Sachwissen-Module (Darstellung + Fakten)</h2>
-        <p class="muted">Strukturierte, belegte Fakten (Zeitleiste · Akteure · Ursache→Folge · Begriffe) plus eine <b>autorisierte Darstellung über dem eingefrorenen Faktenset</b> — jede Jahreszahl ist per Entity-Lint garantiert, kein erfundenes Datum. Ein Modul → drei Projektionen (Darstellung · Abbildungen · Sachkompetenz-Aufgaben). Hier prüfst du <b>Fakten und Quellen</b> und gibst frei; „Arbeitsblatt erzeugen“ stellt es in <b>Inhalte</b> ein.</p>
-        <div id="sach-lib"><p class="muted">lädt…</p></div></div>`;
-  } else if(TAB==="insights"){
-    $("#main").innerHTML = `<div id="insights"><p class="muted">lädt…</p></div>`;
+      <div class="row" id="korpus-nav" style="margin-bottom:10px;gap:6px;flex-wrap:wrap"></div>
+      <div id="korpus-body"><p class="muted">lädt…</p></div>`;
   } else {
-    $("#main").innerHTML = `<div id="stats"><p class="muted">lädt…</p></div>`;
+    $("#main").innerHTML = `<div id="insights"><p class="muted">lädt…</p></div><div id="stats"><p class="muted">lädt…</p></div>`;
   }
 }
+
+/* ---------- Korpus — sub-views over the material library ---------- */
+function korpusShellHTML(v){
+  if(v==="blaetter") return `
+    <div class="grid2">
+      <div>
+        <div class="card"><h2>Arbeitsblatt zusammenstellen</h2>
+          <p class="muted">Aus <b>freigegebenen</b> Bausteinen (dumb v1: passende Bausteine, nach Niveau geordnet, zeitlich begrenzt). Ziel über den <b>Kompetenzbereich</b> (robust) — oder per Thema, wenn der Titel zum Katalog passt.</p>
+          <label>Fach</label><input id="c-subject" value="Physik" onchange="loadKBs()" />
+          <div class="row"><div style="flex:1"><label>Klasse</label><input id="c-klasse" type="number" value="4" onchange="loadKBs()" /></div>
+            <div style="flex:1"><label>Dauer</label><select id="c-env"><option>einzelstunde</option><option selected>doppelstunde</option><option>block</option></select></div></div>
+          <label>Kompetenzbereich <span class="muted">(optional)</span></label>
+          <select id="c-kb"><option value="">— per Thema auflösen —</option></select>
+          <label>Thema / Titel</label><input id="c-topic" value="Strahlung und Radioaktivität" />
+          <div class="row" style="margin-top:8px"><button onclick="composeSheet()">Zusammenstellen</button></div>
+        </div>
+        <div class="card"><h2>Arbeitsblätter (freigegeben)</h2><div id="content-list"></div></div>
+      </div>
+      <div id="detail" class="card"><p class="muted">Wähle einen Eintrag.</p></div>
+    </div>`;
+  if(v==="bausteine") return `
+    <div class="grid2">
+      <div class="card"><h2>Baustein-Bibliothek</h2>
+        <div class="row" style="margin-bottom:8px;flex-wrap:wrap;gap:6px">
+          <select id="blk-subject" onchange="refresh()"><option value="">alle Fächer</option></select>
+          <select id="blk-klasse" onchange="refresh()"><option value="">alle Klassen</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select>
+          <select id="blk-status" onchange="refresh()"><option value="">alle Status</option><option value="in_review">in Prüfung</option><option value="approved">freigegeben</option><option value="rejected">abgelehnt</option></select>
+          <select id="blk-role" onchange="refresh()"><option value="">alle Typen</option><option value="task">Aufgabe</option><option value="info">Info / Text</option></select>
+          <button class="ghost" onclick="approveAllBlocks()">Alle in Prüfung freigeben</button>
+        </div>
+        <div id="blk-list"></div></div>
+      <div id="detail" class="card"><p class="muted">Wähle links einen Baustein.</p></div>
+    </div>`;
+  if(v==="arrangements") return `
+    <div class="grid2">
+      <div class="card"><h2>Lernarrangements</h2>
+        <p class="muted">Komposite Sibling-Objekte (v0.5), die Arbeitsblätter <i>enthalten</i>: Rollen, Phasen, gemeinsames Produkt und die mündlich/sozial/handelnd verankerten Kompetenzen, die ein einzelnes Blatt nicht erreicht.</p>
+        <div id="arr-list"></div></div>
+      <div id="detail" class="card"><p class="muted">Wähle links ein Arrangement.</p></div>
+    </div>`;
+  if(v==="abbildungen") return `
+    <div class="card"><h2>Bibliotheks-Assets — Dekoration & Quellen</h2>
+      <p class="muted">Datei-basierte Assets: <b>dekorativ</b> (inhaltsfrei, wiederverwendbar — svg/Code jetzt, Diffusion wenn das Bild-Agent angebunden ist) oder <b>extern mit Quelle/Rechten</b>. Hier prüfst und gibst du sie frei. Die Medien-Policy lässt nur inhaltsfreie Deko aus beliebiger Quelle zu.</p>
+      <div id="asset-lib" class="gallery"><p class="muted">lädt…</p></div></div>
+    <div class="card"><h2>Abbildungen aus Bausteinen & Arbeitsblättern</h2>
+      <p class="muted">Jede code-generierte Inhalts-Figur (entdedupliziert nach Generator + Spezifikation), so wie sie im Material erscheint — fächerübergreifend an einer Stelle prüfbar (Korrektheit, Didaktik). Diese werden mit ihrem Baustein/Arbeitsblatt freigegeben.</p>
+      <div class="row" style="margin:6px 0;gap:6px">
+        <select id="ass-gen" onchange="renderAssets()"><option value="">alle Generatoren</option></select>
+      </div>
+      <div id="gallery" class="gallery"><p class="muted">lädt…</p></div></div>`;
+  if(v==="datensaetze") return `
+    <div class="card"><h2>Datensätze — geerdete Fakten (Quellen mit Lizenz)</h2>
+      <p class="muted">Kuratierte, zitierte, lizenzgeprüfte öffentliche Daten (deterministisch von Tools geholt, kein LLM im Faktenweg). Inhalte <b>referenzieren</b> einen Datensatz per stabiler ID und dürfen einen Wert <b>verwenden, nie erfinden</b> — wie <code>serves</code> eine Kompetenz referenziert. Hier prüfst du Quelle, Lizenz und Abbildung und gibst frei.</p>
+      <div id="dataset-lib" class="gallery"><p class="muted">lädt…</p></div></div>`;
+  if(v==="texte") return `
+    <div class="card"><h2>Texte — annotierte authentische Texte (Deutsch)</h2>
+      <p class="muted">Echte, rechtlich geklärte Texte (gemeinfrei nach AT-70-Jahre-Regel oder CC) mit einer <b>geprüften Annotationsebene</b>. Aufgaben werden daraus abgeleitet — die Antworten stammen aus den Annotationen (korrekt durch Kuration, nicht erfunden). „Arbeitsblatt erzeugen“ stellt ein abgeleitetes Arbeitsblatt in <b>Prüfen</b> ein.</p>
+      <div id="text-lib"><p class="muted">lädt…</p></div></div>`;
+  return `
+    <div class="card"><h2>Sachverhalte — kuratierte Sachwissen-Module (Darstellung + Fakten)</h2>
+      <p class="muted">Strukturierte, belegte Fakten (Zeitleiste · Akteure · Ursache→Folge · Begriffe) plus eine <b>autorisierte Darstellung über dem eingefrorenen Faktenset</b> — jede Jahreszahl ist per Entity-Lint garantiert, kein erfundenes Datum. Ein Modul → drei Projektionen (Darstellung · Abbildungen · Sachkompetenz-Aufgaben). Hier prüfst du <b>Fakten und Quellen</b> und gibst frei; „Arbeitsblatt erzeugen“ stellt es in <b>Prüfen</b> ein.</p>
+      <div id="sach-lib"><p class="muted">lädt…</p></div></div>`;
+}
+function renderKorpus(){
+  const nav=$("#korpus-nav"), body=$("#korpus-body");
+  if(!nav||!body) return;
+  nav.innerHTML = KORPUS_VIEWS.map(([k,l])=>`<button class="ghost ${KORPUS_VIEW===k?'active':''}" onclick="setKorpusView('${k}')">${l}</button>`).join("");
+  if(body.dataset.view!==KORPUS_VIEW){   // build the sub-shell only on view change — keeps form state across the 4s refresh
+    body.dataset.view=KORPUS_VIEW;
+    body.innerHTML=korpusShellHTML(KORPUS_VIEW);
+    if(KORPUS_VIEW==="blaetter") loadKBs();
+  }
+  if(KORPUS_VIEW==="blaetter") renderContentList(LASTITEMS.filter(i=>i.stage==="content" && i.status==="approved"));
+  else if(KORPUS_VIEW==="bausteine") renderBlocks();
+  else if(KORPUS_VIEW==="arrangements") renderArrangements();
+  else if(KORPUS_VIEW==="abbildungen") renderAssets();
+  else if(KORPUS_VIEW==="datensaetze") renderDatasets();
+  else if(KORPUS_VIEW==="texte") renderTexts();
+  else if(KORPUS_VIEW==="sachverhalte") renderSachverhalte();
+}
+function setKorpusView(v){ KORPUS_VIEW=v; SELECTED=null; renderKorpus(); }
 
 async function refresh(){
   const st = await jget("/api/status");
   $("#counts").textContent = Object.entries(st.counts).map(([k,v])=>`${k}: ${v}`).join("  ·  ") || "leer";
   $("#libsize").textContent = st.library_size;
   LASTITEMS = st.items;
-  if(TAB==="brainstorm") renderBrainstorm();
+  if(TAB==="planen") renderPlanen();
   else if(TAB==="pruefen") renderPruefen();
-  else if(TAB==="bausteine") renderBlocks();
-  else if(TAB==="inhalte") renderContentList(LASTITEMS.filter(i=>i.stage==="content" && i.status!=="approved"));
-  else if(TAB==="bibliothek") renderContentList(LASTITEMS.filter(i=>i.stage==="content" && i.status==="approved"));
-  else if(TAB==="arrangements") renderArrangements();
-  else if(TAB==="abbildungen") renderAssets();
-  else if(TAB==="datensaetze") renderDatasets();
-  else if(TAB==="texte") renderTexts();
-  else if(TAB==="sachverhalte") renderSachverhalte();
-  else if(TAB==="statistik") renderStats();
-  else if(TAB==="insights") renderInsights();
+  else if(TAB==="korpus") renderKorpus();
+  else if(TAB==="einblicke") renderEinblicke();
 }
 
 /* ---------- Brainstorm ---------- */
@@ -233,7 +242,7 @@ async function addIdea(){
 async function suggest(){ await jpost("/api/brainstorm/suggest",{subject:$("#s-subject").value,klasse:+$("#s-klasse").value}); refresh(); }
 async function fleshOut(id){
   const r = await jpost(`/api/items/${id}/flesh-out`,{});
-  TAB="inhalte"; SELECTED=r.id||null; VIEW="bloecke"; renderTabs(); buildShell(); await refresh(); if(SELECTED) openDetail(SELECTED);
+  TAB="korpus"; KORPUS_VIEW="blaetter"; SELECTED=r.id||null; VIEW="bloecke"; renderTabs(); buildShell(); await refresh(); if(SELECTED) openDetail(SELECTED);
 }
 async function loadKBs(){
   const sel=$("#c-kb"); if(!sel) return;
@@ -263,11 +272,10 @@ function renderContentList(items){
       <div class="muted">${esc(i.subject)} ${i.klasse}. Kl. · ${cov}</div>
       ${i.error?`<div class="gap">⚠ ${esc(i.error)}</div>`:""}</div>`;
   }).join("") : `<p class="muted">keine Einträge</p>`;
-  if(SELECTED && !items.find(i=>i.id===SELECTED) && TAB==="inhalte") { /* keep detail */ }
 }
 function setView(v){ VIEW=v; openDetail(SELECTED); }
 async function openDetail(id){
-  SELECTED=id; if($("#content-list")) renderContentList(LASTITEMS.filter(i=>i.stage==="content" && (TAB==="bibliothek"? i.status==="approved": i.status!=="approved")));
+  SELECTED=id; if($("#content-list")) renderContentList(LASTITEMS.filter(i=>i.stage==="content" && i.status==="approved"));
   const it = await jget("/api/items/"+id);
   const c = it.content;
   let h = `<div class="row between"><div><h2 style="margin:0">${esc(it.title)}</h2>
@@ -490,7 +498,7 @@ async function renderTexts(){
   }).join("");
 }
 async function actText(id,kind){ await jpost(`/api/texts/${id}/${kind}`,{}); renderTexts(); }
-async function composeText(id){ const r=await jpost(`/api/texts/${id}/compose`,{}); alert(r.error?("Fehler: "+r.error):("Arbeitsblatt "+r.id+" in „Inhalte“ erstellt"+(r.problems&&r.problems.length?(" — "+r.problems.length+" Verify-Probleme"):" (verify-clean)"))); }
+async function composeText(id){ const r=await jpost(`/api/texts/${id}/compose`,{}); alert(r.error?("Fehler: "+r.error):("Arbeitsblatt "+r.id+" in „Prüfen“ eingestellt"+(r.problems&&r.problems.length?(" — "+r.problems.length+" Verify-Probleme"):" (verify-clean)"))); }
 /* ---------- Sachverhalte (the content / exposition layer) ---------- */
 async function renderSachverhalte(){
   if(!$("#sach-lib")) return;
@@ -522,7 +530,7 @@ async function renderSachverhalte(){
   }).join("");
 }
 async function actSachverhalt(id,kind){ await jpost(`/api/sachverhalte/${id}/${kind}`,{}); renderSachverhalte(); }
-async function composeSachverhalt(id){ const r=await jpost(`/api/sachverhalte/${id}/compose`,{}); alert(r.error?("Fehler: "+r.error):("Arbeitsblatt "+r.id+" in „Inhalte“ erstellt"+(r.problems&&r.problems.length?(" — "+r.problems.length+" Verify-Probleme"):" (verify-clean)"))); }
+async function composeSachverhalt(id){ const r=await jpost(`/api/sachverhalte/${id}/compose`,{}); alert(r.error?("Fehler: "+r.error):("Arbeitsblatt "+r.id+" in „Prüfen“ eingestellt"+(r.problems&&r.problems.length?(" — "+r.problems.length+" Verify-Probleme"):" (verify-clean)"))); }
 async function renderAssets(){
   renderAssetLib();
   if(!$("#gallery")) return;
@@ -676,34 +684,17 @@ async function renderInsights(){
   $("#insights").innerHTML=h;
 }
 
-/* ---------- Statistik ---------- */
-async function renderStats(){
-  if(!$("#stats")) return;
-  const s = await jget("/api/stats"); const t = s.totals;
-  let h = `<div class="card"><h2>Block-Bibliothek — Gesamtfortschritt</h2>
-    <div class="row between"><span>${t.covered_competences} / ${t.total_competences} Kompetenzen durch freigegebene Bausteine abgedeckt</span><b>${t.coverage_pct}%</b></div>
-    <div class="prog"><i style="width:${t.coverage_pct}%"></i></div>
-    <p class="muted" style="margin-top:8px">${t.task_blocks} Aufgaben-Bausteine · ${t.info_blocks} Info/Text-Bausteine · ${t.in_review} in Prüfung ·
-      ${t.subjects_started}/${t.subjects} Fächer begonnen · ${t.worksheets} Arbeitsblätter freigegeben</p>
-    ${t.by_stufe?`<p class="muted">${["Unterstufe","Oberstufe"].map(st=>{const b=t.by_stufe[st];return `<b>${st}:</b> ${b.covered_competences}/${b.total_competences} Komp. · ${b.task_blocks} Aufg.-Bausteine · ${b.in_review} in Prüfung`;}).join(" &nbsp;|&nbsp; ")}</p>`:""}</div>
-    <div class="card"><h2>Pro Fach</h2>
-    <table><thead><tr><th>Fach</th><th>Stufe</th><th>Kl.</th><th>Aufg.</th><th>Info</th><th>Abdeckung (Komp.)</th><th>Niveaus</th><th>in Prüfung</th></tr></thead><tbody>
-    ${s.subjects.map(r=>`<tr ${r.empty?'class="muted"':''}>
-      <td>${esc(r.name)}</td><td>${r.stufe==='Oberstufe'?'OS':'US'}</td><td>${(r.klassen||[]).join(",")}</td>
-      <td>${r.task_blocks}</td><td>${r.info_blocks}</td>
-      <td>${r.covered_competences}/${r.total_competences}
-        <div class="prog" style="width:80px;display:inline-block;vertical-align:middle"><i style="width:${r.coverage_pct}%"></i></div></td>
-      <td class="muted">${Object.entries(r.by_level||{}).map(([k,v])=>k.slice(0,4)+":"+v).join(" ")||"—"}</td>
-      <td>${r.in_review||"—"}</td></tr>`).join("")}
-    </tbody></table>
-    <p class="muted" style="margin-top:8px">„Abdeckung" = Katalog-Kompetenzen mit ≥1 freigegebenem Aufgaben-Baustein. Leere Fächer sind ausgegraut.</p></div>`;
+/* ---------- Planen — Ideen + Kampagnen-Planer + Lieferung/Wunschliste ---------- */
+async function renderPlanen(){
+  renderBrainstorm();
+  if(!$("#planner")) return;
 
   // --- Kampagnen-Planer (offline-first: der Korpus-Fortschrittsbalken) ---
   const STATCOL={gruen:"#2e7d32",teil:"#b26a00",leer:"#999"};
   const cov = await jget("/api/coverage"); const ct = cov.totals;
   const covbar=(g,t,n)=>{const pg=n?100*g/n:0, pt=n?100*t/n:0;
     return `<span style="display:inline-block;width:110px;height:9px;background:#eee;border-radius:5px;overflow:hidden;vertical-align:middle;white-space:nowrap;font-size:0"><i style="display:inline-block;height:9px;background:${STATCOL.gruen};width:${pg}%"></i><i style="display:inline-block;height:9px;background:#f0ad4e;width:${pt}%"></i></span>`;};
-  h += `<div class="card"><h2>Kampagnen-Planer — Kompetenzbereich-Zellen</h2>
+  let h = `<div class="card"><h2>Kampagnen-Planer — Kompetenzbereich-Zellen</h2>
     <div class="row between"><span><b style="color:${STATCOL.gruen}">${ct.gruen} grün</b> · <b style="color:${STATCOL.teil}">${ct.teil} teilweise</b> · <span class="muted">${ct.leer} leer</span> von ${ct.cells} Zellen (Stufe·Fach·Klasse·KB)</span><b>${ct.ready_pct}% grün</b></div>
     <p class="muted">grün = ≥${cov.green_min_tasks} freigegebene Aufgaben-Bausteine UND alle 3 Anforderungsbänder (leicht/mittel/anspruchsvoll) — dann kann compose ein Blatt von leicht bis anspruchsvoll bestücken. Nicht-grüne Zellen sind die Kampagnen-Warteschlange (<code>GET /api/coverage/gaps</code> liefert die Brief-Anker).</p>
     ${cov.subjects.filter(x=>x.cells_total).map(x=>`<details style="margin:4px 0"><summary style="cursor:pointer"><b>${esc(x.name)}</b> <span class="muted">(${x.stufe==='Oberstufe'?'OS':'US'})</span> ${covbar(x.gruen,x.teil,x.cells_total)} <span class="muted">${x.gruen}/${x.cells_total} grün</span></summary>
@@ -728,6 +719,31 @@ async function renderStats(){
       ${dem.map(r=>`<tr><td>${r.id}</td><td>${esc(r.subject)}</td><td>${r.klasse}</td><td>${esc(r.topic||r.kompetenzbereich||"")}</td><td>${r.status}</td>
         <td>${r.status==="open"?`<button onclick="demandStatus('${r.id}','planned')">planen</button> <button class="ghost" onclick="demandStatus('${r.id}','dismissed')">verwerfen</button>`:(r.status==="planned"?`<button onclick="demandStatus('${r.id}','fulfilled')">erfüllt</button>`:"")}</td></tr>`).join("")}
     </tbody></table>`:`<p class="muted">Keine Wünsche — Lücken bei der Lieferung landen hier und speisen die nächste Kampagne.</p>`}</div>`;
+  $("#planner").innerHTML = h;
+}
+
+/* ---------- Einblicke — Feedback-Digest + Block-Matrix ---------- */
+async function renderEinblicke(){
+  renderInsights();
+  if(!$("#stats")) return;
+  const s = await jget("/api/stats"); const t = s.totals;
+  let h = `<div class="card"><h2>Block-Bibliothek — Gesamtfortschritt</h2>
+    <div class="row between"><span>${t.covered_competences} / ${t.total_competences} Kompetenzen durch freigegebene Bausteine abgedeckt</span><b>${t.coverage_pct}%</b></div>
+    <div class="prog"><i style="width:${t.coverage_pct}%"></i></div>
+    <p class="muted" style="margin-top:8px">${t.task_blocks} Aufgaben-Bausteine · ${t.info_blocks} Info/Text-Bausteine · ${t.in_review} in Prüfung ·
+      ${t.subjects_started}/${t.subjects} Fächer begonnen · ${t.worksheets} Arbeitsblätter freigegeben</p>
+    ${t.by_stufe?`<p class="muted">${["Unterstufe","Oberstufe"].map(st=>{const b=t.by_stufe[st];return `<b>${st}:</b> ${b.covered_competences}/${b.total_competences} Komp. · ${b.task_blocks} Aufg.-Bausteine · ${b.in_review} in Prüfung`;}).join(" &nbsp;|&nbsp; ")}</p>`:""}</div>
+    <div class="card"><h2>Pro Fach</h2>
+    <table><thead><tr><th>Fach</th><th>Stufe</th><th>Kl.</th><th>Aufg.</th><th>Info</th><th>Abdeckung (Komp.)</th><th>Niveaus</th><th>in Prüfung</th></tr></thead><tbody>
+    ${s.subjects.map(r=>`<tr ${r.empty?'class="muted"':''}>
+      <td>${esc(r.name)}</td><td>${r.stufe==='Oberstufe'?'OS':'US'}</td><td>${(r.klassen||[]).join(",")}</td>
+      <td>${r.task_blocks}</td><td>${r.info_blocks}</td>
+      <td>${r.covered_competences}/${r.total_competences}
+        <div class="prog" style="width:80px;display:inline-block;vertical-align:middle"><i style="width:${r.coverage_pct}%"></i></div></td>
+      <td class="muted">${Object.entries(r.by_level||{}).map(([k,v])=>k.slice(0,4)+":"+v).join(" ")||"—"}</td>
+      <td>${r.in_review||"—"}</td></tr>`).join("")}
+    </tbody></table>
+    <p class="muted" style="margin-top:8px">„Abdeckung" = Katalog-Kompetenzen mit ≥1 freigegebenem Aufgaben-Baustein. Leere Fächer sind ausgegraut.</p></div>`;
   $("#stats").innerHTML = h;
 }
 
@@ -829,7 +845,7 @@ async function act(id,kind){
 }
 
 renderTabs(); buildShell(); refresh();
-setInterval(()=>{ if(TAB==="pruefen") return; if(TAB!=="brainstorm" || !document.activeElement || !["INPUT","TEXTAREA"].includes(document.activeElement.tagName)) refresh(); }, 4000);
+setInterval(()=>{ if(TAB==="pruefen") return; if(TAB!=="planen" || !document.activeElement || !["INPUT","TEXTAREA"].includes(document.activeElement.tagName)) refresh(); }, 4000);
 </script>
 </body>
 </html>
