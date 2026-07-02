@@ -169,6 +169,44 @@ def coverage_gaps(stufe: str | None = None, subject: str | None = None):
     return {"gaps": campaign_gaps(BLOCKS, stufe=stufe, subject=subject)}
 
 
+@app.get("/api/review-queue")
+def review_queue_endpoint():
+    """Prüfen (Track 1 #3): every staged item across all kinds, tier-classified."""
+    from ..store.reviewqueue import queue as _queue
+    return _queue(items=STORE, blocks=BLOCKS, assets=ASSETS, datasets=DATASETS,
+                  texts=TEXTS, sachverhalte=SACHVERHALTE, arrangements=ARRANGEMENTS)
+
+
+class DecisionBody(BaseModel):
+    action: str            # approve | reject
+    note: str = ""
+
+
+@app.post("/api/review/{kind}/{rec_id}/decision")
+def review_decision(kind: str, rec_id: str, body: DecisionBody):
+    """One decision endpoint for every kind. Approving a worksheet CASCADES to its
+    harvested blocks (SME decision: reviewing the sheet is reviewing its blocks)."""
+    if body.action not in ("approve", "reject"):
+        raise HTTPException(400, "action must be approve|reject")
+    status = "approved" if body.action == "approve" else "rejected"
+    try:
+        if kind == "item":
+            it = (orch.approve_content(STORE, rec_id, block_store=BLOCKS)
+                  if body.action == "approve"
+                  else orch.reject(STORE, rec_id, body.note, block_store=BLOCKS))
+            return {"ok": True, "kind": kind, "id": rec_id, "status": it.status}
+        stores = {"block": BLOCKS, "asset": ASSETS, "dataset": DATASETS,
+                  "text": TEXTS, "sachverhalt": SACHVERHALTE,
+                  "arrangement": ARRANGEMENTS}
+        st = stores.get(kind)
+        if st is None:
+            raise HTTPException(400, f"unbekannte Art '{kind}'")
+        st.set_status(rec_id, status)
+        return {"ok": True, "kind": kind, "id": rec_id, "status": status}
+    except KeyError:
+        raise HTTPException(404, "nicht gefunden")
+
+
 @app.post("/api/deliver")
 def deliver_endpoint(body: DeliverBody):
     """Track 2 #4/#5 — the LLM-free delivery loop: vetted sheet › composed › honest
