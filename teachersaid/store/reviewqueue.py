@@ -14,6 +14,7 @@ deeper tier, never up.
 
 from __future__ import annotations
 
+from ..pipeline.triage import attention, latest_triage
 from ..schema.enums import Role
 
 TIERS = ("bestaetigen", "quelle", "sprache", "voll")
@@ -73,8 +74,11 @@ def _file_backed(store, kind, tier_fn) -> list[dict]:
     return out
 
 
-def queue(*, items, blocks, assets, datasets, texts, sachverhalte, arrangements) -> dict:
-    """The Prüfen envelope: every staged item across all kinds + lane counts."""
+def queue(*, items, blocks, assets, datasets, texts, sachverhalte, arrangements,
+          feedback=None) -> dict:
+    """The Prüfen envelope: every staged item across all kinds + lane counts. Each
+    entry carries its triage attention score (`pipeline/triage.py`) — feedback-informed
+    when a `FeedbackStore` is given — and the queue is ordered by it."""
     entries: list[dict] = []
 
     for it in items.list(stage="content"):
@@ -108,9 +112,13 @@ def queue(*, items, blocks, assets, datasets, texts, sachverhalte, arrangements)
     entries += _file_backed(sachverhalte, "sachverhalt", lambda r: "sprache")
     entries += _file_backed(arrangements, "arrangement", lambda r: "voll")
 
-    # attention-first: findings on top, then newest
-    entries.sort(key=lambda e: (-e["n_warnings"], e["updated_at"]), reverse=False)
-    entries.sort(key=lambda e: -e["n_warnings"])
+    # attention-first: triage score on top (findings, tier depth, triage verdicts),
+    # ties broken newest-first (stable two-pass sort)
+    idx = latest_triage(feedback) if feedback is not None else {}
+    for e in entries:
+        e["triage"] = attention(e, triage_index=idx)
+    entries.sort(key=lambda e: e["updated_at"], reverse=True)
+    entries.sort(key=lambda e: -e["triage"]["score"])
 
     lanes = {t: 0 for t in TIERS}
     for e in entries:

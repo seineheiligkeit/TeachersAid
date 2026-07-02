@@ -174,7 +174,8 @@ def review_queue_endpoint():
     """Prüfen (Track 1 #3): every staged item across all kinds, tier-classified."""
     from ..store.reviewqueue import queue as _queue
     return _queue(items=STORE, blocks=BLOCKS, assets=ASSETS, datasets=DATASETS,
-                  texts=TEXTS, sachverhalte=SACHVERHALTE, arrangements=ARRANGEMENTS)
+                  texts=TEXTS, sachverhalte=SACHVERHALTE, arrangements=ARRANGEMENTS,
+                  feedback=FEEDBACK)
 
 
 class DecisionBody(BaseModel):

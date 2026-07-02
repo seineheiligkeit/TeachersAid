@@ -790,10 +790,11 @@ function drawPruefen(){
     const prev=e.kind==="item"
       ?`<div class="row" style="gap:6px;margin:8px 0 4px"><button class="ghost" onclick="pFrame('${e.id}','student')">SuS</button><button class="ghost" onclick="pFrame('${e.id}','teacher')">LK</button><button class="ghost" onclick="pFrame('${e.id}','homework')">HÜ</button></div><iframe id="pframe" src="/api/items/${e.id}/pdf/student" style="width:100%;height:420px;border:1px solid #ddd;border-radius:8px"></iframe>`
       :`<p class="muted" style="font-size:12.5px">Details im jeweiligen Fach-Tab (${esc(e.kind)}) — Fokus-Detailansichten folgen in Phase 3.</p>`;
+    const tri=e.triage?`<p class="muted" style="font-size:12px;margin:0 0 6px">Triage: ${e.triage.score}${(e.triage.reasons||[]).length?` — ${e.triage.reasons.slice(0,2).map(esc).join(" · ")}`:""}${e.triage.rating?` · ★${e.triage.rating}`:""}</p>`:"";
     card=`<div class="row between"><span><span class="pill">${esc(e.kind)}</span> <code>${e.id}</code> <span class="muted">· ${esc(PQ.labels[e.tier])}</span></span><span class="muted">${PQ.idx+1} / ${PQ.entries.length}</span></div>
       <h2 style="margin:8px 0 2px">${esc(e.title||"")}</h2>
       <p class="muted" style="margin:0 0 6px">${esc(e.subject||"—")}${e.klasse?` · ${e.klasse}. Kl.`:""}${e.n_tasks?` · ${e.n_tasks} Aufgaben`:""}</p>
-      ${warn}${prev}
+      ${tri}${warn}${prev}
       <div class="row" style="gap:8px;margin-top:10px">
         <button onclick="pDecide('approve')">Freigeben (a)</button>
         <button class="ghost" onclick="pDecide('reject')">Ablehnen (x)</button>
