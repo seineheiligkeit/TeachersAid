@@ -20,6 +20,10 @@ _TITLE_SUFFIX = {
     "homework": " — Hausübung",
 }
 
+# display labels for the derived Anforderungsband (schema keys are "1"/"2"/"3");
+# local on purpose — rendering imports only schema, never pipeline.
+_DIFF_LABEL = {"1": "leicht", "2": "mittel", "3": "anspruchsvoll"}
+
 
 def _content_width() -> float:
     return A4[0] - 2 * rb.PAGE_MARGIN
@@ -61,6 +65,10 @@ def nachweis_story(nachweis, depth_profile, S, width, *, page_break: bool = True
         dims = " · ".join(f"{k}: {v}" for k, v in dp.by_dimension.items())
         out.append(rb.para(f"Niveaus — {levels}", S["body"]))
         out.append(rb.para(f"Dimensionen — {dims}", S["body"]))
+        if dp.by_difficulty:
+            bands = " · ".join(f"{_DIFF_LABEL.get(k, k)}: {v}"
+                               for k, v in sorted(dp.by_difficulty.items()))
+            out.append(rb.para(f"Anforderungsbänder — {bands}", S["body"]))
         out.append(rb.para(
             f"Zeit gesamt: {dp.minutes_total} min · "
             f"materialunabhängig: {dp.minutes_resource_independent} min",
@@ -114,6 +122,8 @@ def build_pdf(
     )
     story = []
     story.append(rb.para(content.meta.title + _TITLE_SUFFIX.get(projection, ""), S["title"]))
+    if content.meta.subtitle:                     # genre label (e.g. "Übungsreihe — …")
+        story.append(rb.para(content.meta.subtitle, S["subtitle"]))
     story.append(rb.para(content.meta.lehrplan_label, S["subtitle"]))
     if content.meta.kernfrage:
         story.append(rb.raw_para("Kernfrage: " + rb.richtext_markup(content.meta.kernfrage),

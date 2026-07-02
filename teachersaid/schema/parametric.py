@@ -11,11 +11,20 @@ authored — so N variants are all correct and each carries its Rechenweg.
 
 from __future__ import annotations
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 from .blocks import Serves, SolutionStep
 from .response import ResponseSpec
 from .richtext import RichText
+
+
+def _no_digits(v: str | None) -> str | None:
+    """Guard for curated context strings: a context frames the task, it never asserts a
+    number — every digit must come from the computed instance (select, never author).
+    `isdigit()` also catches super-/subscript digits, so a smuggled quantity can't hide."""
+    if v is not None and any(ch.isdigit() for ch in v):
+        raise ValueError(f"context must be digit-free (numbers are computed, never authored): {v!r}")
+    return v
 
 
 class Instance(BaseModel):
@@ -24,6 +33,22 @@ class Instance(BaseModel):
     params: dict                       # slot name -> display value (fills the prompt template)
     answer: RichText                   # the derived answer (correct by construction)
     steps: list[SolutionStep] = Field(default_factory=list)   # the worked Rechenweg
+    difficulty: int | None = None      # the band (1–3) the recipe ACTUALLY delivered — set only
+    # by recipes with a difficulty knob / an intrinsic item band; never a requested-but-ignored value
+    context: str | None = None         # curated, digit-free sentence keyed to the DRAWN item
+    # (where the substance/reaction occurs); prefixes the prompt. Selected from grounding, never authored.
+
+    @field_validator("difficulty")
+    @classmethod
+    def _difficulty_range(cls, v):
+        if v is not None and v not in (1, 2, 3):
+            raise ValueError("difficulty must be 1, 2 or 3")
+        return v
+
+    @field_validator("context")
+    @classmethod
+    def _ctx_guard(cls, v):
+        return _no_digits(v)
 
 
 class ParametricTask(BaseModel):
@@ -43,3 +68,11 @@ class ParametricTask(BaseModel):
     kind: str = "calculation"
     est_minutes: int = 5
     response: ResponseSpec | None = None
+    context_frame: str | None = None   # neutral, digit-free per-template frame (numeric maths):
+    # names where this SKILL is used, asserts no item fact. Rendered once in the worksheet intro
+    # (not per prompt — item-keyed contexts vary, a template frame would repeat N times).
+
+    @field_validator("context_frame")
+    @classmethod
+    def _frame_guard(cls, v):
+        return _no_digits(v)

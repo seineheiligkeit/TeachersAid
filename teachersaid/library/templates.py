@@ -10,9 +10,9 @@ from __future__ import annotations
 
 from datetime import date
 
-from ..schema.blocks import Serves
+from ..schema.blocks import InfoBlock, Serves
 from ..schema.parametric import ParametricTask
-from ..schema.worksheet import Baustein, WorksheetContent, WorksheetMeta
+from ..schema.worksheet import Baustein, TeacherOverview, WorksheetContent, WorksheetMeta
 
 PARAM_TEMPLATES: list[ParametricTask] = [
     ParametricTask(
@@ -20,6 +20,8 @@ PARAM_TEMPLATES: list[ParametricTask] = [
         subject="Mathematik", klasse=2, kompetenzbereich="2: Variablen und Funktionen",
         recipe="linear_equation",
         prompt_template="Löse die folgende Gleichung nach $x$ auf: ${eq}$",
+        context_frame="Gleichungen umzuformen brauchst du überall dort, wo eine "
+                      "unbekannte Größe aus einer Formel bestimmt wird.",
         serves=[Serves(competence_id="MAT.US.2.VAR.02", relation="exercises")],
         dimensions=["OPE"], cognitive_level="apply", kind="calculation", est_minutes=4),
     ParametricTask(
@@ -27,6 +29,8 @@ PARAM_TEMPLATES: list[ParametricTask] = [
         subject="Mathematik", klasse=2, kompetenzbereich="1: Zahlen und Maße",
         recipe="fraction_add",
         prompt_template="Berechne und kürze so weit wie möglich: ${f1} + {f2}$",
+        context_frame="Mit Brüchen rechnest du immer dann, wenn Anteile zusammenkommen — "
+                      "beim Kochen, Messen und Teilen.",
         serves=[Serves(competence_id="MAT.US.2.ZAH.03", relation="exercises")],
         dimensions=["OPE"], cognitive_level="apply", kind="calculation", est_minutes=4),
     ParametricTask(
@@ -34,6 +38,8 @@ PARAM_TEMPLATES: list[ParametricTask] = [
         subject="Mathematik", klasse=2, kompetenzbereich="1: Zahlen und Maße",
         recipe="percentage",
         prompt_template="Wie viel sind {pct} % von {base}?",
+        context_frame="Prozente begegnen dir bei Rabatten, bei Zinsen und in jeder "
+                      "Statistik.",
         serves=[Serves(competence_id="MAT.US.2.ZAH.04", relation="exercises")],
         dimensions=["OPE"], cognitive_level="apply", kind="calculation", est_minutes=3),
     ParametricTask(
@@ -41,6 +47,8 @@ PARAM_TEMPLATES: list[ParametricTask] = [
         subject="Mathematik", klasse=2, kompetenzbereich="1: Zahlen und Maße",
         recipe="percentage_rate",
         prompt_template="Wie viel Prozent sind {part} von {base}?",
+        context_frame="Welcher Anteil ist das in Prozent? Diese Frage stellt sich bei "
+                      "Noten, Umfragen und Nährwertangaben.",
         serves=[Serves(competence_id="MAT.US.2.ZAH.04", relation="exercises")],
         dimensions=["OPE"], cognitive_level="apply", kind="calculation", est_minutes=3),
     ParametricTask(
@@ -48,6 +56,8 @@ PARAM_TEMPLATES: list[ParametricTask] = [
         subject="Mathematik", klasse=2, kompetenzbereich="1: Zahlen und Maße",
         recipe="proportion",
         prompt_template="{n1} {einheit} kosten {v1} €. Wie viel kosten {n2} {einheit}?",
+        context_frame="Der Dreisatz hilft beim Einkaufen und Umrechnen: von bekannten "
+                      "Mengen auf gesuchte schließen.",
         serves=[Serves(competence_id="MAT.US.2.ZAH.04", relation="exercises")],
         dimensions=["MOD"], cognitive_level="apply", kind="modelling_task", est_minutes=4),
     ParametricTask(
@@ -55,6 +65,8 @@ PARAM_TEMPLATES: list[ParametricTask] = [
         subject="Mathematik", klasse=2, kompetenzbereich="1: Zahlen und Maße",
         recipe="fraction_multiply",
         prompt_template="Berechne und kürze so weit wie möglich: ${f1} \\cdot {f2}$",
+        context_frame="Anteile von Anteilen — etwa die Hälfte eines Drittels — "
+                      "berechnest du durch Multiplizieren von Brüchen.",
         serves=[Serves(competence_id="MAT.US.2.ZAH.03", relation="exercises")],
         dimensions=["OPE"], cognitive_level="apply", kind="calculation", est_minutes=4),
     ParametricTask(
@@ -62,6 +74,8 @@ PARAM_TEMPLATES: list[ParametricTask] = [
         subject="Mathematik", klasse=3, kompetenzbereich="2: Variablen und Funktionen",
         recipe="linear_equation_both_sides",
         prompt_template="Löse die folgende Gleichung nach $x$ auf: ${eq}$",
+        context_frame="Stehen auf beiden Seiten Variablen, bringt geschicktes Umformen "
+                      "Ordnung in die Gleichung.",
         serves=[Serves(competence_id="MAT.US.3.VAR.03", relation="exercises")],
         dimensions=["OPE"], cognitive_level="apply", kind="calculation", est_minutes=5),
     ParametricTask(
@@ -70,6 +84,8 @@ PARAM_TEMPLATES: list[ParametricTask] = [
         recipe="rectangle",
         prompt_template="Berechne Flächeninhalt und Umfang eines Rechtecks mit Länge {l} cm "
                         "und Breite {w} cm.",
+        context_frame="Flächen und Umfänge braucht man beim Planen von Räumen, Gärten "
+                      "und Sportfeldern.",
         serves=[Serves(competence_id="MAT.US.1.FIG.02", relation="exercises")],
         dimensions=["OPE"], cognitive_level="apply", kind="calculation", est_minutes=4),
     ParametricTask(
@@ -78,6 +94,8 @@ PARAM_TEMPLATES: list[ParametricTask] = [
         recipe="pythagoras",
         prompt_template="Ein rechtwinkliges Dreieck hat die Katheten $a = {a}$ cm und "
                         "$b = {b}$ cm. Berechne die Länge der Hypotenuse $c$.",
+        context_frame="Mit dem Satz des Pythagoras bestimmen Handwerker und Vermesser "
+                      "Längen, die sich nicht direkt messen lassen.",
         serves=[Serves(competence_id="MAT.US.4.FIG.01", relation="exercises")],
         dimensions=["OPE"], cognitive_level="apply", kind="calculation", est_minutes=5),
     ParametricTask(
@@ -85,6 +103,8 @@ PARAM_TEMPLATES: list[ParametricTask] = [
         subject="Mathematik", klasse=1, kompetenzbereich="4: Daten und Zufall",
         recipe="mean_median",
         prompt_template="Berechne Mittelwert, Median und Spannweite der Datenreihe: {vals}.",
+        context_frame="Kennzahlen wie Mittelwert und Median fassen eine Datenreihe in "
+                      "wenigen Werten zusammen.",
         serves=[Serves(competence_id="MAT.US.1.DAT.02", relation="exercises")],
         dimensions=["DAR"], cognitive_level="apply", kind="calculation", est_minutes=5),
 
@@ -221,8 +241,16 @@ def find_template(template_id: str) -> ParametricTask | None:
 
 
 def variant_worksheet(template: ParametricTask, n: int = 6, *, today: date | None = None,
-                      seed0: int = 1):
-    """Build an assemble-ready WorksheetContent of N variants. Returns (content, resolution)."""
+                      seed0: int = 1, ramp: bool = True):
+    """Build an assemble-ready WorksheetContent of N variants. Returns (content, resolution).
+
+    Genre-honest Übungsreihe framing (the blackboard test): the sheet LABELS itself as a
+    variant series — subtitle, a purpose intro block (Automatisieren / Schularbeit-
+    Vorbereitung / Gruppe A/B), and a teacher throughline naming the value (difficulty
+    ramp + per-variant Rechenweg) and stating what it is NOT (a didactic ladder
+    worksheet). `ramp=True` (default) requests ascending difficulty bands; the
+    "aufsteigend" claim is only made when the recipe actually delivered a spread —
+    recipes without the knob produce an honest, unramped series."""
     from ..grounding import lehrplan_store as ls
     from ..pipeline.parametrize import make_variants
     from ..pipeline.resolve import resolve_kompetenzbereich
@@ -230,14 +258,46 @@ def variant_worksheet(template: ParametricTask, n: int = 6, *, today: date | Non
     stufe = ls.stufe_for_klasse(template.klasse)  # Klasse fixes the stage (1–4 / 5–8)
     res = resolve_kompetenzbereich(template.subject, template.klasse,
                                    template.kompetenzbereich, today=today)
-    blocks = make_variants(template, n, seed0=seed0)
+    blocks = make_variants(template, n, seed0=seed0, ramp=ramp)
     title = template.title or template.id
+    # honest labelling: claim "aufsteigend" only if the delivered bands actually spread
+    stamped = [b.difficulty for b in blocks if b.difficulty is not None]
+    ramped = len(set(stamped)) > 1
+    subtitle = f"Übungsreihe — {n} Varianten" + (", aufsteigend" if ramped else "")
+
+    zweck = ("Diese Übungsreihe dient dem Automatisieren und der Vorbereitung auf die "
+             "Schularbeit: jede Aufgabe ist eine eigene Variante derselben "
+             "Aufgabenstellung mit eigenem Zahlensatz — damit auch als Gruppe A/B "
+             "einsetzbar.")
+    if ramped:
+        zweck += (" Die Varianten sind aufsteigend geordnet: von leicht bis "
+                  "anspruchsvoll.")
+    intro: list = [InfoBlock(id="uebung.zweck", kind="callout", callout_role="note",
+                             content=zweck)]
+    if template.context_frame:                    # neutral per-template frame (maths)
+        intro.append(InfoBlock(id="uebung.rahmen", kind="prose",
+                               content=template.context_frame))
+
+    throughline = (
+        f"Übungsreihe, kein didaktisch aufgebautes Arbeitsblatt: {'aufsteigende' if ramped else 'gleichwertige'} "
+        f"Varianten derselben Aufgabenstellung"
+        + (" (leicht → anspruchsvoll)" if ramped else "")
+        + ", jede mit vollständigem Rechenweg in dieser Begleitung. Wert: "
+        + ("die Schwierigkeitsrampe und " if ramped else "")
+        + "der geprüfte Lösungsweg zu jedem eigenen Zahlensatz — einsetzbar zum "
+          "Automatisieren, zur Schularbeit-Vorbereitung, im Stationenbetrieb oder als "
+          "Gruppe A/B."
+    )
     meta = WorksheetMeta(
-        title=f"Übungsblatt: {title} ({n} Varianten)", subject=template.subject,
+        title=f"Übungsreihe: {title}", subtitle=subtitle, subject=template.subject,
         stufe=stufe, klasse=template.klasse,
         kernfrage=f"Übung: {title}", fassung=res.fassung,
         lehrplan_label=f"{template.subject} · {template.klasse}. Kl. · {template.kompetenzbereich}")
     content = WorksheetContent(
         meta=meta, subject_model=ls.get_subject_model(template.subject, stufe),
-        intro=[], sections=[Baustein(id="uebung", title=title, blocks=blocks)], assets=[])
+        intro=intro,
+        sections=[Baustein(id="uebung", title=title,
+                           teacher_overview=TeacherOverview(throughline=throughline),
+                           blocks=blocks)],
+        assets=[])
     return content, res

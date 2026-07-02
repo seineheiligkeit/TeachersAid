@@ -231,8 +231,12 @@ def _task_flowables(b: TaskBlock, projection: str, S, width, assets, number, cit
     if projection == "teacher":
         dims = ", ".join(b.dimensions)
         serves = ", ".join(f"{s.competence_id} ({s.relation})" for s in b.serves)
+        # only an EXPLICIT difficulty prints (a delivered ramp band / SME estimate);
+        # the derived fallback would just restate the cognitive level.
+        diff = {1: " · Anforderung: leicht", 2: " · Anforderung: mittel",
+                3: " · Anforderung: anspruchsvoll"}.get(b.difficulty, "")
         out.append(rb.para(
-            f"Niveau: {b.cognitive_level} · Dimension: {dims} · ~{b.est_minutes} min"
+            f"Niveau: {b.cognitive_level}{diff} · Dimension: {dims} · ~{b.est_minutes} min"
             + (f" · dient: {serves}" if serves else ""),
             S["meta"],
         ))

@@ -6,10 +6,23 @@ A recipe OWNS sampling + solving: given a seeded RNG it returns an `Instance` (s
 authored — `make_variants(task, n)` therefore yields N correct variants, each with its
 Rechenweg. Deterministic: the same seed → the same instance. A recipe raises `Unsuitable`
 to reject a degenerate draw (e.g. a non-integer solution) and be resampled.
+
+Difficulty knob (Übungsreihe ramp): a recipe MAY accept an optional `difficulty` (1–3)
+keyword where a real hardness ladder exists (`linear_equation` by coefficient size + sign
+handling; the chemistry recipes by item structure — see `pipeline/chemistry.py`). Recipes
+without the parameter simply ignore a ramp request: `instantiate` inspects the signature
+and never passes the knob to a recipe that lacks it, and only a recipe that actually
+delivered a band stamps `Instance.difficulty` (an ignored request must not fake a spread).
+`make_variants(..., ramp=True)` requests ascending bands (n=6 → 2·leicht/2·mittel/2·schwer).
+
+Context frames: a recipe may also set `Instance.context` — a curated, digit-free sentence
+keyed to the DRAWN item (selected from grounding, never authored) — which `instantiate`
+prefixes to the prompt.
 """
 
 from __future__ import annotations
 
+import inspect
 import math
 import random
 import re
@@ -63,64 +76,106 @@ def _template_to_richtext(filled: str) -> RichText:
     return parts
 
 
-def instantiate(task: ParametricTask, seed: int) -> TaskBlock:
-    """Build one concrete TaskBlock for `seed` (deterministic)."""
+def _accepts_difficulty(recipe) -> bool:
+    return "difficulty" in inspect.signature(recipe).parameters
+
+
+def instantiate(task: ParametricTask, seed: int, *,
+                difficulty: int | None = None) -> TaskBlock:
+    """Build one concrete TaskBlock for `seed` (deterministic). `difficulty` (1–3) is
+    passed only to recipes that declare the knob; others are drawn unchanged (the ramp
+    request is honestly ignored — see the module docstring). The block's `difficulty`
+    comes from what the recipe DELIVERED (`Instance.difficulty`), never the request."""
     rng = random.Random(seed)
     recipe = _RECIPES.get(task.recipe)
     if recipe is None:
         raise ValueError(f"unknown parametric recipe {task.recipe!r}")
+    pass_difficulty = difficulty is not None and _accepts_difficulty(recipe)
     inst = None
     for _ in range(500):
         try:
-            inst = recipe(rng)
+            inst = recipe(rng, difficulty=difficulty) if pass_difficulty else recipe(rng)
             break
         except Unsuitable:
             continue
     if inst is None:
         raise RuntimeError(f"recipe {task.recipe}: no valid instance in 500 tries")
-    prompt = _template_to_richtext(task.prompt_template.format(**inst.params))
+    filled = task.prompt_template.format(**inst.params)
+    if inst.context:                               # curated, digit-free item context
+        filled = f"{inst.context} {filled}"
+    prompt = _template_to_richtext(filled)
     return TaskBlock(
         id=f"{task.id}#{seed}", kind=task.kind, prompt=prompt,
         response=task.response or LinesResponse(n=2),
         cognitive_level=task.cognitive_level, dimensions=list(task.dimensions),
         content_area=task.content_area, serves=list(task.serves),
         est_minutes=task.est_minutes, answer_key=inst.answer, solution_steps=inst.steps,
+        difficulty=inst.difficulty,
     )
 
 
-def make_variants(task: ParametricTask, n: int, *, seed0: int = 1) -> list[TaskBlock]:
+def ramp_bands(n: int) -> list[int]:
+    """Ascending difficulty bands for an n-variant Übungsreihe, as even as possible:
+    n=6 → [1,1,2,2,3,3]; n=4 → [1,1,2,3]. Deterministic in n."""
+    return [1 + (3 * i) // n for i in range(n)]
+
+
+def make_variants(task: ParametricTask, n: int, *, seed0: int = 1,
+                  ramp: bool = False) -> list[TaskBlock]:
     """N variants of one template, preferring distinct prompts. Recipes with a small
     finite draw space (e.g. the qualitative chemistry tables) can repeat across
     independent seeds; we skip a seed whose prompt duplicates an earlier one, then top
     up with repeats if the pool is genuinely smaller than n. Deterministic: same
-    (task, n, seed0) → same list."""
+    (task, n, seed0, ramp) → same list.
+
+    `ramp=True` requests ascending difficulty bands (see `ramp_bands`) from recipes
+    that support the knob — the Übungsreihe form: start leicht, end anspruchsvoll.
+    Recipes without the knob ignore the request, so ramp is safe on any template."""
     out: list[TaskBlock] = []
     seen: set[str] = set()
     seed = seed0
+    bands: list[int | None] = list(ramp_bands(n)) if ramp else [None] * n
     budget = seed0 + max(n * 20, 40)              # bounded search for distinct prompts
-    while len(out) < n and seed < budget:
-        blk = instantiate(task, seed)
-        seed += 1
-        key = str(blk.prompt)
-        if key not in seen:
-            seen.add(key)
-            out.append(blk)
-    while len(out) < n:                           # pool exhausted → allow repeats
-        out.append(instantiate(task, seed))
-        seed += 1
+    for band in bands:
+        while seed < budget:                      # find a distinct prompt for this slot
+            blk = instantiate(task, seed, difficulty=band)
+            seed += 1
+            key = str(blk.prompt)
+            if key not in seen:
+                seen.add(key)
+                out.append(blk)
+                break
+        else:                                     # pool exhausted → allow a repeat
+            out.append(instantiate(task, seed, difficulty=band))
+            seed += 1
     return out
 
 
 # --- recipes (sympy: exact, with a worked Rechenweg) -------------------------
 @_recipe("linear_equation")
-def _linear_equation(rng: random.Random) -> Instance:
-    """Solve a·x + b = c for x; coefficients chosen so x is a whole number."""
+def _linear_equation(rng: random.Random, difficulty: int | None = None) -> Instance:
+    """Solve a·x + b = c for x; coefficients chosen so x is a whole number.
+
+    Difficulty knob (coefficient size + sign handling): 1 = small positive
+    coefficients, positive solution; 2/None = the classic mixed-sign draw;
+    3 = larger coefficients AND a negative solution or constant (sign work)."""
     x = symbols("x")
-    a = rng.randint(2, 9)
-    xs = rng.randint(-9, 9)
-    if xs == 0:
-        raise Unsuitable
-    b = rng.randint(-12, 12)
+    if difficulty == 1:
+        a = rng.randint(2, 5)
+        xs = rng.randint(1, 9)
+        b = rng.randint(1, 9)
+    elif difficulty == 3:
+        a = rng.randint(6, 14)
+        xs = rng.randint(-12, 12)
+        b = rng.randint(-25, 25)
+        if xs == 0 or (xs > 0 and b >= 0):
+            raise Unsuitable                      # band 3 must involve sign handling
+    else:
+        a = rng.randint(2, 9)
+        xs = rng.randint(-9, 9)
+        if xs == 0:
+            raise Unsuitable
+        b = rng.randint(-12, 12)
     c = a * xs + b
     steps = [
         SolutionStep(text="Ausgangsgleichung", expr=latex(Eq(a * x + b, c))),
@@ -130,7 +185,8 @@ def _linear_equation(rng: random.Random) -> Instance:
                      expr=latex(Eq(x, Rational(c - b, a)))),
     ]
     return Instance(params={"eq": latex(Eq(a * x + b, c))},
-                    answer=[_math(latex(Eq(x, Integer(xs))))], steps=steps)
+                    answer=[_math(latex(Eq(x, Integer(xs))))], steps=steps,
+                    difficulty=difficulty)
 
 
 @_recipe("percentage")
