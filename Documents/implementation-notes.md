@@ -5,6 +5,11 @@ of the design phase: the engine, the rendering layer, the generation pipeline, a
 human-in-the-loop (HITL) review dashboard. It complements (does not replace) `project-handoff.md`, which
 remains the source of truth for intent and decisions.
 
+> **Note (2 Jul 2026, the offline-first pivot):** where this document says "live LLM generation", read it
+> as the **corpus-loop / campaign seam** feeding the review gates — since Session 11 the **delivery loop
+> is LLM-free** (compose + render from the approved corpus; `Documents/invariants.md` §10,
+> `project-handoff.md` §4). The seam itself is unchanged.
+
 ## 0 · What was built (the 30-second version)
 
 A Python package `teachersaid/` that takes the design from "specced" to "running":

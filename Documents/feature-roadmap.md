@@ -3,7 +3,68 @@
 Forward-looking *capability* features for TeachersAid. (The schema-version roadmap lives in
 `schema-roadmap-v0.4-v0.5.md`; this tracks product/engine features.)
 
-## ▶ Start here (state as of 1 Jul 2026)
+## ▶ Start here (state as of 2 Jul 2026) — the offline-first program
+
+> **Session update (2 Jul 2026) — THE PIVOT (Session 11).** The product is the **curated corpus +
+> deterministic, LLM-free delivery**; live on-demand generation is deferred (not deleted — the `llm/`
+> seam is the campaign seam). Two loops: the **corpus loop** (campaigns: briefs → feature engines →
+> lints → SME gate → approved corpus) is where the LLM lives; the **delivery loop** (serve a vetted
+> sheet › compose from approved blocks › honest gap → demand queue) is what a teacher touches.
+> Decision + rationale: `project-handoff.md` Session 11 + §4; rule + boundary: `invariants.md` **§10**.
+> **Working mode: build-for-joy** — no deadline, no GTM clock; "inherently cool" is a valid justification.
+
+**The program — three tracks + a joy lane** *(tracks are dependency order, not a schedule)*:
+
+**Track 1 — foundations:**
+1. **The coverage map as the instrument.** Define "covered" per (subject × Klasse × Kompetenzbereich):
+   ≥N approved task blocks spanning the Anforderungsbereich bands + a scope variant (+ the KB's iconic
+   figure type where one exists). Upgrade **Statistik** from curiosity to **campaign planner**: progress
+   bars against the full catalog (US + OS), exportable gap lists that become campaign briefs
+   (`suggest_from_catalog` already seeds ideas from gaps). *The corpus gets a progress bar — watching it
+   fill is the game loop.*
+2. **The numeric-claims lint** (the last authored-number hole, found in the 2 Jul review): every number
+   in a `data_source` task's prompt/`answer_key` must be derivable from the cited dataset slice
+   (± rounding/aggregation) — the entity-lint pattern applied to numbers. Doubles as the **anti-rot
+   mechanism**: derived values re-ground on dataset refresh; baked values go stale silently.
+3. **The review economy.** (a) **Tier the gate** by correct-by-construction mechanism — computed →
+   template-level review only; selected → source spot-check; re-expressed → lint + language read; curated
+   prose → full SME read. (b) An **adversarial triage agent** that ranks/flags before the SME looks
+   (didactics, register, answer-key consistency) — *triage, never the gate*. (c) Review-UX polish
+   (keyboard flow, lint-confidence batching) so a review session is fast and pleasant. Then **clear the
+   fact-bearing backlog** (8 datasets · 10 texts · 5 Sachverhalte sit unreviewed) — it blocks whole
+   corpus classes.
+
+**Track 2 — the delivery loop:**
+4. **Compose v2.** The retrieval hierarchy (**serve a vetted worksheet › compose from blocks › honest
+   gap**) + **inter-block coherence**, the new hard problem (independently-vetted blocks can clash in
+   context, notation, redundancy): curated block *sequences* as first-class objects, compatibility
+   signals captured at review time, dedup across repeated requests.
+5. **The demand queue.** A gap at request time becomes a recorded wish ("Wunschliste") feeding Track-3
+   campaign briefs — the self-directing backlog, meaningful even with one user.
+6. **Deterministic runtime generation, surfaced.** The "Varianten erzeugen" dashboard surface
+   (`orch.compose_variants` exists); parametric/scene instantiation at delivery (Gruppe A/B for
+   Schularbeiten, fresh Hausübungs-numbers) — *live generation without an LLM*, zero marginal review cost.
+
+**Track 3 — corpus campaigns (the long game):**
+7. **Wedge-to-green campaigns:** Physik + Mathematik + GWB Unterstufe to full KB coverage first (where
+   correct-by-construction bites hardest), then follow curiosity. Every campaign doubles as an engine
+   stress test — the GWB run surfaced two missing figure recipes; that pattern is a feature.
+8. **Fassung 2026/27 migration tooling** (when the new Fassung publishes): old→new competence-ID map,
+   re-anchor the corpus, re-derive every Nachweis, flag orphans. A corpus outlives its Fassung;
+   hand-migrating ~1000 blocks is not an option.
+
+**The joy lane (unscheduled — pick by interest, guilt-free by decision):** the audio **"Stimmen"** tab +
+dialogue-turns emission · more scene recipes (physics vectors, label-the-parts) + the `figstyle` port of
+the ~25 legacy recipes · **3D scene promotion** (`tools/plane3d_specimen.py` → `pipeline/scene3d.py`) ·
+informational Realien · ANNO/OCR media texts · more parametric recipes (the Matura-backward queue below) ·
+the **polish batch** from the 2 Jul review (the "Abgedeckte Lücken" label in `rendering/_document.py`,
+German „…"-quotes at render time, Tiefenprofil in ladder order, `store/base.py` corrupt-file logging,
+true/false table row heights).
+
+*(Everything below predates the pivot. The backlog items remain valid — they are all corpus-loop work —
+but the 1 Jul "Recommended next" ordering is superseded by the tracks above.)*
+
+## Session log (1 Jul 2026 and earlier)
 
 > **Session update (1 Jul 2026) — the figure engine.** A styleguide + a scene engine (design:
 > `Documents/figure-styleguide.md`). **`pipeline/figstyle.py`** centralises the visual language —

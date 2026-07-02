@@ -4,11 +4,15 @@ Guidance for Claude Code (and humans) working in this repository.
 
 ## What this is
 
-**TeachersAid** — an on-demand generator of **Austrian-Lehrplan-anchored teaching material** for AHS
-secondary schools. A teacher gives a topic + grade + time; the system produces a competence-anchored
-bundle that is *correct by construction*, *provably competence-aligned* (the derived **Nachweis**), and
-renders to ready-to-use PDFs. Working language of the code/docs is **English**; the product's *output*
-is **German** (or a target language for Fremdsprache).
+**TeachersAid** — a **corpus-first generator of Austrian-Lehrplan-anchored teaching material** for AHS
+secondary schools. A teacher gives a topic + grade + time; the system **assembles** a competence-anchored
+bundle **from a curated, SME-gated corpus** — *correct by construction*, *provably competence-aligned*
+(the derived **Nachweis**) — and renders it to ready-to-use PDFs. **Offline-first (the Session-11 pivot,
+2 Jul 2026 — `project-handoff.md` §4, `Documents/invariants.md` §10):** the LLM lives only in the
+**corpus loop** (campaign generation → lints → SME gate); the **delivery loop is deterministic and
+LLM-free** (serve a vetted sheet › compose from approved blocks › honest gap → demand queue; parametric/
+scene instantiation is the LLM-free "live" generation). Working language of the code/docs is **English**;
+the product's *output* is **German** (or a target language for Fremdsprache).
 
 The repository has two layers:
 
@@ -23,7 +27,7 @@ The repository has two layers:
 ```bash
 pip install -e .                       # deps: pydantic2, fastapi, uvicorn, anthropic, reportlab,
                                        #       matplotlib, pillow, pyyaml, pymupdf, sympy  (pytest for dev)
-python -m pytest -q                    # 368 tests, fully offline (no API key required)
+python -m pytest -q                    # 369 tests, fully offline (no API key required)
 python -m teachersaid seed             # seed the master-library examples into the review queue
 python -m teachersaid                  # dashboard → http://127.0.0.1:8000
 ```
@@ -31,7 +35,9 @@ python -m teachersaid                  # dashboard → http://127.0.0.1:8000
 (Python 3.11–3.14; the C-extension deps — reportlab/pymupdf/matplotlib — have 3.14 wheels.)
 
 - **LLM generation** uses the Anthropic SDK with `claude-opus-4-8`, adaptive thinking, effort=high
-  (see `teachersaid/config.py`). It activates only when `ANTHROPIC_API_KEY` is set.
+  (see `teachersaid/config.py`). It activates only when `ANTHROPIC_API_KEY` is set — and it is the
+  **corpus-loop / campaign seam**, not a product surface: the delivery loop never calls the LLM
+  (invariants §10).
 - **Offline fallback:** without a key, a request for any **master-library** subject/topic
   (`teachersaid/library/`) is served from its curated content object, so the whole loop is demoable
   with no network. `seed` pushes all examples into the dashboard's review queue.
@@ -87,7 +93,7 @@ change — is in **`Documents/rendering-handoff-brief.md`**.
 |---|---|---|
 | Resolve | `pipeline/resolve.py` | **deterministic** — verbatim competences + `grade_check` (the trust feature) against curated grounding; honest gap notes for anything uncurated |
 | Plan | `pipeline/plan.py` | mostly deterministic — envelope→minutes, block-spec skeleton + `DepthTarget` ladder. **The plan IS the idea-stage review artifact.** |
-| Generate | `pipeline/generate.py` + `llm/` | **LLM** — `messages.parse()` into a recursion-free generation view, then `to_canonical()` |
+| Generate | `pipeline/generate.py` + `llm/` | **LLM (corpus loop only — never in the delivery path; invariants §10)** — `messages.parse()` into a recursion-free generation view, then `to_canonical()` |
 | Assets | `pipeline/assets.py` | code-generated (matplotlib), correct-by-construction; `intentionally_flawed` assets are built **wrong on purpose and never "fixed"**. **Pluggable registry (Phase 4):** `Asset(generator, spec)` is a declarative request; builders register against a `<backend>:<recipe>` id (`@_generator`). Parameterized recipes read `spec` (`number_line`, `bar_chart`, `function_graph`, `math_formula` via mathtext); the **`diffusion:` backend** (Phase 4 #4) plugs in the same way: `register_diffusion_backend(fn)` wires the SME's image-gen agent; `build_asset` dispatches `diffusion:*` to it (offline → `DiffusionNotConfigured`, no silent slop). The agent's brief (contract + content-free rule + manifest) is **`Documents/diffusion-handover.md`**. A **decorative kit** (`svg:badge/banner/motif`, content-free, rasterised via PyMuPDF — no extra dep) ships now. **Entry-gate (Phase 4 #3):** `pipeline/media_policy.py` enforces the invariant — *content-bearing visuals must be code-gen or vetted-sourced; decorative must be content-free* — by classifying each asset's role+source against `DEFAULT_MEDIA_POLICY`; runs inside `verify`. **Asset library (Phase 4 #4):** `store/assetstore.py::AssetStore` (parallel to `BlockStore`) holds the **file-backed** classes (decorative + sourced) with tags/status/reuse; `orch.ingest_asset` gates + materialises + stores; `library/decorative.py::seed_assets` seeds the kit. Code-gen content assets stay as specs on blocks. **Legibility + representation (load-bearing):** *correct numbers are necessary but NOT sufficient — the chart TYPE, scale, and labels must make the data legible and honest.* Recipes self-correct layout (`bar_chart` auto-horizontal for long/many labels, a value label on every bar so none is "invisible", optional `log` for orders-of-magnitude ranges, wrapped titles, `constrained_layout`); `pipeline/chart_lint.py` (run in `verify`) flags misrepresentations — a 0/1 "classification" plotted as bars, an extreme range that begs a log/table decision, or numeric/temporal x-values forced into bars (those are a trend/relationship → line/scatter). **Intent-declared figures (not "everything is a bar"):** the generator declares WHAT the data is, not the chart type — `GenDataFigure(intent ∈ trend·comparison·relationship·composition·distribution·spread·scale, data)` (gen view), and the **deterministic** `schema/chart_choose.py::choose_representation` maps it to the right recipe (trend→`line`, relationship→`scatter` +optional fit, distribution→`histogram`, **spread→`boxplot`** [five-number summary / compare distributions], scale→`number_line`, comparison/composition→`bar_chart`, **demographic→`population_pyramid`**, **timeline→`timeline`**, **climate→`climate_diagram`** [dual-axis temp-line + precip-bar Klimadiagramm]). Same split as everywhere: the LLM declares intent, code guarantees a legible representation. The recipe vocabulary is `number_line·bar_chart·line·scatter·histogram·boxplot·function_graph·math_formula·population_pyramid·timeline·climate_diagram` plus the **geometry family (KB3)** `right_triangle·rectangle·polygon·circle·coordinate_plane` and the **probability tree** `tree_diagram` (Baumdiagramm — structural, via `body.assets`) (labels are spec-provided so a figure never leaks the answer, e.g. "c = ?") — all in `GENERATION_RECIPES`; `body.data_figures` (intent) is preferred for data, `body.assets` (explicit generator) is for structural/geometry figures. **`boxplot`+`tree_diagram` were added from the accessible-Matura figure scan (WS strand);** see `Documents/matura-math-coverage.md`. **Scene-engine recipes (Session 10, composed not bespoke — see the next subsection + `Documents/figure-styleguide.md`):** the geometry construction `triangle_construction` and the analysis family `function_plot·integral_area·tangent·riemann_sum·extrema·area_between·distribution` — all correct-by-construction (sympy), value labels maskable ("A = ?"). |
 | Verify | `pipeline/verify.py` | rules (kinds/dimensions/coverage/depth/difficulty/**media-policy**/**chart-sanity**/**(c)-data-label**); LLM fact-check optional. The **(c)-label gate** (`pipeline/figure_lint.py`) warns when a data figure carries real-looking numbers but declares neither `data_source` (sourced+cited) nor `illustrative` (schematic) — the grounded-facts honesty rule. |
 | Assemble + derive | `pipeline/assemble.py`, `pipeline/derive.py` | **deterministic** — `derive_nachweis` (coverage + auto-surfaced gaps), `compute_depth` (DepthProfile), `printable_coverage`; **`data_ground.ground_data`** derives each figure's real values FROM its `data_source` dataset slice + stamps the citation onto the content (so rendering stays pure; *select-never-author* for numbers) |
@@ -578,6 +584,8 @@ Physik *Strahlung*, Biologie *Immunsystem*, Mathematik *Daten/Zufall*.
 
 - `_generate_content` (orchestrator) serves a registered example when there's **no API key**, so the
   normal dashboard flow demos offline; with a key it generates fresh content seeded by the example.
+  Either way the output lands in the **review queue** — corpus-loop machinery; nothing generated reaches
+  delivery ungated (invariants §10).
 - `python -m teachersaid seed` runs every example through the pipeline into the store as a **pending
   content item** (→ dashboard review queue). `tests/test_library.py` locks every example
   build/assemble/**verify-clean** against catalog drift — keep it green when editing the catalog.
@@ -747,7 +755,8 @@ Brainstorm (rough idea: topic + note, you or AI) ─approve─► flesh_out
 - **Bibliothek** — approved worksheets. **Bausteine** + **Statistik** are the block library (see below);
   Statistik is the block-coverage matrix.
 
-Offline, `flesh_out` is served from the master library; with a key it generates live. The store holds
+Offline, `flesh_out` is served from the master library; with a key it generates via the API — in both
+cases into **Gate 2 review**, never to delivery (corpus loop; invariants §10). The store holds
 only review items + the approved library — deliberately **no gradebook, no classroom state, no student
 PII** (we make the material, we don't run the room).
 

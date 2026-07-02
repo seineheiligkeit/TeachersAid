@@ -1,7 +1,7 @@
 # Project Handoff — Austrian Lehrplan-anchored Teaching-Material Generator
 
 **Status: design baseline from Session 2 (24 June 2026); see the dated session updates below for the
-current state (latest: Session 7, 29 June 2026).** This is the single read-me-first document for a fresh
+current state (latest: Session 11, 2 July 2026 — the offline-first pivot).** This is the single read-me-first document for a fresh
 session taking the project over. Working language is English; the *product's* output is German (or a
 target language for Fremdsprache). Read this, then the docs in the order given in §6.
 
@@ -227,13 +227,53 @@ target language for Fremdsprache). Read this, then the docs in the order given i
 >   (**350 tests**). **Next candidates:** SME gate-review of the staged content; informational Realien
 >   (when ready); or a fresh track.
 
+> **Update (Session 11, 2 Jul 2026): THE OFFLINE-FIRST PIVOT — the product is the corpus; delivery is
+> LLM-free.** A full fresh-eyes review of the system (369 tests green; layering verified mechanically;
+> hero + generated artifacts inspected page-by-page) surfaced two decisive facts: the live-generation
+> path had **zero production mileage** (every artifact came through the subagent/campaign seam), and
+> live on-demand delivery is **structurally incompatible with the human-final-gate decision** (a
+> live-delivered sheet is by definition un-gated). The SME confirmed the pivot — it extends his own
+> 26 Jun product principle (*"the platform consolidates a human-vetted library, it does not
+> live-generate"*) from assets to the whole product. Recorded durably: §4 below ·
+> `Documents/invariants.md` **§10** · `Documents/feature-roadmap.md` (the program) ·
+> `Documents/platform-definition.md` (thesis reframe).
+>
+> - **Two loops.** The **corpus loop** (offline, campaign-shaped: Lehrplan gaps + demand queue → grounded
+>   briefs → LLM/subagent generation through the feature engines → lints → SME gate → approved corpus) is
+>   where the LLM lives; cost is campaign capex, not per-request opex. The **delivery loop** (what a
+>   teacher touches) is **deterministic and LLM-free**: request (topic × Klasse × envelope × scope) →
+>   serve a vetted worksheet › compose from approved blocks › **honest gap** into the demand queue →
+>   render. Long-tail wishes are fulfilled **async** through the corpus loop (request → campaign → gate →
+>   deliver), never live. Deterministic runtime generation (parametric variants, scene stages/densities)
+>   stays at delivery — computed, hence gate-cheap: infinite variants at zero marginal review cost.
+> - **Why.** AHS demand is a **closed, parsed set** (~571 US + ~1360 OS competences) — coverage is
+>   *computable*, so "a corpus that fits any AHS topic" is a finite program with a progress bar, not a
+>   content treadmill. Every delivered sheet has passed the human gate ("jedes Blatt von Menschen
+>   geprüft" becomes literal). Delivery becomes instant, reproducible, and free of per-request API
+>   cost/latency/truncation failure modes.
+> - **What it changes.** `compose` graduates to the product core (**inter-block coherence** is the new
+>   hard problem); the **review economy** becomes the scaling constraint (tiers keyed to the four
+>   correct-by-construction mechanisms; adversarial agents triage, deterministic lints guarantee, the SME
+>   gate stays); the **Statistik coverage matrix** becomes the roadmap driver; **Fassung migration
+>   tooling** becomes a requirement (a corpus outlives its Fassung — re-anchor, re-derive, flag orphans).
+>   The `llm/` seam **stays in code** as the campaign seam; any later live reintroduction is
+>   expression-only re-projection over vetted facts, decided explicitly (invariants §10 boundary).
+> - **Working mode (recorded).** The project is currently **built for the joy of building** — no launch
+>   deadline, no GTM clock; "interesting and powerful" outranks "marketable"; the business/competitive
+>   framing (`platform-definition.md`) is retained for a possible later phase, not driving priorities.
+>
+> The build program (3 tracks + a joy lane): `Documents/feature-roadmap.md` "Start here". Run:
+> `python -m pytest -q` (**369 tests**).
+
 ---
 
 ## 0 · Orientation (the 30-second version)
 
 We are designing (not yet building) an **on-demand generator of Austrian-curriculum-anchored teaching
 material** for AHS secondary schools. A teacher gives a topic + grade + time; they get a ready-to-use,
-competence-anchored bundle they can trust and drop into whatever they already use. The work so far is
+competence-anchored bundle they can trust and drop into whatever they already use. *(Session-11 note:
+this baseline is historical — the system is built, and since 2 Jul 2026 it is **corpus-first**: bundles
+are assembled on demand from a vetted corpus, never live-generated; see the update blocks above + §4.)* The work so far is
 **design**: a data model, a competitive/positioning analysis, a full subject audit, and worked content
 examples. The current source of truth for the data model is **schema v0.3**; v0.4 and v0.5 are specced
 in the roadmap; an engine and any UI are deferred.
@@ -251,7 +291,8 @@ in the roadmap; an engine and any UI are deferred.
 
 ## 1 · What this project is (vision / thesis)
 
-On-demand generator of Austrian-Lehrplan-anchored teaching material for AHS. Teacher inputs topic +
+On-demand generator of Austrian-Lehrplan-anchored teaching material for AHS *(since Session 11:
+"on demand" = assembled from the vetted corpus, LLM-free at delivery — §4)*. Teacher inputs topic +
 grade + time → ready-to-use bundle (conservative student material + a curated teacher depth-layer) that
 is **correct by construction**, **provably competence-aligned** (the derived *Nachweis*), and **drops
 into existing tools**. We sell a *"creative curriculum partner + compliance guarantee,"* **not** an
@@ -341,6 +382,19 @@ decided but not yet written up.**
 ---
 
 ## 4 · Key decisions & findings (durable — do not relitigate)
+
+**The offline-first pivot (Session 11, 2 Jul 2026) — supersedes the "on-demand live generation" framing
+wherever older docs use it:**
+- **The product is the curated corpus + deterministic delivery.** Generation (LLM or subagent) happens
+  only in the campaign-shaped **corpus loop**, upstream of the SME gate; the **delivery loop is LLM-free**
+  (vetted sheet › composed-from-blocks › honest gap + demand queue; async fulfillment for the long tail).
+  Rationale: a closed curriculum ⇒ finite, computable coverage; live delivery is structurally un-gated
+  (it conflicts with the human-final-gate decision below); campaign capex instead of per-request opex.
+  Rule + boundary: `Documents/invariants.md` §10.
+- **Live LLM generation is deferred, not deleted** — the `llm/` seam remains as the campaign seam; a later
+  reintroduction would be expression-only re-projection over vetted facts and gets decided explicitly.
+- **Working mode: build-for-joy.** No deadline, no business pressure; a feature is justified by being
+  inherently interesting/powerful. Competitive/GTM concerns deferred (kept in `platform-definition.md`).
 
 **Positioning / strategy (from the Teachino pilot study, `platform-definition.md`):**
 - Teachino *validated the concept but execution killed it* (~32% used it regularly; Math 9% usage; "too
