@@ -736,7 +736,18 @@ def _artifact_path(item_id: str, kind: str) -> Path:
 
 @app.get("/api/items/{item_id}/pdf/{kind}")
 def get_pdf(item_id: str, kind: str):
-    p = _artifact_path(item_id, kind)
+    try:
+        p = _artifact_path(item_id, kind)
+    except HTTPException:
+        # Artifact missing or stale — absolute paths don't survive a machine change
+        # (git carries the content, not the binaries): rebuild from the tracked
+        # content on demand, then serve.
+        item = STORE.get(item_id)
+        if item is None or item.content is None:
+            raise
+        item.artifacts = orch._render_all(item.id, item.content)
+        STORE.save(item)
+        p = _artifact_path(item_id, kind)
     media = "image/png" if kind == "preview" else "application/pdf"
     return FileResponse(p, media_type=media)
 
