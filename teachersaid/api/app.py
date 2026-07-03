@@ -580,7 +580,22 @@ def get_arrangement(arr_id: str):
     return rec.model_dump()
 
 
-def _arr_pdf(arr_id: str, path: str | None) -> FileResponse:
+def _arr_pdf(rec, pick) -> FileResponse:
+    """Serve one PDF of an arrangement's rendered bundle; `pick(artifacts)` selects it."""
+    path = pick(rec.artifacts) if rec.artifacts is not None else None
+    if not path or not Path(path).exists():
+        # Artifact missing or stale — absolute paths don't survive a machine change
+        # (git carries the content, not the binaries): re-render the whole bundle
+        # from the stored arrangement on demand, save the fresh paths, then serve.
+        from .. import config
+        from ..pipeline.arrange import render_arrangement
+        from ..store.arrangementstore import ArrangementArtifacts
+
+        bundle = render_arrangement(rec.arrangement, config.RUNS_DIR / "arrangements" / rec.id)
+        rec.artifacts = ArrangementArtifacts(
+            orchestration=bundle["orchestration"], roles=bundle["roles"])
+        ARRANGEMENTS.save(rec)
+        path = pick(rec.artifacts)
     if not path or not Path(path).exists():
         raise HTTPException(404, "no such PDF")
     return FileResponse(path, media_type="application/pdf")
@@ -589,20 +604,26 @@ def _arr_pdf(arr_id: str, path: str | None) -> FileResponse:
 @app.get("/api/arrangements/{arr_id}/pdf/orchestration")
 def arrangement_orchestration(arr_id: str):
     rec = ARRANGEMENTS.get(arr_id)
-    if rec is None or rec.artifacts is None:
+    if rec is None:
         raise HTTPException(404, "no such arrangement")
-    return _arr_pdf(arr_id, rec.artifacts.orchestration)
+    return _arr_pdf(rec, lambda arts: arts.orchestration)
 
 
 @app.get("/api/arrangements/{arr_id}/pdf/{role_id}/{which}")
 def arrangement_role_pdf(arr_id: str, role_id: str, which: str):
     rec = ARRANGEMENTS.get(arr_id)
-    if rec is None or rec.artifacts is None:
+    if rec is None:
         raise HTTPException(404, "no such arrangement")
-    role = next((r for r in rec.artifacts.roles if r.get("id") == role_id), None)
-    if role is None or which not in ("student", "teacher"):
+    # The role must exist in the ARRANGEMENT (the rebuildable truth), not just in a
+    # possibly-stale artifact list — an unknown role is an honest 404, no rebuild.
+    if which not in ("student", "teacher") or not any(r.id == role_id for r in rec.arrangement.roles):
         raise HTTPException(404, "no such role PDF")
-    return _arr_pdf(arr_id, role.get(which))
+
+    def pick(arts):
+        role = next((r for r in arts.roles if r.get("id") == role_id), None)
+        return role.get(which) if role else None
+
+    return _arr_pdf(rec, pick)
 
 
 @app.post("/api/arrangements/{arr_id}/approve")

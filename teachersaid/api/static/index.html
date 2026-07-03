@@ -335,7 +335,7 @@ function figs(b, imgSrc){
   // inline-preview every figure the block references, built on demand from its spec
   if(!imgSrc) return "";
   return (b.asset_refs||[]).map(r=>`<div class="figpre"><img src="${imgSrc(r)}" alt="${esc(r)}"
-    loading="lazy" onerror="this.style.display='none'"></div>`).join("");
+    loading="lazy" onerror="pImgErr(this)"></div>`).join("");
 }
 function prov(b){
   // expression-provenance panel (History/GPB): origin + obligation + the full sources list,
@@ -762,7 +762,7 @@ async function demandStatus(id,status){
 }
 
 /* ---------- Prüfen — the unified gate (focus mode + keyboard) ---------- */
-let PQ={all:[],entries:[],idx:0,lane:"",lanes:{},labels:{}};
+let PQ={all:[],entries:[],idx:0,lane:"",lanes:{},labels:{},details:{}};
 async function renderPruefen(){
   if(!$("#pruefen")) return;
   const q=await jget("/api/review-queue");
@@ -790,8 +790,8 @@ function drawPruefen(){
     const prev=e.kind==="item"
       ?`<div class="row" style="gap:6px;margin:8px 0 4px"><button class="ghost" onclick="pFrame('${e.id}','student')">SuS</button><button class="ghost" onclick="pFrame('${e.id}','teacher')">LK</button><button class="ghost" onclick="pFrame('${e.id}','homework')">HÜ</button></div><iframe id="pframe" src="/api/items/${e.id}/pdf/student" style="width:100%;height:420px;border:1px solid #ddd;border-radius:8px"></iframe>`
       :e.kind==="asset"
-      ?`<img src="/api/asset-library/${e.id}/file" style="max-width:320px;max-height:220px;border:1px solid #ddd;border-radius:8px;margin:8px 0" onerror="this.style.display='none'">`
-      :`<p class="muted" style="font-size:12.5px">Vollansicht: Korpus → ${esc(e.kind)}. Entschieden wird hier — dort liegen Fakten, Quellen und Vorschau im Detail.</p>`;
+      ?`<img src="/api/asset-library/${e.id}/file" style="max-width:320px;max-height:220px;border:1px solid #ddd;border-radius:8px;margin:8px 0" onerror="pImgErr(this)">`
+      :pDetail(e);
     const tri=e.triage?`<p class="muted" style="font-size:12px;margin:0 0 6px">Triage: ${e.triage.score}${(e.triage.reasons||[]).length?` — ${e.triage.reasons.slice(0,2).map(esc).join(" · ")}`:""}${e.triage.rating?` · ★${e.triage.rating}`:""}</p>`:"";
     card=`<div class="row between"><span><span class="pill">${esc(e.kind)}</span> <code>${e.id}</code> <span class="muted">· ${esc(PQ.labels[e.tier])}</span></span><span class="muted">${PQ.idx+1} / ${PQ.entries.length}</span></div>
       <h2 style="margin:8px 0 2px">${esc(e.title||"")}</h2>
@@ -806,6 +806,92 @@ function drawPruefen(){
   $("#pruefen").innerHTML=`<div style="display:grid;grid-template-columns:200px minmax(0,1fr);gap:14px">
     <div>${rail}</div><div class="card">${card}</div></div>`;
 }
+
+/* ---- Prüfen focus-card detail: every kind judgeable in place ----
+   The card fetches the SAME records the Korpus sub-views read (no new endpoints),
+   lazily for the CURRENT entry only, cached in PQ.details by kind:id so j/k stays
+   snappy. Failures are loud: a one-line muted error naming the endpoint — never a
+   silently hidden element. */
+const PDETAIL_EP={
+  block:id=>`/api/blocks/${encodeURIComponent(id)}`,
+  dataset:id=>`/api/datasets/${encodeURIComponent(id)}`,
+  text:id=>`/api/texts/${encodeURIComponent(id)}`,
+  sachverhalt:id=>`/api/sachverhalte/${encodeURIComponent(id)}`,
+  arrangement:id=>`/api/arrangements/${encodeURIComponent(id)}`,
+};
+function pImgErr(img){ // no silent onerror hiding: a broken figure names its endpoint
+  const p=document.createElement("p"); p.className="muted"; p.style.fontSize="12px";
+  p.textContent="⚠ Bild nicht ladbar: "+img.getAttribute("src");
+  img.replaceWith(p);
+}
+function pDetail(e){
+  if(!PDETAIL_EP[e.kind]) return `<p class="muted" style="font-size:12.5px">Vollansicht: Korpus → ${esc(e.kind)}.</p>`;
+  const key=e.kind+":"+e.id, d=PQ.details[key];
+  if(!d){ pLoadDetail(e.kind,e.id); return `<p class="muted">Detail lädt…</p>`; }
+  if(d.state==="loading") return `<p class="muted">Detail lädt…</p>`;
+  if(d.state==="err") return `<p class="muted">⚠ Detail nicht ladbar — ${esc(d.ep)}: ${esc(d.msg)}. Vollansicht: Korpus → ${esc(e.kind)}.</p>`;
+  return {block:pdBlock,dataset:pdDataset,text:pdText,sachverhalt:pdSachverhalt,arrangement:pdArrangement}[e.kind](e.id,d.data);
+}
+async function pLoadDetail(kind,id){
+  const key=kind+":"+id, ep=PDETAIL_EP[kind](id);
+  PQ.details[key]={state:"loading"};
+  try{
+    const r=await fetch(ep);
+    if(!r.ok) throw new Error("HTTP "+r.status);
+    PQ.details[key]={state:"ok",data:await r.json()};
+  }catch(err){ PQ.details[key]={state:"err",ep,msg:String((err&&err.message)||err)}; }
+  const cur=PQ.entries[PQ.idx];
+  if(cur&&cur.kind===kind&&cur.id===id) drawPruefen();  // redraw only if still the current entry
+}
+function pdBlock(id,lb){
+  // the full block as the Bausteine view renders it: prompt, payload, answer key,
+  // kind/Niveau/Dimensionen badges + figures built from the travelling spec (3c)
+  return `<div style="margin:8px 0">${blk(lb.block,null,r=>`/api/blocks/${encodeURIComponent(id)}/asset/${encodeURIComponent(r)}`)}</div>
+    <p class="muted" style="font-size:12px"><span class="badge">${esc(lb.subject)} ${lb.klasse||''}</span>
+      <span class="badge">KB: ${esc(lb.kompetenzbereich||'—')}</span> <span class="badge">Scope: ${esc(lb.scope)}</span>
+      ${(lb.competences||[]).length?` dient: ${lb.competences.map(c=>`<code>${esc(c)}</code>`).join(' ')}`:''}</p>`;
+}
+function pdDataset(id,d){
+  // source/licence/Stand/attribution + series + the same figure preview the Datensätze view shows
+  const fig=(d.series&&d.series.length)?`<div class="figpre"><img src="/api/datasets/${encodeURIComponent(id)}/figure?series=${encodeURIComponent(d.series[0])}" alt="${esc(id)}" loading="lazy" onerror="pImgErr(this)"></div>`:"";
+  const lic=`<span class="badge">${esc(d.licence||"?")}</span> ${d.redistributable?'<span class="cov">einbettbar</span>':'<span class="gap">nur Referenz</span>'}`;
+  return `${fig}
+    <div class="muted" style="margin-top:6px">${lic} · ${esc(d.publisher||"")}${d.stand?` · Stand ${esc(d.stand)}`:""}${d.retrieved?` · geholt ${esc(d.retrieved)}`:""}</div>
+    <div class="muted">Serien: ${(d.series||[]).map(s=>`<span class="badge">${esc(s)}</span>`).join("")||"—"}</div>
+    <div class="muted" style="font-size:11px">${esc(d.attribution||"")}${d.url?` · <a href="${esc(d.url)}" target="_blank" rel="noopener">Quelle</a>`:""}</div>`;
+}
+function pdText(id,d){
+  const kinds={}; (d.annotations||[]).forEach(a=>kinds[a.kind]=(kinds[a.kind]||0)+1);
+  const lines=(d.text||"").split("\n").map((l,i)=>l.trim()?`<span class="muted">${i+1}</span> ${esc(l)}`:"").join("<br>");
+  const pma=d.rights_basis==="public_domain_pma"?`<span class="cov">gemeinfrei (†${d.author_death_year})</span>`
+    :`<span class="badge">${esc(d.rights_basis||(d.origin==="constructed"?"konstruiert (kein Rechte-Gate)":"—"))}</span>`;
+  return `<div class="muted">${esc(d.author||"")}${d.genre?` · ${esc(d.genre)}`:""}${d.cefr?` · ${esc(d.cefr)}`:""} · ${d.n_lines} Zeilen · ${pma}${d.medium==="audio"?' · <span class="badge">🔊 Hörtext (TTS)</span>':''}</div>
+    <div style="font-family:Georgia,serif;font-size:13px;line-height:1.5;margin:6px 0;padding:6px 10px;border-left:2px solid #ccc;max-height:300px;overflow:auto">${lines}</div>
+    <div class="muted">Annotationen: ${Object.entries(kinds).map(([k,n])=>`<span class="badge">${esc(k)} ${n}</span>`).join("")||"—"}</div>
+    <div class="muted" style="font-size:11px">${esc(d.attribution||"")}${d.url?` · <a href="${esc(d.url)}" target="_blank" rel="noopener">Quelle</a>`:""}</div>`;
+}
+function pdSachverhalt(id,d){
+  const tl=(d.timeline||[]).slice(0,6).map(e=>`<span class="badge">${esc(String(e.at))} ${esc(e.label)}</span>`).join(" ");
+  const ac=(d.actors||[]).slice(0,4).map(a=>`<span class="badge">${esc(a.name)}</span>`).join(" ");
+  const ce=(d.causes||[]).slice(0,3).map(c=>`<div class="muted">${esc(c.cause)} → ${esc(c.effect)}</div>`).join("");
+  const cs=(d.concepts||[]).slice(0,3).map(c=>`<div class="muted"><b>${esc(c.term)}</b>: ${esc(c.definition)}</div>`).join("");
+  const first=t=>{const s=(t||"").trim();return s.length>200?s.slice(0,200)+"…":s;};
+  const dar=(d.darstellung||[]).map(s=>`<div style="margin:4px 0"><b>${esc(s.heading)}</b> — ${esc(first(s.body))}</div>`).join("");
+  const src=(d.facts_sources||[]).map(q=>`${esc(q.title)}${q.publisher?` · ${esc(q.publisher)}`:""}${q.licence?` · ${esc(q.licence)}`:""} <span class="badge">role=${esc(q.role)}</span>${q.url?` · <a href="${esc(q.url)}" target="_blank" rel="noopener">Quelle</a>`:""}`).join("<br>");
+  return `<div class="muted">${d.n_timeline} Ereignisse · ${d.n_actors} Akteure · ${d.n_causes} Wirk.-Verbindungen · ${d.n_concepts} Begriffe · ${d.n_darstellung} Abschnitte${d.leitfrage?` · <b>Leitfrage:</b> ${esc(d.leitfrage)}`:""}</div>
+    <div style="margin:6px 0">${tl}${ac?`<div style="margin-top:4px">${ac}</div>`:""}</div>${ce}${cs}
+    <div style="font-size:13px;line-height:1.5;margin:6px 0;padding:6px 10px;border-left:2px solid #ccc;max-height:240px;overflow:auto">${dar}</div>
+    <div class="muted" style="font-size:11px">Quellen (role=facts): ${src||"—"}</div>`;
+}
+function pdArrangement(id,rec){
+  const a=rec.arrangement||{}, roles=a.roles||[];
+  const phases=(a.phases||[]).length?`<table style="margin-top:8px"><thead><tr><th>Phase</th><th>Sozialform</th><th>Min</th><th>Was passiert</th></tr></thead><tbody>
+      ${a.phases.map(p=>`<tr><td>${esc(p.label)}</td><td>${_GRP[p.grouping]||esc(p.grouping)}</td><td>${p.minutes}</td><td>${esc(rt(p.what_happens))}</td></tr>`).join("")}</tbody></table>`:"";
+  const rls=roles.length?`<table style="margin-top:8px"><thead><tr><th>Rolle</th><th>Schwerpunkt-Kompetenzen</th></tr></thead><tbody>
+      ${roles.map(r=>`<tr><td>${esc(rt(r.label))}</td><td>${_roleServed(r).map(c=>`<code>${esc(c)}</code>`).join(" ")||"—"}</td></tr>`).join("")}</tbody></table>`:"";
+  return `<iframe src="/api/arrangements/${encodeURIComponent(id)}/pdf/orchestration" style="width:100%;height:380px;border:1px solid #ddd;border-radius:8px;margin:8px 0 0"></iframe>${phases}${rls}`;
+}
+
 function setLane(t){ PQ.lane=t; PQ.entries=PQ.all.filter(e=>!t||e.tier===t); PQ.idx=0; drawPruefen(); }
 function pFrame(id,k){ const f=$("#pframe"); if(f) f.src=`/api/items/${id}/pdf/${k}`; }
 async function pDecide(action){

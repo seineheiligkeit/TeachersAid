@@ -88,3 +88,50 @@ def test_worksheet_rejection_cascades_too(tmp_path):
     bs.upsert(_lb(_task(), block_id="b1"))
     orch.reject(rs, item.id, "zu flach", block_store=bs)
     assert bs.get("b1").status == "rejected"
+
+
+def test_pruefen_card_detail_endpoints(tmp_path, monkeypatch):
+    """The Prüfen focus card renders every kind inline from EXISTING detail endpoints
+    (block/dataset/text/sachverhalt/arrangement) — smoke: each returns 200 for cheap
+    seeded records. (The arrangement's orchestration-PDF iframe is covered by
+    test_arrangement.py::test_arrangement_pdf_self_heals_stale_path.)"""
+    import teachersaid.config as cfg
+    monkeypatch.setattr(cfg, "RUNS_DIR", tmp_path)
+    from fastapi.testclient import TestClient
+
+    from teachersaid.api import app as appmod
+    from teachersaid.demo import gwb_standort
+    from teachersaid.library.sachverhalt_wiener_kongress import build_sachverhalt
+    from teachersaid.library.texts import LORELEY
+    from teachersaid.schema.datasets import Dataset, SourceRef
+    from teachersaid.store.arrangementstore import ArrangementRecord
+    from teachersaid.store.datasetstore import DatasetRecord
+    from teachersaid.store.sachverhaltstore import SachverhaltRecord
+    from teachersaid.store.textstore import TextRecord
+
+    s = _stores(tmp_path)
+    appmod.BLOCKS = s["blocks"]
+    appmod.DATASETS = s["datasets"]
+    appmod.TEXTS = s["texts"]
+    appmod.SACHVERHALTE = s["sachverhalte"]
+    appmod.ARRANGEMENTS = s["arrangements"]
+
+    appmod.BLOCKS.upsert(_lb(_task()))
+    appmod.DATASETS.upsert(DatasetRecord(id="toy", dataset=Dataset(
+        id="toy", title="Toy", unit="x",
+        source=SourceRef(publisher="P", title="T", redistributable=True,
+                         attribution="Quelle X", licence="CC BY 4.0"),
+        series={"a": {"label": "A", "groups": ["x", "y"], "counts": [1, 2]}})))
+    appmod.TEXTS.upsert(TextRecord(id=LORELEY.id, text=LORELEY))
+    sv = build_sachverhalt()
+    appmod.SACHVERHALTE.upsert(SachverhaltRecord(id=sv.id, sachverhalt=sv))
+    appmod.ARRANGEMENTS.upsert(ArrangementRecord(
+        id="arr1", arrangement=gwb_standort.build_arrangement(), title="Hero"))
+
+    client = TestClient(appmod.app)
+    for ep in ["/api/blocks/b1", "/api/datasets/toy", f"/api/texts/{LORELEY.id}",
+               f"/api/sachverhalte/{sv.id}", "/api/arrangements/arr1"]:
+        assert client.get(ep).status_code == 200, ep
+    # the card's dataset figure preview (the same endpoint the Datensätze view embeds)
+    r = client.get("/api/datasets/toy/figure", params={"series": "a"})
+    assert r.status_code == 200 and r.content[:8] == b"\x89PNG\r\n\x1a\n"
