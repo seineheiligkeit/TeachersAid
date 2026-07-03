@@ -28,6 +28,11 @@ Pure data + thin matplotlib helpers; imports nothing from the engine. Call
 `inline_math.configure`). Mirrors `rendering/reportlab_base`'s font discovery so the
 figure text matches the worksheet body text (Carlito/Calibri) instead of DejaVu — figures
 read as part of the document, not pasted in.
+
+**Representation rule (SME review, 3 Jul 2026):** axes never use scientific notation;
+large values scale to Mio./Mrd. with the unit named in the axis label (`unit_scale`),
+numbers print German-style (`fmt_de` — dot thousands, comma decimals), and time (years)
+belongs on a numeric x-axis, never on category ticks or bars.
 """
 from __future__ import annotations
 
@@ -132,6 +137,41 @@ def subject_accent(subject: str | None) -> str:
         if key in s:
             return col
     return PALETTE.ink
+
+
+# --- number display (never scientific notation) -------------------------------
+# The magnitudes a value axis may be scaled to, largest first. "Tsd." is deliberately
+# absent: 4–6-digit numbers still read fine with German dot-grouping ("129.086").
+UNIT_SCALES: tuple[tuple[float, str], ...] = ((1e9, "Mrd."), (1e6, "Mio."))
+
+
+def fmt_de(v: float, decimals: int | None = None) -> str:
+    """German-format a number — dot thousands, comma decimals, NEVER scientific
+    notation (8916845 → "8.916.845", 8.9 → "8,9"). With `decimals=None` the precision
+    is chosen automatically (integers bare; 1 decimal ≥10, else 2; trailing zeros
+    stripped); an explicit `decimals` is rendered exactly (7.04 @ 1 → "7,0")."""
+    x = float(v)
+    auto = decimals is None
+    if auto:
+        decimals = 0 if x == int(x) else (1 if abs(x) >= 10 else 2)
+    s = f"{x:,.{decimals}f}".translate(str.maketrans(",.", ".,"))
+    if auto and "," in s:
+        s = s.rstrip("0").rstrip(",")
+    return s
+
+
+def unit_scale(values, label: str = "") -> tuple[list[float], str, float]:
+    """Auto-scale large values for display — the SME rule "nie 8.9e+06 an der Achse":
+    max ≥ 1e9 → divide by 1e9 and suffix the label "(in Mrd.)", ≥ 1e6 → "(in Mio.)".
+    Returns (scaled_values, labelled, divisor); small values pass through unchanged.
+    An empty label becomes just "in Mio." so the unit is never silently dropped."""
+    vals = [float(v) for v in values]
+    vmax = max((abs(v) for v in vals), default=0.0)
+    for div, name in UNIT_SCALES:
+        if vmax >= div:
+            lbl = f"{label} (in {name})" if label else f"in {name}"
+            return [v / div for v in vals], lbl, div
+    return vals, label, 1.0
 
 
 # --- colour helpers ----------------------------------------------------------

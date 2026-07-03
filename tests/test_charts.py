@@ -103,6 +103,103 @@ def test_line_numeric_x_axis_stays_legible(tmp_path):
     assert p.read_bytes()[:8] == PNG and p.stat().st_size > 1500
 
 
+# --- never scientific notation (SME review findings, 3 Jul 2026) ---------------
+def _capture_fig(monkeypatch, tmp_path, generator, spec):
+    """Build a recipe and hand back the LIVE figure (monkeypatching plt.close), drawn
+    so tick labels are realised — the pattern from tests/test_layout.py."""
+    import teachersaid.pipeline.assets as A
+
+    captured: dict = {}
+    monkeypatch.setattr(A.plt, "close", lambda f=None: captured.setdefault("fig", f))
+    build_asset(Asset(id="t", role="figure", generator=generator, spec=spec), outdir=tmp_path)
+    fig = captured["fig"]
+    fig.canvas.draw()
+    return fig
+
+
+def test_unit_scale_and_fmt_de():
+    import pytest
+
+    from teachersaid.pipeline.figstyle import fmt_de, unit_scale
+    vals, lbl, div = unit_scale([7_047_539, 9_177_986], "Personen")
+    assert div == 1e6 and lbl == "Personen (in Mio.)"
+    assert vals[1] == pytest.approx(9.177986)
+    _, lbl2, div2 = unit_scale([1.2e9, 3.4e9], "Umsatz")
+    assert div2 == 1e9 and lbl2 == "Umsatz (in Mrd.)"
+    _, lbl3, _ = unit_scale([2.5e6])                    # no base label → unit still shown
+    assert lbl3 == "in Mio."
+    small, lbl4, div4 = unit_scale([12.2, 20.6], "%")   # small values pass through
+    assert small == [12.2, 20.6] and lbl4 == "%" and div4 == 1.0
+    assert fmt_de(8_916_845) == "8.916.845"             # dot thousands, never 8.9e+06
+    assert fmt_de(8.916845, 1) == "8,9"                 # scaled 1-decimal comma
+    assert fmt_de(0.25) == "0,25" and fmt_de(15) == "15" and fmt_de(12.2) == "12,2"
+
+
+def _tick_texts(ax, which):
+    return [t.get_text() for t in getattr(ax, f"get_{which}ticklabels")() if t.get_text()]
+
+
+def test_line_population_scales_to_mio_and_years_on_numeric_axis(tmp_path, monkeypatch):
+    """The two SME findings on the Bevölkerung trend: values must read 'in Mio.' (no
+    scientific notation, no 1e7 offset), and the years must sit on a real numeric
+    x-axis at a sensible density — never one tick per year, never grouped '1.960'."""
+    years = [str(y) for y in range(1960, 2025)]
+    vals = [7_047_539 + i * 33_000 for i in range(len(years))]
+    fig = _capture_fig(monkeypatch, tmp_path, "matplotlib:line",
+                       {"categories": years, "values": vals, "ylabel": "Personen",
+                        "xlabel": "Jahr", "title": "Bevölkerung Österreichs"})
+    try:
+        ax = fig.axes[0]
+        assert ax.get_ylabel() == "Personen (in Mio.)"
+        yt = _tick_texts(ax, "y")
+        assert yt and all("e" not in t.lower() for t in yt)          # plain, no 1e6/e+06
+        assert ax.yaxis.get_offset_text().get_text() == ""           # no offset multiplier
+        xt = _tick_texts(ax, "x")
+        assert 3 <= len(xt) <= 15                                    # sensible density
+        assert all(t.isdigit() for t in xt)                          # "1960", never "1.960"
+        # real year positions, not category indices 0…64 (the locator may propose a
+        # tick just outside the view — matplotlib clips those at draw time)
+        assert all(1900 <= int(t) <= 2100 for t in xt)
+        from teachersaid.pipeline.figtext import overlap_pairs
+        assert overlap_pairs(fig) == []                              # lint stays green
+    finally:
+        import matplotlib.pyplot as plt
+        plt.close(fig)
+
+
+def test_bar_value_labels_scale_german_never_scientific(tmp_path, monkeypatch):
+    fig = _capture_fig(monkeypatch, tmp_path, "matplotlib:bar_chart",
+                       {"categories": ["Wien", "Niederösterreich", "Oberösterreich"],
+                        "values": [2_028_399, 1_734_546, 1_555_296],
+                        "ylabel": "Personen", "title": "Bundesländer"})
+    try:
+        ax = fig.axes[0]
+        labels = [t.get_text().strip() for t in ax.texts]
+        assert labels and all("e+" not in t and "e-" not in t for t in labels)
+        assert "2,0" in labels                                       # scaled 1-decimal comma
+        # the unit moved into the value-axis label (horizontal here → xlabel)
+        assert "(in Mio.)" in (ax.get_xlabel() + ax.get_ylabel())
+        assert ax.xaxis.get_offset_text().get_text() == ""
+        assert ax.yaxis.get_offset_text().get_text() == ""
+    finally:
+        import matplotlib.pyplot as plt
+        plt.close(fig)
+
+
+def test_bar_small_values_unchanged_but_german(tmp_path, monkeypatch):
+    fig = _capture_fig(monkeypatch, tmp_path, "matplotlib:bar_chart",
+                       {"categories": ["A", "B", "C"], "values": [12.2, 15, 0.25],
+                        "ylabel": "%"})
+    try:
+        ax = fig.axes[0]
+        labels = [t.get_text().strip() for t in ax.texts]
+        assert {"12,2", "15", "0,25"} <= set(labels)                 # no scaling, German commas
+        assert "(in" not in (ax.get_xlabel() + ax.get_ylabel())      # label untouched
+    finally:
+        import matplotlib.pyplot as plt
+        plt.close(fig)
+
+
 def test_chooser_maps_new_intents():
     from teachersaid.schema.chart_choose import choose_representation
     assert choose_representation("timeline", {"categories": ["A"], "values": [1900]})[0] == "matplotlib:timeline"

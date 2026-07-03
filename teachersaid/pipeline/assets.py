@@ -32,6 +32,7 @@ from ..schema.assets import Asset  # noqa: E402
 from .calculus import (area_between_scene, distribution_scene, extrema_scene,  # noqa: E402
                        function_scene, integral_scene, riemann_scene, tangent_scene)
 from .constructions import construction_scene, triangle_geometry  # noqa: E402
+from .figstyle import fmt_de, unit_scale  # noqa: E402
 from .scene import scene_to_png  # noqa: E402
 
 # generator id ("<backend>:<recipe>")  ->  builder(asset, path) -> writes the PNG
@@ -57,6 +58,22 @@ _NUMERIC_RE = re.compile(r"-?\d+([.,]\d+)?")
 def _all_numeric(vals) -> bool:
     """True when every label is a plain number (e.g. years) — plot on a numeric axis."""
     return bool(vals) and all(_NUMERIC_RE.fullmatch(str(v).strip()) for v in vals)
+
+
+def _german_value_axis(ax, axis: str = "y") -> None:
+    """German plain tick labels on a linear VALUE axis — never scientific notation,
+    never an offset multiplier ("1e7" in the corner). The figstyle representation rule."""
+    from matplotlib.ticker import FuncFormatter
+    getattr(ax, f"{axis}axis").set_major_formatter(FuncFormatter(lambda v, _: fmt_de(v)))
+
+
+def _year_axis(ax) -> None:
+    """Integer ticks without thousands grouping for a time/x axis of whole numbers
+    (years): "1960", not "1.960", not one categorical tick per year — with matplotlib
+    picking a sensible density over the span."""
+    from matplotlib.ticker import FuncFormatter, MaxNLocator
+    ax.xaxis.set_major_locator(MaxNLocator(integer=True))
+    ax.xaxis.set_major_formatter(FuncFormatter(lambda v, _: f"{v:g}"))
 
 
 # --- parameterized recipes (read asset.spec) ---------------------------------
@@ -93,10 +110,12 @@ def _number_line(asset: Asset, path: Path) -> None:
     plt.close(fig)
 
 
-def _bar_value_labels(ax, vals, *, horizontal: bool) -> None:
-    """Annotate every bar with its value, so even a tiny bar is readable."""
+def _bar_value_labels(ax, vals, *, horizontal: bool, decimals: int | None = None) -> None:
+    """Annotate every bar with its value, so even a tiny bar is readable. German
+    formatting (fmt_de) — a large value prints "8.916.845", never "8.9e+06"; a
+    unit-scaled one "8,9" (decimals=1)."""
     for i, v in enumerate(vals):
-        txt = f"{v:g}"
+        txt = fmt_de(v, decimals)
         if horizontal:
             ax.text(v, i, " " + txt, va="center", ha="left", fontsize=8, color="#33506e")
         else:
@@ -111,13 +130,19 @@ def _bar_chart(asset: Asset, path: Path) -> None:
     Legibility is part of correctness: long/many labels auto-switch to horizontal bars
     (full-width labels, no overlap); every bar is value-labelled (no 'invisible' bar);
     `log` gives a log value-axis for orders-of-magnitude ranges; the title wraps and
-    constrained_layout keeps title/axis labels from colliding."""
+    constrained_layout keeps title/axis labels from colliding. Large values scale to
+    Mio./Mrd. with the unit in the value-axis label, ticks + value labels print German
+    — never scientific notation (the figstyle representation rule)."""
     s = asset.spec or {}
     cats = [str(c).replace("\n", " ") for c in s.get("categories", [])]
     vals = [float(v) for v in s.get("values", [])]
     n = max(len(cats), 1)
     log = bool(s.get("log"))
     horizontal = bool(s.get("horizontal")) or any(len(c) > 10 for c in cats) or n > 6
+    ylabel, div = s.get("ylabel") or "", 1.0
+    if not log:                              # a log axis already compresses magnitudes
+        vals, ylabel, div = unit_scale(vals, ylabel)
+    label_decimals = 1 if div > 1 else None  # scaled → "8,9"; raw → auto ("42", "0,25")
 
     if horizontal:
         fig, ax = plt.subplots(figsize=(6.8, max(2.4, 0.5 * n + 1.1)), layout="constrained")
@@ -127,10 +152,12 @@ def _bar_chart(asset: Asset, path: Path) -> None:
         ax.invert_yaxis()
         if log:
             ax.set_xscale("log")
-        if s.get("ylabel"):
-            ax.set_xlabel(s["ylabel"])      # the value axis is horizontal now
+        else:
+            _german_value_axis(ax, "x")
+        if ylabel:
+            ax.set_xlabel(ylabel)           # the value axis is horizontal now
         ax.margins(x=0.12)                  # room for the value labels
-        _bar_value_labels(ax, vals, horizontal=True)
+        _bar_value_labels(ax, vals, horizontal=True, decimals=label_decimals)
     else:
         fig, ax = plt.subplots(figsize=(max(4.0, 0.95 * n + 1.5), 3.3), layout="constrained")
         ax.bar(range(n), vals, color="#4f6f8f", edgecolor="#33506e")
@@ -142,12 +169,14 @@ def _bar_chart(asset: Asset, path: Path) -> None:
         ax.set_xticklabels(cats, rotation=30 if rot else 0, ha="right" if rot else "center")
         if log:
             ax.set_yscale("log")
-        if s.get("ylabel"):
-            ax.set_ylabel(s["ylabel"])
+        else:
+            _german_value_axis(ax, "y")
+        if ylabel:
+            ax.set_ylabel(ylabel)
         if s.get("xlabel"):
             ax.set_xlabel(s["xlabel"])
         ax.margins(y=0.12)
-        _bar_value_labels(ax, vals, horizontal=False)
+        _bar_value_labels(ax, vals, horizontal=False, decimals=label_decimals)
     if s.get("title"):
         ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 52)))
     fig.savefig(path, dpi=150)
@@ -181,7 +210,7 @@ def _population_pyramid(asset: Asset, path: Path) -> None:
     ax.set_ylabel(s.get("ylabel") or "Altersgruppe")
     ax.xaxis.set_major_locator(MaxNLocator(nbins=6, symmetric=True))
     ax.xaxis.set_major_formatter(  # both wings show positive counts, German grouping
-        FuncFormatter(lambda x, _: f"{abs(x):,.0f}".replace(",", ".")))
+        FuncFormatter(lambda x, _: fmt_de(abs(x), 0)))
     ax.set_xlabel(s.get("xlabel") or "Personen")
     ax.margins(y=0.01)
     ax.legend(loc="lower right", fontsize=8)
@@ -281,22 +310,32 @@ def _line(asset: Asset, path: Path) -> None:
     """A line graph — for a TREND / change over time. spec: a single series via
     {categories|x, values|y} or several via {series:[{label?, x:[...], y:[...]}]};
     plus title?, xlabel?, ylabel?, log?. Numeric x (e.g. years) plot on a real numeric
-    axis (clean auto-ticks); true categorical x plots over an index, thinned to ~12 ticks
-    and a marker only when sparse so a long dense series (e.g. 65 yearly points) stays legible."""
+    axis — whole-number x gets integer ticks at a sensible density ("1960 … 2020", never
+    one tick per year and never a grouped "1.960"); true categorical x plots over an
+    index, thinned to ~12 ticks. A marker only when sparse so a long dense series (e.g.
+    65 yearly points) stays legible. Large y-values scale to Mio./Mrd. with the unit in
+    the ylabel; ticks print German plain — never scientific notation (figstyle rule)."""
     s = asset.spec or {}
     series = s.get("series") or [{"x": s.get("x") or s.get("categories"),
                                   "y": s.get("y") or s.get("values")}]
+    log = bool(s.get("log"))
+    ylabel, div = s.get("ylabel") or s.get("y_label") or "", 1.0
+    if not log:                                          # one shared divisor across series
+        pool = [float(v) for ser in series for v in (ser.get("y") or [])]
+        _, ylabel, div = unit_scale(pool, ylabel)
     fig, ax = plt.subplots(figsize=(6.2, 3.7), layout="constrained")
     cat_labels = None
+    numeric_xs: list[float] = []
     for ser in series:
-        y = [float(v) for v in (ser.get("y") or [])]
+        y = [float(v) / div for v in (ser.get("y") or [])]
         x = ser.get("x")
         marker = "-o" if len(y) <= 24 else "-"          # no dot-soup on long series
         if x and any(isinstance(v, str) for v in x) and not _all_numeric(x):
             cat_labels = [str(v) for v in x]            # true categorical → index + ticklabels
             ax.plot(range(len(y)), y, marker, lw=2, ms=5, label=ser.get("label"))
         else:                                            # numeric x (years, quantities) → numeric axis
-            xs = [float(v) for v in (x or range(len(y)))]
+            xs = [float(str(v).replace(",", ".")) for v in (x or range(len(y)))]
+            numeric_xs += xs
             ax.plot(xs, y, marker, lw=2, ms=5, label=ser.get("label"))
     if cat_labels is not None:
         n = len(cat_labels)
@@ -306,13 +345,17 @@ def _line(asset: Asset, path: Path) -> None:
         ax.set_xticks(idx)
         ax.set_xticklabels([cat_labels[i] for i in idx], rotation=rot,
                            ha="right" if rot else "center")
-    if s.get("log"):
+    elif numeric_xs and all(v == int(v) for v in numeric_xs):
+        _year_axis(ax)                                   # whole numbers (years): plain integer ticks
+    if log:
         ax.set_yscale("log")
+    else:
+        _german_value_axis(ax, "y")
     ax.grid(True, color="#e9e9e9", lw=0.6)
     if s.get("xlabel") or s.get("x_label"):
         ax.set_xlabel(s.get("xlabel") or s.get("x_label"))
-    if s.get("ylabel") or s.get("y_label"):
-        ax.set_ylabel(s.get("ylabel") or s.get("y_label"))
+    if ylabel:
+        ax.set_ylabel(ylabel)
     if len(series) > 1 and any(ser.get("label") for ser in series):
         ax.legend(fontsize=8)
     if s.get("title"):
@@ -329,6 +372,10 @@ def _scatter(asset: Asset, path: Path) -> None:
     pts = s.get("points", [])
     xs = [float(p[0]) for p in pts]
     ys = [float(p[1]) for p in pts]
+    # large values scale to Mio./Mrd. (unit into the axis label) — never scientific ticks;
+    # a scaled/big axis prints German, a small one (e.g. years) keeps plain default ticks
+    xs, xlabel, xdiv = unit_scale(xs, s.get("xlabel") or s.get("x_label") or "")
+    ys, ylabel, ydiv = unit_scale(ys, s.get("ylabel") or s.get("y_label") or "")
     fig, ax = plt.subplots(figsize=(5.4, 4.0), layout="constrained")
     ax.scatter(xs, ys, color="#33506e", s=38, zorder=3)
     if s.get("fit") and len(xs) >= 2:
@@ -336,11 +383,14 @@ def _scatter(asset: Asset, path: Path) -> None:
         m, b = np.polyfit(xs, ys, 1)
         xr = [min(xs), max(xs)]
         ax.plot(xr, [m * x + b for x in xr], color="#b03a2e", lw=1.5, zorder=2)
+    for axis, div, vals in (("x", xdiv, xs), ("y", ydiv, ys)):
+        if div > 1 or (vals and max(abs(v) for v in vals) >= 1e5):
+            _german_value_axis(ax, axis)
     ax.grid(True, color="#e9e9e9", lw=0.6)
-    if s.get("xlabel") or s.get("x_label"):
-        ax.set_xlabel(s.get("xlabel") or s.get("x_label"))
-    if s.get("ylabel") or s.get("y_label"):
-        ax.set_ylabel(s.get("ylabel") or s.get("y_label"))
+    if xlabel:
+        ax.set_xlabel(xlabel)
+    if ylabel:
+        ax.set_ylabel(ylabel)
     if s.get("title"):
         ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 50)))
     fig.savefig(path, dpi=150)
@@ -353,10 +403,14 @@ def _histogram(asset: Asset, path: Path) -> None:
     {values:[…], bins?, xlabel?, ylabel?, title?}."""
     s = asset.spec or {}
     vals = [float(v) for v in s.get("values", [])]
+    # large measured values scale to Mio./Mrd. (unit into the xlabel) — never scientific
+    vals, xlabel, xdiv = unit_scale(vals, s.get("xlabel") or s.get("x_label") or "")
     fig, ax = plt.subplots(figsize=(5.6, 3.6), layout="constrained")
     ax.hist(vals, bins=int(s.get("bins", 8)), color="#4f6f8f", edgecolor="#33506e")
-    if s.get("xlabel") or s.get("x_label"):
-        ax.set_xlabel(s.get("xlabel") or s.get("x_label"))
+    if xdiv > 1 or (vals and max(abs(v) for v in vals) >= 1e5):
+        _german_value_axis(ax, "x")
+    if xlabel:
+        ax.set_xlabel(xlabel)
     ax.set_ylabel(s.get("ylabel") or s.get("y_label") or "Häufigkeit")
     if s.get("title"):
         ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 50)))
@@ -396,6 +450,9 @@ def _boxplot(asset: Asset, path: Path) -> None:
            boxprops={"facecolor": "#cfe0ee", "edgecolor": "#33506e"},
            medianprops={"color": "#b03a2e", "linewidth": 2},
            whiskerprops={"color": "#33506e"}, capprops={"color": "#33506e"})
+    whisk = [abs(st[k]) for st in stats for k in ("whislo", "whishi")]
+    if whisk and max(whisk) >= 1e5:                # big values: German grouping, never sci
+        _german_value_axis(ax, "x" if horizontal else "y")
     (ax.set_xlabel if horizontal else ax.set_ylabel)(s.get("xlabel") or s.get("x_label") or "")
     (ax.grid)(True, axis="x" if horizontal else "y", color="#e6e6e6", lw=0.6)
     if not any(st["label"] for st in stats):

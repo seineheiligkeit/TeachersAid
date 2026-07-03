@@ -793,14 +793,16 @@ function drawPruefen(){
       ?`<img src="/api/asset-library/${e.id}/file" style="max-width:320px;max-height:220px;border:1px solid #ddd;border-radius:8px;margin:8px 0" onerror="pImgErr(this)">`
       :pDetail(e);
     const tri=e.triage?`<p class="muted" style="font-size:12px;margin:0 0 6px">Triage: ${e.triage.score}${(e.triage.reasons||[]).length?` — ${e.triage.reasons.slice(0,2).map(esc).join(" · ")}`:""}${e.triage.rating?` · ★${e.triage.rating}`:""}</p>`:"";
-    card=`<div class="row between"><span><span class="pill">${esc(e.kind)}</span> <code>${e.id}</code> <span class="muted">· ${esc(PQ.labels[e.tier])}</span></span><span class="muted">${PQ.idx+1} / ${PQ.entries.length}</span></div>
+    const revChip=e.revise_flagged?` <span class="pill" style="background:#fdf3e0;color:#8a5a00;border-color:#e8d5ac">Überarbeiten ✎</span>`:"";
+    card=`<div class="row between"><span><span class="pill">${esc(e.kind)}</span> <code>${e.id}</code> <span class="muted">· ${esc(PQ.labels[e.tier])}</span>${revChip}</span><span class="muted">${PQ.idx+1} / ${PQ.entries.length}</span></div>
       <h2 style="margin:8px 0 2px">${esc(e.title||"")}</h2>
       <p class="muted" style="margin:0 0 6px">${esc(e.subject||"—")}${e.klasse?` · ${e.klasse}. Kl.`:""}${e.n_tasks?` · ${e.n_tasks} Aufgaben`:""}</p>
       ${tri}${warn}${prev}
       <div class="row" style="gap:8px;margin-top:10px">
         <button onclick="pDecide('approve')">Freigeben (a)</button>
+        <button class="ghost" onclick="pDecide('revise')">Überarbeiten (u)</button>
         <button class="ghost" onclick="pDecide('reject')">Ablehnen (x)</button>
-        <span class="muted" style="margin-left:auto">Tasten: j/k blättern · a/x entscheiden · 1–5 Bewertung</span></div>
+        <span class="muted" style="margin-left:auto">Tasten: j/k blättern · a/u/x entscheiden · 1–5 Bewertung</span></div>
       <p id="p-flash" class="muted" style="font-size:12px;margin:6px 0 0"></p>`;
   }
   $("#pruefen").innerHTML=`<div style="display:grid;grid-template-columns:200px minmax(0,1fr);gap:14px">
@@ -896,8 +898,20 @@ function setLane(t){ PQ.lane=t; PQ.entries=PQ.all.filter(e=>!t||e.tier===t); PQ.
 function pFrame(id,k){ const f=$("#pframe"); if(f) f.src=`/api/items/${id}/pdf/${k}`; }
 async function pDecide(action){
   const e=PQ.entries[PQ.idx]; if(!e) return;
-  const note=action==="reject"?(prompt("Grund (optional):")||""):"";
+  let note="";
+  if(action==="reject") note=prompt("Grund (optional):")||"";
+  if(action==="revise"){
+    const n=prompt("Überarbeiten — was ist zu ändern? (erforderlich)");
+    if(n===null||!n.trim()) return;                 // abgebrochen / leer → keine Entscheidung
+    note=n.trim();
+  }
   await jpost(`/api/review/${e.kind}/${e.id}/decision`,{action,note});
+  if(action==="revise"){                            // Überarbeiten: bleibt in der Queue, nur markiert
+    e.revise_flagged=true;
+    drawPruefen();                                  // Chip erscheint; Karte bleibt fokussiert
+    const fl=$("#p-flash"); if(fl) fl.textContent="Überarbeiten vermerkt — Eintrag bleibt in der Queue.";
+    return;
+  }
   PQ.all=PQ.all.filter(x=>!(x.kind===e.kind&&x.id===e.id));
   PQ.lanes[e.tier]=Math.max(0,(PQ.lanes[e.tier]||1)-1);
   PQ.entries.splice(PQ.idx,1);
@@ -906,9 +920,9 @@ async function pDecide(action){
 }
 async function laneApprove(){
   const all=PQ.all.filter(x=>x.tier==="bestaetigen");
-  // safety: flagged entries (Prüf-Hinweise oder Triage-★ ≤2) bleiben zur Einzelprüfung —
-  // die Sammelfreigabe umfasst nur, wogegen nichts eingewendet wurde
-  const clean=all.filter(e=>!e.n_warnings && !(e.triage&&e.triage.rating&&e.triage.rating<=2));
+  // safety: flagged entries (Prüf-Hinweise, Überarbeiten-Vermerk oder Triage-★ ≤2) bleiben
+  // zur Einzelprüfung — die Sammelfreigabe umfasst nur, wogegen nichts eingewendet wurde
+  const clean=all.filter(e=>!e.n_warnings && !e.revise_flagged && !(e.triage&&e.triage.rating&&e.triage.rating<=2));
   const held=all.length-clean.length;
   if(!clean.length){ alert("Alle Einträge dieser Lane tragen Hinweise — bitte einzeln prüfen."); return; }
   if(!confirm(`${clean.length} unauffällige Einträge freigeben?`+(held?` (${held} mit Hinweisen bleiben zur Einzelprüfung)`:""))) return;
@@ -928,6 +942,7 @@ document.addEventListener("keydown",ev=>{
   if(ev.key==="j"||ev.key==="ArrowRight"){ if(PQ.idx<PQ.entries.length-1){PQ.idx++; drawPruefen();} }
   else if(ev.key==="k"||ev.key==="ArrowLeft"){ if(PQ.idx>0){PQ.idx--; drawPruefen();} }
   else if(ev.key==="a") pDecide("approve");
+  else if(ev.key==="u") pDecide("revise");
   else if(ev.key==="x") pDecide("reject");
   else if("12345".includes(ev.key)) pRate(+ev.key);
 });

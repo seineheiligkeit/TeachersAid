@@ -115,8 +115,14 @@ def queue(*, items, blocks, assets, datasets, texts, sachverhalte, arrangements,
     # attention-first: triage score on top (findings, tier depth, triage verdicts),
     # ties broken newest-first (stable two-pass sort)
     idx = latest_triage(feedback) if feedback is not None else {}
+    # revise-flagged feedback (the „Überarbeiten" decision / triage verdicts) rides the
+    # envelope so the card can chip it and the bulk lane release can HOLD it — the UI
+    # never re-reads the feedback log per entry
+    revised = ({(f.target_kind, f.target_id) for f in feedback.list() if f.revise}
+               if feedback is not None else set())
     for e in entries:
         e["triage"] = attention(e, triage_index=idx)
+        e["revise_flagged"] = (e["kind"], e["id"]) in revised
     entries.sort(key=lambda e: e["updated_at"], reverse=True)
     entries.sort(key=lambda e: -e["triage"]["score"])
 

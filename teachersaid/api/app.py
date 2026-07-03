@@ -179,16 +179,36 @@ def review_queue_endpoint():
 
 
 class DecisionBody(BaseModel):
-    action: str            # approve | reject
+    action: str            # approve | reject | revise
     note: str = ""
 
 
 @app.post("/api/review/{kind}/{rec_id}/decision")
 def review_decision(kind: str, rec_id: str, body: DecisionBody):
     """One decision endpoint for every kind. Approving a worksheet CASCADES to its
-    harvested blocks (SME decision: reviewing the sheet is reviewing its blocks)."""
-    if body.action not in ("approve", "reject"):
-        raise HTTPException(400, "action must be approve|reject")
+    harvested blocks (SME decision: reviewing the sheet is reviewing its blocks).
+    `revise` (Überarbeiten) is the SME's opt-in between the two: the record KEEPS its
+    status (pending / in_review — it stays in the Prüfen queue), and the mandatory note
+    lands as a revise-flagged FeedbackEntry the digest + triage pick up."""
+    if body.action not in ("approve", "reject", "revise"):
+        raise HTTPException(400, "action must be approve|reject|revise")
+    stores = {"block": BLOCKS, "asset": ASSETS, "dataset": DATASETS,
+              "text": TEXTS, "sachverhalt": SACHVERHALTE,
+              "arrangement": ARRANGEMENTS}
+    if kind != "item" and kind not in stores:
+        raise HTTPException(400, f"unbekannte Art '{kind}'")
+    if body.action == "revise":
+        note = body.note.strip()
+        if not note:
+            raise HTTPException(400, "Überarbeiten braucht eine Notiz (was ist zu ändern?)")
+        rec = STORE.get(rec_id) if kind == "item" else stores[kind].get(rec_id)
+        if rec is None:
+            raise HTTPException(404, "nicht gefunden")
+        subject, label = _target_meta(kind, rec_id)
+        FEEDBACK.add(FeedbackEntry(
+            target_kind=kind, target_id=rec_id, subject=subject, label=label,
+            rating=None, comment=f"[revise] {note}", tags=[], revise=True))
+        return {"ok": True, "kind": kind, "id": rec_id, "status": rec.status}
     status = "approved" if body.action == "approve" else "rejected"
     try:
         if kind == "item":
@@ -196,12 +216,7 @@ def review_decision(kind: str, rec_id: str, body: DecisionBody):
                   if body.action == "approve"
                   else orch.reject(STORE, rec_id, body.note, block_store=BLOCKS))
             return {"ok": True, "kind": kind, "id": rec_id, "status": it.status}
-        stores = {"block": BLOCKS, "asset": ASSETS, "dataset": DATASETS,
-                  "text": TEXTS, "sachverhalt": SACHVERHALTE,
-                  "arrangement": ARRANGEMENTS}
-        st = stores.get(kind)
-        if st is None:
-            raise HTTPException(400, f"unbekannte Art '{kind}'")
+        st = stores[kind]
         st.set_status(rec_id, status)
         if body.note.strip():
             # a decision note is review signal — persist it centrally (items keep
@@ -415,12 +430,15 @@ def reject_asset(asset_id: str):
 def _dataset_figure_asset(rec, series_key: str):
     """Build a preview Asset for one series of a dataset (pyramid or a bar of the
     series' values), so the reviewer sees the actual figure the data produces."""
+    from ..pipeline.assets import _all_numeric
     from ..schema.assets import Asset
 
     series = rec.dataset.series.get(series_key)
     if not series:
         return None
-    title = f"{rec.dataset.title} — {series.get('label', series_key)}"
+    label = series.get("label", series_key)
+    title = (rec.dataset.title if label == rec.dataset.title    # no "X — X" doubling
+             else f"{rec.dataset.title} — {label}")
     if series.get("kind") == "population_pyramid":
         return Asset(id=f"{rec.id}__{series_key}", role="figure",
                      generator="matplotlib:population_pyramid",
@@ -433,11 +451,14 @@ def _dataset_figure_asset(rec, series_key: str):
                      spec={"months": series.get("months", []),
                            "temp": series["temp"], "precip": series["precip"],
                            "title": title})
-    if "years" in series and "values" in series:           # time series (verlauf)
+    years = series.get("years") or (                       # time series (verlauf): years may
+        series.get("categories")                           # live in `categories` as "1960"… —
+        if _all_numeric(series.get("categories") or []) else None)  # a trend is a LINE over a
+    if years and "values" in series:                       # numeric year axis, never year-bars
         return Asset(id=f"{rec.id}__{series_key}", role="figure",
                      generator="matplotlib:line",
-                     spec={"categories": series["years"], "values": series["values"],
-                           "ylabel": rec.dataset.unit or "", "title": title})
+                     spec={"categories": years, "values": series["values"],
+                           "xlabel": "Jahr", "ylabel": rec.dataset.unit or "", "title": title})
     if "shares_pct" in series or "counts" in series or "values" in series:
         vals = (series.get("shares_pct") or series.get("counts")
                 or series.get("values") or [])
