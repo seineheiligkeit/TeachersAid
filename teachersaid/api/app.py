@@ -419,11 +419,24 @@ def _dataset_figure_asset(rec, series_key: str):
                      spec={"age_groups": series.get("age_groups", []),
                            "male": series.get("male", []), "female": series.get("female", []),
                            "title": title})
-    if "shares_pct" in series or "counts" in series:
-        vals = series.get("shares_pct") or series.get("counts") or []
+    if "temp" in series and "precip" in series:            # Klimadiagramm normals
+        return Asset(id=f"{rec.id}__{series_key}", role="figure",
+                     generator="matplotlib:climate_diagram",
+                     spec={"months": series.get("months", []),
+                           "temp": series["temp"], "precip": series["precip"],
+                           "title": title})
+    if "years" in series and "values" in series:           # time series (verlauf)
+        return Asset(id=f"{rec.id}__{series_key}", role="figure",
+                     generator="matplotlib:line",
+                     spec={"categories": series["years"], "values": series["values"],
+                           "ylabel": rec.dataset.unit or "", "title": title})
+    if "shares_pct" in series or "counts" in series or "values" in series:
+        vals = (series.get("shares_pct") or series.get("counts")
+                or series.get("values") or [])
+        cats = series.get("groups") or series.get("categories") or []
         return Asset(id=f"{rec.id}__{series_key}", role="figure",
                      generator="matplotlib:bar_chart",
-                     spec={"categories": series.get("groups", []), "values": vals,
+                     spec={"categories": cats, "values": vals,
                            "ylabel": "Anteil (%)" if "shares_pct" in series else (rec.dataset.unit or ""),
                            "title": title})
     return None
