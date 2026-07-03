@@ -203,6 +203,14 @@ def review_decision(kind: str, rec_id: str, body: DecisionBody):
         if st is None:
             raise HTTPException(400, f"unbekannte Art '{kind}'")
         st.set_status(rec_id, status)
+        if body.note.strip():
+            # a decision note is review signal — persist it centrally (items keep
+            # theirs on the ReviewItem; every other kind lands here)
+            subject, label = _target_meta(kind, rec_id)
+            FEEDBACK.add(FeedbackEntry(
+                target_kind=kind, target_id=rec_id, subject=subject, label=label,
+                rating=None, comment=f"[{body.action}] {body.note.strip()}",
+                tags=[], revise=(body.action == "reject")))
         return {"ok": True, "kind": kind, "id": rec_id, "status": status}
     except KeyError:
         raise HTTPException(404, "nicht gefunden")
