@@ -369,6 +369,17 @@ def asset_library(klass: str | None = None, status: str | None = None):
 @app.get("/api/asset-library/{asset_id}/file")
 def asset_library_file(asset_id: str):
     la = ASSETS.get(asset_id)
+    if la is not None and (not la.file or not Path(la.file).exists()):
+        # Stale absolute path (asset materialised on another machine — git carries
+        # the record, not the binary): rebuild code-generated assets on demand.
+        gen = la.asset.generator or ""
+        if gen.startswith(("svg:", "matplotlib:")):
+            try:
+                out = build_asset(la.asset, outdir=RUNS_DIR / "assets_lib" / "files")
+                la.file = str(out)
+                ASSETS.save(la)
+            except Exception:  # noqa: BLE001 — sourced/unbuildable stays a 404
+                pass
     if la is None or not la.file or not Path(la.file).exists():
         raise HTTPException(404, "no file for this asset")
     media = {
