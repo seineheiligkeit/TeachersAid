@@ -1,0 +1,357 @@
+{
+  "id": "c0175",
+  "stage": "content",
+  "status": "pending",
+  "source": "ai",
+  "created_at": "2026-07-03T15:59:25+00:00",
+  "updated_at": "2026-07-03T15:59:25+00:00",
+  "title": "Mathematik 4. Kl. — Daten und Zufall",
+  "note": "",
+  "request": {
+    "subject": "Mathematik",
+    "klasse": 4,
+    "stufe": "Unterstufe",
+    "schulform": null,
+    "topic_raw": "Daten und Zufall",
+    "envelope": "doppelstunde",
+    "options": {}
+  },
+  "resolution": {
+    "fassung": {
+      "kurztitel": "AHS-Lehrplan (konsolidiert)",
+      "bgbl": "BGBl. II Nr. 204/2024",
+      "doknr": "NOR40264237",
+      "valid_from": "2024-09-01",
+      "valid_to": "2026-08-31"
+    },
+    "subject": "Mathematik",
+    "klasse": 4,
+    "matched_kompetenzbereiche": [
+      "4: Daten und Zufall"
+    ],
+    "grade_check": true,
+    "competences": [
+      {
+        "id": "MAT.US.4.DAT.01",
+        "kompetenzbereich": "4: Daten und Zufall",
+        "klasse": 4,
+        "text": "Kreuztabellen erstellen und interpretieren,",
+        "source_ref": "MATHEMATIK / 4. Klasse / 4: Daten und Zufall",
+        "dimensions": [],
+        "uebergreifende_themen": [
+          10
+        ],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      },
+      {
+        "id": "MAT.US.4.DAT.02",
+        "kompetenzbereich": "4: Daten und Zufall",
+        "klasse": 4,
+        "text": "Wahrscheinlichkeiten bei ein- und zweistufigen Zufallsexperimenten ermitteln und interpretieren.",
+        "source_ref": "MATHEMATIK / 4. Klasse / 4: Daten und Zufall",
+        "dimensions": [],
+        "uebergreifende_themen": [
+          4,
+          10
+        ],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      }
+    ],
+    "notes": []
+  },
+  "plan": {
+    "subject": "Mathematik",
+    "klasse": 4,
+    "topic": "Daten und Zufall",
+    "kernfrage": "Was sollte man über 'Daten und Zufall' wirklich verstehen?",
+    "competence_ids": [
+      "MAT.US.4.DAT.01",
+      "MAT.US.4.DAT.02"
+    ],
+    "dimensions_targeted": [
+      "MOD"
+    ],
+    "threads": [
+      "MAT.US.4.DAT.01: Kreuztabellen erstellen und interpretieren,…",
+      "MAT.US.4.DAT.02: Wahrscheinlichkeiten bei ein- und zweistufigen Zufallsexperimenten erm…"
+    ],
+    "depth_target": {
+      "min_at_or_above": {
+        "level": "analyze",
+        "count": 2
+      },
+      "require_resource_independent_minutes": 60,
+      "dimensions_required": [
+        "MOD"
+      ]
+    },
+    "section_specs": [
+      {
+        "id": "sec.1",
+        "title": "4: Daten und Zufall",
+        "throughline": "Kreuztabellen erstellen und interpretieren,",
+        "block_specs": [
+          {
+            "suggested_id": "01.b1",
+            "kind": "open_response",
+            "cognitive_level": "understand",
+            "dimension": "MOD",
+            "serves_competence_id": "MAT.US.4.DAT.01",
+            "est_minutes": 10,
+            "intent": "Grundidee in eigenen Worten erklären (Bezug: 4: Daten und Zufall)"
+          }
+        ]
+      },
+      {
+        "id": "sec.2",
+        "title": "4: Daten und Zufall",
+        "throughline": "Wahrscheinlichkeiten bei ein- und zweistufigen Zufallsexperimenten ermitteln und interpretieren.",
+        "block_specs": [
+          {
+            "suggested_id": "02.b2",
+            "kind": "open_response",
+            "cognitive_level": "apply",
+            "dimension": "MOD",
+            "serves_competence_id": "MAT.US.4.DAT.02",
+            "est_minutes": 10,
+            "intent": "das Konzept auf eine neue Alltagssituation anwenden (Bezug: 4: Daten und Zufall)"
+          }
+        ]
+      }
+    ],
+    "minutes_budget": 100,
+    "notes": []
+  },
+  "content": {
+    "meta": {
+      "title": "Das unfaire Spiel",
+      "subtitle": null,
+      "subject": "Mathematik",
+      "stufe": "Unterstufe",
+      "klasse": 4,
+      "kernfrage": "Wann ist ein Glücksspiel fair?",
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "lehrplan_label": "Mathematik · 4. Klasse · Daten und Zufall",
+      "content_language": "de",
+      "subject_models": []
+    },
+    "subject_model": {
+      "subject": "Mathematik",
+      "stufe": "Unterstufe",
+      "dimensions": [
+        {
+          "id": "MOD",
+          "label": "Modellieren und Problemlösen",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "OPE",
+          "label": "Operieren (Rechnen und Konstruieren)",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "DAR",
+          "label": "Darstellen und Interpretieren",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "BEG",
+          "label": "Vermuten und Begründen",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "content_areas": [
+        {
+          "id": "ZAH",
+          "label": "Zahlen und Maße",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "VAR",
+          "label": "Variablen und Funktionen",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "FIG",
+          "label": "Figuren und Körper",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "DAT",
+          "label": "Daten und Zufall",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "task_kind_extensions": [
+        "calculation",
+        "construction",
+        "modelling_task"
+      ]
+    },
+    "intro": [],
+    "sections": [
+      {
+        "id": "ug.s",
+        "title": "Fairness messen",
+        "teacher_overview": {
+          "throughline": "Fairness ist eine Frage der Wahrscheinlichkeit.",
+          "talking_points": [
+            "Fair heißt gleiche Gewinnchance, nicht 'gleiche Regeln' — symmetrische Regeln können trotzdem unfair sein.",
+            "Wahrscheinlichkeit quantifizieren statt 'gefühlt fair': günstige/mögliche Fälle abzählen (Laplace) oder das Spiel simulieren.",
+            "Auf lange Sicht denken: Wer gewinnt über viele Spiele häufiger? Häufigkeit statt Einzelausgang."
+          ],
+          "extensions": [
+            "Spiele tauschen und gegenseitig die Unfairness aufdecken und quantifizieren lassen (Peer-Review der Wahrscheinlichkeiten).",
+            "Simulation: das Spiel viele Male würfeln und die relative Häufigkeit mit der berechneten Wahrscheinlichkeit vergleichen (Gesetz der großen Zahlen)."
+          ],
+          "differentiation": "Basis: ein vorgegebenes einfaches Spiel analysieren (z. B. Summe zweier Würfel gerade/ungerade). Leistungsstarke: ein eigenes Spiel mit nicht-offensichtlicher Unfairness entwerfen und begründen.",
+          "timing_notes": null
+        },
+        "blocks": [
+          {
+            "id": "ug.t1",
+            "optional": false,
+            "modality": "printable",
+            "flags": {
+              "contested": false,
+              "freshness_decay": false,
+              "equipment_dependent": false,
+              "local": false,
+              "historical_fact": false
+            },
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "modelling_task",
+            "prompt": "Erfinde ein einfaches Würfel- oder Münzspiel für zwei Personen, das auf den ersten Blick fair wirkt, in Wahrheit aber eine Person bevorzugt. Beschreibe die Regeln und begründe mit Wahrscheinlichkeiten, warum es unfair ist.",
+            "payload": null,
+            "response": {
+              "mode": "artifact",
+              "produces": "Spielregeln + Begründung"
+            },
+            "cognitive_level": "create",
+            "difficulty": null,
+            "dimensions": [
+              "MOD",
+              "BEG"
+            ],
+            "content_area": "Daten und Zufall",
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.DAT.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 20,
+            "answer_key": null,
+            "acceptable_reasoning": "Jedes Spiel mit korrekt berechneter ungleicher Gewinnchance.",
+            "rubric": [
+              {
+                "criterion": "Regeln klar",
+                "levels": [
+                  "unklar",
+                  "teilweise klar",
+                  "klar & vollständig"
+                ]
+              },
+              {
+                "criterion": "Begründung mit Wahrscheinlichkeit",
+                "levels": [
+                  "fehlt",
+                  "ansatzweise",
+                  "korrekt quantifiziert"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [],
+            "self_check": null
+          }
+        ]
+      }
+    ],
+    "assets": [],
+    "nachweis": {
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "statement": "Diese Materialien adressieren 1 von 2 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
+      "competence_coverage": [
+        {
+          "competence_id": "MAT.US.4.DAT.01",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "MAT.US.4.DAT.02",
+          "exercised_by": [
+            "ug.t1"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        }
+      ],
+      "gaps": [
+        "MAT.US.4.DAT.01 — Kreuztabellen erstellen und interpretieren,"
+      ],
+      "zentrale_konzepte": [
+        "4: Daten und Zufall"
+      ],
+      "uebergreifende_themen": [
+        4,
+        10
+      ]
+    },
+    "depth_profile": {
+      "by_level": {
+        "create": 1
+      },
+      "by_dimension": {
+        "MOD": 1
+      },
+      "by_difficulty": {
+        "3": 1
+      },
+      "minutes_total": 20,
+      "minutes_resource_independent": 20
+    },
+    "rack": null
+  },
+  "artifacts": {
+    "student_pdf": "/home/user/TeachersAid/runs/store/c0175/student.pdf",
+    "teacher_pdf": "/home/user/TeachersAid/runs/store/c0175/teacher.pdf",
+    "homework_pdf": "/home/user/TeachersAid/runs/store/c0175/homework.pdf",
+    "preview_png": "/home/user/TeachersAid/runs/store/c0175/raster/student.p1.png"
+  },
+  "verify_problems": [],
+  "verify_warnings": [
+    "depth target not met: 1 task(s) at 'analyze'+ (wanted 2)",
+    "only 20 resource-independent min (wanted ≥60)"
+  ],
+  "parent_id": "b0174",
+  "feedback": [],
+  "error": null
+}

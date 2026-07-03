@@ -1,0 +1,665 @@
+{
+  "id": "c0179",
+  "stage": "content",
+  "status": "pending",
+  "source": "variants",
+  "created_at": "2026-07-03T16:00:37+00:00",
+  "updated_at": "2026-07-03T16:00:38+00:00",
+  "title": "Mathematik 4. Kl. — Satz des Pythagoras (4 Varianten)",
+  "note": "",
+  "request": {
+    "subject": "Mathematik",
+    "klasse": 4,
+    "stufe": "Unterstufe",
+    "schulform": null,
+    "topic_raw": "Satz des Pythagoras",
+    "envelope": "doppelstunde",
+    "options": {}
+  },
+  "resolution": {
+    "fassung": {
+      "kurztitel": "AHS-Lehrplan (konsolidiert)",
+      "bgbl": "BGBl. II Nr. 204/2024",
+      "doknr": "NOR40264237",
+      "valid_from": "2024-09-01",
+      "valid_to": "2026-08-31"
+    },
+    "subject": "Mathematik",
+    "klasse": 4,
+    "matched_kompetenzbereiche": [
+      "3: Figuren und Körper"
+    ],
+    "grade_check": true,
+    "competences": [
+      {
+        "id": "MAT.US.4.FIG.01",
+        "kompetenzbereich": "3: Figuren und Körper",
+        "klasse": 4,
+        "text": "mit dem pythagoräischen Lehrsatz arbeiten,",
+        "source_ref": "MATHEMATIK / 4. Klasse / 3: Figuren und Körper",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      },
+      {
+        "id": "MAT.US.4.FIG.02",
+        "kompetenzbereich": "3: Figuren und Körper",
+        "klasse": 4,
+        "text": "Umfang und Flächeninhalt von Kreisen und Kreisteilen ermitteln,",
+        "source_ref": "MATHEMATIK / 4. Klasse / 3: Figuren und Körper",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      },
+      {
+        "id": "MAT.US.4.FIG.03",
+        "kompetenzbereich": "3: Figuren und Körper",
+        "klasse": 4,
+        "text": "Drehzylinder und Drehkegel beschreiben; Oberflächen- und Rauminhalte ermitteln.",
+        "source_ref": "MATHEMATIK / 4. Klasse / 3: Figuren und Körper",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      }
+    ],
+    "notes": []
+  },
+  "plan": null,
+  "content": {
+    "meta": {
+      "title": "Übungsreihe: Satz des Pythagoras",
+      "subtitle": "Übungsreihe — 4 Varianten",
+      "subject": "Mathematik",
+      "stufe": "Unterstufe",
+      "klasse": 4,
+      "kernfrage": "Übung: Satz des Pythagoras",
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "lehrplan_label": "Mathematik · 4. Kl. · 3: Figuren und Körper",
+      "content_language": "de",
+      "subject_models": []
+    },
+    "subject_model": {
+      "subject": "Mathematik",
+      "stufe": "Unterstufe",
+      "dimensions": [
+        {
+          "id": "MOD",
+          "label": "Modellieren und Problemlösen",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "OPE",
+          "label": "Operieren (Rechnen und Konstruieren)",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "DAR",
+          "label": "Darstellen und Interpretieren",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "BEG",
+          "label": "Vermuten und Begründen",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "content_areas": [
+        {
+          "id": "ZAH",
+          "label": "Zahlen und Maße",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "VAR",
+          "label": "Variablen und Funktionen",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "FIG",
+          "label": "Figuren und Körper",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "DAT",
+          "label": "Daten und Zufall",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "task_kind_extensions": [
+        "calculation",
+        "construction",
+        "modelling_task"
+      ]
+    },
+    "intro": [
+      {
+        "id": "uebung.zweck",
+        "optional": false,
+        "modality": "printable",
+        "flags": null,
+        "asset_refs": [],
+        "provenance": null,
+        "role": "info",
+        "kind": "callout",
+        "content": "Diese Übungsreihe dient dem Automatisieren und der Vorbereitung auf die Schularbeit: jede Aufgabe ist eine eigene Variante derselben Aufgabenstellung mit eigenem Zahlensatz — damit auch als Gruppe A/B einsetzbar.",
+        "callout_role": "note",
+        "teacher_note": null,
+        "watch_outs": [],
+        "numbered": true
+      },
+      {
+        "id": "uebung.rahmen",
+        "optional": false,
+        "modality": "printable",
+        "flags": null,
+        "asset_refs": [],
+        "provenance": null,
+        "role": "info",
+        "kind": "prose",
+        "content": "Mit dem Satz des Pythagoras bestimmen Handwerker und Vermesser Längen, die sich nicht direkt messen lassen.",
+        "callout_role": null,
+        "teacher_note": null,
+        "watch_outs": [],
+        "numbered": true
+      }
+    ],
+    "sections": [
+      {
+        "id": "uebung",
+        "title": "Satz des Pythagoras",
+        "teacher_overview": {
+          "throughline": "Übungsreihe, kein didaktisch aufgebautes Arbeitsblatt: gleichwertige Varianten derselben Aufgabenstellung, jede mit vollständigem Rechenweg in dieser Begleitung. Wert: der geprüfte Lösungsweg zu jedem eigenen Zahlensatz — einsetzbar zum Automatisieren, zur Schularbeit-Vorbereitung, im Stationenbetrieb oder als Gruppe A/B.",
+          "talking_points": [],
+          "extensions": [],
+          "differentiation": null,
+          "timing_notes": null
+        },
+        "blocks": [
+          {
+            "id": "mat-pythagoras#1",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "calculation",
+            "prompt": [
+              {
+                "text": "Ein rechtwinkliges Dreieck hat die Katheten ",
+                "mark": null,
+                "ref_block": null,
+                "math": false
+              },
+              {
+                "text": "a = 5",
+                "mark": null,
+                "ref_block": null,
+                "math": true
+              },
+              {
+                "text": " cm und ",
+                "mark": null,
+                "ref_block": null,
+                "math": false
+              },
+              {
+                "text": "b = 12",
+                "mark": null,
+                "ref_block": null,
+                "math": true
+              },
+              {
+                "text": " cm. Berechne die Länge der Hypotenuse ",
+                "mark": null,
+                "ref_block": null,
+                "math": false
+              },
+              {
+                "text": "c",
+                "mark": null,
+                "ref_block": null,
+                "math": true
+              },
+              {
+                "text": ".",
+                "mark": null,
+                "ref_block": null,
+                "math": false
+              }
+            ],
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 2
+            },
+            "cognitive_level": "apply",
+            "difficulty": null,
+            "dimensions": [
+              "OPE"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.FIG.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 5,
+            "answer_key": [
+              {
+                "text": "c = 13",
+                "mark": null,
+                "ref_block": null,
+                "math": true
+              }
+            ],
+            "acceptable_reasoning": null,
+            "rubric": [],
+            "solution_steps": [
+              {
+                "text": "Satz des Pythagoras",
+                "expr": "c^2 = a^2 + b^2"
+              },
+              {
+                "text": "Katheten einsetzen",
+                "expr": "c^2 = 5^2 + 12^2 = 169"
+              },
+              {
+                "text": "Wurzel ziehen",
+                "expr": "c = \\sqrt{169} = 13"
+              }
+            ],
+            "watch_outs": [],
+            "self_check": null
+          },
+          {
+            "id": "mat-pythagoras#2",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "calculation",
+            "prompt": [
+              {
+                "text": "Ein rechtwinkliges Dreieck hat die Katheten ",
+                "mark": null,
+                "ref_block": null,
+                "math": false
+              },
+              {
+                "text": "a = 4",
+                "mark": null,
+                "ref_block": null,
+                "math": true
+              },
+              {
+                "text": " cm und ",
+                "mark": null,
+                "ref_block": null,
+                "math": false
+              },
+              {
+                "text": "b = 3",
+                "mark": null,
+                "ref_block": null,
+                "math": true
+              },
+              {
+                "text": " cm. Berechne die Länge der Hypotenuse ",
+                "mark": null,
+                "ref_block": null,
+                "math": false
+              },
+              {
+                "text": "c",
+                "mark": null,
+                "ref_block": null,
+                "math": true
+              },
+              {
+                "text": ".",
+                "mark": null,
+                "ref_block": null,
+                "math": false
+              }
+            ],
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 2
+            },
+            "cognitive_level": "apply",
+            "difficulty": null,
+            "dimensions": [
+              "OPE"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.FIG.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 5,
+            "answer_key": [
+              {
+                "text": "c = 5",
+                "mark": null,
+                "ref_block": null,
+                "math": true
+              }
+            ],
+            "acceptable_reasoning": null,
+            "rubric": [],
+            "solution_steps": [
+              {
+                "text": "Satz des Pythagoras",
+                "expr": "c^2 = a^2 + b^2"
+              },
+              {
+                "text": "Katheten einsetzen",
+                "expr": "c^2 = 4^2 + 3^2 = 25"
+              },
+              {
+                "text": "Wurzel ziehen",
+                "expr": "c = \\sqrt{25} = 5"
+              }
+            ],
+            "watch_outs": [],
+            "self_check": null
+          },
+          {
+            "id": "mat-pythagoras#3",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "calculation",
+            "prompt": [
+              {
+                "text": "Ein rechtwinkliges Dreieck hat die Katheten ",
+                "mark": null,
+                "ref_block": null,
+                "math": false
+              },
+              {
+                "text": "a = 8",
+                "mark": null,
+                "ref_block": null,
+                "math": true
+              },
+              {
+                "text": " cm und ",
+                "mark": null,
+                "ref_block": null,
+                "math": false
+              },
+              {
+                "text": "b = 15",
+                "mark": null,
+                "ref_block": null,
+                "math": true
+              },
+              {
+                "text": " cm. Berechne die Länge der Hypotenuse ",
+                "mark": null,
+                "ref_block": null,
+                "math": false
+              },
+              {
+                "text": "c",
+                "mark": null,
+                "ref_block": null,
+                "math": true
+              },
+              {
+                "text": ".",
+                "mark": null,
+                "ref_block": null,
+                "math": false
+              }
+            ],
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 2
+            },
+            "cognitive_level": "apply",
+            "difficulty": null,
+            "dimensions": [
+              "OPE"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.FIG.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 5,
+            "answer_key": [
+              {
+                "text": "c = 17",
+                "mark": null,
+                "ref_block": null,
+                "math": true
+              }
+            ],
+            "acceptable_reasoning": null,
+            "rubric": [],
+            "solution_steps": [
+              {
+                "text": "Satz des Pythagoras",
+                "expr": "c^2 = a^2 + b^2"
+              },
+              {
+                "text": "Katheten einsetzen",
+                "expr": "c^2 = 8^2 + 15^2 = 289"
+              },
+              {
+                "text": "Wurzel ziehen",
+                "expr": "c = \\sqrt{289} = 17"
+              }
+            ],
+            "watch_outs": [],
+            "self_check": null
+          },
+          {
+            "id": "mat-pythagoras#4",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "calculation",
+            "prompt": [
+              {
+                "text": "Ein rechtwinkliges Dreieck hat die Katheten ",
+                "mark": null,
+                "ref_block": null,
+                "math": false
+              },
+              {
+                "text": "a = 15",
+                "mark": null,
+                "ref_block": null,
+                "math": true
+              },
+              {
+                "text": " cm und ",
+                "mark": null,
+                "ref_block": null,
+                "math": false
+              },
+              {
+                "text": "b = 8",
+                "mark": null,
+                "ref_block": null,
+                "math": true
+              },
+              {
+                "text": " cm. Berechne die Länge der Hypotenuse ",
+                "mark": null,
+                "ref_block": null,
+                "math": false
+              },
+              {
+                "text": "c",
+                "mark": null,
+                "ref_block": null,
+                "math": true
+              },
+              {
+                "text": ".",
+                "mark": null,
+                "ref_block": null,
+                "math": false
+              }
+            ],
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 2
+            },
+            "cognitive_level": "apply",
+            "difficulty": null,
+            "dimensions": [
+              "OPE"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.FIG.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 5,
+            "answer_key": [
+              {
+                "text": "c = 17",
+                "mark": null,
+                "ref_block": null,
+                "math": true
+              }
+            ],
+            "acceptable_reasoning": null,
+            "rubric": [],
+            "solution_steps": [
+              {
+                "text": "Satz des Pythagoras",
+                "expr": "c^2 = a^2 + b^2"
+              },
+              {
+                "text": "Katheten einsetzen",
+                "expr": "c^2 = 15^2 + 8^2 = 289"
+              },
+              {
+                "text": "Wurzel ziehen",
+                "expr": "c = \\sqrt{289} = 17"
+              }
+            ],
+            "watch_outs": [],
+            "self_check": null
+          }
+        ]
+      }
+    ],
+    "assets": [],
+    "nachweis": {
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "statement": "Diese Materialien adressieren 1 von 3 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
+      "competence_coverage": [
+        {
+          "competence_id": "MAT.US.4.FIG.01",
+          "exercised_by": [
+            "mat-pythagoras#1",
+            "mat-pythagoras#2",
+            "mat-pythagoras#3",
+            "mat-pythagoras#4"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "MAT.US.4.FIG.02",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        },
+        {
+          "competence_id": "MAT.US.4.FIG.03",
+          "exercised_by": [],
+          "prerequisite_by": [],
+          "covered": false
+        }
+      ],
+      "gaps": [
+        "MAT.US.4.FIG.02 — Umfang und Flächeninhalt von Kreisen und Kreisteilen ermitteln,",
+        "MAT.US.4.FIG.03 — Drehzylinder und Drehkegel beschreiben; Oberflächen- und Rauminhalte ermitteln."
+      ],
+      "zentrale_konzepte": [
+        "3: Figuren und Körper"
+      ],
+      "uebergreifende_themen": []
+    },
+    "depth_profile": {
+      "by_level": {
+        "apply": 4
+      },
+      "by_dimension": {
+        "OPE": 4
+      },
+      "by_difficulty": {
+        "2": 4
+      },
+      "minutes_total": 20,
+      "minutes_resource_independent": 20
+    },
+    "rack": null
+  },
+  "artifacts": {
+    "student_pdf": "/home/user/TeachersAid/runs/store/c0179/student.pdf",
+    "teacher_pdf": "/home/user/TeachersAid/runs/store/c0179/teacher.pdf",
+    "homework_pdf": "/home/user/TeachersAid/runs/store/c0179/homework.pdf",
+    "preview_png": "/home/user/TeachersAid/runs/store/c0179/raster/student.p1.png"
+  },
+  "verify_problems": [],
+  "verify_warnings": [
+    "Anforderungsniveau flach: alle 4 Aufgaben auf 'mittel (Transfer)' — kein Spektrum"
+  ],
+  "parent_id": null,
+  "feedback": [],
+  "error": null
+}
