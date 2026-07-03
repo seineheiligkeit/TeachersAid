@@ -1,7 +1,7 @@
 # Project Handoff — Austrian Lehrplan-anchored Teaching-Material Generator
 
 **Status: design baseline from Session 2 (24 June 2026); see the dated session updates below for the
-current state (latest: Session 11, 2 July 2026 — the offline-first pivot).** This is the single read-me-first document for a fresh
+current state (latest: Session 12, 3 July 2026 — the program's first build wave + review economy live).** This is the single read-me-first document for a fresh
 session taking the project over. Working language is English; the *product's* output is German (or a
 target language for Fremdsprache). Read this, then the docs in the order given in §6.
 
@@ -264,6 +264,36 @@ target language for Fremdsprache). Read this, then the docs in the order given i
 >
 > The build program (3 tracks + a joy lane): `Documents/feature-roadmap.md` "Start here". Run:
 > `python -m pytest -q` (**369 tests**).
+
+> **Update (Session 12, 2–3 Jul 2026): the program's first build wave — and the review economy proven
+> in a live SME session.**
+> - **Track 1 BUILT:** #1 the **campaign planner** (`stats.coverage_map`/`campaign_gaps`, per-KB cells ×
+>   Anforderungsband, 610 cells, gap export = brief anchors) · #2 the **numeric-claims lint**
+>   (`pipeline/number_lint.py` — prose numbers next to a SOURCED figure must derive from the cited
+>   series; calibrated on the corpus; caught real discrepancies, e.g. c0119's stale Bundesland counts) ·
+>   #3 the unified **Prüfen gate** — ONE tier-laned queue over all seven stores (`store/reviewqueue.py`;
+>   lanes = the four correct-by-construction mechanisms), keyboard focus mode, worksheet→block approval
+>   **cascade** (SME decision), deterministic + adversarial **triage** (`pipeline/triage.py` +
+>   `tools/triage_prompt.py`/`ingest_triage.py`; first pass 54/54 verdicts, found i.a. a NaCl-"Molekül"
+>   Fachfehler), and the SME's **Überarbeiten** decision (status-preserving, mandatory note →
+>   revise-flagged feedback; bulk release holds flagged entries).
+> - **Track 2 STARTED:** the LLM-free delivery read-path `pipeline/deliver.py` (vetted sheet › composed ›
+>   honest gap) + the `DemandStore` Wunschliste (invariants §10 in code).
+> - **Dashboard collapsed 12 tabs → the 4 stations** (Planen · Prüfen · Korpus · Einblicke); every kind
+>   judgeable inline in the focus card; **self-healing artifacts** (PDFs, assets, arrangement bundles
+>   rebuild when stored absolute paths came from another machine — git carries content, not binaries).
+> - **The blackboard test** (SME quality bar, durable): corpus content must beat what a teacher writes on
+>   the board in a minute. The chemistry variant series were upgraded accordingly (Übungsreihe genre
+>   framing · structure-derived difficulty ramp · curated digit-free context frames —
+>   `Documents/uebungsreihe-upgrade-brief.md`); old series rejected, new c0167–c0169 SME-approved.
+> - **The staged backlog is CLEARED** (first full SME session: 11 texts · 5 Sachverhalte · arrangements ·
+>   datasets 5:3), and its findings landed as fixes: figures never use scientific notation (unit-scaled
+>   "(in Mio.)" labels, German tick/value formatting, years on a numeric x-axis —
+>   `figstyle.unit_scale`/`fmt_de`, rule in the figstyle docstring); decision notes persist for every kind.
+>
+> Run: `python -m pytest -q` (**413 tests**). **Open next:** Track 3 wedge campaigns (planner-driven, via
+> `/api/coverage/gaps`) · Track 2's compose-coherence hard problem + the "Varianten erzeugen" surface ·
+> the geosphere-Klimadiagramm re-decision · informational Realien / the joy lane.
 
 ---
 

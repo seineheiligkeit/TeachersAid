@@ -13,6 +13,14 @@ Forward-looking *capability* features for TeachersAid. (The schema-version roadm
 > Decision + rationale: `project-handoff.md` Session 11 + §4; rule + boundary: `invariants.md` **§10**.
 > **Working mode: build-for-joy** — no deadline, no GTM clock; "inherently cool" is a valid justification.
 
+> **Status (3 Jul 2026, Session 12):** Track 1 **BUILT** (#1 planner · #2 numbers lint · #3 Prüfen gate:
+> tier lanes + cascade + triage + Überarbeiten); Track 2 **#4-v1/#5 BUILT** (deliver read-path +
+> Wunschliste); the dashboard is the four stations; the staged backlog is SME-cleared; figures obey the
+> no-scientific-notation/unit-scale/numeric-time rule (`figstyle`); the chemistry Übungsreihen passed the
+> **blackboard test** (c0167–c0169 approved; the bar: beat what a teacher writes on the board in a
+> minute). **Open next:** Track 3 campaigns (`/api/coverage/gaps` anchors) · Track 2 #4 inter-block
+> coherence + #6 "Varianten erzeugen" surface · geosphere-Klimadiagramm re-decision · joy lane.
+
 **The program — three tracks + a joy lane** *(tracks are dependency order, not a schedule)*:
 
 **Track 1 — foundations:**

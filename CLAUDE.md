@@ -27,7 +27,7 @@ The repository has two layers:
 ```bash
 pip install -e .                       # deps: pydantic2, fastapi, uvicorn, anthropic, reportlab,
                                        #       matplotlib, pillow, pyyaml, pymupdf, sympy  (pytest for dev)
-python -m pytest -q                    # 369 tests, fully offline (no API key required)
+python -m pytest -q                    # 413 tests, fully offline (no API key required)
 python -m teachersaid seed             # seed the master-library examples into the review queue
 python -m teachersaid                  # dashboard → http://127.0.0.1:8000
 ```
@@ -743,7 +743,10 @@ it is validated through the real generation seam and staged for HITL review.
 Two review gates, one `ReviewItem` type (`stage` ∈ **brainstorm** | **content**); four stations
 (**Planen** — Ideen + Kampagnen-Planer + Wunschliste + the delivery probe ("Lieferung testen", whose
 gaps feed the Wunschliste) · **Prüfen** — the unified tier-laned gate (all
-kinds, keyboard flow, worksheet→block approval cascade) · **Korpus** — the approved library with
+kinds; keyboard flow; **triage-ordered** — `pipeline/triage.py` heuristic + the adversarial pass
+`tools/triage_prompt.py`→`tools/ingest_triage.py`, triage never the gate; worksheet→block approval
+**cascade**; the **Überarbeiten** decision: status-preserving, mandatory note → revise-flagged feedback,
+held from bulk release; artifacts self-heal cross-machine) · **Korpus** — the approved library with
 sub-views (Arbeitsblätter · Bausteine · Arrangements · Abbildungen · Datensätze · Texte · Sachverhalte)
 + the compose form · **Einblicke** — feedback digest + block matrix). **Korpus → Datensätze**
 reviews grounded-facts datasets (`DatasetStore`): source/licence/Stand + a figure preview, approve/reject
