@@ -1,0 +1,67 @@
+{
+  "id": "c0192.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Ordne jedem optischen System zu, ob das entstehende Bild reell (auf einem Schirm auffangbar) oder virtuell (nicht auffangbar, nur im Kopf) ist, und wo das Bild jeweils liegt.",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "System",
+        "reell oder virtuell?",
+        "Bildlage"
+      ],
+      "rows": 3
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.2.OPT.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Lochkamera: reell – das Bild liegt auf der Rückwand (Mattscheibe) und ist dort tatsächlich sichtbar/fotografierbar. Ebener Spiegel: virtuell – das Bild scheint hinter dem Spiegel zu liegen, dort kommt aber kein Licht her. Auge: reell – das Bild entsteht auf der Netzhaut (innere Rückwand des Auges), wird von den Sinneszellen registriert.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Das Augen-Bild wird oft fälschlich als virtuell eingeordnet, weil man es im Kopf sieht – tatsächlich entsteht es reell auf der Netzhaut; erst die Verarbeitung im Gehirn ist ein zweiter Schritt.",
+      "Beim Spiegel wird oft angenommen, hinter dem Spiegel befinde sich tatsächlich Licht – es handelt sich um eine gedankliche Verlängerung der reflektierten Strahlen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Physik",
+  "klasse": 2,
+  "kompetenzbereich": "Optische Systeme",
+  "competences": [
+    "PHY.US.2.OPT.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0192",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:24+00:00",
+  "updated_at": "2026-07-05T05:34:24+00:00"
+}

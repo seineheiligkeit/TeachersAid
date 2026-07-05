@@ -1,0 +1,138 @@
+{
+  "subject": "Physik", "klasse": 2,
+  "kompetenzbereich": "Optische Systeme",
+  "title": "Vom Leuchtpunkt zum Bild", "kernfrage": "Wie entsteht aus einem Lichtpunkt ein Bild – in der Lochkamera, im Spiegel und in deinem Auge?",
+  "body": {
+    "intro": [],
+    "data_figures": [],
+    "assets": [
+      {"id": "fig_lochkamera_strahlen", "generator": "matplotlib:coordinate_plane", "spec": {"points": [{"x": 0, "y": 3, "label": "L (oben)"}, {"x": 0, "y": -2, "label": "L' (unten)"}, {"x": 4, "y": 0, "label": "Blende"}, {"x": 9, "y": -1.2, "label": "B (Bildpunkt)"}, {"x": 9, "y": 0.8, "label": "B'"}], "segments": [[0, 2], [2, 3], [1, 2], [2, 4]], "xmin": -1, "xmax": 10, "ymin": -3, "ymax": 4, "title": "Lichtbündel durch die Lochblende"}}
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Leuchtpunkt und Bildpunkt",
+        "throughline": "Wir bauen den Abbildungsbegriff vom einfachsten Fall (Lochkamera) über den ebenen Spiegel bis zum Auge auf – jedes optische System ordnet jedem Leuchtpunkt genau einen Bildpunkt zu, aber auf unterschiedliche Art. Zum Schluss weiten wir den Blick auf das Licht selbst: Aus welchen Farben besteht es eigentlich?",
+        "talking_points": [
+          "Das Leuchtpunkt-zu-Bildpunkt-Schema ist das gemeinsame Werkzeug für ALLE optischen Systeme dieser Einheit – daran anknüpfen, nicht neu erklären.",
+          "Bei der Lochkamera entsteht die Umkehrung, weil sich die Lichtbündel geradlinig ausbreiten und sich genau an der kleinen Öffnung kreuzen.",
+          "Der ebene Spiegel erzeugt ein virtuelles Bild – dahinter kommt kein Licht her, die Augen/das Gehirn verlängern die reflektierten Strahlen nur gedanklich.",
+          "Chancen und Risiken optischer Geräte (Kamera, Mikroskop, Endoskop) eignen sich für eine kurze Rechercheaufgabe mit Quellenkritik."
+        ],
+        "extensions": [
+          "Schüler:innen bauen eine echte Lochkamera aus einer Dose und beobachten das umgekehrte Bild.",
+          "Vergleich Lochkamera vs. Linsenkamera: Warum ist ein Objektiv lichtstärker als eine kleine Lochblende?",
+          "Recherche zu einem optischen Gerät ihrer Wahl (Fernrohr, Endoskop, Overheadprojektor) mit Quellenangabe."
+        ],
+        "blocks": [
+          {
+            "role": "task", "id": "t1", "kind": "true_false_justify",
+            "prompt": "Eine Kerzenflamme steht vor einer Lochkamera. Prüfe die folgenden Aussagen zum Leuchtpunkt-Bildpunkt-Schema und begründe jeweils.",
+            "payload": {"kind": "true_false_justify", "statements": [
+              "Jeder Punkt der Flamme sendet Licht in alle Richtungen aus.",
+              "Nur die Lichtstrahlen, die genau durch das kleine Loch treffen, erreichen die Rückwand der Kamera.",
+              "Das Bild auf der Rückwand steht aufrecht, weil sich die Lichtbündel im Loch nicht kreuzen."
+            ]},
+            "response": {"mode": "lines", "n": 4},
+            "cognitive_level": "remember", "dimensions": ["W"],
+            "serves": [{"competence_id": "PHY.US.2.OPT.01", "relation": "exercises"}],
+            "est_minutes": 6, "asset_refs": [],
+            "answer_key": "1) Richtig – ein Leuchtpunkt sendet Licht in alle Richtungen aus (Lichtbündel). 2) Richtig – nur die Strahlen, die genau die enge Öffnung treffen, gelangen weiter zur Rückwand; alle anderen werden von der Kamerawand geblockt. 3) Falsch – gerade WEIL sich die Lichtbündel im engen Loch kreuzen, entsteht ein auf dem Kopf stehendes (umgekehrtes) Bild: Licht vom oberen Flammenpunkt trifft unten auf die Rückwand und umgekehrt.",
+            "acceptable_reasoning": "Die Begründung muss den Zusammenhang zwischen dem Kreuzen der Lichtbündel an der Lochblende und der Bildumkehrung erkennen lassen.",
+            "watch_outs": ["Fehlvorstellung: Licht geht durch das Loch wie durch ein Fenster ohne Richtungsauswahl – tatsächlich wählt das enge Loch aus dem Lichtbündel jedes Leuchtpunkts nur einen schmalen Teilstrahl aus.", "Manche Kinder denken, ein größeres Loch ergibt ein schärferes Bild – das Gegenteil ist der Fall (unschärfer, aber heller)."],
+            "rubric": []
+          },
+          {
+            "role": "task", "id": "t2", "kind": "table_fill",
+            "prompt": "Ordne jedem optischen System zu, ob das entstehende Bild reell (auf einem Schirm auffangbar) oder virtuell (nicht auffangbar, nur im Kopf) ist, und wo das Bild jeweils liegt.",
+            "payload": null,
+            "response": {"mode": "table", "columns": ["System", "reell oder virtuell?", "Bildlage"], "rows": 3},
+            "cognitive_level": "understand", "dimensions": ["W"],
+            "serves": [{"competence_id": "PHY.US.2.OPT.01", "relation": "exercises"}],
+            "est_minutes": 7, "asset_refs": [],
+            "answer_key": "Lochkamera: reell – das Bild liegt auf der Rückwand (Mattscheibe) und ist dort tatsächlich sichtbar/fotografierbar. Ebener Spiegel: virtuell – das Bild scheint hinter dem Spiegel zu liegen, dort kommt aber kein Licht her. Auge: reell – das Bild entsteht auf der Netzhaut (innere Rückwand des Auges), wird von den Sinneszellen registriert.",
+            "acceptable_reasoning": null,
+            "watch_outs": ["Das Augen-Bild wird oft fälschlich als virtuell eingeordnet, weil man es im Kopf sieht – tatsächlich entsteht es reell auf der Netzhaut; erst die Verarbeitung im Gehirn ist ein zweiter Schritt.", "Beim Spiegel wird oft angenommen, hinter dem Spiegel befinde sich tatsächlich Licht – es handelt sich um eine gedankliche Verlängerung der reflektierten Strahlen."],
+            "rubric": []
+          },
+          {
+            "role": "task", "id": "t3", "kind": "experiment_protocol",
+            "prompt": "Plane eine kleine Untersuchung: Du hältst eine Lupe (Sammellinse) zwischen eine Kerze und eine weiße Wand und verschiebst sie langsam. Beschreibe, was du beobachten und protokollieren würdest.",
+            "payload": null,
+            "response": {"mode": "table", "columns": ["Schritt", "Beobachtung/Messung"], "rows": 4},
+            "cognitive_level": "apply", "dimensions": ["E"],
+            "serves": [{"competence_id": "PHY.US.2.OPT.02", "relation": "exercises"}],
+            "est_minutes": 8, "asset_refs": [],
+            "answer_key": "Sinnvolles Protokoll: 1) Aufbau notieren (Kerze – Linse – Wand, Abstände messen). 2) Linse langsam von der Kerze weg zur Wand hin verschieben. 3) Beobachten, bei welchem Abstand ein scharfes Bild auf der Wand erscheint (Fokussierung). 4) Feststellen, dass das scharfe Bild auf der Wand kopfstehend (umgekehrt) und je nach Abstand vergrößert oder verkleinert erscheint. 5) Abstände Linse–Kerze und Linse–Wand für die scharfe Position messen und notieren.",
+            "acceptable_reasoning": "Ein vollständiges Protokoll enthält: Aufbau, systematisches Verschieben, die Beobachtung eines Scharfstellungspunkts sowie die Feststellung von Bildlage/-orientierung.",
+            "watch_outs": ["Manche Schüler:innen erwarten ein scharfes Bild bei jedem beliebigen Abstand – tatsächlich gibt es nur einen (bzw. wenige) Abstand, bei dem das Bild scharf ist.", "Sicherheit: Kerzenflamme nicht zu nahe an Haare/Kleidung, Linse kann Sonnenlicht bündeln – nie auf brennbares Material richten."],
+            "rubric": []
+          },
+          {
+            "role": "task", "id": "t4", "kind": "data_interpretation",
+            "prompt": "Betrachte die Abbildung zur Lochkamera (Lichtbündel von zwei Punkten der Flamme). Erkläre mithilfe der Zeichnung, warum das Bild auf der Rückwand kopfstehend ist.",
+            "payload": null,
+            "response": {"mode": "lines", "n": 5},
+            "cognitive_level": "analyze", "dimensions": ["W"],
+            "serves": [{"competence_id": "PHY.US.2.OPT.01", "relation": "exercises"}],
+            "est_minutes": 8, "asset_refs": ["fig_lochkamera_strahlen"],
+            "answer_key": "Der obere Leuchtpunkt L sendet ein Lichtbündel aus, von dem nur der Strahl durch die enge Blende weiterkommt – dieser trifft danach auf den UNTEREN Bereich der Rückwand (Bildpunkt B). Der untere Leuchtpunkt L' erzeugt auf demselben Weg einen Bildpunkt im OBEREN Bereich der Rückwand (B'). Weil sich alle Lichtbündel an der engen Blende kreuzen, vertauschen sich oben und unten (und auch links/rechts) – das Gesamtbild erscheint kopfstehend.",
+            "acceptable_reasoning": "Es muss erkennbar sein, dass das Kreuzen der Strahlen an der Blende die Vertauschung von oben/unten bewirkt – nicht nur die bloße Aussage, es sei eben umgekehrt.",
+            "watch_outs": ["Ohne den Blick auf das Kreuzen der Strahlen an der Blende bleibt die Erklärung oberflächlich."],
+            "rubric": []
+          },
+          {
+            "role": "task", "id": "t5", "kind": "multiple_choice",
+            "prompt": "Weißes Sonnenlicht trifft auf ein Glasprisma und wird dahinter als Regenbogenband aus vielen Farben sichtbar. Welche Aussage beschreibt diese Beobachtung physikalisch korrekt?",
+            "payload": {"kind": "multiple_choice", "options": [
+              "Das Prisma erzeugt selbst neue Farben, die im Sonnenlicht nicht enthalten waren.",
+              "Weißes Licht ist aus vielen Spektralfarben zusammengesetzt, die das Prisma sichtbar auffächert.",
+              "Nur das rote Licht kommt aus der Sonne, alle anderen Farben entstehen erst im Glas.",
+              "Das Regenbogenband entsteht durch Reflexion an der Prismenoberfläche, nicht durch das Licht selbst."
+            ], "select": "one"},
+            "response": {"mode": "choices", "options": ["A", "B", "C", "D"], "select": "one"},
+            "cognitive_level": "understand", "dimensions": ["E"],
+            "serves": [{"competence_id": "PHY.US.2.OPT.04", "relation": "exercises"}],
+            "est_minutes": 6, "asset_refs": [],
+            "answer_key": "Richtig ist B: Weißes Licht ist aus vielen Spektralfarben (Rot bis Violett) zusammengesetzt; das Prisma trennt sie räumlich auf, weil jede Farbe unterschiedlich stark gebrochen wird – es entstehen keine neuen Farben, sie waren immer schon im Licht enthalten.",
+            "acceptable_reasoning": null,
+            "watch_outs": ["Fehlvorstellung: Das Prisma 'erzeugt' oder 'färbt' das Licht – tatsächlich trennt es nur bereits vorhandene Spektralfarben durch unterschiedlich starke Brechung."],
+            "rubric": []
+          },
+          {
+            "role": "task", "id": "t6", "kind": "source_critique",
+            "prompt": "Ein Mitschüler behauptet: Endoskope in der Medizin sind nur ein Spielzeug für Ärzte, ein normales Kamerahandy würde denselben Zweck erfüllen. Recherchiere kurz (Schulbuch, verlässliche Website) den tatsächlichen Nutzen von Endoskopen und nimm begründet Stellung. Nenne mindestens eine Chance UND ein mögliches Risiko des Einsatzes optischer Geräte in der Medizin.",
+            "payload": null,
+            "response": {"mode": "lines", "n": 6},
+            "cognitive_level": "evaluate", "dimensions": ["S", "W"],
+            "serves": [{"competence_id": "PHY.US.2.OPT.03", "relation": "exercises"}],
+            "est_minutes": 10, "asset_refs": [],
+            "answer_key": "Die Behauptung ist unzutreffend: Ein Endoskop ist eine sehr dünne, flexible optische Sonde mit eigener Lichtquelle, die durch kleine Körperöffnungen oder Schnitte ins Körperinnere eingeführt werden kann – ein Kamerahandy kann das nicht. Chance: minimalinvasive Untersuchungen/Operationen (z. B. Magenspiegelung) ohne große Schnitte, schnellere Genesung. Risiko: Infektionsgefahr bei der Einführung, hohe Anschaffungs-/Wartungskosten, Notwendigkeit gut geschulten Personals; Fehlinterpretation der Bilder ist möglich. Eine gute Antwort nennt die Quelle, aus der die Informationen stammen.",
+            "acceptable_reasoning": "Jede sachlich richtige Recherche mit klar benannter Quelle, mindestens einer Chance und einem Risiko wird akzeptiert – die Formulierungen können variieren.",
+            "watch_outs": ["Unbelegte Behauptungen ohne Quellenangabe sollen als Schwachpunkt erkannt werden – das ist der Kern der Quellenkritik-Kompetenz.", "Nicht jede Website ist verlässlich; Schulbuch, Gesundheitsportale öffentlicher Träger oder Fachlexika sind vorzuziehen."],
+            "rubric": [
+              {"criterion": "content_accuracy", "levels": ["Recherche sachlich unvollständig oder falsch", "Recherche sachlich richtig, aber oberflächlich", "Recherche sachlich richtig, Chance und Risiko klar benannt und mit Quelle belegt"]},
+              {"criterion": "source_awareness", "levels": ["keine Quelle genannt", "Quelle genannt, nicht bewertet", "Quelle genannt und kurz auf Verlässlichkeit geprüft"]}
+            ]
+          },
+          {
+            "role": "task", "id": "t7", "kind": "create_produce",
+            "prompt": "Entwirf ein einfaches Werbeplakat (Stichworte + Skizze in Worten) für die Lochkamera als die einfachste Kamera der Welt. Erkläre darin in eigenen, altersgerechten Worten, WIE das Bild entsteht, sodass es auch jüngere Kinder verstehen.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 70},
+            "cognitive_level": "create", "dimensions": ["W"],
+            "serves": [{"competence_id": "PHY.US.2.OPT.01", "relation": "exercises"}],
+            "est_minutes": 9, "asset_refs": [],
+            "answer_key": "Eine gute Lösung erklärt adressatengerecht (einfache Sprache, evtl. mit eigener Skizze): Licht geht von jedem Punkt des Gegenstands in alle Richtungen aus; nur ein schmales Lichtbündel schafft es durch das winzige Loch; dadurch entsteht auf der Rückwand ein Bild, das kopfstehend, aber ansonsten dem Original ähnlich ist. Kreativität in Gestaltung und Sprache wird nicht bewertet, wohl aber die fachliche Richtigkeit der Erklärung.",
+            "acceptable_reasoning": "Jede altersgerechte, fachlich korrekte Erklärung des Leuchtpunkt-Bildpunkt-Prinzips wird akzeptiert, unabhängig von der konkreten Formulierung oder Gestaltung.",
+            "watch_outs": ["Fachliche Richtigkeit darf nicht der Vereinfachung geopfert werden – das Bild dreht sich einfach um, ohne Bezug zum Lichtbündel/zur Blende, ist zu unpräzise."],
+            "rubric": [
+              {"criterion": "physical_correctness", "levels": ["Erklärung fachlich fehlerhaft", "Erklärung im Kern richtig, Lücken", "Erklärung vollständig und korrekt"]},
+              {"criterion": "audience_fit", "levels": ["Fachsprache ohne Vereinfachung", "teilweise adressatengerecht", "durchgehend adressatengerecht für jüngere Kinder"]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

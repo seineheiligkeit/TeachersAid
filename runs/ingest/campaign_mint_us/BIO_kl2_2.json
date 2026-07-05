@@ -1,0 +1,290 @@
+{
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 2,
+  "scope_label": "Sinnesorgane und Wahrnehmung",
+  "title": "Wie das Gehirn aus Reizen eine Welt macht",
+  "kernfrage": "Warum können sich zwei Menschen bei gleichem Reiz auf unterschiedliche Wahrnehmungen einigen – oder auch nicht?",
+  "body": {
+    "intro": [
+      "Deine Augen, Ohren, deine Haut und deine Nase liefern ständig Signale – aber erst dein Gehirn macht daraus eine Wahrnehmung. Manchmal täuscht es sich dabei sogar. In diesem Arbeitsblatt untersuchst du, wie Sinnesorgane und Gehirn zusammenarbeiten und wo die Grenzen unserer Wahrnehmung liegen."
+    ],
+    "data_figures": [
+      {
+        "id": "fig_reaktionszeit",
+        "intent": "comparison",
+        "title": "Durchschnittliche Reaktionszeit auf verschiedene Reize",
+        "xlabel": "Reizart",
+        "ylabel": "Reaktionszeit (Millisekunden)",
+        "categories": [
+          "Sehreiz (Licht)",
+          "Hörreiz (Ton)",
+          "Tastreiz (Berührung)"
+        ],
+        "values": [
+          190,
+          160,
+          155
+        ],
+        "illustrative": true
+      }
+    ],
+    "assets": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Sinnesorgane, Gehirn und Wahrnehmung",
+        "throughline": "Vom Erklären der Reizverarbeitung über den Vergleich echter Reaktionszeit-Daten und die Analyse einer optischen Täuschung bis zur begründeten Stellungnahme zur Nutzung von Kopfhörern – die Schüler:innen erkennen, dass Wahrnehmung eine aktive Leistung des Gehirns ist, kein bloßes Abbilden der Wirklichkeit.",
+        "talking_points": [
+          "Sinnesorgane liefern nur Rohdaten (elektrische Signale) – die eigentliche 'Wahrnehmung' entsteht erst im Gehirn, das ist ein zentraler Fehlvorstellungs-Punkt.",
+          "Optische Täuschungen sind kein 'Defekt' des Auges, sondern zeigen, wie das Gehirn aktiv interpretiert und dabei Erfahrungswissen nutzt.",
+          "Reaktionszeiten unterscheiden sich systematisch je nach Sinneskanal – ein guter Anlass für Datenauswertung mit direktem Alltagsbezug (z.B. Sport, Verkehr)."
+        ],
+        "extensions": [
+          "Partnerexperiment: Reaktionszeit mit einem fallenden Lineal messen und mit den Werten im Diagramm vergleichen.",
+          "Recherche zu weiteren optischen Täuschungen (z.B. Müller-Lyer-Täuschung) und deren Erklärung.",
+          "Diskussion: Wie nutzen Werbung oder Verkehrsschilder gezielt Wahrnehmungsgesetze?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "content_comprehension",
+            "prompt": "Erkläre in eigenen Worten den Unterschied zwischen 'einen Reiz aufnehmen' und 'einen Reiz wahrnehmen'. Nenne dazu ein Beispiel mit dem Auge.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "W"
+            ],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.WIS.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "asset_refs": [],
+            "answer_key": "Das Auge nimmt den Lichtreiz auf (die Sinneszelle wandelt Licht in ein elektrisches Signal um). Wahrnehmen bedeutet: Das Gehirn verarbeitet dieses Signal, vergleicht es mit Erfahrungen und macht daraus ein bewusstes Bild. Beispiel: Das Auge nimmt Lichtwellen einer roten Ampel auf, aber erst das Gehirn 'erkennt' daraus 'Stopp, ich muss anhalten'.",
+            "acceptable_reasoning": "Jedes andere passende Sinnesorgan-Beispiel (Ohr, Haut) wird ebenso akzeptiert, solange der Unterschied Aufnahme/Verarbeitung klar wird.",
+            "watch_outs": [
+              "Häufige Fehlvorstellung: 'Das Auge sieht' – tatsächlich liefert das Auge nur das Rohsignal, das eigentliche Sehen (Erkennen, Deuten) passiert im Gehirn."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "matching",
+            "prompt": "Ordne jedes Sinnesorgan der Reizart zu, die es hauptsächlich aufnimmt.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Auge",
+                "Ohr",
+                "Haut",
+                "Nase",
+                "Zunge"
+              ],
+              "right": [
+                "Lichtreize",
+                "Schallwellen",
+                "Druck, Temperatur, Schmerz",
+                "Duftstoffe (chemisch)",
+                "Geschmacksstoffe (chemisch)"
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "remember",
+            "dimensions": [
+              "E"
+            ],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.ERK.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 5,
+            "asset_refs": [],
+            "answer_key": "Auge → Lichtreize. Ohr → Schallwellen. Haut → Druck, Temperatur, Schmerz. Nase → Duftstoffe (chemisch). Zunge → Geschmacksstoffe (chemisch).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Nase und Zunge werden beide als 'chemische Sinne' bezeichnet – das ist ein guter Merkpunkt, kein Widerspruch."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "data_interpretation",
+            "prompt": "Betrachte das Diagramm zu den Reaktionszeiten. Auf welchen Reiz reagieren Menschen im Schnitt am langsamsten, auf welchen am schnellsten? Formuliere eine mögliche Erklärung, warum das so sein könnte.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "E"
+            ],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.ERK.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [
+              "fig_reaktionszeit"
+            ],
+            "answer_key": "Am langsamsten: Sehreiz (ca. 190 ms). Am schnellsten: Tastreiz (ca. 155 ms). Mögliche Erklärung: Ein Lichtsignal muss vom Auge über den Sehnerv einen längeren Weg zu den zuständigen Hirnbereichen zurücklegen und dort stärker verarbeitet werden (Bildererkennung), während ein Tastreiz von der Haut über kürzere Nervenbahnen und mit einfacherer Verarbeitung das Rückenmark/Gehirn erreicht.",
+            "acceptable_reasoning": "Jede physiologisch plausible Erklärung wird akzeptiert (z.B. unterschiedliche Nervenleitgeschwindigkeiten, unterschiedliche Verarbeitungstiefe) – wichtig ist, dass die Schüler:innen NICHT nur die Zahlen ablesen, sondern eine Ursache vermuten.",
+            "watch_outs": [
+              "Diese Werte sind gerundete Durchschnittswerte aus Reaktionszeit-Studien und schwanken individuell stark – nicht als exakte Fakten für jede Person darstellen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "create_produce",
+            "prompt": "Entwirf ein einfaches Modell (Skizze mit Beschriftung), das zeigt, wie ein Reiz vom Sinnesorgan bis zur bewussten Wahrnehmung im Gehirn 'wandert'. Nutze Pfeile und mindestens vier Stationen (z.B. Reiz, Sinneszelle, Nerv, Gehirn).",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 60
+            },
+            "cognitive_level": "create",
+            "dimensions": [
+              "E"
+            ],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.ERK.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Eine vollständige Skizze enthält mindestens: 1) Reiz (z.B. Lichtwelle) → 2) Sinnesorgan/Sinneszelle (z.B. Auge, Sehzelle) → 3) Nervenbahn (z.B. Sehnerv) → 4) Gehirn (Verarbeitung, z.B. Sehrinde) → bewusste Wahrnehmung. Pfeile zeigen die Reihenfolge, Beschriftungen benennen jede Station korrekt.",
+            "acceptable_reasoning": "Auch ein Modell mit einem anderen Sinnesorgan (Ohr, Haut) wird akzeptiert, solange die vier Stationen sinnvoll benannt und in der richtigen Reihenfolge dargestellt sind.",
+            "watch_outs": [
+              "Ein Modell ist eine Vereinfachung – die Schüler:innen sollen erkennen, dass echte Nervenbahnen komplexer verlaufen, das Modell aber das Prinzip korrekt zeigt."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "true_false_justify",
+            "prompt": "Beurteile: Wenn zwei Personen dieselbe optische Täuschung unterschiedlich beschreiben, muss eine der beiden 'falsch sehen' bzw. ein krankes Auge haben. Richtig oder falsch – begründe.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Unterschiedliche Beschreibungen einer optischen Täuschung bedeuten immer einen Sehfehler bei einer der beiden Personen."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 3
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "S"
+            ],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.STA.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 5,
+            "asset_refs": [],
+            "answer_key": "Falsch. Optische Täuschungen entstehen, weil das Gehirn Erfahrungswissen und Interpretationsregeln nutzt, um aus mehrdeutigen Signalen ein Bild zu konstruieren – das ist bei gesunden Augen normal und sagt nichts über einen Sehfehler aus.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Wichtig ist die Unterscheidung: eine naturwissenschaftlich erklärbare Wahrnehmungsvariation ist kein 'Defekt' – diese Verwechslung ist eine typische Fehlvorstellung."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "source_critique",
+            "prompt": "Ein Werbevideo behauptet: 'Unser neues Konzentrationsgetränk verdoppelt sofort die Reaktionsgeschwindigkeit deines Gehirns – wissenschaftlich bewiesen!' Prüfe diese Aussage kritisch: Welche Informationen fehlen, um sie naturwissenschaftlich beurteilen zu können?",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "S"
+            ],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.STA.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "Es fehlen u.a.: Wer hat das untersucht (unabhängige Studie oder nur die Firma selbst)? Wie viele Personen wurden getestet? Wurde mit einer Kontrollgruppe (ohne Getränk) verglichen? Wie wurde 'Reaktionsgeschwindigkeit' überhaupt gemessen? Eine Verdopplung ist ein sehr extremer Wert, der besonders kritisch hinterfragt werden sollte – reale Effekte von Koffein o.ä. sind meist deutlich kleiner.",
+            "acceptable_reasoning": "Akzeptiert werden alle Antworten, die mindestens zwei der folgenden Kritikpunkte fachlich korrekt benennen: fehlende Studienquelle, fehlende Kontrollgruppe, fehlende Messmethode, unrealistische Größenordnung der Behauptung.",
+            "watch_outs": [
+              "Ziel ist NICHT, Werbung pauschal abzulehnen, sondern zu erkennen, welche Kriterien eine naturwissenschaftlich seriöse Aussage erfüllen muss."
+            ],
+            "rubric": [
+              {
+                "criterion": "critical_analysis",
+                "levels": [
+                  "Nennt keinen oder einen unspezifischen Kritikpunkt",
+                  "Nennt mindestens einen konkreten methodischen Kritikpunkt (z.B. fehlende Kontrollgruppe)",
+                  "Nennt mehrere konkrete methodische Kritikpunkte und begründet, warum die Aussage naturwissenschaftlich nicht haltbar ist"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "decision_scenario",
+            "prompt": "Formuliere eine Handlungsempfehlung für Jugendliche zum Thema Kopfhörer-Nutzung, basierend auf dem, was du über Sinnesorgane gelernt hast.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Viele Jugendliche hören täglich mehrere Stunden über Kopfhörer laute Musik. Das Ohr wandelt Schallwellen über feine Sinneszellen im Innenohr in Nervensignale um – diese Zellen können sich bei zu lauter, zu langer Belastung nicht mehr erholen und sterben ab. Erstelle eine kurze, begründete Handlungsempfehlung für einen gesunden Umgang mit Kopfhörern."
+            },
+            "response": {
+              "mode": "box",
+              "min_height_mm": 40
+            },
+            "cognitive_level": "create",
+            "dimensions": [
+              "S"
+            ],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.STA.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "Eine gute Empfehlung nennt konkrete, biologisch begründete Maßnahmen, z.B.: Lautstärke unter ca. 60% der Maximallautstärke halten, regelmäßige Hörpausen einlegen (z.B. 60-Minuten-Regel), da sich geschädigte Haarsinneszellen im Innenohr nicht regenerieren können – ein Hörschaden ist dauerhaft. Die Empfehlung sollte den biologischen Grund (irreversible Schädigung der Sinneszellen) explizit nennen, nicht nur 'weniger laut hören'.",
+            "acceptable_reasoning": "Auch andere sinnvolle Maßnahmen (Noise-Cancelling statt Lautstärke erhöhen, In-Ear vs. Over-Ear) werden akzeptiert, wenn sie mit dem biologischen Hintergrund verknüpft werden.",
+            "watch_outs": [
+              "Die Empfehlung soll fachlich begründet sein (Bezug zu den Sinneszellen), nicht nur eine allgemeine Ermahnung ohne biologischen Hintergrund."
+            ],
+            "rubric": []
+          }
+        ]
+      }
+    ]
+  }
+}

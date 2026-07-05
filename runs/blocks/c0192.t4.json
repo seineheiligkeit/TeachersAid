@@ -1,0 +1,130 @@
+{
+  "id": "c0192.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "fig_lochkamera_strahlen"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Betrachte die Abbildung zur Lochkamera (Lichtbündel von zwei Punkten der Flamme). Erkläre mithilfe der Zeichnung, warum das Bild auf der Rückwand kopfstehend ist.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.2.OPT.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Der obere Leuchtpunkt L sendet ein Lichtbündel aus, von dem nur der Strahl durch die enge Blende weiterkommt – dieser trifft danach auf den UNTEREN Bereich der Rückwand (Bildpunkt B). Der untere Leuchtpunkt L' erzeugt auf demselben Weg einen Bildpunkt im OBEREN Bereich der Rückwand (B'). Weil sich alle Lichtbündel an der engen Blende kreuzen, vertauschen sich oben und unten (und auch links/rechts) – das Gesamtbild erscheint kopfstehend.",
+    "acceptable_reasoning": "Es muss erkennbar sein, dass das Kreuzen der Strahlen an der Blende die Vertauschung von oben/unten bewirkt – nicht nur die bloße Aussage, es sei eben umgekehrt.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Ohne den Blick auf das Kreuzen der Strahlen an der Blende bleibt die Erklärung oberflächlich."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Physik",
+  "klasse": 2,
+  "kompetenzbereich": "Optische Systeme",
+  "competences": [
+    "PHY.US.2.OPT.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "fig_lochkamera_strahlen",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:coordinate_plane",
+      "spec": {
+        "points": [
+          {
+            "x": 0,
+            "y": 3,
+            "label": "L (oben)"
+          },
+          {
+            "x": 0,
+            "y": -2,
+            "label": "L' (unten)"
+          },
+          {
+            "x": 4,
+            "y": 0,
+            "label": "Blende"
+          },
+          {
+            "x": 9,
+            "y": -1.2,
+            "label": "B (Bildpunkt)"
+          },
+          {
+            "x": 9,
+            "y": 0.8,
+            "label": "B'"
+          }
+        ],
+        "segments": [
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            4
+          ]
+        ],
+        "xmin": -1,
+        "xmax": 10,
+        "ymin": -3,
+        "ymax": 4,
+        "title": "Lichtbündel durch die Lochblende"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0192",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:24+00:00",
+  "updated_at": "2026-07-05T05:34:24+00:00"
+}

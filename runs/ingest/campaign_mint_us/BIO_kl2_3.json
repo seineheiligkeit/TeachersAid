@@ -1,0 +1,286 @@
+{
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 2,
+  "scope_label": "Pilze und ihre Symbiosen",
+  "title": "Pilze – die heimlichen Netzwerker des Waldes",
+  "kernfrage": "Wie kann ein Pilz einem Baum beim Überleben helfen, obwohl er selbst keine Fotosynthese betreibt?",
+  "body": {
+    "intro": [
+      "Wenn du an einen Pilz denkst, siehst du wahrscheinlich einen Fruchtkörper wie einen Steinpilz vor dir. Doch das ist nur die 'Spitze des Eisbergs' – der eigentliche Pilz lebt meist unsichtbar im Boden und geht dort erstaunliche Partnerschaften mit Bäumen ein. In diesem Arbeitsblatt untersuchst du Aufbau, Fortpflanzung und Lebensgemeinschaften von Pilzen."
+    ],
+    "data_figures": [
+      {
+        "id": "fig_pilzarten",
+        "intent": "comparison",
+        "title": "Anzahl bekannter Pilzarten nach Lebensweise (weltweit, grobe Schätzung)",
+        "xlabel": "Lebensweise",
+        "ylabel": "Geschätzte Artenzahl (in Tausend)",
+        "categories": [
+          "Symbiontisch (z.B. Mykorrhiza)",
+          "Parasitisch",
+          "Saprophytisch (Zersetzer)"
+        ],
+        "values": [
+          20,
+          10,
+          70
+        ],
+        "illustrative": true
+      }
+    ],
+    "assets": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Aufbau, Fortpflanzung und Symbiosen von Pilzen",
+        "throughline": "Vom Benennen der Pilzbestandteile über das Auswerten einer Artenzahl-Grafik und das Zuordnen von Symbiose-Typen bis zur kreativen Modellbildung und einer begründeten Handlungsempfehlung zum Schutz von Pilznetzwerken – die Schüler:innen erkennen, dass Pilze weder Pflanzen noch bloße 'Schädlinge' sind, sondern eine eigenständige, oft symbiotische Lebensform.",
+        "talking_points": [
+          "Der sichtbare Fruchtkörper (z.B. 'Schwammerl') ist nur das Fortpflanzungsorgan – der eigentliche Pilzkörper (Myzel) ist ein unterirdisches Fadengeflecht, oft kilometerlang.",
+          "Mykorrhiza ist eine der wichtigsten Symbiosen der Natur: Der Pilz liefert Wasser und Mineralstoffe, der Baum liefert Zucker aus der Fotosynthese – beide profitieren.",
+          "Pilze sind eine eigene Lebewesen-Gruppe, weder Tier noch Pflanze – ein häufiger Irrtum ist, sie den Pflanzen zuzuordnen."
+        ],
+        "extensions": [
+          "Waldbegehung: Nach Fruchtkörpern suchen und versuchen, den Baum zu identifizieren, mit dem sie eine Symbiose eingehen könnten.",
+          "Recherche: Welche Speisepilze werden in Österreich kommerziell gezüchtet und wie unterscheidet sich das von der Mykorrhiza-Lebensweise?",
+          "Vergleich: Wie unterscheidet sich eine Pilz-Symbiose von einer Flechte (Pilz + Alge)?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "structure_overview",
+            "prompt": "Benenne die zwei Hauptbestandteile eines Pilzes und beschreibe kurz, welche Aufgabe jeder Teil hat: den Fruchtkörper (das, was man oberirdisch sieht, z.B. beim Steinpilz) und das Myzel (das unterirdische Fadengeflecht).",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "remember",
+            "dimensions": [
+              "W"
+            ],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.WIS.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "asset_refs": [],
+            "answer_key": "Fruchtkörper: dient der Fortpflanzung, bildet und verbreitet die Sporen (die 'Samen' der Pilze). Myzel: das eigentliche, meist unsichtbare Fadengeflecht im Boden oder Holz, nimmt Wasser und Nährstoffe auf und kann sehr groß und alt werden.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Häufige Fehlvorstellung: Der Fruchtkörper WIRD als 'der Pilz' verstanden – tatsächlich ist er nur ein kleiner, kurzlebiger Teil des viel größeren Myzels."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "content_comprehension",
+            "prompt": "Betrachte das Diagramm zu den geschätzten Pilzarten nach Lebensweise. Welche Lebensweise ist demnach am häufigsten? Erkläre, was 'saprophytisch' bedeutet.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "E"
+            ],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.ERK.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "asset_refs": [
+              "fig_pilzarten"
+            ],
+            "answer_key": "Am häufigsten ist die saprophytische (zersetzende) Lebensweise mit geschätzt 70.000 Arten. Saprophytisch bedeutet, dass der Pilz sich von totem organischem Material ernährt (z.B. abgestorbenem Holz, Laub) und es dabei zersetzt – er ist also ein 'Recycler' im Ökosystem.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Diese Zahlen sind grobe, gerundete Schätzungen aus der Mykologie (die tatsächliche Gesamtzahl der Pilzarten ist unbekannt) – nicht als exakte Fakten darstellen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "cause_effect_match",
+            "prompt": "Ordne jeder Pilz-Lebensweise die passende Beschreibung der Beziehung zu anderen Lebewesen zu.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Symbiontisch (z.B. Mykorrhiza-Pilz)",
+                "Parasitisch (z.B. Hallimasch an geschwächten Bäumen)",
+                "Saprophytisch (z.B. Zersetzerpilz auf totem Holz)"
+              ],
+              "right": [
+                "Beide Partner profitieren voneinander",
+                "Der Pilz schadet einem lebenden Wirt zu seinem eigenen Vorteil",
+                "Der Pilz ernährt sich von totem, nicht mehr lebendigem Material"
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 3
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "E"
+            ],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.ERK.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 7,
+            "asset_refs": [],
+            "answer_key": "Symbiontisch → beide Partner profitieren voneinander. Parasitisch → der Pilz schadet einem lebenden Wirt zu seinem eigenen Vorteil. Saprophytisch → der Pilz ernährt sich von totem Material.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Manche Pilze wechseln je nach Bedingungen zwischen den Lebensweisen (z.B. Hallimasch kann sowohl Schwächeparasit als auch Saprophyt sein) – für Klasse 2 reicht die grundsätzliche Unterscheidung."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "experiment_protocol",
+            "prompt": "Du willst untersuchen, ob Mykorrhiza-Pilze das Wachstum junger Bäume tatsächlich fördern. Skizziere einen einfachen Versuchsaufbau mit zwei Gruppen von Baumsetzlingen, der diese Frage prüfen könnte.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "apply",
+            "dimensions": [
+              "E"
+            ],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.ERK.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "Zwei möglichst gleiche Gruppen junger Baumsetzlinge (gleiche Art, gleiches Alter, gleicher Boden, gleicher Standort, gleiche Wassermenge) werden gebildet. Gruppe A erhält Erde mit Mykorrhiza-Pilzen (z.B. aus Waldboden geimpft), Gruppe B (Kontrollgruppe) erhält sterile bzw. pilzfreie Erde. Nach einigen Wochen/Monaten wird das Wachstum (Höhe, Blattzahl o.ä.) gemessen und verglichen.",
+            "acceptable_reasoning": "Akzeptiert wird jeder Versuchsaufbau, der klar eine Kontrollgruppe (ohne Pilz) und eine Versuchsgruppe (mit Pilz) unterscheidet und eine messbare Wachstumsgröße nennt.",
+            "watch_outs": [
+              "Zentral ist die Idee der Kontrollgruppe – ohne sie lässt sich ein beobachteter Unterschied nicht eindeutig auf den Pilz zurückführen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "create_produce",
+            "prompt": "Zeichne ein einfaches Modell einer Mykorrhiza-Symbiose zwischen einer Baumwurzel und einem Pilz-Myzel. Beschrifte, was der Baum dem Pilz gibt und was der Pilz dem Baum gibt.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55
+            },
+            "cognitive_level": "create",
+            "dimensions": [
+              "W"
+            ],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.WIS.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "asset_refs": [],
+            "answer_key": "Ein vollständiges Modell zeigt eine Baumwurzel, die von Pilzfäden (Myzel) umgeben bzw. durchzogen ist, mit zwei beschrifteten Pfeilen: Baum → Pilz: Zucker (Traubenzucker aus der Fotosynthese). Pilz → Baum: Wasser und Mineralstoffe (z.B. Phosphat, Stickstoff), die der Pilz mit seinem feinen Fadengeflecht aus einem größeren Bodenvolumen aufnehmen kann als die Wurzel allein.",
+            "acceptable_reasoning": "Auch vereinfachte Begriffe wie 'Nährstoffe' statt 'Mineralstoffe' oder 'Nahrung' statt 'Zucker' werden akzeptiert, solange die Richtung des Austauschs (wer gibt was) korrekt ist.",
+            "watch_outs": [
+              "Ein Modell zeigt das Prinzip vereinfacht – reale Mykorrhiza-Netzwerke verbinden oft viele Bäume gleichzeitig, das kann als Erweiterung erwähnt werden, muss aber nicht gezeichnet werden."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "true_false_justify",
+            "prompt": "Beurteile die folgende Aussage als richtig oder falsch und begründe: 'Pilze sind eine besondere Art von Pflanzen, weil sie im Boden wachsen und nicht weglaufen können.'",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Pilze sind eine besondere Art von Pflanzen, weil sie im Boden wachsen und nicht weglaufen können."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 3
+            },
+            "cognitive_level": "remember",
+            "dimensions": [
+              "S"
+            ],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.STA.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 5,
+            "asset_refs": [],
+            "answer_key": "Falsch. Pilze bilden ein eigenes biologisches Reich, das weder zu den Pflanzen noch zu den Tieren gehört. Anders als Pflanzen betreiben sie keine Fotosynthese und haben keine Zellwände aus Zellulose, sondern aus Chitin (wie auch Insektenpanzer).",
+            "acceptable_reasoning": "Es genügt für Klasse 2, wenn 'keine Fotosynthese' als Hauptunterscheidungsmerkmal genannt wird – der Chitin-Aspekt ist eine mögliche Ergänzung, aber nicht zwingend.",
+            "watch_outs": [
+              "Diese Fehlvorstellung ('Pilze = Pflanzen') ist sehr verbreitet und sollte explizit korrigiert werden, nicht nur implizit."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "decision_scenario",
+            "prompt": "Beim Waldspaziergang entdeckt eine Gruppe Jugendlicher ein großes Pilzgeflecht (Myzel) unter der Laubstreu, als sie nach Stöcken graben. Erstelle eine begründete Handlungsempfehlung: Wie sollten sie sich verhalten?",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Die Jugendlichen überlegen, ob sie das Myzel zum Anschauen ausgraben, mit Erde bedecken und weitergehen, oder Fotos machen und einen Biologielehrer fragen, um welche Pilzart es sich handeln könnte. Was empfiehlst du und warum?"
+            },
+            "response": {
+              "mode": "box",
+              "min_height_mm": 40
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "S"
+            ],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.STA.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "Eine fachlich fundierte Empfehlung erkennt, dass das Ausgraben das empfindliche Myzel und seine Symbiose-Verbindungen zu Baumwurzeln zerstören würde, was dem Waldökosystem schadet und nicht rückgängig zu machen ist. Empfohlen wird daher, das Myzel möglichst unberührt mit Erde/Laub zu bedecken, ggf. Fotos zu machen und die Beobachtung später (z.B. mit einer Pilz-App oder einer Lehrkraft) zu bestimmen, statt es auszugraben.",
+            "acceptable_reasoning": "Akzeptiert wird auch eine Antwort, die das vorsichtige Freilegen zu reinen Beobachtungszwecken erlaubt, solange sie explizit begründet, warum ein Zerstören/dauerhaftes Ausgraben vermieden werden sollte (Schutz des Ökosystems, Unumkehrbarkeit).",
+            "watch_outs": [
+              "Ziel ist nicht 'nichts anfassen dürfen', sondern eine begründete Abwägung zwischen Neugier/Lernen und Naturschutz."
+            ],
+            "rubric": [
+              {
+                "criterion": "sustainability_reasoning",
+                "levels": [
+                  "Gibt eine Empfehlung ohne fachliche Begründung",
+                  "Gibt eine Empfehlung mit einer einfachen Begründung (z.B. 'schadet der Natur')",
+                  "Begründet die Empfehlung konkret mit der Bedeutung des Myzels für das Ökosystem (Symbiose, Unumkehrbarkeit der Zerstörung)"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

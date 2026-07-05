@@ -1,0 +1,76 @@
+{
+  "id": "c0170.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Beurteile: Sind folgende Aussagen über den Teich naturwissenschaftlich überprüfbar oder nicht? Begründe kurz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "In unserer Beobachtung wurden mehr Wasserläufer als Enten gezählt.",
+        "Teiche sind die schönsten Lebensräume überhaupt.",
+        "Wenn der Wasserspiegel sinkt, sterben empfindliche Pflanzenarten am Ufer zuerst.",
+        "Man sollte generell nie in der Natur eingreifen."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "überprüfbar? (ja/nein)",
+        "Begründung"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "S",
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.STA.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "1 ja (Zähldaten, messbar/vergleichbar) · 2 nein (Geschmacksurteil, keine messbare Größe) · 3 ja (beobachtbarer Zusammenhang, prüfbar durch Beobachtung über Zeit) · 4 nein (allgemeine Werthaltung/Regel, kein prüfbarer naturwissenschaftlicher Satz).",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Kern von STA.01: naturwissenschaftlich prüfbar heißt nicht automatisch 'wahr' oder 'wichtiger' – nur, dass man es an der Wirklichkeit testen kann."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 1,
+  "kompetenzbereich": "Standpunkte begründen und reflektiert handeln (S)",
+  "competences": [
+    "BIO.US.x.STA.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "S",
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0170",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:11+00:00",
+  "updated_at": "2026-07-05T05:34:11+00:00"
+}

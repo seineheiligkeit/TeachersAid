@@ -1,0 +1,84 @@
+{
+  "id": "c0191.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Der Elternverein überlegt, das Glücksrad-Spiel beim nächsten Schulfest wieder aufzubauen. Ein Los kostet 1 €, ein gewonnener Stern wird gegen einen kleinen Preis im Wert von 2 € eingetauscht. Nimm Stellung: Ist dieses Spiel aus Sicht der Spieler:innen eher „fair“, „großzügig“ oder „zu Ungunsten der Spieler:innen“ gestaltet? Begründe deine Einschätzung mit der berechneten Gewinnwahrscheinlichkeit UND überlege, was der Elternverein mit den Einnahmen der übrigen 70 % vermutlich finanziert.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "1 € Einsatz, 30 % Gewinnchance auf einen 2-€-Preis — fair, großzügig oder zu Ungunsten der Spieler:innen?"
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "BEG",
+      "MOD"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.4.DAT.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Es gewinnen nur 30 % der Spieler:innen überhaupt einen Preis; die übrigen 70 % zahlen 1 € ohne Gegenwert. Eine vollständige Einschätzung erkennt, dass das Spiel aus reiner Gewinnchancen-Sicht eher zu Ungunsten der Spieler:innen ausfällt (nicht „fair“ im Sinne von 50:50, aber auch nicht als reine Abzocke zu werten, wenn man bedenkt, dass Schulfeste typischerweise wohltätigen/schulischen Zwecken dienen). Die Einnahmen aus den 70 % ohne Gewinn finanzieren vermutlich den Rest des Schulfests bzw. gemeinnützige Zwecke der Schule/des Elternvereins — das ist bei Schulfesten üblich und rechtfertigt eine geringere Gewinnchance als bei einem „fairen“ Spiel.",
+    "acceptable_reasoning": "Verknüpfung der berechneten Wahrscheinlichkeit (30 %) mit einer sachlich begründeten Bewertung, die den Kontext (Schulfest, gemeinnütziger Zweck) mitdenkt statt eine reine Zahlenaussage zu wiederholen.",
+    "rubric": [
+      {
+        "criterion": "Bezug auf berechnete Wahrscheinlichkeit",
+        "levels": [
+          "Kein Bezug zu Zahlen",
+          "Zahl genannt, nicht eingeordnet",
+          "Zahl korrekt zur Bewertung herangezogen"
+        ]
+      },
+      {
+        "criterion": "Kontextbezogene Begründung (Schulfest-Zweck)",
+        "levels": [
+          "Fehlt",
+          "Ansatzweise erwähnt",
+          "Schlüssig in die Bewertung einbezogen"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Eine reine Wiederholung der Zahl „30 %“ ohne Einordnung (fair/unfair/wieso) wird nicht als vollständige Stellungnahme gewertet.",
+      "Es gibt hier bewusst keine einzig richtige Antwort — bewertet wird die Qualität der Begründung, nicht eine bestimmte Position."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Mathematik",
+  "klasse": 4,
+  "kompetenzbereich": "4: Daten und Zufall",
+  "competences": [
+    "MAT.US.4.DAT.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "BEG",
+    "MOD"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0191",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:23+00:00",
+  "updated_at": "2026-07-05T05:34:23+00:00"
+}

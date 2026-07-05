@@ -1,0 +1,85 @@
+{
+  "id": "c0181.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Annas App zeigt zusätzlich die Anzahl der Pedaltritte: 4528 Tritte für die ersten 7 km. Schreibe diese Zahl im Stellenwertsystem auf (Tausender, Hunderter, Zehner, Einer) und runde sie auf die nächsten vollen Hunderter (Überschlagsrechnung).",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Tausender",
+        "Hunderter",
+        "Zehner",
+        "Einer"
+      ],
+      "rows": 1
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "OPE",
+      "DAR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.1.ZAH.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "4528 Tritte: 4 Tausender, 5 Hunderter, 2 Zehner, 8 Einer. Gerundet auf volle Hunderter: 4500 Tritte.",
+    "acceptable_reasoning": "Bündeln in Zehnerschritten: 8 Einer bündeln sich noch nicht zu einem Zehner, daher bleibt die Zehnerstelle bei Rundung auf Hunderter entscheidend (2 < 5 → abrunden).",
+    "rubric": [
+      {
+        "criterion": "Stellenwerttabelle korrekt",
+        "levels": [
+          "Fehler",
+          "Vollständig korrekt (4-5-2-8)"
+        ]
+      },
+      {
+        "criterion": "Rundung korrekt",
+        "levels": [
+          "Falsch gerundet",
+          "4500 korrekt mit Begründung"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Rundungsregel wiederholen: Entscheidend ist die Ziffer EINE Stelle rechts von der Rundungsstelle.",
+      "4528 wird manchmal fälschlich als 4600 gerundet — die Zehnerziffer (2) genau prüfen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Mathematik",
+  "klasse": 1,
+  "kompetenzbereich": "1: Zahlen und Maße",
+  "competences": [
+    "MAT.US.1.ZAH.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "OPE",
+    "DAR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0181",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:16+00:00",
+  "updated_at": "2026-07-05T05:34:16+00:00"
+}

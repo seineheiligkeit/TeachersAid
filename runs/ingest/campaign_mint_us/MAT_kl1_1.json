@@ -1,0 +1,201 @@
+{
+  "subject": "Mathematik",
+  "klasse": 1,
+  "kompetenzbereich": "1: Zahlen und Maße",
+  "title": "Der Radweg-Tracker — Zahlen unterwegs",
+  "kernfrage": "Wie liest und ordnest du Zahlen, die dir eine Fahrrad-App auf einer Tour anzeigt?",
+  "body": {
+    "intro": [],
+    "data_figures": [],
+    "assets": [
+      {
+        "id": "abb1",
+        "role": "figure",
+        "generator": "matplotlib:number_line",
+        "spec": {
+          "min": 0,
+          "max": 20,
+          "step": 1,
+          "marks": [
+            { "at": 3.5, "label": "Tim" },
+            { "at": 7, "label": "Anna" },
+            { "at": 12.25, "label": "Ben" }
+          ],
+          "title": "Zurückgelegte Strecke (in km) auf dem Radweg"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Strecken lesen, ordnen und umrechnen",
+        "throughline": "Ausgehend von einer Fahrrad-App, die Kilometerstände als Dezimal- und Bruchzahlen anzeigt, üben die Schüler:innen das Lesen, Vergleichen und Umrechnen von Zahlen und Größen — vom Ablesen am Zahlenstrahl über das Stellenwertsystem bis zur Bruchdeutung als Anteil.",
+        "talking_points": [
+          "Eine Fahrrad-App zeigt Kilometer oft als Dezimalzahl (12,25 km) — das ist derselbe Wert wie 12 1/4 km.",
+          "Der Zahlenstrahl macht sichtbar, wer weiter vorne liegt, auch wenn die Zahlen unterschiedlich geschrieben sind (Dezimal- vs. Bruchschreibweise).",
+          "Das dezimale Stellenwertsystem bündelt in Zehnerschritten — das erklärt, warum 100 Zehner-Schritte ein Kilometer bzw. 1000 Meter ergeben.",
+          "Überschlagsrechnungen (Runden auf ganze km) helfen, Ergebnisse schnell zu prüfen."
+        ],
+        "extensions": [
+          "Schüler:innen tragen ihre eigene Schulweg-Länge in km/m ein und vergleichen mit der Klasse.",
+          "Diskussion: Warum zeigen manche Apps Kilometer, andere Meter oder Meilen an?",
+          "Römische Zahlen als Vergleich: Wie mühsam wäre eine App-Anzeige in römischen Ziffern?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "data_interpretation",
+            "prompt": "Drei Freund:innen machen eine Radtour. Ihre App zeigt die bisher zurückgelegte Strecke am Zahlenstrahl (Abbildung). Lies aus der Abbildung ab: Wer ist am weitesten gefahren, wer am wenigsten weit? Schreibe alle drei Streckenlängen der Größe nach geordnet auf (kleinste zuerst).",
+            "payload": null,
+            "response": { "mode": "lines", "n": 3 },
+            "cognitive_level": "remember",
+            "dimensions": ["DAR"],
+            "serves": [
+              { "competence_id": "MAT.US.1.ZAH.01", "relation": "exercises" }
+            ],
+            "est_minutes": 5,
+            "asset_refs": ["abb1"],
+            "answer_key": "Geordnet (kleinste zuerst): Tim 3,5 km, Anna 7 km, Ben 12,25 km. Am weitesten: Ben. Am wenigsten weit: Tim.",
+            "acceptable_reasoning": "Ablesen der Markierungen am Zahlenstrahl und Vergleich der Positionen von links nach rechts.",
+            "watch_outs": [
+              "Manche Schüler:innen lesen 12,25 als »zwölf-zwei-fünf« und vergleichen dann falsch mit 7 — auf die Stellenwerte hinweisen.",
+              "Die Position am Zahlenstrahl (weiter rechts = größer) explizit als Vergleichsregel benennen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "calculation",
+            "prompt": "Die App zeigt Bens Gesamtstrecke als 12,25 km an. Schreibe diese Zahl als gemischte Zahl (ganze Kilometer + Bruch) und erkläre in einem Satz, was die Nachkommastellen bedeuten.",
+            "payload": null,
+            "response": { "mode": "lines", "n": 3 },
+            "cognitive_level": "understand",
+            "dimensions": ["DAR", "OPE"],
+            "serves": [
+              { "competence_id": "MAT.US.1.ZAH.01", "relation": "exercises" }
+            ],
+            "est_minutes": 6,
+            "asset_refs": [],
+            "answer_key": "12,25 km = 12 1/4 km (0,25 = 25/100 = 1/4). Die Nachkommastellen geben den Anteil des nächsten Kilometers an, den Ben schon zurückgelegt hat.",
+            "acceptable_reasoning": "0,25 als Hundertstel deuten und auf den gekürzten Bruch 1/4 zurückführen.",
+            "watch_outs": [
+              "Häufiger Fehler: 0,25 wird als 25 (ganze Zahl) statt als 25 Hundertstel gelesen.",
+              "Kürzen nicht vergessen: 25/100 sollte auf 1/4 gekürzt werden."
+            ],
+            "rubric": [
+              { "criterion": "Gemischte Zahl korrekt", "levels": ["Falsch", "12 1/4 km korrekt angegeben"] },
+              { "criterion": "Erklärung der Nachkommastellen", "levels": ["Fehlt oder falsch", "Nachvollziehbar erklärt"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "calculation",
+            "prompt": "Annas App zeigt zusätzlich die Anzahl der Pedaltritte: 4528 Tritte für die ersten 7 km. Schreibe diese Zahl im Stellenwertsystem auf (Tausender, Hunderter, Zehner, Einer) und runde sie auf die nächsten vollen Hunderter (Überschlagsrechnung).",
+            "payload": null,
+            "response": { "mode": "table", "columns": ["Tausender", "Hunderter", "Zehner", "Einer"], "rows": 1 },
+            "cognitive_level": "apply",
+            "dimensions": ["OPE", "DAR"],
+            "serves": [
+              { "competence_id": "MAT.US.1.ZAH.02", "relation": "exercises" }
+            ],
+            "est_minutes": 6,
+            "asset_refs": [],
+            "answer_key": "4528 Tritte: 4 Tausender, 5 Hunderter, 2 Zehner, 8 Einer. Gerundet auf volle Hunderter: 4500 Tritte.",
+            "acceptable_reasoning": "Bündeln in Zehnerschritten: 8 Einer bündeln sich noch nicht zu einem Zehner, daher bleibt die Zehnerstelle bei Rundung auf Hunderter entscheidend (2 < 5 → abrunden).",
+            "watch_outs": [
+              "Rundungsregel wiederholen: Entscheidend ist die Ziffer EINE Stelle rechts von der Rundungsstelle.",
+              "4528 wird manchmal fälschlich als 4600 gerundet — die Zehnerziffer (2) genau prüfen."
+            ],
+            "rubric": [
+              { "criterion": "Stellenwerttabelle korrekt", "levels": ["Fehler", "Vollständig korrekt (4-5-2-8)"] },
+              { "criterion": "Rundung korrekt", "levels": ["Falsch gerundet", "4500 korrekt mit Begründung"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "table_fill",
+            "prompt": "Tim möchte seine Strecke von 3,5 km auch in Metern angeben, weil sein kleiner Bruder Meter besser versteht. Rechne um und trage die fehlenden Werte in die Tabelle ein: 3,5 km = ___ m; 750 m = ___ km; 1/2 km = ___ m.",
+            "payload": null,
+            "response": { "mode": "table", "columns": ["Angabe in km", "Angabe in m"], "rows": 3 },
+            "cognitive_level": "apply",
+            "dimensions": ["OPE"],
+            "serves": [
+              { "competence_id": "MAT.US.1.ZAH.03", "relation": "exercises" }
+            ],
+            "est_minutes": 6,
+            "asset_refs": [],
+            "answer_key": "3,5 km = 3500 m. 750 m = 0,75 km. 1/2 km = 500 m.",
+            "acceptable_reasoning": "1 km = 1000 m, daher Multiplikation bzw. Division mit 1000 zur Umrechnung.",
+            "watch_outs": [
+              "Verwechslung der Umrechnungsrichtung (mal 1000 statt durch 1000) ist der häufigste Fehler.",
+              "Bei 1/2 km zuerst in Dezimalzahl (0,5 km) umwandeln, dann erst in Meter umrechnen — Zwischenschritt zeigen lassen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "true_false_justify",
+            "prompt": "Entscheide, ob die folgenden Aussagen über die drei Radfahrer:innen wahr oder falsch sind, und begründe jeweils kurz mit einer Rechnung oder einem Argument.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Anna und Tim zusammen sind weiter gefahren als Ben allein.",
+                "3/4 von Bens Strecke sind mehr als 9 km.",
+                "Wenn alle drei gleich schnell fahren, ist Ben am längsten unterwegs gewesen."
+              ]
+            },
+            "response": { "mode": "lines", "n": 6 },
+            "cognitive_level": "analyze",
+            "dimensions": ["BEG", "OPE"],
+            "serves": [
+              { "competence_id": "MAT.US.1.ZAH.02", "relation": "exercises" },
+              { "competence_id": "MAT.US.1.ZAH.01", "relation": "exercises" }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "1) Falsch: 3,5 + 7 = 10,5 km, das ist WENIGER als Bens 12,25 km. 2) Wahr: 3/4 von 12,25 km = 9,1875 km, das ist mehr als 9 km. 3) Wahr: Bei gleicher Geschwindigkeit bedeutet die längste Strecke (12,25 km) auch die längste Fahrzeit.",
+            "acceptable_reasoning": "Für 1: Summe berechnen und mit Bens Wert vergleichen. Für 2: Dreiviertel als Multiplikation mit 0,75 berechnen. Für 3: Zusammenhang zwischen Strecke und Zeit bei konstanter Geschwindigkeit erkennen (mehr Strecke = mehr Zeit).",
+            "watch_outs": [
+              "Aussage 1 ist eine Rechenfalle: 3,5 + 7 = 10,5, was WENIGER als 12,25 ist — die Aussage ist also FALSCH. Diesen Rechenfehler-Fallstrick explizit besprechen.",
+              "Bei Aussage 2 wird 3/4 manchmal als 0,34 statt 0,75 verwendet — Bruch-Dezimal-Umwandlung wiederholen."
+            ],
+            "rubric": [
+              { "criterion": "Begründungsqualität je Aussage", "levels": ["Kein Argument oder falsche Rechnung", "Nachvollziehbare Rechnung/Begründung"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "modelling_task",
+            "prompt": "Plane für nächste Woche eine eigene Radtour: Wähle eine Gesamtstrecke zwischen 8 und 15 km. Teile sie in drei Etappen ein (z. B. 1/3, 1/4 und den Rest) und gib jede Etappe sowohl als Bruch als auch als Dezimalzahl in km an. Prüfe mit einer Überschlagsrechnung, ob deine drei Etappen wirklich die Gesamtstrecke ergeben.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 55 },
+            "cognitive_level": "create",
+            "dimensions": ["MOD", "OPE"],
+            "serves": [
+              { "competence_id": "MAT.US.1.ZAH.01", "relation": "exercises" },
+              { "competence_id": "MAT.US.1.ZAH.02", "relation": "exercises" }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Individuelle Lösung, z. B. Gesamtstrecke 12 km: Etappe 1 = 1/3 von 12 km = 4 km, Etappe 2 = 1/4 von 12 km = 3 km, Etappe 3 = Rest = 12 − 4 − 3 = 5 km. Kontrolle: 4 + 3 + 5 = 12 km ✓.",
+            "acceptable_reasoning": "Die gewählten Brüche müssen zusammen mit dem Rest exakt die Gesamtstrecke ergeben; die Kontrolle per Summenbildung ist verpflichtend.",
+            "watch_outs": [
+              "Schüler:innen vergessen häufig die Kontrollrechnung am Ende — explizit einfordern.",
+              "Manche wählen Brüche, die sich zusammen mit dem Rest nicht sauber zur Gesamtstrecke addieren (Rundungsfehler) — auf glatte Zahlen achten."
+            ],
+            "rubric": [
+              { "criterion": "Etappen als Bruch UND Dezimalzahl", "levels": ["Nur eine Schreibweise", "Beide Schreibweisen korrekt"] },
+              { "criterion": "Kontrollrechnung stimmt", "levels": ["Fehlt oder falsch", "Summe stimmt exakt mit Gesamtstrecke überein"] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

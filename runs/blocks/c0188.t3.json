@@ -1,0 +1,133 @@
+{
+  "id": "c0188.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb_streckung"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Das Streckzentrum liegt bei Z(0|0). Ein Punkt des Originaldreiecks liegt bei P1(2|1). Berechne die Koordinaten des Bildpunkts P1' nach zentrischer Streckung mit dem Faktor k = 3 (Formel: P' = k · P, da Z im Ursprung liegt). Berechne anschließend auf demselben Weg die Bildpunkte von P2(4|1) und P3(3|4).",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "OPE",
+      "DAR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.3.FIG.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "P1' = 3 · (2|1) = (6|3). P2' = 3 · (4|1) = (12|3). P3' = 3 · (3|4) = (9|12).",
+    "acceptable_reasoning": "Da das Streckzentrum im Ursprung liegt, werden einfach beide Koordinaten jedes Punktes mit dem Streckfaktor multipliziert.",
+    "rubric": [
+      {
+        "criterion": "Alle drei Bildpunkte korrekt berechnet",
+        "levels": [
+          "0–1 korrekt",
+          "2 korrekt",
+          "Alle 3 korrekt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Nur eine Koordinate (x ODER y) wird manchmal mit dem Faktor multipliziert, statt beide — beide Koordinaten müssen gleichermaßen skaliert werden.",
+      "Läge Z NICHT im Ursprung, müsste man zuerst den Vektor von Z zum Punkt bilden, diesen strecken und dann wieder zu Z addieren — das ist hier bewusst nicht der Fall, sollte aber angesprochen werden."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Mathematik",
+  "klasse": 3,
+  "kompetenzbereich": "3: Figuren und Körper",
+  "competences": [
+    "MAT.US.3.FIG.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "OPE",
+    "DAR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb_streckung",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:coordinate_plane",
+      "spec": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0,
+            "label": "Z"
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "label": "P1"
+          },
+          {
+            "x": 4,
+            "y": 1,
+            "label": "P2"
+          },
+          {
+            "x": 3,
+            "y": 4,
+            "label": "P3"
+          }
+        ],
+        "segments": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "xmin": -1,
+        "xmax": 9,
+        "ymin": -1,
+        "ymax": 9,
+        "title": "Dreieck P1P2P3 mit Streckzentrum Z"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0188",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:21+00:00",
+  "updated_at": "2026-07-05T05:34:22+00:00"
+}

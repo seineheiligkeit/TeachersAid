@@ -1,0 +1,77 @@
+{
+  "id": "c0170.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "cause_effect_match",
+    "prompt": "Ordne jeder Ursache die passende Folge im Teich zu.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Ein trockener Sommer lässt den Wasserspiegel sinken.",
+        "Zu viel Dünger vom Feld gelangt ins Wasser.",
+        "Fische werden aus dem Teich entnommen (Angeln).",
+        "Bäume am Ufer werden gefällt."
+      ],
+      "right": [
+        "Algen wachsen stark, Wasser wird trüb.",
+        "Mehr Sonnenlicht erreicht das Wasser, Temperatur steigt.",
+        "Weniger Lebensraum, Pflanzen und Tiere am Ufer sterben.",
+        "Beute-Tiere der Fische (z. B. Kaulquappen) vermehren sich stärker."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.WIS.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "Trockener Sommer → weniger Lebensraum am Ufer, Pflanzen/Tiere sterben. Dünger im Wasser → Algen wachsen stark, Wasser trüb. Fische entnommen → Beutetiere (Kaulquappen) vermehren sich stärker. Bäume gefällt → mehr Sonne, Temperatur steigt.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Manche Ursachen wirken indirekt (Dünger → Algen → weniger Licht für andere Pflanzen); eine einfache 1-zu-1-Zuordnung reicht hier trotzdem als Einstieg."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "cause_effect_match",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 1,
+  "kompetenzbereich": "Wissen aneignen, anwenden und kommunizieren (W)",
+  "competences": [
+    "BIO.US.x.WIS.01"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "W",
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0170",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:11+00:00",
+  "updated_at": "2026-07-05T05:34:11+00:00"
+}

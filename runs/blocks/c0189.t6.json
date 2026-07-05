@@ -1,0 +1,81 @@
+{
+  "id": "c0189.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Erfinde eine eigene kurze Sachsituation aus deinem Alltag (Garten, Zimmer, Sportplatz, Bastelprojekt …), bei der man wie beim Blumenbeet eine Streckenlänge berechnen muss, deren Ergebnis eine irrationale Zahl ist. Beschreibe die Situation, stelle den passenden Term auf und runde das Ergebnis sinnvoll für die Praxis.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "MOD",
+      "BEG"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.4.ZAH.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Individuelle Lösungen. Muss enthalten: eine plausible Alltagssituation mit zwei rechtwinklig zueinander stehenden, ganzzahligen (oder einfachen) Streckenlängen, einen korrekt aufgestellten Term (meist über Pythagoras), ein Ergebnis, dessen Radikand keine Quadratzahl ist, und eine für die Praxis sinnvolle Rundung mit Begründung (z. B. „aufrunden, weil man lieber etwas mehr Material einplant“).",
+    "acceptable_reasoning": "Übertragung des Musters (rechtwinklige Anordnung → Pythagoras → oft irrationales Ergebnis → praxisgerechtes Runden) auf eine neue, selbst gewählte Situation.",
+    "rubric": [
+      {
+        "criterion": "Situation + Term stimmig",
+        "levels": [
+          "Unklar oder unpassend",
+          "Situation plausibel, Term fehlerhaft",
+          "Situation und Term vollständig stimmig"
+        ]
+      },
+      {
+        "criterion": "Ergebnis irrational + sinnvoll gerundet",
+        "levels": [
+          "Ergebnis rational oder Rundung fehlt",
+          "Ergebnis irrational, Rundung ohne Begründung",
+          "Ergebnis irrational, Rundung klar begründet"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Manche wählen unbewusst Zahlen, die ein pythagoräisches Tripel bilden (3-4-5) und bekommen so ein rationales Ergebnis — dann nachfragen, ob das der Aufgabenstellung entspricht.",
+      "Die Rundungsbegründung darf nicht fehlen — nur eine Zahl hinzuschreiben reicht nicht."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Mathematik",
+  "klasse": 4,
+  "kompetenzbereich": "1: Zahlen und Maße",
+  "competences": [
+    "MAT.US.4.ZAH.01"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "MOD",
+    "BEG"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0189",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:22+00:00",
+  "updated_at": "2026-07-05T05:34:22+00:00"
+}

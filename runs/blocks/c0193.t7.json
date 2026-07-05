@@ -1,0 +1,73 @@
+{
+  "id": "c0193.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Ein rotes T-Shirt liegt in einem komplett abgedunkelten Raum, in dem nur eine grüne Lichtquelle leuchtet (kein anderes Licht vorhanden). Sag voraus, welche Farbe das T-Shirt in diesem Raum für unser Auge hat, und begründe deine Vorhersage mit dem Begriff Farbe als Streueigenschaft von Stoffen.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Welche Farbe zeigt das rote T-Shirt unter rein grünem Licht, und warum?"
+    },
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.2.SEH.05",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "Das T-Shirt erscheint schwarz (bzw. sehr dunkel), nicht rot. Ein rotes T-Shirt ist rot, weil sein Stoff bei weißem Licht bevorzugt rotes Licht streut und die übrigen Farben verschluckt (absorbiert). Fällt aber nur grünes Licht auf den Stoff, gibt es kein rotes Licht, das gestreut werden könnte – der Stoff absorbiert das auftreffende grüne Licht fast vollständig, es gelangt kaum Licht zum Auge zurück, das T-Shirt erscheint dunkel/schwarz.",
+    "acceptable_reasoning": "Die Vorhersage 'schwarz/dunkel' muss mit dem Streuprinzip begründet werden (Farbe ist keine feste Eigenschaft des Gegenstands, sondern hängt vom Zusammenspiel mit dem einfallenden Licht ab); eine Begründung nur über 'es gibt kein rotes Licht' ohne den Streu-/Absorptionsgedanken ist unvollständig.",
+    "rubric": [
+      {
+        "criterion": "concept_correctness",
+        "levels": [
+          "Farbe als feste Objekteigenschaft missverstanden",
+          "richtige Vorhersage, Streuprinzip nicht klar erklärt",
+          "richtige Vorhersage UND Streuprinzip korrekt erklärt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Fehlvorstellung: Ein rotes T-Shirt sei IMMER rot, unabhängig vom Licht, das darauf fällt – Farbe ist keine feste Objekteigenschaft, sondern entsteht erst im Zusammenspiel von Lichtfarbe und Streuverhalten des Materials."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Physik",
+  "klasse": 2,
+  "kompetenzbereich": "Sehen und Hören",
+  "competences": [
+    "PHY.US.2.SEH.05"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0193",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:25+00:00",
+  "updated_at": "2026-07-05T05:34:25+00:00"
+}

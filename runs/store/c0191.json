@@ -1,0 +1,605 @@
+{
+  "id": "c0191",
+  "stage": "content",
+  "status": "pending",
+  "source": "generated",
+  "created_at": "2026-07-05T05:34:23+00:00",
+  "updated_at": "2026-07-05T05:34:23+00:00",
+  "title": "Mathematik 4. Kl. — Das Schulfest-Glücksrad — wer gewinnt wirklich? (generiert)",
+  "note": "",
+  "request": {
+    "subject": "Mathematik",
+    "klasse": 4,
+    "stufe": "Unterstufe",
+    "schulform": null,
+    "topic_raw": "Das Schulfest-Glücksrad — wer gewinnt wirklich?",
+    "envelope": "doppelstunde",
+    "options": {}
+  },
+  "resolution": {
+    "fassung": {
+      "kurztitel": "AHS-Lehrplan (konsolidiert)",
+      "bgbl": "BGBl. II Nr. 204/2024",
+      "doknr": "NOR40264237",
+      "valid_from": "2024-09-01",
+      "valid_to": "2026-08-31"
+    },
+    "subject": "Mathematik",
+    "klasse": 4,
+    "matched_kompetenzbereiche": [
+      "4: Daten und Zufall"
+    ],
+    "grade_check": true,
+    "competences": [
+      {
+        "id": "MAT.US.4.DAT.01",
+        "kompetenzbereich": "4: Daten und Zufall",
+        "klasse": 4,
+        "text": "Kreuztabellen erstellen und interpretieren,",
+        "source_ref": "MATHEMATIK / 4. Klasse / 4: Daten und Zufall",
+        "dimensions": [],
+        "uebergreifende_themen": [
+          10
+        ],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      },
+      {
+        "id": "MAT.US.4.DAT.02",
+        "kompetenzbereich": "4: Daten und Zufall",
+        "klasse": 4,
+        "text": "Wahrscheinlichkeiten bei ein- und zweistufigen Zufallsexperimenten ermitteln und interpretieren.",
+        "source_ref": "MATHEMATIK / 4. Klasse / 4: Daten und Zufall",
+        "dimensions": [],
+        "uebergreifende_themen": [
+          4,
+          10
+        ],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      }
+    ],
+    "notes": []
+  },
+  "plan": null,
+  "content": {
+    "meta": {
+      "title": "Das Schulfest-Glücksrad — wer gewinnt wirklich?",
+      "subtitle": "LLM-Entwurf — Erstprüfung",
+      "subject": "Mathematik",
+      "stufe": "Unterstufe",
+      "klasse": 4,
+      "kernfrage": "Lohnt sich das neue Glücksspiel am Schulfest wirklich für alle Teilnehmer:innen?",
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "lehrplan_label": "Mathematik · 4. Klasse · 4: Daten und Zufall",
+      "content_language": "de",
+      "subject_models": []
+    },
+    "subject_model": {
+      "subject": "Mathematik",
+      "stufe": "Unterstufe",
+      "dimensions": [
+        {
+          "id": "MOD",
+          "label": "Modellieren und Problemlösen",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "OPE",
+          "label": "Operieren (Rechnen und Konstruieren)",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "DAR",
+          "label": "Darstellen und Interpretieren",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "BEG",
+          "label": "Vermuten und Begründen",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "content_areas": [
+        {
+          "id": "ZAH",
+          "label": "Zahlen und Maße",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "VAR",
+          "label": "Variablen und Funktionen",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "FIG",
+          "label": "Figuren und Körper",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "DAT",
+          "label": "Daten und Zufall",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "task_kind_extensions": [
+        "calculation",
+        "construction",
+        "modelling_task"
+      ]
+    },
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Kreuztabellen lesen, Bäume zeichnen, Chancen richtig einschätzen",
+        "teacher_overview": {
+          "throughline": "Am Beispiel eines Schulfest-Glücksspiels wird zuerst eine erhobene Kreuztabelle (wer hat mitgemacht, wer hat gewonnen) gelesen und interpretiert, bevor die Klasse den Zufallsmechanismus des Spiels selbst — ein zweistufiges Experiment aus Glücksrad und Losziehung — mit einem Baumdiagramm modelliert und die Gewinnwahrscheinlichkeit berechnet. Der Schwerpunkt liegt bewusst auf dem sicheren Grundverständnis (Kreuztabelle lesen, einstufige und zweistufige Wahrscheinlichkeiten mit der Pfadregel berechnen), eine einzige Aufgabe am Ende fordert zusätzlich eine kritische Einschätzung.",
+          "talking_points": [
+            "Eine Kreuztabelle zeigt zwei Merkmale gleichzeitig (z. B. Klasse × Teilnahme) — der Reiz liegt darin, Zeilen- und Spaltensummen richtig zu lesen und zu vergleichen, nicht nur Einzelzellen abzulesen.",
+            "Bei einem zweistufigen Zufallsexperiment multipliziert man die Wahrscheinlichkeiten entlang eines Pfades (Pfadregel) — das Baumdiagramm macht das sichtbar.",
+            "„Gewinnchance“ ist ein Alltagswort mit mathematischem Kern: Wahrscheinlichkeit als Verhältnis von günstigen zu allen Fällen, hier: als Summe über mehrere Pfade.",
+            "Ein Spiel kann spannend wirken, obwohl die Gewinnwahrscheinlichkeit tatsächlich niedrig ist — genau das macht diese Kompetenz alltagsrelevant."
+          ],
+          "extensions": [
+            "Die Gewinnwahrscheinlichkeit verändern, indem man die Anteile am Glücksrad anders verteilt, und beobachten, wie sich das Baumdiagramm und das Ergebnis ändern.",
+            "Eine eigene kleine Umfrage in der Klasse durchführen und als Kreuztabelle darstellen (z. B. Lieblingsfach × Geschlecht).",
+            "Diskutieren, ob und wie ein fairer Preis (Los-Einsatz) für das Spiel berechnet werden könnte, wenn der Gewinn bekannt ist (Ausblick auf Erwartungswert, ohne ihn schon zu benennen)."
+          ],
+          "differentiation": null,
+          "timing_notes": null
+        },
+        "blocks": [
+          {
+            "id": "t1",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "table_fill",
+            "prompt": "Beim Schulfest wurde erhoben, welche Klassen am neuen Glücksrad-Spiel teilgenommen haben. Ergebnis: Von den 20 Kindern der 4a haben 12 mitgespielt, 8 nicht. Von den 24 Kindern der 4b haben 15 mitgespielt, 9 nicht. Trage diese Angaben in eine Kreuztabelle mit den Zeilen „4a“ und „4b“ sowie den Spalten „mitgespielt“, „nicht mitgespielt“ und „Summe“ ein (die Summenspalte und -zeile musst du selbst berechnen).",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Klasse",
+                "mitgespielt",
+                "nicht mitgespielt",
+                "Summe"
+              ],
+              "rows": 3
+            },
+            "cognitive_level": "remember",
+            "difficulty": null,
+            "dimensions": [
+              "DAR"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.DAT.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "answer_key": "4a: 12 | 8 | 20. 4b: 15 | 9 | 24. Summe: 27 | 17 | 44.",
+            "acceptable_reasoning": "Direktes Eintragen der gegebenen Werte in die Tabelle, Summenzeile und -spalte durch Addition.",
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Die Gesamtsumme (44) sollte am Ende zur Kontrolle beidseitig (Zeilen- und Spaltensumme) übereinstimmen — das eignet sich als Selbstkontrolle.",
+              "Nicht vergessen: die Summenzeile UND die Summenspalte müssen ausgefüllt werden."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t2",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "open_response",
+            "prompt": "Nutze deine Kreuztabelle aus Aufgabe 1, um folgende Fragen zu beantworten: a) Wie viele Kinder insgesamt haben NICHT am Glücksrad-Spiel teilgenommen? b) In welcher Klasse haben anteilig mehr Kinder mitgespielt — der 4a oder der 4b? Begründe mit einer Rechnung, nicht nur mit den absoluten Zahlen.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "understand",
+            "difficulty": null,
+            "dimensions": [
+              "DAR",
+              "BEG"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.DAT.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 7,
+            "answer_key": "a) 8 + 9 = 17 Kinder haben nicht mitgespielt. b) 4a: 12 von 20, das sind 60 %. 4b: 15 von 24, das sind 62,5 %. Anteilig hat die 4b etwas mehr Kinder zum Mitspielen bewegt, obwohl in absoluten Zahlen die 4b nur 3 Kinder mehr hat als die 4a bei den Teilnehmenden.",
+            "acceptable_reasoning": "Ablesen der Summenspalte für Teilaufgabe a); für Teilaufgabe b) Berechnung von Anteilen/Prozentsätzen statt reinem Vergleich der absoluten Häufigkeiten, da die Klassengrößen unterschiedlich sind.",
+            "rubric": [
+              {
+                "criterion": "Anteilsvergleich statt reinem Zahlenvergleich",
+                "levels": [
+                  "Nur absolute Zahlen verglichen",
+                  "Anteil für eine Klasse berechnet",
+                  "Anteile für beide Klassen korrekt berechnet und verglichen"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Klassischer Fehler bei b): nur die absoluten Zahlen (12 vs. 15) vergleichen, ohne die unterschiedliche Klassengröße zu berücksichtigen — genau das soll hier vermieden werden.",
+              "Prozentrechnung: 12/20 und 15/24 jeweils richtig in Prozent umrechnen."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t3",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "abb1"
+            ],
+            "provenance": null,
+            "role": "task",
+            "kind": "calculation",
+            "prompt": "So funktioniert das Glücksrad-Spiel (siehe Baumdiagramm in Abbildung 1): Zuerst dreht man ein Glücksrad, das mit Wahrscheinlichkeit 0,5 auf Rot und mit Wahrscheinlichkeit 0,5 auf Blau zeigt. Danach zieht man ein Los: Bei Rot gewinnt man mit Wahrscheinlichkeit 0,4 einen Stern, bei Blau nur mit Wahrscheinlichkeit 0,2. a) Wie groß ist die Wahrscheinlichkeit für den Pfad „Rot UND Stern“? b) Wie groß ist die Wahrscheinlichkeit für den Pfad „Blau UND Stern“?",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "apply",
+            "difficulty": null,
+            "dimensions": [
+              "OPE",
+              "DAR"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.DAT.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "answer_key": "a) P(Rot UND Stern) = 0,5 · 0,4 = 0,20 (20 %). b) P(Blau UND Stern) = 0,5 · 0,2 = 0,10 (10 %).",
+            "acceptable_reasoning": "Anwendung der Pfadregel: Multiplikation der Wahrscheinlichkeiten entlang eines Pfades im Baumdiagramm.",
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Häufiger Fehler: Wahrscheinlichkeiten entlang eines Pfades werden addiert statt multipliziert.",
+              "Die Werte am Baum (0,5 / 0,4 / 0,2) müssen vom richtigen Ast abgelesen werden — Rot- und Blau-Zweig nicht vertauschen."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t4",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "abb1"
+            ],
+            "provenance": null,
+            "role": "task",
+            "kind": "calculation",
+            "prompt": "Berechne jetzt die Gesamtwahrscheinlichkeit, beim Glücksrad-Spiel überhaupt einen Stern zu gewinnen — egal ob über Rot oder Blau. Nutze dafür deine beiden Ergebnisse aus Aufgabe 3.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 3
+            },
+            "cognitive_level": "apply",
+            "difficulty": null,
+            "dimensions": [
+              "OPE"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.DAT.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 5,
+            "answer_key": "P(Stern gesamt) = P(Rot UND Stern) + P(Blau UND Stern) = 0,20 + 0,10 = 0,30, also 30 %.",
+            "acceptable_reasoning": "Additionsregel: Wenn mehrere sich ausschließende Pfade zum gleichen Ereignis (hier „Stern“) führen, werden ihre Wahrscheinlichkeiten addiert.",
+            "rubric": [
+              {
+                "criterion": "Additionsregel korrekt angewendet",
+                "levels": [
+                  "Falsche Regel (z. B. multipliziert)",
+                  "Ansatz richtig, Rechenfehler",
+                  "Korrekt: 0,30 bzw. 30 %"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Hier ist Addition korrekt (im Gegensatz zu Aufgabe 3) — der Unterschied zwischen „UND“ (entlang eines Pfades, multiplizieren) und „ODER“ (verschiedene Pfade zum selben Ergebnis, addieren) ist der zentrale Lerninhalt und sollte angesprochen werden.",
+              "30 % wirkt vielleicht höher als erwartet — das kann zur Diskussion in Aufgabe 6 zurückkommen."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t5",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "true_false_justify",
+            "prompt": "Beurteile folgende Aussagen zum Glücksrad-Spiel und begründe jeweils kurz mit deinen Ergebnissen aus den vorherigen Aufgaben.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Die Wahrscheinlichkeit, über den roten Zweig einen Stern zu gewinnen, ist größer als über den blauen Zweig.",
+                "Insgesamt gewinnt man bei diesem Spiel öfter einen Stern, als man keinen gewinnt.",
+                "Wenn man das Glücksrad zweimal hintereinander dreht, ist die Wahrscheinlichkeit für zweimal Rot gleich 0,5 + 0,5."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "understand",
+            "difficulty": null,
+            "dimensions": [
+              "BEG",
+              "DAR"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.DAT.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 7,
+            "answer_key": "1) Wahr: 0,20 (Rot-Stern) > 0,10 (Blau-Stern). 2) Falsch: Gesamtwahrscheinlichkeit für Stern ist 0,30 (30 %), also gewinnt man häufiger KEINEN Stern (70 %). 3) Falsch: bei zwei unabhängigen Drehungen wird multipliziert, nicht addiert: 0,5 · 0,5 = 0,25, nicht 1,0.",
+            "acceptable_reasoning": "Rückgriff auf die berechneten Werte aus den Aufgaben 3 und 4; Erkennen, dass bei unabhängigen Wiederholungen die Pfadregel (Multiplikation) gilt, nicht Addition.",
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Aussage 2 prüft, ob 30 % richtig als „seltener als die Hälfte“ eingeordnet wird — eine verbreitete Fehleinschätzung ist, 30 % subjektiv als „ziemlich hoch“ und damit als „öfter als nicht“ misszuverstehen.",
+              "Aussage 3 ist eine gezielte Fehlvorstellung (Verwechslung von UND-Verknüpfung mit Addition) — hier nochmals auf die Pfadregel hinweisen."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t6",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "decision_scenario",
+            "prompt": "Der Elternverein überlegt, das Glücksrad-Spiel beim nächsten Schulfest wieder aufzubauen. Ein Los kostet 1 €, ein gewonnener Stern wird gegen einen kleinen Preis im Wert von 2 € eingetauscht. Nimm Stellung: Ist dieses Spiel aus Sicht der Spieler:innen eher „fair“, „großzügig“ oder „zu Ungunsten der Spieler:innen“ gestaltet? Begründe deine Einschätzung mit der berechneten Gewinnwahrscheinlichkeit UND überlege, was der Elternverein mit den Einnahmen der übrigen 70 % vermutlich finanziert.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "1 € Einsatz, 30 % Gewinnchance auf einen 2-€-Preis — fair, großzügig oder zu Ungunsten der Spieler:innen?"
+            },
+            "response": {
+              "mode": "box",
+              "min_height_mm": 45.0
+            },
+            "cognitive_level": "evaluate",
+            "difficulty": null,
+            "dimensions": [
+              "BEG",
+              "MOD"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.DAT.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Es gewinnen nur 30 % der Spieler:innen überhaupt einen Preis; die übrigen 70 % zahlen 1 € ohne Gegenwert. Eine vollständige Einschätzung erkennt, dass das Spiel aus reiner Gewinnchancen-Sicht eher zu Ungunsten der Spieler:innen ausfällt (nicht „fair“ im Sinne von 50:50, aber auch nicht als reine Abzocke zu werten, wenn man bedenkt, dass Schulfeste typischerweise wohltätigen/schulischen Zwecken dienen). Die Einnahmen aus den 70 % ohne Gewinn finanzieren vermutlich den Rest des Schulfests bzw. gemeinnützige Zwecke der Schule/des Elternvereins — das ist bei Schulfesten üblich und rechtfertigt eine geringere Gewinnchance als bei einem „fairen“ Spiel.",
+            "acceptable_reasoning": "Verknüpfung der berechneten Wahrscheinlichkeit (30 %) mit einer sachlich begründeten Bewertung, die den Kontext (Schulfest, gemeinnütziger Zweck) mitdenkt statt eine reine Zahlenaussage zu wiederholen.",
+            "rubric": [
+              {
+                "criterion": "Bezug auf berechnete Wahrscheinlichkeit",
+                "levels": [
+                  "Kein Bezug zu Zahlen",
+                  "Zahl genannt, nicht eingeordnet",
+                  "Zahl korrekt zur Bewertung herangezogen"
+                ]
+              },
+              {
+                "criterion": "Kontextbezogene Begründung (Schulfest-Zweck)",
+                "levels": [
+                  "Fehlt",
+                  "Ansatzweise erwähnt",
+                  "Schlüssig in die Bewertung einbezogen"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Eine reine Wiederholung der Zahl „30 %“ ohne Einordnung (fair/unfair/wieso) wird nicht als vollständige Stellungnahme gewertet.",
+              "Es gibt hier bewusst keine einzig richtige Antwort — bewertet wird die Qualität der Begründung, nicht eine bestimmte Position."
+            ],
+            "self_check": null
+          }
+        ]
+      }
+    ],
+    "assets": [
+      {
+        "id": "abb1",
+        "role": "figure",
+        "medium": "visual",
+        "generator": "matplotlib:tree_diagram",
+        "spec": {
+          "branches": [
+            {
+              "label": "Rot",
+              "p": "0,5",
+              "children": [
+                {
+                  "label": "Stern",
+                  "p": "0,4",
+                  "_xy": [
+                    2,
+                    0.0
+                  ]
+                },
+                {
+                  "label": "Kein Stern",
+                  "p": "0,6",
+                  "_xy": [
+                    2,
+                    1.0
+                  ]
+                }
+              ],
+              "_xy": [
+                1,
+                0.5
+              ]
+            },
+            {
+              "label": "Blau",
+              "p": "0,5",
+              "children": [
+                {
+                  "label": "Stern",
+                  "p": "0,2",
+                  "_xy": [
+                    2,
+                    2.0
+                  ]
+                },
+                {
+                  "label": "Kein Stern",
+                  "p": "0,8",
+                  "_xy": [
+                    2,
+                    3.0
+                  ]
+                }
+              ],
+              "_xy": [
+                1,
+                2.5
+              ]
+            }
+          ],
+          "title": "Glücksrad + Losziehung"
+        },
+        "correctness_surface": null,
+        "misleading_in_isolation": false,
+        "intentionally_flawed": null,
+        "machine_generatable": true,
+        "provenance": null,
+        "data_source": null,
+        "illustrative": false,
+        "caption": null
+      }
+    ],
+    "nachweis": {
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "statement": "Diese Materialien adressieren 2 von 2 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
+      "competence_coverage": [
+        {
+          "competence_id": "MAT.US.4.DAT.01",
+          "exercised_by": [
+            "t1",
+            "t2"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "MAT.US.4.DAT.02",
+          "exercised_by": [
+            "t3",
+            "t4",
+            "t5",
+            "t6"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        }
+      ],
+      "gaps": [],
+      "zentrale_konzepte": [
+        "4: Daten und Zufall"
+      ],
+      "uebergreifende_themen": [
+        4,
+        10
+      ]
+    },
+    "depth_profile": {
+      "by_level": {
+        "remember": 1,
+        "understand": 2,
+        "apply": 2,
+        "evaluate": 1
+      },
+      "by_dimension": {
+        "DAR": 2,
+        "OPE": 2,
+        "BEG": 2
+      },
+      "by_difficulty": {
+        "1": 3,
+        "2": 2,
+        "3": 1
+      },
+      "minutes_total": 39,
+      "minutes_resource_independent": 39
+    },
+    "rack": null
+  },
+  "artifacts": {
+    "student_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0191\\student.pdf",
+    "teacher_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0191\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0191\\homework.pdf",
+    "preview_png": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0191\\raster\\student.p1.png"
+  },
+  "verify_problems": [],
+  "verify_warnings": [],
+  "parent_id": null,
+  "feedback": [],
+  "error": null
+}

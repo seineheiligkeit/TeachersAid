@@ -1,0 +1,710 @@
+{
+  "id": "c0193",
+  "stage": "content",
+  "status": "pending",
+  "source": "generated",
+  "created_at": "2026-07-05T05:34:24+00:00",
+  "updated_at": "2026-07-05T05:34:25+00:00",
+  "title": "Physik 2. Kl. — Senden, Empfangen, Wahrnehmen (generiert)",
+  "note": "",
+  "request": {
+    "subject": "Physik",
+    "klasse": 2,
+    "stufe": "Unterstufe",
+    "schulform": null,
+    "topic_raw": "Senden, Empfangen, Wahrnehmen",
+    "envelope": "doppelstunde",
+    "options": {}
+  },
+  "resolution": {
+    "fassung": {
+      "kurztitel": "AHS-Lehrplan (konsolidiert)",
+      "bgbl": "BGBl. II Nr. 204/2024",
+      "doknr": "NOR40264237",
+      "valid_from": "2024-09-01",
+      "valid_to": "2026-08-31"
+    },
+    "subject": "Physik",
+    "klasse": 2,
+    "matched_kompetenzbereiche": [
+      "Sehen und Hören"
+    ],
+    "grade_check": true,
+    "competences": [
+      {
+        "id": "PHY.US.2.SEH.01",
+        "kompetenzbereich": "Sehen und Hören",
+        "klasse": 2,
+        "text": "physikalische Bedingungen für das Sehen von Körpern/Gegenständen bzw. das Hören von Tönen/Klängen durch ein Sender-Empfänger-Modell adressatengerecht erläutern (W) und auf verschiedene Alltagssituationen anwenden (ua. Sicherheit im Straßenverkehr) (S).",
+        "source_ref": "PHYSIK / 2. Klasse / Sehen und Hören",
+        "dimensions": [
+          "W",
+          "S"
+        ],
+        "uebergreifende_themen": [
+          12
+        ],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      },
+      {
+        "id": "PHY.US.2.SEH.02",
+        "kompetenzbereich": "Sehen und Hören",
+        "klasse": 2,
+        "text": "verantwortungsbewusst mit Licht- und Schallquellen umgehen, um die Gefährdung von Sinnesorganen zu vermeiden. (S)",
+        "source_ref": "PHYSIK / 2. Klasse / Sehen und Hören",
+        "dimensions": [
+          "S"
+        ],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      },
+      {
+        "id": "PHY.US.2.SEH.03",
+        "kompetenzbereich": "Sehen und Hören",
+        "klasse": 2,
+        "text": "das Modell der allseitigen geradlinigen und kontinuierlichen Lichtausbreitung nutzen (W), um unter der Anwendung von fachspezifischem Wortschatz begründete Vermutungen zur Entstehung von Schattenphänomenen aufzustellen (E).",
+        "source_ref": "PHYSIK / 2. Klasse / Sehen und Hören",
+        "dimensions": [
+          "W",
+          "E"
+        ],
+        "uebergreifende_themen": [
+          10
+        ],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      },
+      {
+        "id": "PHY.US.2.SEH.04",
+        "kompetenzbereich": "Sehen und Hören",
+        "klasse": 2,
+        "text": "die Entstehung von Tag und Nacht, Jahreszeiten und Mondphasen durch Bewegungsabläufe und Beleuchtungsverhältnisse in unserem Sonnensystem szenisch oder mit Modellen darstellen. (E)",
+        "source_ref": "PHYSIK / 2. Klasse / Sehen und Hören",
+        "dimensions": [
+          "E"
+        ],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      },
+      {
+        "id": "PHY.US.2.SEH.05",
+        "kompetenzbereich": "Sehen und Hören",
+        "klasse": 2,
+        "text": "den Begriff Farbe – als die Eigenschaft von Stoffen, bestimmte Lichtfarben streuen zu können – fachlich angemessen verwenden. (W)",
+        "source_ref": "PHYSIK / 2. Klasse / Sehen und Hören",
+        "dimensions": [
+          "W"
+        ],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      }
+    ],
+    "notes": []
+  },
+  "plan": null,
+  "content": {
+    "meta": {
+      "title": "Senden, Empfangen, Wahrnehmen",
+      "subtitle": "LLM-Entwurf — Erstprüfung",
+      "subject": "Physik",
+      "stufe": "Unterstufe",
+      "klasse": 2,
+      "kernfrage": "Was passiert zwischen einer Schallquelle oder Lichtquelle und deinem Ohr oder Auge – und wo lauern dabei Gefahren?",
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "lehrplan_label": "Physik · 2. Klasse · Sehen und Hören",
+      "content_language": "de",
+      "subject_models": []
+    },
+    "subject_model": {
+      "subject": "Physik",
+      "stufe": "Unterstufe",
+      "dimensions": [
+        {
+          "id": "W",
+          "label": "Fachwissen anwenden",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "E",
+          "label": "Erkenntnisgewinnung und Experimentieren",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "S",
+          "label": "Standpunkte begründen und aus naturwissenschaftlicher Sicht bewerten",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "content_areas": [],
+      "task_kind_extensions": [
+        "experiment_protocol",
+        "source_critique"
+      ]
+    },
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Sender, Empfänger, Wahrnehmung",
+        "teacher_overview": {
+          "throughline": "Wir nutzen das Sender-Empfänger-Modell als roten Faden für Sehen UND Hören, wenden es auf Alltagsgefahren an (Straßenverkehr, Lärm), vertiefen dann die geradlinige Lichtausbreitung am Schattenphänomen und weiten den Blick am Ende auf Himmelsbewegungen und Farbe.",
+          "talking_points": [
+            "Sehen und Hören folgen demselben Grundmuster: Sender (Licht-/Schallquelle) – Ausbreitungsweg – Empfänger (Auge/Ohr). Diese Analogie explizit machen.",
+            "Sicherheit im Straßenverkehr ist die konkrete Anwendung des Modells: Ich sehe nur, was Licht zu mir sendet oder reflektiert (reflektierende Kleidung!); ich höre nur, was laut genug bei mir ankommt (Kopfhörer beim Radfahren).",
+            "Der Kernschatten/Halbschatten-Unterschied erst bei einer AUSGEDEHNTEN Lichtquelle diskutieren, nicht schon hier – bei einer Punktlichtquelle gibt es nur einen scharfen Schattenraum.",
+            "Farbe ist keine Eigenschaft des Lichts allein, sondern des Zusammenspiels von Licht UND Material (Streuung bestimmter Lichtfarben) – ein häufiger Stolperstein."
+          ],
+          "extensions": [
+            "Schattenexperiment mit einer ausgedehnten Lichtquelle (mehrere Kerzen oder Taschenlampen nebeneinander) – Kernschatten und Halbschatten vergleichen.",
+            "Modellversuch zu Mondphasen mit Styroporkugel und Taschenlampe im dunklen Raum.",
+            "Recherche: Wie laut ist ein Konzert wirklich gemessen worden, und wie lange darf man sich laut Arbeitsschutz solchem Lärm aussetzen?"
+          ],
+          "differentiation": null,
+          "timing_notes": null
+        },
+        "blocks": [
+          {
+            "id": "t1",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "matching",
+            "prompt": "Ordne dem Sender-Empfänger-Modell für SEHEN bzw. HÖREN jeweils die passenden Begriffe zu.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Sender (Sehen)",
+                "Ausbreitungsweg (Sehen)",
+                "Empfänger (Sehen)",
+                "Sender (Hören)",
+                "Empfänger (Hören)"
+              ],
+              "right": [
+                "Lichtquelle oder beleuchteter Gegenstand",
+                "Licht breitet sich geradlinig durch die Luft aus",
+                "Auge (Netzhaut)",
+                "Schallquelle, z. B. schwingende Stimmbänder oder Lautsprecher",
+                "Ohr (Trommelfell)"
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "remember",
+            "difficulty": null,
+            "dimensions": [
+              "W"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "PHY.US.2.SEH.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "answer_key": "Sender (Sehen) – Lichtquelle oder beleuchteter Gegenstand. Ausbreitungsweg (Sehen) – Licht breitet sich geradlinig durch die Luft aus. Empfänger (Sehen) – Auge (Netzhaut). Sender (Hören) – Schallquelle, z. B. schwingende Stimmbänder oder Lautsprecher. Empfänger (Hören) – Ohr (Trommelfell).",
+            "acceptable_reasoning": null,
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Häufige Verwechslung: Das Auge/Ohr wird als Sender missverstanden (wir senden aktiv Sehstrahlen aus) – tatsächlich ist das Auge reiner Empfänger von Licht, das von einer Quelle kommt oder an einem Gegenstand reflektiert wird."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t2",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "decision_scenario",
+            "prompt": "Es dämmert bereits. Zwei Kinder gehen am Straßenrand nach Hause: Kind A trägt dunkle Kleidung ohne Reflektoren, Kind B trägt eine helle Jacke mit reflektierenden Streifen. Ein Auto nähert sich mit Abblendlicht. Erkläre mithilfe des Sender-Empfänger-Modells, welches Kind der Autofahrer früher erkennt, und begründe warum.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Welches Kind wird vom Autofahrer früher als Hindernis erkannt, und warum?"
+            },
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "apply",
+            "difficulty": null,
+            "dimensions": [
+              "W",
+              "S"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "PHY.US.2.SEH.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Kind B (helle Jacke mit Reflektoren) wird deutlich früher erkannt. Das Auto-Scheinwerferlicht (Sender) trifft auf die Kleidung; reflektierende Streifen werfen das Licht gezielt zum Fahrzeug zurück, sodass viel Licht zum Auge des Fahrers (Empfänger) gelangt. Dunkle, nicht-reflektierende Kleidung schluckt einen Großteil des auftreffenden Lichts, es kommt kaum reflektiertes Licht beim Fahrer an – das Kind bleibt praktisch unsichtbar, bis es sehr nahe ist.",
+            "acceptable_reasoning": "Die Erklärung muss den Sender-Empfänger-Gedanken (Licht vom Scheinwerfer wird am Körper reflektiert und muss zum Auge des Fahrers gelangen) sichtbar anwenden, nicht nur behaupten, Reflektoren seien besser sichtbar.",
+            "rubric": [
+              {
+                "criterion": "model_use",
+                "levels": [
+                  "Sender-Empfänger-Modell nicht erkennbar angewendet",
+                  "Modell teilweise angewendet",
+                  "Modell vollständig und korrekt angewendet"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Es reicht nicht zu sagen, Reflektoren seien heller – wichtig ist der Reflexionsmechanismus: nur ausreichend zum Fahrerauge zurückgeworfenes Licht macht sichtbar."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t3",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "fig_schallpegel_skala"
+            ],
+            "provenance": null,
+            "role": "task",
+            "kind": "data_interpretation",
+            "prompt": "Betrachte die Schallpegel-Skala. Ab welchem markierten Wert kann bereits kurzzeitige Belastung das Gehör schädigen, und wie viele Dezibel liegen zwischen normaler Gesprächslautstärke und der Schmerzgrenze?",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "understand",
+            "difficulty": null,
+            "dimensions": [
+              "S"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "PHY.US.2.SEH.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "answer_key": "Bereits ab etwa 85 dB (laute Kopfhörer, Dauerbeschallung) steigt das Risiko für Gehörschäden bei längerer Einwirkung deutlich, ab ca. 100 dB (Konzertlautstärke) auch bei kürzerer Einwirkung. Zwischen normaler Gesprächslautstärke (60 dB) und der Schmerzgrenze (120 dB) liegen 60 Dezibel.",
+            "acceptable_reasoning": "Werte in der Nähe der Markierungen (z. B. 80–90 dB als Schädigungsschwelle) werden akzeptiert, solange die Differenzrechnung (120 − 60 = 60 dB) korrekt ist.",
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Die Dezibel-Skala ist logarithmisch – ein Unterschied von 10 dB entspricht bereits einer Verzehnfachung der Schallintensität, nicht einer linearen Zunahme; das muss hier nicht gerechnet, aber sollte im Gespräch erwähnt werden."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t4",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "true_false_justify",
+            "prompt": "Prüfe folgende Aussagen zum verantwortungsvollen Umgang mit Licht- und Schallquellen und begründe jeweils kurz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Mit einem Laserpointer darf man kurz in die Augen von Mitschüler:innen leuchten, solange man sofort wieder wegleuchtet.",
+                "Kopfhörer bei maximaler Lautstärke über Stunden zu tragen kann das Gehör dauerhaft schädigen.",
+                "Direkt in die Sonne zu blicken ist ungefährlich, solange man dabei blinzelt."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "understand",
+            "difficulty": null,
+            "dimensions": [
+              "S"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "PHY.US.2.SEH.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "answer_key": "1) Falsch – schon ein kurzer, direkter Lasertreffer auf die Netzhaut kann diese dauerhaft schädigen; Laserpointer dürfen nie auf Augen gerichtet werden. 2) Richtig – dauerhafte hohe Lautstärke direkt am Ohr (Kopfhörer) zählt zu den häufigsten Ursachen für Lärmschwerhörigkeit bei Jugendlichen. 3) Falsch – Blinzeln schützt nicht ausreichend; direkter Blick in die Sonne kann die Netzhaut irreversibel schädigen (Sonnenfinsternis nur mit geprüfter Schutzbrille beobachten).",
+            "acceptable_reasoning": "Jede Begründung, die die Schädigung der Netzhaut (Aussagen 1 und 3) bzw. des Innenohrs (Aussage 2) korrekt benennt, wird akzeptiert.",
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Fehlvorstellung: Blinzeln oder kurzes Wegschauen reiche als Schutz vor Lichtschäden – tatsächlich kann schon sehr kurze Einwirkung von sehr hoher Intensität (Laser, direkte Sonne) irreversibel schädigen."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t5",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "fig_schattenraum"
+            ],
+            "provenance": null,
+            "role": "task",
+            "kind": "data_interpretation",
+            "prompt": "Betrachte die Abbildung zum Schattenraum hinter einer Kugel bei einer punktförmigen Lichtquelle. Erkläre mithilfe des Modells der geradlinigen Lichtausbreitung, warum der Schatten hier überall gleich scharf begrenzt ist (kein Übergangsbereich).",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "analyze",
+            "difficulty": null,
+            "dimensions": [
+              "W",
+              "E"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "PHY.US.2.SEH.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Licht breitet sich von der punktförmigen Quelle allseitig geradlinig aus. Jeder Lichtstrahl, der die Kugel gerade so streift, setzt sich danach geradlinig fort und begrenzt den Schattenraum als scharfe Kegelfläche. Weil es nur EINEN Ausgangspunkt für alle Strahlen gibt, gibt es keine Strahlen, die nur teilweise blockiert werden – jeder Punkt hinter der Kugel liegt entweder vollständig im Schatten (kein Strahl erreicht ihn) oder vollständig im beleuchteten Bereich. Ein Übergangsbereich (Halbschatten) entsteht erst bei einer ausgedehnten Lichtquelle mit mehreren Ausgangspunkten.",
+            "acceptable_reasoning": "Die Erklärung muss auf die geradlinige Ausbreitung von EINEM Quellpunkt zurückführen und daraus die scharfe Begrenzung ableiten.",
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Fehlvorstellung: Schatten hätten grundsätzlich einen unscharfen Rand – das gilt nur bei ausgedehnten Lichtquellen (Halbschatten); bei einer echten Punktquelle ist der Rand geometrisch scharf."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t6",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "open_response",
+            "prompt": "Beschreibe mit eigenen Worten oder einer Skizze, wie sich Erde und Mond bewegen müssen, damit wir auf der Erde abwechselnd Tag und Nacht sowie unterschiedliche Mondphasen (z. B. Vollmond, Neumond) beobachten. Gehe auf mindestens zwei Bewegungen ein.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 60.0
+            },
+            "cognitive_level": "understand",
+            "difficulty": null,
+            "dimensions": [
+              "E"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "PHY.US.2.SEH.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Tag und Nacht entstehen durch die Rotation der Erde um ihre eigene Achse (etwa 24 Stunden): Die jeweils der Sonne zugewandte Seite hat Tag, die abgewandte Seite Nacht. Die Mondphasen entstehen durch den Umlauf des Mondes um die Erde (etwa 29,5 Tage): Der Mond selbst leuchtet nicht, sondern wird von der Sonne beleuchtet; je nachdem, wie Sonne, Erde und Mond zueinander stehen, sehen wir von der Erde aus einen unterschiedlich großen beleuchteten Teil des Mondes (Vollmond: Mond und Sonne auf gegenüberliegenden Seiten der Erde, wir sehen die volle beleuchtete Seite; Neumond: Mond zwischen Erde und Sonne, die beleuchtete Seite zeigt von der Erde weg).",
+            "acceptable_reasoning": "Es müssen mindestens zwei unterschiedliche Bewegungen (Erdrotation für Tag/Nacht, Mondumlauf für Mondphasen) korrekt benannt und mit der jeweiligen Beobachtung verknüpft werden; eine korrekte Skizze mit Beschriftung wird gleichwertig zur Textbeschreibung akzeptiert.",
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Häufige Fehlvorstellung: Mondphasen entstünden durch den Schatten der ERDE auf dem Mond – das ist der (viel seltenere) Fall einer Mondfinsternis, nicht der normalen Mondphasen, die durch die wechselnde Beleuchtung durch die Sonne bei verändertem Blickwinkel entstehen.",
+              "Jahreszeiten hier nicht überbewerten (Neigung der Erdachse) – der Fokus dieser Aufgabe liegt auf Tag/Nacht und Mondphasen; die Erwähnung der Achsneigung für Jahreszeiten ist ein Plus, aber nicht Kern der Erwartung."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t7",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "decision_scenario",
+            "prompt": "Ein rotes T-Shirt liegt in einem komplett abgedunkelten Raum, in dem nur eine grüne Lichtquelle leuchtet (kein anderes Licht vorhanden). Sag voraus, welche Farbe das T-Shirt in diesem Raum für unser Auge hat, und begründe deine Vorhersage mit dem Begriff Farbe als Streueigenschaft von Stoffen.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Welche Farbe zeigt das rote T-Shirt unter rein grünem Licht, und warum?"
+            },
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "evaluate",
+            "difficulty": null,
+            "dimensions": [
+              "W"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "PHY.US.2.SEH.05",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "answer_key": "Das T-Shirt erscheint schwarz (bzw. sehr dunkel), nicht rot. Ein rotes T-Shirt ist rot, weil sein Stoff bei weißem Licht bevorzugt rotes Licht streut und die übrigen Farben verschluckt (absorbiert). Fällt aber nur grünes Licht auf den Stoff, gibt es kein rotes Licht, das gestreut werden könnte – der Stoff absorbiert das auftreffende grüne Licht fast vollständig, es gelangt kaum Licht zum Auge zurück, das T-Shirt erscheint dunkel/schwarz.",
+            "acceptable_reasoning": "Die Vorhersage 'schwarz/dunkel' muss mit dem Streuprinzip begründet werden (Farbe ist keine feste Eigenschaft des Gegenstands, sondern hängt vom Zusammenspiel mit dem einfallenden Licht ab); eine Begründung nur über 'es gibt kein rotes Licht' ohne den Streu-/Absorptionsgedanken ist unvollständig.",
+            "rubric": [
+              {
+                "criterion": "concept_correctness",
+                "levels": [
+                  "Farbe als feste Objekteigenschaft missverstanden",
+                  "richtige Vorhersage, Streuprinzip nicht klar erklärt",
+                  "richtige Vorhersage UND Streuprinzip korrekt erklärt"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Fehlvorstellung: Ein rotes T-Shirt sei IMMER rot, unabhängig vom Licht, das darauf fällt – Farbe ist keine feste Objekteigenschaft, sondern entsteht erst im Zusammenspiel von Lichtfarbe und Streuverhalten des Materials."
+            ],
+            "self_check": null
+          }
+        ]
+      }
+    ],
+    "assets": [
+      {
+        "id": "fig_schallpegel_skala",
+        "role": "figure",
+        "medium": "visual",
+        "generator": "matplotlib:number_line",
+        "spec": {
+          "min": 0,
+          "max": 140,
+          "step": 20,
+          "marks": [
+            {
+              "at": 0,
+              "label": "Hörschwelle"
+            },
+            {
+              "at": 40,
+              "label": "Flüstern"
+            },
+            {
+              "at": 60,
+              "label": "Gespräch"
+            },
+            {
+              "at": 85,
+              "label": "Kopfhörer laut"
+            },
+            {
+              "at": 100,
+              "label": "Konzert"
+            },
+            {
+              "at": 120,
+              "label": "Schmerzgrenze"
+            }
+          ],
+          "title": "Schallpegel in Dezibel (dB)"
+        },
+        "correctness_surface": null,
+        "misleading_in_isolation": false,
+        "intentionally_flawed": null,
+        "machine_generatable": true,
+        "provenance": null,
+        "data_source": null,
+        "illustrative": false,
+        "caption": null
+      },
+      {
+        "id": "fig_schattenraum",
+        "role": "figure",
+        "medium": "visual",
+        "generator": "matplotlib:coordinate_plane",
+        "spec": {
+          "points": [
+            {
+              "x": 0,
+              "y": 0,
+              "label": "punktförmige Lichtquelle"
+            },
+            {
+              "x": 4,
+              "y": 1.2,
+              "label": "Kugel oben"
+            },
+            {
+              "x": 4,
+              "y": -1.2,
+              "label": "Kugel unten"
+            },
+            {
+              "x": 9,
+              "y": 1.8,
+              "label": ""
+            },
+            {
+              "x": 9,
+              "y": -1.8,
+              "label": ""
+            }
+          ],
+          "segments": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              2,
+              4
+            ]
+          ],
+          "xmin": -1,
+          "xmax": 10,
+          "ymin": -3,
+          "ymax": 3,
+          "title": "Schattenraum hinter einer Kugel (Punktlichtquelle)"
+        },
+        "correctness_surface": null,
+        "misleading_in_isolation": false,
+        "intentionally_flawed": null,
+        "machine_generatable": true,
+        "provenance": null,
+        "data_source": null,
+        "illustrative": false,
+        "caption": null
+      }
+    ],
+    "nachweis": {
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "statement": "Diese Materialien adressieren 5 von 5 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
+      "competence_coverage": [
+        {
+          "competence_id": "PHY.US.2.SEH.01",
+          "exercised_by": [
+            "t1",
+            "t2"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "PHY.US.2.SEH.02",
+          "exercised_by": [
+            "t3",
+            "t4"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "PHY.US.2.SEH.03",
+          "exercised_by": [
+            "t5"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "PHY.US.2.SEH.04",
+          "exercised_by": [
+            "t6"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "PHY.US.2.SEH.05",
+          "exercised_by": [
+            "t7"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        }
+      ],
+      "gaps": [],
+      "zentrale_konzepte": [
+        "Sehen und Hören"
+      ],
+      "uebergreifende_themen": [
+        10,
+        12
+      ]
+    },
+    "depth_profile": {
+      "by_level": {
+        "remember": 1,
+        "apply": 1,
+        "understand": 3,
+        "analyze": 1,
+        "evaluate": 1
+      },
+      "by_dimension": {
+        "W": 4,
+        "S": 2,
+        "E": 1
+      },
+      "by_difficulty": {
+        "1": 4,
+        "2": 2,
+        "3": 1
+      },
+      "minutes_total": 51,
+      "minutes_resource_independent": 51
+    },
+    "rack": null
+  },
+  "artifacts": {
+    "student_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0193\\student.pdf",
+    "teacher_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0193\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0193\\homework.pdf",
+    "preview_png": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0193\\raster\\student.p1.png"
+  },
+  "verify_problems": [],
+  "verify_warnings": [],
+  "parent_id": null,
+  "feedback": [],
+  "error": null
+}

@@ -1,0 +1,84 @@
+{
+  "id": "c0181.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "modelling_task",
+    "prompt": "Plane für nächste Woche eine eigene Radtour: Wähle eine Gesamtstrecke zwischen 8 und 15 km. Teile sie in drei Etappen ein (z. B. 1/3, 1/4 und den Rest) und gib jede Etappe sowohl als Bruch als auch als Dezimalzahl in km an. Prüfe mit einer Überschlagsrechnung, ob deine drei Etappen wirklich die Gesamtstrecke ergeben.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "MOD",
+      "OPE"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.1.ZAH.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "MAT.US.1.ZAH.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Individuelle Lösung, z. B. Gesamtstrecke 12 km: Etappe 1 = 1/3 von 12 km = 4 km, Etappe 2 = 1/4 von 12 km = 3 km, Etappe 3 = Rest = 12 − 4 − 3 = 5 km. Kontrolle: 4 + 3 + 5 = 12 km ✓.",
+    "acceptable_reasoning": "Die gewählten Brüche müssen zusammen mit dem Rest exakt die Gesamtstrecke ergeben; die Kontrolle per Summenbildung ist verpflichtend.",
+    "rubric": [
+      {
+        "criterion": "Etappen als Bruch UND Dezimalzahl",
+        "levels": [
+          "Nur eine Schreibweise",
+          "Beide Schreibweisen korrekt"
+        ]
+      },
+      {
+        "criterion": "Kontrollrechnung stimmt",
+        "levels": [
+          "Fehlt oder falsch",
+          "Summe stimmt exakt mit Gesamtstrecke überein"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen vergessen häufig die Kontrollrechnung am Ende — explizit einfordern.",
+      "Manche wählen Brüche, die sich zusammen mit dem Rest nicht sauber zur Gesamtstrecke addieren (Rundungsfehler) — auf glatte Zahlen achten."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "modelling_task",
+  "subject": "Mathematik",
+  "klasse": 1,
+  "kompetenzbereich": "1: Zahlen und Maße",
+  "competences": [
+    "MAT.US.1.ZAH.01",
+    "MAT.US.1.ZAH.02"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "MOD",
+    "OPE"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0181",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:16+00:00",
+  "updated_at": "2026-07-05T05:34:16+00:00"
+}

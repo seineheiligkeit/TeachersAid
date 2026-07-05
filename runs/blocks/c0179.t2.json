@@ -1,0 +1,74 @@
+{
+  "id": "c0179.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Hier sind acht Vorgänge, bei denen CO2 in die Atmosphäre gelangt oder aus ihr entfernt wird:\n(1) Ein Waldbrand nach einem Blitzeinschlag · (2) Ein Kohlekraftwerk erzeugt Strom · (3) Ein Baum wächst und bildet neues Holz · (4) Ein Vulkan bricht aus · (5) Ein Auto fährt mit Benzin · (6) Der Ozean nimmt CO2 an der Wasseroberfläche auf · (7) Eine Kuh verdaut Gras (Ausstoß von CO2 und Methan) · (8) Ein Flugzeug fliegt von Wien nach New York.\n\nOrdne jeden Vorgang in die Tabelle ein: Ist die CO2-Quelle bzw. -Senke NATÜRLICH (läuft ohne menschliches Zutun ab) oder MENSCHGEMACHT (entsteht durch menschliche Tätigkeit)? Trage die Nummern in die passende Spalte ein.",
+    "payload": {
+      "kind": "table_fill",
+      "columns": [
+        "Natürlich",
+        "Menschgemacht"
+      ],
+      "rows": [
+        [
+          "",
+          ""
+        ]
+      ]
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 35.0
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.ERK.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Natürlich: (1) Waldbrand durch Blitzeinschlag, (3) Baumwachstum (Senke), (4) Vulkanausbruch, (6) CO2-Aufnahme im Ozean (Senke), (7) Verdauung der Kuh. Menschgemacht: (2) Kohlekraftwerk, (5) Auto mit Benzin, (8) Flugzeugflug.",
+    "acceptable_reasoning": "Bei (7) ist eine Diskussion zulässig: Die Kuh selbst ist ein natürliches Lebewesen, aber die riesige Anzahl an Nutztieren weltweit ist eine Folge menschlicher Landwirtschaft. Für diese Aufgabe zählt die direkte Einordnung (Verdauung = natürlicher Stoffwechselvorgang) als richtig; wer stattdessen 'menschgemacht' mit der Begründung 'Massentierhaltung' wählt und das erklärt, wird ebenfalls anerkannt.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Vulkanausbrüche werden oft fälschlich als menschgemacht empfunden, weil sie 'Katastrophen' sind — Ursache ist aber rein geologisch.",
+      "Der Waldbrand (1) ist hier bewusst NICHT durch Menschen verursacht (Blitzeinschlag); ein durch Menschen gelegtes Feuer wäre menschgemacht — auf den genauen Wortlaut der Aufgabe hinweisen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 4,
+  "kompetenzbereich": "Erkenntnisse gewinnen (E)",
+  "competences": [
+    "BIO.US.x.ERK.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0179",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:15+00:00",
+  "updated_at": "2026-07-05T05:34:15+00:00"
+}

@@ -1,0 +1,73 @@
+{
+  "id": "c0191.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Nutze deine Kreuztabelle aus Aufgabe 1, um folgende Fragen zu beantworten: a) Wie viele Kinder insgesamt haben NICHT am Glücksrad-Spiel teilgenommen? b) In welcher Klasse haben anteilig mehr Kinder mitgespielt — der 4a oder der 4b? Begründe mit einer Rechnung, nicht nur mit den absoluten Zahlen.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "DAR",
+      "BEG"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.4.DAT.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "a) 8 + 9 = 17 Kinder haben nicht mitgespielt. b) 4a: 12 von 20, das sind 60 %. 4b: 15 von 24, das sind 62,5 %. Anteilig hat die 4b etwas mehr Kinder zum Mitspielen bewegt, obwohl in absoluten Zahlen die 4b nur 3 Kinder mehr hat als die 4a bei den Teilnehmenden.",
+    "acceptable_reasoning": "Ablesen der Summenspalte für Teilaufgabe a); für Teilaufgabe b) Berechnung von Anteilen/Prozentsätzen statt reinem Vergleich der absoluten Häufigkeiten, da die Klassengrößen unterschiedlich sind.",
+    "rubric": [
+      {
+        "criterion": "Anteilsvergleich statt reinem Zahlenvergleich",
+        "levels": [
+          "Nur absolute Zahlen verglichen",
+          "Anteil für eine Klasse berechnet",
+          "Anteile für beide Klassen korrekt berechnet und verglichen"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Klassischer Fehler bei b): nur die absoluten Zahlen (12 vs. 15) vergleichen, ohne die unterschiedliche Klassengröße zu berücksichtigen — genau das soll hier vermieden werden.",
+      "Prozentrechnung: 12/20 und 15/24 jeweils richtig in Prozent umrechnen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Mathematik",
+  "klasse": 4,
+  "kompetenzbereich": "4: Daten und Zufall",
+  "competences": [
+    "MAT.US.4.DAT.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "DAR",
+    "BEG"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0191",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:23+00:00",
+  "updated_at": "2026-07-05T05:34:23+00:00"
+}

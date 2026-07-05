@@ -1,0 +1,145 @@
+{
+  "id": "c0191.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Berechne jetzt die Gesamtwahrscheinlichkeit, beim Glücksrad-Spiel überhaupt einen Stern zu gewinnen — egal ob über Rot oder Blau. Nutze dafür deine beiden Ergebnisse aus Aufgabe 3.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 3
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "OPE"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.4.DAT.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "P(Stern gesamt) = P(Rot UND Stern) + P(Blau UND Stern) = 0,20 + 0,10 = 0,30, also 30 %.",
+    "acceptable_reasoning": "Additionsregel: Wenn mehrere sich ausschließende Pfade zum gleichen Ereignis (hier „Stern“) führen, werden ihre Wahrscheinlichkeiten addiert.",
+    "rubric": [
+      {
+        "criterion": "Additionsregel korrekt angewendet",
+        "levels": [
+          "Falsche Regel (z. B. multipliziert)",
+          "Ansatz richtig, Rechenfehler",
+          "Korrekt: 0,30 bzw. 30 %"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Hier ist Addition korrekt (im Gegensatz zu Aufgabe 3) — der Unterschied zwischen „UND“ (entlang eines Pfades, multiplizieren) und „ODER“ (verschiedene Pfade zum selben Ergebnis, addieren) ist der zentrale Lerninhalt und sollte angesprochen werden.",
+      "30 % wirkt vielleicht höher als erwartet — das kann zur Diskussion in Aufgabe 6 zurückkommen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Mathematik",
+  "klasse": 4,
+  "kompetenzbereich": "4: Daten und Zufall",
+  "competences": [
+    "MAT.US.4.DAT.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "OPE"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:tree_diagram",
+      "spec": {
+        "branches": [
+          {
+            "label": "Rot",
+            "p": "0,5",
+            "children": [
+              {
+                "label": "Stern",
+                "p": "0,4",
+                "_xy": [
+                  2,
+                  0.0
+                ]
+              },
+              {
+                "label": "Kein Stern",
+                "p": "0,6",
+                "_xy": [
+                  2,
+                  1.0
+                ]
+              }
+            ],
+            "_xy": [
+              1,
+              0.5
+            ]
+          },
+          {
+            "label": "Blau",
+            "p": "0,5",
+            "children": [
+              {
+                "label": "Stern",
+                "p": "0,2",
+                "_xy": [
+                  2,
+                  2.0
+                ]
+              },
+              {
+                "label": "Kein Stern",
+                "p": "0,8",
+                "_xy": [
+                  2,
+                  3.0
+                ]
+              }
+            ],
+            "_xy": [
+              1,
+              2.5
+            ]
+          }
+        ],
+        "title": "Glücksrad + Losziehung"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0191",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:23+00:00",
+  "updated_at": "2026-07-05T05:34:23+00:00"
+}

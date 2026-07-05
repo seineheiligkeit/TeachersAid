@@ -1,0 +1,71 @@
+{
+  "id": "c0187.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Vereinfache die folgenden Terme. Wende dabei die Potenzgesetze für positive ganzzahlige Exponenten an.\n(a) 3a² + 5a² − a²\n(b) a³ · a⁴\n(c) (2a)² · a\n(d) 5a² · 3a − 4a³",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "OPE"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.3.VAR.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "(a) 3a² + 5a² − a² = 7a². (b) a³ · a⁴ = a^7 (Exponenten addieren, da gleiche Basis). (c) (2a)² · a = 4a² · a = 4a³. (d) 5a² · 3a − 4a³ = 15a³ − 4a³ = 11a³.",
+    "acceptable_reasoning": "Bei (a) werden nur die Koeffizienten gleichartiger Glieder addiert/subtrahiert, der Exponent bleibt unverändert. Bei (b)–(d) gilt: bei Multiplikation gleicher Basen werden die Exponenten addiert.",
+    "rubric": [
+      {
+        "criterion": "Potenzgesetze korrekt angewendet",
+        "levels": [
+          "0–1 von 4 korrekt",
+          "2–3 von 4 korrekt",
+          "Alle 4 korrekt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Bei (a) wird manchmal auch der Exponent addiert (3a²+5a² wird fälschlich zu 8a⁴) — nur gleichartige Glieder werden zusammengefasst, der Exponent ändert sich dabei NICHT.",
+      "Bei (c) wird (2a)² oft zu 2a² statt 4a² vereinfacht — die Klammer bedeutet, dass auch die 2 quadriert wird."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Mathematik",
+  "klasse": 3,
+  "kompetenzbereich": "2: Variablen und Funktionen",
+  "competences": [
+    "MAT.US.3.VAR.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "OPE"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0187",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:20+00:00",
+  "updated_at": "2026-07-05T05:34:20+00:00"
+}

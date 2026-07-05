@@ -1,0 +1,76 @@
+{
+  "id": "c0184.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Zwei Busunternehmen bieten Fahrten für eure 28-köpfige Gruppe an. Bus A kostet 12 Euro pro Person, aber es gibt 10 % Nachlass ab 25 Personen. Bus B kostet 14 Euro pro Person mit 25 % Nachlass ab 20 Personen. Welcher Bus ist für eure Gruppe günstiger – und um wie viel Euro insgesamt?",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Bus A: 12 €/Person, 10 % Nachlass ab 25 Personen. Bus B: 14 €/Person, 25 % Nachlass ab 20 Personen. Eure Gruppe: 28 Personen."
+    },
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "MOD",
+      "BEG"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.2.ZAH.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Bus A: 28 · 12 € = 336 €, davon 10 % Nachlass = 33,60 €, Endpreis 302,40 €. Bus B: 28 · 14 € = 392 €, davon 25 % Nachlass = 98 €, Endpreis 294 €. Bus B ist günstiger, um 302,40 € − 294 € = 8,40 €.",
+    "acceptable_reasoning": "Die Entscheidung für Bus B muss durch beide korrekt berechneten Endpreise gestützt sein; eine Entscheidung ohne Rechnung oder nur auf Basis der Prozentsätze (25 % > 10 %, also 'billiger') wird nicht akzeptiert, da sie den höheren Grundpreis ignoriert.",
+    "rubric": [
+      {
+        "criterion": "correctness",
+        "levels": [
+          "Beide Endpreise falsch oder fehlen",
+          "Ein Endpreis korrekt, Entscheidung unsicher",
+          "Beide Endpreise korrekt berechnet und richtig begründet verglichen"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Die Falle der Aufgabe: Bus B hat den höheren Prozentsatz UND den höheren Grundpreis – nur die tatsächliche Rechnung zeigt, welcher Effekt überwiegt.",
+      "Nachlass wird manchmal von der falschen Basis (z. B. von 100 € statt vom tatsächlichen Gruppenpreis) berechnet."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Mathematik",
+  "klasse": 2,
+  "kompetenzbereich": "1: Zahlen und Maße",
+  "competences": [
+    "MAT.US.2.ZAH.04"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "MOD",
+    "BEG"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0184",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:18+00:00",
+  "updated_at": "2026-07-05T05:34:18+00:00"
+}

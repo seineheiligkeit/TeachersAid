@@ -1,0 +1,101 @@
+{
+  "id": "c0182.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Lukas bekommt jede Woche 3 Euro Taschengeld. Außerdem hat er schon 2 Euro in seiner Sparbüchse. Stelle einen Term auf, der zeigt, wie viel Geld Lukas nach w Wochen insgesamt gespart hat.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 3
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "MOD",
+      "DAR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.1.VAR.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Term: 3w + 2 (oder gleichwertig 3 · w + 2). Nach w Wochen hat Lukas 3w Euro aus dem Taschengeld plus die 2 Euro Startgeld.",
+    "acceptable_reasoning": "Das wöchentliche Taschengeld (3 Euro) wird mit der Anzahl der Wochen (w) multipliziert; das Startgeld (2 Euro) wird addiert.",
+    "rubric": [
+      {
+        "criterion": "Term korrekt aufgestellt",
+        "levels": [
+          "Falsch oder fehlt",
+          "Kleine Ungenauigkeit",
+          "Vollständig korrekt (3w + 2)"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Manche Schüler:innen vertauschen die Rolle von Startgeld und wöchentlicher Rate — genau lesen, was pro Woche dazukommt und was schon vorhanden ist.",
+      "Der Term ist keine Gleichung — es fehlt (noch) ein Gleichheitszeichen mit einem Ergebnis."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Mathematik",
+  "klasse": 1,
+  "kompetenzbereich": "2: Variablen und Funktionen",
+  "competences": [
+    "MAT.US.1.VAR.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "MOD",
+    "DAR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:function_graph",
+      "spec": {
+        "xmin": 0,
+        "xmax": 6,
+        "ymin": 0,
+        "ymax": 30,
+        "m": 3,
+        "b": 2,
+        "xlabel": "Anzahl Wochen",
+        "ylabel": "Ersparnis in Euro",
+        "title": "Sparverlauf: Startgeld plus wöchentliches Taschengeld"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0182",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:17+00:00",
+  "updated_at": "2026-07-05T05:34:17+00:00"
+}

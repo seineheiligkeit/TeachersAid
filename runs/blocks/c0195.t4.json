@@ -1,0 +1,82 @@
+{
+  "id": "c0195.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "experiment_protocol",
+    "prompt": "Aufgabe: In einem Eimer landet versehentlich ein Gemisch aus drei Stoffen: Sand, Kochsalz und Wasser (Sand und Salz sind beide fest, aber Sand löst sich NICHT in Wasser, Salz schon). Plane ein zweistufiges Trennverfahren, mit dem du am Ende drei getrennte Stoffe erhältst: trockenen Sand, trockenes Salz und (optional) reines Wasser. Beschreibe Schritt für Schritt: (1) Welches Verfahren wendest du zuerst an, und was trennt es ab? (2) Welches Verfahren wendest du danach an, um den Rest zu trennen? (3) Was müsstest du zusätzlich tun, um am Ende auch das reine Wasser zurückzugewinnen?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "E",
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.US.x.ERK.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 14,
+    "answer_key": "Schritt 1 — Filtrieren: Das Gemisch wird durch einen Filter gegossen. Der Sand (unlöslicher Feststoff) bleibt im Filter zurück, Salzwasser (gelöstes Salz + Wasser) läuft durch. Ergebnis: trockener Sand ist bereits abgetrennt. Schritt 2 — Eindampfen: Die durchgelaufene Salzwasser-Lösung wird erhitzt, bis das Wasser vollständig verdampft ist. Zurück bleibt trockenes Kochsalz. Zusatz für Schritt 3 — Destillieren statt Eindampfen: Um zusätzlich das Wasser selbst zu gewinnen, muss der Wasserdampf beim Erhitzen aufgefangen und in einem gekühlten Rohr wieder zu flüssigem Wasser kondensiert werden (Destillationsapparatur), statt ihn einfach entweichen zu lassen wie beim einfachen Eindampfen.",
+    "acceptable_reasoning": "Die Reihenfolge Filtrieren → Eindampfen/Destillieren ist zwingend (Sand muss zuerst raus, sonst verstopft er nichts Kritisches, aber die Reihenfolge ergibt sich aus der Aufgabenlogik); volle Punkte auch wenn Schritt 3 nur skizziert und nicht bis ins Detail beschrieben ist, solange 'Dampf auffangen und abkühlen' als Kernidee erkennbar ist.",
+    "rubric": [
+      {
+        "criterion": "Schrittfolge",
+        "levels": [
+          "vollständig: Filtrieren vor Eindampfen korrekt begründet, beide Verfahren passend zum jeweiligen Stoffpaar.",
+          "teilweise: Richtige Verfahren genannt, aber Reihenfolge oder Begründung unklar.",
+          "unzureichend: Falsche oder fehlende Verfahren."
+        ]
+      },
+      {
+        "criterion": "Wasserrückgewinnung",
+        "levels": [
+          "vollständig: Erklärt Destillation als Auffangen und Kondensieren des Dampfes.",
+          "teilweise: Erwähnt Destillieren als Begriff, ohne das Prinzip zu erklären.",
+          "unzureichend: Keine sinnvolle Idee zur Wassergewinnung."
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Verbreiteter Fehler: Schüler:innen versuchen, Sand UND Salz in einem Schritt herauszufiltern — das funktioniert nicht, weil gelöstes Salz die Filterporen passiert.",
+      "Manche schlagen vor, das gesamte Gemisch direkt einzudampfen — dabei bliebe der Sand im eingedampften Salz vermischt zurück. Reihenfolge ist entscheidend.",
+      "Der Unterschied 'Eindampfen (Wasser geht verloren) vs. Destillieren (Wasser wird zurückgewonnen)' muss in Schritt 3 klar erkennbar sein — das ist der Kern dieser Teilaufgabe."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "experiment_protocol",
+  "subject": "Chemie",
+  "klasse": 4,
+  "kompetenzbereich": "Erkenntnisse gewinnen und interpretieren (E)",
+  "competences": [
+    "CHE.US.x.ERK.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "E",
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0195",
+  "source": "ai",
+  "created_at": "2026-07-05T05:38:19+00:00",
+  "updated_at": "2026-07-05T05:38:19+00:00"
+}

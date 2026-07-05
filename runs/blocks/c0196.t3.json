@@ -1,0 +1,114 @@
+{
+  "id": "c0196.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "df2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Das Diagramm zeigt: Je mehr eine Apfelblüte innerhalb einer Stunde von Bienen besucht wurde, desto häufiger hat sich später eine Frucht gebildet. Beschreibe den Zusammenhang. Erkläre dann mit deinem Wissen über Bestäubung, WARUM mehr Bienenbesuche zu mehr Fruchtansatz führen könnten – und nenne einen Grund, warum auch bei 0 Besuchen ein kleiner Anteil Früchte entstanden ist.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.ERK.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Zusammenhang: mit steigender Anzahl an Bienenbesuchen steigt der Anteil an Blüten mit Fruchtansatz (von 4 % bei 0 Besuchen auf 81 % bei 6 Besuchen). Erklärung: mehr Besuche bedeuten mehr Gelegenheiten, dass Pollen auf die Narbe gelangt (Bestäubung) und damit auf Befruchtung folgt. Bei 0 Besuchen kann es dennoch zu wenig Fruchtansatz kommen durch Windbestäubung, Selbstbestäubung oder Besuche anderer, nicht gezählter Insekten.",
+    "acceptable_reasoning": "Jede plausible alternative Bestäubungsquelle für den 0-Besuche-Fall wird akzeptiert (Wind, andere Insektenarten, Selbstbestäubung).",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Nicht automatisch 'mehr Bienen = Ursache' als bewiesen hinstellen – der Zusammenhang ist stark, aber die Aufgabe verlangt auch das Gegenbeispiel (0 Besuche, trotzdem Früchte) zu erklären."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 1,
+  "kompetenzbereich": "Erkenntnisse gewinnen (E)",
+  "competences": [
+    "BIO.US.x.ERK.04"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "df2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:scatter",
+      "spec": {
+        "points": [
+          [
+            0.0,
+            4.0
+          ],
+          [
+            1.0,
+            22.0
+          ],
+          [
+            2.0,
+            38.0
+          ],
+          [
+            3.0,
+            55.0
+          ],
+          [
+            4.0,
+            68.0
+          ],
+          [
+            5.0,
+            74.0
+          ],
+          [
+            6.0,
+            81.0
+          ]
+        ],
+        "xlabel": "Bienenbesuche pro Blüte (1 Std.)",
+        "ylabel": "Anteil Blüten mit Fruchtansatz (%)",
+        "title": "Bienenbesuche und Fruchtansatz bei Apfelblüten",
+        "fit": true
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": true,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0196",
+  "source": "ai",
+  "created_at": "2026-07-05T05:51:15+00:00",
+  "updated_at": "2026-07-05T05:51:15+00:00"
+}

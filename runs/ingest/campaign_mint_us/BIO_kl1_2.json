@@ -1,0 +1,292 @@
+{
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 1,
+  "scope_label": "Bestäubung und Befruchtung bei Blütenpflanzen",
+  "title": "Ohne Bienen keine Kirschen? Die Blüte als Werkzeug",
+  "kernfrage": "Warum haben Blüten Farben, Duft und Nektar – und was hat das mit Früchten zu tun?",
+  "body": {
+    "intro": [],
+    "data_figures": [
+      {
+        "id": "df2",
+        "intent": "relationship",
+        "title": "Bienenbesuche und Fruchtansatz bei Apfelblüten",
+        "xlabel": "Bienenbesuche pro Blüte (1 Std.)",
+        "ylabel": "Anteil Blüten mit Fruchtansatz (%)",
+        "points": [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            22
+          ],
+          [
+            2,
+            38
+          ],
+          [
+            3,
+            55
+          ],
+          [
+            4,
+            68
+          ],
+          [
+            5,
+            74
+          ],
+          [
+            6,
+            81
+          ]
+        ],
+        "fit": true,
+        "illustrative": true
+      }
+    ],
+    "assets": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Eine Blüte ist eine Einladung",
+        "throughline": "Blüten sind keine Dekoration, sondern ein Werkzeug: Farbe, Duft und Nektar locken Tiere an, die dabei – ohne es zu 'wollen' – Pollen übertragen.",
+        "talking_points": [
+          "Zeig zuerst ein echtes Blütenmodell oder Foto: Kelch, Krone, Staubblätter, Stempel – Fachbegriffe an konkreten Teilen verankern (nicht nur benennen, sondern die Funktion mitdenken).",
+          "Der Unterschied Bestäubung (Pollen kommt auf Narbe) vs. Befruchtung (Verschmelzung der Zellen) ist der häufigste Verwechslungspunkt – bewusst gegenüberstellen.",
+          "Die Streudiagramm-Aufgabe (t3) zeigt einen Zusammenhang, aber Zusammenhang ist nicht automatisch Ursache – guter Anknüpfungspunkt für spätere Klassen."
+        ],
+        "extensions": [
+          "Eine echte Blüte sezieren und die Teile beschriften (fächerübergreifend mit ERK.01, falls Zeit/Material vorhanden).",
+          "Windbestäubte Pflanzen (z. B. Gräser, Haselnuss) als Gegenbeispiel recherchieren: unauffällige Blüten, kein Duft, viel Pollen."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "structure_overview",
+            "prompt": "Eine Blüte hat mehrere Teile mit unterschiedlichen Aufgaben: die Blütenblätter (Krone) fallen durch Farbe auf, die Staubblätter tragen Pollen (männliche Geschlechtszellen), der Stempel mit Narbe und Fruchtknoten enthält die Samenanlagen (weibliche Geschlechtszellen), und Nektarien am Blütengrund produzieren süßen Nektar. Erstelle eine kurze Übersicht: Ordne jedem Blütenteil seine Hauptaufgabe zu.",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Blütenteil",
+                "Hauptaufgabe"
+              ],
+              "rows": 4
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "W"
+            ],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.WIS.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "Blütenblätter (Krone): durch Farbe/Form Bestäuber anlocken. Staubblätter: Pollen (männliche Geschlechtszellen) produzieren und anbieten. Stempel (Narbe, Griffel, Fruchtknoten): Pollen auffangen, zu den Samenanlagen leiten, Samenanlagen (weibliche Geschlechtszellen) enthalten. Nektarien: Nektar als Belohnung für Bestäuber produzieren.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Häufige Verwechslung: Staubblatt und Stempel werden vertauscht. Merkhilfe: Staub-blatt = liefert Staub(pollen); Stempel steht in der Mitte und empfängt."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "open_response",
+            "prompt": "Erkläre den Unterschied zwischen Bestäubung und Befruchtung in eigenen Worten. Verwende dabei die Begriffe 'Pollen', 'Narbe', 'Samenanlage' und 'Verschmelzung'.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "W"
+            ],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.WIS.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "Bestäubung: Pollen gelangt auf die Narbe des Stempels (z. B. durch Wind oder Tiere). Befruchtung: Der Pollen bildet einen Schlauch zur Samenanlage, dort verschmelzen männliche und weibliche Zelle – daraus entsteht ein Samen. Bestäubung ist also der Transport, Befruchtung die eigentliche Vereinigung der Zellen danach.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Sehr verbreiteter Fehler: Bestäubung und Befruchtung werden als dasselbe behandelt. Beide Begriffe müssen als zeitlich getrennte Schritte erscheinen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "data_interpretation",
+            "prompt": "Das Diagramm zeigt: Je mehr eine Apfelblüte innerhalb einer Stunde von Bienen besucht wurde, desto häufiger hat sich später eine Frucht gebildet. Beschreibe den Zusammenhang. Erkläre dann mit deinem Wissen über Bestäubung, WARUM mehr Bienenbesuche zu mehr Fruchtansatz führen könnten – und nenne einen Grund, warum auch bei 0 Besuchen ein kleiner Anteil Früchte entstanden ist.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "E"
+            ],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.ERK.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 12,
+            "asset_refs": [
+              "df2"
+            ],
+            "answer_key": "Zusammenhang: mit steigender Anzahl an Bienenbesuchen steigt der Anteil an Blüten mit Fruchtansatz (von 4 % bei 0 Besuchen auf 81 % bei 6 Besuchen). Erklärung: mehr Besuche bedeuten mehr Gelegenheiten, dass Pollen auf die Narbe gelangt (Bestäubung) und damit auf Befruchtung folgt. Bei 0 Besuchen kann es dennoch zu wenig Fruchtansatz kommen durch Windbestäubung, Selbstbestäubung oder Besuche anderer, nicht gezählter Insekten.",
+            "acceptable_reasoning": "Jede plausible alternative Bestäubungsquelle für den 0-Besuche-Fall wird akzeptiert (Wind, andere Insektenarten, Selbstbestäubung).",
+            "watch_outs": [
+              "Nicht automatisch 'mehr Bienen = Ursache' als bewiesen hinstellen – der Zusammenhang ist stark, aber die Aufgabe verlangt auch das Gegenbeispiel (0 Besuche, trotzdem Früchte) zu erklären."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "ordering",
+            "prompt": "Bringe die Schritte vom Bienenbesuch bis zur fertigen Frucht in die richtige Reihenfolge.",
+            "payload": {
+              "kind": "ordering",
+              "items": [
+                "Ein Same reift im Fruchtknoten heran.",
+                "Eine Biene sammelt Nektar und bleibt dabei Pollen an ihr haften.",
+                "Der Pollenschlauch wächst bis zur Samenanlage, Verschmelzung findet statt (Befruchtung).",
+                "Die Biene fliegt zu einer anderen Blüte, Pollen bleibt auf der Narbe hängen (Bestäubung).",
+                "Der Fruchtknoten entwickelt sich zur Frucht."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "apply",
+            "dimensions": [
+              "W"
+            ],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.WIS.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "1. Eine Biene sammelt Nektar und bleibt dabei Pollen an ihr haften. 2. Die Biene fliegt zu einer anderen Blüte, Pollen bleibt auf der Narbe hängen (Bestäubung). 3. Der Pollenschlauch wächst bis zur Samenanlage, Verschmelzung findet statt (Befruchtung). 4. Ein Same reift im Fruchtknoten heran. 5. Der Fruchtknoten entwickelt sich zur Frucht.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Schritt 3 (Pollenschlauch/Befruchtung) wird oft übersprungen oder mit Schritt 2 (Bestäubung) verwechselt und zusammengelegt."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4b",
+            "kind": "open_response",
+            "prompt": "Modell: 'Je mehr Bienenbesuche eine Blüte bekommt, desto sicherer entsteht daraus eine Frucht.' Beurteile dieses Modell: Für welche Pflanzen passt es gut, und nenne EINE Pflanzenart oder Situation, für die dieses Modell NICHT (oder nur schlecht) gilt (z. B. windbestäubte Pflanzen, sich selbst bestäubende Pflanzen). Begründe, warum das Modell dort an seine Grenze stößt.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "W"
+            ],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.WIS.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "acceptable_reasoning": "Das Modell passt gut für insektenbestäubte Pflanzen mit auffälligen Blüten (z. B. Apfel, Kirsche), bei denen Bestäuber tatsächlich der limitierende Faktor sind. Es passt schlecht für windbestäubte Pflanzen (z. B. Gräser, Haselnuss, Getreide) – dort spielt die Anzahl an Insektenbesuchen kaum eine Rolle, da der Pollen durch Wind übertragen wird. Auch selbstbestäubende Pflanzen (z. B. manche Erbsensorten) brauchen kaum fremde Bestäuber. Jede fachlich richtige Grenze wird akzeptiert.",
+            "watch_outs": [
+              "WIS.03 verlangt explizit das Erkennen von Gültigkeitsgrenzen eines Modells – eine reine Bestätigung ('das Modell stimmt immer') verfehlt den Kern der Aufgabe."
+            ],
+            "rubric": [],
+            "answer_key": "Das Modell passt gut für insektenbestäubte Pflanzen (z. B. Apfel, Kirsche, Kürbis): Dort hängt die Bestäubung wirklich von Insektenbesuchen ab, also führen mehr Besuche zu mehr bestäubten Blüten und mehr Früchten. Es gilt NICHT (oder schlecht) z. B. für windbestäubte Pflanzen wie Gräser, Hasel oder Mais: Deren Pollen wird vom Wind getragen, Bienenbesuche spielen kaum eine Rolle. Ebenso wenig für Selbstbestäuber wie Bohne oder Erbse, die sich ohne Besucher selbst bestäuben. Grund für die Grenze: Das Modell nimmt an, dass Insekten der einzige Bestäubungsweg sind — wo Wind oder Selbstbestäubung die Bestäubung übernehmen, entsteht die Frucht unabhängig von der Zahl der Bienenbesuche."
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "experiment_protocol",
+            "prompt": "Ihr wollt untersuchen, ob Apfelblüten ohne Insektenbesuch überhaupt Früchte bilden können. Plant dazu einen einfachen Vergleich: (a) was macht ihr mit einer Blütengruppe, damit KEINE Insekten hinkommen können, (b) welche zweite Blütengruppe braucht ihr zum Vergleich, (c) was zählt ihr am Ende und vergleicht?",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Schritt",
+                "Was genau?"
+              ],
+              "rows": 3
+            },
+            "cognitive_level": "apply",
+            "dimensions": [
+              "E"
+            ],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.ERK.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Beispielprotokoll: (a) Blüten mit einem feinmaschigen Netz oder Stoffbeutel abdecken, sodass Insekten nicht hinkommen; (b) eine gleich große Gruppe unbedeckter Blüten am selben Baum als Vergleich; (c) nach einigen Wochen bei beiden Gruppen zählen, wie viele Blüten Früchte gebildet haben, und die Anteile vergleichen.",
+            "acceptable_reasoning": "Wichtig ist das Kontrollgruppen-Prinzip (eine Gruppe ohne, eine mit Insektenzugang, sonst gleiche Bedingungen), nicht die exakte Abdeckmethode.",
+            "watch_outs": [
+              "Ohne eine unbedeckte Vergleichsgruppe lässt sich kein Effekt der Bestäubung nachweisen – dieser Punkt wird oft vergessen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "create_produce",
+            "prompt": "Ein Nachbar will in seinem Garten alle 'wilden' Blühpflanzen (z. B. Löwenzahn, Klee) entfernen, damit der Rasen 'ordentlich' aussieht. Schreibe einen kurzen, freundlichen Text (5–6 Sätze) an den Nachbarn, der erklärt, welche Rolle diese Pflanzen für Bienen und andere Bestäuber spielen, und einen konkreten Vorschlag macht, wie ein Kompromiss aussehen könnte.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55
+            },
+            "cognitive_level": "create",
+            "dimensions": [
+              "S"
+            ],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.STA.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "Erwarteter Text nennt: wilde Blühpflanzen liefern Nektar/Pollen für Bienen und andere Insekten, besonders wenn sonst wenig blüht; ohne Bestäuber weniger Früchte/Samen auch für Nutzpflanzen in der Nähe. Konkreter Kompromissvorschlag, z. B. eine Rasenecke wild blühen lassen, seltener mähen, oder gezielt eine Blühwiese anlegen.",
+            "acceptable_reasoning": "Bewertet wird, ob der fachliche Zusammenhang (Bestäuber brauchen Blühpflanzen) korrekt und freundlich vermittelt wird sowie ein umsetzbarer Kompromiss genannt wird.",
+            "watch_outs": [
+              "Ein rein vorwurfsvoller Ton verfehlt die Aufgabe (verlangt ist ein freundlicher, überzeugender Text mit konkretem Vorschlag, keine Belehrung)."
+            ],
+            "rubric": []
+          }
+        ]
+      }
+    ]
+  }
+}

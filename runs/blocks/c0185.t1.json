@@ -1,0 +1,110 @@
+{
+  "id": "c0185.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "a1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Die Abbildung zeigt den Lageplan des Schulgartens. Gib die Koordinaten aller vier markierten Punkte an. Welche zwei Punkte liegen auf derselben Höhe (gleicher y-Wert)?",
+    "payload": {
+      "kind": "data_interpretation",
+      "asset_ref": "a1"
+    },
+    "response": {
+      "mode": "lines",
+      "n": 3
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "DAR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.2.FIG.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Wasserhahn (2|1), Gartenhütte (6|1), Zaun-Ecke (2|5), Baum (6|5). Auf derselben Höhe (y = 1) liegen Wasserhahn und Gartenhütte; auf derselben Höhe (y = 5) liegen Zaun-Ecke und Baum.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "x- und y-Koordinate werden manchmal vertauscht angegeben (z. B. (1|2) statt (2|1))."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Mathematik",
+  "klasse": 2,
+  "kompetenzbereich": "3: Figuren und Körper",
+  "competences": [
+    "MAT.US.2.FIG.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "DAR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "a1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:coordinate_plane",
+      "spec": {
+        "points": [
+          {
+            "x": 2,
+            "y": 1,
+            "label": "Wasserhahn"
+          },
+          {
+            "x": 6,
+            "y": 1,
+            "label": "Gartenhütte"
+          },
+          {
+            "x": 2,
+            "y": 5,
+            "label": "Zaun-Ecke"
+          },
+          {
+            "x": 6,
+            "y": 5,
+            "label": "Baum"
+          }
+        ],
+        "xmin": 0,
+        "xmax": 8,
+        "ymin": 0,
+        "ymax": 7,
+        "title": "Lageplan Schulgarten"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": true,
+      "caption": "Lageplan des Schulgartens mit vier Fixpunkten"
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0185",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:19+00:00",
+  "updated_at": "2026-07-05T05:34:19+00:00"
+}

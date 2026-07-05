@@ -1,0 +1,737 @@
+{
+  "id": "c0185",
+  "stage": "content",
+  "status": "pending",
+  "source": "generated",
+  "created_at": "2026-07-05T05:34:18+00:00",
+  "updated_at": "2026-07-05T05:34:19+00:00",
+  "title": "Mathematik 2. Kl. — Der Schulgarten-Plan (generiert)",
+  "note": "",
+  "request": {
+    "subject": "Mathematik",
+    "klasse": 2,
+    "stufe": "Unterstufe",
+    "schulform": null,
+    "topic_raw": "Der Schulgarten-Plan",
+    "envelope": "doppelstunde",
+    "options": {}
+  },
+  "resolution": {
+    "fassung": {
+      "kurztitel": "AHS-Lehrplan (konsolidiert)",
+      "bgbl": "BGBl. II Nr. 204/2024",
+      "doknr": "NOR40264237",
+      "valid_from": "2024-09-01",
+      "valid_to": "2026-08-31"
+    },
+    "subject": "Mathematik",
+    "klasse": 2,
+    "matched_kompetenzbereiche": [
+      "3: Figuren und Körper"
+    ],
+    "grade_check": true,
+    "competences": [
+      {
+        "id": "MAT.US.2.FIG.01",
+        "kompetenzbereich": "3: Figuren und Körper",
+        "klasse": 2,
+        "text": "mit kartesischen Koordinatensystemen arbeiten,",
+        "source_ref": "MATHEMATIK / 2. Klasse / 3: Figuren und Körper",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      },
+      {
+        "id": "MAT.US.2.FIG.02",
+        "kompetenzbereich": "3: Figuren und Körper",
+        "klasse": 2,
+        "text": "achsensymmetrische Figuren sowie zueinander kongruente Figuren erkennen, konstruieren und ihre Eigenschaften nutzen,",
+        "source_ref": "MATHEMATIK / 2. Klasse / 3: Figuren und Körper",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      },
+      {
+        "id": "MAT.US.2.FIG.03",
+        "kompetenzbereich": "3: Figuren und Körper",
+        "klasse": 2,
+        "text": "mit Dreiecken, besonderen Vierecken und ihren Flächeninhalten arbeiten.",
+        "source_ref": "MATHEMATIK / 2. Klasse / 3: Figuren und Körper",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      }
+    ],
+    "notes": []
+  },
+  "plan": null,
+  "content": {
+    "meta": {
+      "title": "Der Schulgarten-Plan",
+      "subtitle": "LLM-Entwurf — Erstprüfung",
+      "subject": "Mathematik",
+      "stufe": "Unterstufe",
+      "klasse": 2,
+      "kernfrage": "Wie plant ihr ein Schulgarten-Beet, das genau passt, spiegelsymmetrisch aussieht und wirklich Platz für alle Pflanzen bietet?",
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "lehrplan_label": "Mathematik · 2. Klasse · 3: Figuren und Körper",
+      "content_language": "de",
+      "subject_models": []
+    },
+    "subject_model": {
+      "subject": "Mathematik",
+      "stufe": "Unterstufe",
+      "dimensions": [
+        {
+          "id": "MOD",
+          "label": "Modellieren und Problemlösen",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "OPE",
+          "label": "Operieren (Rechnen und Konstruieren)",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "DAR",
+          "label": "Darstellen und Interpretieren",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "BEG",
+          "label": "Vermuten und Begründen",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "content_areas": [
+        {
+          "id": "ZAH",
+          "label": "Zahlen und Maße",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "VAR",
+          "label": "Variablen und Funktionen",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "FIG",
+          "label": "Figuren und Körper",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "DAT",
+          "label": "Daten und Zufall",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "task_kind_extensions": [
+        "calculation",
+        "construction",
+        "modelling_task"
+      ]
+    },
+    "intro": [
+      {
+        "id": "i1",
+        "optional": false,
+        "modality": "printable",
+        "flags": null,
+        "asset_refs": [],
+        "provenance": null,
+        "role": "info",
+        "kind": "prose",
+        "content": "Eure Klasse darf ein neues Beet im Schulgarten anlegen. Ihr plant zuerst die Lage im Koordinatensystem, entwerft dann eine symmetrische Beeteinfassung, prüft zwei Beete auf Kongruenz und berechnet zuletzt, wie viel Fläche für Gemüse und Blumen übrig bleibt.",
+        "callout_role": null,
+        "teacher_note": null,
+        "watch_outs": [],
+        "numbered": true
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Lageplan und Symmetrie",
+        "teacher_overview": {
+          "throughline": "Der rote Faden ist der Schulgarten: zuerst die Lage der Fixpunkte im Koordinatensystem, dann eine spiegelsymmetrische Einfassung für das Beet – beides bereitet die Flächenberechnungen in Teil 2 vor, wo dieselben Maße wieder auftauchen.",
+          "talking_points": [
+            "Koordinaten lesen heißt: erst x (rechts/links), dann y (hoch/runter) – die Reihenfolge ist keine Konvention zum Auswendiglernen, sondern macht die Angabe eindeutig.",
+            "Achsensymmetrie bedeutet: jeder Punkt hat auf der anderen Seite der Achse einen exakt gleich weit entfernten Partnerpunkt.",
+            "Der Unterschied zwischen 'symmetrisch' und 'kongruent' wird oft verwechselt: symmetrisch bezieht sich auf EINE Figur und ihre Spiegelachse, kongruent vergleicht ZWEI Figuren."
+          ],
+          "extensions": [
+            "Wo müsste ein fünfter Punkt (z. B. 'Kompost') liegen, damit der gesamte Lageplan symmetrisch zur Geraden x = 4 wird?",
+            "Entwirf eine eigene Beet-Einfassung mit zwei Symmetrieachsen (z. B. eine Raute) und begründe, warum beide Achsen gelten."
+          ],
+          "differentiation": null,
+          "timing_notes": null
+        },
+        "blocks": [
+          {
+            "id": "t1",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "a1"
+            ],
+            "provenance": null,
+            "role": "task",
+            "kind": "data_interpretation",
+            "prompt": "Die Abbildung zeigt den Lageplan des Schulgartens. Gib die Koordinaten aller vier markierten Punkte an. Welche zwei Punkte liegen auf derselben Höhe (gleicher y-Wert)?",
+            "payload": {
+              "kind": "data_interpretation",
+              "asset_ref": "a1"
+            },
+            "response": {
+              "mode": "lines",
+              "n": 3
+            },
+            "cognitive_level": "remember",
+            "difficulty": null,
+            "dimensions": [
+              "DAR"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.2.FIG.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "answer_key": "Wasserhahn (2|1), Gartenhütte (6|1), Zaun-Ecke (2|5), Baum (6|5). Auf derselben Höhe (y = 1) liegen Wasserhahn und Gartenhütte; auf derselben Höhe (y = 5) liegen Zaun-Ecke und Baum.",
+            "acceptable_reasoning": null,
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "x- und y-Koordinate werden manchmal vertauscht angegeben (z. B. (1|2) statt (2|1))."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t2",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "a1"
+            ],
+            "provenance": null,
+            "role": "task",
+            "kind": "construction",
+            "prompt": "Zeichne im Koordinatensystem aus Aufgabe 1 (auf deinem eigenen Blatt Karopapier) den Punkt P(4|1) sowie seinen Spiegelpunkt P' an der senkrechten Geraden x = 4, die durch die Mitte des Gartens verläuft. Gib die Koordinaten von P' an und begründe, warum diese Gerade eine Symmetrieachse des Rechtecks Wasserhahn–Gartenhütte–Baum–Zaun-Ecke ist.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 70.0
+            },
+            "cognitive_level": "apply",
+            "difficulty": null,
+            "dimensions": [
+              "OPE",
+              "BEG"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.2.FIG.02",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "MAT.US.2.FIG.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "answer_key": "P(4|1) liegt bereits auf der Achse x = 4, daher ist P' = P = (4|1). Die Gerade x = 4 ist eine Symmetrieachse des Rechtecks, weil sie genau in der Mitte zwischen den Punkten mit x = 2 (Wasserhahn, Zaun-Ecke) und x = 6 (Gartenhütte, Baum) verläuft – jeder Punkt links der Achse hat einen gleich weit entfernten Partnerpunkt rechts davon.",
+            "acceptable_reasoning": "Akzeptiert wird jede Begründung, die den gleichen Abstand der Punktepaare zur Achse (2 Einheiten auf jeder Seite) korrekt erkennt, auch ohne den Sonderfall P=P' explizit zu benennen.",
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Die Aufgabe enthält eine bewusste Falle: P(4|1) liegt GENAU auf der Spiegelachse, ist also sein eigener Spiegelpunkt – das wird oft übersehen, weil Schüler:innen automatisch einen anderen Punkt erwarten."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t3",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "true_false_justify",
+            "prompt": "Zwei Gruppen haben je ein rechteckiges Beet markiert: Gruppe 1 mit den Seiten 6 m und 4 m, Gruppe 2 mit den Seiten 4 m und 6 m. Beurteile die folgenden Aussagen zu diesen beiden Beeten.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Die beiden Beete sind zueinander kongruent, auch wenn sie unterschiedlich gedreht liegen.",
+                "Kongruente Figuren müssen exakt gleich ausgerichtet sein, sonst zählen sie nicht als kongruent.",
+                "Die beiden Beete haben denselben Flächeninhalt."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "analyze",
+            "difficulty": null,
+            "dimensions": [
+              "BEG",
+              "DAR"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.2.FIG.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "1) Richtig – Kongruenz hängt nicht von der Ausrichtung/Drehung ab, sondern nur davon, ob die Figuren durch Verschieben, Drehen oder Spiegeln zur Deckung gebracht werden können. 2) Falsch – genau das Gegenteil ist richtig, siehe Aussage 1. 3) Richtig – beide Rechtecke haben die Fläche 6 m · 4 m = 24 m², unabhängig von der Ausrichtung.",
+            "acceptable_reasoning": "Akzeptiert wird jede Begründung, die Kongruenz korrekt als 'deckungsgleich unabhängig von Lage/Drehung' beschreibt.",
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Der typische Fehlschluss: 'anders gedreht' wird mit 'nicht kongruent' verwechselt – Kongruenz ist unabhängig von der Lage in der Ebene."
+            ],
+            "self_check": null
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Flächen für Gemüse und Blumen",
+        "teacher_overview": {
+          "throughline": "Mit den Maßen aus Beet 1 (Rechteck) und Beet 2 (Dreieck) wird jetzt tatsächlich gerechnet: erst die fehlende Rechteckseite über den Umfang, dann die beiden Flächeninhalte, und zum Schluss ein eigener Entwurf, der die gelernten Flächenformeln kreativ nutzt.",
+          "talking_points": [
+            "Der Umfang ist die Summe aller Seiten, die Fläche ist Länge mal Breite (Rechteck) bzw. halbe Grundseite mal Höhe (Dreieck) – beide Formeln beantworten unterschiedliche Fragen (Einfassung vs. Erde/Substrat).",
+            "Bei einem Dreieck ist die Höhe der SENKRECHTE Abstand von der Grundseite zur gegenüberliegenden Spitze, nicht eine der Seitenlängen.",
+            "Flächenvergleiche lohnen sich erst nach dem Umrechnen auf dieselbe Einheit (hier: alles in Metern bzw. Quadratmetern)."
+          ],
+          "extensions": [
+            "Wie groß dürfte Beet 2 (Dreieck) höchstens werden, wenn insgesamt (Beet 1 + Beet 2) nicht mehr als 30 m² zur Verfügung stehen?",
+            "Vergleiche: Bei gleichem Umfang – welches Rechteck hat die größte Fläche? Probiere mehrere Seitenpaare mit Umfang 20 m aus."
+          ],
+          "differentiation": null,
+          "timing_notes": null
+        },
+        "blocks": [
+          {
+            "id": "t4",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "a2"
+            ],
+            "provenance": null,
+            "role": "task",
+            "kind": "calculation",
+            "prompt": "Beet 1 ist rechteckig. Zwei gegenüberliegende Seiten sind je 6 m lang, die Einfassung (der gesamte Umfang) benötigt 20 laufende Meter Holz. Wie lang sind die beiden fehlenden Seiten (mit '?' markiert in der Abbildung)?",
+            "payload": {
+              "kind": "data_interpretation",
+              "asset_ref": "a2"
+            },
+            "response": {
+              "mode": "lines",
+              "n": 3
+            },
+            "cognitive_level": "apply",
+            "difficulty": null,
+            "dimensions": [
+              "OPE"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.2.FIG.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "answer_key": "Umfang = 2 · (Länge + Breite), also 20 m = 2 · (6 m + Breite). Daraus: 6 m + Breite = 10 m, also Breite = 4 m. Beide fehlenden (gegenüberliegenden) Seiten sind je 4 m lang.",
+            "acceptable_reasoning": null,
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Verwechslung von Umfang (Summe aller Seiten, hier 20 m) und einer einzelnen Seitenlänge – oft wird 20 m fälschlich direkt als zweite Seite verwendet."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t5",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "a3"
+            ],
+            "provenance": null,
+            "role": "task",
+            "kind": "calculation",
+            "prompt": "Berechne den Flächeninhalt von Beet 1 (Rechteck, Seiten 6 m und 4 m aus Aufgabe 4) und von Beet 2 (Dreieck, Grundseite EF = 5 m, Höhe 4 m, siehe Abbildung). Welches Beet bietet mehr Fläche für Pflanzen, und um wie viele Quadratmeter?",
+            "payload": {
+              "kind": "data_interpretation",
+              "asset_ref": "a3"
+            },
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "apply",
+            "difficulty": null,
+            "dimensions": [
+              "OPE",
+              "DAR"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.2.FIG.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Beet 1 (Rechteck): 6 m · 4 m = 24 m². Beet 2 (Dreieck): (5 m · 4 m) : 2 = 10 m². Beet 1 bietet mehr Fläche, um 24 m² − 10 m² = 14 m².",
+            "acceptable_reasoning": null,
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Bei der Dreiecksfläche wird die Division durch 2 häufig vergessen (Ergebnis dann fälschlich 20 m² statt 10 m²).",
+              "Die Höhe des Dreiecks (4 m, senkrecht zur Grundseite) darf nicht mit einer der schrägen Seiten verwechselt werden."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t6",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "decision_scenario",
+            "prompt": "Der Schulgarten hat insgesamt nur 32 m² Erde zur Verfügung. Ihr wollt Beet 1 UND Beet 2 wie oben berechnet anlegen, UND zusätzlich einen 1 Meter breiten Gehweg rund um beide Beete freihalten, der keine Erde braucht, aber ebenfalls Platz auf den 32 m² beansprucht. Reicht die Fläche? Begründe mit einer überschlägigen Rechnung, welche zusätzliche Information du für eine genaue Antwort noch bräuchtest.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "evaluate",
+            "difficulty": null,
+            "dimensions": [
+              "MOD",
+              "BEG"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.2.FIG.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "answer_key": "Beet 1 + Beet 2 zusammen benötigen 24 m² + 10 m² = 34 m² allein für die Erde – das ist bereits mehr als die verfügbaren 32 m², ohne den Gehweg überhaupt einzurechnen. Die Fläche reicht also nicht. Für eine genaue Antwort zum Gehweg bräuchte man zusätzlich die genaue Anordnung der beiden Beete zueinander (Abstand, Lage), da ein umlaufender 1-Meter-Gehweg je nach Anordnung unterschiedlich viel Fläche beansprucht.",
+            "acceptable_reasoning": "Akzeptiert wird jede Antwort, die korrekt erkennt, dass 24 m² + 10 m² = 34 m² bereits die 32 m² übersteigt (also 'reicht nicht'), und die sinnvoll benennt, dass für den Gehweg zusätzliche Information zur Anordnung/zum Abstand der Beete nötig wäre.",
+            "rubric": [
+              {
+                "criterion": "reasoning",
+                "levels": [
+                  "Erkennt nicht, dass 34 m² > 32 m²",
+                  "Erkennt die Flächenüberschreitung, nennt aber keine fehlende Information zum Gehweg",
+                  "Erkennt die Flächenüberschreitung UND benennt korrekt die fehlende Information zur Beetanordnung"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Die Aufgabe ist bewusst nicht vollständig lösbar (der Gehweg lässt sich ohne Anordnungsangabe nicht exakt berechnen) – das Ziel ist, dass Schüler:innen erkennen und benennen, WAS fehlt, statt eine erfundene Zahl zu liefern.",
+              "Manche rechnen nur mit einem der beiden Beete und übersehen, dass schon die Summe allein zu groß ist."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t7",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "create_produce",
+            "prompt": "Entwirf ein eigenes drittes Beet in Form eines Vierecks deiner Wahl (Rechteck, Quadrat oder ein anderes besonderes Viereck), das eine Fläche von genau 12 m² hat. Zeichne eine Skizze mit allen benötigten Maßen und zeige rechnerisch, dass deine Fläche stimmt.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 70.0
+            },
+            "cognitive_level": "create",
+            "difficulty": null,
+            "dimensions": [
+              "OPE",
+              "MOD"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.2.FIG.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "answer_key": "Individuelle Lösung. Beispiel: Rechteck mit 4 m · 3 m = 12 m². Die Skizze muss ein Viereck mit vollständig beschrifteten Maßen zeigen, und die zugehörige Flächenformel muss korrekt auf 12 m² führen.",
+            "acceptable_reasoning": "Jedes Viereck (auch Parallelogramm oder Raute, sofern die passende Flächenformel korrekt angewendet wird) wird akzeptiert, solange die Rechnung nachvollziehbar exakt 12 m² ergibt.",
+            "rubric": [
+              {
+                "criterion": "correctness",
+                "levels": [
+                  "Fläche stimmt nicht mit 12 m² überein oder Maße fehlen",
+                  "Fläche stimmt, aber Skizze oder Rechnung unvollständig",
+                  "Fläche korrekt 12 m², Skizze vollständig beschriftet, Rechnung nachvollziehbar"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Bei nicht-rechteckigen Vierecken (z. B. Parallelogramm) wird manchmal die Seitenlänge statt der Höhe in die Flächenformel eingesetzt."
+            ],
+            "self_check": null
+          }
+        ]
+      }
+    ],
+    "assets": [
+      {
+        "id": "a1",
+        "role": "figure",
+        "medium": "visual",
+        "generator": "matplotlib:coordinate_plane",
+        "spec": {
+          "points": [
+            {
+              "x": 2,
+              "y": 1,
+              "label": "Wasserhahn"
+            },
+            {
+              "x": 6,
+              "y": 1,
+              "label": "Gartenhütte"
+            },
+            {
+              "x": 2,
+              "y": 5,
+              "label": "Zaun-Ecke"
+            },
+            {
+              "x": 6,
+              "y": 5,
+              "label": "Baum"
+            }
+          ],
+          "xmin": 0,
+          "xmax": 8,
+          "ymin": 0,
+          "ymax": 7,
+          "title": "Lageplan Schulgarten"
+        },
+        "correctness_surface": null,
+        "misleading_in_isolation": false,
+        "intentionally_flawed": null,
+        "machine_generatable": true,
+        "provenance": null,
+        "data_source": null,
+        "illustrative": true,
+        "caption": "Lageplan des Schulgartens mit vier Fixpunkten"
+      },
+      {
+        "id": "a2",
+        "role": "figure",
+        "medium": "visual",
+        "generator": "matplotlib:polygon",
+        "spec": {
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              6,
+              4
+            ],
+            [
+              0,
+              4
+            ]
+          ],
+          "vertex_labels": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "side_labels": [
+            "6 m",
+            "?",
+            "6 m",
+            "?"
+          ],
+          "title": "Beet 1 (Rechteck)"
+        },
+        "correctness_surface": null,
+        "misleading_in_isolation": false,
+        "intentionally_flawed": null,
+        "machine_generatable": true,
+        "provenance": null,
+        "data_source": null,
+        "illustrative": true,
+        "caption": "Beet 1 mit zwei unbekannten Seitenlängen"
+      },
+      {
+        "id": "a3",
+        "role": "figure",
+        "medium": "visual",
+        "generator": "matplotlib:polygon",
+        "spec": {
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              2.5,
+              4
+            ]
+          ],
+          "vertex_labels": [
+            "E",
+            "F",
+            "G"
+          ],
+          "side_labels": [
+            "5 m"
+          ],
+          "title": "Beet 2 (Dreieck)"
+        },
+        "correctness_surface": null,
+        "misleading_in_isolation": false,
+        "intentionally_flawed": null,
+        "machine_generatable": true,
+        "provenance": null,
+        "data_source": null,
+        "illustrative": true,
+        "caption": "Beet 2, dreieckig, Grundseite EF = 5 m, Höhe 4 m"
+      }
+    ],
+    "nachweis": {
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "statement": "Diese Materialien adressieren 3 von 3 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
+      "competence_coverage": [
+        {
+          "competence_id": "MAT.US.2.FIG.01",
+          "exercised_by": [
+            "t1",
+            "t2"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "MAT.US.2.FIG.02",
+          "exercised_by": [
+            "t2",
+            "t3"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "MAT.US.2.FIG.03",
+          "exercised_by": [
+            "t4",
+            "t5",
+            "t6",
+            "t7"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        }
+      ],
+      "gaps": [],
+      "zentrale_konzepte": [
+        "3: Figuren und Körper"
+      ],
+      "uebergreifende_themen": []
+    },
+    "depth_profile": {
+      "by_level": {
+        "remember": 1,
+        "apply": 3,
+        "analyze": 1,
+        "evaluate": 1,
+        "create": 1
+      },
+      "by_dimension": {
+        "DAR": 1,
+        "OPE": 4,
+        "BEG": 1,
+        "MOD": 1
+      },
+      "by_difficulty": {
+        "1": 1,
+        "2": 4,
+        "3": 2
+      },
+      "minutes_total": 57,
+      "minutes_resource_independent": 57
+    },
+    "rack": null
+  },
+  "artifacts": {
+    "student_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0185\\student.pdf",
+    "teacher_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0185\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0185\\homework.pdf",
+    "preview_png": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0185\\raster\\student.p1.png"
+  },
+  "verify_problems": [],
+  "verify_warnings": [],
+  "parent_id": null,
+  "feedback": [],
+  "error": null
+}

@@ -1,0 +1,64 @@
+{
+  "id": "c0172.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Eine Familie möchte einen Hund anschaffen und hat zwei Rassen zur Auswahl: Rasse A ist sehr aktiv, braucht täglich mehrere Stunden Auslauf; die Familie wohnt aber in einer kleinen Stadtwohnung ohne Garten und hat wenig Zeit für lange Spaziergänge. Rasse B ist ruhiger und kommt mit kürzeren, aber regelmäßigen Spaziergängen aus. Beurteile die Situation aus Sicht des Tierwohls und gib eine begründete Empfehlung.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Wirbeltiere haben je nach Art und Zuchtlinie unterschiedliche Bedürfnisse an Bewegung, Platz und Beschäftigung; werden diese nicht erfüllt, leidet das Tierwohl."
+    },
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.STA.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Begründete Empfehlung: Rasse B passt besser zu den Lebensumständen der Familie, da ihr Bewegungsbedarf mit der verfügbaren Zeit und dem fehlenden Garten realistisch gedeckt werden kann. Rasse A in dieser Wohnsituation zu halten würde die arttypischen Bedürfnisse (viel Auslauf) wahrscheinlich nicht erfüllen und das Tierwohl gefährden.",
+    "acceptable_reasoning": "Auch eine Empfehlung für Rasse A wird akzeptiert, wenn zusätzliche Maßnahmen (z. B. Hundesportverein, deutlich mehr Zeitaufwand) fachlich stimmig als Ausgleich benannt werden.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Bewertet wird die Verknüpfung von Tierbedürfnis und Lebensumständen, nicht eine reine Sympathieentscheidung für eine Rasse."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 1,
+  "kompetenzbereich": "Standpunkte begründen und reflektiert handeln (S)",
+  "competences": [
+    "BIO.US.x.STA.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0172",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:12+00:00",
+  "updated_at": "2026-07-05T05:34:12+00:00"
+}

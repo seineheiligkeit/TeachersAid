@@ -1,0 +1,101 @@
+{
+  "id": "c0197.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Das Rundbecken hat einen Radius von 5 m (siehe Abbildung 2). a) Berechne den Umfang des Beckenrands — dafür wird die Bordüre bestellt. b) Berechne den Flächeninhalt der Wasseroberfläche — dafür wird die Chemikalien-Dosierung berechnet. Runde beide Ergebnisse sinnvoll.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "OPE"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.4.FIG.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "a) Umfang U = 2·π·r = 2·π·5 ≈ 31,42 m, aufgerundet z. B. 32 m Bordüre bestellen. b) Fläche A = π·r² = π·25 ≈ 78,54 m².",
+    "acceptable_reasoning": "Anwenden der Formeln U = 2πr und A = πr² mit r = 5 m.",
+    "rubric": [
+      {
+        "criterion": "Umfang korrekt (inkl. sinnvoller Rundung)",
+        "levels": [
+          "Falsch oder Formel verwechselt",
+          "Rechenweg richtig, Rundung unpassend",
+          "Vollständig korrekt mit passender Rundung"
+        ]
+      },
+      {
+        "criterion": "Fläche korrekt",
+        "levels": [
+          "Falsch oder Formel verwechselt",
+          "Kleiner Rechenfehler",
+          "Korrekt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Umfang und Fläche werden regelmäßig verwechselt — hier wird bewusst beides in einer Aufgabe verlangt, um den Unterschied zu üben.",
+      "Bei der Bordüre ist Aufrunden sinnvoll (Materialreserve), bei der Fläche reicht eine übliche kaufmännische Rundung."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Mathematik",
+  "klasse": 4,
+  "kompetenzbereich": "3: Figuren und Körper",
+  "competences": [
+    "MAT.US.4.FIG.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "OPE"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:circle",
+      "spec": {
+        "radius": 5,
+        "label_r": "r = 5 m",
+        "title": "Rundbecken von oben"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0197",
+  "source": "ai",
+  "created_at": "2026-07-05T05:51:17+00:00",
+  "updated_at": "2026-07-05T05:51:17+00:00"
+}

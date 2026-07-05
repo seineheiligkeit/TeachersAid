@@ -1,0 +1,608 @@
+{
+  "id": "c0181",
+  "stage": "content",
+  "status": "pending",
+  "source": "generated",
+  "created_at": "2026-07-05T05:34:16+00:00",
+  "updated_at": "2026-07-05T05:34:16+00:00",
+  "title": "Mathematik 1. Kl. — Der Radweg-Tracker — Zahlen unterwegs (generiert)",
+  "note": "",
+  "request": {
+    "subject": "Mathematik",
+    "klasse": 1,
+    "stufe": "Unterstufe",
+    "schulform": null,
+    "topic_raw": "Der Radweg-Tracker — Zahlen unterwegs",
+    "envelope": "doppelstunde",
+    "options": {}
+  },
+  "resolution": {
+    "fassung": {
+      "kurztitel": "AHS-Lehrplan (konsolidiert)",
+      "bgbl": "BGBl. II Nr. 204/2024",
+      "doknr": "NOR40264237",
+      "valid_from": "2024-09-01",
+      "valid_to": "2026-08-31"
+    },
+    "subject": "Mathematik",
+    "klasse": 1,
+    "matched_kompetenzbereiche": [
+      "1: Zahlen und Maße"
+    ],
+    "grade_check": true,
+    "competences": [
+      {
+        "id": "MAT.US.1.ZAH.01",
+        "kompetenzbereich": "1: Zahlen und Maße",
+        "klasse": 1,
+        "text": "natürliche Zahlen sowie nichtnegative Dezimal- und Bruchzahlen interpretieren, darstellen und vergleichen,",
+        "source_ref": "MATHEMATIK / 1. Klasse / 1: Zahlen und Maße",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      },
+      {
+        "id": "MAT.US.1.ZAH.02",
+        "kompetenzbereich": "1: Zahlen und Maße",
+        "klasse": 1,
+        "text": "Rechenoperationen mit natürlichen Zahlen und mit nichtnegativen Dezimalzahlen durchführen und deuten; Überschlagsrechnungen durchführen,",
+        "source_ref": "MATHEMATIK / 1. Klasse / 1: Zahlen und Maße",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      },
+      {
+        "id": "MAT.US.1.ZAH.03",
+        "kompetenzbereich": "1: Zahlen und Maße",
+        "klasse": 1,
+        "text": "Größen ein- und mehrnamig anschreiben, Maßangaben interpretieren und Umrechnungen durchführen.",
+        "source_ref": "MATHEMATIK / 1. Klasse / 1: Zahlen und Maße",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      }
+    ],
+    "notes": []
+  },
+  "plan": null,
+  "content": {
+    "meta": {
+      "title": "Der Radweg-Tracker — Zahlen unterwegs",
+      "subtitle": "LLM-Entwurf — Erstprüfung",
+      "subject": "Mathematik",
+      "stufe": "Unterstufe",
+      "klasse": 1,
+      "kernfrage": "Wie liest und ordnest du Zahlen, die dir eine Fahrrad-App auf einer Tour anzeigt?",
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "lehrplan_label": "Mathematik · 1. Klasse · 1: Zahlen und Maße",
+      "content_language": "de",
+      "subject_models": []
+    },
+    "subject_model": {
+      "subject": "Mathematik",
+      "stufe": "Unterstufe",
+      "dimensions": [
+        {
+          "id": "MOD",
+          "label": "Modellieren und Problemlösen",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "OPE",
+          "label": "Operieren (Rechnen und Konstruieren)",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "DAR",
+          "label": "Darstellen und Interpretieren",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "BEG",
+          "label": "Vermuten und Begründen",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "content_areas": [
+        {
+          "id": "ZAH",
+          "label": "Zahlen und Maße",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "VAR",
+          "label": "Variablen und Funktionen",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "FIG",
+          "label": "Figuren und Körper",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "DAT",
+          "label": "Daten und Zufall",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "task_kind_extensions": [
+        "calculation",
+        "construction",
+        "modelling_task"
+      ]
+    },
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Strecken lesen, ordnen und umrechnen",
+        "teacher_overview": {
+          "throughline": "Ausgehend von einer Fahrrad-App, die Kilometerstände als Dezimal- und Bruchzahlen anzeigt, üben die Schüler:innen das Lesen, Vergleichen und Umrechnen von Zahlen und Größen — vom Ablesen am Zahlenstrahl über das Stellenwertsystem bis zur Bruchdeutung als Anteil.",
+          "talking_points": [
+            "Eine Fahrrad-App zeigt Kilometer oft als Dezimalzahl (12,25 km) — das ist derselbe Wert wie 12 1/4 km.",
+            "Der Zahlenstrahl macht sichtbar, wer weiter vorne liegt, auch wenn die Zahlen unterschiedlich geschrieben sind (Dezimal- vs. Bruchschreibweise).",
+            "Das dezimale Stellenwertsystem bündelt in Zehnerschritten — das erklärt, warum 100 Zehner-Schritte ein Kilometer bzw. 1000 Meter ergeben.",
+            "Überschlagsrechnungen (Runden auf ganze km) helfen, Ergebnisse schnell zu prüfen."
+          ],
+          "extensions": [
+            "Schüler:innen tragen ihre eigene Schulweg-Länge in km/m ein und vergleichen mit der Klasse.",
+            "Diskussion: Warum zeigen manche Apps Kilometer, andere Meter oder Meilen an?",
+            "Römische Zahlen als Vergleich: Wie mühsam wäre eine App-Anzeige in römischen Ziffern?"
+          ],
+          "differentiation": null,
+          "timing_notes": null
+        },
+        "blocks": [
+          {
+            "id": "t1",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "abb1"
+            ],
+            "provenance": null,
+            "role": "task",
+            "kind": "data_interpretation",
+            "prompt": "Drei Freund:innen machen eine Radtour. Ihre App zeigt die bisher zurückgelegte Strecke am Zahlenstrahl (Abbildung). Lies aus der Abbildung ab: Wer ist am weitesten gefahren, wer am wenigsten weit? Schreibe alle drei Streckenlängen der Größe nach geordnet auf (kleinste zuerst).",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 3
+            },
+            "cognitive_level": "remember",
+            "difficulty": null,
+            "dimensions": [
+              "DAR"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.1.ZAH.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 5,
+            "answer_key": "Geordnet (kleinste zuerst): Tim 3,5 km, Anna 7 km, Ben 12,25 km. Am weitesten: Ben. Am wenigsten weit: Tim.",
+            "acceptable_reasoning": "Ablesen der Markierungen am Zahlenstrahl und Vergleich der Positionen von links nach rechts.",
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Manche Schüler:innen lesen 12,25 als »zwölf-zwei-fünf« und vergleichen dann falsch mit 7 — auf die Stellenwerte hinweisen.",
+              "Die Position am Zahlenstrahl (weiter rechts = größer) explizit als Vergleichsregel benennen."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t2",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "calculation",
+            "prompt": "Die App zeigt Bens Gesamtstrecke als 12,25 km an. Schreibe diese Zahl als gemischte Zahl (ganze Kilometer + Bruch) und erkläre in einem Satz, was die Nachkommastellen bedeuten.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 3
+            },
+            "cognitive_level": "understand",
+            "difficulty": null,
+            "dimensions": [
+              "DAR",
+              "OPE"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.1.ZAH.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "answer_key": "12,25 km = 12 1/4 km (0,25 = 25/100 = 1/4). Die Nachkommastellen geben den Anteil des nächsten Kilometers an, den Ben schon zurückgelegt hat.",
+            "acceptable_reasoning": "0,25 als Hundertstel deuten und auf den gekürzten Bruch 1/4 zurückführen.",
+            "rubric": [
+              {
+                "criterion": "Gemischte Zahl korrekt",
+                "levels": [
+                  "Falsch",
+                  "12 1/4 km korrekt angegeben"
+                ]
+              },
+              {
+                "criterion": "Erklärung der Nachkommastellen",
+                "levels": [
+                  "Fehlt oder falsch",
+                  "Nachvollziehbar erklärt"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Häufiger Fehler: 0,25 wird als 25 (ganze Zahl) statt als 25 Hundertstel gelesen.",
+              "Kürzen nicht vergessen: 25/100 sollte auf 1/4 gekürzt werden."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t3",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "calculation",
+            "prompt": "Annas App zeigt zusätzlich die Anzahl der Pedaltritte: 4528 Tritte für die ersten 7 km. Schreibe diese Zahl im Stellenwertsystem auf (Tausender, Hunderter, Zehner, Einer) und runde sie auf die nächsten vollen Hunderter (Überschlagsrechnung).",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Tausender",
+                "Hunderter",
+                "Zehner",
+                "Einer"
+              ],
+              "rows": 1
+            },
+            "cognitive_level": "apply",
+            "difficulty": null,
+            "dimensions": [
+              "OPE",
+              "DAR"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.1.ZAH.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "answer_key": "4528 Tritte: 4 Tausender, 5 Hunderter, 2 Zehner, 8 Einer. Gerundet auf volle Hunderter: 4500 Tritte.",
+            "acceptable_reasoning": "Bündeln in Zehnerschritten: 8 Einer bündeln sich noch nicht zu einem Zehner, daher bleibt die Zehnerstelle bei Rundung auf Hunderter entscheidend (2 < 5 → abrunden).",
+            "rubric": [
+              {
+                "criterion": "Stellenwerttabelle korrekt",
+                "levels": [
+                  "Fehler",
+                  "Vollständig korrekt (4-5-2-8)"
+                ]
+              },
+              {
+                "criterion": "Rundung korrekt",
+                "levels": [
+                  "Falsch gerundet",
+                  "4500 korrekt mit Begründung"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Rundungsregel wiederholen: Entscheidend ist die Ziffer EINE Stelle rechts von der Rundungsstelle.",
+              "4528 wird manchmal fälschlich als 4600 gerundet — die Zehnerziffer (2) genau prüfen."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t4",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "table_fill",
+            "prompt": "Tim möchte seine Strecke von 3,5 km auch in Metern angeben, weil sein kleiner Bruder Meter besser versteht. Rechne um und trage die fehlenden Werte in die Tabelle ein: 3,5 km = ___ m; 750 m = ___ km; 1/2 km = ___ m.",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Angabe in km",
+                "Angabe in m"
+              ],
+              "rows": 3
+            },
+            "cognitive_level": "apply",
+            "difficulty": null,
+            "dimensions": [
+              "OPE"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.1.ZAH.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "answer_key": "3,5 km = 3500 m. 750 m = 0,75 km. 1/2 km = 500 m.",
+            "acceptable_reasoning": "1 km = 1000 m, daher Multiplikation bzw. Division mit 1000 zur Umrechnung.",
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Verwechslung der Umrechnungsrichtung (mal 1000 statt durch 1000) ist der häufigste Fehler.",
+              "Bei 1/2 km zuerst in Dezimalzahl (0,5 km) umwandeln, dann erst in Meter umrechnen — Zwischenschritt zeigen lassen."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t5",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "true_false_justify",
+            "prompt": "Entscheide, ob die folgenden Aussagen über die drei Radfahrer:innen wahr oder falsch sind, und begründe jeweils kurz mit einer Rechnung oder einem Argument.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Anna und Tim zusammen sind weiter gefahren als Ben allein.",
+                "3/4 von Bens Strecke sind mehr als 9 km.",
+                "Wenn alle drei gleich schnell fahren, ist Ben am längsten unterwegs gewesen."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "analyze",
+            "difficulty": null,
+            "dimensions": [
+              "BEG",
+              "OPE"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.1.ZAH.02",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "MAT.US.1.ZAH.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "1) Falsch: 3,5 + 7 = 10,5 km, das ist WENIGER als Bens 12,25 km. 2) Wahr: 3/4 von 12,25 km = 9,1875 km, das ist mehr als 9 km. 3) Wahr: Bei gleicher Geschwindigkeit bedeutet die längste Strecke (12,25 km) auch die längste Fahrzeit.",
+            "acceptable_reasoning": "Für 1: Summe berechnen und mit Bens Wert vergleichen. Für 2: Dreiviertel als Multiplikation mit 0,75 berechnen. Für 3: Zusammenhang zwischen Strecke und Zeit bei konstanter Geschwindigkeit erkennen (mehr Strecke = mehr Zeit).",
+            "rubric": [
+              {
+                "criterion": "Begründungsqualität je Aussage",
+                "levels": [
+                  "Kein Argument oder falsche Rechnung",
+                  "Nachvollziehbare Rechnung/Begründung"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Aussage 1 ist eine Rechenfalle: 3,5 + 7 = 10,5, was WENIGER als 12,25 ist — die Aussage ist also FALSCH. Diesen Rechenfehler-Fallstrick explizit besprechen.",
+              "Bei Aussage 2 wird 3/4 manchmal als 0,34 statt 0,75 verwendet — Bruch-Dezimal-Umwandlung wiederholen."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t6",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "modelling_task",
+            "prompt": "Plane für nächste Woche eine eigene Radtour: Wähle eine Gesamtstrecke zwischen 8 und 15 km. Teile sie in drei Etappen ein (z. B. 1/3, 1/4 und den Rest) und gib jede Etappe sowohl als Bruch als auch als Dezimalzahl in km an. Prüfe mit einer Überschlagsrechnung, ob deine drei Etappen wirklich die Gesamtstrecke ergeben.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55.0
+            },
+            "cognitive_level": "create",
+            "difficulty": null,
+            "dimensions": [
+              "MOD",
+              "OPE"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.1.ZAH.01",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "MAT.US.1.ZAH.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "answer_key": "Individuelle Lösung, z. B. Gesamtstrecke 12 km: Etappe 1 = 1/3 von 12 km = 4 km, Etappe 2 = 1/4 von 12 km = 3 km, Etappe 3 = Rest = 12 − 4 − 3 = 5 km. Kontrolle: 4 + 3 + 5 = 12 km ✓.",
+            "acceptable_reasoning": "Die gewählten Brüche müssen zusammen mit dem Rest exakt die Gesamtstrecke ergeben; die Kontrolle per Summenbildung ist verpflichtend.",
+            "rubric": [
+              {
+                "criterion": "Etappen als Bruch UND Dezimalzahl",
+                "levels": [
+                  "Nur eine Schreibweise",
+                  "Beide Schreibweisen korrekt"
+                ]
+              },
+              {
+                "criterion": "Kontrollrechnung stimmt",
+                "levels": [
+                  "Fehlt oder falsch",
+                  "Summe stimmt exakt mit Gesamtstrecke überein"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Schüler:innen vergessen häufig die Kontrollrechnung am Ende — explizit einfordern.",
+              "Manche wählen Brüche, die sich zusammen mit dem Rest nicht sauber zur Gesamtstrecke addieren (Rundungsfehler) — auf glatte Zahlen achten."
+            ],
+            "self_check": null
+          }
+        ]
+      }
+    ],
+    "assets": [
+      {
+        "id": "abb1",
+        "role": "figure",
+        "medium": "visual",
+        "generator": "matplotlib:number_line",
+        "spec": {
+          "min": 0,
+          "max": 20,
+          "step": 1,
+          "marks": [
+            {
+              "at": 3.5,
+              "label": "Tim"
+            },
+            {
+              "at": 7,
+              "label": "Anna"
+            },
+            {
+              "at": 12.25,
+              "label": "Ben"
+            }
+          ],
+          "title": "Zurückgelegte Strecke (in km) auf dem Radweg"
+        },
+        "correctness_surface": null,
+        "misleading_in_isolation": false,
+        "intentionally_flawed": null,
+        "machine_generatable": true,
+        "provenance": null,
+        "data_source": null,
+        "illustrative": false,
+        "caption": null
+      }
+    ],
+    "nachweis": {
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "statement": "Diese Materialien adressieren 3 von 3 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
+      "competence_coverage": [
+        {
+          "competence_id": "MAT.US.1.ZAH.01",
+          "exercised_by": [
+            "t1",
+            "t2",
+            "t5",
+            "t6"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "MAT.US.1.ZAH.02",
+          "exercised_by": [
+            "t3",
+            "t5",
+            "t6"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "MAT.US.1.ZAH.03",
+          "exercised_by": [
+            "t4"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        }
+      ],
+      "gaps": [],
+      "zentrale_konzepte": [
+        "1: Zahlen und Maße"
+      ],
+      "uebergreifende_themen": []
+    },
+    "depth_profile": {
+      "by_level": {
+        "remember": 1,
+        "understand": 1,
+        "apply": 2,
+        "analyze": 1,
+        "create": 1
+      },
+      "by_dimension": {
+        "DAR": 2,
+        "OPE": 2,
+        "BEG": 1,
+        "MOD": 1
+      },
+      "by_difficulty": {
+        "1": 2,
+        "2": 3,
+        "3": 1
+      },
+      "minutes_total": 41,
+      "minutes_resource_independent": 41
+    },
+    "rack": null
+  },
+  "artifacts": {
+    "student_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0181\\student.pdf",
+    "teacher_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0181\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0181\\homework.pdf",
+    "preview_png": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0181\\raster\\student.p1.png"
+  },
+  "verify_problems": [],
+  "verify_warnings": [],
+  "parent_id": null,
+  "feedback": [],
+  "error": null
+}

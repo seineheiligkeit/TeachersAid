@@ -1,0 +1,81 @@
+{
+  "id": "c0192.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "source_critique",
+    "prompt": "Ein Mitschüler behauptet: Endoskope in der Medizin sind nur ein Spielzeug für Ärzte, ein normales Kamerahandy würde denselben Zweck erfüllen. Recherchiere kurz (Schulbuch, verlässliche Website) den tatsächlichen Nutzen von Endoskopen und nimm begründet Stellung. Nenne mindestens eine Chance UND ein mögliches Risiko des Einsatzes optischer Geräte in der Medizin.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "S",
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.2.OPT.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Die Behauptung ist unzutreffend: Ein Endoskop ist eine sehr dünne, flexible optische Sonde mit eigener Lichtquelle, die durch kleine Körperöffnungen oder Schnitte ins Körperinnere eingeführt werden kann – ein Kamerahandy kann das nicht. Chance: minimalinvasive Untersuchungen/Operationen (z. B. Magenspiegelung) ohne große Schnitte, schnellere Genesung. Risiko: Infektionsgefahr bei der Einführung, hohe Anschaffungs-/Wartungskosten, Notwendigkeit gut geschulten Personals; Fehlinterpretation der Bilder ist möglich. Eine gute Antwort nennt die Quelle, aus der die Informationen stammen.",
+    "acceptable_reasoning": "Jede sachlich richtige Recherche mit klar benannter Quelle, mindestens einer Chance und einem Risiko wird akzeptiert – die Formulierungen können variieren.",
+    "rubric": [
+      {
+        "criterion": "content_accuracy",
+        "levels": [
+          "Recherche sachlich unvollständig oder falsch",
+          "Recherche sachlich richtig, aber oberflächlich",
+          "Recherche sachlich richtig, Chance und Risiko klar benannt und mit Quelle belegt"
+        ]
+      },
+      {
+        "criterion": "source_awareness",
+        "levels": [
+          "keine Quelle genannt",
+          "Quelle genannt, nicht bewertet",
+          "Quelle genannt und kurz auf Verlässlichkeit geprüft"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Unbelegte Behauptungen ohne Quellenangabe sollen als Schwachpunkt erkannt werden – das ist der Kern der Quellenkritik-Kompetenz.",
+      "Nicht jede Website ist verlässlich; Schulbuch, Gesundheitsportale öffentlicher Träger oder Fachlexika sind vorzuziehen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "source_critique",
+  "subject": "Physik",
+  "klasse": 2,
+  "kompetenzbereich": "Optische Systeme",
+  "competences": [
+    "PHY.US.2.OPT.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "S",
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0192",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:24+00:00",
+  "updated_at": "2026-07-05T05:34:24+00:00"
+}

@@ -1,0 +1,88 @@
+{
+  "id": "c0187.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Vergleiche Tank A (Befüllung, W(t) = 100t + 200), Tank B (Entleerung, W(t) = 450 − 40t) und Tank C (Proportion, W(t) = 70t). Entscheide, ob die folgenden Aussagen richtig oder falsch sind, und begründe mit den Termen.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Tank A und Tank C beschreiben beide einen Wachstumsprozess, aber nur Tank C ist eine Proportion.",
+        "Tank B beschreibt einen Abnahmeprozess, weil der Koeffizient vor t negativ ist.",
+        "Wenn man den Term von Tank B lange genug fortsetzt (t sehr groß), wird der Wasserstand irgendwann negativ und das ist im Sachzusammenhang sinnvoll."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 7
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "BEG",
+      "DAR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.3.VAR.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "1) Richtig: beide Terme wachsen mit t, aber Tank A hat einen Startwert von 200 ≠ 0, also keine Proportion; Tank C startet bei 0, also echte Proportion. 2) Richtig: −40t sorgt dafür, dass W(t) mit wachsendem t kleiner wird — das ist ein Abnahmeprozess. 3) Falsch: mathematisch würde der Term irgendwann negativ (ab t > 11,25), aber ein Wasserstand kann nicht negativ sein — das Modell gilt nur, solange W(t) ≥ 0 ist (der Tank ist ab da leer, nicht 'negativ gefüllt').",
+    "acceptable_reasoning": "Die Grenzen eines mathematischen Modells (hier: der gültige Definitionsbereich) müssen im Sachzusammenhang erkannt werden — nicht jede rechnerisch mögliche Lösung ist sachlich sinnvoll.",
+    "rubric": [
+      {
+        "criterion": "Alle drei Wahrheitswerte korrekt",
+        "levels": [
+          "0–1 richtig",
+          "2 richtig",
+          "Alle 3 richtig"
+        ]
+      },
+      {
+        "criterion": "Modellgrenze bei Aussage 3 erkannt",
+        "levels": [
+          "Nicht erkannt",
+          "Angedeutet",
+          "Klar erkannt und erklärt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Aussage 3 wird oft unreflektiert als 'richtig' eingestuft, weil die Rechnung stimmt — die Modellgrenze (Wasserstand ≥ 0) wird übersehen.",
+      "Bei Aussage 1 wird 'Wachstum' manchmal mit 'Proportion' gleichgesetzt, obwohl nur Prozesse mit Startwert 0 echte Proportionen sind."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Mathematik",
+  "klasse": 3,
+  "kompetenzbereich": "2: Variablen und Funktionen",
+  "competences": [
+    "MAT.US.3.VAR.04"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "BEG",
+    "DAR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0187",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:20+00:00",
+  "updated_at": "2026-07-05T05:34:20+00:00"
+}

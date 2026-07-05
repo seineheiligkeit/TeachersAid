@@ -1,0 +1,73 @@
+{
+  "id": "c0178.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Eine Gemeinde plant, ein letztes großes Wiesenstück am Ortsrand für einen neuen Supermarkt-Parkplatz zu versiegeln. Erstelle eine begründete Handlungsempfehlung: Wie könntest du der Gemeinde einen Kompromissvorschlag machen, der den Boden schont?",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Die Gemeinde will das letzte große Wiesenstück am Ortsrand vollständig asphaltieren, um einen Supermarkt-Parkplatz zu bauen."
+    },
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.STA.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Eine fachlich fundierte Handlungsempfehlung könnte z. B. wasserdurchlässige Pflastersteine (Rasengittersteine) statt durchgehendem Asphalt vorschlagen, einen Teil der Fläche als unversiegelten Grünstreifen mit Bäumen erhalten, oder ein Gründach/Retentionsfläche zum Ausgleich einplanen. Wichtig ist die Begründung: weniger Versiegelung erhält Bodenleben, Regenwasserversickerung und kühlt die Umgebung.",
+    "acceptable_reasoning": "Jeder konkrete, biologisch/ökologisch begründete Kompromissvorschlag wird akzeptiert (auch z. B. 'Parkplatz kleiner planen und Rest als Wiese belassen'), solange er eine echte Abwägung zwischen Nutzung und Bodenschutz zeigt und keine reine Ablehnung ohne Alternative ist.",
+    "rubric": [
+      {
+        "criterion": "Konkretheit und fachliche Begründung des Vorschlags",
+        "levels": [
+          "nur Ablehnung ohne Alternative",
+          "ein Vorschlag ohne klare fachliche Begründung",
+          "ein konkreter Vorschlag mit klarer ökologischer Begründung"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Eine bloße Ablehnung ('Parkplatz soll gar nicht gebaut werden') ohne konstruktiven, umsetzbaren Vorschlag erfüllt die Kompetenz 'Handlungsempfehlungen erstellen' nicht."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 3,
+  "kompetenzbereich": "Standpunkte begründen und reflektiert handeln (S)",
+  "competences": [
+    "BIO.US.x.STA.03"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0178",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:15+00:00",
+  "updated_at": "2026-07-05T05:34:15+00:00"
+}

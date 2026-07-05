@@ -1,0 +1,148 @@
+{
+  "id": "c0188.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb_streckung"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Das Dreieck P1P2P3 in der Abbildung wird vom Streckzentrum Z aus mit dem Faktor k = 2 zentrisch gestreckt (jeder Punkt wandert doppelt so weit von Z weg). Entscheide, ob die folgenden Aussagen über das gestreckte Dreieck richtig oder falsch sind.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Alle Winkel des gestreckten Dreiecks sind doppelt so groß wie im Originaldreieck.",
+        "Alle Seitenlängen des gestreckten Dreiecks sind doppelt so lang wie im Originaldreieck.",
+        "Der Flächeninhalt des gestreckten Dreiecks ist doppelt so groß wie im Originaldreieck."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "BEG",
+      "DAR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.3.FIG.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "1) Falsch: Winkel bleiben bei einer zentrischen Streckung IMMER gleich groß, egal welcher Streckfaktor gewählt wird. 2) Richtig: Längen werden mit dem Faktor k = 2 multipliziert. 3) Falsch: die Fläche wird mit k² = 4 multipliziert, also viermal so groß, nicht doppelt.",
+    "acceptable_reasoning": "Zentrale Eigenschaft der zentrischen Streckung: Winkel invariant, Längen mit Faktor k, Flächen mit Faktor k² — dieser Unterschied zwischen linear (Länge) und quadratisch (Fläche) ist entscheidend.",
+    "rubric": [
+      {
+        "criterion": "Alle drei Wahrheitswerte korrekt",
+        "levels": [
+          "0–1 richtig",
+          "2 richtig",
+          "Alle 3 richtig"
+        ]
+      },
+      {
+        "criterion": "Flächenfaktor k² erkannt und erklärt",
+        "levels": [
+          "Nicht erkannt",
+          "Nur die Zahl genannt",
+          "k² korrekt erklärt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Aussage 3 wird sehr häufig fälschlich als 'richtig' (Faktor 2) statt 'falsch' (tatsächlich Faktor 4 = k²) eingestuft — die quadratische Wirkung auf Flächen ist eine der wichtigsten Fehlvorstellungen in diesem Themenbereich.",
+      "Aussage 1 verwechselt Ähnlichkeit (Winkel bleiben gleich) mit Kongruenz-Verzerrung; im Unterschied zu Seiten ändern sich Winkel bei einer zentrischen Streckung NIE."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Mathematik",
+  "klasse": 3,
+  "kompetenzbereich": "3: Figuren und Körper",
+  "competences": [
+    "MAT.US.3.FIG.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "BEG",
+    "DAR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb_streckung",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:coordinate_plane",
+      "spec": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0,
+            "label": "Z"
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "label": "P1"
+          },
+          {
+            "x": 4,
+            "y": 1,
+            "label": "P2"
+          },
+          {
+            "x": 3,
+            "y": 4,
+            "label": "P3"
+          }
+        ],
+        "segments": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "xmin": -1,
+        "xmax": 9,
+        "ymin": -1,
+        "ymax": 9,
+        "title": "Dreieck P1P2P3 mit Streckzentrum Z"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0188",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:21+00:00",
+  "updated_at": "2026-07-05T05:34:21+00:00"
+}

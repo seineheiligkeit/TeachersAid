@@ -1,0 +1,102 @@
+{
+  "id": "c0177.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "df1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Das Diagramm zeigt den Puls einer Person vor, während und nach dem Treppensteigen. Beschreibe den Verlauf und erkläre, warum das Herz während der Anstrengung schneller schlägt.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.ERK.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Der Puls steigt von rund 72 auf einen Höchstwert von etwa 150 Schlägen pro Minute an, bleibt kurz hoch und sinkt danach langsam wieder Richtung Ruhewert. Während der Anstrengung verbrauchen die Muskeln deutlich mehr Sauerstoff und produzieren mehr Kohlenstoffdioxid; das Herz schlägt schneller, um mehr sauerstoffreiches Blut pro Minute zu den Muskeln zu pumpen.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Die Erholungsphase (langsames Absinken) wird oft übersehen – auch sie gehört zur vollständigen Beschreibung des Verlaufs."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 3,
+  "kompetenzbereich": "Erkenntnisse gewinnen (E)",
+  "competences": [
+    "BIO.US.x.ERK.04"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "df1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:line",
+      "spec": {
+        "title": "Pulsfrequenz vor und nach Belastung (Messung über 6 Minuten)",
+        "xlabel": "Zeit (Minuten)",
+        "ylabel": "Puls (Schläge pro Minute)",
+        "log": false,
+        "categories": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "values": [
+          72.0,
+          130.0,
+          150.0,
+          148.0,
+          120.0,
+          95.0,
+          80.0
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": true,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0177",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:14+00:00",
+  "updated_at": "2026-07-05T05:34:14+00:00"
+}

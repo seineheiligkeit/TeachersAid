@@ -1,0 +1,81 @@
+{
+  "id": "c0189.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "modelling_task",
+    "prompt": "Zwei Freund:innen streiten: Anna behauptet, √9 + √16 sei dasselbe wie √(9+16). Ben widerspricht. Prüfe die Behauptung rechnerisch nach und entscheide, wer recht hat. Nutze dein Ergebnis, um zu erklären, warum man beim Rechnen mit Wurzeln (und allgemein mit Näherungswerten) besonders vorsichtig sein muss.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "BEG",
+      "OPE"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.4.ZAH.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "√9 + √16 = 3 + 4 = 7. √(9+16) = √25 = 5. Da 7 ≠ 5, hat Ben recht: die Wurzel einer Summe ist im Allgemeinen NICHT die Summe der Wurzeln. Das zeigt, dass man mit Wurzeln nicht wie mit normalen Zahlen „auseinanderziehen“ darf — Rechenregeln müssen jeweils geprüft, nicht vermutet werden. Ebenso ist Vorsicht geboten, wenn man mit gerundeten statt exakten Wurzelwerten weiterrechnet, weil sich solche Fehler bei mehreren Rechenschritten aufsummieren können.",
+    "acceptable_reasoning": "Konkretes Gegenbeispiel widerlegt die allgemeine Behauptung; Übertragung der Einsicht auf den allgemeinen Umgang mit Näherungswerten.",
+    "rubric": [
+      {
+        "criterion": "Rechnerischer Gegenbeweis",
+        "levels": [
+          "Kein oder falscher Vergleich",
+          "Ein Wert richtig berechnet",
+          "Beide Werte korrekt, Widerspruch klar benannt"
+        ]
+      },
+      {
+        "criterion": "Übertragung auf Näherungswerte",
+        "levels": [
+          "Fehlt",
+          "Ansatzweise erkannt",
+          "Klar und nachvollziehbar erklärt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Die Fehlvorstellung „Wurzel ist wie Multiplizieren/Verteilen“ ist bei dieser Klassenstufe sehr verbreitet — dieses Gegenbeispiel ist deshalb bewusst gewählt.",
+      "Der zweite Teil der Antwort (Übertragung auf Näherungswerte allgemein) wird oft vergessen — explizit einfordern."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "modelling_task",
+  "subject": "Mathematik",
+  "klasse": 4,
+  "kompetenzbereich": "1: Zahlen und Maße",
+  "competences": [
+    "MAT.US.4.ZAH.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "BEG",
+    "OPE"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0189",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:22+00:00",
+  "updated_at": "2026-07-05T05:34:22+00:00"
+}

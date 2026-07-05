@@ -1,0 +1,96 @@
+{
+  "id": "c0176.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "df1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Sieh dir das Diagramm zum Sauerstoffgehalt verschiedener Gewässer an. Welches Gewässer bietet sauerstoffliebenden Tieren wie der Bachforelle die besten Bedingungen, und welches am wenigsten? Begründe mit den Werten.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 3
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.ERK.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Der Gebirgsbach bietet mit rund 11,2 mg/l den höchsten Sauerstoffgehalt – am besten für die Bachforelle, die viel Sauerstoff braucht. Der stehende Teich hat mit rund 5,1 mg/l den niedrigsten Wert – dort würde die Forelle kaum überleben, nur sauerstoffarme Tiere sind angepasst.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Fließendes Wasser nimmt durch die Verwirbelung mehr Sauerstoff aus der Luft auf als stehendes Wasser – dieser Zusammenhang muss explizit angesprochen werden, sonst bleibt es beim reinen Werte-Ablesen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 3,
+  "kompetenzbereich": "Erkenntnisse gewinnen (E)",
+  "competences": [
+    "BIO.US.x.ERK.04"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "df1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Gebirgsbach",
+          "Flachlandfluss",
+          "Stehender Teich",
+          "Ostsee (Oberfläche)"
+        ],
+        "values": [
+          11.2,
+          8.4,
+          5.1,
+          7.6
+        ],
+        "title": "Sauerstoffgehalt in verschiedenen Gewässertypen",
+        "xlabel": "Gewässertyp",
+        "ylabel": "Sauerstoffgehalt (mg/l)",
+        "log": false
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": true,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0176",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:14+00:00",
+  "updated_at": "2026-07-05T05:34:14+00:00"
+}

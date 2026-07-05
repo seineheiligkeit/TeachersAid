@@ -1,0 +1,114 @@
+{
+  "id": "c0194.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Sieh dir Abb. 2 an. Die Reichweite eines E-Bike-Akkus wurde unter vier Fahrweisen gemessen.\n(a) Bei welcher Fahrweise ist die Reichweite am größten, bei welcher am kleinsten?\n(b) Um wie viele Kilometer sinkt die Reichweite, wenn man bei flacher Strecke den Motor zuschaltet?\n(c) Erkläre, warum bergauf mit voller Unterstützung die Reichweite am stärksten sinkt.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "S"
+    ],
+    "content_area": "Elektrische und mechanische Energie, Energieerhaltung",
+    "serves": [
+      {
+        "competence_id": "PHY.US.3.ENE.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "(a) Am größten bei 'Flach, Motor aus' (60 km), am kleinsten bei 'Bergauf, Motor an, volle Unterstützung' (15 km). (b) Von 60 km auf 45 km, also ein Rückgang um 15 km. (c) Bergauf muss der Motor zusätzlich Höhenenergie liefern (nicht nur Bewegungsenergie wie auf flacher Strecke), und bei voller Unterstützung übernimmt der Motor den größten Teil der Antriebsarbeit — dadurch wird pro gefahrenem Kilometer viel mehr elektrische Energie verbraucht.",
+    "acceptable_reasoning": "Für (c) reicht der sinngemäße Hinweis, dass bergauf zusätzliche Höhenenergie nötig ist UND der Motor mehr Arbeit übernimmt; eine der beiden Begründungen allein wird als teilweise richtig gewertet.",
+    "rubric": [
+      {
+        "criterion": "Datenablesung",
+        "levels": [
+          "Falsche oder keine Werte",
+          "Werte teilweise korrekt abgelesen",
+          "Alle Werte korrekt abgelesen und verglichen"
+        ]
+      },
+      {
+        "criterion": "Physikalische Erklärung",
+        "levels": [
+          "Keine oder falsche Erklärung",
+          "Ein Grund korrekt genannt",
+          "Beide Gründe (Steigung und Unterstützungsstufe) korrekt kombiniert"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen nennen bei (c) oft nur einen der beiden Gründe (Steigung ODER Unterstützungsstufe) — auf die Kombination beider Effekte hinweisen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Physik",
+  "klasse": 3,
+  "kompetenzbereich": "Energie",
+  "competences": [
+    "PHY.US.3.ENE.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "W",
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Flach, Motor aus",
+          "Flach, Motor an",
+          "Bergauf, Motor an",
+          "Bergauf, Motor an, volle Unterstützung"
+        ],
+        "values": [
+          60,
+          45,
+          25,
+          15
+        ],
+        "title": "Reichweite des Akkus je nach Fahrweise",
+        "xlabel": "Fahrweise",
+        "ylabel": "Reichweite in km"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": true,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0194",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:26+00:00",
+  "updated_at": "2026-07-05T05:34:26+00:00"
+}

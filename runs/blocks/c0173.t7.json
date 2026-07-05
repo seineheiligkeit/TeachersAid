@@ -1,0 +1,97 @@
+{
+  "id": "c0173.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "fig_baumarten"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Übertrage die Werte aus dem Diagramm 'Baumartenanteile in zwei österreichischen Waldtypen' in eine Tabelle mit den Spalten 'Waldtyp' und 'Anzahl Baumarten'. Ergänze in einer dritten Spalte für jeden Waldtyp ein Tier oder eine Pflanze, die dort besonders gut oder besonders schlecht Lebensraum finden würde, und begründe kurz.",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Waldtyp",
+        "Anzahl Baumarten",
+        "Beispiel-Lebewesen + Begründung"
+      ],
+      "rows": 2
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.WIS.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Tabelle: Fichten-Monokultur – 1 Baumart. Naturnaher Mischwald – 7 Baumarten. Beispiel: Ein Specht, der auf unterschiedliche Baumhöhlen in verschiedenen Baumarten angewiesen ist, findet im Mischwald deutlich bessere Bedingungen als in der Monokultur, wo nur eine Baumart und ein Bodentyp vorkommt. Auch akzeptiert: ein Insekt, das nur an einer bestimmten Baumart lebt, würde in der Monokultur nur überleben können, wenn genau diese Baumart vorhanden ist.",
+    "acceptable_reasoning": "Jedes plausible, fachlich begründete Beispiel-Lebewesen wird akzeptiert, solange die Begründung den Zusammenhang zwischen Baumartenzahl und Lebensraumangebot erkennen lässt.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Es geht hier um die Überführung der Diagrammdaten in eine neue Darstellungsform (Tabelle) UND die Anwendung auf ein konkretes Beispiel – reines Abschreiben der Zahlen ohne Begründungsspalte ist nicht ausreichend."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 2,
+  "kompetenzbereich": "Wissen aneignen, anwenden und kommunizieren (W)",
+  "competences": [
+    "BIO.US.x.WIS.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "fig_baumarten",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Fichten-Monokultur",
+          "Naturnaher Mischwald"
+        ],
+        "values": [
+          1.0,
+          7.0
+        ],
+        "title": "Baumartenanteile in zwei österreichischen Waldtypen",
+        "xlabel": "Waldtyp",
+        "ylabel": "Anzahl Baumarten (Zählung auf Testfläche)",
+        "log": false
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": true,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0173",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:12+00:00",
+  "updated_at": "2026-07-05T05:34:12+00:00"
+}

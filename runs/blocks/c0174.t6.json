@@ -1,0 +1,70 @@
+{
+  "id": "c0174.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "source_critique",
+    "prompt": "Ein Werbevideo behauptet: 'Unser neues Konzentrationsgetränk verdoppelt sofort die Reaktionsgeschwindigkeit deines Gehirns – wissenschaftlich bewiesen!' Prüfe diese Aussage kritisch: Welche Informationen fehlen, um sie naturwissenschaftlich beurteilen zu können?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.STA.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Es fehlen u.a.: Wer hat das untersucht (unabhängige Studie oder nur die Firma selbst)? Wie viele Personen wurden getestet? Wurde mit einer Kontrollgruppe (ohne Getränk) verglichen? Wie wurde 'Reaktionsgeschwindigkeit' überhaupt gemessen? Eine Verdopplung ist ein sehr extremer Wert, der besonders kritisch hinterfragt werden sollte – reale Effekte von Koffein o.ä. sind meist deutlich kleiner.",
+    "acceptable_reasoning": "Akzeptiert werden alle Antworten, die mindestens zwei der folgenden Kritikpunkte fachlich korrekt benennen: fehlende Studienquelle, fehlende Kontrollgruppe, fehlende Messmethode, unrealistische Größenordnung der Behauptung.",
+    "rubric": [
+      {
+        "criterion": "critical_analysis",
+        "levels": [
+          "Nennt keinen oder einen unspezifischen Kritikpunkt",
+          "Nennt mindestens einen konkreten methodischen Kritikpunkt (z.B. fehlende Kontrollgruppe)",
+          "Nennt mehrere konkrete methodische Kritikpunkte und begründet, warum die Aussage naturwissenschaftlich nicht haltbar ist"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Ziel ist NICHT, Werbung pauschal abzulehnen, sondern zu erkennen, welche Kriterien eine naturwissenschaftlich seriöse Aussage erfüllen muss."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "source_critique",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 2,
+  "kompetenzbereich": "Standpunkte begründen und reflektiert handeln (S)",
+  "competences": [
+    "BIO.US.x.STA.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0174",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:13+00:00",
+  "updated_at": "2026-07-05T05:34:13+00:00"
+}
