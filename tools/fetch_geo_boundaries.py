@@ -41,7 +41,9 @@ BOUNDARIES: dict[str, dict] = {
             "licence": "CC BY 4.0",
             "licence_url": "https://creativecommons.org/licenses/by/4.0/",
             "redistributable": True,
-            "attribution": "Grenzen: Statistik Austria – data.statistik.gv.at; "
+            # no role prefix here — the map recipe labels the two fact roles itself
+            # ("Daten: … · Grenzen: …"); a prefix in the data doubled to "Grenzen: Grenzen:"
+            "attribution": "Statistik Austria – data.statistik.gv.at; "
                            "Aufbereitung: Flooh Perlot (CC BY 4.0)",
             "retrieved": "2026-06-30",
         },

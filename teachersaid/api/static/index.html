@@ -405,7 +405,7 @@ async function renderBlocks(){
       <div class="row between"><b>${b.role==='task'?'🎯':'📖'} ${esc(b.kind)}</b><span class="pill s-${b.status}">${b.status}</span></div>
       <div>${esc(b.prompt)}</div>
       <div class="muted">${esc(b.subject)} ${b.klasse||''} · ${esc(b.kompetenzbereich||'—')}
-        ${b.cognitive_level?`<span class="badge">${b.cognitive_level}</span>`:''}<span class="badge">${b.scope}</span>${(b.dimensions||[]).length?`<span class="badge">${b.dimensions.join(',')}</span>`:''}${b.assets?`<span class="badge">🖼 ${b.assets}</span>`:''}</div>
+        ${b.cognitive_level?`<span class="badge">${b.cognitive_level}</span>`:''}<span class="badge">${b.scope}</span>${(b.dimensions||[]).length?`<span class="badge">${b.dimensions.join(',')}</span>`:''}${b.assets?`<span class="badge">🖼 ${b.assets}</span>`:''}${b.readability!=null?`<span class="badge" title="Wiener Sachtextformel — geschätzte Schulstufe">WSTF ${String(b.readability.toFixed(1)).replace('.',',')}</span>`:''}</div>
     </div>`).join("") : `<p class="muted">keine Bausteine — kein Treffer für diesen Filter.</p>`);
 }
 async function openBlock(id){

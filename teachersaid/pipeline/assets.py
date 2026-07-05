@@ -25,15 +25,24 @@ import matplotlib
 
 matplotlib.use("Agg")  # headless
 import matplotlib.pyplot as plt  # noqa: E402
-from matplotlib.patches import Circle, Polygon  # noqa: E402
+from matplotlib.patches import Circle  # noqa: E402
 
 from ..config import RUNS_DIR  # noqa: E402
 from ..schema.assets import Asset  # noqa: E402
+from . import figstyle as fs  # noqa: E402  — the styleguide: semantic roles, ramps, house font
 from .calculus import (area_between_scene, distribution_scene, extrema_scene,  # noqa: E402
                        function_scene, integral_scene, riemann_scene, tangent_scene)
 from .constructions import construction_scene, triangle_geometry  # noqa: E402
 from .figstyle import fmt_de, unit_scale  # noqa: E402
-from .scene import scene_to_png  # noqa: E402
+from .scene import (Canvas, Label, Line, PointMark, Polyline, Region,  # noqa: E402
+                    Scene, scene_to_png)
+
+# The house style is applied per-figure via `with plt.rc_context(fs.house_rc())` (the scoped
+# scene-renderer pattern) rather than the global `use_house_style()`, so a recipe never leaks
+# rcParams onto another figure built in the same process. Colours come from the SEMANTIC ROLES
+# in `figstyle` (PALETTE / c() / cat() / edge()); NO recipe hard-codes a hex — that debt is
+# what roadmap A1 pays down, and `tests/test_figstyle_port.py` locks it shut.
+_HOUSE = fs.house_rc
 
 # generator id ("<backend>:<recipe>")  ->  builder(asset, path) -> writes the PNG
 _GENERATORS: dict[str, Callable[[Asset, Path], None]] = {}
@@ -86,28 +95,29 @@ def _number_line(asset: Asset, path: Path) -> None:
     step = float(s.get("step", 1)) or 1.0
     marks = sorted(s.get("marks", []), key=lambda m: float(m["at"]))
     has_labels = any(m.get("label") for m in marks)
-    fig, ax = plt.subplots(figsize=(7.4, 2.0 if has_labels else 1.1))
-    ax.axhline(0, color="#33506e", lw=1.4, zorder=1)
-    t = lo
-    while t <= hi + 1e-9:
-        ax.plot([t, t], [-0.07, 0.07], color="#33506e", lw=1)
-        ax.text(t, -0.22, f"{t:g}", ha="center", va="top", fontsize=9)
-        t += step
-    levels = (0.18, 0.40, 0.62)                    # cycle 3 heights so clustered labels never collide
-    for i, m in enumerate(marks):
-        at = float(m["at"])
-        ax.plot([at], [0], "o", color="#b03a2e", ms=9, zorder=3)
-        if m.get("label"):
-            y = levels[i % len(levels)]
-            ax.plot([at, at], [0.07, y - 0.04], color="#b03a2e", lw=0.6, zorder=2)
-            ax.text(at, y, str(m["label"]), ha="center", va="bottom",
-                    color="#b03a2e", fontsize=8.5)
-    ax.set_xlim(lo - step * 0.6, hi + step * 0.6)
-    ax.set_ylim(-0.5, 0.95 if has_labels else 0.5)
-    ax.axis("off")
-    fig.tight_layout()
-    fig.savefig(path, dpi=150)
-    plt.close(fig)
+    with plt.rc_context(_HOUSE()):
+        fig, ax = plt.subplots(figsize=(7.4, 2.0 if has_labels else 1.1))
+        ax.axhline(0, color=fs.PALETTE.ink, lw=1.4, zorder=1)
+        t = lo
+        while t <= hi + 1e-9:
+            ax.plot([t, t], [-0.07, 0.07], color=fs.PALETTE.ink, lw=1)
+            ax.text(t, -0.22, f"{t:g}", ha="center", va="top", fontsize=fs.TYPE.annot)
+            t += step
+        levels = (0.18, 0.40, 0.62)                # cycle 3 heights so clustered labels never collide
+        for i, m in enumerate(marks):
+            at = float(m["at"])
+            ax.plot([at], [0], "o", color=fs.PALETTE.focus, ms=9, zorder=3)
+            if m.get("label"):
+                y = levels[i % len(levels)]
+                ax.plot([at, at], [0.07, y - 0.04], color=fs.PALETTE.focus, lw=0.6, zorder=2)
+                ax.text(at, y, str(m["label"]), ha="center", va="bottom",
+                        color=fs.PALETTE.focus, fontsize=fs.TYPE.annot)
+        ax.set_xlim(lo - step * 0.6, hi + step * 0.6)
+        ax.set_ylim(-0.5, 0.95 if has_labels else 0.5)
+        ax.axis("off")
+        fig.tight_layout()
+        fig.savefig(path, dpi=150)
+        plt.close(fig)
 
 
 def _bar_value_labels(ax, vals, *, horizontal: bool, decimals: int | None = None) -> None:
@@ -117,10 +127,11 @@ def _bar_value_labels(ax, vals, *, horizontal: bool, decimals: int | None = None
     for i, v in enumerate(vals):
         txt = fmt_de(v, decimals)
         if horizontal:
-            ax.text(v, i, " " + txt, va="center", ha="left", fontsize=8, color="#33506e")
+            ax.text(v, i, " " + txt, va="center", ha="left", fontsize=fs.TYPE.tick,
+                    color=fs.PALETTE.ink)
         else:
             ax.annotate(txt, (i, v), textcoords="offset points", xytext=(0, 2),
-                        ha="center", va="bottom", fontsize=8, color="#33506e")
+                        ha="center", va="bottom", fontsize=fs.TYPE.tick, color=fs.PALETTE.ink)
 
 
 @_generator("matplotlib:bar_chart")
@@ -143,44 +154,46 @@ def _bar_chart(asset: Asset, path: Path) -> None:
     if not log:                              # a log axis already compresses magnitudes
         vals, ylabel, div = unit_scale(vals, ylabel)
     label_decimals = 1 if div > 1 else None  # scaled → "8,9"; raw → auto ("42", "0,25")
+    bar_c, bar_e = fs.PALETTE.primary, fs.edge("primary")
 
-    if horizontal:
-        fig, ax = plt.subplots(figsize=(6.8, max(2.4, 0.5 * n + 1.1)), layout="constrained")
-        ax.barh(range(n), vals, color="#4f6f8f", edgecolor="#33506e")
-        ax.set_yticks(range(n))
-        ax.set_yticklabels(cats)
-        ax.invert_yaxis()
-        if log:
-            ax.set_xscale("log")
+    with plt.rc_context(_HOUSE()):
+        if horizontal:
+            fig, ax = plt.subplots(figsize=(6.8, max(2.4, 0.5 * n + 1.1)), layout="constrained")
+            ax.barh(range(n), vals, color=bar_c, edgecolor=bar_e)
+            ax.set_yticks(range(n))
+            ax.set_yticklabels(cats)
+            ax.invert_yaxis()
+            if log:
+                ax.set_xscale("log")
+            else:
+                _german_value_axis(ax, "x")
+            if ylabel:
+                ax.set_xlabel(ylabel)           # the value axis is horizontal now
+            ax.margins(x=0.12)                  # room for the value labels
+            _bar_value_labels(ax, vals, horizontal=True, decimals=label_decimals)
         else:
-            _german_value_axis(ax, "x")
-        if ylabel:
-            ax.set_xlabel(ylabel)           # the value axis is horizontal now
-        ax.margins(x=0.12)                  # room for the value labels
-        _bar_value_labels(ax, vals, horizontal=True, decimals=label_decimals)
-    else:
-        fig, ax = plt.subplots(figsize=(max(4.0, 0.95 * n + 1.5), 3.3), layout="constrained")
-        ax.bar(range(n), vals, color="#4f6f8f", edgecolor="#33506e")
-        ax.set_xticks(range(n))
-        # Safety net: even below the horizontal-switch thresholds, mid-length or
-        # numerous labels can collide on a vertical axis — rotate them so they never
-        # overlap (constrained_layout then reclaims the space).
-        rot = max((len(c) for c in cats), default=0) > 6 or n >= 5
-        ax.set_xticklabels(cats, rotation=30 if rot else 0, ha="right" if rot else "center")
-        if log:
-            ax.set_yscale("log")
-        else:
-            _german_value_axis(ax, "y")
-        if ylabel:
-            ax.set_ylabel(ylabel)
-        if s.get("xlabel"):
-            ax.set_xlabel(s["xlabel"])
-        ax.margins(y=0.12)
-        _bar_value_labels(ax, vals, horizontal=False, decimals=label_decimals)
-    if s.get("title"):
-        ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 52)))
-    fig.savefig(path, dpi=150)
-    plt.close(fig)
+            fig, ax = plt.subplots(figsize=(max(4.0, 0.95 * n + 1.5), 3.3), layout="constrained")
+            ax.bar(range(n), vals, color=bar_c, edgecolor=bar_e)
+            ax.set_xticks(range(n))
+            # Safety net: even below the horizontal-switch thresholds, mid-length or
+            # numerous labels can collide on a vertical axis — rotate them so they never
+            # overlap (constrained_layout then reclaims the space).
+            rot = max((len(c) for c in cats), default=0) > 6 or n >= 5
+            ax.set_xticklabels(cats, rotation=30 if rot else 0, ha="right" if rot else "center")
+            if log:
+                ax.set_yscale("log")
+            else:
+                _german_value_axis(ax, "y")
+            if ylabel:
+                ax.set_ylabel(ylabel)
+            if s.get("xlabel"):
+                ax.set_xlabel(s["xlabel"])
+            ax.margins(y=0.12)
+            _bar_value_labels(ax, vals, horizontal=False, decimals=label_decimals)
+        if s.get("title"):
+            ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 52)))
+        fig.savefig(path, dpi=150)
+        plt.close(fig)
 
 
 @_generator("matplotlib:population_pyramid")
@@ -199,25 +212,26 @@ def _population_pyramid(asset: Asset, path: Path) -> None:
     female = [float(v) for v in s.get("female", [])]
     n = max(len(groups), 1)
     y = list(range(n))
-    fig, ax = plt.subplots(figsize=(6.8, max(3.0, 0.42 * n + 1.0)), layout="constrained")
-    ax.barh(y, [-v for v in male], color="#4f6f8f", edgecolor="#33506e",
-            label=s.get("male_label", "Männer"))
-    ax.barh(y, female, color="#b06b4f", edgecolor="#8a4a33",
-            label=s.get("female_label", "Frauen"))
-    ax.axvline(0, color="#33506e", lw=0.8)
-    ax.set_yticks(y)
-    ax.set_yticklabels(groups)
-    ax.set_ylabel(s.get("ylabel") or "Altersgruppe")
-    ax.xaxis.set_major_locator(MaxNLocator(nbins=6, symmetric=True))
-    ax.xaxis.set_major_formatter(  # both wings show positive counts, German grouping
-        FuncFormatter(lambda x, _: fmt_de(abs(x), 0)))
-    ax.set_xlabel(s.get("xlabel") or "Personen")
-    ax.margins(y=0.01)
-    ax.legend(loc="lower right", fontsize=8)
-    if s.get("title"):
-        ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 52)))
-    fig.savefig(path, dpi=150)
-    plt.close(fig)
+    with plt.rc_context(_HOUSE()):
+        fig, ax = plt.subplots(figsize=(6.8, max(3.0, 0.42 * n + 1.0)), layout="constrained")
+        ax.barh(y, [-v for v in male], color=fs.PALETTE.primary, edgecolor=fs.edge("primary"),
+                label=s.get("male_label", "Männer"))
+        ax.barh(y, female, color=fs.PALETTE.secondary, edgecolor=fs.edge("secondary"),
+                label=s.get("female_label", "Frauen"))
+        ax.axvline(0, color=fs.PALETTE.ink, lw=0.8)
+        ax.set_yticks(y)
+        ax.set_yticklabels(groups)
+        ax.set_ylabel(s.get("ylabel") or "Altersgruppe")
+        ax.xaxis.set_major_locator(MaxNLocator(nbins=6, symmetric=True))
+        ax.xaxis.set_major_formatter(  # both wings show positive counts, German grouping
+            FuncFormatter(lambda x, _: fmt_de(abs(x), 0)))
+        ax.set_xlabel(s.get("xlabel") or "Personen")
+        ax.margins(y=0.01)
+        ax.legend(loc="lower right", fontsize=fs.TYPE.tick)
+        if s.get("title"):
+            ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 52)))
+        fig.savefig(path, dpi=150)
+        plt.close(fig)
 
 
 @_generator("matplotlib:timeline")
@@ -242,36 +256,38 @@ def _timeline(asset: Asset, path: Path) -> None:
         return f"{at:g}" if isinstance(at, (int, float)) else str(at)
 
     labels = ["\n".join(textwrap.wrap(f"{_stamp(e)} — {e.get('label', '')}", 22)) for e in events]
-    fig, ax = plt.subplots(figsize=(8.8, 3.2))           # NOT constrained: stable box for measuring
-    fig.subplots_adjust(left=0.03, right=0.97, top=0.88, bottom=0.05)
-    ax.axhline(0, color="#33506e", lw=1.6, zorder=1)
-    ax.set_yticks([])
-    ax.set_xticks([])
-    for sp in ("left", "right", "top", "bottom"):
-        ax.spines[sp].set_visible(False)
-    if not xs:
-        fig.savefig(path, dpi=150)
+    with plt.rc_context(_HOUSE()):
+        fig, ax = plt.subplots(figsize=(8.8, 3.2))       # NOT constrained: stable box for measuring
+        fig.subplots_adjust(left=0.03, right=0.97, top=0.88, bottom=0.05)
+        ax.axhline(0, color=fs.PALETTE.ink, lw=1.6, zorder=1)
+        ax.set_yticks([])
+        ax.set_xticks([])
+        for sp in ("left", "right", "top", "bottom"):
+            ax.spines[sp].set_visible(False)
+        if not xs:
+            fig.savefig(path, dpi=150)
+            plt.close(fig)
+            return
+        span = (max(xs) - min(xs)) or 1.0
+        ax.set_xlim(min(xs) - span * 0.12, max(xs) + span * 0.12)
+        ax.set_ylim(-0.4, 1.0)                            # provisional; widened after packing
+        widths = measure_widths(ax, labels, fontsize=fs.TYPE.annot)
+        lanes = lane_pack(xs, widths, gap=span * 0.02)
+        nlanes = (max(lanes) + 1) if lanes else 1
+        max_lines = max((lab.count("\n") + 1 for lab in labels), default=1)
+        lane_h = 0.30 * max_lines + 0.30
+        base = 0.42
+        for i, (x, lab) in enumerate(zip(xs, labels)):
+            y = base + lanes[i] * lane_h
+            ax.plot([x], [0], "o", color=fs.PALETTE.focus, ms=7, zorder=3)
+            ax.plot([x, x], [0.05, y - 0.05], color=fs.PALETTE.focus, lw=0.7, zorder=2)
+            ax.annotate(lab, (x, y), ha="center", va="bottom", fontsize=fs.TYPE.annot,
+                        color=fs.PALETTE.ink)
+        ax.set_ylim(-0.35, base + (nlanes - 1) * lane_h + 0.30 * max_lines + 0.25)
+        if s.get("title"):
+            ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 60)), fontsize=fs.TYPE.title)
+        fig.savefig(path, dpi=150, bbox_inches="tight")
         plt.close(fig)
-        return
-    span = (max(xs) - min(xs)) or 1.0
-    ax.set_xlim(min(xs) - span * 0.12, max(xs) + span * 0.12)
-    ax.set_ylim(-0.4, 1.0)                                # provisional; widened after packing
-    widths = measure_widths(ax, labels, fontsize=8.5)
-    lanes = lane_pack(xs, widths, gap=span * 0.02)
-    nlanes = (max(lanes) + 1) if lanes else 1
-    max_lines = max((lab.count("\n") + 1 for lab in labels), default=1)
-    lane_h = 0.30 * max_lines + 0.30
-    base = 0.42
-    for i, (x, lab) in enumerate(zip(xs, labels)):
-        y = base + lanes[i] * lane_h
-        ax.plot([x], [0], "o", color="#b03a2e", ms=7, zorder=3)
-        ax.plot([x, x], [0.05, y - 0.05], color="#b03a2e", lw=0.7, zorder=2)
-        ax.annotate(lab, (x, y), ha="center", va="bottom", fontsize=8.5, color="#33506e")
-    ax.set_ylim(-0.35, base + (nlanes - 1) * lane_h + 0.30 * max_lines + 0.25)
-    if s.get("title"):
-        ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 60)), fontsize=11)
-    fig.savefig(path, dpi=150, bbox_inches="tight")
-    plt.close(fig)
 
 
 @_generator("matplotlib:climate_diagram")
@@ -286,23 +302,25 @@ def _climate_diagram(asset: Asset, path: Path) -> None:
     temp = [float(v) for v in s.get("temp", [])]
     precip = [float(v) for v in s.get("precip", [])]
     n = len(months)
-    fig, ax1 = plt.subplots(figsize=(6.6, 3.8), layout="constrained")
-    ax2 = ax1.twinx()
-    ax2.bar(range(n), precip, color="#6f9fc8", edgecolor="#33506e", width=0.7, zorder=1)
-    ax1.plot(range(n), temp, "-o", color="#b03a2e", lw=2, ms=4, zorder=3)
-    ax1.set_zorder(ax2.get_zorder() + 1)   # draw the temperature line above the bars
-    ax1.patch.set_visible(False)
-    ax1.set_xticks(range(n))
-    ax1.set_xticklabels(months, fontsize=8)
-    ax1.set_ylabel("Temperatur (°C)", color="#b03a2e")
-    ax2.set_ylabel("Niederschlag (mm)", color="#33506e")
-    ax1.tick_params(axis="y", labelcolor="#b03a2e")
-    ax2.tick_params(axis="y", labelcolor="#33506e")
-    ax2.set_ylim(0, max(precip + [1]) * 1.15)
-    if s.get("title"):
-        ax1.set_title("\n".join(textwrap.wrap(str(s["title"]), 52)))
-    fig.savefig(path, dpi=150)
-    plt.close(fig)
+    temp_c, precip_c = fs.PALETTE.focus, fs.PALETTE.primary   # Walter-Lieth: T line, N bars
+    with plt.rc_context(_HOUSE()):
+        fig, ax1 = plt.subplots(figsize=(6.6, 3.8), layout="constrained")
+        ax2 = ax1.twinx()
+        ax2.bar(range(n), precip, color=precip_c, edgecolor=fs.edge("primary"), width=0.7, zorder=1)
+        ax1.plot(range(n), temp, "-o", color=temp_c, lw=2, ms=4, zorder=3)
+        ax1.set_zorder(ax2.get_zorder() + 1)   # draw the temperature line above the bars
+        ax1.patch.set_visible(False)
+        ax1.set_xticks(range(n))
+        ax1.set_xticklabels(months, fontsize=fs.TYPE.tick)
+        ax1.set_ylabel("Temperatur (°C)", color=temp_c)
+        ax2.set_ylabel("Niederschlag (mm)", color=precip_c)
+        ax1.tick_params(axis="y", labelcolor=temp_c)
+        ax2.tick_params(axis="y", labelcolor=precip_c)
+        ax2.set_ylim(0, max(precip + [1]) * 1.15)
+        if s.get("title"):
+            ax1.set_title("\n".join(textwrap.wrap(str(s["title"]), 52)))
+        fig.savefig(path, dpi=150)
+        plt.close(fig)
 
 
 @_generator("matplotlib:line")
@@ -323,45 +341,51 @@ def _line(asset: Asset, path: Path) -> None:
     if not log:                                          # one shared divisor across series
         pool = [float(v) for ser in series for v in (ser.get("y") or [])]
         _, ylabel, div = unit_scale(pool, ylabel)
-    fig, ax = plt.subplots(figsize=(6.2, 3.7), layout="constrained")
-    cat_labels = None
-    numeric_xs: list[float] = []
-    for ser in series:
-        y = [float(v) / div for v in (ser.get("y") or [])]
-        x = ser.get("x")
-        marker = "-o" if len(y) <= 24 else "-"          # no dot-soup on long series
-        if x and any(isinstance(v, str) for v in x) and not _all_numeric(x):
-            cat_labels = [str(v) for v in x]            # true categorical → index + ticklabels
-            ax.plot(range(len(y)), y, marker, lw=2, ms=5, label=ser.get("label"))
-        else:                                            # numeric x (years, quantities) → numeric axis
-            xs = [float(str(v).replace(",", ".")) for v in (x or range(len(y)))]
-            numeric_xs += xs
-            ax.plot(xs, y, marker, lw=2, ms=5, label=ser.get("label"))
-    if cat_labels is not None:
-        n = len(cat_labels)
-        step = max(1, n // 12)                           # thin to ~12 ticks (no overlap smear)
-        idx = list(range(0, n, step))
-        rot = 30 if any(len(c) > 6 for c in cat_labels) else 0
-        ax.set_xticks(idx)
-        ax.set_xticklabels([cat_labels[i] for i in idx], rotation=rot,
-                           ha="right" if rot else "center")
-    elif numeric_xs and all(v == int(v) for v in numeric_xs):
-        _year_axis(ax)                                   # whole numbers (years): plain integer ticks
-    if log:
-        ax.set_yscale("log")
-    else:
-        _german_value_axis(ax, "y")
-    ax.grid(True, color="#e9e9e9", lw=0.6)
-    if s.get("xlabel") or s.get("x_label"):
-        ax.set_xlabel(s.get("xlabel") or s.get("x_label"))
-    if ylabel:
-        ax.set_ylabel(ylabel)
-    if len(series) > 1 and any(ser.get("label") for ser in series):
-        ax.legend(fontsize=8)
-    if s.get("title"):
-        ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 52)))
-    fig.savefig(path, dpi=150)
-    plt.close(fig)
+    multi = len(series) > 1
+    with plt.rc_context(_HOUSE()):
+        fig, ax = plt.subplots(figsize=(6.2, 3.7), layout="constrained")
+        cat_labels = None
+        numeric_xs: list[float] = []
+        for si, ser in enumerate(series):
+            y = [float(v) / div for v in (ser.get("y") or [])]
+            x = ser.get("x")
+            marker = "o" if len(y) <= 24 else None       # no dot-soup on long series
+            # a single series is the house `primary`; several get a paired hue+dash from the
+            # ramps (redundant encoding, so overlaid trends survive a B/W photocopy).
+            style = fs.line_kind(si, lw=2.0) if multi else {"color": fs.PALETTE.primary, "linewidth": 2.0}
+            if x and any(isinstance(v, str) for v in x) and not _all_numeric(x):
+                cat_labels = [str(v) for v in x]        # true categorical → index + ticklabels
+                ax.plot(range(len(y)), y, marker=marker, ms=5, label=ser.get("label"), **style)
+            else:                                        # numeric x (years, quantities) → numeric axis
+                xs = [float(str(v).replace(",", ".")) for v in (x or range(len(y)))]
+                numeric_xs += xs
+                ax.plot(xs, y, marker=marker, ms=5, label=ser.get("label"), **style)
+        if cat_labels is not None:
+            n = len(cat_labels)
+            step = max(1, n // 12)                       # thin to ~12 ticks (no overlap smear)
+            idx = list(range(0, n, step))
+            rot = 30 if any(len(c) > 6 for c in cat_labels) else 0
+            ax.set_xticks(idx)
+            ax.set_xticklabels([cat_labels[i] for i in idx], rotation=rot,
+                               ha="right" if rot else "center")
+        elif numeric_xs and all(v == int(v) for v in numeric_xs):
+            _year_axis(ax)                               # whole numbers (years): plain integer ticks
+        if log:
+            ax.set_yscale("log")
+        else:
+            _german_value_axis(ax, "y")
+        ax.grid(True, color=fs.PALETTE.grid, lw=fs.STROKE.grid)
+        ax.set_axisbelow(True)
+        if s.get("xlabel") or s.get("x_label"):
+            ax.set_xlabel(s.get("xlabel") or s.get("x_label"))
+        if ylabel:
+            ax.set_ylabel(ylabel)
+        if multi and any(ser.get("label") for ser in series):
+            ax.legend(fontsize=fs.TYPE.tick)
+        if s.get("title"):
+            ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 52)))
+        fig.savefig(path, dpi=150)
+        plt.close(fig)
 
 
 @_generator("matplotlib:scatter")
@@ -376,25 +400,27 @@ def _scatter(asset: Asset, path: Path) -> None:
     # a scaled/big axis prints German, a small one (e.g. years) keeps plain default ticks
     xs, xlabel, xdiv = unit_scale(xs, s.get("xlabel") or s.get("x_label") or "")
     ys, ylabel, ydiv = unit_scale(ys, s.get("ylabel") or s.get("y_label") or "")
-    fig, ax = plt.subplots(figsize=(5.4, 4.0), layout="constrained")
-    ax.scatter(xs, ys, color="#33506e", s=38, zorder=3)
-    if s.get("fit") and len(xs) >= 2:
-        import numpy as np
-        m, b = np.polyfit(xs, ys, 1)
-        xr = [min(xs), max(xs)]
-        ax.plot(xr, [m * x + b for x in xr], color="#b03a2e", lw=1.5, zorder=2)
-    for axis, div, vals in (("x", xdiv, xs), ("y", ydiv, ys)):
-        if div > 1 or (vals and max(abs(v) for v in vals) >= 1e5):
-            _german_value_axis(ax, axis)
-    ax.grid(True, color="#e9e9e9", lw=0.6)
-    if xlabel:
-        ax.set_xlabel(xlabel)
-    if ylabel:
-        ax.set_ylabel(ylabel)
-    if s.get("title"):
-        ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 50)))
-    fig.savefig(path, dpi=150)
-    plt.close(fig)
+    with plt.rc_context(_HOUSE()):
+        fig, ax = plt.subplots(figsize=(5.4, 4.0), layout="constrained")
+        ax.scatter(xs, ys, color=fs.PALETTE.primary, s=38, zorder=3)
+        if s.get("fit") and len(xs) >= 2:                # the trend is the point of interest → focus
+            import numpy as np
+            m, b = np.polyfit(xs, ys, 1)
+            xr = [min(xs), max(xs)]
+            ax.plot(xr, [m * x + b for x in xr], color=fs.PALETTE.focus, lw=1.5, zorder=2)
+        for axis, div, vals in (("x", xdiv, xs), ("y", ydiv, ys)):
+            if div > 1 or (vals and max(abs(v) for v in vals) >= 1e5):
+                _german_value_axis(ax, axis)
+        ax.grid(True, color=fs.PALETTE.grid, lw=fs.STROKE.grid)
+        ax.set_axisbelow(True)
+        if xlabel:
+            ax.set_xlabel(xlabel)
+        if ylabel:
+            ax.set_ylabel(ylabel)
+        if s.get("title"):
+            ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 50)))
+        fig.savefig(path, dpi=150)
+        plt.close(fig)
 
 
 @_generator("matplotlib:histogram")
@@ -405,17 +431,19 @@ def _histogram(asset: Asset, path: Path) -> None:
     vals = [float(v) for v in s.get("values", [])]
     # large measured values scale to Mio./Mrd. (unit into the xlabel) — never scientific
     vals, xlabel, xdiv = unit_scale(vals, s.get("xlabel") or s.get("x_label") or "")
-    fig, ax = plt.subplots(figsize=(5.6, 3.6), layout="constrained")
-    ax.hist(vals, bins=int(s.get("bins", 8)), color="#4f6f8f", edgecolor="#33506e")
-    if xdiv > 1 or (vals and max(abs(v) for v in vals) >= 1e5):
-        _german_value_axis(ax, "x")
-    if xlabel:
-        ax.set_xlabel(xlabel)
-    ax.set_ylabel(s.get("ylabel") or s.get("y_label") or "Häufigkeit")
-    if s.get("title"):
-        ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 50)))
-    fig.savefig(path, dpi=150)
-    plt.close(fig)
+    with plt.rc_context(_HOUSE()):
+        fig, ax = plt.subplots(figsize=(5.6, 3.6), layout="constrained")
+        ax.hist(vals, bins=int(s.get("bins", 8)), color=fs.PALETTE.primary,
+                edgecolor=fs.edge("primary"))
+        if xdiv > 1 or (vals and max(abs(v) for v in vals) >= 1e5):
+            _german_value_axis(ax, "x")
+        if xlabel:
+            ax.set_xlabel(xlabel)
+        ax.set_ylabel(s.get("ylabel") or s.get("y_label") or "Häufigkeit")
+        if s.get("title"):
+            ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 50)))
+        fig.savefig(path, dpi=150)
+        plt.close(fig)
 
 
 @_generator("matplotlib:boxplot")
@@ -443,24 +471,27 @@ def _boxplot(asset: Asset, path: Path) -> None:
     groups = s.get("groups") or [s]
     stats = [_stats(g) for g in groups]
     horizontal = not s.get("vertical")
-    fig, ax = plt.subplots(figsize=(5.6, 0.9 + 0.7 * len(stats)) if horizontal
-                           else (1.2 + 1.0 * len(stats), 3.8), layout="constrained")
-    ax.bxp(stats, orientation="horizontal" if horizontal else "vertical",
-           showfliers=False, patch_artist=True,
-           boxprops={"facecolor": "#cfe0ee", "edgecolor": "#33506e"},
-           medianprops={"color": "#b03a2e", "linewidth": 2},
-           whiskerprops={"color": "#33506e"}, capprops={"color": "#33506e"})
-    whisk = [abs(st[k]) for st in stats for k in ("whislo", "whishi")]
-    if whisk and max(whisk) >= 1e5:                # big values: German grouping, never sci
-        _german_value_axis(ax, "x" if horizontal else "y")
-    (ax.set_xlabel if horizontal else ax.set_ylabel)(s.get("xlabel") or s.get("x_label") or "")
-    (ax.grid)(True, axis="x" if horizontal else "y", color="#e6e6e6", lw=0.6)
-    if not any(st["label"] for st in stats):
-        (ax.set_yticks if horizontal else ax.set_xticks)([])
-    if s.get("title"):
-        ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 50)))
-    fig.savefig(path, dpi=150)
-    plt.close(fig)
+    with plt.rc_context(_HOUSE()):
+        fig, ax = plt.subplots(figsize=(5.6, 0.9 + 0.7 * len(stats)) if horizontal
+                               else (1.2 + 1.0 * len(stats), 3.8), layout="constrained")
+        ax.bxp(stats, orientation="horizontal" if horizontal else "vertical",
+               showfliers=False, patch_artist=True,
+               boxprops={"facecolor": fs.lighten(fs.PALETTE.primary, 0.72),
+                         "edgecolor": fs.PALETTE.ink},
+               medianprops={"color": fs.PALETTE.focus, "linewidth": 2},   # the median = focus
+               whiskerprops={"color": fs.PALETTE.ink}, capprops={"color": fs.PALETTE.ink})
+        whisk = [abs(st[k]) for st in stats for k in ("whislo", "whishi")]
+        if whisk and max(whisk) >= 1e5:            # big values: German grouping, never sci
+            _german_value_axis(ax, "x" if horizontal else "y")
+        (ax.set_xlabel if horizontal else ax.set_ylabel)(s.get("xlabel") or s.get("x_label") or "")
+        (ax.grid)(True, axis="x" if horizontal else "y", color=fs.PALETTE.grid, lw=fs.STROKE.grid)
+        ax.set_axisbelow(True)
+        if not any(st["label"] for st in stats):
+            (ax.set_yticks if horizontal else ax.set_xticks)([])
+        if s.get("title"):
+            ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 50)))
+        fig.savefig(path, dpi=150)
+        plt.close(fig)
 
 
 @_generator("matplotlib:function_graph")
@@ -470,30 +501,33 @@ def _function_graph(asset: Asset, path: Path) -> None:
     ymin?, ymax?, title?}."""
     s = asset.spec or {}
     xmin, xmax = float(s.get("xmin", -5)), float(s.get("xmax", 5))
-    fig, ax = plt.subplots(figsize=(4.6, 4.2), layout="constrained")
-    ax.axhline(0, color="#999", lw=0.8)
-    ax.axvline(0, color="#999", lw=0.8)
-    ax.grid(True, color="#e6e6e6", lw=0.6)
-    if "m" in s:
-        m, b = float(s["m"]), float(s.get("b", 0))
-        ax.plot([xmin, xmax], [m * xmin + b, m * xmax + b], color="#b03a2e", lw=2)
-    pts = s.get("points", [])
-    if s.get("connect") and len(pts) >= 2:  # join points into a curve (e.g. a v-t graph)
-        ax.plot([p[0] for p in pts], [p[1] for p in pts], "-o", color="#33506e", lw=2, ms=6)
-    else:
-        for p in pts:
-            ax.plot([p[0]], [p[1]], "o", color="#33506e", ms=6)
-    ax.set_xlim(xmin, xmax)
-    if "ymin" in s and "ymax" in s:
-        ax.set_ylim(float(s["ymin"]), float(s["ymax"]))
-    if s.get("xlabel"):
-        ax.set_xlabel(s["xlabel"])
-    if s.get("ylabel"):
-        ax.set_ylabel(s["ylabel"])
-    if s.get("title"):
-        ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 46)))
-    fig.savefig(path, dpi=150)  # constrained_layout keeps title/labels from colliding
-    plt.close(fig)
+    with plt.rc_context(_HOUSE()):
+        fig, ax = plt.subplots(figsize=(4.6, 4.2), layout="constrained")
+        ax.axhline(0, color=fs.PALETTE.muted, lw=0.8)
+        ax.axvline(0, color=fs.PALETTE.muted, lw=0.8)
+        ax.grid(True, color=fs.PALETTE.grid, lw=fs.STROKE.grid)
+        ax.set_axisbelow(True)
+        if "m" in s:                            # the line/graph is the object of interest → focus
+            m, b = float(s["m"]), float(s.get("b", 0))
+            ax.plot([xmin, xmax], [m * xmin + b, m * xmax + b], color=fs.PALETTE.focus, lw=2)
+        pts = s.get("points", [])
+        if s.get("connect") and len(pts) >= 2:  # join points into a curve (e.g. a v-t graph)
+            ax.plot([p[0] for p in pts], [p[1] for p in pts], "-o", color=fs.PALETTE.primary,
+                    lw=2, ms=6)
+        else:
+            for p in pts:
+                ax.plot([p[0]], [p[1]], "o", color=fs.PALETTE.primary, ms=6)
+        ax.set_xlim(xmin, xmax)
+        if "ymin" in s and "ymax" in s:
+            ax.set_ylim(float(s["ymin"]), float(s["ymax"]))
+        if s.get("xlabel"):
+            ax.set_xlabel(s["xlabel"])
+        if s.get("ylabel"):
+            ax.set_ylabel(s["ylabel"])
+        if s.get("title"):
+            ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 46)))
+        fig.savefig(path, dpi=150)  # constrained_layout keeps title/labels from colliding
+        plt.close(fig)
 
 
 @_generator("matplotlib:math_formula")
@@ -502,10 +536,11 @@ def _math_formula(asset: Asset, path: Path) -> None:
     spec: {latex}. Store math semantically (LaTeX) so a future HTML renderer can
     typeset the same string via KaTeX."""
     s = asset.spec or {}
-    fig = plt.figure(figsize=(0.01, 0.01))
-    fig.text(0, 0, f"${s.get('latex', '')}$", fontsize=20)
-    fig.savefig(path, dpi=200, bbox_inches="tight", pad_inches=0.15, transparent=True)
-    plt.close(fig)
+    with plt.rc_context(_HOUSE()):
+        fig = plt.figure(figsize=(0.01, 0.01))
+        fig.text(0, 0, f"${s.get('latex', '')}$", fontsize=20, color=fs.PALETTE.ink)
+        fig.savefig(path, dpi=200, bbox_inches="tight", pad_inches=0.15, transparent=True)
+        plt.close(fig)
 
 
 @_generator("matplotlib:tree_diagram")
@@ -517,50 +552,51 @@ def _tree_diagram(asset: Asset, path: Path) -> None:
     the edge label (e.g. "0,3"). Any depth; parents sit at the mean of their children."""
     s = asset.spec or {}
     roots = s.get("branches", []) or []
-    fig, ax = plt.subplots(figsize=(6.0, 3.8), layout="constrained")
-    ax.axis("off")
-    leaf = [0.0]
-    max_depth = [1]
+    with plt.rc_context(_HOUSE()):
+        fig, ax = plt.subplots(figsize=(6.0, 3.8), layout="constrained")
+        ax.axis("off")
+        leaf = [0.0]
+        max_depth = [1]
 
-    def place(node: dict, depth: int) -> float:
-        max_depth[0] = max(max_depth[0], depth)
-        kids = node.get("children") or []
-        if kids:
-            y = sum(place(k, depth + 1) for k in kids) / len(kids)
-        else:
-            y = leaf[0]
-            leaf[0] += 1
-        node["_xy"] = (depth, y)
-        return y
+        def place(node: dict, depth: int) -> float:
+            max_depth[0] = max(max_depth[0], depth)
+            kids = node.get("children") or []
+            if kids:
+                y = sum(place(k, depth + 1) for k in kids) / len(kids)
+            else:
+                y = leaf[0]
+                leaf[0] += 1
+            node["_xy"] = (depth, y)
+            return y
 
-    for r in roots:
-        place(r, 1)
-    root_y = sum(r["_xy"][1] for r in roots) / len(roots) if roots else 0
-    root_xy = (0.0, root_y)
+        for r in roots:
+            place(r, 1)
+        root_y = sum(r["_xy"][1] for r in roots) / len(roots) if roots else 0
+        root_xy = (0.0, root_y)
 
-    def draw(node: dict, parent_xy: tuple) -> None:
-        x, y = node["_xy"]
-        ax.plot([parent_xy[0], x], [parent_xy[1], y], color="#33506e", lw=1.3, zorder=1)
-        if node.get("p") not in (None, ""):
-            mx, my = (parent_xy[0] + x) / 2, (parent_xy[1] + y) / 2
-            ax.text(mx, my, str(node["p"]), fontsize=9, color="#b03a2e",
-                    ha="center", va="center",
-                    bbox={"boxstyle": "round,pad=0.12", "fc": "white", "ec": "none"})
-        ax.plot([x], [y], "o", color="#33506e", ms=5, zorder=2)
-        ax.text(x + 0.06, y, str(node.get("label", "")), fontsize=10, va="center")
-        for k in node.get("children") or []:
-            draw(k, (x, y))
+        def draw(node: dict, parent_xy: tuple) -> None:
+            x, y = node["_xy"]
+            ax.plot([parent_xy[0], x], [parent_xy[1], y], color=fs.PALETTE.ink, lw=1.3, zorder=1)
+            if node.get("p") not in (None, ""):    # branch probability = the value of interest → focus
+                mx, my = (parent_xy[0] + x) / 2, (parent_xy[1] + y) / 2
+                ax.text(mx, my, str(node["p"]), fontsize=fs.TYPE.annot, color=fs.PALETTE.focus,
+                        ha="center", va="center",
+                        bbox={"boxstyle": "round,pad=0.12", "fc": fs.PALETTE.paper, "ec": "none"})
+            ax.plot([x], [y], "o", color=fs.PALETTE.ink, ms=5, zorder=2)
+            ax.text(x + 0.06, y, str(node.get("label", "")), fontsize=fs.TYPE.base, va="center")
+            for k in node.get("children") or []:
+                draw(k, (x, y))
 
-    if roots:
-        ax.plot([root_xy[0]], [root_xy[1]], "o", color="#33506e", ms=5, zorder=2)
-    for r in roots:
-        draw(r, root_xy)
-    ax.set_xlim(-0.3, max_depth[0] + 0.9)
-    ax.set_ylim(-0.6, max(leaf[0], 1) - 0.4)
-    if s.get("title"):
-        ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 50)))
-    fig.savefig(path, dpi=150)
-    plt.close(fig)
+        if roots:
+            ax.plot([root_xy[0]], [root_xy[1]], "o", color=fs.PALETTE.ink, ms=5, zorder=2)
+        for r in roots:
+            draw(r, root_xy)
+        ax.set_xlim(-0.3, max_depth[0] + 0.9)
+        ax.set_ylim(-0.6, max(leaf[0], 1) - 0.4)
+        if s.get("title"):
+            ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 50)))
+        fig.savefig(path, dpi=150)
+        plt.close(fig)
 
 
 @_generator("matplotlib:cause_effect")
@@ -581,42 +617,45 @@ def _cause_effect(asset: Asset, path: Path) -> None:
         if e and e not in effects:
             effects.append(e)
     n = max(len(causes), len(effects), 1)
-    fig, ax = plt.subplots(figsize=(7.8, max(2.6, 1.0 * n)), layout="constrained")
-    ax.axis("off")
-    ax.set_xlim(0, 10)
-    ax.set_ylim(0, n + 0.4)
+    with plt.rc_context(_HOUSE()):
+        fig, ax = plt.subplots(figsize=(7.8, max(2.6, 1.0 * n)), layout="constrained")
+        ax.axis("off")
+        ax.set_xlim(0, 10)
+        ax.set_ylim(0, n + 0.4)
 
-    def ypos(idx: int, total: int) -> float:
-        if total <= 1:
-            return (n + 0.4) / 2
-        top, bot = n, 0.4
-        return top - (top - bot) * idx / (total - 1)
+        def ypos(idx: int, total: int) -> float:
+            if total <= 1:
+                return (n + 0.4) / 2
+            top, bot = n, 0.4
+            return top - (top - bot) * idx / (total - 1)
 
-    def wrap(t: str) -> str:
-        return "\n".join(textwrap.wrap(t, 24))
+        def wrap(t: str) -> str:
+            return "\n".join(textwrap.wrap(t, 24))
 
-    cpos: dict[str, float] = {}
-    epos: dict[str, float] = {}
-    for i, c in enumerate(causes):
-        y = ypos(i, len(causes))
-        cpos[c] = y
-        ax.text(1.7, y, wrap(c), ha="center", va="center", fontsize=9,
-                bbox={"boxstyle": "round,pad=0.4", "fc": "#eef3f8", "ec": "#33506e"})
-    for i, e in enumerate(effects):
-        y = ypos(i, len(effects))
-        epos[e] = y
-        ax.text(8.3, y, wrap(e), ha="center", va="center", fontsize=9,
-                bbox={"boxstyle": "round,pad=0.4", "fc": "#fdf0ec", "ec": "#b03a2e"})
-    for ln in links:
-        c, e = str(ln.get("cause", "")), str(ln.get("effect", ""))
-        if c in cpos and e in epos:
-            ax.annotate("", xy=(7.2, epos[e]), xytext=(2.8, cpos[c]),
-                        arrowprops={"arrowstyle": "-|>", "color": "#7a7a7a", "lw": 1.2,
-                                    "shrinkA": 3, "shrinkB": 3})
-    if s.get("title"):
-        ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 52)))
-    fig.savefig(path, dpi=150)
-    plt.close(fig)
+        cpos: dict[str, float] = {}
+        epos: dict[str, float] = {}
+        for i, c in enumerate(causes):            # causes: cool surface box
+            y = ypos(i, len(causes))
+            cpos[c] = y
+            ax.text(1.7, y, wrap(c), ha="center", va="center", fontsize=fs.TYPE.annot,
+                    bbox={"boxstyle": "round,pad=0.4", "fc": fs.PALETTE.surface,
+                          "ec": fs.PALETTE.ink})
+        for i, e in enumerate(effects):           # effects: warm surface box, focus edge
+            y = ypos(i, len(effects))
+            epos[e] = y
+            ax.text(8.3, y, wrap(e), ha="center", va="center", fontsize=fs.TYPE.annot,
+                    bbox={"boxstyle": "round,pad=0.4", "fc": fs.PALETTE.surface_warm,
+                          "ec": fs.PALETTE.focus})
+        for ln in links:
+            c, e = str(ln.get("cause", "")), str(ln.get("effect", ""))
+            if c in cpos and e in epos:
+                ax.annotate("", xy=(7.2, epos[e]), xytext=(2.8, cpos[c]),
+                            arrowprops={"arrowstyle": "-|>", "color": fs.PALETTE.muted, "lw": 1.2,
+                                        "shrinkA": 3, "shrinkB": 3})
+        if s.get("title"):
+            ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 52)))
+        fig.savefig(path, dpi=150)
+        plt.close(fig)
 
 
 @_generator("matplotlib:process_flow")
@@ -636,50 +675,54 @@ def _process_flow(asset: Asset, path: Path) -> None:
         return "\n".join(textwrap.wrap(t, 18))
 
     if n == 0:
-        fig, ax = plt.subplots(figsize=(4, 2))
-        ax.axis("off")
-        fig.savefig(path, dpi=150)
-        plt.close(fig)
+        with plt.rc_context(_HOUSE()):
+            fig, ax = plt.subplots(figsize=(4, 2))
+            ax.axis("off")
+            fig.savefig(path, dpi=150)
+            plt.close(fig)
         return
 
-    if cyclic and n >= 3:
-        fig, ax = plt.subplots(figsize=(6.6, 6.0), layout="constrained")
-        ax.axis("off")
-        ax.set_aspect("equal")
-        r = 1.0
-        pos = [(r * math.cos(math.pi / 2 - 2 * math.pi * i / n),
-                r * math.sin(math.pi / 2 - 2 * math.pi * i / n)) for i in range(n)]
-        lim = r + 0.65
-        ax.set_xlim(-lim, lim)
-        ax.set_ylim(-lim, lim)
-        for i in range(n):                       # arrows along the cycle (i -> i+1, wrapping)
-            ax.annotate("", xy=pos[(i + 1) % n], xytext=pos[i],
-                        arrowprops={"arrowstyle": "-|>", "color": "#7a7a7a", "lw": 1.3,
-                                    "shrinkA": 26, "shrinkB": 26,
-                                    "connectionstyle": "arc3,rad=0.16"})
-        for i, (x, y) in enumerate(pos):
-            ax.text(x, y, wrap(steps[i]), ha="center", va="center", fontsize=9, zorder=3,
-                    bbox={"boxstyle": "round,pad=0.4", "fc": "#fdecec", "ec": "#b03a2e"})
-    else:
-        fig, ax = plt.subplots(figsize=(5.2, max(2.4, 1.2 * n)), layout="constrained")
-        ax.axis("off")
-        ax.set_xlim(0, 4)
-        ax.set_ylim(0, n + 0.5)
-        ys = [n - i for i in range(n)]           # top to bottom
-        for i in range(n - 1):
-            ax.annotate("", xy=(2, ys[i + 1] + 0.30), xytext=(2, ys[i] - 0.30),
-                        arrowprops={"arrowstyle": "-|>", "color": "#7a7a7a", "lw": 1.3})
-        if cyclic:                               # short process that still loops
-            ax.annotate("", xy=(2, ys[0]), xytext=(2, ys[-1]),
-                        arrowprops={"arrowstyle": "-|>", "color": "#7a7a7a", "lw": 1.0,
-                                    "connectionstyle": "arc3,rad=-0.55"})
-        for i, y in enumerate(ys):
-            ax.text(2, y, wrap(steps[i]), ha="center", va="center", fontsize=9, zorder=3,
-                    bbox={"boxstyle": "round,pad=0.4", "fc": "#eef3f8", "ec": "#33506e"})
-    if s.get("title"):
-        ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 46)))
-    fig.savefig(path, dpi=150)
-    plt.close(fig)
+    with plt.rc_context(_HOUSE()):
+        if cyclic and n >= 3:                    # a cycle: warm boxes, focus edge
+            fig, ax = plt.subplots(figsize=(6.6, 6.0), layout="constrained")
+            ax.axis("off")
+            ax.set_aspect("equal")
+            r = 1.0
+            pos = [(r * math.cos(math.pi / 2 - 2 * math.pi * i / n),
+                    r * math.sin(math.pi / 2 - 2 * math.pi * i / n)) for i in range(n)]
+            lim = r + 0.65
+            ax.set_xlim(-lim, lim)
+            ax.set_ylim(-lim, lim)
+            for i in range(n):                   # arrows along the cycle (i -> i+1, wrapping)
+                ax.annotate("", xy=pos[(i + 1) % n], xytext=pos[i],
+                            arrowprops={"arrowstyle": "-|>", "color": fs.PALETTE.muted, "lw": 1.3,
+                                        "shrinkA": 26, "shrinkB": 26,
+                                        "connectionstyle": "arc3,rad=0.16"})
+            for i, (x, y) in enumerate(pos):
+                ax.text(x, y, wrap(steps[i]), ha="center", va="center", fontsize=fs.TYPE.annot,
+                        zorder=3, bbox={"boxstyle": "round,pad=0.4", "fc": fs.PALETTE.surface_warm,
+                                        "ec": fs.PALETTE.focus})
+        else:                                    # a linear process: cool boxes, ink edge
+            fig, ax = plt.subplots(figsize=(5.2, max(2.4, 1.2 * n)), layout="constrained")
+            ax.axis("off")
+            ax.set_xlim(0, 4)
+            ax.set_ylim(0, n + 0.5)
+            ys = [n - i for i in range(n)]       # top to bottom
+            for i in range(n - 1):
+                ax.annotate("", xy=(2, ys[i + 1] + 0.30), xytext=(2, ys[i] - 0.30),
+                            arrowprops={"arrowstyle": "-|>", "color": fs.PALETTE.muted, "lw": 1.3})
+            if cyclic:                           # short process that still loops
+                ax.annotate("", xy=(2, ys[0]), xytext=(2, ys[-1]),
+                            arrowprops={"arrowstyle": "-|>", "color": fs.PALETTE.muted, "lw": 1.0,
+                                        "connectionstyle": "arc3,rad=-0.55"})
+            for i, y in enumerate(ys):
+                ax.text(2, y, wrap(steps[i]), ha="center", va="center", fontsize=fs.TYPE.annot,
+                        zorder=3, bbox={"boxstyle": "round,pad=0.4", "fc": fs.PALETTE.surface,
+                                        "ec": fs.PALETTE.ink})
+        if s.get("title"):
+            ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 46)))
+        fig.savefig(path, dpi=150)
+        plt.close(fig)
 
 
 def _geo_centroid(geom: dict) -> tuple[float, float]:
@@ -712,6 +755,10 @@ def _choropleth_map(asset: Asset, path: Path) -> None:
     geo_id = s.get("geo_id")
     values = {str(k): float(v) for k, v in (s.get("values") or {}).items() if v is not None}
     geoms = geo_store.load_boundaries(geo_id) if geo_id else {}
+    # semantic roles as locals (the choropleth draws with explicit colours: region borders =
+    # paper, labels/leaders = ink/muted, an unmapped region = no_data). `fs` is the styleguide.
+    _ink, _muted, _paper, _nodata = (fs.PALETTE.ink, fs.PALETTE.muted, fs.PALETTE.paper,
+                                     fs.PALETTE.no_data)
 
     def feature_path(geom: dict) -> "MplPath":
         polys = geom["coordinates"] if geom["type"] == "MultiPolygon" else [geom["coordinates"]]
@@ -730,80 +777,86 @@ def _choropleth_map(asset: Asset, path: Path) -> None:
                 codes.append(MplPath.CLOSEPOLY)
         return MplPath(verts, codes)
 
-    fig, ax = plt.subplots(figsize=(7.4, 6.2), layout="constrained")
-    ax.axis("off")
-    norm = Normalize(vmin=min(values.values()) if values else 0.0,
-                     vmax=max(values.values()) if values else 1.0)
-    cmap = plt.get_cmap("YlOrRd")
-    xs_all: list[float] = []
-    ys_all: list[float] = []
-    cents: dict[str, tuple[float, float]] = {}
-    bboxes: dict[str, tuple[float, float, float, float]] = {}
-    for name, geom in geoms.items():
-        mp = feature_path(geom)
-        val = values.get(name)
-        fc = cmap(norm(val)) if val is not None else "#e8e8e8"
-        ax.add_patch(PathPatch(mp, facecolor=fc, edgecolor="white", lw=0.7, zorder=2))
-        gx = [v[0] for v in mp.vertices]
-        gy = [v[1] for v in mp.vertices]
-        xs_all += gx
-        ys_all += gy
-        cents[name] = _geo_centroid(geom)
-        bboxes[name] = (min(gx), max(gx), min(gy), max(gy))
-    if xs_all:
-        mx = (max(xs_all) - min(xs_all)) * 0.03 or 0.1
-        my = (max(ys_all) - min(ys_all)) * 0.03 or 0.1
-        ax.set_xlim(min(xs_all) - mx, max(xs_all) + mx)
-        ax.set_ylim(min(ys_all) - my, max(ys_all) + my)
-        mean_lat = (min(ys_all) + max(ys_all)) / 2
-        ax.set_aspect(1.0 / max(0.3, math.cos(math.radians(mean_lat))))   # equirectangular fix
-    # labels: a big region's name fits in place (font shrunk to its width); a tiny enclave
-    # (e.g. Wien inside Niederösterreich) is leadered out BELOW the map, so it can never collide
-    # with the enclosing region's label (the small-polygon labelling fix; see figtext.py).
-    if geoms and xs_all:
-        from .figtext import measure_widths
-        areas = {n: (b[1] - b[0]) * (b[3] - b[2]) for n, b in bboxes.items()}
-        amax = max(areas.values()) or 1.0
-        yspan = (max(ys_all) - min(ys_all)) or 1.0
-        small = [n for n in geoms if areas[n] < 0.06 * amax]
-        for name in geoms:
-            cx, cy = cents[name]
-            if name not in small:
-                rw = bboxes[name][1] - bboxes[name][0]
-                fs = 8.0
-                while measure_widths(ax, [name], fs)[0] > rw * 0.94 and fs > 6.0:
-                    fs -= 0.5
-                ax.text(cx, cy, name, ha="center", va="center", fontsize=fs, color="#222",
-                        zorder=4, path_effects=[pe.withStroke(linewidth=2.0, foreground="white")])
-            else:
-                # leader + label as SEPARATE artists (not an arrow-annotation), so the label's
-                # measured bbox is the text alone — the choropleth's small-polygon labelling.
-                ly = min(ys_all) - yspan * 0.02
-                ax.plot([cx, cx], [cy, ly], color="#666", lw=0.7, zorder=5)
-                ax.plot([cx], [cy], "o", ms=2.5, color="#333", zorder=5)
-                ax.text(cx, ly, name, ha="center", va="top", fontsize=7.5, color="#222",
-                        zorder=5, path_effects=[pe.withStroke(linewidth=2.0, foreground="white")])
-        if small:
-            ax.set_ylim(min(ys_all) - yspan * 0.13, max(ys_all) + my)
-    if values:
-        sm = plt.cm.ScalarMappable(norm=norm, cmap=cmap)
-        sm.set_array([])
-        cb = fig.colorbar(sm, ax=ax, fraction=0.045, pad=0.02)
-        cb.ax.tick_params(labelsize=7)
-        if s.get("value_label"):
-            cb.set_label(str(s["value_label"]), fontsize=8)
-    if s.get("title"):
-        ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 48)), fontsize=11)
-    cits = []                                    # a map rests on TWO facts: values + boundaries
-    if s.get("citation"):
-        cits.append(f"Daten: {s['citation']}")
-    if geo_id:
-        cits.append(f"Grenzen: {geo_store.citation(geo_id)}")
-    if cits:
-        fig.text(0.5, 0.008, "Quelle — " + " · ".join(cits), ha="center", fontsize=6.5,
-                 color="#555")
-    fig.savefig(path, dpi=150)
-    plt.close(fig)
+    with plt.rc_context(_HOUSE()):
+        fig, ax = plt.subplots(figsize=(7.4, 6.2), layout="constrained")
+        ax.axis("off")
+        norm = Normalize(vmin=min(values.values()) if values else 0.0,
+                         vmax=max(values.values()) if values else 1.0)
+        cmap = plt.get_cmap(fs.SEQUENTIAL)
+        xs_all: list[float] = []
+        ys_all: list[float] = []
+        cents: dict[str, tuple[float, float]] = {}
+        bboxes: dict[str, tuple[float, float, float, float]] = {}
+        for name, geom in geoms.items():
+            mp = feature_path(geom)
+            val = values.get(name)
+            fc = cmap(norm(val)) if val is not None else _nodata
+            ax.add_patch(PathPatch(mp, facecolor=fc, edgecolor=_paper, lw=0.7, zorder=2))
+            gx = [v[0] for v in mp.vertices]
+            gy = [v[1] for v in mp.vertices]
+            xs_all += gx
+            ys_all += gy
+            cents[name] = _geo_centroid(geom)
+            bboxes[name] = (min(gx), max(gx), min(gy), max(gy))
+        if xs_all:
+            mx = (max(xs_all) - min(xs_all)) * 0.03 or 0.1
+            my = (max(ys_all) - min(ys_all)) * 0.03 or 0.1
+            ax.set_xlim(min(xs_all) - mx, max(xs_all) + mx)
+            ax.set_ylim(min(ys_all) - my, max(ys_all) + my)
+            mean_lat = (min(ys_all) + max(ys_all)) / 2
+            ax.set_aspect(1.0 / max(0.3, math.cos(math.radians(mean_lat))))   # equirectangular fix
+        # labels: a big region's name fits in place (font shrunk to its width); a tiny enclave
+        # (e.g. Wien inside Niederösterreich) is leadered out BELOW the map, so it can never collide
+        # with the enclosing region's label (the small-polygon labelling fix; see figtext.py).
+        if geoms and xs_all:
+            from .figtext import measure_widths
+            areas = {n: (b[1] - b[0]) * (b[3] - b[2]) for n, b in bboxes.items()}
+            amax = max(areas.values()) or 1.0
+            yspan = (max(ys_all) - min(ys_all)) or 1.0
+            small = [n for n in geoms if areas[n] < 0.06 * amax]
+            for name in geoms:
+                cx, cy = cents[name]
+                if name not in small:
+                    rw = bboxes[name][1] - bboxes[name][0]
+                    fsz = 8.0                    # NB: local font size, NOT the `fs` styleguide module
+                    while measure_widths(ax, [name], fsz)[0] > rw * 0.94 and fsz > 6.0:
+                        fsz -= 0.5
+                    ax.text(cx, cy, name, ha="center", va="center", fontsize=fsz, color=_ink,
+                            zorder=4, path_effects=[pe.withStroke(linewidth=2.0, foreground=_paper)])
+                else:
+                    # leader + label as SEPARATE artists (not an arrow-annotation), so the label's
+                    # measured bbox is the text alone — the choropleth's small-polygon labelling.
+                    ly = min(ys_all) - yspan * 0.02
+                    ax.plot([cx, cx], [cy, ly], color=_muted, lw=0.7, zorder=5)
+                    ax.plot([cx], [cy], "o", ms=2.5, color=_ink, zorder=5)
+                    ax.text(cx, ly, name, ha="center", va="top", fontsize=7.5, color=_ink,
+                            zorder=5, path_effects=[pe.withStroke(linewidth=2.0, foreground=_paper)])
+            if small:
+                ax.set_ylim(min(ys_all) - yspan * 0.13, max(ys_all) + my)
+        if values:
+            sm = plt.cm.ScalarMappable(norm=norm, cmap=cmap)
+            sm.set_array([])
+            cb = fig.colorbar(sm, ax=ax, fraction=0.045, pad=0.02)
+            cb.ax.tick_params(labelsize=7)
+            # German plain tick labels — never a "1e6" offset in the corner (the figstyle
+            # representation rule; the value axis is scaled into the label if it's large).
+            cvals = list(values.values())
+            _, clabel, cdiv = unit_scale(cvals, s.get("value_label") or "")
+            from matplotlib.ticker import FuncFormatter
+            cb.ax.yaxis.set_major_formatter(FuncFormatter(lambda v, _: fmt_de(v / cdiv)))
+            cb.set_label(clabel or str(s.get("value_label", "")), fontsize=8)
+        if s.get("title"):
+            ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 48)), fontsize=fs.TYPE.title)
+        cits = []                                # a map rests on TWO facts: values + boundaries
+        if s.get("citation"):
+            cits.append(f"Daten: {s['citation']}")
+        if geo_id:
+            cits.append(f"Grenzen: {geo_store.citation(geo_id)}")
+        if cits:
+            fig.text(0.5, 0.008, "Quelle — " + " · ".join(cits), ha="center", fontsize=6.5,
+                     color=_muted)
+        fig.savefig(path, dpi=150)
+        plt.close(fig)
 
 
 # --- geometry recipe family (KB3 Figuren und Körper) -------------------------
@@ -825,91 +878,105 @@ def _geo_title(ax, s: dict) -> None:
 def _right_triangle(asset: Asset, path: Path) -> None:
     """A right triangle for Pythagoras: legs a (bottom) and b (left), right angle marked,
     hypotenuse c. spec: {a, b, label_a?, label_b?, label_c?, title?}. Labels are strings
-    (e.g. "a = 3 cm" or "c = ?") so the figure shows the task, not the answer."""
+    (e.g. "a = 3 cm" or "c = ?") so the figure shows the task, not the answer.
+
+    Composed as a `Scene` (a filled `Region` + a right-angle `Polyline` + `Label`s) and drawn by
+    the shared `render_scene` — the geometry face of the scene engine, so the house style (surface
+    fill, ink edge, the unknown in `focus`) is guaranteed, not re-specified per recipe."""
     s = asset.spec or {}
     a, b = float(s.get("a", 4)), float(s.get("b", 3))
-    fig, ax = _geo_fig(4.2, 3.6)
-    ax.add_patch(Polygon([(0, 0), (a, 0), (0, b)], closed=True,
-                         facecolor="#dce6f2", edgecolor="#33506e", lw=1.8))
     m = min(a, b) * 0.13                                   # right-angle square at the origin
-    ax.plot([m, m, 0], [0, m, m], color="#33506e", lw=1)
-    ax.text(a / 2, -0.07 * b, str(s.get("label_a", "a")), ha="center", va="top", fontsize=11)
-    ax.text(-0.03 * a, b / 2, str(s.get("label_b", "b")), ha="right", va="center", fontsize=11)
-    ax.text(a / 2 + 0.03 * a, b / 2 + 0.03 * b, str(s.get("label_c", "c")),
-            ha="left", va="bottom", fontsize=11, color="#b03a2e")
-    ax.set_xlim(-0.2 * a, a * 1.12)
-    ax.set_ylim(-0.2 * b, b * 1.12)
-    _geo_title(ax, s)
-    fig.savefig(path, dpi=150)
-    plt.close(fig)
+    sc = Scene(canvas=Canvas(figsize=(4.2, 3.6), aspect="equal", frame="off",
+                             xlim=(-0.2 * a, a * 1.12), ylim=(-0.2 * b, b * 1.12),
+                             title=str(s["title"]) if s.get("title") else None))
+    sc.add(Region([(0, 0), (a, 0), (0, b)], role="surface", alpha=1.0,
+                  edge_role="ink", edge_width=1.8, z=1))
+    sc.add(Polyline([(m, 0), (m, m), (0, m)], role="ink", width=1.0, z=3))
+    sc.add(Label((a / 2, -0.07 * b), str(s.get("label_a", "a")), role="ink",
+                 size=fs.TYPE.annot_lg, va="top", halo=False))
+    sc.add(Label((-0.03 * a, b / 2), str(s.get("label_b", "b")), role="ink",
+                 size=fs.TYPE.annot_lg, ha="right", halo=False))
+    sc.add(Label((a / 2 + 0.03 * a, b / 2 + 0.03 * b), str(s.get("label_c", "c")),
+                 role="focus", size=fs.TYPE.annot_lg, ha="left", va="bottom"))  # the unknown → focus
+    scene_to_png(sc, path)
 
 
 @_generator("matplotlib:rectangle")
 def _rectangle_fig(asset: Asset, path: Path) -> None:
-    """A labeled rectangle. spec: {length, width, label_l?, label_w?, title?}."""
+    """A labeled rectangle. spec: {length, width, label_l?, label_w?, title?}. A `Scene`
+    (filled `Region` + side `Label`s) drawn by `render_scene` — the geometry house style."""
     s = asset.spec or {}
     le, w = float(s.get("length", 6)), float(s.get("width", 4))
-    fig, ax = _geo_fig(4.8, 3.4)
-    ax.add_patch(Polygon([(0, 0), (le, 0), (le, w), (0, w)], closed=True,
-                         facecolor="#dce6f2", edgecolor="#33506e", lw=1.8))
-    ax.text(le / 2, -0.09 * w, str(s.get("label_l", f"{le:g}")), ha="center", va="top", fontsize=11)
-    ax.text(-0.02 * le, w / 2, str(s.get("label_w", f"{w:g}")), ha="right", va="center", fontsize=11)
-    ax.set_xlim(-0.22 * le, le * 1.08)
-    ax.set_ylim(-0.28 * w, w * 1.12)
-    _geo_title(ax, s)
-    fig.savefig(path, dpi=150)
-    plt.close(fig)
+    sc = Scene(canvas=Canvas(figsize=(4.8, 3.4), aspect="equal", frame="off",
+                             xlim=(-0.22 * le, le * 1.08), ylim=(-0.28 * w, w * 1.12),
+                             title=str(s["title"]) if s.get("title") else None))
+    sc.add(Region([(0, 0), (le, 0), (le, w), (0, w)], role="surface", alpha=1.0,
+                  edge_role="ink", edge_width=1.8, z=1))
+    sc.add(Label((le / 2, -0.09 * w), str(s.get("label_l", f"{le:g}")), role="ink",
+                 size=fs.TYPE.annot_lg, va="top", halo=False))
+    sc.add(Label((-0.02 * le, w / 2), str(s.get("label_w", f"{w:g}")), role="ink",
+                 size=fs.TYPE.annot_lg, ha="right", halo=False))
+    scene_to_png(sc, path)
 
 
 @_generator("matplotlib:polygon")
 def _polygon(asset: Asset, path: Path) -> None:
     """A general labeled polygon (triangles, quadrilaterals, Vielecke). spec:
-    {points:[[x,y],…], vertex_labels?:[str], side_labels?:[str], title?}."""
+    {points:[[x,y],…], vertex_labels?:[str], side_labels?:[str], title?}. A `Scene` — a filled
+    `Region`, `PointMark` vertices labelled outward from the centroid, side `Label`s in `focus`."""
     s = asset.spec or {}
     pts = [(float(x), float(y)) for x, y in s.get("points", [(0, 0), (4, 0), (2, 3)])]
-    fig, ax = _geo_fig()
-    ax.add_patch(Polygon(pts, closed=True, facecolor="#dce6f2", edgecolor="#33506e", lw=1.8))
     cx = sum(p[0] for p in pts) / len(pts)
     cy = sum(p[1] for p in pts) / len(pts)
     span = max(max(p[0] for p in pts) - min(p[0] for p in pts),
                max(p[1] for p in pts) - min(p[1] for p in pts)) or 1.0
+    xs = [p[0] for p in pts]
+    ys = [p[1] for p in pts]
+    pad = 0.18 * span
+    sc = Scene(canvas=Canvas(figsize=(4.4, 3.8), aspect="equal", frame="off",
+                             xlim=(min(xs) - pad, max(xs) + pad),
+                             ylim=(min(ys) - pad, max(ys) + pad),
+                             title=str(s["title"]) if s.get("title") else None))
+    sc.add(Region(pts, role="surface", alpha=1.0, edge_role="ink", edge_width=1.8, z=1))
+    vl = s.get("vertex_labels") or []
     for i, (x, y) in enumerate(pts):
-        ax.plot([x], [y], "o", color="#33506e", ms=4)
-        vl = s.get("vertex_labels") or []
-        if i < len(vl):                                    # label outward from the centroid
+        lab = str(vl[i]) if i < len(vl) else None
+        if lab is not None:                                # label offset outward from the centroid
             dx, dy = x - cx, y - cy
             n = (dx * dx + dy * dy) ** 0.5 or 1
-            ax.text(x + 0.12 * span * dx / n, y + 0.12 * span * dy / n, str(vl[i]),
-                    ha="center", va="center", fontsize=11)
+            off = (0.12 * span * dx / n, 0.12 * span * dy / n)
+        else:
+            off = (0.0, 0.0)
+        sc.add(PointMark((x, y), label=lab, role="ink", size=4.0, label_offset=off,
+                         bold=False, z=6))
     for i, lab in enumerate(s.get("side_labels") or []):
         x1, y1 = pts[i]
         x2, y2 = pts[(i + 1) % len(pts)]
-        ax.text((x1 + x2) / 2, (y1 + y2) / 2, str(lab), ha="center", va="center",
-                fontsize=10, color="#b03a2e",
-                bbox=dict(boxstyle="round,pad=0.1", fc="white", ec="none"))
-    ax.autoscale_view()
-    ax.margins(0.18)
-    _geo_title(ax, s)
-    fig.savefig(path, dpi=150)
-    plt.close(fig)
+        sc.add(Label(((x1 + x2) / 2, (y1 + y2) / 2), str(lab), role="focus",
+                     size=fs.TYPE.annot, halo=True))
+    scene_to_png(sc, path)
 
 
 @_generator("matplotlib:circle")
 def _circle(asset: Asset, path: Path) -> None:
-    """A circle with centre + radius. spec: {radius, label_r?, title?}."""
+    """A circle with centre + radius. spec: {radius, label_r?, title?}. Kept as
+    matplotlib-on-figstyle (the scene `CircleShape` ties face and edge to one role, so a
+    surface fill with an ink outline needs the patch here); colours are semantic roles."""
     s = asset.spec or {}
     r = float(s.get("radius", 3))
-    fig, ax = _geo_fig(4.0, 4.0)
-    ax.add_patch(Circle((0, 0), r, facecolor="#dce6f2", edgecolor="#33506e", lw=1.8))
-    ax.plot([0], [0], "o", color="#33506e", ms=4)
-    ax.plot([0, r], [0, 0], color="#b03a2e", lw=1.4)       # radius
-    ax.text(r / 2, 0.05 * r, str(s.get("label_r", f"r = {r:g}")), ha="center", va="bottom",
-            fontsize=11, color="#b03a2e")
-    ax.set_xlim(-r * 1.15, r * 1.15)
-    ax.set_ylim(-r * 1.15, r * 1.15)
-    _geo_title(ax, s)
-    fig.savefig(path, dpi=150)
-    plt.close(fig)
+    with plt.rc_context(_HOUSE()):
+        fig, ax = _geo_fig(4.0, 4.0)
+        ax.add_patch(Circle((0, 0), r, facecolor=fs.PALETTE.surface,
+                            edgecolor=fs.PALETTE.ink, lw=1.8))
+        ax.plot([0], [0], "o", color=fs.PALETTE.ink, ms=4)
+        ax.plot([0, r], [0, 0], color=fs.PALETTE.focus, lw=1.4)   # radius = the measure of interest
+        ax.text(r / 2, 0.05 * r, str(s.get("label_r", f"r = {r:g}")), ha="center", va="bottom",
+                fontsize=fs.TYPE.annot_lg, color=fs.PALETTE.focus)
+        ax.set_xlim(-r * 1.15, r * 1.15)
+        ax.set_ylim(-r * 1.15, r * 1.15)
+        _geo_title(ax, s)
+        fig.savefig(path, dpi=150)
+        plt.close(fig)
 
 
 @_generator("matplotlib:coordinate_plane")
@@ -925,27 +992,31 @@ def _coordinate_plane(asset: Asset, path: Path) -> None:
     xmax = int(s.get("xmax", max(5, *xs)))
     ymin = int(s.get("ymin", min(0, *ys)))
     ymax = int(s.get("ymax", max(5, *ys)))
-    fig, ax = plt.subplots(figsize=(4.6, 4.4), layout="constrained")
-    ax.set_xlim(xmin - 0.5, xmax + 0.5)
-    ax.set_ylim(ymin - 0.5, ymax + 0.5)
-    ax.set_xticks(range(xmin, xmax + 1))
-    ax.set_yticks(range(ymin, ymax + 1))
-    ax.grid(True, color="#e2e2e2", lw=0.6)
-    ax.set_aspect("equal")
-    ax.axhline(0, color="#888", lw=1.0)
-    ax.axvline(0, color="#888", lw=1.0)
-    for i, j in s.get("segments", []):
-        ax.plot([pts[i]["x"], pts[j]["x"]], [pts[i]["y"], pts[j]["y"]], color="#33506e", lw=1.8)
-    for p in pts:
-        ax.plot([p["x"]], [p["y"]], "o", color="#b03a2e", ms=6)
-        if p.get("label"):
-            ax.text(p["x"] + 0.15, p["y"] + 0.15, str(p["label"]), fontsize=9.5, color="#b03a2e")
-    ax.set_xlabel("x")
-    ax.set_ylabel("y")
-    if s.get("title"):
-        ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 46)))
-    fig.savefig(path, dpi=150)
-    plt.close(fig)
+    with plt.rc_context(_HOUSE()):
+        fig, ax = plt.subplots(figsize=(4.6, 4.4), layout="constrained")
+        ax.set_xlim(xmin - 0.5, xmax + 0.5)
+        ax.set_ylim(ymin - 0.5, ymax + 0.5)
+        ax.set_xticks(range(xmin, xmax + 1))
+        ax.set_yticks(range(ymin, ymax + 1))
+        ax.grid(True, color=fs.PALETTE.grid, lw=fs.STROKE.grid)
+        ax.set_axisbelow(True)
+        ax.set_aspect("equal")
+        ax.axhline(0, color=fs.PALETTE.muted, lw=1.0)          # the axes through the origin
+        ax.axvline(0, color=fs.PALETTE.muted, lw=1.0)
+        for i, j in s.get("segments", []):
+            ax.plot([pts[i]["x"], pts[j]["x"]], [pts[i]["y"], pts[j]["y"]],
+                    color=fs.PALETTE.ink, lw=1.8)
+        for p in pts:                                          # the plotted points = focus
+            ax.plot([p["x"]], [p["y"]], "o", color=fs.PALETTE.focus, ms=6)
+            if p.get("label"):
+                ax.text(p["x"] + 0.15, p["y"] + 0.15, str(p["label"]), fontsize=fs.TYPE.annot,
+                        color=fs.PALETTE.focus)
+        ax.set_xlabel("x")
+        ax.set_ylabel("y")
+        if s.get("title"):
+            ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 46)))
+        fig.savefig(path, dpi=150)
+        plt.close(fig)
 
 
 # --- scene-engine recipes (composed: a Scene of primitives, not one bespoke figure) ----
@@ -1055,24 +1126,26 @@ def _em_spectrum(asset: Asset, path: Path) -> None:
         ("sichtbar", 2.0), ("UV", 1e2), ("Röntgen", 1e4), ("Gamma", 1e6),
     ]
     labels = [b[0] for b in bands]
-    fig, ax = plt.subplots(figsize=(7.2, 2.4))
-    xs = range(len(bands))
-    ax.bar(xs, [1] * len(bands), color="#dce6f2", edgecolor="#33506e")
-    for x, lab in zip(xs, labels):
-        ax.text(x, 0.5, lab, ha="center", va="center", fontsize=9)
-    thr = 4.5  # ionizing threshold between UV and Röntgen
-    ax.axvline(thr, color="#b03a2e", linestyle="--", linewidth=1.5)
-    ax.text(thr + 0.05, 1.05, "ionisierend →", color="#b03a2e", fontsize=8, va="bottom")
-    ax.text(thr - 0.05, 1.05, "← nicht-ionisierend", color="#2e6b3a", fontsize=8,
-            va="bottom", ha="right")
-    ax.set_xlim(-0.6, len(bands) - 0.4)
-    ax.set_ylim(0, 1.3)
-    ax.set_yticks([])
-    ax.set_xticks([])
-    ax.set_xlabel("Energie nimmt zu  →", fontsize=9)
-    fig.tight_layout()
-    fig.savefig(path, dpi=150)
-    plt.close(fig)
+    with plt.rc_context(_HOUSE()):
+        fig, ax = plt.subplots(figsize=(7.2, 2.4))
+        xs = range(len(bands))
+        ax.bar(xs, [1] * len(bands), color=fs.PALETTE.surface, edgecolor=fs.PALETTE.ink)
+        for x, lab in zip(xs, labels):
+            ax.text(x, 0.5, lab, ha="center", va="center", fontsize=fs.TYPE.annot)
+        thr = 4.5  # ionizing threshold between UV and Röntgen
+        ax.axvline(thr, color=fs.PALETTE.focus, linestyle="--", linewidth=1.5)
+        ax.text(thr + 0.05, 1.05, "ionisierend →", color=fs.PALETTE.focus, fontsize=fs.TYPE.tick,
+                va="bottom")
+        ax.text(thr - 0.05, 1.05, "← nicht-ionisierend", color=fs.PALETTE.positive,
+                fontsize=fs.TYPE.tick, va="bottom", ha="right")
+        ax.set_xlim(-0.6, len(bands) - 0.4)
+        ax.set_ylim(0, 1.3)
+        ax.set_yticks([])
+        ax.set_xticks([])
+        ax.set_xlabel("Energie nimmt zu  →", fontsize=fs.TYPE.annot)
+        fig.tight_layout()
+        fig.savefig(path, dpi=150)
+        plt.close(fig)
 
 
 @_generator("matplotlib:truncated_axis")
@@ -1084,15 +1157,16 @@ def _truncated_axis(asset: Asset, path: Path) -> None:
     s = asset.spec or {}
     cats = [str(c) for c in (s.get("categories") or ["2019", "2020", "2021", "2022"])]
     values = [float(v) for v in (s.get("values") or [101.0, 101.4, 101.9, 102.3])]
-    fig, ax = plt.subplots(figsize=(4.6, 3.0), layout="constrained")
-    ax.bar(cats, values, color="#c0504d")
-    lo = float(s["ymin"]) if "ymin" in s else min(values) - 0.5  # <-- the trick: zoomed axis
-    hi = float(s["ymax"]) if "ymax" in s else max(values) + 0.2
-    ax.set_ylim(lo, hi)
-    ax.set_ylabel(s.get("ylabel") or "Index")
-    ax.set_title(s.get("title") or "Dramatischer Anstieg?!")
-    fig.savefig(path, dpi=150)
-    plt.close(fig)
+    with plt.rc_context(_HOUSE()):
+        fig, ax = plt.subplots(figsize=(4.6, 3.0), layout="constrained")
+        ax.bar(cats, values, color=fs.PALETTE.negative)      # negative role = the misleading twin
+        lo = float(s["ymin"]) if "ymin" in s else min(values) - 0.5  # <-- the trick: zoomed axis
+        hi = float(s["ymax"]) if "ymax" in s else max(values) + 0.2  # (NEVER "fixed" — the flaw IS
+        ax.set_ylim(lo, hi)                                          #  the teaching point)
+        ax.set_ylabel(s.get("ylabel") or "Index")
+        ax.set_title(s.get("title") or "Dramatischer Anstieg?!")
+        fig.savefig(path, dpi=150)
+        plt.close(fig)
 
 
 @_generator("matplotlib:honest_axis")
@@ -1102,14 +1176,15 @@ def _honest_axis(asset: Asset, path: Path) -> None:
     s = asset.spec or {}
     cats = [str(c) for c in (s.get("categories") or ["2019", "2020", "2021", "2022"])]
     values = [float(v) for v in (s.get("values") or [101.0, 101.4, 101.9, 102.3])]
-    fig, ax = plt.subplots(figsize=(4.6, 3.0), layout="constrained")
-    ax.bar(cats, values, color="#4f6f52")
-    lo = float(s.get("ymin", 0))  # zero-based: the change is tiny
-    ax.set_ylim(lo, float(s["ymax"]) if "ymax" in s else max(values) * 1.08)
-    ax.set_ylabel(s.get("ylabel") or "Index")
-    ax.set_title(s.get("title") or "Dieselben Daten, ehrliche Achse")
-    fig.savefig(path, dpi=150)
-    plt.close(fig)
+    with plt.rc_context(_HOUSE()):
+        fig, ax = plt.subplots(figsize=(4.6, 3.0), layout="constrained")
+        ax.bar(cats, values, color=fs.PALETTE.positive)      # positive role = the honest twin
+        lo = float(s.get("ymin", 0))  # zero-based: the change is tiny
+        ax.set_ylim(lo, float(s["ymax"]) if "ymax" in s else max(values) * 1.08)
+        ax.set_ylabel(s.get("ylabel") or "Index")
+        ax.set_title(s.get("title") or "Dieselben Daten, ehrliche Achse")
+        fig.savefig(path, dpi=150)
+        plt.close(fig)
 
 
 # --- decorative kit (svg: backend) -------------------------------------------
@@ -1141,7 +1216,7 @@ def _svg_badge(asset: Asset, path: Path) -> None:
     spec: {label, color?, text_color?}."""
     s = asset.spec or {}
     label = html.escape(str(s.get("label", ""))[:3])
-    color, txt = s.get("color", "#33506e"), s.get("text_color", "#ffffff")
+    color, txt = s.get("color", fs.SVG.ink), s.get("text_color", fs.SVG.paper)
     svg = (f'{_SVG_HDR}width="120" height="120" viewBox="0 0 120 120">'
            f'<circle cx="60" cy="60" r="54" fill="{color}"/>'
            f'<text x="60" y="78" font-size="44" font-family="sans-serif" '
@@ -1152,7 +1227,7 @@ def _svg_badge(asset: Asset, path: Path) -> None:
 @_generator("svg:banner")
 def _svg_banner(asset: Asset, path: Path) -> None:
     """A decorative header band (dotted rule) — content-free framing. spec: {color?}."""
-    color = (asset.spec or {}).get("color", "#b5651d")
+    color = (asset.spec or {}).get("color", fs.SVG.accent)
     dots = "".join(f'<circle cx="{12 + i * 24}" cy="12" r="4" fill="{color}"/>'
                    for i in range(28))
     svg = (f'{_SVG_HDR}width="680" height="24" viewBox="0 0 680 24">'
@@ -1164,7 +1239,7 @@ def _svg_banner(asset: Asset, path: Path) -> None:
 @_generator("svg:motif")
 def _svg_motif(asset: Asset, path: Path) -> None:
     """A geometric corner motif — content-free decoration. spec: {color?}."""
-    color = (asset.spec or {}).get("color", "#4f6f8f")
+    color = (asset.spec or {}).get("color", fs.SVG.primary)
     tris = "".join(
         f'<polygon points="{x},120 {x + 20},120 {x},{100 - x // 3}" '
         f'fill="{color}" opacity="{0.25 + (x % 60) / 120:.2f}"/>'
