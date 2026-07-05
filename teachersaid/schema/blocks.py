@@ -142,6 +142,20 @@ class SolutionStep(BaseModel):
     expr: str | None = None         # optional LaTeX for the line of working
 
 
+class SolutionPath(BaseModel):
+    """An ALTERNATIVE worked solution (roadmap A4 solution graphs): a named school strategy
+    + its own step sequence, reaching the SAME answer as the primary `solution_steps` by a
+    different route (Gleichsetzungs- vs. Einsetzungsverfahren; Dreisatz vs. Prozentoperator).
+    Like `SolutionStep`, DERIVED by the parametric engine (sympy) — never hand- or
+    LLM-authored — and equally teacher-guide only. Lives here (not in parametric.py) so the
+    import direction stays parametric→blocks and TaskBlock can carry it."""
+    model_config = ConfigDict(extra="forbid")
+    strategy: str                   # the German strategy name (Austrian school register)
+    steps: list[SolutionStep] = Field(default_factory=list)   # the worked path, same style
+    note: str | None = None         # optional one line: when this strategy is particularly
+    # natural / unnatural for THESE drawn numbers
+
+
 class Serves(BaseModel):
     model_config = ConfigDict(extra="forbid")
     competence_id: str
@@ -165,7 +179,10 @@ class TaskBlock(BlockBase):
     answer_key: RichText | None = None  # knowledge side
     acceptable_reasoning: RichText | None = None  # judgement side — the RANGE
     rubric: list[RubricCriterion] = Field(default_factory=list)  # v0.4 A4
-    solution_steps: list[SolutionStep] = Field(default_factory=list)  # worked Rechenweg (derived)
+    solution_steps: list[SolutionStep] = Field(default_factory=list)  # primary Rechenweg (derived)
+    solution_paths: list[SolutionPath] = Field(default_factory=list)  # alternative strategies
+    # (derived; teacher-only) — the "Alternative Lösungswege" the LLM can NEVER emit (absent
+    # from GenTaskBlock, like solution_steps). Empty unless a recipe has divergent strategies.
     watch_outs: list[str] = Field(default_factory=list)
     self_check: RichText | None = None  # homework: no teacher present
 

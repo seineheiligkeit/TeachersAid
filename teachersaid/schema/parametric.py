@@ -13,7 +13,7 @@ from __future__ import annotations
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
-from .blocks import Serves, SolutionStep
+from .blocks import Serves, SolutionPath, SolutionStep
 from .response import ResponseSpec
 from .richtext import RichText
 
@@ -72,7 +72,10 @@ class Instance(BaseModel):
     model_config = ConfigDict(extra="forbid")
     params: dict                       # slot name -> display value (fills the prompt template)
     answer: RichText                   # the derived answer (correct by construction)
-    steps: list[SolutionStep] = Field(default_factory=list)   # the worked Rechenweg
+    steps: list[SolutionStep] = Field(default_factory=list)   # the PRIMARY worked Rechenweg
+    solution_paths: list[SolutionPath] = Field(default_factory=list)  # ALTERNATIVE strategies
+    # (the "Schüler könnten auch…" routes) — DERIVED by the recipe, each ending at the same
+    # answer as `steps`; empty unless a recipe genuinely has divergent named strategies.
     difficulty: int | None = None      # the band (1–3) the recipe ACTUALLY delivered — set only
     # by recipes with a difficulty knob / an intrinsic item band; never a requested-but-ignored value
     context: str | None = None         # curated, digit-free sentence keyed to the DRAWN item

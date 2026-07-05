@@ -207,6 +207,18 @@ def _response_flowables(b: TaskBlock, S, width):
     return []
 
 
+def _solution_step_flowables(steps, S):
+    """Render a worked-solution step list as bulleted teacher lines (text + inline-math expr).
+    Shared by the primary Rechenweg and every alternative Lösungsweg — one layout, no drift."""
+    out = []
+    for st in steps:
+        line = rb.richtext_markup(st.text)
+        if st.expr:
+            line += "   " + rb.richtext_markup([InlineRun(text=st.expr, math=True)])
+        out.append(rb.raw_para("• " + line, S["teacher"]))
+    return out
+
+
 def _task_flowables(b: TaskBlock, projection: str, S, width, assets, number, citations=None):
     out = [rb.raw_para(f"<b>{number}.</b> " + rb.richtext_markup(b.prompt), S["prompt"])]
     # embed every referenced asset (any task kind), + a data_interpretation payload's asset
@@ -247,13 +259,17 @@ def _task_flowables(b: TaskBlock, projection: str, S, width, assets, number, cit
                 "Akzeptabler Spielraum: " + rb.richtext_markup(b.acceptable_reasoning),
                 S["answer"],
             ))
-        if b.solution_steps:                          # the derived Rechenweg (Maths)
+        if b.solution_steps:                          # the primary derived Rechenweg (Maths)
             out.append(rb.para("Rechenweg:", S["label"]))
-            for st in b.solution_steps:
-                line = rb.richtext_markup(st.text)
-                if st.expr:
-                    line += "   " + rb.richtext_markup([InlineRun(text=st.expr, math=True)])
-                out.append(rb.raw_para("• " + line, S["teacher"]))
+            out += _solution_step_flowables(b.solution_steps, S)
+        if b.solution_paths:                          # A4: the other legitimate strategies
+            out.append(rb.para("Alternative Lösungswege:", S["label"]))
+            for path in b.solution_paths:
+                lead = f"Schüler könnten auch ({path.strategy}):"
+                if path.note:                          # when this route suits the drawn numbers
+                    lead += f" {path.note}"
+                out.append(rb.para(lead, S["teacher"]))
+                out += _solution_step_flowables(path.steps, S)
         for crit in b.rubric:
             out.append(rb.para(
                 f"Kriterium — {crit.criterion}: " + " / ".join(crit.levels), S["teacher"]

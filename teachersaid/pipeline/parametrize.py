@@ -28,11 +28,11 @@ import random
 import re
 
 from sympy import (
-    Eq, Integer, Matrix, N, Rational, acos, binomial, diff, integrate, latex,
-    linsolve, pi, solve, sqrt, symbols,
+    Eq, Integer, Matrix, N, Rational, acos, binomial, diff, integrate,
+    latex, linsolve, pi, simplify, solve, sqrt, symbols,
 )
 
-from ..schema.blocks import MultipleChoicePayload, SolutionStep, TaskBlock
+from ..schema.blocks import MultipleChoicePayload, SolutionPath, SolutionStep, TaskBlock
 from ..schema.parametric import Instance, MCSpec, ParametricTask
 from ..schema.response import ChoicesResponse, LinesResponse
 from ..schema.richtext import InlineRun, RichText
@@ -171,7 +171,7 @@ def instantiate(task: ParametricTask, seed: int, *,
         cognitive_level=task.cognitive_level, dimensions=list(task.dimensions),
         content_area=task.content_area, serves=list(task.serves),
         est_minutes=task.est_minutes, answer_key=inst.answer, solution_steps=inst.steps,
-        difficulty=inst.difficulty,
+        solution_paths=inst.solution_paths, difficulty=inst.difficulty,
     )
     if mc is not None:                                 # override for the MC projection
         fields.update(mc)
@@ -253,20 +253,59 @@ def _linear_equation(rng: random.Random, difficulty: int | None = None) -> Insta
                     difficulty=difficulty)
 
 
+def _assert_percent_value(res, *routes) -> None:
+    """Guard the equal-answer invariant for the percentage recipes: each named strategy is
+    RE-derived here by its own distinct exact arithmetic (Formel · Dreisatz · Operator) and
+    must equal the primary answer `res`. Not a tautology — it recomputes each formula from the
+    raw numbers, so a wrong strategy formula raises instead of shipping a diverging path."""
+    for name, value in routes:
+        assert value == res, f"percentage strategy {name} recomputes to {value}, expected {res}"
+
+
 @_recipe("percentage")
 def _percentage(rng: random.Random) -> Instance:
-    """Wie viel sind p % von G? — Prozentrechnung (Grundwert → Prozentwert)."""
+    """Wie viel sind p % von G? — Prozentrechnung (Grundwert → Prozentwert).
+
+    Three genuinely different school strategies, all DERIVED (exact rationals): the PRIMARY
+    is die Prozentformel (W = G · p/100); Dreisatz (über 1 %) and der Prozentoperator
+    (G · Dezimalzahl) ride along as `solution_paths`. Every route ends at the same W —
+    asserted here."""
     base = rng.choice([40, 50, 60, 80, 120, 150, 200, 240, 300, 400, 500])
     pct = rng.choice([5, 10, 15, 20, 25, 30, 40, 50, 75])
     res = Rational(base * pct, 100)
-    steps = [
-        SolutionStep(text=f"{pct} % als Bruch schreiben",
-                     expr=latex(Eq(symbols("p"), Rational(pct, 100)))),
-        SolutionStep(text="mit dem Grundwert multiplizieren",
-                     expr=f"{latex(Rational(pct, 100))} \\cdot {base} = {latex(res)}"),
+    frac = Rational(pct, 100)                          # p % als Bruch
+    one_pct = Rational(base, 100)                      # 1 % vom Grundwert
+    op = _de(float(frac))                              # der Prozentoperator (Dezimalzahl)
+
+    steps = [                                          # primary = Prozentformel
+        SolutionStep(text="Prozentformel für den Prozentwert ansetzen",
+                     expr="W = G \\cdot \\frac{p}{100}"),
+        SolutionStep(text=f"Grundwert {base} und Prozentsatz {pct} einsetzen",
+                     expr=f"W = {base} \\cdot \\frac{{{pct}}}{{100}} = {latex(res)}"),
     ]
+    paths = [
+        SolutionPath(strategy="Dreisatz", steps=[
+            SolutionStep(text=f"Der Grundwert {base} entspricht 100 %.",
+                         expr=f"100\\,\\% \\;\\widehat{{=}}\\; {base}"),
+            SolutionStep(text="1 % ist der hundertste Teil (durch 100 dividieren)",
+                         expr=f"1\\,\\% \\;\\widehat{{=}}\\; \\frac{{{base}}}{{100}} = {latex(one_pct)}"),
+            SolutionStep(text=f"auf {pct} % hochrechnen (mal {pct})",
+                         expr=f"{pct}\\,\\% \\;\\widehat{{=}}\\; {latex(one_pct)} \\cdot {pct} = {latex(res)}"),
+        ], note=("hier fällt der Dreisatz leicht: 1 % ist eine glatte Zahl"
+                 if one_pct == int(one_pct) else None)),
+        SolutionPath(strategy="Prozentoperator", steps=[
+            SolutionStep(text=f"{pct} % als Dezimalzahl schreiben (durch 100)",
+                         expr=f"{pct}\\,\\% = {latex(frac)} = {op}"),
+            SolutionStep(text="den Grundwert mit diesem Operator multiplizieren",
+                         expr=f"W = {base} \\cdot {op} = {latex(res)}"),
+        ]),
+    ]
+    _assert_percent_value(res,                          # each route re-derived independently
+                          ("Prozentformel", Rational(base) * pct / 100),
+                          ("Dreisatz", one_pct * pct),
+                          ("Prozentoperator", base * frac))
     return Instance(params={"pct": pct, "base": base},
-                    answer=[_math(latex(res))], steps=steps)
+                    answer=[_math(latex(res))], steps=steps, solution_paths=paths)
 
 
 @_recipe("linear_equation_both_sides")
@@ -295,20 +334,50 @@ def _linear_both(rng: random.Random) -> Instance:
 
 @_recipe("percentage_rate")
 def _percentage_rate(rng: random.Random) -> Instance:
-    """Welcher Prozentsatz? — X von Y sind wie viel %? (the Prozentsatz case)."""
+    """Welcher Prozentsatz? — X von Y sind wie viel %? (the Prozentsatz case).
+
+    Three named strategies, all DERIVED (exact): PRIMARY is die Prozentformel (p = W/G · 100);
+    Dreisatz (über 1) and der Prozentoperator (Anteil als Dezimalzahl · 100) are the
+    `solution_paths`. Each route recomputes to the same p — asserted here."""
     base = rng.choice([20, 25, 40, 50, 80, 200, 400, 500])
     rate = rng.choice([5, 10, 15, 20, 25, 40, 50, 75])
     part = base * rate
     if part % 100:
         raise Unsuitable
     part //= 100
-    steps = [
-        SolutionStep(text="Anteil als Bruch", expr=f"\\frac{{{part}}}{{{base}}}"),
-        SolutionStep(text="in Prozent umrechnen (mit 100 multiplizieren)",
-                     expr=f"\\frac{{{part}}}{{{base}}} \\cdot 100 = {rate}"),
+    anteil = Rational(part, base)                       # W/G als (gekürzter) Bruch
+    per_unit = Rational(100, base)                      # wie viel % eine Einheit wert ist
+    op = _de(float(anteil))                             # der Anteil als Dezimalzahl
+
+    steps = [                                           # primary = Prozentformel
+        SolutionStep(text="Prozentformel nach dem Prozentsatz ansetzen",
+                     expr="p = \\frac{W}{G} \\cdot 100\\,\\%"),
+        SolutionStep(text=f"Prozentwert {part} und Grundwert {base} einsetzen",
+                     expr=f"p = \\frac{{{part}}}{{{base}}} \\cdot 100\\,\\% = {rate}\\,\\%"),
     ]
+    paths = [
+        SolutionPath(strategy="Dreisatz", steps=[
+            SolutionStep(text=f"Der Grundwert {base} entspricht 100 %.",
+                         expr=f"{base} \\;\\widehat{{=}}\\; 100\\,\\%"),
+            SolutionStep(text="eine Einheit ist dann 100/G Prozent wert (durch G dividieren)",
+                         expr=f"1 \\;\\widehat{{=}}\\; \\frac{{100}}{{{base}}}\\,\\% = {latex(per_unit)}\\,\\%"),
+            SolutionStep(text=f"auf den Prozentwert {part} hochrechnen (mal {part})",
+                         expr=f"{part} \\;\\widehat{{=}}\\; {latex(per_unit)}\\,\\% \\cdot {part} = {rate}\\,\\%"),
+        ], note=("hier fällt der Dreisatz leicht: eine Einheit ist eine glatte Prozentzahl"
+                 if per_unit == int(per_unit) else None)),
+        SolutionPath(strategy="Prozentoperator", steps=[
+            SolutionStep(text="den Anteil W/G als Dezimalzahl bestimmen",
+                         expr=f"\\frac{{{part}}}{{{base}}} = {latex(anteil)} = {op}"),
+            SolutionStep(text="mit 100 multiplizieren ergibt den Prozentsatz",
+                         expr=f"{op} \\cdot 100\\,\\% = {rate}\\,\\%"),
+        ]),
+    ]
+    _assert_percent_value(Integer(rate),                # each route re-derived independently
+                          ("Prozentformel", anteil * 100),
+                          ("Dreisatz", per_unit * part),
+                          ("Prozentoperator", anteil * 100))
     return Instance(params={"part": part, "base": base},
-                    answer=f"{rate} %", steps=steps)
+                    answer=f"{rate} %", steps=steps, solution_paths=paths)
 
 
 @_recipe("proportion")
@@ -509,25 +578,129 @@ def _definite_integral(rng: random.Random) -> Instance:
                     steps=steps)
 
 
+# --- LGS(2): the three Austrian-school strategies, each DERIVED (sympy, exact) ------
+# For I: a1·x + b1·y = c1 and II: a2·x + b2·y = c2 (all coefficients nonzero, det ≠ 0),
+# every named method is genuinely applicable. The recipe draws with all four coefficients
+# nonzero precisely so all three routes are natural — otherwise Gleichsetzung/Einsetzung can
+# be undefined for a variable and we would ship a broken "alternative". Each builder returns
+# faithful worked steps and its OWN computed (x, y); `_linear_system_2` asserts all three
+# agree with the linsolve answer before shipping (a diverging path is a bug, not a variant).
+
+def _elim_add_steps(a1, b1, c1, a2, b2, c2, x, y):
+    """Additionsverfahren: eliminate y (scale I by b2, II by b1, subtract), then solve.
+    Returns (steps, (x_val, y_val))."""
+    # (b2·I) − (b1·II): the y-terms cancel; coefficient of x is the determinant.
+    det = a1 * b2 - a2 * b1
+    rx = c1 * b2 - c2 * b1
+    x_val = Rational(rx, det)
+    y_val = Rational(c1 - a1 * x_val, b1)
+    scaled1 = Eq(b2 * a1 * x + b2 * b1 * y, b2 * c1)
+    scaled2 = Eq(b1 * a2 * x + b1 * b2 * y, b1 * c2)
+    steps = [
+        SolutionStep(text="I und II so erweitern, dass sich die y-Terme aufheben "
+                          f"(I · {b2}, II · {b1})",
+                     expr=f"{latex(scaled1)};\\quad {latex(scaled2)}"),
+        SolutionStep(text="die erweiterte II von der erweiterten I subtrahieren — y fällt weg",
+                     expr=f"{latex(det)}\\,x = {latex(rx)} \\Rightarrow x = {latex(x_val)}"),
+        SolutionStep(text="x in I einsetzen und nach y auflösen",
+                     expr=f"y = \\frac{{{latex(c1)} - ({a1})\\cdot({latex(x_val)})}}{{{b1}}} "
+                          f"= {latex(y_val)}"),
+    ]
+    return steps, (x_val, y_val)
+
+
+def _substitution_steps(a1, b1, c1, a2, b2, c2, x, y):
+    """Einsetzungsverfahren: solve I for x, substitute into II, solve for y, back-substitute."""
+    x_expr = (c1 - b1 * y) / a1                       # x aus I
+    eq_sub = Eq(a2 * x_expr + b2 * y, c2)             # in II eingesetzt
+    y_val = solve(eq_sub, y)[0]
+    x_val = (c1 - b1 * y_val) / a1
+    steps = [
+        SolutionStep(text="Gleichung I nach x auflösen",
+                     expr=f"x = {latex(x_expr)}"),
+        SolutionStep(text="diesen Ausdruck für x in II einsetzen",
+                     expr=f"{a2}\\left({latex(x_expr)}\\right) + {b2}\\,y = {latex(c2)}"),
+        SolutionStep(text="nach y auflösen",
+                     expr=f"y = {latex(y_val)}"),
+        SolutionStep(text="y in die nach x umgeformte I einsetzen",
+                     expr=f"x = {latex(simplify(x_val))}"),
+    ]
+    return steps, (simplify(x_val), simplify(y_val))
+
+
+def _equate_steps(a1, b1, c1, a2, b2, c2, x, y):
+    """Gleichsetzungsverfahren: solve BOTH equations for x, set the two expressions equal."""
+    x1 = (c1 - b1 * y) / a1                            # x aus I
+    x2 = (c2 - b2 * y) / a2                            # x aus II
+    y_val = solve(Eq(x1, x2), y)[0]
+    x_val = x1.subs(y, y_val)
+    steps = [
+        SolutionStep(text="beide Gleichungen nach x auflösen",
+                     expr=f"x = {latex(x1)} \\quad\\text{{(I)}};\\qquad "
+                          f"x = {latex(x2)} \\quad\\text{{(II)}}"),
+        SolutionStep(text="die beiden Ausdrücke gleichsetzen (x = x)",
+                     expr=f"{latex(x1)} = {latex(x2)}"),
+        SolutionStep(text="nach y auflösen",
+                     expr=f"y = {latex(y_val)}"),
+        SolutionStep(text="y in einen der beiden x-Ausdrücke einsetzen",
+                     expr=f"x = {latex(x_val)}"),
+    ]
+    return steps, (simplify(x_val), simplify(y_val))
+
+
 @_recipe("linear_system_2")
 def _linear_system_2(rng: random.Random) -> Instance:
-    """Lineares Gleichungssystem in zwei Variablen (eindeutig lösbar, ganzzahlige Lösung)."""
+    """Lineares Gleichungssystem in zwei Variablen (eindeutig lösbar, ganzzahlige Lösung).
+
+    Emits the three named Austrian-school strategies: the PRIMARY Rechenweg is the
+    Additionsverfahren (elimination — the method the recipe has always used), and the
+    Einsetzungs- and Gleichsetzungsverfahren ride along as `solution_paths` (the teacher's
+    "Alternative Lösungswege"). All three are DERIVED via sympy and must reach the identical
+    (x, y) — asserted here (a diverging path is a bug, not shipped)."""
     x, y = symbols("x y")
     x0, y0 = rng.randint(-5, 5), rng.randint(-5, 5)
     a1, b1 = rng.randint(-4, 4), rng.randint(-4, 4)
     a2, b2 = rng.randint(-4, 4), rng.randint(-4, 4)
-    if a1 * b2 - a2 * b1 == 0 or (a1 == 0 and b1 == 0) or (a2 == 0 and b2 == 0):
-        raise Unsuitable  # det ≠ 0 → genau eine Lösung
+    # all four coefficients nonzero → all three strategies are genuinely applicable (see note)
+    if 0 in (a1, b1, a2, b2) or a1 * b2 - a2 * b1 == 0:
+        raise Unsuitable  # det ≠ 0 → genau eine Lösung; keine Null-Koeffizienten
     c1, c2 = a1 * x0 + b1 * y0, a2 * x0 + b2 * y0
     eq1, eq2 = Eq(a1 * x + b1 * y, c1), Eq(a2 * x + b2 * y, c2)
     sol = list(linsolve([eq1, eq2], [x, y]))[0]
-    steps = [
-        SolutionStep(text="Gleichungssystem (I, II)", expr=f"{latex(eq1)};\\quad {latex(eq2)}"),
-        SolutionStep(text="z. B. mit dem Eliminationsverfahren lösen",
-                     expr=f"x = {latex(sol[0])},\\quad y = {latex(sol[1])}"),
+    header = SolutionStep(text="Gleichungssystem (I, II)",
+                          expr=f"{latex(eq1)};\\quad {latex(eq2)}")
+
+    add_steps, add_xy = _elim_add_steps(a1, b1, c1, a2, b2, c2, x, y)
+    sub_steps, sub_xy = _substitution_steps(a1, b1, c1, a2, b2, c2, x, y)
+    equ_steps, equ_xy = _equate_steps(a1, b1, c1, a2, b2, c2, x, y)
+    # every route must land on the linsolve answer — correct by construction, enforced.
+    for got in (add_xy, sub_xy, equ_xy):
+        assert (simplify(got[0] - sol[0]) == 0 and simplify(got[1] - sol[1]) == 0), \
+            f"LGS solution path diverges: {got} vs {tuple(sol)}"
+
+    steps = [header, *add_steps]                       # primary = Additionsverfahren
+    paths = [
+        SolutionPath(strategy="Einsetzungsverfahren", steps=[header, *sub_steps],
+                     note=_lgs_note("Einsetzung", a1, b1, a2, b2)),
+        SolutionPath(strategy="Gleichsetzungsverfahren", steps=[header, *equ_steps],
+                     note=_lgs_note("Gleichsetzung", a1, b1, a2, b2)),
     ]
     return Instance(params={"eq1": latex(eq1), "eq2": latex(eq2)},
-                    answer=[_math(f"x = {latex(sol[0])},\\; y = {latex(sol[1])}")], steps=steps)
+                    answer=[_math(f"x = {latex(sol[0])},\\; y = {latex(sol[1])}")],
+                    steps=steps, solution_paths=paths)
+
+
+def _lgs_note(method: str, a1, b1, a2, b2) -> str | None:
+    """A didactic one-liner when THESE drawn coefficients make the derived path especially
+    handy. Honest about the ACTUAL first step: Einsetzung here solves equation I for x, so it
+    stays bruchfrei only when a1 = ±1; Gleichsetzung equates the two x-expressions, cleanest
+    when the x-coefficients are betragsgleich. Returns None otherwise (the honest default)."""
+    if method == "Einsetzung" and abs(a1) == 1:
+        return ("hier besonders bequem: I hat für x den Koeffizienten ±1, "
+                "das Auflösen bleibt bruchfrei")
+    if method == "Gleichsetzung" and abs(a1) == abs(a2):
+        return "hier naheliegend: die x-Koeffizienten in I und II sind betragsgleich"
+    return None
 
 
 @_recipe("linear_system_3")
