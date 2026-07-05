@@ -183,6 +183,9 @@ class TaskBlock(BlockBase):
     solution_paths: list[SolutionPath] = Field(default_factory=list)  # alternative strategies
     # (derived; teacher-only) — the "Alternative Lösungswege" the LLM can NEVER emit (absent
     # from GenTaskBlock, like solution_steps). Empty unless a recipe has divergent strategies.
+    solution_asset_refs: list[str] = Field(default_factory=list)  # teacher-only solution figures
+    # (A5 Rätsel engine): the SOLVED grid of a puzzle. Renders ONLY in the teacher projection —
+    # the student sheet shows the empty grid via `asset_refs`. DERIVED/curated, never LLM-authored.
     watch_outs: list[str] = Field(default_factory=list)
     self_check: RichText | None = None  # homework: no teacher present
 

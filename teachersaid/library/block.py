@@ -88,7 +88,10 @@ def harvest(content: WorksheetContent, *, example_key: str, scope: str = "standa
                 kb = m["kompetenzbereich"]
                 break
         # carry the asset spec(s) this block references, so figures/data travel with it
-        assets = [by_id[ref] for ref in (getattr(b, "asset_refs", None) or []) if ref in by_id]
+        # (incl. a puzzle's teacher-only solution grid via solution_asset_refs — A5)
+        refs = list(getattr(b, "asset_refs", None) or []) + list(
+            getattr(b, "solution_asset_refs", None) or [])
+        assets = [by_id[ref] for ref in refs if ref in by_id]
         out.append(LibraryBlock(
             id=f"{example_key}.{b.id}",
             block=b,
