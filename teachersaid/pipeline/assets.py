@@ -1019,6 +1019,158 @@ def _coordinate_plane(asset: Asset, path: Path) -> None:
         plt.close(fig)
 
 
+# --- the Rätsel engine (A5): one parameterized grid recipe for all puzzle types --------
+# Curated/derived-only (NOT in GENERATION_RECIPES — a puzzle is built by pipeline/puzzles.py,
+# never requested by an LLM). Draws empty (student) or solved (teacher) states in house style:
+# ink outlines on paper, solution letters/marks in `focus`, the TYPE scale for legibility.
+@_generator("matplotlib:puzzle_grid")
+def _puzzle_grid(asset: Asset, path: Path) -> None:
+    """Render a puzzle grid. spec: {puzzle_type, solved, …type-specific…}. Dispatches on
+    `puzzle_type` to a crossword / suchsel / domino / rechenmauer drawer; all share the house
+    ink/paper roles and put the solution in `focus`."""
+    s = asset.spec or {}
+    ptype = s.get("puzzle_type")
+    drawer = {"crossword": _draw_crossword, "suchsel": _draw_suchsel,
+              "domino": _draw_domino, "rechenmauer": _draw_rechenmauer}.get(ptype)
+    if drawer is None:
+        raise ValueError(f"puzzle_grid: unknown puzzle_type {ptype!r}")
+    with plt.rc_context(_HOUSE()):
+        drawer(s, path)
+
+
+def _puzzle_title(ax, s: dict) -> None:
+    if s.get("title"):
+        ax.set_title(str(s["title"]), fontsize=fs.TYPE.title, color=fs.PALETTE.ink)
+
+
+def _draw_crossword(s: dict, path: Path) -> None:
+    from matplotlib.patches import Rectangle
+    cells = s.get("cells", [])
+    nrows, ncols = s.get("nrows", len(cells)), s.get("ncols", len(cells[0]) if cells else 1)
+    fig, ax = plt.subplots(figsize=(min(9.0, 0.62 * ncols + 1.0),
+                                    min(9.0, 0.62 * nrows + 1.0)), layout="constrained")
+    ax.set_aspect("equal")
+    ax.axis("off")
+    for r in range(nrows):
+        for c in range(ncols):
+            cell = cells[r][c]
+            y = nrows - 1 - r                          # row 0 at the top
+            if not cell.get("fill"):
+                continue                               # blocked square: leave it blank (paper)
+            ax.add_patch(Rectangle((c, y), 1, 1, facecolor=fs.PALETTE.paper,
+                                   edgecolor=fs.PALETTE.ink, lw=1.2, zorder=1))
+            if cell.get("number") is not None:
+                ax.text(c + 0.06, y + 0.94, str(cell["number"]), ha="left", va="top",
+                        fontsize=fs.TYPE.caption, color=fs.PALETTE.muted, zorder=3)
+            if cell.get("letter"):                     # solved: the answer in focus
+                ax.text(c + 0.5, y + 0.44, str(cell["letter"]), ha="center", va="center",
+                        fontsize=fs.TYPE.title, color=fs.PALETTE.focus, zorder=3)
+    ax.set_xlim(-0.2, ncols + 0.2)
+    ax.set_ylim(-0.2, nrows + 0.6)
+    _puzzle_title(ax, s)
+    fig.savefig(path, dpi=150)
+    plt.close(fig)
+
+
+def _draw_suchsel(s: dict, path: Path) -> None:
+    from matplotlib.patches import Rectangle
+    cells = s.get("cells", [])
+    n = s.get("size", len(cells))
+    fig, ax = plt.subplots(figsize=(min(9.0, 0.52 * n + 1.0),
+                                    min(9.0, 0.52 * n + 1.0)), layout="constrained")
+    ax.set_aspect("equal")
+    ax.axis("off")
+    for r in range(n):
+        for c in range(n):
+            cell = cells[r][c]
+            y = n - 1 - r
+            if cell.get("mark"):                       # solved: highlight the found letters
+                ax.add_patch(Rectangle((c, y), 1, 1,
+                                       facecolor=fs.lighten(fs.PALETTE.focus, 0.7),
+                                       edgecolor="none", zorder=1))
+            colour = fs.PALETTE.focus if cell.get("mark") else fs.PALETTE.ink
+            ax.text(c + 0.5, y + 0.5, str(cell.get("letter", "")), ha="center", va="center",
+                    fontsize=fs.TYPE.base, color=colour, zorder=3)
+    ax.set_xlim(-0.2, n + 0.2)
+    ax.set_ylim(-0.2, n + 0.6)
+    _puzzle_title(ax, s)
+    fig.savefig(path, dpi=150)
+    plt.close(fig)
+
+
+def _draw_domino(s: dict, path: Path) -> None:
+    from matplotlib.patches import Rectangle
+    tiles = s.get("tiles", [])
+    solved = bool(s.get("solved"))
+    n = len(tiles)
+    per_row = 3 if n > 4 else n or 1                   # wrap long chains onto several rows
+    nrows = (n + per_row - 1) // per_row
+    tw, th, gap = 3.4, 1.2, 0.5
+    fig, ax = plt.subplots(figsize=(min(11.0, per_row * (tw + gap) + 0.6),
+                                    max(1.8, nrows * (th + gap) + 0.6)), layout="constrained")
+    ax.set_aspect("equal")
+    ax.axis("off")
+
+    def wrap(t: str, width: int = 16) -> str:
+        return "\n".join(textwrap.wrap(str(t), width)) or str(t)
+
+    for idx, tile in enumerate(tiles):
+        row, col = divmod(idx, per_row)
+        x = col * (tw + gap)
+        y = (nrows - 1 - row) * (th + gap)
+        # tile body + the centre divider (a real domino)
+        ax.add_patch(Rectangle((x, y), tw, th, facecolor=fs.PALETTE.surface,
+                               edgecolor=fs.PALETTE.ink, lw=1.4, zorder=1))
+        ax.plot([x + tw / 2, x + tw / 2], [y + 0.08, y + th - 0.08],
+                color=fs.PALETTE.ink, lw=1.0, zorder=2)
+        ax.text(x + tw / 4, y + th / 2, wrap(tile["left"]), ha="center", va="center",
+                fontsize=fs.TYPE.annot, color=fs.PALETTE.ink, zorder=3)
+        ax.text(x + 3 * tw / 4, y + th / 2, wrap(tile["right"]), ha="center", va="center",
+                fontsize=fs.TYPE.annot, color=fs.PALETTE.focus if solved else fs.PALETTE.ink,
+                zorder=3)
+        if solved and idx < n - 1 and col < per_row - 1:   # a connector arrow in the loop
+            ax.annotate("", xy=(x + tw + gap, y + th / 2), xytext=(x + tw, y + th / 2),
+                        arrowprops={"arrowstyle": "-|>", "color": fs.PALETTE.muted, "lw": 1.2})
+    ax.set_xlim(-0.3, per_row * (tw + gap))
+    ax.set_ylim(-0.3, nrows * (th + gap) + 0.3)
+    _puzzle_title(ax, s)
+    fig.savefig(path, dpi=150)
+    plt.close(fig)
+
+
+def _draw_rechenmauer(s: dict, path: Path) -> None:
+    from matplotlib.patches import Rectangle
+    rows = s.get("rows", [])                           # apex first (top), base last
+    nrows = len(rows)
+    base_n = max((len(r) for r in rows), default=1)
+    bw = 1.0
+    fig, ax = plt.subplots(figsize=(min(10.0, base_n * bw + 1.0),
+                                    max(2.0, nrows * bw + 0.8)), layout="constrained")
+    ax.set_aspect("equal")
+    ax.axis("off")
+    for i, row in enumerate(rows):
+        y = (nrows - 1 - i) * bw                        # apex (i=0) at the top
+        offset = (base_n - len(row)) / 2.0             # centre each row over the base
+        for j, brick in enumerate(row):
+            x = (offset + j) * bw
+            val = brick.get("value")
+            # a masked (blank) brick reads as the thing to solve → focus edge; a given one is ink
+            given = val is not None
+            ax.add_patch(Rectangle((x, y), bw, bw,
+                                   facecolor=fs.PALETTE.paper if given
+                                   else fs.lighten(fs.PALETTE.focus, 0.85),
+                                   edgecolor=fs.PALETTE.ink if given else fs.PALETTE.focus,
+                                   lw=1.4, zorder=1))
+            if given:
+                ax.text(x + bw / 2, y + bw / 2, str(val), ha="center", va="center",
+                        fontsize=fs.TYPE.title, color=fs.PALETTE.ink, zorder=3)
+    ax.set_xlim(-0.2, base_n * bw + 0.2)
+    ax.set_ylim(-0.2, nrows * bw + 0.6)
+    _puzzle_title(ax, s)
+    fig.savefig(path, dpi=150)
+    plt.close(fig)
+
+
 # --- scene-engine recipes (composed: a Scene of primitives, not one bespoke figure) ----
 @_generator("matplotlib:triangle_construction")
 def _triangle_construction(asset: Asset, path: Path) -> None:

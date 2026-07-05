@@ -78,6 +78,11 @@ class CoreTaskKind(StrEnum):
     DATA_INTERPRETATION = "data_interpretation"
     DECISION_SCENARIO = "decision_scenario"
     CREATE_PRODUCE = "create_produce"
+    # A5 (the Rätsel engine): a puzzle — Kreuzworträtsel / Suchsel / Domino / Rechenmauer.
+    # Cross-subject and zero-LLM (answers DERIVED by pipeline/puzzles.py), so it belongs in
+    # the CORE set, not any per-subject task_kind_extension. The grid figure IS the response
+    # surface (like ordering/matching): a puzzle block carries no generic write-space.
+    PUZZLE = "puzzle"
 
 
 CORE_TASK_KINDS = frozenset(k.value for k in CoreTaskKind)

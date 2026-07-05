@@ -166,6 +166,9 @@ class TaskBlock(BlockBase):
     acceptable_reasoning: RichText | None = None  # judgement side — the RANGE
     rubric: list[RubricCriterion] = Field(default_factory=list)  # v0.4 A4
     solution_steps: list[SolutionStep] = Field(default_factory=list)  # worked Rechenweg (derived)
+    solution_asset_refs: list[str] = Field(default_factory=list)  # teacher-only solution figures
+    # (A5 Rätsel engine): the SOLVED grid of a puzzle. Renders ONLY in the teacher projection —
+    # the student sheet shows the empty grid via `asset_refs`. DERIVED/curated, never LLM-authored.
     watch_outs: list[str] = Field(default_factory=list)
     self_check: RichText | None = None  # homework: no teacher present
 
