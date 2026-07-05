@@ -31,28 +31,18 @@ from teachersaid.config import RUNS_DIR  # noqa: E402
 from teachersaid.pipeline import figstyle as fs  # noqa: E402
 from teachersaid.pipeline.scene import (Canvas, Label, Line, PointMark, Polyline,  # noqa: E402
                                         Region, Scene, render_scene, scene_to_png)
+# The projection machinery is now PROMOTED into the package (roadmap A7,
+# scene3d-geometry-design.md §Promotion). This specimen (the plane/conic family) reuses the same
+# fixed linear map + view direction from there rather than duplicating the six "camera" numbers.
+from teachersaid.pipeline.scene3d import (AXO_34, SCHRAEGRISS,  # noqa: E402
+                                          project as _project3d, view_direction as _view3d)
 
 P3 = tuple[float, float, float]
 
-# --- the projection: one fixed linear map ℝ³ → ℝ² (a Schrägbild) -------------
-# Columns are the screen images of the unit axes x̂, ŷ, ẑ. The SAME linear map is applied
-# to every point, so it is a consistent parallel projection — exactly what a textbook draws
-# on the board. These six numbers are the only "camera" dial. Two conventions to compare:
-#
-#   AXO_34       a general axonometric 3/4 view (depth axis receding to the lower-left).
-#   SCHRAEGRISS  the strict Austrian Schrägriss (Kabinettprojektion): ŷ horizontal, ẑ
-#                vertical, x̂ (the receding depth axis) at 45° lower-left, foreshortened ½.
-AXO_34 = {
-    "x": np.array([-0.80, -0.40]),
-    "y": np.array([0.96, -0.18]),
-    "z": np.array([0.00, 1.00]),
-}
-_S = 0.5 * math.cos(math.radians(45))
-SCHRAEGRISS = {
-    "x": np.array([-_S, -_S]),
-    "y": np.array([1.00, 0.00]),
-    "z": np.array([0.00, 1.00]),
-}
+# This specimen keeps a small global-projection ergonomic (use_projection swaps the active map, and
+# the figure builders below read it via the module-level `project`/`view_direction`); it just
+# delegates the actual maths to the promoted `pipeline/scene3d.py`. SCHRAEGRISS/AXO_34 are the same
+# objects imported above — no second definition of the projection.
 _ACTIVE = {"axo": AXO_34}
 
 
@@ -62,28 +52,21 @@ def use_projection(axo: dict) -> None:
 
 
 def project(p) -> tuple[float, float]:
-    axo = _ACTIVE["axo"]
-    x, y, z = float(p[0]), float(p[1]), float(p[2])
-    v = x * axo["x"] + y * axo["y"] + z * axo["z"]
-    return (float(v[0]), float(v[1]))
+    return _project3d(p, _ACTIVE["axo"])
+
+
+def view_direction() -> np.ndarray:
+    """The 3D direction the projection collapses, for the currently active map."""
+    return _view3d(_ACTIVE["axo"])
 
 
 # --- occlusion: hidden-line determination against analytic surfaces ----------
 # Parallel projection ⇒ the projection rays are ONE fixed 3D direction (the null vector of
 # the 2×3 AXO matrix). "In front" is a global sort along it; visibility of a curve point is a
 # closed-form ray/surface test. One write-once predicate per surface TYPE (cone, plane,
-# sphere…), then a generic curve-splitter — not case-by-case per figure.
-def view_direction() -> np.ndarray:
-    """The 3D direction the projection collapses (points differing along it overlap on
-    screen), oriented toward the above-front camera."""
-    axo = _ACTIVE["axo"]
-    r1 = np.array([axo["x"][0], axo["y"][0], axo["z"][0]])
-    r2 = np.array([axo["x"][1], axo["y"][1], axo["z"][1]])
-    d = np.cross(r1, r2)
-    d = d / (np.linalg.norm(d) or 1.0)
-    return -d if d[2] < 0 else d
-
-
+# sphere…), then a generic curve-splitter — not case-by-case per figure. (The curve-vs-analytic-
+# body occlusion below stays in this specimen; the promoted module carries the convex-solid
+# back-face variant the axonometric_solid recipe needs.)
 def _quad_roots(a: float, b: float, c: float) -> list:
     if abs(a) < 1e-12:
         return [] if abs(b) < 1e-12 else [-c / b]

@@ -34,6 +34,7 @@ from .calculus import (area_between_scene, distribution_scene, extrema_scene,  #
                        function_scene, integral_scene, riemann_scene, tangent_scene)
 from .constructions import construction_scene, triangle_geometry  # noqa: E402
 from .figstyle import fmt_de, unit_scale  # noqa: E402
+from .scene3d import axonometric_solid_scene, riss_pair_scene  # noqa: E402
 from .scene import (Canvas, Label, Line, PointMark, Polyline, Region,  # noqa: E402
                     Scene, scene_to_png)
 
@@ -1116,6 +1117,41 @@ def _drop(d: dict, *keys) -> dict:
     return {k: v for k, v in d.items() if k not in keys}
 
 
+# --- 3D scene-engine recipes (Schrägbild: model in ℝ³, project to a 2D Scene) ----
+# GZ (Geometrisches Zeichnen, US) / DG (Darstellende Geometrie, OS). Correct-by-construction: the
+# solid's vertices/faces are COMPUTED from a few size parameters, the projection is one fixed
+# linear map, and hidden-edge visibility is a closed-form back-face test (convex solids only —
+# `pipeline/scene3d.py` + `Documents/scene3d-geometry-design.md`). The renderer stays the shared
+# `render_scene`; no new backend.
+@_generator("matplotlib:axonometric_solid")
+def _axonometric_solid(asset: Asset, path: Path) -> None:
+    """Schrägriss (Austrian Kabinettprojektion) of a school solid, hidden edges DASHED.
+    spec: {kind:"quader"|"prism"|"pyramid"|"cylinder"|"cone" (German aliases ok), size params
+    (quader a,b,c · prism/cylinder n,r,h · pyramid/cone n,r,h), labels?:{"a"|"b"|"c"|"r"|"h":str},
+    show_measures?:bool (false → every measure prints "h = ?" for the student task), title?}.
+    Vertices, faces and edge visibility are COMPUTED — the figure can never show a wrong hidden
+    edge or a fabricated measurement; the measure labels are maskable (task vs. solution)."""
+    s = asset.spec or {}
+    scene_to_png(axonometric_solid_scene(
+        s.get("kind", "quader"), labels=s.get("labels"),
+        show_measures=s.get("show_measures", True), title=s.get("title"),
+        **_drop(s, "kind", "labels", "show_measures", "title")), path)
+
+
+@_generator("matplotlib:riss_pair")
+def _riss_pair(asset: Asset, path: Path) -> None:
+    """A Grund-/Aufriss pair (zugeordnete Normalrisse) — top view below + front view above one
+    horizontal Rissachse, joined by vertical Ordnungslinien at a SHARED x scale. spec:
+    {kind:… (as axonometric_solid), size params, ordnungslinien?:bool (default true), title?}.
+    The two Risse are the same solid at the same measurement scale (the correspondence is exact:
+    a point's x is identical in both), computed from the solid's geometry."""
+    s = asset.spec or {}
+    scene_to_png(riss_pair_scene(
+        s.get("kind", "quader"), title=s.get("title"),
+        ordnungslinien=s.get("ordnungslinien", True),
+        **_drop(s, "kind", "title", "ordnungslinien")), path)
+
+
 # --- bespoke figures (kept; correctness lives in the recipe, not params) ------
 @_generator("matplotlib:em_spectrum")
 def _em_spectrum(asset: Asset, path: Path) -> None:
@@ -1369,6 +1405,17 @@ GENERATION_RECIPES: dict[str, str] = {
         '"stage"?:1–6,"title"?}. stage 1 Dreieck · 2 Umkreis · 3 Inkreis · 4 Schwerpunkt · '
         '5 Höhenschnittpunkt · 6 Eulergerade+Feuerbachkreis. Mittelpunkte, Kreise und Winkel '
         'werden aus den Eckpunkten BERECHNET — die Abbildung erfindet nichts.',
+    "matplotlib:axonometric_solid":
+        'Körper im Schrägriss (Kabinettprojektion, GZ/DG) — spec {"kind":"quader"|"prism"|'
+        '"pyramid"|"cylinder"|"cone","a"?,"b"?,"c"? (Quader) | "n"?,"r"?,"h"? (Prisma/Pyramide/'
+        'Zylinder/Kegel),"labels"?:{"a"|"b"|"c"|"r"|"h":str},"show_measures"?:bool (false → '
+        '"h = ?" als Aufgabe),"title"?}. Verdeckte Kanten werden BERECHNET (strichliert), Maße sind '
+        'maskierbar — die Abbildung erfindet keine verdeckte Kante und verrät kein Maß.',
+    "matplotlib:riss_pair":
+        'Grund- und Aufriss eines Körpers (zugeordnete Normalrisse, GZ/DG) — spec {"kind":… (wie '
+        'axonometric_solid),Maße,"ordnungslinien"?:bool (Standard true),"title"?}. Grundriss unten, '
+        'Aufriss oben, gemeinsame Rissachse und Ordnungslinien; beide Risse im selben Maßstab '
+        '(die x-Zuordnung ist exakt), aus der Körpergeometrie berechnet.',
     "matplotlib:function_plot":
         'Funktionsgraph y = f(x) (BELIEBIGE Funktion via Term) — spec {"expr":str (z. B. '
         '"0.25*x**2-1" oder "sin(x)"),"xmin"?,"xmax"?,"ymin"?,"ymax"?,"label"?,"title"?}.',
