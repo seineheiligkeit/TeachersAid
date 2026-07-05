@@ -29,6 +29,21 @@ def test_no_hardcoded_hex_in_assets():
         "figstyle semantic roles (PALETTE/c()/cat()/edge()/SVG)")
 
 
+def test_no_hardcoded_hex_in_scene_recipes():
+    """The scene-engine recipe modules (constructions/calculus/optics/circuits) must also carry
+    NO hex literals: they draw exclusively through the scene primitives' semantic ROLES + the
+    figstyle ramps (families → line_kind, focus/ink/muted). Keeps the A2 physics families on the
+    same discipline the A1 port established."""
+    import teachersaid.pipeline.circuits as circuits
+    import teachersaid.pipeline.optics as optics
+    for mod in (optics, circuits):
+        src = Path(mod.__file__).read_text(encoding="utf-8")
+        offenders = sorted(set(_HEX.findall(src)))
+        assert offenders == [], (
+            f"hard-coded hex colours left in {Path(mod.__file__).name}: {offenders} — use the "
+            "scene primitives' roles/families, never a literal colour")
+
+
 def test_figstyle_exposes_the_roles_the_port_relies_on():
     for role in ("ink", "muted", "grid", "primary", "secondary", "focus", "positive",
                  "negative", "surface", "surface_warm", "no_data", "paper"):
