@@ -44,8 +44,8 @@ def render(out: Path | None = None) -> Path:
         ("Gemischt — R₁ in Reihe zu (R₂∥R₃)", circuit_construction(MIXED, 12)),
         ("Verschachtelt — (R₁+R₂) ∥ R₃", circuit_construction(NESTED, 9)),
         ("Lämpchen (Kreis mit Kreuz) + Widerstand", circuit_construction(LAMP, 6)),
-        ("Aufgabe: R₂ = ? (Szene maskiert)",
-         circuit_construction(MIXED, 12, show_value=False, ask="R₂")),
+        ("Aufgabe: R₂ = ? — gegeben U, I, R₁, R₃ (mask=[R₂, Rers])",
+         circuit_construction(MIXED, 12, ask="R₂", mask=["R₂", "Rers"])),
     ]
     with plt.rc_context(fs.house_rc()):
         fig, axes = plt.subplots(2, 3, figsize=(16.5, 9.4), layout="constrained")

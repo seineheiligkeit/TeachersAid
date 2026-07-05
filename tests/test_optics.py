@@ -83,12 +83,19 @@ def _labels(scene: Scene) -> list[str]:
     return [L.text for L in scene.layers if isinstance(L, Label)]
 
 
-def test_image_and_measures_are_maskable():
+def test_image_quantities_mask_but_givens_stay_visible():
+    """The gegeben→gesucht split (same didactic rule as the circuit `mask`): show_value=False
+    masks ONLY the sought image quantities (b, B, B′) — the GIVENS g and G keep their values,
+    because a student task needs its Angaben."""
     shown = lens_construction("sammellinse", f=3, g=9, G=2, stage=6, show_value=True)
     masked = lens_construction("sammellinse", f=3, g=9, G=2, stage=6, show_value=False)
     assert any(t.startswith("B′") and "?" not in t for t in _labels(shown))
     assert "B′ = ?" in _labels(masked)
-    assert "b = ?" in _labels(masked) and "g = ?" in _labels(masked)
+    assert "b = ?" in _labels(masked) and "B = ?" in _labels(masked)
+    # the givens stay visible — in BOTH projections
+    for labels in (_labels(shown), _labels(masked)):
+        assert "g = 9" in labels and "G = 2" in labels
+    assert "g = ?" not in _labels(masked) and "G = ?" not in _labels(masked)
     assert any(t.startswith("b =") and "?" not in t for t in _labels(shown))
 
 

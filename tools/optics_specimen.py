@@ -34,7 +34,7 @@ def render_regimes(out: Path | None = None) -> Path:
          lens_construction("sammellinse", f=3, g=3, G=2, stage=6)),
         ("Zerstreuungslinse — virtuell, aufrecht, verkleinert",
          lens_construction("zerstreuungslinse", f=3, g=6, G=2, stage=6)),
-        ("Aufgabe: B′ = ? (Szene maskiert)",
+        ("Aufgabe: b, B = ? — gegeben f, g, G (Angaben sichtbar)",
          lens_construction("sammellinse", f=3, g=4.5, G=2, stage=6, show_value=False)),
         ("Sammellinse — nur Konstruktion (stage 5)",
          lens_construction("sammellinse", f=3, g=9, G=2, stage=5)),

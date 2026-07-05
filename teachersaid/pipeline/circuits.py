@@ -7,8 +7,10 @@ primitives in the DIN/European school symbol set. The two-tier rule holds: the L
 schematic (it could mis-wire a branch or leak an answer) — it declares the netlist + source, and
 code both SOLVES it (sympy, exact rationals — the same linear-algebra machinery `balance_equation`
 proved) and LAYS OUT the schematic. Every printed value is computed, never authored; labels are
-maskable (`show_value=False` → "R₂ = ?", "I = ?"), so one schematic serves the student task and the
-teacher solution, and the ASKED quantity carries the `focus` role.
+maskable — GLOBALLY (`show_value=False` → everything "?", the teacher-solution twin) or
+SELECTIVELY (`mask=["R₂", "Rers"]` → exactly those read "?" while the Angaben stay visible: the
+canonical "gegeben U, R₁, R₃ und I — berechne R₂" task shape). The ASKED quantity carries the
+`focus` role (`ask`, orthogonal to masking — typically the asked element is also in `mask`).
 
 The physics, exactly (Kirchhoff on a series/parallel tree — no full mesh solve needed):
   series node  — one current through all children; the node voltage SPLITS across them
@@ -130,10 +132,25 @@ def _extent(node: dict) -> tuple[float, float]:
     return max(ws), sum(hs)                            # parallel
 
 
+def _mask_fn(show_value: bool, mask):
+    """The masking rule for value labels, as a predicate `token → bool`.
+
+    An explicit `mask` WINS when given: exactly the listed tokens mask (element labels like "R₂"
+    and/or the totals "U" / "I" / "Rers") and every OTHER value shows — the gegeben→gesucht task
+    shape, where the givens must stay visible. Without `mask`, `show_value=False` masks everything
+    (back-compat, the original all-or-nothing switch) and True (default) shows everything.
+    A bare string is tolerated as a one-element list (hand-written JSON robustness)."""
+    if mask is not None:
+        tokens = {str(t) for t in ([mask] if isinstance(mask, str) else mask)}
+        return lambda token: token in tokens
+    return lambda token: not show_value
+
+
 def _leaf_symbol(node: dict, x0: float, x1: float, y: float, *, focus: bool,
-                 show_value: bool) -> list:
+                 is_masked) -> list:
     """Draw one element (resistor rectangle or lamp circle-cross) centred on the wire segment
-    [x0,x1] at height y, with leader wires to the ends. Label above (name + value, maskable)."""
+    [x0,x1] at height y, with leader wires to the ends. Label above (name + value; reads
+    "name = ?" when `is_masked(name)`)."""
     role = "focus" if focus else "ink"
     mid = (x0 + x1) / 2
     body = min(1.15, (x1 - x0) * 0.5)                 # symbol body length
@@ -157,20 +174,20 @@ def _leaf_symbol(node: dict, x0: float, x1: float, y: float, *, focus: bool,
     name = str(node.get("label") or ("L" if node.get("type") == "lamp" else "R"))
     ohm = node["ohm"]
     val = _de(float(ohm)) + " Ω"
-    txt = f"{name} = {val}" if show_value else f"{name} = ?"
+    txt = f"{name} = ?" if is_masked(name) else f"{name} = {val}"
     layers.append(Label((mid, y + 0.62), txt, role=role, size=9,
                         va="bottom", bold=focus))
     return layers
 
 
-def _layout(node: dict, x0: float, x1: float, yc: float, *, focus_id, show_value: bool,
+def _layout(node: dict, x0: float, x1: float, yc: float, *, focus_id, is_masked,
             leftx: float, rightx: float) -> list:
     """Recursively draw a subtree spanning horizontally [x0,x1] centred vertically at yc.
     `leftx`/`rightx` are the entry/exit x of the enclosing wire (for parallel bus joins)."""
     t = node.get("type")
     if t in _RESISTIVE:
         return _leaf_symbol(node, x0, x1, yc, focus=(id(node) == focus_id),
-                            show_value=show_value)
+                            is_masked=is_masked)
     kids = node["children"]
     layers: list = []
     if t == "series":
@@ -180,7 +197,7 @@ def _layout(node: dict, x0: float, x1: float, yc: float, *, focus_id, show_value
         cx = x0
         for k, w in zip(kids, ws):
             seg = (x1 - x0) * (w / total)
-            layers += _layout(k, cx, cx + seg, yc, focus_id=focus_id, show_value=show_value,
+            layers += _layout(k, cx, cx + seg, yc, focus_id=focus_id, is_masked=is_masked,
                               leftx=cx, rightx=cx + seg)
             cx += seg
         return layers
@@ -195,7 +212,7 @@ def _layout(node: dict, x0: float, x1: float, yc: float, *, focus_id, show_value
         ys.append(cursor - band / 2)                  # branch centre
         cursor -= band
     for k, by in zip(kids, ys):
-        layers += _layout(k, x0, x1, by, focus_id=focus_id, show_value=show_value,
+        layers += _layout(k, x0, x1, by, focus_id=focus_id, is_masked=is_masked,
                           leftx=x0, rightx=x1)
     # the two vertical bus wires joining all branch ends, plus stubs into the enclosing wire
     ytop, ybot = ys[0], ys[-1]
@@ -217,15 +234,20 @@ def _de(v: float) -> str:
 
 # --- the schematic scene -----------------------------------------------------
 def circuit_scene(net: dict, volt: float = 12.0, *, show_value: bool = True,
-                  ask: str | None = None, title: str | None = None) -> Scene:
+                  mask: list[str] | str | None = None, ask: str | None = None,
+                  title: str | None = None) -> Scene:
     """The circuit schematic: the source on the left closes a rectangular loop whose top edge
     carries the resistor network. All values are COMPUTED (`solve_network`) and maskable.
 
-    `ask` names the focus element (its `label`, e.g. "R₂") — it is drawn in the `focus` role and,
-    with show_value=False, the whole sheet reads as the task "find R₂ / I / U". `volt` is the
+    Masking (see `_mask_fn`): `mask` lists exactly the tokens to hide — element labels ("R₂")
+    and/or "U" / "I" / "Rers" — while every other value (the Angaben) stays visible; when `mask`
+    is absent, `show_value=False` masks ALL values (back-compat). `ask` names the focus element
+    (its `label`, e.g. "R₂", or "U"/"I") — drawn in the `focus` role, orthogonal to masking;
+    for a student task the asked quantity is typically also masked. `volt` is the
     Quellenspannung. Raises on a malformed/degenerate netlist."""
     sol = solve_network(net, volt)                    # validates + asserts Kirchhoff
     focus_id = _find_by_label(net, ask) if ask else None
+    is_masked = _mask_fn(show_value, mask)
 
     w_units, h_units = _extent(net)
     net_w = max(w_units * _CELL, _CELL)               # real width of the network span
@@ -239,7 +261,7 @@ def circuit_scene(net: dict, volt: float = 12.0, *, show_value: bool = True,
     sc = Scene(canvas=Canvas(figsize=(7.0, 4.8), frame="off"))
 
     # the network on the top edge
-    sc.add(*_layout(net, x_left, x_right, y_top, focus_id=focus_id, show_value=show_value,
+    sc.add(*_layout(net, x_left, x_right, y_top, focus_id=focus_id, is_masked=is_masked,
                     leftx=x_left, rightx=x_right))
 
     # the rectangular loop: down the right side, along the bottom (through the source), up the left
@@ -251,8 +273,8 @@ def circuit_scene(net: dict, volt: float = 12.0, *, show_value: bool = True,
     sx = (x_left + x_right) / 2
     src_focus = ask is not None and (ask or "").upper() in ("U", "I")
     _battery(sc, sx, y_bot, focus=src_focus)
-    utxt = f"U = {_de(sol['U_source'])} V" if show_value else "U = ?"
-    itxt = f"I = {_de(sol['I_total'])} A" if show_value else "I = ?"
+    utxt = "U = ?" if is_masked("U") else f"U = {_de(sol['U_source'])} V"
+    itxt = "I = ?" if is_masked("I") else f"I = {_de(sol['I_total'])} A"
     src_role = "focus" if src_focus else "ink"
     sc.add(Label((sx, y_bot - 0.55), utxt, role=src_role, size=9.5, va="top", bold=src_focus))
     # the loop current I: a direction arrow on the (always-clean) right vertical wire, pointing
@@ -264,10 +286,10 @@ def circuit_scene(net: dict, volt: float = 12.0, *, show_value: bool = True,
     sc.add(Label((x_right + 0.18, ymid), itxt, role=icol, size=9,
                  ha="left", va="center", bold=(icol == "focus")))
 
-    # Ersatzwiderstand annotation (teacher-visible result; muted, masks with the rest) — centred
-    # under the source so it never collides with the right-wire current label.
-    rtxt = (f"Ersatzwiderstand  Rₑᵣₛ = {_de(sol['R_total'])} Ω"
-            if show_value else "Ersatzwiderstand  Rₑᵣₛ = ?")
+    # Ersatzwiderstand annotation (mask token "Rers") — centred under the source so it never
+    # collides with the right-wire current label.
+    rtxt = ("Ersatzwiderstand  Rₑᵣₛ = ?" if is_masked("Rers")
+            else f"Ersatzwiderstand  Rₑᵣₛ = {_de(sol['R_total'])} Ω")
     sc.add(Label((sx, y_bot - 1.15), rtxt, role="muted", size=8.5, ha="center", va="top"))
 
     if title:
@@ -323,8 +345,11 @@ def _find_by_label(node: dict, label: str):
 
 # public API — mirrors constructions.construction_scene / calculus.*_scene / optics.lens_construction
 def circuit_construction(net: dict, volt: float = 12.0, *, show_value: bool = True,
-                         ask: str | None = None, title: str | None = None) -> Scene:
+                         mask: list[str] | str | None = None, ask: str | None = None,
+                         title: str | None = None) -> Scene:
     """Build the schematic Scene for a netlist — the public entry point. `net` is the nested
-    series/parallel resistor tree, `volt` the source voltage; `show_value=False` masks all values
-    for the student task, `ask` names the focus element ("R₂"/"U"/"I")."""
-    return circuit_scene(net, volt, show_value=show_value, ask=ask, title=title)
+    series/parallel resistor tree, `volt` the source voltage. Masking: `mask=["R₂","Rers"]` hides
+    exactly those values (Angaben stay visible — the gegeben→gesucht task); without `mask`,
+    `show_value=False` masks everything (back-compat). `ask` names the focus element
+    ("R₂"/"U"/"I"), orthogonal to masking."""
+    return circuit_scene(net, volt, show_value=show_value, mask=mask, ask=ask, title=title)

@@ -1117,9 +1117,11 @@ def _distribution(asset: Asset, path: Path) -> None:
 def _optics_ray(asset: Asset, path: Path) -> None:
     """Bildkonstruktion an einer dünnen Linse — the drei Hauptstrahlen as a step-by-step
     construction; the image position b/B and magnification are COMPUTED (thin-lens equation,
-    sympy) and maskable ("B′ = ?"). spec: {kind:"sammellinse"|"zerstreuungslinse", f:num,
-    g:num, G:num, stage?:1–6, show_value?:bool, title?}. f/g/G are positive magnitudes; the
-    lens type carries the focal-length sign (Sammellinse +f, Zerstreuungslinse −f)."""
+    sympy) and maskable. spec: {kind:"sammellinse"|"zerstreuungslinse", f:num, g:num, G:num,
+    stage?:1–6, show_value?:bool, title?}. f/g/G are positive magnitudes; the lens type carries
+    the focal-length sign (Sammellinse +f, Zerstreuungslinse −f). show_value=False masks ONLY
+    the sought image quantities ("b = ?", "B = ?", "B′ = ?") — the givens g/G stay visible
+    (gegeben→gesucht)."""
     s = asset.spec or {}
     scene = lens_construction(str(s.get("kind", "sammellinse")), float(s.get("f", 3.0)),
                               float(s.get("g", 6.0)), float(s.get("G", 2.0)),
@@ -1134,13 +1136,17 @@ def _optics_ray(asset: Asset, path: Path) -> None:
 def _circuit(asset: Asset, path: Path) -> None:
     """Stromkreis-Schaltbild aus einer Netzliste (verschachtelter Reihen-/Parallel-Baum von
     Widerständen) — Ersatzwiderstand, Ströme und Spannungen werden BERECHNET (Kirchhoff, sympy,
-    exakt) und sind maskierbar ("R₂ = ?"). spec: {net:{type,children|ohm,label}, volt?:num,
-    show_value?:bool, ask?:str (Fokus-Element, z. B. "R₂"/"U"/"I"), title?}."""
+    exakt) und sind maskierbar. spec: {net:{type,children|ohm,label}, volt?:num,
+    mask?:[str] (maskiert GENAU diese Werte — Element-Labels bzw. "U"/"I"/"Rers"; die übrigen
+    Angaben bleiben sichtbar — die kanonische gegeben→gesucht-Aufgabe), show_value?:bool
+    (false OHNE mask → alles maskiert; Rückwärtskompatibilität), ask?:str (Fokus-Element,
+    z. B. "R₂"/"U"/"I" — orthogonal zu mask), title?}."""
     s = asset.spec or {}
     net = s.get("net") or {"type": "resistor", "ohm": 100, "label": "R"}
     scene_to_png(circuit_construction(net, float(s.get("volt", 12.0)),
                                       show_value=bool(s.get("show_value", True)),
-                                      ask=s.get("ask"), title=s.get("title")), path)
+                                      mask=s.get("mask"), ask=s.get("ask"),
+                                      title=s.get("title")), path)
 
 
 def _drop(d: dict, *keys) -> dict:
@@ -1428,16 +1434,20 @@ GENERATION_RECIPES: dict[str, str] = {
     "matplotlib:optics_ray":
         'Bildkonstruktion an einer dünnen Linse (Physik) — spec {"kind":"sammellinse"|'
         '"zerstreuungslinse","f":num,"g":num,"G":num,"stage"?:1–6,"show_value"?:bool (false → '
-        '"B′ = ?"),"title"?}. f/g/G sind positive Beträge; das Bild (Bildweite b, Bildgröße B) '
-        'wird aus der Abbildungsgleichung 1/f = 1/g + 1/b BERECHNET (sympy). stage 1 Achse+Linse+'
-        'Gegenstand+Brennpunkte · 2 Parallelstrahl · 3 Mittelpunktstrahl · 4 Brennpunktstrahl · '
-        '5 Bildpfeil · 6 Maße.',
+        'NUR die gesuchten Bildgrößen maskiert: "b = ?","B = ?","B′ = ?" — die Angaben g/G '
+        'bleiben sichtbar),"title"?}. f/g/G sind positive Beträge; das Bild (Bildweite b, '
+        'Bildgröße B) wird aus der Abbildungsgleichung 1/f = 1/g + 1/b BERECHNET (sympy). '
+        'stage 1 Achse+Linse+Gegenstand+Brennpunkte · 2 Parallelstrahl · 3 Mittelpunktstrahl · '
+        '4 Brennpunktstrahl · 5 Bildpfeil · 6 Maße.',
     "matplotlib:circuit":
         'Stromkreis-Schaltbild aus einer Netzliste (Physik) — spec {"net":{Baum aus '
         '{"type":"series"|"parallel","children":[…]} und Blättern {"type":"resistor"|"lamp",'
-        '"ohm":num,"label":str}},"volt"?:num,"show_value"?:bool (false → "R₂ = ?"),'
-        '"ask"?:str (Fokus, z. B. "R₂"/"U"/"I"),"title"?}. Ersatzwiderstand, Ströme und '
-        'Spannungen werden nach Kirchhoff BERECHNET (sympy, exakt) — nichts erfunden.',
+        '"ohm":num,"label":str}},"volt"?:num,"mask"?:[str] (maskiert GENAU diese Werte — '
+        'Element-Labels bzw. "U"/"I"/"Rers", z. B. ["R₂","Rers"]; die Angaben bleiben sichtbar '
+        '— die kanonische Aufgabe „gegeben U, R₁, R₃, I — berechne R₂"),"show_value"?:bool '
+        '(false ohne mask → ALLES maskiert),"ask"?:str (Fokus, z. B. "R₂"/"U"/"I"),"title"?}. '
+        'Ersatzwiderstand, Ströme und Spannungen werden nach Kirchhoff BERECHNET (sympy, exakt) '
+        '— nichts erfunden.',
     "matplotlib:timeline":
         'Zeitleiste (chronologische Ereignisse, GPB) — '
         'spec {"events":[{"at":num,"label":str}],"title"?:str,"xlabel"?:str}.',

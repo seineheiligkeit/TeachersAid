@@ -7,7 +7,9 @@ Gegenstandsweite g, Gegenstandsgröße G) and code computes the image via the ex
 equation (sympy) and lays the drei Hauptstrahlen down as scene primitives. The rays' intersection
 IS the image tip, so the figure can never show a wrong image position or leak the answer; the
 Bildweite b, Bildgröße B and the magnification are computed and maskable (`show_value=False` →
-"b = ?" / "B′ = ?"), so ONE scene serves the student task and the teacher solution.
+"b = ?" / "B′ = ?"), so ONE scene serves the student task and the teacher solution. Masking
+follows the gegeben→gesucht split: the GIVENS g and G (the spec inputs — a task needs its
+Angaben) always stay visible; only the SOUGHT image quantities (b, B, B′) mask.
 
 Sign convention (Austrian Schulbuch, documented deliberately): distances are entered as POSITIVE
 magnitudes — f is the Brennweite, g the Gegenstandsweite, G the Gegenstandsgröße — and the LENS
@@ -202,7 +204,9 @@ def ray_scene(spec: OpticsSpec, stage: int = 6, *, show_value: bool = True) -> S
           3  + Mittelpunktstrahl (gerade durch die Linsenmitte)
           4  + Brennpunktstrahl (durch F hinein → parallel hinaus)
           5  + Bildpfeil im Schnittpunkt der Strahlen
-          6  + Maße g, b, G, B (Werte; maskierbar über show_value)
+          6  + Maße g, G, b, B — the gegeben→gesucht split: the GIVENS g and G always show
+             their values (a task needs its Angaben); `show_value=False` masks only the
+             SOUGHT image quantities ("b = ?", "B = ?", "B′ = ?")
     """
     geo = image_geometry(spec)
     g, G, f_mag = geo["g"], geo["G"], geo["f_mag"]
@@ -302,16 +306,19 @@ def ray_scene(spec: OpticsSpec, stage: int = 6, *, show_value: bool = True) -> S
         sc.add(Label(_pt(b, B + pady * 0.20 * sgn), img_lbl, role="focus", size=10,
                      ha="center", va="bottom" if sgn > 0 else "top", bold=True))
 
-    # stage 6: the measurement labels g, b, G, B (values; maskable). g on the axis baseline;
-    # b on a SECOND lower baseline so a virtual image (b < 0, under the object) never collides.
+    # stage 6: the measurement labels — the gegeben→gesucht split. The GIVENS g and G (the spec
+    # inputs) ALWAYS show their values: a student task needs its Angaben. Only the SOUGHT image
+    # quantities (b, B — and the B′ point label above) mask via show_value. g on the axis
+    # baseline; b on a SECOND lower baseline so a virtual image (b < 0) never collides.
     if stage >= 6:
         base_g = -half_h - pady * 0.02
         base_b = base_g - pady * 0.42 if (b is not None and b < 0) else base_g
         sc.add(Line(_pt(-g, base_g), _pt(0, base_g), role="muted", width=0.9, z=1))
         sc.add(_tick(-g, base_g), _tick(0, base_g))
-        sc.add(Label(_pt(-g / 2, base_g - pady * 0.13),
-                     f"g = {_de(g)}" if show_value else "g = ?",
+        sc.add(Label(_pt(-g / 2, base_g - pady * 0.13), f"g = {_de(g)}",
                      role="muted", size=9, va="top"))
+        sc.add(Label(_pt(-g - padx * 0.06, G / 2), f"G = {_de(G)}",
+                     role="primary", size=9, ha="right", va="center"))
         if not grenz:
             sc.add(Line(_pt(0, base_b), _pt(b, base_b), role="focus", width=0.9, z=1))
             sc.add(_tick(0, base_b, role="focus"), _tick(b, base_b, role="focus"))
@@ -336,5 +343,6 @@ def lens_construction(kind: str = "sammellinse", f: float = 3.0, g: float = 6.0,
     """Build the ray-construction Scene for a lens setup — the public entry point.
 
     kind ∈ {sammellinse, zerstreuungslinse}; f, g, G positive magnitudes; stage 1–6;
-    show_value=False masks b/B/measurements ("B′ = ?") for the student task."""
+    show_value=False masks the SOUGHT image quantities ("b = ?", "B = ?", "B′ = ?") for the
+    student task — the GIVENS g and G stay visible (gegeben→gesucht)."""
     return ray_scene(OpticsSpec(kind=kind, f=f, g=g, G=G), stage=stage, show_value=show_value)

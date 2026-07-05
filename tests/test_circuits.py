@@ -98,6 +98,59 @@ def test_labels_are_maskable_and_asked_element_is_focus():
     assert focus_rects, "asked element R₂ should carry the focus role"
 
 
+def test_gegeben_gesucht_selective_mask():
+    """The canonical task shape: gegeben U, I, R₁, R₃ — berechne R₂ (und Rers als
+    Zwischenschritt). `mask` hides EXACTLY the listed tokens; every given stays visible."""
+    sc = circuit_construction(MIXED, 12, ask="R₂", mask=["R₂", "Rers"])
+    labels = _labels(sc)
+    masked = [t for t in labels if "?" in t]
+    assert "R₂ = ?" in masked
+    assert any("Rₑᵣₛ = ?" in t for t in masked)
+    assert len(masked) == 2                                    # EXACTLY the masked ones read "?"
+    # the givens render with their computed values
+    assert "R₁ = 100 Ω" in labels and "R₃ = 200 Ω" in labels
+    assert "U = 12 V" in labels and "I = 0,06 A" in labels
+    # ask (focus) worked alongside mask — orthogonal concerns
+    assert any(L.role == "focus" for L in sc.layers if isinstance(L, Polyline))
+
+
+def test_mask_can_target_the_totals():
+    """"U"/"I"/"Rers" are maskable tokens too (e.g. the task 'berechne U' from R and I)."""
+    labels = _labels(circuit_construction(MIXED, 12, mask=["U", "I", "Rers"]))
+    assert "U = ?" in labels and "I = ?" in labels
+    assert any("Rₑᵣₛ = ?" in t for t in labels)
+    assert "R₁ = 100 Ω" in labels and "R₂ = 200 Ω" in labels   # elements stay visible
+
+
+def test_show_value_false_masks_all_backcompat():
+    """Without `mask`, show_value=False keeps its original mask-ALL meaning (the stored spec
+    contract stays backward-compatible)."""
+    labels = _labels(circuit_construction(MIXED, 12, show_value=False))
+    for t in ("R₁ = ?", "R₂ = ?", "R₃ = ?", "U = ?", "I = ?"):
+        assert t in labels
+    assert any("Rₑᵣₛ = ?" in t for t in labels)
+    assert not any("Ω" in t and "?" not in t for t in labels)  # no value leaks anywhere
+
+
+def test_mask_wins_over_show_value_and_accepts_a_bare_string():
+    """An explicit `mask` overrides show_value entirely (mask exactly those; the rest shows);
+    a bare string is tolerated as a one-element list (hand-written JSON robustness)."""
+    labels = _labels(circuit_construction(MIXED, 12, show_value=False, mask=["I"]))
+    assert "I = ?" in labels
+    assert "R₁ = 100 Ω" in labels and "U = 12 V" in labels     # mask wins: the rest shows
+    labels2 = _labels(circuit_construction(MIXED, 12, mask="R₂"))
+    assert "R₂ = ?" in labels2 and "R₁ = 100 Ω" in labels2
+
+
+def test_mask_spec_key_flows_through_build_asset(tmp_path):
+    """The wrapper's stored contract: spec["mask"] reaches the scene (render smoke via the
+    generator id, plus the scene-level check above)."""
+    a = Asset(id="c_mask", role="figure", generator="matplotlib:circuit",
+              spec={"net": MIXED, "volt": 12, "ask": "R₂", "mask": ["R₂", "Rers"]})
+    p = build_asset(a, outdir=tmp_path)
+    assert p.exists() and p.stat().st_size > 1500
+
+
 def test_schematic_renders_through_build_asset(tmp_path):
     PNG = b"\x89PNG\r\n\x1a\n"
     for name, net in {"series": SERIES, "parallel": PARALLEL, "mixed": MIXED,
