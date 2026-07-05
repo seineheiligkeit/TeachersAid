@@ -278,6 +278,27 @@ def _silhouette_generators(solid: Solid, axo: dict[str, np.ndarray], apex: np.nd
     return [iL, iR]
 
 
+def _rim_front_back(solid: Solid, axo: dict[str, np.ndarray],
+                    rim_idx: list[int]) -> tuple[list[int], list[int]]:
+    """Split an angle-ordered base rim into (front, back) arcs at the two silhouette-extreme points
+    (the leftmost/rightmost projected rim points — the profile tangencies). The BACK arc is occluded
+    by the body and must be DASHED; the FRONT arc is solid. This is the strict GZ Sichtbarkeit
+    convention for a Drehzylinder/Drehkegel base circle — the near half of the rim is visible, the
+    far half is hidden behind the lateral surface. Each returned arc includes both split points so
+    the two open polylines meet at the profile and together close the ellipse."""
+    proj = {i: project(solid.verts[i], axo) for i in rim_idx}
+    iL = min(rim_idx, key=lambda i: proj[i][0])
+    iR = max(rim_idx, key=lambda i: proj[i][0])
+    n = len(rim_idx)
+    a, b = rim_idx.index(iL), rim_idx.index(iR)
+    arc1 = [rim_idx[k % n] for k in range(a, a + ((b - a) % n) + 1)]
+    arc2 = [rim_idx[k % n] for k in range(b, b + ((a - b) % n) + 1)]
+    # the arc sitting HIGHER on screen (larger projected y) is tucked behind the body → the back
+    y1 = sum(proj[i][1] for i in arc1) / len(arc1)
+    y2 = sum(proj[i][1] for i in arc2) / len(arc2)
+    return (arc2, arc1) if y1 > y2 else (arc1, arc2)   # (front, back)
+
+
 # --- shared: assemble a Scene from projected 3D primitives --------------------
 def _bounds(pts2: list[tuple[float, float]], pad: float) -> tuple[tuple, tuple]:
     xs = [p[0] for p in pts2]
@@ -308,9 +329,11 @@ def _solid_layers(solid: Solid, axo: dict[str, np.ndarray], *, z0: int = 3) -> t
                       if abs(solid.verts[i][2] - solid.verts[:, 2].min()) < 1e-9]
         rim_bottom.sort(key=lambda i: math.atan2(solid.verts[i][1], solid.verts[i][0]))
         base_center = np.array([0.0, 0.0, float(solid.verts[:, 2].min())])
-        # base rim ellipse (always visible for these upright solids seen from above)
-        layers.append(Polyline([pt(i) for i in rim_bottom], role="ink", width=1.8,
-                               closed=True, z=z0 + 1))
+        # base rim ellipse: the FRONT arc is visible (solid), the BACK arc is occluded by the
+        # lateral surface (dashed) — the strict GZ Sichtbarkeit convention (see _rim_front_back).
+        front_arc, back_arc = _rim_front_back(solid, axo, rim_bottom)
+        layers.append(Polyline([pt(i) for i in front_arc], role="ink", width=1.8, z=z0 + 1))
+        layers.append(Polyline([pt(i) for i in back_arc], **_HIDDEN, z=z0))
         if solid.apex is not None:                      # cone: two generators to the apex
             gens = _silhouette_generators(solid, axo, solid.verts[solid.apex], base_center,
                                           rim_bottom)
@@ -499,21 +522,24 @@ def riss_pair_scene(kind: str = "quader", *, title: str | None = None,
 
 
 def _riss_body(solid: Solid, mapfn, layers: list, seen: list, *, view: str) -> None:
-    """Draw one orthographic Riss of the solid via `mapfn` (index → 2D point). The outline is the
-    convex hull of the projected vertices (the true silhouette of a convex body); interior edges of
-    the real faces render as light structure lines. A smooth body shows its rim as an ellipse or a
-    line, per the view."""
+    """Draw one orthographic Riss of the solid via `mapfn` (index → 2D point).
+
+    Visibility is computed PER RISS: each edge is classified against the view axis of THIS Riss
+    (Grundriss = look straight down, +z; Aufriss = look from the front, −y), then edges that project
+    to the SAME 2D segment are merged with visible-wins — the GZ Sichtbarkeit coincidence rule (a
+    visible front edge covering a hidden back edge is drawn solid). Visible edges are solid, genuinely
+    hidden edges dashed; edges parallel to the view axis collapse to a point and are dropped. The
+    visible boundary edges form the silhouette, so no separate hull outline is needed. A smooth body
+    (cylinder/cone) has no facet edges to classify — its outline is the convex hull."""
     pts2 = {i: mapfn(i) for i in range(len(solid.verts))}
     for p in pts2.values():
         seen.append(p)
 
-    # silhouette outline = convex hull of the 2D points (correct for a convex solid)
-    hull = _convex_hull_2d(list(pts2.items()))
-    layers.append(Polyline([p for _, p in hull], role="ink", width=1.9, closed=True, z=4))
-
     if solid.smooth_faces:
-        # a curved body: top/bottom view of a cylinder/cone is a circle; front view is the hull
-        # already drawn. Add the base-circle ellipse in the top view for legibility.
+        # a curved body: the outline is the convex hull (true silhouette of a convex body); the top
+        # view of a cylinder/cone is additionally a base circle drawn for legibility.
+        hull = _convex_hull_2d(list(pts2.items()))
+        layers.append(Polyline([p for _, p in hull], role="ink", width=1.9, closed=True, z=4))
         if view == "top":
             zmin = float(solid.verts[:, 2].min())
             rim = [i for i in range(len(solid.verts)) if abs(solid.verts[i][2] - zmin) < 1e-9]
@@ -522,19 +548,29 @@ def _riss_body(solid: Solid, mapfn, layers: list, seen: list, *, view: str) -> N
                                    closed=True, z=5))
         return
 
-    # polyhedron: draw the real edges that fall INSIDE the hull as light structure (so a Riss shows
-    # the solid's construction, not just its outline). An edge on the hull is already the outline.
-    hull_edges = set()
-    hidx = [i for i, _ in hull]
-    for a, b in zip(hidx, hidx[1:] + hidx[:1]):
-        hull_edges.add(tuple(sorted((a, b))))
-    for face in solid.faces:
-        for i in range(len(face)):
-            e = tuple(sorted((face[i], face[(i + 1) % len(face)])))
-            if e not in hull_edges:
-                layers.append(Line(pts2[e[0]], pts2[e[1]], role="muted", width=0.9,
-                                   dash=(0, (4, 3)), z=3))
-                hull_edges.add(e)                      # draw each interior edge once
+    # polyhedron: classify along this Riss's view axis, then merge coincident projected segments.
+    view_dir = np.array([0.0, 0.0, 1.0]) if view == "top" else np.array([0.0, -1.0, 0.0])
+    cls = classify_edges(solid, view_dir)
+
+    def rk(p: tuple[float, float]) -> tuple[float, float]:
+        return (round(p[0], 6), round(p[1], 6))
+
+    seg: dict[tuple, list] = {}                        # 2D segment key → [pa, pb, visible]
+    for e, visible in cls.items():
+        pa, pb = pts2[e[0]], pts2[e[1]]
+        if rk(pa) == rk(pb):                           # edge parallel to the view axis → collapses
+            continue
+        k = tuple(sorted((rk(pa), rk(pb))))
+        rec = seg.get(k)
+        if rec is None:
+            seg[k] = [pa, pb, visible]
+        else:
+            rec[2] = rec[2] or visible                 # coincidence: visible wins
+    for pa, pb, visible in seg.values():
+        if visible:
+            layers.append(Line(pa, pb, role="ink", width=1.9, z=4))
+        else:
+            layers.append(Line(pa, pb, role="muted", width=0.9, dash=(0, (4, 3)), z=3))
 
 
 def _convex_hull_2d(indexed_pts: list[tuple[int, tuple[float, float]]]

@@ -152,13 +152,21 @@ def test_riss_pair_shares_x_across_the_rissachse():
 
 def test_riss_pair_grundriss_and_aufriss_use_consistent_scale():
     """The Quader's Aufriss width and Grundriss width are the same value a (the shared x-extent),
-    proving one measurement scale across the pair. Measured from the drawn outlines."""
+    proving one measurement scale across the pair. Measured from the drawn edges — each Riss
+    independently spans exactly a in x."""
     a, b, c = 5.0, 3.0, 2.0
     sc = s3.riss_pair_scene("quader", a=a, b=b, c=c)
-    polys = [L for L in sc.layers if isinstance(L, Polyline)]
-    # both riss outlines span the full width a in x (top and front both show the a-edge)
-    widths = [max(p[0] for p in L.points) - min(p[0] for p in L.points) for L in polys]
-    assert widths and all(math.isclose(w, a, abs_tol=1e-6) for w in widths)
+    edges = [L for L in sc.layers if isinstance(L, Line) and L.role in ("ink", "muted")]
+    gr = [L for L in edges if L.p[1] < 0 and L.q[1] < 0]      # Grundriss (below the Rissachse)
+    au = [L for L in edges if L.p[1] > 0 and L.q[1] > 0]      # Aufriss (above it)
+
+    def xspan(lines):
+        xs = [L.p[0] for L in lines] + [L.q[0] for L in lines]
+        return max(xs) - min(xs)
+
+    assert gr and au
+    assert math.isclose(xspan(gr), a, abs_tol=1e-6)
+    assert math.isclose(xspan(au), a, abs_tol=1e-6)
 
 
 def test_riss_pair_has_a_rissachse_and_captions():
@@ -245,3 +253,47 @@ def test_axonometric_recipe_defaults_to_quader(tmp_path):
     a = Asset(id="d", role="figure", generator="matplotlib:axonometric_solid", spec={})
     p = build_asset(a, outdir=tmp_path)
     assert p.exists() and p.stat().st_size > 1500
+
+
+# --- Sichtbarkeit corrections (visibility must be right, not just present) ----
+def test_smooth_body_base_rim_back_arc_is_dashed():
+    """A Drehzylinder/Drehkegel base circle is only half-visible in Schrägriss: the near (front)
+    arc is solid, the far (back) arc is occluded by the lateral surface and must be DASHED (strict
+    GZ Sichtbarkeit). Regression: the base rim used to be one solid ellipse."""
+    for kind in ("cylinder", "cone"):
+        sc = s3.axonometric_solid_scene(kind)
+        polylines = [L for L in sc.layers if isinstance(L, Polyline)]
+        dashed = [L for L in polylines if L.dash != "solid"]
+        solid_arcs = [L for L in polylines if L.dash == "solid"]
+        assert len(dashed) == 1, f"{kind}: expected exactly one dashed back-rim arc"
+        assert dashed[0].role == "muted" and not dashed[0].closed
+        assert solid_arcs, f"{kind}: expected a solid front arc"
+        # the front arc sits LOWER on screen (smaller mean y) than the occluded back arc
+        front = min(solid_arcs, key=lambda L: sum(p[1] for p in L.points) / len(L.points))
+        fy = sum(p[1] for p in front.points) / len(front.points)
+        by = sum(p[1] for p in dashed[0].points) / len(dashed[0].points)
+        assert fy < by
+
+
+def test_pyramid_grundriss_slant_edges_are_visible_solid():
+    """Seen from directly above, a pyramid's slant edges lie on the visible upper surface — SOLID,
+    not dashed. Regression: the old riss code dashed every interior (non-hull) edge."""
+    sc = s3.riss_pair_scene("pyramid")
+    gr_lines = [L for L in sc.layers if isinstance(L, Line) and L.role in ("ink", "muted")
+                and L.p[1] < 0 and L.q[1] < 0]                 # Grundriss sits below the Rissachse
+    assert any(L.role == "ink" for L in gr_lines)              # the diagonals are drawn…
+    assert [L for L in gr_lines if L.dash != "solid"] == []    # …and none of them dashed
+
+
+def test_hex_prism_aufriss_interior_verticals_are_visible_solid():
+    """In the Aufriss each interior vertical is a coinciding pair (front visible + back hidden at the
+    same x); the GZ coincidence rule draws it SOLID. Regression: previously dashed."""
+    sc = s3.riss_pair_scene("prism", n=6, r=2.2, h=3.5)
+    au_lines = [L for L in sc.layers if isinstance(L, Line) and L.role in ("ink", "muted")
+                and L.p[1] > 0 and L.q[1] > 0]                 # Aufriss sits above the Rissachse
+    xs = [L.p[0] for L in au_lines] + [L.q[0] for L in au_lines]
+    xmin, xmax = min(xs), max(xs)
+    interior_v = [L for L in au_lines if abs(L.p[0] - L.q[0]) < 1e-6      # vertical…
+                  and xmin + 1e-3 < L.p[0] < xmax - 1e-3]                 # …strictly inside the outline
+    assert interior_v, "expected interior vertical edges in the hex-prism Aufriss"
+    assert all(L.dash == "solid" and L.role == "ink" for L in interior_v)
