@@ -1,7 +1,7 @@
 # Project Handoff — Austrian Lehrplan-anchored Teaching-Material Generator
 
 **Status: design baseline from Session 2 (24 June 2026); see the dated session updates below for the
-current state (latest: Session 12, 3 July 2026 — the program's first build wave + review economy live).** This is the single read-me-first document for a fresh
+current state (latest: Session 13, 5 July 2026 — the build-for-joy feature program; strategy + docs, no code).** This is the single read-me-first document for a fresh
 session taking the project over. Working language is English; the *product's* output is German (or a
 target language for Fremdsprache). Read this, then the docs in the order given in §6.
 
@@ -295,6 +295,61 @@ target language for Fremdsprache). Read this, then the docs in the order given i
 > `/api/coverage/gaps`) · Track 2's compose-coherence hard problem + the "Varianten erzeugen" surface ·
 > the geosphere-Klimadiagramm re-decision · informational Realien / the joy lane.
 
+> **Update (Session 13, 5 Jul 2026): a strategy session — the build-for-joy feature program.** No code;
+> three doc deliverables. Corpus state at session start: 967 approved blocks (+176 MINT `in_review`),
+> 155 approved content items, coverage 95/610 cells grün, demand queue empty.
+> - **The frame, reaffirmed hard (durable).** The SME firmly corrected a pilot/storefront-first
+>   recommendation: TeachersAid is a hobby built for the joy of building — **no pilots, no releases, no
+>   deadlines, no teacher-feedback loop for now**; his thesis is that only building the *intrinsically
+>   best* platform, as the goal itself, can later maybe become a product, and the discipline is to
+>   resist premature productization (the failure mode of most AI projects). Product/outward framing
+>   returns only when HE declares the building done. Assistant memory updated so the frame leads recall.
+> - **The idea pass + SME verdicts** (full write-ups: `feature-roadmap.md` "▶ Start here (5 Jul 2026)").
+>   **Accepted:** the Physics engine (units-verified parametrics via `sympy.physics.units` +
+>   optics/circuit scene families — "clear win") · GZ via scene3d promotion · **PD Bildquellen** as the
+>   6th asset class ("very clear win") · the **misconception engine** (computed distractors from a
+>   curated Fehlermuster catalog; teacher guide names the probed misconception — "love it") · solution
+>   graphs (alternative Rechenwege) · the **Rätsel engine** (Kreuzworträtsel/Suchsel/Trimino/
+>   Rechenmauern, zero LLM, derived answers — "super fun for pupils") · Wiener-Sachtextformel
+>   readability lint · the **prerequisite graph** ("awesome — think holistic": Diagnose-Blätter,
+>   warm-ups, spiral revision, campaign ordering) · entity registry + cross-module consistency ·
+>   ÜT cross-subject bundles · **difficulty-as-computed** (exploratory, advisory-only, calibrated on
+>   the SME's own labels) · the **dramaturgy engine** ("could be extremely powerful — plan carefully":
+>   design-doc-first; it IS Track-2 #4 coherence) · the **figure-engine rework** (the figstyle port, A1).
+>   **Parked with reasons:** music engine (ME = relaxed subject, little worksheet demand) ·
+>   experiment class (school-equipment-dependent) · self-checking sheets (gimmick; Trimino self-check
+>   survives inside the Rätsel engine). **Unranked, awaiting a call:** stumme Karten/cartography ·
+>   Typst renderer · vision-Blattkritik · Nachweis/coverage visualisation.
+> - **Illustrations — direction DECIDED** (SME: "precisely the way we should think about it"; design:
+>   **`Documents/illustration-design.md`**). The reframe: an image is a **CLAIM (fact — curated,
+>   checkable) plus a RENDERING (expression — authorable under constraint)**, mechanism 4 extended to
+>   pixels; the corpus model (generate once, **vet once, reuse forever**) converts diffusion's runtime
+>   risk into a review-time cost, which is what makes it viable at all. Media policy gains a **third
+>   lane `depictive`** (shows a thing; no labels/numbers/text; `intended_claim` + checklist gate)
+>   between decorative and content; the content lane stays code-gen/sourced **forever**. Resolution
+>   hierarchy: reuse › sourced PD/CC › diffusion › none (prefer real PD art where sources exist —
+>   history gets Isabey, not a diffusion ballroom). Build: local **Flux.1-schnell** (Apache-2.0) on the
+>   4070 via the TTS cp312-subprocess pattern; replayable `DiffusionSpec` provenance; deterministic
+>   pre-review lints (OCR no-text, photocopy-survival); best-of-N review; **Realien backdrops as the
+>   risk-free beachhead** (fictional world ⇒ zero world-claims) and the **Beschriftungs-hybrid**
+>   (vetted base + curated anchors + code label layer, maskable) as the flagship; hard no-go list
+>   (historical likenesses, maps, photoreal humans, text in pixels).
+> - **CLAUDE.md rewritten as the operating manual** (853 → ~460 lines; SME-approved editorial
+>   contract: *no rule lost* — cuts are history/narrative/duplication only, verified by an adversarial
+>   lost-rule diff pass). History → handoff session blocks; design depth → the design docs; scattered
+>   gotchas consolidated into one "Conventions & gotchas" index; a new "Updating this file" section
+>   prevents organic regrowth (one paragraph per feature + pointer; extract a design doc at ~15 lines).
+>   The figure intent→recipe system relocated to `figure-styleguide.md` (new "data-figure system"
+>   section). **`AGENTS.md` is now a thin deferral to CLAUDE.md** (it was a stale parallel copy —
+>   one manual, no drift). **`Documents/README.md` refreshed as the doc map** (six shelves:
+>   canonical · live design · reference · agent briefs · worked content · historical);
+>   schema v0.1/v0.2 + the stray `project-handoff (1).md` moved to **`Documents/archive/`**;
+>   `implementation-notes.md` + `dashboard-review.md` marked historical in place.
+>
+> Run: `python -m pytest -q` (**413 tests**, unchanged — docs only). **Open next:** pick from the
+> roadmap waves by interest; A1 (figure rework) unblocks the figure-heavy items; C5 (dramaturgy) and
+> B-anything start with their design docs.
+
 ---
 
 ## 0 · Orientation (the 30-second version)
@@ -518,8 +573,8 @@ Worked from a consolidated v0.2 + first PDFs, through to v0.3 + a full audit + r
 | `strahlung_schueler_v2.pdf` | **Best** student worksheet — deep, cognitive ladder, resource-independent | **CURRENT** |
 | `strahlung_schueler.pdf` | v1 student worksheet (pre-block-model render) | **SUPERSEDED by v2** |
 | `strahlung_lehrkraft.pdf` | v1 teacher guide | ⚠ **MISMATCHED to v2's tasks — regenerate when revisiting Strahlung** |
-| `lehrplan-bundle-schema-v0.2.md` | Prior schema; carries Thread/Rack/Coverage/Verification/Lens/Asset/Nachweis | **SUPERSEDED by v0.3 for types** |
-| `lehrplan-bundle-schema.md` | First bundle anatomy (v0.1) | **HISTORICAL** |
+| `archive/lehrplan-bundle-schema-v0.2.md` | Prior schema; carries Thread/Rack/Coverage/Verification/Lens/Asset/Nachweis | **SUPERSEDED by v0.3 for types** |
+| `archive/lehrplan-bundle-schema.md` | First bundle anatomy (v0.1) | **HISTORICAL** |
 
 *Note:* the Strahlung PDFs predate the block model — they are valid rendered proof-of-concept, but the
 canonical representation is now the content object. Strahlung has **not** been re-expressed as

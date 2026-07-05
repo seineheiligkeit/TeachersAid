@@ -1,72 +1,73 @@
-# Documents/ — index
+# Documents/ — the map
 
-The design-doc set has grown; this index is the map. Each doc keeps its purpose; **superseded docs are
-flagged, not deleted** (they're design history). When two docs seem to disagree, the higher tier wins, and
-`invariants.md` wins on the hard rules.
+Every doc in one of six shelves. **Superseded docs are archived, not deleted** (`archive/` — design
+history). When two docs seem to disagree, the higher shelf wins, and `invariants.md` wins on the hard
+rules. *(Maintained by hand — add a line here when you add a doc; see CLAUDE.md "Updating this file".)*
 
-## ⭐ Start here / canonical (read these first)
+## ⭐ Canonical (read these first)
 
 | doc | what it is |
 |---|---|
-| [`../project-handoff.md`](../project-handoff.md) | Intent + data model — the source of truth for *what* and *why*. |
+| [`../CLAUDE.md`](../CLAUDE.md) | **The operating manual** — invariants, architecture, seams, gotchas. Start here for any work. |
+| [`../project-handoff.md`](../project-handoff.md) | Intent + the dated session history (§4 = durable decisions — do not relitigate). |
 | [`invariants.md`](invariants.md) | **The hard rules, their rationale, and their boundaries.** Read before letting a remembered rule block an idea. |
-| [`../CLAUDE.md`](../CLAUDE.md) | Working guide for Claude Code (architecture, conventions, where-to-look). |
-| [`feature-roadmap.md`](feature-roadmap.md) | Prioritised capability backlog ("start here tomorrow" at top). |
-| [`lehrplan-bundle-schema-v0.3.md`](lehrplan-bundle-schema-v0.3.md) | **Schema = type source of truth** (v0.4 deltas are additive; v0.5 specced). |
-| [`implementation-notes.md`](implementation-notes.md) | The runnable engine: pipeline + rendering + HITL dashboard. |
+| [`feature-roadmap.md`](feature-roadmap.md) | The plan — the build-for-joy feature program ("▶ Start here" at top). |
+| [`lehrplan-bundle-schema-v0.3.md`](lehrplan-bundle-schema-v0.3.md) | **Schema = type source of truth** (v0.4 deltas additive + implemented; v0.5 built). |
 
-## 🔭 Active design (current / forward features)
+## 🔭 Live design docs (each governs a feature's rules)
 
 | doc | feature |
 |---|---|
-| [`sachverhalt-content-layer-design.md`](sachverhalt-content-layer-design.md) | **The content/exposition layer (History first)** — Sachwissen as a first-class layer. Q1 (authoring) settled. |
-| [`realien-design.md`](realien-design.md) | **CEFR-leveled communicative reading for modern FS** — the Realie as Sprechanlass (*purpose-appropriate rigor*: invent the facts, vet the language). **Phase 1–3 built** (2 flagships + arrangement wrap + the EN/FR breadth seam). |
-| [`history-facts-provenance-design.md`](history-facts-provenance-design.md) | GPB expression-provenance asset class (the machinery Sachverhalt reuses). |
-| [`block-library-design.md`](block-library-design.md) | The block as the durable library unit + the composer. |
-| [`figure-styleguide.md`](figure-styleguide.md) | **The figure styleguide + the scene engine** — semantic colour roles + a dash ramp (survives B/W photocopy), and a composable `Scene` of primitives (geometry construction + the sympy analysis family). |
-| [`scene3d-geometry-design.md`](scene3d-geometry-design.md) | **3D analytic geometry as projected Schrägbild scenes** — planes/normals/Schnittgerade + Kegelschnitte, sympy-computed and projected into the 2D `Scene` (occlusion for hidden lines). **Validated prototype** (`tools/plane3d_specimen.py`); promotion path documented. |
-| [`tts-audio-engine.md`](tts-audio-engine.md) | F5-TTS audio / Hörverstehen engine + voice library. |
-| [`oberstufe-roadmap.md`](oberstufe-roadmap.md) | Extending to AHS Sek II (5.–8. Kl.). |
-| [`schema-roadmap-v0.4-v0.5.md`](schema-roadmap-v0.4-v0.5.md) | Schema version roadmap (v0.5 Lernarrangement). |
-| [`master-library-plan.md`](master-library-plan.md) | Quality bar + per-subject coverage plan. |
-| [`rendering-handoff-brief.md`](rendering-handoff-brief.md) | Renderer-swap contract (entry points, projection rules). |
-| [`diffusion-handover.md`](diffusion-handover.md) | Brief for the SME's image-gen agent (decorative assets). |
+| [`block-library-design.md`](block-library-design.md) | The block as the durable library unit + the composer (phases 1–3 built). |
+| [`figure-styleguide.md`](figure-styleguide.md) | **The figure engine**: figstyle (semantic colour roles, dash ramp, house font) + the scene engine + the data-figure intent→recipe system. |
+| [`scene3d-geometry-design.md`](scene3d-geometry-design.md) | 3D analytic geometry as projected Schrägriss scenes — validated prototype; promotion path (roadmap A7). |
+| [`sachverhalt-content-layer-design.md`](sachverhalt-content-layer-design.md) | The content/exposition layer — Sachwissen as a first-class curated module (History · Bio · Geo built). |
+| [`realien-design.md`](realien-design.md) | CEFR-leveled communicative FS reading — *purpose-appropriate rigor* ("invent the timetable, vet the French"). |
+| [`history-facts-provenance-design.md`](history-facts-provenance-design.md) | Expression provenance (GPB) — original/adapted/quoted, rights gates, the machinery Sachverhalt reuses. |
+| [`tts-audio-engine.md`](tts-audio-engine.md) | The F5-TTS audio backend + voice library (built; open items in §7). |
+| [`illustration-design.md`](illustration-design.md) | **The image program** (accepted 5 Jul 2026, not built): image = claim + rendering; decorative/depictive/content lanes; Flux backend; Beschriftungs-hybrid. |
+| [`schema-roadmap-v0.4-v0.5.md`](schema-roadmap-v0.4-v0.5.md) | Schema version roadmap (v0.4 fields + v0.5 Lernarrangement — both implemented; kept as the design record). |
+| [`oberstufe-roadmap.md`](oberstufe-roadmap.md) | The Sek-II expansion map (Phase 0/1 built; the rest is opportunity inventory). |
+| [`master-library-plan.md`](master-library-plan.md) | The quality bar (blackboard test) + per-subject coverage plan. |
 
 ## 📚 Reference (stable lookup)
 
 | doc | topic |
 |---|---|
-| [`matura-operators.md`](matura-operators.md) | The SRDP Operatoren grounding (decision rule + full write-up). |
-| [`matura-calibration.md`](matura-calibration.md) | cognitive_level → AFB → difficulty calibration vs the exam archive. |
-| `matura-{math,deutsch,latein,languages}-coverage.md` | Per-subject Matura demand maps. |
-| [`subject-coverage-audit.md`](subject-coverage-audit.md) | Unterstufe subject-model audit against the schema. |
-| [`platform-definition.md`](platform-definition.md) | Positioning — "what we are and deliberately are not". |
-| [`architecture-review.md`](architecture-review.md) | Restructuring review (27 Jun 2026). |
-| [`dashboard-review.md`](dashboard-review.md) | Dashboard structuring notes. |
-| [`diffusion-figures-handover.md`](diffusion-figures-handover.md) | Content-figure diffusion **test-run** (experiment record, not the live path). |
+| [`rendering-handoff-brief.md`](rendering-handoff-brief.md) | The renderer-swap contract (entry points, the three projection rules, what's free to change). |
+| [`matura-operators.md`](matura-operators.md) | The SRDP Operatoren grounding — decision rule + full write-up. |
+| [`matura-calibration.md`](matura-calibration.md) | cognitive_level → AFB → difficulty, calibrated against the exam archive (model holds). |
+| `matura-{math,deutsch,latein,languages}-coverage.md` | Per-subject Matura demand maps (from the full-archive extraction). |
+| [`platform-definition.md`](platform-definition.md) | Positioning — "what we are and deliberately are not". **Dormant by decision** (build-for-joy); retained for a possible later phase. |
+| [`subject-coverage-audit.md`](subject-coverage-audit.md) | Unterstufe subject-model audit against the schema (forced `modality` + audio). |
+| [`architecture-review.md`](architecture-review.md) | The no-rewrite verdict + the three sequenced moves (two done; SQLite awaits a trigger). |
+
+## 🤖 Agent briefs (self-contained contracts for a sub/external agent)
+
+| doc | for |
+|---|---|
+| [`diffusion-handover.md`](diffusion-handover.md) | The SME's image-gen agent — decorative, content-free assets (the operative batch brief; the wider program is `illustration-design.md`). |
+| [`diffusion-figures-handover.md`](diffusion-figures-handover.md) | The content-figure diffusion **experiment** (data-collection brief; not the live path — the illustration program's hard lines supersede its ambitions). |
+| [`uebungsreihe-upgrade-brief.md`](uebungsreihe-upgrade-brief.md) | The chemistry Übungsreihen upgrade (executed — c0167–c0169 approved; kept as the genre-framing reference). |
 
 ## 📖 Worked-content companions (German, SME-curated)
 
 | doc | content |
 |---|---|
-| [`strahlung-rack.md`](strahlung-rack.md) · [`zwentendorf-faden.md`](zwentendorf-faden.md) | Vertiefungs-Rack / -Faden for the Strahlung hero. |
-| [`worked-examples-three.md`](worked-examples-three.md) | The three worked content examples at object level. |
+| [`strahlung-rack.md`](strahlung-rack.md) · [`zwentendorf-faden.md`](zwentendorf-faden.md) | Vertiefungs-Rack / -Faden for the Strahlung hero (deliberately overproduced for selection). |
+| [`worked-examples-three.md`](worked-examples-three.md) | The three worked content examples at object level (exercise the v0.4 deltas). |
 
-## 🏛 Historical / superseded (kept for provenance — **not current**)
+## 🗄 Historical (superseded — in [`archive/`](archive/), kept for provenance)
 
 | doc | status |
 |---|---|
-| [`lehrplan-bundle-schema.md`](lehrplan-bundle-schema.md) | Schema **v0.1** — superseded by v0.3. |
-| [`lehrplan-bundle-schema-v0.2.md`](lehrplan-bundle-schema-v0.2.md) | Schema **v0.2** — superseded by v0.3. |
+| `archive/lehrplan-bundle-schema.md` | Schema **v0.1** — superseded by v0.3. |
+| `archive/lehrplan-bundle-schema-v0.2.md` | Schema **v0.2** — superseded by v0.3. |
+| `archive/project-handoff (1).md` | A stray Session-2 snapshot of the root handoff (says so itself); the root `project-handoff.md` is the live one. |
+| [`implementation-notes.md`](implementation-notes.md) | The first-implementation snapshot (design↔code map). **Largely superseded by CLAUDE.md**; kept in place because the handoff references it. |
+| [`dashboard-review.md`](dashboard-review.md) | Dashboard structuring notes — predates the four-station rework; historical. |
 
 ## Root-level companions (outside `Documents/`)
 
-`../README.md` (project README) · `../CLAUDE.md` (Claude guide) · `../AGENTS.md` (Codex guide — sibling to
-CLAUDE.md) · `../project-handoff.md` (intent).
-
----
-
-**Housekeeping notes (for a future tidy, non-urgent):** the schema v0.1/v0.2 docs could move to a
-`Documents/archive/` folder; the four `matura-*-coverage` docs are a stable family and fine as-is;
-`AGENTS.md` and `CLAUDE.md` are deliberately parallel (two assistants) — keep them in sync when invariants
-change.
+`../README.md` (project README) · `../CLAUDE.md` (**the** operating manual) · `../AGENTS.md` (thin
+deferral to CLAUDE.md — one manual, no parallel copy) · `../project-handoff.md` (intent + history).
