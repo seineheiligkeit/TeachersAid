@@ -28,10 +28,22 @@ OBERSTUFE_DIR = LEHRPLAN_DIR / "oberstufe"
 # "audio" (Hören). Map it to the nearest non-printable modality for the model.
 _MODALITY_MAP = {"audio": "oral"}
 
+# A genuine 1-display-name→2-codes collision in the RIS source: two Unterstufe subjects
+# are both headed "CHEMIE" — CHE (AHS Gym/RG, 4. Kl.) and CHE2 (Wirtschaftskundliches
+# Realgymnasium, vierstündig, 3.–4. Kl.). The parser reads both names verbatim, so any
+# subject-name routing (`_code_for`/`_name_to_code`) collapses onto CHE and CHE2's six
+# coverage cells stay permanently unreachable. Curate a DISTINCT engine display name here
+# — keyed (stufe, code), applied in `_meta` at load, so it survives a catalog re-parse
+# (editing `_meta.json` would be clobbered). `_name_to_code` then auto-builds the alias
+# from this name (distinct name → CHE2), while plain "Chemie" still routes to CHE below.
+_DISPLAY_NAME_OVERRIDES = {
+    ("Unterstufe", "CHE2"): "Chemie (Wirtschaftskundliches Realgymnasium)",
+}
+
 # Common German subject names → Unterstufe catalog code (registry names added at load).
 _ALIASES_US = {
     "physik": "PHY",
-    "chemie": "CHE",  # AHS variant; CHE2 is the Wirtschaftskundliches-RG variant
+    "chemie": "CHE",  # AHS 4.-Kl. variant; CHE2 routes via its distinct display name (above)
     "biologie": "BIO", "biologie und umweltbildung": "BIO",
     "mathematik": "MAT", "mathe": "MAT",
     "deutsch": "DEU",
@@ -90,7 +102,16 @@ def _dir(stufe: str):
 @lru_cache(maxsize=2)
 def _meta(stufe: str = "Unterstufe") -> dict:
     with open(_dir(stufe) / "_meta.json", encoding="utf-8") as fh:
-        return json.load(fh)
+        meta = json.load(fh)
+    # Apply the curated display-name overrides once (the dict is freshly loaded and
+    # cached, so every downstream reader — list_subjects, _name_to_code, the competence
+    # index, stats/coverage — sees the disambiguated name). See _DISPLAY_NAME_OVERRIDES.
+    st = _norm_stufe(stufe)
+    for s in meta.get("subjects", []):
+        override = _DISPLAY_NAME_OVERRIDES.get((st, s.get("code")))
+        if override:
+            s["name"] = override
+    return meta
 
 
 @lru_cache(maxsize=2)

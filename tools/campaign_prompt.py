@@ -55,6 +55,16 @@ SUBJECTS: dict[str, tuple[str, str, str]] = {
             "Echte biologische Kontexte (Organismus, Lebensraum, Körper, Ökosystem) mit "
             "Beobachtungs-/Auswertungsaufgaben; wo Daten helfen, eine `data_figures`-Abbildung "
             "(intent-deklariert). Keine reinen Benenn-Listen."),
+    # The second Unterstufe "CHEMIE" (Wirtschaftskundliches Realgymnasium, vierstündig,
+    # 3.–4. Kl.) — its own catalog code CHE2 and competence ids (CHE2.US.x.*), so its
+    # blocks route to CHE2 cells, NOT CHE's. Reachable only via the DISTINCT display name
+    # (see lehrplan_store._DISPLAY_NAME_OVERRIDES); "Chemie" alone still routes to CHE.
+    "CHE2": ("Chemie (Wirtschaftskundliches Realgymnasium)", "grade",
+             "Wie beim AHS-Chemie gilt der Tafel-Test streng (nackte Drills werden abgelehnt): "
+             "jeder Aufgabenblock braucht einen echten Kontextrahmen (Haushalt, Labor, Umwelt, "
+             "Technik), eine gestufte Struktur und Teilschritte mit eigenem Denkwert. Diese "
+             "vierstündige WSRG-Variante läuft über die 3.+4. Klasse — nutze den größeren "
+             "Zeitrahmen für mehr Tiefe."),
 }
 
 _BAND_RULE = ("**Anforderungsbereiche (Bänder)** — abgeleitet aus `cognitive_level`:\n"
