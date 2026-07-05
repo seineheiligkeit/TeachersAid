@@ -32,7 +32,7 @@ rendering + the two-stage human-in-the-loop review dashboard).
 ```bash
 pip install -e .                       # deps: pydantic2, fastapi, uvicorn, anthropic, reportlab,
                                        #       matplotlib, pillow, pyyaml, pymupdf, sympy  (pytest for dev)
-python -m pytest -q                    # fully offline, no API key (413 tests at last rewrite)
+python -m pytest -q                    # fully offline, no API key (565 tests)
 python -m teachersaid seed             # seed the master-library examples into the review queue
 python -m teachersaid                  # dashboard → http://127.0.0.1:8000
 ```
@@ -96,7 +96,7 @@ entry-point signatures, the three projection rules, what's free to change — is
 | Plan | `pipeline/plan.py` | mostly deterministic — envelope→minutes, block-spec skeleton + `DepthTarget` ladder. **The plan IS the idea-stage review artifact.** |
 | Generate | `pipeline/generate.py` + `llm/` | **LLM (corpus loop only — never in the delivery path; invariants §10)** — `messages.parse()` into a recursion-free generation view, then `to_canonical()` |
 | Assets | `pipeline/assets.py` | code-generated, correct-by-construction → see **Figures & assets** below |
-| Verify | `pipeline/verify.py` | rules: kinds/dimensions/coverage/depth/difficulty + the lint battery (media-policy · chart-sanity · (c)-data-label · numeric-claims · prose-provenance); LLM fact-check optional |
+| Verify | `pipeline/verify.py` | rules: kinds/dimensions/coverage/depth/difficulty + the lint battery (media-policy · chart-sanity · (c)-data-label · numeric-claims · prose-provenance · **readability**/`readability.py`, advisory — Wiener Sachtextformel, warns ≫ target Schulstufe; verbatim `quoted`/`source_text` exempt); LLM fact-check optional |
 | Assemble + derive | `pipeline/assemble.py`, `derive.py` | **deterministic** — `derive_nachweis` (coverage + auto-surfaced gaps), `compute_depth` (DepthProfile), `printable_coverage`; `data_ground.ground_data` derives each figure's values FROM its `data_source` dataset slice + stamps the citation onto the content (rendering stays pure; select-never-author for numbers) |
 | Render | `rendering/*` | **deterministic** pure projections; QA-rastered via PyMuPDF |
 
@@ -142,25 +142,33 @@ numbers <120 and years skipped; **advisory lane** — doubles as the anti-rot ch
   is *always* the unknown/result/region of interest), a categorical ramp + a **dash ramp**
   (`line_kind` pairs hue+dash per family — *redundant*, so a dense figure survives a **B/W photocopy**),
   a type scale, and the document font (Carlito/Calibri, same discovery as `reportlab_base`, so figures
-  stop reading as "pasted in"). `house_rc()` **scopes** the style (scene renderer via `rc_context`);
-  `use_house_style()` is global — for the legacy-recipe port (roadmap A1; the ~25 legacy recipes still
-  hard-code hexes).
+  stop reading as "pasted in"). `house_rc()` **scopes** the style (each `assets.py` recipe wraps its
+  build in `rc_context(house_rc())`); the A1 port is **done** — **no hard-coded hexes remain in
+  `assets.py`** (`tests/test_figstyle_port.py` regex-locks it). `_register_font` **render-probes** each
+  candidate (renders 9 pt text, requires real ink) and falls through Carlito → Calibri → DejaVu — a
+  guard against a py3.14/mpl3.11 small-glyph drop that silently blanked tiny labels.
 - **`pipeline/scene.py` — the scene engine.** A figure as data: `Scene` = `Canvas` + ordered typed
   layers (`Polyline·Line·PointMark·CircleShape·Arc·Region·Label`); one `render_scene` draws it in house
   style; the SAME scene renders at different **stages/densities**. **Two-tier, like
   `choose_representation`: the LLM never authors a Scene** (it could draw a wrong tangent or leak an
   answer) — a **didactic recipe COMPUTES it** from a small correct-by-construction spec:
   `pipeline/constructions.py` (`triangle_construction` — the merkwürdigen Punkte, all computed from 3
-  vertices, `stage` 1–6) and `pipeline/calculus.py` (the sympy analysis family:
-  `function_plot·integral_area·tangent·riemann_sum·extrema·area_between·distribution`). Value labels
-  **mask** (`show_value=False` → "A = ?") so one scene serves the student task and the teacher solution.
-  `tests/test_scene.py`/`test_calculus.py` lock defining properties; visual reference:
-  `tools/*_specimen.py`.
-- **3D (validated prototype):** model in ℝ³ (sympy: planes, Schnittgerade, Kegelschnitte), project via a
-  fixed axonometric map into ordinary 2D scene primitives — renderer + figstyle reused, print-first;
-  hidden-line occlusion robust for a curve vs one analytic body (dashed hidden runs), *bounded away
-  from* many-body hidden-surface. Lives in `tools/plane3d_specimen.py`; promotion → `pipeline/scene3d.py`
-  (roadmap A7). Design: `Documents/scene3d-geometry-design.md`.
+  vertices, `stage` 1–6), `pipeline/calculus.py` (the sympy analysis family:
+  `function_plot·integral_area·tangent·riemann_sum·extrema·area_between·distribution`), and the
+  **physics families** `pipeline/optics.py` (thin-lens ray construction — drei Hauptstrahlen as stages;
+  givens shown, image `b`/`B` maskable) + `pipeline/circuits.py` (series/parallel netlist → Kirchhoff
+  solve via sympy → DIN schematic; per-element `mask=[…]`). Value labels **mask** (`show_value=False` →
+  "A = ?") so one scene serves the student task and the teacher solution. `tests/test_{scene,calculus,
+  optics,circuits}.py` lock defining properties; visual reference: `tools/*_specimen.py`.
+- **3D (`pipeline/scene3d.py` — promoted, roadmap A7):** model in ℝ³, project via a fixed axonometric map
+  into ordinary 2D scene primitives — renderer + figstyle reused, print-first. Recipes
+  `matplotlib:axonometric_solid` (Schrägriss of Quader/Prisma/Pyramide/Zylinder/Kegel; hidden edges
+  dashed) + `matplotlib:riss_pair` (Grund-/Aufriss). **Hidden-line occlusion is closed-form for CONVEX
+  bodies** (an edge is hidden iff both adjacent faces back-face; `classify_edges` raises `NotConvex`
+  otherwise — the design-doc boundary, enforced); riss visibility is computed **per Riss** with the
+  **coincidence rule** (visible wins on coinciding projected segments); a smooth base rim splits
+  front-solid/back-dashed. `tools/plane3d_specimen.py` keeps the plane/conic prototype (un-promoted).
+  Design: `Documents/scene3d-geometry-design.md`.
 
 ## Grounding catalogs — one discipline, many catalogs
 
@@ -256,6 +264,29 @@ qualitative Unterstufe recipes that are **derived** (`reaction_type`, `atom_coun
 (`substance_classification`, `separation_method`, `acid_base_neutral`). **Inline math:** a `RichText`
 run with `math=True` carries LaTeX → small inline PNG via mathtext, embedded with `<img>` in
 `richtext_markup`; a `$…$` span in a parametric prompt template becomes a math run.
+**Physics rides the same registry** (`pipeline/physics.py`, `grounding/physics.py`, `phy-*` templates):
+recipes compute with **`sympy.physics.units`** and `_assert_dimension` the result against its expected
+unit BEFORE formatting — a unit-category error is structurally impossible (uniform_motion·density·ohm·
+resistors·lever·energy_power). Constants are curated + cited (g exact per CGPM 1901; school densities).
+**Misconception distractors** (`pipeline/misconceive.py`, `grounding/misconceptions.py`): a
+`multiple_choice` recipe's `Instance` carries an `MCSpec`; `@_misconception` transforms compute each
+wrong option by applying a curated, literature-sourced Fehlermuster to the SAME drawn values —
+**guaranteed ≠ the correct answer** (both computed, compared post-formatting), deduped, plausibility-
+gated; the teacher guide names each probe via `watch_outs` ("B prüft: Vorzeichenfehler (Radatz)").
+**Solution graphs** (A4): `Instance`/`TaskBlock` carry optional `solution_paths` (named strategy +
+steps) — the *alternative* Rechenwege beside the primary `solution_steps` (LGS: Einsetzung/
+Gleichsetzung/Addition; Prozent: Dreisatz/Operator/Formel), each independently derived and asserted
+equal to the answer; **teacher-only**, rendered as "Alternative Lösungswege", absent from generation
+views like `solution_steps`.
+
+**Rätsel engine (cross-subject)** — `pipeline/puzzles.py`, `schema/puzzle.py`, `matplotlib:puzzle_grid`;
+zero LLM, answers **derived**. Kreuzworträtsel (backtracking crossing grid), Suchsel (with an
+accidental-duplicate refill guard), Domino/Trimino (**closes iff every match is correct** — self-check
+by graph construction), Rechenmauern (unique-solution masking verified by constraint propagation). A
+puzzle is a code-gen grid asset + a `TaskBlock` wrapper of the **core kind `puzzle`** (no write-space —
+the grid IS the answer surface); the SOLVED grid rides `TaskBlock.solution_asset_refs`, **teacher
+projection only** (student sees the empty grid via `asset_refs`). Umlaut convention = single-cell (one
+module constant flips to AE/OE/UE). Corpus-scale clue ingest is a follow-up seam.
 
 **Annotated authentic texts (DEU · LAT · FS)** — `schema/texts.py`, `pipeline/text_tasks.py`,
 `store/textstore.py`, `library/texts.py`. An `AnnotatedText` = a real, rights-cleared text + a curated
@@ -550,16 +581,17 @@ guard; the two-stage HITL loop + API; the worked examples exercise the v0.4 delt
 **Grounding & ingest**
 - `stufe_for_klasse(klasse)` is the stage authority (1–4 US, 5–8 OS). `klasse: null` = cross-class.
 - Oberstufe **Chemie dims are WO/EG/KZ**, not W/E/S. Operator routing is by canonical code, not display
-  name. **Known bug:** two "CHEMIE" subjects collide in `_code_for` → CHE2's 6 US cells are unfillable
-  by name-routed campaigns (roadmap: Maintenance).
+  name. The two "CHEMIE" subjects (CHE, CHE2) are disambiguated by `_DISPLAY_NAME_OVERRIDES` in
+  `lehrplan_store` — CHE2 carries a distinct display name ("Chemie (Wirtschaftskundliches
+  Realgymnasium)") so name-routed campaigns reach it; plain "Chemie" routes to CHE.
 - `resolve` checks the Fassung date window; the 2026/27 re-parse is deferred by decision until the new
   Fassung is published in full text.
 - Malformed subagent JSON → **extend the ingest normalizer** (deterministic absorption), don't re-spawn.
 - Locality: Tier-1 anchoring is **inquiry-frame** (students investigate their own region) — **never
   assert unvetted local facts**; asserted local data needs the curated Tier-2 path (regional datasets).
 - Lint lanes: deterministic lints *guarantee* (entity-lint years, media policy, (c)-label); advisory
-  lints *flag* for the SME (number-lint, prose-lint, chart-lint warnings, name checks). Triage is never
-  the gate.
+  lints *flag* for the SME (number-lint, prose-lint, chart-lint warnings, name checks, readability/WSTF).
+  Triage is never the gate.
 
 **Stores & process**
 - **All stores subclass `store/base.py::JsonStore`** (shared file-I/O + id counter + status-preserving

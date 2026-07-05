@@ -1,7 +1,7 @@
 # Project Handoff — Austrian Lehrplan-anchored Teaching-Material Generator
 
 **Status: design baseline from Session 2 (24 June 2026); see the dated session updates below for the
-current state (latest: Session 13, 5 July 2026 — the build-for-joy feature program; strategy + docs, no code).** This is the single read-me-first document for a fresh
+current state (latest: Session 14, 5 July 2026 — Wave A built end-to-end: task & figure engines, 565 tests green).** This is the single read-me-first document for a fresh
 session taking the project over. Working language is English; the *product's* output is German (or a
 target language for Fremdsprache). Read this, then the docs in the order given in §6.
 
@@ -349,6 +349,93 @@ target language for Fremdsprache). Read this, then the docs in the order given i
 > Run: `python -m pytest -q` (**413 tests**, unchanged — docs only). **Open next:** pick from the
 > roadmap waves by interest; A1 (figure rework) unblocks the figure-heavy items; C5 (dramaturgy) and
 > B-anything start with their design docs.
+
+---
+
+> **Update (Session 14, 5 Jul 2026): Wave A built end-to-end — the task & figure engines.** A subagent
+> fan-out (Opus/Sonnet builders, orchestrator-reviewed: specimens viewed, diffs read, follow-ups sent
+> back) shipped **all of Wave A** plus the CHE2 maintenance fix. **413 → 565 tests green.** Twelve
+> commits (`30c7f6e`…`b8f550d`) on `main`. What landed:
+> - **A1 · Figure-engine port.** All ~25 recipes now draw through `figstyle` roles/ramps — **0 hard-coded
+>   hexes** (was 72; `tests/test_figstyle_port.py` locks it via regex). `right_triangle`/`rectangle`/
+>   `polygon` became computed `Scene`s. Caught + fixed a real bug: a **py3.14 / mpl3.11 Calibri
+>   small-glyph drop** silently blanked number-line/timeline labels — `figstyle._register_font` now
+>   render-probes each candidate and falls through to a font that actually inks 9 pt text. Specimen
+>   scripts per family (`tools/{charts,geometry,diagrams,maps}_specimen.py`).
+> - **A2a · Physics parametric pack.** `pipeline/physics.py` (uniform_motion·density·ohm·resistors·
+>   lever·energy_power) computing with `sympy.physics.units` — every answer **dimensionally verified**
+>   before formatting (`_assert_dimension` over the SI dimension system; a unit-category error can't
+>   ship), units carried through every Rechenweg step. `grounding/physics.py` (g exact per CGPM 1901;
+>   cited school densities + reverse "welcher Stoff?" lookup). 7 `phy-*` templates on real US/OS anchors.
+> - **A2b · Physics scene families.** `pipeline/optics.py` (thin-lens ray construction; drei
+>   Hauptstrahlen as stages 1–6; givens g/G stay shown, image b/B maskable) + `pipeline/circuits.py`
+>   (series/parallel netlist → Kirchhoff solve via sympy Rationals → DIN schematic; **per-element
+>   `mask=[…]`** so "gegeben U,R₁,R₃,I — finde R₂" shows the givens and hides only the unknown).
+>   `matplotlib:optics_ray`/`matplotlib:circuit`. **Mirrors (Hohlspiegel/Ebener Spiegel) deferred.**
+> - **A3 · Misconception engine.** `grounding/misconceptions.py` (9 patterns; Radatz/Malle/
+>   Padberg-Wartha for MAT, descriptive Physik-/Chemiedidaktik notes for PHY/CHE) +
+>   `pipeline/misconceive.py` (`@_misconception` transforms). An MC distractor = the misconception
+>   applied to the same drawn values → **guaranteed ≠ correct** (post-formatting), deduped,
+>   plausibility-gated; the teacher guide names each probe via `watch_outs` ("B prüft:
+>   Vorzeichenfehler (Radatz)"). `Instance.mc`/`mc_distractors` (pipeline-internal, derivation-safe).
+> - **A4 · Solution graphs.** `SolutionPath` on `Instance`+`TaskBlock`; LGS emits Einsetzungs-/
+>   Gleichsetzungs-/Additionsverfahren, Prozent emits Dreisatz/Operator/Formel — each path independently
+>   sympy-derived and **asserted equal to the primary answer** before shipping; teacher renders
+>   "Alternative Lösungswege", student/homework proven clean; the generation-view omission lock is now
+>   test-locked.
+> - **A5 · Rätsel engine.** `pipeline/puzzles.py` + `schema/puzzle.py`: Kreuzworträtsel (backtracking
+>   crossings), Suchsel (accidental-duplicate refill guard), Domino (**closes iff every match correct** —
+>   self-check by graph construction), Rechenmauern (unique-solution masking verified by propagation).
+>   One core kind `puzzle` (no write-space); `matplotlib:puzzle_grid`; teacher-only solved grid via
+>   `TaskBlock.solution_asset_refs`; umlaut = single-cell (flip in one constant). Corpus-scale clue
+>   ingest is the follow-up.
+> - **A6 · Wiener Sachtextformel.** `pipeline/readability.py` (WSTF1, Bamberger/Vanecek; documented
+>   German syllable heuristic — advisory lane only) + a verify warning when a block reads ≫ target
+>   Schulstufe + a computed-on-demand block-card badge. **Verbatim sources (`quoted`/`source_text`) are
+>   exempt** — deliberately hard IS the Quellenarbeit (orchestrator fix; the GPB flagship test treats
+>   Lesbarkeit as flag-not-gate). Scope-variant linguistic targets deferred (chip `task_8964d0d4`).
+> - **A7 · scene3d promotion.** `pipeline/scene3d.py`: `Scene3D` + axonometric projection + closed-form
+>   back-face hidden-line classification (raises `NotConvex` at the boundary). `axonometric_solid`
+>   (Quader/Prisma/Pyramide/Zylinder/Kegel; hidden edges dashed) + `riss_pair` (Grund-/Aufriss with
+>   Ordnungslinien). **Orchestrator Sichtbarkeit fixes** (the A7 agent was rate-limited before applying
+>   them): smooth-body base rim splits front-solid/back-dashed; riss visibility is computed **per Riss**
+>   (Grundriss looks down +z, Aufriss from −y) with the **coincidence rule** (visible wins) — fixing the
+>   pyramid Grundriss diagonals and hex-prism Aufriss verticals that were wrongly dashed. Anchors found:
+>   GZ `GEZ.US.4.PRO.*`, DG `DGE.OS.7.ARB5.*` — a master-library flagship per Stufe is the follow-up.
+> - **CHE2 routing fix (maintenance).** `_DISPLAY_NAME_OVERRIDES` keyed `(stufe, code)` gives the second
+>   "CHEMIE" subject a distinct display name at `_meta` load — name-routed campaigns now reach CHE2's 6
+>   US cells; plain "Chemie" still routes to CHE. (Rescued from an orphaned Session-13 worktree.)
+>
+> **⚠️ SME FACT-CHECK QUEUE (physics/German/didactics — the SME is the domain authority; nothing here
+> blocks, all is verify-clean):**
+> 1. **g = 9.80665** exact (not 9.81) → E_pot results ~2 % higher than a 9.81 hand-calc. One-line flip
+>    in `STANDARD_GRAVITY` if Unterstufe should use 9.81.
+> 2. **kWh introduced at Kl. 3** (US energy template) — confirm or push to OS-only.
+> 3. **`phy-os-arbeit-leistung`** mixes E_pot into the "Elektrische Energie" KB — defensible as
+>    energy-form review; say if the OS template should be electrical-only.
+> 4. **Density anchored to OS Thermodynamik** (`PHY.OS.5.THE.01`) — no Dichte descriptor exists in the
+>    PHY Unterstufe Lehrplan; confirm the anchor or point at a better one.
+> 5. **Magnitude ranges** to eyeball: motion (Schnecke cm/s … Zug ~30 m/s), Ohm (mA…3 A, 1–1000 V),
+>    resistors (2–200 Ω), lever (5–400 N), power (Glühlampe 40 W … Wasserkocher 2 kW).
+> 6. **Circuit phrasing** "In einer Reihenschaltung liegen die Widerstände …" — slightly stiff.
+> 7. **Misconception sources for PHY/CHE** cited descriptively, not pinned to a page — tighten if you
+>    have a preferred reference.
+> 8. **`resistors_mc`** yields 2–3 options (parallel-as-series always; ×10 slip only when distinct).
+> 9. **Optics sign convention:** f/g/G entered as positive magnitudes, lens type carries the sign
+>    (Sammellinse +f, Zerstreuungslinse −f); g=f drawn as parallel emerging rays ("kein Bild").
+> 10. **Schrägriss foreshortening:** strict Kabinett (½ at 45°) per the design doc — some AT texts use
+>     Kavalier (full length). And the **a/b/c → edge mapping** (a=x-width, b=y-depth, c=z-height) —
+>     check against your Länge/Breite/Höhe convention.
+> 11. **GZ/DG coverage gap** (honest): scene3d does parallel Grund-/Aufriss only — no Kreuzriss,
+>     no Zentralprojektion yet.
+>
+> Run: `python -m pytest -q` (**565 tests**). **Open next:** Wave B (the image program — B1 Flux backend
+> starts it) or Wave C (C1 prerequisite graph, or C5 dramaturgy design-doc-first); the physics/GZ
+> engines invite master-library flagships (PHY worked sheets, a GZ "Risse herstellen" + DG "Sichtbarkeit"
+> sheet) and a corpus-scale Rätsel ingest seam. **Worktree note:** three merged worktree dirs under
+> `../TeachersAid-wt/` + `.git/worktrees/{a2b,a5,a7,blissful-rosalind-5bbcdb}` are Windows-lock-stuck on
+> disk (branches deleted, `git worktree list` clean) — `git worktree prune` + delete the dirs once the
+> locks clear.
 
 ---
 

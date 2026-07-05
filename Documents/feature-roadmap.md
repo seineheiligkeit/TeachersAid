@@ -17,14 +17,31 @@ The program below is the 5 Jul idea pass + SME verdicts. **Waves are themes, not
 interest**; real dependencies are noted. Each item is written so a fresh build session can pick it up
 cold. State at session start: 413 tests green; 967 approved blocks; coverage 95/610 cells grün.
 
+> **✅ Wave A is COMPLETE (Session 14, 5 Jul 2026).** All seven items landed (A1·A2a·A2b·A3·A4·A5·A6·A7),
+> built by a fan-out of Opus/Sonnet subagents and orchestrator-reviewed (specimens viewed, diffs read,
+> SME flags collected below the wave). The CHE2 maintenance item also landed. State now: **565 tests
+> green.** Design depth for the new engines is in their modules' docstrings + the Session-14 handoff
+> block; a batch of **SME fact-check flags** (physics magnitudes, g=9.80665, kWh grade, misconception
+> source pinning, Schrägriss foreshortening convention, a/b/c edge mapping, …) awaits the SME in
+> `project-handoff.md` Session 14. Each item below is annotated with what shipped.
+
 ### Wave A — task & figure engines
 
-- **A1 · Figure-engine rework (the port).** Move the ~25 legacy matplotlib recipes onto `figstyle`
+- **A1 · Figure-engine rework (the port). ✅ SHIPPED S14** — all ~25 recipes draw through `figstyle`
+  roles/ramps (0 hex literals, `tests/test_figstyle_port.py` locks it); `right_triangle`/`rectangle`/
+  `polygon` became computed `Scene`s; a render-probe font fallback fixes a py3.14/mpl3.11 Calibri
+  glyph-drop that silently blanked small labels; specimen scripts per family. Original text follows.
+  Move the ~25 legacy matplotlib recipes onto `figstyle`
   (semantic roles, categorical+dash ramps, house font) — and onto `scene` composition where a recipe is
   naturally primitives. Acceptance: no hard-coded hexes outside `figstyle`; specimen scripts per family;
   `tests/test_layout.py` green. The long-deferred styleguide item — do it before new figure families
   multiply the debt. *(Design: `figure-styleguide.md`.)*
-- **A2 · The Physics engine (SME: clear win).** Two halves, one session each:
+- **A2 · The Physics engine (SME: clear win). ✅ SHIPPED S14** — *(a)* `pipeline/physics.py` (6 recipes,
+  answers dimensionally verified via `sympy.physics.units` — unit-category errors structurally
+  impossible) + `grounding/physics.py` (g exact, cited school densities) + 7 `phy-*` templates;
+  *(b)* `pipeline/optics.py` (thin-lens ray construction, drei Hauptstrahlen as stages, given/sought
+  masking) + `pipeline/circuits.py` (netlist → Kirchhoff solve → schematic, per-element `mask=[…]`) +
+  `matplotlib:optics_ray`/`matplotlib:circuit`. Mirrors (Hohlspiegel/Ebener Spiegel) deferred. Original:
   *(a) parametric pack* — `pipeline/physics.py` recipes with **`sympy.physics.units`** so every answer
   is **dimensionally verified** (unit errors structurally impossible): uniform motion, density,
   Ohm + series/parallel (Ersatzwiderstand), lever/torque, energy/power; US anchors (PHY Kl. 2–4) + OS
@@ -35,7 +52,13 @@ cold. State at session start: 413 tests green; 967 approved blocks; coverage 95/
   "B′ = ?") and **circuits** (typed netlist → schematic from scene primitives; values computed via
   Kirchhoff linear solve — the sympy linear-algebra machinery `balance_equation` proved). Completes the
   MINT trio; pairs with the CHE-figures gap (old theme B bundle).
-- **A3 · The Misconception engine (SME: love it).** Distractors correct-by-construction. A curated
+- **A3 · The Misconception engine (SME: love it). ✅ SHIPPED S14** — `grounding/misconceptions.py` (9
+  literature-sourced error patterns: Radatz/Malle/Padberg-Wartha/Physik-/Chemiedidaktik) +
+  `pipeline/misconceive.py` (`@_misconception` transforms); MC distractors COMPUTED by applying the
+  misconception to the drawn values — guaranteed ≠ correct post-formatting, deduped, plausibility-gated;
+  the teacher guide names each probe via `watch_outs`. MAT/PHY/CHE recipes + 4 MC templates. The
+  non-parametric distractor-pattern field stays the roadmap's "later". Original text:
+  Distractors correct-by-construction. A curated
   catalog `grounding/misconceptions.py` (id · domain scope · description · the classic error-analysis
   literature as source note — Radatz for arithmetic, Malle for algebra), transforms registered like
   recipes (`@_misconception` in `pipeline/misconceive.py`); a `multiple_choice` parametric variant's
@@ -44,11 +67,22 @@ cold. State at session start: 413 tests green; 967 approved blocks; coverage 95/
   den Vorzeichenfehler"). Start on MAT parametrics (sign error, forgotten carry, unit slip, percentage
   base confusion), extend to CHE/PHY; later a curated distractor-pattern field for non-parametric MC.
   `intentionally_flawed`, generalized into a theory.
-- **A4 · Solution graphs (SME: yes).** Recipes emit ONE Rechenweg; classrooms produce several. Extend
+- **A4 · Solution graphs (SME: yes). ✅ SHIPPED S14** — `SolutionPath` (strategy + steps) on `Instance`
+  and `TaskBlock`; `linear_system_2` emits Einsetzungs-/Gleichsetzungs-/Additionsverfahren,
+  `percentage`/`percentage_rate` emit Dreisatz/Operator/Formel — each path independently derived via
+  sympy and asserted equal to the primary answer before shipping; teacher projection renders
+  "Alternative Lösungswege", student/homework proven clean; generation-view omission lock test-locked.
+  Original text: Recipes emit ONE Rechenweg; classrooms produce several. Extend
   `Instance` with optional `solution_paths` (named strategy + steps); teacher rendering "Alternative
   Lösungswege / Schüler könnten auch…". Start where strategies genuinely diverge: LGS
   (Einsetzen/Gleichsetzen/Addition), Prozentrechnung (Dreisatz/Operator/Formel). Teacher-only, DERIVED.
-- **A5 · The Rätsel engine (SME: great — Rätsel are super fun for pupils).** `pipeline/puzzles.py`,
+- **A5 · The Rätsel engine (SME: great — Rätsel are super fun for pupils). ✅ SHIPPED S14** —
+  `pipeline/puzzles.py` + `schema/puzzle.py`: Kreuzworträtsel (backtracking crossing grid),
+  Suchsel (with accidental-duplicate refill guard), Domino (closes iff every match correct — self-check
+  by graph construction), Rechenmauern (unique-solution masking verified by propagation). One core kind
+  `puzzle` (no write-space); `matplotlib:puzzle_grid`; teacher-only solved grid via
+  `solution_asset_refs`; umlaut = single-cell (flip-in-one-place). Corpus-scale clue ingest is the
+  follow-up. Original text: `pipeline/puzzles.py`,
   zero LLM, answers derived: **Kreuzworträtsel** (backtracking grid placement over curated clue/answer
   pairs — Sachverhalt `Concept`s, vocab annotations, chemistry curated tables feed clues across many
   subjects; decide the umlaut convention Ä vs AE), **Suchsel** (trivial), **Domino/Trimino chains**
@@ -56,12 +90,22 @@ cold. State at session start: 413 tests green; 967 approved blocks; coverage 95/
   construction), **Rechenmauern** (parametric, derived). Design decisions: puzzle = code-gen asset
   (grid figure) + a task block wrapper; whether new `task_kind_extensions` or core kinds carry them;
   teacher-only solution grid; age scaling.
-- **A6 · Readability — the Wiener Sachtextformel (SME: good).** *The* German readability measure (and
+- **A6 · Readability — the Wiener Sachtextformel (SME: good). ✅ SHIPPED S14** — `pipeline/readability.py`
+  (WSTF1, Bamberger/Vanecek; documented German syllable heuristic) + advisory verify warning when a
+  block reads ≫ target Schulstufe + block-card badge (computed on demand, never persisted). Verbatim
+  sources (`quoted`/`source_text`) are exempt — deliberately hard IS the Quellenarbeit. Scope-variant
+  linguistic targets deferred (a clean 3-file signature change — chip `task_8964d0d4`). Original text:
+  *The* German readability measure (and
   Austrian: Bamberger/Vanecek) as `pipeline/readability.py`: grade-level estimate per prose/info block
   (German syllable counting is heuristic → **advisory lane only**), a verify warning when block level ≫
   target Klasse, surfaced on dashboard block cards; `scope` variants gain linguistic targets (compact =
   also linguistically lighter), not just length.
-- **A7 · GZ / Darstellende Geometrie — promote the 3D prototype (SME: agreed).** The validated
+- **A7 · GZ / Darstellende Geometrie — promote the 3D prototype (SME: agreed). ✅ SHIPPED S14** —
+  `pipeline/scene3d.py`: `Scene3D` + axonometric projection + closed-form back-face hidden-line
+  classification (raises `NotConvex` at the boundary); `axonometric_solid` (Quader/Prisma/Pyramide/
+  Zylinder/Kegel, hidden edges dashed, base-rim back arc dashed) + `riss_pair` (Grund-/Aufriss,
+  per-Riss visibility with the coincidence rule). Anchors found: GZ `GEZ.US.4.PRO.*`, DG
+  `DGE.OS.7.ARB5.*` — a master-library flagship per Stufe is the follow-up. Original text: The validated
   machinery (`tools/plane3d_specimen.py`: `Scene3D` + axonometric `project` + closed-form hidden-line
   occlusion) → `pipeline/scene3d.py` + `@_generator` recipes per the promotion path in
   `scene3d-geometry-design.md`: `axonometric_solid` (Schrägriss of prisms/pyramids/cylinders, hidden
@@ -137,8 +181,9 @@ code-gen/sourced **forever**. Resolution hierarchy: reuse › sourced PD/CC › 
 
 ### Maintenance (small, standing)
 
-- **CHE2 routing fix:** the `_code_for` name→code collision (two "CHEMIE" subjects) leaves CHE2's 6 US
-  cells unfillable by name-routed campaigns — disambiguate the alias/registry routing.
+- **CHE2 routing fix:** ✅ DONE (S14) — `_DISPLAY_NAME_OVERRIDES` keyed `(stufe, code)` gives the second
+  CHEMIE subject a distinct display name ("Chemie (Wirtschaftskundliches Realgymnasium)") at `_meta`
+  load, so name-routed campaigns reach CHE2's 6 US cells; plain "Chemie" still routes to CHE.
 - **Fassung 2026/27 watch** *(deferred by decision, Session 3 — do not relitigate)*: becomes a real
   task when the new consolidated Fassung is published in full text; then run the parser diff + the
   migration tooling (old Track-3 #8: ID map, re-anchor, re-derive, flag orphans).
