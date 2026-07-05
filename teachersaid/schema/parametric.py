@@ -27,6 +27,46 @@ def _no_digits(v: str | None) -> str | None:
     return v
 
 
+# --- Misconception-engine seam (roadmap A3) ----------------------------------
+# The recipe→MC contract. A `multiple_choice` recipe declares WHAT it drew (magnitudes) +
+# the correct value + which catalogued misconceptions apply + how the value is formatted.
+# The engine (`pipeline/misconceive.py` + `pipeline/parametrize.py`) then COMPUTES each
+# distractor by applying a transform to those magnitudes — so a distractor is
+# correct-by-construction (a documented error over the same numbers, guaranteed ≠ the
+# correct answer, deduped, plausibility-gated). Everything on `MCSpec` is a request the
+# recipe fills; the derived options + which misconception each probes are computed and land
+# on `Instance.mc_distractors` (never authored by hand or LLM — the engine writes them).
+class MCSpec(BaseModel):
+    """A recipe's declaration of how to build correct-by-construction MC distractors.
+
+    `magnitudes` are the raw drawn numbers a transform needs (e.g. {"a":3,"b":5,"c":20});
+    `correct` is the correct numeric value (a plain float); `applicable` names the catalog
+    ids to try, in the order they should be offered; `unit`/`prefix`/`dp` reproduce the
+    recipe's OWN German number+unit formatting so every distractor looks stylistically
+    identical to the answer (a distractor that reads differently is a free giveaway);
+    `nonneg` marks that a negative value is physically/mathematically impossible for this
+    quantity and must be dropped (the plausibility gate)."""
+    model_config = ConfigDict(extra="forbid")
+    magnitudes: dict[str, float]
+    correct: float
+    applicable: list[str]              # misconception ids (order = option order before shuffle)
+    unit: str = ""                     # e.g. "V", "Ω", "%", "m/s" (spaced after the number)
+    prefix: str = ""                   # e.g. "x = ", "U = " (leads the formatted value)
+    dp: int = 2                        # decimal places for the German formatter
+    nonneg: bool = False               # drop a distractor whose value is < 0 (impossible)
+    as_fraction: bool = False          # format values as an exact reduced fraction "p/q"
+    # (fraction recipes) instead of a German decimal — recovered exactly via limit_denominator
+    select: str = "one"               # MC selection mode ("one" — a single correct option)
+
+
+class Distractor(BaseModel):
+    """A DERIVED wrong option: its formatted text + the catalogued misconception it probes.
+    Computed at variant time by the engine; never authored. Teacher-guide facing."""
+    model_config = ConfigDict(extra="forbid")
+    text: str                          # the formatted wrong option (same style as the answer)
+    misconception_id: str              # a `grounding/misconceptions` catalog id
+
+
 class Instance(BaseModel):
     """What a recipe produces for one seed: slot values + the derived answer + steps."""
     model_config = ConfigDict(extra="forbid")
@@ -37,6 +77,11 @@ class Instance(BaseModel):
     # by recipes with a difficulty knob / an intrinsic item band; never a requested-but-ignored value
     context: str | None = None         # curated, digit-free sentence keyed to the DRAWN item
     # (where the substance/reaction occurs); prefixes the prompt. Selected from grounding, never authored.
+    mc: MCSpec | None = None           # a multiple_choice recipe's distractor-build request (see MCSpec)
+    mc_distractors: list[Distractor] = Field(default_factory=list)  # DERIVED wrong options +
+    # the misconception each probes — computed by the engine at variant time, never authored.
+    # (`Instance` is a pipeline-internal artifact the LLM never emits — no generation view — so
+    # these derived fields are derivation-safe by construction.)
 
     @field_validator("difficulty")
     @classmethod

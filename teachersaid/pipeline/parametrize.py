@@ -32,12 +32,15 @@ from sympy import (
     linsolve, pi, solve, sqrt, symbols,
 )
 
-from ..schema.blocks import SolutionStep, TaskBlock
-from ..schema.parametric import Instance, ParametricTask
-from ..schema.response import LinesResponse
+from ..schema.blocks import MultipleChoicePayload, SolutionStep, TaskBlock
+from ..schema.parametric import Instance, MCSpec, ParametricTask
+from ..schema.response import ChoicesResponse, LinesResponse
 from ..schema.richtext import InlineRun, RichText
 
 _RECIPES: dict = {}
+
+# Option letters for a multiple_choice variant (A, B, C, …).
+_MC_LETTERS = "ABCDEFGH"
 
 
 def _recipe(rid: str):
@@ -80,12 +83,65 @@ def _accepts_difficulty(recipe) -> bool:
     return "difficulty" in inspect.signature(recipe).parameters
 
 
+def _mc_fields(inst: Instance, rng: random.Random) -> dict:
+    """Build the multiple_choice TaskBlock fields from a recipe's `Instance.mc` request.
+
+    Runs the misconception engine (`pipeline/misconceive`): each distractor is COMPUTED by
+    applying a catalogued misconception to the SAME drawn numbers, guaranteed ≠ the correct
+    answer, deduped, plausibility-gated; the correct option is shuffled in deterministically
+    (using `rng`, whose state is fixed by the seed). Sets `payload` (labelled options) +
+    `response` (`choices`), the `answer_key` naming the correct letter, and — the payoff —
+    one `watch_out` per distractor naming which misconception it probes ("B prüft:
+    Vorzeichenfehler"). Mutates `inst.mc_distractors` with the derived records. Raises
+    `Unsuitable` if the engine could not build a valid MC (→ the seed is resampled)."""
+    from ..grounding import misconceptions as _cat
+    from . import misconceive as _mis
+
+    spec = inst.mc
+    try:
+        res = _mis.build_distractors(spec, rng)
+    except ValueError as exc:                          # degenerate MC → resample this seed
+        raise Unsuitable from exc
+
+    n = len(res.options)
+    letters = _MC_LETTERS[:n]
+    options = [f"{letters[i]}) {opt}" for i, opt in enumerate(res.options)]
+    correct_letter = letters[res.correct_index]
+
+    # record the derived distractors in the DISPLAYED option order (with their letters)
+    text_to_letter = {opt: letters[i] for i, opt in enumerate(res.options)}
+    inst.mc_distractors = list(res.distractors)
+
+    # the teacher-guide "which misconception each distractor probes" lines (the payoff).
+    # One per distractor, in option order: the curated German name + a short source tag
+    # ("B prüft: Vorzeichenfehler (Radatz)"). The full description stays in the catalog.
+    watch_outs: list[str] = []
+    for d in res.distractors:
+        m = _cat.get(d.misconception_id)
+        # the source's lead author(s) — the text before the first "(" year, trimmed
+        src = m.source.split("(")[0].strip().rstrip(",") or m.source
+        letter = text_to_letter[d.text]
+        watch_outs.append(f"{letter} prüft: {m.name} ({src})")
+
+    answer_key = f"{correct_letter}) {res.options[res.correct_index]} (richtig)"
+    return {
+        "payload": MultipleChoicePayload(options=options, select=spec.select),
+        "response": ChoicesResponse(options=list(letters), select=spec.select),
+        "answer_key": answer_key,
+        "watch_outs": watch_outs,
+    }
+
+
 def instantiate(task: ParametricTask, seed: int, *,
                 difficulty: int | None = None) -> TaskBlock:
     """Build one concrete TaskBlock for `seed` (deterministic). `difficulty` (1–3) is
     passed only to recipes that declare the knob; others are drawn unchanged (the ramp
     request is honestly ignored — see the module docstring). The block's `difficulty`
-    comes from what the recipe DELIVERED (`Instance.difficulty`), never the request."""
+    comes from what the recipe DELIVERED (`Instance.difficulty`), never the request.
+
+    If the recipe's Instance carries an `mc` request, the block is emitted as a
+    `multiple_choice` task with correct-by-construction misconception distractors (see
+    `_mc_fields`); otherwise it is the ordinary open/lines task."""
     rng = random.Random(seed)
     recipe = _RECIPES.get(task.recipe)
     if recipe is None:
@@ -95,8 +151,13 @@ def instantiate(task: ParametricTask, seed: int, *,
     for _ in range(500):
         try:
             inst = recipe(rng, difficulty=difficulty) if pass_difficulty else recipe(rng)
+            if inst.mc is not None:                    # MC path: may reject a degenerate draw
+                mc = _mc_fields(inst, rng)
+            else:
+                mc = None
             break
         except Unsuitable:
+            inst = None
             continue
     if inst is None:
         raise RuntimeError(f"recipe {task.recipe}: no valid instance in 500 tries")
@@ -104,7 +165,7 @@ def instantiate(task: ParametricTask, seed: int, *,
     if inst.context:                               # curated, digit-free item context
         filled = f"{inst.context} {filled}"
     prompt = _template_to_richtext(filled)
-    return TaskBlock(
+    fields = dict(
         id=f"{task.id}#{seed}", kind=task.kind, prompt=prompt,
         response=task.response or LinesResponse(n=2),
         cognitive_level=task.cognitive_level, dimensions=list(task.dimensions),
@@ -112,6 +173,9 @@ def instantiate(task: ParametricTask, seed: int, *,
         est_minutes=task.est_minutes, answer_key=inst.answer, solution_steps=inst.steps,
         difficulty=inst.difficulty,
     )
+    if mc is not None:                                 # override for the MC projection
+        fields.update(mc)
+    return TaskBlock(**fields)
 
 
 def ramp_bands(n: int) -> list[int]:
@@ -546,6 +610,220 @@ def _vector_dot_angle(rng: random.Random) -> Instance:
     return Instance(params={"va": va, "vb": vb}, answer=answer, steps=steps)
 
 
+# === Misconception-MC recipes (roadmap A3) ===========================================
+# Each draws exactly like its open-answer twin, but ALSO declares an `MCSpec`: the drawn
+# magnitudes + correct value + which catalogued misconceptions apply + the answer's own
+# formatting. `instantiate` then emits a multiple_choice TaskBlock whose distractors are
+# COMPUTED (pipeline/misconceive) by applying those misconceptions to the same numbers —
+# correct-by-construction wrong options, each named in the teacher guide. These live here
+# (not in chemistry.py/physics.py, which stay read-only) and read grounding directly.
+
+# small German-number helpers local to the MC recipes (kept independent of physics.py)
+def _de(value, dp: int = 2) -> str:
+    """German decimal (comma), trailing zeros trimmed; whole numbers without a decimal."""
+    f = float(value)
+    if f == int(f) and abs(f) < 1e15:
+        return str(int(f))
+    return f"{f:.{dp}f}".rstrip("0").rstrip(".").replace(".", ",")
+
+
+def _M_de(value, dp: int = 2) -> str:
+    """German decimal with a fixed dp (for molar masses in the Rechenweg)."""
+    return f"{float(value):.{dp}f}".replace(".", ",")
+
+
+@_recipe("linear_equation_mc")
+def _linear_equation_mc(rng: random.Random) -> Instance:
+    """Löse a·x + b = c — als Multiple-Choice mit Fehler-Distraktoren (Vorzeichenfehler,
+    verwechselte Umkehroperation). x ganzzahlig; die falschen Optionen sind die Werte, die
+    genau diese Fehler auf denselben Zahlen liefern."""
+    x = symbols("x")
+    a = rng.randint(2, 9)
+    xs = rng.randint(-9, 9)
+    if xs == 0:
+        raise Unsuitable
+    b = rng.randint(-12, 12)
+    if b == 0:                                         # b=0 → sign error yields the same value
+        raise Unsuitable
+    c = a * xs + b
+    steps = [
+        SolutionStep(text="Ausgangsgleichung", expr=latex(Eq(a * x + b, c))),
+        SolutionStep(text="den konstanten Term auf die rechte Seite bringen",
+                     expr=latex(Eq(a * x, c - b))),
+        SolutionStep(text="durch den Koeffizienten dividieren",
+                     expr=latex(Eq(x, Rational(c - b, a)))),
+    ]
+    mc = MCSpec(magnitudes={"a": float(a), "b": float(b), "c": float(c)},
+                correct=float(xs), applicable=["sign_error", "inverse_operation"],
+                prefix="x = ", dp=2)
+    return Instance(params={"eq": latex(Eq(a * x + b, c))},
+                    answer=[_math(latex(Eq(x, Integer(xs))))], steps=steps, mc=mc)
+
+
+@_recipe("percentage_mc")
+def _percentage_mc(rng: random.Random) -> Instance:
+    """Wie viel sind p % von G? — als Multiple-Choice mit Fehler-Distraktoren
+    (Prozentbasis verwechselt, Einheitenfehler um eine Zehnerpotenz)."""
+    base = rng.choice([40, 50, 60, 80, 120, 150, 200, 240, 300, 400, 500])
+    pct = rng.choice([5, 10, 15, 20, 25, 30, 40, 50, 75])
+    res = Rational(base * pct, 100)
+    steps = [
+        SolutionStep(text=f"{pct} % als Bruch schreiben",
+                     expr=latex(Eq(symbols("p"), Rational(pct, 100)))),
+        SolutionStep(text="mit dem Grundwert multiplizieren",
+                     expr=f"{latex(Rational(pct, 100))} \\cdot {base} = {latex(res)}"),
+    ]
+    mc = MCSpec(magnitudes={"base": float(base), "pct": float(pct)},
+                correct=float(res),
+                applicable=["percent_base_confusion", "unit_power_ten"],
+                dp=2, nonneg=True)
+    return Instance(params={"pct": pct, "base": base},
+                    answer=f"{latex(res)}", steps=steps, mc=mc)
+
+
+@_recipe("fraction_add_mc")
+def _fraction_add_mc(rng: random.Random) -> Instance:
+    """a/b + c/d (verschiedene Nenner) — als Multiple-Choice mit den beiden klassischen
+    Bruch-Additionsfehlern: Zähler+Zähler/Nenner+Nenner, und Zähler nicht miterweitert.
+    Die richtige Option und die Distraktoren sind exakte Brüche."""
+    b = rng.choice([2, 3, 4, 5, 6, 8])
+    d = rng.choice([2, 3, 4, 5, 6, 8])
+    if b == d:
+        raise Unsuitable
+    a = rng.randint(1, b - 1)
+    c = rng.randint(1, d - 1)
+    f1, f2 = Rational(a, b), Rational(c, d)
+    total = f1 + f2
+    lcm = b * d // math.gcd(b, d)
+    n1, n2 = a * (lcm // b), c * (lcm // d)
+    expanded = f"\\frac{{{n1}}}{{{lcm}}} + \\frac{{{n2}}}{{{lcm}}}"
+    steps = [
+        SolutionStep(text="auf den gemeinsamen Nenner erweitern",
+                     expr=f"{latex(f1)} + {latex(f2)} = {expanded}"),
+        SolutionStep(text="Zähler addieren", expr=f"= \\frac{{{n1 + n2}}}{{{lcm}}}"),
+        SolutionStep(text="kürzen", expr=f"= {latex(total)}"),
+    ]
+    mc = MCSpec(magnitudes={"a": float(a), "b": float(b), "c": float(c),
+                            "d": float(d), "lcm": float(lcm)},
+                correct=float(total),
+                applicable=["fraction_add_across", "fraction_keep_numerators"],
+                as_fraction=True, nonneg=True)
+    return Instance(params={"f1": latex(f1), "f2": latex(f2)},
+                    answer=[_math(latex(total))], steps=steps, mc=mc)
+
+
+@_recipe("ohm_mc")
+def _ohm_mc(rng: random.Random) -> Instance:
+    """Ohm'sches Gesetz, nach I gefragt (I = U/R) — als Multiple-Choice. Der Leit-Distraktor
+    ist der klassische Fehler „Formel nicht umgestellt“: U·R statt U/R (dazu ein
+    Zehnerpotenz-Einheitenfehler auf dem richtigen Wert)."""
+    # choose clean U, R so I = U/R is tidy; ask for I (the quotient case, where the
+    # un-rearranged-formula error U·R is a distinct wrong value).
+    I_val = rng.choice([Rational(1, 4), Rational(1, 2), Integer(1), Integer(2), Integer(4)])
+    R_val = rng.choice([5, 10, 20, 25, 50, 100, 200])
+    U_val = R_val * I_val                              # exact
+    if not (1 <= U_val <= 500):
+        raise Unsuitable
+    I_f = float(I_val)
+    steps = [
+        SolutionStep(text="Ohm'sches Gesetz nach I umstellen", expr="I = \\frac{U}{R}"),
+        SolutionStep(text="Werte einsetzen",
+                     expr=f"I = \\frac{{{_de(U_val)}\\,\\text{{V}}}}{{{_de(R_val)}\\,\\Omega}}"),
+        SolutionStep(text="ausrechnen (V/Ω = A)", expr=f"I = {_de(I_f)}\\,\\text{{A}}"),
+    ]
+    given = (f"An einem Widerstand von {_de(R_val)} Ω liegt die Spannung {_de(U_val)} V. "
+             f"Wie groß ist die Stromstärke I?")
+    mc = MCSpec(magnitudes={"g1": float(U_val), "g2": float(R_val)},
+                correct=I_f, applicable=["formula_not_rearranged", "unit_power_ten"],
+                prefix="I = ", unit="A", dp=2, nonneg=True)
+    return Instance(params={"aufgabe": given}, answer=f"I = {_de(I_f)} A",
+                    steps=steps, mc=mc)
+
+
+@_recipe("uniform_motion_mc")
+def _uniform_motion_mc(rng: random.Random) -> Instance:
+    """Gleichförmige Bewegung, nach t gefragt (t = s/v) — als Multiple-Choice. Leit-
+    Distraktor: „Formel nicht umgestellt“ (s·v statt s/v), plus Zehnerpotenz-Fehler."""
+    v_val = rng.choice([2, 3, 4, 5, 6, 8, 10])          # m/s
+    t_val = rng.choice([4, 5, 6, 8, 10, 12, 15, 20])    # s
+    s_val = v_val * t_val
+    steps = [
+        SolutionStep(text="Formel umstellen (nach t)", expr="t = \\frac{s}{v}"),
+        SolutionStep(text="Werte einsetzen",
+                     expr=f"t = \\frac{{{_de(s_val)}\\,\\text{{m}}}}{{{_de(v_val)}\\,\\frac{{\\text{{m}}}}{{\\text{{s}}}}}}"),
+        SolutionStep(text="ausrechnen", expr=f"t = {_de(t_val)}\\,\\text{{s}}"),
+    ]
+    given = (f"Ein Körper bewegt sich gleichförmig mit {_de(v_val)} m/s und legt "
+             f"{_de(s_val)} m zurück. Wie lange ist er unterwegs?")
+    mc = MCSpec(magnitudes={"g1": float(s_val), "g2": float(v_val)},
+                correct=float(t_val),
+                applicable=["formula_not_rearranged", "unit_power_ten"],
+                prefix="t = ", unit="s", dp=2, nonneg=True)
+    return Instance(params={"aufgabe": given}, answer=f"t = {_de(t_val)} s",
+                    steps=steps, mc=mc)
+
+
+@_recipe("resistors_mc")
+def _resistors_mc(rng: random.Random) -> Instance:
+    """Ersatzwiderstand einer Parallelschaltung — als Multiple-Choice. DER klassische
+    Fehler ist der Leit-Distraktor: parallel wie Reihe addiert (R = ΣRᵢ statt Kehrwerte).
+    Draws are constrained so the true parallel value is tidy (≤ one decimal)."""
+    pool = [2, 3, 4, 6, 10, 12, 20, 30, 60, 100, 200]
+    n = rng.choice([2, 2, 3])
+    vals = [rng.choice(pool) for _ in range(n)]
+    inv = sum(Rational(1, v) for v in vals)
+    Rges = 1 / inv                                      # exact Rational
+    if (Rges * 10) != int(Rges * 10):                  # pedagogical-ugliness guard
+        raise Unsuitable
+    plain_sum = sum(vals)
+    if Rges == plain_sum:                              # (can't happen for parallel, but guard)
+        raise Unsuitable
+    inv_terms = " + ".join(f"\\frac{{1}}{{{v}}}" for v in vals)
+    steps = [
+        SolutionStep(text="Parallelschaltung: die Kehrwerte addieren sich",
+                     expr="\\frac{1}{R_{ges}} = " + inv_terms),
+        SolutionStep(text="Kehrwert bilden", expr=f"R_{{ges}} = {_de(float(Rges))}\\,\\Omega"),
+    ]
+    listing = " und ".join(f"{_de(v)} Ω" for v in vals)
+    given = (f"In einer Parallelschaltung liegen die Widerstände {listing}. "
+             f"Berechne den Ersatzwiderstand R_ges.")
+    mc = MCSpec(magnitudes={"sum": float(plain_sum)},
+                correct=float(Rges),
+                applicable=["parallel_as_series", "unit_power_ten"],
+                prefix="R_ges = ", unit="Ω", dp=2, nonneg=True)
+    return Instance(params={"aufgabe": given}, answer=f"R_ges = {_de(float(Rges))} Ω",
+                    steps=steps, mc=mc)
+
+
+@_recipe("molar_mass_mc")
+def _molar_mass_mc(rng: random.Random) -> Instance:
+    """Molare Masse einer Verbindung — als Multiple-Choice. Leit-Distraktor: die
+    Indexzahlen der Summenformel werden ignoriert (H₂O als H·O gezählt). Reads the grounded
+    IUPAC masses directly (grounding is fair game; chemistry.py stays untouched)."""
+    from ..grounding import chemistry as chem
+    # multi-atom formulas only, so ignoring subscripts produces a genuinely different mass
+    pool = ["H2O", "CO2", "H2SO4", "CaCO3", "C6H12O6", "Fe2O3", "NH3", "CH4",
+            "Al2O3", "Na2CO3", "HNO3"]
+    formula = rng.choice(pool)
+    counts = chem.parse_formula(formula)
+    M = chem.molar_mass(formula)
+    M_flat = sum(chem.ATOMIC_MASSES[el] for el in counts)   # each element counted once
+    if round(M, 2) == round(M_flat, 2):
+        raise Unsuitable                              # no distinct distractor (shouldn't occur)
+    sub = chem.subscript(formula)
+    rows = [SolutionStep(text=f"{chem.ELEMENT_NAMES.get(el, el)} ({el}): {n} · "
+                              f"{_M_de(chem.molar_mass(el))} g/mol = "
+                              f"{_M_de(chem.ATOMIC_MASSES[el] * n)} g/mol")
+            for el, n in counts.items()]
+    rows.append(SolutionStep(text=f"Summe: M = {_M_de(M)} g/mol"))
+    mc = MCSpec(magnitudes={"flat": float(M_flat)}, correct=float(M),
+                applicable=["subscript_ignored", "unit_power_ten"],
+                unit="g/mol", dp=2, nonneg=True)
+    return Instance(params={"formel": sub}, answer=f"M({sub}) ≈ {_M_de(M)} g/mol",
+                    steps=rows, mc=mc)
+
+
 # Chemistry recipes register into the same _RECIPES (so make_variants/templates drive
 # them uniformly). Imported last so the names above are defined first (no import cycle).
 from . import chemistry as _chemistry  # noqa: E402,F401
+from . import physics as _physics  # noqa: E402,F401

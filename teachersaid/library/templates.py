@@ -233,6 +233,113 @@ PARAM_TEMPLATES: list[ParametricTask] = [
                         "Begründe deine Einschätzung.",
         serves=[Serves(competence_id="CHE.US.x.STA.02", relation="exercises")],
         dimensions=["S"], cognitive_level="apply", kind="open_response", est_minutes=4),
+
+    # --- Physik (Unterstufe, 3. Kl.) — the parametric pack: correct by construction from
+    # sympy.physics.units, every answer DIMENSIONALLY VERIFIED (pipeline/physics.py). The
+    # recipe builds the whole item text into {gegeben}+{frage}; the kind is open_response
+    # (a core kind, so no subject-model change) — students show the Rechenweg on the lines.
+    ParametricTask(
+        id="phy-us-bewegung", title="Gleichförmige Bewegung (v = s/t)",
+        subject="Physik", klasse=3, kompetenzbereich="Mechanik", recipe="uniform_motion",
+        prompt_template="{gegeben} {frage}",
+        serves=[Serves(competence_id="PHY.US.3.MEC.01", relation="exercises")],
+        dimensions=["W"], cognitive_level="apply", kind="open_response", est_minutes=5,
+        context_frame="Diese Aufgaben trainieren den Zusammenhang von Weg, Zeit und "
+                      "Geschwindigkeit bei gleichförmiger Bewegung — mit Einheiten."),
+    ParametricTask(
+        id="phy-us-ohm", title="Ohm'sches Gesetz (U = R·I)",
+        subject="Physik", klasse=3, kompetenzbereich="Elektrizität und Magnetismus",
+        recipe="ohm", prompt_template="{gegeben} {frage}",
+        serves=[Serves(competence_id="PHY.US.3.ELE.01", relation="exercises")],
+        dimensions=["W"], cognitive_level="apply", kind="open_response", est_minutes=5,
+        context_frame="Diese Aufgaben verknüpfen Spannung, Stromstärke und Widerstand "
+                      "über das Ohm'sche Gesetz — die Einheiten müssen zusammenpassen."),
+    ParametricTask(
+        id="phy-us-hebel", title="Hebelgesetz (F₁·a₁ = F₂·a₂)",
+        subject="Physik", klasse=3, kompetenzbereich="Mechanik", recipe="lever",
+        prompt_template="{gegeben} {frage}",
+        serves=[Serves(competence_id="PHY.US.3.MEC.03", relation="exercises")],
+        dimensions=["E"], cognitive_level="apply", kind="open_response", est_minutes=6,
+        context_frame="Diese Aufgaben wenden das Hebelgesetz an: im Gleichgewicht sind "
+                      "die Drehmomente auf beiden Seiten gleich groß."),
+    ParametricTask(
+        id="phy-us-arbeit-leistung", title="Elektrische Arbeit und Lageenergie",
+        subject="Physik", klasse=3, kompetenzbereich="Energie", recipe="energy_power",
+        prompt_template="{gegeben} {frage}",
+        serves=[Serves(competence_id="PHY.US.3.ENE.01", relation="exercises")],
+        dimensions=["W"], cognitive_level="apply", kind="open_response", est_minutes=6,
+        context_frame="Diese Aufgaben berechnen Energie aus Leistung und Zeit (W = P·t) "
+                      "bzw. die Lageenergie (E = m·g·h) — mit passenden Einheiten."),
+
+    # --- Physik (Oberstufe) — the same dimensionally-verified engine, anchored to the
+    # semesterised Oberstufe Lehrstoff (Thermodynamik/Teilchenmodell, Elektrizitätslehre,
+    # elektrische Energie). Density lives here (kein eigener Dichte-Deskriptor in der US). -
+    ParametricTask(
+        id="phy-os-dichte", title="Dichte (ρ = m/V)",
+        subject="Physik", klasse=5, kompetenzbereich="Thermodynamik", recipe="density",
+        prompt_template="{gegeben} {frage}",
+        serves=[Serves(competence_id="PHY.OS.5.THE.01", relation="exercises")],
+        dimensions=["W"], cognitive_level="apply", kind="open_response", est_minutes=5,
+        context_frame="Diese Aufgaben verknüpfen Masse, Volumen und Dichte — die Dichte "
+                      "ist eine Stoffeigenschaft, die auf einen Stoff schließen lässt."),
+    ParametricTask(
+        id="phy-os-ersatzwiderstand", title="Ersatzwiderstand (Reihe/parallel)",
+        subject="Physik", klasse=6, kompetenzbereich="Elektrizitätslehre",
+        recipe="resistors", prompt_template="{gegeben} {frage}",
+        serves=[Serves(competence_id="PHY.OS.6.ELE.01", relation="exercises")],
+        dimensions=["W"], cognitive_level="apply", kind="open_response", est_minutes=6,
+        context_frame="Diese Aufgaben berechnen den Ersatzwiderstand: in Reihe addieren "
+                      "sich die Widerstände, parallel die Kehrwerte."),
+    ParametricTask(
+        id="phy-os-arbeit-leistung", title="Elektrische Arbeit und Energie",
+        subject="Physik", klasse=6, kompetenzbereich="Elektrische Energie",
+        recipe="energy_power", prompt_template="{gegeben} {frage}",
+        serves=[Serves(competence_id="PHY.OS.6.ELE2.01", relation="exercises")],
+        dimensions=["W"], cognitive_level="apply", kind="open_response", est_minutes=6,
+        context_frame="Diese Aufgaben berechnen die elektrische Arbeit (W = P·t) und die "
+                      "Lageenergie (E = m·g·h) — Energie in J bzw. kWh."),
+
+    # --- Misconception-MC templates (roadmap A3) — multiple_choice with correct-by-
+    # construction distractors: each wrong option is COMPUTED by applying a documented
+    # misconception to the SAME drawn numbers (pipeline/misconceive), and the teacher guide
+    # names which error each distractor probes ("B prüft: Vorzeichenfehler"). The kind is
+    # multiple_choice (a core kind — no subject-model change); the options ARE the response
+    # surface (no write-space, per _SELF_CONTAINED_PAYLOADS). -----------------------------
+    ParametricTask(
+        id="mat-prozent-mc", title="Prozentrechnung (Multiple Choice)",
+        subject="Mathematik", klasse=2, kompetenzbereich="1: Zahlen und Maße",
+        recipe="percentage_mc", prompt_template="Wie viel sind {pct} % von {base}?",
+        context_frame="Bei Multiple-Choice-Aufgaben lohnt sich Nachrechnen: die falschen "
+                      "Antworten sind typische Rechenfehler, keine Zufallszahlen.",
+        serves=[Serves(competence_id="MAT.US.2.ZAH.04", relation="exercises")],
+        dimensions=["OPE"], cognitive_level="apply", kind="multiple_choice", est_minutes=3),
+    ParametricTask(
+        id="mat-lineare-gleichung-mc",
+        title="Lineare Gleichungen lösen (Multiple Choice)",
+        subject="Mathematik", klasse=2, kompetenzbereich="2: Variablen und Funktionen",
+        recipe="linear_equation_mc",
+        prompt_template="Löse die Gleichung nach $x$ auf: ${eq}$. Welche Lösung ist richtig?",
+        context_frame="Die falschen Antworten entstehen durch typische Umformungsfehler — "
+                      "wer die Probe macht, erkennt sie.",
+        serves=[Serves(competence_id="MAT.US.2.VAR.02", relation="exercises")],
+        dimensions=["OPE"], cognitive_level="apply", kind="multiple_choice", est_minutes=4),
+    ParametricTask(
+        id="phy-us-ohm-mc", title="Ohm'sches Gesetz (Multiple Choice)",
+        subject="Physik", klasse=3, kompetenzbereich="Elektrizität und Magnetismus",
+        recipe="ohm_mc", prompt_template="{aufgabe}",
+        context_frame="Die falschen Antworten sind typische Fehler — etwa das Multiplizieren "
+                      "statt Dividierens, wenn die Formel nicht umgestellt wird.",
+        serves=[Serves(competence_id="PHY.US.3.ELE.01", relation="exercises")],
+        dimensions=["W"], cognitive_level="apply", kind="multiple_choice", est_minutes=4),
+    ParametricTask(
+        id="phy-os-ersatzwiderstand-mc",
+        title="Ersatzwiderstand parallel (Multiple Choice)",
+        subject="Physik", klasse=6, kompetenzbereich="Elektrizitätslehre",
+        recipe="resistors_mc", prompt_template="{aufgabe}",
+        context_frame="Der häufigste Fehler bei der Parallelschaltung: die Widerstände wie "
+                      "in einer Reihenschaltung einfach addieren — genau das ist ein Distraktor.",
+        serves=[Serves(competence_id="PHY.OS.6.ELE.01", relation="exercises")],
+        dimensions=["W"], cognitive_level="apply", kind="multiple_choice", est_minutes=5),
 ]
 
 
