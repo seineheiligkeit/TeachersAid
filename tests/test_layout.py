@@ -46,6 +46,33 @@ def test_choropleth_no_overlap_with_enclave(tmp_path, monkeypatch):
     assert _label_overlaps(monkeypatch, tmp_path, "matplotlib:choropleth_map", spec) == []
 
 
+def test_house_font_renders_glyphs_at_every_size():
+    """Embedded-bitmap strikes (Windows Calibri ships EBDT/EBLC) make FreeType select a
+    bitmap at exactly the strike ppem sizes, and Agg then draws EMPTY outlines — the text
+    vanishes while still *measuring* (so the overlap lint can't see it). figstyle strips
+    the strikes at registration; this locks it: every size of the type scale (plus the
+    choropleth's font-fit range) must produce visible glyphs at asset (150) and scene
+    (165) dpi."""
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    import numpy as np
+
+    from teachersaid.pipeline import figstyle as fs
+
+    sizes = sorted({*vars(fs.TYPE).values(), 6.0, 6.5, 7.5, 8.0})
+    for dpi in (150, 165):
+        for size in sizes:
+            with plt.rc_context(fs.house_rc()):
+                fig = plt.figure(figsize=(2.2, 0.6), dpi=dpi)
+                fig.text(0.05, 0.35, "Wq19 Übung", fontsize=size)
+                fig.canvas.draw()
+                rgba = np.asarray(fig.canvas.buffer_rgba()).copy()
+                plt.close(fig)
+            assert (rgba[..., :3].min(axis=-1) < 128).any(), \
+                f"{size} pt at {dpi} dpi rendered no glyphs (embedded-bitmap strike?)"
+
+
 def test_overlap_lint_actually_detects_a_collision():
     # sanity: the lint is not vacuous — two labels at the same spot must be flagged
     import matplotlib

@@ -1,10 +1,9 @@
 """The figure styleguide — the single source of truth for how a TeachersAid figure *looks*.
 
-Today every recipe in `pipeline/assets.py` hard-codes its own palette as inline hex
-literals (`#33506e`, `#4f6f8f`, `#b03a2e`, …), copy-pasted ~25 times. That is why every
-figure looks the same *and* why there is no lever to change it. This module replaces the
-scattered literals with a small, **named, semantic** design system that the recipes
-reference — so the look is consistent, meaningful, and tunable in one place.
+Every recipe in `pipeline/assets.py` used to hard-code its own palette as inline hex
+literals (`#33506e`, `#4f6f8f`, `#b03a2e`, …), copy-pasted ~25 times. Since the styleguide
+port (9 Jul 2026) the recipes reference this small, **named, semantic** design system
+instead — so the look is consistent, meaningful, and tunable in one place.
 
 The organising idea is **semantic colour roles**, not decoration: a colour MEANS something
 and means the *same* thing in every figure —
@@ -23,14 +22,16 @@ is the theming hook — a restrained per-subject hue layered on top of the const
 semantic roles, so we can dial identity (Q2: roles-first, light subject accents) without
 rewriting anything: change the dict, not the recipes.
 
-Pure data + thin matplotlib helpers; imports nothing from the engine. Call
-`use_house_style()` once before building figures (the recipes will, like
-`inline_math.configure`). Mirrors `rendering/reportlab_base`'s font discovery so the
-figure text matches the worksheet body text (Carlito/Calibri) instead of DejaVu — figures
-read as part of the document, not pasted in.
+Pure data + thin matplotlib helpers; imports nothing from the engine. The style is applied
+SCOPED: `build_asset` and `scene_to_png` wrap every build in `plt.rc_context(house_rc())`,
+so nothing outside the engine's own figures is restyled (`use_house_style()` remains for
+global application, e.g. the specimen scripts). Mirrors `rendering/reportlab_base`'s font
+discovery so the figure text matches the worksheet body text (Carlito/Calibri) instead of
+DejaVu — figures read as part of the document, not pasted in.
 """
 from __future__ import annotations
 
+import tempfile
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -180,6 +181,45 @@ def _find(name: str) -> Path | None:
     return None
 
 
+def _strip_bitmap_strikes(path: Path) -> Path:
+    """Windows Calibri ships EMBEDDED BITMAP strikes (EBDT/EBLC) for small sizes; FreeType
+    selects a strike at exactly its ppem sizes and matplotlib's Agg path renderer then draws
+    EMPTY outlines — text at e.g. 9 pt / 150 dpi silently vanishes (while its metrics still
+    measure, so no lint fires). Return an outline-only copy (cached in the temp dir) so every
+    size renders; a font without strikes (Carlito) passes through untouched. fontTools is a
+    matplotlib dependency — no new dep."""
+    from fontTools.ttLib import TTFont
+
+    strike_tables = ("EBDT", "EBLC", "EBSC", "bdat", "bloc", "bhed")
+    font = TTFont(str(path), lazy=True)
+    try:
+        if not any(t in font for t in strike_tables):
+            return path
+        out = Path(tempfile.gettempdir()) / f"teachersaid_{path.stem}_nostrike.ttf"
+        if not out.exists():
+            for t in strike_tables:
+                if t in font:
+                    del font[t]
+            font.save(str(out))
+        return out
+    finally:
+        font.close()
+
+
+def _add_font(path: Path) -> None:
+    """Register `path` with matplotlib, strike-stripped. When a stripped copy replaces the
+    original, PURGE the original from the font manager (the system scan already lists it and
+    family-name resolution would otherwise keep picking the strike-carrying file)."""
+    import os
+
+    stripped = _strip_bitmap_strikes(path)
+    fm.fontManager.addfont(str(stripped))
+    if stripped != path:
+        key = os.path.normcase(str(path))
+        fm.fontManager.ttflist = [e for e in fm.fontManager.ttflist
+                                  if os.path.normcase(e.fname) != key]
+
+
 def _register_font() -> str:
     """Register the first available real family with matplotlib; return its name (or the
     DejaVu Sans fallback so figures still render on a bare machine)."""
@@ -187,11 +227,11 @@ def _register_font() -> str:
         path = _find(regular)
         if not path:
             continue
-        fm.fontManager.addfont(str(path))
+        _add_font(path)
         for extra in others:                     # bold/italic so weight= works
             p = _find(extra)
             if p:
-                fm.fontManager.addfont(str(p))
+                _add_font(p)
         return fm.FontProperties(fname=str(path)).get_name()
     return "DejaVu Sans"
 
@@ -204,9 +244,8 @@ _APPLIED = False
 def house_rc() -> dict:
     """The house rcParams as a dict — the document font, the type scale, the ink/grid colours,
     and the categorical colour cycle (so a multi-series plot uses the ramp, not matplotlib's
-    defaults). Use with `plt.rc_context(house_rc())` to scope the style to one figure (e.g. the
-    scene engine) WITHOUT restyling the not-yet-ported recipes; `use_house_style()` applies it
-    globally (for when the recipes are ported)."""
+    defaults). `build_asset`/`scene_to_png` wrap builds in `plt.rc_context(house_rc())` so the
+    style stays scoped to the engine's own figures; `use_house_style()` applies it globally."""
     from cycler import cycler
 
     return {
@@ -234,8 +273,8 @@ def house_rc() -> dict:
 
 
 def use_house_style() -> None:
-    """Apply the house rcParams globally, once (idempotent). For the eventual styleguide port;
-    the scene engine scopes via `house_rc()` so existing recipes are untouched for now."""
+    """Apply the house rcParams globally, once (idempotent). For standalone consumers like the
+    specimen scripts; the engine itself scopes via `house_rc()` inside `build_asset`."""
     global _APPLIED
     if _APPLIED:
         return

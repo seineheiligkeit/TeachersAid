@@ -13,7 +13,7 @@ never authors a Scene (that would let it draw a wrong tangent / leak an answer).
 recipe* COMPUTES the scene from a small, correct-by-construction spec (e.g.
 `constructions.triangle_geometry` → `construction_scene`); this module is only the substrate +
 the renderer. Pure data + a matplotlib renderer; the style is scoped via `figstyle.house_rc()`
-so building a scene does NOT restyle the not-yet-ported recipes. Renderer-agnostic in shape (a
+(the same scoping `build_asset` applies to every recipe). Renderer-agnostic in shape (a
 future SVG/Typst backend could walk the same Scene).
 """
 from __future__ import annotations
@@ -221,8 +221,8 @@ def render_scene(scene: Scene, ax) -> None:
 
 
 def scene_to_png(scene: Scene, path: Path, *, dpi: int = 165) -> Path:
-    """Render a Scene to a PNG. Style is scoped (rc_context) so it does NOT restyle the
-    not-yet-ported recipes built elsewhere in the same process."""
+    """Render a Scene to a PNG. Style is scoped (rc_context) so nothing built outside the
+    engine's own figures is restyled — and standalone callers get the house style too."""
     with plt.rc_context(fs.house_rc()):
         fig, ax = plt.subplots(figsize=scene.canvas.figsize, layout="constrained")
         render_scene(scene, ax)

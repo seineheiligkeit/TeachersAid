@@ -3,7 +3,15 @@
 Forward-looking *capability* features for TeachersAid. (The schema-version roadmap lives in
 `schema-roadmap-v0.4-v0.5.md`; this tracks product/engine features.)
 
-## ▶ Start here (state as of 1 Jul 2026)
+## ▶ Start here (state as of 9 Jul 2026)
+
+> **Session update (9 Jul 2026) — the styleguide port.** The deferred Q1 is done: all ~25 legacy
+> recipes in `pipeline/assets.py` consume `figstyle` roles/ramps/type scale (`build_asset` scopes
+> `house_rc()` over every build). Semantic upgrades: misleading/honest = `negative`/`positive`,
+> colour-keyed Klimadiagramm axes, ramp-cycled multi-series lines. **Found + fixed: the
+> Windows-Calibri embedded-bitmap-strike bug** (glyphs silently vanish at strike ppem sizes, e.g.
+> 9 pt @ 150 dpi, while still measuring) — strikes stripped at font registration + a
+> glyph-rendering regression test. Suite **369**. Details: `figure-styleguide.md` "What's next".
 
 > **Session update (1 Jul 2026) — the figure engine.** A styleguide + a scene engine (design:
 > `Documents/figure-styleguide.md`). **`pipeline/figstyle.py`** centralises the visual language —

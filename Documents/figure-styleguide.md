@@ -141,9 +141,21 @@ it. `tangent_slope` and `definite_integral` are the tested computational core.
 
 ## What's next
 
-- **Port the ~25 legacy recipes** to consume `figstyle` (replace the scattered hexes with role
-  lookups; call `use_house_style()` in the build path) — banks the house look across every
-  existing figure. Mechanical, low-risk; the deferred Q1.
+- **Port the ~25 legacy recipes** — ✅ **DONE (9 Jul 2026).** Every recipe in
+  `pipeline/assets.py` consumes the roles/ramps/type scale; `build_asset` scopes `house_rc()`
+  over every build, so multi-series lines pick up the categorical ramp via `axes.prop_cycle`.
+  Semantic wins along the way: the misleading/honest axis pair renders in `negative`/`positive`,
+  the EM spectrum's ionising boundary likewise, the Klimadiagramm's two axes are colour-keyed to
+  their series (temp = `focus`, precip = `primary`), and `math_formula` pins black so display
+  formulas keep matching the inline-math runs. Only the decorative banner hue stays literal
+  (curated, content-free). **Found + fixed in the port — the Windows-Calibri embedded-bitmap
+  bug:** Calibri carries EBDT/EBLC bitmap strikes; FreeType selects them at exactly their ppem
+  sizes and Agg then draws EMPTY outlines — text at e.g. 9 pt/150 dpi silently vanished while
+  still *measuring* (so the overlap lint couldn't see it). `figstyle._register_font` now strips
+  the strike tables (fontTools — already a matplotlib dep) into a cached outline-only copy and
+  purges the strike-carrying originals from the font manager; locked by
+  `tests/test_layout.py::test_house_font_renders_glyphs_at_every_size` (every TYPE size × asset
+  and scene dpi must produce visible glyphs).
 - **More scene recipes**, now compose-not-plumb: physics vectors/free-body diagrams, annotated
   "label the parts" diagrams (the leader-callout pattern), a node-link consolidation of
   `tree_diagram`/`cause_effect`/`process_flow`.

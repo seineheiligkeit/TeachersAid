@@ -29,6 +29,7 @@ from matplotlib.patches import Circle, Polygon  # noqa: E402
 
 from ..config import RUNS_DIR  # noqa: E402
 from ..schema.assets import Asset  # noqa: E402
+from . import figstyle as fs  # noqa: E402
 from .calculus import (area_between_scene, distribution_scene, extrema_scene,  # noqa: E402
                        function_scene, integral_scene, riemann_scene, tangent_scene)
 from .constructions import construction_scene, triangle_geometry  # noqa: E402
@@ -70,21 +71,22 @@ def _number_line(asset: Asset, path: Path) -> None:
     marks = sorted(s.get("marks", []), key=lambda m: float(m["at"]))
     has_labels = any(m.get("label") for m in marks)
     fig, ax = plt.subplots(figsize=(7.4, 2.0 if has_labels else 1.1))
-    ax.axhline(0, color="#33506e", lw=1.4, zorder=1)
+    ax.axhline(0, color=fs.PALETTE.ink, lw=1.4, zorder=1)
     t = lo
     while t <= hi + 1e-9:
-        ax.plot([t, t], [-0.07, 0.07], color="#33506e", lw=1)
-        ax.text(t, -0.22, f"{t:g}", ha="center", va="top", fontsize=9)
+        ax.plot([t, t], [-0.07, 0.07], color=fs.PALETTE.ink, lw=1)
+        ax.text(t, -0.22, f"{t:g}", ha="center", va="top", fontsize=fs.TYPE.annot)
         t += step
     levels = (0.18, 0.40, 0.62)                    # cycle 3 heights so clustered labels never collide
     for i, m in enumerate(marks):
         at = float(m["at"])
-        ax.plot([at], [0], "o", color="#b03a2e", ms=9, zorder=3)
+        ax.plot([at], [0], "o", color=fs.PALETTE.focus, ms=9, zorder=3)
         if m.get("label"):
             y = levels[i % len(levels)]
-            ax.plot([at, at], [0.07, y - 0.04], color="#b03a2e", lw=0.6, zorder=2)
+            ax.plot([at, at], [0.07, y - 0.04], color=fs.PALETTE.focus, lw=fs.STROKE.leader,
+                    zorder=2)
             ax.text(at, y, str(m["label"]), ha="center", va="bottom",
-                    color="#b03a2e", fontsize=8.5)
+                    color=fs.PALETTE.focus, fontsize=fs.TYPE.tick)
     ax.set_xlim(lo - step * 0.6, hi + step * 0.6)
     ax.set_ylim(-0.5, 0.95 if has_labels else 0.5)
     ax.axis("off")
@@ -98,10 +100,11 @@ def _bar_value_labels(ax, vals, *, horizontal: bool) -> None:
     for i, v in enumerate(vals):
         txt = f"{v:g}"
         if horizontal:
-            ax.text(v, i, " " + txt, va="center", ha="left", fontsize=8, color="#33506e")
+            ax.text(v, i, " " + txt, va="center", ha="left", fontsize=fs.TYPE.annot,
+                    color=fs.PALETTE.muted)
         else:
             ax.annotate(txt, (i, v), textcoords="offset points", xytext=(0, 2),
-                        ha="center", va="bottom", fontsize=8, color="#33506e")
+                        ha="center", va="bottom", fontsize=fs.TYPE.annot, color=fs.PALETTE.muted)
 
 
 @_generator("matplotlib:bar_chart")
@@ -121,7 +124,9 @@ def _bar_chart(asset: Asset, path: Path) -> None:
 
     if horizontal:
         fig, ax = plt.subplots(figsize=(6.8, max(2.4, 0.5 * n + 1.1)), layout="constrained")
-        ax.barh(range(n), vals, color="#4f6f8f", edgecolor="#33506e")
+        fs.style_axes(ax, frame="lb", grid_axis="x")
+        ax.barh(range(n), vals, color=fs.PALETTE.primary,
+                edgecolor=fs.darken(fs.PALETTE.primary, .2))
         ax.set_yticks(range(n))
         ax.set_yticklabels(cats)
         ax.invert_yaxis()
@@ -133,7 +138,9 @@ def _bar_chart(asset: Asset, path: Path) -> None:
         _bar_value_labels(ax, vals, horizontal=True)
     else:
         fig, ax = plt.subplots(figsize=(max(4.0, 0.95 * n + 1.5), 3.3), layout="constrained")
-        ax.bar(range(n), vals, color="#4f6f8f", edgecolor="#33506e")
+        fs.style_axes(ax, frame="lb", grid_axis="y")
+        ax.bar(range(n), vals, color=fs.PALETTE.primary,
+               edgecolor=fs.darken(fs.PALETTE.primary, .2))
         ax.set_xticks(range(n))
         # Safety net: even below the horizontal-switch thresholds, mid-length or
         # numerous labels can collide on a vertical axis — rotate them so they never
@@ -171,11 +178,14 @@ def _population_pyramid(asset: Asset, path: Path) -> None:
     n = max(len(groups), 1)
     y = list(range(n))
     fig, ax = plt.subplots(figsize=(6.8, max(3.0, 0.42 * n + 1.0)), layout="constrained")
-    ax.barh(y, [-v for v in male], color="#4f6f8f", edgecolor="#33506e",
+    fs.style_axes(ax, frame="lb", grid_axis="x")
+    ax.barh(y, [-v for v in male], color=fs.PALETTE.primary,      # the two wings = two series:
+            edgecolor=fs.darken(fs.PALETTE.primary, .2),          # slots 0+1 of the ramp
             label=s.get("male_label", "Männer"))
-    ax.barh(y, female, color="#b06b4f", edgecolor="#8a4a33",
+    ax.barh(y, female, color=fs.CATEGORICAL[1],
+            edgecolor=fs.darken(fs.CATEGORICAL[1], .25),
             label=s.get("female_label", "Frauen"))
-    ax.axvline(0, color="#33506e", lw=0.8)
+    ax.axvline(0, color=fs.PALETTE.ink, lw=0.8)
     ax.set_yticks(y)
     ax.set_yticklabels(groups)
     ax.set_ylabel(s.get("ylabel") or "Altersgruppe")
@@ -184,7 +194,7 @@ def _population_pyramid(asset: Asset, path: Path) -> None:
         FuncFormatter(lambda x, _: f"{abs(x):,.0f}".replace(",", ".")))
     ax.set_xlabel(s.get("xlabel") or "Personen")
     ax.margins(y=0.01)
-    ax.legend(loc="lower right", fontsize=8)
+    ax.legend(loc="lower right")
     if s.get("title"):
         ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 52)))
     fig.savefig(path, dpi=150)
@@ -215,7 +225,7 @@ def _timeline(asset: Asset, path: Path) -> None:
     labels = ["\n".join(textwrap.wrap(f"{_stamp(e)} — {e.get('label', '')}", 22)) for e in events]
     fig, ax = plt.subplots(figsize=(8.8, 3.2))           # NOT constrained: stable box for measuring
     fig.subplots_adjust(left=0.03, right=0.97, top=0.88, bottom=0.05)
-    ax.axhline(0, color="#33506e", lw=1.6, zorder=1)
+    ax.axhline(0, color=fs.PALETTE.ink, lw=1.6, zorder=1)
     ax.set_yticks([])
     ax.set_xticks([])
     for sp in ("left", "right", "top", "bottom"):
@@ -227,7 +237,7 @@ def _timeline(asset: Asset, path: Path) -> None:
     span = (max(xs) - min(xs)) or 1.0
     ax.set_xlim(min(xs) - span * 0.12, max(xs) + span * 0.12)
     ax.set_ylim(-0.4, 1.0)                                # provisional; widened after packing
-    widths = measure_widths(ax, labels, fontsize=8.5)
+    widths = measure_widths(ax, labels, fontsize=fs.TYPE.tick)
     lanes = lane_pack(xs, widths, gap=span * 0.02)
     nlanes = (max(lanes) + 1) if lanes else 1
     max_lines = max((lab.count("\n") + 1 for lab in labels), default=1)
@@ -235,9 +245,10 @@ def _timeline(asset: Asset, path: Path) -> None:
     base = 0.42
     for i, (x, lab) in enumerate(zip(xs, labels)):
         y = base + lanes[i] * lane_h
-        ax.plot([x], [0], "o", color="#b03a2e", ms=7, zorder=3)
-        ax.plot([x, x], [0.05, y - 0.05], color="#b03a2e", lw=0.7, zorder=2)
-        ax.annotate(lab, (x, y), ha="center", va="bottom", fontsize=8.5, color="#33506e")
+        ax.plot([x], [0], "o", color=fs.PALETTE.focus, ms=7, zorder=3)
+        ax.plot([x, x], [0.05, y - 0.05], color=fs.PALETTE.focus, lw=fs.STROKE.leader, zorder=2)
+        ax.annotate(lab, (x, y), ha="center", va="bottom", fontsize=fs.TYPE.tick,
+                    color=fs.PALETTE.ink)
     ax.set_ylim(-0.35, base + (nlanes - 1) * lane_h + 0.30 * max_lines + 0.25)
     if s.get("title"):
         ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 60)), fontsize=11)
@@ -259,16 +270,19 @@ def _climate_diagram(asset: Asset, path: Path) -> None:
     n = len(months)
     fig, ax1 = plt.subplots(figsize=(6.6, 3.8), layout="constrained")
     ax2 = ax1.twinx()
-    ax2.bar(range(n), precip, color="#6f9fc8", edgecolor="#33506e", width=0.7, zorder=1)
-    ax1.plot(range(n), temp, "-o", color="#b03a2e", lw=2, ms=4, zorder=3)
+    # Walter-Lieth: each axis is colour-keyed to its series — temp = focus, precip = primary
+    ax2.bar(range(n), precip, color=fs.lighten(fs.PALETTE.primary, .3),
+            edgecolor=fs.PALETTE.primary, width=0.7, zorder=1)
+    ax1.plot(range(n), temp, "-o", color=fs.PALETTE.focus, lw=fs.STROKE.curve,
+             ms=fs.STROKE.marker_sm, zorder=3)
     ax1.set_zorder(ax2.get_zorder() + 1)   # draw the temperature line above the bars
     ax1.patch.set_visible(False)
     ax1.set_xticks(range(n))
-    ax1.set_xticklabels(months, fontsize=8)
-    ax1.set_ylabel("Temperatur (°C)", color="#b03a2e")
-    ax2.set_ylabel("Niederschlag (mm)", color="#33506e")
-    ax1.tick_params(axis="y", labelcolor="#b03a2e")
-    ax2.tick_params(axis="y", labelcolor="#33506e")
+    ax1.set_xticklabels(months, fontsize=fs.TYPE.tick)
+    ax1.set_ylabel("Temperatur (°C)", color=fs.PALETTE.focus)
+    ax2.set_ylabel("Niederschlag (mm)", color=fs.PALETTE.primary)
+    ax1.tick_params(axis="y", labelcolor=fs.PALETTE.focus)
+    ax2.tick_params(axis="y", labelcolor=fs.PALETTE.primary)
     ax2.set_ylim(0, max(precip + [1]) * 1.15)
     if s.get("title"):
         ax1.set_title("\n".join(textwrap.wrap(str(s["title"]), 52)))
@@ -287,17 +301,20 @@ def _line(asset: Asset, path: Path) -> None:
     series = s.get("series") or [{"x": s.get("x") or s.get("categories"),
                                   "y": s.get("y") or s.get("values")}]
     fig, ax = plt.subplots(figsize=(6.2, 3.7), layout="constrained")
+    fs.style_axes(ax, frame="lb")
     cat_labels = None
-    for ser in series:
+    for ser in series:                                   # no explicit colour → the categorical ramp
         y = [float(v) for v in (ser.get("y") or [])]
         x = ser.get("x")
         marker = "-o" if len(y) <= 24 else "-"          # no dot-soup on long series
         if x and any(isinstance(v, str) for v in x) and not _all_numeric(x):
             cat_labels = [str(v) for v in x]            # true categorical → index + ticklabels
-            ax.plot(range(len(y)), y, marker, lw=2, ms=5, label=ser.get("label"))
+            ax.plot(range(len(y)), y, marker, lw=fs.STROKE.curve, ms=fs.STROKE.marker_sm,
+                    label=ser.get("label"))
         else:                                            # numeric x (years, quantities) → numeric axis
             xs = [float(v) for v in (x or range(len(y)))]
-            ax.plot(xs, y, marker, lw=2, ms=5, label=ser.get("label"))
+            ax.plot(xs, y, marker, lw=fs.STROKE.curve, ms=fs.STROKE.marker_sm,
+                    label=ser.get("label"))
     if cat_labels is not None:
         n = len(cat_labels)
         step = max(1, n // 12)                           # thin to ~12 ticks (no overlap smear)
@@ -308,13 +325,12 @@ def _line(asset: Asset, path: Path) -> None:
                            ha="right" if rot else "center")
     if s.get("log"):
         ax.set_yscale("log")
-    ax.grid(True, color="#e9e9e9", lw=0.6)
     if s.get("xlabel") or s.get("x_label"):
         ax.set_xlabel(s.get("xlabel") or s.get("x_label"))
     if s.get("ylabel") or s.get("y_label"):
         ax.set_ylabel(s.get("ylabel") or s.get("y_label"))
     if len(series) > 1 and any(ser.get("label") for ser in series):
-        ax.legend(fontsize=8)
+        ax.legend()
     if s.get("title"):
         ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 52)))
     fig.savefig(path, dpi=150)
@@ -330,13 +346,13 @@ def _scatter(asset: Asset, path: Path) -> None:
     xs = [float(p[0]) for p in pts]
     ys = [float(p[1]) for p in pts]
     fig, ax = plt.subplots(figsize=(5.4, 4.0), layout="constrained")
-    ax.scatter(xs, ys, color="#33506e", s=38, zorder=3)
-    if s.get("fit") and len(xs) >= 2:
+    fs.style_axes(ax, frame="lb")
+    ax.scatter(xs, ys, color=fs.PALETTE.primary, s=42, zorder=3)
+    if s.get("fit") and len(xs) >= 2:                    # the relationship = the point of interest
         import numpy as np
         m, b = np.polyfit(xs, ys, 1)
         xr = [min(xs), max(xs)]
-        ax.plot(xr, [m * x + b for x in xr], color="#b03a2e", lw=1.5, zorder=2)
-    ax.grid(True, color="#e9e9e9", lw=0.6)
+        ax.plot(xr, [m * x + b for x in xr], color=fs.PALETTE.focus, lw=1.6, zorder=2)
     if s.get("xlabel") or s.get("x_label"):
         ax.set_xlabel(s.get("xlabel") or s.get("x_label"))
     if s.get("ylabel") or s.get("y_label"):
@@ -354,7 +370,9 @@ def _histogram(asset: Asset, path: Path) -> None:
     s = asset.spec or {}
     vals = [float(v) for v in s.get("values", [])]
     fig, ax = plt.subplots(figsize=(5.6, 3.6), layout="constrained")
-    ax.hist(vals, bins=int(s.get("bins", 8)), color="#4f6f8f", edgecolor="#33506e")
+    fs.style_axes(ax, frame="lb", grid_axis="y")
+    ax.hist(vals, bins=int(s.get("bins", 8)), color=fs.PALETTE.primary,
+            edgecolor=fs.darken(fs.PALETTE.primary, .2))
     if s.get("xlabel") or s.get("x_label"):
         ax.set_xlabel(s.get("xlabel") or s.get("x_label"))
     ax.set_ylabel(s.get("ylabel") or s.get("y_label") or "Häufigkeit")
@@ -391,13 +409,14 @@ def _boxplot(asset: Asset, path: Path) -> None:
     horizontal = not s.get("vertical")
     fig, ax = plt.subplots(figsize=(5.6, 0.9 + 0.7 * len(stats)) if horizontal
                            else (1.2 + 1.0 * len(stats), 3.8), layout="constrained")
+    fs.style_axes(ax, frame="lb", grid_axis="x" if horizontal else "y")
     ax.bxp(stats, orientation="horizontal" if horizontal else "vertical",
            showfliers=False, patch_artist=True,
-           boxprops={"facecolor": "#cfe0ee", "edgecolor": "#33506e"},
-           medianprops={"color": "#b03a2e", "linewidth": 2},
-           whiskerprops={"color": "#33506e"}, capprops={"color": "#33506e"})
+           boxprops={"facecolor": fs.lighten(fs.PALETTE.primary, .6),
+                     "edgecolor": fs.PALETTE.ink},
+           medianprops={"color": fs.PALETTE.focus, "linewidth": 2},
+           whiskerprops={"color": fs.PALETTE.ink}, capprops={"color": fs.PALETTE.ink})
     (ax.set_xlabel if horizontal else ax.set_ylabel)(s.get("xlabel") or s.get("x_label") or "")
-    (ax.grid)(True, axis="x" if horizontal else "y", color="#e6e6e6", lw=0.6)
     if not any(st["label"] for st in stats):
         (ax.set_yticks if horizontal else ax.set_xticks)([])
     if s.get("title"):
@@ -414,18 +433,20 @@ def _function_graph(asset: Asset, path: Path) -> None:
     s = asset.spec or {}
     xmin, xmax = float(s.get("xmin", -5)), float(s.get("xmax", 5))
     fig, ax = plt.subplots(figsize=(4.6, 4.2), layout="constrained")
-    ax.axhline(0, color="#999", lw=0.8)
-    ax.axvline(0, color="#999", lw=0.8)
-    ax.grid(True, color="#e6e6e6", lw=0.6)
-    if "m" in s:
+    fs.style_axes(ax, frame="lb")
+    ax.axhline(0, color=fs.PALETTE.muted, lw=0.8)
+    ax.axvline(0, color=fs.PALETTE.muted, lw=0.8)
+    if "m" in s:                                         # the line under study = focus
         m, b = float(s["m"]), float(s.get("b", 0))
-        ax.plot([xmin, xmax], [m * xmin + b, m * xmax + b], color="#b03a2e", lw=2)
+        ax.plot([xmin, xmax], [m * xmin + b, m * xmax + b], color=fs.PALETTE.focus,
+                lw=fs.STROKE.curve)
     pts = s.get("points", [])
     if s.get("connect") and len(pts) >= 2:  # join points into a curve (e.g. a v-t graph)
-        ax.plot([p[0] for p in pts], [p[1] for p in pts], "-o", color="#33506e", lw=2, ms=6)
+        ax.plot([p[0] for p in pts], [p[1] for p in pts], "-o", color=fs.PALETTE.ink,
+                lw=fs.STROKE.curve, ms=fs.STROKE.marker)
     else:
         for p in pts:
-            ax.plot([p[0]], [p[1]], "o", color="#33506e", ms=6)
+            ax.plot([p[0]], [p[1]], "o", color=fs.PALETTE.ink, ms=fs.STROKE.marker)
     ax.set_xlim(xmin, xmax)
     if "ymin" in s and "ymax" in s:
         ax.set_ylim(float(s["ymin"]), float(s["ymax"]))
@@ -446,7 +467,9 @@ def _math_formula(asset: Asset, path: Path) -> None:
     typeset the same string via KaTeX."""
     s = asset.spec or {}
     fig = plt.figure(figsize=(0.01, 0.01))
-    fig.text(0, 0, f"${s.get('latex', '')}$", fontsize=20)
+    # pinned black (not PALETTE.ink): a display formula sits in the TEXT flow and must match
+    # the inline-math runs (rendering/inline_math.py), which render outside the house rc.
+    fig.text(0, 0, f"${s.get('latex', '')}$", fontsize=20, color="black")
     fig.savefig(path, dpi=200, bbox_inches="tight", pad_inches=0.15, transparent=True)
     plt.close(fig)
 
@@ -483,19 +506,19 @@ def _tree_diagram(asset: Asset, path: Path) -> None:
 
     def draw(node: dict, parent_xy: tuple) -> None:
         x, y = node["_xy"]
-        ax.plot([parent_xy[0], x], [parent_xy[1], y], color="#33506e", lw=1.3, zorder=1)
+        ax.plot([parent_xy[0], x], [parent_xy[1], y], color=fs.PALETTE.ink, lw=1.3, zorder=1)
         if node.get("p") not in (None, ""):
             mx, my = (parent_xy[0] + x) / 2, (parent_xy[1] + y) / 2
-            ax.text(mx, my, str(node["p"]), fontsize=9, color="#b03a2e",
+            ax.text(mx, my, str(node["p"]), fontsize=fs.TYPE.annot, color=fs.PALETTE.focus,
                     ha="center", va="center",
                     bbox={"boxstyle": "round,pad=0.12", "fc": "white", "ec": "none"})
-        ax.plot([x], [y], "o", color="#33506e", ms=5, zorder=2)
-        ax.text(x + 0.06, y, str(node.get("label", "")), fontsize=10, va="center")
+        ax.plot([x], [y], "o", color=fs.PALETTE.ink, ms=5, zorder=2)
+        ax.text(x + 0.06, y, str(node.get("label", "")), fontsize=fs.TYPE.base, va="center")
         for k in node.get("children") or []:
             draw(k, (x, y))
 
     if roots:
-        ax.plot([root_xy[0]], [root_xy[1]], "o", color="#33506e", ms=5, zorder=2)
+        ax.plot([root_xy[0]], [root_xy[1]], "o", color=fs.PALETTE.ink, ms=5, zorder=2)
     for r in roots:
         draw(r, root_xy)
     ax.set_xlim(-0.3, max_depth[0] + 0.9)
@@ -543,18 +566,20 @@ def _cause_effect(asset: Asset, path: Path) -> None:
     for i, c in enumerate(causes):
         y = ypos(i, len(causes))
         cpos[c] = y
-        ax.text(1.7, y, wrap(c), ha="center", va="center", fontsize=9,
-                bbox={"boxstyle": "round,pad=0.4", "fc": "#eef3f8", "ec": "#33506e"})
+        ax.text(1.7, y, wrap(c), ha="center", va="center", fontsize=fs.TYPE.annot,
+                bbox={"boxstyle": "round,pad=0.4", "fc": fs.PALETTE.surface,
+                      "ec": fs.PALETTE.ink})
     for i, e in enumerate(effects):
         y = ypos(i, len(effects))
         epos[e] = y
-        ax.text(8.3, y, wrap(e), ha="center", va="center", fontsize=9,
-                bbox={"boxstyle": "round,pad=0.4", "fc": "#fdf0ec", "ec": "#b03a2e"})
+        ax.text(8.3, y, wrap(e), ha="center", va="center", fontsize=fs.TYPE.annot,
+                bbox={"boxstyle": "round,pad=0.4", "fc": fs.PALETTE.surface_warm,
+                      "ec": fs.PALETTE.focus})
     for ln in links:
         c, e = str(ln.get("cause", "")), str(ln.get("effect", ""))
         if c in cpos and e in epos:
             ax.annotate("", xy=(7.2, epos[e]), xytext=(2.8, cpos[c]),
-                        arrowprops={"arrowstyle": "-|>", "color": "#7a7a7a", "lw": 1.2,
+                        arrowprops={"arrowstyle": "-|>", "color": fs.PALETTE.muted, "lw": 1.2,
                                     "shrinkA": 3, "shrinkB": 3})
     if s.get("title"):
         ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 52)))
@@ -597,12 +622,13 @@ def _process_flow(asset: Asset, path: Path) -> None:
         ax.set_ylim(-lim, lim)
         for i in range(n):                       # arrows along the cycle (i -> i+1, wrapping)
             ax.annotate("", xy=pos[(i + 1) % n], xytext=pos[i],
-                        arrowprops={"arrowstyle": "-|>", "color": "#7a7a7a", "lw": 1.3,
+                        arrowprops={"arrowstyle": "-|>", "color": fs.PALETTE.muted, "lw": 1.3,
                                     "shrinkA": 26, "shrinkB": 26,
                                     "connectionstyle": "arc3,rad=0.16"})
         for i, (x, y) in enumerate(pos):
-            ax.text(x, y, wrap(steps[i]), ha="center", va="center", fontsize=9, zorder=3,
-                    bbox={"boxstyle": "round,pad=0.4", "fc": "#fdecec", "ec": "#b03a2e"})
+            ax.text(x, y, wrap(steps[i]), ha="center", va="center", fontsize=fs.TYPE.annot,
+                    zorder=3, bbox={"boxstyle": "round,pad=0.4", "fc": fs.PALETTE.surface_warm,
+                                    "ec": fs.PALETTE.focus})
     else:
         fig, ax = plt.subplots(figsize=(5.2, max(2.4, 1.2 * n)), layout="constrained")
         ax.axis("off")
@@ -611,14 +637,15 @@ def _process_flow(asset: Asset, path: Path) -> None:
         ys = [n - i for i in range(n)]           # top to bottom
         for i in range(n - 1):
             ax.annotate("", xy=(2, ys[i + 1] + 0.30), xytext=(2, ys[i] - 0.30),
-                        arrowprops={"arrowstyle": "-|>", "color": "#7a7a7a", "lw": 1.3})
+                        arrowprops={"arrowstyle": "-|>", "color": fs.PALETTE.muted, "lw": 1.3})
         if cyclic:                               # short process that still loops
             ax.annotate("", xy=(2, ys[0]), xytext=(2, ys[-1]),
-                        arrowprops={"arrowstyle": "-|>", "color": "#7a7a7a", "lw": 1.0,
+                        arrowprops={"arrowstyle": "-|>", "color": fs.PALETTE.muted, "lw": 1.0,
                                     "connectionstyle": "arc3,rad=-0.55"})
         for i, y in enumerate(ys):
-            ax.text(2, y, wrap(steps[i]), ha="center", va="center", fontsize=9, zorder=3,
-                    bbox={"boxstyle": "round,pad=0.4", "fc": "#eef3f8", "ec": "#33506e"})
+            ax.text(2, y, wrap(steps[i]), ha="center", va="center", fontsize=fs.TYPE.annot,
+                    zorder=3, bbox={"boxstyle": "round,pad=0.4", "fc": fs.PALETTE.surface,
+                                    "ec": fs.PALETTE.ink})
     if s.get("title"):
         ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 46)))
     fig.savefig(path, dpi=150)
@@ -677,7 +704,7 @@ def _choropleth_map(asset: Asset, path: Path) -> None:
     ax.axis("off")
     norm = Normalize(vmin=min(values.values()) if values else 0.0,
                      vmax=max(values.values()) if values else 1.0)
-    cmap = plt.get_cmap("YlOrRd")
+    cmap = plt.get_cmap(fs.SEQUENTIAL)
     xs_all: list[float] = []
     ys_all: list[float] = []
     cents: dict[str, tuple[float, float]] = {}
@@ -685,7 +712,7 @@ def _choropleth_map(asset: Asset, path: Path) -> None:
     for name, geom in geoms.items():
         mp = feature_path(geom)
         val = values.get(name)
-        fc = cmap(norm(val)) if val is not None else "#e8e8e8"
+        fc = cmap(norm(val)) if val is not None else fs.PALETTE.grid   # no datum → quiet grey
         ax.add_patch(PathPatch(mp, facecolor=fc, edgecolor="white", lw=0.7, zorder=2))
         gx = [v[0] for v in mp.vertices]
         gy = [v[1] for v in mp.vertices]
@@ -713,18 +740,19 @@ def _choropleth_map(asset: Asset, path: Path) -> None:
             cx, cy = cents[name]
             if name not in small:
                 rw = bboxes[name][1] - bboxes[name][0]
-                fs = 8.0
-                while measure_widths(ax, [name], fs)[0] > rw * 0.94 and fs > 6.0:
-                    fs -= 0.5
-                ax.text(cx, cy, name, ha="center", va="center", fontsize=fs, color="#222",
-                        zorder=4, path_effects=[pe.withStroke(linewidth=2.0, foreground="white")])
+                size = 8.0
+                while measure_widths(ax, [name], size)[0] > rw * 0.94 and size > 6.0:
+                    size -= 0.5
+                ax.text(cx, cy, name, ha="center", va="center", fontsize=size,
+                        color=fs.PALETTE.ink, zorder=4,
+                        path_effects=[pe.withStroke(linewidth=2.0, foreground="white")])
             else:
                 # leader + label as SEPARATE artists (not an arrow-annotation), so the label's
                 # measured bbox is the text alone — the choropleth's small-polygon labelling.
                 ly = min(ys_all) - yspan * 0.02
-                ax.plot([cx, cx], [cy, ly], color="#666", lw=0.7, zorder=5)
-                ax.plot([cx], [cy], "o", ms=2.5, color="#333", zorder=5)
-                ax.text(cx, ly, name, ha="center", va="top", fontsize=7.5, color="#222",
+                ax.plot([cx, cx], [cy, ly], color=fs.PALETTE.muted, lw=fs.STROKE.leader, zorder=5)
+                ax.plot([cx], [cy], "o", ms=2.5, color=fs.PALETTE.ink, zorder=5)
+                ax.text(cx, ly, name, ha="center", va="top", fontsize=7.5, color=fs.PALETTE.ink,
                         zorder=5, path_effects=[pe.withStroke(linewidth=2.0, foreground="white")])
         if small:
             ax.set_ylim(min(ys_all) - yspan * 0.13, max(ys_all) + my)
@@ -732,9 +760,9 @@ def _choropleth_map(asset: Asset, path: Path) -> None:
         sm = plt.cm.ScalarMappable(norm=norm, cmap=cmap)
         sm.set_array([])
         cb = fig.colorbar(sm, ax=ax, fraction=0.045, pad=0.02)
-        cb.ax.tick_params(labelsize=7)
+        cb.ax.tick_params(labelsize=fs.TYPE.caption)
         if s.get("value_label"):
-            cb.set_label(str(s["value_label"]), fontsize=8)
+            cb.set_label(str(s["value_label"]), fontsize=fs.TYPE.tick)
     if s.get("title"):
         ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 48)), fontsize=11)
     cits = []                                    # a map rests on TWO facts: values + boundaries
@@ -743,8 +771,8 @@ def _choropleth_map(asset: Asset, path: Path) -> None:
     if geo_id:
         cits.append(f"Grenzen: {geo_store.citation(geo_id)}")
     if cits:
-        fig.text(0.5, 0.008, "Quelle — " + " · ".join(cits), ha="center", fontsize=6.5,
-                 color="#555")
+        fig.text(0.5, 0.008, "Quelle — " + " · ".join(cits), ha="center",
+                 fontsize=fs.TYPE.caption, color=fs.PALETTE.muted)
     fig.savefig(path, dpi=150)
     plt.close(fig)
 
@@ -773,13 +801,15 @@ def _right_triangle(asset: Asset, path: Path) -> None:
     a, b = float(s.get("a", 4)), float(s.get("b", 3))
     fig, ax = _geo_fig(4.2, 3.6)
     ax.add_patch(Polygon([(0, 0), (a, 0), (0, b)], closed=True,
-                         facecolor="#dce6f2", edgecolor="#33506e", lw=1.8))
+                         facecolor=fs.PALETTE.surface, edgecolor=fs.PALETTE.ink, lw=1.8))
     m = min(a, b) * 0.13                                   # right-angle square at the origin
-    ax.plot([m, m, 0], [0, m, m], color="#33506e", lw=1)
-    ax.text(a / 2, -0.07 * b, str(s.get("label_a", "a")), ha="center", va="top", fontsize=11)
-    ax.text(-0.03 * a, b / 2, str(s.get("label_b", "b")), ha="right", va="center", fontsize=11)
+    ax.plot([m, m, 0], [0, m, m], color=fs.PALETTE.ink, lw=1)
+    ax.text(a / 2, -0.07 * b, str(s.get("label_a", "a")), ha="center", va="top",
+            fontsize=fs.TYPE.annot_lg)
+    ax.text(-0.03 * a, b / 2, str(s.get("label_b", "b")), ha="right", va="center",
+            fontsize=fs.TYPE.annot_lg)
     ax.text(a / 2 + 0.03 * a, b / 2 + 0.03 * b, str(s.get("label_c", "c")),
-            ha="left", va="bottom", fontsize=11, color="#b03a2e")
+            ha="left", va="bottom", fontsize=fs.TYPE.annot_lg, color=fs.PALETTE.focus)
     ax.set_xlim(-0.2 * a, a * 1.12)
     ax.set_ylim(-0.2 * b, b * 1.12)
     _geo_title(ax, s)
@@ -794,9 +824,11 @@ def _rectangle_fig(asset: Asset, path: Path) -> None:
     le, w = float(s.get("length", 6)), float(s.get("width", 4))
     fig, ax = _geo_fig(4.8, 3.4)
     ax.add_patch(Polygon([(0, 0), (le, 0), (le, w), (0, w)], closed=True,
-                         facecolor="#dce6f2", edgecolor="#33506e", lw=1.8))
-    ax.text(le / 2, -0.09 * w, str(s.get("label_l", f"{le:g}")), ha="center", va="top", fontsize=11)
-    ax.text(-0.02 * le, w / 2, str(s.get("label_w", f"{w:g}")), ha="right", va="center", fontsize=11)
+                         facecolor=fs.PALETTE.surface, edgecolor=fs.PALETTE.ink, lw=1.8))
+    ax.text(le / 2, -0.09 * w, str(s.get("label_l", f"{le:g}")), ha="center", va="top",
+            fontsize=fs.TYPE.annot_lg)
+    ax.text(-0.02 * le, w / 2, str(s.get("label_w", f"{w:g}")), ha="right", va="center",
+            fontsize=fs.TYPE.annot_lg)
     ax.set_xlim(-0.22 * le, le * 1.08)
     ax.set_ylim(-0.28 * w, w * 1.12)
     _geo_title(ax, s)
@@ -811,24 +843,25 @@ def _polygon(asset: Asset, path: Path) -> None:
     s = asset.spec or {}
     pts = [(float(x), float(y)) for x, y in s.get("points", [(0, 0), (4, 0), (2, 3)])]
     fig, ax = _geo_fig()
-    ax.add_patch(Polygon(pts, closed=True, facecolor="#dce6f2", edgecolor="#33506e", lw=1.8))
+    ax.add_patch(Polygon(pts, closed=True, facecolor=fs.PALETTE.surface,
+                         edgecolor=fs.PALETTE.ink, lw=1.8))
     cx = sum(p[0] for p in pts) / len(pts)
     cy = sum(p[1] for p in pts) / len(pts)
     span = max(max(p[0] for p in pts) - min(p[0] for p in pts),
                max(p[1] for p in pts) - min(p[1] for p in pts)) or 1.0
     for i, (x, y) in enumerate(pts):
-        ax.plot([x], [y], "o", color="#33506e", ms=4)
+        ax.plot([x], [y], "o", color=fs.PALETTE.ink, ms=fs.STROKE.marker_sm)
         vl = s.get("vertex_labels") or []
         if i < len(vl):                                    # label outward from the centroid
             dx, dy = x - cx, y - cy
             n = (dx * dx + dy * dy) ** 0.5 or 1
             ax.text(x + 0.12 * span * dx / n, y + 0.12 * span * dy / n, str(vl[i]),
-                    ha="center", va="center", fontsize=11)
+                    ha="center", va="center", fontsize=fs.TYPE.annot_lg)
     for i, lab in enumerate(s.get("side_labels") or []):
         x1, y1 = pts[i]
         x2, y2 = pts[(i + 1) % len(pts)]
         ax.text((x1 + x2) / 2, (y1 + y2) / 2, str(lab), ha="center", va="center",
-                fontsize=10, color="#b03a2e",
+                fontsize=fs.TYPE.base, color=fs.PALETTE.focus,
                 bbox=dict(boxstyle="round,pad=0.1", fc="white", ec="none"))
     ax.autoscale_view()
     ax.margins(0.18)
@@ -843,11 +876,12 @@ def _circle(asset: Asset, path: Path) -> None:
     s = asset.spec or {}
     r = float(s.get("radius", 3))
     fig, ax = _geo_fig(4.0, 4.0)
-    ax.add_patch(Circle((0, 0), r, facecolor="#dce6f2", edgecolor="#33506e", lw=1.8))
-    ax.plot([0], [0], "o", color="#33506e", ms=4)
-    ax.plot([0, r], [0, 0], color="#b03a2e", lw=1.4)       # radius
+    ax.add_patch(Circle((0, 0), r, facecolor=fs.PALETTE.surface, edgecolor=fs.PALETTE.ink,
+                        lw=1.8))
+    ax.plot([0], [0], "o", color=fs.PALETTE.ink, ms=fs.STROKE.marker_sm)
+    ax.plot([0, r], [0, 0], color=fs.PALETTE.focus, lw=1.4)       # radius
     ax.text(r / 2, 0.05 * r, str(s.get("label_r", f"r = {r:g}")), ha="center", va="bottom",
-            fontsize=11, color="#b03a2e")
+            fontsize=fs.TYPE.annot_lg, color=fs.PALETTE.focus)
     ax.set_xlim(-r * 1.15, r * 1.15)
     ax.set_ylim(-r * 1.15, r * 1.15)
     _geo_title(ax, s)
@@ -869,20 +903,20 @@ def _coordinate_plane(asset: Asset, path: Path) -> None:
     ymin = int(s.get("ymin", min(0, *ys)))
     ymax = int(s.get("ymax", max(5, *ys)))
     fig, ax = plt.subplots(figsize=(4.6, 4.4), layout="constrained")
+    fs.style_axes(ax, frame="center")               # axes through the origin (0 is always in range)
     ax.set_xlim(xmin - 0.5, xmax + 0.5)
     ax.set_ylim(ymin - 0.5, ymax + 0.5)
     ax.set_xticks(range(xmin, xmax + 1))
     ax.set_yticks(range(ymin, ymax + 1))
-    ax.grid(True, color="#e2e2e2", lw=0.6)
     ax.set_aspect("equal")
-    ax.axhline(0, color="#888", lw=1.0)
-    ax.axvline(0, color="#888", lw=1.0)
     for i, j in s.get("segments", []):
-        ax.plot([pts[i]["x"], pts[j]["x"]], [pts[i]["y"], pts[j]["y"]], color="#33506e", lw=1.8)
+        ax.plot([pts[i]["x"], pts[j]["x"]], [pts[i]["y"], pts[j]["y"]],
+                color=fs.PALETTE.ink, lw=1.8)
     for p in pts:
-        ax.plot([p["x"]], [p["y"]], "o", color="#b03a2e", ms=6)
+        ax.plot([p["x"]], [p["y"]], "o", color=fs.PALETTE.focus, ms=fs.STROKE.marker)
         if p.get("label"):
-            ax.text(p["x"] + 0.15, p["y"] + 0.15, str(p["label"]), fontsize=9.5, color="#b03a2e")
+            ax.text(p["x"] + 0.15, p["y"] + 0.15, str(p["label"]), fontsize=fs.TYPE.annot,
+                    color=fs.PALETTE.focus)
     ax.set_xlabel("x")
     ax.set_ylabel("y")
     if s.get("title"):
@@ -1000,19 +1034,20 @@ def _em_spectrum(asset: Asset, path: Path) -> None:
     labels = [b[0] for b in bands]
     fig, ax = plt.subplots(figsize=(7.2, 2.4))
     xs = range(len(bands))
-    ax.bar(xs, [1] * len(bands), color="#dce6f2", edgecolor="#33506e")
+    ax.bar(xs, [1] * len(bands), color=fs.PALETTE.surface, edgecolor=fs.PALETTE.ink)
     for x, lab in zip(xs, labels):
-        ax.text(x, 0.5, lab, ha="center", va="center", fontsize=9)
-    thr = 4.5  # ionizing threshold between UV and Röntgen
-    ax.axvline(thr, color="#b03a2e", linestyle="--", linewidth=1.5)
-    ax.text(thr + 0.05, 1.05, "ionisierend →", color="#b03a2e", fontsize=8, va="bottom")
-    ax.text(thr - 0.05, 1.05, "← nicht-ionisierend", color="#2e6b3a", fontsize=8,
-            va="bottom", ha="right")
+        ax.text(x, 0.5, lab, ha="center", va="center", fontsize=fs.TYPE.annot)
+    thr = 4.5  # ionizing threshold between UV and Röntgen — the hazard/safe pair
+    ax.axvline(thr, color=fs.PALETTE.negative, linestyle="--", linewidth=1.5)
+    ax.text(thr + 0.05, 1.05, "ionisierend →", color=fs.PALETTE.negative,
+            fontsize=fs.TYPE.tick, va="bottom")
+    ax.text(thr - 0.05, 1.05, "← nicht-ionisierend", color=fs.PALETTE.positive,
+            fontsize=fs.TYPE.tick, va="bottom", ha="right")
     ax.set_xlim(-0.6, len(bands) - 0.4)
     ax.set_ylim(0, 1.3)
     ax.set_yticks([])
     ax.set_xticks([])
-    ax.set_xlabel("Energie nimmt zu  →", fontsize=9)
+    ax.set_xlabel("Energie nimmt zu  →", fontsize=fs.TYPE.annot)
     fig.tight_layout()
     fig.savefig(path, dpi=150)
     plt.close(fig)
@@ -1028,7 +1063,7 @@ def _truncated_axis(asset: Asset, path: Path) -> None:
     cats = [str(c) for c in (s.get("categories") or ["2019", "2020", "2021", "2022"])]
     values = [float(v) for v in (s.get("values") or [101.0, 101.4, 101.9, 102.3])]
     fig, ax = plt.subplots(figsize=(4.6, 3.0), layout="constrained")
-    ax.bar(cats, values, color="#c0504d")
+    ax.bar(cats, values, color=fs.PALETTE.negative)   # negative = the MISLEADING one
     lo = float(s["ymin"]) if "ymin" in s else min(values) - 0.5  # <-- the trick: zoomed axis
     hi = float(s["ymax"]) if "ymax" in s else max(values) + 0.2
     ax.set_ylim(lo, hi)
@@ -1046,7 +1081,7 @@ def _honest_axis(asset: Asset, path: Path) -> None:
     cats = [str(c) for c in (s.get("categories") or ["2019", "2020", "2021", "2022"])]
     values = [float(v) for v in (s.get("values") or [101.0, 101.4, 101.9, 102.3])]
     fig, ax = plt.subplots(figsize=(4.6, 3.0), layout="constrained")
-    ax.bar(cats, values, color="#4f6f52")
+    ax.bar(cats, values, color=fs.PALETTE.positive)   # positive = the HONEST one
     lo = float(s.get("ymin", 0))  # zero-based: the change is tiny
     ax.set_ylim(lo, float(s["ymax"]) if "ymax" in s else max(values) * 1.08)
     ax.set_ylabel(s.get("ylabel") or "Index")
@@ -1084,7 +1119,7 @@ def _svg_badge(asset: Asset, path: Path) -> None:
     spec: {label, color?, text_color?}."""
     s = asset.spec or {}
     label = html.escape(str(s.get("label", ""))[:3])
-    color, txt = s.get("color", "#33506e"), s.get("text_color", "#ffffff")
+    color, txt = s.get("color", fs.PALETTE.ink), s.get("text_color", "#ffffff")
     svg = (f'{_SVG_HDR}width="120" height="120" viewBox="0 0 120 120">'
            f'<circle cx="60" cy="60" r="54" fill="{color}"/>'
            f'<text x="60" y="78" font-size="44" font-family="sans-serif" '
@@ -1107,7 +1142,7 @@ def _svg_banner(asset: Asset, path: Path) -> None:
 @_generator("svg:motif")
 def _svg_motif(asset: Asset, path: Path) -> None:
     """A geometric corner motif — content-free decoration. spec: {color?}."""
-    color = (asset.spec or {}).get("color", "#4f6f8f")
+    color = (asset.spec or {}).get("color", fs.PALETTE.primary)
     tris = "".join(
         f'<polygon points="{x},120 {x + 20},120 {x},{100 - x // 3}" '
         f'fill="{color}" opacity="{0.25 + (x % 60) / 120:.2f}"/>'
@@ -1292,5 +1327,6 @@ def build_asset(asset: Asset, outdir: Path | None = None) -> Path:
     if asset.intentionally_flawed and asset.generator == "matplotlib:em_spectrum":
         # defensive: the correct generator must never be used for a flawed asset
         raise ValueError(f"asset {asset.id} marked intentionally_flawed but uses a correct generator")
-    builder(asset, path)
+    with plt.rc_context(fs.house_rc()):   # every recipe builds under the house style (fonts, ramp)
+        builder(asset, path)
     return path

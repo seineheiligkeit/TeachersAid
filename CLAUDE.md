@@ -105,8 +105,13 @@ Two additions make figures **consistent** and **composable**. Full design doc:
   (`DASHES`/`line_kind` — a hue+dash PAIR per family, *redundant* so a dense figure survives a **B/W
   photocopy**), a type scale, and the document font (Carlito/Calibri, matched to the worksheet body via
   the same discovery as `reportlab_base`, so figures stop reading as "pasted in"). `house_rc()` **scopes**
-  the style (used by the scene renderer via `rc_context`); `use_house_style()` applies it globally — for
-  the eventual **port** of the ~25 legacy recipes, which still hard-code hexes for now (the deferred item).
+  the style — since the **legacy-recipe port (9 Jul 2026)** `build_asset` wraps EVERY recipe build in it
+  (all ~25 recipes consume roles/ramps; only the curated decorative banner hue stays literal);
+  `use_house_style()` applies it globally (specimen scripts). **Windows gotcha (load-bearing):** Calibri
+  ships embedded-bitmap strikes (EBDT/EBLC) that make Agg draw EMPTY glyphs at exactly the strike ppem
+  sizes (e.g. 9 pt @ 150 dpi) while the text still *measures* — `figstyle._register_font` strips the
+  strike tables (fontTools) and purges the strike-carrying originals from the font manager; locked by
+  `tests/test_layout.py::test_house_font_renders_glyphs_at_every_size`.
 - **`pipeline/scene.py` — the scene engine.** A figure as data: a `Scene` = `Canvas` + ordered typed
   layers (`Polyline·Line·PointMark·CircleShape·Arc·Region·Label`); one `render_scene` walks it in the
   house style. So a rich figure is **composed** from primitives, not written as a new bespoke recipe — and
