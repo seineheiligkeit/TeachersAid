@@ -1,0 +1,97 @@
+{
+  "id": "c0172.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "a1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Das Balkendiagramm zeigt die Anzahl der Extremitätenpaare (Flossen/Beine/Flügel-Beinpaar) bei fünf Wirbeltieren. Was fällt dir auf, wenn du die Werte vergleichst? Was zeigt dieses Ergebnis über die Verwandtschaft dieser fünf sehr unterschiedlich aussehenden Tiere?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.ERK.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "Alle fünf Tiere haben denselben Wert: 2 Paar Gliedmaßen (Flossen, Beinpaare bzw. Flügel+Beine). Trotz sehr unterschiedlichem Aussehen und Lebensraum zeigt dieser gemeinsame Grundwert den gemeinsamen Bauplan der Wirbeltiere – ein Beleg für ihre Verwandtschaft.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Der Wert 'gleich bei allen' wird manchmal als 'langweilig/kein Ergebnis' abgetan – hier ist die Gleichheit selbst das eigentliche, aussagekräftige Ergebnis."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 1,
+  "kompetenzbereich": "Erkenntnisse gewinnen (E)",
+  "competences": [
+    "BIO.US.x.ERK.04"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "a1",
+      "role": "content",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Fisch",
+          "Frosch",
+          "Eidechse",
+          "Vogel",
+          "Hund"
+        ],
+        "values": [
+          4,
+          3,
+          3,
+          4,
+          4
+        ],
+        "title": "Anzahl Gliedmaßen/Flossen-Paare bei ausgewählten Wirbeltieren",
+        "xlabel": "Tier",
+        "ylabel": "Anzahl Extremitätenpaare"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": true,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0172",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:12+00:00",
+  "updated_at": "2026-07-05T05:34:12+00:00"
+}

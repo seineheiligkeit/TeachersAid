@@ -1,0 +1,165 @@
+{
+  "subject": "Mathematik", "klasse": 3,
+  "kompetenzbereich": "2: Variablen und Funktionen",
+  "title": "Der Wassertank-Plan", "kernfrage": "Wie beschreibst du mit einem Term, was in einem Tank passiert — und wie findest du heraus, wann er leer oder voll ist?",
+  "body": {
+    "intro": [
+      {
+        "role": "info", "id": "intro1", "kind": "prose",
+        "content": "Ein Gartenteich-Betrieb hat einen Wassertank, der zu Beginn schon teilweise gefüllt ist und dann gleichmäßig weiter befüllt oder entleert wird. Solche Vorgänge lassen sich mit einem Term beschreiben — und mit diesem Term kannst du vorhersagen, wie viel Wasser zu jedem Zeitpunkt im Tank ist, ohne warten zu müssen.",
+        "payload": null, "response": {"mode": "none"}, "cognitive_level": "remember",
+        "dimensions": ["MOD"], "serves": [{"competence_id": "MAT.US.3.VAR.01", "relation": "exercises"}],
+        "est_minutes": 2, "asset_refs": [], "answer_key": null, "acceptable_reasoning": null,
+        "watch_outs": [], "rubric": []
+      }
+    ],
+    "data_figures": [],
+    "assets": [
+      {
+        "id": "abb_fuellung", "role": "figure", "generator": "matplotlib:function_graph",
+        "spec": {
+          "xmin": 0, "xmax": 8, "ymin": 0, "ymax": 900,
+          "points": [[0, 200], [2, 400], [4, 600], [6, 800]],
+          "connect": true,
+          "xlabel": "Zeit t (in Minuten)", "ylabel": "Wasser im Tank (in Liter)",
+          "title": "Befüllung von Tank A"
+        }
+      },
+      {
+        "id": "abb_leerung", "role": "figure", "generator": "matplotlib:function_graph",
+        "spec": {
+          "xmin": 0, "xmax": 10, "ymin": 0, "ymax": 500,
+          "m": -40, "b": 450,
+          "xlabel": "Zeit t (in Minuten)", "ylabel": "Wasser im Tank (in Liter)",
+          "title": "Entleerung von Tank B"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1", "title": "Vom Sachverhalt zum Term — und wieder zurück",
+        "throughline": "Der rote Faden beginnt beim Aufstellen eines Terms aus einer Wassertank-Situation, führt über das Umformen von Termen (auch mit Potenzen) zum Lösen von Gleichungen durch Äquivalenzumformung, klärt unterwegs den Unterschied zwischen Verhältnis/Proportion und linearem Wachstum, und endet beim Modellieren eines selbst gewählten Wachstums- oder Abnahmeprozesses — damit ist die volle Bandbreite des Kompetenzbereichs abgedeckt.",
+        "talking_points": [
+          "Ein Term ist eine 'Rechenvorschrift mit Lücke' — die Variable steht für den Wert, der sich ändert (hier: die Zeit).",
+          "Termumformung mit Potenzen (z. B. a² · a³ = a⁵) folgt festen Regeln, die man an einfachen Zahlenbeispielen zuerst nachvollziehen sollte, bevor man sie mit Variablen anwendet.",
+          "Eine Äquivalenzumformung verändert eine Gleichung, ohne ihre Lösungsmenge zu verändern — beide Seiten müssen immer gleich behandelt werden.",
+          "Proportion (Verhältnis) und lineares Wachstum hängen zusammen, sind aber nicht dasselbe: eine Proportion hat keinen Startwert ungleich null, ein allgemeiner linearer Prozess schon."
+        ],
+        "extensions": [
+          "Was passiert, wenn Tank A und Tank B gleichzeitig laufen — wann haben beide denselben Füllstand? (Gleichsetzen der beiden Terme.)",
+          "Wie verändert sich der Term, wenn der Zufluss doppelt so schnell wäre? Welchen Einfluss hat das auf den Graphen?",
+          "Recherche: Wie groß ist ein typischer Regenwassertank für ein Einfamilienhaus, und wie lange würde eine Befüllung mit einer normalen Regentonne dauern?"
+        ],
+        "blocks": [
+          {
+            "role": "task", "id": "t1", "kind": "data_interpretation",
+            "prompt": "Der Graph zeigt die Befüllung von Tank A. (a) Wie viel Wasser war zu Beginn (t = 0) bereits im Tank? (b) Wie viele Liter kommen pro Minute dazu? (c) Stelle einen Term W(t) auf, der den Wasserstand nach t Minuten beschreibt.",
+            "payload": null, "response": {"mode": "lines", "n": 4}, "cognitive_level": "understand",
+            "dimensions": ["DAR", "MOD"],
+            "serves": [{"competence_id": "MAT.US.3.VAR.01", "relation": "exercises"}],
+            "est_minutes": 7, "asset_refs": ["abb_fuellung"],
+            "answer_key": "(a) 200 Liter (Startwert bei t=0). (b) Zwischen t=0 und t=2 steigt der Stand von 200 auf 400, also 200 Liter in 2 Minuten = 100 Liter pro Minute. (c) W(t) = 100 · t + 200.",
+            "acceptable_reasoning": "Der Zuwachs pro Minute ergibt sich aus der Differenz zweier Punkte geteilt durch die Zeitdifferenz zwischen ihnen; jeder Punktepaar aus der Abbildung führt zum selben Ergebnis.",
+            "watch_outs": [
+              "Startwert und Zuwachs pro Minute werden manchmal vertauscht — 200 ist der Startwert (Achsenabschnitt), 100 ist die Änderungsrate pro Minute.",
+              "Bei (b) wird gelegentlich die gesamte Differenz (200 Liter) statt der Differenz PRO Minute (100 Liter) angegeben."
+            ], "rubric": [
+              {"criterion": "Term korrekt aufgestellt", "levels": ["Falsch", "Ansatz erkennbar, ein Fehler", "Korrekt: W(t) = 100t + 200"]}
+            ]
+          },
+          {
+            "role": "task", "id": "t2", "kind": "calculation",
+            "prompt": "Vereinfache die folgenden Terme. Wende dabei die Potenzgesetze für positive ganzzahlige Exponenten an.\n(a) 3a² + 5a² − a²\n(b) a³ · a⁴\n(c) (2a)² · a\n(d) 5a² · 3a − 4a³",
+            "payload": null, "response": {"mode": "lines", "n": 6}, "cognitive_level": "understand",
+            "dimensions": ["OPE"],
+            "serves": [{"competence_id": "MAT.US.3.VAR.02", "relation": "exercises"}],
+            "est_minutes": 8, "asset_refs": [],
+            "answer_key": "(a) 3a² + 5a² − a² = 7a². (b) a³ · a⁴ = a^7 (Exponenten addieren, da gleiche Basis). (c) (2a)² · a = 4a² · a = 4a³. (d) 5a² · 3a − 4a³ = 15a³ − 4a³ = 11a³.",
+            "acceptable_reasoning": "Bei (a) werden nur die Koeffizienten gleichartiger Glieder addiert/subtrahiert, der Exponent bleibt unverändert. Bei (b)–(d) gilt: bei Multiplikation gleicher Basen werden die Exponenten addiert.",
+            "watch_outs": [
+              "Bei (a) wird manchmal auch der Exponent addiert (3a²+5a² wird fälschlich zu 8a⁴) — nur gleichartige Glieder werden zusammengefasst, der Exponent ändert sich dabei NICHT.",
+              "Bei (c) wird (2a)² oft zu 2a² statt 4a² vereinfacht — die Klammer bedeutet, dass auch die 2 quadriert wird."
+            ], "rubric": [
+              {"criterion": "Potenzgesetze korrekt angewendet", "levels": ["0–1 von 4 korrekt", "2–3 von 4 korrekt", "Alle 4 korrekt"]}
+            ]
+          },
+          {
+            "role": "task", "id": "t3", "kind": "calculation",
+            "prompt": "Tank B wird entleert. Der Term für den Wasserstand lautet W(t) = 450 − 40 · t (in Litern nach t Minuten). Löse die Gleichung 450 − 40 · t = 130 durch Äquivalenzumformung und dokumentiere jeden Schritt einzeln. Was bedeutet das Ergebnis im Sachzusammenhang?",
+            "payload": null, "response": {"mode": "lines", "n": 6}, "cognitive_level": "apply",
+            "dimensions": ["OPE", "MOD"],
+            "serves": [{"competence_id": "MAT.US.3.VAR.03", "relation": "exercises"}],
+            "est_minutes": 9, "asset_refs": ["abb_leerung"],
+            "answer_key": "450 − 40t = 130  |  −450 auf beiden Seiten:  −40t = −320  |  : (−40) auf beiden Seiten:  t = 8. Bedeutung: Nach 8 Minuten sind noch 130 Liter im Tank.",
+            "acceptable_reasoning": "Jede Äquivalenzumformung muss auf beiden Seiten der Gleichung gleichzeitig ausgeführt werden; die Reihenfolge (zuerst subtrahieren, dann dividieren) kann variieren, solange jeder Schritt korrekt und nachvollziehbar ist.",
+            "watch_outs": [
+              "Division durch eine negative Zahl wird manchmal ohne Vorzeichenwechsel im Ergebnis durchgeführt — −320 : (−40) muss positiv sein (= 8), nicht negativ.",
+              "Manche Schüler:innen führen die Umformung nur auf einer Seite der Gleichung durch, wodurch die Gleichung nicht mehr äquivalent ist."
+            ], "rubric": [
+              {"criterion": "Jeder Umformungsschritt einzeln dokumentiert", "levels": ["Nur Endergebnis", "Teilweise dokumentiert", "Vollständig Schritt für Schritt"]},
+              {"criterion": "Lösung korrekt (t = 8)", "levels": ["Falsch", "Rechenfehler, Methode richtig", "Korrekt"]},
+              {"criterion": "Sachzusammenhang gedeutet", "levels": ["Keine Deutung", "Deutung unvollständig", "Vollständig und korrekt gedeutet"]}
+            ]
+          },
+          {
+            "role": "task", "id": "t4", "kind": "calculation",
+            "prompt": "Ein zweiter, kleinerer Tank C wird proportional zu Tank A befüllt, aber langsamer: In 3 Minuten kommen 210 Liter dazu (Tank C startet bei 0 Litern). (a) Stelle das Verhältnis von Wassermenge zu Zeit als Bruch dar und kürze es. (b) Wie viel Liter sind nach 10 Minuten im Tank? (c) Nach wie vielen Minuten sind 700 Liter im Tank?",
+            "payload": null, "response": {"mode": "lines", "n": 5}, "cognitive_level": "apply",
+            "dimensions": ["MOD", "OPE"],
+            "serves": [{"competence_id": "MAT.US.3.VAR.01", "relation": "exercises"}],
+            "est_minutes": 9, "asset_refs": [],
+            "answer_key": "(a) 210 Liter : 3 Minuten = 70 Liter je Minute (Verhältnis 210:3 gekürzt = 70:1). (b) 70 · 10 = 700 Liter. (c) 700 : 70 = 10 Minuten (also derselbe Zeitpunkt wie in (b), das ist kein Zufall, sondern folgt direkt aus der Proportionalität).",
+            "acceptable_reasoning": "Proportionalität bedeutet: Wassermenge = konstanter Faktor · Zeit, mit Startwert 0. Der konstante Faktor (hier 70 L/min) kann aus jedem gegebenen Wertepaar berechnet werden.",
+            "watch_outs": [
+              "Der Unterschied zu Tank A (Aufgabe t1) sollte explizit angesprochen werden: Tank C startet bei 0 (echte Proportion), Tank A startet bei 200 (kein Nullpunkt, daher KEINE Proportion trotz gleichmäßiger Zunahme).",
+              "Beim Kürzen des Verhältnisses 210:3 wird manchmal nicht vollständig gekürzt."
+            ], "rubric": []
+          },
+          {
+            "role": "task", "id": "t5", "kind": "true_false_justify",
+            "prompt": "Vergleiche Tank A (Befüllung, W(t) = 100t + 200), Tank B (Entleerung, W(t) = 450 − 40t) und Tank C (Proportion, W(t) = 70t). Entscheide, ob die folgenden Aussagen richtig oder falsch sind, und begründe mit den Termen.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Tank A und Tank C beschreiben beide einen Wachstumsprozess, aber nur Tank C ist eine Proportion.",
+                "Tank B beschreibt einen Abnahmeprozess, weil der Koeffizient vor t negativ ist.",
+                "Wenn man den Term von Tank B lange genug fortsetzt (t sehr groß), wird der Wasserstand irgendwann negativ und das ist im Sachzusammenhang sinnvoll."
+              ]
+            },
+            "response": {"mode": "lines", "n": 7}, "cognitive_level": "analyze",
+            "dimensions": ["BEG", "DAR"],
+            "serves": [{"competence_id": "MAT.US.3.VAR.04", "relation": "exercises"}],
+            "est_minutes": 9, "asset_refs": [],
+            "answer_key": "1) Richtig: beide Terme wachsen mit t, aber Tank A hat einen Startwert von 200 ≠ 0, also keine Proportion; Tank C startet bei 0, also echte Proportion. 2) Richtig: −40t sorgt dafür, dass W(t) mit wachsendem t kleiner wird — das ist ein Abnahmeprozess. 3) Falsch: mathematisch würde der Term irgendwann negativ (ab t > 11,25), aber ein Wasserstand kann nicht negativ sein — das Modell gilt nur, solange W(t) ≥ 0 ist (der Tank ist ab da leer, nicht 'negativ gefüllt').",
+            "acceptable_reasoning": "Die Grenzen eines mathematischen Modells (hier: der gültige Definitionsbereich) müssen im Sachzusammenhang erkannt werden — nicht jede rechnerisch mögliche Lösung ist sachlich sinnvoll.",
+            "watch_outs": [
+              "Aussage 3 wird oft unreflektiert als 'richtig' eingestuft, weil die Rechnung stimmt — die Modellgrenze (Wasserstand ≥ 0) wird übersehen.",
+              "Bei Aussage 1 wird 'Wachstum' manchmal mit 'Proportion' gleichgesetzt, obwohl nur Prozesse mit Startwert 0 echte Proportionen sind."
+            ], "rubric": [
+              {"criterion": "Alle drei Wahrheitswerte korrekt", "levels": ["0–1 richtig", "2 richtig", "Alle 3 richtig"]},
+              {"criterion": "Modellgrenze bei Aussage 3 erkannt", "levels": ["Nicht erkannt", "Angedeutet", "Klar erkannt und erklärt"]}
+            ]
+          },
+          {
+            "role": "task", "id": "t6", "kind": "create_produce",
+            "prompt": "Entwirf deinen eigenen Wachstums- oder Abnahmeprozess zu einem Sachthema deiner Wahl (z. B. eine Pflanze, ein Sparbuch, ein Vorrat, eine Batterie-Ladung). Gib an: (1) den Startwert, (2) die Änderung pro Zeiteinheit als Term, (3) eine Gleichung, mit der man berechnen kann, wann ein bestimmter Zielwert erreicht wird — und löse diese Gleichung. Nenne außerdem die sachliche Grenze deines Modells (ab wann macht dein Term keinen Sinn mehr?).",
+            "payload": null, "response": {"mode": "box", "min_height_mm": 70}, "cognitive_level": "create",
+            "dimensions": ["MOD", "OPE", "BEG"],
+            "serves": [{"competence_id": "MAT.US.3.VAR.04", "relation": "exercises"}],
+            "est_minutes": 13, "asset_refs": [],
+            "answer_key": "Individuelle Lösungen. Beispiel: Eine Pflanze ist 4 cm hoch und wächst 1,5 cm pro Woche: H(w) = 1,5w + 4. Gesucht: wann ist sie 25 cm hoch? 1,5w + 4 = 25 → 1,5w = 21 → w = 14 Wochen. Modellgrenze: Das lineare Wachstum gilt nur, solange die Pflanze jung ist — irgendwann verlangsamt sich das Wachstum, der Term wird dann unrealistisch.",
+            "acceptable_reasoning": "Jedes in sich stimmige Modell mit korrekt aufgestelltem und gelöstem Term ist vollwertig; entscheidend ist, dass Startwert, Änderungsrate und Zielgleichung logisch zusammenpassen und die genannte Modellgrenze inhaltlich sinnvoll ist.",
+            "watch_outs": [
+              "Die geforderte Modellgrenze wird oft übersprungen, obwohl sie explizit verlangt ist — genau hier zeigt sich das Verständnis für 'Modell vs. Wirklichkeit'.",
+              "Manche wählen einen Abnahmeprozess, vergessen aber, dass der Term irgendwann null oder negativ wird, und thematisieren das nicht als Grenze."
+            ], "rubric": [
+              {"criterion": "Term korrekt aufgestellt (Startwert + Änderungsrate)", "levels": ["Fehlt oder unklar", "Ansatz erkennbar", "Vollständig korrekt"]},
+              {"criterion": "Zielgleichung aufgestellt und korrekt gelöst", "levels": ["Fehlt oder falsch", "Aufgestellt, Rechenfehler", "Vollständig korrekt gelöst"]},
+              {"criterion": "Modellgrenze sachlich sinnvoll benannt", "levels": ["Fehlt", "Genannt, aber unbegründet", "Klar benannt und begründet"]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

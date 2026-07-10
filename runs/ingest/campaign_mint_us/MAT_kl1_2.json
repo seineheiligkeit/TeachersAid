@@ -1,0 +1,217 @@
+{
+  "subject": "Mathematik",
+  "klasse": 1,
+  "kompetenzbereich": "2: Variablen und Funktionen",
+  "title": "Die Taschengeld-Sparbüchse",
+  "kernfrage": "Wie kannst du mit einem Buchstaben für eine unbekannte Zahl rechnen, um herauszufinden, wie viel Taschengeld du bekommst?",
+  "body": {
+    "intro": [],
+    "data_figures": [],
+    "assets": [
+      {
+        "id": "abb1",
+        "role": "figure",
+        "generator": "matplotlib:function_graph",
+        "spec": {
+          "xmin": 0,
+          "xmax": 6,
+          "ymin": 0,
+          "ymax": 30,
+          "m": 3,
+          "b": 2,
+          "xlabel": "Anzahl Wochen",
+          "ylabel": "Ersparnis in Euro",
+          "title": "Sparverlauf: Startgeld plus wöchentliches Taschengeld"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Terme und Gleichungen aus dem Taschengeld-Alltag",
+        "throughline": "Ausgehend von der Frage, wie sich das Taschengeld einer Sparbüchse entwickelt, stellen Schüler:innen Terme für Situationen auf, deuten eine gegebene Formel und lösen einfache Gleichungen, um eine unbekannte Zahl zu finden — vom Beschreiben zum Lösen.",
+        "talking_points": [
+          "Ein Term wie 3w + 2 beschreibt eine ganze Rechenvorschrift, keine einzelne Zahl — das ist der entscheidende Unterschied zur Gleichung.",
+          "Eine Gleichung entsteht erst, wenn man einen Term mit einem konkreten Ergebnis gleichsetzt (z. B. 3w + 2 = 20).",
+          "Das Lösen einer Gleichung heißt: Die unbekannte Zahl finden, für die beide Seiten gleich groß sind.",
+          "Der Graph (Abbildung) macht sichtbar, wie sich die Ersparnis mit jeder Woche verändert — eine Formel wird zum Bild."
+        ],
+        "extensions": [
+          "Schüler:innen stellen eine eigene Sparformel auf, wenn sich das wöchentliche Taschengeld ändert.",
+          "Vergleich zweier Sparpläne: Wann holt Plan B den Vorsprung von Plan A auf?",
+          "Was passiert mit dem Graphen, wenn das Startgeld (b) größer wird, aber die wöchentliche Rate (m) gleich bleibt?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "open_response",
+            "prompt": "Lukas bekommt jede Woche 3 Euro Taschengeld. Außerdem hat er schon 2 Euro in seiner Sparbüchse. Stelle einen Term auf, der zeigt, wie viel Geld Lukas nach w Wochen insgesamt gespart hat.",
+            "payload": null,
+            "response": { "mode": "lines", "n": 3 },
+            "cognitive_level": "understand",
+            "dimensions": ["MOD", "DAR"],
+            "serves": [
+              { "competence_id": "MAT.US.1.VAR.01", "relation": "exercises" }
+            ],
+            "est_minutes": 6,
+            "asset_refs": ["abb1"],
+            "answer_key": "Term: 3w + 2 (oder gleichwertig 3 · w + 2). Nach w Wochen hat Lukas 3w Euro aus dem Taschengeld plus die 2 Euro Startgeld.",
+            "acceptable_reasoning": "Das wöchentliche Taschengeld (3 Euro) wird mit der Anzahl der Wochen (w) multipliziert; das Startgeld (2 Euro) wird addiert.",
+            "watch_outs": [
+              "Manche Schüler:innen vertauschen die Rolle von Startgeld und wöchentlicher Rate — genau lesen, was pro Woche dazukommt und was schon vorhanden ist.",
+              "Der Term ist keine Gleichung — es fehlt (noch) ein Gleichheitszeichen mit einem Ergebnis."
+            ],
+            "rubric": [
+              { "criterion": "Term korrekt aufgestellt", "levels": ["Falsch oder fehlt", "Kleine Ungenauigkeit", "Vollständig korrekt (3w + 2)"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "multiple_choice",
+            "prompt": "Welche der folgenden Terme beschreiben Mias Sparsituation richtig: Sie hat 5 Euro Startgeld und bekommt jede Woche 4 Euro dazu?",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "4w + 5",
+                "5w + 4",
+                "4 · w + 5",
+                "5 + w · 4"
+              ],
+              "select": "many"
+            },
+            "response": {
+              "mode": "choices",
+              "options": [
+                "4w + 5",
+                "5w + 4",
+                "4 · w + 5",
+                "5 + w · 4"
+              ],
+              "select": "many"
+            },
+            "cognitive_level": "remember",
+            "dimensions": ["DAR"],
+            "serves": [
+              { "competence_id": "MAT.US.1.VAR.01", "relation": "exercises" }
+            ],
+            "est_minutes": 4,
+            "asset_refs": [],
+            "answer_key": "Richtig sind: 4w + 5, 4 · w + 5 und 5 + w · 4 (alle gleichwertig, da Addition und Multiplikation vertauschbar sind). Falsch ist 5w + 4 — dort wäre 5 die wöchentliche Rate und 4 das Startgeld, das ist vertauscht.",
+            "acceptable_reasoning": "Prüfen, welcher Faktor bei w steht (das ist die wöchentliche Rate) und welche Zahl allein steht (das ist das Startgeld).",
+            "watch_outs": [
+              "Schüler:innen erkennen oft nicht, dass mehrere gleichwertige Schreibweisen richtig sein können — alle passenden ankreuzen lassen.",
+              "5w + 4 ist eine bewusste Verwechslungsfalle (Rate und Startgeld vertauscht)."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "calculation",
+            "prompt": "Lukas möchte wissen, nach wie vielen Wochen er 20 Euro gespart hat. Löse die Gleichung 3w + 2 = 20 durch schrittweises Umkehren der Rechenoperationen. Schreibe jeden Schritt einzeln auf.",
+            "payload": null,
+            "response": { "mode": "lines", "n": 5 },
+            "cognitive_level": "apply",
+            "dimensions": ["OPE"],
+            "serves": [
+              { "competence_id": "MAT.US.1.VAR.02", "relation": "exercises" }
+            ],
+            "est_minutes": 7,
+            "asset_refs": [],
+            "answer_key": "3w + 2 = 20 | −2 → 3w = 18 | ÷3 → w = 6. Probe: 3·6+2 = 20 ✓. Lukas hat also nach 6 Wochen 20 Euro gespart.",
+            "acceptable_reasoning": "Zuerst die Addition rückgängig machen (−2), dann die Multiplikation (÷3) — Umkehrreihenfolge von außen nach innen.",
+            "watch_outs": [
+              "Häufiger Fehler: zuerst durch 3 dividieren, statt zuerst −2 zu rechnen.",
+              "Probe nicht vergessen — sie bestätigt, dass die Lösung stimmt."
+            ],
+            "rubric": [
+              { "criterion": "Umformungsschritte sichtbar", "levels": ["Kein Schritt sichtbar", "Ein Schritt gezeigt", "Alle Schritte korrekt und nachvollziehbar"] },
+              { "criterion": "Probe durchgeführt", "levels": ["Keine Probe", "Probe versucht, Fehler", "Probe korrekt (w = 6)"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "data_interpretation",
+            "prompt": "Die Abbildung zeigt Lukas' Sparverlauf als Graph (Wochen auf der waagrechten Achse, Ersparnis in Euro auf der senkrechten Achse). Lies aus dem Graphen ab, wie viel Geld Lukas nach 4 Wochen gespart hat, und überprüfe dein Ergebnis, indem du den Term 3w + 2 für w = 4 berechnest.",
+            "payload": null,
+            "response": { "mode": "lines", "n": 3 },
+            "cognitive_level": "apply",
+            "dimensions": ["DAR", "OPE"],
+            "serves": [
+              { "competence_id": "MAT.US.1.VAR.01", "relation": "exercises" }
+            ],
+            "est_minutes": 6,
+            "asset_refs": ["abb1"],
+            "answer_key": "Abgelesen: ca. 14 Euro nach 4 Wochen. Berechnung: 3·4+2 = 12+2 = 14 Euro. Ablesung und Rechnung stimmen überein.",
+            "acceptable_reasoning": "Der Punkt auf dem Graphen bei x = 4 wird abgelesen und mit dem eingesetzten Term-Wert verglichen.",
+            "watch_outs": [
+              "Beim Ablesen am Graphen ist eine kleine Ungenauigkeit (±1 Euro) normal — die Rechnung liefert den exakten Wert.",
+              "Achse genau beschriften: Wochen (waagrecht) nicht mit Euro (senkrecht) vertauschen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "true_false_justify",
+            "prompt": "Entscheide, ob die folgenden Aussagen wahr oder falsch sind, und begründe jeweils kurz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Die Gleichung 3w + 2 = 2 hat die Lösung w = 0.",
+                "Wenn man beide Seiten einer Gleichung mit derselben Zahl multipliziert, bleibt die Gleichung gültig, egal welche Zahl man wählt.",
+                "Der Term 3w + 2 kann nie den Wert 2 annehmen, wenn w eine positive Zahl ist."
+              ]
+            },
+            "response": { "mode": "lines", "n": 6 },
+            "cognitive_level": "evaluate",
+            "dimensions": ["BEG", "OPE"],
+            "serves": [
+              { "competence_id": "MAT.US.1.VAR.02", "relation": "exercises" }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "1) Wahr: 3·0+2 = 2 ✓. 2) Falsch: Multipliziert man mit 0, ergibt sich 0 = 0, was keine sinnvolle Äquivalenzumformung mehr ist (die Information über w geht verloren). 3) Wahr: Bei w größer als 0 ist 3w immer größer als 0, also ist 3w+2 immer größer als 2.",
+            "acceptable_reasoning": "Für 1: w=0 einsetzen und prüfen. Für 2: Gegenbeispiel mit Multiplikation durch 0 finden. Für 3: Argumentieren, dass 3w für positive w stets positiv ist.",
+            "watch_outs": [
+              "Aussage 2 ist eine häufige Fehlvorstellung — die Sonderrolle der Multiplikation mit 0 explizit besprechen.",
+              "Bei Aussage 3 ist wichtig, dass w als positive Zahl vorausgesetzt wird — bei w = 0 wäre die Aussage anders zu diskutieren."
+            ],
+            "rubric": [
+              { "criterion": "Begründungsqualität", "levels": ["Kein Argument", "Ergebnis ohne Begründung", "Nachvollziehbare Begründung je Aussage"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "create_produce",
+            "prompt": "Erfinde eine eigene Sparsituation (mit Startgeld und wöchentlicher Rate), sodass die passende Gleichung 5w + 10 = 45 lautet. Erkläre, was w in deiner Geschichte bedeutet, und löse die Gleichung, um herauszufinden, nach wie vielen Wochen das Ziel erreicht ist.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 50 },
+            "cognitive_level": "create",
+            "dimensions": ["MOD", "BEG"],
+            "serves": [
+              { "competence_id": "MAT.US.1.VAR.01", "relation": "exercises" },
+              { "competence_id": "MAT.US.1.VAR.02", "relation": "exercises" }
+            ],
+            "est_minutes": 9,
+            "asset_refs": [],
+            "answer_key": "Jede sinnvolle Geschichte mit 10 Euro Startgeld und 5 Euro wöchentlicher Rate passt, z. B.: »Paul hat 10 Euro geschenkt bekommen und spart jede Woche 5 Euro dazu, bis er 45 Euro für ein Spiel hat.« Lösung: 5w+10=45 | −10 → 5w=35 | ÷5 → w=7. Nach 7 Wochen ist das Ziel erreicht.",
+            "acceptable_reasoning": "Die Geschichte muss die Struktur der Gleichung widerspiegeln: eine feste Zahl (Startgeld) plus eine Rate mal Wochen.",
+            "watch_outs": [
+              "Manche Schüler:innen erfinden eine Geschichte, die nicht zur Gleichung passt — die Zuordnung von Startgeld und Rate genau prüfen.",
+              "Die Bedeutung von w muss klar benannt sein (z. B. »Anzahl der Wochen«)."
+            ],
+            "rubric": [
+              { "criterion": "Geschichte passt zur Gleichung", "levels": ["Kein Bezug", "Teils passend", "Vollständig passend und sinnvoll"] },
+              { "criterion": "Gleichung korrekt gelöst", "levels": ["Falsch", "Rechenfehler, Weg erkennbar", "Korrekt (w = 7) mit Probe"] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

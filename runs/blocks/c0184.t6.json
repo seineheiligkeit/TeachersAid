@@ -1,0 +1,98 @@
+{
+  "id": "c0184.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "a1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Die Abbildung zeigt die Temperatur an eurem Wandertag von 6 Uhr früh bis Mittag. Lies ab: Wie viel Grad wärmer ist es am Mittag als um 6 Uhr früh? Beschreibe in eigenen Worten, wie sich die Temperatur laut Zahlenstrahl entwickelt.",
+    "payload": {
+      "kind": "data_interpretation",
+      "asset_ref": "a1"
+    },
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "DAR",
+      "OPE"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.2.ZAH.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Um 6 Uhr früh zeigt der Zahlenstrahl −2 °C, am Mittag 12 °C. Differenz: 12 − (−2) = 14 Grad wärmer. Die Temperatur steigt im Lauf des Vormittags kontinuierlich von einem Minusgrad-Wert auf einen deutlichen Plusgrad-Wert.",
+    "acceptable_reasoning": "Jede Beschreibung, die den Anstieg von negativer zu positiver Temperatur korrekt wiedergibt, wird akzeptiert, auch ohne exakten Differenzwert, solange die Bewegung auf der Zahlengeraden richtig gedeutet wird.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Die Differenz zwischen einer negativen und einer positiven Zahl wird oft als einfache Subtraktion der Beträge (12 − 2 = 10) statt als 12 − (−2) = 14 gerechnet – das ist der zentrale Lernpunkt der Aufgabe."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Mathematik",
+  "klasse": 2,
+  "kompetenzbereich": "1: Zahlen und Maße",
+  "competences": [
+    "MAT.US.2.ZAH.03"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "DAR",
+    "OPE"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "a1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:number_line",
+      "spec": {
+        "min": -5,
+        "max": 15,
+        "step": 1,
+        "marks": [
+          {
+            "at": -2,
+            "label": "6 Uhr früh"
+          },
+          {
+            "at": 12,
+            "label": "Mittag"
+          }
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": true,
+      "caption": "Temperaturverlauf am Wandertag (°C)"
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0184",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:18+00:00",
+  "updated_at": "2026-07-05T05:34:18+00:00"
+}

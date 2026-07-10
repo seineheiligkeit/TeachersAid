@@ -1,0 +1,190 @@
+{
+  "subject": "Mathematik", "klasse": 3,
+  "kompetenzbereich": "3: Figuren und Körper",
+  "title": "Die Modellbau-Werkstatt", "kernfrage": "Wie berechnest du Flächen und Rauminhalte von Figuren und Körpern — und was passiert damit, wenn du ein Modell verkleinerst oder vergrößerst?",
+  "body": {
+    "intro": [
+      {
+        "role": "info", "id": "intro1", "kind": "prose",
+        "content": "Eine Modellbauerin plant ein Gelände: Sie zeichnet Grundstücksflächen als Vielecke, verkleinert reale Maße auf ein Modell, und muss für ein Dach- und ein Turmmodell Oberflächen und Rauminhalte berechnen, bevor sie Material bestellt. Auf diesem Blatt übernimmst du diese Aufgaben.",
+        "payload": null, "response": {"mode": "none"}, "cognitive_level": "remember",
+        "dimensions": ["MOD"], "serves": [{"competence_id": "MAT.US.3.FIG.01", "relation": "exercises"}],
+        "est_minutes": 2, "asset_refs": [], "answer_key": null, "acceptable_reasoning": null,
+        "watch_outs": [], "rubric": []
+      }
+    ],
+    "data_figures": [],
+    "assets": [
+      {
+        "id": "abb_grundstueck", "role": "figure", "generator": "matplotlib:polygon",
+        "spec": {
+          "points": [[0, 0], [8, 0], [8, 4], [5, 7], [0, 4]],
+          "vertex_labels": ["A", "B", "C", "D", "E"],
+          "side_labels": ["8 m", "5 m", "?", "?", "4 m"],
+          "title": "Grundstück (Draufsicht)"
+        }
+      },
+      {
+        "id": "abb_streckung", "role": "figure", "generator": "matplotlib:coordinate_plane",
+        "spec": {
+          "points": [
+            {"x": 0, "y": 0, "label": "Z"},
+            {"x": 2, "y": 1, "label": "P1"},
+            {"x": 4, "y": 1, "label": "P2"},
+            {"x": 3, "y": 4, "label": "P3"}
+          ],
+          "segments": [[1, 2], [2, 3], [3, 1]],
+          "xmin": -1, "xmax": 9, "ymin": -1, "ymax": 9,
+          "title": "Dreieck P1P2P3 mit Streckzentrum Z"
+        }
+      },
+      {
+        "id": "abb_prisma_netz", "role": "figure", "generator": "matplotlib:rectangle",
+        "spec": {
+          "length": 6, "width": 4,
+          "label_l": "6 cm", "label_w": "4 cm",
+          "title": "Grundfläche des Turmmodells (Rechteck)"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1", "title": "Von der Fläche zum Körper",
+        "throughline": "Der rote Faden führt von der Flächenberechnung eines unregelmäßigen Vielecks durch Zerlegung über die zentrische Streckung und ähnliche Figuren zur Oberflächen- und Volumenberechnung gerader Prismen und Pyramiden — und endet beim eigenen Entwurf eines Modellkörpers. Damit ist die volle Bandbreite des Kompetenzbereichs abgedeckt.",
+        "talking_points": [
+          "Ein unregelmäßiges Vieleck lässt sich fast immer in Dreiecke oder andere bekannte Grundfiguren zerlegen — das ist der Grundtrick der Flächenberechnung.",
+          "Bei einer zentrischen Streckung bleiben alle Winkel gleich und alle Seiten werden mit demselben Faktor multipliziert — das macht die beiden Figuren ähnlich.",
+          "Der Ähnlichkeitsfaktor wirkt auf Längen linear, auf Flächen aber quadratisch (Faktor²) — dieser Unterschied überrascht viele Schüler:innen und lohnt sich, explizit zu thematisieren.",
+          "Das Volumen einer Pyramide ist genau ein Drittel des Volumens eines Prismas mit gleicher Grundfläche und Höhe — eine der wenigen Formeln, die man sich als Verhältnis merken kann, statt sie neu herzuleiten."
+        ],
+        "extensions": [
+          "Wie ändert sich die Fläche eines Vielecks, wenn man es mit dem Faktor 3 (statt 2) zentrisch streckt? Allgemeine Regel formulieren: Fläche' = Fläche · k².",
+          "Bau ein echtes Papiermodell eines geraden Prismas und einer Pyramide mit gleicher Grundfläche und Höhe — fülle beide mit Reis oder Sand, um das Verhältnis 1:3 praktisch zu überprüfen.",
+          "Recherche: Welche berühmten Bauwerke haben die Form einer Pyramide, und welchen ungefähren Rauminhalt haben sie?"
+        ],
+        "blocks": [
+          {
+            "role": "task", "id": "t1", "kind": "calculation",
+            "prompt": "Das Grundstück ABCDE in der Abbildung lässt sich in ein Rechteck ABCE' (mit E' als Hilfspunkt direkt über E auf Höhe von C) und ein Dreieck darüber zerlegen: Rechteck mit den Seiten 8 m und 4 m, darüber ein Dreieck mit Grundseite 8 m und Höhe 3 m (von der Rechteckoberkante bis zur Spitze D). Berechne den Gesamtflächeninhalt des Grundstücks.",
+            "payload": null, "response": {"mode": "lines", "n": 5}, "cognitive_level": "understand",
+            "dimensions": ["OPE", "DAR"],
+            "serves": [{"competence_id": "MAT.US.3.FIG.01", "relation": "exercises"}],
+            "est_minutes": 8, "asset_refs": ["abb_grundstueck"],
+            "answer_key": "Rechteck: A = 8 m · 4 m = 32 m². Dreieck: A = (8 m · 3 m) : 2 = 12 m². Gesamtfläche: 32 m² + 12 m² = 44 m².",
+            "acceptable_reasoning": "Die Zerlegung in eine Rechteck- und eine Dreiecksfläche ist der Standardweg für ein Vieleck dieser Form; die Teilflächen werden am Ende addiert.",
+            "watch_outs": [
+              "Die Dreiecksfläche wird manchmal ohne Division durch 2 berechnet (Grundseite mal Höhe statt Grundseite mal Höhe durch 2).",
+              "Die Höhe des Dreiecks (3 m) darf nicht mit einer Seitenlänge verwechselt werden — sie steht senkrecht auf der Grundseite."
+            ], "rubric": [
+              {"criterion": "Zerlegung korrekt erkannt", "levels": ["Keine sinnvolle Zerlegung", "Zerlegung erkannt, Rechenfehler", "Zerlegung korrekt und vollständig berechnet"]},
+              {"criterion": "Gesamtfläche korrekt (44 m²)", "levels": ["Falsch", "Nahe dran, ein Fehler", "Korrekt"]}
+            ]
+          },
+          {
+            "role": "task", "id": "t2", "kind": "true_false_justify",
+            "prompt": "Das Dreieck P1P2P3 in der Abbildung wird vom Streckzentrum Z aus mit dem Faktor k = 2 zentrisch gestreckt (jeder Punkt wandert doppelt so weit von Z weg). Entscheide, ob die folgenden Aussagen über das gestreckte Dreieck richtig oder falsch sind.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Alle Winkel des gestreckten Dreiecks sind doppelt so groß wie im Originaldreieck.",
+                "Alle Seitenlängen des gestreckten Dreiecks sind doppelt so lang wie im Originaldreieck.",
+                "Der Flächeninhalt des gestreckten Dreiecks ist doppelt so groß wie im Originaldreieck."
+              ]
+            },
+            "response": {"mode": "lines", "n": 6}, "cognitive_level": "understand",
+            "dimensions": ["BEG", "DAR"],
+            "serves": [{"competence_id": "MAT.US.3.FIG.02", "relation": "exercises"}],
+            "est_minutes": 7, "asset_refs": ["abb_streckung"],
+            "answer_key": "1) Falsch: Winkel bleiben bei einer zentrischen Streckung IMMER gleich groß, egal welcher Streckfaktor gewählt wird. 2) Richtig: Längen werden mit dem Faktor k = 2 multipliziert. 3) Falsch: die Fläche wird mit k² = 4 multipliziert, also viermal so groß, nicht doppelt.",
+            "acceptable_reasoning": "Zentrale Eigenschaft der zentrischen Streckung: Winkel invariant, Längen mit Faktor k, Flächen mit Faktor k² — dieser Unterschied zwischen linear (Länge) und quadratisch (Fläche) ist entscheidend.",
+            "watch_outs": [
+              "Aussage 3 wird sehr häufig fälschlich als 'richtig' (Faktor 2) statt 'falsch' (tatsächlich Faktor 4 = k²) eingestuft — die quadratische Wirkung auf Flächen ist eine der wichtigsten Fehlvorstellungen in diesem Themenbereich.",
+              "Aussage 1 verwechselt Ähnlichkeit (Winkel bleiben gleich) mit Kongruenz-Verzerrung; im Unterschied zu Seiten ändern sich Winkel bei einer zentrischen Streckung NIE."
+            ], "rubric": [
+              {"criterion": "Alle drei Wahrheitswerte korrekt", "levels": ["0–1 richtig", "2 richtig", "Alle 3 richtig"]},
+              {"criterion": "Flächenfaktor k² erkannt und erklärt", "levels": ["Nicht erkannt", "Nur die Zahl genannt", "k² korrekt erklärt"]}
+            ]
+          },
+          {
+            "role": "task", "id": "t3", "kind": "calculation",
+            "prompt": "Das Streckzentrum liegt bei Z(0|0). Ein Punkt des Originaldreiecks liegt bei P1(2|1). Berechne die Koordinaten des Bildpunkts P1' nach zentrischer Streckung mit dem Faktor k = 3 (Formel: P' = k · P, da Z im Ursprung liegt). Berechne anschließend auf demselben Weg die Bildpunkte von P2(4|1) und P3(3|4).",
+            "payload": null, "response": {"mode": "lines", "n": 5}, "cognitive_level": "apply",
+            "dimensions": ["OPE", "DAR"],
+            "serves": [{"competence_id": "MAT.US.3.FIG.02", "relation": "exercises"}],
+            "est_minutes": 8, "asset_refs": ["abb_streckung"],
+            "answer_key": "P1' = 3 · (2|1) = (6|3). P2' = 3 · (4|1) = (12|3). P3' = 3 · (3|4) = (9|12).",
+            "acceptable_reasoning": "Da das Streckzentrum im Ursprung liegt, werden einfach beide Koordinaten jedes Punktes mit dem Streckfaktor multipliziert.",
+            "watch_outs": [
+              "Nur eine Koordinate (x ODER y) wird manchmal mit dem Faktor multipliziert, statt beide — beide Koordinaten müssen gleichermaßen skaliert werden.",
+              "Läge Z NICHT im Ursprung, müsste man zuerst den Vektor von Z zum Punkt bilden, diesen strecken und dann wieder zu Z addieren — das ist hier bewusst nicht der Fall, sollte aber angesprochen werden."
+            ], "rubric": [
+              {"criterion": "Alle drei Bildpunkte korrekt berechnet", "levels": ["0–1 korrekt", "2 korrekt", "Alle 3 korrekt"]}
+            ]
+          },
+          {
+            "role": "task", "id": "t4", "kind": "calculation",
+            "prompt": "Das Turmmodell hat als Grundfläche das Rechteck aus der Abbildung (6 cm × 4 cm) und ist ein gerades Prisma mit der Höhe 10 cm. Berechne (a) den Oberflächeninhalt des Prismas (2 Grundflächen + 4 Seitenflächen) und (b) den Rauminhalt des Prismas.",
+            "payload": null, "response": {"mode": "lines", "n": 6}, "cognitive_level": "apply",
+            "dimensions": ["OPE", "MOD"],
+            "serves": [{"competence_id": "MAT.US.3.FIG.03", "relation": "exercises"}],
+            "est_minutes": 9, "asset_refs": ["abb_prisma_netz"],
+            "answer_key": "Grundfläche: G = 6 cm · 4 cm = 24 cm². (a) Oberfläche: 2 Grundflächen (2 · 24 = 48 cm²) + Seitenflächen (Umfang · Höhe = (2·6 + 2·4) · 10 = 20 · 10 = 200 cm²). Gesamt: O = 48 + 200 = 248 cm². (b) Volumen: V = G · h = 24 cm² · 10 cm = 240 cm³.",
+            "acceptable_reasoning": "Bei einem geraden Prisma mit rechteckiger Grundfläche ist die Oberfläche die Summe aus zwei Grundflächen und dem Mantel (Umfang der Grundfläche mal Höhe); das Volumen ist Grundfläche mal Höhe.",
+            "watch_outs": [
+              "Bei der Oberfläche wird die zweite Grundfläche (Deckfläche) manchmal vergessen — ein Prisma hat zwei kongruente Grundflächen, nicht nur eine.",
+              "Volumen und Oberfläche werden gelegentlich verwechselt oder mit derselben Formel berechnet — Volumen hat die Einheit cm³, Oberfläche cm²; das ist ein guter Kontrollpunkt."
+            ], "rubric": [
+              {"criterion": "Oberfläche korrekt (248 cm²)", "levels": ["Falsch", "Ansatz richtig, Rechenfehler", "Korrekt"]},
+              {"criterion": "Volumen korrekt (240 cm³)", "levels": ["Falsch", "Ansatz richtig, Rechenfehler", "Korrekt"]},
+              {"criterion": "Einheiten (cm² bzw. cm³) korrekt verwendet", "levels": ["Fehlt oder falsch", "Teilweise korrekt", "Durchgehend korrekt"]}
+            ]
+          },
+          {
+            "role": "task", "id": "t5", "kind": "true_false_justify",
+            "prompt": "Für das Turmdach plant die Modellbauerin eine Pyramide mit DERSELBEN Grundfläche (24 cm²) und DERSELBEN Höhe (10 cm) wie das Prisma aus Aufgabe 4. Entscheide, ob die folgenden Aussagen richtig oder falsch sind, und begründe mit einer Rechnung.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Die Pyramide hat genau ein Drittel des Rauminhalts des Prismas.",
+                "Der Rauminhalt der Pyramide beträgt 80 cm³.",
+                "Wenn man die Höhe der Pyramide verdoppelt (Grundfläche bleibt gleich), verdoppelt sich auch ihr Rauminhalt."
+              ]
+            },
+            "response": {"mode": "lines", "n": 7}, "cognitive_level": "analyze",
+            "dimensions": ["BEG", "OPE"],
+            "serves": [{"competence_id": "MAT.US.3.FIG.03", "relation": "exercises"}],
+            "est_minutes": 9, "asset_refs": [],
+            "answer_key": "1) Richtig: bei gleicher Grundfläche und Höhe gilt immer V(Pyramide) = (1/3) · V(Prisma). 2) Richtig: V = (1/3) · G · h = (1/3) · 24 cm² · 10 cm = 80 cm³ (passt zu Aussage 1, da 240 cm³ : 3 = 80 cm³). 3) Richtig: da V = (1/3) · G · h und G konstant bleibt, ist V direkt proportional zu h — eine Verdoppelung von h verdoppelt V.",
+            "acceptable_reasoning": "Alle drei Aussagen lassen sich direkt aus der Formel V = (1/3) · G · h ableiten: das 1/3-Verhältnis zu einem vergleichbaren Prisma, der konkrete Zahlenwert, und die lineare Abhängigkeit vom Faktor h bei konstantem G.",
+            "watch_outs": [
+              "Aussage 3 wird oft als 'falsch' eingeschätzt, weil bei Flächen eine Verdoppelung einer Länge die Fläche vervierfacht (quadratisch) — beim Volumen bei NUR EINER veränderten Größe (hier: nur h, G bleibt fest) ist der Zusammenhang aber linear, nicht quadratisch. Diese Unterscheidung lohnt den Vergleich mit Aufgabe t2.",
+              "Bei Aussage 2 wird das Drittel manchmal vergessen und einfach G · h = 240 cm³ als Pyramidenvolumen angegeben."
+            ], "rubric": [
+              {"criterion": "Alle drei Wahrheitswerte korrekt", "levels": ["0–1 richtig", "2 richtig", "Alle 3 richtig"]},
+              {"criterion": "Rechnerischer Beleg für Aussage 2", "levels": ["Kein Beleg", "Teilweise", "Vollständige Rechnung (80 cm³)"]}
+            ]
+          },
+          {
+            "role": "task", "id": "t6", "kind": "create_produce",
+            "prompt": "Entwirf dein eigenes Modell für eine Verpackung (z. B. eine Geschenkschachtel als gerades Prisma oder ein Zeltmodell als Pyramide). Wähle sinnvolle Maße (Grundfläche + Höhe), zeichne eine beschriftete Skizze, und berechne für dein Modell sowohl den Oberflächeninhalt als auch den Rauminhalt. Begründe, warum deine gewählten Maße für den genannten Verwendungszweck sinnvoll sind.",
+            "payload": null, "response": {"mode": "box", "min_height_mm": 70}, "cognitive_level": "create",
+            "dimensions": ["MOD", "OPE", "DAR"],
+            "serves": [{"competence_id": "MAT.US.3.FIG.03", "relation": "exercises"}],
+            "est_minutes": 13, "asset_refs": [],
+            "answer_key": "Individuelle Lösungen. Beispiel Geschenkschachtel (Prisma, quadratische Grundfläche 5 cm × 5 cm, Höhe 12 cm): Grundfläche G = 25 cm². Oberfläche: 2 · 25 + (4 · 5) · 12 = 50 + 240 = 290 cm². Volumen: 25 · 12 = 300 cm³. Begründung: passend für ein schmales, hohes Geschenk wie einen Stift oder eine Kerze.",
+            "acceptable_reasoning": "Jedes Modell mit realistischen, klar benannten Maßen und korrekt darauf angewendeten Formeln für Oberfläche und Volumen ist vollwertig; die Begründung des Verwendungszwecks muss zu den gewählten Maßen passen.",
+            "watch_outs": [
+              "Bei einer selbst gewählten Pyramide wird der Faktor 1/3 im Volumen manchmal vergessen, weil er in eigenen Konstruktionen seltener automatisch mitgedacht wird als in vorgegebenen Aufgaben.",
+              "Unrealistische Maße (z. B. eine 2 cm hohe, aber 50 cm breite 'Schachtel') sollten hinterfragt werden — die Begründung muss zu den Zahlen passen."
+            ], "rubric": [
+              {"criterion": "Skizze vorhanden und beschriftet", "levels": ["Fehlt", "Vorhanden, unvollständig beschriftet", "Vollständig beschriftet"]},
+              {"criterion": "Oberflächeninhalt korrekt berechnet", "levels": ["Fehlt oder falsch", "Ansatz richtig, Fehler", "Korrekt für die eigenen Maße"]},
+              {"criterion": "Rauminhalt korrekt berechnet", "levels": ["Fehlt oder falsch", "Ansatz richtig, Fehler", "Korrekt für die eigenen Maße"]},
+              {"criterion": "Begründung des Verwendungszwecks passt zu den Maßen", "levels": ["Fehlt oder passt nicht", "Teilweise passend", "Schlüssig und passend"]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

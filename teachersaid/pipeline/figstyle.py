@@ -28,6 +28,11 @@ so nothing outside the engine's own figures is restyled (`use_house_style()` rem
 global application, e.g. the specimen scripts). Mirrors `rendering/reportlab_base`'s font
 discovery so the figure text matches the worksheet body text (Carlito/Calibri) instead of
 DejaVu — figures read as part of the document, not pasted in.
+
+**Representation rule (SME review, 3 Jul 2026):** axes never use scientific notation;
+large values scale to Mio./Mrd. with the unit named in the axis label (`unit_scale`),
+numbers print German-style (`fmt_de` — dot thousands, comma decimals), and time (years)
+belongs on a numeric x-axis, never on category ticks or bars.
 """
 from __future__ import annotations
 
@@ -46,11 +51,15 @@ PALETTE = SimpleNamespace(
     muted="#6a7a88",      # secondary text, leaders, citations, captions
     grid="#e6eaed",       # gridlines (quiet)
     primary="#3a6ea5",    # the main data — single series of bars / one line
+    secondary="#b06b4f",  # a paired SECOND series against `primary` (e.g. the women's
+                          # wing of a population pyramid, g against f) — warm, not `focus`
+                          # (which is reserved for the region of interest, never a series)
     focus="#c0392b",      # the element/region of interest: unknown · result · "look here"
     positive="#2e8b57",   # honest / correct / positive change
     negative="#b5403a",   # misleading / wrong / negative change
     surface="#eef3f8",    # soft box fill (info boxes, geometry interiors) — cool
     surface_warm="#fdecec",  # soft box fill — warm (process/cause-effect boxes)
+    no_data="#e8e8e8",    # a "kein Wert" fill (an unmapped choropleth region)
     paper="#ffffff",
 )
 
@@ -133,6 +142,41 @@ def subject_accent(subject: str | None) -> str:
         if key in s:
             return col
     return PALETTE.ink
+
+
+# --- number display (never scientific notation) -------------------------------
+# The magnitudes a value axis may be scaled to, largest first. "Tsd." is deliberately
+# absent: 4–6-digit numbers still read fine with German dot-grouping ("129.086").
+UNIT_SCALES: tuple[tuple[float, str], ...] = ((1e9, "Mrd."), (1e6, "Mio."))
+
+
+def fmt_de(v: float, decimals: int | None = None) -> str:
+    """German-format a number — dot thousands, comma decimals, NEVER scientific
+    notation (8916845 → "8.916.845", 8.9 → "8,9"). With `decimals=None` the precision
+    is chosen automatically (integers bare; 1 decimal ≥10, else 2; trailing zeros
+    stripped); an explicit `decimals` is rendered exactly (7.04 @ 1 → "7,0")."""
+    x = float(v)
+    auto = decimals is None
+    if auto:
+        decimals = 0 if x == int(x) else (1 if abs(x) >= 10 else 2)
+    s = f"{x:,.{decimals}f}".translate(str.maketrans(",.", ".,"))
+    if auto and "," in s:
+        s = s.rstrip("0").rstrip(",")
+    return s
+
+
+def unit_scale(values, label: str = "") -> tuple[list[float], str, float]:
+    """Auto-scale large values for display — the SME rule "nie 8.9e+06 an der Achse":
+    max ≥ 1e9 → divide by 1e9 and suffix the label "(in Mrd.)", ≥ 1e6 → "(in Mio.)".
+    Returns (scaled_values, labelled, divisor); small values pass through unchanged.
+    An empty label becomes just "in Mio." so the unit is never silently dropped."""
+    vals = [float(v) for v in values]
+    vmax = max((abs(v) for v in vals), default=0.0)
+    for div, name in UNIT_SCALES:
+        if vmax >= div:
+            lbl = f"{label} (in {name})" if label else f"in {name}"
+            return [v / div for v in vals], lbl, div
+    return vals, label, 1.0
 
 
 # --- colour helpers ----------------------------------------------------------
@@ -220,9 +264,45 @@ def _add_font(path: Path) -> None:
                                   if os.path.normcase(e.fname) != key]
 
 
+def _renders_small(family: str) -> bool:
+    """Does `family` actually rasterise small text, or drop most glyphs?
+
+    Some real-world TTFs (notably the Windows **Calibri** build seen on the dev machine)
+    hit a matplotlib+Agg small-size rendering bug: a raw text artist at ~9 pt loses most of
+    its glyphs (e.g. "Zitronensaft" → "ft"), while the SAME font renders fine at ≥ 11 pt and
+    via the tick machinery — so the failure is invisible in the big-figure specimens and only
+    bites the small-label recipes (number line, timeline). We refuse such a font here rather
+    than ship broken worksheets: render a probe string at 9 pt and require that it lays down
+    ink across a reasonable fraction of its width (a dropped-glyph render is nearly blank).
+    Measured, not assumed — the figure-side twin of the layout lint."""
+    try:
+        import numpy as np
+        import matplotlib.pyplot as plt
+    except Exception:
+        return True                              # no numpy/plt at import → don't block
+    probe = "Zitronensaft"
+    try:
+        fig = plt.figure(figsize=(3.0, 0.6), dpi=100)
+        fig.text(0.5, 0.5, probe, family=family, fontsize=9, ha="center", va="center",
+                 color="black")
+        fig.canvas.draw()
+        buf = np.frombuffer(fig.canvas.buffer_rgba(), dtype=np.uint8).reshape(
+            fig.canvas.get_width_height()[::-1] + (4,))
+        plt.close(fig)
+    except Exception:
+        return True                              # probe itself failed → don't block the font
+    dark = buf[..., :3].sum(axis=2) < 400        # near-black pixels (the glyph strokes)
+    cols_with_ink = int(dark.any(axis=0).sum())
+    # a healthy 12-char render inks ~55–70 columns; a dropped-glyph render inks < 10.
+    return cols_with_ink >= 25
+
+
 def _register_font() -> str:
-    """Register the first available real family with matplotlib; return its name (or the
-    DejaVu Sans fallback so figures still render on a bare machine)."""
+    """Register the first available real family that actually renders (Carlito → Calibri),
+    else the DejaVu Sans fallback (always present, always renders). Every file is registered
+    STRIKE-STRIPPED (`_add_font` — the root-cause fix, so Windows Calibri renders at every
+    size); the small-text probe (`_renders_small`) stays as the measured safety net, so any
+    OTHER small-size rendering bug still never becomes the house font."""
     for regular, *others in _FONT_FILES:
         path = _find(regular)
         if not path:
@@ -232,7 +312,9 @@ def _register_font() -> str:
             p = _find(extra)
             if p:
                 _add_font(p)
-        return fm.FontProperties(fname=str(path)).get_name()
+        name = fm.FontProperties(fname=str(path)).get_name()
+        if _renders_small(name):
+            return name
     return "DejaVu Sans"
 
 
@@ -273,8 +355,10 @@ def house_rc() -> dict:
 
 
 def use_house_style() -> None:
-    """Apply the house rcParams globally, once (idempotent). For standalone consumers like the
-    specimen scripts; the engine itself scopes via `house_rc()` inside `build_asset`."""
+    """Apply the house rcParams globally, once (idempotent). The ported recipes in
+    `pipeline/assets.py` scope the style per-figure via `plt.rc_context(house_rc())` (so a recipe
+    never leaks rcParams onto another figure); this global form is kept for the multi-panel
+    specimen scripts that render one styled sheet in a single process."""
     global _APPLIED
     if _APPLIED:
         return
@@ -315,3 +399,28 @@ def style_axes(ax, *, frame: str = "lb", grid: bool = True, grid_axis: str = "bo
 def c(role: str) -> str:
     """Look up a semantic role colour by name (e.g. `c("focus")`)."""
     return getattr(PALETTE, role)
+
+
+def cat(i: int) -> str:
+    """The i-th hue of the categorical ramp (wraps). Slot 0 == `primary`, so a single
+    series and the first-of-many agree."""
+    return CATEGORICAL[i % len(CATEGORICAL)]
+
+
+def edge(role: str = "primary", t: float = 0.22) -> str:
+    """A darker edge for a filled shape in `role` — a bar/box/geometry outline that reads
+    against its fill (the ported recipes' `edgecolor`; replaces the hand-picked pairs like
+    `#4f6f8f` filled + `#33506e` edged)."""
+    return darken(c(role), t)
+
+
+# --- SVG (decorative kit) — the same design system, expressed as literal strings ---
+# The svg: recipes are content-FREE decoration, but their default hues should still be the
+# house colours (not a fourth scattered set). These are the only place a hex string is a
+# legitimate *value* — an SVG attribute — rather than a matplotlib colour, so they live here.
+SVG = SimpleNamespace(
+    ink=PALETTE.ink,
+    primary=PALETTE.primary,
+    accent=SUBJECT_ACCENTS["geographie"],   # a warm ochre banner/rule
+    paper=PALETTE.paper,
+)

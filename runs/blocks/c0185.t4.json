@@ -1,0 +1,114 @@
+{
+  "id": "c0185.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "a2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Beet 1 ist rechteckig. Zwei gegenüberliegende Seiten sind je 6 m lang, die Einfassung (der gesamte Umfang) benötigt 20 laufende Meter Holz. Wie lang sind die beiden fehlenden Seiten (mit '?' markiert in der Abbildung)?",
+    "payload": {
+      "kind": "data_interpretation",
+      "asset_ref": "a2"
+    },
+    "response": {
+      "mode": "lines",
+      "n": 3
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "OPE"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.2.FIG.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Umfang = 2 · (Länge + Breite), also 20 m = 2 · (6 m + Breite). Daraus: 6 m + Breite = 10 m, also Breite = 4 m. Beide fehlenden (gegenüberliegenden) Seiten sind je 4 m lang.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Verwechslung von Umfang (Summe aller Seiten, hier 20 m) und einer einzelnen Seitenlänge – oft wird 20 m fälschlich direkt als zweite Seite verwendet."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Mathematik",
+  "klasse": 2,
+  "kompetenzbereich": "3: Figuren und Körper",
+  "competences": [
+    "MAT.US.2.FIG.03"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "OPE"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "a2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:polygon",
+      "spec": {
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            6,
+            0
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "vertex_labels": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "side_labels": [
+          "6 m",
+          "?",
+          "6 m",
+          "?"
+        ],
+        "title": "Beet 1 (Rechteck)"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": true,
+      "caption": "Beet 1 mit zwei unbekannten Seitenlängen"
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0185",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:19+00:00",
+  "updated_at": "2026-07-05T05:34:19+00:00"
+}

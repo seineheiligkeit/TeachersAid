@@ -1,0 +1,94 @@
+{
+  "id": "c0174.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "fig_reaktionszeit"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Betrachte das Diagramm zu den Reaktionszeiten. Auf welchen Reiz reagieren Menschen im Schnitt am langsamsten, auf welchen am schnellsten? Formuliere eine mögliche Erklärung, warum das so sein könnte.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.ERK.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Am langsamsten: Sehreiz (ca. 190 ms). Am schnellsten: Tastreiz (ca. 155 ms). Mögliche Erklärung: Ein Lichtsignal muss vom Auge über den Sehnerv einen längeren Weg zu den zuständigen Hirnbereichen zurücklegen und dort stärker verarbeitet werden (Bildererkennung), während ein Tastreiz von der Haut über kürzere Nervenbahnen und mit einfacherer Verarbeitung das Rückenmark/Gehirn erreicht.",
+    "acceptable_reasoning": "Jede physiologisch plausible Erklärung wird akzeptiert (z.B. unterschiedliche Nervenleitgeschwindigkeiten, unterschiedliche Verarbeitungstiefe) – wichtig ist, dass die Schüler:innen NICHT nur die Zahlen ablesen, sondern eine Ursache vermuten.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Diese Werte sind gerundete Durchschnittswerte aus Reaktionszeit-Studien und schwanken individuell stark – nicht als exakte Fakten für jede Person darstellen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 2,
+  "kompetenzbereich": "Erkenntnisse gewinnen (E)",
+  "competences": [
+    "BIO.US.x.ERK.04"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "fig_reaktionszeit",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Sehreiz (Licht)",
+          "Hörreiz (Ton)",
+          "Tastreiz (Berührung)"
+        ],
+        "values": [
+          190.0,
+          160.0,
+          155.0
+        ],
+        "title": "Durchschnittliche Reaktionszeit auf verschiedene Reize",
+        "xlabel": "Reizart",
+        "ylabel": "Reaktionszeit (Millisekunden)",
+        "log": false
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": true,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0174",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:13+00:00",
+  "updated_at": "2026-07-05T05:34:13+00:00"
+}

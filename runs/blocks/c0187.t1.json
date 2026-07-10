@@ -1,0 +1,118 @@
+{
+  "id": "c0187.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb_fuellung"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Der Graph zeigt die Befüllung von Tank A. (a) Wie viel Wasser war zu Beginn (t = 0) bereits im Tank? (b) Wie viele Liter kommen pro Minute dazu? (c) Stelle einen Term W(t) auf, der den Wasserstand nach t Minuten beschreibt.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "DAR",
+      "MOD"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.3.VAR.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "(a) 200 Liter (Startwert bei t=0). (b) Zwischen t=0 und t=2 steigt der Stand von 200 auf 400, also 200 Liter in 2 Minuten = 100 Liter pro Minute. (c) W(t) = 100 · t + 200.",
+    "acceptable_reasoning": "Der Zuwachs pro Minute ergibt sich aus der Differenz zweier Punkte geteilt durch die Zeitdifferenz zwischen ihnen; jeder Punktepaar aus der Abbildung führt zum selben Ergebnis.",
+    "rubric": [
+      {
+        "criterion": "Term korrekt aufgestellt",
+        "levels": [
+          "Falsch",
+          "Ansatz erkennbar, ein Fehler",
+          "Korrekt: W(t) = 100t + 200"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Startwert und Zuwachs pro Minute werden manchmal vertauscht — 200 ist der Startwert (Achsenabschnitt), 100 ist die Änderungsrate pro Minute.",
+      "Bei (b) wird gelegentlich die gesamte Differenz (200 Liter) statt der Differenz PRO Minute (100 Liter) angegeben."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Mathematik",
+  "klasse": 3,
+  "kompetenzbereich": "2: Variablen und Funktionen",
+  "competences": [
+    "MAT.US.3.VAR.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "DAR",
+    "MOD"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb_fuellung",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:function_graph",
+      "spec": {
+        "xmin": 0,
+        "xmax": 8,
+        "ymin": 0,
+        "ymax": 900,
+        "points": [
+          [
+            0,
+            200
+          ],
+          [
+            2,
+            400
+          ],
+          [
+            4,
+            600
+          ],
+          [
+            6,
+            800
+          ]
+        ],
+        "connect": true,
+        "xlabel": "Zeit t (in Minuten)",
+        "ylabel": "Wasser im Tank (in Liter)",
+        "title": "Befüllung von Tank A"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0187",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:20+00:00",
+  "updated_at": "2026-07-05T05:34:20+00:00"
+}

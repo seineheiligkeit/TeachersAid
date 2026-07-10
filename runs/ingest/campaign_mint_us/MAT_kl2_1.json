@@ -1,0 +1,129 @@
+{
+  "subject": "Mathematik", "klasse": 2,
+  "kompetenzbereich": "1: Zahlen und Maße",
+  "title": "Der Wandertag-Fonds",
+  "kernfrage": "Wie teilt ihr Gruppen, Vorräte und Geld gerecht auf, wenn eure Klasse einen Wandertag plant?",
+  "body": {
+    "intro": [
+      {"role": "info", "id": "i1", "kind": "prose",
+       "content": "Deine Klasse (28 Schüler:innen) organisiert einen Wandertag. Ihr müsst Gruppen einteilen, einen Wandersnack mischen, ein Busangebot vergleichen und die Temperatur am Wandertag einschätzen. Rechne mit – jede Aufgabe baut auf der vorigen auf.",
+       "callout_role": null, "teacher_note": null, "watch_outs": [], "optional": false,
+       "modality": "printable", "asset_refs": [], "flags": null, "provenance": null}
+    ],
+    "data_figures": [],
+    "assets": [
+      {"id": "a1", "role": "figure", "generator": "matplotlib:number_line",
+       "spec": {"min": -5, "max": 15, "step": 1, "marks": [{"at": -2, "label": "6 Uhr früh"}, {"at": 12, "label": "Mittag"}]},
+       "data_source": null, "illustrative": true, "caption": "Temperaturverlauf am Wandertag (°C)"}
+    ],
+    "sections": [
+      {
+        "id": "s1", "title": "Gruppen bilden",
+        "throughline": "Der rote Faden ist der Wandertag selbst: von der Gruppeneinteilung (Teilbarkeit) über den Snack (Brüche) und das Busangebot (Prozente) bis zur Temperatur am Zahlenstrahl (ganze Zahlen) – jede Aufgabe liefert eine Zahl, die in der nächsten wieder auftaucht.",
+        "talking_points": [
+          "Warum lässt sich 28 nicht in 6er-Gruppen teilen, wohl aber in 4er- oder 7er-Gruppen?",
+          "Teilbarkeitsregeln sind Abkürzungen – sie ersetzen das Kopfrechnen nicht, sondern sparen es.",
+          "Der Unterschied zwischen 'Teiler von 28' und 'Vielfaches von 28' wird oft verwechselt – hier explizit gegenüberstellen."
+        ],
+        "extensions": [
+          "Für welche Klassengrößen zwischen 20 und 32 wäre eine 4er- UND eine 6er-Gruppierung gleichzeitig möglich?",
+          "Primfaktorzerlegung von 28 und 42 nutzen, um alle gemeinsamen Teiler zu finden."
+        ],
+        "blocks": [
+          {"role": "task", "id": "t1", "kind": "calculation",
+           "prompt": "In deiner Klasse sind 28 Schüler:innen. Die Lehrperson möchte gleich große Gruppen bilden. Liste alle Teiler von 28 auf. In welche Gruppengrößen lässt sich die Klasse ohne Rest aufteilen?",
+           "payload": null, "response": {"mode": "lines", "n": 3}, "cognitive_level": "remember",
+           "dimensions": ["OPE"], "content_area": null,
+           "serves": [{"competence_id": "MAT.US.2.ZAH.01", "relation": "exercises"}],
+           "est_minutes": 6, "asset_refs": [],
+           "answer_key": "Teiler von 28: 1, 2, 4, 7, 14, 28. Mögliche gleich große Gruppen ohne Rest: 1, 2, 4, 7, 14 oder 28 Schüler:innen pro Gruppe.",
+           "acceptable_reasoning": null,
+           "watch_outs": ["Verwechslung von Teiler und Vielfachem: 'Teiler von 28' sind Zahlen, die 28 ohne Rest ergeben, nicht Zahlen, die 28 als Vielfaches haben.", "3 wird oft fälschlich als Teiler genannt (28 : 3 hat Rest 1)."],
+           "rubric": []},
+          {"role": "task", "id": "t2", "kind": "true_false_justify",
+           "prompt": "Zwei Wandergruppen sollen sich an einem gemeinsamen Rastplatz treffen: Gruppe A geht alle 6 Minuten eine Pause, Gruppe B alle 8 Minuten. Beurteile die folgenden Aussagen und begründe.",
+           "payload": {"kind": "true_false_justify", "statements": [
+             "Nach 24 Minuten machen beide Gruppen gleichzeitig Pause.",
+             "Nach 16 Minuten machen beide Gruppen gleichzeitig Pause.",
+             "Das kleinste gemeinsame Vielfache von 6 und 8 ist 48."
+           ]},
+           "response": {"mode": "lines", "n": 4}, "cognitive_level": "apply",
+           "dimensions": ["BEG", "OPE"], "content_area": null,
+           "serves": [{"competence_id": "MAT.US.2.ZAH.01", "relation": "exercises"}],
+           "est_minutes": 8, "asset_refs": [],
+           "answer_key": "1) Richtig – 24 ist das kgV(6,8), Vielfache von 6: 6,12,18,24…; Vielfache von 8: 8,16,24…; erste gemeinsame Zahl ist 24. 2) Falsch – 16 ist Vielfaches von 8, aber nicht von 6. 3) Falsch – 48 ist zwar ein gemeinsames Vielfaches, aber nicht das KLEINSTE (24 ist kleiner).",
+           "acceptable_reasoning": "Akzeptiert wird jede Begründung, die korrekt zwischen 'gemeinsames Vielfaches' und 'kleinstes gemeinsames Vielfaches' unterscheidet, auch ohne die Abkürzung kgV zu nennen.",
+           "watch_outs": ["Schüler:innen verwechseln oft 'ein gemeinsames Vielfaches' mit 'DAS kleinste gemeinsame Vielfache' – 48 ist ein Distraktor, der genau das prüft."],
+           "rubric": []},
+          {"role": "task", "id": "t3", "kind": "open_response",
+           "prompt": "Formuliere eine eigene Teilbarkeitsregel für die Zahl 9 (wann ist eine Zahl durch 9 teilbar?) und überprüfe sie an den Zahlen 234 und 451.",
+           "payload": null, "response": {"mode": "lines", "n": 4}, "cognitive_level": "analyze",
+           "dimensions": ["BEG", "DAR"], "content_area": null,
+           "serves": [{"competence_id": "MAT.US.2.ZAH.01", "relation": "exercises"}],
+           "est_minutes": 9, "asset_refs": [],
+           "answer_key": "Regel: Eine Zahl ist durch 9 teilbar, wenn ihre Quersumme durch 9 teilbar ist. 234: Quersumme 2+3+4=9, durch 9 teilbar (234:9=26) – stimmt. 451: Quersumme 4+5+1=10, nicht durch 9 teilbar – stimmt, 451:9 ergibt Rest 4.",
+           "acceptable_reasoning": "Jede sinngemäß richtige Formulierung der Quersummenregel wird akzeptiert, auch ohne den Fachbegriff 'Quersumme', solange das Prinzip (Ziffernsumme bilden und auf Teilbarkeit durch 9 prüfen) erkennbar ist.",
+           "watch_outs": ["Manche Kinder testen die Regel nur an einem Beispiel und verallgemeinern vorschnell – beide Testzahlen sollen genutzt werden, eine passende und eine nicht passende."],
+           "rubric": [{"criterion": "correctness", "levels": ["Regel falsch oder fehlt", "Regel richtig, aber nur teilweise überprüft", "Regel richtig formuliert und an beiden Zahlen korrekt überprüft"]}]}
+        ]
+      },
+      {
+        "id": "s2", "title": "Snack, Bus und Temperatur",
+        "throughline": "Von der Gruppeneinteilung geht es weiter zum Wandersnack (Brüche einer Menge), zum Vergleich zweier Busangebote (Prozentrechnung) und schließlich zur Temperatur unterwegs (ganze Zahlen am Zahlenstrahl) – die 28 Schüler:innen aus Aufgabe 1 tauchen als Mengenangabe wieder auf.",
+        "talking_points": [
+          "Ein Bruch von einer MENGE (3/4 von 28 Portionen) ist etwas anderes als ein Bruch von 1 – das ist der typische Stolperstein beim Übergang zur Prozentrechnung.",
+          "Bei Rabattvergleichen zählt der Endpreis, nicht die Prozentzahl allein – ein größerer Rabatt auf einen höheren Grundpreis kann trotzdem teurer sein.",
+          "Negative Zahlen als Bewegung auf der Zahlengeraden: 'wärmer werden' = nach rechts, 'kälter werden' = nach links."
+        ],
+        "extensions": [
+          "Wie ändert sich das Ergebnis von Aufgabe 5, wenn Bus B seinen Rabatt auf 20 Studierende beschränkt und eure Gruppe nur 18 Erwachsene zählt?",
+          "Baue eine eigene drei-Stationen-Wanderung mit Start-, Zwischen- und Endtemperatur und stelle sie am Zahlenstrahl dar."
+        ],
+        "blocks": [
+          {"role": "task", "id": "t4", "kind": "calculation",
+           "prompt": "Für den Wandersnack mischt ihr Nüsse und Trockenfrüchte. Von den 28 Portionen sollen drei Viertel Nuss-Frucht-Mix sein, der Rest reiner Apfelchips. Wie viele Portionen sind Nuss-Frucht-Mix, wie viele Apfelchips? Gib beide Anteile zusätzlich als Dezimalzahl an.",
+           "payload": null, "response": {"mode": "lines", "n": 3}, "cognitive_level": "apply",
+           "dimensions": ["OPE", "DAR"], "content_area": null,
+           "serves": [{"competence_id": "MAT.US.2.ZAH.03", "relation": "exercises"}],
+           "est_minutes": 7, "asset_refs": [],
+           "answer_key": "3/4 von 28 = 21 Portionen Nuss-Frucht-Mix. Rest: 28 − 21 = 7 Portionen Apfelchips (das ist 1/4 von 28). Als Dezimalzahl: 3/4 = 0,75 und 1/4 = 0,25.",
+           "acceptable_reasoning": null,
+           "watch_outs": ["Häufiger Fehler: 3/4 von 28 als 28 : 3 · 4 statt 28 : 4 · 3 gerechnet – auf die richtige Reihenfolge (erst durch den Nenner teilen) hinweisen."],
+           "rubric": []},
+          {"role": "task", "id": "t5", "kind": "decision_scenario",
+           "prompt": "Zwei Busunternehmen bieten Fahrten für eure 28-köpfige Gruppe an. Bus A kostet 12 Euro pro Person, aber es gibt 10 % Nachlass ab 25 Personen. Bus B kostet 14 Euro pro Person mit 25 % Nachlass ab 20 Personen. Welcher Bus ist für eure Gruppe günstiger – und um wie viel Euro insgesamt?",
+           "payload": {"kind": "decision_scenario", "stem": "Bus A: 12 €/Person, 10 % Nachlass ab 25 Personen. Bus B: 14 €/Person, 25 % Nachlass ab 20 Personen. Eure Gruppe: 28 Personen."},
+           "response": {"mode": "lines", "n": 5}, "cognitive_level": "evaluate",
+           "dimensions": ["MOD", "BEG"], "content_area": null,
+           "serves": [{"competence_id": "MAT.US.2.ZAH.04", "relation": "exercises"}],
+           "est_minutes": 10, "asset_refs": [],
+           "answer_key": "Bus A: 28 · 12 € = 336 €, davon 10 % Nachlass = 33,60 €, Endpreis 302,40 €. Bus B: 28 · 14 € = 392 €, davon 25 % Nachlass = 98 €, Endpreis 294 €. Bus B ist günstiger, um 302,40 € − 294 € = 8,40 €.",
+           "acceptable_reasoning": "Die Entscheidung für Bus B muss durch beide korrekt berechneten Endpreise gestützt sein; eine Entscheidung ohne Rechnung oder nur auf Basis der Prozentsätze (25 % > 10 %, also 'billiger') wird nicht akzeptiert, da sie den höheren Grundpreis ignoriert.",
+           "watch_outs": ["Die Falle der Aufgabe: Bus B hat den höheren Prozentsatz UND den höheren Grundpreis – nur die tatsächliche Rechnung zeigt, welcher Effekt überwiegt.", "Nachlass wird manchmal von der falschen Basis (z. B. von 100 € statt vom tatsächlichen Gruppenpreis) berechnet."],
+           "rubric": [{"criterion": "correctness", "levels": ["Beide Endpreise falsch oder fehlen", "Ein Endpreis korrekt, Entscheidung unsicher", "Beide Endpreise korrekt berechnet und richtig begründet verglichen"]}]},
+          {"role": "task", "id": "t6", "kind": "data_interpretation",
+           "prompt": "Die Abbildung zeigt die Temperatur an eurem Wandertag von 6 Uhr früh bis Mittag. Lies ab: Wie viel Grad wärmer ist es am Mittag als um 6 Uhr früh? Beschreibe in eigenen Worten, wie sich die Temperatur laut Zahlenstrahl entwickelt.",
+           "payload": {"kind": "data_interpretation", "asset_ref": "a1"},
+           "response": {"mode": "lines", "n": 4}, "cognitive_level": "understand",
+           "dimensions": ["DAR", "OPE"], "content_area": null,
+           "serves": [{"competence_id": "MAT.US.2.ZAH.03", "relation": "exercises"}],
+           "est_minutes": 6, "asset_refs": ["a1"],
+           "answer_key": "Um 6 Uhr früh zeigt der Zahlenstrahl −2 °C, am Mittag 12 °C. Differenz: 12 − (−2) = 14 Grad wärmer. Die Temperatur steigt im Lauf des Vormittags kontinuierlich von einem Minusgrad-Wert auf einen deutlichen Plusgrad-Wert.",
+           "acceptable_reasoning": "Jede Beschreibung, die den Anstieg von negativer zu positiver Temperatur korrekt wiedergibt, wird akzeptiert, auch ohne exakten Differenzwert, solange die Bewegung auf der Zahlengeraden richtig gedeutet wird.",
+           "watch_outs": ["Die Differenz zwischen einer negativen und einer positiven Zahl wird oft als einfache Subtraktion der Beträge (12 − 2 = 10) statt als 12 − (−2) = 14 gerechnet – das ist der zentrale Lernpunkt der Aufgabe."],
+           "rubric": []},
+          {"role": "task", "id": "t7", "kind": "create_produce",
+           "prompt": "Entwirf für eine fiktive Nachmittags-Wanderung eine eigene Preis- ODER Temperaturaufgabe (deine Wahl), die genauso aufgebaut ist wie Aufgabe 5 oder Aufgabe 6 – mit realistischen Zahlen und einer klaren Lösung. Tausche sie danach mit einer Mitschülerin/einem Mitschüler.",
+           "payload": null, "response": {"mode": "box", "min_height_mm": 60}, "cognitive_level": "create",
+           "dimensions": ["MOD", "BEG"], "content_area": null,
+           "serves": [{"competence_id": "MAT.US.2.ZAH.04", "relation": "exercises"}],
+           "est_minutes": 10, "asset_refs": [],
+           "answer_key": "Individuelle Lösung. Die selbst erstellte Aufgabe muss vollständige, realistische Angaben (Preise bzw. Temperaturen) sowie eine dazu passende, korrekt nachvollziehbare Lösung enthalten.",
+           "acceptable_reasoning": "Bewertet wird, ob die Aufgabe eindeutig lösbar ist, realistische Zahlen verwendet und dieselbe mathematische Struktur (Prozentvergleich bzw. Differenz ganzer Zahlen) wie das Vorbild nutzt.",
+           "watch_outs": ["Manche Schüler:innen übernehmen die Struktur nicht wirklich, sondern ändern nur die Zahlen minimal – im Gespräch nachfragen, ob eine eigene Idee (z. B. anderer Kontext) eingeflossen ist."],
+           "rubric": [{"criterion": "completeness", "levels": ["Aufgabe unvollständig oder nicht lösbar", "Aufgabe lösbar, aber wenig realistisch oder Struktur unklar", "Aufgabe vollständig, realistisch und eindeutig lösbar mit klarer Struktur"]}]}
+        ]
+      }
+    ]
+  }
+}

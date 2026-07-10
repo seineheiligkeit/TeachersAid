@@ -1,0 +1,73 @@
+{
+  "id": "c0173.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Eine Gemeinde besitzt ein Waldstück und muss entscheiden, wie es in den nächsten Jahren bewirtschaftet werden soll. Nimm Stellung zu folgendem Szenario und begründe deine Empfehlung fachlich.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Option A: Den bestehenden Fichtenwald abholzen und schnell wieder mit reiner Fichte aufforsten – bringt in ~40 Jahren wieder Holzertrag. Option B: Nach und nach auf einen Mischwald aus Fichte, Buche, Tanne und Ahorn umstellen – dauert länger, ist aber klimastabiler. Welche Option empfiehlst du der Gemeinde und warum?"
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.STA.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "Eine fachlich fundierte Empfehlung nennt: Mischwald ist widerstandsfähiger gegen Klimawandel, Trockenheit und Borkenkäfer (siehe t1-t4); Monokultur bringt zwar schnelleren, aber riskanteren Ertrag. Eine gute Antwort wägt Ertragszeitpunkt gegen Ausfallrisiko ab und empfiehlt in der Regel Option B, kann aber auch einen Kompromiss (schrittweiser Umbau, Erhalt eines Fichtenanteils) begründen.",
+    "acceptable_reasoning": "Jede Entscheidung wird akzeptiert, wenn sie mindestens zwei fachliche Argumente (ökologisch UND wirtschaftlich) nennt und nicht nur eine Meinung ohne Begründung ist.",
+    "rubric": [
+      {
+        "criterion": "argument_quality",
+        "levels": [
+          "Nennt keine oder nur eine fachliche Überlegung",
+          "Nennt zwei fachliche Überlegungen (ökologisch und wirtschaftlich), aber ohne klaren Bezug zueinander",
+          "Wägt ökologische und wirtschaftliche Aspekte gegeneinander ab und kommt zu einer begründeten Empfehlung"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Es gibt hier keine 'einzig richtige' Antwort – bewertet wird die Qualität der Begründung, nicht die gewählte Option."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 2,
+  "kompetenzbereich": "Standpunkte begründen und reflektiert handeln (S)",
+  "competences": [
+    "BIO.US.x.STA.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0173",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:12+00:00",
+  "updated_at": "2026-07-05T05:34:12+00:00"
+}

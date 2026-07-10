@@ -1,0 +1,74 @@
+{
+  "id": "c0195.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "source_critique",
+    "prompt": "In einem Online-Forum schreibt jemand: «Man muss sein Trinkwasser zu Hause nicht filtern — im Wasserwerk wird sowieso schon alles rausgefiltert, auch Kalk und gelöste Mineralien. Ein Wasserfilter zu Hause ist deshalb komplett unnötig.» Bewerte diese Aussage aus naturwissenschaftlicher Sicht: Was an der Aussage ist über Filtration sachlich falsch? Unterscheide dabei klar zwischen dem, was ein Filter tatsächlich leisten kann, und dem, was er nicht kann.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "S",
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.US.x.STA.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Die Aussage enthält einen sachlichen Fehler: Kalk und gelöste Mineralien (z. B. Calcium- und Magnesium-Ionen) sind GELÖSTE Bestandteile des Wassers — ein herkömmlicher Filter (auch im Wasserwerk) kann sie nicht herausfiltern, da Filtration nur ungelöste, feste Teilchen zurückhält (dasselbe Prinzip wie bei Sand in Wasser). Wasserwerke filtrieren tatsächlich Schwebstoffe und Trübung heraus, aber gelöste Mineralien bleiben im Trinkwasser — das ist sogar erwünscht (Mineralstoffe sind für den Körper wichtig, und stark 'kalkhaltiges' Wasser ist nicht automatisch ungesund). Ob ein Haushaltsfilter sinnvoll ist, ist eine andere, nicht rein chemische Frage (Geschmack, bestimmte Schadstoffe) — die im Forumsbeitrag genannte Begründung ('alles wird schon rausgefiltert') ist aber fachlich nicht haltbar.",
+    "acceptable_reasoning": "Kern ist die korrekte Unterscheidung gelöst/ungelöst und die Erkenntnis, dass Filtration keine gelösten Stoffe entfernt. Eine Bewertung, ob Haushaltsfilter grundsätzlich sinnvoll sind, wird nicht verlangt und nicht bewertet — hier zählt nur die fachliche Richtigstellung der Filtrationsaussage.",
+    "rubric": [
+      {
+        "criterion": "Fachlicher Fehler erkannt",
+        "levels": [
+          "vollständig: Benennt klar, dass gelöste Mineralien/Kalk nicht durch Filtration entfernt werden, mit korrekter Begründung.",
+          "teilweise: Erkennt, dass etwas an der Aussage falsch ist, ohne die gelöst/ungelöst-Unterscheidung klar zu machen.",
+          "unzureichend: Stimmt der Forumsaussage zu oder liefert keine fachliche Kritik."
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Diese Aufgabe knüpft direkt an die Fehlvorstellung aus Aufgabe 5 an (Filter gegen Gelöstes) — bewusst als Transferaufgabe in neuem Kontext gestellt.",
+      "Schüler:innen sollen zwischen 'naturwissenschaftlich falsch' (die Filtrationsaussage) und 'Meinungsfrage' (ob ein Hausfilter sinnvoll ist) unterscheiden können — das ist der Kern von Quellenkritik in den Naturwissenschaften.",
+      "Nicht jede kritische Aussage über den Forumsbeitrag ist automatisch richtig bewertet — es muss konkret die Gelöst/Ungelöst-Unterscheidung genannt werden."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "source_critique",
+  "subject": "Chemie",
+  "klasse": 4,
+  "kompetenzbereich": "Standpunkte begründen, Entscheidungen treffen und reflektiert handeln (S)",
+  "competences": [
+    "CHE.US.x.STA.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "S",
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0195",
+  "source": "ai",
+  "created_at": "2026-07-05T05:38:19+00:00",
+  "updated_at": "2026-07-05T05:38:19+00:00"
+}

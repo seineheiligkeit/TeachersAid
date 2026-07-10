@@ -138,9 +138,125 @@ def test_chemistry_variants_deterministic_and_distinct():
 
 def test_equation_balance_never_emits_trivial_all_ones():
     """A balancing exercise must be non-trivial — the recipe resamples all-1 draws."""
+    import re
     t = find_template("che-os-reaktionsgleichung")
     for b in make_variants(t, 8, seed0=1):
-        assert "2 " in str(b.answer_key) or "3 " in str(b.answer_key), str(b.answer_key)
+        # at least one real coefficient (a digit ≥ 2 before a formula) in the answer
+        assert re.search(r"\b[2-9] ", str(b.answer_key)), str(b.answer_key)
+
+
+# --- Übungsreihe upgrade: difficulty ramp + curated context frames ------------
+RAMPED_CHEM = ("che-os-molmasse", "che-os-reaktionsgleichung", "che-us-teilchenanzahl")
+
+
+def _plain(prompt) -> str:
+    return prompt if isinstance(prompt, str) else "".join(r.text for r in prompt)
+
+
+def test_ramp_ascending_bands_distinct_deterministic():
+    """ramp=True → ascending effective bands 2/2/2 (n=6), distinct prompts, and the
+    same (task, n, seed0) → the same list (per-seed determinism preserved)."""
+    for tid in RAMPED_CHEM:
+        t = find_template(tid)
+        a = make_variants(t, 6, seed0=1, ramp=True)
+        bands = [b.difficulty for b in a]
+        assert bands == [1, 1, 2, 2, 3, 3], (tid, bands)
+        assert len({str(b.prompt) for b in a}) == 6, (tid, "variants not distinct")
+        b = make_variants(t, 6, seed0=1, ramp=True)
+        assert [str(x.prompt) for x in a] == [str(x.prompt) for x in b], tid
+
+
+def test_ramp_bands_match_item_structure():
+    """The stamped band is DERIVED from the drawn item, not asserted: molar-mass band 1
+    is a binary formula, band 3 is nested/hydrate; balancing band 3 has a coefficient
+    that band 1 never reaches."""
+    t = find_template("che-os-molmasse")
+    for b in make_variants(t, 6, seed0=1, ramp=True):
+        head = str(b.answer_key).split("≈")[0]     # "M(<formel>) " — M's paren + nesting
+        if b.difficulty == 3:
+            assert head.count("(") >= 2 or "·" in head, head
+        if b.difficulty == 1:
+            assert head.count("(") == 1 and "·" not in head, head
+
+
+def test_ramp_ignored_without_faking_difficulty():
+    """A recipe without the knob ignores the ramp request — blocks carry NO stamped
+    difficulty (an ignored request must not fake a spread)."""
+    t = find_template("che-us-stoffklassen")           # curated-table recipe, no knob
+    blocks = make_variants(t, 4, seed0=1, ramp=True)
+    assert all(b.difficulty is None for b in blocks)
+    assert len({str(b.prompt) for b in blocks}) == 4   # distinctness still holds
+
+
+def test_context_prefixes_prompt_and_is_digit_free():
+    """Every drawn chemistry item carries its curated context sentence as a prompt
+    prefix, and the sentence never smuggles a number (select, never author)."""
+    from teachersaid.grounding.chemistry import COMPOUND_CONTEXTS, REACTION_CONTEXTS
+    all_contexts = set(COMPOUND_CONTEXTS.values()) | set(REACTION_CONTEXTS.values())
+    for tid in RAMPED_CHEM + ("che-os-stoechiometrie",):
+        t = find_template(tid)
+        for b in make_variants(t, 6, seed0=1, ramp=True):
+            text = _plain(b.prompt)
+            ctx = next((c for c in all_contexts if text.startswith(c)), None)
+            assert ctx is not None, (tid, text[:80])
+            assert not any(ch.isdigit() for ch in ctx), ctx
+
+
+def test_context_catalogs_digit_free_and_cover_pools():
+    """The curated context tables cover every pool item and contain no digits —
+    the digit guard makes 'a context never asserts an uncomputed fact' checkable."""
+    from teachersaid.grounding.chemistry import (
+        COMPOUND_CONTEXTS, REACTION_CONTEXTS, reaction_key,
+    )
+    from teachersaid.pipeline.chemistry import _ATOM_COUNT_FORMULAS, _COMPOUNDS, _REACTIONS
+    for s in list(COMPOUND_CONTEXTS.values()) + list(REACTION_CONTEXTS.values()):
+        assert not any(ch.isdigit() for ch in s), s
+    assert set(_COMPOUNDS) <= set(COMPOUND_CONTEXTS), \
+        set(_COMPOUNDS) - set(COMPOUND_CONTEXTS)
+    assert set(_ATOM_COUNT_FORMULAS) <= set(COMPOUND_CONTEXTS)
+    assert {reaction_key(r, p) for r, p in _REACTIONS} <= set(REACTION_CONTEXTS)
+
+
+def test_context_schema_guard_rejects_digits():
+    """The Instance/template validators refuse a context carrying digits."""
+    import pytest as _pytest
+    from teachersaid.schema.parametric import Instance, ParametricTask
+    with _pytest.raises(ValueError):
+        Instance(params={}, answer="x", context="Enthält 42 Prozent.")
+    with _pytest.raises(ValueError):
+        ParametricTask(id="x", subject="Mathematik", klasse=2, recipe="percentage",
+                       prompt_template="{pct} % von {base}?",
+                       context_frame="Im Jahr 1815 galt das schon.")
+
+
+def test_variant_worksheet_uebungsreihe_framing():
+    """The worksheet labels its genre: subtitle, purpose intro (Automatisieren /
+    Schularbeit / Gruppe A/B), and a teacher throughline naming ramp + Rechenweg and
+    disclaiming the didactic-ladder reading. by_difficulty shows the 2/2/2 spread."""
+    t = find_template("che-os-molmasse")
+    content, res = variant_worksheet(t, 6, today=IN_WINDOW)
+    assert content.meta.subtitle == "Übungsreihe — 6 Varianten, aufsteigend"
+    zweck = next(b for b in content.intro if b.id == "uebung.zweck")
+    ztext = zweck.content if isinstance(zweck.content, str) else str(zweck.content)
+    assert "Schularbeit" in ztext and "Gruppe A/B" in ztext and "Zahlensatz" in ztext
+    tl = content.sections[0].teacher_overview.throughline
+    assert tl and "Übungsreihe" in tl and "Rechenweg" in tl
+    assert "kein didaktisch aufgebautes Arbeitsblatt" in tl
+    content = assemble(content, res)
+    assert content.depth_profile.by_difficulty == {"1": 2, "2": 2, "3": 2}
+    rep = verify(content, res)
+    assert rep.ok, rep.problems
+
+
+def test_variant_worksheet_honest_without_ramp_support():
+    """A curated-table template can't ramp — the sheet must NOT claim 'aufsteigend'."""
+    t = find_template("che-us-stoffklassen")
+    content, _res = variant_worksheet(t, 6, today=IN_WINDOW)
+    assert content.meta.subtitle == "Übungsreihe — 6 Varianten"
+    zweck = next(b for b in content.intro if b.id == "uebung.zweck")
+    ztext = zweck.content if isinstance(zweck.content, str) else str(zweck.content)
+    assert "aufsteigend" not in ztext
+    assert "aufsteigend" not in (content.sections[0].teacher_overview.throughline or "")
 
 
 # --- the full product path ---------------------------------------------------

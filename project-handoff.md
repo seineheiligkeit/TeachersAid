@@ -1,7 +1,7 @@
 # Project Handoff — Austrian Lehrplan-anchored Teaching-Material Generator
 
 **Status: design baseline from Session 2 (24 June 2026); see the dated session updates below for the
-current state (latest: Session 7, 29 June 2026).** This is the single read-me-first document for a fresh
+current state (latest: Session 14, 5 July 2026 — Wave A built end-to-end: task & figure engines, 565 tests green).** This is the single read-me-first document for a fresh
 session taking the project over. Working language is English; the *product's* output is German (or a
 target language for Fremdsprache). Read this, then the docs in the order given in §6.
 
@@ -227,13 +227,225 @@ target language for Fremdsprache). Read this, then the docs in the order given i
 >   (**350 tests**). **Next candidates:** SME gate-review of the staged content; informational Realien
 >   (when ready); or a fresh track.
 
+> **Update (Session 11, 2 Jul 2026): THE OFFLINE-FIRST PIVOT — the product is the corpus; delivery is
+> LLM-free.** A full fresh-eyes review of the system (369 tests green; layering verified mechanically;
+> hero + generated artifacts inspected page-by-page) surfaced two decisive facts: the live-generation
+> path had **zero production mileage** (every artifact came through the subagent/campaign seam), and
+> live on-demand delivery is **structurally incompatible with the human-final-gate decision** (a
+> live-delivered sheet is by definition un-gated). The SME confirmed the pivot — it extends his own
+> 26 Jun product principle (*"the platform consolidates a human-vetted library, it does not
+> live-generate"*) from assets to the whole product. Recorded durably: §4 below ·
+> `Documents/invariants.md` **§10** · `Documents/feature-roadmap.md` (the program) ·
+> `Documents/platform-definition.md` (thesis reframe).
+>
+> - **Two loops.** The **corpus loop** (offline, campaign-shaped: Lehrplan gaps + demand queue → grounded
+>   briefs → LLM/subagent generation through the feature engines → lints → SME gate → approved corpus) is
+>   where the LLM lives; cost is campaign capex, not per-request opex. The **delivery loop** (what a
+>   teacher touches) is **deterministic and LLM-free**: request (topic × Klasse × envelope × scope) →
+>   serve a vetted worksheet › compose from approved blocks › **honest gap** into the demand queue →
+>   render. Long-tail wishes are fulfilled **async** through the corpus loop (request → campaign → gate →
+>   deliver), never live. Deterministic runtime generation (parametric variants, scene stages/densities)
+>   stays at delivery — computed, hence gate-cheap: infinite variants at zero marginal review cost.
+> - **Why.** AHS demand is a **closed, parsed set** (~571 US + ~1360 OS competences) — coverage is
+>   *computable*, so "a corpus that fits any AHS topic" is a finite program with a progress bar, not a
+>   content treadmill. Every delivered sheet has passed the human gate ("jedes Blatt von Menschen
+>   geprüft" becomes literal). Delivery becomes instant, reproducible, and free of per-request API
+>   cost/latency/truncation failure modes.
+> - **What it changes.** `compose` graduates to the product core (**inter-block coherence** is the new
+>   hard problem); the **review economy** becomes the scaling constraint (tiers keyed to the four
+>   correct-by-construction mechanisms; adversarial agents triage, deterministic lints guarantee, the SME
+>   gate stays); the **Statistik coverage matrix** becomes the roadmap driver; **Fassung migration
+>   tooling** becomes a requirement (a corpus outlives its Fassung — re-anchor, re-derive, flag orphans).
+>   The `llm/` seam **stays in code** as the campaign seam; any later live reintroduction is
+>   expression-only re-projection over vetted facts, decided explicitly (invariants §10 boundary).
+> - **Working mode (recorded).** The project is currently **built for the joy of building** — no launch
+>   deadline, no GTM clock; "interesting and powerful" outranks "marketable"; the business/competitive
+>   framing (`platform-definition.md`) is retained for a possible later phase, not driving priorities.
+>
+> The build program (3 tracks + a joy lane): `Documents/feature-roadmap.md` "Start here". Run:
+> `python -m pytest -q` (**369 tests**).
+
+> **Update (Session 12, 2–3 Jul 2026): the program's first build wave — and the review economy proven
+> in a live SME session.**
+> - **Track 1 BUILT:** #1 the **campaign planner** (`stats.coverage_map`/`campaign_gaps`, per-KB cells ×
+>   Anforderungsband, 610 cells, gap export = brief anchors) · #2 the **numeric-claims lint**
+>   (`pipeline/number_lint.py` — prose numbers next to a SOURCED figure must derive from the cited
+>   series; calibrated on the corpus; caught real discrepancies, e.g. c0119's stale Bundesland counts) ·
+>   #3 the unified **Prüfen gate** — ONE tier-laned queue over all seven stores (`store/reviewqueue.py`;
+>   lanes = the four correct-by-construction mechanisms), keyboard focus mode, worksheet→block approval
+>   **cascade** (SME decision), deterministic + adversarial **triage** (`pipeline/triage.py` +
+>   `tools/triage_prompt.py`/`ingest_triage.py`; first pass 54/54 verdicts, found i.a. a NaCl-"Molekül"
+>   Fachfehler), and the SME's **Überarbeiten** decision (status-preserving, mandatory note →
+>   revise-flagged feedback; bulk release holds flagged entries).
+> - **Track 2 STARTED:** the LLM-free delivery read-path `pipeline/deliver.py` (vetted sheet › composed ›
+>   honest gap) + the `DemandStore` Wunschliste (invariants §10 in code).
+> - **Dashboard collapsed 12 tabs → the 4 stations** (Planen · Prüfen · Korpus · Einblicke); every kind
+>   judgeable inline in the focus card; **self-healing artifacts** (PDFs, assets, arrangement bundles
+>   rebuild when stored absolute paths came from another machine — git carries content, not binaries).
+> - **The blackboard test** (SME quality bar, durable): corpus content must beat what a teacher writes on
+>   the board in a minute. The chemistry variant series were upgraded accordingly (Übungsreihe genre
+>   framing · structure-derived difficulty ramp · curated digit-free context frames —
+>   `Documents/uebungsreihe-upgrade-brief.md`); old series rejected, new c0167–c0169 SME-approved.
+> - **The staged backlog is CLEARED** (first full SME session: 11 texts · 5 Sachverhalte · arrangements ·
+>   datasets 5:3), and its findings landed as fixes: figures never use scientific notation (unit-scaled
+>   "(in Mio.)" labels, German tick/value formatting, years on a numeric x-axis —
+>   `figstyle.unit_scale`/`fmt_de`, rule in the figstyle docstring); decision notes persist for every kind.
+>
+> Run: `python -m pytest -q` (**413 tests**). **Open next:** Track 3 wedge campaigns (planner-driven, via
+> `/api/coverage/gaps`) · Track 2's compose-coherence hard problem + the "Varianten erzeugen" surface ·
+> the geosphere-Klimadiagramm re-decision · informational Realien / the joy lane.
+
+> **Update (Session 13, 5 Jul 2026): a strategy session — the build-for-joy feature program.** No code;
+> three doc deliverables. Corpus state at session start: 967 approved blocks (+176 MINT `in_review`),
+> 155 approved content items, coverage 95/610 cells grün, demand queue empty.
+> - **The frame, reaffirmed hard (durable).** The SME firmly corrected a pilot/storefront-first
+>   recommendation: TeachersAid is a hobby built for the joy of building — **no pilots, no releases, no
+>   deadlines, no teacher-feedback loop for now**; his thesis is that only building the *intrinsically
+>   best* platform, as the goal itself, can later maybe become a product, and the discipline is to
+>   resist premature productization (the failure mode of most AI projects). Product/outward framing
+>   returns only when HE declares the building done. Assistant memory updated so the frame leads recall.
+> - **The idea pass + SME verdicts** (full write-ups: `feature-roadmap.md` "▶ Start here (5 Jul 2026)").
+>   **Accepted:** the Physics engine (units-verified parametrics via `sympy.physics.units` +
+>   optics/circuit scene families — "clear win") · GZ via scene3d promotion · **PD Bildquellen** as the
+>   6th asset class ("very clear win") · the **misconception engine** (computed distractors from a
+>   curated Fehlermuster catalog; teacher guide names the probed misconception — "love it") · solution
+>   graphs (alternative Rechenwege) · the **Rätsel engine** (Kreuzworträtsel/Suchsel/Trimino/
+>   Rechenmauern, zero LLM, derived answers — "super fun for pupils") · Wiener-Sachtextformel
+>   readability lint · the **prerequisite graph** ("awesome — think holistic": Diagnose-Blätter,
+>   warm-ups, spiral revision, campaign ordering) · entity registry + cross-module consistency ·
+>   ÜT cross-subject bundles · **difficulty-as-computed** (exploratory, advisory-only, calibrated on
+>   the SME's own labels) · the **dramaturgy engine** ("could be extremely powerful — plan carefully":
+>   design-doc-first; it IS Track-2 #4 coherence) · the **figure-engine rework** (the figstyle port, A1).
+>   **Parked with reasons:** music engine (ME = relaxed subject, little worksheet demand) ·
+>   experiment class (school-equipment-dependent) · self-checking sheets (gimmick; Trimino self-check
+>   survives inside the Rätsel engine). **Unranked, awaiting a call:** stumme Karten/cartography ·
+>   Typst renderer · vision-Blattkritik · Nachweis/coverage visualisation.
+> - **Illustrations — direction DECIDED** (SME: "precisely the way we should think about it"; design:
+>   **`Documents/illustration-design.md`**). The reframe: an image is a **CLAIM (fact — curated,
+>   checkable) plus a RENDERING (expression — authorable under constraint)**, mechanism 4 extended to
+>   pixels; the corpus model (generate once, **vet once, reuse forever**) converts diffusion's runtime
+>   risk into a review-time cost, which is what makes it viable at all. Media policy gains a **third
+>   lane `depictive`** (shows a thing; no labels/numbers/text; `intended_claim` + checklist gate)
+>   between decorative and content; the content lane stays code-gen/sourced **forever**. Resolution
+>   hierarchy: reuse › sourced PD/CC › diffusion › none (prefer real PD art where sources exist —
+>   history gets Isabey, not a diffusion ballroom). Build: local **Flux.1-schnell** (Apache-2.0) on the
+>   4070 via the TTS cp312-subprocess pattern; replayable `DiffusionSpec` provenance; deterministic
+>   pre-review lints (OCR no-text, photocopy-survival); best-of-N review; **Realien backdrops as the
+>   risk-free beachhead** (fictional world ⇒ zero world-claims) and the **Beschriftungs-hybrid**
+>   (vetted base + curated anchors + code label layer, maskable) as the flagship; hard no-go list
+>   (historical likenesses, maps, photoreal humans, text in pixels).
+> - **CLAUDE.md rewritten as the operating manual** (853 → ~460 lines; SME-approved editorial
+>   contract: *no rule lost* — cuts are history/narrative/duplication only, verified by an adversarial
+>   lost-rule diff pass). History → handoff session blocks; design depth → the design docs; scattered
+>   gotchas consolidated into one "Conventions & gotchas" index; a new "Updating this file" section
+>   prevents organic regrowth (one paragraph per feature + pointer; extract a design doc at ~15 lines).
+>   The figure intent→recipe system relocated to `figure-styleguide.md` (new "data-figure system"
+>   section). **`AGENTS.md` is now a thin deferral to CLAUDE.md** (it was a stale parallel copy —
+>   one manual, no drift). **`Documents/README.md` refreshed as the doc map** (six shelves:
+>   canonical · live design · reference · agent briefs · worked content · historical);
+>   schema v0.1/v0.2 + the stray `project-handoff (1).md` moved to **`Documents/archive/`**;
+>   `implementation-notes.md` + `dashboard-review.md` marked historical in place.
+>
+> Run: `python -m pytest -q` (**413 tests**, unchanged — docs only). **Open next:** pick from the
+> roadmap waves by interest; A1 (figure rework) unblocks the figure-heavy items; C5 (dramaturgy) and
+> B-anything start with their design docs.
+
+---
+
+> **Update (Session 14, 5 Jul 2026): Wave A built end-to-end — the task & figure engines.** A subagent
+> fan-out (Opus/Sonnet builders, orchestrator-reviewed: specimens viewed, diffs read, follow-ups sent
+> back) shipped **all of Wave A** plus the CHE2 maintenance fix. **413 → 565 tests green.** Twelve
+> commits (`30c7f6e`…`b8f550d`) on `main`. What landed:
+> - **A1 · Figure-engine port.** All ~25 recipes now draw through `figstyle` roles/ramps — **0 hard-coded
+>   hexes** (was 72; `tests/test_figstyle_port.py` locks it via regex). `right_triangle`/`rectangle`/
+>   `polygon` became computed `Scene`s. Caught + fixed a real bug: a **py3.14 / mpl3.11 Calibri
+>   small-glyph drop** silently blanked number-line/timeline labels — `figstyle._register_font` now
+>   render-probes each candidate and falls through to a font that actually inks 9 pt text. Specimen
+>   scripts per family (`tools/{charts,geometry,diagrams,maps}_specimen.py`).
+> - **A2a · Physics parametric pack.** `pipeline/physics.py` (uniform_motion·density·ohm·resistors·
+>   lever·energy_power) computing with `sympy.physics.units` — every answer **dimensionally verified**
+>   before formatting (`_assert_dimension` over the SI dimension system; a unit-category error can't
+>   ship), units carried through every Rechenweg step. `grounding/physics.py` (g exact per CGPM 1901;
+>   cited school densities + reverse "welcher Stoff?" lookup). 7 `phy-*` templates on real US/OS anchors.
+> - **A2b · Physics scene families.** `pipeline/optics.py` (thin-lens ray construction; drei
+>   Hauptstrahlen as stages 1–6; givens g/G stay shown, image b/B maskable) + `pipeline/circuits.py`
+>   (series/parallel netlist → Kirchhoff solve via sympy Rationals → DIN schematic; **per-element
+>   `mask=[…]`** so "gegeben U,R₁,R₃,I — finde R₂" shows the givens and hides only the unknown).
+>   `matplotlib:optics_ray`/`matplotlib:circuit`. **Mirrors (Hohlspiegel/Ebener Spiegel) deferred.**
+> - **A3 · Misconception engine.** `grounding/misconceptions.py` (9 patterns; Radatz/Malle/
+>   Padberg-Wartha for MAT, descriptive Physik-/Chemiedidaktik notes for PHY/CHE) +
+>   `pipeline/misconceive.py` (`@_misconception` transforms). An MC distractor = the misconception
+>   applied to the same drawn values → **guaranteed ≠ correct** (post-formatting), deduped,
+>   plausibility-gated; the teacher guide names each probe via `watch_outs` ("B prüft:
+>   Vorzeichenfehler (Radatz)"). `Instance.mc`/`mc_distractors` (pipeline-internal, derivation-safe).
+> - **A4 · Solution graphs.** `SolutionPath` on `Instance`+`TaskBlock`; LGS emits Einsetzungs-/
+>   Gleichsetzungs-/Additionsverfahren, Prozent emits Dreisatz/Operator/Formel — each path independently
+>   sympy-derived and **asserted equal to the primary answer** before shipping; teacher renders
+>   "Alternative Lösungswege", student/homework proven clean; the generation-view omission lock is now
+>   test-locked.
+> - **A5 · Rätsel engine.** `pipeline/puzzles.py` + `schema/puzzle.py`: Kreuzworträtsel (backtracking
+>   crossings), Suchsel (accidental-duplicate refill guard), Domino (**closes iff every match correct** —
+>   self-check by graph construction), Rechenmauern (unique-solution masking verified by propagation).
+>   One core kind `puzzle` (no write-space); `matplotlib:puzzle_grid`; teacher-only solved grid via
+>   `TaskBlock.solution_asset_refs`; umlaut = single-cell (flip in one constant). Corpus-scale clue
+>   ingest is the follow-up.
+> - **A6 · Wiener Sachtextformel.** `pipeline/readability.py` (WSTF1, Bamberger/Vanecek; documented
+>   German syllable heuristic — advisory lane only) + a verify warning when a block reads ≫ target
+>   Schulstufe + a computed-on-demand block-card badge. **Verbatim sources (`quoted`/`source_text`) are
+>   exempt** — deliberately hard IS the Quellenarbeit (orchestrator fix; the GPB flagship test treats
+>   Lesbarkeit as flag-not-gate). Scope-variant linguistic targets deferred (chip `task_8964d0d4`).
+> - **A7 · scene3d promotion.** `pipeline/scene3d.py`: `Scene3D` + axonometric projection + closed-form
+>   back-face hidden-line classification (raises `NotConvex` at the boundary). `axonometric_solid`
+>   (Quader/Prisma/Pyramide/Zylinder/Kegel; hidden edges dashed) + `riss_pair` (Grund-/Aufriss with
+>   Ordnungslinien). **Orchestrator Sichtbarkeit fixes** (the A7 agent was rate-limited before applying
+>   them): smooth-body base rim splits front-solid/back-dashed; riss visibility is computed **per Riss**
+>   (Grundriss looks down +z, Aufriss from −y) with the **coincidence rule** (visible wins) — fixing the
+>   pyramid Grundriss diagonals and hex-prism Aufriss verticals that were wrongly dashed. Anchors found:
+>   GZ `GEZ.US.4.PRO.*`, DG `DGE.OS.7.ARB5.*` — a master-library flagship per Stufe is the follow-up.
+> - **CHE2 routing fix (maintenance).** `_DISPLAY_NAME_OVERRIDES` keyed `(stufe, code)` gives the second
+>   "CHEMIE" subject a distinct display name at `_meta` load — name-routed campaigns now reach CHE2's 6
+>   US cells; plain "Chemie" still routes to CHE. (Rescued from an orphaned Session-13 worktree.)
+>
+> **⚠️ SME FACT-CHECK QUEUE (physics/German/didactics — the SME is the domain authority; nothing here
+> blocks, all is verify-clean):**
+> 1. **g = 9.80665** exact (not 9.81) → E_pot results ~2 % higher than a 9.81 hand-calc. One-line flip
+>    in `STANDARD_GRAVITY` if Unterstufe should use 9.81.
+> 2. **kWh introduced at Kl. 3** (US energy template) — confirm or push to OS-only.
+> 3. **`phy-os-arbeit-leistung`** mixes E_pot into the "Elektrische Energie" KB — defensible as
+>    energy-form review; say if the OS template should be electrical-only.
+> 4. **Density anchored to OS Thermodynamik** (`PHY.OS.5.THE.01`) — no Dichte descriptor exists in the
+>    PHY Unterstufe Lehrplan; confirm the anchor or point at a better one.
+> 5. **Magnitude ranges** to eyeball: motion (Schnecke cm/s … Zug ~30 m/s), Ohm (mA…3 A, 1–1000 V),
+>    resistors (2–200 Ω), lever (5–400 N), power (Glühlampe 40 W … Wasserkocher 2 kW).
+> 6. **Circuit phrasing** "In einer Reihenschaltung liegen die Widerstände …" — slightly stiff.
+> 7. **Misconception sources for PHY/CHE** cited descriptively, not pinned to a page — tighten if you
+>    have a preferred reference.
+> 8. **`resistors_mc`** yields 2–3 options (parallel-as-series always; ×10 slip only when distinct).
+> 9. **Optics sign convention:** f/g/G entered as positive magnitudes, lens type carries the sign
+>    (Sammellinse +f, Zerstreuungslinse −f); g=f drawn as parallel emerging rays ("kein Bild").
+> 10. **Schrägriss foreshortening:** strict Kabinett (½ at 45°) per the design doc — some AT texts use
+>     Kavalier (full length). And the **a/b/c → edge mapping** (a=x-width, b=y-depth, c=z-height) —
+>     check against your Länge/Breite/Höhe convention.
+> 11. **GZ/DG coverage gap** (honest): scene3d does parallel Grund-/Aufriss only — no Kreuzriss,
+>     no Zentralprojektion yet.
+>
+> Run: `python -m pytest -q` (**565 tests**). **Open next:** Wave B (the image program — B1 Flux backend
+> starts it) or Wave C (C1 prerequisite graph, or C5 dramaturgy design-doc-first); the physics/GZ
+> engines invite master-library flagships (PHY worked sheets, a GZ "Risse herstellen" + DG "Sichtbarkeit"
+> sheet) and a corpus-scale Rätsel ingest seam. **Worktree note:** three merged worktree dirs under
+> `../TeachersAid-wt/` + `.git/worktrees/{a2b,a5,a7,blissful-rosalind-5bbcdb}` are Windows-lock-stuck on
+> disk (branches deleted, `git worktree list` clean) — `git worktree prune` + delete the dirs once the
+> locks clear.
+
 ---
 
 ## 0 · Orientation (the 30-second version)
 
 We are designing (not yet building) an **on-demand generator of Austrian-curriculum-anchored teaching
 material** for AHS secondary schools. A teacher gives a topic + grade + time; they get a ready-to-use,
-competence-anchored bundle they can trust and drop into whatever they already use. The work so far is
+competence-anchored bundle they can trust and drop into whatever they already use. *(Session-11 note:
+this baseline is historical — the system is built, and since 2 Jul 2026 it is **corpus-first**: bundles
+are assembled on demand from a vetted corpus, never live-generated; see the update blocks above + §4.)* The work so far is
 **design**: a data model, a competitive/positioning analysis, a full subject audit, and worked content
 examples. The current source of truth for the data model is **schema v0.3**; v0.4 and v0.5 are specced
 in the roadmap; an engine and any UI are deferred.
@@ -251,7 +463,8 @@ in the roadmap; an engine and any UI are deferred.
 
 ## 1 · What this project is (vision / thesis)
 
-On-demand generator of Austrian-Lehrplan-anchored teaching material for AHS. Teacher inputs topic +
+On-demand generator of Austrian-Lehrplan-anchored teaching material for AHS *(since Session 11:
+"on demand" = assembled from the vetted corpus, LLM-free at delivery — §4)*. Teacher inputs topic +
 grade + time → ready-to-use bundle (conservative student material + a curated teacher depth-layer) that
 is **correct by construction**, **provably competence-aligned** (the derived *Nachweis*), and **drops
 into existing tools**. We sell a *"creative curriculum partner + compliance guarantee,"* **not** an
@@ -341,6 +554,19 @@ decided but not yet written up.**
 ---
 
 ## 4 · Key decisions & findings (durable — do not relitigate)
+
+**The offline-first pivot (Session 11, 2 Jul 2026) — supersedes the "on-demand live generation" framing
+wherever older docs use it:**
+- **The product is the curated corpus + deterministic delivery.** Generation (LLM or subagent) happens
+  only in the campaign-shaped **corpus loop**, upstream of the SME gate; the **delivery loop is LLM-free**
+  (vetted sheet › composed-from-blocks › honest gap + demand queue; async fulfillment for the long tail).
+  Rationale: a closed curriculum ⇒ finite, computable coverage; live delivery is structurally un-gated
+  (it conflicts with the human-final-gate decision below); campaign capex instead of per-request opex.
+  Rule + boundary: `Documents/invariants.md` §10.
+- **Live LLM generation is deferred, not deleted** — the `llm/` seam remains as the campaign seam; a later
+  reintroduction would be expression-only re-projection over vetted facts and gets decided explicitly.
+- **Working mode: build-for-joy.** No deadline, no business pressure; a feature is justified by being
+  inherently interesting/powerful. Competitive/GTM concerns deferred (kept in `platform-definition.md`).
 
 **Positioning / strategy (from the Teachino pilot study, `platform-definition.md`):**
 - Teachino *validated the concept but execution killed it* (~32% used it regularly; Math 9% usage; "too
@@ -434,8 +660,8 @@ Worked from a consolidated v0.2 + first PDFs, through to v0.3 + a full audit + r
 | `strahlung_schueler_v2.pdf` | **Best** student worksheet — deep, cognitive ladder, resource-independent | **CURRENT** |
 | `strahlung_schueler.pdf` | v1 student worksheet (pre-block-model render) | **SUPERSEDED by v2** |
 | `strahlung_lehrkraft.pdf` | v1 teacher guide | ⚠ **MISMATCHED to v2's tasks — regenerate when revisiting Strahlung** |
-| `lehrplan-bundle-schema-v0.2.md` | Prior schema; carries Thread/Rack/Coverage/Verification/Lens/Asset/Nachweis | **SUPERSEDED by v0.3 for types** |
-| `lehrplan-bundle-schema.md` | First bundle anatomy (v0.1) | **HISTORICAL** |
+| `archive/lehrplan-bundle-schema-v0.2.md` | Prior schema; carries Thread/Rack/Coverage/Verification/Lens/Asset/Nachweis | **SUPERSEDED by v0.3 for types** |
+| `archive/lehrplan-bundle-schema.md` | First bundle anatomy (v0.1) | **HISTORICAL** |
 
 *Note:* the Strahlung PDFs predate the block model — they are valid rendered proof-of-concept, but the
 canonical representation is now the content object. Strahlung has **not** been re-expressed as

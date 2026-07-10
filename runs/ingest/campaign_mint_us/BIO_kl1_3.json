@@ -1,0 +1,297 @@
+{
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 1,
+  "scope_label": "Wirbeltiere: Angepasstheit und verantwortungsvoller Umgang mit Haustieren",
+  "title": "Gebaut fürs Wasser, gebaut für die Luft: Wirbeltiere im Vergleich",
+  "kernfrage": "Was verrät der Körperbau eines Tieres über seinen Lebensraum – und was bedeutet das für unsere Verantwortung als Halter:innen?",
+  "body": {
+    "intro": [],
+    "data_figures": [],
+    "assets": [
+      {
+        "id": "a1",
+        "role": "content",
+        "generator": "matplotlib:bar_chart",
+        "spec": {
+          "categories": [
+            "Fisch",
+            "Frosch",
+            "Eidechse",
+            "Vogel",
+            "Hund"
+          ],
+          "values": [
+            4,
+            3,
+            3,
+            4,
+            4
+          ],
+          "title": "Anzahl Gliedmaßen/Flossen-Paare bei ausgewählten Wirbeltieren",
+          "xlabel": "Tier",
+          "ylabel": "Anzahl Extremitätenpaare"
+        },
+        "illustrative": true
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Gleicher Bauplan, verschiedene Werkzeuge",
+        "throughline": "Alle Wirbeltiere teilen einen gemeinsamen Grundbauplan (Wirbelsäule, meist zwei Paar Gliedmaßen) – doch dieser Bauplan wird für jeden Lebensraum ganz unterschiedlich 'umgebaut'.",
+        "talking_points": [
+          "Der Grundbauplan (Wirbelsäule, Kiemen/Lunge, zwei Gliedmaßenpaare) ist die eigentliche Verwandtschaftsspur – nicht das Aussehen. Flosse und Flügel sind derselbe 'Bauplan-Teil', nur angepasst.",
+          "Die Balken-Abbildung (a1) zeigt bewusst eine Gemeinsamkeit (Extremitätenpaare), nicht nur Unterschiede – das ist der Kern von 'gemeinsame Verwandtschaft erkennen'.",
+          "Bei den Ethik-Aufgaben (t5–t7) geht es nicht um 'richtig/falsch Tierhaltung' pauschal, sondern um begründete, fachlich gestützte Abwägung."
+        ],
+        "extensions": [
+          "Skelette verschiedener Wirbeltiere (Bilder oder Modelle) direkt nebeneinanderlegen und homologe Knochen markieren.",
+          "Diskussion vertiefen: Qualzucht bei Haustieren (z. B. extrem kurze Nasen) als konkretes aktuelles Beispiel für Angepasstheit vs. Zuchtwahl."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "table_fill",
+            "prompt": "Fülle die Tabelle aus: Trage für Fisch, Frosch und Vogel jeweils ein typisches Merkmal ein, das zeigt, wie der Körper an den Lebensraum angepasst ist.",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Tier",
+                "Lebensraum",
+                "Anpassungsmerkmal"
+              ],
+              "rows": 3
+            },
+            "cognitive_level": "remember",
+            "dimensions": [
+              "W"
+            ],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.WIS.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 7,
+            "asset_refs": [],
+            "answer_key": "Fisch – Wasser – Flossen zum Schwimmen, Kiemen zur Sauerstoffaufnahme aus dem Wasser. Frosch – Wasser und Land – Schwimmhäute an den Hinterbeinen, Haut zur zusätzlichen Atmung. Vogel – Luft/Land – Flügel und leichte, hohle Knochen zum Fliegen, Federn zur Isolierung.",
+            "acceptable_reasoning": "Andere korrekte, lebensraumtypische Merkmale werden ebenso akzeptiert (z. B. Stromlinienform beim Fisch, Sprungbeine beim Frosch).",
+            "watch_outs": [
+              "Manche nennen nur ein Aussehensmerkmal ohne Bezug zum Nutzen im Lebensraum (z. B. 'Fisch ist glitschig' statt 'Schleimschicht verringert Wasserwiderstand')."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "content_comprehension",
+            "prompt": "Fisch, Frosch, Eidechse, Vogel und Hund gehören alle zu den Wirbeltieren. Sie haben eine Wirbelsäule und meistens zwei Paar Gliedmaßen (Flossen, Beine oder Flügel) – auch wenn diese sehr unterschiedlich aussehen und genutzt werden. Erkläre, warum Biolog:innen einen Fisch und einen Vogel trotz ihres völlig unterschiedlichen Aussehens als verwandt einstufen.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "W"
+            ],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.WIS.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "Beide teilen den gleichen Grundbauplan der Wirbeltiere: eine Wirbelsäule als Innenskelett und zwei Paar Gliedmaßen (bei Fisch: Flossenpaare, bei Vogel: Flügel und Beine). Das ähnliche äußere Aussehen ist nicht entscheidend – die gemeinsame innere Bauplan-Struktur zeigt die Verwandtschaft.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Häufiger Fehler: Verwandtschaft wird am äußeren Aussehen festgemacht ('sieht ähnlich aus = verwandt'). Der Grundbauplan zählt, nicht die Optik."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "true_false_justify",
+            "prompt": "Ein Tierarzt sagt: 'Fakten kann man überprüfen, Meinungen nicht.' Lies die vier Aussagen über Haustierhaltung. Kreuze bei jeder an, ob sie eine überprüfbare Tatsache oder eine persönliche Meinung ist.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Ein Hund braucht täglich Bewegung, sonst können Verhaltensprobleme auftreten.",
+                "Katzen sind die besten Haustiere.",
+                "Bestimmte Hunderassen mit extrem kurzer Nase haben häufiger Atemprobleme.",
+                "Wer ein Tier hält, sollte es wie ein Familienmitglied behandeln."
+              ]
+            },
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Aussage",
+                "überprüfbar? (ja/nein)",
+                "Begründung"
+              ],
+              "rows": 4
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "S",
+              "W"
+            ],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.STA.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "1 ja (beobachtbar/messbar über Verhalten und Tierarztdaten) · 2 nein (persönlicher Geschmack, keine messbare Größe) · 3 ja (anatomisch/tierärztlich belegbar, z. B. Atemfrequenz, Tierarztbefunde) · 4 nein (Werthaltung/Meinung, nicht naturwissenschaftlich prüfbar).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Aussage 3 wird manchmal als 'Meinung' eingestuft, obwohl sie ein belegbarer anatomischer Zusammenhang ist (Qualzucht-Thematik) – hier genau nachfragen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "matching",
+            "prompt": "Ordne jedem Körpermerkmal den passenden Vorteil im jeweiligen Lebensraum zu.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Hohle, leichte Knochen (Vogel)",
+                "Schwimmhäute (Frosch)",
+                "Seitenlinienorgan (Fisch)",
+                "Kurzes, dichtes Fell (viele Säugetiere im Norden)"
+              ],
+              "right": [
+                "Geringeres Gewicht erleichtert das Fliegen.",
+                "Größere Fläche verbessert den Vortrieb beim Schwimmen.",
+                "Erkennt Wasserbewegungen und Beute auch bei schlechter Sicht.",
+                "Hält Körperwärme in kalter Umgebung besser zurück."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "apply",
+            "dimensions": [
+              "W"
+            ],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.WIS.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "Hohle Knochen → geringeres Gewicht erleichtert das Fliegen. Schwimmhäute → größere Fläche verbessert den Vortrieb beim Schwimmen. Seitenlinienorgan → erkennt Wasserbewegungen und Beute auch bei schlechter Sicht. Dichtes Fell → hält Körperwärme in kalter Umgebung besser zurück.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Das Seitenlinienorgan ist Schüler:innen oft unbekannt; kurz erklären, dass es Druckwellen im Wasser wahrnimmt, bevor die Aufgabe bearbeitet wird."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "create_produce",
+            "prompt": "Schreibe einen kurzen Steckbrief-Text (5–6 Sätze) für eine Tierheim-Broschüre, der zukünftigen Hundehalter:innen verantwortungsvolles Handeln nahelegt: Nenne mindestens zwei konkrete Bedürfnisse eines Hundes (z. B. Bewegung, Beschäftigung, tierärztliche Versorgung) und erkläre jeweils kurz, warum das für das Tierwohl wichtig ist.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55
+            },
+            "cognitive_level": "apply",
+            "dimensions": [
+              "S"
+            ],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.STA.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 11,
+            "asset_refs": [],
+            "answer_key": "Erwarteter Text nennt mindestens zwei konkrete, fachlich richtige Bedürfnisse (z. B. ausreichend Bewegung passend zur Rasse, geistige Beschäftigung, regelmäßige tierärztliche Kontrollen, artgerechte Ernährung) mit je einer kurzen, sachlich richtigen Begründung, warum ein Nichterfüllen dem Tier schadet.",
+            "acceptable_reasoning": "Bewertet wird die fachliche Richtigkeit und Verständlichkeit der Begründungen, nicht die literarische Qualität des Textes.",
+            "watch_outs": [
+              "Rein allgemeine Sätze ohne konkretes Bedürfnis ('sei lieb zu deinem Hund') verfehlen die Aufgabe – es müssen erkennbare, begründete Bedürfnisse benannt werden."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "data_interpretation",
+            "prompt": "Das Balkendiagramm zeigt die Anzahl der Extremitätenpaare (Flossen/Beine/Flügel-Beinpaar) bei fünf Wirbeltieren. Was fällt dir auf, wenn du die Werte vergleichst? Was zeigt dieses Ergebnis über die Verwandtschaft dieser fünf sehr unterschiedlich aussehenden Tiere?",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "E"
+            ],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.ERK.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "asset_refs": [
+              "a1"
+            ],
+            "answer_key": "Alle fünf Tiere haben denselben Wert: 2 Paar Gliedmaßen (Flossen, Beinpaare bzw. Flügel+Beine). Trotz sehr unterschiedlichem Aussehen und Lebensraum zeigt dieser gemeinsame Grundwert den gemeinsamen Bauplan der Wirbeltiere – ein Beleg für ihre Verwandtschaft.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Der Wert 'gleich bei allen' wird manchmal als 'langweilig/kein Ergebnis' abgetan – hier ist die Gleichheit selbst das eigentliche, aussagekräftige Ergebnis."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "decision_scenario",
+            "prompt": "Eine Familie möchte einen Hund anschaffen und hat zwei Rassen zur Auswahl: Rasse A ist sehr aktiv, braucht täglich mehrere Stunden Auslauf; die Familie wohnt aber in einer kleinen Stadtwohnung ohne Garten und hat wenig Zeit für lange Spaziergänge. Rasse B ist ruhiger und kommt mit kürzeren, aber regelmäßigen Spaziergängen aus. Beurteile die Situation aus Sicht des Tierwohls und gib eine begründete Empfehlung.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Wirbeltiere haben je nach Art und Zuchtlinie unterschiedliche Bedürfnisse an Bewegung, Platz und Beschäftigung; werden diese nicht erfüllt, leidet das Tierwohl."
+            },
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "S"
+            ],
+            "serves": [
+              {
+                "competence_id": "BIO.US.x.STA.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Begründete Empfehlung: Rasse B passt besser zu den Lebensumständen der Familie, da ihr Bewegungsbedarf mit der verfügbaren Zeit und dem fehlenden Garten realistisch gedeckt werden kann. Rasse A in dieser Wohnsituation zu halten würde die arttypischen Bedürfnisse (viel Auslauf) wahrscheinlich nicht erfüllen und das Tierwohl gefährden.",
+            "acceptable_reasoning": "Auch eine Empfehlung für Rasse A wird akzeptiert, wenn zusätzliche Maßnahmen (z. B. Hundesportverein, deutlich mehr Zeitaufwand) fachlich stimmig als Ausgleich benannt werden.",
+            "watch_outs": [
+              "Bewertet wird die Verknüpfung von Tierbedürfnis und Lebensumständen, nicht eine reine Sympathieentscheidung für eine Rasse."
+            ],
+            "rubric": []
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "id": "c0187.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Entwirf deinen eigenen Wachstums- oder Abnahmeprozess zu einem Sachthema deiner Wahl (z. B. eine Pflanze, ein Sparbuch, ein Vorrat, eine Batterie-Ladung). Gib an: (1) den Startwert, (2) die Änderung pro Zeiteinheit als Term, (3) eine Gleichung, mit der man berechnen kann, wann ein bestimmter Zielwert erreicht wird — und löse diese Gleichung. Nenne außerdem die sachliche Grenze deines Modells (ab wann macht dein Term keinen Sinn mehr?).",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 70.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "MOD",
+      "OPE",
+      "BEG"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.3.VAR.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 13,
+    "answer_key": "Individuelle Lösungen. Beispiel: Eine Pflanze ist 4 cm hoch und wächst 1,5 cm pro Woche: H(w) = 1,5w + 4. Gesucht: wann ist sie 25 cm hoch? 1,5w + 4 = 25 → 1,5w = 21 → w = 14 Wochen. Modellgrenze: Das lineare Wachstum gilt nur, solange die Pflanze jung ist — irgendwann verlangsamt sich das Wachstum, der Term wird dann unrealistisch.",
+    "acceptable_reasoning": "Jedes in sich stimmige Modell mit korrekt aufgestelltem und gelöstem Term ist vollwertig; entscheidend ist, dass Startwert, Änderungsrate und Zielgleichung logisch zusammenpassen und die genannte Modellgrenze inhaltlich sinnvoll ist.",
+    "rubric": [
+      {
+        "criterion": "Term korrekt aufgestellt (Startwert + Änderungsrate)",
+        "levels": [
+          "Fehlt oder unklar",
+          "Ansatz erkennbar",
+          "Vollständig korrekt"
+        ]
+      },
+      {
+        "criterion": "Zielgleichung aufgestellt und korrekt gelöst",
+        "levels": [
+          "Fehlt oder falsch",
+          "Aufgestellt, Rechenfehler",
+          "Vollständig korrekt gelöst"
+        ]
+      },
+      {
+        "criterion": "Modellgrenze sachlich sinnvoll benannt",
+        "levels": [
+          "Fehlt",
+          "Genannt, aber unbegründet",
+          "Klar benannt und begründet"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Die geforderte Modellgrenze wird oft übersprungen, obwohl sie explizit verlangt ist — genau hier zeigt sich das Verständnis für 'Modell vs. Wirklichkeit'.",
+      "Manche wählen einen Abnahmeprozess, vergessen aber, dass der Term irgendwann null oder negativ wird, und thematisieren das nicht als Grenze."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Mathematik",
+  "klasse": 3,
+  "kompetenzbereich": "2: Variablen und Funktionen",
+  "competences": [
+    "MAT.US.3.VAR.04"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "MOD",
+    "OPE",
+    "BEG"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0187",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:20+00:00",
+  "updated_at": "2026-07-05T05:34:20+00:00"
+}

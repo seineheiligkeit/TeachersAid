@@ -105,12 +105,18 @@ def test_brief_includes_aufbau_and_operators():
 
 @pytest.mark.parametrize("tsid,kl", TOP3)
 def test_build_assemble_verify_clean(tsid, kl):
-    """Each scaffold builds, assembles and verifies clean — no problems, no warnings."""
+    """Each scaffold builds, assembles and verifies clean — no problems, no warnings EXCEPT
+    the one expected readability advisory: the capstone (tx.t3) is deliberately Matura-FORMAT
+    task language (operator heads, SRDP register) — that register IS the genre being taught,
+    so the Wiener-Sachtextformel may rate it above grade. The learn-text (tx.i1) and every
+    other block must be grade-readable — any warning there fails."""
     content, res = build_worksheet(tsid, kl)
     assemble(content, res)
     rep = verify(content, res)
     assert rep.ok, rep.problems
-    assert not rep.warnings, rep.warnings
+    unexpected = [w for w in rep.warnings
+                  if not w.startswith("tx.t3: Lesbarkeit (Wiener Sachtextformel)")]
+    assert not unexpected, unexpected
     tasks = [b for b in content.iter_blocks() if b.role == "task"]
     # verstehen → planen → verfassen, a real Anforderungs-spread
     assert [t.kind for t in tasks] == ["matching", "table_fill", "text_production"]

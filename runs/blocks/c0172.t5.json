@@ -1,0 +1,76 @@
+{
+  "id": "c0172.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Ein Tierarzt sagt: 'Fakten kann man überprüfen, Meinungen nicht.' Lies die vier Aussagen über Haustierhaltung. Kreuze bei jeder an, ob sie eine überprüfbare Tatsache oder eine persönliche Meinung ist.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Ein Hund braucht täglich Bewegung, sonst können Verhaltensprobleme auftreten.",
+        "Katzen sind die besten Haustiere.",
+        "Bestimmte Hunderassen mit extrem kurzer Nase haben häufiger Atemprobleme.",
+        "Wer ein Tier hält, sollte es wie ein Familienmitglied behandeln."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "überprüfbar? (ja/nein)",
+        "Begründung"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "S",
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.STA.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1 ja (beobachtbar/messbar über Verhalten und Tierarztdaten) · 2 nein (persönlicher Geschmack, keine messbare Größe) · 3 ja (anatomisch/tierärztlich belegbar, z. B. Atemfrequenz, Tierarztbefunde) · 4 nein (Werthaltung/Meinung, nicht naturwissenschaftlich prüfbar).",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Aussage 3 wird manchmal als 'Meinung' eingestuft, obwohl sie ein belegbarer anatomischer Zusammenhang ist (Qualzucht-Thematik) – hier genau nachfragen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 1,
+  "kompetenzbereich": "Standpunkte begründen und reflektiert handeln (S)",
+  "competences": [
+    "BIO.US.x.STA.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "S",
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0172",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:12+00:00",
+  "updated_at": "2026-07-05T05:34:12+00:00"
+}

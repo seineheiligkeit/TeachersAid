@@ -1,0 +1,109 @@
+{
+  "id": "c0189.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Nähere √8 durch systematisches Probieren an, ohne die Wurzel-Taste zu benutzen. Gehe so vor: Finde zuerst zwei aufeinanderfolgende ganze Zahlen, zwischen denen √8 liegen muss (Quadratzahlen vergleichen). Verfeinere dann mit einer Nachkommastelle, dann mit zwei Nachkommastellen. Trage dein Ergebnis mit einer Nachkommastelle zusätzlich auf dem Zahlenstrahl in Abbildung 1 ein (male den Punkt selbst ein).",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "OPE",
+      "DAR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.4.ZAH.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "2² = 4 und 3² = 9, also liegt √8 zwischen 2 und 3. 2,8² = 7,84 und 2,9² = 8,41 → zwischen 2,8 und 2,9. 2,82² = 7,9524 und 2,83² = 8,0089 → zwischen 2,82 und 2,83, also √8 ≈ 2,83 (auf zwei Nachkommastellen).",
+    "acceptable_reasoning": "Systematisches Eingrenzen durch Quadrieren von Testwerten (Intervallschachtelung) — je näher das Quadrat an 8 liegt, desto besser die Näherung.",
+    "rubric": [
+      {
+        "criterion": "Eingrenzung nachvollziehbar dokumentiert",
+        "levels": [
+          "Nur Endergebnis ohne Weg",
+          "Ein Verfeinerungsschritt gezeigt",
+          "Beide Verfeinerungsschritte vollständig und korrekt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Nicht raten lassen, sondern das Testen und Verfeinern wirklich schriftlich dokumentieren — das ist der eigentliche Lerninhalt.",
+      "Der Punkt auf dem Zahlenstrahl muss zwischen 2,8 und 2,9 liegen, nicht bei 2,5 oder 3."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Mathematik",
+  "klasse": 4,
+  "kompetenzbereich": "1: Zahlen und Maße",
+  "competences": [
+    "MAT.US.4.ZAH.01"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "OPE",
+    "DAR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:number_line",
+      "spec": {
+        "min": 0,
+        "max": 3,
+        "step": 0.5,
+        "marks": [
+          {
+            "at": 1,
+            "label": "1"
+          },
+          {
+            "at": 2,
+            "label": "2"
+          },
+          {
+            "at": 1.4142,
+            "label": "√2 = ?"
+          }
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0189",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:22+00:00",
+  "updated_at": "2026-07-05T05:34:22+00:00"
+}

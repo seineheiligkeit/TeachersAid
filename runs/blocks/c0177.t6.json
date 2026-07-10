@@ -1,0 +1,73 @@
+{
+  "id": "c0177.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Ein Mitschüler sagt: 'Rauchen betrifft nur meine eigene Lunge, das geht niemand anderen etwas an.' Nimm dazu begründet Stellung und beziehe dabei die Wirkung auf Lunge UND Blutkreislauf mit ein.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Ein Mitschüler behauptet, Rauchen sei allein seine eigene Angelegenheit, weil es nur seine eigene Lunge betrifft."
+    },
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.STA.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "Rauchen schädigt die feinen, dünnen Oberflächen der Lungenbläschen und verringert dadurch dauerhaft die Sauerstoffaufnahme; das belastet auch das Herz, das stärker pumpen muss, um den Körper trotzdem ausreichend zu versorgen. Zusätzlich betrifft Passivrauch auch andere Personen in der Nähe – die Aussage 'geht niemand anderen etwas an' ist daher fachlich nicht haltbar. Eine gute Stellungnahme benennt sowohl die körperliche als auch die soziale Dimension.",
+    "acceptable_reasoning": "Akzeptiert werden unterschiedliche Formulierungen, solange sowohl der Schaden an Lunge/Kreislauf als auch der Aspekt 'betrifft auch andere' fachlich korrekt begründet vorkommen.",
+    "rubric": [
+      {
+        "criterion": "Einbezug von Lunge und Kreislauf",
+        "levels": [
+          "nennt nur einen allgemeinen Gesundheitsschaden",
+          "erklärt die Wirkung auf die Lunge",
+          "erklärt Wirkung auf Lunge UND Kreislauf sowie den Aspekt Passivrauch"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Eine rein moralische Antwort ohne biologische Begründung (nur 'Rauchen ist ungesund') erfüllt die Kompetenz nicht ausreichend."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 3,
+  "kompetenzbereich": "Standpunkte begründen und reflektiert handeln (S)",
+  "competences": [
+    "BIO.US.x.STA.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0177",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:14+00:00",
+  "updated_at": "2026-07-05T05:34:14+00:00"
+}

@@ -1,0 +1,140 @@
+{
+  "id": "c0183.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Das L-förmige Beet (Abbildung) lässt sich in zwei Rechtecke zerlegen. Zerlege die Figur gedanklich in zwei Rechtecke, berechne die Fläche jedes Teilrechtecks einzeln und addiere sie zur Gesamtfläche.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "OPE",
+      "MOD"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.1.FIG.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "MAT.US.1.FIG.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "Zerlegung z. B. auf Höhe von C waagrecht durchtrennen: unteres Rechteck A-B-C-(Punkt darüber von A) mit 4 m × 2 m = 8 m². Oberes Rechteck (restliche Fläche bis D-E-F) mit 6 m × 3 m = 18 m². Gesamtfläche: 8 + 18 = 26 m².",
+    "acceptable_reasoning": "Eine zusammengesetzte Figur wird an einer sinnvollen Stelle in Rechtecke zerlegt; die Teilflächen werden addiert.",
+    "rubric": [
+      {
+        "criterion": "Sinnvolle Zerlegung erkennbar",
+        "levels": [
+          "Keine Zerlegung",
+          "Zerlegung vorhanden, aber unklar",
+          "Klare Zerlegung in zwei Rechtecke"
+        ]
+      },
+      {
+        "criterion": "Gesamtfläche korrekt (26 m²)",
+        "levels": [
+          "Falsch",
+          "Rechenfehler in einem Teilschritt",
+          "Vollständig korrekt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Es gibt mehrere gültige Zerlegungen (waagrecht oder senkrecht) — beide führen zum gleichen Ergebnis, das sollte thematisiert werden.",
+      "Häufiger Fehler: Seitenlängen der Teilrechtecke falsch aus der Abbildung abgelesen — Koordinaten/Maße genau prüfen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Mathematik",
+  "klasse": 1,
+  "kompetenzbereich": "3: Figuren und Körper",
+  "competences": [
+    "MAT.US.1.FIG.02",
+    "MAT.US.1.FIG.01"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "OPE",
+    "MOD"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:polygon",
+      "spec": {
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "vertex_labels": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ],
+        "title": "Beet in L-Form (aus zwei Rechtecken zusammengesetzt)"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0183",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:17+00:00",
+  "updated_at": "2026-07-05T05:34:17+00:00"
+}

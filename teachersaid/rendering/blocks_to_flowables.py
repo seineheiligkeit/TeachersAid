@@ -207,6 +207,18 @@ def _response_flowables(b: TaskBlock, S, width):
     return []
 
 
+def _solution_step_flowables(steps, S):
+    """Render a worked-solution step list as bulleted teacher lines (text + inline-math expr).
+    Shared by the primary Rechenweg and every alternative Lösungsweg — one layout, no drift."""
+    out = []
+    for st in steps:
+        line = rb.richtext_markup(st.text)
+        if st.expr:
+            line += "   " + rb.richtext_markup([InlineRun(text=st.expr, math=True)])
+        out.append(rb.raw_para("• " + line, S["teacher"]))
+    return out
+
+
 def _task_flowables(b: TaskBlock, projection: str, S, width, assets, number, citations=None):
     out = [rb.raw_para(f"<b>{number}.</b> " + rb.richtext_markup(b.prompt), S["prompt"])]
     # embed every referenced asset (any task kind), + a data_interpretation payload's asset
@@ -229,10 +241,21 @@ def _task_flowables(b: TaskBlock, projection: str, S, width, assets, number, cit
         out += _response_flowables(b, S, width)
 
     if projection == "teacher":
+        # teacher-only solution figure(s) — the SOLVED puzzle grid (A5). The student sheet shows
+        # the empty grid (via asset_refs above); the filled one is for the Lehrkraft only.
+        for ref in b.solution_asset_refs:
+            p = assets.get(ref)
+            if p:
+                out.append(rb.para("Lösungsraster:", S["label"]))
+                out.append(_image(p, width * 0.75))
         dims = ", ".join(b.dimensions)
         serves = ", ".join(f"{s.competence_id} ({s.relation})" for s in b.serves)
+        # only an EXPLICIT difficulty prints (a delivered ramp band / SME estimate);
+        # the derived fallback would just restate the cognitive level.
+        diff = {1: " · Anforderung: leicht", 2: " · Anforderung: mittel",
+                3: " · Anforderung: anspruchsvoll"}.get(b.difficulty, "")
         out.append(rb.para(
-            f"Niveau: {b.cognitive_level} · Dimension: {dims} · ~{b.est_minutes} min"
+            f"Niveau: {b.cognitive_level}{diff} · Dimension: {dims} · ~{b.est_minutes} min"
             + (f" · dient: {serves}" if serves else ""),
             S["meta"],
         ))
@@ -243,13 +266,17 @@ def _task_flowables(b: TaskBlock, projection: str, S, width, assets, number, cit
                 "Akzeptabler Spielraum: " + rb.richtext_markup(b.acceptable_reasoning),
                 S["answer"],
             ))
-        if b.solution_steps:                          # the derived Rechenweg (Maths)
+        if b.solution_steps:                          # the primary derived Rechenweg (Maths)
             out.append(rb.para("Rechenweg:", S["label"]))
-            for st in b.solution_steps:
-                line = rb.richtext_markup(st.text)
-                if st.expr:
-                    line += "   " + rb.richtext_markup([InlineRun(text=st.expr, math=True)])
-                out.append(rb.raw_para("• " + line, S["teacher"]))
+            out += _solution_step_flowables(b.solution_steps, S)
+        if b.solution_paths:                          # A4: the other legitimate strategies
+            out.append(rb.para("Alternative Lösungswege:", S["label"]))
+            for path in b.solution_paths:
+                lead = f"Schüler könnten auch ({path.strategy}):"
+                if path.note:                          # when this route suits the drawn numbers
+                    lead += f" {path.note}"
+                out.append(rb.para(lead, S["teacher"]))
+                out += _solution_step_flowables(path.steps, S)
         for crit in b.rubric:
             out.append(rb.para(
                 f"Kriterium — {crit.criterion}: " + " / ".join(crit.levels), S["teacher"]

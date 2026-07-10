@@ -1,0 +1,76 @@
+{
+  "id": "c0192.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "multiple_choice",
+    "prompt": "Weißes Sonnenlicht trifft auf ein Glasprisma und wird dahinter als Regenbogenband aus vielen Farben sichtbar. Welche Aussage beschreibt diese Beobachtung physikalisch korrekt?",
+    "payload": {
+      "kind": "multiple_choice",
+      "options": [
+        "Das Prisma erzeugt selbst neue Farben, die im Sonnenlicht nicht enthalten waren.",
+        "Weißes Licht ist aus vielen Spektralfarben zusammengesetzt, die das Prisma sichtbar auffächert.",
+        "Nur das rote Licht kommt aus der Sonne, alle anderen Farben entstehen erst im Glas.",
+        "Das Regenbogenband entsteht durch Reflexion an der Prismenoberfläche, nicht durch das Licht selbst."
+      ],
+      "select": "one"
+    },
+    "response": {
+      "mode": "choices",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "select": "one"
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.2.OPT.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Richtig ist B: Weißes Licht ist aus vielen Spektralfarben (Rot bis Violett) zusammengesetzt; das Prisma trennt sie räumlich auf, weil jede Farbe unterschiedlich stark gebrochen wird – es entstehen keine neuen Farben, sie waren immer schon im Licht enthalten.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Fehlvorstellung: Das Prisma 'erzeugt' oder 'färbt' das Licht – tatsächlich trennt es nur bereits vorhandene Spektralfarben durch unterschiedlich starke Brechung."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "multiple_choice",
+  "subject": "Physik",
+  "klasse": 2,
+  "kompetenzbereich": "Optische Systeme",
+  "competences": [
+    "PHY.US.2.OPT.04"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0192",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:24+00:00",
+  "updated_at": "2026-07-05T05:34:24+00:00"
+}

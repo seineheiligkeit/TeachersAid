@@ -271,6 +271,25 @@ def test_feedback_accepts_dataset_kind():
     assert "dataset" in TARGET_KINDS
 
 
+def test_verlauf_preview_is_a_line_over_years_not_year_bars():
+    """SME review finding (3 Jul 2026): the Bevölkerung 'verlauf' preview rendered as
+    65 horizontal year-bars with scientific value labels. A year series — even when the
+    catalog stores the years in `categories` — is a TREND: matplotlib:line on a numeric
+    year x-axis; and the title must not double when the series label IS the title."""
+    from teachersaid.api.app import _dataset_figure_asset
+    from teachersaid.store.datasetstore import DatasetRecord
+
+    d = ds.get_dataset("worldbank_at_bevoelkerung")
+    a = _dataset_figure_asset(DatasetRecord(id=d.id, dataset=d), "verlauf")
+    assert a.generator == "matplotlib:line"
+    assert a.spec["categories"][0] == "1960" and a.spec["xlabel"] == "Jahr"
+    assert a.spec["title"] == d.title                    # no "Titel — Titel" doubling
+    # a country COMPARISON keeps its bar representation (categories aren't numeric)
+    d2 = ds.get_dataset("worldbank_urbanisierung")
+    a2 = _dataset_figure_asset(DatasetRecord(id=d2.id, dataset=d2), "vergleich")
+    assert a2.generator == "matplotlib:bar_chart"
+
+
 # --- the curated GWB catalog (committed deliverables; lock against drift) ------
 _CURATED = [
     "statistik_austria_bevstand_2024", "statistik_austria_bundeslaender_2024",

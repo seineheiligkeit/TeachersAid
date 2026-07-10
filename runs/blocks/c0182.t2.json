@@ -1,0 +1,77 @@
+{
+  "id": "c0182.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "multiple_choice",
+    "prompt": "Welche der folgenden Terme beschreiben Mias Sparsituation richtig: Sie hat 5 Euro Startgeld und bekommt jede Woche 4 Euro dazu?",
+    "payload": {
+      "kind": "multiple_choice",
+      "options": [
+        "4w + 5",
+        "5w + 4",
+        "4 · w + 5",
+        "5 + w · 4"
+      ],
+      "select": "many"
+    },
+    "response": {
+      "mode": "choices",
+      "options": [
+        "4w + 5",
+        "5w + 4",
+        "4 · w + 5",
+        "5 + w · 4"
+      ],
+      "select": "many"
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "DAR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.1.VAR.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 4,
+    "answer_key": "Richtig sind: 4w + 5, 4 · w + 5 und 5 + w · 4 (alle gleichwertig, da Addition und Multiplikation vertauschbar sind). Falsch ist 5w + 4 — dort wäre 5 die wöchentliche Rate und 4 das Startgeld, das ist vertauscht.",
+    "acceptable_reasoning": "Prüfen, welcher Faktor bei w steht (das ist die wöchentliche Rate) und welche Zahl allein steht (das ist das Startgeld).",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen erkennen oft nicht, dass mehrere gleichwertige Schreibweisen richtig sein können — alle passenden ankreuzen lassen.",
+      "5w + 4 ist eine bewusste Verwechslungsfalle (Rate und Startgeld vertauscht)."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "multiple_choice",
+  "subject": "Mathematik",
+  "klasse": 1,
+  "kompetenzbereich": "2: Variablen und Funktionen",
+  "competences": [
+    "MAT.US.1.VAR.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "DAR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0182",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:17+00:00",
+  "updated_at": "2026-07-05T05:34:17+00:00"
+}

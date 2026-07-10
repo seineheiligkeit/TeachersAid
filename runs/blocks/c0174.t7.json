@@ -1,0 +1,64 @@
+{
+  "id": "c0174.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Formuliere eine Handlungsempfehlung für Jugendliche zum Thema Kopfhörer-Nutzung, basierend auf dem, was du über Sinnesorgane gelernt hast.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Viele Jugendliche hören täglich mehrere Stunden über Kopfhörer laute Musik. Das Ohr wandelt Schallwellen über feine Sinneszellen im Innenohr in Nervensignale um – diese Zellen können sich bei zu lauter, zu langer Belastung nicht mehr erholen und sterben ab. Erstelle eine kurze, begründete Handlungsempfehlung für einen gesunden Umgang mit Kopfhörern."
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 40.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.STA.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Eine gute Empfehlung nennt konkrete, biologisch begründete Maßnahmen, z.B.: Lautstärke unter ca. 60% der Maximallautstärke halten, regelmäßige Hörpausen einlegen (z.B. 60-Minuten-Regel), da sich geschädigte Haarsinneszellen im Innenohr nicht regenerieren können – ein Hörschaden ist dauerhaft. Die Empfehlung sollte den biologischen Grund (irreversible Schädigung der Sinneszellen) explizit nennen, nicht nur 'weniger laut hören'.",
+    "acceptable_reasoning": "Auch andere sinnvolle Maßnahmen (Noise-Cancelling statt Lautstärke erhöhen, In-Ear vs. Over-Ear) werden akzeptiert, wenn sie mit dem biologischen Hintergrund verknüpft werden.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Die Empfehlung soll fachlich begründet sein (Bezug zu den Sinneszellen), nicht nur eine allgemeine Ermahnung ohne biologischen Hintergrund."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 2,
+  "kompetenzbereich": "Standpunkte begründen und reflektiert handeln (S)",
+  "competences": [
+    "BIO.US.x.STA.03"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0174",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:13+00:00",
+  "updated_at": "2026-07-05T05:34:13+00:00"
+}

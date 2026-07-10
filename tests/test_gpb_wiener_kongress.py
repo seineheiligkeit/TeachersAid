@@ -33,7 +33,15 @@ def test_builds_and_verifies_clean():
     c, res = _built()
     rep = verify(c, res)
     assert rep.problems == [], rep.problems
-    assert rep.warnings == [], rep.warnings          # the flagship is the quality bar — fully clean
+    # The flagship is the quality bar — fully clean, EXCEPT the readability advisory
+    # (roadmap A6): that lane flags dense prose FOR the SME and is never a gate (the
+    # lint-lane rule). The Darstellung blocks legitimately read above Schulstufe 7 —
+    # an SME judgment surfaced on the dashboard, not a build failure.
+    hard = [w for w in rep.warnings if "Lesbarkeit" not in w]
+    assert hard == [], hard
+    # ...but the quoted 1815 source text must NOT trip the advisory: a verbatim primary
+    # source is deliberately hard (that IS the Quellenarbeit) — locked here on real content.
+    assert not any(w.startswith("wk.q1") for w in rep.warnings), rep.warnings
     # it actually serves real GPB.US.3.* competences across the methoden/orientation strands
     served = {s.competence_id for b in c.iter_blocks() for s in getattr(b, "serves", [])}
     assert {"GPB.US.3.ALL.01", "GPB.US.3.ALL.02", "GPB.US.3.ALL.04"} <= served

@@ -1,0 +1,72 @@
+{
+  "id": "c0184.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Formuliere eine eigene Teilbarkeitsregel für die Zahl 9 (wann ist eine Zahl durch 9 teilbar?) und überprüfe sie an den Zahlen 234 und 451.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "BEG",
+      "DAR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.2.ZAH.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "Regel: Eine Zahl ist durch 9 teilbar, wenn ihre Quersumme durch 9 teilbar ist. 234: Quersumme 2+3+4=9, durch 9 teilbar (234:9=26) – stimmt. 451: Quersumme 4+5+1=10, nicht durch 9 teilbar – stimmt, 451:9 ergibt Rest 4.",
+    "acceptable_reasoning": "Jede sinngemäß richtige Formulierung der Quersummenregel wird akzeptiert, auch ohne den Fachbegriff 'Quersumme', solange das Prinzip (Ziffernsumme bilden und auf Teilbarkeit durch 9 prüfen) erkennbar ist.",
+    "rubric": [
+      {
+        "criterion": "correctness",
+        "levels": [
+          "Regel falsch oder fehlt",
+          "Regel richtig, aber nur teilweise überprüft",
+          "Regel richtig formuliert und an beiden Zahlen korrekt überprüft"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Manche Kinder testen die Regel nur an einem Beispiel und verallgemeinern vorschnell – beide Testzahlen sollen genutzt werden, eine passende und eine nicht passende."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Mathematik",
+  "klasse": 2,
+  "kompetenzbereich": "1: Zahlen und Maße",
+  "competences": [
+    "MAT.US.2.ZAH.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "BEG",
+    "DAR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0184",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:18+00:00",
+  "updated_at": "2026-07-05T05:34:18+00:00"
+}

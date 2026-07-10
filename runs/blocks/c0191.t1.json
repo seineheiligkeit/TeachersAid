@@ -1,0 +1,68 @@
+{
+  "id": "c0191.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Beim Schulfest wurde erhoben, welche Klassen am neuen Glücksrad-Spiel teilgenommen haben. Ergebnis: Von den 20 Kindern der 4a haben 12 mitgespielt, 8 nicht. Von den 24 Kindern der 4b haben 15 mitgespielt, 9 nicht. Trage diese Angaben in eine Kreuztabelle mit den Zeilen „4a“ und „4b“ sowie den Spalten „mitgespielt“, „nicht mitgespielt“ und „Summe“ ein (die Summenspalte und -zeile musst du selbst berechnen).",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Klasse",
+        "mitgespielt",
+        "nicht mitgespielt",
+        "Summe"
+      ],
+      "rows": 3
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "DAR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.4.DAT.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "4a: 12 | 8 | 20. 4b: 15 | 9 | 24. Summe: 27 | 17 | 44.",
+    "acceptable_reasoning": "Direktes Eintragen der gegebenen Werte in die Tabelle, Summenzeile und -spalte durch Addition.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Die Gesamtsumme (44) sollte am Ende zur Kontrolle beidseitig (Zeilen- und Spaltensumme) übereinstimmen — das eignet sich als Selbstkontrolle.",
+      "Nicht vergessen: die Summenzeile UND die Summenspalte müssen ausgefüllt werden."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Mathematik",
+  "klasse": 4,
+  "kompetenzbereich": "4: Daten und Zufall",
+  "competences": [
+    "MAT.US.4.DAT.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "DAR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0191",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:23+00:00",
+  "updated_at": "2026-07-05T05:34:23+00:00"
+}

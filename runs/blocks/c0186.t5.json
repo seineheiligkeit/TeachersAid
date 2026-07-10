@@ -1,0 +1,72 @@
+{
+  "id": "c0186.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "ordering",
+    "prompt": "Ein Chemielehrer schreibt vier sehr kleine bzw. sehr große Größen in Zehnerpotenz- bzw. Gleitkommadarstellung an die Tafel. Ordne sie der Größe nach — von der kleinsten bis zur größten Zahl.",
+    "payload": {
+      "kind": "ordering",
+      "items": [
+        "3 · 10^4",
+        "2,5 · 10^(−2)",
+        "1 · 10^6",
+        "7 · 10^(−5)"
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 3
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "DAR",
+      "BEG"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.3.ZAH.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Von klein nach groß: 7 · 10^(−5)  <  2,5 · 10^(−2)  <  3 · 10^4  <  1 · 10^6. (In Dezimalschreibweise: 0,00007 < 0,025 < 30 000 < 1 000 000.)",
+    "acceptable_reasoning": "Bei Zehnerpotenzen entscheidet zunächst der Exponent: je größer der Exponent, desto größer die Zahl (auch wenn der Exponent negativ ist, gilt: je näher an +∞, desto größer). Erst bei gleichem Exponenten vergleicht man die Vorzahl.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Negative Exponenten werden oft fälschlich als 'negative Zahl' gelesen — 10^(−5) ist eine kleine POSITIVE Zahl, kein negativer Wert.",
+      "Die Vorzahl (z. B. die 7 bei 7·10^(−5)) wird manchmal stärker gewichtet als der Exponent — der Exponent entscheidet zuerst über die Größenordnung."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "ordering",
+  "subject": "Mathematik",
+  "klasse": 3,
+  "kompetenzbereich": "1: Zahlen und Maße",
+  "competences": [
+    "MAT.US.3.ZAH.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "DAR",
+    "BEG"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0186",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:19+00:00",
+  "updated_at": "2026-07-05T05:34:19+00:00"
+}

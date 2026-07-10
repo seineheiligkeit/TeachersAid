@@ -8,6 +8,8 @@ well-defined surface (the open hard problem), NOT a structural rewrite:
 * difficulty: every task has a positive time estimate and a cognitive level;
 * media policy: each asset satisfies the library-entry gate (content-bearing →
   code-gen/vetted-sourced; decorative → content-free). See `media_policy.py`.
+* readability (advisory, roadmap A6): the Wiener Sachtextformel per prose block,
+  flagged when far above the worksheet's target Schulstufe. See `readability.py`.
 An LLM fact-check of VerificationItems is optional and skipped without a key.
 """
 
@@ -60,12 +62,40 @@ def verify(
     problems += fl_problems
     warnings += fl_warnings
 
+    # numeric claims: task prose next to a SOURCED figure must derive from the
+    # cited dataset slice (the last authored-number hole; also the anti-rot check)
+    from .number_lint import lint_content as _lint_numbers
+    nl_problems, nl_warnings = _lint_numbers(content)
+    problems += nl_problems
+    warnings += nl_warnings
+
     # expression provenance (History/GPB): a history fact block records its facts-source,
     # and an embedded source's obligation is coherent (the prose analogue of the (c)-label)
     from .prose_lint import lint_content as _lint_prose
     pl_problems, pl_warnings = _lint_prose(content)
     problems += pl_problems
     warnings += pl_warnings
+
+    # readability (advisory, roadmap A6): a prose/task block far above the worksheet's
+    # target Schulstufe (German syllable counting is heuristic — never a gate, see
+    # readability.py's module docstring for the honesty-required rationale)
+    from .readability import (
+        SCHULSTUFE_OVERSHOOT_WARN, advisory_exempt, estimate_block,
+        klasse_to_schulstufe,
+    )
+    target_stufe = klasse_to_schulstufe(content.meta.klasse)
+    for b in content.iter_blocks():
+        if advisory_exempt(b):  # verbatim sources are deliberately hard — not ours to simplify
+            continue
+        est = estimate_block(b)
+        if est is not None and est - target_stufe > SCHULSTUFE_OVERSHOOT_WARN:
+            est_de = f"{est:.1f}".replace(".", ",")
+            warnings.append(
+                f"{b.id}: Lesbarkeit (Wiener Sachtextformel) geschätzt auf Schulstufe "
+                f"{est_de} — deutlich über der Zielstufe {target_stufe} (Klasse "
+                f"{content.meta.klasse}) — Text ggf. vereinfachen (kürzere Sätze, "
+                f"weniger Mehrsilbler)."
+            )
 
     # coverage: serves must reference resolved competences
     valid_ids = {c.id for c in resolution.competences}

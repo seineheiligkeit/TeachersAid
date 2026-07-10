@@ -1,0 +1,109 @@
+{
+  "id": "c0185.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "a3"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Berechne den Flächeninhalt von Beet 1 (Rechteck, Seiten 6 m und 4 m aus Aufgabe 4) und von Beet 2 (Dreieck, Grundseite EF = 5 m, Höhe 4 m, siehe Abbildung). Welches Beet bietet mehr Fläche für Pflanzen, und um wie viele Quadratmeter?",
+    "payload": {
+      "kind": "data_interpretation",
+      "asset_ref": "a3"
+    },
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "OPE",
+      "DAR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.2.FIG.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Beet 1 (Rechteck): 6 m · 4 m = 24 m². Beet 2 (Dreieck): (5 m · 4 m) : 2 = 10 m². Beet 1 bietet mehr Fläche, um 24 m² − 10 m² = 14 m².",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Bei der Dreiecksfläche wird die Division durch 2 häufig vergessen (Ergebnis dann fälschlich 20 m² statt 10 m²).",
+      "Die Höhe des Dreiecks (4 m, senkrecht zur Grundseite) darf nicht mit einer der schrägen Seiten verwechselt werden."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Mathematik",
+  "klasse": 2,
+  "kompetenzbereich": "3: Figuren und Körper",
+  "competences": [
+    "MAT.US.2.FIG.03"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "OPE",
+    "DAR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "a3",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:polygon",
+      "spec": {
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            2.5,
+            4
+          ]
+        ],
+        "vertex_labels": [
+          "E",
+          "F",
+          "G"
+        ],
+        "side_labels": [
+          "5 m"
+        ],
+        "title": "Beet 2 (Dreieck)"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": true,
+      "caption": "Beet 2, dreieckig, Grundseite EF = 5 m, Höhe 4 m"
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0185",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:19+00:00",
+  "updated_at": "2026-07-05T05:34:19+00:00"
+}

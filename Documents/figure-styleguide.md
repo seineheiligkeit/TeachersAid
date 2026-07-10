@@ -129,6 +129,61 @@ it. `tangent_slope` and `definite_integral` are the tested computational core.
 **Value masking (the task/solution split):** `show_value=False` → "A = ?" / "k = ?", so the
 *same scene* is the student's task figure and the teacher's worked solution.
 
+## The data-figure system (intent → representation)
+
+The data-recipe half of the figure engine (the scene engine above is the structural half). Same
+two-tier split: **the generator declares WHAT the data is, never the chart type** —
+`GenDataFigure(intent, data)` in the generation views — and the **deterministic**
+`schema/chart_choose.py::choose_representation` maps intent → recipe. The LLM declares intent; code
+guarantees a legible representation.
+
+| intent | recipe |
+|---|---|
+| `trend` | `line` |
+| `relationship` | `scatter` (+ optional fit) |
+| `distribution` | `histogram` |
+| `spread` (five-number summary / compare distributions) | `boxplot` |
+| `scale` (orders of magnitude) | `number_line` |
+| `comparison` / `composition` | `bar_chart` |
+| `demographic` (age × sex) | `population_pyramid` |
+| `timeline` (dated events) | `timeline` (lane-packed labels via `figtext`) |
+| `climate` (Klimadiagramm) | `climate_diagram` (Walter-Lieth: temp line on the left °C axis + precip bars on the right mm axis, via `twinx`) |
+
+(`boxplot` + `tree_diagram` came out of the accessible-Matura figure scan, WS strand —
+`matura-math-coverage.md`.)
+
+### The recipe vocabulary (`GENERATION_RECIPES`)
+
+- **data:** `number_line · bar_chart · line · scatter · histogram · boxplot · population_pyramid ·
+  timeline · climate_diagram · choropleth_map`
+- **math / structural:** `function_graph · math_formula` (mathtext) · the **geometry family (KB3)**
+  `right_triangle · rectangle · polygon · circle · coordinate_plane` · the probability tree
+  `tree_diagram` (Baumdiagramm, spec-provided branch probabilities, via `body.assets`)
+- **scene recipes:** `triangle_construction` · the analysis family (above) · `cause_effect` ·
+  `process_flow` (the Sachverhalt-derived figures)
+
+`body.data_figures` (intent-declared) is the preferred seam for data; `body.assets` (explicit
+generator) is for structural/geometry figures. Labels are **spec-provided** so a figure never leaks
+the answer (e.g. "c = ?").
+
+### Layout self-correction + the chart lint
+
+Recipes self-correct their layout: `bar_chart` goes auto-horizontal for long/many labels, puts a value
+label on **every** bar (so none is "invisible"), and offers `log` for orders-of-magnitude ranges;
+titles wrap; `constrained_layout` throughout. `pipeline/chart_lint.py` (run in `verify`) flags
+misrepresentations: a 0/1 "classification" plotted as bars; an extreme range that begs a log/table
+decision; numeric/temporal x-values forced into bars (that data is a trend/relationship → line/scatter).
+
+### Number & axis formatting (house rules)
+
+Figures **never use scientific notation**: unit-scaled axis/value labels (`figstyle.unit_scale` →
+"(in Mio.)"), German number formatting (`figstyle.fmt_de` — dot/space thousands, comma decimals), and
+years on a **numeric** x-axis, not a categorical one. The **(c)-label discipline**: every data figure
+(`bar_chart · line · scatter · histogram · population_pyramid · choropleth_map`) is exactly one of
+`data_source` (sourced + cited; values derived from the dataset slice at assemble by
+`data_ground.ground_data`) or `illustrative=True` (schematic); `pipeline/figure_lint.py` warns
+otherwise. Pure-math figures are exempt.
+
 ## Guarantees the engine keeps
 
 - **Correct by construction.** Every number/geometry is computed (sympy for analysis, closed-form
@@ -141,6 +196,7 @@ it. `tangent_slope` and `definite_integral` are the tested computational core.
 
 ## What's next
 
+<<<<<<< HEAD
 - **Port the ~25 legacy recipes** — ✅ **DONE (9 Jul 2026).** Every recipe in
   `pipeline/assets.py` consumes the roles/ramps/type scale; `build_asset` scopes `house_rc()`
   over every build, so multi-series lines pick up the categorical ramp via `axes.prop_cycle`.
@@ -165,3 +221,13 @@ it. `tangent_slope` and `definite_integral` are the tested computational core.
 - **A first-class density/stage selector** — ✅ **DONE (10 Jul 2026):** every layer takes a `group` tag;
   `Scene.select(*groups)` keeps untagged layers + the named groups (order preserved, shared Canvas);
   `constructions.py`'s stage 1–6 selects from one full grouped scene with identical per-stage output.
+- **3D analytic geometry** — ✅ **BUILT (Wave A7 + prototype, `scene3d-geometry-design.md`):** the scene
+  model extends to ℝ³ by projecting a 3D situation (sympy-computed planes/normals/Schnittgerade,
+  Kegelschnitte) through a fixed **Schrägriss** map into these same 2D primitives — `render_scene` +
+  `figstyle` reused wholesale, hidden-line occlusion per GZ convention (front arcs solid, occluded
+  DASHED). Recipes: `matplotlib:axonometric_solid` + `matplotlib:riss_pair` (`pipeline/scene3d.py`).
+
+*Reconciliation note (10 Jul 2026):* the port was independently implemented on both development
+machines; the unified version keeps the workhorse line's SME-reviewed recipe bodies + representation
+rules (`fmt_de`/`unit_scale`, `secondary`/`no_data` roles) and this line's font fix — strikes are
+STRIPPED at registration (root cause) with the `_renders_small` probe kept as the measured safety net.

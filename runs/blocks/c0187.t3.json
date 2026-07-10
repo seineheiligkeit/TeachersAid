@@ -1,0 +1,117 @@
+{
+  "id": "c0187.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb_leerung"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Tank B wird entleert. Der Term für den Wasserstand lautet W(t) = 450 − 40 · t (in Litern nach t Minuten). Löse die Gleichung 450 − 40 · t = 130 durch Äquivalenzumformung und dokumentiere jeden Schritt einzeln. Was bedeutet das Ergebnis im Sachzusammenhang?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "OPE",
+      "MOD"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.3.VAR.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "450 − 40t = 130  |  −450 auf beiden Seiten:  −40t = −320  |  : (−40) auf beiden Seiten:  t = 8. Bedeutung: Nach 8 Minuten sind noch 130 Liter im Tank.",
+    "acceptable_reasoning": "Jede Äquivalenzumformung muss auf beiden Seiten der Gleichung gleichzeitig ausgeführt werden; die Reihenfolge (zuerst subtrahieren, dann dividieren) kann variieren, solange jeder Schritt korrekt und nachvollziehbar ist.",
+    "rubric": [
+      {
+        "criterion": "Jeder Umformungsschritt einzeln dokumentiert",
+        "levels": [
+          "Nur Endergebnis",
+          "Teilweise dokumentiert",
+          "Vollständig Schritt für Schritt"
+        ]
+      },
+      {
+        "criterion": "Lösung korrekt (t = 8)",
+        "levels": [
+          "Falsch",
+          "Rechenfehler, Methode richtig",
+          "Korrekt"
+        ]
+      },
+      {
+        "criterion": "Sachzusammenhang gedeutet",
+        "levels": [
+          "Keine Deutung",
+          "Deutung unvollständig",
+          "Vollständig und korrekt gedeutet"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Division durch eine negative Zahl wird manchmal ohne Vorzeichenwechsel im Ergebnis durchgeführt — −320 : (−40) muss positiv sein (= 8), nicht negativ.",
+      "Manche Schüler:innen führen die Umformung nur auf einer Seite der Gleichung durch, wodurch die Gleichung nicht mehr äquivalent ist."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Mathematik",
+  "klasse": 3,
+  "kompetenzbereich": "2: Variablen und Funktionen",
+  "competences": [
+    "MAT.US.3.VAR.03"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "OPE",
+    "MOD"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb_leerung",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:function_graph",
+      "spec": {
+        "xmin": 0,
+        "xmax": 10,
+        "ymin": 0,
+        "ymax": 500,
+        "m": -40,
+        "b": 450,
+        "xlabel": "Zeit t (in Minuten)",
+        "ylabel": "Wasser im Tank (in Liter)",
+        "title": "Entleerung von Tank B"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0187",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:20+00:00",
+  "updated_at": "2026-07-05T05:34:20+00:00"
+}

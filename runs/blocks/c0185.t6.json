@@ -1,0 +1,73 @@
+{
+  "id": "c0185.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Der Schulgarten hat insgesamt nur 32 m² Erde zur Verfügung. Ihr wollt Beet 1 UND Beet 2 wie oben berechnet anlegen, UND zusätzlich einen 1 Meter breiten Gehweg rund um beide Beete freihalten, der keine Erde braucht, aber ebenfalls Platz auf den 32 m² beansprucht. Reicht die Fläche? Begründe mit einer überschlägigen Rechnung, welche zusätzliche Information du für eine genaue Antwort noch bräuchtest.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "MOD",
+      "BEG"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.2.FIG.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Beet 1 + Beet 2 zusammen benötigen 24 m² + 10 m² = 34 m² allein für die Erde – das ist bereits mehr als die verfügbaren 32 m², ohne den Gehweg überhaupt einzurechnen. Die Fläche reicht also nicht. Für eine genaue Antwort zum Gehweg bräuchte man zusätzlich die genaue Anordnung der beiden Beete zueinander (Abstand, Lage), da ein umlaufender 1-Meter-Gehweg je nach Anordnung unterschiedlich viel Fläche beansprucht.",
+    "acceptable_reasoning": "Akzeptiert wird jede Antwort, die korrekt erkennt, dass 24 m² + 10 m² = 34 m² bereits die 32 m² übersteigt (also 'reicht nicht'), und die sinnvoll benennt, dass für den Gehweg zusätzliche Information zur Anordnung/zum Abstand der Beete nötig wäre.",
+    "rubric": [
+      {
+        "criterion": "reasoning",
+        "levels": [
+          "Erkennt nicht, dass 34 m² > 32 m²",
+          "Erkennt die Flächenüberschreitung, nennt aber keine fehlende Information zum Gehweg",
+          "Erkennt die Flächenüberschreitung UND benennt korrekt die fehlende Information zur Beetanordnung"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Die Aufgabe ist bewusst nicht vollständig lösbar (der Gehweg lässt sich ohne Anordnungsangabe nicht exakt berechnen) – das Ziel ist, dass Schüler:innen erkennen und benennen, WAS fehlt, statt eine erfundene Zahl zu liefern.",
+      "Manche rechnen nur mit einem der beiden Beete und übersehen, dass schon die Summe allein zu groß ist."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Mathematik",
+  "klasse": 2,
+  "kompetenzbereich": "3: Figuren und Körper",
+  "competences": [
+    "MAT.US.2.FIG.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "MOD",
+    "BEG"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0185",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:19+00:00",
+  "updated_at": "2026-07-05T05:34:19+00:00"
+}

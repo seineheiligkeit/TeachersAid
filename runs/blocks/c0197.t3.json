@@ -1,0 +1,157 @@
+{
+  "id": "c0197.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb2",
+      "abb3"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Neben dem Rundbecken gibt es noch das rechteckige Nichtschwimmerbecken ABCD mit den Seiten 6 m und 4 m (siehe Abbildung 3). Trage für jedes Becken Umfang und Flächeninhalt in die Tabelle ein. Berechne dann für jedes Becken, wie viele Quadratmeter Wasserfläche auf einen Meter Beckenrand kommen (Fläche geteilt durch Umfang), und beurteile, welche Beckenform pro Meter Randmaterial die größere Wasserfläche bietet.",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Becken",
+        "Umfang",
+        "Flächeninhalt",
+        "m² pro m Rand"
+      ],
+      "rows": 2
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "DAR",
+      "OPE"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.4.FIG.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "Rechteck ABCD: Umfang = 2·(6+4) = 20 m, Fläche = 6·4 = 24 m², also 24 ÷ 20 = 1,2 m² pro Meter Rand. Rundbecken (aus Aufgabe 2): Umfang ≈ 31,42 m, Fläche ≈ 78,54 m², also 78,54 ÷ 31,42 ≈ 2,5 m² pro Meter Rand. Die runde Beckenform bietet pro Meter Randmaterial mehr als doppelt so viel Wasserfläche wie das Rechteck — runde Formen schließen bei gleicher Randlänge mehr Fläche ein als eckige.",
+    "acceptable_reasoning": "Beide Kennzahlen für beide Formen berechnen und dann die Fläche durch den Umfang teilen (m² Wasserfläche je m Rand); der Vergleich dieser Effizienzzahl (nicht der bloßen Flächen) beantwortet die Frage.",
+    "rubric": [
+      {
+        "criterion": "Umfang und Fläche für beide Becken korrekt",
+        "levels": [
+          "Mehrere Werte falsch",
+          "Ein Wert falsch",
+          "Alle vier Werte korrekt"
+        ]
+      },
+      {
+        "criterion": "Fläche pro Meter Rand korrekt berechnet und verglichen",
+        "levels": [
+          "Fehlt",
+          "Nur für ein Becken oder Rechenfehler",
+          "Für beide Becken korrekt, Kreis als effizienter erkannt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Nicht die absoluten Flächen vergleichen — gefragt ist die Fläche PRO Meter Rand (Fläche geteilt durch Umfang).",
+      "Beim Rechteck wird die Flächenformel manchmal mit dem Umfang verwechselt (Addition statt Multiplikation)."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Mathematik",
+  "klasse": 4,
+  "kompetenzbereich": "3: Figuren und Körper",
+  "competences": [
+    "MAT.US.4.FIG.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "DAR",
+    "OPE"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:circle",
+      "spec": {
+        "radius": 5,
+        "label_r": "r = 5 m",
+        "title": "Rundbecken von oben"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    },
+    {
+      "id": "abb3",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:polygon",
+      "spec": {
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            6,
+            0
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "vertex_labels": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "side_labels": [
+          "6 m",
+          "",
+          "6 m",
+          ""
+        ],
+        "title": "Nichtschwimmerbecken (Rechteck)"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0197",
+  "source": "ai",
+  "created_at": "2026-07-05T05:51:17+00:00",
+  "updated_at": "2026-07-05T05:51:17+00:00"
+}

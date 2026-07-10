@@ -1,0 +1,72 @@
+{
+  "id": "c0185.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Entwirf ein eigenes drittes Beet in Form eines Vierecks deiner Wahl (Rechteck, Quadrat oder ein anderes besonderes Viereck), das eine Fläche von genau 12 m² hat. Zeichne eine Skizze mit allen benötigten Maßen und zeige rechnerisch, dass deine Fläche stimmt.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 70.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "OPE",
+      "MOD"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.2.FIG.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Individuelle Lösung. Beispiel: Rechteck mit 4 m · 3 m = 12 m². Die Skizze muss ein Viereck mit vollständig beschrifteten Maßen zeigen, und die zugehörige Flächenformel muss korrekt auf 12 m² führen.",
+    "acceptable_reasoning": "Jedes Viereck (auch Parallelogramm oder Raute, sofern die passende Flächenformel korrekt angewendet wird) wird akzeptiert, solange die Rechnung nachvollziehbar exakt 12 m² ergibt.",
+    "rubric": [
+      {
+        "criterion": "correctness",
+        "levels": [
+          "Fläche stimmt nicht mit 12 m² überein oder Maße fehlen",
+          "Fläche stimmt, aber Skizze oder Rechnung unvollständig",
+          "Fläche korrekt 12 m², Skizze vollständig beschriftet, Rechnung nachvollziehbar"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Bei nicht-rechteckigen Vierecken (z. B. Parallelogramm) wird manchmal die Seitenlänge statt der Höhe in die Flächenformel eingesetzt."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Mathematik",
+  "klasse": 2,
+  "kompetenzbereich": "3: Figuren und Körper",
+  "competences": [
+    "MAT.US.2.FIG.03"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "OPE",
+    "MOD"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0185",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:19+00:00",
+  "updated_at": "2026-07-05T05:34:19+00:00"
+}

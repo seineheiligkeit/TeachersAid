@@ -1,0 +1,80 @@
+{
+  "id": "c0182.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Entscheide, ob die folgenden Aussagen wahr oder falsch sind, und begründe jeweils kurz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Die Gleichung 3w + 2 = 2 hat die Lösung w = 0.",
+        "Wenn man beide Seiten einer Gleichung mit derselben Zahl multipliziert, bleibt die Gleichung gültig, egal welche Zahl man wählt.",
+        "Der Term 3w + 2 kann nie den Wert 2 annehmen, wenn w eine positive Zahl ist."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "BEG",
+      "OPE"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.1.VAR.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1) Wahr: 3·0+2 = 2 ✓. 2) Falsch: Multipliziert man mit 0, ergibt sich 0 = 0, was keine sinnvolle Äquivalenzumformung mehr ist (die Information über w geht verloren). 3) Wahr: Bei w größer als 0 ist 3w immer größer als 0, also ist 3w+2 immer größer als 2.",
+    "acceptable_reasoning": "Für 1: w=0 einsetzen und prüfen. Für 2: Gegenbeispiel mit Multiplikation durch 0 finden. Für 3: Argumentieren, dass 3w für positive w stets positiv ist.",
+    "rubric": [
+      {
+        "criterion": "Begründungsqualität",
+        "levels": [
+          "Kein Argument",
+          "Ergebnis ohne Begründung",
+          "Nachvollziehbare Begründung je Aussage"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Aussage 2 ist eine häufige Fehlvorstellung — die Sonderrolle der Multiplikation mit 0 explizit besprechen.",
+      "Bei Aussage 3 ist wichtig, dass w als positive Zahl vorausgesetzt wird — bei w = 0 wäre die Aussage anders zu diskutieren."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Mathematik",
+  "klasse": 1,
+  "kompetenzbereich": "2: Variablen und Funktionen",
+  "competences": [
+    "MAT.US.1.VAR.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "BEG",
+    "OPE"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0182",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:17+00:00",
+  "updated_at": "2026-07-05T05:34:17+00:00"
+}

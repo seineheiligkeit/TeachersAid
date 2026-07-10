@@ -1,0 +1,113 @@
+{
+  "id": "c0179.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "fig1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Die Grafik zeigt den CO2-Ausstoß pro Kopf und Jahr für acht Länder (Datenquelle: World Bank).\n\n(a) Nenne das Land mit dem höchsten und das Land mit dem niedrigsten Pro-Kopf-Ausstoß. Berechne, um das Wievielfache der höhere Wert über dem niedrigeren liegt.\n(b) Vergleiche Österreich mit Indien: Beschreibe den Unterschied in eigenen Worten.\n(c) Nenne zwei mögliche Gründe, warum Länder wie die USA oder China einen deutlich höheren Pro-Kopf-Ausstoß haben als Nigeria oder Indien.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.ERK.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "(a) Höchster Wert: USA mit 13,6 t CO2/Kopf. Niedrigster Wert: Nigeria mit 0,6 t CO2/Kopf. Das Wievielfache: 13,6 : 0,6 ≈ 22,7-fach (also rund 23-mal so hoch). (b) Österreich liegt bei 6,3 t CO2/Kopf, Indien bei 2,2 t CO2/Kopf — Österreich stößt somit knapp dreimal so viel CO2 pro Kopf aus wie Indien, obwohl Indien insgesamt viel mehr Einwohner:innen hat. (c) Mögliche Gründe: höherer Energieverbrauch durch Industrie, Verkehr und Heizung/Kühlung in wohlhabenderen, stärker industrialisierten Ländern; stärkere Nutzung fossiler Energieträger (Kohle, Öl, Gas) statt erneuerbarer Energien; höherer allgemeiner Lebensstandard und Konsum (mehr Autos, Flugreisen, Produkte). Jede sachlich plausible, auf Industrialisierung/Energieverbrauch/Wohlstand bezogene Begründung wird anerkannt.",
+    "acceptable_reasoning": "Bei (a) sind Rundungen akzeptabel (ca. 22- bis 23-fach). Bei (c) reichen zwei plausible, nicht notwendigerweise die 'Musterbeispiele' genannten Gründe.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen verwechseln oft 'Pro-Kopf-Ausstoß' mit dem GESAMT-Ausstoß eines Landes — China hat trotz niedrigerem Pro-Kopf-Wert als die USA wegen seiner riesigen Bevölkerung den weltweit höchsten Gesamtausstoß. Das ist hier nicht falsch, sollte aber im Gespräch klargestellt werden (die Grafik zeigt NUR den Pro-Kopf-Wert).",
+      "Bei der Division in (a) auf die richtige Rundung/Einheit achten — 't CO2 pro Kopf' ist keine 'Menge insgesamt', sondern ein Durchschnittswert je Einwohner:in."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 4,
+  "kompetenzbereich": "Erkenntnisse gewinnen (E)",
+  "competences": [
+    "BIO.US.x.ERK.04"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "fig1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Österreich",
+          "Deutschland",
+          "Schweiz",
+          "Italien",
+          "USA",
+          "China",
+          "Indien",
+          "Nigeria"
+        ],
+        "values": [
+          6.3,
+          6.9,
+          3.7,
+          5.1,
+          13.6,
+          9.3,
+          2.2,
+          0.6
+        ],
+        "title": "CO2-Ausstoß pro Kopf im Ländervergleich",
+        "xlabel": "Land",
+        "ylabel": "t CO2 pro Kopf und Jahr",
+        "log": false
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "worldbank_co2_pro_kopf",
+        "series": "vergleich",
+        "note": null,
+        "title": "CO₂-Ausstoß pro Kopf im Ländervergleich",
+        "url": "https://data.worldbank.org/indicator/EN.GHG.CO2.PC.CE.AR5",
+        "attribution": "Datenquelle: World Bank – data.worldbank.org (EN.GHG.CO2.PC.CE.AR5, CC BY 4.0)",
+        "stand": "2024"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0179",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:15+00:00",
+  "updated_at": "2026-07-05T05:34:15+00:00"
+}

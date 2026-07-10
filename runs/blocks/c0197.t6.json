@@ -1,0 +1,84 @@
+{
+  "id": "c0197.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Die Freibadleitung hat ein knappes Budget und muss sich zwischen zwei Varianten für ein neues Kinderbecken entscheiden: Variante A ist ein Rundbecken mit Radius 3 m, Variante B ein quadratisches Becken mit Seitenlänge 5 m. Beide Varianten sollen möglichst viel Wasserfläche für Kinder bieten, aber das Budget reicht nur für höchstens 20 m Bordürenmaterial (Beckenrand). Triff eine begründete Entscheidung: Welche Variante würdest du empfehlen, und warum?",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Rundbecken (r = 3 m) oder quadratisches Becken (Seite 5 m) — welche Variante passt bei max. 20 m Bordüre besser?"
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "BEG",
+      "MOD"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.4.FIG.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "Rundbecken: Umfang = 2·π·3 ≈ 18,85 m (passt ins Budget), Fläche = π·3² ≈ 28,27 m². Quadrat: Umfang = 4·5 = 20 m (passt genau), Fläche = 5² = 25 m². Beide halten das Budget ein, aber das Rundbecken bietet bei sogar etwas weniger Randmaterial mehr Wasserfläche (28,27 m² statt 25 m²) — Empfehlung: Rundbecken, mit Begründung über den Flächenvergleich UND die Budgeteinhaltung.",
+    "acceptable_reasoning": "Berechnung von Umfang und Fläche für beide Varianten, Prüfung der Budgetgrenze (20 m), abschließende Empfehlung, die beide Kriterien (Kosten und Nutzen) gegeneinander abwägt.",
+    "rubric": [
+      {
+        "criterion": "Beide Varianten korrekt berechnet (Umfang + Fläche)",
+        "levels": [
+          "Mehrere Fehler",
+          "Eine Variante korrekt",
+          "Beide Varianten korrekt"
+        ]
+      },
+      {
+        "criterion": "Begründete Entscheidung unter Budgetgrenze",
+        "levels": [
+          "Keine oder unbegründete Entscheidung",
+          "Entscheidung genannt, Budget nicht geprüft",
+          "Entscheidung stützt sich klar auf Budget UND Flächenvergleich"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Eine Entscheidung ohne konkrete Rechnung („Rund ist einfach schöner“) wird nicht als vollständige Begründung akzeptiert.",
+      "Wird das Budget bei einer Variante überschritten, ist diese Variante automatisch auszuschließen, unabhängig von der Fläche — das muss explizit geprüft werden."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Mathematik",
+  "klasse": 4,
+  "kompetenzbereich": "3: Figuren und Körper",
+  "competences": [
+    "MAT.US.4.FIG.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "BEG",
+    "MOD"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0197",
+  "source": "ai",
+  "created_at": "2026-07-05T05:51:17+00:00",
+  "updated_at": "2026-07-05T05:51:17+00:00"
+}

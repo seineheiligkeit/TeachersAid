@@ -180,13 +180,16 @@ def build_worksheet(
     impuls_txt = impuls or _DEFAULT_IMPULS.get(ts.id,
                  f"Verfasse {ts.artikel} {ts.name} zu einem im Unterricht vereinbarten Thema.")
 
-    # --- 1) learn-text: what the Textsorte is + its Aufbau (authored over curated fields) ---
+    # --- 1) learn-text: what the Textsorte is + its Aufbau (authored over curated fields).
+    # Uses the SIMPLE `schueler_definition` wording (grade-readable — the Wiener-
+    # Sachtextformel lint checks it) in short sentences; the source-faithful SRDP
+    # `definition` + the full register notes stay in the teacher layer (talking points). ---
     i1 = InfoBlock(
         id="tx.i1", kind="prose",
         content=_lead(
             f"Was ist {ts.artikel} {ts.name}?",
-            f"{ts.definition} Eine gelungene {ts.name} stützt sich vor allem auf "
-            f"{leit_namen}. {ts.sprachregister} Üblicher Umfang: {lo}–{hi} Wörter."))
+            f"{ts.schueler_definition or ts.definition} Wichtig dabei: {leit_namen}. "
+            f"Üblicher Umfang: {lo}–{hi} Wörter."))
     i2 = InfoBlock(
         id="tx.i2", kind="key_fact",
         content=_lead(f"So ist {ts.artikel} {ts.name} aufgebaut",
@@ -222,9 +225,12 @@ def build_worksheet(
     capstone_min = 30 if lo <= 350 else 40
     t3 = TaskBlock(
         id="tx.t3", kind="text_production",
-        prompt=(f"Verfasse {ts.artikel} {ts.name} zu folgendem Schreibauftrag: {impuls_txt} "
-                f"Arbeitsaufträge: {auftrag_txt} Achte auf den Aufbau ({bauteile_txt}) und "
-                f"auf die Sprache ({reg_kurz}). Umfang: {lo}–{hi} Wörter."),
+        # Deliberately Matura-FORMAT wording (operator heads, SRDP task language) — this
+        # register IS the genre being taught, so the readability lint's advisory on this
+        # one block is expected (the learn-text i1 must be grade-readable; this may not be).
+        prompt=(f"Verfasse {ts.artikel} {ts.name}. Schreibauftrag: {impuls_txt} "
+                f"Arbeitsaufträge: {auftrag_txt} Halte den Aufbau ein: {bauteile_txt}. "
+                f"Achte auf die Sprache: {reg_kurz}. Umfang: {lo}–{hi} Wörter."),
         response=BoxResponse(min_height_mm=120),
         cognitive_level="create", dimensions=["SCH"], serves=serves_cap, est_minutes=capstone_min,
         acceptable_reasoning=(

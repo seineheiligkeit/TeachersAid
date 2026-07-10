@@ -1,0 +1,571 @@
+{
+  "id": "c0189",
+  "stage": "content",
+  "status": "pending",
+  "source": "generated",
+  "created_at": "2026-07-05T05:34:22+00:00",
+  "updated_at": "2026-07-05T05:34:22+00:00",
+  "title": "Mathematik 4. Kl. — Die Diagonale des Blumenbeets — reelle Zahlen im Garten (generiert)",
+  "note": "",
+  "request": {
+    "subject": "Mathematik",
+    "klasse": 4,
+    "stufe": "Unterstufe",
+    "schulform": null,
+    "topic_raw": "Die Diagonale des Blumenbeets — reelle Zahlen im Garten",
+    "envelope": "doppelstunde",
+    "options": {}
+  },
+  "resolution": {
+    "fassung": {
+      "kurztitel": "AHS-Lehrplan (konsolidiert)",
+      "bgbl": "BGBl. II Nr. 204/2024",
+      "doknr": "NOR40264237",
+      "valid_from": "2024-09-01",
+      "valid_to": "2026-08-31"
+    },
+    "subject": "Mathematik",
+    "klasse": 4,
+    "matched_kompetenzbereiche": [
+      "1: Zahlen und Maße"
+    ],
+    "grade_check": true,
+    "competences": [
+      {
+        "id": "MAT.US.4.ZAH.01",
+        "kompetenzbereich": "1: Zahlen und Maße",
+        "klasse": 4,
+        "text": "den Unterschied zwischen rationalen und nichtrationalen Zahlen verstehen und beschreiben; Rechenoperationen mit reellen Zahlen durchführen; mit Wurzeln und Näherungswerten arbeiten.",
+        "source_ref": "MATHEMATIK / 4. Klasse / 1: Zahlen und Maße",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      }
+    ],
+    "notes": []
+  },
+  "plan": null,
+  "content": {
+    "meta": {
+      "title": "Die Diagonale des Blumenbeets — reelle Zahlen im Garten",
+      "subtitle": "LLM-Entwurf — Erstprüfung",
+      "subject": "Mathematik",
+      "stufe": "Unterstufe",
+      "klasse": 4,
+      "kernfrage": "Warum reicht dir ein Maßband manchmal nicht, um eine Länge exakt anzugeben?",
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "lehrplan_label": "Mathematik · 4. Klasse · 1: Zahlen und Maße",
+      "content_language": "de",
+      "subject_models": []
+    },
+    "subject_model": {
+      "subject": "Mathematik",
+      "stufe": "Unterstufe",
+      "dimensions": [
+        {
+          "id": "MOD",
+          "label": "Modellieren und Problemlösen",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "OPE",
+          "label": "Operieren (Rechnen und Konstruieren)",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "DAR",
+          "label": "Darstellen und Interpretieren",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "BEG",
+          "label": "Vermuten und Begründen",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "content_areas": [
+        {
+          "id": "ZAH",
+          "label": "Zahlen und Maße",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "VAR",
+          "label": "Variablen und Funktionen",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "FIG",
+          "label": "Figuren und Körper",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "DAT",
+          "label": "Daten und Zufall",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "task_kind_extensions": [
+        "calculation",
+        "construction",
+        "modelling_task"
+      ]
+    },
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Rational, irrational, reell — und wie man Wurzeln in den Griff bekommt",
+        "teacher_overview": {
+          "throughline": "Ausgehend vom sehr konkreten Problem der Beet-Diagonale entwickelt die Klasse, dass es Zahlen gibt, die sich nicht als Bruch schreiben lassen, ordnet solche Zahlen auf dem Zahlenstrahl ein, nähert eine Quadratwurzel systematisch an und übt danach den sicheren Umgang mit reellen Zahlen inklusive der Tücken beim Rechnen mit Näherungswerten.",
+          "talking_points": [
+            "Die Familie der Zahlen wächst: natürlich → ganz → rational → reell. Jede Erweiterung schließt eine Lücke.",
+            "Rational heißt „als Bruch zweier ganzer Zahlen darstellbar“ — nicht „hat eine Kommazahl“. Das ist der häufigste Denkfehler.",
+            "Dass √2 irrational ist, muss hier nicht bewiesen werden — es reicht, es plausibel zu machen (unendlicher, nicht periodischer Dezimalbruch) und ernst zu nehmen.",
+            "Rechnen mit gerundeten Werten erzeugt Fehler, die sich fortpflanzen können — das ist keine Spitzfindigkeit, sondern in der Praxis (Technik, Bau) folgenreich."
+          ],
+          "extensions": [
+            "Mit dem Taschenrechner/der Software π auf 10 Stellen anzeigen lassen und diskutieren, warum man im Alltag trotzdem meist mit 3,14 rechnet.",
+            "Die Diagonale eines DIN-A4-Blattes berechnen und mit dem Seitenverhältnis √2 : 1 in Verbindung bringen.",
+            "Recherchieren, wie die alten Griechen mit der Entdeckung irrationaler Zahlen umgegangen sind (kurzer geschichtlicher Exkurs)."
+          ],
+          "differentiation": null,
+          "timing_notes": null
+        },
+        "blocks": [
+          {
+            "id": "t1",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "abb2"
+            ],
+            "provenance": null,
+            "role": "task",
+            "kind": "open_response",
+            "prompt": "Ein quadratisches Blumenbeet hat die Seitenlänge 2 m (siehe Abbildung 2). Du willst die Diagonale des Beets ausmessen, um eine Schnur für ein Zierband zu kaufen. Stelle mithilfe des pythagoräischen Lehrsatzes einen Term für die Diagonale d auf. Musst du diesen Term schon lösen? Begründe, warum das Ergebnis vermutlich keine „glatte“ Zahl wie 3 m sein wird.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "understand",
+            "difficulty": null,
+            "dimensions": [
+              "MOD",
+              "DAR"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.ZAH.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "answer_key": "d² = 2² + 2² = 4 + 4 = 8, also d = √8 m. Nein, man muss den Term nicht sofort lösen, um die Fragestellung zu verstehen. Da 8 keine Quadratzahl ist (nicht 1, 4, 9, 16, …), ist √8 keine ganze Zahl — vermutlich also auch kein „glatter“ Meterwert.",
+            "acceptable_reasoning": "Anwendung des Pythagoräischen Lehrsatzes auf das rechtwinklige Dreieck, das die Diagonale mit zwei Seiten bildet; Erkennen, dass 8 keine Quadratzahl ist.",
+            "rubric": [
+              {
+                "criterion": "Term korrekt aufgestellt",
+                "levels": [
+                  "Fehlender oder falscher Term",
+                  "Term mit kleinem Fehler",
+                  "d² = 2²+2² = 8 korrekt aufgestellt"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Manche verwechseln Umfang und Diagonale — klarstellen, dass die Diagonale das Beet schräg durchquert.",
+              "Der Lehrsatz gilt nur, weil das Beet quadratisch ist (rechte Winkel!) — das ist keine Selbstverständlichkeit bei jedem Viereck."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t2",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "true_false_justify",
+            "prompt": "√8 lässt sich nicht als Bruch zweier ganzer Zahlen schreiben — √8 ist also eine irrationale Zahl. Beurteile die folgenden Aussagen über die Zahlenmenge, in der √8 „lebt“, und begründe jeweils kurz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "√8 ist eine reelle Zahl.",
+                "Jede reelle Zahl ist auch eine rationale Zahl.",
+                "Der Zahlenstrahl der rationalen Zahlen allein hat noch „Lücken“, die erst durch Zahlen wie √8 gefüllt werden."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "understand",
+            "difficulty": null,
+            "dimensions": [
+              "BEG",
+              "DAR"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.ZAH.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "answer_key": "1) Wahr: reelle Zahlen umfassen sowohl rationale als auch irrationale Zahlen, √8 gehört dazu. 2) Falsch: es gibt reelle Zahlen (wie √8), die nicht rational sind — die Umkehrung stimmt nicht. 3) Wahr: genau das ist die Bedeutung der Erweiterung zu den reellen Zahlen — die Zahlengerade wird lückenlos.",
+            "acceptable_reasoning": "Kenntnis der Mengenbeziehung rational ⊂ reell und der Vorstellung von der lückenlosen Zahlengeraden.",
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Häufige Fehlvorstellung: „reell“ und „rational“ werden als Synonyme verwendet — das Wortbild verleitet dazu.",
+              "Aussage 2 provoziert absichtlich diesen Fehler; hier genau nachfragen, ob ein Gegenbeispiel genannt werden kann."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t3",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "abb1"
+            ],
+            "provenance": null,
+            "role": "task",
+            "kind": "calculation",
+            "prompt": "Nähere √8 durch systematisches Probieren an, ohne die Wurzel-Taste zu benutzen. Gehe so vor: Finde zuerst zwei aufeinanderfolgende ganze Zahlen, zwischen denen √8 liegen muss (Quadratzahlen vergleichen). Verfeinere dann mit einer Nachkommastelle, dann mit zwei Nachkommastellen. Trage dein Ergebnis mit einer Nachkommastelle zusätzlich auf dem Zahlenstrahl in Abbildung 1 ein (male den Punkt selbst ein).",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "apply",
+            "difficulty": null,
+            "dimensions": [
+              "OPE",
+              "DAR"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.ZAH.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "answer_key": "2² = 4 und 3² = 9, also liegt √8 zwischen 2 und 3. 2,8² = 7,84 und 2,9² = 8,41 → zwischen 2,8 und 2,9. 2,82² = 7,9524 und 2,83² = 8,0089 → zwischen 2,82 und 2,83, also √8 ≈ 2,83 (auf zwei Nachkommastellen).",
+            "acceptable_reasoning": "Systematisches Eingrenzen durch Quadrieren von Testwerten (Intervallschachtelung) — je näher das Quadrat an 8 liegt, desto besser die Näherung.",
+            "rubric": [
+              {
+                "criterion": "Eingrenzung nachvollziehbar dokumentiert",
+                "levels": [
+                  "Nur Endergebnis ohne Weg",
+                  "Ein Verfeinerungsschritt gezeigt",
+                  "Beide Verfeinerungsschritte vollständig und korrekt"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Nicht raten lassen, sondern das Testen und Verfeinern wirklich schriftlich dokumentieren — das ist der eigentliche Lerninhalt.",
+              "Der Punkt auf dem Zahlenstrahl muss zwischen 2,8 und 2,9 liegen, nicht bei 2,5 oder 3."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t4",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "calculation",
+            "prompt": "Berechne jetzt mit Technologieeinsatz (Taschenrechner erlaubt) die tatsächliche Länge der Diagonale d = √8 m auf zwei Nachkommastellen genau, und vergleiche mit deiner Näherung aus Aufgabe 3. Wie viel Schnur (in cm, aufgerundet) solltest du für das Zierband kaufen, wenn du 10 cm Reserve zum Verknoten einplanst?",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "apply",
+            "difficulty": null,
+            "dimensions": [
+              "OPE",
+              "MOD"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.ZAH.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "answer_key": "√8 ≈ 2,83 m. Mit Reserve: 2,83 m + 0,10 m = 2,93 m = 293 cm. Wegen der Reserve und möglicher Messungenauigkeit sollte man aufrunden, z. B. auf 295 cm oder 300 cm Schnur kaufen.",
+            "acceptable_reasoning": "Direktes Nachrechnen mit Technologie, Addition der Reserve, sinnvolles Aufrunden beim Materialeinkauf.",
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Aufrunden ist hier bewusst sinnvoll (man kauft lieber etwas zu viel Schnur als zu wenig) — das steht im Gegensatz zum reinen Abrunden bei Dezimalstellen.",
+              "Einheit m/cm sauber umrechnen — ein klassischer Stolperstein."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t5",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "modelling_task",
+            "prompt": "Zwei Freund:innen streiten: Anna behauptet, √9 + √16 sei dasselbe wie √(9+16). Ben widerspricht. Prüfe die Behauptung rechnerisch nach und entscheide, wer recht hat. Nutze dein Ergebnis, um zu erklären, warum man beim Rechnen mit Wurzeln (und allgemein mit Näherungswerten) besonders vorsichtig sein muss.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 45.0
+            },
+            "cognitive_level": "analyze",
+            "difficulty": null,
+            "dimensions": [
+              "BEG",
+              "OPE"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.ZAH.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "√9 + √16 = 3 + 4 = 7. √(9+16) = √25 = 5. Da 7 ≠ 5, hat Ben recht: die Wurzel einer Summe ist im Allgemeinen NICHT die Summe der Wurzeln. Das zeigt, dass man mit Wurzeln nicht wie mit normalen Zahlen „auseinanderziehen“ darf — Rechenregeln müssen jeweils geprüft, nicht vermutet werden. Ebenso ist Vorsicht geboten, wenn man mit gerundeten statt exakten Wurzelwerten weiterrechnet, weil sich solche Fehler bei mehreren Rechenschritten aufsummieren können.",
+            "acceptable_reasoning": "Konkretes Gegenbeispiel widerlegt die allgemeine Behauptung; Übertragung der Einsicht auf den allgemeinen Umgang mit Näherungswerten.",
+            "rubric": [
+              {
+                "criterion": "Rechnerischer Gegenbeweis",
+                "levels": [
+                  "Kein oder falscher Vergleich",
+                  "Ein Wert richtig berechnet",
+                  "Beide Werte korrekt, Widerspruch klar benannt"
+                ]
+              },
+              {
+                "criterion": "Übertragung auf Näherungswerte",
+                "levels": [
+                  "Fehlt",
+                  "Ansatzweise erkannt",
+                  "Klar und nachvollziehbar erklärt"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Die Fehlvorstellung „Wurzel ist wie Multiplizieren/Verteilen“ ist bei dieser Klassenstufe sehr verbreitet — dieses Gegenbeispiel ist deshalb bewusst gewählt.",
+              "Der zweite Teil der Antwort (Übertragung auf Näherungswerte allgemein) wird oft vergessen — explizit einfordern."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t6",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "create_produce",
+            "prompt": "Erfinde eine eigene kurze Sachsituation aus deinem Alltag (Garten, Zimmer, Sportplatz, Bastelprojekt …), bei der man wie beim Blumenbeet eine Streckenlänge berechnen muss, deren Ergebnis eine irrationale Zahl ist. Beschreibe die Situation, stelle den passenden Term auf und runde das Ergebnis sinnvoll für die Praxis.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55.0
+            },
+            "cognitive_level": "create",
+            "difficulty": null,
+            "dimensions": [
+              "MOD",
+              "BEG"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.ZAH.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "answer_key": "Individuelle Lösungen. Muss enthalten: eine plausible Alltagssituation mit zwei rechtwinklig zueinander stehenden, ganzzahligen (oder einfachen) Streckenlängen, einen korrekt aufgestellten Term (meist über Pythagoras), ein Ergebnis, dessen Radikand keine Quadratzahl ist, und eine für die Praxis sinnvolle Rundung mit Begründung (z. B. „aufrunden, weil man lieber etwas mehr Material einplant“).",
+            "acceptable_reasoning": "Übertragung des Musters (rechtwinklige Anordnung → Pythagoras → oft irrationales Ergebnis → praxisgerechtes Runden) auf eine neue, selbst gewählte Situation.",
+            "rubric": [
+              {
+                "criterion": "Situation + Term stimmig",
+                "levels": [
+                  "Unklar oder unpassend",
+                  "Situation plausibel, Term fehlerhaft",
+                  "Situation und Term vollständig stimmig"
+                ]
+              },
+              {
+                "criterion": "Ergebnis irrational + sinnvoll gerundet",
+                "levels": [
+                  "Ergebnis rational oder Rundung fehlt",
+                  "Ergebnis irrational, Rundung ohne Begründung",
+                  "Ergebnis irrational, Rundung klar begründet"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Manche wählen unbewusst Zahlen, die ein pythagoräisches Tripel bilden (3-4-5) und bekommen so ein rationales Ergebnis — dann nachfragen, ob das der Aufgabenstellung entspricht.",
+              "Die Rundungsbegründung darf nicht fehlen — nur eine Zahl hinzuschreiben reicht nicht."
+            ],
+            "self_check": null
+          }
+        ]
+      }
+    ],
+    "assets": [
+      {
+        "id": "abb1",
+        "role": "figure",
+        "medium": "visual",
+        "generator": "matplotlib:number_line",
+        "spec": {
+          "min": 0,
+          "max": 3,
+          "step": 0.5,
+          "marks": [
+            {
+              "at": 1,
+              "label": "1"
+            },
+            {
+              "at": 2,
+              "label": "2"
+            },
+            {
+              "at": 1.4142,
+              "label": "√2 = ?"
+            }
+          ]
+        },
+        "correctness_surface": null,
+        "misleading_in_isolation": false,
+        "intentionally_flawed": null,
+        "machine_generatable": true,
+        "provenance": null,
+        "data_source": null,
+        "illustrative": false,
+        "caption": null
+      },
+      {
+        "id": "abb2",
+        "role": "figure",
+        "medium": "visual",
+        "generator": "matplotlib:rectangle",
+        "spec": {
+          "length": 2,
+          "width": 2,
+          "label_l": "2 m",
+          "label_w": "2 m",
+          "title": "Quadratisches Blumenbeet"
+        },
+        "correctness_surface": null,
+        "misleading_in_isolation": false,
+        "intentionally_flawed": null,
+        "machine_generatable": true,
+        "provenance": null,
+        "data_source": null,
+        "illustrative": false,
+        "caption": null
+      }
+    ],
+    "nachweis": {
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "statement": "Diese Materialien adressieren 1 von 1 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
+      "competence_coverage": [
+        {
+          "competence_id": "MAT.US.4.ZAH.01",
+          "exercised_by": [
+            "t1",
+            "t2",
+            "t3",
+            "t4",
+            "t5",
+            "t6"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        }
+      ],
+      "gaps": [],
+      "zentrale_konzepte": [
+        "1: Zahlen und Maße"
+      ],
+      "uebergreifende_themen": []
+    },
+    "depth_profile": {
+      "by_level": {
+        "understand": 2,
+        "apply": 2,
+        "analyze": 1,
+        "create": 1
+      },
+      "by_dimension": {
+        "MOD": 2,
+        "BEG": 2,
+        "OPE": 2
+      },
+      "by_difficulty": {
+        "1": 2,
+        "2": 3,
+        "3": 1
+      },
+      "minutes_total": 45,
+      "minutes_resource_independent": 45
+    },
+    "rack": null
+  },
+  "artifacts": {
+    "student_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0189\\student.pdf",
+    "teacher_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0189\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0189\\homework.pdf",
+    "preview_png": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0189\\raster\\student.p1.png"
+  },
+  "verify_problems": [],
+  "verify_warnings": [],
+  "parent_id": null,
+  "feedback": [],
+  "error": null
+}

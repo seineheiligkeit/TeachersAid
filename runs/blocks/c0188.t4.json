@@ -1,0 +1,113 @@
+{
+  "id": "c0188.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb_prisma_netz"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Das Turmmodell hat als Grundfläche das Rechteck aus der Abbildung (6 cm × 4 cm) und ist ein gerades Prisma mit der Höhe 10 cm. Berechne (a) den Oberflächeninhalt des Prismas (2 Grundflächen + 4 Seitenflächen) und (b) den Rauminhalt des Prismas.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "OPE",
+      "MOD"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.3.FIG.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "Grundfläche: G = 6 cm · 4 cm = 24 cm². (a) Oberfläche: 2 Grundflächen (2 · 24 = 48 cm²) + Seitenflächen (Umfang · Höhe = (2·6 + 2·4) · 10 = 20 · 10 = 200 cm²). Gesamt: O = 48 + 200 = 248 cm². (b) Volumen: V = G · h = 24 cm² · 10 cm = 240 cm³.",
+    "acceptable_reasoning": "Bei einem geraden Prisma mit rechteckiger Grundfläche ist die Oberfläche die Summe aus zwei Grundflächen und dem Mantel (Umfang der Grundfläche mal Höhe); das Volumen ist Grundfläche mal Höhe.",
+    "rubric": [
+      {
+        "criterion": "Oberfläche korrekt (248 cm²)",
+        "levels": [
+          "Falsch",
+          "Ansatz richtig, Rechenfehler",
+          "Korrekt"
+        ]
+      },
+      {
+        "criterion": "Volumen korrekt (240 cm³)",
+        "levels": [
+          "Falsch",
+          "Ansatz richtig, Rechenfehler",
+          "Korrekt"
+        ]
+      },
+      {
+        "criterion": "Einheiten (cm² bzw. cm³) korrekt verwendet",
+        "levels": [
+          "Fehlt oder falsch",
+          "Teilweise korrekt",
+          "Durchgehend korrekt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Bei der Oberfläche wird die zweite Grundfläche (Deckfläche) manchmal vergessen — ein Prisma hat zwei kongruente Grundflächen, nicht nur eine.",
+      "Volumen und Oberfläche werden gelegentlich verwechselt oder mit derselben Formel berechnet — Volumen hat die Einheit cm³, Oberfläche cm²; das ist ein guter Kontrollpunkt."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Mathematik",
+  "klasse": 3,
+  "kompetenzbereich": "3: Figuren und Körper",
+  "competences": [
+    "MAT.US.3.FIG.03"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "OPE",
+    "MOD"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb_prisma_netz",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:rectangle",
+      "spec": {
+        "length": 6,
+        "width": 4,
+        "label_l": "6 cm",
+        "label_w": "4 cm",
+        "title": "Grundfläche des Turmmodells (Rechteck)"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0188",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:22+00:00",
+  "updated_at": "2026-07-05T05:34:22+00:00"
+}

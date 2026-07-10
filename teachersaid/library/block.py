@@ -47,6 +47,10 @@ class LibraryBlock(BaseModel):
     updated_at: str = ""
 
     def summary(self) -> dict:
+        # readability (roadmap A6): COMPUTED on demand from the block's own prose, never
+        # persisted into the stored JSON (re-run the estimator, don't cache a stale number)
+        from ..pipeline.readability import estimate_block
+        est = estimate_block(self.block)
         return {
             "id": self.id, "role": self.role, "kind": self.kind,
             "subject": self.subject, "klasse": self.klasse,
@@ -56,6 +60,7 @@ class LibraryBlock(BaseModel):
             "status": self.status, "provenance": self.provenance, "source": self.source,
             "assets": len(self.assets),  # # of figures this block carries (3c)
             "prompt": _block_text(self.block)[:140],
+            "readability": round(est, 1) if est is not None else None,
             "updated_at": self.updated_at,
         }
 
@@ -83,7 +88,10 @@ def harvest(content: WorksheetContent, *, example_key: str, scope: str = "standa
                 kb = m["kompetenzbereich"]
                 break
         # carry the asset spec(s) this block references, so figures/data travel with it
-        assets = [by_id[ref] for ref in (getattr(b, "asset_refs", None) or []) if ref in by_id]
+        # (incl. a puzzle's teacher-only solution grid via solution_asset_refs — A5)
+        refs = list(getattr(b, "asset_refs", None) or []) + list(
+            getattr(b, "solution_asset_refs", None) or [])
+        assets = [by_id[ref] for ref in refs if ref in by_id]
         out.append(LibraryBlock(
             id=f"{example_key}.{b.id}",
             block=b,

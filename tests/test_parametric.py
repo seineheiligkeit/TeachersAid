@@ -62,6 +62,51 @@ def test_make_variants_distinct():
     assert all(b.solution_steps for b in vs)
 
 
+# --- difficulty ramp (Übungsreihe upgrade) ------------------------------------
+def test_linear_equation_ramp_ascending_and_correct():
+    """ramp=True → ascending bands [1,1,2,2,3,3]; every instance still solves exactly;
+    same (task, n, seed0) → same list (determinism under ramp)."""
+    t = _template("linear_equation", "Löse: ${eq}$")
+    a = make_variants(t, 6, seed0=1, ramp=True)
+    assert [b.difficulty for b in a] == [1, 1, 2, 2, 3, 3]
+    x = sympy.Symbol("x")
+    for b in a:
+        eq = b.prompt[-1].text.replace(" x", "*x")
+        lhs, rhs = eq.split("=")
+        sol = sympy.solve(sympy.Eq(sympy.sympify(lhs), sympy.sympify(rhs)), x)[0]
+        assert sol == int(b.answer_key[0].text.split("=")[1])
+    b2 = make_variants(t, 6, seed0=1, ramp=True)
+    assert [str(x.prompt) for x in a] == [str(x.prompt) for x in b2]
+    # band 3 involves sign handling by construction (negative solution or constant)
+    for b in a[4:]:
+        assert "-" in b.prompt[-1].text or "-" in b.answer_key[0].text
+
+
+def test_ramp_without_knob_is_honestly_unbanded():
+    """percentage has no difficulty knob: ramp=True must neither fail nor fake a
+    spread — no stamped difficulty, prompts unchanged vs. the unramped draw."""
+    t = _template("percentage", "Wie viel sind {pct} % von {base}?")
+    ramped = make_variants(t, 5, seed0=1, ramp=True)
+    plain = make_variants(t, 5, seed0=1)
+    assert all(b.difficulty is None for b in ramped)
+    assert [str(x.prompt) for x in ramped] == [str(x.prompt) for x in plain]
+
+
+def test_maths_template_frame_renders_once_in_intro():
+    """A numeric maths template's neutral context_frame lands ONCE in the worksheet
+    intro (not repeated on every prompt) and is digit-free."""
+    from datetime import date
+    from teachersaid.library.templates import find_template, variant_worksheet
+    t = find_template("mat-prozent")
+    assert t.context_frame and not any(ch.isdigit() for ch in t.context_frame)
+    content, _res = variant_worksheet(t, 5, today=date(2026, 3, 1))
+    frames = [b for b in content.intro if b.id == "uebung.rahmen"]
+    assert len(frames) == 1 and frames[0].content == t.context_frame
+    for b in content.sections[0].blocks:          # prompts stay frame-free
+        text = b.prompt if isinstance(b.prompt, str) else "".join(r.text for r in b.prompt)
+        assert not text.startswith(t.context_frame)
+
+
 # --- inline math typesetting -------------------------------------------------
 def test_inline_math_renders_to_image(tmp_path):
     from teachersaid.rendering import inline_math

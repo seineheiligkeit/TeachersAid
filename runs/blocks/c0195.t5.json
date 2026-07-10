@@ -1,0 +1,85 @@
+{
+  "id": "c0195.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Eine kleine Insel-Gemeinde hat kein natürliches Süßwasser und muss ihr Trinkwasser aus Meerwasser gewinnen. Der Gemeinderat prüft zwei Verfahren: (A) Destillation — das Meerwasser wird mit Sonnenenergie erhitzt, der Dampf in Rohren aufgefangen und abgekühlt. (B) Einfaches Filtrieren durch feinste Filter. Ein Techniker warnt: 'Verfahren B wird niemals genug Salz aus dem Wasser entfernen, egal wie fein der Filter ist.' Bewerte diese Aussage fachlich und empfiehl der Gemeinde ein Verfahren. Berücksichtige dabei auch, dass Destillation mit Sonnenenergie zwar funktioniert, aber viel Zeit und große Anlagenflächen braucht.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Eine Insel-Gemeinde ohne Süßwasser wählt zwischen Destillation (A) und Filtrieren (B), um aus Meerwasser Trinkwasser zu gewinnen."
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "S",
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.US.x.STA.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 15,
+    "answer_key": "Die Aussage des Technikers ist fachlich richtig: Salz ist im Meerwasser gelöst, also in einzelne, extrem kleine Teilchen (Ionen) aufgeteilt — kein Filter, egal wie fein, kann gelöste Teilchen von den Wasserteilchen trennen, weil Filter nur ungelöste (feste) Teilchen zurückhalten. Empfehlung: Verfahren A (Destillation), da nur der Wechsel des Aggregatzustands (Verdampfen und Kondensieren) das reine Wasser vom gelösten Salz trennt. Abwägung: Die solarbetriebene Destillation hat den Nachteil, dass sie viel Zeit und Fläche braucht (abhängig vom Sonnenschein, langsamer Durchsatz) — für eine kleine Gemeinde mit moderatem Wasserbedarf kann das dennoch praktikabel sein, besonders wenn genug Sonnenstunden und Platz vorhanden sind. Eine vollständige Antwort erkennt: Filtrieren scheidet als alleinige Lösung aus, unabhängig von der Filterfeinheit.",
+    "acceptable_reasoning": "Volle Punkte auch bei einer Antwort, die zusätzlich moderne Umkehrosmose als Alternative nennt (sofern korrekt erklärt) — das ist Zusatzwissen, kein Muss. Kern ist die richtige fachliche Einschätzung der Technikeraussage plus eine begründete, in sich schlüssige Empfehlung inklusive mindestens eines Nachteils von Verfahren A.",
+    "rubric": [
+      {
+        "criterion": "Fachliche Einschätzung der Technikeraussage",
+        "levels": [
+          "vollständig: Erkennt korrekt, dass gelöstes Salz durch keinen Filter zurückgehalten wird, mit korrekter Begründung (gelöst vs. fest).",
+          "teilweise: Stimmt der Aussage richtig zu, aber ohne klare fachliche Begründung.",
+          "unzureichend: Hält Filtrieren für grundsätzlich geeignet oder liefert keine fachliche Einschätzung."
+        ]
+      },
+      {
+        "criterion": "Begründete Empfehlung mit Abwägung",
+        "levels": [
+          "vollständig: Empfiehlt Destillation UND nennt mindestens einen realistischen Nachteil (Zeit, Fläche, Energie).",
+          "teilweise: Empfiehlt Destillation, aber ohne Abwägung von Vor-/Nachteilen.",
+          "unzureichend: Keine schlüssige Empfehlung."
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Zentrale Fehlvorstellung: 'Ein feinerer Filter hält irgendwann auch Salz zurück.' Das ist falsch — die Porengröße spielt bei GELÖSTEN Teilchen keine Rolle im herkömmlichen Filtrationssinn; das ist ein wichtiger Konzeptwechsel gegenüber dem Trennen von Feststoffgemischen.",
+      "Schüler:innen sollen nicht nur 'A ist besser' schreiben, sondern auch mindestens einen Nachteil/eine Einschränkung von A benennen — sonst ist die Bewertung nicht vollständig.",
+      "Umkehrosmose (die reale moderne Lösung für Meerwasserentsalzung) muss nicht bekannt sein; wird sie erwähnt, ist das positiv zu werten, aber nicht Voraussetzung."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Chemie",
+  "klasse": 4,
+  "kompetenzbereich": "Standpunkte begründen, Entscheidungen treffen und reflektiert handeln (S)",
+  "competences": [
+    "CHE.US.x.STA.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "S",
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0195",
+  "source": "ai",
+  "created_at": "2026-07-05T05:38:19+00:00",
+  "updated_at": "2026-07-05T05:38:19+00:00"
+}

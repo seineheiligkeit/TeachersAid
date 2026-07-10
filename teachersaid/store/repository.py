@@ -19,6 +19,10 @@ class ReviewStore(JsonStore[ReviewItem]):
     def create(self, item: ReviewItem) -> ReviewItem:
         if not item.id:
             item.id = self._next_seq(item.stage[:1])
+            # Guard against a counter file lagging the store (e.g. restored from an
+            # older sync/checkout): never mint an id that would CLOBBER a real item.
+            while self._path(item.id).exists():
+                item.id = self._next_seq(item.stage[:1])
         item.created_at = item.created_at or now()
         return self._write(item)
 

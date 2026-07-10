@@ -5,8 +5,20 @@ Forward-looking *capability* features for TeachersAid. (The schema-version roadm
 
 ## ▶ Start here (state as of 10 Jul 2026)
 
+> **Reconciliation (10 Jul 2026, evening).** The two development machines had DIVERGED from
+> `a9f03d6` — the workhorse's Sessions 11–14 (below: build-for-joy program, Wave A, Prüfen/triage,
+> four-station dashboard; pushed to origin) × this machine's 9–10 Jul work (the two session blocks
+> right below). Both lines independently implemented the figstyle port and a pythagoras recipe.
+> Merged on this machine, preferring the workhorse's SME-reviewed recipe bodies + representation
+> rules and this line's additive capabilities (figure emission, nodelink/Scene.select, physics
+> scenes, Textsorten/Latein/texts/data tracks); the two Calibri fixes were UNIFIED (strip strikes
+> as the root-cause fix + the `_renders_small` probe as the safety net); the two pythagoras
+> recipes unified into the figure-emitting one. Lesson recorded: **`git fetch origin` at every
+> session start on every machine.**
+
 > **Session update (10 Jul 2026) — eight parallel build tracks (subagent-orchestrated, Opus
-> workers in git worktrees, merged sequentially).** Suite **368 → 478**. What shipped:
+> workers in git worktrees, merged sequentially).** Suite **368 → 478** (pre-merge count on this
+> line). What shipped:
 > - **Scene engine grew up:** `Arrow` + `Node` primitives; **`Scene.select(*groups)`** — the
 >   first-class density/stage selector (constructions' stage 1–6 migrated, identical output);
 >   `tree_diagram·cause_effect·process_flow` consolidated onto **`pipeline/nodelink.py`** (thin
@@ -39,6 +51,288 @@ Forward-looking *capability* features for TeachersAid. (The schema-version roadm
 > Windows-Calibri embedded-bitmap-strike bug** (glyphs silently vanish at strike ppem sizes, e.g.
 > 9 pt @ 150 dpi, while still measuring) — strikes stripped at font registration + a
 > glyph-rendering regression test. Suite **369**. Details: `figure-styleguide.md` "What's next".
+## The build-for-joy feature program (5 Jul 2026, Session 13 — workhorse line)
+
+> **The frame, reaffirmed hard (5 Jul 2026).** TeachersAid is built **for the joy of building**: no
+> pilots, no releases, no GTM clock, no teacher-feedback loop *for now*. The SME's thesis: only building
+> the intrinsically best platform, as the goal itself, can later maybe become a product — premature
+> productization is the failure mode AI projects die of, and the discipline here is to resist it.
+> Prioritise on the intrinsic axis: **new correct-by-construction domains · deeper engines ·
+> corpus-level structure · craft.** (Also recorded in assistant memory; pushing market-facing urgency
+> is a frame violation, not a helpful nudge.)
+
+The program below is the 5 Jul idea pass + SME verdicts. **Waves are themes, not a schedule — pick by
+interest**; real dependencies are noted. Each item is written so a fresh build session can pick it up
+cold. State at session start: 413 tests green; 967 approved blocks; coverage 95/610 cells grün.
+
+> **✅ Wave A is COMPLETE (Session 14, 5 Jul 2026).** All seven items landed (A1·A2a·A2b·A3·A4·A5·A6·A7),
+> built by a fan-out of Opus/Sonnet subagents and orchestrator-reviewed (specimens viewed, diffs read,
+> SME flags collected below the wave). The CHE2 maintenance item also landed. State now: **565 tests
+> green.** Design depth for the new engines is in their modules' docstrings + the Session-14 handoff
+> block; a batch of **SME fact-check flags** (physics magnitudes, g=9.80665, kWh grade, misconception
+> source pinning, Schrägriss foreshortening convention, a/b/c edge mapping, …) awaits the SME in
+> `project-handoff.md` Session 14. Each item below is annotated with what shipped.
+
+### Wave A — task & figure engines
+
+- **A1 · Figure-engine rework (the port). ✅ SHIPPED S14** — all ~25 recipes draw through `figstyle`
+  roles/ramps (0 hex literals, `tests/test_figstyle_port.py` locks it); `right_triangle`/`rectangle`/
+  `polygon` became computed `Scene`s; a render-probe font fallback fixes a py3.14/mpl3.11 Calibri
+  glyph-drop that silently blanked small labels; specimen scripts per family. Original text follows.
+  Move the ~25 legacy matplotlib recipes onto `figstyle`
+  (semantic roles, categorical+dash ramps, house font) — and onto `scene` composition where a recipe is
+  naturally primitives. Acceptance: no hard-coded hexes outside `figstyle`; specimen scripts per family;
+  `tests/test_layout.py` green. The long-deferred styleguide item — do it before new figure families
+  multiply the debt. *(Design: `figure-styleguide.md`.)*
+- **A2 · The Physics engine (SME: clear win). ✅ SHIPPED S14** — *(a)* `pipeline/physics.py` (6 recipes,
+  answers dimensionally verified via `sympy.physics.units` — unit-category errors structurally
+  impossible) + `grounding/physics.py` (g exact, cited school densities) + 7 `phy-*` templates;
+  *(b)* `pipeline/optics.py` (thin-lens ray construction, drei Hauptstrahlen as stages, given/sought
+  masking) + `pipeline/circuits.py` (netlist → Kirchhoff solve → schematic, per-element `mask=[…]`) +
+  `matplotlib:optics_ray`/`matplotlib:circuit`. Mirrors (Hohlspiegel/Ebener Spiegel) deferred. Original:
+  *(a) parametric pack* — `pipeline/physics.py` recipes with **`sympy.physics.units`** so every answer
+  is **dimensionally verified** (unit errors structurally impossible): uniform motion, density,
+  Ohm + series/parallel (Ersatzwiderstand), lever/torque, energy/power; US anchors (PHY Kl. 2–4) + OS
+  templates, the `che-*` template pattern. Curated constants (`grounding/physics.py`, CODATA values +
+  `SourceRef`) — select-never-author for constants too.
+  *(b) scene families* — **optics ray construction** (Sammellinse/Zerstreuungslinse/Spiegel via thin-lens
+  math; the drei Hauptstrahlen as `stage`s like `triangle_construction`; image position maskable
+  "B′ = ?") and **circuits** (typed netlist → schematic from scene primitives; values computed via
+  Kirchhoff linear solve — the sympy linear-algebra machinery `balance_equation` proved). Completes the
+  MINT trio; pairs with the CHE-figures gap (old theme B bundle).
+- **A3 · The Misconception engine (SME: love it). ✅ SHIPPED S14** — `grounding/misconceptions.py` (9
+  literature-sourced error patterns: Radatz/Malle/Padberg-Wartha/Physik-/Chemiedidaktik) +
+  `pipeline/misconceive.py` (`@_misconception` transforms); MC distractors COMPUTED by applying the
+  misconception to the drawn values — guaranteed ≠ correct post-formatting, deduped, plausibility-gated;
+  the teacher guide names each probe via `watch_outs`. MAT/PHY/CHE recipes + 4 MC templates. The
+  non-parametric distractor-pattern field stays the roadmap's "later". Original text:
+  Distractors correct-by-construction. A curated
+  catalog `grounding/misconceptions.py` (id · domain scope · description · the classic error-analysis
+  literature as source note — Radatz for arithmetic, Malle for algebra), transforms registered like
+  recipes (`@_misconception` in `pipeline/misconceive.py`); a `multiple_choice` parametric variant's
+  distractor = `transform(instance)` — **guaranteed ≠ the correct answer** (both computed), deduped,
+  plausibility-gated. The teacher guide names **which misconception each distractor probes** ("B prüft
+  den Vorzeichenfehler"). Start on MAT parametrics (sign error, forgotten carry, unit slip, percentage
+  base confusion), extend to CHE/PHY; later a curated distractor-pattern field for non-parametric MC.
+  `intentionally_flawed`, generalized into a theory.
+- **A4 · Solution graphs (SME: yes). ✅ SHIPPED S14** — `SolutionPath` (strategy + steps) on `Instance`
+  and `TaskBlock`; `linear_system_2` emits Einsetzungs-/Gleichsetzungs-/Additionsverfahren,
+  `percentage`/`percentage_rate` emit Dreisatz/Operator/Formel — each path independently derived via
+  sympy and asserted equal to the primary answer before shipping; teacher projection renders
+  "Alternative Lösungswege", student/homework proven clean; generation-view omission lock test-locked.
+  Original text: Recipes emit ONE Rechenweg; classrooms produce several. Extend
+  `Instance` with optional `solution_paths` (named strategy + steps); teacher rendering "Alternative
+  Lösungswege / Schüler könnten auch…". Start where strategies genuinely diverge: LGS
+  (Einsetzen/Gleichsetzen/Addition), Prozentrechnung (Dreisatz/Operator/Formel). Teacher-only, DERIVED.
+- **A5 · The Rätsel engine (SME: great — Rätsel are super fun for pupils). ✅ SHIPPED S14** —
+  `pipeline/puzzles.py` + `schema/puzzle.py`: Kreuzworträtsel (backtracking crossing grid),
+  Suchsel (with accidental-duplicate refill guard), Domino (closes iff every match correct — self-check
+  by graph construction), Rechenmauern (unique-solution masking verified by propagation). One core kind
+  `puzzle` (no write-space); `matplotlib:puzzle_grid`; teacher-only solved grid via
+  `solution_asset_refs`; umlaut = single-cell (flip-in-one-place). Corpus-scale clue ingest is the
+  follow-up. Original text: `pipeline/puzzles.py`,
+  zero LLM, answers derived: **Kreuzworträtsel** (backtracking grid placement over curated clue/answer
+  pairs — Sachverhalt `Concept`s, vocab annotations, chemistry curated tables feed clues across many
+  subjects; decide the umlaut convention Ä vs AE), **Suchsel** (trivial), **Domino/Trimino chains**
+  (from matching pairs; the chain **closes iff every match is correct** — self-checking by graph
+  construction), **Rechenmauern** (parametric, derived). Design decisions: puzzle = code-gen asset
+  (grid figure) + a task block wrapper; whether new `task_kind_extensions` or core kinds carry them;
+  teacher-only solution grid; age scaling.
+- **A6 · Readability — the Wiener Sachtextformel (SME: good). ✅ SHIPPED S14** — `pipeline/readability.py`
+  (WSTF1, Bamberger/Vanecek; documented German syllable heuristic) + advisory verify warning when a
+  block reads ≫ target Schulstufe + block-card badge (computed on demand, never persisted). Verbatim
+  sources (`quoted`/`source_text`) are exempt — deliberately hard IS the Quellenarbeit. Scope-variant
+  linguistic targets deferred (a clean 3-file signature change — chip `task_8964d0d4`). Original text:
+  *The* German readability measure (and
+  Austrian: Bamberger/Vanecek) as `pipeline/readability.py`: grade-level estimate per prose/info block
+  (German syllable counting is heuristic → **advisory lane only**), a verify warning when block level ≫
+  target Klasse, surfaced on dashboard block cards; `scope` variants gain linguistic targets (compact =
+  also linguistically lighter), not just length.
+- **A7 · GZ / Darstellende Geometrie — promote the 3D prototype (SME: agreed). ✅ SHIPPED S14** —
+  `pipeline/scene3d.py`: `Scene3D` + axonometric projection + closed-form back-face hidden-line
+  classification (raises `NotConvex` at the boundary); `axonometric_solid` (Quader/Prisma/Pyramide/
+  Zylinder/Kegel, hidden edges dashed, base-rim back arc dashed) + `riss_pair` (Grund-/Aufriss,
+  per-Riss visibility with the coincidence rule). Anchors found: GZ `GEZ.US.4.PRO.*`, DG
+  `DGE.OS.7.ARB5.*` — a master-library flagship per Stufe is the follow-up. Original text: The validated
+  machinery (`tools/plane3d_specimen.py`: `Scene3D` + axonometric `project` + closed-form hidden-line
+  occlusion) → `pipeline/scene3d.py` + `@_generator` recipes per the promotion path in
+  `scene3d-geometry-design.md`: `axonometric_solid` (Schrägriss of prisms/pyramids/cylinders, hidden
+  edges dashed) and `riss_pair` (Grund-/Aufriss pairs). Anchors: GZ (US) + DG (OS) — a subject with
+  zero coverage gets its engine.
+
+### Wave B — the image program (design: **`illustration-design.md`**, accepted 5 Jul 2026)
+
+The load-bearing reframe: **an image is a CLAIM (fact — curated/checkable) plus a RENDERING (expression
+— authorable under constraint)** — mechanism 4 extended to pixels; the corpus model (vet once, reuse
+forever) is what makes diffusion viable at all. Media policy gains a **third lane — `depictive`**
+(shows a thing; no labels/numbers/text) between decorative and content; the content lane stays
+code-gen/sourced **forever**. Resolution hierarchy: reuse › sourced PD/CC › diffusion › none.
+
+- **B1 · Backend + gates:** `teachersaid/imagegen/` (the TTS cp312-subprocess pattern; **Flux.1-schnell**,
+  Apache-2.0, fits the 4070 quantized) wired via the existing `register_diffusion_backend`; a stored
+  **`DiffusionSpec`** (model/prompt/negative/seed/steps/cfg/size) makes every image *replayable*;
+  deterministic pre-review lints (**OCR no-text** auto-reject, **photocopy-survival** grayscale check,
+  resolution/alpha); the style contract + `tools/illustration_specimen.py`.
+- **B2 · Warmth:** Realien backdrops first (**risk-free by construction** — invented world, invented
+  picture) + worksheet header vignettes (a `theme_asset` slot); **best-of-N seed-grid review** in the
+  Abbildungen tab (choosing beats judging).
+- **B3 · The depictive lane + the Beschriftungs-hybrid (the flagship):** `intended_claim` + checklist
+  review; labeling tasks = vetted base image + curated anchor points + a **code-drawn label layer**
+  (leader lines via `figtext`, maskable `show_value=False`) — text never enters the pixel layer. Task
+  spots under the seductive-details policy (relevance rule · density cap · placement · age register).
+- **B4 · Compounding:** a style LoRA trained on ≥~50 SME-approved images (the style locks itself in);
+  mascots as **fixed art** (not per-sheet diffusion); optional color-by-answer finishers (gimmick lane).
+- **B5 · PD Bildquellen — the 6th asset class (SME: very clear win).** The visual sibling of the
+  annotated texts: an `ImageSource` = a PD-by-age artwork/photo/caricature + a curated annotation layer
+  (Beschreibung → Analyse → Interpretation, the Bildquellenkritik ladder) → derived GPB/BE tasks.
+  Rights: the AT 70-p.m.a. gate + the **PD-work ≠ PD-reproduction** per-item caution; fetch via a
+  Wikimedia Commons tool (machine-readable per-file rights — shared with B's sourced lane). Flagship
+  candidate: the Isabey Wiener-Kongress engraving — ties straight into the existing Sachverhalt +
+  Quellenarbeit flagships.
+
+### Wave C — corpus structure (the holistic layer)
+
+- **C1 · The prerequisite graph (SME: awesome — think holistic).** A curated edge catalog
+  `grounding/prerequisites/<CODE>.json` (competence → its prerequisites, cross-Klasse) + loader +
+  cycle/dangling-id lints. One graph, many pure queries: **Diagnose-Blätter** (one approved band-1 task
+  per prerequisite ancestor of a topic), compose **warm-up injection** ("Bevor wir starten…"), **spiral
+  revision** (resurface descendants at later Klassen), **campaign ordering** (fill prerequisites before
+  dependents), a **difficulty feature** (graph depth), and a coverage-map overlay (an empty cell that
+  BLOCKS dependents matters more than a leaf). Start with MAT (cleanest structure), then PHY/CHE.
+- **C2 · Entity registry + cross-module consistency (SME: good).** Canonical entities
+  (person/place/event/work: names, dates, facts, source) in `grounding/entities.py`; Sachverhalt
+  `Actor`/`HistEvent` link by `entity_id`; a **corpus-level lint**: the same entity must carry
+  consistent dates/attributes across ALL modules (the entity-lint promoted from module-internal to
+  corpus-global — anti-drift at scale). Derived joys: "verwandte Module" links, merged epoch timelines
+  per Klasse.
+- **C3 · ÜT cross-subject bundles (SME: yes).** The übergreifende Themen tags already sit on
+  competences; nobody composes across subjects. `compose_uet(uet, klasse, envelope)`: approved blocks
+  whose serves-competences carry the ÜT across ≥2 subjects → per-subject roles → a **Lernarrangement**
+  (the Projektwoche bundle; shared product as the anchor). v0.5 machinery exists and is waiting.
+- **C4 · Difficulty as a computed quantity (SME: hard but wanted — exploratory).** Structural
+  psychometrics, no students needed: features derivable from the task itself — **solution-step count**
+  (parametrics carry the derivation!), operation depth, number-domain (ℕ < fractions < irrationals),
+  **text load via A6's WSTF**, kind base-cost, scaffold presence — combined by transparent weights
+  **calibrated against the SME's ~1100 authored 1–3 labels** (simple ordinal fit, offline) with the
+  Matura operator×AFB data (`extract_matura`) as the external anchor. Discipline: **DERIVED +
+  advisory** — never overrides the authored `difficulty`; a ≥1-band disagreement becomes a verify
+  warning and a dashboard signal. If the fit is poor, that's a finding, not a failure.
+- **C5 · The dramaturgy engine (SME: could be extremely powerful — PLAN CAREFULLY, design-first).**
+  Track 2's acknowledged hard problem (inter-block coherence), approached didactically: a typed phase
+  grammar (**Einstieg → Erarbeitung → Sicherung → Transfer**) as a plan layer; blocks carry a
+  phase-affinity (harvest infers, SME corrects at review); `compose` orders against the grammar;
+  bridging prose is **constrained re-expression (mechanism 4)** over the adjacent blocks' frozen
+  content — vetted task content untouched, offline fallback = template transitions (the `frame.py`
+  pattern). **First deliverable is a design doc** (`dramaturgy-design.md`): the phase-model choice, how
+  phases interact with envelope/scope/difficulty ramps, what harvest can infer vs. what the SME tags,
+  and how coherence is *measured* — no code before the doc is agreed.
+
+### Maintenance (small, standing)
+
+- **CHE2 routing fix:** ✅ DONE (S14) — `_DISPLAY_NAME_OVERRIDES` keyed `(stufe, code)` gives the second
+  CHEMIE subject a distinct display name ("Chemie (Wirtschaftskundliches Realgymnasium)") at `_meta`
+  load, so name-routed campaigns reach CHE2's 6 US cells; plain "Chemie" still routes to CHE.
+- **Fassung 2026/27 watch** *(deferred by decision, Session 3 — do not relitigate)*: becomes a real
+  task when the new consolidated Fassung is published in full text; then run the parser diff + the
+  migration tooling (old Track-3 #8: ID map, re-anchor, re-derive, flag orphans).
+- **Geosphere-Klimadiagramm re-decision** (carried from Session 12).
+
+### Parked by decision (5 Jul 2026 — with reasons, so they don't silently resurface)
+
+- **Music notation engine** — architecturally interesting (staff = scene primitives + Bravura/SMuFL
+  glyphs; a synth backend on the TTS subprocess pattern), but ME in AHS practice is a relaxed subject
+  with little worksheet demand. Revisit only if demand appears.
+- **Experiment/Versuch asset class** — too dependent on what apparatus each school actually has to
+  build properly. (The `experiment_protocol` task-kind demand stays visible in `subject_models.json`.)
+- **Self-checking worksheets (Lösungswort/checksum)** — a nice gimmick, not load-bearing. The
+  color-by-answer variant may ride illustration P4; the Trimino closed-chain self-check lives on inside
+  A5, where it earns its place as a Rätsel.
+
+### Raised 5 Jul, unranked — awaiting an SME call
+
+Stumme Karten + cartography layers (rivers/cities from Natural Earth, label-masking) · a **Typst**
+renderer (native math, German Silbentrennung; the handoff-brief contract makes it a clean parallel
+build) · vision-**Blattkritik** (corpus-loop LLM critique of the QA rasters → advisory feedback lane) ·
+the **Nachweis/coverage made beautiful** (per-sheet Kompetenz-Landkarte; the coverage poster).
+
+---
+
+## The offline-first program (2 Jul 2026) — Tracks 1–2 built; superseded as "start here" by the 5 Jul program above
+
+*Still-live threads from this program map into the new one: Track-2 **#4 inter-block coherence** → the
+**dramaturgy engine (C5, design-first)**; Track-2 **#6 "Varianten erzeugen" surface** → still open,
+unranked; Track-3 **wedge campaigns** remain a standing activity (planner-driven, `/api/coverage/gaps`);
+Track-3 **#8 Fassung tooling** → Maintenance. The joy lane's `figstyle` port → **A1**; 3D promotion →
+**A7**; physics vectors / label-the-parts scenes → **A2(b)** / **B3**.*
+
+> **Session update (2 Jul 2026) — THE PIVOT (Session 11).** The product is the **curated corpus +
+> deterministic, LLM-free delivery**; live on-demand generation is deferred (not deleted — the `llm/`
+> seam is the campaign seam). Two loops: the **corpus loop** (campaigns: briefs → feature engines →
+> lints → SME gate → approved corpus) is where the LLM lives; the **delivery loop** (serve a vetted
+> sheet › compose from approved blocks › honest gap → demand queue) is what a teacher touches.
+> Decision + rationale: `project-handoff.md` Session 11 + §4; rule + boundary: `invariants.md` **§10**.
+> **Working mode: build-for-joy** — no deadline, no GTM clock; "inherently cool" is a valid justification.
+
+> **Status (3 Jul 2026, Session 12):** Track 1 **BUILT** (#1 planner · #2 numbers lint · #3 Prüfen gate:
+> tier lanes + cascade + triage + Überarbeiten); Track 2 **#4-v1/#5 BUILT** (deliver read-path +
+> Wunschliste); the dashboard is the four stations; the staged backlog is SME-cleared; figures obey the
+> no-scientific-notation/unit-scale/numeric-time rule (`figstyle`); the chemistry Übungsreihen passed the
+> **blackboard test** (c0167–c0169 approved; the bar: beat what a teacher writes on the board in a
+> minute). **Open next:** Track 3 campaigns (`/api/coverage/gaps` anchors) · Track 2 #4 inter-block
+> coherence + #6 "Varianten erzeugen" surface · geosphere-Klimadiagramm re-decision · joy lane.
+
+**The program — three tracks + a joy lane** *(tracks are dependency order, not a schedule)*:
+
+**Track 1 — foundations:**
+1. **The coverage map as the instrument.** Define "covered" per (subject × Klasse × Kompetenzbereich):
+   ≥N approved task blocks spanning the Anforderungsbereich bands + a scope variant (+ the KB's iconic
+   figure type where one exists). Upgrade **Statistik** from curiosity to **campaign planner**: progress
+   bars against the full catalog (US + OS), exportable gap lists that become campaign briefs
+   (`suggest_from_catalog` already seeds ideas from gaps). *The corpus gets a progress bar — watching it
+   fill is the game loop.*
+2. **The numeric-claims lint** (the last authored-number hole, found in the 2 Jul review): every number
+   in a `data_source` task's prompt/`answer_key` must be derivable from the cited dataset slice
+   (± rounding/aggregation) — the entity-lint pattern applied to numbers. Doubles as the **anti-rot
+   mechanism**: derived values re-ground on dataset refresh; baked values go stale silently.
+3. **The review economy.** (a) **Tier the gate** by correct-by-construction mechanism — computed →
+   template-level review only; selected → source spot-check; re-expressed → lint + language read; curated
+   prose → full SME read. (b) An **adversarial triage agent** that ranks/flags before the SME looks
+   (didactics, register, answer-key consistency) — *triage, never the gate*. (c) Review-UX polish
+   (keyboard flow, lint-confidence batching) so a review session is fast and pleasant. Then **clear the
+   fact-bearing backlog** (8 datasets · 10 texts · 5 Sachverhalte sit unreviewed) — it blocks whole
+   corpus classes.
+
+**Track 2 — the delivery loop:**
+4. **Compose v2.** The retrieval hierarchy (**serve a vetted worksheet › compose from blocks › honest
+   gap**) + **inter-block coherence**, the new hard problem (independently-vetted blocks can clash in
+   context, notation, redundancy): curated block *sequences* as first-class objects, compatibility
+   signals captured at review time, dedup across repeated requests.
+5. **The demand queue.** A gap at request time becomes a recorded wish ("Wunschliste") feeding Track-3
+   campaign briefs — the self-directing backlog, meaningful even with one user.
+6. **Deterministic runtime generation, surfaced.** The "Varianten erzeugen" dashboard surface
+   (`orch.compose_variants` exists); parametric/scene instantiation at delivery (Gruppe A/B for
+   Schularbeiten, fresh Hausübungs-numbers) — *live generation without an LLM*, zero marginal review cost.
+
+**Track 3 — corpus campaigns (the long game):**
+7. **Wedge-to-green campaigns:** Physik + Mathematik + GWB Unterstufe to full KB coverage first (where
+   correct-by-construction bites hardest), then follow curiosity. Every campaign doubles as an engine
+   stress test — the GWB run surfaced two missing figure recipes; that pattern is a feature.
+8. **Fassung 2026/27 migration tooling** (when the new Fassung publishes): old→new competence-ID map,
+   re-anchor the corpus, re-derive every Nachweis, flag orphans. A corpus outlives its Fassung;
+   hand-migrating ~1000 blocks is not an option.
+
+**The joy lane (unscheduled — pick by interest, guilt-free by decision):** the audio **"Stimmen"** tab +
+dialogue-turns emission · more scene recipes (physics vectors, label-the-parts) + the `figstyle` port of
+the ~25 legacy recipes · **3D scene promotion** (`tools/plane3d_specimen.py` → `pipeline/scene3d.py`) ·
+informational Realien · ANNO/OCR media texts · more parametric recipes (the Matura-backward queue below) ·
+the **polish batch** from the 2 Jul review (the "Abgedeckte Lücken" label in `rendering/_document.py`,
+German „…"-quotes at render time, Tiefenprofil in ladder order, `store/base.py` corrupt-file logging,
+true/false table row heights).
+
+*(Everything below predates the pivot. The backlog items remain valid — they are all corpus-loop work —
+but the 1 Jul "Recommended next" ordering is superseded by the tracks above.)*
+
+## Session log (1 Jul 2026 and earlier)
 
 > **Session update (1 Jul 2026) — the figure engine.** A styleguide + a scene engine (design:
 > `Documents/figure-styleguide.md`). **`pipeline/figstyle.py`** centralises the visual language —

@@ -1,0 +1,114 @@
+{
+  "id": "c0185.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "a1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "construction",
+    "prompt": "Zeichne im Koordinatensystem aus Aufgabe 1 (auf deinem eigenen Blatt Karopapier) den Punkt P(4|1) sowie seinen Spiegelpunkt P' an der senkrechten Geraden x = 4, die durch die Mitte des Gartens verläuft. Gib die Koordinaten von P' an und begründe, warum diese Gerade eine Symmetrieachse des Rechtecks Wasserhahn–Gartenhütte–Baum–Zaun-Ecke ist.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 70.0
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "OPE",
+      "BEG"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.2.FIG.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "MAT.US.2.FIG.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "P(4|1) liegt bereits auf der Achse x = 4, daher ist P' = P = (4|1). Die Gerade x = 4 ist eine Symmetrieachse des Rechtecks, weil sie genau in der Mitte zwischen den Punkten mit x = 2 (Wasserhahn, Zaun-Ecke) und x = 6 (Gartenhütte, Baum) verläuft – jeder Punkt links der Achse hat einen gleich weit entfernten Partnerpunkt rechts davon.",
+    "acceptable_reasoning": "Akzeptiert wird jede Begründung, die den gleichen Abstand der Punktepaare zur Achse (2 Einheiten auf jeder Seite) korrekt erkennt, auch ohne den Sonderfall P=P' explizit zu benennen.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Die Aufgabe enthält eine bewusste Falle: P(4|1) liegt GENAU auf der Spiegelachse, ist also sein eigener Spiegelpunkt – das wird oft übersehen, weil Schüler:innen automatisch einen anderen Punkt erwarten."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "construction",
+  "subject": "Mathematik",
+  "klasse": 2,
+  "kompetenzbereich": "3: Figuren und Körper",
+  "competences": [
+    "MAT.US.2.FIG.02",
+    "MAT.US.2.FIG.01"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "OPE",
+    "BEG"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "a1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:coordinate_plane",
+      "spec": {
+        "points": [
+          {
+            "x": 2,
+            "y": 1,
+            "label": "Wasserhahn"
+          },
+          {
+            "x": 6,
+            "y": 1,
+            "label": "Gartenhütte"
+          },
+          {
+            "x": 2,
+            "y": 5,
+            "label": "Zaun-Ecke"
+          },
+          {
+            "x": 6,
+            "y": 5,
+            "label": "Baum"
+          }
+        ],
+        "xmin": 0,
+        "xmax": 8,
+        "ymin": 0,
+        "ymax": 7,
+        "title": "Lageplan Schulgarten"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": true,
+      "caption": "Lageplan des Schulgartens mit vier Fixpunkten"
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0185",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:19+00:00",
+  "updated_at": "2026-07-05T05:34:19+00:00"
+}

@@ -1,0 +1,94 @@
+{
+  "id": "c0175.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "fig_pilzarten"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "content_comprehension",
+    "prompt": "Betrachte das Diagramm zu den geschätzten Pilzarten nach Lebensweise. Welche Lebensweise ist demnach am häufigsten? Erkläre, was 'saprophytisch' bedeutet.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.ERK.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Am häufigsten ist die saprophytische (zersetzende) Lebensweise mit geschätzt 70.000 Arten. Saprophytisch bedeutet, dass der Pilz sich von totem organischem Material ernährt (z.B. abgestorbenem Holz, Laub) und es dabei zersetzt – er ist also ein 'Recycler' im Ökosystem.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Diese Zahlen sind grobe, gerundete Schätzungen aus der Mykologie (die tatsächliche Gesamtzahl der Pilzarten ist unbekannt) – nicht als exakte Fakten darstellen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "content_comprehension",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 2,
+  "kompetenzbereich": "Erkenntnisse gewinnen (E)",
+  "competences": [
+    "BIO.US.x.ERK.04"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "fig_pilzarten",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Symbiontisch (z.B. Mykorrhiza)",
+          "Parasitisch",
+          "Saprophytisch (Zersetzer)"
+        ],
+        "values": [
+          20.0,
+          10.0,
+          70.0
+        ],
+        "title": "Anzahl bekannter Pilzarten nach Lebensweise (weltweit, grobe Schätzung)",
+        "xlabel": "Lebensweise",
+        "ylabel": "Geschätzte Artenzahl (in Tausend)",
+        "log": false
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": true,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0175",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:13+00:00",
+  "updated_at": "2026-07-05T05:34:13+00:00"
+}

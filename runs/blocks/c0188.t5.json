@@ -1,0 +1,88 @@
+{
+  "id": "c0188.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Für das Turmdach plant die Modellbauerin eine Pyramide mit DERSELBEN Grundfläche (24 cm²) und DERSELBEN Höhe (10 cm) wie das Prisma aus Aufgabe 4. Entscheide, ob die folgenden Aussagen richtig oder falsch sind, und begründe mit einer Rechnung.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Die Pyramide hat genau ein Drittel des Rauminhalts des Prismas.",
+        "Der Rauminhalt der Pyramide beträgt 80 cm³.",
+        "Wenn man die Höhe der Pyramide verdoppelt (Grundfläche bleibt gleich), verdoppelt sich auch ihr Rauminhalt."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 7
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "BEG",
+      "OPE"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.3.FIG.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "1) Richtig: bei gleicher Grundfläche und Höhe gilt immer V(Pyramide) = (1/3) · V(Prisma). 2) Richtig: V = (1/3) · G · h = (1/3) · 24 cm² · 10 cm = 80 cm³ (passt zu Aussage 1, da 240 cm³ : 3 = 80 cm³). 3) Richtig: da V = (1/3) · G · h und G konstant bleibt, ist V direkt proportional zu h — eine Verdoppelung von h verdoppelt V.",
+    "acceptable_reasoning": "Alle drei Aussagen lassen sich direkt aus der Formel V = (1/3) · G · h ableiten: das 1/3-Verhältnis zu einem vergleichbaren Prisma, der konkrete Zahlenwert, und die lineare Abhängigkeit vom Faktor h bei konstantem G.",
+    "rubric": [
+      {
+        "criterion": "Alle drei Wahrheitswerte korrekt",
+        "levels": [
+          "0–1 richtig",
+          "2 richtig",
+          "Alle 3 richtig"
+        ]
+      },
+      {
+        "criterion": "Rechnerischer Beleg für Aussage 2",
+        "levels": [
+          "Kein Beleg",
+          "Teilweise",
+          "Vollständige Rechnung (80 cm³)"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Aussage 3 wird oft als 'falsch' eingeschätzt, weil bei Flächen eine Verdoppelung einer Länge die Fläche vervierfacht (quadratisch) — beim Volumen bei NUR EINER veränderten Größe (hier: nur h, G bleibt fest) ist der Zusammenhang aber linear, nicht quadratisch. Diese Unterscheidung lohnt den Vergleich mit Aufgabe t2.",
+      "Bei Aussage 2 wird das Drittel manchmal vergessen und einfach G · h = 240 cm³ als Pyramidenvolumen angegeben."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Mathematik",
+  "klasse": 3,
+  "kompetenzbereich": "3: Figuren und Körper",
+  "competences": [
+    "MAT.US.3.FIG.03"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "BEG",
+    "OPE"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0188",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:22+00:00",
+  "updated_at": "2026-07-05T05:34:22+00:00"
+}

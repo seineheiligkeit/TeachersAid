@@ -1,0 +1,73 @@
+{
+  "id": "c0175.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Beim Waldspaziergang entdeckt eine Gruppe Jugendlicher ein großes Pilzgeflecht (Myzel) unter der Laubstreu, als sie nach Stöcken graben. Erstelle eine begründete Handlungsempfehlung: Wie sollten sie sich verhalten?",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Die Jugendlichen überlegen, ob sie das Myzel zum Anschauen ausgraben, mit Erde bedecken und weitergehen, oder Fotos machen und einen Biologielehrer fragen, um welche Pilzart es sich handeln könnte. Was empfiehlst du und warum?"
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 40.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.STA.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Eine fachlich fundierte Empfehlung erkennt, dass das Ausgraben das empfindliche Myzel und seine Symbiose-Verbindungen zu Baumwurzeln zerstören würde, was dem Waldökosystem schadet und nicht rückgängig zu machen ist. Empfohlen wird daher, das Myzel möglichst unberührt mit Erde/Laub zu bedecken, ggf. Fotos zu machen und die Beobachtung später (z.B. mit einer Pilz-App oder einer Lehrkraft) zu bestimmen, statt es auszugraben.",
+    "acceptable_reasoning": "Akzeptiert wird auch eine Antwort, die das vorsichtige Freilegen zu reinen Beobachtungszwecken erlaubt, solange sie explizit begründet, warum ein Zerstören/dauerhaftes Ausgraben vermieden werden sollte (Schutz des Ökosystems, Unumkehrbarkeit).",
+    "rubric": [
+      {
+        "criterion": "sustainability_reasoning",
+        "levels": [
+          "Gibt eine Empfehlung ohne fachliche Begründung",
+          "Gibt eine Empfehlung mit einer einfachen Begründung (z.B. 'schadet der Natur')",
+          "Begründet die Empfehlung konkret mit der Bedeutung des Myzels für das Ökosystem (Symbiose, Unumkehrbarkeit der Zerstörung)"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Ziel ist nicht 'nichts anfassen dürfen', sondern eine begründete Abwägung zwischen Neugier/Lernen und Naturschutz."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 2,
+  "kompetenzbereich": "Standpunkte begründen und reflektiert handeln (S)",
+  "competences": [
+    "BIO.US.x.STA.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0175",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:13+00:00",
+  "updated_at": "2026-07-05T05:34:13+00:00"
+}

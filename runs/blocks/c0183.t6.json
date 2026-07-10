@@ -1,0 +1,81 @@
+{
+  "id": "c0183.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "modelling_task",
+    "prompt": "Plane dein eigenes Hochbeet: Wähle Länge, Breite und Höhe (jeweils zwischen 0,5 m und 2 m) so, dass genau 2 m³ Erde hineinpassen. Berechne zur Kontrolle den Rauminhalt deines gewählten Hochbeets, und gib zusätzlich an, wie viel Quadratmeter Holz du für die vier Seitenwände (ohne Boden und Deckel) brauchst.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "MOD",
+      "OPE"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.1.FIG.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Individuelle Lösung, z. B. l = 2 m, b = 1 m, h = 1 m: V = 2·1·1 = 2 m³ ✓. Seitenwände (4 Stück, ohne Boden/Deckel): 2 Wände mit l·h = 2·1 = 2 m² und 2 Wände mit b·h = 1·1 = 1 m². Gesamt: 2·2 + 2·1 = 6 m² Holz.",
+    "acceptable_reasoning": "Die gewählten Maße müssen l·b·h = 2 ergeben; die Seitenwandfläche wird ohne die waagrechten Flächen (Boden/Deckel) berechnet.",
+    "rubric": [
+      {
+        "criterion": "Rauminhalt exakt 2 m³",
+        "levels": [
+          "Nicht erreicht",
+          "Ungefähr erreicht",
+          "Exakt erreicht mit Kontrolle"
+        ]
+      },
+      {
+        "criterion": "Seitenwandfläche korrekt berechnet",
+        "levels": [
+          "Fehlt oder falsch",
+          "Ansatz erkennbar, Rechenfehler",
+          "Korrekt berechnet"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen vergessen häufig, dass beim Hochbeet oft kein Deckel und manchmal auch kein Boden aus Holz gebraucht wird — genau lesen, was gefragt ist.",
+      "Kontrolle des Rauminhalts (V = 2 m³) nicht überspringen — manche wählen Maße, die nicht exakt aufgehen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "modelling_task",
+  "subject": "Mathematik",
+  "klasse": 1,
+  "kompetenzbereich": "3: Figuren und Körper",
+  "competences": [
+    "MAT.US.1.FIG.03"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "MOD",
+    "OPE"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0183",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:17+00:00",
+  "updated_at": "2026-07-05T05:34:17+00:00"
+}

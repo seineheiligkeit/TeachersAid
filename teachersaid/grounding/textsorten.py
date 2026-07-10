@@ -104,6 +104,10 @@ class Textsorte:
     textbasis: str                              # literarisch | nicht-fiktional | pragmatisch
     scope: str                                  # kurz | lang | variabel
     artikel: str = "eine"                       # accusative article: „Verfasse {artikel} {name}“
+    schueler_definition: str = ""               # authored-then-vetted SIMPLE wording for the
+    # student learn-text (kept grade-readable — the Wiener-Sachtextformel lint checks it);
+    # the formal `definition` stays source-faithful to the SRDP Textsortenkatalog and serves
+    # the teacher layer. Empty → the scaffold falls back to `definition`.
     verwandt: tuple[str, ...] = field(default_factory=tuple)
     quelle: str = QUELLE
 
@@ -135,6 +139,8 @@ TEXTSORTEN: dict[str, Textsorte] = {
         definition="Journalistische Textsorte, die auf die Meinungsbildung der Leser/innen "
         "abzielt; die/der Verfasser/in äußert einen Standpunkt zu einem öffentlich "
         "diskutierten Thema.",
+        schueler_definition="In einem Kommentar sagst du deutlich, was du zu einem Thema "
+        "meinst. Deine Meinung stützt du mit guten Gründen.",
         schreibhandlungen=_ALL,
         struktur=(
             ("Titel", "Eine zugespitzte Überschrift, die neugierig macht und den Standpunkt "
@@ -213,6 +219,8 @@ TEXTSORTEN: dict[str, Textsorte] = {
         id="textinterpretation", name="Textinterpretation",
         definition="Deutung eines literarischen Textes auf Grundlage der Untersuchung von "
         "Textmerkmalen; setzt fort, wo die Textanalyse endet.",
+        schueler_definition="In einer Textinterpretation deutest du einen literarischen "
+        "Text. Du zeigst am Text, wie er gemacht ist und was er bedeuten kann.",
         schreibhandlungen=("argumentation", "deskription", "explikation", "narration",
                            "rekapitulation"),
         struktur=(
@@ -234,6 +242,8 @@ TEXTSORTEN: dict[str, Textsorte] = {
         id="zusammenfassung", name="Zusammenfassung",
         definition="Komprimierung einer (oder mehrerer) Quelle(n) entlang ihrer "
         "logisch-sachlichen Struktur unter vorgegebenen Gesichtspunkten.",
+        schueler_definition="In einer Zusammenfassung gibst du das Wichtigste eines Textes "
+        "kurz und sachlich wieder. Du bleibst dabei bei der Sache und ordnest klar.",
         schreibhandlungen=("deskription", "narration", "rekapitulation"),
         struktur=(
             ("Basissatz", "Autor/in, Titel, Textsorte und Kernaussage des Ausgangstextes in "

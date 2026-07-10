@@ -1,0 +1,101 @@
+{
+  "id": "c0183.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Das Karotten-Beet (Abbildung) ist 5 m lang und 3 m breit. Berechne den Umfang (für den Zaun) und den Flächeninhalt (für die Erde) des Beets.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "OPE"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.1.FIG.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Umfang: U = 2·(5+3) = 2·8 = 16 m. Flächeninhalt: A = 5·3 = 15 m².",
+    "acceptable_reasoning": "Anwendung der Formeln U = 2·(l+b) und A = l·b für Rechtecke.",
+    "rubric": [
+      {
+        "criterion": "Umfang korrekt (16 m)",
+        "levels": [
+          "Falsch",
+          "Richtig mit Einheit"
+        ]
+      },
+      {
+        "criterion": "Flächeninhalt korrekt (15 m²)",
+        "levels": [
+          "Falsch",
+          "Richtig mit Einheit"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Verwechslung von Umfang und Flächeninhalt ist der häufigste Fehler — auf die unterschiedlichen Einheiten (m vs. m²) hinweisen.",
+      "Beim Umfang wird manchmal nur l+b statt 2·(l+b) gerechnet (nur zwei statt vier Seiten gezählt)."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Mathematik",
+  "klasse": 1,
+  "kompetenzbereich": "3: Figuren und Körper",
+  "competences": [
+    "MAT.US.1.FIG.02"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "OPE"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:rectangle",
+      "spec": {
+        "length": 5,
+        "width": 3,
+        "label_l": "5 m",
+        "label_w": "3 m",
+        "title": "Karotten-Beet"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0183",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:17+00:00",
+  "updated_at": "2026-07-05T05:34:17+00:00"
+}

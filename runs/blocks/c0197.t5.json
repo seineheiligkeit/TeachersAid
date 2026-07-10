@@ -1,0 +1,81 @@
+{
+  "id": "c0197.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Jetzt wird gerechnet: Der Kegel auf dem Rutschturm hat Radius r = 1,5 m und Höhe h = 1 m. a) Berechne zunächst die Mantellinie s des Kegels (Hinweis: r und h stehen im rechten Winkel zueinander, s ist die Hypotenuse). b) Berechne damit das Volumen des Kegels (V = ⅓·π·r²·h) UND separat das Volumen des darunterliegenden Zylinders (Höhe 4 m, gleicher Radius). Vergleiche beide Volumina.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 7
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "OPE",
+      "MOD"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.4.FIG.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "a) s² = r² + h² = 1,5² + 1² = 2,25 + 1 = 3,25, also s = √3,25 ≈ 1,80 m. b) Kegelvolumen: V_Kegel = ⅓·π·1,5²·1 = ⅓·π·2,25 ≈ 2,36 m³. Zylindervolumen: V_Zyl = π·1,5²·4 = π·2,25·4 ≈ 28,27 m³. Der Zylinder fasst also mehr als das Zehnfache des Kegelvolumens.",
+    "acceptable_reasoning": "Pythagoras zur Bestimmung der Mantellinie, danach getrenntes Einsetzen in die Volumenformeln für Kegel und Zylinder, abschließend ein quantitativer Größenvergleich.",
+    "rubric": [
+      {
+        "criterion": "Mantellinie korrekt berechnet",
+        "levels": [
+          "Falsch/Pythagoras nicht angewendet",
+          "Ansatz richtig, Rechenfehler",
+          "Korrekt: s ≈ 1,80 m"
+        ]
+      },
+      {
+        "criterion": "Beide Volumina korrekt + Vergleich",
+        "levels": [
+          "Mehrere Fehler",
+          "Ein Volumen korrekt",
+          "Beide korrekt mit sinnvollem Vergleich"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Die Mantellinie wird oft mit der Kegelhöhe verwechselt und direkt in eine (hier nicht gebrauchte) Formel eingesetzt — sie wird in dieser Teilaufgabe für die Oberfläche gebraucht, nicht fürs Volumen; wichtig ist, dass Schüler:innen erkennen, wofür man was braucht.",
+      "Der Faktor ⅓ bei der Kegelformel wird häufig vergessen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Mathematik",
+  "klasse": 4,
+  "kompetenzbereich": "3: Figuren und Körper",
+  "competences": [
+    "MAT.US.4.FIG.03"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "OPE",
+    "MOD"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0197",
+  "source": "ai",
+  "created_at": "2026-07-05T05:51:17+00:00",
+  "updated_at": "2026-07-05T05:51:17+00:00"
+}

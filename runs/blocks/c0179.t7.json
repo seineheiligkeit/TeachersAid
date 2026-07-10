@@ -1,0 +1,97 @@
+{
+  "id": "c0179.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Deine Schule möchte den CO2-Ausstoß der Schulgemeinschaft senken und bittet die 4. Klassen um einen begründeten Vorschlag. Du hast in dieser Stunde gelernt: (1) wie der Kohlenstoffkreislauf funktioniert und wodurch er belastet wird, (2) wie man seriöse von unseriösen Klima-Aussagen unterscheidet, und (3) dass der CO2-Ausstoß pro Kopf zwischen Ländern (und damit auch zwischen Lebensstilen) stark schwankt.\n\nEntwickle EINE konkrete, an deiner Schule umsetzbare Maßnahme zur CO2-Reduktion (z. B. Mobilität, Ernährung, Energie, Müllvermeidung).\n(a) Beschreibe die Maßnahme konkret.\n(b) Begründe fachlich, WARUM diese Maßnahme den CO2-Ausstoß tatsächlich senkt (Bezug auf den Kreislauf oder auf die Datenlage).\n(c) Nenne einen möglichen Einwand gegen deine Maßnahme und wie du darauf reagieren würdest.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Die Schule sucht eine wirksame, umsetzbare Maßnahme zur CO2-Reduktion im Schulalltag."
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.WIS.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "BIO.US.x.STA.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 14,
+    "answer_key": "Es gibt keine einzige richtige Antwort; bewertet wird die fachliche Stichhaltigkeit der Konstruktion. Beispiel: Maßnahme = 'Fahrgemeinschaften/Fahrrad-Tag statt Elterntaxi'. (a) An einem festen Wochentag kommen möglichst viele Schüler:innen zu Fuß, mit dem Rad oder in Fahrgemeinschaften statt einzeln mit dem Auto. (b) Begründung: Autofahrten mit fossilen Kraftstoffen setzen CO2 frei, das über Jahrmillionen im Boden gebunden war (siehe Kreislauf) — weniger Einzelfahrten bedeuten weniger freigesetztes CO2; das passt auch zur Datenlage, dass wohlhabendere Länder mit hohem Autoverkehr einen hohen Pro-Kopf-Ausstoß haben. (c) Möglicher Einwand: 'Manche wohnen zu weit weg oder haben keine sicheren Radwege.' Reaktion: Maßnahme nur für Schüler:innen anbieten, für die es machbar ist, oder mit Fahrgemeinschaften kombinieren, statt eine Komplettlösung für alle zu verlangen.",
+    "acceptable_reasoning": "Jede Maßnahme wird anerkannt, wenn (b) einen fachlich korrekten Bezug zum Kreislauf ODER zur Datenauswertung herstellt (nicht nur 'ist gut für die Umwelt' ohne Mechanismus) und (c) einen realistischen Einwand mit sinnvoller Reaktion nennt.",
+    "rubric": [
+      {
+        "criterion": "Konkretheit der Maßnahme (a)",
+        "levels": [
+          "vollständig: Klar umsetzbare, konkrete Maßnahme an der eigenen Schule",
+          "teilweise: Maßnahme genannt, aber vage oder kaum umsetzbar",
+          "unzureichend: Keine erkennbare konkrete Maßnahme"
+        ]
+      },
+      {
+        "criterion": "Fachliche Begründung (b)",
+        "levels": [
+          "vollständig: Klarer Bezug zum Kreislauf-Mechanismus oder zur Datenlage",
+          "teilweise: Plausibler, aber vager Umweltbezug ohne Mechanismus",
+          "unzureichend: Keine fachliche Begründung"
+        ]
+      },
+      {
+        "criterion": "Einwand und Reaktion (c)",
+        "levels": [
+          "vollständig: Sachlicher Einwand mit durchdachter, realistischer Reaktion",
+          "teilweise: Einwand genannt, Reaktion fehlt oder ist unpassend",
+          "unzureichend: Kein sachlicher Einwand erkennbar"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Häufige Schwäche: Die Maßnahme wird genannt, aber (b) bleibt bei einer Allgemeinfloskel ('spart CO2') ohne Bezug zum Mechanismus (fossile Freisetzung, Pro-Kopf-Vergleich) — hier nachfragen: 'Wodurch genau wird weniger CO2 freigesetzt?'",
+      "Bei (c) reicht ein Einwand wie 'das ist unbequem' nicht — es sollte ein SACHLICHER Einwand sein (Erreichbarkeit, Kosten, Sicherheit), auf den eine durchdachte Reaktion folgt."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 4,
+  "kompetenzbereich": "Wissen aneignen, anwenden und kommunizieren (W)",
+  "competences": [
+    "BIO.US.x.WIS.01",
+    "BIO.US.x.STA.03"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "W",
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0179",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:15+00:00",
+  "updated_at": "2026-07-05T05:34:15+00:00"
+}

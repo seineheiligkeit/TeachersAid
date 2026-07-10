@@ -1,0 +1,120 @@
+{
+  "id": "c0195.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "fig1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Ein Trinkwasser-Notfallteam testet nach einem Unwetter drei mögliche Reinigungsverfahren an demselben trüben, salzhaltigen Flusswasser. Zusätzlich zu den gelösten Salzen enthält das Wasser auch Schwebstoffe (Sand, Schlamm): Filtrieren entfernt davon etwa 95 %, Dekantieren nur etwa 40 % (nur was sich von selbst absetzt), Destillieren etwa 90 %. Das Diagramm zeigt, wie viel Prozent der GELÖSTEN Salze jedes Verfahren jeweils aus dem Wasser entfernt. Vergleiche die drei Verfahren: Welches entfernt was zuverlässig, und welches Verfahren (oder welche Kombination) würdest du für sauberes UND trinkbares Wasser einsetzen? Begründe mit den Zahlen aus dem Diagramm und den oben genannten Schwebstoff-Werten.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "E",
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.US.x.ERK.03",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "CHE.US.x.ALL.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 14,
+    "answer_key": "Filtrieren entfernt fast alle Schwebstoffe (ca. 95 %), aber praktisch keine gelösten Salze (ca. 2 %) — ein Filter hält nur feste, ungelöste Teilchen zurück, gelöste Salzteilchen passen durch die Filterporen. Destillieren entfernt fast alle gelösten Salze (ca. 98 %) UND fast alle Schwebstoffe (ca. 90 %), weil nur reines Wasser verdampft und beides zurückbleibt. Dekantieren entfernt nur einen Teil der groben Schwebstoffe (ca. 40 %, nur was sich absetzt) und praktisch keine Salze (ca. 1 %). Empfehlung: Für sauberes UND trinkbares Wasser reicht keines der einfachen Verfahren allein optimal — am sinnvollsten ist eine Kombination: zuerst Filtrieren (grobe Schwebstoffe schnell und mit wenig Energie entfernen), danach Destillieren (die gelösten Salze entfernen). Destillieren allein wäre möglich, braucht aber deutlich mehr Energie/Zeit als nötig, wenn man die groben Schwebstoffe vorher schon per Filter losgeworden ist.",
+    "acceptable_reasoning": "Die Kernaussage muss stimmen: Filtrieren trennt keine gelösten Stoffe, nur Destillieren schafft beides zuverlässig. Eine Antwort, die 'nur Destillieren' empfiehlt und das mit den richtigen Zahlen begründet, ist ebenfalls vollständig korrekt — die Vorfilterung ist eine sinnvolle Ergänzung, aber kein Muss für die Kernaussage.",
+    "rubric": [
+      {
+        "criterion": "Datenbezug",
+        "levels": [
+          "vollständig: Vergleicht alle drei Verfahren mit konkreten Prozentangaben aus dem Diagramm.",
+          "teilweise: Nennt Zahlen zu mindestens zwei Verfahren.",
+          "unzureichend: Keine oder falsche Zahlenangaben."
+        ]
+      },
+      {
+        "criterion": "Fachliche Schlussfolgerung",
+        "levels": [
+          "vollständig: Erkennt, dass nur Destillieren gelöste Salze entfernt, und begründet die Empfehlung chemisch korrekt.",
+          "teilweise: Richtige Empfehlung, aber unvollständige oder unklare Begründung.",
+          "unzureichend: Falsche Empfehlung oder keine erkennbare Begründung."
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Zentrale Fehlvorstellung: 'Filtriertes Wasser ist automatisch trinkbar, weil es klar aussieht.' Klarstellen: klar (keine Schwebstoffe) ist nicht dasselbe wie salzfrei oder keimfrei.",
+      "Schüler:innen sollen die Zahlen tatsächlich vergleichen (nicht nur 'Destillieren ist am besten' ohne Beleg) — auf Zahlenbezug in der Antwort bestehen.",
+      "Dekantieren wird oft mit Filtrieren verwechselt: Dekantieren trennt nur durch Absetzen/Abgießen, ohne Filter — es entfernt daher nur, was sich von selbst absetzt, nicht feine Schwebstoffe."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Chemie",
+  "klasse": 4,
+  "kompetenzbereich": "Erkenntnisse gewinnen und interpretieren (E)",
+  "competences": [
+    "CHE.US.x.ERK.03",
+    "CHE.US.x.ALL.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "E",
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "fig1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Filtrieren",
+          "Dekantieren",
+          "Destillieren"
+        ],
+        "values": [
+          2.0,
+          1.0,
+          98.0
+        ],
+        "title": "Anteil der gelösten Salze, der entfernt wird",
+        "xlabel": "Trennverfahren",
+        "ylabel": "entfernte gelöste Salze (%)",
+        "log": false
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": true,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0195",
+  "source": "ai",
+  "created_at": "2026-07-05T05:38:19+00:00",
+  "updated_at": "2026-07-05T05:38:19+00:00"
+}

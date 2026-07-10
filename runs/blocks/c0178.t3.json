@@ -1,0 +1,96 @@
+{
+  "id": "c0178.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "df1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Das Diagramm zeigt, wie viele Regenwürmer je Quadratmeter je nach Bodennutzung leben. Beschreibe den Zusammenhang zwischen Nutzungsart und Regenwurmanzahl und leite eine mögliche Erklärung ab.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.WIS.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Je intensiver und stärker versiegelt die Nutzung, desto weniger Regenwürmer leben im Boden: von 180/m² auf der Naturwiese über 95 (Bio-Acker) und 40 (konventioneller Acker) bis zu nur 2/m² auf versiegeltem Boden. Eine mögliche Erklärung ist, dass Pflügen, Chemikalieneinsatz und vor allem Versiegelung (Asphalt/Beton) den Regenwürmern Nahrung, Sauerstoff und Bewegungsraum entziehen.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "'Weniger Regenwürmer' allein ist nur die Beschreibung – die Aufgabe verlangt zusätzlich eine begründete Erklärung des Zusammenhangs."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 3,
+  "kompetenzbereich": "Wissen aneignen, anwenden und kommunizieren (W)",
+  "competences": [
+    "BIO.US.x.WIS.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "df1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Naturwiese",
+          "Biologischer Acker",
+          "Konventioneller Acker",
+          "Versiegelter Boden"
+        ],
+        "values": [
+          180.0,
+          95.0,
+          40.0,
+          2.0
+        ],
+        "title": "Anzahl Regenwürmer je Quadratmeter nach Bodennutzung",
+        "xlabel": "Bodennutzung",
+        "ylabel": "Regenwürmer pro m²",
+        "log": false
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": true,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0178",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:15+00:00",
+  "updated_at": "2026-07-05T05:34:15+00:00"
+}

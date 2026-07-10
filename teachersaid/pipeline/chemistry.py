@@ -10,6 +10,14 @@ chemistry exactly as they drive maths.
 - `molar_mass`        — M = Σ count·atomic-weight, per-element Rechenweg.
 - `equation_balance`  — balance a skeleton via the conservation matrix' nullspace (sympy).
 - `stoichiometry`     — m → n → mole-ratio → n → m, the canonical four-step calculation.
+
+Übungsreihe upgrade: `molar_mass`, `equation_balance` and `atom_count` carry a
+`difficulty` (1–3) knob whose band is COMPUTED from the drawn item's structure
+(`_compound_band`: binary → polyatomic → nested/hydrate; `_reaction_band`: species
+count + coefficient size) — so the stamped band is derived, never asserted. Each draw
+also selects the item's curated, digit-free context sentence from grounding
+(`COMPOUND_CONTEXTS` / `REACTION_CONTEXTS`) as a prompt prefix. `stoichiometry` gets
+the context but no knob (its hardness is the four-step method, not the reaction).
 """
 
 from __future__ import annotations
@@ -21,8 +29,9 @@ from math import gcd
 from sympy import Matrix, ilcm
 
 from ..grounding.chemistry import (
-    ACID_BASE, ELEMENT_NAMES, REACTION_TYPE_REASON, REACTION_TYPES, SEPARATION_METHODS,
-    SUBSTANCE_CLASSES, mass_breakdown, molar_mass, parse_formula, subscript,
+    ACID_BASE, COMPOUND_CONTEXTS, ELEMENT_NAMES, REACTION_CONTEXTS, REACTION_TYPE_REASON,
+    REACTION_TYPES, SEPARATION_METHODS, SUBSTANCE_CLASSES, mass_breakdown, molar_mass,
+    parse_formula, reaction_key, subscript,
 )
 from ..schema.blocks import SolutionStep
 from ..schema.parametric import Instance
@@ -81,6 +90,8 @@ _COMPOUNDS = [
     "H2O", "CO2", "NaCl", "H2SO4", "CaCO3", "NaOH", "KOH", "HCl", "NH3", "CH4",
     "C6H12O6", "Ca(OH)2", "MgO", "Fe2O3", "Al2O3", "CuSO4", "KMnO4", "HNO3",
     "Na2CO3", "C2H5OH", "CaCl2", "ZnO",
+    # nested / hydrate formulas — the anspruchsvoll end of the molar-mass ramp
+    "Mg(OH)2", "Al2(SO4)3", "Ba(NO3)2", "(NH4)2SO4", "CuSO4·5H2O",
 ]
 
 # Real reaction skeletons (unbalanced), all uniquely balanceable.
@@ -96,14 +107,60 @@ _REACTIONS: list[tuple[list[str], list[str]]] = [
     (["Mg", "O2"], ["MgO"]),
     (["C2H6", "O2"], ["CO2", "H2O"]),
     (["Fe", "Cl2"], ["FeCl3"]),
+    (["NaN3"], ["Na", "N2"]),                     # the airbag reaction
+    (["CO2", "H2O"], ["C6H12O6", "O2"]),          # photosynthesis
 ]
+
+
+# --- difficulty bands, COMPUTED from item structure (derived, never asserted) ----
+def _compound_band(formula: str) -> int:
+    """1 = binary (two elements) · 2 = polyatomic (three+) · 3 = nested / hydrate."""
+    if "(" in formula or "·" in formula:
+        return 3
+    return 1 if len(parse_formula(formula)) <= 2 else 2
+
+
+def _compound_pool(pool: list[str], difficulty: int | None) -> list[str]:
+    if difficulty not in (1, 2, 3):
+        return pool
+    return [f for f in pool if _compound_band(f) == difficulty]
+
+
+_REACTION_BAND_CACHE: dict[str, int] = {}
+
+
+def _reaction_band(reactants: list[str], products: list[str]) -> int:
+    """1 = three species, coefficients ≤ two · 3 = multi-product with large
+    coefficients · 2 = everything between. Derived from the BALANCED structure."""
+    key = reaction_key(reactants, products)
+    if key not in _REACTION_BAND_CACHE:
+        rc, pc = balance_equation(reactants, products)
+        species = len(reactants) + len(products)
+        maxc = max(rc + pc)
+        if species <= 3 and maxc <= 2:
+            band = 1
+        elif species >= 4 and maxc >= 4:
+            band = 3
+        else:
+            band = 2
+        _REACTION_BAND_CACHE[key] = band
+    return _REACTION_BAND_CACHE[key]
+
+
+def _reaction_pool(difficulty: int | None) -> list[tuple[list[str], list[str]]]:
+    if difficulty not in (1, 2, 3):
+        return _REACTIONS
+    return [rp for rp in _REACTIONS if _reaction_band(*rp) == difficulty]
 
 
 # --- recipes ----------------------------------------------------------------
 @_recipe("molar_mass")
-def _molar_mass(rng: random.Random) -> Instance:
-    """Berechne die molare Masse einer Verbindung — M = Σ (Anzahl · Atommasse)."""
-    formula = rng.choice(_COMPOUNDS)
+def _molar_mass(rng: random.Random, difficulty: int | None = None) -> Instance:
+    """Berechne die molare Masse einer Verbindung — M = Σ (Anzahl · Atommasse).
+
+    Difficulty knob: band pool by formula structure (binary → polyatomic →
+    nested/hydrate). The stamped band is always the drawn item's real band."""
+    formula = rng.choice(_compound_pool(_COMPOUNDS, difficulty))
     M = molar_mass(formula)
     steps: list[SolutionStep] = []
     for el, n, contrib in mass_breakdown(formula):
@@ -115,13 +172,18 @@ def _molar_mass(rng: random.Random) -> Instance:
     return Instance(
         params={"formel": subscript(formula)},
         answer=f"M({subscript(formula)}) ≈ {_num(M)} g/mol",
-        steps=steps)
+        steps=steps,
+        difficulty=_compound_band(formula),
+        context=COMPOUND_CONTEXTS.get(formula))
 
 
 @_recipe("equation_balance")
-def _equation_balance(rng: random.Random) -> Instance:
-    """Gleiche eine Reaktionsgleichung aus (Erhaltung der Atome)."""
-    reactants, products = rng.choice(_REACTIONS)
+def _equation_balance(rng: random.Random, difficulty: int | None = None) -> Instance:
+    """Gleiche eine Reaktionsgleichung aus (Erhaltung der Atome).
+
+    Difficulty knob: band pool by species count + coefficient size (derived from
+    the balanced structure — see `_reaction_band`)."""
+    reactants, products = rng.choice(_reaction_pool(difficulty))
     rc, pc = balance_equation(reactants, products)
     if all(c == 1 for c in rc + pc):
         raise Unsuitable                              # trivial — no balancing to do
@@ -139,7 +201,9 @@ def _equation_balance(rng: random.Random) -> Instance:
         SolutionStep(text=f"Atombilanz je Element (links = rechts): {', '.join(checks)}"),
         SolutionStep(text=f"Ausgeglichene Gleichung: {balanced}"),
     ]
-    return Instance(params={"schema": skeleton}, answer=balanced, steps=steps)
+    return Instance(params={"schema": skeleton}, answer=balanced, steps=steps,
+                    difficulty=_reaction_band(reactants, products),
+                    context=REACTION_CONTEXTS.get(reaction_key(reactants, products)))
 
 
 @_recipe("stoichiometry")
@@ -170,7 +234,8 @@ def _stoichiometry(rng: random.Random) -> Instance:
     return Instance(
         params={"masse": _num(m_given, 0), "edukt": gs, "produkt": ts, "reaktion": balanced},
         answer=f"m({ts}) ≈ {_num(m_target)} g",
-        steps=steps)
+        steps=steps,
+        context=REACTION_CONTEXTS.get(reaction_key(reactants, products)))
 
 
 # --- qualitative recipes (Unterstufe) ---------------------------------------
@@ -235,13 +300,17 @@ def _reaction_type(rng: random.Random) -> Instance:
 
 _ATOM_COUNT_FORMULAS = [
     "H2O", "CO2", "NH3", "CH4", "H2SO4", "CaCO3", "C6H12O6", "NaCl", "Ca(OH)2", "HNO3",
+    "Mg(OH)2", "Al2(SO4)3",                       # nested formulas — the band-3 end
 ]
 
 
 @_recipe("atom_count")
-def _atom_count(rng: random.Random) -> Instance:
-    """Teilchenebene: wie viele Atome jeder Sorte (und insgesamt) enthält ein Molekül?"""
-    formula = rng.choice(_ATOM_COUNT_FORMULAS)
+def _atom_count(rng: random.Random, difficulty: int | None = None) -> Instance:
+    """Teilchenebene: wie viele Atome jeder Sorte (und insgesamt) enthält ein Molekül?
+
+    Difficulty knob: the same structural ladder as `molar_mass` — counting atoms in a
+    nested formula (parenthesis multiplication) is the harder skill."""
+    formula = rng.choice(_compound_pool(_ATOM_COUNT_FORMULAS, difficulty))
     counts = parse_formula(formula)
     total = sum(counts.values())
     parts = ", ".join(f"{el}: {n}" for el, n in counts.items())
@@ -251,4 +320,6 @@ def _atom_count(rng: random.Random) -> Instance:
     return Instance(
         params={"formel": subscript(formula)},
         answer=f"{parts} — insgesamt {total} Atome",
-        steps=rows)
+        steps=rows,
+        difficulty=_compound_band(formula),
+        context=COMPOUND_CONTEXTS.get(formula))

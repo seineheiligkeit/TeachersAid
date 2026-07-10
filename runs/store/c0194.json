@@ -1,0 +1,644 @@
+{
+  "id": "c0194",
+  "stage": "content",
+  "status": "pending",
+  "source": "generated",
+  "created_at": "2026-07-05T05:34:25+00:00",
+  "updated_at": "2026-07-05T05:34:26+00:00",
+  "title": "Physik 3. Kl. — Energie unterwegs — das E-Bike (generiert)",
+  "note": "",
+  "request": {
+    "subject": "Physik",
+    "klasse": 3,
+    "stufe": "Unterstufe",
+    "schulform": null,
+    "topic_raw": "Energie unterwegs — das E-Bike",
+    "envelope": "doppelstunde",
+    "options": {}
+  },
+  "resolution": {
+    "fassung": {
+      "kurztitel": "AHS-Lehrplan (konsolidiert)",
+      "bgbl": "BGBl. II Nr. 204/2024",
+      "doknr": "NOR40264237",
+      "valid_from": "2024-09-01",
+      "valid_to": "2026-08-31"
+    },
+    "subject": "Physik",
+    "klasse": 3,
+    "matched_kompetenzbereiche": [
+      "Energie"
+    ],
+    "grade_check": true,
+    "competences": [
+      {
+        "id": "PHY.US.3.ENE.01",
+        "kompetenzbereich": "Energie",
+        "klasse": 3,
+        "text": "Energie als wesentliche Erhaltungsgröße in Mechanik und Elektrizitätslehre erfassen sowie den Wechsel der Energieformen erkennen und qualitativ beschreiben. (W)",
+        "source_ref": "PHYSIK / 3. Klasse / Energie",
+        "dimensions": [
+          "W"
+        ],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      },
+      {
+        "id": "PHY.US.3.ENE.02",
+        "kompetenzbereich": "Energie",
+        "klasse": 3,
+        "text": "altersgerechte Informationen über den Aufbau und die Funktionsweise moderner elektronischer Geräte beschaffen (W) und über Aspekte der Wirtschafts- und Verbraucher/innenbildung diskutieren (S).",
+        "source_ref": "PHYSIK / 3. Klasse / Energie",
+        "dimensions": [
+          "W",
+          "S"
+        ],
+        "uebergreifende_themen": [
+          13
+        ],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      }
+    ],
+    "notes": []
+  },
+  "plan": null,
+  "content": {
+    "meta": {
+      "title": "Energie unterwegs — das E-Bike",
+      "subtitle": "LLM-Entwurf — Erstprüfung",
+      "subject": "Physik",
+      "stufe": "Unterstufe",
+      "klasse": 3,
+      "kernfrage": "Wohin verschwindet die Energie, wenn ein E-Bike den Berg hochfährt — und wo kommt sie beim Bremsen wieder her?",
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "lehrplan_label": "Physik · 3. Klasse · Energie",
+      "content_language": "de",
+      "subject_models": []
+    },
+    "subject_model": {
+      "subject": "Physik",
+      "stufe": "Unterstufe",
+      "dimensions": [
+        {
+          "id": "W",
+          "label": "Fachwissen anwenden",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "E",
+          "label": "Erkenntnisgewinnung und Experimentieren",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "S",
+          "label": "Standpunkte begründen und aus naturwissenschaftlicher Sicht bewerten",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "content_areas": [],
+      "task_kind_extensions": [
+        "experiment_protocol",
+        "source_critique"
+      ]
+    },
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Energie im E-Bike unterwegs",
+        "teacher_overview": {
+          "throughline": "Ausgehend vom Höhenprofil einer echten Fahrt ordnen die Schüler:innen den Abschnitten die passenden Energieformen zu und lernen, Energieumwandlung als durchgängigen Prozess zu lesen — nicht als isolierte Merksätze.",
+          "talking_points": [
+            "Zentral ist der Erhaltungssatz: Energie geht nie verloren, sie wandelt nur die Form (elektrisch, Bewegungs-, Höhen-, Wärmeenergie). Reibungswärme ist die am häufigsten vergessene Form.",
+            "Bergauf wandelt der Akku elektrische Energie in Bewegungs- UND Höhenenergie um; bergab wird die gespeicherte Höhenenergie wieder zu Bewegungsenergie.",
+            "Abb. 1 zeigt eine reale unregelmäßige Strecke — bewusst kein Modell-Idealprofil, damit Schüler:innen selbst interpretieren müssen, wo es anstrengend für den Akku wird."
+          ],
+          "extensions": [
+            "Vergleich mit einem normalen Fahrrad: Woher käme die zusätzliche Energie für den Berg ohne Motor?",
+            "Exkurs Wirkungsgrad: Nicht die ganze elektrische Energie wird zu Bewegung — ein Teil wird im Motor zu Wärme (spürbar, wenn der Motor nach der Fahrt warm ist)."
+          ],
+          "differentiation": null,
+          "timing_notes": null
+        },
+        "blocks": [
+          {
+            "id": "t1",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "abb1"
+            ],
+            "provenance": null,
+            "role": "task",
+            "kind": "multiple_choice",
+            "prompt": "Sieh dir Abb. 1 an. Zwischen km 4 und km 8 steigt die Strecke stark an, der Elektromotor unterstützt kräftig. Welche Energieumwandlung findet in diesem Abschnitt hauptsächlich statt?",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "Elektrische Energie wird in Bewegungsenergie und Höhenenergie umgewandelt.",
+                "Höhenenergie wird in elektrische Energie umgewandelt.",
+                "Bewegungsenergie wird vollständig in elektrische Energie zurückverwandelt.",
+                "Es findet keine Energieumwandlung statt, nur ein Ortswechsel."
+              ],
+              "select": "one"
+            },
+            "response": {
+              "mode": "choices",
+              "options": [
+                "Elektrische Energie wird in Bewegungsenergie und Höhenenergie umgewandelt.",
+                "Höhenenergie wird in elektrische Energie umgewandelt.",
+                "Bewegungsenergie wird vollständig in elektrische Energie zurückverwandelt.",
+                "Es findet keine Energieumwandlung statt, nur ein Ortswechsel."
+              ],
+              "select": "one"
+            },
+            "cognitive_level": "remember",
+            "difficulty": null,
+            "dimensions": [
+              "W"
+            ],
+            "content_area": "Elektrische und mechanische Energie, Energieerhaltung",
+            "serves": [
+              {
+                "competence_id": "PHY.US.3.ENE.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 4,
+            "answer_key": "Richtig ist die erste Option: Beim Bergauffahren mit Motorunterstützung wandelt der Akku elektrische Energie sowohl in Bewegungsenergie (das E-Bike fährt) als auch in Höhenenergie um (das E-Bike gewinnt an Höhe).",
+            "acceptable_reasoning": null,
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Verwechslung von Höhenenergie und Bewegungsenergie als Gegensatz statt als gleichzeitig auftretende Formen — bergauf entstehen typischerweise beide."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t2",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "abb1"
+            ],
+            "provenance": null,
+            "role": "task",
+            "kind": "data_interpretation",
+            "prompt": "Betrachte weiterhin Abb. 1.\n(a) In welchem Streckenabschnitt (in km) verliert das E-Bike wieder an Höhe?\n(b) Welche Energieform nimmt in genau diesem Abschnitt zu, wenn das E-Bike schneller wird?\n(c) Erkläre in eigenen Worten, warum ein E-Bike bergab kaum Akku-Energie braucht.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "understand",
+            "difficulty": null,
+            "dimensions": [
+              "W"
+            ],
+            "content_area": "Elektrische und mechanische Energie, Energieerhaltung",
+            "serves": [
+              {
+                "competence_id": "PHY.US.3.ENE.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "answer_key": "(a) Zwischen km 8 und km 12 (Höhe fällt von 80 m auf 15 m). (b) Die Bewegungsenergie nimmt zu — das E-Bike wird bergab schneller, auch ohne Motorleistung. (c) Die gespeicherte Höhenenergie wird von selbst in Bewegungsenergie umgewandelt (die Fahrt bergab beschleunigt das Rad), der Motor muss daher kaum zusätzliche elektrische Energie liefern.",
+            "acceptable_reasoning": "Formulierungen, die Höhenenergie sinngemäß als bereits vorhandene, gespeicherte Energie beschreiben (statt des Fachbegriffs), zählen als richtig.",
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Schüler:innen beschreiben oft nur, dass es bergab schneller wird, ohne den Bezug zur Energieumwandlung herzustellen — gezielt nach der Energieform fragen."
+            ],
+            "self_check": null
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Rekuperation — Bremsen als Stromquelle",
+        "teacher_overview": {
+          "throughline": "Am Beispiel der Rekuperationsbremse (Rückgewinnung von Bewegungsenergie als elektrische Energie) vertiefen die Schüler:innen den Erhaltungssatz und prüfen typische Fehlvorstellungen zur Energieumwandlung kritisch.",
+          "talking_points": [
+            "Manche E-Bikes wandeln beim Bremsen einen Teil der Bewegungsenergie über den Motor (als Generator) zurück in elektrische Energie — das lädt den Akku ein Stück weit wieder auf.",
+            "Wichtig: Rekuperation gewinnt NIE die volle eingesetzte Energie zurück — ein Teil wird immer zu Reibungswärme (an Bremsen, Reifen, Luftwiderstand). Kein Perpetuum mobile.",
+            "Abb. 2 zeigt, wie stark Motorunterstützung und Steigung die Reichweite verändern — guter Anlass, um über Fahrverhalten und Energiesparen zu sprechen."
+          ],
+          "extensions": [
+            "Recherche: Wie funktioniert ein Fahrraddynamo im Vergleich zur Rekuperationsbremse — was ist der gemeinsame physikalische Grundgedanke (Generatorprinzip)?",
+            "Warum lohnt sich Rekuperation in der Stadt (viel Bremsen) mehr als auf freier Strecke?"
+          ],
+          "differentiation": null,
+          "timing_notes": null
+        },
+        "blocks": [
+          {
+            "id": "t3",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "true_false_justify",
+            "prompt": "Ein E-Bike mit Rekuperationsbremse lädt beim Bremsen einen Teil des Akkus wieder auf. Beurteile die folgenden Aussagen dazu und begründe jeweils kurz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Beim Bremsen wird Bewegungsenergie teilweise in elektrische Energie zurückverwandelt.",
+                "Mit Rekuperation gewinnt man am Ende genauso viel Energie zurück, wie man vorher zum Beschleunigen gebraucht hat.",
+                "Auch ohne Rekuperation geht beim normalen Bremsen keine Energie verloren, sie wird nur unsichtbar.",
+                "Bergab bremsen mit Rekuperation kann helfen, den Akku auf einer langen Abfahrt wieder etwas aufzuladen."
+              ]
+            },
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Aussage",
+                "richtig",
+                "falsch",
+                "Begründung"
+              ],
+              "rows": 4
+            },
+            "cognitive_level": "apply",
+            "difficulty": null,
+            "dimensions": [
+              "W",
+              "E"
+            ],
+            "content_area": "Elektrische und mechanische Energie, Energieerhaltung",
+            "serves": [
+              {
+                "competence_id": "PHY.US.3.ENE.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "answer_key": "1: richtig — der Motor arbeitet beim Bremsen als Generator und wandelt einen Teil der Bewegungsenergie in elektrische Energie um. 2: falsch — ein Teil der Energie wird immer zu Reibungswärme (Bremsen, Luftwiderstand, Rollwiderstand); die volle Energiemenge kommt nie zurück. 3: richtig — Energie wird beim Bremsen zu Wärmeenergie umgewandelt, nicht vernichtet; sie ist nur nicht mehr als Bewegung nutzbar. 4: richtig — genau das ist der Sinn der Rekuperation auf langen Abfahrten.",
+            "acceptable_reasoning": "Begründungen, die sinngemäß den Erhaltungssatz nennen (Energie wird umgewandelt, nicht vernichtet oder erschaffen), gelten als richtig, auch ohne exakte Fachbegriffe.",
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Aussage 2 ist die zentrale Fehlvorstellung dieser Stunde: Schüler:innen setzen Rekuperation oft mit einem verlustfreien Kreislauf gleich. Reibungswärme als Verlustform explizit ansprechen."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t4",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "abb2"
+            ],
+            "provenance": null,
+            "role": "task",
+            "kind": "data_interpretation",
+            "prompt": "Sieh dir Abb. 2 an. Die Reichweite eines E-Bike-Akkus wurde unter vier Fahrweisen gemessen.\n(a) Bei welcher Fahrweise ist die Reichweite am größten, bei welcher am kleinsten?\n(b) Um wie viele Kilometer sinkt die Reichweite, wenn man bei flacher Strecke den Motor zuschaltet?\n(c) Erkläre, warum bergauf mit voller Unterstützung die Reichweite am stärksten sinkt.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "analyze",
+            "difficulty": null,
+            "dimensions": [
+              "W",
+              "S"
+            ],
+            "content_area": "Elektrische und mechanische Energie, Energieerhaltung",
+            "serves": [
+              {
+                "competence_id": "PHY.US.3.ENE.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "(a) Am größten bei 'Flach, Motor aus' (60 km), am kleinsten bei 'Bergauf, Motor an, volle Unterstützung' (15 km). (b) Von 60 km auf 45 km, also ein Rückgang um 15 km. (c) Bergauf muss der Motor zusätzlich Höhenenergie liefern (nicht nur Bewegungsenergie wie auf flacher Strecke), und bei voller Unterstützung übernimmt der Motor den größten Teil der Antriebsarbeit — dadurch wird pro gefahrenem Kilometer viel mehr elektrische Energie verbraucht.",
+            "acceptable_reasoning": "Für (c) reicht der sinngemäße Hinweis, dass bergauf zusätzliche Höhenenergie nötig ist UND der Motor mehr Arbeit übernimmt; eine der beiden Begründungen allein wird als teilweise richtig gewertet.",
+            "rubric": [
+              {
+                "criterion": "Datenablesung",
+                "levels": [
+                  "Falsche oder keine Werte",
+                  "Werte teilweise korrekt abgelesen",
+                  "Alle Werte korrekt abgelesen und verglichen"
+                ]
+              },
+              {
+                "criterion": "Physikalische Erklärung",
+                "levels": [
+                  "Keine oder falsche Erklärung",
+                  "Ein Grund korrekt genannt",
+                  "Beide Gründe (Steigung und Unterstützungsstufe) korrekt kombiniert"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Schüler:innen nennen bei (c) oft nur einen der beiden Gründe (Steigung ODER Unterstützungsstufe) — auf die Kombination beider Effekte hinweisen."
+            ],
+            "self_check": null
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "Der Akku im E-Bike — Technik und kluge Nutzung",
+        "teacher_overview": {
+          "throughline": "Der Blick wechselt vom Energiefluss zum Gerät selbst: Schüler:innen recherchieren altersgerecht, wie ein E-Bike-Akku aufgebaut ist, und bewerten eine Kaufsituation aus Verbraucher:innensicht — der geforderte Brückenschlag zwischen Fachwissen und Standpunkte-Begründen.",
+          "talking_points": [
+            "Der Akku speichert elektrische Energie chemisch (Lithium-Ionen-Technologie) — das Grundprinzip reicht: Laden speichert Energie, Entladen gibt sie wieder ab, ein Teil geht dabei stets als Wärme verloren.",
+            "Verbraucher:innenbildung: Akkukapazität (Wattstunden), Reichweitenangabe der Hersteller und tatsächliche Reichweite unterscheiden sich je nach Fahrweise, Gelände und Temperatur deutlich — Werbeversprechen kritisch hinterfragen.",
+            "Ökonomischer Aspekt: Ein größerer/teurerer Akku lohnt sich nur, wenn die tatsächliche Nutzung (z. B. viele Bergstrecken) das auch braucht — sonst zahlt man für ungenutzte Kapazität."
+          ],
+          "extensions": [
+            "Recherche: Was bedeutet die Angabe 'Wh' (Wattstunden) auf einem Akku, und wie hängt sie mit der Reichweite zusammen?",
+            "Diskussion: Welche Rolle spielt die Lebensdauer eines Akkus (Anzahl Ladezyklen) für die Umweltbilanz eines E-Bikes im Vergleich zu einem normalen Fahrrad?"
+          ],
+          "differentiation": null,
+          "timing_notes": null
+        },
+        "blocks": [
+          {
+            "id": "t5",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "abb2"
+            ],
+            "provenance": null,
+            "role": "task",
+            "kind": "decision_scenario",
+            "prompt": "Familie Berger möchte ein E-Bike kaufen und fährt hauptsächlich in einer sehr hügeligen Gegend, meist Strecken von 15 bis 20 km. Ein Verkäufer bietet zwei Modelle an: Modell A mit kleinem, günstigerem Akku (Herstellerangabe: bis zu 60 km Reichweite) und Modell B mit großem, teurerem Akku (Herstellerangabe: bis zu 100 km Reichweite). Beziehe dich auf Abb. 2 und die Reichweitenangaben und begründe, welches Modell du der Familie empfehlen würdest.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Familie Berger fährt meist 15 bis 20 km in hügeligem Gelände. Modell A: kleiner Akku, Herstellerangabe bis 60 km. Modell B: großer Akku, Herstellerangabe bis 100 km, teurer."
+            },
+            "response": {
+              "mode": "box",
+              "min_height_mm": 45.0
+            },
+            "cognitive_level": "evaluate",
+            "difficulty": null,
+            "dimensions": [
+              "W",
+              "S"
+            ],
+            "content_area": "Erste Einblicke in die Funktionsweise moderner elektronischer Geräte",
+            "serves": [
+              {
+                "competence_id": "PHY.US.3.ENE.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "answer_key": "Sinnvolle Empfehlung: Da Herstellerangaben meist für die günstigste Fahrweise (flach, Motor aus) gelten, laut Abb. 2 aber bergauf mit Unterstützung die reale Reichweite deutlich sinkt (bis auf 15 km bei voller Unterstützung), sollte man mit der Familie klären, wie stark sie den Motor im hügeligen Gelände nutzen wird. Bei häufiger voller Unterstützung reicht der kleine Akku (Modell A) für 15 bis 20 km im hügeligen Gelände möglicherweise knapp nicht sicher aus; Modell B bietet mehr Sicherheitsreserve, auch wenn die Herstellerangabe von 100 km real ebenfalls deutlich sinken wird. Beide Empfehlungen (A mit Einschränkung/Ladepause, oder B als sicherer) sind akzeptabel, wenn sie den Unterschied zwischen Herstellerangabe und realer, geländeabhängiger Reichweite nennen.",
+            "acceptable_reasoning": "Zentral ist die kritische Auseinandersetzung mit der Herstellerangabe als Idealwert und der Bezug auf die reale, geländeabhängige Reichweite aus Abb. 2 — nicht die konkrete Modellwahl allein.",
+            "rubric": [
+              {
+                "criterion": "Kritischer Umgang mit Herstellerangaben",
+                "levels": [
+                  "Herstellerangabe unreflektiert übernommen",
+                  "Unterschied zur realen Reichweite angesprochen",
+                  "Unterschied klar erklärt und auf die Situation der Familie bezogen"
+                ]
+              },
+              {
+                "criterion": "Begründete Empfehlung",
+                "levels": [
+                  "Keine oder unbegründete Empfehlung",
+                  "Empfehlung mit einfacher Begründung",
+                  "Empfehlung schlüssig aus Gelände, Streckenlänge und Daten abgeleitet"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Schüler:innen übernehmen Herstellerangaben oft unreflektiert als reale Reichweite — der Vergleich mit Abb. 2 soll genau das hinterfragen lehren."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t6",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "create_produce",
+            "prompt": "Entwirf einen kurzen Info-Zettel (nur Text, keine Zeichnung nötig) für Neukund:innen eines Fahrradgeschäfts mit dem Titel 'So holst du mehr Kilometer aus deinem E-Bike-Akku'. Nenne mindestens drei konkrete Tipps und erkläre bei jedem Tipp kurz, welche Energieform dabei geschont wird.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 60.0
+            },
+            "cognitive_level": "create",
+            "difficulty": null,
+            "dimensions": [
+              "W",
+              "S"
+            ],
+            "content_area": "Erste Einblicke in die Funktionsweise moderner elektronischer Geräte",
+            "serves": [
+              {
+                "competence_id": "PHY.US.3.ENE.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "answer_key": "Musterlösung (Beispiel): Titel: 'So holst du mehr Kilometer aus deinem E-Bike-Akku'. Tipp 1: Motorunterstützung nur bei Steigungen einschalten, auf flacher Strecke selbst treten — spart elektrische Energie, die sonst der Akku liefern müsste. Tipp 2: Reifen richtig aufpumpen — weniger Rollreibung bedeutet weniger Energie, die zu Wärme wird. Tipp 3: Rekuperationsbremse bei längeren Abfahrten nutzen (falls vorhanden) — gewinnt einen Teil der Bewegungsenergie als elektrische Energie zurück. Weitere plausible, physikalisch korrekte Tipps (z. B. geringere Zuladung senkt die nötige Bewegungs- und Höhenenergie) ebenfalls akzeptieren.",
+            "acceptable_reasoning": "Jede Kombination aus mindestens drei physikalisch korrekten, verständlich formulierten Tipps mit Bezug zu einer Energieform zählt als vollständig richtig.",
+            "rubric": [
+              {
+                "criterion": "Anzahl und Qualität der Tipps",
+                "levels": [
+                  "Weniger als drei Tipps oder unklar",
+                  "Drei Tipps, teils ohne Energiebezug",
+                  "Drei oder mehr Tipps, alle mit korrektem Energiebezug"
+                ]
+              },
+              {
+                "criterion": "Verständlichkeit für Kund:innen",
+                "levels": [
+                  "Zu technisch oder unklar formuliert",
+                  "Verständlich, aber wenig ansprechend",
+                  "Klar, ansprechend und alltagstauglich formuliert"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Schüler:innen geben oft reine Verhaltenstipps ohne Bezug zur Energieform (z. B. 'langsam fahren') — die Erklärung der Energieform pro Tipp aktiv einfordern."
+            ],
+            "self_check": null
+          }
+        ]
+      }
+    ],
+    "assets": [
+      {
+        "id": "abb1",
+        "role": "figure",
+        "medium": "visual",
+        "generator": "matplotlib:function_graph",
+        "spec": {
+          "title": "Höhenprofil einer E-Bike-Fahrt",
+          "xmin": 0,
+          "xmax": 12,
+          "ymin": 0,
+          "ymax": 90,
+          "points": [
+            [
+              0,
+              10
+            ],
+            [
+              4,
+              10
+            ],
+            [
+              8,
+              80
+            ],
+            [
+              12,
+              15
+            ]
+          ],
+          "connect": true,
+          "xlabel": "Strecke in km",
+          "ylabel": "Höhe über Start in m"
+        },
+        "correctness_surface": null,
+        "misleading_in_isolation": false,
+        "intentionally_flawed": null,
+        "machine_generatable": true,
+        "provenance": null,
+        "data_source": null,
+        "illustrative": false,
+        "caption": null
+      },
+      {
+        "id": "abb2",
+        "role": "figure",
+        "medium": "visual",
+        "generator": "matplotlib:bar_chart",
+        "spec": {
+          "categories": [
+            "Flach, Motor aus",
+            "Flach, Motor an",
+            "Bergauf, Motor an",
+            "Bergauf, Motor an, volle Unterstützung"
+          ],
+          "values": [
+            60,
+            45,
+            25,
+            15
+          ],
+          "title": "Reichweite des Akkus je nach Fahrweise",
+          "xlabel": "Fahrweise",
+          "ylabel": "Reichweite in km"
+        },
+        "correctness_surface": null,
+        "misleading_in_isolation": false,
+        "intentionally_flawed": null,
+        "machine_generatable": true,
+        "provenance": null,
+        "data_source": null,
+        "illustrative": true,
+        "caption": null
+      }
+    ],
+    "nachweis": {
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "statement": "Diese Materialien adressieren 2 von 2 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
+      "competence_coverage": [
+        {
+          "competence_id": "PHY.US.3.ENE.01",
+          "exercised_by": [
+            "t1",
+            "t2",
+            "t3",
+            "t4"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "PHY.US.3.ENE.02",
+          "exercised_by": [
+            "t5",
+            "t6"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        }
+      ],
+      "gaps": [],
+      "zentrale_konzepte": [
+        "Energie"
+      ],
+      "uebergreifende_themen": [
+        13
+      ]
+    },
+    "depth_profile": {
+      "by_level": {
+        "remember": 1,
+        "understand": 1,
+        "apply": 1,
+        "analyze": 1,
+        "evaluate": 1,
+        "create": 1
+      },
+      "by_dimension": {
+        "W": 6
+      },
+      "by_difficulty": {
+        "1": 2,
+        "2": 2,
+        "3": 2
+      },
+      "minutes_total": 46,
+      "minutes_resource_independent": 46
+    },
+    "rack": null
+  },
+  "artifacts": {
+    "student_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0194\\student.pdf",
+    "teacher_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0194\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0194\\homework.pdf",
+    "preview_png": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0194\\raster\\student.p1.png"
+  },
+  "verify_problems": [],
+  "verify_warnings": [],
+  "parent_id": null,
+  "feedback": [],
+  "error": null
+}

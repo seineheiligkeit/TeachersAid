@@ -1,0 +1,88 @@
+{
+  "id": "c0186.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Das Minuszeichen taucht in der Mathematik in drei verschiedenen Rollen auf. Entscheide, ob die folgenden Aussagen richtig oder falsch sind, und benenne jeweils, in welcher Rolle das Minuszeichen in der Aussage steckt.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "In der Rechnung 9 − 4 ist das Minuszeichen ein Rechenzeichen.",
+        "Bei der Temperaturangabe −3 °C ist das Minuszeichen ein Rechenzeichen.",
+        "Die Gegenzahl von −7 ist 7, weil man beim Bilden der Gegenzahl das Vorzeichen wechselt."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "BEG",
+      "DAR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.3.ZAH.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "1) Richtig — Rechenzeichen (eine Subtraktion zwischen zwei Zahlen). 2) Falsch — hier ist das Minus ein Vorzeichen, es beschreibt einen Zustand (Temperatur unter null), keine Rechnung zwischen zwei Zahlen. 3) Richtig — Zeichen für das Übergehen zur Gegenzahl: −(−7) = 7.",
+    "acceptable_reasoning": "Entscheidend ist die Unterscheidung: steht das Minus zwischen zwei Zahlen (Rechenzeichen), vor einer einzelnen Zahl zur Zustandsbeschreibung (Vorzeichen), oder wird es auf eine Zahl angewendet, um zur Gegenzahl zu gelangen?",
+    "rubric": [
+      {
+        "criterion": "Alle drei Wahrheitswerte korrekt",
+        "levels": [
+          "0–1 richtig",
+          "2 richtig",
+          "Alle 3 richtig"
+        ]
+      },
+      {
+        "criterion": "Rolle des Minuszeichens korrekt benannt",
+        "levels": [
+          "Keine Rolle benannt",
+          "Teilweise korrekt",
+          "Alle drei Rollen korrekt unterschieden"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Aussage 2 wird häufig als 'richtig' markiert, weil optisch ein Minus vor einer Zahl steht wie bei einer Subtraktion — der Unterschied ist rein funktional, nicht optisch.",
+      "Bei Aussage 3 wird oft übersehen, dass 'Gegenzahl bilden' und 'subtrahieren' zwei verschiedene Vorgänge sind, auch wenn beide das Minuszeichen nutzen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Mathematik",
+  "klasse": 3,
+  "kompetenzbereich": "1: Zahlen und Maße",
+  "competences": [
+    "MAT.US.3.ZAH.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "BEG",
+    "DAR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0186",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:19+00:00",
+  "updated_at": "2026-07-05T05:34:19+00:00"
+}

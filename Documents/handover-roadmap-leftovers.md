@@ -2,10 +2,12 @@
 
 You are an AI coding agent asked to complete the remaining backlog of **TeachersAid** — an
 on-demand generator of Austrian-Lehrplan-anchored teaching material for AHS secondary schools.
-This document is your complete brief. It was written 10 Jul 2026, immediately after a session
-that closed most of the backlog (suite went 368 → **478 passed, 1 skipped**); what follows is
-everything that is genuinely still open, specced the same way the previous session's (successful)
-work was specced.
+This document is your complete brief. It was written 10 Jul 2026, immediately after (a) a session
+that closed most of this machine's backlog and (b) the **reconciliation merge of two diverged
+development lines** (see the roadmap's Start-here reconciliation block — the repo now contains BOTH
+lines' work: the Wave-A engines, the Prüfen/four-station dashboard, misconception MC, scene3d, AND
+the eight tracks from this line). Baseline now: **674 passed, 1 skipped**. What follows is everything
+that is genuinely still open, specced the same way the previous sessions' (successful) work was.
 
 ## 0. Read first, in this order
 
@@ -41,7 +43,9 @@ The distilled non-negotiables (details in the two files above):
 - Run tests ONLY with `C:/Users/sebas/Desktop/TeachersAid/.venv/Scripts/python.exe -m pytest -q`
   from the repo root. Bare `python`/`py` resolves to a different interpreter (3.12, no pytest,
   no engine deps). Do not `pip install` anything.
-- Baseline: **478 passed, 1 skipped** — keep it green; add tests for everything you build.
+- Baseline: **674 passed, 1 skipped** — keep it green; add tests for everything you build.
+- `git fetch origin` FIRST and confirm you are on up-to-date `main` before branching — this repo
+  is developed on two machines and has already diverged once.
 - No `ANTHROPIC_API_KEY` (offline generation phase) — everything you build must work offline;
   the dashboard demos from the master library. Network access for FETCH TOOLS works (this PC
   reaches the Austrian sources).
@@ -80,16 +84,27 @@ for solids** — Quader/Würfel at minimum; square pyramid and/or triangular pri
 
 ### T2 — "Varianten erzeugen" dashboard surface
 
-`orch.compose_variants(store, template_id, n)` exists and works; it has no UI.
+`orch.compose_variants(store, template_id, n)` exists and works; it has no UI. NOTE: the
+dashboard was recently redesigned into **four stations** (`api/static/index.html`) — study the
+current structure first and place the form where it genuinely belongs in that flow (likely the
+composing/production station), not in a tab that no longer exists.
 
 - Add `GET /api/templates` (list `PARAM_TEMPLATES`: id, subject, Klasse, title/anchor) and
-  `POST /api/variants` (template_id + n → stage a pending content item, like `/api/compose`
-  does). Follow `teachersaid/api/` conventions exactly; the form goes in the **Inhalte** tab
-  next to "Arbeitsblatt zusammenstellen" (`api/static/index.html`).
+  `POST /api/variants` (template_id + n + optional `ramp` → stage a pending content item, like
+  compose does). The unified engine supports `ramp=True` (ascending difficulty Übungsreihe) and
+  per-variant figure assets — expose both.
 - Figure-emitting templates (pythagoras etc.) must show their per-variant figures in the
   Vorschau like any other asset — verify, don't assume.
 - Tests: mirror `tests/test_api.py` patterns — list endpoint, create → item staged and
   verify-clean, offline.
+
+### T2b (small, well-scoped) — teacher-only boxplot solution figure
+
+`boxplot_from_data` (pipeline/parametrize.py) deliberately emits no `Instance.figure` because
+those render on every projection. The Rätsel engine added `TaskBlock.solution_asset_refs` — a
+teacher-projection-only asset channel. Wire the recipe's computed five-number summary into a
+`matplotlib:boxplot` solution figure via that channel (extend the `Instance`→block seam
+minimally), keep the existing no-student-leak tests green, add one locking the teacher-only path.
 
 ### T3 — ANNO fetch tool + real newspaper media texts
 

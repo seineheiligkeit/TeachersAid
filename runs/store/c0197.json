@@ -1,0 +1,680 @@
+{
+  "id": "c0197",
+  "stage": "content",
+  "status": "pending",
+  "source": "generated",
+  "created_at": "2026-07-05T05:51:17+00:00",
+  "updated_at": "2026-07-05T05:51:17+00:00",
+  "title": "Mathematik 4. Kl. — Baustelle Freibad — Pythagoras, Kreise und ein Rutschturm (generiert)",
+  "note": "",
+  "request": {
+    "subject": "Mathematik",
+    "klasse": 4,
+    "stufe": "Unterstufe",
+    "schulform": null,
+    "topic_raw": "Baustelle Freibad — Pythagoras, Kreise und ein Rutschturm",
+    "envelope": "doppelstunde",
+    "options": {}
+  },
+  "resolution": {
+    "fassung": {
+      "kurztitel": "AHS-Lehrplan (konsolidiert)",
+      "bgbl": "BGBl. II Nr. 204/2024",
+      "doknr": "NOR40264237",
+      "valid_from": "2024-09-01",
+      "valid_to": "2026-08-31"
+    },
+    "subject": "Mathematik",
+    "klasse": 4,
+    "matched_kompetenzbereiche": [
+      "3: Figuren und Körper"
+    ],
+    "grade_check": true,
+    "competences": [
+      {
+        "id": "MAT.US.4.FIG.01",
+        "kompetenzbereich": "3: Figuren und Körper",
+        "klasse": 4,
+        "text": "mit dem pythagoräischen Lehrsatz arbeiten,",
+        "source_ref": "MATHEMATIK / 4. Klasse / 3: Figuren und Körper",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      },
+      {
+        "id": "MAT.US.4.FIG.02",
+        "kompetenzbereich": "3: Figuren und Körper",
+        "klasse": 4,
+        "text": "Umfang und Flächeninhalt von Kreisen und Kreisteilen ermitteln,",
+        "source_ref": "MATHEMATIK / 4. Klasse / 3: Figuren und Körper",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      },
+      {
+        "id": "MAT.US.4.FIG.03",
+        "kompetenzbereich": "3: Figuren und Körper",
+        "klasse": 4,
+        "text": "Drehzylinder und Drehkegel beschreiben; Oberflächen- und Rauminhalte ermitteln.",
+        "source_ref": "MATHEMATIK / 4. Klasse / 3: Figuren und Körper",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      }
+    ],
+    "notes": []
+  },
+  "plan": null,
+  "content": {
+    "meta": {
+      "title": "Baustelle Freibad — Pythagoras, Kreise und ein Rutschturm",
+      "subtitle": "LLM-Entwurf — Erstprüfung",
+      "subject": "Mathematik",
+      "stufe": "Unterstufe",
+      "klasse": 4,
+      "kernfrage": "Wie viel Material braucht man wirklich, wenn ein rundes Becken und ein zylindrischer Turm gebaut werden sollen?",
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "lehrplan_label": "Mathematik · 4. Klasse · 3: Figuren und Körper",
+      "content_language": "de",
+      "subject_models": []
+    },
+    "subject_model": {
+      "subject": "Mathematik",
+      "stufe": "Unterstufe",
+      "dimensions": [
+        {
+          "id": "MOD",
+          "label": "Modellieren und Problemlösen",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "OPE",
+          "label": "Operieren (Rechnen und Konstruieren)",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "DAR",
+          "label": "Darstellen und Interpretieren",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "BEG",
+          "label": "Vermuten und Begründen",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "content_areas": [
+        {
+          "id": "ZAH",
+          "label": "Zahlen und Maße",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "VAR",
+          "label": "Variablen und Funktionen",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "FIG",
+          "label": "Figuren und Körper",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "DAT",
+          "label": "Daten und Zufall",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "task_kind_extensions": [
+        "calculation",
+        "construction",
+        "modelling_task"
+      ]
+    },
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Vom flachen Plan zum echten Baumaterial",
+        "teacher_overview": {
+          "throughline": "Anhand eines fiktiven Freibad-Umbaus wandert die Klasse von der ebenen Figur (Dreieck, Kreis, Rechteck) zum Körper (Zylinder, Kegel): erst wird mit Pythagoras eine schräge Strecke berechnet, dann Umfang und Fläche eines Rundbeckens bestimmt, und schließlich Oberfläche und Volumen von zylindrischen und kegelförmigen Bauteilen — jeweils mit der Frage im Hinterkopf, wie viel Material oder Wasser tatsächlich gebraucht wird.",
+          "talking_points": [
+            "Der pythagoräische Lehrsatz beantwortet hier eine ganz praktische Frage: Wie lang muss eine schräge Strebe sein, wenn man nur die waagrechte und die senkrechte Entfernung kennt?",
+            "Bei Kreisen ist der entscheidende Unterschied zwischen Umfang (Rand, linear, für Einzäunung/Bordüre) und Flächeninhalt (für Wassermenge/Fliesenbedarf) — dieser Unterschied wird ständig verwechselt.",
+            "Drehzylinder und Drehkegel entstehen durch Drehen eines Rechtecks bzw. rechtwinkligen Dreiecks um eine Achse — das erklärt, warum ihre Formeln an die des Kreises anknüpfen.",
+            "Oberfläche (wie viel Material für die Hülle) und Volumen (wie viel passt hinein) sind zwei verschiedene Fragen mit unterschiedlichen Einheiten (m² vs. m³) — diese Unterscheidung ist der Kern des Themas."
+          ],
+          "extensions": [
+            "Für das Rundbecken berechnen, wie viele Liter Wasser bei einer Tiefe von 1,2 m hineinpassen (Zylindervolumen, 1 m³ = 1000 l).",
+            "Recherchieren, wie ein Kegelstumpf (z. B. ein Eimer) aussieht, und überlegen, wie sich dessen Volumenformel von der des vollen Kegels unterscheiden müsste.",
+            "Ein Netz (Abwicklung) des Rutschturms aus Papier bauen, um die Oberflächenformel „begreifbar“ zu machen."
+          ],
+          "differentiation": null,
+          "timing_notes": null
+        },
+        "blocks": [
+          {
+            "id": "t1",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "abb1"
+            ],
+            "provenance": null,
+            "role": "task",
+            "kind": "calculation",
+            "prompt": "Die Wasserrutsche im Freibad braucht eine schräge Stützstrebe (siehe Abbildung 1). Der waagrechte Abstand zum Turm beträgt 4 m, die Höhe 3 m. Berechne die Länge s der Strebe mithilfe des pythagoräischen Lehrsatzes.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "remember",
+            "difficulty": null,
+            "dimensions": [
+              "OPE"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.FIG.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 5,
+            "answer_key": "s² = 4² + 3² = 16 + 9 = 25, also s = √25 = 5 m.",
+            "acceptable_reasoning": "Direkte Anwendung von a² + b² = c² auf das rechtwinklige Dreieck aus Abbildung 1.",
+            "rubric": [],
+            "solution_steps": [],
+            "watch_outs": [
+              "Die Hypotenuse s ist immer die längste Seite, gegenüber dem rechten Winkel — nicht mit einer Kathete verwechseln.",
+              "4-3-5 ist ein bekanntes pythagoräisches Tripel; manche erraten es, ohne zu rechnen — trotzdem den Rechenweg einfordern."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t2",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "abb2"
+            ],
+            "provenance": null,
+            "role": "task",
+            "kind": "calculation",
+            "prompt": "Das Rundbecken hat einen Radius von 5 m (siehe Abbildung 2). a) Berechne den Umfang des Beckenrands — dafür wird die Bordüre bestellt. b) Berechne den Flächeninhalt der Wasseroberfläche — dafür wird die Chemikalien-Dosierung berechnet. Runde beide Ergebnisse sinnvoll.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "apply",
+            "difficulty": null,
+            "dimensions": [
+              "OPE"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.FIG.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 7,
+            "answer_key": "a) Umfang U = 2·π·r = 2·π·5 ≈ 31,42 m, aufgerundet z. B. 32 m Bordüre bestellen. b) Fläche A = π·r² = π·25 ≈ 78,54 m².",
+            "acceptable_reasoning": "Anwenden der Formeln U = 2πr und A = πr² mit r = 5 m.",
+            "rubric": [
+              {
+                "criterion": "Umfang korrekt (inkl. sinnvoller Rundung)",
+                "levels": [
+                  "Falsch oder Formel verwechselt",
+                  "Rechenweg richtig, Rundung unpassend",
+                  "Vollständig korrekt mit passender Rundung"
+                ]
+              },
+              {
+                "criterion": "Fläche korrekt",
+                "levels": [
+                  "Falsch oder Formel verwechselt",
+                  "Kleiner Rechenfehler",
+                  "Korrekt"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Umfang und Fläche werden regelmäßig verwechselt — hier wird bewusst beides in einer Aufgabe verlangt, um den Unterschied zu üben.",
+              "Bei der Bordüre ist Aufrunden sinnvoll (Materialreserve), bei der Fläche reicht eine übliche kaufmännische Rundung."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t3",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "abb2",
+              "abb3"
+            ],
+            "provenance": null,
+            "role": "task",
+            "kind": "table_fill",
+            "prompt": "Neben dem Rundbecken gibt es noch das rechteckige Nichtschwimmerbecken ABCD mit den Seiten 6 m und 4 m (siehe Abbildung 3). Trage für jedes Becken Umfang und Flächeninhalt in die Tabelle ein. Berechne dann für jedes Becken, wie viele Quadratmeter Wasserfläche auf einen Meter Beckenrand kommen (Fläche geteilt durch Umfang), und beurteile, welche Beckenform pro Meter Randmaterial die größere Wasserfläche bietet.",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Becken",
+                "Umfang",
+                "Flächeninhalt",
+                "m² pro m Rand"
+              ],
+              "rows": 2
+            },
+            "cognitive_level": "analyze",
+            "difficulty": null,
+            "dimensions": [
+              "DAR",
+              "OPE"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.FIG.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "answer_key": "Rechteck ABCD: Umfang = 2·(6+4) = 20 m, Fläche = 6·4 = 24 m², also 24 ÷ 20 = 1,2 m² pro Meter Rand. Rundbecken (aus Aufgabe 2): Umfang ≈ 31,42 m, Fläche ≈ 78,54 m², also 78,54 ÷ 31,42 ≈ 2,5 m² pro Meter Rand. Die runde Beckenform bietet pro Meter Randmaterial mehr als doppelt so viel Wasserfläche wie das Rechteck — runde Formen schließen bei gleicher Randlänge mehr Fläche ein als eckige.",
+            "acceptable_reasoning": "Beide Kennzahlen für beide Formen berechnen und dann die Fläche durch den Umfang teilen (m² Wasserfläche je m Rand); der Vergleich dieser Effizienzzahl (nicht der bloßen Flächen) beantwortet die Frage.",
+            "rubric": [
+              {
+                "criterion": "Umfang und Fläche für beide Becken korrekt",
+                "levels": [
+                  "Mehrere Werte falsch",
+                  "Ein Wert falsch",
+                  "Alle vier Werte korrekt"
+                ]
+              },
+              {
+                "criterion": "Fläche pro Meter Rand korrekt berechnet und verglichen",
+                "levels": [
+                  "Fehlt",
+                  "Nur für ein Becken oder Rechenfehler",
+                  "Für beide Becken korrekt, Kreis als effizienter erkannt"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Nicht die absoluten Flächen vergleichen — gefragt ist die Fläche PRO Meter Rand (Fläche geteilt durch Umfang).",
+              "Beim Rechteck wird die Flächenformel manchmal mit dem Umfang verwechselt (Addition statt Multiplikation)."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t4",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "open_response",
+            "prompt": "Der Rutschturm ist ein Drehzylinder mit Radius 1,5 m und Höhe 4 m, obendrauf sitzt als Dach ein Drehkegel mit derselben Grundfläche und einer Höhe von 1 m. Beschreibe in eigenen Worten, wie Zylinder und Kegel jeweils durch Drehen einer ebenen Figur entstehen, und erkläre, welche Größen du brauchst, um die Oberfläche des gesamten Turms (Zylindermantel + Kegelmantel + eine Grundfläche unten) zu berechnen. Du musst hier noch NICHT rechnen.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "understand",
+            "difficulty": null,
+            "dimensions": [
+              "DAR",
+              "BEG"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.FIG.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 7,
+            "answer_key": "Ein Drehzylinder entsteht, wenn man ein Rechteck um eine seiner Seiten dreht; ein Drehkegel entsteht, wenn man ein rechtwinkliges Dreieck um eine Kathete dreht. Für die Gesamtoberfläche braucht man: den Radius r (für beide Mäntel und die Grundfläche), die Zylinderhöhe h, und entweder die Kegelhöhe oder direkt die Mantellinie s des Kegels (die man notfalls über Pythagoras aus r und Kegelhöhe berechnen müsste). Die obere Kegelgrundfläche zählt nicht mit, weil dort der Zylinder anschließt.",
+            "acceptable_reasoning": "Verständnis der Entstehung der Körper durch Rotation und Identifikation der für die Oberflächenberechnung nötigen Maße, ohne diese schon einzusetzen.",
+            "rubric": [
+              {
+                "criterion": "Entstehung durch Drehung korrekt beschrieben",
+                "levels": [
+                  "Fehlt oder falsch",
+                  "Teilweise richtig",
+                  "Beide Körper korrekt beschrieben"
+                ]
+              },
+              {
+                "criterion": "Benötigte Größen vollständig benannt",
+                "levels": [
+                  "Wichtige Größe fehlt",
+                  "Größen genannt, Mantellinien-Problem nicht erkannt",
+                  "Vollständig inkl. Hinweis auf Mantellinie/Pythagoras"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Häufiger Fehler später beim Rechnen: die Kegelhöhe wird direkt als Mantellinie verwendet — hier schon vorwegnehmen, dass man dafür eigentlich Pythagoras braucht (Radius und Höhe sind Katheten, Mantellinie ist Hypotenuse).",
+              "Manche zählen beide Kreisflächen (oben und unten) mit — hier ist die obere Fläche durch den Kegel „verdeckt“ und zählt nicht als Außenfläche."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t5",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "calculation",
+            "prompt": "Jetzt wird gerechnet: Der Kegel auf dem Rutschturm hat Radius r = 1,5 m und Höhe h = 1 m. a) Berechne zunächst die Mantellinie s des Kegels (Hinweis: r und h stehen im rechten Winkel zueinander, s ist die Hypotenuse). b) Berechne damit das Volumen des Kegels (V = ⅓·π·r²·h) UND separat das Volumen des darunterliegenden Zylinders (Höhe 4 m, gleicher Radius). Vergleiche beide Volumina.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 7
+            },
+            "cognitive_level": "apply",
+            "difficulty": null,
+            "dimensions": [
+              "OPE",
+              "MOD"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.FIG.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "answer_key": "a) s² = r² + h² = 1,5² + 1² = 2,25 + 1 = 3,25, also s = √3,25 ≈ 1,80 m. b) Kegelvolumen: V_Kegel = ⅓·π·1,5²·1 = ⅓·π·2,25 ≈ 2,36 m³. Zylindervolumen: V_Zyl = π·1,5²·4 = π·2,25·4 ≈ 28,27 m³. Der Zylinder fasst also mehr als das Zehnfache des Kegelvolumens.",
+            "acceptable_reasoning": "Pythagoras zur Bestimmung der Mantellinie, danach getrenntes Einsetzen in die Volumenformeln für Kegel und Zylinder, abschließend ein quantitativer Größenvergleich.",
+            "rubric": [
+              {
+                "criterion": "Mantellinie korrekt berechnet",
+                "levels": [
+                  "Falsch/Pythagoras nicht angewendet",
+                  "Ansatz richtig, Rechenfehler",
+                  "Korrekt: s ≈ 1,80 m"
+                ]
+              },
+              {
+                "criterion": "Beide Volumina korrekt + Vergleich",
+                "levels": [
+                  "Mehrere Fehler",
+                  "Ein Volumen korrekt",
+                  "Beide korrekt mit sinnvollem Vergleich"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Die Mantellinie wird oft mit der Kegelhöhe verwechselt und direkt in eine (hier nicht gebrauchte) Formel eingesetzt — sie wird in dieser Teilaufgabe für die Oberfläche gebraucht, nicht fürs Volumen; wichtig ist, dass Schüler:innen erkennen, wofür man was braucht.",
+              "Der Faktor ⅓ bei der Kegelformel wird häufig vergessen."
+            ],
+            "self_check": null
+          },
+          {
+            "id": "t6",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "decision_scenario",
+            "prompt": "Die Freibadleitung hat ein knappes Budget und muss sich zwischen zwei Varianten für ein neues Kinderbecken entscheiden: Variante A ist ein Rundbecken mit Radius 3 m, Variante B ein quadratisches Becken mit Seitenlänge 5 m. Beide Varianten sollen möglichst viel Wasserfläche für Kinder bieten, aber das Budget reicht nur für höchstens 20 m Bordürenmaterial (Beckenrand). Triff eine begründete Entscheidung: Welche Variante würdest du empfehlen, und warum?",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Rundbecken (r = 3 m) oder quadratisches Becken (Seite 5 m) — welche Variante passt bei max. 20 m Bordüre besser?"
+            },
+            "response": {
+              "mode": "box",
+              "min_height_mm": 45.0
+            },
+            "cognitive_level": "evaluate",
+            "difficulty": null,
+            "dimensions": [
+              "BEG",
+              "MOD"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.FIG.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "answer_key": "Rundbecken: Umfang = 2·π·3 ≈ 18,85 m (passt ins Budget), Fläche = π·3² ≈ 28,27 m². Quadrat: Umfang = 4·5 = 20 m (passt genau), Fläche = 5² = 25 m². Beide halten das Budget ein, aber das Rundbecken bietet bei sogar etwas weniger Randmaterial mehr Wasserfläche (28,27 m² statt 25 m²) — Empfehlung: Rundbecken, mit Begründung über den Flächenvergleich UND die Budgeteinhaltung.",
+            "acceptable_reasoning": "Berechnung von Umfang und Fläche für beide Varianten, Prüfung der Budgetgrenze (20 m), abschließende Empfehlung, die beide Kriterien (Kosten und Nutzen) gegeneinander abwägt.",
+            "rubric": [
+              {
+                "criterion": "Beide Varianten korrekt berechnet (Umfang + Fläche)",
+                "levels": [
+                  "Mehrere Fehler",
+                  "Eine Variante korrekt",
+                  "Beide Varianten korrekt"
+                ]
+              },
+              {
+                "criterion": "Begründete Entscheidung unter Budgetgrenze",
+                "levels": [
+                  "Keine oder unbegründete Entscheidung",
+                  "Entscheidung genannt, Budget nicht geprüft",
+                  "Entscheidung stützt sich klar auf Budget UND Flächenvergleich"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "watch_outs": [
+              "Eine Entscheidung ohne konkrete Rechnung („Rund ist einfach schöner“) wird nicht als vollständige Begründung akzeptiert.",
+              "Wird das Budget bei einer Variante überschritten, ist diese Variante automatisch auszuschließen, unabhängig von der Fläche — das muss explizit geprüft werden."
+            ],
+            "self_check": null
+          }
+        ]
+      }
+    ],
+    "assets": [
+      {
+        "id": "abb1",
+        "role": "figure",
+        "medium": "visual",
+        "generator": "matplotlib:right_triangle",
+        "spec": {
+          "a": 4,
+          "b": 3,
+          "label_a": "4 m (Bodenabstand)",
+          "label_b": "3 m (Höhe)",
+          "label_c": "s = ?",
+          "title": "Stützstrebe der Rutsche (Seitenansicht)"
+        },
+        "correctness_surface": null,
+        "misleading_in_isolation": false,
+        "intentionally_flawed": null,
+        "machine_generatable": true,
+        "provenance": null,
+        "data_source": null,
+        "illustrative": false,
+        "caption": null
+      },
+      {
+        "id": "abb2",
+        "role": "figure",
+        "medium": "visual",
+        "generator": "matplotlib:circle",
+        "spec": {
+          "radius": 5,
+          "label_r": "r = 5 m",
+          "title": "Rundbecken von oben"
+        },
+        "correctness_surface": null,
+        "misleading_in_isolation": false,
+        "intentionally_flawed": null,
+        "machine_generatable": true,
+        "provenance": null,
+        "data_source": null,
+        "illustrative": false,
+        "caption": null
+      },
+      {
+        "id": "abb3",
+        "role": "figure",
+        "medium": "visual",
+        "generator": "matplotlib:polygon",
+        "spec": {
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              6,
+              4
+            ],
+            [
+              0,
+              4
+            ]
+          ],
+          "vertex_labels": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "side_labels": [
+            "6 m",
+            "",
+            "6 m",
+            ""
+          ],
+          "title": "Nichtschwimmerbecken (Rechteck)"
+        },
+        "correctness_surface": null,
+        "misleading_in_isolation": false,
+        "intentionally_flawed": null,
+        "machine_generatable": true,
+        "provenance": null,
+        "data_source": null,
+        "illustrative": false,
+        "caption": null
+      }
+    ],
+    "nachweis": {
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "statement": "Diese Materialien adressieren 3 von 3 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
+      "competence_coverage": [
+        {
+          "competence_id": "MAT.US.4.FIG.01",
+          "exercised_by": [
+            "t1"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "MAT.US.4.FIG.02",
+          "exercised_by": [
+            "t2",
+            "t3",
+            "t6"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "MAT.US.4.FIG.03",
+          "exercised_by": [
+            "t4",
+            "t5"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        }
+      ],
+      "gaps": [],
+      "zentrale_konzepte": [
+        "3: Figuren und Körper"
+      ],
+      "uebergreifende_themen": []
+    },
+    "depth_profile": {
+      "by_level": {
+        "remember": 1,
+        "apply": 2,
+        "analyze": 1,
+        "understand": 1,
+        "evaluate": 1
+      },
+      "by_dimension": {
+        "OPE": 3,
+        "DAR": 2,
+        "BEG": 1
+      },
+      "by_difficulty": {
+        "1": 2,
+        "2": 3,
+        "3": 1
+      },
+      "minutes_total": 47,
+      "minutes_resource_independent": 47
+    },
+    "rack": null
+  },
+  "artifacts": {
+    "student_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0197\\student.pdf",
+    "teacher_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0197\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0197\\homework.pdf",
+    "preview_png": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0197\\raster\\student.p1.png"
+  },
+  "verify_problems": [],
+  "verify_warnings": [],
+  "parent_id": null,
+  "feedback": [],
+  "error": null
+}

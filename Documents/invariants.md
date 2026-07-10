@@ -130,6 +130,28 @@ boundary.*
 - **Why.** One persistence seam (a future SQLite backend swaps behind it); SME decisions survive re-seeds.
 - **Boundary.** Implementation. The backend is swappable; the seam is the invariant, not the JSON files.
 
+## 10. Delivery is deterministic — the LLM lives only in the corpus loop  *(added 2 Jul 2026)*
+
+- **Rule.** What a teacher receives is assembled and rendered **deterministically** from the approved
+  corpus: serve a vetted worksheet › `compose` from approved blocks › an **honest gap** (which feeds the
+  demand queue). No LLM call sits between a request and a delivered artifact. Generation — LLM, subagent,
+  or diffusion — happens in the **corpus loop** (campaign-shaped: briefs → engines → lints → SME gate),
+  *before* anything becomes deliverable.
+- **Why.** (a) Structural: a live-generated sheet is by definition **un-gated**, so "on-demand live" and
+  §7 (the SME is the final gate) could never both hold for an end user — offline-first is what makes
+  "every delivered sheet human-reviewed" literally true. (b) The demand side is a **closed, parsed set**
+  (the catalog) — coverage is computable, so a corpus can actually reach it. (c) Delivery becomes
+  instant, reproducible (same request → same sheet → same answer key), and free of per-request API
+  cost/latency/truncation failure modes. Generalises the 26 Jun product principle (*the platform
+  consolidates a human-vetted library; it does not live-generate*) from assets to the whole product.
+- **Boundary.** This does **not** forbid: the `llm/` seam existing in code (it *is* the campaign seam);
+  LLM use anywhere in the corpus loop (generation, framing passes, adversarial *triage* — which ranks and
+  flags but is never the gate, §7); **deterministic runtime generation** at delivery (parametric variants,
+  scene stages — computed, so the template's one-time review covers every instance); or a **later,
+  deliberate** reintroduction of a live LLM step as *expression-only re-projection over already-vetted
+  facts* (§3's fourth mechanism at delivery time) — but that is a decision to record here explicitly, not
+  to drift into. A long-tail request is served **async** through the corpus loop, not by relaxing this rule.
+
 ---
 
 ## Looks like a hard rule, but isn't (don't let these block you)
@@ -140,6 +162,7 @@ boundary.*
 | "no HTML→PDF" | rendering is a *pure projection* (§1) | the renderer tech (Typst/HTML/docx all OK) |
 | "breadth is render-free" | a pragmatic default for bulk ingest | render any batch when you want to |
 | "the model produces nothing" | it produces *generation views*, validated at the seam (§5) | what the model emits, within the seam |
+| "no LLM at delivery" | the *delivery loop* is deterministic (§10) | LLM anywhere in the corpus loop; deterministic runtime variants (parametric/scene) |
 | German output · Carlito font · ReportLab | product/UX conventions | freely, per need |
 
 ## How to change an invariant

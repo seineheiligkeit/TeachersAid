@@ -209,3 +209,39 @@ def test_ingest_arrangement_seam(tmp_path, monkeypatch):
     cov = {c.competence_id: c for c in rec.arrangement.nachweis.competence_coverage}
     assert cov["GWB.US.3.ENT.05"].covered
     assert all(e.startswith("anchor:") for e in cov["GWB.US.3.ENT.05"].exercised_by)
+
+
+def test_arrangement_pdf_self_heals_stale_path(tmp_path, monkeypatch):
+    """The get_pdf pattern applied to the arrangement bundle: a stale artifact path
+    (git carries the content, not the binaries) re-renders on demand, persists the
+    fresh paths, then serves."""
+    import teachersaid.config as cfg
+    monkeypatch.setattr(cfg, "RUNS_DIR", tmp_path)
+    from fastapi.testclient import TestClient
+
+    from teachersaid.api import app as appmod
+    from teachersaid.pipeline.arrange import ingest_arrangement
+    from teachersaid.store.arrangementstore import ArrangementStore
+
+    appmod.ARRANGEMENTS = ArrangementStore(tmp_path / "arrangements")
+    rec = ingest_arrangement(
+        appmod.ARRANGEMENTS, "Geographie und wirtschaftliche Bildung", 3,
+        title="Heil-Test", kernfrage="Soll gebaut werden?", format="role_debate",
+        body=_gen_arr_body(), arr_id="heal", today=IN)
+    # simulate the moved-machine state: record tracked, rendered binaries gone
+    rec.artifacts.orchestration = str(tmp_path / "gone" / "orchestration.pdf")
+    appmod.ARRANGEMENTS.save(rec)
+
+    client = TestClient(appmod.app)
+    r = client.get("/api/arrangements/heal/pdf/orchestration")
+    assert r.status_code == 200 and r.content[:4] == b"%PDF"
+    healed = appmod.ARRANGEMENTS.get("heal")
+    assert Path(healed.artifacts.orchestration).exists()   # fresh path persisted
+
+    # a stale ROLE path heals through the same whole-bundle rebuild
+    healed.artifacts.roles[0]["student"] = str(tmp_path / "gone" / "s.pdf")
+    role_id = healed.artifacts.roles[0]["id"]
+    appmod.ARRANGEMENTS.save(healed)
+    assert client.get(f"/api/arrangements/heal/pdf/{role_id}/student").status_code == 200
+    # an unknown role stays an honest 404 (no rebuild can produce it)
+    assert client.get("/api/arrangements/heal/pdf/nope/student").status_code == 404

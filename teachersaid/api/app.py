@@ -18,11 +18,13 @@ from pydantic import BaseModel
 from ..config import RUNS_DIR
 from ..pipeline import orchestrator as orch
 from ..pipeline.assets import build_asset
-from ..stats import compute_stats
+from ..stats import campaign_gaps, compute_stats, coverage_map
 from ..store.arrangementstore import ArrangementStore
 from ..store.assetstore import AssetStore
 from ..store.blockstore import BlockStore
 from ..store.datasetstore import DatasetStore
+from ..store.demandstore import STATUSES as DEMAND_STATUSES
+from ..store.demandstore import DemandStore
 from ..store.textstore import TextStore
 from ..store.sachverhaltstore import SachverhaltStore
 from ..store.feedbackstore import FEEDBACK_TAGS, TARGET_KINDS, FeedbackEntry, FeedbackStore
@@ -31,6 +33,7 @@ from ..store.repository import ReviewStore
 app = FastAPI(title="TeachersAid — Review Dashboard")
 STORE = ReviewStore()
 BLOCKS = BlockStore()
+DEMAND = DemandStore()
 ASSETS = AssetStore()
 ARRANGEMENTS = ArrangementStore()
 DATASETS = DatasetStore()
@@ -63,6 +66,18 @@ class ComposeBody(BaseModel):
 
 class NoteBody(BaseModel):
     note: str = ""
+
+
+class DeliverBody(BaseModel):
+    subject: str = "Physik"
+    klasse: int = 4
+    topic: str = ""
+    envelope: str = "doppelstunde"
+    kompetenzbereich: str | None = None
+
+
+class DemandStatusBody(BaseModel):
+    status: str
 
 
 class FeedbackBody(BaseModel):
@@ -139,6 +154,112 @@ def library():
 @app.get("/api/stats")
 def stats():
     return compute_stats(BLOCKS, STORE)
+
+
+# --- the offline-first program: coverage planner + delivery loop ---------------
+@app.get("/api/coverage")
+def coverage():
+    """Track 1 #1 — the campaign planner: per-KB cells with band spread + status."""
+    return coverage_map(BLOCKS)
+
+
+@app.get("/api/coverage/gaps")
+def coverage_gaps(stufe: str | None = None, subject: str | None = None):
+    """The exportable gap list (campaign-brief anchors: verbatim competence ids)."""
+    return {"gaps": campaign_gaps(BLOCKS, stufe=stufe, subject=subject)}
+
+
+@app.get("/api/review-queue")
+def review_queue_endpoint():
+    """Prüfen (Track 1 #3): every staged item across all kinds, tier-classified."""
+    from ..store.reviewqueue import queue as _queue
+    return _queue(items=STORE, blocks=BLOCKS, assets=ASSETS, datasets=DATASETS,
+                  texts=TEXTS, sachverhalte=SACHVERHALTE, arrangements=ARRANGEMENTS,
+                  feedback=FEEDBACK)
+
+
+class DecisionBody(BaseModel):
+    action: str            # approve | reject | revise
+    note: str = ""
+
+
+@app.post("/api/review/{kind}/{rec_id}/decision")
+def review_decision(kind: str, rec_id: str, body: DecisionBody):
+    """One decision endpoint for every kind. Approving a worksheet CASCADES to its
+    harvested blocks (SME decision: reviewing the sheet is reviewing its blocks).
+    `revise` (Überarbeiten) is the SME's opt-in between the two: the record KEEPS its
+    status (pending / in_review — it stays in the Prüfen queue), and the mandatory note
+    lands as a revise-flagged FeedbackEntry the digest + triage pick up."""
+    if body.action not in ("approve", "reject", "revise"):
+        raise HTTPException(400, "action must be approve|reject|revise")
+    stores = {"block": BLOCKS, "asset": ASSETS, "dataset": DATASETS,
+              "text": TEXTS, "sachverhalt": SACHVERHALTE,
+              "arrangement": ARRANGEMENTS}
+    if kind != "item" and kind not in stores:
+        raise HTTPException(400, f"unbekannte Art '{kind}'")
+    if body.action == "revise":
+        note = body.note.strip()
+        if not note:
+            raise HTTPException(400, "Überarbeiten braucht eine Notiz (was ist zu ändern?)")
+        rec = STORE.get(rec_id) if kind == "item" else stores[kind].get(rec_id)
+        if rec is None:
+            raise HTTPException(404, "nicht gefunden")
+        subject, label = _target_meta(kind, rec_id)
+        FEEDBACK.add(FeedbackEntry(
+            target_kind=kind, target_id=rec_id, subject=subject, label=label,
+            rating=None, comment=f"[revise] {note}", tags=[], revise=True))
+        return {"ok": True, "kind": kind, "id": rec_id, "status": rec.status}
+    status = "approved" if body.action == "approve" else "rejected"
+    try:
+        if kind == "item":
+            it = (orch.approve_content(STORE, rec_id, block_store=BLOCKS)
+                  if body.action == "approve"
+                  else orch.reject(STORE, rec_id, body.note, block_store=BLOCKS))
+            return {"ok": True, "kind": kind, "id": rec_id, "status": it.status}
+        st = stores[kind]
+        st.set_status(rec_id, status)
+        if body.note.strip():
+            # a decision note is review signal — persist it centrally (items keep
+            # theirs on the ReviewItem; every other kind lands here)
+            subject, label = _target_meta(kind, rec_id)
+            FEEDBACK.add(FeedbackEntry(
+                target_kind=kind, target_id=rec_id, subject=subject, label=label,
+                rating=None, comment=f"[{body.action}] {body.note.strip()}",
+                tags=[], revise=(body.action == "reject")))
+        return {"ok": True, "kind": kind, "id": rec_id, "status": status}
+    except KeyError:
+        raise HTTPException(404, "nicht gefunden")
+
+
+@app.post("/api/deliver")
+def deliver_endpoint(body: DeliverBody):
+    """Track 2 #4/#5 — the LLM-free delivery loop: vetted sheet › composed › honest
+    gap into the demand queue (invariants §10). Read-only against the corpus."""
+    from ..pipeline.deliver import deliver
+    kb = (body.kompetenzbereich or "").strip() or None
+    if not body.topic.strip() and not kb:
+        raise HTTPException(400, "topic or kompetenzbereich required")
+    r = deliver(body.subject, body.klasse, body.topic.strip(), body.envelope,
+                kompetenzbereich=kb, review_store=STORE, block_store=BLOCKS,
+                demand_store=DEMAND)
+    return {"mode": r.mode, "note": r.note, "title": r.title, "item_id": r.item_id,
+            "demand_id": r.demand_id, "n_tasks": r.n_tasks, "est_minutes": r.est_minutes,
+            "verify_warnings": r.verify_warnings}
+
+
+@app.get("/api/demand")
+def demand_list(status: str | None = None):
+    return [r.model_dump() for r in DEMAND.list(status=status)]
+
+
+@app.post("/api/demand/{rec_id}/status")
+def demand_set_status(rec_id: str, body: DemandStatusBody):
+    if body.status not in DEMAND_STATUSES:
+        raise HTTPException(400, f"status must be one of {DEMAND_STATUSES}")
+    try:
+        return DEMAND.set_status(rec_id, body.status).model_dump()
+    except KeyError:
+        raise HTTPException(404, "unbekannter Wunsch")
 
 
 # --- human feedback (the HITL loop) ------------------------------------------
@@ -271,6 +392,17 @@ def asset_library(klass: str | None = None, status: str | None = None):
 @app.get("/api/asset-library/{asset_id}/file")
 def asset_library_file(asset_id: str):
     la = ASSETS.get(asset_id)
+    if la is not None and (not la.file or not Path(la.file).exists()):
+        # Stale absolute path (asset materialised on another machine — git carries
+        # the record, not the binary): rebuild code-generated assets on demand.
+        gen = la.asset.generator or ""
+        if gen.startswith(("svg:", "matplotlib:")):
+            try:
+                out = build_asset(la.asset, outdir=RUNS_DIR / "assets_lib" / "files")
+                la.file = str(out)
+                ASSETS.save(la)
+            except Exception:  # noqa: BLE001 — sourced/unbuildable stays a 404
+                pass
     if la is None or not la.file or not Path(la.file).exists():
         raise HTTPException(404, "no file for this asset")
     media = {
@@ -298,23 +430,42 @@ def reject_asset(asset_id: str):
 def _dataset_figure_asset(rec, series_key: str):
     """Build a preview Asset for one series of a dataset (pyramid or a bar of the
     series' values), so the reviewer sees the actual figure the data produces."""
+    from ..pipeline.assets import _all_numeric
     from ..schema.assets import Asset
 
     series = rec.dataset.series.get(series_key)
     if not series:
         return None
-    title = f"{rec.dataset.title} — {series.get('label', series_key)}"
+    label = series.get("label", series_key)
+    title = (rec.dataset.title if label == rec.dataset.title    # no "X — X" doubling
+             else f"{rec.dataset.title} — {label}")
     if series.get("kind") == "population_pyramid":
         return Asset(id=f"{rec.id}__{series_key}", role="figure",
                      generator="matplotlib:population_pyramid",
                      spec={"age_groups": series.get("age_groups", []),
                            "male": series.get("male", []), "female": series.get("female", []),
                            "title": title})
-    if "shares_pct" in series or "counts" in series:
-        vals = series.get("shares_pct") or series.get("counts") or []
+    if "temp" in series and "precip" in series:            # Klimadiagramm normals
+        return Asset(id=f"{rec.id}__{series_key}", role="figure",
+                     generator="matplotlib:climate_diagram",
+                     spec={"months": series.get("months", []),
+                           "temp": series["temp"], "precip": series["precip"],
+                           "title": title})
+    years = series.get("years") or (                       # time series (verlauf): years may
+        series.get("categories")                           # live in `categories` as "1960"… —
+        if _all_numeric(series.get("categories") or []) else None)  # a trend is a LINE over a
+    if years and "values" in series:                       # numeric year axis, never year-bars
+        return Asset(id=f"{rec.id}__{series_key}", role="figure",
+                     generator="matplotlib:line",
+                     spec={"categories": years, "values": series["values"],
+                           "xlabel": "Jahr", "ylabel": rec.dataset.unit or "", "title": title})
+    if "shares_pct" in series or "counts" in series or "values" in series:
+        vals = (series.get("shares_pct") or series.get("counts")
+                or series.get("values") or [])
+        cats = series.get("groups") or series.get("categories") or []
         return Asset(id=f"{rec.id}__{series_key}", role="figure",
                      generator="matplotlib:bar_chart",
-                     spec={"categories": series.get("groups", []), "values": vals,
+                     spec={"categories": cats, "values": vals,
                            "ylabel": "Anteil (%)" if "shares_pct" in series else (rec.dataset.unit or ""),
                            "title": title})
     return None
@@ -471,7 +622,22 @@ def get_arrangement(arr_id: str):
     return rec.model_dump()
 
 
-def _arr_pdf(arr_id: str, path: str | None) -> FileResponse:
+def _arr_pdf(rec, pick) -> FileResponse:
+    """Serve one PDF of an arrangement's rendered bundle; `pick(artifacts)` selects it."""
+    path = pick(rec.artifacts) if rec.artifacts is not None else None
+    if not path or not Path(path).exists():
+        # Artifact missing or stale — absolute paths don't survive a machine change
+        # (git carries the content, not the binaries): re-render the whole bundle
+        # from the stored arrangement on demand, save the fresh paths, then serve.
+        from .. import config
+        from ..pipeline.arrange import render_arrangement
+        from ..store.arrangementstore import ArrangementArtifacts
+
+        bundle = render_arrangement(rec.arrangement, config.RUNS_DIR / "arrangements" / rec.id)
+        rec.artifacts = ArrangementArtifacts(
+            orchestration=bundle["orchestration"], roles=bundle["roles"])
+        ARRANGEMENTS.save(rec)
+        path = pick(rec.artifacts)
     if not path or not Path(path).exists():
         raise HTTPException(404, "no such PDF")
     return FileResponse(path, media_type="application/pdf")
@@ -480,20 +646,26 @@ def _arr_pdf(arr_id: str, path: str | None) -> FileResponse:
 @app.get("/api/arrangements/{arr_id}/pdf/orchestration")
 def arrangement_orchestration(arr_id: str):
     rec = ARRANGEMENTS.get(arr_id)
-    if rec is None or rec.artifacts is None:
+    if rec is None:
         raise HTTPException(404, "no such arrangement")
-    return _arr_pdf(arr_id, rec.artifacts.orchestration)
+    return _arr_pdf(rec, lambda arts: arts.orchestration)
 
 
 @app.get("/api/arrangements/{arr_id}/pdf/{role_id}/{which}")
 def arrangement_role_pdf(arr_id: str, role_id: str, which: str):
     rec = ARRANGEMENTS.get(arr_id)
-    if rec is None or rec.artifacts is None:
+    if rec is None:
         raise HTTPException(404, "no such arrangement")
-    role = next((r for r in rec.artifacts.roles if r.get("id") == role_id), None)
-    if role is None or which not in ("student", "teacher"):
+    # The role must exist in the ARRANGEMENT (the rebuildable truth), not just in a
+    # possibly-stale artifact list — an unknown role is an honest 404, no rebuild.
+    if which not in ("student", "teacher") or not any(r.id == role_id for r in rec.arrangement.roles):
         raise HTTPException(404, "no such role PDF")
-    return _arr_pdf(arr_id, role.get(which))
+
+    def pick(arts):
+        role = next((r for r in arts.roles if r.get("id") == role_id), None)
+        return role.get(which) if role else None
+
+    return _arr_pdf(rec, pick)
 
 
 @app.post("/api/arrangements/{arr_id}/approve")
@@ -638,7 +810,18 @@ def _artifact_path(item_id: str, kind: str) -> Path:
 
 @app.get("/api/items/{item_id}/pdf/{kind}")
 def get_pdf(item_id: str, kind: str):
-    p = _artifact_path(item_id, kind)
+    try:
+        p = _artifact_path(item_id, kind)
+    except HTTPException:
+        # Artifact missing or stale — absolute paths don't survive a machine change
+        # (git carries the content, not the binaries): rebuild from the tracked
+        # content on demand, then serve.
+        item = STORE.get(item_id)
+        if item is None or item.content is None:
+            raise
+        item.artifacts = orch._render_all(item.id, item.content)
+        STORE.save(item)
+        p = _artifact_path(item_id, kind)
     media = "image/png" if kind == "preview" else "application/pdf"
     return FileResponse(p, media_type=media)
 

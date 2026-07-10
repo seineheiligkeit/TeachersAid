@@ -689,22 +689,38 @@ def _produce_content_item(
 
 
 # --- GATE 2 + feedback loop -------------------------------------------------
-def approve_content(store: ReviewStore, item_id: str) -> ReviewItem:
+def approve_content(store: ReviewStore, item_id: str, *, block_store=None) -> ReviewItem:
     item = store.get(item_id)
     if item is None or item.stage != "content":
         raise KeyError(f"no content item '{item_id}'")
     item.status = "approved"  # enters the representable-material library
     store.append_feedback(item_id, "approve")
-    return store.save(item)
+    item = store.save(item)
+    # Cascade (SME decision, 2 Jul 2026): reviewing the worksheet IS reviewing its
+    # blocks — the harvested blocks enter the corpus with it. Undo = reject the
+    # block individually in Prüfen/Bausteine.
+    if block_store is not None:
+        key = f"harvested:{item_id}"
+        for lb in block_store.list():
+            if lb.provenance == key and lb.status == "in_review":
+                block_store.set_status(lb.id, "approved")
+    return item
 
 
-def reject(store: ReviewStore, item_id: str, note: str = "") -> ReviewItem:
+def reject(store: ReviewStore, item_id: str, note: str = "", *, block_store=None) -> ReviewItem:
     item = store.get(item_id)
     if item is None:
         raise KeyError(item_id)
     item.status = "rejected"
     store.append_feedback(item_id, "reject", note)
-    return store.save(item)
+    item = store.save(item)
+    # the cascade's mirror: a rejected sheet's harvested blocks don't enter the corpus
+    if block_store is not None and item.stage == "content":
+        key = f"harvested:{item_id}"
+        for lb in block_store.list():
+            if lb.provenance == key and lb.status == "in_review":
+                block_store.set_status(lb.id, "rejected")
+    return item
 
 
 def request_changes(

@@ -1,0 +1,80 @@
+{
+  "id": "c0194.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Entwirf einen kurzen Info-Zettel (nur Text, keine Zeichnung nötig) für Neukund:innen eines Fahrradgeschäfts mit dem Titel 'So holst du mehr Kilometer aus deinem E-Bike-Akku'. Nenne mindestens drei konkrete Tipps und erkläre bei jedem Tipp kurz, welche Energieform dabei geschont wird.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "S"
+    ],
+    "content_area": "Erste Einblicke in die Funktionsweise moderner elektronischer Geräte",
+    "serves": [
+      {
+        "competence_id": "PHY.US.3.ENE.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Musterlösung (Beispiel): Titel: 'So holst du mehr Kilometer aus deinem E-Bike-Akku'. Tipp 1: Motorunterstützung nur bei Steigungen einschalten, auf flacher Strecke selbst treten — spart elektrische Energie, die sonst der Akku liefern müsste. Tipp 2: Reifen richtig aufpumpen — weniger Rollreibung bedeutet weniger Energie, die zu Wärme wird. Tipp 3: Rekuperationsbremse bei längeren Abfahrten nutzen (falls vorhanden) — gewinnt einen Teil der Bewegungsenergie als elektrische Energie zurück. Weitere plausible, physikalisch korrekte Tipps (z. B. geringere Zuladung senkt die nötige Bewegungs- und Höhenenergie) ebenfalls akzeptieren.",
+    "acceptable_reasoning": "Jede Kombination aus mindestens drei physikalisch korrekten, verständlich formulierten Tipps mit Bezug zu einer Energieform zählt als vollständig richtig.",
+    "rubric": [
+      {
+        "criterion": "Anzahl und Qualität der Tipps",
+        "levels": [
+          "Weniger als drei Tipps oder unklar",
+          "Drei Tipps, teils ohne Energiebezug",
+          "Drei oder mehr Tipps, alle mit korrektem Energiebezug"
+        ]
+      },
+      {
+        "criterion": "Verständlichkeit für Kund:innen",
+        "levels": [
+          "Zu technisch oder unklar formuliert",
+          "Verständlich, aber wenig ansprechend",
+          "Klar, ansprechend und alltagstauglich formuliert"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen geben oft reine Verhaltenstipps ohne Bezug zur Energieform (z. B. 'langsam fahren') — die Erklärung der Energieform pro Tipp aktiv einfordern."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Physik",
+  "klasse": 3,
+  "kompetenzbereich": "Energie",
+  "competences": [
+    "PHY.US.3.ENE.02"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "W",
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0194",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:26+00:00",
+  "updated_at": "2026-07-05T05:34:26+00:00"
+}

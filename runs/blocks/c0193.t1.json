@@ -1,0 +1,77 @@
+{
+  "id": "c0193.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne dem Sender-Empfänger-Modell für SEHEN bzw. HÖREN jeweils die passenden Begriffe zu.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Sender (Sehen)",
+        "Ausbreitungsweg (Sehen)",
+        "Empfänger (Sehen)",
+        "Sender (Hören)",
+        "Empfänger (Hören)"
+      ],
+      "right": [
+        "Lichtquelle oder beleuchteter Gegenstand",
+        "Licht breitet sich geradlinig durch die Luft aus",
+        "Auge (Netzhaut)",
+        "Schallquelle, z. B. schwingende Stimmbänder oder Lautsprecher",
+        "Ohr (Trommelfell)"
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.2.SEH.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Sender (Sehen) – Lichtquelle oder beleuchteter Gegenstand. Ausbreitungsweg (Sehen) – Licht breitet sich geradlinig durch die Luft aus. Empfänger (Sehen) – Auge (Netzhaut). Sender (Hören) – Schallquelle, z. B. schwingende Stimmbänder oder Lautsprecher. Empfänger (Hören) – Ohr (Trommelfell).",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Häufige Verwechslung: Das Auge/Ohr wird als Sender missverstanden (wir senden aktiv Sehstrahlen aus) – tatsächlich ist das Auge reiner Empfänger von Licht, das von einer Quelle kommt oder an einem Gegenstand reflektiert wird."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Physik",
+  "klasse": 2,
+  "kompetenzbereich": "Sehen und Hören",
+  "competences": [
+    "PHY.US.2.SEH.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0193",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:25+00:00",
+  "updated_at": "2026-07-05T05:34:25+00:00"
+}

@@ -1,0 +1,87 @@
+{
+  "id": "c0197.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Die Wasserrutsche im Freibad braucht eine schräge Stützstrebe (siehe Abbildung 1). Der waagrechte Abstand zum Turm beträgt 4 m, die Höhe 3 m. Berechne die Länge s der Strebe mithilfe des pythagoräischen Lehrsatzes.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "OPE"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.4.FIG.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "s² = 4² + 3² = 16 + 9 = 25, also s = √25 = 5 m.",
+    "acceptable_reasoning": "Direkte Anwendung von a² + b² = c² auf das rechtwinklige Dreieck aus Abbildung 1.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Die Hypotenuse s ist immer die längste Seite, gegenüber dem rechten Winkel — nicht mit einer Kathete verwechseln.",
+      "4-3-5 ist ein bekanntes pythagoräisches Tripel; manche erraten es, ohne zu rechnen — trotzdem den Rechenweg einfordern."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Mathematik",
+  "klasse": 4,
+  "kompetenzbereich": "3: Figuren und Körper",
+  "competences": [
+    "MAT.US.4.FIG.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "OPE"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:right_triangle",
+      "spec": {
+        "a": 4,
+        "b": 3,
+        "label_a": "4 m (Bodenabstand)",
+        "label_b": "3 m (Höhe)",
+        "label_c": "s = ?",
+        "title": "Stützstrebe der Rutsche (Seitenansicht)"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0197",
+  "source": "ai",
+  "created_at": "2026-07-05T05:51:17+00:00",
+  "updated_at": "2026-07-05T05:51:17+00:00"
+}

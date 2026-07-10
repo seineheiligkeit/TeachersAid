@@ -1,0 +1,138 @@
+{
+  "id": "c0191.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "So funktioniert das Glücksrad-Spiel (siehe Baumdiagramm in Abbildung 1): Zuerst dreht man ein Glücksrad, das mit Wahrscheinlichkeit 0,5 auf Rot und mit Wahrscheinlichkeit 0,5 auf Blau zeigt. Danach zieht man ein Los: Bei Rot gewinnt man mit Wahrscheinlichkeit 0,4 einen Stern, bei Blau nur mit Wahrscheinlichkeit 0,2. a) Wie groß ist die Wahrscheinlichkeit für den Pfad „Rot UND Stern“? b) Wie groß ist die Wahrscheinlichkeit für den Pfad „Blau UND Stern“?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "OPE",
+      "DAR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.4.DAT.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "a) P(Rot UND Stern) = 0,5 · 0,4 = 0,20 (20 %). b) P(Blau UND Stern) = 0,5 · 0,2 = 0,10 (10 %).",
+    "acceptable_reasoning": "Anwendung der Pfadregel: Multiplikation der Wahrscheinlichkeiten entlang eines Pfades im Baumdiagramm.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Häufiger Fehler: Wahrscheinlichkeiten entlang eines Pfades werden addiert statt multipliziert.",
+      "Die Werte am Baum (0,5 / 0,4 / 0,2) müssen vom richtigen Ast abgelesen werden — Rot- und Blau-Zweig nicht vertauschen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Mathematik",
+  "klasse": 4,
+  "kompetenzbereich": "4: Daten und Zufall",
+  "competences": [
+    "MAT.US.4.DAT.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "OPE",
+    "DAR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:tree_diagram",
+      "spec": {
+        "branches": [
+          {
+            "label": "Rot",
+            "p": "0,5",
+            "children": [
+              {
+                "label": "Stern",
+                "p": "0,4",
+                "_xy": [
+                  2,
+                  0.0
+                ]
+              },
+              {
+                "label": "Kein Stern",
+                "p": "0,6",
+                "_xy": [
+                  2,
+                  1.0
+                ]
+              }
+            ],
+            "_xy": [
+              1,
+              0.5
+            ]
+          },
+          {
+            "label": "Blau",
+            "p": "0,5",
+            "children": [
+              {
+                "label": "Stern",
+                "p": "0,2",
+                "_xy": [
+                  2,
+                  2.0
+                ]
+              },
+              {
+                "label": "Kein Stern",
+                "p": "0,8",
+                "_xy": [
+                  2,
+                  3.0
+                ]
+              }
+            ],
+            "_xy": [
+              1,
+              2.5
+            ]
+          }
+        ],
+        "title": "Glücksrad + Losziehung"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0191",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:23+00:00",
+  "updated_at": "2026-07-05T05:34:23+00:00"
+}

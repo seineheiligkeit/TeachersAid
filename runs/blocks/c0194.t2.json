@@ -1,0 +1,106 @@
+{
+  "id": "c0194.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Betrachte weiterhin Abb. 1.\n(a) In welchem Streckenabschnitt (in km) verliert das E-Bike wieder an Höhe?\n(b) Welche Energieform nimmt in genau diesem Abschnitt zu, wenn das E-Bike schneller wird?\n(c) Erkläre in eigenen Worten, warum ein E-Bike bergab kaum Akku-Energie braucht.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": "Elektrische und mechanische Energie, Energieerhaltung",
+    "serves": [
+      {
+        "competence_id": "PHY.US.3.ENE.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "(a) Zwischen km 8 und km 12 (Höhe fällt von 80 m auf 15 m). (b) Die Bewegungsenergie nimmt zu — das E-Bike wird bergab schneller, auch ohne Motorleistung. (c) Die gespeicherte Höhenenergie wird von selbst in Bewegungsenergie umgewandelt (die Fahrt bergab beschleunigt das Rad), der Motor muss daher kaum zusätzliche elektrische Energie liefern.",
+    "acceptable_reasoning": "Formulierungen, die Höhenenergie sinngemäß als bereits vorhandene, gespeicherte Energie beschreiben (statt des Fachbegriffs), zählen als richtig.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen beschreiben oft nur, dass es bergab schneller wird, ohne den Bezug zur Energieumwandlung herzustellen — gezielt nach der Energieform fragen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Physik",
+  "klasse": 3,
+  "kompetenzbereich": "Energie",
+  "competences": [
+    "PHY.US.3.ENE.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:function_graph",
+      "spec": {
+        "title": "Höhenprofil einer E-Bike-Fahrt",
+        "xmin": 0,
+        "xmax": 12,
+        "ymin": 0,
+        "ymax": 90,
+        "points": [
+          [
+            0,
+            10
+          ],
+          [
+            4,
+            10
+          ],
+          [
+            8,
+            80
+          ],
+          [
+            12,
+            15
+          ]
+        ],
+        "connect": true,
+        "xlabel": "Strecke in km",
+        "ylabel": "Höhe über Start in m"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0194",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:26+00:00",
+  "updated_at": "2026-07-05T05:34:26+00:00"
+}

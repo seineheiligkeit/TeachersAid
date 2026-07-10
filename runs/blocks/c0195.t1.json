@@ -1,0 +1,77 @@
+{
+  "id": "c0195.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Im Chemieunterricht wurden fünf Trennverfahren an fünf verschiedenen Gemischen ausprobiert. Ordne jedem Trennverfahren das Gemisch zu, für das es tatsächlich geeignet ist. Ordne außerdem in Gedanken zu, WELCHE Eigenschaft der beiden Stoffe jeweils genutzt wird (das hilft dir bei den späteren Aufgaben).",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Filtrieren",
+        "Dekantieren",
+        "Eindampfen",
+        "Destillieren",
+        "Magnetscheidung"
+      ],
+      "right": [
+        "Sand aus trübem Bachwasser entfernen",
+        "Ölfilm von der Wasseroberfläche abgießen",
+        "Kochsalz aus Salzwasser gewinnen",
+        "Reines Wasser aus Salzwasser gewinnen",
+        "Eisenschrauben aus einer Schraubenkiste mit Aluschrauben sortieren"
+      ]
+    },
+    "response": {
+      "mode": "none"
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.US.x.ALL.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Filtrieren → Sand aus trübem Bachwasser entfernen (fest/flüssig, unlöslicher Feststoff bleibt im Filter). Dekantieren → Ölfilm von der Wasseroberfläche abgießen (unterschiedliche Dichte, keine Vermischung). Eindampfen → Kochsalz aus Salzwasser gewinnen (Wasser verdampft bei 100 °C, Salz bleibt als Feststoff zurück). Destillieren → reines Wasser aus Salzwasser gewinnen (Wasserdampf wird aufgefangen und wieder verflüssigt — Salz bleibt zurück, wie beim Eindampfen, nur wird hier zusätzlich das Wasser selbst gewonnen). Magnetscheidung → Eisenschrauben aus Aluschrauben sortieren (nur Eisen ist magnetisch, Aluminium nicht).",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Häufige Verwechslung: Eindampfen und Destillieren werden oft gleichgesetzt. Unterschied betonen: Beim Eindampfen geht der Wasserdampf verloren (man will nur das Salz), beim Destillieren wird der Dampf aufgefangen und abgekühlt (man will BEIDE Stoffe, meist das reine Wasser).",
+      "Manche Schüler:innen glauben, alle Metalle seien magnetisch. Klarstellen: Nur Eisen, Nickel, Kobalt (und ihre Legierungen wie Stahl) sind ferromagnetisch — Aluminium, Kupfer und Messing nicht."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Chemie",
+  "klasse": 4,
+  "kompetenzbereich": null,
+  "competences": [
+    "CHE.US.x.ALL.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0195",
+  "source": "ai",
+  "created_at": "2026-07-05T05:38:19+00:00",
+  "updated_at": "2026-07-05T05:38:19+00:00"
+}

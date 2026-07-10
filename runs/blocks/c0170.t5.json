@@ -1,0 +1,64 @@
+{
+  "id": "c0170.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Eine Gemeinde will einen kleinen Teich zuschütten, um dort einen Parkplatz zu bauen. Ein anderer Vorschlag ist, den Parkplatz 50 Meter weiter auf einer bereits versiegelten Fläche zu bauen. Beurteile beide Vorschläge aus Sicht des Lebensraums Teich und gib eine begründete Empfehlung ab.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Ein Teich ist Lebensraum für viele voneinander abhängige Arten; verschwindet er, verschwindet der ganze Lebensraum auf einmal."
+    },
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.STA.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 11,
+    "answer_key": "Begründete Empfehlung: die versiegelte Fläche nutzen, da der Teich als ganzer Lebensraum (mit vielen voneinander abhängigen Arten) sonst vollständig verloren geht, während die Alternative keinen zusätzlichen Lebensraum zerstört. Ein Parkplatz kann an vielen Stellen entstehen, ein funktionierender Teich lässt sich nicht einfach ersetzen.",
+    "acceptable_reasoning": "Auch eine begründete Gegenposition (z. B. mit Ausgleichsmaßnahmen) wird akzeptiert, wenn sie den Lebensraumverlust fachlich benennt und nicht ignoriert.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Bewertet wird die Qualität der fachlichen Begründung (Lebensraum, Abhängigkeiten), nicht ob die 'richtige' Seite gewählt wird."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 1,
+  "kompetenzbereich": "Standpunkte begründen und reflektiert handeln (S)",
+  "competences": [
+    "BIO.US.x.STA.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0170",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:11+00:00",
+  "updated_at": "2026-07-05T05:34:11+00:00"
+}

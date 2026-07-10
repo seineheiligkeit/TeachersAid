@@ -1,0 +1,79 @@
+{
+  "id": "c0182.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Lukas möchte wissen, nach wie vielen Wochen er 20 Euro gespart hat. Löse die Gleichung 3w + 2 = 20 durch schrittweises Umkehren der Rechenoperationen. Schreibe jeden Schritt einzeln auf.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "OPE"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.1.VAR.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "3w + 2 = 20 | −2 → 3w = 18 | ÷3 → w = 6. Probe: 3·6+2 = 20 ✓. Lukas hat also nach 6 Wochen 20 Euro gespart.",
+    "acceptable_reasoning": "Zuerst die Addition rückgängig machen (−2), dann die Multiplikation (÷3) — Umkehrreihenfolge von außen nach innen.",
+    "rubric": [
+      {
+        "criterion": "Umformungsschritte sichtbar",
+        "levels": [
+          "Kein Schritt sichtbar",
+          "Ein Schritt gezeigt",
+          "Alle Schritte korrekt und nachvollziehbar"
+        ]
+      },
+      {
+        "criterion": "Probe durchgeführt",
+        "levels": [
+          "Keine Probe",
+          "Probe versucht, Fehler",
+          "Probe korrekt (w = 6)"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Häufiger Fehler: zuerst durch 3 dividieren, statt zuerst −2 zu rechnen.",
+      "Probe nicht vergessen — sie bestätigt, dass die Lösung stimmt."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Mathematik",
+  "klasse": 1,
+  "kompetenzbereich": "2: Variablen und Funktionen",
+  "competences": [
+    "MAT.US.1.VAR.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "OPE"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0182",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:17+00:00",
+  "updated_at": "2026-07-05T05:34:17+00:00"
+}

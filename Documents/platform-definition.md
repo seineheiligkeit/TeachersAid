@@ -3,6 +3,17 @@
 *Written against the Teachino pilot study (PH Wien / BMB, Oct 2025). Companion to the v0.2 schema
 and the project handoff. This is the "what we are and what we deliberately are not" document.*
 
+> **Update (2 Jul 2026) — the offline-first pivot + current working mode.** The thesis below stands with
+> one load-bearing reframe: **"on demand" now means *assembled on demand from a curated, SME-gated
+> corpus*** — deterministic composition + rendering of approved material — **not live LLM generation at
+> request time** (decision: `project-handoff.md` §4 / Session 11; rule + boundary: `invariants.md` §10).
+> This makes the §6/§7 trust claims *literal* (every delivered sheet has passed the human gate), removes
+> the per-request cost/latency/slop failure modes, and turns coverage into a finite, computable program
+> over the parsed Lehrplan; the long tail is served async through the corpus loop. **Working mode:** the
+> project is currently built **for the joy of building** — no launch deadline, no GTM program; the
+> positioning/competitive analysis in this document is *retained for a possible later business phase*
+> and is deliberately not driving current priorities.
+
 ---
 
 ## 1 · The thesis (one paragraph)

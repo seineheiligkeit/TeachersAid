@@ -1,0 +1,73 @@
+{
+  "id": "c0176.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Eine Gemeinde will einen naturnahen Bach begradigen und betonieren, um Hochwasser schneller abzuleiten. Nimm Stellung: Welche Auswirkungen hätte das auf die Wasserlebewesen, und würdest du dieser Maßnahme zustimmen? Begründe fachlich.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Die Gemeinde plant, den Dorfbach zu begradigen und mit Beton auszukleiden, um Hochwasser schneller abzuleiten."
+    },
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.STA.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "Eine Betonierung entfernt Steine, Pflanzen und Kurven, die Verstecke und Laichplätze bieten; das Wasser fließt schneller und gleichförmiger, wodurch Sauerstoffverwirbelung und Lebensraumvielfalt sinken. Viele Tierarten (Insektenlarven, Forellen) würden verschwinden. Eine fundierte Stellungnahme wägt den Hochwasserschutz gegen den Verlust an Lebensraum ab und schlägt evtl. naturnahe Alternativen (Renaturierung, Retentionsflächen) vor.",
+    "acceptable_reasoning": "Sowohl Zustimmung als auch Ablehnung wird akzeptiert, wenn beide Seiten (Hochwasserschutz UND ökologischer Schaden) fachlich korrekt benannt und gegeneinander abgewogen werden.",
+    "rubric": [
+      {
+        "criterion": "Fachliche Begründung",
+        "levels": [
+          "nennt nur eine Meinung ohne Begründung",
+          "nennt einen fachlichen Aspekt",
+          "wägt Nutzen und ökologischen Schaden gegeneinander ab"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Eine reine Meinungsäußerung ohne fachliche Begründung (nur 'ich finde das schlecht') erfüllt die Kompetenz nicht – die biologische Begründung ist der Kern."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 3,
+  "kompetenzbereich": "Standpunkte begründen und reflektiert handeln (S)",
+  "competences": [
+    "BIO.US.x.STA.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0176",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:14+00:00",
+  "updated_at": "2026-07-05T05:34:14+00:00"
+}

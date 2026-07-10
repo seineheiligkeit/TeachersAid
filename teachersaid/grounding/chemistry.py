@@ -53,6 +53,7 @@ ELEMENT_NAMES: dict[str, str] = {
     "Na": "Natrium", "Mg": "Magnesium", "Al": "Aluminium", "S": "Schwefel",
     "Cl": "Chlor", "K": "Kalium", "Ca": "Calcium", "Fe": "Eisen", "Cu": "Kupfer",
     "Zn": "Zink", "Ag": "Silber", "Pb": "Blei", "Sn": "Zinn", "Br": "Brom",
+    "Ba": "Barium", "Mn": "Mangan",
 }
 
 # Unicode subscript digits — the renderer typesets these correctly (CO₂, H₂O).
@@ -126,10 +127,15 @@ def mass_breakdown(formula: str) -> list[tuple[str, int, float]]:
     return [(el, n, ATOMIC_MASSES[el] * n) for el, n in parse_formula(formula).items()]
 
 
+_COUNT_DIGITS = re.compile(r"(?<=[A-Za-z)])(\d+)")
+
+
 def subscript(formula: str) -> str:
-    """Render a formula with proper subscripts (H2O → H₂O) for display. Digits that
-    follow a coefficient space stay normal; only counts inside the formula subscript."""
-    return formula.translate(_SUBSCRIPTS)
+    """Render a formula with proper subscripts (H2O → H₂O) for display. Only a COUNT
+    subscripts — a digit run following an element letter or a ')'. Coefficients and
+    hydrate multipliers (after a space, '·' or at the start: "2 H2O", "CuSO4·5H2O")
+    stay normal-size digits."""
+    return _COUNT_DIGITS.sub(lambda m: m.group(1).translate(_SUBSCRIPTS), formula)
 
 
 # --- qualitative reference tables (curated truth — select, never author) ------
@@ -193,4 +199,93 @@ REACTION_TYPE_REASON: dict[str, str] = {
     "Analyse (Zersetzung)": "Aus einem Edukt entstehen mehrere Produkte.",
     "Verbrennung (Oxidation)": "Ein Stoff reagiert mit Sauerstoff (O₂) unter Energiefreisetzung.",
     "Säure-Base-Reaktion (Neutralisation)": "Säure und Base reagieren zu Salz und Wasser.",
+}
+
+
+# --- curated context frames (Übungsreihe upgrade — the blackboard test) --------
+# One vetted, plain, DIGIT-FREE German sentence per drawn item: where the substance /
+# reaction occurs in the real world. Same discipline as every curated table above —
+# the engine *selects* the sentence keyed to the drawn item; it never authors one at
+# task time, and a context never asserts a number (all digits are computed by the
+# recipe; `schema/parametric.Instance` enforces digit-freeness). SME vets at the gate.
+
+# Formula → context sentence. Covers the molar-mass and atom-count pools.
+COMPOUND_CONTEXTS: dict[str, str] = {
+    "H2O": "Wasser ist das wichtigste Lösungsmittel — im Labor wie im Alltag.",
+    "CO2": "Kohlenstoffdioxid entsteht bei jeder vollständigen Verbrennung und lässt "
+           "Mineralwasser sprudeln.",
+    "NaCl": "Kochsalz würzt unser Essen und dient im Winter als Streusalz.",
+    "H2SO4": "Schwefelsäure steckt in Autobatterien und ist eine der wichtigsten "
+             "Industriechemikalien.",
+    "CaCO3": "Calciumcarbonat bildet Kalkstein und Marmor; beim Kalkbrennen wird es zu "
+             "Branntkalk zersetzt.",
+    "NaOH": "Natriumhydroxid ist der Wirkstoff vieler Abflussreiniger.",
+    "KOH": "Kaliumhydroxid steckt in Schmierseife und in Alkali-Batterien.",
+    "HCl": "Chlorwasserstoff ergibt in Wasser gelöst die Salzsäure — sie arbeitet auch "
+           "in unserem Magen.",
+    "NH3": "Ammoniak ist der Ausgangsstoff für Kunstdünger und riecht stechend.",
+    "CH4": "Methan ist der Hauptbestandteil von Erdgas und brennt im Gasherd.",
+    "C6H12O6": "Traubenzucker ist der schnelle Energielieferant unseres Körpers und "
+               "entsteht bei der Photosynthese.",
+    "Ca(OH)2": "Gelöschter Kalk wird seit der Antike zum Mauern und Verputzen verwendet.",
+    "MgO": "Magnesiumoxid bleibt als weißes Pulver zurück, wenn Magnesium hell "
+           "aufleuchtend verbrennt.",
+    "Fe2O3": "Eisenoxid kennt jeder als Rost — und als rotes Pigment in Farben.",
+    "Al2O3": "Aluminiumoxid bildet die schützende Schicht auf jedem Aluminiumteil; als "
+             "Korund schleift es Werkzeuge.",
+    "CuSO4": "Kupfersulfat bildet auffällig blaue Kristalle und wird im Weinbau als "
+             "Pflanzenschutzmittel eingesetzt.",
+    "KMnO4": "Kaliumpermanganat färbt Lösungen tiefviolett und wirkt stark oxidierend — "
+             "ein klassisches Desinfektionsmittel.",
+    "HNO3": "Salpetersäure braucht man zur Herstellung von Düngemitteln und Sprengstoffen.",
+    "Na2CO3": "Soda wird seit Jahrtausenden zum Waschen und für die Glasherstellung genutzt.",
+    "C2H5OH": "Ethanol ist der Alkohol in Wein und Bier — und ein wichtiges "
+              "Desinfektionsmittel.",
+    "CaCl2": "Calciumchlorid bindet Wasser so gut, dass es als Trockenmittel und "
+             "Auftausalz dient.",
+    "ZnO": "Zinkoxid ist das weiße Pigment in Sonnencremes und Wundsalben.",
+    "Mg(OH)2": "Magnesiumhydroxid neutralisiert als Mittel gegen Sodbrennen überschüssige "
+               "Magensäure.",
+    "Al2(SO4)3": "Aluminiumsulfat klärt Trinkwasser, indem es Schwebstoffe ausflockt.",
+    "Ba(NO3)2": "Bariumnitrat färbt Feuerwerksflammen grün.",
+    "(NH4)2SO4": "Ammoniumsulfat ist ein verbreiteter Stickstoffdünger.",
+    "CuSO4·5H2O": "Kupfersulfat bindet Wasser in seine blauen Kristalle ein — wasserfrei "
+                  "ist es fast farblos.",
+}
+
+
+def reaction_key(reactants: list[str], products: list[str]) -> str:
+    """Canonical key for a reaction skeleton — joins the raw formula lists, so the
+    context lookup is independent of coefficients and display subscripts."""
+    return " + ".join(reactants) + " → " + " + ".join(products)
+
+
+# Skeleton key (see `reaction_key`) → context sentence. Covers the balancing /
+# stoichiometry reaction pool in `pipeline/chemistry.py`.
+REACTION_CONTEXTS: dict[str, str] = {
+    "H2 + O2 → H2O": "Die Knallgasreaktion: Wasserstoff verbrennt mit Sauerstoff zu "
+                     "Wasser — sie treibt auch Brennstoffzellen an.",
+    "N2 + H2 → NH3": "Die Ammoniaksynthese nach Haber und Bosch macht aus Luftstickstoff "
+                     "Dünger für die halbe Welt.",
+    "Fe + O2 → Fe2O3": "Eisen reagiert mit Sauerstoff — langsam als Rost, schnell als "
+                       "Funkenregen einer Wunderkerze.",
+    "CH4 + O2 → CO2 + H2O": "Diese Verbrennung läuft in jedem Gasherd ab: Erdgas besteht "
+                            "überwiegend aus Methan.",
+    "Al + O2 → Al2O3": "Frisches Aluminium überzieht sich sofort mit einer schützenden "
+                       "Oxidschicht.",
+    "Na + Cl2 → NaCl": "Aus einem weichen Metall und einem giftigen Gas entsteht "
+                       "harmloses Kochsalz.",
+    "C3H8 + O2 → CO2 + H2O": "Propan verbrennt im Campingkocher und im Gasgriller.",
+    "H2 + Cl2 → HCl": "Die Chlorknallgasreaktion startet schon durch Licht — das Produkt "
+                      "ergibt gelöst die Salzsäure.",
+    "Mg + O2 → MgO": "Magnesium verbrennt mit grellweißer Flamme — früher das Blitzlicht "
+                     "der Fotografen.",
+    "C2H6 + O2 → CO2 + H2O": "Ethan ist ein Bestandteil des Erdgases und verbrennt wie "
+                             "Methan.",
+    "Fe + Cl2 → FeCl3": "Eisen reagiert mit Chlorgas zu Eisenchlorid, einem "
+                        "Flockungsmittel der Abwasserreinigung.",
+    "NaN3 → Na + N2": "Im Airbag zersetzt sich Natriumazid schlagartig — der freigesetzte "
+                      "Stickstoff bläst das Luftkissen auf.",
+    "CO2 + H2O → C6H12O6 + O2": "Die Photosynthese: Pflanzen bauen aus Kohlenstoffdioxid "
+                                "und Wasser Traubenzucker auf und geben Sauerstoff ab.",
 }

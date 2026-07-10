@@ -1,0 +1,75 @@
+{
+  "id": "c0193.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Es dämmert bereits. Zwei Kinder gehen am Straßenrand nach Hause: Kind A trägt dunkle Kleidung ohne Reflektoren, Kind B trägt eine helle Jacke mit reflektierenden Streifen. Ein Auto nähert sich mit Abblendlicht. Erkläre mithilfe des Sender-Empfänger-Modells, welches Kind der Autofahrer früher erkennt, und begründe warum.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Welches Kind wird vom Autofahrer früher als Hindernis erkannt, und warum?"
+    },
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.2.SEH.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Kind B (helle Jacke mit Reflektoren) wird deutlich früher erkannt. Das Auto-Scheinwerferlicht (Sender) trifft auf die Kleidung; reflektierende Streifen werfen das Licht gezielt zum Fahrzeug zurück, sodass viel Licht zum Auge des Fahrers (Empfänger) gelangt. Dunkle, nicht-reflektierende Kleidung schluckt einen Großteil des auftreffenden Lichts, es kommt kaum reflektiertes Licht beim Fahrer an – das Kind bleibt praktisch unsichtbar, bis es sehr nahe ist.",
+    "acceptable_reasoning": "Die Erklärung muss den Sender-Empfänger-Gedanken (Licht vom Scheinwerfer wird am Körper reflektiert und muss zum Auge des Fahrers gelangen) sichtbar anwenden, nicht nur behaupten, Reflektoren seien besser sichtbar.",
+    "rubric": [
+      {
+        "criterion": "model_use",
+        "levels": [
+          "Sender-Empfänger-Modell nicht erkennbar angewendet",
+          "Modell teilweise angewendet",
+          "Modell vollständig und korrekt angewendet"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Es reicht nicht zu sagen, Reflektoren seien heller – wichtig ist der Reflexionsmechanismus: nur ausreichend zum Fahrerauge zurückgeworfenes Licht macht sichtbar."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Physik",
+  "klasse": 2,
+  "kompetenzbereich": "Sehen und Hören",
+  "competences": [
+    "PHY.US.2.SEH.01"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "W",
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0193",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:25+00:00",
+  "updated_at": "2026-07-05T05:34:25+00:00"
+}

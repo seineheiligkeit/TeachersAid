@@ -82,7 +82,9 @@ Two interchangeable paths into the *same* review gates — the architecture does
 
 **The plan is to use both:** hand-author a small gold set per subject (the library), then let the LLM
 generate at scale *seeded by* those gold examples, with every output passing through the dashboard's
-two review gates before it can enter the approved material library.
+two review gates before it can enter the approved material library. *(Offline-first pivot, 2 Jul 2026:
+both paths are **corpus-loop** paths — the delivery loop serves only what passed the gates;
+`invariants.md` §10.)*
 
 ## 5 · Coverage target (wedge-first)
 
@@ -96,9 +98,10 @@ subject-coverage audit:
   Target: 2–3 gold examples per ● subject (the cognitive subjects).
 - **Phase 3 — broaden.** GWB, Geschichte u. pol. Bildung, Deutsch (written strand), Latein. Then the
   ◐ subjects (Fremdsprache with audio, Digitale Grundbildung) as audio/interactive support matures.
-- **Phase 4 — scale via LLM.** With a key: batch-generate across the competence map, review, and
-  promote the best into the library. Don't target the ○ subjects (Musik/Sport/Kunst/Technik) for
-  printable worksheets — the audit says a worksheet structurally can't reach their core competences.
+- **Phase 4 — scale via campaigns.** Batch-generate across the competence map (subagent briefs or the
+  API seam — both corpus-loop), review, and promote the best into the library — which, under the
+  offline-first pivot, **IS the product corpus**. Don't target the ○ subjects (Musik/Sport/Kunst/Technik)
+  for printable worksheets — the audit says a worksheet structurally can't reach their core competences.
 
 A worksheet is "covered" for a (subject, Klasse, Kompetenzbereich) when ≥1 verify-clean gold example
 exists and has been SME-approved in the dashboard.

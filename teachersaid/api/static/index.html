@@ -76,9 +76,10 @@
 <main id="main"></main>
 
 <script>
-const TABS = [["brainstorm","Brainstorm"],["bausteine","Bausteine"],["inhalte","Inhalte"],["bibliothek","Bibliothek"],["arrangements","Arrangements"],["abbildungen","Abbildungen"],["datensaetze","Datensätze"],["texte","Texte"],["sachverhalte","Sachverhalte"],["statistik","Statistik"],["insights","Insights"]];
+const TABS = [["planen","Planen"],["pruefen","Prüfen"],["korpus","Korpus"],["einblicke","Einblicke"]];
+const KORPUS_VIEWS = [["blaetter","Arbeitsblätter"],["bausteine","Bausteine"],["arrangements","Arrangements"],["abbildungen","Abbildungen"],["datensaetze","Datensätze"],["texte","Texte"],["sachverhalte","Sachverhalte"]];
 const FB_TAGS = ["zu leicht","zu schwer","Sachfehler","Sprache/Wortwahl","unklar","didaktisch stark","Bild/Abbildung nötig","super"];
-let TAB = "brainstorm", SELECTED = null, VIEW = "bloecke", ARRVIEW = "vorschau", LASTITEMS = [];
+let TAB = "planen", KORPUS_VIEW = "blaetter", SELECTED = null, VIEW = "bloecke", ARRVIEW = "vorschau", LASTITEMS = [];
 const $ = s => document.querySelector(s);
 const esc = s => (s==null?"":String(s)).replace(/[&<>]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
 async function jget(u){ return (await fetch(u)).json(); }
@@ -90,7 +91,7 @@ function renderTabs(){
 function switchTab(t){ TAB=t; SELECTED=null; renderTabs(); buildShell(); refresh(); }
 
 function buildShell(){
-  if(TAB==="brainstorm"){
+  if(TAB==="planen"){
     $("#main").innerHTML = `
       <div class="grid2">
         <div>
@@ -109,98 +110,109 @@ function buildShell(){
           </div>
         </div>
         <div class="card"><h2>Ideen-Sammlung</h2><div id="bs-list"></div></div>
-      </div>`;
-  } else if(TAB==="bausteine"){
+      </div>
+      <div id="planner"><p class="muted">lädt…</p></div>`;
+  } else if(TAB==="pruefen"){
+    $("#main").innerHTML = `<div id="pruefen"><p class="muted">lädt…</p></div>`;
+  } else if(TAB==="korpus"){
     $("#main").innerHTML = `
-      <div class="grid2">
-        <div class="card"><h2>Baustein-Bibliothek</h2>
-          <div class="row" style="margin-bottom:8px;flex-wrap:wrap;gap:6px">
-            <select id="blk-subject" onchange="refresh()"><option value="">alle Fächer</option></select>
-            <select id="blk-klasse" onchange="refresh()"><option value="">alle Klassen</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select>
-            <select id="blk-status" onchange="refresh()"><option value="">alle Status</option><option value="in_review">in Prüfung</option><option value="approved">freigegeben</option><option value="rejected">abgelehnt</option></select>
-            <select id="blk-role" onchange="refresh()"><option value="">alle Typen</option><option value="task">Aufgabe</option><option value="info">Info / Text</option></select>
-            <button class="ghost" onclick="approveAllBlocks()">Alle in Prüfung freigeben</button>
-          </div>
-          <div id="blk-list"></div></div>
-        <div id="detail" class="card"><p class="muted">Wähle links einen Baustein.</p></div>
-      </div>`;
-  } else if(TAB==="inhalte" || TAB==="bibliothek"){
-    const composer = TAB==="inhalte" ? `
-      <div class="card"><h2>Arbeitsblatt zusammenstellen</h2>
-        <p class="muted">Aus <b>freigegebenen</b> Bausteinen (dumb v1: passende Bausteine, nach Niveau geordnet, zeitlich begrenzt). Ziel über den <b>Kompetenzbereich</b> (robust) — oder per Thema, wenn der Titel zum Katalog passt.</p>
-        <label>Fach</label><input id="c-subject" value="Physik" onchange="loadKBs()" />
-        <div class="row"><div style="flex:1"><label>Klasse</label><input id="c-klasse" type="number" value="4" onchange="loadKBs()" /></div>
-          <div style="flex:1"><label>Dauer</label><select id="c-env"><option>einzelstunde</option><option selected>doppelstunde</option><option>block</option></select></div></div>
-        <label>Kompetenzbereich <span class="muted">(optional)</span></label>
-        <select id="c-kb"><option value="">— per Thema auflösen —</option></select>
-        <label>Thema / Titel</label><input id="c-topic" value="Strahlung und Radioaktivität" />
-        <div class="row" style="margin-top:8px"><button onclick="composeSheet()">Zusammenstellen</button></div>
-      </div>` : "";
-    $("#main").innerHTML = `
-      <div class="grid2">
-        <div>${composer}
-          <div class="card"><h2>${TAB==="inhalte"?"Arbeitsblätter (in Prüfung)":"Bibliothek (freigegeben)"}</h2><div id="content-list"></div></div>
-        </div>
-        <div id="detail" class="card"><p class="muted">Wähle einen Eintrag.</p></div>
-      </div>`;
-    if(TAB==="inhalte") loadKBs();
-  } else if(TAB==="arrangements"){
-    $("#main").innerHTML = `
-      <div class="grid2">
-        <div class="card"><h2>Lernarrangements</h2>
-          <p class="muted">Komposite Sibling-Objekte (v0.5), die Arbeitsblätter <i>enthalten</i>: Rollen, Phasen, gemeinsames Produkt und die mündlich/sozial/handelnd verankerten Kompetenzen, die ein einzelnes Blatt nicht erreicht.</p>
-          <div id="arr-list"></div></div>
-        <div id="detail" class="card"><p class="muted">Wähle links ein Arrangement.</p></div>
-      </div>`;
-  } else if(TAB==="abbildungen"){
-    $("#main").innerHTML = `
-      <div class="card"><h2>Bibliotheks-Assets — Dekoration & Quellen</h2>
-        <p class="muted">Datei-basierte Assets: <b>dekorativ</b> (inhaltsfrei, wiederverwendbar — svg/Code jetzt, Diffusion wenn das Bild-Agent angebunden ist) oder <b>extern mit Quelle/Rechten</b>. Hier prüfst und gibst du sie frei. Die Medien-Policy lässt nur inhaltsfreie Deko aus beliebiger Quelle zu.</p>
-        <div id="asset-lib" class="gallery"><p class="muted">lädt…</p></div></div>
-      <div class="card"><h2>Abbildungen aus Bausteinen & Arbeitsblättern</h2>
-        <p class="muted">Jede code-generierte Inhalts-Figur (entdedupliziert nach Generator + Spezifikation), so wie sie im Material erscheint — fächerübergreifend an einer Stelle prüfbar (Korrektheit, Didaktik). Diese werden mit ihrem Baustein/Arbeitsblatt freigegeben.</p>
-        <div class="row" style="margin:6px 0;gap:6px">
-          <select id="ass-gen" onchange="renderAssets()"><option value="">alle Generatoren</option></select>
-        </div>
-        <div id="gallery" class="gallery"><p class="muted">lädt…</p></div></div>`;
-  } else if(TAB==="datensaetze"){
-    $("#main").innerHTML = `
-      <div class="card"><h2>Datensätze — geerdete Fakten (Quellen mit Lizenz)</h2>
-        <p class="muted">Kuratierte, zitierte, lizenzgeprüfte öffentliche Daten (deterministisch von Tools geholt, kein LLM im Faktenweg). Inhalte <b>referenzieren</b> einen Datensatz per stabiler ID und dürfen einen Wert <b>verwenden, nie erfinden</b> — wie <code>serves</code> eine Kompetenz referenziert. Hier prüfst du Quelle, Lizenz und Abbildung und gibst frei.</p>
-        <div id="dataset-lib" class="gallery"><p class="muted">lädt…</p></div></div>`;
-  } else if(TAB==="texte"){
-    $("#main").innerHTML = `
-      <div class="card"><h2>Texte — annotierte authentische Texte (Deutsch)</h2>
-        <p class="muted">Echte, rechtlich geklärte Texte (gemeinfrei nach AT-70-Jahre-Regel oder CC) mit einer <b>geprüften Annotationsebene</b>. Aufgaben werden daraus abgeleitet — die Antworten stammen aus den Annotationen (korrekt durch Kuration, nicht erfunden). „Arbeitsblatt erzeugen“ stellt ein abgeleitetes Arbeitsblatt in <b>Inhalte</b> ein.</p>
-        <div id="text-lib"><p class="muted">lädt…</p></div></div>`;
-  } else if(TAB==="sachverhalte"){
-    $("#main").innerHTML = `
-      <div class="card"><h2>Sachverhalte — kuratierte Sachwissen-Module (Darstellung + Fakten)</h2>
-        <p class="muted">Strukturierte, belegte Fakten (Zeitleiste · Akteure · Ursache→Folge · Begriffe) plus eine <b>autorisierte Darstellung über dem eingefrorenen Faktenset</b> — jede Jahreszahl ist per Entity-Lint garantiert, kein erfundenes Datum. Ein Modul → drei Projektionen (Darstellung · Abbildungen · Sachkompetenz-Aufgaben). Hier prüfst du <b>Fakten und Quellen</b> und gibst frei; „Arbeitsblatt erzeugen“ stellt es in <b>Inhalte</b> ein.</p>
-        <div id="sach-lib"><p class="muted">lädt…</p></div></div>`;
-  } else if(TAB==="insights"){
-    $("#main").innerHTML = `<div id="insights"><p class="muted">lädt…</p></div>`;
+      <div class="row" id="korpus-nav" style="margin-bottom:10px;gap:6px;flex-wrap:wrap"></div>
+      <div id="korpus-body"><p class="muted">lädt…</p></div>`;
   } else {
-    $("#main").innerHTML = `<div id="stats"><p class="muted">lädt…</p></div>`;
+    $("#main").innerHTML = `<div id="insights"><p class="muted">lädt…</p></div><div id="stats"><p class="muted">lädt…</p></div>`;
   }
 }
+
+/* ---------- Korpus — sub-views over the material library ---------- */
+function korpusShellHTML(v){
+  if(v==="blaetter") return `
+    <div class="grid2">
+      <div>
+        <div class="card"><h2>Arbeitsblatt zusammenstellen</h2>
+          <p class="muted">Aus <b>freigegebenen</b> Bausteinen (dumb v1: passende Bausteine, nach Niveau geordnet, zeitlich begrenzt). Ziel über den <b>Kompetenzbereich</b> (robust) — oder per Thema, wenn der Titel zum Katalog passt.</p>
+          <label>Fach</label><input id="c-subject" value="Physik" onchange="loadKBs()" />
+          <div class="row"><div style="flex:1"><label>Klasse</label><input id="c-klasse" type="number" value="4" onchange="loadKBs()" /></div>
+            <div style="flex:1"><label>Dauer</label><select id="c-env"><option>einzelstunde</option><option selected>doppelstunde</option><option>block</option></select></div></div>
+          <label>Kompetenzbereich <span class="muted">(optional)</span></label>
+          <select id="c-kb"><option value="">— per Thema auflösen —</option></select>
+          <label>Thema / Titel</label><input id="c-topic" value="Strahlung und Radioaktivität" />
+          <div class="row" style="margin-top:8px"><button onclick="composeSheet()">Zusammenstellen</button></div>
+        </div>
+        <div class="card"><h2>Arbeitsblätter (freigegeben)</h2><div id="content-list"></div></div>
+      </div>
+      <div id="detail" class="card"><p class="muted">Wähle einen Eintrag.</p></div>
+    </div>`;
+  if(v==="bausteine") return `
+    <div class="grid2">
+      <div class="card"><h2>Baustein-Bibliothek</h2>
+        <div class="row" style="margin-bottom:8px;flex-wrap:wrap;gap:6px">
+          <select id="blk-subject" onchange="refresh()"><option value="">alle Fächer</option></select>
+          <select id="blk-klasse" onchange="refresh()"><option value="">alle Klassen</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select>
+          <select id="blk-status" onchange="refresh()"><option value="">alle Status</option><option value="in_review">in Prüfung</option><option value="approved">freigegeben</option><option value="rejected">abgelehnt</option></select>
+          <select id="blk-role" onchange="refresh()"><option value="">alle Typen</option><option value="task">Aufgabe</option><option value="info">Info / Text</option></select>
+          <button class="ghost" onclick="approveAllBlocks()">Alle in Prüfung freigeben</button>
+        </div>
+        <div id="blk-list"></div></div>
+      <div id="detail" class="card"><p class="muted">Wähle links einen Baustein.</p></div>
+    </div>`;
+  if(v==="arrangements") return `
+    <div class="grid2">
+      <div class="card"><h2>Lernarrangements</h2>
+        <p class="muted">Komposite Sibling-Objekte (v0.5), die Arbeitsblätter <i>enthalten</i>: Rollen, Phasen, gemeinsames Produkt und die mündlich/sozial/handelnd verankerten Kompetenzen, die ein einzelnes Blatt nicht erreicht.</p>
+        <div id="arr-list"></div></div>
+      <div id="detail" class="card"><p class="muted">Wähle links ein Arrangement.</p></div>
+    </div>`;
+  if(v==="abbildungen") return `
+    <div class="card"><h2>Bibliotheks-Assets — Dekoration & Quellen</h2>
+      <p class="muted">Datei-basierte Assets: <b>dekorativ</b> (inhaltsfrei, wiederverwendbar — svg/Code jetzt, Diffusion wenn das Bild-Agent angebunden ist) oder <b>extern mit Quelle/Rechten</b>. Hier prüfst und gibst du sie frei. Die Medien-Policy lässt nur inhaltsfreie Deko aus beliebiger Quelle zu.</p>
+      <div id="asset-lib" class="gallery"><p class="muted">lädt…</p></div></div>
+    <div class="card"><h2>Abbildungen aus Bausteinen & Arbeitsblättern</h2>
+      <p class="muted">Jede code-generierte Inhalts-Figur (entdedupliziert nach Generator + Spezifikation), so wie sie im Material erscheint — fächerübergreifend an einer Stelle prüfbar (Korrektheit, Didaktik). Diese werden mit ihrem Baustein/Arbeitsblatt freigegeben.</p>
+      <div class="row" style="margin:6px 0;gap:6px">
+        <select id="ass-gen" onchange="renderAssets()"><option value="">alle Generatoren</option></select>
+      </div>
+      <div id="gallery" class="gallery"><p class="muted">lädt…</p></div></div>`;
+  if(v==="datensaetze") return `
+    <div class="card"><h2>Datensätze — geerdete Fakten (Quellen mit Lizenz)</h2>
+      <p class="muted">Kuratierte, zitierte, lizenzgeprüfte öffentliche Daten (deterministisch von Tools geholt, kein LLM im Faktenweg). Inhalte <b>referenzieren</b> einen Datensatz per stabiler ID und dürfen einen Wert <b>verwenden, nie erfinden</b> — wie <code>serves</code> eine Kompetenz referenziert. Hier prüfst du Quelle, Lizenz und Abbildung und gibst frei.</p>
+      <div id="dataset-lib" class="gallery"><p class="muted">lädt…</p></div></div>`;
+  if(v==="texte") return `
+    <div class="card"><h2>Texte — annotierte authentische Texte (Deutsch)</h2>
+      <p class="muted">Echte, rechtlich geklärte Texte (gemeinfrei nach AT-70-Jahre-Regel oder CC) mit einer <b>geprüften Annotationsebene</b>. Aufgaben werden daraus abgeleitet — die Antworten stammen aus den Annotationen (korrekt durch Kuration, nicht erfunden). „Arbeitsblatt erzeugen“ stellt ein abgeleitetes Arbeitsblatt in <b>Prüfen</b> ein.</p>
+      <div id="text-lib"><p class="muted">lädt…</p></div></div>`;
+  return `
+    <div class="card"><h2>Sachverhalte — kuratierte Sachwissen-Module (Darstellung + Fakten)</h2>
+      <p class="muted">Strukturierte, belegte Fakten (Zeitleiste · Akteure · Ursache→Folge · Begriffe) plus eine <b>autorisierte Darstellung über dem eingefrorenen Faktenset</b> — jede Jahreszahl ist per Entity-Lint garantiert, kein erfundenes Datum. Ein Modul → drei Projektionen (Darstellung · Abbildungen · Sachkompetenz-Aufgaben). Hier prüfst du <b>Fakten und Quellen</b> und gibst frei; „Arbeitsblatt erzeugen“ stellt es in <b>Prüfen</b> ein.</p>
+      <div id="sach-lib"><p class="muted">lädt…</p></div></div>`;
+}
+function renderKorpus(){
+  const nav=$("#korpus-nav"), body=$("#korpus-body");
+  if(!nav||!body) return;
+  nav.innerHTML = KORPUS_VIEWS.map(([k,l])=>`<button class="ghost ${KORPUS_VIEW===k?'active':''}" onclick="setKorpusView('${k}')">${l}</button>`).join("");
+  if(body.dataset.view!==KORPUS_VIEW){   // build the sub-shell only on view change — keeps form state across the 4s refresh
+    body.dataset.view=KORPUS_VIEW;
+    body.innerHTML=korpusShellHTML(KORPUS_VIEW);
+    if(KORPUS_VIEW==="blaetter") loadKBs();
+  }
+  if(KORPUS_VIEW==="blaetter") renderContentList(LASTITEMS.filter(i=>i.stage==="content" && i.status==="approved"));
+  else if(KORPUS_VIEW==="bausteine") renderBlocks();
+  else if(KORPUS_VIEW==="arrangements") renderArrangements();
+  else if(KORPUS_VIEW==="abbildungen") renderAssets();
+  else if(KORPUS_VIEW==="datensaetze") renderDatasets();
+  else if(KORPUS_VIEW==="texte") renderTexts();
+  else if(KORPUS_VIEW==="sachverhalte") renderSachverhalte();
+}
+function setKorpusView(v){ KORPUS_VIEW=v; SELECTED=null; renderKorpus(); }
 
 async function refresh(){
   const st = await jget("/api/status");
   $("#counts").textContent = Object.entries(st.counts).map(([k,v])=>`${k}: ${v}`).join("  ·  ") || "leer";
   $("#libsize").textContent = st.library_size;
   LASTITEMS = st.items;
-  if(TAB==="brainstorm") renderBrainstorm();
-  else if(TAB==="bausteine") renderBlocks();
-  else if(TAB==="inhalte") renderContentList(LASTITEMS.filter(i=>i.stage==="content" && i.status!=="approved"));
-  else if(TAB==="bibliothek") renderContentList(LASTITEMS.filter(i=>i.stage==="content" && i.status==="approved"));
-  else if(TAB==="arrangements") renderArrangements();
-  else if(TAB==="abbildungen") renderAssets();
-  else if(TAB==="datensaetze") renderDatasets();
-  else if(TAB==="texte") renderTexts();
-  else if(TAB==="sachverhalte") renderSachverhalte();
-  else if(TAB==="statistik") renderStats();
-  else if(TAB==="insights") renderInsights();
+  if(TAB==="planen") renderPlanen();
+  else if(TAB==="pruefen") renderPruefen();
+  else if(TAB==="korpus") renderKorpus();
+  else if(TAB==="einblicke") renderEinblicke();
 }
 
 /* ---------- Brainstorm ---------- */
@@ -230,7 +242,7 @@ async function addIdea(){
 async function suggest(){ await jpost("/api/brainstorm/suggest",{subject:$("#s-subject").value,klasse:+$("#s-klasse").value}); refresh(); }
 async function fleshOut(id){
   const r = await jpost(`/api/items/${id}/flesh-out`,{});
-  TAB="inhalte"; SELECTED=r.id||null; VIEW="bloecke"; renderTabs(); buildShell(); await refresh(); if(SELECTED) openDetail(SELECTED);
+  TAB="korpus"; KORPUS_VIEW="blaetter"; SELECTED=r.id||null; VIEW="bloecke"; renderTabs(); buildShell(); await refresh(); if(SELECTED) openDetail(SELECTED);
 }
 async function loadKBs(){
   const sel=$("#c-kb"); if(!sel) return;
@@ -260,11 +272,10 @@ function renderContentList(items){
       <div class="muted">${esc(i.subject)} ${i.klasse}. Kl. · ${cov}</div>
       ${i.error?`<div class="gap">⚠ ${esc(i.error)}</div>`:""}</div>`;
   }).join("") : `<p class="muted">keine Einträge</p>`;
-  if(SELECTED && !items.find(i=>i.id===SELECTED) && TAB==="inhalte") { /* keep detail */ }
 }
 function setView(v){ VIEW=v; openDetail(SELECTED); }
 async function openDetail(id){
-  SELECTED=id; if($("#content-list")) renderContentList(LASTITEMS.filter(i=>i.stage==="content" && (TAB==="bibliothek"? i.status==="approved": i.status!=="approved")));
+  SELECTED=id; if($("#content-list")) renderContentList(LASTITEMS.filter(i=>i.stage==="content" && i.status==="approved"));
   const it = await jget("/api/items/"+id);
   const c = it.content;
   let h = `<div class="row between"><div><h2 style="margin:0">${esc(it.title)}</h2>
@@ -324,7 +335,7 @@ function figs(b, imgSrc){
   // inline-preview every figure the block references, built on demand from its spec
   if(!imgSrc) return "";
   return (b.asset_refs||[]).map(r=>`<div class="figpre"><img src="${imgSrc(r)}" alt="${esc(r)}"
-    loading="lazy" onerror="this.style.display='none'"></div>`).join("");
+    loading="lazy" onerror="pImgErr(this)"></div>`).join("");
 }
 function prov(b){
   // expression-provenance panel (History/GPB): origin + obligation + the full sources list,
@@ -394,7 +405,7 @@ async function renderBlocks(){
       <div class="row between"><b>${b.role==='task'?'🎯':'📖'} ${esc(b.kind)}</b><span class="pill s-${b.status}">${b.status}</span></div>
       <div>${esc(b.prompt)}</div>
       <div class="muted">${esc(b.subject)} ${b.klasse||''} · ${esc(b.kompetenzbereich||'—')}
-        ${b.cognitive_level?`<span class="badge">${b.cognitive_level}</span>`:''}<span class="badge">${b.scope}</span>${(b.dimensions||[]).length?`<span class="badge">${b.dimensions.join(',')}</span>`:''}${b.assets?`<span class="badge">🖼 ${b.assets}</span>`:''}</div>
+        ${b.cognitive_level?`<span class="badge">${b.cognitive_level}</span>`:''}<span class="badge">${b.scope}</span>${(b.dimensions||[]).length?`<span class="badge">${b.dimensions.join(',')}</span>`:''}${b.assets?`<span class="badge">🖼 ${b.assets}</span>`:''}${b.readability!=null?`<span class="badge" title="Wiener Sachtextformel — geschätzte Schulstufe">WSTF ${String(b.readability.toFixed(1)).replace('.',',')}</span>`:''}</div>
     </div>`).join("") : `<p class="muted">keine Bausteine — kein Treffer für diesen Filter.</p>`);
 }
 async function openBlock(id){
@@ -487,7 +498,7 @@ async function renderTexts(){
   }).join("");
 }
 async function actText(id,kind){ await jpost(`/api/texts/${id}/${kind}`,{}); renderTexts(); }
-async function composeText(id){ const r=await jpost(`/api/texts/${id}/compose`,{}); alert(r.error?("Fehler: "+r.error):("Arbeitsblatt "+r.id+" in „Inhalte“ erstellt"+(r.problems&&r.problems.length?(" — "+r.problems.length+" Verify-Probleme"):" (verify-clean)"))); }
+async function composeText(id){ const r=await jpost(`/api/texts/${id}/compose`,{}); alert(r.error?("Fehler: "+r.error):("Arbeitsblatt "+r.id+" in „Prüfen“ eingestellt"+(r.problems&&r.problems.length?(" — "+r.problems.length+" Verify-Probleme"):" (verify-clean)"))); }
 /* ---------- Sachverhalte (the content / exposition layer) ---------- */
 async function renderSachverhalte(){
   if(!$("#sach-lib")) return;
@@ -519,7 +530,7 @@ async function renderSachverhalte(){
   }).join("");
 }
 async function actSachverhalt(id,kind){ await jpost(`/api/sachverhalte/${id}/${kind}`,{}); renderSachverhalte(); }
-async function composeSachverhalt(id){ const r=await jpost(`/api/sachverhalte/${id}/compose`,{}); alert(r.error?("Fehler: "+r.error):("Arbeitsblatt "+r.id+" in „Inhalte“ erstellt"+(r.problems&&r.problems.length?(" — "+r.problems.length+" Verify-Probleme"):" (verify-clean)"))); }
+async function composeSachverhalt(id){ const r=await jpost(`/api/sachverhalte/${id}/compose`,{}); alert(r.error?("Fehler: "+r.error):("Arbeitsblatt "+r.id+" in „Prüfen“ eingestellt"+(r.problems&&r.problems.length?(" — "+r.problems.length+" Verify-Probleme"):" (verify-clean)"))); }
 async function renderAssets(){
   renderAssetLib();
   if(!$("#gallery")) return;
@@ -673,8 +684,47 @@ async function renderInsights(){
   $("#insights").innerHTML=h;
 }
 
-/* ---------- Statistik ---------- */
-async function renderStats(){
+/* ---------- Planen — Ideen + Kampagnen-Planer + Lieferung/Wunschliste ---------- */
+async function renderPlanen(){
+  renderBrainstorm();
+  if(!$("#planner")) return;
+
+  // --- Kampagnen-Planer (offline-first: der Korpus-Fortschrittsbalken) ---
+  const STATCOL={gruen:"#2e7d32",teil:"#b26a00",leer:"#999"};
+  const cov = await jget("/api/coverage"); const ct = cov.totals;
+  const covbar=(g,t,n)=>{const pg=n?100*g/n:0, pt=n?100*t/n:0;
+    return `<span style="display:inline-block;width:110px;height:9px;background:#eee;border-radius:5px;overflow:hidden;vertical-align:middle;white-space:nowrap;font-size:0"><i style="display:inline-block;height:9px;background:${STATCOL.gruen};width:${pg}%"></i><i style="display:inline-block;height:9px;background:#f0ad4e;width:${pt}%"></i></span>`;};
+  let h = `<div class="card"><h2>Kampagnen-Planer — Kompetenzbereich-Zellen</h2>
+    <div class="row between"><span><b style="color:${STATCOL.gruen}">${ct.gruen} grün</b> · <b style="color:${STATCOL.teil}">${ct.teil} teilweise</b> · <span class="muted">${ct.leer} leer</span> von ${ct.cells} Zellen (Stufe·Fach·Klasse·KB)</span><b>${ct.ready_pct}% grün</b></div>
+    <p class="muted">grün = ≥${cov.green_min_tasks} freigegebene Aufgaben-Bausteine UND alle 3 Anforderungsbänder (leicht/mittel/anspruchsvoll) — dann kann compose ein Blatt von leicht bis anspruchsvoll bestücken. Nicht-grüne Zellen sind die Kampagnen-Warteschlange (<code>GET /api/coverage/gaps</code> liefert die Brief-Anker).</p>
+    ${cov.subjects.filter(x=>x.cells_total).map(x=>`<details style="margin:4px 0"><summary style="cursor:pointer"><b>${esc(x.name)}</b> <span class="muted">(${x.stufe==='Oberstufe'?'OS':'US'})</span> ${covbar(x.gruen,x.teil,x.cells_total)} <span class="muted">${x.gruen}/${x.cells_total} grün</span></summary>
+      <table style="margin-top:6px"><thead><tr><th>Kl.</th><th>Kompetenzbereich</th><th>Komp.</th><th>Aufg.</th><th>Bänder 1·2·3</th><th>fehlt</th><th>Status</th></tr></thead><tbody>
+      ${x.cells.map(c=>`<tr><td>${c.klasse}</td><td>${esc(c.kompetenzbereich)}</td><td class="muted">${c.n_competences}</td><td>${c.task_blocks}</td>
+        <td class="muted">${c.bands["1"]}·${c.bands["2"]}·${c.bands["3"]}</td><td class="muted">${(c.missing_bands||[]).join(",")||"—"}</td>
+        <td><b style="color:${STATCOL[c.status]}">${c.status}</b></td></tr>`).join("")}
+      </tbody></table></details>`).join("")}</div>`;
+
+  // --- Lieferung + Wunschliste (die LLM-freie Delivery-Schleife, invariants §10) ---
+  const dem = await jget("/api/demand");
+  h += `<div class="card"><h2>Lieferung testen &amp; Wunschliste</h2>
+    <p class="muted">Deterministische Lieferung: geprüftes Blatt › aus Bausteinen komponiert › ehrliche Lücke → Wunsch. Kein LLM-Aufruf.</p>
+    <div class="row" style="flex-wrap:wrap;gap:6px">
+      <input id="dl-subject" placeholder="Fach" value="Physik" style="width:150px">
+      <input id="dl-klasse" type="number" min="1" max="8" value="4" style="width:56px">
+      <input id="dl-topic" placeholder="Thema / Kernfrage" style="width:230px">
+      <select id="dl-envelope"><option>einzelstunde</option><option selected>doppelstunde</option><option>block</option></select>
+      <button onclick="deliverTest()">Liefern</button></div>
+    <p id="dl-result" class="muted"></p>
+    ${dem.length?`<table><thead><tr><th>Id</th><th>Fach</th><th>Kl.</th><th>Thema/KB</th><th>Status</th><th></th></tr></thead><tbody>
+      ${dem.map(r=>`<tr><td>${r.id}</td><td>${esc(r.subject)}</td><td>${r.klasse}</td><td>${esc(r.topic||r.kompetenzbereich||"")}</td><td>${r.status}</td>
+        <td>${r.status==="open"?`<button onclick="demandStatus('${r.id}','planned')">planen</button> <button class="ghost" onclick="demandStatus('${r.id}','dismissed')">verwerfen</button>`:(r.status==="planned"?`<button onclick="demandStatus('${r.id}','fulfilled')">erfüllt</button>`:"")}</td></tr>`).join("")}
+    </tbody></table>`:`<p class="muted">Keine Wünsche — Lücken bei der Lieferung landen hier und speisen die nächste Kampagne.</p>`}</div>`;
+  $("#planner").innerHTML = h;
+}
+
+/* ---------- Einblicke — Feedback-Digest + Block-Matrix ---------- */
+async function renderEinblicke(){
+  renderInsights();
   if(!$("#stats")) return;
   const s = await jget("/api/stats"); const t = s.totals;
   let h = `<div class="card"><h2>Block-Bibliothek — Gesamtfortschritt</h2>
@@ -697,6 +747,206 @@ async function renderStats(){
   $("#stats").innerHTML = h;
 }
 
+async function deliverTest(){
+  const body={subject:$("#dl-subject").value,klasse:+$("#dl-klasse").value,
+    topic:$("#dl-topic").value,envelope:$("#dl-envelope").value};
+  try{
+    const r=await jpost("/api/deliver",body);
+    const extra=r.mode==="gap"?"":` — ${r.n_tasks} Aufgaben, ~${r.est_minutes} min`;
+    $("#dl-result").textContent=`[${r.mode}] ${r.note}${extra}`;
+    if(r.mode==="gap") setTimeout(refresh,150);
+  }catch(e){ $("#dl-result").textContent="Fehler: "+e; }
+}
+async function demandStatus(id,status){
+  await jpost(`/api/demand/${id}/status`,{status}); setTimeout(refresh,150);
+}
+
+/* ---------- Prüfen — the unified gate (focus mode + keyboard) ---------- */
+let PQ={all:[],entries:[],idx:0,lane:"",lanes:{},labels:{},details:{}};
+async function renderPruefen(){
+  if(!$("#pruefen")) return;
+  const q=await jget("/api/review-queue");
+  const keep=(PQ.entries[PQ.idx]||{}).id;
+  PQ.all=q.entries; PQ.lanes=q.lanes; PQ.labels=q.tier_labels;
+  PQ.entries=PQ.all.filter(e=>!PQ.lane||e.tier===PQ.lane);
+  const at=PQ.entries.findIndex(e=>e.id===keep);
+  PQ.idx=at>=0?at:0;
+  drawPruefen();
+}
+function drawPruefen(){
+  const LANES=["bestaetigen","quelle","sprache","voll"];
+  const lane=(t,label,n)=>`<div onclick="setLane('${t}')" style="padding:7px 10px;border-radius:8px;cursor:pointer;display:flex;justify-content:space-between;font-size:13px;${PQ.lane===t?'background:#fff;border:1px solid #bbb;font-weight:600':'color:#555'}"><span>${label}</span><b>${n}</b></div>`;
+  let rail=`<p class="muted" style="font-size:11px;letter-spacing:.04em;margin:0 0 6px">LANES (PRÜF-TIEFE)</p>`
+    + lane("", "Alle", PQ.all.length)
+    + LANES.map(t=>lane(t, PQ.labels[t].split(" — ")[0], PQ.lanes[t]||0)).join("")
+    + ((PQ.lanes.bestaetigen||0)>0?`<button style="margin-top:10px;width:100%" onclick="laneApprove()">„Nur bestätigen" gesamt freigeben</button>`:"");
+  const e=PQ.entries[PQ.idx];
+  let card;
+  if(!e){
+    card=`<p class="muted">Nichts zu prüfen${PQ.lane?" in dieser Lane":""} — der Korpus ist auf Stand.</p>`;
+  } else {
+    const warn=(e.warnings||[]).map(w=>`<div style="background:#fdf3e0;color:#8a5a00;border-radius:8px;padding:7px 11px;font-size:12.5px;margin:4px 0">⚠ ${esc(w)}</div>`).join("")
+      +(e.n_warnings>4?`<p class="muted" style="font-size:12px">… + ${e.n_warnings-4} weitere Hinweise</p>`:"");
+    const prev=e.kind==="item"
+      ?`<div class="row" style="gap:6px;margin:8px 0 4px"><button class="ghost" onclick="pFrame('${e.id}','student')">SuS</button><button class="ghost" onclick="pFrame('${e.id}','teacher')">LK</button><button class="ghost" onclick="pFrame('${e.id}','homework')">HÜ</button></div><iframe id="pframe" src="/api/items/${e.id}/pdf/student" style="width:100%;height:420px;border:1px solid #ddd;border-radius:8px"></iframe>`
+      :e.kind==="asset"
+      ?`<img src="/api/asset-library/${e.id}/file" style="max-width:320px;max-height:220px;border:1px solid #ddd;border-radius:8px;margin:8px 0" onerror="pImgErr(this)">`
+      :pDetail(e);
+    const tri=e.triage?`<p class="muted" style="font-size:12px;margin:0 0 6px">Triage: ${e.triage.score}${(e.triage.reasons||[]).length?` — ${e.triage.reasons.slice(0,2).map(esc).join(" · ")}`:""}${e.triage.rating?` · ★${e.triage.rating}`:""}</p>`:"";
+    const revChip=e.revise_flagged?` <span class="pill" style="background:#fdf3e0;color:#8a5a00;border-color:#e8d5ac">Überarbeiten ✎</span>`:"";
+    card=`<div class="row between"><span><span class="pill">${esc(e.kind)}</span> <code>${e.id}</code> <span class="muted">· ${esc(PQ.labels[e.tier])}</span>${revChip}</span><span class="muted">${PQ.idx+1} / ${PQ.entries.length}</span></div>
+      <h2 style="margin:8px 0 2px">${esc(e.title||"")}</h2>
+      <p class="muted" style="margin:0 0 6px">${esc(e.subject||"—")}${e.klasse?` · ${e.klasse}. Kl.`:""}${e.n_tasks?` · ${e.n_tasks} Aufgaben`:""}</p>
+      ${tri}${warn}${prev}
+      <div class="row" style="gap:8px;margin-top:10px">
+        <button onclick="pDecide('approve')">Freigeben (a)</button>
+        <button class="ghost" onclick="pDecide('revise')">Überarbeiten (u)</button>
+        <button class="ghost" onclick="pDecide('reject')">Ablehnen (x)</button>
+        <span class="muted" style="margin-left:auto">Tasten: j/k blättern · a/u/x entscheiden · 1–5 Bewertung</span></div>
+      <p id="p-flash" class="muted" style="font-size:12px;margin:6px 0 0"></p>`;
+  }
+  $("#pruefen").innerHTML=`<div style="display:grid;grid-template-columns:200px minmax(0,1fr);gap:14px">
+    <div>${rail}</div><div class="card">${card}</div></div>`;
+}
+
+/* ---- Prüfen focus-card detail: every kind judgeable in place ----
+   The card fetches the SAME records the Korpus sub-views read (no new endpoints),
+   lazily for the CURRENT entry only, cached in PQ.details by kind:id so j/k stays
+   snappy. Failures are loud: a one-line muted error naming the endpoint — never a
+   silently hidden element. */
+const PDETAIL_EP={
+  block:id=>`/api/blocks/${encodeURIComponent(id)}`,
+  dataset:id=>`/api/datasets/${encodeURIComponent(id)}`,
+  text:id=>`/api/texts/${encodeURIComponent(id)}`,
+  sachverhalt:id=>`/api/sachverhalte/${encodeURIComponent(id)}`,
+  arrangement:id=>`/api/arrangements/${encodeURIComponent(id)}`,
+};
+function pImgErr(img){ // no silent onerror hiding: a broken figure names its endpoint
+  const p=document.createElement("p"); p.className="muted"; p.style.fontSize="12px";
+  p.textContent="⚠ Bild nicht ladbar: "+img.getAttribute("src");
+  img.replaceWith(p);
+}
+function pDetail(e){
+  if(!PDETAIL_EP[e.kind]) return `<p class="muted" style="font-size:12.5px">Vollansicht: Korpus → ${esc(e.kind)}.</p>`;
+  const key=e.kind+":"+e.id, d=PQ.details[key];
+  if(!d){ pLoadDetail(e.kind,e.id); return `<p class="muted">Detail lädt…</p>`; }
+  if(d.state==="loading") return `<p class="muted">Detail lädt…</p>`;
+  if(d.state==="err") return `<p class="muted">⚠ Detail nicht ladbar — ${esc(d.ep)}: ${esc(d.msg)}. Vollansicht: Korpus → ${esc(e.kind)}.</p>`;
+  return {block:pdBlock,dataset:pdDataset,text:pdText,sachverhalt:pdSachverhalt,arrangement:pdArrangement}[e.kind](e.id,d.data);
+}
+async function pLoadDetail(kind,id){
+  const key=kind+":"+id, ep=PDETAIL_EP[kind](id);
+  PQ.details[key]={state:"loading"};
+  try{
+    const r=await fetch(ep);
+    if(!r.ok) throw new Error("HTTP "+r.status);
+    PQ.details[key]={state:"ok",data:await r.json()};
+  }catch(err){ PQ.details[key]={state:"err",ep,msg:String((err&&err.message)||err)}; }
+  const cur=PQ.entries[PQ.idx];
+  if(cur&&cur.kind===kind&&cur.id===id) drawPruefen();  // redraw only if still the current entry
+}
+function pdBlock(id,lb){
+  // the full block as the Bausteine view renders it: prompt, payload, answer key,
+  // kind/Niveau/Dimensionen badges + figures built from the travelling spec (3c)
+  return `<div style="margin:8px 0">${blk(lb.block,null,r=>`/api/blocks/${encodeURIComponent(id)}/asset/${encodeURIComponent(r)}`)}</div>
+    <p class="muted" style="font-size:12px"><span class="badge">${esc(lb.subject)} ${lb.klasse||''}</span>
+      <span class="badge">KB: ${esc(lb.kompetenzbereich||'—')}</span> <span class="badge">Scope: ${esc(lb.scope)}</span>
+      ${(lb.competences||[]).length?` dient: ${lb.competences.map(c=>`<code>${esc(c)}</code>`).join(' ')}`:''}</p>`;
+}
+function pdDataset(id,d){
+  // source/licence/Stand/attribution + series + the same figure preview the Datensätze view shows
+  const fig=(d.series&&d.series.length)?`<div class="figpre"><img src="/api/datasets/${encodeURIComponent(id)}/figure?series=${encodeURIComponent(d.series[0])}" alt="${esc(id)}" loading="lazy" onerror="pImgErr(this)"></div>`:"";
+  const lic=`<span class="badge">${esc(d.licence||"?")}</span> ${d.redistributable?'<span class="cov">einbettbar</span>':'<span class="gap">nur Referenz</span>'}`;
+  return `${fig}
+    <div class="muted" style="margin-top:6px">${lic} · ${esc(d.publisher||"")}${d.stand?` · Stand ${esc(d.stand)}`:""}${d.retrieved?` · geholt ${esc(d.retrieved)}`:""}</div>
+    <div class="muted">Serien: ${(d.series||[]).map(s=>`<span class="badge">${esc(s)}</span>`).join("")||"—"}</div>
+    <div class="muted" style="font-size:11px">${esc(d.attribution||"")}${d.url?` · <a href="${esc(d.url)}" target="_blank" rel="noopener">Quelle</a>`:""}</div>`;
+}
+function pdText(id,d){
+  const kinds={}; (d.annotations||[]).forEach(a=>kinds[a.kind]=(kinds[a.kind]||0)+1);
+  const lines=(d.text||"").split("\n").map((l,i)=>l.trim()?`<span class="muted">${i+1}</span> ${esc(l)}`:"").join("<br>");
+  const pma=d.rights_basis==="public_domain_pma"?`<span class="cov">gemeinfrei (†${d.author_death_year})</span>`
+    :`<span class="badge">${esc(d.rights_basis||(d.origin==="constructed"?"konstruiert (kein Rechte-Gate)":"—"))}</span>`;
+  return `<div class="muted">${esc(d.author||"")}${d.genre?` · ${esc(d.genre)}`:""}${d.cefr?` · ${esc(d.cefr)}`:""} · ${d.n_lines} Zeilen · ${pma}${d.medium==="audio"?' · <span class="badge">🔊 Hörtext (TTS)</span>':''}</div>
+    <div style="font-family:Georgia,serif;font-size:13px;line-height:1.5;margin:6px 0;padding:6px 10px;border-left:2px solid #ccc;max-height:300px;overflow:auto">${lines}</div>
+    <div class="muted">Annotationen: ${Object.entries(kinds).map(([k,n])=>`<span class="badge">${esc(k)} ${n}</span>`).join("")||"—"}</div>
+    <div class="muted" style="font-size:11px">${esc(d.attribution||"")}${d.url?` · <a href="${esc(d.url)}" target="_blank" rel="noopener">Quelle</a>`:""}</div>`;
+}
+function pdSachverhalt(id,d){
+  const tl=(d.timeline||[]).slice(0,6).map(e=>`<span class="badge">${esc(String(e.at))} ${esc(e.label)}</span>`).join(" ");
+  const ac=(d.actors||[]).slice(0,4).map(a=>`<span class="badge">${esc(a.name)}</span>`).join(" ");
+  const ce=(d.causes||[]).slice(0,3).map(c=>`<div class="muted">${esc(c.cause)} → ${esc(c.effect)}</div>`).join("");
+  const cs=(d.concepts||[]).slice(0,3).map(c=>`<div class="muted"><b>${esc(c.term)}</b>: ${esc(c.definition)}</div>`).join("");
+  const first=t=>{const s=(t||"").trim();return s.length>200?s.slice(0,200)+"…":s;};
+  const dar=(d.darstellung||[]).map(s=>`<div style="margin:4px 0"><b>${esc(s.heading)}</b> — ${esc(first(s.body))}</div>`).join("");
+  const src=(d.facts_sources||[]).map(q=>`${esc(q.title)}${q.publisher?` · ${esc(q.publisher)}`:""}${q.licence?` · ${esc(q.licence)}`:""} <span class="badge">role=${esc(q.role)}</span>${q.url?` · <a href="${esc(q.url)}" target="_blank" rel="noopener">Quelle</a>`:""}`).join("<br>");
+  return `<div class="muted">${d.n_timeline} Ereignisse · ${d.n_actors} Akteure · ${d.n_causes} Wirk.-Verbindungen · ${d.n_concepts} Begriffe · ${d.n_darstellung} Abschnitte${d.leitfrage?` · <b>Leitfrage:</b> ${esc(d.leitfrage)}`:""}</div>
+    <div style="margin:6px 0">${tl}${ac?`<div style="margin-top:4px">${ac}</div>`:""}</div>${ce}${cs}
+    <div style="font-size:13px;line-height:1.5;margin:6px 0;padding:6px 10px;border-left:2px solid #ccc;max-height:240px;overflow:auto">${dar}</div>
+    <div class="muted" style="font-size:11px">Quellen (role=facts): ${src||"—"}</div>`;
+}
+function pdArrangement(id,rec){
+  const a=rec.arrangement||{}, roles=a.roles||[];
+  const phases=(a.phases||[]).length?`<table style="margin-top:8px"><thead><tr><th>Phase</th><th>Sozialform</th><th>Min</th><th>Was passiert</th></tr></thead><tbody>
+      ${a.phases.map(p=>`<tr><td>${esc(p.label)}</td><td>${_GRP[p.grouping]||esc(p.grouping)}</td><td>${p.minutes}</td><td>${esc(rt(p.what_happens))}</td></tr>`).join("")}</tbody></table>`:"";
+  const rls=roles.length?`<table style="margin-top:8px"><thead><tr><th>Rolle</th><th>Schwerpunkt-Kompetenzen</th></tr></thead><tbody>
+      ${roles.map(r=>`<tr><td>${esc(rt(r.label))}</td><td>${_roleServed(r).map(c=>`<code>${esc(c)}</code>`).join(" ")||"—"}</td></tr>`).join("")}</tbody></table>`:"";
+  return `<iframe src="/api/arrangements/${encodeURIComponent(id)}/pdf/orchestration" style="width:100%;height:380px;border:1px solid #ddd;border-radius:8px;margin:8px 0 0"></iframe>${phases}${rls}`;
+}
+
+function setLane(t){ PQ.lane=t; PQ.entries=PQ.all.filter(e=>!t||e.tier===t); PQ.idx=0; drawPruefen(); }
+function pFrame(id,k){ const f=$("#pframe"); if(f) f.src=`/api/items/${id}/pdf/${k}`; }
+async function pDecide(action){
+  const e=PQ.entries[PQ.idx]; if(!e) return;
+  let note="";
+  if(action==="reject") note=prompt("Grund (optional):")||"";
+  if(action==="revise"){
+    const n=prompt("Überarbeiten — was ist zu ändern? (erforderlich)");
+    if(n===null||!n.trim()) return;                 // abgebrochen / leer → keine Entscheidung
+    note=n.trim();
+  }
+  await jpost(`/api/review/${e.kind}/${e.id}/decision`,{action,note});
+  if(action==="revise"){                            // Überarbeiten: bleibt in der Queue, nur markiert
+    e.revise_flagged=true;
+    drawPruefen();                                  // Chip erscheint; Karte bleibt fokussiert
+    const fl=$("#p-flash"); if(fl) fl.textContent="Überarbeiten vermerkt — Eintrag bleibt in der Queue.";
+    return;
+  }
+  PQ.all=PQ.all.filter(x=>!(x.kind===e.kind&&x.id===e.id));
+  PQ.lanes[e.tier]=Math.max(0,(PQ.lanes[e.tier]||1)-1);
+  PQ.entries.splice(PQ.idx,1);
+  if(PQ.idx>=PQ.entries.length) PQ.idx=Math.max(0,PQ.entries.length-1);
+  drawPruefen();
+}
+async function laneApprove(){
+  const all=PQ.all.filter(x=>x.tier==="bestaetigen");
+  // safety: flagged entries (Prüf-Hinweise, Überarbeiten-Vermerk oder Triage-★ ≤2) bleiben
+  // zur Einzelprüfung — die Sammelfreigabe umfasst nur, wogegen nichts eingewendet wurde
+  const clean=all.filter(e=>!e.n_warnings && !e.revise_flagged && !(e.triage&&e.triage.rating&&e.triage.rating<=2));
+  const held=all.length-clean.length;
+  if(!clean.length){ alert("Alle Einträge dieser Lane tragen Hinweise — bitte einzeln prüfen."); return; }
+  if(!confirm(`${clean.length} unauffällige Einträge freigeben?`+(held?` (${held} mit Hinweisen bleiben zur Einzelprüfung)`:""))) return;
+  for(const e of clean)
+    await jpost(`/api/review/${e.kind}/${e.id}/decision`,{action:"approve"});
+  renderPruefen();
+}
+async function pRate(n){
+  const e=PQ.entries[PQ.idx]; if(!e) return;
+  await jpost("/api/feedback",{target_kind:e.kind,target_id:e.id,rating:n,comment:"",tags:[]});
+  const fl=$("#p-flash"); if(fl) fl.textContent=`Bewertung ${n} ★ gespeichert.`;
+}
+document.addEventListener("keydown",ev=>{
+  if(TAB!=="pruefen") return;
+  const el=document.activeElement;
+  if(el&&["INPUT","TEXTAREA","SELECT"].includes(el.tagName)) return;
+  if(ev.key==="j"||ev.key==="ArrowRight"){ if(PQ.idx<PQ.entries.length-1){PQ.idx++; drawPruefen();} }
+  else if(ev.key==="k"||ev.key==="ArrowLeft"){ if(PQ.idx>0){PQ.idx--; drawPruefen();} }
+  else if(ev.key==="a") pDecide("approve");
+  else if(ev.key==="u") pDecide("revise");
+  else if(ev.key==="x") pDecide("reject");
+  else if("12345".includes(ev.key)) pRate(+ev.key);
+});
+
 /* ---------- actions ---------- */
 async function act(id,kind){
   const noteEl = $("#note"); const note = noteEl? noteEl.value : "";
@@ -705,7 +955,7 @@ async function act(id,kind){
 }
 
 renderTabs(); buildShell(); refresh();
-setInterval(()=>{ if(TAB!=="brainstorm" || !document.activeElement || !["INPUT","TEXTAREA"].includes(document.activeElement.tagName)) refresh(); }, 4000);
+setInterval(()=>{ if(TAB==="pruefen") return; if(TAB!=="planen" || !document.activeElement || !["INPUT","TEXTAREA"].includes(document.activeElement.tagName)) refresh(); }, 4000);
 </script>
 </body>
 </html>

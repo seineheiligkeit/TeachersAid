@@ -1,0 +1,68 @@
+{
+  "id": "c0183.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Begründe die Umfangsformel U = 2·(l+b) für ein Rechteck: Trage in die Tabelle ein, wie lang jede der vier Seiten eines Rechtecks mit Länge l und Breite b ist, und erkläre in einem Satz, warum man am Ende verdoppelt.",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Seite",
+        "Länge"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "BEG",
+      "DAR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.1.FIG.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Seite 1: l, Seite 2: b, Seite 3: l, Seite 4: b. Ein Rechteck hat zwei Paare gleich langer, gegenüberliegender Seiten (l, l und b, b) — deshalb rechnet man erst l+b und verdoppelt dann, statt alle vier Seiten einzeln zu addieren.",
+    "acceptable_reasoning": "Gegenüberliegende Seiten eines Rechtecks sind gleich lang; l+l+b+b lässt sich zu 2·(l+b) zusammenfassen.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen sollen erkennen, dass U = l+l+b+b und U = 2·(l+b) dieselbe Rechnung sind, nur anders geschrieben (Ausklammern).",
+      "Nicht alle Schüler:innen sehen sofort, warum genau ZWEI Paare gleich lang sind — an der Abbildung zeigen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Mathematik",
+  "klasse": 1,
+  "kompetenzbereich": "3: Figuren und Körper",
+  "competences": [
+    "MAT.US.1.FIG.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "BEG",
+    "DAR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0183",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:17+00:00",
+  "updated_at": "2026-07-05T05:34:17+00:00"
+}

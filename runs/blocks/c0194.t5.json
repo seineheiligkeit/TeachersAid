@@ -1,0 +1,117 @@
+{
+  "id": "c0194.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Familie Berger möchte ein E-Bike kaufen und fährt hauptsächlich in einer sehr hügeligen Gegend, meist Strecken von 15 bis 20 km. Ein Verkäufer bietet zwei Modelle an: Modell A mit kleinem, günstigerem Akku (Herstellerangabe: bis zu 60 km Reichweite) und Modell B mit großem, teurerem Akku (Herstellerangabe: bis zu 100 km Reichweite). Beziehe dich auf Abb. 2 und die Reichweitenangaben und begründe, welches Modell du der Familie empfehlen würdest.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Familie Berger fährt meist 15 bis 20 km in hügeligem Gelände. Modell A: kleiner Akku, Herstellerangabe bis 60 km. Modell B: großer Akku, Herstellerangabe bis 100 km, teurer."
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "S"
+    ],
+    "content_area": "Erste Einblicke in die Funktionsweise moderner elektronischer Geräte",
+    "serves": [
+      {
+        "competence_id": "PHY.US.3.ENE.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "Sinnvolle Empfehlung: Da Herstellerangaben meist für die günstigste Fahrweise (flach, Motor aus) gelten, laut Abb. 2 aber bergauf mit Unterstützung die reale Reichweite deutlich sinkt (bis auf 15 km bei voller Unterstützung), sollte man mit der Familie klären, wie stark sie den Motor im hügeligen Gelände nutzen wird. Bei häufiger voller Unterstützung reicht der kleine Akku (Modell A) für 15 bis 20 km im hügeligen Gelände möglicherweise knapp nicht sicher aus; Modell B bietet mehr Sicherheitsreserve, auch wenn die Herstellerangabe von 100 km real ebenfalls deutlich sinken wird. Beide Empfehlungen (A mit Einschränkung/Ladepause, oder B als sicherer) sind akzeptabel, wenn sie den Unterschied zwischen Herstellerangabe und realer, geländeabhängiger Reichweite nennen.",
+    "acceptable_reasoning": "Zentral ist die kritische Auseinandersetzung mit der Herstellerangabe als Idealwert und der Bezug auf die reale, geländeabhängige Reichweite aus Abb. 2 — nicht die konkrete Modellwahl allein.",
+    "rubric": [
+      {
+        "criterion": "Kritischer Umgang mit Herstellerangaben",
+        "levels": [
+          "Herstellerangabe unreflektiert übernommen",
+          "Unterschied zur realen Reichweite angesprochen",
+          "Unterschied klar erklärt und auf die Situation der Familie bezogen"
+        ]
+      },
+      {
+        "criterion": "Begründete Empfehlung",
+        "levels": [
+          "Keine oder unbegründete Empfehlung",
+          "Empfehlung mit einfacher Begründung",
+          "Empfehlung schlüssig aus Gelände, Streckenlänge und Daten abgeleitet"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Schüler:innen übernehmen Herstellerangaben oft unreflektiert als reale Reichweite — der Vergleich mit Abb. 2 soll genau das hinterfragen lehren."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Physik",
+  "klasse": 3,
+  "kompetenzbereich": "Energie",
+  "competences": [
+    "PHY.US.3.ENE.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "W",
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb2",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Flach, Motor aus",
+          "Flach, Motor an",
+          "Bergauf, Motor an",
+          "Bergauf, Motor an, volle Unterstützung"
+        ],
+        "values": [
+          60,
+          45,
+          25,
+          15
+        ],
+        "title": "Reichweite des Akkus je nach Fahrweise",
+        "xlabel": "Fahrweise",
+        "ylabel": "Reichweite in km"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": true,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0194",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:26+00:00",
+  "updated_at": "2026-07-05T05:34:26+00:00"
+}

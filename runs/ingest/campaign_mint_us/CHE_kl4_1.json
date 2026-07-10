@@ -1,0 +1,435 @@
+{
+  "subject": "Chemie",
+  "klasse": 4,
+  "scope_label": "Trennverfahren: Stoffgemische trennen im Alltag und Recycling",
+  "title": "Vom Wertstoffhof zum Trinkwasser — Stoffe trennen",
+  "kernfrage": "Wie trennst du Stoffgemische wieder in ihre Bestandteile — und warum reicht dafür nicht immer dieselbe Methode?",
+  "body": {
+    "intro": [
+      {
+        "role": "info",
+        "id": "i1",
+        "kind": "prose",
+        "content": "Fast nichts, was uns im Alltag begegnet, ist ein reiner Stoff — Meerwasser, Hausmüll oder ein Glas trübes Bachwasser sind Gemische aus mehreren Stoffen. Weil sich diese Stoffe in ihren Eigenschaften unterscheiden (Löslichkeit, Siedepunkt, Magnetisierbarkeit, Dichte), lassen sie sich mit passenden Trennverfahren wieder auseinanderhalten: Filtrieren, Dekantieren, Eindampfen, Destillieren und Magnetscheidung. Welches Verfahren funktioniert, hängt immer davon ab, WELCHE Eigenschaft sich die beiden Stoffe im Gemisch unterscheidet.",
+        "watch_outs": []
+      }
+    ],
+    "data_figures": [
+      {
+        "id": "fig1",
+        "intent": "comparison",
+        "title": "Anteil der gelösten Salze, der entfernt wird",
+        "xlabel": "Trennverfahren",
+        "ylabel": "entfernte gelöste Salze (%)",
+        "categories": [
+          "Filtrieren",
+          "Dekantieren",
+          "Destillieren"
+        ],
+        "values": [
+          2,
+          1,
+          98
+        ],
+        "illustrative": true
+      }
+    ],
+    "assets": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Beobachten und Ordnen",
+        "throughline": "Schüler:innen sammeln zuerst konkrete Beobachtungen zu bekannten Trennverfahren und ordnen sie nach der Eigenschaft, auf der sie beruhen — die Grundlage für alle folgenden Entscheidungsaufgaben.",
+        "talking_points": [
+          "Welche Trennverfahren kennt ihr schon aus dem Haushalt (Kaffeefilter, Sieb, Nudelwasser abgießen)?",
+          "Warum funktioniert ein Verfahren bei einem Gemisch, bei einem anderen aber nicht?",
+          "Was ist der Unterschied zwischen einem Gemisch, das man mit bloßem Auge als 'zwei Stoffe' erkennt (Sand in Wasser), und einem, bei dem man es nicht sieht (Salz in Wasser)?"
+        ],
+        "extensions": [
+          "Erweiterung: Schüler:innen bringen ein eigenes Alltagsgemisch mit und ordnen es einem Trennverfahren zu.",
+          "Vertiefung: Unterschied zwischen einem Stoffgemisch und einer chemischen Verbindung anhand von Kochsalz (NaCl aus Na und Cl) diskutieren."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "matching",
+            "prompt": "Im Chemieunterricht wurden fünf Trennverfahren an fünf verschiedenen Gemischen ausprobiert. Ordne jedem Trennverfahren das Gemisch zu, für das es tatsächlich geeignet ist. Ordne außerdem in Gedanken zu, WELCHE Eigenschaft der beiden Stoffe jeweils genutzt wird (das hilft dir bei den späteren Aufgaben).",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Filtrieren",
+                "Dekantieren",
+                "Eindampfen",
+                "Destillieren",
+                "Magnetscheidung"
+              ],
+              "right": [
+                "Sand aus trübem Bachwasser entfernen",
+                "Ölfilm von der Wasseroberfläche abgießen",
+                "Kochsalz aus Salzwasser gewinnen",
+                "Reines Wasser aus Salzwasser gewinnen",
+                "Eisenschrauben aus einer Schraubenkiste mit Aluschrauben sortieren"
+              ]
+            },
+            "response": {
+              "mode": "none"
+            },
+            "cognitive_level": "remember",
+            "dimensions": [
+              "W"
+            ],
+            "serves": [
+              {
+                "competence_id": "CHE.US.x.ALL.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "Filtrieren → Sand aus trübem Bachwasser entfernen (fest/flüssig, unlöslicher Feststoff bleibt im Filter). Dekantieren → Ölfilm von der Wasseroberfläche abgießen (unterschiedliche Dichte, keine Vermischung). Eindampfen → Kochsalz aus Salzwasser gewinnen (Wasser verdampft bei 100 °C, Salz bleibt als Feststoff zurück). Destillieren → reines Wasser aus Salzwasser gewinnen (Wasserdampf wird aufgefangen und wieder verflüssigt — Salz bleibt zurück, wie beim Eindampfen, nur wird hier zusätzlich das Wasser selbst gewonnen). Magnetscheidung → Eisenschrauben aus Aluschrauben sortieren (nur Eisen ist magnetisch, Aluminium nicht).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Häufige Verwechslung: Eindampfen und Destillieren werden oft gleichgesetzt. Unterschied betonen: Beim Eindampfen geht der Wasserdampf verloren (man will nur das Salz), beim Destillieren wird der Dampf aufgefangen und abgekühlt (man will BEIDE Stoffe, meist das reine Wasser).",
+              "Manche Schüler:innen glauben, alle Metalle seien magnetisch. Klarstellen: Nur Eisen, Nickel, Kobalt (und ihre Legierungen wie Stahl) sind ferromagnetisch — Aluminium, Kupfer und Messing nicht."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "true_false_justify",
+            "prompt": "Im Wertstoffhof deiner Gemeinde läuft der Restmüll über ein Förderband mit einem großen Magneten darüber, bevor der Rest weiter zur Sortieranlage transportiert wird. Beurteile folgende Aussagen dazu als richtig (R) oder falsch (F) und begründe kurz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Der Magnet über dem Förderband zieht Eisen- und Stahlteile (z. B. Konservendosen) aus dem Restmüll.",
+                "Mit demselben Magneten lassen sich auch Aluminiumdosen aus dem Müll herausziehen.",
+                "Magnetscheidung ist ein Trennverfahren, das ohne Wasser oder Hitze funktioniert.",
+                "Nach der Magnetscheidung ist der restliche Müll garantiert metallfrei."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "W",
+              "E"
+            ],
+            "serves": [
+              {
+                "competence_id": "CHE.US.x.ERK.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "asset_refs": [],
+            "answer_key": "1. RICHTIG. Eisen und Stahl sind ferromagnetisch und werden vom Magneten angezogen. 2. FALSCH. Aluminium ist nicht magnetisch; Aludosen bleiben auf dem Förderband liegen (sie werden in echten Anlagen mit einem Wirbelstromscheider getrennt, nicht mit einem einfachen Magneten). 3. RICHTIG. Magnetscheidung nutzt nur die magnetische Eigenschaft des Stoffes — kein Lösen, kein Erhitzen nötig. 4. FALSCH. Nichtmagnetische Metalle (Aluminium, Kupfer, Messing) bleiben zurück; 'metallfrei' stimmt daher nicht.",
+            "acceptable_reasoning": "Bei Aussage 2 genügt die Feststellung 'Aluminium ist nicht magnetisch'; die Erwähnung des Wirbelstromscheiders ist Zusatzwissen, nicht Pflicht.",
+            "watch_outs": [
+              "Die Fehlvorstellung 'Metall = magnetisch' ist sehr verbreitet und wird hier gezielt geprüft (Aussage 2 und 4).",
+              "Falls Schüler:innen den Wirbelstromscheider nicht kennen: kurz erwähnen, dass es für Nichteisenmetalle ein eigenes Verfahren gibt — Details sind nicht Teil dieser Aufgabe."
+            ],
+            "rubric": []
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Anwenden und Analysieren",
+        "throughline": "Schüler:innen übertragen das Prinzip 'welche Eigenschaft trennt?' auf neue, noch nicht besprochene Gemische und analysieren ein zusammengesetztes Trennproblem in seine Einzelschritte — der Kern des Blattes (AB II).",
+        "talking_points": [
+          "Warum reicht bei einem Gemisch aus drei Stoffen oft nicht EIN Trennschritt, sondern man braucht mehrere hintereinander?",
+          "Was passiert, wenn man das falsche Trennverfahren wählt — z. B. versucht, Salzwasser zu filtrieren?",
+          "Wie könnte man in einer Katastrophenregion ohne sauberes Trinkwasser mit einfachen Mitteln Wasser reinigen? Welche Trennschritte wären nötig, welche NICHT ausreichend?"
+        ],
+        "extensions": [
+          "Erweiterung: Schüler:innen recherchieren, wie großtechnische Meerwasserentsalzung funktioniert (Umkehrosmose als modernere Alternative zur Destillation) und vergleichen den Energieaufwand.",
+          "Vertiefung: Rechenaufgabe — wie viel Salz bleibt beim Eindampfen von 1 Liter Meerwasser (ca. 35 g/L) übrig?",
+          "Praktische Erweiterung: Ein mehrstufiges Trennverfahren (z. B. Sand + Salz + Öl in Wasser) im Schülerversuch tatsächlich durchführen und protokollieren."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "data_interpretation",
+            "prompt": "Ein Trinkwasser-Notfallteam testet nach einem Unwetter drei mögliche Reinigungsverfahren an demselben trüben, salzhaltigen Flusswasser. Zusätzlich zu den gelösten Salzen enthält das Wasser auch Schwebstoffe (Sand, Schlamm): Filtrieren entfernt davon etwa 95 %, Dekantieren nur etwa 40 % (nur was sich von selbst absetzt), Destillieren etwa 90 %. Das Diagramm zeigt, wie viel Prozent der GELÖSTEN Salze jedes Verfahren jeweils aus dem Wasser entfernt. Vergleiche die drei Verfahren: Welches entfernt was zuverlässig, und welches Verfahren (oder welche Kombination) würdest du für sauberes UND trinkbares Wasser einsetzen? Begründe mit den Zahlen aus dem Diagramm und den oben genannten Schwebstoff-Werten.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 50
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "E",
+              "W"
+            ],
+            "serves": [
+              {
+                "competence_id": "CHE.US.x.ERK.03",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "CHE.US.x.ALL.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 14,
+            "asset_refs": [
+              "fig1"
+            ],
+            "answer_key": "Filtrieren entfernt fast alle Schwebstoffe (ca. 95 %), aber praktisch keine gelösten Salze (ca. 2 %) — ein Filter hält nur feste, ungelöste Teilchen zurück, gelöste Salzteilchen passen durch die Filterporen. Destillieren entfernt fast alle gelösten Salze (ca. 98 %) UND fast alle Schwebstoffe (ca. 90 %), weil nur reines Wasser verdampft und beides zurückbleibt. Dekantieren entfernt nur einen Teil der groben Schwebstoffe (ca. 40 %, nur was sich absetzt) und praktisch keine Salze (ca. 1 %). Empfehlung: Für sauberes UND trinkbares Wasser reicht keines der einfachen Verfahren allein optimal — am sinnvollsten ist eine Kombination: zuerst Filtrieren (grobe Schwebstoffe schnell und mit wenig Energie entfernen), danach Destillieren (die gelösten Salze entfernen). Destillieren allein wäre möglich, braucht aber deutlich mehr Energie/Zeit als nötig, wenn man die groben Schwebstoffe vorher schon per Filter losgeworden ist.",
+            "acceptable_reasoning": "Die Kernaussage muss stimmen: Filtrieren trennt keine gelösten Stoffe, nur Destillieren schafft beides zuverlässig. Eine Antwort, die 'nur Destillieren' empfiehlt und das mit den richtigen Zahlen begründet, ist ebenfalls vollständig korrekt — die Vorfilterung ist eine sinnvolle Ergänzung, aber kein Muss für die Kernaussage.",
+            "watch_outs": [
+              "Zentrale Fehlvorstellung: 'Filtriertes Wasser ist automatisch trinkbar, weil es klar aussieht.' Klarstellen: klar (keine Schwebstoffe) ist nicht dasselbe wie salzfrei oder keimfrei.",
+              "Schüler:innen sollen die Zahlen tatsächlich vergleichen (nicht nur 'Destillieren ist am besten' ohne Beleg) — auf Zahlenbezug in der Antwort bestehen.",
+              "Dekantieren wird oft mit Filtrieren verwechselt: Dekantieren trennt nur durch Absetzen/Abgießen, ohne Filter — es entfernt daher nur, was sich von selbst absetzt, nicht feine Schwebstoffe."
+            ],
+            "rubric": [
+              {
+                "criterion": "Datenbezug",
+                "levels": [
+                  {
+                    "label": "vollständig",
+                    "description": "Vergleicht alle drei Verfahren mit konkreten Prozentangaben aus dem Diagramm."
+                  },
+                  {
+                    "label": "teilweise",
+                    "description": "Nennt Zahlen zu mindestens zwei Verfahren."
+                  },
+                  {
+                    "label": "unzureichend",
+                    "description": "Keine oder falsche Zahlenangaben."
+                  }
+                ]
+              },
+              {
+                "criterion": "Fachliche Schlussfolgerung",
+                "levels": [
+                  {
+                    "label": "vollständig",
+                    "description": "Erkennt, dass nur Destillieren gelöste Salze entfernt, und begründet die Empfehlung chemisch korrekt."
+                  },
+                  {
+                    "label": "teilweise",
+                    "description": "Richtige Empfehlung, aber unvollständige oder unklare Begründung."
+                  },
+                  {
+                    "label": "unzureichend",
+                    "description": "Falsche Empfehlung oder keine erkennbare Begründung."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "experiment_protocol",
+            "prompt": "Aufgabe: In einem Eimer landet versehentlich ein Gemisch aus drei Stoffen: Sand, Kochsalz und Wasser (Sand und Salz sind beide fest, aber Sand löst sich NICHT in Wasser, Salz schon). Plane ein zweistufiges Trennverfahren, mit dem du am Ende drei getrennte Stoffe erhältst: trockenen Sand, trockenes Salz und (optional) reines Wasser. Beschreibe Schritt für Schritt: (1) Welches Verfahren wendest du zuerst an, und was trennt es ab? (2) Welches Verfahren wendest du danach an, um den Rest zu trennen? (3) Was müsstest du zusätzlich tun, um am Ende auch das reine Wasser zurückzugewinnen?",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55
+            },
+            "cognitive_level": "apply",
+            "dimensions": [
+              "E",
+              "W"
+            ],
+            "serves": [
+              {
+                "competence_id": "CHE.US.x.ERK.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 14,
+            "asset_refs": [],
+            "answer_key": "Schritt 1 — Filtrieren: Das Gemisch wird durch einen Filter gegossen. Der Sand (unlöslicher Feststoff) bleibt im Filter zurück, Salzwasser (gelöstes Salz + Wasser) läuft durch. Ergebnis: trockener Sand ist bereits abgetrennt. Schritt 2 — Eindampfen: Die durchgelaufene Salzwasser-Lösung wird erhitzt, bis das Wasser vollständig verdampft ist. Zurück bleibt trockenes Kochsalz. Zusatz für Schritt 3 — Destillieren statt Eindampfen: Um zusätzlich das Wasser selbst zu gewinnen, muss der Wasserdampf beim Erhitzen aufgefangen und in einem gekühlten Rohr wieder zu flüssigem Wasser kondensiert werden (Destillationsapparatur), statt ihn einfach entweichen zu lassen wie beim einfachen Eindampfen.",
+            "acceptable_reasoning": "Die Reihenfolge Filtrieren → Eindampfen/Destillieren ist zwingend (Sand muss zuerst raus, sonst verstopft er nichts Kritisches, aber die Reihenfolge ergibt sich aus der Aufgabenlogik); volle Punkte auch wenn Schritt 3 nur skizziert und nicht bis ins Detail beschrieben ist, solange 'Dampf auffangen und abkühlen' als Kernidee erkennbar ist.",
+            "watch_outs": [
+              "Verbreiteter Fehler: Schüler:innen versuchen, Sand UND Salz in einem Schritt herauszufiltern — das funktioniert nicht, weil gelöstes Salz die Filterporen passiert.",
+              "Manche schlagen vor, das gesamte Gemisch direkt einzudampfen — dabei bliebe der Sand im eingedampften Salz vermischt zurück. Reihenfolge ist entscheidend.",
+              "Der Unterschied 'Eindampfen (Wasser geht verloren) vs. Destillieren (Wasser wird zurückgewonnen)' muss in Schritt 3 klar erkennbar sein — das ist der Kern dieser Teilaufgabe."
+            ],
+            "rubric": [
+              {
+                "criterion": "Schrittfolge",
+                "levels": [
+                  {
+                    "label": "vollständig",
+                    "description": "Filtrieren vor Eindampfen korrekt begründet, beide Verfahren passend zum jeweiligen Stoffpaar."
+                  },
+                  {
+                    "label": "teilweise",
+                    "description": "Richtige Verfahren genannt, aber Reihenfolge oder Begründung unklar."
+                  },
+                  {
+                    "label": "unzureichend",
+                    "description": "Falsche oder fehlende Verfahren."
+                  }
+                ]
+              },
+              {
+                "criterion": "Wasserrückgewinnung",
+                "levels": [
+                  {
+                    "label": "vollständig",
+                    "description": "Erklärt Destillation als Auffangen und Kondensieren des Dampfes."
+                  },
+                  {
+                    "label": "teilweise",
+                    "description": "Erwähnt Destillieren als Begriff, ohne das Prinzip zu erklären."
+                  },
+                  {
+                    "label": "unzureichend",
+                    "description": "Keine sinnvolle Idee zur Wassergewinnung."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "Bewerten und Gestalten",
+        "throughline": "Schüler:innen bewerten den Ressourcen- und Energieaufwand realer Trennverfahren und übertragen ihr Wissen kreativ auf ein neues, unbekanntes Gemisch — vom Nachvollziehen zum eigenständigen Urteil.",
+        "talking_points": [
+          "Warum ist Trennen manchmal teuer oder aufwendig — welchen 'Preis' (Energie, Zeit, Geld) hat ein Trennverfahren?",
+          "Ist Recycling durch Trennverfahren immer die beste Lösung, oder gibt es auch Grenzen (z. B. bei stark vermischten Kunststoffen)?",
+          "Welche Rolle spielen Trennverfahren in Berufen, die euch interessieren (Labor, Umwelttechnik, Wasserwerk, Recyclingbetrieb)?"
+        ],
+        "extensions": [
+          "Erweiterung: Exkursion oder Video zu einem echten Wasserwerk oder einer Recyclinganlage in der Region.",
+          "Vertiefung: Diskussion, warum manche Kunststoffe (Verbundstoffe wie beschichtete Getränkekartons) besonders schwer zu trennen sind.",
+          "Berufsorientierung: Berufsbilder recherchieren, die mit Trennverfahren arbeiten (Labortechniker:in, Wassermeister:in, Umwelttechniker:in)."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "decision_scenario",
+            "prompt": "Eine kleine Insel-Gemeinde hat kein natürliches Süßwasser und muss ihr Trinkwasser aus Meerwasser gewinnen. Der Gemeinderat prüft zwei Verfahren: (A) Destillation — das Meerwasser wird mit Sonnenenergie erhitzt, der Dampf in Rohren aufgefangen und abgekühlt. (B) Einfaches Filtrieren durch feinste Filter. Ein Techniker warnt: 'Verfahren B wird niemals genug Salz aus dem Wasser entfernen, egal wie fein der Filter ist.' Bewerte diese Aussage fachlich und empfiehl der Gemeinde ein Verfahren. Berücksichtige dabei auch, dass Destillation mit Sonnenenergie zwar funktioniert, aber viel Zeit und große Anlagenflächen braucht.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Eine Insel-Gemeinde ohne Süßwasser wählt zwischen Destillation (A) und Filtrieren (B), um aus Meerwasser Trinkwasser zu gewinnen."
+            },
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "S",
+              "E"
+            ],
+            "serves": [
+              {
+                "competence_id": "CHE.US.x.STA.03",
+                "relation": "demonstrates"
+              }
+            ],
+            "est_minutes": 15,
+            "asset_refs": [],
+            "answer_key": "Die Aussage des Technikers ist fachlich richtig: Salz ist im Meerwasser gelöst, also in einzelne, extrem kleine Teilchen (Ionen) aufgeteilt — kein Filter, egal wie fein, kann gelöste Teilchen von den Wasserteilchen trennen, weil Filter nur ungelöste (feste) Teilchen zurückhalten. Empfehlung: Verfahren A (Destillation), da nur der Wechsel des Aggregatzustands (Verdampfen und Kondensieren) das reine Wasser vom gelösten Salz trennt. Abwägung: Die solarbetriebene Destillation hat den Nachteil, dass sie viel Zeit und Fläche braucht (abhängig vom Sonnenschein, langsamer Durchsatz) — für eine kleine Gemeinde mit moderatem Wasserbedarf kann das dennoch praktikabel sein, besonders wenn genug Sonnenstunden und Platz vorhanden sind. Eine vollständige Antwort erkennt: Filtrieren scheidet als alleinige Lösung aus, unabhängig von der Filterfeinheit.",
+            "acceptable_reasoning": "Volle Punkte auch bei einer Antwort, die zusätzlich moderne Umkehrosmose als Alternative nennt (sofern korrekt erklärt) — das ist Zusatzwissen, kein Muss. Kern ist die richtige fachliche Einschätzung der Technikeraussage plus eine begründete, in sich schlüssige Empfehlung inklusive mindestens eines Nachteils von Verfahren A.",
+            "watch_outs": [
+              "Zentrale Fehlvorstellung: 'Ein feinerer Filter hält irgendwann auch Salz zurück.' Das ist falsch — die Porengröße spielt bei GELÖSTEN Teilchen keine Rolle im herkömmlichen Filtrationssinn; das ist ein wichtiger Konzeptwechsel gegenüber dem Trennen von Feststoffgemischen.",
+              "Schüler:innen sollen nicht nur 'A ist besser' schreiben, sondern auch mindestens einen Nachteil/eine Einschränkung von A benennen — sonst ist die Bewertung nicht vollständig.",
+              "Umkehrosmose (die reale moderne Lösung für Meerwasserentsalzung) muss nicht bekannt sein; wird sie erwähnt, ist das positiv zu werten, aber nicht Voraussetzung."
+            ],
+            "rubric": [
+              {
+                "criterion": "Fachliche Einschätzung der Technikeraussage",
+                "levels": [
+                  {
+                    "label": "vollständig",
+                    "description": "Erkennt korrekt, dass gelöstes Salz durch keinen Filter zurückgehalten wird, mit korrekter Begründung (gelöst vs. fest)."
+                  },
+                  {
+                    "label": "teilweise",
+                    "description": "Stimmt der Aussage richtig zu, aber ohne klare fachliche Begründung."
+                  },
+                  {
+                    "label": "unzureichend",
+                    "description": "Hält Filtrieren für grundsätzlich geeignet oder liefert keine fachliche Einschätzung."
+                  }
+                ]
+              },
+              {
+                "criterion": "Begründete Empfehlung mit Abwägung",
+                "levels": [
+                  {
+                    "label": "vollständig",
+                    "description": "Empfiehlt Destillation UND nennt mindestens einen realistischen Nachteil (Zeit, Fläche, Energie)."
+                  },
+                  {
+                    "label": "teilweise",
+                    "description": "Empfiehlt Destillation, aber ohne Abwägung von Vor-/Nachteilen."
+                  },
+                  {
+                    "label": "unzureichend",
+                    "description": "Keine schlüssige Empfehlung."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "source_critique",
+            "prompt": "In einem Online-Forum schreibt jemand: «Man muss sein Trinkwasser zu Hause nicht filtern — im Wasserwerk wird sowieso schon alles rausgefiltert, auch Kalk und gelöste Mineralien. Ein Wasserfilter zu Hause ist deshalb komplett unnötig.» Bewerte diese Aussage aus naturwissenschaftlicher Sicht: Was an der Aussage ist über Filtration sachlich falsch? Unterscheide dabei klar zwischen dem, was ein Filter tatsächlich leisten kann, und dem, was er nicht kann.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 45
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "S",
+              "E"
+            ],
+            "serves": [
+              {
+                "competence_id": "CHE.US.x.STA.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "Die Aussage enthält einen sachlichen Fehler: Kalk und gelöste Mineralien (z. B. Calcium- und Magnesium-Ionen) sind GELÖSTE Bestandteile des Wassers — ein herkömmlicher Filter (auch im Wasserwerk) kann sie nicht herausfiltern, da Filtration nur ungelöste, feste Teilchen zurückhält (dasselbe Prinzip wie bei Sand in Wasser). Wasserwerke filtrieren tatsächlich Schwebstoffe und Trübung heraus, aber gelöste Mineralien bleiben im Trinkwasser — das ist sogar erwünscht (Mineralstoffe sind für den Körper wichtig, und stark 'kalkhaltiges' Wasser ist nicht automatisch ungesund). Ob ein Haushaltsfilter sinnvoll ist, ist eine andere, nicht rein chemische Frage (Geschmack, bestimmte Schadstoffe) — die im Forumsbeitrag genannte Begründung ('alles wird schon rausgefiltert') ist aber fachlich nicht haltbar.",
+            "acceptable_reasoning": "Kern ist die korrekte Unterscheidung gelöst/ungelöst und die Erkenntnis, dass Filtration keine gelösten Stoffe entfernt. Eine Bewertung, ob Haushaltsfilter grundsätzlich sinnvoll sind, wird nicht verlangt und nicht bewertet — hier zählt nur die fachliche Richtigstellung der Filtrationsaussage.",
+            "watch_outs": [
+              "Diese Aufgabe knüpft direkt an die Fehlvorstellung aus Aufgabe 5 an (Filter gegen Gelöstes) — bewusst als Transferaufgabe in neuem Kontext gestellt.",
+              "Schüler:innen sollen zwischen 'naturwissenschaftlich falsch' (die Filtrationsaussage) und 'Meinungsfrage' (ob ein Hausfilter sinnvoll ist) unterscheiden können — das ist der Kern von Quellenkritik in den Naturwissenschaften.",
+              "Nicht jede kritische Aussage über den Forumsbeitrag ist automatisch richtig bewertet — es muss konkret die Gelöst/Ungelöst-Unterscheidung genannt werden."
+            ],
+            "rubric": [
+              {
+                "criterion": "Fachlicher Fehler erkannt",
+                "levels": [
+                  {
+                    "label": "vollständig",
+                    "description": "Benennt klar, dass gelöste Mineralien/Kalk nicht durch Filtration entfernt werden, mit korrekter Begründung."
+                  },
+                  {
+                    "label": "teilweise",
+                    "description": "Erkennt, dass etwas an der Aussage falsch ist, ohne die gelöst/ungelöst-Unterscheidung klar zu machen."
+                  },
+                  {
+                    "label": "unzureichend",
+                    "description": "Stimmt der Forumsaussage zu oder liefert keine fachliche Kritik."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

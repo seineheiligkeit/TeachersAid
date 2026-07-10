@@ -1,0 +1,86 @@
+{
+  "id": "c0182.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Erfinde eine eigene Sparsituation (mit Startgeld und wöchentlicher Rate), sodass die passende Gleichung 5w + 10 = 45 lautet. Erkläre, was w in deiner Geschichte bedeutet, und löse die Gleichung, um herauszufinden, nach wie vielen Wochen das Ziel erreicht ist.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "MOD",
+      "BEG"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.1.VAR.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "MAT.US.1.VAR.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "Jede sinnvolle Geschichte mit 10 Euro Startgeld und 5 Euro wöchentlicher Rate passt, z. B.: »Paul hat 10 Euro geschenkt bekommen und spart jede Woche 5 Euro dazu, bis er 45 Euro für ein Spiel hat.« Lösung: 5w+10=45 | −10 → 5w=35 | ÷5 → w=7. Nach 7 Wochen ist das Ziel erreicht.",
+    "acceptable_reasoning": "Die Geschichte muss die Struktur der Gleichung widerspiegeln: eine feste Zahl (Startgeld) plus eine Rate mal Wochen.",
+    "rubric": [
+      {
+        "criterion": "Geschichte passt zur Gleichung",
+        "levels": [
+          "Kein Bezug",
+          "Teils passend",
+          "Vollständig passend und sinnvoll"
+        ]
+      },
+      {
+        "criterion": "Gleichung korrekt gelöst",
+        "levels": [
+          "Falsch",
+          "Rechenfehler, Weg erkennbar",
+          "Korrekt (w = 7) mit Probe"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "watch_outs": [
+      "Manche Schüler:innen erfinden eine Geschichte, die nicht zur Gleichung passt — die Zuordnung von Startgeld und Rate genau prüfen.",
+      "Die Bedeutung von w muss klar benannt sein (z. B. »Anzahl der Wochen«)."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Mathematik",
+  "klasse": 1,
+  "kompetenzbereich": "2: Variablen und Funktionen",
+  "competences": [
+    "MAT.US.1.VAR.01",
+    "MAT.US.1.VAR.02"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "MOD",
+    "BEG"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0182",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:17+00:00",
+  "updated_at": "2026-07-05T05:34:17+00:00"
+}

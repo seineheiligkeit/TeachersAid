@@ -1,0 +1,99 @@
+{
+  "id": "c0181.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Drei Freund:innen machen eine Radtour. Ihre App zeigt die bisher zurückgelegte Strecke am Zahlenstrahl (Abbildung). Lies aus der Abbildung ab: Wer ist am weitesten gefahren, wer am wenigsten weit? Schreibe alle drei Streckenlängen der Größe nach geordnet auf (kleinste zuerst).",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 3
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "DAR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.1.ZAH.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "Geordnet (kleinste zuerst): Tim 3,5 km, Anna 7 km, Ben 12,25 km. Am weitesten: Ben. Am wenigsten weit: Tim.",
+    "acceptable_reasoning": "Ablesen der Markierungen am Zahlenstrahl und Vergleich der Positionen von links nach rechts.",
+    "rubric": [],
+    "solution_steps": [],
+    "watch_outs": [
+      "Manche Schüler:innen lesen 12,25 als »zwölf-zwei-fünf« und vergleichen dann falsch mit 7 — auf die Stellenwerte hinweisen.",
+      "Die Position am Zahlenstrahl (weiter rechts = größer) explizit als Vergleichsregel benennen."
+    ],
+    "self_check": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Mathematik",
+  "klasse": 1,
+  "kompetenzbereich": "1: Zahlen und Maße",
+  "competences": [
+    "MAT.US.1.ZAH.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "DAR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "medium": "visual",
+      "generator": "matplotlib:number_line",
+      "spec": {
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "marks": [
+          {
+            "at": 3.5,
+            "label": "Tim"
+          },
+          {
+            "at": 7,
+            "label": "Anna"
+          },
+          {
+            "at": 12.25,
+            "label": "Ben"
+          }
+        ],
+        "title": "Zurückgelegte Strecke (in km) auf dem Radweg"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0181",
+  "source": "ai",
+  "created_at": "2026-07-05T05:34:16+00:00",
+  "updated_at": "2026-07-05T05:34:16+00:00"
+}
