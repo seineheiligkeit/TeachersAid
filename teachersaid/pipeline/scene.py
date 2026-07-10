@@ -2,7 +2,7 @@
 
 The structural answer to "every figure is a monolithic recipe": instead of one bespoke
 matplotlib function per figure, a figure is a `Scene` = a `Canvas` + an ordered list of typed
-`layers` (Polyline · Line · PointMark · CircleShape · Arc · Region · Label). One renderer
+`layers` (Polyline · Line · Arrow · PointMark · CircleShape · Arc · Region · Label). One renderer
 (`render_scene`) walks the scene and draws each layer in the house style (`figstyle`). So a new
 figure becomes "compose a few primitives", not "write a new recipe", and the SAME scene can be
 rendered at different densities (a `stage`/subset) — which is what makes a step-by-step
@@ -28,6 +28,7 @@ import matplotlib.patheffects as pe  # noqa: E402
 import matplotlib.pyplot as plt  # noqa: E402
 from matplotlib.patches import Arc as MArc  # noqa: E402
 from matplotlib.patches import Circle as MCircle  # noqa: E402
+from matplotlib.patches import FancyArrowPatch  # noqa: E402
 
 from . import figstyle as fs  # noqa: E402
 
@@ -138,6 +139,25 @@ class Label:
 
 
 @dataclass
+class Arrow:
+    """A vector arrow p → q with a filled head (physics vectors, forces). `family` (int) →
+    a hue from the categorical ramp (hue only — a dashed shaft would fray the head; in B/W the
+    labels carry the distinction); else `role`/colour + `dash`. Optional label at the shaft
+    midpoint + `label_offset` (a recipe offsets it perpendicular to the shaft)."""
+    p: Point
+    q: Point
+    role: str = "primary"
+    family: int | None = None
+    width: float = 2.0
+    dash: object = "solid"
+    label: str | None = None
+    label_offset: Point = (0.0, 0.0)
+    bold: bool = True
+    alpha: float = 1.0
+    z: int = 5
+
+
+@dataclass
 class Scene:
     canvas: Canvas = field(default_factory=Canvas)
     layers: list = field(default_factory=list)
@@ -212,6 +232,19 @@ def render_scene(scene: Scene, ax) -> None:
             ax.text(L.p[0], L.p[1], L.text, fontsize=L.size, color=_color(L.role), ha=L.ha,
                     va=L.va, fontweight="bold" if L.bold else "normal", zorder=L.z,
                     path_effects=_HALO if L.halo else None)
+        elif isinstance(L, Arrow):
+            col = fs.CATEGORICAL[L.family % len(fs.CATEGORICAL)] if L.family is not None \
+                else _color(L.role)
+            ax.add_patch(FancyArrowPatch(L.p, L.q, arrowstyle="-|>",
+                                         mutation_scale=6 + 4.5 * L.width, color=col,
+                                         lw=L.width, linestyle=L.dash, alpha=L.alpha,
+                                         shrinkA=0, shrinkB=0, zorder=L.z))
+            if L.label:
+                ax.text((L.p[0] + L.q[0]) / 2 + L.label_offset[0],
+                        (L.p[1] + L.q[1]) / 2 + L.label_offset[1], L.label,
+                        fontsize=fs.TYPE.annot_lg,
+                        fontweight="bold" if L.bold else "normal", color=col,
+                        ha="center", va="center", zorder=L.z + 2, path_effects=_HALO)
     if scene.canvas.xlim:
         ax.set_xlim(*scene.canvas.xlim)
     if scene.canvas.ylim:

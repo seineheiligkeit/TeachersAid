@@ -1303,6 +1303,31 @@ GENERATION_RECIPES: dict[str, str] = {
         'Klimadiagramm (Monats-Temperatur als Linie + Niederschlag als Balken, zwei Achsen) — '
         'spec {"months"?:[12 str],"temp":[12 num],"precip":[12 num],"title"?:str}. '
         'Echte Klimadaten zitieren (data_source), sonst illustrative=true.',
+    "matplotlib:vector_addition":
+        'Vektor-/Kräfteaddition (Pfeile maßstabsgetreu; Vektoren aneinandergehängt oder '
+        'Kräfteparallelogramm) — spec {"vectors":[{"magnitude":num,"angle_deg":num '
+        '(0° = nach rechts, gegen den Uhrzeigersinn)} ODER {"dx":num,"dy":num}, je "label"?:str],'
+        '"method"?:"tip_to_tail"|"parallelogram" (nur bei genau 2 Vektoren),'
+        '"show_resultant"?:bool,"show_value"?:bool (false → "F_R = ?" als Aufgabe),'
+        '"unit"?:str (Standard "N"),"resultant_name"?:str,"title"?}. Die Resultierende wird '
+        'aus der Komponentensumme BERECHNET — die Abbildung erfindet nichts und verrät mit '
+        'show_value:false keine Lösung.',
+    "matplotlib:force_diagram":
+        'Kräfteplan (Freikörperbild): Körper mit Kraftpfeilen vom Mittelpunkt aus, Längen '
+        'maßstabsgetreu — spec {"forces":[{"magnitude":num,"angle_deg":num (0° = nach rechts, '
+        '90° = nach oben),"label"?:str (z. B. "F_G")}],"body_label"?:str,'
+        '"show_magnitudes"?:bool,"show_resultant"?:bool,"show_value"?:bool (false → '
+        '"F_res = ?"),"unit"?:str,"title"?}. Die resultierende Kraft wird BERECHNET '
+        '(Komponentensumme; Kräftegleichgewicht → "F_res = 0 N").',
+    "matplotlib:labeled_parts":
+        'Beschriftungs-Abbildung ("Beschrifte die Teile"): schematischer Querschnitt/Aufbau '
+        'aus einfachen Formen, Teile mit nummerierten Hinweislinien — spec {"shapes":'
+        '[{"kind":"region"|"circle"|"polyline"|"line",…,"color"?:str}],"parts":[{"at":[x,y],'
+        '"name":str,"side"?:"left"|"right"}],"show_names"?:bool (false → nummerierte Aufgabe '
+        'zum Beschriften, true → beschriftete Lösung),"title"?}. Nummerierung, Hinweislinien '
+        'und Lösungsnamen werden aus derselben Teile-Liste ABGELEITET — Schülerblatt und '
+        'Lösung können nicht auseinanderlaufen. Die Formen sind schematisch (kein '
+        'Datendiagramm).',
 }
 
 
@@ -1330,3 +1355,53 @@ def build_asset(asset: Asset, outdir: Path | None = None) -> Path:
     with plt.rc_context(fs.house_rc()):   # every recipe builds under the house style (fonts, ramp)
         builder(asset, path)
     return path
+
+
+# --- scene-engine recipes: physics vectors + labelled diagrams -----------------
+# (Lazy imports keep these registrations append-only; the modules import only the
+# scene substrate, so there is no cycle either way.)
+@_generator("matplotlib:vector_addition")
+def _vector_addition(asset: Asset, path: Path) -> None:
+    """Vector addition (Kräfteaddition), tip-to-tail or parallelogram — the resultant is
+    COMPUTED from the component sum, maskable ("F_R = ?"). spec: {vectors:[{magnitude,
+    angle_deg}|{dx,dy}, label?…], method?, show_resultant?, show_value?, unit?,
+    resultant_name?, title?}."""
+    from .physics_scenes import vector_addition_scene
+    s = asset.spec or {}
+    scene_to_png(vector_addition_scene(
+        s.get("vectors") or [{"magnitude": 3, "angle_deg": 0}, {"magnitude": 4, "angle_deg": 90}],
+        method=s.get("method", "tip_to_tail"),
+        show_resultant=s.get("show_resultant", True),
+        show_value=s.get("show_value", True),
+        **_drop(s, "vectors", "method", "show_resultant", "show_value")), path)
+
+
+@_generator("matplotlib:force_diagram")
+def _force_diagram(asset: Asset, path: Path) -> None:
+    """Free-body diagram (Kräfteplan) — force arrows from the body's centre, lengths true to
+    scale; the resultant is COMPUTED (equilibrium → "F_res = 0 N") and maskable. spec:
+    {forces:[{magnitude, angle_deg, label?}…], body_label?, show_magnitudes?,
+    show_resultant?, show_value?, unit?, resultant_name?, title?}."""
+    from .physics_scenes import force_diagram_scene
+    s = asset.spec or {}
+    scene_to_png(force_diagram_scene(
+        s.get("forces") or [{"magnitude": 15, "angle_deg": 270, "label": "F_G"},
+                            {"magnitude": 15, "angle_deg": 90, "label": "F_N"}],
+        body_label=s.get("body_label"),
+        show_magnitudes=s.get("show_magnitudes", True),
+        show_resultant=s.get("show_resultant", False),
+        show_value=s.get("show_value", True),
+        **_drop(s, "forces", "body_label", "show_magnitudes", "show_resultant",
+                "show_value")), path)
+
+
+@_generator("matplotlib:labeled_parts")
+def _labeled_parts(asset: Asset, path: Path) -> None:
+    """A "Beschrifte die Teile" schematic — numbered margin callouts with leader lines;
+    numbering, leaders and solution names all DERIVED from one parts list (student figure
+    and answer key cannot drift). spec: {shapes, parts, show_names? (false → numbered task,
+    true → named solution), title?, figsize?}; empty spec → the curated volcano flagship."""
+    from .labeled_diagram import VULKAN_SPEC, labeled_parts_scene
+    s = asset.spec or {}
+    spec = s if (s.get("shapes") or s.get("parts")) else {**VULKAN_SPEC, **s}
+    scene_to_png(labeled_parts_scene(spec), path)
