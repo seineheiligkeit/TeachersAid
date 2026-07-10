@@ -213,6 +213,41 @@ PARAM_TEMPLATES: list[ParametricTask] = [
                         "Begründe deine Einschätzung.",
         serves=[Serves(competence_id="CHE.US.x.STA.02", relation="exercises")],
         dimensions=["S"], cognitive_level="apply", kind="open_response", est_minutes=4),
+
+    # --- Latein (Unterstufe, 3./4. Kl.) — Wortbildung: correct by CURATION. Every
+    # prefix+base combination the recipes emit is a curated, attested Latin word in
+    # grounding/latin.py (select, never author — no synthesized Latin). The Matura demand
+    # map names Wortbildung (trennen) the most frequent IT task family (Documents/
+    # matura-latein-coverage.md); the Klasse-3 Anwendungsbereich names
+    # "Wortbildungselemente" explicitly. Material Latin, instructions German (the
+    # target-language convention). -----------------------------------------------------
+    ParametricTask(
+        id="lat-us-wortbildung", title="Wortbildung: Komposita zerlegen",
+        subject="Latein", klasse=3,
+        kompetenzbereich="Sprach- und textbezogene Kompetenzen",
+        recipe="wortbildung_decompose",
+        prompt_template="Zerlege das lateinische Verb „{wort}“ in Präfix und Grundverb "
+                        "und gib die Bedeutung des zusammengesetzten Verbs an.",
+        serves=[Serves(competence_id="LAT.US.3.SPR.01", relation="exercises")],
+        dimensions=["SPR"], cognitive_level="apply", kind="open_response", est_minutes=3),
+    ParametricTask(
+        id="lat-us-wortbildung-bedeutung", title="Wortbildung: Bedeutungen erschließen",
+        subject="Latein", klasse=4,
+        kompetenzbereich="Sprach- und textbezogene Kompetenzen",
+        recipe="wortbildung_meaning",
+        prompt_template="Bilde aus dem Grundverb {basis} und dem Präfix {praefix} das "
+                        "zusammengesetzte Verb und erschließe seine Bedeutung.",
+        serves=[Serves(competence_id="LAT.US.4.SPR.01", relation="exercises")],
+        dimensions=["SPR"], cognitive_level="apply", kind="open_response", est_minutes=3),
+    ParametricTask(
+        id="lat-us-wortbildung-zuordnung", title="Wortbildung: Komposita zuordnen",
+        subject="Latein", klasse=3,
+        kompetenzbereich="Sprach- und textbezogene Kompetenzen",
+        recipe="wortbildung_matching",
+        prompt_template="Ordne die zusammengesetzten Verben (1–4) ihren Bedeutungen (A–D) "
+                        "zu: {liste}",
+        serves=[Serves(competence_id="LAT.US.3.SPR.01", relation="exercises")],
+        dimensions=["SPR"], cognitive_level="understand", kind="matching", est_minutes=4),
 ]
 
 

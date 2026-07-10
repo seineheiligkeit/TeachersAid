@@ -493,3 +493,5 @@ def _vector_dot_angle(rng: random.Random) -> Instance:
 # Chemistry recipes register into the same _RECIPES (so make_variants/templates drive
 # them uniformly). Imported last so the names above are defined first (no import cycle).
 from . import chemistry as _chemistry  # noqa: E402,F401
+# Latin Wortbildung recipes — same registry, same wiring (see pipeline/latin.py).
+from . import latin as _latin  # noqa: E402,F401

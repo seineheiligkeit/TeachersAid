@@ -42,5 +42,7 @@ def test_digest_groups_by_subject_kind():
     d = md.digest(records)
     assert d["DEU"]["textsorten"] == {"Kommentar": 1}
     assert d["LAT"]["ut_points"] == {36: 1} and d["LAT"]["it_points"] == {24: 1}
-    assert "finden" in d["LAT"]["operators"]["not_in_catalog"]
+    # LATEIN operator catalog is now curated (operators.LATEIN) → "finden" validates
+    assert "finden" in d["LAT"]["operators"]["in_catalog"]
+    assert not d["LAT"]["operators"]["not_in_catalog"]
     assert d["FS"]["skill_x_cefr"] == {"Lesen/B2": 1}

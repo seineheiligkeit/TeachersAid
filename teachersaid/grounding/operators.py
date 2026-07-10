@@ -333,6 +333,61 @@ GEOGRAPHIE: list[Operator] = [
              "Angemessenheit untersuchen", afb=(3,)),
 ]
 
+# --- Latein — EMPIRICAL (harvested from the SRDP Klausur corpus) -----------------------
+# Provenance (recorded honestly): UNLIKE the four catalogs above, this list is NOT
+# transcribed from an official BMB/IQS Operatorenliste — it is harvested EMPIRICALLY
+# from the 41-exam AHS Latein Klausur corpus 2018/19–2025/26 (fetched/parsed/aggregated
+# by tools/fetch_matura.py · extract_matura.py · matura_demand.py; exam papers CC BY 4.0
+# via IWG 2022, "Datenquelle: Bundesministerium für Bildung"). The operator FORMS and
+# their frequencies are *selected* — read verbatim from the real ÜT instruction and the
+# IT-Arbeitsaufgaben (demand map: Documents/matura-latein-coverage.md). The DEFINITIONS
+# are authored from that observed task usage and SME-vetted — they are NOT quotations
+# from an official list — and the AFB bands are likewise usage-based editorial judgments
+# (consistent with _RANK_TO_AFB), not official assignments. Per-operator comments record
+# the observed corpus frequency. Ordered: the ÜT operator first, then IT by frequency.
+LATEIN: list[Operator] = [
+    Operator("übersetzen", "einen lateinischen Ausgangstext vollständig und zielsprachlich "
+             "korrekt in die Unterrichtssprache übertragen", afb=(2,)),   # 41/41 exams — the
+                                                                          # ÜT (36 von 60 P.)
+    Operator("finden", "im Interpretationstext Wörter, Wendungen oder Textbelege zu einer "
+             "vorgegebenen Kategorie (z. B. Sachfeld, Wortfamilie, Stilmittel) aufsuchen "
+             "und zitieren", afb=(1,)),                                   # 64× — the most
+                                                                          # frequent IT operator
+    Operator("trennen (Wortbildung)", "zusammengesetzte lateinische Wörter in ihre "
+             "Bausteine (Präfix/Suffix und Grundwort) zerlegen und die Bedeutung der "
+             "Bestandteile bzw. des Kompositums angeben", afb=(1, 2)),    # 29×
+    Operator("ankreuzen (Auswahl)", "aus vorgegebenen Aussagen oder Übersetzungsvarianten "
+             "die zutreffende(n) durch Ankreuzen auswählen", afb=(1,)),   # 29×
+    Operator("ergänzen", "eine Tabelle, Übersicht oder einen Lückentext mit Formen bzw. "
+             "Informationen aus dem Text vervollständigen", afb=(1, 2)),  # 29×
+    Operator("belegen", "eine Aussage oder Deutung durch Zitate lateinischer Textstellen "
+             "aus dem Interpretationstext stützen", afb=(2,)),            # 26×
+    Operator("gliedern", "einen Text nach inhaltlichen oder formalen Kriterien in "
+             "Abschnitte einteilen und die Einteilung nachvollziehbar machen",
+             afb=(2,)),                                                   # 25×
+    Operator("verfassen", "einen eigenständigen Text nach Vorgaben (Textsorte, Umfang) "
+             "schreiben, z. B. eine Paraphrase, Stellungnahme oder kreative Umsetzung",
+             afb=(2, 3)),                                                 # 24×
+    Operator("vergleichen", "den Interpretationstext mit einem Vergleichsmedium (Text, "
+             "Bild, Rezeptionszeugnis) in Beziehung setzen und Gemeinsamkeiten und "
+             "Unterschiede herausarbeiten", afb=(2,)),                    # 23×
+    Operator("angeben", "kurze, präzise Informationen aus dem Text oder dem Sachwissen "
+             "ohne weitere Begründung anführen", afb=(1,)),               # 21×
+    Operator("auseinandersetzen", "zu einer Aussage oder Problemstellung des Textes eine "
+             "begründete eigene Position entwickeln und darlegen („sich auseinandersetzen "
+             "mit …“)", afb=(3,)),                                        # 18×
+    Operator("zuordnen", "Elemente (z. B. Überschriften, Begriffe, Abschnitte, Bilder) "
+             "einander nach inhaltlichen oder formalen Kriterien zuweisen",
+             afb=(1, 2)),                                                 # 13×
+    Operator("analysieren", "sprachliche oder stilistische Strukturen des Textes "
+             "systematisch untersuchen und die Befunde strukturiert darstellen",
+             afb=(2,)),                                                   # 7×
+    Operator("benennen", "grammatikalische Erscheinungen oder Stilmittel mit dem "
+             "Fachbegriff bezeichnen", afb=(1,)),                         # 3×
+    Operator("beschreiben", "Sachverhalte oder Darstellungen (z. B. ein Bild, eine Szene) "
+             "strukturiert und genau darlegen", afb=(1,)),                # 1×
+]
+
 # --- Generic fallback — PROVISIONAL (no subject catalog curated yet) ------------------
 # Common German task verbs that span subjects; replace per subject as official catalogs
 # are curated (remaining: Fremdsprachen, Latein, Geometrisches Zeichnen, Ethik, …).
@@ -368,6 +423,10 @@ SUBJECT_OPERATORS: dict[str, list[Operator]] = {
     "PHY": NATURWISSENSCHAFTEN,
     "CHE": NATURWISSENSCHAFTEN,
     "GWB": GEOGRAPHIE,
+    "LAT": LATEIN,      # empirical corpus catalog (no official list exists — see the
+                        # LATEIN block's provenance note). "LAT" is the canonical code in
+                        # BOTH catalogs (Unterstufe lehrplan/ + Oberstufe lehrplan/
+                        # oberstufe/), so this one entry routes both Stufen.
 }
 
 
