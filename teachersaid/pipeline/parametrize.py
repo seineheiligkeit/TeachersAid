@@ -19,8 +19,9 @@ from sympy import (
     linsolve, pi, solve, sqrt, symbols,
 )
 
+from ..schema.assets import Asset
 from ..schema.blocks import SolutionStep, TaskBlock
-from ..schema.parametric import Instance, ParametricTask
+from ..schema.parametric import FigureSpec, Instance, ParametricTask
 from ..schema.response import LinesResponse
 from ..schema.richtext import InlineRun, RichText
 
@@ -63,8 +64,11 @@ def _template_to_richtext(filled: str) -> RichText:
     return parts
 
 
-def instantiate(task: ParametricTask, seed: int) -> TaskBlock:
-    """Build one concrete TaskBlock for `seed` (deterministic)."""
+def _instantiate(task: ParametricTask, seed: int) -> tuple[TaskBlock, Asset | None]:
+    """Build one concrete (TaskBlock, figure asset) for `seed` (deterministic). The asset
+    is None when the recipe emits no `Instance.figure`; when it does, the asset gets a
+    UNIQUE per-variant id (`<task>-<seed>-fig`, no '#' → a safe PNG filename) and is wired
+    onto the block via `asset_refs`, so figures never collide or overwrite one another."""
     rng = random.Random(seed)
     recipe = _RECIPES.get(task.recipe)
     if recipe is None:
@@ -79,36 +83,61 @@ def instantiate(task: ParametricTask, seed: int) -> TaskBlock:
     if inst is None:
         raise RuntimeError(f"recipe {task.recipe}: no valid instance in 500 tries")
     prompt = _template_to_richtext(task.prompt_template.format(**inst.params))
-    return TaskBlock(
+    block = TaskBlock(
         id=f"{task.id}#{seed}", kind=task.kind, prompt=prompt,
         response=task.response or LinesResponse(n=2),
         cognitive_level=task.cognitive_level, dimensions=list(task.dimensions),
         content_area=task.content_area, serves=list(task.serves),
         est_minutes=task.est_minutes, answer_key=inst.answer, solution_steps=inst.steps,
     )
+    asset: Asset | None = None
+    if inst.figure is not None:
+        asset = Asset(id=f"{task.id}-{seed}-fig", role="figure",
+                      generator=inst.figure.generator, spec=inst.figure.spec)
+        block.asset_refs = [asset.id]
+    return block, asset
 
 
-def make_variants(task: ParametricTask, n: int, *, seed0: int = 1) -> list[TaskBlock]:
-    """N variants of one template, preferring distinct prompts. Recipes with a small
-    finite draw space (e.g. the qualitative chemistry tables) can repeat across
-    independent seeds; we skip a seed whose prompt duplicates an earlier one, then top
-    up with repeats if the pool is genuinely smaller than n. Deterministic: same
-    (task, n, seed0) → same list."""
-    out: list[TaskBlock] = []
+def instantiate(task: ParametricTask, seed: int) -> TaskBlock:
+    """Build one concrete TaskBlock for `seed` (deterministic)."""
+    return _instantiate(task, seed)[0]
+
+
+def make_variants_with_assets(
+    task: ParametricTask, n: int, *, seed0: int = 1
+) -> tuple[list[TaskBlock], list[Asset]]:
+    """N variants of one template, preferring distinct prompts, plus their figure assets
+    (aligned: only variants that emit a figure contribute one). Recipes with a small finite
+    draw space (e.g. the qualitative chemistry tables) can repeat across independent seeds;
+    we skip a seed whose prompt duplicates an earlier one, then top up with repeats if the
+    pool is genuinely smaller than n. Deterministic: same (task, n, seed0) → same lists."""
+    blocks: list[TaskBlock] = []
+    assets: list[Asset] = []
     seen: set[str] = set()
     seed = seed0
     budget = seed0 + max(n * 20, 40)              # bounded search for distinct prompts
-    while len(out) < n and seed < budget:
-        blk = instantiate(task, seed)
+
+    def _keep(blk: TaskBlock, asset: Asset | None) -> None:
+        blocks.append(blk)
+        if asset is not None:
+            assets.append(asset)
+
+    while len(blocks) < n and seed < budget:
+        blk, asset = _instantiate(task, seed)
         seed += 1
         key = str(blk.prompt)
         if key not in seen:
             seen.add(key)
-            out.append(blk)
-    while len(out) < n:                           # pool exhausted → allow repeats
-        out.append(instantiate(task, seed))
+            _keep(blk, asset)
+    while len(blocks) < n:                         # pool exhausted → allow repeats
+        _keep(*_instantiate(task, seed))
         seed += 1
-    return out
+    return blocks, assets
+
+
+def make_variants(task: ParametricTask, n: int, *, seed0: int = 1) -> list[TaskBlock]:
+    """N variant TaskBlocks of one template (see `make_variants_with_assets`)."""
+    return make_variants_with_assets(task, n, seed0=seed0)[0]
 
 
 # --- recipes (sympy: exact, with a worked Rechenweg) -------------------------
@@ -216,18 +245,48 @@ _TRIPLES = [(3, 4, 5), (6, 8, 10), (5, 12, 13), (8, 15, 17), (9, 12, 15),
 
 @_recipe("pythagoras")
 def _pythagoras(rng: random.Random) -> Instance:
-    """Hypotenuse aus zwei Katheten (pythagoräische Tripel → ganzzahlig)."""
+    """Satz des Pythagoras an einem rechtwinkligen Dreieck (ganzzahlige Tripel).
+
+    Gefragt ist die Hypotenuse c ODER eine der Katheten (a bzw. b) — die zwei anderen
+    Seiten sind gegeben. Die Skizze (`matplotlib:right_triangle`) zeigt die zwei gegebenen
+    Längen ("a = 3 cm") und markiert die gesuchte Seite mit "?", verrät also die Lösung
+    NICHT. Damit auch die gesuchte KATHETE nicht über eine Zeichenkoordinate durchsickert,
+    werden die Zeichenlängen auf die Hypotenuse normiert (da = a/c, db = b/c ∈ (0,1)) — die
+    ganzzahlige Antwort taucht so nirgends in der Figurenspezifikation auf. Rechenweg exakt."""
     a, b, c = rng.choice(_TRIPLES)
     if rng.random() < 0.5:
         a, b = b, a
-    steps = [
-        SolutionStep(text="Satz des Pythagoras", expr="c^2 = a^2 + b^2"),
-        SolutionStep(text="Katheten einsetzen",
-                     expr=f"c^2 = {a}^2 + {b}^2 = {a * a + b * b}"),
-        SolutionStep(text="Wurzel ziehen", expr=f"c = \\sqrt{{{a * a + b * b}}} = {c}"),
-    ]
-    return Instance(params={"a": a, "b": b},
-                    answer=[_math(f"c = {c}")], steps=steps)
+    target = rng.choice(["c", "a", "b"])          # gesucht: Hypotenuse oder eine Kathete
+    L = {"a": f"a = {a} cm", "b": f"b = {b} cm", "c": f"c = {c} cm"}   # side labels
+    L[target] = f"{target} = ?"                    # mask the asked side on the figure
+    if target == "c":                              # Hypotenuse aus den Katheten
+        gegeben, gesucht = f"a = {a} cm, b = {b} cm", "die Hypotenuse c"
+        steps = [
+            SolutionStep(text="Satz des Pythagoras", expr="c^2 = a^2 + b^2"),
+            SolutionStep(text="die Katheten einsetzen",
+                         expr=f"c^2 = {a}^2 + {b}^2 = {a * a + b * b}"),
+            SolutionStep(text="die Wurzel ziehen", expr=f"c = \\sqrt{{{a * a + b * b}}} = {c}"),
+        ]
+        ans = c
+    else:                                          # Kathete aus Hypotenuse + anderer Kathete
+        kath, other = (a, b) if target == "a" else (b, a)   # gesuchte / bekannte Kathete
+        gegeben = f"{'b' if target == 'a' else 'a'} = {other} cm, c = {c} cm"
+        gesucht = f"die Kathete {target}"
+        steps = [
+            SolutionStep(text="Satz des Pythagoras nach der Kathete umstellen",
+                         expr=f"{target}^2 = c^2 - {'b' if target == 'a' else 'a'}^2"),
+            SolutionStep(text="einsetzen",
+                         expr=f"{target}^2 = {c}^2 - {other}^2 = {c * c - other * other}"),
+            SolutionStep(text="die Wurzel ziehen",
+                         expr=f"{target} = \\sqrt{{{c * c - other * other}}} = {kath}"),
+        ]
+        ans = kath
+    figure = FigureSpec(generator="matplotlib:right_triangle", spec={
+        "a": round(a / c, 3), "b": round(b / c, 3),        # normed → no integer leaks
+        "label_a": L["a"], "label_b": L["b"], "label_c": L["c"],
+        "title": "rechtwinkliges Dreieck"})
+    return Instance(params={"gegeben": gegeben, "gesucht": gesucht},
+                    answer=f"{target} = {ans} cm", steps=steps, figure=figure)
 
 
 @_recipe("rectangle")
@@ -244,6 +303,32 @@ def _rectangle(rng: random.Random) -> Instance:
     ]
     return Instance(params={"l": length, "w": width},
                     answer=f"A = {area} cm², u = {peri} cm", steps=steps)
+
+
+@_recipe("kreis_umfang_flaeche")
+def _kreis_umfang_flaeche(rng: random.Random) -> Instance:
+    """Umfang U = 2·π·r und Flächeninhalt A = π·r² eines Kreises aus dem Radius.
+
+    Exakt (sympy pi → 10π, 25π …) plus die auf zwei Stellen gerundete Dezimalzahl (im
+    Klartext, mit deutschem Komma — kein Komma in der mathtext-Formel). Die Skizze
+    (`matplotlib:circle`) zeigt NUR den gegebenen Radius; U und A werden nicht eingezeichnet,
+    können also nicht durchsickern."""
+    r = rng.randint(2, 12)
+    u_exact, a_exact = 2 * pi * r, pi * r ** 2
+    u_dez, a_dez = _de_num(float(N(u_exact)), 2), _de_num(float(N(a_exact)), 2)
+    steps = [
+        SolutionStep(text="Umfang mit der Formel U = 2·r·π berechnen",
+                     expr=f"U = 2 \\cdot {r} \\cdot \\pi = {latex(u_exact)}"),
+        SolutionStep(text=f"Umfang auf zwei Nachkommastellen runden: U ≈ {u_dez} cm"),
+        SolutionStep(text="Flächeninhalt mit der Formel A = r²·π berechnen",
+                     expr=f"A = {r}^2 \\cdot \\pi = {latex(a_exact)}"),
+        SolutionStep(text=f"Flächeninhalt auf zwei Nachkommastellen runden: A ≈ {a_dez} cm²"),
+    ]
+    answer = [_math(f"U = {latex(u_exact)}"), InlineRun(text=f" ≈ {u_dez} cm;  "),
+              _math(f"A = {latex(a_exact)}"), InlineRun(text=f" ≈ {a_dez} cm²")]
+    figure = FigureSpec(generator="matplotlib:circle",
+                        spec={"radius": r, "label_r": f"r = {r} cm", "title": "Kreis"})
+    return Instance(params={"r": r}, answer=answer, steps=steps, figure=figure)
 
 
 @_recipe("mean_median")
@@ -628,9 +713,15 @@ def _boxplot_from_data(rng: random.Random) -> Instance:
 
     Die Anzahl ist UNGERADE (n = 11 oder 15), damit die Quartile nach der Schulmethode
     (Median der jeweiligen Hälfte OHNE den Gesamtmedian; beide Hälften sind dann ungerade
-    lang) eindeutig einzelne Datenwerte sind — keine Mittelung, saubere Ergebnisse. Aus der
-    berechneten Zusammenfassung zeichnet matplotlib:boxplot die Lösung (Figurenausgabe ist
-    ein späterer Track)."""
+    lang) eindeutig einzelne Datenwerte sind — keine Mittelung, saubere Ergebnisse.
+
+    KEINE Figurenausgabe (bewusst): der Lösungs-Boxplot IST die Fünf-Punkte-Zusammenfassung.
+    Ein Task-Asset rendert in ALLEN Projektionen identisch — `rendering/blocks_to_flowables.
+    _task_flowables` bettet `asset_refs` ohne Projektions-Weiche ein, es gibt also keinen
+    reinen Lehrer-Kanal (die Projektions-Trennung liegt in Antwort/Rechenweg, nicht in
+    Bildern). Ein Boxplot auf dem Blatt würde Q1/Median/Q3/Min/Max direkt verraten. Die
+    Lösung bleibt daher rechenbar in den `solution_steps` (Lehrer-Guide); `figure` bleibt
+    None. Die `matplotlib:boxplot`-Recipe bleibt für kuratierte Datensatz-Abbildungen."""
     n = rng.choice([11, 15])
     vals = sorted(rng.randint(1, 45) for _ in range(n))
     if vals[-1] - vals[0] < 6:
@@ -721,7 +812,21 @@ def _probability_tree(rng: random.Random) -> Instance:
                          expr=f"P(2.\\,{c2} \\mid 1.\\,{c1}) = {latex(P)}"),
         ]
     answer = [_math(latex(P)), InlineRun(text=f" ≈ {_de_num(float(P), 3)}")]
-    return Instance(params={"aufgabe": aufgabe}, answer=answer, steps=steps)
+    # The Baumdiagramm is the scaffold: it labels the two FIRST-stage (directly sampled)
+    # branch probabilities and draws the second stage as unlabelled structure. Every asked
+    # quantity — a path product, a sum of paths, or a conditional — depends on the second
+    # stage, so hiding those labels means the tree can never show the asked result (the
+    # conditional case in particular: its answer IS a 2nd-stage edge). Built from the already
+    # drawn r/b (no extra rng call) → the deterministic seed→answer mapping is untouched.
+    def _stage2() -> list[dict]:
+        return [{"label": "rot"}, {"label": "blau"}]     # outcomes only; probabilities hidden
+    branches = [
+        {"label": "rot", "p": f"{r}/{n}", "children": _stage2()},
+        {"label": "blau", "p": f"{b}/{n}", "children": _stage2()},
+    ]
+    figure = FigureSpec(generator="matplotlib:tree_diagram", spec={
+        "branches": branches, "title": f"Urne: {r} rote, {b} blaue Kugeln ({ziehung})"})
+    return Instance(params={"aufgabe": aufgabe}, answer=answer, steps=steps, figure=figure)
 
 
 # Latin Wortbildung recipes — same registry, same wiring (see pipeline/latin.py).

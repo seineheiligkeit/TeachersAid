@@ -116,14 +116,21 @@ def test_all_templates_instantiate_and_verify_clean():
         assert len(tasks) == 4 and all(b.solution_steps for b in tasks), t.id
 
 
+def _flat(rt) -> str:
+    return rt if isinstance(rt, str) else "".join(getattr(r, "text", "") for r in rt)
+
+
 def test_pythagoras_and_geometry_correct():
     import re
-    t = _template("pythagoras", "$a={a}$ $b={b}$")
-    for seed in range(8):
+    from teachersaid.library.templates import find_template
+    t = find_template("mat-pythagoras")                  # now asks a leg OR the hypotenuse
+    seen = set()
+    for seed in range(20):
         b = instantiate(t, seed)
-        a, bb = (int(x) for x in re.findall(r"\d+", "".join(r.text for r in b.prompt)))
-        c = int(b.answer_key[0].text.split("=")[1])
-        assert a * a + bb * bb == c * c          # a real Pythagorean triple
+        nums = sorted(int(x) for x in re.findall(r"(\d+) cm", _flat(b.prompt) + " " + _flat(b.answer_key)))
+        assert len(nums) == 3 and nums[0] ** 2 + nums[1] ** 2 == nums[2] ** 2   # a real triple
+        seen.add(_flat(b.answer_key).split(" =")[0].strip())                    # asked side a/b/c
+    assert "c" in seen and len(seen) >= 2                 # hypotenuse AND at least one leg asked
     r = instantiate(_template("rectangle", "{l}x{w}"), 5)
     assert "cm²" in r.answer_key and "u =" in r.answer_key
 

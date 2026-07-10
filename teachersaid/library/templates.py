@@ -76,9 +76,17 @@ PARAM_TEMPLATES: list[ParametricTask] = [
         id="mat-pythagoras", title="Satz des Pythagoras",
         subject="Mathematik", klasse=4, kompetenzbereich="3: Figuren und Körper",
         recipe="pythagoras",
-        prompt_template="Ein rechtwinkliges Dreieck hat die Katheten $a = {a}$ cm und "
-                        "$b = {b}$ cm. Berechne die Länge der Hypotenuse $c$.",
+        prompt_template="Berechne die fehlende Seitenlänge des rechtwinkligen Dreiecks "
+                        "(siehe Skizze). Gegeben: {gegeben}. Gesucht: {gesucht}.",
         serves=[Serves(competence_id="MAT.US.4.FIG.01", relation="exercises")],
+        dimensions=["OPE"], cognitive_level="apply", kind="calculation", est_minutes=5),
+    ParametricTask(
+        id="mat-kreis", title="Kreis: Umfang & Flächeninhalt",
+        subject="Mathematik", klasse=4, kompetenzbereich="3: Figuren und Körper",
+        recipe="kreis_umfang_flaeche",
+        prompt_template="Ein Kreis hat den Radius r = {r} cm (siehe Skizze). Berechne seinen "
+                        "Umfang und seinen Flächeninhalt (auf zwei Nachkommastellen gerundet).",
+        serves=[Serves(competence_id="MAT.US.4.FIG.02", relation="exercises")],
         dimensions=["OPE"], cognitive_level="apply", kind="calculation", est_minutes=5),
     ParametricTask(
         id="mat-kennzahlen", title="Statistische Kennzahlen",
@@ -292,13 +300,15 @@ def variant_worksheet(template: ParametricTask, n: int = 6, *, today: date | Non
                       seed0: int = 1):
     """Build an assemble-ready WorksheetContent of N variants. Returns (content, resolution)."""
     from ..grounding import lehrplan_store as ls
-    from ..pipeline.parametrize import make_variants
+    from ..pipeline.parametrize import make_variants_with_assets
     from ..pipeline.resolve import resolve_kompetenzbereich
 
     stufe = ls.stufe_for_klasse(template.klasse)  # Klasse fixes the stage (1–4 / 5–8)
     res = resolve_kompetenzbereich(template.subject, template.klasse,
                                    template.kompetenzbereich, today=today)
-    blocks = make_variants(template, n, seed0=seed0)
+    # each variant may carry a figure (Pythagoras triangle, circle, Baumdiagramm …); collect
+    # them onto the worksheet so they render + pass the media-policy gate (role="figure", code)
+    blocks, assets = make_variants_with_assets(template, n, seed0=seed0)
     title = template.title or template.id
     meta = WorksheetMeta(
         title=f"Übungsblatt: {title} ({n} Varianten)", subject=template.subject,
@@ -307,5 +317,5 @@ def variant_worksheet(template: ParametricTask, n: int = 6, *, today: date | Non
         lehrplan_label=f"{template.subject} · {template.klasse}. Kl. · {template.kompetenzbereich}")
     content = WorksheetContent(
         meta=meta, subject_model=ls.get_subject_model(template.subject, stufe),
-        intro=[], sections=[Baustein(id="uebung", title=title, blocks=blocks)], assets=[])
+        intro=[], sections=[Baustein(id="uebung", title=title, blocks=blocks)], assets=assets)
     return content, res
