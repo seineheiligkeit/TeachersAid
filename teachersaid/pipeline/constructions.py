@@ -65,82 +65,104 @@ def _pt(P) -> tuple[float, float]:
     return (float(P[0]), float(P[1]))
 
 
-def _arc(V, P, Q, label) -> Arc:
+def _arc(V, P, Q, label, group=None) -> Arc:
     a1 = math.degrees(math.atan2(P[1] - V[1], P[0] - V[0]))
     a2 = math.degrees(math.atan2(Q[1] - V[1], Q[0] - V[0]))
     sweep = (a2 - a1) % 360
     if sweep > 180:
         a1, sweep = a2, 360 - sweep
-    return Arc(center=_pt(V), radius=0.6, theta1=a1, theta2=a1 + sweep, label=label)
+    return Arc(center=_pt(V), radius=0.6, theta1=a1, theta2=a1 + sweep, label=label, group=group)
 
 
-def construction_scene(g: dict, stage: int = 6) -> Scene:
-    """The construction at `stage` (1–6), cumulative: prior results recede, the active step's
-    helping lines are bright. Stage 1 the triangle · 2 Umkreis · 3 Inkreis · 4 Schwerpunkt ·
-    5 Höhenschnittpunkt · 6 Eulergerade + Feuerbachkreis."""
+# The layer groups visible at each construction stage (`select`-ed from the full scene). The
+# always-present base (triangle + vertices) is UNTAGGED, so it survives every select. A prior
+# result persists as a *receded* layer (grey) in later stages while its *active* layer (bright,
+# family colour) shows only in its own step — so a centre changes appearance across stages by
+# toggling two different tagged layers, not by re-styling one.
+_STAGE_GROUPS: dict[int, tuple[str, ...]] = {
+    1: ("s1",),                                            # the starting figure, fully labelled
+    2: ("perp", "u_circle", "u_active"),                   # Umkreis
+    3: ("u_recede", "bisec", "i_circle", "i_active"),      # Inkreis
+    4: ("u_recede", "i_recede", "median", "s_active"),     # Schwerpunkt
+    5: ("u_recede", "i_recede", "s_recede", "alt", "h_active"),          # Höhenschnittpunkt
+    6: ("u_recede", "i_recede", "s_recede", "h_recede", "euler"),        # Euler + Feuerbach
+}
+
+
+def _full_construction_scene(g: dict) -> Scene:
+    """The COMPLETE construction as one grouped scene — every step's helping lines, circles and
+    result tagged with the group that a `stage` selects. Layer order is chosen so that filtering to
+    any stage's groups yields exactly the legacy per-stage layer list (same primitives, same order,
+    same z), so `construction_scene(g, stage)` is byte-identical to the old if-chain."""
     A, B, C, S = g["A"], g["B"], g["C"], g["S"]
     sc = Scene(canvas=Canvas(figsize=(5.0, 4.8), aspect="equal", frame="off"))
 
-    # the triangle + vertices (always)
+    # the triangle + vertices (always — untagged, kept by every select)
     sc.add(Polyline([_pt(A), _pt(B), _pt(C)], role="ink", width=2.3, closed=True, z=5))
     for P, name in ((A, "A"), (B, "B"), (C, "C")):
         off = (P - S) / np.linalg.norm(P - S) * 0.42
         sc.add(PointMark(_pt(P), label=name, role="ink", size=4.5, label_offset=_pt(off),
                          bold=False, z=6))
-    if stage == 1:                                          # the starting figure: fully labelled
-        for (P, Q, lab) in ((B, C, "a"), (C, A, "b"), (A, B, "c")):
-            mid = (P + Q) / 2
-            out = (mid - S) / np.linalg.norm(mid - S) * 0.32
-            sc.add(Label(_pt(mid + out), lab, role="muted", size=8.5))
-        sc.add(_arc(A, B, C, "α"), _arc(B, C, A, "β"), _arc(C, A, B, "γ"))
+
+    # stage 1 extras: side labels + angle arcs
+    for (P, Q, lab) in ((B, C, "a"), (C, A, "b"), (A, B, "c")):
+        mid = (P + Q) / 2
+        out = (mid - S) / np.linalg.norm(mid - S) * 0.32
+        sc.add(Label(_pt(mid + out), lab, role="muted", size=8.5, group="s1"))
+    sc.add(_arc(A, B, C, "α", "s1"), _arc(B, C, A, "β", "s1"), _arc(C, A, B, "γ", "s1"))
 
     perp = [(M, g["U"] + (g["U"] - M) * 0.22) for M in (g["Mbc"], g["Mca"], g["Mab"])]
     bisec = [(A, g["Da"]), (B, g["Db"]), (C, g["Dc"])]
     median = [(A, g["Mbc"]), (B, g["Mca"]), (C, g["Mab"])]
     alt = [(A, g["Ha"]), (B, g["Hb"]), (C, g["Hc"])]
 
-    def receded(P, label):
+    def receded(P, label, group):
         return PointMark(_pt(P), label=label, role=_RECEDED, size=5, leader=False,
-                         label_offset=_LOFF[label], bold=False, z=6)
+                         label_offset=_LOFF[label], bold=False, z=6, group=group)
 
-    def active_center(P, label, slot):
+    def active_center(P, label, slot, group):
         return PointMark(_pt(P), label=label, family=slot, size=7.5, leader=True,
-                         label_offset=_LOFF[label], bold=True, z=6)
+                         label_offset=_LOFF[label], bold=True, z=6, group=group)
 
-    # prior results persist, receded (centres only — circles would clutter)
-    if stage > 2:
-        sc.add(receded(g["U"], "U"))
-    if stage > 3:
-        sc.add(receded(g["I"], "I"))
-    if stage > 4:
-        sc.add(receded(g["S"], "S"))
-    if stage > 5:
-        sc.add(receded(g["H"], "H"))
+    # prior results persist, receded (centres only — circles would clutter); one per later stage
+    sc.add(receded(g["U"], "U", "u_recede"), receded(g["I"], "I", "i_recede"),
+           receded(g["S"], "S", "s_recede"), receded(g["H"], "H", "h_recede"))
 
-    # the active step: bright helping lines + its result
-    if stage == 2:
-        sc.add(*[Line(_pt(p), _pt(q), family=PERP) for p, q in perp])
-        sc.add(CircleShape(_pt(g["U"]), g["R"], family=PERP, width=1.6),
-               active_center(g["U"], "U", PERP))
-    elif stage == 3:
-        sc.add(*[Line(_pt(p), _pt(q), family=BISEC) for p, q in bisec])
-        sc.add(CircleShape(_pt(g["I"]), g["r"], family=BISEC, width=1.6),
-               active_center(g["I"], "I", BISEC))
-    elif stage == 4:
-        sc.add(*[Line(_pt(p), _pt(q), family=MEDIAN) for p, q in median])
-        sc.add(active_center(g["S"], "S", MEDIAN))
-    elif stage == 5:
-        sc.add(*[Line(_pt(p), _pt(q), family=ALT) for p, q in alt])
-        sc.add(active_center(g["H"], "H", ALT))
-    elif stage == 6:
-        d = g["H"] - g["U"]                                 # the Eulergerade through U, S, H
-        sc.add(Line(_pt(g["U"] - 1.3 * d), _pt(g["H"] + 0.7 * d), role="ink", width=1.6, z=4))
-        sc.add(CircleShape(_pt(g["N"]), g["R"] / 2, role="focus", dash=(0, (5, 3)), width=1.5, z=3))
-        for name, P, slot in (("U", g["U"], PERP), ("S", g["S"], MEDIAN), ("H", g["H"], ALT)):
-            sc.add(active_center(P, name, slot))
+    # stage 2 — Umkreis: perpendicular bisectors + circumcircle
+    sc.add(*[Line(_pt(p), _pt(q), family=PERP, group="perp") for p, q in perp])
+    sc.add(CircleShape(_pt(g["U"]), g["R"], family=PERP, width=1.6, group="u_circle"),
+           active_center(g["U"], "U", PERP, "u_active"))
+    # stage 3 — Inkreis: angle bisectors + incircle
+    sc.add(*[Line(_pt(p), _pt(q), family=BISEC, group="bisec") for p, q in bisec])
+    sc.add(CircleShape(_pt(g["I"]), g["r"], family=BISEC, width=1.6, group="i_circle"),
+           active_center(g["I"], "I", BISEC, "i_active"))
+    # stage 4 — Schwerpunkt: medians
+    sc.add(*[Line(_pt(p), _pt(q), family=MEDIAN, group="median") for p, q in median])
+    sc.add(active_center(g["S"], "S", MEDIAN, "s_active"))
+    # stage 5 — Höhenschnittpunkt: altitudes
+    sc.add(*[Line(_pt(p), _pt(q), family=ALT, group="alt") for p, q in alt])
+    sc.add(active_center(g["H"], "H", ALT, "h_active"))
+    # stage 6 — Eulergerade through U, S, H + Feuerbachkreis
+    d = g["H"] - g["U"]
+    sc.add(Line(_pt(g["U"] - 1.3 * d), _pt(g["H"] + 0.7 * d), role="ink", width=1.6, z=4,
+                group="euler"))
+    sc.add(CircleShape(_pt(g["N"]), g["R"] / 2, role="focus", dash=(0, (5, 3)), width=1.5, z=3,
+                       group="euler"))
+    for name, P, slot in (("U", g["U"], PERP), ("S", g["S"], MEDIAN), ("H", g["H"], ALT)):
+        sc.add(active_center(P, name, slot, "euler"))
 
     # frame the view on the circumcircle so the box never jumps between stages
     pad = g["R"] * 0.14 + 0.35
     sc.canvas.xlim = (g["U"][0] - g["R"] - pad, g["U"][0] + g["R"] + pad)
     sc.canvas.ylim = (g["U"][1] - g["R"] - pad, g["U"][1] + g["R"] + pad)
     return sc
+
+
+def construction_scene(g: dict, stage: int = 6) -> Scene:
+    """The construction at `stage` (1–6), cumulative: prior results recede, the active step's
+    helping lines are bright. Stage 1 the triangle · 2 Umkreis · 3 Inkreis · 4 Schwerpunkt ·
+    5 Höhenschnittpunkt · 6 Eulergerade + Feuerbachkreis.
+
+    Built by `select`-ing the stage's layer groups off the full computed scene — the first-class
+    density/stage selector (one computed object → the whole step-by-step worksheet)."""
+    return _full_construction_scene(g).select(*_STAGE_GROUPS.get(stage, _STAGE_GROUPS[6]))
