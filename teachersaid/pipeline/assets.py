@@ -33,6 +33,7 @@ from . import figstyle as fs  # noqa: E402
 from .calculus import (area_between_scene, distribution_scene, extrema_scene,  # noqa: E402
                        function_scene, integral_scene, riemann_scene, tangent_scene)
 from .constructions import construction_scene, triangle_geometry  # noqa: E402
+from .nodelink import cause_effect_scene, process_scene, tree_scene  # noqa: E402
 from .scene import scene_to_png  # noqa: E402
 
 # generator id ("<backend>:<recipe>")  ->  builder(asset, path) -> writes the PNG
@@ -480,53 +481,11 @@ def _tree_diagram(asset: Asset, path: Path) -> None:
     Structural (declared on body.assets, like geometry), correct-by-construction: branch
     probabilities + outcome labels are spec-provided so the figure never invents them.
     spec: {branches:[{label, p?, children?:[{label, p?, children?…}]}], title?}; p renders as
-    the edge label (e.g. "0,3"). Any depth; parents sit at the mean of their children."""
-    s = asset.spec or {}
-    roots = s.get("branches", []) or []
-    fig, ax = plt.subplots(figsize=(6.0, 3.8), layout="constrained")
-    ax.axis("off")
-    leaf = [0.0]
-    max_depth = [1]
+    the edge label (e.g. "0,3"). Any depth; parents sit at the mean of their children.
 
-    def place(node: dict, depth: int) -> float:
-        max_depth[0] = max(max_depth[0], depth)
-        kids = node.get("children") or []
-        if kids:
-            y = sum(place(k, depth + 1) for k in kids) / len(kids)
-        else:
-            y = leaf[0]
-            leaf[0] += 1
-        node["_xy"] = (depth, y)
-        return y
-
-    for r in roots:
-        place(r, 1)
-    root_y = sum(r["_xy"][1] for r in roots) / len(roots) if roots else 0
-    root_xy = (0.0, root_y)
-
-    def draw(node: dict, parent_xy: tuple) -> None:
-        x, y = node["_xy"]
-        ax.plot([parent_xy[0], x], [parent_xy[1], y], color=fs.PALETTE.ink, lw=1.3, zorder=1)
-        if node.get("p") not in (None, ""):
-            mx, my = (parent_xy[0] + x) / 2, (parent_xy[1] + y) / 2
-            ax.text(mx, my, str(node["p"]), fontsize=fs.TYPE.annot, color=fs.PALETTE.focus,
-                    ha="center", va="center",
-                    bbox={"boxstyle": "round,pad=0.12", "fc": "white", "ec": "none"})
-        ax.plot([x], [y], "o", color=fs.PALETTE.ink, ms=5, zorder=2)
-        ax.text(x + 0.06, y, str(node.get("label", "")), fontsize=fs.TYPE.base, va="center")
-        for k in node.get("children") or []:
-            draw(k, (x, y))
-
-    if roots:
-        ax.plot([root_xy[0]], [root_xy[1]], "o", color=fs.PALETTE.ink, ms=5, zorder=2)
-    for r in roots:
-        draw(r, root_xy)
-    ax.set_xlim(-0.3, max_depth[0] + 0.9)
-    ax.set_ylim(-0.6, max(leaf[0], 1) - 0.4)
-    if s.get("title"):
-        ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 50)))
-    fig.savefig(path, dpi=150)
-    plt.close(fig)
+    Composed on the scene engine (`nodelink.tree_scene`): plain dot-nodes + labelled edges +
+    white p-chips, one node-link visual language shared with cause_effect/process_flow."""
+    scene_to_png(tree_scene(asset.spec or {}), path, dpi=150)
 
 
 @_generator("matplotlib:cause_effect")
@@ -535,56 +494,10 @@ def _cause_effect(asset: Asset, path: Path) -> None:
     Sachverhalt content layer, GPB/history). Structural, correct-by-construction: the boxes
     and arrows are spec-provided, so the figure never invents a relationship. spec:
     {links:[{"cause":str,"effect":str,"kind"?:str}], title?}. Distinct causes stack on the
-    left, distinct effects on the right; each link draws one arrow (a cause may fan out)."""
-    s = asset.spec or {}
-    links = s.get("links", []) or []
-    causes: list[str] = []
-    effects: list[str] = []
-    for ln in links:
-        c, e = str(ln.get("cause", "")), str(ln.get("effect", ""))
-        if c and c not in causes:
-            causes.append(c)
-        if e and e not in effects:
-            effects.append(e)
-    n = max(len(causes), len(effects), 1)
-    fig, ax = plt.subplots(figsize=(7.8, max(2.6, 1.0 * n)), layout="constrained")
-    ax.axis("off")
-    ax.set_xlim(0, 10)
-    ax.set_ylim(0, n + 0.4)
+    left, distinct effects on the right; each link draws one arrow (a cause may fan out).
 
-    def ypos(idx: int, total: int) -> float:
-        if total <= 1:
-            return (n + 0.4) / 2
-        top, bot = n, 0.4
-        return top - (top - bot) * idx / (total - 1)
-
-    def wrap(t: str) -> str:
-        return "\n".join(textwrap.wrap(t, 24))
-
-    cpos: dict[str, float] = {}
-    epos: dict[str, float] = {}
-    for i, c in enumerate(causes):
-        y = ypos(i, len(causes))
-        cpos[c] = y
-        ax.text(1.7, y, wrap(c), ha="center", va="center", fontsize=fs.TYPE.annot,
-                bbox={"boxstyle": "round,pad=0.4", "fc": fs.PALETTE.surface,
-                      "ec": fs.PALETTE.ink})
-    for i, e in enumerate(effects):
-        y = ypos(i, len(effects))
-        epos[e] = y
-        ax.text(8.3, y, wrap(e), ha="center", va="center", fontsize=fs.TYPE.annot,
-                bbox={"boxstyle": "round,pad=0.4", "fc": fs.PALETTE.surface_warm,
-                      "ec": fs.PALETTE.focus})
-    for ln in links:
-        c, e = str(ln.get("cause", "")), str(ln.get("effect", ""))
-        if c in cpos and e in epos:
-            ax.annotate("", xy=(7.2, epos[e]), xytext=(2.8, cpos[c]),
-                        arrowprops={"arrowstyle": "-|>", "color": fs.PALETTE.muted, "lw": 1.2,
-                                    "shrinkA": 3, "shrinkB": 3})
-    if s.get("title"):
-        ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 52)))
-    fig.savefig(path, dpi=150)
-    plt.close(fig)
+    Composed on the scene engine (`nodelink.cause_effect_scene`)."""
+    scene_to_png(cause_effect_scene(asset.spec or {}), path, dpi=150)
 
 
 @_generator("matplotlib:process_flow")
@@ -593,63 +506,10 @@ def _process_flow(asset: Asset, path: Path) -> None:
     Biology's undated sibling of the timeline). Structural, correct-by-construction: the steps and
     their order are spec-provided. spec: {steps:[{name, text?}], cyclic?:bool, title?}. A cyclic
     process (e.g. der Blutkreislauf) is drawn around a circle with the last step looping back to the
-    first; a linear one flows top→bottom."""
-    import math
-    s = asset.spec or {}
-    steps = [str(st.get("name", "")) for st in (s.get("steps") or []) if st.get("name")]
-    cyclic = bool(s.get("cyclic"))
-    n = len(steps)
+    first; a linear one flows top→bottom.
 
-    def wrap(t: str) -> str:
-        return "\n".join(textwrap.wrap(t, 18))
-
-    if n == 0:
-        fig, ax = plt.subplots(figsize=(4, 2))
-        ax.axis("off")
-        fig.savefig(path, dpi=150)
-        plt.close(fig)
-        return
-
-    if cyclic and n >= 3:
-        fig, ax = plt.subplots(figsize=(6.6, 6.0), layout="constrained")
-        ax.axis("off")
-        ax.set_aspect("equal")
-        r = 1.0
-        pos = [(r * math.cos(math.pi / 2 - 2 * math.pi * i / n),
-                r * math.sin(math.pi / 2 - 2 * math.pi * i / n)) for i in range(n)]
-        lim = r + 0.65
-        ax.set_xlim(-lim, lim)
-        ax.set_ylim(-lim, lim)
-        for i in range(n):                       # arrows along the cycle (i -> i+1, wrapping)
-            ax.annotate("", xy=pos[(i + 1) % n], xytext=pos[i],
-                        arrowprops={"arrowstyle": "-|>", "color": fs.PALETTE.muted, "lw": 1.3,
-                                    "shrinkA": 26, "shrinkB": 26,
-                                    "connectionstyle": "arc3,rad=0.16"})
-        for i, (x, y) in enumerate(pos):
-            ax.text(x, y, wrap(steps[i]), ha="center", va="center", fontsize=fs.TYPE.annot,
-                    zorder=3, bbox={"boxstyle": "round,pad=0.4", "fc": fs.PALETTE.surface_warm,
-                                    "ec": fs.PALETTE.focus})
-    else:
-        fig, ax = plt.subplots(figsize=(5.2, max(2.4, 1.2 * n)), layout="constrained")
-        ax.axis("off")
-        ax.set_xlim(0, 4)
-        ax.set_ylim(0, n + 0.5)
-        ys = [n - i for i in range(n)]           # top to bottom
-        for i in range(n - 1):
-            ax.annotate("", xy=(2, ys[i + 1] + 0.30), xytext=(2, ys[i] - 0.30),
-                        arrowprops={"arrowstyle": "-|>", "color": fs.PALETTE.muted, "lw": 1.3})
-        if cyclic:                               # short process that still loops
-            ax.annotate("", xy=(2, ys[0]), xytext=(2, ys[-1]),
-                        arrowprops={"arrowstyle": "-|>", "color": fs.PALETTE.muted, "lw": 1.0,
-                                    "connectionstyle": "arc3,rad=-0.55"})
-        for i, y in enumerate(ys):
-            ax.text(2, y, wrap(steps[i]), ha="center", va="center", fontsize=fs.TYPE.annot,
-                    zorder=3, bbox={"boxstyle": "round,pad=0.4", "fc": fs.PALETTE.surface,
-                                    "ec": fs.PALETTE.ink})
-    if s.get("title"):
-        ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 46)))
-    fig.savefig(path, dpi=150)
-    plt.close(fig)
+    Composed on the scene engine (`nodelink.process_scene`)."""
+    scene_to_png(process_scene(asset.spec or {}), path, dpi=150)
 
 
 def _geo_centroid(geom: dict) -> tuple[float, float]:

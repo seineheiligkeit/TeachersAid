@@ -2,11 +2,18 @@
 
 The structural answer to "every figure is a monolithic recipe": instead of one bespoke
 matplotlib function per figure, a figure is a `Scene` = a `Canvas` + an ordered list of typed
-`layers` (Polyline · Line · Arrow · PointMark · CircleShape · Arc · Region · Label). One renderer
-(`render_scene`) walks the scene and draws each layer in the house style (`figstyle`). So a new
-figure becomes "compose a few primitives", not "write a new recipe", and the SAME scene can be
-rendered at different densities (a `stage`/subset) — which is what makes a step-by-step
+`layers` (Polyline · Line · Arrow · PointMark · Node · CircleShape · Arc · Region · Label). One
+renderer (`render_scene`) walks the scene and draws each layer in the house style (`figstyle`).
+So a new figure becomes "compose a few primitives", not "write a new recipe", and the SAME scene
+can be rendered at different densities (a `stage`/subset) — which is what makes a step-by-step
 construction worksheet fall out of one computed object.
+
+Every layer carries an optional `group` tag; `Scene.select(*groups)` returns a new Scene keeping
+the untagged layers plus the named groups (order preserved). That is the first-class density /
+stage selector: one computed scene renders at many densities by toggling layer groups (the
+triangle construction's `stage` is `select`-ing the groups visible at that step). `Node` (a boxed
+label) and `Arrow` (a straight/curved directed edge) are the node-link vocabulary shared by the
+tree / cause-effect / process figures (`pipeline/nodelink.py`).
 
 Two-tier design (mirrors the existing `GenDataFigure → choose_representation` seam): the LLM
 never authors a Scene (that would let it draw a wrong tangent / leak an answer). A *didactic
@@ -58,6 +65,7 @@ class Polyline:
     closed: bool = False
     alpha: float = 1.0
     z: int = 4
+    group: str | None = None
 
 
 @dataclass
@@ -72,6 +80,7 @@ class Line:
     dash: object = "solid"
     alpha: float = 0.95
     z: int = 3
+    group: str | None = None
 
 
 @dataclass
@@ -85,6 +94,7 @@ class PointMark:
     leader: bool = False
     bold: bool = True
     z: int = 6
+    group: str | None = None
 
 
 @dataclass
@@ -98,6 +108,7 @@ class CircleShape:
     fill: bool = False
     alpha: float = 1.0
     z: int = 2
+    group: str | None = None
 
 
 @dataclass
@@ -111,6 +122,7 @@ class Arc:
     role: str = "ink"
     width: float = 1.1
     z: int = 5
+    group: str | None = None
 
 
 @dataclass
@@ -123,6 +135,7 @@ class Region:
     edge_role: str | None = None
     edge_width: float = 1.0
     z: int = 1
+    group: str | None = None
 
 
 @dataclass
@@ -136,14 +149,38 @@ class Label:
     halo: bool = True
     bold: bool = False
     z: int = 7
+    group: str | None = None
+
+
+@dataclass
+class Node:
+    """A boxed text label — the node-link vocabulary's node (cause/effect/process boxes) and its
+    edge chips (a tree's white p-label). Drawn via `ax.text` with a rounded bbox, exactly as the
+    legacy recipes: `face_role`/`edge_role`/`text_role` are semantic roles (`edge_role=None` → no
+    border, i.e. a white halo-chip); `pad` is the box padding. NB `figtext.overlap_pairs` measures
+    the TEXT extent, not the padded box — so a Node's collision footprint is its text."""
+    p: Point
+    text: str
+    face_role: str = "surface"
+    edge_role: str | None = "ink"
+    text_role: str = "ink"
+    pad: float = 0.4
+    size: float = 9.0
+    ha: str = "center"
+    va: str = "center"
+    z: int = 3
+    group: str | None = None
 
 
 @dataclass
 class Arrow:
-    """A vector arrow p → q with a filled head (physics vectors, forces). `family` (int) →
-    a hue from the categorical ramp (hue only — a dashed shaft would fray the head; in B/W the
-    labels carry the distinction); else `role`/colour + `dash`. Optional label at the shaft
-    midpoint + `label_offset` (a recipe offsets it perpendicular to the shaft)."""
+    """A directed arrow p → q with a filled head — a physics vector/force AND the node-link
+    vocabulary's edge (a cause→effect fan-out, a process step, a cyclic loop-back). `family`
+    (int) → a hue from the categorical ramp (hue only — a dashed shaft would fray the head; in
+    B/W the labels carry the distinction); else `role`/colour + `dash`. Optional label at the
+    shaft midpoint + `label_offset` (a recipe offsets it perpendicular to the shaft). `curve`
+    (arc3 rad) bends the shaft (0 = straight); `shrink_a`/`shrink_b` pull the tail/head back
+    (in points) so an edge never stabs into a node box."""
     p: Point
     q: Point
     role: str = "primary"
@@ -154,7 +191,11 @@ class Arrow:
     label_offset: Point = (0.0, 0.0)
     bold: bool = True
     alpha: float = 1.0
+    curve: float = 0.0
+    shrink_a: float = 0.0
+    shrink_b: float = 0.0
     z: int = 5
+    group: str | None = None
 
 
 @dataclass
@@ -165,6 +206,16 @@ class Scene:
     def add(self, *layers) -> "Scene":
         self.layers.extend(layers)
         return self
+
+    def select(self, *groups: str) -> "Scene":
+        """A density / stage view: a new Scene keeping every UNTAGGED layer (`group is None`) plus
+        any layer whose `group` is in `groups`, in the original order (untagged layers are the
+        always-present base; the named groups are toggled on). So one computed scene renders at
+        many densities/stages — `select(*groups_for_stage)`. The Canvas is shared (same framing
+        across stages)."""
+        keep = set(groups)
+        return Scene(canvas=self.canvas,
+                     layers=[L for L in self.layers if L.group is None or L.group in keep])
 
 
 # --- rendering ---------------------------------------------------------------
@@ -228,6 +279,11 @@ def render_scene(scene: Scene, ax) -> None:
                 ax.text(lp[0], lp[1], L.label, fontsize=fs.TYPE.annot_lg,
                         fontweight="bold" if L.bold else "normal", color=col, ha="center",
                         va="center", zorder=L.z + 1, path_effects=_HALO)
+        elif isinstance(L, Node):
+            ax.text(L.p[0], L.p[1], L.text, fontsize=L.size, color=_color(L.text_role), ha=L.ha,
+                    va=L.va, zorder=L.z,
+                    bbox={"boxstyle": f"round,pad={L.pad}", "fc": _color(L.face_role),
+                          "ec": _color(L.edge_role) if L.edge_role else "none"})
         elif isinstance(L, Label):
             ax.text(L.p[0], L.p[1], L.text, fontsize=L.size, color=_color(L.role), ha=L.ha,
                     va=L.va, fontweight="bold" if L.bold else "normal", zorder=L.z,
@@ -238,7 +294,8 @@ def render_scene(scene: Scene, ax) -> None:
             ax.add_patch(FancyArrowPatch(L.p, L.q, arrowstyle="-|>",
                                          mutation_scale=6 + 4.5 * L.width, color=col,
                                          lw=L.width, linestyle=L.dash, alpha=L.alpha,
-                                         shrinkA=0, shrinkB=0, zorder=L.z))
+                                         shrinkA=L.shrink_a, shrinkB=L.shrink_b,
+                                         connectionstyle=f"arc3,rad={L.curve}", zorder=L.z))
             if L.label:
                 ax.text((L.p[0] + L.q[0]) / 2 + L.label_offset[0],
                         (L.p[1] + L.q[1]) / 2 + L.label_offset[1], L.label,
