@@ -22,6 +22,7 @@ if __name__ == "__main__":
             seed_library,
             seed_sachverhalte,
             seed_texts,
+            seed_textsorten,
         )
 
         items = seed_library()
@@ -52,6 +53,9 @@ if __name__ == "__main__":
         svs = seed_sachverhalte()
         print(f"\nStaged {len(svs)} Sachverhalt(e) in den Sachverhalt-Store "
               f"({', '.join(s.id for s in svs)} — Fakten/Quellen im Sachverhalte-Tab prüfen).")
+        txs = seed_textsorten()
+        print(f"\nStaged {len(txs)} Textsorten-Scaffold(s) als Inhalt "
+              f"({', '.join(t.title for t in txs)} — im Inhalte-Tab prüfen).")
         print("\nRun 'python -m teachersaid' and open the dashboard to review them.")
         sys.exit(0)
 
