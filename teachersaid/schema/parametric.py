@@ -18,12 +18,27 @@ from .response import ResponseSpec
 from .richtext import RichText
 
 
+class FigureSpec(BaseModel):
+    """An optional figure a recipe emits for one instance: a code-gen asset REQUEST
+    (a `<backend>:<recipe>` generator id + its spec dict), computed correct-by-construction
+    from the same sampled values the answer is. The recipe declares only WHAT to draw;
+    `pipeline/parametrize.instantiate` assigns a unique per-variant asset id (so the PNGs
+    never collide) and wires it onto the block's `asset_refs`. Labels MASK the asked unknown
+    ("c = ?") so a figure never leaks the answer — the same select-intent / derive-representation
+    seam as the LLM declaring a chart intent while code guarantees the legible figure."""
+    model_config = ConfigDict(extra="forbid")
+    generator: str                     # a registered code recipe, e.g. "matplotlib:right_triangle"
+    spec: dict = Field(default_factory=dict)   # generator-specific parameters (labels are strings)
+
+
 class Instance(BaseModel):
-    """What a recipe produces for one seed: slot values + the derived answer + steps."""
+    """What a recipe produces for one seed: slot values + the derived answer + steps
+    (+ an optional figure computed from the same values, e.g. a Pythagoras triangle)."""
     model_config = ConfigDict(extra="forbid")
     params: dict                       # slot name -> display value (fills the prompt template)
     answer: RichText                   # the derived answer (correct by construction)
     steps: list[SolutionStep] = Field(default_factory=list)   # the worked Rechenweg
+    figure: FigureSpec | None = None   # optional per-instance figure (masks the asked unknown)
 
 
 class ParametricTask(BaseModel):
