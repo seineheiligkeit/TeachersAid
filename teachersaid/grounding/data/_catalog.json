@@ -24,6 +24,26 @@
       ]
     },
     {
+      "id": "noaa_co2_mauna_loa",
+      "title": "Atmosphärische CO₂-Konzentration (Mauna Loa, Jahresmittel)",
+      "file": "noaa_co2_mauna_loa.json",
+      "source": {
+        "publisher": "NOAA Global Monitoring Laboratory (GML)",
+        "title": "Trends in Atmospheric Carbon Dioxide — Mauna Loa annual mean (Keeling-Kurve)",
+        "url": "https://gml.noaa.gov/ccgg/trends/",
+        "dataset_code": "co2_annmean_mlo",
+        "licence": "Public Domain (U.S. Government work)",
+        "licence_url": "https://www.noaa.gov/information-technology/open-data-dissemination",
+        "redistributable": true,
+        "attribution": "Datenquelle: NOAA Global Monitoring Laboratory (GML) – Mauna Loa CO₂ (Keeling-Kurve), gml.noaa.gov",
+        "retrieved": "2026-07-10",
+        "stand": "2024"
+      },
+      "series": [
+        "verlauf"
+      ]
+    },
+    {
       "id": "statistik_austria_bevstand_2024",
       "title": "Bevölkerung Österreichs nach Alter und Geschlecht (1.1.2024)",
       "file": "statistik_austria_bevstand_2024.json",
@@ -62,6 +82,46 @@
       },
       "series": [
         "bevoelkerung"
+      ]
+    },
+    {
+      "id": "un_wpp_kontinente_2024",
+      "title": "Weltbevölkerung nach Kontinenten (2024)",
+      "file": "un_wpp_kontinente_2024.json",
+      "source": {
+        "publisher": "United Nations, DESA, Population Division",
+        "title": "World Population Prospects 2024 — Total Population by Sex (Medium variant)",
+        "url": "https://population.un.org/wpp/",
+        "dataset_code": "WPP2024_TotalPopulationBySex",
+        "licence": "CC BY 3.0 IGO",
+        "licence_url": "https://creativecommons.org/licenses/by/3.0/igo/",
+        "redistributable": true,
+        "attribution": "Datenquelle: United Nations, DESA, Population Division – World Population Prospects 2024 (CC BY 3.0 IGO)",
+        "retrieved": "2026-07-10",
+        "stand": "2024"
+      },
+      "series": [
+        "kontinente"
+      ]
+    },
+    {
+      "id": "undp_hdi",
+      "title": "Human Development Index (HDI) im Ländervergleich",
+      "file": "undp_hdi.json",
+      "source": {
+        "publisher": "UNDP Human Development Reports Office",
+        "title": "Human Development Index — Composite indices complete time series (HDR 2025)",
+        "url": "https://hdr.undp.org/data-center/human-development-index",
+        "dataset_code": "HDR25_Composite_indices",
+        "licence": "CC BY 3.0 IGO",
+        "licence_url": "https://creativecommons.org/licenses/by/3.0/igo/",
+        "redistributable": true,
+        "attribution": "Datenquelle: UNDP Human Development Reports – hdr.undp.org (HDI, CC BY 3.0 IGO)",
+        "retrieved": "2026-07-10",
+        "stand": "2023"
+      },
+      "series": [
+        "vergleich"
       ]
     },
     {
@@ -145,6 +205,26 @@
       ]
     },
     {
+      "id": "worldbank_fertilitaet",
+      "title": "Gesamtfertilitätsrate im Ländervergleich",
+      "file": "worldbank_fertilitaet.json",
+      "source": {
+        "publisher": "World Bank",
+        "title": "Gesamtfertilitätsrate im Ländervergleich",
+        "url": "https://data.worldbank.org/indicator/SP.DYN.TFRT.IN",
+        "dataset_code": "SP.DYN.TFRT.IN",
+        "licence": "CC BY 4.0",
+        "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+        "redistributable": true,
+        "attribution": "Datenquelle: World Bank – data.worldbank.org (SP.DYN.TFRT.IN, CC BY 4.0)",
+        "retrieved": "2026-07-10",
+        "stand": "2024"
+      },
+      "series": [
+        "vergleich"
+      ]
+    },
+    {
       "id": "worldbank_urbanisierung",
       "title": "Verstädterung im Ländervergleich (Anteil Stadtbevölkerung)",
       "file": "worldbank_urbanisierung.json",
@@ -161,7 +241,8 @@
         "stand": "2024"
       },
       "series": [
-        "vergleich"
+        "vergleich",
+        "welt_verlauf"
       ]
     }
   ]

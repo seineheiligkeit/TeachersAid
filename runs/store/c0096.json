@@ -4,7 +4,7 @@
   "status": "approved",
   "source": "generated",
   "created_at": "2026-06-26T19:02:29+00:00",
-  "updated_at": "2026-06-29T18:41:06+00:00",
+  "updated_at": "2026-07-10T12:35:09+00:00",
   "title": "Geographie und wirtschaftliche Bildung 4. Kl. — Das Anthropozän: Wenn der Mensch zur Naturkraft wird (generiert)",
   "note": "",
   "request": {
@@ -141,7 +141,8 @@
         "content": "Geologen sprechen heute vom „Anthropozän“ – einem Zeitalter, in dem der Mensch selbst zur treibenden Kraft auf der Erde geworden ist. Auf diesem Arbeitsblatt untersuchst du, wie stark der menschliche Einfluss auf Natursysteme wirklich ist, was passiert, wenn Grenzen überschritten werden, und welche Handlungen möglich sind.",
         "callout_role": null,
         "teacher_note": null,
-        "watch_outs": []
+        "watch_outs": [],
+        "numbered": true
       }
     ],
     "sections": [
@@ -180,7 +181,8 @@
             "content": "**Abb. 1** zeigt, wie die CO₂-Konzentration in der Erdatmosphäre seit 1960 gestiegen ist. **Abb. 2** zeigt denselben Zeitraum als Streudiagramm: Auf der x-Achse steht die CO₂-Konzentration, auf der y-Achse die Abweichung der globalen Durchschnittstemperatur gegenüber dem Zeitraum 1850–1900.",
             "callout_role": null,
             "teacher_note": null,
-            "watch_outs": []
+            "watch_outs": [],
+            "numbered": true
           },
           {
             "id": "t1",
@@ -212,7 +214,7 @@
               }
             ],
             "est_minutes": 8,
-            "answer_key": "Die CO₂-Konzentration steigt kontinuierlich von ca. 317 ppm (1960) auf ca. 422 ppm (2024), also um über 100 ppm in 64 Jahren. Der Anstieg ist im Vergleich 2000–2024 am stärksten (ca. 52 ppm in 24 Jahren gegenüber ca. 37 ppm in den ersten 30 Jahren). Hauptursache: Verbrennung fossiler Energieträger (Kohle, Öl, Erdgas) in Industrie, Verkehr und Heizung.",
+            "answer_key": "Die CO₂-Konzentration steigt kontinuierlich von ca. 317 ppm (1960) auf ca. 425 ppm (2024), also um über 100 ppm in 64 Jahren. Der Anstieg ist im Vergleich 2000–2024 am stärksten (ca. 55 ppm in 24 Jahren gegenüber ca. 37 ppm in den ersten 30 Jahren). Hauptursache: Verbrennung fossiler Energieträger (Kohle, Öl, Erdgas) in Industrie, Verkehr und Heizung.",
             "acceptable_reasoning": "Auch Entwaldung als Co-Ursache ist korrekt; Methan aus Landwirtschaft ist eine andere Substanz und sollte nicht mit CO₂ verwechselt werden.",
             "rubric": [
               {
@@ -647,14 +649,14 @@
             "2024"
           ],
           "values": [
-            317.0,
-            326.0,
-            338.0,
-            354.0,
-            370.0,
-            390.0,
-            414.0,
-            422.0
+            316.9,
+            325.7,
+            338.8,
+            354.4,
+            369.7,
+            390.1,
+            414.2,
+            424.6
           ]
         },
         "correctness_surface": null,
@@ -662,7 +664,15 @@
         "intentionally_flawed": null,
         "machine_generatable": true,
         "provenance": null,
-        "data_source": null,
+        "data_source": {
+          "dataset_id": "noaa_co2_mauna_loa",
+          "series": "verlauf",
+          "note": null,
+          "title": "Atmosphärische CO₂-Konzentration (Mauna Loa, Jahresmittel)",
+          "url": "https://gml.noaa.gov/ccgg/trends/",
+          "attribution": "Datenquelle: NOAA Global Monitoring Laboratory (GML) – Mauna Loa CO₂ (Keeling-Kurve), gml.noaa.gov",
+          "stand": "2024"
+        },
         "illustrative": false,
         "caption": null
       },
@@ -717,7 +727,7 @@
         "machine_generatable": true,
         "provenance": null,
         "data_source": null,
-        "illustrative": false,
+        "illustrative": true,
         "caption": null
       },
       {
@@ -755,7 +765,7 @@
         "machine_generatable": true,
         "provenance": null,
         "data_source": null,
-        "illustrative": false,
+        "illustrative": true,
         "caption": null
       }
     ],
