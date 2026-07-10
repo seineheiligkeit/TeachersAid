@@ -82,17 +82,30 @@ SCHREIBHANDLUNG_OPERATORS: dict[str, tuple[str, ...]] = {
 }
 
 
+# Source note for the curated genre facts (struktur/register distilled from the corpus).
+QUELLE = (
+    "Textsortenkatalog zur SRDP in der Unterrichtssprache (Stand Sept. 2020) sowie die "
+    "SRDP-Korrekturhefte Deutsch (Haupttermine 2015–2026, 33 Klausuren). "
+    "Datenquelle: Bundesministerium für Bildung; CC BY (IWG 2022)."
+)
+
+
 @dataclass(frozen=True)
 class Textsorte:
     id: str
     name: str
     definition: str
     schreibhandlungen: tuple[str, ...]          # ids into SCHREIBHANDLUNGEN
-    umfang: tuple[tuple[int, int], ...]         # allowed word-count bands
+    struktur: tuple[tuple[str, str], ...]       # ordered (Bauteil, Funktion) — the Aufbau
+    typical_operators: tuple[str, ...]          # operators.DEUTSCH forms (verbatim, banded)
+    umfang: tuple[tuple[int, int], ...]         # allowed word-count bands (die Wortanzahl)
+    sprachregister: str                         # register/Stil notes (Standardsprache, Präsens …)
     situativer_kontext: bool                    # needs a role/occasion beyond the exam
     textbasis: str                              # literarisch | nicht-fiktional | pragmatisch
     scope: str                                  # kurz | lang | variabel
+    artikel: str = "eine"                       # accusative article: „Verfasse {artikel} {name}“
     verwandt: tuple[str, ...] = field(default_factory=tuple)
+    quelle: str = QUELLE
 
 
 _ALL = ("argumentation", "deskription", "evaluation", "explikation", "narration",
@@ -100,48 +113,141 @@ _ALL = ("argumentation", "deskription", "evaluation", "explikation", "narration"
 
 TEXTSORTEN: dict[str, Textsorte] = {
     "eroerterung": Textsorte(
-        "eroerterung", "Erörterung",
-        "Schriftliche Auseinandersetzung mit einem strittigen Thema; multiperspektivische "
-        "Behandlung anhand der Textbeilage(n) und der eigenen Position.",
-        _ALL, ((405, 495), (540, 660)), False, "pragmatisch", "lang",
-        ("kommentar", "leserbrief")),
+        id="eroerterung", name="Erörterung",
+        definition="Schriftliche Auseinandersetzung mit einem strittigen Thema; "
+        "multiperspektivische Behandlung anhand der Textbeilage(n) und der eigenen Position.",
+        schreibhandlungen=_ALL,
+        struktur=(
+            ("Einleitung", "Zum strittigen Thema hinführen und die Leitfrage benennen."),
+            ("Hauptteil", "Argumente und Gegenargumente abwägend gegenüberstellen und jeweils "
+             "mit Belegen aus der/den Textbeilage(n) stützen."),
+            ("Schluss", "Die Abwägung zu einem begründeten eigenen Urteil zusammenführen."),
+        ),
+        typical_operators=("diskutieren / erörtern / sich auseinandersetzen mit",
+                           "begründen / Gründe angeben", "beurteilen"),
+        umfang=((405, 495), (540, 660)),
+        sprachregister="Sachlich-argumentativ und standardsprachlich; abwägende Konnektoren "
+        "(einerseits/andererseits, dennoch); das eigene Urteil erst im Schluss.",
+        situativer_kontext=False, textbasis="pragmatisch", scope="lang", artikel="eine",
+        verwandt=("kommentar", "leserbrief")),
     "kommentar": Textsorte(
-        "kommentar", "Kommentar",
-        "Journalistische Textsorte, die auf die Meinungsbildung der Leser/innen abzielt; "
-        "die/der Verfasser/in äußert einen Standpunkt zu einem öffentlich diskutierten Thema.",
-        _ALL, ((270, 330), (405, 495), (540, 660)), True, "pragmatisch", "variabel",
-        ("leserbrief", "eroerterung")),
+        id="kommentar", name="Kommentar",
+        definition="Journalistische Textsorte, die auf die Meinungsbildung der Leser/innen "
+        "abzielt; die/der Verfasser/in äußert einen Standpunkt zu einem öffentlich "
+        "diskutierten Thema.",
+        schreibhandlungen=_ALL,
+        struktur=(
+            ("Titel", "Eine zugespitzte Überschrift, die neugierig macht und den Standpunkt "
+             "andeutet."),
+            ("Einleitung", "Den aktuellen Anlass nennen, zum strittigen Thema hinführen und "
+             "die eigene These andeuten."),
+            ("Hauptteil", "Den eigenen Standpunkt mit Argumenten und Belegen begründen; "
+             "Gegenargumente aufgreifen und entkräften."),
+            ("Schluss", "Die Position zuspitzen und mit einem Fazit oder einem Appell an die "
+             "Leserinnen und Leser enden."),
+        ),
+        typical_operators=("kommentieren / Stellung nehmen", "begründen / Gründe angeben",
+                           "appellieren"),
+        umfang=((270, 330), (405, 495), (540, 660)),
+        sprachregister="Standardsprachlich, meinungsbetont und pointiert; klar erkennbare "
+        "Ich-Position; direkte Leseransprache und rhetorische Mittel sind erlaubt.",
+        situativer_kontext=True, textbasis="pragmatisch", scope="variabel", artikel="einen",
+        verwandt=("leserbrief", "eroerterung")),
     "leserbrief": Textsorte(
-        "leserbrief", "Leserbrief",
-        "Kompakte schriftliche Darstellung der persönlichen Meinung in einem (Print-)Medium, "
-        "als Reaktion auf publizierte Berichte oder Äußerungen.",
-        _ALL, ((270, 330),), True, "pragmatisch", "kurz",
-        ("kommentar", "eroerterung")),
+        id="leserbrief", name="Leserbrief",
+        definition="Kompakte schriftliche Darstellung der persönlichen Meinung in einem "
+        "(Print-)Medium, als Reaktion auf publizierte Berichte oder Äußerungen.",
+        schreibhandlungen=_ALL,
+        struktur=(
+            ("Bezug", "Auf den auslösenden Artikel (Titel, Medium, Datum) Bezug nehmen."),
+            ("Anrede", "Eine passende Anrede an die Redaktion."),
+            ("Hauptteil", "Die eigene Meinung zum Beitrag knapp und begründet darlegen; "
+             "zustimmen oder widersprechen."),
+            ("Schluss und Grußformel", "Ein pointiertes Schlusswort, eine Grußformel und die "
+             "Unterschrift."),
+        ),
+        typical_operators=("kommentieren / Stellung nehmen", "begründen / Gründe angeben",
+                           "appellieren"),
+        umfang=((270, 330),),
+        sprachregister="Standardsprachlich, höflich, aber meinungsstark; Briefkonventionen "
+        "(Anrede, Grußformel); klarer Bezug auf den Ausgangsartikel.",
+        situativer_kontext=True, textbasis="pragmatisch", scope="kurz", artikel="einen",
+        verwandt=("kommentar", "eroerterung")),
     "meinungsrede": Textsorte(
-        "meinungsrede", "Meinungsrede",
-        "Druckfassung einer Rede, die ein bestimmtes Publikum von der eigenen Position "
-        "überzeugen will; bedient sich vorwiegend der Argumentation.",
-        ("argumentation", "deskription", "explikation", "narration", "rekapitulation"),
-        ((405, 495), (540, 660)), True, "pragmatisch", "lang"),
+        id="meinungsrede", name="Meinungsrede",
+        definition="Druckfassung einer Rede, die ein bestimmtes Publikum von der eigenen "
+        "Position überzeugen will; bedient sich vorwiegend der Argumentation.",
+        schreibhandlungen=("argumentation", "deskription", "explikation", "narration",
+                           "rekapitulation"),
+        struktur=(
+            ("Begrüßung und Hinführung", "Das Publikum ansprechen und zum Thema hinführen."),
+            ("Hauptteil", "Die eigene Position mit Argumenten entfalten und das Publikum durch "
+             "rhetorische Mittel überzeugen."),
+            ("Appell und Schluss", "Mit einem eindringlichen Appell und einem einprägsamen "
+             "Schlusssatz enden."),
+        ),
+        typical_operators=("appellieren", "begründen / Gründe angeben",
+                           "kommentieren / Stellung nehmen"),
+        umfang=((405, 495), (540, 660)),
+        sprachregister="Gesprochene, wirkungsvolle Standardsprache; direkte Publikumsansprache; "
+        "rhetorische Mittel (Frage, Wiederholung, Dreierfigur); mündlicher Duktus.",
+        situativer_kontext=True, textbasis="pragmatisch", scope="lang", artikel="eine"),
     "textanalyse": Textsorte(
-        "textanalyse", "Textanalyse",
-        "Sachliche Beschreibung eines nicht-fiktionalen Textes anhand von Analyseaspekten "
-        "(Inhalt, Form, Sprache, Funktion).",
-        ("deskription", "explikation", "narration", "rekapitulation"),
-        ((405, 495), (540, 660)), False, "nicht-fiktional", "lang",
-        ("textinterpretation",)),
+        id="textanalyse", name="Textanalyse",
+        definition="Sachliche Beschreibung eines nicht-fiktionalen Textes anhand von "
+        "Analyseaspekten (Inhalt, Form, Sprache, Funktion).",
+        schreibhandlungen=("deskription", "explikation", "narration", "rekapitulation"),
+        struktur=(
+            ("Einleitung", "Autor/in, Titel, Textsorte, Quelle/Datum und Thema nennen."),
+            ("Hauptteil", "Inhalt, Aufbau, sprachlich-formale Mittel und die Funktion/Wirkung "
+             "des Textes systematisch untersuchen und am Text belegen."),
+            ("Schluss", "Die Analyseergebnisse zusammenfassen und die Aussageabsicht bündeln."),
+        ),
+        typical_operators=("analysieren / untersuchen", "beschreiben", "erschließen"),
+        umfang=((405, 495), (540, 660)),
+        sprachregister="Fachsprachlich, sachlich und distanziert; durchgehend Präsens; jede "
+        "Aussage am Text belegt; keine eigene Wertung.",
+        situativer_kontext=False, textbasis="nicht-fiktional", scope="lang", artikel="eine",
+        verwandt=("textinterpretation",)),
     "textinterpretation": Textsorte(
-        "textinterpretation", "Textinterpretation",
-        "Deutung eines literarischen Textes auf Grundlage der Untersuchung von Textmerkmalen; "
-        "setzt fort, wo die Textanalyse endet.",
-        ("argumentation", "deskription", "explikation", "narration", "rekapitulation"),
-        ((540, 660),), False, "literarisch", "lang", ("textanalyse",)),
+        id="textinterpretation", name="Textinterpretation",
+        definition="Deutung eines literarischen Textes auf Grundlage der Untersuchung von "
+        "Textmerkmalen; setzt fort, wo die Textanalyse endet.",
+        schreibhandlungen=("argumentation", "deskription", "explikation", "narration",
+                           "rekapitulation"),
+        struktur=(
+            ("Einleitung", "Autor/in, Titel, Textsorte, Erscheinungsjahr und Thema nennen "
+             "sowie eine Deutungshypothese aufstellen."),
+            ("Hauptteil – Analyse", "Inhalt, Aufbau und sprachlich-formale Gestaltung "
+             "(z. B. Bilder, Reim, Rhythmus) untersuchen und am Text belegen."),
+            ("Hauptteil – Deutung", "Aus der Analyse eine schlüssige Gesamtdeutung entwickeln "
+             "und die Deutungshypothese prüfen."),
+            ("Schluss", "Die Deutung bündeln; gegebenenfalls eine begründete Stellungnahme."),
+        ),
+        typical_operators=("deuten / interpretieren", "analysieren / untersuchen", "beschreiben"),
+        umfang=((540, 660),),
+        sprachregister="Fachsprachlich und sachlich; durchgehend Präsens; jede Deutung am Text "
+        "belegt (Zeilenverweis/Zitat); keine bloße Nacherzählung.",
+        situativer_kontext=False, textbasis="literarisch", scope="lang", artikel="eine",
+        verwandt=("textanalyse",)),
     "zusammenfassung": Textsorte(
-        "zusammenfassung", "Zusammenfassung",
-        "Komprimierung einer (oder mehrerer) Quelle(n) entlang ihrer logisch-sachlichen "
-        "Struktur unter vorgegebenen Gesichtspunkten.",
-        ("deskription", "narration", "rekapitulation"),
-        ((270, 330),), True, "pragmatisch", "kurz"),
+        id="zusammenfassung", name="Zusammenfassung",
+        definition="Komprimierung einer (oder mehrerer) Quelle(n) entlang ihrer "
+        "logisch-sachlichen Struktur unter vorgegebenen Gesichtspunkten.",
+        schreibhandlungen=("deskription", "narration", "rekapitulation"),
+        struktur=(
+            ("Basissatz", "Autor/in, Titel, Textsorte und Kernaussage des Ausgangstextes in "
+             "einem Satz nennen."),
+            ("Hauptteil", "Die wichtigsten Gedanken des Textes in eigenen Worten, in "
+             "sinnvoller Reihenfolge und ohne Beispiele oder Zitate wiedergeben."),
+            ("Sachlicher Abschluss", "Das Ergebnis knapp bündeln — ohne eigene Meinung oder "
+             "Wertung."),
+        ),
+        typical_operators=("zusammenfassen", "wiedergeben", "beschreiben"),
+        umfang=((270, 330),),
+        sprachregister="Sachlich und distanziert; durchgehend Präsens; indirekte Rede für "
+        "fremde Aussagen; keine eigene Wertung und keine wörtlichen Zitate.",
+        situativer_kontext=True, textbasis="pragmatisch", scope="kurz", artikel="eine"),
 }
 
 
@@ -165,6 +271,12 @@ def by_scope(scope: str) -> list[Textsorte]:
     return [t for t in TEXTSORTEN.values() if t.scope == scope]
 
 
+def struktur_teile(textsorte: str) -> list[str]:
+    """The Bauteil names of a Textsorte's Aufbau, in order."""
+    ts = get_textsorte(textsorte)
+    return [teil for teil, _ in ts.struktur] if ts else []
+
+
 def format_textsorte_brief(textsorte: str) -> str:
     """A compact brief for building a worksheet that teaches/scaffolds a target Textsorte."""
     ts = get_textsorte(textsorte)
@@ -172,10 +284,15 @@ def format_textsorte_brief(textsorte: str) -> str:
         return ""
     bands = " / ".join(f"{lo}–{hi}" for lo, hi in ts.umfang)
     sh = ", ".join(SCHREIBHANDLUNGEN[s].name for s in ts.schreibhandlungen)
+    aufbau = " → ".join(teil for teil, _ in ts.struktur)
+    ops = ", ".join(ts.typical_operators)
     ctx = "ja (Rolle/Anlass angeben)" if ts.situativer_kontext else "nein"
     return (
         f"Textsorte: {ts.name} — {ts.definition}\n"
         f"  Schreibhandlungen: {sh}\n"
+        f"  Aufbau: {aufbau}\n"
+        f"  Typische Operatoren: {ops}\n"
         f"  Umfang (Wörter): {bands} · Textbasis: {ts.textbasis} · "
-        f"situativer Kontext: {ctx}"
+        f"situativer Kontext: {ctx}\n"
+        f"  Sprachregister: {ts.sprachregister}"
     )

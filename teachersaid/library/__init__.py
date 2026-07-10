@@ -134,6 +134,25 @@ def seed_history(store=None, *, today: date | None = None) -> list:
     return [orch.stage_worksheet(store, wk.build_content(), res, source="curated")]
 
 
+def seed_textsorten(store=None, *, today: date | None = None) -> list:
+    """Stage the curated Deutsch Textsorten-scaffold worksheets (the German genre layer —
+    teach a Textsorte richly and EARLIER than the Matura merely checks it) as content items
+    for Gate-2 review. Mirrors `seed_history` (`orch.stage_worksheet`): the top-3 SRDP
+    Textsorten by archive frequency — Zusammenfassung (3. Kl.) · Kommentar (4. Kl.) ·
+    Textinterpretation (4. Kl.) — each a verstehen→planen→verfassen scaffold anchored to a
+    real Schreiben-competence. See `Documents/matura-deutsch-coverage.md`."""
+    from ..pipeline import orchestrator as orch
+    from ..pipeline.textsorte_scaffold import build_worksheet
+    from ..store.repository import ReviewStore
+
+    store = store or ReviewStore()
+    out = []
+    for tsid, kl in (("zusammenfassung", 3), ("kommentar", 4), ("textinterpretation", 4)):
+        content, res = build_worksheet(tsid, kl, today=today)
+        out.append(orch.stage_worksheet(store, content, res, source="curated"))
+    return out
+
+
 def seed_sachverhalte(store=None, *, status: str = "in_review") -> list:
     """Stage the curated Sachverhalte (library/sachverhalte.py) into the Sachverhalt store
     for HITL review (the content/exposition layer — fact-check the facts + sources before a
