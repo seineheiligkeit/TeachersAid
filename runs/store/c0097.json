@@ -4,7 +4,7 @@
   "status": "approved",
   "source": "generated",
   "created_at": "2026-06-26T19:02:30+00:00",
-  "updated_at": "2026-06-29T18:41:06+00:00",
+  "updated_at": "2026-07-10T12:35:09+00:00",
   "title": "Geographie und wirtschaftliche Bildung 4. Kl. — Meine Zukunft in einer globalisierten Welt (generiert)",
   "note": "",
   "request": {
@@ -113,7 +113,8 @@
         "content": "Globalisierung verändert nicht nur Wirtschaft und Politik – sie verändert auch, welche Chancen und Herausforderungen du in deinem eigenen Leben hast. Auf diesem Arbeitsblatt denkst du über deine eigenen Zukunftsvorstellungen nach, vergleichst sie mit anderen, erkennst finanzielle Spielräume und Grenzen, und überlegst, wie du politisch mitgestalten kannst.",
         "callout_role": null,
         "teacher_note": null,
-        "watch_outs": []
+        "watch_outs": [],
+        "numbered": true
       }
     ],
     "sections": [
@@ -227,7 +228,7 @@
               }
             ],
             "est_minutes": 10,
-            "answer_key": "a) HDI misst Lebensqualität anhand von: Lebenserwartung, Bildung (Schuljahre), Einkommen (BNE pro Kopf). b) Österreich hat HDI 0.926 – das entspricht einem sehr hohen Entwicklungsstand; Österreich liegt global im oberen Viertel. c) Ausgangsbedingungen: in Österreich: kostenloser Zugang zu Bildung inkl. Universität, gut ausgebautes Gesundheitssystem, politische Stabilität, hohe Einkommensperspektiven; in Niger: sehr begrenzter Zugang zu Hochschulbildung, Ärztemangel, geringe staatliche Bildungsinvestitionen, wirtschaftliche Instabilität. Einflussfaktoren: Zugang zu Bildungsinstitutionen, staatliche Investitionen, politische Sicherheit, soziale Herkunft.",
+            "answer_key": "a) HDI misst Lebensqualität anhand von: Lebenserwartung, Bildung (Schuljahre), Einkommen (BNE pro Kopf). b) Österreich hat HDI 0,93 – das entspricht einem sehr hohen Entwicklungsstand; Österreich liegt global im oberen Viertel. c) Ausgangsbedingungen: in Österreich: kostenloser Zugang zu Bildung inkl. Universität, gut ausgebautes Gesundheitssystem, politische Stabilität, hohe Einkommensperspektiven; in Niger: sehr begrenzter Zugang zu Hochschulbildung, Ärztemangel, geringe staatliche Bildungsinvestitionen, wirtschaftliche Instabilität. Einflussfaktoren: Zugang zu Bildungsinstitutionen, staatliche Investitionen, politische Sicherheit, soziale Herkunft.",
             "acceptable_reasoning": null,
             "rubric": [
               {
@@ -617,13 +618,13 @@
             "Norwegen"
           ],
           "values": [
-            0.394,
-            0.462,
-            0.702,
-            0.76,
-            0.855,
-            0.926,
-            0.967,
+            0.419,
+            0.496,
+            0.733,
+            0.786,
+            0.853,
+            0.93,
+            0.97,
             0.97
           ],
           "title": "Lebensqualitäts-Index ausgewählter Länder (Human Development Index, 2023)",
@@ -636,7 +637,15 @@
         "intentionally_flawed": null,
         "machine_generatable": true,
         "provenance": null,
-        "data_source": null,
+        "data_source": {
+          "dataset_id": "undp_hdi",
+          "series": "vergleich",
+          "note": null,
+          "title": "Human Development Index (HDI) im Ländervergleich",
+          "url": "https://hdr.undp.org/data-center/human-development-index",
+          "attribution": "Datenquelle: UNDP Human Development Reports – hdr.undp.org (HDI, CC BY 3.0 IGO)",
+          "stand": "2023"
+        },
         "illustrative": false,
         "caption": null
       },
@@ -699,7 +708,7 @@
         "machine_generatable": true,
         "provenance": null,
         "data_source": null,
-        "illustrative": false,
+        "illustrative": true,
         "caption": null
       }
     ],
