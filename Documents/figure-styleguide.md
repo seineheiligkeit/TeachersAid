@@ -156,8 +156,12 @@ it. `tangent_slope` and `definite_integral` are the tested computational core.
   purges the strike-carrying originals from the font manager; locked by
   `tests/test_layout.py::test_house_font_renders_glyphs_at_every_size` (every TYPE size × asset
   and scene dpi must produce visible glyphs).
-- **More scene recipes**, now compose-not-plumb: physics vectors/free-body diagrams, annotated
-  "label the parts" diagrams (the leader-callout pattern), a node-link consolidation of
-  `tree_diagram`/`cause_effect`/`process_flow`.
-- **A first-class density/stage selector** on scenes (toggleable layer groups) so a worksheet
-  dials how much of a construction it shows.
+- **More scene recipes** — ✅ **DONE (10 Jul 2026):** physics `vector_addition`/`force_diagram`
+  (`pipeline/physics_scenes.py`, an `Arrow` primitive with filled head/`family` hue/midpoint label/
+  `curve`/`shrink`), `labeled_parts` (`pipeline/labeled_diagram.py`, leader-callouts, numbered-student /
+  named-teacher projections), and the node-link consolidation — `tree_diagram`/`cause_effect`/
+  `process_flow` are thin wrappers over `pipeline/nodelink.py` (a `Node` rounded-box primitive; frozen
+  generator ids + specs).
+- **A first-class density/stage selector** — ✅ **DONE (10 Jul 2026):** every layer takes a `group` tag;
+  `Scene.select(*groups)` keeps untagged layers + the named groups (order preserved, shared Canvas);
+  `constructions.py`'s stage 1–6 selects from one full grouped scene with identical per-stage output.

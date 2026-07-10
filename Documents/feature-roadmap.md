@@ -3,7 +3,34 @@
 Forward-looking *capability* features for TeachersAid. (The schema-version roadmap lives in
 `schema-roadmap-v0.4-v0.5.md`; this tracks product/engine features.)
 
-## ▶ Start here (state as of 9 Jul 2026)
+## ▶ Start here (state as of 10 Jul 2026)
+
+> **Session update (10 Jul 2026) — eight parallel build tracks (subagent-orchestrated, Opus
+> workers in git worktrees, merged sequentially).** Suite **368 → 478**. What shipped:
+> - **Scene engine grew up:** `Arrow` + `Node` primitives; **`Scene.select(*groups)`** — the
+>   first-class density/stage selector (constructions' stage 1–6 migrated, identical output);
+>   `tree_diagram·cause_effect·process_flow` consolidated onto **`pipeline/nodelink.py`** (thin
+>   wrappers, frozen specs); **physics recipes** `vector_addition`/`force_diagram`
+>   (`pipeline/physics_scenes.py`, resultants computed + maskable, no-arrow masked resultant) and
+>   **`labeled_parts`** (`pipeline/labeled_diagram.py`, numbered/named projections; volcano flagship).
+> - **Matura-backward round 1 DONE (all three demand-map targets):** MAT `exponential_model` +
+>   `boxplot_from_data` + `probability_tree` (templates MAT.OS.6.REE.10/BES.01/BES.04); the **Deutsch
+>   Textsorten scaffold** (`pipeline/textsorte_scaffold.py`, rubric DERIVED from the curated
+>   Schreibhandlungen; Zusammenfassung/Kommentar/Interpretation seeded); the **Latein Operatorenliste**
+>   (empirical 15-operator catalog, `LAT` routed) + **Wortbildung engine** (39 curated derivations).
+> - **Parametric figure emission:** `Instance.figure`/`FigureSpec` → per-variant masked figure assets
+>   (`pythagoras`, `kreis_umfang_flaeche`; the tree emits its Baumdiagramm; boxplot deliberately
+>   figure-free — no teacher-only asset channel exists).
+> - **Texts:** `tools/fetch_wikisource.py` (verbatim exact-revision fetch + permalink + rights fields)
+>   → 5 annotated texts staged (Grimm/Fontane/Goethe + 2 Phaedrus), AT-70-p.m.a.-clear.
+> - **Data:** c0081/c0096/c0097 **re-grounded** (4 new sources: UN WPP · UNDP HDI [CC BY 3.0 IGO
+>   verified] · NOAA CO₂ · WB fertility; 12 datasets total; 5 figures cited, 3 honestly illustrative;
+>   GFN refused — ShareAlike). Task-text deltas flagged for SME review in the store items.
+> - **Orchestration lessons (for future multi-agent sessions):** subagents inherit the parent model —
+>   pass `model` explicitly (Opus was right for these tracks); agent worktrees can pin a STALE base
+>   (session-start commit) — verify `git log -1` in the worktree and merge main first; two agents
+>   independently inventing the same primitive (Arrow) needs a reconciling merge — unify fields,
+>   keep both consumers' tests green.
 
 > **Session update (9 Jul 2026) — the styleguide port.** The deferred Q1 is done: all ~25 legacy
 > recipes in `pipeline/assets.py` consume `figstyle` roles/ramps/type scale (`build_asset` scopes
@@ -143,7 +170,7 @@ correct-by-construction (or curation) and making it the durable, reusable asset:
 
 Also: store consolidation (`store/base.py::JsonStore`, the future-DB seam). **265 tests green.**
 
-**Matura-backward build targets (newly specced this session — each demand map names its own next step):**
+**Matura-backward build targets — ✅ ALL THREE DONE (10 Jul 2026, see the session block above):**
 
 - **Maths · WS-strand recipes** (`matura-math-coverage.md`): the figure half is done (boxplot + tree);
   the parametric half remains — a **boxplot-from-data** recipe (compute the quartiles + Rechenweg) and a
@@ -165,15 +192,14 @@ Also: store consolidation (`store/base.py::JsonStore`, the future-DB seam). **26
 2. **Annotated Realien for FS reading** — CEFR-leveled authentic everyday texts (menus, signs, schedules,
    short messages) via the annotated-text engine; the leveling answer for FS Lesen (confirmed B1+B2 demand,
    `matura-languages-coverage.md`).
-3. **Geometry — parametric figure emission:** wire the variant engine to *emit* a figure per instance
-   (Pythagoras/area "with a figure" — an optional `figure` on `Instance` → `asset_refs`); `nets`.
-4. **Scale the text libraries:** more annotated PD texts (DE + LAT) across grades (subagent-annotation +
-   `tools/ingest_texts.py` proven); an **ANNO/OCR fetch tool** for real newspaper/advert media texts.
+3. ~~**Geometry — parametric figure emission**~~ — ✅ **DONE (10 Jul 2026)** (`Instance.figure` →
+   masked per-variant assets; `pythagoras` + `kreis_umfang_flaeche`); **`nets` still open**.
+4. **Scale the text libraries** — *progressed 10 Jul:* `tools/fetch_wikisource.py` + 5 staged texts;
+   still open: more grades/authors, the **ANNO/OCR fetch tool** for real newspaper/advert media texts.
 5. **More parametric recipes + a "Varianten erzeugen" dashboard surface**; expose `orch.compose_variants`.
-   The Matura-backward targets above are the prioritised recipe queue.
-6. **Re-ground the old invented-number figures** the (c)-label flags (c0081 urbanisation, c0096 climate,
-   c0097 HDI) by curating the few datasets they need; curate **BIO/other-subject** datasets; **Tier-2
-   regional** down to Bezirk.
+   *The Matura-backward recipe queue is cleared (10 Jul);* the dashboard surface is still open.
+6. ~~**Re-ground the old invented-number figures**~~ — ✅ **DONE (10 Jul 2026)** (c0081/c0096/c0097; 4 new
+   sources, 12 datasets). Still open: **BIO/other-subject** datasets; **Tier-2 regional** down to Bezirk.
 
 Standing tracks (no build needed): **geography teacher reviews** the 9 GWB worksheets (c0089–c0097),
 the staged dataset, + earlier staged items in the dashboard; **GPB Quellenarbeit via ANNO/ALEX is

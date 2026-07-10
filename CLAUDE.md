@@ -88,7 +88,7 @@ change — is in **`Documents/rendering-handoff-brief.md`**.
 | Resolve | `pipeline/resolve.py` | **deterministic** — verbatim competences + `grade_check` (the trust feature) against curated grounding; honest gap notes for anything uncurated |
 | Plan | `pipeline/plan.py` | mostly deterministic — envelope→minutes, block-spec skeleton + `DepthTarget` ladder. **The plan IS the idea-stage review artifact.** |
 | Generate | `pipeline/generate.py` + `llm/` | **LLM** — `messages.parse()` into a recursion-free generation view, then `to_canonical()` |
-| Assets | `pipeline/assets.py` | code-generated (matplotlib), correct-by-construction; `intentionally_flawed` assets are built **wrong on purpose and never "fixed"**. **Pluggable registry (Phase 4):** `Asset(generator, spec)` is a declarative request; builders register against a `<backend>:<recipe>` id (`@_generator`). Parameterized recipes read `spec` (`number_line`, `bar_chart`, `function_graph`, `math_formula` via mathtext); the **`diffusion:` backend** (Phase 4 #4) plugs in the same way: `register_diffusion_backend(fn)` wires the SME's image-gen agent; `build_asset` dispatches `diffusion:*` to it (offline → `DiffusionNotConfigured`, no silent slop). The agent's brief (contract + content-free rule + manifest) is **`Documents/diffusion-handover.md`**. A **decorative kit** (`svg:badge/banner/motif`, content-free, rasterised via PyMuPDF — no extra dep) ships now. **Entry-gate (Phase 4 #3):** `pipeline/media_policy.py` enforces the invariant — *content-bearing visuals must be code-gen or vetted-sourced; decorative must be content-free* — by classifying each asset's role+source against `DEFAULT_MEDIA_POLICY`; runs inside `verify`. **Asset library (Phase 4 #4):** `store/assetstore.py::AssetStore` (parallel to `BlockStore`) holds the **file-backed** classes (decorative + sourced) with tags/status/reuse; `orch.ingest_asset` gates + materialises + stores; `library/decorative.py::seed_assets` seeds the kit. Code-gen content assets stay as specs on blocks. **Legibility + representation (load-bearing):** *correct numbers are necessary but NOT sufficient — the chart TYPE, scale, and labels must make the data legible and honest.* Recipes self-correct layout (`bar_chart` auto-horizontal for long/many labels, a value label on every bar so none is "invisible", optional `log` for orders-of-magnitude ranges, wrapped titles, `constrained_layout`); `pipeline/chart_lint.py` (run in `verify`) flags misrepresentations — a 0/1 "classification" plotted as bars, an extreme range that begs a log/table decision, or numeric/temporal x-values forced into bars (those are a trend/relationship → line/scatter). **Intent-declared figures (not "everything is a bar"):** the generator declares WHAT the data is, not the chart type — `GenDataFigure(intent ∈ trend·comparison·relationship·composition·distribution·spread·scale, data)` (gen view), and the **deterministic** `schema/chart_choose.py::choose_representation` maps it to the right recipe (trend→`line`, relationship→`scatter` +optional fit, distribution→`histogram`, **spread→`boxplot`** [five-number summary / compare distributions], scale→`number_line`, comparison/composition→`bar_chart`, **demographic→`population_pyramid`**, **timeline→`timeline`**, **climate→`climate_diagram`** [dual-axis temp-line + precip-bar Klimadiagramm]). Same split as everywhere: the LLM declares intent, code guarantees a legible representation. The recipe vocabulary is `number_line·bar_chart·line·scatter·histogram·boxplot·function_graph·math_formula·population_pyramid·timeline·climate_diagram` plus the **geometry family (KB3)** `right_triangle·rectangle·polygon·circle·coordinate_plane` and the **probability tree** `tree_diagram` (Baumdiagramm — structural, via `body.assets`) (labels are spec-provided so a figure never leaks the answer, e.g. "c = ?") — all in `GENERATION_RECIPES`; `body.data_figures` (intent) is preferred for data, `body.assets` (explicit generator) is for structural/geometry figures. **`boxplot`+`tree_diagram` were added from the accessible-Matura figure scan (WS strand);** see `Documents/matura-math-coverage.md`. **Scene-engine recipes (Session 10, composed not bespoke — see the next subsection + `Documents/figure-styleguide.md`):** the geometry construction `triangle_construction` and the analysis family `function_plot·integral_area·tangent·riemann_sum·extrema·area_between·distribution` — all correct-by-construction (sympy), value labels maskable ("A = ?"). |
+| Assets | `pipeline/assets.py` | code-generated (matplotlib), correct-by-construction; `intentionally_flawed` assets are built **wrong on purpose and never "fixed"**. **Pluggable registry (Phase 4):** `Asset(generator, spec)` is a declarative request; builders register against a `<backend>:<recipe>` id (`@_generator`). Parameterized recipes read `spec` (`number_line`, `bar_chart`, `function_graph`, `math_formula` via mathtext); the **`diffusion:` backend** (Phase 4 #4) plugs in the same way: `register_diffusion_backend(fn)` wires the SME's image-gen agent; `build_asset` dispatches `diffusion:*` to it (offline → `DiffusionNotConfigured`, no silent slop). The agent's brief (contract + content-free rule + manifest) is **`Documents/diffusion-handover.md`**. A **decorative kit** (`svg:badge/banner/motif`, content-free, rasterised via PyMuPDF — no extra dep) ships now. **Entry-gate (Phase 4 #3):** `pipeline/media_policy.py` enforces the invariant — *content-bearing visuals must be code-gen or vetted-sourced; decorative must be content-free* — by classifying each asset's role+source against `DEFAULT_MEDIA_POLICY`; runs inside `verify`. **Asset library (Phase 4 #4):** `store/assetstore.py::AssetStore` (parallel to `BlockStore`) holds the **file-backed** classes (decorative + sourced) with tags/status/reuse; `orch.ingest_asset` gates + materialises + stores; `library/decorative.py::seed_assets` seeds the kit. Code-gen content assets stay as specs on blocks. **Legibility + representation (load-bearing):** *correct numbers are necessary but NOT sufficient — the chart TYPE, scale, and labels must make the data legible and honest.* Recipes self-correct layout (`bar_chart` auto-horizontal for long/many labels, a value label on every bar so none is "invisible", optional `log` for orders-of-magnitude ranges, wrapped titles, `constrained_layout`); `pipeline/chart_lint.py` (run in `verify`) flags misrepresentations — a 0/1 "classification" plotted as bars, an extreme range that begs a log/table decision, or numeric/temporal x-values forced into bars (those are a trend/relationship → line/scatter). **Intent-declared figures (not "everything is a bar"):** the generator declares WHAT the data is, not the chart type — `GenDataFigure(intent ∈ trend·comparison·relationship·composition·distribution·spread·scale, data)` (gen view), and the **deterministic** `schema/chart_choose.py::choose_representation` maps it to the right recipe (trend→`line`, relationship→`scatter` +optional fit, distribution→`histogram`, **spread→`boxplot`** [five-number summary / compare distributions], scale→`number_line`, comparison/composition→`bar_chart`, **demographic→`population_pyramid`**, **timeline→`timeline`**, **climate→`climate_diagram`** [dual-axis temp-line + precip-bar Klimadiagramm]). Same split as everywhere: the LLM declares intent, code guarantees a legible representation. The recipe vocabulary is `number_line·bar_chart·line·scatter·histogram·boxplot·function_graph·math_formula·population_pyramid·timeline·climate_diagram` plus the **geometry family (KB3)** `right_triangle·rectangle·polygon·circle·coordinate_plane` and the **probability tree** `tree_diagram` (Baumdiagramm — structural, via `body.assets`) (labels are spec-provided so a figure never leaks the answer, e.g. "c = ?") — all in `GENERATION_RECIPES`; `body.data_figures` (intent) is preferred for data, `body.assets` (explicit generator) is for structural/geometry figures. **`boxplot`+`tree_diagram` were added from the accessible-Matura figure scan (WS strand);** see `Documents/matura-math-coverage.md`. **Scene-engine recipes (Session 10, composed not bespoke — see the next subsection + `Documents/figure-styleguide.md`):** the geometry construction `triangle_construction` and the analysis family `function_plot·integral_area·tangent·riemann_sum·extrema·area_between·distribution` — all correct-by-construction (sympy), value labels maskable ("A = ?"). **Session 11 (10 Jul 2026):** the physics pair `vector_addition·force_diagram` (Kräfteaddition/Kräfteplan — resultant COMPUTED from components, maskable; a masked/zero resultant renders as a label with NO arrow so a ruler can't leak the magnitude) + the generic `labeled_parts` ("Beschrifte die Teile": numbered-callouts student / named teacher projections from ONE scene; volcano flagship); and `tree_diagram·cause_effect·process_flow` are now scene-COMPOSED thin wrappers over `pipeline/nodelink.py` (same generator ids + specs, one node-link visual language). |
 | Verify | `pipeline/verify.py` | rules (kinds/dimensions/coverage/depth/difficulty/**media-policy**/**chart-sanity**/**(c)-data-label**); LLM fact-check optional. The **(c)-label gate** (`pipeline/figure_lint.py`) warns when a data figure carries real-looking numbers but declares neither `data_source` (sourced+cited) nor `illustrative` (schematic) — the grounded-facts honesty rule. |
 | Assemble + derive | `pipeline/assemble.py`, `pipeline/derive.py` | **deterministic** — `derive_nachweis` (coverage + auto-surfaced gaps), `compute_depth` (DepthProfile), `printable_coverage`; **`data_ground.ground_data`** derives each figure's real values FROM its `data_source` dataset slice + stamps the citation onto the content (so rendering stays pure; *select-never-author* for numbers) |
 | Render | `rendering/*` | **deterministic** pure projections; QA-rastered via PyMuPDF |
@@ -126,6 +126,16 @@ Two additions make figures **consistent** and **composable**. Full design doc:
     the tested core): `function_plot·integral_area·tangent·riemann_sum·extrema·area_between·distribution`.
     Value labels **mask** (`show_value=False` → "A = ?"/"k = ?") so one scene serves the student task and
     the teacher solution.
+  - **Session 11 additions (10 Jul 2026):** two new primitives — **`Arrow`** (filled head; physics vector
+    AND node-link edge in one type: `family`/ramp hue, midpoint `label`+offset, `curve` arc3-rad bend,
+    `shrink_a/b` so an edge never stabs a node box) and **`Node`** (rounded-box label; `edge_role=None` →
+    a white p-chip). **Every layer takes a `group` tag; `Scene.select(*groups)` is the first-class
+    density/stage selector** (untagged layers always kept, order preserved) — `constructions.py`'s stage
+    1–6 if-chain now selects from one full grouped scene (identical per-stage output, locked by tests).
+    **`pipeline/nodelink.py`** composes the tree/Wirkungsgefüge/process figures from these primitives;
+    **`pipeline/physics_scenes.py`** (vector addition, free-body — degrees from +x CCW; Unterstufe
+    simplification: all forces from the body's centre) and **`pipeline/labeled_diagram.py`**
+    (leader-callout label-the-parts) are the new recipe modules.
   - `tests/test_scene.py` + `tests/test_calculus.py` lock the geometry's defining properties (circumcentre
     equidistant, incircle tangent, U·S·H collinear) and the computed values against ground truth. Visual
     reference: the `tools/*_specimen.py` scripts (re-runnable; render to `runs/`).
@@ -225,10 +235,19 @@ maps to our `kind`: `mc→multiple_choice·z→matching·k→construction·l→t
 `_RANK_TO_AFB` is kept identical to `pipeline/difficulty._RANK_TO_BAND` (one ladder, two surfaces; a
 test locks it). **Routing is by canonical code** (`lehrplan_store._code_for`), not display name, since
 `model.subject` carries the caller's string. Other subjects fall back to a flagged generic palette;
-still to curate: FS/Latein/GZ/Ethik. **Calibration (#1) done** (`tools/extract_matura.py` +
+**Latein curated (10 Jul 2026):** an **empirical 15-operator catalog** (`LATEIN` — ÜT `übersetzen` + 14
+IT operators harvested from the Klausur corpus; definitions authored-then-vetted, provenance recorded as
+empirical since no official transcription was used) routed `LAT → LATEIN` for BOTH Stufen. Still to
+curate: FS/GZ/Ethik. **Calibration (#1) done** (`tools/extract_matura.py` +
 `Documents/matura-calibration.md`): the cognitive_level→AFB→difficulty model holds, no change. The
 live thread is **Matura-backward design** — mine the SRDP endpoints into rich parametrized worksheets
 for earlier grades; the Maths demand map + recipe-build order is `Documents/matura-math-coverage.md`.
+**First Matura-backward deliverables shipped (10 Jul 2026):** the Maths WS/FA parametric pack, the
+**Deutsch Textsorten scaffold** (`grounding/textsorten.py` extended with struktur/typical_operators/
+sprachregister + `pipeline/textsorte_scaffold.py::build_worksheet` — teach-the-Textsorte sheets for
+Zusammenfassung/Kommentar/Interpretation, anchored DEU.US.3/4.SCH; the capstone's **rubric is DERIVED**
+from the curated Schreibhandlungen+Struktur+Wortanzahl, never authored; `seed_textsorten()` stages them),
+and the Latein operator catalog + Wortbildung engine.
 
 ### Matura archive downloader + subject-aware extractor (the full-archive build)
 
@@ -280,9 +299,15 @@ from the model; generation *references* a dataset by stable id (like `serves` �
   `tools/fetch_statistik_austria.py` (population by age×sex + per-Bundesland aggregation, CC BY 4.0),
   `tools/fetch_worldbank.py` (AT population/aging time series + multi-country urbanisation/GDP-pc/CO₂-pc,
   CC BY 4.0), `tools/fetch_geosphere.py` (1991–2020 monthly climate normals per station → Klimadiagramm,
-  CC BY 4.0). **8 datasets curated, cross-tagged to serve GWB + MAT (Daten und Zufall) + PHY (Wetter
-  und Klima)** — one curated series is discoverable by every subject whose competences it fits. Add a
-  source = add a fetch tool; each datum is a reviewable item. Numbers only (licensing-clean); text/
+  CC BY 4.0), and — since the re-grounding pass (10 Jul 2026) — `tools/fetch_un_wpp.py` (UN DESA
+  WPP2024 continent populations, CC BY 3.0 IGO), `tools/fetch_undp_hdi.py` (UNDP HDR composite indices,
+  CC BY 3.0 IGO — licence verified on hdr.undp.org), `tools/fetch_noaa_co2.py` (Mauna-Loa Keeling curve,
+  US-Gov PD) + a World-Bank fertility/world-urbanisation extension. **12 datasets curated, cross-tagged
+  to serve GWB + MAT (Daten und Zufall) + PHY (Wetter und Klima)** — one curated series is discoverable
+  by every subject whose competences it fits. Add a source = add a fetch tool; each datum is a reviewable
+  item. **The last (c)-flagged invented-number figures (c0081/c0096/c0097) are re-grounded**
+  (`tools/reground.py` — 5 figures now `data_source`-cited, 3 honestly `illustrative`; the GFN footprint
+  refused: CC BY-**SA**). Numbers only (licensing-clean); text/
   images are the harder, deferred phase 5.
 - **Resolver** (`grounding/data_store.py`): the data twin of `resolve.py`. `resolve_dataref` fills the
   citation from the vetted SourceRef (*overwriting* any hand-written attribution — no faked citations);
@@ -330,6 +355,23 @@ Curated templates live in `library/templates.py` (anchored to real MAT competenc
 wraps N variants into a `WorksheetContent`; `orch.compose_variants(store, template_id, n)` stages it for
 Gate-2 review. `TaskBlock.solution_steps` is the canonical worked-solution field (teacher-guide only,
 DERIVED — never LLM-authored).
+
+**Matura pack + figure emission (10 Jul 2026).** Three SRDP-demand recipes joined the registry
+(`exponential_model` [FA — growth/decay/Zinseszins, evaluate/solve-t/find-rate], `boxplot_from_data`
+[WS — exclusive school-convention quartiles, odd n so they're clean], `probability_tree` [WS — Urne
+mit/ohne Zurücklegen, exact sympy fractions, Pfad-/Additionsregel]) with templates anchored
+MAT.OS.6.REE.10/BES.01/BES.04. **A recipe can now EMIT A FIGURE per instance:** `Instance.figure`
+(`FigureSpec` = generator + spec) → `_instantiate` builds a per-variant Asset (unique id
+`<task>-<seed>-fig`) wired via `asset_refs`; `variant_worksheet` collects them. The invariant: **the
+figure masks the asked unknown** ("c = ?") — `pythagoras` (triples, ask hypotenuse OR leg; drawing
+lengths normed so the answer never surfaces even as a coordinate) and `kreis_umfang_flaeche`
+(MAT.US.4.FIG.01/.02) prove it; `probability_tree` emits its Baumdiagramm (stage-1 labels only —
+leak-safe). **`boxplot_from_data` deliberately emits NO figure:** block assets render on EVERY
+projection (there is no teacher-only asset channel), so a solution boxplot would hand students the
+five-number answer — locked by tests. **Latein rides the same engine** (`pipeline/latin.py` +
+`grounding/latin.py`): a `wortbildung` recipe over **curated real derivations** (12 prefixes ×
+9 base verbs → 39 attested words with meanings + assimilation notes — select-never-author: no
+synthesized Latin, ever), templates `lat-us-*` anchored LAT.US.3/4.SPR.01.
 
 **Inline math** — a `RichText` run with `math=True` carries LaTeX, typeset to a small inline PNG via
 mathtext (`rendering/inline_math.py`, the `math_formula` engine) and embedded with ReportLab `<img>`
@@ -390,7 +432,13 @@ One annotated text → many tasks across grades; it compounds like the catalogs.
   (`.SPR./.INH./.LES./.SCH.`), so the engine is subject-agnostic.
 - **Scaling**: subagents add the annotation layer to a *provided verbatim* PD text → `AnnotatedText` JSON
   → `tools/ingest_texts.py` (validate → rights gate → build → verify → stage); the text is never authored,
-  only annotated. A true newspaper/advert media text needs an ANNO/OCR fetch tool (next).
+  only annotated. **`tools/fetch_wikisource.py` (10 Jul 2026)** is the deterministic verbatim-text fetch
+  (MediaWiki API, exact-revision text + permalink + rights fields shaped for `TextSourceRef`; throttled;
+  strips `PageNumber` scan-markers so "Zeile N" anchoring holds; parser fixture-tested offline). First
+  batch staged via it: Grimm *Die Sternthaler* (Kl. 1) · Fontane *Herr von Ribbeck* (Kl. 3) · Goethe
+  *Der Zauberlehrling* 1827 (Kl. 4) · Phaedrus *Lupus et Agnus* + *Rana Rupta et Bos* (LAT Kl. 3/4) —
+  all AT-70-p.m.a.-clear, historical orthography preserved verbatim. A true newspaper/advert media text
+  still needs an ANNO/OCR fetch tool (next).
 - **Audio / Hörverstehen (modern FS)** — a listening text is an `AnnotatedText` with `medium="audio"`:
   `build_worksheet` attaches a spoken `Asset(role="tts", medium=audio, generator="audio:tts")`, renders a
   printable audio cue + listening tasks (`listening_task`, dim HOR), and makes the transcript **teacher-
