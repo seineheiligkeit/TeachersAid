@@ -216,6 +216,39 @@ PARAM_TEMPLATES: list[ParametricTask] = [
 ]
 
 
+# --- Matura-Nachfrage-Pack (FA + WS) — appended via extend() so the list literal above
+#     is untouched (parallel work on this file merges cleanly). Anchored to real Oberstufe
+#     MAT competences (lehrplan/oberstufe/MAT.json), Klasse 6. Non-"mat-os-" ids so the
+#     locked test_oberstufe exact-set assertions stay green. Recipes: pipeline/parametrize.py.
+PARAM_TEMPLATES.extend([
+    ParametricTask(
+        id="mat-fa-exponentialmodell", title="Exponentielles Wachstum und Abnahme",
+        subject="Mathematik", klasse=6, kompetenzbereich="Reelle Funktionen",
+        content_area="Funktionale Abhängigkeiten", recipe="exponential_model",
+        prompt_template="{aufgabe}",
+        serves=[Serves(competence_id="MAT.OS.6.REE.10", relation="exercises")],
+        dimensions=["FO"], cognitive_level="apply", kind="calculation", est_minutes=7),
+    ParametricTask(
+        id="mat-ws-boxplot", title="Boxplot und Fünf-Punkte-Zusammenfassung",
+        subject="Mathematik", klasse=6,
+        kompetenzbereich="Beschreibende Statistik; Wahrscheinlichkeit",
+        content_area="Wahrscheinlichkeit und Statistik", recipe="boxplot_from_data",
+        prompt_template="Bestimme für die folgende Datenliste die Fünf-Punkte-Zusammenfassung "
+                        "(Minimum, unteres Quartil Q₁, Median, oberes Quartil Q₃, Maximum) "
+                        "sowie Spannweite und Interquartilsabstand: {daten}.",
+        serves=[Serves(competence_id="MAT.OS.6.BES.01", relation="exercises")],
+        dimensions=["FO"], cognitive_level="apply", kind="calculation", est_minutes=7),
+    ParametricTask(
+        id="mat-ws-baumdiagramm", title="Baumdiagramm: zweistufiger Zufallsversuch",
+        subject="Mathematik", klasse=6,
+        kompetenzbereich="Beschreibende Statistik; Wahrscheinlichkeit",
+        content_area="Wahrscheinlichkeit und Statistik", recipe="probability_tree",
+        prompt_template="{aufgabe}",
+        serves=[Serves(competence_id="MAT.OS.6.BES.04", relation="exercises")],
+        dimensions=["FO"], cognitive_level="apply", kind="calculation", est_minutes=7),
+])
+
+
 def find_template(template_id: str) -> ParametricTask | None:
     return next((t for t in PARAM_TEMPLATES if t.id == template_id), None)
 

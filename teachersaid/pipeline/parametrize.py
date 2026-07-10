@@ -493,3 +493,232 @@ def _vector_dot_angle(rng: random.Random) -> Instance:
 # Chemistry recipes register into the same _RECIPES (so make_variants/templates drive
 # them uniformly). Imported last so the names above are defined first (no import cycle).
 from . import chemistry as _chemistry  # noqa: E402,F401
+
+
+# === Matura-Nachfrage-Pack (FA + WS) ==================================================
+# The highest-frequency SRDP demands the corpus scan exposed (Documents/matura-math-
+# coverage.md): exponential growth/decay (FA, the #1 demand), and the two WS figures the
+# accessible-Matura scan flagged — Boxplot and Baumdiagramm — now as parametric recipes
+# with the quartiles / path-probabilities COMPUTED (sympy), never authored. Appended (not
+# inserted) so parallel work on this file stays merge-clean.
+#
+# Load-bearing style rule followed here: the only content inside a `$…$` prompt span or a
+# SolutionStep `expr` is DECIMAL-FREE LaTeX (symbolic / integer / fraction) — every German
+# decimal comma lives in plain text, never in matplotlib mathtext (which spaces a bare
+# comma oddly). This keeps the render test clean without fighting the mathtext subset.
+from sympy import log  # natural logarithm — the exponential solve-for-t step
+
+
+def _de_num(x, dp: int = 2) -> str:
+    """German decimal string (comma). Trailing zeros are trimmed only AFTER a decimal
+    point, so a whole number like 1700 stays '1700' — unlike `_approx`, whose rstrip('0')
+    would eat the trailing zero of an integer result."""
+    s = f"{float(x):.{dp}f}"
+    if "." in s:
+        s = s.rstrip("0").rstrip(".")
+    return s.replace(".", ",")
+
+
+# growth/decay stories: (Satz mit {N0}+{p}, Mengeneinheit, Zeit-Dativ, N0-Auswahl, p%-Auswahl)
+_EXP_GROWTH = [
+    ("Ein Kapital von {N0} € wird jährlich mit {p} % verzinst (Zinseszins).",
+     "€", "Jahren", [1000, 1500, 2000, 2500, 3000, 5000], [2, 3, 4, 5]),
+    ("Eine Bakterienkultur beginnt mit {N0} Bakterien und wächst pro Stunde um {p} %.",
+     "Bakterien", "Stunden", [2000, 4000, 5000, 8000, 10000], [10, 20, 25, 50]),
+    ("Eine Stadt hat {N0} Einwohnerinnen und Einwohner; die Bevölkerung wächst pro Jahr um {p} %.",
+     "Einwohner", "Jahren", [8000, 12000, 20000, 50000], [2, 3, 5]),
+]
+_EXP_DECAY = [
+    ("Eine Probe enthält {N0} mg eines radioaktiven Stoffes, der pro Jahr um {p} % zerfällt.",
+     "mg", "Jahren", [200, 400, 500, 800, 1000], [10, 15, 20, 25]),
+    ("{N0} mg eines Medikaments befinden sich im Blut; pro Stunde werden {p} % abgebaut.",
+     "mg", "Stunden", [200, 300, 400, 600], [15, 20, 25]),
+    ("Ein Auto kostet neu {N0} €; sein Wert sinkt pro Jahr um {p} %.",
+     "€", "Jahren", [15000, 20000, 25000, 30000], [10, 15, 20]),
+]
+
+# find-rate: N0 is a multiple of 400 (= lcm of the den² of every q below), so N1 = N0·q²
+# is always a whole number and q = √(N1/N0) recovers exactly — correct by construction.
+_EXP_RATE_Q = [Rational(3, 2), Rational(5, 4), Rational(6, 5),
+               Rational(4, 5), Rational(1, 2), Rational(3, 4)]
+_EXP_RATE_N0 = [400, 800, 1200, 1600, 2000, 2400]
+
+
+@_recipe("exponential_model")
+def _exponential_model(rng: random.Random) -> Instance:
+    """Exponentielles Wachstum/Abnahme N(t) = N0·q^t (Zinseszins · Zerfall · Population).
+
+    Drei Frage-Varianten: den Wert N(t) berechnen · über den Logarithmus die Verdopplungs-
+    bzw. Halbwertszeit bestimmen · den Faktor q aus zwei Werten ermitteln. Alles exakt
+    (sympy); die Rundung wird im Rechenweg genannt. Aus dem Modell lässt sich via
+    matplotlib:function_plot ein Graph/eine Wertetabelle zeichnen (Figurenausgabe ist ein
+    späterer Track)."""
+    ask = rng.choice(["wert", "zeit", "rate"])
+
+    if ask == "rate":
+        q = rng.choice(_EXP_RATE_Q)
+        n0 = rng.choice(_EXP_RATE_N0)
+        t = 2
+        n1 = n0 * q ** t                       # exact whole number
+        ratio = Rational(int(n1), n0)
+        pct = int((q - 1) * 100)
+        richtung = "Zunahme" if q > 1 else "Abnahme"
+        aufgabe = (
+            "Ein Bestand ändert sich exponentiell nach dem Modell "
+            "$N(t) = N_0 \\cdot q^t$. "
+            f"Zum Zeitpunkt t = 0 beträgt er {n0}, nach {t} Zeiteinheiten {int(n1)}. "
+            "Bestimme den Faktor q pro Zeiteinheit und die prozentuelle Änderung."
+        )
+        steps = [
+            SolutionStep(text="das Modell für beide Zeitpunkte anschreiben und dividieren",
+                         expr=f"q^{{{t}}} = \\frac{{{int(n1)}}}{{{n0}}} = {latex(ratio)}"),
+            SolutionStep(text="die Wurzel ziehen",
+                         expr=f"q = \\sqrt{{{latex(ratio)}}} = {latex(q)}"),
+            SolutionStep(text=f"Deutung: q = {_de_num(float(q))} bedeutet eine {richtung} "
+                              f"um {abs(pct)} % pro Zeiteinheit."),
+        ]
+        answer = f"q = {_de_num(float(q))} ({richtung} um {abs(pct)} % pro Zeiteinheit)"
+        return Instance(params={"aufgabe": aufgabe}, answer=answer, steps=steps)
+
+    growth = rng.random() < 0.5
+    satz, einheit, zeit_dativ, n0s, ps = rng.choice(_EXP_GROWTH if growth else _EXP_DECAY)
+    p = rng.choice(ps)
+    n0 = rng.choice(n0s)
+    q = Rational(100 + p, 100) if growth else Rational(100 - p, 100)
+    q_disp = _de_num(float(q))
+    lead = (satz.format(N0=n0, p=p)
+            + " Für den Bestand gilt $N(t) = N_0 \\cdot q^t$ mit dem Faktor q = " + q_disp + ".")
+
+    if ask == "wert":
+        t = rng.randint(3, 8)
+        val = float(N(q ** t * n0))
+        rounded = round(val)
+        aufgabe = lead + (f" Berechne den Bestand nach {t} {zeit_dativ} und runde auf eine "
+                          "ganze Zahl.")
+        steps = [
+            SolutionStep(text="die Werte in das Modell einsetzen",
+                         expr=f"N({t}) = {n0} \\cdot q^{{{t}}}"),
+            SolutionStep(text=f"mit q = {q_disp} berechnen und runden: "
+                              f"N({t}) ≈ {_de_num(val, 2)} ≈ {rounded} {einheit}"),
+        ]
+        return Instance(params={"aufgabe": aufgabe},
+                        answer=f"N({t}) ≈ {rounded} {einheit}", steps=steps)
+
+    # ask == "zeit": Verdopplungszeit (Wachstum) / Halbwertszeit (Abnahme)
+    faktor = Rational(2, 1) if growth else Rational(1, 2)
+    faktor_disp, ziel = ("2", "verdoppelt") if growth else ("0,5", "halbiert")
+    t_val = float(N(log(faktor) / log(q)))
+    aufgabe = lead + f" Nach welcher Zeit hat sich der Bestand {ziel} (auf eine Nachkommastelle)?"
+    steps = [
+        SolutionStep(text=f"Ansatz: der Bestand ist {ziel}", expr=f"q^t = {latex(faktor)}"),
+        SolutionStep(text="beide Seiten logarithmieren und nach t auflösen",
+                     expr="t = \\frac{\\ln k}{\\ln q}"),
+        SolutionStep(text=f"einsetzen (k = {faktor_disp}, q = {q_disp}): der Bestand ist nach "
+                          f"etwa {_de_num(t_val, 1)} {zeit_dativ} {ziel}"),
+    ]
+    answer = f"Der Bestand ist nach etwa {_de_num(t_val, 1)} {zeit_dativ} {ziel} " \
+             f"(t ≈ {_de_num(t_val, 1)})."
+    return Instance(params={"aufgabe": aufgabe}, answer=answer, steps=steps)
+
+
+@_recipe("boxplot_from_data")
+def _boxplot_from_data(rng: random.Random) -> Instance:
+    """Fünf-Punkte-Zusammenfassung (Minimum · Q1 · Median · Q3 · Maximum) + Spannweite +
+    Interquartilsabstand einer kleinen Datenliste.
+
+    Die Anzahl ist UNGERADE (n = 11 oder 15), damit die Quartile nach der Schulmethode
+    (Median der jeweiligen Hälfte OHNE den Gesamtmedian; beide Hälften sind dann ungerade
+    lang) eindeutig einzelne Datenwerte sind — keine Mittelung, saubere Ergebnisse. Aus der
+    berechneten Zusammenfassung zeichnet matplotlib:boxplot die Lösung (Figurenausgabe ist
+    ein späterer Track)."""
+    n = rng.choice([11, 15])
+    vals = sorted(rng.randint(1, 45) for _ in range(n))
+    if vals[-1] - vals[0] < 6:
+        raise Unsuitable                       # zu wenig Streuung → uninteressant
+    half = n // 2
+    lower, upper = vals[:half], vals[half + 1:]
+    mn, mx, med = vals[0], vals[-1], vals[half]
+    q1, q3 = lower[len(lower) // 2], upper[len(upper) // 2]
+    if q3 - q1 == 0:
+        raise Unsuitable                       # entarteter Interquartilsabstand
+    spann, iqr = mx - mn, q3 - q1
+    daten = ", ".join(str(v) for v in rng.sample(vals, n))   # ungeordnet vorlegen
+    steps = [
+        SolutionStep(text="die Daten der Größe nach ordnen: " + ", ".join(map(str, vals))),
+        SolutionStep(text=f"Minimum = {mn}, Maximum = {mx}; "
+                          f"Spannweite = {mx} − {mn} = {spann}"),
+        SolutionStep(text=f"Median = mittlerer der {n} Werte (Position {half + 1}) = {med}"),
+        SolutionStep(text="Quartile nach der Schulmethode: Q₁ = Median der unteren Hälfte "
+                          f"(ohne den Gesamtmedian) = {q1}; Q₃ = Median der oberen Hälfte = {q3}"),
+        SolutionStep(text=f"Interquartilsabstand = Q₃ − Q₁ = {q3} − {q1} = {iqr}"),
+    ]
+    answer = (f"Minimum = {mn}, Q₁ = {q1}, Median = {med}, Q₃ = {q3}, Maximum = {mx}; "
+              f"Spannweite = {spann}; Interquartilsabstand = {iqr}")
+    return Instance(params={"daten": daten}, answer=answer, steps=steps)
+
+
+@_recipe("probability_tree")
+def _probability_tree(rng: random.Random) -> Instance:
+    """Zweistufiger Urnenversuch (mit/ohne Zurücklegen) mit EXAKTEN Wahrscheinlichkeiten
+    (sympy Rational).
+
+    Gefragt wird eine Pfadwahrscheinlichkeit, eine Summe von Pfaden (genau eine rote Kugel)
+    oder eine bedingte Wahrscheinlichkeit (dann ohne Zurücklegen, damit sie nicht trivial
+    mit der unbedingten zusammenfällt). Rechenweg = Stufenwahrscheinlichkeiten + Pfad-/
+    Additionsregel. Der gezogene Baum lässt sich via matplotlib:tree_diagram darstellen
+    (Figurenausgabe ist ein späterer Track)."""
+    r, b = rng.randint(2, 6), rng.randint(2, 6)
+    n = r + b
+    ask = rng.choice(["pfad", "genau_eine", "bedingt"])
+    mit = False if ask == "bedingt" else (rng.random() < 0.5)
+    ziehung = "mit Zurücklegen" if mit else "ohne Zurücklegen"
+    lead = (f"In einer Urne liegen {r} rote und {b} blaue Kugeln. Es werden nacheinander "
+            f"zwei Kugeln {ziehung} gezogen.")
+    p_r, p_b = Rational(r, n), Rational(b, n)
+
+    def stage2(first_red: bool, want_red: bool) -> Rational:
+        if mit:
+            return p_r if want_red else p_b
+        red_left = r - 1 if first_red else r
+        blue_left = b - 1 if not first_red else b
+        return Rational(red_left if want_red else blue_left, n - 1)
+
+    if ask == "pfad":
+        c1_red, c2_red = rng.random() < 0.5, rng.random() < 0.5
+        c1, c2 = ("rot" if c1_red else "blau"), ("rot" if c2_red else "blau")
+        p1, p2 = (p_r if c1_red else p_b), stage2(c1_red, c2_red)
+        P = p1 * p2
+        aufgabe = lead + f" Wie groß ist die Wahrscheinlichkeit, zuerst {c1} und dann {c2} zu ziehen?"
+        steps = [
+            SolutionStep(text=f"Stufe 1: Wahrscheinlichkeit, {c1} zu ziehen", expr=f"P_1 = {latex(p1)}"),
+            SolutionStep(text=f"Stufe 2 ({ziehung}): {c2} nach {c1}", expr=f"P_2 = {latex(p2)}"),
+            SolutionStep(text="Pfadregel — entlang des Astes multiplizieren",
+                         expr=f"P = {latex(p1)} \\cdot {latex(p2)} = {latex(P)}"),
+        ]
+    elif ask == "genau_eine":
+        P_rb, P_br = p_r * stage2(True, False), p_b * stage2(False, True)
+        P = P_rb + P_br
+        aufgabe = lead + " Wie groß ist die Wahrscheinlichkeit, genau eine rote Kugel zu ziehen?"
+        steps = [
+            SolutionStep(text="günstig sind zwei Pfade: (rot, blau) und (blau, rot)"),
+            SolutionStep(text="Pfad (rot, blau) — Multiplikationsregel",
+                         expr=f"{latex(p_r)} \\cdot {latex(stage2(True, False))} = {latex(P_rb)}"),
+            SolutionStep(text="Pfad (blau, rot) — Multiplikationsregel",
+                         expr=f"{latex(p_b)} \\cdot {latex(stage2(False, True))} = {latex(P_br)}"),
+            SolutionStep(text="Additionsregel — beide Pfade addieren",
+                         expr=f"P = {latex(P_rb)} + {latex(P_br)} = {latex(P)}"),
+        ]
+    else:  # bedingt (ohne Zurücklegen)
+        c1_red, c2_red = rng.random() < 0.5, rng.random() < 0.5
+        c1, c2 = ("rot" if c1_red else "blau"), ("rot" if c2_red else "blau")
+        P = stage2(c1_red, c2_red)
+        aufgabe = lead + (f" Die erste gezogene Kugel ist {c1}. Wie groß ist die (bedingte) "
+                          f"Wahrscheinlichkeit, dass die zweite Kugel {c2} ist?")
+        steps = [
+            SolutionStep(text=f"gegeben ist die erste Kugel ({c1}); gesucht die bedingte "
+                              f"Wahrscheinlichkeit für {c2} in der 2. Stufe"),
+            SolutionStep(text=f"ohne Zurücklegen ist eine {c1}e Kugel entfernt — am 2. Ast ablesen",
+                         expr=f"P(2.\\,{c2} \\mid 1.\\,{c1}) = {latex(P)}"),
+        ]
+    answer = [_math(latex(P)), InlineRun(text=f" ≈ {_de_num(float(P), 3)}")]
+    return Instance(params={"aufgabe": aufgabe}, answer=answer, steps=steps)
