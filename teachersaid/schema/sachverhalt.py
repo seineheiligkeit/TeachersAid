@@ -45,6 +45,10 @@ class HistEvent(BaseModel):
     label: str
     text: RichText = ""              # one-line description (teacher/context, not the axis)
     source_ref: str | None = None    # optional key into sources[]
+    entity_id: str | None = None     # optional link into the entity registry (grounding/entities)
+    # — additive, backward-compatible: existing JSON without it loads unchanged. The registry is
+    # the single source of truth (`grounding/entities.py`); `pipeline/entity_lint.py` checks that a
+    # linked event's `at` does not contradict the registry's date range (Wave C2).
 
 
 class Actor(BaseModel):
@@ -53,6 +57,10 @@ class Actor(BaseModel):
     name: str
     role: RichText
     source_ref: str | None = None
+    entity_id: str | None = None     # optional link into the entity registry (grounding/entities)
+    # — additive, backward-compatible (Wave C2): a person/place actor may point at a canonical
+    # registry entity so the corpus-global lint can spot conflicting facts and `verwandte_module`
+    # can find every module that shares this entity.
 
 
 class CausalLink(BaseModel):

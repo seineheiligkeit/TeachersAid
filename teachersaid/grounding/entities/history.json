@@ -1,0 +1,489 @@
+{
+  "domain": "history",
+  "note": "Canonical persons/events/places behind the GPB (Geschichte) Sachverhalte — Der Wiener Kongress, Die Französische Revolution, Die Industrialisierung. Each entity is CITED (a de.wikipedia.org facts record, the metadata-only pattern of tools/fetch_wikipedia.py). Dates are select-never-author facts the SME vets at the gate; no oldid is fabricated (an exact-revision permalink may be pinned at review, cf. sachverhalt_blutkreislauf).",
+  "entities": [
+    {
+      "entity_id": "metternich",
+      "kind": "person",
+      "name": "Klemens von Metternich",
+      "aliases": ["Metternich", "Fürst Metternich", "Klemens Wenzel von Metternich"],
+      "born": 1773,
+      "died": 1859,
+      "role": "österreichischer Staatskanzler; Gastgeber und prägende Figur des Wiener Kongresses",
+      "source": {
+        "title": "Klemens Wenzel Lothar von Metternich",
+        "url": "https://de.wikipedia.org/wiki/Klemens_Wenzel_Lothar_von_Metternich",
+        "publisher": "Wikipedia (de)",
+        "licence": "CC-BY-SA-4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "retrieved": "2026-07-11",
+        "role": "facts"
+      }
+    },
+    {
+      "entity_id": "talleyrand",
+      "kind": "person",
+      "name": "Charles-Maurice de Talleyrand",
+      "aliases": ["Talleyrand", "Charles-Maurice de Talleyrand-Périgord"],
+      "born": 1754,
+      "died": 1838,
+      "role": "französischer Diplomat; vertrat das besiegte Frankreich auf dem Wiener Kongress",
+      "source": {
+        "title": "Charles-Maurice de Talleyrand-Périgord",
+        "url": "https://de.wikipedia.org/wiki/Charles-Maurice_de_Talleyrand-P%C3%A9rigord",
+        "publisher": "Wikipedia (de)",
+        "licence": "CC-BY-SA-4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "retrieved": "2026-07-11",
+        "role": "facts"
+      }
+    },
+    {
+      "entity_id": "alexander-i-russland",
+      "kind": "person",
+      "name": "Alexander I. (Russland)",
+      "aliases": ["Alexander I.", "Zar Alexander I."],
+      "born": 1777,
+      "died": 1825,
+      "role": "Kaiser von Russland; eine der siegreichen Großmächte von 1814/15",
+      "source": {
+        "title": "Alexander I. (Russland)",
+        "url": "https://de.wikipedia.org/wiki/Alexander_I._(Russland)",
+        "publisher": "Wikipedia (de)",
+        "licence": "CC-BY-SA-4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "retrieved": "2026-07-11",
+        "role": "facts"
+      }
+    },
+    {
+      "entity_id": "castlereagh",
+      "kind": "person",
+      "name": "Viscount Castlereagh",
+      "aliases": ["Castlereagh", "Robert Stewart", "Marquess of Londonderry"],
+      "born": 1769,
+      "died": 1822,
+      "role": "britischer Außenminister; trieb die Gleichgewichtspolitik voran",
+      "source": {
+        "title": "Robert Stewart, 2. Marquess of Londonderry",
+        "url": "https://de.wikipedia.org/wiki/Robert_Stewart,_2._Marquess_of_Londonderry",
+        "publisher": "Wikipedia (de)",
+        "licence": "CC-BY-SA-4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "retrieved": "2026-07-11",
+        "role": "facts"
+      }
+    },
+    {
+      "entity_id": "hardenberg",
+      "kind": "person",
+      "name": "Karl August von Hardenberg",
+      "aliases": ["Hardenberg", "Fürst von Hardenberg"],
+      "born": 1750,
+      "died": 1822,
+      "role": "preußischer Staatskanzler; verhandelte für Preußen auf dem Wiener Kongress",
+      "source": {
+        "title": "Karl August von Hardenberg",
+        "url": "https://de.wikipedia.org/wiki/Karl_August_von_Hardenberg",
+        "publisher": "Wikipedia (de)",
+        "licence": "CC-BY-SA-4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "retrieved": "2026-07-11",
+        "role": "facts"
+      }
+    },
+    {
+      "entity_id": "ludwig-xvi",
+      "kind": "person",
+      "name": "Ludwig XVI.",
+      "aliases": ["Ludwig XVI", "Ludwigs XVI.", "König Ludwig XVI."],
+      "born": 1754,
+      "died": 1793,
+      "role": "König von Frankreich; in der Französischen Revolution gestürzt und 1793 hingerichtet",
+      "source": {
+        "title": "Ludwig XVI.",
+        "url": "https://de.wikipedia.org/wiki/Ludwig_XVI.",
+        "publisher": "Wikipedia (de)",
+        "licence": "CC-BY-SA-4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "retrieved": "2026-07-11",
+        "role": "facts"
+      }
+    },
+    {
+      "entity_id": "robespierre",
+      "kind": "person",
+      "name": "Maximilien de Robespierre",
+      "aliases": ["Robespierre"],
+      "born": 1758,
+      "died": 1794,
+      "role": "führender Jakobiner; zentrale Figur der Schreckensherrschaft",
+      "source": {
+        "title": "Maximilien de Robespierre",
+        "url": "https://de.wikipedia.org/wiki/Maximilien_de_Robespierre",
+        "publisher": "Wikipedia (de)",
+        "licence": "CC-BY-SA-4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "retrieved": "2026-07-11",
+        "role": "facts"
+      }
+    },
+    {
+      "entity_id": "napoleon-bonaparte",
+      "kind": "person",
+      "name": "Napoleon Bonaparte",
+      "aliases": ["Napoleon", "Napoleon I.", "Bonaparte"],
+      "born": 1769,
+      "died": 1821,
+      "role": "französischer General und Kaiser; beendete 1799 die Revolution, sein Sturz löste den Wiener Kongress aus",
+      "source": {
+        "title": "Napoleon Bonaparte",
+        "url": "https://de.wikipedia.org/wiki/Napoleon_Bonaparte",
+        "publisher": "Wikipedia (de)",
+        "licence": "CC-BY-SA-4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "retrieved": "2026-07-11",
+        "role": "facts"
+      }
+    },
+    {
+      "entity_id": "james-watt",
+      "kind": "person",
+      "name": "James Watt",
+      "aliases": ["James Watt"],
+      "born": 1736,
+      "died": 1819,
+      "role": "schottischer Ingenieur; verbesserte die Dampfmaschine entscheidend",
+      "source": {
+        "title": "James Watt",
+        "url": "https://de.wikipedia.org/wiki/James_Watt",
+        "publisher": "Wikipedia (de)",
+        "licence": "CC-BY-SA-4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "retrieved": "2026-07-11",
+        "role": "facts"
+      }
+    },
+    {
+      "entity_id": "hargreaves",
+      "kind": "person",
+      "name": "James Hargreaves",
+      "aliases": ["Hargreaves"],
+      "born": 1720,
+      "died": 1778,
+      "role": "englischer Weber und Erfinder der Spinning Jenny",
+      "source": {
+        "title": "James Hargreaves",
+        "url": "https://de.wikipedia.org/wiki/James_Hargreaves",
+        "publisher": "Wikipedia (de)",
+        "licence": "CC-BY-SA-4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "retrieved": "2026-07-11",
+        "role": "facts"
+      }
+    },
+    {
+      "entity_id": "stephenson",
+      "kind": "person",
+      "name": "George Stephenson",
+      "aliases": ["Stephenson"],
+      "born": 1781,
+      "died": 1848,
+      "role": "englischer Ingenieur; baute Dampflokomotiven und die erste öffentliche Eisenbahn",
+      "source": {
+        "title": "George Stephenson",
+        "url": "https://de.wikipedia.org/wiki/George_Stephenson",
+        "publisher": "Wikipedia (de)",
+        "licence": "CC-BY-SA-4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "retrieved": "2026-07-11",
+        "role": "facts"
+      }
+    },
+    {
+      "entity_id": "wiener-kongress",
+      "kind": "event",
+      "name": "Wiener Kongress",
+      "aliases": ["Wiener Kongresses", "Kongress von Wien"],
+      "start": 1814,
+      "end": 1815,
+      "role": "die Neuordnung Europas nach der Niederlage Napoleons (1814/15)",
+      "source": {
+        "title": "Wiener Kongress",
+        "url": "https://de.wikipedia.org/wiki/Wiener_Kongress",
+        "publisher": "Wikipedia (de)",
+        "licence": "CC-BY-SA-4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "retrieved": "2026-07-11",
+        "role": "facts"
+      }
+    },
+    {
+      "entity_id": "aufloesung-hrr",
+      "kind": "event",
+      "name": "Auflösung des Heiligen Römischen Reichs",
+      "aliases": ["Heiliges Römisches Reich", "Ende des Heiligen Römischen Reiches"],
+      "start": 1806,
+      "end": 1806,
+      "role": "das Ende des Heiligen Römischen Reiches 1806 unter dem Druck Napoleons",
+      "source": {
+        "title": "Heiliges Römisches Reich",
+        "url": "https://de.wikipedia.org/wiki/Heiliges_R%C3%B6misches_Reich",
+        "publisher": "Wikipedia (de)",
+        "licence": "CC-BY-SA-4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "retrieved": "2026-07-11",
+        "role": "facts"
+      }
+    },
+    {
+      "entity_id": "voelkerschlacht-leipzig",
+      "kind": "event",
+      "name": "Völkerschlacht bei Leipzig",
+      "aliases": ["Völkerschlacht", "Schlacht bei Leipzig"],
+      "start": 1813,
+      "end": 1813,
+      "role": "die Schlacht von 1813, die Napoleons Herrschaft in Mitteleuropa beendete",
+      "source": {
+        "title": "Völkerschlacht bei Leipzig",
+        "url": "https://de.wikipedia.org/wiki/V%C3%B6lkerschlacht_bei_Leipzig",
+        "publisher": "Wikipedia (de)",
+        "licence": "CC-BY-SA-4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "retrieved": "2026-07-11",
+        "role": "facts"
+      }
+    },
+    {
+      "entity_id": "deutscher-bund",
+      "kind": "event",
+      "name": "Deutscher Bund",
+      "aliases": ["Deutschen Bundes", "Deutsche Bundesakte"],
+      "start": 1815,
+      "end": 1866,
+      "role": "der lockere Staatenbund, den der Wiener Kongress 1815 schuf",
+      "source": {
+        "title": "Deutscher Bund",
+        "url": "https://de.wikipedia.org/wiki/Deutscher_Bund",
+        "publisher": "Wikipedia (de)",
+        "licence": "CC-BY-SA-4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "retrieved": "2026-07-11",
+        "role": "facts"
+      }
+    },
+    {
+      "entity_id": "revolution-1848",
+      "kind": "event",
+      "name": "Revolution von 1848",
+      "aliases": ["Revolution von 1848", "Märzrevolution", "Revolution 1848/49"],
+      "start": 1848,
+      "end": 1849,
+      "role": "die bürgerlich-liberale Revolution, die die Restaurationsepoche beendete",
+      "source": {
+        "title": "Deutsche Revolution 1848/1849",
+        "url": "https://de.wikipedia.org/wiki/Deutsche_Revolution_1848/1849",
+        "publisher": "Wikipedia (de)",
+        "licence": "CC-BY-SA-4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "retrieved": "2026-07-11",
+        "role": "facts"
+      }
+    },
+    {
+      "entity_id": "franzoesische-revolution",
+      "kind": "event",
+      "name": "Französische Revolution",
+      "aliases": ["Französischen Revolution"],
+      "start": 1789,
+      "end": 1799,
+      "role": "der Umsturz der alten Ordnung in Frankreich (1789–1799)",
+      "source": {
+        "title": "Französische Revolution",
+        "url": "https://de.wikipedia.org/wiki/Franz%C3%B6sische_Revolution",
+        "publisher": "Wikipedia (de)",
+        "licence": "CC-BY-SA-4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "retrieved": "2026-07-11",
+        "role": "facts"
+      }
+    },
+    {
+      "entity_id": "sturm-auf-die-bastille",
+      "kind": "event",
+      "name": "Sturm auf die Bastille",
+      "aliases": ["Bastille"],
+      "start": 1789,
+      "end": 1789,
+      "role": "der Sturm auf das Pariser Staatsgefängnis am 14. Juli 1789",
+      "source": {
+        "title": "Sturm auf die Bastille",
+        "url": "https://de.wikipedia.org/wiki/Sturm_auf_die_Bastille",
+        "publisher": "Wikipedia (de)",
+        "licence": "CC-BY-SA-4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "retrieved": "2026-07-11",
+        "role": "facts"
+      }
+    },
+    {
+      "entity_id": "erklaerung-menschenrechte",
+      "kind": "event",
+      "name": "Erklärung der Menschen- und Bürgerrechte",
+      "aliases": ["Erklärung der Menschenrechte", "Menschen- und Bürgerrechte"],
+      "start": 1789,
+      "end": 1789,
+      "role": "die Grundrechteerklärung der Französischen Revolution von 1789",
+      "source": {
+        "title": "Erklärung der Menschen- und Bürgerrechte",
+        "url": "https://de.wikipedia.org/wiki/Erkl%C3%A4rung_der_Menschen-_und_B%C3%BCrgerrechte",
+        "publisher": "Wikipedia (de)",
+        "licence": "CC-BY-SA-4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "retrieved": "2026-07-11",
+        "role": "facts"
+      }
+    },
+    {
+      "entity_id": "erste-franzoesische-republik",
+      "kind": "event",
+      "name": "Erste Französische Republik",
+      "aliases": ["Erste Republik", "Ersten Republik"],
+      "start": 1792,
+      "end": 1804,
+      "role": "die 1792 ausgerufene Republik nach dem Ende des Königtums",
+      "source": {
+        "title": "Erste Französische Republik",
+        "url": "https://de.wikipedia.org/wiki/Erste_Franz%C3%B6sische_Republik",
+        "publisher": "Wikipedia (de)",
+        "licence": "CC-BY-SA-4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "retrieved": "2026-07-11",
+        "role": "facts"
+      }
+    },
+    {
+      "entity_id": "staatsstreich-brumaire",
+      "kind": "event",
+      "name": "Staatsstreich des 18. Brumaire VIII",
+      "aliases": ["Staatsstreich Napoleons", "18. Brumaire"],
+      "start": 1799,
+      "end": 1799,
+      "role": "Napoleons Staatsstreich von 1799, der die Revolution beendete",
+      "source": {
+        "title": "Staatsstreich des 18. Brumaire VIII",
+        "url": "https://de.wikipedia.org/wiki/Staatsstreich_des_18._Brumaire_VIII",
+        "publisher": "Wikipedia (de)",
+        "licence": "CC-BY-SA-4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "retrieved": "2026-07-11",
+        "role": "facts"
+      }
+    },
+    {
+      "entity_id": "industrielle-revolution",
+      "kind": "event",
+      "name": "Industrielle Revolution",
+      "aliases": ["Industrialisierung", "Industriellen Revolution"],
+      "start": 1760,
+      "end": 1840,
+      "role": "der Übergang zur maschinellen Produktion ab dem späten 18. Jahrhundert",
+      "source": {
+        "title": "Industrielle Revolution",
+        "url": "https://de.wikipedia.org/wiki/Industrielle_Revolution",
+        "publisher": "Wikipedia (de)",
+        "licence": "CC-BY-SA-4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "retrieved": "2026-07-11",
+        "role": "facts"
+      }
+    },
+    {
+      "entity_id": "stockton-darlington-eisenbahn",
+      "kind": "event",
+      "name": "Stockton and Darlington Railway",
+      "aliases": ["Stockton-Darlington", "Stockton und Darlington"],
+      "start": 1825,
+      "end": 1825,
+      "role": "die erste öffentliche Dampf-Eisenbahn (1825)",
+      "source": {
+        "title": "Stockton and Darlington Railway",
+        "url": "https://de.wikipedia.org/wiki/Stockton_and_Darlington_Railway",
+        "publisher": "Wikipedia (de)",
+        "licence": "CC-BY-SA-4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "retrieved": "2026-07-11",
+        "role": "facts"
+      }
+    },
+    {
+      "entity_id": "liverpool-manchester-eisenbahn",
+      "kind": "event",
+      "name": "Liverpool and Manchester Railway",
+      "aliases": ["Liverpool-Manchester", "Bahn Liverpool-Manchester"],
+      "start": 1830,
+      "end": 1830,
+      "role": "die 1830 eröffnete Bahn zwischen Liverpool und Manchester",
+      "source": {
+        "title": "Liverpool and Manchester Railway",
+        "url": "https://de.wikipedia.org/wiki/Liverpool_and_Manchester_Railway",
+        "publisher": "Wikipedia (de)",
+        "licence": "CC-BY-SA-4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "retrieved": "2026-07-11",
+        "role": "facts"
+      }
+    },
+    {
+      "entity_id": "nordbahn-1837",
+      "kind": "event",
+      "name": "Kaiser Ferdinands-Nordbahn",
+      "aliases": ["Erster Dampfzug in Österreich", "Floridsdorf-Deutsch-Wagram", "Nordbahn"],
+      "start": 1837,
+      "end": 1837,
+      "role": "die erste Dampfeisenbahn Österreichs; erste Fahrt 1837 (Floridsdorf–Deutsch-Wagram)",
+      "source": {
+        "title": "Kaiser Ferdinands-Nordbahn",
+        "url": "https://de.wikipedia.org/wiki/Kaiser_Ferdinands-Nordbahn",
+        "publisher": "Wikipedia (de)",
+        "licence": "CC-BY-SA-4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "retrieved": "2026-07-11",
+        "role": "facts"
+      }
+    },
+    {
+      "entity_id": "spinning-jenny",
+      "kind": "work",
+      "name": "Spinning Jenny",
+      "aliases": ["Spinning-Jenny"],
+      "start": 1764,
+      "role": "die von James Hargreaves um 1764 gebaute frühe mechanische Spinnmaschine",
+      "source": {
+        "title": "Spinning Jenny",
+        "url": "https://de.wikipedia.org/wiki/Spinning_Jenny",
+        "publisher": "Wikipedia (de)",
+        "licence": "CC-BY-SA-4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "retrieved": "2026-07-11",
+        "role": "facts"
+      }
+    },
+    {
+      "entity_id": "wien",
+      "kind": "place",
+      "name": "Wien",
+      "aliases": ["Vienna"],
+      "role": "Hauptstadt Österreichs; Gastgeberstadt des Wiener Kongresses 1814/15",
+      "source": {
+        "title": "Wien",
+        "url": "https://de.wikipedia.org/wiki/Wien",
+        "publisher": "Wikipedia (de)",
+        "licence": "CC-BY-SA-4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "retrieved": "2026-07-11",
+        "role": "facts"
+      }
+    }
+  ]
+}

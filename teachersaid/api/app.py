@@ -687,8 +687,10 @@ def sachverhalt_detail(sach_id: str):
         raise HTTPException(404, "no such Sachverhalt")
     s = rec.summary()
     sv = rec.sachverhalt
-    s["timeline"] = [{"at": e.at, "label": e.label} for e in sv.timeline]
-    s["actors"] = [{"name": a.name, "role": _sv_plain(a.role)} for a in sv.actors]
+    s["timeline"] = [{"at": e.at, "label": e.label, "entity_id": e.entity_id}
+                     for e in sv.timeline]
+    s["actors"] = [{"name": a.name, "role": _sv_plain(a.role), "entity_id": a.entity_id}
+                   for a in sv.actors]
     s["causes"] = [{"cause": c.cause, "effect": c.effect, "kind": c.kind} for c in sv.causes]
     s["concepts"] = [{"term": c.term, "definition": _sv_plain(c.definition)}
                      for c in sv.concepts]
@@ -722,6 +724,37 @@ def compose_sachverhalt(sach_id: str):
         raise HTTPException(404, "no such Sachverhalt")
     item = orch.compose_sachverhalt_worksheet(STORE, SACHVERHALTE, sach_id)
     return {"id": item.id, "error": item.error, "problems": item.verify_problems}
+
+
+# --- Entity registry (Wave C2 — the corpus-global single source of truth) -----
+@app.get("/api/entities")
+def entities_list(kind: str | None = None, domain: str | None = None):
+    """The canonical entity registry (grounding/entities). Read-only, deterministic."""
+    from ..grounding import entities as ent
+    return [
+        {"entity_id": e.entity_id, "kind": e.kind, "name": e.name, "aliases": e.aliases,
+         "dates": e.display_dates(), "role": e.role, "domain": e.domain,
+         "source_url": e.source.url}
+        for e in ent.all_entities()
+        if (kind is None or e.kind == kind) and (domain is None or e.domain == domain)
+    ]
+
+
+@app.get("/api/entities/{entity_id}")
+def entity_detail(entity_id: str):
+    """One entity + `verwandte_module` — every corpus module that shares it (the C2 joy)."""
+    from ..grounding import entities as ent
+    from ..pipeline import entity_lint as el
+    e = ent.get_entity(entity_id)
+    if e is None:
+        raise HTTPException(404, "no such entity")
+    return {
+        "entity_id": e.entity_id, "kind": e.kind, "name": e.name, "aliases": e.aliases,
+        "dates": e.display_dates(), "role": e.role, "domain": e.domain,
+        "source": {"title": e.source.title, "url": e.source.url,
+                   "publisher": e.source.publisher, "licence": e.source.licence},
+        "verwandte_module": el.verwandte_module(entity_id),
+    }
 
 
 # --- Lernarrangements (v0.5) -------------------------------------------------

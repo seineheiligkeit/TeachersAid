@@ -22,6 +22,7 @@ PACKAGE_ROOT = Path(__file__).resolve().parent
 REPO_ROOT = PACKAGE_ROOT.parent
 GROUNDING_DATA = PACKAGE_ROOT / "grounding" / "data"
 GROUNDING_VOICES = PACKAGE_ROOT / "grounding" / "voices"
+GROUNDING_ENTITIES = PACKAGE_ROOT / "grounding" / "entities"
 # The full competence catalog (deterministic-parser output) the engine grounds in.
 LEHRPLAN_DIR = Path(os.environ.get("TEACHERSAID_LEHRPLAN", REPO_ROOT / "lehrplan"))
 # Where generated PDFs / rasters / store records land for the demo.

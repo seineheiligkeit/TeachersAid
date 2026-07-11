@@ -1,0 +1,131 @@
+{
+  "domain": "literature",
+  "note": "Canonical authors behind the annotated-text library (schema/texts.py, library/texts.py, runs/texts/…). Each is CITED (a de.wikipedia.org facts record). The registry born/died years let the corpus lint cross-check every AnnotatedText's TextSourceRef.author_death_year against a single source of truth (Wave C2).",
+  "entities": [
+    {
+      "entity_id": "heinrich-heine",
+      "kind": "person",
+      "name": "Heinrich Heine",
+      "aliases": ["Heine"],
+      "born": 1797,
+      "died": 1856,
+      "role": "deutscher Dichter der Romantik; Autor der „Lore-Ley“",
+      "source": {
+        "title": "Heinrich Heine",
+        "url": "https://de.wikipedia.org/wiki/Heinrich_Heine",
+        "publisher": "Wikipedia (de)",
+        "licence": "CC-BY-SA-4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "retrieved": "2026-07-11",
+        "role": "facts"
+      }
+    },
+    {
+      "entity_id": "gotthold-ephraim-lessing",
+      "kind": "person",
+      "name": "Gotthold Ephraim Lessing",
+      "aliases": ["Lessing", "G. E. Lessing"],
+      "born": 1729,
+      "died": 1781,
+      "role": "Dichter und Fabeldichter der Aufklärung",
+      "source": {
+        "title": "Gotthold Ephraim Lessing",
+        "url": "https://de.wikipedia.org/wiki/Gotthold_Ephraim_Lessing",
+        "publisher": "Wikipedia (de)",
+        "licence": "CC-BY-SA-4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "retrieved": "2026-07-11",
+        "role": "facts"
+      }
+    },
+    {
+      "entity_id": "phaedrus",
+      "kind": "person",
+      "name": "Phaedrus",
+      "aliases": ["Phädrus"],
+      "died": 50,
+      "role": "römischer Fabeldichter der Kaiserzeit (gest. um 50 n. Chr.)",
+      "source": {
+        "title": "Phaedrus",
+        "url": "https://de.wikipedia.org/wiki/Phaedrus",
+        "publisher": "Wikipedia (de)",
+        "licence": "CC-BY-SA-4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "retrieved": "2026-07-11",
+        "role": "facts"
+      }
+    },
+    {
+      "entity_id": "johann-wolfgang-von-goethe",
+      "kind": "person",
+      "name": "Johann Wolfgang von Goethe",
+      "aliases": ["Goethe"],
+      "born": 1749,
+      "died": 1832,
+      "role": "deutscher Dichter; Autor des „Zauberlehrling“",
+      "source": {
+        "title": "Johann Wolfgang von Goethe",
+        "url": "https://de.wikipedia.org/wiki/Johann_Wolfgang_von_Goethe",
+        "publisher": "Wikipedia (de)",
+        "licence": "CC-BY-SA-4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "retrieved": "2026-07-11",
+        "role": "facts"
+      }
+    },
+    {
+      "entity_id": "theodor-fontane",
+      "kind": "person",
+      "name": "Theodor Fontane",
+      "aliases": ["Fontane"],
+      "born": 1819,
+      "died": 1898,
+      "role": "deutscher Realist; Autor der Ballade „Herr von Ribbeck“",
+      "source": {
+        "title": "Theodor Fontane",
+        "url": "https://de.wikipedia.org/wiki/Theodor_Fontane",
+        "publisher": "Wikipedia (de)",
+        "licence": "CC-BY-SA-4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "retrieved": "2026-07-11",
+        "role": "facts"
+      }
+    },
+    {
+      "entity_id": "jacob-grimm",
+      "kind": "person",
+      "name": "Jacob Grimm",
+      "aliases": ["Brüder Grimm", "Gebrüder Grimm"],
+      "born": 1785,
+      "died": 1863,
+      "role": "Sprachwissenschaftler und Märchensammler (der ältere der Brüder Grimm)",
+      "source": {
+        "title": "Jacob Grimm",
+        "url": "https://de.wikipedia.org/wiki/Jacob_Grimm",
+        "publisher": "Wikipedia (de)",
+        "licence": "CC-BY-SA-4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "retrieved": "2026-07-11",
+        "role": "facts"
+      }
+    },
+    {
+      "entity_id": "wilhelm-grimm",
+      "kind": "person",
+      "name": "Wilhelm Grimm",
+      "aliases": [],
+      "born": 1786,
+      "died": 1859,
+      "role": "Märchensammler (der jüngere der Brüder Grimm)",
+      "source": {
+        "title": "Wilhelm Grimm",
+        "url": "https://de.wikipedia.org/wiki/Wilhelm_Grimm",
+        "publisher": "Wikipedia (de)",
+        "licence": "CC-BY-SA-4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "retrieved": "2026-07-11",
+        "role": "facts"
+      }
+    }
+  ]
+}
