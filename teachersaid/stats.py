@@ -9,6 +9,7 @@ is still empty. This is the populate-and-track view behind the Statistik tab.
 from __future__ import annotations
 
 from .grounding import lehrplan_store as ls
+from .pipeline import prereq
 from .pipeline.difficulty import effective_difficulty
 from .store.blockstore import BlockStore
 from .store.repository import ReviewStore
@@ -122,6 +123,10 @@ def coverage_map(block_store: BlockStore | None = None) -> dict:
     closed, parsed set, so "covered" is a computation, and a campaign's job is to
     turn cells green. Deterministic; a block is routed to cells by the competences
     it serves (preferring the cells of its own Klasse for cross-class competences).
+
+    Each cell also carries ``blocks_dependents`` (Wave C1) — the number of downstream
+    competences its own competences gate in the prerequisite graph — so the planner can
+    rank gaps by leverage (a blocking cell matters more than a leaf).
     """
     bs = block_store or BlockStore()
 
@@ -175,6 +180,16 @@ def coverage_map(block_store: BlockStore | None = None) -> dict:
             if k[0] in cells and k[1] in cells[k[0]]:
                 _cell(k)["infos"] += 1
 
+    # 2b) prerequisite overlay (Wave C1): how many downstream dependents each cell blocks —
+    # an empty cell that gates many dependents matters more than a leaf. Deterministic graph
+    # property (0 for subjects without a curated prerequisite catalog).
+    cell_ids_flat = {
+        (stufe, code, klasse, kb): sorted(ids)
+        for (stufe, code), per in cells.items()
+        for (klasse, kb), ids in per.items()
+    }
+    blocks_dep = prereq.blocking_gaps(cell_ids_flat)
+
     # 3) assemble
     out_subjects = []
     for key, s in subjects_meta:
@@ -193,6 +208,7 @@ def coverage_map(block_store: BlockStore | None = None) -> dict:
                 "missing_bands": missing,
                 "scopes": sorted(cs["scopes"]) if cs else [],
                 "info_blocks": cs["infos"] if cs else 0, "status": status,
+                "blocks_dependents": blocks_dep.get((key[0], key[1], klasse, kb), 0),
             })
         out_subjects.append({
             "code": s["code"], "name": s["name"], "stufe": key[0],
@@ -232,6 +248,7 @@ def campaign_gaps(block_store: BlockStore | None = None, *, coverage: dict | Non
                 "klasse": c["klasse"], "kompetenzbereich": c["kompetenzbereich"],
                 "status": c["status"], "task_blocks": c["task_blocks"],
                 "missing_bands": c["missing_bands"], "n_competences": c["n_competences"],
+                "blocks_dependents": c.get("blocks_dependents", 0),
                 "competences": bs_cells.get((s["stufe"], s["code"], c["klasse"],
                                              c["kompetenzbereich"]), []),
             })

@@ -655,6 +655,40 @@ def compose_sachverhalt_worksheet(store: ReviewStore, sachverhalt_store, sach_id
     return store.save(item)
 
 
+def compose_diagnose_worksheet(store: ReviewStore, block_store, subject: str,
+                               competence_id: str, klasse: int,
+                               *, today: date | None = None) -> ReviewItem:
+    """Stage a Diagnose-Blatt (Wave C1) as a content item for Gate-2 review: one easy
+    approved task per prerequisite ANCESTOR of `competence_id`, pulled from the approved
+    block library (`pipeline/diagnose`). A prerequisite with no approved task becomes an
+    honest gap note on the resolution. Deterministic, no LLM — the delivery-loop discipline."""
+    from ..pipeline.diagnose import build_worksheet
+
+    item = ReviewItem(
+        id="", stage="content", source="diagnose",
+        title=f"{subject} {klasse}. Kl. — Diagnose {competence_id}",
+        request=BundleRequest(subject=subject, klasse=klasse,
+                              topic_raw=f"Diagnose {competence_id}"),
+    )
+    store.create(item)
+    try:
+        content, res = build_worksheet(subject, competence_id, klasse,
+                                       block_store=block_store, today=today)
+        item.resolution = res
+        assemble(content, res)
+        report = verify(content, res)
+        item.artifacts = _render_all(item.id, content)
+        item.content = content
+        item.verify_problems = report.problems
+        item.verify_warnings = report.warnings
+        item.status = "pending"
+        item.error = None
+    except Exception as exc:  # noqa: BLE001
+        item.error = f"{type(exc).__name__}: {exc}"
+        item.status = "pending"
+    return store.save(item)
+
+
 def _produce_content_item(
     store: ReviewStore,
     idea: ReviewItem,
