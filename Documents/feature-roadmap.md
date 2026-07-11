@@ -19,11 +19,6 @@ Every idea below carries its correct-by-construction angle — that is the admis
   resolution → planning → generation → verification → derived Nachweis → PDF/review summary.
   Existing content defaults to competence; ÜT requires the exact numbered subject/grade hook;
   Horizont hard-rejects hidden `serves`. Record: [`anchoring-modes.md`](anchoring-modes.md).
-  The accepted frame was: today content is competence-anchored or nothing. Add two honest modes:
-  **ÜT-anchored** (the 13 übergreifenden Themen — verbatim legal hooks; the resolution machinery
-  exists since Wave C3) and **„Horizont"** (explicitly beyond-Lehrplan, teacher's-choice enrichment;
-  the Nachweis says so honestly instead of faking an anchor). The trust feature survives *because*
-  the label is honest. Schema: an `anchor_mode` on content + honest Nachweis rendering.
 
 ### Ready to build (greenlit 11 Jul)
 
