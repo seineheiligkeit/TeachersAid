@@ -430,6 +430,45 @@ PARAM_TEMPLATES.extend([
 ])
 
 
+# --- Finanzführerschein-Pack (GWB) — appended via extend() (append-only). The recipes live
+#     in pipeline/finanz.py (registered into the shared registry); pipeline/finanz.build_worksheet
+#     wraps them into anchor-honest sheets (Lohnzettel → ÜT 13; Inflation → GWB.US.3.ENT.09;
+#     Handytarife → GWB.US.3.ENT.04) with the didactic simplification stated ON the sheet.
+PARAM_TEMPLATES.extend([
+    ParametricTask(
+        id="fin-lohnzettel", title="Vom Brutto zum Netto (Lohnzettel)",
+        subject="Geographie und wirtschaftliche Bildung", klasse=3,
+        # The sheet is ÜT-13-anchored via pipeline/finanz.build_worksheet (serves=[] → no
+        # competence claim). The KB is only the label for the generic variant_worksheet path;
+        # build_worksheet ignores it and re-anchors to ÜT 13.
+        kompetenzbereich="Entwicklungen am Wirtschaftsstandort Österreich",
+        recipe="lohnzettel",
+        prompt_template="Eine angestellte Person verdient {brutto} brutto im Monat. Berechne "
+                        "Schritt für Schritt den Nettolohn: zuerst die Sozialversicherung, dann "
+                        "die Steuerbemessungsgrundlage, die Lohnsteuer (Tarif 2026) und zuletzt "
+                        "das Netto.",
+        serves=[],  # ÜT-anchored → kein Kompetenzanspruch über `serves`
+        dimensions=["OK"], cognitive_level="apply", kind="open_response", est_minutes=8),
+    ParametricTask(
+        id="fin-inflation", title="Inflation und Kaufkraft (VPI)",
+        subject="Geographie und wirtschaftliche Bildung", klasse=3,
+        kompetenzbereich="Entwicklungen am Wirtschaftsstandort Österreich",
+        recipe="inflation_vpi", prompt_template="{aufgabe}",
+        serves=[Serves(competence_id="GWB.US.3.ENT.09", relation="exercises")],
+        dimensions=["OK"], cognitive_level="apply", kind="open_response", est_minutes=6),
+    ParametricTask(
+        id="fin-handyvertrag", title="Handytarife vergleichen",
+        subject="Geographie und wirtschaftliche Bildung", klasse=3,
+        kompetenzbereich="Entwicklungen am Wirtschaftsstandort Österreich",
+        recipe="handyvertrag_vergleich",
+        prompt_template="Folgende Handytarife stehen zur Wahl: {tarife} Vergleiche die Tarife "
+                        "über eine Vertragsdauer von 24 Monaten. Welcher ist am günstigsten? "
+                        "Begründe deine Entscheidung.",
+        serves=[Serves(competence_id="GWB.US.3.ENT.04", relation="exercises")],
+        dimensions=["UK"], cognitive_level="evaluate", kind="decision_scenario", est_minutes=7),
+])
+
+
 def find_template(template_id: str) -> ParametricTask | None:
     return next((t for t in PARAM_TEMPLATES if t.id == template_id), None)
 
