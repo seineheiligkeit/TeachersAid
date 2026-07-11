@@ -270,6 +270,25 @@ number. Adding a source = adding a fetch tool; correcting content = editing the 
   the **Latein Wortbildung engine** (`grounding/latin.py` — 12 prefixes × 9 bases → 39 attested
   derivations, no synthesized Latin ever; `pipeline/latin.py` recipes in the shared registry;
   `lat-us-*` templates).
+
+**Content programs (11 Jul 2026) — the first three-tier-anchoring consumers.** **Finanzführerschein**
+(`grounding/finanz.py` + `pipeline/finanz.py`): curated 2026 Lohnsteuertarif/SV tables (three-source
+cross-verified, Stand-stamped, yearly-refresh discipline) drive `lohnzettel` (brutto→SV→LSt→netto, the
+chain IS the learning object; simplification stated ON the sheet), `inflation_vpi` (real VPI dataset via
+`tools/fetch_statistik_austria_vpi.py`, CC BY 4.0) and `handyvertrag_vergleich` (constructed tariffs,
+Realien discipline); Lohnzettel anchors `uet=13`, Inflation/Handytarife genuine GWB competences.
+**Wahl-Werkstatt** (`pipeline/wahl.py` + `tools/fetch_nrw_results.py`, BMI NRW-2024, CC BY 4.0 verified
+live): `mandate_dhondt` (divisor-table Rechenweg; federal d'Hondt on the ≥4 %-parties REPRODUCES the
+official 57/51/41/18/16 — compare-and-discuss framing; the all-parties variant computes what the
+4-%-Hürde prevents) + `koalitions_arithmetik` (92/183); the three-stage Ermittlungsverfahren
+simplification is printed on every sheet; anchors genuine `GPB.US.4.ALL.07/09` (GPB competences carry
+no ÜT-7 tag — a future catalog correction). **Sternkarten/Astro** (`grounding/astro.py` +
+`pipeline/astro.py`): ~120-star BSC5-curated catalog (HYG REFUSED — CC BY-SA) + 27 curated asterisms;
+Meeus-grade JD/GMST/alt-az/sun/moon (reference-tested against published worked examples; moon ~1°
+documented; ISS OUT — live TLE ≠ offline-stable) → `matplotlib:star_chart` (maskable labels, horizon
+ring N/O/S/W) + `matplotlib:moon_phase` (waxing-right/waning-left, northern hemisphere); Mondphasen
+anchors `PHY.US.2.SEH.04` competence-mode, the Sternenhimmel sheet is the **first real `horizont`
+flagship**.
 - **Grounded facts & data** (`grounding/data/`, `schema/datasets.py`): `SourceRef` (the data analogue of
   `FassungRef`: publisher/title/url/licence/attribution/Stand), `DataRef` (figure → {dataset_id,
   series}), `Dataset` (+ discovery tags: subjects/keywords/competences). Curated CC-BY datasets from

@@ -507,6 +507,20 @@ target language for Fremdsprache). Read this, then the docs in the order given i
 > the executed audit/schema-roadmap moved to `Documents/archive/`; README map + CLAUDE.md pointers
 > updated.
 
+> **Update (Session 18, 11 Jul 2026): the enabler, the flagship's P1, and the first three programs.**
+> The external agent delivered **three-tier anchoring** (`competence | uet | horizont`; honest Nachweis
+> incl. the Fassung-bound ÜT hook; record `Documents/anchoring-modes.md`) and **Mischpult P1**
+> (`schema/mixer.py`/`pipeline/mixer.py`: Umfang/Tiefe/Abstraktion/Offenheit as pure derivations of one
+> master + the Regler-Lint with identical-competence-set guarantee; "no decorative knobs"; contract
+> `Documents/tiefenregler-design.md`) — both reviewed and merged. Three supervised Opus programs built
+> on top and merged the same day: **Finanzführerschein** (2026 tax/SV tables three-source-verified,
+> VPI dataset, lohnzettel/inflation/handyvertrag recipes), **Wahl-Werkstatt** (BMI NRW-2024 CC BY 4.0,
+> d'Hondt reproducing the official Mandate as compare-and-discuss, coalition arithmetic, the
+> Ermittlungsverfahren honesty note), **Sternkarten** (BSC5-curated catalog, Meeus-grade ephemerides
+> reference-tested, star_chart/moon_phase scenes, Orion-over-Wien visually verified — the first real
+> `horizont` Nachweis). Suite **793 → 882 passed**. SME queue additions: tax values + pinned nettos,
+> official-Mandate fact, star-catalog spot-check, ÜT-7 catalog-tag correction (GPB).
+
 > **Update (Session 18, 11 Jul 2026): three-tier anchoring — the new program's enabler — BUILT.**
 > `AnchorMode = competence | uet | horizont` now travels on `BundleRequest` + `WorksheetContent`
 > (old JSON defaults to competence) through idea/API → deterministic resolve → plan → corpus-loop

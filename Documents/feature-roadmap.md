@@ -22,7 +22,7 @@ Every idea below carries its correct-by-construction angle — that is the admis
 
 ### Ready to build (greenlit 11 Jul)
 
-**The flagship — der Tiefenregler („das Mischpult").** Depth as a teacher-facing control surface:
+**The flagship — der Tiefenregler („das Mischpult").** *(P1 ✅ BUILT 11 Jul, external agent — Umfang/Tiefe/Abstraktion/Offenheit faders + Regler-Lint on parametric sheets; contract: [`tiefenregler-design.md`](tiefenregler-design.md). P2–P4 open.)* Depth as a teacher-facing control surface:
 one worksheet, independent faders tuned *per sheet or per Baustein* before printing —
 **Gerüst** (bare ↔ worked first step from `solution_steps` + misconception-fed hints +
 Formulierungshilfen) · **Tiefe** (practice ↔ Begründen/Transfer/`solution_paths`) · **Umfang**
@@ -57,10 +57,10 @@ dashboard surface. *(The rejected sibling is recorded under Rejected.)*
   reasoning (Urteilskompetenz).
 
 **Content programs (ÜT-anchored / Horizont):**
-- **Finanzführerschein** (ÜT 13 verbatim) — Lohnzettel lesen (brutto/netto computed from
+- ✅ **BUILT 11 Jul** · **Finanzführerschein** (ÜT 13 verbatim) — Lohnzettel lesen (brutto/netto computed from
   Stand-stamped curated SV/Lohnsteuer tables, refreshed yearly like datasets), Handyvertrag-
   Vergleich, Inflation mit echtem VPI, Zinseszins als Freund und Feind.
-- **Wahl-Werkstatt** (ÜT 7 + GPB; Wählen ab 16) — real Nationalrat results (BMI open data),
+- ✅ **BUILT 11 Jul** (GPB competence-mode; ÜT-7 tag missing on GPB competences → catalog correction is future work) · **Wahl-Werkstatt** (ÜT 7 + GPB; Wählen ab 16) — real Nationalrat results (BMI open data),
   **d'Hondt/Mandatsberechnung as a parametric engine** (seat allocations computed), coalition
   arithmetic; the Wahlkabinen-Simulation part is arrangement-shaped → parked with that family.
 - **Alltagsdokumente entschlüsseln** — the Realien mechanism aimed at German adult life
@@ -72,7 +72,7 @@ dashboard surface. *(The rejected sibling is recorded under Rejected.)*
   are not health educators.**
 
 **The physicist's corner:**
-- **Sternkarten-Engine** — `star_chart` scene computed from date + location over a curated
+- ✅ **BUILT 11 Jul — the first `horizont` flagship** · **Sternkarten-Engine** — `star_chart` scene computed from date + location over a curated
   bright-star catalog (ephemeris math = pure computation); moon phases, eclipse geometry, ISS
   passes. Partly PHY-anchored, proudly Horizont beyond that.
 - **Größenordnungs-Reise** — powers-of-ten ordering/scale arithmetic from the data layer.
@@ -144,4 +144,4 @@ dashboard surface. *(The rejected sibling is recorded under Rejected.)*
 Waves A (task/figure engines) · B (image program, external agent) · C (corpus structure) · the
 eight 10-Jul tracks (figstyle port, physics scenes, Matura pack, figure emission, Textsorten,
 Latein, texts, re-grounding) · nets/variants/boxplot/ANNO/BIO+Bezirk (external agent) · the
-two-machine reconciliation. Suite at 783.
+two-machine reconciliation · three-tier anchoring + Mischpult P1 (external agent) · the three 11-Jul programs (Finanz, Wahl, Sternkarten). Suite at 882.
