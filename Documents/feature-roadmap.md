@@ -244,6 +244,11 @@ code-gen/sourced **forever**. Resolution hierarchy: reuse › sourced PD/CC › 
   pattern). **First deliverable is a design doc** (`dramaturgy-design.md`): the phase-model choice, how
   phases interact with envelope/scope/difficulty ramps, what harvest can infer vs. what the SME tags,
   and how coherence is *measured* — no code before the doc is agreed.
+  **▶ Design doc shipped (11 Jul 2026): [`dramaturgy-design.md`](dramaturgy-design.md)** — E–E–S–T settled,
+  phase-affinity on `LibraryBlock` (additive, inferred+SME-confirmed), phase-outer/ramp-inner ordering,
+  bridging prose as mechanism-4 with a numeric bridge-lint + offline template fallback, an advisory
+  coherence report, Step-0-falsification-first phasing. Three open ► SME calls (envelope→arc, phase
+  cardinality, unconfirmed-inference trust). Awaiting SME sign-off before any code.
 
 ### Maintenance (small, standing)
 
