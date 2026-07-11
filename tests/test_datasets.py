@@ -293,6 +293,7 @@ def test_verlauf_preview_is_a_line_over_years_not_year_bars():
 # --- the curated GWB catalog (committed deliverables; lock against drift) ------
 _CURATED = [
     "statistik_austria_bevstand_2024", "statistik_austria_bundeslaender_2024",
+    "statistik_austria_bezirke_2024", "statistik_austria_lebenserwartung_2002_2024",
     "worldbank_at_bevoelkerung", "worldbank_at_alterung", "worldbank_urbanisierung",
     "worldbank_bip_pro_kopf", "worldbank_co2_pro_kopf", "geosphere_klima_normal_1991_2020",
 ]

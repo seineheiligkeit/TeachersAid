@@ -465,6 +465,7 @@ def _dataset_figure_asset(rec, series_key: str):
     series' values), so the reviewer sees the actual figure the data produces."""
     from ..pipeline.assets import _all_numeric
     from ..schema.assets import Asset
+    from ..schema.datasets import DataRef
 
     series = rec.dataset.series.get(series_key)
     if not series:
@@ -484,6 +485,15 @@ def _dataset_figure_asset(rec, series_key: str):
                      spec={"months": series.get("months", []),
                            "temp": series["temp"], "precip": series["precip"],
                            "title": title})
+    if series.get("geo_id") and (series.get("counts") or series.get("values")):
+        vals = series.get("counts") or series.get("values") or []
+        cats = series.get("groups") or series.get("categories") or []
+        return Asset(id=f"{rec.id}__{series_key}", role="figure",
+                     generator="matplotlib:choropleth_map",
+                     spec={"geo_id": series["geo_id"], "values": dict(zip(cats, vals)),
+                           "value_label": rec.dataset.unit or "", "title": title,
+                           "show_labels": False},
+                     data_source=DataRef(dataset_id=rec.id, series=series_key))
     years = series.get("years") or (                       # time series (verlauf): years may
         series.get("categories")                           # live in `categories` as "1960"… —
         if _all_numeric(series.get("categories") or []) else None)  # a trend is a LINE over a

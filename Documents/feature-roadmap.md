@@ -514,8 +514,10 @@ Also: store consolidation (`store/base.py::JsonStore`, the future-DB seam). **26
 5. ~~**More parametric recipes + a "Varianten erzeugen" dashboard surface**~~ — ✅ **surface DONE
    (11 Jul 2026):** catalog + staging endpoints, optional ramp, four-station UI, figure preview verified.
    The Matura-backward recipe queue is also cleared; further recipes remain an open-ended joy lane.
-6. ~~**Re-ground the old invented-number figures**~~ — ✅ **DONE (10 Jul 2026)** (c0081/c0096/c0097; 4 new
-   sources, 12 datasets). Still open: **BIO/other-subject** datasets; **Tier-2 regional** down to Bezirk.
+6. ~~**Re-ground the old invented-number figures + extend grounded data**~~ — ✅ **DONE (10–11 Jul
+   2026)** (c0081/c0096/c0097; now 14 datasets). BIO discovery now has Statistik-Austria life
+   expectancy (2002–2024), and Tier-2 locality reaches 116 Bezirk/Gemeindebezirk population regions
+   with official 2025 CC-BY WFS boundaries and a working choropleth.
 
 Standing tracks (no build needed): **geography teacher reviews** the 9 GWB worksheets (c0089–c0097),
 the staged dataset, + earlier staged items in the dashboard; **GPB Quellenarbeit via ANNO is now
@@ -595,9 +597,10 @@ SME-gated for the L2 + level. The Realien asset class is **complete** through br
   Lieth: monthly temp line on the left °C axis + precip bars on the right mm axis, via `twinx`), the
   `climate` intent. Unblocks c0096. *(The general dual-axis combo for other subjects can reuse the twinx
   pattern when needed.)*
-- **Locality Tier-2 — curated Austrian regional data** — a vetted Bundesländer (then Bezirke)
-  dataset (Statistik Austria; provenance-stamped, HITL-gated like the Lehrplan catalog) so
-  geography tasks can assert *real* local facts, not only scaffold inquiry. See memory `teachersaid-locality`.
+- **Locality Tier-2 — curated Austrian regional data — ✅ DONE through Bezirk (11 Jul 2026).** Vetted
+  Bundesländer + 116 Bezirk/Gemeindebezirk regions (Statistik Austria; provenance-stamped,
+  HITL-gated like the Lehrplan catalog) let geography tasks assert *real* local facts, not only
+  scaffold inquiry. The official WFS boundary set is print-simplified deterministically.
 
 ## Subject-driven feature themes (from the 26 Jun 2026 cross-subject scan)
 

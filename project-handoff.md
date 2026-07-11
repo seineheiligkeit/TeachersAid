@@ -458,6 +458,13 @@ target language for Fremdsprache). Read this, then the docs in the order given i
 > referenced-only GPB Quellenarbeit `c0199` points students to the scan without embedding it. Suite:
 > **695 passed, 1 skipped**. SME review should decide whether the intentionally noisy Leitmeritz OCR is
 > the best flagship, and whether a Vienna title should replace or join it.
+> **Grounded-data T4 shipped:** two official Statistik-Austria CC-BY pipelines add a BIO-discoverable
+> life-expectancy dataset (2002–2024, `BIO.US.x.WIS.02`/`ERK.04`) and population for 116 Bezirk/
+> Gemeindebezirk regions (1.1.2024, total lock 9,158,750). `at_bezirke_2025` is fetched from the official
+> WFS and deterministically simplified; the duplicate whole-Wien overlay is excluded while 901–923 stay.
+> Both datasets are staged `in_review`; line and choropleth specimens are visually clean and
+> `figure_lint`-clean. Suite: **702 passed, 1 skipped**. Optional informational Realien was deliberately
+> skipped after T1–T4, as the brief permits; it needs its own fact-preserving CEFR design pass.
 
 ---
 

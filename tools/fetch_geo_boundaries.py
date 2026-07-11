@@ -48,7 +48,92 @@ BOUNDARIES: dict[str, dict] = {
             "retrieved": "2026-06-30",
         },
     },
+    "at_bezirke_2025": {
+        "url": "https://www.statistik.gv.at/gs-open/GEODATA/ows?service=WFS&version=2.0.0&request=GetFeature&typeNames=GEODATA:STATISTIK_AUSTRIA_POLBEZ_20250101&outputFormat=application/json&srsName=EPSG:4326",
+        "name_field": "g_name",
+        "expected_n": 117,
+        "expected_names": ["Eisenstadt(Stadt)", "Wien 23.,Liesing"],
+        # The WFS also carries the whole-city Wien polygon (g_id 900) on top of
+        # its 23 Gemeindebezirke. Population facts use 901–923, so storing 900
+        # as well would double-cover Vienna and make the data join ambiguous.
+        "exclude_field": "g_id",
+        "exclude_values": ["900"],
+        "simplify_tolerance": 0.002,
+        "title": "Österreichische politische Bezirke – Verwaltungsgrenzen (1.1.2025, vereinfacht)",
+        "source": {
+            "publisher": "Statistik Austria",
+            "title": "Gliederung Österreichs in Politische Bezirke (1.1.2025)",
+            "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGDEXT_POLBEZ_1",
+            "licence": "CC BY 4.0",
+            "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+            "redistributable": True,
+            "attribution": "Datenquelle: Statistik Austria – data.statistik.gv.at (CC BY 4.0)",
+            "retrieved": "2026-07-11",
+            "stand": "2025-01-01",
+        },
+    },
 }
+
+
+def _point_segment_distance(point: list[float], start: list[float], end: list[float]) -> float:
+    """Euclidean point-to-segment distance in source coordinate units."""
+    px, py = point[:2]
+    x1, y1 = start[:2]
+    x2, y2 = end[:2]
+    dx, dy = x2 - x1, y2 - y1
+    if dx == dy == 0:
+        return ((px - x1) ** 2 + (py - y1) ** 2) ** 0.5
+    t = max(0.0, min(1.0, ((px - x1) * dx + (py - y1) * dy) / (dx * dx + dy * dy)))
+    qx, qy = x1 + t * dx, y1 + t * dy
+    return ((px - qx) ** 2 + (py - qy) ** 2) ** 0.5
+
+
+def _simplify_line(points: list[list[float]], tolerance: float) -> list[list[float]]:
+    """Deterministic Ramer–Douglas–Peucker simplification for an open line."""
+    if len(points) <= 2:
+        return points
+    greatest, index = 0.0, 0
+    for i in range(1, len(points) - 1):
+        distance = _point_segment_distance(points[i], points[0], points[-1])
+        if distance > greatest:
+            greatest, index = distance, i
+    if greatest <= tolerance:
+        return [points[0], points[-1]]
+    left = _simplify_line(points[:index + 1], tolerance)
+    right = _simplify_line(points[index:], tolerance)
+    return left[:-1] + right
+
+
+def _simplify_ring(ring: list[list[float]], tolerance: float) -> list[list[float]]:
+    if len(ring) < 5:
+        return ring
+    core = ring[:-1] if ring[0][:2] == ring[-1][:2] else ring[:]
+    pivot = min(range(len(core)), key=lambda i: (core[i][0], core[i][1]))
+    rotated = core[pivot:] + core[:pivot]
+    far = max(range(1, len(rotated)),
+              key=lambda i: ((rotated[i][0] - rotated[0][0]) ** 2
+                             + (rotated[i][1] - rotated[0][1]) ** 2))
+    first = _simplify_line(rotated[:far + 1], tolerance)
+    second = _simplify_line(rotated[far:] + [rotated[0]], tolerance)
+    simplified = first[:-1] + second
+    if len(simplified) < 4:
+        return ring
+    if simplified[0][:2] != simplified[-1][:2]:
+        simplified.append(simplified[0])
+    return simplified
+
+
+def simplify(fc: dict, tolerance: float) -> dict:
+    """Simplify every Polygon/MultiPolygon ring without changing properties."""
+    for feature in fc.get("features", []):
+        geometry = feature["geometry"]
+        polygons = (geometry["coordinates"] if geometry["type"] == "MultiPolygon"
+                    else [geometry["coordinates"]])
+        simplified = [[_simplify_ring(ring, tolerance) for ring in polygon]
+                      for polygon in polygons]
+        geometry["coordinates"] = (simplified if geometry["type"] == "MultiPolygon"
+                                   else simplified[0])
+    return fc
 
 
 def _http_get(url: str) -> bytes:
@@ -96,6 +181,13 @@ def fetch(geo_id: str) -> Path:
     if not cfg["source"].get("redistributable"):
         raise ValueError(f"{geo_id}: source not marked redistributable — refusing to store")
     fc = validate(_http_get(cfg["url"]), cfg)
+    if cfg.get("exclude_field"):
+        field = cfg["exclude_field"]
+        excluded = {str(value) for value in cfg.get("exclude_values", [])}
+        fc["features"] = [feature for feature in fc["features"]
+                          if str(feature.get("properties", {}).get(field)) not in excluded]
+    if cfg.get("simplify_tolerance"):
+        fc = simplify(fc, float(cfg["simplify_tolerance"]))
     _GEO_DIR.mkdir(parents=True, exist_ok=True)
     out = _GEO_DIR / f"{geo_id}.geojson"
     out.write_text(json.dumps(fc, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")

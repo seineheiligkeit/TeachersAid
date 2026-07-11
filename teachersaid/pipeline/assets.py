@@ -671,7 +671,7 @@ def _choropleth_map(asset: Asset, path: Path) -> None:
         # labels: a big region's name fits in place (font shrunk to its width); a tiny enclave
         # (e.g. Wien inside Niederösterreich) is leadered out BELOW the map, so it can never collide
         # with the enclosing region's label (the small-polygon labelling fix; see figtext.py).
-        if geoms and xs_all:
+        if geoms and xs_all and s.get("show_labels", True):
             from .figtext import measure_widths
             areas = {n: (b[1] - b[0]) * (b[3] - b[2]) for n, b in bboxes.items()}
             amax = max(areas.values()) or 1.0

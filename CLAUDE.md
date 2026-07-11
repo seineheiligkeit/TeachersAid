@@ -32,7 +32,7 @@ rendering + the two-stage human-in-the-loop review dashboard).
 ```bash
 pip install -e .                       # deps: pydantic2, fastapi, uvicorn, anthropic, reportlab,
                                        #       matplotlib, pillow, pyyaml, pymupdf, sympy  (pytest for dev)
-python -m pytest -q                    # fully offline, no API key (695 tests)
+python -m pytest -q                    # fully offline, no API key (702 tests)
 python -m teachersaid seed             # seed the master-library examples into the review queue
 python -m teachersaid                  # dashboard → http://127.0.0.1:8000
 ```
@@ -255,8 +255,9 @@ number. Adding a source = adding a fetch tool; correcting content = editing the 
 - **Grounded facts & data** (`grounding/data/`, `schema/datasets.py`): `SourceRef` (the data analogue of
   `FassungRef`: publisher/title/url/licence/attribution/Stand), `DataRef` (figure → {dataset_id,
   series}), `Dataset` (+ discovery tags: subjects/keywords/competences). Curated CC-BY datasets from
-  per-source fetch tools (`tools/fetch_{statistik_austria,worldbank,geosphere,un_wpp,undp_hdi,
-  noaa_co2}.py` — **12 datasets** as of 10 Jul 2026), licence verified at
+  per-source fetch tools (`tools/fetch_{statistik_austria,statistik_austria_health,
+  statistik_austria_regional,worldbank,geosphere,un_wpp,undp_hdi,noaa_co2}.py` — **14 datasets**
+  as of 11 Jul 2026), licence verified at
   ingest (**redistribute only under a recorded redistributable licence + attribution**; UNDP HDI
   verified CC BY 3.0 IGO; GFN footprint REFUSED — CC BY-SA). **The last (c)-flagged invented-number
   figures (c0081/c0096/c0097) are re-grounded** (`tools/reground.py` — 5 figures `data_source`-cited,
@@ -271,6 +272,9 @@ number. Adding a source = adding a fetch tool; correcting content = editing the 
 - **Geo** (`grounding/geo/` + `geo_store.py`, via `tools/fetch_geo_boundaries.py`): *boundaries are
   facts* — sourced CC-BY GeoJSON, licence-gated, attributed; feeds the choropleth (pure matplotlib
   PathPatch, even-odd holes for the Wien-in-NÖ enclave, latitude-corrected aspect — **no geo dependency**).
+  `at_bezirke_2025` comes directly from Statistik Austria's official WFS, is deterministically
+  simplified for print, and excludes only the redundant whole-Wien overlay (`900`) while retaining
+  Gemeindebezirke `901–923`: 116 non-overlapping regions join exactly to the Bezirk population series.
 - **Chemistry** (`grounding/chemistry.py`): curated IUPAC standard atomic weights + cited `SourceRef`;
   `parse_formula` (nesting/hydrates: `Ca(OH)2` → `{Ca:1,O:2,H:2}`), `molar_mass`, `subscript`; curated
   truth tables (substance classification · separation methods · acid/base). Add an element = one cited

@@ -4,7 +4,7 @@ Branch: `ext/nets`
 
 Baseline: 674 passed, 1 skipped
 
-Current: **695 passed, 1 skipped**
+Current: **702 passed, 1 skipped**
 
 ## T1 — `nets` (Körpernetze) — complete
 
@@ -52,8 +52,8 @@ Current: **695 passed, 1 skipped**
 - T2 — Varianten dashboard/API: complete (details below).
 - T2b — teacher-only boxplot solution figure: complete (details below).
 - T3 — ANNO fetch + media texts + referenced-only Quellenarbeit: complete (details below).
-- T4 — BIO datasets + Bezirk regional data/boundaries: not started.
-- T5 — informational Realien: optional, not started.
+- T4 — BIO datasets + Bezirk regional data/boundaries: complete (details below).
+- T5 — informational Realien: deliberately skipped (optional; design-first).
 
 ## T2 — “Varianten erzeugen” dashboard surface — complete
 
@@ -143,3 +143,49 @@ Current: **695 passed, 1 skipped**
   a first flagship. Please decide whether to retain it, or pair/replace it with a cleaner Vienna title.
 - *Leitmeritzer Zeitung* is an Austrian-Hungarian historical source from Bohemia, not a present-day
   Austrian regional title; the provenance is exact, but that framing should stay explicit.
+
+## T4 — BIO data + Tier-2 Bezirk data — complete
+
+### What shipped
+
+- `tools/fetch_statistik_austria_health.py` selects life expectancy at birth for Austria by sex from
+  the official OGD table `OGD_ind003_HVD_IND_1`. The curated 2002–2024 dataset is discoverable for
+  BIO/GWB/MAT and directly cross-tagged to `BIO.US.x.WIS.02` and `BIO.US.x.ERK.04`.
+- `tools/fetch_statistik_austria_regional.py` aggregates the existing 2024 municipality/age/sex fact
+  table by Statistik Austria's three-digit district code. Its 116 counts sum exactly to the locked
+  national total **9,158,750**.
+- `at_bezirke_2025` is fetched from Statistik Austria's official WFS in EPSG:4326, validated at 117
+  source features, and deterministically simplified from 21.6 MB to about 331 KB for print. The WFS's
+  redundant whole-city Wien overlay (`900`) is removed; Gemeindebezirke `901–923` remain, yielding
+  116 non-overlapping map regions that join exactly to the population dataset.
+- Dense choropleths can set `show_labels=false`; this avoids manufacturing an unreadable 116-label
+  map while preserving all geometry, values, colour scale, and both citations.
+- Both new datasets are staged `in_review`. The dashboard chooses `matplotlib:choropleth_map` for the
+  district series instead of a 116-bar chart.
+
+### Verification
+
+- Offline fixtures cover health selection/decimal parsing, district aggregation, population/boundary
+  code divergence, and deterministic ring simplification.
+- Focused dataset/layout suite: **39 passed**; both a life-expectancy line and the district choropleth
+  render to real PNGs and pass `figure_lint` as sourced data.
+- Visual inspection: readable axes/colour scale, correct Austrian outline, district subdivisions and
+  Vienna detail; no overlaid whole-Wien polygon.
+- Full offline suite after T4: **702 passed, 1 skipped**.
+
+### Licence verdict
+
+- Population, life expectancy, and district boundaries are all first-party Statistik Austria open
+  data carrying **CC BY 4.0** with the required attribution recorded in each curated source record.
+
+### SME flags
+
+- Life expectancy is a strong data-literacy/health dataset, not a causal nutrition dataset. The BIO
+  competence fit is exact for reading, comparing and interpreting biological/health data; tasks must
+  not infer causes from the sex/time differences without an additional causal source.
+
+## T5 — informational Realien — skipped cleanly
+
+The task was explicitly optional and design-first. After completing T1–T4, no flagship was added:
+fact-preserving CEFR simplification of real informational content needs a dedicated design pass, and a
+rushed build would blur the project's source-text and constructed-fiction boundaries.
