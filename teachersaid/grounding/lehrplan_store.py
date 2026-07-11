@@ -192,6 +192,14 @@ def list_subjects(stufe: str = "Unterstufe") -> list[str]:
     ]
 
 
+def uebergreifende_themen(stufe: str = "Unterstufe") -> dict[int, str]:
+    """The übergreifende-Themen legend (nr → label) for a stage, from `_meta`. These are
+    the cross-cutting Bildungsanliegen (Umweltbildung, Medienbildung, …) that competences
+    across many subjects carry — the anchor of the fächerübergreifende Projektwoche bundle
+    (Wave C3). A competence's tags live on `ResolvedCompetence.uebergreifende_themen`."""
+    return {int(u["nr"]): u["label"] for u in _meta(stufe).get("uebergreifende_themen", [])}
+
+
 def grade_map(subject: str, stufe: str = "Unterstufe") -> dict[int, list[str]]:
     code = _code_for(subject, stufe)
     data = _subject(code, stufe)

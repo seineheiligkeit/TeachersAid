@@ -216,3 +216,68 @@ def resolve_kompetenzmodul(
 ) -> LehrplanResolution:
     """Oberstufe convenience: resolve a subject+grade narrowed to one Kompetenzmodul."""
     return resolve_grade(subject, klasse, today=today, kompetenzmodul=kompetenzmodul)
+
+
+def resolve_uet(uet: int, klasse: int, *, today: date | None = None) -> LehrplanResolution:
+    """The cross-subject analogue of `resolve_grade`: every verbatim competence carrying
+    übergreifendes Thema `uet` at `klasse`, across ALL Pflichtgegenstände of the stage
+    (1–4 → Unterstufe, 5–8 → Oberstufe). This is the Lehrplan half of the fächerübergreifende
+    Projektwoche bundle (Wave C3) — the shared competence ground several subjects stand on.
+
+    The returned `competences` span subjects (each competence's subject is recoverable from
+    its id via `lehrplan_store.competence_meta`); `subject` is the ÜT label, not a catalog
+    subject. `grade_check` is True iff at least one subject carries the ÜT at the grade; an
+    unknown ÜT number, or one no subject carries, yields an empty resolution + an honest note.
+    Never asserts a bundle — it resolves the *catalog*; the corpus side (which subjects have
+    approved blocks) is `compose_uet`'s concern."""
+    today = today or date.today()
+    stufe = store.stufe_for_klasse(klasse)  # Klasse fixes the stage (1–4 / 5–8)
+    fassung = store.get_fassung()
+    notes: list[str] = []
+    if not (
+        date.fromisoformat(fassung.valid_from) <= today <= date.fromisoformat(fassung.valid_to)
+    ):
+        notes.append(
+            f"Achtung: heutiges Datum {today.isoformat()} liegt außerhalb des "
+            f"Fassungsfensters ({fassung.valid_from}…{fassung.valid_to}). "
+            "Eine neue Fassung wird benötigt."
+        )
+
+    legend = store.uebergreifende_themen(stufe)
+    label = legend.get(uet)
+    if label is None:
+        notes.append(
+            f"Übergreifendes Thema {uet} ist im {stufe}-Katalog nicht definiert "
+            f"(gültig: {', '.join(str(n) for n in sorted(legend))})."
+        )
+        return LehrplanResolution(
+            fassung=fassung, subject=f"ÜT {uet}", klasse=klasse,
+            grade_check=False, competences=[], notes=notes,
+        )
+
+    competences: list[ResolvedCompetence] = []
+    subjects_with = 0
+    for subject in store.list_subjects(stufe):
+        comps = [
+            c for c in store.competences_for(subject, klasse, stufe)
+            if uet in c.uebergreifende_themen
+        ]
+        if comps:
+            competences.extend(comps)
+            subjects_with += 1
+
+    if not competences:
+        notes.append(
+            f"Kein Fach führt das übergreifende Thema „{label}“ in der {klasse}. "
+            f"Klasse ({stufe})."
+        )
+    else:
+        notes.append(
+            f"{subjects_with} Fächer führen „{label}“ in der {klasse}. Klasse ({stufe})."
+        )
+    kbs = sorted({c.kompetenzbereich for c in competences})
+    return LehrplanResolution(
+        fassung=fassung, subject=f"ÜT {uet}: {label}", klasse=klasse,
+        matched_kompetenzbereiche=kbs, grade_check=bool(competences),
+        competences=competences, notes=notes,
+    )

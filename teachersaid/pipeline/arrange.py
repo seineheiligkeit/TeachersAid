@@ -105,31 +105,46 @@ def derive_arrangement_nachweis(
 
 
 def assemble_arrangement(
-    arr: Lernarrangement, resolution: LehrplanResolution
+    arr: Lernarrangement, resolution: LehrplanResolution,
+    *, role_resolutions: dict[str, LehrplanResolution] | None = None,
 ) -> Lernarrangement:
     """Assemble each role's material (its own Nachweis/DepthProfile), then fill the
-    arrangement-level DERIVED fields."""
+    arrangement-level DERIVED fields.
+
+    `role_resolutions` maps a role id → the resolution to assemble THAT role against.
+    A single-subject arrangement (GWB hero) needs none — every role shares `resolution`.
+    A **fächerübergreifendes** bundle (Wave C3) does: each role is a different subject, so
+    its material must be assembled against its OWN subject-grade resolution (else the
+    per-role Nachweis lists other subjects' competences as gaps). The arrangement-level
+    Nachweis is always derived against `resolution` (the shared, e.g. ÜT, universe)."""
+    rr = role_resolutions or {}
     for role in arr.roles:
-        assemble(role.material, resolution)
+        assemble(role.material, rr.get(role.id, resolution))
     arr.depth_profile = _aggregate_depth(arr)
     arr.nachweis = derive_arrangement_nachweis(arr, resolution)
     return arr
 
 
 def verify_arrangement(
-    arr: Lernarrangement, resolution: LehrplanResolution
+    arr: Lernarrangement, resolution: LehrplanResolution,
+    *, role_resolutions: dict[str, LehrplanResolution] | None = None,
 ) -> VerifyReport:
     """Every role's material verifies as a worksheet (kinds/dims/coverage/media);
     plus arrangement-level rules: roles exist, phases are well-formed, and every
-    anchor references a resolved competence + a valid served_by."""
+    anchor references a resolved competence + a valid served_by.
+
+    `role_resolutions` (see `assemble_arrangement`) lets a cross-subject bundle verify
+    each role against its own subject-grade resolution; the anchors are checked against
+    `resolution` (the shared universe the anchors must live in)."""
     problems: list[str] = []
     warnings: list[str] = []
+    rr = role_resolutions or {}
 
     if not arr.roles:
         problems.append("arrangement has no roles")
 
     for role in arr.roles:
-        rep = verify(role.material, resolution)
+        rep = verify(role.material, rr.get(role.id, resolution))
         problems += [f"role '{role.id}': {p}" for p in rep.problems]
         warnings += [f"role '{role.id}': {w}" for w in rep.warnings]
 
@@ -184,17 +199,23 @@ def render_arrangement(arr: Lernarrangement, out_dir, assets: dict | None = None
 
 
 def stage_arrangement(store, arr: Lernarrangement, *, arr_id: str | None = None,
-                      source: str = "ai", today=None):
+                      source: str = "ai", today=None,
+                      resolution: LehrplanResolution | None = None,
+                      role_resolutions: dict[str, LehrplanResolution] | None = None):
     """Assemble → verify → render an arrangement and stage it as an ArrangementRecord
     for HITL review (the v0.5 analogue of orch.ingest_generated for worksheets).
-    `arr_id` gives a stable id for idempotent seeding; otherwise the store assigns one."""
+    `arr_id` gives a stable id for idempotent seeding; otherwise the store assigns one.
+
+    Single-subject arrangements resolve from `arr.meta.subject` automatically. A
+    fächerübergreifendes bundle (Wave C3) passes a precomputed cross-subject `resolution`
+    (its `arr.meta.subject` is an ÜT label, not a catalog subject) plus `role_resolutions`."""
     from .. import config
     from ..store.arrangementstore import ArrangementArtifacts, ArrangementRecord
     from .resolve import resolve_grade
 
-    res = resolve_grade(arr.meta.subject, arr.meta.klasse, today=today)
-    assemble_arrangement(arr, res)
-    report = verify_arrangement(arr, res)
+    res = resolution or resolve_grade(arr.meta.subject, arr.meta.klasse, today=today)
+    assemble_arrangement(arr, res, role_resolutions=role_resolutions)
+    report = verify_arrangement(arr, res, role_resolutions=role_resolutions)
     rid = arr_id or store.next_id()
     bundle = render_arrangement(arr, config.RUNS_DIR / "arrangements" / rid)
     rec = ArrangementRecord(

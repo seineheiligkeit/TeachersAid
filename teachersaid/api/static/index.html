@@ -149,6 +149,17 @@ function korpusShellHTML(v){
           <div class="row" style="margin-top:8px"><button onclick="composeVariants()">Varianten erzeugen</button></div>
           <p id="v-result" class="muted"></p>
         </div>
+        <div class="card"><h2>Projektwoche (fächerübergreifend)</h2>
+          <p class="muted">Ein <b>übergreifendes Thema</b> aus der Sicht mehrerer Fächer: aus
+            <b>freigegebenen</b> Bausteinen wird je Fach eine Station zusammengestellt und als
+            Lernarrangement gebündelt (mind. 2 Fächer — sonst eine ehrliche Lücke in der
+            Wunschliste). Landet in „Arrangements“. Kein LLM-Aufruf.</p>
+          <label>Übergreifendes Thema</label><select id="u-uet"><option value="">lädt…</option></select>
+          <div class="row"><div style="flex:1"><label>Klasse</label><input id="u-klasse" type="number" value="4" onchange="loadUets()" /></div>
+            <div style="flex:1"><label>Dauer je Station</label><select id="u-env"><option>einzelstunde</option><option selected>doppelstunde</option><option>block</option></select></div></div>
+          <div class="row" style="margin-top:8px"><button onclick="composeUet()">Bündel zusammenstellen</button></div>
+          <p id="u-result" class="muted"></p>
+        </div>
         <div class="card"><h2>Arbeitsblätter (freigegeben)</h2><div id="content-list"></div></div>
       </div>
       <div id="detail" class="card"><p class="muted">Wähle einen Eintrag.</p></div>
@@ -204,7 +215,7 @@ function renderKorpus(){
   if(body.dataset.view!==KORPUS_VIEW){   // build the sub-shell only on view change — keeps form state across the 4s refresh
     body.dataset.view=KORPUS_VIEW;
     body.innerHTML=korpusShellHTML(KORPUS_VIEW);
-    if(KORPUS_VIEW==="blaetter"){ loadKBs(); loadTemplates(); }
+    if(KORPUS_VIEW==="blaetter"){ loadKBs(); loadTemplates(); loadUets(); }
   }
   if(KORPUS_VIEW==="blaetter") renderContentList(LASTITEMS.filter(i=>i.stage==="content" && i.status==="approved"));
   else if(KORPUS_VIEW==="bausteine") renderBlocks();
@@ -288,6 +299,27 @@ async function composeVariants(){
   if(r.error){ result.textContent="Fehler: "+r.error; return; }
   result.textContent=`${r.id} wurde in „Prüfen“ eingestellt.`;
   SELECTED=r.id||null; VIEW="vorschau"; await refresh(); if(SELECTED) openDetail(SELECTED);
+}
+async function loadUets(){
+  const sel=$("#u-uet"); if(!sel) return;
+  const klasse=+($("#u-klasse").value||4), keep=sel.value;
+  try{
+    const r=await jget(`/api/uebergreifende-themen?klasse=${klasse}`);
+    sel.innerHTML=(r.uebergreifende_themen||[]).map(t=>`<option value="${t.nr}" ${String(t.nr)===keep?"selected":""}>${t.nr} · ${esc(t.label)}</option>`).join("");
+  }catch(e){ sel.innerHTML=`<option value="">ÜT nicht ladbar</option>`; }
+}
+async function composeUet(){
+  const uet=+$("#u-uet").value, klasse=+$("#u-klasse").value, envelope=$("#u-env").value;
+  const result=$("#u-result");
+  if(!uet){ $("#u-uet").focus(); return; }
+  result.textContent="wird zusammengestellt und gerendert…";
+  const r=await jpost("/api/compose-uet",{uet,klasse,envelope});
+  if(r.mode==="staged"){
+    result.textContent=`Lernarrangement ${r.id} in „Arrangements“ eingestellt — ${r.n_roles} Fächer (${(r.subjects||[]).join(", ")}), ${r.problems&&r.problems.length?r.problems.length+" Verify-Probleme":"verify-clean"}.`;
+    TAB="korpus"; KORPUS_VIEW="arrangements"; renderTabs(); buildShell(); await refresh();
+  } else {
+    result.textContent=`Ehrliche Lücke: ${r.note||""} (in der Wunschliste vorgemerkt).`;
+  }
 }
 
 /* ---------- Inhalte / Bibliothek ---------- */

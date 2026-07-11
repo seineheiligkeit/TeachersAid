@@ -32,7 +32,7 @@ rendering + the two-stage human-in-the-loop review dashboard).
 ```bash
 pip install -e .                       # deps: pydantic2, fastapi, uvicorn, anthropic, reportlab,
                                        #       matplotlib, pillow, pyyaml, pymupdf, sympy  (pytest for dev)
-python -m pytest -q                    # fully offline, no API key (702 tests)
+python -m pytest -q                    # fully offline, no API key (710 tests)
 python -m teachersaid seed             # seed the master-library examples into the review queue
 python -m teachersaid                  # dashboard → http://127.0.0.1:8000
 ```
@@ -520,6 +520,21 @@ a teacher run-guide; we do not run the room.** Hero: `demo/gwb_standort.py` (GWB
 Generation: `GenArrangementBody` → `arrangement_body_to_canonical`, `arrange.ingest_arrangement`;
 briefs `tools/arrangement_prompt.py`, ingest `tools/ingest_arrangements.py`. Arrangements use their
 **own store** (`ArrangementStore`), not `ReviewItem`.
+
+**Fächerübergreifende Bündel (Wave C3 — the Projektwoche).** One übergreifendes Thema (ÜT —
+Umweltbildung, Medienbildung, …) approached from EACH subject that carries it. `resolve_uet(uet, klasse)`
+(`pipeline/resolve.py`) is the cross-subject analogue of `resolve_grade`: every verbatim competence
+carrying the ÜT across ALL Pflichtgegenstände of the stage (legend via `lehrplan_store.uebergreifende_themen`).
+`pipeline/compose_uet.py::compose_uet` is the **corpus** half — deterministic + LLM-free, the delivery-loop
+discipline: select APPROVED blocks serving those competences, one small worksheet per subject (a *station*),
+wrapped as a `Lernarrangement` (format `stations`) whose shared Projektwoche product anchors an **anchor-only**
+ÜT competence (the v0.5 payoff). Requires ≥2 subjects with approved blocks, else an honest `UetResult` gap →
+demand queue. **Cross-subject wrinkle:** each role assembles/verifies against its OWN subject-grade resolution
+(`assemble_arrangement`/`verify_arrangement`/`stage_arrangement` take an optional `role_resolutions` map — a
+single-subject arrangement passes none), while the arrangement Nachweis derives against the ÜT resolution.
+Seam: `orch.compose_uet_arrangement` → `POST /api/compose-uet` (+ `GET /api/uebergreifende-themen`, Korpus
+compose form); flagship `library.seed_uet_arrangements` (ÜT 11 Umweltbildung × Kl 4 — Physik · Geographie ·
+Technik · Biologie · Chemie).
 
 ## Breadth generation — subagents → ingest (the seam, no API key)
 

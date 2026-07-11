@@ -272,6 +272,45 @@ def compose_variants(store: ReviewStore, template_id: str, n: int = 6,
     return store.save(item)
 
 
+def compose_uet_arrangement(
+    arrangement_store, block_store, uet: int, klasse: int,
+    envelope: str = "doppelstunde", *, demand_store=None, arr_id: str | None = None,
+    source: str = "composed", today: date | None = None,
+    max_subjects: int | None = None,
+) -> dict:
+    """Compose a fächerübergreifendes Projektwoche bundle (Wave C3) for one übergreifendes
+    Thema × Klasse from approved blocks and stage it into the ArrangementStore for Gate-2
+    review — or, when fewer than two subjects have approved ÜT blocks, record the honest gap
+    in the demand queue (the corpus-loop intake, exactly as `deliver`). Deterministic + LLM-free.
+
+    Returns a summary dict (`mode` = "staged" | "gap")."""
+    from ..store.demandstore import DemandRecord
+    from .arrange import stage_arrangement
+    from .compose_uet import MAX_SUBJECTS, compose_uet
+
+    res = compose_uet(uet, klasse, envelope, block_store=block_store, today=today,
+                      max_subjects=max_subjects if max_subjects is not None else MAX_SUBJECTS)
+    if not res.ok:
+        demand_id = None
+        if demand_store is not None:
+            rec = demand_store.create(DemandRecord(
+                subject=f"ÜT {uet}: {res.uet_label}", klasse=klasse, topic=res.uet_label,
+                envelope=envelope, note=res.gap, requested_via="api"))
+            demand_id = rec.id
+        return {"mode": "gap", "id": None, "uet": uet, "uet_label": res.uet_label,
+                "klasse": klasse, "subjects": res.subjects, "note": res.gap,
+                "demand_id": demand_id}
+
+    rec = stage_arrangement(
+        arrangement_store, res.arrangement, arr_id=arr_id, source=source, today=today,
+        resolution=res.resolution, role_resolutions=res.role_resolutions)
+    return {"mode": "staged", "id": rec.id, "uet": uet, "uet_label": res.uet_label,
+            "klasse": klasse, "subjects": res.subjects, "status": rec.status,
+            "n_roles": len(rec.arrangement.roles),
+            "n_anchors": len(rec.arrangement.competence_anchors),
+            "problems": rec.verify_problems}
+
+
 def _check_provenance_rights(content, today_year: int) -> list[str]:
     """The expression-provenance ingest gate (History/GPB): every block that embeds
     source-derived wording (`adapted`/`quoted`) must rest on a redistributable/PD-clear
