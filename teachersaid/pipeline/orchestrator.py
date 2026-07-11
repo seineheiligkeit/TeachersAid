@@ -22,6 +22,7 @@ from ..rendering.student_sheet import render_student_sheet
 from ..rendering.teacher_guide import render_teacher_guide
 from ..schema.worksheet import BundleRequest, LehrplanResolution
 from ..schema.enums import AnchorMode
+from ..schema.mixer import ParametricMixerProfile
 from ..store.models import RenderArtifacts, ReviewItem
 from ..store.repository import ReviewStore
 from .assemble import assemble
@@ -252,7 +253,8 @@ def stage_worksheet(
 
 
 def compose_variants(store: ReviewStore, template_id: str, n: int = 6,
-                     *, ramp: bool = False, today: date | None = None) -> ReviewItem:
+                     *, ramp: bool = False, today: date | None = None,
+                     mixer_profile: ParametricMixerProfile | None = None) -> ReviewItem:
     """Stage a parametric Maths worksheet (N correct-by-construction variants of a curated
     template) as a content item for Gate-2 review. The maths is computed (sympy), never
     authored, so every variant is right and carries its Rechenweg."""
@@ -261,15 +263,23 @@ def compose_variants(store: ReviewStore, template_id: str, n: int = 6,
     t = find_template(template_id)
     if t is None:
         raise KeyError(f"no parametric template '{template_id}'")
+    actual_n = n
+    projected = t.title or t.id
+    if mixer_profile is not None:
+        from .mixer import adjusted_variant_count, projected_title
+        actual_n = adjusted_variant_count(n, mixer_profile.umfang)
+        projected = projected_title(projected, mixer_profile)
     item = ReviewItem(
         id="", stage="content", source="variants",
-        title=f"{t.subject} {t.klasse}. Kl. — {t.title or t.id} ({n} Varianten"
+        title=f"{t.subject} {t.klasse}. Kl. — {projected} ({actual_n} Varianten"
               f"{' · ansteigend' if ramp else ''})",
         request=BundleRequest(subject=t.subject, klasse=t.klasse, topic_raw=t.title or t.id),
     )
     store.create(item)
     try:
-        content, res = variant_worksheet(t, n, ramp=ramp, today=today)
+        content, res = variant_worksheet(
+            t, n, ramp=ramp, today=today, mixer_profile=mixer_profile,
+        )
         item.resolution = res
         assemble(content, res)
         report = verify(content, res)

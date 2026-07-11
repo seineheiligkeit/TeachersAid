@@ -11,6 +11,7 @@ from __future__ import annotations
 from datetime import date
 
 from ..schema.blocks import InfoBlock, Serves
+from ..schema.mixer import ParametricMixerProfile
 from ..schema.parametric import ParametricTask
 from ..schema.worksheet import Baustein, TeacherOverview, WorksheetContent, WorksheetMeta
 
@@ -434,7 +435,8 @@ def find_template(template_id: str) -> ParametricTask | None:
 
 
 def variant_worksheet(template: ParametricTask, n: int = 6, *, today: date | None = None,
-                      seed0: int = 1, ramp: bool = True):
+                      seed0: int = 1, ramp: bool = True,
+                      mixer_profile: ParametricMixerProfile | None = None):
     """Build an assemble-ready WorksheetContent of N variants. Returns (content, resolution).
 
     Genre-honest Übungsreihe framing (the blackboard test): the sheet LABELS itself as a
@@ -445,7 +447,6 @@ def variant_worksheet(template: ParametricTask, n: int = 6, *, today: date | Non
     "aufsteigend" claim is only made when the recipe actually delivered a spread —
     recipes without the knob produce an honest, unramped series."""
     from ..grounding import lehrplan_store as ls
-    from ..pipeline.parametrize import make_variants_with_assets
     from ..pipeline.resolve import resolve_kompetenzbereich
 
     stufe = ls.stufe_for_klasse(template.klasse)  # Klasse fixes the stage (1–4 / 5–8)
@@ -453,12 +454,24 @@ def variant_worksheet(template: ParametricTask, n: int = 6, *, today: date | Non
                                    template.kompetenzbereich, today=today)
     # each variant may carry a figure (Pythagoras triangle, circle, Baumdiagramm …); collect
     # them onto the worksheet so they render + pass the media-policy gate (role="figure", code)
-    blocks, assets = make_variants_with_assets(template, n, seed0=seed0, ramp=ramp)
+    mixer_lint = None
+    if mixer_profile is None:
+        from ..pipeline.parametrize import make_variants_with_assets
+        blocks, assets = make_variants_with_assets(template, n, seed0=seed0, ramp=ramp)
+        actual_n = n
+    else:
+        from ..pipeline.mixer import make_mixed_variants
+        blocks, assets, mixer_lint, actual_n = make_mixed_variants(
+            template, n, mixer_profile, seed0=seed0, ramp=ramp,
+        )
     title = template.title or template.id
+    if mixer_profile is not None:
+        from ..pipeline.mixer import projected_title
+        title = projected_title(title, mixer_profile)
     # honest labelling: claim "aufsteigend" only if the delivered bands actually spread
     stamped = [b.difficulty for b in blocks if b.difficulty is not None]
     ramped = len(set(stamped)) > 1
-    subtitle = f"Übungsreihe — {n} Varianten" + (", aufsteigend" if ramped else "")
+    subtitle = f"Übungsreihe — {actual_n} Varianten" + (", aufsteigend" if ramped else "")
 
     zweck = ("Diese Übungsreihe dient dem Automatisieren und der Vorbereitung auf die "
              "Schularbeit: jede Aufgabe ist eine eigene Variante derselben "
@@ -469,7 +482,13 @@ def variant_worksheet(template: ParametricTask, n: int = 6, *, today: date | Non
                   "anspruchsvoll.")
     intro: list = [InfoBlock(id="uebung.zweck", kind="callout", callout_role="note",
                              content=zweck)]
-    if template.context_frame:                    # neutral per-template frame (maths)
+    # An MC master's framing talks about distractors; the open projection removes it along
+    # with the options instead of leaving contradictory student-facing prose behind.
+    open_projection = bool(
+        mixer_profile and mixer_profile.offenheit
+        and mixer_profile.offenheit.value == "offen"
+    )
+    if template.context_frame and not open_projection:
         intro.append(InfoBlock(id="uebung.rahmen", kind="prose",
                                content=template.context_frame))
 
@@ -494,5 +513,5 @@ def variant_worksheet(template: ParametricTask, n: int = 6, *, today: date | Non
         sections=[Baustein(id="uebung", title=title,
                            teacher_overview=TeacherOverview(throughline=throughline),
                            blocks=blocks)],
-        assets=assets)
+        assets=assets, mixer_profile=mixer_profile, mixer_lint=mixer_lint)
     return content, res

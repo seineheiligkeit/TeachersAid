@@ -151,6 +151,25 @@ def build_pdf(
         f = content.meta.fassung
         story.append(rb.para(f"{f.bgbl} · DokNr {f.doknr} · gültig {f.valid_from}–{f.valid_to}",
                              S["meta"]))
+        if content.mixer_profile is not None:
+            profile = content.mixer_profile
+            settings = [f"Umfang: {profile.umfang.value}"]
+            depth_labels = {
+                "ueben": "üben",
+                "strategien_vergleichen": "Strategien vergleichen",
+            }
+            settings += ([f"Tiefe: {depth_labels[profile.tiefe.value]}"]
+                         if profile.tiefe else [])
+            settings += ([f"Abstraktion: {profile.abstraktion.value}"]
+                         if profile.abstraktion else [])
+            settings += [f"Offenheit: {profile.offenheit.value}"] if profile.offenheit else []
+            lint = content.mixer_lint
+            lint_stamp = ("bestanden" if lint and lint.passed else "nicht bestanden")
+            story.append(rb.para(
+                "Mischpult-Profil · " + " · ".join(settings)
+                + f" · Regler-Lint: {lint_stamp}",
+                S["meta"],
+            ))
     story.append(rb.spacer(3))
 
     task_no = 0

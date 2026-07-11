@@ -14,6 +14,7 @@ from .blocks import Block
 from .competence import SubjectCompetenceModel, SubjectCompetenceModelRef
 from .derived import DepthProfile, Nachweis
 from .enums import AnchorMode
+from .mixer import MixerLintReport, ParametricMixerProfile
 from .richtext import RichText
 from .verification import ThreadRack
 
@@ -82,6 +83,10 @@ class WorksheetContent(BaseModel):
     theme_asset: str | None = None
     nachweis: Nachweis | None = None  # DERIVED at assemble
     depth_profile: DepthProfile | None = None  # DERIVED at assemble
+    # Tiefenregler: the teacher request + deterministic evidence.  Only parametric
+    # worksheets carry these; generation views deliberately cannot author either field.
+    mixer_profile: ParametricMixerProfile | None = None
+    mixer_lint: MixerLintReport | None = None
     rack: ThreadRack | None = None
 
     @model_validator(mode="after")

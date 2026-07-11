@@ -39,9 +39,11 @@ Vertretungsstunde · Hausübung). Within-class depth lives INSIDE one shared she
 Zusatz-★-blocks, tiered a)→b)→c) sub-questions, and *selbstdifferenzierende* task genres. Every
 fader is a **derivation over one master** (no forked content, ever; ONE teacher guide with the
 profile stamped); the **Regler-Lint** verifies each fader measurably moves what it claims (WSTF ·
-C4-estimate · AFB mix · competence coverage intact or honestly reported). Build shape: P1
-pure-computation faders on parametric sheets → P2 scaffold fader → P3 text fader + lint → P4
-composer integration + dashboard surface. *(The rejected sibling is recorded under Rejected.)*
+C4-estimate · AFB mix · competence coverage intact or honestly reported). Build shape: **P1 built** —
+pure-computation faders on parametric sheets (Umfang · computed strategy depth · figure abstraction ·
+misconception-MC↔open, typed profile + structural Regler-Lint; contract in
+`tiefenregler-design.md`) → P2 scaffold fader → P3 text fader + WSTF lint → P4 composer integration +
+dashboard surface. *(The rejected sibling is recorded under Rejected.)*
 
 **New task genres (engines):**
 - **Fermi-Werkstatt** — estimation problems; decomposition chains with curated fact-anchors from
