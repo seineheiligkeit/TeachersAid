@@ -507,8 +507,10 @@ Also: store consolidation (`store/base.py::JsonStore`, the future-DB seam). **26
 3. ~~**Geometry — parametric figure emission + nets**~~ — ✅ **DONE (11 Jul 2026)**
    (`Instance.figure` → masked per-variant assets; `pythagoras` + `kreis_umfang_flaeche` +
    `quader_oberflaeche`; scene-based `matplotlib:solid_net` for Quader/Würfel).
-4. **Scale the text libraries** — *progressed 10 Jul:* `tools/fetch_wikisource.py` + 5 staged texts;
-   still open: more grades/authors, the **ANNO/OCR fetch tool** for real newspaper/advert media texts.
+4. **Scale the text libraries** — *progressed 10–11 Jul:* `tools/fetch_wikisource.py` + 5 staged texts;
+   **ANNO/OCR fetch is DONE** (`tools/fetch_anno.py`, official ÖNB IIIF/ALTO, explicit Public Domain
+   Mark, verbatim uncorrected OCR) with one annotated newspaper text and referenced-only GPB
+   Quellenarbeit staged. Still open: more grades/authors and a cleaner Vienna newspaper flagship.
 5. ~~**More parametric recipes + a "Varianten erzeugen" dashboard surface**~~ — ✅ **surface DONE
    (11 Jul 2026):** catalog + staging endpoints, optional ramp, four-station UI, figure preview verified.
    The Matura-backward recipe queue is also cleared; further recipes remain an open-ended joy lane.
@@ -516,8 +518,9 @@ Also: store consolidation (`store/base.py::JsonStore`, the future-DB seam). **26
    sources, 12 datasets). Still open: **BIO/other-subject** datasets; **Tier-2 regional** down to Bezirk.
 
 Standing tracks (no build needed): **geography teacher reviews** the 9 GWB worksheets (c0089–c0097),
-the staged dataset, + earlier staged items in the dashboard; **GPB Quellenarbeit via ANNO/ALEX is
-buildable now** as referenced-only (b2) — well-chosen task prompts pointing at the archives, no ingest tooling.
+the staged dataset, + earlier staged items in the dashboard; **GPB Quellenarbeit via ANNO is now
+staged** as referenced-only (b2), with source-identification, scan/OCR comparison, metaphor-analysis,
+and source-judgment prompts.
 
 Details for each below ↓
 

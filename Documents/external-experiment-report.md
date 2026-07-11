@@ -4,7 +4,7 @@ Branch: `ext/nets`
 
 Baseline: 674 passed, 1 skipped
 
-Current: **688 passed, 1 skipped**
+Current: **695 passed, 1 skipped**
 
 ## T1 — `nets` (Körpernetze) — complete
 
@@ -51,7 +51,7 @@ Current: **688 passed, 1 skipped**
 
 - T2 — Varianten dashboard/API: complete (details below).
 - T2b — teacher-only boxplot solution figure: complete (details below).
-- T3 — ANNO fetch + media texts + referenced-only Quellenarbeit: not started.
+- T3 — ANNO fetch + media texts + referenced-only Quellenarbeit: complete (details below).
 - T4 — BIO datasets + Bezirk regional data/boundaries: not started.
 - T5 — informational Realien: optional, not started.
 
@@ -105,3 +105,41 @@ Current: **688 passed, 1 skipped**
 
 - The quartile convention remains the existing exclusive school convention (odd sample size; overall
   median excluded from both halves). No mathematical convention changed in this task.
+
+## T3 — ANNO/OCR source workflow + Quellenarbeit — complete
+
+### What shipped
+
+- `tools/fetch_anno.py` resolves an official ÖNB IIIF manifest to its canvas, ALTO OCR, and image;
+  requests are throttled and records carry the exact canvas URL.
+- ALTO extraction preserves `String/@CONTENT` verbatim, including OCR errors and line/block
+  boundaries. It never silently corrects spelling or dehyphenates; the source policy explicitly says
+  `machine_ocr_unverified`.
+- `TextSourceRef` admits `public_domain_mark` only when the licence field explicitly names a Public
+  Domain Mark. Generic or missing rights claims fail closed.
+- `deu-anno-lehrertag-1871` is a sourced, annotated Klasse-4 newspaper extract with six vetted
+  comprehension/analysis annotations; fetched and staged text equality is lock-tested.
+- `gpb_anno_quellenarbeit.py` stages a referenced-only Klasse-3 worksheet (`c0199`): students identify
+  the source, compare scan and OCR, analyse political metaphor, and judge evidential limits. No source
+  scan or OCR is embedded in the item.
+- Offline IIIF-manifest and ALTO fixtures cover resolution, exact OCR preservation, rights gating, and
+  ingestion equality.
+
+### Verification
+
+- Text ingestion dry run: **7 clean, 0 problems**; the new source is verify-clean and in review.
+- Focused fetch/text/GPB regression sets: **31 passed** and **22 passed**.
+- Full offline suite after T3: **695 passed, 1 skipped**.
+
+### Rights verdict
+
+- The workflow deliberately targets the ÖNB Labs historical-newspaper subset whose selected items are
+  labelled with the Public Domain Mark. The mark must be present in each staged source record; the tool
+  does not infer public domain from age or from appearing in ANNO.
+
+### SME flags
+
+- The 1871 OCR is intentionally quite noisy, which is useful for OCR/source criticism but demanding as
+  a first flagship. Please decide whether to retain it, or pair/replace it with a cleaner Vienna title.
+- *Leitmeritzer Zeitung* is an Austrian-Hungarian historical source from Bohemia, not a present-day
+  Austrian regional title; the provenance is exact, but that framing should stay explicit.

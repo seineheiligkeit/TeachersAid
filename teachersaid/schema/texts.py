@@ -35,7 +35,7 @@ AnnotationKind = Literal[
     "roleplay",         # (Realien/FS) a Sprechkarte: an oral pair task; `roles` = the per-partner cues
 ]
 
-RightsBasis = Literal["public_domain_pma", "cc_by", "cc0", "cleared"]
+RightsBasis = Literal["public_domain_pma", "public_domain_mark", "cc_by", "cc0", "cleared"]
 
 # Realien honesty mode (see Documents/realien-design.md §5). "constructed" is the DEFAULT for the
 # modern-FS Sprechanlass — invented-coherent pedagogical fiction, no source/rights gate; the
@@ -71,6 +71,10 @@ class TextSourceRef(BaseModel):
     def is_clear(self, today_year: int) -> tuple[bool, list[str]]:
         """Whether the text may be redistributed; returns (ok, reasons-if-not)."""
         if self.rights_basis in ("cc_by", "cc0", "cleared"):
+            return True, []
+        if self.rights_basis == "public_domain_mark":
+            if not self.licence or "public domain mark" not in self.licence.casefold():
+                return False, ["public_domain_mark but no Public Domain Mark recorded in licence"]
             return True, []
         if self.rights_basis == "public_domain_pma":
             if self.author_death_year is None:

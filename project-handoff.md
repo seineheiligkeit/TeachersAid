@@ -451,6 +451,13 @@ target language for Fremdsprache). Read this, then the docs in the order given i
 > **Boxplot follow-up shipped:** parametric `Instance.solution_figure` is the minimal teacher-only
 > emission seam; `boxplot_from_data` derives a solution figure from the same five values as its answer
 > key and wires it through `solution_asset_refs`. Student/homework never traverse that channel.
+> **ANNO/OCR follow-up shipped:** `tools/fetch_anno.py` resolves official ÖNB IIIF manifests to ALTO,
+> throttles requests, records the exact canvas, and keeps OCR bytes semantically verbatim—errors and
+> line/block boundaries included, with no silent correction or dehyphenation. Rights-clear admission is
+> limited to an explicit **Public Domain Mark**. The first annotated 1871 newspaper extract is in review;
+> referenced-only GPB Quellenarbeit `c0199` points students to the scan without embedding it. Suite:
+> **695 passed, 1 skipped**. SME review should decide whether the intentionally noisy Leitmeritz OCR is
+> the best flagship, and whether a Vienna title should replace or join it.
 
 ---
 

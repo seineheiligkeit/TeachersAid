@@ -134,6 +134,18 @@ def seed_history(store=None, *, today: date | None = None) -> list:
     return [orch.stage_worksheet(store, wk.build_content(), res, source="curated")]
 
 
+def seed_anno_quellenarbeit(store=None, *, today: date | None = None) -> list:
+    """Stage the referenced-only ANNO/ÖNB newspaper-source worksheet for Gate-2 review."""
+    from ..pipeline import orchestrator as orch
+    from ..pipeline.resolve import resolve_grade
+    from ..store.repository import ReviewStore
+    from . import gpb_anno_quellenarbeit as anno
+
+    store = store or ReviewStore()
+    res = resolve_grade(anno.SUBJECT, anno.KLASSE, today=today)
+    return [orch.stage_worksheet(store, anno.build_content(), res, source="curated")]
+
+
 def seed_textsorten(store=None, *, today: date | None = None) -> list:
     """Stage the curated Deutsch Textsorten-scaffold worksheets (the German genre layer —
     teach a Textsorte richly and EARLIER than the Matura merely checks it) as content items

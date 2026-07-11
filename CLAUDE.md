@@ -32,7 +32,7 @@ rendering + the two-stage human-in-the-loop review dashboard).
 ```bash
 pip install -e .                       # deps: pydantic2, fastapi, uvicorn, anthropic, reportlab,
                                        #       matplotlib, pillow, pyyaml, pymupdf, sympy  (pytest for dev)
-python -m pytest -q                    # fully offline, no API key (688 tests)
+python -m pytest -q                    # fully offline, no API key (695 tests)
 python -m teachersaid seed             # seed the master-library examples into the review queue
 python -m teachersaid                  # dashboard → http://127.0.0.1:8000
 ```
@@ -367,8 +367,12 @@ exact-revision text + permalink + rights fields shaped for `TextSourceRef`; thro
 `PageNumber` scan-markers so "Zeile N" anchoring holds; parser fixture-tested offline). First batch
 staged via it: Grimm *Die Sternthaler* (Kl. 1) · Fontane *Herr von Ribbeck* (Kl. 3) · Goethe *Der
 Zauberlehrling* 1827 (Kl. 4) · Phaedrus *Lupus et Agnus* + *Rana Rupta et Bos* (LAT Kl. 3/4) — all
-AT-70-p.m.a.-clear, historical orthography preserved verbatim. A true newspaper/advert media text still
-needs an ANNO/OCR fetch tool (next).
+AT-70-p.m.a.-clear, historical orthography preserved verbatim. **`tools/fetch_anno.py` (11 Jul 2026)**
+adds the newspaper/OCR path through the official ÖNB IIIF manifest + ALTO resources. It targets the
+ÖNB Labs Public-Domain-Mark subset, records the exact canvas URL, preserves OCR verbatim (including
+errors, line and block boundaries; no silent correction/dehyphenation), and marks it
+`machine_ocr_unverified`. The first staged source is the 1871 *Leitmeritzer Zeitung* report on a
+Lehrertag; its annotated text and referenced-only GPB Quellenarbeit are both verify-clean.
 
 **Audio / Hörverstehen (modern FS)** — a listening text is an `AnnotatedText` with `medium="audio"`:
 `build_worksheet` attaches `Asset(role="tts", generator="audio:tts")`, renders a printable audio cue +
