@@ -26,6 +26,7 @@ from ..store.datasetstore import DatasetStore
 from ..store.demandstore import STATUSES as DEMAND_STATUSES
 from ..store.demandstore import DemandStore
 from ..store.textstore import TextStore
+from ..store.imagesourcestore import ImageSourceStore
 from ..store.sachverhaltstore import SachverhaltStore
 from ..store.feedbackstore import FEEDBACK_TAGS, TARGET_KINDS, FeedbackEntry, FeedbackStore
 from ..store.repository import ReviewStore
@@ -38,6 +39,7 @@ ASSETS = AssetStore()
 ARRANGEMENTS = ArrangementStore()
 DATASETS = DatasetStore()
 TEXTS = TextStore()
+IMAGE_SOURCES = ImageSourceStore()
 SACHVERHALTE = SachverhaltStore()
 FEEDBACK = FeedbackStore()
 _STATIC = Path(__file__).resolve().parent / "static"
@@ -449,7 +451,21 @@ def asset_library_file(asset_id: str):
 def approve_asset(asset_id: str):
     if ASSETS.get(asset_id) is None:
         raise HTTPException(404, "no such asset")
-    return ASSETS.set_status(asset_id, "approved").summary()
+    # For best-of-N requests, approval is selection: exactly one candidate wins.
+    try:
+        return ASSETS.select_candidate(asset_id).summary()
+    except ValueError as exc:
+        raise HTTPException(409, str(exc)) from exc
+
+
+@app.post("/api/asset-library/{asset_id}/select")
+def select_asset_candidate(asset_id: str):
+    if ASSETS.get(asset_id) is None:
+        raise HTTPException(404, "no such asset")
+    try:
+        return ASSETS.select_candidate(asset_id).summary()
+    except ValueError as exc:
+        raise HTTPException(409, str(exc)) from exc
 
 
 @app.post("/api/asset-library/{asset_id}/reject")
@@ -457,6 +473,13 @@ def reject_asset(asset_id: str):
     if ASSETS.get(asset_id) is None:
         raise HTTPException(404, "no such asset")
     return ASSETS.set_status(asset_id, "rejected").summary()
+
+
+@app.post("/api/asset-library/{asset_id}/reject-set")
+def reject_asset_candidate_set(asset_id: str):
+    if ASSETS.get(asset_id) is None:
+        raise HTTPException(404, "no such asset")
+    return ASSETS.reject_candidate_set(asset_id).summary()
 
 
 # --- grounded-facts dataset library ------------------------------------------
@@ -593,6 +616,56 @@ def compose_text(text_id: str):
     if TEXTS.get(text_id) is None:
         raise HTTPException(404, "no such text")
     item = orch.compose_text_worksheet(STORE, TEXTS, text_id)
+    return {"id": item.id, "error": item.error, "problems": item.verify_problems}
+
+
+# --- rights-cleared image sources -------------------------------------------
+@app.get("/api/image-sources")
+def image_sources(status: str | None = None):
+    return [record.summary() for record in IMAGE_SOURCES.list(status=status)]
+
+
+@app.get("/api/image-sources/{image_id}")
+def image_source_detail(image_id: str):
+    record = IMAGE_SOURCES.get(image_id)
+    if record is None:
+        raise HTTPException(404, "no such image source")
+    detail = record.summary()
+    detail["annotations"] = [a.model_dump(mode="json")
+                             for a in record.image_source.annotations]
+    detail["rights_metadata"] = record.image_source.source.rights_metadata
+    return detail
+
+
+@app.get("/api/image-sources/{image_id}/file")
+def image_source_file(image_id: str):
+    record = IMAGE_SOURCES.get(image_id)
+    if record is None or not Path(record.file).is_file():
+        raise HTTPException(404, "image source file missing")
+    return FileResponse(record.file)
+
+
+@app.post("/api/image-sources/{image_id}/approve")
+def approve_image_source(image_id: str):
+    if IMAGE_SOURCES.get(image_id) is None:
+        raise HTTPException(404, "no such image source")
+    return IMAGE_SOURCES.set_status(image_id, "approved").summary()
+
+
+@app.post("/api/image-sources/{image_id}/reject")
+def reject_image_source(image_id: str):
+    if IMAGE_SOURCES.get(image_id) is None:
+        raise HTTPException(404, "no such image source")
+    return IMAGE_SOURCES.set_status(image_id, "rejected").summary()
+
+
+@app.post("/api/image-sources/{image_id}/compose")
+def compose_image_source(image_id: str):
+    from ..pipeline.image_sources import compose_image_source_worksheet
+
+    if IMAGE_SOURCES.get(image_id) is None:
+        raise HTTPException(404, "no such image source")
+    item = compose_image_source_worksheet(STORE, IMAGE_SOURCES, image_id)
     return {"id": item.id, "error": item.error, "problems": item.verify_problems}
 
 

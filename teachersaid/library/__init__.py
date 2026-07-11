@@ -134,6 +134,18 @@ def seed_history(store=None, *, today: date | None = None) -> list:
     return [orch.stage_worksheet(store, wk.build_content(), res, source="curated")]
 
 
+def seed_hybrid_image(store=None, *, today: date | None = None) -> list:
+    """Stage the BIO flower raster+code flagship for Gate-2 review."""
+    from ..pipeline import orchestrator as orch
+    from ..pipeline.resolve import resolve_grade
+    from ..store.repository import ReviewStore
+    from . import bio_bluete_hybrid as flower
+
+    store = store or ReviewStore()
+    res = resolve_grade(flower.SUBJECT, flower.KLASSE, today=today)
+    return [orch.stage_worksheet(store, flower.build_content(), res, source="curated")]
+
+
 def seed_anno_quellenarbeit(store=None, *, today: date | None = None) -> list:
     """Stage the referenced-only ANNO/ÖNB newspaper-source worksheet for Gate-2 review."""
     from ..pipeline import orchestrator as orch

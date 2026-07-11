@@ -117,6 +117,9 @@ class AnnotatedText(BaseModel):
     origin: RealieOrigin = "constructed"     # honesty mode; "constructed" is the FS default (§5)
     scene: str | None = None                 # the communicative situation ("At the station")
     facts: list[RealieFact] = Field(default_factory=list)  # the light internal fact-set (scaffold)
+    # Optional, SME-approved file-backed asset id. The backdrop is atmospheric only: the Realie's
+    # task-bearing timetable/menu remains text in the content object and is rendered by code.
+    backdrop_asset: str | None = None
     # --- audio (Hörverstehen, FS): a spoken text with a transcript ---
     medium: str = "text"                     # "text" | "audio" (a listening text)
     show_transcript: bool = False            # audio: also show the transcript to students (A1: listen-and-read)

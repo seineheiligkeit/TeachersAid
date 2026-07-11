@@ -10,9 +10,24 @@ from .arrangement import (
     Lernarrangement,
     SharedProduct,
 )
-from .assets import Asset, AssetProvenance, IntentionallyFlawed, MediaPolicy
+from .assets import (
+    Asset,
+    AssetLane,
+    AssetProvenance,
+    ImageLintFinding,
+    ImageLintReport,
+    IntentionallyFlawed,
+    MediaPolicy,
+)
 from .datasets import DataRef, Dataset, SourceRef
 from .texts import AnnotatedText, Annotation, TextSourceRef
+from .image_sources import (
+    ImageAnnotation,
+    ImageSource,
+    ImageSourceRef,
+    ReproductionRights,
+    WorkRights,
+)
 from .blocks import (
     Block,
     BlockBase,
@@ -70,7 +85,10 @@ __all__ = [
     "SharedProduct",
     "CompetenceAnchor",
     "Asset",
+    "AssetLane",
     "AssetProvenance",
+    "ImageLintFinding",
+    "ImageLintReport",
     "IntentionallyFlawed",
     "MediaPolicy",
     "DataRef",
@@ -79,6 +97,11 @@ __all__ = [
     "AnnotatedText",
     "Annotation",
     "TextSourceRef",
+    "ImageAnnotation",
+    "ImageSource",
+    "ImageSourceRef",
+    "ReproductionRights",
+    "WorkRights",
     "Block",
     "BlockBase",
     "ContentFlags",

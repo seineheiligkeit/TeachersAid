@@ -15,7 +15,7 @@ from teachersaid.pipeline import figstyle as fs
 from teachersaid.pipeline.assets import GENERATION_RECIPES, build_asset
 from teachersaid.pipeline.figtext import overlap_pairs
 from teachersaid.pipeline.labeled_diagram import VULKAN_SPEC, labeled_parts_scene
-from teachersaid.pipeline.scene import Label, Line, PointMark, render_scene
+from teachersaid.pipeline.scene import Label, Line, PointMark, RasterImage, render_scene
 from teachersaid.schema.assets import Asset
 
 
@@ -90,6 +90,34 @@ def test_unknown_shape_kind_raises():
     with pytest.raises(ValueError):
         labeled_parts_scene({"shapes": [{"kind": "trapezoid", "points": [[0, 0], [1, 1]]}],
                              "parts": []})
+
+
+def test_vetted_raster_background_keeps_code_authored_callouts(tmp_path):
+    from PIL import Image
+
+    source = tmp_path / "flower.png"
+    Image.new("RGB", (80, 60), (236, 231, 218)).save(source)
+    spec = {
+        "figsize": (5.5, 4.0),
+        "background": {"path": str(source), "extent": [0, 8, 0, 6]},
+        "parts": [
+            {"at": [2.0, 3.0], "name": "Kronblatt", "side": "left"},
+            {"at": [5.5, 3.0], "name": "Staubblatt", "side": "right"},
+        ],
+    }
+    scene = labeled_parts_scene(spec, show_names=False)
+    assert sum(isinstance(layer, RasterImage) for layer in scene.layers) == 1
+    assert _labels(scene) == ["1", "2"]
+    assert sum(isinstance(layer, PointMark) for layer in scene.layers) == 2
+    assert sum(isinstance(layer, Line) for layer in scene.layers) == 2
+    render_scene(scene, __import__("matplotlib.pyplot").pyplot.subplots()[1])
+
+
+def test_raster_background_requires_explicit_extent_and_resolved_path():
+    with pytest.raises(ValueError, match="extent"):
+        labeled_parts_scene({"background": {"path": "x.png"}, "parts": []})
+    with pytest.raises(ValueError, match="resolved"):
+        labeled_parts_scene({"background": {"extent": [0, 1, 0, 1]}, "parts": []})
 
 
 # --- integration: build_asset, vocabulary, layout -----------------------------

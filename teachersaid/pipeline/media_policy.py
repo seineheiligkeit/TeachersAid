@@ -3,15 +3,18 @@
 The load-bearing product principle: the platform *consolidates a human-vetted
 library*, it does not live-generate. So discipline about asset sources is a
 **library-entry gate, not a generation ban**. The durable invariant this gate
-enforces (the 3-class table in `Documents/schema-roadmap-v0.4-v0.5.md`):
+enforces three claim lanes (`Documents/illustration-design.md`):
 
     content-bearing visuals must be CORRECT  → code-generated (correct by
         construction, beats review) or vetted-sourced (external file + rights);
+    depictive visuals carry one declared, SME-checkable intended claim and no
+        baked-in text, labels, numbers or task structure;
     decorative visuals must be CONTENT-FREE  → then any source (incl. diffusion,
         vetted once) is fine.
 
 `MediaPolicy` is the per-subject config: per medium, it partitions asset *roles*
-into `must_be_code` / `must_be_sourced` / `diffusion_ok`. `check_content` runs in
+into `must_be_code` / `must_be_sourced` / `depictive_ok` / `diffusion_ok`.
+`check_content` runs in
 `verify` (the one rules place every entry path passes through), so a mis-sourced
 content asset — or a decorative asset masquerading as content — blocks library
 entry exactly like any other verify problem. It also *steers generation*: an LLM
@@ -20,6 +23,9 @@ may only request the code recipes (`GENERATION_RECIPES`), which are the
 
 Adding a `diffusion:` backend (the SME's image-gen agent, Phase 4 #4) needs no
 change here: this gate already *admits* a decorative, content-free diffusion asset.
+Agent-time generations additionally pass `origin="synthetic"` to `check_asset`,
+so a materialised file cannot conceal a generated source. Synthetic content is
+always rejected.
 """
 from __future__ import annotations
 
@@ -46,6 +52,10 @@ DEFAULT_MEDIA_POLICY = MediaPolicy(
             ],
             must_be_sourced=[
                 "photo", "photograph", "source", "artwork", "map", "scan", "screenshot",
+            ],
+            depictive_ok=[
+                "depiction", "depictive", "backdrop", "scene_illustration",
+                "object_illustration", "anatomy_base", "apparatus_base",
             ],
             diffusion_ok=[
                 "decoration", "decorative", "mascot", "motif", "icon", "illustration",
@@ -80,9 +90,12 @@ def _backend(generator: str | None) -> str | None:
     return generator.split(":", 1)[0] if generator else None
 
 
-def classify_source(asset: Asset) -> str:
+def classify_source(asset: Asset, *, origin: str | None = None) -> str:
     """How the asset is produced: 'code' (correct-by-construction backend),
-    'diffusion' (image-gen), 'sourced' (external file + provenance), or 'none'."""
+    'diffusion' (runtime image-gen), 'synthetic' (agent-time image-gen),
+    'sourced' (external file + provenance), or 'none'."""
+    if origin == "synthetic":
+        return "synthetic"
     backend = _backend(asset.generator)
     if backend in CODE_BACKENDS:
         return "code"
@@ -100,7 +113,12 @@ def _entry(policy: MediaPolicy, medium) -> MediaPolicyEntry | None:
     return None
 
 
-def check_asset(asset: Asset, policy: MediaPolicy = DEFAULT_MEDIA_POLICY) -> tuple[list[str], list[str]]:
+def check_asset(
+    asset: Asset,
+    policy: MediaPolicy = DEFAULT_MEDIA_POLICY,
+    *,
+    origin: str | None = None,
+) -> tuple[list[str], list[str]]:
     """Gate one asset against the policy. Returns (problems, warnings): a problem
     blocks library entry (the invariant is violated); a warning flags something a
     human should classify but doesn't block."""
@@ -111,14 +129,25 @@ def check_asset(asset: Asset, policy: MediaPolicy = DEFAULT_MEDIA_POLICY) -> tup
         warnings.append(f"asset '{asset.id}': no media policy for medium '{asset.medium}'")
         return problems, warnings
 
-    role, src = asset.role, classify_source(asset)
+    role, src = asset.role, classify_source(asset, origin=origin)
+    declared_lane = asset.lane
     if role in entry.must_be_code:
+        if declared_lane not in (None, "content"):
+            problems.append(
+                f"asset '{asset.id}': content role '{role}' cannot declare lane "
+                f"'{declared_lane}'"
+            )
         if src != "code":
             problems.append(
                 f"asset '{asset.id}': content role '{role}' must be code-generated "
                 f"(correct by construction), but its source is '{src}'"
             )
     elif role in entry.must_be_sourced:
+        if declared_lane not in (None, "content"):
+            problems.append(
+                f"asset '{asset.id}': content role '{role}' cannot declare lane "
+                f"'{declared_lane}'"
+            )
         if src != "sourced":
             problems.append(
                 f"asset '{asset.id}': content role '{role}' must be sourced "
@@ -129,16 +158,38 @@ def check_asset(asset: Asset, policy: MediaPolicy = DEFAULT_MEDIA_POLICY) -> tup
                 f"asset '{asset.id}': sourced '{role}' has unverified rights "
                 f"'{asset.provenance.rights}'"
             )
-    elif role in entry.diffusion_ok:
-        # decorative: any source is fine, but it must carry NO content claim
+    elif role in entry.depictive_ok or declared_lane == "depictive":
+        if not (asset.intended_claim or "").strip():
+            problems.append(
+                f"asset '{asset.id}': depictive lane requires an intended_claim"
+            )
         if asset.correctness_surface or asset.intentionally_flawed:
+            problems.append(
+                f"asset '{asset.id}': depictive pixels may carry only the declared "
+                "intended_claim, never a correctness/flaw task surface"
+            )
+        if src == "sourced" and asset.provenance.rights not in VETTED_RIGHTS:
+            problems.append(
+                f"asset '{asset.id}': sourced depictive asset has unverified rights "
+                f"'{asset.provenance.rights}'"
+            )
+    elif role in entry.diffusion_ok or declared_lane == "decorative":
+        # decorative: any source is fine, but it must carry NO content claim
+        if asset.intended_claim or asset.correctness_surface or asset.intentionally_flawed:
             problems.append(
                 f"asset '{asset.id}': decorative role '{role}' must be content-free, "
                 f"but it carries a correctness/flaw claim"
             )
+    elif declared_lane == "content":
+        # Unknown content roles still cannot use generated/unvetted pixels.
+        if src in {"diffusion", "synthetic", "none"}:
+            problems.append(
+                f"asset '{asset.id}': content lane hard-rejects generated/unvetted "
+                f"source '{src}'"
+            )
     else:
         # role not covered by the policy: fine if already vetted, else flag for triage
-        if src in ("diffusion", "none"):
+        if src in ("diffusion", "synthetic", "none"):
             warnings.append(
                 f"asset '{asset.id}': role '{role}' is not covered by the media policy "
                 f"and its source '{src}' is unvetted — classify it"

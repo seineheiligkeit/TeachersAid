@@ -116,6 +116,12 @@ def _render_all(item_id: str, content) -> RenderArtifacts:
         for a in content.assets
         if a.generator and not a.generator.startswith("audio:")  # audio isn't a PDF image
     }
+    # Optional warmth/source files enter a projection only after their independent
+    # asset review.  Content carries stable ids; this boundary resolves approved
+    # durable files without teaching the pure renderer about stores or policy.
+    from ..store.assetstore import AssetStore
+    assets.update({record.id: Path(record.file) for record in AssetStore().approved()
+                   if record.file})
     student = render_student_sheet(content, out / "student.pdf", assets)
     teacher = render_teacher_guide(content, out / "teacher.pdf", assets)
     homework = render_homework(content, out / "homework.pdf", assets)
@@ -455,7 +461,8 @@ def ingest_scope_variant(
 
 def ingest_asset(
     asset_store, asset, *, klass: str, tags=None, source: str = "ai",
-    status: str = "in_review", file=None,
+    status: str = "in_review", file=None, generation=None,
+    candidate_set_id: str | None = None, candidate_index: int | None = None,
 ):
     """Bring a file-backed asset (decorative or sourced) into the asset library
     (Phase 4 #4). Runs the media-policy gate first — a decorative asset must be
@@ -464,12 +471,23 @@ def ingest_asset(
     in for a sourced external file) and stores a LibraryAsset for review + reuse."""
     import shutil
 
-    from ..store.assetstore import KLASSES, LibraryAsset
+    from ..store.assetstore import GenerationRecord, KLASSES, LibraryAsset
+    from .image_lint import lint_image
     from .media_policy import check_asset
 
     if klass not in KLASSES:
         raise ValueError(f"unknown asset class {klass!r} (expected one of {KLASSES})")
-    problems, _ = check_asset(asset)
+    generation_record = (
+        GenerationRecord.model_validate(generation) if generation is not None else None
+    )
+    if generation_record is not None and klass == "sourced":
+        raise ValueError("synthetic generation cannot be recorded as sourced")
+    if klass == "depictive" and asset.lane != "depictive":
+        raise ValueError("depictive file-backed assets must declare asset.lane='depictive'")
+    if klass == "decorative" and asset.lane not in (None, "decorative"):
+        raise ValueError("decorative file-backed assets cannot declare another claim lane")
+    problems, _ = check_asset(
+        asset, origin=generation_record.origin if generation_record else None)
     if problems:
         raise ValueError("media policy: " + "; ".join(problems))
 
@@ -482,9 +500,32 @@ def ingest_asset(
         build_asset(asset, outdir=asset_store.files_dir)
         dest = asset_store.files_dir / f"{asset.id}.png"
 
+    preflight = None
+    if dest and dest.suffix.lower() in {".png", ".jpg", ".jpeg", ".webp", ".gif"}:
+        generator = asset.generator or ""
+        if generator.startswith("svg:banner"):
+            default_min = (900, 40)
+        elif generator.startswith(("svg:badge", "svg:motif")):
+            default_min = (220, 220)
+        elif asset.role in {"backdrop", "background"}:
+            default_min = (900, 300)
+        elif asset.lane == "depictive":
+            default_min = (600, 300)
+        else:
+            default_min = (240, 120)
+        preflight = lint_image(
+            dest,
+            min_width=int(asset.spec.get("min_width_px", default_min[0])),
+            min_height=int(asset.spec.get("min_height_px", default_min[1])),
+            alpha_expectation=asset.spec.get("alpha_expectation", "either"),
+            attempt_text_heuristic=(generation_record is not None or asset.lane == "depictive"),
+        )
+
     la = LibraryAsset(
         id=asset.id, asset=asset, klass=klass, tags=list(tags or []),
         file=str(dest) if dest else None, source=source, status=status,
+        generation=generation_record, preflight=preflight,
+        candidate_set_id=candidate_set_id, candidate_index=candidate_index,
     )
     return asset_store.upsert(la)
 
@@ -694,6 +735,31 @@ def approve_content(store: ReviewStore, item_id: str, *, block_store=None) -> Re
     item = store.get(item_id)
     if item is None or item.stage != "content":
         raise KeyError(f"no content item '{item_id}'")
+    # A content review cannot silently bless an unreviewed file-backed dependency.
+    # This covers optional Realie warmth, a theme vignette, and hybrid raster bases.
+    referenced: set[str] = set()
+    if item.content is not None:
+        if item.content.theme_asset:
+            referenced.add(item.content.theme_asset)
+        for block in item.content.iter_blocks():
+            ref = getattr(block, "backdrop_asset_ref", None)
+            if ref:
+                referenced.add(ref)
+        for asset in item.content.assets:
+            background = (asset.spec or {}).get("background") or {}
+            if background.get("asset_id"):
+                referenced.add(str(background["asset_id"]))
+    if referenced:
+        from ..store.assetstore import AssetStore
+        assets = AssetStore()
+        unapproved = [asset_id for asset_id in sorted(referenced)
+                      if (assets.get(asset_id) is None
+                          or assets.get(asset_id).status != "approved")]
+        if unapproved:
+            raise ValueError(
+                "file-backed dependencies require separate SME approval: "
+                + ", ".join(unapproved)
+            )
     item.status = "approved"  # enters the representable-material library
     store.append_feedback(item_id, "approve")
     item = store.save(item)

@@ -57,8 +57,17 @@ def _prompt_for(kind: str, ann) -> str:
     return ann.label    # comprehension/grammar/culture/erwartungshorizont: label is the question
 
 
-def build_worksheet(at: AnnotatedText, *, today: date | None = None):
-    """An AnnotatedText → (WorksheetContent, LehrplanResolution), assemble-ready."""
+def build_worksheet(
+    at: AnnotatedText,
+    *,
+    today: date | None = None,
+    theme_asset: str | None = None,
+):
+    """An AnnotatedText → (WorksheetContent, LehrplanResolution), assemble-ready.
+
+    ``theme_asset`` is an explicitly selected, SME-approved file-backed decorative asset id.
+    There is deliberately no automatic image selection in this deterministic derivation path.
+    """
     from ..grounding import lehrplan_store as ls
     from .resolve import resolve_grade
 
@@ -88,7 +97,8 @@ def build_worksheet(at: AnnotatedText, *, today: date | None = None):
     is_realie = at.scene is not None
     blocks.append(InfoBlock(
         id="text", kind="source_text", content=at.text, modality=transcript_modality,
-        numbered=not is_realie, teacher_note=None, watch_outs=[], asset_refs=[]))
+        numbered=not is_realie, teacher_note=None, watch_outs=[], asset_refs=[],
+        backdrop_asset_ref=at.backdrop_asset if is_realie else None))
     # a constructed Realie has no source (invented-coherent fiction) → no Quelle line.
     if at.source is not None:
         blocks.append(InfoBlock(id="quelle", kind="prose", modality=transcript_modality,
@@ -152,5 +162,5 @@ def build_worksheet(at: AnnotatedText, *, today: date | None = None):
         meta=meta, subject_model=ls.get_subject_model(at.subject),
         intro=[InfoBlock(id="intro", kind="prose", content=intro)],
         sections=[Baustein(id="text-arbeit", title=at.title, blocks=blocks)],
-        assets=content_assets)
+        assets=content_assets, theme_asset=theme_asset)
     return content, res

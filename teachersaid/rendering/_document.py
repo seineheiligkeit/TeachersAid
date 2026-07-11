@@ -121,7 +121,10 @@ def build_pdf(
         title=content.meta.title + _TITLE_SUFFIX.get(projection, ""),
     )
     story = []
-    story.append(rb.para(content.meta.title + _TITLE_SUFFIX.get(projection, ""), S["title"]))
+    rendered_title = content.meta.title + _TITLE_SUFFIX.get(projection, "")
+    theme_path = assets.get(content.theme_asset) if content.theme_asset else None
+    story.append(rb.title_with_vignette(rendered_title, S["title"], width, theme_path)
+                 if theme_path else rb.para(rendered_title, S["title"]))
     if content.meta.subtitle:                     # genre label (e.g. "Übungsreihe — …")
         story.append(rb.para(content.meta.subtitle, S["subtitle"]))
     story.append(rb.para(content.meta.lehrplan_label, S["subtitle"]))

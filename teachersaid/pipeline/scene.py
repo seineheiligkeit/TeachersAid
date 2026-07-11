@@ -153,6 +153,21 @@ class Label:
 
 
 @dataclass
+class RasterImage:
+    """A vetted bitmap used as a background beneath code-authored overlays.
+
+    ``extent`` follows matplotlib's (left, right, bottom, top) convention.  This
+    primitive deliberately carries no labels, arrows, or inferred coordinates:
+    those remain ordinary Scene layers so task-bearing meaning stays inspectable.
+    """
+    path: str
+    extent: tuple[float, float, float, float]
+    alpha: float = 1.0
+    z: int = 0
+    group: str | None = None
+
+
+@dataclass
 class Node:
     """A boxed text label — the node-link vocabulary's node (cause/effect/process boxes) and its
     edge chips (a tree's white p-label). Drawn via `ax.text` with a rounded bbox, exactly as the
@@ -239,7 +254,11 @@ def render_scene(scene: Scene, ax) -> None:
     if scene.canvas.aspect != "auto":
         ax.set_aspect(scene.canvas.aspect)
     for L in scene.layers:
-        if isinstance(L, Region):
+        if isinstance(L, RasterImage):
+            image = plt.imread(L.path)
+            ax.imshow(image, extent=L.extent, origin="upper", alpha=L.alpha,
+                      interpolation="antialiased", zorder=L.z)
+        elif isinstance(L, Region):
             xs = [p[0] for p in L.points]
             ys = [p[1] for p in L.points]
             ax.fill(xs, ys, facecolor=fs.region_fill(_color(L.role), L.alpha),

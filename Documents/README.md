@@ -26,6 +26,8 @@ rules. *(Maintained by hand — add a line here when you add a doc; see CLAUDE.m
 | [`history-facts-provenance-design.md`](history-facts-provenance-design.md) | Expression provenance (GPB) — original/adapted/quoted, rights gates, the machinery Sachverhalt reuses. |
 | [`tts-audio-engine.md`](tts-audio-engine.md) | The F5-TTS audio backend + voice library (built; open items in §7). |
 | [`illustration-design.md`](illustration-design.md) | **The image program** (accepted 5 Jul 2026, not built): image = claim + rendering; decorative/depictive/content lanes; Flux backend; Beschriftungs-hybrid. |
+| [`illustration-style-contract.md`](illustration-style-contract.md) | The versioned agent-time generation prefix, print-first warmth, age register, seductive-details limits, and best-of-N review contract. |
+| [`external-experiment-report-images.md`](external-experiment-report-images.md) | Wave B implementation report: gates, candidates, prompts, staged flagships, binary sync paths, and SME decisions still open. |
 | [`schema-roadmap-v0.4-v0.5.md`](schema-roadmap-v0.4-v0.5.md) | Schema version roadmap (v0.4 fields + v0.5 Lernarrangement — both implemented; kept as the design record). |
 | [`oberstufe-roadmap.md`](oberstufe-roadmap.md) | The Sek-II expansion map (Phase 0/1 built; the rest is opportunity inventory). |
 | [`master-library-plan.md`](master-library-plan.md) | The quality bar (blackboard test) + per-subject coverage plan. |

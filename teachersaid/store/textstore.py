@@ -29,6 +29,7 @@ class TextRecord(BaseModel):
             "id": self.id, "title": t.title, "author": s.author if s else "—",
             "genre": t.genre, "klasse": t.klasse, "subject": t.subject, "medium": t.medium,
             "origin": t.origin, "cefr": t.cefr, "scene": t.scene,   # Realien tags
+            "backdrop_asset": t.backdrop_asset,
             "rights_basis": s.rights_basis if s else None,
             "author_death_year": s.author_death_year if s else None,
             "attribution": s.attribution if s else ("Eigenproduktion (konstruiert)"

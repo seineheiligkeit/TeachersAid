@@ -33,7 +33,8 @@ from __future__ import annotations
 
 from . import figstyle as fs
 from .figtext import measure_widths
-from .scene import Canvas, CircleShape, Label, Line, PointMark, Polyline, Region, Scene
+from .scene import (Canvas, CircleShape, Label, Line, PointMark, Polyline, RasterImage,
+                    Region, Scene)
 
 
 # --- shapes: spec dicts → scene primitives ------------------------------------
@@ -70,7 +71,8 @@ def _shape_layers(shapes: list[dict]) -> list:
     return layers
 
 
-def _shape_bbox(shapes: list[dict], parts: list[dict]) -> tuple[float, float, float, float]:
+def _shape_bbox(shapes: list[dict], parts: list[dict],
+                background: dict | None = None) -> tuple[float, float, float, float]:
     xs: list[float] = []
     ys: list[float] = []
     for s in shapes:
@@ -88,6 +90,12 @@ def _shape_bbox(shapes: list[dict], parts: list[dict]) -> tuple[float, float, fl
     for p in parts:
         xs.append(float(p["at"][0]))
         ys.append(float(p["at"][1]))
+    if background:
+        extent = background.get("extent")
+        if not extent or len(extent) != 4:
+            raise ValueError("labeled_parts background needs extent [left,right,bottom,top]")
+        xs += [float(extent[0]), float(extent[1])]
+        ys += [float(extent[2]), float(extent[3])]
     if not xs:
         raise ValueError("labeled_parts needs at least one shape or part")
     return min(xs), min(ys), max(xs), max(ys)
@@ -128,7 +136,8 @@ def labeled_parts_scene(spec: dict, *, show_names: bool | None = None) -> Scene:
     parts = spec.get("parts") or []
     if show_names is None:
         show_names = bool(spec.get("show_names", True))
-    x0, y0, x1, y1 = _shape_bbox(shapes, parts)
+    background = spec.get("background")
+    x0, y0, x1, y1 = _shape_bbox(shapes, parts, background)
     bw, bh = (x1 - x0) or 1.0, (y1 - y0) or 1.0
     figsize = tuple(spec.get("figsize") or (6.2, 4.8))
     size = fs.TYPE.annot if show_names else fs.TYPE.annot_lg
@@ -172,6 +181,12 @@ def labeled_parts_scene(spec: dict, *, show_names: bool | None = None) -> Scene:
 
     sc = Scene(canvas=Canvas(figsize=figsize, aspect="equal", frame="off",
                              xlim=xlim, ylim=ylim))
+    if background:
+        path = background.get("path")
+        if not path:
+            raise ValueError("labeled_parts background must be resolved to a file path")
+        sc.add(RasterImage(str(path), tuple(float(v) for v in background["extent"]),
+                           alpha=float(background.get("alpha", 1.0))))
     sc.add(*_shape_layers(shapes))
     zbase = 40                                       # callouts above every shape
     for idx, p, side, text in entries:
@@ -228,5 +243,27 @@ VULKAN_SPEC: dict = {
         {"at": [6.93, 3.54], "name": "Lavastrom", "side": "right"},
         {"at": [6.0, 7.8], "name": "Aschewolke", "side": "right"},
         {"at": [3.35, 3.6], "name": "Vulkankegel", "side": "left"},
+    ],
+}
+
+
+# Wave-B hybrid flagship: generated pixels provide only the botanical depiction;
+# these curated anchors, numbering and answer names remain deterministic code.
+# The referenced file stays independently SME-gated in AssetStore.
+FLOWER_HYBRID_SPEC: dict = {
+    "title": "Aufbau einer Blüte (vereinfachtes Modell)",
+    "figsize": (7.2, 5.2),
+    "background": {
+        "asset_id": "img-bio-flower-cutaway",
+        "extent": [0, 12, 0, 8],
+    },
+    "parts": [
+        {"at": [2.6, 5.1], "name": "Kronblatt", "side": "left"},
+        {"at": [2.9, 2.8], "name": "Kelchblatt", "side": "left"},
+        {"at": [4.0, 5.8], "name": "Staubbeutel", "side": "left"},
+        {"at": [6.0, 6.3], "name": "Narbe", "side": "right"},
+        {"at": [6.0, 4.6], "name": "Griffel", "side": "right"},
+        {"at": [6.0, 2.3], "name": "Fruchtknoten", "side": "right"},
+        {"at": [6.45, 2.15], "name": "Samenanlage", "side": "right"},
     ],
 }

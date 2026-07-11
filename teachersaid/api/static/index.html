@@ -174,6 +174,7 @@ function korpusShellHTML(v){
       <div id="detail" class="card"><p class="muted">Wähle links ein Arrangement.</p></div>
     </div>`;
   if(v==="abbildungen") return `
+    <div class="card"><p class="muted"><b>Bildprogramm:</b> dekorativ = inhaltsfrei; darstellend = ein angegebener, pr&uuml;fbarer Bildanspruch ohne Text oder Beschriftung; inhaltlich = Code oder gepr&uuml;fte Quelle. Bei Kandidatens&auml;tzen w&auml;hlst du genau eine Variante.</p></div>
     <div class="card"><h2>Bibliotheks-Assets — Dekoration & Quellen</h2>
       <p class="muted">Datei-basierte Assets: <b>dekorativ</b> (inhaltsfrei, wiederverwendbar — svg/Code jetzt, Diffusion wenn das Bild-Agent angebunden ist) oder <b>extern mit Quelle/Rechten</b>. Hier prüfst und gibst du sie frei. Die Medien-Policy lässt nur inhaltsfreie Deko aus beliebiger Quelle zu.</p>
       <div id="asset-lib" class="gallery"><p class="muted">lädt…</p></div></div>
@@ -459,7 +460,7 @@ async function actBlock(id,kind){ await jpost(`/api/blocks/${id}/${kind}`,{}); s
 async function approveAllBlocks(){ await jpost("/api/blocks/approve-all",{}); setTimeout(refresh,200); }
 
 /* ---------- Abbildungen (asset-review gallery) ---------- */
-async function renderAssetLib(){
+async function renderAssetLibLegacy(){
   if(!$("#asset-lib")) return;
   const lib = await jget("/api/asset-library");
   if(!lib.length){ $("#asset-lib").innerHTML = `<p class="muted">Noch keine Bibliotheks-Assets — <code>python -m teachersaid seed</code> lädt das Deko-Kit.</p>`; return; }
@@ -473,6 +474,53 @@ async function renderAssetLib(){
       <div class="meta"><span class="pill s-${a.status}">${a.status}</span> <span class="badge">${esc(a.klass)}</span> <code>${esc(a.generator||a.role)}</code></div>
       <div class="meta">${(a.tags||[]).map(t=>`<span class="badge">${esc(t)}</span>`).join("")}</div>
       ${acts}${feedbackMini("asset", a.id)}</div>`;
+  }).join("");
+}
+async function renderAssetLib(){
+  if(!$("#asset-lib")) return;
+  const lib = await jget("/api/asset-library");
+  if(!lib.length){ $("#asset-lib").innerHTML = `<p class="muted">Noch keine Bibliotheks-Assets.</p>`; return; }
+  const groups = new Map();
+  lib.forEach(a=>{
+    const key = a.candidate_set_id || `single:${a.id}`;
+    if(!groups.has(key)) groups.set(key,[]);
+    groups.get(key).push(a);
+  });
+  $("#asset-lib").innerHTML = [...groups.entries()].map(([key,items])=>{
+    items.sort((a,b)=>(a.candidate_index||0)-(b.candidate_index||0));
+    const grouped = !key.startsWith("single:");
+    const first = items[0], claim = first.intended_claim;
+    const checklist = first.lane==="depictive"
+      ? `<p class="muted"><b>Pr&uuml;fcheck:</b> Anspruch plausibel? Keine Anachronismen oder Anatomiefehler? Kein Text, keine Zahlen, Pfeile oder beschriftbaren Teile im Pixelbild?</p>`
+      : `<p class="muted"><b>Pr&uuml;fcheck:</b> Wirklich inhaltsfrei? Hausstil? Relevanz und ruhige Platzierung?</p>`;
+    const cards = items.map(a=>{
+      const findings = (a.preflight&&a.preflight.findings)||[];
+      const blocking = findings.some(f=>f.severity==="error");
+      const lint = !a.preflight
+        ? `<div class="meta">Keine automatische Raster-Vorpr&uuml;fung</div>`
+        : (findings.length
+          ? `<div class="meta gap">Vorpr&uuml;fung: ${findings.map(f=>esc(f.message)).join(" &middot; ")}</div>`
+          : `<div class="meta cov">Vorpr&uuml;fung ohne Befund</div>`);
+      const action = a.status==="in_review"
+        ? `${blocking?'<span class="gap"><b>Vor Freigabe korrigieren</b></span>':`<button class="ok" onclick="actAsset('${a.id}','${grouped?'select':'approve'}')">${grouped?'Diese Variante w&auml;hlen':'Freigeben'}</button>`}<button class="bad" onclick="actAsset('${a.id}','reject')">Ablehnen</button>`
+        : (a.status==="approved"?`<span class="cov"><b>Ausgew&auml;hlt</b></span>`:"");
+      return `<div class="tile">
+        ${grouped?`<div class="meta"><b>Kandidat ${a.candidate_index}</b></div>`:""}
+        <img src="/api/asset-library/${encodeURIComponent(a.id)}/file" alt="${esc(a.id)}" loading="lazy" onerror="this.style.display='none'">
+        ${a.caption?`<div style="font-size:12px;margin-top:6px">${esc(a.caption)}</div>`:""}
+        <div class="meta"><span class="pill s-${a.status}">${a.status}</span> <span class="badge">${esc(a.lane||a.klass)}</span> <code>${esc(a.generator||a.role)}</code></div>
+        ${lint}<div class="row" style="margin-top:6px">${action}</div>${feedbackMini("asset",a.id)}</div>`;
+    }).join("");
+    if(!grouped) return cards;
+    const gen = first.generation;
+    const provenance = gen ? `<details class="muted"><summary>Generierungsnachweis</summary>
+      <p>${esc(gen.generator)} / ${esc(gen.model)} &middot; ${esc(gen.date)} &middot; replayable: ${gen.replayable?'ja':'nein'}</p>
+      <p><b>Prompt:</b> ${esc(gen.prompt)}</p><p><b>Negativ:</b> ${esc(gen.negative_prompt||'--')}</p></details>` : "";
+    const rejectAll = items.some(a=>a.status==="in_review")
+      ? `<button class="bad" onclick="actAsset('${first.id}','reject-set')">Keine Variante w&auml;hlen</button>` : "";
+    return `<div class="card" style="grid-column:1/-1"><div class="row between"><h3>Kandidatensatz ${esc(key)} (${items.length})</h3>${rejectAll}</div>
+      ${claim?`<p><b>Bildanspruch:</b> ${esc(claim)}</p>`:""}${provenance}${checklist}
+      <div class="gallery">${cards}</div></div>`;
   }).join("");
 }
 async function actAsset(id,kind){ await jpost(`/api/asset-library/${id}/${kind}`,{}); renderAssetLib(); }

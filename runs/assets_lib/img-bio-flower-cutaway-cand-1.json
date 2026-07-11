@@ -1,0 +1,63 @@
+{
+  "id": "img-bio-flower-cutaway-cand-1",
+  "asset": {
+    "id": "img-bio-flower-cutaway-cand-1",
+    "role": "anatomy_base",
+    "lane": "depictive",
+    "intended_claim": "Stylized longitudinal section of one generalized bisexual flower, showing petals, sepals, stamens, and a continuous central pistil with stigma, style, ovary, and ovules.",
+    "medium": "visual",
+    "generator": null,
+    "spec": {
+      "min_width_px": 600,
+      "min_height_px": 300,
+      "alpha_expectation": "opaque"
+    },
+    "correctness_surface": null,
+    "misleading_in_isolation": false,
+    "intentionally_flawed": null,
+    "machine_generatable": true,
+    "provenance": null,
+    "data_source": null,
+    "illustrative": true,
+    "caption": "Wave-B image-program candidate; not approved until SME selection."
+  },
+  "klass": "depictive",
+  "tags": [
+    "biology",
+    "flower",
+    "labeled_parts",
+    "hybrid",
+    "depictive"
+  ],
+  "file": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\assets_lib\\files\\img-bio-flower-cutaway-cand-1.png",
+  "generation": {
+    "origin": "synthetic",
+    "generator": "OpenAI built-in image generation",
+    "model": "built-in image model (identifier not exposed)",
+    "prompt": "Use case: scientific-educational\nAsset type: hybrid labeled-parts base illustration candidate 1 of 3\nPrimary request: a simplified longitudinal cutaway of one generalized bisexual flower for lower-secondary biology, without any labels\nSubject: one central pistil with a clearly visible stigma at top, slender style, and rounded ovary at the base containing a few ovules; a ring of stamens with distinct filaments and anthers; broad petals outside them; green sepals below the petals; short receptacle and stem\nStyle/medium: locked TeachersAid editorial illustration v1; clean flat vector-like educational illustration, minimal soft shading, subtle uncoated-paper texture, diagrammatically clear rather than photorealistic\nComposition/framing: single flower centered on an off-white field, frontal longitudinal cutaway, bilateral visual balance, each major structure separated by whitespace and easy to point to with code-authored leader lines\nColor palette: off-white #f4f1ea, navy #1f3a52, slate #33506e and #4f6f8f, restrained rust #b5651d, botanical green #2e6b3a, muted petal coral\nOutput intent: vetted depictive base only; code will add all numbers, leaders, and names\nScientific constraints: show exactly one coherent flower, one pistil, plausible radial arrangement of stamens, petals outside stamens, sepals outside/below petals, ovary continuous with style; no detached or duplicated organs\nConstraints: no text; no letters; no numbers; no labels; no callout lines; no arrows; no legend; no watermark; no logo; no decorative insects; no background scene",
+    "negative_prompt": "No readable text, letters, numbers, labels, captions, signs, logos, brands, watermarks, arrows, charts, maps, formulae, task data, photorealistic people, real-person likenesses, copyrighted characters, neon colours, heavy gradients, clutter, or decorative details unrelated to the requested context.",
+    "style_prefix": "TeachersAid house illustration, version v1. Flat to lightly shaded editorial illustration for Austrian AHS learners aged 10 to 14; friendly, calm and precise without looking childish or corporate; clear silhouettes, restrained detail, generous whitespace, print-first composition; Central-European context when a setting is implied. Use the house palette: ink #1f3a52 and #33506e, warm accent #b5651d, green #2e6b3a, muted blue #4f6f8f, paper #f4f1ea.",
+    "date": "2026-07-11",
+    "reproducibility_parameters": {
+      "mode": "built-in",
+      "candidate_index": 1,
+      "seed_available": false
+    },
+    "replayable": false
+  },
+  "preflight": {
+    "width": 1536,
+    "height": 1024,
+    "mode": "RGB",
+    "grayscale_span": 139,
+    "grayscale_stddev": 46.05,
+    "findings": [],
+    "text_check": "edge_density:0.047"
+  },
+  "candidate_set_id": "bio-flower-cutaway-v1",
+  "candidate_index": 1,
+  "status": "in_review",
+  "source": "ai",
+  "created_at": "2026-07-11T10:26:24+00:00",
+  "updated_at": "2026-07-11T10:26:24+00:00"
+}

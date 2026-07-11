@@ -49,6 +49,8 @@ class InfoBlock(BlockBase):
     watch_outs: list[str] = Field(default_factory=list)
     numbered: bool = True  # source_text: line numbers (poems/fables, so tasks ref "Zeile N").
     # False = a real-artifact card (a Realie menu/board reads as itself, not an exercise text).
+    # File-backed, SME-approved atmosphere for that card. It never replaces task-bearing text.
+    backdrop_asset_ref: str | None = None
 
     @field_validator("content", "teacher_note")
     @classmethod

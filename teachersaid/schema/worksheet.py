@@ -71,6 +71,9 @@ class WorksheetContent(BaseModel):
     intro: list[Block] = Field(default_factory=list)
     sections: list[Baustein] = Field(default_factory=list)
     assets: list[Asset] = Field(default_factory=list)
+    # At most one small, decorative header vignette. This is an id into the SME-approved,
+    # file-backed asset library; the renderer receives the resolved path and otherwise omits it.
+    theme_asset: str | None = None
     nachweis: Nachweis | None = None  # DERIVED at assemble
     depth_profile: DepthProfile | None = None  # DERIVED at assemble
     rack: ThreadRack | None = None

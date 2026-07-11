@@ -135,8 +135,9 @@ def _info_flowables(b: InfoBlock, projection: str, S, width, assets, citations=N
         txt = b.content if isinstance(b.content, str) else plain_text(b.content)
         # a Realie (numbered=False) renders as a real-artifact card; an authentic text keeps its
         # line numbers (tasks reference "Zeile N").
+        backdrop = assets.get(b.backdrop_asset_ref) if b.backdrop_asset_ref else None
         out.append(rb.numbered_text(txt, S["body"], width) if b.numbered
-                   else rb.material_card(txt, S["body"], width))
+                   else rb.material_card(txt, S["body"], width, backdrop=backdrop))
     else:
         out.append(rb.para(b.content, S["body"]))
 
@@ -246,9 +247,11 @@ def _task_flowables(b: TaskBlock, projection: str, S, width, assets, number, cit
         for ref in b.solution_asset_refs:
             p = assets.get(ref)
             if p:
-                out.append(rb.para("Lösungsraster:" if b.kind == "puzzle" else
-                                   "Lösungsabbildung:", S["label"]))
-                out.append(_image(p, width * 0.75))
+                out.append(KeepTogether([
+                    rb.para("Lösungsraster:" if b.kind == "puzzle" else
+                            "Lösungsabbildung:", S["label"]),
+                    _image(p, width * 0.75),
+                ]))
         dims = ", ".join(b.dimensions)
         serves = ", ".join(f"{s.competence_id} ({s.relation})" for s in b.serves)
         # only an EXPLICIT difficulty prints (a delivered ramp band / SME estimate);
@@ -303,7 +306,14 @@ def block_flowables(block, projection, S, width, assets, number=None, citations=
     else:
         fl = _task_flowables(block, projection, S, width, assets, number, citations)
     fl.append(rb.spacer(2.5))
-    return [KeepTogether(fl)] if block.role == Role.TASK else fl
+    # A teacher projection can contain the student figure plus a distinct solution
+    # figure. Keeping that entire sequence indivisible creates an orphan heading and
+    # nearly blank page; allow this explicitly multi-figure review block to paginate.
+    splittable_teacher_solution = (
+        block.role == Role.TASK and projection == "teacher"
+        and bool(getattr(block, "solution_asset_refs", None))
+    )
+    return [KeepTogether(fl)] if block.role == Role.TASK and not splittable_teacher_solution else fl
 
 
 def should_render(block, projection: str) -> bool:

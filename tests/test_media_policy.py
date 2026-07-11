@@ -52,6 +52,22 @@ def test_decorative_must_be_content_free():
         intentionally_flawed=IntentionallyFlawed(what="wrong on purpose")))[0]
 
 
+def test_depictive_lane_requires_checkable_claim_and_allows_synthetic():
+    base = Asset(id="flower", role="depiction", lane="depictive",
+                 intended_claim="Shows a stylised sunflower blossom without labels")
+    assert not check_asset(base, origin="synthetic")[0]
+    assert check_asset(Asset(id="empty", role="depiction", lane="depictive"),
+                       origin="synthetic")[0]
+    assert check_asset(Asset(id="wrong-lane", role="figure", lane="depictive",
+                             intended_claim="A data figure"), origin="synthetic")[0]
+
+
+def test_synthetic_pixels_are_hard_rejected_for_content_even_with_unknown_role():
+    asset = Asset(id="smuggled", role="new_content_role", lane="content")
+    problems, _ = check_asset(asset, origin="synthetic")
+    assert problems and "hard-rejects" in problems[0]
+
+
 def test_uncovered_role_warns_only_when_unvetted():
     p, w = check_asset(Asset(id="m", role="meme", generator="diffusion:sdxl"))
     assert not p and w  # unknown role + unvetted source → triage warning, not a block

@@ -7,12 +7,18 @@ may be diffusion; the boundary is per-subject (MediaPolicy). `intentionally_flaw
 
 from __future__ import annotations
 
-from typing import Literal
+from typing import Literal, TypeAlias
 
 from pydantic import BaseModel, ConfigDict, Field
 
 from .datasets import DataRef
 from .enums import Medium
+
+
+# The visual claim lane is orthogonal to how a file was produced.  ``None`` is
+# retained on Asset for backwards compatibility; media_policy deterministically
+# infers the lane from the role for older corpus records.
+AssetLane: TypeAlias = Literal["decorative", "depictive", "content"]
 
 
 class AssetProvenance(BaseModel):  # v0.4 B4
@@ -29,10 +35,36 @@ class IntentionallyFlawed(BaseModel):  # v0.4 B3
     what: str  # what is wrong, and why it must stay wrong
 
 
+class ImageLintFinding(BaseModel):
+    """One deterministic raster pre-review finding."""
+    model_config = ConfigDict(extra="forbid")
+    code: str
+    severity: Literal["warning", "error"] = "warning"
+    message: str
+
+
+class ImageLintReport(BaseModel):
+    """Stored pre-review evidence; factual image review remains human."""
+    model_config = ConfigDict(extra="forbid")
+    width: int
+    height: int
+    mode: str
+    grayscale_span: int
+    grayscale_stddev: float
+    findings: list[ImageLintFinding] = Field(default_factory=list)
+    text_check: str = "manual_required"
+
+    @property
+    def passed(self) -> bool:
+        return not any(f.severity == "error" for f in self.findings)
+
+
 class Asset(BaseModel):
     model_config = ConfigDict(extra="forbid")
     id: str
     role: str  # e.g. "figure", "dataset"
+    lane: AssetLane | None = None
+    intended_claim: str | None = None  # required for depictive assets
     medium: Medium = Medium.VISUAL  # v0.4 B4
     generator: str | None = None  # e.g. "matplotlib:em_spectrum"
     spec: dict = Field(default_factory=dict)  # generator-specific parameters
@@ -54,6 +86,7 @@ class MediaPolicyEntry(BaseModel):
     model_config = ConfigDict(extra="forbid")
     medium: Medium
     diffusion_ok: list[str] = Field(default_factory=list)
+    depictive_ok: list[str] = Field(default_factory=list)
     must_be_code: list[str] = Field(default_factory=list)
     must_be_sourced: list[str] = Field(default_factory=list)
     machine_generatable: bool = True

@@ -17,7 +17,7 @@ from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import mm
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
-from reportlab.platypus import Paragraph, Spacer, Table, TableStyle
+from reportlab.platypus import Image, Paragraph, Spacer, Table, TableStyle
 
 from ..schema.richtext import RichText, to_runs
 
@@ -195,6 +195,43 @@ def raw_para(markup: str, style: ParagraphStyle) -> Paragraph:
     return Paragraph(markup, style)
 
 
+def _fitted_image(path: str | Path, max_width: float, max_height: float) -> Image:
+    """Load an image without distortion and fit it inside a print-safe box."""
+    image = Image(str(path))
+    scale = min(max_width / image.imageWidth, max_height / image.imageHeight, 1.0)
+    image.drawWidth = image.imageWidth * scale
+    image.drawHeight = image.imageHeight * scale
+    return image
+
+
+def title_with_vignette(
+    title: str,
+    title_style: ParagraphStyle,
+    width: float,
+    asset_path: str | Path,
+) -> Table:
+    """One small decorative image in the title zone.
+
+    The single worksheet-level slot is also the density cap: the image cannot multiply across
+    blocks, and missing/unresolved file-backed assets are handled by the caller as no vignette.
+    """
+    image_box = 34 * mm
+    vignette = _fitted_image(asset_path, image_box, 20 * mm)
+    table = Table(
+        [[Paragraph(html.escape(title), title_style), vignette]],
+        colWidths=[width - image_box, image_box],
+    )
+    table.setStyle(TableStyle([
+        ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
+        ("ALIGN", (1, 0), (1, 0), "RIGHT"),
+        ("LEFTPADDING", (0, 0), (-1, -1), 0),
+        ("RIGHTPADDING", (0, 0), (-1, -1), 0),
+        ("TOPPADDING", (0, 0), (-1, -1), 0),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 0),
+    ]))
+    return table
+
+
 def ruled_lines(n: int, width: float, gap_mm: float = 8.0) -> Table:
     """n answer lines as a borderless table with bottom rules."""
     rows = [[""] for _ in range(n)]
@@ -242,7 +279,12 @@ def numbered_text(text: str, body_style: ParagraphStyle, width: float) -> Table:
     return t
 
 
-def material_card(text: str, body_style: ParagraphStyle, width: float) -> Table:
+def material_card(
+    text: str,
+    body_style: ParagraphStyle,
+    width: float,
+    backdrop: str | Path | None = None,
+) -> Table:
     """A Realie (menu / departure board / sign) as a real ARTIFACT: a light bordered, padded card
     with the text's line breaks preserved and NO line numbers — so it reads as itself, not as an
     exercise text. (Authentic texts with line refs use `numbered_text` instead.) The first non-blank
@@ -253,6 +295,10 @@ def material_card(text: str, body_style: ParagraphStyle, width: float) -> Table:
     lines = text.split("\n")
     first = next((i for i, ln in enumerate(lines) if ln.strip()), None)
     rows = []
+    if backdrop is not None:
+        # The backdrop is a content-free, SME-approved atmosphere band inside the same artifact
+        # card. Task-bearing menu/timetable data remains live text below it, never baked into pixels.
+        rows.append([_fitted_image(backdrop, width - 24, 32 * mm)])
     for i, ln in enumerate(lines):
         if not ln.strip():
             rows.append([Spacer(1, 3)])                       # blank line → a small gap

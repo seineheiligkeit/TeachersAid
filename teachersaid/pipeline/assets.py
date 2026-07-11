@@ -26,6 +26,7 @@ import matplotlib
 matplotlib.use("Agg")  # headless
 import matplotlib.pyplot as plt  # noqa: E402
 from matplotlib.patches import Circle  # noqa: E402
+from PIL import Image as PILImage  # noqa: E402
 
 from ..config import RUNS_DIR  # noqa: E402
 from ..schema.assets import Asset  # noqa: E402
@@ -58,6 +59,28 @@ def _generator(gid: str):
         _GENERATORS[gid] = fn
         return fn
     return _register
+
+
+@_generator("file:raster")
+def _file_raster(asset: Asset, path: Path) -> None:
+    """Materialise one already-vetted raster for the pure PDF renderer.
+
+    This is deliberately not a generation backend: the source file enters through
+    the ImageSource/AssetStore rights gate.  Here it is only converted to the PNG
+    hand-off format used by every other visual recipe.
+    """
+    source = Path(str(asset.spec.get("path") or ""))
+    if not source.is_file():
+        raise ValueError(f"asset {asset.id}: sourced raster not found: {source}")
+    with PILImage.open(source) as image:
+        rendered = image.convert("RGB")
+        # Keep the archival source byte-for-byte in ImageSourceStore; the worksheet
+        # hand-off is a print-sized derivative.  Embedding a 34 MP museum scan three
+        # times would otherwise turn a two-page worksheet into a 70 MB PDF.
+        max_px = int(asset.spec.get("render_long_edge_px", 1400))
+        if max(rendered.size) > max_px:
+            rendered.thumbnail((max_px, max_px), PILImage.Resampling.LANCZOS)
+        rendered.save(path, format="PNG", dpi=(150, 150), optimize=True)
 
 
 def _outdir() -> Path:
@@ -1178,7 +1201,17 @@ def _labeled_parts(asset: Asset, path: Path) -> None:
     and answer key cannot drift). spec: {shapes, parts, show_names? (false → numbered task,
     true → named solution), title?, figsize?}; empty spec → the curated volcano flagship."""
     from .labeled_diagram import VULKAN_SPEC, labeled_parts_scene
-    s = asset.spec or {}
+    s = dict(asset.spec or {})
+    background = dict(s.get("background") or {})
+    if background.get("asset_id") and not background.get("path"):
+        from ..store.assetstore import AssetStore
+        record = AssetStore().get(str(background["asset_id"]))
+        if record is None or not record.file:
+            raise ValueError(
+                f"labeled_parts background asset {background['asset_id']!r} has no durable file"
+            )
+        background["path"] = record.file
+        s["background"] = background
     spec = s if (s.get("shapes") or s.get("parts")) else {**VULKAN_SPEC, **s}
     scene_to_png(labeled_parts_scene(spec), path)
 

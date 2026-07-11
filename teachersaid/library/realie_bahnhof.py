@@ -29,6 +29,7 @@ Please keep your luggage with you at all times.
 Need help? Ask at the Information Desk near Platform 1."""
 
 BAHNHOF = AnnotatedText(
+    backdrop_asset="img-realie-bahnhof-backdrop",
     id="fs1-realie-bahnhof", title="At the station", subject="Erste lebende Fremdsprache",
     klasse=2, genre="Fahrplan (departure board)", textsorte="Realie",
     text=_BOARD, scene="Am Bahnhof", cefr="A2", origin="constructed",   # constructed → no source

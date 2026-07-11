@@ -36,6 +36,7 @@ Open every day, morning till evening · Free Wi-Fi
 Thank you, and enjoy your visit!"""
 
 CAFE = AnnotatedText(
+    backdrop_asset="img-realie-cafe-backdrop",
     id="fs1-realie-cafe", title="At the café", subject="Erste lebende Fremdsprache",
     klasse=2, genre="Speisekarte (café menu)", textsorte="Realie",
     text=_MENU, scene="Im Café", cefr="A2", origin="constructed",   # constructed → no source
