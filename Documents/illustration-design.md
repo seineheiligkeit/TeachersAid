@@ -1,7 +1,7 @@
 # Illustrations — design for the image program (decorative · depictive · sourced)
 
 **Status: design accepted by the SME (5 Jul 2026); build not started.** This document governs the
-illustration *program*; `diffusion-handover.md` remains the operative batch-brief for the existing
+illustration *program*; `archive/diffusion-handover.md` remains the operative batch-brief for the existing
 decorative lane and gets extended when the local backend lands. Companion decisions live in
 `feature-roadmap.md` "▶ Start here (5 Jul 2026)" Wave B.
 
@@ -106,7 +106,7 @@ contexts (Realien!), abstractions, modern everyday scenes, warmth.
   a recipe spec. Same spec → same image: generation is reproducible, the asset is *spec + vetted
   artifact*, provenance is total. (The `runs/` split holds: spec JSON in git, PNG binary ignored,
   rebuildable from the spec.)
-- **The illustration style contract — `figstyle`'s twin.** The `diffusion-handover.md` palette is the
+- **The illustration style contract — `figstyle`'s twin.** The `archive/diffusion-handover.md` palette is the
   seed; grow it into: a fixed style-prompt prefix + standing negative prompts, the figstyle roles as
   the palette, flat/lightly-shaded look, Austrian/Central-European context where a setting is implied,
   and a **specimen sheet** (`tools/illustration_specimen.py`, like the scene specimens) that renders
@@ -161,7 +161,7 @@ students must replicate (exactness → scene engine) · photorealistic humans, e
 
 **What already exists and is reused untouched:** the `diffusion:` dispatch seam +
 `DiffusionNotConfigured` · `media_policy` (gains one lane in P3) · `AssetStore` + ingest gate + the
-Abbildungen tab (gains the grid picker) · the decorative kit + `diffusion-handover.md` manifest (stays
+Abbildungen tab (gains the grid picker) · the decorative kit + `archive/diffusion-handover.md` manifest (stays
 valid; the batch-agent path remains an alternative to the local backend).
 
 ## 11 · Open decisions for the SME (before/at P1)

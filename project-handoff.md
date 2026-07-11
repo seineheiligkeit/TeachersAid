@@ -487,6 +487,26 @@ target language for Fremdsprache). Read this, then the docs in the order given i
 > `evaluate`-labelled closed-format tasks reading as band 2, and open high-text-load tasks reading a band
 > up) is the first place authored `difficulty` labels would pay off — which is the real fix.
 
+> **Update (Session 17, 11 Jul 2026): both waves merged · the idea pass for the NEXT program · docs
+> tidied.** (a) The external agent's **Wave B image program** (reviewed clean: depictive lane, honest
+> `GenerationRecord` provenance, raster preflight, best-of-N review, Commons/`ImageSource` with the
+> Isabey flagship c0200, the `RasterImage` Beschriftungs-hybrid c0201) and the five supervised Opus
+> **Wave C** tracks (C1 prerequisite graph · C2 entity registry · C3 ÜT-Projektwoche · C4 advisory
+> difficulty · C5 dramaturgy design doc) merged in one pass; one integration fix (C4's LaTeX cleanup:
+> grouping braces → parentheses). Suite **783 passed, 1 skipped**; pushed. (b) A free **brainstorm with
+> per-idea SME verdicts** produced the next program — headline decisions: the **three-tier anchoring**
+> frame shift (competence | ÜT | honest „Horizont"); the **Tiefenregler/Mischpult** as flagship
+> (teacher-tuned depth faders over ONE master; the per-class simultaneous-level Zwillinge variant was
+> REJECTED for classroom-sorting stigma — levers yes, levels no); greenlights for Fermi-Werkstatt,
+> Fehlersuche, Messdaten-Werkstatt, Beweis-Puzzles, Kontrafaktik, Finanzführerschein, Wahl-Werkstatt,
+> Alltagsdokumente, Gesundheits-DATEN (hard data only — no health preaching), the physicist's corner
+> (Sternkarten!) and the MUS/KUG/TED/BUS openings; design-first parking for Manipulations-Museum,
+> Schularbeiten-Generator, KI-Bildung and the whole Lernarrangement family (dedicated future session).
+> Full verdict ledger: the rewritten **`Documents/feature-roadmap.md`**. (c) Docs cleanup: the built-out
+> 26 Jun–10 Jul roadmap + both executed external-agent handovers + the pre-Wave-B diffusion briefs +
+> the executed audit/schema-roadmap moved to `Documents/archive/`; README map + CLAUDE.md pointers
+> updated.
+
 ---
 
 ## 0 · Orientation (the 30-second version)

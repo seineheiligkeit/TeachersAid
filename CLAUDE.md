@@ -116,10 +116,14 @@ numbers <120 and years skipped; **advisory lane** — doubles as the anti-rot ch
   `intentionally_flawed` assets are built **wrong on purpose and never "fixed"**. A **decorative kit**
   (`svg:badge/banner/motif`, content-free, rasterised via PyMuPDF — no extra dep) ships. The
   **`diffusion:` backend seam** exists: `register_diffusion_backend(fn)`; `build_asset` dispatches
-  `diffusion:*`; offline → `DiffusionNotConfigured`, no silent slop. Batch-agent brief:
-  `Documents/diffusion-handover.md`; the **illustration program** (accepted, not built: image = claim +
-  rendering, a third `depictive` media-policy lane, local Flux backend, the Beschriftungs-hybrid):
-  **`Documents/illustration-design.md`**.
+  `diffusion:*`; offline → `DiffusionNotConfigured`, no silent slop. The **illustration program is
+  BUILT** (Wave B, 11 Jul 2026 — image = claim + rendering; the third `depictive` media-policy lane +
+  mandatory `intended_claim`; agent-time generation → file-backed assets with honest
+  `GenerationRecord` provenance; raster preflight lints; best-of-N review; the Beschriftungs-hybrid
+  via the `RasterImage` scene layer): design **`Documents/illustration-design.md`**, style contract
+  `Documents/illustration-style-contract.md`, report `Documents/external-experiment-report-images.md`
+  (superseded batch briefs live in `Documents/archive/`). The local-Flux backend + style LoRA remain
+  the workhorse-PC future.
 - **Asset library:** `store/assetstore.py::AssetStore` holds the **file-backed** classes (decorative +
   sourced) with tags/status/reuse; `orch.ingest_asset` gates + materialises + stores;
   `library/decorative.py::seed_assets`. Code-gen content assets stay as **specs on blocks** (rebuildable).
@@ -454,7 +458,8 @@ auto-selected per subject; strands served via `sach_dimension`/`urteil_dimension
 ≥1 `role="facts"` source + entity-lint clean. Breadth seam: `tools/sachverhalt_prompt.py` +
 `tools/ingest_sachverhalte.py`. Registry: `library/sachverhalte.py`.
 
-*(Planned next: **PD Bildquellen** — roadmap B5; the **illustration program** — `illustration-design.md`.)*
+*(PD Bildquellen (B5) + the illustration program are BUILT — see Figures & assets. Planned next:
+the 11 Jul idea-pass program — `Documents/feature-roadmap.md`.)*
 
 ## Master library, blocks, and composition
 

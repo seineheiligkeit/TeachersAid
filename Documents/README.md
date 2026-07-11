@@ -27,10 +27,9 @@ rules. *(Maintained by hand — add a line here when you add a doc; see CLAUDE.m
 | [`realien-design.md`](realien-design.md) | CEFR-leveled communicative FS reading — *purpose-appropriate rigor* ("invent the timetable, vet the French"). |
 | [`history-facts-provenance-design.md`](history-facts-provenance-design.md) | Expression provenance (GPB) — original/adapted/quoted, rights gates, the machinery Sachverhalt reuses. |
 | [`tts-audio-engine.md`](tts-audio-engine.md) | The F5-TTS audio backend + voice library (built; open items in §7). |
-| [`illustration-design.md`](illustration-design.md) | **The image program** (accepted 5 Jul 2026, not built): image = claim + rendering; decorative/depictive/content lanes; Flux backend; Beschriftungs-hybrid. |
+| [`illustration-design.md`](illustration-design.md) | **The image program** (accepted 5 Jul, BUILT 11 Jul 2026 — Wave B): image = claim + rendering; decorative/depictive/content lanes; Beschriftungs-hybrid. Flux/LoRA = workhorse future. |
 | [`illustration-style-contract.md`](illustration-style-contract.md) | The versioned agent-time generation prefix, print-first warmth, age register, seductive-details limits, and best-of-N review contract. |
 | [`external-experiment-report-images.md`](external-experiment-report-images.md) | Wave B implementation report: gates, candidates, prompts, staged flagships, binary sync paths, and SME decisions still open. |
-| [`schema-roadmap-v0.4-v0.5.md`](schema-roadmap-v0.4-v0.5.md) | Schema version roadmap (v0.4 fields + v0.5 Lernarrangement — both implemented; kept as the design record). |
 | [`oberstufe-roadmap.md`](oberstufe-roadmap.md) | The Sek-II expansion map (Phase 0/1 built; the rest is opportunity inventory). |
 | [`master-library-plan.md`](master-library-plan.md) | The quality bar (blackboard test) + per-subject coverage plan. |
 
@@ -43,15 +42,12 @@ rules. *(Maintained by hand — add a line here when you add a doc; see CLAUDE.m
 | [`matura-calibration.md`](matura-calibration.md) | cognitive_level → AFB → difficulty, calibrated against the exam archive (model holds). |
 | `matura-{math,deutsch,latein,languages}-coverage.md` | Per-subject Matura demand maps (from the full-archive extraction). |
 | [`platform-definition.md`](platform-definition.md) | Positioning — "what we are and deliberately are not". **Dormant by decision** (build-for-joy); retained for a possible later phase. |
-| [`subject-coverage-audit.md`](subject-coverage-audit.md) | Unterstufe subject-model audit against the schema (forced `modality` + audio). |
 | [`architecture-review.md`](architecture-review.md) | The no-rewrite verdict + the three sequenced moves (two done; SQLite awaits a trigger). |
 
 ## 🤖 Agent briefs (self-contained contracts for a sub/external agent)
 
 | doc | for |
 |---|---|
-| [`diffusion-handover.md`](diffusion-handover.md) | The SME's image-gen agent — decorative, content-free assets (the operative batch brief; the wider program is `illustration-design.md`). |
-| [`diffusion-figures-handover.md`](diffusion-figures-handover.md) | The content-figure diffusion **experiment** (data-collection brief; not the live path — the illustration program's hard lines supersede its ambitions). |
 | [`uebungsreihe-upgrade-brief.md`](uebungsreihe-upgrade-brief.md) | The chemistry Übungsreihen upgrade (executed — c0167–c0169 approved; kept as the genre-framing reference). |
 
 ## 📖 Worked-content companions (German, SME-curated)
@@ -68,6 +64,12 @@ rules. *(Maintained by hand — add a line here when you add a doc; see CLAUDE.m
 | `archive/lehrplan-bundle-schema.md` | Schema **v0.1** — superseded by v0.3. |
 | `archive/lehrplan-bundle-schema-v0.2.md` | Schema **v0.2** — superseded by v0.3. |
 | `archive/project-handoff (1).md` | A stray Session-2 snapshot of the root handoff (says so itself); the root `project-handoff.md` is the live one. |
+| `archive/feature-roadmap-2026-06--07.md` | The 26 Jun – 10 Jul roadmap — essentially all built (Waves A·B·C + the tracks); superseded by the live plan. |
+| `archive/schema-roadmap-v0.4-v0.5.md` | v0.4 + v0.5 both implemented; the design record. |
+| `archive/diffusion-handover.md` · `archive/diffusion-figures-handover.md` | The pre-Wave-B diffusion briefs — superseded by the BUILT illustration program (`illustration-design.md`). |
+| `archive/subject-coverage-audit.md` | One-time Unterstufe subject-model audit — executed; findings absorbed into the subject models. |
+| `archive/handover-roadmap-leftovers.md` · `archive/handover-image-program.md` | The two external-agent briefs — both executed and merged (reports: `external-experiment-report*.md`). |
+| `archive/external-experiment-report.md` | The first external-agent report (nets/variants/boxplot/ANNO/BIO+Bezirk) — merged history. The images report stays top-level while its SME decisions + Drive sync are open. |
 | [`implementation-notes.md`](implementation-notes.md) | The first-implementation snapshot (design↔code map). **Largely superseded by CLAUDE.md**; kept in place because the handoff references it. |
 | [`dashboard-review.md`](dashboard-review.md) | Dashboard structuring notes — predates the four-station rework; historical. |
 
