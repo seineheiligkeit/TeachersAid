@@ -31,6 +31,7 @@ from PIL import Image as PILImage  # noqa: E402
 from ..config import RUNS_DIR  # noqa: E402
 from ..schema.assets import Asset  # noqa: E402
 from . import figstyle as fs  # noqa: E402  — the styleguide: semantic roles, ramps, house font
+from .astro import moon_phase_scene, star_chart_scene  # noqa: E402
 from .calculus import (area_between_scene, distribution_scene, extrema_scene,  # noqa: E402
                        function_scene, integral_scene, riemann_scene, tangent_scene)
 from .circuits import circuit_construction  # noqa: E402
@@ -609,6 +610,29 @@ def _process_flow(asset: Asset, path: Path) -> None:
 
     Composed on the scene engine (`nodelink.process_scene`)."""
     scene_to_png(process_scene(asset.spec or {}), path, dpi=150)
+
+
+@_generator("matplotlib:star_chart")
+def _star_chart(asset: Asset, path: Path) -> None:
+    """A computed evening-sky finder chart (the Sternkarten-Engine). Star positions are
+    SELECTED from the curated bright-star catalog (`grounding/astro`) and the visible
+    sky is COMPUTED by plain spherical astronomy (`pipeline/astro`): date/time/location
+    → sidereal time → alt-az → azimuthal projection with a horizon ring (N/O/S/W).
+    Marker size ← apparent magnitude; asterism lines carry the figstyle family (hue+dash,
+    B/W-safe). Star and constellation labels are MASKABLE (off by default — a "Welches
+    Sternbild ist das?" task never prints the answer). See `pipeline/astro.star_chart_scene`
+    for the full spec."""
+    scene_to_png(star_chart_scene(asset.spec or {}), path, dpi=170)
+
+
+@_generator("matplotlib:moon_phase")
+def _moon_phase(asset: Asset, path: Path) -> None:
+    """A correctly-shaped Moon disk. The illuminated fraction is either COMPUTED from a
+    date (Meeus phase, exact to the day) or given directly; the terminator is the exact
+    projected half-ellipse, and a WAXING moon is lit on the RIGHT (northern-hemisphere
+    orientation). The phase name is maskable (show_label=False → "?"). See
+    `pipeline/astro.moon_phase_scene`."""
+    scene_to_png(moon_phase_scene(asset.spec or {}), path, dpi=170)
 
 
 def _geo_centroid(geom: dict) -> tuple[float, float]:
@@ -1635,6 +1659,22 @@ GENERATION_RECIPES: dict[str, str] = {
         'Klimadiagramm (Monats-Temperatur als Linie + Niederschlag als Balken, zwei Achsen) — '
         'spec {"months"?:[12 str],"temp":[12 num],"precip":[12 num],"title"?:str}. '
         'Echte Klimadaten zitieren (data_source), sonst illustrative=true.',
+    "matplotlib:star_chart":
+        'Sternkarte (der sichtbare Abendhimmel) — spec {"date"?:"JJJJ-MM-TT","time"?:"HH:MM",'
+        '"utc_offset"?:num (Std., Standard +1 = MEZ),"lat"?:num,"lon"?:num (Standard Wien),'
+        '"mag_limit"?:num (Standard 4,5),"show_star_labels"?:bool,"show_constellation_labels"?:bool '
+        '(beide standardmäßig MASKIERT — eine „Welches Sternbild ist das?"-Aufgabe verrät nichts),'
+        '"highlight"?:str (Sternbild-Kürzel, hervorgehoben),"show_moon"?:bool,"title"?}. '
+        'Sternpositionen sind FAKTEN aus dem kuratierten Katalog (grounding/astro); der sichtbare '
+        'Himmel wird aus Datum/Zeit/Ort BERECHNET (Sternzeit → Horizontsystem → azimutale '
+        'Projektion mit Horizontkreis N/O/S/W). Markergröße ← Helligkeit.',
+    "matplotlib:moon_phase":
+        'Mondphase (korrekt geformte Mondscheibe) — spec {"date"?:"JJJJ-MM-TT" (+utc_offset) '
+        '→ Phase BERECHNET, ODER "illuminated_fraction":num (0..1)+"waxing":bool direkt vorgegeben,'
+        '"show_label"?:bool (false → „?" als Aufgabe),"phase_name"?:str,"title"?}. '
+        'Zunehmender Mond ist RECHTS beleuchtet (Nordhalbkugel); der Terminator ist die exakte '
+        'projizierte Halbellipse zum beleuchteten Anteil. Der beleuchtete Anteil wird aus dem '
+        'Datum BERECHNET (Meeus, taggenau) — nichts erfunden.',
 }
 
 

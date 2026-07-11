@@ -16,6 +16,7 @@ if __name__ == "__main__":
         from .library import (
             seed_arrangements,
             seed_assets,
+            seed_astronomy,
             seed_blocks,
             seed_datasets,
             seed_history,
@@ -56,6 +57,10 @@ if __name__ == "__main__":
         txs = seed_textsorten()
         print(f"\nStaged {len(txs)} Textsorten-Scaffold(s) als Inhalt "
               f"({', '.join(t.title for t in txs)} — im Inhalte-Tab prüfen).")
+        astro = seed_astronomy()
+        print(f"\nStaged {len(astro)} Astronomie-Blätter (Sternkarten-Engine) als Inhalt "
+              f"({', '.join(a.id for a in astro)} — Mondphasen [Kompetenz] + Sternenhimmel "
+              "[Horizont], im Inhalte-Tab prüfen).")
         print("\nRun 'python -m teachersaid' and open the dashboard to review them.")
         sys.exit(0)
 
