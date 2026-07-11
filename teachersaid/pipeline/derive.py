@@ -12,6 +12,7 @@ from collections import defaultdict
 from ..schema.competence import SubjectCompetenceModel, printable_coverage
 from ..schema.derived import CompetenceCoverage, DepthProfile, Nachweis
 from ..schema.enums import CoverageRelation, Role
+from ..schema.enums import AnchorMode
 from ..schema.worksheet import LehrplanResolution, WorksheetContent
 
 __all__ = ["compute_depth", "derive_nachweis", "printable_coverage"]
@@ -66,6 +67,54 @@ def derive_nachweis(
             else:
                 prereq[s.competence_id].append(b.id)
 
+    if content.anchor_mode == AnchorMode.HORIZONT:
+        return Nachweis(
+            fassung=resolution.fassung.model_dump(),
+            anchor_mode=AnchorMode.HORIZONT,
+            anchor_label="Horizont — freiwillige Vertiefung",
+            statement=(
+                "Diese Materialien sind ausdrücklich als Horizont ausgewiesen: "
+                "freiwillige Vertiefung nach Wahl der Lehrkraft, über den Lehrplan "
+                "hinaus. Es wird kein Lehrplan-Kompetenzbezug behauptet."
+            ),
+        )
+
+    if content.anchor_mode == AnchorMode.UET:
+        from ..grounding import lehrplan_store as ls
+
+        number = content.anchor_uet
+        label = ls.uebergreifende_themen(content.meta.stufe).get(number, f"ÜT {number}")
+        by_id = {c.id: c for c in resolution.competences}
+        served_ids = list(dict.fromkeys(list(exercised) + list(prereq)))
+        coverage = [CompetenceCoverage(
+            competence_id=cid,
+            exercised_by=exercised.get(cid, []),
+            prerequisite_by=prereq.get(cid, []),
+            covered=bool(exercised.get(cid)),
+        ) for cid in served_ids]
+        secondary = sum(c.covered for c in coverage)
+        statement = (
+            f"Diese Materialien sind primär über das übergreifende Thema ÜT {number} "
+            f"„{label}“ verankert — ein verbatim Lehrplan-Hook, gebunden an "
+            f"{resolution.fassung.bgbl} (DokNr {resolution.fassung.doknr})."
+        )
+        if secondary:
+            statement += (
+                f" Zusätzlich werden {secondary} ausdrücklich referenzierte "
+                "Fachkompetenz(en) geübt; daraus wird kein Vollständigkeitsanspruch abgeleitet."
+            )
+        return Nachweis(
+            fassung=resolution.fassung.model_dump(),
+            anchor_mode=AnchorMode.UET,
+            anchor_label=f"ÜT {number}: {label}",
+            statement=statement,
+            competence_coverage=coverage,
+            gaps=[],
+            zentrale_konzepte=sorted({by_id[cid].kompetenzbereich
+                                      for cid in served_ids if cid in by_id}),
+            uebergreifende_themen=[number],
+        )
+
     universe = {c.id: c for c in resolution.competences}
     # include any served competence not in the resolution universe (defensive)
     for cid in list(exercised) + list(prereq):
@@ -101,6 +150,8 @@ def derive_nachweis(
     )
     return Nachweis(
         fassung=resolution.fassung.model_dump(),
+        anchor_mode=AnchorMode.COMPETENCE,
+        anchor_label="Lehrplan-Kompetenzen",
         statement=statement,
         competence_coverage=coverage,
         gaps=gaps,

@@ -17,6 +17,7 @@ from ..schema.worksheet import (
     LehrplanResolution,
     ResolvedCompetence,
 )
+from ..schema.enums import AnchorMode
 
 
 def _matches_topic(kompetenzbereich: str, topic_raw: str) -> bool:
@@ -84,6 +85,44 @@ def resolve(req: BundleRequest, *, today: date | None = None) -> LehrplanResolut
         return LehrplanResolution(
             fassung=fassung, subject=req.subject, klasse=req.klasse,
             grade_check=False, competences=[], notes=notes,
+        )
+
+    if req.anchor_mode == AnchorMode.HORIZONT:
+        notes.append(
+            "Verankerungsmodus Horizont: ausdrücklich freiwillige Vertiefung nach "
+            "Wahl der Lehrkraft; es wird kein Lehrplan-Kompetenzbezug behauptet."
+        )
+        return LehrplanResolution(
+            fassung=fassung, subject=req.subject, klasse=req.klasse,
+            grade_check=True, competences=[], notes=notes,
+        )
+
+    if req.anchor_mode == AnchorMode.UET:
+        legend = store.uebergreifende_themen(stufe)
+        label = legend.get(req.anchor_uet)
+        if label is None:
+            notes.append(
+                f"Übergreifendes Thema {req.anchor_uet} ist im {stufe}-Katalog nicht definiert."
+            )
+            return LehrplanResolution(
+                fassung=fassung, subject=req.subject, klasse=req.klasse,
+                grade_check=False, competences=[], notes=notes,
+            )
+        matched = [c for c in all_for_grade if req.anchor_uet in c.uebergreifende_themen]
+        if not matched:
+            notes.append(
+                f"{req.subject} führt das übergreifende Thema „{label}“ in der "
+                f"{req.klasse}. Klasse nicht als verbatim Hook."
+            )
+        else:
+            notes.append(
+                f"ÜT {req.anchor_uet}: „{label}“ ist für {req.subject} in der "
+                f"{req.klasse}. Klasse verbatim im Katalog verankert."
+            )
+        return LehrplanResolution(
+            fassung=fassung, subject=req.subject, klasse=req.klasse,
+            matched_kompetenzbereiche=sorted({c.kompetenzbereich for c in matched}),
+            grade_check=bool(matched), competences=matched, notes=notes,
         )
 
     matched = [c for c in all_for_grade if _matches_topic(c.kompetenzbereich, req.topic_raw)]

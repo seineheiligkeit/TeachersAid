@@ -7,12 +7,13 @@ are never authored by the LLM (see generation_views).
 
 from __future__ import annotations
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 from .assets import Asset
 from .blocks import Block
 from .competence import SubjectCompetenceModel, SubjectCompetenceModelRef
 from .derived import DepthProfile, Nachweis
+from .enums import AnchorMode
 from .richtext import RichText
 from .verification import ThreadRack
 
@@ -71,12 +72,25 @@ class WorksheetContent(BaseModel):
     intro: list[Block] = Field(default_factory=list)
     sections: list[Baustein] = Field(default_factory=list)
     assets: list[Asset] = Field(default_factory=list)
+    # Primary trust claim. Existing corpus objects default to the historical
+    # competence lane; ÜT carries exactly one numbered legal hook; Horizont is
+    # explicit teacher-choice enrichment and makes no Lehrplan coverage claim.
+    anchor_mode: AnchorMode = AnchorMode.COMPETENCE
+    anchor_uet: int | None = Field(default=None, ge=1, le=13)
     # At most one small, decorative header vignette. This is an id into the SME-approved,
     # file-backed asset library; the renderer receives the resolved path and otherwise omits it.
     theme_asset: str | None = None
     nachweis: Nachweis | None = None  # DERIVED at assemble
     depth_profile: DepthProfile | None = None  # DERIVED at assemble
     rack: ThreadRack | None = None
+
+    @model_validator(mode="after")
+    def _anchor_fields_are_coherent(self):
+        if self.anchor_mode == AnchorMode.UET and self.anchor_uet is None:
+            raise ValueError("anchor_mode='uet' requires anchor_uet (1..13)")
+        if self.anchor_mode != AnchorMode.UET and self.anchor_uet is not None:
+            raise ValueError("anchor_uet is only valid with anchor_mode='uet'")
+        return self
 
     def iter_blocks(self):
         """All blocks across intro + sections, in document order."""
@@ -95,6 +109,16 @@ class BundleRequest(BaseModel):
     topic_raw: str
     envelope: str = "doppelstunde"  # einzelstunde | doppelstunde | block | custom
     options: dict = Field(default_factory=dict)
+    anchor_mode: AnchorMode = AnchorMode.COMPETENCE
+    anchor_uet: int | None = Field(default=None, ge=1, le=13)
+
+    @model_validator(mode="after")
+    def _anchor_fields_are_coherent(self):
+        if self.anchor_mode == AnchorMode.UET and self.anchor_uet is None:
+            raise ValueError("anchor_mode='uet' requires anchor_uet (1..13)")
+        if self.anchor_mode != AnchorMode.UET and self.anchor_uet is not None:
+            raise ValueError("anchor_uet is only valid with anchor_mode='uet'")
+        return self
 
 
 class ResolvedCompetence(BaseModel):

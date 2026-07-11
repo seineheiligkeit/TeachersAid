@@ -12,6 +12,7 @@ from ..llm.client import StructuredGenerator, default_generator
 from ..llm.prompts import build_system, build_user
 from ..schema.generation_views import GenWorksheetBody, body_to_canonical
 from ..schema.worksheet import LehrplanResolution, WorksheetContent, WorksheetMeta
+from ..schema.enums import AnchorMode
 from .plan import WorksheetPlan
 
 
@@ -21,14 +22,28 @@ def _meta(plan: WorksheetPlan, resolution: LehrplanResolution) -> WorksheetMeta:
         if resolution.matched_kompetenzbereiche
         else plan.topic
     )
+    if plan.anchor_mode == AnchorMode.UET:
+        label = store.uebergreifende_themen(store.stufe_for_klasse(resolution.klasse)).get(
+            plan.anchor_uet, f"ÜT {plan.anchor_uet}")
+        lehrplan_label = (
+            f"{resolution.subject} · {resolution.klasse}. Klasse · "
+            f"ÜT {plan.anchor_uet}: {label}"
+        )
+    elif plan.anchor_mode == AnchorMode.HORIZONT:
+        lehrplan_label = (
+            f"{resolution.subject} · {resolution.klasse}. Klasse · "
+            "Horizont — freiwillige Vertiefung außerhalb des Lehrplans"
+        )
+    else:
+        lehrplan_label = f"{resolution.subject} · {resolution.klasse}. Klasse · {kb}"
     return WorksheetMeta(
         title=plan.topic,
         subject=resolution.subject,
-        stufe="Unterstufe",
+        stufe=store.stufe_for_klasse(resolution.klasse),
         klasse=resolution.klasse,
         kernfrage=plan.kernfrage,
         fassung=resolution.fassung,
-        lehrplan_label=f"{resolution.subject} · {resolution.klasse}. Klasse · {kb}",
+        lehrplan_label=lehrplan_label,
     )
 
 
@@ -49,7 +64,7 @@ def generate_body(
     if subject_model is None:
         raise ValueError(f"no subject model for '{resolution.subject}'")
     gen = generator or default_generator()
-    system = build_system(subject_model)
+    system = build_system(subject_model, plan.anchor_mode)
     user = build_user(plan, resolution)
     if extra_notes:
         user += "\n\nReviewer feedback to address in this revision:\n" + "\n".join(
@@ -57,5 +72,6 @@ def generate_body(
         )
     body: GenWorksheetBody = gen.parse(system, user, GenWorksheetBody)
     return body_to_canonical(
-        body, meta=_meta(plan, resolution), subject_model=subject_model, assets=assets
+        body, meta=_meta(plan, resolution), subject_model=subject_model, assets=assets,
+        anchor_mode=plan.anchor_mode, anchor_uet=plan.anchor_uet,
     )

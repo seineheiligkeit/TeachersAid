@@ -8,6 +8,8 @@ from __future__ import annotations
 
 from pydantic import BaseModel, ConfigDict, Field
 
+from .enums import AnchorMode
+
 
 class DepthTarget(BaseModel):  # an INPUT to planning
     model_config = ConfigDict(extra="forbid")
@@ -36,6 +38,8 @@ class CompetenceCoverage(BaseModel):
 class Nachweis(BaseModel):  # DERIVED — deriveNachweis(content)
     model_config = ConfigDict(extra="forbid")
     fassung: dict
+    anchor_mode: AnchorMode = AnchorMode.COMPETENCE
+    anchor_label: str = "Lehrplan-Kompetenzen"
     statement: str = ""
     competence_coverage: list[CompetenceCoverage] = Field(default_factory=list)
     gaps: list[str] = Field(default_factory=list)  # competences with zero exercise

@@ -8,10 +8,11 @@ lives in `project-handoff.md` (dated session blocks); design *depth* lives in `D
 
 ## What this is
 
-**TeachersAid** — a **corpus-first generator of Austrian-Lehrplan-anchored teaching material** for AHS
-secondary schools. A teacher gives a topic + grade + time; the system **assembles** a competence-anchored
-bundle **from a curated, SME-gated corpus** — *correct by construction*, *provably competence-aligned*
-(the derived **Nachweis**) — and renders it to ready-to-use PDFs. **Offline-first** (the Session-11
+**TeachersAid** — a **corpus-first generator of honestly anchored teaching material** for AHS
+secondary schools. A teacher gives a topic + grade + time; the system **assembles** a bundle
+**from a curated, SME-gated corpus** — *correct by construction*, anchored as exactly one of
+**Lehrplan-Kompetenz · verbatim ÜT · honest Horizont beyond the Lehrplan** (the derived **Nachweis**)
+— and renders it to ready-to-use PDFs. **Offline-first** (the Session-11
 pivot — `project-handoff.md` §4, `Documents/invariants.md` §10): the LLM lives only in the **corpus
 loop** (campaign generation → lints → SME gate); the **delivery loop is deterministic and LLM-free**
 (serve a vetted sheet › compose from approved blocks › honest gap → demand queue; parametric/scene
@@ -32,7 +33,7 @@ rendering + the two-stage human-in-the-loop review dashboard).
 ```bash
 pip install -e .                       # deps: pydantic2, fastapi, uvicorn, anthropic, reportlab,
                                        #       matplotlib, pillow, pyyaml, pymupdf, sympy  (pytest for dev)
-python -m pytest -q                    # fully offline, no API key (783 tests)
+python -m pytest -q                    # fully offline, no API key (793 tests)
 python -m teachersaid seed             # seed the master-library examples into the review queue
 python -m teachersaid                  # dashboard → http://127.0.0.1:8000
 ```
@@ -92,13 +93,19 @@ entry-point signatures, the three projection rules, what's free to change — is
 
 | Step | Module | Nature |
 |---|---|---|
-| Resolve | `pipeline/resolve.py` | **deterministic** — verbatim competences + `grade_check` (the trust feature) against curated grounding; honest gap notes for anything uncurated |
+| Resolve | `pipeline/resolve.py` | **deterministic** — three-tier trust mode: verbatim competences + `grade_check`, exact numbered subject/grade ÜT hook, or explicit Horizont with zero competence claim; honest gap notes for anything uncurated |
 | Plan | `pipeline/plan.py` | mostly deterministic — envelope→minutes, block-spec skeleton + `DepthTarget` ladder. **The plan IS the idea-stage review artifact.** |
 | Generate | `pipeline/generate.py` + `llm/` | **LLM (corpus loop only — never in the delivery path; invariants §10)** — `messages.parse()` into a recursion-free generation view, then `to_canonical()` |
 | Assets | `pipeline/assets.py` | code-generated, correct-by-construction → see **Figures & assets** below |
 | Verify | `pipeline/verify.py` | rules: kinds/dimensions/coverage/depth/difficulty + the lint battery (media-policy · chart-sanity · (c)-data-label · numeric-claims · prose-provenance · **readability**/`readability.py`, advisory — Wiener Sachtextformel, warns ≫ target Schulstufe; verbatim `quoted`/`source_text` exempt · **difficulty-model**/`difficulty_model.py`, advisory — computed band vs. operative difficulty, ≥1-band gap warns); LLM fact-check optional |
 | Assemble + derive | `pipeline/assemble.py`, `derive.py` | **deterministic** — `derive_nachweis` (coverage + auto-surfaced gaps), `compute_depth` (DepthProfile), `printable_coverage`; `data_ground.ground_data` derives each figure's values FROM its `data_source` dataset slice + stamps the citation onto the content (rendering stays pure; select-never-author for numbers) |
 | Render | `rendering/*` | **deterministic** pure projections; QA-rastered via PyMuPDF |
+
+**Three-tier anchoring (built 11 Jul 2026):** `WorksheetContent.anchor_mode` is exactly
+`competence | uet | horizont` (old JSON defaults to competence). ÜT requires one exact numbered
+subject/grade hook; Horizont is explicit teacher-choice enrichment and **must carry no `serves`**.
+`derive_nachweis` renders the claim; the model/author never writes it. Full contract:
+`Documents/anchoring-modes.md`.
 
 The lints in `verify` (details in their sections/docs): `media_policy` (content-bearing → code-gen or
 vetted-sourced; decorative → content-free), `chart_lint` (misrepresentation: 0/1 data as bars, extreme

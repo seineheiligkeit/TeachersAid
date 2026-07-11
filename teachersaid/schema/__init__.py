@@ -53,6 +53,7 @@ from .derived import (
     Nachweis,
 )
 from .enums import (
+    AnchorMode,
     CognitiveLevel,
     CoreTaskKind,
     CoverageRelation,
@@ -121,6 +122,7 @@ __all__ = [
     "DepthTarget",
     "Nachweis",
     "CognitiveLevel",
+    "AnchorMode",
     "CoreTaskKind",
     "CoverageRelation",
     "InfoKind",

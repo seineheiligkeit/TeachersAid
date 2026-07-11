@@ -17,7 +17,7 @@ from __future__ import annotations
 
 from pydantic import BaseModel, ConfigDict, Field
 
-from ..schema.enums import COGNITIVE_RANK, Role
+from ..schema.enums import AnchorMode, COGNITIVE_RANK, Role
 from ..schema.worksheet import LehrplanResolution, WorksheetContent
 from .assemble import validate_against_model
 from .derive import compute_depth
@@ -43,6 +43,34 @@ def verify(
 
     # structural
     problems += validate_against_model(content)
+
+    # primary anchoring trust gate. Kompetenz uses the supplied resolution; ÜT is
+    # checked against the exact subject/grade catalog hook; Horizont must not carry
+    # a hidden competence claim.
+    if content.anchor_mode == AnchorMode.UET:
+        from ..grounding import lehrplan_store as _ls
+        stufe = _ls.stufe_for_klasse(content.meta.klasse)
+        legend = _ls.uebergreifende_themen(stufe)
+        if content.anchor_uet not in legend:
+            problems.append(
+                f"anchor: ÜT {content.anchor_uet} ist im {stufe}-Katalog nicht definiert"
+            )
+            anchor_valid_ids: set[str] = set()
+        else:
+            anchor_valid_ids = {
+                c.id for c in _ls.competences_for(
+                    content.meta.subject, content.meta.klasse, stufe
+                ) if content.anchor_uet in c.uebergreifende_themen
+            }
+            if not anchor_valid_ids:
+                problems.append(
+                    f"anchor: {content.meta.subject} führt ÜT {content.anchor_uet} "
+                    f"in der {content.meta.klasse}. Klasse nicht als verbatim Hook"
+                )
+    elif content.anchor_mode == AnchorMode.HORIZONT:
+        anchor_valid_ids = set()
+    else:
+        anchor_valid_ids = {c.id for c in resolution.competences}
 
     # media policy: the asset library-entry gate (content-bearing must be correct,
     # decorative must be content-free)
@@ -98,14 +126,18 @@ def verify(
             )
 
     # coverage: serves must reference resolved competences
-    valid_ids = {c.id for c in resolution.competences}
     for b in content.iter_blocks():
         if b.role != Role.TASK:
             continue
+        if content.anchor_mode == AnchorMode.HORIZONT and b.serves:
+            problems.append(
+                f"{b.id}: Horizont darf keinen Lehrplan-Kompetenzbezug über `serves` behaupten"
+            )
         for s in b.serves:
-            if valid_ids and s.competence_id not in valid_ids:
+            if s.competence_id not in anchor_valid_ids:
                 problems.append(
-                    f"{b.id}: serves unknown competence '{s.competence_id}'"
+                    f"{b.id}: serves competence '{s.competence_id}' außerhalb des "
+                    f"Verankerungsmodus '{content.anchor_mode}'"
                 )
         # difficulty sanity
         if b.est_minutes <= 0:

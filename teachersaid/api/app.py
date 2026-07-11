@@ -13,7 +13,8 @@ from pathlib import Path
 
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse, HTMLResponse
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
+from ..schema.enums import AnchorMode
 
 from ..config import RUNS_DIR
 from ..pipeline import orchestrator as orch
@@ -53,6 +54,16 @@ class BrainstormBody(BaseModel):
     klasse: int = 4
     topic: str = ""
     note: str = ""
+    anchor_mode: AnchorMode = AnchorMode.COMPETENCE
+    anchor_uet: int | None = Field(default=None, ge=1, le=13)
+
+    @model_validator(mode="after")
+    def _anchor_fields_are_coherent(self):
+        if self.anchor_mode == AnchorMode.UET and self.anchor_uet is None:
+            raise ValueError("ÜT anchoring requires anchor_uet")
+        if self.anchor_mode != AnchorMode.UET and self.anchor_uet is not None:
+            raise ValueError("anchor_uet is only valid for ÜT anchoring")
+        return self
 
 
 class SuggestBody(BaseModel):
@@ -118,7 +129,7 @@ def brainstorm(body: BrainstormBody):
         raise HTTPException(400, "topic required")
     return orch.submit_brainstorm(
         STORE, body.subject, body.klasse, body.topic.strip(), body.note.strip(),
-        source="user",
+        source="user", anchor_mode=body.anchor_mode, anchor_uet=body.anchor_uet,
     ).summary()
 
 

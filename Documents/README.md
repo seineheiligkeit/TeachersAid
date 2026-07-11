@@ -12,6 +12,7 @@ rules. *(Maintained by hand — add a line here when you add a doc; see CLAUDE.m
 | [`../project-handoff.md`](../project-handoff.md) | Intent + the dated session history (§4 = durable decisions — do not relitigate). |
 | [`invariants.md`](invariants.md) | **The hard rules, their rationale, and their boundaries.** Read before letting a remembered rule block an idea. |
 | [`feature-roadmap.md`](feature-roadmap.md) | The plan — the build-for-joy feature program ("▶ Start here" at top). |
+| [`anchoring-modes.md`](anchoring-modes.md) | **Three-tier trust layer (BUILT):** Kompetenz · exact numbered ÜT hook · honest beyond-Lehrplan Horizont. |
 | [`lehrplan-bundle-schema-v0.3.md`](lehrplan-bundle-schema-v0.3.md) | **Schema = type source of truth** (v0.4 deltas additive + implemented; v0.5 built). |
 
 ## 🔭 Live design docs (each governs a feature's rules)

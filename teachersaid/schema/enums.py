@@ -14,6 +14,13 @@ class Stufe(StrEnum):
     OBERSTUFE = "Oberstufe"
 
 
+class AnchorMode(StrEnum):
+    """The primary, honestly rendered basis on which a worksheet is offered."""
+    COMPETENCE = "competence"
+    UET = "uet"
+    HORIZONT = "horizont"
+
+
 class Modality(StrEnum):
     # Scope boundary: oral/enactive competences don't fully render to paper.
     PRINTABLE = "printable"

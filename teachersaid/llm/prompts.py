@@ -8,7 +8,7 @@ enums) so the generation view stays a robust structured-output contract.
 from __future__ import annotations
 
 from ..schema.competence import SubjectCompetenceModel
-from ..schema.enums import CORE_TASK_KINDS, Role
+from ..schema.enums import AnchorMode, CORE_TASK_KINDS, Role
 from ..schema.worksheet import LehrplanResolution
 from ..pipeline.plan import WorksheetPlan
 
@@ -56,12 +56,26 @@ def build_framing_user(content) -> str:
     return "\n".join(lines)
 
 
-def build_system(model: SubjectCompetenceModel) -> str:
+def build_system(model: SubjectCompetenceModel,
+                 anchor_mode: AnchorMode = AnchorMode.COMPETENCE) -> str:
     from ..grounding.operators import format_operators_brief
     kinds = sorted(CORE_TASK_KINDS | set(model.task_kind_extensions))
     dims = ", ".join(f"{d.id} ({d.label})" for d in model.dimensions)
+    anchor_rule = (
+        "- Each task's `serves` must reference one of the given competence ids.\n"
+        "- Do NOT invent coverage you did not write; a competence left unexercised is "
+        "fine and will be surfaced as a gap downstream.\n"
+        if anchor_mode == AnchorMode.COMPETENCE else
+        "- This sheet is NOT primarily competence-anchored. Every task MUST emit "
+        "`serves: []`; never invent a competence id or imply competence coverage.\n"
+    )
+    opening = {
+        AnchorMode.COMPETENCE: "Austrian-Lehrplan-competence-anchored",
+        AnchorMode.UET: "Austrian-Lehrplan-ÜT-anchored",
+        AnchorMode.HORIZONT: "teacher-choice Horizont enrichment beyond the Lehrplan",
+    }[anchor_mode]
     return (
-        "You generate Austrian-Lehrplan-anchored teaching material. The worksheet "
+        f"You generate {opening} teaching material. The worksheet "
         "TEXT must be in German and at AHS Unterstufe level (never below it — the "
         "incumbent failed on examples that were 'zu niedrig für AHS').\n\n"
         "Hard rules:\n"
@@ -73,9 +87,7 @@ def build_system(model: SubjectCompetenceModel) -> str:
         f"{format_operators_brief(model.subject)}\n"
         "- Correctness by construction: never assert a fact you are unsure of; put "
         "anything a teacher must watch for in `watch_outs` (load-bearing).\n"
-        "- Each task's `serves` must reference one of the given competence ids.\n"
-        "- Do NOT invent coverage you did not write; a competence left unexercised is "
-        "fine and will be surfaced as a gap downstream.\n"
+        f"{anchor_rule}"
         "- Student-facing text (prompts, options, intro) is for the STUDENTS: never "
         "mention competence ids, dimensions, or the Lehrplan in it.\n"
         "- For EACH section, also write a teacher layer (shown only on the teacher "
@@ -91,13 +103,21 @@ def build_system(model: SubjectCompetenceModel) -> str:
 
 
 def build_user(plan: WorksheetPlan, resolution: LehrplanResolution) -> str:
+    anchor = {
+        AnchorMode.COMPETENCE: "Lehrplan-Kompetenzen",
+        AnchorMode.UET: f"ÜT {plan.anchor_uet}",
+        AnchorMode.HORIZONT: "Horizont (freiwillig, jenseits des Lehrplans)",
+    }[plan.anchor_mode]
     lines = [
         f"Topic: {plan.topic}",
         f"Subject: {plan.subject}, Klasse {plan.klasse}",
         f"Kernfrage: {plan.kernfrage}",
         f"Time budget: ~{plan.minutes_budget} min",
+        f"Primary anchor mode: {anchor}",
         "",
-        "Resolved competences (verbatim — anchor tasks to these):",
+        ("Resolved competences (verbatim — anchor tasks to these):"
+         if plan.anchor_mode == AnchorMode.COMPETENCE else
+         "Legal/context resolution (do not emit competence `serves` from this list):"),
     ]
     for c in resolution.competences:
         ut = f" [ÜT {','.join(map(str, c.uebergreifende_themen))}]" if c.uebergreifende_themen else ""
@@ -108,7 +128,7 @@ def build_user(plan: WorksheetPlan, resolution: LehrplanResolution) -> str:
         for bs in sec.block_specs:
             lines.append(
                 f"    * spec {bs.suggested_id}: kind={bs.kind}, level={bs.cognitive_level}, "
-                f"dim={bs.dimension}, serves={bs.serves_competence_id}, "
+                f"dim={bs.dimension}, serves={bs.serves_competence_id or '[]'}, "
                 f"~{bs.est_minutes}min — {bs.intent}"
             )
     dt = plan.depth_target

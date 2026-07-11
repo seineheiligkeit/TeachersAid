@@ -28,7 +28,7 @@ from .blocks import (
     TaskBlock,
     TaskPayload,
 )
-from .enums import CalloutRole, InfoKind, Role
+from .enums import AnchorMode, CalloutRole, InfoKind, Role
 from .provenance import BlockProvenance
 from .response import ResponseSpec
 from .worksheet import Baustein, TeacherOverview, WorksheetContent
@@ -222,7 +222,8 @@ def _baustein_to_canonical(g: GenBaustein) -> Baustein:
 
 
 def body_to_canonical(
-    body: GenWorksheetBody, *, meta, subject_model, assets=None, rack=None
+    body: GenWorksheetBody, *, meta, subject_model, assets=None, rack=None,
+    anchor_mode: AnchorMode = AnchorMode.COMPETENCE, anchor_uet: int | None = None,
 ) -> WorksheetContent:
     """Merge generated body with pipeline-supplied meta/subject_model/assets.
 
@@ -241,6 +242,8 @@ def body_to_canonical(
         intro=[_block_to_canonical(b) for b in body.intro],
         sections=[_baustein_to_canonical(s) for s in body.sections],
         assets=gen_assets + list(assets or []),
+        anchor_mode=anchor_mode,
+        anchor_uet=anchor_uet,
         rack=rack,
     )
 

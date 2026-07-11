@@ -13,9 +13,13 @@ platform mechanics; the SME gave per-idea verdicts the same day. The frame stays
 (intrinsic axis: new correct-by-construction domains · deeper engines · corpus structure · craft).
 Every idea below carries its correct-by-construction angle — that is the admission test.
 
-### The enabler (build first — half the program hangs off it)
+### The enabler — ✅ BUILT 11 Jul 2026
 
-- **Three-tier anchoring.** Today content is competence-anchored or nothing. Add two honest modes:
+- **Three-tier anchoring.** ✅ `competence | uet | horizont` now travels from request/idea through
+  resolution → planning → generation → verification → derived Nachweis → PDF/review summary.
+  Existing content defaults to competence; ÜT requires the exact numbered subject/grade hook;
+  Horizont hard-rejects hidden `serves`. Record: [`anchoring-modes.md`](anchoring-modes.md).
+  The accepted frame was: today content is competence-anchored or nothing. Add two honest modes:
   **ÜT-anchored** (the 13 übergreifenden Themen — verbatim legal hooks; the resolution machinery
   exists since Wave C3) and **„Horizont"** (explicitly beyond-Lehrplan, teacher's-choice enrichment;
   the Nachweis says so honestly instead of faking an anchor). The trust feature survives *because*

@@ -507,6 +507,18 @@ target language for Fremdsprache). Read this, then the docs in the order given i
 > the executed audit/schema-roadmap moved to `Documents/archive/`; README map + CLAUDE.md pointers
 > updated.
 
+> **Update (Session 18, 11 Jul 2026): three-tier anchoring — the new program's enabler — BUILT.**
+> `AnchorMode = competence | uet | horizont` now travels on `BundleRequest` + `WorksheetContent`
+> (old JSON defaults to competence) through idea/API → deterministic resolve → plan → corpus-loop
+> prompt → verify → derived Nachweis → teacher PDF/review summary. **Kompetenz** preserves the full
+> coverage/gap table. **ÜT** requires one exact numbered subject/grade hook from the 13-item verbatim
+> legend; its generic plan emits no fake `serves`, while any optional secondary competence must itself
+> carry that ÜT and never creates a completeness claim. **Horizont** deliberately resolves with zero
+> competences and hard-rejects any hidden `serves`; its Nachweis says voluntary teacher-choice
+> enrichment beyond the Lehrplan. The Planen idea form exposes the choice. Contract:
+> `Documents/anchoring-modes.md`. **783 → 793 tests passed, 1 skipped.** The enabler is closed; the
+> natural next frontier is Tiefenregler P1 or a narrow correct-by-construction engine.
+
 ---
 
 ## 0 · Orientation (the 30-second version)

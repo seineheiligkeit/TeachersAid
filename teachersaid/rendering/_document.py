@@ -38,20 +38,34 @@ def nachweis_story(nachweis, depth_profile, S, width, *, page_break: bool = True
         out.append(rb.para("— nicht berechnet —", S["body"]))
         return out
     out.append(rb.para(n.statement, S["body"]))
-    rows = [["Kompetenz", "geübt durch", "Status"]]
-    for c in n.competence_coverage:
-        rows.append([
-            c.competence_id,
-            ", ".join(c.exercised_by) or "—",
-            "✓ abgedeckt" if c.covered else "✗ LÜCKE",
-        ])
-    out.append(rb.grid_table(rows, width))
-    if n.gaps:
+    mode_label = {
+        "competence": "Lehrplan-Kompetenzen",
+        "uet": "Übergreifendes Thema (ÜT)",
+        "horizont": "Horizont — freiwillige Vertiefung",
+    }.get(str(n.anchor_mode), n.anchor_label)
+    out.append(rb.para(f"Verankerungsmodus: {mode_label}", S["label"]))
+    if str(n.anchor_mode) == "uet":
+        out.append(rb.para(f"Verbatim Hook: {n.anchor_label}", S["key_fact"]))
+    if n.competence_coverage:
+        rows = [["Kompetenz", "geübt durch", "Status"]]
+        for c in n.competence_coverage:
+            status = (
+                "✓ abgedeckt" if c.covered else
+                "↗ Voraussetzung" if c.prerequisite_by else
+                "✗ LÜCKE"
+            )
+            rows.append([
+                c.competence_id,
+                ", ".join(c.exercised_by) or "—",
+                status,
+            ])
+        out.append(rb.grid_table(rows, width))
+    if n.gaps and str(n.anchor_mode) == "competence":
         out.append(rb.spacer(2))
         out.append(rb.para("Abgedeckte Lücken (Geschwister-Baustein nötig):", S["label"]))
         for g in n.gaps:
             out.append(rb.para("✗ " + g, S["watch"]))
-    if n.uebergreifende_themen:
+    if n.uebergreifende_themen and str(n.anchor_mode) == "competence":
         out.append(rb.para(
             "Übergreifende Themen: " + ", ".join(map(str, n.uebergreifende_themen)),
             S["meta"],

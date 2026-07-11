@@ -21,6 +21,7 @@ from ..rendering.qa_raster import rasterise
 from ..rendering.student_sheet import render_student_sheet
 from ..rendering.teacher_guide import render_teacher_guide
 from ..schema.worksheet import BundleRequest, LehrplanResolution
+from ..schema.enums import AnchorMode
 from ..store.models import RenderArtifacts, ReviewItem
 from ..store.repository import ReviewStore
 from .assemble import assemble
@@ -34,7 +35,8 @@ from .verify import verify
 # --- GATE 1 entry: brainstorm / ideation ------------------------------------
 def submit_brainstorm(
     store: ReviewStore, subject: str, klasse: int, topic: str, note: str = "",
-    *, source: str = "user",
+    *, source: str = "user", anchor_mode: AnchorMode = AnchorMode.COMPETENCE,
+    anchor_uet: int | None = None,
 ) -> ReviewItem:
     """A rough idea (user- or AI-produced): subject / Klasse / topic + a free-text
     note. No resolution or plan yet — those are produced at flesh_out()."""
@@ -42,7 +44,8 @@ def submit_brainstorm(
         id="", stage="brainstorm", source=source, status="pending",
         title=f"{subject} {klasse}. Kl. — {topic}",
         note=note,
-        request=BundleRequest(subject=subject, klasse=klasse, topic_raw=topic),
+        request=BundleRequest(subject=subject, klasse=klasse, topic_raw=topic,
+                              anchor_mode=anchor_mode, anchor_uet=anchor_uet),
     )
     return store.create(item)
 
@@ -95,6 +98,11 @@ def _generate_content(
     # Offline fallback: serve a curated master-library example (a hand-authored
     # content object) so the dashboard demos the full content→render→review loop
     # without an API key. With a key, the same flow generates fresh content.
+    if p.anchor_mode != AnchorMode.COMPETENCE:
+        raise RuntimeError(
+            f"No offline corpus fallback for anchor mode '{p.anchor_mode}'; "
+            "inject the corpus-loop generator or stage curated content."
+        )
     from ..library import find as find_example
 
     ex = find_example(res.subject, p.topic)
@@ -150,7 +158,10 @@ def flesh_out(
         raise KeyError(f"no brainstorm item '{brainstorm_id}'")
     bs.status = "approved"
     bs.resolution = resolve(bs.request, today=today)
-    bs.plan = plan(bs.resolution, bs.request.envelope, topic=bs.request.topic_raw)
+    bs.plan = plan(
+        bs.resolution, bs.request.envelope, topic=bs.request.topic_raw,
+        anchor_mode=bs.request.anchor_mode, anchor_uet=bs.request.anchor_uet,
+    )
     store.save(bs)
     notes = [f.note for f in bs.feedback if f.decision == "request-changes" and f.note]
     return _produce_content_item(store, bs, generator=generator, extra_notes=notes)
@@ -219,7 +230,9 @@ def stage_worksheet(
         id="", stage="content", source=source,
         title=title or content.meta.title,
         request=BundleRequest(subject=content.meta.subject, klasse=content.meta.klasse,
-                              topic_raw=content.meta.title),
+                              topic_raw=content.meta.title,
+                              anchor_mode=content.anchor_mode,
+                              anchor_uet=content.anchor_uet),
         resolution=res,
     )
     store.create(item)

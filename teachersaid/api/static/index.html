@@ -100,6 +100,9 @@ function buildShell(){
             <div class="row"><div style="flex:1"><label>Klasse</label><input id="b-klasse" type="number" value="4" /></div>
               <div style="flex:2"><label>Thema</label><input id="b-topic" placeholder="z. B. Optische Systeme" /></div></div>
             <label>Notiz (grobe Idee)</label><textarea id="b-note" rows="2" placeholder="Worum geht es? Welcher Kern?"></textarea>
+            <div class="row"><div style="flex:2"><label>Verankerung</label>
+              <select id="b-anchor"><option value="competence">Lehrplan-Kompetenz</option><option value="uet">Übergreifendes Thema (ÜT)</option><option value="horizont">Horizont — freiwillige Vertiefung</option></select>
+            </div><div style="flex:1"><label>ÜT-Nr. <span class="muted">(1–13)</span></label><input id="b-uet" type="number" min="1" max="13" placeholder="z. B. 13" /></div></div>
             <div class="row" style="margin-top:8px"><button onclick="addIdea()">Idee hinzufügen</button></div>
           </div>
           <div class="card"><h2>Vorschläge aus Lehrplan</h2>
@@ -252,14 +255,16 @@ function renderBrainstorm(){
         : `<span class="muted">abgelehnt</span>`;
     return `<div class="item">
       <div class="row between"><b>${esc(i.topic)}</b><span class="pill s-${i.status}">${i.status}</span></div>
-      <div class="muted">${esc(i.subject)} ${i.klasse}. Kl. · <span class="badge src-${i.source}">${i.source==='ai'?'KI':'manuell'}</span></div>
+        <div class="muted">${esc(i.subject)} ${i.klasse}. Kl. · ${esc(i.anchor_label||i.anchor_mode||'competence')} · <span class="badge src-${i.source}">${i.source==='ai'?'KI':'manuell'}</span></div>
       ${i.note?`<div style="margin:4px 0">${esc(i.note)}</div>`:""}
       <div class="row" style="margin-top:6px">${actions}</div></div>`;
   }).join("");
 }
 async function addIdea(){
   const topic = $("#b-topic").value.trim(); if(!topic){ $("#b-topic").focus(); return; }
-  await jpost("/api/brainstorm",{subject:$("#b-subject").value,klasse:+$("#b-klasse").value,topic,note:$("#b-note").value});
+    const anchor_mode=$("#b-anchor").value, anchor_uet=anchor_mode==="uet"?+$("#b-uet").value:null;
+    if(anchor_mode==="uet" && !(anchor_uet>=1 && anchor_uet<=13)){ $("#b-uet").focus(); return; }
+    await jpost("/api/brainstorm",{subject:$("#b-subject").value,klasse:+$("#b-klasse").value,topic,note:$("#b-note").value,anchor_mode,anchor_uet});
   $("#b-topic").value=""; $("#b-note").value=""; refresh();
 }
 async function suggest(){ await jpost("/api/brainstorm/suggest",{subject:$("#s-subject").value,klasse:+$("#s-klasse").value}); refresh(); }

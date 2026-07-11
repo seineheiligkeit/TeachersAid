@@ -64,6 +64,13 @@ class ReviewItem(BaseModel):
             cov = sum(1 for c in self.content.nachweis.competence_coverage if c.covered)
             gaps = len(self.content.nachweis.gaps)
             tasks = self.n_tasks()
+        anchor_mode = (
+            self.content.anchor_mode if self.content is not None else self.request.anchor_mode
+        )
+        anchor_label = (
+            self.content.nachweis.anchor_label
+            if self.content is not None and self.content.nachweis is not None else None
+        )
         return {
             "id": self.id,
             "stage": self.stage,
@@ -77,6 +84,8 @@ class ReviewItem(BaseModel):
             "covered": cov,
             "gaps": gaps,
             "tasks": tasks,
+            "anchor_mode": anchor_mode,
+            "anchor_label": anchor_label,
             "n_feedback": len(self.feedback),
             "error": self.error,
             "updated_at": self.updated_at,
