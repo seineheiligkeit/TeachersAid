@@ -64,6 +64,12 @@ class ComposeBody(BaseModel):
     kompetenzbereich: str | None = None
 
 
+class ComposeUetBody(BaseModel):
+    uet: int = 11                       # übergreifendes Thema nr (see /api/uebergreifende-themen)
+    klasse: int = 4
+    envelope: str = "doppelstunde"
+
+
 class VariantsBody(BaseModel):
     template_id: str
     n: int = Field(default=6, ge=1, le=30)
@@ -135,6 +141,24 @@ def kompetenzbereiche(subject: str, klasse: int):
     (verbatim catalog labels, so they match what blocks were tagged with)."""
     from ..grounding import lehrplan_store as ls
     return {"kompetenzbereiche": ls.grade_map(subject).get(klasse, [])}
+
+
+@app.get("/api/uebergreifende-themen")
+def uebergreifende_themen(klasse: int = 4):
+    """The übergreifende-Themen legend for the fächerübergreifende (Wave C3) compose form."""
+    from ..grounding import lehrplan_store as ls
+    stufe = ls.stufe_for_klasse(klasse)
+    return {"uebergreifende_themen": [{"nr": n, "label": l}
+                                      for n, l in ls.uebergreifende_themen(stufe).items()]}
+
+
+@app.post("/api/compose-uet")
+def compose_uet_endpoint(body: ComposeUetBody):
+    """Compose a fächerübergreifendes Projektwoche-Bündel for one übergreifendes Thema ×
+    Klasse from approved blocks, staged into the ArrangementStore for review — or an honest
+    gap into the Wunschliste when fewer than two subjects have approved blocks (Wave C3)."""
+    return orch.compose_uet_arrangement(
+        ARRANGEMENTS, BLOCKS, body.uet, body.klasse, body.envelope, demand_store=DEMAND)
 
 
 @app.get("/api/templates")

@@ -102,6 +102,25 @@ def seed_arrangements(store=None, *, today: date | None = None) -> list:
     return out
 
 
+def seed_uet_arrangements(arrangement_store=None, block_store=None, *, today: date | None = None) -> list:
+    """Stage the fächerübergreifende Projektwoche flagship (Wave C3) from the APPROVED block
+    corpus: ÜT 11 (Umweltbildung für nachhaltige Entwicklung), Klasse 4 — the ÜT×Klasse with
+    the widest science+geography approved-block spread (Physik · Geographie · Technik · Biologie
+    · Chemie). `compose_uet` assembles one small worksheet per subject, wraps them as a
+    Lernarrangement whose shared Projektwoche product anchors a ÜT competence no single sheet
+    reaches, and stages it for Gate-2 review. Idempotent (stable arr_id). Composed, not authored:
+    it needs an approved block corpus; a thin corpus yields an honest gap (nothing staged)."""
+    from ..pipeline import orchestrator as orch
+    from ..store.arrangementstore import ArrangementStore
+    from ..store.blockstore import BlockStore
+
+    arrangement_store = arrangement_store or ArrangementStore()
+    block_store = block_store or BlockStore()
+    return [orch.compose_uet_arrangement(
+        arrangement_store, block_store, 11, 4, "doppelstunde",
+        arr_id="uet-umweltbildung-4", source="curated", today=today)]
+
+
 def seed_datasets(store=None, *, status: str = "in_review") -> list:
     """Stage the curated grounded-facts datasets (grounding/data/) into the dataset
     store for HITL review. Idempotent: `upsert` preserves status. New for the
