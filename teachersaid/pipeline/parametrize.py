@@ -35,6 +35,7 @@ from sympy import (
 from ..schema.assets import Asset
 from ..schema.blocks import MultipleChoicePayload, SolutionPath, SolutionStep, TaskBlock
 from ..schema.parametric import FigureSpec, Instance, MCSpec, ParametricTask
+from ..schema.mixer import Offenheit
 from ..schema.response import ChoicesResponse, LinesResponse
 from ..schema.richtext import InlineRun, RichText
 
@@ -134,7 +135,8 @@ def _mc_fields(inst: Instance, rng: random.Random) -> dict:
 
 
 def _instantiate(task: ParametricTask, seed: int, *,
-                 difficulty: int | None = None) -> tuple[TaskBlock, list[Asset]]:
+                 difficulty: int | None = None,
+                 openness: Offenheit | None = None) -> tuple[TaskBlock, list[Asset]]:
     """Build one concrete (TaskBlock, emitted assets) for `seed` (deterministic).
 
     `difficulty` (1–3) is passed only to recipes that declare the knob; others are drawn
@@ -165,7 +167,20 @@ def _instantiate(task: ParametricTask, seed: int, *,
             continue
     if inst is None:
         raise RuntimeError(f"recipe {task.recipe}: no valid instance in 500 tries")
+    if openness is not None and inst.mc is None:
+        raise ValueError(
+            f"Tiefenregler Offenheit is unsupported by template '{task.id}': "
+            "the recipe emits no misconception-backed MC specification"
+        )
     filled = task.prompt_template.format(**inst.params)
+    if openness == Offenheit.OFFEN:
+        # Remove MC-only wording from the SAME computed item; the numeric/factual master,
+        # answer and seed remain untouched.  Every open projection receives an explicit
+        # response instruction because the options are no longer its affordance.
+        filled = re.sub(
+            r"\s*Welche Lösung ist richtig\?\s*$", " Bestimme die Lösung.", filled,
+        )
+        filled += " Notiere deinen Rechenweg."
     if inst.context:                               # curated, digit-free item context
         filled = f"{inst.context} {filled}"
     prompt = _template_to_richtext(filled)
@@ -177,8 +192,15 @@ def _instantiate(task: ParametricTask, seed: int, *,
         est_minutes=task.est_minutes, answer_key=inst.answer, solution_steps=inst.steps,
         solution_paths=inst.solution_paths, difficulty=inst.difficulty,
     )
-    if mc is not None:                                 # override for the MC projection
+    if mc is not None and openness != Offenheit.OFFEN:  # native/closed MC projection
         fields.update(mc)
+    elif mc is not None:                               # same instance, open projection
+        fields.update(
+            kind="open_response",
+            response=LinesResponse(n=max(3, len(inst.steps) + 1)),
+            watch_outs=[re.sub(r"^[A-H] prüft: ", "Typischer Fehler: ", warning)
+                        for warning in mc["watch_outs"]],
+        )
     block = TaskBlock(**fields)
     assets: list[Asset] = []
     if inst.figure is not None:
@@ -196,9 +218,10 @@ def _instantiate(task: ParametricTask, seed: int, *,
 
 
 def instantiate(task: ParametricTask, seed: int, *,
-                difficulty: int | None = None) -> TaskBlock:
+                difficulty: int | None = None,
+                openness: Offenheit | None = None) -> TaskBlock:
     """Build one concrete TaskBlock for `seed` (deterministic; see `_instantiate`)."""
-    return _instantiate(task, seed, difficulty=difficulty)[0]
+    return _instantiate(task, seed, difficulty=difficulty, openness=openness)[0]
 
 
 def ramp_bands(n: int) -> list[int]:
@@ -209,6 +232,7 @@ def ramp_bands(n: int) -> list[int]:
 
 def make_variants_with_assets(
     task: ParametricTask, n: int, *, seed0: int = 1, ramp: bool = False,
+    openness: Offenheit | None = None,
 ) -> tuple[list[TaskBlock], list[Asset]]:
     """N variants of one template, preferring distinct prompts, plus their figure assets
     (aligned: only variants that emit a figure contribute one). Recipes with a small finite
@@ -218,7 +242,9 @@ def make_variants_with_assets(
 
     `ramp=True` requests ascending difficulty bands (see `ramp_bands`) from recipes
     that support the knob — the Übungsreihe form: start leicht, end anspruchsvoll.
-    Recipes without the knob ignore the request, so ramp is safe on any template."""
+    Recipes without the knob ignore the request, so ramp is safe on any template.
+    `openness` is a P1 Tiefenregler projection and is accepted only when every drawn
+    instance emits a misconception-backed `MCSpec`; open and closed share the draw."""
     blocks: list[TaskBlock] = []
     assets: list[Asset] = []
     seen: set[str] = set()
@@ -232,7 +258,7 @@ def make_variants_with_assets(
 
     for band in bands:
         while seed < budget:                      # find a distinct prompt for this slot
-            blk, emitted = _instantiate(task, seed, difficulty=band)
+            blk, emitted = _instantiate(task, seed, difficulty=band, openness=openness)
             seed += 1
             key = str(blk.prompt)
             if key not in seen:
@@ -240,15 +266,18 @@ def make_variants_with_assets(
                 _keep(blk, emitted)
                 break
         else:                                     # pool exhausted → allow a repeat
-            _keep(*_instantiate(task, seed, difficulty=band))
+            _keep(*_instantiate(task, seed, difficulty=band, openness=openness))
             seed += 1
     return blocks, assets
 
 
 def make_variants(task: ParametricTask, n: int, *, seed0: int = 1,
-                  ramp: bool = False) -> list[TaskBlock]:
+                  ramp: bool = False,
+                  openness: Offenheit | None = None) -> list[TaskBlock]:
     """N variant TaskBlocks of one template (see `make_variants_with_assets`)."""
-    return make_variants_with_assets(task, n, seed0=seed0, ramp=ramp)[0]
+    return make_variants_with_assets(
+        task, n, seed0=seed0, ramp=ramp, openness=openness,
+    )[0]
 
 
 # --- recipes (sympy: exact, with a worked Rechenweg) -------------------------

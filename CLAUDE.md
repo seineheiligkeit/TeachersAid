@@ -33,7 +33,7 @@ rendering + the two-stage human-in-the-loop review dashboard).
 ```bash
 pip install -e .                       # deps: pydantic2, fastapi, uvicorn, anthropic, reportlab,
                                        #       matplotlib, pillow, pyyaml, pymupdf, sympy  (pytest for dev)
-python -m pytest -q                    # fully offline, no API key (793 tests)
+python -m pytest -q                    # fully offline, no API key (803 tests)
 python -m teachersaid seed             # seed the master-library examples into the review queue
 python -m teachersaid                  # dashboard → http://127.0.0.1:8000
 ```
@@ -106,6 +106,13 @@ entry-point signatures, the three projection rules, what's free to change — is
 subject/grade hook; Horizont is explicit teacher-choice enrichment and **must carry no `serves`**.
 `derive_nachweis` renders the claim; the model/author never writes it. Full contract:
 `Documents/anchoring-modes.md`.
+
+**Parametric Tiefenregler (P1):** `schema/mixer.py` is the typed teacher profile + derived
+Regler-Lint evidence; `pipeline/mixer.py` projects Umfang, computed strategy depth, student-figure
+abstraction, and misconception-MC↔open response from one seeded master. A template-specific fader
+must reject when its recipe lacks the required `solution_paths`, figure, or `MCSpec`; never emit a
+no-op control. The teacher PDF alone stamps the profile. P2–P4 extend this seam; full contract:
+`Documents/tiefenregler-design.md`.
 
 The lints in `verify` (details in their sections/docs): `media_policy` (content-bearing → code-gen or
 vetted-sourced; decorative → content-free), `chart_lint` (misrepresentation: 0/1 data as bars, extreme

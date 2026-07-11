@@ -63,6 +63,22 @@ def test_ramp_reaches_ascending_difficulty_bands(tmp_path, monkeypatch):
     assert item["verify_problems"] == []
 
 
+def test_variants_endpoint_accepts_p1_mixer_profile(tmp_path, monkeypatch):
+    client, _ = _client(tmp_path, monkeypatch)
+    summary = client.post("/api/variants", json={
+        "template_id": "mat-prozent-mc",
+        "n": 6,
+        "mixer_profile": {"umfang": "kompakt", "offenheit": "offen"},
+    }).json()
+    item = client.get(f"/api/items/{summary['id']}").json()
+    content = item["content"]
+    assert len(content["sections"][0]["blocks"]) == 4
+    assert content["mixer_profile"]["offenheit"] == "offen"
+    assert content["mixer_lint"]["passed"] is True
+    assert all(block["kind"] == "open_response"
+               for block in content["sections"][0]["blocks"])
+
+
 def test_variants_endpoint_rejects_unknown_template_and_bad_count(tmp_path, monkeypatch):
     client, _ = _client(tmp_path, monkeypatch)
     assert client.post("/api/variants", json={"template_id": "nope", "n": 3}).status_code == 404

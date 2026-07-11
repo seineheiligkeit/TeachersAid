@@ -519,6 +519,18 @@ target language for Fremdsprache). Read this, then the docs in the order given i
 > `Documents/anchoring-modes.md`. **783 → 793 tests passed, 1 skipped.** The enabler is closed; the
 > natural next frontier is Tiefenregler P1 or a narrow correct-by-construction engine.
 
+> **Update (Session 19, 11 Jul 2026): Tiefenregler P1 — pure parametric Mischpult — BUILT.**
+> `ParametricMixerProfile` now projects one seeded master across four computation-backed controls:
+> Umfang (count/time), Tiefe (computed `solution_paths` → strategy comparison + AFB movement),
+> Abstraktion (computed student figure → formal no-figure projection), and Offenheit (the same
+> `MCSpec` instance as misconception-MC or clean open response). Unsupported controls hard-fail; no
+> decorative faders. The derived Regler-Lint measures both endpoints, C4/AFB/task/figure/response
+> metrics, and requires competence coverage to remain identical. The teacher guide alone stamps the
+> profile and pass state; student/homework remain clean. `POST /api/variants` accepts the typed profile;
+> P4 UI remains deliberately unbuilt. Contract: `Documents/tiefenregler-design.md`. **793 → 803 tests
+> passed, 1 skipped.** Next in the accepted sequence: P2 Gerüst from computed solution steps and
+> misconception hints.
+
 ---
 
 ## 0 · Orientation (the 30-second version)

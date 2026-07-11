@@ -15,6 +15,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse, HTMLResponse
 from pydantic import BaseModel, Field, model_validator
 from ..schema.enums import AnchorMode
+from ..schema.mixer import ParametricMixerProfile
 
 from ..config import RUNS_DIR
 from ..pipeline import orchestrator as orch
@@ -89,6 +90,7 @@ class VariantsBody(BaseModel):
     template_id: str
     n: int = Field(default=6, ge=1, le=30)
     ramp: bool = False
+    mixer_profile: ParametricMixerProfile | None = None
 
 
 class NoteBody(BaseModel):
@@ -198,6 +200,7 @@ def variants(body: VariantsBody):
     try:
         return orch.compose_variants(
             STORE, body.template_id.strip(), body.n, ramp=body.ramp,
+            mixer_profile=body.mixer_profile,
         ).summary()
     except KeyError as exc:
         raise HTTPException(404, str(exc)) from exc
