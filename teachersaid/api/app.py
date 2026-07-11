@@ -13,7 +13,7 @@ from pathlib import Path
 
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse, HTMLResponse
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 from ..config import RUNS_DIR
 from ..pipeline import orchestrator as orch
@@ -62,6 +62,12 @@ class ComposeBody(BaseModel):
     topic: str = ""
     envelope: str = "doppelstunde"
     kompetenzbereich: str | None = None
+
+
+class VariantsBody(BaseModel):
+    template_id: str
+    n: int = Field(default=6, ge=1, le=30)
+    ramp: bool = False
 
 
 class NoteBody(BaseModel):
@@ -129,6 +135,33 @@ def kompetenzbereiche(subject: str, klasse: int):
     (verbatim catalog labels, so they match what blocks were tagged with)."""
     from ..grounding import lehrplan_store as ls
     return {"kompetenzbereiche": ls.grade_map(subject).get(klasse, [])}
+
+
+@app.get("/api/templates")
+def templates():
+    """The curated, code-backed templates available for deterministic variants."""
+    from ..library.templates import PARAM_TEMPLATES
+
+    return [{
+        "id": t.id,
+        "subject": t.subject,
+        "klasse": t.klasse,
+        "title": t.title or t.id,
+        "anchor": [serves.competence_id for serves in t.serves],
+        "kompetenzbereich": t.kompetenzbereich,
+        "recipe": t.recipe,
+    } for t in PARAM_TEMPLATES]
+
+
+@app.post("/api/variants")
+def variants(body: VariantsBody):
+    """Stage N deterministic, correct-by-construction variants for Gate-2 review."""
+    try:
+        return orch.compose_variants(
+            STORE, body.template_id.strip(), body.n, ramp=body.ramp,
+        ).summary()
+    except KeyError as exc:
+        raise HTTPException(404, str(exc)) from exc
 
 
 # --- queues / stats ----------------------------------------------------------

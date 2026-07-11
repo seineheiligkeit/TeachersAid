@@ -444,6 +444,10 @@ target language for Fremdsprache). Read this, then the docs in the order given i
 > `quader_oberflaeche` derives `O = 2(ab+ac+bc)` from the same dimensions and emits one `O = ?` net per
 > variant, honestly anchored to `MAT.US.1.FIG.03`. Both Quader and Würfel specimens were visually
 > inspected; geometry, masking, layout and render tests landed. Suite: **683 passed, 1 skipped**.
+> **Track-2 #6 shipped in the same experiment:** `GET /api/templates` + `POST /api/variants`, optional
+> difficulty ramp wired through `compose_variants`, and the **Korpus → Arbeitsblätter** production form.
+> The browser verification staged the two-variant Quader series `c0198`, opened its student PDF preview,
+> and found no console errors.
 
 ---
 

@@ -49,8 +49,34 @@ Current: **683 passed, 1 skipped**
 
 ## Remaining brief
 
-- T2 — Varianten dashboard/API: not started.
+- T2 — Varianten dashboard/API: complete (details below).
 - T2b — teacher-only boxplot solution figure: not started.
 - T3 — ANNO fetch + media texts + referenced-only Quellenarbeit: not started.
 - T4 — BIO datasets + Bezirk regional data/boundaries: not started.
 - T5 — informational Realien: optional, not started.
+
+## T2 — “Varianten erzeugen” dashboard surface — complete
+
+### What shipped
+
+- `GET /api/templates` exposes the curated parametric templates with subject, Klasse, title, recipe,
+  Kompetenzbereich, and real competence anchors.
+- `POST /api/variants` validates `n` (1–30), accepts `ramp`, and stages a pending Gate-2 content item;
+  unknown templates return 404.
+- `orch.compose_variants(..., ramp=)` now carries the difficulty request into `variant_worksheet` and
+  identifies an ascending series in the review title.
+- The form lives in **Korpus → Arbeitsblätter**, next to deterministic composition. It loads the catalog,
+  exposes count + ramp, and opens the staged item directly in the existing PDF preview.
+- `tests/test_variants_api.py` covers catalog shape, figure-emitting staging, all three PDF endpoints,
+  verify-clean content, the 1→2→3 ramp, unknown ids, and count bounds.
+
+### Verification
+
+- Focused API/parametric/composition set: **30 passed**.
+- In-app browser: catalog populated; `mat-quader-oberflaeche`, `n=2`, ramp enabled staged `c0198`;
+  pending item opened at `/api/items/c0198/pdf/student` with all projection controls; no console errors.
+
+### SME flags
+
+- None for correctness. The product wording “ansteigend (leicht → anspruchsvoll)” and placement in
+  Korpus are UX judgments worth a quick glance during the ordinary dashboard review.

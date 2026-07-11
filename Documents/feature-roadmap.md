@@ -11,6 +11,12 @@ Forward-looking *capability* features for TeachersAid. (The schema-version roadm
 > `quader_oberflaeche` parametric recipe derives `O = 2(ab+ac+bc)`, emits a masked `O = ?` net per
 > variant, and is anchored to `MAT.US.1.FIG.03`. Geometry/masking/layout/render tests + specimens;
 > suite **683 passed, 1 skipped**. External-experiment branch: `ext/nets`.
+>
+> **Same session — deterministic variants are surfaced.** `GET /api/templates` lists the curated
+> templates with honest competence anchors; `POST /api/variants` stages N variants with optional
+> ascending difficulty. The form lives in **Korpus → Arbeitsblätter** beside composition and opens the
+> pending item in PDF preview (including per-variant figures). API tests + an in-app browser run staged
+> the Quader series `c0198` without console errors.
 
 > **Reconciliation (10 Jul 2026, evening).** The two development machines had DIVERGED from
 > `a9f03d6` — the workhorse's Sessions 11–14 (below: build-for-joy program, Wave A, Prüfen/triage,
@@ -267,7 +273,7 @@ the **Nachweis/coverage made beautiful** (per-sheet Kompetenz-Landkarte; the cov
 ## The offline-first program (2 Jul 2026) — Tracks 1–2 built; superseded as "start here" by the 5 Jul program above
 
 *Still-live threads from this program map into the new one: Track-2 **#4 inter-block coherence** → the
-**dramaturgy engine (C5, design-first)**; Track-2 **#6 "Varianten erzeugen" surface** → still open,
+**dramaturgy engine (C5, design-first)**; Track-2 **#6 "Varianten erzeugen" surface** → **DONE 11 Jul**,
 unranked; Track-3 **wedge campaigns** remain a standing activity (planner-driven, `/api/coverage/gaps`);
 Track-3 **#8 Fassung tooling** → Maintenance. The joy lane's `figstyle` port → **A1**; 3D promotion →
 **A7**; physics vectors / label-the-parts scenes → **A2(b)** / **B3**.*
@@ -498,8 +504,9 @@ Also: store consolidation (`store/base.py::JsonStore`, the future-DB seam). **26
    `quader_oberflaeche`; scene-based `matplotlib:solid_net` for Quader/Würfel).
 4. **Scale the text libraries** — *progressed 10 Jul:* `tools/fetch_wikisource.py` + 5 staged texts;
    still open: more grades/authors, the **ANNO/OCR fetch tool** for real newspaper/advert media texts.
-5. **More parametric recipes + a "Varianten erzeugen" dashboard surface**; expose `orch.compose_variants`.
-   *The Matura-backward recipe queue is cleared (10 Jul);* the dashboard surface is still open.
+5. ~~**More parametric recipes + a "Varianten erzeugen" dashboard surface**~~ — ✅ **surface DONE
+   (11 Jul 2026):** catalog + staging endpoints, optional ramp, four-station UI, figure preview verified.
+   The Matura-backward recipe queue is also cleared; further recipes remain an open-ended joy lane.
 6. ~~**Re-ground the old invented-number figures**~~ — ✅ **DONE (10 Jul 2026)** (c0081/c0096/c0097; 4 new
    sources, 12 datasets). Still open: **BIO/other-subject** datasets; **Tier-2 regional** down to Bezirk.
 

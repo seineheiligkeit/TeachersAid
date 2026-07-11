@@ -138,6 +138,17 @@ function korpusShellHTML(v){
           <label>Thema / Titel</label><input id="c-topic" value="Strahlung und Radioaktivität" />
           <div class="row" style="margin-top:8px"><button onclick="composeSheet()">Zusammenstellen</button></div>
         </div>
+        <div class="card"><h2>Varianten erzeugen</h2>
+          <p class="muted">Aus einer geprüften parametrischen Vorlage: neue Zahlen, derselbe
+            mathematische Kern, Lösung und Rechenweg deterministisch berechnet. Kein LLM-Aufruf.</p>
+          <label>Vorlage</label><select id="v-template"><option value="">lädt…</option></select>
+          <div class="row">
+            <div style="flex:1"><label>Anzahl</label><input id="v-count" type="number" min="1" max="30" value="6"></div>
+            <label style="flex:2;margin-top:24px"><input id="v-ramp" type="checkbox" style="width:auto;margin-right:6px">ansteigend (leicht → anspruchsvoll)</label>
+          </div>
+          <div class="row" style="margin-top:8px"><button onclick="composeVariants()">Varianten erzeugen</button></div>
+          <p id="v-result" class="muted"></p>
+        </div>
         <div class="card"><h2>Arbeitsblätter (freigegeben)</h2><div id="content-list"></div></div>
       </div>
       <div id="detail" class="card"><p class="muted">Wähle einen Eintrag.</p></div>
@@ -192,7 +203,7 @@ function renderKorpus(){
   if(body.dataset.view!==KORPUS_VIEW){   // build the sub-shell only on view change — keeps form state across the 4s refresh
     body.dataset.view=KORPUS_VIEW;
     body.innerHTML=korpusShellHTML(KORPUS_VIEW);
-    if(KORPUS_VIEW==="blaetter") loadKBs();
+    if(KORPUS_VIEW==="blaetter"){ loadKBs(); loadTemplates(); }
   }
   if(KORPUS_VIEW==="blaetter") renderContentList(LASTITEMS.filter(i=>i.stage==="content" && i.status==="approved"));
   else if(KORPUS_VIEW==="bausteine") renderBlocks();
@@ -260,6 +271,22 @@ async function composeSheet(){
     topic,envelope:$("#c-env").value,kompetenzbereich:kb||null});
   if(r.error){ alert("Konnte nicht zusammenstellen:\n"+r.error); }
   SELECTED=r.id||null; VIEW="bloecke"; await refresh(); if(SELECTED) openDetail(SELECTED);
+}
+async function loadTemplates(){
+  const sel=$("#v-template"); if(!sel) return;
+  try{
+    const rows=await jget("/api/templates");
+    sel.innerHTML=rows.map(t=>`<option value="${esc(t.id)}">${esc(t.subject)} ${t.klasse}. Kl. — ${esc(t.title)} · ${esc((t.anchor||[]).join(", "))}</option>`).join("");
+  }catch(e){ sel.innerHTML=`<option value="">Vorlagen nicht ladbar</option>`; }
+}
+async function composeVariants(){
+  const template_id=$("#v-template").value, n=+$("#v-count").value;
+  if(!template_id){ $("#v-template").focus(); return; }
+  const result=$("#v-result"); result.textContent="wird berechnet und gerendert…";
+  const r=await jpost("/api/variants",{template_id,n,ramp:$("#v-ramp").checked});
+  if(r.error){ result.textContent="Fehler: "+r.error; return; }
+  result.textContent=`${r.id} wurde in „Prüfen“ eingestellt.`;
+  SELECTED=r.id||null; VIEW="vorschau"; await refresh(); if(SELECTED) openDetail(SELECTED);
 }
 
 /* ---------- Inhalte / Bibliothek ---------- */

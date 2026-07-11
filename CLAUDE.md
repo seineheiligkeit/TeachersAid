@@ -293,7 +293,9 @@ deterministic-per-seed variants, each with its **Rechenweg** — the number is c
 A recipe raises `Unsuitable` to reject a degenerate draw and resample; **distinct prompts are
 guaranteed** where the draw space allows (small curated pools top up with repeats only if genuinely
 < n). `variant_worksheet` wraps N variants into a `WorksheetContent` (stage-aware);
-`orch.compose_variants(store, template_id, n)` stages it for Gate-2 review.
+`orch.compose_variants(store, template_id, n, ramp=)` stages it for Gate-2 review. The four-station
+dashboard exposes this deterministic production path in **Korpus → Arbeitsblätter** (`GET /api/templates`,
+`POST /api/variants`); figure-emitting variants open directly in the ordinary PDF preview.
 `TaskBlock.solution_steps` is the canonical worked-solution field — teacher-only, **DERIVED,
 never LLM-authored**. Chemistry rides the same registry: `balance_equation` (element×species
 conservation matrix → sympy **nullspace** → smallest positive integers; unique balance ⇔ 1-D nullspace)
