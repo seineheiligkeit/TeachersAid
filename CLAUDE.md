@@ -279,6 +279,13 @@ number. Adding a source = adding a fetch tool; correcting content = editing the 
   `parse_formula` (nesting/hydrates: `Ca(OH)2` → `{Ca:1,O:2,H:2}`), `molar_mass`, `subscript`; curated
   truth tables (substance classification · separation methods · acid/base). Add an element = one cited
   row; add a reaction/substance = one curated entry.
+- **Entities** (`grounding/entities.py` + `grounding/entities/<domain>.json`, Wave C2): canonical
+  cited persons/places/events/works (34 seeded from the existing corpus, each with a `role="facts"`
+  source). Sachverhalt `Actor`/`HistEvent` LINK by additive optional `entity_id` (old JSON loads
+  unchanged); `pipeline/entity_lint.py` promotes the entity lint to CORPUS scope — the same entity
+  must carry consistent dates/attributes across ALL modules (hard checks in the Sachverhalt ingest
+  gate; `tools/entity_check.py` scans anywhere; `--strict`). `verwandte_module(entity_id)` derives
+  cross-module links (`GET /api/entities*`). Registry corrections go in the JSON, never in prose.
 - **Voices** (`schema/voices.py`, `grounding/voices/`, `tools/fetch_vctk_voices.py`): a rights-gated
   reference library of CC-BY young-adult VCTK clips — **voices are selected, never authored** (the audio
   twin of the data layer). Provenance JSON tracked in git; audio binaries not.
@@ -511,6 +518,16 @@ auto-selected per subject; strands served via `sach_dimension`/`urteil_dimension
   Anforderungsbänder — the floor compose needs) / **teil** / **leer**. `GET /api/coverage`;
   `GET /api/coverage/gaps` exports non-green cells WITH verbatim competence ids — the campaign-brief
   anchors `tools/breadth_prompt.py` consumes.
+- **Prerequisite graph (Wave C1).** `grounding/prerequisites/<CODE>.json` curates cross-Klasse
+  prerequisite edges — a **didactic-judgment layer** (authored-then-SME-vetted, provenance
+  `didactic judgment, SME-gated`); the loader lints structure at load (no cycles/dangling ids/
+  self-edges, ids validated against the Lehrplan). `pipeline/prereq.py` = pure queries
+  (`ancestors`·`depth`·`descendants`·`blocking_gaps`). First consumer `pipeline/diagnose.py::
+  build_worksheet` — a **Diagnose-Blatt**: one easy approved task per prerequisite ancestor from the
+  BlockStore, honest gap notes otherwise (`orch.compose_diagnose_worksheet`; band-1 seed
+  `library/diagnose.py`). `stats.coverage_map` gains a `blocks_dependents` leverage overlay. MAT
+  shipped (77 edges); PHY/CHE next. Seams left open: warm-up injection · spiral revision · campaign
+  ordering.
 
 ## Lernarrangement (schema v0.5 — built)
 

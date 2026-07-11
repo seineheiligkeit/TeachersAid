@@ -3,7 +3,32 @@
 Forward-looking *capability* features for TeachersAid. (The schema-version roadmap lives in
 `schema-roadmap-v0.4-v0.5.md`; this tracks product/engine features.)
 
-## ▶ Start here (state as of 10 Jul 2026)
+## ▶ Start here (state as of 11 Jul 2026)
+
+> **Session update (11 Jul 2026, evening) — Wave C built (5 Opus tracks, supervised) + Wave B
+> (image program) delivered by the external agent.** Suite **702 → 783**. Merged in one pass:
+> - **Wave B (external agent, `ext/images`):** the `depictive` media-policy lane + mandatory
+>   `intended_claim`; honest `GenerationRecord` provenance (`replayable: false` — its generator
+>   exposes no seed); deterministic raster preflight (resolution blocks; photocopy/alpha/text-risk
+>   advisory); **best-of-N choose-one review** in Abbildungen; Realien backdrops + one theme
+>   vignette (12 candidates, ALL `in_review`); `tools/fetch_commons.py` (work rights and
+>   reproduction rights recorded independently) + **`ImageSource`** (Bildquellenkritik ladder →
+>   derived GPB/BE tasks; Isabey/Dondorf Wiener-Kongress flagship, c0200); the
+>   **Beschriftungs-hybrid** (`RasterImage` scene layer + code-drawn `labeled_parts` leaders over a
+>   vetted raster; Blüte flagship, c0201). Approval of content now hard-blocks on unapproved
+>   file-backed dependencies. Generated binaries are git-ignored — **Drive sync list** in
+>   `external-experiment-report-images.md`.
+> - **Wave C:** C1 prerequisite graph (77 MAT edges, Diagnose-Blätter, `blocks_dependents`
+>   leverage overlay) · C2 entity registry (34 cited entities; corpus scanned CLEAN; corpus-global
+>   lint) · C3 ÜT-Projektwoche bundles (`compose_uet`; Umweltbildung×Kl.4 flagship, 5 subject
+>   stations) · C4 computed difficulty (**finding: zero authored labels in the corpus** — shipped
+>   anchor-and-nudge, 100 % adjacent, 48 review cues) · C5 `dramaturgy-design.md` (design only —
+>   awaiting the SME's three ► decisions).
+> - Merge fix folded in: C4's LaTeX cleanup now maps grouping braces → parentheses (a `x^{2}`
+>   fragment sympified into a deprecated FiniteSet-Pow; parenthesised it parses clean).
+> - **SME queue after this session:** the 12 image candidates + 2 backdrop/vignette picks; c0200/
+>   c0201; the C5 decisions; C1's edge-didactics flags; C4's 48 difficulty cues; C3's
+>   shared-product German; the C2 registry dates (3 approximate-as-exact).
 
 > **Session update (11 Jul 2026) — the final geometry gap is closed.** `pipeline/nets.py` computes
 > true six-face Quader/Würfel nets (two face pairs per dimension pair; five-edge connected fold tree)

@@ -159,6 +159,10 @@ def _latex_cleanup(frag: str) -> str:
     s = re.sub(r"\\(leq|geq|neq)\b", "=", s)  # comparisons → an equality op (depth proxy)
     s = s.replace("^", "**")
     s = re.sub(r"\\[a-zA-Z]+", " ", s)        # drop any remaining macros
+    # remaining LaTeX braces are GROUPING (exponents `x^{2}`, subscripts) — as braces they
+    # sympify into set literals (`x**{2}` → Pow(x, FiniteSet) — deprecated in sympy and
+    # didactically wrong); parentheses say what the LaTeX meant.
+    s = s.replace("{", "(").replace("}", ")")
     return s
 
 
