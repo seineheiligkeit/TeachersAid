@@ -1,6 +1,6 @@
 """Specimen sheet for the GEOMETRY / coordinate recipe family after the figstyle port (A1).
 
-right_triangle · rectangle · polygon are now computed `Scene`s (rendered by `render_scene`);
+right_triangle · rectangle · polygon · solid_net are now computed `Scene`s (rendered by `render_scene`);
 circle · coordinate_plane · function_graph · tree_diagram stay matplotlib-on-figstyle. All draw
 through the semantic roles (surface fill, ink edge, the unknown in `focus`). Rendered with
 realistic classroom specs; LOOK at them and tune.
@@ -27,6 +27,11 @@ CASES: dict[str, dict] = {
     "polygon_triangle": {"points": [[0, 0], [6, 0], [1.8, 4.2]],
                          "vertex_labels": ["A", "B", "C"], "side_labels": ["c", "a", "b"],
                          "title": "Dreieck — Seiten und Ecken"},
+    "solid_net": {"kind": "cuboid", "a": 6, "b": 4, "c": 3,
+                  "label_a": "a = 6 cm", "label_b": "b = 4 cm", "label_c": "c = 3 cm",
+                  "result_label": "O = ?", "title": "Netz eines Quaders"},
+    "cube_net": {"kind": "cube", "side": 3, "label_a": "a = 3 cm",
+                 "result_label": "O = ?", "title": "Netz eines Würfels"},
     "circle": {"radius": 3, "label_r": "r = 3 cm", "title": "Kreis — Umfang und Fläche"},
     "coordinate_plane": {"points": [{"x": 1, "y": 2, "label": "A"}, {"x": 5, "y": 4, "label": "B"},
                                     {"x": 4, "y": -1, "label": "C"}], "segments": [[0, 1], [1, 2]],
@@ -43,7 +48,8 @@ CASES: dict[str, dict] = {
                                                    {"label": "blau", "p": "0,5"}]}]},
 }
 
-_GEN = {"polygon_triangle": "matplotlib:polygon", "function_graph_pts": "matplotlib:function_graph"}
+_GEN = {"polygon_triangle": "matplotlib:polygon", "function_graph_pts": "matplotlib:function_graph",
+        "cube_net": "matplotlib:solid_net"}
 
 
 def render(outdir: Path) -> list[Path]:

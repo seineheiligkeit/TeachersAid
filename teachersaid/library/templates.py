@@ -99,6 +99,16 @@ PARAM_TEMPLATES: list[ParametricTask] = [
         serves=[Serves(competence_id="MAT.US.4.FIG.01", relation="exercises")],
         dimensions=["OPE"], cognitive_level="apply", kind="calculation", est_minutes=5),
     ParametricTask(
+        id="mat-quader-oberflaeche", title="Quadernetz: Oberflächeninhalt",
+        subject="Mathematik", klasse=1, kompetenzbereich="3: Figuren und Körper",
+        recipe="quader_oberflaeche",
+        prompt_template="Das Netz gehört zu einem Quader mit a = {a} cm, b = {b} cm und "
+                        "c = {c} cm. Berechne den Oberflächeninhalt O.",
+        context_frame="Ein Körpernetz zeigt alle Flächen eines Körpers in der Ebene und "
+                      "macht ihre Flächenpaare sichtbar.",
+        serves=[Serves(competence_id="MAT.US.1.FIG.03", relation="exercises")],
+        dimensions=["OPE"], cognitive_level="apply", kind="calculation", est_minutes=6),
+    ParametricTask(
         id="mat-kreis", title="Kreis: Umfang & Flächeninhalt",
         subject="Mathematik", klasse=4, kompetenzbereich="3: Figuren und Körper",
         recipe="kreis_umfang_flaeche",

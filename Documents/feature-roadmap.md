@@ -5,6 +5,13 @@ Forward-looking *capability* features for TeachersAid. (The schema-version roadm
 
 ## ▶ Start here (state as of 10 Jul 2026)
 
+> **Session update (11 Jul 2026) — the final geometry gap is closed.** `pipeline/nets.py` computes
+> true six-face Quader/Würfel nets (two face pairs per dimension pair; five-edge connected fold tree)
+> and projects them through the scene engine as `matplotlib:solid_net`. The new
+> `quader_oberflaeche` parametric recipe derives `O = 2(ab+ac+bc)`, emits a masked `O = ?` net per
+> variant, and is anchored to `MAT.US.1.FIG.03`. Geometry/masking/layout/render tests + specimens;
+> suite **683 passed, 1 skipped**. External-experiment branch: `ext/nets`.
+
 > **Reconciliation (10 Jul 2026, evening).** The two development machines had DIVERGED from
 > `a9f03d6` — the workhorse's Sessions 11–14 (below: build-for-joy program, Wave A, Prüfen/triage,
 > four-station dashboard; pushed to origin) × this machine's 9–10 Jul work (the two session blocks
@@ -486,8 +493,9 @@ Also: store consolidation (`store/base.py::JsonStore`, the future-DB seam). **26
 2. **Annotated Realien for FS reading** — CEFR-leveled authentic everyday texts (menus, signs, schedules,
    short messages) via the annotated-text engine; the leveling answer for FS Lesen (confirmed B1+B2 demand,
    `matura-languages-coverage.md`).
-3. ~~**Geometry — parametric figure emission**~~ — ✅ **DONE (10 Jul 2026)** (`Instance.figure` →
-   masked per-variant assets; `pythagoras` + `kreis_umfang_flaeche`); **`nets` still open**.
+3. ~~**Geometry — parametric figure emission + nets**~~ — ✅ **DONE (11 Jul 2026)**
+   (`Instance.figure` → masked per-variant assets; `pythagoras` + `kreis_umfang_flaeche` +
+   `quader_oberflaeche`; scene-based `matplotlib:solid_net` for Quader/Würfel).
 4. **Scale the text libraries** — *progressed 10 Jul:* `tools/fetch_wikisource.py` + 5 staged texts;
    still open: more grades/authors, the **ANNO/OCR fetch tool** for real newspaper/advert media texts.
 5. **More parametric recipes + a "Varianten erzeugen" dashboard surface**; expose `orch.compose_variants`.

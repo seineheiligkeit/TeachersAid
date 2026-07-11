@@ -32,7 +32,7 @@ rendering + the two-stage human-in-the-loop review dashboard).
 ```bash
 pip install -e .                       # deps: pydantic2, fastapi, uvicorn, anthropic, reportlab,
                                        #       matplotlib, pillow, pyyaml, pymupdf, sympy  (pytest for dev)
-python -m pytest -q                    # fully offline, no API key (674 tests)
+python -m pytest -q                    # fully offline, no API key (683 tests)
 python -m teachersaid seed             # seed the master-library examples into the review queue
 python -m teachersaid                  # dashboard → http://127.0.0.1:8000
 ```
@@ -186,6 +186,11 @@ numbers <120 and years skipped; **advisory lane** — doubles as the anti-rot ch
   simplification: forces from the body's centre) and **`pipeline/labeled_diagram.py`**
   (`labeled_parts` — "Beschrifte die Teile", numbered-student/named-teacher projections from ONE scene;
   volcano flagship). Tests: `test_{nodelink,physics_scenes,labeled_diagram}.py`.
+- **Körpernetze (`pipeline/nets.py`):** `cuboid_net` computes a six-face Quader/Würfel net with
+  explicit dimensions and exactly five fold adjacencies; `matplotlib:solid_net` is only its scene
+  projection (`Region·Line·Label`). Labels are spec-provided and maskable (`"O = ?"`). The
+  `quader_oberflaeche` parametric recipe derives `O = 2(ab+ac+bc)` from the same dimensions and emits
+  the net per variant; template `mat-quader-oberflaeche` honestly anchors `MAT.US.1.FIG.03`.
 
 ## Grounding catalogs — one discipline, many catalogs
 

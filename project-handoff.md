@@ -437,6 +437,14 @@ target language for Fremdsprache). Read this, then the docs in the order given i
 > disk (branches deleted, `git worktree list` clean) — `git worktree prune` + delete the dirs once the
 > locks clear.
 
+> **Update (Session 15, 11 Jul 2026): the remaining geometry gap — Körpernetze — shipped on the
+> external-experiment branch `ext/nets`.** `pipeline/nets.py` separates computed geometry from its
+> scene projection: a Quader/Würfel net has the true two `a×b`, two `a×c`, two `b×c` faces and exactly
+> five shared fold edges forming a connected tree. `matplotlib:solid_net` registers the maskable figure;
+> `quader_oberflaeche` derives `O = 2(ab+ac+bc)` from the same dimensions and emits one `O = ?` net per
+> variant, honestly anchored to `MAT.US.1.FIG.03`. Both Quader and Würfel specimens were visually
+> inspected; geometry, masking, layout and render tests landed. Suite: **683 passed, 1 skipped**.
+
 ---
 
 ## 0 · Orientation (the 30-second version)

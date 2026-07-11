@@ -35,6 +35,7 @@ from .calculus import (area_between_scene, distribution_scene, extrema_scene,  #
 from .circuits import circuit_construction  # noqa: E402
 from .constructions import construction_scene, triangle_geometry  # noqa: E402
 from .nodelink import cause_effect_scene, process_scene, tree_scene  # noqa: E402
+from .nets import solid_net_scene  # noqa: E402
 from .optics import lens_construction  # noqa: E402
 from .figstyle import fmt_de, unit_scale  # noqa: E402
 from .scene3d import axonometric_solid_scene, riss_pair_scene  # noqa: E402
@@ -819,6 +820,16 @@ def _polygon(asset: Asset, path: Path) -> None:
     scene_to_png(sc, path)
 
 
+@_generator("matplotlib:solid_net")
+def _solid_net(asset: Asset, path: Path) -> None:
+    """A computed Quader/Würfel net composed from scene primitives.
+
+    The geometry function owns the face dimensions and fold adjacencies; this wrapper is
+    deliberately only the registered asset projection.
+    """
+    scene_to_png(solid_net_scene(asset.spec or {}), path)
+
+
 @_generator("matplotlib:circle")
 def _circle(asset: Asset, path: Path) -> None:
     """A circle with centre + radius. spec: {radius, label_r?, title?}. Kept as
@@ -1516,6 +1527,12 @@ GENERATION_RECIPES: dict[str, str] = {
     "matplotlib:polygon":
         'Vieleck (Dreieck/Viereck …) — spec {"points":[[x,y]],"vertex_labels"?:[str],'
         '"side_labels"?:[str],"title"?}.',
+    "matplotlib:solid_net":
+        'Körpernetz eines Quaders/Würfels — spec {"kind"?:"cuboid"|"cube",'
+        '"a"?:num,"b"?:num,"c"?:num | "side"?:num,"label_a"?:str,"label_b"?:str,'
+        '"label_c"?:str,"result_label"?:str,"title"?:str}. Die sechs Flächen und fünf '
+        'Faltkanten werden geometrisch BERECHNET; Beschriftungen sind vorgegeben (z. B. '
+        '"a = 3 cm", "O = ?"), damit die Abbildung keine Lösung verrät.',
     "matplotlib:circle":
         'Kreis mit Radius — spec {"radius":num,"label_r"?,"title"?}.',
     "matplotlib:coordinate_plane":

@@ -31,9 +31,9 @@ The distilled non-negotiables (details in the two files above):
 - **Derived fields stay derived.** `Nachweis`, `DepthProfile`, `solution_steps`, rubric
   derivations — computed, never hand-written.
 - **`rendering/` imports only `schema/`.** No exceptions.
-- **Figures never leak answers** (labels are spec-provided strings, "O = ?" masking), and block
-  assets render on EVERY projection — there is no teacher-only asset channel (this killed a
-  solution-boxplot idea; tests lock it).
+- **Figures never leak answers** (labels are spec-provided strings, "O = ?" masking). A block's
+  ordinary `asset_refs` render on EVERY projection; computed solution figures may use the later
+  `solution_asset_refs` channel, which renders on the teacher projection only (the seam used by T2b).
 - Product-facing strings are **German** (Austrian school register); code/docs are English.
 - The user is the SME (Austrian physicist) and fact-checks physics, maths and German at the HITL
   gate — flag anything you are unsure about instead of silently deciding.

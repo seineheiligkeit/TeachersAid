@@ -494,6 +494,36 @@ def _rectangle(rng: random.Random) -> Instance:
                     answer=f"A = {area} cm², u = {peri} cm", steps=steps)
 
 
+@_recipe("quader_oberflaeche")
+def _quader_oberflaeche(rng: random.Random) -> Instance:
+    """Oberflächeninhalt of a cuboid, derived from its computed six-face net.
+
+    Three distinct integer edge lengths keep the congruent face pairs visually legible.
+    The figure carries only the givens and ``O = ?``; the surface-area result is computed
+    here from the same ``a``, ``b``, ``c`` values and never enters visible figure text.
+    """
+    a, b, c = rng.sample(range(2, 9), 3)
+    ab, ac, bc = a * b, a * c, b * c
+    surface = 2 * (ab + ac + bc)
+    steps = [
+        SolutionStep(text="Die sechs Flächen zu drei kongruenten Paaren ordnen",
+                     expr="O = 2ab + 2ac + 2bc"),
+        SolutionStep(text="Kantenlängen einsetzen",
+                     expr=f"O = 2 \\cdot {a} \\cdot {b} + 2 \\cdot {a} \\cdot {c} + "
+                          f"2 \\cdot {b} \\cdot {c}"),
+        SolutionStep(text="Teilflächen addieren",
+                     expr=f"O = {2 * ab} + {2 * ac} + {2 * bc} = {surface}"),
+    ]
+    figure = FigureSpec(generator="matplotlib:solid_net", spec={
+        "kind": "cuboid", "a": a, "b": b, "c": c,
+        "label_a": f"a = {a} cm", "label_b": f"b = {b} cm",
+        "label_c": f"c = {c} cm", "result_label": "O = ?",
+        "title": "Netz eines Quaders",
+    })
+    return Instance(params={"a": a, "b": b, "c": c},
+                    answer=f"O = {surface} cm²", steps=steps, figure=figure)
+
+
 @_recipe("kreis_umfang_flaeche")
 def _kreis_umfang_flaeche(rng: random.Random) -> Instance:
     """Umfang U = 2·π·r und Flächeninhalt A = π·r² eines Kreises aus dem Radius.
