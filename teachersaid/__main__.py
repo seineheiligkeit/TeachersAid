@@ -24,6 +24,7 @@ if __name__ == "__main__":
             seed_sachverhalte,
             seed_texts,
             seed_textsorten,
+            seed_wahl,
         )
 
         items = seed_library()
@@ -60,6 +61,9 @@ if __name__ == "__main__":
         fin = seed_finanz()
         print(f"\nStaged {len(fin)} Finanzführerschein-Blatt/Blätter als Inhalt "
               f"({', '.join(f.title for f in fin)} — im Inhalte-Tab prüfen).")
+        wahl_items = seed_wahl()
+        print(f"\nStaged {len(wahl_items)} Wahl-Werkstatt-Blatt/Blätter (GPB, D'Hondt + "
+              f"Koalitionen) als Inhalt — im Prüfen-Tab prüfen.")
         print("\nRun 'python -m teachersaid' and open the dashboard to review them.")
         sys.exit(0)
 

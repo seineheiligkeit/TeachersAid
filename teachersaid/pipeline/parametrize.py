@@ -1408,3 +1408,5 @@ from . import latin as _latin  # noqa: E402,F401
 from . import physics as _physics  # noqa: E402,F401
 # Finanzführerschein recipes — same registry, same wiring (see pipeline/finanz.py).
 from . import finanz as _finanz  # noqa: E402,F401
+# Wahl-Werkstatt: d'Hondt seat allocation + coalition arithmetic (GPB, Politische Bildung).
+from . import wahl as _wahl  # noqa: E402,F401

@@ -153,6 +153,19 @@ def seed_history(store=None, *, today: date | None = None) -> list:
     return [orch.stage_worksheet(store, wk.build_content(), res, source="curated")]
 
 
+def seed_wahl(store=None, *, today: date | None = None) -> list:
+    """Stage the Wahl-Werkstatt (GPB, Politische Bildung, 4. Kl.): two sampled Übungsreihen
+    (D'Hondt-Mandatsverteilung · Koalitionsarithmetik) plus the Nationalratswahl-2024
+    showcase (real cited BMI data, CC BY 4.0). Every sheet carries the didaktische-
+    Vereinfachung note (pipeline/wahl.py). Cf. seed_history — the seat allocations are
+    COMPUTED (d'Hondt / minimal winning coalitions), the numbers real or clean-sampled."""
+    from ..pipeline import wahl
+    from ..store.repository import ReviewStore
+
+    store = store or ReviewStore()
+    return wahl.stage_wahl_werkstatt(store, today=today)
+
+
 def seed_hybrid_image(store=None, *, today: date | None = None) -> list:
     """Stage the BIO flower raster+code flagship for Gate-2 review."""
     from ..pipeline import orchestrator as orch
