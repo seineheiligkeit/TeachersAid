@@ -851,6 +851,15 @@ async function renderEinblicke(){
       <td>${r.in_review||"—"}</td></tr>`).join("")}
     </tbody></table>
     <p class="muted" style="margin-top:8px">„Abdeckung" = Katalog-Kompetenzen mit ≥1 freigegebenem Aufgaben-Baustein. Leere Fächer sind ausgegraut.</p></div>`;
+  // C4 — computed difficulty as an ADVISORY review cue (never a gate/correction)
+  try{
+    const dc = await jget("/api/difficulty/cues");
+    h += `<div class="card"><h2>Schwierigkeit — Prüfhinweise (berechnet, beratend)</h2>
+      <p class="muted">${dc.count} Baustein${dc.count===1?"":"e"} mit berechneter Schwierigkeit ≥1 Stufe abweichend von der hinterlegten Einstufung — ein Prüf-Hinweis, keine Korrektur.</p>
+      ${dc.count?`<table><thead><tr><th>Baustein</th><th>Fach</th><th>Kl.</th><th>Typ</th><th>hinterlegt</th><th>berechnet</th><th>maßgeblich</th></tr></thead><tbody>
+        ${dc.cues.slice(0,20).map(c=>`<tr><td>${esc(c.block_id)}</td><td>${esc(c.subject)}</td><td>${c.klasse??"—"}</td><td class="muted">${esc(c.kind)}</td><td>${c.operative_band}</td><td><b>${c.estimated_band}</b> (${esc(c.direction)})</td><td class="muted">${(c.drivers||[]).map(esc).join(", ")||"—"}</td></tr>`).join("")}
+      </tbody></table>${dc.count>20?`<p class="muted">… + ${dc.count-20} weitere</p>`:""}`:""}</div>`;
+  }catch(e){ /* advisory surface — never blocks the digest */ }
   $("#stats").innerHTML = h;
 }
 

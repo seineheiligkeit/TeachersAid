@@ -123,6 +123,28 @@ def verify(
             f"'{DIFFICULTY_LABEL[next(iter(diffs))]}' — kein Spektrum"
         )
 
+    # difficulty model (C4): a COMPUTED second opinion. When the estimate from the task's
+    # own surface features disagrees with the operative difficulty by ≥1 band, flag it as a
+    # REVIEW CUE — never a correction, never overriding the authored value (advisory lane).
+    from .difficulty_model import estimate as _diff_estimate, top_drivers
+    for b in task_blocks:
+        est = _diff_estimate(b)
+        if est is None:
+            continue
+        eff = effective_difficulty(b)
+        if abs(est.band - eff) < 1:
+            continue
+        authored = getattr(b, "difficulty", None) in (1, 2, 3)
+        quelle = "SME-Schätzung" if authored else "aus Anforderungsbereich abgeleitet"
+        richtung = "wirkt anspruchsvoller" if est.band > eff else "wirkt einfacher"
+        drivers = top_drivers(est)
+        drv = f" (maßgeblich: {', '.join(drivers)})" if drivers else ""
+        warnings.append(
+            f"{b.id}: Schwierigkeit — berechnete Stufe {est.band} weicht von der "
+            f"hinterlegten Stufe {eff} ({quelle}) ab; Aufgabe {richtung}. Einstufung als "
+            f"Prüf-Hinweis überdenken, keine Korrektur{drv}."
+        )
+
     # depth target met?
     if plan is not None and plan.depth_target.min_at_or_above:
         target = plan.depth_target.min_at_or_above
