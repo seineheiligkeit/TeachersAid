@@ -1377,3 +1377,5 @@ def _probability_tree(rng: random.Random) -> Instance:
 # Latin Wortbildung recipes — same registry, same wiring (see pipeline/latin.py).
 from . import latin as _latin  # noqa: E402,F401
 from . import physics as _physics  # noqa: E402,F401
+# Finanzführerschein recipes — same registry, same wiring (see pipeline/finanz.py).
+from . import finanz as _finanz  # noqa: E402,F401

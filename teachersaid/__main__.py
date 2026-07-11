@@ -18,6 +18,7 @@ if __name__ == "__main__":
             seed_assets,
             seed_blocks,
             seed_datasets,
+            seed_finanz,
             seed_history,
             seed_library,
             seed_sachverhalte,
@@ -56,6 +57,9 @@ if __name__ == "__main__":
         txs = seed_textsorten()
         print(f"\nStaged {len(txs)} Textsorten-Scaffold(s) als Inhalt "
               f"({', '.join(t.title for t in txs)} — im Inhalte-Tab prüfen).")
+        fin = seed_finanz()
+        print(f"\nStaged {len(fin)} Finanzführerschein-Blatt/Blätter als Inhalt "
+              f"({', '.join(f.title for f in fin)} — im Inhalte-Tab prüfen).")
         print("\nRun 'python -m teachersaid' and open the dashboard to review them.")
         sys.exit(0)
 

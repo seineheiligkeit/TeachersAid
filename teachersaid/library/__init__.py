@@ -196,6 +196,24 @@ def seed_textsorten(store=None, *, today: date | None = None) -> list:
     return out
 
 
+def seed_finanz(store=None, *, today: date | None = None) -> list:
+    """Stage the Finanzführerschein worksheets (the GWB Wirtschafts-/Finanzbildungs-Pack) as
+    content items for Gate-2 review. Mirrors `seed_textsorten` (`orch.stage_worksheet`): three
+    correct-by-construction parametric sheets, each with the strongest honest anchor — Lohnzettel
+    (Brutto→Netto, Tarif 2026) as ÜT 13, Inflation/Kaufkraft (echte VPI-Daten) an GWB.US.3.ENT.09,
+    Handytarife-Vergleich an GWB.US.3.ENT.04. See `pipeline/finanz.py`."""
+    from ..pipeline import finanz
+    from ..pipeline import orchestrator as orch
+    from ..store.repository import ReviewStore
+
+    store = store or ReviewStore()
+    out = []
+    for sid in ("lohnzettel", "inflation", "handyvertrag"):
+        content, res = finanz.build_worksheet(sid, today=today)
+        out.append(orch.stage_worksheet(store, content, res, source="curated"))
+    return out
+
+
 def seed_sachverhalte(store=None, *, status: str = "in_review") -> list:
     """Stage the curated Sachverhalte (library/sachverhalte.py) into the Sachverhalt store
     for HITL review (the content/exposition layer — fact-check the facts + sources before a
