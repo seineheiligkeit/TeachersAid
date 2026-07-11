@@ -235,6 +235,13 @@ code-gen/sourced **forever**. Resolution hierarchy: reuse › sourced PD/CC › 
   Matura operator×AFB data (`extract_matura`) as the external anchor. Discipline: **DERIVED +
   advisory** — never overrides the authored `difficulty`; a ≥1-band disagreement becomes a verify
   warning and a dashboard signal. If the fit is poor, that's a finding, not a failure.
+  **✓ BUILT (Session 16, 11 Jul 2026) → [`difficulty-model.md`](difficulty-model.md).** The plan's
+  premise was wrong and that IS the finding: the corpus holds **zero** authored 1–3 labels (all ~1055
+  task blocks use the cognitive-level fallback), so the label is a pure function of one feature and the
+  model is **not learnable** — an accuracy-max fit trivially recovers `cognitive_rank` (100 %/0 cues).
+  Shipped as *anchor-and-nudge* instead: curated weights (cognitive anchor + intrinsic nudges), only the
+  two thresholds fit → 95.5 % exact / 100 % adjacent, 48 review cues (4.5 %). `pipeline/difficulty_model.py`
+  + reviewable `difficulty_weights.json` + `tools/fit_difficulty.py`; verify warning + `GET /api/difficulty/cues`.
 - **C5 · The dramaturgy engine (SME: could be extremely powerful — PLAN CAREFULLY, design-first).**
   Track 2's acknowledged hard problem (inter-block coherence), approached didactically: a typed phase
   grammar (**Einstieg → Erarbeitung → Sicherung → Transfer**) as a plan layer; blocks carry a

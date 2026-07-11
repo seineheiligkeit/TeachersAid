@@ -18,7 +18,9 @@ from pydantic import BaseModel, Field
 from ..config import RUNS_DIR
 from ..pipeline import orchestrator as orch
 from ..pipeline.assets import build_asset
-from ..stats import campaign_gaps, compute_stats, coverage_map
+from ..stats import (
+    campaign_gaps, compute_stats, coverage_map, difficulty_review_cues,
+)
 from ..store.arrangementstore import ArrangementStore
 from ..store.assetstore import AssetStore
 from ..store.blockstore import BlockStore
@@ -187,6 +189,13 @@ def library():
 @app.get("/api/stats")
 def stats():
     return compute_stats(BLOCKS, STORE)
+
+
+@app.get("/api/difficulty/cues")
+def difficulty_cues():
+    """C4 advisory: corpus blocks whose COMPUTED difficulty disagrees ≥1 band with the
+    operative (authored/cognitive-fallback) difficulty — a review-cue list, never a gate."""
+    return difficulty_review_cues(BLOCKS)
 
 
 # --- the offline-first program: coverage planner + delivery loop ---------------

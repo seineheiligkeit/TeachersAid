@@ -466,6 +466,27 @@ target language for Fremdsprache). Read this, then the docs in the order given i
 > `figure_lint`-clean. Suite: **702 passed, 1 skipped**. Optional informational Realien was deliberately
 > skipped after T1–T4, as the brief permits; it needs its own fact-preserving CEFR design pass.
 
+> **Update (Session 16, 11 Jul 2026): Wave C4 — difficulty as a computed, ADVISORY quantity — built on
+> its own branch.** `pipeline/difficulty_model.py` estimates a task's difficulty band from a transparent,
+> task-only feature vector (solution-step count · math-expression depth via sympy · number domain ℕ<ℤ<
+> fractions<irrational · WSTF text load · a curated kind base-cost · answer-surface openness · the
+> cognitive-level rank), reads the reviewable `difficulty_weights.json`, and is fit offline by
+> `tools/fit_difficulty.py`. **The load-bearing finding, surfaced not hidden:** the ~1055-block corpus
+> carries **zero** authored `difficulty` labels — every label is the cognitive-level fallback, so the
+> only label is a deterministic function of one feature. An accuracy-max fit therefore trivially recovers
+> `cognitive_rank` (100 % exact, 0 disagreements — mathematically perfect, a mute advisory). **A
+> difficulty model is not learnable from this corpus.** The design response is *anchor-and-nudge*: the
+> cognitive level is a dominant curated anchor, the intrinsic surface features are an independent nudge,
+> and only the two thresholds are fit — 95.5 % exact / **100 % adjacent** agreement with the operative
+> band, flagging **48 blocks (4.5 %)** where surface features disagree ≥1 band (the SME review-cue list).
+> Adjacent-100 % means the estimate never disagrees by two bands — appropriate for an advisory. It is
+> **DERIVED + ADVISORY**: a verify **warning** + an Einblicke cue (`GET /api/difficulty/cues`), never a
+> gate, and test-locked to **never** mutate the authored value. `steps`/`math` are structurally 0 on
+> harvested blocks (live only for parametric packs) — documented, not a bug. Design + honest numbers:
+> `Documents/difficulty-model.md`. Suite: **714 passed, 1 skipped**. SME review: the 48-cue list (mostly
+> `evaluate`-labelled closed-format tasks reading as band 2, and open high-text-load tasks reading a band
+> up) is the first place authored `difficulty` labels would pay off — which is the real fix.
+
 ---
 
 ## 0 · Orientation (the 30-second version)

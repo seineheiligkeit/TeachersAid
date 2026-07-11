@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "generated": "2026-07-11",
+  "method": "curated anchor-and-nudge weights; thresholds fit by grid search on the effective-difficulty label (see tools/fit_difficulty.py, Documents/difficulty-model.md)",
+  "feature_order": [
+    "steps",
+    "math",
+    "numdom",
+    "text",
+    "kind",
+    "open",
+    "cog"
+  ],
+  "weights": {
+    "steps": 0.6,
+    "math": 0.6,
+    "numdom": 0.4,
+    "text": 0.5,
+    "kind": 0.7,
+    "open": 0.3,
+    "cog": 3.0
+  },
+  "thresholds": [
+    1.7,
+    3.069
+  ],
+  "normalization": {
+    "STEP_CAP": 6,
+    "MATH_CAP": 8,
+    "WSTF_FLOOR": 4.0,
+    "WSTF_CEIL": 14.0,
+    "TEXT_NEUTRAL": 0.4
+  },
+  "fit": {
+    "corpus_blocks": 1055,
+    "label_distribution": {
+      "1": 354,
+      "2": 366,
+      "3": 335
+    },
+    "exact_accuracy": 0.9545,
+    "adjacent_accuracy": 1.0,
+    "review_cue_count": 48
+  }
+}

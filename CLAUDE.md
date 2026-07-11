@@ -32,7 +32,7 @@ rendering + the two-stage human-in-the-loop review dashboard).
 ```bash
 pip install -e .                       # deps: pydantic2, fastapi, uvicorn, anthropic, reportlab,
                                        #       matplotlib, pillow, pyyaml, pymupdf, sympy  (pytest for dev)
-python -m pytest -q                    # fully offline, no API key (702 tests)
+python -m pytest -q                    # fully offline, no API key (714 tests)
 python -m teachersaid seed             # seed the master-library examples into the review queue
 python -m teachersaid                  # dashboard → http://127.0.0.1:8000
 ```
@@ -96,7 +96,7 @@ entry-point signatures, the three projection rules, what's free to change — is
 | Plan | `pipeline/plan.py` | mostly deterministic — envelope→minutes, block-spec skeleton + `DepthTarget` ladder. **The plan IS the idea-stage review artifact.** |
 | Generate | `pipeline/generate.py` + `llm/` | **LLM (corpus loop only — never in the delivery path; invariants §10)** — `messages.parse()` into a recursion-free generation view, then `to_canonical()` |
 | Assets | `pipeline/assets.py` | code-generated, correct-by-construction → see **Figures & assets** below |
-| Verify | `pipeline/verify.py` | rules: kinds/dimensions/coverage/depth/difficulty + the lint battery (media-policy · chart-sanity · (c)-data-label · numeric-claims · prose-provenance · **readability**/`readability.py`, advisory — Wiener Sachtextformel, warns ≫ target Schulstufe; verbatim `quoted`/`source_text` exempt); LLM fact-check optional |
+| Verify | `pipeline/verify.py` | rules: kinds/dimensions/coverage/depth/difficulty + the lint battery (media-policy · chart-sanity · (c)-data-label · numeric-claims · prose-provenance · **readability**/`readability.py`, advisory — Wiener Sachtextformel, warns ≫ target Schulstufe; verbatim `quoted`/`source_text` exempt · **difficulty-model**/`difficulty_model.py`, advisory — computed band vs. operative difficulty, ≥1-band gap warns); LLM fact-check optional |
 | Assemble + derive | `pipeline/assemble.py`, `derive.py` | **deterministic** — `derive_nachweis` (coverage + auto-surfaced gaps), `compute_depth` (DepthProfile), `printable_coverage`; `data_ground.ground_data` derives each figure's values FROM its `data_source` dataset slice + stamps the citation onto the content (rendering stays pure; select-never-author for numbers) |
 | Render | `rendering/*` | **deterministic** pure projections; QA-rastered via PyMuPDF |
 
@@ -468,7 +468,15 @@ auto-selected per subject; strands served via `sach_dimension`/`urteil_dimension
   (compact|standard|extended — *orthogonal to* `cognitive_level`), `family` (groups richness variants),
   `status`, `provenance`, and an honest, never-measured **`difficulty`** (1–3, author/SME estimate; when
   unset, derived from the cognitive level's Anforderungsbereich; surfaced in
-  `DepthProfile.by_difficulty`, warned on when flat). `harvest(content)` extracts a worksheet's blocks
+  `DepthProfile.by_difficulty`, warned on when flat). A **computed advisory cross-checks it** (roadmap
+  C4, `pipeline/difficulty_model.py` + the reviewable `difficulty_weights.json`, fit by
+  `tools/fit_difficulty.py`): transparent surface features (text load · kind cost · number domain ·
+  answer-surface openness · steps/math for parametric) **nudge a cognitive-level anchor**; a ≥1-band
+  disagreement with the operative difficulty is a verify **warning** (advisory lane) + an Einblicke cue
+  (`stats.difficulty_review_cues`). DERIVED + ADVISORY — it **never** overrides the authored value. The
+  honest finding: the corpus has **zero** authored `difficulty` labels, so the model is *not learnable*
+  (an accuracy-max fit trivially recovers `cognitive_rank`) — hence **curated weights + fitted
+  thresholds**, not a learned model. Depth: `Documents/difficulty-model.md`. `harvest(content)` extracts a worksheet's blocks
   (a learn-text is a block; framing intro/transitions are not) and **captures asset specs** so figures
   travel. `store/blockstore.py`: `upsert` is idempotent and **preserves review status** (re-seeding
   never un-approves); `seed_blocks` seeds the SME-reviewed examples as `approved`. `stats.py` is the
@@ -670,8 +678,8 @@ guard; the two-stage HITL loop + API; the worked examples exercise the v0.4 delt
 - Locality: Tier-1 anchoring is **inquiry-frame** (students investigate their own region) — **never
   assert unvetted local facts**; asserted local data needs the curated Tier-2 path (regional datasets).
 - Lint lanes: deterministic lints *guarantee* (entity-lint years, media policy, (c)-label); advisory
-  lints *flag* for the SME (number-lint, prose-lint, chart-lint warnings, name checks, readability/WSTF).
-  Triage is never the gate.
+  lints *flag* for the SME (number-lint, prose-lint, chart-lint warnings, name checks, readability/WSTF,
+  difficulty-model band gap). Triage is never the gate.
 
 **Stores & process**
 - **All stores subclass `store/base.py::JsonStore`** (shared file-I/O + id counter + status-preserving

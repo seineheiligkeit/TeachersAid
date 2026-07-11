@@ -19,6 +19,7 @@ rules. *(Maintained by hand — add a line here when you add a doc; see CLAUDE.m
 | doc | feature |
 |---|---|
 | [`block-library-design.md`](block-library-design.md) | The block as the durable library unit + the composer (phases 1–3 built). |
+| [`difficulty-model.md`](difficulty-model.md) | **Difficulty as a computed ADVISORY** (roadmap C4) — transparent features, anchor-and-nudge weights, the honest "not learnable from this corpus" finding. |
 | [`figure-styleguide.md`](figure-styleguide.md) | **The figure engine**: figstyle (semantic colour roles, dash ramp, house font) + the scene engine + the data-figure intent→recipe system. |
 | [`scene3d-geometry-design.md`](scene3d-geometry-design.md) | 3D analytic geometry as projected Schrägriss scenes — validated prototype; promotion path (roadmap A7). |
 | [`sachverhalt-content-layer-design.md`](sachverhalt-content-layer-design.md) | The content/exposition layer — Sachwissen as a first-class curated module (History · Bio · Geo built). |

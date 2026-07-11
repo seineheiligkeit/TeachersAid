@@ -240,6 +240,34 @@ def campaign_gaps(block_store: BlockStore | None = None, *, coverage: dict | Non
     return gaps
 
 
+def difficulty_review_cues(block_store: BlockStore | None = None, *,
+                           limit: int = 100) -> dict:
+    """The C4 review-cue list for the Einblicke digest: every corpus block whose COMPUTED
+    difficulty (`pipeline/difficulty_model`) disagrees with its operative (authored-or-
+    cognitive-fallback) difficulty by ≥1 band. Advisory only — a prompt to reconsider the
+    Einstufung, never a correction. Sorted by disagreement size, capped at `limit`."""
+    from .pipeline.difficulty_model import estimate as _estimate, top_drivers
+    bs = block_store or BlockStore()
+    cues: list[dict] = []
+    for lb in bs.list():
+        est = _estimate(lb.block)
+        if est is None:                       # info block → no difficulty
+            continue
+        eff = effective_difficulty(lb.block)
+        if abs(est.band - eff) < 1:
+            continue
+        cues.append({
+            "block_id": lb.id, "subject": lb.subject, "klasse": lb.klasse,
+            "kind": lb.kind, "cognitive_level": lb.cognitive_level, "status": lb.status,
+            "operative_band": eff, "estimated_band": est.band,
+            "direction": "schwerer" if est.band > eff else "leichter",
+            "drivers": top_drivers(est),
+        })
+    cues.sort(key=lambda c: (-abs(c["estimated_band"] - c["operative_band"]),
+                             c["subject"], c["block_id"]))
+    return {"count": len(cues), "cues": cues[:limit]}
+
+
 def cells_with_ids() -> dict[tuple, list[str]]:
     """(stufe, code, klasse, kb) → sorted competence ids (the brief anchors); kept out
     of coverage_map's response so the dashboard payload stays light."""
