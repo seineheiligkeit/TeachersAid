@@ -60,25 +60,31 @@ def build_sachverhalt() -> Sachverhalt:
         urteil_dimension="HOR",        # Historische Orientierungskompetenz (the Urteils-task)
         sources=[_WP_FACTS],
         # --- structured facts (selected/sourced) ---------------------------------
+        # timeline events + actors carry an optional entity_id into the entity registry
+        # (grounding/entities); the corpus lint checks each linked year against the registry.
         timeline=[
-            HistEvent(at=1806, label="Auflösung des Heiligen Römischen Reichs"),
-            HistEvent(at=1813, label="Völkerschlacht bei Leipzig – Wende gegen Napoleon"),
-            HistEvent(at=1814, label="Beginn des Wiener Kongresses"),
-            HistEvent(at=1815, label="Deutsche Bundesakte – Gründung des Deutschen Bundes"),
-            HistEvent(at=1848, label="Revolution – Ende der Restaurationsepoche"),
+            HistEvent(at=1806, label="Auflösung des Heiligen Römischen Reichs",
+                      entity_id="aufloesung-hrr"),
+            HistEvent(at=1813, label="Völkerschlacht bei Leipzig – Wende gegen Napoleon",
+                      entity_id="voelkerschlacht-leipzig"),
+            HistEvent(at=1814, label="Beginn des Wiener Kongresses", entity_id="wiener-kongress"),
+            HistEvent(at=1815, label="Deutsche Bundesakte – Gründung des Deutschen Bundes",
+                      entity_id="deutscher-bund"),
+            HistEvent(at=1848, label="Revolution – Ende der Restaurationsepoche",
+                      entity_id="revolution-1848"),
         ],
         actors=[
-            Actor(name="Klemens von Metternich",
+            Actor(name="Klemens von Metternich", entity_id="metternich",
                   role="österreichischer Außenminister; Gastgeber und prägende Figur des "
                        "Kongresses, Verfechter von Restauration und Gleichgewicht"),
-            Actor(name="Charles-Maurice de Talleyrand",
+            Actor(name="Charles-Maurice de Talleyrand", entity_id="talleyrand",
                   role="Gesandter Frankreichs; erreichte mit dem Prinzip der Legitimität, dass "
                        "das besiegte Frankreich mitverhandeln durfte"),
-            Actor(name="Zar Alexander I.",
+            Actor(name="Zar Alexander I.", entity_id="alexander-i-russland",
                   role="Kaiser von Russland, eine der vier siegreichen Großmächte"),
-            Actor(name="Viscount Castlereagh",
+            Actor(name="Viscount Castlereagh", entity_id="castlereagh",
                   role="britischer Außenminister; trieb die Gleichgewichtspolitik voran"),
-            Actor(name="Karl August von Hardenberg",
+            Actor(name="Karl August von Hardenberg", entity_id="hardenberg",
                   role="preußischer Staatskanzler, verhandelte für Preußen"),
         ],
         causes=[

@@ -596,6 +596,7 @@ def ingest_sachverhalt(sachverhalt_store, sachverhalt, *, source: str = "curated
     at the gate), and the entity-lint must be clean (every year in the Darstellung appears in
     the fact-set). The select-never-author discipline applied to a content module — numbers
     are guaranteed; the prose is a projection over the frozen facts (`invariants.md` §3)."""
+    from ..pipeline.entity_lint import check_module
     from ..pipeline.sachverhalt_lint import lint
     from ..store.sachverhaltstore import SachverhaltRecord
 
@@ -606,6 +607,13 @@ def ingest_sachverhalt(sachverhalt_store, sachverhalt, *, source: str = "curated
     problems, _warnings = lint(sachverhalt)
     if problems:
         raise ValueError(f"Sachverhalt {sachverhalt.id}: Entity-Lint — " + "; ".join(problems))
+    # Wave C2 corpus-consistency HARD checks: a linked entity_id must exist in the registry
+    # and a linked event's year must not contradict it (grounding/entities). Advisory
+    # link-suggestions are surfaced by tools/entity_check.py, not blocked here.
+    reg_problems, _reg_warnings = check_module(sachverhalt)
+    if reg_problems:
+        raise ValueError(
+            f"Sachverhalt {sachverhalt.id}: Entitäts-Register — " + "; ".join(reg_problems))
     rec = SachverhaltRecord(id=sachverhalt.id, sachverhalt=sachverhalt, source=source,
                             status=status)
     return sachverhalt_store.upsert(rec)
