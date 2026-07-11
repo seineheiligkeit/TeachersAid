@@ -164,6 +164,30 @@ def seed_wahl(store=None, *, today: date | None = None) -> list:
 
     store = store or ReviewStore()
     return wahl.stage_wahl_werkstatt(store, today=today)
+def seed_astronomy(store=None, *, today: date | None = None) -> list:
+    """Stage the two astronomy worksheets (the Sternkarten-Engine) as content items for
+    Gate-2 review (cf. seed_history). BOTH anchoring tiers on one topic:
+
+    * Mondphasen (2. Kl.) — competence-anchored to PHY.US.2.SEH.04 (Kompetenzbereich
+      'Sehen und Hören': Tag/Nacht · Jahreszeiten · Mondphasen darstellen), with the
+      moon-phase figures COMPUTED (illuminated fraction exact, terminator correct).
+    * Sternenhimmel über Wien (4. Kl.) — the first real Horizont flagship: anchor_mode
+      'horizont', no competence claim, a COMPUTED star chart of the visible sky. The
+      honest Nachweis ('kein Lehrplan-Kompetenzbezug behauptet') is part of the render.
+    """
+    from ..pipeline import orchestrator as orch
+    from ..pipeline.resolve import resolve, resolve_kompetenzbereich
+    from ..store.repository import ReviewStore
+    from . import phy_mondphasen as mp
+    from . import phy_sternenhimmel as sk
+
+    store = store or ReviewStore()
+    mp_res = resolve_kompetenzbereich(mp.SUBJECT, mp.KLASSE, mp.KOMPETENZBEREICH, today=today)
+    sk_res = resolve(sk.build_request(), today=today)
+    return [
+        orch.stage_worksheet(store, mp.build_content(), mp_res, source="curated"),
+        orch.stage_worksheet(store, sk.build_content(), sk_res, source="curated"),
+    ]
 
 
 def seed_hybrid_image(store=None, *, today: date | None = None) -> list:
