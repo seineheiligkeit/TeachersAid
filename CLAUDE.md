@@ -32,7 +32,7 @@ rendering + the two-stage human-in-the-loop review dashboard).
 ```bash
 pip install -e .                       # deps: pydantic2, fastapi, uvicorn, anthropic, reportlab,
                                        #       matplotlib, pillow, pyyaml, pymupdf, sympy  (pytest for dev)
-python -m pytest -q                    # fully offline, no API key (683 tests)
+python -m pytest -q                    # fully offline, no API key (688 tests)
 python -m teachersaid seed             # seed the master-library examples into the review queue
 python -m teachersaid                  # dashboard → http://127.0.0.1:8000
 ```
@@ -331,8 +331,9 @@ lengths normed so the answer never surfaces even as a coordinate) and `kreis_umf
 (MAT.US.4.FIG.01/.02) prove it; `probability_tree` emits its Baumdiagramm (stage-1 labels only —
 leak-safe). **`boxplot_from_data` deliberately emits NO figure:** `Instance.figure` assets render on
 EVERY projection, so a solution boxplot would hand students the five-number answer — locked by tests.
-*(Post-merge follow-up: the Rätsel engine's `TaskBlock.solution_asset_refs` IS a teacher-only channel —
-wiring the boxplot solution figure through it is now possible and open.)* **Latein rides the same engine** (`pipeline/latin.py` +
+**Teacher-only computed figures:** `Instance.solution_figure` emits an asset wired only through
+`TaskBlock.solution_asset_refs`; `boxplot_from_data` uses it for the derived five-number solution plot,
+so student/homework receive no image while the teacher guide does. **Latein rides the same engine** (`pipeline/latin.py` +
 `grounding/latin.py`): a `wortbildung` recipe over **curated real derivations** (12 prefixes ×
 9 base verbs → 39 attested words with meanings + assimilation notes — select-never-author: no
 synthesized Latin, ever), templates `lat-us-*` anchored LAT.US.3/4.SPR.01.

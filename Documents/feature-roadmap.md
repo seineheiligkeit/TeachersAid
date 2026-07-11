@@ -17,6 +17,11 @@ Forward-looking *capability* features for TeachersAid. (The schema-version roadm
 > ascending difficulty. The form lives in **Korpus → Arbeitsblätter** beside composition and opens the
 > pending item in PDF preview (including per-variant figures). API tests + an in-app browser run staged
 > the Quader series `c0198` without console errors.
+>
+> **Teacher-only Boxplot solution closed too.** `Instance.solution_figure` now maps to
+> `TaskBlock.solution_asset_refs`; `boxplot_from_data` emits its computed five-number summary as a
+> `matplotlib:boxplot` visible only in the teacher guide. Student PDF: zero images; teacher PDF: solution
+> plot present. The existing Rätsel solution-grid wording/behavior remains test-locked.
 
 > **Reconciliation (10 Jul 2026, evening).** The two development machines had DIVERGED from
 > `a9f03d6` — the workhorse's Sessions 11–14 (below: build-for-joy program, Wave A, Prüfen/triage,

@@ -11,8 +11,8 @@ collects them onto the worksheet. Locked here:
 * the figures pass the media-policy gate (role="figure", code-gen backend) and verify clean;
 * a Pythagoras / circle / Baumdiagramm worksheet assembles, verifies AND renders — the PNGs
   actually build and embed in the student/teacher PDFs;
-* the Boxplot decision is LOCKED: no solution figure is emitted (a task figure renders on the
-  student sheet too — there is no teacher-only asset channel — so it would leak the summary).
+* the Boxplot solution uses the teacher-only solution-asset channel; ordinary task figures still
+  render on every projection, so the summary never leaks to students.
 """
 
 from __future__ import annotations
@@ -135,10 +135,8 @@ def test_probability_tree_worksheet_renders_with_trees(tmp_path):
     assert sum(len(page.get_images()) for page in fitz.open(out)) >= 3
 
 
-# --- the Boxplot decision: NO figure (it would leak the five-number summary) ---
-def test_boxplot_recipe_emits_no_figure():
-    """Investigated + locked: assets render to students too, so a solution boxplot would
-    hand over Q1/Median/Q3/Min/Max. The recipe therefore emits no figure."""
+# --- the Boxplot solution: teacher-only figure, never an all-projection figure ---
+def test_boxplot_recipe_emits_only_a_solution_figure():
     seen = 0
     for seed in range(20):
         try:
@@ -146,11 +144,15 @@ def test_boxplot_recipe_emits_no_figure():
         except Exception:
             continue                                        # Unsuitable draw → skip
         seen += 1
-        assert inst.figure is None                          # deliberately no figure
+        assert inst.figure is None                          # never an all-projection figure
+        assert inst.solution_figure is not None
+        assert inst.solution_figure.generator == "matplotlib:boxplot"
     assert seen >= 3
-    # and no figure asset reaches a boxplot worksheet
+    # the computed asset belongs to the worksheet but only via each block's solution refs
     blocks, assets = make_variants_with_assets(find_template("mat-ws-boxplot"), 5, seed0=1)
-    assert assets == [] and all(not b.asset_refs for b in blocks)
+    assert len(assets) == 5
+    assert all(not b.asset_refs and len(b.solution_asset_refs) == 1 for b in blocks)
+    assert {ref for b in blocks for ref in b.solution_asset_refs} == {a.id for a in assets}
 
 
 def test_task_figures_render_on_the_student_sheet(tmp_path):
@@ -162,3 +164,25 @@ def test_task_figures_render_on_the_student_sheet(tmp_path):
     assets = {a.id: build_asset(a, outdir=tmp_path / "a") for a in content.assets}
     out = render_student_sheet(content, tmp_path / "student.pdf", assets)
     assert any(page.get_images() for page in fitz.open(out))
+
+
+def test_boxplot_solution_figure_is_teacher_only(tmp_path):
+    content, res = variant_worksheet(find_template("mat-ws-boxplot"), 1, today=IN_WINDOW)
+    content = assemble(content, res)
+    block = next(b for s in content.sections for b in s.blocks if b.role == "task")
+    assert block.asset_refs == [] and len(block.solution_asset_refs) == 1
+    solution_id = block.solution_asset_refs[0]
+    solution = next(a for a in content.assets if a.id == solution_id)
+
+    # the summary drawn is exactly the one computed into the answer key
+    summary = solution.spec["summary"]
+    answer = _flat(block.answer_key)
+    assert all(f"{label} = {summary[key]}" in answer for label, key in
+               (("Minimum", "min"), ("Q₁", "q1"), ("Median", "median"),
+                ("Q₃", "q3"), ("Maximum", "max")))
+
+    assets = {a.id: build_asset(a, outdir=tmp_path / "assets") for a in content.assets}
+    student = render_student_sheet(content, tmp_path / "student_box.pdf", assets)
+    teacher = render_teacher_guide(content, tmp_path / "teacher_box.pdf", assets)
+    assert sum(len(p.get_images()) for p in fitz.open(student)) == 0
+    assert sum(len(p.get_images()) for p in fitz.open(teacher)) >= 1

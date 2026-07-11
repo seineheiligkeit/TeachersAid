@@ -88,6 +88,8 @@ class Instance(BaseModel):
     answer: RichText                   # the derived answer (correct by construction)
     steps: list[SolutionStep] = Field(default_factory=list)   # the PRIMARY worked Rechenweg
     figure: FigureSpec | None = None   # optional per-instance figure (masks the asked unknown)
+    solution_figure: FigureSpec | None = None  # optional computed teacher-only solution figure;
+    # pipeline.parametrize wires this to TaskBlock.solution_asset_refs, never ordinary asset_refs
     solution_paths: list[SolutionPath] = Field(default_factory=list)  # ALTERNATIVE strategies
     # (the "Schüler könnten auch…" routes) — DERIVED by the recipe, each ending at the same
     # answer as `steps`; empty unless a recipe genuinely has divergent named strategies.

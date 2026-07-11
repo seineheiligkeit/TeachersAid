@@ -4,7 +4,7 @@ Branch: `ext/nets`
 
 Baseline: 674 passed, 1 skipped
 
-Current: **683 passed, 1 skipped**
+Current: **688 passed, 1 skipped**
 
 ## T1 — `nets` (Körpernetze) — complete
 
@@ -50,7 +50,7 @@ Current: **683 passed, 1 skipped**
 ## Remaining brief
 
 - T2 — Varianten dashboard/API: complete (details below).
-- T2b — teacher-only boxplot solution figure: not started.
+- T2b — teacher-only boxplot solution figure: complete (details below).
 - T3 — ANNO fetch + media texts + referenced-only Quellenarbeit: not started.
 - T4 — BIO datasets + Bezirk regional data/boundaries: not started.
 - T5 — informational Realien: optional, not started.
@@ -80,3 +80,28 @@ Current: **683 passed, 1 skipped**
 
 - None for correctness. The product wording “ansteigend (leicht → anspruchsvoll)” and placement in
   Korpus are UX judgments worth a quick glance during the ordinary dashboard review.
+
+## T2b — teacher-only boxplot solution figure — complete
+
+### What shipped
+
+- `Instance.solution_figure` is an explicit pipeline-internal request separate from the all-projection
+  `figure` field.
+- Parametric instantiation assigns a unique solution asset id, collects the asset on the worksheet,
+  and wires only `TaskBlock.solution_asset_refs`.
+- `boxplot_from_data` emits `matplotlib:boxplot` from its already-derived minimum, Q₁, median, Q₃,
+  and maximum. The all-projection `asset_refs` remain empty.
+- Teacher rendering uses the existing solution channel; puzzle tasks retain “Lösungsraster”, while
+  other computed visuals use “Lösungsabbildung”.
+
+### Verification
+
+- Figure/Matura/parametric/puzzle/render regression set: **75 passed**.
+- Lock test: summary values in the figure spec equal the answer key; student PDF contains no image;
+  teacher PDF contains the solution plot.
+- Full offline suite after T2/T2b: **688 passed, 1 skipped**.
+
+### SME flags
+
+- The quartile convention remains the existing exclusive school convention (odd sample size; overall
+  median excluded from both halves). No mathematical convention changed in this task.

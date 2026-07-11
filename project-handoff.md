@@ -448,6 +448,9 @@ target language for Fremdsprache). Read this, then the docs in the order given i
 > difficulty ramp wired through `compose_variants`, and the **Korpus → Arbeitsblätter** production form.
 > The browser verification staged the two-variant Quader series `c0198`, opened its student PDF preview,
 > and found no console errors.
+> **Boxplot follow-up shipped:** parametric `Instance.solution_figure` is the minimal teacher-only
+> emission seam; `boxplot_from_data` derives a solution figure from the same five values as its answer
+> key and wires it through `solution_asset_refs`. Student/homework never traverse that channel.
 
 ---
 

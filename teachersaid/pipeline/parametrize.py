@@ -134,17 +134,18 @@ def _mc_fields(inst: Instance, rng: random.Random) -> dict:
 
 
 def _instantiate(task: ParametricTask, seed: int, *,
-                 difficulty: int | None = None) -> tuple[TaskBlock, Asset | None]:
-    """Build one concrete (TaskBlock, figure asset) for `seed` (deterministic).
+                 difficulty: int | None = None) -> tuple[TaskBlock, list[Asset]]:
+    """Build one concrete (TaskBlock, emitted assets) for `seed` (deterministic).
 
     `difficulty` (1–3) is passed only to recipes that declare the knob; others are drawn
     unchanged (the ramp request is honestly ignored). The block's `difficulty` comes from
     what the recipe DELIVERED (`Instance.difficulty`), never the request. If the recipe's
     Instance carries an `mc` request, the block is emitted as a `multiple_choice` task with
-    correct-by-construction misconception distractors (see `_mc_fields`). The asset is None
-    when the recipe emits no `Instance.figure`; when it does, the asset gets a UNIQUE
+    correct-by-construction misconception distractors (see `_mc_fields`). When a recipe emits
+    an `Instance.figure`, the asset gets a UNIQUE
     per-variant id (`<task>-<seed>-fig`, no '#' → a safe PNG filename) and is wired onto
-    the block via `asset_refs`, so figures never collide or overwrite one another."""
+    the block via `asset_refs`, so figures never collide or overwrite one another. A
+    `solution_figure` gets its own unique id and is wired only to `solution_asset_refs`."""
     rng = random.Random(seed)
     recipe = _RECIPES.get(task.recipe)
     if recipe is None:
@@ -179,12 +180,19 @@ def _instantiate(task: ParametricTask, seed: int, *,
     if mc is not None:                                 # override for the MC projection
         fields.update(mc)
     block = TaskBlock(**fields)
-    asset: Asset | None = None
+    assets: list[Asset] = []
     if inst.figure is not None:
         asset = Asset(id=f"{task.id}-{seed}-fig", role="figure",
                       generator=inst.figure.generator, spec=inst.figure.spec)
         block.asset_refs = [asset.id]
-    return block, asset
+        assets.append(asset)
+    if inst.solution_figure is not None:
+        solution = Asset(id=f"{task.id}-{seed}-solution-fig", role="figure",
+                         generator=inst.solution_figure.generator,
+                         spec=inst.solution_figure.spec)
+        block.solution_asset_refs = [solution.id]
+        assets.append(solution)
+    return block, assets
 
 
 def instantiate(task: ParametricTask, seed: int, *,
@@ -218,19 +226,18 @@ def make_variants_with_assets(
     bands: list[int | None] = list(ramp_bands(n)) if ramp else [None] * n
     budget = seed0 + max(n * 20, 40)              # bounded search for distinct prompts
 
-    def _keep(blk: TaskBlock, asset: Asset | None) -> None:
+    def _keep(blk: TaskBlock, emitted: list[Asset]) -> None:
         blocks.append(blk)
-        if asset is not None:
-            assets.append(asset)
+        assets.extend(emitted)
 
     for band in bands:
         while seed < budget:                      # find a distinct prompt for this slot
-            blk, asset = _instantiate(task, seed, difficulty=band)
+            blk, emitted = _instantiate(task, seed, difficulty=band)
             seed += 1
             key = str(blk.prompt)
             if key not in seen:
                 seen.add(key)
-                _keep(blk, asset)
+                _keep(blk, emitted)
                 break
         else:                                     # pool exhausted → allow a repeat
             _keep(*_instantiate(task, seed, difficulty=band))
@@ -1251,13 +1258,10 @@ def _boxplot_from_data(rng: random.Random) -> Instance:
     (Median der jeweiligen Hälfte OHNE den Gesamtmedian; beide Hälften sind dann ungerade
     lang) eindeutig einzelne Datenwerte sind — keine Mittelung, saubere Ergebnisse.
 
-    KEINE Figurenausgabe (bewusst): der Lösungs-Boxplot IST die Fünf-Punkte-Zusammenfassung.
-    Ein Task-Asset rendert in ALLEN Projektionen identisch — `rendering/blocks_to_flowables.
-    _task_flowables` bettet `asset_refs` ohne Projektions-Weiche ein, es gibt also keinen
-    reinen Lehrer-Kanal (die Projektions-Trennung liegt in Antwort/Rechenweg, nicht in
-    Bildern). Ein Boxplot auf dem Blatt würde Q1/Median/Q3/Min/Max direkt verraten. Die
-    Lösung bleibt daher rechenbar in den `solution_steps` (Lehrer-Guide); `figure` bleibt
-    None. Die `matplotlib:boxplot`-Recipe bleibt für kuratierte Datensatz-Abbildungen."""
+    Der Lösungs-Boxplot IST die Fünf-Punkte-Zusammenfassung und darf deshalb nie in
+    `figure`/`asset_refs` landen. Er wird aus denselben berechneten fünf Kennzahlen als
+    `solution_figure` emittiert; die Instanziierungs-Naht verdrahtet ihn ausschließlich
+    über `TaskBlock.solution_asset_refs` in die Lehrerprojektion."""
     n = rng.choice([11, 15])
     vals = sorted(rng.randint(1, 45) for _ in range(n))
     if vals[-1] - vals[0] < 6:
@@ -1281,7 +1285,12 @@ def _boxplot_from_data(rng: random.Random) -> Instance:
     ]
     answer = (f"Minimum = {mn}, Q₁ = {q1}, Median = {med}, Q₃ = {q3}, Maximum = {mx}; "
               f"Spannweite = {spann}; Interquartilsabstand = {iqr}")
-    return Instance(params={"daten": daten}, answer=answer, steps=steps)
+    solution_figure = FigureSpec(generator="matplotlib:boxplot", spec={
+        "summary": {"min": mn, "q1": q1, "median": med, "q3": q3, "max": mx},
+        "xlabel": "Wert", "title": "Lösung: Kastenschaubild",
+    })
+    return Instance(params={"daten": daten}, answer=answer, steps=steps,
+                    solution_figure=solution_figure)
 
 
 @_recipe("probability_tree")

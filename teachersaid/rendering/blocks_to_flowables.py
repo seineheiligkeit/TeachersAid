@@ -241,12 +241,13 @@ def _task_flowables(b: TaskBlock, projection: str, S, width, assets, number, cit
         out += _response_flowables(b, S, width)
 
     if projection == "teacher":
-        # teacher-only solution figure(s) — the SOLVED puzzle grid (A5). The student sheet shows
-        # the empty grid (via asset_refs above); the filled one is for the Lehrkraft only.
+        # teacher-only solution figure(s) — solved puzzle grids and computed solution plots.
+        # Student/homework projections never traverse this id channel.
         for ref in b.solution_asset_refs:
             p = assets.get(ref)
             if p:
-                out.append(rb.para("Lösungsraster:", S["label"]))
+                out.append(rb.para("Lösungsraster:" if b.kind == "puzzle" else
+                                   "Lösungsabbildung:", S["label"]))
                 out.append(_image(p, width * 0.75))
         dims = ", ".join(b.dimensions)
         serves = ", ".join(f"{s.competence_id} ({s.relation})" for s in b.serves)
