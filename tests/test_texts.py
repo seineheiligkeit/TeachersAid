@@ -87,6 +87,40 @@ def test_source_text_renders_with_line_numbers(tmp_path):
     assert "Quelle: Heinrich Heine" in text                   # cited
 
 
+# --- staged-equals-fetched: the Wikisource batch (verbatim-text discipline) ---
+# Every staged annotation JSON must carry the fetch tool's text + source_ref BYTE-
+# identically — the annotation layer is added, the wording is never touched.
+_WIKISOURCE_PAIRS = [
+    "deu-erlkoenig", "deu-wiesel", "deu-kuechlein", "deu-kleine-fabel",
+    "deu-fuchs-katze", "lat-canis-flumen", "lat-vulpes-ciconia",
+]
+
+
+@pytest.mark.parametrize("name", _WIKISOURCE_PAIRS)
+def test_staged_wikisource_text_is_verbatim_from_fetch(name):
+    import json
+    from pathlib import Path
+
+    source = json.loads(Path(f"runs/ingest/texts_src/{name}.json").read_text(encoding="utf-8"))
+    annotated = json.loads(Path(f"runs/ingest/texts/{name}.json").read_text(encoding="utf-8"))
+    assert annotated["text"] == source["text"]
+    assert annotated["source"] == source["source_ref"]
+    assert source["rights_check"]["clear"] is True
+    assert "oldid=" in source["permalink"]                 # exact-revision permalink recorded
+
+
+def test_staged_wikisource_batch_rights_are_pma_clear():
+    import json
+    from pathlib import Path
+
+    for name in _WIKISOURCE_PAIRS:
+        src = json.loads(Path(f"runs/ingest/texts_src/{name}.json").read_text(encoding="utf-8"))
+        ref = TextSourceRef.model_validate(src["source_ref"])
+        ok, reasons = ref.is_clear(2026)
+        assert ok, f"{name}: {reasons}"
+        assert ref.author_death_year is not None and 2026 - ref.author_death_year >= 70
+
+
 # --- store + ingest gate -----------------------------------------------------
 def test_text_store_roundtrip_and_status_preserve(tmp_path):
     from teachersaid.store.textstore import TextRecord, TextStore
