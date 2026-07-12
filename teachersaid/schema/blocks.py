@@ -158,6 +158,30 @@ class SolutionPath(BaseModel):
     # natural / unnatural for THESE drawn numbers
 
 
+class TaskScaffold(BaseModel):
+    """Gerüst (P2 Tiefenregler): STUDENT-FACING scaffolding, DERIVED from the instance's
+    computed/curated data — never authored by hand or LLM (absent from generation views, like
+    `solution_steps`). Populated only by the Gerüst fader (`pipeline/scaffold.py`).
+
+    Unlike the teacher-only Rechenweg, this renders on the STUDENT AND HOMEWORK sheets — the
+    whole point of whole-class scaffolding the teacher dialled in. It therefore carries only
+    material that can NEVER leak the answer: a leak-guarded worked FIRST step (never the full
+    Rechenweg, never the result), a misconception warning naming the trap category (never the
+    answer), and curated Formulierungshilfen. `hint_categories` is the teacher-facing list of
+    the Fehlermuster names the hint covers (so the teacher guide can name what was scaffolded;
+    rendering stays pure — no catalog lookup at render time)."""
+    model_config = ConfigDict(extra="forbid")
+    first_step: RichText | None = None                 # worked first step (text + inline math)
+    hint: str | None = None                            # student misconception warning
+    hint_categories: list[str] = Field(default_factory=list)  # Fehlermuster names (teacher line)
+    sentence_starters: list[str] = Field(default_factory=list)  # Formulierungshilfen (curated)
+
+    @field_validator("first_step")
+    @classmethod
+    def _collapse(cls, v):
+        return collapse(v) if v is not None else v
+
+
 class Serves(BaseModel):
     model_config = ConfigDict(extra="forbid")
     competence_id: str
@@ -190,6 +214,8 @@ class TaskBlock(BlockBase):
     # the student sheet shows the empty grid via `asset_refs`. DERIVED/curated, never LLM-authored.
     watch_outs: list[str] = Field(default_factory=list)
     self_check: RichText | None = None  # homework: no teacher present
+    scaffold: TaskScaffold | None = None  # Gerüst (P2 Tiefenregler) — student-facing, DERIVED;
+    # populated only by pipeline/scaffold.py, never by hand or LLM (absent from generation views)
 
     @field_validator("prompt", "answer_key", "acceptable_reasoning", "self_check")
     @classmethod

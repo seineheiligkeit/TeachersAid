@@ -136,7 +136,8 @@ def _mc_fields(inst: Instance, rng: random.Random) -> dict:
 
 def _instantiate(task: ParametricTask, seed: int, *,
                  difficulty: int | None = None,
-                 openness: Offenheit | None = None) -> tuple[TaskBlock, list[Asset]]:
+                 openness: Offenheit | None = None,
+                 scaffold: bool = False) -> tuple[TaskBlock, list[Asset]]:
     """Build one concrete (TaskBlock, emitted assets) for `seed` (deterministic).
 
     `difficulty` (1–3) is passed only to recipes that declare the knob; others are drawn
@@ -202,6 +203,9 @@ def _instantiate(task: ParametricTask, seed: int, *,
                         for warning in mc["watch_outs"]],
         )
     block = TaskBlock(**fields)
+    if scaffold:                                       # Gerüst (P2): student-facing scaffold
+        from . import scaffold as _scaffold            # DERIVED from THIS instance's data
+        block.scaffold = _scaffold.build_scaffold(block, inst)
     assets: list[Asset] = []
     if inst.figure is not None:
         asset = Asset(id=f"{task.id}-{seed}-fig", role="figure",
@@ -219,9 +223,11 @@ def _instantiate(task: ParametricTask, seed: int, *,
 
 def instantiate(task: ParametricTask, seed: int, *,
                 difficulty: int | None = None,
-                openness: Offenheit | None = None) -> TaskBlock:
+                openness: Offenheit | None = None,
+                scaffold: bool = False) -> TaskBlock:
     """Build one concrete TaskBlock for `seed` (deterministic; see `_instantiate`)."""
-    return _instantiate(task, seed, difficulty=difficulty, openness=openness)[0]
+    return _instantiate(task, seed, difficulty=difficulty, openness=openness,
+                        scaffold=scaffold)[0]
 
 
 def ramp_bands(n: int) -> list[int]:
@@ -232,7 +238,7 @@ def ramp_bands(n: int) -> list[int]:
 
 def make_variants_with_assets(
     task: ParametricTask, n: int, *, seed0: int = 1, ramp: bool = False,
-    openness: Offenheit | None = None,
+    openness: Offenheit | None = None, scaffold: bool = False,
 ) -> tuple[list[TaskBlock], list[Asset]]:
     """N variants of one template, preferring distinct prompts, plus their figure assets
     (aligned: only variants that emit a figure contribute one). Recipes with a small finite
@@ -244,7 +250,10 @@ def make_variants_with_assets(
     that support the knob — the Übungsreihe form: start leicht, end anspruchsvoll.
     Recipes without the knob ignore the request, so ramp is safe on any template.
     `openness` is a P1 Tiefenregler projection and is accepted only when every drawn
-    instance emits a misconception-backed `MCSpec`; open and closed share the draw."""
+    instance emits a misconception-backed `MCSpec`; open and closed share the draw.
+    `scaffold=True` is the P2 Gerüst projection: each task also gets a derived,
+    student-facing `TaskScaffold` (leak-guarded first step + misconception hint +
+    Formulierungshilfen) — it never changes the prompt, so dedup and ramp are unaffected."""
     blocks: list[TaskBlock] = []
     assets: list[Asset] = []
     seen: set[str] = set()
@@ -258,7 +267,8 @@ def make_variants_with_assets(
 
     for band in bands:
         while seed < budget:                      # find a distinct prompt for this slot
-            blk, emitted = _instantiate(task, seed, difficulty=band, openness=openness)
+            blk, emitted = _instantiate(task, seed, difficulty=band, openness=openness,
+                                        scaffold=scaffold)
             seed += 1
             key = str(blk.prompt)
             if key not in seen:
@@ -266,17 +276,19 @@ def make_variants_with_assets(
                 _keep(blk, emitted)
                 break
         else:                                     # pool exhausted → allow a repeat
-            _keep(*_instantiate(task, seed, difficulty=band, openness=openness))
+            _keep(*_instantiate(task, seed, difficulty=band, openness=openness,
+                                scaffold=scaffold))
             seed += 1
     return blocks, assets
 
 
 def make_variants(task: ParametricTask, n: int, *, seed0: int = 1,
                   ramp: bool = False,
-                  openness: Offenheit | None = None) -> list[TaskBlock]:
+                  openness: Offenheit | None = None,
+                  scaffold: bool = False) -> list[TaskBlock]:
     """N variant TaskBlocks of one template (see `make_variants_with_assets`)."""
     return make_variants_with_assets(
-        task, n, seed0=seed0, ramp=ramp, openness=openness,
+        task, n, seed0=seed0, ramp=ramp, openness=openness, scaffold=scaffold,
     )[0]
 
 

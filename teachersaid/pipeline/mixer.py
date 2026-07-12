@@ -15,6 +15,7 @@ from ..schema.enums import COGNITIVE_RANK
 from ..schema.mixer import (
     Abstraktion,
     FaderMovement,
+    Geruest,
     MixerLintReport,
     MixerMetricSnapshot,
     Offenheit,
@@ -107,6 +108,7 @@ def metric_snapshot(blocks: list[TaskBlock]) -> MixerMetricSnapshot:
     afb: dict[str, int] = {}
     c4_scores: list[float] = []
     from .difficulty_model import estimate
+    from .scaffold import scaffold_size
 
     for block in blocks:
         band = _afb_band(block.cognitive_level)
@@ -123,6 +125,8 @@ def metric_snapshot(blocks: list[TaskBlock]) -> MixerMetricSnapshot:
             getattr(b.payload, "kind", None) == "multiple_choice" for b in blocks
         ),
         open_response_tasks=sum(b.kind == "open_response" for b in blocks),
+        scaffolded_tasks=sum(bool(b.scaffold) for b in blocks),
+        scaffold_elements=sum(scaffold_size(b.scaffold) for b in blocks),
         c4_mean=(round(sum(c4_scores) / len(c4_scores), 4) if c4_scores else None),
         coverage_ids=_coverage_ids(blocks),
     )
@@ -164,12 +168,27 @@ def make_mixed_variants(
     seed0: int = 1,
     ramp: bool = False,
 ) -> tuple[list[TaskBlock], list[Asset], MixerLintReport, int]:
-    """Apply a P1 profile and return blocks, assets, Regler-Lint, and actual count."""
+    """Apply a P1/P2 profile and return blocks, assets, Regler-Lint, and actual count."""
     actual_n = adjusted_variant_count(base_n, profile.umfang)
 
+    scaffold_on = profile.geruest == Geruest.GESTUETZT
     blocks, assets = make_variants_with_assets(
         task, actual_n, seed0=seed0, ramp=ramp, openness=profile.offenheit,
+        scaffold=scaffold_on,
     )
+    if profile.geruest is not None:
+        # Gerüst capability (fail loudly, like the P1 faders): the template must expose
+        # scaffoldable data on at least one variant, else this is a no-op control.
+        probe = blocks if scaffold_on else make_variants_with_assets(
+            task, actual_n, seed0=seed0, ramp=ramp, openness=profile.offenheit,
+            scaffold=True,
+        )[0]
+        if not any(b.scaffold for b in probe):
+            raise ValueError(
+                "Tiefenregler Gerüst is unsupported by template "
+                f"'{task.id}': no leak-free first step, misconception hint, or open "
+                "response surface to scaffold"
+            )
     if profile.tiefe == Tiefe.STRATEGIEN_VERGLEICHEN:
         blocks = _strategy_depth(blocks)
     elif profile.tiefe == Tiefe.UEBEN:
@@ -229,6 +248,24 @@ def make_mixed_variants(
         movements.append(_movement(
             "offenheit", "geschlossen", "offen", "multiple_choice_tasks",
             low.multiple_choice_tasks, high.multiple_choice_tasks, low, high,
+        ))
+
+    if profile.geruest is not None:
+        # Gerüst (P2): measure the two endpoints from the same template + seed stream.
+        # Scaffolding never touches serves/kind/minutes, so only the scaffold count moves —
+        # coverage is intact by construction.
+        bare, _ = make_variants_with_assets(
+            task, actual_n, seed0=seed0, ramp=ramp, openness=profile.offenheit,
+            scaffold=False,
+        )
+        scaffolded, _ = make_variants_with_assets(
+            task, actual_n, seed0=seed0, ramp=ramp, openness=profile.offenheit,
+            scaffold=True,
+        )
+        low, high = metric_snapshot(bare), metric_snapshot(scaffolded)
+        movements.append(_movement(
+            "geruest", "ohne", "gestützt", "scaffolded_tasks",
+            low.scaffolded_tasks, high.scaffolded_tasks, low, high,
         ))
 
     report = MixerLintReport(

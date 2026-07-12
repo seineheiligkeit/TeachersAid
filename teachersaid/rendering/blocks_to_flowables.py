@@ -220,6 +220,36 @@ def _solution_step_flowables(steps, S):
     return out
 
 
+def _scaffold_flowables(scaffold, S):
+    """Gerüst (P2): the STUDENT-FACING scaffold box — a leak-free worked first step, a
+    misconception warning, and Formulierungshilfen. Renders on the student AND homework
+    sheet (the write-space below is unchanged); the teacher guide names it instead."""
+    out = [rb.para("Hilfestellung", S["label"])]
+    if scaffold.first_step:
+        out.append(rb.raw_para(
+            "Erster Schritt: " + rb.richtext_markup(scaffold.first_step), S["body"]))
+    if scaffold.hint:
+        out.append(rb.raw_para("⚠ " + rb.richtext_markup(scaffold.hint), S["callout"]))
+    if scaffold.sentence_starters:
+        out.append(rb.para("Formulierungshilfen:", S["body"]))
+        for starter in scaffold.sentence_starters:
+            out.append(rb.para("• " + starter, S["body"]))
+    return out
+
+
+def _scaffold_teacher_line(scaffold) -> str:
+    """The teacher-guide one-liner naming what the class's sheet was scaffolded with."""
+    parts = []
+    if scaffold.first_step:
+        parts.append("erster Lösungsschritt")
+    if scaffold.hint:
+        cats = f" ({', '.join(scaffold.hint_categories)})" if scaffold.hint_categories else ""
+        parts.append("Fehler-Hinweis" + cats)
+    if scaffold.sentence_starters:
+        parts.append(f"{len(scaffold.sentence_starters)} Formulierungshilfen")
+    return "Gerüst (Schülerhilfe): " + " · ".join(parts)
+
+
 def _task_flowables(b: TaskBlock, projection: str, S, width, assets, number, citations=None):
     out = [rb.raw_para(f"<b>{number}.</b> " + rb.richtext_markup(b.prompt), S["prompt"])]
     # embed every referenced asset (any task kind), + a data_interpretation payload's asset
@@ -233,6 +263,10 @@ def _task_flowables(b: TaskBlock, projection: str, S, width, assets, number, cit
         if p:
             out.append(_image(p, width * 0.75))
     out += _citation_flowables(refs, citations, S)
+    # Gerüst (P2): the scaffold is student-facing (the teacher dialled it in for the class),
+    # so it renders on student + homework before the answer surface; teacher gets a named line.
+    if b.scaffold and projection in ("student", "homework"):
+        out += _scaffold_flowables(b.scaffold, S)
     out += _payload_flowables(b, S, width)
     # The teacher guide is a guide, not a blank to fill in: skip the answer space. And a
     # self-contained payload (ordering/matching/MC) is its OWN response surface — adding generic
@@ -263,6 +297,8 @@ def _task_flowables(b: TaskBlock, projection: str, S, width, assets, number, cit
             + (f" · dient: {serves}" if serves else ""),
             S["meta"],
         ))
+        if b.scaffold:                                # name what the class's sheet was given
+            out.append(rb.para(_scaffold_teacher_line(b.scaffold), S["meta"]))
         if b.answer_key:
             out.append(rb.raw_para("Lösung: " + rb.richtext_markup(b.answer_key), S["answer"]))
         if b.acceptable_reasoning:

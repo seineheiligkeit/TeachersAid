@@ -79,6 +79,23 @@ def test_variants_endpoint_accepts_p1_mixer_profile(tmp_path, monkeypatch):
                for block in content["sections"][0]["blocks"])
 
 
+def test_variants_endpoint_accepts_p2_geruest_profile(tmp_path, monkeypatch):
+    # P4 owns the dashboard; the API must accept the extended typed profile unchanged.
+    client, _ = _client(tmp_path, monkeypatch)
+    summary = client.post("/api/variants", json={
+        "template_id": "phy-us-ohm-mc",
+        "n": 3,
+        "mixer_profile": {"geruest": "gestuetzt"},
+    }).json()
+    item = client.get(f"/api/items/{summary['id']}").json()
+    content = item["content"]
+    assert content["mixer_profile"]["geruest"] == "gestuetzt"
+    assert content["mixer_lint"]["passed"] is True
+    assert any(m["fader"] == "geruest" for m in content["mixer_lint"]["movements"])
+    tasks = [b for b in content["sections"][0]["blocks"] if b["role"] == "task"]
+    assert tasks and all(b["scaffold"] is not None for b in tasks)
+
+
 def test_variants_endpoint_rejects_unknown_template_and_bad_count(tmp_path, monkeypatch):
     client, _ = _client(tmp_path, monkeypatch)
     assert client.post("/api/variants", json={"template_id": "nope", "n": 3}).status_code == 404
