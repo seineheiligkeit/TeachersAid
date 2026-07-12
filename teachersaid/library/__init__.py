@@ -214,6 +214,19 @@ def seed_anno_quellenarbeit(store=None, *, today: date | None = None) -> list:
     return [orch.stage_worksheet(store, anno.build_content(), res, source="curated")]
 
 
+def seed_anno_weltausstellung(store=None, *, today: date | None = None) -> list:
+    """Stage the second referenced-only ANNO Quellenarbeit (the official 1873
+    Weltausstellung voice — the counterpart to the oppositional 1871 Leitartikel)."""
+    from ..pipeline import orchestrator as orch
+    from ..pipeline.resolve import resolve_grade
+    from ..store.repository import ReviewStore
+    from . import gpb_anno_weltausstellung as anno2
+
+    store = store or ReviewStore()
+    res = resolve_grade(anno2.SUBJECT, anno2.KLASSE, today=today)
+    return [orch.stage_worksheet(store, anno2.build_content(), res, source="curated")]
+
+
 def seed_textsorten(store=None, *, today: date | None = None) -> list:
     """Stage the curated Deutsch Textsorten-scaffold worksheets (the German genre layer —
     teach a Textsorte richly and EARLIER than the Matura merely checks it) as content items
