@@ -66,3 +66,18 @@ def test_staged_annotation_keeps_the_fetched_ocr_verbatim():
     assert annotated["text"] == source["text"]
     assert annotated["source"] == source["source_ref"]
     assert "Frei\nheiten" in annotated["text"]             # OCR line break was not repaired
+
+
+def test_weltausstellung_annotation_keeps_the_fetched_ocr_verbatim():
+    source = json.loads((Path("runs/ingest/texts_src/anno-weltausstellung-1873.json"))
+                        .read_text(encoding="utf-8"))
+    annotated = json.loads((Path("runs/ingest/texts/deu-anno-weltausstellung-1873.json"))
+                           .read_text(encoding="utf-8"))
+    assert annotated["text"] == source["text"]
+    assert annotated["source"] == source["source_ref"]
+    assert source["source_ref"]["rights_basis"] == "public_domain_mark"
+    assert source["canvas_url"].endswith("/ANNO/wrz18730502/canvas/00000003")
+    # OCR errors preserved, never silently corrected ("find" = sind, "wahrhast" = wahrhaft)
+    assert "Bald find es" in annotated["text"]
+    assert "wahrhast kaiserlichen" in annotated["text"]
+    assert "stimmten begeistert em." in annotated["text"]
