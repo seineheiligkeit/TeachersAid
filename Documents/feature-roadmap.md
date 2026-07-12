@@ -45,6 +45,13 @@ built** — P1 pure-computation faders (Umfang · Tiefe · Abstraktion · Offenh
 discovery + dashboard Mischpult (composer integration investigated, documented out — design doc §8).
 *(The rejected sibling is recorded under Rejected.)*
 
+**Mischpult follow-ups (small — the fader machinery exists; natural next-session starters):**
+lesson-purpose **presets** (Wiederholung vor der Schularbeit · Vertiefungsstunde ·
+Vertretungsstunde · Hausübung) as named, curated bundles of fader settings over the SAME typed
+profile — a curated table + a dashboard affordance, no new engine; and the within-class depth
+genres — optional **Zusatz-★-blocks** and tiered a)→b)→c) sub-questions (*selbstdifferenzierend*,
+inside ONE shared sheet) — which are content-genre work on templates/blocks, not fader work.
+
 **New task genres (engines):**
 - **Fermi-Werkstatt** — estimation problems; decomposition chains with curated fact-anchors from
   the data layer; acceptable ranges + worked chain COMPUTED. Verbatim MAT modelling competences;
