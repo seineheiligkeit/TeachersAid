@@ -182,6 +182,19 @@ class TaskScaffold(BaseModel):
         return collapse(v) if v is not None else v
 
 
+class Gloss(BaseModel):
+    """Textlast (P3 Tiefenregler): one curated Wortschatz entry — a Fachbegriff and a short
+    German explanation. CURATED content (lives on `ParametricTask.glossary`, SME-vetted like
+    the prompt itself), SELECTED by the Textlast fader at the `einfach` endpoint and rendered
+    as a student-facing Wortschatz-Kasten. A gloss explains a TERM, never a value — it must
+    stay term-definitional so it can never leak a per-variant computed answer (a constant
+    template gloss cannot contain a per-seed answer by construction; locked by a no-leak test).
+    """
+    model_config = ConfigDict(extra="forbid")
+    term: str
+    explanation: str
+
+
 class Serves(BaseModel):
     model_config = ConfigDict(extra="forbid")
     competence_id: str

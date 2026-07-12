@@ -35,7 +35,7 @@ from sympy import (
 from ..schema.assets import Asset
 from ..schema.blocks import MultipleChoicePayload, SolutionPath, SolutionStep, TaskBlock
 from ..schema.parametric import FigureSpec, Instance, MCSpec, ParametricTask
-from ..schema.mixer import Offenheit
+from ..schema.mixer import Offenheit, Textlast
 from ..schema.response import ChoicesResponse, LinesResponse
 from ..schema.richtext import InlineRun, RichText
 
@@ -137,7 +137,8 @@ def _mc_fields(inst: Instance, rng: random.Random) -> dict:
 def _instantiate(task: ParametricTask, seed: int, *,
                  difficulty: int | None = None,
                  openness: Offenheit | None = None,
-                 scaffold: bool = False) -> tuple[TaskBlock, list[Asset]]:
+                 scaffold: bool = False,
+                 textlast: Textlast | None = None) -> tuple[TaskBlock, list[Asset]]:
     """Build one concrete (TaskBlock, emitted assets) for `seed` (deterministic).
 
     `difficulty` (1–3) is passed only to recipes that declare the knob; others are drawn
@@ -148,7 +149,13 @@ def _instantiate(task: ParametricTask, seed: int, *,
     an `Instance.figure`, the asset gets a UNIQUE
     per-variant id (`<task>-<seed>-fig`, no '#' → a safe PNG filename) and is wired onto
     the block via `asset_refs`, so figures never collide or overwrite one another. A
-    `solution_figure` gets its own unique id and is wired only to `solution_asset_refs`."""
+    `solution_figure` gets its own unique id and is wired only to `solution_asset_refs`.
+
+    `textlast` is the P3 Tiefenregler projection: `einfach` SELECTS the template's approved
+    simplified prose twin (`prompt_simple`, filled from the SAME computed `params`); it fails
+    loudly when the template carries no twin (never a no-op control). `voll`/None keep the
+    master prompt. The twin is a curated-field selection, not a rewrite — the computed values,
+    answer and seed stream are untouched."""
     rng = random.Random(seed)
     recipe = _RECIPES.get(task.recipe)
     if recipe is None:
@@ -173,7 +180,17 @@ def _instantiate(task: ParametricTask, seed: int, *,
             f"Tiefenregler Offenheit is unsupported by template '{task.id}': "
             "the recipe emits no misconception-backed MC specification"
         )
-    filled = task.prompt_template.format(**inst.params)
+    # Textlast (P3): SELECT the simplified twin at `einfach`; fail loudly with no twin.
+    if textlast == Textlast.EINFACH:
+        if task.prompt_simple is None:
+            raise ValueError(
+                f"Tiefenregler Textlast is unsupported by template '{task.id}': "
+                "no approved simplified prompt twin (prompt_simple)"
+            )
+        prompt_source = task.prompt_simple
+    else:
+        prompt_source = task.prompt_template
+    filled = prompt_source.format(**inst.params)
     if openness == Offenheit.OFFEN:
         # Remove MC-only wording from the SAME computed item; the numeric/factual master,
         # answer and seed remain untouched.  Every open projection receives an explicit
@@ -224,10 +241,11 @@ def _instantiate(task: ParametricTask, seed: int, *,
 def instantiate(task: ParametricTask, seed: int, *,
                 difficulty: int | None = None,
                 openness: Offenheit | None = None,
-                scaffold: bool = False) -> TaskBlock:
+                scaffold: bool = False,
+                textlast: Textlast | None = None) -> TaskBlock:
     """Build one concrete TaskBlock for `seed` (deterministic; see `_instantiate`)."""
     return _instantiate(task, seed, difficulty=difficulty, openness=openness,
-                        scaffold=scaffold)[0]
+                        scaffold=scaffold, textlast=textlast)[0]
 
 
 def ramp_bands(n: int) -> list[int]:
@@ -239,6 +257,7 @@ def ramp_bands(n: int) -> list[int]:
 def make_variants_with_assets(
     task: ParametricTask, n: int, *, seed0: int = 1, ramp: bool = False,
     openness: Offenheit | None = None, scaffold: bool = False,
+    textlast: Textlast | None = None,
 ) -> tuple[list[TaskBlock], list[Asset]]:
     """N variants of one template, preferring distinct prompts, plus their figure assets
     (aligned: only variants that emit a figure contribute one). Recipes with a small finite
@@ -253,7 +272,10 @@ def make_variants_with_assets(
     instance emits a misconception-backed `MCSpec`; open and closed share the draw.
     `scaffold=True` is the P2 Gerüst projection: each task also gets a derived,
     student-facing `TaskScaffold` (leak-guarded first step + misconception hint +
-    Formulierungshilfen) — it never changes the prompt, so dedup and ramp are unaffected."""
+    Formulierungshilfen) — it never changes the prompt, so dedup and ramp are unaffected.
+    `textlast` is the P3 Textlast projection: `einfach` fills each prompt from the template's
+    approved simplified twin instead of the master (same computed params) — the twin text
+    changes, so dedup keys on the projected prompt exactly as for the master."""
     blocks: list[TaskBlock] = []
     assets: list[Asset] = []
     seen: set[str] = set()
@@ -268,7 +290,7 @@ def make_variants_with_assets(
     for band in bands:
         while seed < budget:                      # find a distinct prompt for this slot
             blk, emitted = _instantiate(task, seed, difficulty=band, openness=openness,
-                                        scaffold=scaffold)
+                                        scaffold=scaffold, textlast=textlast)
             seed += 1
             key = str(blk.prompt)
             if key not in seen:
@@ -277,7 +299,7 @@ def make_variants_with_assets(
                 break
         else:                                     # pool exhausted → allow a repeat
             _keep(*_instantiate(task, seed, difficulty=band, openness=openness,
-                                scaffold=scaffold))
+                                scaffold=scaffold, textlast=textlast))
             seed += 1
     return blocks, assets
 
@@ -285,10 +307,12 @@ def make_variants_with_assets(
 def make_variants(task: ParametricTask, n: int, *, seed0: int = 1,
                   ramp: bool = False,
                   openness: Offenheit | None = None,
-                  scaffold: bool = False) -> list[TaskBlock]:
+                  scaffold: bool = False,
+                  textlast: Textlast | None = None) -> list[TaskBlock]:
     """N variant TaskBlocks of one template (see `make_variants_with_assets`)."""
     return make_variants_with_assets(
         task, n, seed0=seed0, ramp=ramp, openness=openness, scaffold=scaffold,
+        textlast=textlast,
     )[0]
 
 

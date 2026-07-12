@@ -10,8 +10,8 @@ from __future__ import annotations
 
 from datetime import date
 
-from ..schema.blocks import InfoBlock, Serves
-from ..schema.mixer import ParametricMixerProfile
+from ..schema.blocks import Gloss, InfoBlock, Serves
+from ..schema.mixer import ParametricMixerProfile, Textlast
 from ..schema.parametric import ParametricTask
 from ..schema.worksheet import Baustein, TeacherOverview, WorksheetContent, WorksheetMeta
 
@@ -85,6 +85,15 @@ PARAM_TEMPLATES: list[ParametricTask] = [
         recipe="rectangle",
         prompt_template="Berechne Flächeninhalt und Umfang eines Rechtecks mit Länge {l} cm "
                         "und Breite {w} cm.",
+        prompt_simple="Ein Rechteck ist {l} cm lang und {w} cm breit. Rechne aus, wie groß "
+                      "die Fläche ist. Rechne dann aus, wie lang der Rand rund um das "
+                      "Rechteck ist (der Umfang).",
+        glossary=[
+            Gloss(term="Flächeninhalt",
+                  explanation="wie viel Platz die Fläche einnimmt"),
+            Gloss(term="Umfang",
+                  explanation="die Länge der Linie rund um die Figur herum"),
+        ],
         context_frame="Flächen und Umfänge braucht man beim Planen von Räumen, Gärten "
                       "und Sportfeldern.",
         serves=[Serves(competence_id="MAT.US.1.FIG.02", relation="exercises")],
@@ -95,6 +104,20 @@ PARAM_TEMPLATES: list[ParametricTask] = [
         recipe="pythagoras",
         prompt_template="Berechne die fehlende Seitenlänge des rechtwinkligen Dreiecks "
                         "(siehe Skizze). Gegeben: {gegeben}. Gesucht: {gesucht}.",
+        prompt_simple="Das Dreieck hat einen rechten Winkel (siehe Skizze). Eine Seite "
+                      "fehlt. Rechne sie aus. Du kennst schon: {gegeben}. Gesucht ist: "
+                      "{gesucht}.",
+        glossary=[
+            Gloss(term="rechter Winkel",
+                  explanation="der Winkel in der Ecke eines Rechtecks; er wird in der "
+                              "Skizze mit einem kleinen Quadrat markiert"),
+            Gloss(term="Hypotenuse",
+                  explanation="die längste Seite im rechtwinkligen Dreieck; sie liegt "
+                              "dem rechten Winkel gegenüber"),
+            Gloss(term="Kathete",
+                  explanation="eine der beiden kürzeren Seiten, die den rechten Winkel "
+                              "einschließen"),
+        ],
         context_frame="Mit dem Satz des Pythagoras bestimmen Handwerker und Vermesser "
                       "Längen, die sich nicht direkt messen lassen.",
         serves=[Serves(competence_id="MAT.US.4.FIG.01", relation="exercises")],
@@ -115,6 +138,17 @@ PARAM_TEMPLATES: list[ParametricTask] = [
         recipe="kreis_umfang_flaeche",
         prompt_template="Ein Kreis hat den Radius r = {r} cm (siehe Skizze). Berechne seinen "
                         "Umfang und seinen Flächeninhalt (auf zwei Nachkommastellen gerundet).",
+        prompt_simple="Ein Kreis hat den Radius r = {r} cm (siehe Skizze). Rechne aus, wie "
+                      "lang die Linie rund um den Kreis ist (der Umfang). Rechne dann aus, "
+                      "wie groß die Fläche ist. Runde auf zwei Stellen nach dem Komma.",
+        glossary=[
+            Gloss(term="Radius",
+                  explanation="der Abstand von der Mitte des Kreises bis zum Rand"),
+            Gloss(term="Umfang",
+                  explanation="die Länge der Linie rund um den Kreis herum"),
+            Gloss(term="Flächeninhalt",
+                  explanation="wie viel Platz die Fläche des Kreises einnimmt"),
+        ],
         serves=[Serves(competence_id="MAT.US.4.FIG.02", relation="exercises")],
         dimensions=["OPE"], cognitive_level="apply", kind="calculation", est_minutes=5),
     ParametricTask(
@@ -122,6 +156,19 @@ PARAM_TEMPLATES: list[ParametricTask] = [
         subject="Mathematik", klasse=1, kompetenzbereich="4: Daten und Zufall",
         recipe="mean_median",
         prompt_template="Berechne Mittelwert, Median und Spannweite der Datenreihe: {vals}.",
+        prompt_simple="Hier ist eine Reihe von Zahlen: {vals}. Rechne drei Werte aus. "
+                      "Rechne zuerst den Mittelwert aus. Rechne dann den Median aus. "
+                      "Rechne zuletzt die Spannweite aus.",
+        glossary=[
+            Gloss(term="Mittelwert",
+                  explanation="der Durchschnitt: alle Zahlen zusammenzählen und durch "
+                              "ihre Anzahl teilen"),
+            Gloss(term="Median",
+                  explanation="der mittlere Wert, wenn man alle Zahlen der Größe nach "
+                              "ordnet"),
+            Gloss(term="Spannweite",
+                  explanation="der Abstand zwischen der größten und der kleinsten Zahl"),
+        ],
         context_frame="Kennzahlen wie Mittelwert und Median fassen eine Datenreihe in "
                       "wenigen Werten zusammen.",
         serves=[Serves(competence_id="MAT.US.1.DAT.02", relation="exercises")],
@@ -447,6 +494,22 @@ PARAM_TEMPLATES.extend([
                         "Schritt für Schritt den Nettolohn: zuerst die Sozialversicherung, dann "
                         "die Steuerbemessungsgrundlage, die Lohnsteuer (Tarif 2026) und zuletzt "
                         "das Netto.",
+        prompt_simple="Jemand verdient {brutto} brutto im Monat. Wie viel bleibt davon netto "
+                      "übrig? Rechne in vier Schritten. Zuerst ziehst du die "
+                      "Sozialversicherung (SV) ab. Das ist der Betrag, von dem die Steuer "
+                      "berechnet wird. Dann rechnest du die Lohnsteuer aus (Tarif 2026). "
+                      "Am Ende bleibt das Netto.",
+        glossary=[
+            Gloss(term="brutto",
+                  explanation="der ganze Lohn, bevor etwas abgezogen wird"),
+            Gloss(term="netto",
+                  explanation="das Geld, das am Ende übrig bleibt und ausgezahlt wird"),
+            Gloss(term="Sozialversicherung",
+                  explanation="ein fester Anteil vom Lohn für Kranken-, Pensions- und "
+                              "Arbeitslosenversicherung"),
+            Gloss(term="Lohnsteuer",
+                  explanation="die Steuer, die vom Lohn an den Staat gezahlt wird"),
+        ],
         serves=[],  # ÜT-anchored → kein Kompetenzanspruch über `serves`
         dimensions=["OK"], cognitive_level="apply", kind="open_response", est_minutes=8),
     ParametricTask(
@@ -464,6 +527,17 @@ PARAM_TEMPLATES.extend([
         prompt_template="Folgende Handytarife stehen zur Wahl: {tarife} Vergleiche die Tarife "
                         "über eine Vertragsdauer von 24 Monaten. Welcher ist am günstigsten? "
                         "Begründe deine Entscheidung.",
+        prompt_simple="Es gibt diese Handytarife: {tarife} Ein Vertrag läuft 24 Monate lang. "
+                      "Rechne für jeden Tarif aus, was er in dieser Zeit ganz kostet. Welcher "
+                      "Tarif ist am billigsten? Schreibe auf, warum du das denkst.",
+        glossary=[
+            Gloss(term="Grundgebühr",
+                  explanation="der feste Betrag, den man jeden Monat für den Tarif zahlt"),
+            Gloss(term="Aktivierungskosten",
+                  explanation="einmalige Kosten am Anfang, wenn man den Vertrag abschließt"),
+            Gloss(term="Vertragsdauer",
+                  explanation="die Zeit, für die man den Vertrag abschließt"),
+        ],
         serves=[Serves(competence_id="GWB.US.3.ENT.04", relation="exercises")],
         dimensions=["UK"], cognitive_level="evaluate", kind="decision_scenario", est_minutes=7),
 ])
@@ -546,11 +620,17 @@ def variant_worksheet(template: ParametricTask, n: int = 6, *, today: date | Non
         stufe=stufe, klasse=template.klasse,
         kernfrage=f"Übung: {title}", fassung=res.fassung,
         lehrplan_label=f"{template.subject} · {template.klasse}. Kl. · {template.kompetenzbereich}")
+    # Textlast (P3): at the `einfach` endpoint SELECT the curated glossary onto the worksheet
+    # (rendered as a student-facing Wortschatz-Kasten); `voll`/None carry no glossary.
+    glossary = (list(template.glossary)
+                if mixer_profile is not None and mixer_profile.textlast == Textlast.EINFACH
+                else [])
     content = WorksheetContent(
         meta=meta, subject_model=ls.get_subject_model(template.subject, stufe),
         intro=intro,
         sections=[Baustein(id="uebung", title=title,
                            teacher_overview=TeacherOverview(throughline=throughline),
                            blocks=blocks)],
-        assets=assets, mixer_profile=mixer_profile, mixer_lint=mixer_lint)
+        assets=assets, mixer_profile=mixer_profile, mixer_lint=mixer_lint,
+        glossary=glossary)
     return content, res

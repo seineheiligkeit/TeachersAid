@@ -9,7 +9,7 @@ import pytest
 from teachersaid.library.templates import PARAM_TEMPLATES, find_template, variant_worksheet
 from teachersaid.pipeline.parametrize import instantiate
 from teachersaid.pipeline.scaffold import _numeric_values
-from teachersaid.schema.mixer import Geruest, Offenheit, ParametricMixerProfile
+from teachersaid.schema.mixer import Geruest, Offenheit, ParametricMixerProfile, Textlast
 from teachersaid.schema.richtext import plain_text
 
 
@@ -283,3 +283,180 @@ def test_geruest_renders_student_teacher_homework_and_stamps_teacher_only(tmp_pa
     assert "Gerüst (Schülerhilfe)" in texts["teacher"]
     assert "Mischpult-Profil" in texts["teacher"] and "Mischpult-Profil" not in texts["student"]
     assert "Hilfestellung" not in texts["teacher"]
+
+
+# --- P3 Textlast (simplified prose twin + glosses) fader -----------------------
+def test_textlast_selects_the_twin_preserves_facts_and_moves_wstf():
+    template = find_template("fin-lohnzettel")
+    # per-seed: einfach SELECTS the curated twin (different register) but the SAME instance
+    # (same computed answer, serves, minutes) — a selection, never a fact-changing rewrite.
+    voll_i = instantiate(template, 3, textlast="voll")
+    einfach_i = instantiate(template, 3, textlast="einfach")
+    assert str(voll_i.prompt) != str(einfach_i.prompt)
+    assert "Steuerbemessungsgrundlage" in plain_text(voll_i.prompt)
+    assert "Steuerbemessungsgrundlage" not in plain_text(einfach_i.prompt)
+    assert plain_text(voll_i.answer_key) == plain_text(einfach_i.answer_key)   # fact preserved
+    assert voll_i.serves == einfach_i.serves and voll_i.est_minutes == einfach_i.est_minutes
+
+    voll, _ = variant_worksheet(template, 4, today=TODAY,
+                                mixer_profile=ParametricMixerProfile(textlast="voll"))
+    einfach, _ = variant_worksheet(template, 4, today=TODAY,
+                                   mixer_profile=ParametricMixerProfile(textlast="einfach"))
+    # the WSTF movement joins the SAME report, coverage intact, on BOTH endpoints
+    for content in (voll, einfach):
+        mv = next(m for m in content.mixer_lint.movements if m.fader == "textlast")
+        assert mv.metric == "wstf"
+        assert mv.high_value < mv.low_value          # einfach strictly lowers the Schulstufe
+        assert mv.moved and mv.coverage_intact and content.mixer_lint.passed
+    assert einfach.mixer_lint.output.wstf < voll.mixer_lint.output.wstf
+    # the Wortschatz is SELECTED onto the einfach worksheet only (student-facing aid)
+    assert einfach.glossary and not voll.glossary
+    assert any(g.term == "Sozialversicherung" for g in einfach.glossary)
+
+
+def test_textlast_capability_rejected_without_a_twin():
+    # mat-dreisatz carries no approved twin → the fader must HARD-FAIL, never a no-op knob,
+    # at BOTH endpoints (einfach in _instantiate, voll in the mixer capability check).
+    for endpoint in ("einfach", "voll"):
+        with pytest.raises(ValueError, match="Textlast"):
+            variant_worksheet(find_template("mat-dreisatz"), 3, today=TODAY,
+                              mixer_profile=ParametricMixerProfile(textlast=endpoint))
+
+
+def test_textlast_slot_set_equality_is_validated_at_construction():
+    from teachersaid.schema.parametric import ParametricTask
+
+    base = dict(id="probe", subject="Mathematik", klasse=2, recipe="percentage",
+                prompt_template="Wie viel sind {pct} % von {base}?")
+    with pytest.raises(ValueError, match="slot set"):        # a dropped slot is fact drift
+        ParametricTask(**base, prompt_simple="Wie viel sind {pct} Prozent?")
+    with pytest.raises(ValueError, match="slot set"):        # an added slot is fact drift
+        ParametricTask(**base, prompt_simple="Wie viel sind {pct} % von {base} zu {rate}?")
+    ok = ParametricTask(**base, prompt_simple="Wie viel Prozent? {pct} % von {base}.")
+    assert ok.prompt_simple is not None                      # equal slot set is accepted
+
+
+def test_textlast_verbatim_text_is_never_twinned():
+    """Structural guard: the fader's WSTF pass excludes verbatim material — a `quoted`-
+    provenance task block and a `source_text` block are not ours to simplify."""
+    from teachersaid.pipeline import textlast as tl
+    from teachersaid.schema.blocks import InfoBlock, TaskBlock
+    from teachersaid.schema.provenance import BlockProvenance
+    from teachersaid.schema.response import LinesResponse
+
+    prose = "Dies ist ein langer authentischer Satz mit vielen einzelnen Wörtern darin. " * 3
+    quoted = TaskBlock(id="q", kind="open_response", prompt=prose,
+                       response=LinesResponse(n=2), cognitive_level="apply",
+                       provenance=BlockProvenance(expression_origin="quoted"))
+    plain = TaskBlock(id="p", kind="open_response", prompt=prose,
+                      response=LinesResponse(n=2), cognitive_level="apply")
+    source = InfoBlock(id="s", kind="source_text", content=prose)
+    assert tl.student_prose([plain]) != "" and tl.measure_wstf([plain]) is not None
+    assert tl.student_prose([quoted]) == "" and tl.measure_wstf([quoted]) is None
+    assert tl.student_prose([source]) == ""            # an InfoBlock is not a twinnable task
+
+
+def test_textlast_failing_twin_is_caught_by_the_lint():
+    """A curated twin that does NOT lower the WSTF is a bad twin the SME must see — it lands
+    in the same report as a non-moving fader and the lint fails (raises)."""
+    from teachersaid.pipeline.mixer import make_mixed_variants
+    from teachersaid.pipeline.parametrize import make_variants
+    from teachersaid.pipeline.textlast import measure_wstf
+    from teachersaid.schema.blocks import Serves
+    from teachersaid.schema.parametric import ParametricTask
+
+    bad = ParametricTask(
+        id="bad-twin", subject="Mathematik", klasse=2, recipe="percentage",
+        prompt_template="Berechne den Prozentwert: Wie viel sind {pct} Prozent von dem "
+                        "Grundwert {base} Euro in dieser Aufgabe?",
+        # a "twin" that is LONGER and harder (higher WSTF), not simpler → must be rejected
+        prompt_simple="Bestimme approximativ den prozentualen Anteil {pct} Prozent bezüglich "
+                      "des zugrundeliegenden Ausgangsbetrages {base} unter Berücksichtigung "
+                      "sämtlicher Verhältnismäßigkeiten und Randbedingungen dieser Aufgabe.",
+        serves=[Serves(competence_id="MAT.US.2.ZAH.04", relation="exercises")],
+        dimensions=["OPE"], cognitive_level="apply", kind="calculation")
+    v = measure_wstf(make_variants(bad, 6, textlast="voll"))
+    e = measure_wstf(make_variants(bad, 6, textlast="einfach"))
+    assert v is not None and e is not None and e > v        # the twin is HARDER, not simpler
+    with pytest.raises(ValueError, match="Regler-Lint|textlast"):
+        make_mixed_variants(bad, 6, ParametricMixerProfile(textlast="einfach"))
+
+
+def test_textlast_keeps_competence_set_and_answers_invariant():
+    template = find_template("mat-pythagoras")
+    voll, _ = variant_worksheet(template, 5, today=TODAY,
+                                mixer_profile=ParametricMixerProfile(textlast="voll"))
+    einfach, _ = variant_worksheet(template, 5, today=TODAY,
+                                   mixer_profile=ParametricMixerProfile(textlast="einfach"))
+    assert voll.mixer_lint.output.coverage_ids == einfach.mixer_lint.output.coverage_ids
+    assert einfach.mixer_lint.output.coverage_ids == ["MAT.US.4.FIG.01"]
+    for b in _tasks(einfach):                         # per-task serves untouched
+        assert [s.competence_id for s in b.serves] == ["MAT.US.4.FIG.01"]
+    for seed in range(1, 8):                          # same seed → same computed answer
+        assert (plain_text(instantiate(template, seed, textlast="voll").answer_key)
+                == plain_text(instantiate(template, seed, textlast="einfach").answer_key))
+
+
+def test_textlast_twin_and_glosses_are_answer_free():
+    """No-leak: a curated gloss is term-definitional (digit-free, so it cannot carry a
+    per-variant numeric answer) and the twin introduces no numeric fact the master lacked."""
+    checked = 0
+    for template in PARAM_TEMPLATES:
+        if template.prompt_simple is None:
+            continue
+        for g in template.glossary:                   # glosses explain terms, never values
+            assert not _numeric_values(g.term + " " + g.explanation), (template.id, g.term)
+        for seed in range(1, 12):
+            try:
+                voll = instantiate(template, seed, textlast="voll")
+                einfach = instantiate(template, seed, textlast="einfach")
+            except (ValueError, RuntimeError):
+                continue
+            checked += 1
+            # the twin adds no number the master prompt did not already carry (no fact drift)
+            assert (_numeric_values(plain_text(einfach.prompt))
+                    <= _numeric_values(plain_text(voll.prompt))), (template.id, seed)
+            # a pure-text answer never appears verbatim inside a gloss explanation
+            if einfach.answer_key and not _numeric_values(plain_text(einfach.answer_key)):
+                ans = " ".join(plain_text(einfach.answer_key).split()).lower()
+                for g in template.glossary:
+                    assert ans not in " ".join(g.explanation.split()).lower(), (template.id, g.term)
+    assert checked >= 40
+
+
+def test_textlast_projection_is_deterministic():
+    profile = ParametricMixerProfile(umfang="standard", textlast="einfach")
+    a, _ = variant_worksheet(find_template("mat-pythagoras"), 4, today=TODAY, seed0=17,
+                             mixer_profile=profile)
+    b, _ = variant_worksheet(find_template("mat-pythagoras"), 4, today=TODAY, seed0=17,
+                             mixer_profile=profile)
+    assert a.model_dump() == b.model_dump()
+
+
+def test_textlast_renders_student_teacher_homework_and_stamps_teacher_only(tmp_path):
+    import fitz
+
+    from teachersaid.pipeline import orchestrator as orch
+    from teachersaid.store.repository import ReviewStore
+
+    item = orch.compose_variants(
+        ReviewStore(tmp_path / "store"), "fin-lohnzettel", 3, today=TODAY,
+        mixer_profile=ParametricMixerProfile(textlast="einfach"),
+    )
+    assert item.error is None and item.content.mixer_lint.passed
+    assert item.content.glossary
+
+    texts = {}
+    for kind in ("student", "teacher", "homework"):
+        doc = fitz.open(getattr(item.artifacts, f"{kind}_pdf"))
+        assert doc.page_count >= 1 and doc[0].get_pixmap().width > 0  # builds + rasterises
+        texts[kind] = "".join(p.get_text() for p in doc)
+
+    # the simplified register + Wortschatz reach the student AND homework sheet …
+    for kind in ("student", "homework"):
+        assert "Wortschatz" in texts[kind]
+        assert "Sozialversicherung" in texts[kind]           # a gloss term (also in the twin)
+        assert "Steuerbemessungsgrundlage" not in texts[kind]  # the master-only word is gone
+    # … and the teacher guide names the register in the profile stamp (teacher-only)
+    assert "Textlast: einfach" in texts["teacher"]
+    assert "Mischpult-Profil" in texts["teacher"] and "Mischpult-Profil" not in texts["student"]

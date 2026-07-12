@@ -10,7 +10,7 @@ from __future__ import annotations
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 from .assets import Asset
-from .blocks import Block
+from .blocks import Block, Gloss
 from .competence import SubjectCompetenceModel, SubjectCompetenceModelRef
 from .derived import DepthProfile, Nachweis
 from .enums import AnchorMode
@@ -87,6 +87,10 @@ class WorksheetContent(BaseModel):
     # worksheets carry these; generation views deliberately cannot author either field.
     mixer_profile: ParametricMixerProfile | None = None
     mixer_lint: MixerLintReport | None = None
+    # Textlast (P3): the student-facing Wortschatz-Kasten SELECTED from the template glossary
+    # at the `einfach` endpoint. Curated content (not derived, not LLM-authored — absent from
+    # generation views), populated only by the Textlast fader; empty otherwise.
+    glossary: list[Gloss] = Field(default_factory=list)
     rack: ThreadRack | None = None
 
     @model_validator(mode="after")

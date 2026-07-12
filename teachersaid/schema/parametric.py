@@ -11,11 +11,26 @@ authored — so N variants are all correct and each carries its Rechenweg.
 
 from __future__ import annotations
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator
+import string
 
-from .blocks import Serves, SolutionPath, SolutionStep
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
+
+from .blocks import Gloss, Serves, SolutionPath, SolutionStep
 from .response import ResponseSpec
 from .richtext import RichText
+
+
+def _slot_names(template: str) -> set[str]:
+    """The set of `{slot}` field names in a str.format template (escaped `{{`/`}}` ignored).
+
+    Used to VALIDATE that a simplified prompt twin carries EXACTLY the same slots as the
+    master prompt — a twin that drops or adds a slot would silently change the factual
+    content the fader promises to preserve (tiefenregler-design §5), so it is a hard error."""
+    return {
+        name.split("[")[0].split(".")[0]
+        for _, name, _, _ in string.Formatter().parse(template)
+        if name
+    }
 
 
 class FigureSpec(BaseModel):
@@ -127,6 +142,13 @@ class ParametricTask(BaseModel):
     content_area: str | None = None
     recipe: str                        # a registered generator id (pipeline/parametrize)
     prompt_template: str               # German prompt with {slots}; $...$ spans typeset inline
+    prompt_simple: str | None = None   # Textlast (P3): the APPROVED simplified prose twin —
+    # same {slots} (so the SAME computed values fill it, validated below), simpler German
+    # (shorter sentences, common words, active voice). CURATED + SME-vetted like the prompt;
+    # the Textlast fader SELECTS it at the `einfach` endpoint (never rewrites at fader time).
+    glossary: list[Gloss] = Field(default_factory=list)   # Textlast (P3): curated Wortschatz
+    # (Fachbegriff → kurze Erklärung) rendered as a student-facing Kasten at `einfach`; each
+    # gloss is term-definitional (explains a TERM, never a value → cannot leak an answer).
     serves: list[Serves] = Field(default_factory=list)
     dimensions: list[str] = Field(default_factory=list)
     cognitive_level: str = "apply"
@@ -141,3 +163,22 @@ class ParametricTask(BaseModel):
     @classmethod
     def _frame_guard(cls, v):
         return _no_digits(v)
+
+    @model_validator(mode="after")
+    def _twin_slots_match(self):
+        """A simplified prompt twin MUST carry exactly the master's {slots} — the fader fills
+        both from the same computed `Instance.params`, so a dropped/added slot would either
+        crash the twin fill or silently change what the student is asked (fact drift, the
+        failure mode tiefenregler-design §5 forbids). Hard error at registration time."""
+        if self.prompt_simple is not None:
+            master = _slot_names(self.prompt_template)
+            twin = _slot_names(self.prompt_simple)
+            if master != twin:
+                missing = ", ".join(sorted(master - twin)) or "—"
+                extra = ", ".join(sorted(twin - master)) or "—"
+                raise ValueError(
+                    f"prompt_simple slot set differs from prompt_template for '{self.id}' "
+                    f"(missing: {missing}; unexpected: {extra}) — a twin must preserve every "
+                    "computed slot exactly"
+                )
+        return self

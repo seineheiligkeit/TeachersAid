@@ -8,7 +8,7 @@ from pathlib import Path
 
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.units import mm
-from reportlab.platypus import PageBreak, SimpleDocTemplate
+from reportlab.platypus import KeepTogether, PageBreak, SimpleDocTemplate
 
 from ..schema.worksheet import WorksheetContent
 from . import reportlab_base as rb
@@ -110,6 +110,21 @@ def _teacher_overview_story(ov, S):
     return out
 
 
+def _glossary_story(glossary, S):
+    """Textlast (P3): the student-facing Wortschatz-Kasten (Fachbegriff → kurze Erklärung),
+    SELECTED from the template glossary at the `einfach` endpoint. Rendered like P2's
+    Hilfestellung box — a label plus one term/explanation line each; kept together so the
+    Kasten never splits across a page. Every gloss is term-definitional (no answer leak)."""
+    out = [rb.para("Wortschatz", S["label"])]
+    for g in glossary:
+        out.append(rb.raw_para(
+            "<b>" + rb.richtext_markup(g.term) + "</b> – " + rb.richtext_markup(g.explanation),
+            S["body"],
+        ))
+    out.append(rb.spacer(2.5))
+    return [KeepTogether(out)]
+
+
 def build_pdf(
     content: WorksheetContent,
     projection: str,
@@ -163,6 +178,12 @@ def build_pdf(
             settings += ([f"Abstraktion: {profile.abstraktion.value}"]
                          if profile.abstraktion else [])
             settings += [f"Offenheit: {profile.offenheit.value}"] if profile.offenheit else []
+            if profile.textlast:                      # P3: worksheet-level register control
+                if profile.textlast.value == "einfach":
+                    extra = " + Wortschatz" if content.glossary else ""
+                    settings.append(f"Textlast: einfach (vereinfachte Angabe{extra})")
+                else:
+                    settings.append("Textlast: voll")
             lint = content.mixer_lint
             lint_stamp = ("bestanden" if lint and lint.passed else "nicht bestanden")
             story.append(rb.para(
@@ -176,6 +197,12 @@ def build_pdf(
     for b in content.intro:
         if should_render(b, projection):
             story += block_flowables(b, projection, S, width, assets, citations=citations)
+
+    # Textlast (P3): the Wortschatz-Kasten sits between the intro framing and the tasks it
+    # supports (present only at the `einfach` endpoint). Student-facing content — shown on
+    # every projection so the teacher also sees what the class received.
+    if content.glossary:
+        story += _glossary_story(content.glossary, S)
 
     for section in content.sections:
         story.append(rb.para(section.title, S["heading"]))

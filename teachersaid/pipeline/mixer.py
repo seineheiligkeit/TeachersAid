@@ -20,6 +20,7 @@ from ..schema.mixer import (
     MixerMetricSnapshot,
     Offenheit,
     ParametricMixerProfile,
+    Textlast,
     Tiefe,
     Umfang,
 )
@@ -109,6 +110,7 @@ def metric_snapshot(blocks: list[TaskBlock]) -> MixerMetricSnapshot:
     c4_scores: list[float] = []
     from .difficulty_model import estimate
     from .scaffold import scaffold_size
+    from .textlast import measure_wstf
 
     for block in blocks:
         band = _afb_band(block.cognitive_level)
@@ -127,6 +129,7 @@ def metric_snapshot(blocks: list[TaskBlock]) -> MixerMetricSnapshot:
         open_response_tasks=sum(b.kind == "open_response" for b in blocks),
         scaffolded_tasks=sum(bool(b.scaffold) for b in blocks),
         scaffold_elements=sum(scaffold_size(b.scaffold) for b in blocks),
+        wstf=(round(w, 4) if (w := measure_wstf(blocks)) is not None else None),
         c4_mean=(round(sum(c4_scores) / len(c4_scores), 4) if c4_scores else None),
         coverage_ids=_coverage_ids(blocks),
     )
@@ -174,8 +177,15 @@ def make_mixed_variants(
     scaffold_on = profile.geruest == Geruest.GESTUETZT
     blocks, assets = make_variants_with_assets(
         task, actual_n, seed0=seed0, ramp=ramp, openness=profile.offenheit,
-        scaffold=scaffold_on,
+        scaffold=scaffold_on, textlast=profile.textlast,
     )
+    if profile.textlast is not None and task.prompt_simple is None:
+        # Textlast capability (fail loudly, like the P1/P2 faders): the fader exists only
+        # where the template carries an approved simplified twin — never a decorative knob.
+        raise ValueError(
+            "Tiefenregler Textlast is unsupported by template "
+            f"'{task.id}': no approved simplified prompt twin (prompt_simple)"
+        )
     if profile.geruest is not None:
         # Gerüst capability (fail loudly, like the P1 faders): the template must expose
         # scaffoldable data on at least one variant, else this is a no-op control.
@@ -266,6 +276,34 @@ def make_mixed_variants(
         movements.append(_movement(
             "geruest", "ohne", "gestützt", "scaffolded_tasks",
             low.scaffolded_tasks, high.scaffolded_tasks, low, high,
+        ))
+
+    if profile.textlast is not None:
+        # Textlast (P3): measure the Wiener Sachtextformel of the student-facing prompt prose
+        # at both CURATED endpoints from the same template + seed stream (same numbers; only
+        # the prose register differs).  The lint passes iff `einfach` STRICTLY lowers the WSTF
+        # Schulstufe — a twin that fails to simplify is a bad twin the SME must see (it lands
+        # in this SAME report as `moved=False`, not a parallel lint).  Scaffolding/serves are
+        # untouched, so competence coverage is identical by construction.
+        full, _ = make_variants_with_assets(
+            task, actual_n, seed0=seed0, ramp=ramp, openness=profile.offenheit,
+            textlast=Textlast.VOLL,
+        )
+        simple, _ = make_variants_with_assets(
+            task, actual_n, seed0=seed0, ramp=ramp, openness=profile.offenheit,
+            textlast=Textlast.EINFACH,
+        )
+        low, high = metric_snapshot(full), metric_snapshot(simple)
+        if low.wstf is None or high.wstf is None:
+            raise ValueError(
+                "Tiefenregler Textlast is unmeasurable for template "
+                f"'{task.id}': too little student-facing prompt prose to compute the WSTF"
+            )
+        movements.append(FaderMovement(
+            fader="textlast", low_label="voll", high_label="einfach", metric="wstf",
+            low_value=round(float(low.wstf), 4), high_value=round(float(high.wstf), 4),
+            moved=high.wstf < low.wstf,      # a genuine, measurable simplification (strict ↓)
+            coverage_intact=low.coverage_ids == high.coverage_ids,
         ))
 
     report = MixerLintReport(
