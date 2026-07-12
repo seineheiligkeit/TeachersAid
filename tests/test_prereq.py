@@ -68,6 +68,34 @@ def test_shipped_mat_catalog_is_clean_and_resolves():
     assert pairs >= 40, f"a connected, defensible graph (got {pairs} edges)"
 
 
+def test_shipped_phy_catalog_is_clean_and_resolves():
+    assert pre.lint("PHY") == []                        # the shipped graph lints clean
+    edges = pre.load_edges("PHY")
+    valid = pre.valid_ids("PHY")
+    refs = set(edges) | {r for reqs in edges.values() for r in reqs}
+    assert refs, "catalog must have edges"
+    assert refs <= valid, f"every edge id resolves against the Lehrplan: {refs - valid}"
+    # cross-Klasse and reaching into the Oberstufe (mirrors the MAT precedent)
+    assert any(".OS." in cid for cid in edges)
+    pairs = sum(len(v) for v in edges.values())
+    assert pairs >= 25, f"a connected, defensible graph (got {pairs} edges)"
+
+
+def test_shipped_che_catalog_is_clean_and_resolves():
+    assert pre.lint("CHE") == []                        # the shipped graph lints clean
+    edges = pre.load_edges("CHE")
+    valid = pre.valid_ids("CHE")
+    refs = set(edges) | {r for reqs in edges.values() for r in reqs}
+    assert refs, "catalog must have edges"
+    assert refs <= valid, f"every edge id resolves against the Lehrplan: {refs - valid}"
+    pairs = sum(len(v) for v in edges.values())
+    assert pairs >= 25, f"a connected, defensible graph (got {pairs} edges)"
+    # Chemie US is single-Klasse + process-only, so the whole graph lives in the
+    # Oberstufe (7. -> 8. Klasse across semesters) — see the catalog description.
+    assert all(".OS." in cid for cid in edges), "CHE graph is Oberstufe-only"
+    assert all(".OS." in r for reqs in edges.values() for r in reqs)
+
+
 # --- pure queries (fixture ground truth) -------------------------------------
 def test_queries_on_fixture():
     assert pq.prerequisites("E", edges=FIX) == ["C", "D"]
@@ -91,7 +119,36 @@ def test_queries_on_shipped_graph():
     assert pq.depth("MAT.OS.6.REE.03") >= 4                  # sits atop a deep tower
     assert pq.depth("MAT.US.1.ZAH.01") == 0                  # a root
     # a subject without a catalog degrades to an empty graph (no error)
-    assert pq.ancestors("PHY.US.4.STR.01") == set()
+    assert pq.ancestors("DEU.US.1.LES.01") == set()
+
+
+def test_queries_on_phy_graph():
+    # the Energie strand integrates BOTH mechanics and electricity (a cross-KB node)
+    assert pq.ancestors("PHY.US.3.ENE.01") == {"PHY.US.3.MEC.01", "PHY.US.3.ELE.01"}
+    # a deep 4. Klasse chain: Klimaschutz builds on the energy/heat tower
+    assert {"PHY.US.4.WET.02", "PHY.US.3.ENE.01", "PHY.US.3.ELE.01"} <= pq.ancestors(
+        "PHY.US.4.WET.05")
+    assert pq.depth("PHY.US.4.WET.05") >= 4
+    # a US Kompetenz is an ancestor of an OS one (the graph spans Stufen, like MAT)
+    assert "PHY.US.3.ELE.01" in pq.ancestors("PHY.OS.6.ELE.01")
+    # the Optik (2. Kl) -> Strahlung (4. Kl) -> Kernphysik (OS) thread reaches the light model
+    assert "PHY.US.2.OPT.04" in pq.ancestors("PHY.OS.8.KER.01")
+    assert pq.depth("PHY.US.3.MEC.01") == 0                  # a root
+    # SEH.01 (Sender-Empfaenger-Modell) is a high-leverage foundational node
+    assert pq.downstream_impact(["PHY.US.2.SEH.01"]) > 5
+
+
+def test_queries_on_che_graph():
+    # the Oberstufe content tower: Stoff-Teilchen -> Bindung -> Struktur -> organisch -> Biochemie
+    anc = pq.ancestors("CHE.OS.8.CHE.01")                    # Lebensvorgaenge
+    assert {"CHE.OS.7.MOD.01", "CHE.OS.7.MOD.04", "CHE.OS.8.STR2.01"} <= anc
+    assert pq.depth("CHE.OS.8.CHE.01") >= 6                  # sits atop a deep tower
+    # the Stoff-Teilchen-Konzept (MOD.01) is the root that gates essentially the whole graph
+    assert pq.depth("CHE.OS.7.MOD.01") == 0
+    assert pq.downstream_impact(["CHE.OS.7.MOD.01"]) > 20
+    # a blocking_gaps sanity case: the root cell far outranks a leaf cell
+    bg = pq.blocking_gaps({("root",): ["CHE.OS.7.MOD.01"], ("leaf",): ["CHE.OS.8.CHE.07"]})
+    assert bg[("root",)] > bg[("leaf",)] == 0
 
 
 # --- the Diagnose-Blatt (the first consumer) ---------------------------------
@@ -161,9 +218,20 @@ def test_coverage_map_blocks_dependents(tmp_path, monkeypatch):
     zah1 = next(c for c in mat["cells"]
                 if c["klasse"] == 1 and c["kompetenzbereich"].startswith("1:"))
     assert zah1["blocks_dependents"] > 10
-    # a subject without a curated graph scores 0 everywhere
-    phy = next(s for s in cov["subjects"] if s["code"] == "PHY")
-    assert all(c["blocks_dependents"] == 0 for c in phy["cells"])
+    # PHY carries a US cross-Klasse graph, so its foundational US cells gate dependents
+    phy = next(s for s in cov["subjects"]
+               if s["code"] == "PHY" and s["stufe"] == "Unterstufe")
+    assert max(c["blocks_dependents"] for c in phy["cells"]) > 0
+    # CHE's graph is Oberstufe-only (US is single-Klasse, process-only): OS gates, US does not
+    che_os = next(s for s in cov["subjects"]
+                  if s["code"] == "CHE" and s["stufe"] == "Oberstufe")
+    che_us = next(s for s in cov["subjects"]
+                  if s["code"] == "CHE" and s["stufe"] == "Unterstufe")
+    assert max(c["blocks_dependents"] for c in che_os["cells"]) > 0
+    assert all(c["blocks_dependents"] == 0 for c in che_us["cells"])
+    # a subject without any curated graph scores 0 everywhere
+    deu = next(s for s in cov["subjects"] if s["code"] == "DEU")
+    assert all(c["blocks_dependents"] == 0 for c in deu["cells"])
     # the gap export carries the leverage so the planner can rank by it
     gaps = campaign_gaps(bs, subject="MAT", stufe="Unterstufe")
     assert gaps and all("blocks_dependents" in g for g in gaps)
