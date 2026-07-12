@@ -90,10 +90,15 @@ dashboard surface. *(The rejected sibling is recorded under Rejected.)*
   Thin but charming.
 
 **Carried-forward ready items (from the built program):**
-- PHY/CHE prerequisite edge catalogs (the C1 pattern, proven on MAT).
-- More verbatim texts (Wikisource) + more ANNO media texts; Realien-backdrop rollout once the SME
-  makes the best-of-N picks.
-- authored `difficulty` labels, starting with C4's 48 review cues (unlocks a learnable model).
+- ✅ BUILT 12 Jul · PHY/CHE prerequisite edge catalogs (PHY 30 edges, US strands + US→OS
+  continuations; CHE 35, Oberstufe-only — CHE US is honestly graph-free; 7 edges SME-flagged).
+- More verbatim texts (Wikisource) + more ANNO media texts (second batch shipped 12 Jul: 7 texts
+  Kl 1–4 + LAT, plus the 1873 Weltausstellungs-Gegenstimme + GPB Quellenarbeit #2 — the standing
+  item stays open); Realien-backdrop rollout once the SME makes the best-of-N picks.
+- ✅ tooling BUILT 12 Jul · authored `difficulty` labels: 138 proposals staged
+  (`runs/difficulty/difficulty_proposals.{json,md}`) + the SME-run apply tool
+  (`tools/apply_difficulty.py`); the labels themselves await SME acceptance — then
+  `tools/fit_difficulty.py` becomes genuinely evaluable.
 
 ### Ready for further discussion (design-first — do not build from this list)
 
@@ -136,12 +141,15 @@ dashboard surface. *(The rejected sibling is recorded under Rejected.)*
 - **Unranked, awaiting an SME call:** Stumme Karten + cartography layers · Typst renderer ·
   vision-Blattkritik · the Nachweis/coverage poster.
 - **The SME gate backlog** (the human queue): the 12 image candidates + backdrop picks · c0200/
-  c0201 · C5's ► decisions · C1 edge flags · C4's 48 cues · C3 shared-product German · C2 registry
-  dates · the standing breadth-content queue.
+  c0201 · C5's ► decisions · C1 edge flags (incl. the 7 PHY/CHE flags) · the 138 difficulty
+  proposals (`runs/difficulty/difficulty_proposals.md`) · c0202 + the text-batch flags (Wiesel
+  edition choice, the two glossed OCR errors) · C3 shared-product German · C2 registry dates · the
+  standing breadth-content queue.
 
 ## Recently completed (ledger — details in `project-handoff.md`)
 
 Waves A (task/figure engines) · B (image program, external agent) · C (corpus structure) · the
 eight 10-Jul tracks (figstyle port, physics scenes, Matura pack, figure emission, Textsorten,
 Latein, texts, re-grounding) · nets/variants/boxplot/ANNO/BIO+Bezirk (external agent) · the
-two-machine reconciliation · three-tier anchoring + Mischpult P1 (external agent) · the three 11-Jul programs (Finanz, Wahl, Sternkarten). Suite at 882.
+two-machine reconciliation · three-tier anchoring + Mischpult P1 (external agent) · the three 11-Jul programs (Finanz, Wahl, Sternkarten) · the 12-Jul carried-forward wave (PHY/CHE prereqs ·
+the difficulty-label loop · text batch 2 + the 1873 ANNO pair). Suite at 910.

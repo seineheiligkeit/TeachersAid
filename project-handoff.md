@@ -1,7 +1,8 @@
 # Project Handoff — Austrian Lehrplan-anchored Teaching-Material Generator
 
 **Status: design baseline from Session 2 (24 June 2026); see the dated session updates below for the
-current state (latest: Session 14, 5 July 2026 — Wave A built end-to-end: task & figure engines, 565 tests green).** This is the single read-me-first document for a fresh
+current state (latest: Session 20, 12 July 2026 — the carried-forward backlog cleared: PHY/CHE prereq
+catalogs, the authored-difficulty loop, text batch 2 + the 1873 ANNO counter-voice; 910 tests green).** This is the single read-me-first document for a fresh
 session taking the project over. Working language is English; the *product's* output is German (or a
 target language for Fremdsprache). Read this, then the docs in the order given in §6.
 
@@ -544,6 +545,30 @@ target language for Fremdsprache). Read this, then the docs in the order given i
 > P4 UI remains deliberately unbuilt. Contract: `Documents/tiefenregler-design.md`. **793 → 803 tests
 > passed, 1 skipped.** Next in the accepted sequence: P2 Gerüst from computed solution steps and
 > misconception hints.
+
+> **Update (Session 20, 12 Jul 2026): the carried-forward backlog cleared — three parallel Opus
+> workers, merged sequentially.** (a) **PHY + CHE prerequisite catalogs** (Wave C1 pattern):
+> `PHY.json` 30 edges over the phenomenological US strands (Optik → Strahlung · Mechanik/Elektrizität
+> → Energie → Wetter/Klima) + 6 US→OS continuations; `CHE.json` 35 edges **Oberstufe-only by
+> structural necessity** (CHE US is single-Klasse with process-only competence ids — honestly
+> graph-free, documented in the catalog header; cross-subject edges remain inexpressible by design).
+> Loader, queries and the coverage `blocks_dependents` overlay picked both up with zero engine
+> changes; **7 edges flagged** for SME review. (b) **The authored-difficulty loop** (C4 follow-up,
+> authored-then-SME-vetted): `tools/propose_difficulty.py` → `runs/difficulty/difficulty_proposals.{json,md}`
+> — **138 proposals** (all 48 review cues with individually authored German rationales: 43 diverging
+> from the cognitive fallback, 5 deliberate anchor-confirmations; + a 90-block stratified sample over
+> all 23 subjects), every `accepted` shipped null; `tools/apply_difficulty.py` is the SME-run apply
+> (fail-fast all-or-nothing, status-preserving upsert, idempotent, provenance stamped into the
+> proposals file). Nothing applied this session; after SME acceptance `tools/fit_difficulty.py`
+> becomes genuinely evaluable for the first time. (c) **Text corpus +8**: Hey *Küchlein* (Kl 1) ·
+> Grimm *Der Fuchs und die Katze* + Morgenstern *Das ästhetische Wiesel* (Kl 2) · Goethe *Erlkönig*
+> (Kl 3, szenisches Lesen) · Kafka *Kleine Fabel* (Kl 4) · Phaedrus I,4 + I,26 (LAT Kl 3/4, real
+> grammar anchors → SPR.03/.05) — exact-revision Wikisource fetches, AT-70-p.m.a.-clear,
+> staged-equals-fetched **byte-locked**; plus the 1873 *Wiener Zeitung* Weltausstellungs-Festrede as
+> the official counter-voice to the 1871 Leitmeritzer exemplar (annotated DEU text **and**
+> referenced-only GPB Quellenarbeit #2, `library/gpb_anno_weltausstellung.py`, item c0202). Suite
+> **882 → 910 passed, 1 skipped**. SME queue additions: the 7 prereq edge flags · the 138-proposal
+> review file · the Wiesel edition choice + the two glossed OCR errors · c0202.
 
 ---
 

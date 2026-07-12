@@ -33,7 +33,7 @@ rendering + the two-stage human-in-the-loop review dashboard).
 ```bash
 pip install -e .                       # deps: pydantic2, fastapi, uvicorn, anthropic, reportlab,
                                        #       matplotlib, pillow, pyyaml, pymupdf, sympy  (pytest for dev)
-python -m pytest -q                    # fully offline, no API key (882 tests)
+python -m pytest -q                    # fully offline, no API key (910 tests)
 python -m teachersaid seed             # seed the master-library examples into the review queue
 python -m teachersaid                  # dashboard → http://127.0.0.1:8000
 ```
@@ -415,12 +415,17 @@ exact-revision text + permalink + rights fields shaped for `TextSourceRef`; thro
 `PageNumber` scan-markers so "Zeile N" anchoring holds; parser fixture-tested offline). First batch
 staged via it: Grimm *Die Sternthaler* (Kl. 1) · Fontane *Herr von Ribbeck* (Kl. 3) · Goethe *Der
 Zauberlehrling* 1827 (Kl. 4) · Phaedrus *Lupus et Agnus* + *Rana Rupta et Bos* (LAT Kl. 3/4) — all
-AT-70-p.m.a.-clear, historical orthography preserved verbatim. **`tools/fetch_anno.py` (11 Jul 2026)**
+AT-70-p.m.a.-clear, historical orthography preserved verbatim. Second batch: Hey *Küchlein* (Kl. 1) ·
+Grimm *Der Fuchs und die Katze* + Morgenstern *Das ästhetische Wiesel* (Kl. 2) · Goethe *Erlkönig*
+(Kl. 3) · Kafka *Kleine Fabel* (Kl. 4) · Phaedrus I,4 + I,26 (LAT Kl. 3/4) — staged-equals-fetched
+byte-locked. **`tools/fetch_anno.py` (11 Jul 2026)**
 adds the newspaper/OCR path through the official ÖNB IIIF manifest + ALTO resources. It targets the
 ÖNB Labs Public-Domain-Mark subset, records the exact canvas URL, preserves OCR verbatim (including
 errors, line and block boundaries; no silent correction/dehyphenation), and marks it
 `machine_ocr_unverified`. The first staged source is the 1871 *Leitmeritzer Zeitung* report on a
-Lehrertag; its annotated text and referenced-only GPB Quellenarbeit are both verify-clean.
+Lehrertag; its annotated text and referenced-only GPB Quellenarbeit are both verify-clean. The 1873
+*Wiener Zeitung* Weltausstellungs-Festrede pairs with it as the official counter-voice (annotated DEU
+text + GPB Quellenarbeit #2, `library/gpb_anno_weltausstellung.py`).
 
 **Audio / Hörverstehen (modern FS)** — a listening text is an `AnnotatedText` with `medium="audio"`:
 `build_worksheet` attaches `Asset(role="tts", generator="audio:tts")`, renders a printable audio cue +
@@ -521,7 +526,10 @@ the 11 Jul idea-pass program — `Documents/feature-roadmap.md`.)*
   (`stats.difficulty_review_cues`). DERIVED + ADVISORY — it **never** overrides the authored value. The
   honest finding: the corpus has **zero** authored `difficulty` labels, so the model is *not learnable*
   (an accuracy-max fit trivially recovers `cognitive_rank`) — hence **curated weights + fitted
-  thresholds**, not a learned model. Depth: `Documents/difficulty-model.md`. `harvest(content)` extracts a worksheet's blocks
+  thresholds**, not a learned model. The authored-label loop: `tools/propose_difficulty.py` stages
+  SME-gated proposals (`runs/difficulty/difficulty_proposals.{json,md}`, every `accepted` null until
+  vetted); `tools/apply_difficulty.py` is the SME-run apply (fail-fast, status-preserving, idempotent) —
+  labels are never applied automatically. Depth: `Documents/difficulty-model.md`. `harvest(content)` extracts a worksheet's blocks
   (a learn-text is a block; framing intro/transitions are not) and **captures asset specs** so figures
   travel. `store/blockstore.py`: `upsert` is idempotent and **preserves review status** (re-seeding
   never un-approves); `seed_blocks` seeds the SME-reviewed examples as `approved`. `stats.py` is the
@@ -563,9 +571,11 @@ the 11 Jul idea-pass program — `Documents/feature-roadmap.md`.)*
   (`ancestors`·`depth`·`descendants`·`blocking_gaps`). First consumer `pipeline/diagnose.py::
   build_worksheet` — a **Diagnose-Blatt**: one easy approved task per prerequisite ancestor from the
   BlockStore, honest gap notes otherwise (`orch.compose_diagnose_worksheet`; band-1 seed
-  `library/diagnose.py`). `stats.coverage_map` gains a `blocks_dependents` leverage overlay. MAT
-  shipped (77 edges); PHY/CHE next. Seams left open: warm-up injection · spiral revision · campaign
-  ordering.
+  `library/diagnose.py`). `stats.coverage_map` gains a `blocks_dependents` leverage overlay. Catalogs:
+  MAT (77 edges) · PHY (30 — the phenomenological US strands + US→OS continuations) · CHE (35 —
+  Oberstufe-only: CHE US is single-Klasse with process-only competence ids, honestly graph-free;
+  cross-subject edges are inexpressible by design). Seams left open: warm-up injection · spiral
+  revision · campaign ordering.
 
 ## Lernarrangement (schema v0.5 — built)
 
