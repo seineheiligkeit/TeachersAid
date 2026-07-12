@@ -1,8 +1,8 @@
 # Project Handoff — Austrian Lehrplan-anchored Teaching-Material Generator
 
 **Status: design baseline from Session 2 (24 June 2026); see the dated session updates below for the
-current state (latest: Session 20, 12 July 2026 — the carried-forward backlog cleared: PHY/CHE prereq
-catalogs, the authored-difficulty loop, text batch 2 + the 1873 ANNO counter-voice; 910 tests green).** This is the single read-me-first document for a fresh
+current state (latest: Session 20, 12 July 2026 — the carried-forward backlog cleared AND Tiefenregler
+P2–P4: the Mischpult is complete, six faders + capability discovery + dashboard; 935 tests green).** This is the single read-me-first document for a fresh
 session taking the project over. Working language is English; the *product's* output is German (or a
 target language for Fremdsprache). Read this, then the docs in the order given in §6.
 
@@ -569,6 +569,34 @@ target language for Fremdsprache). Read this, then the docs in the order given i
 > referenced-only GPB Quellenarbeit #2, `library/gpb_anno_weltausstellung.py`, item c0202). Suite
 > **882 → 910 passed, 1 skipped**. SME queue additions: the 7 prereq edge flags · the 138-proposal
 > review file · the Wiesel edition choice + the two glossed OCR errors · c0202.
+
+> **Update (Session 20 continued, 12 Jul 2026): Tiefenregler P2–P4 — the Mischpult completed**
+> (three sequential Opus workers on the one seam). **P2 Gerüst** (`pipeline/scaffold.py`): per-task
+> `TaskScaffold` at `gestützt` — a **leak-guarded** worked FIRST step from `solution_steps[0]` (a
+> fraction-aware value comparison admits the step only if the answer's values are provably absent;
+> mapping kinds excluded; errs safe — 9 templates honestly rejected, e.g. `mat-kreis` whose step 1 IS
+> the answer), a misconception hint naming curated Fehlermuster categories where `MCSpec` exists, and
+> curated kind-keyed Formulierungshilfen; renders as a student-facing Hilfestellung box, 37 templates
+> supported, a corpus-wide test verified 900+ scaffolded tasks answer-free. **P3 Textlast**
+> (`pipeline/textlast.py`): `voll ↔ einfach` SELECTS a curated `ParametricTask.prompt_simple` twin
+> (slot-set equality hard-validated at registration — no fact drift) + a term-definitional
+> `glossary` Wortschatz-Kasten (digit-free by construction); WSTF via the existing readability
+> module joins the ONE MixerLintReport with a strict-decrease gate (a bad twin fails the lint);
+> verbatim `source_text`/`quoted` structurally never twinned. Twins authored for 6 text-heavy
+> templates (fin-lohnzettel/-handyvertrag + 4 MAT; −6…−18 WSTF Schulstufen each); `fin-inflation`
+> honestly excluded (recipe-built prompt — no template prose to twin). **P4** — capability
+> discovery + the dashboard Mischpult: `discover_capabilities` + `GET /api/templates/{id}/capabilities`
+> derive per-template fader support by asking the mixer's OWN rejection paths (a registry-wide
+> drift test locks discovery == mixer accept/reject across all 46 templates × 6 faders: Umfang 46 ·
+> Gerüst 40 · Textlast 6 · Abstraktion 4 · Offenheit 4 · Tiefe 3); the Korpus variants form renders
+> supported faders as controls and unsupported ones disabled WITH the honest German reason, POSTing
+> the same typed `mixer_profile` (UI never a second source of truth). **Composer integration
+> investigated and documented OUT** (design doc §8): the envelope already moves size honestly
+> (6/14/20 tasks measured), and block selection cannot honor Umfang's coverage-invariant contract
+> (measured 3→4 competences) — no decorative knob. Suite **910 → 935 passed, 1 skipped**. SME queue
+> additions: the Mischpult German surfaces (Formulierungshilfen table · Hilfestellung/hint wording ·
+> the 6 twins + glossaries · fader/endpoint labels + the six "warum nicht" strings). Still open from
+> the flagship description: lesson-purpose presets · Zusatz-★/tiered sub-questions as content genres.
 
 ---
 

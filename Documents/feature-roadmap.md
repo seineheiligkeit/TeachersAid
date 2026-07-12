@@ -22,7 +22,11 @@ Every idea below carries its correct-by-construction angle — that is the admis
 
 ### Ready to build (greenlit 11 Jul)
 
-**The flagship — der Tiefenregler („das Mischpult").** *(P1 ✅ BUILT 11 Jul, external agent — Umfang/Tiefe/Abstraktion/Offenheit faders + Regler-Lint on parametric sheets; contract: [`tiefenregler-design.md`](tiefenregler-design.md). P2–P4 open.)* Depth as a teacher-facing control surface:
+**The flagship — der Tiefenregler („das Mischpult").** *(P1–P4 ✅ BUILT — P1 11 Jul; P2 Gerüst +
+P3 Textlast + P4 capability discovery/dashboard Mischpult 12 Jul; composer faders investigated and
+documented OUT (design doc §8 — the envelope is the composer's honest size control). Still open
+from the description below: lesson-purpose presets · Zusatz-★-blocks/tiered sub-questions as
+content genres. Contract: [`tiefenregler-design.md`](tiefenregler-design.md).)* Depth as a teacher-facing control surface:
 one worksheet, independent faders tuned *per sheet or per Baustein* before printing —
 **Gerüst** (bare ↔ worked first step from `solution_steps` + misconception-fed hints +
 Formulierungshilfen) · **Tiefe** (practice ↔ Begründen/Transfer/`solution_paths`) · **Umfang**
@@ -34,11 +38,12 @@ Vertretungsstunde · Hausübung). Within-class depth lives INSIDE one shared she
 Zusatz-★-blocks, tiered a)→b)→c) sub-questions, and *selbstdifferenzierende* task genres. Every
 fader is a **derivation over one master** (no forked content, ever; ONE teacher guide with the
 profile stamped); the **Regler-Lint** verifies each fader measurably moves what it claims (WSTF ·
-C4-estimate · AFB mix · competence coverage intact or honestly reported). Build shape: **P1 built** —
-pure-computation faders on parametric sheets (Umfang · computed strategy depth · figure abstraction ·
-misconception-MC↔open, typed profile + structural Regler-Lint; contract in
-`tiefenregler-design.md`) → P2 scaffold fader → P3 text fader + WSTF lint → P4 composer integration +
-dashboard surface. *(The rejected sibling is recorded under Rejected.)*
+C4-estimate · AFB mix · competence coverage intact or honestly reported). Build shape: **P1–P4
+built** — P1 pure-computation faders (Umfang · Tiefe · Abstraktion · Offenheit) → P2 Gerüst
+(leak-guarded worked first step + misconception hints + Formulierungshilfen) → P3 Textlast (curated
+`prompt_simple` twins + Wortschatz-Kasten, WSTF strict-decrease in the one lint) → P4 capability
+discovery + dashboard Mischpult (composer integration investigated, documented out — design doc §8).
+*(The rejected sibling is recorded under Rejected.)*
 
 **New task genres (engines):**
 - **Fermi-Werkstatt** — estimation problems; decomposition chains with curated fact-anchors from
@@ -143,8 +148,10 @@ dashboard surface. *(The rejected sibling is recorded under Rejected.)*
 - **The SME gate backlog** (the human queue): the 12 image candidates + backdrop picks · c0200/
   c0201 · C5's ► decisions · C1 edge flags (incl. the 7 PHY/CHE flags) · the 138 difficulty
   proposals (`runs/difficulty/difficulty_proposals.md`) · c0202 + the text-batch flags (Wiesel
-  edition choice, the two glossed OCR errors) · C3 shared-product German · C2 registry dates · the
-  standing breadth-content queue.
+  edition choice, the two glossed OCR errors) · the Mischpult German surfaces (Formulierungshilfen
+  table · Hilfestellung/hint wording · the 6 prompt twins + glossaries · fader/endpoint labels +
+  the six "warum nicht" strings) · C3 shared-product German · C2 registry dates · the standing
+  breadth-content queue.
 
 ## Recently completed (ledger — details in `project-handoff.md`)
 
@@ -152,4 +159,5 @@ Waves A (task/figure engines) · B (image program, external agent) · C (corpus 
 eight 10-Jul tracks (figstyle port, physics scenes, Matura pack, figure emission, Textsorten,
 Latein, texts, re-grounding) · nets/variants/boxplot/ANNO/BIO+Bezirk (external agent) · the
 two-machine reconciliation · three-tier anchoring + Mischpult P1 (external agent) · the three 11-Jul programs (Finanz, Wahl, Sternkarten) · the 12-Jul carried-forward wave (PHY/CHE prereqs ·
-the difficulty-label loop · text batch 2 + the 1873 ANNO pair). Suite at 910.
+the difficulty-label loop · text batch 2 + the 1873 ANNO pair) · Tiefenregler P2–P4 (Gerüst ·
+Textlast · capability discovery + dashboard Mischpult; composer documented out). Suite at 935.

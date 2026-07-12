@@ -33,7 +33,7 @@ rendering + the two-stage human-in-the-loop review dashboard).
 ```bash
 pip install -e .                       # deps: pydantic2, fastapi, uvicorn, anthropic, reportlab,
                                        #       matplotlib, pillow, pyyaml, pymupdf, sympy  (pytest for dev)
-python -m pytest -q                    # fully offline, no API key (910 tests)
+python -m pytest -q                    # fully offline, no API key (935 tests)
 python -m teachersaid seed             # seed the master-library examples into the review queue
 python -m teachersaid                  # dashboard → http://127.0.0.1:8000
 ```
@@ -107,12 +107,24 @@ subject/grade hook; Horizont is explicit teacher-choice enrichment and **must ca
 `derive_nachweis` renders the claim; the model/author never writes it. Full contract:
 `Documents/anchoring-modes.md`.
 
-**Parametric Tiefenregler (P1):** `schema/mixer.py` is the typed teacher profile + derived
-Regler-Lint evidence; `pipeline/mixer.py` projects Umfang, computed strategy depth, student-figure
-abstraction, and misconception-MC↔open response from one seeded master. A template-specific fader
-must reject when its recipe lacks the required `solution_paths`, figure, or `MCSpec`; never emit a
-no-op control. The teacher PDF alone stamps the profile. P2–P4 extend this seam; full contract:
-`Documents/tiefenregler-design.md`.
+**Parametric Tiefenregler („Mischpult", P1–P4):** `schema/mixer.py` is the typed teacher profile +
+derived Regler-Lint evidence; `pipeline/mixer.py` projects SIX controls from one seeded master —
+Umfang · Tiefe (computed `solution_paths` comparison) · Abstraktion (student figure → formal) ·
+Offenheit (misconception-MC ↔ open) · **Gerüst** (`pipeline/scaffold.py`: per-task `TaskScaffold` =
+leak-guarded worked FIRST step from `solution_steps[0]` + misconception hint from the curated catalog
++ curated Formulierungshilfen, rendered as a student-facing Hilfestellung box; the value-comparison
+leak-guard rejects any template whose first step would expose the answer) · **Textlast**
+(`pipeline/textlast.py`: SELECTS a curated `ParametricTask.prompt_simple` twin — slot-set equality
+hard-validated so facts can't drift — plus a term-definitional `glossary` Wortschatz-Kasten; WSTF
+strict-decrease joins the ONE MixerLintReport; verbatim `source_text`/`quoted` is never twinned).
+A fader must hard-reject when its recipe lacks the required computed data; never emit a no-op
+control. The teacher PDF alone stamps the profile. `discover_capabilities` +
+`GET /api/templates/{id}/capabilities` derive per-template support by asking the mixer's own
+rejection paths (a registry-wide drift test locks them together); the dashboard Mischpult renders
+supported faders and shows honest German "warum nicht" reasons for the rest, POSTing the same typed
+profile (UI state is never a second source of truth). The composer is deliberately OUT: the envelope
+is its honest size control, and block selection can't honor Umfang's coverage invariance
+(design doc §8). Full contract: `Documents/tiefenregler-design.md`.
 
 The lints in `verify` (details in their sections/docs): `media_policy` (content-bearing → code-gen or
 vetted-sourced; decorative → content-free), `chart_lint` (misrepresentation: 0/1 data as bars, extreme
