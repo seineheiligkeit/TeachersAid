@@ -126,3 +126,68 @@ class MixerLintReport(BaseModel):
     passed: bool
     output: MixerMetricSnapshot
     movements: list[FaderMovement] = Field(default_factory=list)
+
+
+# --- P4: German display labels for the Mischpult dashboard -------------------------------
+# The controls are product-facing German (Austrian school register).  These map the profile
+# field names + the endpoint enum VALUES to the labels the teacher sees.  They are pure
+# presentation (UI copy); the accept/reject LOGIC is never encoded here — it is DISCOVERED by
+# asking the mixer's own rejection paths (`pipeline/mixer.discover_capabilities`).
+
+FADER_LABELS: dict[str, str] = {
+    "umfang": "Umfang",
+    "tiefe": "Tiefe",
+    "abstraktion": "Abstraktion",
+    "offenheit": "Offenheit",
+    "geruest": "Gerüst",
+    "textlast": "Textlast",
+}
+
+# endpoint enum value → German label (mostly identity; two carry an umlaut / a phrase)
+ENDPOINT_LABELS: dict[str, str] = {
+    "kompakt": "kompakt", "standard": "standard", "erweitert": "erweitert",
+    "ueben": "üben", "strategien_vergleichen": "Strategien vergleichen",
+    "anschaulich": "anschaulich", "formal": "formal",
+    "geschlossen": "geschlossen", "offen": "offen",
+    "ohne": "ohne", "gestuetzt": "gestützt",
+    "voll": "voll", "einfach": "einfach",
+}
+
+
+class FaderOption(BaseModel):
+    """One selectable endpoint of a fader: the enum value sent in the profile + its label."""
+
+    model_config = ConfigDict(extra="forbid")
+    value: str      # the enum value the dashboard puts into `mixer_profile`
+    label: str      # the German display label
+
+
+class FaderCapability(BaseModel):
+    """Discovered capability of ONE fader for ONE parametric template (P4).
+
+    ``supported`` is DERIVED by asking the mixer's own rejection code (never a hand table).
+    ``optional`` distinguishes the five capability faders (which may be left unset → ``None``,
+    the neutral default) from the universal Umfang (always sent, defaults to ``standard``).
+    ``reason`` is a curated German explanation shown only when the fader is unsupported —
+    presentation copy, not the decision; the decision is ``supported``.
+    """
+
+    model_config = ConfigDict(extra="forbid")
+    fader: str                              # the ParametricMixerProfile field name
+    label: str                              # German control label (FADER_LABELS)
+    supported: bool
+    optional: bool                          # may be left neutral (None); False only for umfang
+    options: list[FaderOption] = Field(default_factory=list)  # selectable endpoints
+    default: str | None = None              # neutral default: "standard" (umfang) or None
+    reason: str | None = None               # German "warum nicht" — unsupported only
+
+
+class TemplateCapabilities(BaseModel):
+    """The full Mischpult capability report for one parametric template (P4 discovery)."""
+
+    model_config = ConfigDict(extra="forbid")
+    template_id: str
+    subject: str
+    klasse: int
+    title: str
+    capabilities: list[FaderCapability] = Field(default_factory=list)

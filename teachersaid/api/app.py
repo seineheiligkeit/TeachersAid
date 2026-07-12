@@ -194,6 +194,21 @@ def templates():
     } for t in PARAM_TEMPLATES]
 
 
+@app.get("/api/templates/{template_id}/capabilities")
+def template_capabilities(template_id: str):
+    """P4 Mischpult: which Tiefenregler faders this template supports (+ the honest German
+    reason for the rest). DERIVED from the mixer's own rejection paths — never a hand table —
+    so the dashboard offers exactly the controls `POST /api/variants` will accept. The teacher
+    still sends the same typed `mixer_profile`; the UI holds no state the API doesn't receive."""
+    from ..library.templates import find_template
+    from ..pipeline.mixer import discover_capabilities
+
+    t = find_template(template_id.strip())
+    if t is None:
+        raise HTTPException(404, f"no parametric template '{template_id}'")
+    return discover_capabilities(t).model_dump()
+
+
 @app.post("/api/variants")
 def variants(body: VariantsBody):
     """Stage N deterministic, correct-by-construction variants for Gate-2 review."""

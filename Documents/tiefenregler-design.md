@@ -1,6 +1,7 @@
 # Tiefenregler („Mischpult") — derivation contract
 
-Status: **P1 + P2 + P3 built**. This document fixes the seam that P4 extends.
+Status: **P1 + P2 + P3 + P4 built**. P4 is capability discovery + the dashboard Mischpult
+(§8); it adds no new fader. The composer was deliberately left untouched (§8, reasoned).
 
 ## 1. Product rule
 
@@ -104,8 +105,10 @@ the system collects no student response data and makes no psychometric claim.
   curated fields — it never simplifies verbatim source text (verbatim-exempt blocks are structurally
   skipped) and never rewrites a factual value (slot-set equality is validated; the twin introduces no new
   number). Full contract in §7.
-- P4 may discover capabilities and expose only supported controls. It sends the same typed profile;
-  UI state must never become a second source of truth.
+- **P4 — DONE.** Capability discovery + the dashboard Mischpult; it adds **no** new fader. It discovers
+  which of the six controls a template supports (by asking the mixer's own rejection paths), exposes
+  supported ones as live controls and the rest as disabled controls with an honest German reason, and
+  sends the SAME typed profile. UI state never becomes a second source of truth. Full contract in §8.
 - A future middle setting such as “geführt” (P2) or a computed intermediate register (P3) is admitted
   only when its scaffold/register is computed and its movement is measurable. Adding the enum label
   before that engine exists is forbidden — so P2 ships exactly two endpoints (`ohne` ↔ `gestützt`) and
@@ -207,3 +210,71 @@ between the intro and the tasks (student, homework AND teacher — the teacher s
 The teacher-only profile stamp names the register (`Textlast: einfach (vereinfachte Angabe + Wortschatz)`).
 The master's hardest vocabulary (e.g. „Steuerbemessungsgrundlage“) is absent from the einfach student sheet
 by construction.
+
+## 8. P4 — capability discovery + the dashboard Mischpult (+ the composer decision)
+
+P4 adds **no new fader**. It closes the loop between the typed profile and the teacher: it *discovers*,
+per template, which of the six controls that template can actually move, and turns that into the dashboard
+Mischpult. A teacher sees supported controls as live selects and unsupported ones as disabled controls with
+an honest „warum nicht“ — an honest boundary is product truth, not clutter.
+
+**Discovery contract (single source of truth).** `pipeline/mixer.discover_capabilities(task) ->
+TemplateCapabilities` derives each fader's `supported` flag by asking the SAME structural questions the
+mixer's OWN rejection paths ask (§2/§4/§6/§7), over the SAME `make_variants_with_assets` builder — **never
+a parallel, hand-maintained capability table.** The conditions it mirrors, one-to-one:
+
+| fader | supported iff | mixer rejection it mirrors |
+|---|---|---|
+| **Umfang** | always (universal; kompakt/erweitert counts always differ for n ≥ 1) | — |
+| **Tiefe** | every variant emits `solution_paths` | `_strategy_depth` |
+| **Abstraktion** | some variant carries a student figure (`asset_refs`) | `_formal_projection` |
+| **Offenheit** | every variant is a misconception-MC (`payload.kind == multiple_choice`) | the openness projection in `_instantiate` |
+| **Gerüst** | ≥ 1 variant carries a `TaskScaffold` | the scaffold probe in `make_mixed_variants` |
+| **Textlast** | an approved `prompt_simple` twin whose student prose **strictly** lowers the WSTF | the Textlast movement (`einfach.wstf < voll.wstf`) |
+
+Because discovery and `make_mixed_variants` are two INDEPENDENT code paths, the registry-wide drift lock
+`tests/test_mixer_capabilities.py::test_discovery_matches_mixer_accept_reject_for_every_template` asserts,
+for every registered template × every fader (BOTH endpoints), that `discover_capabilities().supported`
+equals the mixer's real accept/reject. If either drifts, the test turns red — that is the point.
+
+The **supported/unsupported decision** carries zero German copy. The German control labels (`FADER_LABELS`),
+endpoint labels (`ENDPOINT_LABELS`, e.g. `strategien_vergleichen` → „Strategien vergleichen“) and the
+per-fader „warum nicht“ reasons are pure presentation in `schema/mixer.py` / `pipeline/mixer.py`; they never
+gate anything. Discovery is n-robust: the structural capabilities are n-independent and the Textlast WSTF is
+aggregate-stable across n (§7), so the report probes at a representative `DISCOVERY_N = 6`.
+
+**API.** `GET /api/templates/{template_id}/capabilities` returns `discover_capabilities(t).model_dump()`
+(a sibling of `GET /api/templates`, computed on demand — one template's discovery is cheap, the full list
+is not). Shape: `{template_id, subject, klasse, title, capabilities:[{fader, label, supported, optional,
+options:[{value,label}], default, reason}]}`. `optional=false` only for Umfang (always sent, `default:
+"standard"`); the five capability faders are `optional=true` with `default: null` (neutral). `reason` is a
+German string exactly when `supported=false`.
+
+**The UI rule (no second source of truth).** The dashboard fetches capabilities when a template is picked
+and renders one fader per control. On submit it **rebuilds the SAME typed `mixer_profile` from the selects**
+and POSTs it to `/api/variants` — nothing else. Neutral = the field omitted (→ `None`); a disabled
+(unsupported) fader is never sent; Umfang is always sent. When every fader is neutral and Umfang is standard
+the profile is omitted entirely, so an untouched Mischpult behaves exactly like the pre-P4 plain path (no
+profile stamp). The teacher-PDF profile stamp remains the single truth of what the class received; the UI
+holds no state the API does not receive. Default state = every fader neutral / Umfang standard.
+
+**The composer decision — left untouched, deliberately.** The approved-block composer (`pipeline/compose.py`)
+is **not** parametric: it selects a bundle of harvested, finished blocks, which carry no `solution_paths`,
+`MCSpec`, student-figure twin, `prompt_simple`, or per-instance data. So the five capability faders
+**cannot** move there at all — the honest boundary is *"composer faders beyond Umfang await parametric-grade
+computed data on blocks."* Umfang was the one plausible candidate and was investigated empirically, then
+declined for two independent reasons:
+
+1. **The composer already has an honest size control — the envelope** (`einzelstunde`/`doppelstunde`/`block`
+   → 50/100/150 min budget). Measured on a well-covered cell (Physik 4 „Wetter und Klima“, 31 approved
+   tasks) it already moves cleanly: 6 tasks/49 min → 14/100 → 20/146. A composer „Umfang“ would merely
+   scale that same budget by the P1 ratios (2/3, 4/3) and interpolate *between the existing envelopes* — a
+   redundant knob.
+2. **It would wear the Tiefenregler contract while breaking it.** Tiefenregler Umfang is DEFINED as a
+   coverage-invariant projection of one master (§2; the Regler-Lint requires an identical served-competence
+   set at both endpoints). Composer block-selection inherently alters coverage — in the same measurement,
+   3 competences at `einzelstunde` vs 4 at `doppelstunde`. A knob called „Umfang“ that silently changes
+   coverage is precisely the misleading control the invariants forbid.
+
+So the composer is left untouched. Should blocks ever gain parametric-grade computed data (per-block
+solution paths / MC specs / figure twins), this section is where that reopens — but not before.

@@ -64,6 +64,13 @@
   .chip { cursor:pointer; border:1px solid var(--line); border-radius:12px; padding:1px 8px; font-size:11px; color:#555; background:#fff; }
   .chip.on { background:var(--ink); color:#fff; border-color:var(--ink); }
   .fb-item { border-left:3px solid var(--line); padding:3px 9px; margin:4px 0; font-size:12.5px; background:#fbfaf7; border-radius:0 5px 5px 0; }
+  .mixer { margin-top:10px; border-top:1px dashed var(--line); padding-top:8px; }
+  .mixer h3 { font-size:11.5px; margin:0 0 6px; color:var(--ink); text-transform:uppercase; letter-spacing:.04em; }
+  .fader { display:grid; grid-template-columns:104px 1fr; gap:8px; align-items:baseline; margin:6px 0; }
+  .fader .flabel { font-size:12.5px; color:#333; }
+  .fader.off .flabel { color:#aaa; }
+  .fader select { padding:4px 6px; }
+  .fader .why { grid-column:2; font-size:11px; color:#999; margin:2px 0 0; }
 </style>
 </head>
 <body>
@@ -144,11 +151,12 @@ function korpusShellHTML(v){
         <div class="card"><h2>Varianten erzeugen</h2>
           <p class="muted">Aus einer geprüften parametrischen Vorlage: neue Zahlen, derselbe
             mathematische Kern, Lösung und Rechenweg deterministisch berechnet. Kein LLM-Aufruf.</p>
-          <label>Vorlage</label><select id="v-template"><option value="">lädt…</option></select>
+          <label>Vorlage</label><select id="v-template" onchange="loadMixer()"><option value="">lädt…</option></select>
           <div class="row">
             <div style="flex:1"><label>Anzahl</label><input id="v-count" type="number" min="1" max="30" value="6"></div>
             <label style="flex:2;margin-top:24px"><input id="v-ramp" type="checkbox" style="width:auto;margin-right:6px">ansteigend (leicht → anspruchsvoll)</label>
           </div>
+          <div id="v-mixer" class="mixer"></div>
           <div class="row" style="margin-top:8px"><button onclick="composeVariants()">Varianten erzeugen</button></div>
           <p id="v-result" class="muted"></p>
         </div>
@@ -294,13 +302,60 @@ async function loadTemplates(){
   try{
     const rows=await jget("/api/templates");
     sel.innerHTML=rows.map(t=>`<option value="${esc(t.id)}">${esc(t.subject)} ${t.klasse}. Kl. — ${esc(t.title)} · ${esc((t.anchor||[]).join(", "))}</option>`).join("");
+    await loadMixer();                       // the Mischpult for the initially selected template
   }catch(e){ sel.innerHTML=`<option value="">Vorlagen nicht ladbar</option>`; }
+}
+// --- Tiefenregler-Mischpult (P4) -------------------------------------------------------
+// When a template is selected we fetch its DISCOVERED capabilities and render one fader per
+// control: supported ones are live selects (German endpoint labels), unsupported ones are
+// visible-but-disabled with the honest "warum nicht" as a subtitle + tooltip. The UI holds no
+// state the API doesn't receive: submitting rebuilds the SAME typed mixer_profile from the
+// selects (neutral = omitted → None). Default = every fader neutral / Umfang standard.
+let MIXER_CAPS=null;
+async function loadMixer(){
+  const box=$("#v-mixer"); if(!box) return;
+  const tid=$("#v-template").value; MIXER_CAPS=null;
+  if(!tid){ box.innerHTML=""; return; }
+  box.innerHTML=`<p class="muted">Mischpult lädt…</p>`;
+  try{
+    const caps=await jget(`/api/templates/${encodeURIComponent(tid)}/capabilities`);
+    MIXER_CAPS=caps;
+    box.innerHTML=`<h3>Tiefenregler (Mischpult)</h3>`+caps.capabilities.map(faderHTML).join("");
+  }catch(e){ box.innerHTML=`<p class="muted">Mischpult nicht ladbar.</p>`; }
+}
+function faderHTML(c){
+  const id=`mix-${c.fader}`;
+  if(!c.optional){                           // Umfang — universal, defaults to standard
+    const opts=c.options.map(o=>`<option value="${esc(o.value)}"${o.value===c.default?" selected":""}>${esc(o.label)}</option>`).join("");
+    return `<div class="fader"><span class="flabel">${esc(c.label)}</span><select id="${id}">${opts}</select></div>`;
+  }
+  if(!c.supported){                          // visible but disabled + honest German reason
+    return `<div class="fader off" title="${esc(c.reason||"")}"><span class="flabel">${esc(c.label)}</span>`
+      +`<select id="${id}" disabled><option>— nicht verfügbar</option></select>`
+      +`<p class="why">${esc(c.reason||"")}</p></div>`;
+  }
+  const opts=[`<option value="">— neutral</option>`]              // neutral default first
+    .concat(c.options.map(o=>`<option value="${esc(o.value)}">${esc(o.label)}</option>`)).join("");
+  return `<div class="fader" title="${esc(c.label)}"><span class="flabel">${esc(c.label)}</span><select id="${id}">${opts}</select></div>`;
+}
+function buildMixerProfile(){
+  if(!MIXER_CAPS) return null;
+  const prof={}; let touched=false;
+  for(const c of MIXER_CAPS.capabilities){
+    const el=$(`#mix-${c.fader}`); if(!el||el.disabled) continue;
+    const v=el.value;
+    if(c.optional){ if(v){ prof[c.fader]=v; touched=true; } }     // omit neutral → None
+    else { prof[c.fader]=v; if(v!==c.default) touched=true; }     // Umfang always present
+  }
+  return touched ? prof : null;              // all-neutral → the plain (unstamped) path
 }
 async function composeVariants(){
   const template_id=$("#v-template").value, n=+$("#v-count").value;
   if(!template_id){ $("#v-template").focus(); return; }
   const result=$("#v-result"); result.textContent="wird berechnet und gerendert…";
-  const r=await jpost("/api/variants",{template_id,n,ramp:$("#v-ramp").checked});
+  const body={template_id,n,ramp:$("#v-ramp").checked};
+  const prof=buildMixerProfile(); if(prof) body.mixer_profile=prof;
+  const r=await jpost("/api/variants",body);
   if(r.error){ result.textContent="Fehler: "+r.error; return; }
   result.textContent=`${r.id} wurde in „Prüfen“ eingestellt.`;
   SELECTED=r.id||null; VIEW="vorschau"; await refresh(); if(SELECTED) openDetail(SELECTED);

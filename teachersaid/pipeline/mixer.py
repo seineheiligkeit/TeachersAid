@@ -14,12 +14,17 @@ from ..schema.blocks import TaskBlock
 from ..schema.enums import COGNITIVE_RANK
 from ..schema.mixer import (
     Abstraktion,
+    ENDPOINT_LABELS,
+    FADER_LABELS,
+    FaderCapability,
     FaderMovement,
+    FaderOption,
     Geruest,
     MixerLintReport,
     MixerMetricSnapshot,
     Offenheit,
     ParametricMixerProfile,
+    TemplateCapabilities,
     Textlast,
     Tiefe,
     Umfang,
@@ -316,3 +321,121 @@ def make_mixed_variants(
                            if not (m.moved and m.coverage_intact))
         raise ValueError(f"Regler-Lint failed for: {failed}")
     return blocks, assets, report, actual_n
+
+
+# --- P4: capability discovery ------------------------------------------------------------
+# The dashboard Mischpult must show a teacher which faders a template supports — and, for the
+# rest, an honest "warum nicht".  This is DERIVED by asking the SAME structural questions the
+# mixer's own rejection paths ask (above), over the SAME variant builder — never a parallel,
+# hand-maintained capability table that could drift.  `tests/test_mixer_capabilities.py` locks
+# the discovery output against the mixer's actual accept/reject behaviour for every registered
+# template × every fader (a registry-wide drift test).
+
+DISCOVERY_N = 6   # a representative variant count for probing (the dashboard default). The
+# structural capabilities (solution_paths / figure / MCSpec / scaffold / twin) are
+# n-independent; the Textlast WSTF is aggregate-stable across n (tiefenregler-design §7), so
+# the report is n-robust.
+
+# Curated German "warum nicht" copy — ONE per capability fader (Austrian school register).
+# Presentation only: the supported/unsupported DECISION is derived from the structural checks
+# below (which mirror the mixer), never from this table.
+_UNSUPPORTED_REASON: dict[str, str] = {
+    "tiefe": "Kein alternativer Rechenweg im Rezept — es gibt keine zwei Strategien zum "
+             "Vergleichen.",
+    "abstraktion": "Keine Schüler-Abbildung im Rezept — es gibt nichts zum Weglassen.",
+    "offenheit": "Keine Multiple-Choice-Grundlage — das Rezept erzeugt keine "
+                 "Fehlvorstellungs-Antworten.",
+    "geruest": "Nichts zum Stützen — kein leak-freier erster Schritt, kein Fehlerhinweis "
+               "und keine Schreibfläche.",
+    "textlast_no_twin": "Keine geprüfte vereinfachte Angabe hinterlegt.",
+    "textlast_no_drop": "Die vereinfachte Angabe senkt die Lesbarkeit (WSTF) nicht messbar.",
+}
+
+
+def _is_mc(block: TaskBlock) -> bool:
+    """The SAME multiple-choice test the metric snapshot uses (the payload discriminator)."""
+    return getattr(block.payload, "kind", None) == "multiple_choice"
+
+
+def _option(value) -> FaderOption:
+    v = value.value if hasattr(value, "value") else str(value)
+    return FaderOption(value=v, label=ENDPOINT_LABELS.get(v, v))
+
+
+def _optional_capability(fader, low, high, supported, reason) -> FaderCapability:
+    """A two-endpoint capability fader (neutral default = None)."""
+    return FaderCapability(
+        fader=fader, label=FADER_LABELS[fader], supported=supported, optional=True,
+        options=[_option(low), _option(high)], default=None,
+        reason=None if supported else reason,
+    )
+
+
+def discover_capabilities(
+    task: ParametricTask, *, n: int = DISCOVERY_N, seed0: int = 1, ramp: bool = False,
+) -> TemplateCapabilities:
+    """Report which Mischpult faders `task` supports, and the honest German reason otherwise.
+
+    Each capability is derived from the SAME structural condition the mixer's rejection code
+    checks, over the SAME `make_variants_with_assets` builder — so discovery cannot drift from
+    what `make_mixed_variants` will actually accept (locked registry-wide by the drift test).
+    """
+    caps: list[FaderCapability] = []
+
+    # Umfang — universal: `adjusted_variant_count` always maps and, for n ≥ 1, the kompakt and
+    # erweitert counts always differ, so the fader always moves.  Never left unset.
+    caps.append(FaderCapability(
+        fader="umfang", label=FADER_LABELS["umfang"], supported=True, optional=False,
+        default=Umfang.STANDARD.value,
+        options=[_option(u) for u in (Umfang.KOMPAKT, Umfang.STANDARD, Umfang.ERWEITERT)],
+    ))
+
+    # Build the neutral master ONCE — the same builder + defaults the mixer uses for the
+    # Tiefe / Abstraktion / Offenheit capability checks.
+    base, _ = make_variants_with_assets(task, n, seed0=seed0, ramp=ramp)
+
+    # Tiefe — `_strategy_depth` rejects unless EVERY variant emits alternative solution paths.
+    tiefe_ok = bool(base) and all(b.solution_paths for b in base)
+    caps.append(_optional_capability(
+        "tiefe", Tiefe.UEBEN, Tiefe.STRATEGIEN_VERGLEICHEN, tiefe_ok,
+        _UNSUPPORTED_REASON["tiefe"]))
+
+    # Abstraktion — `_formal_projection` rejects unless some variant carries a student figure.
+    abstraktion_ok = any(b.asset_refs for b in base)
+    caps.append(_optional_capability(
+        "abstraktion", Abstraktion.ANSCHAULICH, Abstraktion.FORMAL, abstraktion_ok,
+        _UNSUPPORTED_REASON["abstraktion"]))
+
+    # Offenheit — the openness projection rejects unless every variant carries an MCSpec (i.e.
+    # every base block is already a multiple_choice task).
+    offenheit_ok = bool(base) and all(_is_mc(b) for b in base)
+    caps.append(_optional_capability(
+        "offenheit", Offenheit.GESCHLOSSEN, Offenheit.OFFEN, offenheit_ok,
+        _UNSUPPORTED_REASON["offenheit"]))
+
+    # Gerüst — the mixer builds a scaffolded probe and rejects unless ≥ 1 variant scaffolds.
+    scaffolded, _ = make_variants_with_assets(task, n, seed0=seed0, ramp=ramp, scaffold=True)
+    geruest_ok = any(b.scaffold for b in scaffolded)
+    caps.append(_optional_capability(
+        "geruest", Geruest.OHNE, Geruest.GESTUETZT, geruest_ok,
+        _UNSUPPORTED_REASON["geruest"]))
+
+    # Textlast — an approved twin (`prompt_simple`) whose student prose STRICTLY lowers the
+    # WSTF Schulstufe (the exact rule the mixer's Textlast movement enforces).
+    if task.prompt_simple is None:
+        textlast_ok, reason = False, _UNSUPPORTED_REASON["textlast_no_twin"]
+    else:
+        from .textlast import measure_wstf
+        full, _ = make_variants_with_assets(
+            task, n, seed0=seed0, ramp=ramp, textlast=Textlast.VOLL)
+        simple, _ = make_variants_with_assets(
+            task, n, seed0=seed0, ramp=ramp, textlast=Textlast.EINFACH)
+        wf, ws = measure_wstf(full), measure_wstf(simple)
+        textlast_ok = wf is not None and ws is not None and ws < wf
+        reason = _UNSUPPORTED_REASON["textlast_no_drop"]
+    caps.append(_optional_capability(
+        "textlast", Textlast.VOLL, Textlast.EINFACH, textlast_ok, reason))
+
+    return TemplateCapabilities(
+        template_id=task.id, subject=task.subject, klasse=task.klasse,
+        title=task.title or task.id, capabilities=caps)
