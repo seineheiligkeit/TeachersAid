@@ -1,10 +1,10 @@
 {
   "id": "c0183",
   "stage": "content",
-  "status": "pending",
+  "status": "approved",
   "source": "generated",
   "created_at": "2026-07-05T05:34:17+00:00",
-  "updated_at": "2026-07-05T05:34:17+00:00",
+  "updated_at": "2026-07-14T07:45:23+00:00",
   "title": "Mathematik 1. Kl. — Der Gemüsegarten-Plan (generiert)",
   "note": "",
   "request": {
@@ -14,7 +14,9 @@
     "schulform": null,
     "topic_raw": "Der Gemüsegarten-Plan",
     "envelope": "doppelstunde",
-    "options": {}
+    "options": {},
+    "anchor_mode": "competence",
+    "anchor_uet": null
   },
   "resolution": {
     "fassung": {
@@ -222,11 +224,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Verwechslung von Umfang und Flächeninhalt ist der häufigste Fehler — auf die unterschiedlichen Einheiten (m vs. m²) hinweisen.",
               "Beim Umfang wird manchmal nur l+b statt 2·(l+b) gerechnet (nur zwei statt vier Seiten gezählt)."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t2",
@@ -265,11 +270,14 @@
             "acceptable_reasoning": "Gegenüberliegende Seiten eines Rechtecks sind gleich lang; l+l+b+b lässt sich zu 2·(l+b) zusammenfassen.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Schüler:innen sollen erkennen, dass U = l+l+b+b und U = 2·(l+b) dieselbe Rechnung sind, nur anders geschrieben (Ausklammern).",
               "Nicht alle Schüler:innen sehen sofort, warum genau ZWEI Paare gleich lang sind — an der Abbildung zeigen."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t3",
@@ -327,11 +335,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Es gibt mehrere gültige Zerlegungen (waagrecht oder senkrecht) — beide führen zum gleichen Ergebnis, das sollte thematisiert werden.",
               "Häufiger Fehler: Seitenlängen der Teilrechtecke falsch aus der Abbildung abgelesen — Koordinaten/Maße genau prüfen."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t4",
@@ -370,11 +381,14 @@
             "acceptable_reasoning": "Maßstab 1:100 bedeutet, dass 100 cm in Wirklichkeit 1 cm in der Zeichnung sind, also 1 m → 1 cm; die realen Maße werden durch 100 geteilt.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Maßstab 1:100 heißt durch 100 teilen — aus 4 m werden 4 cm (nicht 40 cm oder 0,4 cm).",
               "An die Zeichnung gehören die ECHTEN Maße (4 m, 2 m), nicht die gezeichneten Zentimeter."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t5",
@@ -424,11 +438,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Aussage 3 ist bewusst eine Reflexionsfrage: Zahlenwerte verschiedener Einheiten (m² und m³) darf man eigentlich nicht direkt vergleichen — diese Fehlvorstellung soll hier thematisiert werden.",
               "Bei Aussage 2 nur EINE Kante zu verdoppeln (nicht alle drei) ist ein wichtiger Unterschied zu einer Vergrößerung um den Faktor 2 in allen Richtungen (dort würde sich V verachtfachen)."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t6",
@@ -480,11 +497,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Schüler:innen vergessen häufig, dass beim Hochbeet oft kein Deckel und manchmal auch kein Boden aus Holz gebraucht wird — genau lesen, was gefragt ist.",
               "Kontrolle des Rauminhalts (V = 2 m³) nicht überspringen — manche wählen Maße, die nicht exakt aufgehen."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           }
         ]
       }
@@ -493,6 +513,8 @@
       {
         "id": "abb1",
         "role": "figure",
+        "lane": null,
+        "intended_claim": null,
         "medium": "visual",
         "generator": "matplotlib:rectangle",
         "spec": {
@@ -514,6 +536,8 @@
       {
         "id": "abb2",
         "role": "figure",
+        "lane": null,
+        "intended_claim": null,
         "medium": "visual",
         "generator": "matplotlib:polygon",
         "spec": {
@@ -563,6 +587,9 @@
         "caption": null
       }
     ],
+    "anchor_mode": "competence",
+    "anchor_uet": null,
+    "theme_asset": null,
     "nachweis": {
       "fassung": {
         "kurztitel": "AHS-Lehrplan (konsolidiert)",
@@ -571,6 +598,8 @@
         "valid_from": "2024-09-01",
         "valid_to": "2026-08-31"
       },
+      "anchor_mode": "competence",
+      "anchor_label": "Lehrplan-Kompetenzen",
       "statement": "Diese Materialien adressieren 3 von 3 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
       "competence_coverage": [
         {
@@ -630,13 +659,16 @@
       "minutes_total": 49,
       "minutes_resource_independent": 49
     },
+    "mixer_profile": null,
+    "mixer_lint": null,
+    "glossary": [],
     "rack": null
   },
   "artifacts": {
-    "student_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0183\\student.pdf",
-    "teacher_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0183\\teacher.pdf",
-    "homework_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0183\\homework.pdf",
-    "preview_png": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0183\\raster\\student.p1.png"
+    "student_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0183\\student.pdf",
+    "teacher_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0183\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0183\\homework.pdf",
+    "preview_png": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0183\\raster\\student.p1.png"
   },
   "verify_problems": [],
   "verify_warnings": [],

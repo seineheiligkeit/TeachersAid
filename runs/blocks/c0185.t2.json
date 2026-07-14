@@ -39,10 +39,13 @@
     "acceptable_reasoning": "Akzeptiert wird jede Begründung, die den gleichen Abstand der Punktepaare zur Achse (2 Einheiten auf jeder Seite) korrekt erkennt, auch ohne den Sonderfall P=P' explizit zu benennen.",
     "rubric": [],
     "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
     "watch_outs": [
       "Die Aufgabe enthält eine bewusste Falle: P(4|1) liegt GENAU auf der Spiegelachse, ist also sein eigener Spiegelpunkt – das wird oft übersehen, weil Schüler:innen automatisch einen anderen Punkt erwarten."
     ],
-    "self_check": null
+    "self_check": null,
+    "scaffold": null
   },
   "role": "task",
   "kind": "construction",
@@ -65,6 +68,8 @@
     {
       "id": "a1",
       "role": "figure",
+      "lane": null,
+      "intended_claim": null,
       "medium": "visual",
       "generator": "matplotlib:coordinate_plane",
       "spec": {
@@ -106,9 +111,9 @@
       "caption": "Lageplan des Schulgartens mit vier Fixpunkten"
     }
   ],
-  "status": "in_review",
+  "status": "approved",
   "provenance": "harvested:c0185",
   "source": "ai",
   "created_at": "2026-07-05T05:34:19+00:00",
-  "updated_at": "2026-07-05T05:34:19+00:00"
+  "updated_at": "2026-07-14T07:19:54+00:00"
 }

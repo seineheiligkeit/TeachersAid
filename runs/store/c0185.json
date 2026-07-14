@@ -1,10 +1,10 @@
 {
   "id": "c0185",
   "stage": "content",
-  "status": "pending",
+  "status": "approved",
   "source": "generated",
   "created_at": "2026-07-05T05:34:18+00:00",
-  "updated_at": "2026-07-05T05:34:19+00:00",
+  "updated_at": "2026-07-14T07:42:31+00:00",
   "title": "Mathematik 2. Kl. — Der Schulgarten-Plan (generiert)",
   "note": "",
   "request": {
@@ -14,7 +14,9 @@
     "schulform": null,
     "topic_raw": "Der Schulgarten-Plan",
     "envelope": "doppelstunde",
-    "options": {}
+    "options": {},
+    "anchor_mode": "competence",
+    "anchor_uet": null
   },
   "resolution": {
     "fassung": {
@@ -165,7 +167,8 @@
         "callout_role": null,
         "teacher_note": null,
         "watch_outs": [],
-        "numbered": true
+        "numbered": true,
+        "backdrop_asset_ref": null
       }
     ],
     "sections": [
@@ -224,10 +227,13 @@
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "x- und y-Koordinate werden manchmal vertauscht angegeben (z. B. (1|2) statt (2|1))."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t2",
@@ -268,10 +274,13 @@
             "acceptable_reasoning": "Akzeptiert wird jede Begründung, die den gleichen Abstand der Punktepaare zur Achse (2 Einheiten auf jeder Seite) korrekt erkennt, auch ohne den Sonderfall P=P' explizit zu benennen.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Die Aufgabe enthält eine bewusste Falle: P(4|1) liegt GENAU auf der Spiegelachse, ist also sein eigener Spiegelpunkt – das wird oft übersehen, weil Schüler:innen automatisch einen anderen Punkt erwarten."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t3",
@@ -313,10 +322,13 @@
             "acceptable_reasoning": "Akzeptiert wird jede Begründung, die Kongruenz korrekt als 'deckungsgleich unabhängig von Lage/Drehung' beschreibt.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Der typische Fehlschluss: 'anders gedreht' wird mit 'nicht kongruent' verwechselt – Kongruenz ist unabhängig von der Lage in der Ebene."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           }
         ]
       },
@@ -375,10 +387,13 @@
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Verwechslung von Umfang (Summe aller Seiten, hier 20 m) und einer einzelnen Seitenlänge – oft wird 20 m fälschlich direkt als zweite Seite verwendet."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t5",
@@ -418,11 +433,14 @@
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Bei der Dreiecksfläche wird die Division durch 2 häufig vergessen (Ergebnis dann fälschlich 20 m² statt 10 m²).",
               "Die Höhe des Dreiecks (4 m, senkrecht zur Grundseite) darf nicht mit einer der schrägen Seiten verwechselt werden."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t6",
@@ -466,11 +484,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Die Aufgabe ist bewusst nicht vollständig lösbar (der Gehweg lässt sich ohne Anordnungsangabe nicht exakt berechnen) – das Ziel ist, dass Schüler:innen erkennen und benennen, WAS fehlt, statt eine erfundene Zahl zu liefern.",
               "Manche rechnen nur mit einem der beiden Beete und übersehen, dass schon die Summe allein zu groß ist."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t7",
@@ -514,10 +535,13 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Bei nicht-rechteckigen Vierecken (z. B. Parallelogramm) wird manchmal die Seitenlänge statt der Höhe in die Flächenformel eingesetzt."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           }
         ]
       }
@@ -526,6 +550,8 @@
       {
         "id": "a1",
         "role": "figure",
+        "lane": null,
+        "intended_claim": null,
         "medium": "visual",
         "generator": "matplotlib:coordinate_plane",
         "spec": {
@@ -569,6 +595,8 @@
       {
         "id": "a2",
         "role": "figure",
+        "lane": null,
+        "intended_claim": null,
         "medium": "visual",
         "generator": "matplotlib:polygon",
         "spec": {
@@ -616,6 +644,8 @@
       {
         "id": "a3",
         "role": "figure",
+        "lane": null,
+        "intended_claim": null,
         "medium": "visual",
         "generator": "matplotlib:polygon",
         "spec": {
@@ -653,6 +683,9 @@
         "caption": "Beet 2, dreieckig, Grundseite EF = 5 m, Höhe 4 m"
       }
     ],
+    "anchor_mode": "competence",
+    "anchor_uet": null,
+    "theme_asset": null,
     "nachweis": {
       "fassung": {
         "kurztitel": "AHS-Lehrplan (konsolidiert)",
@@ -661,6 +694,8 @@
         "valid_from": "2024-09-01",
         "valid_to": "2026-08-31"
       },
+      "anchor_mode": "competence",
+      "anchor_label": "Lehrplan-Kompetenzen",
       "statement": "Diese Materialien adressieren 3 von 3 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
       "competence_coverage": [
         {
@@ -721,13 +756,16 @@
       "minutes_total": 57,
       "minutes_resource_independent": 57
     },
+    "mixer_profile": null,
+    "mixer_lint": null,
+    "glossary": [],
     "rack": null
   },
   "artifacts": {
-    "student_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0185\\student.pdf",
-    "teacher_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0185\\teacher.pdf",
-    "homework_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0185\\homework.pdf",
-    "preview_png": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0185\\raster\\student.p1.png"
+    "student_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0185\\student.pdf",
+    "teacher_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0185\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0185\\homework.pdf",
+    "preview_png": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0185\\raster\\student.p1.png"
   },
   "verify_problems": [],
   "verify_warnings": [],

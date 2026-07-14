@@ -1,10 +1,10 @@
 {
   "id": "c0194",
   "stage": "content",
-  "status": "pending",
+  "status": "approved",
   "source": "generated",
   "created_at": "2026-07-05T05:34:25+00:00",
-  "updated_at": "2026-07-05T05:34:26+00:00",
+  "updated_at": "2026-07-14T07:45:01+00:00",
   "title": "Physik 3. Kl. — Energie unterwegs — das E-Bike (generiert)",
   "note": "",
   "request": {
@@ -14,7 +14,9 @@
     "schulform": null,
     "topic_raw": "Energie unterwegs — das E-Bike",
     "envelope": "doppelstunde",
-    "options": {}
+    "options": {},
+    "anchor_mode": "competence",
+    "anchor_uet": null
   },
   "resolution": {
     "fassung": {
@@ -183,10 +185,13 @@
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Verwechslung von Höhenenergie und Bewegungsenergie als Gegensatz statt als gleichzeitig auftretende Formen — bergauf entstehen typischerweise beide."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t2",
@@ -222,10 +227,13 @@
             "acceptable_reasoning": "Formulierungen, die Höhenenergie sinngemäß als bereits vorhandene, gespeicherte Energie beschreiben (statt des Fachbegriffs), zählen als richtig.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Schüler:innen beschreiben oft nur, dass es bergab schneller wird, ohne den Bezug zur Energieumwandlung herzustellen — gezielt nach der Energieform fragen."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           }
         ]
       },
@@ -294,10 +302,13 @@
             "acceptable_reasoning": "Begründungen, die sinngemäß den Erhaltungssatz nennen (Energie wird umgewandelt, nicht vernichtet oder erschaffen), gelten als richtig, auch ohne exakte Fachbegriffe.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Aussage 2 ist die zentrale Fehlvorstellung dieser Stunde: Schüler:innen setzen Rekuperation oft mit einem verlustfreien Kreislauf gleich. Reibungswärme als Verlustform explizit ansprechen."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t4",
@@ -351,10 +362,13 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Schüler:innen nennen bei (c) oft nur einen der beiden Gründe (Steigung ODER Unterstützungsstufe) — auf die Kombination beider Effekte hinweisen."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           }
         ]
       },
@@ -431,10 +445,13 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Schüler:innen übernehmen Herstellerangaben oft unreflektiert als reale Reichweite — der Vergleich mit Abb. 2 soll genau das hinterfragen lehren."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t6",
@@ -486,10 +503,13 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Schüler:innen geben oft reine Verhaltenstipps ohne Bezug zur Energieform (z. B. 'langsam fahren') — die Erklärung der Energieform pro Tipp aktiv einfordern."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           }
         ]
       }
@@ -498,6 +518,8 @@
       {
         "id": "abb1",
         "role": "figure",
+        "lane": null,
+        "intended_claim": null,
         "medium": "visual",
         "generator": "matplotlib:function_graph",
         "spec": {
@@ -540,6 +562,8 @@
       {
         "id": "abb2",
         "role": "figure",
+        "lane": null,
+        "intended_claim": null,
         "medium": "visual",
         "generator": "matplotlib:bar_chart",
         "spec": {
@@ -569,6 +593,9 @@
         "caption": null
       }
     ],
+    "anchor_mode": "competence",
+    "anchor_uet": null,
+    "theme_asset": null,
     "nachweis": {
       "fassung": {
         "kurztitel": "AHS-Lehrplan (konsolidiert)",
@@ -577,6 +604,8 @@
         "valid_from": "2024-09-01",
         "valid_to": "2026-08-31"
       },
+      "anchor_mode": "competence",
+      "anchor_label": "Lehrplan-Kompetenzen",
       "statement": "Diese Materialien adressieren 2 von 2 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
       "competence_coverage": [
         {
@@ -628,13 +657,16 @@
       "minutes_total": 46,
       "minutes_resource_independent": 46
     },
+    "mixer_profile": null,
+    "mixer_lint": null,
+    "glossary": [],
     "rack": null
   },
   "artifacts": {
-    "student_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0194\\student.pdf",
-    "teacher_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0194\\teacher.pdf",
-    "homework_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0194\\homework.pdf",
-    "preview_png": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0194\\raster\\student.p1.png"
+    "student_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0194\\student.pdf",
+    "teacher_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0194\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0194\\homework.pdf",
+    "preview_png": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0194\\raster\\student.p1.png"
   },
   "verify_problems": [],
   "verify_warnings": [],

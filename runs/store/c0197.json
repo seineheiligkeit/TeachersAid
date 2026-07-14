@@ -1,10 +1,10 @@
 {
   "id": "c0197",
   "stage": "content",
-  "status": "pending",
+  "status": "approved",
   "source": "generated",
   "created_at": "2026-07-05T05:51:17+00:00",
-  "updated_at": "2026-07-05T05:51:17+00:00",
+  "updated_at": "2026-07-14T07:01:18+00:00",
   "title": "Mathematik 4. Kl. — Baustelle Freibad — Pythagoras, Kreise und ein Rutschturm (generiert)",
   "note": "",
   "request": {
@@ -14,7 +14,9 @@
     "schulform": null,
     "topic_raw": "Baustelle Freibad — Pythagoras, Kreise und ein Rutschturm",
     "envelope": "doppelstunde",
-    "options": {}
+    "options": {},
+    "anchor_mode": "competence",
+    "anchor_uet": null
   },
   "resolution": {
     "fassung": {
@@ -207,11 +209,14 @@
             "acceptable_reasoning": "Direkte Anwendung von a² + b² = c² auf das rechtwinklige Dreieck aus Abbildung 1.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Die Hypotenuse s ist immer die längste Seite, gegenüber dem rechten Winkel — nicht mit einer Kathete verwechseln.",
               "4-3-5 ist ein bekanntes pythagoräisches Tripel; manche erraten es, ohne zu rechnen — trotzdem den Rechenweg einfordern."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t2",
@@ -264,11 +269,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Umfang und Fläche werden regelmäßig verwechselt — hier wird bewusst beides in einer Aufgabe verlangt, um den Unterschied zu üben.",
               "Bei der Bordüre ist Aufrunden sinnvoll (Materialreserve), bei der Fläche reicht eine übliche kaufmännische Rundung."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t3",
@@ -329,11 +337,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Nicht die absoluten Flächen vergleichen — gefragt ist die Fläche PRO Meter Rand (Fläche geteilt durch Umfang).",
               "Beim Rechteck wird die Flächenformel manchmal mit dem Umfang verwechselt (Addition statt Multiplikation)."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t4",
@@ -385,11 +396,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Häufiger Fehler später beim Rechnen: die Kegelhöhe wird direkt als Mantellinie verwendet — hier schon vorwegnehmen, dass man dafür eigentlich Pythagoras braucht (Radius und Höhe sind Katheten, Mantellinie ist Hypotenuse).",
               "Manche zählen beide Kreisflächen (oben und unten) mit — hier ist die obere Fläche durch den Kegel „verdeckt“ und zählt nicht als Außenfläche."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t5",
@@ -441,11 +455,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Die Mantellinie wird oft mit der Kegelhöhe verwechselt und direkt in eine (hier nicht gebrauchte) Formel eingesetzt — sie wird in dieser Teilaufgabe für die Oberfläche gebraucht, nicht fürs Volumen; wichtig ist, dass Schüler:innen erkennen, wofür man was braucht.",
               "Der Faktor ⅓ bei der Kegelformel wird häufig vergessen."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t6",
@@ -500,11 +517,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Eine Entscheidung ohne konkrete Rechnung („Rund ist einfach schöner“) wird nicht als vollständige Begründung akzeptiert.",
               "Wird das Budget bei einer Variante überschritten, ist diese Variante automatisch auszuschließen, unabhängig von der Fläche — das muss explizit geprüft werden."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           }
         ]
       }
@@ -513,6 +533,8 @@
       {
         "id": "abb1",
         "role": "figure",
+        "lane": null,
+        "intended_claim": null,
         "medium": "visual",
         "generator": "matplotlib:right_triangle",
         "spec": {
@@ -535,6 +557,8 @@
       {
         "id": "abb2",
         "role": "figure",
+        "lane": null,
+        "intended_claim": null,
         "medium": "visual",
         "generator": "matplotlib:circle",
         "spec": {
@@ -554,6 +578,8 @@
       {
         "id": "abb3",
         "role": "figure",
+        "lane": null,
+        "intended_claim": null,
         "medium": "visual",
         "generator": "matplotlib:polygon",
         "spec": {
@@ -599,6 +625,9 @@
         "caption": null
       }
     ],
+    "anchor_mode": "competence",
+    "anchor_uet": null,
+    "theme_asset": null,
     "nachweis": {
       "fassung": {
         "kurztitel": "AHS-Lehrplan (konsolidiert)",
@@ -607,6 +636,8 @@
         "valid_from": "2024-09-01",
         "valid_to": "2026-08-31"
       },
+      "anchor_mode": "competence",
+      "anchor_label": "Lehrplan-Kompetenzen",
       "statement": "Diese Materialien adressieren 3 von 3 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
       "competence_coverage": [
         {
@@ -664,13 +695,16 @@
       "minutes_total": 47,
       "minutes_resource_independent": 47
     },
+    "mixer_profile": null,
+    "mixer_lint": null,
+    "glossary": [],
     "rack": null
   },
   "artifacts": {
-    "student_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0197\\student.pdf",
-    "teacher_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0197\\teacher.pdf",
-    "homework_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0197\\homework.pdf",
-    "preview_png": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0197\\raster\\student.p1.png"
+    "student_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0197\\student.pdf",
+    "teacher_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0197\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0197\\homework.pdf",
+    "preview_png": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0197\\raster\\student.p1.png"
   },
   "verify_problems": [],
   "verify_warnings": [],

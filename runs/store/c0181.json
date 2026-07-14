@@ -1,10 +1,10 @@
 {
   "id": "c0181",
   "stage": "content",
-  "status": "pending",
+  "status": "approved",
   "source": "generated",
   "created_at": "2026-07-05T05:34:16+00:00",
-  "updated_at": "2026-07-05T05:34:16+00:00",
+  "updated_at": "2026-07-14T07:45:26+00:00",
   "title": "Mathematik 1. Kl. — Der Radweg-Tracker — Zahlen unterwegs (generiert)",
   "note": "",
   "request": {
@@ -14,7 +14,9 @@
     "schulform": null,
     "topic_raw": "Der Radweg-Tracker — Zahlen unterwegs",
     "envelope": "doppelstunde",
-    "options": {}
+    "options": {},
+    "anchor_mode": "competence",
+    "anchor_uet": null
   },
   "resolution": {
     "fassung": {
@@ -207,11 +209,14 @@
             "acceptable_reasoning": "Ablesen der Markierungen am Zahlenstrahl und Vergleich der Positionen von links nach rechts.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Manche Schüler:innen lesen 12,25 als »zwölf-zwei-fünf« und vergleichen dann falsch mit 7 — auf die Stellenwerte hinweisen.",
               "Die Position am Zahlenstrahl (weiter rechts = größer) explizit als Vergleichsregel benennen."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t2",
@@ -261,11 +266,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Häufiger Fehler: 0,25 wird als 25 (ganze Zahl) statt als 25 Hundertstel gelesen.",
               "Kürzen nicht vergessen: 25/100 sollte auf 1/4 gekürzt werden."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t3",
@@ -321,11 +329,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Rundungsregel wiederholen: Entscheidend ist die Ziffer EINE Stelle rechts von der Rundungsstelle.",
               "4528 wird manchmal fälschlich als 4600 gerundet — die Zehnerziffer (2) genau prüfen."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t4",
@@ -363,11 +374,14 @@
             "acceptable_reasoning": "1 km = 1000 m, daher Multiplikation bzw. Division mit 1000 zur Umrechnung.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Verwechslung der Umrechnungsrichtung (mal 1000 statt durch 1000) ist der häufigste Fehler.",
               "Bei 1/2 km zuerst in Dezimalzahl (0,5 km) umwandeln, dann erst in Meter umrechnen — Zwischenschritt zeigen lassen."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t5",
@@ -421,11 +435,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Aussage 1 ist eine Rechenfalle: 3,5 + 7 = 10,5, was WENIGER als 12,25 ist — die Aussage ist also FALSCH. Diesen Rechenfehler-Fallstrick explizit besprechen.",
               "Bei Aussage 2 wird 3/4 manchmal als 0,34 statt 0,75 verwendet — Bruch-Dezimal-Umwandlung wiederholen."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t6",
@@ -479,11 +496,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Schüler:innen vergessen häufig die Kontrollrechnung am Ende — explizit einfordern.",
               "Manche wählen Brüche, die sich zusammen mit dem Rest nicht sauber zur Gesamtstrecke addieren (Rundungsfehler) — auf glatte Zahlen achten."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           }
         ]
       }
@@ -492,6 +512,8 @@
       {
         "id": "abb1",
         "role": "figure",
+        "lane": null,
+        "intended_claim": null,
         "medium": "visual",
         "generator": "matplotlib:number_line",
         "spec": {
@@ -524,6 +546,9 @@
         "caption": null
       }
     ],
+    "anchor_mode": "competence",
+    "anchor_uet": null,
+    "theme_asset": null,
     "nachweis": {
       "fassung": {
         "kurztitel": "AHS-Lehrplan (konsolidiert)",
@@ -532,6 +557,8 @@
         "valid_from": "2024-09-01",
         "valid_to": "2026-08-31"
       },
+      "anchor_mode": "competence",
+      "anchor_label": "Lehrplan-Kompetenzen",
       "statement": "Diese Materialien adressieren 3 von 3 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
       "competence_coverage": [
         {
@@ -592,13 +619,16 @@
       "minutes_total": 41,
       "minutes_resource_independent": 41
     },
+    "mixer_profile": null,
+    "mixer_lint": null,
+    "glossary": [],
     "rack": null
   },
   "artifacts": {
-    "student_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0181\\student.pdf",
-    "teacher_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0181\\teacher.pdf",
-    "homework_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0181\\homework.pdf",
-    "preview_png": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0181\\raster\\student.p1.png"
+    "student_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0181\\student.pdf",
+    "teacher_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0181\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0181\\homework.pdf",
+    "preview_png": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0181\\raster\\student.p1.png"
   },
   "verify_problems": [],
   "verify_warnings": [],

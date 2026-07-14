@@ -1,10 +1,10 @@
 {
   "id": "c0201",
   "stage": "content",
-  "status": "pending",
+  "status": "approved",
   "source": "curated",
   "created_at": "2026-07-11T10:33:44+00:00",
-  "updated_at": "2026-07-11T10:43:26+00:00",
+  "updated_at": "2026-07-14T07:46:20+00:00",
   "title": "Die Blüte beschriften",
   "note": "",
   "request": {
@@ -14,7 +14,9 @@
     "schulform": null,
     "topic_raw": "Die Blüte beschriften",
     "envelope": "doppelstunde",
-    "options": {}
+    "options": {},
+    "anchor_mode": "competence",
+    "anchor_uet": null
   },
   "resolution": {
     "fassung": {
@@ -303,7 +305,8 @@
             "watch_outs": [
               "SME muss vor Freigabe prüfen, ob die depictive Rasterbasis den deklarierten Claim erfüllt; die Grafik ist ein vereinfachtes Modell, keine universelle Blütenform."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           }
         ]
       }
@@ -492,6 +495,8 @@
         "caption": "Vereinfachtes Blütenmodell; Rasterbasis separat als depictive geprüft."
       }
     ],
+    "anchor_mode": "competence",
+    "anchor_uet": null,
     "theme_asset": null,
     "nachweis": {
       "fassung": {
@@ -501,6 +506,8 @@
         "valid_from": "2024-09-01",
         "valid_to": "2026-08-31"
       },
+      "anchor_mode": "competence",
+      "anchor_label": "Lehrplan-Kompetenzen",
       "statement": "Diese Materialien adressieren 1 von 10 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
       "competence_coverage": [
         {
@@ -599,6 +606,9 @@
       "minutes_total": 12,
       "minutes_resource_independent": 12
     },
+    "mixer_profile": null,
+    "mixer_lint": null,
+    "glossary": [],
     "rack": null
   },
   "artifacts": {

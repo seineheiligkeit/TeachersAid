@@ -1,10 +1,10 @@
 {
   "id": "c0195",
   "stage": "content",
-  "status": "pending",
+  "status": "approved",
   "source": "generated",
   "created_at": "2026-07-05T05:38:18+00:00",
-  "updated_at": "2026-07-05T05:38:19+00:00",
+  "updated_at": "2026-07-14T07:41:24+00:00",
   "title": "Chemie 4. Kl. — Vom Wertstoffhof zum Trinkwasser — Stoffe trennen (generiert)",
   "note": "",
   "request": {
@@ -14,7 +14,9 @@
     "schulform": null,
     "topic_raw": "Vom Wertstoffhof zum Trinkwasser — Stoffe trennen",
     "envelope": "doppelstunde",
-    "options": {}
+    "options": {},
+    "anchor_mode": "competence",
+    "anchor_uet": null
   },
   "resolution": {
     "fassung": {
@@ -240,7 +242,8 @@
         "callout_role": null,
         "teacher_note": null,
         "watch_outs": [],
-        "numbered": true
+        "numbered": true,
+        "backdrop_asset_ref": null
       }
     ],
     "sections": [
@@ -309,11 +312,14 @@
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Häufige Verwechslung: Eindampfen und Destillieren werden oft gleichgesetzt. Unterschied betonen: Beim Eindampfen geht der Wasserdampf verloren (man will nur das Salz), beim Destillieren wird der Dampf aufgefangen und abgekühlt (man will BEIDE Stoffe, meist das reine Wasser).",
               "Manche Schüler:innen glauben, alle Metalle seien magnetisch. Klarstellen: Nur Eisen, Nickel, Kobalt (und ihre Legierungen wie Stahl) sind ferromagnetisch — Aluminium, Kupfer und Messing nicht."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t2",
@@ -356,11 +362,14 @@
             "acceptable_reasoning": "Bei Aussage 2 genügt die Feststellung 'Aluminium ist nicht magnetisch'; die Erwähnung des Wirbelstromscheiders ist Zusatzwissen, nicht Pflicht.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Die Fehlvorstellung 'Metall = magnetisch' ist sehr verbreitet und wird hier gezielt geprüft (Aussage 2 und 4).",
               "Falls Schüler:innen den Wirbelstromscheider nicht kennen: kurz erwähnen, dass es für Nichteisenmetalle ein eigenes Verfahren gibt — Details sind nicht Teil dieser Aufgabe."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           }
         ]
       },
@@ -439,12 +448,15 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Zentrale Fehlvorstellung: 'Filtriertes Wasser ist automatisch trinkbar, weil es klar aussieht.' Klarstellen: klar (keine Schwebstoffe) ist nicht dasselbe wie salzfrei oder keimfrei.",
               "Schüler:innen sollen die Zahlen tatsächlich vergleichen (nicht nur 'Destillieren ist am besten' ohne Beleg) — auf Zahlenbezug in der Antwort bestehen.",
               "Dekantieren wird oft mit Filtrieren verwechselt: Dekantieren trennt nur durch Absetzen/Abgießen, ohne Filter — es entfernt daher nur, was sich von selbst absetzt, nicht feine Schwebstoffe."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t4",
@@ -496,12 +508,15 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Verbreiteter Fehler: Schüler:innen versuchen, Sand UND Salz in einem Schritt herauszufiltern — das funktioniert nicht, weil gelöstes Salz die Filterporen passiert.",
               "Manche schlagen vor, das gesamte Gemisch direkt einzudampfen — dabei bliebe der Sand im eingedampften Salz vermischt zurück. Reihenfolge ist entscheidend.",
               "Der Unterschied 'Eindampfen (Wasser geht verloren) vs. Destillieren (Wasser wird zurückgewonnen)' muss in Schritt 3 klar erkennbar sein — das ist der Kern dieser Teilaufgabe."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           }
         ]
       },
@@ -577,12 +592,15 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Zentrale Fehlvorstellung: 'Ein feinerer Filter hält irgendwann auch Salz zurück.' Das ist falsch — die Porengröße spielt bei GELÖSTEN Teilchen keine Rolle im herkömmlichen Filtrationssinn; das ist ein wichtiger Konzeptwechsel gegenüber dem Trennen von Feststoffgemischen.",
               "Schüler:innen sollen nicht nur 'A ist besser' schreiben, sondern auch mindestens einen Nachteil/eine Einschränkung von A benennen — sonst ist die Bewertung nicht vollständig.",
               "Umkehrosmose (die reale moderne Lösung für Meerwasserentsalzung) muss nicht bekannt sein; wird sie erwähnt, ist das positiv zu werten, aber nicht Voraussetzung."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t6",
@@ -626,12 +644,15 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Diese Aufgabe knüpft direkt an die Fehlvorstellung aus Aufgabe 5 an (Filter gegen Gelöstes) — bewusst als Transferaufgabe in neuem Kontext gestellt.",
               "Schüler:innen sollen zwischen 'naturwissenschaftlich falsch' (die Filtrationsaussage) und 'Meinungsfrage' (ob ein Hausfilter sinnvoll ist) unterscheiden können — das ist der Kern von Quellenkritik in den Naturwissenschaften.",
               "Nicht jede kritische Aussage über den Forumsbeitrag ist automatisch richtig bewertet — es muss konkret die Gelöst/Ungelöst-Unterscheidung genannt werden."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           }
         ]
       }
@@ -640,6 +661,8 @@
       {
         "id": "fig1",
         "role": "figure",
+        "lane": null,
+        "intended_claim": null,
         "medium": "visual",
         "generator": "matplotlib:bar_chart",
         "spec": {
@@ -668,6 +691,9 @@
         "caption": null
       }
     ],
+    "anchor_mode": "competence",
+    "anchor_uet": null,
+    "theme_asset": null,
     "nachweis": {
       "fassung": {
         "kurztitel": "AHS-Lehrplan (konsolidiert)",
@@ -676,6 +702,8 @@
         "valid_from": "2024-09-01",
         "valid_to": "2026-08-31"
       },
+      "anchor_mode": "competence",
+      "anchor_label": "Lehrplan-Kompetenzen",
       "statement": "Diese Materialien adressieren 6 von 10 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
       "competence_coverage": [
         {
@@ -792,13 +820,16 @@
       "minutes_total": 72,
       "minutes_resource_independent": 72
     },
+    "mixer_profile": null,
+    "mixer_lint": null,
+    "glossary": [],
     "rack": null
   },
   "artifacts": {
-    "student_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0195\\student.pdf",
-    "teacher_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0195\\teacher.pdf",
-    "homework_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0195\\homework.pdf",
-    "preview_png": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0195\\raster\\student.p1.png"
+    "student_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0195\\student.pdf",
+    "teacher_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0195\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0195\\homework.pdf",
+    "preview_png": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0195\\raster\\student.p1.png"
   },
   "verify_problems": [],
   "verify_warnings": [],

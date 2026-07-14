@@ -1,10 +1,10 @@
 {
   "id": "c0173",
   "stage": "content",
-  "status": "pending",
+  "status": "approved",
   "source": "generated",
   "created_at": "2026-07-05T05:34:12+00:00",
-  "updated_at": "2026-07-05T05:34:12+00:00",
+  "updated_at": "2026-07-14T07:44:25+00:00",
   "title": "Biologie und Umweltbildung 2. Kl. — Der Wald als Lebensgemeinschaft (generiert)",
   "note": "",
   "request": {
@@ -14,7 +14,9 @@
     "schulform": null,
     "topic_raw": "Der Wald als Lebensgemeinschaft",
     "envelope": "doppelstunde",
-    "options": {}
+    "options": {},
+    "anchor_mode": "competence",
+    "anchor_uet": null
   },
   "resolution": {
     "fassung": {
@@ -246,7 +248,8 @@
         "callout_role": null,
         "teacher_note": null,
         "watch_outs": [],
-        "numbered": true
+        "numbered": true,
+        "backdrop_asset_ref": null
       }
     ],
     "sections": [
@@ -309,10 +312,13 @@
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Manche Schüler:innen vergessen die Bodenschicht als eigene Schicht – auch Wurzeln, Pilze und Bodenlebewesen gehören zum Wald-Ökosystem."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t2",
@@ -348,10 +354,13 @@
             "acceptable_reasoning": "Akzeptiert wird auch eine Formulierung, die auf 'mehr ökologische Nischen' oder 'mehr Vielfalt an Tieren, die dort leben könnten' abzielt.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Die Zahlen sind eine Beispielzählung einer Testfläche, keine österreichweite Statistik – das sollte nicht überinterpretiert werden."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t3",
@@ -385,10 +394,13 @@
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Wichtig ist der Unterschied zwischen 'Anzahl der Pflanzen' und 'Anzahl der Arten' – Schüler:innen verwechseln das häufig."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t4",
@@ -434,10 +446,13 @@
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Der Zusammenhang Monokultur → Borkenkäfer-Anfälligkeit ist zweistufig (über Trockenstress) – nicht jede Fichte stirbt sofort ab, sondern geschwächte Bäume sind besonders gefährdet."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t5",
@@ -478,10 +493,13 @@
             "acceptable_reasoning": "Bei Aussage 3 wird auch eine Begründung akzeptiert, die 'schnelles Wachstum' ODER 'gute Verwertbarkeit als Bauholz' nennt.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Die Unterscheidung 'naturwissenschaftliches Argument' (z.B. Ökologie) versus 'wirtschaftliches Argument' (Ertrag) ist hier der Kern – nicht nur richtig/falsch, sondern WARUM."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t6",
@@ -527,10 +545,13 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Es gibt hier keine 'einzig richtige' Antwort – bewertet wird die Qualität der Begründung, nicht die gewählte Option."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t7",
@@ -571,10 +592,13 @@
             "acceptable_reasoning": "Jedes plausible, fachlich begründete Beispiel-Lebewesen wird akzeptiert, solange die Begründung den Zusammenhang zwischen Baumartenzahl und Lebensraumangebot erkennen lässt.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Es geht hier um die Überführung der Diagrammdaten in eine neue Darstellungsform (Tabelle) UND die Anwendung auf ein konkretes Beispiel – reines Abschreiben der Zahlen ohne Begründungsspalte ist nicht ausreichend."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           }
         ]
       }
@@ -583,6 +607,8 @@
       {
         "id": "fig_baumarten",
         "role": "figure",
+        "lane": null,
+        "intended_claim": null,
         "medium": "visual",
         "generator": "matplotlib:bar_chart",
         "spec": {
@@ -609,6 +635,9 @@
         "caption": null
       }
     ],
+    "anchor_mode": "competence",
+    "anchor_uet": null,
+    "theme_asset": null,
     "nachweis": {
       "fassung": {
         "kurztitel": "AHS-Lehrplan (konsolidiert)",
@@ -617,6 +646,8 @@
         "valid_from": "2024-09-01",
         "valid_to": "2026-08-31"
       },
+      "anchor_mode": "competence",
+      "anchor_label": "Lehrplan-Kompetenzen",
       "statement": "Diese Materialien adressieren 7 von 10 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
       "competence_coverage": [
         {
@@ -733,13 +764,16 @@
       "minutes_total": 48,
       "minutes_resource_independent": 48
     },
+    "mixer_profile": null,
+    "mixer_lint": null,
+    "glossary": [],
     "rack": null
   },
   "artifacts": {
-    "student_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0173\\student.pdf",
-    "teacher_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0173\\teacher.pdf",
-    "homework_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0173\\homework.pdf",
-    "preview_png": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0173\\raster\\student.p1.png"
+    "student_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0173\\student.pdf",
+    "teacher_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0173\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0173\\homework.pdf",
+    "preview_png": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0173\\raster\\student.p1.png"
   },
   "verify_problems": [],
   "verify_warnings": [],

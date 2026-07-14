@@ -1,10 +1,10 @@
 {
   "id": "c0188",
   "stage": "content",
-  "status": "pending",
+  "status": "approved",
   "source": "generated",
   "created_at": "2026-07-05T05:34:20+00:00",
-  "updated_at": "2026-07-05T05:34:21+00:00",
+  "updated_at": "2026-07-14T07:42:10+00:00",
   "title": "Mathematik 3. Kl. — Die Modellbau-Werkstatt (generiert)",
   "note": "",
   "request": {
@@ -14,7 +14,9 @@
     "schulform": null,
     "topic_raw": "Die Modellbau-Werkstatt",
     "envelope": "doppelstunde",
-    "options": {}
+    "options": {},
+    "anchor_mode": "competence",
+    "anchor_uet": null
   },
   "resolution": {
     "fassung": {
@@ -165,7 +167,8 @@
         "callout_role": null,
         "teacher_note": null,
         "watch_outs": [],
-        "numbered": true
+        "numbered": true,
+        "backdrop_asset_ref": null
       }
     ],
     "sections": [
@@ -241,11 +244,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Die Dreiecksfläche wird manchmal ohne Division durch 2 berechnet (Grundseite mal Höhe statt Grundseite mal Höhe durch 2).",
               "Die Höhe des Dreiecks (3 m) darf nicht mit einer Seitenlänge verwechselt werden — sie steht senkrecht auf der Grundseite."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t2",
@@ -306,11 +312,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Aussage 3 wird sehr häufig fälschlich als 'richtig' (Faktor 2) statt 'falsch' (tatsächlich Faktor 4 = k²) eingestuft — die quadratische Wirkung auf Flächen ist eine der wichtigsten Fehlvorstellungen in diesem Themenbereich.",
               "Aussage 1 verwechselt Ähnlichkeit (Winkel bleiben gleich) mit Kongruenz-Verzerrung; im Unterschied zu Seiten ändern sich Winkel bei einer zentrischen Streckung NIE."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t3",
@@ -356,11 +365,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Nur eine Koordinate (x ODER y) wird manchmal mit dem Faktor multipliziert, statt beide — beide Koordinaten müssen gleichermaßen skaliert werden.",
               "Läge Z NICHT im Ursprung, müsste man zuerst den Vektor von Z zum Punkt bilden, diesen strecken und dann wieder zu Z addieren — das ist hier bewusst nicht der Fall, sollte aber angesprochen werden."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t4",
@@ -422,11 +434,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Bei der Oberfläche wird die zweite Grundfläche (Deckfläche) manchmal vergessen — ein Prisma hat zwei kongruente Grundflächen, nicht nur eine.",
               "Volumen und Oberfläche werden gelegentlich verwechselt oder mit derselben Formel berechnet — Volumen hat die Einheit cm³, Oberfläche cm²; das ist ein guter Kontrollpunkt."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t5",
@@ -485,11 +500,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Aussage 3 wird oft als 'falsch' eingeschätzt, weil bei Flächen eine Verdoppelung einer Länge die Fläche vervierfacht (quadratisch) — beim Volumen bei NUR EINER veränderten Größe (hier: nur h, G bleibt fest) ist der Zusammenhang aber linear, nicht quadratisch. Diese Unterscheidung lohnt den Vergleich mit Aufgabe t2.",
               "Bei Aussage 2 wird das Drittel manchmal vergessen und einfach G · h = 240 cm³ als Pyramidenvolumen angegeben."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t6",
@@ -558,11 +576,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Bei einer selbst gewählten Pyramide wird der Faktor 1/3 im Volumen manchmal vergessen, weil er in eigenen Konstruktionen seltener automatisch mitgedacht wird als in vorgegebenen Aufgaben.",
               "Unrealistische Maße (z. B. eine 2 cm hohe, aber 50 cm breite 'Schachtel') sollten hinterfragt werden — die Begründung muss zu den Zahlen passen."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           }
         ]
       }
@@ -571,6 +592,8 @@
       {
         "id": "abb_grundstueck",
         "role": "figure",
+        "lane": null,
+        "intended_claim": null,
         "medium": "visual",
         "generator": "matplotlib:polygon",
         "spec": {
@@ -624,6 +647,8 @@
       {
         "id": "abb_streckung",
         "role": "figure",
+        "lane": null,
+        "intended_claim": null,
         "medium": "visual",
         "generator": "matplotlib:coordinate_plane",
         "spec": {
@@ -681,6 +706,8 @@
       {
         "id": "abb_prisma_netz",
         "role": "figure",
+        "lane": null,
+        "intended_claim": null,
         "medium": "visual",
         "generator": "matplotlib:rectangle",
         "spec": {
@@ -700,6 +727,9 @@
         "caption": null
       }
     ],
+    "anchor_mode": "competence",
+    "anchor_uet": null,
+    "theme_asset": null,
     "nachweis": {
       "fassung": {
         "kurztitel": "AHS-Lehrplan (konsolidiert)",
@@ -708,6 +738,8 @@
         "valid_from": "2024-09-01",
         "valid_to": "2026-08-31"
       },
+      "anchor_mode": "competence",
+      "anchor_label": "Lehrplan-Kompetenzen",
       "statement": "Diese Materialien adressieren 3 von 3 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
       "competence_coverage": [
         {
@@ -764,13 +796,16 @@
       "minutes_total": 54,
       "minutes_resource_independent": 54
     },
+    "mixer_profile": null,
+    "mixer_lint": null,
+    "glossary": [],
     "rack": null
   },
   "artifacts": {
-    "student_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0188\\student.pdf",
-    "teacher_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0188\\teacher.pdf",
-    "homework_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0188\\homework.pdf",
-    "preview_png": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0188\\raster\\student.p1.png"
+    "student_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0188\\student.pdf",
+    "teacher_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0188\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0188\\homework.pdf",
+    "preview_png": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0188\\raster\\student.p1.png"
   },
   "verify_problems": [],
   "verify_warnings": [],

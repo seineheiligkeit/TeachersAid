@@ -1,10 +1,10 @@
 {
   "id": "c0176",
   "stage": "content",
-  "status": "pending",
+  "status": "approved",
   "source": "generated",
   "created_at": "2026-07-05T05:34:13+00:00",
-  "updated_at": "2026-07-05T05:34:14+00:00",
+  "updated_at": "2026-07-14T07:42:59+00:00",
   "title": "Biologie und Umweltbildung 3. Kl. — Angepasst ans Wasser – Leben in Bach, See und Meer (generiert)",
   "note": "",
   "request": {
@@ -14,7 +14,9 @@
     "schulform": null,
     "topic_raw": "Angepasst ans Wasser – Leben in Bach, See und Meer",
     "envelope": "doppelstunde",
-    "options": {}
+    "options": {},
+    "anchor_mode": "competence",
+    "anchor_uet": null
   },
   "resolution": {
     "fassung": {
@@ -246,7 +248,8 @@
         "callout_role": null,
         "teacher_note": null,
         "watch_outs": [],
-        "numbered": true
+        "numbered": true,
+        "backdrop_asset_ref": null
       }
     ],
     "sections": [
@@ -305,10 +308,13 @@
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Schüler:innen verwechseln oft Flosse und Schwimmhaut – beides vergrößert die Fläche, ist aber anders aufgebaut (Flosse = eigenes Organ, Schwimmhaut = Haut zwischen Zehen)."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t2",
@@ -342,10 +348,13 @@
             "acceptable_reasoning": "Akzeptiert wird jede Antwort, die erkennt, dass unterschiedliche Lebensweisen unterschiedliche Anpassungen brauchen (kein starres 'eine Form passt für alle Wassertiere').",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Vorstellung 'im Wasser leben = immer stromlinienförmig sein' ist eine Fehlvorstellung; Gegenbeispiele (Krokodil, Molch, Qualle) zeigen die Vielfalt."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t3",
@@ -381,10 +390,13 @@
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Fließendes Wasser nimmt durch die Verwirbelung mehr Sauerstoff aus der Luft auf als stehendes Wasser – dieser Zusammenhang muss explizit angesprochen werden, sonst bleibt es beim reinen Werte-Ablesen."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t4",
@@ -418,10 +430,13 @@
             "acceptable_reasoning": "Jede Hypothese wird akzeptiert, die den Zusammenhang 'keine Brutpflege → hohe Verlustrate → viele Eier als Ausgleich' plausibel begründet, auch mit anderen eigenen Worten.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Es ist eine begründete Vermutung (Hypothese), kein auswendig gelerntes Faktenwissen – die Formulierung 'ich vermute, weil …' anregen."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t5",
@@ -467,10 +482,13 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Eine reine Meinungsäußerung ohne fachliche Begründung (nur 'ich finde das schlecht') erfüllt die Kompetenz nicht – die biologische Begründung ist der Kern."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t6",
@@ -513,10 +531,13 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Rein dekorative Plakate ohne erklärten Zusammenhang zwischen Merkmal und Nutzen verfehlen den Kern der Aufgabe."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t7",
@@ -555,10 +576,13 @@
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "'Gewöhnung' klingt plausibel, erklärt aber keinen Mechanismus – das ist der Kernunterschied zwischen einer Alltagsvermutung und einer naturwissenschaftlichen Erklärung."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           }
         ]
       }
@@ -567,6 +591,8 @@
       {
         "id": "df1",
         "role": "figure",
+        "lane": null,
+        "intended_claim": null,
         "medium": "visual",
         "generator": "matplotlib:bar_chart",
         "spec": {
@@ -597,6 +623,9 @@
         "caption": null
       }
     ],
+    "anchor_mode": "competence",
+    "anchor_uet": null,
+    "theme_asset": null,
     "nachweis": {
       "fassung": {
         "kurztitel": "AHS-Lehrplan (konsolidiert)",
@@ -605,6 +634,8 @@
         "valid_from": "2024-09-01",
         "valid_to": "2026-08-31"
       },
+      "anchor_mode": "competence",
+      "anchor_label": "Lehrplan-Kompetenzen",
       "statement": "Diese Materialien adressieren 7 von 10 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
       "competence_coverage": [
         {
@@ -722,13 +753,16 @@
       "minutes_total": 52,
       "minutes_resource_independent": 52
     },
+    "mixer_profile": null,
+    "mixer_lint": null,
+    "glossary": [],
     "rack": null
   },
   "artifacts": {
-    "student_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0176\\student.pdf",
-    "teacher_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0176\\teacher.pdf",
-    "homework_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0176\\homework.pdf",
-    "preview_png": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0176\\raster\\student.p1.png"
+    "student_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0176\\student.pdf",
+    "teacher_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0176\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0176\\homework.pdf",
+    "preview_png": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0176\\raster\\student.p1.png"
   },
   "verify_problems": [],
   "verify_warnings": [],

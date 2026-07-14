@@ -4,7 +4,7 @@
   "status": "pending",
   "source": "generated",
   "created_at": "2026-07-05T05:34:11+00:00",
-  "updated_at": "2026-07-05T05:34:12+00:00",
+  "updated_at": "2026-07-14T09:02:00+00:00",
   "title": "Biologie und Umweltbildung 1. Kl. — Gebaut fürs Wasser, gebaut für die Luft: Wirbeltiere im Vergleich (generiert)",
   "note": "",
   "request": {
@@ -14,7 +14,9 @@
     "schulform": null,
     "topic_raw": "Gebaut fürs Wasser, gebaut für die Luft: Wirbeltiere im Vergleich",
     "envelope": "doppelstunde",
-    "options": {}
+    "options": {},
+    "anchor_mode": "competence",
+    "anchor_uet": null
   },
   "resolution": {
     "fassung": {
@@ -241,7 +243,7 @@
           "throughline": "Alle Wirbeltiere teilen einen gemeinsamen Grundbauplan (Wirbelsäule, meist zwei Paar Gliedmaßen) – doch dieser Bauplan wird für jeden Lebensraum ganz unterschiedlich 'umgebaut'.",
           "talking_points": [
             "Der Grundbauplan (Wirbelsäule, Kiemen/Lunge, zwei Gliedmaßenpaare) ist die eigentliche Verwandtschaftsspur – nicht das Aussehen. Flosse und Flügel sind derselbe 'Bauplan-Teil', nur angepasst.",
-            "Die Balken-Abbildung (a1) zeigt bewusst eine Gemeinsamkeit (Extremitätenpaare), nicht nur Unterschiede – das ist der Kern von 'gemeinsame Verwandtschaft erkennen'.",
+            "Das Homologie-Schema (a1) markiert bei allen vier Tieren dieselben zwei Gliedmaßenpaare in gleicher Farbe – gleicher Bauplan, nur unterschiedlich geformt (Flossen/Beine/Flügel). Das ist der Kern von 'gemeinsame Verwandtschaft erkennen': nicht das Aussehen, sondern der Bauplan zählt.",
             "Bei den Ethik-Aufgaben (t5–t7) geht es nicht um 'richtig/falsch Tierhaltung' pauschal, sondern um begründete, fachlich gestützte Abwägung."
           ],
           "extensions": [
@@ -289,10 +291,13 @@
             "acceptable_reasoning": "Andere korrekte, lebensraumtypische Merkmale werden ebenso akzeptiert (z. B. Stromlinienform beim Fisch, Sprungbeine beim Frosch).",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Manche nennen nur ein Aussehensmerkmal ohne Bezug zum Nutzen im Lebensraum (z. B. 'Fisch ist glitschig' statt 'Schleimschicht verringert Wasserwiderstand')."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t1",
@@ -326,10 +331,13 @@
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Häufiger Fehler: Verwandtschaft wird am äußeren Aussehen festgemacht ('sieht ähnlich aus = verwandt'). Der Grundbauplan zählt, nicht die Optik."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t5",
@@ -377,10 +385,13 @@
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Aussage 3 wird manchmal als 'Meinung' eingestuft, obwohl sie ein belegbarer anatomischer Zusammenhang ist (Qualzucht-Thematik) – hier genau nachfragen."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t4",
@@ -428,10 +439,13 @@
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Das Seitenlinienorgan ist Schüler:innen oft unbekannt; kurz erklären, dass es Druckwellen im Wasser wahrnimmt, bevor die Aufgabe bearbeitet wird."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t7",
@@ -465,10 +479,13 @@
             "acceptable_reasoning": "Bewertet wird die fachliche Richtigkeit und Verständlichkeit der Begründungen, nicht die literarische Qualität des Textes.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Rein allgemeine Sätze ohne konkretes Bedürfnis ('sei lieb zu deinem Hund') verfehlen die Aufgabe – es müssen erkennbare, begründete Bedürfnisse benannt werden."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t2",
@@ -481,7 +498,7 @@
             "provenance": null,
             "role": "task",
             "kind": "data_interpretation",
-            "prompt": "Das Balkendiagramm zeigt die Anzahl der Extremitätenpaare (Flossen/Beine/Flügel-Beinpaar) bei fünf Wirbeltieren. Was fällt dir auf, wenn du die Werte vergleichst? Was zeigt dieses Ergebnis über die Verwandtschaft dieser fünf sehr unterschiedlich aussehenden Tiere?",
+            "prompt": "Betrachte das Schema: Fisch, Frosch, Vogel und Hund sehen ganz verschieden aus. Bei jedem Tier ist das Vordergliedmaßenpaar rot und das Hintergliedmaßenpaar blau markiert. (a) Was ist bei allen vier Tieren gleich, obwohl sie so unterschiedlich aussehen? (b) Was bedeutet diese Gemeinsamkeit für ihre Verwandtschaft?",
             "payload": null,
             "response": {
               "mode": "lines",
@@ -500,14 +517,18 @@
               }
             ],
             "est_minutes": 9,
-            "answer_key": "Alle fünf Tiere haben denselben Wert: 2 Paar Gliedmaßen (Flossen, Beinpaare bzw. Flügel+Beine). Trotz sehr unterschiedlichem Aussehen und Lebensraum zeigt dieser gemeinsame Grundwert den gemeinsamen Bauplan der Wirbeltiere – ein Beleg für ihre Verwandtschaft.",
+            "answer_key": "(a) Alle vier Tiere haben denselben Grundbauplan: genau zwei Gliedmaßenpaare – ein Vordergliedmaßenpaar und ein Hintergliedmaßenpaar. Sie sind nur unterschiedlich geformt: beim Fisch als Flossen (Brust- und Bauchflossen), beim Frosch und Hund als Beine, beim Vogel als Flügel und Beine. (b) Dieser gemeinsame Bauplan ist ein Hinweis darauf, dass die Tiere miteinander verwandt sind und gemeinsame Vorfahren haben – nicht das äußere Aussehen zählt, sondern der gemeinsame Bauplan.",
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
-              "Der Wert 'gleich bei allen' wird manchmal als 'langweilig/kein Ergebnis' abgetan – hier ist die Gleichheit selbst das eigentliche, aussagekräftige Ergebnis."
+              "Häufige Verwechslung: Es geht nicht darum, dass die Tiere gleich VIELE Gliedmaßen haben, sondern dass alle denselben Bauplan (zwei Gliedmaßenpaare) besitzen – nur unterschiedlich geformt.",
+              "Beim Fisch sind nur die paarigen Flossen (Brust- und Bauchflossen) markiert; Rücken- und Schwanzflosse (grau) gehören nicht zu den Gliedmaßenpaaren."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t6",
@@ -544,10 +565,13 @@
             "acceptable_reasoning": "Auch eine Empfehlung für Rasse A wird akzeptiert, wenn zusätzliche Maßnahmen (z. B. Hundesportverein, deutlich mehr Zeitaufwand) fachlich stimmig als Ausgleich benannt werden.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Bewertet wird die Verknüpfung von Tierbedürfnis und Lebensumständen, nicht eine reine Sympathieentscheidung für eine Rasse."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           }
         ]
       }
@@ -556,27 +580,11 @@
       {
         "id": "a1",
         "role": "content",
+        "lane": null,
+        "intended_claim": null,
         "medium": "visual",
-        "generator": "matplotlib:bar_chart",
-        "spec": {
-          "categories": [
-            "Fisch",
-            "Frosch",
-            "Eidechse",
-            "Vogel",
-            "Hund"
-          ],
-          "values": [
-            4,
-            3,
-            3,
-            4,
-            4
-          ],
-          "title": "Anzahl Gliedmaßen/Flossen-Paare bei ausgewählten Wirbeltieren",
-          "xlabel": "Tier",
-          "ylabel": "Anzahl Extremitätenpaare"
-        },
+        "generator": "matplotlib:homology_schema",
+        "spec": {},
         "correctness_surface": null,
         "misleading_in_isolation": false,
         "intentionally_flawed": null,
@@ -587,6 +595,9 @@
         "caption": null
       }
     ],
+    "anchor_mode": "competence",
+    "anchor_uet": null,
+    "theme_asset": null,
     "nachweis": {
       "fassung": {
         "kurztitel": "AHS-Lehrplan (konsolidiert)",
@@ -595,6 +606,8 @@
         "valid_from": "2024-09-01",
         "valid_to": "2026-08-31"
       },
+      "anchor_mode": "competence",
+      "anchor_label": "Lehrplan-Kompetenzen",
       "statement": "Diese Materialien adressieren 4 von 10 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
       "competence_coverage": [
         {
@@ -709,16 +722,24 @@
       "minutes_total": 61,
       "minutes_resource_independent": 61
     },
+    "mixer_profile": null,
+    "mixer_lint": null,
+    "glossary": [],
     "rack": null
   },
   "artifacts": {
-    "student_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0172\\student.pdf",
-    "teacher_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0172\\teacher.pdf",
-    "homework_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0172\\homework.pdf",
-    "preview_png": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0172\\raster\\student.p1.png"
+    "student_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0172\\student.pdf",
+    "teacher_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0172\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0172\\homework.pdf",
+    "preview_png": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0172\\raster\\student.p1.png"
   },
   "verify_problems": [],
-  "verify_warnings": [],
+  "verify_warnings": [
+    "t1: Lesbarkeit (Wiener Sachtextformel) geschätzt auf Schulstufe 8,6 — deutlich über der Zielstufe 5 (Klasse 1) — Text ggf. vereinfachen (kürzere Sätze, weniger Mehrsilbler).",
+    "t7: Lesbarkeit (Wiener Sachtextformel) geschätzt auf Schulstufe 13,6 — deutlich über der Zielstufe 5 (Klasse 1) — Text ggf. vereinfachen (kürzere Sätze, weniger Mehrsilbler).",
+    "t6: Lesbarkeit (Wiener Sachtextformel) geschätzt auf Schulstufe 8,9 — deutlich über der Zielstufe 5 (Klasse 1) — Text ggf. vereinfachen (kürzere Sätze, weniger Mehrsilbler).",
+    "t4: Schwierigkeit — berechnete Stufe 1 weicht von der hinterlegten Stufe 2 (aus Anforderungsbereich abgeleitet) ab; Aufgabe wirkt einfacher. Einstufung als Prüf-Hinweis überdenken, keine Korrektur (maßgeblich: Textlast, Aufgabentyp)."
+  ],
   "parent_id": null,
   "feedback": [],
   "error": null

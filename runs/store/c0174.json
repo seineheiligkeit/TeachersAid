@@ -1,10 +1,10 @@
 {
   "id": "c0174",
   "stage": "content",
-  "status": "pending",
+  "status": "approved",
   "source": "generated",
   "created_at": "2026-07-05T05:34:12+00:00",
-  "updated_at": "2026-07-05T05:34:13+00:00",
+  "updated_at": "2026-07-14T07:43:02+00:00",
   "title": "Biologie und Umweltbildung 2. Kl. — Wie das Gehirn aus Reizen eine Welt macht (generiert)",
   "note": "",
   "request": {
@@ -14,7 +14,9 @@
     "schulform": null,
     "topic_raw": "Wie das Gehirn aus Reizen eine Welt macht",
     "envelope": "doppelstunde",
-    "options": {}
+    "options": {},
+    "anchor_mode": "competence",
+    "anchor_uet": null
   },
   "resolution": {
     "fassung": {
@@ -246,7 +248,8 @@
         "callout_role": null,
         "teacher_note": null,
         "watch_outs": [],
-        "numbered": true
+        "numbered": true,
+        "backdrop_asset_ref": null
       }
     ],
     "sections": [
@@ -301,10 +304,13 @@
             "acceptable_reasoning": "Jedes andere passende Sinnesorgan-Beispiel (Ohr, Haut) wird ebenso akzeptiert, solange der Unterschied Aufnahme/Verarbeitung klar wird.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Häufige Fehlvorstellung: 'Das Auge sieht' – tatsächlich liefert das Auge nur das Rohsignal, das eigentliche Sehen (Erkennen, Deuten) passiert im Gehirn."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t2",
@@ -354,10 +360,13 @@
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Nase und Zunge werden beide als 'chemische Sinne' bezeichnet – das ist ein guter Merkpunkt, kein Widerspruch."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t3",
@@ -393,10 +402,13 @@
             "acceptable_reasoning": "Jede physiologisch plausible Erklärung wird akzeptiert (z.B. unterschiedliche Nervenleitgeschwindigkeiten, unterschiedliche Verarbeitungstiefe) – wichtig ist, dass die Schüler:innen NICHT nur die Zahlen ablesen, sondern eine Ursache vermuten.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Diese Werte sind gerundete Durchschnittswerte aus Reaktionszeit-Studien und schwanken individuell stark – nicht als exakte Fakten für jede Person darstellen."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t4",
@@ -430,10 +442,13 @@
             "acceptable_reasoning": "Auch ein Modell mit einem anderen Sinnesorgan (Ohr, Haut) wird akzeptiert, solange die vier Stationen sinnvoll benannt und in der richtigen Reihenfolge dargestellt sind.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Ein Modell ist eine Vereinfachung – die Schüler:innen sollen erkennen, dass echte Nervenbahnen komplexer verlaufen, das Modell aber das Prinzip korrekt zeigt."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t5",
@@ -472,10 +487,13 @@
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Wichtig ist die Unterscheidung: eine naturwissenschaftlich erklärbare Wahrnehmungsvariation ist kein 'Defekt' – diese Verwechslung ist eine typische Fehlvorstellung."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t6",
@@ -518,10 +536,13 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Ziel ist NICHT, Werbung pauschal abzulehnen, sondern zu erkennen, welche Kriterien eine naturwissenschaftlich seriöse Aussage erfüllen muss."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t7",
@@ -558,10 +579,13 @@
             "acceptable_reasoning": "Auch andere sinnvolle Maßnahmen (Noise-Cancelling statt Lautstärke erhöhen, In-Ear vs. Over-Ear) werden akzeptiert, wenn sie mit dem biologischen Hintergrund verknüpft werden.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Die Empfehlung soll fachlich begründet sein (Bezug zu den Sinneszellen), nicht nur eine allgemeine Ermahnung ohne biologischen Hintergrund."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           }
         ]
       }
@@ -570,6 +594,8 @@
       {
         "id": "fig_reaktionszeit",
         "role": "figure",
+        "lane": null,
+        "intended_claim": null,
         "medium": "visual",
         "generator": "matplotlib:bar_chart",
         "spec": {
@@ -598,6 +624,9 @@
         "caption": null
       }
     ],
+    "anchor_mode": "competence",
+    "anchor_uet": null,
+    "theme_asset": null,
     "nachweis": {
       "fassung": {
         "kurztitel": "AHS-Lehrplan (konsolidiert)",
@@ -606,6 +635,8 @@
         "valid_from": "2024-09-01",
         "valid_to": "2026-08-31"
       },
+      "anchor_mode": "competence",
+      "anchor_label": "Lehrplan-Kompetenzen",
       "statement": "Diese Materialien adressieren 6 von 10 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
       "competence_coverage": [
         {
@@ -720,13 +751,16 @@
       "minutes_total": 50,
       "minutes_resource_independent": 50
     },
+    "mixer_profile": null,
+    "mixer_lint": null,
+    "glossary": [],
     "rack": null
   },
   "artifacts": {
-    "student_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0174\\student.pdf",
-    "teacher_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0174\\teacher.pdf",
-    "homework_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0174\\homework.pdf",
-    "preview_png": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0174\\raster\\student.p1.png"
+    "student_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0174\\student.pdf",
+    "teacher_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0174\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0174\\homework.pdf",
+    "preview_png": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0174\\raster\\student.p1.png"
   },
   "verify_problems": [],
   "verify_warnings": [],

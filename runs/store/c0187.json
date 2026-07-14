@@ -1,10 +1,10 @@
 {
   "id": "c0187",
   "stage": "content",
-  "status": "pending",
+  "status": "approved",
   "source": "generated",
   "created_at": "2026-07-05T05:34:19+00:00",
-  "updated_at": "2026-07-05T05:34:20+00:00",
+  "updated_at": "2026-07-14T07:42:13+00:00",
   "title": "Mathematik 3. Kl. — Der Wassertank-Plan (generiert)",
   "note": "",
   "request": {
@@ -14,7 +14,9 @@
     "schulform": null,
     "topic_raw": "Der Wassertank-Plan",
     "envelope": "doppelstunde",
-    "options": {}
+    "options": {},
+    "anchor_mode": "competence",
+    "anchor_uet": null
   },
   "resolution": {
     "fassung": {
@@ -180,7 +182,8 @@
         "callout_role": null,
         "teacher_note": null,
         "watch_outs": [],
-        "numbered": true
+        "numbered": true,
+        "backdrop_asset_ref": null
       }
     ],
     "sections": [
@@ -248,11 +251,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Startwert und Zuwachs pro Minute werden manchmal vertauscht — 200 ist der Startwert (Achsenabschnitt), 100 ist die Änderungsrate pro Minute.",
               "Bei (b) wird gelegentlich die gesamte Differenz (200 Liter) statt der Differenz PRO Minute (100 Liter) angegeben."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t2",
@@ -295,11 +301,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Bei (a) wird manchmal auch der Exponent addiert (3a²+5a² wird fälschlich zu 8a⁴) — nur gleichartige Glieder werden zusammengefasst, der Exponent ändert sich dabei NICHT.",
               "Bei (c) wird (2a)² oft zu 2a² statt 4a² vereinfacht — die Klammer bedeutet, dass auch die 2 quadriert wird."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t3",
@@ -361,11 +370,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Division durch eine negative Zahl wird manchmal ohne Vorzeichenwechsel im Ergebnis durchgeführt — −320 : (−40) muss positiv sein (= 8), nicht negativ.",
               "Manche Schüler:innen führen die Umformung nur auf einer Seite der Gleichung durch, wodurch die Gleichung nicht mehr äquivalent ist."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t4",
@@ -400,11 +412,14 @@
             "acceptable_reasoning": "Proportionalität bedeutet: Wassermenge = konstanter Faktor · Zeit, mit Startwert 0. Der konstante Faktor (hier 70 L/min) kann aus jedem gegebenen Wertepaar berechnet werden.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Der Unterschied zu Tank A (Aufgabe t1) sollte explizit angesprochen werden: Tank C startet bei 0 (echte Proportion), Tank A startet bei 200 (kein Nullpunkt, daher KEINE Proportion trotz gleichmäßiger Zunahme).",
               "Beim Kürzen des Verhältnisses 210:3 wird manchmal nicht vollständig gekürzt."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t5",
@@ -463,11 +478,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Aussage 3 wird oft unreflektiert als 'richtig' eingestuft, weil die Rechnung stimmt — die Modellgrenze (Wasserstand ≥ 0) wird übersehen.",
               "Bei Aussage 1 wird 'Wachstum' manchmal mit 'Proportion' gleichgesetzt, obwohl nur Prozesse mit Startwert 0 echte Proportionen sind."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t6",
@@ -528,11 +546,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Die geforderte Modellgrenze wird oft übersprungen, obwohl sie explizit verlangt ist — genau hier zeigt sich das Verständnis für 'Modell vs. Wirklichkeit'.",
               "Manche wählen einen Abnahmeprozess, vergessen aber, dass der Term irgendwann null oder negativ wird, und thematisieren das nicht als Grenze."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           }
         ]
       }
@@ -541,6 +562,8 @@
       {
         "id": "abb_fuellung",
         "role": "figure",
+        "lane": null,
+        "intended_claim": null,
         "medium": "visual",
         "generator": "matplotlib:function_graph",
         "spec": {
@@ -583,6 +606,8 @@
       {
         "id": "abb_leerung",
         "role": "figure",
+        "lane": null,
+        "intended_claim": null,
         "medium": "visual",
         "generator": "matplotlib:function_graph",
         "spec": {
@@ -606,6 +631,9 @@
         "caption": null
       }
     ],
+    "anchor_mode": "competence",
+    "anchor_uet": null,
+    "theme_asset": null,
     "nachweis": {
       "fassung": {
         "kurztitel": "AHS-Lehrplan (konsolidiert)",
@@ -614,6 +642,8 @@
         "valid_from": "2024-09-01",
         "valid_to": "2026-08-31"
       },
+      "anchor_mode": "competence",
+      "anchor_label": "Lehrplan-Kompetenzen",
       "statement": "Diese Materialien adressieren 4 von 4 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
       "competence_coverage": [
         {
@@ -681,13 +711,16 @@
       "minutes_total": 55,
       "minutes_resource_independent": 55
     },
+    "mixer_profile": null,
+    "mixer_lint": null,
+    "glossary": [],
     "rack": null
   },
   "artifacts": {
-    "student_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0187\\student.pdf",
-    "teacher_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0187\\teacher.pdf",
-    "homework_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0187\\homework.pdf",
-    "preview_png": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0187\\raster\\student.p1.png"
+    "student_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0187\\student.pdf",
+    "teacher_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0187\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0187\\homework.pdf",
+    "preview_png": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0187\\raster\\student.p1.png"
   },
   "verify_problems": [],
   "verify_warnings": [],

@@ -44,11 +44,14 @@
       }
     ],
     "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
     "watch_outs": [
       "Nur eine Koordinate (x ODER y) wird manchmal mit dem Faktor multipliziert, statt beide — beide Koordinaten müssen gleichermaßen skaliert werden.",
       "Läge Z NICHT im Ursprung, müsste man zuerst den Vektor von Z zum Punkt bilden, diesen strecken und dann wieder zu Z addieren — das ist hier bewusst nicht der Fall, sollte aber angesprochen werden."
     ],
-    "self_check": null
+    "self_check": null,
+    "scaffold": null
   },
   "role": "task",
   "kind": "calculation",
@@ -70,6 +73,8 @@
     {
       "id": "abb_streckung",
       "role": "figure",
+      "lane": null,
+      "intended_claim": null,
       "medium": "visual",
       "generator": "matplotlib:coordinate_plane",
       "spec": {
@@ -125,9 +130,9 @@
       "caption": null
     }
   ],
-  "status": "in_review",
+  "status": "approved",
   "provenance": "harvested:c0188",
   "source": "ai",
   "created_at": "2026-07-05T05:34:21+00:00",
-  "updated_at": "2026-07-05T05:34:22+00:00"
+  "updated_at": "2026-07-14T07:12:51+00:00"
 }

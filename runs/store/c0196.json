@@ -1,10 +1,10 @@
 {
   "id": "c0196",
   "stage": "content",
-  "status": "pending",
+  "status": "approved",
   "source": "generated",
   "created_at": "2026-07-05T05:51:15+00:00",
-  "updated_at": "2026-07-05T05:51:15+00:00",
+  "updated_at": "2026-07-14T07:02:14+00:00",
   "title": "Biologie und Umweltbildung 1. Kl. — Ohne Bienen keine Kirschen? Die Blüte als Werkzeug (generiert)",
   "note": "",
   "request": {
@@ -14,7 +14,9 @@
     "schulform": null,
     "topic_raw": "Ohne Bienen keine Kirschen? Die Blüte als Werkzeug",
     "envelope": "doppelstunde",
-    "options": {}
+    "options": {},
+    "anchor_mode": "competence",
+    "anchor_uet": null
   },
   "resolution": {
     "fassung": {
@@ -288,10 +290,13 @@
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Häufige Verwechslung: Staubblatt und Stempel werden vertauscht. Merkhilfe: Staub-blatt = liefert Staub(pollen); Stempel steht in der Mitte und empfängt."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t2",
@@ -325,10 +330,13 @@
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Sehr verbreiteter Fehler: Bestäubung und Befruchtung werden als dasselbe behandelt. Beide Begriffe müssen als zeitlich getrennte Schritte erscheinen."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t3",
@@ -364,10 +372,13 @@
             "acceptable_reasoning": "Jede plausible alternative Bestäubungsquelle für den 0-Besuche-Fall wird akzeptiert (Wind, andere Insektenarten, Selbstbestäubung).",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Nicht automatisch 'mehr Bienen = Ursache' als bewiesen hinstellen – der Zusammenhang ist stark, aber die Aufgabe verlangt auch das Gegenbeispiel (0 Besuche, trotzdem Früchte) zu erklären."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t4",
@@ -410,10 +421,13 @@
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Schritt 3 (Pollenschlauch/Befruchtung) wird oft übersprungen oder mit Schritt 2 (Bestäubung) verwechselt und zusammengelegt."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t4b",
@@ -447,10 +461,13 @@
             "acceptable_reasoning": "Das Modell passt gut für insektenbestäubte Pflanzen mit auffälligen Blüten (z. B. Apfel, Kirsche), bei denen Bestäuber tatsächlich der limitierende Faktor sind. Es passt schlecht für windbestäubte Pflanzen (z. B. Gräser, Haselnuss, Getreide) – dort spielt die Anzahl an Insektenbesuchen kaum eine Rolle, da der Pollen durch Wind übertragen wird. Auch selbstbestäubende Pflanzen (z. B. manche Erbsensorten) brauchen kaum fremde Bestäuber. Jede fachlich richtige Grenze wird akzeptiert.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "WIS.03 verlangt explizit das Erkennen von Gültigkeitsgrenzen eines Modells – eine reine Bestätigung ('das Modell stimmt immer') verfehlt den Kern der Aufgabe."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t5",
@@ -488,10 +505,13 @@
             "acceptable_reasoning": "Wichtig ist das Kontrollgruppen-Prinzip (eine Gruppe ohne, eine mit Insektenzugang, sonst gleiche Bedingungen), nicht die exakte Abdeckmethode.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Ohne eine unbedeckte Vergleichsgruppe lässt sich kein Effekt der Bestäubung nachweisen – dieser Punkt wird oft vergessen."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t6",
@@ -525,10 +545,13 @@
             "acceptable_reasoning": "Bewertet wird, ob der fachliche Zusammenhang (Bestäuber brauchen Blühpflanzen) korrekt und freundlich vermittelt wird sowie ein umsetzbarer Kompromiss genannt wird.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Ein rein vorwurfsvoller Ton verfehlt die Aufgabe (verlangt ist ein freundlicher, überzeugender Text mit konkretem Vorschlag, keine Belehrung)."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           }
         ]
       }
@@ -537,6 +560,8 @@
       {
         "id": "df2",
         "role": "figure",
+        "lane": null,
+        "intended_claim": null,
         "medium": "visual",
         "generator": "matplotlib:scatter",
         "spec": {
@@ -585,6 +610,9 @@
         "caption": null
       }
     ],
+    "anchor_mode": "competence",
+    "anchor_uet": null,
+    "theme_asset": null,
     "nachweis": {
       "fassung": {
         "kurztitel": "AHS-Lehrplan (konsolidiert)",
@@ -593,6 +621,8 @@
         "valid_from": "2024-09-01",
         "valid_to": "2026-08-31"
       },
+      "anchor_mode": "competence",
+      "anchor_label": "Lehrplan-Kompetenzen",
       "statement": "Diese Materialien adressieren 5 von 10 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
       "competence_coverage": [
         {
@@ -708,13 +738,16 @@
       "minutes_total": 68,
       "minutes_resource_independent": 68
     },
+    "mixer_profile": null,
+    "mixer_lint": null,
+    "glossary": [],
     "rack": null
   },
   "artifacts": {
-    "student_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0196\\student.pdf",
-    "teacher_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0196\\teacher.pdf",
-    "homework_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0196\\homework.pdf",
-    "preview_png": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0196\\raster\\student.p1.png"
+    "student_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0196\\student.pdf",
+    "teacher_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0196\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0196\\homework.pdf",
+    "preview_png": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0196\\raster\\student.p1.png"
   },
   "verify_problems": [],
   "verify_warnings": [],

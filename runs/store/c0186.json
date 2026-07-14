@@ -1,10 +1,10 @@
 {
   "id": "c0186",
   "stage": "content",
-  "status": "pending",
+  "status": "approved",
   "source": "generated",
   "created_at": "2026-07-05T05:34:19+00:00",
-  "updated_at": "2026-07-05T05:34:19+00:00",
+  "updated_at": "2026-07-14T07:45:20+00:00",
   "title": "Mathematik 3. Kl. — Der Fieberkurven-Fall (generiert)",
   "note": "",
   "request": {
@@ -14,7 +14,9 @@
     "schulform": null,
     "topic_raw": "Der Fieberkurven-Fall",
     "envelope": "doppelstunde",
-    "options": {}
+    "options": {},
+    "anchor_mode": "competence",
+    "anchor_uet": null
   },
   "resolution": {
     "fassung": {
@@ -141,7 +143,8 @@
         "callout_role": null,
         "teacher_note": null,
         "watch_outs": [],
-        "numbered": true
+        "numbered": true,
+        "backdrop_asset_ref": null
       }
     ],
     "sections": [
@@ -227,11 +230,14 @@
             "acceptable_reasoning": "Je weiter links ein Punkt auf der Zahlengeraden liegt, desto kleiner (kälter) ist der Wert — unabhängig vom Vorzeichen als solchem.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Verwechslung von 'kälter' mit 'kleiner Betrag': −8 °C ist kälter als −1 °C, obwohl |−1| < |−8|.",
               "Ablesefehler bei negativen Werten links vom Nullpunkt — Richtung der Zählung explizit üben."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t2",
@@ -290,11 +296,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Aussage 2 wird häufig als 'richtig' markiert, weil optisch ein Minus vor einer Zahl steht wie bei einer Subtraktion — der Unterschied ist rein funktional, nicht optisch.",
               "Bei Aussage 3 wird oft übersehen, dass 'Gegenzahl bilden' und 'subtrahieren' zwei verschiedene Vorgänge sind, auch wenn beide das Minuszeichen nutzen."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t3",
@@ -345,11 +354,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Doppeltes Minus bei (a) wird oft übersprungen statt explizit zur Gegenzahl umgeformt.",
               "Bei (d) wird der Kehrwert manchmal falsch gebildet (−1/4 statt 4 als Kehrwert von −4 verwechselt) — Kehrwert von −4 ist −1/4, nicht −4."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t4",
@@ -403,11 +415,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Bei (a) wird oft alt − neu statt neu − alt gerechnet, was das Vorzeichen der Einzahlung verfälscht.",
               "Der Betrag in (c) wird manchmal vergessen — ein negatives Zwischenergebnis bleibt negativ stehen, obwohl nach dem Abstand gefragt ist."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t5",
@@ -450,11 +465,14 @@
             "acceptable_reasoning": "Bei Zehnerpotenzen entscheidet zunächst der Exponent: je größer der Exponent, desto größer die Zahl (auch wenn der Exponent negativ ist, gilt: je näher an +∞, desto größer). Erst bei gleichem Exponenten vergleicht man die Vorzahl.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Negative Exponenten werden oft fälschlich als 'negative Zahl' gelesen — 10^(−5) ist eine kleine POSITIVE Zahl, kein negativer Wert.",
               "Die Vorzahl (z. B. die 7 bei 7·10^(−5)) wird manchmal stärker gewichtet als der Exponent — der Exponent entscheidet zuerst über die Größenordnung."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t6",
@@ -523,11 +541,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Häufigster Fehler: die Zustandsänderung wird zwar erzählt, aber nicht als Rechnung mit Vorzeichen notiert.",
               "Die eigene Zahlengerade wird manchmal ohne gleichmäßige Skalierung gezeichnet — auf gleiche Abstände zwischen den Markierungen achten."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           }
         ]
       }
@@ -536,6 +557,8 @@
       {
         "id": "abb_temp",
         "role": "figure",
+        "lane": null,
+        "intended_claim": null,
         "medium": "visual",
         "generator": "matplotlib:number_line",
         "spec": {
@@ -574,6 +597,8 @@
       {
         "id": "abb_konto",
         "role": "figure",
+        "lane": null,
+        "intended_claim": null,
         "medium": "visual",
         "generator": "matplotlib:number_line",
         "spec": {
@@ -602,6 +627,9 @@
         "caption": null
       }
     ],
+    "anchor_mode": "competence",
+    "anchor_uet": null,
+    "theme_asset": null,
     "nachweis": {
       "fassung": {
         "kurztitel": "AHS-Lehrplan (konsolidiert)",
@@ -610,6 +638,8 @@
         "valid_from": "2024-09-01",
         "valid_to": "2026-08-31"
       },
+      "anchor_mode": "competence",
+      "anchor_label": "Lehrplan-Kompetenzen",
       "statement": "Diese Materialien adressieren 1 von 1 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
       "competence_coverage": [
         {
@@ -654,13 +684,16 @@
       "minutes_total": 50,
       "minutes_resource_independent": 50
     },
+    "mixer_profile": null,
+    "mixer_lint": null,
+    "glossary": [],
     "rack": null
   },
   "artifacts": {
-    "student_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0186\\student.pdf",
-    "teacher_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0186\\teacher.pdf",
-    "homework_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0186\\homework.pdf",
-    "preview_png": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0186\\raster\\student.p1.png"
+    "student_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0186\\student.pdf",
+    "teacher_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0186\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0186\\homework.pdf",
+    "preview_png": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0186\\raster\\student.p1.png"
   },
   "verify_problems": [],
   "verify_warnings": [],

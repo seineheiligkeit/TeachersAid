@@ -1,10 +1,10 @@
 {
   "id": "c0202",
   "stage": "content",
-  "status": "pending",
+  "status": "approved",
   "source": "curated",
   "created_at": "2026-07-12T10:16:40+00:00",
-  "updated_at": "2026-07-12T10:16:40+00:00",
+  "updated_at": "2026-07-14T06:56:47+00:00",
   "title": "Fortschritt als Festrede: Quellenarbeit in ANNO",
   "note": "",
   "request": {
@@ -168,7 +168,7 @@
   "content": {
     "meta": {
       "title": "Fortschritt als Festrede: Quellenarbeit in ANNO",
-      "subtitle": "Die Wiener Zeitung berichtet von der Eröffnung der Weltausstellung 1873",
+      "subtitle": "Eine Wiener Zeitungsseite vom Mai 1873 als Quelle lesen",
       "subject": "Geschichte und politische Bildung",
       "stufe": "Unterstufe",
       "klasse": 3,
@@ -243,7 +243,7 @@
     },
     "intro": [
       {
-        "id": "anno2.hinweis",
+        "id": "anno.ocr",
         "optional": false,
         "modality": "printable",
         "flags": null,
@@ -251,7 +251,7 @@
         "provenance": null,
         "role": "info",
         "kind": "callout",
-        "content": "Öffne die historische Zeitungsseite: https://iiif.onb.ac.at/presentation/ANNO/wrz18730502/canvas/00000003 — Wiener Zeitung, 2. Mai 1873, Seite 3, „Eröffnungsfeier der Weltausstellung: Ansprache des Bürgermeisters“. Arbeite immer mit dem Seitenbild UND der maschinellen OCR. Die OCR ist ungeprüft: Übernimm keinen korrigierten Wortlaut, ohne ihn am Scan zu kontrollieren; unlesbare Stellen markierst du ehrlich mit [?].",
+        "content": "OCR heißt automatische Texterkennung. Ein Computer hat den gedruckten Text der alten Zeitung „gelesen“ und in Buchstaben umgewandelt. Die alte Frakturschrift (die „altdeutschen“ Buchstaben) kennt er schlecht. Darum verliest er sich oft: Aus „sind“ wird „find“, aus „und“ wird „nnd“. Diese Fehler sind kein Ärgernis. Sie sind dein Arbeitsauftrag: Vergleiche den Maschinentext (OCR) mit dem Scan und entscheide selbst, was wirklich dasteht. Unsichere Stellen markierst du mit einem [?].",
         "callout_role": "note",
         "teacher_note": null,
         "watch_outs": [],
@@ -259,7 +259,7 @@
         "backdrop_asset_ref": null
       },
       {
-        "id": "anno2.methode",
+        "id": "anno.methode",
         "optional": false,
         "modality": "printable",
         "flags": null,
@@ -267,7 +267,7 @@
         "provenance": null,
         "role": "info",
         "kind": "procedure",
-        "content": "Vier Schritte: 1. Quelle bestimmen (Wer? Wann? Wo? Welche Textsorte?). 2. Seitenbild und OCR vergleichen. 3. Wortwahl und Sprecher-Standort belegen. 4. Ein begründetes Quellenurteil formulieren.",
+        "content": "So gehst du vor: 1. Quelle bestimmen (Wer schreibt? Wann? Was für ein Text?). 2. Maschinentext (OCR) und Scanausschnitt vergleichen. 3. Wortwahl und Perspektive am Wortlaut belegen — mit Zeilennummern. 4. Ein begründetes Quellenurteil formulieren und ehrlich sagen, was die Quelle NICHT belegt.",
         "callout_role": null,
         "teacher_note": null,
         "watch_outs": [],
@@ -282,15 +282,101 @@
         "teacher_overview": {
           "throughline": "Die Gegenstimme zur 1871er-Leitartikel-Quellenarbeit: hier spricht der feierliche, loyale Amtston. Die Quelle belegt die Inszenierung von Fortschritt und Kaisertreue — nicht die Stimmung der Stadt. Standort erkennen, Reichweite begrenzen.",
           "talking_points": [
-            "OCR-Fehler sind Methode, kein Defekt: Sie erzwingen den Blick auf den Scan.",
+            "OCR-Fehler sind Methode, kein Defekt: Sie erzwingen den Blick auf den Scan („find“ statt „sind“, Z. 6).",
             "Eine Festrede lobt — das ist keine Schwäche der Quelle, sondern ihre Eigenschaft: Sie zeigt, wie öffentliche Loyalität klingen sollte.",
-            "Stark im Paar mit dem oppositionellen Leitartikel von 1871: gleiche Epoche, entgegengesetzter Standort."
+            "Stark im Paar mit dem oppositionellen Leitartikel von 1871: gleiche Epoche, entgegengesetzter Standort. Alles Nötige ist auf dem Blatt; der ANNO-Link ist freiwillige Weiterführung."
           ],
           "extensions": [],
           "differentiation": null,
-          "timing_notes": "Einzel- bis Doppelstunde; Internetzugang für das ANNO-Digitalisat nötig."
+          "timing_notes": "Einzel- bis Doppelstunde; kein Internetzugang nötig."
         },
         "blocks": [
+          {
+            "id": "anno2.scan",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "gpb-anno-weltausstellung-1873-crop"
+            ],
+            "provenance": null,
+            "role": "info",
+            "kind": "figure",
+            "content": "1873 wurde in Wien die Weltausstellung eröffnet — ein großes Fest des technischen Fortschritts. Oben der Originalscan der Zeitungsseite (Ausschnitt), darunter der maschinell erkannte Text (OCR) mit Zeilennummern. Der Scan zeigt Zeile 1–15 des Auszugs.",
+            "callout_role": null,
+            "teacher_note": null,
+            "watch_outs": [],
+            "numbered": true,
+            "backdrop_asset_ref": null
+          },
+          {
+            "id": "anno2.auszug",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": {
+              "expression_origin": "quoted",
+              "sources": [
+                {
+                  "title": "Eröffnung der Weltausstellung: Ansprache des Bürgermeisters",
+                  "url": "https://anno.onb.ac.at/cgi-content/anno?aid=wrz&datum=18730502&seite=3",
+                  "publisher": "Wiener Zeitung, 2. Mai 1873, S. 3 · Österreichische Nationalbibliothek, ÖNB Labs/ANNO",
+                  "licence": "Public Domain Mark 1.0",
+                  "licence_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+                  "retrieved": "2026-07-12",
+                  "role": "expression",
+                  "redistributable": true,
+                  "author_death_year": null,
+                  "quote_span": null
+                }
+              ],
+              "attribution_required": true,
+              "share_alike_applies": false
+            },
+            "role": "info",
+            "kind": "source_text",
+            "content": "Die gleiche Danksagung sprach der Bürgermeister\nvon Wien im Namen der Reichshaupt- und Residenz\nstadt folgendermaßen aus:\n„Eu. Majestät!\nAllergnädigster Herr!\n„Bald find es fünfundzwanzig Jahre, daß Eu.\nk. und k. Majestät auf dem angestammten Throne\nIhrer erlauchten Ahnen das Scepter über die\nVölker Oesterreichs führen.\nDankbar verzeichnen es die Annalen, daß in\ndiesem Zeitlaufe die Gemeindeautonomie erhalten,\ndaß unter der Regierung Eu. Majestät Wien im\nraschen, zuvor nie geahnten Aufschwünge zur Welt\nstadt geworden.\nEs war erleuchtete Entschließung Eu. Majestät,\ndie die Stadtwälle fallen ließ, es war Eu. Maje\nstät hochherzige Fürsorge und Munificenz, durch\nwelche großartige Werke ins Leben gerufen wurden,\ndie der öffentlichen Wohlfahrt, dem Gedeihen des\nGemeinwesens in allen Richtungen gewidmet,\nZeugen der thatkräftigen Bestrebungen der Gegen\nwart sind und für kommende Jahrhunderte ehrende\nDenkmale bleiben werden des segensreichen Waltens\nEu. Majestät.\nIn dieser feierlichen Stunde verleihen Eu. Ma\njestät die höchste Weihe einem Unternehmen, das\ndie edle Bestimmung hat, in diesen Räumen zusam\nmengefaßt zu zeigen, was menschlicher Geist, was\nmenschliche Kraft, was Wissenschaft und Kunst unter\nallen Himmelsstrichen zu schaffen vermag, auf daß\nder Fortschritt Gemeingut werde, sich nähre und\nfördere durch das Zusammenwirken Aller, durch den\nWettkampf der Erfindung und Fertigkeit, durch die\nSegnungen des Völkerfriedens.\nDie erhabene Schöpfung Eu. Majestät wird die\nCulturgeschichte Oesterreichs verewigen.\nZu allen Zeiten treu ergeben festhaltend an\nDynastie und Reich, fühlt sich Wien, dem es be-\nschieden ist, Besucher aus allen Welttheilen inner\nhalb seines Weichbildes gastlich willkommen zu.\nheißen, heute stolzer und gehobener denn je, unter\ndem huldvollen, wahrhast kaiserlichen Schutze Eu.\nMajestät, und dankbewegt tönt ans Aller Herzen:\n\nGott segne, Gott schütze, Gott erhalte Eu. Ma\njestät! Unser Kaiser Franz Joseph hoch! hoch!\nhoch!\"\nDie Anwesenden stimmten begeistert em.",
+            "callout_role": null,
+            "teacher_note": "Maschinelle OCR, ungeprüft (Public Domain Mark, ÖNB Labs/ANNO). Der Wortlaut ist unverändert — die Lesefehler (z. B. „find“ statt „sind“, Z. 6) sind Absicht und Gegenstand von Aufgabe 2.",
+            "watch_outs": [],
+            "numbered": true,
+            "backdrop_asset_ref": null
+          },
+          {
+            "id": "anno2.digitalisat",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": {
+              "expression_origin": "original",
+              "sources": [
+                {
+                  "title": "ANNO-Digitalisat (Seitennachweis)",
+                  "url": "https://anno.onb.ac.at/cgi-content/anno?aid=wrz&datum=18730502&seite=3",
+                  "publisher": "Österreichische Nationalbibliothek, ÖNB Labs/ANNO",
+                  "licence": "Public Domain Mark 1.0",
+                  "licence_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+                  "retrieved": "2026-07-12",
+                  "role": "facts",
+                  "redistributable": true,
+                  "author_death_year": null,
+                  "quote_span": null
+                }
+              ],
+              "attribution_required": false,
+              "share_alike_applies": false
+            },
+            "role": "info",
+            "kind": "prose",
+            "content": "Digitalisat der vollständigen Zeitungsseite (Österreichische Nationalbibliothek, ÖNB Labs/ANNO): https://anno.onb.ac.at/cgi-content/anno?aid=wrz&datum=18730502&seite=3 — für die Aufgaben brauchst du nur dieses Blatt, der Link ist zum Weiterstöbern.",
+            "callout_role": null,
+            "teacher_note": null,
+            "watch_outs": [],
+            "numbered": true,
+            "backdrop_asset_ref": null
+          },
           {
             "id": "anno2.t1",
             "optional": false,
@@ -300,7 +386,7 @@
             "provenance": null,
             "role": "task",
             "kind": "source_analysis",
-            "prompt": "Bestimme die Quelle: Notiere Zeitungstitel, Datum und Seite. Um welche Textsorte handelt es sich (was druckt die Zeitung hier ab)? Erkläre anschließend, warum die Seite eine Quelle und keine spätere Darstellung ist.",
+            "prompt": "Bestimme die Quelle aus dem Auszug selbst (nicht aus dem Titel des Blattes): (a) Wer hält diese Rede, und an wen richtet er sie? Belege mit Zeile 1–5. (b) Warum ist dieser Auszug eine Quelle von 1873 und keine spätere Darstellung? Nenne zwei Merkmale.",
             "payload": null,
             "response": {
               "mode": "lines",
@@ -323,14 +409,17 @@
               }
             ],
             "est_minutes": 8,
-            "answer_key": "Wiener Zeitung; 2. Mai 1873; Seite 3. Abgedruckt ist die feierliche Ansprache (Festrede) des Bürgermeisters von Wien bei der Eröffnung der Weltausstellung. Quelle: Die Seite entstand 1873, zur Zeit des Ereignisses selbst — sie ist ein zeitgenössisches Zeugnis, keine spätere Darstellung.",
+            "answer_key": "(a) Der Bürgermeister von Wien (Zeile 1–2) spricht direkt zum Kaiser — die Anrede „Eu. Majestät! Allergnädigster Herr!“ (Zeile 4–5) zeigt es. (b) Quelle: 1873, zur Zeit des Ereignisses entstanden; abgedruckt ist der zeitgenössische Wortlaut einer feierlichen Ansprache (Festrede), keine spätere, einordnende Zusammenfassung.",
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
             "solution_paths": [],
             "solution_asset_refs": [],
-            "watch_outs": [],
-            "self_check": null
+            "watch_outs": [
+              "Die Textsorte steht schon im Titel des Blattes — gewürdigt wird, dass die Klasse Sprecher, Adressat und Quelle/Darstellung AM WORTLAUT belegt, nicht bloß benennt."
+            ],
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "anno2.t2",
@@ -341,12 +430,12 @@
             "provenance": null,
             "role": "task",
             "kind": "source_analysis",
-            "prompt": "OCR-Prüfung: Finde drei Stellen, an denen die OCR nicht sicher zum Seitenbild passt. Notiere jeweils (a) den OCR-Wortlaut, (b) deine Lesung am Scan und (c) wie sicher du bist. Verwende [?], wenn die Stelle offen bleibt.",
+            "prompt": "OCR-Prüfung: Vergleiche Zeile 1–15 des Auszugs (OCR) mit dem Scanausschnitt. An einer Stelle hat der Computer sicher falsch gelesen — finde sie und notiere (a) den OCR-Wortlaut mit Zeile, (b) was am Scan steht, (c) deine Sicherheit. Prüfe außerdem: Stimmen die übrigen Zeilen mit dem Scan überein?",
             "payload": null,
             "response": {
               "mode": "table",
               "columns": [
-                "OCR",
+                "OCR (mit Zeile)",
                 "Lesung am Scan",
                 "Sicherheit"
               ],
@@ -365,16 +454,18 @@
               }
             ],
             "est_minutes": 10,
-            "answer_key": "Erwartet: drei nachvollziehbare Vergleiche direkt am Scan, z. B. OCR „Bald find es fünfundzwanzig Jahre“ → Lesung „sind“; OCR „wahrhast kaiserlichen Schutze“ → Lesung „wahrhaft“; OCR „stimmten begeistert em“ → Lesung „ein“. Korrekt ist nur eine Lesung, die das Seitenbild trägt; Unsicherheit darf und soll mit [?] markiert werden.",
+            "answer_key": "Sichere Fehlstelle: „Bald find es“ (Z. 6) → am Scan steht „Bald sind es“ (das lange ſ der Fraktur wurde als f gelesen). Die übrigen Zeilen 1–15 stimmen weitgehend mit dem Scan überein — wichtig ist, dass geprüft und nicht blind übernommen wird. Weitere Fehler stehen später im Auszug (z. B. „wahrhast“ Z. 42 → „wahrhaft“; „em“ Z. 47 → „ein“).",
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
             "solution_paths": [],
             "solution_asset_refs": [],
             "watch_outs": [
-              "Keine stillen OCR-Korrekturen akzeptieren: Scanbeleg oder [?]."
+              "Keine stillen OCR-Korrekturen akzeptieren: Scanbeleg oder [?].",
+              "Dass die meisten Zeilen stimmen, ist ein gültiges Prüfergebnis — die Haltung „prüfen statt glauben“ ist das Lernziel."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "anno2.t3",
@@ -385,7 +476,7 @@
             "provenance": null,
             "role": "task",
             "kind": "source_analysis",
-            "prompt": "Untersuche den Standort des Redners: Wer spricht hier, zu wem, bei welchem Anlass? Wem schreibt die Rede die Veränderungen Wiens zu? Belege mit mindestens zwei Formulierungen aus dem Text und erkläre, wie Anlass und Sprecherrolle das Urteil der Rede prägen.",
+            "prompt": "Untersuche den Standort des Redners: Wem schreibt die Rede alle Veränderungen Wiens zu? Belege mit zwei Wendungen aus dem Text (z. B. Zeile 15 und Zeile 17) und erkläre, wie Anlass und Sprecherrolle das Urteil der Rede prägen.",
             "payload": null,
             "response": {
               "mode": "lines",
@@ -404,14 +495,15 @@
               }
             ],
             "est_minutes": 10,
-            "answer_key": "Der Bürgermeister von Wien spricht bei der festlichen Eröffnung direkt zum Kaiser. Alle Veränderungen erscheinen als dessen persönliches Verdienst: seine „erleuchtete Entschließung“, seine „hochherzige Fürsorge und Munificenz“, die Stadt „treu ergeben“. Standortgebundenheit: Eine loyale Stadtspitze bei einem Festakt vor dem Herrscher lobt — Kritik oder Abwägung sind in dieser Sprechsituation nicht zu erwarten.",
+            "answer_key": "Alle Veränderungen erscheinen als persönliches Verdienst des Kaisers: seine „erleuchtete Entschließung“ (Z. 15), seine „hochherzige Fürsorge und Munificenz“ (Z. 17); Wien ist ihm „treu ergeben“ (Z. 37). Standortgebundenheit: Eine loyale Stadtspitze bei einem Festakt vor dem Herrscher lobt — Kritik oder Abwägung sind in dieser Sprechsituation nicht zu erwarten.",
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
             "solution_paths": [],
             "solution_asset_refs": [],
             "watch_outs": [],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "anno2.t4",
@@ -422,7 +514,7 @@
             "provenance": null,
             "role": "task",
             "kind": "open_response",
-            "prompt": "Formuliere ein Quellenurteil (8–10 Sätze): Was belegt dieser Auszug über die öffentliche Feier von Fortschritt und Kaisertreue im Jahr 1873 — und was können wir aus dieser einen, festlichen Stimme NICHT verlässlich ableiten? Belege zweimal am Wortlaut oder Seitenbild.",
+            "prompt": "Formuliere ein Quellenurteil (8–10 Sätze): Was belegt dieser Auszug über die öffentliche Feier von Fortschritt und Kaisertreue im Jahr 1873 — und was können wir aus dieser einen, festlichen Stimme NICHT verlässlich ableiten? Belege zweimal am Wortlaut (mit Zeilennummer) oder am Scan.",
             "payload": null,
             "response": {
               "mode": "box",
@@ -447,18 +539,44 @@
             ],
             "est_minutes": 14,
             "answer_key": null,
-            "acceptable_reasoning": "Erwartet: Die Quelle belegt, WIE Fortschritt öffentlich inszeniert wurde — als kaiserliche Wohltat und Friedenswerk („der Fortschritt Gemeingut werde“, „Gott segne, Gott schütze, Gott erhalte“). Sie belegt NICHT, wie die Bevölkerung dachte, was das Unternehmen kostete oder ob alle die Begeisterung teilten. Zwei konkrete Belege + klare Reichweitenbegrenzung.",
+            "acceptable_reasoning": "Erwartet: Die Quelle belegt, WIE Fortschritt öffentlich inszeniert wurde — als kaiserliche Wohltat und Friedenswerk („der Fortschritt Gemeingut werde“, Z. 31; „Gott segne, Gott schütze, Gott erhalte“, Z. 44). Sie belegt NICHT, wie die Bevölkerung dachte, was das Unternehmen kostete oder ob alle die Begeisterung teilten. Zwei konkrete Belege + klare Reichweitenbegrenzung.",
             "rubric": [],
             "solution_steps": [],
             "solution_paths": [],
             "solution_asset_refs": [],
             "watch_outs": [],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           }
         ]
       }
     ],
-    "assets": [],
+    "assets": [
+      {
+        "id": "gpb-anno-weltausstellung-1873-crop",
+        "role": "source",
+        "lane": "content",
+        "intended_claim": null,
+        "medium": "visual",
+        "generator": "file:raster",
+        "spec": {
+          "path": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\anno\\files\\gpb-anno-weltausstellung-1873-crop.jpg",
+          "sha1": "f5e4e01ebc6fd6cbd3bcb22b0753e18ac365aaa8"
+        },
+        "correctness_surface": "Exakter, rechtefreier Scanausschnitt des Originals (Identität per SHA-1).",
+        "misleading_in_isolation": false,
+        "intentionally_flawed": null,
+        "machine_generatable": false,
+        "provenance": {
+          "source": "https://anno.onb.ac.at/cgi-content/anno?aid=wrz&datum=18730502&seite=3",
+          "rights": "public_domain",
+          "note": "Bildausschnitt des Originalscans (Österreichische Nationalbibliothek, ÖNB Labs/ANNO); Public Domain Mark 1.0. Gezeigt: Anrede und Zeile 1–15 der Ansprache."
+        },
+        "data_source": null,
+        "illustrative": false,
+        "caption": "Wiener Zeitung, 2. Mai 1873, S. 3 — Scanausschnitt (Zeile 1–15)"
+      }
+    ],
     "anchor_mode": "competence",
     "anchor_uet": null,
     "theme_asset": null,
@@ -579,16 +697,19 @@
     },
     "mixer_profile": null,
     "mixer_lint": null,
+    "glossary": [],
     "rack": null
   },
   "artifacts": {
-    "student_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\.claude\\worktrees\\agent-aff645f08512765ee\\runs\\store\\c0202\\student.pdf",
-    "teacher_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\.claude\\worktrees\\agent-aff645f08512765ee\\runs\\store\\c0202\\teacher.pdf",
-    "homework_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\.claude\\worktrees\\agent-aff645f08512765ee\\runs\\store\\c0202\\homework.pdf",
-    "preview_png": "C:\\Users\\sebas\\Desktop\\TeachersAid\\.claude\\worktrees\\agent-aff645f08512765ee\\runs\\store\\c0202\\raster\\student.p1.png"
+    "student_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0202\\student.pdf",
+    "teacher_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0202\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0202\\homework.pdf",
+    "preview_png": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0202\\raster\\student.p1.png"
   },
   "verify_problems": [],
-  "verify_warnings": [],
+  "verify_warnings": [
+    "anno2.scan: Lesbarkeit (Wiener Sachtextformel) geschätzt auf Schulstufe 9,6 — deutlich über der Zielstufe 7 (Klasse 3) — Text ggf. vereinfachen (kürzere Sätze, weniger Mehrsilbler)."
+  ],
   "parent_id": null,
   "feedback": [],
   "error": null

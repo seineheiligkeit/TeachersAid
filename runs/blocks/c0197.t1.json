@@ -34,11 +34,14 @@
     "acceptable_reasoning": "Direkte Anwendung von a² + b² = c² auf das rechtwinklige Dreieck aus Abbildung 1.",
     "rubric": [],
     "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
     "watch_outs": [
       "Die Hypotenuse s ist immer die längste Seite, gegenüber dem rechten Winkel — nicht mit einer Kathete verwechseln.",
       "4-3-5 ist ein bekanntes pythagoräisches Tripel; manche erraten es, ohne zu rechnen — trotzdem den Rechenweg einfordern."
     ],
-    "self_check": null
+    "self_check": null,
+    "scaffold": null
   },
   "role": "task",
   "kind": "calculation",
@@ -59,6 +62,8 @@
     {
       "id": "abb1",
       "role": "figure",
+      "lane": null,
+      "intended_claim": null,
       "medium": "visual",
       "generator": "matplotlib:right_triangle",
       "spec": {
@@ -79,9 +84,9 @@
       "caption": null
     }
   ],
-  "status": "in_review",
+  "status": "approved",
   "provenance": "harvested:c0197",
   "source": "ai",
   "created_at": "2026-07-05T05:51:17+00:00",
-  "updated_at": "2026-07-05T05:51:17+00:00"
+  "updated_at": "2026-07-14T07:01:21+00:00"
 }

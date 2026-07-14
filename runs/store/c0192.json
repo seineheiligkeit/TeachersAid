@@ -4,7 +4,7 @@
   "status": "pending",
   "source": "generated",
   "created_at": "2026-07-05T05:34:23+00:00",
-  "updated_at": "2026-07-05T05:34:24+00:00",
+  "updated_at": "2026-07-14T08:21:18+00:00",
   "title": "Physik 2. Kl. — Vom Leuchtpunkt zum Bild (generiert)",
   "note": "",
   "request": {
@@ -14,7 +14,9 @@
     "schulform": null,
     "topic_raw": "Vom Leuchtpunkt zum Bild",
     "envelope": "doppelstunde",
-    "options": {}
+    "options": {},
+    "anchor_mode": "competence",
+    "anchor_uet": null
   },
   "resolution": {
     "fassung": {
@@ -203,11 +205,14 @@
             "acceptable_reasoning": "Die Begründung muss den Zusammenhang zwischen dem Kreuzen der Lichtbündel an der Lochblende und der Bildumkehrung erkennen lassen.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Fehlvorstellung: Licht geht durch das Loch wie durch ein Fenster ohne Richtungsauswahl – tatsächlich wählt das enge Loch aus dem Lichtbündel jedes Leuchtpunkts nur einen schmalen Teilstrahl aus.",
               "Manche Kinder denken, ein größeres Loch ergibt ein schärferes Bild – das Gegenteil ist der Fall (unschärfer, aber heller)."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t2",
@@ -246,18 +251,23 @@
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Das Augen-Bild wird oft fälschlich als virtuell eingeordnet, weil man es im Kopf sieht – tatsächlich entsteht es reell auf der Netzhaut; erst die Verarbeitung im Gehirn ist ein zweiter Schritt.",
               "Beim Spiegel wird oft angenommen, hinter dem Spiegel befinde sich tatsächlich Licht – es handelt sich um eine gedankliche Verlängerung der reflektierten Strahlen."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t3",
             "optional": false,
             "modality": "printable",
             "flags": null,
-            "asset_refs": [],
+            "asset_refs": [
+              "fig_lupe_bildkonstruktion"
+            ],
             "provenance": null,
             "role": "task",
             "kind": "experiment_protocol",
@@ -288,11 +298,14 @@
             "acceptable_reasoning": "Ein vollständiges Protokoll enthält: Aufbau, systematisches Verschieben, die Beobachtung eines Scharfstellungspunkts sowie die Feststellung von Bildlage/-orientierung.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Manche Schüler:innen erwarten ein scharfes Bild bei jedem beliebigen Abstand – tatsächlich gibt es nur einen (bzw. wenige) Abstand, bei dem das Bild scharf ist.",
               "Sicherheit: Kerzenflamme nicht zu nahe an Haare/Kleidung, Linse kann Sonnenlicht bündeln – nie auf brennbares Material richten."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t4",
@@ -328,10 +341,13 @@
             "acceptable_reasoning": "Es muss erkennbar sein, dass das Kreuzen der Strahlen an der Blende die Vertauschung von oben/unten bewirkt – nicht nur die bloße Aussage, es sei eben umgekehrt.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Ohne den Blick auf das Kreuzen der Strahlen an der Blende bleibt die Erklärung oberflächlich."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t5",
@@ -380,10 +396,13 @@
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Fehlvorstellung: Das Prisma 'erzeugt' oder 'färbt' das Licht – tatsächlich trennt es nur bereits vorhandene Spektralfarben durch unterschiedlich starke Brechung."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t6",
@@ -435,11 +454,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Unbelegte Behauptungen ohne Quellenangabe sollen als Schwachpunkt erkannt werden – das ist der Kern der Quellenkritik-Kompetenz.",
               "Nicht jede Website ist verlässlich; Schulbuch, Gesundheitsportale öffentlicher Träger oder Fachlexika sind vorzuziehen."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t7",
@@ -490,10 +512,13 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Fachliche Richtigkeit darf nicht der Vereinfachung geopfert werden – das Bild dreht sich einfach um, ohne Bezug zum Lichtbündel/zur Blende, ist zu unpräzise."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           }
         ]
       }
@@ -502,59 +527,38 @@
       {
         "id": "fig_lochkamera_strahlen",
         "role": "figure",
+        "lane": null,
+        "intended_claim": null,
         "medium": "visual",
-        "generator": "matplotlib:coordinate_plane",
+        "generator": "matplotlib:pinhole_camera",
         "spec": {
-          "points": [
-            {
-              "x": 0,
-              "y": 3,
-              "label": "L (oben)"
-            },
-            {
-              "x": 0,
-              "y": -2,
-              "label": "L' (unten)"
-            },
-            {
-              "x": 4,
-              "y": 0,
-              "label": "Blende"
-            },
-            {
-              "x": 9,
-              "y": -1.2,
-              "label": "B (Bildpunkt)"
-            },
-            {
-              "x": 9,
-              "y": 0.8,
-              "label": "B'"
-            }
-          ],
-          "segments": [
-            [
-              0,
-              2
-            ],
-            [
-              2,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              2,
-              4
-            ]
-          ],
-          "xmin": -1,
-          "xmax": 10,
-          "ymin": -3,
-          "ymax": 4,
-          "title": "Lichtbündel durch die Lochblende"
+          "G": 3,
+          "a": 6,
+          "b": 4
+        },
+        "correctness_surface": null,
+        "misleading_in_isolation": false,
+        "intentionally_flawed": null,
+        "machine_generatable": true,
+        "provenance": null,
+        "data_source": null,
+        "illustrative": false,
+        "caption": null
+      },
+      {
+        "id": "fig_lupe_bildkonstruktion",
+        "role": "figure",
+        "lane": null,
+        "intended_claim": null,
+        "medium": "visual",
+        "generator": "matplotlib:optics_ray",
+        "spec": {
+          "kind": "sammellinse",
+          "f": 3,
+          "g": 6,
+          "G": 2,
+          "stage": 5,
+          "title": "Sammellinse (Lupe): Kerze → Bild an der Wand"
         },
         "correctness_surface": null,
         "misleading_in_isolation": false,
@@ -566,6 +570,9 @@
         "caption": null
       }
     ],
+    "anchor_mode": "competence",
+    "anchor_uet": null,
+    "theme_asset": null,
     "nachweis": {
       "fassung": {
         "kurztitel": "AHS-Lehrplan (konsolidiert)",
@@ -574,6 +581,8 @@
         "valid_from": "2024-09-01",
         "valid_to": "2026-08-31"
       },
+      "anchor_mode": "competence",
+      "anchor_label": "Lehrplan-Kompetenzen",
       "statement": "Diese Materialien adressieren 4 von 4 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
       "competence_coverage": [
         {
@@ -642,16 +651,22 @@
       "minutes_total": 54,
       "minutes_resource_independent": 54
     },
+    "mixer_profile": null,
+    "mixer_lint": null,
+    "glossary": [],
     "rack": null
   },
   "artifacts": {
-    "student_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0192\\student.pdf",
-    "teacher_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0192\\teacher.pdf",
-    "homework_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0192\\homework.pdf",
-    "preview_png": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0192\\raster\\student.p1.png"
+    "student_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0192\\student.pdf",
+    "teacher_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0192\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0192\\homework.pdf",
+    "preview_png": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0192\\raster\\student.p1.png"
   },
   "verify_problems": [],
-  "verify_warnings": [],
+  "verify_warnings": [
+    "t6: Lesbarkeit (Wiener Sachtextformel) geschätzt auf Schulstufe 14,0 — deutlich über der Zielstufe 6 (Klasse 2) — Text ggf. vereinfachen (kürzere Sätze, weniger Mehrsilbler).",
+    "t7: Lesbarkeit (Wiener Sachtextformel) geschätzt auf Schulstufe 11,7 — deutlich über der Zielstufe 6 (Klasse 2) — Text ggf. vereinfachen (kürzere Sätze, weniger Mehrsilbler)."
+  ],
   "parent_id": null,
   "feedback": [],
   "error": null

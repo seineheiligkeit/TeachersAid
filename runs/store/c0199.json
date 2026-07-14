@@ -4,7 +4,7 @@
   "status": "pending",
   "source": "curated",
   "created_at": "2026-07-11T06:33:35+00:00",
-  "updated_at": "2026-07-11T06:33:35+00:00",
+  "updated_at": "2026-07-14T06:37:36+00:00",
   "title": "Zeitung als politische Waffe? Quellenarbeit in ANNO",
   "note": "",
   "request": {
@@ -14,7 +14,9 @@
     "schulform": null,
     "topic_raw": "Zeitung als politische Waffe? Quellenarbeit in ANNO",
     "envelope": "doppelstunde",
-    "options": {}
+    "options": {},
+    "anchor_mode": "competence",
+    "anchor_uet": null
   },
   "resolution": {
     "fassung": {
@@ -241,7 +243,7 @@
     },
     "intro": [
       {
-        "id": "anno.hinweis",
+        "id": "anno.ocr",
         "optional": false,
         "modality": "printable",
         "flags": null,
@@ -249,11 +251,12 @@
         "provenance": null,
         "role": "info",
         "kind": "callout",
-        "content": "Öffne die historische Zeitungsseite: https://iiif.onb.ac.at/presentation/ANNO/lmz18710902/canvas/00000001 — Leitmeritzer Zeitung, 2. September 1871, Seite 1. Arbeite immer mit dem Seitenbild UND der maschinellen OCR. Die OCR ist ungeprüft: Übernimm keinen korrigierten Wortlaut, ohne ihn am Scan zu kontrollieren; unlesbare Stellen markierst du ehrlich mit [?].",
+        "content": "OCR heißt automatische Texterkennung. Ein Computer hat den gedruckten Text der alten Zeitung „gelesen“ und in Buchstaben umgewandelt. Die alte Frakturschrift (die „altdeutschen“ Buchstaben) kennt er schlecht. Darum verliest er sich oft: Aus „sind“ wird „find“, aus „und“ wird „nnd“. Diese Fehler sind kein Ärgernis. Sie sind dein Arbeitsauftrag: Vergleiche den Maschinentext (OCR) mit dem Scan und entscheide selbst, was wirklich dasteht. Unsichere Stellen markierst du mit einem [?].",
         "callout_role": "note",
         "teacher_note": null,
         "watch_outs": [],
-        "numbered": true
+        "numbered": true,
+        "backdrop_asset_ref": null
       },
       {
         "id": "anno.methode",
@@ -264,28 +267,116 @@
         "provenance": null,
         "role": "info",
         "kind": "procedure",
-        "content": "Vier Schritte: 1. Quelle bestimmen (Wer? Wann? Wo?). 2. Seitenbild und OCR vergleichen. 3. Wortwahl und Perspektive belegen. 4. Ein begründetes Quellenurteil formulieren.",
+        "content": "So gehst du vor: 1. Quelle bestimmen (Wer schreibt? Wann? Was für ein Text?). 2. Maschinentext (OCR) und Scanausschnitt vergleichen. 3. Wortwahl und Perspektive am Wortlaut belegen — mit Zeilennummern. 4. Ein begründetes Quellenurteil formulieren und ehrlich sagen, was die Quelle NICHT belegt.",
         "callout_role": null,
         "teacher_note": null,
         "watch_outs": [],
-        "numbered": true
+        "numbered": true,
+        "backdrop_asset_ref": null
       }
     ],
     "sections": [
       {
         "id": "anno.quelle",
-        "title": "Vom Digitalisat zum Quellenurteil",
+        "title": "Vom Seitenbild zum Quellenurteil",
         "teacher_overview": {
-          "throughline": "Nicht die OCR glauben und nicht die Quelle verwerfen: Scan und Maschinentext gegeneinander prüfen, Perspektive belegen, Reichweite des Quellenurteils begrenzen.",
+          "throughline": "Nicht der OCR glauben und die Quelle nicht verwerfen: Scan und Maschinentext gegeneinander prüfen, die Perspektive am Wortlaut belegen, die Reichweite des Quellenurteils begrenzen.",
           "talking_points": [
-            "OCR-Fehler sind hier Methode, kein Defekt: Sie zwingen zum Blick auf die Quelle.",
-            "Perspektivität ist keine Widerlegung; sie ist eine Eigenschaft, die untersucht wird."
+            "OCR-Fehler sind hier Methode, kein Defekt: Sie zwingen zum Blick auf den Scan (das lange ſ der Fraktur → oft als f verlesen).",
+            "Perspektivität ist keine Widerlegung; sie ist eine Eigenschaft, die man untersucht — hier über die Schiff-/Wrack- und Geier-Metaphern.",
+            "Alles, was die Klasse braucht, ist auf dem Blatt: der Scanausschnitt und der vollständige OCR-Auszug. Der ANNO-Link ist freiwillige Weiterführung."
           ],
           "extensions": [],
           "differentiation": null,
-          "timing_notes": "Einzel- bis Doppelstunde; Internetzugang für das ANNO-Digitalisat nötig."
+          "timing_notes": "Einzel- bis Doppelstunde; kein Internetzugang nötig."
         },
         "blocks": [
+          {
+            "id": "anno.scan",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "gpb-anno-lehrertag-1871-crop"
+            ],
+            "provenance": null,
+            "role": "info",
+            "kind": "figure",
+            "content": "Oben der Originalscan der Zeitungsseite (Ausschnitt), darunter der maschinell erkannte Text (OCR) mit Zeilennummern. Der Scan zeigt Zeile 1–15 des Auszugs.",
+            "callout_role": null,
+            "teacher_note": null,
+            "watch_outs": [],
+            "numbered": true,
+            "backdrop_asset_ref": null
+          },
+          {
+            "id": "anno.auszug",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": {
+              "expression_origin": "quoted",
+              "sources": [
+                {
+                  "title": "Zum zweiten deutsch-böhmischen Lehrertage in Leitmeritz",
+                  "url": "https://anno.onb.ac.at/cgi-content/anno?aid=lmz&datum=18710902&seite=1",
+                  "publisher": "Leitmeritzer Zeitung, 2. September 1871, S. 1 · Österreichische Nationalbibliothek, ÖNB Labs/ANNO",
+                  "licence": "Public Domain Mark 1.0",
+                  "licence_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+                  "retrieved": "2026-07-11",
+                  "role": "expression",
+                  "redistributable": true,
+                  "author_death_year": null,
+                  "quote_span": null
+                }
+              ],
+              "attribution_required": true,
+              "share_alike_applies": false
+            },
+            "role": "info",
+            "kind": "source_text",
+            "content": "Zum zweiten deutsch-böhmischen Lehrer\ntage in Leitmeritz.\nFührwahr in ! einer verzweifelten Lage be-\nfinde» sich die Liberalen Oesterreichs. Von allen\nSeiten wilder denn je angegriffen, müssen sie mit\ndem Aufgebot aller ihrer Kräfte den \"andrängenden\nFeinden festen Widerstand M leisten suchen; mit\nvereinten Kräften müssen sie ihre Rechte nnd Frei\nheiten vor den heraustürmenden Fluten der Reaktion\nzu retten suchen.' Nicht genng daran, daß der\nFöderalismus das Band, welches alle Völker\nOesterreichs bis jetzt zn einem großen Ganzen\numschlang, freventlich zerreißt, die Einheit der\nMonarchie in winzige Theile zerlegt, das Werk, zu\ndessen Vollendung die Deutscheu ein Jahrtausend\nhindurch dem Kaiser und . Reich zu Liebe ihre\nbesten Kräfte eingesetzt haben, zum Spielball na\ntionaler i Launeu macht/ das stolze Schiff Oester\nreich, dem selbst die gewaltigen Stürme des 19.\n\nJahrhunderts nichts anzuhaben veimochten, ziim\nmast- und ruderlosen Wrak gestaltet, das gar\nleicht vou einer kleinen Welle auf dem Meere\nder politischen EreignM an ten Fels der Ver\nnichtung geschlendert werden kann, — nicht gcnng\nan allen dem sucht auch noch derUltiamontan'smn's\nmit der Gier des nach Nahrung lüsternen Geiers\nseine Krallen in den Leib des armen vielgeqnälten\nOesterreichs einzuhacken, sucht auch der auf\nallen Punkten geschlagene JesnitismnS Oesterreich\nznm letzten Bollwerk seiner Vertheidigung5Iinie zu\nmachen.\n' - Und doch 'wollen wir nicht verzagen!\nMit dem Muthe der Männer,^ die ihr Hei\nligstes bis auf den Tod zu vertheidigen wissen,\nwollen wir in den Kamps gegen diese Feinde des\nReiches ziehen, — wollen ihnen zeigen,, daß\nder Geist der Freiheit und des Lichts, der zugleich\nder Geist unseres Jahrhunderts ist, sich nicht nn-\ngestrast verhöhnen läßt, daß der Liberalismus eiu\nSegen für seine Jünger, eine »ubcnmherzige Pcilsche\nfür seine Gegner ist, daß im Geiste 'des Fort\nschrittes und der Bildung eine Titanenkraft\nliegt, die die Finsterlinge auf Nimmerwiederans-\nsteheii zu zerschmettern vermag. Groß ist die\nArbeit, groß aber auch t er \"Sieg, den keine\nMacht der Welt nnS entreißen kann.",
+            "callout_role": null,
+            "teacher_note": "Maschinelle OCR, ungeprüft (Public Domain Mark, ÖNB Labs/ANNO). Der Wortlaut ist unverändert — die Lesefehler sind Absicht und der Gegenstand von Aufgabe 2. Historische Rechtschreibung bleibt erhalten.",
+            "watch_outs": [],
+            "numbered": true,
+            "backdrop_asset_ref": null
+          },
+          {
+            "id": "anno.digitalisat",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": {
+              "expression_origin": "original",
+              "sources": [
+                {
+                  "title": "ANNO-Digitalisat (Seitennachweis)",
+                  "url": "https://anno.onb.ac.at/cgi-content/anno?aid=lmz&datum=18710902&seite=1",
+                  "publisher": "Österreichische Nationalbibliothek, ÖNB Labs/ANNO",
+                  "licence": "Public Domain Mark 1.0",
+                  "licence_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+                  "retrieved": "2026-07-11",
+                  "role": "facts",
+                  "redistributable": true,
+                  "author_death_year": null,
+                  "quote_span": null
+                }
+              ],
+              "attribution_required": false,
+              "share_alike_applies": false
+            },
+            "role": "info",
+            "kind": "prose",
+            "content": "Digitalisat der vollständigen Zeitungsseite (Österreichische Nationalbibliothek, ÖNB Labs/ANNO): https://anno.onb.ac.at/cgi-content/anno?aid=lmz&datum=18710902&seite=1 — für die Aufgaben brauchst du nur dieses Blatt, der Link ist zum Weiterstöbern.",
+            "callout_role": null,
+            "teacher_note": null,
+            "watch_outs": [],
+            "numbered": true,
+            "backdrop_asset_ref": null
+          },
           {
             "id": "anno.t1",
             "optional": false,
@@ -295,7 +386,7 @@
             "provenance": null,
             "role": "task",
             "kind": "source_analysis",
-            "prompt": "Bestimme die Quelle: Notiere Zeitungstitel, Datum, Seite und die Überschrift des Artikels. Erkläre anschließend, warum die Seite eine Quelle und keine spätere Darstellung ist.",
+            "prompt": "Arbeite am Scanausschnitt (nicht an der OCR): (a) Lies die Überschrift des Artikels in der Frakturschrift und schreibe sie in heutiger Schrift ab. (b) Der Auszug ist eine Quelle, keine spätere Darstellung. Begründe das mit zwei Merkmalen (denke an das Erscheinungsjahr und daran, wer hier schreibt).",
             "payload": null,
             "response": {
               "mode": "lines",
@@ -314,14 +405,17 @@
               }
             ],
             "est_minutes": 8,
-            "answer_key": "Leitmeritzer Zeitung; 2. September 1871; Seite 1; „Zum zweiten deutsch-böhmischen Lehrertage in Leitmeritz“. Quelle: Die Zeitung entstand 1871 und ist damit ein zeitgenössisches Medienzeugnis.",
+            "answer_key": "(a) „Zum zweiten deutsch-böhmischen Lehrertage in Leitmeritz.“ (b) Quelle: Der Text entstand 1871, also zur Zeit selbst (zeitgenössisches Zeugnis); er ist ein Leitartikel — eine wertende Stimme von damals, keine spätere, einordnende Zusammenfassung wie ein Schulbuchtext.",
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
             "solution_paths": [],
             "solution_asset_refs": [],
-            "watch_outs": [],
-            "self_check": null
+            "watch_outs": [
+              "Kern ist das Fraktur-Lesen am Scan + die Unterscheidung Quelle/Darstellung — nicht das Abschreiben der Quellenangabe (die steht schon unter dem Auszug)."
+            ],
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "anno.t2",
@@ -332,12 +426,12 @@
             "provenance": null,
             "role": "task",
             "kind": "source_analysis",
-            "prompt": "OCR-Prüfung: Finde drei Stellen, an denen die OCR nicht sicher zum Seitenbild passt. Notiere jeweils (a) den OCR-Wortlaut, (b) deine Lesung am Scan und (c) wie sicher du bist. Verwende [?], wenn die Stelle offen bleibt.",
+            "prompt": "OCR-Prüfung: Vergleiche Zeile 1–15 des Auszugs (OCR) mit dem Scanausschnitt. Finde drei Stellen, an denen die OCR falsch gelesen hat. Notiere je (a) den OCR-Wortlaut mit Zeilennummer, (b) was am Scan wirklich steht, (c) wie sicher du bist. Verwende [?], wenn eine Stelle offen bleibt.",
             "payload": null,
             "response": {
               "mode": "table",
               "columns": [
-                "OCR",
+                "OCR (mit Zeile)",
                 "Lesung am Scan",
                 "Sicherheit"
               ],
@@ -356,16 +450,18 @@
               }
             ],
             "est_minutes": 10,
-            "answer_key": "Erwartet: drei nachvollziehbare Vergleiche direkt am Scan. Korrekt ist nur eine Lesung, die das Seitenbild trägt; Unsicherheit darf und soll mit [?] markiert werden. Nicht die moderne Rechtschreibung, sondern der gedruckte Wortlaut ist maßgeblich.",
+            "answer_key": "Klare Beispiele in Zeile 1–15: „nnd“ (Z. 8) → „und“; „genng“ (Z. 10) → „genug“; „zn“ (Z. 12) → „zu“; „finde»“ (Z. 4) → „finden“; „Deutscheu“ (Z. 15) → „Deutschen“. Korrekt ist nur eine Lesung, die das Seitenbild trägt; Unsicherheit darf und soll mit [?] markiert werden. Maßgeblich ist der gedruckte Wortlaut, nicht die moderne Rechtschreibung.",
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
             "solution_paths": [],
             "solution_asset_refs": [],
             "watch_outs": [
-              "Keine stillen OCR-Korrekturen akzeptieren: Scanbeleg oder [?]."
+              "Keine stillen OCR-Korrekturen akzeptieren: Scanbeleg oder [?].",
+              "Die Fraktur nutzt ein langes ſ, das die OCR oft als f verliest — ein guter Prüf-Reflex."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "anno.t3",
@@ -376,7 +472,7 @@
             "provenance": null,
             "role": "task",
             "kind": "source_analysis",
-            "prompt": "Untersuche zwei Bildfelder des Artikels: (a) Österreich als „stolzes Schiff“, das zum „mast- und ruderlosen Wrak“ werde; (b) die politischen Gegner als „nach Nahrung lüsterner Geier“. Was bewirken diese Bilder?",
+            "prompt": "Untersuche zwei Bildfelder des Leitartikels im gedruckten Auszug: (a) Österreich als „stolze Schiff“ (Zeile 18), das zum „mast- und ruderlosen Wrak“ (Zeile 21) werde; (b) die politischen Gegner als „nach Nahrung lüsternen Geiers“ mit „Krallen“ (Zeile 26). Was bewirken diese Bilder bei den Leserinnen und Lesern?",
             "payload": null,
             "response": {
               "mode": "lines",
@@ -395,14 +491,15 @@
               }
             ],
             "est_minutes": 10,
-            "answer_key": "Schiff/Wrack: dramatisiert staatlichen Zerfall und fehlende Steuerung. Geier/Krallen: entmenschlicht politische Gegner und stellt sie als räuberische Bedrohung dar. Beide Bilder emotionalisieren und mobilisieren.",
+            "answer_key": "Schiff/Wrack: dramatisiert den staatlichen Zerfall und die fehlende Steuerung (aus dem stolzen Schiff wird ein steuerloses Wrack). Geier/Krallen: entmenschlicht die politischen Gegner und stellt sie als räuberische Bedrohung dar. Beide Bilder emotionalisieren und mobilisieren — aus einer Meinung wird ein dringender Aufruf.",
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
             "solution_paths": [],
             "solution_asset_refs": [],
             "watch_outs": [],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "anno.t4",
@@ -413,7 +510,7 @@
             "provenance": null,
             "role": "task",
             "kind": "open_response",
-            "prompt": "Formuliere ein Quellenurteil (8–10 Sätze): Was erfahren wir aus dem Artikel über politische Kommunikation im Jahr 1871 — und was können wir aus dieser einzelnen, parteilichen Stimme NICHT verlässlich ableiten? Belege zweimal am Wortlaut oder Seitenbild.",
+            "prompt": "Formuliere ein Quellenurteil (8–10 Sätze): Was erfahren wir aus diesem Artikel über politische Kommunikation im Jahr 1871 — und was können wir aus dieser einen, parteilichen Stimme NICHT verlässlich ableiten? Belege zweimal am Wortlaut (mit Zeilennummer) oder am Scan.",
             "payload": null,
             "response": {
               "mode": "box",
@@ -438,18 +535,47 @@
             ],
             "est_minutes": 14,
             "answer_key": null,
-            "acceptable_reasoning": "Erwartet: Die Quelle zeigt eine stark wertende liberale Perspektive und politische Mobilisierung durch Metaphern/Wir-Form. Sie belegt nicht, wie alle Menschen dachten oder wie die politische Lage objektiv war. Zwei konkrete Belege + Reichweitenbegrenzung.",
+            "acceptable_reasoning": "Erwartet: Die Quelle zeigt eine stark wertende liberale Perspektive und politische Mobilisierung durch Metaphern und Wir-Form. Sie belegt NICHT, wie alle Menschen dachten oder wie die politische Lage objektiv war. Zwei konkrete Belege (Zeile oder Scan) + eine klare Reichweitenbegrenzung.",
             "rubric": [],
             "solution_steps": [],
             "solution_paths": [],
             "solution_asset_refs": [],
             "watch_outs": [],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           }
         ]
       }
     ],
-    "assets": [],
+    "assets": [
+      {
+        "id": "gpb-anno-lehrertag-1871-crop",
+        "role": "source",
+        "lane": "content",
+        "intended_claim": null,
+        "medium": "visual",
+        "generator": "file:raster",
+        "spec": {
+          "path": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\anno\\files\\gpb-anno-lehrertag-1871-crop.jpg",
+          "sha1": "ccde3559184e453d10ec9b1d624f84e313eb2891"
+        },
+        "correctness_surface": "Exakter, rechtefreier Scanausschnitt des Originals (Identität per SHA-1).",
+        "misleading_in_isolation": false,
+        "intentionally_flawed": null,
+        "machine_generatable": false,
+        "provenance": {
+          "source": "https://anno.onb.ac.at/cgi-content/anno?aid=lmz&datum=18710902&seite=1",
+          "rights": "public_domain",
+          "note": "Bildausschnitt des Originalscans (Österreichische Nationalbibliothek, ÖNB Labs/ANNO); Public Domain Mark 1.0. Gezeigt: Überschrift und Zeile 1–15 des Leitartikels."
+        },
+        "data_source": null,
+        "illustrative": false,
+        "caption": "Leitmeritzer Zeitung, 2. September 1871, S. 1 — Scanausschnitt (Zeile 1–15)"
+      }
+    ],
+    "anchor_mode": "competence",
+    "anchor_uet": null,
+    "theme_asset": null,
     "nachweis": {
       "fassung": {
         "kurztitel": "AHS-Lehrplan (konsolidiert)",
@@ -458,6 +584,8 @@
         "valid_from": "2024-09-01",
         "valid_to": "2026-08-31"
       },
+      "anchor_mode": "competence",
+      "anchor_label": "Lehrplan-Kompetenzen",
       "statement": "Diese Materialien adressieren 3 von 10 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
       "competence_coverage": [
         {
@@ -562,6 +690,9 @@
       "minutes_total": 42,
       "minutes_resource_independent": 42
     },
+    "mixer_profile": null,
+    "mixer_lint": null,
+    "glossary": [],
     "rack": null
   },
   "artifacts": {
@@ -572,7 +703,7 @@
   },
   "verify_problems": [],
   "verify_warnings": [
-    "anno.t4: Lesbarkeit (Wiener Sachtextformel) geschätzt auf Schulstufe 11,8 — deutlich über der Zielstufe 7 (Klasse 3) — Text ggf. vereinfachen (kürzere Sätze, weniger Mehrsilbler)."
+    "anno.t4: Lesbarkeit (Wiener Sachtextformel) geschätzt auf Schulstufe 10,0 — deutlich über der Zielstufe 7 (Klasse 3) — Text ggf. vereinfachen (kürzere Sätze, weniger Mehrsilbler)."
   ],
   "parent_id": null,
   "feedback": [],

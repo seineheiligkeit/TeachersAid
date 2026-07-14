@@ -38,10 +38,13 @@
     "acceptable_reasoning": "Jede Beschreibung, die den Anstieg von negativer zu positiver Temperatur korrekt wiedergibt, wird akzeptiert, auch ohne exakten Differenzwert, solange die Bewegung auf der Zahlengeraden richtig gedeutet wird.",
     "rubric": [],
     "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
     "watch_outs": [
       "Die Differenz zwischen einer negativen und einer positiven Zahl wird oft als einfache Subtraktion der Beträge (12 − 2 = 10) statt als 12 − (−2) = 14 gerechnet – das ist der zentrale Lernpunkt der Aufgabe."
     ],
-    "self_check": null
+    "self_check": null,
+    "scaffold": null
   },
   "role": "task",
   "kind": "data_interpretation",
@@ -63,6 +66,8 @@
     {
       "id": "a1",
       "role": "figure",
+      "lane": null,
+      "intended_claim": null,
       "medium": "visual",
       "generator": "matplotlib:number_line",
       "spec": {
@@ -90,9 +95,9 @@
       "caption": "Temperaturverlauf am Wandertag (°C)"
     }
   ],
-  "status": "in_review",
+  "status": "approved",
   "provenance": "harvested:c0184",
   "source": "ai",
   "created_at": "2026-07-05T05:34:18+00:00",
-  "updated_at": "2026-07-05T05:34:18+00:00"
+  "updated_at": "2026-07-14T07:21:48+00:00"
 }

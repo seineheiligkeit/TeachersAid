@@ -1,10 +1,10 @@
 {
   "id": "c0175",
   "stage": "content",
-  "status": "pending",
+  "status": "approved",
   "source": "generated",
   "created_at": "2026-07-05T05:34:13+00:00",
-  "updated_at": "2026-07-05T05:34:13+00:00",
+  "updated_at": "2026-07-14T07:45:34+00:00",
   "title": "Biologie und Umweltbildung 2. Kl. — Pilze – die heimlichen Netzwerker des Waldes (generiert)",
   "note": "",
   "request": {
@@ -14,7 +14,9 @@
     "schulform": null,
     "topic_raw": "Pilze – die heimlichen Netzwerker des Waldes",
     "envelope": "doppelstunde",
-    "options": {}
+    "options": {},
+    "anchor_mode": "competence",
+    "anchor_uet": null
   },
   "resolution": {
     "fassung": {
@@ -246,7 +248,8 @@
         "callout_role": null,
         "teacher_note": null,
         "watch_outs": [],
-        "numbered": true
+        "numbered": true,
+        "backdrop_asset_ref": null
       }
     ],
     "sections": [
@@ -301,10 +304,13 @@
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Häufige Fehlvorstellung: Der Fruchtkörper WIRD als 'der Pilz' verstanden – tatsächlich ist er nur ein kleiner, kurzlebiger Teil des viel größeren Myzels."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t2",
@@ -340,10 +346,13 @@
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Diese Zahlen sind grobe, gerundete Schätzungen aus der Mykologie (die tatsächliche Gesamtzahl der Pilzarten ist unbekannt) – nicht als exakte Fakten darstellen."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t3",
@@ -389,10 +398,13 @@
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Manche Pilze wechseln je nach Bedingungen zwischen den Lebensweisen (z.B. Hallimasch kann sowohl Schwächeparasit als auch Saprophyt sein) – für Klasse 2 reicht die grundsätzliche Unterscheidung."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t4",
@@ -426,10 +438,13 @@
             "acceptable_reasoning": "Akzeptiert wird jeder Versuchsaufbau, der klar eine Kontrollgruppe (ohne Pilz) und eine Versuchsgruppe (mit Pilz) unterscheidet und eine messbare Wachstumsgröße nennt.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Zentral ist die Idee der Kontrollgruppe – ohne sie lässt sich ein beobachteter Unterschied nicht eindeutig auf den Pilz zurückführen."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t5",
@@ -463,10 +478,13 @@
             "acceptable_reasoning": "Auch vereinfachte Begriffe wie 'Nährstoffe' statt 'Mineralstoffe' oder 'Nahrung' statt 'Zucker' werden akzeptiert, solange die Richtung des Austauschs (wer gibt was) korrekt ist.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Ein Modell zeigt das Prinzip vereinfacht – reale Mykorrhiza-Netzwerke verbinden oft viele Bäume gleichzeitig, das kann als Erweiterung erwähnt werden, muss aber nicht gezeichnet werden."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t6",
@@ -505,10 +523,13 @@
             "acceptable_reasoning": "Es genügt für Klasse 2, wenn 'keine Fotosynthese' als Hauptunterscheidungsmerkmal genannt wird – der Chitin-Aspekt ist eine mögliche Ergänzung, aber nicht zwingend.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Diese Fehlvorstellung ('Pilze = Pflanzen') ist sehr verbreitet und sollte explizit korrigiert werden, nicht nur implizit."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t7",
@@ -554,10 +575,13 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Ziel ist nicht 'nichts anfassen dürfen', sondern eine begründete Abwägung zwischen Neugier/Lernen und Naturschutz."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           }
         ]
       }
@@ -566,6 +590,8 @@
       {
         "id": "fig_pilzarten",
         "role": "figure",
+        "lane": null,
+        "intended_claim": null,
         "medium": "visual",
         "generator": "matplotlib:bar_chart",
         "spec": {
@@ -594,6 +620,9 @@
         "caption": null
       }
     ],
+    "anchor_mode": "competence",
+    "anchor_uet": null,
+    "theme_asset": null,
     "nachweis": {
       "fassung": {
         "kurztitel": "AHS-Lehrplan (konsolidiert)",
@@ -602,6 +631,8 @@
         "valid_from": "2024-09-01",
         "valid_to": "2026-08-31"
       },
+      "anchor_mode": "competence",
+      "anchor_label": "Lehrplan-Kompetenzen",
       "statement": "Diese Materialien adressieren 7 von 10 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
       "competence_coverage": [
         {
@@ -718,13 +749,16 @@
       "minutes_total": 49,
       "minutes_resource_independent": 49
     },
+    "mixer_profile": null,
+    "mixer_lint": null,
+    "glossary": [],
     "rack": null
   },
   "artifacts": {
-    "student_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0175\\student.pdf",
-    "teacher_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0175\\teacher.pdf",
-    "homework_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0175\\homework.pdf",
-    "preview_png": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0175\\raster\\student.p1.png"
+    "student_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0175\\student.pdf",
+    "teacher_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0175\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0175\\homework.pdf",
+    "preview_png": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0175\\raster\\student.p1.png"
   },
   "verify_problems": [],
   "verify_warnings": [],

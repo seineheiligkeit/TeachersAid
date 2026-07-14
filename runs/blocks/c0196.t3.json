@@ -34,10 +34,13 @@
     "acceptable_reasoning": "Jede plausible alternative Bestäubungsquelle für den 0-Besuche-Fall wird akzeptiert (Wind, andere Insektenarten, Selbstbestäubung).",
     "rubric": [],
     "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
     "watch_outs": [
       "Nicht automatisch 'mehr Bienen = Ursache' als bewiesen hinstellen – der Zusammenhang ist stark, aber die Aufgabe verlangt auch das Gegenbeispiel (0 Besuche, trotzdem Früchte) zu erklären."
     ],
-    "self_check": null
+    "self_check": null,
+    "scaffold": null
   },
   "role": "task",
   "kind": "data_interpretation",
@@ -58,6 +61,8 @@
     {
       "id": "df2",
       "role": "figure",
+      "lane": null,
+      "intended_claim": null,
       "medium": "visual",
       "generator": "matplotlib:scatter",
       "spec": {
@@ -106,9 +111,9 @@
       "caption": null
     }
   ],
-  "status": "in_review",
+  "status": "approved",
   "provenance": "harvested:c0196",
   "source": "ai",
   "created_at": "2026-07-05T05:51:15+00:00",
-  "updated_at": "2026-07-05T05:51:15+00:00"
+  "updated_at": "2026-07-14T07:02:16+00:00"
 }

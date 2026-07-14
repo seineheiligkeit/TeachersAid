@@ -52,11 +52,14 @@
       }
     ],
     "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
     "watch_outs": [
       "Bei (a) wird oft alt − neu statt neu − alt gerechnet, was das Vorzeichen der Einzahlung verfälscht.",
       "Der Betrag in (c) wird manchmal vergessen — ein negatives Zwischenergebnis bleibt negativ stehen, obwohl nach dem Abstand gefragt ist."
     ],
-    "self_check": null
+    "self_check": null,
+    "scaffold": null
   },
   "role": "task",
   "kind": "calculation",
@@ -78,6 +81,8 @@
     {
       "id": "abb_konto",
       "role": "figure",
+      "lane": null,
+      "intended_claim": null,
       "medium": "visual",
       "generator": "matplotlib:number_line",
       "spec": {
@@ -106,9 +111,9 @@
       "caption": null
     }
   ],
-  "status": "in_review",
+  "status": "approved",
   "provenance": "harvested:c0186",
   "source": "ai",
   "created_at": "2026-07-05T05:34:19+00:00",
-  "updated_at": "2026-07-05T05:34:19+00:00"
+  "updated_at": "2026-07-14T07:15:41+00:00"
 }

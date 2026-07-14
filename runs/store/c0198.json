@@ -1,10 +1,10 @@
 {
   "id": "c0198",
   "stage": "content",
-  "status": "pending",
+  "status": "approved",
   "source": "variants",
   "created_at": "2026-07-11T06:20:31+00:00",
-  "updated_at": "2026-07-11T06:20:32+00:00",
+  "updated_at": "2026-07-14T07:44:59+00:00",
   "title": "Mathematik 1. Kl. — Quadernetz: Oberflächeninhalt (2 Varianten · ansteigend)",
   "note": "",
   "request": {
@@ -14,7 +14,9 @@
     "schulform": null,
     "topic_raw": "Quadernetz: Oberflächeninhalt",
     "envelope": "doppelstunde",
-    "options": {}
+    "options": {},
+    "anchor_mode": "competence",
+    "anchor_uet": null
   },
   "resolution": {
     "fassung": {
@@ -165,7 +167,8 @@
         "callout_role": "note",
         "teacher_note": null,
         "watch_outs": [],
-        "numbered": true
+        "numbered": true,
+        "backdrop_asset_ref": null
       },
       {
         "id": "uebung.rahmen",
@@ -180,7 +183,8 @@
         "callout_role": null,
         "teacher_note": null,
         "watch_outs": [],
-        "numbered": true
+        "numbered": true,
+        "backdrop_asset_ref": null
       }
     ],
     "sections": [
@@ -245,7 +249,8 @@
             "solution_paths": [],
             "solution_asset_refs": [],
             "watch_outs": [],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "mat-quader-oberflaeche#2",
@@ -297,7 +302,8 @@
             "solution_paths": [],
             "solution_asset_refs": [],
             "watch_outs": [],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           }
         ]
       }
@@ -306,6 +312,8 @@
       {
         "id": "mat-quader-oberflaeche-1-fig",
         "role": "figure",
+        "lane": null,
+        "intended_claim": null,
         "medium": "visual",
         "generator": "matplotlib:solid_net",
         "spec": {
@@ -331,6 +339,8 @@
       {
         "id": "mat-quader-oberflaeche-2-fig",
         "role": "figure",
+        "lane": null,
+        "intended_claim": null,
         "medium": "visual",
         "generator": "matplotlib:solid_net",
         "spec": {
@@ -354,6 +364,9 @@
         "caption": null
       }
     ],
+    "anchor_mode": "competence",
+    "anchor_uet": null,
+    "theme_asset": null,
     "nachweis": {
       "fassung": {
         "kurztitel": "AHS-Lehrplan (konsolidiert)",
@@ -362,6 +375,8 @@
         "valid_from": "2024-09-01",
         "valid_to": "2026-08-31"
       },
+      "anchor_mode": "competence",
+      "anchor_label": "Lehrplan-Kompetenzen",
       "statement": "Diese Materialien adressieren 1 von 3 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
       "competence_coverage": [
         {
@@ -408,6 +423,9 @@
       "minutes_total": 12,
       "minutes_resource_independent": 12
     },
+    "mixer_profile": null,
+    "mixer_lint": null,
+    "glossary": [],
     "rack": null
   },
   "artifacts": {

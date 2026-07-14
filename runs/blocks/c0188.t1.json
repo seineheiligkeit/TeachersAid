@@ -52,11 +52,14 @@
       }
     ],
     "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
     "watch_outs": [
       "Die Dreiecksfläche wird manchmal ohne Division durch 2 berechnet (Grundseite mal Höhe statt Grundseite mal Höhe durch 2).",
       "Die Höhe des Dreiecks (3 m) darf nicht mit einer Seitenlänge verwechselt werden — sie steht senkrecht auf der Grundseite."
     ],
-    "self_check": null
+    "self_check": null,
+    "scaffold": null
   },
   "role": "task",
   "kind": "calculation",
@@ -78,6 +81,8 @@
     {
       "id": "abb_grundstueck",
       "role": "figure",
+      "lane": null,
+      "intended_claim": null,
       "medium": "visual",
       "generator": "matplotlib:polygon",
       "spec": {
@@ -129,9 +134,9 @@
       "caption": null
     }
   ],
-  "status": "in_review",
+  "status": "approved",
   "provenance": "harvested:c0188",
   "source": "ai",
   "created_at": "2026-07-05T05:34:21+00:00",
-  "updated_at": "2026-07-05T05:34:21+00:00"
+  "updated_at": "2026-07-14T07:13:32+00:00"
 }

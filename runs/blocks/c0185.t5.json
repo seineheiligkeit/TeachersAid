@@ -38,11 +38,14 @@
     "acceptable_reasoning": null,
     "rubric": [],
     "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
     "watch_outs": [
       "Bei der Dreiecksfläche wird die Division durch 2 häufig vergessen (Ergebnis dann fälschlich 20 m² statt 10 m²).",
       "Die Höhe des Dreiecks (4 m, senkrecht zur Grundseite) darf nicht mit einer der schrägen Seiten verwechselt werden."
     ],
-    "self_check": null
+    "self_check": null,
+    "scaffold": null
   },
   "role": "task",
   "kind": "calculation",
@@ -64,6 +67,8 @@
     {
       "id": "a3",
       "role": "figure",
+      "lane": null,
+      "intended_claim": null,
       "medium": "visual",
       "generator": "matplotlib:polygon",
       "spec": {
@@ -101,9 +106,9 @@
       "caption": "Beet 2, dreieckig, Grundseite EF = 5 m, Höhe 4 m"
     }
   ],
-  "status": "in_review",
+  "status": "approved",
   "provenance": "harvested:c0185",
   "source": "ai",
   "created_at": "2026-07-05T05:34:19+00:00",
-  "updated_at": "2026-07-05T05:34:19+00:00"
+  "updated_at": "2026-07-14T07:20:05+00:00"
 }

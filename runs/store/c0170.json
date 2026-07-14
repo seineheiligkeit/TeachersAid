@@ -1,10 +1,10 @@
 {
   "id": "c0170",
   "stage": "content",
-  "status": "pending",
+  "status": "approved",
   "source": "generated",
   "created_at": "2026-07-05T05:34:10+00:00",
-  "updated_at": "2026-07-05T05:34:11+00:00",
+  "updated_at": "2026-07-14T07:44:29+00:00",
   "title": "Biologie und Umweltbildung 1. Kl. — Wer braucht wen? Der Teich als Lebensraum (generiert)",
   "note": "",
   "request": {
@@ -14,7 +14,9 @@
     "schulform": null,
     "topic_raw": "Wer braucht wen? Der Teich als Lebensraum",
     "envelope": "doppelstunde",
-    "options": {}
+    "options": {},
+    "anchor_mode": "competence",
+    "anchor_uet": null
   },
   "resolution": {
     "fassung": {
@@ -284,10 +286,13 @@
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Häufiger Fehler: Schüler:innen zählen nur Tiere auf, ohne die Abhängigkeiten zu benennen. Auf das Wort 'weil' in der Antwort achten."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t1b",
@@ -336,10 +341,13 @@
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Schüler:innen verwechseln oft eine 'interessante' Frage mit einer 'naturwissenschaftlichen' Frage. Entscheidend ist: Kann man sie durch Beobachtung/Messung beantworten?"
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t2",
@@ -388,10 +396,13 @@
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Manche Ursachen wirken indirekt (Dünger → Algen → weniger Licht für andere Pflanzen); eine einfache 1-zu-1-Zuordnung reicht hier trotzdem als Einstieg."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t3",
@@ -427,10 +438,13 @@
             "acceptable_reasoning": "Jede plausible Verzerrungsquelle zählt: Sichtbarkeit, Versteck, Bewegung, Tageszeit, Beobachtungsdauer. Als Verbesserung zählt jeder Vorschlag, der die Verzerrung gezielt verringert (mehr Wiederholungen, andere Methode, mehrere Beobachter:innen).",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Zentraler Denkfehler: 'am meisten gesehen' = 'am meisten vorhanden' wird oft unhinterfragt übernommen. Die Beurteilung der Methode (nicht nur das Benennen einer Schwäche) ist hier der eigentliche Anspruch (ERK.04 auf AB III)."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t4",
@@ -468,10 +482,13 @@
             "acceptable_reasoning": "Wichtig ist das Prinzip 'nur eine Sache verändern' (hier: Tageszeit), alles andere möglichst gleich halten – nicht die exakte Zeitangabe.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Schüler:innen vergessen oft, dass ein fairer Vergleich gleiche Bedingungen braucht – ohne das ist ein Unterschied nicht aussagekräftig."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t5",
@@ -508,10 +525,13 @@
             "acceptable_reasoning": "Auch eine begründete Gegenposition (z. B. mit Ausgleichsmaßnahmen) wird akzeptiert, wenn sie den Lebensraumverlust fachlich benennt und nicht ignoriert.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Bewertet wird die Qualität der fachlichen Begründung (Lebensraum, Abhängigkeiten), nicht ob die 'richtige' Seite gewählt wird."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t6",
@@ -559,10 +579,13 @@
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Kern von STA.01: naturwissenschaftlich prüfbar heißt nicht automatisch 'wahr' oder 'wichtiger' – nur, dass man es an der Wirklichkeit testen kann."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           }
         ]
       }
@@ -571,6 +594,8 @@
       {
         "id": "df1",
         "role": "figure",
+        "lane": null,
+        "intended_claim": null,
         "medium": "visual",
         "generator": "matplotlib:bar_chart",
         "spec": {
@@ -603,6 +628,9 @@
         "caption": null
       }
     ],
+    "anchor_mode": "competence",
+    "anchor_uet": null,
+    "theme_asset": null,
     "nachweis": {
       "fassung": {
         "kurztitel": "AHS-Lehrplan (konsolidiert)",
@@ -611,6 +639,8 @@
         "valid_from": "2024-09-01",
         "valid_to": "2026-08-31"
       },
+      "anchor_mode": "competence",
+      "anchor_label": "Lehrplan-Kompetenzen",
       "statement": "Diese Materialien adressieren 6 von 10 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
       "competence_coverage": [
         {
@@ -724,13 +754,16 @@
       "minutes_total": 64,
       "minutes_resource_independent": 64
     },
+    "mixer_profile": null,
+    "mixer_lint": null,
+    "glossary": [],
     "rack": null
   },
   "artifacts": {
-    "student_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0170\\student.pdf",
-    "teacher_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0170\\teacher.pdf",
-    "homework_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0170\\homework.pdf",
-    "preview_png": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0170\\raster\\student.p1.png"
+    "student_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0170\\student.pdf",
+    "teacher_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0170\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0170\\homework.pdf",
+    "preview_png": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0170\\raster\\student.p1.png"
   },
   "verify_problems": [],
   "verify_warnings": [],

@@ -1,10 +1,10 @@
 {
   "id": "c0189",
   "stage": "content",
-  "status": "pending",
+  "status": "approved",
   "source": "generated",
   "created_at": "2026-07-05T05:34:22+00:00",
-  "updated_at": "2026-07-05T05:34:22+00:00",
+  "updated_at": "2026-07-14T07:45:13+00:00",
   "title": "Mathematik 4. Kl. — Die Diagonale des Blumenbeets — reelle Zahlen im Garten (generiert)",
   "note": "",
   "request": {
@@ -14,7 +14,9 @@
     "schulform": null,
     "topic_raw": "Die Diagonale des Blumenbeets — reelle Zahlen im Garten",
     "envelope": "doppelstunde",
-    "options": {}
+    "options": {},
+    "anchor_mode": "competence",
+    "anchor_uet": null
   },
   "resolution": {
     "fassung": {
@@ -193,11 +195,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Manche verwechseln Umfang und Diagonale — klarstellen, dass die Diagonale das Beet schräg durchquert.",
               "Der Lehrsatz gilt nur, weil das Beet quadratisch ist (rechte Winkel!) — das ist keine Selbstverständlichkeit bei jedem Viereck."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t2",
@@ -239,11 +244,14 @@
             "acceptable_reasoning": "Kenntnis der Mengenbeziehung rational ⊂ reell und der Vorstellung von der lückenlosen Zahlengeraden.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Häufige Fehlvorstellung: „reell“ und „rational“ werden als Synonyme verwendet — das Wortbild verleitet dazu.",
               "Aussage 2 provoziert absichtlich diesen Fehler; hier genau nachfragen, ob ein Gegenbeispiel genannt werden kann."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t3",
@@ -289,11 +297,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Nicht raten lassen, sondern das Testen und Verfeinern wirklich schriftlich dokumentieren — das ist der eigentliche Lerninhalt.",
               "Der Punkt auf dem Zahlenstrahl muss zwischen 2,8 und 2,9 liegen, nicht bei 2,5 oder 3."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t4",
@@ -328,11 +339,14 @@
             "acceptable_reasoning": "Direktes Nachrechnen mit Technologie, Addition der Reserve, sinnvolles Aufrunden beim Materialeinkauf.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Aufrunden ist hier bewusst sinnvoll (man kauft lieber etwas zu viel Schnur als zu wenig) — das steht im Gegensatz zum reinen Abrunden bei Dezimalstellen.",
               "Einheit m/cm sauber umrechnen — ein klassischer Stolperstein."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t5",
@@ -384,11 +398,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Die Fehlvorstellung „Wurzel ist wie Multiplizieren/Verteilen“ ist bei dieser Klassenstufe sehr verbreitet — dieses Gegenbeispiel ist deshalb bewusst gewählt.",
               "Der zweite Teil der Antwort (Übertragung auf Näherungswerte allgemein) wird oft vergessen — explizit einfordern."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t6",
@@ -440,11 +457,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Manche wählen unbewusst Zahlen, die ein pythagoräisches Tripel bilden (3-4-5) und bekommen so ein rationales Ergebnis — dann nachfragen, ob das der Aufgabenstellung entspricht.",
               "Die Rundungsbegründung darf nicht fehlen — nur eine Zahl hinzuschreiben reicht nicht."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           }
         ]
       }
@@ -453,6 +473,8 @@
       {
         "id": "abb1",
         "role": "figure",
+        "lane": null,
+        "intended_claim": null,
         "medium": "visual",
         "generator": "matplotlib:number_line",
         "spec": {
@@ -486,6 +508,8 @@
       {
         "id": "abb2",
         "role": "figure",
+        "lane": null,
+        "intended_claim": null,
         "medium": "visual",
         "generator": "matplotlib:rectangle",
         "spec": {
@@ -505,6 +529,9 @@
         "caption": null
       }
     ],
+    "anchor_mode": "competence",
+    "anchor_uet": null,
+    "theme_asset": null,
     "nachweis": {
       "fassung": {
         "kurztitel": "AHS-Lehrplan (konsolidiert)",
@@ -513,6 +540,8 @@
         "valid_from": "2024-09-01",
         "valid_to": "2026-08-31"
       },
+      "anchor_mode": "competence",
+      "anchor_label": "Lehrplan-Kompetenzen",
       "statement": "Diese Materialien adressieren 1 von 1 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
       "competence_coverage": [
         {
@@ -555,13 +584,16 @@
       "minutes_total": 45,
       "minutes_resource_independent": 45
     },
+    "mixer_profile": null,
+    "mixer_lint": null,
+    "glossary": [],
     "rack": null
   },
   "artifacts": {
-    "student_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0189\\student.pdf",
-    "teacher_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0189\\teacher.pdf",
-    "homework_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0189\\homework.pdf",
-    "preview_png": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0189\\raster\\student.p1.png"
+    "student_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0189\\student.pdf",
+    "teacher_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0189\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0189\\homework.pdf",
+    "preview_png": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0189\\raster\\student.p1.png"
   },
   "verify_problems": [],
   "verify_warnings": [],

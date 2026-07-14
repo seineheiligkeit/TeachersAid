@@ -1,10 +1,10 @@
 {
   "id": "c0184",
   "stage": "content",
-  "status": "pending",
+  "status": "approved",
   "source": "generated",
   "created_at": "2026-07-05T05:34:17+00:00",
-  "updated_at": "2026-07-05T05:34:18+00:00",
+  "updated_at": "2026-07-14T07:42:34+00:00",
   "title": "Mathematik 2. Kl. — Der Wandertag-Fonds (generiert)",
   "note": "",
   "request": {
@@ -14,7 +14,9 @@
     "schulform": null,
     "topic_raw": "Der Wandertag-Fonds",
     "envelope": "doppelstunde",
-    "options": {}
+    "options": {},
+    "anchor_mode": "competence",
+    "anchor_uet": null
   },
   "resolution": {
     "fassung": {
@@ -182,7 +184,8 @@
         "callout_role": null,
         "teacher_note": null,
         "watch_outs": [],
-        "numbered": true
+        "numbered": true,
+        "backdrop_asset_ref": null
       }
     ],
     "sections": [
@@ -236,11 +239,14 @@
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Verwechslung von Teiler und Vielfachem: 'Teiler von 28' sind Zahlen, die 28 ohne Rest ergeben, nicht Zahlen, die 28 als Vielfaches haben.",
               "3 wird oft fälschlich als Teiler genannt (28 : 3 hat Rest 1)."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t2",
@@ -282,10 +288,13 @@
             "acceptable_reasoning": "Akzeptiert wird jede Begründung, die korrekt zwischen 'gemeinsames Vielfaches' und 'kleinstes gemeinsames Vielfaches' unterscheidet, auch ohne die Abkürzung kgV zu nennen.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Schüler:innen verwechseln oft 'ein gemeinsames Vielfaches' mit 'DAS kleinste gemeinsame Vielfache' – 48 ist ein Distraktor, der genau das prüft."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t3",
@@ -329,10 +338,13 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Manche Kinder testen die Regel nur an einem Beispiel und verallgemeinern vorschnell – beide Testzahlen sollen genutzt werden, eine passende und eine nicht passende."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           }
         ]
       },
@@ -387,10 +399,13 @@
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Häufiger Fehler: 3/4 von 28 als 28 : 3 · 4 statt 28 : 4 · 3 gerechnet – auf die richtige Reihenfolge (erst durch den Nenner teilen) hinweisen."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t5",
@@ -437,11 +452,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Die Falle der Aufgabe: Bus B hat den höheren Prozentsatz UND den höheren Grundpreis – nur die tatsächliche Rechnung zeigt, welcher Effekt überwiegt.",
               "Nachlass wird manchmal von der falschen Basis (z. B. von 100 € statt vom tatsächlichen Gruppenpreis) berechnet."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t6",
@@ -481,10 +499,13 @@
             "acceptable_reasoning": "Jede Beschreibung, die den Anstieg von negativer zu positiver Temperatur korrekt wiedergibt, wird akzeptiert, auch ohne exakten Differenzwert, solange die Bewegung auf der Zahlengeraden richtig gedeutet wird.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Die Differenz zwischen einer negativen und einer positiven Zahl wird oft als einfache Subtraktion der Beträge (12 − 2 = 10) statt als 12 − (−2) = 14 gerechnet – das ist der zentrale Lernpunkt der Aufgabe."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t7",
@@ -528,10 +549,13 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Manche Schüler:innen übernehmen die Struktur nicht wirklich, sondern ändern nur die Zahlen minimal – im Gespräch nachfragen, ob eine eigene Idee (z. B. anderer Kontext) eingeflossen ist."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           }
         ]
       }
@@ -540,6 +564,8 @@
       {
         "id": "a1",
         "role": "figure",
+        "lane": null,
+        "intended_claim": null,
         "medium": "visual",
         "generator": "matplotlib:number_line",
         "spec": {
@@ -567,6 +593,9 @@
         "caption": "Temperaturverlauf am Wandertag (°C)"
       }
     ],
+    "anchor_mode": "competence",
+    "anchor_uet": null,
+    "theme_asset": null,
     "nachweis": {
       "fassung": {
         "kurztitel": "AHS-Lehrplan (konsolidiert)",
@@ -575,6 +604,8 @@
         "valid_from": "2024-09-01",
         "valid_to": "2026-08-31"
       },
+      "anchor_mode": "competence",
+      "anchor_label": "Lehrplan-Kompetenzen",
       "statement": "Diese Materialien adressieren 3 von 4 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
       "competence_coverage": [
         {
@@ -647,13 +678,16 @@
       "minutes_total": 56,
       "minutes_resource_independent": 56
     },
+    "mixer_profile": null,
+    "mixer_lint": null,
+    "glossary": [],
     "rack": null
   },
   "artifacts": {
-    "student_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0184\\student.pdf",
-    "teacher_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0184\\teacher.pdf",
-    "homework_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0184\\homework.pdf",
-    "preview_png": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0184\\raster\\student.p1.png"
+    "student_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0184\\student.pdf",
+    "teacher_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0184\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0184\\homework.pdf",
+    "preview_png": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0184\\raster\\student.p1.png"
   },
   "verify_problems": [],
   "verify_warnings": [],

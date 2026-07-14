@@ -37,10 +37,13 @@
     "acceptable_reasoning": null,
     "rubric": [],
     "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
     "watch_outs": [
       "Verwechslung von Umfang (Summe aller Seiten, hier 20 m) und einer einzelnen Seitenlänge – oft wird 20 m fälschlich direkt als zweite Seite verwendet."
     ],
-    "self_check": null
+    "self_check": null,
+    "scaffold": null
   },
   "role": "task",
   "kind": "calculation",
@@ -61,6 +64,8 @@
     {
       "id": "a2",
       "role": "figure",
+      "lane": null,
+      "intended_claim": null,
       "medium": "visual",
       "generator": "matplotlib:polygon",
       "spec": {
@@ -106,9 +111,9 @@
       "caption": "Beet 1 mit zwei unbekannten Seitenlängen"
     }
   ],
-  "status": "in_review",
+  "status": "approved",
   "provenance": "harvested:c0185",
   "source": "ai",
   "created_at": "2026-07-05T05:34:19+00:00",
-  "updated_at": "2026-07-05T05:34:19+00:00"
+  "updated_at": "2026-07-14T07:20:02+00:00"
 }

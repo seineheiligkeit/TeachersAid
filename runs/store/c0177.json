@@ -1,10 +1,10 @@
 {
   "id": "c0177",
   "stage": "content",
-  "status": "pending",
+  "status": "approved",
   "source": "generated",
   "created_at": "2026-07-05T05:34:14+00:00",
-  "updated_at": "2026-07-05T05:34:14+00:00",
+  "updated_at": "2026-07-14T07:45:31+00:00",
   "title": "Biologie und Umweltbildung 3. Kl. — Sauerstoff unterwegs – Atmung und Blutkreislauf (generiert)",
   "note": "",
   "request": {
@@ -14,7 +14,9 @@
     "schulform": null,
     "topic_raw": "Sauerstoff unterwegs – Atmung und Blutkreislauf",
     "envelope": "doppelstunde",
-    "options": {}
+    "options": {},
+    "anchor_mode": "competence",
+    "anchor_uet": null
   },
   "resolution": {
     "fassung": {
@@ -246,7 +248,8 @@
         "callout_role": null,
         "teacher_note": null,
         "watch_outs": [],
-        "numbered": true
+        "numbered": true,
+        "backdrop_asset_ref": null
       }
     ],
     "sections": [
@@ -313,10 +316,13 @@
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Der Regenwurm hat keine Atmungsorgane im engeren Sinn, sondern atmet direkt über die feuchte Haut – das wird oft übersehen."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t2",
@@ -350,10 +356,13 @@
             "acceptable_reasoning": "Auch akzeptiert: Formulierungen wie 'dünne Wand' oder 'viel Oberfläche für wenig Platz', solange der Zusammenhang Oberfläche–Feuchtigkeit–Durchlässigkeit erkennbar ist.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Tracheen bei Insekten transportieren die Luft direkt zu den Zellen, ohne Umweg über ein Blutsystem – das ist ein wichtiger Unterschied zu Kiemen/Lunge, der oft vermischt wird."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t3",
@@ -389,10 +398,13 @@
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Die Erholungsphase (langsames Absinken) wird oft übersehen – auch sie gehört zur vollständigen Beschreibung des Verlaufs."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t4",
@@ -430,10 +442,13 @@
             "acceptable_reasoning": "Jede sinnvolle, durchführbare Planung mit klarer Vorher-Hypothese und wiederholbarer Messmethode wird akzeptiert.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Eine Messung ohne vorherige Hypothese ist kein vollständiges Protokoll – die Vorhersage muss VOR der Durchführung stehen, nicht danach nachgeschoben werden."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t5",
@@ -473,10 +488,13 @@
             "acceptable_reasoning": null,
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Die Fließrichtung des Blutkreislaufs (Lunge → Herz → Körper → Herz → Lunge) wird häufig vertauscht; ein einfaches Kreislaufschema hilft."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t6",
@@ -522,10 +540,13 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Eine rein moralische Antwort ohne biologische Begründung (nur 'Rauchen ist ungesund') erfüllt die Kompetenz nicht ausreichend."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           }
         ]
       }
@@ -534,6 +555,8 @@
       {
         "id": "df1",
         "role": "figure",
+        "lane": null,
+        "intended_claim": null,
         "medium": "visual",
         "generator": "matplotlib:line",
         "spec": {
@@ -570,6 +593,9 @@
         "caption": null
       }
     ],
+    "anchor_mode": "competence",
+    "anchor_uet": null,
+    "theme_asset": null,
     "nachweis": {
       "fassung": {
         "kurztitel": "AHS-Lehrplan (konsolidiert)",
@@ -578,6 +604,8 @@
         "valid_from": "2024-09-01",
         "valid_to": "2026-08-31"
       },
+      "anchor_mode": "competence",
+      "anchor_label": "Lehrplan-Kompetenzen",
       "statement": "Diese Materialien adressieren 4 von 10 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
       "competence_coverage": [
         {
@@ -691,13 +719,16 @@
       "minutes_total": 44,
       "minutes_resource_independent": 44
     },
+    "mixer_profile": null,
+    "mixer_lint": null,
+    "glossary": [],
     "rack": null
   },
   "artifacts": {
-    "student_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0177\\student.pdf",
-    "teacher_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0177\\teacher.pdf",
-    "homework_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0177\\homework.pdf",
-    "preview_png": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0177\\raster\\student.p1.png"
+    "student_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0177\\student.pdf",
+    "teacher_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0177\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0177\\homework.pdf",
+    "preview_png": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0177\\raster\\student.p1.png"
   },
   "verify_problems": [],
   "verify_warnings": [],

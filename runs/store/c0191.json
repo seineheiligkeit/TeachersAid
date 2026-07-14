@@ -1,10 +1,10 @@
 {
   "id": "c0191",
   "stage": "content",
-  "status": "pending",
+  "status": "approved",
   "source": "generated",
   "created_at": "2026-07-05T05:34:23+00:00",
-  "updated_at": "2026-07-05T05:34:23+00:00",
+  "updated_at": "2026-07-14T07:45:04+00:00",
   "title": "Mathematik 4. Kl. — Das Schulfest-Glücksrad — wer gewinnt wirklich? (generiert)",
   "note": "",
   "request": {
@@ -14,7 +14,9 @@
     "schulform": null,
     "topic_raw": "Das Schulfest-Glücksrad — wer gewinnt wirklich?",
     "envelope": "doppelstunde",
-    "options": {}
+    "options": {},
+    "anchor_mode": "competence",
+    "anchor_uet": null
   },
   "resolution": {
     "fassung": {
@@ -204,11 +206,14 @@
             "acceptable_reasoning": "Direktes Eintragen der gegebenen Werte in die Tabelle, Summenzeile und -spalte durch Addition.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Die Gesamtsumme (44) sollte am Ende zur Kontrolle beidseitig (Zeilen- und Spaltensumme) übereinstimmen — das eignet sich als Selbstkontrolle.",
               "Nicht vergessen: die Summenzeile UND die Summenspalte müssen ausgefüllt werden."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t2",
@@ -252,11 +257,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Klassischer Fehler bei b): nur die absoluten Zahlen (12 vs. 15) vergleichen, ohne die unterschiedliche Klassengröße zu berücksichtigen — genau das soll hier vermieden werden.",
               "Prozentrechnung: 12/20 und 15/24 jeweils richtig in Prozent umrechnen."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t3",
@@ -293,11 +301,14 @@
             "acceptable_reasoning": "Anwendung der Pfadregel: Multiplikation der Wahrscheinlichkeiten entlang eines Pfades im Baumdiagramm.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Häufiger Fehler: Wahrscheinlichkeiten entlang eines Pfades werden addiert statt multipliziert.",
               "Die Werte am Baum (0,5 / 0,4 / 0,2) müssen vom richtigen Ast abgelesen werden — Rot- und Blau-Zweig nicht vertauschen."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t4",
@@ -342,11 +353,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Hier ist Addition korrekt (im Gegensatz zu Aufgabe 3) — der Unterschied zwischen „UND“ (entlang eines Pfades, multiplizieren) und „ODER“ (verschiedene Pfade zum selben Ergebnis, addieren) ist der zentrale Lerninhalt und sollte angesprochen werden.",
               "30 % wirkt vielleicht höher als erwartet — das kann zur Diskussion in Aufgabe 6 zurückkommen."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t5",
@@ -388,11 +402,14 @@
             "acceptable_reasoning": "Rückgriff auf die berechneten Werte aus den Aufgaben 3 und 4; Erkennen, dass bei unabhängigen Wiederholungen die Pfadregel (Multiplikation) gilt, nicht Addition.",
             "rubric": [],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Aussage 2 prüft, ob 30 % richtig als „seltener als die Hälfte“ eingeordnet wird — eine verbreitete Fehleinschätzung ist, 30 % subjektiv als „ziemlich hoch“ und damit als „öfter als nicht“ misszuverstehen.",
               "Aussage 3 ist eine gezielte Fehlvorstellung (Verwechslung von UND-Verknüpfung mit Addition) — hier nochmals auf die Pfadregel hinweisen."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           },
           {
             "id": "t6",
@@ -447,11 +464,14 @@
               }
             ],
             "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
             "watch_outs": [
               "Eine reine Wiederholung der Zahl „30 %“ ohne Einordnung (fair/unfair/wieso) wird nicht als vollständige Stellungnahme gewertet.",
               "Es gibt hier bewusst keine einzig richtige Antwort — bewertet wird die Qualität der Begründung, nicht eine bestimmte Position."
             ],
-            "self_check": null
+            "self_check": null,
+            "scaffold": null
           }
         ]
       }
@@ -460,6 +480,8 @@
       {
         "id": "abb1",
         "role": "figure",
+        "lane": null,
+        "intended_claim": null,
         "medium": "visual",
         "generator": "matplotlib:tree_diagram",
         "spec": {
@@ -529,6 +551,9 @@
         "caption": null
       }
     ],
+    "anchor_mode": "competence",
+    "anchor_uet": null,
+    "theme_asset": null,
     "nachweis": {
       "fassung": {
         "kurztitel": "AHS-Lehrplan (konsolidiert)",
@@ -537,6 +562,8 @@
         "valid_from": "2024-09-01",
         "valid_to": "2026-08-31"
       },
+      "anchor_mode": "competence",
+      "anchor_label": "Lehrplan-Kompetenzen",
       "statement": "Diese Materialien adressieren 2 von 2 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
       "competence_coverage": [
         {
@@ -589,13 +616,16 @@
       "minutes_total": 39,
       "minutes_resource_independent": 39
     },
+    "mixer_profile": null,
+    "mixer_lint": null,
+    "glossary": [],
     "rack": null
   },
   "artifacts": {
-    "student_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0191\\student.pdf",
-    "teacher_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0191\\teacher.pdf",
-    "homework_pdf": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0191\\homework.pdf",
-    "preview_png": "C:\\Users\\Sebas\\Desktop\\Claude\\TeachersAid\\runs\\store\\c0191\\raster\\student.p1.png"
+    "student_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0191\\student.pdf",
+    "teacher_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0191\\teacher.pdf",
+    "homework_pdf": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0191\\homework.pdf",
+    "preview_png": "C:\\Users\\sebas\\Desktop\\TeachersAid\\runs\\store\\c0191\\raster\\student.p1.png"
   },
   "verify_problems": [],
   "verify_warnings": [],
