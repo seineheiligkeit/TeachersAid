@@ -45,7 +45,7 @@ SUBJECTS = [
     ("HOE", "Haushaltsökonomie und Ernährung", "kb", False, None),
     ("PUP", "Psychologie und Philosophie", "kb", False, None),
 ]
-GEN_SUBDIR = "gen_os"  # Oberstufe batch writes here (kept separate from the Unterstufe gen dirs)
+GEN_SUBDIR = "gen_os_2"  # 2nd Oberstufe breadth pass (fresh dir; the 1st is in gen_os/, ingested)
 
 # Prior batches (done 2026-06-25), kept for reproducibility:
 #   MINT (single-Kernfrage tool earlier): PHY, CHE, BIO, MAT
