@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from pathlib import Path
+
 import pytest
 
 from teachersaid.library import bio_bluete_hybrid as flower
@@ -7,6 +9,20 @@ from teachersaid.pipeline.assets import build_asset
 from teachersaid.pipeline.labeled_diagram import FLOWER_HYBRID_SPEC, labeled_parts_scene
 from teachersaid.pipeline.scene import Label, RasterImage
 from teachersaid.schema.assets import Asset
+from teachersaid.store.assetstore import AssetStore
+
+# The flower cutaway is an AI-generated, file-backed depictive asset: its PNG is git-ignored
+# (persistence policy) and — unlike code-gen figures — cannot self-heal on a clone (no seed,
+# diffusion backend offline). build_asset resolves the background via AssetStore().get(...).file,
+# so guard the build-dependent test on that exact path: it runs where the SME generated the
+# binary and skips on a fresh remote clone (mirrors the ANNO scan-crop guard).
+_flower_record = AssetStore().get("img-bio-flower-cutaway")
+_FLOWER_BINARY_PRESENT = bool(
+    _flower_record and _flower_record.file and Path(_flower_record.file).is_file())
+needs_flower_binary = pytest.mark.skipif(
+    not _FLOWER_BINARY_PRESENT,
+    reason="flower cutaway binary absent (git-ignored, AI-generated with no seed — "
+           "present only where it was generated)")
 
 
 def test_hybrid_spec_keeps_pixels_and_task_meaning_separate():
@@ -28,6 +44,7 @@ def test_flagship_student_teacher_share_parts_and_only_teacher_has_names():
     assert content.sections[0].blocks[0].answer_key.startswith("1 Kronblatt")
 
 
+@needs_flower_binary
 def test_hybrid_build_resolves_the_stored_candidate(tmp_path):
     asset = flower.build_content().assets[0]
     path = build_asset(asset, outdir=tmp_path)
