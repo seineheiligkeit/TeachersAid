@@ -1,0 +1,238 @@
+{
+  "subject": "Mathematik",
+  "klasse": 5,
+  "kompetenzbereich": "Trigonometrie",
+  "title": "Das Unerreichbare vermessen — vom Einheitskreis zum Dreieck",
+  "kernfrage": "Wie kannst du Höhen, Weiten und Winkel bestimmen, die du gar nicht direkt messen kannst?",
+  "body": {
+    "intro": [
+      "Manche Strecken und Höhen kann man nicht einfach mit dem Maßband abmessen — die Breite eines Flusses, die Höhe eines Turms, die Entfernung zu einem Berg. Die Trigonometrie macht genau das möglich: Aus Winkeln und wenigen messbaren Strecken berechnest du das Unerreichbare. In diesem Arbeitsblatt gehst du vom Einheitskreis, der Sinus und Cosinus für beliebige Winkel erklärt, über zum Lösen echter Dreiecke mit Sinus- und Cosinussatz."
+    ],
+    "data_figures": [],
+    "assets": [
+      {
+        "id": "abb_turm",
+        "role": "figure",
+        "generator": "matplotlib:right_triangle",
+        "spec": {
+          "a": 5,
+          "b": 3.1,
+          "label_a": "Abstand = 50 m",
+          "label_b": "Höhe h = ?",
+          "label_c": "Sehstrahl",
+          "title": "Höhenwinkel-Messung am Turm (nicht maßstabsgetreu)"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Sinus und Cosinus am Einheitskreis",
+        "throughline": "Vom rechtwinkligen Dreieck zum Einheitskreis: Sinus und Cosinus werden von Seitenverhältnissen zu Koordinaten eines umlaufenden Punktes verallgemeinert — das erklärt Vorzeichen, Periodizität und die Grundbeziehung cos²α + sin²α = 1 für beliebige Winkel.",
+        "talking_points": [
+          "Der Schritt vom Dreieck (nur spitze Winkel) zum Einheitskreis (beliebige Winkel) ist der eigentliche Oberstufen-Sprung — hier entstehen negative Werte und Winkel über 90°.",
+          "cos²α + sin²α = 1 ist nichts anderes als der Satz von Pythagoras am Einheitskreis; das sollten die Schüler:innen selbst erkennen, nicht auswendig lernen.",
+          "Warum liefert der Taschenrechner bei sin x = c nur eine Lösung? Diese Frage öffnet das Verständnis für Periodizität und Symmetrie der Sinuskurve."
+        ],
+        "extensions": [
+          "Die Sinuskurve als Graph zeichnen lassen und die Lösungen von sin x = 0,5 daran ablesen — Verbindung Algebra und Graph.",
+          "cos x = c analog behandeln: Warum ist dort die zweite Lösung 360° − x₀ statt 180° − x₀?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "matching",
+            "prompt": "Ordne jedem Sinuswert den passenden exakten Wert zu.",
+            "payload": {
+              "kind": "matching",
+              "left": ["sin 0°", "sin 30°", "sin 45°", "sin 60°", "sin 90°"],
+              "right": ["√3/2 ≈ 0,87", "1/2", "1", "0", "√2/2 ≈ 0,71"]
+            },
+            "response": { "mode": "none" },
+            "cognitive_level": "understand",
+            "dimensions": ["FO", "DM"],
+            "serves": [
+              { "competence_id": "MAT.OS.5.TRI.01", "relation": "exercises" }
+            ],
+            "est_minutes": 5,
+            "asset_refs": [],
+            "answer_key": "sin 0° = 0; sin 30° = 1/2; sin 45° = √2/2 ≈ 0,71; sin 60° = √3/2 ≈ 0,87; sin 90° = 1.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "sin 30° = 1/2, aber sin 60° = √3/2 — die beiden werden häufig vertauscht.",
+              "sin 45° = √2/2 = 1/√2, nicht 1/2.",
+              "Werte von sin und cos verwechseln: cos 0° = 1, aber sin 0° = 0."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "open_response",
+            "prompt": "Ein Punkt P wandert auf dem Einheitskreis (Radius 1) gegen den Uhrzeigersinn; zum Drehwinkel α hat er die Koordinaten P = (cos α | sin α).\n(a) Erkläre, warum für jeden Winkel α gilt: −1 ≤ sin α ≤ 1 und −1 ≤ cos α ≤ 1.\n(b) Begründe mit dem Satz von Pythagoras, dass cos²α + sin²α = 1 für JEDEN Winkel α gilt — nicht nur für spitze Winkel.\n(c) Erkläre, warum tan 90° nicht definiert ist.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 55 },
+            "cognitive_level": "understand",
+            "dimensions": ["DM", "KA"],
+            "serves": [
+              { "competence_id": "MAT.OS.5.TRI.01", "relation": "exercises" }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "(a) P liegt stets auf dem Einheitskreis, der in x- und y-Richtung nur von −1 bis 1 reicht; die Koordinaten cos α und sin α können daher betragsmäßig höchstens 1 werden. (b) P = (cos α | sin α) erfüllt die Kreisgleichung x² + y² = 1, also cos²α + sin²α = 1. Das gilt in jedem Quadranten, weil die Koordinaten dort zwar ihr Vorzeichen wechseln, ihre Quadrate aber immer positiv sind. (c) tan 90° = sin 90° / cos 90° = 1 / 0 — Division durch null ist nicht definiert; die Tangensfunktion hat bei 90° eine Polstelle.",
+            "acceptable_reasoning": "Für (b) genügt der Verweis auf die Kreisgleichung bzw. das rechtwinklige Dreieck aus P, seinem Lot auf die x-Achse und dem Radius 1; das Argument muss auch für stumpfe Winkel tragen.",
+            "watch_outs": [
+              "cos und sin vertauschen: die x-Koordinate ist cos α, die y-Koordinate sin α.",
+              "glauben, cos²α + sin²α = 1 gelte nur für spitze Winkel.",
+              "cos²α als cos(α²) missverstehen — gemeint ist (cos α)²."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "calculation",
+            "prompt": "(a) In welchem Quadranten liegt der Winkel 210°, und welche Vorzeichen haben dort sin und cos?\n(b) Bestimme über den Referenzwinkel die exakten Werte von sin 210° und cos 210°.\n(c) Ein Punkt ist in Polarkoordinaten durch (r ; φ) = (4 ; 210°) gegeben. Rechne ihn in kartesische Koordinaten (x | y) um und erkläre den Zusammenhang mit (b).",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 55 },
+            "cognitive_level": "apply",
+            "dimensions": ["FO", "DM"],
+            "serves": [
+              { "competence_id": "MAT.OS.5.TRI.01", "relation": "exercises" },
+              { "competence_id": "MAT.OS.5.TRI.04", "relation": "exercises" }
+            ],
+            "est_minutes": 9,
+            "asset_refs": [],
+            "answer_key": "(a) 210° liegt im 3. Quadranten (180° bis 270°); dort ist sin < 0 und cos < 0. (b) Referenzwinkel: 210° − 180° = 30°. Also sin 210° = −sin 30° = −1/2 und cos 210° = −cos 30° = −√3/2 ≈ −0,87. (c) x = r · cos φ = 4 · (−√3/2) = −2√3 ≈ −3,46; y = r · sin φ = 4 · (−1/2) = −2. Der Punkt ist also (−3,46 | −2). Die Polarform benutzt genau cos und sin des Winkels: die kartesischen Koordinaten sind das r-Fache der Einheitskreis-Koordinaten (cos φ | sin φ).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Referenzwinkel falsch bilden: 210° − 180° = 30°, nicht 180° − 210°.",
+              "die Vorzeichen im 3. Quadranten vergessen (beide negativ).",
+              "x = r · sin φ statt x = r · cos φ verwenden (x und y vertauschen)."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "open_response",
+            "prompt": "Löse die Gleichung sin x = 0,5 im Intervall [0° ; 360°].\n(a) Gib ALLE Lösungen in diesem Intervall an.\n(b) Erkläre, warum es im Intervall genau zwei Lösungen gibt, obwohl der Taschenrechner nur eine liefert.\n(c) Wie viele Lösungen hätte sin x = 0,5, wenn man alle Winkel zulässt? Gib die Lösungsmenge allgemein an.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 55 },
+            "cognitive_level": "analyze",
+            "dimensions": ["FO", "KA"],
+            "serves": [
+              { "competence_id": "MAT.OS.5.TRI.02", "relation": "exercises" }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "(a) x₁ = 30° und x₂ = 150°. (b) Der Taschenrechner liefert nur den Hauptwert 30°. Der Sinus nimmt auf dem Weg von 0° bis 180° jeden Wert zwischen 0 und 1 zweimal an (er steigt bis 90° und fällt danach wieder); die zweite Lösung ist der an 90° gespiegelte Winkel 180° − 30° = 150°. (c) Unendlich viele, weil der Sinus periodisch mit 360° ist: x = 30° + k · 360° oder x = 150° + k · 360° mit ganzzahligem k.",
+            "acceptable_reasoning": "In (b) ist jede Begründung gültig, die die Symmetrie der Sinuskurve um 90° bzw. das Zweimal-Durchlaufen des Wertebereichs auf [0°;180°] nutzt.",
+            "watch_outs": [
+              "nur die Taschenrechner-Lösung 30° angeben und 150° vergessen.",
+              "die zweite Lösung fälschlich als 360° − 30° = 330° angeben — das gilt für cos, nicht für sin.",
+              "die Periodizität übersehen und in (c) nur endlich viele Lösungen nennen."
+            ],
+            "rubric": []
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Dreiecke lösen — das Unerreichbare vermessen",
+        "throughline": "Mit dem rechtwinkligen Dreieck, dem Sinussatz und dem Cosinussatz wird jedes Dreieck berechenbar — das ist die mathematische Grundlage jeder indirekten Vermessung (Landvermessung, Navigation, Astronomie).",
+        "talking_points": [
+          "Die Leitfrage „Wie misst man, was man nicht erreichen kann?“ motiviert alle drei Werkzeuge; jedes Beispiel sollte an eine reale Messsituation anknüpfen.",
+          "Cosinussatz vs. Sinussatz: Der Cosinussatz braucht den eingeschlossenen Winkel (SWS oder SSS), der Sinussatz eine Seite mit ihrem Gegenwinkel — die Werkzeugwahl ist selbst eine Kompetenz.",
+          "Beim Cosinussatz ist das Vorzeichen „− 2ab·cos γ“ die häufigste Fehlerquelle; der Test mit γ = 90° (dann fällt der Term weg und es bleibt Pythagoras) zeigt, dass die Formel stimmt."
+        ],
+        "extensions": [
+          "Der uneindeutige Fall des Sinussatzes (zwei mögliche Dreiecke bei gegebener Seite-Seite-Gegenwinkel-Konstellation) als Vertiefung für leistungsstarke Gruppen.",
+          "Eine echte Vermessung im Schulhof: eine unzugängliche Strecke mit Maßband und selbstgebautem Winkelmesser bestimmen.",
+          "Die Flächenformel A = ½ · a · b · sin γ aus dem Sinus des eingeschlossenen Winkels herleiten."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "calculation",
+            "prompt": "Von einem Punkt am Boden, 50 m vom Fuß eines Kirchturms entfernt, erscheint die Turmspitze unter einem Höhenwinkel von 32°. Die Abbildung zeigt die Situation (nicht maßstabsgetreu). Berechne die Höhe h des Turms und runde auf eine Nachkommastelle.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 45 },
+            "cognitive_level": "apply",
+            "dimensions": ["DM", "FO"],
+            "serves": [
+              { "competence_id": "MAT.OS.5.TRI.03", "relation": "exercises" }
+            ],
+            "est_minutes": 7,
+            "asset_refs": ["abb_turm"],
+            "answer_key": "Im rechtwinkligen Dreieck ist der Höhenwinkel dem Verhältnis Gegenkathete zu Ankathete zugeordnet: tan 32° = h / 50 m. Also h = 50 m · tan 32° ≈ 50 m · 0,6249 ≈ 31,2 m.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "sin oder cos statt tan verwenden — gesucht ist die Gegenkathete zur bekannten Ankathete.",
+              "den Taschenrechner im Bogenmaß statt im Gradmaß rechnen lassen.",
+              "durch tan 32° dividieren statt zu multiplizieren."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "modelling",
+            "prompt": "Zwei Wanderwege starten im selben Punkt C und schließen dort einen Winkel von 68° ein. Entlang des einen Weges liegt eine Hütte A in 540 m Entfernung, entlang des anderen ein Aussichtspunkt B in 420 m Entfernung.\n(a) Stelle einen Rechenansatz auf und berechne die Luftlinie zwischen A und B.\n(b) Ein Wanderer behauptet: „Wenn der Winkel bei C kleiner wird, wird die Luftlinie AB automatisch länger.“ Beurteile diese Aussage — begründe mit der Formel, nicht nur mit einem zweiten Zahlenbeispiel.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 60 },
+            "cognitive_level": "evaluate",
+            "dimensions": ["DM", "KA"],
+            "serves": [
+              { "competence_id": "MAT.OS.5.TRI.03", "relation": "exercises" }
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "(a) Cosinussatz mit dem eingeschlossenen Winkel γ = 68°: AB² = 540² + 420² − 2 · 540 · 420 · cos 68° ≈ 291600 + 176400 − 169922 ≈ 298078, also AB ≈ 546 m. (b) Die Aussage ist falsch. In AB² = a² + b² − 2ab · cos γ wächst cos γ, wenn γ kleiner wird (cos ist auf 0° bis 180° streng fallend); damit wird der abgezogene Term 2ab · cos γ größer und AB² — also AB — KLEINER. Ein kleinerer Öffnungswinkel führt also zu einer KÜRZEREN Luftlinie. Die Grenzfälle bestätigen das: γ → 0° ergibt AB → 540 − 420 = 120 m, γ → 180° ergibt AB → 540 + 420 = 960 m.",
+            "acceptable_reasoning": "Für (b) genügt jede korrekte Begründung über die Monotonie von cos auf [0°; 180°] oder über die beiden Grenzfälle γ → 0° und γ → 180°; ein bloßes zweites Zahlenbeispiel reicht laut Angabe nicht.",
+            "watch_outs": [
+              "den Cosinussatz mit einem nicht eingeschlossenen Winkel ansetzen.",
+              "vergessen, am Ende die Wurzel zu ziehen.",
+              "das Vorzeichen verwechseln — es heißt minus 2ab · cos γ.",
+              "bei (b) nur ein zweites Zahlenbeispiel liefern statt zu argumentieren."
+            ],
+            "rubric": [
+              { "criterion": "Cosinussatz-Ansatz und Ergebnis", "levels": ["kein oder falscher Ansatz", "richtige Formel, aber falscher Winkel oder Rechenfehler", "korrekter Ansatz und AB ≈ 546 m"] },
+              { "criterion": "Argumentation zu (b)", "levels": ["Behauptung übernommen oder nur Zahlenbeispiel", "richtige Richtung ohne tragfähige Begründung", "mit Monotonie von cos bzw. den Grenzfällen sauber widerlegt"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "create_produce",
+            "prompt": "Erfinde eine eigene Vermessungsaufgabe zu einer Strecke, die man nicht direkt messen kann (z. B. die Breite eines Flusses, die Höhe eines Berges, die Entfernung zu einer Insel).\n(a) Beschreibe die Situation und fertige eine Skizze an.\n(b) Lege fest, welche Strecken und Winkel man tatsächlich messen kann, und erfinde dafür plausible Messwerte.\n(c) Löse deine Aufgabe mit dem passenden Werkzeug (rechtwinklige Trigonometrie, Sinussatz oder Cosinussatz) und gib das Ergebnis an.\n(d) Überlege: Wie wirkt sich ein Messfehler von 1° beim Winkel ungefähr auf dein Ergebnis aus?",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 80 },
+            "cognitive_level": "create",
+            "dimensions": ["DM", "KA"],
+            "serves": [
+              { "competence_id": "MAT.OS.5.TRI.03", "relation": "exercises" }
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "Individuelle Lösung. Prüfkriterien: (a) Die gesuchte Strecke ist tatsächlich unzugänglich, die Skizze passt zur Situation. (b) Die angenommenen Messgrößen sind real messbar (eine Basisstrecke am erreichbaren Ufer plus Winkel) und legen das Dreieck eindeutig fest. (c) Das gewählte Werkzeug passt zu den Angaben (eingeschlossener Winkel → Cosinussatz; Seite mit Gegenwinkel → Sinussatz; rechter Winkel → tan/sin/cos) und die Rechnung ist korrekt. Beispiel: Basis b = 60 m, an den Enden gemessene Winkel zum Baum 74° und 68° → dritter Winkel 38°, Entfernung = 60 · sin 68° / sin 38° ≈ 90,3 m. (d) Je flacher die Sichtlinien einander schneiden (kleiner dritter Winkel), desto stärker vergrößert ein kleiner Winkelfehler das Ergebnis — die indirekte Messung wird ungenauer.",
+            "acceptable_reasoning": "Jede in sich stimmige Aufgabe mit messbaren Größen, passendem Satz und korrekter Rechnung ist gültig; die Fehlerbetrachtung in (d) muss nur qualitativ richtig sein (kleiner Schnittwinkel → große Unsicherheit).",
+            "watch_outs": [
+              "eine Strecke wählen, die man in Wahrheit direkt abmessen könnte — dann ist keine Trigonometrie nötig.",
+              "nur einen Winkel und keine Basisstrecke messen wollen — das Dreieck ist dann unterbestimmt.",
+              "Messwerte erfinden, die kein gültiges Dreieck ergeben (z. B. Winkelsumme über 180°)."
+            ],
+            "rubric": [
+              { "criterion": "Realitätsbezug und Skizze", "levels": ["Strecke ist in Wahrheit direkt messbar oder Skizze fehlt", "plausible Situation, Skizze mit kleinen Lücken", "unzugängliche Strecke, klare und passende Skizze"] },
+              { "criterion": "Messbare Größen", "levels": ["nicht messbare oder unterbestimmte Angaben", "messbar, aber Dreieck nicht eindeutig festgelegt", "messbare Basis und Winkel, Dreieck eindeutig bestimmt"] },
+              { "criterion": "Rechnung und Werkzeugwahl", "levels": ["unpassendes Werkzeug oder falsche Rechnung", "richtiges Werkzeug, kleiner Rechenfehler", "passendes Werkzeug, korrektes Ergebnis"] },
+              { "criterion": "Fehlerbetrachtung (d)", "levels": ["fehlt", "Richtung angedeutet", "qualitativ korrekt begründet"] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
