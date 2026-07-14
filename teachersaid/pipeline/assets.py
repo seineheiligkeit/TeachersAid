@@ -36,9 +36,11 @@ from .calculus import (area_between_scene, distribution_scene, extrema_scene,  #
                        function_scene, integral_scene, riemann_scene, tangent_scene)
 from .circuits import circuit_construction  # noqa: E402
 from .constructions import construction_scene, triangle_geometry  # noqa: E402
+from .homology import homology_scene  # noqa: E402
 from .nodelink import cause_effect_scene, process_scene, tree_scene  # noqa: E402
 from .nets import solid_net_scene  # noqa: E402
 from .optics import lens_construction  # noqa: E402
+from .geometric_optics import pinhole_construction, shadow_construction  # noqa: E402
 from .figstyle import fmt_de, unit_scale  # noqa: E402
 from .scene3d import axonometric_solid_scene, riss_pair_scene  # noqa: E402
 from .scene import (Canvas, Label, Line, PointMark, Polyline, Region,  # noqa: E402
@@ -1240,6 +1242,19 @@ def _labeled_parts(asset: Asset, path: Path) -> None:
     scene_to_png(labeled_parts_scene(spec), path)
 
 
+@_generator("matplotlib:homology_schema")
+def _homology_schema(asset: Asset, path: Path) -> None:
+    """Homologie-Schema — schematic side views of vertebrates with the forelimb pair in one
+    consistent colour (focus) and the hindlimb pair in another (primary), the SAME two colours
+    on every animal, so "gleicher Bauplan, verschiedene Werkzeuge" (homologe Gliedmaßen →
+    gemeinsame Abstammung) reads at a glance. Correct by CURATION: the limb homologies are
+    curated biological facts (`homology.ANIMALS`), each animal declares EXACTLY two fore + two
+    hind limbs, and unpaired fins stay neutral grey — no invented numbers. spec: {title?,
+    animals? (a subset of the curated animal dicts)}; empty spec → the four-vertebrate default
+    (Fisch, Frosch, Vogel, Hund). A schematic figure, not a data chart."""
+    scene_to_png(homology_scene(asset.spec or {}), path, dpi=150)
+
+
 @_generator("matplotlib:optics_ray")
 def _optics_ray(asset: Asset, path: Path) -> None:
     """Bildkonstruktion an einer dünnen Linse — the drei Hauptstrahlen as a step-by-step
@@ -1274,6 +1289,40 @@ def _circuit(asset: Asset, path: Path) -> None:
                                       show_value=bool(s.get("show_value", True)),
                                       mask=s.get("mask"), ask=s.get("ask"),
                                       title=s.get("title")), path)
+
+
+@_generator("matplotlib:pinhole_camera")
+def _pinhole_camera(asset: Asset, path: Path) -> None:
+    """Lochkamera — der Strahlengang durch die Lochblende; das Bild steht kopf, weil die Strahlen
+    im Loch KREUZEN (Konstruktion, keine Achsen). Bildgröße B = G·b/a wird aus den ähnlichen
+    Dreiecken BERECHNET. spec: {G:num, a:num, b:num (positive Beträge — Gegenstandsgröße,
+    Gegenstands-, Bildweite), show_value?:bool (false → nur die gesuchte Bildgröße "B = ?"
+    maskiert), title?}."""
+    s = asset.spec or {}
+    scene = pinhole_construction(float(s.get("G", 3.0)), float(s.get("a", 6.0)),
+                                 float(s.get("b", 4.0)),
+                                 show_value=bool(s.get("show_value", True)))
+    if s.get("title"):
+        scene.canvas.title = str(s["title"])
+    scene_to_png(scene, path)
+
+
+@_generator("matplotlib:shadow_cone")
+def _shadow_cone(asset: Asset, path: Path) -> None:
+    """Schattenraum (Kernschatten) hinter einer Kugel bei punktförmiger Lichtquelle — die
+    Tangentenstrahlen und der schraffierte Kernschatten werden GERECHNET (geschlossene
+    Tangentenkonstruktion, keine Achsen). Eine Punktquelle liefert genau eine Tangente je Seite →
+    ein scharfer Rand (kein Halbschatten). spec: {source?:[x,y], center?:[x,y], r:num,
+    screen_x?:num|null (Wand rechts; null = keine Wand), show_screen?:bool, title?}."""
+    s = asset.spec or {}
+    scene = shadow_construction(
+        tuple(s.get("source", (-6.5, 0.0))), tuple(s.get("center", (0.0, 0.0))),
+        float(s.get("r", 1.5)),
+        None if s.get("screen_x", 6.5) is None else float(s.get("screen_x", 6.5)),
+        show_screen=bool(s.get("show_screen", True)))
+    if s.get("title"):
+        scene.canvas.title = str(s["title"])
+    scene_to_png(scene, path)
 
 
 def _drop(d: dict, *keys) -> dict:
@@ -1561,6 +1610,15 @@ GENERATION_RECIPES: dict[str, str] = {
         'und Lösungsnamen werden aus derselben Teile-Liste ABGELEITET — Schülerblatt und '
         'Lösung können nicht auseinanderlaufen. Die Formen sind schematisch (kein '
         'Datendiagramm).',
+    "matplotlib:homology_schema":
+        'Homologie-Schema (Wirbeltier-Vergleich, Biologie): schematische Seitenansichten von '
+        'Tieren, bei denen das VORDERgliedmaßenpaar in EINER Farbe und das HINTERgliedmaßenpaar '
+        'in einer ANDEREN markiert ist — dieselben zwei Farben bei jedem Tier, damit „gleicher '
+        'Bauplan, verschiedene Werkzeuge" (homologe Gliedmaßen → gemeinsame Abstammung) auf '
+        'einen Blick lesbar ist. spec {"title"?:str}; ohne Angabe die vier Standard-Wirbeltiere '
+        '(Fisch, Frosch, Vogel, Hund). Die Gliedmaßen-Homologien sind KURIERTE Fakten (jedes '
+        'Tier genau zwei Vorder- + zwei Hintergliedmaßen; unpaarige Flossen bleiben neutral '
+        'grau) — keine erfundenen Zahlen, ein schematisches Bild statt eines Balkendiagramms.',
     "matplotlib:tree_diagram":
         'Baumdiagramm — mehrstufiger Zufallsversuch (WS). spec {"branches":[{"label","p"? (Astbeschriftung, '
         'z. B. "0,3"),"children"?:[{"label","p"?,"children"?…}]}],"title"?}. Astwahrscheinlichkeiten '
@@ -1643,6 +1701,20 @@ GENERATION_RECIPES: dict[str, str] = {
         'Bildgröße B) wird aus der Abbildungsgleichung 1/f = 1/g + 1/b BERECHNET (sympy). '
         'stage 1 Achse+Linse+Gegenstand+Brennpunkte · 2 Parallelstrahl · 3 Mittelpunktstrahl · '
         '4 Brennpunktstrahl · 5 Bildpfeil · 6 Maße.',
+    "matplotlib:pinhole_camera":
+        'Lochkamera-Strahlengang (Physik, geradlinige Lichtausbreitung) — spec {"G":num,"a":num,'
+        '"b":num (positive Beträge: Gegenstandsgröße, Gegenstandsweite, Bildweite),'
+        '"show_value"?:bool (false → nur die gesuchte Bildgröße "B = ?" maskiert),"title"?}. '
+        'Gegenstand, Lochblende (ein Loch) und umgekehrtes Bild werden gezeichnet; die Strahlen '
+        'KREUZEN im Loch, daher steht das Bild kopf (Konstruktion). Bildgröße B = G·b/a aus '
+        'ähnlichen Dreiecken BERECHNET — keine Koordinatenachsen.',
+    "matplotlib:shadow_cone":
+        'Schattenraum/Kernschatten hinter einer Kugel bei PUNKTförmiger Lichtquelle (Physik) — '
+        'spec {"source"?:[x,y],"center"?:[x,y],"r":num,"screen_x"?:num|null (Wand rechts; null = '
+        'keine Wand),"show_screen"?:bool,"title"?}. Die zwei Tangentenstrahlen und der '
+        'schraffierte Kernschatten werden GERECHNET (geschlossene Tangentenkonstruktion). Eine '
+        'Punktquelle liefert genau eine Tangente je Seite → ein scharfer Schattenrand (kein '
+        'Halbschatten) — keine Koordinatenachsen.',
     "matplotlib:circuit":
         'Stromkreis-Schaltbild aus einer Netzliste (Physik) — spec {"net":{Baum aus '
         '{"type":"series"|"parallel","children":[…]} und Blättern {"type":"resistor"|"lamp",'

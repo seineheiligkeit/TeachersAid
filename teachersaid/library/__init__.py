@@ -203,7 +203,9 @@ def seed_hybrid_image(store=None, *, today: date | None = None) -> list:
 
 
 def seed_anno_quellenarbeit(store=None, *, today: date | None = None) -> list:
-    """Stage the referenced-only ANNO/ÖNB newspaper-source worksheet for Gate-2 review."""
+    """Stage the self-contained ANNO/ÖNB newspaper-source worksheet (1871 Leitartikel) for
+    Gate-2 review: the OCR excerpt and a page scan crop are embedded ON the sheet, so the
+    OCR-Prüfung and reading happen on paper (the ANNO link is enrichment, not a dependency)."""
     from ..pipeline import orchestrator as orch
     from ..pipeline.resolve import resolve_grade
     from ..store.repository import ReviewStore
@@ -215,8 +217,10 @@ def seed_anno_quellenarbeit(store=None, *, today: date | None = None) -> list:
 
 
 def seed_anno_weltausstellung(store=None, *, today: date | None = None) -> list:
-    """Stage the second referenced-only ANNO Quellenarbeit (the official 1873
-    Weltausstellung voice — the counterpart to the oppositional 1871 Leitartikel)."""
+    """Stage the second self-contained ANNO Quellenarbeit (the official 1873 Weltausstellung
+    voice — the counterpart to the oppositional 1871 Leitartikel) for Gate-2 review: OCR excerpt
+    + page scan crop embedded on the sheet; Aufgabe 1 is now the student's own determination
+    from the source, not a restatement of the intro (the SME's „copy-paste“ note)."""
     from ..pipeline import orchestrator as orch
     from ..pipeline.resolve import resolve_grade
     from ..store.repository import ReviewStore

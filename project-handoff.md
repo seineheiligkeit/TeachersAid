@@ -1,8 +1,13 @@
 # Project Handoff — Austrian Lehrplan-anchored Teaching-Material Generator
 
 **Status: design baseline from Session 2 (24 June 2026); see the dated session updates below for the
-current state (latest: Session 20, 12 July 2026 — the carried-forward backlog cleared AND Tiefenregler
-P2–P4: the Mischpult is complete, six faders + capability discovery + dashboard; 935 tests green).** This is the single read-me-first document for a fresh
+current state (latest: Sessions 21–23, 14 July 2026 — an SME review pass: the two ANNO GPB
+Quellenarbeiten rebuilt referenced-only → self-contained (OCR excerpt + page scan crop embedded ON the
+sheet, `fetch_anno` crop mode, `orch.restage_worksheet`); two abstract Physik figures → computed
+physics scenes (`pipeline/geometric_optics.py`: `pinhole_camera`·`shadow_cone`, plus a real
+Sammellinsen-Bildkonstruktion) on `c0192`/`c0193`; the false Biologie „Extremitätenpaare" bar chart →
+a curated `homology_schema` on `c0172`; and a test-isolation fix — suite fully green, 976 tests).**
+This is the single read-me-first document for a fresh
 session taking the project over. Working language is English; the *product's* output is German (or a
 target language for Fremdsprache). Read this, then the docs in the order given in §6.
 
@@ -597,6 +602,93 @@ target language for Fremdsprache). Read this, then the docs in the order given i
 > additions: the Mischpult German surfaces (Formulierungshilfen table · Hilfestellung/hint wording ·
 > the 6 twins + glossaries · fader/endpoint labels + the six "warum nicht" strings). Still open from
 > the flagship description: lesson-purpose presets · Zusatz-★/tiered sub-questions as content genres.
+
+> **Update (Session 21, 14 Jul 2026): the two ANNO Quellenarbeiten rebuilt referenced-only →
+> self-contained (SME feedback).** The SME reviewed both GPB ANNO sheets „überarbeiten": `c0199`
+> („Zeitung als politische Waffe?") — *„Link is not working. Also dont use unexplained abreviations
+> like OCR on the worksheets without explaining them"*; `c0202` („Fortschritt als Festrede") — *„Link
+> not working. Also part 1 is just a copy-paste job from the introduction."* **Root cause:** the sheets
+> printed an IIIF canvas URL (raw JSON to a human) and *outsourced the sourcing work to the student* —
+> referenced-only was being used as a didactic mode, not a rights fallback. **Redesign (all on the
+> sheet now):** the line-numbered OCR excerpt is embedded as a `source_text` block (byte-locked against
+> its `runs/ingest/texts_src/*.json` record; PD-Mark `quoted` expression provenance → the student sheet
+> auto-renders the `Quelle: … · Lizenz: Public Domain Mark 1.0` line), and a **scan crop** of the
+> matching page region is embedded as a `file:raster` sourced asset. `tools/fetch_anno.py` gained a
+> **deterministic crop mode**: it maps the excerpt's physical OCR lines to their ALTO TextLine bboxes
+> (ALTO space == full-image space for ANNO), unions + pads them into an IIIF Image-API region crop,
+> saves the JPEG under git-ignored `runs/anno/files/` beside a tracked `runs/anno/<id>.json` record
+> (region xywh · IIIF URL · sha1 · PD-Mark rights · depicted lines), and re-materialises from it
+> (`--rehydrate`). The term **OCR is now introduced** in the intro callout (with the two real errors
+> from these very sheets: „sind"→„find", „und"→„nnd"); the link is **demoted** to a low-key
+> `Digitalisat` prose line (enrichment, no task depends on it) and „Internetzugang nötig" is gone.
+> **Tasks rewritten** so none is transcription of what the sheet prints: c0199 t1 reads the Fraktur
+> **headline off the scan crop** then argues Quelle≠Darstellung; c0202 t1 shifts fully onto the
+> student's **own determination from the source** (speaker/addressee via the salutation in Zeile 4–5),
+> killing the intro-duplication the SME flagged (the intro no longer names who speaks). t2 (OCR-Prüfung)
+> is bounded to the printed crop's Zeile 1–15; t3/t4 keep the metaphor/Standort/bounded-Urteil core,
+> now with **Zeile references verified against the actually-rendered line numbers** (the blank
+> block-separator line is un-numbered by `numbered_text`, so raw indices ≠ rendered — a drift-guard
+> test locks the phrases at their rendered Zeilen). New `orch.restage_worksheet` rebuilds `c0199`/`c0202`
+> **in place** (id/status/created_at + the SME feedback linkage in `runs/feedback/` preserved). Shared
+> `library/anno_common.py`; both verify-clean, QA-rasters legible (Fraktur headline + numbered OCR +
+> the „Bald **sind** es"/„find" mismatch visible in the wrz crop). **Rule recorded** (CLAUDE.md):
+> *referenced-only is a rights fallback, not a didactic mode — a task's materials live ON the sheet;
+> external archive navigation is enrichment only.* Suite **935 → 957 passed, 1 skipped** (offline; the
+> crop binaries are git-ignored + rebuildable, so the render/seed/restage tests skip on a clone without
+> them). SME queue: review the two rebuilt sheets + their German (intro OCR callout, task wording).
+
+> **Update (Session 22, 14 Jul 2026): two abstract Physik figures → computed physics scenes.** The SME
+> flagged three figures on two approved Physik-2 sheets: an LLM had emitted a generic
+> `matplotlib:coordinate_plane` (labelled dots on an x/y grid, −1…10) where a physical schematic
+> belongs — a two-tier violation (the LLM must never author a scene). New rectilinear-light recipe
+> module **`pipeline/geometric_optics.py`** (complements the lens family in `optics.py`):
+> **`pinhole_camera`** (Lochkamera — Gegenstand, Lochblende, the two rays CROSSING in the single hole
+> → kopfstehendes Bild *by construction*; B = G·b/a from similar triangles) and **`shadow_cone`**
+> (Schattenraum — closed-form tangents from a *point* source to a Kugel, the shaded Kernschatten with
+> exactly one sharp edge per side — the answer to "warum kein Halbschatten?" — plus the Wand).
+> Swapped in place via `orch.restage_worksheet` (same asset ids → feedback linkage preserved):
+> c0193.t5 → `shadow_cone` (f0084); c0192.t4 → `pinhole_camera` (f0085); c0192.t3 (Lupe, previously
+> figure-less) gains a real `optics_ray` Sammellinsen-Bildkonstruktion (g = 2f → reelles, umgekehrtes
+> Bild, stage 5, drei Hauptstrahlen). `fig_schallpegel_skala` (number_line) left untouched. Both items
+> set back to **pending** for Prüfen; `verify_problems == []` (advisory WSTF only). +10 tests
+> (`tests/test_geometric_optics.py`) + `tools/geometric_optics_specimen.py`; suite **967 passed, 1
+> skipped** (one *pre-existing* local failure, `test_hybrid_image`, is AssetStore disk-state, unrelated).
+> SME queue: the three reworked figures.
+
+> **Update (Session 23, 14 Jul 2026): the Biologie „Extremitätenpaare" bar chart → a curated
+> Homologie-Schema.** The SME rejected the figure on `c0172` („Gebaut fürs Wasser, gebaut für die Luft",
+> 1. Kl., pending) three times (f0086 reject on `c0172.t2`; f0087/f0088 „very confusing what is shown
+> here"): a `matplotlib:bar_chart` claiming „Anzahl Extremitätenpaare" — Fisch 4, Frosch 3, Eidechse 3,
+> Vogel 4, Hund 4. The numbers were **invented** (`illustrative`, not computed/sourced) AND
+> **biologically false** (every one of these vertebrates has exactly TWO limb pairs), and worse
+> **pedagogically backwards**: the Baustein's point is that these animals share ONE Bauplan (homologe
+> Gliedmaßen → gemeinsame Abstammung), yet a bar chart invites „compare the heights, find the
+> differences" — the opposite message. New scene-family module **`pipeline/homology.py`**
+> (`matplotlib:homology_schema`): curated side-view silhouettes of Fisch·Frosch·Vogel·Hund built from
+> scene primitives (ellipse bodies, tapered-quad legs, fin/wing polygons), with the **forelimb pair in
+> `focus` and the hindlimb pair in `primary` — the SAME two colours on EVERY animal** (solid vs. dashed
+> outline for B/W redundancy; a legend maps colour → Gliedmaßenpaar), so „gleicher Bauplan, verschiedene
+> Werkzeuge" reads at a glance while the *shape* varies (fin/leg/wing — homolog, verschieden geformt).
+> Two-tier + correct-by-CURATION: the limb homologies are curated facts (`ANIMALS`), each animal
+> declares EXACTLY two fore + two hind limbs (a limb = a list of polygons, so a bent frog leg is
+> thigh + shin), and the unpaired fish Rücken-/Schwanzflosse stay neutral grey so „genau zwei Paare"
+> stays honest. `t2` rewritten off the „Anzahl" framing onto the schema (prompt + answer_key +
+> watch_outs; kept `data_interpretation`/ERK.04 — it now interprets a schema figure); the false
+> „Extremitätenpaare" talking point scrubbed from the teacher_overview; asset `a1` swapped in place
+> (same id → `t2.asset_refs` resolves) → `matplotlib:homology_schema`, `illustrative`, no data_source.
+> Restaged in place via `orch.restage_worksheet` (id/status/created_at + `runs/feedback/` linkage
+> preserved; item stays **pending**); `verify_problems == []` (media-policy/figure/chart lints all
+> clean — a schematic, not a data figure; advisory WSTF on the untouched ethics tasks only). +9 tests
+> (`tests/test_homology.py`) + `tools/homology_specimen.py`.
+>
+> **Also fixed the one pre-existing test failure the figures work surfaced.**
+> `test_hybrid_image::test_content_approval_waits_for_independent_asset_review` read the *global*
+> `AssetStore` and started failing the moment the SME approved `img-bio-flower-cutaway` live in the
+> dashboard (a test-isolation bug, not a regression). `orch.approve_content` now takes an injectable
+> `asset_store=` (mirroring its existing `block_store=`; both API callers unchanged, default =
+> `AssetStore()`), and the test drives an ISOLATED store BOTH ways — blocks while the dependency is
+> `in_review`, proceeds once it is `approved`. Suite now **fully green: 976 passed, 1 skipped, 0
+> failed**. SME queue: the three reworked figures on `c0172`, `c0192`, `c0193`.
 
 ---
 

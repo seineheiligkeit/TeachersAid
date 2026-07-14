@@ -160,7 +160,24 @@ guarantees a legible representation.
   `right_triangle · rectangle · polygon · circle · coordinate_plane` · the probability tree
   `tree_diagram` (Baumdiagramm, spec-provided branch probabilities, via `body.assets`)
 - **scene recipes:** `triangle_construction` · the analysis family (above) · `cause_effect` ·
-  `process_flow` (the Sachverhalt-derived figures)
+  `process_flow` (the Sachverhalt-derived figures) · `labeled_parts` ("Beschrifte die Teile",
+  numbered-student/named-teacher projections) · `homology_schema` (the Biology vertebrate-Bauplan
+  comparison — see below)
+- **curated schematic comparison:** `homology_schema` (`pipeline/homology.py`) — schematic side-view
+  silhouettes of vertebrates (Fisch · Frosch · Vogel · Hund) with the **forelimb pair in one role
+  (`focus`) and the hindlimb pair in another (`primary`) — the SAME two colours on every animal**, so
+  "gleicher Bauplan, verschiedene Werkzeuge" (homologe Gliedmaßen → gemeinsame Abstammung) reads at a
+  glance while the *shape* varies (a red fin, a red wing, a red leg — homolog, verschieden geformt). A
+  solid outline (fore) vs. dashed (hind) keeps the pairs apart in a B/W photocopy; a legend maps colour
+  → Gliedmaßenpaar. **Correct by CURATION**, not invented numbers: the limb homologies are curated facts
+  (`ANIMALS`), each animal declares exactly two fore + two hind limbs, and the unpaired fish fins stay
+  neutral grey. This is the honest replacement for a "count the limb pairs" bar chart — a chart invites
+  "find the differences", the opposite of the homology message.
+- **physics scenes:** `optics_ray` (thin-lens Bildkonstruktion) · `circuit` (Schaltbild) ·
+  `vector_addition`/`force_diagram` · `pinhole_camera` (Lochkamera — the two rays CROSS in the
+  single hole, so the image is kopfstehend by construction; B = G·b/a) · `shadow_cone` (Schattenraum
+  — closed-form tangents from a point source to a Kugel; the shaded Kernschatten has exactly one
+  sharp edge per side — no Halbschatten). All computed, `show_value`-maskable, no coordinate axes.
 
 `body.data_figures` (intent-declared) is the preferred seam for data; `body.assets` (explicit
 generator) is for structural/geometry figures. Labels are **spec-provided** so a figure never leaks
@@ -196,7 +213,6 @@ otherwise. Pure-math figures are exempt.
 
 ## What's next
 
-<<<<<<< HEAD
 - **Port the ~25 legacy recipes** — ✅ **DONE (9 Jul 2026).** Every recipe in
   `pipeline/assets.py` consumes the roles/ramps/type scale; `build_asset` scopes `house_rc()`
   over every build, so multi-series lines pick up the categorical ramp via `axes.prop_cycle`.

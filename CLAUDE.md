@@ -33,7 +33,7 @@ rendering + the two-stage human-in-the-loop review dashboard).
 ```bash
 pip install -e .                       # deps: pydantic2, fastapi, uvicorn, anthropic, reportlab,
                                        #       matplotlib, pillow, pyyaml, pymupdf, sympy  (pytest for dev)
-python -m pytest -q                    # fully offline, no API key (935 tests)
+python -m pytest -q                    # fully offline, no API key (976 tests)
 python -m teachersaid seed             # seed the master-library examples into the review queue
 python -m teachersaid                  # dashboard → http://127.0.0.1:8000
 ```
@@ -192,9 +192,13 @@ numbers <120 and years skipped; **advisory lane** — doubles as the anti-rot ch
   `function_plot·integral_area·tangent·riemann_sum·extrema·area_between·distribution`), and the
   **physics families** `pipeline/optics.py` (thin-lens ray construction — drei Hauptstrahlen as stages;
   givens shown, image `b`/`B` maskable) + `pipeline/circuits.py` (series/parallel netlist → Kirchhoff
-  solve via sympy → DIN schematic; per-element `mask=[…]`). Value labels **mask** (`show_value=False` →
+  solve via sympy → DIN schematic; per-element `mask=[…]`) + `pipeline/geometric_optics.py` (the
+  rectilinear-light pair: `pinhole_camera` — a Lochkamera whose two rays CROSS in the single hole, so
+  the image is kopfstehend by construction, B = G·b/a · `shadow_cone` — the Kernschatten from
+  closed-form tangents to a Kugel; a point source gives exactly one sharp edge per side, no
+  Halbschatten). Value labels **mask** (`show_value=False` →
   "A = ?") so one scene serves the student task and the teacher solution. `tests/test_{scene,calculus,
-  optics,circuits}.py` lock defining properties; visual reference: `tools/*_specimen.py`.
+  optics,circuits,geometric_optics}.py` lock defining properties; visual reference: `tools/*_specimen.py`.
 - **3D (`pipeline/scene3d.py` — promoted, roadmap A7):** model in ℝ³, project via a fixed axonometric map
   into ordinary 2D scene primitives — renderer + figstyle reused, print-first. Recipes
   `matplotlib:axonometric_solid` (Schrägriss of Quader/Prisma/Pyramide/Zylinder/Kegel; hidden edges
@@ -216,6 +220,15 @@ numbers <120 and years skipped; **advisory lane** — doubles as the anti-rot ch
   simplification: forces from the body's centre) and **`pipeline/labeled_diagram.py`**
   (`labeled_parts` — "Beschrifte die Teile", numbered-student/named-teacher projections from ONE scene;
   volcano flagship). Tests: `test_{nodelink,physics_scenes,labeled_diagram}.py`.
+- **Homologie-Schema (`pipeline/homology.py`, `matplotlib:homology_schema`):** a curated
+  schematic-comparison scene — side-view silhouettes of vertebrates (Fisch·Frosch·Vogel·Hund) with the
+  **forelimb pair in `focus`, the hindlimb pair in `primary` — the SAME two colours on EVERY animal**
+  (solid vs. dashed outline for B/W redundancy; a legend maps colour → Gliedmaßenpaar), so "gleicher
+  Bauplan, verschiedene Werkzeuge" (homologe Gliedmaßen → gemeinsame Abstammung) reads at a glance
+  while the *shape* varies (fin/leg/wing). Correct by CURATION (`ANIMALS`: each declares EXACTLY two
+  fore + two hind limbs; unpaired fish fins stay neutral grey) — the honest replacement for a "count
+  the limb pairs" bar chart, which invites "find the differences", the opposite message. Test:
+  `test_homology.py`; specimen `tools/homology_specimen.py`.
 - **Körpernetze (`pipeline/nets.py`):** `cuboid_net` computes a six-face Quader/Würfel net with
   explicit dimensions and exactly five fold adjacencies; `matplotlib:solid_net` is only its scene
   projection (`Region·Line·Label`). Labels are spec-provided and maskable (`"O = ?"`). The
@@ -430,14 +443,24 @@ Zauberlehrling* 1827 (Kl. 4) · Phaedrus *Lupus et Agnus* + *Rana Rupta et Bos* 
 AT-70-p.m.a.-clear, historical orthography preserved verbatim. Second batch: Hey *Küchlein* (Kl. 1) ·
 Grimm *Der Fuchs und die Katze* + Morgenstern *Das ästhetische Wiesel* (Kl. 2) · Goethe *Erlkönig*
 (Kl. 3) · Kafka *Kleine Fabel* (Kl. 4) · Phaedrus I,4 + I,26 (LAT Kl. 3/4) — staged-equals-fetched
-byte-locked. **`tools/fetch_anno.py` (11 Jul 2026)**
-adds the newspaper/OCR path through the official ÖNB IIIF manifest + ALTO resources. It targets the
-ÖNB Labs Public-Domain-Mark subset, records the exact canvas URL, preserves OCR verbatim (including
-errors, line and block boundaries; no silent correction/dehyphenation), and marks it
-`machine_ocr_unverified`. The first staged source is the 1871 *Leitmeritzer Zeitung* report on a
-Lehrertag; its annotated text and referenced-only GPB Quellenarbeit are both verify-clean. The 1873
-*Wiener Zeitung* Weltausstellungs-Festrede pairs with it as the official counter-voice (annotated DEU
-text + GPB Quellenarbeit #2, `library/gpb_anno_weltausstellung.py`).
+byte-locked. **`tools/fetch_anno.py` (11 Jul 2026; scan-crop mode 14 Jul)** adds the newspaper/OCR
+path through the official ÖNB IIIF manifest + ALTO resources. It targets the ÖNB Labs
+Public-Domain-Mark subset, records the exact canvas URL, preserves OCR verbatim (including errors,
+line and block boundaries; no silent correction/dehyphenation), and marks it `machine_ocr_unverified`.
+Its **crop mode** (`--crop-lines A-B --crop-id …`) computes a page-image region deterministically from
+the SAME ALTO the excerpt came from (union bbox of the target TextLines → IIIF Image-API region crop;
+ALTO space == full-image space for ANNO), saves the JPEG under `runs/anno/files/` (git-ignored) beside
+a tracked `runs/anno/<id>.json` record (region xywh · IIIF crop URL · sha1 · PD-Mark rights · depicted
+OCR lines) and is re-runnable to re-materialise the binary (`--rehydrate`). The two GPB ANNO
+Quellenarbeiten (1871 *Leitmeritzer Zeitung* Leitartikel `c0199`; 1873 *Wiener Zeitung*
+Weltausstellungs-Festrede `c0202`, the official counter-voice; `library/gpb_anno_{quellenarbeit,
+weltausstellung}.py` + shared `anno_common.py`) are **self-contained**: the line-numbered OCR excerpt
+(byte-locked against its `texts_src` record) and a scan crop of the matching page region are embedded
+ON the sheet (source_text with PD-Mark expression provenance + a `file:raster` sourced asset), so the
+OCR-Prüfung and the reading happen on paper. The demoted human ANNO viewer link is enrichment; the DEU
+twins are the redistributed OCR text; all verify-clean. **Rule: referenced-only is a rights fallback,
+not a didactic mode — a task's materials live ON the sheet; external archive navigation is enrichment
+only.**
 
 **Audio / Hörverstehen (modern FS)** — a listening text is an `AnnotatedText` with `medium="audio"`:
 `build_worksheet` attaches `Asset(role="tts", generator="audio:tts")`, renders a printable audio cue +

@@ -37,11 +37,28 @@ def test_hybrid_build_resolves_the_stored_candidate(tmp_path):
 def test_content_approval_waits_for_independent_asset_review(tmp_path, monkeypatch):
     from teachersaid.pipeline import orchestrator as orch
     from teachersaid.pipeline.resolve import resolve_grade
+    from teachersaid.store.assetstore import AssetStore, LibraryAsset
     from teachersaid.store.repository import ReviewStore
 
     store = ReviewStore(tmp_path / "review")
+    # Inject an ISOLATED asset store so the test never depends on the machine's live
+    # review state (an SME approving the flower asset in the dashboard must not flip
+    # this test — the earlier global-store version did exactly that).
+    assets = AssetStore(tmp_path / "assets")
+    dep_id = "img-bio-flower-cutaway"
+    assets.upsert(LibraryAsset(
+        id=dep_id, klass="depictive", status="in_review",
+        asset=Asset(id=dep_id, role="source", generator="file:raster",
+                    spec={"path": "flower.png"})))
     monkeypatch.setattr(orch, "_render_all", lambda *_: None)
     item = orch.stage_worksheet(
         store, flower.build_content(), resolve_grade("Biologie", 1), source="curated")
+
+    # The dependency is only in_review → content approval must BLOCK.
     with pytest.raises(ValueError, match="separate SME approval"):
-        orch.approve_content(store, item.id)
+        orch.approve_content(store, item.id, asset_store=assets)
+
+    # Once the asset is independently approved, the content approval goes through.
+    assets.set_status(dep_id, "approved")
+    approved = orch.approve_content(store, item.id, asset_store=assets)
+    assert approved.status == "approved"

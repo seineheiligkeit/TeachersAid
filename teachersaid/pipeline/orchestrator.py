@@ -252,6 +252,42 @@ def stage_worksheet(
     return store.save(item)
 
 
+def restage_worksheet(
+    store: ReviewStore, item_id: str, content, res: LehrplanResolution, *,
+    title: str | None = None, source: str | None = None,
+) -> ReviewItem:
+    """Rebuild an EXISTING content item IN PLACE — the review-state-safe analogue of
+    `stage_worksheet` for reworking a curated flagship after SME feedback. Mirrors
+    `stage_worksheet`'s assemble → verify → render flow, but does NOT `create` a new item:
+    the id, `created_at`, `status`, `parent_id` and the feedback log are preserved (so the
+    SME's review linkage survives), and only title/request/resolution/content/artifacts/
+    verify_* are refreshed. Raises if the item does not exist."""
+    item = store.get(item_id)
+    if item is None:
+        raise KeyError(f"no content item '{item_id}'")
+    if title is not None:
+        item.title = title
+    if source is not None:
+        item.source = source
+    item.request = BundleRequest(
+        subject=content.meta.subject, klasse=content.meta.klasse,
+        topic_raw=content.meta.title, anchor_mode=content.anchor_mode,
+        anchor_uet=content.anchor_uet,
+    )
+    item.resolution = res
+    try:
+        assemble(content, res)
+        report = verify(content, res)
+        item.artifacts = _render_all(item.id, content)
+        item.content = content
+        item.verify_problems = report.problems
+        item.verify_warnings = report.warnings
+        item.error = None
+    except Exception as exc:  # noqa: BLE001 — surface as an item error, don't crash
+        item.error = f"{type(exc).__name__}: {exc}"
+    return store.save(item)
+
+
 def compose_variants(store: ReviewStore, template_id: str, n: int = 6,
                      *, ramp: bool = False, today: date | None = None,
                      mixer_profile: ParametricMixerProfile | None = None) -> ReviewItem:
@@ -835,7 +871,8 @@ def _produce_content_item(
 
 
 # --- GATE 2 + feedback loop -------------------------------------------------
-def approve_content(store: ReviewStore, item_id: str, *, block_store=None) -> ReviewItem:
+def approve_content(store: ReviewStore, item_id: str, *, block_store=None,
+                    asset_store=None) -> ReviewItem:
     item = store.get(item_id)
     if item is None or item.stage != "content":
         raise KeyError(f"no content item '{item_id}'")
@@ -855,7 +892,7 @@ def approve_content(store: ReviewStore, item_id: str, *, block_store=None) -> Re
                 referenced.add(str(background["asset_id"]))
     if referenced:
         from ..store.assetstore import AssetStore
-        assets = AssetStore()
+        assets = asset_store if asset_store is not None else AssetStore()
         unapproved = [asset_id for asset_id in sorted(referenced)
                       if (assets.get(asset_id) is None
                           or assets.get(asset_id).status != "approved")]
