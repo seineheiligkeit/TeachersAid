@@ -1,0 +1,249 @@
+{
+  "subject": "Psychologie und Philosophie",
+  "klasse": 8,
+  "kompetenzbereich": "Aspekte der Erkenntnis- und Wissenschaftstheorie",
+  "title": "Was können wir wissen? Von der Höhle zur Wissenschaft",
+  "kernfrage": "Woher weißt du, dass die Welt wirklich so ist, wie sie dir erscheint – und was unterscheidet Wissenschaft von bloßer Meinung?",
+  "body": {
+    "intro": [
+      "Ein Stab, halb ins Wasserglas getaucht, sieht geknickt aus – ist er es? Seit über zweitausend Jahren fragen Philosophinnen und Philosophen: Können wir der Welt trauen, so wie sie uns erscheint? Und woran erkennt man eigentlich, ob eine Behauptung wissenschaftlich ist oder bloß gut klingt? In diesem Arbeitsblatt gehst du diesen Fragen nach – von Platons Höhle über Descartes' Zweifel bis zu Karl Popper und Thomas Kuhn."
+    ],
+    "data_figures": [],
+    "assets": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Zugänge zur Wirklichkeit: Wahrnehmung, Zweifel und Erkenntnis",
+        "throughline": "Die Schüler:innen unterscheiden Erscheinung und Wirklichkeit, lernen klassische Positionen zur Quelle der Erkenntnis (Rationalismus/Empirismus) kennen und reflektieren, wie sicher unser Zugang zur Welt ist.",
+        "talking_points": [
+          "Platons Höhlengleichnis (Politeia, Buch VII): Unterscheidung von bloßem Schein (doxa) und wahrer, denkend erfasster Wirklichkeit (den Ideen); Bildung als mühsamer Aufstieg.",
+          "Descartes' methodischer Zweifel (Meditationen, 1641) sucht ein sicheres Fundament und findet es im ‚cogito, ergo sum' – dem Ausgangspunkt des Rationalismus.",
+          "Rationalismus (Vernunft; Descartes, Leibniz) gegenüber Empirismus (Erfahrung; Locke, Hume); Kant vermittelt später beide (‚Gedanken ohne Inhalt sind leer, Anschauungen ohne Begriffe sind blind').",
+          "Wahrnehmung ist ein aktiver, deutender Prozess: Täuschungen belegen Fehlbarkeit, nicht die generelle Wertlosigkeit der Sinne."
+        ],
+        "extensions": [
+          "Kants ‚kopernikanische Wende' und die Unterscheidung Erscheinung / Ding an sich einführen.",
+          "Brücke zur Wahrnehmungspsychologie (7. Klasse): der konstruktive Charakter der Wahrnehmung und Sinnestäuschungen.",
+          "Gegenwart: ‚Filterblasen' und Fake News als moderne ‚Höhle' diskutieren – wie prüfen wir, was wirklich ist?"
+        ],
+        "blocks": [
+          {
+            "role": "info",
+            "id": "i1",
+            "kind": "prose",
+            "content": "Zwei verwandte Disziplinen leiten dieses Arbeitsblatt: Die Erkenntnistheorie fragt, was und wie wir überhaupt wissen können – stammt Erkenntnis aus der Vernunft oder aus der Erfahrung, und wie sicher ist sie? Die Wissenschaftstheorie fragt enger: Was macht Wissen zu wissenschaftlichem Wissen, und wie unterscheidet es sich von Meinung, Glaube oder Pseudowissenschaft?"
+          },
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "matching",
+            "prompt": "Ordne jedem erkenntnistheoretischen Grundbegriff die passende Erläuterung zu.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Rationalismus",
+                "Empirismus",
+                "Skeptizismus",
+                "a priori",
+                "a posteriori"
+              ],
+              "right": [
+                "Die Grundhaltung des methodischen Zweifels: nichts wird ungeprüft für wahr gehalten.",
+                "Wichtigste Quelle sicherer Erkenntnis ist die Vernunft; Vorbild ist die Mathematik (z. B. Descartes, Leibniz).",
+                "Erst aus der Erfahrung zu gewinnen (z. B. dass Wasser bei 100 °C siedet).",
+                "Alle Erkenntnis stammt letztlich aus der Sinneserfahrung; der Geist beginnt als unbeschriebenes Blatt (z. B. Locke, Hume).",
+                "Gültig unabhängig von der Erfahrung, allein durch Denken einsehbar (z. B. 2 + 2 = 4)."
+              ]
+            },
+            "response": { "mode": "none" },
+            "cognitive_level": "understand",
+            "dimensions": ["WIS"],
+            "serves": [{ "competence_id": "PUP.OS.8.ASP3.01", "relation": "exercises" }],
+            "est_minutes": 6,
+            "asset_refs": [],
+            "answer_key": "Rationalismus → Vernunft als wichtigste Erkenntnisquelle (Descartes, Leibniz). Empirismus → Erfahrung als Quelle, der Geist als unbeschriebenes Blatt (Locke, Hume). Skeptizismus → die Grundhaltung des methodischen Zweifels. a priori → unabhängig von Erfahrung, allein durch Denken gültig (2 + 2 = 4). a posteriori → erst aus Erfahrung zu gewinnen (Wasser siedet bei 100 °C).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Rationalismus/Empirismus benennen die QUELLE der Erkenntnis (Vernunft oder Erfahrung); a priori/a posteriori benennen die ART der Geltung (mit oder ohne Erfahrung) – beides nicht verwechseln.",
+              "Skeptizismus meint nicht ‚alles ist falsch', sondern die Zurückhaltung des Urteils bis zur Prüfung."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "text_analysis",
+            "prompt": "Lies die Nacherzählung von Platons Höhlengleichnis (aus der ‚Politeia', Buch VII) und beantworte die Fragen.\n\n---\nMenschen sitzen von Kindheit an gefesselt in einer Höhle, den Blick auf eine Wand gerichtet. Hinter ihnen brennt ein Feuer; zwischen Feuer und Gefangenen werden Figuren vorbeigetragen. Die Gefangenen sehen nur die Schatten dieser Figuren an der Wand und halten sie für die einzige Wirklichkeit. Einer wird befreit, geht den mühsamen Weg ans Tageslicht hinauf, erkennt geblendet zuerst die wirklichen Dinge und schließlich die Sonne. Als er zurückkehrt und den anderen berichtet, verlachen sie ihn – und wären bereit, den zu töten, der sie hinaufführen wollte.\n---\n\n(a) Wofür stehen im Gleichnis (i) die Schatten, (ii) die Dinge draußen, (iii) die Sonne? Deute die Bilder erkenntnistheoretisch.\n(b) Das Gleichnis unterscheidet bloße Erscheinung von wahrer Erkenntnis. Erkläre diesen Unterschied in eigenen Worten.\n(c) Warum wird der Zurückkehrende verlacht und bedroht? Was sagt das über den Weg zu neuer Erkenntnis – auch heute?",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 65 },
+            "cognitive_level": "analyze",
+            "dimensions": ["WIS", "TRA"],
+            "serves": [{ "competence_id": "PUP.OS.8.ASP3.01", "relation": "exercises" }],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "(a) (i) Die Schatten stehen für die bloße Sinnenwelt bzw. die ungeprüften Meinungen (doxa), die wir für die ganze Wirklichkeit halten. (ii) Die wirklichen Dinge draußen stehen für die wahre, denkend erfasste Wirklichkeit (bei Platon: die Ideen). (iii) Die Sonne steht für das höchste Erkenntnisprinzip (die Idee des Guten), das alles Erkennen erst ermöglicht. (b) Erscheinung ist, wie die Dinge uns unmittelbar vorkommen (Sinneseindruck, Meinung); wahre Erkenntnis dringt durch Denken und Prüfung zu dem vor, was wirklich der Fall ist, und lässt sich begründen. (c) Der Zurückkehrende passt nicht mehr in die gewohnte Schattenwelt; seine Botschaft ist unbequem und stellt die vertraute Ordnung infrage. Das zeigt: Der Weg zu neuer Erkenntnis ist anstrengend und stößt oft auf Widerstand, Spott oder Ablehnung – neue Einsichten sind sozial nicht bequem (auch heute: wer Vertrautes infrage stellt, erntet Widerspruch).",
+            "acceptable_reasoning": "Akzeptabel: die drei Bilder plausibel erkenntnistheoretisch gedeutet (Schatten = Schein/Meinung, Draußen = wahre Wirklichkeit/Ideen, Sonne = höchstes Prinzip); Unterschied Erscheinung/Erkenntnis korrekt; soziale Deutung der Ablehnung.",
+            "watch_outs": [
+              "Es geht nicht um eine naturwissenschaftliche Optik, sondern um ein Gleichnis (Bildsprache) – die Bilder sind zu deuten, nicht nachzuerzählen.",
+              "Platons Ideenlehre ist gemeint, muss aber nicht mit dem Fachbegriff benannt werden; die Unterscheidung Erscheinung / wahre Wirklichkeit genügt.",
+              "Teil (c) nicht auf ‚die anderen sind dumm' verkürzen – gefragt ist die soziale Dimension von Erkenntniswandel."
+            ],
+            "rubric": [
+              { "criterion": "Deutung der drei Bilder", "levels": ["Fehlt oder falsch", "Ein bis zwei plausibel", "Alle drei erkenntnistheoretisch gedeutet"] },
+              { "criterion": "Erscheinung gegenüber Erkenntnis", "levels": ["Fehlt", "Nur angedeutet", "Klar und in eigenen Worten unterschieden"] },
+              { "criterion": "Soziale Dimension (c)", "levels": ["Fehlt oder verkürzt", "Ansatz vorhanden", "Widerstand gegen neue Erkenntnis reflektiert"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "argumentation",
+            "prompt": "René Descartes (‚Meditationen', 1641) suchte ein absolut sicheres Fundament des Wissens. Sein Weg: der methodische Zweifel. Weil die Sinne uns manchmal täuschen (Illusionen, Träume) und man sich sogar einen täuschenden ‚bösen Geist' vorstellen kann, verwirft er zunächst alles Zweifelhafte. Übrig bleibt eine Gewissheit: Selbst wenn ich in allem getäuscht werde – dass ich gerade zweifle und denke, kann nicht falsch sein. ‚Cogito, ergo sum' – ich denke, also bin ich.\n\n(a) Rekonstruiere Descartes' Gedankengang in drei bis vier Schritten (von der Täuschbarkeit der Sinne bis zum ‚Cogito').\n(b) Beurteile: Folgt aus ‚Die Sinne täuschen manchmal', dass wir ihnen nie trauen dürfen? Formuliere ein Gegenargument.\n(c) Sinnestäuschungen (z. B. der geknickt wirkende Stab im Wasser) werden manchmal als Beweis genommen, dass die Wahrnehmung grundsätzlich unzuverlässig sei. Nimm dazu begründet Stellung: Was zeigt eine Täuschung wirklich über unseren Zugang zur Wirklichkeit?",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 80 },
+            "cognitive_level": "evaluate",
+            "dimensions": ["TRA", "REF"],
+            "serves": [{ "competence_id": "PUP.OS.8.ASP3.01", "relation": "exercises" }],
+            "est_minutes": 14,
+            "asset_refs": [],
+            "answer_key": "(a) Schritte: (1) Die Sinne haben mich schon getäuscht (Illusionen, Träume, ein denkbarer ‚böser Geist'). (2) Was einmal getäuscht hat, taugt nicht als sicheres Fundament – also setze ich versuchsweise alles Zweifelhafte außer Kraft. (3) Doch selbst im radikalsten Zweifel gibt es etwas Unbezweifelbares: dass ich gerade zweifle bzw. denke. (4) Wer denkt, muss existieren – ‚cogito, ergo sum'. Damit ist ein erster gewisser Punkt gefunden. (b) Aus ‚manchmal täuschen die Sinne' folgt logisch nicht ‚immer' oder ‚nie vertrauenswürdig' (Fehlschluss vom Einzelfall aufs Ganze). Gegenargument: Gerade dass wir Täuschungen als Täuschungen erkennen und korrigieren können (nachmessen, Perspektive wechseln, andere Sinne oder Personen hinzuziehen), setzt voraus, dass Wahrnehmung im Regelfall funktioniert. (c) Eine Täuschung zeigt nicht, dass Wahrnehmung wertlos ist, sondern dass sie ein aktiver, deutender Prozess ist, der unter bestimmten Bedingungen systematisch irrt. Unser Zugang zur Wirklichkeit ist mittelbar und fehlbar – aber durch Methode (Messung, Wiederholung, Vergleich) überprüf- und korrigierbar. Fehlbarkeit ist nicht dasselbe wie generelle Unzuverlässigkeit.",
+            "acceptable_reasoning": "Akzeptabel: nachvollziehbare Rekonstruktion bis zum Cogito; Erkennen des Fehlschlusses ‚manchmal, also nie'; in (c) die Einsicht, dass Täuschungen Fehlbarkeit (nicht Wertlosigkeit) belegen und dass Korrektur möglich ist.",
+            "watch_outs": [
+              "Das ‚Cogito' beweist zunächst nur die Existenz des denkenden Ich, nicht die Existenz der Außenwelt – nicht überdehnen.",
+              "Häufiger Denkfehler in (b)/(c): der Sprung von ‚manchmal falsch' zu ‚grundsätzlich unzuverlässig' (voreilige Verallgemeinerung).",
+              "Radikaler Skeptizismus lässt sich nicht ‚widerlegen wie eine Rechnung' – gefragt ist eine begründete Abwägung, kein Beweis."
+            ],
+            "rubric": [
+              { "criterion": "Rekonstruktion des Cogito-Arguments", "levels": ["Fehlt oder falsch", "Lückenhaft", "Schlüssige Schrittfolge bis zum Cogito"] },
+              { "criterion": "Gegenargument gegen den Skeptizismus", "levels": ["Fehlt", "Behauptet, aber nicht begründet", "Fehlschluss erkannt und begründet"] },
+              { "criterion": "Reflexion über Täuschung und Fehlbarkeit", "levels": ["Fehlt oder ‚Sinne wertlos'", "Ansatz vorhanden", "Fehlbarkeit und Korrigierbarkeit klar unterschieden"] }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Was ist Wissenschaft? Erklären, Prüfen, Irren",
+        "throughline": "Die Schüler:innen bearbeiten wissenschaftstheoretische Grundfragen – Induktionsproblem, Falsifizierbarkeit, Paradigmenwechsel – und lernen, den wissenschaftlichen Status von Aussagen zu beurteilen, ohne in Relativismus oder Szientismus zu verfallen.",
+        "talking_points": [
+          "David Humes Induktionsproblem: Von endlich vielen Beobachtungen folgt kein allgemeines Gesetz mit logischer Notwendigkeit.",
+          "Karl Popper (Logik der Forschung, 1934): Theorien sind nicht verifizierbar, aber falsifizierbar; Falsifizierbarkeit dient als Abgrenzungskriterium (Demarkation) zwischen Wissenschaft und Pseudowissenschaft (Popper nannte u. a. die Astrologie; umstritten auch Psychoanalyse und Marxismus).",
+          "Thomas Kuhn (Struktur wissenschaftlicher Revolutionen, 1962): Normalwissenschaft, Anomalie, Krise, Revolution, Paradigmenwechsel – Wissenschaft verläuft nicht rein kumulativ.",
+          "Wichtige Nuance: ‚nicht falsifizierbar' bedeutet ‚außerhalb der empirischen Wissenschaft', nicht automatisch ‚falsch'; Wandel bedeutet Selbstkorrektur, nicht Beliebigkeit."
+        ],
+        "extensions": [
+          "Duhem-Quine-Problem: Hypothesen werden nie ganz isoliert geprüft (Hilfsannahmen) – eine Grenze des einfachen Falsifikationismus.",
+          "Eine Fallstudie eines Paradigmenwechsels vertiefen (Geozentrik zur Heliozentrik oder Newton zu Einstein).",
+          "Feyerabends ‚anything goes' als provokante Gegenposition kurz vorstellen und diskutieren."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "true_false_justify",
+            "prompt": "Beurteile die Aussagen zur Wissenschaftstheorie als richtig oder falsch und begründe jeweils in einem Satz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Aus noch so vielen Einzelbeobachtungen (‚Bisher ging die Sonne jeden Morgen auf') folgt mit logischer Notwendigkeit, dass es auch morgen so sein wird.",
+                "Nach Karl Popper lässt sich eine allgemeine wissenschaftliche Theorie durch Beobachtungen endgültig beweisen (verifizieren).",
+                "Eine einzige widersprechende Beobachtung (ein schwarzer Schwan) kann die Allaussage ‚Alle Schwäne sind weiß' widerlegen.",
+                "Für Popper ist eine Aussage umso wissenschaftlicher, je riskanter und leichter widerlegbar (falsifizierbar) ihre Vorhersagen sind."
+              ]
+            },
+            "response": { "mode": "table", "columns": ["Aussage", "Richtig / Falsch", "Begründung"], "rows": 4 },
+            "cognitive_level": "understand",
+            "dimensions": ["WIS", "TRA"],
+            "serves": [{ "competence_id": "PUP.OS.8.ASP3.02", "relation": "exercises" }],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "1 – Falsch: Das ist David Humes Induktionsproblem – von vielen Einzelfällen auf ein allgemeines Gesetz oder auf die Zukunft zu schließen ist nie logisch zwingend (die Vergangenheit garantiert die Zukunft nicht). 2 – Falsch: Nach Popper lassen sich allgemeine Theorien nie endgültig verifizieren (man kann nie alle Fälle prüfen); sie können sich nur bewähren oder falsifiziert werden. 3 – Richtig: Eine Allaussage wird durch ein einziges Gegenbeispiel logisch widerlegt (Asymmetrie von Verifikation und Falsifikation) – tatsächlich wurden in Australien schwarze Schwäne gefunden. 4 – Richtig: Je mehr eine Theorie ‚verbietet', also je riskantere und prüfbarere Vorhersagen sie macht, desto gehaltvoller und wissenschaftlicher ist sie nach Popper.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Verifikation gegenüber Falsifikation: Bestätigungen können eine Allaussage nie endgültig sichern, ein Gegenbeispiel kann sie widerlegen – diese Asymmetrie ist Poppers Kern.",
+              "‚Falsifizierbar' heißt nicht ‚falsch', sondern ‚grundsätzlich durch Beobachtung widerlegbar' – ein Gütezeichen, kein Makel.",
+              "Humes Induktionsproblem sagt nicht, Induktion sei nutzlos, sondern dass sie nicht logisch zwingend ist."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "text_analysis",
+            "prompt": "Vergleiche zwei Vorhersagen:\n\n---\n(A) Horoskop: ‚Als Waage erwartet Sie diese Woche eine wichtige Begegnung. Achten Sie auf Ihre Finanzen – Veränderung liegt in der Luft.'\n(B) Astronomie (Beispiel für die Form einer präzisen Vorhersage): ‚An einem bestimmten Datum ist von Wien aus um 21:47 Uhr der Mondaufgang zu beobachten; die partielle Mondfinsternis erreicht ihr Maximum um 22:12 Uhr.'\n---\n\n(a) Wende Poppers Kriterium der Falsifizierbarkeit an: Welche der beiden Vorhersagen ist prinzipiell überprüfbar und widerlegbar – und woran erkennst du das?\n(b) Erkläre, wie sich ein Horoskop gegen Widerlegung ‚immunisiert' (denke an die Unbestimmtheit der Formulierungen und an nachträgliche Umdeutung).\n(c) Bedeutet ‚nicht falsifizierbar' dasselbe wie ‚falsch'? Begründe deine Antwort.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 75 },
+            "cognitive_level": "analyze",
+            "dimensions": ["TRA", "REF"],
+            "serves": [{ "competence_id": "PUP.OS.8.ASP3.02", "relation": "exercises" }],
+            "est_minutes": 13,
+            "asset_refs": [],
+            "answer_key": "(a) Prüfbar und falsifizierbar ist die astronomische Vorhersage (B): Sie nennt präzise, kontrollierbare Angaben (Ort, Uhrzeit, Ereignis); tritt das Ereignis so nicht ein, ist die Vorhersage widerlegt. Das Horoskop (A) ist so vage, dass fast jeder Wochenverlauf dazu passt – es lässt sich kaum widerlegen. (b) Immunisierung: Horoskope verwenden unbestimmte, allgemeine Formulierungen (‚wichtige Begegnung', ‚Veränderung liegt in der Luft'), die auf sehr viele Menschen zutreffen (Barnum-Effekt); trifft etwas scheinbar nicht ein, wird es nachträglich umgedeutet (‚war eben symbolisch gemeint'). So kann die Aussage nie scheitern – und ist damit nach Popper nicht wissenschaftlich. (c) Nein. ‚Nicht falsifizierbar' heißt: durch Beobachtung grundsätzlich nicht überprüfbar – die Aussage fällt damit aus dem Bereich der empirischen Wissenschaft heraus, ist aber nicht automatisch falsch. Auch sinnvolle nicht-empirische Aussagen (etwa mathematische oder metaphysische) sind unfalsifizierbar. Das Kriterium trennt wissenschaftlich von unwissenschaftlich, nicht wahr von falsch.",
+            "acceptable_reasoning": "Akzeptabel: (B) als falsifizierbar mit Verweis auf Präzision/Prüfbarkeit erkannt; Immunisierung über Vagheit und nachträgliche Umdeutung erklärt; in (c) die klare Trennung von ‚unfalsifizierbar' und ‚falsch'.",
+            "watch_outs": [
+              "Die Aufgabe wertet nicht ‚Sterne sind Unsinn', sondern prüft den wissenschaftlichen STATUS von Aussagen – sachlich bleiben.",
+              "Häufiger Fehler in (c): ‚nicht wissenschaftlich, also falsch'. Popper trennt Wissenschaftlichkeit von Wahrheit.",
+              "Die Mondfinsternis-Angabe ist ein illustratives Beispiel für die FORM einer präzisen Vorhersage; entscheidend ist die Prüfbarkeit, nicht das exakte Datum."
+            ],
+            "rubric": [
+              { "criterion": "Falsifizierbarkeit korrekt angewendet", "levels": ["Fehlt oder vertauscht", "(B) genannt, ohne Begründung", "(B) mit Begründung (Präzision, Prüfbarkeit)"] },
+              { "criterion": "Immunisierung erklärt", "levels": ["Fehlt", "Nur ‚vage' genannt", "Vagheit und nachträgliche Umdeutung erklärt"] },
+              { "criterion": "unfalsifizierbar bedeutet nicht falsch", "levels": ["Gleichgesetzt", "Unterschied angedeutet", "Status und Wahrheit klar getrennt"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "open_response",
+            "prompt": "Thomas Kuhn beschrieb in ‚Die Struktur wissenschaftlicher Revolutionen' (1962), dass Wissenschaft nicht bloß gleichmäßig Wissen anhäuft. Meist arbeiten Forscher:innen innerhalb eines ‚Paradigmas' – eines anerkannten Rahmens aus Theorien, Methoden und Musterbeispielen; das nennt Kuhn Normalwissenschaft. Häufen sich ungelöste Widersprüche (Anomalien), gerät das Paradigma in eine Krise; schließlich kommt es zu einer wissenschaftlichen Revolution, einem Paradigmenwechsel (etwa vom geozentrischen zum heliozentrischen Weltbild oder von Newtons zu Einsteins Physik).\n\n(a) Bringe die Phasen nach Kuhn in die richtige Reihenfolge und erläutere sie kurz an einem Paradigmenwechsel deiner Wahl.\n(b) Popper stellt sich Fortschritt eher als ständiges, rationales Prüfen und Widerlegen von Theorien vor, Kuhn als Abfolge stabiler Phasen mit plötzlichen Umbrüchen. Arbeite den zentralen Unterschied heraus.\n(c) Beurteile: Bedeutet die Rede vom ‚Paradigmenwechsel', dass Wissenschaft letztlich willkürlich ist (‚heute dies, morgen das')? Begründe.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 80 },
+            "cognitive_level": "evaluate",
+            "dimensions": ["TRA", "REF"],
+            "serves": [{ "competence_id": "PUP.OS.8.ASP3.02", "relation": "exercises" }],
+            "est_minutes": 14,
+            "asset_refs": [],
+            "answer_key": "(a) Phasenfolge: Normalwissenschaft (Forschung im anerkannten Paradigma) → Auftreten von Anomalien (hartnäckige Widersprüche) → Krise (das Vertrauen ins Paradigma schwindet) → Revolution/Paradigmenwechsel → neue Normalwissenschaft im neuen Paradigma. Beispiel geozentrisch zu heliozentrisch: Das erdzentrierte (ptolemäische) Weltbild erklärte die Planetenbahnen nur mit immer komplizierteren Zusatzannahmen (Anomalien); Kopernikus, Kepler und Galilei setzten schließlich das sonnenzentrierte Paradigma durch. (b) Kern des Unterschieds: Für Popper schreitet Wissenschaft kontinuierlich und rational durch Falsifikation voran (Vermutung und Widerlegung); für Kuhn verläuft sie in Sprüngen – lange Stabilität, dann Umbruch –, und konkurrierende Paradigmen sind teils schwer vergleichbar (inkommensurabel), die Entscheidung ist nicht rein logisch. (c) Nein, nicht willkürlich: Ein Paradigmenwechsel geschieht nicht grundlos, sondern weil das alte Paradigma zunehmend an der Erfahrung scheitert und das neue mehr erklärt und genauer vorhersagt. ‚Nicht rein kumulativ' bedeutet nicht ‚beliebig' – es gibt weiterhin Gründe, Beobachtungen und Erfolgskriterien. Fehlbarkeit und Wandel sind Stärken der Wissenschaft, kein Beleg für Beliebigkeit.",
+            "acceptable_reasoning": "Akzeptabel: korrekte Phasenfolge mit stimmigem historischem Beispiel; klar herausgearbeiteter Unterschied Popper (kontinuierlich/rational) gegenüber Kuhn (revolutionär/paradigmatisch); begründete Zurückweisung des Willkür-Vorwurfs (Wandel ist nicht Beliebigkeit).",
+            "watch_outs": [
+              "‚Paradigma' ist mehr als ‚eine Theorie' – es umfasst Methoden, Musterbeispiele und Grundannahmen einer Forschungsgemeinschaft.",
+              "Häufiger Kurzschluss in (c): ‚Wissenschaft ändert sich, also ist alles gleich gültig' (Relativismus). Wandel erfolgt aus Gründen.",
+              "Kuhn und Popper sind keine bloßen Gegner: Beide betonen, dass Theorien scheitern können – sie deuten nur den Ablauf unterschiedlich."
+            ],
+            "rubric": [
+              { "criterion": "Kuhns Phasen am Beispiel", "levels": ["Fehlt oder falsch", "Phasen ohne Beispiel", "Richtige Folge am Beispiel erläutert"] },
+              { "criterion": "Unterschied Popper gegenüber Kuhn", "levels": ["Fehlt", "Nur eine Position", "Zentraler Unterschied klar herausgearbeitet"] },
+              { "criterion": "Beurteilung des Willkür-Vorwurfs", "levels": ["Relativistisch oder fehlt", "Ansatz vorhanden", "Wandel als begründete Selbstkorrektur, nicht Beliebigkeit"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "create_produce",
+            "prompt": "Ein Freund sagt beim Mittagessen: ‚Wissenschaft ist doch auch nur eine Meinung. Heute sagen sie das, morgen das Gegenteil – man kann glauben, was man will.'\n\nVerfasse eine begründete philosophische Antwort (ca. 12–15 Sätze). Nutze dabei mindestens drei Begriffe oder Konzepte dieses Arbeitsblatts (z. B. Falsifizierbarkeit, Induktionsproblem, Paradigmenwechsel, Erscheinung/Erkenntnis, methodischer Zweifel). Deine Antwort soll:\n– erklären, wodurch sich methodisch geprüftes Wissen von bloßer Meinung unterscheidet,\n– das Argument ‚Wissenschaft ändert sich ständig' ernst nehmen und einordnen (Stärke statt Schwäche?),\n– zu einem klaren, differenzierten Schluss kommen – ohne in ‚Wissenschaft hat immer recht' zu verfallen.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 95 },
+            "cognitive_level": "create",
+            "dimensions": ["TRA", "REF"],
+            "serves": [{ "competence_id": "PUP.OS.8.ASP3.02", "relation": "exercises" }],
+            "est_minutes": 16,
+            "asset_refs": [],
+            "answer_key": "Offene Aufgabe – individueller Text. Erwartet werden u. a.: (1) Unterschied Meinung/Wissen: Wissenschaftliche Aussagen sind methodisch geprüft, an der Erfahrung überprüfbar (falsifizierbar), begründet und intersubjektiv nachvollziehbar; eine bloße Meinung muss das nicht sein. (2) Das ‚Sich-Ändern' ist kein Makel, sondern Folge von Selbstkorrektur: Theorien werden verworfen, wenn sie an der Erfahrung scheitern (Falsifikation), und ersetzt, wenn ein besseres Paradigma mehr erklärt – Fehlbarkeit ist eingebaut und macht Wissen verlässlicher, nicht beliebiger. (3) Zugleich keine Überhöhung: Wissenschaft liefert kein endgültig sicheres Wissen (Induktionsproblem), sondern das jeweils bestgeprüfte, vorläufige Wissen. Schluss: Wissenschaft ist gerade wegen ihrer Prüf- und Revidierbarkeit mehr als eine Meinung – aber sie ist fehlbar und beansprucht keine Unfehlbarkeit. Bewertet werden die korrekte Verwendung von mindestens drei Konzepten, die Kohärenz und eine differenzierte, weder relativistische noch dogmatische Schlussfolgerung.",
+            "acceptable_reasoning": "Akzeptabel: jede kohärente Antwort, die den Unterschied Meinung/geprüftes Wissen fasst, den Wandel als Selbstkorrektur (nicht Beliebigkeit) deutet und mindestens drei Fachbegriffe korrekt einsetzt; die eigene Schlusslinie darf variieren, solange sie begründet ist.",
+            "watch_outs": [
+              "Beide Fehlschlüsse benennen und vermeiden: Relativismus (‚alles gleich gültig') UND Szientismus (‚Wissenschaft hat immer recht').",
+              "Bloßes Aufzählen der Begriffe genügt nicht – sie müssen im Argument tatsächlich etwas leisten.",
+              "‚Vorläufig/fehlbar' korrekt einordnen: das heißt nicht ‚unsicher im Sinne von wertlos', sondern ‚offen für Korrektur'."
+            ],
+            "rubric": [
+              { "criterion": "Unterschied Meinung/geprüftes Wissen", "levels": ["Fehlt", "Angedeutet", "Klar mit Kriterien (prüfbar, begründet) erklärt"] },
+              { "criterion": "Wandel als Selbstkorrektur gedeutet", "levels": ["Als Schwäche gelesen", "Ambivalent", "Als Stärke begründet"] },
+              { "criterion": "Mindestens drei Konzepte korrekt eingesetzt", "levels": ["Weniger als zwei", "Zwei", "Drei oder mehr, sinnvoll verwendet"] },
+              { "criterion": "Differenzierter Schluss", "levels": ["Relativismus oder Szientismus", "Einseitig abgesichert", "Weder relativistisch noch dogmatisch"] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

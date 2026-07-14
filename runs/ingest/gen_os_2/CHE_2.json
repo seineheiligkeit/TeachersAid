@@ -1,0 +1,333 @@
+{
+  "subject": "Chemie",
+  "klasse": 7,
+  "kompetenzbereich": "Umgang mit Materie",
+  "title": "Metalle: Von der Gewinnung zum Recycling",
+  "kernfrage": "Wie gewinnen wir Metalle aus Erzen, warum ist Recycling oft die klügere Wahl – und wie bewertest du unseren Umgang mit diesen Rohstoffen?",
+  "body": {
+    "intro": [],
+    "data_figures": [
+      {
+        "id": "abb1",
+        "intent": "comparison",
+        "title": "Energiebedarf für 1 kg Aluminium",
+        "xlabel": "Herstellungsweg",
+        "ylabel": "Energiebedarf in kWh pro kg",
+        "categories": ["Primärproduktion", "Recycling"],
+        "values": [14, 0.7],
+        "illustrative": true
+      }
+    ],
+    "assets": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Vom Erz zum Metall",
+        "throughline": "Die Schüler:innen erarbeiten das Grundprinzip jeder Metallgewinnung – die Reduktion des im Erz oxidiert vorliegenden Metalls – an den Leitbeispielen Eisen (Hochofen) und Aluminium (Elektrolyse) und lernen mit der Flammenprobe eine einfache Nachweismethode kennen.",
+        "talking_points": [
+          "Roter Faden: Metalle liegen in der Natur (fast immer) oxidiert vor; Gewinnung heißt Reduktion – welches Verfahren nötig ist, hängt davon ab, wie unedel das Metall ist.",
+          "Eisen und Aluminium sind das didaktische Kontrastpaar: Kohlenstoff-Reduktion reicht für Eisen, für das viel unedlere Aluminium braucht es die Schmelzflusselektrolyse.",
+          "Oxidationszahlen sind hier das Werkzeug, um „oxidiert/reduziert“ zweifelsfrei zu bestimmen – kurz auffrischen."
+        ],
+        "extensions": [
+          "Thermitverfahren (Aluminothermie): Aluminium reduziert Eisenoxid – Bezug zur Edelkeit-/Spannungsreihe der Metalle.",
+          "Flammenfärbung mit Physik verknüpfen: diskrete Emissionslinien als „Fingerabdruck“ des Elements."
+        ],
+        "blocks": [
+          {
+            "role": "info",
+            "id": "i1",
+            "kind": "key_fact",
+            "content": "Ein Erz ist ein natürlich vorkommendes Mineralgemisch, aus dem sich ein Metall wirtschaftlich gewinnen lässt. Nur die edelsten Metalle – etwa Gold oder Platin – findet man in der Natur „gediegen“, also als reines Metall. Alle anderen liegen chemisch gebunden vor (meist als Oxide oder Sulfide) und müssen aus ihren Verbindungen erst freigesetzt werden."
+          },
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "open_response",
+            "prompt": "Um aus einem Metalloxid das reine Metall zu gewinnen, läuft immer derselbe grundlegende Reaktionstyp ab.\na) Handelt es sich dabei um eine Oxidation oder eine Reduktion des Metalls? Begründe mit dem Begriff der Oxidationszahl.\nb) Was ist die Aufgabe eines „Reduktionsmittels“ bei der Metallgewinnung?\nc) Von den Metallen Gold, Eisen, Aluminium und Platin: Welche kommen in der Natur eher gediegen vor, welche nur gebunden? Was hat das mit ihrer Reaktionsfreudigkeit zu tun?",
+            "payload": null,
+            "response": { "mode": "lines", "n": 6 },
+            "cognitive_level": "understand",
+            "dimensions": ["WO"],
+            "serves": [
+              { "competence_id": "CHE.OS.7.UMG.07", "relation": "exercises" }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "a) Reduktion des Metalls: Im Oxid liegt das Metall mit einer positiven Oxidationszahl vor (z. B. +3 in Fe₂O₃); im reinen Metall ist die Oxidationszahl 0. Der Übergang von positiver Oxidationszahl zu 0 bedeutet Elektronenaufnahme = Reduktion. b) Das Reduktionsmittel liefert die Elektronen, die das Metall-Ion aufnimmt; es wird dabei selbst oxidiert (Beispiel Hochofen: Kohlenstoffmonoxid). c) Gediegen (als reines Metall): Gold und Platin – sie sind sehr edel, also reaktionsträge, und reagieren kaum mit Sauerstoff. Nur gebunden: Eisen und Aluminium – sie sind unedel/reaktionsfreudig und liegen daher oxidiert (als Oxide) vor. Je unedler ein Metall, desto stärker seine Neigung, Elektronen abzugeben und gebunden vorzuliegen.",
+            "acceptable_reasoning": "Kern von a): positive Oxidationszahl → 0 bedeutet Elektronenaufnahme, also Reduktion. Die Zuordnung edel/unedel darf auch über „reagiert leicht mit Luft/Wasser“ begründet werden.",
+            "watch_outs": [
+              "Oxidation und Reduktion aus Sicht des METALLS betrachten: das Metall-Ion nimmt Elektronen auf (Reduktion); das Reduktionsmittel wird oxidiert.",
+              "„Edel“ und „unedel“ werden mit „selten/teuer“ verwechselt – gemeint ist die Reaktionsfreudigkeit (edel = reaktionsträge).",
+              "Eine höhere positive Oxidationszahl bedeutet nicht „mehr Masse“, sondern einen stärker oxidierten Zustand."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "calculation",
+            "prompt": "Im Hochofen wird Eisen aus Eisenerz (überwiegend Eisen(III)-oxid, Fe₂O₃) gewonnen. Das eigentliche Reduktionsmittel ist Kohlenstoffmonoxid (CO).\na) Formuliere die ausgeglichene Reaktionsgleichung für die Reduktion von Fe₂O₃ durch CO (Produkte: Eisen und Kohlenstoffdioxid).\nb) Bestimme die Oxidationszahlen von Eisen und Kohlenstoff jeweils vor und nach der Reaktion und ordne zu, was oxidiert und was reduziert wird.\nc) Woher stammt das Kohlenstoffmonoxid im Hochofen? Gib eine Reaktionsgleichung an.",
+            "payload": null,
+            "response": { "mode": "lines", "n": 6 },
+            "cognitive_level": "apply",
+            "dimensions": ["WO"],
+            "serves": [
+              { "competence_id": "CHE.OS.7.UMG.07", "relation": "exercises" }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "a) Fe₂O₃ + 3 CO → 2 Fe + 3 CO₂ (Kontrolle: Fe 2 = 2; O 3 + 3 = 6 = 6; C 3 = 3 – ausgeglichen). b) Eisen: +3 (in Fe₂O₃) → 0 (in Fe): Elektronenaufnahme = Reduktion. Kohlenstoff: +2 (in CO) → +4 (in CO₂): Elektronenabgabe = Oxidation. Das Eisen wird also reduziert, das Kohlenstoffmonoxid oxidiert – CO ist das Reduktionsmittel. c) CO entsteht aus dem Koks (Kohlenstoff) mit dem Sauerstoff der eingeblasenen heißen Luft bzw. mit CO₂: 2 C + O₂ → 2 CO (bzw. C + CO₂ → 2 CO, das Boudouard-Gleichgewicht).",
+            "acceptable_reasoning": "Für c) ist jede korrekte Bildungsgleichung für CO (aus C + O₂ oder aus C + CO₂) gültig.",
+            "watch_outs": [
+              "Beim Ausgleichen wird oft der Sauerstoff falsch bilanziert: links 3 O (aus Fe₂O₃) + 3 O (aus 3 CO) = 6 O, rechts 3 · 2 = 6 O in 3 CO₂.",
+              "Die Oxidationszahl von C in CO ist +2 (nicht +4); erst in CO₂ ist sie +4 – die Differenz zeigt die Oxidation.",
+              "Das Eisen wird reduziert, obwohl es aus dem „Erz“ stammt – nicht von der Rolle „Edukt“ täuschen lassen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "experiment_protocol",
+            "prompt": "In einem Schülerlabor sollst du herausfinden, welche zwei verschiedenen Metallsalze in zwei unbeschrifteten Bechergläsern vorliegen. Zur Verfügung steht die Flammenfärbung (die Farbe, mit der ein Metall die Brennerflamme färbt).\na) Beschreibe kurz, wie du eine Flammenprobe durchführst (Vorgehen und eine Sicherheitsregel).\nb) Erstelle eine Tabelle, in die du für jede Probe eintragen kannst: Probe, beobachtete Flammenfarbe, vermutetes Metall.\nc) Probe 1 färbt die Flamme intensiv gelb, Probe 2 ziegelrot. Welche Metalle liegen vermutlich vor? (Hinweis: Natrium → gelb, Calcium → ziegelrot, Kalium → violett, Kupfer → grün.)",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 50 },
+            "cognitive_level": "apply",
+            "dimensions": ["EG"],
+            "serves": [
+              { "competence_id": "CHE.OS.7.UMG.08", "relation": "exercises" },
+              { "competence_id": "CHE.OS.x.ERK.01", "relation": "exercises" }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "a) Ein sauberes (ausgeglühtes) Magnesiastäbchen in die Probe tauchen und in die entleuchtete (rauschende) Brennerflamme halten; die Flammenfarbe beobachten. Sicherheitsregel: Schutzbrille tragen, den Brenner sachgemäß bedienen (nur mit Aufsicht) und das Stäbchen zwischen zwei Proben ausglühen, um Verunreinigung zu vermeiden. b) Tabelle mit drei Spalten (Probe | beobachtete Flammenfarbe | vermutetes Metall) und je einer Zeile pro Probe. c) Probe 1 (gelb) → Natrium; Probe 2 (ziegelrot) → Calcium.",
+            "acceptable_reasoning": "Statt Magnesiastäbchen ist auch ein sauberer Platin-/Eisendraht akzeptabel; entscheidend sind das Ausglühen zwischen den Proben und eine sinnvolle Sicherheitsregel.",
+            "watch_outs": [
+              "Das Stäbchen zwischen den Proben ausglühen – sonst verfälscht eine allgegenwärtige Natrium-Spur (gelb) die weiteren Proben.",
+              "Die sehr intensive gelbe Natriumfärbung überdeckt oft schwächere Farben; das ist eine bekannte Störquelle der Methode.",
+              "Die Flammenfärbung weist das METALL(-Ion) nach, nicht das ganze Salz – das Anion (z. B. Chlorid) bleibt so unbestimmt."
+            ],
+            "rubric": [
+              {
+                "criterion": "Procedure and safety",
+                "levels": [
+                  "Correct procedure and a sensible safety rule",
+                  "Only one of the two",
+                  "Missing"
+                ]
+              },
+              {
+                "criterion": "Protocol table",
+                "levels": [
+                  "Complete, well-structured table",
+                  "Incomplete",
+                  "No table"
+                ]
+              },
+              {
+                "criterion": "Interpretation of the colours",
+                "levels": [
+                  "Both metals correctly assigned",
+                  "One correct",
+                  "None"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Energie, Schadstoffe und der Wert des Recyclings",
+        "throughline": "Der zweite Teil weitet den Blick von der Chemie zur Bewertung: Energiebilanz der Primärproduktion, Schadstoffe beim Rösten und schließlich die begründete Entscheidung für Kreislaufwirtschaft. Die Schüler:innen argumentieren mit den zuvor erarbeiteten chemischen Fakten.",
+        "talking_points": [
+          "Die Schlüsselzahl: Recycling von Aluminium braucht nur rund 5 % der Energie – weil im Metall die teure Reduktionsenergie bereits „gespeichert“ ist.",
+          "Schadstoffe sauber zuordnen: SO₂ → saurer Regen (nicht Treibhauseffekt); Ursache/Wirkung und Gegenmaßnahme (Rauchgasentschwefelung) trennen.",
+          "Die Bewertungsaufgabe verlangt echtes Abwägen mit Fakten (Energie, Endlichkeit der Erze, Recyclingquote) – nicht bloße Meinung.",
+          "Urban Mining und geschlossene Stoffkreisläufe als Leitbild der Nachhaltigkeit – der Bogen zurück zum Erz schließt sich."
+        ],
+        "extensions": [
+          "Ökobilanz Mehrweg vs. Einweg quantitativ diskutieren (Transportgewicht, Umlaufzahlen, reale Sammelquoten).",
+          "Kritische Rohstoffe der EU (z. B. Seltene Erden, Lithium): Warum ist Recycling auch geostrategisch relevant?",
+          "Regionaler Bezug: das Sammel- und Recyclingsystem in Österreich recherchieren und bewerten."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "open_response",
+            "prompt": "Aluminium ist das häufigste Metall der Erdkruste, seine Herstellung ist aber sehr energieaufwendig. Abb. 1 vergleicht den ungefähren Energiebedarf für 1 kg Aluminium aus Erz (Primärproduktion durch Schmelzflusselektrolyse) und aus Altmetall (Recycling durch Umschmelzen).\na) Berechne, wie viel Prozent der Energie das Recycling gegenüber der Primärproduktion ungefähr einspart.\nb) Erkläre mithilfe der Bindungsverhältnisse, warum die Primärproduktion so viel mehr Energie braucht (Aluminium liegt im Erz als Al³⁺ im Oxid Al₂O₃ vor).\nc) Warum gewinnt man Aluminium durch Elektrolyse und nicht – wie Eisen – durch Reduktion mit Kohlenstoff?",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 50 },
+            "cognitive_level": "analyze",
+            "dimensions": ["EG"],
+            "serves": [
+              { "competence_id": "CHE.OS.7.UMG.07", "relation": "exercises" },
+              { "competence_id": "CHE.OS.7.UMG.04", "relation": "exercises" }
+            ],
+            "est_minutes": 12,
+            "asset_refs": ["abb1"],
+            "answer_key": "a) Einsparung ≈ (14 − 0,7) / 14 = 13,3 / 14 ≈ 0,95, also rund 95 %. Das Recycling benötigt nur etwa 5 % der Energie der Primärproduktion. b) Im Erz (Bauxit → Aluminiumoxid Al₂O₃) liegt Aluminium als Al³⁺ vor, also oxidiert. Um es zu elementarem Aluminium (Oxidationszahl 0) zu reduzieren, müssen je Aluminium-Ion drei Elektronen zugeführt werden – das geschieht in der Schmelzflusselektrolyse und erfordert sehr viel elektrische Energie. Beim Recycling ist das Metall bereits elementar; es muss nur aufgeschmolzen werden (Schmelzwärme), es findet keine chemische Reduktion statt. c) Aluminium ist ein sehr unedles Metall und bindet Sauerstoff sehr stark; Kohlenstoff ist als Reduktionsmittel „zu schwach“, um Al³⁺ zu reduzieren. Deshalb nutzt man die Elektrolyse, bei der die Elektronen direkt über den elektrischen Strom zugeführt werden.",
+            "acceptable_reasoning": "Bei b) genügt der Kern: im Erz liegt Al oxidiert (Al³⁺) vor und muss unter hohem Energieaufwand reduziert werden, während Recycling nur Schmelzenergie braucht.",
+            "watch_outs": [
+              "Verwechslung: Recycling BRAUCHT nur etwa 5 % der Energie, es SPART also rund 95 % – nicht umgekehrt.",
+              "Häufiger Denkfehler: Kohlenstoff könne wie beim Eisen auch Aluminium reduzieren. Aluminium ist dafür zu unedel; großtechnisch ist die Schmelzflusselektrolyse nötig.",
+              "Der hohe Energiebedarf steckt in der chemischen Reduktion (Elektronenzufuhr), nicht bloß im „Schmelzen“ – deshalb ist Recycling so viel günstiger."
+            ],
+            "rubric": [
+              {
+                "criterion": "Percentage calculation",
+                "levels": [
+                  "About 95 % correctly calculated and justified",
+                  "Approach visible, result imprecise",
+                  "No workable approach"
+                ]
+              },
+              {
+                "criterion": "Bonding-based explanation",
+                "levels": [
+                  "Reduction of Al3+ (electron supply) versus mere remelting clearly worked out",
+                  "Partially correct",
+                  "Not recognised"
+                ]
+              },
+              {
+                "criterion": "Electrolysis instead of carbon",
+                "levels": [
+                  "Aluminium as an unnoble metal / carbon too weak justified",
+                  "Vague",
+                  "Missing"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "open_response",
+            "prompt": "Bei der Gewinnung und Verarbeitung von Metallen entstehen auch Schadstoffe.\na) Beim „Rösten“ sulfidischer Erze (etwa bei der Gewinnung von Zink aus Zinksulfid) entsteht ein gasförmiges Schwefeloxid. Nenne dieses Gas und formuliere die ausgeglichene Reaktionsgleichung für das Rösten von Zinksulfid (ZnS) mit Sauerstoff zu Zinkoxid (ZnO).\nb) Welches Umweltproblem verursacht dieses Gas, wenn es in die Atmosphäre gelangt? Erkläre den Zusammenhang mit „saurem Regen“.\nc) Nenne eine technische Maßnahme, mit der man die Freisetzung dieses Schadstoffs verringern kann.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 45 },
+            "cognitive_level": "analyze",
+            "dimensions": ["EG", "KZ"],
+            "serves": [
+              { "competence_id": "CHE.OS.7.UMG.05", "relation": "exercises" }
+            ],
+            "est_minutes": 11,
+            "asset_refs": [],
+            "answer_key": "a) Es entsteht Schwefeldioxid (SO₂). Rösten von Zinksulfid: 2 ZnS + 3 O₂ → 2 ZnO + 2 SO₂ (Kontrolle: Zn 2 = 2; S 2 = 2; O 6 = 2 + 4 = 6 – ausgeglichen). b) SO₂ reagiert in der Atmosphäre mit Wasser und Sauerstoff zu schwefliger Säure bzw. Schwefelsäure; diese gelangen mit dem Regen zu Boden → „saurer Regen“, der Wälder, Böden, Gewässer und Bauwerke aus Kalkstein schädigt. c) Rauchgasentschwefelung: Das SO₂ wird aus dem Abgas ausgewaschen, z. B. durch Bindung an Kalk zu Gips; alternativ wird das SO₂ zu Schwefelsäure weiterverarbeitet (Nutzung statt Freisetzung).",
+            "acceptable_reasoning": "Für c) ist jede sinnvolle Minderungsmaßnahme gültig (Rauchgasentschwefelung, Filter, Weiterverarbeitung des SO₂ zu Schwefelsäure).",
+            "watch_outs": [
+              "Schwefeldioxid (SO₂) nicht mit Kohlenstoffdioxid (CO₂) verwechseln – CO₂ trägt zum Treibhauseffekt bei, SO₂ zum sauren Regen.",
+              "Beim Ausgleichen von 2 ZnS + 3 O₂ → 2 ZnO + 2 SO₂ auf die Sauerstoffbilanz achten (links 6 O, rechts 2 + 4 = 6).",
+              "„Saurer Regen“ ist die Wirkung, SO₂ die Ursache – die Kausalrichtung sauber benennen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "decision_scenario",
+            "prompt": "Eine Gemeinde diskutiert, ob die Einweg-Aluminiumdose als Getränkeverpackung sinnvoll ist oder ob stärker auf Mehrweg- und Recyclingsysteme gesetzt werden soll. Nutze dein Wissen aus den vorherigen Aufgaben.\na) Stelle je zwei Argumente aus Sicht des Ressourcen- und Energieverbrauchs für und gegen die Einwegdose zusammen.\nb) Aluminium lässt sich nahezu unbegrenzt oft recyceln. Warum ist es aus chemischer und ökologischer Sicht besonders unvernünftig, Aluminium einfach wegzuwerfen?\nc) Triff eine begründete Entscheidung: Wofür würdest du dich einsetzen? Beziehe ein, dass Erzvorkommen endlich sind.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Einweg-Aluminiumdose oder konsequentes Recycling/Mehrweg – was ist aus Ressourcensicht die bessere Wahl?"
+            },
+            "response": { "mode": "box", "min_height_mm": 55 },
+            "cognitive_level": "evaluate",
+            "dimensions": ["KZ"],
+            "serves": [
+              { "competence_id": "CHE.OS.7.UMG.04", "relation": "exercises" },
+              { "competence_id": "CHE.OS.x.KON.07", "relation": "exercises" }
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "a) Dafür (Einweg): geringes Gewicht spart Transportenergie; Aluminium ist gut recycelbar, sofern es gesammelt wird. Dagegen: die Primärproduktion ist extrem energieaufwendig (rund 14 kWh/kg); jede nicht recycelte Dose verschwendet diese Energie und endliches Erz; Einwegsysteme führen zu mehr Materialdurchsatz und Abfall. b) Weil in der Dose die gesamte, sehr teure Reduktionsenergie bereits „steckt“: Wirft man sie weg, geht dieser Energiewert verloren und muss für neues Aluminium erneut aufgebracht werden. Recycling nutzt das schon reduzierte Metall und braucht nur rund 5 % der Energie – Wegwerfen ist daher chemisch wie ökologisch besonders verschwenderisch. c) Begründete Entscheidung (beide Positionen vertretbar, wenn belegt): z. B. für konsequentes Sammeln/Recycling bzw. Mehrweg, weil so die einmal investierte Reduktionsenergie erhalten bleibt und endliche Erzvorräte geschont werden; eine Einwegdose ist nur vertretbar, wenn eine sehr hohe Recyclingquote sichergestellt ist.",
+            "acceptable_reasoning": "Beide Positionen sind zulässig, sofern die Entscheidung mit Energie-/Ressourcenargumenten (investierte Reduktionsenergie, Endlichkeit der Erze, Recyclingquote) belegt wird – nicht mit bloßem Bauchgefühl.",
+            "watch_outs": [
+              "Die Schüler:innen sollen abwägen, nicht nur eine Meinung nennen: eine Entscheidung ohne Ressourcen-/Energieargument ist unvollständig.",
+              "„Aluminium ist ja häufig“ ist kein Freibrief – knapp ist nicht das Element, sondern die Energie und die wirtschaftlich abbaubaren Erze.",
+              "Transport-, Herstellungs- und Recyclingphase auseinanderhalten – die Umweltbilanz hängt entscheidend von der Recyclingquote ab."
+            ],
+            "rubric": [
+              {
+                "criterion": "Arguments for and against",
+                "levels": [
+                  "Two sound resource/energy arguments each way",
+                  "Only isolated arguments",
+                  "No workable arguments"
+                ]
+              },
+              {
+                "criterion": "Chemical justification (stored reduction energy)",
+                "levels": [
+                  "Recognises that the reduction energy is 'stored' in the metal",
+                  "Partially",
+                  "Missing"
+                ]
+              },
+              {
+                "criterion": "Justified decision",
+                "levels": [
+                  "Clear decision backed by facts",
+                  "Decision weakly justified",
+                  "No decision"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "create_produce",
+            "prompt": "„Urban Mining“ bezeichnet die Idee, Metalle nicht nur aus Erzen, sondern aus dem Abfall unserer Städte (Altgeräte, Dosen, Schrott) zu gewinnen.\na) Entwirf ein einfaches Kreislaufschema für Aluminium mit den Stationen Erzabbau → Primärproduktion → Nutzung → Sammlung → Recycling → erneute Nutzung. Zeichne die Pfeile und beschrifte jede Station knapp.\nb) Kennzeichne im Schema, an welcher Stelle der „Kurzschluss“ durch Recycling die energieintensive Primärproduktion umgeht.\nc) Erkläre in zwei bis drei Sätzen, warum ein solcher geschlossener Stoffkreislauf nachhaltiger ist als eine lineare „Wegwerf“-Kette (Erz → Produkt → Müll).",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 70 },
+            "cognitive_level": "create",
+            "dimensions": ["WO", "KZ"],
+            "serves": [
+              { "competence_id": "CHE.OS.7.UMG.03", "relation": "exercises" },
+              { "competence_id": "CHE.OS.x.WIS.02", "relation": "exercises" }
+            ],
+            "est_minutes": 13,
+            "asset_refs": [],
+            "answer_key": "a) Ein Kreis mit den Stationen: Erzabbau (Bauxit) → Primärproduktion (Schmelzflusselektrolyse) → Nutzung (z. B. Dose/Bauteil) → Sammlung (getrennte Wertstoffsammlung) → Recycling (Umschmelzen) → zurück zur Nutzung. b) Der Recyclingpfeil führt vom Sammeln/Umschmelzen direkt zurück zur Nutzung und umgeht so die Stationen Erzabbau und Primärproduktion – genau dort wird die meiste Energie eingespart. c) Ein geschlossener Kreislauf hält das einmal (unter hohem Energieaufwand) gewonnene Metall im Gebrauch, spart Energie (rund 95 %) und schont endliche Erzvorkommen sowie Deponieraum; die lineare Kette verbraucht dagegen bei jedem Durchgang neue Rohstoffe und Energie und erzeugt Abfall.",
+            "acceptable_reasoning": "Ein sinnvoll geschlossenes Schema mit korrekt platziertem Recycling-Kurzschluss und einer nachvollziehbaren Nachhaltigkeitsbegründung genügt; die grafische Form ist frei.",
+            "watch_outs": [
+              "Der Kreis muss WIRKLICH geschlossen sein: Recycling führt zurück in die Nutzung, nicht in den Erzabbau.",
+              "„Nachhaltig“ soll begründet werden (Energie, endliche Erze, Abfall) – nicht nur als Schlagwort verwendet.",
+              "Recycling ist nicht verlustfrei: in der Praxis gibt es Sammel- und Umschmelzverluste; ein realistisches Schema darf das andeuten."
+            ],
+            "rubric": [
+              {
+                "criterion": "Complete cycle diagram",
+                "levels": [
+                  "All stations sensibly linked and labelled",
+                  "Some stations or arrows missing",
+                  "No coherent diagram"
+                ]
+              },
+              {
+                "criterion": "Recycling short-circuit marked",
+                "levels": [
+                  "Correctly marked at the energy-intensive point",
+                  "Imprecisely marked",
+                  "Missing"
+                ]
+              },
+              {
+                "criterion": "Sustainability justification",
+                "levels": [
+                  "Energy AND raw material/waste included",
+                  "Only one aspect",
+                  "No workable justification"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

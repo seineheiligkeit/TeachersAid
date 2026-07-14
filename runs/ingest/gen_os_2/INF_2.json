@@ -1,0 +1,249 @@
+{
+  "subject": "Informatik",
+  "klasse": 5,
+  "kompetenzbereich": "Angewandte Informatik",
+  "title": "Von Rohdaten zur Aussage: Tabellenkalkulation und ehrliche Visualisierung",
+  "kernfrage": "Wie machst du aus einer Tabelle voller Zahlen eine ehrliche Aussage – und wie erkennst du, wenn ein Diagramm täuscht?",
+  "body": {
+    "intro": [
+      {
+        "role": "info",
+        "id": "i1",
+        "kind": "prose",
+        "content": "In einer Tabellenkalkulation wie Excel, LibreOffice Calc oder Google Sheets werden aus Rohdaten mit wenigen Formeln Ergebnisse, Vergleiche und Diagramme. Doch dieselben Daten lassen sich ehrlich oder irreführend darstellen. Auf diesem Arbeitsblatt rechnest du mit Formeln, wählst passende Diagramme und lernst, Täuschungen in Grafiken zu erkennen. Als durchgehendes Beispiel dient das fiktive Schülercafé „Pausenbrot“."
+      }
+    ],
+    "data_figures": [
+      {
+        "id": "abb1",
+        "intent": "trend",
+        "title": "Verkaufte Portionen pro Monat im Schülercafé",
+        "xlabel": "Monat",
+        "ylabel": "Portionen",
+        "categories": ["Sep", "Okt", "Nov", "Dez", "Jän", "Feb", "Mär", "Apr", "Mai", "Jun"],
+        "values": [210, 260, 300, 340, 280, 300, 330, 350, 380, 250],
+        "illustrative": true
+      }
+    ],
+    "assets": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Rechnen in der Tabellenkalkulation",
+        "throughline": "Schüler:innen berechnen Werte über Zellbezüge und verstehen den Unterschied zwischen relativen und absoluten Bezügen – die entscheidende Fehlerquelle beim Kopieren von Formeln.",
+        "talking_points": [
+          "Eine Formel rechnet nicht mit festen Zahlen, sondern mit Zellbezügen – ändert sich ein Eingabewert, aktualisiert sich das Ergebnis automatisch.",
+          "Relativer Bezug (B2) wandert beim Kopieren mit; absoluter Bezug ($B$2) bleibt fix – das Dollarzeichen „friert“ Zeile und Spalte ein.",
+          "Eine leere Zelle wird in einer Rechnung als 0 interpretiert – deshalb liefern falsche Bezüge oft ein plausibles, aber falsches Ergebnis ohne Fehlermeldung."
+        ],
+        "extensions": [
+          "Schüler:innen bauen die Tabelle des Cafés selbst in einer Tabellenkalkulation nach und prüfen, was passiert, wenn sie einen Preis ändern.",
+          "Aufgabe: Eine Formel finden, die den Anteil jedes Produkts am Gesamtumsatz in Prozent berechnet (mit absolutem Bezug auf die Summenzelle)."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "algorithm_trace",
+            "prompt": "Das Schülercafé „Pausenbrot“ führt seine Verkäufe in einer Tabelle. In Spalte A stehen die Produkte, in Spalte B der Preis pro Stück (in €), in Spalte C die verkaufte Menge. Zeile 2: Kakao, 1,50, 12. Zeile 3: Semmel, 0,80, 20. Zeile 4: Apfel, 0,50, 8. In Spalte D wird der Umsatz mit der Formel =B2*C2 (in Zeile 2), =B3*C3 (Zeile 3) usw. berechnet. In Zelle B7 steht =SUMME(D2:D4). Berechne die Werte der Zellen D2, D3, D4 und B7.",
+            "payload": null,
+            "response": { "mode": "table", "columns": ["Zelle", "Ergebnis (in €)"], "rows": 4 },
+            "cognitive_level": "apply",
+            "dimensions": ["AG", "WV"],
+            "serves": [ { "competence_id": "INF.OS.5.ANG.02", "relation": "exercises" } ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "D2 = 1,50 · 12 = 18,00. D3 = 0,80 · 20 = 16,00. D4 = 0,50 · 8 = 4,00. B7 = SUMME(D2:D4) = 18,00 + 16,00 + 4,00 = 38,00.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Auf das deutsche Dezimalkomma achten: 0,80 € · 20 = 16,00 €, nicht 1,60 €.",
+              "=SUMME(D2:D4) addiert den Bereich D2 bis D4 (beide Enden inklusive), also drei Werte.",
+              "Die Formel =B2*C2 wandert beim Kopieren nach unten automatisch mit (relativer Bezug) – deshalb steht in Zeile 3 =B3*C3."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "table_fill",
+            "prompt": "Das Café gewährt allen Produkten denselben Rabatt von 10 %. Dieser Rabattsatz 0,10 steht EINMAL in Zelle F1. In Spalte E soll der Rabattbetrag in Euro berechnet werden. Vergleiche zwei Formeln, die in Zelle E2 stehen und dann nach E3 und E4 kopiert werden: die absolute Variante =D2*$F$1 und die relative Variante =D2*F1. Die Umsatzwerte aus Aufgabe 1 sind D2 = 18,00; D3 = 16,00; D4 = 4,00. Trage die Ergebnisse ein und erkläre unter der Tabelle in einem Satz, warum die relative Variante fehlschlägt.",
+            "payload": null,
+            "response": { "mode": "table", "columns": ["Zelle", "Ergebnis mit =D·$F$1 (€)", "Ergebnis mit =D·F1 kopiert (€)"], "rows": 3 },
+            "cognitive_level": "analyze",
+            "dimensions": ["AG"],
+            "serves": [ { "competence_id": "INF.OS.5.ANG.02", "relation": "exercises" } ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Absolute Variante =D2*$F$1: E2 = 1,80; E3 = 1,60; E4 = 0,40. Relative Variante =D2*F1 (nach unten kopiert): E2 = 1,80; E3 = 0,00; E4 = 0,00. Grund: Beim Kopieren verschiebt sich der relative Bezug F1 mit nach F2 bzw. F3 – diese Zellen sind leer (Wert 0), also wird mit 0 multipliziert. Das Dollarzeichen in $F$1 hält den Bezug fest, sodass immer F1 verwendet wird.",
+            "acceptable_reasoning": "Erwartet: korrekte Werte beider Spalten plus die Erklärung, dass der relative Bezug mitwandert und auf leere Zellen (= 0) zeigt.",
+            "watch_outs": [
+              "Das Dollarzeichen macht einen Bezug absolut: $F$1 bleibt beim Kopieren fix, F1 wandert mit.",
+              "Eine leere Zelle wird als 0 interpretiert – daher 0,00 € statt einer Fehlermeldung, was den Fehler besonders tückisch macht.",
+              "Nur E2 stimmt in beiden Varianten überein, weil der relative Bezug dort noch zufällig auf F1 zeigt."
+            ],
+            "rubric": []
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Das passende Diagramm wählen",
+        "throughline": "Schüler:innen ordnen einer Datensituation die passende Darstellung zu und lesen aus einem Diagramm nicht nur Einzelwerte, sondern den Verlauf – die Darstellung muss zur Aussage passen.",
+        "talking_points": [
+          "Nicht der schönste, sondern der zur Datenart passende Diagrammtyp ist der richtige: Verlauf → Linie, Kategorienvergleich → Balken, Anteile → Kreis, Zusammenhang zweier Größen → Streudiagramm.",
+          "Beim Ablesen eines Verlaufs zählt die Entwicklung (steigt/fällt/schwankt), nicht ein einzelner Punkt.",
+          "Prozentuale Veränderungen werden immer auf einen Ausgangswert bezogen – das muss man dazusagen."
+        ],
+        "extensions": [
+          "Schüler:innen erklären, warum eine Zeitreihe (Monatsumsätze) als Balkendiagramm irreführend wirken kann.",
+          "Aus der abgebildeten Grafik eine begründete Empfehlung für das Café ableiten (z. B. Personalplanung für Stoßmonate)."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "matching",
+            "prompt": "Ordne jeder Datensituation den am besten passenden Diagrammtyp zu.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Die Umsätze des Cafés in jedem Monat eines Jahres (zeitlicher Verlauf)",
+                "Der Vergleich der verkauften Stückzahl von fünf verschiedenen Produkten",
+                "Der Anteil jeder Produktgruppe am Gesamtumsatz (Teile eines Ganzen)",
+                "Der Zusammenhang zwischen Außentemperatur und der Zahl verkaufter Getränke"
+              ],
+              "right": [
+                "Balkendiagramm",
+                "Streudiagramm (Punktwolke)",
+                "Liniendiagramm",
+                "Kreisdiagramm (Tortendiagramm)"
+              ]
+            },
+            "response": { "mode": "table", "columns": ["Datensituation", "Passender Diagrammtyp"], "rows": 4 },
+            "cognitive_level": "understand",
+            "dimensions": ["WV"],
+            "serves": [ { "competence_id": "INF.OS.5.ANG.02", "relation": "exercises" } ],
+            "est_minutes": 5,
+            "asset_refs": [],
+            "answer_key": "Zeitlicher Verlauf der Monatsumsätze → Liniendiagramm. Vergleich der Stückzahlen von fünf Produkten → Balkendiagramm. Anteil jeder Produktgruppe am Gesamtumsatz → Kreisdiagramm (Tortendiagramm). Zusammenhang zwischen Temperatur und verkauften Getränken → Streudiagramm.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Für eine Zeitreihe niemals Balken statt Linie: Die Linie zeigt den Verlauf, Balken suggerieren getrennte Kategorien.",
+              "Ein Kreisdiagramm passt nur, wenn sich die Teile zu einem sinnvollen Ganzen (100 %) ergänzen.",
+              "Ein Streudiagramm braucht zwei numerische Größen pro Datenpunkt – hier Temperatur und Absatz."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "data_interpretation",
+            "prompt": "Die Grafik zeigt, wie viele Portionen das Café „Pausenbrot“ in jedem Monat des Schuljahres verkauft hat. a) In welchem Monat wurde am meisten, in welchem am wenigsten verkauft? b) Beschreibe den Gesamtverlauf über das Schuljahr in eigenen Worten. c) Um wie viel Prozent stieg der Verkauf von Oktober auf Dezember (ungefähr)?",
+            "payload": null,
+            "response": { "mode": "lines", "n": 6 },
+            "cognitive_level": "analyze",
+            "dimensions": ["WV", "RB"],
+            "serves": [ { "competence_id": "INF.OS.5.ANG.03", "relation": "exercises" } ],
+            "est_minutes": 9,
+            "asset_refs": ["abb1"],
+            "answer_key": "a) Am meisten im Mai (etwa 380 Portionen), am wenigsten im September (etwa 210 Portionen). b) Der Verkauf steigt im Herbst deutlich an, geht im Jänner kurz zurück (Ferien-/Prüfungszeit), erholt sich und erreicht im Mai den Höchstwert, bevor er im Juni wieder fällt. c) Von Oktober (etwa 260) auf Dezember (etwa 340): Anstieg um rund 80 Portionen, das sind etwa 80 / 260 ≈ 31 %.",
+            "acceptable_reasoning": "Bei c) ist der Rechenweg entscheidend (Differenz geteilt durch den Ausgangswert Oktober); Ablesewerte dürfen leicht abweichen, das Ergebnis liegt bei etwa 30–31 %.",
+            "watch_outs": [
+              "Der prozentuale Anstieg wird auf den Ausgangswert (Oktober) bezogen, nicht auf den Endwert.",
+              "Einzelne Punkte ablesen genügt bei b) nicht – gefragt ist der Verlauf (Trend), nicht ein einzelner Wert.",
+              "Der Rückgang im Jänner gehört zum Verlauf und sollte erwähnt werden."
+            ],
+            "rubric": []
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "Ehrlich visualisieren – Täuschungen erkennen",
+        "throughline": "Schüler:innen bewerten eine irreführende Grafik, gestalten selbst eine ehrliche Darstellung und prüfen, ob Daten eine Behauptung wirklich stützen – der Sprung von der Technik zur kritischen Datenkompetenz.",
+        "talking_points": [
+          "Die häufigste Diagramm-Täuschung ist die abgeschnittene y-Achse: Sie übertreibt kleine Unterschiede optisch enorm.",
+          "Balkenhöhen müssen proportional zu den Werten sein – ein doppelt so hoher Balken muss den doppelten Wert bedeuten.",
+          "Ein statistischer Zusammenhang (Korrelation) belegt keine Ursache (Kausalität) – dahinter kann ein dritter Faktor stecken."
+        ],
+        "extensions": [
+          "Schüler:innen suchen in Werbung oder Medien ein reales, potenziell irreführendes Diagramm und analysieren es.",
+          "Aus demselben Datensatz zwei Diagramme gestalten – eines ehrlich, eines irreführend – und die Wirkung vergleichen.",
+          "Eine Schlagzeile finden, die Korrelation und Kausalität verwechselt, und richtigstellen."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "argumentation",
+            "prompt": "Ein Getränkehersteller wirbt mit einem Balkendiagramm: Die eigene Marke erreicht in einem Test 104 „Geschmackspunkte“, die Konkurrenz 102. In der Werbegrafik beginnt die senkrechte Achse jedoch nicht bei 0, sondern bei 100. Dadurch wirkt der Balken der eigenen Marke mehr als doppelt so hoch wie der der Konkurrenz. a) Erkläre, warum dieses Diagramm täuscht. b) Wie groß ist der tatsächliche Unterschied zwischen den beiden Marken in Prozent (ungefähr)? c) Wie müsste man das Diagramm gestalten, damit es ehrlich ist?",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 50 },
+            "cognitive_level": "evaluate",
+            "dimensions": ["RB"],
+            "serves": [ { "competence_id": "INF.OS.5.ANG.03", "relation": "exercises" } ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "a) Die abgeschnittene Achse (Beginn bei 100 statt 0) übertreibt einen winzigen Unterschied optisch enorm: Aus 2 von rund 100 Punkten wird ein Balken, der doppelt so hoch aussieht – das Verhältnis der Balkenhöhen entspricht nicht mehr dem Verhältnis der Werte. b) Der Unterschied beträgt 2 Punkte; bezogen auf die Konkurrenz sind das 2 / 102 ≈ 2 % (also sehr gering). c) Ehrlich wäre eine Achse, die bei 0 beginnt (dann sind beide Balken fast gleich hoch); zusätzlich sollte man die tatsächlichen Werte anschreiben und Formulierungen wie „mehr als doppelt so gut“ vermeiden.",
+            "acceptable_reasoning": "Kern von a): abgeschnittene y-Achse verzerrt das Größenverhältnis; b): Unterschied im Bereich von etwa 2 %.",
+            "watch_outs": [
+              "Eine abgeschnittene y-Achse ist nicht immer verboten, muss aber klar gekennzeichnet sein und darf nicht in die Irre führen.",
+              "Der absolute Unterschied (2 Punkte) und der relative Unterschied (rund 2 %) sind beide klein – die Grafik macht daraus scheinbar einen großen.",
+              "„Doppelt so hoher Balken“ heißt nicht „doppelt so guter Geschmack“ – Balkenhöhe und Wert müssen proportional sein."
+            ],
+            "rubric": [
+              { "criterion": "Erklärung der Täuschung (a)", "levels": ["Abgeschnittene Achse und verzerrtes Verhältnis klar erklärt", "Achse genannt, Wirkung nicht erklärt", "Fehlt oder falsch"] },
+              { "criterion": "Ehrliche Alternative (c)", "levels": ["Achse bei 0 und/oder Werte anschreiben genannt", "Vage Verbesserung", "Keine sinnvolle Alternative"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "create_produce",
+            "prompt": "Bei einer Umfrage unter 200 Schüler:innen wurde der Schulweg nach Verkehrsmittel erhoben: zu Fuß 70, Fahrrad 30, öffentliche Verkehrsmittel 80, Auto 20. a) Welcher Diagrammtyp eignet sich am besten, um die Anteile am Ganzen zu zeigen? Begründe. b) Skizziere das Diagramm (als einfache Zeichnung oder in Worten) mit Titel und Beschriftung; gib für jedes Verkehrsmittel den Anteil in Prozent an. c) Formuliere eine Aussage, die man aus der Darstellung ehrlich ableiten kann.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 55 },
+            "cognitive_level": "create",
+            "dimensions": ["AG", "RB"],
+            "serves": [ { "competence_id": "INF.OS.5.ANG.01", "relation": "exercises" } ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "a) Da sich die vier Werte zu einem Ganzen ergänzen (200 Befragte = 100 %), passt ein Kreisdiagramm (alternativ ein 100-%-Stapelbalken). b) Anteile: zu Fuß 70/200 = 35 %, Fahrrad 30/200 = 15 %, öffentlich 80/200 = 40 %, Auto 20/200 = 10 %. Titel z. B. „Schulweg von 200 Schüler:innen nach Verkehrsmittel“; jedes Segment mit Verkehrsmittel und Prozentwert beschriften. c) Mögliche ehrliche Aussage: „Nur 10 % kommen mit dem Auto; 90 % legen den Schulweg zu Fuß, mit dem Rad oder öffentlich zurück.“ oder „Öffentliche Verkehrsmittel sind mit 40 % am häufigsten.“",
+            "acceptable_reasoning": "Die Diagrammwahl muss mit „Teile eines Ganzen“ begründet sein; die Prozentwerte müssen korrekt sein (Summe 100 %); die abgeleitete Aussage muss durch die Daten gedeckt sein.",
+            "watch_outs": [
+              "Ein Kreisdiagramm ist nur zulässig, weil die Kategorien zusammen alle 200 Befragten abdecken (100 %).",
+              "Die Prozentwerte müssen sich zu 100 % addieren: 35 + 15 + 40 + 10 = 100.",
+              "Die abgeleitete Aussage darf nicht über die Daten hinausgehen (z. B. nichts über andere Schulen behaupten)."
+            ],
+            "rubric": [
+              { "criterion": "Diagrammwahl mit Begründung", "levels": ["Kreisdiagramm mit Teile-eines-Ganzen begründet", "Passender Typ, Begründung schwach", "Unpassender Typ"] },
+              { "criterion": "Prozentwerte und Beschriftung", "levels": ["Alle vier Anteile korrekt, Titel und Beschriftung vorhanden", "Kleiner Rechen- oder Beschriftungsfehler", "Mehrere Fehler"] },
+              { "criterion": "Ehrliche Aussage", "levels": ["Durch die Daten gedeckt und aussagekräftig", "Korrekt, aber trivial", "Nicht gedeckt"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "open_response",
+            "prompt": "Eine Schlagzeile behauptet: „Handys machen schlechte Noten – Studie zeigt: Schüler:innen mit mehr Bildschirmzeit haben schlechtere Noten.“ Die Studie fand tatsächlich einen Zusammenhang (eine Korrelation) zwischen Bildschirmzeit und Notendurchschnitt. a) Belegt dieser Zusammenhang, dass die Handynutzung die Ursache der schlechteren Noten ist? Begründe. b) Nenne einen weiteren Faktor, der sowohl die Bildschirmzeit als auch die Noten beeinflussen könnte. c) Welche zusätzliche Information bräuchtest du, um die Behauptung besser beurteilen zu können?",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 50 },
+            "cognitive_level": "evaluate",
+            "dimensions": ["RB"],
+            "serves": [ { "competence_id": "INF.OS.5.ANG.03", "relation": "exercises" } ],
+            "est_minutes": 9,
+            "asset_refs": [],
+            "answer_key": "a) Nein. Eine Korrelation (zwei Größen treten gemeinsam auf) belegt keine Ursache-Wirkung-Beziehung. Die Wirkrichtung könnte auch umgekehrt sein (schlechte Noten führen zu mehr Ablenkung am Handy). b) Ein möglicher dritter Faktor: z. B. wenig Schlaf, geringe Lernmotivation, das familiäre Umfeld oder wenig Unterstützung beim Lernen – solche Faktoren können sowohl mehr Bildschirmzeit als auch schlechtere Noten verursachen. c) Nützlich wären u. a.: Größe und Auswahl der Stichprobe, wie Bildschirmzeit und Noten gemessen wurden, ob andere Einflüsse berücksichtigt (kontrolliert) wurden und ob es sich um eine Langzeitstudie handelt.",
+            "acceptable_reasoning": "a) muss den Kern „Korrelation ist nicht Kausalität“ treffen; b) ein plausibler gemeinsamer Faktor; c) mindestens eine sinnvolle Zusatzinformation (Stichprobe, Messung, Kontrolle von Störfaktoren, Langzeitdaten).",
+            "watch_outs": [
+              "Der klassische Fehler ist der Schluss von Korrelation auf Kausalität – hier explizit thematisieren.",
+              "Auch die umgekehrte Wirkrichtung (schlechte Noten → mehr Handy) ist ein starkes Gegenargument.",
+              "Der Fachbegriff „Störfaktor“ muss nicht fallen, aber die Idee eines dritten, gemeinsamen Faktors sollte erkennbar sein."
+            ],
+            "rubric": []
+          }
+        ]
+      }
+    ]
+  }
+}

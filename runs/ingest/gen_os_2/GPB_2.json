@@ -1,0 +1,253 @@
+{
+  "subject": "Geschichte und politische Bildung",
+  "klasse": 8,
+  "kompetenzbereich": "Wesentliche Transformationsprozesse im 20. und 21. Jahrhundert und grundlegende Einsichten in das Politische",
+  "title": "Vom Wiederaufbau zur Union: Europäische Integration und Österreichs Weg in die EU",
+  "kernfrage": "Warum schließen sich europäische Staaten immer enger zusammen – und was gewinnt oder verliert Österreich dabei?",
+  "body": {
+    "intro": [
+      {
+        "role": "info",
+        "id": "i2",
+        "kind": "callout",
+        "callout_role": "note",
+        "content": "Nach 1945 begannen westeuropäische Staaten, wirtschaftlich zusammenzuarbeiten, um Frieden und Wohlstand dauerhaft zu sichern. Aus einer Gemeinschaft für Kohle und Stahl wurde über Jahrzehnte die Europäische Union – ein enger Verbund mit gemeinsamem Binnenmarkt, teils gemeinsamer Währung und gemeinsamen Institutionen. Österreich, seit 1955 dauernd neutral, trat 1995 bei. Die Zeitleiste zeigt wichtige Stationen dieses Weges.",
+        "asset_refs": ["abb2"]
+      }
+    ],
+    "data_figures": [],
+    "assets": [
+      {
+        "id": "abb2",
+        "role": "figure",
+        "generator": "matplotlib:timeline",
+        "spec": {
+          "events": [
+            {"at": 1951, "label": "Montanunion (EGKS): Frankreich, Deutschland, Italien und die Benelux-Staaten"},
+            {"at": 1957, "label": "Römische Verträge: Gründung der Europäischen Wirtschaftsgemeinschaft (EWG)"},
+            {"at": 1993, "label": "Vertrag von Maastricht tritt in Kraft: die Europäische Union entsteht"},
+            {"at": 1995, "label": "Österreich, Schweden und Finnland treten der EU bei"},
+            {"at": 2002, "label": "Der Euro kommt als Bargeld in Umlauf"},
+            {"at": 2004, "label": "Große Erweiterung: zehn überwiegend mittel- und osteuropäische Staaten treten bei"},
+            {"at": 2009, "label": "Vertrag von Lissabon tritt in Kraft"},
+            {"at": 2020, "label": "Das Vereinigte Königreich verlässt die EU (Brexit)"}
+          ],
+          "title": "Europäische Integration – Stationen 1951–2020",
+          "xlabel": "Jahr"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Teil 1: Das System der EU verstehen",
+        "throughline": "Die Schüler:innen erarbeiten Aufbau und Grundlogik der EU (Institutionen, Binnenmarkt) als Sachgrundlage, bevor sie Chancen, Konflikte und Österreichs Sonderrolle beurteilen.",
+        "talking_points": [
+          "Die EU ist weder ein Staat noch ein bloßes Bündnis – sie ist ein einzigartiger Verbund souveräner Staaten, die bestimmte Zuständigkeiten gemeinsam ausüben.",
+          "Vier Grundfreiheiten als Kern des Binnenmarkts; die Personenfreizügigkeit betrifft die Schüler:innen direkt (Studium, Arbeit, Reisen im Ausland).",
+          "Die EU-Institutionen nicht mit dem Europarat oder mit der NATO verwechseln – eine sehr häufige Verwechslung."
+        ],
+        "extensions": [
+          "Wie werden EU-Gesetze gemacht (Kommission – Parlament – Rat)? Gegenüberstellung mit dem österreichischen Gesetzgebungsweg.",
+          "Recherche: Was hat sich durch den Vertrag von Lissabon 2009 an den Rechten des Europäischen Parlaments geändert?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "matching",
+            "prompt": "Ordne jeder EU-Institution ihre zentrale Aufgabe zu.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Europäisches Parlament",
+                "Europäische Kommission",
+                "Rat der EU (Ministerrat)",
+                "Europäischer Gerichtshof (EuGH)"
+              ],
+              "right": [
+                "wird von den Bürger:innen direkt gewählt und beschließt gemeinsam mit dem Rat die EU-Gesetze",
+                "schlägt neue Gesetze vor und wacht über die Einhaltung der Verträge („Hüterin der Verträge“)",
+                "vertritt die Regierungen der Mitgliedstaaten und beschließt Gesetze gemeinsam mit dem Parlament",
+                "legt das EU-Recht aus und sorgt für seine einheitliche Anwendung in allen Mitgliedstaaten"
+              ]
+            },
+            "response": {"mode": "none"},
+            "cognitive_level": "understand",
+            "dimensions": ["PSK"],
+            "serves": [
+              {"competence_id": "GPB.OS.8.WES.02", "relation": "exercises"}
+            ],
+            "est_minutes": 7,
+            "asset_refs": ["abb2"],
+            "answer_key": "Europäisches Parlament → direkt gewählt, beschließt mit dem Rat die Gesetze; Europäische Kommission → schlägt Gesetze vor, „Hüterin der Verträge“; Rat der EU → vertritt die Regierungen der Mitgliedstaaten, beschließt mit dem Parlament; Europäischer Gerichtshof → legt das EU-Recht aus und sichert seine einheitliche Anwendung.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Kommission (schlägt vor) und Rat/Parlament (beschließen) nicht vertauschen.",
+              "Der EuGH ist ein Gericht, kein politisches Beschlussorgan.",
+              "Rat der EU, Europäischer Rat und Europarat sind drei verschiedene Einrichtungen – hier ist der gesetzgebende Rat der Fachminister:innen gemeint."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "multiple_choice",
+            "prompt": "Der EU-Binnenmarkt beruht auf vier „Grundfreiheiten“. Welche Aufzählung ist korrekt?",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "freier Verkehr von Waren, Personen, Dienstleistungen und Kapital",
+                "Meinungs-, Presse-, Versammlungs- und Religionsfreiheit",
+                "freier Verkehr von Waren, Waffen, Personen und Währungen",
+                "Freiheit von Handel, Militär, Steuern und Bildung"
+              ],
+              "select": "one"
+            },
+            "response": {"mode": "none"},
+            "cognitive_level": "understand",
+            "dimensions": ["PSK"],
+            "serves": [
+              {"competence_id": "GPB.OS.8.WES.03", "relation": "exercises"}
+            ],
+            "est_minutes": 4,
+            "asset_refs": [],
+            "answer_key": "Richtig ist „Waren, Personen, Dienstleistungen und Kapital“ – das sind die vier Grundfreiheiten des Binnenmarkts. Die zweite Aufzählung nennt bürgerliche Freiheitsrechte (wichtig, aber nicht die Binnenmarktfreiheiten); die beiden übrigen sind frei erfunden.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Die vier Grundfreiheiten (Binnenmarkt) nicht mit den Grund- und Freiheitsrechten (z. B. Meinungsfreiheit) verwechseln.",
+              "„Personenfreizügigkeit“ meint das Recht, in einem anderen Mitgliedstaat zu leben und zu arbeiten."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "open_response",
+            "prompt": "Österreich ist seit 1955 dauernd neutral und trat 1995 der Europäischen Union bei.\na) Erkläre, was „immerwährende Neutralität“ außenpolitisch bedeutet.\nb) Beschreibe, worin ein Spannungsverhältnis zwischen dieser Neutralität und der EU-Mitgliedschaft liegen kann.\nc) Erkläre, wie Österreich beides miteinander vereinbart.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 65},
+            "cognitive_level": "analyze",
+            "dimensions": ["HSK", "PSK", "PUK"],
+            "serves": [
+              {"competence_id": "GPB.OS.8.WES.01", "relation": "exercises"},
+              {"competence_id": "GPB.OS.8.WES.05", "relation": "exercises"}
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "a) Immerwährende Neutralität bedeutet: kein Beitritt zu Militärbündnissen, keine fremden Militärstützpunkte im Land und keine Teilnahme an Kriegen. b) Spannungsverhältnis: Die EU hat eine Gemeinsame Außen- und Sicherheitspolitik und eine Beistandsklausel; gemeinsame außenpolitische Positionen und Sanktionen können mit einer strikt neutralen Haltung in Konflikt geraten. c) Vereinbarung: Österreich hält an der militärischen Neutralität fest (kein NATO-Beitritt), beteiligt sich aber an der politischen Zusammenarbeit, an zivilen und friedenssichernden EU-Missionen (Krisenmanagement) sowie an gemeinsamen Sanktionen. Über die Reichweite der Neutralität wird bis heute politisch diskutiert.",
+            "acceptable_reasoning": "Zentral ist die Unterscheidung zwischen militärischer Neutralität (bleibt bestehen) und politischer bzw. wirtschaftlicher Einbindung (voll gegeben). Für b) genügt ein tragfähiges Spannungsfeld (Sicherheits- oder Beistandsdimension).",
+            "watch_outs": [
+              "Neutralität heißt nicht Isolation oder Nichtmitgliedschaft – Österreich ist politisch und wirtschaftlich voll eingebunden.",
+              "EU und NATO nicht verwechseln: Österreich ist EU-Mitglied, aber nicht NATO-Mitglied.",
+              "Neutralität ist militärisch definiert, nicht als „sich zu allem enthalten“."
+            ],
+            "rubric": []
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Teil 2: Chancen, Konflikte und Beteiligung",
+        "throughline": "Aufbauend auf dem Systemwissen beurteilen die Schüler:innen Chancen und Konfliktpotenziale der Integration, treffen eine begründete Entscheidung zu einem realen EU-Streitfeld und artikulieren eine eigene Position.",
+        "talking_points": [
+          "Chancen (Binnenmarkt, Freizügigkeit, Frieden, Gewicht in der Welt) und Kosten (Souveränitätsabgabe, Beiträge, Anpassungsdruck) sachlich gegenüberstellen.",
+          "„Vertiefung gegen Erweiterung“ als Dauerkonflikt der EU – engere Zusammenarbeit oder mehr Mitglieder?",
+          "Einstimmigkeit im Rat bei sensiblen Fragen (z. B. Beitritt) schützt kleine Staaten, kann aber auch blockieren."
+        ],
+        "extensions": [
+          "Fallstudie Brexit 2016–2020: Welche Argumente führten zum Austritt, welche Folgen zeigten sich?",
+          "Podiumsdiskussion: „Soll die EU über mehr Fragen mit Mehrheit statt einstimmig entscheiden?“"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "argumentation",
+            "prompt": "Beurteile die folgende These und formuliere ein begründetes Urteil (etwa 5–7 Sätze):\n\n„Die EU-Mitgliedschaft bringt Österreich insgesamt mehr Vorteile als Nachteile.“\n\nStelle Argumente dafür und dagegen gegenüber und begründe deine eigene Position mit konkreten Beispielen.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 60},
+            "cognitive_level": "evaluate",
+            "dimensions": ["PUK", "HOK"],
+            "serves": [
+              {"competence_id": "GPB.OS.8.WES.03", "relation": "exercises"}
+            ],
+            "est_minutes": 13,
+            "asset_refs": [],
+            "answer_key": "Kein Einheitsurteil, aber eine tragfähige Abwägung. Dafür: Zugang zum Binnenmarkt (für Österreichs Exportwirtschaft zentral), Personenfreizügigkeit (Studium, Arbeit, Reisen), Frieden und Stabilität, gemeinsame Standards (Umwelt, Verbraucherschutz), größeres Gewicht in globalen Verhandlungen, Fördermittel. Dagegen: Abgabe von Souveränität (viele Regeln werden gemeinsam beschlossen), Nettobeiträge zum EU-Haushalt, Anpassungsdruck für einzelne Branchen, Kritik an Bürgernähe und Mitbestimmung („Demokratiedefizit“), Spannungen mit der Neutralität. Ein tragfähiges Urteil wägt konkret ab und begründet, welche Seite für welchen Bereich überwiegt, statt pauschal „gut“ oder „schlecht“ zu urteilen.",
+            "acceptable_reasoning": "Akzeptabel ist jede begründete Position (auch eine differenzierende „kommt darauf an“-Position), sofern beide Seiten mit konkreten Beispielen benannt und gegeneinander gewichtet werden.",
+            "watch_outs": [
+              "Konkrete Beispiele statt Schlagworte („Bürokratie“, „Brüssel“) verlangen.",
+              "Souveränität wird geteilt, nicht einfach „verloren“ – Österreich sitzt bei den Entscheidungen mit am Tisch.",
+              "Die eigene Betroffenheit (Reisen, Studium, Preise) darf einfließen, ersetzt aber kein Argument."
+            ],
+            "rubric": [
+              {"criterion": "Factual accuracy and use of evidence", "levels": ["Belege fehlen oder sind unzutreffend", "einzelne zutreffende Belege", "durchgehend korrekte, konkrete Belege"]},
+              {"criterion": "Multiperspectivity", "levels": ["nur eine Seite", "beide Seiten benannt", "beide Seiten abgewogen und gewichtet"]},
+              {"criterion": "Reasoned judgement", "levels": ["kein oder unbegründetes Urteil", "Urteil mit knapper Begründung", "differenziertes, begründetes Urteil"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "decision_scenario",
+            "prompt": "Ein europäisches Land möchte der EU beitreten. Über eine Aufnahme müssen alle Mitgliedstaaten einstimmig entscheiden – auch Österreich. Wäge Argumente für und gegen eine Aufnahme ab und triff eine begründete Entscheidung. Berücksichtige mindestens die Perspektiven des Beitrittslandes, der bisherigen Mitglieder und der EU als Ganzes.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Alle Mitgliedstaaten müssen zustimmen. Wie entscheidest du – und warum?"
+            },
+            "response": {"mode": "box", "min_height_mm": 55},
+            "cognitive_level": "evaluate",
+            "dimensions": ["PUK", "PMK"],
+            "serves": [
+              {"competence_id": "GPB.OS.8.WES.03", "relation": "exercises"},
+              {"competence_id": "GPB.OS.8.WES.05", "relation": "exercises"}
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "Kein „richtiges“ Ergebnis; bewertet wird die Abwägung. Argumente dafür: größerer Binnenmarkt, Stabilität und Frieden an den Grenzen, Stärkung der EU in der Welt, europäische Perspektive für die Bevölkerung des Beitrittslandes. Argumente dagegen bzw. Bedingungen: Das Land muss die Aufnahmekriterien erfüllen (funktionierende Demokratie, Rechtsstaatlichkeit, Marktwirtschaft, Übernahme des EU-Rechts – die Kopenhagener Kriterien); Sorge vor Entscheidungsblockaden bei noch mehr Mitgliedern; Verteilung der Fördermittel; Aufnahmefähigkeit der EU. Eine gute Entscheidung nennt Bedingungen (z. B. Reformfortschritte) und begründet, warum sie überwiegen.",
+            "acceptable_reasoning": "Sowohl Zustimmung (gegebenenfalls mit Bedingungen) als auch Ablehnung sind vertretbar, wenn die drei Perspektiven berücksichtigt und Kriterien (nicht bloß Sympathie) herangezogen werden.",
+            "watch_outs": [
+              "Ein Beitritt folgt festen Kriterien (Kopenhagener Kriterien: Demokratie, Rechtsstaat, Marktwirtschaft), nicht bloß dem Wunsch.",
+              "Einstimmigkeit bedeutet: schon ein einziges Land kann blockieren – das ist Chance und Problem zugleich.",
+              "Perspektiven trennen: Was nützt dem Beitrittsland, was den bisherigen Mitgliedern, was der EU insgesamt?"
+            ],
+            "rubric": [
+              {"criterion": "Weighing of arguments", "levels": ["nur eine Seite", "Pro und Contra genannt", "Pro und Contra abgewogen und gewichtet"]},
+              {"criterion": "Use of criteria", "levels": ["Entscheidung nach Sympathie", "ein Kriterium genannt", "Aufnahmekriterien sachlich herangezogen"]},
+              {"criterion": "Multiperspectivity", "levels": ["eine Perspektive", "zwei Perspektiven", "alle drei Perspektiven berücksichtigt"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "create_produce",
+            "prompt": "Verfasse einen kurzen Meinungsbeitrag (Leserbrief oder Social-Media-Statement, etwa 6–8 Sätze) zu der Frage: „Soll die Zusammenarbeit in der EU weiter vertieft werden, oder sollen die Mitgliedstaaten mehr eigenständig entscheiden?“\nDein Beitrag soll eine klare Position vertreten, mindestens zwei Fakten oder Beispiele von diesem Arbeitsblatt verwenden und im Ton sachlich und fair bleiben.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 65},
+            "cognitive_level": "create",
+            "dimensions": ["PMK", "HOK"],
+            "serves": [
+              {"competence_id": "GPB.OS.8.WES.03", "relation": "exercises"},
+              {"competence_id": "GPB.OS.8.WES.01", "relation": "exercises"}
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "Keine Musterlösung; erwartet wird ein Meinungsbeitrag, der (1) eine klare, begründete Position bezieht (mehr Vertiefung ODER mehr nationale Eigenständigkeit), (2) mindestens zwei sachlich korrekte Fakten oder Beispiele vom Arbeitsblatt einbaut (z. B. Binnenmarkt, Einstimmigkeit, Neutralität, Erweiterung), (3) die Gegenseite fair erwähnt und (4) im Ton sachlich bleibt. Qualitätsmerkmal: Meinung und Fakt sind klar unterscheidbar; es wird argumentiert, nicht bloß behauptet.",
+            "acceptable_reasoning": "Beide Grundpositionen sind zulässig. Bewertet werden Klarheit der Position, Faktenbindung, Fairness gegenüber der Gegenposition und die Trennung von Meinung und Sachaussage.",
+            "watch_outs": [
+              "Meinung und Fakt trennen – eine Behauptung ist kein Beleg.",
+              "Sachlich und fair bleiben, auch gegenüber der Gegenposition (Zielgruppe: Öffentlichkeit).",
+              "Mindestens zwei konkrete Fakten vom Blatt einbauen, nicht nur allgemeine Parolen."
+            ],
+            "rubric": [
+              {"criterion": "Clear position", "levels": ["keine erkennbare Position", "Position erkennbar, aber unklar begründet", "klare, begründete Position"]},
+              {"criterion": "Use of accurate facts", "levels": ["keine oder falsche Fakten", "ein zutreffender Fakt oder Beispiel", "mindestens zwei zutreffende, passende Fakten oder Beispiele"]},
+              {"criterion": "Fairness and tone", "levels": ["unsachlich oder ohne Gegenposition", "Gegenposition knapp erwähnt", "Gegenposition fair einbezogen, sachlicher Ton"]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

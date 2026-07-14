@@ -1,0 +1,266 @@
+{
+  "subject": "Informatik",
+  "klasse": 5,
+  "kompetenzbereich": "Informatik, Mensch und Gesellschaft",
+  "title": "Wem gehören deine Daten? Datenschutz, Datensicherheit und Urheberrecht",
+  "kernfrage": "Wem gehören deine Daten – und wie schützt du sie und die Werke anderer im digitalen Alltag?",
+  "body": {
+    "intro": [
+      {
+        "role": "info",
+        "id": "i1",
+        "kind": "prose",
+        "content": "Jeden Tag hinterlässt du digitale Spuren: bei jeder Suchanfrage, jedem Like, jedem Standortzugriff. Wer diese Daten sammelt und verknüpft, kann erstaunlich viel über dich erfahren. Gleichzeitig gelten Rechte an Texten, Bildern und Musik auch im Netz weiter. Auf diesem Arbeitsblatt lernst du, welche Regeln die Datenschutz-Grundverordnung (DSGVO) vorgibt, wie du deine Daten technisch schützt und wie du fremde Werke rechtlich sauber nutzt."
+      }
+    ],
+    "data_figures": [],
+    "assets": [
+      {
+        "id": "abb1",
+        "role": "figure",
+        "generator": "matplotlib:tree_diagram",
+        "spec": {
+          "title": "Wegweiser: Darf ich ein fremdes Werk nutzen?",
+          "branches": [
+            {
+              "label": "Fremdes Werk",
+              "children": [
+                { "label": "CC0 / gemeinfrei", "children": [ { "label": "frei nutzbar" } ] },
+                { "label": "CC BY", "children": [ { "label": "Urheber nennen" } ] },
+                { "label": "CC BY-SA", "children": [ { "label": "gleiche Lizenz" } ] },
+                { "label": "CC BY-NC", "children": [ { "label": "nicht kommerziell" } ] },
+                { "label": "Rechte vorbehalten", "children": [ { "label": "nur mit Erlaubnis" } ] }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Deine Daten und die DSGVO",
+        "throughline": "Schüler:innen unterscheiden personenbezogene von anonymen Daten und lernen die tragenden Grundsätze der DSGVO kennen – die rechtliche Grundlage für alle weiteren Aufgaben.",
+        "talking_points": [
+          "Datenschutz (Schutz personenbezogener Daten als Grundrecht) ist nicht dasselbe wie Datensicherheit (technischer Schutz von Daten allgemein) – beide greifen ineinander.",
+          "Personenbezogenes Datum = alles, was einer bestimmten Person zugeordnet werden kann; die Grenze zur Anonymität ist oft fließend (Verknüpfung vieler Einzeldaten).",
+          "Die DSGVO gilt EU-weit und räumt Betroffenen konkrete Rechte ein (Auskunft, Löschung, Berichtigung)."
+        ],
+        "extensions": [
+          "Schüler:innen fordern (fiktiv) ihre eigene Datenauskunft bei einem sozialen Netzwerk an und überlegen, was dort gespeichert sein könnte.",
+          "Recherche: Was ist der Unterschied zwischen Pseudonymisierung und Anonymisierung – und warum ist das rechtlich entscheidend?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "matching",
+            "prompt": "Ordne jedem Grundsatz der DSGVO die passende Bedeutung zu.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Zweckbindung",
+                "Datenminimierung",
+                "Speicherbegrenzung",
+                "Richtigkeit",
+                "Integrität und Vertraulichkeit"
+              ],
+              "right": [
+                "Gespeicherte Daten müssen sachlich korrekt und aktuell gehalten werden.",
+                "Es werden nur so viele Daten erhoben, wie für den Zweck wirklich nötig sind.",
+                "Daten dürfen nur für den vorher festgelegten, klaren Zweck verwendet werden.",
+                "Daten müssen durch technische Maßnahmen vor unbefugtem Zugriff geschützt werden.",
+                "Daten werden gelöscht, sobald sie für den Zweck nicht mehr gebraucht werden."
+              ]
+            },
+            "response": { "mode": "table", "columns": ["Grundsatz", "Bedeutung"], "rows": 5 },
+            "cognitive_level": "understand",
+            "dimensions": ["WV"],
+            "serves": [ { "competence_id": "INF.OS.5.INF.02", "relation": "exercises" } ],
+            "est_minutes": 6,
+            "asset_refs": [],
+            "answer_key": "Zweckbindung → Daten dürfen nur für den vorher festgelegten Zweck verwendet werden. Datenminimierung → Es werden nur so viele Daten erhoben, wie für den Zweck wirklich nötig sind. Speicherbegrenzung → Daten werden gelöscht, sobald sie nicht mehr gebraucht werden. Richtigkeit → Gespeicherte Daten müssen korrekt und aktuell gehalten werden. Integrität und Vertraulichkeit → Daten müssen technisch vor unbefugtem Zugriff geschützt werden.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Zweckbindung und Datenminimierung werden oft verwechselt: Zweckbindung betrifft das WOFÜR, Datenminimierung das WIE VIEL.",
+              "Richtigkeit meint die inhaltliche Korrektheit der Daten, nicht ihre technische Absicherung – das ist die Integrität und Vertraulichkeit."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "true_false_justify",
+            "prompt": "Entscheide für jede Aussage, ob sie wahr oder falsch ist, und begründe deine Entscheidung in einem Satz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Die IP-Adresse deines Computers gilt rechtlich als personenbezogenes Datum.",
+                "Sobald Daten anonymisiert sind – also keiner Person mehr zugeordnet werden können – fallen sie nicht mehr unter die DSGVO.",
+                "Ein Unternehmen darf deine rechtmäßig erhobenen Daten für jeden beliebigen neuen Zweck weiterverwenden.",
+                "Du hast das Recht, von einem Unternehmen eine Kopie aller über dich gespeicherten Daten zu verlangen."
+              ]
+            },
+            "response": { "mode": "table", "columns": ["Aussage", "Wahr / Falsch", "Begründung"], "rows": 4 },
+            "cognitive_level": "understand",
+            "dimensions": ["WV"],
+            "serves": [ { "competence_id": "INF.OS.5.INF.02", "relation": "exercises" } ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "1: Wahr – eine IP-Adresse lässt sich einer Person zuordnen und gilt daher rechtlich als personenbezogenes Datum. 2: Wahr – echte Anonymisierung entfernt den Personenbezug dauerhaft, dann greift die DSGVO nicht mehr. 3: Falsch – der Grundsatz der Zweckbindung verbietet die Weiterverwendung für einen beliebigen neuen Zweck. 4: Wahr – das Auskunftsrecht (Art. 15 DSGVO) gibt dir Anspruch auf eine Kopie aller über dich gespeicherten Daten.",
+            "acceptable_reasoning": "Die Begründung muss den jeweiligen Grundsatz bzw. das jeweilige Recht sinngemäß benennen (Zweckbindung, Auskunftsrecht, Personenbezug).",
+            "watch_outs": [
+              "Bei Aussage 1 diskutieren: Streng juristisch hängt es davon ab, ob eine Zuordnung mit vertretbarem Aufwand möglich ist – im Schulkontext gilt die IP-Adresse als personenbezogen.",
+              "Aussage 2: Der häufigste Fehler ist, Pseudonymisierung (Klarname durch eine Nummer ersetzt, aber rückführbar) mit echter Anonymisierung zu verwechseln – pseudonyme Daten bleiben personenbezogen."
+            ],
+            "rubric": []
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Daten schützen: Minimierung und Verschlüsselung",
+        "throughline": "Schüler:innen wenden Datenschutz konkret an (Berechtigungen kritisch prüfen) und verstehen an einem klassischen Chiffre-Beispiel, warum moderne Verschlüsselung nötig ist.",
+        "talking_points": [
+          "Die stärkste Datenschutzmaßnahme ist, Daten gar nicht erst preiszugeben (Datenminimierung als Verteidigungslinie).",
+          "Kerckhoffs' Prinzip: Die Sicherheit darf nur vom geheimen Schlüssel abhängen, nicht von der Geheimhaltung des Verfahrens (Gegenteil von Security by obscurity).",
+          "Symmetrische Verschlüsselung braucht einen sicher ausgetauschten Schlüssel; asymmetrische Verfahren lösen genau dieses Austauschproblem."
+        ],
+        "extensions": [
+          "Schüler:innen verschlüsseln einen kurzen Satz mit einem selbst gewählten Cäsar-Schlüssel und lassen ihn von einer Partnerin durch Häufigkeitsanalyse knacken.",
+          "Kurzrecherche: Wie viele Schlüssel hat eine AES-128-Verschlüsselung, und warum ist Durchprobieren praktisch unmöglich?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "decision_scenario",
+            "prompt": "Eine kostenlose Taschenlampen-App verlangt beim Installieren Zugriff auf deine Kontakte, deinen Standort und dein Mikrofon. Entscheide begründet: Installierst du sie, lehnst du einzelne Berechtigungen ab oder verzichtest du ganz? Stütze deine Begründung auf die Grundsätze der Datenminimierung und der Zweckbindung.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Installieren, Berechtigungen einschränken oder verzichten? Begründe mit Datenminimierung und Zweckbindung."
+            },
+            "response": { "mode": "box", "min_height_mm": 40 },
+            "cognitive_level": "apply",
+            "dimensions": ["AG", "RB"],
+            "serves": [ { "competence_id": "INF.OS.5.INF.02", "relation": "exercises" } ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "Eine Taschenlampe braucht technisch weder Kontakte noch Standort noch Mikrofon – die verlangten Berechtigungen stehen in keinem Zusammenhang mit dem Zweck der App (Verstoß gegen Datenminimierung und Zweckbindung). Sinnvoll ist: die App gar nicht installieren oder eine Alternative wählen, die keine unnötigen Rechte verlangt; mindestens jedoch alle drei Berechtigungen ablehnen. Häufig finanzieren sich solche Apps durch den Verkauf gesammelter Daten – die Gratis-App bezahlt man dann mit den eigenen Daten.",
+            "acceptable_reasoning": "Kernargument nötig: Die verlangten Daten haben nichts mit der Funktion zu tun; wer Daten sammelt, die er nicht braucht, verstößt gegen Datenminimierung und Zweckbindung.",
+            "watch_outs": [
+              "Manche argumentieren „ist ja gratis, also passt das“ – herausarbeiten, dass die Bezahlung dann oft in Form von Daten erfolgt.",
+              "Berechtigungen nur ablehnen ist sinnvoll, wenn die App danach noch funktioniert; sonst ist der Verzicht die konsequente Wahl."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "algorithm_trace",
+            "prompt": "Bei der Cäsar-Verschlüsselung wird jeder Buchstabe im Alphabet um eine feste Zahl von Stellen verschoben. Verwende den Schlüssel +3 (A wird zu D, B wird zu E, …). a) Verschlüssle das Wort GEHEIM. b) Wie viele verschiedene sinnvolle Schlüssel gibt es bei diesem Verfahren überhaupt, und warum ist es dadurch leicht zu knacken? c) Nenne eine Eigenschaft moderner Verschlüsselung, die der Cäsar-Verschlüsselung fehlt.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 45 },
+            "cognitive_level": "analyze",
+            "dimensions": ["WV", "AG"],
+            "serves": [ { "competence_id": "INF.OS.5.INF.02", "relation": "exercises" } ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "a) GEHEIM wird zu JHKHLP (G→J, E→H, H→K, E→H, I→L, M→P). b) Es gibt nur 25 sinnvolle Schlüssel (Verschiebungen um 1 bis 25). Ein Angreifer kann alle einfach durchprobieren (Brute-Force) oder über die Buchstabenhäufigkeit – im Deutschen ist E am häufigsten – den Schlüssel erraten. c) Moderne Verfahren haben einen riesigen Schlüsselraum (z. B. AES mit 2^128 Schlüsseln), sodass Durchprobieren praktisch unmöglich ist; asymmetrische Verfahren lösen zusätzlich das Problem des sicheren Schlüsselaustauschs.",
+            "acceptable_reasoning": "Für c) genügt EIN korrekter Punkt: sehr großer Schlüsselraum ODER sicherer Schlüsselaustausch (asymmetrisch) ODER Schutz gegen Häufigkeitsanalyse.",
+            "watch_outs": [
+              "Am Alphabetende wird zyklisch weitergezählt (X→A); im Wort GEHEIM tritt das nicht auf, sollte aber erwähnt werden.",
+              "Häufiger Fehler: 26 statt 25 Schlüssel – die Verschiebung um 0 (bzw. 26) lässt den Text unverändert und ist kein echter Schlüssel.",
+              "„Sicher, weil niemand das Verfahren kennt“ ist ein Trugschluss (Security by obscurity): Das Verfahren ist bekannt, nur der geheime Schlüssel zählt – und der ist hier trivial zu finden."
+            ],
+            "rubric": []
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "Urheberrecht, Rechte und Verantwortung",
+        "throughline": "Schüler:innen wenden Lizenzregeln auf konkrete Fälle an und wägen die gesellschaftliche Bedeutung von Datenschutz und Datensicherheit ab – der Schritt von der Regel zur begründeten Bewertung.",
+        "talking_points": [
+          "Urheberrecht entsteht automatisch mit dem Werk; „im Internet gefunden“ bedeutet nicht „frei nutzbar“.",
+          "Creative-Commons-Lizenzen sind ein Baukasten (BY, SA, NC, ND); die Kürzel lassen sich kombinieren und schränken die Nutzung unterschiedlich stark ein.",
+          "Das Argument „ich habe nichts zu verbergen“ verkennt Machtungleichgewichte, Profilbildung und den Kontextwechsel von Daten über die Zeit."
+        ],
+        "extensions": [
+          "Schüler:innen suchen auf einer CC-Plattform (z. B. für Bilder oder Musik) ein Werk und formulieren die korrekte Namensnennung.",
+          "Diskussion: Sollte es ein Recht auf Vergessenwerden im Internet geben – und wo liegen seine Grenzen?",
+          "Ein Berufsbild recherchieren: Was macht eine Datenschutzbeauftragte oder eine IT-Security-Fachkraft an einem typischen Arbeitstag?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "open_response",
+            "prompt": "Nutze den abgebildeten Wegweiser durch die Nutzungsrechte. Entscheide für jeden Fall, ob die Nutzung erlaubt ist und was du gegebenenfalls tun musst. a) Du findest ein Foto unter der Lizenz CC BY und möchtest es in einer Schulpräsentation zeigen. b) Du findest ein Musikstück unter CC BY-NC-SA, willst es bearbeiten (remixen) und den Remix auf deinem YouTube-Kanal veröffentlichen, mit dem du Werbeeinnahmen erzielst. c) Ein Bild ist mit „alle Rechte vorbehalten“ gekennzeichnet und du möchtest es für deinen Blog verwenden.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 55 },
+            "cognitive_level": "analyze",
+            "dimensions": ["RB", "WV"],
+            "serves": [ { "competence_id": "INF.OS.5.INF.02", "relation": "exercises" } ],
+            "est_minutes": 12,
+            "asset_refs": ["abb1"],
+            "answer_key": "a) Erlaubt – CC BY erlaubt die Nutzung (sogar kommerziell), Bedingung: den Urheber bzw. die Urheberin und die Lizenz nennen. b) In dieser Form nicht erlaubt: Der Zusatz NC (nicht-kommerziell) verbietet die Nutzung auf einem Kanal mit Werbeeinnahmen. Ohne Monetarisierung wäre ein Remix erlaubt, wenn du (BY) den Urheber nennst UND (SA) deinen Remix unter dieselbe Lizenz CC BY-NC-SA stellst. c) Nicht erlaubt ohne Zustimmung – „alle Rechte vorbehalten“ bedeutet, dass du eine ausdrückliche Erlaubnis oder Lizenz des Urhebers brauchst.",
+            "acceptable_reasoning": "Für b) ist das Erkennen des NC-Konflikts (Werbeeinnahmen = kommerziell) entscheidend; die SA-Pflicht (Weitergabe unter gleicher Lizenz) sollte zusätzlich genannt werden.",
+            "watch_outs": [
+              "Häufiger Irrtum: „im Internet gefunden = frei nutzbar“. Ohne ausdrückliche Freigabe gilt das Urheberrecht weiter.",
+              "NC (nicht-kommerziell) und ein monetarisierter Kanal schließen sich aus – auch geringe Werbeeinnahmen zählen als kommerziell.",
+              "SA (Weitergabe unter gleichen Bedingungen) verpflichtet, das eigene Ergebnis unter dieselbe Lizenz zu stellen – das wird bei Remixen oft vergessen."
+            ],
+            "rubric": [
+              { "criterion": "Korrekte Entscheidung je Fall", "levels": ["Alle drei korrekt", "Zwei korrekt", "Höchstens einer korrekt"] },
+              { "criterion": "Begründung mit den Lizenzbausteinen", "levels": ["BY / NC / SA korrekt benannt und angewendet", "Teilweise benannt", "Ohne Bezug auf die Lizenzbausteine"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "argumentation",
+            "prompt": "Eine oft gehörte Aussage lautet: „Datenschutz ist mir egal – ich habe doch nichts zu verbergen.“ Nimm begründet Stellung. Nenne mindestens zwei stichhaltige Gegenargumente und beschreibe eine Situation, in der die Aussage nachvollziehbar erscheint. Beziehe die Folgen für den Einzelnen und für die Gesellschaft ein.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 55 },
+            "cognitive_level": "evaluate",
+            "dimensions": ["RB"],
+            "serves": [ { "competence_id": "INF.OS.5.INF.01", "relation": "exercises" } ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Mögliche Gegenargumente: (1) Datenschutz schützt nicht das Verbergen von Fehlverhalten, sondern die Kontrolle darüber, wer was über einen weiß (Privatsphäre als Grundrecht). (2) Aus vielen harmlosen Einzeldaten lässt sich durch Verknüpfung ein sehr genaues Profil erstellen (Bewegungen, Gesundheit, Meinungen). (3) Machtungleichgewicht: Wer viele Daten besitzt (Konzerne, Staat), kann Menschen beeinflussen, benachteiligen oder manipulieren. (4) Was heute harmlos ist, kann in einem anderen Kontext (neuer Arbeitgeber, anderes politisches System) gefährlich werden. (5) Es betrifft nicht nur dich: Wer sorglos teilt, gibt auch Daten von Freundinnen und Familie preis. Nachvollziehbar erscheint die Aussage bei bewusst öffentlichen, unkritischen Informationen – doch die Entscheidung, was öffentlich ist, sollte bei einem selbst liegen.",
+            "acceptable_reasoning": "Mindestens zwei voneinander unabhängige, konkrete Gegenargumente; eine differenzierte Betrachtung (wann die Aussage teilweise zutrifft) hebt die Antwort.",
+            "watch_outs": [
+              "Schüler:innen bleiben oft bei „man wird überwacht“ stehen – auf konkrete Folgen (Profilbildung, Diskriminierung, Manipulation) dringen.",
+              "Die Aufgabe verlangt Differenzierung, nicht eine vorgegebene Meinung – auch eine teilweise zustimmende Position ist zulässig, wenn sie gut begründet ist."
+            ],
+            "rubric": [
+              { "criterion": "Anzahl und Qualität der Gegenargumente", "levels": ["Zwei oder mehr konkrete, unabhängige Argumente", "Ein konkretes, ein vages Argument", "Nur vage Aussagen"] },
+              { "criterion": "Differenziertheit", "levels": ["Grenzen des eigenen Standpunkts reflektiert", "Einseitig, aber schlüssig", "Undifferenziert"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "open_response",
+            "prompt": "Viele Organisationen beschäftigen eine Datenschutzbeauftragte oder eine IT-Security-Fachkraft. a) Beschreibe zwei konkrete Aufgaben, die eine solche Fachkraft übernimmt. b) Beurteile: Warum genügt es für ein Unternehmen nicht, „einfach gute Passwörter“ zu verwenden – warum lohnt sich eine eigene Fachkraft dafür?",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 50 },
+            "cognitive_level": "evaluate",
+            "dimensions": ["RB", "WV"],
+            "serves": [ { "competence_id": "INF.OS.5.INF.04", "relation": "exercises" } ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "a) Mögliche Aufgaben: die Einhaltung der DSGVO prüfen und dazu beraten; Mitarbeiterinnen und Mitarbeiter schulen; Zugriffsrechte und Berechtigungen verwalten; auf Sicherheitsvorfälle (Datenlecks, Angriffe) reagieren; Systeme auf Schwachstellen testen (Penetrationstests); Verträge mit Dienstleistern prüfen. b) Sicherheit ist mehr als ein Passwort: Bedrohungen ändern sich ständig (Phishing, Schadsoftware, Erpressungstrojaner), es gibt gesetzliche Pflichten (DSGVO) mit hohen Strafen, und der Schutz braucht Regeln, Überwachung, Notfallpläne und Schulung. Der „Faktor Mensch“ (unvorsichtige Klicks) ist oft die größte Lücke und muss organisatorisch adressiert werden – ein einzelnes technisches Mittel reicht nicht.",
+            "acceptable_reasoning": "a) zwei klar unterschiedliche Aufgaben; b) mindestens ein systemisches Argument (wechselnde Bedrohungen, gesetzliche Pflicht, Faktor Mensch, Notwendigkeit von Prozessen).",
+            "watch_outs": [
+              "Bei a) auf Konkretheit bestehen: „für Sicherheit sorgen“ ist keine Aufgabe, „Zugriffsrechte verwalten“ schon.",
+              "Bei b) ist der Kern, dass Sicherheit ein fortlaufender Prozess ist und nicht mit einer einzelnen Maßnahme erledigt werden kann."
+            ],
+            "rubric": []
+          }
+        ]
+      }
+    ]
+  }
+}

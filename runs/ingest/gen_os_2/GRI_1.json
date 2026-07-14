@@ -1,0 +1,211 @@
+{
+  "subject": "Griechisch",
+  "klasse": 8,
+  "kompetenzbereich": "Das griechische Drama als Ursprung des europäischen Theaters",
+  "title": "Bocksgesang und Bühne – vom Dionysosfest zum europäischen Theater",
+  "kernfrage": "Wie wurde aus einem Fest für den Gott Dionysos das Theater – und warum bewegt uns der Streit der Antigone mit König Kreon bis heute?",
+  "body": {
+    "intro": [],
+    "data_figures": [],
+    "assets": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Vom Fest des Dionysos zum Theaterbau",
+        "throughline": "Das griechische Theater ist aus dem Dionysoskult erwachsen; sein Wortschatz und seine Bauform bewahren diese religiösen Wurzeln. Über Etymologie und Dramenstruktur erkennen die Schüler:innen, dass Theater ursprünglich ein religiös-gesellschaftliches Fest der Polis war, kein bloßes Unterhaltungsprogramm.",
+        "talking_points": [
+          "Die Großen Dionysien waren ein staatlich organisiertes Fest: Tragödien traten in einem Wettbewerb (ἀγών) gegeneinander an, wohlhabende Bürger finanzierten als Choregen die Chöre.",
+          "τραγῳδία („Bocksgesang“, τράγος + ᾠδή) und διθύραμβος (Kultlied für Dionysos) verweisen direkt auf den Ursprung im Kult; κωμῳδία leitet sich vom festlichen Umzug (κῶμος) ab.",
+          "Die Bauteile θέατρον (Zuschauerraum), ὀρχήστρα (Tanzplatz des Chors) und σκηνή (Bühnenhaus) sind zugleich der Ursprung unserer Wörter „Theater“ und „Szene“."
+        ],
+        "extensions": [
+          "Das heutige Wort „Hypokrit“ (Heuchler) geht auf den Schauspieler ὑποκριτής, den „Antwortenden“, zurück – ein Anlass, über das Verhältnis von Rolle und Person zu sprechen.",
+          "Kurzrecherche zum Dionysostheater am Südhang der Akropolis: Fassungsvermögen, Akustik und die Entwicklung vom Holz- zum Steintheater."
+        ],
+        "blocks": [
+          {
+            "role": "info",
+            "id": "i1",
+            "kind": "prose",
+            "content": "Einmal im Jahr, bei den Großen Dionysien, verwandelte sich Athen für mehrere Tage in eine einzige Bühne. Zu Ehren des Gottes Dionysos zogen Festumzüge durch die Stadt, und im Theater am Fuß der Akropolis wetteiferten Dichter mit ihren Tragödien um den Sieg. Aus dem Chorgesang zu Ehren des Gottes entwickelte sich, so berichtet die Überlieferung, allmählich das Drama: Ein einzelner Sprecher trat aus dem Chor heraus und „antwortete“ ihm – der erste Schauspieler war geboren. Theater war für die Griechen also nie nur Unterhaltung, sondern religiöses Fest und Angelegenheit der ganzen Polis."
+          },
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "matching",
+            "prompt": "Ordne die griechischen Fachbegriffe des Theaters ihrer richtigen Bedeutung zu. Manche benennen Bauteile des Theaters, andere die Menschen, die es zum Leben erweckten.",
+            "payload": {"kind": "matching", "left": ["θέατρον", "ὀρχήστρα", "σκηνή", "ὑποκριτής", "χορός"], "right": ["Zuschauerraum („Schauplatz“)", "Tanzplatz des Chors", "Bühnenhaus (→ „Szene“)", "Schauspieler („der Antwortende“)", "Chor / Reigen der Sänger und Tänzer"]},
+            "response": {"mode": "none"},
+            "cognitive_level": "understand",
+            "difficulty": 1,
+            "dimensions": ["UEB"],
+            "serves": [{"competence_id": "GRI.OS.8.GRI3.02", "relation": "exercises"}],
+            "est_minutes": 6,
+            "asset_refs": [],
+            "answer_key": "θέατρον – Zuschauerraum („Schauplatz“, von θεάομαι „schauen“); ὀρχήστρα – Tanzplatz des Chors (von ὀρχέομαι „tanzen“); σκηνή – Bühnenhaus (→ „Szene“); ὑποκριτής – Schauspieler („der Antwortende“, von ὑποκρίνομαι); χορός – Chor / Reigen.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "σκηνή meint zunächst das „Zelt“ bzw. Bühnenhaus hinter der Spielfläche, nicht die „Szene“ im heutigen Sinn eines Auftritts.",
+              "ὀρχήστρα ist der Tanzplatz des Chors, nicht das „Orchester“ der Musiker im modernen Sinn – der Bedeutungswandel lohnt eine kurze Besprechung."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "ordering",
+            "prompt": "Eine klassische griechische Tragödie ist streng gebaut. Bringe die Bauteile in die Reihenfolge, in der sie während der Aufführung aufeinander folgen.",
+            "payload": {"kind": "ordering", "items": ["πρόλογος (Vorspiel, das die Ausgangslage erklärt)", "πάροδος (Einzugslied des Chors)", "ἐπεισόδιον (Dialogszene zwischen den Chorliedern)", "στάσιμον (Standlied des Chors)", "ἔξοδος (Schlussteil, Abgang des Chors)"]},
+            "response": {"mode": "none"},
+            "cognitive_level": "understand",
+            "difficulty": 2,
+            "dimensions": ["INT"],
+            "serves": [{"competence_id": "GRI.OS.8.GRI3.02", "relation": "exercises"}],
+            "est_minutes": 6,
+            "asset_refs": [],
+            "answer_key": "πρόλογος → πάροδος → ἐπεισόδιον → στάσιμον → ἔξοδος. Nach der πάροδος wechseln sich ἐπεισόδια (Dialogszenen) und στάσιμα (Chorlieder) mehrfach ab, bis die ἔξοδος den Abschluss bildet.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Häufiger Irrtum: πάροδος und ἔξοδος werden verwechselt – πάροδος ist der Einzug (Anfang), ἔξοδος der Auszug (Ende).",
+              "ἐπεισόδιον und στάσιμον wechseln einander mehrfach ab; es gibt nicht nur je ein einziges."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "open_response",
+            "prompt": "Das Wort τραγῳδία setzt sich zusammen aus τράγος („Bock“, „Ziegenbock“) und ᾠδή („Gesang“) – wörtlich „Bocksgesang“. Erkläre, wie diese Etymologie auf den religiösen Ursprung der Tragödie im Kult des Dionysos verweist. Ziehe auch διθύραμβος (das Kultlied für Dionysos) und κωμῳδία (von κῶμος, dem „Festumzug“) heran.",
+            "payload": null,
+            "response": {"mode": "lines", "n": 5},
+            "cognitive_level": "analyze",
+            "difficulty": 2,
+            "dimensions": ["UEB"],
+            "serves": [{"competence_id": "GRI.OS.8.GRI3.01", "relation": "exercises"}],
+            "est_minutes": 9,
+            "asset_refs": [],
+            "answer_key": "Der „Bocksgesang“ verweist auf den Dionysoskult: Der Bock war ein dem Dionysos zugeordnetes Opfertier, und der Chor trat vermutlich als Schar bocksgestaltiger Begleiter (Satyrn) des Gottes auf; gesungen wurde ursprünglich zu Ehren des Dionysos. Auch διθύραμβος ist ein Kultlied für Dionysos, aus dem sich nach antiker Überlieferung die Tragödie entwickelte. κωμῳδία („Umzugsgesang“) entstammt dem ausgelassenen Festumzug (κῶμος) desselben Festkreises. Beide Gattungen wurzeln also im religiösen Fest, nicht in weltlicher Unterhaltung.",
+            "acceptable_reasoning": "Gute Antworten müssen nicht jede etymologische Einzelheit beweisen; entscheidend ist der begründete Zusammenhang zwischen Wortbedeutung (Bock / Umzug / Kultlied) und dem Dionysoskult als Ursprungsort.",
+            "watch_outs": [
+              "Die genaue Herleitung von „Bocksgesang“ ist in der Forschung umstritten (Opferbock, Satyrchor oder der Bock als Siegespreis) – die Schüler:innen sollen den Kultbezug erkennen, nicht eine einzige Herleitung als sicher behaupten.",
+              "κωμῳδία nicht mit κώμη („Dorf“) verwechseln; die schulübliche Herleitung geht von κῶμος („Festumzug“) aus."
+            ],
+            "rubric": []
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Der Mensch und das Gesetz – Sophokles’ Antigone",
+        "throughline": "An Sophokles’ Antigone wird das Drama zum Denkraum: Der Konflikt zwischen dem göttlichen, ungeschriebenen Gesetz (Antigone) und dem staatlichen Gesetz (Kreon) ist ein Grundmotiv der Weltliteratur. Die Schüler:innen übersetzen die berühmte Chorstelle über den Menschen, deuten die Doppeldeutigkeit von δεινός und bewerten den tragischen Konflikt.",
+        "talking_points": [
+          "δεινός vereint „furchtbar/gewaltig“ und „geschickt/wunderbar“ – die Ambivalenz des Menschen (schöpferisch UND zerstörerisch) steckt schon im Wort; eine eindeutige Übersetzung gibt es bewusst nicht.",
+          "Antigone beruft sich auf die ἄγραπτα θεῶν νόμιμα (die ungeschriebenen Satzungen der Götter), Kreon auf das Gesetz der Polis – beide Positionen haben ein Recht, das macht den Konflikt tragisch.",
+          "Aristoteles bestimmt die Wirkung der Tragödie über ἔλεος (Mitleid) und φόβος (Furcht), die zur κάθαρσις führen – ein Bogen zurück zum religiösen Fest der ganzen Bürgerschaft."
+        ],
+        "extensions": [
+          "Vergleich mit modernen „Antigonen“ (etwa Anouilhs Antigone von 1944 als Widerstandsstück): Wie derselbe Stoff je nach Zeit neu gedeutet wird.",
+          "Diskussion: Wo stehen heute „ungeschriebene Gesetze“ (Gewissen, Menschenrechte) gegen geltendes Recht? Aktuelle Beispiele sammeln.",
+          "Kreatives Schreiben: eine Verteidigungsrede Kreons, die seine Position stark macht – gegen die naheliegende Sympathie für Antigone."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "translation",
+            "prompt": "Übersetze den berühmten Beginn des ersten Standlieds aus Sophokles’ Antigone. — πολλὰ τὰ δεινὰ κοὐδὲν ἀνθρώπου δεινότερον πέλει. — Hilfen: πολλά „vieles“; τὰ δεινά „das Gewaltige/Ungeheure“ (Neutrum Plural); κοὐδέν = καὶ οὐδέν „und nichts“; ἀνθρώπου Genitiv „als der Mensch“; δεινότερον „gewaltiger/ungeheurer“ (Komparativ zu δεινός); πέλει „ist“ (dichterisch).",
+            "payload": null,
+            "response": {"mode": "lines", "n": 2},
+            "cognitive_level": "apply",
+            "difficulty": 2,
+            "dimensions": ["UEB"],
+            "serves": [{"competence_id": "GRI.OS.8.GRI3.03", "relation": "exercises"}],
+            "est_minutes": 7,
+            "asset_refs": [],
+            "answer_key": "„Vieles ist gewaltig/ungeheuer, doch nichts ist gewaltiger (ungeheurer) als der Mensch.“ Der Genitiv ἀνθρώπου ist ein Vergleichsgenitiv (genitivus comparationis) nach dem Komparativ δεινότερον; πέλει steht dichterisch für „ist“.",
+            "acceptable_reasoning": "Die Wahl des deutschen Wortes für δεινός darf variieren (gewaltig, ungeheuer, furchtbar, erstaunlich); gefordert ist eine grammatisch korrekte Wiedergabe von Komparativ und Vergleichsgenitiv.",
+            "watch_outs": [
+              "κοὐδέν ist eine Krasis aus καὶ οὐδέν – nicht als eigenes Vokabel suchen.",
+              "ἀνθρώπου ist Genitiv des Vergleichs („als der Mensch“), nicht Genitivattribut („des Menschen“). Ein häufiger Fehler.",
+              "πέλει nicht mit anderen Stämmen verwechseln; hier schlicht „ist / waltet“."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "text_analysis",
+            "prompt": "Das Wort δεινός lässt sich nicht eindeutig übersetzen: Es bedeutet zugleich „furchtbar, gewaltig, unheimlich“ UND „geschickt, gewandt, erstaunlich, wunderbar“. Analysiere, welche Aussage über den Menschen der Chor gerade dadurch trifft, dass er dieses doppeldeutige Wort wählt. Belege deine Deutung mit Beispielen dafür, was den Menschen δεινός macht – und denke dabei auch an die Kehrseite seiner Fähigkeiten.",
+            "payload": null,
+            "response": {"mode": "lines", "n": 6},
+            "cognitive_level": "analyze",
+            "difficulty": 3,
+            "dimensions": ["INT"],
+            "serves": [{"competence_id": "GRI.OS.8.GRI3.03", "relation": "exercises"}],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Der Chor nennt den Menschen das gewaltigste UND geschickteste Wesen. Die Doppeldeutigkeit ist gewollt: Dieselben Fähigkeiten, die den Menschen bewundernswert machen (Seefahrt, Ackerbau, Sprache, Staatenbildung, Heilkunst), machen ihn auch bedrohlich, weil er Grenzen überschreitet. Der Mensch ist großartig und unheimlich in einem; seine Schöpferkraft ist von seiner Zerstörungskraft nicht zu trennen. Das Lied bewundert den Menschen und warnt zugleich vor ihm – eine ambivalente, keine reine Lobrede.",
+            "acceptable_reasoning": "Überzeugend ist jede Deutung, die die Ambivalenz (Bewunderung UND Bedrohung) am Wortsinn von δεινός festmacht und mit menschlichen Leistungen und ihren Kehrseiten belegt; eine rein positive „Hymne auf den Fortschritt“ verfehlt die Doppeldeutigkeit.",
+            "watch_outs": [
+              "Nicht bei „der Mensch ist großartig“ stehen bleiben – die bedrohliche Seite von δεινός muss erkannt werden.",
+              "Die Stelle ist keine ungebrochene Fortschrittshymne; im Kontext der Antigone schwingt die Warnung mit, dass menschliche Selbstüberschätzung (Kreon!) ins Verderben führt."
+            ],
+            "rubric": [
+              {"criterion": "Grasp of ambiguity", "levels": ["nennt nur eine Bedeutung von δεινός", "erkennt beide Bedeutungen", "deutet die Spannung beider Bedeutungen als Aussage über den Menschen"]},
+              {"criterion": "Textual support", "levels": ["ohne Beleg", "ein Beispiel", "mehrere Beispiele für Größe und Kehrseite"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "decision_scenario",
+            "prompt": "Antigone begräbt ihren Bruder gegen das ausdrückliche Verbot Kreons. Sie beruft sich auf die ἄγραπτα κἀσφαλῆ θεῶν νόμιμα – die „ungeschriebenen und unverbrüchlichen Satzungen der Götter“, die höher stünden als jedes königliche Gebot. Kreon beruft sich auf das Gesetz der Polis: Ohne Gehorsam gegenüber der staatlichen Ordnung zerfalle die Gemeinschaft. Bewerte: Wessen Position ist besser begründbar – und warum lässt sich der Konflikt gerade NICHT einfach auflösen? Nimm begründet Stellung.",
+            "payload": {"kind": "decision_scenario", "stem": "Ungeschriebenes göttliches Gesetz (Antigone) gegen staatliches Gesetz (Kreon): Wem gibst du recht – und warum ist die Entscheidung so schwer?"},
+            "response": {"mode": "lines", "n": 8},
+            "cognitive_level": "evaluate",
+            "difficulty": 3,
+            "dimensions": ["INT"],
+            "serves": [{"competence_id": "GRI.OS.8.GRI3.03", "relation": "exercises"}],
+            "est_minutes": 13,
+            "asset_refs": [],
+            "answer_key": "Eine tragfähige Antwort erkennt, dass BEIDE Positionen ein echtes Recht vertreten: Antigone die Bindung an übergesetzliche, göttlich-sittliche Normen (Bestattungspflicht, Familie, Gewissen), Kreon die Notwendigkeit einer verbindlichen staatlichen Ordnung. Gerade weil beide teilweise recht haben, ist der Konflikt tragisch und nicht glatt lösbar: Jede Seite wird schuldig, indem sie das Recht der anderen missachtet – Kreon überzieht die Staatsräson bis zur Hybris, Antigone stellt sich kompromisslos über das Gesetz. Eine überzeugende Bewertung wägt ab und begründet, statt eine Seite zur reinen Heldin oder zum reinen Bösewicht zu machen.",
+            "acceptable_reasoning": "Beide Wertungen (eher für Antigone oder eher für Kreon) sind zulässig, sofern die Gegenposition ernst genommen und die Tragik des Widerstreits benannt wird. Eine Antwort, die die Gegenseite gar nicht würdigt, ist unabhängig vom Ergebnis schwächer.",
+            "watch_outs": [
+              "Die naheliegende, aber verkürzte Lesart „Antigone gut, Kreon böse“ abfedern: Kreons Sorge um die Ordnung der Polis ist ein ernstes Argument.",
+              "„Ungeschriebene Gesetze“ nicht mit bloßem Eigenwillen verwechseln – gemeint sind überpositive, für alle geltende Normen (Gewissen, Sitte, Religion)."
+            ],
+            "rubric": [
+              {"criterion": "Fairness to both sides", "levels": ["nur eine Seite", "beide Seiten genannt", "beide Seiten mit ihrem stärksten Argument gewürdigt"]},
+              {"criterion": "Grasp of the tragic", "levels": ["Konflikt als leicht lösbar dargestellt", "Unlösbarkeit angedeutet", "Tragik (beide werden schuldig) begründet"]},
+              {"criterion": "Reasoned position", "levels": ["Behauptung ohne Begründung", "teilweise begründet", "klar begründete, abwägende Stellungnahme"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "create_produce",
+            "prompt": "Aristoteles erklärt die Wirkung der Tragödie über ἔλεος (Mitleid) und φόβος (Furcht), die im Zuschauer eine κάθαρσις (Reinigung) bewirken. Verfasse einen kurzen Text (5–8 Sätze), der am Beispiel der Antigone erklärt, wie das Stück Mitleid UND Furcht erzeugt – und schlage den Bogen zurück zum Ursprung des Theaters als religiöses Fest der ganzen Polis: Warum war es für die Athener mehr als bloße Unterhaltung?",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 70},
+            "cognitive_level": "create",
+            "difficulty": 3,
+            "dimensions": ["INT"],
+            "serves": [{"competence_id": "GRI.OS.8.GRI3.01", "relation": "exercises"}],
+            "est_minutes": 13,
+            "asset_refs": [],
+            "answer_key": "Ein gelungener Text zeigt: Mitleid (ἔλεος) entsteht mit Antigone, die für eine sittliche Pflicht in den Tod geht; Furcht (φόβος) entsteht angesichts Kreons Hybris und ihrer verheerenden Folgen (der Kette von Toden) – die Zuschauer erschrecken über das, was menschliche Selbstüberschätzung anrichtet. In der gemeinsamen Erschütterung (κάθαρσις) erlebt die versammelte Bürgerschaft eine sittliche Klärung. Der Bogen zum Fest: Weil alle Bürger gemeinsam im Dionysostheater saßen, war die Tragödie ein religiös-politisches Ereignis, das Werte der Gemeinschaft verhandelte – Theater als Selbstverständigung der Polis, nicht bloßer Zeitvertreib.",
+            "acceptable_reasoning": "Bewertet werden: die korrekte Verwendung von ἔλεος/φόβος/κάθαρσις, ein plausibler Bezug auf konkrete Momente der Antigone und der begründete Rückbezug auf die Fest- und Polis-Dimension. Die persönliche Gestaltung darf frei sein.",
+            "watch_outs": [
+              "κάθαρσις nicht auf „einfach weinen“ verengen; gemeint ist eine Klärung/Reinigung der Affekte, deren genaue Deutung schon in der Antike diskutiert wurde.",
+              "Der Rückbezug auf den Festcharakter soll den Bogen zum ersten Abschnitt schließen – nicht nur die Handlung nacherzählen."
+            ],
+            "rubric": [
+              {"criterion": "Use of ἔλεος/φόβος/κάθαρσις", "levels": ["Begriffe fehlen oder falsch", "Begriffe genannt", "Begriffe treffend am Beispiel angewandt"]},
+              {"criterion": "Connection to the festival origin", "levels": ["kein Rückbezug", "Rückbezug angedeutet", "überzeugender Bogen zum Polis-Fest"]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
