@@ -1,0 +1,97 @@
+{
+  "id": "c0211.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "oral",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Now you will hear an interview from the same programme. A reporter talks to Margit, who runs a small bakery in a honeypot village. Listen twice. Decide whether each statement is TRUE or FALSE, and write down the words from the recording that prove your answer.\n\n[Your teacher reads:]\nReporter: “I'm on the main street with Margit, who has run a small bakery here for over thirty years. Margit, has tourism been good for business?”\nMargit: “Good and bad. Twenty years ago we had customers all year round — neighbours, families, people who knew our names. Now most of our visitors buy nothing at all. They photograph the shop, sometimes they come in just to use the toilet, and then they leave. The rents have risen so much that three of my neighbours have had to move away. My own children can't afford to live in the village where they grew up.”\nReporter: “So you'd prefer fewer tourists?”\nMargit: “I'd prefer DIFFERENT tourists. People who stay a night, who eat in the restaurant, who actually want to know the place — not ten thousand people rushing through in an afternoon.”",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Margit has run her bakery for less than ten years.",
+        "According to Margit, most visitors today buy nothing from her shop.",
+        "Rising rents have forced some of her neighbours to move away.",
+        "Margit wants tourism to stop completely.",
+        "Margit's children have decided to move abroad to find work."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Statement",
+        "True / False",
+        "Words from the recording"
+      ],
+      "rows": 5
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "HOR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FSP.OS.7.HOR.06",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "1. FALSE — “for over thirty years”. 2. TRUE — “most of our visitors buy nothing at all”. 3. TRUE — “the rents have risen so much that three of my neighbours have had to move away”. 4. FALSE — she wants “DIFFERENT tourists”, not none: “people who stay a night, who eat in the restaurant”. 5. FALSE — the recording only says her children “can't afford to live in the village”; nothing is said about working abroad.",
+    "acceptable_reasoning": "Bei der Begründung zählt ein tatsächliches Zitat / eine klar wiedererkennbare Textstelle, keine Paraphrase. Statement 5 ist korrekt als FALSE zu werten, weil die Aussage über die Textinformation hinausgeht (Overinterpretation).",
+    "rubric": [
+      {
+        "criterion": "Listening accuracy (T/F judgement)",
+        "levels": [
+          "All judgements correct and based on what was said",
+          "One or two judgements slip on the tricky items (4/5)",
+          "Several judgements guessed without textual basis"
+        ]
+      },
+      {
+        "criterion": "Quality of evidence",
+        "levels": [
+          "Precise words from the recording quoted for each item",
+          "Evidence given but sometimes paraphrased",
+          "Little or no evidence; answers asserted"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Statement 4 ist die zentrale Verstehensfalle: ‚fewer tourists' (Reporterfrage) vs. Margits ‚DIFFERENT tourists' — wer nur die Frage hört, wählt fälschlich TRUE.",
+      "Statement 5 prüft die Abgrenzung ‚im Text belegt' vs. ‚plausibel dazugedacht' — häufig als TRUE geraten. Explizit einfordern: nur was hörbar gesagt wurde, zählt.",
+      "‚can't afford' und ‚rents have risen' ggf. vorentlasten, falls der Grundwortschatz der Klasse begrenzt ist."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Lebende Fremdsprache",
+  "klasse": 7,
+  "kompetenzbereich": "Hören",
+  "competences": [
+    "FSP.OS.7.HOR.06"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "HOR"
+  ],
+  "modality": "oral",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0211",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:05+00:00",
+  "updated_at": "2026-07-14T16:27:05+00:00"
+}

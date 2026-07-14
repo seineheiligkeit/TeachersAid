@@ -1,0 +1,159 @@
+{
+  "id": "c0218.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Aus dem Klima lassen sich Rückschlüsse auf Boden und Pflanzenwelt ziehen.\n\na) Welche natürliche Vegetation würdest du in diesem Klima erwarten (z. B. Wüste, Steppe/Grasland, Laub- und Mischwald, Nadelwald, Tundra)? Begründe mit Werten aus dem Klimadiagramm.\nb) Welche Eigenschaften hat der Boden hier vermutlich (feucht oder trocken, viel oder wenig Humus)?\nc) Erkläre an diesem Beispiel, was ein „Geoökosystem\" ist – also wie Klima, Boden und Vegetation hier zusammenhängen.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "SYN",
+      "REF"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.OS.5.GEO.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "a) Gemäßigt warme Sommer, milde bis kühle Winter, ganzjährig ausreichend Niederschlag und kein Trockenmonat → sommergrüner Laub- bzw. Mischwald (z. B. Buche, Eiche); für Wüste/Steppe fällt zu viel Regen, für Tundra/Nadelwald ist es zu warm. b) Der Boden ist ganzjährig ausreichend feucht; unter Laubwald bildet die Laubstreu viel Humus → fruchtbare Braunerde. c) Ein Geoökosystem ist das Zusammenspiel der Faktoren: Das Klima (mild, feucht) ermöglicht Laubwald; der Laubwald liefert über abgeworfene Blätter Humus und baut den Boden auf; der humусreiche Boden speichert Wasser und Nährstoffe und trägt wieder die Vegetation. Ändert sich ein Faktor, verändern sich die anderen mit.",
+    "acceptable_reasoning": "Andere gut begründete Vegetationseinschätzungen sind akzeptabel, solange sie mit Klimawerten (Temperatur UND Niederschlag) belegt werden.",
+    "rubric": [
+      {
+        "criterion": "Begründete Vegetationsableitung",
+        "levels": [
+          "Nur geraten",
+          "Vegetation genannt ohne Beleg",
+          "Vegetation mit einem Klimawert begründet",
+          "Mit Temperatur UND Niederschlag schlüssig begründet"
+        ]
+      },
+      {
+        "criterion": "Systemverständnis (Geoökosystem)",
+        "levels": [
+          "Faktoren isoliert",
+          "Zwei Faktoren verknüpft",
+          "Klima–Vegetation–Boden verknüpft",
+          "Kreislauf/Rückwirkung erkannt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Natürliche vs. tatsächliche Vegetation: Von Natur aus wäre hier Wald – tatsächlich sieht man oft Felder, Wiesen oder Siedlungen, weil der Mensch die Fläche verändert hat.",
+      "Vom Klima auf die Vegetation zu schließen ist eine begründete Wahrscheinlichkeit, keine hundertprozentige Sicherheit.",
+      "Nur die Temperatur zu betrachten reicht nicht – der Niederschlag entscheidet mit über Wald vs. Steppe."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 5,
+  "kompetenzbereich": "Geoökosysteme der Erde analysieren",
+  "competences": [
+    "GWB.OS.5.GEO.03"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "SYN",
+    "REF"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "lane": null,
+      "intended_claim": null,
+      "medium": "visual",
+      "generator": "matplotlib:climate_diagram",
+      "spec": {
+        "title": "Klimadiagramm einer österreichischen Station (Klimanormalwerte 1991–2020)",
+        "months": [
+          "Jän",
+          "Feb",
+          "Mär",
+          "Apr",
+          "Mai",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Okt",
+          "Nov",
+          "Dez"
+        ],
+        "temp": [
+          -0.1,
+          1.8,
+          6.0,
+          11.0,
+          15.5,
+          19.2,
+          20.8,
+          20.1,
+          15.2,
+          10.2,
+          5.2,
+          0.5
+        ],
+        "precip": [
+          20,
+          29,
+          34,
+          51,
+          93,
+          120,
+          123,
+          128,
+          93,
+          63,
+          54,
+          40
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "geosphere_klima_normal_1991_2020",
+        "series": "graz",
+        "note": null,
+        "title": "Klimanormalwerte österreichischer Stationen (1991–2020)",
+        "url": "https://data.hub.geosphere.at/dataset/klima-v2-1m",
+        "attribution": "Datenquelle: GeoSphere Austria – data.hub.geosphere.at (klima-v2-1m, CC BY 4.0)",
+        "stand": "1991–2020"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0218",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:09+00:00",
+  "updated_at": "2026-07-14T16:27:09+00:00"
+}

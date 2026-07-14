@@ -1,0 +1,70 @@
+{
+  "id": "c0228.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Bei einer Zerfallsgleichung bleiben die Summe der Massenzahlen und die Summe der Kernladungszahlen auf beiden Seiten gleich. Nutze das, um die Tochterkerne zu bestimmen. (Angaben: α-Teilchen = ⁴He mit Z = 2; ein β⁻-Zerfall wandelt ein Neutron in ein Proton um und sendet dabei ein Elektron aus.)\na) Radium-226 (²²⁶Ra, Z = 88) zerfällt unter Aussendung eines α-Teilchens. Bestimme Massenzahl und Kernladungszahl des Tochterkerns.\nb) Kohlenstoff-14 (¹⁴C, Z = 6) ist ein β⁻-Strahler. Bestimme Massenzahl und Kernladungszahl des Tochterkerns.\nc) Erkläre in einem Satz, warum sich bei b) die Massenzahl nicht ändert, die Kernladungszahl aber um 1 steigt.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.OS.8.KER.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.OS.x.W.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "a) A: 226 − 4 = 222; Z: 88 − 2 = 86 → Tochterkern ²²²Rn (Radon-222). b) A: 14 bleibt gleich; Z: 6 + 1 = 7 → Tochterkern ¹⁴N (Stickstoff-14). c) Beim β⁻-Zerfall wandelt sich ein Neutron in ein Proton um; die Gesamtzahl der Nukleonen (A) bleibt dabei gleich, die Protonenzahl (Z) steigt aber um 1.",
+    "acceptable_reasoning": "Akzeptiert: Nennung der Tochterelemente Radon bzw. Stickstoff auch ohne Elementsymbol, sofern A und Z korrekt sind.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Massenzahl und Kernladungszahl getrennt bilanzieren – das Tochterelement über Z im Periodensystem bestimmen, nicht raten.",
+      "Beim β⁻-Zerfall bleibt A gleich (nur ein Nukleon wandelt sich um), Z steigt um 1 – nicht mit dem α-Zerfall verwechseln."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Physik",
+  "klasse": 8,
+  "kompetenzbereich": "Kernphysik",
+  "competences": [
+    "PHY.OS.8.KER.02",
+    "PHY.OS.x.W.04"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0228",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:14+00:00",
+  "updated_at": "2026-07-14T16:27:14+00:00"
+}

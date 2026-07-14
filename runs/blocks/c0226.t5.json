@@ -1,0 +1,126 @@
+{
+  "id": "c0226.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb_gauss"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Die Abbildung zeigt die komplexen Zahlen z = 3 + 2i und w = −1 + 2i als Pfeile vom Ursprung in der Gauß'schen Zahlenebene.\n(a) Berechne die Beträge |z| und |w|.\n(b) Bestimme das Argument von z (den Winkel zur positiven reellen Achse) in Grad.\n(c) Schreibe z in Polarform r · (cos φ + i · sin φ).",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "FO",
+      "DM"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.OS.7.KOM3.04",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "MAT.OS.7.KOM3.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "(a) |z| = √(3² + 2²) = √13 ≈ 3,61; |w| = √((−1)² + 2²) = √5 ≈ 2,24. (b) z liegt im 1. Quadranten: φ = arctan(2/3) ≈ 33,7°. (c) z = √13 · (cos 33,7° + i · sin 33,7°). Kontrolle: √13 · cos 33,7° ≈ 3 und √13 · sin 33,7° ≈ 2.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "den Betrag als a + b statt als √(a² + b²) berechnen.",
+      "beim Argument den Quadranten ignorieren — bei w im 2. Quadranten wäre arctan allein falsch; z liegt aber im 1. Quadranten.",
+      "Realteil und Imaginärteil vertauschen."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Mathematik",
+  "klasse": 7,
+  "kompetenzbereich": "Komplexe Zahlen",
+  "competences": [
+    "MAT.OS.7.KOM3.04",
+    "MAT.OS.7.KOM3.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "FO",
+    "DM"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb_gauss",
+      "role": "figure",
+      "lane": null,
+      "intended_claim": null,
+      "medium": "visual",
+      "generator": "matplotlib:coordinate_plane",
+      "spec": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0,
+            "label": "0"
+          },
+          {
+            "x": 3,
+            "y": 2,
+            "label": "z"
+          },
+          {
+            "x": -1,
+            "y": 2,
+            "label": "w"
+          }
+        ],
+        "segments": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "xmin": -3,
+        "xmax": 5,
+        "ymin": -2,
+        "ymax": 4,
+        "title": "z und w als Pfeile in der Gauß'schen Zahlenebene"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0226",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:13+00:00",
+  "updated_at": "2026-07-14T16:27:13+00:00"
+}

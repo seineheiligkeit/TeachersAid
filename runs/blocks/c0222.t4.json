@@ -1,0 +1,117 @@
+{
+  "id": "c0222.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Die Grafik zeigt, wie viele Portionen das Café „Pausenbrot“ in jedem Monat des Schuljahres verkauft hat. a) In welchem Monat wurde am meisten, in welchem am wenigsten verkauft? b) Beschreibe den Gesamtverlauf über das Schuljahr in eigenen Worten. c) Um wie viel Prozent stieg der Verkauf von Oktober auf Dezember (ungefähr)?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "WV",
+      "RB"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "INF.OS.5.ANG.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "a) Am meisten im Mai (etwa 380 Portionen), am wenigsten im September (etwa 210 Portionen). b) Der Verkauf steigt im Herbst deutlich an, geht im Jänner kurz zurück (Ferien-/Prüfungszeit), erholt sich und erreicht im Mai den Höchstwert, bevor er im Juni wieder fällt. c) Von Oktober (etwa 260) auf Dezember (etwa 340): Anstieg um rund 80 Portionen, das sind etwa 80 / 260 ≈ 31 %.",
+    "acceptable_reasoning": "Bei c) ist der Rechenweg entscheidend (Differenz geteilt durch den Ausgangswert Oktober); Ablesewerte dürfen leicht abweichen, das Ergebnis liegt bei etwa 30–31 %.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Der prozentuale Anstieg wird auf den Ausgangswert (Oktober) bezogen, nicht auf den Endwert.",
+      "Einzelne Punkte ablesen genügt bei b) nicht – gefragt ist der Verlauf (Trend), nicht ein einzelner Wert.",
+      "Der Rückgang im Jänner gehört zum Verlauf und sollte erwähnt werden."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Informatik",
+  "klasse": 5,
+  "kompetenzbereich": "Angewandte Informatik",
+  "competences": [
+    "INF.OS.5.ANG.03"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "WV",
+    "RB"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "lane": null,
+      "intended_claim": null,
+      "medium": "visual",
+      "generator": "matplotlib:line",
+      "spec": {
+        "title": "Verkaufte Portionen pro Monat im Schülercafé",
+        "xlabel": "Monat",
+        "ylabel": "Portionen",
+        "log": false,
+        "categories": [
+          "Sep",
+          "Okt",
+          "Nov",
+          "Dez",
+          "Jän",
+          "Feb",
+          "Mär",
+          "Apr",
+          "Mai",
+          "Jun"
+        ],
+        "values": [
+          210.0,
+          260.0,
+          300.0,
+          340.0,
+          280.0,
+          300.0,
+          330.0,
+          350.0,
+          380.0,
+          250.0
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": true,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0222",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:12+00:00",
+  "updated_at": "2026-07-14T16:27:12+00:00"
+}

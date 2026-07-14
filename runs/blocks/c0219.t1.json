@@ -1,0 +1,70 @@
+{
+  "id": "c0219.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Beim Einkaufen tauchen viele Überlegungen auf. Ordne jede der folgenden Überlegungen dem Kriterium zu, das sie in erster Linie betrifft: Wirtschaftlichkeit, Ökologie oder Soziales/Ethik. Begründe deine Zuordnung mit einem Stichwort.\n\n(1) Hält das Gerät lange und kann ich es reparieren lassen?\n(2) Wurde die Kleidung unter fairen Arbeitsbedingungen genäht?\n(3) Wie viel Verpackungsmüll entsteht?\n(4) Ist der Preis im Verhältnis zur Leistung angemessen?\n(5) Wie weit wurde das Lebensmittel transportiert (Saison, Region)?\n(6) Zahlt der herstellende Betrieb existenzsichernde Löhne?",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Nr.",
+        "Kriterium",
+        "Begründung (Stichwort)"
+      ],
+      "rows": 6
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "CC"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "HOE.OS.5.KON.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "(1) Wirtschaftlichkeit – Haltbarkeit/Folgekosten (langlebig und reparierbar = niedrigere Kosten pro Nutzung). (2) Soziales/Ethik – faire Arbeitsbedingungen. (3) Ökologie – Verpackungsmüll/Abfall. (4) Wirtschaftlichkeit – Preis-Leistungs-Verhältnis. (5) Ökologie – Transportweg/Regionalität/Saisonalität. (6) Soziales/Ethik – existenzsichernde Löhne.",
+    "acceptable_reasoning": "Mehrfachbezüge sind zulässig, wenn sie begründet sind: Regionalität (5) berührt neben der Ökologie auch die regionale Wirtschaft; Reparierbarkeit (1) hat auch eine ökologische Seite (weniger Abfall). Entscheidend ist die nachvollziehbare Begründung des Hauptkriteriums.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Häufige Fehlvorstellung: „günstig“ wird mit „wirtschaftlich“ gleichgesetzt – Wirtschaftlichkeit meint das Verhältnis von Preis und Leistung über die gesamte Nutzungsdauer, nicht den niedrigsten Kaufpreis.",
+      "Regionalität wird oft automatisch als „ökologisch“ verbucht – das stimmt nur, wenn der kürzere Transport nicht durch energieintensive Produktion (z. B. beheizte Gewächshäuser) aufgewogen wird."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Haushaltsökonomie und Ernährung",
+  "klasse": 5,
+  "kompetenzbereich": "Das Konzept des Consumer Citizenship erkennen, reflektieren und in Entscheidungen einbinden",
+  "competences": [
+    "HOE.OS.5.KON.01"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "CC"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0219",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:10+00:00",
+  "updated_at": "2026-07-14T16:27:10+00:00"
+}

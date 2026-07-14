@@ -1,0 +1,100 @@
+{
+  "id": "c0227.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "experiment_protocol",
+    "prompt": "Dir wird ein unbekanntes elektrisches Bauteil gegeben. Plane ein Experiment, mit dem du überprüfen kannst, ob es sich um einen ohmschen Widerstand handelt.\nBeschreibe:\na) welche Messgeräte du brauchst und wie du sie schaltest (Skizze in Worten),\nb) welche Größe du schrittweise veränderst und welche du jeweils misst,\nc) wie du die Messwerte auswertest (Tabelle und/oder Diagramm),\nd) woran genau du erkennst, ob das Bauteil ohmsch ist.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 65.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "E",
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.OS.6.ELE.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.OS.x.E.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.OS.x.E.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "a) Regelbare Gleichspannungsquelle, das Bauteil, ein Amperemeter in Reihe zum Bauteil (misst I) und ein Voltmeter parallel zum Bauteil (misst U). b) Die Spannung U wird in Schritten erhöht (zum Beispiel 0, 2, 4, 6, 8 V); zu jeder Spannung wird die Stromstärke I gemessen. c) Die Wertepaare (U, I) in eine Tabelle eintragen, R = U / I berechnen und/oder I über U in ein Diagramm zeichnen. d) Ohmsch, wenn R für alle Messwerte (bei konstanter Temperatur) gleich bleibt bzw. die Kennlinie eine Gerade durch den Ursprung ist; andernfalls (gekrümmte Kennlinie, veränderliches R) nicht ohmsch.",
+    "acceptable_reasoning": "Akzeptiert: jede vollständige, korrekt geschaltete Messanordnung mit variabler Spannung, Wertetabelle und dem Kriterium Proportionalität bzw. konstantes R.",
+    "rubric": [
+      {
+        "criterion": "Schaltung",
+        "levels": [
+          "Amperemeter in Reihe und Voltmeter parallel korrekt beschrieben",
+          "Messgeräte genannt, aber Schaltung ungenau oder falsch"
+        ]
+      },
+      {
+        "criterion": "Messvorgehen",
+        "levels": [
+          "Spannung variiert, Stromstärke gemessen, Wertetabelle vorgesehen",
+          "Vorgehen unvollständig"
+        ]
+      },
+      {
+        "criterion": "Auswertekriterium",
+        "levels": [
+          "Konstantes R bzw. Ursprungsgerade als Kriterium für ohmsch genannt",
+          "Kriterium fehlt oder ist unklar"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Amperemeter immer in Reihe, Voltmeter immer parallel – ein parallel geschaltetes Amperemeter erzeugt praktisch einen Kurzschluss.",
+      "Bei zu hohen Strömen erwärmt sich das Bauteil; die Temperatur ändert den Widerstand (zum Beispiel bei der Glühlampe), deshalb die Belastung klein halten.",
+      "Ohne Wertetabelle oder Diagramm ist keine Aussage über konstantes R möglich – eine einzelne Messung genügt nicht."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "experiment_protocol",
+  "subject": "Physik",
+  "klasse": 6,
+  "kompetenzbereich": "Elektrizitätslehre",
+  "competences": [
+    "PHY.OS.6.ELE.01",
+    "PHY.OS.x.E.01",
+    "PHY.OS.x.E.02"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "E",
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0227",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:14+00:00",
+  "updated_at": "2026-07-14T16:27:14+00:00"
+}

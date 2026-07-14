@@ -1,0 +1,91 @@
+{
+  "id": "c0217.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne jedem Fachbegriff das passende Alltagsbeispiel zu.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Suburbanisierung",
+        "Segregation",
+        "Gentrifizierung",
+        "Gated Community",
+        "Reurbanisierung"
+      ],
+      "right": [
+        "Eine Familie verlässt die teure Innenstadt und baut ein Einfamilienhaus am Stadtrand.",
+        "In einem Viertel leben fast nur einkommensschwache Haushalte, im Nachbarviertel fast nur wohlhabende.",
+        "Ein ehemaliges Arbeiterviertel wird saniert, Cafés und Galerien ziehen ein, die Mieten steigen – alteingesessene Bewohner:innen müssen wegziehen.",
+        "Eine von Mauern umgebene Wohnanlage mit Schranke und privatem Sicherheitsdienst.",
+        "Gut verdienende Paare ziehen bewusst zurück in sanierte Altbauwohnungen im Zentrum."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Begriff",
+        "Passendes Beispiel"
+      ],
+      "rows": 5
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "SYN"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.OS.8.STA.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "GWB.OS.8.STA.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Suburbanisierung → Einfamilienhaus am Stadtrand (Abwanderung aus der Kernstadt ins Umland). Segregation → einkommensschwaches vs. wohlhabendes Viertel (räumliche Trennung sozialer Gruppen). Gentrifizierung → saniertes Arbeiterviertel mit steigenden Mieten und Verdrängung. Gated Community → abgeschottete Wohnanlage mit Sicherheitsdienst. Reurbanisierung → Rückzug ins sanierte Zentrum.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Suburbanisierung (hinaus) und Reurbanisierung (zurück ins Zentrum) sind entgegengesetzte Bewegungen – nicht verwechseln.",
+      "Gentrifizierung ist mehr als 'Renovieren': entscheidend ist die Verdrängung der ursprünglichen Bewohner:innen durch steigende Mieten.",
+      "Segregation ist nicht nur ethnisch, sondern häufig sozioökonomisch (nach Einkommen)."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 8,
+  "kompetenzbereich": "Städte als Lebensräume und ökonomische Zentren untersuchen",
+  "competences": [
+    "GWB.OS.8.STA.02",
+    "GWB.OS.8.STA.03"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "SYN"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0217",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:08+00:00",
+  "updated_at": "2026-07-14T16:27:08+00:00"
+}

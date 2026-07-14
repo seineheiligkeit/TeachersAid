@@ -1,0 +1,66 @@
+{
+  "id": "c0206.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Im Hochofen wird Eisen aus Eisenerz (überwiegend Eisen(III)-oxid, Fe₂O₃) gewonnen. Das eigentliche Reduktionsmittel ist Kohlenstoffmonoxid (CO).\na) Formuliere die ausgeglichene Reaktionsgleichung für die Reduktion von Fe₂O₃ durch CO (Produkte: Eisen und Kohlenstoffdioxid).\nb) Bestimme die Oxidationszahlen von Eisen und Kohlenstoff jeweils vor und nach der Reaktion und ordne zu, was oxidiert und was reduziert wird.\nc) Woher stammt das Kohlenstoffmonoxid im Hochofen? Gib eine Reaktionsgleichung an.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "WO"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.OS.7.UMG.07",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "a) Fe₂O₃ + 3 CO → 2 Fe + 3 CO₂ (Kontrolle: Fe 2 = 2; O 3 + 3 = 6 = 6; C 3 = 3 – ausgeglichen). b) Eisen: +3 (in Fe₂O₃) → 0 (in Fe): Elektronenaufnahme = Reduktion. Kohlenstoff: +2 (in CO) → +4 (in CO₂): Elektronenabgabe = Oxidation. Das Eisen wird also reduziert, das Kohlenstoffmonoxid oxidiert – CO ist das Reduktionsmittel. c) CO entsteht aus dem Koks (Kohlenstoff) mit dem Sauerstoff der eingeblasenen heißen Luft bzw. mit CO₂: 2 C + O₂ → 2 CO (bzw. C + CO₂ → 2 CO, das Boudouard-Gleichgewicht).",
+    "acceptable_reasoning": "Für c) ist jede korrekte Bildungsgleichung für CO (aus C + O₂ oder aus C + CO₂) gültig.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Beim Ausgleichen wird oft der Sauerstoff falsch bilanziert: links 3 O (aus Fe₂O₃) + 3 O (aus 3 CO) = 6 O, rechts 3 · 2 = 6 O in 3 CO₂.",
+      "Die Oxidationszahl von C in CO ist +2 (nicht +4); erst in CO₂ ist sie +4 – die Differenz zeigt die Oxidation.",
+      "Das Eisen wird reduziert, obwohl es aus dem „Erz“ stammt – nicht von der Rolle „Edukt“ täuschen lassen."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Chemie",
+  "klasse": 7,
+  "kompetenzbereich": "Umgang mit Materie",
+  "competences": [
+    "CHE.OS.7.UMG.07"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "WO"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0206",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:05+00:00",
+  "updated_at": "2026-07-14T16:27:05+00:00"
+}

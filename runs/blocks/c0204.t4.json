@@ -1,0 +1,160 @@
+{
+  "id": "c0204.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Die Abbildung zeigt die Lebenserwartung bei Geburt für Frauen in Österreich über gut zwei Jahrzehnte.\n\na) Beschreibe den langfristigen Verlauf der Kurve.\nb) Um das Jahr 2020 gibt es einen deutlichen Einbruch. Nenne eine wahrscheinliche Ursache und begründe, warum diese zum Thema dieses Arbeitsblatts passt.\nc) Der lange Anstieg der Lebenserwartung geht auch auf die Zurückdrängung von Infektionskrankheiten zurück. Welche heutigen Erkrankungen begrenzen die Lebenserwartung inzwischen stärker? Nenne zwei Beispiele.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 8
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "E",
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.OS.7.KOM4.05",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "BIO.OS.7.KOM4.04",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "BIO.OS.x.ERK.05",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 11,
+    "answer_key": "a) Die Lebenserwartung steigt über die Jahre insgesamt an (von rund 82 auf gut 84 Jahre), mit kleinen Schwankungen. b) Um 2020 sinkt sie spürbar; wahrscheinliche Ursache ist die COVID-19-Pandemie mit erhöhter Sterblichkeit. Das passt zum Thema, weil COVID-19 eine Infektionskrankheit (Virus) ist – die Kurve macht die Wirkung eines Erregers auf die Gesamtbevölkerung sichtbar; danach erholt sich der Wert wieder. c) Heute begrenzen vor allem Zivilisationserkrankungen die Lebenserwartung, z. B. Herz-Kreislauf-Erkrankungen und Krebs (auch stressbedingte Erkrankungen).",
+    "acceptable_reasoning": "Bei b) genügt die Nennung der COVID-19-Pandemie mit Begründung über „Infektionskrankheit“; bei c) zwei sinnvolle Zivilisationserkrankungen.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Aus einem einzelnen Jahres-Einbruch keine Dauertrend-Umkehr ablesen – der langfristige Trend bleibt steigend, der Wert erholt sich nach 2021.",
+      "Zahlen ehrlich vom Diagramm ablesen; die Achse beginnt nicht bei null, das überzeichnet Schwankungen optisch (Quellenkritik)."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 7,
+  "kompetenzbereich": "Kompetenzmodul 5",
+  "competences": [
+    "BIO.OS.7.KOM4.05",
+    "BIO.OS.7.KOM4.04",
+    "BIO.OS.x.ERK.05"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "E",
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "lane": null,
+      "intended_claim": null,
+      "medium": "visual",
+      "generator": "matplotlib:line",
+      "spec": {
+        "title": "Lebenserwartung bei Geburt in Österreich – Frauen",
+        "xlabel": "Jahr",
+        "ylabel": "Lebenserwartung (Jahre)",
+        "log": false,
+        "categories": [
+          2002,
+          2003,
+          2004,
+          2005,
+          2006,
+          2007,
+          2008,
+          2009,
+          2010,
+          2011,
+          2012,
+          2013,
+          2014,
+          2015,
+          2016,
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024
+        ],
+        "values": [
+          81.691,
+          81.538,
+          82.108,
+          82.202,
+          82.64,
+          82.833,
+          82.955,
+          82.843,
+          83.132,
+          83.427,
+          83.288,
+          83.561,
+          83.738,
+          83.589,
+          83.954,
+          83.89,
+          84.007,
+          84.207,
+          83.742,
+          83.758,
+          83.777,
+          84.226,
+          84.323
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "statistik_austria_lebenserwartung_2002_2024",
+        "series": "lebenserwartung_weiblich",
+        "note": null,
+        "title": "Lebenserwartung bei Geburt in Österreich (2002–2024)",
+        "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_ind003_HVD_IND_1",
+        "attribution": "Datenquelle: Statistik Austria – data.statistik.gv.at (CC BY 4.0)",
+        "stand": "2024"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0204",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:04+00:00",
+  "updated_at": "2026-07-14T16:27:04+00:00"
+}

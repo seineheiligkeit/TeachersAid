@@ -1,0 +1,85 @@
+{
+  "id": "c0221.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne jedem Grundsatz der DSGVO die passende Bedeutung zu.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Zweckbindung",
+        "Datenminimierung",
+        "Speicherbegrenzung",
+        "Richtigkeit",
+        "Integrität und Vertraulichkeit"
+      ],
+      "right": [
+        "Gespeicherte Daten müssen sachlich korrekt und aktuell gehalten werden.",
+        "Es werden nur so viele Daten erhoben, wie für den Zweck wirklich nötig sind.",
+        "Daten dürfen nur für den vorher festgelegten, klaren Zweck verwendet werden.",
+        "Daten müssen durch technische Maßnahmen vor unbefugtem Zugriff geschützt werden.",
+        "Daten werden gelöscht, sobald sie für den Zweck nicht mehr gebraucht werden."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Grundsatz",
+        "Bedeutung"
+      ],
+      "rows": 5
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "WV"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "INF.OS.5.INF.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Zweckbindung → Daten dürfen nur für den vorher festgelegten Zweck verwendet werden. Datenminimierung → Es werden nur so viele Daten erhoben, wie für den Zweck wirklich nötig sind. Speicherbegrenzung → Daten werden gelöscht, sobald sie nicht mehr gebraucht werden. Richtigkeit → Gespeicherte Daten müssen korrekt und aktuell gehalten werden. Integrität und Vertraulichkeit → Daten müssen technisch vor unbefugtem Zugriff geschützt werden.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Zweckbindung und Datenminimierung werden oft verwechselt: Zweckbindung betrifft das WOFÜR, Datenminimierung das WIE VIEL.",
+      "Richtigkeit meint die inhaltliche Korrektheit der Daten, nicht ihre technische Absicherung – das ist die Integrität und Vertraulichkeit."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Informatik",
+  "klasse": 5,
+  "kompetenzbereich": "Informatik, Mensch und Gesellschaft",
+  "competences": [
+    "INF.OS.5.INF.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "WV"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0221",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:11+00:00",
+  "updated_at": "2026-07-14T16:27:11+00:00"
+}

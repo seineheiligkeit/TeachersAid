@@ -1,0 +1,126 @@
+{
+  "id": "c0219.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_analysis",
+    "prompt": "Die Abbildung zeigt grobe Richtwerte für die Treibhausgas-Emissionen verschiedener Lebensmittel (je Kilogramm).\n\na) Ordne die Lebensmittel nach ihrer Klimawirkung und beschreibe das Muster in einem Satz.\nb) Um welchen Faktor unterscheidet sich Rindfleisch von Huhn und um welchen Faktor von Linsen? Rechne mit den abgelesenen Richtwerten.\nc) Erkläre, wie eine einzelne Kaufentscheidung bei uns mit globalen Umweltwirkungen zusammenhängt (z. B. Flächenverbrauch, Methan, Futtermittelanbau).\nd) Schlage eine Änderung vor, die den Fußabdruck senkt, aber die Nährstoffversorgung (z. B. Eiweiß) erhält.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "CC",
+      "KQ"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "HOE.OS.5.KON.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 11,
+    "answer_key": "a) Absteigend: Rindfleisch (≈ 60), Käse (≈ 21), Huhn (≈ 10), Reis (≈ 4), Linsen (≈ 1). Muster: tierische Lebensmittel – besonders Rindfleisch – verursachen um ein Vielfaches mehr Treibhausgase als pflanzliche. b) Rindfleisch/Huhn = 60 / 10 = Faktor 6; Rindfleisch/Linsen = 60 / 1 = Faktor 60. c) Rinderhaltung braucht viel Weide- und Futterfläche (teils Regenwaldrodung für Soja), Wiederkäuer stoßen Methan aus, und der Futtermittelanbau verbraucht Wasser und Dünger. Die einzelne Kaufentscheidung erhöht die Nachfrage; in Summe steuert sie Flächennutzung, Emissionen und Anbau weltweit. d) Beispiel: Rindfleisch teilweise durch Hülsenfrüchte oder Geflügel ersetzen – Linsen liefern viel pflanzliches Eiweiß bei minimalem Fußabdruck; die Eiweißversorgung bleibt erhalten.",
+    "acceptable_reasoning": "Für a)/b) sind abgelesene Näherungswerte akzeptabel, solange die Faktoren daraus korrekt gebildet werden. Für c)/d) zählt die schlüssige Verknüpfung von lokaler Entscheidung und globaler Wirkung bzw. ein Vorschlag, der Fußabdruck UND Nährstoffversorgung berücksichtigt.",
+    "rubric": [
+      {
+        "criterion": "Datenauswertung",
+        "levels": [
+          "Keine korrekte Ordnung",
+          "Ordnung ohne Faktoren",
+          "Ordnung mit einem korrekten Faktor",
+          "Ordnung mit beiden korrekten Faktoren"
+        ]
+      },
+      {
+        "criterion": "Lokal-global-Verknüpfung",
+        "levels": [
+          "Keine Verknüpfung",
+          "Nur ein Mechanismus genannt",
+          "Zwei Mechanismen erklärt",
+          "Mechanismen erklärt und mit der Kaufentscheidung verknüpft"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Prozent und Faktor nicht verwechseln: „sechsmal so viel“ ist Faktor 6, nicht „6 % mehr“.",
+      "Die Werte sind gerundete Größenordnungen (illustrativ) – es geht um das Verhältnis, nicht um Nachkommastellen.",
+      "„Fleisch ist immer schlecht“ ist zu pauschal: Geflügel liegt deutlich unter Rind; entscheidend sind Menge und Art."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "data_analysis",
+  "subject": "Haushaltsökonomie und Ernährung",
+  "klasse": 5,
+  "kompetenzbereich": "Das Konzept des Consumer Citizenship erkennen, reflektieren und in Entscheidungen einbinden",
+  "competences": [
+    "HOE.OS.5.KON.03"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "CC",
+    "KQ"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "lane": null,
+      "intended_claim": null,
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Rindfleisch",
+          "Käse",
+          "Huhn",
+          "Reis",
+          "Linsen"
+        ],
+        "values": [
+          60.0,
+          21.0,
+          10.0,
+          4.0,
+          1.0
+        ],
+        "title": "Ungefähre Treibhausgas-Richtwerte je Kilogramm Lebensmittel",
+        "xlabel": "Lebensmittel",
+        "ylabel": "kg CO₂-Äquivalente je kg",
+        "log": false
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": true,
+      "caption": "Gerundete Größenordnungen (kg CO₂-Äquivalente je kg Lebensmittel) – als Vergleichsmaßstab, nicht als exakte Messwerte."
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0219",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:10+00:00",
+  "updated_at": "2026-07-14T16:27:10+00:00"
+}

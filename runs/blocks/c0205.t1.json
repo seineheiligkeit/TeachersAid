@@ -1,0 +1,73 @@
+{
+  "id": "c0205.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Chemikerinnen und Chemiker unterscheiden streng zwischen der Stoffebene (was man beobachten und messen kann) und der Teilchenebene (der Deutung mit Atomen und Molekülen). Entscheide bei jeder Aussage, ob sie richtig oder falsch ist, und begründe deine Entscheidung kurz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Ein einzelnes Goldatom ist goldgelb und glänzt metallisch.",
+        "In einem Tropfen Wasser sind die Wasserteilchen ständig in Bewegung.",
+        "Wenn Eis schmilzt, werden die einzelnen Wassermoleküle weicher und beginnen zu fließen.",
+        "Eigenschaften wie Farbe, Schmelztemperatur oder Leitfähigkeit entstehen erst durch das Zusammenwirken sehr vieler Teilchen."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 8
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "EG"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.OS.7.MOD.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1. Falsch – Farbe und metallischer Glanz sind Eigenschaften des Stoffes (sehr vieler Atome im Verband); ein einzelnes Atom besitzt sie nicht. 2. Richtig – Teilchen sind auch in Flüssigkeiten ständig in ungeordneter Bewegung (Temperatur = Maß der Teilchenbewegung). 3. Falsch – ein Molekül wird nicht „weich“; beim Schmelzen ändert sich die Anordnung und Beweglichkeit der Teilchen, nicht das einzelne Molekül selbst. 4. Richtig – solche Eigenschaften sind kollektive (makroskopische) Eigenschaften, keine Eigenschaften einzelner Teilchen.",
+    "acceptable_reasoning": "Wer bei 1 und 4 klar formuliert, dass eine Eigenschaft „vieler Teilchen im Verband“ nicht auf ein Einzelteilchen übertragbar ist, hat den Kern der Stoff-Teilchen-Trennung verstanden.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Die klassische Fehlvorstellung ist, makroskopische Stoffeigenschaften (Farbe, Aggregatzustand, Leitfähigkeit) einem einzelnen Teilchen zuzuschreiben – hier gezielt ansprechen.",
+      "Aussage 3 prüft, ob Teilchen als unveränderliche Bausteine begriffen werden: nicht die Teilchen ändern sich beim Schmelzen, sondern ihre Anordnung und Bewegung."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Chemie",
+  "klasse": 7,
+  "kompetenzbereich": "Modellbildung",
+  "competences": [
+    "CHE.OS.7.MOD.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "EG"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0205",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:05+00:00",
+  "updated_at": "2026-07-14T16:27:05+00:00"
+}

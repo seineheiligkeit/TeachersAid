@@ -1,0 +1,402 @@
+{
+  "id": "c0203.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Die Abbildung zeigt eine Nervenzelle im Schema. Benenne die sieben nummerierten Teile (1–7) und schreibe jeweils in einem kurzen Halbsatz dazu, welche Aufgabe der Teil bei der Signalverarbeitung hat.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 7
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.OS.6.KOM2.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "BIO.OS.x.FAC.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "1 Dendriten – empfangen Signale von anderen Zellen; 2 Zellkörper (Soma) – enthält die Zellorganellen, verrechnet die eingehenden Signale; 3 Zellkern – Steuerzentrale der Zelle; 4 Axonhügel – hier entsteht bei ausreichender Reizung die Erregung (das Aktionspotenzial); 5 Axon – leitet die Erregung vom Zellkörper weg; 6 Myelinscheide – isoliert das Axon und beschleunigt die Weiterleitung (Sprung von Schnürring zu Schnürring); 7 synaptische Endknöpfchen – übergeben das Signal an die nächste Zelle.",
+    "acceptable_reasoning": "Sinngemäße Funktionsangaben gelten; die Zuordnung der Nummern muss stimmen.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Häufige Verwechslung: Dendriten (Eingang, viele kurze Äste) und Endknöpfchen (Ausgang) – die Signalrichtung geht immer Dendrit → Zellkörper → Axon → Endknöpfchen.",
+      "Die Myelinscheide ist kein „Nahrungsspeicher“, sondern eine elektrische Isolierung; die Lücken dazwischen (Ranvier-Schnürringe) ermöglichen die schnelle, sprunghafte Weiterleitung."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 6,
+  "kompetenzbereich": "Kompetenzmodul 3",
+  "competences": [
+    "BIO.OS.6.KOM2.01",
+    "BIO.OS.x.FAC.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "lane": null,
+      "intended_claim": null,
+      "medium": "visual",
+      "generator": "matplotlib:labeled_parts",
+      "spec": {
+        "title": "Aufbau einer Nervenzelle (Neuron, Schema)",
+        "figsize": [
+          7.0,
+          4.8
+        ],
+        "show_names": false,
+        "shapes": [
+          {
+            "kind": "line",
+            "p": [
+              3.5,
+              4.0
+            ],
+            "q": [
+              8.7,
+              4.0
+            ],
+            "color": "#6b7280",
+            "width": 3.0
+          },
+          {
+            "kind": "region",
+            "points": [
+              [
+                4.2,
+                3.72
+              ],
+              [
+                5.15,
+                3.72
+              ],
+              [
+                5.15,
+                4.28
+              ],
+              [
+                4.2,
+                4.28
+              ]
+            ],
+            "color": "#cfe3f2",
+            "edge": "#4a7fb0",
+            "edge_width": 1.4
+          },
+          {
+            "kind": "region",
+            "points": [
+              [
+                5.5,
+                3.72
+              ],
+              [
+                6.45,
+                3.72
+              ],
+              [
+                6.45,
+                4.28
+              ],
+              [
+                5.5,
+                4.28
+              ]
+            ],
+            "color": "#cfe3f2",
+            "edge": "#4a7fb0",
+            "edge_width": 1.4
+          },
+          {
+            "kind": "region",
+            "points": [
+              [
+                6.8,
+                3.72
+              ],
+              [
+                7.75,
+                3.72
+              ],
+              [
+                7.75,
+                4.28
+              ],
+              [
+                6.8,
+                4.28
+              ]
+            ],
+            "color": "#cfe3f2",
+            "edge": "#4a7fb0",
+            "edge_width": 1.4
+          },
+          {
+            "kind": "circle",
+            "center": [
+              2.3,
+              4.0
+            ],
+            "radius": 1.05,
+            "color": "#f4d9b0",
+            "width": 1.6
+          },
+          {
+            "kind": "circle",
+            "center": [
+              2.3,
+              4.05
+            ],
+            "radius": 0.4,
+            "color": "#c98b4a"
+          },
+          {
+            "kind": "polyline",
+            "points": [
+              [
+                1.5,
+                4.55
+              ],
+              [
+                0.9,
+                5.1
+              ],
+              [
+                0.35,
+                5.55
+              ]
+            ],
+            "color": "#d99a58",
+            "width": 2.4
+          },
+          {
+            "kind": "polyline",
+            "points": [
+              [
+                1.35,
+                4.1
+              ],
+              [
+                0.6,
+                4.2
+              ],
+              [
+                0.1,
+                4.02
+              ]
+            ],
+            "color": "#d99a58",
+            "width": 2.4
+          },
+          {
+            "kind": "polyline",
+            "points": [
+              [
+                1.5,
+                3.5
+              ],
+              [
+                0.85,
+                3.0
+              ],
+              [
+                0.4,
+                2.55
+              ]
+            ],
+            "color": "#d99a58",
+            "width": 2.4
+          },
+          {
+            "kind": "polyline",
+            "points": [
+              [
+                8.7,
+                4.0
+              ],
+              [
+                9.3,
+                4.45
+              ],
+              [
+                9.65,
+                4.68
+              ]
+            ],
+            "color": "#6b7280",
+            "width": 2.2
+          },
+          {
+            "kind": "polyline",
+            "points": [
+              [
+                8.7,
+                4.0
+              ],
+              [
+                9.35,
+                4.0
+              ],
+              [
+                9.75,
+                4.0
+              ]
+            ],
+            "color": "#6b7280",
+            "width": 2.2
+          },
+          {
+            "kind": "polyline",
+            "points": [
+              [
+                8.7,
+                4.0
+              ],
+              [
+                9.3,
+                3.55
+              ],
+              [
+                9.65,
+                3.32
+              ]
+            ],
+            "color": "#6b7280",
+            "width": 2.2
+          },
+          {
+            "kind": "circle",
+            "center": [
+              9.72,
+              4.7
+            ],
+            "radius": 0.16,
+            "color": "#6b7280"
+          },
+          {
+            "kind": "circle",
+            "center": [
+              9.82,
+              4.0
+            ],
+            "radius": 0.16,
+            "color": "#6b7280"
+          },
+          {
+            "kind": "circle",
+            "center": [
+              9.72,
+              3.3
+            ],
+            "radius": 0.16,
+            "color": "#6b7280"
+          }
+        ],
+        "parts": [
+          {
+            "at": [
+              0.35,
+              5.55
+            ],
+            "name": "Dendriten",
+            "side": "left"
+          },
+          {
+            "at": [
+              2.3,
+              3.15
+            ],
+            "name": "Zellkörper (Soma)",
+            "side": "left"
+          },
+          {
+            "at": [
+              2.3,
+              4.05
+            ],
+            "name": "Zellkern",
+            "side": "left"
+          },
+          {
+            "at": [
+              3.5,
+              4.0
+            ],
+            "name": "Axonhügel",
+            "side": "left"
+          },
+          {
+            "at": [
+              3.9,
+              4.0
+            ],
+            "name": "Axon",
+            "side": "right"
+          },
+          {
+            "at": [
+              5.97,
+              4.0
+            ],
+            "name": "Myelinscheide",
+            "side": "right"
+          },
+          {
+            "at": [
+              9.82,
+              4.0
+            ],
+            "name": "synaptische Endknöpfchen",
+            "side": "right"
+          }
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0203",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:03+00:00",
+  "updated_at": "2026-07-14T16:27:03+00:00"
+}

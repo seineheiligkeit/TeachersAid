@@ -1,0 +1,103 @@
+{
+  "id": "c0228.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Eine Patientin soll zur Untersuchung der Schilddrüse eine kleine Menge radioaktives Iod-131 erhalten (Halbwertszeit 8 Tage). Ein Angehöriger ist dagegen: „Radioaktivität ist immer gefährlich – das Risiko ist einfach zu groß.“\nBeurteile diese Aussage aus naturwissenschaftlicher Sicht und entwickle eine begründete eigene Position. Beziehe Nutzen, Dosis, Halbwertszeit, den Aufnahmeweg und mögliche Schutzüberlegungen ein.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Ist die pauschale Ablehnung naturwissenschaftlich haltbar? Wäge Nutzen und Risiko ab und nimm begründet Stellung."
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.OS.8.KER.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.OS.x.S.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.OS.x.S.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 13,
+    "answer_key": "Die pauschale Aussage ist naturwissenschaftlich nicht haltbar, weil sie Strahlungsart, Dosis und Aufnahmeweg ignoriert. Für eine sachliche Bewertung zählt die tatsächliche (effektive) Dosis, nicht das bloße Etikett radioaktiv. Für den Nutzen spricht: Iod-131 reichert sich gezielt in der Schilddrüse an und liefert eine diagnostische Information, die anders kaum zu bekommen ist; die verwendete Aktivität ist klein. Risiko-mindernd wirken die kurze Halbwertszeit (8 Tage) und die Ausscheidung: Die Aktivität klingt rasch ab (nach etwa 40 Tagen unter 5 %), sodass die Strahlenexposition zeitlich begrenzt ist. Dem steht ein geringes, statistisches Risiko gegenüber (Zellschädigung durch ionisierende Strahlung). Position: Bei klarer medizinischer Indikation überwiegt der diagnostische Nutzen das kleine Risiko; die Entscheidung sollte auf der konkreten Dosis, der Indikation und ärztlicher Aufklärung beruhen (Grundsatz: so wenig Dosis wie möglich, so viel wie nötig), nicht auf pauschaler Angst. Schutzmaßnahmen wie Abstand zu Kleinkindern und Schwangeren in den ersten Tagen sowie viel Trinken (rasche Ausscheidung) können das Risiko weiter senken.",
+    "acceptable_reasoning": "Akzeptiert: eine begründete Abwägung, die den Unterschied zwischen pauschaler Gefahr und quantitativer Dosis erkennt und Nutzen gegen Risiko stellt; auch eine vorsichtigere Position ist zulässig, sofern sie mit Dosis, Halbwertszeit und Nutzen argumentiert.",
+    "rubric": [
+      {
+        "criterion": "Naturwissenschaftliche Analyse",
+        "levels": [
+          "Dosis, Strahlungsart und Halbwertszeit korrekt als entscheidende Größen erkannt",
+          "Nur allgemeine Aussagen ohne physikalische Größen"
+        ]
+      },
+      {
+        "criterion": "Nutzen-Risiko-Abwägung",
+        "levels": [
+          "Diagnostischer Nutzen und statistisches Risiko konkret gegenübergestellt",
+          "Nur eine Seite betrachtet"
+        ]
+      },
+      {
+        "criterion": "Begründete Position",
+        "levels": [
+          "Klare, mit Dosis und Halbwertszeit gestützte eigene Position",
+          "Position vorhanden, aber schwach begründet"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Fehlvorstellung „radioaktiv ist immer gleich gefährlich“: Entscheidend sind Strahlungsart, Aktivität, Halbwertszeit, Aufnahmeweg und die resultierende Dosis.",
+      "Diagnostische Anwendungen nutzen sehr kleine Aktivitäten – nicht mit einer hochdosierten Strahlentherapie verwechseln.",
+      "Eine naturwissenschaftliche Bewertung wägt quantitativ Nutzen gegen Risiko ab; pauschale Ablehnung oder reines Bauchgefühl sind keine naturwissenschaftlichen Argumente."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Physik",
+  "klasse": 8,
+  "kompetenzbereich": "Kernphysik",
+  "competences": [
+    "PHY.OS.8.KER.01",
+    "PHY.OS.x.S.01",
+    "PHY.OS.x.S.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "W",
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0228",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:14+00:00",
+  "updated_at": "2026-07-14T16:27:14+00:00"
+}

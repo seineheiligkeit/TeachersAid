@@ -1,0 +1,157 @@
+{
+  "id": "c0218.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_analysis",
+    "prompt": "Abbildung 1 zeigt das Klimadiagramm einer österreichischen Wetterstation. Die Linie steht für die mittlere Monatstemperatur, die Balken für den mittleren Monatsniederschlag.\n\na) In welchem Monat ist es am wärmsten, in welchem am kältesten? Wie groß ist die Temperaturschwankung zwischen dem wärmsten und dem kältesten Monat (Jahresamplitude)?\nb) In welcher Jahreszeit fällt der meiste Niederschlag? Beschreibe den Jahresgang des Niederschlags kurz.\nc) Erkläre, warum man die Temperatur als Linie und den Niederschlag als Balken darstellt und warum das Diagramm zwei verschiedene Achsen braucht.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "SYN"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.OS.5.GEO.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "a) Am wärmsten ist es im Juli (rund 21 °C), am kältesten im Jänner (um 0 °C); die Jahresamplitude beträgt damit rund 21 K (Grad Kelvin bzw. Celsius-Differenz). b) Der meiste Niederschlag fällt im Sommer (Juni bis August, jeweils über 100 mm), am wenigsten im Winter (Jänner nur etwa 20 mm) – es liegt also ein sommerliches Niederschlagsmaximum vor. c) Die Temperatur ist ein Verlaufswert (jeden Moment vorhanden) und wird deshalb als durchgehende Linie gezeichnet; der Niederschlag ist eine über den Monat aufsummierte Menge und passt deshalb zu Balken. Weil Temperatur (°C) und Niederschlag (mm) verschiedene Einheiten und Größenordnungen haben, braucht man zwei getrennte Achsen.",
+    "acceptable_reasoning": "Beim Ablesen sind Näherungswerte akzeptabel (z. B. 'etwa 21 °C', 'rund 20 mm'); es kommt auf richtige Größenordnung und Interpretation an.",
+    "rubric": [
+      {
+        "criterion": "Ablesen (Temperatur/Niederschlag)",
+        "levels": [
+          "Falsch abgelesen",
+          "Ein Wert korrekt",
+          "Warm-/Kaltmonat und Amplitude korrekt",
+          "Alle Werte korrekt inkl. Niederschlagsgang"
+        ]
+      },
+      {
+        "criterion": "Darstellungslogik",
+        "levels": [
+          "Nicht erklärt",
+          "Ansatz genannt",
+          "Linie/Balken oder zwei Achsen erklärt",
+          "Beides schlüssig erklärt (Verlauf vs. Menge, zwei Einheiten)"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Amplitude ist die Differenz zwischen wärmstem und kältestem Monat, nicht der Durchschnitt.",
+      "Die linke und die rechte Achse nicht verwechseln – ein Balken 'bei 100' meint 100 mm Niederschlag, nicht 100 °C.",
+      "Klima (30-Jahres-Mittel) ist nicht das Wetter eines einzelnen Jahres."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "data_analysis",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 5,
+  "kompetenzbereich": "Geoökosysteme der Erde analysieren",
+  "competences": [
+    "GWB.OS.5.GEO.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "SYN"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "lane": null,
+      "intended_claim": null,
+      "medium": "visual",
+      "generator": "matplotlib:climate_diagram",
+      "spec": {
+        "title": "Klimadiagramm einer österreichischen Station (Klimanormalwerte 1991–2020)",
+        "months": [
+          "Jän",
+          "Feb",
+          "Mär",
+          "Apr",
+          "Mai",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Okt",
+          "Nov",
+          "Dez"
+        ],
+        "temp": [
+          -0.1,
+          1.8,
+          6.0,
+          11.0,
+          15.5,
+          19.2,
+          20.8,
+          20.1,
+          15.2,
+          10.2,
+          5.2,
+          0.5
+        ],
+        "precip": [
+          20,
+          29,
+          34,
+          51,
+          93,
+          120,
+          123,
+          128,
+          93,
+          63,
+          54,
+          40
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "geosphere_klima_normal_1991_2020",
+        "series": "graz",
+        "note": null,
+        "title": "Klimanormalwerte österreichischer Stationen (1991–2020)",
+        "url": "https://data.hub.geosphere.at/dataset/klima-v2-1m",
+        "attribution": "Datenquelle: GeoSphere Austria – data.hub.geosphere.at (klima-v2-1m, CC BY 4.0)",
+        "stand": "1991–2020"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0218",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:09+00:00",
+  "updated_at": "2026-07-14T16:27:09+00:00"
+}

@@ -1,0 +1,100 @@
+{
+  "id": "c0228.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "experiment_protocol",
+    "prompt": "In der Schule stehen ein Geiger-Müller-Zählrohr, ein schwaches radioaktives Präparat sowie Platten aus Papier, Aluminium und Blei zur Verfügung. Plane ein Experiment, mit dem du die Abschirmwirkung dieser Materialien vergleichen kannst.\nBeschreibe:\na) den Aufbau und welche Größe du misst,\nb) wie du vorgehst (auch: Was misst du zuerst ohne Präparat, und warum?),\nc) welche Sicherheitsmaßnahmen du beachtest,\nd) welches Ergebnis du für Papier, Aluminium und Blei erwartest und wie du daraus auf die Strahlungsart schließen kannst.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 65.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "E",
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.OS.8.KER.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.OS.x.E.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.OS.x.E.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 13,
+    "answer_key": "a) Aufbau: das Präparat in festem Abstand vor dem Zählrohr; gemessen wird die Zählrate (Impulse pro Zeit, zum Beispiel pro Minute). Zwischen Präparat und Zählrohr werden nacheinander die Absorbermaterialien gebracht. b) Zuerst misst man ohne Präparat den Nulleffekt (natürliche Untergrundstrahlung) und zieht ihn von allen Messwerten ab. Dann misst man die Zählrate ohne Absorber und anschließend jeweils mit Papier, Aluminium und Blei – bei sonst gleichem Abstand und gleicher Messzeit. c) Sicherheit: großen Abstand halten, Handhabungszeit kurz halten, das Präparat nur mit Pinzette oder Halter anfassen, nicht auf Personen richten und vorschriftsgemäß lagern (Abstand – Aufenthaltsdauer – Abschirmung). d) Erwartung: Papier schwächt kaum ab (bzw. stoppt nur α-Strahlung), einige Millimeter Aluminium schirmen β-Strahlung ab, γ-Strahlung wird erst durch Blei deutlich (aber nie vollständig) geschwächt. Aus dem Vergleich der Zählraten lässt sich auf die vorhandene Strahlungsart schließen.",
+    "acceptable_reasoning": "Akzeptiert: jede vollständige Planung mit fester Geometrie, Nulleffekt-Messung, systematischer Variation des Absorbers und einer sinnvoll begründeten Erwartung.",
+    "rubric": [
+      {
+        "criterion": "Aufbau und Messgröße",
+        "levels": [
+          "Feste Geometrie und Zählrate als Messgröße klar beschrieben",
+          "Aufbau ungenau oder Messgröße fehlt"
+        ]
+      },
+      {
+        "criterion": "Vorgehen und Nulleffekt",
+        "levels": [
+          "Nulleffekt-Messung und systematische Absorbervariation vorgesehen",
+          "Nulleffekt fehlt oder Vorgehen unsystematisch"
+        ]
+      },
+      {
+        "criterion": "Sicherheit und Erwartung",
+        "levels": [
+          "Schutzprinzipien und plausible Erwartung je Material genannt",
+          "Sicherheit oder Erwartung unvollständig"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Der Nulleffekt (natürliche Untergrundstrahlung) muss gemessen und abgezogen werden, sonst sind die Ergebnisse verfälscht.",
+      "Abstand und Messzeit müssen bei allen Messungen gleich bleiben, sonst vergleicht man Ungleiches.",
+      "γ-Strahlung wird durch Blei nur abgeschwächt, nicht vollständig gestoppt – anders als bei der scharfen Reichweitengrenze von α- und β-Strahlung."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "experiment_protocol",
+  "subject": "Physik",
+  "klasse": 8,
+  "kompetenzbereich": "Kernphysik",
+  "competences": [
+    "PHY.OS.8.KER.01",
+    "PHY.OS.x.E.01",
+    "PHY.OS.x.E.02"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "E",
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0228",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:14+00:00",
+  "updated_at": "2026-07-14T16:27:14+00:00"
+}

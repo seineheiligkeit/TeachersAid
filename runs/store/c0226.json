@@ -1,0 +1,784 @@
+{
+  "id": "c0226",
+  "stage": "content",
+  "status": "pending",
+  "source": "generated",
+  "created_at": "2026-07-14T16:27:12+00:00",
+  "updated_at": "2026-07-14T16:27:13+00:00",
+  "title": "Mathematik 7. Kl. — Jenseits der reellen Zahlen — Rechnen mit i, Fundamentalsatz und Polarform (generiert)",
+  "note": "",
+  "request": {
+    "subject": "Mathematik",
+    "klasse": 7,
+    "stufe": "Unterstufe",
+    "schulform": null,
+    "topic_raw": "Jenseits der reellen Zahlen — Rechnen mit i, Fundamentalsatz und Polarform",
+    "envelope": "doppelstunde",
+    "options": {},
+    "anchor_mode": "competence",
+    "anchor_uet": null
+  },
+  "resolution": {
+    "fassung": {
+      "kurztitel": "AHS-Lehrplan (konsolidiert)",
+      "bgbl": "BGBl. II Nr. 204/2024",
+      "doknr": "NOR40264237",
+      "valid_from": "2024-09-01",
+      "valid_to": "2026-08-31"
+    },
+    "subject": "Mathematik",
+    "klasse": 7,
+    "matched_kompetenzbereiche": [
+      "Komplexe Zahlen"
+    ],
+    "grade_check": true,
+    "competences": [
+      {
+        "id": "MAT.OS.7.KOM3.01",
+        "kompetenzbereich": "Komplexe Zahlen",
+        "klasse": 7,
+        "text": "Die Zweckmäßigkeit der Erweiterung der reellen Zahlen erkennen",
+        "source_ref": "MATHEMATIK / 7. Klasse / Komplexe Zahlen",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": [
+          6
+        ],
+        "kompetenzmodul": 6,
+        "kind": "lehrstoff"
+      },
+      {
+        "id": "MAT.OS.7.KOM3.02",
+        "kompetenzbereich": "Komplexe Zahlen",
+        "klasse": 7,
+        "text": "Komplexe Zahlen in der Form a + b∙i kennen; mit ihnen rechnen und sie zum Lösen von Gleichungen verwenden können",
+        "source_ref": "MATHEMATIK / 7. Klasse / Komplexe Zahlen",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": [
+          6
+        ],
+        "kompetenzmodul": 6,
+        "kind": "lehrstoff"
+      },
+      {
+        "id": "MAT.OS.7.KOM3.03",
+        "kompetenzbereich": "Komplexe Zahlen",
+        "klasse": 7,
+        "text": "Den Fundamentalsatz der Algebra kennen",
+        "source_ref": "MATHEMATIK / 7. Klasse / Komplexe Zahlen",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": [
+          6
+        ],
+        "kompetenzmodul": 6,
+        "kind": "lehrstoff"
+      },
+      {
+        "id": "MAT.OS.7.KOM3.04",
+        "kompetenzbereich": "Komplexe Zahlen",
+        "klasse": 7,
+        "text": "Komplexe Zahlen in Polarform kennen",
+        "source_ref": "MATHEMATIK / 7. Klasse / Komplexe Zahlen",
+        "dimensions": [],
+        "uebergreifende_themen": [],
+        "semester": [
+          6
+        ],
+        "kompetenzmodul": 6,
+        "kind": "lehrstoff"
+      }
+    ],
+    "notes": []
+  },
+  "plan": null,
+  "content": {
+    "meta": {
+      "title": "Jenseits der reellen Zahlen — Rechnen mit i, Fundamentalsatz und Polarform",
+      "subtitle": "LLM-Entwurf — Erstprüfung",
+      "subject": "Mathematik",
+      "stufe": "Oberstufe",
+      "klasse": 7,
+      "kernfrage": "Warum erfindet die Mathematik eine Zahl, deren Quadrat −1 ist — und was gewinnst du dadurch?",
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "lehrplan_label": "Mathematik · 7. Klasse · Komplexe Zahlen",
+      "content_language": "de",
+      "subject_models": []
+    },
+    "subject_model": {
+      "subject": "Mathematik",
+      "stufe": "Oberstufe",
+      "dimensions": [
+        {
+          "id": "DM",
+          "label": "Darstellend-modellierendes Arbeiten",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "FO",
+          "label": "Formal-operatives Arbeiten",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "ID",
+          "label": "Interpretierend-dokumentierendes Arbeiten",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "KA",
+          "label": "Kritisch-argumentatives Arbeiten",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "content_areas": [
+        {
+          "id": "Algebra und Geometrie",
+          "label": "Algebra und Geometrie",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "Funktionale Abhängigkeiten",
+          "label": "Funktionale Abhängigkeiten",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "Analysis",
+          "label": "Analysis",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "Wahrscheinlichkeit und Statistik",
+          "label": "Wahrscheinlichkeit und Statistik",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "task_kind_extensions": [
+        "calculation",
+        "proof",
+        "construction",
+        "modelling"
+      ]
+    },
+    "intro": [
+      {
+        "id": "intro1",
+        "optional": false,
+        "modality": "printable",
+        "flags": null,
+        "asset_refs": [],
+        "provenance": null,
+        "role": "info",
+        "kind": "prose",
+        "content": "Die Gleichung x² + 1 = 0 hat unter den reellen Zahlen keine Lösung — und trotzdem lohnt es sich, so zu tun, als gäbe es eine. Mit der neuen Zahl i, deren Quadrat −1 ist, wird plötzlich jede algebraische Gleichung lösbar. In diesem Arbeitsblatt lernst du, mit komplexen Zahlen zu rechnen, ihre Nullstellen mit dem Fundamentalsatz der Algebra zu zählen und sie als Pfeile in der Gauß'schen Zahlenebene geometrisch zu deuten.",
+        "callout_role": null,
+        "teacher_note": null,
+        "watch_outs": [],
+        "numbered": true,
+        "backdrop_asset_ref": null
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Eine neue Zahl — und wie man mit ihr rechnet",
+        "teacher_overview": {
+          "throughline": "Die Erweiterung der reellen zu den komplexen Zahlen beseitigt die letzte Lücke der Algebra: jede Gleichung wird lösbar. Rechnen in den komplexen Zahlen folgt den gewohnten Regeln plus der einen neuen Regel i² = −1.",
+          "talking_points": [
+            "Der Ausgangspunkt ist ein echtes Problem, kein Trick: x² + 1 = 0 hat reell keine Lösung, weil Quadrate nie negativ werden. i löst genau dieses Problem.",
+            "Alle vertrauten Rechengesetze bleiben gültig — i ist keine Variable, sondern eine feste neue Zahl mit i² = −1. Diese Unterscheidung entscheidet über Erfolg oder Misserfolg beim Rechnen.",
+            "Der Fundamentalsatz der Algebra ist der Lohn der Mühe: über den komplexen Zahlen hat ein Polynom vom Grad n genau n Nullstellen. Das ist die tiefe Rechtfertigung der Erweiterung."
+          ],
+          "extensions": [
+            "Kurze Geschichte: Warum galten komplexe Zahlen lange als „imaginär“ und suspekt? Cardano, Bombelli und die Lösung der kubischen Gleichung.",
+            "Die Potenzen von i durchspielen (i, −1, −i, 1, …) und die Viererperiode als Muster erkennen lassen."
+          ],
+          "differentiation": null,
+          "timing_notes": null
+        },
+        "blocks": [
+          {
+            "id": "t1",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "open_response",
+            "prompt": "Die Gleichung x² + 1 = 0 hat unter den reellen Zahlen keine Lösung.\n(a) Erkläre, welche Eigenschaft der reellen Zahlen das verhindert.\n(b) Man definiert eine neue Zahl i mit i² = −1. Gib damit beide Lösungen von x² + 1 = 0 an und bestätige sie durch Einsetzen.\n(c) Nenne einen Grund, warum diese Erweiterung sinnvoll ist und nicht bloß ein willkürlicher Trick.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55.0
+            },
+            "cognitive_level": "understand",
+            "difficulty": null,
+            "dimensions": [
+              "KA",
+              "ID"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.OS.7.KOM3.01",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "MAT.OS.7.KOM3.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "(a) In den reellen Zahlen ist jedes Quadrat größer oder gleich 0; deshalb kann x² niemals −1 ergeben. (b) x = i und x = −i, denn i² = −1 und (−i)² = (−1)² · i² = 1 · (−1) = −1. Einsetzen: i² + 1 = −1 + 1 = 0 und (−i)² + 1 = −1 + 1 = 0. (c) Mit i wird JEDE algebraische Gleichung lösbar: ein Polynom vom Grad n hat über den komplexen Zahlen genau n Nullstellen (Fundamentalsatz der Algebra). Außerdem lassen sich viele reale Vorgänge — etwa Schwingungen und Wechselstrom — mit komplexen Zahlen einheitlich und einfacher beschreiben.",
+            "acceptable_reasoning": "In (c) genügt EIN tragfähiger Grund: die durchgängige Lösbarkeit von Gleichungen (Fundamentalsatz) ODER eine sinnvolle Anwendung (Physik/Technik).",
+            "rubric": [],
+            "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
+            "watch_outs": [
+              "glauben, √(−1) sei einfach −1.",
+              "i für eine Unbekannte wie x halten statt für eine feste neue Zahl mit i² = −1.",
+              "meinen, durch die Erweiterung würden die reellen Rechengesetze ungültig — sie gelten weiter."
+            ],
+            "self_check": null,
+            "scaffold": null
+          },
+          {
+            "id": "t2",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "calculation",
+            "prompt": "Gegeben sind z = 3 + 2i und w = 1 − 4i. Berechne und schreibe jedes Ergebnis in der Form a + b·i:\n(a) z + w\n(b) z · w\n(c) z / w",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 60.0
+            },
+            "cognitive_level": "apply",
+            "difficulty": null,
+            "dimensions": [
+              "FO"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.OS.7.KOM3.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "answer_key": "(a) z + w = (3 + 1) + (2 − 4)i = 4 − 2i. (b) z · w = (3 + 2i)(1 − 4i) = 3 − 12i + 2i − 8i² = 3 − 10i + 8 = 11 − 10i (wegen i² = −1). (c) Mit dem konjugiert Komplexen von w erweitern: z / w = (3 + 2i)(1 + 4i) / [(1 − 4i)(1 + 4i)] = (3 + 12i + 2i + 8i²) / (1 + 16) = (−5 + 14i) / 17 = −5/17 + (14/17)i ≈ −0,29 + 0,82i.",
+            "acceptable_reasoning": null,
+            "rubric": [],
+            "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
+            "watch_outs": [
+              "i² = −1 nicht anwenden — dann wird aus −8i² fälschlich −8 statt +8.",
+              "bei der Division nicht mit dem konjugiert Komplexen des Nenners erweitern.",
+              "beim Multiplizieren Real- und Imaginärteil vermischen; nur gleichartige Terme zusammenfassen."
+            ],
+            "self_check": null,
+            "scaffold": null
+          },
+          {
+            "id": "t3",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "calculation",
+            "prompt": "Löse die Gleichung x² − 4x + 13 = 0 über den komplexen Zahlen.\n(a) Gib beide Lösungen in der Form a + b·i an.\n(b) Was fällt dir am Zusammenhang der beiden Lösungen auf?\n(c) Der Fundamentalsatz der Algebra macht eine Aussage über die Anzahl der Nullstellen. Wie viele hat x² − 4x + 13, und passt das zu deinem Ergebnis?",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55.0
+            },
+            "cognitive_level": "analyze",
+            "difficulty": null,
+            "dimensions": [
+              "FO",
+              "KA"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.OS.7.KOM3.02",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "MAT.OS.7.KOM3.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "answer_key": "(a) Diskriminante: (−4)² − 4 · 1 · 13 = 16 − 52 = −36. Mit √(−36) = 6i folgt x = (4 ± 6i) / 2 = 2 ± 3i, also x₁ = 2 + 3i und x₂ = 2 − 3i. (b) Die beiden Lösungen sind zueinander konjugiert komplex (gleicher Realteil, entgegengesetzter Imaginärteil). Bei reellen Koeffizienten ist das immer so. (c) Der Grad ist 2, also gibt es nach dem Fundamentalsatz genau 2 Nullstellen über den komplexen Zahlen (mit Vielfachheit gezählt) — wir haben zwei, es passt.",
+            "acceptable_reasoning": null,
+            "rubric": [],
+            "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
+            "watch_outs": [
+              "√(−36) als −6 statt als 6i schreiben.",
+              "die Division durch 2 aus der Lösungsformel vergessen.",
+              "glauben, die Gleichung habe keine Lösung, weil die Diskriminante negativ ist."
+            ],
+            "self_check": null,
+            "scaffold": null
+          },
+          {
+            "id": "t4",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "multiple_choice",
+            "prompt": "Ein Polynom vom Grad 5 mit ausschließlich reellen Koeffizienten hat unter seinen Nullstellen die Zahl 2 − 3i. Welche Aussage ist mit Sicherheit richtig?",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "A) Dann ist auch 2 + 3i eine Nullstelle, und das Polynom hat insgesamt genau 5 Nullstellen über den komplexen Zahlen (mit Vielfachheit gezählt).",
+                "B) Das Polynom hat genau 5 verschiedene Nullstellen, die alle nicht reell sind.",
+                "C) Ein Polynom mit reellen Koeffizienten kann gar keine nicht-reellen Nullstellen haben.",
+                "D) Das Polynom hat höchstens 2 Nullstellen, weil nicht-reelle Nullstellen doppelt zählen."
+              ],
+              "select": "one"
+            },
+            "response": {
+              "mode": "choices",
+              "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+              ],
+              "select": "one"
+            },
+            "cognitive_level": "analyze",
+            "difficulty": null,
+            "dimensions": [
+              "KA",
+              "FO"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.OS.7.KOM3.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "answer_key": "A ist richtig. Bei reellen Koeffizienten treten nicht-reelle Nullstellen immer paarweise als konjugiert komplexe auf, also ist mit 2 − 3i auch 2 + 3i Nullstelle. Der Fundamentalsatz garantiert für Grad 5 genau 5 Nullstellen über den komplexen Zahlen (mit Vielfachheit). B ist falsch, weil ein Polynom ungeraden Grades mit reellen Koeffizienten mindestens eine reelle Nullstelle haben muss. C widerspricht der Angabe. D verwechselt die Zählweise.",
+            "acceptable_reasoning": null,
+            "rubric": [],
+            "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
+            "watch_outs": [
+              "glauben, nicht-reelle Nullstellen könnten bei reellen Koeffizienten einzeln auftreten — sie kommen immer als Paar a ± bi.",
+              "Antwort B wählen und dabei mögliche Vielfachheiten sowie die erzwungene reelle Nullstelle übersehen.",
+              "meinen, reelle Koeffizienten schlössen nicht-reelle Nullstellen aus."
+            ],
+            "self_check": null,
+            "scaffold": null
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Der geometrische Blick — Gauß'sche Ebene und Polarform",
+        "teacher_overview": {
+          "throughline": "Jede komplexe Zahl ist ein Punkt bzw. Pfeil in der Ebene. Die Polarform (Betrag, Argument) macht daraus Geometrie: Addition ist Aneinanderhängen von Pfeilen, Multiplikation ist Strecken und Drehen.",
+          "talking_points": [
+            "Die Gauß'sche Zahlenebene verwandelt Algebra in Geometrie — der Betrag |z| ist die Pfeillänge (Pythagoras!), das Argument der Drehwinkel.",
+            "Die Multiplikationsregel „Beträge mal, Argumente plus“ ist der Schlüssel; sie erklärt, warum die Multiplikation mit i eine Drehung um 90° ist.",
+            "Konjugiert komplexe Zahlen (a + bi und a − bi) sind Spiegelungen an der reellen Achse; ihr Produkt ist reell — genau das nutzt man beim Dividieren."
+          ],
+          "extensions": [
+            "Die Multiplikation mit i als 90°-Drehung an einem Beispiel veranschaulichen und mit der Regel „Argumente addieren“ verknüpfen.",
+            "Ausblick Satz von Moivre: Potenzen und Wurzeln komplexer Zahlen über die Polarform, z. B. die drei dritten Einheitswurzeln.",
+            "Verbindung zur Physik: Zeiger (Phasoren) bei Wechselstrom und Schwingungen als komplexe Zahlen."
+          ],
+          "differentiation": null,
+          "timing_notes": null
+        },
+        "blocks": [
+          {
+            "id": "i1",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "info",
+            "kind": "key_fact",
+            "content": "In der Gauß'schen Zahlenebene entspricht die komplexe Zahl z = a + b·i dem Punkt (a | b): der Realteil a wird nach rechts, der Imaginärteil b nach oben aufgetragen. Der Betrag |z| = √(a² + b²) ist die Länge des Pfeils vom Ursprung zu diesem Punkt (Satz von Pythagoras). Das Argument φ ist der Winkel dieses Pfeils zur positiven reellen Achse. Damit lässt sich z auch in Polarform schreiben: z = r · (cos φ + i · sin φ) mit r = |z|.",
+            "callout_role": null,
+            "teacher_note": "Die Polarform ist die Brücke zur Multiplikation als Drehstreckung; Betrag und Argument am gezeichneten Pfeil zeigen, nicht nur rechnerisch definieren.",
+            "watch_outs": [],
+            "numbered": true,
+            "backdrop_asset_ref": null
+          },
+          {
+            "id": "t5",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [
+              "abb_gauss"
+            ],
+            "provenance": null,
+            "role": "task",
+            "kind": "calculation",
+            "prompt": "Die Abbildung zeigt die komplexen Zahlen z = 3 + 2i und w = −1 + 2i als Pfeile vom Ursprung in der Gauß'schen Zahlenebene.\n(a) Berechne die Beträge |z| und |w|.\n(b) Bestimme das Argument von z (den Winkel zur positiven reellen Achse) in Grad.\n(c) Schreibe z in Polarform r · (cos φ + i · sin φ).",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55.0
+            },
+            "cognitive_level": "apply",
+            "difficulty": null,
+            "dimensions": [
+              "FO",
+              "DM"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.OS.7.KOM3.04",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "MAT.OS.7.KOM3.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "answer_key": "(a) |z| = √(3² + 2²) = √13 ≈ 3,61; |w| = √((−1)² + 2²) = √5 ≈ 2,24. (b) z liegt im 1. Quadranten: φ = arctan(2/3) ≈ 33,7°. (c) z = √13 · (cos 33,7° + i · sin 33,7°). Kontrolle: √13 · cos 33,7° ≈ 3 und √13 · sin 33,7° ≈ 2.",
+            "acceptable_reasoning": null,
+            "rubric": [],
+            "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
+            "watch_outs": [
+              "den Betrag als a + b statt als √(a² + b²) berechnen.",
+              "beim Argument den Quadranten ignorieren — bei w im 2. Quadranten wäre arctan allein falsch; z liegt aber im 1. Quadranten.",
+              "Realteil und Imaginärteil vertauschen."
+            ],
+            "self_check": null,
+            "scaffold": null
+          },
+          {
+            "id": "t6",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "open_response",
+            "prompt": "In Polarform sind z₁ = 2 · (cos 30° + i · sin 30°) und z₂ = 3 · (cos 40° + i · sin 40°) gegeben.\n(a) Berechne das Produkt z₁ · z₂ in Polarform.\n(b) Ein Mitschüler behauptet: „Beim Multiplizieren in Polarform multipliziert man die Beträge UND die Argumente.“ Beurteile diese Aussage und korrigiere sie gegebenenfalls.\n(c) Beschreibe in einem Satz, was die Multiplikation mit z₂ geometrisch mit dem Pfeil von z₁ macht.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 60.0
+            },
+            "cognitive_level": "evaluate",
+            "difficulty": null,
+            "dimensions": [
+              "FO",
+              "ID"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.OS.7.KOM3.04",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "MAT.OS.7.KOM3.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "answer_key": "(a) Beträge multiplizieren, Argumente ADDIEREN: z₁ · z₂ = (2 · 3) · (cos(30° + 40°) + i · sin(30° + 40°)) = 6 · (cos 70° + i · sin 70°) ≈ 2,05 + 5,64i. (b) Die Aussage ist falsch: die Beträge werden multipliziert, die Argumente aber ADDIERT. Würde man die Argumente multiplizieren, käme 30° · 40° = 1200° heraus — schon die Einheit „Grad mal Grad“ zeigt, dass das nicht sein kann. (c) Die Multiplikation mit z₂ streckt den Pfeil von z₁ auf das Dreifache (Betrag 3) und dreht ihn um 40° gegen den Uhrzeigersinn.",
+            "acceptable_reasoning": "In (b) genügt die klare Unterscheidung „Beträge multiplizieren, Argumente addieren“; die Einheiten-Überlegung ist ein zusätzliches, aber nicht zwingendes Argument.",
+            "rubric": [
+              {
+                "criterion": "Produkt in Polarform",
+                "levels": [
+                  "falsch oder kein Ansatz",
+                  "Ansatz richtig (Beträge mal, Argumente plus), kleiner Fehler",
+                  "z₁ · z₂ = 6 · (cos 70° + i · sin 70°) korrekt"
+                ]
+              },
+              {
+                "criterion": "Beurteilung der Aussage (b)",
+                "levels": [
+                  "Aussage übernommen",
+                  "als falsch erkannt ohne Korrektur",
+                  "als falsch erkannt und korrekt richtiggestellt (Argumente addieren)"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
+            "watch_outs": [
+              "die Argumente multiplizieren statt sie zu addieren.",
+              "die Beträge addieren statt sie zu multiplizieren.",
+              "im Ergebnis cos und sin vertauschen."
+            ],
+            "self_check": null,
+            "scaffold": null
+          },
+          {
+            "id": "t7",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "create_produce",
+            "prompt": "(a) Bestimme eine quadratische Gleichung mit reellen Koeffizienten, die 1 + 2i als Lösung hat.\n(b) Begründe, warum eine solche Gleichung dann automatisch auch 1 − 2i als Lösung haben muss.\n(c) Kann es eine quadratische Gleichung mit reellen Koeffizienten geben, die als einzige Lösung 1 + 2i hat (und keine zweite)? Begründe deine Antwort.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 65.0
+            },
+            "cognitive_level": "create",
+            "difficulty": null,
+            "dimensions": [
+              "DM",
+              "KA"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "MAT.OS.7.KOM3.02",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "MAT.OS.7.KOM3.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 12,
+            "answer_key": "(a) Über die Linearfaktoren: (x − (1 + 2i)) · (x − (1 − 2i)) = (x − 1)² − (2i)² = (x − 1)² + 4 = x² − 2x + 5. Also x² − 2x + 5 = 0. Kontrolle mit Vieta: Summe der Lösungen = 2 = −(−2), Produkt = (1 + 2i)(1 − 2i) = 1 + 4 = 5. (b) Weil die Koeffizienten reell sein sollen, müssen Summe und Produkt der beiden Lösungen reell sein; das erzwingt, dass die zweite Lösung die konjugiert komplexe 1 − 2i ist — nur dann heben sich die Imaginärteile weg. (c) Nein. Eine quadratische Gleichung hat nach dem Fundamentalsatz genau zwei Lösungen (mit Vielfachheit). Wäre 1 + 2i die einzige (doppelte) Lösung, so wäre die Gleichung (x − (1 + 2i))² = 0 — deren ausmultiplizierte Koeffizienten sind aber nicht reell. Eine nicht-reelle Lösung erzwingt bei reellen Koeffizienten stets ihre konjugierte Partnerin.",
+            "acceptable_reasoning": "Jede Gleichung der Form a · (x² − 2x + 5) = 0 mit a ≠ 0 ist gültig; die Begründung in (b)/(c) muss den Zusammenhang reelle Koeffizienten ↔ konjugiert komplexes Paar tragen.",
+            "rubric": [
+              {
+                "criterion": "Gleichung aufstellen (a)",
+                "levels": [
+                  "keine oder falsche Gleichung",
+                  "Ansatz über Linearfaktoren, Rechenfehler",
+                  "x² − 2x + 5 = 0 korrekt hergeleitet"
+                ]
+              },
+              {
+                "criterion": "Begründung Paarbildung (b)",
+                "levels": [
+                  "fehlt oder falsch",
+                  "richtige Idee ohne Bezug zu reellen Koeffizienten",
+                  "reelle Koeffizienten erzwingen das konjugierte Paar — sauber begründet"
+                ]
+              },
+              {
+                "criterion": "Eindeutigkeitsfrage (c)",
+                "levels": [
+                  "fehlt oder falsch",
+                  "richtige Antwort ohne tragfähige Begründung",
+                  "Antwort „nein“ mit Begründung über nicht-reelle Koeffizienten der Doppellösung"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
+            "watch_outs": [
+              "nur den Faktor (x − (1 + 2i)) verwenden und die konjugierte Lösung weglassen — dann sind die Koeffizienten nicht reell.",
+              "beim Ausmultiplizieren (2i)² = −4 falsch als +4 oder 4i behandeln.",
+              "in (c) meinen, eine einzelne nicht-reelle Doppellösung sei mit reellen Koeffizienten möglich."
+            ],
+            "self_check": null,
+            "scaffold": null
+          }
+        ]
+      }
+    ],
+    "assets": [
+      {
+        "id": "abb_gauss",
+        "role": "figure",
+        "lane": null,
+        "intended_claim": null,
+        "medium": "visual",
+        "generator": "matplotlib:coordinate_plane",
+        "spec": {
+          "points": [
+            {
+              "x": 0,
+              "y": 0,
+              "label": "0"
+            },
+            {
+              "x": 3,
+              "y": 2,
+              "label": "z"
+            },
+            {
+              "x": -1,
+              "y": 2,
+              "label": "w"
+            }
+          ],
+          "segments": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "xmin": -3,
+          "xmax": 5,
+          "ymin": -2,
+          "ymax": 4,
+          "title": "z und w als Pfeile in der Gauß'schen Zahlenebene"
+        },
+        "correctness_surface": null,
+        "misleading_in_isolation": false,
+        "intentionally_flawed": null,
+        "machine_generatable": true,
+        "provenance": null,
+        "data_source": null,
+        "illustrative": false,
+        "caption": null
+      }
+    ],
+    "anchor_mode": "competence",
+    "anchor_uet": null,
+    "theme_asset": null,
+    "nachweis": {
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "anchor_mode": "competence",
+      "anchor_label": "Lehrplan-Kompetenzen",
+      "statement": "Diese Materialien adressieren 4 von 4 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
+      "competence_coverage": [
+        {
+          "competence_id": "MAT.OS.7.KOM3.01",
+          "exercised_by": [
+            "t1"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "MAT.OS.7.KOM3.02",
+          "exercised_by": [
+            "t1",
+            "t2",
+            "t3",
+            "t5",
+            "t6",
+            "t7"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "MAT.OS.7.KOM3.03",
+          "exercised_by": [
+            "t3",
+            "t4",
+            "t7"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "MAT.OS.7.KOM3.04",
+          "exercised_by": [
+            "t5",
+            "t6"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        }
+      ],
+      "gaps": [],
+      "zentrale_konzepte": [
+        "Komplexe Zahlen"
+      ],
+      "uebergreifende_themen": []
+    },
+    "depth_profile": {
+      "by_level": {
+        "understand": 1,
+        "apply": 2,
+        "analyze": 2,
+        "evaluate": 1,
+        "create": 1
+      },
+      "by_dimension": {
+        "KA": 2,
+        "FO": 4,
+        "DM": 1
+      },
+      "by_difficulty": {
+        "1": 1,
+        "2": 4,
+        "3": 2
+      },
+      "minutes_total": 64,
+      "minutes_resource_independent": 64
+    },
+    "mixer_profile": null,
+    "mixer_lint": null,
+    "glossary": [],
+    "rack": null
+  },
+  "artifacts": {
+    "student_pdf": "/home/user/TeachersAid/runs/store/c0226/student.pdf",
+    "teacher_pdf": "/home/user/TeachersAid/runs/store/c0226/teacher.pdf",
+    "homework_pdf": "/home/user/TeachersAid/runs/store/c0226/homework.pdf",
+    "preview_png": "/home/user/TeachersAid/runs/store/c0226/raster/student.p1.png"
+  },
+  "verify_problems": [],
+  "verify_warnings": [],
+  "parent_id": null,
+  "feedback": [],
+  "error": null
+}

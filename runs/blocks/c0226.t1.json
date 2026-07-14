@@ -1,0 +1,73 @@
+{
+  "id": "c0226.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Die Gleichung x² + 1 = 0 hat unter den reellen Zahlen keine Lösung.\n(a) Erkläre, welche Eigenschaft der reellen Zahlen das verhindert.\n(b) Man definiert eine neue Zahl i mit i² = −1. Gib damit beide Lösungen von x² + 1 = 0 an und bestätige sie durch Einsetzen.\n(c) Nenne einen Grund, warum diese Erweiterung sinnvoll ist und nicht bloß ein willkürlicher Trick.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "KA",
+      "ID"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.OS.7.KOM3.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "MAT.OS.7.KOM3.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "(a) In den reellen Zahlen ist jedes Quadrat größer oder gleich 0; deshalb kann x² niemals −1 ergeben. (b) x = i und x = −i, denn i² = −1 und (−i)² = (−1)² · i² = 1 · (−1) = −1. Einsetzen: i² + 1 = −1 + 1 = 0 und (−i)² + 1 = −1 + 1 = 0. (c) Mit i wird JEDE algebraische Gleichung lösbar: ein Polynom vom Grad n hat über den komplexen Zahlen genau n Nullstellen (Fundamentalsatz der Algebra). Außerdem lassen sich viele reale Vorgänge — etwa Schwingungen und Wechselstrom — mit komplexen Zahlen einheitlich und einfacher beschreiben.",
+    "acceptable_reasoning": "In (c) genügt EIN tragfähiger Grund: die durchgängige Lösbarkeit von Gleichungen (Fundamentalsatz) ODER eine sinnvolle Anwendung (Physik/Technik).",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "glauben, √(−1) sei einfach −1.",
+      "i für eine Unbekannte wie x halten statt für eine feste neue Zahl mit i² = −1.",
+      "meinen, durch die Erweiterung würden die reellen Rechengesetze ungültig — sie gelten weiter."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Mathematik",
+  "klasse": 7,
+  "kompetenzbereich": "Komplexe Zahlen",
+  "competences": [
+    "MAT.OS.7.KOM3.01",
+    "MAT.OS.7.KOM3.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "KA",
+    "ID"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0226",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:13+00:00",
+  "updated_at": "2026-07-14T16:27:13+00:00"
+}

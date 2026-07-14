@@ -1,0 +1,90 @@
+{
+  "id": "c0208.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Diagnostiziere den Stil. Benenne für jeden Satz das Stilproblem und erkläre, warum es den Text schwächt.",
+    "payload": {
+      "kind": "table_fill",
+      "columns": [
+        "Satz",
+        "Stilproblem",
+        "Warum schwächt es den Text?"
+      ],
+      "rows": [
+        [
+          "„Aufgrund der Tatsache, dass es zu einer Verzögerung der Fertigstellung des Projektes gekommen ist, ist eine Verschiebung des Abgabetermins notwendig geworden.“",
+          null,
+          null
+        ],
+        [
+          "„Man muss eigentlich schon irgendwie sagen, dass das Thema ziemlich wichtig ist.“",
+          null,
+          null
+        ],
+        [
+          "„Das Plakat wurde von uns gestaltet und wurde dann von der Lehrerin bewertet und wurde schließlich aufgehängt.“",
+          null,
+          null
+        ]
+      ]
+    },
+    "response": {
+      "mode": "none"
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "SK",
+      "TK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DEU.OS.7.SCH.07",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Satz 1: überladener Nominalstil und Schachtelsatz (‚Verzögerung der Fertigstellung des Projektes‘) – schwer verständlich, abstrakt, unlebendig. Satz 2: Füllwörter und Weichmacher (‚eigentlich, schon, irgendwie, ziemlich‘) – wirkt vage und unentschlossen, schwächt die Aussage. Satz 3: Häufung von Passiv (‚wurde … wurde … wurde‘) und monotone ‚und‘-Reihung – distanziert und eintönig, der Handelnde verschwindet.",
+    "acceptable_reasoning": "Es genügt, das Kernproblem korrekt zu benennen und die Schwächung nachvollziehbar zu begründen.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Nominalstil ist nicht ‚falsch‘, aber schwer lesbar – in Fachtexten kann er passen.",
+      "Passiv ist berechtigt, wenn der Handelnde unwichtig ist – das Problem ist die HÄUFUNG, nicht das einzelne Passiv."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Deutsch",
+  "klasse": 7,
+  "kompetenzbereich": "Schriftliche Kompetenz",
+  "competences": [
+    "DEU.OS.7.SCH.07"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "SK",
+    "TK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0208",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:05+00:00",
+  "updated_at": "2026-07-14T16:27:05+00:00"
+}

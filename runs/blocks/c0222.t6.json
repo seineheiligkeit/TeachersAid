@@ -1,0 +1,93 @@
+{
+  "id": "c0222.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Bei einer Umfrage unter 200 Schüler:innen wurde der Schulweg nach Verkehrsmittel erhoben: zu Fuß 70, Fahrrad 30, öffentliche Verkehrsmittel 80, Auto 20. a) Welcher Diagrammtyp eignet sich am besten, um die Anteile am Ganzen zu zeigen? Begründe. b) Skizziere das Diagramm (als einfache Zeichnung oder in Worten) mit Titel und Beschriftung; gib für jedes Verkehrsmittel den Anteil in Prozent an. c) Formuliere eine Aussage, die man aus der Darstellung ehrlich ableiten kann.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "AG",
+      "RB"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "INF.OS.5.ANG.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "a) Da sich die vier Werte zu einem Ganzen ergänzen (200 Befragte = 100 %), passt ein Kreisdiagramm (alternativ ein 100-%-Stapelbalken). b) Anteile: zu Fuß 70/200 = 35 %, Fahrrad 30/200 = 15 %, öffentlich 80/200 = 40 %, Auto 20/200 = 10 %. Titel z. B. „Schulweg von 200 Schüler:innen nach Verkehrsmittel“; jedes Segment mit Verkehrsmittel und Prozentwert beschriften. c) Mögliche ehrliche Aussage: „Nur 10 % kommen mit dem Auto; 90 % legen den Schulweg zu Fuß, mit dem Rad oder öffentlich zurück.“ oder „Öffentliche Verkehrsmittel sind mit 40 % am häufigsten.“",
+    "acceptable_reasoning": "Die Diagrammwahl muss mit „Teile eines Ganzen“ begründet sein; die Prozentwerte müssen korrekt sein (Summe 100 %); die abgeleitete Aussage muss durch die Daten gedeckt sein.",
+    "rubric": [
+      {
+        "criterion": "Diagrammwahl mit Begründung",
+        "levels": [
+          "Kreisdiagramm mit Teile-eines-Ganzen begründet",
+          "Passender Typ, Begründung schwach",
+          "Unpassender Typ"
+        ]
+      },
+      {
+        "criterion": "Prozentwerte und Beschriftung",
+        "levels": [
+          "Alle vier Anteile korrekt, Titel und Beschriftung vorhanden",
+          "Kleiner Rechen- oder Beschriftungsfehler",
+          "Mehrere Fehler"
+        ]
+      },
+      {
+        "criterion": "Ehrliche Aussage",
+        "levels": [
+          "Durch die Daten gedeckt und aussagekräftig",
+          "Korrekt, aber trivial",
+          "Nicht gedeckt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Ein Kreisdiagramm ist nur zulässig, weil die Kategorien zusammen alle 200 Befragten abdecken (100 %).",
+      "Die Prozentwerte müssen sich zu 100 % addieren: 35 + 15 + 40 + 10 = 100.",
+      "Die abgeleitete Aussage darf nicht über die Daten hinausgehen (z. B. nichts über andere Schulen behaupten)."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Informatik",
+  "klasse": 5,
+  "kompetenzbereich": "Angewandte Informatik",
+  "competences": [
+    "INF.OS.5.ANG.01"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "AG",
+    "RB"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0222",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:12+00:00",
+  "updated_at": "2026-07-14T16:27:12+00:00"
+}

@@ -1,0 +1,85 @@
+{
+  "id": "c0227.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Wende das Ohmsche Gesetz an und schreibe jeweils die verwendete Formel an.\na) Durch einen Widerstand von 150 Ω soll ein Strom von 0,4 A fließen. Welche Spannung ist dafür nötig?\nb) Ein kleines Gerät zieht an einer 12-V-Quelle einen Strom von 0,5 A. Berechne seinen Widerstand.\nc) Ein Heizgerät mit einem Widerstand von 46 Ω wird an das 230-V-Netz angeschlossen. Welche Stromstärke fließt, und welche Leistung nimmt es auf?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.OS.6.ELE.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.OS.x.W.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "a) U = R · I = 150 Ω · 0,4 A = 60 V. b) R = U / I = 12 V / 0,5 A = 24 Ω. c) I = U / R = 230 V / 46 Ω = 5 A; P = U · I = 230 V · 5 A = 1150 W = 1,15 kW.",
+    "acceptable_reasoning": "Akzeptiert: gleiche Ergebnisse mit sauber angeschriebenen, nach der gesuchten Größe umgestellten Formeln und mitgeführten Einheiten.",
+    "rubric": [
+      {
+        "criterion": "Formelwahl",
+        "levels": [
+          "Formel korrekt umgestellt und angeschrieben",
+          "Formel bekannt, aber falsch umgestellt"
+        ]
+      },
+      {
+        "criterion": "Rechnung und Einheit",
+        "levels": [
+          "Ergebnis richtig mit korrekter Einheit",
+          "Rechenweg erkennbar, Fehler im Ergebnis oder Einheit fehlt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Formel nach der gesuchten Größe umstellen (U = R · I, R = U / I, I = U / R) und nicht raten, welche Größe im Zähler steht.",
+      "Einheiten mitschreiben: V = Ω · A, Ω = V/A, A = V/Ω."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Physik",
+  "klasse": 6,
+  "kompetenzbereich": "Elektrizitätslehre",
+  "competences": [
+    "PHY.OS.6.ELE.02",
+    "PHY.OS.x.W.04"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0227",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:14+00:00",
+  "updated_at": "2026-07-14T16:27:14+00:00"
+}

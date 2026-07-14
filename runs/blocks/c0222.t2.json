@@ -1,0 +1,71 @@
+{
+  "id": "c0222.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Das Café gewährt allen Produkten denselben Rabatt von 10 %. Dieser Rabattsatz 0,10 steht EINMAL in Zelle F1. In Spalte E soll der Rabattbetrag in Euro berechnet werden. Vergleiche zwei Formeln, die in Zelle E2 stehen und dann nach E3 und E4 kopiert werden: die absolute Variante =D2*$F$1 und die relative Variante =D2*F1. Die Umsatzwerte aus Aufgabe 1 sind D2 = 18,00; D3 = 16,00; D4 = 4,00. Trage die Ergebnisse ein und erkläre unter der Tabelle in einem Satz, warum die relative Variante fehlschlägt.",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Zelle",
+        "Ergebnis mit =D·$F$1 (€)",
+        "Ergebnis mit =D·F1 kopiert (€)"
+      ],
+      "rows": 3
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "AG"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "INF.OS.5.ANG.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Absolute Variante =D2*$F$1: E2 = 1,80; E3 = 1,60; E4 = 0,40. Relative Variante =D2*F1 (nach unten kopiert): E2 = 1,80; E3 = 0,00; E4 = 0,00. Grund: Beim Kopieren verschiebt sich der relative Bezug F1 mit nach F2 bzw. F3 – diese Zellen sind leer (Wert 0), also wird mit 0 multipliziert. Das Dollarzeichen in $F$1 hält den Bezug fest, sodass immer F1 verwendet wird.",
+    "acceptable_reasoning": "Erwartet: korrekte Werte beider Spalten plus die Erklärung, dass der relative Bezug mitwandert und auf leere Zellen (= 0) zeigt.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Das Dollarzeichen macht einen Bezug absolut: $F$1 bleibt beim Kopieren fix, F1 wandert mit.",
+      "Eine leere Zelle wird als 0 interpretiert – daher 0,00 € statt einer Fehlermeldung, was den Fehler besonders tückisch macht.",
+      "Nur E2 stimmt in beiden Varianten überein, weil der relative Bezug dort noch zufällig auf F1 zeigt."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Informatik",
+  "klasse": 5,
+  "kompetenzbereich": "Angewandte Informatik",
+  "competences": [
+    "INF.OS.5.ANG.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "AG"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0222",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:12+00:00",
+  "updated_at": "2026-07-14T16:27:12+00:00"
+}

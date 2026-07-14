@@ -1,0 +1,83 @@
+{
+  "id": "c0222.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "argumentation",
+    "prompt": "Ein Getränkehersteller wirbt mit einem Balkendiagramm: Die eigene Marke erreicht in einem Test 104 „Geschmackspunkte“, die Konkurrenz 102. In der Werbegrafik beginnt die senkrechte Achse jedoch nicht bei 0, sondern bei 100. Dadurch wirkt der Balken der eigenen Marke mehr als doppelt so hoch wie der der Konkurrenz. a) Erkläre, warum dieses Diagramm täuscht. b) Wie groß ist der tatsächliche Unterschied zwischen den beiden Marken in Prozent (ungefähr)? c) Wie müsste man das Diagramm gestalten, damit es ehrlich ist?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "RB"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "INF.OS.5.ANG.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "a) Die abgeschnittene Achse (Beginn bei 100 statt 0) übertreibt einen winzigen Unterschied optisch enorm: Aus 2 von rund 100 Punkten wird ein Balken, der doppelt so hoch aussieht – das Verhältnis der Balkenhöhen entspricht nicht mehr dem Verhältnis der Werte. b) Der Unterschied beträgt 2 Punkte; bezogen auf die Konkurrenz sind das 2 / 102 ≈ 2 % (also sehr gering). c) Ehrlich wäre eine Achse, die bei 0 beginnt (dann sind beide Balken fast gleich hoch); zusätzlich sollte man die tatsächlichen Werte anschreiben und Formulierungen wie „mehr als doppelt so gut“ vermeiden.",
+    "acceptable_reasoning": "Kern von a): abgeschnittene y-Achse verzerrt das Größenverhältnis; b): Unterschied im Bereich von etwa 2 %.",
+    "rubric": [
+      {
+        "criterion": "Erklärung der Täuschung (a)",
+        "levels": [
+          "Abgeschnittene Achse und verzerrtes Verhältnis klar erklärt",
+          "Achse genannt, Wirkung nicht erklärt",
+          "Fehlt oder falsch"
+        ]
+      },
+      {
+        "criterion": "Ehrliche Alternative (c)",
+        "levels": [
+          "Achse bei 0 und/oder Werte anschreiben genannt",
+          "Vage Verbesserung",
+          "Keine sinnvolle Alternative"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Eine abgeschnittene y-Achse ist nicht immer verboten, muss aber klar gekennzeichnet sein und darf nicht in die Irre führen.",
+      "Der absolute Unterschied (2 Punkte) und der relative Unterschied (rund 2 %) sind beide klein – die Grafik macht daraus scheinbar einen großen.",
+      "„Doppelt so hoher Balken“ heißt nicht „doppelt so guter Geschmack“ – Balkenhöhe und Wert müssen proportional sein."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "argumentation",
+  "subject": "Informatik",
+  "klasse": 5,
+  "kompetenzbereich": "Angewandte Informatik",
+  "competences": [
+    "INF.OS.5.ANG.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "RB"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0222",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:12+00:00",
+  "updated_at": "2026-07-14T16:27:12+00:00"
+}

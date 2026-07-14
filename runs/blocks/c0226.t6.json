@@ -1,0 +1,90 @@
+{
+  "id": "c0226.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "In Polarform sind z₁ = 2 · (cos 30° + i · sin 30°) und z₂ = 3 · (cos 40° + i · sin 40°) gegeben.\n(a) Berechne das Produkt z₁ · z₂ in Polarform.\n(b) Ein Mitschüler behauptet: „Beim Multiplizieren in Polarform multipliziert man die Beträge UND die Argumente.“ Beurteile diese Aussage und korrigiere sie gegebenenfalls.\n(c) Beschreibe in einem Satz, was die Multiplikation mit z₂ geometrisch mit dem Pfeil von z₁ macht.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "FO",
+      "ID"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.OS.7.KOM3.04",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "MAT.OS.7.KOM3.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "(a) Beträge multiplizieren, Argumente ADDIEREN: z₁ · z₂ = (2 · 3) · (cos(30° + 40°) + i · sin(30° + 40°)) = 6 · (cos 70° + i · sin 70°) ≈ 2,05 + 5,64i. (b) Die Aussage ist falsch: die Beträge werden multipliziert, die Argumente aber ADDIERT. Würde man die Argumente multiplizieren, käme 30° · 40° = 1200° heraus — schon die Einheit „Grad mal Grad“ zeigt, dass das nicht sein kann. (c) Die Multiplikation mit z₂ streckt den Pfeil von z₁ auf das Dreifache (Betrag 3) und dreht ihn um 40° gegen den Uhrzeigersinn.",
+    "acceptable_reasoning": "In (b) genügt die klare Unterscheidung „Beträge multiplizieren, Argumente addieren“; die Einheiten-Überlegung ist ein zusätzliches, aber nicht zwingendes Argument.",
+    "rubric": [
+      {
+        "criterion": "Produkt in Polarform",
+        "levels": [
+          "falsch oder kein Ansatz",
+          "Ansatz richtig (Beträge mal, Argumente plus), kleiner Fehler",
+          "z₁ · z₂ = 6 · (cos 70° + i · sin 70°) korrekt"
+        ]
+      },
+      {
+        "criterion": "Beurteilung der Aussage (b)",
+        "levels": [
+          "Aussage übernommen",
+          "als falsch erkannt ohne Korrektur",
+          "als falsch erkannt und korrekt richtiggestellt (Argumente addieren)"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "die Argumente multiplizieren statt sie zu addieren.",
+      "die Beträge addieren statt sie zu multiplizieren.",
+      "im Ergebnis cos und sin vertauschen."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Mathematik",
+  "klasse": 7,
+  "kompetenzbereich": "Komplexe Zahlen",
+  "competences": [
+    "MAT.OS.7.KOM3.04",
+    "MAT.OS.7.KOM3.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "FO",
+    "ID"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0226",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:13+00:00",
+  "updated_at": "2026-07-14T16:27:13+00:00"
+}

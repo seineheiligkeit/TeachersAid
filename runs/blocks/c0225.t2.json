@@ -1,0 +1,68 @@
+{
+  "id": "c0225.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Ein Punkt P wandert auf dem Einheitskreis (Radius 1) gegen den Uhrzeigersinn; zum Drehwinkel α hat er die Koordinaten P = (cos α | sin α).\n(a) Erkläre, warum für jeden Winkel α gilt: −1 ≤ sin α ≤ 1 und −1 ≤ cos α ≤ 1.\n(b) Begründe mit dem Satz von Pythagoras, dass cos²α + sin²α = 1 für JEDEN Winkel α gilt — nicht nur für spitze Winkel.\n(c) Erkläre, warum tan 90° nicht definiert ist.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "DM",
+      "KA"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.OS.5.TRI.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "(a) P liegt stets auf dem Einheitskreis, der in x- und y-Richtung nur von −1 bis 1 reicht; die Koordinaten cos α und sin α können daher betragsmäßig höchstens 1 werden. (b) P = (cos α | sin α) erfüllt die Kreisgleichung x² + y² = 1, also cos²α + sin²α = 1. Das gilt in jedem Quadranten, weil die Koordinaten dort zwar ihr Vorzeichen wechseln, ihre Quadrate aber immer positiv sind. (c) tan 90° = sin 90° / cos 90° = 1 / 0 — Division durch null ist nicht definiert; die Tangensfunktion hat bei 90° eine Polstelle.",
+    "acceptable_reasoning": "Für (b) genügt der Verweis auf die Kreisgleichung bzw. das rechtwinklige Dreieck aus P, seinem Lot auf die x-Achse und dem Radius 1; das Argument muss auch für stumpfe Winkel tragen.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "cos und sin vertauschen: die x-Koordinate ist cos α, die y-Koordinate sin α.",
+      "glauben, cos²α + sin²α = 1 gelte nur für spitze Winkel.",
+      "cos²α als cos(α²) missverstehen — gemeint ist (cos α)²."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Mathematik",
+  "klasse": 5,
+  "kompetenzbereich": "Trigonometrie",
+  "competences": [
+    "MAT.OS.5.TRI.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "DM",
+    "KA"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0225",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:12+00:00",
+  "updated_at": "2026-07-14T16:27:12+00:00"
+}

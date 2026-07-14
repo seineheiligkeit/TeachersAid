@@ -1,0 +1,66 @@
+{
+  "id": "c0205.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Das wellenmechanische Atommodell ordnet die Elektronen eines Atoms in Schalen und Unterschalen (Orbitale vom Typ s, p, d) an. Genau diese Anordnung erklärt den Aufbau des Periodensystems.\na) Gib die vollständige Elektronenkonfiguration von Schwefel (Ordnungszahl Z = 16) an.\nb) Erkläre mithilfe der Konfiguration, warum Schwefel in derselben Hauptgruppe wie Sauerstoff steht und in derselben Periode wie Phosphor und Chlor.\nc) Wie viele Außenelektronen (Valenzelektronen) hat Schwefel, und welche Ladung erwartest du daher für ein einfaches Sulfid-Ion?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "WO"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.OS.7.MOD.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "a) S (Z = 16): 1s² 2s² 2p⁶ 3s² 3p⁴ (Kurzform [Ne] 3s² 3p⁴). b) Schwefel steht in derselben Hauptgruppe wie Sauerstoff, weil beide 6 Valenzelektronen in der Konfiguration ns² np⁴ haben (O: 2s² 2p⁴, S: 3s² 3p⁴) – die Hauptgruppennummer entspricht der Zahl der Außenelektronen. In derselben Periode wie Phosphor und Chlor steht Schwefel, weil bei allen dreien die äußerste besetzte Hauptschale n = 3 ist. c) 6 Valenzelektronen; Schwefel nimmt zum Erreichen der Edelgaskonfiguration (Oktett) 2 Elektronen auf → Sulfid-Ion S²⁻ (Ladung 2−).",
+    "acceptable_reasoning": "Die Kurzform [Ne] 3s² 3p⁴ ist vollwertig. Entscheidend ist, dass Gruppe aus den Valenzelektronen und Periode aus der höchsten Hauptquantenzahl abgeleitet wird.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Häufiger Fehler bei der Konfiguration: die 3p-Unterschale mit 6 statt korrekt 4 Elektronen füllen – 2p ist voll (2p⁶), 3p aber nur 3p⁴.",
+      "Hauptgruppennummer und Periodennummer werden verwechselt: die GRUPPE ergibt sich aus den Valenzelektronen, die PERIODE aus der höchsten Hauptquantenzahl n.",
+      "Vorzeichen der Ionenladung: die Aufnahme von Elektronen ergibt eine negative Ladung (Anion), nicht positiv."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Chemie",
+  "klasse": 7,
+  "kompetenzbereich": "Modellbildung",
+  "competences": [
+    "CHE.OS.7.MOD.03"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "WO"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0205",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:05+00:00",
+  "updated_at": "2026-07-14T16:27:05+00:00"
+}

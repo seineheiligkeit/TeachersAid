@@ -1,0 +1,70 @@
+{
+  "id": "c0221.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Eine kostenlose Taschenlampen-App verlangt beim Installieren Zugriff auf deine Kontakte, deinen Standort und dein Mikrofon. Entscheide begründet: Installierst du sie, lehnst du einzelne Berechtigungen ab oder verzichtest du ganz? Stütze deine Begründung auf die Grundsätze der Datenminimierung und der Zweckbindung.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Installieren, Berechtigungen einschränken oder verzichten? Begründe mit Datenminimierung und Zweckbindung."
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 40.0
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "AG",
+      "RB"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "INF.OS.5.INF.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Eine Taschenlampe braucht technisch weder Kontakte noch Standort noch Mikrofon – die verlangten Berechtigungen stehen in keinem Zusammenhang mit dem Zweck der App (Verstoß gegen Datenminimierung und Zweckbindung). Sinnvoll ist: die App gar nicht installieren oder eine Alternative wählen, die keine unnötigen Rechte verlangt; mindestens jedoch alle drei Berechtigungen ablehnen. Häufig finanzieren sich solche Apps durch den Verkauf gesammelter Daten – die Gratis-App bezahlt man dann mit den eigenen Daten.",
+    "acceptable_reasoning": "Kernargument nötig: Die verlangten Daten haben nichts mit der Funktion zu tun; wer Daten sammelt, die er nicht braucht, verstößt gegen Datenminimierung und Zweckbindung.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Manche argumentieren „ist ja gratis, also passt das“ – herausarbeiten, dass die Bezahlung dann oft in Form von Daten erfolgt.",
+      "Berechtigungen nur ablehnen ist sinnvoll, wenn die App danach noch funktioniert; sonst ist der Verzicht die konsequente Wahl."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Informatik",
+  "klasse": 5,
+  "kompetenzbereich": "Informatik, Mensch und Gesellschaft",
+  "competences": [
+    "INF.OS.5.INF.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "AG",
+    "RB"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0221",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:11+00:00",
+  "updated_at": "2026-07-14T16:27:11+00:00"
+}

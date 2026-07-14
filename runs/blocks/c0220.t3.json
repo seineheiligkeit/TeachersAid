@@ -1,0 +1,107 @@
+{
+  "id": "c0220.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Ein Haushalt hat ein monatliches Nettoeinkommen von 2 400 €. Die monatlichen Ausgaben zeigt die Abbildung.\n\na) Berechne die gesamten monatlichen Ausgaben.\nb) Berechne den monatlichen Saldo (Einnahmen minus Ausgaben) – wie viel kann der Haushalt sparen?\nc) Wie viel spart der Haushalt in einem Jahr, wenn jeden Monat gleich viel übrig bleibt?\nd) Berechne die Sparquote (Erspartes geteilt durch Einnahmen) in Prozent.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "RM"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "HOE.OS.5.RES.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "a) 780 + 360 + 300 + 150 + 330 + 180 = 2 100 € Ausgaben pro Monat. b) Saldo = 2 400 − 2 100 = 300 € Überschuss, den der Haushalt sparen kann. c) 300 € × 12 = 3 600 € pro Jahr. d) Sparquote = 300 / 2 400 = 0,125 = 12,5 %.",
+    "acceptable_reasoning": "Reine Rechenaufgabe; die Teilergebnisse bauen aufeinander auf. Rundung ist hier nicht nötig, da die Zahlen glatt aufgehen.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Beim Aufsummieren der sechs Ausgabenposten leicht einen Posten übersehen – am Ergebnis 2 100 € kontrollieren.",
+      "Sparquote wird auf die AUSGABEN statt auf die EINNAHMEN bezogen – der Nenner ist das Einkommen (2 400 €).",
+      "12,5 % nicht mit 12,5 € verwechseln – die Sparquote ist ein Prozentsatz, kein Eurobetrag."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Haushaltsökonomie und Ernährung",
+  "klasse": 5,
+  "kompetenzbereich": "Ressourcen verantwortungsbewusst managen",
+  "competences": [
+    "HOE.OS.5.RES.04"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "RM"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "lane": null,
+      "intended_claim": null,
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Wohnen",
+          "Lebensmittel",
+          "Mobilität",
+          "Versicherungen",
+          "Freizeit",
+          "Kleidung & Sonstiges"
+        ],
+        "values": [
+          780.0,
+          360.0,
+          300.0,
+          150.0,
+          330.0,
+          180.0
+        ],
+        "title": "Monatliche Ausgaben eines Beispielhaushalts",
+        "xlabel": "Ausgabenbereich",
+        "ylabel": "Euro pro Monat",
+        "log": false
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": true,
+      "caption": "Konstruiertes Beispielbudget zu Übungszwecken – realistische Größenordnungen, aber keine amtliche Statistik."
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0220",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:11+00:00",
+  "updated_at": "2026-07-14T16:27:11+00:00"
+}

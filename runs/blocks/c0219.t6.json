@@ -1,0 +1,92 @@
+{
+  "id": "c0219.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "source_critique",
+    "prompt": "Ein Modeunternehmen wirbt so:\n\n„Unser neues T-Shirt ist zu 100 % klimaneutral – kauf ohne schlechtes Gewissen!“\nIm Kleingedruckten steht: „Klimaneutral durch Ausgleichszahlungen (CO₂-Zertifikate).“\n\na) Was bedeutet „klimaneutral durch Ausgleichszahlungen“ tatsächlich – und worin unterscheidet es sich von tatsächlich vermiedenen Emissionen?\nb) Beurteile die Aussage „kauf ohne schlechtes Gewissen“: Welche Wirkung soll sie erzielen?\nc) Welche Informationen fehlen, um das Versprechen überprüfen zu können? Wie glaubwürdig ist die Werbung insgesamt?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "CC",
+      "KQ"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "HOE.OS.5.KON.03",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "HOE.OS.5.KON.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "a) „Klimaneutral durch Ausgleichszahlungen“ heißt: Das Unternehmen vermeidet die Emissionen nicht unbedingt, sondern kauft Zertifikate, mit denen anderswo Emissionen eingespart oder gebunden werden sollen (z. B. Aufforstung). Das ist etwas anderes als tatsächlich reduzierte Emissionen in der eigenen Produktion; die Wirksamkeit vieler Kompensationsprojekte ist zudem umstritten. b) „Kauf ohne schlechtes Gewissen“ soll ein positives Gefühl erzeugen und zum Kauf – womöglich zu MEHR Konsum – anregen; das Umweltargument wird zum Verkaufsargument (typisches Greenwashing-Muster). c) Es fehlen: die tatsächlichen Emissionen des Produkts, um welche Kompensationsprojekte es sich handelt und wie sie geprüft werden, ob und wie stark in der Produktion selbst reduziert wurde, sowie unabhängige Belege/Siegel. Ohne diese Angaben ist die Werbung wenig glaubwürdig – eine überprüfbare Reduktion wäre aussagekräftiger als ein pauschales 100-%-Versprechen.",
+    "acceptable_reasoning": "Kernpunkte: Kompensation ist nicht gleich Vermeidung; „ohne schlechtes Gewissen“ wirkt konsumsteigernd; die Behauptung ist ohne überprüfbare Angaben schwach belegt. Eine gut begründete Gesamtbewertung ist gültig.",
+    "rubric": [
+      {
+        "criterion": "Kompensation vs. Vermeidung",
+        "levels": [
+          "Unterschied nicht erkannt",
+          "Unterschied angedeutet",
+          "Unterschied klar erklärt",
+          "Unterschied erklärt und kritisch auf die Werbung bezogen"
+        ]
+      },
+      {
+        "criterion": "Prüfung der Glaubwürdigkeit",
+        "levels": [
+          "Keine fehlenden Infos genannt",
+          "Eine Lücke genannt",
+          "Mehrere Lücken benannt",
+          "Lücken benannt und zu einem begründeten Gesamturteil verdichtet"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Nicht bei „klingt gut“ stehen bleiben – der Unterschied zwischen Vermeidung und Kompensation ist der Kern der Aufgabe.",
+      "„100 %“ und „klimaneutral“ sind Werbeworte ohne Beleg, solange die Datengrundlage fehlt.",
+      "Greenwashing heißt nicht, dass das Produkt zwingend schlecht ist – sondern dass das Umweltversprechen nicht überprüfbar dargestellt ist."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "source_critique",
+  "subject": "Haushaltsökonomie und Ernährung",
+  "klasse": 5,
+  "kompetenzbereich": "Das Konzept des Consumer Citizenship erkennen, reflektieren und in Entscheidungen einbinden",
+  "competences": [
+    "HOE.OS.5.KON.03",
+    "HOE.OS.5.KON.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "CC",
+    "KQ"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0219",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:10+00:00",
+  "updated_at": "2026-07-14T16:27:10+00:00"
+}

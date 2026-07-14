@@ -1,0 +1,137 @@
+{
+  "id": "c0217.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_analysis",
+    "prompt": "Abbildung 1 zeigt, wie sich der Anteil der Stadtbevölkerung weltweit über die Jahrzehnte entwickelt hat.\n\na) Beschreibe den Verlauf in eigenen Worten: Wie hat sich der Anteil seit 1960 verändert?\nb) In welchem Zeitraum lebte erstmals mehr als die Hälfte der Weltbevölkerung in Städten? Lies den ungefähren Wert dafür ab.\nc) Nenne zwei Gründe (einen Push- und einen Pull-Faktor), die diesen weltweiten Trend antreiben.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "SYN"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.OS.8.STA.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "a) Der Anteil der Stadtbevölkerung ist seit 1960 kontinuierlich gestiegen – von rund einem Drittel auf deutlich über die Hälfte; die Menschheit ist von einer überwiegend ländlichen zu einer überwiegend städtischen geworden. b) Um das Jahr 2007/2008 wurde die Marke von 50 % überschritten; im Diagramm liegt der Wert um 2010 erstmals über 50 %. c) Push-Faktoren: Armut, fehlende Arbeitsplätze und Perspektiven, Mechanisierung der Landwirtschaft, Naturgefahren auf dem Land. Pull-Faktoren: Arbeitsplätze, höhere Löhne, Bildung, medizinische Versorgung, kulturelle Angebote, Anonymität/Freiheit.",
+    "acceptable_reasoning": "Für b) ist ein abgelesener Näherungswert (ca. 2007–2010) akzeptabel; exakte Jahreszahlen werden nicht erwartet.",
+    "rubric": [
+      {
+        "criterion": "Trendbeschreibung",
+        "levels": [
+          "Keine oder falsche Aussage",
+          "Richtung genannt ohne Zeitbezug",
+          "Verlauf mit Zeitangaben beschrieben",
+          "Präzise Beschreibung inkl. Größenordnung und Wendepunkt (50 %-Marke)"
+        ]
+      },
+      {
+        "criterion": "Push/Pull",
+        "levels": [
+          "Kein Faktor",
+          "Ein Faktor genannt",
+          "Je ein Push- und Pull-Faktor genannt",
+          "Faktoren benannt und der Richtung (Push/Pull) korrekt zugeordnet und erklärt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Häufige Verwechslung: hoher Verstädterungsgrad heißt nicht automatisch schnelles Wachstum – der Anteil kann hoch und zugleich fast konstant sein.",
+      "Schüler:innen nennen oft nur Pull-Faktoren ('in der Stadt ist es besser') – der Push vom Land ist ebenso wichtig."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "data_analysis",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 8,
+  "kompetenzbereich": "Städte als Lebensräume und ökonomische Zentren untersuchen",
+  "competences": [
+    "GWB.OS.8.STA.03"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "SYN"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "lane": null,
+      "intended_claim": null,
+      "medium": "visual",
+      "generator": "matplotlib:line",
+      "spec": {
+        "title": "Anteil der Stadtbevölkerung weltweit (in %)",
+        "xlabel": "Jahr",
+        "ylabel": "Anteil in %",
+        "log": false,
+        "categories": [
+          "1960",
+          "1970",
+          "1980",
+          "1990",
+          "2000",
+          "2010",
+          "2020",
+          "2023"
+        ],
+        "values": [
+          34.2,
+          36.4,
+          39.5,
+          42.8,
+          46.8,
+          51.8,
+          56.4,
+          57.3
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "worldbank_urbanisierung",
+        "series": "welt_verlauf",
+        "note": null,
+        "title": "Verstädterung im Ländervergleich (Anteil Stadtbevölkerung)",
+        "url": "https://data.worldbank.org/indicator/SP.URB.TOTL.IN.ZS",
+        "attribution": "Datenquelle: World Bank – data.worldbank.org (SP.URB.TOTL.IN.ZS, CC BY 4.0)",
+        "stand": "2024"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0217",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:08+00:00",
+  "updated_at": "2026-07-14T16:27:08+00:00"
+}

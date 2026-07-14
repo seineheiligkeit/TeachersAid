@@ -1,0 +1,431 @@
+{
+  "subject": "Haushaltsökonomie und Ernährung",
+  "klasse": 5,
+  "kompetenzbereich": "Ressourcen verantwortungsbewusst managen",
+  "title": "Den Haushalt steuern: Zeit, Geld und Ressourcen im Griff",
+  "kernfrage": "Wie behältst du in einem Haushalt den Überblick über Geld, Zeit und andere Ressourcen – und triffst Entscheidungen, die kurzfristig und langfristig aufgehen?",
+  "body": {
+    "intro": [
+      {
+        "role": "info",
+        "id": "intro1",
+        "kind": "prose",
+        "content": "Ein Haushalt ist mehr als ein Ort zum Wohnen: Er ist ein kleines Wirtschaftssystem, das ständig Ressourcen einsetzt – Geld, Zeit, Güter, Umwelt und Arbeitskraft. Wer diese Ressourcen bewusst plant, gerät seltener in Stress und Geldnot und wirtschaftet zugleich schonender. In diesem Arbeitsblatt verstehst du den Haushalt als System, rechnest mit einem echten Monatsbudget, planst kurz-, mittel- und langfristig und triffst Konsumentscheidungen, die nicht nur heute, sondern über Jahre günstig sind."
+      }
+    ],
+    "data_figures": [
+      {
+        "id": "abb1",
+        "intent": "comparison",
+        "title": "Monatliche Ausgaben eines Beispielhaushalts",
+        "xlabel": "Ausgabenbereich",
+        "ylabel": "Euro pro Monat",
+        "categories": [
+          "Wohnen",
+          "Lebensmittel",
+          "Mobilität",
+          "Versicherungen",
+          "Freizeit",
+          "Kleidung & Sonstiges"
+        ],
+        "values": [
+          780,
+          360,
+          300,
+          150,
+          330,
+          180
+        ],
+        "illustrative": true,
+        "caption": "Konstruiertes Beispielbudget zu Übungszwecken – realistische Größenordnungen, aber keine amtliche Statistik."
+      }
+    ],
+    "assets": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Der Haushalt – ein System aus vielen Ressourcen",
+        "throughline": "Schüler:innen verstehen den privaten Haushalt als sozio-ökonomisches und reproduktives System und erkennen, dass jede Konsumentscheidung mehrere Ressourcen zugleich verbraucht.",
+        "talking_points": [
+          "Ein Haushalt produziert nicht für den Markt, sondern „reproduziert“ die Menschen, die in ihm leben (Versorgung, Pflege, Erholung) – reproduktive Arbeit ist unbezahlt, aber unverzichtbar.",
+          "Die fünf Ressourcen Zeit, Geld, Güter, Umwelt und Arbeitskraft hängen zusammen: Man kann eine oft durch eine andere ersetzen (z. B. Zeit sparen durch Geld – Lieferdienst statt Selberkochen).",
+          "Jeder Konsum verbraucht Ressourcen – hinter einem Produkt stecken Material, Energie und Arbeit; „billig“ heißt nicht „ressourcenarm“.",
+          "Haushalte wirken auf Wirtschaft und Gesellschaft zurück (Nachfrage, Arbeitskräfte, Umweltbelastung) – sie sind keine isolierten Inseln."
+        ],
+        "extensions": [
+          "Diskutiert, wie viel die unbezahlte Haus- und Sorgearbeit eines Haushalts wert wäre, wenn man sie zu Marktpreisen einkaufen müsste.",
+          "Untersucht, wie sich das Ressourcenverhältnis in verschiedenen Lebensphasen verschiebt (Schüler:in – Berufseinstieg – Familie – Pension)."
+        ],
+        "blocks": [
+          {
+            "role": "info",
+            "id": "ib1",
+            "kind": "key_fact",
+            "content": "Der private Haushalt ist ein sozio-ökonomisches System: Er verwaltet Einnahmen und Ausgaben wie ein kleiner Betrieb, arbeitet aber nicht für den Gewinn, sondern für die Versorgung und das Wohlergehen seiner Mitglieder (reproduktive Funktion). Dafür setzt er fünf Ressourcen ein – Zeit, Geld, Güter, Umwelt und Arbeitskraft. Diese Ressourcen sind knapp und teilweise gegeneinander tauschbar: Wer Zeit sparen will, gibt oft mehr Geld aus, und wer Geld sparen will, investiert mehr Zeit oder Arbeitskraft. Jede Konsumentscheidung greift zugleich auf mehrere dieser Ressourcen zu.",
+            "watch_outs": [],
+            "asset_refs": []
+          },
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "matching",
+            "prompt": "Ordne jeder Haushaltsressource ein typisches Beispiel zu.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Zeit",
+                "Geld",
+                "Güter",
+                "Umwelt",
+                "Arbeitskraft"
+              ],
+              "right": [
+                "Zwei Stunden am Samstag für den Wocheneinkauf und das Kochen.",
+                "Das monatliche Nettoeinkommen, aus dem alle Ausgaben bestritten werden.",
+                "Der vorhandene Kühlschrank, die Küchenmaschine und der Vorrat im Regal.",
+                "Das Wasser, die Energie und die Rohstoffe, die beim Wohnen und Kochen verbraucht werden.",
+                "Die körperliche und geistige Leistung beim Putzen, Planen und Betreuen."
+              ]
+            },
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Ressource",
+                "Beispiel"
+              ],
+              "rows": 5
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "RM"
+            ],
+            "serves": [
+              {
+                "competence_id": "HOE.OS.5.RES.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 7,
+            "asset_refs": [],
+            "answer_key": "Zeit → zwei Stunden für Einkauf und Kochen. Geld → das monatliche Nettoeinkommen. Güter → Kühlschrank, Küchenmaschine, Vorrat. Umwelt → Wasser, Energie, Rohstoffe. Arbeitskraft → körperliche und geistige Leistung beim Putzen, Planen und Betreuen.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "„Güter“ und „Geld“ werden verwechselt: Güter sind vorhandene Gegenstände/Vorräte, Geld ist das Zahlungsmittel.",
+              "„Umwelt“ als Ressource wird oft übersehen – Wasser, Energie und Rohstoffe sind ein knapper Einsatzfaktor des Haushalts.",
+              "Arbeitskraft umfasst auch geistige Arbeit (Planen, Organisieren), nicht nur körperliche."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "open_response",
+            "prompt": "Erkläre am Beispiel „ein Abendessen für die Familie zubereiten“, warum der Haushalt ein System ist, in dem mehrere Ressourcen zugleich zum Einsatz kommen.\n\na) Zeige für dieses Beispiel, welche der fünf Ressourcen (Zeit, Geld, Güter, Umwelt, Arbeitskraft) jeweils verbraucht werden.\nb) Erkläre den Zusammenhang zwischen Konsum und Ressourcenverbrauch: Wieso kostet auch eine scheinbar kleine Alltagshandlung mehr als nur Geld?\nc) Beschreibe eine Situation, in der man eine Ressource bewusst durch eine andere ersetzt.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 60
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "RM"
+            ],
+            "serves": [
+              {
+                "competence_id": "HOE.OS.5.RES.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 11,
+            "asset_refs": [],
+            "answer_key": "a) Zeit: Planen, Einkaufen, Kochen, Aufräumen. Geld: Kosten der Zutaten. Güter: Herd, Töpfe, vorhandene Vorräte. Umwelt: Energie zum Kochen, Wasser, Verpackungsabfall. Arbeitskraft: körperliche und geistige Leistung beim Zubereiten und Organisieren. b) Konsum bedeutet immer Ressourcenverbrauch: Hinter den Zutaten stecken Anbau, Transport und Verpackung (Umwelt, fremde Arbeit), das Kochen verbraucht Energie und die eigene Zeit und Arbeitskraft. Der Preis zeigt nur den Geldanteil; Zeit, Energie und Umweltwirkung bleiben im Kassenbon unsichtbar. c) Beispiel: Statt selbst zu kochen (viel Zeit/Arbeitskraft, wenig Geld) bestellt man beim Lieferdienst (viel Geld, wenig Zeit) – Zeit wird durch Geld ersetzt. Umgekehrt spart Vorkochen am Wochenende an Werktagen Zeit.",
+            "acceptable_reasoning": "Bewertet wird, dass mehrere Ressourcen konkret zugeordnet, der Zusammenhang Konsum–Ressourcenverbrauch über den reinen Geldpreis hinaus erklärt und ein sinnvoller Ressourcentausch gezeigt wird.",
+            "watch_outs": [
+              "Oft wird nur „Geld“ genannt – die unsichtbaren Ressourcen (Zeit, Energie, Arbeitskraft, Umwelt) müssen ausdrücklich benannt werden.",
+              "Der Ressourcentausch (Zeit gegen Geld usw.) wird häufig übersehen; er ist der Kern des Haushaltsmanagements.",
+              "„Reproduktiv“ meint hier die Versorgung der Menschen, nicht Fortpflanzung – bei Bedarf klären."
+            ],
+            "rubric": [
+              {
+                "criterion": "Ressourcenzuordnung",
+                "levels": [
+                  "Nur Geld genannt",
+                  "Zwei bis drei Ressourcen",
+                  "Vier bis fünf Ressourcen korrekt zugeordnet"
+                ]
+              },
+              {
+                "criterion": "Zusammenhang Konsum–Ressourcen",
+                "levels": [
+                  "Nicht erklärt",
+                  "Angedeutet",
+                  "Klar erklärt",
+                  "Erklärt und mit einem Ressourcentausch veranschaulicht"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Das Haushaltsbudget im Griff",
+        "throughline": "Schüler:innen rechnen mit einem realistischen Monatsbudget, ermitteln Saldo und Sparquote und unterscheiden fixe von variablen Kosten, um Sparpotenziale zu erkennen.",
+        "talking_points": [
+          "Ein Budget stellt Einnahmen und Ausgaben gegenüber; der Saldo (Einnahmen minus Ausgaben) zeigt, ob gespart werden kann oder Schulden drohen.",
+          "Fixkosten fallen regelmäßig und kaum veränderbar an (Miete, Versicherung), variable Kosten sind kurzfristig beeinflussbar (Freizeit, Kleidung) – Sparen setzt meist bei den variablen Kosten an.",
+          "Die Sparquote (Erspartes geteilt durch Einnahmen) macht Haushalte vergleichbar, unabhängig von der Einkommenshöhe.",
+          "Die 50-30-20-Faustregel (50 % Grundbedürfnisse, 30 % Wünsche, 20 % Sparen) ist eine Orientierung, kein Gesetz."
+        ],
+        "extensions": [
+          "Führt zwei Wochen ein ehrliches Haushaltsbuch (auch kleine Beträge) und vergleicht Schätzung und Wirklichkeit.",
+          "Rechnet durch, wie sich der Saldo verändert, wenn die Miete um 10 % steigt – welche Posten müssten dann angepasst werden?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "calculation",
+            "prompt": "Ein Haushalt hat ein monatliches Nettoeinkommen von 2 400 €. Die monatlichen Ausgaben zeigt die Abbildung.\n\na) Berechne die gesamten monatlichen Ausgaben.\nb) Berechne den monatlichen Saldo (Einnahmen minus Ausgaben) – wie viel kann der Haushalt sparen?\nc) Wie viel spart der Haushalt in einem Jahr, wenn jeden Monat gleich viel übrig bleibt?\nd) Berechne die Sparquote (Erspartes geteilt durch Einnahmen) in Prozent.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "apply",
+            "dimensions": [
+              "RM"
+            ],
+            "serves": [
+              {
+                "competence_id": "HOE.OS.5.RES.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [
+              "abb1"
+            ],
+            "answer_key": "a) 780 + 360 + 300 + 150 + 330 + 180 = 2 100 € Ausgaben pro Monat. b) Saldo = 2 400 − 2 100 = 300 € Überschuss, den der Haushalt sparen kann. c) 300 € × 12 = 3 600 € pro Jahr. d) Sparquote = 300 / 2 400 = 0,125 = 12,5 %.",
+            "acceptable_reasoning": "Reine Rechenaufgabe; die Teilergebnisse bauen aufeinander auf. Rundung ist hier nicht nötig, da die Zahlen glatt aufgehen.",
+            "watch_outs": [
+              "Beim Aufsummieren der sechs Ausgabenposten leicht einen Posten übersehen – am Ergebnis 2 100 € kontrollieren.",
+              "Sparquote wird auf die AUSGABEN statt auf die EINNAHMEN bezogen – der Nenner ist das Einkommen (2 400 €).",
+              "12,5 % nicht mit 12,5 € verwechseln – die Sparquote ist ein Prozentsatz, kein Eurobetrag."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "data_analysis",
+            "prompt": "Sieh dir das Ausgabenprofil (Abbildung) noch einmal an.\n\na) Teile die sechs Ausgabenbereiche in Fixkosten (regelmäßig, kaum veränderbar) und variable Kosten (kurzfristig beeinflussbar) ein und berechne jeweils die Summe.\nb) Welche zwei Bereiche bieten am ehesten Sparpotenzial? Begründe.\nc) Vergleiche das Budget mit der 50-30-20-Faustregel (50 % Grundbedürfnisse, 30 % Wünsche, 20 % Sparen). Was fällt auf?",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 60
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "RM",
+              "KQ"
+            ],
+            "serves": [
+              {
+                "competence_id": "HOE.OS.5.RES.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 11,
+            "asset_refs": [
+              "abb1"
+            ],
+            "answer_key": "a) Fixkosten (regelmäßig, vertraglich): Wohnen 780 + Versicherungen 150 + Mobilität 300 (z. B. Öffi-Jahreskarte) = 1 230 €. Variable Kosten: Lebensmittel 360 + Freizeit 330 + Kleidung & Sonstiges 180 = 870 €. (Zusammen 2 100 €.) b) Sparpotenzial vor allem bei Freizeit (330 €) und Kleidung/Sonstiges (180 €), da variabel und kurzfristig steuerbar; auch bei Lebensmitteln (Planung, weniger Wegwerfen). Wohnen ist nur langfristig veränderbar. c) 50-30-20 auf 2 400 € wären 1 200 € Grundbedürfnisse, 720 € Wünsche, 480 € Sparen. Der Haushalt spart nur 300 € (12,5 %) statt der angepeilten 480 € (20 %) – Sparen liegt unter der Faustregel, während die Fixkosten (v. a. Wohnen) hoch sind.",
+            "acceptable_reasoning": "Die Einteilung in fix/variabel kann bei Mobilität begründet abweichen (Jahreskarte = fix, einzelne Fahrten = variabel). Entscheidend sind korrekte Summen und eine schlüssige Begründung des Sparpotenzials.",
+            "watch_outs": [
+              "Fixkosten sind nicht „unveränderbar“, sondern nur kurzfristig kaum beeinflussbar – langfristig kann man z. B. umziehen oder den Tarif wechseln.",
+              "Beim 50-30-20-Vergleich die Prozentwerte auf die EINNAHMEN beziehen, nicht auf die Ausgaben.",
+              "Sparpotenzial nicht nur bei den größten Posten suchen: Der größte Posten (Wohnen) ist am schwersten zu senken."
+            ],
+            "rubric": [
+              {
+                "criterion": "Fix/variabel mit Summen",
+                "levels": [
+                  "Keine korrekte Einteilung",
+                  "Einteilung ohne korrekte Summen",
+                  "Einteilung mit korrekten Summen",
+                  "Korrekt und mit begründeter Behandlung der Mobilität"
+                ]
+              },
+              {
+                "criterion": "Vergleich mit Faustregel",
+                "levels": [
+                  "Kein Vergleich",
+                  "Nur nacherzählt",
+                  "Rechnerisch verglichen",
+                  "Verglichen und Abweichung interpretiert"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "Kurz-, mittel- und langfristig vorsorgen",
+        "throughline": "Schüler:innen planen mit dem Überschuss vorausschauend, bilden einen Notgroschen, unterscheiden Zeit-Horizonte des Finanzmanagements und erkennen, dass der günstigste Kaufpreis nicht die günstigste Entscheidung sein muss.",
+        "talking_points": [
+          "Finanzmanagement hat drei Horizonte: kurzfristig (liquider Notgroschen für Unerwartetes), mittelfristig (geplante Anschaffungen in ein bis fünf Jahren) und langfristig (Vorsorge, Wohnen).",
+          "Ein Notgroschen von etwa drei Monatsausgaben federt Notfälle ab (Reparatur, Jobverlust) und verhindert teure Schulden.",
+          "„Sparen“ heißt nicht nur weniger ausgeben, sondern klüger kaufen: Folgekosten und Lebensdauer entscheiden über die tatsächliche Wirtschaftlichkeit.",
+          "Aktive Marktteilnahme (vergleichen, Angebote prüfen, Tarife wechseln) ist Teil des Ressourcenmanagements."
+        ],
+        "extensions": [
+          "Vergleicht Konto- und Sparformen: Wo bleibt der Notgroschen jederzeit verfügbar, wo bekommt man mehr Zinsen, und welcher Zielkonflikt steckt dahinter?",
+          "Recherchiert, wie stark Inflation über zehn Jahre die Kaufkraft eines untätig liegenden Sparbetrags mindert."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "calculation",
+            "prompt": "Der Haushalt aus Abschnitt 2 hat monatliche Ausgaben von 2 100 € und kann 300 € pro Monat zurücklegen.\n\na) Fachleute empfehlen einen Notgroschen von etwa drei Monatsausgaben. Wie hoch ist dieser Zielbetrag?\nb) Wie viele Monate dauert es, den Notgroschen anzusparen, wenn monatlich 300 € zurückgelegt werden?\nc) Sobald der Notgroschen steht, wird der volle Sparbetrag für ein mittelfristiges Ziel von 1 800 € verwendet. Wie lange dauert das?\nd) Ordne die drei Ziele Notgroschen, Urlaubsreise (nächstes Jahr) und private Pensionsvorsorge jeweils dem passenden Zeit-Horizont (kurz-, mittel-, langfristig) zu.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "apply",
+            "dimensions": [
+              "RM"
+            ],
+            "serves": [
+              {
+                "competence_id": "HOE.OS.5.RES.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "a) Notgroschen = 3 × 2 100 € = 6 300 €. b) 6 300 € / 300 € = 21 Monate (etwa ein Jahr und neun Monate). c) 1 800 € / 300 € = 6 Monate. d) Notgroschen = kurzfristig (jederzeit verfügbar); Urlaubsreise im nächsten Jahr = mittelfristig; private Pensionsvorsorge = langfristig.",
+            "acceptable_reasoning": "Der Notgroschen wird hier auf die Ausgaben (2 100 €) bezogen; ein Bezug auf das Einkommen (drei Monatseinkommen) ist als Variante akzeptabel, wenn er konsequent durchgerechnet wird.",
+            "watch_outs": [
+              "Drei Monatsausgaben (2 100 €) nicht mit drei Monatseinkommen (2 400 €) verwechseln – die Aufgabe nennt Ausgaben.",
+              "21 Monate nicht auf „21 €“ oder „21 Jahre“ verkürzen – Einheit beachten.",
+              "Der Notgroschen gehört auf ein jederzeit verfügbares Konto, nicht in eine langfristig gebundene Anlage."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "decision_scenario",
+            "prompt": "Zwei Wasserkocher stehen zur Wahl:\n\n- Gerät A: 40 € Kaufpreis, hält ca. 2 Jahre, Stromverbrauch rund 250 kWh pro Jahr.\n- Gerät B: 120 € Kaufpreis, hält ca. 8 Jahre, Stromverbrauch rund 150 kWh pro Jahr.\n\nStrompreis: 0,25 € pro kWh. Betrachtungszeitraum: 8 Jahre.\n\na) Berechne für beide Geräte die Gesamtkosten über 8 Jahre (Anschaffungen inklusive nötiger Neukäufe plus Stromkosten).\nb) Welches Gerät ist über 8 Jahre günstiger und um wie viel?\nc) Erkläre, warum der niedrigste Kaufpreis nicht die wirtschaftlichste Entscheidung sein muss – und welche Ressourcen neben dem Geld hier eine Rolle spielen.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Billiger Wasserkocher (40 €, 2 Jahre, 250 kWh/Jahr) gegen ein hochwertiges Gerät (120 €, 8 Jahre, 150 kWh/Jahr) bei 0,25 €/kWh über 8 Jahre – was ist wirtschaftlicher?"
+            },
+            "response": {
+              "mode": "box",
+              "min_height_mm": 65
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "RM",
+              "CC"
+            ],
+            "serves": [
+              {
+                "competence_id": "HOE.OS.5.RES.05",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "HOE.OS.5.RES.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 13,
+            "asset_refs": [],
+            "answer_key": "a) Gerät A: In 8 Jahren sind 4 Geräte nötig (alle 2 Jahre neu) → 4 × 40 = 160 € Anschaffung; Strom 250 kWh × 0,25 € = 62,50 € pro Jahr × 8 = 500 €; gesamt 660 €. Gerät B: 1 Gerät → 120 € Anschaffung; Strom 150 kWh × 0,25 € = 37,50 € pro Jahr × 8 = 300 €; gesamt 420 €. b) Gerät B ist über 8 Jahre um 660 − 420 = 240 € günstiger, obwohl sein Kaufpreis dreimal so hoch ist. c) Der niedrige Kaufpreis von A täuscht: Kurze Lebensdauer (häufige Neukäufe) und höherer Stromverbrauch erzeugen hohe Folgekosten. Wirtschaftlichkeit bemisst sich an den Gesamtkosten über die Nutzungsdauer. Neben Geld spielen weitere Ressourcen eine Rolle: Vier statt einem Gerät bedeuten mehr Material, Energie und Abfall (Umwelt/Güter) sowie mehr Zeit für Ersatzkäufe.",
+            "acceptable_reasoning": "Die Rechnung muss die Neukäufe von Gerät A und die Stromkosten beider Geräte enthalten; das Ergebnis (A 660 €, B 420 €, Differenz 240 € zugunsten B) ist eindeutig. Bei c) zählt die Verknüpfung von Folgekosten und weiterem Ressourcenverbrauch.",
+            "watch_outs": [
+              "Häufigster Fehler: Nur den Kaufpreis vergleichen und die Ersatzkäufe von Gerät A übersehen (in 8 Jahren viermal 40 €).",
+              "Stromkosten nicht vergessen – über 8 Jahre sind sie der größte Posten.",
+              "„Teurer = ökologischer“ gilt nicht automatisch; hier ist B günstiger UND ressourcenschonender, weil langlebiger und sparsamer – das muss begründet werden, nicht behauptet."
+            ],
+            "rubric": [
+              {
+                "criterion": "Vollständige Kostenrechnung",
+                "levels": [
+                  "Nur Kaufpreise verglichen",
+                  "Ein Kostenbestandteil fehlt",
+                  "Anschaffungen und Strom beider Geräte korrekt",
+                  "Korrekt und Differenz (240 €) sauber ausgewiesen"
+                ]
+              },
+              {
+                "criterion": "Begründung der Wirtschaftlichkeit",
+                "levels": [
+                  "Keine Begründung",
+                  "Nur Preis genannt",
+                  "Folgekosten erklärt",
+                  "Folgekosten erklärt und weitere Ressourcen (Umwelt, Zeit) einbezogen"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "create_produce",
+            "prompt": "Zwei Personen teilen sich einen Haushalt. Entwirf einen Wochenplan, der die wiederkehrenden Aufgaben (Einkauf, Kochen, Geschirr, Wäsche, Bad/WC reinigen, Müll/Recycling) sinnvoll auf die Woche und auf beide Personen verteilt.\n\n- Nutze die Ressource Zeit klug: bündle Wege und Arbeiten (z. B. Großeinkauf statt täglich kleiner Einkäufe).\n- Berücksichtige mindestens eine ergonomische Regel (rückenschonendes Arbeiten) und benenne sie.\n- Berücksichtige mindestens eine Hygieneregel (z. B. beim Umgang mit Lebensmitteln) und benenne sie.\n- Begründe kurz, warum dein Plan Zeit spart und die Gesundheit schützt.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 80
+            },
+            "cognitive_level": "create",
+            "dimensions": [
+              "RM"
+            ],
+            "serves": [
+              {
+                "competence_id": "HOE.OS.5.RES.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 14,
+            "asset_refs": [],
+            "answer_key": "Keine Musterlösung; bewertet werden eine sinnvolle, faire Aufgabenverteilung, Zeitbündelung sowie je eine korrekte ergonomische und hygienische Regel mit Begründung. Beispiel: Wocheneinkauf gebündelt am Freitag (spart Wege/Zeit), feste Koch- und Putztage im Wechsel zwischen beiden Personen, Wäsche zweimal pro Woche. Ergonomie – z. B. Arbeitsfläche etwa auf Höhe knapp unter den Ellbogen wählen und schwere Lasten nah am Körper und mit geradem Rücken heben (schont die Wirbelsäule). Hygiene – z. B. für rohes Fleisch und für Gemüse getrennte Schneidbretter verwenden und die Kühlkette einhalten (leicht Verderbliches rasch unter 5 °C lagern), um Kreuzkontamination und Keimwachstum zu verhindern. Begründung: Bündeln spart Zeit und Wege; ergonomisches Arbeiten beugt Rückenbeschwerden vor; Hygieneregeln schützen vor Lebensmittelinfektionen.",
+            "acceptable_reasoning": "Der Plan muss umsetzbar und fair sein und ausdrücklich je eine korrekte Ergonomie- und Hygieneregel mit kurzer Begründung enthalten. Zeitbündelung soll erkennbar sein.",
+            "watch_outs": [
+              "Häufig fehlt die Begründung: Eine Regel bloß zu nennen genügt nicht – der Gesundheits- bzw. Zeitnutzen muss erklärt werden.",
+              "Getrennte Schneidbretter und Kühlkette schützen vor Keimen wie Salmonellen – ein häufig unterschätzter Punkt.",
+              "Ergonomie heißt nicht „langsam“, sondern rückenschonend arbeiten (Arbeitshöhe, nah am Körper heben) – Zeitersparnis und Gesundheit schließen sich nicht aus."
+            ],
+            "rubric": [
+              {
+                "criterion": "Aufgabenverteilung und Zeitbündelung",
+                "levels": [
+                  "Kein umsetzbarer Plan",
+                  "Plan ohne erkennbare Zeitlogik",
+                  "Sinnvoller, fairer Plan",
+                  "Fairer Plan mit klarer Zeitbündelung"
+                ]
+              },
+              {
+                "criterion": "Ergonomie- und Hygieneregel",
+                "levels": [
+                  "Keine der beiden",
+                  "Eine Regel genannt",
+                  "Beide Regeln genannt",
+                  "Beide Regeln korrekt benannt und begründet"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

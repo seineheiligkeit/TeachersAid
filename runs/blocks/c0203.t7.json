@@ -1,0 +1,102 @@
+{
+  "id": "c0203.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Steigt der Blutzucker nach dem Essen, muss der Körper ihn wieder senken; sinkt er zu stark, muss er ihn anheben. Zwei Hormone aus der Bauchspeicheldrüse steuern das: Insulin senkt den Blutzucker, Glukagon hebt ihn.\n\nEntwirf ein beschriftetes Regelkreis-Schema (Kreislauf mit Pfeilen) für die Blutzuckerregelung. Zeige beide Richtungen (zu hoch / zu niedrig), das jeweils ausgeschüttete Hormon und seine Wirkung, und erkläre in zwei bis drei Sätzen, warum man das eine „negative Rückkopplung“ nennt.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 90.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.OS.6.KOM2.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "BIO.OS.x.FAC.03",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "BIO.OS.x.FAC.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Erwartetes Schema (Kreislauf): Blutzucker zu hoch (nach dem Essen) → Bauchspeicheldrüse schüttet Insulin aus → Körperzellen nehmen Glukose auf, Leber speichert sie als Glykogen → Blutzucker sinkt auf den Normalwert. Blutzucker zu niedrig → Bauchspeicheldrüse schüttet Glukagon aus → Leber baut Glykogen ab und gibt Glukose ins Blut → Blutzucker steigt auf den Normalwert. Negative Rückkopplung: Das Ergebnis (veränderter Blutzucker) wirkt auf seine eigene Ursache zurück und dämpft die Abweichung – das System pendelt sich immer wieder auf den Sollwert ein, ähnlich wie ein Thermostat.",
+    "acceptable_reasoning": "Darstellungen dürfen unterschiedlich aussehen; korrekt ist jedes Schema, das beide Richtungen, das richtige Hormon je Richtung und die Rückwirkung auf den Blutzucker zeigt.",
+    "rubric": [
+      {
+        "criterion": "Beide Regelrichtungen dargestellt",
+        "levels": [
+          "nur eine Richtung",
+          "beide angedeutet, lückenhaft",
+          "beide Richtungen vollständig mit Auslöser und Wirkung"
+        ]
+      },
+      {
+        "criterion": "Hormone korrekt zugeordnet",
+        "levels": [
+          "vertauscht/fehlend",
+          "eines korrekt",
+          "Insulin (senkt) und Glukagon (hebt) korrekt"
+        ]
+      },
+      {
+        "criterion": "Prinzip der negativen Rückkopplung erklärt",
+        "levels": [
+          "nicht erklärt",
+          "Rückkehr zum Sollwert genannt",
+          "Rückwirkung auf die Ursache als dämpfend erklärt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Insulin und Glukagon nicht vertauschen: Insulin senkt („into the cells“), Glukagon hebt den Blutzucker.",
+      "„Negativ“ heißt nicht „schlecht“, sondern dämpfend/entgegenwirkend – die Regelgröße wird zum Sollwert zurückgeführt."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 6,
+  "kompetenzbereich": "Kompetenzmodul 3",
+  "competences": [
+    "BIO.OS.6.KOM2.02",
+    "BIO.OS.x.FAC.03",
+    "BIO.OS.x.FAC.04"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "W",
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0203",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:03+00:00",
+  "updated_at": "2026-07-14T16:27:03+00:00"
+}

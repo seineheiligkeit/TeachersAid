@@ -1,0 +1,82 @@
+{
+  "id": "c0228.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne den drei Arten radioaktiver Strahlung ihre jeweils passende Beschreibung zu.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "α-Strahlung",
+        "β⁻-Strahlung",
+        "γ-Strahlung"
+      ],
+      "right": [
+        "Energiereiche elektromagnetische Strahlung, ungeladen; wird erst durch dicke Blei- oder Betonschichten stark abgeschwächt.",
+        "Heliumkerne (2 Protonen + 2 Neutronen), zweifach positiv geladen; bereits ein Blatt Papier oder wenige Zentimeter Luft schirmen sie ab.",
+        "Schnelle Elektronen, einfach negativ geladen; werden durch einige Millimeter Aluminium abgeschirmt."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 3
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.OS.8.KER.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.OS.x.W.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "α-Strahlung → Heliumkerne (mittlere Beschreibung). β⁻-Strahlung → schnelle Elektronen (untere Beschreibung). γ-Strahlung → energiereiche elektromagnetische Strahlung (obere Beschreibung).",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "α-Strahlung hat außerhalb des Körpers die geringste Reichweite, ist aber bei Aufnahme in den Körper (Einatmen, Verschlucken) besonders schädlich – geringe Reichweite bedeutet nicht ungefährlich.",
+      "γ-Strahlung ist keine Teilchenstrahlung, sondern eine elektromagnetische Welle (wie Licht, nur viel energiereicher)."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Physik",
+  "klasse": 8,
+  "kompetenzbereich": "Kernphysik",
+  "competences": [
+    "PHY.OS.8.KER.01",
+    "PHY.OS.x.W.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0228",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:14+00:00",
+  "updated_at": "2026-07-14T16:27:14+00:00"
+}

@@ -1,0 +1,66 @@
+{
+  "id": "c0220.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Der Haushalt aus Abschnitt 2 hat monatliche Ausgaben von 2 100 € und kann 300 € pro Monat zurücklegen.\n\na) Fachleute empfehlen einen Notgroschen von etwa drei Monatsausgaben. Wie hoch ist dieser Zielbetrag?\nb) Wie viele Monate dauert es, den Notgroschen anzusparen, wenn monatlich 300 € zurückgelegt werden?\nc) Sobald der Notgroschen steht, wird der volle Sparbetrag für ein mittelfristiges Ziel von 1 800 € verwendet. Wie lange dauert das?\nd) Ordne die drei Ziele Notgroschen, Urlaubsreise (nächstes Jahr) und private Pensionsvorsorge jeweils dem passenden Zeit-Horizont (kurz-, mittel-, langfristig) zu.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "RM"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "HOE.OS.5.RES.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "a) Notgroschen = 3 × 2 100 € = 6 300 €. b) 6 300 € / 300 € = 21 Monate (etwa ein Jahr und neun Monate). c) 1 800 € / 300 € = 6 Monate. d) Notgroschen = kurzfristig (jederzeit verfügbar); Urlaubsreise im nächsten Jahr = mittelfristig; private Pensionsvorsorge = langfristig.",
+    "acceptable_reasoning": "Der Notgroschen wird hier auf die Ausgaben (2 100 €) bezogen; ein Bezug auf das Einkommen (drei Monatseinkommen) ist als Variante akzeptabel, wenn er konsequent durchgerechnet wird.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Drei Monatsausgaben (2 100 €) nicht mit drei Monatseinkommen (2 400 €) verwechseln – die Aufgabe nennt Ausgaben.",
+      "21 Monate nicht auf „21 €“ oder „21 Jahre“ verkürzen – Einheit beachten.",
+      "Der Notgroschen gehört auf ein jederzeit verfügbares Konto, nicht in eine langfristig gebundene Anlage."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Haushaltsökonomie und Ernährung",
+  "klasse": 5,
+  "kompetenzbereich": "Ressourcen verantwortungsbewusst managen",
+  "competences": [
+    "HOE.OS.5.RES.04"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "RM"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0220",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:11+00:00",
+  "updated_at": "2026-07-14T16:27:11+00:00"
+}

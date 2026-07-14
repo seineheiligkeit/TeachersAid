@@ -1,0 +1,138 @@
+{
+  "id": "c0213.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Entscheide, ob die folgenden Aussagen zutreffen, und begründe deine Entscheidung jeweils in ein bis zwei Sätzen. Die Zeitleiste kann dir helfen.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Vor der europäischen Aufteilung gab es in Afrika keine eigenen Staaten oder Hochkulturen.",
+        "Bei der Berliner Konferenz 1884/85 saßen auch afrikanische Herrscher mit am Verhandlungstisch.",
+        "Die kolonialen Grenzen wurden oft am Reißbrett gezogen und zerschnitten gewachsene Sprach- und Gemeinschaftsräume.",
+        "Am Vorabend des Ersten Weltkriegs stand fast der gesamte afrikanische Kontinent unter europäischer Herrschaft."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "Wahr / Falsch",
+        "Begründung"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "HSK",
+      "HMK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GPB.OS.6.VOM.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "GPB.OS.6.VOM.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "1. Falsch – es bestanden entwickelte Staaten und Handelsreiche (z. B. Mali, Songhai, Benin, Aschanti, das Kaiserreich Äthiopien). Die Vorstellung eines „leeren“ Kontinents ist ein koloniales Konstrukt. 2. Falsch – bei der Berliner Konferenz waren keine afrikanischen Vertreter zugegen; die Mächte regelten die Aufteilung ohne die Betroffenen. 3. Wahr – viele Grenzen folgten Längen- und Breitengraden statt gewachsenen Räumen; sie zerschnitten Gemeinschaften und wirken in heutigen Konflikten nach. 4. Wahr – bis 1914 blieben nur Äthiopien und Liberia weitgehend unabhängig.",
+    "acceptable_reasoning": "Für die Begründung genügt jeweils ein zutreffendes Argument bzw. ein korrektes Beispiel.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Aussage 1 aktiviert das koloniale Klischee vom „geschichtslosen“ Afrika – bewusst widerlegen.",
+      "Bei Aussage 3 nicht nur ankreuzen, sondern den Gegenwartsbezug (Grenzkonflikte) benennen."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Geschichte und politische Bildung",
+  "klasse": 6,
+  "kompetenzbereich": "Vom Beginn der Neuzeit bis zum ersten Weltkrieg unter Berücksichtigung von Gegenwartsphänomenen",
+  "competences": [
+    "GPB.OS.6.VOM.02",
+    "GPB.OS.6.VOM.04"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "HSK",
+    "HMK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "lane": null,
+      "intended_claim": null,
+      "medium": "visual",
+      "generator": "matplotlib:timeline",
+      "spec": {
+        "events": [
+          {
+            "at": 1494,
+            "label": "Vertrag von Tordesillas: Aufteilung der überseeischen Welt zwischen Spanien und Portugal"
+          },
+          {
+            "at": 1602,
+            "label": "Gründung der Niederländischen Ostindien-Kompanie (VOC)"
+          },
+          {
+            "at": 1834,
+            "label": "Abschaffung der Sklaverei im Britischen Empire"
+          },
+          {
+            "at": 1857,
+            "label": "Aufstand gegen die britische Herrschaft in Indien"
+          },
+          {
+            "at": 1884,
+            "label": "Berliner Konferenz: Regeln für die Aufteilung Afrikas (bis 1885)"
+          },
+          {
+            "at": 1904,
+            "label": "Kolonialkrieg gegen Herero und Nama in Deutsch-Südwestafrika (bis 1908)"
+          },
+          {
+            "at": 1919,
+            "label": "Neuverteilung der Kolonien als Völkerbundmandate nach dem Ersten Weltkrieg"
+          }
+        ],
+        "title": "Kolonialismus und Imperialismus – Stationen 1494–1919",
+        "xlabel": "Jahr"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0213",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:06+00:00",
+  "updated_at": "2026-07-14T16:27:06+00:00"
+}

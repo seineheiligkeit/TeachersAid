@@ -1,0 +1,72 @@
+{
+  "id": "c0222.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "algorithm_trace",
+    "prompt": "Das Schülercafé „Pausenbrot“ führt seine Verkäufe in einer Tabelle. In Spalte A stehen die Produkte, in Spalte B der Preis pro Stück (in €), in Spalte C die verkaufte Menge. Zeile 2: Kakao, 1,50, 12. Zeile 3: Semmel, 0,80, 20. Zeile 4: Apfel, 0,50, 8. In Spalte D wird der Umsatz mit der Formel =B2*C2 (in Zeile 2), =B3*C3 (Zeile 3) usw. berechnet. In Zelle B7 steht =SUMME(D2:D4). Berechne die Werte der Zellen D2, D3, D4 und B7.",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Zelle",
+        "Ergebnis (in €)"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "AG",
+      "WV"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "INF.OS.5.ANG.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "D2 = 1,50 · 12 = 18,00. D3 = 0,80 · 20 = 16,00. D4 = 0,50 · 8 = 4,00. B7 = SUMME(D2:D4) = 18,00 + 16,00 + 4,00 = 38,00.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Auf das deutsche Dezimalkomma achten: 0,80 € · 20 = 16,00 €, nicht 1,60 €.",
+      "=SUMME(D2:D4) addiert den Bereich D2 bis D4 (beide Enden inklusive), also drei Werte.",
+      "Die Formel =B2*C2 wandert beim Kopieren nach unten automatisch mit (relativer Bezug) – deshalb steht in Zeile 3 =B3*C3."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "algorithm_trace",
+  "subject": "Informatik",
+  "klasse": 5,
+  "kompetenzbereich": "Angewandte Informatik",
+  "competences": [
+    "INF.OS.5.ANG.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "AG",
+    "WV"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0222",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:12+00:00",
+  "updated_at": "2026-07-14T16:27:12+00:00"
+}

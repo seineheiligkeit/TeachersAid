@@ -1,0 +1,98 @@
+{
+  "id": "c0226.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "(a) Bestimme eine quadratische Gleichung mit reellen Koeffizienten, die 1 + 2i als Lösung hat.\n(b) Begründe, warum eine solche Gleichung dann automatisch auch 1 − 2i als Lösung haben muss.\n(c) Kann es eine quadratische Gleichung mit reellen Koeffizienten geben, die als einzige Lösung 1 + 2i hat (und keine zweite)? Begründe deine Antwort.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 65.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "DM",
+      "KA"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.OS.7.KOM3.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "MAT.OS.7.KOM3.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "(a) Über die Linearfaktoren: (x − (1 + 2i)) · (x − (1 − 2i)) = (x − 1)² − (2i)² = (x − 1)² + 4 = x² − 2x + 5. Also x² − 2x + 5 = 0. Kontrolle mit Vieta: Summe der Lösungen = 2 = −(−2), Produkt = (1 + 2i)(1 − 2i) = 1 + 4 = 5. (b) Weil die Koeffizienten reell sein sollen, müssen Summe und Produkt der beiden Lösungen reell sein; das erzwingt, dass die zweite Lösung die konjugiert komplexe 1 − 2i ist — nur dann heben sich die Imaginärteile weg. (c) Nein. Eine quadratische Gleichung hat nach dem Fundamentalsatz genau zwei Lösungen (mit Vielfachheit). Wäre 1 + 2i die einzige (doppelte) Lösung, so wäre die Gleichung (x − (1 + 2i))² = 0 — deren ausmultiplizierte Koeffizienten sind aber nicht reell. Eine nicht-reelle Lösung erzwingt bei reellen Koeffizienten stets ihre konjugierte Partnerin.",
+    "acceptable_reasoning": "Jede Gleichung der Form a · (x² − 2x + 5) = 0 mit a ≠ 0 ist gültig; die Begründung in (b)/(c) muss den Zusammenhang reelle Koeffizienten ↔ konjugiert komplexes Paar tragen.",
+    "rubric": [
+      {
+        "criterion": "Gleichung aufstellen (a)",
+        "levels": [
+          "keine oder falsche Gleichung",
+          "Ansatz über Linearfaktoren, Rechenfehler",
+          "x² − 2x + 5 = 0 korrekt hergeleitet"
+        ]
+      },
+      {
+        "criterion": "Begründung Paarbildung (b)",
+        "levels": [
+          "fehlt oder falsch",
+          "richtige Idee ohne Bezug zu reellen Koeffizienten",
+          "reelle Koeffizienten erzwingen das konjugierte Paar — sauber begründet"
+        ]
+      },
+      {
+        "criterion": "Eindeutigkeitsfrage (c)",
+        "levels": [
+          "fehlt oder falsch",
+          "richtige Antwort ohne tragfähige Begründung",
+          "Antwort „nein“ mit Begründung über nicht-reelle Koeffizienten der Doppellösung"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "nur den Faktor (x − (1 + 2i)) verwenden und die konjugierte Lösung weglassen — dann sind die Koeffizienten nicht reell.",
+      "beim Ausmultiplizieren (2i)² = −4 falsch als +4 oder 4i behandeln.",
+      "in (c) meinen, eine einzelne nicht-reelle Doppellösung sei mit reellen Koeffizienten möglich."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Mathematik",
+  "klasse": 7,
+  "kompetenzbereich": "Komplexe Zahlen",
+  "competences": [
+    "MAT.OS.7.KOM3.02",
+    "MAT.OS.7.KOM3.03"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "DM",
+    "KA"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0226",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:13+00:00",
+  "updated_at": "2026-07-14T16:27:13+00:00"
+}

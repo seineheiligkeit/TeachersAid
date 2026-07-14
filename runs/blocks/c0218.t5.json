@@ -1,0 +1,78 @@
+{
+  "id": "c0218.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Beurteile die Aussagen zu den Klimagliederungen der Erde: richtig oder falsch? Begründe jeweils kurz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Die Grenzen zwischen den Klimazonen der Erde sind scharfe Linien, die man exakt in eine Karte einzeichnen kann.",
+        "Klimagliederungen (z. B. nach Köppen) sind von Menschen gemachte Einteilungen, die je nach gewählten Kriterien unterschiedlich ausfallen.",
+        "Zwei Orte in derselben Klimazone haben immer genau dasselbe Wetter.",
+        "Eine Klimagliederung ist trotz Vereinfachung nützlich, weil sie hilft, Räume zu vergleichen und Vegetationszonen abzuschätzen."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "Richtig/Falsch",
+        "Begründung"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "REF"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.OS.5.GEO.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "1. Falsch – in Wirklichkeit sind die Übergänge fließend; die Grenzlinien auf der Karte sind vereinfachende Konventionen. 2. Richtig – Klimagliederungen sind Konstruktionen; je nach Kriterium (Temperatur, Niederschlag, Vegetation) ergeben sich andere Einteilungen. 3. Falsch – dieselbe Klimazone bedeutet ähnliches Klima (langjähriger Durchschnitt), nicht dasselbe Wetter an einem konkreten Tag. 4. Richtig – die Einteilung vereinfacht zwar, macht Räume aber vergleichbar und lässt auf Böden und Vegetation schließen; ihr Nutzen hängt vom Zweck ab.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Klima (langjähriges Mittel) und Wetter (Momentzustand) klar auseinanderhalten.",
+      "Gliederungen sind zweckgebunden: Wer andere Kriterien wählt, zieht andere Grenzen – deshalb 'hinterfragen'."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 5,
+  "kompetenzbereich": "Geoökosysteme der Erde analysieren",
+  "competences": [
+    "GWB.OS.5.GEO.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "REF"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0218",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:09+00:00",
+  "updated_at": "2026-07-14T16:27:09+00:00"
+}

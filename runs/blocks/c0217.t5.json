@@ -1,0 +1,78 @@
+{
+  "id": "c0217.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Beurteile die folgenden Aussagen: richtig oder falsch? Begründe deine Einschätzung jeweils in einem kurzen Satz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Gentrifizierung bringt einem Viertel immer nur Vorteile, weil es schöner und sicherer wird.",
+        "Räumliche Segregation ist ausschließlich das Ergebnis freier Wohnstandortentscheidungen der Menschen.",
+        "Auch in wohlhabenden Städten wie Wien gibt es deutliche soziale Unterschiede zwischen den Bezirken.",
+        "Eine bewusste Durchmischung von Wohnungen für verschiedene Einkommensgruppen kann Segregation verringern."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "Richtig/Falsch",
+        "Begründung"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "REF"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.OS.8.STA.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1. Falsch – Aufwertung kann ein Viertel beleben, verdrängt aber häufig die ursprüngliche, ärmere Bevölkerung über steigende Mieten; 'Vorteil' hängt von der Perspektive ab. 2. Falsch – Segregation entsteht v. a. durch den Wohnungsmarkt (Zahlungskraft), durch Diskriminierung, politische Entscheidungen und ungleiche Infrastruktur; freie Wahl ist nur ein Teil. 3. Richtig – auch reiche Städte sind sozial gegliedert; Bezirke unterscheiden sich in Einkommen, Bildung und Gesundheit. 4. Richtig – geförderter/sozialer Wohnbau und gemischte Quartiere können Trennung abmildern (Beispiel Wiener Gemeindebau).",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Aussage 1 verführt zu einer einseitig positiven Sicht – die Verdrängung ausdrücklich thematisieren.",
+      "Aussage 2 unterschätzt strukturelle Zwänge – wer wenig verdient, kann sich teure Viertel schlicht nicht aussuchen."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 8,
+  "kompetenzbereich": "Städte als Lebensräume und ökonomische Zentren untersuchen",
+  "competences": [
+    "GWB.OS.8.STA.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "REF"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0217",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:08+00:00",
+  "updated_at": "2026-07-14T16:27:08+00:00"
+}

@@ -1,0 +1,129 @@
+{
+  "id": "c0206.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Aluminium ist das häufigste Metall der Erdkruste, seine Herstellung ist aber sehr energieaufwendig. Abb. 1 vergleicht den ungefähren Energiebedarf für 1 kg Aluminium aus Erz (Primärproduktion durch Schmelzflusselektrolyse) und aus Altmetall (Recycling durch Umschmelzen).\na) Berechne, wie viel Prozent der Energie das Recycling gegenüber der Primärproduktion ungefähr einspart.\nb) Erkläre mithilfe der Bindungsverhältnisse, warum die Primärproduktion so viel mehr Energie braucht (Aluminium liegt im Erz als Al³⁺ im Oxid Al₂O₃ vor).\nc) Warum gewinnt man Aluminium durch Elektrolyse und nicht – wie Eisen – durch Reduktion mit Kohlenstoff?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "EG"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.OS.7.UMG.07",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "CHE.OS.7.UMG.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "a) Einsparung ≈ (14 − 0,7) / 14 = 13,3 / 14 ≈ 0,95, also rund 95 %. Das Recycling benötigt nur etwa 5 % der Energie der Primärproduktion. b) Im Erz (Bauxit → Aluminiumoxid Al₂O₃) liegt Aluminium als Al³⁺ vor, also oxidiert. Um es zu elementarem Aluminium (Oxidationszahl 0) zu reduzieren, müssen je Aluminium-Ion drei Elektronen zugeführt werden – das geschieht in der Schmelzflusselektrolyse und erfordert sehr viel elektrische Energie. Beim Recycling ist das Metall bereits elementar; es muss nur aufgeschmolzen werden (Schmelzwärme), es findet keine chemische Reduktion statt. c) Aluminium ist ein sehr unedles Metall und bindet Sauerstoff sehr stark; Kohlenstoff ist als Reduktionsmittel „zu schwach“, um Al³⁺ zu reduzieren. Deshalb nutzt man die Elektrolyse, bei der die Elektronen direkt über den elektrischen Strom zugeführt werden.",
+    "acceptable_reasoning": "Bei b) genügt der Kern: im Erz liegt Al oxidiert (Al³⁺) vor und muss unter hohem Energieaufwand reduziert werden, während Recycling nur Schmelzenergie braucht.",
+    "rubric": [
+      {
+        "criterion": "Percentage calculation",
+        "levels": [
+          "About 95 % correctly calculated and justified",
+          "Approach visible, result imprecise",
+          "No workable approach"
+        ]
+      },
+      {
+        "criterion": "Bonding-based explanation",
+        "levels": [
+          "Reduction of Al3+ (electron supply) versus mere remelting clearly worked out",
+          "Partially correct",
+          "Not recognised"
+        ]
+      },
+      {
+        "criterion": "Electrolysis instead of carbon",
+        "levels": [
+          "Aluminium as an unnoble metal / carbon too weak justified",
+          "Vague",
+          "Missing"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Verwechslung: Recycling BRAUCHT nur etwa 5 % der Energie, es SPART also rund 95 % – nicht umgekehrt.",
+      "Häufiger Denkfehler: Kohlenstoff könne wie beim Eisen auch Aluminium reduzieren. Aluminium ist dafür zu unedel; großtechnisch ist die Schmelzflusselektrolyse nötig.",
+      "Der hohe Energiebedarf steckt in der chemischen Reduktion (Elektronenzufuhr), nicht bloß im „Schmelzen“ – deshalb ist Recycling so viel günstiger."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Chemie",
+  "klasse": 7,
+  "kompetenzbereich": "Umgang mit Materie",
+  "competences": [
+    "CHE.OS.7.UMG.07",
+    "CHE.OS.7.UMG.04"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "EG"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "lane": null,
+      "intended_claim": null,
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Primärproduktion",
+          "Recycling"
+        ],
+        "values": [
+          14.0,
+          0.7
+        ],
+        "title": "Energiebedarf für 1 kg Aluminium",
+        "xlabel": "Herstellungsweg",
+        "ylabel": "Energiebedarf in kWh pro kg",
+        "log": false
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": true,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0206",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:05+00:00",
+  "updated_at": "2026-07-14T16:27:05+00:00"
+}

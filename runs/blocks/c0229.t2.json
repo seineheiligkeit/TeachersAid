@@ -1,0 +1,93 @@
+{
+  "id": "c0229.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "text_analysis",
+    "prompt": "Lies die Beschreibung eines klassischen Experiments und beantworte die Fragen.\n\n---\nSolomon Asch (1951) zeigte Versuchspersonen zwei Karten: auf der einen eine Standardlinie, auf der anderen drei Vergleichslinien. Die Aufgabe – welche Vergleichslinie ist gleich lang? – war so einfach, dass allein getestete Personen fast nie Fehler machten. In der Gruppe war jedoch nur eine echte Versuchsperson; alle anderen waren eingeweiht und nannten in bestimmten Durchgängen einstimmig dieselbe, offensichtlich falsche Linie. Ergebnis: Rund ein Drittel der kritischen Antworten der echten Versuchspersonen war ebenfalls falsch; etwa drei Viertel schlossen sich mindestens einmal der Mehrheit an.\n---\n\n(a) Die Versuchspersonen konnten die richtige Linie klar sehen. Warum nannten viele trotzdem die falsche? Nenne den wahrscheinlicheren der beiden Einflusstypen und begründe.\n(b) Erkläre den Unterschied zwischen normativem und informativem sozialem Einfluss an diesem Beispiel.\n(c) In einer Abwandlung gab eine der eingeweihten Personen die richtige Antwort. Was passiert deiner Vermutung nach mit der Konformität – und warum?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "WIS",
+      "TRA"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PUP.OS.7.SOZ.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "(a) Wahrscheinlicher ist normativer Einfluss: Die Aufgabe war visuell eindeutig, die Personen kannten die richtige Antwort, wollten aber nicht als Einzige abweichen und die Ablehnung der Gruppe riskieren. (b) Normativer Einfluss = Anpassung, um dazuzugehören und Ablehnung zu vermeiden (auch gegen die eigene Überzeugung). Informativer Einfluss = Anpassung, weil man die anderen für besser informiert hält und ihr Urteil als Hinweis auf die Wahrheit nimmt. Bei Asch überwog der normative Anteil, weil die Wahrnehmung eindeutig war. (c) Die Konformität sinkt stark: Sobald die Einstimmigkeit gebrochen ist und eine weitere Person die richtige Antwort gibt, fällt es der Versuchsperson viel leichter, ebenfalls bei der Wahrheit zu bleiben. Asch fand, dass schon ein einziger Verbündeter die Anpassung drastisch reduziert.",
+    "acceptable_reasoning": "Akzeptabel: normativer Einfluss korrekt begründet (Wahrnehmung eindeutig, also Anpassung aus sozialen Gründen); der Bruch der Einstimmigkeit als entscheidender Faktor für sinkende Konformität erkannt.",
+    "rubric": [
+      {
+        "criterion": "Einflusstyp benannt und begründet",
+        "levels": [
+          "Fehlt oder falsch",
+          "Typ genannt, aber nicht begründet",
+          "Normativer Einfluss mit Bezug auf die eindeutige Wahrnehmung begründet"
+        ]
+      },
+      {
+        "criterion": "Unterscheidung normativ/informativ",
+        "levels": [
+          "Fehlt",
+          "Nur einer der Begriffe erklärt",
+          "Beide klar und am Beispiel unterschieden"
+        ]
+      },
+      {
+        "criterion": "Vorhersage bei gebrochener Einstimmigkeit",
+        "levels": [
+          "Fehlt oder falsch",
+          "Sinken vermutet, ohne Begründung",
+          "Sinken mit Begründung (Verbündeter senkt den Druck)"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Die genannten Anteile (ein Drittel, drei Viertel) sind Größenordnungen aus Aschs Berichten, keine Naturkonstanten – nicht als exakte Universalwerte behandeln.",
+      "Häufiger Fehler: informativer Einfluss wird gewählt; hier ist er unwahrscheinlich, weil die Wahrnehmung eindeutig war.",
+      "Konformität ist nicht Gehorsam: Asch untersucht Anpassung an Gleichrangige, nicht das Befolgen einer Autorität."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "text_analysis",
+  "subject": "Psychologie und Philosophie",
+  "klasse": 7,
+  "kompetenzbereich": "Soziale Phänomene und Kommunikation",
+  "competences": [
+    "PUP.OS.7.SOZ.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "WIS",
+    "TRA"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0229",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:14+00:00",
+  "updated_at": "2026-07-14T16:27:14+00:00"
+}

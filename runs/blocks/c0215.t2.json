@@ -1,0 +1,73 @@
+{
+  "id": "c0215.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "ordering",
+    "prompt": "Eine klassische griechische Tragödie ist streng gebaut. Bringe die Bauteile in die Reihenfolge, in der sie während der Aufführung aufeinander folgen.",
+    "payload": {
+      "kind": "ordering",
+      "items": [
+        "πρόλογος (Vorspiel, das die Ausgangslage erklärt)",
+        "πάροδος (Einzugslied des Chors)",
+        "ἐπεισόδιον (Dialogszene zwischen den Chorliedern)",
+        "στάσιμον (Standlied des Chors)",
+        "ἔξοδος (Schlussteil, Abgang des Chors)"
+      ]
+    },
+    "response": {
+      "mode": "none"
+    },
+    "cognitive_level": "understand",
+    "difficulty": 2,
+    "dimensions": [
+      "INT"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GRI.OS.8.GRI3.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "πρόλογος → πάροδος → ἐπεισόδιον → στάσιμον → ἔξοδος. Nach der πάροδος wechseln sich ἐπεισόδια (Dialogszenen) und στάσιμα (Chorlieder) mehrfach ab, bis die ἔξοδος den Abschluss bildet.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Häufiger Irrtum: πάροδος und ἔξοδος werden verwechselt – πάροδος ist der Einzug (Anfang), ἔξοδος der Auszug (Ende).",
+      "ἐπεισόδιον und στάσιμον wechseln einander mehrfach ab; es gibt nicht nur je ein einziges."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "ordering",
+  "subject": "Griechisch",
+  "klasse": 8,
+  "kompetenzbereich": "Das griechische Drama als Ursprung des europäischen Theaters",
+  "competences": [
+    "GRI.OS.8.GRI3.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "INT"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0215",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:07+00:00",
+  "updated_at": "2026-07-14T16:27:07+00:00"
+}

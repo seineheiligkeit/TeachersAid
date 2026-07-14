@@ -1,0 +1,97 @@
+{
+  "id": "c0207.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Untersuche die markierten Stellen der Rede. Bestimme für jede Zeile das rhetorische Mittel und beschreibe seine Wirkung. Mehrfachnennungen sind möglich, wenn mehrere Mittel zusammenwirken.",
+    "payload": {
+      "kind": "table_fill",
+      "columns": [
+        "Stelle",
+        "Rhetorisches Mittel",
+        "Wirkung"
+      ],
+      "rows": [
+        [
+          "Zeile 3",
+          null,
+          null
+        ],
+        [
+          "Zeile 4",
+          null,
+          null
+        ],
+        [
+          "Zeile 5",
+          null,
+          null
+        ],
+        [
+          "Zeile 6",
+          null,
+          null
+        ]
+      ]
+    },
+    "response": {
+      "mode": "none"
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "MK",
+      "TK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DEU.OS.7.MUN.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Zeile 3: rhetorische Frage – bezieht das Publikum ein und legt die erwünschte Antwort (‚nein, das stimmt nicht‘) nahe. Zeile 4: Anapher (‚Wir haben …‘) mit Trikolon (Dreierfigur) und Steigerung zum Höhepunkt ‚Stimme‘ – erzeugt Nachdruck und ein Wir-Gefühl. Zeile 5: Metapher (die Schule als ‚Garten‘) – macht das abstrakte Anliegen anschaulich und betont gemeinsame Pflege und Verantwortung. Zeile 6: Anapher (‚Gebt uns …‘) mit Trikolon und Imperativen (Appell), steigernd bis ‚endlich ein echtes Mitspracherecht‘ – drängt zum Handeln.",
+    "acceptable_reasoning": "Auch in Zeile 2 steckt eine Wiederholung (‚seit drei Jahren … seit drei Jahren‘); wer sie zusätzlich erkennt, liegt richtig.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Anapher = Wiederholung am ANFANG aufeinanderfolgender Glieder (am Ende wäre es eine Epipher).",
+      "Eine rhetorische Frage erwartet keine echte Antwort.",
+      "Metapher (ohne ‚wie‘) ist kein Vergleich (mit ‚wie‘).",
+      "Ein Trikolon hat genau drei parallele Glieder."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Deutsch",
+  "klasse": 7,
+  "kompetenzbereich": "Mündliche Kompetenz",
+  "competences": [
+    "DEU.OS.7.MUN.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "MK",
+    "TK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0207",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:05+00:00",
+  "updated_at": "2026-07-14T16:27:05+00:00"
+}

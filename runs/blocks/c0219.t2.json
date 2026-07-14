@@ -1,0 +1,90 @@
+{
+  "id": "c0219.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Du brauchst ein neues T-Shirt. Im Geschäft liegt eines für 5 € (schnelle Mode, unbekannte Herkunft, dünner Stoff), online findest du ein fair und biologisch produziertes für 29 € (zertifiziert, robust verarbeitet).\n\na) Bewerte beide Angebote nach den drei Kriterien Wirtschaftlichkeit, Ökologie und Soziales/Ethik. Beziehe die Idee der „Kosten pro Tragen“ (Kaufpreis geteilt durch die zu erwartende Zahl an Nutzungen) ein.\nb) Triff eine begründete Entscheidung – es gibt keine allgemein „richtige“ Antwort, aber du musst deine Abwägung offenlegen.\nc) Nenne eine Lebenssituation, in der die jeweils andere Wahl gut vertretbar wäre.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "5-€-Fast-Fashion-T-Shirt (unklare Herkunft, kurzlebig) gegen ein zertifiziertes faires Bio-T-Shirt für 29 € (langlebig) – welche Wahl ist mündig?"
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 65.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "CC",
+      "KQ"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "HOE.OS.5.KON.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "a) Wirtschaftlichkeit: Der Kaufpreis spricht für das 5-€-Shirt, die „Kosten pro Tragen“ können jedoch das teurere umkehren – hält das 29-€-Shirt z. B. rund fünfmal so lange, ist es pro Nutzung ähnlich teuer oder günstiger. Ökologie: Fast Fashion verursacht hohen Wasser- und Chemikalieneinsatz, lange Transportwege und viel Abfall (kurze Nutzung, Wegwerfware); Bio-Baumwolle und Langlebigkeit schneiden besser ab. Soziales/Ethik: Beim 5-€-Shirt sind faire Löhne und sichere Arbeitsbedingungen unwahrscheinlich; das zertifizierte Shirt bietet hier mehr Sicherheit. b) Jede klar begründete Position ist gültig, sofern alle drei Kriterien abgewogen werden und das eigene Budget realistisch berücksichtigt wird. c) Für das günstige Shirt: sehr knappes Budget oder kurzfristiger Einmalbedarf (z. B. Kostüm); für das faire Shirt: ein Kleidungsstück, das lange und häufig getragen wird.",
+    "acceptable_reasoning": "Beide Entscheidungen sind akzeptabel. Bewertet wird die Qualität der Abwägung: alle drei Kriterien benannt, „Kosten pro Tragen“ korrekt verwendet, eigenes Budget realistisch einbezogen, keine pauschale Moralisierung.",
+    "rubric": [
+      {
+        "criterion": "Mehrkriterielle Abwägung",
+        "levels": [
+          "Nur der Preis betrachtet",
+          "Zwei Kriterien genannt",
+          "Alle drei Kriterien für beide Produkte abgewogen",
+          "Alle drei Kriterien abgewogen und Zielkonflikte ausdrücklich benannt"
+        ]
+      },
+      {
+        "criterion": "Begründete Entscheidung",
+        "levels": [
+          "Keine klare Position",
+          "Position ohne tragfähige Begründung",
+          "Klare, begründete Position",
+          "Begründete Position samt Bedingungen, unter denen sie kippt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Pauschalurteile („teuer = immer besser“ oder „billig = immer schlecht“) vermeiden – es geht um die begründete Abwägung, nicht um eine moralische Belehrung.",
+      "Das Budget der kaufenden Person ist ein legitimes Kriterium; Verantwortung heißt Abwägen im Rahmen der eigenen Möglichkeiten.",
+      "„Kosten pro Tragen“ wird oft vergessen – der reine Kaufpreis führt bei kurzlebigen Produkten in die Irre."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Haushaltsökonomie und Ernährung",
+  "klasse": 5,
+  "kompetenzbereich": "Das Konzept des Consumer Citizenship erkennen, reflektieren und in Entscheidungen einbinden",
+  "competences": [
+    "HOE.OS.5.KON.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "CC",
+    "KQ"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0219",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:10+00:00",
+  "updated_at": "2026-07-14T16:27:10+00:00"
+}

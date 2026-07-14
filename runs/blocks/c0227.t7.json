@@ -1,0 +1,98 @@
+{
+  "id": "c0227.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "In einer Wohnung werden an einer Mehrfachsteckdose (Netzspannung 230 V, abgesichert mit 16 A) gleichzeitig ein Heizlüfter (2000 W), ein Wasserkocher (2200 W) und ein Toaster (1000 W) betrieben. Jemand meint: „Das passt schon – die Geräte sind ja parallel geschaltet, da teilt sich der Strom auf und jedes bekommt weniger.“\nBeurteile diese Aussage physikalisch und entscheide begründet, ob der gleichzeitige Betrieb gefahrlos möglich ist. Rechne dazu.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Ist der gleichzeitige Betrieb gefahrlos? Prüfe die Aussage rechnerisch und nimm begründet Stellung."
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.OS.6.ELE.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.OS.x.S.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Die Aussage ist falsch. In einer Parallelschaltung liegt an jedem Gerät die volle Spannung (230 V); die Teilströme addieren sich (Knotenregel) zum Gesamtstrom – je mehr Geräte, desto größer der Gesamtstrom. Gesamtleistung P = 2000 W + 2200 W + 1000 W = 5200 W. Gesamtstrom I = P / U = 5200 W / 230 V ≈ 22,6 A. Das übersteigt die Absicherung von 16 A deutlich – die Sicherung löst aus (bzw. bei defekter Sicherung drohen Leitungsüberhitzung und Brand). Der gleichzeitige Betrieb ist daher nicht gefahrlos möglich; man muss die Geräte nacheinander betreiben oder auf verschiedene, getrennt abgesicherte Stromkreise verteilen.",
+    "acceptable_reasoning": "Akzeptiert: Argumentation über die Einzelströme (Heizlüfter 2000/230 ≈ 8,7 A; Wasserkocher ≈ 9,6 A; Toaster ≈ 4,3 A; Summe ≈ 22,6 A > 16 A).",
+    "rubric": [
+      {
+        "criterion": "Physikalische Analyse",
+        "levels": [
+          "Parallelschaltung und Knotenregel korrekt angewendet",
+          "Nur teilweise korrekt oder verwechselt Reihe/Parallel"
+        ]
+      },
+      {
+        "criterion": "Rechnung",
+        "levels": [
+          "Gesamtstrom korrekt berechnet und mit 16 A verglichen",
+          "Ansatz vorhanden, Rechenfehler"
+        ]
+      },
+      {
+        "criterion": "Entscheidung",
+        "levels": [
+          "Begründete, physikalisch gestützte Entscheidung mit Konsequenz",
+          "Entscheidung ohne tragfähige Begründung"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Fehlvorstellung „Parallel teilt den Strom auf, also ist es sicherer“: Tatsächlich addieren sich die Teilströme, der Gesamtstrom aus der Steckdose wird größer, nicht kleiner.",
+      "Die Sicherung schützt die Leitung vor Überhitzung, nicht die einzelnen Geräte.",
+      "Leistungen bzw. Ströme dürfen hier addiert werden, weil an allen Geräten dieselbe Spannung anliegt."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Physik",
+  "klasse": 6,
+  "kompetenzbereich": "Elektrizitätslehre",
+  "competences": [
+    "PHY.OS.6.ELE.02",
+    "PHY.OS.x.S.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "W",
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0227",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:14+00:00",
+  "updated_at": "2026-07-14T16:27:14+00:00"
+}

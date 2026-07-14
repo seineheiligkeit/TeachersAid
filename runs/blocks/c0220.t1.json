@@ -1,0 +1,86 @@
+{
+  "id": "c0220.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne jeder Haushaltsressource ein typisches Beispiel zu.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Zeit",
+        "Geld",
+        "Güter",
+        "Umwelt",
+        "Arbeitskraft"
+      ],
+      "right": [
+        "Zwei Stunden am Samstag für den Wocheneinkauf und das Kochen.",
+        "Das monatliche Nettoeinkommen, aus dem alle Ausgaben bestritten werden.",
+        "Der vorhandene Kühlschrank, die Küchenmaschine und der Vorrat im Regal.",
+        "Das Wasser, die Energie und die Rohstoffe, die beim Wohnen und Kochen verbraucht werden.",
+        "Die körperliche und geistige Leistung beim Putzen, Planen und Betreuen."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Ressource",
+        "Beispiel"
+      ],
+      "rows": 5
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "RM"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "HOE.OS.5.RES.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Zeit → zwei Stunden für Einkauf und Kochen. Geld → das monatliche Nettoeinkommen. Güter → Kühlschrank, Küchenmaschine, Vorrat. Umwelt → Wasser, Energie, Rohstoffe. Arbeitskraft → körperliche und geistige Leistung beim Putzen, Planen und Betreuen.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "„Güter“ und „Geld“ werden verwechselt: Güter sind vorhandene Gegenstände/Vorräte, Geld ist das Zahlungsmittel.",
+      "„Umwelt“ als Ressource wird oft übersehen – Wasser, Energie und Rohstoffe sind ein knapper Einsatzfaktor des Haushalts.",
+      "Arbeitskraft umfasst auch geistige Arbeit (Planen, Organisieren), nicht nur körperliche."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Haushaltsökonomie und Ernährung",
+  "klasse": 5,
+  "kompetenzbereich": "Ressourcen verantwortungsbewusst managen",
+  "competences": [
+    "HOE.OS.5.RES.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "RM"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0220",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:11+00:00",
+  "updated_at": "2026-07-14T16:27:11+00:00"
+}

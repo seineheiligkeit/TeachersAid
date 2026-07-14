@@ -1,0 +1,83 @@
+{
+  "id": "c0228.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Entscheide für jede Aussage, ob sie richtig oder falsch ist, und begründe deine Entscheidung in einem Satz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Isotope eines Elements haben dieselbe Protonenzahl, unterscheiden sich aber in der Neutronenzahl.",
+        "Beim α-Zerfall verringert sich die Massenzahl des Kerns um 4 und die Kernladungszahl um 2.",
+        "Man kann den radioaktiven Zerfall eines Präparats beschleunigen, indem man es stark erhitzt oder unter Druck setzt."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "Richtig",
+        "Falsch",
+        "Begründung"
+      ],
+      "rows": 3
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.OS.8.KER.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.OS.x.W.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1. Richtig – gleiche Protonenzahl bedeutet gleiches Element, die verschiedene Neutronenzahl führt zu verschiedenen Massenzahlen. 2. Richtig – ein α-Teilchen führt 2 Protonen und 2 Neutronen ab: A sinkt um 4, Z um 2. 3. Falsch – die Zerfallsrate ist eine Eigenschaft des Kerns und hängt nicht von Temperatur, Druck oder chemischer Bindung ab.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Massenzahl (Nukleonen insgesamt) und Kernladungszahl (nur Protonen) sauber trennen.",
+      "Häufige Fehlvorstellung: äußere Einflüsse wie Hitze oder Druck könnten den Zerfall steuern – das ist nicht der Fall."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Physik",
+  "klasse": 8,
+  "kompetenzbereich": "Kernphysik",
+  "competences": [
+    "PHY.OS.8.KER.02",
+    "PHY.OS.x.W.03"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0228",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:14+00:00",
+  "updated_at": "2026-07-14T16:27:14+00:00"
+}

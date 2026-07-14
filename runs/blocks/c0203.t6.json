@@ -1,0 +1,86 @@
+{
+  "id": "c0203.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Beurteile jede Aussage als richtig oder falsch und begründe deine Entscheidung in einem Satz. Achte besonders darauf, ob eine Aussage naturwissenschaftlich begründet ist oder nicht.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Koffein macht wach, weil es im Gehirn den müde machenden Botenstoff Adenosin an seinen Rezeptoren blockiert.",
+        "Alkohol ist ein Aufputschmittel, weil man sich nach dem Trinken enthemmt und gelöster fühlt.",
+        "Bei der Weiterleitung im Axon springt die Erregung an den Ranvier-Schnürringen von Lücke zu Lücke und wird dadurch schneller.",
+        "Weil ein Bekannter nach viel Energydrink nicht schlafen konnte, schädigt Koffein grundsätzlich das Nervensystem jedes Menschen gleich stark.",
+        "Hormone wirken nur an Zellen, die einen passenden Rezeptor für das jeweilige Hormon besitzen."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 10
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "S",
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.OS.6.KOM2.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "BIO.OS.6.KOM2.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "BIO.OS.x.STA.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "1) Richtig – Koffein blockiert Adenosin-Rezeptoren, das Müdigkeitssignal wird gedämpft. 2) Falsch – Alkohol ist ein dämpfendes Mittel (Depressivum); die „Enthemmung“ entsteht, weil hemmende Kontrollfunktionen ausfallen, nicht durch Aufputschen. 3) Richtig – die sprunghafte (saltatorische) Erregungsleitung an den Schnürringen ist schneller als eine durchgehende Leitung. 4) Nicht naturwissenschaftlich – ein Einzelfall erlaubt keine allgemeine Aussage; Wirkung hängt von Dosis, Gewöhnung und Person ab (Korrelation ≠ allgemeingültige Ursache). 5) Richtig – ein Hormon wirkt nur an Zellen mit passendem Rezeptor (Schlüssel-Schloss-Prinzip).",
+    "acceptable_reasoning": "Bei Aussage 4 genügt es zu erkennen, dass aus einem Einzelfall keine allgemeine, gesetzmäßige Aussage folgt.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Aussage 2 ist die klassische Falle: subjektive Wirkung („aufgedreht“) ist nicht gleich pharmakologische Wirkung (dämpfend).",
+      "Aussage 4 prüft naturwissenschaftliches Argumentieren: ein einzelnes Beispiel ist kein Beleg für eine allgemeine Gesetzmäßigkeit."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 6,
+  "kompetenzbereich": "Kompetenzmodul 3",
+  "competences": [
+    "BIO.OS.6.KOM2.01",
+    "BIO.OS.6.KOM2.02",
+    "BIO.OS.x.STA.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "S",
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0203",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:03+00:00",
+  "updated_at": "2026-07-14T16:27:03+00:00"
+}

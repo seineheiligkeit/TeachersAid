@@ -1,0 +1,86 @@
+{
+  "id": "c0225.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "modelling",
+    "prompt": "Zwei Wanderwege starten im selben Punkt C und schließen dort einen Winkel von 68° ein. Entlang des einen Weges liegt eine Hütte A in 540 m Entfernung, entlang des anderen ein Aussichtspunkt B in 420 m Entfernung.\n(a) Stelle einen Rechenansatz auf und berechne die Luftlinie zwischen A und B.\n(b) Ein Wanderer behauptet: „Wenn der Winkel bei C kleiner wird, wird die Luftlinie AB automatisch länger.“ Beurteile diese Aussage — begründe mit der Formel, nicht nur mit einem zweiten Zahlenbeispiel.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "DM",
+      "KA"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.OS.5.TRI.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "(a) Cosinussatz mit dem eingeschlossenen Winkel γ = 68°: AB² = 540² + 420² − 2 · 540 · 420 · cos 68° ≈ 291600 + 176400 − 169922 ≈ 298078, also AB ≈ 546 m. (b) Die Aussage ist falsch. In AB² = a² + b² − 2ab · cos γ wächst cos γ, wenn γ kleiner wird (cos ist auf 0° bis 180° streng fallend); damit wird der abgezogene Term 2ab · cos γ größer und AB² — also AB — KLEINER. Ein kleinerer Öffnungswinkel führt also zu einer KÜRZEREN Luftlinie. Die Grenzfälle bestätigen das: γ → 0° ergibt AB → 540 − 420 = 120 m, γ → 180° ergibt AB → 540 + 420 = 960 m.",
+    "acceptable_reasoning": "Für (b) genügt jede korrekte Begründung über die Monotonie von cos auf [0°; 180°] oder über die beiden Grenzfälle γ → 0° und γ → 180°; ein bloßes zweites Zahlenbeispiel reicht laut Angabe nicht.",
+    "rubric": [
+      {
+        "criterion": "Cosinussatz-Ansatz und Ergebnis",
+        "levels": [
+          "kein oder falscher Ansatz",
+          "richtige Formel, aber falscher Winkel oder Rechenfehler",
+          "korrekter Ansatz und AB ≈ 546 m"
+        ]
+      },
+      {
+        "criterion": "Argumentation zu (b)",
+        "levels": [
+          "Behauptung übernommen oder nur Zahlenbeispiel",
+          "richtige Richtung ohne tragfähige Begründung",
+          "mit Monotonie von cos bzw. den Grenzfällen sauber widerlegt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "den Cosinussatz mit einem nicht eingeschlossenen Winkel ansetzen.",
+      "vergessen, am Ende die Wurzel zu ziehen.",
+      "das Vorzeichen verwechseln — es heißt minus 2ab · cos γ.",
+      "bei (b) nur ein zweites Zahlenbeispiel liefern statt zu argumentieren."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "modelling",
+  "subject": "Mathematik",
+  "klasse": 5,
+  "kompetenzbereich": "Trigonometrie",
+  "competences": [
+    "MAT.OS.5.TRI.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "DM",
+    "KA"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0225",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:12+00:00",
+  "updated_at": "2026-07-14T16:27:12+00:00"
+}

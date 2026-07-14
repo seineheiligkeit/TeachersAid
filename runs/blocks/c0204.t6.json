@@ -1,0 +1,81 @@
+{
+  "id": "c0204.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Beurteile jede Aussage als richtig oder falsch und begründe in einem Satz. Prüfe auch, ob eine Aussage überhaupt naturwissenschaftlich begründet ist.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Eine Impfung trainiert das Immunsystem, indem sie es mit abgeschwächten oder unschädlichen Erregerbestandteilen konfrontiert.",
+        "Erkältungen entstehen vor allem, weil kalte Luft im Körper direkt Viren erzeugt.",
+        "Gründliches Händewaschen unterbricht Infektionsketten, weil es die Zahl übertragbarer Erreger stark verringert.",
+        "Weil eine bekannte Person nach einer Impfung Fieber bekam, machen Impfungen grundsätzlich krank.",
+        "Wer viele Antibiotika nimmt, ist danach besser gegen Grippeviren geschützt."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 10
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "S",
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.OS.7.KOM4.03",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "BIO.OS.x.STA.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "1) Richtig – die Impfung zeigt dem Immunsystem harmlose Erregerbestandteile, sodass es Gedächtniszellen bildet und beim echten Kontakt schneller reagiert. 2) Falsch – Kälte erzeugt keine Viren; Erkältungen werden durch Viren übertragen (Kälte kann höchstens indirekt begünstigen, etwa durch mehr Aufenthalt in Räumen). 3) Richtig – weniger Erreger auf den Händen bedeutet weniger Übertragung über Berührungen. 4) Nicht naturwissenschaftlich – ein Einzelfall belegt keine allgemeine Aussage; Fieber kann eine kurze, normale Immunreaktion sein (Korrelation ≠ allgemeine Ursache). 5) Falsch – Antibiotika wirken gegen Bakterien, nicht gegen Viren; gegen Grippe schützen sie nicht.",
+    "acceptable_reasoning": "Bei Aussage 4 genügt der Hinweis, dass aus einem Einzelfall keine allgemeine, gesetzmäßige Aussage folgt.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Aussage 2 ist eine verbreitete Alltagslogik – prüfe die Ursache: Überträger sind Viren, nicht die Temperatur selbst.",
+      "Aussage 4 prüft naturwissenschaftliches Argumentieren: Einzelfall und zeitliche Nähe beweisen keine allgemeine Ursache."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 7,
+  "kompetenzbereich": "Kompetenzmodul 5",
+  "competences": [
+    "BIO.OS.7.KOM4.03",
+    "BIO.OS.x.STA.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "S",
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0204",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:04+00:00",
+  "updated_at": "2026-07-14T16:27:04+00:00"
+}

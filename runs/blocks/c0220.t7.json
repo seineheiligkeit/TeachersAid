@@ -1,0 +1,85 @@
+{
+  "id": "c0220.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Zwei Personen teilen sich einen Haushalt. Entwirf einen Wochenplan, der die wiederkehrenden Aufgaben (Einkauf, Kochen, Geschirr, Wäsche, Bad/WC reinigen, Müll/Recycling) sinnvoll auf die Woche und auf beide Personen verteilt.\n\n- Nutze die Ressource Zeit klug: bündle Wege und Arbeiten (z. B. Großeinkauf statt täglich kleiner Einkäufe).\n- Berücksichtige mindestens eine ergonomische Regel (rückenschonendes Arbeiten) und benenne sie.\n- Berücksichtige mindestens eine Hygieneregel (z. B. beim Umgang mit Lebensmitteln) und benenne sie.\n- Begründe kurz, warum dein Plan Zeit spart und die Gesundheit schützt.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 80.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "RM"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "HOE.OS.5.RES.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 14,
+    "answer_key": "Keine Musterlösung; bewertet werden eine sinnvolle, faire Aufgabenverteilung, Zeitbündelung sowie je eine korrekte ergonomische und hygienische Regel mit Begründung. Beispiel: Wocheneinkauf gebündelt am Freitag (spart Wege/Zeit), feste Koch- und Putztage im Wechsel zwischen beiden Personen, Wäsche zweimal pro Woche. Ergonomie – z. B. Arbeitsfläche etwa auf Höhe knapp unter den Ellbogen wählen und schwere Lasten nah am Körper und mit geradem Rücken heben (schont die Wirbelsäule). Hygiene – z. B. für rohes Fleisch und für Gemüse getrennte Schneidbretter verwenden und die Kühlkette einhalten (leicht Verderbliches rasch unter 5 °C lagern), um Kreuzkontamination und Keimwachstum zu verhindern. Begründung: Bündeln spart Zeit und Wege; ergonomisches Arbeiten beugt Rückenbeschwerden vor; Hygieneregeln schützen vor Lebensmittelinfektionen.",
+    "acceptable_reasoning": "Der Plan muss umsetzbar und fair sein und ausdrücklich je eine korrekte Ergonomie- und Hygieneregel mit kurzer Begründung enthalten. Zeitbündelung soll erkennbar sein.",
+    "rubric": [
+      {
+        "criterion": "Aufgabenverteilung und Zeitbündelung",
+        "levels": [
+          "Kein umsetzbarer Plan",
+          "Plan ohne erkennbare Zeitlogik",
+          "Sinnvoller, fairer Plan",
+          "Fairer Plan mit klarer Zeitbündelung"
+        ]
+      },
+      {
+        "criterion": "Ergonomie- und Hygieneregel",
+        "levels": [
+          "Keine der beiden",
+          "Eine Regel genannt",
+          "Beide Regeln genannt",
+          "Beide Regeln korrekt benannt und begründet"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Häufig fehlt die Begründung: Eine Regel bloß zu nennen genügt nicht – der Gesundheits- bzw. Zeitnutzen muss erklärt werden.",
+      "Getrennte Schneidbretter und Kühlkette schützen vor Keimen wie Salmonellen – ein häufig unterschätzter Punkt.",
+      "Ergonomie heißt nicht „langsam“, sondern rückenschonend arbeiten (Arbeitshöhe, nah am Körper heben) – Zeitersparnis und Gesundheit schließen sich nicht aus."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Haushaltsökonomie und Ernährung",
+  "klasse": 5,
+  "kompetenzbereich": "Ressourcen verantwortungsbewusst managen",
+  "competences": [
+    "HOE.OS.5.RES.03"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "RM"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0220",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:11+00:00",
+  "updated_at": "2026-07-14T16:27:11+00:00"
+}

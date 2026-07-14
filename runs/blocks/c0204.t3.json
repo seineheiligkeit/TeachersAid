@@ -1,0 +1,94 @@
+{
+  "id": "c0204.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "a) Erkläre mithilfe der Unterschiede aus der Tabelle, warum Antibiotika bei einer echten Virusgrippe nicht helfen.\nb) Bei einer bakteriellen Infektion nimmt jemand das Antibiotikum immer wieder nur kurz und bricht es früh ab. Erkläre Schritt für Schritt, wie so über die Zeit widerstandsfähige (resistente) Bakterien entstehen. Verwende dabei die Begriffe Zufallsvariante (Mutation) und Auslese (Selektion).",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 8
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.OS.7.KOM4.03",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "BIO.OS.7.KOM4.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "BIO.OS.x.FAC.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "a) Antibiotika greifen typische Bakterienstrukturen an (z. B. den Zellwandaufbau oder die bakteriellen Ribosomen). Viren besitzen weder eine solche Zellwand noch einen eigenen Stoffwechsel und nutzen die Wirtszelle – die Angriffspunkte der Antibiotika fehlen, also helfen sie nicht. b) In einer großen Bakterienpopulation gibt es durch zufällige Mutationen einzelne Varianten, die weniger empfindlich sind. Ein zu kurzer/abgebrochener Antibiotikaeinsatz tötet die empfindlichen Bakterien, aber nicht die widerstandsfähigen. Diese überleben (Selektion), vermehren sich und geben ihre Resistenz weiter. Nach mehreren Runden besteht die Population überwiegend aus resistenten Bakterien – das Mittel wirkt kaum noch.",
+    "acceptable_reasoning": "Akzeptabel, wenn deutlich wird: Mutation erzeugt die Variante VOR dem Antibiotikum, das Antibiotikum wählt aus (tötet die empfindlichen), die resistenten vermehren sich.",
+    "rubric": [
+      {
+        "criterion": "Antibiotika-Wirkung erklärt (a)",
+        "levels": [
+          "falsch/fehlend",
+          "Bakterien-Ziel genannt, Virus-Bezug unklar",
+          "Angriffspunkte an Bakterien vs. fehlende Ziele bei Viren erklärt"
+        ]
+      },
+      {
+        "criterion": "Resistenz als Selektion erklärt (b)",
+        "levels": [
+          "Anpassung des Einzelbakteriums (falsch)",
+          "Überleben der Resistenten genannt, ohne Mutation davor",
+          "Mutation (Variante) → Selektion → Vermehrung sauber erklärt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Kernfehlvorstellung: „Bakterien gewöhnen sich an das Antibiotikum.“ Nicht das einzelne Bakterium passt sich willentlich an – die Population verändert sich durch Auslese vorhandener Zufallsvarianten (Evolution).",
+      "Nicht der Mensch wird resistent, sondern die Bakterien; deshalb ist die vollständige Einnahme nach ärztlicher Anweisung wichtig."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 7,
+  "kompetenzbereich": "Kompetenzmodul 5",
+  "competences": [
+    "BIO.OS.7.KOM4.03",
+    "BIO.OS.7.KOM4.02",
+    "BIO.OS.x.FAC.04"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "W",
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0204",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:04+00:00",
+  "updated_at": "2026-07-14T16:27:04+00:00"
+}

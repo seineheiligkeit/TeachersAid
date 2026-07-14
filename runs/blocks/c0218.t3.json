@@ -1,0 +1,86 @@
+{
+  "id": "c0218.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne jedem Geofaktor die Wechselwirkung zu, bei der er die treibende Ursache ist.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Relief (Höhe/Hangneigung)",
+        "Klima (Temperatur/Niederschlag)",
+        "Boden",
+        "Wasser",
+        "Vegetation"
+      ],
+      "right": [
+        "An einem Steilhang wird lockeres Material leichter abgetragen (Erosion) als in der Ebene.",
+        "Häufiger Frostwechsel und Starkregen verwittern das Gestein und entscheiden mit, welche Pflanzen wachsen können.",
+        "Ein tiefgründiger, humusreicher Untergrund kann viel Wasser und Nährstoffe speichern und trägt üppige Pflanzen.",
+        "Entlang eines Flusses gedeiht selbst in trockener Umgebung ein grüner Auwald.",
+        "Ein dichter Wald hält mit seinen Wurzeln den Boden fest und gibt über die Blätter Wasser an die Luft ab."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Geofaktor",
+        "Passende Wechselwirkung"
+      ],
+      "rows": 5
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "SYN"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.OS.5.GEO.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Relief → Erosion am Steilhang. Klima → Verwitterung durch Frost/Regen und Steuerung des Pflanzenwuchses. Boden → Speicherung von Wasser/Nährstoffen für die Pflanzen. Wasser → Auwald entlang des Flusses trotz trockener Umgebung. Vegetation → Wald hält Boden fest und verdunstet Wasser.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Fast alle Wechselwirkungen sind Rückkopplungen (gehen in beide Richtungen) – hier ist jeweils die HAUPTursache gefragt.",
+      "Boden und Vegetation beeinflussen sich gegenseitig – nicht 'entweder/oder' denken.",
+      "Relief ist selten direkter 'Akteur', sondern verstärkt Prozesse (Gefälle → mehr Erosion/Abfluss)."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 5,
+  "kompetenzbereich": "Geoökosysteme der Erde analysieren",
+  "competences": [
+    "GWB.OS.5.GEO.03"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "SYN"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0218",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:09+00:00",
+  "updated_at": "2026-07-14T16:27:09+00:00"
+}

@@ -1,0 +1,98 @@
+{
+  "id": "c0206.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "„Urban Mining“ bezeichnet die Idee, Metalle nicht nur aus Erzen, sondern aus dem Abfall unserer Städte (Altgeräte, Dosen, Schrott) zu gewinnen.\na) Entwirf ein einfaches Kreislaufschema für Aluminium mit den Stationen Erzabbau → Primärproduktion → Nutzung → Sammlung → Recycling → erneute Nutzung. Zeichne die Pfeile und beschrifte jede Station knapp.\nb) Kennzeichne im Schema, an welcher Stelle der „Kurzschluss“ durch Recycling die energieintensive Primärproduktion umgeht.\nc) Erkläre in zwei bis drei Sätzen, warum ein solcher geschlossener Stoffkreislauf nachhaltiger ist als eine lineare „Wegwerf“-Kette (Erz → Produkt → Müll).",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 70.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "WO",
+      "KZ"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.OS.7.UMG.03",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "CHE.OS.x.WIS.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 13,
+    "answer_key": "a) Ein Kreis mit den Stationen: Erzabbau (Bauxit) → Primärproduktion (Schmelzflusselektrolyse) → Nutzung (z. B. Dose/Bauteil) → Sammlung (getrennte Wertstoffsammlung) → Recycling (Umschmelzen) → zurück zur Nutzung. b) Der Recyclingpfeil führt vom Sammeln/Umschmelzen direkt zurück zur Nutzung und umgeht so die Stationen Erzabbau und Primärproduktion – genau dort wird die meiste Energie eingespart. c) Ein geschlossener Kreislauf hält das einmal (unter hohem Energieaufwand) gewonnene Metall im Gebrauch, spart Energie (rund 95 %) und schont endliche Erzvorkommen sowie Deponieraum; die lineare Kette verbraucht dagegen bei jedem Durchgang neue Rohstoffe und Energie und erzeugt Abfall.",
+    "acceptable_reasoning": "Ein sinnvoll geschlossenes Schema mit korrekt platziertem Recycling-Kurzschluss und einer nachvollziehbaren Nachhaltigkeitsbegründung genügt; die grafische Form ist frei.",
+    "rubric": [
+      {
+        "criterion": "Complete cycle diagram",
+        "levels": [
+          "All stations sensibly linked and labelled",
+          "Some stations or arrows missing",
+          "No coherent diagram"
+        ]
+      },
+      {
+        "criterion": "Recycling short-circuit marked",
+        "levels": [
+          "Correctly marked at the energy-intensive point",
+          "Imprecisely marked",
+          "Missing"
+        ]
+      },
+      {
+        "criterion": "Sustainability justification",
+        "levels": [
+          "Energy AND raw material/waste included",
+          "Only one aspect",
+          "No workable justification"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Der Kreis muss WIRKLICH geschlossen sein: Recycling führt zurück in die Nutzung, nicht in den Erzabbau.",
+      "„Nachhaltig“ soll begründet werden (Energie, endliche Erze, Abfall) – nicht nur als Schlagwort verwendet.",
+      "Recycling ist nicht verlustfrei: in der Praxis gibt es Sammel- und Umschmelzverluste; ein realistisches Schema darf das andeuten."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Chemie",
+  "klasse": 7,
+  "kompetenzbereich": "Umgang mit Materie",
+  "competences": [
+    "CHE.OS.7.UMG.03",
+    "CHE.OS.x.WIS.02"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "WO",
+    "KZ"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0206",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:05+00:00",
+  "updated_at": "2026-07-14T16:27:05+00:00"
+}

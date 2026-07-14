@@ -1,0 +1,81 @@
+{
+  "id": "c0230.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Beurteile die Aussagen zur Wissenschaftstheorie als richtig oder falsch und begründe jeweils in einem Satz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Aus noch so vielen Einzelbeobachtungen (‚Bisher ging die Sonne jeden Morgen auf') folgt mit logischer Notwendigkeit, dass es auch morgen so sein wird.",
+        "Nach Karl Popper lässt sich eine allgemeine wissenschaftliche Theorie durch Beobachtungen endgültig beweisen (verifizieren).",
+        "Eine einzige widersprechende Beobachtung (ein schwarzer Schwan) kann die Allaussage ‚Alle Schwäne sind weiß' widerlegen.",
+        "Für Popper ist eine Aussage umso wissenschaftlicher, je riskanter und leichter widerlegbar (falsifizierbar) ihre Vorhersagen sind."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "Richtig / Falsch",
+        "Begründung"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "WIS",
+      "TRA"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PUP.OS.8.ASP3.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "1 – Falsch: Das ist David Humes Induktionsproblem – von vielen Einzelfällen auf ein allgemeines Gesetz oder auf die Zukunft zu schließen ist nie logisch zwingend (die Vergangenheit garantiert die Zukunft nicht). 2 – Falsch: Nach Popper lassen sich allgemeine Theorien nie endgültig verifizieren (man kann nie alle Fälle prüfen); sie können sich nur bewähren oder falsifiziert werden. 3 – Richtig: Eine Allaussage wird durch ein einziges Gegenbeispiel logisch widerlegt (Asymmetrie von Verifikation und Falsifikation) – tatsächlich wurden in Australien schwarze Schwäne gefunden. 4 – Richtig: Je mehr eine Theorie ‚verbietet', also je riskantere und prüfbarere Vorhersagen sie macht, desto gehaltvoller und wissenschaftlicher ist sie nach Popper.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Verifikation gegenüber Falsifikation: Bestätigungen können eine Allaussage nie endgültig sichern, ein Gegenbeispiel kann sie widerlegen – diese Asymmetrie ist Poppers Kern.",
+      "‚Falsifizierbar' heißt nicht ‚falsch', sondern ‚grundsätzlich durch Beobachtung widerlegbar' – ein Gütezeichen, kein Makel.",
+      "Humes Induktionsproblem sagt nicht, Induktion sei nutzlos, sondern dass sie nicht logisch zwingend ist."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Psychologie und Philosophie",
+  "klasse": 8,
+  "kompetenzbereich": "Aspekte der Erkenntnis- und Wissenschaftstheorie",
+  "competences": [
+    "PUP.OS.8.ASP3.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "WIS",
+    "TRA"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0230",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:14+00:00",
+  "updated_at": "2026-07-14T16:27:14+00:00"
+}

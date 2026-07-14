@@ -1,0 +1,68 @@
+{
+  "id": "c0225.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Löse die Gleichung sin x = 0,5 im Intervall [0° ; 360°].\n(a) Gib ALLE Lösungen in diesem Intervall an.\n(b) Erkläre, warum es im Intervall genau zwei Lösungen gibt, obwohl der Taschenrechner nur eine liefert.\n(c) Wie viele Lösungen hätte sin x = 0,5, wenn man alle Winkel zulässt? Gib die Lösungsmenge allgemein an.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "FO",
+      "KA"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.OS.5.TRI.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "(a) x₁ = 30° und x₂ = 150°. (b) Der Taschenrechner liefert nur den Hauptwert 30°. Der Sinus nimmt auf dem Weg von 0° bis 180° jeden Wert zwischen 0 und 1 zweimal an (er steigt bis 90° und fällt danach wieder); die zweite Lösung ist der an 90° gespiegelte Winkel 180° − 30° = 150°. (c) Unendlich viele, weil der Sinus periodisch mit 360° ist: x = 30° + k · 360° oder x = 150° + k · 360° mit ganzzahligem k.",
+    "acceptable_reasoning": "In (b) ist jede Begründung gültig, die die Symmetrie der Sinuskurve um 90° bzw. das Zweimal-Durchlaufen des Wertebereichs auf [0°;180°] nutzt.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "nur die Taschenrechner-Lösung 30° angeben und 150° vergessen.",
+      "die zweite Lösung fälschlich als 360° − 30° = 330° angeben — das gilt für cos, nicht für sin.",
+      "die Periodizität übersehen und in (c) nur endlich viele Lösungen nennen."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Mathematik",
+  "klasse": 5,
+  "kompetenzbereich": "Trigonometrie",
+  "competences": [
+    "MAT.OS.5.TRI.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "FO",
+    "KA"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0225",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:12+00:00",
+  "updated_at": "2026-07-14T16:27:12+00:00"
+}

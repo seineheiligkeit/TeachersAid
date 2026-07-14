@@ -1,0 +1,78 @@
+{
+  "id": "c0221.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Entscheide für jede Aussage, ob sie wahr oder falsch ist, und begründe deine Entscheidung in einem Satz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Die IP-Adresse deines Computers gilt rechtlich als personenbezogenes Datum.",
+        "Sobald Daten anonymisiert sind – also keiner Person mehr zugeordnet werden können – fallen sie nicht mehr unter die DSGVO.",
+        "Ein Unternehmen darf deine rechtmäßig erhobenen Daten für jeden beliebigen neuen Zweck weiterverwenden.",
+        "Du hast das Recht, von einem Unternehmen eine Kopie aller über dich gespeicherten Daten zu verlangen."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "Wahr / Falsch",
+        "Begründung"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "WV"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "INF.OS.5.INF.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1: Wahr – eine IP-Adresse lässt sich einer Person zuordnen und gilt daher rechtlich als personenbezogenes Datum. 2: Wahr – echte Anonymisierung entfernt den Personenbezug dauerhaft, dann greift die DSGVO nicht mehr. 3: Falsch – der Grundsatz der Zweckbindung verbietet die Weiterverwendung für einen beliebigen neuen Zweck. 4: Wahr – das Auskunftsrecht (Art. 15 DSGVO) gibt dir Anspruch auf eine Kopie aller über dich gespeicherten Daten.",
+    "acceptable_reasoning": "Die Begründung muss den jeweiligen Grundsatz bzw. das jeweilige Recht sinngemäß benennen (Zweckbindung, Auskunftsrecht, Personenbezug).",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Bei Aussage 1 diskutieren: Streng juristisch hängt es davon ab, ob eine Zuordnung mit vertretbarem Aufwand möglich ist – im Schulkontext gilt die IP-Adresse als personenbezogen.",
+      "Aussage 2: Der häufigste Fehler ist, Pseudonymisierung (Klarname durch eine Nummer ersetzt, aber rückführbar) mit echter Anonymisierung zu verwechseln – pseudonyme Daten bleiben personenbezogen."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Informatik",
+  "klasse": 5,
+  "kompetenzbereich": "Informatik, Mensch und Gesellschaft",
+  "competences": [
+    "INF.OS.5.INF.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "WV"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0221",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:11+00:00",
+  "updated_at": "2026-07-14T16:27:11+00:00"
+}

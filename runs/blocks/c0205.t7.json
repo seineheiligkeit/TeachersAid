@@ -1,0 +1,98 @@
+{
+  "id": "c0205.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Ein unbekannter Feststoff X hat folgende Eigenschaften: Er ist bei Raumtemperatur fest und schmilzt erst bei sehr hoher Temperatur (mehrere Hundert Grad Celsius). Als Feststoff leitet er den Strom NICHT, geschmolzen und in Wasser gelöst aber sehr gut. Außerdem ist er hart und spröde.\na) Um welchen Bindungstyp handelt es sich? Begründe JEDE der vier Eigenschaften mit dem passenden Bindungsmodell.\nb) Stelle in einer beschrifteten Skizze oder in Worten dar, wie die Teilchen in X angeordnet sind (Art der Teilchen und ihre Anordnung).\nc) Nenne einen konkreten realen Stoff, der zu diesem Eigenschaftsprofil passt.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "WO",
+      "EG"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.OS.7.MOD.04",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "CHE.OS.x.WIS.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "a) Es handelt sich um eine Ionenverbindung (Ionengitter). Hoher Schmelzpunkt: die starke elektrostatische Anziehung zwischen entgegengesetzt geladenen Ionen muss überwunden werden. Feststoff leitet nicht: die Ionen sitzen fest im Gitter, es gibt keine beweglichen Ladungsträger. Schmelze/Lösung leitet: nun sind die Ionen frei beweglich und transportieren Ladung. Hart und spröde: beim Verschieben treffen gleichnamige Ladungen aufeinander, stoßen sich ab, der Kristall bricht. b) Ein regelmäßiges dreidimensionales Gitter aus abwechselnd positiven Kationen und negativen Anionen (z. B. Na⁺ und Cl⁻ im Schachbrettmuster), zusammengehalten durch elektrostatische Anziehung. c) z. B. Natriumchlorid (Kochsalz, NaCl); akzeptiere jedes typische Salz (etwa Kaliumchlorid KCl oder Calciumfluorid CaF₂).",
+    "acceptable_reasoning": "Die vier Eigenschaften einzeln und korrekt mit dem Ionenmodell zu verknüpfen ist wichtiger als der genannte Beispielstoff; jede saubere Ursache-Wirkungs-Begründung zählt.",
+    "rubric": [
+      {
+        "criterion": "Bonding type identified",
+        "levels": [
+          "Ionic bonding correctly identified",
+          "Uncertain or partial",
+          "Wrong"
+        ]
+      },
+      {
+        "criterion": "Justification of the properties",
+        "levels": [
+          "All four properties coherently linked to the model",
+          "Two to three justified",
+          "At most one"
+        ]
+      },
+      {
+        "criterion": "Representation of the particle arrangement",
+        "levels": [
+          "Regular cation-anion lattice clearly represented",
+          "Approach visible",
+          "Missing or wrong"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Der Kontrast „leitet als Feststoff nicht, als Schmelze aber schon“ ist der Schlüssel zur Ionenbindung – wird oft übersehen und fälschlich als Metall gedeutet (Metalle leiten auch als Feststoff).",
+      "„Hart und spröde“ passt NICHT zum Metall (verformbar) – die Sprödigkeit ist ein typischer Fingerabdruck des Ionengitters.",
+      "Ein Molekülstoff schiede aus, weil er weder hohe Schmelzpunkte noch Ionenleitfähigkeit in Lösung zeigt."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Chemie",
+  "klasse": 7,
+  "kompetenzbereich": "Modellbildung",
+  "competences": [
+    "CHE.OS.7.MOD.04",
+    "CHE.OS.x.WIS.02"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "WO",
+    "EG"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0205",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:05+00:00",
+  "updated_at": "2026-07-14T16:27:05+00:00"
+}

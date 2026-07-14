@@ -1,0 +1,154 @@
+{
+  "id": "c0221.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Nutze den abgebildeten Wegweiser durch die Nutzungsrechte. Entscheide für jeden Fall, ob die Nutzung erlaubt ist und was du gegebenenfalls tun musst. a) Du findest ein Foto unter der Lizenz CC BY und möchtest es in einer Schulpräsentation zeigen. b) Du findest ein Musikstück unter CC BY-NC-SA, willst es bearbeiten (remixen) und den Remix auf deinem YouTube-Kanal veröffentlichen, mit dem du Werbeeinnahmen erzielst. c) Ein Bild ist mit „alle Rechte vorbehalten“ gekennzeichnet und du möchtest es für deinen Blog verwenden.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "RB",
+      "WV"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "INF.OS.5.INF.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "a) Erlaubt – CC BY erlaubt die Nutzung (sogar kommerziell), Bedingung: den Urheber bzw. die Urheberin und die Lizenz nennen. b) In dieser Form nicht erlaubt: Der Zusatz NC (nicht-kommerziell) verbietet die Nutzung auf einem Kanal mit Werbeeinnahmen. Ohne Monetarisierung wäre ein Remix erlaubt, wenn du (BY) den Urheber nennst UND (SA) deinen Remix unter dieselbe Lizenz CC BY-NC-SA stellst. c) Nicht erlaubt ohne Zustimmung – „alle Rechte vorbehalten“ bedeutet, dass du eine ausdrückliche Erlaubnis oder Lizenz des Urhebers brauchst.",
+    "acceptable_reasoning": "Für b) ist das Erkennen des NC-Konflikts (Werbeeinnahmen = kommerziell) entscheidend; die SA-Pflicht (Weitergabe unter gleicher Lizenz) sollte zusätzlich genannt werden.",
+    "rubric": [
+      {
+        "criterion": "Korrekte Entscheidung je Fall",
+        "levels": [
+          "Alle drei korrekt",
+          "Zwei korrekt",
+          "Höchstens einer korrekt"
+        ]
+      },
+      {
+        "criterion": "Begründung mit den Lizenzbausteinen",
+        "levels": [
+          "BY / NC / SA korrekt benannt und angewendet",
+          "Teilweise benannt",
+          "Ohne Bezug auf die Lizenzbausteine"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Häufiger Irrtum: „im Internet gefunden = frei nutzbar“. Ohne ausdrückliche Freigabe gilt das Urheberrecht weiter.",
+      "NC (nicht-kommerziell) und ein monetarisierter Kanal schließen sich aus – auch geringe Werbeeinnahmen zählen als kommerziell.",
+      "SA (Weitergabe unter gleichen Bedingungen) verpflichtet, das eigene Ergebnis unter dieselbe Lizenz zu stellen – das wird bei Remixen oft vergessen."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Informatik",
+  "klasse": 5,
+  "kompetenzbereich": "Informatik, Mensch und Gesellschaft",
+  "competences": [
+    "INF.OS.5.INF.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "RB",
+    "WV"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "lane": null,
+      "intended_claim": null,
+      "medium": "visual",
+      "generator": "matplotlib:tree_diagram",
+      "spec": {
+        "title": "Wegweiser: Darf ich ein fremdes Werk nutzen?",
+        "branches": [
+          {
+            "label": "Fremdes Werk",
+            "children": [
+              {
+                "label": "CC0 / gemeinfrei",
+                "children": [
+                  {
+                    "label": "frei nutzbar"
+                  }
+                ]
+              },
+              {
+                "label": "CC BY",
+                "children": [
+                  {
+                    "label": "Urheber nennen"
+                  }
+                ]
+              },
+              {
+                "label": "CC BY-SA",
+                "children": [
+                  {
+                    "label": "gleiche Lizenz"
+                  }
+                ]
+              },
+              {
+                "label": "CC BY-NC",
+                "children": [
+                  {
+                    "label": "nicht kommerziell"
+                  }
+                ]
+              },
+              {
+                "label": "Rechte vorbehalten",
+                "children": [
+                  {
+                    "label": "nur mit Erlaubnis"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0221",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:11+00:00",
+  "updated_at": "2026-07-14T16:27:11+00:00"
+}

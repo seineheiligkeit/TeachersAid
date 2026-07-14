@@ -1,0 +1,83 @@
+{
+  "id": "c0219.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Beurteile die beiden Fälle. Nenne jeweils, welches Recht greift, was du konkret verlangen kannst und wie du das begründest.\n\nFall A: Du hast vor 10 Tagen Kopfhörer in einem Onlineshop gekauft. Sie funktionieren einwandfrei, aber sie gefallen dir doch nicht. Du möchtest sie zurückgeben und dein Geld zurück.\n\nFall B: Du hast vor 6 Monaten im Geschäft Lederschuhe gekauft. Jetzt löst sich die Sohle, obwohl du die Schuhe normal getragen hast. Der Verkäufer sagt, nach so langer Zeit könne man nichts mehr machen.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "CC"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "HOE.OS.5.KON.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 11,
+    "answer_key": "Fall A: Es greift das 14-tägige Rücktrittsrecht bei Fernabsatzgeschäften (Onlinekauf). Innerhalb von 14 Tagen ab Erhalt darf man ohne Angabe von Gründen zurücktreten – auch wenn kein Mangel vorliegt und die Ware nur nicht gefällt. Du kannst die Kopfhörer zurückschicken und den Kaufpreis zurückverlangen (die Rücksendekosten können dir je nach Shop-Bedingungen auferlegt werden). Da erst 10 Tage vergangen sind, ist die Frist gewahrt. Fall B: Es greift die Gewährleistung. Bei beweglichen Sachen beträgt die Gewährleistungsfrist zwei Jahre ab Übergabe; eine sich lösende Sohle bei normaler Nutzung ist ein Material-/Verarbeitungsmangel. In den ersten zwölf Monaten wird vermutet, dass der Mangel schon bei der Übergabe angelegt war – die Aussage des Verkäufers ist also falsch. Du hast Anspruch auf Verbesserung (Reparatur) oder Austausch; klappt das nicht, auf Preisminderung oder Wandlung (Geld zurück).",
+    "acceptable_reasoning": "Wichtig ist die korrekte Unterscheidung: Fall A ist ein Rücktritt ohne Mangel (nur bei Fernabsatz möglich), Fall B ein Gewährleistungsfall (Mangel). Fristangaben (14 Tage bzw. zwei Jahre, Vermutung im ersten Jahr) sollen sinngemäß stimmen.",
+    "rubric": [
+      {
+        "criterion": "Richtige Rechtsgrundlage",
+        "levels": [
+          "Beide Fälle falsch zugeordnet",
+          "Ein Fall korrekt",
+          "Beide Fälle korrekt (Rücktritt vs. Gewährleistung)"
+        ]
+      },
+      {
+        "criterion": "Anspruch und Begründung",
+        "levels": [
+          "Kein konkreter Anspruch",
+          "Anspruch genannt, aber schwach begründet",
+          "Konkreter Anspruch mit korrekter Frist und schlüssiger Begründung"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Beliebter Irrtum: Man könne auch im Geschäft Gekauftes einfach zurückgeben, wenn es nicht gefällt – das gilt nur im Fernabsatz.",
+      "In Fall B nicht mit dem Rücktrittsrecht argumentieren – hier geht es um einen Mangel, also um Gewährleistung.",
+      "Die pauschale Verkäuferaussage, nach so langer Zeit gehe nichts mehr, ist bei sechs Monaten klar unrichtig (Frist: zwei Jahre)."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Haushaltsökonomie und Ernährung",
+  "klasse": 5,
+  "kompetenzbereich": "Das Konzept des Consumer Citizenship erkennen, reflektieren und in Entscheidungen einbinden",
+  "competences": [
+    "HOE.OS.5.KON.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "CC"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0219",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:10+00:00",
+  "updated_at": "2026-07-14T16:27:10+00:00"
+}

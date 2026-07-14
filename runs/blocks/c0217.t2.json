@@ -1,0 +1,139 @@
+{
+  "id": "c0217.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_analysis",
+    "prompt": "Abbildung 2 vergleicht den Verstädterungsgrad mehrerer Länder.\n\na) Ordne die Länder grob nach ihrem Verstädterungsgrad: Welche liegen an der Spitze, welche am Ende?\nb) Fällt dir ein Land besonders auf, das aus dem Muster 'reiches Land = hoher Verstädterungsgrad' herausfällt? Beschreibe es.\nc) Erkläre, warum heute gerade Länder mit heute noch niedrigem Verstädterungsgrad die schnellste Urbanisierung erleben. Welche Chancen und welche Probleme kann so ein rasantes Städtewachstum mit sich bringen?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "SYN",
+      "REF"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.OS.8.STA.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "a) An der Spitze liegen hoch entwickelte Länder wie die Schweiz, Deutschland und die USA (rund 80–86 %); im Mittelfeld Österreich und Italien (um 70 %) sowie China und Nigeria (rund 63–66 %); klares Schlusslicht ist Indien mit gut einem Drittel. b) Nigeria fällt auf: trotz relativ geringem Wohlstand ist bereits ein beachtlicher Teil der Bevölkerung urbanisiert – hoher Verstädterungsgrad und niedriges Einkommen schließen sich also nicht aus. c) Länder mit heute niedrigem Verstädterungsgrad haben ein starkes Bevölkerungswachstum und viele Menschen, die noch vom Land in die Stadt ziehen – der 'Nachholprozess' läuft dort gerade. Chancen: Wirtschaftswachstum, Bildung, bessere Versorgung, Innovation. Probleme: Wachstum überholt die Infrastruktur → informelle Siedlungen/Slums, Wasser-/Abwasserprobleme, Verkehr, Umweltbelastung, soziale Spannungen.",
+    "acceptable_reasoning": "Beim 'Ausreißer' ist jede belegbare Beobachtung akzeptabel, solange sie mit abgelesenen Werten begründet wird.",
+    "rubric": [
+      {
+        "criterion": "Vergleich/Ordnung",
+        "levels": [
+          "Keine Ordnung",
+          "Nur Extremwerte genannt",
+          "Länder sinnvoll gruppiert",
+          "Differenzierte Ordnung mit Werten und Auffälligkeiten"
+        ]
+      },
+      {
+        "criterion": "Chancen und Probleme",
+        "levels": [
+          "Nur eine Seite",
+          "Je ein Aspekt",
+          "Je zwei Aspekte mit Erklärung",
+          "Differenziert, mit Bezug auf das Tempo des Wachstums"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Fehlvorstellung 'arm = ländlich': einige einkommensschwächere Länder sind bereits stark urbanisiert; Verstädterung und Wohlstand hängen nicht zwingend zusammen.",
+      "Absoluter vs. relativer Blick: Indien hat einen niedrigen Verstädterungsgrad, aber wegen der riesigen Gesamtbevölkerung trotzdem sehr viele Stadtbewohner:innen."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "data_analysis",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 8,
+  "kompetenzbereich": "Städte als Lebensräume und ökonomische Zentren untersuchen",
+  "competences": [
+    "GWB.OS.8.STA.03"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "SYN",
+    "REF"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb2",
+      "role": "figure",
+      "lane": null,
+      "intended_claim": null,
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "title": "Verstädterungsgrad im Ländervergleich (Anteil der Stadtbevölkerung, in %)",
+        "xlabel": "Land",
+        "ylabel": "Anteil in %",
+        "log": false,
+        "categories": [
+          "Österreich",
+          "Deutschland",
+          "Schweiz",
+          "Italien",
+          "USA",
+          "China",
+          "Indien",
+          "Nigeria"
+        ],
+        "values": [
+          69.5,
+          82.0,
+          85.5,
+          69.6,
+          80.1,
+          65.9,
+          35.4,
+          63.0
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": {
+        "dataset_id": "worldbank_urbanisierung",
+        "series": "vergleich",
+        "note": null,
+        "title": "Verstädterung im Ländervergleich (Anteil Stadtbevölkerung)",
+        "url": "https://data.worldbank.org/indicator/SP.URB.TOTL.IN.ZS",
+        "attribution": "Datenquelle: World Bank – data.worldbank.org (SP.URB.TOTL.IN.ZS, CC BY 4.0)",
+        "stand": "2024"
+      },
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0217",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:08+00:00",
+  "updated_at": "2026-07-14T16:27:08+00:00"
+}

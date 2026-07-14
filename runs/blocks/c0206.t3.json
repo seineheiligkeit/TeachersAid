@@ -1,0 +1,96 @@
+{
+  "id": "c0206.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "experiment_protocol",
+    "prompt": "In einem Schülerlabor sollst du herausfinden, welche zwei verschiedenen Metallsalze in zwei unbeschrifteten Bechergläsern vorliegen. Zur Verfügung steht die Flammenfärbung (die Farbe, mit der ein Metall die Brennerflamme färbt).\na) Beschreibe kurz, wie du eine Flammenprobe durchführst (Vorgehen und eine Sicherheitsregel).\nb) Erstelle eine Tabelle, in die du für jede Probe eintragen kannst: Probe, beobachtete Flammenfarbe, vermutetes Metall.\nc) Probe 1 färbt die Flamme intensiv gelb, Probe 2 ziegelrot. Welche Metalle liegen vermutlich vor? (Hinweis: Natrium → gelb, Calcium → ziegelrot, Kalium → violett, Kupfer → grün.)",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "EG"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.OS.7.UMG.08",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "CHE.OS.x.ERK.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "a) Ein sauberes (ausgeglühtes) Magnesiastäbchen in die Probe tauchen und in die entleuchtete (rauschende) Brennerflamme halten; die Flammenfarbe beobachten. Sicherheitsregel: Schutzbrille tragen, den Brenner sachgemäß bedienen (nur mit Aufsicht) und das Stäbchen zwischen zwei Proben ausglühen, um Verunreinigung zu vermeiden. b) Tabelle mit drei Spalten (Probe | beobachtete Flammenfarbe | vermutetes Metall) und je einer Zeile pro Probe. c) Probe 1 (gelb) → Natrium; Probe 2 (ziegelrot) → Calcium.",
+    "acceptable_reasoning": "Statt Magnesiastäbchen ist auch ein sauberer Platin-/Eisendraht akzeptabel; entscheidend sind das Ausglühen zwischen den Proben und eine sinnvolle Sicherheitsregel.",
+    "rubric": [
+      {
+        "criterion": "Procedure and safety",
+        "levels": [
+          "Correct procedure and a sensible safety rule",
+          "Only one of the two",
+          "Missing"
+        ]
+      },
+      {
+        "criterion": "Protocol table",
+        "levels": [
+          "Complete, well-structured table",
+          "Incomplete",
+          "No table"
+        ]
+      },
+      {
+        "criterion": "Interpretation of the colours",
+        "levels": [
+          "Both metals correctly assigned",
+          "One correct",
+          "None"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Das Stäbchen zwischen den Proben ausglühen – sonst verfälscht eine allgegenwärtige Natrium-Spur (gelb) die weiteren Proben.",
+      "Die sehr intensive gelbe Natriumfärbung überdeckt oft schwächere Farben; das ist eine bekannte Störquelle der Methode.",
+      "Die Flammenfärbung weist das METALL(-Ion) nach, nicht das ganze Salz – das Anion (z. B. Chlorid) bleibt so unbestimmt."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "experiment_protocol",
+  "subject": "Chemie",
+  "klasse": 7,
+  "kompetenzbereich": "Umgang mit Materie",
+  "competences": [
+    "CHE.OS.7.UMG.08",
+    "CHE.OS.x.ERK.01"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "EG"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0206",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:05+00:00",
+  "updated_at": "2026-07-14T16:27:05+00:00"
+}

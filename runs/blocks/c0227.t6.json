@@ -1,0 +1,145 @@
+{
+  "id": "c0227.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Abbildung 1 zeigt eine Schaltung, bei der der Widerstand R₁ in Reihe zu einer Parallelschaltung aus R₂ und R₃ liegt. Die Quelle liefert U = 12 V. Gegeben: R₁ = 20 Ω, R₂ = 60 Ω, R₃ = 30 Ω.\na) Berechne den Ersatzwiderstand der Parallelschaltung und anschließend den Gesamt-Ersatzwiderstand Rₑᵣₛ.\nb) Berechne die Gesamtstromstärke I.\nc) Welche Spannung fällt über R₁ ab, welche über der Parallelschaltung?\nd) Berechne die Teilströme durch R₂ und durch R₃.\ne) Erkläre, warum durch R₃ ein größerer Strom fließt als durch R₂.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 70.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.OS.6.ELE.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.OS.x.W.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 15,
+    "answer_key": "a) Parallel: R₂₃ = (R₂ · R₃) / (R₂ + R₃) = (60 · 30) / (60 + 30) Ω = 1800/90 Ω = 20 Ω. Reihe: Rₑᵣₛ = R₁ + R₂₃ = 20 Ω + 20 Ω = 40 Ω. b) I = U / Rₑᵣₛ = 12 V / 40 Ω = 0,3 A. c) U₁ = I · R₁ = 0,3 A · 20 Ω = 6 V; über der Parallelschaltung: U₂₃ = U − U₁ = 12 V − 6 V = 6 V. d) I₂ = U₂₃ / R₂ = 6 V / 60 Ω = 0,1 A; I₃ = U₂₃ / R₃ = 6 V / 30 Ω = 0,2 A (Kontrolle: I₂ + I₃ = 0,3 A = I). e) An R₂ und R₃ liegt dieselbe Spannung (6 V). Da R₃ den kleineren Widerstand hat, fließt durch ihn nach I = U / R der größere Strom.",
+    "acceptable_reasoning": "Akzeptiert: Rechenweg über die Leitwerte (1/R₂₃ = 1/60 + 1/30 = 3/60, also R₂₃ = 20 Ω).",
+    "rubric": [
+      {
+        "criterion": "Ersatzwiderstand",
+        "levels": [
+          "Parallel- und Gesamtwiderstand korrekt berechnet",
+          "Ein Schritt korrekt, der andere fehlerhaft"
+        ]
+      },
+      {
+        "criterion": "Ströme und Spannungen",
+        "levels": [
+          "Gesamtstrom, Teilspannungen und Teilströme korrekt und widerspruchsfrei",
+          "Ansatz richtig, Rechenfehler oder fehlende Kontrolle"
+        ]
+      },
+      {
+        "criterion": "Erklärung",
+        "levels": [
+          "Gleiche Spannung, kleinerer Widerstand → größerer Strom korrekt begründet",
+          "Ergebnis ohne physikalische Begründung"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Der Ersatzwiderstand einer Parallelschaltung ist kleiner als der kleinste Einzelwiderstand – die Widerstände dürfen nicht einfach addiert werden.",
+      "In der Parallelschaltung ist die Spannung gleich und die Ströme addieren sich (Knotenregel); in der Reihenschaltung ist der Strom gleich und die Spannungen addieren sich (Maschenregel).",
+      "Teilströme kontrollieren: Ihre Summe muss die Gesamtstromstärke ergeben."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Physik",
+  "klasse": 6,
+  "kompetenzbereich": "Elektrizitätslehre",
+  "competences": [
+    "PHY.OS.6.ELE.02",
+    "PHY.OS.x.W.04"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "lane": null,
+      "intended_claim": null,
+      "medium": "visual",
+      "generator": "matplotlib:circuit",
+      "spec": {
+        "net": {
+          "type": "series",
+          "children": [
+            {
+              "type": "resistor",
+              "ohm": 20,
+              "label": "R₁"
+            },
+            {
+              "type": "parallel",
+              "children": [
+                {
+                  "type": "resistor",
+                  "ohm": 60,
+                  "label": "R₂"
+                },
+                {
+                  "type": "resistor",
+                  "ohm": 30,
+                  "label": "R₃"
+                }
+              ]
+            }
+          ]
+        },
+        "volt": 12,
+        "mask": [
+          "Rers",
+          "I"
+        ],
+        "title": "Gemischte Schaltung aus drei Widerständen"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0227",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:14+00:00",
+  "updated_at": "2026-07-14T16:27:14+00:00"
+}

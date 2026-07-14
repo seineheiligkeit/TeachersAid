@@ -1,0 +1,128 @@
+{
+  "id": "c0220.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_analysis",
+    "prompt": "Sieh dir das Ausgabenprofil (Abbildung) noch einmal an.\n\na) Teile die sechs Ausgabenbereiche in Fixkosten (regelmäßig, kaum veränderbar) und variable Kosten (kurzfristig beeinflussbar) ein und berechne jeweils die Summe.\nb) Welche zwei Bereiche bieten am ehesten Sparpotenzial? Begründe.\nc) Vergleiche das Budget mit der 50-30-20-Faustregel (50 % Grundbedürfnisse, 30 % Wünsche, 20 % Sparen). Was fällt auf?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "RM",
+      "KQ"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "HOE.OS.5.RES.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 11,
+    "answer_key": "a) Fixkosten (regelmäßig, vertraglich): Wohnen 780 + Versicherungen 150 + Mobilität 300 (z. B. Öffi-Jahreskarte) = 1 230 €. Variable Kosten: Lebensmittel 360 + Freizeit 330 + Kleidung & Sonstiges 180 = 870 €. (Zusammen 2 100 €.) b) Sparpotenzial vor allem bei Freizeit (330 €) und Kleidung/Sonstiges (180 €), da variabel und kurzfristig steuerbar; auch bei Lebensmitteln (Planung, weniger Wegwerfen). Wohnen ist nur langfristig veränderbar. c) 50-30-20 auf 2 400 € wären 1 200 € Grundbedürfnisse, 720 € Wünsche, 480 € Sparen. Der Haushalt spart nur 300 € (12,5 %) statt der angepeilten 480 € (20 %) – Sparen liegt unter der Faustregel, während die Fixkosten (v. a. Wohnen) hoch sind.",
+    "acceptable_reasoning": "Die Einteilung in fix/variabel kann bei Mobilität begründet abweichen (Jahreskarte = fix, einzelne Fahrten = variabel). Entscheidend sind korrekte Summen und eine schlüssige Begründung des Sparpotenzials.",
+    "rubric": [
+      {
+        "criterion": "Fix/variabel mit Summen",
+        "levels": [
+          "Keine korrekte Einteilung",
+          "Einteilung ohne korrekte Summen",
+          "Einteilung mit korrekten Summen",
+          "Korrekt und mit begründeter Behandlung der Mobilität"
+        ]
+      },
+      {
+        "criterion": "Vergleich mit Faustregel",
+        "levels": [
+          "Kein Vergleich",
+          "Nur nacherzählt",
+          "Rechnerisch verglichen",
+          "Verglichen und Abweichung interpretiert"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Fixkosten sind nicht „unveränderbar“, sondern nur kurzfristig kaum beeinflussbar – langfristig kann man z. B. umziehen oder den Tarif wechseln.",
+      "Beim 50-30-20-Vergleich die Prozentwerte auf die EINNAHMEN beziehen, nicht auf die Ausgaben.",
+      "Sparpotenzial nicht nur bei den größten Posten suchen: Der größte Posten (Wohnen) ist am schwersten zu senken."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "data_analysis",
+  "subject": "Haushaltsökonomie und Ernährung",
+  "klasse": 5,
+  "kompetenzbereich": "Ressourcen verantwortungsbewusst managen",
+  "competences": [
+    "HOE.OS.5.RES.04"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "RM",
+    "KQ"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "lane": null,
+      "intended_claim": null,
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Wohnen",
+          "Lebensmittel",
+          "Mobilität",
+          "Versicherungen",
+          "Freizeit",
+          "Kleidung & Sonstiges"
+        ],
+        "values": [
+          780.0,
+          360.0,
+          300.0,
+          150.0,
+          330.0,
+          180.0
+        ],
+        "title": "Monatliche Ausgaben eines Beispielhaushalts",
+        "xlabel": "Ausgabenbereich",
+        "ylabel": "Euro pro Monat",
+        "log": false
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": true,
+      "caption": "Konstruiertes Beispielbudget zu Übungszwecken – realistische Größenordnungen, aber keine amtliche Statistik."
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0220",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:11+00:00",
+  "updated_at": "2026-07-14T16:27:11+00:00"
+}

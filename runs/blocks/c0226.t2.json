@@ -1,0 +1,66 @@
+{
+  "id": "c0226.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Gegeben sind z = 3 + 2i und w = 1 − 4i. Berechne und schreibe jedes Ergebnis in der Form a + b·i:\n(a) z + w\n(b) z · w\n(c) z / w",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "FO"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.OS.7.KOM3.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "(a) z + w = (3 + 1) + (2 − 4)i = 4 − 2i. (b) z · w = (3 + 2i)(1 − 4i) = 3 − 12i + 2i − 8i² = 3 − 10i + 8 = 11 − 10i (wegen i² = −1). (c) Mit dem konjugiert Komplexen von w erweitern: z / w = (3 + 2i)(1 + 4i) / [(1 − 4i)(1 + 4i)] = (3 + 12i + 2i + 8i²) / (1 + 16) = (−5 + 14i) / 17 = −5/17 + (14/17)i ≈ −0,29 + 0,82i.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "i² = −1 nicht anwenden — dann wird aus −8i² fälschlich −8 statt +8.",
+      "bei der Division nicht mit dem konjugiert Komplexen des Nenners erweitern.",
+      "beim Multiplizieren Real- und Imaginärteil vermischen; nur gleichartige Terme zusammenfassen."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Mathematik",
+  "klasse": 7,
+  "kompetenzbereich": "Komplexe Zahlen",
+  "competences": [
+    "MAT.OS.7.KOM3.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "FO"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0226",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:13+00:00",
+  "updated_at": "2026-07-14T16:27:13+00:00"
+}

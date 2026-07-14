@@ -1,0 +1,98 @@
+{
+  "id": "c0209.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Vergleiche vier bekannte Positionen zum moralischen Status der Tiere. Trage in die Tabelle ein, welches Kriterium jede Position für den moralischen Status ansetzt, auf welcher ethischen Grundtheorie sie beruht und was daraus für den Umgang mit Tieren folgt.\n\n| Position | Kriterium für moralischen Status | Ethische Grundtheorie | Was folgt für den Umgang mit Tieren? |\n|---|---|---|---|\n| Peter Singer | ? | ? | ? |\n| Tom Regan | ? | ? | ? |\n| Immanuel Kant | ? | ? | ? |\n| Kontraktualismus | ? | ? | ? |",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Position",
+        "Kriterium für moralischen Status",
+        "Ethische Grundtheorie",
+        "Was folgt für den Umgang mit Tieren?"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "AR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "ETH.OS.x.ANA.03",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "ETH.OS.x.ARG.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "ETH.OS.6.UMG.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 13,
+    "answer_key": "Peter Singer: Kriterium = Empfindungs-/Leidensfähigkeit (Interessen, v. a. das Interesse, nicht zu leiden); Grundtheorie = (Präferenz-)Utilitarismus; Folge = gleiche Berücksichtigung vergleichbarer Interessen; kein absolutes Verbot, aber Praktiken mit großem, vermeidbarem Tierleid (z. B. industrielle Massentierhaltung) sind kaum zu rechtfertigen – entscheidend ist die Abwägung der Gesamtfolgen.\nTom Regan: Kriterium = „Subjekt eines Lebens“ (Tiere mit Bewusstsein, Wünschen, Erinnerung) haben inhärenten Wert; Grundtheorie = deontologische Rechtsethik (Tierrechte); Folge = Tiere haben Rechte und dürfen nicht bloß als Mittel benutzt werden → grundsätzliches Verbot von Tierversuchen und Nutztierhaltung (abolitionistisch).\nImmanuel Kant: Kriterium = Vernunft und Selbstzweck – nur der Mensch ist Zweck an sich; Grundtheorie = deontologische Pflichtethik; Folge = nur indirekte Pflichten: Tierquälerei ist verwerflich, weil sie den Menschen verroht, nicht um der Tiere selbst willen.\nKontraktualismus: Kriterium = Fähigkeit, als vernünftiger Akteur an einer Übereinkunft (einem Vertrag) teilzunehmen; Grundtheorie = Vertragstheorie; Folge = Tiere sind keine Vertragspartner und haben daher keinen direkten moralischen Status; Schutz nur mittelbar (z. B. weil Menschen Tiere schätzen). Hinweis: Manche modernen Kontraktualisten erweitern den Vertrag auf Wesen, die nicht selbst zustimmen können.",
+    "acceptable_reasoning": "Eigene Formulierungen sind erlaubt, solange Kriterium, Grundtheorie und Konsequenz je Position sachlich korrekt zugeordnet werden.",
+    "rubric": [
+      {
+        "criterion": "Kriterien korrekt zugeordnet",
+        "levels": [
+          "Alle vier Kriterien treffend",
+          "Zwei bis drei korrekt",
+          "Höchstens eines korrekt"
+        ]
+      },
+      {
+        "criterion": "Konsequenzen abgeleitet",
+        "levels": [
+          "Für jede Position plausible Folge genannt",
+          "Teilweise",
+          "Fehlen oder falsch"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Singer ist Utilitarist, kein Vertreter von Tierrechten – er spricht von Interessen, nicht von Rechten. Regan hingegen begründet echte Tierrechte. Diese beiden werden oft verwechselt.",
+      "Kants Position wird leicht missverstanden: Er ist gegen Tierquälerei, aber aus einem menschenbezogenen Grund (Verrohung), nicht weil das Tier selbst einen Anspruch hätte."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Ethik",
+  "klasse": 6,
+  "kompetenzbereich": "Analysieren und Reflektieren",
+  "competences": [
+    "ETH.OS.x.ANA.03",
+    "ETH.OS.x.ARG.02",
+    "ETH.OS.6.UMG.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "AR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0209",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:05+00:00",
+  "updated_at": "2026-07-14T16:27:05+00:00"
+}

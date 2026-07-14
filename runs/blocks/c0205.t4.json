@@ -1,0 +1,133 @@
+{
+  "id": "c0205.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Das Diagramm (Abb. 1) zeigt die Schmelztemperaturen von vier Feststoffen. Alle vier lassen sich einem typischen Bindungs- bzw. Wechselwirkungstyp zuordnen.\na) Ordne jedem der vier Stoffe den vorherrschenden Typ zu: Molekülkristall (schwache Kräfte zwischen den Molekülen), Ionengitter, Metallgitter oder Atomgitter (durchgehendes Netzwerk kovalenter Bindungen).\nb) Erkläre mit den Bindungsmodellen, warum die Schmelztemperaturen so stark voneinander abweichen.\nc) Iod und Diamant bestehen beide nur aus Nichtmetall-Atomen. Warum schmilzt Diamant erst bei über 3000 °C, Iod aber schon bei rund 114 °C?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "EG"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.OS.7.MOD.04",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "CHE.OS.x.ERK.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "a) Iod (I₂) – Molekülkristall (schwache Van-der-Waals-Kräfte zwischen den I₂-Molekülen); Natriumchlorid (NaCl) – Ionengitter (starke elektrostatische Anziehung zwischen Na⁺ und Cl⁻); Eisen (Fe) – Metallgitter (Metallbindung, „Elektronengas“); Diamant (C) – Atomgitter, ein dreidimensionales Netzwerk aus kovalenten C–C-Bindungen. b) Beim Schmelzen müssen die anziehenden Wechselwirkungen zwischen den Teilchen so weit gelockert werden, dass die Teilchen beweglich werden. Je stärker diese Anziehung, desto höher die nötige Temperatur: Van-der-Waals-Kräfte (Iod) sind am schwächsten → niedrigste Schmelztemperatur; Ionen- und Metallbindung sind deutlich stärker; das kovalente Netzwerk des Diamanten ist am stärksten. c) In Iod liegen einzelne I₂-Moleküle vor – beim Schmelzen werden nur die schwachen Kräfte ZWISCHEN den Molekülen überwunden, die starke I–I-Bindung im Molekül bleibt bestehen. In Diamant gibt es keine einzelnen Moleküle; der ganze Kristall ist ein einziges Riesengitter aus kovalenten Bindungen, die beim Schmelzen tatsächlich gebrochen werden müssen – das erfordert sehr viel mehr Energie.",
+    "acceptable_reasoning": "Wer für Diamant „Atomgitter/Diamantgitter“ verwendet und erkennt, dass hier kovalente Bindungen selbst gebrochen werden (nicht nur Kräfte zwischen Molekülen), hat den Kern verstanden.",
+    "rubric": [
+      {
+        "criterion": "Assignment of the bonding types",
+        "levels": [
+          "All four substances correctly assigned",
+          "Two to three correct",
+          "At most one correct"
+        ]
+      },
+      {
+        "criterion": "Explanation of the melting-point trend",
+        "levels": [
+          "Strength of the interactions consistently linked to temperature",
+          "Approach visible but incomplete",
+          "No workable explanation"
+        ]
+      },
+      {
+        "criterion": "Iodine versus diamond (intermolecular versus network)",
+        "levels": [
+          "Difference molecules/network clearly worked out",
+          "Partially correct",
+          "Not recognised"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Zentrale Fehlvorstellung: „Beim Schmelzen von Iod brechen die I–I-Bindungen.“ Richtig ist, dass nur die schwachen zwischenmolekularen Kräfte überwunden werden.",
+      "Stärke der Bindung IM Molekül und Höhe des Schmelzpunkts werden verwechselt – für den Schmelzpunkt zählen die Kräfte ZWISCHEN den Teilchen (bzw. beim Atomgitter das durchgehende Netzwerk).",
+      "Diamant schmilzt nur unter sehr hohem Druck bei etwa 3550 °C und sublimiert sonst; der sehr hohe Wert illustriert dennoch eindrucksvoll die extrem starke Atomgitterbindung."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Chemie",
+  "klasse": 7,
+  "kompetenzbereich": "Modellbildung",
+  "competences": [
+    "CHE.OS.7.MOD.04",
+    "CHE.OS.x.ERK.04"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "EG"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "lane": null,
+      "intended_claim": null,
+      "medium": "visual",
+      "generator": "matplotlib:bar_chart",
+      "spec": {
+        "categories": [
+          "Iod",
+          "Natriumchlorid",
+          "Eisen",
+          "Diamant"
+        ],
+        "values": [
+          114.0,
+          801.0,
+          1538.0,
+          3550.0
+        ],
+        "title": "Schmelztemperaturen ausgewählter Feststoffe",
+        "xlabel": "Stoff",
+        "ylabel": "Schmelztemperatur in °C",
+        "log": false
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": true,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0205",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:05+00:00",
+  "updated_at": "2026-07-14T16:27:05+00:00"
+}

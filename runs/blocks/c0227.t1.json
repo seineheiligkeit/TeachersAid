@@ -1,0 +1,82 @@
+{
+  "id": "c0227.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne den drei elektrischen Grundgrößen die jeweils passende Beschreibung zu.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Stromstärke I",
+        "Spannung U",
+        "elektrischer Widerstand R"
+      ],
+      "right": [
+        "Einheit Ohm (Ω); beschreibt, wie stark ein Bauteil den Stromfluss hemmt; berechnet sich als U geteilt durch I.",
+        "Einheit Ampere (A); wird mit einem Amperemeter gemessen, das in Reihe geschaltet wird; beschreibt die pro Sekunde fließende Ladungsmenge.",
+        "Einheit Volt (V); wird mit einem Voltmeter gemessen, das parallel geschaltet wird; ist der Antrieb, der die Ladungen durch den Kreis bewegt."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 3
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.OS.6.ELE.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.OS.x.W.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Stromstärke I → Ampere (A), Amperemeter in Reihe, Ladungsmenge pro Sekunde (mittlere Beschreibung). Spannung U → Volt (V), Voltmeter parallel, Antrieb der Ladungen (untere Beschreibung). Elektrischer Widerstand R → Ohm (Ω), R = U/I (obere Beschreibung).",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Amperemeter und Voltmeter werden häufig verwechselt: Das Amperemeter wird in Reihe geschaltet, das Voltmeter parallel.",
+      "Stromstärke ist nicht dasselbe wie Spannung: Die Spannung ist die Ursache (Antrieb), der Strom die Wirkung."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Physik",
+  "klasse": 6,
+  "kompetenzbereich": "Elektrizitätslehre",
+  "competences": [
+    "PHY.OS.6.ELE.01",
+    "PHY.OS.x.W.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0227",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:14+00:00",
+  "updated_at": "2026-07-14T16:27:14+00:00"
+}

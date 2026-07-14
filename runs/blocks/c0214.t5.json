@@ -1,0 +1,101 @@
+{
+  "id": "c0214.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Ein europäisches Land möchte der EU beitreten. Über eine Aufnahme müssen alle Mitgliedstaaten einstimmig entscheiden – auch Österreich. Wäge Argumente für und gegen eine Aufnahme ab und triff eine begründete Entscheidung. Berücksichtige mindestens die Perspektiven des Beitrittslandes, der bisherigen Mitglieder und der EU als Ganzes.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Alle Mitgliedstaaten müssen zustimmen. Wie entscheidest du – und warum?"
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "PUK",
+      "PMK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GPB.OS.8.WES.03",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "GPB.OS.8.WES.05",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Kein „richtiges“ Ergebnis; bewertet wird die Abwägung. Argumente dafür: größerer Binnenmarkt, Stabilität und Frieden an den Grenzen, Stärkung der EU in der Welt, europäische Perspektive für die Bevölkerung des Beitrittslandes. Argumente dagegen bzw. Bedingungen: Das Land muss die Aufnahmekriterien erfüllen (funktionierende Demokratie, Rechtsstaatlichkeit, Marktwirtschaft, Übernahme des EU-Rechts – die Kopenhagener Kriterien); Sorge vor Entscheidungsblockaden bei noch mehr Mitgliedern; Verteilung der Fördermittel; Aufnahmefähigkeit der EU. Eine gute Entscheidung nennt Bedingungen (z. B. Reformfortschritte) und begründet, warum sie überwiegen.",
+    "acceptable_reasoning": "Sowohl Zustimmung (gegebenenfalls mit Bedingungen) als auch Ablehnung sind vertretbar, wenn die drei Perspektiven berücksichtigt und Kriterien (nicht bloß Sympathie) herangezogen werden.",
+    "rubric": [
+      {
+        "criterion": "Weighing of arguments",
+        "levels": [
+          "nur eine Seite",
+          "Pro und Contra genannt",
+          "Pro und Contra abgewogen und gewichtet"
+        ]
+      },
+      {
+        "criterion": "Use of criteria",
+        "levels": [
+          "Entscheidung nach Sympathie",
+          "ein Kriterium genannt",
+          "Aufnahmekriterien sachlich herangezogen"
+        ]
+      },
+      {
+        "criterion": "Multiperspectivity",
+        "levels": [
+          "eine Perspektive",
+          "zwei Perspektiven",
+          "alle drei Perspektiven berücksichtigt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Ein Beitritt folgt festen Kriterien (Kopenhagener Kriterien: Demokratie, Rechtsstaat, Marktwirtschaft), nicht bloß dem Wunsch.",
+      "Einstimmigkeit bedeutet: schon ein einziges Land kann blockieren – das ist Chance und Problem zugleich.",
+      "Perspektiven trennen: Was nützt dem Beitrittsland, was den bisherigen Mitgliedern, was der EU insgesamt?"
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Geschichte und politische Bildung",
+  "klasse": 8,
+  "kompetenzbereich": "Wesentliche Transformationsprozesse im 20. und 21. Jahrhundert und grundlegende Einsichten in das Politische",
+  "competences": [
+    "GPB.OS.8.WES.03",
+    "GPB.OS.8.WES.05"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "PUK",
+    "PMK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0214",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:07+00:00",
+  "updated_at": "2026-07-14T16:27:07+00:00"
+}

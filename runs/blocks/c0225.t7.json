@@ -1,0 +1,101 @@
+{
+  "id": "c0225.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Erfinde eine eigene Vermessungsaufgabe zu einer Strecke, die man nicht direkt messen kann (z. B. die Breite eines Flusses, die Höhe eines Berges, die Entfernung zu einer Insel).\n(a) Beschreibe die Situation und fertige eine Skizze an.\n(b) Lege fest, welche Strecken und Winkel man tatsächlich messen kann, und erfinde dafür plausible Messwerte.\n(c) Löse deine Aufgabe mit dem passenden Werkzeug (rechtwinklige Trigonometrie, Sinussatz oder Cosinussatz) und gib das Ergebnis an.\n(d) Überlege: Wie wirkt sich ein Messfehler von 1° beim Winkel ungefähr auf dein Ergebnis aus?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 80.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "DM",
+      "KA"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.OS.5.TRI.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Individuelle Lösung. Prüfkriterien: (a) Die gesuchte Strecke ist tatsächlich unzugänglich, die Skizze passt zur Situation. (b) Die angenommenen Messgrößen sind real messbar (eine Basisstrecke am erreichbaren Ufer plus Winkel) und legen das Dreieck eindeutig fest. (c) Das gewählte Werkzeug passt zu den Angaben (eingeschlossener Winkel → Cosinussatz; Seite mit Gegenwinkel → Sinussatz; rechter Winkel → tan/sin/cos) und die Rechnung ist korrekt. Beispiel: Basis b = 60 m, an den Enden gemessene Winkel zum Baum 74° und 68° → dritter Winkel 38°, Entfernung = 60 · sin 68° / sin 38° ≈ 90,3 m. (d) Je flacher die Sichtlinien einander schneiden (kleiner dritter Winkel), desto stärker vergrößert ein kleiner Winkelfehler das Ergebnis — die indirekte Messung wird ungenauer.",
+    "acceptable_reasoning": "Jede in sich stimmige Aufgabe mit messbaren Größen, passendem Satz und korrekter Rechnung ist gültig; die Fehlerbetrachtung in (d) muss nur qualitativ richtig sein (kleiner Schnittwinkel → große Unsicherheit).",
+    "rubric": [
+      {
+        "criterion": "Realitätsbezug und Skizze",
+        "levels": [
+          "Strecke ist in Wahrheit direkt messbar oder Skizze fehlt",
+          "plausible Situation, Skizze mit kleinen Lücken",
+          "unzugängliche Strecke, klare und passende Skizze"
+        ]
+      },
+      {
+        "criterion": "Messbare Größen",
+        "levels": [
+          "nicht messbare oder unterbestimmte Angaben",
+          "messbar, aber Dreieck nicht eindeutig festgelegt",
+          "messbare Basis und Winkel, Dreieck eindeutig bestimmt"
+        ]
+      },
+      {
+        "criterion": "Rechnung und Werkzeugwahl",
+        "levels": [
+          "unpassendes Werkzeug oder falsche Rechnung",
+          "richtiges Werkzeug, kleiner Rechenfehler",
+          "passendes Werkzeug, korrektes Ergebnis"
+        ]
+      },
+      {
+        "criterion": "Fehlerbetrachtung (d)",
+        "levels": [
+          "fehlt",
+          "Richtung angedeutet",
+          "qualitativ korrekt begründet"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "eine Strecke wählen, die man in Wahrheit direkt abmessen könnte — dann ist keine Trigonometrie nötig.",
+      "nur einen Winkel und keine Basisstrecke messen wollen — das Dreieck ist dann unterbestimmt.",
+      "Messwerte erfinden, die kein gültiges Dreieck ergeben (z. B. Winkelsumme über 180°)."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Mathematik",
+  "klasse": 5,
+  "kompetenzbereich": "Trigonometrie",
+  "competences": [
+    "MAT.OS.5.TRI.03"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "DM",
+    "KA"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0225",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:12+00:00",
+  "updated_at": "2026-07-14T16:27:12+00:00"
+}

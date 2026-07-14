@@ -1,0 +1,92 @@
+{
+  "id": "c0228.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Ein medizinisches Präparat enthält Iod-131 mit einer Halbwertszeit von 8 Tagen. Zu Beginn beträgt die Aktivität 400 kBq.\na) Wie groß ist die Aktivität nach 8, nach 16 und nach 24 Tagen?\nb) Nach wie vielen Tagen ist die Aktivität auf ein Viertel des Anfangswerts gesunken?\nc) Ab wann liegt die Aktivität erstmals unter 5 % des Anfangswerts? (Tipp: Betrachte die Anteile 1/2, 1/4, 1/8, …)",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.OS.8.KER.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.OS.x.W.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "a) Pro 8 Tage halbiert sich die Aktivität: nach 8 Tagen 200 kBq, nach 16 Tagen 100 kBq, nach 24 Tagen 50 kBq. b) Ein Viertel entspricht zwei Halbwertszeiten → 2 · 8 = 16 Tage. c) Anteile nacheinander: 50 %, 25 %, 12,5 %, 6,25 %, 3,125 %. Erst nach 5 Halbwertszeiten (3,125 % < 5 %) wird die 5-%-Grenze unterschritten → nach 5 · 8 = 40 Tagen.",
+    "acceptable_reasoning": "Akzeptiert: Rechnung mit dem Faktor (1/2)ⁿ, zum Beispiel 400 kBq · (1/2)³ = 50 kBq.",
+    "rubric": [
+      {
+        "criterion": "Aktivität nach n Halbwertszeiten",
+        "levels": [
+          "Werte für 8, 16, 24 Tage korrekt halbiert",
+          "Halbierungsprinzip erkannt, aber Rechenfehler"
+        ]
+      },
+      {
+        "criterion": "Viertel-Wert",
+        "levels": [
+          "16 Tage über zwei Halbwertszeiten korrekt begründet",
+          "Ergebnis falsch oder ohne Begründung"
+        ]
+      },
+      {
+        "criterion": "5-%-Grenze",
+        "levels": [
+          "40 Tage über die Anteilsfolge korrekt bestimmt",
+          "Ansatz erkennbar, aber falsche Anzahl Halbwertszeiten"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Ein Viertel entspricht zwei Halbwertszeiten, nicht vier – es ist (1/2)² = 1/4.",
+      "Bei c) reichen vier Halbwertszeiten (6,25 %) noch nicht unter 5 %; erst fünf Halbwertszeiten (3,125 %) tun es."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Physik",
+  "klasse": 8,
+  "kompetenzbereich": "Kernphysik",
+  "competences": [
+    "PHY.OS.8.KER.01",
+    "PHY.OS.x.W.04"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0228",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:14+00:00",
+  "updated_at": "2026-07-14T16:27:14+00:00"
+}

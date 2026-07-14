@@ -1,0 +1,82 @@
+{
+  "id": "c0229.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Beurteile die Aussagen über Stanley Milgrams Gehorsamsexperiment (1963) als richtig oder falsch und begründe jeweils in einem Satz. Im Experiment sollten Versuchspersonen als „Lehrer“ einer anderen Person auf Anweisung des Versuchsleiters immer stärkere (in Wahrheit vorgetäuschte) Stromschläge versetzen.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Etwa zwei Drittel der Versuchspersonen gingen in der Grundbedingung bis zur höchsten Schockstufe.",
+        "Das Experiment zeigt, dass die Teilnehmer besonders grausame Menschen gewesen sein müssen.",
+        "Je näher die anweisende Autoritätsperson war, desto höher fiel der Gehorsam aus.",
+        "Musste die Versuchsperson das Opfer unmittelbar sehen oder berühren, sank die Gehorsamsrate.",
+        "Ein solches Experiment würde heute an den ethischen Standards (Täuschung, starke psychische Belastung) scheitern."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "Richtig / Falsch",
+        "Begründung"
+      ],
+      "rows": 5
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "WIS",
+      "TRA"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PUP.OS.7.SOZ.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "1 – Richtig: In der Grundbedingung führten etwa 65 % (26 von 40) die Schläge bis zur Maximalstufe (450 V) fort. 2 – Falsch: Milgrams Kernbefund ist gerade, dass ganz gewöhnliche Menschen unter dem Druck einer Autorität so handelten; viele zeigten dabei starke Anzeichen von Stress und Gewissenskonflikt – nicht Grausamkeit, sondern Gehorsam war der Faktor (Milgram sprach vom ‚agentischen Zustand', in dem man sich als bloßes Werkzeug der Autorität erlebt). 3 – Richtig: War der Versuchsleiter anwesend und wies direkt an, war der Gehorsam höher; erteilte er die Anweisungen nur telefonisch, sank er deutlich. 4 – Richtig: Je unmittelbarer die Versuchsperson das Leiden des Opfers erlebte (Sichtkontakt, Berührung), desto weniger gehorchten sie. 5 – Richtig: Täuschung und erhebliche psychische Belastung wären mit heutigen Ethikrichtlinien nicht vereinbar.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Der Wert von rund 65 % gilt für die Grundbedingung; in Abwandlungen schwankte der Gehorsam stark (von nahe 0 bis über 90 %) – die Situation entscheidet.",
+      "Häufige Fehlvorstellung (Aussage 2): das Ergebnis wird als Beleg für böse Charaktere gedeutet; korrekt ist die situationistische Lesart.",
+      "Gina Perrys Archivarbeit (2013) zeigte, dass der Versuchsleiter teils vom Skript abwich – der Befund bleibt bedeutsam, die exakte Zahl ist aber mit Vorsicht zu lesen."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Psychologie und Philosophie",
+  "klasse": 7,
+  "kompetenzbereich": "Soziale Phänomene und Kommunikation",
+  "competences": [
+    "PUP.OS.7.SOZ.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "WIS",
+    "TRA"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0229",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:14+00:00",
+  "updated_at": "2026-07-14T16:27:14+00:00"
+}

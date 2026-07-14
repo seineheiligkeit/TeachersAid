@@ -1,0 +1,99 @@
+{
+  "id": "c0206.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Eine Gemeinde diskutiert, ob die Einweg-Aluminiumdose als Getränkeverpackung sinnvoll ist oder ob stärker auf Mehrweg- und Recyclingsysteme gesetzt werden soll. Nutze dein Wissen aus den vorherigen Aufgaben.\na) Stelle je zwei Argumente aus Sicht des Ressourcen- und Energieverbrauchs für und gegen die Einwegdose zusammen.\nb) Aluminium lässt sich nahezu unbegrenzt oft recyceln. Warum ist es aus chemischer und ökologischer Sicht besonders unvernünftig, Aluminium einfach wegzuwerfen?\nc) Triff eine begründete Entscheidung: Wofür würdest du dich einsetzen? Beziehe ein, dass Erzvorkommen endlich sind.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Einweg-Aluminiumdose oder konsequentes Recycling/Mehrweg – was ist aus Ressourcensicht die bessere Wahl?"
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "KZ"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.OS.7.UMG.04",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "CHE.OS.x.KON.07",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "a) Dafür (Einweg): geringes Gewicht spart Transportenergie; Aluminium ist gut recycelbar, sofern es gesammelt wird. Dagegen: die Primärproduktion ist extrem energieaufwendig (rund 14 kWh/kg); jede nicht recycelte Dose verschwendet diese Energie und endliches Erz; Einwegsysteme führen zu mehr Materialdurchsatz und Abfall. b) Weil in der Dose die gesamte, sehr teure Reduktionsenergie bereits „steckt“: Wirft man sie weg, geht dieser Energiewert verloren und muss für neues Aluminium erneut aufgebracht werden. Recycling nutzt das schon reduzierte Metall und braucht nur rund 5 % der Energie – Wegwerfen ist daher chemisch wie ökologisch besonders verschwenderisch. c) Begründete Entscheidung (beide Positionen vertretbar, wenn belegt): z. B. für konsequentes Sammeln/Recycling bzw. Mehrweg, weil so die einmal investierte Reduktionsenergie erhalten bleibt und endliche Erzvorräte geschont werden; eine Einwegdose ist nur vertretbar, wenn eine sehr hohe Recyclingquote sichergestellt ist.",
+    "acceptable_reasoning": "Beide Positionen sind zulässig, sofern die Entscheidung mit Energie-/Ressourcenargumenten (investierte Reduktionsenergie, Endlichkeit der Erze, Recyclingquote) belegt wird – nicht mit bloßem Bauchgefühl.",
+    "rubric": [
+      {
+        "criterion": "Arguments for and against",
+        "levels": [
+          "Two sound resource/energy arguments each way",
+          "Only isolated arguments",
+          "No workable arguments"
+        ]
+      },
+      {
+        "criterion": "Chemical justification (stored reduction energy)",
+        "levels": [
+          "Recognises that the reduction energy is 'stored' in the metal",
+          "Partially",
+          "Missing"
+        ]
+      },
+      {
+        "criterion": "Justified decision",
+        "levels": [
+          "Clear decision backed by facts",
+          "Decision weakly justified",
+          "No decision"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Die Schüler:innen sollen abwägen, nicht nur eine Meinung nennen: eine Entscheidung ohne Ressourcen-/Energieargument ist unvollständig.",
+      "„Aluminium ist ja häufig“ ist kein Freibrief – knapp ist nicht das Element, sondern die Energie und die wirtschaftlich abbaubaren Erze.",
+      "Transport-, Herstellungs- und Recyclingphase auseinanderhalten – die Umweltbilanz hängt entscheidend von der Recyclingquote ab."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Chemie",
+  "klasse": 7,
+  "kompetenzbereich": "Umgang mit Materie",
+  "competences": [
+    "CHE.OS.7.UMG.04",
+    "CHE.OS.x.KON.07"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "KZ"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0206",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:05+00:00",
+  "updated_at": "2026-07-14T16:27:05+00:00"
+}

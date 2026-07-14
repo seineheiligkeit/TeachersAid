@@ -1,0 +1,90 @@
+{
+  "id": "c0223.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Bestimme die folgenden fünf Formen aus Catulls Gedichten grammatisch (Wortart bzw. Modus, Tempus, Person/Numerus, Genus verbi) und übersetze sie. Diese Formen kehren in den Gedichten wieder, die du gleich liest: (1) *vivamus*  (2) *amemus*  (3) *aestimemus*  (4) *excrucior*  (5) *dormienda (est)*.",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Form",
+        "Grammatische Bestimmung",
+        "Übersetzung"
+      ],
+      "rows": 5
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "UEB"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "LAT.OS.x.UBE.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "(1) *vivamus* – Konjunktiv Präsens Aktiv, 1. Pl. (Adhortativ) – ,lasst uns leben'; (2) *amemus* – Konjunktiv Präsens Aktiv, 1. Pl. (Adhortativ) – ,lasst uns lieben'; (3) *aestimemus* – Konjunktiv Präsens Aktiv, 1. Pl. (Adhortativ) – ,lasst uns (ein)schätzen, bewerten'; (4) *excrucior* – Indikativ Präsens Passiv, 1. Sg. – ,ich werde gequält, gemartert'; (5) *dormienda est* – Gerundivum (nd-Form) + est (Passiv-Periphrase, Notwendigkeit) – ,muss (durch)geschlafen werden'.",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Korrektheit der grammatischen Bestimmung",
+        "levels": [
+          "Alle 5 Formen vollständig und korrekt bestimmt",
+          "3–4 Formen korrekt",
+          "1–2 Formen korrekt",
+          "Keine Form korrekt"
+        ]
+      },
+      {
+        "criterion": "Übersetzungsqualität",
+        "levels": [
+          "Treffend und idiomatisch",
+          "Sinngemäß korrekt",
+          "Teilweise korrekt",
+          "Fehlerhaft"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Der Adhortativ (Konjunktiv der 1. Pl.) drückt keine Tatsache aus, sondern eine Selbstaufforderung: nicht ,wir leben', sondern ,lasst uns leben'. Das ist der Grundton von Gedicht 5.",
+      "*dormienda est*: dormire ist eigentlich intransitiv; hier steht ein ,inneres Objekt' (*noctem dormire* = eine Nacht durchschlafen), daher ist das Gerundivum möglich. nd-Form + est bedeutet Notwendigkeit.",
+      "*excrucior* ist echtes Passiv (von excruciare, zu crux ,Kreuz, Marterpfahl'), kein Deponens – das lyrische Ich erleidet die Qual, es ist nicht Handelnder."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Latein",
+  "klasse": 6,
+  "kompetenzbereich": "Übersetzungskompetenzen",
+  "competences": [
+    "LAT.OS.x.UBE.03"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "UEB"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0223",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:12+00:00",
+  "updated_at": "2026-07-14T16:27:12+00:00"
+}

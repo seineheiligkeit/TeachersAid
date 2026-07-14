@@ -1,0 +1,93 @@
+{
+  "id": "c0230.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "text_analysis",
+    "prompt": "Vergleiche zwei Vorhersagen:\n\n---\n(A) Horoskop: ‚Als Waage erwartet Sie diese Woche eine wichtige Begegnung. Achten Sie auf Ihre Finanzen – Veränderung liegt in der Luft.'\n(B) Astronomie (Beispiel für die Form einer präzisen Vorhersage): ‚An einem bestimmten Datum ist von Wien aus um 21:47 Uhr der Mondaufgang zu beobachten; die partielle Mondfinsternis erreicht ihr Maximum um 22:12 Uhr.'\n---\n\n(a) Wende Poppers Kriterium der Falsifizierbarkeit an: Welche der beiden Vorhersagen ist prinzipiell überprüfbar und widerlegbar – und woran erkennst du das?\n(b) Erkläre, wie sich ein Horoskop gegen Widerlegung ‚immunisiert' (denke an die Unbestimmtheit der Formulierungen und an nachträgliche Umdeutung).\n(c) Bedeutet ‚nicht falsifizierbar' dasselbe wie ‚falsch'? Begründe deine Antwort.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 75.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "TRA",
+      "REF"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PUP.OS.8.ASP3.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 13,
+    "answer_key": "(a) Prüfbar und falsifizierbar ist die astronomische Vorhersage (B): Sie nennt präzise, kontrollierbare Angaben (Ort, Uhrzeit, Ereignis); tritt das Ereignis so nicht ein, ist die Vorhersage widerlegt. Das Horoskop (A) ist so vage, dass fast jeder Wochenverlauf dazu passt – es lässt sich kaum widerlegen. (b) Immunisierung: Horoskope verwenden unbestimmte, allgemeine Formulierungen (‚wichtige Begegnung', ‚Veränderung liegt in der Luft'), die auf sehr viele Menschen zutreffen (Barnum-Effekt); trifft etwas scheinbar nicht ein, wird es nachträglich umgedeutet (‚war eben symbolisch gemeint'). So kann die Aussage nie scheitern – und ist damit nach Popper nicht wissenschaftlich. (c) Nein. ‚Nicht falsifizierbar' heißt: durch Beobachtung grundsätzlich nicht überprüfbar – die Aussage fällt damit aus dem Bereich der empirischen Wissenschaft heraus, ist aber nicht automatisch falsch. Auch sinnvolle nicht-empirische Aussagen (etwa mathematische oder metaphysische) sind unfalsifizierbar. Das Kriterium trennt wissenschaftlich von unwissenschaftlich, nicht wahr von falsch.",
+    "acceptable_reasoning": "Akzeptabel: (B) als falsifizierbar mit Verweis auf Präzision/Prüfbarkeit erkannt; Immunisierung über Vagheit und nachträgliche Umdeutung erklärt; in (c) die klare Trennung von ‚unfalsifizierbar' und ‚falsch'.",
+    "rubric": [
+      {
+        "criterion": "Falsifizierbarkeit korrekt angewendet",
+        "levels": [
+          "Fehlt oder vertauscht",
+          "(B) genannt, ohne Begründung",
+          "(B) mit Begründung (Präzision, Prüfbarkeit)"
+        ]
+      },
+      {
+        "criterion": "Immunisierung erklärt",
+        "levels": [
+          "Fehlt",
+          "Nur ‚vage' genannt",
+          "Vagheit und nachträgliche Umdeutung erklärt"
+        ]
+      },
+      {
+        "criterion": "unfalsifizierbar bedeutet nicht falsch",
+        "levels": [
+          "Gleichgesetzt",
+          "Unterschied angedeutet",
+          "Status und Wahrheit klar getrennt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Die Aufgabe wertet nicht ‚Sterne sind Unsinn', sondern prüft den wissenschaftlichen STATUS von Aussagen – sachlich bleiben.",
+      "Häufiger Fehler in (c): ‚nicht wissenschaftlich, also falsch'. Popper trennt Wissenschaftlichkeit von Wahrheit.",
+      "Die Mondfinsternis-Angabe ist ein illustratives Beispiel für die FORM einer präzisen Vorhersage; entscheidend ist die Prüfbarkeit, nicht das exakte Datum."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "text_analysis",
+  "subject": "Psychologie und Philosophie",
+  "klasse": 8,
+  "kompetenzbereich": "Aspekte der Erkenntnis- und Wissenschaftstheorie",
+  "competences": [
+    "PUP.OS.8.ASP3.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "TRA",
+    "REF"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0230",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:14+00:00",
+  "updated_at": "2026-07-14T16:27:14+00:00"
+}

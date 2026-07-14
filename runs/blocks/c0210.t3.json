@@ -1,0 +1,105 @@
+{
+  "id": "c0210.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Fall: Eingreifen oder nicht?\nIn einem Staat geht die Regierung mit schwerer, systematischer Gewalt gegen eine Minderheit vor; Beobachter warnen vor einem drohenden Völkermord. Ein Nachbarstaat erwägt, militärisch einzugreifen, um die Zivilbevölkerung zu schützen. Der UN-Sicherheitsrat ist blockiert, weil ein ständiges Mitglied sein Veto einlegt.\n\na) Prüfe das geplante Eingreifen anhand von mindestens drei Kriterien der Lehre vom gerechten Krieg. Welche sind erfüllt, welche nicht?\nb) An welchem Kriterium entzündet sich hier der schwierigste Streit? Begründe.\nc) Würdest du das Eingreifen befürworten? Begründe deine Entscheidung und benenne, welche Werte du dabei höher gewichtest.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Ein Nachbarstaat erwägt, ohne Mandat des UN-Sicherheitsrats einzugreifen, um einen drohenden Völkermord zu stoppen. Eingreifen – ja oder nein?"
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 65.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "WP",
+      "AU"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "ETH.OS.x.WAH.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "ETH.OS.x.ARG.03",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "ETH.OS.8.KRI.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 14,
+    "answer_key": "a) Anwendung (Beispiele): Gerechter Grund – erfüllt (Schutz vor Völkermord ist ein schwerwiegender Anlass). Rechte Absicht – erfüllt, sofern es wirklich um den Schutz und nicht um eigene Machtinteressen geht. Letztes Mittel – fraglich: Sind Diplomatie, Sanktionen und Verhandlungen ausgeschöpft? Aussicht auf Erfolg / Verhältnismäßigkeit – offen: Könnte der Krieg mehr Leid schaffen, als er verhindert? Legitime Autorität – nicht erfüllt: Der eigentlich zuständige UN-Sicherheitsrat hat kein Mandat erteilt.\nb) Der schärfste Streit betrifft die legitime Autorität: Darf ein einzelner Staat auch ohne UN-Mandat eingreifen, wenn der Sicherheitsrat durch ein Veto blockiert ist? Hier stehen der gerechte Grund (Schutz der Zivilbevölkerung, Schutzverantwortung/R2P) und die völkerrechtliche Ordnung (Gewaltverbot, kein Alleingang) gegeneinander.\nc) Offen; überzeugend ist eine Antwort, die die konkurrierenden Werte (Menschenleben schützen vs. Missbrauchsgefahr und Erosion des Gewaltverbots) benennt und begründet abwägt.",
+    "acceptable_reasoning": "Jede Entscheidung ist akzeptabel, sofern mindestens drei Kriterien korrekt angewendet, der Kernkonflikt (gerechter Grund vs. legitime Autorität) erkannt und die eigene Gewichtung begründet wird.",
+    "rubric": [
+      {
+        "criterion": "Kriterien korrekt angewendet",
+        "levels": [
+          "Mindestens drei Kriterien einzeln und treffend geprüft",
+          "Ein bis zwei geprüft",
+          "Pauschalurteil ohne Kriterien"
+        ]
+      },
+      {
+        "criterion": "Kernkonflikt erkannt",
+        "levels": [
+          "Spannung gerechter Grund vs. legitime Autorität klar benannt",
+          "Ansatzweise erkannt",
+          "Nicht erkannt"
+        ]
+      },
+      {
+        "criterion": "Begründete Entscheidung mit Wertabwägung",
+        "levels": [
+          "Position mit ausgewiesener Gewichtung der Werte",
+          "Position ohne klare Abwägung",
+          "Keine begründete Entscheidung"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Humanitäre Intervention ist hoch umstritten: Der gute Zweck (Schutz vor Völkermord) kann auch als Vorwand für Machtpolitik missbraucht werden – dieser Missbrauchsverdacht gehört in die Bewertung.",
+      "Kriterien einzeln und sauber prüfen, nicht pauschal „gerechter Grund, also erlaubt“. Gerade „letztes Mittel“, „Verhältnismäßigkeit“ und „legitime Autorität“ führen hier zu unterschiedlichen Ergebnissen."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Ethik",
+  "klasse": 8,
+  "kompetenzbereich": "Wahrnehmen und Perspektiven einnehmen",
+  "competences": [
+    "ETH.OS.x.WAH.02",
+    "ETH.OS.x.ARG.03",
+    "ETH.OS.8.KRI.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "WP",
+    "AU"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0210",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:05+00:00",
+  "updated_at": "2026-07-14T16:27:05+00:00"
+}

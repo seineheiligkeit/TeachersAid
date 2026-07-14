@@ -1,0 +1,86 @@
+{
+  "id": "c0219.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne jedem Rechtsbegriff die passende Alltagssituation zu.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Gewährleistung",
+        "Garantie",
+        "Rücktrittsrecht im Fernabsatz (14 Tage)",
+        "Umtausch aus Kulanz",
+        "Preisauszeichnungspflicht"
+      ],
+      "right": [
+        "Dein neues Handy zeigt nach drei Monaten einen Displayfehler, der von Anfang an angelegt war – der Händler muss kostenlos reparieren oder tauschen.",
+        "Der Hersteller sagt freiwillig zu, deinen Fahrradrahmen fünf Jahre lang bei Materialbruch zu ersetzen – zusätzlich zu deinen gesetzlichen Rechten.",
+        "Du hast Kopfhörer im Onlineshop bestellt und schickst sie ohne Angabe von Gründen innerhalb von zwei Wochen zurück.",
+        "Du hast im Laden die falsche Größe gekauft; das Geschäft nimmt sie freiwillig zurück, obwohl es dazu nicht verpflichtet ist.",
+        "Am Regal muss der endgültige Bruttopreis inklusive Steuern klar erkennbar angeschrieben sein."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Begriff",
+        "Passende Situation"
+      ],
+      "rows": 5
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "CC"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "HOE.OS.5.KON.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Gewährleistung → Displayfehler nach drei Monaten (gesetzlicher Anspruch auf Verbesserung/Austausch bei einem bei Übergabe angelegten Mangel). Garantie → freiwillige Fünf-Jahres-Zusage des Herstellers für den Fahrradrahmen. Rücktrittsrecht im Fernabsatz → Online bestellte Kopfhörer innerhalb von 14 Tagen ohne Grund zurück. Umtausch aus Kulanz → freiwillige Rücknahme der falschen Größe im Geschäft. Preisauszeichnungspflicht → angeschriebener Bruttopreis inklusive Steuern am Regal.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Gewährleistung und Garantie werden häufig verwechselt: Gewährleistung ist das gesetzliche Recht (verpflichtend), Garantie eine freiwillige Zusatzleistung.",
+      "Das 14-tägige Rücktrittsrecht gilt NICHT beim Kauf im Geschäft – dort ist ein Umtausch reine Kulanz.",
+      "Ein Mangel muss bei Übergabe (zumindest im Keim) vorhanden gewesen sein; ein selbst verursachter Schaden fällt nicht unter die Gewährleistung."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Haushaltsökonomie und Ernährung",
+  "klasse": 5,
+  "kompetenzbereich": "Das Konzept des Consumer Citizenship erkennen, reflektieren und in Entscheidungen einbinden",
+  "competences": [
+    "HOE.OS.5.KON.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "CC"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0219",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:10+00:00",
+  "updated_at": "2026-07-14T16:27:10+00:00"
+}

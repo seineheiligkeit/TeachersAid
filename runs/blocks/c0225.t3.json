@@ -1,0 +1,73 @@
+{
+  "id": "c0225.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "(a) In welchem Quadranten liegt der Winkel 210°, und welche Vorzeichen haben dort sin und cos?\n(b) Bestimme über den Referenzwinkel die exakten Werte von sin 210° und cos 210°.\n(c) Ein Punkt ist in Polarkoordinaten durch (r ; φ) = (4 ; 210°) gegeben. Rechne ihn in kartesische Koordinaten (x | y) um und erkläre den Zusammenhang mit (b).",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "FO",
+      "DM"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.OS.5.TRI.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "MAT.OS.5.TRI.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "(a) 210° liegt im 3. Quadranten (180° bis 270°); dort ist sin < 0 und cos < 0. (b) Referenzwinkel: 210° − 180° = 30°. Also sin 210° = −sin 30° = −1/2 und cos 210° = −cos 30° = −√3/2 ≈ −0,87. (c) x = r · cos φ = 4 · (−√3/2) = −2√3 ≈ −3,46; y = r · sin φ = 4 · (−1/2) = −2. Der Punkt ist also (−3,46 | −2). Die Polarform benutzt genau cos und sin des Winkels: die kartesischen Koordinaten sind das r-Fache der Einheitskreis-Koordinaten (cos φ | sin φ).",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Referenzwinkel falsch bilden: 210° − 180° = 30°, nicht 180° − 210°.",
+      "die Vorzeichen im 3. Quadranten vergessen (beide negativ).",
+      "x = r · sin φ statt x = r · cos φ verwenden (x und y vertauschen)."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Mathematik",
+  "klasse": 5,
+  "kompetenzbereich": "Trigonometrie",
+  "competences": [
+    "MAT.OS.5.TRI.01",
+    "MAT.OS.5.TRI.04"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "FO",
+    "DM"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0225",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:12+00:00",
+  "updated_at": "2026-07-14T16:27:12+00:00"
+}

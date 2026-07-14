@@ -1,0 +1,73 @@
+{
+  "id": "c0226.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Löse die Gleichung x² − 4x + 13 = 0 über den komplexen Zahlen.\n(a) Gib beide Lösungen in der Form a + b·i an.\n(b) Was fällt dir am Zusammenhang der beiden Lösungen auf?\n(c) Der Fundamentalsatz der Algebra macht eine Aussage über die Anzahl der Nullstellen. Wie viele hat x² − 4x + 13, und passt das zu deinem Ergebnis?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "FO",
+      "KA"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.OS.7.KOM3.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "MAT.OS.7.KOM3.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "(a) Diskriminante: (−4)² − 4 · 1 · 13 = 16 − 52 = −36. Mit √(−36) = 6i folgt x = (4 ± 6i) / 2 = 2 ± 3i, also x₁ = 2 + 3i und x₂ = 2 − 3i. (b) Die beiden Lösungen sind zueinander konjugiert komplex (gleicher Realteil, entgegengesetzter Imaginärteil). Bei reellen Koeffizienten ist das immer so. (c) Der Grad ist 2, also gibt es nach dem Fundamentalsatz genau 2 Nullstellen über den komplexen Zahlen (mit Vielfachheit gezählt) — wir haben zwei, es passt.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "√(−36) als −6 statt als 6i schreiben.",
+      "die Division durch 2 aus der Lösungsformel vergessen.",
+      "glauben, die Gleichung habe keine Lösung, weil die Diskriminante negativ ist."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Mathematik",
+  "klasse": 7,
+  "kompetenzbereich": "Komplexe Zahlen",
+  "competences": [
+    "MAT.OS.7.KOM3.02",
+    "MAT.OS.7.KOM3.03"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "FO",
+    "KA"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0226",
+  "source": "ai",
+  "created_at": "2026-07-14T16:27:13+00:00",
+  "updated_at": "2026-07-14T16:27:13+00:00"
+}
