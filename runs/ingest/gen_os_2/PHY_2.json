@@ -1,0 +1,290 @@
+{
+  "subject": "Physik",
+  "klasse": 8,
+  "kompetenzbereich": "Kernphysik",
+  "title": "Radioaktivität: Zerfall, Strahlung und Anwendungen",
+  "kernfrage": "Wie zerfallen instabile Atomkerne, und wie können wir die dabei entstehende Strahlung sowohl nutzen als auch beherrschen?",
+  "body": {
+    "intro": [
+      "Rauchmelder, Krebstherapie, Altersbestimmung von Fundstücken und die Energie der Sterne – so unterschiedlich diese Themen wirken, sie beruhen alle auf dem Zerfall instabiler Atomkerne. In diesem Arbeitsblatt klärst du zuerst den Aufbau der Kerne und die drei Strahlungsarten, entwickelst dann über Zerfallsgleichungen und die Halbwertszeit ein quantitatives Verständnis und wägst schließlich an einem echten Anwendungsfall Nutzen und Risiko ionisierender Strahlung sachlich gegeneinander ab."
+    ],
+    "data_figures": [],
+    "assets": [
+      {
+        "id": "abb1",
+        "role": "figure",
+        "generator": "matplotlib:function_graph",
+        "spec": {
+          "xmin": 0,
+          "xmax": 32,
+          "ymin": 0,
+          "ymax": 100,
+          "points": [[0, 100], [8, 50], [16, 25], [24, 12.5], [32, 6.25]],
+          "connect": true,
+          "xlabel": "Zeit t in Tagen",
+          "ylabel": "Aktivität in % des Anfangswerts",
+          "title": "Zerfallskurve eines radioaktiven Präparats"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Aufbau der Kerne und Arten der Strahlung",
+        "throughline": "Schüler:innen bauen ein tragfähiges Kernmodell auf (Protonen, Neutronen, Nuklidschreibweise) und unterscheiden die drei klassischen Strahlungsarten nach Aufbau, Ladung und Durchdringungsvermögen.",
+        "talking_points": [
+          "Nuklide werden durch die Massenzahl A (Zahl der Nukleonen) und die Kernladungszahl Z (Zahl der Protonen) beschrieben; Isotope haben gleiches Z, aber verschiedenes N = A − Z.",
+          "α-, β- und γ-Strahlung unterscheiden sich grundlegend: Teilchen gegenüber elektromagnetischer Welle, Ladung, Reichweite und Abschirmung.",
+          "Radioaktiver Zerfall ist ein statistischer Prozess des Kerns – unabhängig von Temperatur, Druck oder chemischer Bindung."
+        ],
+        "extensions": [
+          "Recherchiert im Periodensystem drei natürlich vorkommende Isotope (zum Beispiel von Kohlenstoff oder Uran) und gebt jeweils Z und N an.",
+          "Diskussion: Warum sind sehr schwere Kerne mit vielen Protonen tendenziell instabiler?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "matching",
+            "prompt": "Ordne den drei Arten radioaktiver Strahlung ihre jeweils passende Beschreibung zu.",
+            "payload": {
+              "kind": "matching",
+              "left": ["α-Strahlung", "β⁻-Strahlung", "γ-Strahlung"],
+              "right": [
+                "Energiereiche elektromagnetische Strahlung, ungeladen; wird erst durch dicke Blei- oder Betonschichten stark abgeschwächt.",
+                "Heliumkerne (2 Protonen + 2 Neutronen), zweifach positiv geladen; bereits ein Blatt Papier oder wenige Zentimeter Luft schirmen sie ab.",
+                "Schnelle Elektronen, einfach negativ geladen; werden durch einige Millimeter Aluminium abgeschirmt."
+              ]
+            },
+            "response": { "mode": "lines", "n": 3 },
+            "cognitive_level": "remember",
+            "dimensions": ["W"],
+            "serves": [
+              { "competence_id": "PHY.OS.8.KER.01", "relation": "exercises" },
+              { "competence_id": "PHY.OS.x.W.01", "relation": "exercises" }
+            ],
+            "est_minutes": 6,
+            "asset_refs": [],
+            "answer_key": "α-Strahlung → Heliumkerne (mittlere Beschreibung). β⁻-Strahlung → schnelle Elektronen (untere Beschreibung). γ-Strahlung → energiereiche elektromagnetische Strahlung (obere Beschreibung).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "α-Strahlung hat außerhalb des Körpers die geringste Reichweite, ist aber bei Aufnahme in den Körper (Einatmen, Verschlucken) besonders schädlich – geringe Reichweite bedeutet nicht ungefährlich.",
+              "γ-Strahlung ist keine Teilchenstrahlung, sondern eine elektromagnetische Welle (wie Licht, nur viel energiereicher)."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "true_false_justify",
+            "prompt": "Entscheide für jede Aussage, ob sie richtig oder falsch ist, und begründe deine Entscheidung in einem Satz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Isotope eines Elements haben dieselbe Protonenzahl, unterscheiden sich aber in der Neutronenzahl.",
+                "Beim α-Zerfall verringert sich die Massenzahl des Kerns um 4 und die Kernladungszahl um 2.",
+                "Man kann den radioaktiven Zerfall eines Präparats beschleunigen, indem man es stark erhitzt oder unter Druck setzt."
+              ]
+            },
+            "response": {
+              "mode": "table",
+              "columns": ["Aussage", "Richtig", "Falsch", "Begründung"],
+              "rows": 3
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["W"],
+            "serves": [
+              { "competence_id": "PHY.OS.8.KER.02", "relation": "exercises" },
+              { "competence_id": "PHY.OS.x.W.03", "relation": "exercises" }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "1. Richtig – gleiche Protonenzahl bedeutet gleiches Element, die verschiedene Neutronenzahl führt zu verschiedenen Massenzahlen. 2. Richtig – ein α-Teilchen führt 2 Protonen und 2 Neutronen ab: A sinkt um 4, Z um 2. 3. Falsch – die Zerfallsrate ist eine Eigenschaft des Kerns und hängt nicht von Temperatur, Druck oder chemischer Bindung ab.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Massenzahl (Nukleonen insgesamt) und Kernladungszahl (nur Protonen) sauber trennen.",
+              "Häufige Fehlvorstellung: äußere Einflüsse wie Hitze oder Druck könnten den Zerfall steuern – das ist nicht der Fall."
+            ],
+            "rubric": []
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Zerfallsgesetz und Halbwertszeit",
+        "throughline": "Aus Zerfallsgleichungen (Erhaltung von Nukleonen- und Ladungszahl) und der Halbwertszeit entwickeln die Schüler:innen ein quantitatives Verständnis des Zerfalls und lesen es aus einer Zerfallskurve ab.",
+        "talking_points": [
+          "In jeder Zerfallsgleichung bleiben die Summe der Massenzahlen A und die Summe der Kernladungszahlen Z erhalten – das erlaubt es, das Tochternuklid zu bestimmen.",
+          "Nach n Halbwertszeiten ist der Anteil (1/2)ⁿ übrig; die Halbwertszeit liest man aus der Kurve als Zeit für den Rückgang auf die Hälfte ab.",
+          "Aktivität (in Becquerel, Bq) und Anzahl der noch nicht zerfallenen Kerne fallen nach demselben Gesetz – beide halbieren sich pro Halbwertszeit."
+        ],
+        "extensions": [
+          "Erklärt, wie die Radiokarbonmethode (C-14, Halbwertszeit etwa 5730 Jahre) das Alter organischer Funde bestimmt.",
+          "Vergleicht die Halbwertszeiten von Iod-131 (8 Tage) und Uran-238 (etwa 4,5 Milliarden Jahre) und diskutiert die Folgen für Anwendung und Lagerung."
+        ],
+        "blocks": [
+          {
+            "role": "info",
+            "id": "i1",
+            "kind": "key_fact",
+            "content": "Zerfallsgesetz: Radioaktiver Zerfall ist ein statistischer Zufallsprozess. Nach einer Halbwertszeit T½ ist im Mittel die Hälfte der ursprünglich vorhandenen Kerne zerfallen; nach n Halbwertszeiten sind noch N = N₀ · (1/2)ⁿ Kerne übrig. Ebenso halbiert sich die Aktivität (Zerfälle pro Sekunde, gemessen in Becquerel, Bq). Der Zerfall lässt sich durch Temperatur, Druck oder chemische Bindung nicht beeinflussen."
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "open_response",
+            "prompt": "Bei einer Zerfallsgleichung bleiben die Summe der Massenzahlen und die Summe der Kernladungszahlen auf beiden Seiten gleich. Nutze das, um die Tochterkerne zu bestimmen. (Angaben: α-Teilchen = ⁴He mit Z = 2; ein β⁻-Zerfall wandelt ein Neutron in ein Proton um und sendet dabei ein Elektron aus.)\na) Radium-226 (²²⁶Ra, Z = 88) zerfällt unter Aussendung eines α-Teilchens. Bestimme Massenzahl und Kernladungszahl des Tochterkerns.\nb) Kohlenstoff-14 (¹⁴C, Z = 6) ist ein β⁻-Strahler. Bestimme Massenzahl und Kernladungszahl des Tochterkerns.\nc) Erkläre in einem Satz, warum sich bei b) die Massenzahl nicht ändert, die Kernladungszahl aber um 1 steigt.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 55 },
+            "cognitive_level": "apply",
+            "dimensions": ["W"],
+            "serves": [
+              { "competence_id": "PHY.OS.8.KER.02", "relation": "exercises" },
+              { "competence_id": "PHY.OS.x.W.04", "relation": "exercises" }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "a) A: 226 − 4 = 222; Z: 88 − 2 = 86 → Tochterkern ²²²Rn (Radon-222). b) A: 14 bleibt gleich; Z: 6 + 1 = 7 → Tochterkern ¹⁴N (Stickstoff-14). c) Beim β⁻-Zerfall wandelt sich ein Neutron in ein Proton um; die Gesamtzahl der Nukleonen (A) bleibt dabei gleich, die Protonenzahl (Z) steigt aber um 1.",
+            "acceptable_reasoning": "Akzeptiert: Nennung der Tochterelemente Radon bzw. Stickstoff auch ohne Elementsymbol, sofern A und Z korrekt sind.",
+            "watch_outs": [
+              "Massenzahl und Kernladungszahl getrennt bilanzieren – das Tochterelement über Z im Periodensystem bestimmen, nicht raten.",
+              "Beim β⁻-Zerfall bleibt A gleich (nur ein Nukleon wandelt sich um), Z steigt um 1 – nicht mit dem α-Zerfall verwechseln."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "data_interpretation",
+            "prompt": "Abbildung 1 zeigt, wie die Aktivität eines radioaktiven Präparats (in Prozent des Anfangswerts) mit der Zeit abnimmt.\na) Bestimme aus dem Diagramm die Halbwertszeit des Präparats.\nb) Auf wie viel Prozent des Anfangswerts ist die Aktivität nach zwei bzw. nach drei Halbwertszeiten gesunken? Vergleiche mit dem Diagramm.\nc) Erkläre, warum die Kurve immer flacher wird und die Aktivität (theoretisch) nie exakt null erreicht.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 55 },
+            "cognitive_level": "analyze",
+            "dimensions": ["W", "E"],
+            "serves": [
+              { "competence_id": "PHY.OS.8.KER.01", "relation": "exercises" },
+              { "competence_id": "PHY.OS.x.E.04", "relation": "exercises" }
+            ],
+            "est_minutes": 12,
+            "asset_refs": ["abb1"],
+            "answer_key": "a) Die Aktivität sinkt von 100 % auf 50 % im Zeitraum von 0 bis 8 Tagen → Halbwertszeit T½ = 8 Tage. b) Nach zwei Halbwertszeiten (16 Tage): 25 %; nach drei Halbwertszeiten (24 Tage): 12,5 % – das stimmt mit den abgelesenen Werten überein. c) In gleichen Zeitschritten von je einer Halbwertszeit halbiert sich die Aktivität immer wieder; die absolute Abnahme pro Zeitschritt wird dadurch immer kleiner, sodass sich die Kurve der Null nur annähert, sie aber nie exakt erreicht.",
+            "acceptable_reasoning": "Akzeptiert: die Halbwertszeit auch aus einem anderen Halbierungsintervall abgelesen (zum Beispiel 50 % → 25 % zwischen 8 und 16 Tagen).",
+            "watch_outs": [
+              "Die Halbwertszeit ist die Zeit für die Halbierung – nicht die Zeit bis zum vollständigen Zerfall.",
+              "Nach n Halbwertszeiten bleibt der Anteil (1/2)ⁿ übrig; nach drei Halbwertszeiten also 12,5 %, nicht 0 %."
+            ],
+            "rubric": [
+              { "criterion": "Halbwertszeit ablesen", "levels": ["T½ = 8 Tage korrekt aus dem Diagramm bestimmt", "Ablesefehler oder Zeit bis Nulllinie angegeben"] },
+              { "criterion": "Anteile berechnen", "levels": ["25 % und 12,5 % korrekt und mit dem Diagramm verglichen", "Nur ein Wert korrekt oder ohne Vergleich"] },
+              { "criterion": "Deutung des Verlaufs", "levels": ["Fortgesetzte Halbierung als Grund für den flacher werdenden Verlauf erklärt", "Beobachtung beschrieben, aber nicht begründet"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "open_response",
+            "prompt": "Ein medizinisches Präparat enthält Iod-131 mit einer Halbwertszeit von 8 Tagen. Zu Beginn beträgt die Aktivität 400 kBq.\na) Wie groß ist die Aktivität nach 8, nach 16 und nach 24 Tagen?\nb) Nach wie vielen Tagen ist die Aktivität auf ein Viertel des Anfangswerts gesunken?\nc) Ab wann liegt die Aktivität erstmals unter 5 % des Anfangswerts? (Tipp: Betrachte die Anteile 1/2, 1/4, 1/8, …)",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 50 },
+            "cognitive_level": "apply",
+            "dimensions": ["W"],
+            "serves": [
+              { "competence_id": "PHY.OS.8.KER.01", "relation": "exercises" },
+              { "competence_id": "PHY.OS.x.W.04", "relation": "exercises" }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "a) Pro 8 Tage halbiert sich die Aktivität: nach 8 Tagen 200 kBq, nach 16 Tagen 100 kBq, nach 24 Tagen 50 kBq. b) Ein Viertel entspricht zwei Halbwertszeiten → 2 · 8 = 16 Tage. c) Anteile nacheinander: 50 %, 25 %, 12,5 %, 6,25 %, 3,125 %. Erst nach 5 Halbwertszeiten (3,125 % < 5 %) wird die 5-%-Grenze unterschritten → nach 5 · 8 = 40 Tagen.",
+            "acceptable_reasoning": "Akzeptiert: Rechnung mit dem Faktor (1/2)ⁿ, zum Beispiel 400 kBq · (1/2)³ = 50 kBq.",
+            "watch_outs": [
+              "Ein Viertel entspricht zwei Halbwertszeiten, nicht vier – es ist (1/2)² = 1/4.",
+              "Bei c) reichen vier Halbwertszeiten (6,25 %) noch nicht unter 5 %; erst fünf Halbwertszeiten (3,125 %) tun es."
+            ],
+            "rubric": [
+              { "criterion": "Aktivität nach n Halbwertszeiten", "levels": ["Werte für 8, 16, 24 Tage korrekt halbiert", "Halbierungsprinzip erkannt, aber Rechenfehler"] },
+              { "criterion": "Viertel-Wert", "levels": ["16 Tage über zwei Halbwertszeiten korrekt begründet", "Ergebnis falsch oder ohne Begründung"] },
+              { "criterion": "5-%-Grenze", "levels": ["40 Tage über die Anteilsfolge korrekt bestimmt", "Ansatz erkennbar, aber falsche Anzahl Halbwertszeiten"] }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "Ionisierende Strahlung nutzen und beherrschen",
+        "throughline": "Die Schüler:innen planen selbst eine Abschirm-Messung und wägen an einem realen Anwendungsfall Nutzen und Risiko ionisierender Strahlung sachlich ab – naturwissenschaftliche Bewertung statt Bauchgefühl.",
+        "talking_points": [
+          "Schutz vor Strahlung beruht auf drei Prinzipien: Abstand, Abschirmung und kurze Aufenthaltsdauer (sowie eine möglichst geringe Aktivität).",
+          "Nutzen (Diagnostik, Therapie, Sterilisation, Altersbestimmung) und Risiko (Zellschädigung, statistisches Krebsrisiko) müssen quantitativ über die Dosis gegeneinander abgewogen werden.",
+          "„Radioaktiv“ ist nicht dasselbe wie „gefährlich“: Entscheidend sind Strahlungsart, Aktivität, Halbwertszeit, Aufnahmeweg und die tatsächlich aufgenommene Dosis."
+        ],
+        "extensions": [
+          "Recherchiert die typische effektive Dosis einer Röntgenaufnahme und vergleicht sie mit der natürlichen Strahlendosis, die man in Österreich pro Jahr erhält.",
+          "Diskutiert Nutzen und Probleme der Kernspaltung zur Stromerzeugung (Abfall, Endlagerung, CO₂-Bilanz)."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "experiment_protocol",
+            "prompt": "In der Schule stehen ein Geiger-Müller-Zählrohr, ein schwaches radioaktives Präparat sowie Platten aus Papier, Aluminium und Blei zur Verfügung. Plane ein Experiment, mit dem du die Abschirmwirkung dieser Materialien vergleichen kannst.\nBeschreibe:\na) den Aufbau und welche Größe du misst,\nb) wie du vorgehst (auch: Was misst du zuerst ohne Präparat, und warum?),\nc) welche Sicherheitsmaßnahmen du beachtest,\nd) welches Ergebnis du für Papier, Aluminium und Blei erwartest und wie du daraus auf die Strahlungsart schließen kannst.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 65 },
+            "cognitive_level": "create",
+            "dimensions": ["E", "W"],
+            "serves": [
+              { "competence_id": "PHY.OS.8.KER.01", "relation": "exercises" },
+              { "competence_id": "PHY.OS.x.E.01", "relation": "exercises" },
+              { "competence_id": "PHY.OS.x.E.02", "relation": "exercises" }
+            ],
+            "est_minutes": 13,
+            "asset_refs": [],
+            "answer_key": "a) Aufbau: das Präparat in festem Abstand vor dem Zählrohr; gemessen wird die Zählrate (Impulse pro Zeit, zum Beispiel pro Minute). Zwischen Präparat und Zählrohr werden nacheinander die Absorbermaterialien gebracht. b) Zuerst misst man ohne Präparat den Nulleffekt (natürliche Untergrundstrahlung) und zieht ihn von allen Messwerten ab. Dann misst man die Zählrate ohne Absorber und anschließend jeweils mit Papier, Aluminium und Blei – bei sonst gleichem Abstand und gleicher Messzeit. c) Sicherheit: großen Abstand halten, Handhabungszeit kurz halten, das Präparat nur mit Pinzette oder Halter anfassen, nicht auf Personen richten und vorschriftsgemäß lagern (Abstand – Aufenthaltsdauer – Abschirmung). d) Erwartung: Papier schwächt kaum ab (bzw. stoppt nur α-Strahlung), einige Millimeter Aluminium schirmen β-Strahlung ab, γ-Strahlung wird erst durch Blei deutlich (aber nie vollständig) geschwächt. Aus dem Vergleich der Zählraten lässt sich auf die vorhandene Strahlungsart schließen.",
+            "acceptable_reasoning": "Akzeptiert: jede vollständige Planung mit fester Geometrie, Nulleffekt-Messung, systematischer Variation des Absorbers und einer sinnvoll begründeten Erwartung.",
+            "watch_outs": [
+              "Der Nulleffekt (natürliche Untergrundstrahlung) muss gemessen und abgezogen werden, sonst sind die Ergebnisse verfälscht.",
+              "Abstand und Messzeit müssen bei allen Messungen gleich bleiben, sonst vergleicht man Ungleiches.",
+              "γ-Strahlung wird durch Blei nur abgeschwächt, nicht vollständig gestoppt – anders als bei der scharfen Reichweitengrenze von α- und β-Strahlung."
+            ],
+            "rubric": [
+              { "criterion": "Aufbau und Messgröße", "levels": ["Feste Geometrie und Zählrate als Messgröße klar beschrieben", "Aufbau ungenau oder Messgröße fehlt"] },
+              { "criterion": "Vorgehen und Nulleffekt", "levels": ["Nulleffekt-Messung und systematische Absorbervariation vorgesehen", "Nulleffekt fehlt oder Vorgehen unsystematisch"] },
+              { "criterion": "Sicherheit und Erwartung", "levels": ["Schutzprinzipien und plausible Erwartung je Material genannt", "Sicherheit oder Erwartung unvollständig"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "decision_scenario",
+            "prompt": "Eine Patientin soll zur Untersuchung der Schilddrüse eine kleine Menge radioaktives Iod-131 erhalten (Halbwertszeit 8 Tage). Ein Angehöriger ist dagegen: „Radioaktivität ist immer gefährlich – das Risiko ist einfach zu groß.“\nBeurteile diese Aussage aus naturwissenschaftlicher Sicht und entwickle eine begründete eigene Position. Beziehe Nutzen, Dosis, Halbwertszeit, den Aufnahmeweg und mögliche Schutzüberlegungen ein.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Ist die pauschale Ablehnung naturwissenschaftlich haltbar? Wäge Nutzen und Risiko ab und nimm begründet Stellung."
+            },
+            "response": { "mode": "box", "min_height_mm": 60 },
+            "cognitive_level": "evaluate",
+            "dimensions": ["W", "S"],
+            "serves": [
+              { "competence_id": "PHY.OS.8.KER.01", "relation": "exercises" },
+              { "competence_id": "PHY.OS.x.S.01", "relation": "exercises" },
+              { "competence_id": "PHY.OS.x.S.03", "relation": "exercises" }
+            ],
+            "est_minutes": 13,
+            "asset_refs": [],
+            "answer_key": "Die pauschale Aussage ist naturwissenschaftlich nicht haltbar, weil sie Strahlungsart, Dosis und Aufnahmeweg ignoriert. Für eine sachliche Bewertung zählt die tatsächliche (effektive) Dosis, nicht das bloße Etikett radioaktiv. Für den Nutzen spricht: Iod-131 reichert sich gezielt in der Schilddrüse an und liefert eine diagnostische Information, die anders kaum zu bekommen ist; die verwendete Aktivität ist klein. Risiko-mindernd wirken die kurze Halbwertszeit (8 Tage) und die Ausscheidung: Die Aktivität klingt rasch ab (nach etwa 40 Tagen unter 5 %), sodass die Strahlenexposition zeitlich begrenzt ist. Dem steht ein geringes, statistisches Risiko gegenüber (Zellschädigung durch ionisierende Strahlung). Position: Bei klarer medizinischer Indikation überwiegt der diagnostische Nutzen das kleine Risiko; die Entscheidung sollte auf der konkreten Dosis, der Indikation und ärztlicher Aufklärung beruhen (Grundsatz: so wenig Dosis wie möglich, so viel wie nötig), nicht auf pauschaler Angst. Schutzmaßnahmen wie Abstand zu Kleinkindern und Schwangeren in den ersten Tagen sowie viel Trinken (rasche Ausscheidung) können das Risiko weiter senken.",
+            "acceptable_reasoning": "Akzeptiert: eine begründete Abwägung, die den Unterschied zwischen pauschaler Gefahr und quantitativer Dosis erkennt und Nutzen gegen Risiko stellt; auch eine vorsichtigere Position ist zulässig, sofern sie mit Dosis, Halbwertszeit und Nutzen argumentiert.",
+            "watch_outs": [
+              "Fehlvorstellung „radioaktiv ist immer gleich gefährlich“: Entscheidend sind Strahlungsart, Aktivität, Halbwertszeit, Aufnahmeweg und die resultierende Dosis.",
+              "Diagnostische Anwendungen nutzen sehr kleine Aktivitäten – nicht mit einer hochdosierten Strahlentherapie verwechseln.",
+              "Eine naturwissenschaftliche Bewertung wägt quantitativ Nutzen gegen Risiko ab; pauschale Ablehnung oder reines Bauchgefühl sind keine naturwissenschaftlichen Argumente."
+            ],
+            "rubric": [
+              { "criterion": "Naturwissenschaftliche Analyse", "levels": ["Dosis, Strahlungsart und Halbwertszeit korrekt als entscheidende Größen erkannt", "Nur allgemeine Aussagen ohne physikalische Größen"] },
+              { "criterion": "Nutzen-Risiko-Abwägung", "levels": ["Diagnostischer Nutzen und statistisches Risiko konkret gegenübergestellt", "Nur eine Seite betrachtet"] },
+              { "criterion": "Begründete Position", "levels": ["Klare, mit Dosis und Halbwertszeit gestützte eigene Position", "Position vorhanden, aber schwach begründet"] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,466 @@
+{
+  "subject": "Latein",
+  "klasse": 6,
+  "kompetenzbereich": "Rhetorik, Propaganda, Manipulation",
+  "title": "Quo usque tandem …? — Reden, überzeugen, manipulieren",
+  "kernfrage": "Wie schaffen es Redner mit Worten, Menschen zu überzeugen – und woran erkennst du, wann aus Überzeugung Manipulation wird?",
+  "body": {
+    "intro": [
+      {
+        "role": "info",
+        "id": "i1",
+        "body": "In Rom entschied sich Macht oft auf dem Forum – durch Reden. Wer das Volk oder den Senat überzeugen konnte, konnte Wahlen gewinnen, Gegner stürzen, Kriege rechtfertigen. Die *ars rhetorica*, die Kunst der Rede, war deshalb ein Kernfach der römischen Bildung. Ihr größter Meister war Marcus Tullius Cicero (106–43 v. Chr.). Doch dieselben Mittel, die eine gute Sache stark machen, können auch täuschen: Die Grenze zwischen *persuadere* (überzeugen) und Manipulation ist schmal. Auf diesem Blatt lernst du die Werkzeuge der Rhetorik an einem berühmten Beispiel kennen – und du prüfst, wie ein Herrscher (Kaiser Augustus) mit denselben Mitteln sein eigenes Bild formte."
+      }
+    ],
+    "data_figures": [],
+    "assets": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Die Werkzeuge der Rede",
+        "throughline": "Schüler:innen erwerben das rhetorische Fachvokabular und die grammatischen Grundlagen, um Ciceros Rede anschließend nicht nur zu übersetzen, sondern ihre Wirkung zu analysieren.",
+        "talking_points": [
+          "Rhetorische Stilmittel sind keine Zierde, sondern Werkzeuge mit Funktion: Die Anapher (Wiederholung) erzeugt Druck, das Trikolon (Dreierreihe) wirkt vollständig und einprägsam, die rhetorische Frage zwingt zur Zustimmung.",
+          "Cicero eröffnet die 1. Catilinarische Rede mit drei rhetorischen Fragen in Steigerung – ein Lehrstück, das man an der lateinischen Form direkt zeigen kann.",
+          "Viele Fachbegriffe (Anapher, Klimax, Apostrophe) sind griechischen Ursprungs; das lohnt einen kurzen Blick auf Latein und Griechisch als Sprachen der Bildung."
+        ],
+        "extensions": [
+          "Schüler:innen legen ein ,Stilmittel-Kärtchenset' an: Fachbegriff – Definition – lateinisches Beispiel – modernes Beispiel (Werbung, Politik).",
+          "Kurzrecherche: Wer war Catilina, und was war die Catilinarische Verschwörung (63 v. Chr.)? Ein Satz genügt als historische Verortung."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "matching",
+            "prompt": "Ordne die rhetorischen Fachbegriffe ihrer Definition zu. Diese Werkzeuge wirst du gleich in Ciceros Rede wiederfinden.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Anapher",
+                "Trikolon",
+                "Klimax",
+                "Rhetorische Frage",
+                "Apostrophe",
+                "Exclamatio",
+                "Personifikation"
+              ],
+              "right": [
+                "Wiederholung eines Wortes am Anfang aufeinanderfolgender Satzglieder",
+                "Gliederung in eine Dreierreihe gleichartiger Glieder",
+                "stufenweise Steigerung bis zum stärksten Ausdruck",
+                "Frage, die keine Antwort erwartet, sondern eine Aussage verstärkt",
+                "direkte, oft pathetische Anrede einer Person oder Sache",
+                "der (empörte) Ausruf, z. B. *O tempora, o mores!*",
+                "einer Sache werden menschliche Eigenschaften/Handlungen zugeschrieben"
+              ]
+            },
+            "response": {
+              "mode": "none"
+            },
+            "cognitive_level": "remember",
+            "dimensions": [
+              "INT"
+            ],
+            "serves": [
+              {
+                "competence_id": "LAT.OS.6.RHE.01",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "LAT.OS.x.INT.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 7,
+            "asset_refs": [],
+            "answer_key": "Anapher → Wiederholung eines Wortes am Anfang aufeinanderfolgender Satzglieder; Trikolon → Gliederung in eine Dreierreihe gleichartiger Glieder; Klimax → stufenweise Steigerung bis zum stärksten Ausdruck; Rhetorische Frage → Frage, die keine Antwort erwartet, sondern eine Aussage verstärkt; Apostrophe → direkte, oft pathetische Anrede einer Person oder Sache; Exclamatio → der (empörte) Ausruf (*O tempora, o mores!*); Personifikation → einer Sache werden menschliche Eigenschaften/Handlungen zugeschrieben",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Anapher (Wortwiederholung am *Anfang*) nicht mit dem Parallelismus (gleicher Satzbau) oder der bloßen Wiederholung verwechseln – entscheidend ist die Anfangsstellung (*nihil … nihil … nihil*).",
+              "Klimax meint die *Steigerung*, nicht nur eine Aufzählung; die drei Fragen bei Cicero steigern sich inhaltlich (Geduld → Verhöhnung → Zügellosigkeit)."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "table_fill",
+            "prompt": "Bestimme die vier Verbformen aus Ciceros Redeeröffnung grammatisch (Person, Numerus, Tempus, Modus, Genus verbi) und übersetze sie. Achte auf die Tempora – sie verraten, ob Cicero Gegenwart oder drohende Zukunft meint. Formen: (1) *abutere* (zu abutor, Deponens, + Abl.)  (2) *eludet* (zu eludo)  (3) *iactabit* (zu iacto)  (4) *moverunt* (zu moveo).",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Form",
+                "Grammatische Bestimmung",
+                "Übersetzung"
+              ],
+              "rows": 4
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "UEB"
+            ],
+            "serves": [
+              {
+                "competence_id": "LAT.OS.x.UBE.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "asset_refs": [],
+            "answer_key": "(1) *abutere* = *abuteris* (Nebenform auf -re statt -ris), 2. Sg., Deponens *abutor*, klassisch als Futur I gelesen – ,du wirst missbrauchen', mit Ablativ *patientia nostra* (,unsere Geduld'); (2) *eludet* – 3. Sg. Futur I Aktiv von *eludo* – ,er/sie/es wird verspotten, zum Narren halten'; (3) *iactabit* – 3. Sg. Futur I Aktiv von *iacto*, hier reflexiv *sese iactabit* – ,wird sich (vor)werfen, wird sich erdreisten'; (4) *moverunt* – 3. Pl. Perfekt Aktiv von *moveo* – ,sie haben bewegt, beeindruckt'.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "*abutere*: Die Endung -re ist die Nebenform zu -ris (2. Sg. Passiv/Deponens), *nicht* Imperativ oder Infinitiv. *abutor* ist ein Deponens und regiert den Ablativ (*patientia*), nicht den Akkusativ.",
+              "Die Futura (*eludet*, *iactabit*) sind bedeutungstragend: Cicero unterstellt, dass Catilinas Frevel *weitergehen wird* – die Zeitform erzeugt Drohung. Ein Präsens würde die Wirkung abschwächen.",
+              "*moverunt* (Perfekt) blickt zurück: All die Warnzeichen *haben* Catilina nicht beeindruckt – der Tempuswechsel setzt die rhetorische Frage ab."
+            ],
+            "rubric": [
+              {
+                "criterion": "Korrektheit der grammatischen Bestimmung",
+                "levels": [
+                  "Alle 4 Formen korrekt (inkl. Tempus)",
+                  "3 Formen korrekt",
+                  "2 Formen korrekt",
+                  "0–1 Formen korrekt"
+                ]
+              },
+              {
+                "criterion": "Übersetzung",
+                "levels": [
+                  "Treffend und tempusgerecht",
+                  "Sinngemäß korrekt",
+                  "Teilweise korrekt",
+                  "Fehlerhaft"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Cicero gegen Catilina – eine Rede seziert",
+        "throughline": "An der wohl berühmtesten Redeeröffnung der Antike verbinden die Schüler:innen Übersetzung und Stilanalyse: Sie erfahren, wie Wortwahl, Satzbau und Klangfiguren Empörung und Druck erzeugen.",
+        "talking_points": [
+          "Der Anlass: 63 v. Chr. deckt Konsul Cicero die Verschwörung des Catilina auf und greift ihn im Senat – in dessen Anwesenheit! – frontal an. Die Rede ist zugleich Anklage und Machtdemonstration.",
+          "Die drei Eröffnungsfragen bilden ein Trikolon in Klimax; die direkte Anrede *Catilina* (Apostrophe) macht den Angeklagten zum Adressaten und stellt ihn bloß.",
+          "Der berühmte *nihil*-Abschnitt reiht mit Anapher Warnzeichen aneinander, die Catilina ,nicht bewegt' haben – die Häufung erzeugt moralischen Druck."
+        ],
+        "extensions": [
+          "Hörprobe: Eine lateinische Rezitation der Eröffnung (in restituierter Aussprache) anhören und auf Rhythmus und Betonung achten.",
+          "Sachtext: Sallusts Bericht über die *Coniuratio Catilinae* als Gegenperspektive – wie unterscheidet sich der Historiker vom Redner?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "translation",
+            "prompt": "Übersetze die berühmte Eröffnung von Ciceros erster Rede gegen Catilina ins Deutsche. Versuche, den empörten, drängenden Ton zu treffen.\n\n**Textus (Cicero, In Catilinam 1,1):**\n*Quo usque tandem abutere, Catilina, patientia nostra?*\n*Quam diu etiam furor iste tuus nos eludet?*\n*Quem ad finem sese effrenata iactabit audacia?*\n\n**Vokabular:** quo usque = wie lange noch; tandem = eigentlich, endlich (verstärkt die Frage); abutor (Dep.) + Abl. = missbrauchen; patientia, -ae f. = die Geduld; quam diu = wie lange; furor, -oris m. = der Wahnsinn, die Raserei; iste = dieser (da bei dir), oft abwertend; eludo (3) = verspotten, zum Narren halten; quem ad finem = bis zu welchem Ende; sese = sich; effrenatus, -a, -um = zügellos; iacto (1) = werfen, schleudern; audacia, -ae f. = die Kühnheit, Frechheit.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 40
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "UEB"
+            ],
+            "serves": [
+              {
+                "competence_id": "LAT.OS.6.RHE.01",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "LAT.OS.x.UBE.04",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "LAT.OS.x.UBE.05",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "Modelllösung: ,Wie lange eigentlich wirst du noch unsere Geduld missbrauchen, Catilina? Wie lange wird dieser dein Wahnsinn uns noch verhöhnen? Bis zu welchem Ende wird sich deine zügellose Frechheit (noch) hinwerfen, austoben?' – Hinweis: *iste tuus furor* mit abwertendem *iste* (,dieser Wahnsinn da von dir'); *sese … iactabit audacia* ist personifiziert (die *audacia* ,wirft sich' wie ein Mensch oder Tier).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "*abutere* nicht als Imperativ (,missbrauche!') oder Infinitiv übersetzen – es ist 2. Sg. (Nebenform -re), Subjekt ist Catilina; + Ablativ *patientia*.",
+              "*iste* ist hier abwertend (,dieser … da von dir'); die neutrale Übersetzung ,dieser' verschenkt den verächtlichen Ton.",
+              "Die drei Fragen sind rhetorisch: Cicero erwartet keine Antwort, sondern klagt an. Die Übersetzung sollte den Ausrufcharakter (,Wie lange noch …!') hörbar machen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Semantische Treue",
+                "levels": [
+                  "Alle drei Fragen korrekt übersetzt",
+                  "Zwei korrekt",
+                  "Eine korrekt",
+                  "Kaum sinngemäß korrekt"
+                ]
+              },
+              {
+                "criterion": "Ton und Idiomatik",
+                "levels": [
+                  "Empörter, drängender Ton getroffen, idiomatisch",
+                  "Weitgehend idiomatisch",
+                  "Holprig, aber verständlich",
+                  "Unverständlich"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "text_analysis",
+            "prompt": "Analysiere, mit welchen sprachlichen Mitteln Cicero Empörung und Druck erzeugt. Ziehe die Eröffnung (aus Aufgabe 3) und den folgenden Abschnitt heran:\n\n*Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae, nihil timor populi, nihil concursus bonorum omnium … moverunt?*\n(,Haben dich weder die nächtliche Wache des Palatin noch die Wachposten der Stadt, noch die Furcht des Volkes, noch das Zusammenströmen aller Guten … bewegt?')\n\n1. Benenne das Stilmittel, das durch die Wiederholung von *nihil* entsteht, und beschreibe seine Wirkung.\n2. Die drei Eröffnungsfragen bilden eine Steigerung. Ordne sie (Geduld – Wahnsinn – Zügellosigkeit) und begründe, warum man von einer Klimax sprechen kann.\n3. Cicero redet Catilina direkt an (*Catilina!*), obwohl er offiziell zum Senat spricht. Wie heißt dieses Mittel, und welche Wirkung hat die direkte Anrede auf Catilina und auf die Zuhörer?",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 50
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "INT"
+            ],
+            "serves": [
+              {
+                "competence_id": "LAT.OS.6.RHE.01",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "LAT.OS.x.INT.02",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "LAT.OS.x.INT.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 13,
+            "asset_refs": [],
+            "answer_key": "1. Die Wiederholung von *nihil* am Anfang der Glieder ist eine Anapher; sie häuft die ignorierten Warnzeichen und erzeugt wachsenden moralischen Druck – jedes *nihil* verstärkt den Vorwurf, dass Catilina *nichts* beeindruckt. (Zusätzlich bilden die Glieder eine Aufzählung.) 2. Die Fragen steigern sich von der bloß missbrauchten *patientia* (Geduld) über den *furor* (Wahnsinn, der schon verhöhnt) bis zur *effrenata audacia* (zügellose Frechheit, die sich hemmungslos austobt): von passivem Ertragen zu offener, gefährlicher Aggression – diese inhaltliche Steigerung ist eine Klimax. 3. Die direkte Anrede ist eine Apostrophe; sie stellt Catilina vor dem gesamten Senat bloß, macht ihn vom Verschwörer im Verborgenen zum öffentlich Angeklagten und zwingt die Zuhörer, Position zu beziehen.",
+            "acceptable_reasoning": "Bewertet wird, ob Fachbegriff (Anapher/Klimax/Apostrophe) und Funktionsbeschreibung (Wirkung) verbunden werden; die Terminologie darf leicht variieren, wenn die Wirkung korrekt erklärt ist.",
+            "watch_outs": [
+              "Häufiger Fehler: Stilmittel nur *benennen*, ohne die *Wirkung* zu erklären. Die Aufgabe verlangt beides (Form + Funktion).",
+              "Bei der Klimax kommt es auf die *inhaltliche* Steigerung an (Geduld < Wahnsinn < zügellose Frechheit), nicht auf die Satzlänge."
+            ],
+            "rubric": [
+              {
+                "criterion": "Anapher: benannt und Wirkung erklärt",
+                "levels": [
+                  "Korrekt benannt und Wirkung gedeutet",
+                  "Benannt, Wirkung knapp",
+                  "Nur benannt",
+                  "Nicht erkannt"
+                ]
+              },
+              {
+                "criterion": "Klimax: Steigerung begründet",
+                "levels": [
+                  "Inhaltliche Steigerung überzeugend begründet",
+                  "Steigerung erkannt, knapp begründet",
+                  "Nur behauptet",
+                  "Fehlend"
+                ]
+              },
+              {
+                "criterion": "Apostrophe: benannt und Wirkung erklärt",
+                "levels": [
+                  "Korrekt benannt und Wirkung gedeutet",
+                  "Benannt, Wirkung knapp",
+                  "Nur benannt",
+                  "Nicht erkannt"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "Von der Überzeugung zur Propaganda",
+        "throughline": "Die Schüler:innen übertragen die rhetorische Analyse auf einen zweiten Fall – Augustus' Selbstdarstellung – und beurteilen, wo Überzeugung in einseitige Propaganda übergeht; abschließend setzen sie rhetorische Mittel selbst ein und reflektieren deren Risiken.",
+        "talking_points": [
+          "Die *Res Gestae Divi Augusti* (,Tatenbericht des vergöttlichten Augustus') ließ der Kaiser nach seinem Tod auf Bronzetafeln vor seinem Mausoleum aufstellen – ein Denkmal in eigener Sache, gerichtet an die Nachwelt.",
+          "Augustus' Formulierungen sind meisterhaft geschönt: den illegalen Aufbau eines Privatheeres nennt er *privato consilio* (aus eigenem Entschluss), seine Gegner eine *factio* (Clique), sich selbst den Befreier (*in libertatem vindicavi*).",
+          "Der Vergleich Cicero–Augustus zeigt den Unterschied: Cicero argumentiert offen in einer Debatte mit Gegnern; Augustus' Text lässt keine Gegenrede zu – das ist ein Kennzeichen von Propaganda."
+        ],
+        "extensions": [
+          "Modern: Schüler:innen analysieren einen aktuellen Werbeslogan oder ein politisches Plakat auf dieselben Mittel (Anapher, Trikolon, geschönte Wortwahl) – Rhetorik als Werkzeug der Gegenwart.",
+          "Begriffsarbeit: Wo verläuft die Grenze zwischen *überzeugen* (mit Argumenten), *überreden* und *manipulieren* (mit Verschleierung)? Eine Definition im Heft festhalten."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "multiple_choice",
+            "prompt": "Kaiser Augustus beschreibt den Beginn seiner Laufbahn so:\n\n*Annos undeviginti natus exercitum privato consilio et privata impensa comparavi, per quem rem publicam a dominatione factionis oppressam in libertatem vindicavi.*\n(,Mit neunzehn Jahren stellte ich aus eigenem Entschluss und auf eigene Kosten ein Heer auf, mit dem ich den Staat, der durch die Gewaltherrschaft einer Faktion unterdrückt war, in die Freiheit führte.' – Res Gestae 1)\n\nWelche der folgenden Aussagen beschreiben zutreffend, wie Augustus sich hier in ein günstiges Licht rückt? Wähle alle zutreffenden Antworten.",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "Er nennt seine Gegner eine *factio* (Clique) und ihre Herrschaft eine *dominatio* (Gewaltherrschaft) – so erscheinen sie von vornherein als unrecht.",
+                "Er betont *privato consilio et privata impensa* (auf eigenen Entschluss, eigene Kosten) und stellt so sein eigenmächtiges, rechtlich fragwürdiges Vorgehen als selbstlosen Einsatz dar.",
+                "Er bezeichnet sich ausdrücklich als Alleinherrscher, der die Macht an sich gerissen hat.",
+                "Mit *in libertatem vindicavi* (,ich führte in die Freiheit') stellt er sich als Befreier des Staates dar.",
+                "Er räumt offen ein, dass der Aufbau eines Privatheeres ungesetzlich war.",
+                "Er erwähnt sein junges Alter (*annos undeviginti natus*), was seine Tat umso bewundernswerter erscheinen lässt."
+              ],
+              "select": "many"
+            },
+            "response": {
+              "mode": "none"
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "INT"
+            ],
+            "serves": [
+              {
+                "competence_id": "LAT.OS.6.RHE.01",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "LAT.OS.x.INT.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "asset_refs": [],
+            "answer_key": "Zutreffend: 1, 2, 4, 6. – (1) *factio/dominatio* wertet die Gegner ab; (2) *privato consilio* verkauft das eigenmächtige (rechtlich fragwürdige) Aufstellen eines Privatheeres als edlen Einsatz; (4) *in libertatem vindicavi* stilisiert Augustus zum Befreier; (6) das junge Alter steigert die Bewunderung. – Nicht zutreffend: (3) Augustus vermeidet gerade den Eindruck der Alleinherrschaft; (5) die Ungesetzlichkeit wird nicht eingeräumt, sondern durch die Wortwahl verdeckt.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Kern des ,Propaganda'-Effekts ist die Wortwahl: Dieselbe Tat könnte man auch als ,Putsch eines 19-Jährigen mit einer Privatarmee' beschreiben. Augustus wählt Wörter, die Zustimmung erzwingen.",
+              "Optionen 3 und 5 sind bewusst als Gegenteil des tatsächlichen Vorgehens formuliert – wer sie ankreuzt, hat die Verschleierungsstrategie noch nicht durchschaut."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "true_false_justify",
+            "prompt": "Beurteile die folgenden Aussagen zum Verhältnis von Überzeugung, Rhetorik und Propaganda. Entscheide ,wahr' oder ,falsch' und begründe deine Entscheidung mit einem Argument oder Textbezug (1–2 Sätze).",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Rhetorische Mittel wie Anapher oder Trikolon sind an sich schon Manipulation und in einer ehrlichen Rede fehl am Platz.",
+                "Ciceros Rede und Augustus' *Res Gestae* unterscheiden sich darin, dass Cicero vor anwesenden Gegnern und einem urteilenden Senat spricht, während Augustus' Text keine Gegenrede zulässt.",
+                "Propaganda erkennt man weniger am Thema als an der einseitigen, geschönten Wortwahl und am Fehlen von Gegenstimmen.",
+                "Weil Augustus im Tatenbericht keine offen falschen Tatsachen behauptet, kann man seinen Text nicht als Propaganda bezeichnen."
+              ]
+            },
+            "response": {
+              "mode": "none"
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "INT"
+            ],
+            "serves": [
+              {
+                "competence_id": "LAT.OS.6.RHE.01",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "LAT.OS.x.INT.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "1. Falsch – Stilmittel sind neutrale Werkzeuge; sie *verstärken* eine Aussage, ob sie wahr oder falsch ist. Auch eine ehrliche, gute Sache darf wirkungsvoll formuliert werden – manipulativ wird es erst durch Täuschung/Verschleierung. 2. Wahr – Cicero argumentiert in einer offenen Auseinandersetzung (Senat, anwesender Gegner Catilina); die *Res Gestae* sind ein Denkmal ohne Widerspruchsmöglichkeit. 3. Wahr – Kennzeichen von Propaganda sind Einseitigkeit, geschönte/wertende Sprache (*factio*, *in libertatem*) und das Ausblenden von Gegenstimmen. 4. Falsch – Propaganda muss nicht lügen; sie *wählt aus* und *färbt* (z. B. *privato consilio* für ein Privatheer). Auswahl und Wortfärbung genügen, um von Propaganda zu sprechen.",
+            "acceptable_reasoning": "Bewertet wird die Qualität der Begründung; bei 1 und 4 ist die zentrale Einsicht, dass nicht die Mittel oder die Faktentreue allein, sondern Täuschung/Einseitigkeit den Ausschlag geben.",
+            "watch_outs": [
+              "Aussage 1 zielt auf die häufige Fehlvorstellung ,Rhetorik = Lüge'. Wichtig ist die Differenzierung: Mittel (neutral) vs. Absicht/Verwendung (kann täuschen).",
+              "Aussage 4 ist anspruchsvoll: Schüler:innen sollen erkennen, dass Weglassen und Färben (nicht nur Lügen) Propaganda ausmachen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Korrekte Einschätzung (wahr/falsch)",
+                "levels": [
+                  "Alle 4 korrekt",
+                  "3 korrekt",
+                  "2 korrekt",
+                  "0–1 korrekt"
+                ]
+              },
+              {
+                "criterion": "Qualität der Begründung",
+                "levels": [
+                  "Präzise, mit Argument oder Textbezug",
+                  "Im Wesentlichen korrekt",
+                  "Teilweise begründet",
+                  "Keine oder fehlerhafte Begründung"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "create_produce",
+            "prompt": "Halte selbst eine kurze Überzeugungsrede (6–10 Sätze, auf Deutsch) zu einem Thema, das dich betrifft (z. B. mehr Pausen, kostenloser Nahverkehr für Jugendliche, Handyregeln in der Schule). Setze dabei bewusst **mindestens drei** rhetorische Mittel ein und unterstreiche sie. Kennzeichne am Rand jeweils den Fachbegriff (z. B. Anapher, Trikolon, rhetorische Frage, Klimax, Apostrophe). Schreibe zum Schluss zwei bis drei Sätze darüber, wo bei deiner Rede die Grenze zur Manipulation verlaufen könnte – und wie man als Zuhörer:in solche Mittel durchschaut.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 70
+            },
+            "cognitive_level": "create",
+            "dimensions": [
+              "INT"
+            ],
+            "serves": [
+              {
+                "competence_id": "LAT.OS.6.RHE.01",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "LAT.OS.x.INT.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 18,
+            "asset_refs": [],
+            "answer_key": "Individuelle Produktion. Kriterien: mindestens drei rhetorische Mittel korrekt eingesetzt *und* zutreffend benannt (Form + Funktion); die Rede verfolgt erkennbar ein Überzeugungsziel; die Schlussreflexion benennt konkret, wodurch eine solche Rede manipulativ werden könnte (z. B. Verschweigen von Gegenargumenten, geschönte Wortwahl, Angst schüren) und nennt eine Strategie, das zu durchschauen (Gegenfrage stellen, Quellen/Interessen prüfen, auf wertende Wörter achten).",
+            "acceptable_reasoning": "Kein ,richtiges' Ergebnis; bewertet werden korrekter Einsatz *und* Benennung der Mittel sowie die kritische Reflexion über Manipulationsrisiken.",
+            "watch_outs": [
+              "Schüler:innen setzen die Mittel oft ein, ohne sie benennen zu können (oder umgekehrt). Verlangt ist beides – der praktische Einsatz *und* das metasprachliche Erkennen.",
+              "Die Schlussreflexion nicht überspringen lassen: Sie ist der Kern des Kompetenzziels (Chancen *und* Risiken der Rhetorik)."
+            ],
+            "rubric": [
+              {
+                "criterion": "Einsatz der rhetorischen Mittel",
+                "levels": [
+                  "Drei oder mehr wirkungsvoll eingesetzt",
+                  "Zwei eingesetzt",
+                  "Eines eingesetzt",
+                  "Keine erkennbar"
+                ]
+              },
+              {
+                "criterion": "Benennung / Fachsprache",
+                "levels": [
+                  "Mittel korrekt benannt (Form + Funktion)",
+                  "Überwiegend korrekt benannt",
+                  "Teilweise benannt",
+                  "Nicht benannt"
+                ]
+              },
+              {
+                "criterion": "Kritische Reflexion (Manipulationsrisiko)",
+                "levels": [
+                  "Risiko und Gegenstrategie konkret benannt",
+                  "Risiko benannt, Strategie fehlt",
+                  "Nur allgemein",
+                  "Fehlend"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

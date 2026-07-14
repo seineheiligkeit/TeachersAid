@@ -1,0 +1,316 @@
+{
+  "subject": "Physik",
+  "klasse": 6,
+  "kompetenzbereich": "Elektrizitätslehre",
+  "title": "Stromkreise verstehen: Strom, Spannung und Widerstand",
+  "kernfrage": "Wie hängen Stromstärke, Spannung und Widerstand in einem Stromkreis zusammen – und warum verhalten sich Reihen- und Parallelschaltung so unterschiedlich?",
+  "body": {
+    "intro": [
+      "Ob Handy-Ladegerät, Deckenlampe oder E-Bike – überall fließt elektrischer Strom durch geschlossene Stromkreise. In diesem Arbeitsblatt trennst du zuerst sauber die drei Grundgrößen Stromstärke, Spannung und Widerstand, erschließt dann aus Messwerten das Ohmsche Gesetz und wendest schließlich Knoten- und Maschenregel auf eine verzweigte Schaltung an – bis hin zur Frage, warum an einer überlasteten Steckdose die Sicherung fliegt."
+    ],
+    "data_figures": [],
+    "assets": [
+      {
+        "id": "abb1",
+        "role": "figure",
+        "generator": "matplotlib:circuit",
+        "spec": {
+          "net": {
+            "type": "series",
+            "children": [
+              { "type": "resistor", "ohm": 20, "label": "R₁" },
+              {
+                "type": "parallel",
+                "children": [
+                  { "type": "resistor", "ohm": 60, "label": "R₂" },
+                  { "type": "resistor", "ohm": 30, "label": "R₃" }
+                ]
+              }
+            ]
+          },
+          "volt": 12,
+          "mask": ["Rers", "I"],
+          "title": "Gemischte Schaltung aus drei Widerständen"
+        }
+      },
+      {
+        "id": "abb2",
+        "role": "figure",
+        "generator": "matplotlib:function_graph",
+        "spec": {
+          "xmin": 0,
+          "xmax": 8.5,
+          "ymin": 0,
+          "ymax": 2.2,
+          "points": [[0, 0], [2, 0.5], [4, 1.0], [6, 1.5], [8, 2.0]],
+          "connect": true,
+          "xlabel": "Spannung U in V",
+          "ylabel": "Stromstärke I in A",
+          "title": "Kennlinie eines Bauteils"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Die Grundgrößen des Stromkreises",
+        "throughline": "Schüler:innen bauen ein tragfähiges Modell des Stromkreises auf und trennen sauber die drei Grundgrößen Stromstärke, Spannung und Widerstand – die Voraussetzung, um das Ohmsche Gesetz und Schaltungen zu verstehen.",
+        "talking_points": [
+          "Ein häufiges Alltagsmodell ist „Strom wird verbraucht“ – tatsächlich ist die Stromstärke im unverzweigten Kreis überall gleich groß; „verbraucht“ wird Energie, nicht Ladung.",
+          "Die Wasserkreislauf-Analogie hilft: Spannung entspricht dem Druck der Pumpe, Stromstärke dem Durchfluss, Widerstand einer Engstelle – ihre Grenzen sollte man aber offenlegen.",
+          "Messgeräte richtig schalten: Amperemeter in Reihe (es misst den Durchfluss), Voltmeter parallel (es misst den „Höhenunterschied“)."
+        ],
+        "extensions": [
+          "Baut mit einer Batterie, Kabeln und einem Lämpchen einen einfachen Stromkreis und messt die Stromstärke an verschiedenen Stellen des Kreises.",
+          "Diskussion: Wo stößt die Wasserkreislauf-Analogie an ihre Grenzen (zum Beispiel beim Kurzschluss)?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "matching",
+            "prompt": "Ordne den drei elektrischen Grundgrößen die jeweils passende Beschreibung zu.",
+            "payload": {
+              "kind": "matching",
+              "left": ["Stromstärke I", "Spannung U", "elektrischer Widerstand R"],
+              "right": [
+                "Einheit Ohm (Ω); beschreibt, wie stark ein Bauteil den Stromfluss hemmt; berechnet sich als U geteilt durch I.",
+                "Einheit Ampere (A); wird mit einem Amperemeter gemessen, das in Reihe geschaltet wird; beschreibt die pro Sekunde fließende Ladungsmenge.",
+                "Einheit Volt (V); wird mit einem Voltmeter gemessen, das parallel geschaltet wird; ist der Antrieb, der die Ladungen durch den Kreis bewegt."
+              ]
+            },
+            "response": { "mode": "lines", "n": 3 },
+            "cognitive_level": "remember",
+            "dimensions": ["W"],
+            "serves": [
+              { "competence_id": "PHY.OS.6.ELE.01", "relation": "exercises" },
+              { "competence_id": "PHY.OS.x.W.01", "relation": "exercises" }
+            ],
+            "est_minutes": 6,
+            "asset_refs": [],
+            "answer_key": "Stromstärke I → Ampere (A), Amperemeter in Reihe, Ladungsmenge pro Sekunde (mittlere Beschreibung). Spannung U → Volt (V), Voltmeter parallel, Antrieb der Ladungen (untere Beschreibung). Elektrischer Widerstand R → Ohm (Ω), R = U/I (obere Beschreibung).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Amperemeter und Voltmeter werden häufig verwechselt: Das Amperemeter wird in Reihe geschaltet, das Voltmeter parallel.",
+              "Stromstärke ist nicht dasselbe wie Spannung: Die Spannung ist die Ursache (Antrieb), der Strom die Wirkung."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "true_false_justify",
+            "prompt": "Entscheide für jede Aussage, ob sie richtig oder falsch ist, und begründe deine Entscheidung in einem Satz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "In einem einfachen, unverzweigten Stromkreis ist die Stromstärke an jeder Stelle gleich groß.",
+                "Ein Voltmeter wird in Reihe in den Stromkreis geschaltet, damit der gesamte Strom hindurchfließt.",
+                "Ohne Spannung fließt durch einen Widerstand kein Strom; die Spannung ist die Ursache, die Stromstärke die Wirkung."
+              ]
+            },
+            "response": {
+              "mode": "table",
+              "columns": ["Aussage", "Richtig", "Falsch", "Begründung"],
+              "rows": 3
+            },
+            "cognitive_level": "understand",
+            "dimensions": ["W"],
+            "serves": [
+              { "competence_id": "PHY.OS.6.ELE.01", "relation": "exercises" },
+              { "competence_id": "PHY.OS.x.W.03", "relation": "exercises" }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "1. Richtig – im unverzweigten Kreis fließt an jeder Stelle dieselbe Stromstärke; Ladung wird nicht verbraucht. 2. Falsch – ein Voltmeter wird parallel zum Bauteil geschaltet; in Reihe geschaltet würde es den Stromkreis fast unterbrechen. 3. Richtig – die Spannung treibt die Ladungen an; ohne Spannung (Antrieb) fließt in einem Widerstand kein Strom.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Fehlvorstellung „Strom wird verbraucht“: Im unverzweigten Kreis ist die Stromstärke überall gleich; verbraucht wird Energie, nicht Ladung.",
+              "Ein in Reihe geschaltetes Voltmeter hat einen sehr großen Widerstand und würde den Strom fast auf null bringen."
+            ],
+            "rubric": []
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Das Ohmsche Gesetz und Kennlinien",
+        "throughline": "Der proportionale Zusammenhang U = R · I wird nicht als Formel gelernt, sondern aus Messreihen und Kennlinien erschlossen – und die Schüler:innen lernen, ohmsche von nicht-ohmschen Bauteilen zu unterscheiden.",
+        "talking_points": [
+          "Das Ohmsche Gesetz ist ein Materialgesetz, kein allgemeines Naturgesetz: Es gilt für ohmsche Bauteile bei konstanter Temperatur; eine Glühlampe ist nicht ohmsch.",
+          "Aus einer Kennlinie liest man den Widerstand als R = U/I an einzelnen Punkten ab – Vorsicht bei der Achsenwahl: Ist I über U aufgetragen, so ist die Steigung 1/R, nicht R.",
+          "Ein sauberes Experiment braucht eine regelbare Quelle, richtig geschaltete Messgeräte (Amperemeter in Reihe, Voltmeter parallel) und eine Wertetabelle."
+        ],
+        "extensions": [
+          "Nehmt die Kennlinie einer Glühlampe auf und erklärt, warum sie gekrümmt ist (Erwärmung des Glühdrahts).",
+          "Recherchiert, wie ein Heißleiter (NTC-Widerstand) als Temperatursensor genutzt wird."
+        ],
+        "blocks": [
+          {
+            "role": "info",
+            "id": "i1",
+            "kind": "key_fact",
+            "content": "Ohmsches Gesetz: Spannung = Widerstand · Stromstärke, also U = R · I. Einheiten: U in Volt (V), I in Ampere (A), R in Ohm (Ω), wobei 1 Ω = 1 V/A. Bei einem ohmschen Widerstand bleibt R bei konstanter Temperatur unabhängig von der angelegten Spannung gleich – Stromstärke und Spannung sind dann zueinander proportional."
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "open_response",
+            "prompt": "Wende das Ohmsche Gesetz an und schreibe jeweils die verwendete Formel an.\na) Durch einen Widerstand von 150 Ω soll ein Strom von 0,4 A fließen. Welche Spannung ist dafür nötig?\nb) Ein kleines Gerät zieht an einer 12-V-Quelle einen Strom von 0,5 A. Berechne seinen Widerstand.\nc) Ein Heizgerät mit einem Widerstand von 46 Ω wird an das 230-V-Netz angeschlossen. Welche Stromstärke fließt, und welche Leistung nimmt es auf?",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 50 },
+            "cognitive_level": "apply",
+            "dimensions": ["W"],
+            "serves": [
+              { "competence_id": "PHY.OS.6.ELE.02", "relation": "exercises" },
+              { "competence_id": "PHY.OS.x.W.04", "relation": "exercises" }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "a) U = R · I = 150 Ω · 0,4 A = 60 V. b) R = U / I = 12 V / 0,5 A = 24 Ω. c) I = U / R = 230 V / 46 Ω = 5 A; P = U · I = 230 V · 5 A = 1150 W = 1,15 kW.",
+            "acceptable_reasoning": "Akzeptiert: gleiche Ergebnisse mit sauber angeschriebenen, nach der gesuchten Größe umgestellten Formeln und mitgeführten Einheiten.",
+            "watch_outs": [
+              "Formel nach der gesuchten Größe umstellen (U = R · I, R = U / I, I = U / R) und nicht raten, welche Größe im Zähler steht.",
+              "Einheiten mitschreiben: V = Ω · A, Ω = V/A, A = V/Ω."
+            ],
+            "rubric": [
+              { "criterion": "Formelwahl", "levels": ["Formel korrekt umgestellt und angeschrieben", "Formel bekannt, aber falsch umgestellt"] },
+              { "criterion": "Rechnung und Einheit", "levels": ["Ergebnis richtig mit korrekter Einheit", "Rechenweg erkennbar, Fehler im Ergebnis oder Einheit fehlt"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "data_interpretation",
+            "prompt": "Abbildung 2 zeigt die Kennlinie eines Bauteils: aufgetragen ist die Stromstärke I in Abhängigkeit von der angelegten Spannung U.\na) Lies drei Wertepaare (U, I) aus dem Diagramm ab.\nb) Berechne für jedes Wertepaar den Widerstand R = U / I.\nc) Was fällt dir an den drei Ergebnissen auf, und was bedeutet das für das Bauteil?\nd) Gib den Widerstand des Bauteils an und begründe mit dem Verlauf der Kennlinie, ob es sich um einen ohmschen Widerstand handelt.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 55 },
+            "cognitive_level": "analyze",
+            "dimensions": ["W", "E"],
+            "serves": [
+              { "competence_id": "PHY.OS.6.ELE.01", "relation": "exercises" },
+              { "competence_id": "PHY.OS.x.E.03", "relation": "exercises" }
+            ],
+            "est_minutes": 12,
+            "asset_refs": ["abb2"],
+            "answer_key": "a) Zum Beispiel (2 V; 0,5 A), (4 V; 1,0 A), (6 V; 1,5 A). b) R = 2 V / 0,5 A = 4 Ω; R = 4 V / 1,0 A = 4 Ω; R = 6 V / 1,5 A = 4 Ω. c) Der Widerstand ist für alle Wertepaare gleich (4 Ω). d) R = 4 Ω. Die Kennlinie ist eine Gerade durch den Ursprung, I ist proportional zu U – das Bauteil ist ein ohmscher Widerstand.",
+            "acceptable_reasoning": "Akzeptiert: andere korrekt abgelesene Wertepaare, solange R = U / I durchgängig etwa 4 Ω ergibt.",
+            "watch_outs": [
+              "Weil hier I über U aufgetragen ist, ist die Steigung der Geraden 1/R (= 0,25 A/V), nicht R selbst. Der Widerstand ergibt sich als R = U / I an einem Punkt.",
+              "Ohmsch erkennt man an einer Ursprungsgeraden; eine gekrümmte Kennlinie (zum Beispiel bei einer Glühlampe) wäre nicht ohmsch."
+            ],
+            "rubric": [
+              { "criterion": "Ablesen", "levels": ["Drei brauchbare Wertepaare korrekt abgelesen", "Werte ungenau oder nur eines abgelesen"] },
+              { "criterion": "Berechnung", "levels": ["R für alle Paare korrekt als U/I berechnet", "Rechenansatz richtig, aber Fehler"] },
+              { "criterion": "Deutung", "levels": ["Konstantes R und Ursprungsgerade als ohmsch korrekt begründet", "Wert genannt, aber ohne Begründung der Ohmschen Eigenschaft"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "experiment_protocol",
+            "prompt": "Dir wird ein unbekanntes elektrisches Bauteil gegeben. Plane ein Experiment, mit dem du überprüfen kannst, ob es sich um einen ohmschen Widerstand handelt.\nBeschreibe:\na) welche Messgeräte du brauchst und wie du sie schaltest (Skizze in Worten),\nb) welche Größe du schrittweise veränderst und welche du jeweils misst,\nc) wie du die Messwerte auswertest (Tabelle und/oder Diagramm),\nd) woran genau du erkennst, ob das Bauteil ohmsch ist.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 65 },
+            "cognitive_level": "create",
+            "dimensions": ["E", "W"],
+            "serves": [
+              { "competence_id": "PHY.OS.6.ELE.01", "relation": "exercises" },
+              { "competence_id": "PHY.OS.x.E.01", "relation": "exercises" },
+              { "competence_id": "PHY.OS.x.E.02", "relation": "exercises" }
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "a) Regelbare Gleichspannungsquelle, das Bauteil, ein Amperemeter in Reihe zum Bauteil (misst I) und ein Voltmeter parallel zum Bauteil (misst U). b) Die Spannung U wird in Schritten erhöht (zum Beispiel 0, 2, 4, 6, 8 V); zu jeder Spannung wird die Stromstärke I gemessen. c) Die Wertepaare (U, I) in eine Tabelle eintragen, R = U / I berechnen und/oder I über U in ein Diagramm zeichnen. d) Ohmsch, wenn R für alle Messwerte (bei konstanter Temperatur) gleich bleibt bzw. die Kennlinie eine Gerade durch den Ursprung ist; andernfalls (gekrümmte Kennlinie, veränderliches R) nicht ohmsch.",
+            "acceptable_reasoning": "Akzeptiert: jede vollständige, korrekt geschaltete Messanordnung mit variabler Spannung, Wertetabelle und dem Kriterium Proportionalität bzw. konstantes R.",
+            "watch_outs": [
+              "Amperemeter immer in Reihe, Voltmeter immer parallel – ein parallel geschaltetes Amperemeter erzeugt praktisch einen Kurzschluss.",
+              "Bei zu hohen Strömen erwärmt sich das Bauteil; die Temperatur ändert den Widerstand (zum Beispiel bei der Glühlampe), deshalb die Belastung klein halten.",
+              "Ohne Wertetabelle oder Diagramm ist keine Aussage über konstantes R möglich – eine einzelne Messung genügt nicht."
+            ],
+            "rubric": [
+              { "criterion": "Schaltung", "levels": ["Amperemeter in Reihe und Voltmeter parallel korrekt beschrieben", "Messgeräte genannt, aber Schaltung ungenau oder falsch"] },
+              { "criterion": "Messvorgehen", "levels": ["Spannung variiert, Stromstärke gemessen, Wertetabelle vorgesehen", "Vorgehen unvollständig"] },
+              { "criterion": "Auswertekriterium", "levels": ["Konstantes R bzw. Ursprungsgerade als Kriterium für ohmsch genannt", "Kriterium fehlt oder ist unklar"] }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "Reihen- und Parallelschaltung",
+        "throughline": "An einer gemischten Schaltung wenden die Schüler:innen Knoten- und Maschenregel an, berechnen Ersatzwiderstand und Teilströme und übertragen das Verständnis auf die elektrische Sicherheit im Haushalt.",
+        "talking_points": [
+          "Reihenschaltung: gleiche Stromstärke, die Spannungen addieren sich, die Widerstände addieren sich. Parallelschaltung: gleiche Spannung, die Ströme addieren sich (Knotenregel), der Ersatzwiderstand wird kleiner als der kleinste Einzelwiderstand.",
+          "Verbreitete Fehlvorstellung: In der Parallelschaltung „teilt sich der Strom, also wird es sicherer“ – tatsächlich addieren sich die Teilströme zum größeren Gesamtstrom.",
+          "Zuhause sind Geräte parallel geschaltet (alle bekommen 230 V); die Absicherung begrenzt den Gesamtstrom und schützt die Leitung."
+        ],
+        "extensions": [
+          "Berechnet den Ersatzwiderstand, wenn R₂ und R₃ in Reihe statt parallel geschaltet werden, und vergleicht das Ergebnis.",
+          "Recherchiert, wie eine Schmelzsicherung bzw. ein Leitungsschutzschalter funktioniert und warum es sie gibt."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "data_interpretation",
+            "prompt": "Abbildung 1 zeigt eine Schaltung, bei der der Widerstand R₁ in Reihe zu einer Parallelschaltung aus R₂ und R₃ liegt. Die Quelle liefert U = 12 V. Gegeben: R₁ = 20 Ω, R₂ = 60 Ω, R₃ = 30 Ω.\na) Berechne den Ersatzwiderstand der Parallelschaltung und anschließend den Gesamt-Ersatzwiderstand Rₑᵣₛ.\nb) Berechne die Gesamtstromstärke I.\nc) Welche Spannung fällt über R₁ ab, welche über der Parallelschaltung?\nd) Berechne die Teilströme durch R₂ und durch R₃.\ne) Erkläre, warum durch R₃ ein größerer Strom fließt als durch R₂.",
+            "payload": null,
+            "response": { "mode": "box", "min_height_mm": 70 },
+            "cognitive_level": "analyze",
+            "dimensions": ["W"],
+            "serves": [
+              { "competence_id": "PHY.OS.6.ELE.02", "relation": "exercises" },
+              { "competence_id": "PHY.OS.x.W.04", "relation": "exercises" }
+            ],
+            "est_minutes": 15,
+            "asset_refs": ["abb1"],
+            "answer_key": "a) Parallel: R₂₃ = (R₂ · R₃) / (R₂ + R₃) = (60 · 30) / (60 + 30) Ω = 1800/90 Ω = 20 Ω. Reihe: Rₑᵣₛ = R₁ + R₂₃ = 20 Ω + 20 Ω = 40 Ω. b) I = U / Rₑᵣₛ = 12 V / 40 Ω = 0,3 A. c) U₁ = I · R₁ = 0,3 A · 20 Ω = 6 V; über der Parallelschaltung: U₂₃ = U − U₁ = 12 V − 6 V = 6 V. d) I₂ = U₂₃ / R₂ = 6 V / 60 Ω = 0,1 A; I₃ = U₂₃ / R₃ = 6 V / 30 Ω = 0,2 A (Kontrolle: I₂ + I₃ = 0,3 A = I). e) An R₂ und R₃ liegt dieselbe Spannung (6 V). Da R₃ den kleineren Widerstand hat, fließt durch ihn nach I = U / R der größere Strom.",
+            "acceptable_reasoning": "Akzeptiert: Rechenweg über die Leitwerte (1/R₂₃ = 1/60 + 1/30 = 3/60, also R₂₃ = 20 Ω).",
+            "watch_outs": [
+              "Der Ersatzwiderstand einer Parallelschaltung ist kleiner als der kleinste Einzelwiderstand – die Widerstände dürfen nicht einfach addiert werden.",
+              "In der Parallelschaltung ist die Spannung gleich und die Ströme addieren sich (Knotenregel); in der Reihenschaltung ist der Strom gleich und die Spannungen addieren sich (Maschenregel).",
+              "Teilströme kontrollieren: Ihre Summe muss die Gesamtstromstärke ergeben."
+            ],
+            "rubric": [
+              { "criterion": "Ersatzwiderstand", "levels": ["Parallel- und Gesamtwiderstand korrekt berechnet", "Ein Schritt korrekt, der andere fehlerhaft"] },
+              { "criterion": "Ströme und Spannungen", "levels": ["Gesamtstrom, Teilspannungen und Teilströme korrekt und widerspruchsfrei", "Ansatz richtig, Rechenfehler oder fehlende Kontrolle"] },
+              { "criterion": "Erklärung", "levels": ["Gleiche Spannung, kleinerer Widerstand → größerer Strom korrekt begründet", "Ergebnis ohne physikalische Begründung"] }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "decision_scenario",
+            "prompt": "In einer Wohnung werden an einer Mehrfachsteckdose (Netzspannung 230 V, abgesichert mit 16 A) gleichzeitig ein Heizlüfter (2000 W), ein Wasserkocher (2200 W) und ein Toaster (1000 W) betrieben. Jemand meint: „Das passt schon – die Geräte sind ja parallel geschaltet, da teilt sich der Strom auf und jedes bekommt weniger.“\nBeurteile diese Aussage physikalisch und entscheide begründet, ob der gleichzeitige Betrieb gefahrlos möglich ist. Rechne dazu.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Ist der gleichzeitige Betrieb gefahrlos? Prüfe die Aussage rechnerisch und nimm begründet Stellung."
+            },
+            "response": { "mode": "box", "min_height_mm": 55 },
+            "cognitive_level": "evaluate",
+            "dimensions": ["W", "S"],
+            "serves": [
+              { "competence_id": "PHY.OS.6.ELE.02", "relation": "exercises" },
+              { "competence_id": "PHY.OS.x.S.01", "relation": "exercises" }
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "Die Aussage ist falsch. In einer Parallelschaltung liegt an jedem Gerät die volle Spannung (230 V); die Teilströme addieren sich (Knotenregel) zum Gesamtstrom – je mehr Geräte, desto größer der Gesamtstrom. Gesamtleistung P = 2000 W + 2200 W + 1000 W = 5200 W. Gesamtstrom I = P / U = 5200 W / 230 V ≈ 22,6 A. Das übersteigt die Absicherung von 16 A deutlich – die Sicherung löst aus (bzw. bei defekter Sicherung drohen Leitungsüberhitzung und Brand). Der gleichzeitige Betrieb ist daher nicht gefahrlos möglich; man muss die Geräte nacheinander betreiben oder auf verschiedene, getrennt abgesicherte Stromkreise verteilen.",
+            "acceptable_reasoning": "Akzeptiert: Argumentation über die Einzelströme (Heizlüfter 2000/230 ≈ 8,7 A; Wasserkocher ≈ 9,6 A; Toaster ≈ 4,3 A; Summe ≈ 22,6 A > 16 A).",
+            "watch_outs": [
+              "Fehlvorstellung „Parallel teilt den Strom auf, also ist es sicherer“: Tatsächlich addieren sich die Teilströme, der Gesamtstrom aus der Steckdose wird größer, nicht kleiner.",
+              "Die Sicherung schützt die Leitung vor Überhitzung, nicht die einzelnen Geräte.",
+              "Leistungen bzw. Ströme dürfen hier addiert werden, weil an allen Geräten dieselbe Spannung anliegt."
+            ],
+            "rubric": [
+              { "criterion": "Physikalische Analyse", "levels": ["Parallelschaltung und Knotenregel korrekt angewendet", "Nur teilweise korrekt oder verwechselt Reihe/Parallel"] },
+              { "criterion": "Rechnung", "levels": ["Gesamtstrom korrekt berechnet und mit 16 A verglichen", "Ansatz vorhanden, Rechenfehler"] },
+              { "criterion": "Entscheidung", "levels": ["Begründete, physikalisch gestützte Entscheidung mit Konsequenz", "Entscheidung ohne tragfähige Begründung"] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

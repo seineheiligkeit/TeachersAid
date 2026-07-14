@@ -1,0 +1,273 @@
+{
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 8,
+  "kompetenzbereich": "Städte als Lebensräume und ökonomische Zentren untersuchen",
+  "title": "Die geteilte Stadt: Urbanisierung, Ungleichheit und Zukunft",
+  "kernfrage": "Warum zieht es immer mehr Menschen in die Städte, wie entstehen dabei soziale Gräben zwischen den Vierteln – und wie könnte eine Stadt aussehen, die für alle lebenswert bleibt?",
+  "body": {
+    "intro": [
+      "Mehr als die Hälfte der Menschheit lebt heute in Städten – Tendenz steigend. Städte sind Motoren der Wirtschaft, Orte der Vielfalt und der Innovation, aber auch Schauplätze scharfer sozialer Gegensätze: Wenige Straßenzüge entscheiden oft über Miethöhe, Luftqualität, Bildungschancen und sogar Lebenserwartung. In diesem Arbeitsblatt untersuchst du, warum Städte weltweit so rasant wachsen, wie im Inneren einer Stadt soziale Grenzen entstehen, welche Rolle große Metropolen in der Weltwirtschaft spielen – und wie eine Stadt aussehen könnte, die ökologisch tragfähig und zugleich für alle lebenswert ist."
+    ],
+    "data_figures": [
+      {
+        "id": "abb1",
+        "intent": "trend",
+        "title": "Anteil der Stadtbevölkerung weltweit (in %)",
+        "xlabel": "Jahr",
+        "ylabel": "Anteil in %",
+        "data_source": {"dataset_id": "worldbank_urbanisierung", "series": "welt_verlauf"}
+      },
+      {
+        "id": "abb2",
+        "intent": "comparison",
+        "title": "Verstädterungsgrad im Ländervergleich (Anteil der Stadtbevölkerung, in %)",
+        "xlabel": "Land",
+        "ylabel": "Anteil in %",
+        "data_source": {"dataset_id": "worldbank_urbanisierung", "series": "vergleich"}
+      }
+    ],
+    "assets": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Urbanisierung – ein globaler Megatrend",
+        "throughline": "Schüler:innen lesen Urbanisierung als messbaren, weltweiten Prozess und unterscheiden seine unterschiedliche Ausprägung und Geschwindigkeit in verschiedenen Weltregionen.",
+        "talking_points": [
+          "Urbanisierung (steigender Anteil der Stadtbevölkerung) und Urbanität (städtische Lebensweise) sind zwei verschiedene Konzepte – der Prozess und seine Kultur.",
+          "Der Verstädterungsgrad ist ein Anteilswert – ein Land kann hohen Verstädterungsgrad UND langsames Städtewachstum haben (und umgekehrt).",
+          "Die Definition von 'Stadt' unterscheidet sich zwischen Ländern (Einwohnerzahl, Verwaltung, Dichte) – deshalb sind internationale Vergleiche mit Vorsicht zu lesen.",
+          "Das schnellste Städtewachstum findet heute in Afrika und Asien statt, nicht mehr in Europa."
+        ],
+        "extensions": [
+          "Recherche: Was ist eine 'Megastadt' (über 10 Mio. Einwohner:innen)? Wo liegen die meisten davon heute – und wo lagen sie 1970?",
+          "Vergleich der Definition von 'Stadt' in Österreich (Statistik Austria) mit jener in China oder Indien."
+        ],
+        "blocks": [
+          {
+            "role": "info",
+            "id": "ib1",
+            "kind": "key_fact",
+            "content": "Wichtige Begriffe: Urbanisierung = der Anstieg des Anteils der Menschen, die in Städten leben. Urbanität = die städtische Lebensweise (Dichte, Anonymität, Vielfalt, Arbeitsteilung). Verstädterungsgrad = Anteil der Stadtbevölkerung an der Gesamtbevölkerung in Prozent. Menschen ziehen in Städte, weil sie von dort weggetrieben (Push: z. B. Armut, fehlende Arbeit auf dem Land) oder angezogen werden (Pull: z. B. Jobs, Bildung, Gesundheitsversorgung, Freiheit).",
+            "watch_outs": [],
+            "asset_refs": []
+          },
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "data_analysis",
+            "prompt": "Abbildung 1 zeigt, wie sich der Anteil der Stadtbevölkerung weltweit über die Jahrzehnte entwickelt hat.\n\na) Beschreibe den Verlauf in eigenen Worten: Wie hat sich der Anteil seit 1960 verändert?\nb) In welchem Zeitraum lebte erstmals mehr als die Hälfte der Weltbevölkerung in Städten? Lies den ungefähren Wert dafür ab.\nc) Nenne zwei Gründe (einen Push- und einen Pull-Faktor), die diesen weltweiten Trend antreiben.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 50},
+            "cognitive_level": "understand",
+            "dimensions": ["SYN"],
+            "serves": [{"competence_id": "GWB.OS.8.STA.03", "relation": "exercises"}],
+            "est_minutes": 10,
+            "asset_refs": ["abb1"],
+            "answer_key": "a) Der Anteil der Stadtbevölkerung ist seit 1960 kontinuierlich gestiegen – von rund einem Drittel auf deutlich über die Hälfte; die Menschheit ist von einer überwiegend ländlichen zu einer überwiegend städtischen geworden. b) Um das Jahr 2007/2008 wurde die Marke von 50 % überschritten; im Diagramm liegt der Wert um 2010 erstmals über 50 %. c) Push-Faktoren: Armut, fehlende Arbeitsplätze und Perspektiven, Mechanisierung der Landwirtschaft, Naturgefahren auf dem Land. Pull-Faktoren: Arbeitsplätze, höhere Löhne, Bildung, medizinische Versorgung, kulturelle Angebote, Anonymität/Freiheit.",
+            "acceptable_reasoning": "Für b) ist ein abgelesener Näherungswert (ca. 2007–2010) akzeptabel; exakte Jahreszahlen werden nicht erwartet.",
+            "watch_outs": [
+              "Häufige Verwechslung: hoher Verstädterungsgrad heißt nicht automatisch schnelles Wachstum – der Anteil kann hoch und zugleich fast konstant sein.",
+              "Schüler:innen nennen oft nur Pull-Faktoren ('in der Stadt ist es besser') – der Push vom Land ist ebenso wichtig."
+            ],
+            "rubric": [
+              {"criterion": "Trendbeschreibung", "levels": ["Keine oder falsche Aussage", "Richtung genannt ohne Zeitbezug", "Verlauf mit Zeitangaben beschrieben", "Präzise Beschreibung inkl. Größenordnung und Wendepunkt (50 %-Marke)"]},
+              {"criterion": "Push/Pull", "levels": ["Kein Faktor", "Ein Faktor genannt", "Je ein Push- und Pull-Faktor genannt", "Faktoren benannt und der Richtung (Push/Pull) korrekt zugeordnet und erklärt"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "data_analysis",
+            "prompt": "Abbildung 2 vergleicht den Verstädterungsgrad mehrerer Länder.\n\na) Ordne die Länder grob nach ihrem Verstädterungsgrad: Welche liegen an der Spitze, welche am Ende?\nb) Fällt dir ein Land besonders auf, das aus dem Muster 'reiches Land = hoher Verstädterungsgrad' herausfällt? Beschreibe es.\nc) Erkläre, warum heute gerade Länder mit heute noch niedrigem Verstädterungsgrad die schnellste Urbanisierung erleben. Welche Chancen und welche Probleme kann so ein rasantes Städtewachstum mit sich bringen?",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 55},
+            "cognitive_level": "analyze",
+            "dimensions": ["SYN", "REF"],
+            "serves": [{"competence_id": "GWB.OS.8.STA.03", "relation": "exercises"}],
+            "est_minutes": 10,
+            "asset_refs": ["abb2"],
+            "answer_key": "a) An der Spitze liegen hoch entwickelte Länder wie die Schweiz, Deutschland und die USA (rund 80–86 %); im Mittelfeld Österreich und Italien (um 70 %) sowie China und Nigeria (rund 63–66 %); klares Schlusslicht ist Indien mit gut einem Drittel. b) Nigeria fällt auf: trotz relativ geringem Wohlstand ist bereits ein beachtlicher Teil der Bevölkerung urbanisiert – hoher Verstädterungsgrad und niedriges Einkommen schließen sich also nicht aus. c) Länder mit heute niedrigem Verstädterungsgrad haben ein starkes Bevölkerungswachstum und viele Menschen, die noch vom Land in die Stadt ziehen – der 'Nachholprozess' läuft dort gerade. Chancen: Wirtschaftswachstum, Bildung, bessere Versorgung, Innovation. Probleme: Wachstum überholt die Infrastruktur → informelle Siedlungen/Slums, Wasser-/Abwasserprobleme, Verkehr, Umweltbelastung, soziale Spannungen.",
+            "acceptable_reasoning": "Beim 'Ausreißer' ist jede belegbare Beobachtung akzeptabel, solange sie mit abgelesenen Werten begründet wird.",
+            "watch_outs": [
+              "Fehlvorstellung 'arm = ländlich': einige einkommensschwächere Länder sind bereits stark urbanisiert; Verstädterung und Wohlstand hängen nicht zwingend zusammen.",
+              "Absoluter vs. relativer Blick: Indien hat einen niedrigen Verstädterungsgrad, aber wegen der riesigen Gesamtbevölkerung trotzdem sehr viele Stadtbewohner:innen."
+            ],
+            "rubric": [
+              {"criterion": "Vergleich/Ordnung", "levels": ["Keine Ordnung", "Nur Extremwerte genannt", "Länder sinnvoll gruppiert", "Differenzierte Ordnung mit Werten und Auffälligkeiten"]},
+              {"criterion": "Chancen und Probleme", "levels": ["Nur eine Seite", "Je ein Aspekt", "Je zwei Aspekte mit Erklärung", "Differenziert, mit Bezug auf das Tempo des Wachstums"]}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Die soziale Stadt: Wer wohnt wo – und warum?",
+        "throughline": "Der Blick wandert von der Weltkarte ins Innere der Stadt: Schüler:innen analysieren, wie soziale Unterschiede räumlich sichtbar werden und wie unterschiedlich dieselbe Stadt erlebt wird.",
+        "talking_points": [
+          "Segregation ist die räumliche Trennung sozialer Gruppen – sie kann nach Einkommen, Herkunft oder Alter erfolgen und ist selten reine 'freie Wahl'.",
+          "Gentrifizierung ist ambivalent: Aufwertung eines Viertels kann es beleben, verdrängt aber oft die ursprüngliche, ärmere Bevölkerung.",
+          "Der Wohnungsmarkt ist der zentrale Mechanismus: Wer wo wohnen kann, entscheidet sich stark über Miete und Kaufpreis.",
+          "Auch reiche Städte wie Wien sind sozial nicht homogen – Bezirke unterscheiden sich in Einkommen, Bildung und Gesundheit deutlich."
+        ],
+        "extensions": [
+          "Kartenarbeit: Vergleicht in einer Stadt eures Wahl Karten zu Mietpreisen, Grünflächen und Bildungsabschlüssen – decken sich die Muster?",
+          "Diskussion: Ist eine soziale 'Durchmischung' immer wünschenswert, oder haben homogene Viertel auch Vorteile (z. B. Gemeinschaft)?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "matching",
+            "prompt": "Ordne jedem Fachbegriff das passende Alltagsbeispiel zu.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Suburbanisierung",
+                "Segregation",
+                "Gentrifizierung",
+                "Gated Community",
+                "Reurbanisierung"
+              ],
+              "right": [
+                "Eine Familie verlässt die teure Innenstadt und baut ein Einfamilienhaus am Stadtrand.",
+                "In einem Viertel leben fast nur einkommensschwache Haushalte, im Nachbarviertel fast nur wohlhabende.",
+                "Ein ehemaliges Arbeiterviertel wird saniert, Cafés und Galerien ziehen ein, die Mieten steigen – alteingesessene Bewohner:innen müssen wegziehen.",
+                "Eine von Mauern umgebene Wohnanlage mit Schranke und privatem Sicherheitsdienst.",
+                "Gut verdienende Paare ziehen bewusst zurück in sanierte Altbauwohnungen im Zentrum."
+              ]
+            },
+            "response": {"mode": "table", "columns": ["Begriff", "Passendes Beispiel"], "rows": 5},
+            "cognitive_level": "apply",
+            "dimensions": ["SYN"],
+            "serves": [{"competence_id": "GWB.OS.8.STA.02", "relation": "exercises"}, {"competence_id": "GWB.OS.8.STA.03", "relation": "exercises"}],
+            "est_minutes": 7,
+            "asset_refs": [],
+            "answer_key": "Suburbanisierung → Einfamilienhaus am Stadtrand (Abwanderung aus der Kernstadt ins Umland). Segregation → einkommensschwaches vs. wohlhabendes Viertel (räumliche Trennung sozialer Gruppen). Gentrifizierung → saniertes Arbeiterviertel mit steigenden Mieten und Verdrängung. Gated Community → abgeschottete Wohnanlage mit Sicherheitsdienst. Reurbanisierung → Rückzug ins sanierte Zentrum.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Suburbanisierung (hinaus) und Reurbanisierung (zurück ins Zentrum) sind entgegengesetzte Bewegungen – nicht verwechseln.",
+              "Gentrifizierung ist mehr als 'Renovieren': entscheidend ist die Verdrängung der ursprünglichen Bewohner:innen durch steigende Mieten.",
+              "Segregation ist nicht nur ethnisch, sondern häufig sozioökonomisch (nach Einkommen)."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "open_response",
+            "prompt": "Drei Menschen leben im selben Stadtviertel, erleben es aber ganz unterschiedlich:\n\n• Frau A (78), wohnt seit 50 Jahren zur gleichen günstigen Miete in ihrer Altbauwohnung.\n• Ein junges, gut verdienendes Paar, gerade neu zugezogen, arbeitet in der Innenstadt.\n• Ein alleinerziehender Vater mit geringem Einkommen und zwei Kindern.\n\na) Beschreibe, wie jede dieser Personen dasselbe Viertel wahrscheinlich unterschiedlich erlebt (z. B. Miete, Sicherheit, Angebote, Zugehörigkeit, Zukunftssorgen).\nb) Erkläre, welche sozialen Unterschiede und welche Mechanismen (Wohnungsmarkt, Aufwertung, Infrastruktur) diese unterschiedlichen 'Wirklichkeiten' in ein und demselben Raum erzeugen.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 65},
+            "cognitive_level": "analyze",
+            "dimensions": ["SYN", "REF"],
+            "serves": [{"competence_id": "GWB.OS.8.STA.01", "relation": "exercises"}, {"competence_id": "GWB.OS.8.STA.02", "relation": "exercises"}],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "a) Frau A: fühlt sich verbunden, kennt viele Menschen, sorgt sich aber, ob sie sich das Viertel bei Aufwertung noch leisten kann; profitiert von langem, günstigem Mietvertrag. Junges Paar: schätzt Cafés, kurze Wege, gutes Angebot, empfindet das Viertel als lebendig und sicher; steigende Preise sind für sie tragbar. Alleinerziehender Vater: erlebt vor allem finanziellen Druck, Sorge um leistbare Wohnung, Kinderbetreuung, evtl. Diskriminierung; dieselben schicken Cafés sind für ihn kaum leistbar. b) Mechanismen: der Wohnungsmarkt sortiert Menschen nach Zahlungskraft; Aufwertung/Gentrifizierung erhöht Mieten und verdrängt einkommensschwache Haushalte; unterschiedlicher Zugang zu Infrastruktur (Schulen, Grün, Verkehr) verstärkt Unterschiede; lange Mietverträge/Eigentum schützen manche, während Neu- oder Schwächere den vollen Preis zahlen. So entstehen im selben physischen Raum sehr verschiedene Lebenswirklichkeiten.",
+            "acceptable_reasoning": "Unterschiedliche, aber plausible und begründete Perspektivbeschreibungen sind akzeptabel; entscheidend ist, dass soziale Unterschiede mit Mechanismen verknüpft werden.",
+            "watch_outs": [
+              "Schüler:innen bleiben oft bei Gefühlen stehen ('die eine mag es, der andere nicht') – auf die dahinterliegenden Mechanismen (Markt, Aufwertung, Infrastruktur) drängen.",
+              "Die subjektive Wahrnehmung ist real, aber nicht beliebig – sie ist an die soziale Lage rückgebunden."
+            ],
+            "rubric": [
+              {"criterion": "Perspektivenvielfalt", "levels": ["Eine Perspektive", "Zwei Perspektiven oberflächlich", "Drei Perspektiven mit Unterschieden", "Drei Perspektiven differenziert und an die soziale Lage rückgebunden"]},
+              {"criterion": "Mechanismenanalyse", "levels": ["Keine Mechanismen", "Ein Mechanismus benannt", "Zwei Mechanismen erklärt", "Mechanismen erklärt und mit den Perspektiven verknüpft"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "true_false_justify",
+            "prompt": "Beurteile die folgenden Aussagen: richtig oder falsch? Begründe deine Einschätzung jeweils in einem kurzen Satz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Gentrifizierung bringt einem Viertel immer nur Vorteile, weil es schöner und sicherer wird.",
+                "Räumliche Segregation ist ausschließlich das Ergebnis freier Wohnstandortentscheidungen der Menschen.",
+                "Auch in wohlhabenden Städten wie Wien gibt es deutliche soziale Unterschiede zwischen den Bezirken.",
+                "Eine bewusste Durchmischung von Wohnungen für verschiedene Einkommensgruppen kann Segregation verringern."
+              ]
+            },
+            "response": {"mode": "table", "columns": ["Aussage", "Richtig/Falsch", "Begründung"], "rows": 4},
+            "cognitive_level": "evaluate",
+            "dimensions": ["REF"],
+            "serves": [{"competence_id": "GWB.OS.8.STA.02", "relation": "exercises"}],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "1. Falsch – Aufwertung kann ein Viertel beleben, verdrängt aber häufig die ursprüngliche, ärmere Bevölkerung über steigende Mieten; 'Vorteil' hängt von der Perspektive ab. 2. Falsch – Segregation entsteht v. a. durch den Wohnungsmarkt (Zahlungskraft), durch Diskriminierung, politische Entscheidungen und ungleiche Infrastruktur; freie Wahl ist nur ein Teil. 3. Richtig – auch reiche Städte sind sozial gegliedert; Bezirke unterscheiden sich in Einkommen, Bildung und Gesundheit. 4. Richtig – geförderter/sozialer Wohnbau und gemischte Quartiere können Trennung abmildern (Beispiel Wiener Gemeindebau).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Aussage 1 verführt zu einer einseitig positiven Sicht – die Verdrängung ausdrücklich thematisieren.",
+              "Aussage 2 unterschätzt strukturelle Zwänge – wer wenig verdient, kann sich teure Viertel schlicht nicht aussuchen."
+            ],
+            "rubric": []
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "Metropolen und die nachhaltige Stadt",
+        "throughline": "Schüler:innen beurteilen die wirtschaftliche Steuerungsfunktion großer Metropolen und entwickeln daraus Perspektiven für eine sozial wie ökologisch nachhaltige Stadt.",
+        "talking_points": [
+          "Global Cities (z. B. London, New York, Tokio) bündeln Konzernzentralen, Finanzdienste und Entscheidungen – sie steuern Wirtschaftsströme weit über ihre Grenzen hinaus.",
+          "Agglomerationsvorteile (Nähe von Firmen, Talenten, Wissen) erklären, warum sich Steuerungsfunktionen an wenigen Orten ballen.",
+          "Konzentration hat eine Kehrseite: 'Brain Drain' und Kapitalabfluss aus der Peripherie, hohe Lebenshaltungskosten in den Zentren.",
+          "Nachhaltige Urbanität heißt ökologisch UND sozial: eine klimafitte Stadt, die zugleich leistbar und inklusiv bleibt."
+        ],
+        "extensions": [
+          "Fallstudie: Welche Rolle spielt Wien als Steuerungszentrum für Mittel- und Osteuropa (Firmenzentralen, internationale Organisationen)?",
+          "Konzeptvergleich: '15-Minuten-Stadt' (Paris) und 'Schwammstadt' – was steckt hinter diesen Leitbildern?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "source_critique",
+            "prompt": "Lies die beiden Positionen zur Rolle großer Metropolen:\n\nPosition A (Standortökonomin): „Metropolen wie London, Frankfurt oder Wien sind Steuerungszentren der Wirtschaft. Wo sich Konzernzentralen, Banken und Talente ballen, entstehen Innovation und Wohlstand, von dem am Ende das ganze Land profitiert.\"\n\nPosition B (Regionalforscher): „Diese Konzentration hat einen Preis: Sie zieht die klügsten Köpfe und das Kapital aus den ländlichen Regionen ab. Die Metropolen boomen, während die Peripherie ausblutet – und in der Stadt selbst kann sich kaum noch jemand die Miete leisten.\"\n\na) Welche Argumente bringt jede Position vor? Welche Interessen könnten dahinterstehen?\nb) Auf welche Tatsachen oder Beobachtungen stützen sich die Positionen jeweils?\nc) Beurteile: Ist die Bedeutung von Metropolen als Steuerungszentren eher eine Chance oder eine Gefahr? Beziehe beide Positionen in deine begründete Antwort ein.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 65},
+            "cognitive_level": "evaluate",
+            "dimensions": ["REF", "KOM"],
+            "serves": [{"competence_id": "GWB.OS.8.STA.04", "relation": "exercises"}],
+            "est_minutes": 13,
+            "asset_refs": [],
+            "answer_key": "a) Position A: Agglomerationsvorteile (Nähe von Firmen, Fachkräften, Wissen), Innovation, Steuereinnahmen, internationale Sichtbarkeit; Interesse: Wirtschaftsstandort, Investoren, städtische Eliten. Position B: Abfluss von Talenten (Brain Drain) und Kapital aus der Peripherie, regionale Disparitäten, Verdrängung durch hohe Wohnkosten; Interesse: ländliche Regionen, einkommensschwächere Stadtbewohner:innen, Regionalpolitik. b) A stützt sich auf messbare Wirtschaftskraft und Beschäftigung der Metropolen; B auf Wanderungsströme in die Zentren, wachsende Stadt-Land-Unterschiede und stark gestiegene Mieten. c) Beide haben recht: Metropolen sind reale Wachstumsmotoren UND Verstärker von Ungleichheit. Eine gute Antwort wägt ab (z. B. Chancen nutzen, aber durch Regionalpolitik und leistbaren Wohnraum ausgleichen) statt sich unreflektiert auf eine Seite zu schlagen.",
+            "acceptable_reasoning": "Jede gut begründete Gesamtbewertung ist akzeptabel, sofern beide Positionen und ihre Interessen berücksichtigt werden.",
+            "watch_outs": [
+              "Schüler:innen tendieren zu 'beide haben recht' ohne Abwägung – auf Kriterien und eine begründete Gewichtung bestehen.",
+              "Empirische Aussage (Metropolen sind wirtschaftsstark) und Wertung (das ist gut/schlecht) auseinanderhalten."
+            ],
+            "rubric": [
+              {"criterion": "Argument- und Interessenanalyse", "levels": ["Nur eine Position", "Beide Positionen aufgelistet", "Beide mit Argumenten und Interessen", "Beide mit Argumenten, Interessen und Tatsachenbezug"]},
+              {"criterion": "Eigene Beurteilung", "levels": ["Fehlt", "Position ohne Begründung", "Position mit Argumenten", "Abwägende Position mit Kriterien und Gegenargumenten"]}
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "create_produce",
+            "prompt": "Entwirf das Konzept für ein „Stadtviertel der Zukunft\" in einer wachsenden Stadt. Es soll ökologisch tragfähig UND für alle Einkommensgruppen lebenswert sein.\n\nEntwickle drei konkrete Maßnahmen – je eine zu:\n• Mobilität (wie bewegen sich die Menschen?),\n• Wohnen (wie bleibt das Viertel leistbar und sozial gemischt?),\n• Klima/Grün (wie wird das Viertel hitze- und hochwasserfit?).\n\nBegründe zu jeder Maßnahme kurz, welches Problem sie löst – und erkläre, wie dein Konzept verhindert, dass nur Wohlhabende von der 'grünen' Aufwertung profitieren.",
+            "payload": null,
+            "response": {"mode": "box", "min_height_mm": 80},
+            "cognitive_level": "create",
+            "dimensions": ["HAN", "KOM"],
+            "serves": [{"competence_id": "GWB.OS.8.STA.05", "relation": "exercises"}, {"competence_id": "GWB.OS.8.STA.02", "relation": "exercises"}],
+            "est_minutes": 15,
+            "asset_refs": [],
+            "answer_key": "Keine Musterlösung – bewertet werden Konkretheit, Begründung und die Verbindung von Ökologie und sozialer Gerechtigkeit. Beispiele: Mobilität – autoarmes Viertel mit dichtem öffentlichem Verkehr, sicheren Radwegen, kurzen Wegen ('Stadt der kurzen Wege'); löst Stau, Lärm, Abgase. Wohnen – Anteil an gefördertem/sozialem Wohnbau verpflichtend, Mietobergrenzen, gemischte Wohnungsgrößen; hält das Viertel leistbar und durchmischt. Klima/Grün – Entsiegelung, Bäume/Parks gegen Hitze, Regenwasserversickerung ('Schwammstadt') gegen Hochwasser; senkt Temperaturen. Der soziale Ausgleich (Punkt c) ist zentral: Grünaufwertung darf nicht zu 'grüner Gentrifizierung' führen – deshalb geförderter Wohnbau und Mietschutz mitdenken.",
+            "acceptable_reasoning": "Alle drei Handlungsfelder müssen abgedeckt und die Maßnahmen realistisch sein; kreative, aber begründete Lösungen sind erwünscht.",
+            "watch_outs": [
+              "Schüler:innen schlagen oft nur ökologische Maßnahmen vor und vergessen die soziale Frage (Leistbarkeit) – beide Dimensionen einfordern.",
+              "'Grüne Gentrifizierung': eine schöne, grüne Aufwertung kann Mieten treiben und ärmere Menschen verdrängen – dieser Zielkonflikt gehört ins Konzept."
+            ],
+            "rubric": [
+              {"criterion": "Konkretheit der Maßnahmen", "levels": ["Vage/schlagwortartig", "Eine konkrete Maßnahme", "Zwei bis drei konkrete Maßnahmen", "Drei konkrete, realistische Maßnahmen mit klarem Problembezug"]},
+              {"criterion": "Verbindung Ökologie und Soziales", "levels": ["Nur eine Dimension", "Beide genannt, unverbunden", "Beide verbunden", "Beide verbunden und Zielkonflikt ('grüne Gentrifizierung') bedacht"]},
+              {"criterion": "Begründung", "levels": ["Keine Begründung", "Behauptungen", "Maßnahmen begründet", "Maßnahmen begründet und Wirkungen abgeschätzt"]}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
