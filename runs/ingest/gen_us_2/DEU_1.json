@@ -1,0 +1,328 @@
+{
+  "subject": "Deutsch",
+  "klasse": 4,
+  "kompetenzbereich": "Schreiben",
+  "title": "Gut argumentiert: eine überzeugende Stellungnahme schreiben",
+  "kernfrage": "Wie schreibst du eine Stellungnahme, die mit guten Argumenten überzeugt und Gegenargumente ernst nimmt?",
+  "body": {
+    "intro": [],
+    "data_figures": [],
+    "assets": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Behaupten, begründen, überzeugen — und Gegenargumente ernst nehmen",
+        "throughline": "Argumentieren heißt nicht lauter behaupten, sondern begründen. Der rote Faden führt von der arguierbaren Behauptung über tragfähige, mit Beispielen gestützte Begründungen bis zum fairen Umgang mit Gegenargumenten — und mündet in die Einsicht, dass Medium und Situation die Sprache mitformen. Der Leserbrief oben dient durchgehend als Vorlage, an der die Bausteine sichtbar werden.",
+        "talking_points": [
+          "Was unterscheidet eine Behauptung (arguierbar) von einer Tatsache oder einer Frage?",
+          "Was macht eine Begründung stark — konkret, sachbezogen, mit Beispiel — statt sie nur zu wiederholen?",
+          "Warum überzeugt es mehr, ein Gegenargument zu nennen und ernst zu nehmen, als es zu verschweigen?",
+          "Wie ändern sich Ton, Länge und Wortwahl, wenn derselbe Inhalt im Klassenchat statt im Leserbrief steht?"
+        ],
+        "extensions": [
+          "Zwei Schüler:innen mit gegensätzlichen Positionen schreiben je eine Stellungnahme und tauschen sie; jede:r verfasst eine faire Erwiderung.",
+          "Aus den anonymisierten Stellungnahmen der Klasse die drei stärksten Begründungen sammeln und gemeinsam reihen.",
+          "Dieselbe Stellungnahme in einen 30-Sekunden-Sprechbeitrag umformen — was muss man streichen, was betonen?"
+        ],
+        "blocks": [
+          {
+            "role": "info",
+            "id": "i1",
+            "kind": "source_text",
+            "content": "Leserbrief an die Schülerzeitung\nIch bin überzeugt: In den Pausen sollten Handys an unserer Schule erlaubt sein.\nErstens brauchen viele von uns das Handy, um den Eltern kurz zu schreiben, wenn sich der Bus verspätet — so muss sich zu Hause niemand sorgen.\nZweitens genügt ein Blick auf den Vertretungsplan in der App, damit man nicht vor der falschen Tür wartet.\nNatürlich sagen manche, in der Pause solle man reden und sich bewegen, nicht auf den Bildschirm starren.\nDas stimmt — deshalb schlage ich vor, Handys nur im Aufenthaltsraum zu erlauben, nicht am ganzen Schulhof.\nSo gewinnen alle: Wer eine Nachricht braucht, kann sie schicken, und wer reden will, hat seine Ruhe.\nDeshalb bitte ich die Schulleitung, diese Regel auszuprobieren.",
+            "callout_role": null,
+            "teacher_note": "Modelltext, frei erfunden (kein realer Leserbrief). Er enthält bewusst alle Bausteine: Behauptung am Anfang, zwei Begründungen mit Beispiel, ein eingeräumtes Gegenargument mit Antwort/Kompromiss und ein Appell am Schluss. An ihm werden die Bausteine in den Aufgaben sichtbar gemacht.",
+            "watch_outs": [],
+            "asset_refs": []
+          },
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "matching",
+            "prompt": "Sieh dir den Leserbrief oben genau an — du kannst seinen Aufbau später als Vorlage für deinen eigenen Text nutzen. Ordne jedem Baustein einer Stellungnahme die passende Textstelle aus dem Leserbrief zu.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Behauptung (die strittige Meinung)",
+                "Erste Begründung mit Beispiel",
+                "Zweite Begründung mit Beispiel",
+                "Ein Gegenargument, das ernst genommen wird",
+                "Antwort auf das Gegenargument / Kompromiss",
+                "Appell (Aufforderung am Schluss)"
+              ],
+              "right": [
+                "„… ein Blick auf den Vertretungsplan in der App, damit man nicht vor der falschen Tür wartet.“",
+                "„In den Pausen sollten Handys an unserer Schule erlaubt sein.“",
+                "„… ich bitte die Schulleitung, diese Regel auszuprobieren.“",
+                "„… manche sagen, in der Pause solle man reden und sich bewegen …“",
+                "„… um den Eltern kurz zu schreiben, wenn sich der Bus verspätet.“",
+                "„… Handys nur im Aufenthaltsraum zu erlauben, nicht am ganzen Schulhof.“"
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 3
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "SCH"
+            ],
+            "serves": [
+              {
+                "competence_id": "DEU.US.4.SCH.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "answer_key": "Behauptung → „In den Pausen sollten Handys … erlaubt sein.“; Erste Begründung → „… um den Eltern kurz zu schreiben, wenn sich der Bus verspätet.“; Zweite Begründung → „… ein Blick auf den Vertretungsplan in der App …“; Gegenargument → „… manche sagen, in der Pause solle man reden und sich bewegen …“; Antwort/Kompromiss → „… Handys nur im Aufenthaltsraum … nicht am ganzen Schulhof.“; Appell → „… ich bitte die Schulleitung, diese Regel auszuprobieren.“",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Begründung und Beispiel werden oft verwechselt: Die Begründung sagt WARUM, das Beispiel macht sie anschaulich — hier stehen sie im selben Satz.",
+              "Der Kompromiss (nur im Aufenthaltsraum) wird leicht für eine dritte Begründung gehalten; er ist aber die Antwort auf das Gegenargument."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "multiple_choice",
+            "prompt": "Eine Stellungnahme beginnt mit einer Behauptung: einer Meinung, über die man streiten kann. Welcher Satz ist eine solche Behauptung — und nicht bloß eine Tatsache oder eine Frage?",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "Unsere Schule hat vier Stockwerke.",
+                "In der großen Pause sollte der Schulhof für alle geöffnet sein.",
+                "Wann beginnt die zweite Pause?",
+                "Gestern hat es in der Früh geregnet."
+              ],
+              "select": "one"
+            },
+            "response": {
+              "mode": "choices",
+              "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+              ],
+              "select": "one"
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "SCH",
+              "SPR"
+            ],
+            "serves": [
+              {
+                "competence_id": "DEU.US.4.SCH.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 5,
+            "answer_key": "B. „In der großen Pause sollte der Schulhof für alle geöffnet sein.“ ist eine strittige Meinung, über die man verschiedener Ansicht sein kann und die man begründen muss. A und D sind überprüfbare Tatsachen (wahr oder falsch, kein Streit), C ist eine Frage — sie behauptet nichts.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Häufig wird eine Tatsache für eine Behauptung gehalten: Test — kann man ihr WIDERSPRECHEN und müsste man sie BEGRÜNDEN? Nur dann ist es eine Behauptung.",
+              "Das Wort „sollte“ (Forderung/Wertung) ist ein gutes Erkennungszeichen für eine Behauptung."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "text_production",
+            "prompt": "Wähle EINE strittige Frage aus deinem Schulalltag:\n– Sollen Handys in den Pausen erlaubt sein?\n– Sollen Schüler:innen bei der Gestaltung des Pausenhofs mitbestimmen?\n– Soll es eine längere Mittagspause geben?\nSchreibe deine Behauptung auf und stütze sie mit ZWEI Begründungen. Gib zu jeder Begründung ein konkretes Beispiel.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 45
+            },
+            "cognitive_level": "apply",
+            "dimensions": [
+              "SCH"
+            ],
+            "serves": [
+              {
+                "competence_id": "DEU.US.4.SCH.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "answer_key": "Erwartet werden: eine klar formulierte Behauptung (Meinungssatz mit „sollte/soll“) und darunter zwei Begründungen, jede mit einem konkreten Beispiel. Muster (Handys): Behauptung — „Handys sollten in den Pausen erlaubt sein.“ Begründung 1 — „…, weil man kurz die Eltern erreichen kann.“ Beispiel — „Wenn der Bus ausfällt, kann ich Bescheid geben.“ Begründung 2 — „…, weil man Termine in der Schul-App nachschauen kann.“ Beispiel — „So sehe ich sofort, wenn eine Stunde entfällt.“",
+            "acceptable_reasoning": "Jede sachbezogene Begründung mit passendem Beispiel ist richtig; die konkrete Position (dafür/dagegen) ist frei.",
+            "watch_outs": [
+              "Ein häufiger Fehler ist die Scheinbegründung, die nur die Behauptung wiederholt („… weil Handys eben dazugehören“). Nachfragen: „Warum genau?“",
+              "Ein Beispiel ist keine zweite Begründung: Das Beispiel macht EINE Begründung anschaulich, es ist kein neues Argument."
+            ],
+            "rubric": [
+              {
+                "criterion": "Behauptung",
+                "levels": [
+                  "keine klare, strittige Behauptung erkennbar",
+                  "Behauptung vorhanden, aber unklar oder nicht strittig",
+                  "klare, strittige Behauptung"
+                ]
+              },
+              {
+                "criterion": "Begründungen mit Beispiel",
+                "levels": [
+                  "höchstens eine Begründung oder Beispiele fehlen",
+                  "zwei Begründungen, aber Beispiele schwach oder unpassend",
+                  "zwei sachbezogene Begründungen mit je passendem Beispiel"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "text_analysis",
+            "prompt": "Hier sind zwei Begründungen für dieselbe Behauptung „Handys sollten in den Pausen erlaubt sein.“:\n(A) „…, weil Handys heute einfach zum Leben dazugehören.“\n(B) „…, weil man mit dem Handy die Eltern erreichen kann, wenn der Bus ausfällt.“\nWelche Begründung ist stärker? Erkläre in zwei bis drei Sätzen, WAS eine Begründung stark macht.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "SCH",
+              "SPR"
+            ],
+            "serves": [
+              {
+                "competence_id": "DEU.US.4.SCH.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 7,
+            "answer_key": "(B) ist stärker. Eine starke Begründung ist konkret und sachbezogen und zeigt einen nachvollziehbaren Vorteil (die Eltern im Notfall erreichen). (A) ist schwach, weil sie die Behauptung nur mit anderen Worten wiederholt („gehören dazu“) und keinen überprüfbaren Grund nennt — das ist ein Zirkelschluss.",
+            "acceptable_reasoning": "Als Merkmale einer starken Begründung gelten u. a.: konkret, sachbezogen, nachvollziehbar, durch ein Beispiel gestützt und keine bloße Wiederholung der Behauptung.",
+            "watch_outs": [
+              "Manche wählen (A), weil es „allgemeiner“ klingt — allgemein ist hier gerade die Schwäche (nichtssagend).",
+              "„Stark“ meint nicht „mit mehr Nachdruck formuliert“, sondern inhaltlich tragfähig."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "open_response",
+            "prompt": "Zu deiner Behauptung aus Aufgabe 3: Nenne ein starkes Gegenargument — also einen Grund, den jemand mit anderer Meinung anführen könnte. Schreibe dann, wie du darauf eingehst, OHNE es einfach abzustreiten (du kannst es teilweise einräumen und einen Vorschlag machen).",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 40
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "SCH"
+            ],
+            "serves": [
+              {
+                "competence_id": "DEU.US.4.SCH.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Erwartet: (1) ein sachliches Gegenargument, das wirklich gegen die eigene Behauptung spricht, und (2) eine faire Erwiderung, die es ernst nimmt — z. B. einräumen und begrenzen. Muster: Gegenargument — „In der Pause soll man reden und sich bewegen, nicht auf den Bildschirm schauen.“ Antwort — „Das stimmt teilweise; deshalb sollten Handys nur im Aufenthaltsraum erlaubt sein, damit der Schulhof zum Reden frei bleibt.“",
+            "acceptable_reasoning": "Gute Erwiderungen räumen den wahren Kern des Gegenarguments ein und grenzen ihn ein, statt ihn zu leugnen oder die Person anzugreifen.",
+            "watch_outs": [
+              "Ein Scheingegenargument (leicht zu widerlegen, ein „Strohmann“) zählt nicht — das Gegenargument muss ernsthaft gegen die eigene Position sprechen.",
+              "Nicht die Person angreifen („wer das sagt, hat keine Ahnung“), sondern auf die Sache eingehen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "text_production",
+            "prompt": "Schreibe jetzt deine vollständige Stellungnahme (etwa 8 bis 12 Sätze) zu deiner strittigen Frage. Nutze den Leserbrief oben als Vorlage:\n1. Beginne mit deiner Behauptung.\n2. Bring zwei Begründungen, jede mit einem Beispiel.\n3. Geh auf EIN Gegenargument ein und antworte fair darauf.\n4. Schließe mit einem Appell.\nAchte auf eine klare Reihenfolge und verbinde die Teile mit passenden Wörtern (erstens, außerdem, zwar … aber, deshalb).",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 80
+            },
+            "cognitive_level": "create",
+            "dimensions": [
+              "SCH"
+            ],
+            "serves": [
+              {
+                "competence_id": "DEU.US.4.SCH.02",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "DEU.US.4.SCH.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 18,
+            "answer_key": "Eine vollständige Stellungnahme enthält alle vier Bausteine in sinnvoller Reihenfolge: Behauptung → zwei begründete Argumente mit Beispiel → ein ernst genommenes Gegenargument mit Antwort → Appell. Die Teile sind mit Textorganisatoren verbunden (erstens, außerdem, zwar … aber, deshalb). Inhaltlich ist jede klar begründete Position richtig.",
+            "acceptable_reasoning": "Länge und genaue Formulierung sind frei; entscheidend sind die Vollständigkeit der Bausteine, sachbezogene Begründungen und der faire Umgang mit dem Gegenargument.",
+            "watch_outs": [
+              "Häufig fehlt der Umgang mit dem Gegenargument oder es wird nur genannt, aber nicht beantwortet — beides einfordern.",
+              "Der Appell wird oft vergessen; er macht aus der Meinung eine Aufforderung.",
+              "Auf Textorganisatoren achten: Ohne sie wirken die Argumente wie eine bloße Aufzählung."
+            ],
+            "rubric": [
+              {
+                "criterion": "Vollständigkeit der Bausteine",
+                "levels": [
+                  "mehrere Bausteine fehlen",
+                  "ein Baustein fehlt (meist Gegenargument oder Appell)",
+                  "alle vier Bausteine vorhanden"
+                ]
+              },
+              {
+                "criterion": "Umgang mit dem Gegenargument",
+                "levels": [
+                  "kein oder nur genanntes Gegenargument",
+                  "Gegenargument genannt und knapp beantwortet",
+                  "Gegenargument ernst genommen, eingeräumt und fair beantwortet"
+                ]
+              },
+              {
+                "criterion": "Zusammenhang (Textorganisatoren)",
+                "levels": [
+                  "Sätze wirken zusammenhanglos",
+                  "teilweise verbunden",
+                  "durchgehend sinnvoll verbunden, klarer roter Faden"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "open_response",
+            "prompt": "Du hast deine Stellungnahme mit der Hand geschrieben. Stell dir vor, du postest denselben Standpunkt stattdessen in den Klassen-Chat. Was würdest du an Länge, Wortwahl und Ton verändern? Und was könnte dabei verloren gehen? Schreibe zu jedem der drei Punkte (Länge, Wortwahl/Ton, mögliches Verloren-Gehen) mindestens einen Satz.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "SCH",
+              "SPR"
+            ],
+            "serves": [
+              {
+                "competence_id": "DEU.US.4.SCH.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 7,
+            "answer_key": "Erwartet werden nachvollziehbare Beobachtungen zum Medienwechsel, z. B.: Länge — im Chat kürzer, oft in mehrere kurze Nachrichten zerlegt; Wortwahl/Ton — lockerer, näher an der Umgangssprache, evtl. mit Emojis; Verloren-Gehen — der klare Aufbau (Behauptung–Begründung–Gegenargument–Appell), die Genauigkeit und die Nachvollziehbarkeit können leiden, Missverständnisse werden wahrscheinlicher. Es gibt keine einzige richtige Antwort; die Punkte müssen aber begründet sein.",
+            "acceptable_reasoning": "Auch die Gegenposition ist vertretbar (der Chat erreicht mehr Mitschüler:innen schneller), solange Vor- und Nachteile des Mediums erkannt werden.",
+            "watch_outs": [
+              "„Digital ist einfach schlechter“ ist zu pauschal — es geht um konkrete Unterschiede von Medium und Situation, nicht um ein Werturteil über Technik.",
+              "Manche verwechseln Rechtschreibung mit Register; hier geht es um Ton und Aufbau, nicht um Tippfehler."
+            ],
+            "rubric": []
+          }
+        ]
+      }
+    ]
+  }
+}

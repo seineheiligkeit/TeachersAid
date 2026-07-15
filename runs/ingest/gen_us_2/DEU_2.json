@@ -1,0 +1,320 @@
+{
+  "subject": "Deutsch",
+  "klasse": 3,
+  "kompetenzbereich": "Lesen",
+  "title": "Zwischen den Zeilen: Was will dir eine Fabel sagen?",
+  "kernfrage": "Was will dir eine Fabel sagen — und wie findest du die Lehre, die gar nicht im Text steht?",
+  "body": {
+    "intro": [],
+    "data_figures": [],
+    "assets": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Eine Fabel verstehen, deuten und lebendig vortragen",
+        "throughline": "Eine Fabel erzählt von Tieren, meint aber Menschen — und ihre wichtigste Aussage, die Lehre, steht oft NICHT im Text. Der rote Faden führt vom genauen Entnehmen (wer tut was) über das Erkennen der Gattung und der menschlichen Züge hinter den Tieren zum Kern: die Lehre selbst erschließen, prüfen und auf das eigene Leben beziehen — und die Fabel schließlich hörbar zu machen.",
+        "talking_points": [
+          "Woran erkennt man eine Fabel? (Tiere mit menschlichen Eigenschaften, knappe Handlung, eine Lehre)",
+          "Warum steht die Lehre oft nicht im Text — und was gewinnt die Fabel dadurch?",
+          "Welche menschlichen Eigenschaften verkörpern der Specht und die Amsel?",
+          "Wie kann man beim Vorlesen zwei Figuren allein mit der Stimme unterscheiden?"
+        ],
+        "extensions": [
+          "Die Fabel als kurzes Standbild oder Rollenspiel darstellen und die Lehre stumm sichtbar machen.",
+          "Eine eigene Mini-Fabel mit zwei Tieren zu einer selbst gewählten Lehre schreiben.",
+          "Bekannte Fabeltiere sammeln (z. B. Fuchs = schlau, Esel = stur) und überlegen, welche Eigenschaft unsere Kultur ihnen zuschreibt."
+        ],
+        "blocks": [
+          {
+            "role": "info",
+            "id": "i1",
+            "kind": "source_text",
+            "content": "Ein junger Specht war stolz auf seinen Schnabel.\n„Niemand hämmert so schnell und so laut wie ich!“, rief er\nund klopfte an jeden Baumstamm, den er fand.\nVon Stamm zu Stamm jagte er, so rasch er konnte.\nDoch die Käfer unter der Rinde hörten den Lärm schon von Weitem\nund versteckten sich, lange bevor er sie erreichte.\nAls der Abend kam, war der Specht müde und hatte fast nichts gefunden.\nAuf einem Ast saß eine alte Amsel.\nSie hüpfte langsam, legte den Kopf schief und lauschte zum Boden.\nNur dort, wo sie einen Wurm sich regen hörte, stach ihr Schnabel zu.\n„Wie machst du das bloß?“, fragte der Specht neidisch.\n„Du hörst nur deinen eigenen Lärm“, sagte die Amsel. „Ich höre, wo das Futter ist.“",
+            "callout_role": null,
+            "teacher_note": "Frei erfundene Fabel (kein Zitat). Die Lehre wird bewusst NICHT genannt, damit sie erschlossen werden muss (sinngemäß: Wer zuerst zuhört und beobachtet, findet mehr als wer sofort und laut losstürmt; Eile und Lärm allein bringen keinen Erfolg).",
+            "watch_outs": [],
+            "asset_refs": []
+          },
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "table_fill",
+            "prompt": "Lies die Fabel genau. Trage für beide Tiere in die Tabelle ein: Wie sucht es sein Futter? Was ist am Abend das Ergebnis?",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Tier",
+                "So sucht es sein Futter",
+                "Ergebnis am Abend"
+              ],
+              "rows": 2
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "LES"
+            ],
+            "serves": [
+              {
+                "competence_id": "DEU.US.3.LES.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 7,
+            "answer_key": "Specht: hämmert schnell und laut an jeden Baumstamm, jagt hastig von Stamm zu Stamm → am Abend müde und fast ohne Futter (die Käfer hören den Lärm und verstecken sich). Amsel: hüpft langsam, hört zum Boden und sticht nur dort zu, wo sie einen Wurm hört → sie hat Erfolg / ist satt.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Manche schreiben nur ab, was die Tiere SIND, nicht was sie TUN — auf die Vorgehensweise achten (schnell/laut gegen langsam/hörend).",
+              "Das Ergebnis des Spechts steht nicht in einem einzigen Wort; es muss aus „müde“ und „fast nichts gefunden“ zusammengesetzt werden."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "multiple_choice",
+            "prompt": "Dieser Text ist eine Fabel. Welche drei Merkmale treffen auf eine Fabel zu? Kreuze GENAU DREI an.",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "Tiere handeln und sprechen wie Menschen.",
+                "Die Geschichte ist kurz und läuft auf einen Punkt zu.",
+                "Sie will eine Lehre vermitteln.",
+                "Sie berichtet ein wirklich geschehenes Ereignis mit Datum und Ort.",
+                "Sie erklärt sachlich, wie Vögel ihr Futter suchen."
+              ],
+              "select": "many"
+            },
+            "response": {
+              "mode": "choices",
+              "options": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E"
+              ],
+              "select": "many"
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "LES"
+            ],
+            "serves": [
+              {
+                "competence_id": "DEU.US.3.LES.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 5,
+            "answer_key": "Richtig sind A, B und C: In einer Fabel handeln und sprechen Tiere wie Menschen (A), die Handlung ist kurz und zugespitzt (B) und sie will eine Lehre vermitteln (C). D ist falsch (eine Fabel ist erfunden, kein Tatsachenbericht mit Datum und Ort), E ist falsch (ein Sachtext würde erklären, eine Fabel erzählt).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "D klingt „seriös“ und wird oft angekreuzt — aber eine Fabel ist erfunden, nicht faktisch.",
+              "E verwechselt Fabel und Sachtext: Beide handeln von Tieren, aber nur der Sachtext will informieren."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "text_analysis",
+            "prompt": "In einer Fabel stehen die Tiere für menschliche Eigenschaften. Welche Eigenschaft zeigt der Specht, welche die Amsel? Schreibe zu jedem Tier die Eigenschaft auf und belege sie mit einer Textstelle (schreibe die passenden Wörter aus der Fabel ab).",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "LES",
+              "SPR"
+            ],
+            "serves": [
+              {
+                "competence_id": "DEU.US.3.LES.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Specht: stolz/angeberisch und ungeduldig/hastig — Beleg z. B. „stolz auf seinen Schnabel“ bzw. „Niemand hämmert so schnell und so laut wie ich!“ und „Von Stamm zu Stamm jagte er“. Amsel: ruhig, geduldig und aufmerksam — Beleg z. B. „hüpfte langsam, legte den Kopf schief und lauschte zum Boden“. Sinngemäße Eigenschaftswörter (z. B. „eingebildet“, „gelassen“) sind richtig, wenn der Beleg passt.",
+            "acceptable_reasoning": "Es zählt die Zuordnung Eigenschaft zu passender Textstelle; verschiedene treffende Eigenschaftswörter sind erlaubt.",
+            "watch_outs": [
+              "Manche nennen eine Eigenschaft ohne Beleg oder schreiben eine Textstelle ohne Eigenschaft — beides gehört zusammen.",
+              "„laut“ ist ein Verhalten, nicht die Eigenschaft dahinter (Stolz/Ungeduld); nachfragen: „Welcher Charakterzug zeigt sich darin?“"
+            ],
+            "rubric": [
+              {
+                "criterion": "Eigenschaft mit Beleg",
+                "levels": [
+                  "nur Eigenschaften ODER nur Textstellen",
+                  "für ein Tier Eigenschaft und Beleg, für das andere unvollständig",
+                  "für beide Tiere eine passende Eigenschaft mit passender Textstelle"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "open_response",
+            "prompt": "Die Fabel nennt ihre Lehre nicht direkt — du musst „zwischen den Zeilen“ lesen. Formuliere die Lehre der Fabel in EINEM Satz. Erkläre danach, welche Stelle im Text dich auf diese Lehre bringt.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 40
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "LES"
+            ],
+            "serves": [
+              {
+                "competence_id": "DEU.US.3.LES.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "answer_key": "Sinngemäße Lehre: Wer zuerst genau hinhört und beobachtet, erreicht mehr als wer laut und hastig sofort losstürmt — Eile und Lärm allein bringen keinen Erfolg. Als Auslöser eignet sich vor allem der Schlusssatz der Amsel („Du hörst nur deinen eigenen Lärm. Ich höre, wo das Futter ist.“) sowie der Gegensatz zwischen dem müden, erfolglosen Specht und der aufmerksamen Amsel.",
+            "acceptable_reasoning": "Verschiedene Formulierungen der Lehre sind richtig, solange sie den Gegensatz „hastig/laut gegen aufmerksam/geduldig“ und den Erfolg des Zuhörens treffen und mit einer Textstelle begründet werden.",
+            "watch_outs": [
+              "Häufig wird die Handlung nacherzählt statt eine Lehre formuliert — die Lehre ist eine allgemeine Aussage, die auch für Menschen gilt.",
+              "Eine zu enge Lehre („Vögel sollen leise sein“) verfehlt den übertragenen Sinn; die Lehre gilt für Menschen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Lehre als allgemeine Aussage",
+                "levels": [
+                  "nur Nacherzählung, keine Lehre",
+                  "Lehre angedeutet, aber zu eng oder ohne Beleg",
+                  "allgemeine, übertragbare Lehre mit passender Textstelle"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "true_false_justify",
+            "prompt": "Hier sind drei Vorschläge für die Lehre der Fabel. Entscheide bei jedem: Passt er gut zur Fabel (Ja) oder nicht (Nein)? Begründe jede Entscheidung kurz mit dem Text.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Wer genau zuhört und beobachtet, erreicht mehr als wer laut und hastig losstürmt.",
+                "Wer am lautesten ist, bekommt am Ende am meisten.",
+                "Man soll niemals um Rat fragen."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "LES"
+            ],
+            "serves": [
+              {
+                "competence_id": "DEU.US.3.LES.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "1. Ja — das ist der Kern: die leise, aufmerksame Amsel hat Erfolg, der laute Specht nicht. 2. Nein — die Fabel zeigt das GEGENTEIL: Der laute Specht findet fast nichts, weil die Käfer den Lärm hören und sich verstecken. 3. Nein — vom „um Rat fragen“ handelt die Fabel gar nicht; der Specht fragt zwar die Amsel, aber darum geht es nicht. Die beste Lehre ist Vorschlag 1.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Vorschlag 2 klingt wie eine „coole“ Lebensweisheit, widerspricht aber der Fabel — genau hinsehen, wer Erfolg hat.",
+              "Vorschlag 3 greift ein Detail (die Frage des Spechts) heraus und macht es zur Lehre — ein Detail ist noch keine Lehre."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "open_response",
+            "prompt": "Kennst du eine Situation aus deinem eigenen Leben, in der es besser war (oder besser gewesen wäre), erst zuzuhören oder genau hinzuschauen, statt sofort loszulegen? Beschreibe die Situation in drei bis vier Sätzen und verbinde sie mit der Lehre der Fabel.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 45
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "LES"
+            ],
+            "serves": [
+              {
+                "competence_id": "DEU.US.3.LES.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Individuelle Antworten. Erwartet wird eine konkrete eigene Situation (z. B. eine Aufgabe zu schnell begonnen und die Angabe überlesen; im Streit zu schnell geantwortet), die nachvollziehbar mit der Lehre verknüpft wird (erst zuhören und hinschauen zahlt sich aus).",
+            "acceptable_reasoning": "Jede plausible, konkrete Situation ist richtig, wenn die Verbindung zur Lehre der Fabel erkennbar ist.",
+            "watch_outs": [
+              "Bloßes Wiederholen der Fabel ist keine eigene Situation — auf einen echten Lebensbezug bestehen.",
+              "Wer keine Situation findet, kann eine erfundene, aber realistische beschreiben — wichtig ist die Verknüpfung mit der Lehre."
+            ],
+            "rubric": [
+              {
+                "criterion": "Lebensbezug und Verknüpfung",
+                "levels": [
+                  "keine eigene Situation oder keine Verbindung zur Lehre",
+                  "eigene Situation ODER Verbindung, aber nicht beides klar",
+                  "konkrete eigene Situation klar mit der Lehre verbunden"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "speaking_task",
+            "prompt": "Bereite vor, wie du das Gespräch am Schluss der Fabel vorliest — die beiden letzten Zeilen, in denen der Specht fragt und die Amsel antwortet. Plane deinen Vortrag:\n– Wo liest du lauter oder leiser, schneller oder langsamer?\n– Wo machst du eine Pause?\n– Welche Stimme gibst du dem stolzen, neidischen Specht, welche der ruhigen Amsel?\nSchreibe deine Vortrags-Hinweise stichwortartig auf, sodass du danach vorlesen kannst.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 45
+            },
+            "cognitive_level": "create",
+            "dimensions": [
+              "LES",
+              "ZUH"
+            ],
+            "serves": [
+              {
+                "competence_id": "DEU.US.3.LES.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Individuelle Vortrags-Planung. Sinnvoll sind z. B.: den Specht schneller, höher und drängender lesen (die neidische Frage „Wie machst du das bloß?“), die Amsel langsamer, tiefer und ruhig; vor der Antwort der Amsel eine kurze Pause; das Wort „Lärm“ betonen; am Satzende der Amsel die Stimme senken. Bewertet wird, ob die Hinweise zur jeweiligen Figur passen und einen hörbaren Unterschied ergeben.",
+            "acceptable_reasoning": "Es gibt keine einzige richtige Betonung; die Hinweise müssen aber zu den Figuren passen (stolz/drängend gegen ruhig/gelassen) und den Kontrast hörbar machen.",
+            "watch_outs": [
+              "Häufig werden nur Wörter unterstrichen, ohne anzugeben, WIE gelesen wird — konkrete Hinweise einfordern (lauter/leiser, schneller/langsamer, Pause).",
+              "Beide Figuren gleich zu lesen verschenkt die Wirkung; der Kontrast der Stimmen ist der Kern."
+            ],
+            "rubric": [
+              {
+                "criterion": "Figurenunterschied hörbar geplant",
+                "levels": [
+                  "keine oder gleiche Hinweise für beide Figuren",
+                  "Hinweise vorhanden, aber Figuren kaum unterscheidbar",
+                  "klare, zur Figur passende Hinweise, die einen hörbaren Unterschied ergeben"
+                ]
+              },
+              {
+                "criterion": "Vortragsmittel konkret",
+                "levels": [
+                  "nur markiert, ohne Angabe wie",
+                  "einzelne Mittel genannt (z. B. Pause ODER Lautstärke)",
+                  "mehrere Vortragsmittel gezielt eingesetzt (Lautstärke, Tempo, Pause, Betonung)"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
