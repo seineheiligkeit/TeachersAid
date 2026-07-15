@@ -1,0 +1,334 @@
+{
+  "subject": "Mathematik",
+  "klasse": 2,
+  "kompetenzbereich": "Zahlen und Maße",
+  "title": "Der geheime Takt der Zahlen – Teiler, Vielfache und Primzahlen",
+  "kernfrage": "Wie helfen dir Teiler und Vielfache, versteckte Muster in Zahlen zu erkennen – vom gemeinsamen Takt zweier Ampeln bis zum Kürzen eines Bruchs?",
+  "body": {
+    "intro": [],
+    "data_figures": [],
+    "assets": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Werkzeuge finden: Teiler, Vielfache, Primfaktoren",
+        "throughline": "Hier bauen die Schüler:innen das Werkzeug: gemeinsame Teiler (ggT), gemeinsame Vielfache (kgV), Teilbarkeitsregeln und die Primfaktorzerlegung als systematische Methode, ggT und kgV zuverlässig zu bestimmen.",
+        "talking_points": [
+          "ggT und kgV zuerst durch Auflisten anschaulich machen, dann über die Primfaktoren systematisieren.",
+          "Teilbarkeitsregeln als Abkürzung verstehen – die 6er-Regel als Kombination (durch 2 und durch 3) betonen.",
+          "Das kgV ist selten das Produkt der beiden Zahlen; der Unterschied ist genau der gemeinsame Faktor."
+        ],
+        "extensions": [
+          "Das Sieb des Eratosthenes bis 100 als Klassenposter erstellen.",
+          "Forscherfrage: Warum hat jede Quadratzahl eine ungerade Anzahl an Teilern?"
+        ],
+        "blocks": [
+          {
+            "role": "info",
+            "id": "i1",
+            "kind": "key_fact",
+            "content": "Ein Teiler einer Zahl teilt sie ohne Rest (zum Beispiel ist 6 ein Teiler von 24). Ein Vielfaches entsteht durch Malnehmen (24, 48, 72 ... sind Vielfache von 24). Eine Primzahl hat genau zwei Teiler: 1 und sich selbst (2, 3, 5, 7, 11 ...). Der größte gemeinsame Teiler (ggT) zweier Zahlen ist die größte Zahl, die beide teilt; das kleinste gemeinsame Vielfache (kgV) ist die kleinste Zahl, die Vielfaches von beiden ist."
+          },
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "table_fill",
+            "prompt": "Untersuche die Zahlen 24 und 36. Trage in die Tabelle alle Teiler jeder Zahl ein und in die letzte Zeile die gemeinsamen Teiler. Unterstreiche in der letzten Zeile den größten gemeinsamen Teiler (ggT).",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Zahl bzw. Frage",
+                "alle Teiler (aufsteigend geordnet)"
+              ],
+              "rows": 3
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "OPE"
+            ],
+            "serves": [
+              {
+                "competence_id": "MAT.US.2.ZAH.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "asset_refs": [],
+            "answer_key": "Teiler von 24: 1, 2, 3, 4, 6, 8, 12, 24. Teiler von 36: 1, 2, 3, 4, 6, 9, 12, 18, 36. Gemeinsame Teiler: 1, 2, 3, 4, 6, 12. Der größte davon ist der ggT: ggT(24, 36) = 12.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Teiler werden oft vergessen, weil nicht systematisch in Paaren gesucht wird (1·24, 2·12, 3·8, 4·6).",
+              "1 und die Zahl selbst sind immer Teiler und werden häufig übersehen."
+            ],
+            "self_check": "Suche die Teiler paarweise: 1·24, 2·12, 3·8, 4·6 – so findest du wirklich alle Teiler von 24.",
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "true_false_justify",
+            "prompt": "Entscheide bei jeder Aussage OHNE schriftlich zu dividieren, ob sie stimmt. Schreibe die Teilbarkeitsregel dazu, die du verwendet hast.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "612 ist durch 3 teilbar.",
+                "1250 ist durch 4 teilbar.",
+                "4725 ist durch 9 teilbar.",
+                "830 ist durch 6 teilbar."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "apply",
+            "dimensions": [
+              "OPE",
+              "BEG"
+            ],
+            "serves": [
+              {
+                "competence_id": "MAT.US.2.ZAH.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "(1) stimmt – die Quersumme 6 + 1 + 2 = 9 ist durch 3 teilbar. (2) stimmt nicht – für die Teilbarkeit durch 4 zählen nur die letzten zwei Ziffern: 50 ist nicht durch 4 teilbar. (3) stimmt – die Quersumme 4 + 7 + 2 + 5 = 18 ist durch 9 teilbar. (4) stimmt nicht – durch 6 teilbar heißt durch 2 UND durch 3 teilbar; 830 ist zwar durch 2 teilbar (endet auf 0), aber die Quersumme 8 + 3 + 0 = 11 ist nicht durch 3 teilbar.",
+            "acceptable_reasoning": "Jede Begründung gilt, die die passende Regel korrekt nennt: Quersumme für 3 und 9, letzte zwei Ziffern für 4, Kombination aus 2 und 3 für 6.",
+            "watch_outs": [
+              "Für die 4er-Regel zählen nur die letzten ZWEI Ziffern, nicht die Quersumme.",
+              "Teilbarkeit durch 6 wird oft mit einer eigenen '6er-Quersumme' verwechselt – richtig ist: durch 2 und durch 3 zugleich."
+            ],
+            "rubric": [
+              {
+                "criterion": "Anwenden der Teilbarkeitsregeln",
+                "levels": [
+                  "Regel nicht oder falsch benannt",
+                  "Regel genannt, aber Anwendung fehlerhaft",
+                  "richtige Entscheidung mit korrekt benannter Regel"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "modelling_task",
+            "prompt": "An einer Kreuzung schalten zwei Ampeln gleichzeitig auf Grün. Danach wird die eine Ampel alle 8 Sekunden wieder grün, die andere alle 12 Sekunden. Nach wie vielen Sekunden schalten beide zum ersten Mal wieder GLEICHZEITIG auf Grün? Und wie oft passiert das im Laufe von 2 Minuten? Schreibe deinen Rechenweg auf.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "apply",
+            "dimensions": [
+              "MOD",
+              "OPE"
+            ],
+            "serves": [
+              {
+                "competence_id": "MAT.US.2.ZAH.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "Gesucht ist das kleinste gemeinsame Vielfache von 8 und 12. Vielfache von 8: 8, 16, 24, ...; Vielfache von 12: 12, 24, ...; das erste gemeinsame Vielfache ist 24. Also nach 24 Sekunden. In 2 Minuten (das sind 120 Sekunden) tritt es bei 24, 48, 72, 96 und 120 Sekunden auf, also 5-mal (den gemeinsamen Start bei 0 Sekunden nicht mitgezählt).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Das kgV wird oft mit dem Produkt 8·12 = 96 verwechselt – 96 ist ein gemeinsames Vielfaches, aber nicht das kleinste.",
+              "Beim Zählen in 2 Minuten die Einheit beachten: 2 Minuten sind 120 Sekunden."
+            ],
+            "self_check": "Prüfe: 24 muss sowohl in der 8er-Reihe (8·3) als auch in der 12er-Reihe (12·2) vorkommen.",
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "calculation",
+            "prompt": "Zerlege 60 und 90 jeweils vollständig in Primfaktoren. Bestimme daraus den ggT (Produkt der gemeinsamen Primfaktoren) und das kgV. Erkläre in einem Satz, warum du für den ggT nur die gemeinsamen Primfaktoren brauchst, für das kgV aber jeden Primfaktor so oft, wie er höchstens vorkommt.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "OPE",
+              "BEG"
+            ],
+            "serves": [
+              {
+                "competence_id": "MAT.US.2.ZAH.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "asset_refs": [],
+            "answer_key": "60 = 2 · 2 · 3 · 5 (also 2² · 3 · 5). 90 = 2 · 3 · 3 · 5 (also 2 · 3² · 5). Gemeinsam mit der jeweils kleineren Anzahl: 2 · 3 · 5 = 30, also ggT(60, 90) = 30. Für das kgV jeden Primfaktor mit der größten Anzahl: 2 · 2 · 3 · 3 · 5 = 4 · 9 · 5 = 180, also kgV(60, 90) = 180. Der ggT muss beide Zahlen teilen, deshalb nur die gemeinsamen Faktoren; das kgV muss Vielfaches von beiden sein, deshalb jeder Faktor so oft, wie er in einer der beiden Zahlen höchstens auftritt.",
+            "acceptable_reasoning": "Die Zerlegung darf in beliebiger Reihenfolge oder mit einem Faktorbaum notiert werden; entscheidend sind die richtigen Primfaktoren mit der richtigen Anzahl.",
+            "watch_outs": [
+              "Beim ggT die Primfaktoren nur so oft nehmen, wie sie in BEIDEN vorkommen (kleinere Anzahl); beim kgV die größere Anzahl.",
+              "60 wird manchmal unvollständig zerlegt (zum Beispiel 6 · 10 stehen gelassen) – bis zu den Primzahlen weiterzerlegen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Primfaktorzerlegung und Ableiten von ggT und kgV",
+                "levels": [
+                  "Zerlegung unvollständig oder falsch",
+                  "richtige Zerlegung, aber ggT/kgV falsch abgeleitet",
+                  "richtige Zerlegung und ggT/kgV korrekt begründet"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Anwenden, Begründen, Erfinden",
+        "throughline": "Jetzt zahlt sich das Werkzeug aus: Der ggT kürzt Brüche in einem Schritt, das kgV liefert den Hauptnenner zum Vergleichen; Teilbarkeitsaussagen werden begründet oder mit einem Gegenbeispiel widerlegt; zum Schluss gestalten die Schüler:innen selbst ein eindeutiges Zahlenrätsel.",
+        "talking_points": [
+          "Den Bogen zum Bruchrechnen ausdrücklich schlagen: ggT ist vollständiges Kürzen, kgV ist der kleinste Hauptnenner.",
+          "Ein einziges Gegenbeispiel widerlegt eine 'Jede-Zahl'-Aussage – Beweis und Gegenbeispiel gegenüberstellen.",
+          "Beim selbst erfundenen Rätsel auf Eindeutigkeit und Selbstkontrolle achten lassen."
+        ],
+        "extensions": [
+          "Aussagen zur Teilbarkeit durch 12 untersuchen: Reicht 'durch 3 und durch 4'? (Ja, weil teilerfremd.)",
+          "Die Rätsel der Klasse sammeln und zu einem Rätselheft zusammenstellen."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "calculation",
+            "prompt": "Jetzt wird das Werkzeug angewendet. (a) Kürze den Bruch 60/90 in einem einzigen Schritt vollständig, indem du Zähler und Nenner durch den ggT teilst. (b) Vergleiche die Brüche 5/6 und 7/9: Bringe beide mit dem kgV von 6 und 9 auf einen gemeinsamen Nenner (Hauptnenner) und entscheide, welcher Bruch größer ist.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "OPE",
+              "DAR"
+            ],
+            "serves": [
+              {
+                "competence_id": "MAT.US.2.ZAH.03",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "MAT.US.2.ZAH.02",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "MAT.US.2.ZAH.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "asset_refs": [],
+            "answer_key": "(a) ggT(60, 90) = 30, also 60/90 = (60 : 30)/(90 : 30) = 2/3. (b) kgV(6, 9) = 18. Damit wird 5/6 = 15/18 und 7/9 = 14/18. Weil 15 größer als 14 ist, gilt: 5/6 ist größer als 7/9.",
+            "acceptable_reasoning": "Auch schrittweises Kürzen (erst durch 10, dann durch 3) führt auf 2/3 und gilt als richtig; der Weg über den ggT ist nur der kürzere.",
+            "watch_outs": [
+              "Wer 60/90 nur durch 10 kürzt (6/9), ist nicht fertig – mit dem ggT gelingt das vollständige Kürzen in einem Schritt.",
+              "Brüche mit verschiedenen Nennern kann man nicht an den Zählern vergleichen; erst auf den gemeinsamen Nenner bringen."
+            ],
+            "self_check": "Prüfe dein Ergebnis 2/3: Lässt es sich noch weiter kürzen? Da ggT(2, 3) = 1 ist, ist es vollständig gekürzt.",
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "true_false_justify",
+            "prompt": "Zwei Schüler:innen behaupten etwas über Teilbarkeit. Entscheide bei jeder Aussage, ob sie IMMER stimmt. Wenn ja, begründe kurz; wenn nein, gib ein Gegenbeispiel an.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Jede Zahl, die durch 6 teilbar ist, ist auch durch 3 teilbar.",
+                "Jede Zahl, die durch 4 teilbar ist, ist auch durch 8 teilbar.",
+                "Wenn eine Zahl durch 2 und durch 3 teilbar ist, dann ist sie auch durch 6 teilbar."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 3
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "BEG",
+              "OPE"
+            ],
+            "serves": [
+              {
+                "competence_id": "MAT.US.2.ZAH.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "(1) Stimmt immer – jede durch 6 teilbare Zahl enthält den Faktor 6 = 2 · 3 und damit auch den Faktor 3. (2) Stimmt nicht – Gegenbeispiel: 12 ist durch 4 teilbar (12 = 4 · 3), aber nicht durch 8. Weitere Gegenbeispiele sind 20 oder 28. (3) Stimmt immer – 2 und 3 haben außer 1 keinen gemeinsamen Teiler (sie sind teilerfremd); ist eine Zahl durch beide teilbar, dann auch durch das Produkt 2 · 3 = 6.",
+            "acceptable_reasoning": "Für (2) wird jedes korrekte Gegenbeispiel anerkannt (jede durch 4, aber nicht durch 8 teilbare Zahl).",
+            "watch_outs": [
+              "Ein einziges Gegenbeispiel genügt, um eine 'Jede-Zahl'-Aussage zu widerlegen – man muss nicht alle Fälle prüfen.",
+              "Aussage (3) gilt nur, weil 2 und 3 teilerfremd sind; 'durch 2 und durch 4, also durch 8' wäre falsch (Gegenbeispiel 4)."
+            ],
+            "rubric": [
+              {
+                "criterion": "Begründen und Widerlegen",
+                "levels": [
+                  "Entscheidung ohne tragfähige Begründung oder Gegenbeispiel",
+                  "richtige Entscheidung, Begründung nur teilweise",
+                  "richtige Entscheidung mit stichhaltiger Begründung bzw. gültigem Gegenbeispiel"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "create_produce",
+            "prompt": "Erfinde für deine Sitznachbarin oder deinen Sitznachbarn ein Zahlenrätsel: Denke dir eine Zahl zwischen 1 und 100 aus und beschreibe sie mit GENAU drei Hinweisen über Teiler, Vielfache oder Teilbarkeit, sodass am Ende nur DEINE Zahl übrig bleibt. Schreibe zuerst die drei Hinweise auf und darunter die Lösung. Prüfe selbst, ob wirklich nur eine einzige Zahl passt.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 60.0
+            },
+            "cognitive_level": "create",
+            "dimensions": [
+              "MOD",
+              "BEG"
+            ],
+            "serves": [
+              {
+                "competence_id": "MAT.US.2.ZAH.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "Individuelle Lösung. Beispiel mit den Hinweisen 'durch 5 teilbar', 'Vielfaches von 6' und 'Quersumme 9': Die Zahl muss durch 5 und durch 6, also durch 30 teilbar sein (möglich sind 30, 60, 90) und die Quersumme 9 haben – das trifft nur auf 90 zu. Prüfkriterium: Genau eine Zahl zwischen 1 und 100 darf alle drei Hinweise erfüllen.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Zu wenige oder zu unscharfe Hinweise lassen mehrere Zahlen zu; ein weiterer Hinweis (zum Beispiel die Quersumme) macht die Lösung eindeutig.",
+              "Die eigene Lösung immer gegenprüfen: Passt wirklich KEINE andere Zahl?"
+            ],
+            "rubric": [
+              {
+                "criterion": "Eindeutigkeit des selbst erfundenen Rätsels",
+                "levels": [
+                  "mehrere Zahlen oder keine Zahl passen",
+                  "Rätsel fast eindeutig, kleine Unschärfe",
+                  "genau eine Zahl passt, Hinweise korrekt und selbst geprüft"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

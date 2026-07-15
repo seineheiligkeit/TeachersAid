@@ -1,0 +1,338 @@
+{
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Entwicklungen am Wirtschaftsstandort Österreich",
+  "title": "Warum wird alles immer teurer? Inflation, Kaufkraft und Preisstabilität",
+  "kernfrage": "Warum kannst du dir heute für 10 Euro weniger kaufen als deine Großeltern früher – und wer sorgt dafür, dass das Geld nicht zu schnell an Wert verliert?",
+  "body": {
+    "intro": [],
+    "data_figures": [
+      {
+        "id": "abb1",
+        "intent": "trend",
+        "title": "Verbraucherpreisindex Österreich im Jahresdurchschnitt (Basis: 1966 = 100)",
+        "xlabel": "Jahr",
+        "ylabel": "Preisindex (1966 = 100)",
+        "data_source": {
+          "dataset_id": "statistik_austria_vpi",
+          "series": "jahresindex"
+        }
+      }
+    ],
+    "assets": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Wenn das Geld an Wert verliert",
+        "throughline": "Die Schülerinnen und Schüler bauen ein tragfähiges Bild von Inflation auf: Preise steigen im Durchschnitt, die Kaufkraft des Geldes sinkt, und diese Entwicklung lässt sich mit dem Verbraucherpreisindex messen. Vom Begriff über die echte Zeitreihe bis zur eigenen Prozentrechnung wird Inflation greifbar.",
+        "talking_points": [
+          "Klarstellen: Inflation heißt nicht, dass ein einzelnes Produkt teurer wird, sondern dass das Preisniveau im Durchschnitt eines ganzen Warenkorbs steigt.",
+          "Der Verbraucherpreisindex misst nicht Euro, sondern ein Verhältnis zu einem Basisjahr (1966 = 100) – ein guter Anlass, über Indexzahlen zu sprechen.",
+          "Kaufkraft konkret machen: Was hat ein Kinobesuch oder eine Semmel gekostet, als die Eltern/Großeltern jung waren?",
+          "Beispielpreise in der Tabelle sind erfundene Übungswerte – die echten Zahlen liefert die Grafik der Statistik Austria."
+        ],
+        "extensions": [
+          "Schülerinnen und Schüler befragen Eltern oder Großeltern nach Preisen von früher (Semmel, Kinokarte, Eis) und vergleichen mit heute.",
+          "Recherche: Was steckt im österreichischen Warenkorb der Statistik Austria – und warum wird er regelmäßig angepasst?",
+          "Begriff Deflation als Gegenstück einführen: Warum sind dauerhaft sinkende Preise nicht einfach nur gut?"
+        ],
+        "blocks": [
+          {
+            "role": "info",
+            "id": "i1",
+            "kind": "prose",
+            "content": "Preise verändern sich ständig. **Inflation** bedeutet, dass die Preise für Waren und Dienstleistungen im Durchschnitt über längere Zeit steigen. Dadurch sinkt die **Kaufkraft** des Geldes: Für denselben Betrag bekommst du weniger als früher. Um die durchschnittliche Preisentwicklung zu messen, beobachtet die Statistik Austria einen festen **Warenkorb** typischer Ausgaben und fasst ihn im **Verbraucherpreisindex (VPI)** zusammen.",
+            "asset_refs": []
+          },
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "multiple_choice",
+            "prompt": "Was ist mit „Inflation“ gemeint? Kreuze die richtige Aussage an.",
+            "payload": {
+              "kind": "multiple_choice",
+              "select": "one",
+              "options": [
+                "Ein bestimmtes Produkt, zum Beispiel Benzin, wird für kurze Zeit teurer.",
+                "Die Preise steigen im Durchschnitt über längere Zeit, das Geld verliert an Kaufkraft.",
+                "Die Preise sinken im Durchschnitt, man bekommt für sein Geld immer mehr.",
+                "Man bekommt jedes Jahr automatisch mehr Gehalt ausbezahlt."
+              ]
+            },
+            "response": {
+              "mode": "none"
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "OK"
+            ],
+            "serves": [
+              {
+                "competence_id": "GWB.US.3.ENT.09",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 4,
+            "asset_refs": [],
+            "answer_key": "Richtig ist B: Inflation bedeutet, dass die Preise im Durchschnitt über einen längeren Zeitraum steigen und das Geld dadurch an Kaufkraft verliert. A beschreibt nur ein einzelnes Produkt (kein durchschnittliches Preisniveau). C verwechselt Inflation mit Deflation (sinkende Preise). D verwechselt Inflation mit einer Gehaltserhöhung.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Häufige Fehlvorstellung: „Inflation = ein Produkt wird teurer.“ Es geht immer um das durchschnittliche Preisniveau eines ganzen Warenkorbs.",
+              "Inflation und Deflation nicht verwechseln – Deflation ist das Sinken des Preisniveaus."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "data_interpretation",
+            "prompt": "Sieh dir die Abbildung (Abb. 1) mit dem Verbraucherpreisindex an. Beschreibe in zwei bis drei Sätzen, wie sich der Index seit 1966 entwickelt hat. Was bedeutet es, dass der Wert im Jahr 1966 genau 100 beträgt – und was sagt ein deutlich höherer Wert heute über die Preise aus?",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "OK"
+            ],
+            "serves": [
+              {
+                "competence_id": "GWB.US.3.ENT.09",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "asset_refs": [
+              "abb1"
+            ],
+            "answer_key": "Der Index steigt über den gesamten Zeitraum an – meist stetig, in manchen Jahren stärker. 1966 ist das Basisjahr, das definitionsgemäß den Wert 100 hat. Ein heutiger Wert, der ein Vielfaches von 100 beträgt, bedeutet: Der durchschnittliche Warenkorb kostet heute ein Vielfaches dessen, was er 1966 gekostet hat – die Preise sind also insgesamt stark gestiegen.",
+            "acceptable_reasoning": "Genaue Indexwerte müssen nicht abgelesen werden; entscheidend ist, dass der Anstieg erkannt und der Bezug „1966 = 100 = Ausgangspunkt“ verstanden wird.",
+            "watch_outs": [
+              "Der Index ist kein Preis in Euro. Ein Wert von z. B. 600 heißt nicht „600 Euro“, sondern „sechsmal so teuer wie 1966“.",
+              "Manche lesen nur einen Einzelwert ab, statt den Verlauf (Trend) zu beschreiben – beides ansprechen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "table_fill",
+            "prompt": "Berechne die Teuerung in Prozent. Die folgenden Preise sind erfundene Übungswerte. Verwende die Formel: Teuerung (%) = (neuer Preis − alter Preis) ÷ alter Preis × 100.\nWaren: Kinokarte 8,00 € → 11,00 € · Semmel 0,40 € → 0,50 € · Butter (250 g) 1,20 € → 2,40 € · Straßenbahnticket 2,00 € → 2,40 €.",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Ware",
+                "alter Preis",
+                "neuer Preis",
+                "Teuerung in %"
+              ],
+              "rows": 4
+            },
+            "cognitive_level": "apply",
+            "dimensions": [
+              "OK"
+            ],
+            "serves": [
+              {
+                "competence_id": "GWB.US.3.ENT.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 7,
+            "asset_refs": [],
+            "answer_key": "Kinokarte: (11,00 − 8,00) ÷ 8,00 × 100 = +37,5 % · Semmel: (0,50 − 0,40) ÷ 0,40 × 100 = +25 % · Butter: (2,40 − 1,20) ÷ 1,20 × 100 = +100 % (Verdopplung) · Straßenbahnticket: (2,40 − 2,00) ÷ 2,00 × 100 = +20 %.",
+            "acceptable_reasoning": "Kleine Rundungen sind in Ordnung. Wichtig ist, dass durch den ALTEN Preis geteilt und mit 100 multipliziert wird.",
+            "watch_outs": [
+              "Typischer Fehler: durch den neuen statt durch den alten Preis teilen.",
+              "Die Multiplikation mit 100 nicht vergessen (sonst 0,375 statt 37,5 %).",
+              "+100 % bedeutet „doppelt so teuer“, nicht „100 Euro teurer“ – Prozent und Euro trennen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "cause_effect_match",
+            "prompt": "Verbinde jede Ursache mit ihrer Wirkung auf den Preis. Achtung: Nicht jede Ursache lässt Preise steigen!",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Die Nachfrage nach einem Gut steigt stark, das Angebot bleibt gleich.",
+                "Die Energie- und Rohstoffkosten der Unternehmen steigen.",
+                "Eine besonders gute Ernte lässt das Angebot an Gemüse stark steigen."
+              ],
+              "right": [
+                "Der Preis für Gemüse sinkt.",
+                "Der Preis des Gutes steigt, weil es knapper wird.",
+                "Die Unternehmen geben die höheren Kosten über höhere Preise weiter."
+              ]
+            },
+            "response": {
+              "mode": "none"
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "OK",
+              "UK"
+            ],
+            "serves": [
+              {
+                "competence_id": "GWB.US.3.ENT.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "asset_refs": [],
+            "answer_key": "1 → B: Steigt die Nachfrage bei gleichbleibendem Angebot, wird das Gut knapper und der Preis steigt. 2 → C: Höhere Energie- und Rohstoffkosten geben Unternehmen über höhere Verkaufspreise weiter (Kostendruck). 3 → A: Eine besonders gute Ernte vergrößert das Angebot – der Preis sinkt.",
+            "acceptable_reasoning": "Die Begründung darf knapp sein; entscheidend ist die richtige Zuordnung und das Erkennen, dass ein größeres Angebot den Preis senkt.",
+            "watch_outs": [
+              "Nicht automatisch „alles wird teurer“ ankreuzen – Ursache 3 zeigt, dass mehr Angebot den Preis SENKT.",
+              "Angebot und Nachfrage sauber unterscheiden: Nachfrage = wie viel gekauft werden will; Angebot = wie viel verfügbar ist."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "open_response",
+            "prompt": "Nicht alle wollen, dass das Geld schnell an Wert verliert. Erkläre in einigen Sätzen: Wer versucht im Euroraum, die Preise stabil zu halten, welches Ziel verfolgt die Europäische Zentralbank (EZB) dabei, und welche Rolle spielt die Oesterreichische Nationalbank?",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "OK"
+            ],
+            "serves": [
+              {
+                "competence_id": "GWB.US.3.ENT.05",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "asset_refs": [],
+            "answer_key": "Für stabile Preise im Euroraum ist die Europäische Zentralbank (EZB) zuständig. Sie strebt mittelfristig eine Inflation von rund 2 % an – nicht zu hoch, aber auch nicht null, weil sinkende Preise (Deflation) ebenfalls schädlich wären. Die Oesterreichische Nationalbank ist Teil des Eurosystems: Sie setzt die gemeinsame Geldpolitik in Österreich um, bestimmt aber nicht allein einen eigenen österreichischen Zinssatz.",
+            "acceptable_reasoning": "Es genügt: EZB sorgt für Preisstabilität mit Ziel rund 2 %, und die Nationalbank ist Teil des gemeinsamen Euro-Systems.",
+            "watch_outs": [
+              "Häufiger Irrtum: „Die österreichische Nationalbank macht ihre eigene Geldpolitik.“ Seit dem Euro entscheidet die EZB für den ganzen Euroraum.",
+              "Ziel ist Preisstabilität (rund 2 %), nicht „gar keine Inflation“."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "true_false_justify",
+            "prompt": "Entscheide für jede Aussage, ob sie richtig oder falsch ist, und begründe deine Entscheidung jeweils in einem Satz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Wer sein Geld nur zu Hause aufbewahrt, verliert bei Inflation an Kaufkraft.",
+                "Wer einen Kredit mit fest vereinbarten Rückzahlungen hat, kann von Inflation profitieren.",
+                "Inflation trifft alle Menschen gleich stark.",
+                "Wenn die Löhne genauso stark steigen wie die Preise, bleibt die Kaufkraft ungefähr gleich."
+              ]
+            },
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Aussage",
+                "Richtig / Falsch",
+                "Begründung"
+              ],
+              "rows": 4
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "UK"
+            ],
+            "serves": [
+              {
+                "competence_id": "GWB.US.3.ENT.09",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "1. RICHTIG – Bargeld zu Hause verzinst sich nicht; bei steigenden Preisen kann man später weniger dafür kaufen, die Kaufkraft sinkt. 2. RICHTIG – Bei fest vereinbarten Rückzahlungen bleibt die Schuld in Euro gleich, ist aber real weniger wert; wer dabei ein mitsteigendes Einkommen hat, profitiert. 3. FALSCH – Inflation trifft nicht alle gleich: Es kommt darauf an, was man kauft, ob Einkommen oder Pension mitsteigen und ob man Ersparnisse hat. 4. RICHTIG – Steigen Löhne und Preise gleich schnell, bleibt die Kaufkraft ungefähr erhalten.",
+            "acceptable_reasoning": "Bei Aussage 2 genügt der Kern „Schuld wird real weniger wert“. Aussage 3 muss als FALSCH erkannt werden, weil Betroffenheit unterschiedlich ist.",
+            "watch_outs": [
+              "Aussage 3 ist die anspruchsvollste: Viele halten sie für richtig. Über verschiedene Warenkörbe (junge Familie vs. Pensionist:in) sprechen.",
+              "Reine „richtig/falsch“-Antworten ohne Begründung nicht gelten lassen – die Begründung ist der Kern."
+            ],
+            "rubric": [
+              {
+                "criterion": "Einschätzung",
+                "levels": [
+                  "Alle 4 korrekt bewertet",
+                  "3 von 4 korrekt",
+                  "Weniger als 3 korrekt"
+                ]
+              },
+              {
+                "criterion": "Begründung",
+                "levels": [
+                  "Alle Begründungen sachlich und mit Bezug zur Kaufkraft",
+                  "Begründungen teils vage oder ohne Bezug",
+                  "Kaum oder keine tragfähigen Begründungen"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "create_produce",
+            "prompt": "Familie Bauer hat ein Jahr lang genau gleich viel Einkommen wie zuvor. In diesem Jahr steigen die Preise aber um etwa 5 %. Erkläre, was das für den Alltag der Familie bedeutet, und schlage zwei konkrete Reaktionen vor, mit denen sie damit umgehen kann. Begründe jede deiner Ideen.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 50
+            },
+            "cognitive_level": "create",
+            "dimensions": [
+              "UK",
+              "HK"
+            ],
+            "serves": [
+              {
+                "competence_id": "GWB.US.3.ENT.09",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "asset_refs": [],
+            "answer_key": "Bedeutung: Bei gleichem Einkommen und um 5 % gestiegenen Preisen kann sich die Familie real weniger leisten – ihre Kaufkraft sinkt. Mögliche Reaktionen (je gut begründet): Ausgaben überdenken und Prioritäten setzen (günstigere Alternativen, weniger Verschwendung); auf ein höheres Einkommen hinwirken (Gehaltsverhandlung, Anspruch auf Anpassungen prüfen); Sparen so anlegen, dass es nicht nur zu Hause an Wert verliert; größere Anschaffungen bündeln oder aufschieben. Wichtig ist eine begründete, realistische Idee, nicht die „eine richtige“ Lösung.",
+            "acceptable_reasoning": "Zwei plausible, begründete Reaktionen genügen. Ein Verweis auf „Kaufkraft sinkt“ ist der inhaltliche Kern.",
+            "watch_outs": [
+              "„Einfach mehr Geld drucken/verdienen“ ist kein durchdachter Vorschlag – nach dem konkreten Weg und der Begründung fragen.",
+              "Manche verwechseln 5 % Preissteigerung mit 5 Euro – Prozent vom Einkommen bzw. von den Preisen meinen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Bedeutung erklärt",
+                "levels": [
+                  "Kaufkraftverlust klar erklärt",
+                  "Ansatz erkennbar, aber unscharf",
+                  "Zusammenhang nicht erkannt"
+                ]
+              },
+              {
+                "criterion": "Reaktionen",
+                "levels": [
+                  "Zwei konkrete, begründete Reaktionen",
+                  "Eine begründete oder zwei vage Ideen",
+                  "Keine tragfähige Idee"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,374 @@
+{
+  "subject": "Mathematik",
+  "klasse": 4,
+  "kompetenzbereich": "Variablen und Funktionen",
+  "title": "Zwei Bedingungen, eine Lösung – lineare Gleichungssysteme",
+  "kernfrage": "Wie findest du das eine Zahlenpaar, das zwei Bedingungen gleichzeitig erfüllt – und was hat der Schnittpunkt zweier Geraden damit zu tun?",
+  "body": {
+    "intro": [],
+    "data_figures": [],
+    "assets": [
+      {
+        "id": "abb1",
+        "role": "figure",
+        "generator": "matplotlib:coordinate_plane",
+        "spec": {
+          "points": [
+            {
+              "x": 0,
+              "y": 1,
+              "label": "g"
+            },
+            {
+              "x": 6,
+              "y": 7
+            },
+            {
+              "x": 0,
+              "y": 7,
+              "label": "h"
+            },
+            {
+              "x": 6,
+              "y": 1
+            }
+          ],
+          "segments": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "xmin": 0,
+          "xmax": 6,
+          "ymin": 0,
+          "ymax": 8,
+          "title": "Zwei Geraden g und h"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Eine Lösung für zwei Bedingungen",
+        "throughline": "Die Grundidee wird gefestigt: Die Lösung eines Systems ist EIN Paar (x | y), das beide Gleichungen erfüllt (Probe), und man findet es rechnerisch – durch Gleichsetzen bei Kostenvergleichen und durch das Additionsverfahren bei Mengen- und Preisaufgaben mit zwei Unbekannten.",
+        "talking_points": [
+          "Immer betonen: Die Lösung ist ein ZahlenPAAR, nicht eine einzelne Zahl.",
+          "Gleichsetzen eignet sich, wenn beide Gleichungen nach y aufgelöst sind; Addieren, wenn man eine Variable eliminieren will.",
+          "Einheiten und Dezimalzahlen (Euro pro Minute) sauber mitführen."
+        ],
+        "extensions": [
+          "Einen dritten Anbieter ergänzen und alle drei vergleichen.",
+          "Die Break-even-Rechnung als Wertetabelle und als Graph gegenüberstellen."
+        ],
+        "blocks": [
+          {
+            "role": "info",
+            "id": "i1",
+            "kind": "key_fact",
+            "content": "Ein lineares Gleichungssystem besteht aus zwei Gleichungen mit zwei Unbekannten (meist x und y). Gesucht ist das eine Zahlenpaar (x | y), das BEIDE Gleichungen gleichzeitig wahr macht. Zeichnet man beide Gleichungen als Geraden, dann ist die Lösung genau ihr Schnittpunkt. Zum Rechnen gibt es das Gleichsetzungs-, das Einsetzungs- und das Additionsverfahren."
+          },
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "multiple_choice",
+            "prompt": "Gegeben ist das Gleichungssystem  I: x + y = 10  und  II: 2x - y = 2. Welches Zahlenpaar (x | y) löst BEIDE Gleichungen? Mach bei jedem Vorschlag die Probe in beiden Gleichungen.",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "(3 | 7)",
+                "(4 | 6)",
+                "(6 | 4)",
+                "(5 | 5)"
+              ],
+              "select": "one"
+            },
+            "response": {
+              "mode": "choices",
+              "options": [
+                "(3 | 7)",
+                "(4 | 6)",
+                "(6 | 4)",
+                "(5 | 5)"
+              ],
+              "select": "one"
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "OPE"
+            ],
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.VAR.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "asset_refs": [],
+            "answer_key": "Richtig ist (4 | 6). Probe: I: 4 + 6 = 10 (stimmt); II: 2 · 4 - 6 = 8 - 6 = 2 (stimmt). Bei allen anderen Paaren stimmt zwar Gleichung I, aber nicht Gleichung II: zum Beispiel ergibt II bei (3 | 7) den Wert 2 · 3 - 7 = -1, nicht 2.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Ein Paar, das nur EINE Gleichung erfüllt, ist keine Lösung des Systems – immer beide Gleichungen prüfen.",
+              "(3 | 7) erfüllt Gleichung I und ist eine typische Falle, wenn man Gleichung II vergisst."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "modelling_task",
+            "prompt": "Zwei Verleihstationen bieten E-Scooter an. Station A verlangt 5 Euro Grundgebühr und zusätzlich 0,10 Euro pro Minute. Station B verlangt 2 Euro Grundgebühr und 0,20 Euro pro Minute. (a) Stelle für jede Station eine Gleichung für die Kosten y (in Euro) bei x Minuten Fahrzeit auf. (b) Bei welcher Fahrzeit kosten beide Stationen gleich viel? Löse durch Gleichsetzen. (c) Welche Station ist für eine Fahrt von 40 Minuten günstiger?",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "apply",
+            "dimensions": [
+              "MOD",
+              "OPE"
+            ],
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.VAR.01",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "MAT.US.4.VAR.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "asset_refs": [],
+            "answer_key": "(a) A: y = 5 + 0,10 · x;  B: y = 2 + 0,20 · x. (b) Gleichsetzen: 5 + 0,10 · x = 2 + 0,20 · x. Das ergibt 5 - 2 = 0,20 · x - 0,10 · x, also 3 = 0,10 · x und damit x = 30. Nach 30 Minuten kosten beide gleich viel, nämlich y = 5 + 0,10 · 30 = 8 Euro. (c) Für 40 Minuten: A kostet 5 + 0,10 · 40 = 9 Euro, B kostet 2 + 0,20 · 40 = 10 Euro. Also ist Station A günstiger. Ab 30 Minuten lohnt sich Station A.",
+            "acceptable_reasoning": "Auch das Lösen über eine Wertetabelle mit anschließender Bestätigung ist zulässig, solange x = 30 Minuten und y = 8 Euro klar begründet werden.",
+            "watch_outs": [
+              "Grundgebühr (fester Betrag) und Minutenpreis (mal x) nicht vertauschen – der feste Betrag steht ohne x.",
+              "Sorgfältig mit Dezimalzahlen rechnen und die Einheiten (Euro, Minuten) mitführen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Modellieren und Lösen des Kostenvergleichs",
+                "levels": [
+                  "Gleichungen fehlerhaft aufgestellt",
+                  "Gleichungen korrekt, Lösung fehlerhaft",
+                  "Gleichungen korrekt aufgestellt, Schnittpunkt richtig berechnet und gedeutet"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "calculation",
+            "prompt": "Beim Schulkino zahlen 3 Erwachsene und 2 Kinder zusammen 34 Euro. Eine andere Gruppe aus 2 Erwachsenen und 5 Kindern zahlt 41 Euro. Wie viel kostet eine Erwachsenenkarte, wie viel eine Kinderkarte? Stelle ein Gleichungssystem auf und löse es, zum Beispiel mit dem Additionsverfahren.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "apply",
+            "dimensions": [
+              "MOD",
+              "OPE"
+            ],
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.VAR.04",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "MAT.US.4.VAR.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "e sei der Preis einer Erwachsenenkarte, k der Preis einer Kinderkarte. I: 3e + 2k = 34;  II: 2e + 5k = 41. Additionsverfahren: I mal 5 ergibt 15e + 10k = 170; II mal 2 ergibt 4e + 10k = 82. Subtrahieren liefert 11e = 88, also e = 8. Einsetzen in I: 3 · 8 + 2k = 34, also 24 + 2k = 34, also 2k = 10 und k = 5. Eine Erwachsenenkarte kostet 8 Euro, eine Kinderkarte 5 Euro. Probe in II: 2 · 8 + 5 · 5 = 16 + 25 = 41 (stimmt).",
+            "acceptable_reasoning": "Das Einsetzungsverfahren (eine Gleichung nach einer Variablen auflösen und einsetzen) führt auf dasselbe Ergebnis und ist gleichwertig.",
+            "watch_outs": [
+              "Vor dem Addieren oder Subtrahieren müssen die Vorzahlen einer Variablen gleich gemacht werden (hier k auf 10 bringen).",
+              "Die beiden Unbekannten klar benennen (e und k), sonst gerät durcheinander, welcher Preis gesucht ist."
+            ],
+            "self_check": "Setze e = 8 und k = 5 in BEIDE Ausgangsgleichungen ein – beide müssen aufgehen.",
+            "rubric": [
+              {
+                "criterion": "Aufstellen und Lösen eines Systems mit zwei Unbekannten",
+                "levels": [
+                  "System unvollständig oder falsch aufgestellt",
+                  "System korrekt, Rechenfehler beim Lösen",
+                  "System korrekt aufgestellt und richtig gelöst, mit Probe"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Grafisch deuten und selbst gestalten",
+        "throughline": "Algebra trifft Geometrie: Der Schnittpunkt zweier Geraden IST die Lösung des Systems; daraus folgen die Sonderfälle (parallel bedeutet keine, deckungsgleich bedeutet unendlich viele Lösungen). Zum Abschluss erfinden die Schüler:innen selbst eine Sachaufgabe zu einer vorgegebenen Lösung.",
+        "talking_points": [
+          "Schnittpunkt ablesen und durch Einsetzen bestätigen – der Übergang zwischen Graph und Gleichung ist die Kernidee.",
+          "Die drei Lösungsfälle an der gegenseitigen Lage zweier Geraden festmachen.",
+          "Beim eigenen Aufgabenentwurf die Lösung von der Angabe trennen (Partnerkontrolle)."
+        ],
+        "extensions": [
+          "Wann liegt der Schnittpunkt außerhalb des sinnvollen Bereichs (zum Beispiel negative Minuten)?",
+          "Ein System aus drei Geraden: Was bedeutet es, wenn sie keinen gemeinsamen Punkt haben?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "open_response",
+            "prompt": "Im Koordinatensystem (Abbildung) siehst du die beiden Geraden g und h. (a) Lies die Koordinaten ihres Schnittpunkts ab. (b) Bestimme aus dem Verlauf jede Geradengleichung in der Form y = k · x + d. (c) Erkläre, warum genau der Schnittpunkt die Lösung des Gleichungssystems aus g und h ist, und bestätige das durch Einsetzen.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "DAR",
+              "OPE"
+            ],
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.VAR.02",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "MAT.US.4.VAR.03",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "MAT.US.4.VAR.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "asset_refs": [
+              "abb1"
+            ],
+            "answer_key": "(a) Der Schnittpunkt ist S = (3 | 4). (b) g geht durch (0 | 1) und steigt pro Schritt nach rechts um 1, also g: y = x + 1. h geht durch (0 | 7) und fällt pro Schritt um 1, also h: y = -x + 7. (c) Der Schnittpunkt liegt auf beiden Geraden, deshalb erfüllt sein Zahlenpaar beide Gleichungen gleichzeitig – genau das ist die Bedingung für die Lösung des Systems. Probe: 3 + 1 = 4 (stimmt) und -3 + 7 = 4 (stimmt).",
+            "acceptable_reasoning": "Die Reihenfolge der Teilschritte ist frei; entscheidend sind der richtige Schnittpunkt, beide Geradengleichungen und die Begründung über die gemeinsame Lage auf beiden Geraden.",
+            "watch_outs": [
+              "Beim Ablesen der Steigung ein sauberes Steigungsdreieck verwenden (ein Schritt nach rechts, wie viele nach oben oder unten).",
+              "Eine fallende Gerade hat eine NEGATIVE Steigung (hier k = -1); das Vorzeichen wird oft vergessen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Darstellungswechsel vom Graphen zur Gleichung",
+                "levels": [
+                  "Schnittpunkt oder Gleichungen fehlerhaft abgelesen",
+                  "Schnittpunkt richtig, eine Gleichung fehlerhaft",
+                  "Schnittpunkt und beide Gleichungen korrekt, Deutung als Lösung begründet"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "true_false_justify",
+            "prompt": "Beurteile die folgenden Aussagen über die Lösungen linearer Gleichungssysteme. Entscheide jeweils, ob die Aussage stimmt, und begründe mit der Vorstellung von zwei Geraden.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Ein lineares Gleichungssystem aus zwei Gleichungen hat immer genau eine Lösung.",
+                "Wenn die beiden Geraden parallel sind und nicht aufeinanderliegen, hat das System keine Lösung.",
+                "Es kann ein Gleichungssystem geben, das unendlich viele Lösungen hat."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 3
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "BEG",
+              "DAR"
+            ],
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.VAR.04",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "MAT.US.4.VAR.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "(1) Falsch. Zwei Geraden können sich schneiden (genau eine Lösung), parallel verlaufen (keine Lösung) oder aufeinanderliegen (unendlich viele Lösungen). (2) Wahr. Parallele, verschiedene Geraden haben keinen gemeinsamen Punkt, also gibt es kein Paar (x | y), das beide Gleichungen erfüllt. (3) Wahr. Wenn beide Gleichungen dieselbe Gerade beschreiben (zum Beispiel x + y = 4 und 2x + 2y = 8), liegt jeder Punkt der Geraden auf beiden – dann gibt es unendlich viele Lösungen.",
+            "acceptable_reasoning": "Begründungen über die Geradenlage (Schnitt, parallel, deckungsgleich) ODER über die Gleichungen (Widerspruch bzw. immer wahre Aussage beim Lösen) werden beide anerkannt.",
+            "watch_outs": [
+              "'Genau eine Lösung' ist nur der Normalfall (sich schneidende Geraden), nicht die Regel für alle Systeme.",
+              "Parallel und verschieden bedeutet keine Lösung; parallel und deckungsgleich bedeutet unendlich viele – der Unterschied liegt am d."
+            ],
+            "rubric": [
+              {
+                "criterion": "Beurteilen der Lösungsfälle",
+                "levels": [
+                  "Aussagen ohne tragfähige Begründung bewertet",
+                  "richtige Bewertung, Begründung lückenhaft",
+                  "alle drei richtig bewertet und mit der Geradenlage begründet"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "create_produce",
+            "prompt": "Denke dir selbst eine Sachsituation aus, die auf ein Gleichungssystem mit zwei Unbekannten führt und die Lösung x = 4 und y = 7 hat (zum Beispiel mit Preisen, Mengen oder Anzahlen). Schreibe die Sachaufgabe, die beiden Gleichungen und die Lösung getrennt auf, sodass ein anderes Kind deine Aufgabe rechnen kann. Prüfe selbst, ob dein Zahlenpaar wirklich beide Gleichungen erfüllt.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 70.0
+            },
+            "cognitive_level": "create",
+            "dimensions": [
+              "MOD",
+              "BEG"
+            ],
+            "serves": [
+              {
+                "competence_id": "MAT.US.4.VAR.01",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "MAT.US.4.VAR.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "asset_refs": [],
+            "answer_key": "Individuelle Lösung. Beispiel: 'In einem Beutel liegen 11 Kugeln, rote und blaue. Es sind um 3 mehr blaue als rote.' Mit x = Anzahl der roten und y = Anzahl der blauen Kugeln entsteht I: x + y = 11 und II: y = x + 3. Lösung: x = 4, y = 7 (Probe: 4 + 7 = 11 und 7 = 4 + 3, beides stimmt). Prüfkriterium: Die Situation muss auf ZWEI Gleichungen mit zwei Unbekannten führen, und das Paar (4 | 7) muss beide erfüllen.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Die ausgedachte Situation muss WIRKLICH zwei Unbekannte enthalten, sonst entsteht kein Gleichungssystem.",
+              "Zum Schluss die eigene Lösung (4 | 7) in beide selbst aufgestellten Gleichungen einsetzen – sie muss aufgehen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Eigene Modellierung eines Gleichungssystems",
+                "levels": [
+                  "keine gültige Situation mit zwei Gleichungen",
+                  "Situation mit zwei Gleichungen, Lösung passt nicht genau",
+                  "stimmige Situation, zwei Gleichungen und Lösung (4 | 7) passen und sind geprüft"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

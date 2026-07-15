@@ -1,0 +1,352 @@
+{
+  "subject": "Chemie",
+  "klasse": 4,
+  "kompetenzbereich": "Erkenntnisse gewinnen und interpretieren (E)",
+  "title": "Fest, flüssig, gasförmig — was die Teilchen dahinter verraten",
+  "kernfrage": "Warum lässt sich Luft leicht zusammendrücken, Wasser aber kaum — und wie erklärt das Teilchenmodell, was du siehst?",
+  "body": {
+    "intro": [],
+    "data_figures": [
+      {
+        "id": "abb1",
+        "intent": "trend",
+        "title": "Temperatur einer Wasserprobe beim gleichmäßigen Erhitzen",
+        "xlabel": "Zeit in Minuten",
+        "ylabel": "Temperatur in °C",
+        "categories": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11"
+        ],
+        "values": [
+          -20,
+          -10,
+          0,
+          0,
+          0,
+          25,
+          50,
+          75,
+          100,
+          100,
+          100,
+          100
+        ],
+        "illustrative": true
+      }
+    ],
+    "assets": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Vom Beobachten zum Teilchenmodell",
+        "throughline": "Die Schüler:innen bauen vom eigenen Beobachten ausgehend das Teilchenmodell als Werkzeug auf: Sie beschreiben zuerst die drei Aggregatzustände auf der Stoffebene und deuten sie dann konsequent über Anordnung, Abstand und Bewegung der Teilchen — die Grundlage, um im zweiten Teil Alltagsphänomene zu erklären.",
+        "talking_points": [
+          "Stoffebene und Teilchenebene sauber trennen: Was man SIEHT (Form, Zusammendrückbarkeit) gegenüber dem MODELL (Teilchen mit Abständen und Bewegung).",
+          "Der Kern des Blattes: Nicht die Teilchen selbst ändern sich beim Zustandswechsel, sondern ihre Anordnung, ihre Abstände und ihre Bewegung.",
+          "Zwischen den Teilchen ist LEERER Raum — dort ist keine Luft. Diese eine Idee erklärt, warum sich Gase zusammendrücken lassen."
+        ],
+        "extensions": [
+          "Brown'sche Bewegung unter dem Mikroskop (z. B. Rauchteilchen in einer Kammer) als direkter Hinweis auf die ständige Teilchenbewegung.",
+          "Anknüpfung an Physik: Warum dehnt sich ein Gas beim Erwärmen viel stärker aus als eine Flüssigkeit oder ein Festkörper?"
+        ],
+        "blocks": [
+          {
+            "role": "info",
+            "id": "i1",
+            "kind": "key_fact",
+            "content": "Teilchenmodell — die Grundannahmen: Jeder Stoff besteht aus unvorstellbar vielen, winzigen Teilchen. Zwischen den Teilchen ist leerer Raum. Die Teilchen sind ständig in Bewegung — je wärmer der Stoff, desto schneller. Zwischen ihnen wirken Anziehungskräfte, die sie im festen und flüssigen Zustand zusammenhalten."
+          },
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "table_fill",
+            "prompt": "Vergleiche die drei Aggregatzustände. Trage für jede der drei Eigenschaften — eigene Form, festes eigenes Volumen, leicht zusammendrückbar — kurze Stichworte (ja/nein mit Begründung) in die passenden Spalten ein.",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Eigenschaft",
+                "fest",
+                "flüssig",
+                "gasförmig"
+              ],
+              "rows": 3
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "W"
+            ],
+            "serves": [
+              {
+                "competence_id": "CHE.US.x.ALL.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "asset_refs": [],
+            "answer_key": "Eigene Form: fest = ja (behält seine Form); flüssig = nein (passt sich dem Gefäß an, bildet eine waagrechte Oberfläche); gasförmig = nein (füllt den ganzen verfügbaren Raum). Festes eigenes Volumen: fest = ja; flüssig = ja; gasförmig = nein (nimmt jedes angebotene Volumen ein). Leicht zusammendrückbar: fest = nein; flüssig = nein (kaum); gasförmig = ja (deutlich).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Flüssigkeiten haben ein festes Volumen, aber KEINE feste Form — das wird häufig verwechselt.",
+              "„Ein Gas hat kein Volumen“ ist ungenau: Ein Gas hat kein EIGENES festes Volumen, füllt aber stets den ganzen verfügbaren Raum aus."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "multiple_choice",
+            "prompt": "Eine Luftpumpe mit zugehaltenem Ausgang lässt sich ein Stück weit eindrücken. Presst du dagegen Wasser in einer verschlossenen Spritze, bewegt sich der Kolben fast nicht. Welche Erklärung passt am besten zum Teilchenmodell?",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "Im Gas sind zwischen den Teilchen große leere Zwischenräume; beim Zusammendrücken rücken die Teilchen näher zusammen. In Wasser liegen die Teilchen schon dicht beieinander.",
+                "Beim Zusammendrücken werden die Gasteilchen selbst kleiner gequetscht; die Wasserteilchen sind dafür zu hart.",
+                "Luft besteht aus weniger Teilchen als Wasser, deshalb ist mehr Platz zum Drücken.",
+                "Beim Drücken lösen sich die Gasteilchen auf und verschwinden im Zwischenraum."
+              ],
+              "select": "one"
+            },
+            "response": {
+              "mode": "choices",
+              "options": [
+                "Im Gas sind zwischen den Teilchen große leere Zwischenräume; beim Zusammendrücken rücken die Teilchen näher zusammen. In Wasser liegen die Teilchen schon dicht beieinander.",
+                "Beim Zusammendrücken werden die Gasteilchen selbst kleiner gequetscht; die Wasserteilchen sind dafür zu hart.",
+                "Luft besteht aus weniger Teilchen als Wasser, deshalb ist mehr Platz zum Drücken.",
+                "Beim Drücken lösen sich die Gasteilchen auf und verschwinden im Zwischenraum."
+              ],
+              "select": "one"
+            },
+            "cognitive_level": "apply",
+            "dimensions": [
+              "E"
+            ],
+            "serves": [
+              {
+                "competence_id": "CHE.US.x.ERK.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 5,
+            "asset_refs": [],
+            "answer_key": "Richtig ist die erste Aussage: Im gasförmigen Zustand sind die Teilchen weit voneinander entfernt, dazwischen liegt leerer Raum. Beim Zusammendrücken verringert man diese Abstände — die Teilchen selbst bleiben unverändert. In Flüssigkeiten berühren sich die Teilchen fast; es gibt kaum Zwischenraum, deshalb lässt sich Wasser fast nicht zusammendrücken.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Die zweite Option prüft die häufige Fehlvorstellung, die Teilchen selbst würden beim Zusammendrücken kleiner oder weicher — Teilchen ändern ihre Größe nicht, nur ihre Abstände.",
+              "Die dritte Option: Auch bei gleicher Teilchenzahl wäre ein Gas zusammendrückbar — entscheidend ist der ABSTAND zwischen den Teilchen, nicht ihre Anzahl.",
+              "Die vierte Option: Teilchen verschwinden nie; es gibt keinen Ort, an dem sie „aufgehen“ könnten."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "experiment_protocol",
+            "prompt": "Du gibst gleichzeitig je einen Teebeutel (oder einen Tropfen Tinte) in ein Glas mit kaltem und in ein Glas mit heißem Wasser — ohne umzurühren. Plane diese Untersuchung und protokolliere sie. Halte fest: (a) deine Vermutung mit kurzer Begründung, (b) was du gleich hältst und welche einzige Größe du veränderst, (c) deine erwartete Beobachtung, (d) deine Deutung mit dem Teilchenmodell.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 70
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "E"
+            ],
+            "serves": [
+              {
+                "competence_id": "CHE.US.x.ERK.02",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "CHE.US.x.ERK.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "(a) Vermutung: Im heißen Wasser verteilt sich die Farbe schneller. Begründung: Wärmere Teilchen bewegen sich schneller. (b) Gleich halten: Wassermenge, Glasgröße, Menge des Teebeutels/der Tinte, kein Umrühren, gleicher Startzeitpunkt. Verändern (einzige Größe): nur die Wassertemperatur. (c) Beobachtung: Im heißen Glas breitet sich die Färbung deutlich schneller und weiter aus als im kalten. (d) Deutung: Die Wasserteilchen sind ständig in Bewegung und stoßen die Farbteilchen umher (Diffusion). Bei höherer Temperatur bewegen sie sich schneller, deshalb vermischt sich die Farbe rascher — ganz ohne Rühren.",
+            "acceptable_reasoning": "Entscheidend ist, dass nur EINE Größe (die Temperatur) verändert und alles andere gleich gehalten wird (faire Untersuchung), und dass die schnellere Durchmischung mit der schnelleren Teilchenbewegung gedeutet wird.",
+            "watch_outs": [
+              "Häufiger Planungsfehler: mehrere Dinge gleichzeitig verändern (z. B. auch die Wassermenge) — dann lässt sich die Ursache nicht mehr eindeutig zuordnen.",
+              "Fehldeutung: „Das heiße Wasser zieht die Farbe an.“ Es gibt keine Anziehung zur Wärme; die Farbe verteilt sich durch die Eigenbewegung der Teilchen (Diffusion).",
+              "Beobachtung und Deutung trennen: „Es wird schneller braun“ ist die Beobachtung; „die Teilchen bewegen sich schneller“ ist die Deutung."
+            ],
+            "rubric": [
+              {
+                "criterion": "Faire Untersuchung (nur eine Größe verändert)",
+                "levels": [
+                  "Konstant gehaltene Größen und die eine veränderte Größe klar benannt",
+                  "Ansatz erkennbar, aber unvollständig",
+                  "Variablen nicht getrennt"
+                ]
+              },
+              {
+                "criterion": "Deutung mit dem Teilchenmodell",
+                "levels": [
+                  "Schnellere Durchmischung schlüssig auf schnellere Teilchenbewegung zurückgeführt",
+                  "Teilweise korrekt",
+                  "Keine tragfähige Deutung"
+                ]
+              },
+              {
+                "criterion": "Beobachtung von Deutung getrennt",
+                "levels": [
+                  "Klar getrennt",
+                  "Ansatzweise",
+                  "Vermischt"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Erklären und vorhersagen mit dem Teilchenmodell",
+        "throughline": "Jetzt wird das Modell zum Erklär- und Vorhersagewerkzeug: Die Schüler:innen deuten eine Messkurve (Schmelzen und Sieden), beurteilen eine Alltagsaussage und stellen einen Zustandswechsel selbst modellhaft dar — der Bogen führt vom Interpretieren über das Bewerten bis zum eigenständigen Gestalten.",
+        "talking_points": [
+          "Die Haltepunkte der Erwärmungskurve sind der didaktische Kern: zugeführte Energie geht in den Zustandswechsel, nicht in die Temperatur.",
+          "Die Erhaltung der Teilchen (die Anzahl bleibt gleich) ist der rote Faden gegen die Fehlvorstellung „Teilchen verschwinden“.",
+          "Verdunsten (bei jeder Temperatur, an der Oberfläche) und Sieden (bei der Siedetemperatur, im ganzen Volumen) klar unterscheiden."
+        ],
+        "extensions": [
+          "Warum kühlt Schwitzen den Körper? Verdunstungskälte mit dem Teilchenmodell (die schnellsten Teilchen verlassen die Oberfläche).",
+          "Siedetemperatur und Luftdruck: Warum kocht Wasser auf einem hohen Berg schon unter 100 °C?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "data_interpretation",
+            "prompt": "Die Grafik (Abb. 1) zeigt, wie sich die Temperatur einer Probe Eis verändert, während sie gleichmäßig erhitzt wird. (a) Bei welchen zwei Temperaturen bleibt die Temperatur eine Zeit lang gleich, obwohl weiter geheizt wird? (b) Was geschieht mit dem Wasser jeweils an diesen „Haltepunkten“? (c) Erkläre mit dem Teilchenmodell, wohin die zugeführte Energie geht, solange die Temperatur nicht steigt.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "E"
+            ],
+            "serves": [
+              {
+                "competence_id": "CHE.US.x.ERK.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [
+              "abb1"
+            ],
+            "answer_key": "(a) Bei 0 °C und bei 100 °C bleibt die Temperatur jeweils eine Weile konstant. (b) Bei 0 °C schmilzt das Eis (fest wird flüssig), bei 100 °C siedet das Wasser (flüssig wird gasförmig). (c) Während des Schmelzens und Siedens wird die zugeführte Energie gebraucht, um die Anziehung zwischen den Teilchen zu lockern bzw. zu überwinden und ihre Anordnung zu ändern — nicht, um sie schneller zu machen. Deshalb steigt die Temperatur währenddessen nicht. Erst wenn der Zustandswechsel abgeschlossen ist, erhöht weitere Energie wieder die Temperatur.",
+            "acceptable_reasoning": "Kernidee: An den Haltepunkten fließt die Energie in den Zustandswechsel (Lösen der Anziehung zwischen den Teilchen), nicht in eine höhere Temperatur.",
+            "watch_outs": [
+              "Fehlvorstellung: „Beim Sieden hört das Heizen auf zu wirken.“ Es wird weiter Energie zugeführt — sie steckt im Zustandswechsel, nicht in der Temperatur.",
+              "Die Haltepunkte sind Schmelz- und Siedetemperatur des reinen Stoffs (bei Wasser 0 °C bzw. 100 °C auf Meereshöhe).",
+              "Nicht der Zahlenwert der Temperatur ist entscheidend, sondern der waagrechte Verlauf der Kurve."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "open_response",
+            "prompt": "Beim Wäschetrocknen verschwindet das Wasser aus der nassen Kleidung, obwohl es gar nicht kocht. Lena sagt dazu: „Das Wasser löst sich in Luft auf und hört auf, Wasser zu sein.“ (a) Was an Lenas Aussage stimmt, was nicht? (b) Erkläre mit dem Teilchenmodell, was mit den Wasserteilchen wirklich passiert. (c) Wie könntest du zeigen, dass die Wasserteilchen nicht verschwunden, sondern nur woanders sind?",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 50
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "E"
+            ],
+            "serves": [
+              {
+                "competence_id": "CHE.US.x.ERK.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "asset_refs": [],
+            "answer_key": "(a) Richtig ist: Das Wasser wird in der Luft unsichtbar und geht in den gasförmigen Zustand über (Verdunsten). Falsch ist: Es hört NICHT auf, Wasser zu sein, und es verschwindet nicht — es entstehen keine neuen Stoffe. (b) Einzelne Wasserteilchen an der Oberfläche sind schnell genug, um sich aus dem Flüssigkeitsverband zu lösen und als Wasserdampf zwischen die Luftteilchen zu mischen. Das geschieht auch unter 100 °C (Verdunsten), nur langsamer als beim Sieden; Wärme und Wind beschleunigen es. (c) Zum Beispiel: feuchte Luft an einer kalten Fläche (Spiegel, kalte Flasche) wieder zu Tröpfchen kondensieren lassen — das Wasser „kommt zurück“. Oder: die nasse Wäsche vorher und nachher wiegen — sie wird leichter, weil die Masse als Dampf in die Luft übergegangen ist.",
+            "acceptable_reasoning": "Kern: Verdunsten ist ein Zustandswechsel (flüssig zu gasförmig), keine Vernichtung von Stoff; die Teilchen bleiben Wasserteilchen und sind weiterhin vorhanden, nur verteilt.",
+            "watch_outs": [
+              "Zentrale Fehlvorstellung: Beim Verdunsten „hören die Teilchen auf zu existieren“ oder „werden zu Luft“. Materie geht nicht verloren; Wasserdampf ist weiterhin Wasser.",
+              "Verdunsten (an der Oberfläche, bei jeder Temperatur) und Sieden (im ganzen Volumen, bei Siedetemperatur) werden oft gleichgesetzt — hier reicht schon das Verdunsten.",
+              "„In Luft auflösen“ klingt nach einer Lösung wie Zucker in Wasser; gemeint ist ein Übergang in den gasförmigen Zustand, kein Lösungsvorgang."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "create_produce",
+            "prompt": "Entwirf eine kleine „Teilchen-Bildgeschichte“ in genau drei Feldern, die zeigt, wie aus einem Eiswürfel zuerst flüssiges Wasser und dann Wasserdampf wird. (a) Zeichne in jedes Feld die Teilchen als Kreise so, dass Anordnung und Abstände zum Zustand passen. (b) Schreibe unter jedes Feld einen Satz, der den Zustand benennt und die Teilchen beschreibt. (c) Kennzeichne mit einem Pfeil und einem Stichwort, was zwischen den Feldern zugeführt werden muss.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 70
+            },
+            "cognitive_level": "create",
+            "dimensions": [
+              "W",
+              "E"
+            ],
+            "serves": [
+              {
+                "competence_id": "CHE.US.x.ALL.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Erwartet: Feld 1 (fest/Eis) — Teilchen dicht und regelmäßig angeordnet, berühren sich, schwingen nur auf der Stelle. Feld 2 (flüssig/Wasser) — Teilchen weiterhin dicht, aber unregelmäßig und gegeneinander verschiebbar. Feld 3 (gasförmig/Wasserdampf) — Teilchen weit auseinander, große leere Zwischenräume, schnelle freie Bewegung. Zwischen den Feldern jeweils ein Pfeil mit „Wärme/Energie zuführen“ (Schmelzen bzw. Verdampfen). Die Anzahl der Teilchen bleibt in allen drei Feldern gleich — es kommen keine dazu und keine gehen verloren.",
+            "acceptable_reasoning": "Wichtig sind drei Dinge: gleiche Teilchenzahl in allen Feldern, zunehmende Abstände von fest zu flüssig zu gasförmig, und die Wärmezufuhr als Auslöser des Zustandswechsels.",
+            "watch_outs": [
+              "Häufiger Fehler: im Gas-Feld mehr, weniger oder GRÖSSERE Teilchen zeichnen. Anzahl und Größe der Teilchen bleiben gleich — nur die Abstände wachsen.",
+              "Im flüssigen Zustand sind die Teilchen nicht schon halb so weit auseinander wie im Gas: fest und flüssig haben ähnlich kleine Abstände, das Gas hat mit Abstand die größten Zwischenräume.",
+              "Zwischen den Teilchen ist LEERER Raum — dort keine Luft und keine kleinen Punkte einzeichnen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Teilchenabstände passend zum Zustand",
+                "levels": [
+                  "fest/flüssig dicht, Gas weit — durchgängig korrekt",
+                  "teilweise korrekt",
+                  "Abstände unpassend"
+                ]
+              },
+              {
+                "criterion": "Erhaltung der Teilchen (Anzahl und Größe)",
+                "levels": [
+                  "in allen drei Feldern gleich viele, gleich große Teilchen",
+                  "kleinere Abweichung",
+                  "Anzahl oder Größe verändert"
+                ]
+              },
+              {
+                "criterion": "Zustände benannt und Energiezufuhr gekennzeichnet",
+                "levels": [
+                  "alle drei Zustände benannt, beide Übergänge mit Wärme markiert",
+                  "teilweise",
+                  "fehlt"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
