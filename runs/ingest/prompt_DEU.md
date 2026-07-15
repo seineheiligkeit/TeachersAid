@@ -1,148 +1,78 @@
 # Breiten-Generierung: Deutsch — 2 Kernfragen
 
 Du erzeugst **2 verschiedene** Arbeitsblatt-Inhalte (je eine eigene **Kernfrage**) für die
-**AHS-Oberstufe** auf österreichischem Lehrplan-Niveau. Sprache: **Deutsch**, AHS-Niveau (anspruchsvoll, Sek II).
+**AHS-Unterstufe** auf österreichischem Lehrplan-Niveau. Sprache: **Deutsch**, altersgerecht für die Unterstufe (Sek I, ~10-14 J.) — klar und konkret, aber nie trivial (der Blackboard-Test gilt trotzdem).
 Wähle **2 klar unterschiedliche Themen/Bereiche** (Breite!), nicht Varianten desselben Themas.
+
+## Korpus-Kontext — was es schon gibt
+Für **Deutsch** (Unterstufe) gibt es im Korpus noch **keine** Arbeitsblätter — freie Themenwahl über die Breite des Fachs.
+- (noch keine)
+
+_Abdeckung (Kompetenzbereich-Zellen): 4 grün · 1 teilweise · 7 leer von 12._
 
 ## Kompetenzen (verbatim — `serves.competence_id` MUSS eine dieser IDs sein), gruppiert nach Kompetenzbereich
 
-### Literarische Bildung
-- `DEU.OS.5.LIT.01` (Kl 5) [dims —]: Texte und Kontexte: persönliche Zugänge zu ästhetischen Texten finden und eigene Leseinteressen artikulieren; ästhetische Texte, insbesondere aus der Antike, im historischen und kulturellen Kontext erfassen, Bezüge zur Gegenwart herstellen
-- `DEU.OS.5.LIT.02` (Kl 5) [dims —]: Werkpoetik: Kennzeichen ästhetischer Texte kennenlernen; Merkmale von Textarten und Genres feststellen und als Mittel der Textintention verstehen; Ort, Figuren, Geschehen, Zeit als literarische Grundelemente benennen; Erzählerin bzw. Erzähler und lyrisches Ich in ihrer Funktion erfassen; grundlegende filmsprachliche Mittel erfassen
-- `DEU.OS.5.LIT.03` (Kl 5) [dims —]: Rezeption und Interpretation: den Leseprozess auf dem Hintergrund subjektiven Erlebens reflektieren; Inhalte ästhetischer Texte wiedergeben
-- `DEU.OS.6.LIT.01` (Kl 6) [dims —]: Texte und Kontexte: ästhetische Texte, insbesondere aus dem Mittelalter, dem Humanismus und der Reformation, im historischen und kulturellen Kontext erfassen, Bezüge zur Gegenwart herstellen; historische Sprachentwicklung kennen (SR); Sprachwandel im Zusammenhang mit gesellschaftlichem Wandel verstehen (SR)
-- `DEU.OS.6.LIT.02` (Kl 6) [dims —]: Werkpoetik: Themen, Stoffe, Motive, Symbole, Mythen erkennen; sprachliche Verfahren in ästhetischen Texten aufzeigen; sprachliche Strategien in der Kommunikation reflektieren (SR); Formen und Wandel literarischer Sprache erkennen und beschreiben (SR)
-- `DEU.OS.6.LIT.03` (Kl 6) [dims —]: Rezeption und Interpretation: Textbeschreibung und Kontexte als Basis für Interpretationsversuche nutzen; Besonderheiten literarischer Sprache und ihre Verbindung zur Alltagssprache der jeweiligen Zeit erkennen (SR); sprachliche Besonderheiten ästhetischer Texte im Unterschied zu nicht-literarischen Texten analysieren können (SR)
-- `DEU.OS.6.LIT.04` (Kl 6) [dims —]: Texte und Kontexte: ästhetische Texte, insbesondere des Barock und der Aufklärung, im historischen und kulturellen Kontext erfassen, Bezüge zur Gegenwart herstellen; historische Sprachentwicklung: Sprachwandel im Zusammenhang mit gesellschaftlichem Wandel erkennen (SR); Kennzeichen ästhetischer Texte erarbeiten können; Merkmale ästhetischer Sprache erkennen (SR)
-- `DEU.OS.6.LIT.05` (Kl 6) [dims —]: Werkpoetik: Themen, Stoffe, Motive, Symbole, Mythen erkennen
-- `DEU.OS.6.LIT.06` (Kl 6) [dims —]: Rezeption und Interpretation: Textbeschreibung und Textanalyse in kultureller und sprachlicher Hinsicht als Basis für Interpretationen nutzen können; Formen und Wandel literarischer Sprache erkennen und beschreiben (SR)
-- `DEU.OS.7.LIT.01` (Kl 7) [dims —]: Texte und Kontexte: ästhetische Texte im historischen, kulturellen und biographischen Kontext erfassen; deutschsprachige Literatur, insbesondere der Weimarer Klassik, der Romantik, des Biedermeier und des Vormärz, anhand ausgewählter Beispiele kennen und sie im Kontext der Weltliteratur sehen
-- `DEU.OS.7.LIT.02` (Kl 7) [dims —]: Werkpoetik: Themen, Stoffe, Motive, Symbole, Mythen erkennen; das Spannungsfeld von Leserinnen und Lesern, Schriftstellerinnen und Schriftstellern, Markt, Gesellschaft und Politik erschließen; Beziehungen zwischen ästhetischer Welt und Realität problematisieren; Bezüge zwischen Form und Inhalt herstellen
-- `DEU.OS.7.LIT.03` (Kl 7) [dims —]: Rezeption und Interpretation: unterschiedliche Ansätze der Textanalyse erproben; Formen und Wandel literarischer Sprache erkennen und beschreiben (SR)
-- `DEU.OS.7.LIT.04` (Kl 7) [dims —]: Texte und Kontexte: ästhetische Texte im historischen, kulturellen, biographischen und psychologischen Kontext erfassen; deutschsprachige Literatur, insbesondere des Realismus, des Naturalismus und des Expressionismus, kennen und sie im Kontext der Weltliteratur sehen; österreichische Literatur der Wiener Moderne anhand ausgewählter Beispiele kennen; interkulturelle Bezüge (Vielvölkerstaat) kennenlernen; Beispiele künstlerischer Filme kennen (auch Literaturverfilmungen); Merkmale ästhetischer Sprache erkennen (SR)
-- `DEU.OS.7.LIT.05` (Kl 7) [dims —]: Werkpoetik: Themen, Stoffe, Motive, Symbole, Mythen in ihrer Aktualität erkennen; Literatur als Abbild der gesellschaftlichen Entwicklung erkennen; Bezüge zwischen Form und Inhalt herstellen; neue Formen der Epik, Lyrik und Dramatik als neue Formen des Weltverständnisses verstehen; Beziehungen zwischen ästhetischer Welt und Realität problematisieren; Sprachwandel im Zusammenhang mit gesellschaftlichem Wandel erkennen (SR); Sprache, Sprachreflexion und Erzählen als Thema der Literatur verstehen; den Zusammenhang zwischen Sprache und Denken reflektieren (SR)
-- `DEU.OS.7.LIT.06` (Kl 7) [dims —]: Rezeption und Interpretation: unterschiedliche Ansätze der Textanalyse anwenden; Interpretationen auf Basis von Textbeschreibung, Kontexten und Sekundärliteratur vornehmen; Formen und Wandel literarischer Sprache erkennen und beschreiben (SR); sprachliche Varietäten erkennen (SR)
-- `DEU.OS.8.LIT.01` (Kl 8) [dims —]: Texte und Kontexte: ästhetische Texte, insbesondere der experimentellen Literatur, der Literatur der Zwischenkriegszeit und des Exils, im historischen und kulturellen Kontext erfassen; deutschsprachige, insbesondere österreichische Literatur vom 2. Weltkrieg bis zur Gegenwart anhand ausgewählter Beispiele kennen und sie im Kontext der Weltliteratur sehen; Kennzeichen ästhetischer Texte erarbeiten können; Merkmale ästhetischer Sprache erkennen (SR)
-- `DEU.OS.8.LIT.02` (Kl 8) [dims —]: Werkpoetik: Themen, Stoffe, Motive, Symbole, Mythen in ihrer Aktualität erkennen; Wechselwirkungen literarischer und filmischer Erzählweisen deuten; unterschiedliche Wirkungen verbaler, visueller, akustischer Ausdrucksmöglichkeiten erfassen; neue Formen der Epik, Lyrik und Dramatik als neue Formen des Weltverständnisses verstehen; Sprachwandel im Zusammenhang mit gesellschaftlichen Wandel erkennen (SR); literarische Sprache, ihre Formen, ihren Wandel, ihre Besonderheiten und Verbindungen zur Alltagssprache beachten
-- `DEU.OS.8.LIT.03` (Kl 8) [dims —]: Rezeption und Interpretation: verstehen, auf welche Weise Texten Bedeutung zugeschrieben wird: über unterschiedliche Ansätze der Textinterpretation verfügen; grammatisch-stilistische Erscheinungen und semantische Beziehungen beschreiben können (SR)
+### Lesen
+- `DEU.US.1.LES.01` (Kl 1) [dims LES]: sinnerfassend, mit zunehmender Leseflüssigkeit und unter Anwendung geeigneter Lesestrategien lesen und vorlesen, Inhalte entnehmen und darüber kommunizieren
+- `DEU.US.1.LES.02` (Kl 1) [dims LES]: subjektive und kreative Zugänge zu literarischen Werken in unterschiedlichen künstlerischen Erscheinungsformen (ua. Buch, Film, Theater) finden und zur Anschlusskommunikation nutzen
+- `DEU.US.1.LES.03` (Kl 1) [dims LES]: die Art der Aufbereitung von Beiträgen in unterschiedlichen Mediensystemen erkennen und darüber sprechen.
+- `DEU.US.2.LES.01` (Kl 2) [dims LES]: Schülerinnen und Schüler können sinnerfassend und mit gesteigerter Leseflüssigkeit unterschiedliche Texte und Textformate lesen und vorlesen, dabei mittels Lesestrategien Informationen erschließen und aufbereiten; die gestalterischen und inhaltlichen Besonderheiten literarischer Texte und Medienformate (ua. Buch, Film, Theater) erkennen, erschließen und über ihre subjektiven Lesarten mit anderen sprechen Beiträge aus unterschiedlichen medialen Quellen recherchieren, ihre Wirkung erkennen und differenzieren , mit Internetquellen sorgsam und dem Datenschutz gemäß umgehen.
+- `DEU.US.2.LES.02` (Kl 2) [dims LES]: sinnerfassend und mit gesteigerter Leseflüssigkeit unterschiedliche Texte und Textformate lesen und vorlesen, dabei mittels Lesestrategien Informationen erschließen und aufbereiten;
+- `DEU.US.2.LES.03` (Kl 2) [dims LES]: die gestalterischen und inhaltlichen Besonderheiten literarischer Texte und Medienformate (ua. Buch, Film, Theater) erkennen, erschließen und über ihre subjektiven Lesarten mit anderen sprechen
+- `DEU.US.2.LES.04` (Kl 2) [dims LES]: Beiträge aus unterschiedlichen medialen Quellen recherchieren, ihre Wirkung erkennen und differenzieren , mit Internetquellen sorgsam und dem Datenschutz gemäß umgehen.
+- `DEU.US.3.LES.01` (Kl 3) [dims LES]: wesentliche Informationen durch bewussten Einsatz geeigneter Strategien aus unterschiedlichen Texten und Textformaten entnehmen, strukturieren und mit eigenem Wissen verknüpfen
+- `DEU.US.3.LES.02` (Kl 3) [dims LES]: eigene Leseinteressen vertiefen, literarische Gattungen unterscheiden, literarästhetische Produkte verstehen und im Hinblick auf die eigene Lebens- und Erfahrungswelt reflektieren
+- `DEU.US.3.LES.03` (Kl 3) [dims LES]: Texte mit Hilfe szenischer Mittel vortragen und darstellen
+- `DEU.US.3.LES.04` (Kl 3) [dims LES]: Absichten und Ziele in der Gestaltung von medialen Beiträgen erkennen und einschätzen, Informationssysteme gezielt nutzen und mit digitalen Kommunikationsmedien und Gemeinschaftsforen kritisch umgehen.
+- `DEU.US.4.LES.01` (Kl 4) [dims LES]: pragmatische und literarische Texte und Medien in unterschiedlichen Darbietungsformen rezipieren, deren Inhalt, Form und Sprache erschließen und ihre Entstehungszusammenhänge erfassen
+- `DEU.US.4.LES.02` (Kl 4) [dims LES]: eigene Leseinteressen vertiefen, eine dynamische und vielfältige Lesebiografie entwickeln und sich differenziert mit anderen darüber austauschen
+- `DEU.US.4.LES.03` (Kl 4) [dims LES]: Texte mit Hilfe szenischer Mittel vortragen, darstellen und mit anderen künstlerischen Ausdrucksformen vergleichen
+- `DEU.US.4.LES.04` (Kl 4) [dims LES]: die Aufbereitung und Gestaltung von Themen und Inhalten medialer Beiträge erkennen und vergleichen und dabei Informationssysteme differenziert und kritisch nutzen.
 
-### Mediale Bildung
-- `DEU.OS.5.MED.01` (Kl 5) [dims —]: Mediennutzungskompetenz: Wissen aus Medien erfassen; relevante Informationen aus verschiedenen Medienformaten entnehmen; Fertigkeiten des Informationslesens in den digitalen Medien anwenden können: Querlesen, Parallellesen, Hypertextlesen
-- `DEU.OS.5.MED.02` (Kl 5) [dims —]: Medienkulturkompetenz: unterschiedliche Medienproduktionsformen (Buch und andere Printmedien, Film, Fernsehen, Video, Rundfunk, digitale Medien) kennen und in ihrer Funktion und Wirkung unterscheiden
-- `DEU.OS.6.MED.01` (Kl 6) [dims —]: Mediennutzungskompetenz: neue Medienformate rezeptiv und produktiv nützen; Informationen aus komplexen Datenmengen sichten, beurteilen und auswählen
-- `DEU.OS.6.MED.02` (Kl 6) [dims —]: Medienkulturkompetenz: Grundkenntnisse über die Entwicklung der Medien erwerben; sprachliche und mediale Kommunikationsmittel verantwortungsbewusst einsetzen
-- `DEU.OS.6.MED.03` (Kl 6) [dims —]: Mediennutzungskompetenz: Informationen aus komplexen Datenmengen strukturieren; Informationsquellen überprüfen und kritisch würdigen
-- `DEU.OS.6.MED.04` (Kl 6) [dims —]: Medienkulturkompetenz: Grundkenntnisse über die Entwicklung der Medien erwerben
-- `DEU.OS.7.MED.01` (Kl 7) [dims —]: Mediennutzungskompetenz: Informationen aus komplexen Datenmengen erfassen
-- `DEU.OS.7.MED.02` (Kl 7) [dims —]: Medienkulturkompetenz: Organisationsstrukturen und wechselseitige Durchdringung unterschiedlicher Medienproduktionsformen erfassen; Interessen und Absichten hinter (multi-) medialen Texten und Produkten analysieren und bewerten sowie manipulative Zielsetzungen erkennen
-- `DEU.OS.7.MED.03` (Kl 7) [dims —]: Mediennutzungskompetenz: Medien zur Kommunikation nützen und als Basis transkultureller Kontakte fördern
-- `DEU.OS.7.MED.04` (Kl 7) [dims —]: Medienkulturkompetenz: gesellschaftliche Auswirkungen der Medien erkennen und ihre lebensgestaltenden Funktionen reflektieren
-- `DEU.OS.8.MED.01` (Kl 8) [dims —]: Mediennutzungskompetenz: über Entscheidungskompetenz verfügen; Informationsquellen überprüfen und kritisch würdigen
-- `DEU.OS.8.MED.02` (Kl 8) [dims —]: Medienkulturkompetenz: Mediensprachen als semiotische Systeme verstehen
-- `DEU.OS.8.MED.03` (Kl 8) [dims —]: Medienkulturkompetenz: künstlerische Ausdrucksformen in allen Medien rezipieren, vergleichen und zueinander in Beziehung setzen
+### Schreiben
+- `DEU.US.1.SCH.01` (Kl 1) [dims SCH]: Erlebnisse, Erfahrungen und Gedanken verschriftlichen sowie persönliche Beziehungen und Absichten ausdrücken , auch in kreativer Form
+- `DEU.US.1.SCH.02` (Kl 1) [dims SCH]: schriftlich informieren und darstellen
+- `DEU.US.1.SCH.03` (Kl 1) [dims SCH]: Textverarbeitungsprogramme zur digitalen Textproduktion einsetzen.
+- `DEU.US.2.SCH.01` (Kl 2) [dims SCH]: Schreiben zur Gestaltung von persönlichen Beziehungen, als Mittel der Strukturierung von Gedanken und Inhalten sowie als kreative Ausdrucksform nutzen
+- `DEU.US.2.SCH.02` (Kl 2) [dims SCH]: schriftlich informieren und darstellen, auch auf materialgestützter Basis
+- `DEU.US.2.SCH.03` (Kl 2) [dims SCH]: einfache Argumente schriftlich formulieren und auf Aussagen anderer sprachlich und inhaltlich angemessen reagieren
+- `DEU.US.2.SCH.04` (Kl 2) [dims SCH]: mit Hilfe von Textverarbeitungsprogrammen Texte gestalten und optimieren , zwischen Möglichkeiten und Anforderungen manuellen und computergestützten Schreibens unterscheiden.
+- `DEU.US.3.SCH.01` (Kl 3) [dims SCH]: aus unterschiedlichen Perspektiven anhand konkreter Vorgaben erzählen und Sprache bewusst als gestaltend-kreatives Element einsetzen
+- `DEU.US.3.SCH.02` (Kl 3) [dims SCH]: schriftlich informieren und argumentieren, auch auf materialgestützter Basis
+- `DEU.US.3.SCH.03` (Kl 3) [dims SCH]: mit Hilfe von Textverarbeitungsprogrammen und Formatvorgaben multimediale Texte gestalten und optimieren.
+- `DEU.US.4.SCH.01` (Kl 4) [dims SCH]: unterschiedliche Impulse und Vorlagen für eigene pragmatische und kreative Schreibprozesse nutzen
+- `DEU.US.4.SCH.02` (Kl 4) [dims SCH]: zu strittigen Sachverhalten, unter Einbeziehung differenzierter Quellen, argumentierend schreiben und auf Gegenargumente eingehen
+- `DEU.US.4.SCH.03` (Kl 4) [dims SCH]: Textverarbeitungsprogramme zur Gestaltung umfangreicherer multimedialer Texte, auch im Team, nutzen
+- `DEU.US.4.SCH.04` (Kl 4) [dims SCH]: Bedeutungswandel der Schrift und des Schreibens in analogen, digitalen und multimodalen Settings reflektieren.
 
-### Mündliche Kompetenz
-- `DEU.OS.5.MUN.01` (Kl 5) [dims —]: Hörverständnis: monologischen und dialogischen Redebeiträgen folgen können, dabei Inhalts- und Beziehungsebene unterscheiden
-- `DEU.OS.5.MUN.02` (Kl 5) [dims —]: Sprechsituationen und Sprechanlässe: an verschiedenen Kommunikationssituationen teilnehmen; auf die Angemessenheit des sprachlichen Ausdrucks achten; Mittel der Gedächtnisunterstützung anwenden; Präsentationsformen kennenlernen und anwenden
-- `DEU.OS.5.MUN.03` (Kl 5) [dims —]: Kommunikatives Verhalten: Faktoren kommunikativer Prozesse verstehen und aktiv mitgestalten; Rollen innerhalb verschiedener Kommunikationsprozesse erkennen und anwenden; Anlass und Intention beachten
-- `DEU.OS.6.MUN.01` (Kl 6) [dims —]: Hörverständnis: Gesprächen folgen; öffentlichen Sprachgebrauch analysieren und kritisch kommentieren (SR)
-- `DEU.OS.6.MUN.02` (Kl 6) [dims —]: Sprechsituationen und Sprechanlässe: in verschiedenen Kommunikationssituationen vorbereitet sprechen; auf die Angemessenheit des sprachlichen Ausdrucks achten; verantwortungsbewussten Umgang mit eigenen sprachlichen Äußerungen erlernen (SR); Einfachheit, Gliederung, Prägnanz und anregende Zusätze beachten; Rollen innerhalb des Kommunikationsprozesses erkennen und beschreiben; sprachliche Strategien in der Kommunikation reflektieren (SR)
-- `DEU.OS.6.MUN.03` (Kl 6) [dims —]: Kommunikatives Verhalten: Faktoren kommunikativer Prozesse verstehen und aktiv mitgestalten: Redeumgebung erkennen; die sprachliche Herkunft von Gesprächsteilnehmern und Gesprächsteilnehmerinnen und deren unterschiedliche kulturelle Kontexte beachten
-- `DEU.OS.6.MUN.04` (Kl 6) [dims —]: Hörverständnis: Gesprächen folgen und in sie situationsangepasst eingreifen
-- `DEU.OS.6.MUN.05` (Kl 6) [dims —]: Sprechsituationen und Sprechanlässe: in verschiedenen Kommunikationssituationen unvorbereitet sprechen; auf die Angemessenheit des sprachlichen Ausdrucks achten; Einfachheit, Gliederung, Prägnanz und anregende Zusätze beachten; Rollen innerhalb des Kommunikationsprozesses bewusst einnehmen; sprachliche Strategien in der persönlichen Kommunikation reflektieren (SR); verantwortungsbewussten Umgang mit eigenen sprachlichen Äußerungen erlernen (SR)
-- `DEU.OS.6.MUN.06` (Kl 6) [dims —]: Kommunikatives Verhalten: sich mit innerer und äußerer Mehrsprachigkeit auseinandersetzen (SR); Faktoren kommunikativer Prozesse verstehen und aktiv mitgestalten: Thema und Inhalt eines Gespräches festlegen und erfassen, symmetrische und asymmetrische Gesprächssituationen erfassen
-- `DEU.OS.7.MUN.01` (Kl 7) [dims —]: Hörverständnis: medial vermittelter mündlicher Kommunikation folgen: das Wesentliche erfassen, aktiv zuhören
-- `DEU.OS.7.MUN.02` (Kl 7) [dims —]: Sprechsituationen und Sprechanlässe: in freien und formalisierten Situationen vorbereitet und spontan sprechen; nichtsprachliche Mittel und Techniken des Sprechens erkennen und nützen; Mittel der Rhetorik erkennen und einsetzen
-- `DEU.OS.7.MUN.03` (Kl 7) [dims —]: Sprechsituationen und Sprechanlässe: Präsentationstechniken – allein und im Team zielorientiert einsetzen; frei vortragen
-- `DEU.OS.7.MUN.04` (Kl 7) [dims —]: Kommunikatives Verhalten: Redeumgebung nützen; Kontextbezogenheit erkennen; Auswirkungen grammatisch-stilistischer Erscheinungen und semantischer Beziehungen nachvollziehen (SR); Fragen stellen und Feedback geben und annehmen können
-- `DEU.OS.8.MUN.01` (Kl 8) [dims —]: Sprechsituationen und Sprechanlässe: verschiedene sprachliche Register einschließlich der – österreichischen – Standardsprache beherrschen
-- `DEU.OS.8.MUN.02` (Kl 8) [dims —]: Kommunikatives Verhalten: Metakommunikation über geglücktes bzw. missglücktes Kommunikationsverhalten führen
-- `DEU.OS.8.MUN.03` (Kl 8) [dims —]: Sprechsituationen und Sprechanlässe: Kommunikationsorganisation wahrnehmen – mit besonderer Berücksichtigung von Präsentationsformen
-- `DEU.OS.8.MUN.04` (Kl 8) [dims —]: Kommunikatives Verhalten: Bedingungen reflektieren, um sie kreativ mitgestalten zu können: Mediengerechtes Verhalten einschätzen und einnehmen
-
-### Schriftliche Kompetenz
-- `DEU.OS.5.SCH.01` (Kl 5) [dims —]: Schreibhaltungen und Textsorten: unterschiedliche Schreibhaltungen entwickeln; Textsorten aus dem privaten, öffentlichen, journalistischen Leben verfassen, insbesondere Zusammenfassung, Leserbrief, Erörterung
-- `DEU.OS.5.SCH.02` (Kl 5) [dims —]: Schreiben für sich: durch spielerisch-schöpferisches, kreatives Schreiben die eigene Identität entwickeln; Schreiben als Instrument der Wissensaneignung einsetzen; lernprozessunterstützende Textsorten verfassen, auch über Wege der digitalen Medien
-- `DEU.OS.5.SCH.03` (Kl 5) [dims —]: Schreiben für andere: unterschiedliche situative Kontexte beachten: Voraussetzungen und Erwartungen von Leserinnen und Lesern berücksichtigen, um verständlich zu schreiben, um zu überzeugen und zu unterhalten
-- `DEU.OS.5.SCH.04` (Kl 5) [dims —]: Schreibprozess
-- `DEU.OS.5.SCH.05` (Kl 5) [dims —]: Planen: verschiedene Techniken der Ideensammlung kennen und gezielt anwenden; Textaufbau erarbeiten; Zeit einteilen
-- `DEU.OS.5.SCH.06` (Kl 5) [dims —]: Formulieren: ein der Kommunikationssituation entsprechendes Format wählen und angemessene Sprach- und Schreibnormen einhalten
-- `DEU.OS.5.SCH.07` (Kl 5) [dims —]: Überarbeiten: eigene Texte optimieren und dabei Schreibhaltung, Textsorte, Lesererwartungen, Verständlichkeit, Sprachrichtigkeit und Schreibrichtigkeit berücksichtigen
-- `DEU.OS.5.SCH.08` (Kl 5) [dims —]: Rechtschreiben: eigene Rechtschreibschwächen erkennen und abbauen
-- `DEU.OS.6.SCH.01` (Kl 6) [dims —]: Schreibhaltungen und Textsorten: verschiedene Schreibhaltungen beherrschen; Textsorten aus dem öffentlichen und journalistischen Leben verfassen, insbesondere Zusammenfassung, Erörterung, Kommentar
-- `DEU.OS.6.SCH.02` (Kl 6) [dims —]: Schreiben für sich: Schreiben als Instrument der Wissensaneignung einsetzen; lernprozessunterstützende Texte verfassen, auch über Wege der digitalen Medien
-- `DEU.OS.6.SCH.03` (Kl 6) [dims —]: Schreiben für andere: unterschiedliche situative Kontexte beachten: Voraussetzungen und Erwartungen von Leserinnen und Lesern berücksichtigen, um verständlich zu schreiben, um zu überzeugen und zu unterhalten; Texte auf die eigene Schreibabsicht hin ausrichten; rhetorische Mittel verwenden
-- `DEU.OS.6.SCH.04` (Kl 6) [dims —]: Schreibprozess
-- `DEU.OS.6.SCH.05` (Kl 6) [dims —]: Planen: verschiedene Techniken der Ideensammlung kennen und gezielt anwenden; Textaufbau erarbeiten
-- `DEU.OS.6.SCH.06` (Kl 6) [dims —]: Formulieren: ein dem Text entsprechendes, der Schreibabsicht angemessenes Format wählen und Sprach- und Schreibnormen einhalten
-- `DEU.OS.6.SCH.07` (Kl 6) [dims —]: Überarbeiten: eigene Texte optimieren und dabei Schreibhaltung; Textsorte, Lesererwartungen, Verständlichkeit, Sprachrichtigkeit und Schreibrichtigkeit berücksichtigen
-- `DEU.OS.6.SCH.08` (Kl 6) [dims —]: Rechtschreiben: eigene Rechtschreibschwächen erkennen und abbauen
-- `DEU.OS.6.SCH.09` (Kl 6) [dims —]: Schreibhaltungen und Textsorten: verschiedene Schreibhaltungen beherrschen; Textsorten aus dem privaten, öffentlichen Leben verfassen, insbesondere offener Brief, Empfehlung
-- `DEU.OS.6.SCH.10` (Kl 6) [dims —]: Schreiben für sich: durch spielerisch-schöpferisches, kreatives Schreiben die eigene Identität entwickeln; Schreiben als Instrument der Wissensaneignung einsetzen; lernprozessunterstützende Texte verfassen, auch über Interaktionswege der digitalen Medien
-- `DEU.OS.6.SCH.11` (Kl 6) [dims —]: Schreiben für andere: unterschiedliche situative Kontexte beachten: Voraussetzungen und Erwartungen von Leserinnen und Lesern berücksichtigen, um verständlich zu schreiben, um zu überzeugen und zu unterhalten; Texte auf die eigene Schreibabsicht hin ausrichten; rhetorische Mittel verwenden
-- `DEU.OS.6.SCH.12` (Kl 6) [dims —]: Schreibprozess
-- `DEU.OS.6.SCH.13` (Kl 6) [dims —]: Planen: verschiedene Techniken der Ideensammlung kennen und gezielt anwenden; Textaufbau erarbeiten
-- `DEU.OS.6.SCH.14` (Kl 6) [dims —]: Formulieren: ein dem Text entsprechendes, der Schreibabsicht angemessenes Format wählen und Sprach- und Schreibnormen einhalten
-- `DEU.OS.6.SCH.15` (Kl 6) [dims —]: Überarbeiten: eigene Texte optimieren und dabei Schreibhaltung, Textsorte, Lesererwartungen, Verständlichkeit, Sprachrichtigkeit und Schreibrichtigkeit berücksichtigen
-- `DEU.OS.6.SCH.16` (Kl 6) [dims —]: Rechtschreiben: eigene Rechtschreibschwächen erkennen und abbauen
-- `DEU.OS.7.SCH.01` (Kl 7) [dims —]: Schreibhaltungen und Textsorten: Schreibhaltungen weiterentwickeln; Textsorten aus dem beruflichen und wissenschaftlichen Leben verfassen, insbesondere Meinungsrede, Textanalyse
-- `DEU.OS.7.SCH.02` (Kl 7) [dims —]: Schreiben für sich: poetisches Schreiben in engem Zusammenhang mit Lesen von und Umgang mit literarischen Texten erproben; Schreiben als Instrument der Erkenntnisgewinnung einsetzen; eigene und fremde Lernprozesse dokumentieren; Verantwortung für den eigenen Lernprozess mit Hilfe geeigneter Schreibformen (zB Mitschrift, Portfolio, Internetdossier) übernehmen
-- `DEU.OS.7.SCH.03` (Kl 7) [dims —]: Schreiben für andere: Texte entsprechend der jeweiligen Kommunikationssituation, Absicht und Textsorte gestalten und stilistische Mittel gezielt einsetzen; zu sprachkritischen Diskursen (zB feministische Sprachkritik, politisch korrekte Sprache) Stellung nehmen (SR)
-- `DEU.OS.7.SCH.04` (Kl 7) [dims —]: Schreibprozess
-- `DEU.OS.7.SCH.05` (Kl 7) [dims —]: Planen: Gedanken strukturieren
-- `DEU.OS.7.SCH.06` (Kl 7) [dims —]: Formulieren: Sprachebene und Ausdruck an der Situation, an den Adressatinnen und Adressaten, am Thema, an Schreibhaltung und Textsorte und an Sprach- und Schreibnormen orientieren
-- `DEU.OS.7.SCH.07` (Kl 7) [dims —]: Überarbeiten: eigene und fremde Texte optimieren und dabei Schreibhaltung, Textsorte, Stil, Lesererwartungen, Verständlichkeit, Sprachrichtigkeit und Schreibrichtigkeit berücksichtigen
-- `DEU.OS.7.SCH.08` (Kl 7) [dims —]: Rechtschreiben: bei orthografischen Problemen zielführende Lösungen finden; Einblicke in den Wandel der Schreibnormen gewinnen
-- `DEU.OS.7.SCH.09` (Kl 7) [dims —]: Schreibhaltungen und Textsorten: Schreibhaltungen weiterentwickeln; Textsorten aus dem literarisch-kulturellen Leben verfassen, insbesondere Textinterpretation
-- `DEU.OS.7.SCH.10` (Kl 7) [dims —]: Schreiben für sich: poetisches Schreiben in engem Zusammenhang mit Lesen von und Umgang mit literarischen Texten erproben; Schreiben als Instrument der Erkenntnisgewinnung einsetzen; eigene und fremde Lernprozesse dokumentieren; Verantwortung für den eigenen Lernprozess mit Hilfe geeigneter Schreibformen (zB Mitschrift, Portfolio, Internetdossier) übernehmen
-- `DEU.OS.7.SCH.11` (Kl 7) [dims —]: Schreiben für andere: Texte entsprechend der jeweiligen Kommunikationssituation, Absicht und Textsorte gestalten und stilistische Mittel gezielt einsetzen
-- `DEU.OS.7.SCH.12` (Kl 7) [dims —]: Schreibprozess
-- `DEU.OS.7.SCH.13` (Kl 7) [dims —]: Planen: Gedanken strukturieren
-- `DEU.OS.7.SCH.14` (Kl 7) [dims —]: Formulieren: Sprachebene und Ausdruck an der Situation, an den Adressatinnen und Adressaten, am Thema, an Schreibhaltung und Textsorte und an Sprach- und Schreibnormen orientieren
-- `DEU.OS.7.SCH.15` (Kl 7) [dims —]: Überarbeiten: eigene und fremde Texte optimieren und dabei Schreibhaltung, Textsorte, Stil, Lesererwartungen, Verständlichkeit, Sprachrichtigkeit und Schreibrichtigkeit berücksichtigen
-- `DEU.OS.7.SCH.16` (Kl 7) [dims —]: Rechtschreiben: bei orthografischen Problemen zielführende Lösungen finden; Einblicke in den Wandel der Schreibnormen gewinnen
-- `DEU.OS.8.SCH.01` (Kl 8) [dims —]: Schreibhaltungen und Textsorten: Textsorten aus dem beruflichen, wissenschaftlichen und literarisch-kulturellen Leben verfassen
-- `DEU.OS.8.SCH.02` (Kl 8) [dims —]: Schreiben für sich: Schreiben als Instrument der Erkenntnisgewinnung einsetzen; eigene und fremde Lernprozesse dokumentieren
-- `DEU.OS.8.SCH.03` (Kl 8) [dims —]: Schreiben für andere: Texte entsprechend der jeweiligen Kommunikationssituation, Absicht und Textsorte gestalten und stilistische Mittel gezielt einsetzen; die syntaktische, semantische und pragmatische Dimension von sprachlichen Zeichen erfassen (SR); Auswirkungen grammatisch-stilistischer Erscheinungen und semantischer Beziehungen beachten (SR)
-- `DEU.OS.8.SCH.04` (Kl 8) [dims —]: Schreibprozess
-- `DEU.OS.8.SCH.05` (Kl 8) [dims —]: Planen: Gedanken strukturieren
-- `DEU.OS.8.SCH.06` (Kl 8) [dims —]: Formulieren: Sprachverwendung und Ausdruck an der Situation, an den Adressatinnen und Adressaten, am Thema, an Schreibhaltung und Textsorte und an Sprach- und Schreibnormen orientieren; Qualität eigener und fremder Texte beurteilen
-- `DEU.OS.8.SCH.07` (Kl 8) [dims —]: Überarbeiten: eigene und fremde Texte optimieren und dabei Schreibhaltung, Textsorte, Stil, Lesererwartungen, Verständlichkeit, Sprachrichtigkeit und Schreibrichtigkeit berücksichtigen
-- `DEU.OS.8.SCH.08` (Kl 8) [dims —]: Rechtschreiben: bei orthografischen Problemen zielführende Lösungen finden; Einblicke in den Wandel der Schreibnormen gewinnen
-- `DEU.OS.8.SCH.09` (Kl 8) [dims —]: Schreibhaltungen und Textsorten: Schreibhaltungen in Hinblick auf Textsorten optimieren
-- `DEU.OS.8.SCH.10` (Kl 8) [dims —]: Schreiben für andere: Texte entsprechend der jeweiligen Kommunikationssituation, Absicht und Textsorte gestalten und stilistische Mittel gezielt einsetzen
-- `DEU.OS.8.SCH.11` (Kl 8) [dims —]: Schreibprozess: Qualität eigener und fremder Texte beurteilen
-- `DEU.OS.8.SCH.12` (Kl 8) [dims —]: Rechtschreiben: bei orthografischen Problemen zielführende Lösungen finden
-
-### Textkompetenz
-- `DEU.OS.5.TEX.01` (Kl 5) [dims —]: Informationen entnehmen/Textinhalt erfassen: lineare und nichtlineare Texte in unterschiedlichen Medien zu verschiedenen Themen auffinden und sie allgemeinen Problembereichen zuordnen; verschiedene Techniken der Texterfassung beherrschen, Merkmale von Textsorten erkennen; Techniken der raschen und zielgerichteten Informationsentnahme anwenden
-- `DEU.OS.5.TEX.02` (Kl 5) [dims —]: Texte interpretieren/Textsinn verstehen: äußere und innere Gliederung eines Textes erkennen und den gedanklichen Aufbau erfassen; Informationen themenorientiert entnehmen und verknüpfen
-- `DEU.OS.5.TEX.03` (Kl 5) [dims —]: Texte reflektieren und bewerten: den Text mit dem eigenen Wissens- und Erfahrungssystem verknüpfen; wichtige und unwichtige Informationen unterscheiden
-- `DEU.OS.6.TEX.01` (Kl 6) [dims —]: Informationen entnehmen/Textinhalt erfassen: verschiedene Standpunkte zu einem Thema erkennen; Bezüge zwischen Texten, auch medienübergreifend, herstellen
-- `DEU.OS.6.TEX.02` (Kl 6) [dims —]: Texte interpretieren/Textsinn verstehen: Mittel und Wirkungen schriftlicher Texte und verschiedener Text-Bild-Kombinationen vergleichen
-- `DEU.OS.6.TEX.03` (Kl 6) [dims —]: Texte reflektieren und bewerten: die Beziehung von Sprache und außersprachlicher Wirklichkeit als Problem erkennen (SR); Auswirkungen grammatisch-stilistischer Erscheinungen und semantischer Beziehungen nachvollziehen (SR)
-- `DEU.OS.6.TEX.04` (Kl 6) [dims —]: Texte interpretieren/Textsinn verstehen: sprachliche Besonderheiten nicht-literarischer Texte im Unterschied zu ästhetischen Texten erfassen und nachvollziehbar beschreiben können (SR); Intention sowie sach- und medienspezifische, sprachliche, visuelle und auditive Mittel und deren Wirkung erkennen; die syntaktische, semantische und pragmatische Dimension von sprachlichen Zeichen erfassen (SR)
-- `DEU.OS.6.TEX.05` (Kl 6) [dims —]: Texte reflektieren und bewerten: sprachliche Strategien in der Kommunikation reflektieren (SR); subjektive Bedingungen der Textrezeption reflektieren; fremde Weltsichten und Denkmodelle erfassen und empathisch aufnehmen und einer kritischen Betrachtung unterziehen; eigenes Leseinteresse artikulieren und begründen
-- `DEU.OS.7.TEX.01` (Kl 7) [dims —]: Texte interpretieren/Textsinn verstehen: den Einfluss von Entstehungsbedingungen auf die Gestaltung von Texten erkennen; Texte in sprachlicher Hinsicht analysieren, sprachliche Erscheinungen in Texten beschreiben und ihre Funktion erkennen; phonologische, lexikalische, semantische, syntaktische, rhetorische, stilistische Analysen durchführen
-- `DEU.OS.7.TEX.02` (Kl 7) [dims —]: Texte interpretieren/Textsinn verstehen: Wechselwirkung von Form und Inhalt aufzeigen; die syntaktische, semantische und pragmatische Dimension von sprachlichen Zeichen erfassen (SR)
-- `DEU.OS.7.TEX.03` (Kl 7) [dims —]: Texte reflektieren und bewerten: den Einfluss persönlicher Wertvorstellungen auf das Urteil erfassen; nichtlineare und lineare Darstellung von Informationen unterscheiden und bewerten
-- `DEU.OS.8.TEX.01` (Kl 8) [dims —]: Texte interpretieren/Textsinn verstehen: Interpretationen entwickeln (besonders in nichtlinearen Texten Adressat, Intention und Situation analysieren und interpretieren)
-- `DEU.OS.8.TEX.02` (Kl 8) [dims —]: Texte reflektieren und bewerten: durch das Erkennen von Strategien der Beeinflussung politische Mündigkeit erlangen; die Fähigkeit der Perspektivenübernahme und der kritischen Betrachtung von Perspektiven fördern
-- `DEU.OS.8.TEX.03` (Kl 8) [dims —]: Texte reflektieren und bewerten: moralische, ethische Fragen differenziert erfassen
-- `DEU.OS.8.TEX.04` (Kl 8) [dims —]: Literarische Bildung
-- `DEU.OS.8.TEX.05` (Kl 8) [dims —]: Texte und Kontexte: interkulturelle Bezüge (Exil, ethnische Minderheiten, Migration) kennenlernen; Merkmale ästhetischer Sprache erkennen (SR)
-- `DEU.OS.8.TEX.06` (Kl 8) [dims —]: Werkpoetik: Beziehungen zwischen ästhetischer Welt und Realität problematisieren
-- `DEU.OS.8.TEX.07` (Kl 8) [dims —]: Rezeption und Interpretation: Phänomene des Sprachwandels in der Gegenwartssprache reflektieren (SR)
+### Zuhören und Sprechen
+- `DEU.US.1.ZUH.01` (Kl 1) [dims ZUH]: mündliche Texte im direkten Kontakt oder über Medien vermittelt verstehen, erschließen, sichern und wiedergeben
+- `DEU.US.1.ZUH.02` (Kl 1) [dims ZUH]: in vielfältigen standardisierten Sprech- bzw. Gesprächssituationen unter Einsatz verschiedener Sprechhandlungen und sprachlicher Gestaltungsmittel sowie der Verwendung der Standardsprache kommunizieren
+- `DEU.US.1.ZUH.03` (Kl 1) [dims ZUH]: monologisches und dialogisches Sprechen adressaten- und situationsgerecht anwenden.
+- `DEU.US.2.ZUH.01` (Kl 2) [dims ZUH]: Inhalte aus unterschiedlichen medialen Beiträgen erschließen, Absichten und Emotionen wahrnehmen, Wissen sichern, wiedergeben und der Situation angemessen reagieren
+- `DEU.US.2.ZUH.02` (Kl 2) [dims ZUH]: bereits bekannte verbale und nonverbale Mittel variieren, monologische und dialogische Sprechbeiträge planen und ausführen, um adressaten- und situationsgerecht zu kommunizieren
+- `DEU.US.2.ZUH.03` (Kl 2) [dims ZUH]: aus unterschiedlichen Quellen (ua. Bücher, Zeitungen, Zeitschriften, Internet) Informationen einholen, aufbereiten und mündlich präsentieren.
+- `DEU.US.3.ZUH.01` (Kl 3) [dims ZUH]: Inhalte aus multimedialen Beiträgen erschließen und analysieren, dabei Absichten und Emotionen reflektieren und Schlüsse daraus ziehen
+- `DEU.US.3.ZUH.02` (Kl 3) [dims ZUH]: ihr Repertoire verbaler und nonverbaler Mittel unter Einsatz unterschiedlicher sprachlicher Register (Bildungs- und Standardsprache) erweitern und Sprechhandlungen bewusst einsetzen
+- `DEU.US.3.ZUH.03` (Kl 3) [dims ZUH]: aus verschiedenen Quellen gezielt Informationen einholen, thematisch aufbereiten und medial unterstützt mündlich präsentieren sowie diskutieren.
+- `DEU.US.4.ZUH.01` (Kl 4) [dims ZUH]: in unterschiedlichen Beiträgen, im direkten Kontakt oder über Medien vermittelt , Mehrdeutigkeiten und nicht explizit genannte Inhalte erschließen und interpretieren, dabei Absichten und Emotionen reflektieren und situationsbezogen Schlüsse daraus ziehen
+- `DEU.US.4.ZUH.02` (Kl 4) [dims ZUH]: ihr Repertoire verbaler und nonverbaler Mittel erweitern und Sprache unter Verwendung unterschiedlicher sprachlicher Register (Standard- und Bildungssprache) reflektiert und bewusst kreativ einsetzen
+- `DEU.US.4.ZUH.03` (Kl 4) [dims ZUH]: aus bewusst gewählten Quellen Informationen gezielt herausfiltern, thematisch aufbereiten und unter Anwendung entsprechender Visualisierungsmethoden mündlich präsentieren.
 
 ## Erlaubte Dimensionen (`dimensions`, primäre zuerst — Teilmenge dieser Codes)
-- `MK` — Mündliche Kompetenz
-- `SK` — Schriftliche Kompetenz
-- `TK` — Textkompetenz
-- `LB` — Literarische Bildung
-- `MB` — Mediale Bildung
+- `SPR` — Sprachbewusstsein und Sprachreflexion
+- `ZUH` — Zuhören und Sprechen
+- `LES` — Lesen
+- `SCH` — Schreiben
 
 ## Erlaubte Aufgaben-`kind`-Werte
-create_produce, data_interpretation, decision_scenario, eroerterung, interpretation, kommentar, matching, multiple_choice, open_response, ordering, puzzle, table_fill, textanalyse, true_false_justify, zusammenfassung
+create_produce, data_interpretation, decision_scenario, matching, multiple_choice, open_response, ordering, puzzle, speaking_task, table_fill, text_analysis, text_production, true_false_justify
+
+## Anwendungsbereiche (Themen-Ideen für die Kernfragen)
+- Kl 1: Festigung von Rechtschreibfertigkeiten, die am Ende der 4. Schulstufe erworben sein sollen, auch unter Nutzung von Rechtschreibhilfen in analoger (Wörterbuch) und digitaler Form · Basisfertigkeiten im Bereich von Wort-, Satz- und Textgrammatik · Reflexion über die Verwendung von Sprache (Pragmatik/Semantik; Mündlichkeit/Schriftlichkeit; Dialekt, Umgangs-, Standardsprache; Varietäten des Deutschen; Mehrsprachigkeit, Sprachvergleiche). · Strategien des Zuhörens und der Gesprächsführung · Wiedergabe von analogen und digitalen Texten (ua. literarische und pragmatische Texte, Filme, Hörbücher, Podcasts, Blogs) · Angeleitete Partner- und Gruppengespräche · Einfache Formen der Argumentation. · Übungen zur Förderung von Lesefertigkeiten, Vorlesen vorbereiteter Texte
+- Kl 2: Einsatz von Methoden zur Fehlerkorrektur und Identifizierung individueller Fehlerschwerpunkte (Anwendung von Rechtschreibstrategien) · Differenzierte Fertigkeiten im Bereich von Wort-, Satz- und Textgrammatik unter Berücksichtigung ihrer stilistischen Auswirkungen · Kennzeichen mündlicher, schriftlich-textueller und multimodaler Kommunikation (auch im Kontext von Mehrsprachigkeit). · Partner- und Gruppengespräche sowie Moderation einfacher Gespräche unter Berücksichtigung der kommunikativen Grundregeln · Einfache Formen der Argumentation · Unterschiedliche Präsentationsformen. · Übungen zur Förderung von Lesefertigkeiten, auch unter Einsatz digitaler Lernhilfen · Auseinandersetzung mit literarischen und pragmatischen Texten unterschiedlicher Gattungen und Darstellungsformen (auch zu übergreifenden Themen)
+- Kl 3: Einsichten in Rechtschreibung und Grammatik hinsichtlich Gebrauch und Funktion; · Ausdifferenzierte Verwendung von Textorganisatoren · Kennzeichen und Wirkungsweisen unterschiedlicher Sprachvarianten (im Kontext von innerer und äußerer Mehrsprachigkeit), Analyse sprachlicher Diskurse. · Angeleitete Analyse, Reflexion und Präsentation von analogen, digitalen und multimedialen Texten · Selbstständig geführte Partner- und Gruppengespräche, auch im Hinblick auf die eigene Berufsbildung · Argumentation aus verschiedenen Rollen und Perspektiven. · Übungen zum vortragenden und szenischen Lesen · Reflexion literarischer und pragmatischer, linearer und nichtlinearer Texte (auch zu übergreifenden Themen)
+- Kl 4: Vertieftes Verständnis von sprachlichen Strukturen und Regeln (Variation und Vergleich) · Auseinandersetzung mit Soziolekten, Dialekten, Fachsprachen, Idiolekten und deren Abweichungen von der Standardsprache · Einsicht in die Sprachverwendung im Kontext von Mehrsprachigkeit. · Eigenständige Reflexion, Interpretation und Präsentation von analogen, digitalen und multimedialen Texten · Kollegial-wertschätzende Feedbackkultur in allen Gesprächsformen · Zunehmend selbstständige Appelle, Argumentationen und Diskussionen in verschiedenen Sozialformen · Vergleich, Analyse und Interpretation der ästhetischen Gestaltung und stilistischen Ausdrucksformen literarischer Texte · Vergleich, Analyse und Reflexion komplexerer analoger und digitaler pragmatischer Texte (auch zu übergreifenden Themen)
 ## Verankerung
 Jede Kernfrage gehört zu **einem** Kompetenzbereich; setze im JSON `"kompetenzbereich": "<exakter KB-Name>"` und die passende `klasse` (eine Klasse, in der dieser KB Kompetenzen hat). Alle Aufgaben dieser Kernfrage dienen Kompetenzen aus diesem (KB, Klasse).
 
@@ -226,12 +156,12 @@ true_false_justify `{"kind":"true_false_justify","statements":[...]}` · orderin
 matching `{"kind":"matching","left":[...],"right":[...]}` · decision_scenario `{"kind":"decision_scenario","stem":"..."}`
 
 ## Ausgabe
-Schreibe **2 Dateien**, eine pro Kernfrage, nach `runs/ingest/gen_os_2/DEU_1.json` … `runs/ingest/gen_os_2/DEU_2.json`.
+Schreibe **2 Dateien**, eine pro Kernfrage, nach `runs/ingest/gen_us_2/DEU_1.json` … `runs/ingest/gen_us_2/DEU_2.json`.
 Jede Datei ist **ausschließlich** dieses JSON (kein Fließtext, keine ``` Zäune):
 
 ```json
 {
-  "subject": "Deutsch", "klasse": <5-8, eine Klasse mit Kompetenzen im gewählten Bereich>,
+  "subject": "Deutsch", "klasse": <1-4, eine Klasse mit Kompetenzen im gewählten Bereich>,
   "kompetenzbereich": "<KB-Name>",
   "title": "<prägnanter Titel>", "kernfrage": "<eine Schüler-Kernfrage in Du-Form>",
   "body": {
@@ -240,7 +170,7 @@ Jede Datei ist **ausschließlich** dieses JSON (kein Fließtext, keine ``` Zäun
     "assets": [ /* nur Struktur-Figuren: {"id":"abb2","role":"figure","generator":"matplotlib:function_graph","spec":{"m":2,"b":1}} */ ],
     "sections": [ { "id":"s1","title":"...","throughline":"...","talking_points":["..."],"extensions":["..."],
       "blocks":[ {"role":"task","id":"t1","kind":"<kind>","prompt":"...","payload":null,
-        "response":{"mode":"lines","n":3},"cognitive_level":"understand","dimensions":["MK"],
+        "response":{"mode":"lines","n":3},"cognitive_level":"understand","dimensions":["SPR"],
         "serves":[{"competence_id":"<ID>","relation":"exercises"}],"est_minutes":7,"asset_refs":[],
         "answer_key":"...","acceptable_reasoning":null,"watch_outs":["..."],"rubric":[]} ] } ]
   }

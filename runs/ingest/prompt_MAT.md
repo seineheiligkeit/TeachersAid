@@ -1,185 +1,97 @@
 # Breiten-Generierung: Mathematik — 2 Kernfragen
 
 Du erzeugst **2 verschiedene** Arbeitsblatt-Inhalte (je eine eigene **Kernfrage**) für die
-**AHS-Oberstufe** auf österreichischem Lehrplan-Niveau. Sprache: **Deutsch**, AHS-Niveau (anspruchsvoll, Sek II).
+**AHS-Unterstufe** auf österreichischem Lehrplan-Niveau. Sprache: **Deutsch**, altersgerecht für die Unterstufe (Sek I, ~10-14 J.) — klar und konkret, aber nie trivial (der Blackboard-Test gilt trotzdem).
 Wähle **2 klar unterschiedliche Themen/Bereiche** (Breite!), nicht Varianten desselben Themas.
+
+## Korpus-Kontext — was es schon gibt
+Für **Mathematik** (Unterstufe) gibt es im Korpus schon **20** Arbeitsblätter. Wähle 2 **neue** Kernfragen, die sich davon klar unterscheiden (keine Dubletten, keine bloßen Varianten):
+- [Kl 1] Der Gemüsegarten-Plan — Wie berechnest du Umfang und Fläche eines Gartenbeets — und wie viel Erde passt in eine Hochbeet-Kiste?
+- [Kl 1] Der Radweg-Tracker — Zahlen unterwegs — Wie liest und ordnest du Zahlen, die dir eine Fahrrad-App auf einer Tour anzeigt?
+- [Kl 1] Die Taschengeld-Sparbüchse — Wie kannst du mit einem Buchstaben für eine unbekannte Zahl rechnen, um herauszufinden, wie viel Taschengeld du bekommst?
+- [Kl 1] Wie viele Menschen leben in unserem Bundesland? — Was verraten dir Diagramme und statistische Kennzahlen über die Verteilung der Bevölkerung in Österreich?
+- [Kl 1] Übungsreihe: Quadernetz: Oberflächeninhalt — Übung: Quadernetz: Oberflächeninhalt
+- [Kl 2] Der Schulgarten-Plan — Wie plant ihr ein Schulgarten-Beet, das genau passt, spiegelsymmetrisch aussieht und wirklich Platz für alle Pflanzen bietet?
+- [Kl 2] Der Wandertag-Fonds — Wie teilt ihr Gruppen, Vorräte und Geld gerecht auf, wenn eure Klasse einen Wandertag plant?
+- [Kl 2] Die Waage im Kopf — Gleichungen verstehen und lösen — Wie findest du heraus, welcher Wert für die Unbekannte eine Gleichung wahr macht?
+- [Kl 3] Der Fieberkurven-Fall — Wie beschreibst du Zustände und ihre Änderungen mit rationalen Zahlen — und was bedeutet ein Minuszeichen eigentlich?
+- [Kl 3] Der Wassertank-Plan — Wie beschreibst du mit einem Term, was in einem Tank passiert — und wie findest du heraus, wann er leer oder voll ist?
+- [Kl 3] Die Modellbau-Werkstatt — Wie berechnest du Flächen und Rauminhalte von Figuren und Körpern — und was passiert damit, wenn du ein Modell verkleinerst oder vergrößerst?
+- [Kl 3] Luegt die Statistik? Diagramme kritisch lesen — Wie kann ein Diagramm mit echten Zahlen trotzdem einen falschen Eindruck erwecken — und wie erkennst du das?
+- [Kl 3] Reich und arm im Laendervergleich: Was sagen uns Mittelwert und Median? — Wie veraendert ein einziger Ausreisser den Mittelwert — und warum ist der Median manchmal ehrlicher?
+- [Kl 3] Zahlen, die lügen können — Statistik kritisch lesen — Wie erkennst du, ob eine statistische Darstellung ehrlich ist oder dich in die Irre führt?
+- [Kl 4] Baustelle Freibad — Pythagoras, Kreise und ein Rutschturm — Wie viel Material braucht man wirklich, wenn ein rundes Becken und ein zylindrischer Turm gebaut werden sollen?
+- [Kl 4] Das Schulfest-Glücksrad — wer gewinnt wirklich? — Lohnt sich das neue Glücksspiel am Schulfest wirklich für alle Teilnehmer:innen?
+- [Kl 4] Das unfaire Spiel — Wann ist ein Glücksspiel fair?
+- [Kl 4] Das unfaire Spiel — Wann ist ein Glücksspiel fair?
+- [Kl 4] Die Diagonale des Blumenbeets — reelle Zahlen im Garten — Warum reicht dir ein Maßband manchmal nicht, um eine Länge exakt anzugeben?
+- [Kl 4] Geraden lesen — lineare Funktionen im Koordinatensystem — Was verrät dir der Graph einer linearen Funktion über das Verhalten einer Größe?
+
+_Abdeckung (Kompetenzbereich-Zellen): 15 grün · 0 teilweise · 0 leer von 15._
 
 ## Kompetenzen (verbatim — `serves.competence_id` MUSS eine dieser IDs sein), gruppiert nach Kompetenzbereich
 
-### Anwendungen und Exaktifizierungen der Integralrechnung
-- `MAT.OS.8.ANW.01` (Kl 8) [dims —]: Das bestimmte Integral in verschiedenen Kontexten deuten und entsprechende Sachverhalte durch Integrale beschreiben können (insbesondere Flächeninhalte, Volumina, Weglängen, Geschwindigkeiten, Arbeit und Energie; allenfalls weitere physikalische Deutungen)
-- `MAT.OS.8.ANW.02` (Kl 8) [dims —]: Die Hauptsätze (bzw. den Hauptsatz) der Differential- und Integralrechnung kennen; den Zusammenhang zwischen Differenzieren und Integrieren erläutern können
-- `MAT.OS.8.ANW.03` (Kl 8) [dims —]: Das unbestimmte Integral kennen
+### 1: Zahlen und Maße
+- `MAT.US.1.ZAH.01` (Kl 1) [dims —]: natürliche Zahlen sowie nichtnegative Dezimal- und Bruchzahlen interpretieren, darstellen und vergleichen,
+- `MAT.US.1.ZAH.02` (Kl 1) [dims —]: Rechenoperationen mit natürlichen Zahlen und mit nichtnegativen Dezimalzahlen durchführen und deuten; Überschlagsrechnungen durchführen,
+- `MAT.US.1.ZAH.03` (Kl 1) [dims —]: Größen ein- und mehrnamig anschreiben, Maßangaben interpretieren und Umrechnungen durchführen.
+- `MAT.US.2.ZAH.01` (Kl 2) [dims —]: mit Vielfachen und Teilern natürlicher Zahlen sowie mit Aussagen über Teilbarkeit arbeiten,
+- `MAT.US.2.ZAH.02` (Kl 2) [dims —]: nichtnegative Dezimal- und Bruchzahlen sowie ganze Zahlen interpretieren, darstellen und vergleichen,
+- `MAT.US.2.ZAH.03` (Kl 2) [dims —]: Rechenoperationen mit nichtnegativen Bruchzahlen durchführen und interpretieren; die Addition bzw. Subtraktion einer natürlichen Zahl zu bzw. von einer ganzen Zahl als Bewegung auf der Zahlengeraden deuten,
+- `MAT.US.2.ZAH.04` (Kl 2) [dims —]: mit Proportionalitäten und Prozenten arbeiten.
+- `MAT.US.3.ZAH.01` (Kl 3) [dims —]: rationale Zahlen darstellen, vergleichen und ordnen; Rechenoperationen durchführen und interpretieren.
+- `MAT.US.4.ZAH.01` (Kl 4) [dims —]: den Unterschied zwischen rationalen und nichtrationalen Zahlen verstehen und beschreiben; Rechenoperationen mit reellen Zahlen durchführen; mit Wurzeln und Näherungswerten arbeiten.
 
-### Beschreibende Statistik; Wahrscheinlichkeit
-- `MAT.OS.6.BES.01` (Kl 6) [dims —]: Darstellungen und Kennzahlen der beschreibenden Statistik kennen und damit arbeiten können
-- `MAT.OS.6.BES.02` (Kl 6) [dims —]: Die Begriffe Zufallsversuch, Ereignis und Wahrscheinlichkeit kennen; Methoden zur Ermittlung von Wahrscheinlichkeiten kennen: Bestimmung eines relativen Anteils, Ermittlung einer relativen Häufigkeit durch eine Versuchsserie, Angabe des subjektiven Vertrauens; wissen, dass diese Methoden nur näherungsweise bzw. unsichere Ergebnisse liefern
-- `MAT.OS.6.BES.03` (Kl 6) [dims —]: Den Zusammenhang zwischen relativen Häufigkeiten und Wahrscheinlichkeiten kennen
-- `MAT.OS.6.BES.04` (Kl 6) [dims —]: Mit Wahrscheinlichkeiten rechnen können (Baumdiagramme; Additions- und Multiplikationsregel)
-- `MAT.OS.6.BES.05` (Kl 6) [dims —]: Bedingte Wahrscheinlichkeiten und (stochastische) Unabhängigkeit von Ereignissen kennen
-- `MAT.OS.6.BES.06` (Kl 6) [dims —]: Den Satz von Bayes kennen und anwenden können
+### 2: Variablen und Funktionen
+- `MAT.US.1.VAR.01` (Kl 1) [dims —]: einfache Terme, Gleichungen und Formeln aufstellen und interpretieren,
+- `MAT.US.1.VAR.02` (Kl 1) [dims —]: Lösungen einfacher Gleichungen finden.
+- `MAT.US.2.VAR.01` (Kl 2) [dims —]: Terme, Gleichungen und Formeln auch mit Brüchen und im Zusammenhang mit Proportionalitäten und Prozenten aufstellen und interpretieren,
+- `MAT.US.2.VAR.02` (Kl 2) [dims —]: lineare Gleichungen durch Umkehren von Rechenoperationen lösen und Formeln umformen.
+- `MAT.US.3.VAR.01` (Kl 3) [dims —]: Terme, Gleichungen und Formeln auch im Zusammenhang mit Verhältnissen bzw. Proportionen aufstellen und interpretieren,
+- `MAT.US.3.VAR.02` (Kl 3) [dims —]: Terme umformen, auch unter Anwendung der Potenzdarstellung mit positiven ganzzahligen Exponenten,
+- `MAT.US.3.VAR.03` (Kl 3) [dims —]: Gleichungen und Formeln umformen; Gleichungen durch Äquivalenzumformungen lösen,
+- `MAT.US.3.VAR.04` (Kl 3) [dims —]: Wachstums- und Abnahmeprozesse modellieren und mit den zugehörigen Modellen arbeiten.
+- `MAT.US.4.VAR.01` (Kl 4) [dims —]: mit Termen, Gleichungen mit einer Variablen und Formeln in vielfältigen Situationen arbeiten,
+- `MAT.US.4.VAR.02` (Kl 4) [dims —]: unterschiedliche Darstellungsformen funktionaler Zusammenhänge nutzen und Darstellungsformen wechseln,
+- `MAT.US.4.VAR.03` (Kl 4) [dims —]: mit linearen Funktionen arbeiten,
+- `MAT.US.4.VAR.04` (Kl 4) [dims —]: lineare Gleichungssysteme in zwei Variablen aufstellen und lösen.
 
-### Differenzen- und Differentialgleichungen; Grundlagen der Systemdynamik
-- `MAT.OS.8.DIF.01` (Kl 8) [dims —]: Diskrete Veränderungen von Größen durch Differenzengleichungen beschreiben und diese im Kontext deuten können
-- `MAT.OS.8.DIF.02` (Kl 8) [dims —]: Kontinuierliche Veränderungen von Größen durch Differentialgleichungen beschreiben und diese im Kontext deuten können
-- `MAT.OS.8.DIF.03` (Kl 8) [dims —]: Einfache Differentialgleichungen lösen können
-- `MAT.OS.8.DIF.04` (Kl 8) [dims —]: Einfache dynamische Systeme mit Hilfe von Diagrammen oder Differenzengleichungen beschreiben und untersuchen können
+### 3: Figuren und Körper
+- `MAT.US.1.FIG.01` (Kl 1) [dims —]: mit einfachen geometrischen Objekten in der Ebene arbeiten,
+- `MAT.US.1.FIG.02` (Kl 1) [dims —]: Eigenschaften von Rechtecken beschreiben; Rechtecke und Figuren, die aus Rechtecken bestehen, konstruieren und maßstäblich darstellen; Formeln für den Umfang und den Flächeninhalt von Rechtecken begründen und anwenden,
+- `MAT.US.1.FIG.03` (Kl 1) [dims —]: Eigenschaften von Quadern beschreiben; Formeln für den Oberflächeninhalt und Rauminhalt von Quadern begründen und anwenden.
+- `MAT.US.2.FIG.01` (Kl 2) [dims —]: mit kartesischen Koordinatensystemen arbeiten,
+- `MAT.US.2.FIG.02` (Kl 2) [dims —]: achsensymmetrische Figuren sowie zueinander kongruente Figuren erkennen, konstruieren und ihre Eigenschaften nutzen,
+- `MAT.US.2.FIG.03` (Kl 2) [dims —]: mit Dreiecken, besonderen Vierecken und ihren Flächeninhalten arbeiten.
+- `MAT.US.3.FIG.01` (Kl 3) [dims —]: mit Vielecken und ihren Flächeninhalten arbeiten,
+- `MAT.US.3.FIG.02` (Kl 3) [dims —]: Figuren zentrisch vergrößern bzw. verkleinern; ähnliche Figuren erkennen und nutzen,
+- `MAT.US.3.FIG.03` (Kl 3) [dims —]: räumliche Objekte beschreiben und darstellen; Oberflächen- und Rauminhalte gerader Prismen und Rauminhalte von Pyramiden ermitteln.
+- `MAT.US.4.FIG.01` (Kl 4) [dims —]: mit dem pythagoräischen Lehrsatz arbeiten,
+- `MAT.US.4.FIG.02` (Kl 4) [dims —]: Umfang und Flächeninhalt von Kreisen und Kreisteilen ermitteln,
+- `MAT.US.4.FIG.03` (Kl 4) [dims —]: Drehzylinder und Drehkegel beschreiben; Oberflächen- und Rauminhalte ermitteln.
 
-### Diskrete Wahrscheinlichkeitsverteilungen
-- `MAT.OS.7.DIS.01` (Kl 7) [dims —]: Die Begriffe „diskrete Zufallsvariable“ und „diskrete Wahrscheinlichkeitsverteilung“ kennen
-- `MAT.OS.7.DIS.02` (Kl 7) [dims —]: Den Zusammenhang zwischen relativen Häufigkeiten und Wahrscheinlichkeiten kennen
-- `MAT.OS.7.DIS.03` (Kl 7) [dims —]: Erwartungswert, Varianz und Standardabweichung einer diskreten Zufallsvariablen (Wahrscheinlichkeitsverteilung) kennen und deuten können
-- `MAT.OS.7.DIS.04` (Kl 7) [dims —]: Den Binomialkoeffizienten und seine wichtigsten Eigenschaften kennen
-- `MAT.OS.7.DIS.05` (Kl 7) [dims —]: Mit diskreten Verteilungen (insbesondere mit der Binomialverteilung) in anwendungsorientierten Bereichen arbeiten können
-
-### Erweiterungen und Exaktifizierungen der Differentialrechnung
-- `MAT.OS.7.ERW.01` (Kl 7) [dims —]: Ableitungsregeln für Exponential- und Logarithmusfunktionen, Sinus- und Cosinusfunktion kennen
-- `MAT.OS.7.ERW.02` (Kl 7) [dims —]: Weitere Ableitungsregeln (insbesondere die Kettenregel) kennen und für Funktionsuntersuchungen in verschiedenen Bereichen verwenden können
-- `MAT.OS.7.ERW.03` (Kl 7) [dims —]: Weitere Anwendungen der Differentialrechnung, insbesondere aus Wirtschaft und Naturwissenschaft, durchführen können
-- `MAT.OS.7.ERW.04` (Kl 7) [dims —]: Den Begriff Stetigkeit kennen und erläutern können
-- `MAT.OS.7.ERW.05` (Kl 7) [dims —]: Den Begriff Differenzierbarkeit sowie den Zusammenhang zwischen Differenzierbarkeit und Stetigkeit kennen
-
-### Folgen
-- `MAT.OS.6.FOL.01` (Kl 6) [dims —]: Zahlenfolgen als auf bzw. * definierte reelle Funktionen kennen (insbesondere arithmetische Folgen als lineare Funktionen und geometrische Folgen als Exponentialfunktionen); sie durch explizite und rekursive Bildungsgesetze darstellen und in außermathematischen Bereichen anwenden können
-- `MAT.OS.6.FOL.02` (Kl 6) [dims —]: Eigenschaften von Folgen kennen und untersuchen können (Monotonie, Beschränktheit, Grenzwert)
-
-### Funktionen
-- `MAT.OS.5.FUN.01` (Kl 5) [dims —]: Abhängigkeiten, die durch reelle Funktionen in einer Variablen erfassbar sind, mittels Termen, Tabellen und Graphen beschreiben und über den Modellcharakter von Funktionen reflektieren können
-- `MAT.OS.5.FUN.02` (Kl 5) [dims —]: Lineare Funktionen beschreiben und untersuchen können
-- `MAT.OS.5.FUN.03` (Kl 5) [dims —]: Quadratische Funktionen der Form beschreiben und untersuchen können
-- `MAT.OS.5.FUN.04` (Kl 5) [dims —]: Einige weitere nichtlineare Funktionen beschreiben und untersuchen können, zB f(x) = , f(x) = , abschnittweise definierte Funktionen
-- `MAT.OS.5.FUN.05` (Kl 5) [dims —]: Formeln in Hinblick auf funktionale Aspekte untersuchen können; direkte und indirekte Proportionalitäten mit Hilfe von Funktionen beschreiben können
-- `MAT.OS.5.FUN.06` (Kl 5) [dims —]: Mit Funktionen in anwendungsorientierten Bereichen arbeiten können; Funktionen als mathematische Modelle auffassen können
-
-### Gleichungen und Gleichungssysteme
-- `MAT.OS.5.GLE.01` (Kl 5) [dims —]: Lineare und quadratische Gleichungen in einer Variablen lösen können; Lösungsfälle untersuchen können
-- `MAT.OS.5.GLE.02` (Kl 5) [dims —]: Lineare Gleichungssysteme in zwei Variablen lösen und deren Lösungsfälle untersuchen und geometrisch interpretieren können
-- `MAT.OS.5.GLE.03` (Kl 5) [dims —]: Die oben genannten Gleichungen und Gleichungssysteme auf inner- und außermathematische Probleme anwenden können
-
-### Grundlagen der Differentialrechnung anhand von Polynomfunktionen
-- `MAT.OS.7.GRU.01` (Kl 7) [dims —]: Einfache Polynomgleichungen vom Grad ≤ 4 im Bereich der reellen Zahlen lösen können (sofern sie in der Differentialrechnung verwendet werden)
-- `MAT.OS.7.GRU.02` (Kl 7) [dims —]: Den Differenzenquotienten (die mittlere Änderungsrate) und den Differentialquotienten (die lokale bzw. momentane Änderungsrate) definieren können
-- `MAT.OS.7.GRU.03` (Kl 7) [dims —]: Den Differenzen- und Differentialquotienten als Sekanten- bzw. Tangentensteigung sowie in außermathematischen Bereichen deuten können
-- `MAT.OS.7.GRU.04` (Kl 7) [dims —]: Den Begriff der Ableitungsfunktion kennen; höhere Ableitungen kennen
-- `MAT.OS.7.GRU.05` (Kl 7) [dims —]: Ableitungsregeln für Potenz- und Polynomfunktionen kennen und anwenden können
-- `MAT.OS.7.GRU.06` (Kl 7) [dims —]: Monotonie- und Krümmungsbereiche, Extremstellen, Wendestellen und Sattelstellen (Terrassenstellen) mit Hilfe der Ableitung beschreiben können
-- `MAT.OS.7.GRU.07` (Kl 7) [dims —]: Untersuchungen von Polynomfunktionen in inner- und außermathematischen Bereichen durchführen können; einfache Extremwertaufgaben lösen können (Ermittlung von Extremstellen in einem Intervall)
-
-### Grundlagen der Integralrechnung
-- `MAT.OS.8.GRU2.01` (Kl 8) [dims —]: Das bestimmte Integral kennen und als Zahl „zwischen“ allen Ober- und Untersummen auffassen können sowie näherungsweise als Summe von Produkten auffassen und berechnen können:
-- `MAT.OS.8.GRU2.02` (Kl 8) [dims —]: Größen durch Integrale ausdrücken können, insbesondere als Verallgemeinerungen von Formeln mit Produkten (zB für Flächeninhalte oder zurückgelegte Wege)
-- `MAT.OS.8.GRU2.03` (Kl 8) [dims —]: Den Begriff Stammfunktion kennen und anwenden können
-- `MAT.OS.8.GRU2.04` (Kl 8) [dims —]: Bestimmte Integrale mit Hilfe von Stammfunktionen unter Verwendung elementarer Integrationsregeln berechnen können
-
-### Handlungsdimension: Mathematische Kompetenz erfordert Fertigkeiten und Fähigkeiten bei folgenden Tätigkeiten:
-- `MAT.OS.x.HAN.01` (Kl 5) [dims —]: Darstellend-modellierendes Arbeiten umfasst alle Aktivitäten, die mit der Übersetzung von Situationen, Zuständen und Prozessen aus der Alltagssprache in die Sprache der Mathematik zu tun haben. Auch der innermathematische Wechsel von Darstellungsformen gehört zu diesen Aktivitäten.
-- `MAT.OS.x.HAN.02` (Kl 5) [dims —]: Formal-operatives Arbeiten umfasst alle Aktivitäten, die auf Kalkülen bzw. Algorithmen beruhen, also das Anwenden von Verfahren, Rechenmethoden oder Techniken.
-- `MAT.OS.x.HAN.03` (Kl 5) [dims —]: Interpretierend-dokumentierendes Arbeiten umfasst alle Aktivitäten, die mit der Übersetzung mathematischer Darstellungen, Zusammenhänge und Sachverhalte in die Alltagssprache sowie der Deutung und Dokumentation von Ergebnissen zu tun haben.
-- `MAT.OS.x.HAN.04` (Kl 5) [dims —]: Kritisch-argumentatives Arbeiten umfasst alle Aktivitäten, die mit Argumentieren, Hinterfragen, Ausloten von Grenzen und Begründen zu tun haben. Das Beweisen von Behauptungen oder heuristisch gewonnener Vermutungen ist ein Schwerpunkt dieses Tätigkeitsbereichs.
-
-### Kompetenzmodell
-- `MAT.OS.x.KOM.01` (Kl 5) [dims —]: Mathematische Kompetenzen besitzen eine Inhaltsdimension (auf welche Inhalte sie sich beziehen, also womit etwas getan wird), eine Handlungsdimension (auf welche Art von Tätigkeit sie sich beziehen, also was getan wird) und eine Komplexitätsdimension (bezogen auf die Art und den Grad der Vernetzungen). Unter mathematischen Kompetenzen werden hier längerfristig verfügbare kognitive Fähigkeiten verstanden, die von Lernenden entwickelt werden sollen und sie befähigen, bestimmte Tätigkeiten in variablen Situationen auszuüben, sowie die Bereitschaft, diese Fähigkeiten und Fertigkeiten einzusetzen.
-
-### Komplexe Zahlen
-- `MAT.OS.7.KOM3.01` (Kl 7) [dims —]: Die Zweckmäßigkeit der Erweiterung der reellen Zahlen erkennen
-- `MAT.OS.7.KOM3.02` (Kl 7) [dims —]: Komplexe Zahlen in der Form a + b∙i kennen; mit ihnen rechnen und sie zum Lösen von Gleichungen verwenden können
-- `MAT.OS.7.KOM3.03` (Kl 7) [dims —]: Den Fundamentalsatz der Algebra kennen
-- `MAT.OS.7.KOM3.04` (Kl 7) [dims —]: Komplexe Zahlen in Polarform kennen
-
-### Komplexitätsdimension: Die zur Bewältigung mathematischer Aufgaben- und Problemstellungen notwendigen Anforderungen können stark differieren und gehen von Reproduktion über Vernetzungen hin zur Reflexion.
-- `MAT.OS.x.KOM2.01` (Kl 5) [dims —]: Einsetzen von Grundwissen und Grundfähigkeiten meint die Wiedergabe oder direkte Anwendung von grundlegenden Begriffen, Verfahren oder Darstellungen. In der Regel sind nur reproduktives mathematisches Wissen und Können oder die aus dem Kontext unmittelbar erkennbare direkte Anwendung von Kenntnissen und Fertigkeiten erforderlich.
-- `MAT.OS.x.KOM2.02` (Kl 5) [dims —]: Herstellen von Verbindungen ist erforderlich, wenn der mathematische Sachverhalt vielschichtiger ist, sodass Begriffe, Sätze, Verfahren und Darstellungen aus einem oder verschiedenen mathematischen Gebieten oder unterschiedliche mathematische Tätigkeiten in geeigneter Weise miteinander verbunden werden müssen.
-- `MAT.OS.x.KOM2.03` (Kl 5) [dims —]: Problemlösen und Reflektieren: Problemlösen baut auf Eigentätigkeit und heuristischen Strategien in nicht vertrauten Situationen auf. Reflektieren meint das Nachdenken über Zusammenhänge, die sich aus dem dargelegten mathematischen Sachverhalt nicht von selbst ergeben. Reflexionswissen ist ein anhand entsprechender Nachdenkprozesse entwickeltes Wissen über Mathematik.
-
-### Kreise, Kugeln, Kegelschnittlinien und andere Kurven
-- `MAT.OS.7.KRE.01` (Kl 7) [dims —]: Kreise, Kugeln und Kegelschnittlinien durch Gleichungen beschreiben können
-- `MAT.OS.7.KRE.02` (Kl 7) [dims —]: Die gegenseitige Lage von Kreis und Gerade bestimmen und allenfalls vorhandene Schnittpunkte berechnen können; eine Gleichung der Tangente in einem Punkt eines Kreises ermitteln können
-- `MAT.OS.7.KRE.03` (Kl 7) [dims —]: Die gegenseitige Lage von Kegelschnitt und Gerade bestimmen und allenfalls vorhandene Schnittpunkte berechnen können; eine Gleichung der Tangente in einem Punkt eines Kegelschnitts ermitteln können
-- `MAT.OS.7.KRE.04` (Kl 7) [dims —]: Ebene Kurven (allenfalls auch Kurven im Raum) durch Parameterdarstellungen beschreiben können
-
-### Mengen, Zahlen und Rechengesetze
-- `MAT.OS.5.MEN.01` (Kl 5) [dims —]: Grundlegende Begriffe über Aussagen und Mengen kennen
-- `MAT.OS.5.MEN.02` (Kl 5) [dims —]: Über das Erweitern von Zahlenmengen anhand von natürlichen, ganzen, rationalen und reellen Zahlen reflektieren können
-- `MAT.OS.5.MEN.03` (Kl 5) [dims —]: Zahlen, Beträge von Zahlen und Intervalle auf einer Zahlengeraden darstellen können
-- `MAT.OS.5.MEN.04` (Kl 5) [dims —]: Zahlen im dekadischen und in einem nichtdekadischen Zahlensystem darstellen können
-- `MAT.OS.5.MEN.05` (Kl 5) [dims —]: Zehnerpotenzen zum Erfassen von sehr kleinen und sehr großen Zahlen in anwendungsorientierten Bereichen einsetzen können; Rechenregeln für Zehnerpotenzen kennen
-- `MAT.OS.5.MEN.06` (Kl 5) [dims —]: Mit Näherungswerten sinnvoll umgehen können
-- `MAT.OS.5.MEN.07` (Kl 5) [dims —]: Terme und Formeln aufstellen und interpretieren können; Umformungsschritte durch Rechengesetze begründen können
-- `MAT.OS.5.MEN.08` (Kl 5) [dims —]: Mit Primzahlen und Teilern arbeiten können; Teilbarkeitsfragen untersuchen können
-
-### Potenzen, Wurzeln und Logarithmen; Ungleichungen
-- `MAT.OS.6.POT.01` (Kl 6) [dims —]: Potenzen (mit natürlichen, ganzen, rationalen bzw. reellen Exponenten), Wurzeln und Logarithmen definieren können; entsprechende Rechenregeln kennen und anwenden können
-- `MAT.OS.6.POT.02` (Kl 6) [dims —]: Mit Ungleichungen in einer Variablen arbeiten und diese lösen können
-
-### Reelle Funktionen
-- `MAT.OS.6.REE.01` (Kl 6) [dims —]: Funktionen folgender Arten definieren und darstellen können; typische Formen ihrer Graphen skizzieren können; charakteristische Eigenschaften angeben und im Kontext deuten können–StrichaufzählungPotenzfunktionen:
-- `MAT.OS.6.REE.02` (Kl 6) [dims —]: Polynomfunktionen:
-- `MAT.OS.6.REE.03` (Kl 6) [dims —]: Exponentialfunktionen:
-- `MAT.OS.6.REE.04` (Kl 6) [dims —]: Logarithmusfunktionen:
-- `MAT.OS.6.REE.05` (Kl 6) [dims —]: Winkelfunktionen:
-- `MAT.OS.6.REE.06` (Kl 6) [dims —]: Reelle Funktionen untersuchen können (Monotonie, lokale und globale Extremstellen, Symmetrie, Periodizität)
-- `MAT.OS.6.REE.07` (Kl 6) [dims —]: Verkettungen von Funktionen kennen; Umkehrfunktionen kennen
-- `MAT.OS.6.REE.08` (Kl 6) [dims —]: Die Veränderung des Graphen einer Funktion f beschreiben können, wenn man von f(x) zu c ∙ f(x), f(x) + c, f(x + c), bzw. f(c ∙ x) übergeht
-- `MAT.OS.6.REE.09` (Kl 6) [dims —]: Änderungen von Größen durch Änderungsmaße beschreiben können (absolute und relative Änderung, mittlere Änderungsrate, Änderungsfaktor)
-- `MAT.OS.6.REE.10` (Kl 6) [dims —]: Die oben genannten Typen reeller Funktionen, insbesondere Exponentialfunktionen, in außermathematischen Situationen anwenden können; Funktionen als Modelle auffassen, Modelle vergleichen und Grenzen von Modellbildungen reflektieren können
-- `MAT.OS.6.REE.11` (Kl 6) [dims —]: Reelle Funktionen in mehreren Variablen kennen; Funktionen in Formeln erkennen können; den allgemeinen Funktionsbegriff kennen (, wobei A und B beliebige Mengen sind)
-
-### Reihen
-- `MAT.OS.6.REI.01` (Kl 6) [dims —]: Summen endlicher arithmetischer und geometrischer Reihen berechnen können
-- `MAT.OS.6.REI.02` (Kl 6) [dims —]: Summen unendlicher Reihen definieren und für konvergente geometrische Reihen berechnen können
-
-### Sicherung der Nachhaltigkeit
-- `MAT.OS.6.SIC.01` (Kl 6) [dims —]: Notwendiges Vorwissen für die Kompetenzbereiche dieses Moduls wiederholen und aktivieren
-- `MAT.OS.6.SIC.02` (Kl 6) [dims —]: Grundlagen für die Kompetenzbereiche dieses Moduls ergänzen und bereitstellen
-- `MAT.OS.6.SIC.03` (Kl 6) [dims —]: Grundkompetenzen nachhaltig sichern
-- `MAT.OS.6.SIC.04` (Kl 6) [dims —]: Notwendiges Vorwissen für die Kompetenzbereiche dieses Moduls wiederholen und aktivieren
-- `MAT.OS.6.SIC.05` (Kl 6) [dims —]: Grundlagen für die Kompetenzbereiche dieses Moduls ergänzen und bereitstellen
-- `MAT.OS.6.SIC.06` (Kl 6) [dims —]: Grundkompetenzen nachhaltig sichern
-- `MAT.OS.7.SIC.01` (Kl 7) [dims —]: Notwendiges Vorwissen für die Kompetenzbereiche dieses Moduls wiederholen und aktivieren
-- `MAT.OS.7.SIC.02` (Kl 7) [dims —]: Grundlagen für die Kompetenzbereiche dieses Moduls ergänzen und bereitstellen
-- `MAT.OS.7.SIC.03` (Kl 7) [dims —]: Grundkompetenzen nachhaltig sichern
-- `MAT.OS.7.SIC.04` (Kl 7) [dims —]: Notwendiges Vorwissen für die Kompetenzbereiche dieses Moduls wiederholen und aktivieren
-- `MAT.OS.7.SIC.05` (Kl 7) [dims —]: Grundlagen für die Kompetenzbereiche dieses Moduls ergänzen und bereitstellen
-- `MAT.OS.7.SIC.06` (Kl 7) [dims —]: Grundkompetenzen nachhaltig sichern
-- `MAT.OS.8.SIC.01` (Kl 8) [dims —]: Notwendiges Vorwissen für die Kompetenzbereiche dieses Moduls wiederholen und aktivieren
-- `MAT.OS.8.SIC.02` (Kl 8) [dims —]: Grundlagen für die Kompetenzbereiche dieses Moduls ergänzen und bereitstellen
-- `MAT.OS.8.SIC.03` (Kl 8) [dims —]: Grundkompetenzen nachhaltig sichern
-- `MAT.OS.8.SIC.04` (Kl 8) [dims —]: Wiederholen, Vertiefen von Fähigkeiten und Vernetzen von Inhalten, um einen umfassenden Überblick über die Zusammenhänge unterschiedlicher mathematischer Gebiete zu gewinnen
-
-### Stetige Wahrscheinlichkeitsverteilungen; beurteilende Statistik
-- `MAT.OS.8.STE.01` (Kl 8) [dims —]: Die Begriffe „stetige Zufallsvariable“ und „stetige Verteilung“ kennen
-- `MAT.OS.8.STE.02` (Kl 8) [dims —]: Die Normalverteilung zur Approximation der Binomialverteilung einsetzen können
-- `MAT.OS.8.STE.03` (Kl 8) [dims —]: Die Normalverteilung in anwendungsorientierten Bereichen verwenden können
-- `MAT.OS.8.STE.04` (Kl 8) [dims —]: Konfidenzintervalle ermitteln und interpretieren können
-- `MAT.OS.8.STE.05` (Kl 8) [dims —]: Einfache statistische Hypothesentests durchführen und deren Ergebnisse interpretieren können
-
-### Trigonometrie
-- `MAT.OS.5.TRI.01` (Kl 5) [dims —]: sin(), cos() und tan() definieren und am Einheitskreis darstellen können
-- `MAT.OS.5.TRI.02` (Kl 5) [dims —]: Gleichungen der Form sin() = c und cos() = c nach lösen können
-- `MAT.OS.5.TRI.03` (Kl 5) [dims —]: Berechnungen an rechtwinkeligen und allgemeinen Dreiecken, an Figuren und Körpern (auch mittels Sinus- und Cosinussatz) durchführen können
-- `MAT.OS.5.TRI.04` (Kl 5) [dims —]: Polarkoordinaten verwenden können
-
-### Vektoren und analytische Geometrie in ²
-- `MAT.OS.5.VEK.01` (Kl 5) [dims —]: Vektoren addieren, subtrahieren, mit reellen Zahlen multiplizieren und diese Rechenoperationen geometrisch veranschaulichen können
-- `MAT.OS.5.VEK.02` (Kl 5) [dims —]: Einheitsvektoren und Normalvektoren ermitteln können
-- `MAT.OS.5.VEK.03` (Kl 5) [dims —]: Mit dem Skalarprodukt arbeiten können; den Winkel zwischen zwei Vektoren ermitteln können
-- `MAT.OS.5.VEK.04` (Kl 5) [dims —]: Geraden durch Parameterdarstellungen in ² und durch Gleichungen (Normalvektordarstellungen) in beschreiben, Geraden schneiden und die gegenseitige Lage von Geraden ermitteln können
-- `MAT.OS.5.VEK.05` (Kl 5) [dims —]: Abstände ermitteln können (Punkt-Punkt, Punkt-Gerade)
-
-### Vektoren und analytische Geometrie in ³; Vektoren in n
-- `MAT.OS.6.VEK2.01` (Kl 6) [dims —]: Die aus der zweidimensionalen analytischen Geometrie bekannten Begriffe und Methoden auf den dreidimensionalen Fall übertragen können (insbesondere Geraden durch Parameterdarstellungen beschreiben können)
-- `MAT.OS.6.VEK2.02` (Kl 6) [dims —]: Normalvektoren ermitteln können; Ebenen durch Parameterdarstellungen bzw. Gleichungen (Normalvektordarstellungen) beschreiben können
-- `MAT.OS.6.VEK2.03` (Kl 6) [dims —]: Lineare Gleichungssysteme in drei Variablen lösen können
-- `MAT.OS.6.VEK2.04` (Kl 6) [dims —]: Vektoren in n und deren Rechenoperationen kennen, in Anwendungskontexten interpretieren und verständig einsetzen können
+### 4: Daten und Zufall
+- `MAT.US.1.DAT.01` (Kl 1) [dims —]: Daten erheben, ordnen, darstellen und aus unterschiedlichen Darstellungsformen ablesen,
+- `MAT.US.1.DAT.02` (Kl 1) [dims —]: einfache statistische Kennzahlen ermitteln und interpretieren.
+- `MAT.US.3.DAT.01` (Kl 3) [dims —]: statistische Darstellungen erstellen und nutzen ; Manipulationen in statistischen Darstellungen erkennen
+- `MAT.US.3.DAT.02` (Kl 3) [dims —]: aufbauend auf einem intuitiven Wahrscheinlichkeitsbegriff Wahrscheinlichkeiten in einfachen Zufallsexperimenten ermitteln, vergleichen und interpretieren.
+- `MAT.US.4.DAT.01` (Kl 4) [dims —]: Kreuztabellen erstellen und interpretieren,
+- `MAT.US.4.DAT.02` (Kl 4) [dims —]: Wahrscheinlichkeiten bei ein- und zweistufigen Zufallsexperimenten ermitteln und interpretieren.
 
 ## Erlaubte Dimensionen (`dimensions`, primäre zuerst — Teilmenge dieser Codes)
-- `DM` — Darstellend-modellierendes Arbeiten
-- `FO` — Formal-operatives Arbeiten
-- `ID` — Interpretierend-dokumentierendes Arbeiten
-- `KA` — Kritisch-argumentatives Arbeiten
+- `MOD` — Modellieren und Problemlösen
+- `OPE` — Operieren (Rechnen und Konstruieren)
+- `DAR` — Darstellen und Interpretieren
+- `BEG` — Vermuten und Begründen
 
 ## Erlaubte Aufgaben-`kind`-Werte
-calculation, construction, create_produce, data_interpretation, decision_scenario, matching, modelling, multiple_choice, open_response, ordering, proof, puzzle, table_fill, true_false_justify
+calculation, construction, create_produce, data_interpretation, decision_scenario, matching, modelling_task, multiple_choice, open_response, ordering, puzzle, table_fill, true_false_justify
+
+## Anwendungsbereiche (Themen-Ideen für die Kernfragen)
+- Kl 1: grafisches Darstellen von Zahlen als Punkte am Zahlenstrahl und Ablesen von Zahlen; Lesen großer Zahlen · Verstehen und Anwenden des dezimalen Stellenwertsystems, dh. des Prinzips „Bündeln in Zehner-Schritten“ · Deuten von Brüchen als Anteile eines Ganzen bzw. als Anteile von mehreren Ganzen; Ergänzen von Brüchen auf Ganze · Erweitern und Kürzen von Brüchen, insbesondere mit Hilfe von Visualisierungen · Deuten von Brüchen als Quotienten · Wechseln zwischen Bruch- und Dezimaldarstellung in einfachen Fällen (zB ; ; ) · Vergleichen und Ordnen natürlicher Zahlen sowie nichtnegativer Dezimal- und Bruchzahlen · Lesen und allenfalls Schreiben römischer Zahldarstellungen; Erkennen der Vorteile des dezimalen Stellenwertsystems im Vergleich zur römischen Zahldarstellung
+- Kl 2: Kennen und Anwenden der Begriffe Vielfaches, Teiler, Teilbarkeit, Primzahl; allenfalls Durchführen von Primfaktorzerlegungen · Verstehen und Anwenden gemeinsamer Vielfacher und Teiler; Ermitteln des kleinsten gemeinsamen Vielfachen und des größten gemeinsamen Teilers, allenfalls auch mit Rechenverfahren · Kennen und Anwenden einfacher Teilbarkeitsregeln; allenfalls Begründen von Teilbarkeitsregeln sowie Begründen bzw. Widerlegen von Aussagen zur Teilbarkeit (zB „Jede Zahl, die durch 6 teilbar ist, ist auch durch 3 teilbar“) · Anwenden von Teilern und Vielfachen in Sachsituationen · Wiederholen und Festigen: Deuten, Erweitern und Kürzen von Brüchen; Darstellen am Zahlenstrahl, Vergleichen und Ordnen nichtnegativer Dezimal- und Bruchzahlen · Wechseln zwischen Bruch- und Dezimaldarstellung auch bei Zahlen mit einfacher periodischer Dezimaldarstellung (zB ) · Wechseln zwischen Bruch- bzw. Dezimaldarstellung und Prozentdarstellung (zB ; ) · Deuten von Brüchen als relative Anteile und relative Häufigkeiten
+- Kl 3: Wiederholen und Festigen: Darstellen nichtnegativer rationaler und ganzer Zahlen als Punkte auf der Zahlengeraden, Vergleichen und Ordnen dieser Zahlen, Durchführen von Rechenoperationen · Beschreiben von Zuständen (zB Temperatur, Kontostand) und von Zustandsänderungen Darstellen dieser Zustände als Punkte und dieser Zustandsänderungen durch Pfeile auf der Zahlengeraden · Unterscheiden verschiedener Bedeutungen des Minuszeichens: als Rechenzeichen, als Vorzeichen, als Zeichen für das Übergehen zur Gegenzahl · Veranschaulichen des Addierens, Subtrahierens und, in einfachen Fällen, des Multiplizierens auf der Zahlengeraden · Kennen und Anwenden des Betrages einer Zahl · Deuten des Subtrahierens als Addieren der Gegenzahl · Deuten des Dividierens als Multiplizieren mit dem Kehrwert · schriftliches Durchführen der vier Grundrechenoperationen
+- Kl 4: Wiederholen und Festigen: Darstellen rationaler Zahlen auf der Zahlengeraden, Vergleichen und Ordnen rationaler Zahlen, Durchführen von Rechenoperationen · Wissen und allenfalls Begründen, dass es Zahlen gibt, die nicht rational sind, zB · Wissen, dass durch die Erweiterung der rationalen Zahlen zu den reellen Zahlen die Zahlengerade lückenlos ausgefüllt wird · näherungsweises Berechnen bzw. Schätzen von Quadratwurzeln durch systematisches Probieren; Berechnen von Quadrat- und Kubikwurzeln nur mittels Technologieeinsatz · Kennen und Anwenden der Regeln und ; Begründen, dass im Allgemeinen ist · Durchführen von Rechenoperationen mit reellen Zahlen; Kennen der Problematik des Rechnens mit Näherungswerten (zB , aber ) · Aufstellen und Umformen von Termen und Formeln · Lösen von Gleichungen, die sich auf lineare Gleichungen zurückführen lassen; Anwenden von Gleichungen in Sachsituationen
 ## Verankerung
 Jede Kernfrage gehört zu **einem** Kompetenzbereich; setze im JSON `"kompetenzbereich": "<exakter KB-Name>"` und die passende `klasse` (eine Klasse, in der dieser KB Kompetenzen hat). Alle Aufgaben dieser Kernfrage dienen Kompetenzen aus diesem (KB, Klasse).
 
@@ -280,12 +192,12 @@ true_false_justify `{"kind":"true_false_justify","statements":[...]}` · orderin
 matching `{"kind":"matching","left":[...],"right":[...]}` · decision_scenario `{"kind":"decision_scenario","stem":"..."}`
 
 ## Ausgabe
-Schreibe **2 Dateien**, eine pro Kernfrage, nach `runs/ingest/gen_os_2/MAT_1.json` … `runs/ingest/gen_os_2/MAT_2.json`.
+Schreibe **2 Dateien**, eine pro Kernfrage, nach `runs/ingest/gen_us_2/MAT_1.json` … `runs/ingest/gen_us_2/MAT_2.json`.
 Jede Datei ist **ausschließlich** dieses JSON (kein Fließtext, keine ``` Zäune):
 
 ```json
 {
-  "subject": "Mathematik", "klasse": <5-8, eine Klasse mit Kompetenzen im gewählten Bereich>,
+  "subject": "Mathematik", "klasse": <1-4, eine Klasse mit Kompetenzen im gewählten Bereich>,
   "kompetenzbereich": "<KB-Name>",
   "title": "<prägnanter Titel>", "kernfrage": "<eine Schüler-Kernfrage in Du-Form>",
   "body": {
@@ -294,7 +206,7 @@ Jede Datei ist **ausschließlich** dieses JSON (kein Fließtext, keine ``` Zäun
     "assets": [ /* nur Struktur-Figuren: {"id":"abb2","role":"figure","generator":"matplotlib:function_graph","spec":{"m":2,"b":1}} */ ],
     "sections": [ { "id":"s1","title":"...","throughline":"...","talking_points":["..."],"extensions":["..."],
       "blocks":[ {"role":"task","id":"t1","kind":"<kind>","prompt":"...","payload":null,
-        "response":{"mode":"lines","n":3},"cognitive_level":"understand","dimensions":["DM"],
+        "response":{"mode":"lines","n":3},"cognitive_level":"understand","dimensions":["MOD"],
         "serves":[{"competence_id":"<ID>","relation":"exercises"}],"est_minutes":7,"asset_refs":[],
         "answer_key":"...","acceptable_reasoning":null,"watch_outs":["..."],"rubric":[]} ] } ]
   }

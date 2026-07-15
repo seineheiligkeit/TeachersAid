@@ -650,10 +650,15 @@ Scaling the corpus uses **subagents as the generator** (they run via Claude Code
 Each emits a `GenWorksheetBody` JSON anchored to **real** catalog competences, validated through the
 real generation seam, staged for HITL review.
 
-- `tools/breadth_prompt.py` writes a fully-grounded per-subject brief (verbatim competences by KB across
-  grades, allowed dims/kinds, the JSON shape + a worked example, N **distinct Kernfragen**). Per-subject
-  config in `SUBJECTS` (anchor kb|grade; `practical` → enactive/oral modality; `target_language` for
-  FS1/FS2/LAT → target-language *material*, German instructions + German teacher layer).
+- `tools/breadth_prompt.py --stufe {Unterstufe|Oberstufe} [--subjects CODES] [--n N] --gen-dir DIR`
+  writes a fully-grounded per-subject brief (verbatim competences by KB across grades, allowed
+  dims/kinds, the JSON shape + a worked example, N **distinct Kernfragen**) — plus a **Korpus-Kontext**
+  section listing the worksheets already in the review store for that (subject, stufe) so agents pick
+  NEW angles + a coverage summary. Per-stufe `SUBJECT_SETS` (anchor kb|grade; `practical` →
+  enactive/oral; `target_language` → target-language *material*, German teacher layer). **The full
+  operator runbook — fan-out contract, `tools/campaign_status.py` babysitter, dry-run gate, persist,
+  and the failure-recovery lessons (fresh gen-dir per pass · normalizer-first · salvage partials ·
+  commit per subject) — is `Documents/content-campaign-workflow.md`.**
 - `tools/ingest_batch.py --dir` validates (`--dry-run`) or persists. **Its first-pass normalizer is
   load-bearing** — hand-written JSON is the real fragility, so it deterministically absorbs the
   recurring agent slips rather than re-spawning: `„…"` typographic-open/straight-close repair

@@ -1,117 +1,83 @@
 # Breiten-Generierung: Physik — 2 Kernfragen
 
 Du erzeugst **2 verschiedene** Arbeitsblatt-Inhalte (je eine eigene **Kernfrage**) für die
-**AHS-Oberstufe** auf österreichischem Lehrplan-Niveau. Sprache: **Deutsch**, AHS-Niveau (anspruchsvoll, Sek II).
+**AHS-Unterstufe** auf österreichischem Lehrplan-Niveau. Sprache: **Deutsch**, altersgerecht für die Unterstufe (Sek I, ~10-14 J.) — klar und konkret, aber nie trivial (der Blackboard-Test gilt trotzdem).
 Wähle **2 klar unterschiedliche Themen/Bereiche** (Breite!), nicht Varianten desselben Themas.
+
+## Korpus-Kontext — was es schon gibt
+Für **Physik** (Unterstufe) gibt es im Korpus schon **12** Arbeitsblätter. Wähle 2 **neue** Kernfragen, die sich davon klar unterscheiden (keine Dubletten, keine bloßen Varianten):
+- [Kl 2] Senden, Empfangen, Wahrnehmen — Was passiert zwischen einer Schallquelle oder Lichtquelle und deinem Ohr oder Auge – und wo lauern dabei Gefahren?
+- [Kl 2] Vom Leuchtpunkt zum Bild — Wie entsteht aus einem Lichtpunkt ein Bild – in der Lochkamera, im Spiegel und in deinem Auge?
+- [Kl 3] Energie unterwegs — das E-Bike — Wohin verschwindet die Energie, wenn ein E-Bike den Berg hochfährt — und wo kommt sie beim Bremsen wieder her?
+- [Kl 3] Kräfte, Bewegung und das Anhalten eines Fahrzeugs — Warum kann ein Fahrrad nicht sofort stoppen — und was beeinflusst den Bremsweg?
+- [Kl 3] Spannung, Strom und Schutz im Stromkreis — Wie schützt dich ein Sicherheitsschalter — und was passiert in deinem Körper, wenn du eine Leitung berührst?
+- [Kl 4] Das Klima in Wien — ein Jahr in Zahlen — Was verrät dir das Klimadiagramm über das Klima in Wien, und wie hängt Temperatur mit Wettererscheinungen zusammen?
+- [Kl 4] Strahlung und Radioaktivität — Was macht Strahlung gefährlich – und was nicht?
+- [Kl 4] Strahlung und Radioaktivität — Was macht Strahlung gefährlich – und was nicht?
+- [Kl 4] Treibhauseffekt, Energiehaushalt und Klimaschutz — Wie verändert der Mensch den Energiehaushalt der Erde — und was kann ich selbst dagegen tun?
+- [Kl 4] Warum ist es im Westen feuchter? — Bregenz und Wien im Vergleich — Warum regnet es in Bregenz so viel mehr als in Wien, obwohl beide Städte in Österreich liegen?
+- [Kl 4] Wer stößt wie viel CO₂ aus? — Emissionen im Ländervergleich und Klimaschutz — Wie unterscheidet sich der CO₂-Ausstoß pro Kopf zwischen verschiedenen Ländern, und was bedeutet das für Klimaschutzmaßnahmen?
+- [Kl 4] Wetter, Klima und Energiehaushalt der Erde — Wie hängen Wärmeübertragung, Luftdruck und der Energiehaushalt der Erde zusammen – und was hat das mit deinem Alltag und dem Klimawandel zu tun?
+
+_Abdeckung (Kompetenzbereich-Zellen): 7 grün · 0 teilweise · 0 leer von 7._
 
 ## Kompetenzen (verbatim — `serves.competence_id` MUSS eine dieser IDs sein), gruppiert nach Kompetenzbereich
 
-### Aktuelle Forschung
-- `PHY.OS.8.AKT.01` (Kl 8) [dims —]: Aktuelle Forschung: Einblicke in aktuelle physikalische Forschung
-- `PHY.OS.8.AKT.02` (Kl 8) [dims —]: Aktuelle Forschung: Einblicke in aktuelle physikalische Forschung
-
-### Atomphysik
-- `PHY.OS.7.ATO.01` (Kl 7) [dims —]: Atomphysik: Licht als Überträger von Energie, Spektren, Absorption und Emission, Modell der Atomhülle
-- `PHY.OS.7.ATO.02` (Kl 7) [dims —]: Atomphysik: Licht als Überträger von Energie, Spektren, Absorption und Emission, Modell der Atomhülle
-
-### E: Experimentieren und Erkenntnisgewinnung
-- `PHY.OS.x.E.01` (Kl 5) [dims E]: zu Vorgängen und Phänomenen in Natur, Alltag und Technik naturwissenschaftliche Fragen formulieren und Hypothesen aufstellen,
-- `PHY.OS.x.E.02` (Kl 5) [dims E]: zu Fragestellungen eine passende Untersuchung oder ein Experiment planen, durchführen und protokollieren,
-- `PHY.OS.x.E.03` (Kl 5) [dims E]: im Rahmen naturwissenschaftlicher Untersuchungen oder Experimente Daten aufnehmen und analysieren (ordnen, vergleichen, messen, Abhängigkeiten feststellen, Zuverlässigkeit einschätzen),
-- `PHY.OS.x.E.04` (Kl 5) [dims E]: Daten durch mathematische und physikalische Modelle abbilden und interpretieren.
-
-### Elektrische Energie
-- `PHY.OS.6.ELE2.01` (Kl 6) [dims —]: Elektrische Energie: Elektrische Energie und Leistung, Energiebereitstellung durch Batterien, Photovoltaik usw.
-
-### Elektrizitätslehre
-- `PHY.OS.6.ELE.01` (Kl 6) [dims —]: Grundlagen der Elektrizitätslehre: Wirkungen des elektrischen Stroms, einfacher Stromkreis, Stromstärke, Spannung, elektrischer Widerstand
-- `PHY.OS.6.ELE.02` (Kl 6) [dims —]: Grundlagen der Elektrizitätslehre: Wirkungen des elektrischen Stroms, einfacher Stromkreis, Stromstärke, Spannung, elektrischer Widerstand, elektrische Energie
-
-### Elektrodynamik
-- `PHY.OS.7.ELE3.01` (Kl 7) [dims —]: Elektrodynamik: Motorprinzip und Induktion
-
-### Elektromagnetische Wellen
-- `PHY.OS.7.ELE4.01` (Kl 7) [dims —]: Elektromagnetische Wellen: Erzeugung und Eigenschaften am Beispiel des Lichts und anderer Arten elektromagnetischer Strahlung, Wellenoptik, sichtbarer und nicht sichtbarer Teil des elektromagnetischen Spektrums
-- `PHY.OS.7.ELE4.02` (Kl 7) [dims —]: Elektromagnetische Wellen: Erzeugung und Eigenschaften am Beispiel des Lichts und anderer Arten elektromagnetischer Strahlung, Spektrum
+### Elektrizität und Magnetismus
+- `PHY.US.3.ELE.01` (Kl 3) [dims W,E]: Experimente zum Zusammenhang der Grundgrößen der Elektrizität (Spannung, Stromstärke und Widerstand) und zu den Wirkungen des elektrischen Stroms planen, durchführen, analysieren und dokumentieren. (W, E)
+- `PHY.US.3.ELE.02` (Kl 3) [dims S]: die Gefahren der Elektrizität einschätzen und die Bedeutung von Schutzmaßnahmen für den Alltag erläutern. (S)
+- `PHY.US.3.ELE.03` (Kl 3) [dims E]: physikalische Modellvorstellungen zum Magnetismus und zum Stromkreis und deren Übereinstimmungen und Unterschiede zu experimentellen Daten diskutieren. (E)
+- `PHY.US.3.ELE.04` (Kl 3) [dims W,S]: physikalische und nichtphysikalische Aspekte von Mobilität und Verkehrssicherheit in verschiedenen Medien recherchieren (W), die Verlässlichkeit der Quellen bewerten, die Ergebnisse diskutieren und Konsequenzen für das eigene Handeln ableiten (S).
+- `PHY.US.3.ELE.05` (Kl 3) [dims E,W]: die Prinzipien des Elektromotors und des Generators qualitativ untersuchen (E) sowie deren Bedeutung für den Alltag recherchieren und kommunizieren (W).
 
 ### Energie
-- `PHY.OS.7.ENE.01` (Kl 7) [dims —]: Energie: Grundlagen der konventionellen und alternativen Energiebereitstellung; Energieübertragung; Sicherheit im Umgang mit elektrischer Energie
-- `PHY.OS.7.ENE.02` (Kl 7) [dims —]: Energie: Grundlagen der konventionellen und alternativen Energiebereitstellung; Energieübertragung; Sicherheit im Umgang mit elektrischer Energie
-
-### Energieerhaltung
-- `PHY.OS.6.ENE2.01` (Kl 6) [dims —]: Energieerhaltung und Grundlagen der Thermodynamik
-
-### Felder
-- `PHY.OS.6.FEL.01` (Kl 6) [dims —]: Felder: Grundphänomene statischer elektrischer und magnetischer Felder, Feldbegriff, Ladungen als Ursache elektrischer Felder, Ströme als Ursache magnetischer Felder
-- `PHY.OS.7.FEL.01` (Kl 7) [dims —]: Grundphänomene elektromagnetischer Felder und der Elektrodynamik: Motorprinzip und Induktion
-
-### Größenordnungen
-- `PHY.OS.5.GRO.01` (Kl 5) [dims —]: Größenordnungen im Mikro-und Makrokosmos; Stellung im Universum
-- `PHY.OS.6.GRO.01` (Kl 6) [dims —]: Größenordnungen im Mikro-und Makrokosmos; Stellung im Universum
-
-### Kernphysik
-- `PHY.OS.8.KER.01` (Kl 8) [dims —]: Kernphysik: Aufbau und Stabilität der Kerne, natürliche Radioaktivität, ionisierende Strahlung, Kernfusion und -spaltung; medizinische und technische Anwendungen
-- `PHY.OS.8.KER.02` (Kl 8) [dims —]: Kernphysik: Aufbau und Stabilität der Kerne, natürliche Radioaktivität, ionisierende Strahlung, medizinische und technische Anwendungen
+- `PHY.US.3.ENE.01` (Kl 3) [dims W]: Energie als wesentliche Erhaltungsgröße in Mechanik und Elektrizitätslehre erfassen sowie den Wechsel der Energieformen erkennen und qualitativ beschreiben. (W)
+- `PHY.US.3.ENE.02` (Kl 3) [dims W,S]: altersgerechte Informationen über den Aufbau und die Funktionsweise moderner elektronischer Geräte beschaffen (W) und über Aspekte der Wirtschafts- und Verbraucher/innenbildung diskutieren (S).
 
 ### Mechanik
-- `PHY.OS.6.MEC3.01` (Kl 6) [dims —]: Mechanik: Relativität von Ruhe und Bewegung, Bewegungsänderung durch Kräfte, Newton’sche Bewegungsgleichung, geradlinige und kreisförmige Bewegung, Impulserhaltung
+- `PHY.US.3.MEC.01` (Kl 3) [dims W]: die (auch mehrdimensionale) Bewegung von Objekten mit geeigneten fachtypischen Darstellungen unter Einbeziehung moderner digitaler Werkzeuge beschreiben und die wesentlichen physikalischen Größen von Bewegungen (Ort, Tempo und Geschwindigkeit) in verschiedenen Kontexten anwenden. (W)
+- `PHY.US.3.MEC.02` (Kl 3) [dims E,W]: in einfachen Experimenten den Zusammenhang zwischen der Änderung einer Geschwindigkeit und einer Einwirkung von außen untersuchen (E) und auf unterschiedliche Alltagsbeispiele anwenden (W).
+- `PHY.US.3.MEC.03` (Kl 3) [dims E,W]: die Wirkung verschiedener Kräfte im Alltag qualitativ untersuchen (E), dokumentieren (E) und kommunizieren (W).
 
-### Mechanik I
-- `PHY.OS.5.MEC.01` (Kl 5) [dims —]: Mechanik I: Relativität von Ruhe und Bewegung, Bewegungsänderung durch Kräfte, Newton’sche Bewegungsgleichung, geradlinige und kreisförmige Bewegung, Gravitation
+### Optische Systeme
+- `PHY.US.2.OPT.01` (Kl 2) [dims W]: die Abbildung von Gegenständen durch verschiedene optische Systeme (ua. Lochkamera, ebener Spiegel, Auge) mithilfe des „Leuchtpunkt zu Bildpunkt“-Abbildungsschemas adressatengerecht beschreiben und qualitativ mit Hilfe von Lichtbündeln darstellen. (W)
+- `PHY.US.2.OPT.02` (Kl 2) [dims E]: experimentelle Beobachtungen zu Phänomenen der Bildentstehung mit verschiedenen Linsen durchführen. (E)
+- `PHY.US.2.OPT.03` (Kl 2) [dims S,W]: den Einsatz optischer Geräte in verschiedenen Bereichen aus verlässlichen Quellen (S) recherchieren (W) und damit verbundene Chancen und Risiken reflektieren (S).
+- `PHY.US.2.OPT.04` (Kl 2) [dims E]: die Zusammensetzung sichtbarer Strahlung bestimmter Lichtquellen mit einer passenden Untersuchung analysieren und Ergebnisse dieser Untersuchung unter Anwendung von fachspezifischem Wortschatz adressatengerecht beschreiben. (E)
 
-### Mechanik II
-- `PHY.OS.6.MEC2.01` (Kl 6) [dims —]: Mechanik II: Impulserhaltung; Rotation und Drehimpulserhaltung
+### Sehen und Hören
+- `PHY.US.2.SEH.01` (Kl 2) [dims W,S]: physikalische Bedingungen für das Sehen von Körpern/Gegenständen bzw. das Hören von Tönen/Klängen durch ein Sender-Empfänger-Modell adressatengerecht erläutern (W) und auf verschiedene Alltagssituationen anwenden (ua. Sicherheit im Straßenverkehr) (S).
+- `PHY.US.2.SEH.02` (Kl 2) [dims S]: verantwortungsbewusst mit Licht- und Schallquellen umgehen, um die Gefährdung von Sinnesorganen zu vermeiden. (S)
+- `PHY.US.2.SEH.03` (Kl 2) [dims W,E]: das Modell der allseitigen geradlinigen und kontinuierlichen Lichtausbreitung nutzen (W), um unter der Anwendung von fachspezifischem Wortschatz begründete Vermutungen zur Entstehung von Schattenphänomenen aufzustellen (E).
+- `PHY.US.2.SEH.04` (Kl 2) [dims E]: die Entstehung von Tag und Nacht, Jahreszeiten und Mondphasen durch Bewegungsabläufe und Beleuchtungsverhältnisse in unserem Sonnensystem szenisch oder mit Modellen darstellen. (E)
+- `PHY.US.2.SEH.05` (Kl 2) [dims W]: den Begriff Farbe – als die Eigenschaft von Stoffen, bestimmte Lichtfarben streuen zu können – fachlich angemessen verwenden. (W)
 
-### Quantenphysik
-- `PHY.OS.7.QUA.01` (Kl 7) [dims —]: Quantenphysik: Besonderheiten der Quantenwelt, Doppelspaltexperiment, Heisenberg’sche Unschärferelation, statistische Deutung
-- `PHY.OS.7.QUA.02` (Kl 7) [dims —]: Quantenphysik: Besonderheiten der Quantenwelt
+### Strahlung und Radioaktivität
+- `PHY.US.4.STR.01` (Kl 4) [dims W,S]: Informationen zur Energie- und Informationsübertragung durch Strahlung recherchieren (W) und die Verlässlichkeit der Quellen bewerten (S).
+- `PHY.US.4.STR.02` (Kl 4) [dims E,S]: die Interaktion unterschiedlicher Strahlungsarten (ua. sichtbare Strahlung, UV-Strahlung, IR-Strahlung, ionisierende Strahlung) mit Materie anhand geeigneter (auch virtueller) Untersuchungen analysieren (E) und daraus Konsequenzen für die Risikobewertung ziehen (S).
+- `PHY.US.4.STR.03` (Kl 4) [dims W]: den radioaktiven Zerfall als Zufallsprozess im Atomkern verstehen und mit Hilfe von Modellen darstellen. (W)
+- `PHY.US.4.STR.04` (Kl 4) [dims W,E,S]: mit altersgemäßen Informationen zu aktueller physikalischer Forschung umgehen. (W, E, S)
 
-### Relativitätstheorie
-- `PHY.OS.8.REL.01` (Kl 8) [dims —]: Relativitätstheorie: Konzepte der speziellen Relativitätstheorie, Grundidee der allgemeinen Relativitätstheorie
-- `PHY.OS.8.REL.02` (Kl 8) [dims —]: Relativitätstheorie: Grundideen der speziellen Relativitätstheorie
-
-### S: Standpunkte begründen und aus naturwissenschaftlicher Sicht bewerten
-- `PHY.OS.x.S.01` (Kl 5) [dims S]: Bedeutung, Chancen und Risiken der Anwendungen von naturwissenschaftlichen Erkenntnissen auf persönlicher, regionaler und globaler Ebene erkennen, um verantwortungsbewusst handeln zu können,
-- `PHY.OS.x.S.02` (Kl 5) [dims S]: Naturwissenschaftliche von nicht-naturwissenschaftlichen Argumentationen und Fragestellungen unterscheiden,
-- `PHY.OS.x.S.03` (Kl 5) [dims S]: Informationen aus unterschiedlich verlässlichen Quellen aus naturwissenschaftlicher Sicht und aus anderen Blickwinkeln (zB ökonomisch, ökologisch, ethisch) reflektieren,
-- `PHY.OS.x.S.04` (Kl 5) [dims S]: Entscheidungskriterien für das eigene Handeln entwickeln und aus naturwissenschaftlicher Sicht überprüfen.
-
-### Schwingungen
-- `PHY.OS.6.SCH.01` (Kl 6) [dims —]: Schwingungen und mechanische Wellen: Erzeugung, Reflexion und Brechung, Beugung und Interferenz, Resonanz, stehende Wellen
-- `PHY.OS.6.SCH.02` (Kl 6) [dims —]: Schwingungen und mechanische Wellen: Erzeugung und Eigenschaften
-
-### Strahlungshaushalt der Erde
-- `PHY.OS.7.STR.01` (Kl 7) [dims —]: Strahlungshaushalt der Erde
-- `PHY.OS.7.STR.02` (Kl 7) [dims —]: Strahlungshaushalt der Erde
-
-### Teilchenphysik
-- `PHY.OS.8.TEI.01` (Kl 8) [dims —]: Teilchenphysik: Entwicklung des Teilchenkonzepts, Standardmodell, Anfänge des Universums
-- `PHY.OS.8.TEI.02` (Kl 8) [dims —]: Teilchenphysik: Entwicklung des Teilchenkonzepts, Anfänge des Universums
-
-### Theorieentwicklung
-- `PHY.OS.7.THE2.01` (Kl 7) [dims —]: Einblicke in die Theorieentwicklung und das Weltbild der modernen Physik
-- `PHY.OS.7.THE2.02` (Kl 7) [dims —]: Einblicke in die Theorieentwicklung und das Weltbild der modernen Physik
-
-### Thermodynamik
-- `PHY.OS.5.THE.01` (Kl 5) [dims —]: Thermodynamik: Energie, Energieerhaltung, Teilchenmodell, Entropie, thermodynamische Hauptsätze, nachhaltiger Umgang mit Energie
-
-### Vertiefung und Wiederholung
-- `PHY.OS.8.VER.01` (Kl 8) [dims —]: Vertiefung und Wiederholung von Lerninhalten aus vorangegangenen Semestern
-- `PHY.OS.8.VER.02` (Kl 8) [dims —]: Vertiefung und Wiederholung von Lerninhalten aus vorangegangenen Semestern
-
-### W: Fachwissen
-- `PHY.OS.x.W.01` (Kl 5) [dims W]: Vorgänge und Phänomene in Natur, Alltag und Technik beschreiben und benennen,
-- `PHY.OS.x.W.02` (Kl 5) [dims W]: mit Informationen aus fachlichen Medien und Quellen umgehen,
-- `PHY.OS.x.W.03` (Kl 5) [dims W]: Vorgänge und Phänomene in Natur, Alltag und Technik in verschiedenen Formen (Bild, Grafik, Tabelle, Diagramm, formale Zusammenhänge, Modelle, ...) darstellen, erläutern und adressatengerecht kommunizieren,
-- `PHY.OS.x.W.04` (Kl 5) [dims W]: Fachwissen in unterschiedlichen Kontexten anwenden.
+### Wetter und Klima
+- `PHY.US.4.WET.01` (Kl 4) [dims E]: die Temperatur mit verschiedenen Messgeräten bestimmen. (E)
+- `PHY.US.4.WET.02` (Kl 4) [dims E,S]: Experimente zu den verschiedenen Formen der thermischen Energieübertragung planen, durchführen und die Ergebnisse interpretieren (E) sowie deren Bedeutung für die Klimaproblematik diskutieren. (S)
+- `PHY.US.4.WET.03` (Kl 4) [dims W]: Temperatur- und Luftdruckunterschiede als den wesentlichen Antrieb von Wettererscheinungen erkennen und das Wissen in Alltagssituationen anwenden. (W)
+- `PHY.US.4.WET.04` (Kl 4) [dims W,S]: Informationen zum Energiehaushalt der Erde und zu den menschlichen Einflüssen darauf aus unterschiedlichen Quellen entnehmen (W) und nach physikalischen Aspekten bewerten (S).
+- `PHY.US.4.WET.05` (Kl 4) [dims S]: Maßnahmen zur Einhaltung aktueller Klimaschutzziele auf persönlicher, regionaler und globaler Ebene einordnen und ihre Umsetzungsmöglichkeiten diskutieren. (S)
+- `PHY.US.4.WET.06` (Kl 4) [dims W,S]: grundlegende Vorgänge verschiedener Kraftwerkstypen erläutern (W) und aus ökonomischer, ökologischer und ethischer Sicht bewerten (S).
 
 ## Erlaubte Dimensionen (`dimensions`, primäre zuerst — Teilmenge dieser Codes)
 - `W` — Fachwissen anwenden
-- `E` — Experimentieren und Erkenntnisgewinnung
+- `E` — Erkenntnisgewinnung und Experimentieren
 - `S` — Standpunkte begründen und aus naturwissenschaftlicher Sicht bewerten
 
 ## Erlaubte Aufgaben-`kind`-Werte
 create_produce, data_interpretation, decision_scenario, experiment_protocol, matching, multiple_choice, open_response, ordering, puzzle, source_critique, table_fill, true_false_justify
+
+## Anwendungsbereiche (Themen-Ideen für die Kernfragen)
+- Kl 2: Physikalischer Sehvorgang, Funktionsweise des menschlichen Auges · Entstehung und Ausbreitung von Schall, Gefährdung durch Lärm · Geradlinige allseitige Ausbreitung von Licht, Lichtgeschwindigkeit · Modell für kontinuierliche Lichtausbreitung (ua. Lichtstrahl, Lichtbündel) · Schatten: dreidimensionaler Schattenraum, zweidimensionales Schattenbild · Entstehung von Tag/Nacht und Mondphasen: Bewegungsverläufe von Erde, Mond und Sonne · Interaktion von Licht und Materie: Streuung (insbesondere das Zustandekommen von Farbwahrnehmung), Reflexion (insbesondere die Wirkung von glatten metallischen Flächen auf Lichtbündel) und Brechung (insbesondere die Wirkung von Linsen auf Lichtbündel) · Spektrale Zusammensetzung von Licht
+- Kl 3: Beschreibung von (auch zweidimensionalen) Bewegungen, Tempo und Geschwindigkeit · Je-desto-Zusammenhang zwischen der Änderung einer Geschwindigkeit und einer Einwirkung von außen (qualitativer Zugang zur newtonschen Bewegungsgleichung in der Form · Phänomenologische Behandlung von Kraftarten · Wechselwirkungsgesetz · Permanent- und Elektromagnetismus · Einfacher Stromkreis: Stromstärke, Spannung, Widerstand, Wirkungen des elektrischen Stroms, Gefahren und Schutzmaßnahmen · Modellvorstellungen (zB Teilchenmodelle, Eisen-Magnet-Modell für den Magnetismus, Elektronengasmodell für den Stromkreis) · Elektrische und mechanische Energie, Energieerhaltung
+- Kl 4: Temperatur und innere Energie · Thermische Übertragung von Energie · Phasenübergänge · Wetterentstehung, Wettermessinstrumente, Wetterextreme · Treibhauseffekt, Klima und Klimawandel, Einflüsse des Menschen auf das Klima · Modellvorstellungen (ua. Teilchenmodelle in der Wärmelehre und der Kernphysik, Klimamodelle) · Grundlagen der Radioaktivität (natürliche und künstliche Quellen, ionisierende Strahlung, biologische Wirkung) · Anwendungen von elektromagnetischer Strahlung in Medizin und Technik
 ## Verankerung
 Jede Kernfrage gehört zu **einem** Kompetenzbereich; setze im JSON `"kompetenzbereich": "<exakter KB-Name>"` und die passende `klasse` (eine Klasse, in der dieser KB Kompetenzen hat). Alle Aufgaben dieser Kernfrage dienen Kompetenzen aus diesem (KB, Klasse).
 
@@ -201,12 +167,12 @@ true_false_justify `{"kind":"true_false_justify","statements":[...]}` · orderin
 matching `{"kind":"matching","left":[...],"right":[...]}` · decision_scenario `{"kind":"decision_scenario","stem":"..."}`
 
 ## Ausgabe
-Schreibe **2 Dateien**, eine pro Kernfrage, nach `runs/ingest/gen_os_2/PHY_1.json` … `runs/ingest/gen_os_2/PHY_2.json`.
+Schreibe **2 Dateien**, eine pro Kernfrage, nach `runs/ingest/gen_us_2/PHY_1.json` … `runs/ingest/gen_us_2/PHY_2.json`.
 Jede Datei ist **ausschließlich** dieses JSON (kein Fließtext, keine ``` Zäune):
 
 ```json
 {
-  "subject": "Physik", "klasse": <5-8, eine Klasse mit Kompetenzen im gewählten Bereich>,
+  "subject": "Physik", "klasse": <1-4, eine Klasse mit Kompetenzen im gewählten Bereich>,
   "kompetenzbereich": "<KB-Name>",
   "title": "<prägnanter Titel>", "kernfrage": "<eine Schüler-Kernfrage in Du-Form>",
   "body": {

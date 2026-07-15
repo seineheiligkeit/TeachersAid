@@ -1,155 +1,137 @@
 # Breiten-Generierung: Geographie und wirtschaftliche Bildung — 2 Kernfragen
 
 Du erzeugst **2 verschiedene** Arbeitsblatt-Inhalte (je eine eigene **Kernfrage**) für die
-**AHS-Oberstufe** auf österreichischem Lehrplan-Niveau. Sprache: **Deutsch**, AHS-Niveau (anspruchsvoll, Sek II).
+**AHS-Unterstufe** auf österreichischem Lehrplan-Niveau. Sprache: **Deutsch**, altersgerecht für die Unterstufe (Sek I, ~10-14 J.) — klar und konkret, aber nie trivial (der Blackboard-Test gilt trotzdem).
 Wähle **2 klar unterschiedliche Themen/Bereiche** (Breite!), nicht Varianten desselben Themas.
+
+## Korpus-Kontext — was es schon gibt
+Für **Geographie und wirtschaftliche Bildung** (Unterstufe) gibt es im Korpus schon **32** Arbeitsblätter. Wähle 2 **neue** Kernfragen, die sich davon klar unterscheiden (keine Dubletten, keine bloßen Varianten):
+- [Kl 1] Arm und Reich — eine Frage des Maßstabs? — Wie lässt sich Armut und Reichtum messen — und was verändert sich, wenn du von der Welt auf deine eigene Region schaust?
+- [Kl 1] Bedürfnisse, Geld und mein Wohnort — Was brauchst du wirklich – und wie findest du dich in deiner Umgebung zurecht?
+- [Kl 1] Talkessel und Alpenrand: Klima in Innsbruck und Graz im Vergleich — Warum unterscheiden sich die Klimadiagramme von Innsbruck und Graz — obwohl beide Städte in den Alpen liegen?
+- [Kl 1] Warum ist Bregenz so viel feuchter als Wien? West- und Ostösterreich im Klimavergleich — Warum fällt in Bregenz mehr als doppelt so viel Niederschlag wie in Wien — und was hat das Gebirge damit zu tun?
+- [Kl 1] Was unser Essen mit dem Klima zu tun hat — Wie beeinflusst unser Essalltag das Klima — und was hat der Klimawandel umgekehrt mit unserer Ernährung zu tun?
+- [Kl 1] Wenn die Natur zuschlägt — Naturgefahren und Gesellschaft — Warum trifft ein Naturereignis nicht alle Menschen gleich hart — und was kann eine Gesellschaft tun, um sich zu schützen und zu helfen?
+- [Kl 1] Wie liest man ein Klimadiagramm? Wien als Beispiel — Was verrät dir ein Klimadiagramm über das Wetter in Wien — und was nicht?
+- [Kl 2] Dienstleistungen klug nutzen — von der Bank bis zum Online-Shop — Welche Dienstleistungen nutzt du täglich, wie haben sie sich durch die Digitalisierung verändert — und könntest du selbst eine anbieten?
+- [Kl 2] Energie und Klimawandel — Welche Energie nutzen wir – und warum ist unsere Wahl so wichtig für das Klima und die Zukunft?
+- [Kl 2] Energie zwischen Klimaschutz und Versorgungssicherheit — Welche Energiequellen brauchen wir – und zu welchem Preis für Klima und Gesellschaft?
+- [Kl 2] Wer macht was? Wirtschaftssektoren, Berufe und Arbeitsteilung — Wie ist die Arbeitswelt in drei große Bereiche aufgeteilt — und welche Berufe findest du davon in deiner eigenen Umgebung?
+- [Kl 3] Altersstruktur und Zukunft: Was bedeutet Österreichs Demografie für Pensionen und Gesellschaft? — Was sagen die Bevölkerungsdaten über Österreichs Zukunft — und welche Weichenstellungen braucht es?
+- [Kl 3] Berufe, Bildungswege und Arbeitsleben in Österreich — Welche Möglichkeiten hast du nach der AHS – und was bedeutet Arbeit in deinem Leben?
+- [Kl 3] Die Bevölkerungspyramide Österreichs lesen — Was verrät die Bevölkerungspyramide über Altersstruktur und Geschlechterverhältnis in Österreich?
+- [Kl 3] Generationen und Altersgruppen in Österreich heute — Welche Generationen prägen Österreichs Gesellschaft heute, und was bedeutet das für das Zusammenleben?
+- [Kl 3] Mittelpunkt oder Randlage? Zentren und Peripherien in deiner Region — Ist deine Gemeinde ein Zentrum oder eine Peripherie – und wer entscheidet das eigentlich?
+- [Kl 3] Preise und Märkte in Österreich — Wie entstehen Preise auf Märkten – und warum kostet dasselbe Produkt manchmal ganz unterschiedlich viel?
+- [Kl 3] Preise, Märkte und Wirtschaftsakteure in Österreich — Wer bestimmt, was etwas kostet – und wer hat in der Wirtschaft das Sagen?
+- [Kl 3] Ungleich verteilt – was die Bevölkerungsverteilung für Infrastruktur und Versorgung bedeutet — Was bedeutet es für Schulen, Krankenhäuser und Busse, wenn die Bevölkerung so ungleich auf die Bundesländer verteilt ist?
+- [Kl 3] Wachstum und Alterung zusammengedacht — Wie hängen Bevölkerungswachstum und gesellschaftliche Alterung in Österreich zusammen – und was bedeutet das für die Zukunft?
+- [Kl 3] Wer lebt bei uns? Österreichs Gesellschaft im Wandel — Wie hat sich Österreichs Bevölkerung verändert – und was bedeutet das für dein zukünftiges Leben?
+- [Kl 3] Wien und Niederösterreich – warum leben so viele Menschen im Osten? — Warum wohnen fast 41 % der Österreicherinnen und Österreicher allein in Wien und Niederösterreich – und was zieht die Menschen in Ballungsräume?
+- [Kl 3] Wo leben die Österreicher? Bevölkerungsverteilung nach Bundesländern — Wie ist Österreichs Bevölkerung auf die neun Bundesländer verteilt – und was sagen diese Zahlen über unser Land?
+- [Kl 3] Österreich altert – der steigende Anteil älterer Menschen — Warum wird Österreich immer älter, und was bedeutet das für unser Zusammenleben?
+- [Kl 3] Österreichs Bevölkerung seit 1960 — Wie hat sich die Bevölkerung Österreichs seit 1960 verändert, und was steckt hinter diesem Wachstum?
+- [Kl 4] Arm und reich — BIP pro Kopf weltweit — Wie groß sind die wirtschaftlichen Unterschiede zwischen reichen und armen Ländern, und was bedeutet das BIP pro Kopf eigentlich?
+- [Kl 4] Das Anthropozän: Wenn der Mensch zur Naturkraft wird — Welche Spuren hinterlässt die Menschheit auf der Erde – und was bedeutet das für dein Leben?
+- [Kl 4] Die Europäische Union: Werte, Grundfreiheiten und Herausforderungen — Was bringt dir die EU im Alltag – und welche Probleme muss sie noch lösen?
+- [Kl 4] Meine Zukunft in einer globalisierten Welt — Was willst du vom Leben – und welche Chancen und Grenzen stecken in der globalisierten Welt für dich?
+- [Kl 4] Stadt oder Land? Verstädterung im Ländervergleich — Wie stark sind die Menschen in verschiedenen Ländern der Welt in Städten konzentriert — und was hat das mit Entwicklung zu tun?
+- [Kl 4] Weltbevölkerung und Urbanisierung — Warum wächst die Weltbevölkerung so ungleich – und was hat das damit zu tun, wo und wie Menschen wohnen?
+- [Kl 4] Wer heizt das Klima an? CO₂ pro Kopf und globale Verantwortung — Wer stößt am meisten CO₂ pro Person aus — und können wir sagen, welche Länder mehr Verantwortung für den Klimawandel tragen?
+
+_Abdeckung (Kompetenzbereich-Zellen): 14 grün · 0 teilweise · 0 leer von 14._
 
 ## Kompetenzen (verbatim — `serves.competence_id` MUSS eine dieser IDs sein), gruppiert nach Kompetenzbereich
 
-### Außerwert-und Inwertsetzung von Produktionsgebieten beurteilen
-- `GWB.OS.6.AUE.01` (Kl 6) [dims —]: Abhängigkeit landwirtschaftlicher Nutzung vom Naturraumpotential untersuchen
-- `GWB.OS.6.AUE.02` (Kl 6) [dims —]: Strukturen und Wandel landwirtschaftlicher und industrieller Produktionsbedingungen in Europa vergleichen
-- `GWB.OS.6.AUE.03` (Kl 6) [dims —]: Eignung von Räumen für die Tourismusentwicklung sowie Folgen der Erschließung beurteilen
+### Bildungswege und Arbeitswelten
+- `GWB.US.3.BIL.01` (Kl 3) [dims —]: sich über die Berufswelt informieren, unterschiedliche Bildungswege, klassische und innovative Berufsbilder sowie selbstständige und unselbstständige Arbeitsmöglichkeiten vergleichen und für den persönlichen Lebensweg reflektieren;
+- `GWB.US.3.BIL.02` (Kl 3) [dims —]: unbezahlte und bezahlte Arbeit , Arbeitslosigkeit, Höhe und Verwendung des Einkommens, Sparen, Finanzieren und Versichern, Rechte und Pflichten von Erwerbstätigen und Konsumierenden einschließlich Konsumentenschutz beschreiben.
 
-### Bevölkerung und Gesellschaft diskutieren
-- `GWB.OS.5.BEV.01` (Kl 5) [dims —]: Die heutige und die mögliche zukünftige Verteilung der Weltbevölkerung darstellen
-- `GWB.OS.5.BEV.02` (Kl 5) [dims —]: Dynamik der Weltbevölkerung analysieren
-- `GWB.OS.5.BEV.03` (Kl 5) [dims —]: Ursachen und Auswirkungen der räumlichen und sozialen Mobilität in verschiedenen Gesellschaften diskutieren
+### Das eigene Ich in einer vernetzten Welt
+- `GWB.US.4.EIG.01` (Kl 4) [dims —]: eigene Zukunftsvorstellungen, Wünsche und Bedürfnisse in Bezug auf individuelle Entwicklungsmöglichkeiten, finanzielle Rahmenbedingungen und Handlungsmöglichkeiten, Lebensqualität und gemeinsame Herausforderungen benennen, vergleichen und reflektieren sowie politische Prozesse mitgestalten.
 
-### Chancen und Gefahren der Globalisierung erörtern
-- `GWB.OS.8.CHA.01` (Kl 8) [dims —]: Den eigenen Standort bzw. die lokale Betroffenheit in Prozessen der Globalisierung in Bezug auf persönliche Chancen und Risiken analysieren
-- `GWB.OS.8.CHA.02` (Kl 8) [dims —]: Globalen Wandel und seine ökonomischen, sozialen und ökologischen Ursachen und Wirkungen – auch hinsichtlich der eigenen Lebenssituation – erörtern
-- `GWB.OS.8.CHA.03` (Kl 8) [dims —]: Auswirkungen ökonomischer Globalisierung diskutieren
-- `GWB.OS.8.CHA.04` (Kl 8) [dims —]: Strategien individuell, betrieblich und gesellschaftlich nachhaltigen Handelns entwickeln
-- `GWB.OS.8.CHA.05` (Kl 8) [dims —]: Wirtschaftskundliches Realgymnasium: Positionierungsmöglichkeiten von Unternehmen und Regionen in der globalisierten Wirtschaft analysieren
+### Entwicklungen am Wirtschaftsstandort Österreich
+- `GWB.US.3.ENT.01` (Kl 3) [dims —]: den Wandel von Standortfaktoren und Standortentscheidungen sowie ihre Folgen für die weitere Entwicklung Österreichs erörtern;
+- `GWB.US.3.ENT.02` (Kl 3) [dims —]: Industrieregionen, Tourismusregionen, landwirtschaftlich geprägte Regionen und Regionen mit anderen wirtschaftlichen Schwerpunkten charakterisieren und verorten;
+- `GWB.US.3.ENT.03` (Kl 3) [dims —]: persönliche, gesellschaftliche, ökonomische und ökologische Folgen der Ansiedelung eines Unternehmens in einer Region, ua. neue Anforderungen und Impulse hinsichtlich Infrastruktur (bspw. Bildung, öffentlicher Verkehr) sowie demografische und strukturelle Veränderungen erkennen;
+- `GWB.US.3.ENT.04` (Kl 3) [dims —]: Preise von Gütern und Dienstleistungen vergleichen und die Preisbildung auf Märkten unter Berücksichtigung von Angebot und Nachfrage sowie Produktionskosten an einfachen Fallbeispielen aus der eigenen Lebensrealität mit Österreichbezug erläutern;
+- `GWB.US.3.ENT.05` (Kl 3) [dims —]: die Aufgaben der einzelnen Akteure in der ökosozialen Marktwirtschaft (private Haushalte, Unternehmen, Staat, Banken, Oesterreichische Nationalbank, Sozialpartner etc.) und ihr Zusammenwirken beschreiben, mögliche Interessenskonflikte und Kooperationen analysieren;
+- `GWB.US.3.ENT.06` (Kl 3) [dims —]: die Funktionen von Steuern und Abgaben sowie deren gesellschaftliche und wirtschaftliche Bedeutung erörtern;
+- `GWB.US.3.ENT.07` (Kl 3) [dims —]: die Bedeutung der österreichischen Unternehmen für die Entwicklung des Wirtschaftsstandorts und erforderliche Rahmenbedingungen einschätzen;
+- `GWB.US.3.ENT.08` (Kl 3) [dims —]: die Bedeutung von unternehmerischer Innovation für die Entwicklung von Gesellschaft und Wirtschaftsstandort analysieren und erklären;
+- `GWB.US.3.ENT.09` (Kl 3) [dims —]: die wirtschaftliche Entwicklung Österreichs anhand von Kenngrößen beschreiben (zB Wirtschaftswachstum und BIP, Inflation, Beschäftigung und Arbeitslosigkeit, alternative Wohlstandsindikatoren) und persönliche, gesellschaftliche und ökologische Folgen diskutieren;
+- `GWB.US.3.ENT.10` (Kl 3) [dims —]: Gründe, Bedeutung sowie ökonomische, gesellschaftliche und ökologische Folgen der außenwirtschaftlichen Verflechtungen (Import/Export) Österreichs mit der EU und der restlichen Welt erläutern.
 
-### Demographische Entwicklung und gesellschaftspolitische Implikationen beurteilen
-- `GWB.OS.7.DEM.01` (Kl 7) [dims —]: Entwicklung der österreichischen Bevölkerung darstellen
-- `GWB.OS.7.DEM.02` (Kl 7) [dims —]: Mögliche soziale und ökonomische Folgen der Bevölkerungsentwicklung beurteilen
-- `GWB.OS.7.DEM.03` (Kl 7) [dims —]: Herausforderungen multikultureller und alternder Bevölkerungen erörtern
-- `GWB.OS.7.DEM.04` (Kl 7) [dims —]: Auswirkungen gesellschaftlicher Inklusions- und Exklusionsprozesse auf die Lebenssituationen ausgewählter Bevölkerungsgruppen bewerten
+### Entwicklungen in einer globalisierten Welt
+- `GWB.US.4.ENT2.01` (Kl 4) [dims —]: Verteilung der Bevölkerung und unterschiedliche Bevölkerungsdynamik aus einer globalen Perspektive analysieren und mögliche Konsequenzen erörtern;
+- `GWB.US.4.ENT2.02` (Kl 4) [dims —]: Entwicklung, Bedeutung und Verteilung von Städten, Ballungsräumen und Peripherien mit (Geo-)Medien beschreiben und vergleichen;
+- `GWB.US.4.ENT2.03` (Kl 4) [dims —]: Möglichkeiten und Grenzen der Zusammenarbeit sowie den Wandel der Machtverhältnisse zwischen Staaten, Bündnissen, NGOs, Konzernen, internationalen Organisationen und Bewegungen untersuchen und darstellen;
+- `GWB.US.4.ENT2.04` (Kl 4) [dims —]: Elemente, Anforderungen und Herausforderungen nachhaltiger wirtschaftlicher Aktivitäten und Beziehungen in der globalisierten Welt diskutieren zB vor dem Hintergrund von Klimawandel, Ressourcenknappheit, Armut und Wohlstand, Flucht und Migration beschreiben und Handlungsstrategien verschiedener Akteure diskutieren.
 
-### Die soziale, ökonomisch und ökologisch begrenzte Welt
-- `GWB.OS.5.SOZ.01` (Kl 5) [dims —]: Die soziale, ökonomisch und ökologisch begrenzte Welt
+### Europa und europäische Integration
+- `GWB.US.4.EUR.01` (Kl 4) [dims —]: unterschiedliche Gliederungen, Wahrnehmungen und Darstellungen von Europa und der Europäischen Union in ihrer Vielfalt beschreiben, in (Geo-)Medien analysieren und dazu kritisch Stellung beziehen;
+- `GWB.US.4.EUR.02` (Kl 4) [dims —]: die Bedeutung gemeinsamer Werte wie Friedenserhaltung, Demokratie oder Freiheit begründen und zentrale Themen der EU wie die vier Grundfreiheiten (Waren, Personen, Kapital und Dienstleistungen), den Euro, Bildungskooperationen, Qualitätsstandards, Verbraucherschutz oder Regionalentwicklung im Hinblick auf das eigene Leben reflektieren;
+- `GWB.US.4.EUR.03` (Kl 4) [dims —]: Chancen und Herausforderungen der europäischen Integration sowie die Notwendigkeit und Schwierigkeit von gemeinsamen Problemlösungen auf europäischer Ebene in einer globalisierten Welt erörtern.
 
-### Die wirtschaftlichen Bedürfnisse der Menschen bewerten
-- `GWB.OS.5.WIR.01` (Kl 5) [dims —]: Bedeutung von Markt und Marktversagen erläutern
-- `GWB.OS.5.WIR.02` (Kl 5) [dims —]: Wirtschaftliche Ungleichheiten auf der Erde darstellen
-- `GWB.OS.5.WIR.03` (Kl 5) [dims —]: Ursachen wirtschaftlicher Ungleichheiten beurteilen (politisches Handeln, Ressourcen, weltwirtschaftliche Strukturen)
-- `GWB.OS.5.WIR.04` (Kl 5) [dims —]: Die Produktion von Bedürfnissen hinsichtlich Konzepten der Nachhaltigkeit bewerten
+### Leben und Wirtschaften im Hinblick auf nachhaltige Ernährung
+- `GWB.US.1.LEB3.01` (Kl 1) [dims —]: ausgehend von individuellen Ernährungsgewohnheiten (land)wirtschaftliche Produktion, deren gesellschaftliche, wirtschaftliche und naturräumliche Bedingungen sowie deren Wandel an weltweit ausgewählten Fallbeispielen verorten und vergleichen;
+- `GWB.US.1.LEB3.02` (Kl 1) [dims —]: grundlegende Phänomene und Prozesse beschreiben, die für das Verständnis des Klimawandels und seiner gesellschaftlichen, wirtschaftlichen und ökologischen Folgen wichtig sind;
+- `GWB.US.1.LEB3.03` (Kl 1) [dims —]: den Einfluss des Klimawandels auf die Erzeugung von ausreichenden und gesunden Nahrungsmitteln an Fallbeispielen erörtern.
 
-### Geoökosysteme der Erde analysieren
-- `GWB.OS.5.GEO.01` (Kl 5) [dims —]: Klimadaten in Diagramme umsetzen
-- `GWB.OS.5.GEO.02` (Kl 5) [dims —]: Klimagliederungen der Erde vergleichen und hinterfragen
-- `GWB.OS.5.GEO.03` (Kl 5) [dims —]: Wechselwirkungen von Klima, Relief, Boden, Wasser und Vegetation analysieren
-- `GWB.OS.5.GEO.04` (Kl 5) [dims —]: Geoökosysteme und deren anthropogene Überformung erklären
+### Leben und Wirtschaften im eigenen Umfeld
+- `GWB.US.1.LEB.01` (Kl 1) [dims —]: eigene Wünsche und Bedürfnisse formulieren, vergleichen und reflektieren, deren Umsetzbarkeit überprüfen und erklären;
+- `GWB.US.1.LEB.02` (Kl 1) [dims —]: das Produzieren und Konsumieren im Wirtschaftskreislauf sowie den verantwortungsbewussten Umgang mit Geld (Einnahmen und Ausgaben) anhand von Fallbeispielen aus dem eigenen Umfeld analysieren;
+- `GWB.US.1.LEB.03` (Kl 1) [dims —]: persönliches Leben beginnend in der Wohn-/Schulortgemeinde auf verschiedenen Maßstabsebenen mit Hilfe von Geomedien einordnen und darstellen;
+- `GWB.US.1.LEB.04` (Kl 1) [dims —]: wesentliche Charakteristika der räumlichen Umwelt erheben, beschreiben und individuell bewerten;
+- `GWB.US.1.LEB.05` (Kl 1) [dims —]: unterschiedliche Vorstellungen von Lebensqualität erkunden und Lebensstile hinsichtlich Nachhaltigkeit reflektieren.
 
-### Gesamtwirtschaftliche Leistungen und Probleme sowie Wirtschafts- und Sozialpolitik erklären
-- `GWB.OS.7.GES.01` (Kl 7) [dims —]: Das Zustandekommen wirtschaftlicher Daten nachvollziehen und deren Aussagekraft beurteilen
-- `GWB.OS.7.GES.02` (Kl 7) [dims —]: Besonderheiten der österreichischen Wirtschafts- und Sozialpolitik darstellen
-- `GWB.OS.7.GES.03` (Kl 7) [dims —]: Gesamtwirtschaftliche Krisenmomente im Zusammenhang mit divergenten ökonomischen Theorien erklären
-- `GWB.OS.7.GES.04` (Kl 7) [dims —]: Wirtschafts- und Sozialpolitik und ihre Zielkonflikte als interessensbezogen diskutieren und unterschiedliche Positionen argumentieren
+### Leben und Wirtschaften in der Welt
+- `GWB.US.1.LEB2.01` (Kl 1) [dims —]: soziale, ökonomische und kulturelle sowie alters- und geschlechtsbedingte Gemeinsamkeiten und Unterschiede im Zusammenhang mit Arbeiten (einfach nachvollziehbare Produktion in Unternehmen), Wohnen und Mobilität in weltweit ausgewählten Fallbeispielen aus Zentren und Peripherien vergleichen und diese mit Geomedien lokalisieren;
+- `GWB.US.1.LEB2.02` (Kl 1) [dims —]: Kriterien zur Bestimmung von Armut und Reichtum beschreiben und auf unterschiedlichen räumlichen Maßstabsebenen kritisch vergleichen.
 
-### Gliederungsprinzipien der Erde nach unterschiedlichen Sichtweisen reflektieren
-- `GWB.OS.5.GLI.01` (Kl 5) [dims —]: Gliederungsmöglichkeiten der Erde nach naturräumlichen, kulturellen, politischen und ökonomischen Merkmalen analysieren
-- `GWB.OS.5.GLI.02` (Kl 5) [dims —]: Interessensgebundenheit von Gliederungen vergleichen
-- `GWB.OS.5.GLI.03` (Kl 5) [dims —]: Geographien durch Zonierungen/Gliederungen/Grenzziehungen machen und reflektieren
+### Leben und Wirtschaften unter Beachtung der natürlichen Prozesse
+- `GWB.US.1.LEB4.01` (Kl 1) [dims —]: Wechselwirkungen von Naturereignissen, Lebensqualität und Wirtschaften der Menschen anhand von Fallbeispielen beschreiben und erörtern;
+- `GWB.US.1.LEB4.02` (Kl 1) [dims —]: unterschiedliche Betroffenheit von Menschen und Gesellschaften durch Naturgefahren in angemessener Sprache bewerten und Möglichkeiten solidarischen Handelns erörtern.
 
-### Konvergenzen und Divergenzen europäischer Gesellschaften erörtern
-- `GWB.OS.6.KON.01` (Kl 6) [dims —]: Gesellschaftliche und politische Entwicklungen im europäischen Kontext erläutern und deren Bedeutung für das eigene Leben hinterfragen
-- `GWB.OS.6.KON.02` (Kl 6) [dims —]: Migrationen in und nach Europa erörtern
-- `GWB.OS.6.KON.03` (Kl 6) [dims —]: Chancen der europäischen Bildungs- und Arbeitsmärkte für die eigene Lebens- und Berufsplanung erkennen
+### Mensch und Natursysteme
+- `GWB.US.4.MEN.01` (Kl 4) [dims —]: das Ausmaß des menschlichen Einflusses auf Natursysteme anhand von Beispielen wie Einbringung von Schadstoffen, Land- und Ressourcennutzung (auch verknüpft mit eigenen Beobachtungen) beschreiben;
+- `GWB.US.4.MEN.02` (Kl 4) [dims —]: Folgen der Überschreitung von Belastungsgrenzen der Erde, des Klimawandels oder des Artensterbens auf das Leben und Wirtschaften erörtern;
+- `GWB.US.4.MEN.03` (Kl 4) [dims —]: über das sich wandelnde Verhältnis zwischen Mensch und Natur reflektieren, bereits etablierte Maßnahmen und Konzepte zum nachhaltigen Leben und Wirtschaften analysieren und eigene Ideen für nachhaltige Handlungen entwickeln.
 
-### Lokal – regional – global: Vernetzungen – Wahrnehmungen – Konflikte
-- `GWB.OS.8.LOK.01` (Kl 8) [dims —]: Lokal – regional – global: Vernetzungen – Wahrnehmungen – Konflikte
+### Nachhaltiger Umgang mit Energie und Ressourcen
+- `GWB.US.2.NAC.01` (Kl 2) [dims —]: die Nutzung erneuerbarer und nicht erneuerbarer Energieträger vergleichen und aus den Blickwinkeln von Klimawandel und Nachhaltigkeit reflektieren;
+- `GWB.US.2.NAC.02` (Kl 2) [dims —]: die ungleiche räumliche und gesellschaftliche Verteilung von Ressourcen mit Hilfe von (Geo-)Medien beschreiben und deren Nutzung, Wiederverwendung und Entsorgung analysieren;
+- `GWB.US.2.NAC.03` (Kl 2) [dims —]: den verantwortungsvollen Umgang mit den natürlichen Ressourcen wie Wasser, Luft oder Boden erörtern und im Alltag umsetzen sowie die Bedeutung gesetzlicher Rahmenbedingungen anhand von Beispielen beschreiben.
 
-### Lokal –regional – global: Vernetzungen – Wahrnehmungen – Konflikte
-- `GWB.OS.8.LOK2.01` (Kl 8) [dims —]: Lokal –regional – global: Vernetzungen – Wahrnehmungen – Konflikte
+### Vernetztes Wirtschaften zwischen Produktion und Konsum
+- `GWB.US.2.VER.01` (Kl 2) [dims —]: ausgehend von Berufen und Berufsbildern die Bedeutung und Vielfältigkeit der Arbeitswelt erkunden und vergleichen sowie deren Entwicklung für die eigene Zukunft einschätzen;
+- `GWB.US.2.VER.02` (Kl 2) [dims —]: arbeitsteiliges und spezialisiertes Produzieren von Gütern und Anbieten von Dienstleistungen sowie das freie Treffen von Produktionsentscheidungen durch Haushalte, Unternehmen und Staat beschreiben;
+- `GWB.US.2.VER.03` (Kl 2) [dims —]: reflektierte Entscheidungen bei der Nutzung von Bank-, Verkehrs- oder Handelsdienstleistungen treffen und diesbezügliche Auswirkungen der Digitalisierung beschreiben;
+- `GWB.US.2.VER.04` (Kl 2) [dims —]: das Zusammentreffen von Angebot und Nachfrage nach verschiedenen Gütern (einschließlich Leistungen) auf Märkten (Güter-, Arbeits-, und Kapitalmärkte) sowie deren wesentliche Funktionen insbesondere für die Preisbildung charakterisieren;
+- `GWB.US.2.VER.05` (Kl 2) [dims —]: einfache Projektideen zur Erzeugung von Gütern oder zur Bereitstellung von Dienstleistungen unter Analyse von Angebot, Nachfrage, Ressourceneinsatz, Knappheit und Preisgestaltung entwickeln, umsetzen und Auswirkungen reflektieren.
 
-### Naturräumliche Chancen und Risiken erörtern
-- `GWB.OS.7.NAT.01` (Kl 7) [dims —]: Geoökologische Faktoren und Prozesse erklären
-- `GWB.OS.7.NAT.02` (Kl 7) [dims —]: Naturräumliche Gegebenheiten als Chance der Regionalentwicklung erkennen
-- `GWB.OS.7.NAT.03` (Kl 7) [dims —]: Naturräumliche sowie soziale Gegebenheiten und Prozesse als Ursachen ökologischer Probleme erörtern
-- `GWB.OS.7.NAT.04` (Kl 7) [dims —]: Eigene Strategien für ökologisch nachhaltiges Handeln entwickeln
+### Zentren und Peripherien in Österreich
+- `GWB.US.3.ZEN.01` (Kl 3) [dims —]: Zentren und Peripherien Österreichs abgrenzen, in Geomedien verorten und die Relativität jeder Abgrenzung erläutern;
+- `GWB.US.3.ZEN.02` (Kl 3) [dims —]: die Gestaltung von zentralen und peripheren Lebensräumen mit Hilfe von originalen Begegnungen und Geomedien vergleichen und deren Lebensqualität individuell bewerten;
+- `GWB.US.3.ZEN.03` (Kl 3) [dims —]: mit Hilfe von (Geo-)Medien die Raumnutzungen für Wohnen, Arbeit, Verkehr, Freizeitaktivitäten und Tourismus vergleichen sowie Lösungsansätze der Raumplanung bei Nutzungskonflikten erörtern.
 
-### Nutzungskonflikte an regionalen Beispielen reflektieren
-- `GWB.OS.5.NUT.01` (Kl 5) [dims —]: Regionale Konflikte über die Verfügbarkeit von knappen Ressourcen (Boden, Wasser, Bodenschätze, usw.) und dahinter stehende politische Interessen erklären
-- `GWB.OS.5.NUT.02` (Kl 5) [dims —]: Unterschiedliche Folgen von Naturereignissen aufgrund des sozialen und ökonomischen Gefüges beurteilen
-- `GWB.OS.5.NUT.03` (Kl 5) [dims —]: Tragfähigkeit der Einen Welt zukunftsorientiert reflektieren
-
-### Politische Gestaltung von Räumen untersuchen
-- `GWB.OS.8.POL2.01` (Kl 8) [dims —]: Ziele, Gestaltungsspielräume und Auswirkungen der Raumordnung erklären
-- `GWB.OS.8.POL2.02` (Kl 8) [dims —]: Konstruktionen von Räumen und raumbezogenen Identitäten untersuchen
-- `GWB.OS.8.POL2.03` (Kl 8) [dims —]: Bereitschaft entwickeln, zumindest auf der kommunalpolitischen Ebene gestaltend mitzuwirken
-
-### Politische und ökonomische Systeme vergleichen
-- `GWB.OS.8.POL.01` (Kl 8) [dims —]: Ursachen und Auswirkungen sozialer und ökonomischer Disparitäten auf globaler Ebene beurteilen
-- `GWB.OS.8.POL.02` (Kl 8) [dims —]: Formen, Möglichkeiten und Risiken der Entwicklungszusammenarbeit diskutieren
-- `GWB.OS.8.POL.03` (Kl 8) [dims —]: Unterschiedliche Wirtschafts- und Regulierungsmodelle vergleichen
-- `GWB.OS.8.POL.04` (Kl 8) [dims —]: Machtverhältnisse in politischen und ökonomischen Systemen analysieren
-
-### Raumbegriff und Strukturierung Europas diskutieren
-- `GWB.OS.6.RAU.01` (Kl 6) [dims —]: Gliederung Europas nach naturräumlichen, gesellschaftlichen und ökonomischen Merkmalen vergleichen
-- `GWB.OS.6.RAU.02` (Kl 6) [dims —]: Heterogene räumliche und ökonomische Auswirkungen des Integrationsprozesses der Europäischen Union untersuchen
-- `GWB.OS.6.RAU.03` (Kl 6) [dims —]: Europa-Konzepte kritisch reflektieren
-
-### Regionale Entwicklungspfade vergleichen
-- `GWB.OS.6.REG.01` (Kl 6) [dims —]: Anhand ausgewählter Beispiele die Veränderungen in Raum, Wirtschaft und Gesellschaft durch Beitritt und Mitgliedschaft in der Europäischen Union erörtern
-- `GWB.OS.6.REG.02` (Kl 6) [dims —]: Die Bedeutung grenzüberschreitender Zusammenarbeit für die Raumentwicklung erfassen
-- `GWB.OS.6.REG.03` (Kl 6) [dims —]: (National) Staatlichkeit und Bildung neuer europäischer Regionen hinsichtlich ihrer Zukunftsfähigkeit reflektieren
-
-### Städte als Lebensräume und ökonomische Zentren untersuchen
-- `GWB.OS.8.STA.01` (Kl 8) [dims —]: Vielfalt der subjektiven Wirklichkeiten in Städten vergleichen
-- `GWB.OS.8.STA.02` (Kl 8) [dims —]: Soziale Differenzen in urbanen Räumen analysieren
-- `GWB.OS.8.STA.03` (Kl 8) [dims —]: Prozesse von Urbanität und Urbanisierung beschreiben
-- `GWB.OS.8.STA.04` (Kl 8) [dims —]: Bedeutung von Metropolen als Steuerungszentren der Wirtschaft beurteilen
-- `GWB.OS.8.STA.05` (Kl 8) [dims —]: Perspektiven und Beispiele für eine nachhaltige Urbanität entwickeln
-
-### Unternehmen und Berufsfelder analysieren
-- `GWB.OS.7.UNT.01` (Kl 7) [dims —]: Produkt- und Geschäftsideen für ein eigenes Unternehmen erstellen
-- `GWB.OS.7.UNT.02` (Kl 7) [dims —]: Schritte zu einer Unternehmensgründung beschreiben
-- `GWB.OS.7.UNT.03` (Kl 7) [dims —]: Grundzüge der Buchhaltung (Einnahmen- Ausgabenrechnung) herausarbeiten
-- `GWB.OS.7.UNT.04` (Kl 7) [dims —]: Eigene Möglichkeiten der Wahl von Bildungswegen und Beruf reflektieren
-- `GWB.OS.7.UNT.05` (Kl 7) [dims —]: Wirtschaftskundliches Realgymnasium: Betriebliche Kennzahlen interpretieren
-- `GWB.OS.7.UNT.06` (Kl 7) [dims —]: Wirtschaftskundliches Realgymnasium: Grundlagen betrieblichen Managements erfassen
-
-### Veränderungen der geopolitischen Lage Österreichs erläutern
-- `GWB.OS.7.VER.01` (Kl 7) [dims —]: Qualitäten österreichischer Grenzen seit dem 20. Jahrhundert in ihren diversen Auswirkungen erläutern
-- `GWB.OS.7.VER.02` (Kl 7) [dims —]: Möglichkeiten grenzüberschreitender Regionalentwicklung unter dem Einfluss der europäischen Integration darstellen
-
-### Vielfalt und Einheit – Das neue Europa
-- `GWB.OS.6.VIE.01` (Kl 6) [dims —]: Vielfalt und Einheit – Das neue Europa
-- `GWB.OS.6.VIE.02` (Kl 6) [dims —]: Vielfalt und Einheit – Das neue Europa
-
-### Wettbewerbspolitik und Regionalpolitik bewerten
-- `GWB.OS.6.WET.01` (Kl 6) [dims —]: Maßnahmen und Auswirkungen des europäischen Binnenmarktes erörtern
-- `GWB.OS.6.WET.02` (Kl 6) [dims —]: Räumliche Disparitäten theoretisch begründen und anhand ausgewählter Beispiele veranschaulichen
-- `GWB.OS.6.WET.03` (Kl 6) [dims —]: Träger, Instrumente, Funktionsweise und Ziele der Wettbewerbs- und Regionalpolitik erkennen und kritisch bewerten
-
-### Wirtschaftskundliches Realgymnasium: Geld und Währung analysieren
-- `GWB.OS.8.WIR3.01` (Kl 8) [dims —]: Entwicklungen in internationalen Kapitalströmen und Finanzmärkten analysieren
-- `GWB.OS.8.WIR3.02` (Kl 8) [dims —]: Anlageformen nach Risiko und Chance bewerten
-
-### Wirtschaftsstandort Österreich beurteilen
-- `GWB.OS.7.WIR2.01` (Kl 7) [dims —]: Vor-und Nachteile des Wirtschaftsstandortes Österreich aus unterschiedlicher Sicht erarbeiten und mit anderen Staaten vergleichen
-- `GWB.OS.7.WIR2.02` (Kl 7) [dims —]: Entstehung regionaler Disparitäten analysieren
-- `GWB.OS.7.WIR2.03` (Kl 7) [dims —]: Auswirkungen regionaler Disparitäten auf das Alltagsleben und die Wirtschaft erläutern
-- `GWB.OS.7.WIR2.04` (Kl 7) [dims —]: Außenwirtschaft Österreichs in Zusammenhang mit europäischen und globalen Entwicklungen erörtern
-- `GWB.OS.7.WIR2.05` (Kl 7) [dims —]: Lebensqualität in Österreich diskutieren
-- `GWB.OS.7.WIR2.06` (Kl 7) [dims —]: Wirtschaftskundliches Realgymnasium: Industrie und Dienstleistung als wesentliche Basis der Wertschöpfung beschreiben und ihre jetzigen bzw. zukünftigen vernetzten Problemfelder beurteilen
-
-### Österreich – Raum – Gesellschaft – Wirtschaft
-- `GWB.OS.7.OST.01` (Kl 7) [dims —]: Österreich – Raum – Gesellschaft – Wirtschaft
-- `GWB.OS.7.OST.02` (Kl 7) [dims —]: Österreich – Raum – Gesellschaft – Wirtschaft
+### Österreichische Gesellschaftsentwicklung
+- `GWB.US.3.OST.01` (Kl 3) [dims —]: aktuelle demografische Strukturen und Prozesse beschreiben und deren mediale Darstellungen interpretieren sowie die Bedeutung für die eigene und gesellschaftliche Zukunft erörtern;
+- `GWB.US.3.OST.02` (Kl 3) [dims —]: die Auswirkungen von Selbst- und Fremdbildern auf das gesellschaftliche Zusammenleben beschreiben und dabei die Bedeutung von biologischem Geschlecht, Gender, Alter, Bildung, Einkommen, Wohlstand, Nationalität, Religion oder Kultur hinterfragen.
 
 ## Erlaubte Dimensionen (`dimensions`, primäre zuerst — Teilmenge dieser Codes)
-- `SYN` — Synthesekompetenz
-- `KOM` — Kommunikationskompetenz
-- `HAN` — Handlungskompetenz
-- `REF` — Reflexionskompetenz
+- `OK` — Orientierungskompetenz
+- `UK` — Urteilskompetenz
+- `HK` — Handlungskompetenz
 
 ## Erlaubte Aufgaben-`kind`-Werte
-create_produce, data_analysis, data_interpretation, decision_scenario, matching, multiple_choice, open_response, ordering, puzzle, source_critique, table_fill, true_false_justify
+case_study, cause_effect_match, concept_match, content_comprehension, create_produce, data_interpretation, decision_scenario, map_work, matching, multiple_choice, open_response, ordering, position_argument, puzzle, structure_overview, table_fill, true_false_justify
+
+## Anwendungsbereiche (Themen-Ideen für die Kernfragen)
+- Kl 1: Materielle und immaterielle Bedürfnisse (ausgehend von der Lebenswelt der Schülerinnen und Schüler); · Lebensqualität und Nachhaltigkeit; · Kommunikation und räumliche Orientierung mit Geomedien; · Produktion und Konsum von Gütern und Dienstleistungen durch Haushalte, Unternehmen und weitere Wirtschaftsteilnehmer · Verantwortungsvoller Umgang mit Geld; · Wohnen, Arbeit und Mobilität aus Zentren und Peripherien; · Reichtum und Armut; · Grundlagen des Klimawandels;
+- Kl 2: Energieträger in Zusammenhang mit Nachhaltigkeit und Klimawandel; · Umgang mit natürlichen Ressourcen und Rohstoffkreisläufe; · Arbeitswelt und Berufsorientierung; · Sparen und Risiko; · Arbeitsteiliges und spezialisiertes nachhaltiges Wirtschaften; · Digitalisierung und ihre Folgen; · Projektplanung und -durchführung im Rahmen der Entrepreneurship Education · Unternehmerisches Denken und Handeln.
+- Kl 3: Demographie, gesellschaftliche Diversität und Altersversorgung; · Bildungswege und Berufsbilder; · Arbeit, Einkommen und Konsumentenschutz; · Standortfaktoren und Standortentscheidungen; · Wirtschaftsteilnehmerinnen und Wirtschaftsteilnehmer; · Preise und Wettbewerb in der sozialen Marktwirtschaft; · Armut, Reichtum und Einkommensverteilung; · Nachhaltige und zukunftsfähige Entwicklung des Wirtschaftsstandorts Österreich;
+- Kl 4: Mensch-Umweltverhältnis im Anthropozän; · Belastungsgrenzen der Erde; · Werte und zentrale Themen der EU; · Europäische Integration einschließlich gesellschaftliche und wirtschaftliche Folgen; · Globale Bevölkerungsdynamik, Urbanisierung; · Wirtschaftlicher und gesellschaftlicher Wandel durch Globalisierung und Deglobalisierung; · Gemeinsame Herausforderungen in Gesellschaft, Wirtschaft, Politik und Umwelt; · Eigene Chancen und Perspektiven in einer globalisierten Welt.
 ## Verankerung
 Jede Kernfrage gehört zu **einem** Kompetenzbereich; setze im JSON `"kompetenzbereich": "<exakter KB-Name>"` und die passende `klasse` (eine Klasse, in der dieser KB Kompetenzen hat). Alle Aufgaben dieser Kernfrage dienen Kompetenzen aus diesem (KB, Klasse).
 
@@ -252,12 +234,12 @@ true_false_justify `{"kind":"true_false_justify","statements":[...]}` · orderin
 matching `{"kind":"matching","left":[...],"right":[...]}` · decision_scenario `{"kind":"decision_scenario","stem":"..."}`
 
 ## Ausgabe
-Schreibe **2 Dateien**, eine pro Kernfrage, nach `runs/ingest/gen_os_2/GWB_1.json` … `runs/ingest/gen_os_2/GWB_2.json`.
+Schreibe **2 Dateien**, eine pro Kernfrage, nach `runs/ingest/gen_us_2/GWB_1.json` … `runs/ingest/gen_us_2/GWB_2.json`.
 Jede Datei ist **ausschließlich** dieses JSON (kein Fließtext, keine ``` Zäune):
 
 ```json
 {
-  "subject": "Geographie und wirtschaftliche Bildung", "klasse": <5-8, eine Klasse mit Kompetenzen im gewählten Bereich>,
+  "subject": "Geographie und wirtschaftliche Bildung", "klasse": <1-4, eine Klasse mit Kompetenzen im gewählten Bereich>,
   "kompetenzbereich": "<KB-Name>",
   "title": "<prägnanter Titel>", "kernfrage": "<eine Schüler-Kernfrage in Du-Form>",
   "body": {
@@ -266,7 +248,7 @@ Jede Datei ist **ausschließlich** dieses JSON (kein Fließtext, keine ``` Zäun
     "assets": [ /* nur Struktur-Figuren: {"id":"abb2","role":"figure","generator":"matplotlib:function_graph","spec":{"m":2,"b":1}} */ ],
     "sections": [ { "id":"s1","title":"...","throughline":"...","talking_points":["..."],"extensions":["..."],
       "blocks":[ {"role":"task","id":"t1","kind":"<kind>","prompt":"...","payload":null,
-        "response":{"mode":"lines","n":3},"cognitive_level":"understand","dimensions":["SYN"],
+        "response":{"mode":"lines","n":3},"cognitive_level":"understand","dimensions":["OK"],
         "serves":[{"competence_id":"<ID>","relation":"exercises"}],"est_minutes":7,"asset_refs":[],
         "answer_key":"...","acceptable_reasoning":null,"watch_outs":["..."],"rubric":[]} ] } ]
   }

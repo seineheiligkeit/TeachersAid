@@ -1,102 +1,60 @@
 # Breiten-Generierung: Biologie und Umweltbildung — 2 Kernfragen
 
 Du erzeugst **2 verschiedene** Arbeitsblatt-Inhalte (je eine eigene **Kernfrage**) für die
-**AHS-Oberstufe** auf österreichischem Lehrplan-Niveau. Sprache: **Deutsch**, AHS-Niveau (anspruchsvoll, Sek II).
+**AHS-Unterstufe** auf österreichischem Lehrplan-Niveau. Sprache: **Deutsch**, altersgerecht für die Unterstufe (Sek I, ~10-14 J.) — klar und konkret, aber nie trivial (der Blackboard-Test gilt trotzdem).
 Wähle **2 klar unterschiedliche Themen/Bereiche** (Breite!), nicht Varianten desselben Themas.
+
+## Korpus-Kontext — was es schon gibt
+Für **Biologie und Umweltbildung** (Unterstufe) gibt es im Korpus schon **15** Arbeitsblätter. Wähle 2 **neue** Kernfragen, die sich davon klar unterscheiden (keine Dubletten, keine bloßen Varianten):
+- [Kl 1] Die Blüte beschriften — Wie arbeiten die sichtbaren Teile einer Blüte als zusammenhängendes Modell?
+- [Kl 1] Gebaut fürs Wasser, gebaut für die Luft: Wirbeltiere im Vergleich — Was verrät der Körperbau eines Tieres über seinen Lebensraum – und was bedeutet das für unsere Verantwortung als Halter:innen?
+- [Kl 1] Ohne Bienen keine Kirschen? Die Blüte als Werkzeug — Warum haben Blüten Farben, Duft und Nektar – und was hat das mit Früchten zu tun?
+- [Kl 1] Wer braucht wen? Der Teich als Lebensraum — Wie hängen die Lebewesen in einem Teich voneinander ab?
+- [Kl 2] Der Wald als Lebensgemeinschaft — Warum ist ein artenreicher Wald stabiler als eine Fichten-Monokultur?
+- [Kl 2] Die Verdauung des Menschen — Welchen Weg nimmt das Essen — und was passiert auf jeder Station?
+- [Kl 2] Pilze – die heimlichen Netzwerker des Waldes — Wie kann ein Pilz einem Baum beim Überleben helfen, obwohl er selbst keine Fotosynthese betreibt?
+- [Kl 2] Wie das Gehirn aus Reizen eine Welt macht — Warum können sich zwei Menschen bei gleichem Reiz auf unterschiedliche Wahrnehmungen einigen – oder auch nicht?
+- [Kl 3] Angepasst ans Wasser – Leben in Bach, See und Meer — Wie schaffen es Tiere, im Wasser zu leben – und was passiert, wenn wir Menschen ihren Lebensraum verändern?
+- [Kl 3] Der Boden unter unseren Füßen – lebendig und verletzlich — Warum ist eine Handvoll Erde eigentlich voller Leben, und wie schützen wir das?
+- [Kl 3] Die Photosynthese — Wie macht eine Pflanze aus Licht, Wasser und Luft ihre Nahrung?
+- [Kl 3] Sauerstoff unterwegs – Atmung und Blutkreislauf — Wie kommt der Sauerstoff, den du einatmest, bis in deine Zehenspitzen?
+- [Kl 4] Der Kohlenstoffkreislauf aus dem Takt — CO2, Klimawandel und was Daten zeigen — Wie verändert der Mensch den natürlichen Kohlenstoffkreislauf, und woran erkennst du eine seriöse Aussage zum Klimawandel?
+- [Kl 4] Immunsystem und Impfungen — Was hilft gegen einen Erreger – und warum hilft es manchmal gerade nicht?
+- [Kl 4] Immunsystem und Impfungen — Was hilft gegen einen Erreger – und warum hilft es manchmal gerade nicht?
+
+_Abdeckung (Kompetenzbereich-Zellen): 12 grün · 0 teilweise · 0 leer von 12._
 
 ## Kompetenzen (verbatim — `serves.competence_id` MUSS eine dieser IDs sein), gruppiert nach Kompetenzbereich
 
-### 5. Klasse
-- `BIO.OS.5.KLA.01` (Kl 5) [dims —]: Die Zelle als Grundbaustein der Organismen; Zusammenhänge zwischen Lebensvorgängen und Zellstrukturen
-- `BIO.OS.5.KLA.02` (Kl 5) [dims —]: Die Mitose und ihre Bedeutung für Wachstum, Zelldifferenzierung und Entstehung vielzelliger Organismen
-- `BIO.OS.5.KLA.03` (Kl 5) [dims —]: Unterschiede zwischen Pro-und Eukaryoten; Bedeutung von Mikroorganismen und Pilzen für ökologische Kreisläufe
-- `BIO.OS.5.KLA.04` (Kl 5) [dims —]: Biotechnische Verfahren bei der Nahrungsmittelproduktion
-- `BIO.OS.5.KLA.05` (Kl 5) [dims —]: Bau, Fortpflanzung und Lebensweise pflanzlicher Organismen
-- `BIO.OS.5.KLA.06` (Kl 5) [dims —]: Bau und Funktion der Organsysteme des Stoffwechsels (Verdauung, Atmung, Kreislauf, Ausscheidung) und deren Ausbildung in unterschiedlichen Organisationsebenen und Lebensräumen
-- `BIO.OS.5.KLA.07` (Kl 5) [dims —]: Gesunde und ausgewogene Ernährung
+### Erkenntnisse gewinnen (E)
+- `BIO.US.x.ERK.01` (Kl 1) [dims —]: Lebewesen und biologische Phänomene betrachten, beobachten, bestimmen, kriteriengeleitet vergleichen und ordnen, mikroskopieren, zeichnen und messen.
+- `BIO.US.x.ERK.02` (Kl 1) [dims —]: zu biologischen Vorgängen und Phänomenen naturwissenschaftliche Fragen stellen sowie Hypothesen entwickeln und formulieren.
+- `BIO.US.x.ERK.03` (Kl 1) [dims —]: Beobachtungen, Versuche, Untersuchungen und Experimente zu naturwissenschaftlichen Fragestellungen planen, durchführen und protokollieren.
+- `BIO.US.x.ERK.04` (Kl 1) [dims —]: Daten und Ergebnisse von Untersuchungen, Beobachtungen und Experimenten darstellen, analysieren und interpretieren.
 
-### Erkenntnisse gewinnen
-- `BIO.OS.x.ERK.01` (Kl 5) [dims E]: Biologische Vorgänge und Phänomene beobachten, messen und beschreiben.
-- `BIO.OS.x.ERK.02` (Kl 5) [dims E]: Biologische Vorgänge und Phänomene hinsichtlich evolutionsbiologischer Kriterien analysieren und Beziehungen herausarbeiten.
-- `BIO.OS.x.ERK.03` (Kl 5) [dims E]: Zu biologischen Vorgängen und Phänomenen Fragen stellen und Hypothesen formulieren.
-- `BIO.OS.x.ERK.04` (Kl 5) [dims E]: Untersuchungen oder Experimente zu naturwissenschaftlichen Fragestellungen planen, durchführen und protokollieren.
-- `BIO.OS.x.ERK.05` (Kl 5) [dims E]: Daten und Ergebnisse von Untersuchungen analysieren (zB ordnen, vergleichen, Abhängigkeiten feststellen) und interpretieren.
+### Standpunkte begründen und reflektiert handeln (S)
+- `BIO.US.x.STA.01` (Kl 1) [dims —]: naturwissenschaftliche von nicht naturwissenschaftlichen Argumentationen unterscheiden, fachlich korrekt und folgerichtig argumentieren.
+- `BIO.US.x.STA.02` (Kl 1) [dims —]: Fragestellungen im Bereich Bioethik, Sexualität, Gesundheit, Umweltschutz und Nachhaltigkeit unter Einbeziehung kontroverser Gesichtspunkte erörtern und den eigenen Standpunkt fachlich fundiert begründen.
+- `BIO.US.x.STA.03` (Kl 1) [dims —]: Handlungsempfehlungen fachlich fundiert erstellen und begründen, verantwortungsbewusst und individuell sowie gesellschaftlich nachhaltig handeln.
 
-### Fachwissen aneignen und kommunizieren
-- `BIO.OS.x.FAC.01` (Kl 5) [dims W]: Biologische Vorgänge und Phänomene beschreiben und benennen.
-- `BIO.OS.x.FAC.02` (Kl 5) [dims W]: Aus unterschiedlichen Medien und Quellen fachspezifische Informationen entnehmen.
-- `BIO.OS.x.FAC.03` (Kl 5) [dims W]: Vorgänge und Phänomene in verschiedenen Formen (Grafik, Tabelle, Bild, Diagramm, …) darstellen, erläutern und adressatengerecht kommunizieren.
-- `BIO.OS.x.FAC.04` (Kl 5) [dims W]: Vorgänge und Phänomene mittels Fachwissen unter Heranziehung von Gesetzmäßigkeiten (Modelle, Regeln, Gesetze, Funktionszusammenhänge) erklären.
-- `BIO.OS.x.FAC.05` (Kl 5) [dims W]: Biologische Vorgänge und Phänomene im Kontext ihres evolutionären Zusammenhangs erläutern.
-
-### Kompetenzmodell
-- `BIO.OS.x.KOM.01` (Kl 5) [dims —]: Das Kompetenzmodell Naturwissenschaften gibt als Handlungsdimension die Charakteristika naturwissenschaftlicher Forschungsarbeit vor. Dabei wird von drei Kompetenzbereichen ausgegangen:
-- `BIO.OS.x.KOM.02` (Kl 5) [dims —]: Aneignen von Fachwissen
-- `BIO.OS.x.KOM.03` (Kl 5) [dims —]: selbstständiger Erkenntnisgewinn mittels Beobachtung und Experiment
-- `BIO.OS.x.KOM.04` (Kl 5) [dims —]: Anwendung des Wissens und der Erkenntnisse, im gesellschaftlichen Diskurs Standpunkte begründen und im Alltag reflektiert handeln
-- `BIO.OS.x.KOM.05` (Kl 5) [dims —]: Im Rahmen des Faches Biologie und Umweltbildung werden diese Kompetenzbereiche wie folgt beschrieben:
-
-### Kompetenzmodul 3
-- `BIO.OS.6.KOM2.01` (Kl 6) [dims —]: Information und Kommunikation im Nervensystem (Reizaufnahme, Erregungsleitung, Verarbeitung, Einfluss von Drogen)
-- `BIO.OS.6.KOM2.02` (Kl 6) [dims —]: Information und Kommunikation im Hormonsystem
-- `BIO.OS.6.KOM2.03` (Kl 6) [dims —]: Bedeutung der Meiose für die geschlechtliche Fortpflanzung
-- `BIO.OS.6.KOM2.04` (Kl 6) [dims —]: Sexualität als biologisches, soziales und ethisches Phänomen
-- `BIO.OS.6.KOM2.05` (Kl 6) [dims —]: Embryonalentwicklung beim Menschen und mögliche Fortpflanzungsmanipulationen
-
-### Kompetenzmodul 4
-- `BIO.OS.6.KOM3.01` (Kl 6) [dims —]: Ökosysteme (Stoff- und Energiekreisläufe, Umweltfaktoren, Sukzession, Konvergenzerscheinungen)
-- `BIO.OS.6.KOM3.02` (Kl 6) [dims —]: Umweltprobleme (zB Klimawandel) und Lösungsmöglichkeiten im Rahmen nachhaltiger Entwicklung
-- `BIO.OS.6.KOM3.03` (Kl 6) [dims —]: Funktionsweise des Immunsystems und Auswirkungen von Störungen (zB Allergien, AIDS)
-- `BIO.OS.6.KOM3.04` (Kl 6) [dims —]: Verhaltensbiologie
-- `BIO.OS.6.KOM3.05` (Kl 6) [dims —]: Aufbau und Struktur der Erde, geodynamische Formungskräfte
-
-### Kompetenzmodul 5
-- `BIO.OS.7.KOM4.01` (Kl 7) [dims —]: Parasitismus und Symbiose
-- `BIO.OS.7.KOM4.02` (Kl 7) [dims —]: Krankheitserreger (Bakterien, Viren, Pilze, Einzeller, Vielzeller)
-- `BIO.OS.7.KOM4.03` (Kl 7) [dims —]: Ausgewählte Beispiele für Infektionskrankheiten, Hygienemaßnahmen und Prophylaxe
-- `BIO.OS.7.KOM4.04` (Kl 7) [dims —]: Zivilisationserkrankungen (zB Herz-Kreislauferkrankungen, Stresserkrankungen, Krebs)
-- `BIO.OS.7.KOM4.05` (Kl 7) [dims —]: Maßnahmen zur Gesundheitsförderung, Rolle der Mikroorganismen für die Gesundheit des Menschen
-
-### Kompetenzmodul 6
-- `BIO.OS.7.KOM5.01` (Kl 7) [dims —]: Bewegungssysteme bei Pflanzen und Tieren
-- `BIO.OS.7.KOM5.02` (Kl 7) [dims —]: Aufbau und Funktion von Skelett und Muskulatur
-- `BIO.OS.7.KOM5.03` (Kl 7) [dims —]: Entstehung und Ordnung biologischer Vielfalt
-- `BIO.OS.7.KOM5.04` (Kl 7) [dims —]: Systematik und Taxonomie
-- `BIO.OS.7.KOM5.05` (Kl 7) [dims —]: Charakteristika nachhaltiger Entwicklung (an Hand eines ausgewählten regionalen und/oder globalen Beispiels)
-
-### Kompetenzmodul 7
-- `BIO.OS.8.KOM6.01` (Kl 8) [dims —]: Zytologische und molekulare Grundlagen der Vererbung
-- `BIO.OS.8.KOM6.02` (Kl 8) [dims —]: Biochemische Vorgänge bei der Proteinsynthese (Transkription, Translation, Regulation der Genaktivität, Epigenetik)
-- `BIO.OS.8.KOM6.03` (Kl 8) [dims —]: Vererbungsregeln und Humangenetik
-- `BIO.OS.8.KOM6.04` (Kl 8) [dims —]: Evolutionsmechanismen; chemische und biologische Evolution, Evolutionstheorien
-- `BIO.OS.8.KOM6.05` (Kl 8) [dims —]: Biotechnologische Verfahren, deren Anwendung und mögliche Auswirkungen; Wissenschafts- und Bioethik
-- `BIO.OS.8.KOM6.06` (Kl 8) [dims —]: Entwicklungsgeschichte des Menschen
-- `BIO.OS.8.KOM6.07` (Kl 8) [dims —]: Evolution als Basis für die Vielfalt der Organismen und für den Wandel von Ökosystemen, Organen und zellulären Strukturen
-
-### Standpunkte begründen und reflektiert handeln
-- `BIO.OS.x.STA.01` (Kl 5) [dims S]: Fachlich korrekt und folgerichtig argumentieren und naturwissenschaftliche von nicht-naturwissenschaftlichen Argumentationen unterscheiden.
-- `BIO.OS.x.STA.02` (Kl 5) [dims S]: Sachverhalte und Probleme unter Einbeziehung kontroverser Gesichtspunkte reflektiert erörtern und begründet bewerten.
-- `BIO.OS.x.STA.03` (Kl 5) [dims S]: Bedeutung, Chancen und Risiken der Anwendung naturwissenschaftlicher Erkenntnisse für das Individuum und für die Gesellschaft erkennen, um verantwortungsbewusst zu handeln.
-- `BIO.OS.x.STA.04` (Kl 5) [dims S]: Menschliche Erlebens- und Verhaltensmuster aus evolutionsbiologischer Sicht reflektieren.
-- `BIO.OS.x.STA.05` (Kl 5) [dims S]: Handlungsempfehlungen erstellen und gestalten (zB Naturschutzstrategien, Gesundheitskonzepte, Ernährungspläne, …).
-- `BIO.OS.x.STA.06` (Kl 5) [dims —]: Um den Schülerinnen und Schülern im Rahmen des Unterrichts biologische Bildung als Teil naturwissenschaftlicher Grundbildung (Scientific Literacy) zu ermöglichen, ist der Unterricht im Fach Biologie und Umweltbildung so zu gestalten, dass Kompetenzen aus allen drei oben genannten Bereichen auf Basis der Lerninhalte jedes Semesters erworben und gefördert werden.
-
-### Stoffwechselvorgänge
-- `BIO.OS.5.STO.01` (Kl 5) [dims —]: Stoffwechselvorgänge: Assimilation (Fotosynthese und heterotrophe Assimilation) und Dissimilation (Gärung und Zellatmung)
-
-### Vernetzte Systeme
-- `BIO.OS.6.VER.01` (Kl 6) [dims —]: Vernetzte Systeme: Ökologie, Ökonomie und Nachhaltigkeit
-
-### Ökologie und Nachhaltigkeit
-- `BIO.OS.5.OKO.01` (Kl 5) [dims —]: Ökologie und Nachhaltigkeit: (Welt-)Ernährung, verschiedene Formen der Landwirtschaft
+### Wissen aneignen, anwenden und kommunizieren (W)
+- `BIO.US.x.WIS.01` (Kl 1) [dims —]: Lebewesen, Lebensräume, biologische Phänomene und Prinzipien benennen, beschreiben, erläutern und in Beziehung setzen.
+- `BIO.US.x.WIS.02` (Kl 1) [dims —]: Informationen aus unterschiedlichen Medien und Quellen fachbezogen erschließen, zusammenfassen, vergleichen und in verschiedenen Formen (Grafik, Foto, Video, Tabelle, Diagramm, ...) adressaten- und situationsgerecht darstellen und kommunizieren.
+- `BIO.US.x.WIS.03` (Kl 1) [dims —]: Modelle zur Beschreibung und Erklärung biologischer Sachverhalte/Vorgänge/Beziehungen verwenden, erstellen und deren Gültigkeitsbereiche und Grenzen diskutieren.
 
 ## Erlaubte Dimensionen (`dimensions`, primäre zuerst — Teilmenge dieser Codes)
-- `W` — Fachwissen aneignen und kommunizieren
+- `W` — Wissen aneignen, anwenden und kommunizieren
 - `E` — Erkenntnisse gewinnen
 - `S` — Standpunkte begründen und reflektiert handeln
 
 ## Erlaubte Aufgaben-`kind`-Werte
-create_produce, data_interpretation, decision_scenario, experiment_protocol, genetics_cross, matching, multiple_choice, open_response, ordering, puzzle, source_critique, table_fill, true_false_justify
+cause_effect_match, concept_match, content_comprehension, create_produce, data_interpretation, decision_scenario, experiment_protocol, matching, multiple_choice, open_response, ordering, puzzle, source_critique, structure_overview, table_fill, true_false_justify
+
+## Anwendungsbereiche (Themen-Ideen für die Kernfragen)
+- Kl 1: Wechselbeziehungen zwischen Lebewesen in ihrem Lebensraum · Vielfalt und Angepasstheit sowie Grundzüge der Systematik von Blütenpflanzen · Bestäubung und Befruchtung als Funktionen der Blüte · Gemeinsamkeiten von Wirbeltieren, die auf deren Verwandtschaft hinweisen · Vielfalt und Angepasstheit in Körperstruktur und Verhalten von Wirbeltieren, ethisches Handeln gegenüber Haustieren · Veränderungen in Populationen durch natürliche und künstliche Selektion · Skelett des Menschen, Zusammenwirken von Strukturen bei der Bewegung · Verdauungssystem, bedarfsgerechte Ernährung des Menschen
+- Kl 2: Ökologische Zusammenhänge, Biodiversität und anthropogene Einflüsse im Lebensraum Wald im Vergleich zu anderen Landlebensräumen · Struktur und Funktion der Pflanzenorgane, Stoffumwandlung bei der Fotosynthese · Tierische und pflanzliche Zellen im Vergleich · Geschlechterverteilung bei Pflanzen, geschlechtliche und ungeschlechtliche Vermehrung von Pflanzen · Struktur und Fortpflanzung von Pilzen, Symbiosen mit Pilzen · Mikroorganismen als Symbionten und Parasiten des Menschen, Krankheitserreger, Hygienemaßnahmen zur Vermeidung von Infektionen, Mikroorganismen in der Lebensmittelproduktion, Konservierung von Lebensmitteln · Vielfalt und Angepasstheit an Land lebender wirbelloser Tiere in Körperstruktur und Verhalten · Sinnesorgane des Menschen und Bedeutung des Gehirns für die Wahrnehmung
+- Kl 3: Ökologische Zusammenhänge, Biodiversität und anthropogene Einflüsse in Süßwasser-Lebensräumen und im Meer · Vielfalt und Angepasstheit im Wasser lebender Tiere in Körperstruktur und Verhalten, wassergebundene Fortpflanzung und Entwicklung von Lebewesen · Tracheen, Kiemen und Lungen als Atmungsorgane, Bedeutung des Sauerstoffs bei der Nutzung von Nährstoffen als Energieträger · Herz-Kreislauf-System, Zusammensetzung und Funktionen des Blutes · Zusammenwirken des Atmungssystems mit dem Blutkreislaufsystem, Ausscheidungssystem und gesundheitsbezogenes Handeln · Gesteinskreislauf und Plattentektonik, Zusammenhänge zwischen Geologie und Lebensräumen · Funktion von Mikroorganismen im Boden, Bedeutung des Bodens für die Pflanzen, anthropogene Einflüsse auf den Boden · Entstehung von Fossilien und Geschichte des Lebens auf der Erde
+- Kl 4: Ökologische Zusammenhänge, Biodiversität und anthropogene Einflüsse im Bereich der Landwirtschaft, Charakteristika der konventionellen und der biologischen Landwirtschaft · Ökologische Zusammenhänge, Biodiversität und anthropogene Einflüsse in Siedlungsräumen, Pflanzen und Tiere als Kulturfolger, Möglichkeiten der Vermeidung von Müll und Lebensmittelverschwendung · Globaler Kohlenstoffkreislauf, CO2-Eintrag in die Atmosphäre, Klimawandel · Gesetzmäßigkeiten bei der Weitergabe von Erbanlagen, DNA als strukturelle Grundlage für Erbinformation, genetische Ursachen für Erkrankungen, Gentechnik · Immunsystem und Impfungen, Viren, Bakterien, Entstehung von Antibiotikaresistenzen/Mikroevolution · Nerven- und Hormonsystem des Menschen als Organsysteme der Steuerung und Kommunikation · Hormonelle Steuerung und Varianten der Entwicklung von Geschlechtsorganen, hormonelle Steuerung der Geschlechtszellenbildung, Schwangerschaftsverhütung · Sexual- und Fortpflanzungsethik sowie soziokulturelle Aspekte von Geschlechtsidentitäten und sexueller Orientierung
 ## Verankerung
 Jede Kernfrage gehört zu **einem** Kompetenzbereich; setze im JSON `"kompetenzbereich": "<exakter KB-Name>"` und die passende `klasse` (eine Klasse, in der dieser KB Kompetenzen hat). Alle Aufgaben dieser Kernfrage dienen Kompetenzen aus diesem (KB, Klasse).
 
@@ -184,12 +142,12 @@ true_false_justify `{"kind":"true_false_justify","statements":[...]}` · orderin
 matching `{"kind":"matching","left":[...],"right":[...]}` · decision_scenario `{"kind":"decision_scenario","stem":"..."}`
 
 ## Ausgabe
-Schreibe **2 Dateien**, eine pro Kernfrage, nach `runs/ingest/gen_os_2/BIO_1.json` … `runs/ingest/gen_os_2/BIO_2.json`.
+Schreibe **2 Dateien**, eine pro Kernfrage, nach `runs/ingest/gen_us_2/BIO_1.json` … `runs/ingest/gen_us_2/BIO_2.json`.
 Jede Datei ist **ausschließlich** dieses JSON (kein Fließtext, keine ``` Zäune):
 
 ```json
 {
-  "subject": "Biologie und Umweltbildung", "klasse": <5-8, eine Klasse mit Kompetenzen im gewählten Bereich>,
+  "subject": "Biologie und Umweltbildung", "klasse": <1-4, eine Klasse mit Kompetenzen im gewählten Bereich>,
   "kompetenzbereich": "<KB-Name>",
   "title": "<prägnanter Titel>", "kernfrage": "<eine Schüler-Kernfrage in Du-Form>",
   "body": {

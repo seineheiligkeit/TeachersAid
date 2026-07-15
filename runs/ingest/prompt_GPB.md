@@ -1,129 +1,92 @@
 # Breiten-Generierung: Geschichte und politische Bildung — 2 Kernfragen
 
 Du erzeugst **2 verschiedene** Arbeitsblatt-Inhalte (je eine eigene **Kernfrage**) für die
-**AHS-Oberstufe** auf österreichischem Lehrplan-Niveau. Sprache: **Deutsch**, AHS-Niveau (anspruchsvoll, Sek II).
+**AHS-Unterstufe** auf österreichischem Lehrplan-Niveau. Sprache: **Deutsch**, altersgerecht für die Unterstufe (Sek I, ~10-14 J.) — klar und konkret, aber nie trivial (der Blackboard-Test gilt trotzdem).
 Wähle **2 klar unterschiedliche Themen/Bereiche** (Breite!), nicht Varianten desselben Themas.
+
+## Korpus-Kontext — was es schon gibt
+Für **Geschichte und politische Bildung** (Unterstufe) gibt es im Korpus schon **16** Arbeitsblätter. Wähle 2 **neue** Kernfragen, die sich davon klar unterscheiden (keine Dubletten, keine bloßen Varianten):
+- [Kl 2] Leben am Nil: Wie wissen wir, was wir über das Alte Ägypten zu wissen glauben? — Woher wissen wir eigentlich, wie die Menschen im Alten Ägypten gelebt haben — und kann man diesen Quellen vertrauen?
+- [Kl 3] Aufbrechen, Ankommen, Dazugehören: Was bedeutet Migration gestern und heute? — Warum sind Menschen seit dem 19. Jahrhundert auf der ganzen Welt gewandert — und was bedeutet das für das Zusammenleben in der Gesellschaft heute?
+- [Kl 3] Der Wiener Kongress — Wie ordnet der Wiener Kongress Europa neu — und woher wissen wir das?
+- [Kl 3] Der Wiener Kongress — Wie ordnet der Wiener Kongress Europa neu — und zu welchem Preis?
+- [Kl 3] Der Wiener Kongress — Wie ordnet der Wiener Kongress Europa neu — und zu welchem Preis?
+- [Kl 3] Der Wiener Kongress — Wie ordnet der Wiener Kongress Europa neu — und zu welchem Preis?
+- [Kl 3] Der Wiener Kongress (CC-BY-SA adaptiert) — …
+- [Kl 3] Der Wiener Kongress (adaptiert) — …
+- [Kl 3] Der Wiener Kongress im Bild — Wie stellt die Bildquelle politische Verhandlungen und Macht dar?
+- [Kl 3] Die Französische Revolution — Wie stürzt das Volk eine jahrhundertealte Ordnung — und was setzt es an ihre Stelle?
+- [Kl 3] Die Industrialisierung — Wie verändert die Maschine Arbeit, Stadt und Gesellschaft?
+- [Kl 3] Fortschritt als Festrede: Quellenarbeit in ANNO — Wessen Verdienst ist der Fortschritt — und wer sagt das hier?
+- [Kl 3] Krieg als Helden-Abenteuer? Wie Kinder und Jugendliche im Ersten Weltkrieg den Krieg erleben sollten — Wie versuchten Erwachsene, Kinder und Jugendliche während des Ersten Weltkriegs für den Krieg zu begeistern — und warum ist das auch für dich heute wichtig zu verstehen?
+- [Kl 3] Zeitung als politische Waffe? Quellenarbeit in ANNO — Wie macht politische Sprache aus einer Meinung einen dringenden Aufruf?
+- [Kl 4] Mitmachen, Wegsehen, Widersetzen: Wie verhielten sich Menschen in Österreich während der NS-Herrschaft? — Warum schlossen sich so viele Menschen in Österreich dem Nationalsozialismus an — und was hätte man tun können, um Widerstand zu leisten?
+- [Kl 4] Vom besetzten Land zur EU-Mitgliedschaft: Wie wurde Österreich zu dem Staat, der es heute ist? — Wie hat sich Österreich nach 1945 von einem besetzten Land zu einer stabilen Demokratie und EU-Mitglied entwickelt — und welche Entscheidungen haben dazu beigetragen?
+
+_Abdeckung (Kompetenzbereich-Zellen): 2 grün · 4 teilweise · 3 leer von 9._
 
 ## Kompetenzen (verbatim — `serves.competence_id` MUSS eine dieser IDs sein), gruppiert nach Kompetenzbereich
 
 ### Historische Fragekompetenz
-- `GPB.OS.5.HIS4.01` (Kl 5) [dims —]: Fragen, die in Darstellungen der Vergangenheit behandelt werden, herausarbeiten
-- `GPB.OS.7.HIS4.01` (Kl 7) [dims —]: Eigenständige Fragen zu Entwicklungen in der Vergangenheit formulieren
-- `GPB.OS.8.HIS4.01` (Kl 8) [dims —]: Einfluss der Fragestellung auf die Darstellung erkennen
-
-### Historische Methodenkompetenz (Re- und De-Konstruktionskompetenz)
-- `GPB.OS.5.HIS.01` (Kl 5) [dims —]: Schriftliche Quellen beschreiben, analysieren und interpretieren
-- `GPB.OS.5.HIS.02` (Kl 5) [dims —]: Bildliche Quellen beschreiben, analysieren und interpretieren
-- `GPB.OS.5.HIS.03` (Kl 5) [dims —]: Geschichtskulturelle Produkte als Orte des historischen Erzählens erkennen
-- `GPB.OS.5.HIS.04` (Kl 5) [dims —]: Geschichtskarten lesen
-- `GPB.OS.5.HIS.05` (Kl 5) [dims —]: Die unumgängliche Perspektivität und Intention von historischen Quellen feststellen
-- `GPB.OS.6.HIS.01` (Kl 6) [dims —]: Quellen und Darstellungen hinsichtlich ihrer Charakteristika unterscheiden
-- `GPB.OS.6.HIS.02` (Kl 6) [dims —]: Quellenbezüge in Darstellungen der Vergangenheit herausarbeiten
-- `GPB.OS.6.HIS.03` (Kl 6) [dims —]: Geschichtskarten hinsichtlich ihrer Konstruktion hinterfragen
-- `GPB.OS.6.HIS.04` (Kl 6) [dims —]: Fachspezifische Recherchefähigkeiten für die Erstellung einer eigenen Darstellung der Vergangenheit (historische Narration) entlang einer historischen Fragestellung entwickeln (zB Fachliteratur sichten, Nutzung von Internetarchiven)
-- `GPB.OS.6.HIS.05` (Kl 6) [dims —]: Gattungsspezifik von Darstellungen der Vergangenheit (zB Spielfilm, Comic, Roman, Internetseite) erkennen
-- `GPB.OS.6.HIS.06` (Kl 6) [dims —]: Die in Darstellungen der Vergangenheit verwendeten Quellenaussagen mit historischen Originalquellen vergleichen
-- `GPB.OS.7.HIS.01` (Kl 7) [dims —]: Gattungsspezifik von historischen Quellen für ihre Interpretation berücksichtigen
-- `GPB.OS.7.HIS.02` (Kl 7) [dims —]: Aus den Ergebnissen der Quellenarbeit und den Erkenntnissen aus Darstellungen eine selbständige historische Darstellung entlang einer historischen Fragestellung erstellen
-- `GPB.OS.7.HIS.03` (Kl 7) [dims —]: Darstellungen der Vergangenheit kritisch systematisch hinterfragen (de-konstruieren)
-- `GPB.OS.7.HIS.04` (Kl 7) [dims —]: Aufbau von Darstellungen der Vergangenheit (zB inhaltliche Gewichtungen, Argumentationslinien, Erzähllogik) analysieren
-- `GPB.OS.8.HIS.01` (Kl 8) [dims —]: Erstellen verschiedener Darstellungen der Vergangenheit in verschiedenen medialen Formen (zB Sachtext, Plakat, Video) zur gleichen Materialgrundlage (Quellen und Darstellungen) erproben
-- `GPB.OS.8.HIS.02` (Kl 8) [dims —]: Perspektivität, Intention und Bewertungen in Darstellungen der Vergangenheit feststellen sowie deren Entstehungskontext berücksichtigen
-- `GPB.OS.8.HIS.03` (Kl 8) [dims —]: Die Aussagen der Darstellung der Vergangenheit mit den Erkenntnissen der Geschichtswissenschaft (Fachtexte) vergleichen
+- `GPB.US.2.HIS.01` (Kl 2) [dims —]: Fragen zu Kontinuität und Wandel, die in Darstellungen behandelt werden, herausarbeiten (zB Welche Frage steht hinter der Darstellung zum Wandel der Lebensweisen im Mittelalter? Welche Frage hat sich die Schulbuchautorin zur Veränderung im Römischen Reich gestellt?).
 
 ### Historische Orientierungskompetenz
-- `GPB.OS.5.HIS3.01` (Kl 5) [dims —]: Orientierungsangebote in Darstellungen der Vergangenheit erkennen
-- `GPB.OS.6.HIS3.01` (Kl 6) [dims —]: Offene und pluralistische Diskussionen zur Nutzung der historischen Erkenntnisse für die Gegenwart und Zukunft führen
-- `GPB.OS.6.HIS3.02` (Kl 6) [dims —]: Erkenntnisse von eigenen Darstellungen der Vergangenheit sowie von Darstellungen der Vergangenheit, die andere angefertigt haben, zur individuellen Orientierung (hinsichtlich der Bewertung der Vergangenheit und möglicher Handlungsoptionen) in der Gegenwart und Zukunft nutzen
-- `GPB.OS.7.HIS3.01` (Kl 7) [dims —]: Darstellungen der Vergangenheit hinsichtlich angebotener Orientierungsmuster für die Gegenwart und Zukunft befragen
-- `GPB.OS.7.HIS3.02` (Kl 7) [dims —]: Orientierungsangebote aus Darstellungen der Vergangenheit hinterfragen und mit alternativen Angeboten konfrontieren
-- `GPB.OS.8.HIS3.01` (Kl 8) [dims —]: Mögliche Gründe für vorgeschlagene Orientierungsangebote in Darstellungen der Vergangenheit herausarbeiten
+- `GPB.US.2.HIS2.01` (Kl 2) [dims —]: über Einsichten, die aus der Beschäftigung mit Quellen und Darstellungen für Gegenwart und Zukunft gewonnen werden, diskutieren und diese nutzen (ua. individuelle Bedeutung von historischen Einsichten aus der Beschäftigung mit Alltagsgeschichte).
 
-### Historische Sachkompetenz
-- `GPB.OS.5.HIS2.01` (Kl 5) [dims —]: Die Begriffe/Konzepte „Geschichte“ und „Vergangenheit“ sowie „Quelle“ und „Darstellung“ klären und hinsichtlich ihrer Verwendung differenzieren
-- `GPB.OS.5.HIS2.02` (Kl 5) [dims —]: Aussagen und Interpretationen über die Vergangenheit und Gegenwart anhand von Belegen aus Quellen und Darstellungen nachzuvollziehen (Belegbarkeit)
-- `GPB.OS.6.HIS2.01` (Kl 6) [dims —]: Fachliche Begriffe/ Konzepte des Historischen anhand von Lexika und Fachliteratur etc. klären und die dortigen Definitionen vergleichen sowie Unterschiede erkennen
-- `GPB.OS.6.HIS2.02` (Kl 6) [dims —]: Geschichte als Konstruktion der Vergangenheit wahrnehmen (Konstruktivität)
-- `GPB.OS.7.HIS2.01` (Kl 7) [dims —]: Unterschiedliche Verwendung von Begriffen/ Konzepten in Alltags- und (wissenschaftlicher) Fachsprache erkennen sowie deren Herkunft- und Bedeutungswandel beachten
-- `GPB.OS.7.HIS2.02` (Kl 7) [dims —]: Grundlegende erkenntnistheoretische Prinzipien des Historischen kennen und anwenden (verschiedene Perspektiven in historischen Quellen und Darstellungen identifizieren und hinterfragen/ Perspektivität; bewusste Auswahlentscheidungen hinsichtlich Themen, Quellen, Forschungsfragen, Zielgruppen usw. in historischen Darstellungen erkennen/ Selektivität; Geschichte als eine Betrachtung, die im Nachhinein geschieht, wahrnehmen und deren Auswirkung reflektieren/ Retroperspektivität)
-- `GPB.OS.8.HIS2.01` (Kl 8) [dims —]: Fachliche Begriffe/ Konzepte des Historischen auf Fallbeispiele kritisch anwenden und adaptieren
+### Historische und politische Sachkompetenz
+- `GPB.US.2.HIS3.01` (Kl 2) [dims —]: fachspezifische Konzepte anwenden, reflektieren und weiterentwickeln (ua. „Darstellung“ und „Quelle“ unterscheiden; Gattungsmerkmale von Quellen erkennen; über den Unterschied zwischen „Vergangenheit“, „Geschichte“ und „Geschichtsschreibung“ reflektieren; „Königin/König“, „Sklavin/Sklave“, „Demokratie“ als Konzepte in unterschiedlichen Kontexten anwenden).
 
 ### Politikbezogene Methodenkompetenz
-- `GPB.OS.7.POL4.01` (Kl 7) [dims —]: Erhebungen nachvollziehen, die im politischen Diskurs eingesetzt werden, und deren Daten analysieren (Art der Datenerhebung erkennen, dahinter liegende Fragestellungen nachvollziehen, Sachaussagen und bewertende Aussagen identifizieren)
-- `GPB.OS.7.POL4.02` (Kl 7) [dims —]: Medial vermittelte Informationen kritisch hinterfragen (Einfluss der medialen Präsentationsformen reflektieren, unzulässige Vereinfachungen der möglichen Aussagen erkennen, unterschiedliche Interpretationsmöglichkeiten erörtern)
-- `GPB.OS.8.POL4.01` (Kl 8) [dims —]: Selbstständig Informationen zu politischen Themen gewinnen, um damit ein eigenes mediales Produkt der politischen Artikulation zu erstellen
-- `GPB.OS.8.POL4.02` (Kl 8) [dims —]: Medienspezifik bei der Erstellung von eigenen medialen Produkten der politischen Artikulation beachten (Plakate, Social Media, Demonstrationsbanner, etc.)
+- `GPB.US.2.POL.01` (Kl 2) [dims —]: politische Manifestationen (zB Internetpostings, Zeitungsartikel, TV-Dokus; Umfrageergebnisse) beschreiben, analysieren und hinterfragen.
 
 ### Politische Handlungskompetenz
-- `GPB.OS.6.POL3.01` (Kl 6) [dims —]: Eigene Meinungen, Werturteile und Interessen artikulieren und (öffentlich) vertreten
-- `GPB.OS.6.POL3.02` (Kl 6) [dims —]: Bewusst über die eigene Teilnahme an politischen Entscheidungsprozessen (zB Wahlen, Demonstrationen, Volksabstimmungen) entscheiden
-- `GPB.OS.6.POL3.03` (Kl 6) [dims —]: Entscheidungen erst nach Abwägen verschiedener Standpunkte treffen
-- `GPB.OS.7.POL3.01` (Kl 7) [dims —]: Demokratische Mittel zur Durchsetzung eigener Anliegen (zB Demonstrationen, Unterschriftenlisten, Flugblattaktionen, Petitionen) konzipieren und/oder anwenden, insbesondere Formen schulischer und außerschulischer Mitbestimmung
-- `GPB.OS.7.POL3.02` (Kl 7) [dims —]: Medien nutzen, um eigene politische Meinungen und Anliegen zu verbreiten (zB über Leserbriefe, Postings)
-- `GPB.OS.7.POL3.03` (Kl 7) [dims —]: Differenzierte politische Diskussionen führen
-- `GPB.OS.7.POL3.04` (Kl 7) [dims —]: Kontakte zu Institutionen und Personen der politischen Öffentlichkeit (Politikerinnen und Politiker, NGOs, usw.) aufnehmen sowie Angebote von politischen Organisationen nutzen können
-- `GPB.OS.8.POL3.01` (Kl 8) [dims —]: Alleine oder mit anderen für gemeinsame und/oder für die Interessen anderer eintreten sowie eingegangene Kompromisse akzeptieren
-- `GPB.OS.8.POL3.02` (Kl 8) [dims —]: Sich an politischen Prozessen verantwortungsbewusst beteiligen
-
-### Politische Sachkompetenz
-- `GPB.OS.6.POL.01` (Kl 6) [dims —]: Fachliche Begriffe/ Konzepte des Politischen anhand von Lexika und Fachliteratur etc. klären und die dortigen Definitionen vergleichen sowie Unterschiede erkennen
-- `GPB.OS.6.POL.02` (Kl 6) [dims —]: Unterschiedliche Verwendung von Begriffen/ Konzepten in Alltags- und (wissenschaftlicher) Fachsprache erkennen sowie deren Herkunft- und Bedeutungswandel beachten
-- `GPB.OS.8.POL.01` (Kl 8) [dims —]: Fachliche Begriffe/ Konzepte des Politischen auf Fallbeispiele kritisch anwenden und adaptieren
-- `GPB.OS.8.POL.02` (Kl 8) [dims —]: Grundprinzipien der sozialwissenschaftlichen Forschung beachten (zB Vollständigkeit der Datenerhebung, Eignung und Verlässlichkeit von Messverfahren, Nachvollziehbarkeit der Ergebnisse)
+- `GPB.US.2.POL3.01` (Kl 2) [dims —]: Angebote von politischen Organisationen (zB Parteien, NGOs) nutzen und mit Personen und Institutionen der politischen Öffentlichkeit Kontakt aufnehmen.
 
 ### Politische Urteilskompetenz
-- `GPB.OS.6.POL2.01` (Kl 6) [dims —]: Eigene und fremde Urteile und Teilurteile auf ihre Begründung und Relevanz hin untersuchen
-- `GPB.OS.6.POL2.02` (Kl 6) [dims —]: Eigene politische Urteile und Überzeugungen in ihrer Bedingtheit (Interessen, Standortgebundenheit) erkennen sowie die Bereitschaft aufbringen, diese zu modifizieren und/oder zurückzunehmen
-- `GPB.OS.6.POL2.03` (Kl 6) [dims —]: Vernachlässigte Interessen in Urteilen erkennen und die damit verbundenen Konsequenzen abschätzen
-- `GPB.OS.7.POL2.01` (Kl 7) [dims —]: Vorurteile, Vorausurteile von rational begründeten Urteilen unterscheiden
-- `GPB.OS.7.POL2.02` (Kl 7) [dims —]: Bei politischen Kontroversen und Konflikten die Perspektiven und Interessen und zugrundeliegenden politischen Wert- und Grundhaltungen unterschiedlich Betroffener erkennen und nachvollziehen
-- `GPB.OS.8.POL2.01` (Kl 8) [dims —]: Vorliegende Urteile hinsichtlich ihres Entstehungskontextes auf ihre Kompatibilität mit Grund- und Freiheitsrechten (insbesondere Menschenrechte) überprüfen
-- `GPB.OS.8.POL2.02` (Kl 8) [dims —]: Folgen von Entscheidungen und Urteilen abschätzen
+- `GPB.US.2.POL2.01` (Kl 2) [dims —]: eigene und fremde Meinungen zu gesellschaftlichen und politischen Fragestellungen erkennen, unterscheiden und analysieren.
 
-### Politische, wirtschaftliche, kulturelle und soziale Entwicklungen vom 1. Weltkrieg bis zur Gegenwart
-- `GPB.OS.7.POL5.01` (Kl 7) [dims —]: Nationale und internationale Politik zwischen 1918 und 1945, zB Friedensverträge, Krisen der Zwischenkriegszeit, Zweiter Weltkrieg
-- `GPB.OS.7.POL5.02` (Kl 7) [dims —]: demokratische, autoritäre und totalitäre Staatensysteme und ihre Ideologien in Europa; Darstellung von Ideologien in geschichtskulturellen Produkten
-- `GPB.OS.7.POL5.03` (Kl 7) [dims —]: nationalsozialistisches System und Holocaust; Erinnerungskulturen im Umgang mit dem Holocaust
-- `GPB.OS.7.POL5.04` (Kl 7) [dims —]: das bipolare Weltsystem 1945-1990, sein Zusammenbruch und die Transformation des europäischen Systems
-- `GPB.OS.7.POL5.05` (Kl 7) [dims —]: soziale, ökologische, politische, wirtschaftliche, geschlechterbezogene und kulturelle Ungleichheiten und die Entwicklung von nachhaltigen Lösungsstrategien, zB Befreiungs- und Unabhängigkeitsbewegungen als Reaktion auf Kolonialismus und Imperialismus; Nord-Süd-Konflikt; Entwicklungshilfepolitik; das österreichische Sozial- und Wirtschaftssystem im internationalen Vergleich; kritischer Vergleich von Geschichtsschulbuchdarstellungen zum gleichen Thema
-- `GPB.OS.7.POL5.06` (Kl 7) [dims —]: Gesellschaftliche Veränderungen nach 1945 und ihre Auswirkungen auf den Alltag
-- `GPB.OS.7.POL5.07` (Kl 7) [dims —]: politisches Alltagsverständnis – die verschiedenen Dimensionen und Ebenen von Politik, Formen und Grundwerte der Demokratie und der Menschenrechte, Frauen- und Gleichstellungspolitik, Motivationen und Möglichkeiten politischer Beteiligungs-, Entscheidungs- und Konfliktlösungsprozesse
-
-### Vom Beginn der Neuzeit bis zum ersten Weltkrieg unter Berücksichtigung von Gegenwartsphänomenen
-- `GPB.OS.6.VOM.01` (Kl 6) [dims —]: die sozioökonomischen und geistig-kulturellen Umbrüche in der frühen Neuzeit in verschiedenen sozialen Schichten
-- `GPB.OS.6.VOM.02` (Kl 6) [dims —]: die soziale, politische und wirtschaftliche Dynamik in und zwischen neuzeitlichen Herrschaftsgebieten
-- `GPB.OS.6.VOM.03` (Kl 6) [dims —]: Herrschafts- und Staatsformen und ihre Auswirkungen auf Gesellschaft und Kultur
-- `GPB.OS.6.VOM.04` (Kl 6) [dims —]: kolonialistische und imperialistische Expansionen mit ihren Auswirkungen auf Herrschende und Beherrschte; Darstellung von Kolonialismus in geschichtskulturellen Produkten
-- `GPB.OS.6.VOM.05` (Kl 6) [dims —]: die Ideen der Aufklärung, Menschenrechte und Revolutionen sowie deren Beitrag für die Entwicklung des modernen Verfassungsstaates mit seinen Partizipationsformen; Entwicklung der Frauenrechte
-- `GPB.OS.6.VOM.06` (Kl 6) [dims —]: Politische und ideologische Strömungen des 19. Jahrhunderts in Gesellschaft, Kultur, Wirtschaft und Politik und ihre Folgen
-- `GPB.OS.6.VOM.07` (Kl 6) [dims —]: Instrumentalisierungen von Kultur und Ideologie in Politik und Gesellschaft über Geschichtsbilder und -mythen sowie historische Legitimationsversuche in Gegenwart und Vergangenheit
-
-### Von der griechisch-römischen Antike bis zum Ende des Mittelalters unter Berücksichtigung von Gegenwartsphänomenen
-- `GPB.OS.5.GRI.01` (Kl 5) [dims —]: politische Organisation, gesellschaftliche Entwicklung, Wirtschaft und Kultur des mediterranen Raumes
-- `GPB.OS.5.GRI.02` (Kl 5) [dims —]: Ausbreitung von Kultur, Religion und Herrschaftsgebieten in europäischen und außereuropäischen Machtzentren sowie damit verbundene Vernetzungen und Wechselwirkungen
-- `GPB.OS.5.GRI.03` (Kl 5) [dims —]: Expansion und Migration und deren soziokulturelle Auswirkungen; Darstellung von unterschiedlichen Kulturen in geschichtskulturellen Produkten
-- `GPB.OS.5.GRI.04` (Kl 5) [dims —]: die Entwicklung unterschiedlicher politischer und rechtlicher Strukturen im Spannungsfeld von Herrschaft und Lebenswelt, insbesondere der Geschlechterverhältnisse/-rollen
-
-### Wesentliche Transformationsprozesse im 20. und 21. Jahrhundert und grundlegende Einsichten in das Politische
-- `GPB.OS.8.WES.01` (Kl 8) [dims —]: Österreich als Teil der europäischen und globalen Entwicklung im 20. und 21. Jahrhundert
-- `GPB.OS.8.WES.02` (Kl 8) [dims —]: das politische und rechtliche System Österreichs und der Europäischen Union sowie politische Systeme im internationalen Vergleich
-- `GPB.OS.8.WES.03` (Kl 8) [dims —]: europäische Integrationsbestrebungen und Globalisierungsprozesse – Chancen und Konfliktpotenziale
-- `GPB.OS.8.WES.04` (Kl 8) [dims —]: Rolle der (Neuen) Medien zwischen Politik, Wirtschaft, Kultur und Gesellschaft; Geschichtsdarstellungen in Neuen Medien
-- `GPB.OS.8.WES.05` (Kl 8) [dims —]: Akteure der internationalen Politik, zentrale Konfliktfelder und Formen von Sicherheitskonzepten und -strukturen
-- `GPB.OS.8.WES.06` (Kl 8) [dims —]: emanzipatorische, soziale Bewegungen und Gegenströmungen nach 1945 in Österreich, Europa und der Welt, zB Frauen-, Jugend- und Studentenbewegungen
+### —
+- `GPB.US.2.ALL.01` (Kl 2) [dims —]: Quellen und Darstellungen unterscheiden.
+- `GPB.US.2.ALL.02` (Kl 2) [dims —]: Darstellungen beschreiben, analysieren und hinterfragen (Comics, Rekonstruktionszeichnungen, Karten, Sachbücher, Spielfilme etc.) – Schwerpunkt: Belegbarkeit in Darstellungen überprüfen.
+- `GPB.US.2.ALL.03` (Kl 2) [dims —]: Quellen beschreiben, analysieren und interpretieren (Funde, Schriften, Bilder etc.).
+- `GPB.US.2.ALL.04` (Kl 2) [dims —]: eigene Erzählungen über die Vergangenheit anfertigen (ua. zum eigenen Leben; chronologische Aufzählung und Sachtexte in eine Darstellung überführen).
+- `GPB.US.3.ALL.01` (Kl 3) [dims —]: Darstellungen beschreiben, unterscheiden, analysieren und hinterfragen (Schulbücher, TV-Dokumentationen, Internetangebote etc.) – Schwerpunkt: Erzählstrukturen von Darstellungen analysieren (Zielgruppenausrichtung, inhaltliche Schwerpunktsetzung, Emotionalisierung etc.).
+- `GPB.US.3.ALL.02` (Kl 3) [dims —]: Quellen beschreiben, unterscheiden, analysieren und interpretieren (Schriften, Bilder, Gegenstände etc.).
+- `GPB.US.3.ALL.03` (Kl 3) [dims —]: eigene Erzählungen über die Vergangenheit auf der Grundlage von Quellen und Darstellungen erstellen.
+- `GPB.US.3.ALL.04` (Kl 3) [dims —]: unterschiedliche Darstellungen zum selben Thema vergleichen und Gründe für die Unterschiedlichkeit analysieren.
+- `GPB.US.3.ALL.05` (Kl 3) [dims —]: Fragen zu Kontinuität und Wandel an die Vergangenheit stellen (Schülerinnen und Schüler stellen Fragen wie ua.: Wie entwickelten sich Geschlechterrollen seit dem 19. Jahrhundert in Mitteleuropa? Waren Wanderungen und Migration immer schon Bestandteil von Gesellschaften?).
+- `GPB.US.3.ALL.06` (Kl 3) [dims —]: unterschiedliche Orientierungsangebote in Darstellungen zum selben Thema analysieren (ua. Bedeutungszuweisungen/Stellenwert von historischen Ereignissen und Persönlichkeiten für Gegenwart/Zukunft, Handlungsempfehlungen für die Gegenwart/Zukunft).
+- `GPB.US.3.ALL.07` (Kl 3) [dims —]: fachspezifische Konzepte anwenden, reflektieren und weiterentwickeln (ua. „Darstellung“ und „Quelle“ unterscheiden; Gattungsmerkmale von Darstellungen erkennen; „Epoche“ als Form der Zeiteinteilung reflektieren; verschiedene Formen von „Perspektivität“ in Quellen und Darstellungen herausarbeiten); „Herrschaft“ und „Revolution“ in unterschiedlichen Zeiten vergleichen und mit den eigenen Vorstellungen in Verbindung setzen).
+- `GPB.US.3.ALL.08` (Kl 3) [dims —]: politische Manifestationen (Formen der digitalen Kommunikation, Demonstrationsbanner, Flugzettel, aktionistische Formen, etc.) beschreiben, analysieren und hinterfragen sowie selbstständig erstellen.
+- `GPB.US.3.ALL.09` (Kl 3) [dims —]: Interessen- und Standortgebundenheit von eigenen und fremden politischen Urteilen analysieren.
+- `GPB.US.3.ALL.10` (Kl 3) [dims —]: Formen von politischer Mitbestimmung und Vertretung nutzen und demokratische Mittel anwenden.
+- `GPB.US.4.ALL.01` (Kl 4) [dims —]: Darstellungen beschreiben, unterscheiden, analysieren und hinterfragen (Internetangebote, Computerspiele, TV-Dokumentationen etc.) – Schwerpunkt: Bewertungen in Darstellungen überprüfen.
+- `GPB.US.4.ALL.02` (Kl 4) [dims —]: Quellen beschreiben, unterscheiden, analysieren und interpretieren (Schriften, Bilder, Filme etc.).
+- `GPB.US.4.ALL.03` (Kl 4) [dims —]: eigene Erzählungen über die Vergangenheit auf der Grundlage von Quellen und Darstellungen erstellen und dabei entsprechende Belege anführen.
+- `GPB.US.4.ALL.04` (Kl 4) [dims —]: Perspektivität von Quellen und Einseitigkeiten in Darstellungen untersuchen.
+- `GPB.US.4.ALL.05` (Kl 4) [dims —]: Fragen zu Kontinuität und Wandel stellen und in Darstellungen behandelte Fragen herausarbeiten.
+- `GPB.US.4.ALL.06` (Kl 4) [dims —]: über Intentionen hinter Orientierungsangeboten für die Gegenwart und Zukunft reflektieren (ua. Gleichsetzungen von gegenwärtigen und vergangenen Phänomenen überprüfen).
+- `GPB.US.4.ALL.07` (Kl 4) [dims —]: fachspezifische Konzepte anwenden, reflektieren und weiterentwickeln („Darstellung“, „Quelle“ unterscheiden und deren Gattungsmerkmale erkennen, „Demokratie“, „Wandel“, „Partizipation“, „Kommunikation“, „Föderalismus“, „Kompetenzverteilung zwischen Gemeinden, Ländern, Bund“).
+- `GPB.US.4.ALL.08` (Kl 4) [dims —]: politische Manifestationen (Wahlplakate, politische Reden, politische Werbespots etc.) beschreiben, unterscheiden, analysieren und hinterfragen sowie selbstständig erstellen.
+- `GPB.US.4.ALL.09` (Kl 4) [dims —]: eigene politische Urteile formulieren und begründen sowie andere Urteile (von Journalistinnen und Journalisten, von Politikerinnen und Politikern, von NGOs etc.) analysieren.
+- `GPB.US.4.ALL.10` (Kl 4) [dims —]: an Prozessen der politischen Willensbildung teilnehmen und getroffene Entscheidungen reflektieren.
 
 ## Erlaubte Dimensionen (`dimensions`, primäre zuerst — Teilmenge dieser Codes)
-- `HFK` — Historische Fragekompetenz
-- `HMK` — Historische Methodenkompetenz (Re-/De-Konstruktion)
-- `HOK` — Historische Orientierungskompetenz
-- `HSK` — Historische Sachkompetenz
-- `PUK` — Politische Urteilskompetenz
-- `PHK` — Politische Handlungskompetenz
-- `PMK` — Politische Methodenkompetenz
-- `PSK` — Politische Sachkompetenz
+- `HFR` — Historische Fragekompetenz
+- `HME` — Historische Methodenkompetenz
+- `HOR` — Historische Orientierungskompetenz
+- `HSA` — Historische (und politische) Sachkompetenz
+- `PUR` — Politische Urteilskompetenz
+- `PME` — Politikbezogene Methodenkompetenz
+- `PHA` — Politische Handlungskompetenz
 
 ## Erlaubte Aufgaben-`kind`-Werte
-argumentation, create_produce, data_interpretation, decision_scenario, dekonstruktion, matching, multiple_choice, open_response, ordering, puzzle, source_analysis, table_fill, true_false_justify
+cause_effect_match, concept_match, content_comprehension, create_produce, data_interpretation, decision_scenario, matching, multiple_choice, open_response, ordering, position_argument, puzzle, source_analysis, structure_overview, table_fill, true_false_justify
+
+## Anwendungsbereiche (Themen-Ideen für die Kernfragen)
+- Kl 2: Lebensweltliche Erfahrungen im Umgang mit Geschichte und Vergangenheit („Zeit“ als zentrales Konzept in der Geschichte; Zeiteinteilungen der Geschichte; Anfänge der Menschheitsgeschichte und damit verbundene Vorstellungen von Schülerinnen und Schülern; Herkunft von Vorstellungen über die Vergangenheit) · Alte Kulturen (Entstehung und Merkmale; Gesellschaftsstruktur und Alltagsleben; Hinterfragen von geschichtskulturellen Produkten, ua. eines Spielfilmausschnitts oder Comics ) · Welt- und Vernetzungsgeschichte zur Zeit der europäischen Antike (transkultureller Austausch und Handel; Vernetzungen des Römischen Reiches im mediterranen Raum und zu asiatischen Kulturen; globaler Querschnitt von Kulturen auf verschiedenen Kontinenten) · Vergangene und gegenwärtige Herrschafts- und Staatsformen (Beispiele von Herrschaftsformen und Gesellschaftsordnungen von der Antike bis zur Gegenwart, va. Unterschiede, Parallelen; Merkmale von Herrschafts- und Staatsformen und ihre Auswirkungen auf unterschiedliche Bevölkerungsgruppen, ua. Ethnie, Geschlecht, Klasse, Schicht, Behinderung; individuelle Erfahrungen von Menschen in unterschiedlichen Epochen mit Herrschaftsformen) , Einfluss des politischen Geschehens, des gesellschaftlichen und kulturellen Lebens durch Religionen und Gesinnungsgemeinschaften · Mittelalterliche Lebensformen (Lebensweisen in Stadt und Land; transkulturelle Beziehungen Afrikas oder Asiens zu Europa, ua. Salzhandel, Seidenstraße; Vorstellungen über das Mittelalter in Vergangenheit und Gegenwart) · Begegnungen zwischen dem Eigenen und dem Fremden in der Frühen Neuzeit (Motive, Ursachen und Auswirkungen von Eroberungsreisen; Kolonialismus, Ausbeutung und Zerstörung indigener Gesellschaften und die Auswirkungen auf die Gegenwart; Darstellung kultureller Kontakte in Vergangenheit und Gegenwart) · Geschichte der Ausbeutung als Längsschnitt (von der Antike bis in die Gegenwart) (Sklaverei im historischen Längsschnitt; Ausbeutung von Frauen, Männern und Kindern von der Antike bis zur Gegenwart; individuelle Erfahrungen aus unterschiedlichen sozialen Klassen und Schichten im Zusammenhang mit Sklaverei und Ausbeutung; Durchsetzung von Menschenrechten) · Möglichkeiten für politisches Handeln in Gegenwart und Zukunft (Ebenen des politischen Handelns – Gemeinde, Land, Bund, EU – und deren Auswirkungen auf Alltag und Lebenswelt und politisches Agieren der Schülerinnen und Schüler) , gesellschaftliche und politische Partizipation in der eigenen Lebenswelt; ungleiche Handlungsspielräume der Geschlechter; Erproben und Reflektieren von politischen Handlungen
+- Kl 3: Aspekte frühneuzeitlicher Kulturen aus europäischer Perspektive (Renaissance als kulturelle, politische und wirtschaftliche Übergangszeit; Reformation und Gegenreformation; veränderte Sichtweisen auf den Menschen von der Renaissance bis zur Gegenwart anhand menschlichen Erlebens und Zusammenlebens – Umgang mit Strafen in der Gesellschaft, Ausdrucksformen von Liebe und Sexualität , Exklusion und Inklusion von Menschen mit psychischer und physischer Behinderung) · Gesellschaftliche und wirtschaftliche Veränderungen in der Neuzeit (Auswirkungen des Absolutismus auf das Leben am Hof und für die Gesellschaft; Frühkapitalismus und seine Folgen – Reichtum und Armut, Wandel der Arbeitswelten) · Revolutionen, Widerstand, Reformen („Revolution“ und „Reform“ und damit verbundene Vorstellungen von Schülerinnen und Schüler; Aspekte der Aufklärung und ihre Bedeutung für Revolutionen und Reformbewegungen; sozialgeschichtliche Aspekte des jüdischen Lebens im 18. und 19. Jahrhundert in Österreich; Auswirkungen der Aufklärung auf gegenwärtige Gesellschaften – demokratischer Verfassungsstaat, Gewaltentrennung, Menschenrechte; Vergleich von politischen Umbrüchen/Revolutionen anhand von Beispielen) · Geschlecht, Ethnien und soziale Klassen im Zeitalter der Industrialisierung (politische Strömungen und ihr Einfluss auf Gesellschaften; Kommunismus und Sozialismus; Nationalismus und Aufkommen eines politischen Antisemitismus und Rassismus in Europa; Vergleich der Industriegesellschaft und gegenwärtiger Lebenswelten; umweltgeschichtliche Betrachtung der Industrialisierung) · Kolonialismus, Imperialismus und Rassismus (Aufteilung der Welt unter den Kolonialmächten und Auswirkungen bis in die Gegenwart; Wahrnehmung außereuropäischer Gesellschaften aus europäischen Perspektiven; Bewertungen und Zuschreibungen in verschiedenen Formen von Rassismus; Kolonialismus aus der Perspektive der Unterdrückten; Umgang mit Minderheiten in Vielvölkerstaaten – Habsburgermonarchie und Osmanisches Reich im Vergleich) · Migration vom 19. Jahrhundert bis in die Gegenwart (Migration; Integration in der Vergangenheit und in der Lebenswelt der Schülerinnen und Schüler; weltweite Migrationsbewegungen; Flucht und Asyl; Herausforderungen für Auswanderungs- und Einwanderungsländer; Migration am Beispiel von Lebensgeschichten aus dem 19. und 20. Jahrhundert) · Erster Weltkrieg (Machtverhältnisse in Europa; soldatische Kriegserfahrungen und Auswirkungen des Krieges auf Bevölkerung insbesondere auf Frauen und Identitäten; Kriegspropaganda und Lebenswelten von Kindern und Jugendlichen – ua. Kriegsspielzeug, Schul- und Jugendbücher und Lieder; Weltkrieg und Geschichtskultur in Vergangenheit und Gegenwart, ua. Denkmäler, Filme, Computerspiele; historische Friedenslösungen) · Identitäten und Politik in Gegenwart und Zukunft (Identität und Identitätsbildung – Definition, Wandel von Identitäten, Mehrfachidentitäten; kritische Auseinandersetzung mit Selbst- und Fremdzuschreibungen von Identitäten in der politischen Diskussion; Bausteine nationaler und europäischer Identitäten; Entstehungsmechanismen von Nationalismus)
+- Kl 4: Demokratie in der Zwischenkriegszeit (Demokratisierung der Gesellschaft in der Ersten Republik Österreich – Verfassung, Sozialgesetzgebung; Auswirkungen der Demokratie auf die Lebenswelten; Wirtschaftskrise und politische Konflikte) · Faschismus – Nationalsozialismus – Kommunismus (Ausprägungen und Auswirkungen der faschistischen bzw. kommunistischen Diktaturen); „Ständestaat“ („Austrofaschismus“); die Ideologie des Nationalsozialismus und ihre Auswirkungen auf vergangene und gegenwärtige Gesellschaften; Ausgrenzung und Erniedrigung als Instrumente totalitärer Herrschaftssysteme; Alltagswelten in Demokratie und Diktatur; Analyse von Grundlagen, Voraussetzungen und Praxis des Nationalsozialismus in Österreich; Zweiter Weltkrieg und dessen Darstellung in geschichtskulturellen Produkten – ua. TV-Dokumentationen, Computerspiele ; Vergleich totalitärer Staatssysteme) · Holocaust/Shoah und Genozid (Formen des Antisemitismus und des Rassismus; Vernichtungspolitik im Nationalsozialismus – Opfergruppen, industrieller Massenmord, NS-Euthanasie, Verbrechen der Wehrmacht; Perspektiven von Deserteuren, Opfern, Täterinnen und Tätern sowie Mitläuferinnen und Mitläufern; Interviews von Zeitzeuginnen und Zeitzeugen als subjektive Wahrnehmung der Vergangenheit; Beispiele von Genoziden des 20. und 21. Jahrhunderts); 2. Weltkrieg aus europäischer, amerikanischer, afrikanischer und asiatischer Perspektive · Zweite Republik Österreich: Rückstellung und Entschädigung für Opfer des Nationalsozialismus, Demokratisierung der Gesellschaft, Staatsvertrag und Bundesverfassungsgesetz, umfassende Landesverteidigung, Bundesheer; österreichisches Modell der Interessensvertretung und Sozialpartnerschaft unter Bezugnahme auf Arbeiterkammer, Gewerkschaften, Wirtschaftskammer und Landwirtschaftskammer · Soziale Ungleichheiten und Strategien zu deren Überwindung – ua. Wohlfahrtsstaat, Interessenvertretungen, Sozialpartnerschaft; Wandel der Wertehaltungen durch neue Politikfelder – ua. Sozialstaat, Umwelt/Klima, Migration · Geschichtskulturen – Erinnerungskulturen – Erinnerungspolitik (Umgang mit Nationalsozialismus und Holocaust in der Zweiten Republik – Entnazifizierung, Opfermythos und öffentliche Erinnerungskultur; Denkmäler und Gedenkstätten – ua. Vergleich des Umgangs mit dem Zweiten Weltkrieg in Österreich und in Jugoslawien bzw. den Nachfolgestaaten von 1945 bis heute; Instrumentalisierung und Nutzung von Geschichte und Erinnerungen – ua. historische Argumente in der Politik, Habsburgermythos, Tourismus, Medien und Unterhaltung) · Aspekte von Globalisierung im 20. und 21. Jahrhundert (Friedenssicherung nach 1945 und welt- und wirtschaftspolitische Machtblöcke in globaler Perspektive, „Kalter Krieg“; Befreiungsbewegungen im Globalen Süden (Afrika, Südamerika etc.), politische, ökonomische und gesellschaftliche Phänomene der Globalisierung – ua. Urbanisierung, ökologische Herausforderungen; weltweit sich vernetzende Phänomene – ua. Konsum , Popkultur, Internet/digitale Medien, Seuchen) · Europäisierung (unterschiedliche historische und gegenwärtige Konzeptionen von Europa; die EU als Wirtschafts- und Friedensprojekt ; Ende des geteilten Europas 1989 und die Auswirkungen; Beitritt Österreichs zur EU und die nachfolgenden Veränderungen in Außen-, Sicherheits- und Neutralitätspolitik, in Gesellschaft und Alltag; Einfluss der EU auf die Lebenswelt der Schülerinnen und Schüler)
 ## Verankerung
 Jede Kernfrage gehört zu **einem** Kompetenzbereich; setze im JSON `"kompetenzbereich": "<exakter KB-Name>"` und die passende `klasse` (eine Klasse, in der dieser KB Kompetenzen hat). Alle Aufgaben dieser Kernfrage dienen Kompetenzen aus diesem (KB, Klasse).
 
@@ -211,12 +174,12 @@ true_false_justify `{"kind":"true_false_justify","statements":[...]}` · orderin
 matching `{"kind":"matching","left":[...],"right":[...]}` · decision_scenario `{"kind":"decision_scenario","stem":"..."}`
 
 ## Ausgabe
-Schreibe **2 Dateien**, eine pro Kernfrage, nach `runs/ingest/gen_os_2/GPB_1.json` … `runs/ingest/gen_os_2/GPB_2.json`.
+Schreibe **2 Dateien**, eine pro Kernfrage, nach `runs/ingest/gen_us_2/GPB_1.json` … `runs/ingest/gen_us_2/GPB_2.json`.
 Jede Datei ist **ausschließlich** dieses JSON (kein Fließtext, keine ``` Zäune):
 
 ```json
 {
-  "subject": "Geschichte und politische Bildung", "klasse": <5-8, eine Klasse mit Kompetenzen im gewählten Bereich>,
+  "subject": "Geschichte und politische Bildung", "klasse": <1-4, eine Klasse mit Kompetenzen im gewählten Bereich>,
   "kompetenzbereich": "<KB-Name>",
   "title": "<prägnanter Titel>", "kernfrage": "<eine Schüler-Kernfrage in Du-Form>",
   "body": {
@@ -225,7 +188,7 @@ Jede Datei ist **ausschließlich** dieses JSON (kein Fließtext, keine ``` Zäun
     "assets": [ /* nur Struktur-Figuren: {"id":"abb2","role":"figure","generator":"matplotlib:function_graph","spec":{"m":2,"b":1}} */ ],
     "sections": [ { "id":"s1","title":"...","throughline":"...","talking_points":["..."],"extensions":["..."],
       "blocks":[ {"role":"task","id":"t1","kind":"<kind>","prompt":"...","payload":null,
-        "response":{"mode":"lines","n":3},"cognitive_level":"understand","dimensions":["HFK"],
+        "response":{"mode":"lines","n":3},"cognitive_level":"understand","dimensions":["HFR"],
         "serves":[{"competence_id":"<ID>","relation":"exercises"}],"est_minutes":7,"asset_refs":[],
         "answer_key":"...","acceptable_reasoning":null,"watch_outs":["..."],"rubric":[]} ] } ]
   }

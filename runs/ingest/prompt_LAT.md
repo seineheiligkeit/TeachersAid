@@ -1,131 +1,55 @@
 # Breiten-Generierung: Latein — 2 Kernfragen
 
 Du erzeugst **2 verschiedene** Arbeitsblatt-Inhalte (je eine eigene **Kernfrage**) für die
-**AHS-Oberstufe** auf österreichischem Lehrplan-Niveau. Sprache: **Deutsch**, AHS-Niveau (anspruchsvoll, Sek II).
+**AHS-Unterstufe** auf österreichischem Lehrplan-Niveau. Sprache: **Deutsch**, altersgerecht für die Unterstufe (Sek I, ~10-14 J.) — klar und konkret, aber nie trivial (der Blackboard-Test gilt trotzdem).
 Wähle **2 klar unterschiedliche Themen/Bereiche** (Breite!), nicht Varianten desselben Themas.
+
+## Korpus-Kontext — was es schon gibt
+Für **Latein** (Unterstufe) gibt es im Korpus schon **5** Arbeitsblätter. Wähle 2 **neue** Kernfragen, die sich davon klar unterscheiden (keine Dubletten, keine bloßen Varianten):
+- [Kl 3] Nomen und Kasus: Nominativ und Akkusativ — Wie erkennst du, wer im lateinischen Satz handelt und wen oder was die Handlung trifft?
+- [Kl 3] Römisches Alltagsleben: Die Familie und das Haus — Wie lebten die Menschen im antiken Rom, und was ist davon in unserer heutigen Welt noch spürbar?
+- [Kl 3] Verben im Präsens und Perfekt — Wie unterscheidest du im Lateinischen, ob etwas gerade passiert oder schon abgeschlossen ist?
+- [Kl 4] Latein lebt weiter: Latinismen in Alltag, Wissenschaft und Medien — Wo begegnet dir das Lateinische noch heute — in Sprache, Wissenschaft und Kultur?
+- [Kl 4] Passiv und Komparation: Formen erkennen und übersetzen — Wie verändert das Passiv den Blick auf eine Handlung — und wie drückt Latein Steigerung aus?
+
+_Abdeckung (Kompetenzbereich-Zellen): 4 grün · 0 teilweise · 0 leer von 4._
 
 ## Kompetenzen (verbatim — `serves.competence_id` MUSS eine dieser IDs sein), gruppiert nach Kompetenzbereich
 
-### 5. Klasse
-- `LAT.OS.5.KLA.01` (Kl 5) [dims —]: Vertrautheit gewinnen mit den Grundzügen des spezifischen Ordnungssystems der lateinischen Morphologie und der lateinischen Syntax
-- `LAT.OS.5.KLA.02` (Kl 5) [dims —]: durch unterschiedliche Lerntechniken und Sprachvergleich einen Basiswortschatz aufbauen unter Berücksichtigung von Lehn- und Fremdwörtern
-- `LAT.OS.5.KLA.03` (Kl 5) [dims —]: Einblick gewinnen in die antike Kultur und ihr Fortwirken bis in die Gegenwart
-- `LAT.OS.5.KLA.04` (Kl 5) [dims —]: Einblick gewinnen in Aspekte der Wortbildungslehre (Präfixe und Suffixe)
-- `LAT.OS.5.KLA.05` (Kl 5) [dims —]: sich auseinandersetzen mit der antiken Kultur und ihrem Fortwirken bis in die Gegenwart
+### Inhalts- und themenbezogene Kompetenzen
+- `LAT.US.3.INH.01` (Kl 3) [dims INH]: sich mit Hilfe adäquater Medien und Informationstechnologien mit genuinen Inhalten und Themen des Lateinunterrichts vertraut machen und diese präsentieren.
+- `LAT.US.3.INH.02` (Kl 3) [dims INH]: ihre Kenntnis des lateinischen Wortschatzes zur Erschließung von Wortbedeutungen in der Unterrichtssprache, in Fremd-, Fach- und Sondersprachen nutzen.
+- `LAT.US.3.INH.03` (Kl 3) [dims INH]: sich mit lateinischen Texten und deren Inhalten auseinandersetzen und eine Verbindung zu ihrer Lebenswelt herstellen.
+- `LAT.US.4.INH.01` (Kl 4) [dims INH]: sich mit Texten und deren Inhalten auch unter Einbeziehung verschiedener Medien kritisch und kreativ auseinandersetzen und eine Verbindung zu ihrer Lebenswelt, zu Gesellschaft und Politik herstellen.
+- `LAT.US.4.INH.02` (Kl 4) [dims INH]: ihre Kenntnis des lateinischen Wortschatzes zur Erschließung von Wortbedeutungen in der Unterrichtssprache, in Fremd-, Fach- und Sondersprachen nutzen.
+- `LAT.US.4.INH.03` (Kl 4) [dims INH]: ihr kulturkundliches Basiswissen im aktuellen gesellschaftlichen und medialen Diskurs einbringen und erkennen, wie Latein in multimedialen Textformaten der Gegenwart als jene Sprache, welche Tradition, Geschichte und Fortbestand von zentralen kulturellen Erfahrungen Europas repräsentiert, gezielt eingesetzt wird.
 
-### Austria Latina
-- `LAT.OS.5.AUS.01` (Kl 5) [dims —]: die Spuren der Romanisierung und Christianisierung in den Gebieten des heutigen Österreich und seiner Nachbarn kennen lernen
-- `LAT.OS.5.AUS.02` (Kl 5) [dims —]: ausgehend von schriftlichen und archäologischen Zeugnissen im lokalen und regionalen Umfeld eine Vorstellung von den vielfältigen prägenden Einflüssen auf das heutige Österreich gewinnen
-
-### Begegnung und Umgang mit dem Fremden
-- `LAT.OS.5.BEG.01` (Kl 5) [dims —]: durch die Auseinandersetzung mit literarischen Zugängen zu fremden Lebens- und Denkformen (zB Ethnographie, Reisebericht, …) eigene Standpunkte gewinnen und dabei lernen, das Anders-Denken und Anders-Sein zu reflektieren und zu respektieren
-
-### Der Mensch in seinem Alltag
-- `LAT.OS.7.MEN.01` (Kl 7) [dims —]: anhand von verschiedenen Texten und Textsorten mit dem Alltagsleben in unterschiedlichen sozialen Gefügen und Epochen vertraut werden und durch Vergleich mit der eigenen Lebenssituation ein erweitertes Kulturverständnis gewinnen
-- `LAT.OS.7.MEN.02` (Kl 7) [dims —]: anhand von Texten aus verschiedenen Epochen Bereiche des Alltagslebens wie Familie und Erziehung, Wohnen und Architektur, Massenunterhaltung, Sklaverei, Ernährung und Gesundheit usw. kennen lernen und durch Vergleich mit der eigenen Lebenssituation ein erweitertes Kulturverständnis gewinnen
-
-### Der Mythos und seine Wirkung
-- `LAT.OS.6.MYT2.01` (Kl 6) [dims —]: den antiken Mythos in seiner bildhaften Darstellung menschlichen Daseins und seinem Versuch einer Welterklärung begreifen und seine vielfältige Wirkung in allen Bereichen der Kunst bis hin zum persönlichen Umfeld verstehen
-
-### Eros und Amor
-- `LAT.OS.6.ERO.01` (Kl 6) [dims —]: mit dem facettenreichen Phänomen Liebe in unterschiedlicher literarischer Darstellung vertraut werden und dabei auch erleben, wie ein lyrisches Ich seine Empfindungen ausdrückt
-- `LAT.OS.6.ERO.02` (Kl 6) [dims —]: sich in der Auseinandersetzung mit Leid und Leidenschaft großer Liebender über die Bedeutung von Liebe und Partnerschaft für das eigene Leben bewusst werden
-
-### Fachsprachen und Fachtexte
-- `LAT.OS.7.FAC.01` (Kl 7) [dims —]: fachsprachliche Termini aus Bereichen wie Medizin, Naturwissenschaften, Mathematik und Recht mit Hilfe des bisher erworbenen Wortschatzes und der Wortbildungslehre erschließen
-- `LAT.OS.7.FAC.02` (Kl 7) [dims —]: anhand der Lektüre von Sachtexten wichtige wissenschaftliche Erkenntnisse von der Antike bis zur Neuzeit nachvollziehen und Latein als zentrale und prägende Sprache der Wissenschaft kennen lernen
-- `LAT.OS.8.FAC.01` (Kl 8) [dims —]: fachsprachliche Termini aus Bereichen wie Medizin, Mathematik, Naturwissenschaften und Recht mit Hilfe des bisher erworbenen Wortschatzes und der Wortbildungslehre erschließen
-- `LAT.OS.8.FAC.02` (Kl 8) [dims —]: anhand der Lektüre von Sachtexten wichtige wissenschaftliche Erkenntnisse von der Antike bis zur Neuzeit nachvollziehen und Latein als zentrale und prägende Sprache der Wissenschaft kennen lernen
-
-### Formen der Lebensbewältigung
-- `LAT.OS.8.FOR.01` (Kl 8) [dims —]: sich anhand von Texten philosophischen und religiösen Inhalts mit Grundfragen der menschlichen Existenz beschäftigen
-- `LAT.OS.8.FOR.02` (Kl 8) [dims —]: Lösungsmodelle, wie sie die antike Philosophie und religiöse Denkmodelle bieten, als Anregung für die eigene Lebensbewältigung und Sinnfindung nutzen lernen
-
-### Gestalten und Persönlichkeiten aus Mythologie und Geschichte
-- `LAT.OS.5.GES.01` (Kl 5) [dims —]: anhand von einfachen Texten verschiedene Gestalten aus Mythologie und Geschichte, welche die europäische Geistes- und Kulturgeschichte geprägt haben, kennen lernen
-
-### Heiteres und Hintergründiges
-- `LAT.OS.7.HEI.01` (Kl 7) [dims —]: am Beispiel der kleinen Form wie Epigramm, Anekdote und Fabel erleben, wie gesellschaftliche und politische Missstände und menschliche Schwächen in humoristischer Weise thematisiert und kommentiert werden
-
-### Herkunft, Idee und Bedeutung Europas
-- `LAT.OS.7.HER.01` (Kl 7) [dims —]: die Entwicklung Europas zu einem Kulturraum kennen lernen
-- `LAT.OS.7.HER.02` (Kl 7) [dims —]: ausgehend vom Mythos anhand von Schlüsseltexten der europäischen Geschichte Einsicht in politische und gesellschaftliche Strukturen gewinnen und das Verständnis für die europäische Identität stärken
-
-### Interpretationskompetenzen
-- `LAT.OS.x.INT.01` (Kl 5) [dims INT]: Wortebene: Sammeln und Auflisten
-- `LAT.OS.x.INT.02` (Kl 5) [dims INT]: Satzebene: Gliedern und Strukturieren
-- `LAT.OS.x.INT.03` (Kl 5) [dims INT]: mit zunehmender Kompetenz auf der Textebene: Zusammenfassen und Paraphrasieren, Gegenüberstellen und Vergleichen, Kommentieren und Stellung nehmen, kreatives Auseinandersetzen und Gestalten
-
-### Kenntnisse der lateinischen Morphologie (Verb
-- `LAT.OS.5.KEN.01` (Kl 5) [dims —]: Kenntnisse der lateinischen Morphologie (Verb: Indikativ aktiv und passiv, Infinitive; Nomen: Kasus und Kongruenz, Adjektiva und Adverbia samt Steigerung, häufige Pronomina, Präpositionen) und der lateinischen Syntax (einfache Satzgefüge) sowie des Basiswortschatzes unter Berücksichtigung von Lehn- und Fremdwörtern erwerben und erweitern
-
-### Kenntnisse der lateinischen Morphologie (zB Verb
-- `LAT.OS.6.KEN2.01` (Kl 6) [dims —]: Kenntnisse der lateinischen Morphologie (zB Verb: Partizipia; Konjunktiv aktiv und passiv, nd-Formen) und Syntax (zB satzwertige Konstruktionen, konjunktivische Haupt- und Gliedsätze) und der Wortbildungslehre erweitern und vertiefen
-- `LAT.OS.6.KEN2.02` (Kl 6) [dims —]: Kenntnisse der lateinischen Morphologie (zB Verb: Partizipia; Konjunktiv aktiv und passiv, nd-Formen) und Syntax (zB satzwertige Konstruktionen, konjunktivische Haupt- und Gliedsätze) und der Wortbildungslehre erweitern und vertiefen
-
-### Kompetenzmodell
-- `LAT.OS.x.KOM.01` (Kl 5) [dims —]: Die beiden für den Unterrichtsgegenstand Latein relevanten Kompetenzbereiche setzen sich zusammen aus Übersetzungskompetenzen und Interpretationskompetenzen.
-- `LAT.OS.x.KOM.02` (Kl 5) [dims —]: Es ist darauf zu achten, dass die Schülerinnen und Schüler diese Kompetenzen entwickeln und parallel zur zunehmenden Komplexität der Texte ausbauen.
-
-### Kompetenzmodul 3
-- `LAT.OS.6.KOM2.01` (Kl 6) [dims —]: den Basiswortschatz ausbauen und festigen und den Umgang mit dem Wörterbuch erlernen
-- `LAT.OS.6.KOM2.02` (Kl 6) [dims —]: vertiefte Einsichten in die antike Kultur und ihr Fortwirken gewinnen
-
-### Kompetenzmodul 4
-- `LAT.OS.6.KOM3.01` (Kl 6) [dims —]: ab dem Beginn der Lektürephase die Kenntnisse der Morphologie und Syntax nach den Erfordernissen der Textsorte vertiefen und erweitern
-- `LAT.OS.6.KOM3.02` (Kl 6) [dims —]: die effiziente Benutzung des Wörterbuchs trainieren
-
-### Liebe, Lust und Leidenschaft
-- `LAT.OS.7.LIE.01` (Kl 7) [dims —]: durch die Auseinandersetzung mit der dichterischen Darstellung von persönlichen Empfindungen und zwischenmenschlichen Beziehungen die Bedeutung von Liebe und Partnerschaft für die eigene Lebenswelt reflektieren
-
-### Mythos und Rezeption
-- `LAT.OS.8.MYT.01` (Kl 8) [dims —]: wirkungsmächtige Beispiele des antiken Mythos kennen lernen und sein Fortleben in verschiedenen Bereichen der Kunst und Literatur anhand von Beispielen nachvollziehen
-
-### Politik und Gesellschaft
-- `LAT.OS.7.POL2.01` (Kl 7) [dims —]: die Voraussetzungen für die Entwicklung unterschiedlicher Staats- und Gesellschaftsordnungen verstehen
-- `LAT.OS.7.POL2.02` (Kl 7) [dims —]: Mechanismen der Politik und die aktive und passive Rolle der Einzelnen zwischen Freiheit und Verantwortung in der Gemeinschaft verstehen
-- `LAT.OS.7.POL2.03` (Kl 7) [dims —]: gesellschaftliche Defizite als Ursache von Auseinandersetzungen bzw. utopischen Lösungsansätzen kennen lernen
-
-### Politik und Rhetorik
-- `LAT.OS.7.POL.01` (Kl 7) [dims —]: durch die Lektüre von historischen und philosophischen Texten Grundkenntnisse über mögliche Staats- und Gesellschaftsformen und ihre Entwicklung kennen lernen
-- `LAT.OS.7.POL.02` (Kl 7) [dims —]: die Mittel der Rhetorik als Instrument politischer und gesellschaftlicher Prozesse verstehen lernen
-
-### Rezeption in Sprache und Literatur
-- `LAT.OS.8.REZ.01` (Kl 8) [dims —]: Kenntnisse über die Entwicklung und das Weiterleben der lateinischen Sprache erwerben und diese aktiv im Sprachvergleich (romanische und slawische Sprachen, Deutsch, Englisch) anwenden
-- `LAT.OS.8.REZ.02` (Kl 8) [dims —]: ausgehend von Originaltexten Einblick gewinnen, wie sehr Gattungen und Motive der lateinischen Literatur die westliche Kultur bis in die Gegenwart beeinflussen
-
-### Rhetorik, Propaganda, Manipulation
-- `LAT.OS.6.RHE.01` (Kl 6) [dims —]: grundlegende Formen und Elemente rhetorischer Darstellung kennen lernen, die sprachlichen Instrumente und Effekte auch praktisch umsetzen und dabei anhand literarischer Beispiele erkennen, welche Risiken einseitige Propaganda in sich birgt
-
-### Schlüsseltexte aus der europäischen Geistes- und Kulturgeschichte
-- `LAT.OS.6.SCH.01` (Kl 6) [dims —]: anhand von einfachen Beschreibungen nichteuropäischer Lebensformen eigene Standpunkte reflektieren und Toleranz für das Anders-Denken und Anders-Sein entwickeln
-- `LAT.OS.6.SCH.02` (Kl 6) [dims —]: Verständnis gewinnen für den Einfluss der Romanisierung auf die Regionen Europas unter Berücksichtigung der Austria Latina
-- `LAT.OS.6.SCH.03` (Kl 6) [dims —]: anhand von einfachen Texten aus Bibel und Hagiographischen Texten das Christentum als prägende Kraft Europas kennen lernen
-
-### Suche nach Sinn und Glück
-- `LAT.OS.8.SUC.01` (Kl 8) [dims —]: sich kritisch mit philosophischen und poetischen Texten zu Grundfragen der menschlichen Existenz auseinandersetzen und dabei Lösungsmodelle als Anregung für die eigene Lebensbewältigung und Sinnfindung nutzen lernen
-
-### Witz, Spott, Ironie
-- `LAT.OS.6.WIT.01` (Kl 6) [dims —]: Humor als gesellschaftliches und literarisches Phänomen erleben, das zeitgebundenen Konventionen unterliegt und in Formen wie Komödie, Epigramm, Satire und Anekdote lebendig wird
-- `LAT.OS.6.WIT.02` (Kl 6) [dims —]: in kreativ-kritischer Auseinandersetzung die Grenze zwischen Lachen und Lächerlichkeit ausloten
-
-### Übersetzungskompetenzen
-- `LAT.OS.x.UBE.01` (Kl 5) [dims —]: den Grundwortschatz themenspezifisch erweitern und vertiefen
-- `LAT.OS.x.UBE.02` (Kl 5) [dims —]: zunehmende Sicherheit bei der effizienten Benutzung des Wörterbuchs gewinnen
-- `LAT.OS.x.UBE.03` (Kl 5) [dims —]: Kenntnisse der Morphologie und Syntax festigen
-- `LAT.OS.x.UBE.04` (Kl 5) [dims —]: den Ausgangstext semantisch richtig in die Zielsprache übertragen
-- `LAT.OS.x.UBE.05` (Kl 5) [dims —]: bei der Formulierung der Übersetzung die Normen der Zielsprache, vor allem in den Bereichen Wortstellung, Textkohärenz und Idiomatik einhalten
-
-### „Religion“
-- `LAT.OS.8.REL.01` (Kl 8) [dims —]: Grundzüge der Entwicklung der antik-heidnischen Religionen und des Christentums nachvollziehen und deren bis in die Gegenwart reichende Kultur und Politik prägende Wirkung erkennen
-- `LAT.OS.8.REL.02` (Kl 8) [dims —]: im Sinn der Erziehung zu Toleranz sowohl die Auseinandersetzungen zwischen den Religionen (antike Religionen – Christentum – Judentum – Islam) als auch ihr Zusammenwirken verstehen
+### Sprach- und textbezogene Kompetenzen
+- `LAT.US.3.SPR.01` (Kl 3) [dims SPR]: einen sehr frequenten lateinischen Kernwortschatz anwenden.
+- `LAT.US.3.SPR.02` (Kl 3) [dims SPR]: lateinische Satzteile, einfache Sätze und Texte anhand formaler Kriterien gliedern, ihren Sinn erfassen und verstehen.
+- `LAT.US.3.SPR.03` (Kl 3) [dims SPR]: Fälle von Nomen, Adjektiven und Pronomen erkennen, beschreiben und mit Hilfe bestimmter Strategien ihrer Funktion entsprechend in der Zielsprache wiedergeben.
+- `LAT.US.3.SPR.04` (Kl 3) [dims SPR]: aktive Verbalformen des Präsens, Perfekts und Imperfekts im Indikativ erkennen, beschreiben und mit Hilfe bestimmter Strategien ihrer Funktion entsprechend in der Zielsprache wiedergeben.
+- `LAT.US.3.SPR.05` (Kl 3) [dims SPR]: sehr frequente Sonderfunktionen von Fällen sowie die Nominalformen des Verbs in einfachen Erscheinungsformen von Infinitiv- und Partizipialkonstruktionen erkennen, beschreiben und mit Hilfe bestimmter Strategien ihrer Funktion entsprechend in der Zielsprache wiedergeben.
+- `LAT.US.3.SPR.06` (Kl 3) [dims SPR]: lateinische Texte in möglichst großer formaler Übereinstimmung zwischen Ausgangs- und Zielsprache wiedergeben.
+- `LAT.US.3.SPR.07` (Kl 3) [dims SPR]: sprachliche Fertigkeiten mit Hilfe geeigneter Medien und Informationstechnologien eigenständig trainieren.
+- `LAT.US.4.SPR.01` (Kl 4) [dims SPR]: einen für genuine Inhalte und Themen des Lateinunterrichts relevanten Wortschatz dem jeweiligen Kontext entsprechend anwenden.
+- `LAT.US.4.SPR.02` (Kl 4) [dims SPR]: komplexere lateinische Sätze und Texte anhand formaler Kriterien gliedern, deren Sinn erfassen und verstehen.
+- `LAT.US.4.SPR.03` (Kl 4) [dims SPR]: aktive und passive Verbalformen im Indikativ sowie im Konjunktiv in ut- und cum-Sätzen erkennen, beschreiben und mit Hilfe bestimmter Strategien ihrer Funktion entsprechend in der Zielsprache wiedergeben.
+- `LAT.US.4.SPR.04` (Kl 4) [dims SPR]: Steigerungsformen der Adjektive und der von Adjektiven gebildeten Adverbien erkennen und die Komparation mit Hilfe bestimmter Strategien ihrer Funktion entsprechend in der Zielsprache wiedergeben.
+- `LAT.US.4.SPR.05` (Kl 4) [dims SPR]: Nominalformen des Verbs in komplexeren Erscheinungsformen von Infinitiv- und Partizipialkonstruktionen erkennen, beschreiben und mit Hilfe bestimmter Strategien ihrer Funktion entsprechend in der Zielsprache wiedergeben.
+- `LAT.US.4.SPR.06` (Kl 4) [dims SPR]: lateinische Texte so wiedergeben, dass ein in Sinn und Funktion äquivalenter Text produziert wird, der die Textnormen der Zielsprache berücksichtigt.
+- `LAT.US.4.SPR.07` (Kl 4) [dims SPR]: sprachliche Fertigkeiten mit Hilfe geeigneter Medien und Informationstechnologien eigenständig trainieren.
 
 ## Erlaubte Dimensionen (`dimensions`, primäre zuerst — Teilmenge dieser Codes)
-- `UEB` — Übersetzungskompetenz
-- `INT` — Interpretationskompetenz
+- `SPR` — Sprach- und textbezogene Kompetenzen
+- `INH` — Inhalts- und themenbezogene Kompetenzen (Kultur-/Sachkompetenz)
 
 ## Erlaubte Aufgaben-`kind`-Werte
 create_produce, data_interpretation, decision_scenario, matching, multiple_choice, open_response, ordering, puzzle, table_fill, text_analysis, translation, true_false_justify
+
+## Anwendungsbereiche (Themen-Ideen für die Kernfragen)
+- Kl 3: Antike Sagen und Mythen und bedeutende historische Persönlichkeiten sowie prägende Aspekte der griechisch-römischen Welt wie Alltagsleben , Kunst , Politik, Wissenschaft, Religion, Christentum, Geografie · Texte mit Bezug zu genuinen Inhalten und Themen des Lateinunterrichts in der Unterrichtssprache (ua. Literatur, Zeitungsartikel, Webseiten ) · Aufgabenformate zur Erschließung und Bearbeitung lateinischer Texte und ihrer Inhalte (Gliedern und Strukturieren, Zusammenfassen, Arbeit mit Vergleichsmedien, Aufgaben zum Global- und Detailverständnis, Kreativaufgaben ) · Sachfelder, Wortfamilien, Konnektoren und ihre Funktion, Zahlwörter, Wortbildungselemente, Fremd- und Lehnwörter · (Kontrastive) Sprachbetrachtung hinsichtlich morphosyntaktischer (Funktion von Satzgliedern sowie des Satzbaus von indikativischen Haupt- und Gliedsätzen) und lexikalisch-semantischer Phänomene
+- Kl 4: Antike Sagen und Mythen und bedeutende historische Persönlichkeiten sowie prägende Aspekte der griechisch-römischen Welt wie Alltagsleben , Kunst , Politik, Wissenschaft, Religion, Christentum, Geografie · Texte mit Bezug zu genuinen Inhalten und Themen des Lateinunterrichts in der Unterrichtssprache (ua. Literatur, Zeitungsartikel, Webseiten ) · Originale lateinische Sprachdokumente in Vereinfachung, Übersetzung oder zweisprachig (ua. Inschriften, geflügelte Worte , historische Texte) · Aufgabenformate zur Erschließung und Bearbeitung lateinischer Texte und ihrer Inhalte (Strukturieren, Paraphrasieren, Arbeit mit Vergleichsmedien, Aufgaben zum Global- und Detailverständnis, Kreativaufgaben ) · Sachfelder, Wortfamilien, Konnektoren und ihre Funktion, Wortbildungselemente, Fremd- und Lehnwörter, Arbeit mit einem lexikalischen Hilfsmittel · (Kontrastive) Sprachbetrachtung hinsichtlich komplexerer morphosyntaktischer und lexikalisch-semantischer Phänomene
 ## Verankerung
 Jede Kernfrage gehört zu **einem** Kompetenzbereich; setze im JSON `"kompetenzbereich": "<exakter KB-Name>"` und die passende `klasse` (eine Klasse, in der dieser KB Kompetenzen hat). Alle Aufgaben dieser Kernfrage dienen Kompetenzen aus diesem (KB, Klasse).
 
@@ -212,12 +136,12 @@ true_false_justify `{"kind":"true_false_justify","statements":[...]}` · orderin
 matching `{"kind":"matching","left":[...],"right":[...]}` · decision_scenario `{"kind":"decision_scenario","stem":"..."}`
 
 ## Ausgabe
-Schreibe **2 Dateien**, eine pro Kernfrage, nach `runs/ingest/gen_os_2/LAT_1.json` … `runs/ingest/gen_os_2/LAT_2.json`.
+Schreibe **2 Dateien**, eine pro Kernfrage, nach `runs/ingest/gen_us_2/LAT_1.json` … `runs/ingest/gen_us_2/LAT_2.json`.
 Jede Datei ist **ausschließlich** dieses JSON (kein Fließtext, keine ``` Zäune):
 
 ```json
 {
-  "subject": "Latein", "klasse": <5-8, eine Klasse mit Kompetenzen im gewählten Bereich>,
+  "subject": "Latein", "klasse": <1-4, eine Klasse mit Kompetenzen im gewählten Bereich>,
   "kompetenzbereich": "<KB-Name>",
   "title": "<prägnanter Titel>", "kernfrage": "<eine Schüler-Kernfrage in Du-Form>",
   "body": {
@@ -226,7 +150,7 @@ Jede Datei ist **ausschließlich** dieses JSON (kein Fließtext, keine ``` Zäun
     "assets": [ /* nur Struktur-Figuren: {"id":"abb2","role":"figure","generator":"matplotlib:function_graph","spec":{"m":2,"b":1}} */ ],
     "sections": [ { "id":"s1","title":"...","throughline":"...","talking_points":["..."],"extensions":["..."],
       "blocks":[ {"role":"task","id":"t1","kind":"<kind>","prompt":"...","payload":null,
-        "response":{"mode":"lines","n":3},"cognitive_level":"understand","dimensions":["UEB"],
+        "response":{"mode":"lines","n":3},"cognitive_level":"understand","dimensions":["SPR"],
         "serves":[{"competence_id":"<ID>","relation":"exercises"}],"est_minutes":7,"asset_refs":[],
         "answer_key":"...","acceptable_reasoning":null,"watch_outs":["..."],"rubric":[]} ] } ]
   }

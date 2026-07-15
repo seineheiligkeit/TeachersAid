@@ -1,105 +1,53 @@
 # Breiten-Generierung: Chemie — 2 Kernfragen
 
 Du erzeugst **2 verschiedene** Arbeitsblatt-Inhalte (je eine eigene **Kernfrage**) für die
-**AHS-Oberstufe** auf österreichischem Lehrplan-Niveau. Sprache: **Deutsch**, AHS-Niveau (anspruchsvoll, Sek II).
+**AHS-Unterstufe** auf österreichischem Lehrplan-Niveau. Sprache: **Deutsch**, altersgerecht für die Unterstufe (Sek I, ~10-14 J.) — klar und konkret, aber nie trivial (der Blackboard-Test gilt trotzdem).
 Wähle **2 klar unterschiedliche Themen/Bereiche** (Breite!), nicht Varianten desselben Themas.
+
+## Korpus-Kontext — was es schon gibt
+Für **Chemie** (Unterstufe) gibt es im Korpus schon **11** Arbeitsblätter. Wähle 2 **neue** Kernfragen, die sich davon klar unterscheiden (keine Dubletten, keine bloßen Varianten):
+- [Kl 4] Atome, Elektronen und das Periodensystem — Bausteine der Materie verstehen — Wie hilft dir das Periodensystem dabei, Eigenschaften von Elementen vorherzusagen, ohne sie je gesehen zu haben?
+- [Kl 4] Sauer, basisch oder neutral? Der pH-Wert im Alltag — Wie kannst du mithilfe des pH-Werts erklären, warum manche Alltagsstoffe ätzend wirken und andere harmlos sind?
+- [Kl 4] Säuren, Basen und Neutralisation im Alltag — Wie erkennst du Säuren und Basen im Alltag, und was passiert, wenn sie aufeinandertreffen?
+- [Kl 4] Verbrennung, Rost und Licht — Chemische Reaktionen erkennen und beschreiben — Woran erkennst du, dass bei einem Vorgang eine chemische Reaktion und keine physikalische Änderung stattfindet?
+- [Kl 4] Vom Wertstoffhof zum Trinkwasser — Stoffe trennen — Wie trennst du Stoffgemische wieder in ihre Bestandteile — und warum reicht dafür nicht immer dieselbe Methode?
+- [Kl 4] Übungsblatt: Atome auf der Teilchenebene zählen (6 Varianten) — Übung: Atome auf der Teilchenebene zählen
+- [Kl 4] Übungsblatt: Reaktionstyp bestimmen (6 Varianten) — Übung: Reaktionstyp bestimmen
+- [Kl 4] Übungsblatt: Reinstoff oder Gemisch? (6 Varianten) — Übung: Reinstoff oder Gemisch?
+- [Kl 4] Übungsblatt: Sauer, basisch oder neutral? (6 Varianten) — Übung: Sauer, basisch oder neutral?
+- [Kl 4] Übungsblatt: Trennverfahren wählen (6 Varianten) — Übung: Trennverfahren wählen
+- [Kl 4] Übungsreihe: Atome auf der Teilchenebene zählen — Übung: Atome auf der Teilchenebene zählen
+
+_Abdeckung (Kompetenzbereich-Zellen): 3 grün · 0 teilweise · 0 leer von 3._
 
 ## Kompetenzen (verbatim — `serves.competence_id` MUSS eine dieser IDs sein), gruppiert nach Kompetenzbereich
 
-### Chemische Grundlagen des Lebens
-- `CHE.OS.8.CHE.01` (Kl 8) [dims —]: Erläutern, wie alle Lebensvorgänge auf stofflichen und energetischen Veränderungen beruhen und die Menschen von ihrer stofflichen Umwelt abhängig sind.
-- `CHE.OS.8.CHE.02` (Kl 8) [dims —]: Die Wichtigkeit einer gesundheitsbewussten Lebensführung an Beispielen aus der Lebensmittelchemie diskutieren.
-- `CHE.OS.8.CHE.03` (Kl 8) [dims —]: Durch kritisch reflektierenden Einsatz von differenzierten Stoffkenntnissen zu Ernährungsempfehlungen Stellung beziehen.
-- `CHE.OS.8.CHE.04` (Kl 8) [dims —]: Gesundheitsfördernden und bewussten Umgang mit Stoffen der Alltagswelt am Beispiel von Genussmitteln und Drogen diskutieren.
-- `CHE.OS.8.CHE.05` (Kl 8) [dims —]: Zusätzlich im Realgymnasium mit vertiefendem Unterricht in Biologie, Chemie und Physik:
-- `CHE.OS.8.CHE.06` (Kl 8) [dims —]: Struktur und Funktion biologischer Membranen beschreiben
-- `CHE.OS.8.CHE.07` (Kl 8) [dims —]: Aspekte der Pharmakologie und Toxikologie an ausgewählten Beispielen darstellen
+### Erkenntnisse gewinnen und interpretieren (E)
+- `CHE.US.x.ERK.01` (Kl 4) [dims —]: zu Vorgängen und Phänomenen in Natur, Umwelt und Technik Beobachtungen machen oder Messungen durchführen und diese beschreiben.
+- `CHE.US.x.ERK.02` (Kl 4) [dims —]: zu Vorgängen und Phänomenen in Natur, Umwelt und Technik Fragen stellen, Vermutungen aufstellen sowie passende Untersuchungen planen, durchführen und protokollieren.
+- `CHE.US.x.ERK.03` (Kl 4) [dims —]: Beobachtungen, Daten und Ergebnisse von Untersuchungen analysieren (ordnen, vergleichen, Abhängigkeiten feststellen) und interpretieren.
 
-### Erkenntnisse gewinnen: Fragen, Untersuchen, Interpretieren
-- `CHE.OS.x.ERK.01` (Kl 7) [dims —]: Zu chemischen Fragen, Vermutungen und Problemstellungen eine passende Untersuchung (Beobachtung, Messung, Experiment, …) durchführen und protokollieren
-- `CHE.OS.x.ERK.02` (Kl 7) [dims —]: Daten und Ergebnisse von Untersuchungen analysieren
-- `CHE.OS.x.ERK.03` (Kl 7) [dims —]: Zu chemischen Fragen, Vermutungen und Problemstellungen eine passende Untersuchung (Beobachtung, Messung, Experiment, …) planen
-- `CHE.OS.x.ERK.04` (Kl 7) [dims —]: Naturwissenschaftliche Modelle verwenden, um Daten und Ergebnisse von Untersuchungen sowie Vorgänge und Zusammenhänge zu erklären
-- `CHE.OS.x.ERK.05` (Kl 7) [dims —]: Zu Vorgängen und Phänomenen in Natur und Technik Fragen stellen, Vermutungen aufstellen und Problemstellungen definieren, die mit Hilfe naturwissenschaftlicher Kenntnisse und Untersuchungen bearbeitet bzw. überprüft werden können
-- `CHE.OS.x.ERK.06` (Kl 7) [dims —]: Auf der Basis von Daten und Untersuchungsergebnissen sowie deren Interpretation Hypothesen über Vorgänge und Zusammenhänge aufstellen
-- `CHE.OS.x.ERK.07` (Kl 7) [dims —]: Untersuchungsergebnisse im Hinblick auf eine konkrete Frage, Vermutung oder Problemstellung kritisch betrachten
+### Standpunkte begründen, Entscheidungen treffen und reflektiert handeln (S)
+- `CHE.US.x.STA.01` (Kl 4) [dims —]: Informationen aus verschiedenen Quellen aus naturwissenschaftlicher Sicht bewerten und Schlüsse daraus ziehen.
+- `CHE.US.x.STA.02` (Kl 4) [dims —]: fachlich korrekt und folgerichtig argumentieren und naturwissenschaftliche von nicht-naturwissenschaftlichen Argumentationen und Fragestellungen unterscheiden.
+- `CHE.US.x.STA.03` (Kl 4) [dims —]: Bedeutung, Chancen und Risiken der Anwendungen von naturwissenschaftlichen Erkenntnissen für sich persönlich und für die Gesellschaft erkennen, um verantwortungsbewusst zu handeln.
+- `CHE.US.x.STA.04` (Kl 4) [dims —]: die Bedeutung von Naturwissenschaft und Technik für verschiedene Berufsfelder erfassen, um diese Kenntnis bei der Wahl ihres weiteren Bildungsweges zu verwenden.
 
-### Gleichgewicht
-- `CHE.OS.7.GLE.01` (Kl 7) [dims —]: Die Gleichgewichtsdynamik chemischer Reaktionen darstellen, ihre Beeinflussung erläutern und damit die Steuerung von Reaktionen erklären (Gleichgewichtskonzept).
-- `CHE.OS.7.GLE.02` (Kl 7) [dims —]: Das Massenwirkungsgesetz auch auf Lösungsgleichgewichte und Komplexbildungsgleichgewichte anwenden.
-
-### Kompetenzmodell
-- `CHE.OS.x.KOM.01` (Kl 7) [dims —]: Das Kompetenzmodell für Chemie ist als dreidimensionales Modell konstruiert, das Inhaltsdimension, Handlungsdimension und Anforderungsdimension vorsieht.
-- `CHE.OS.x.KOM.02` (Kl 7) [dims —]: Die Inhaltsdimension findet sich in den einzelnen Semestern.
-- `CHE.OS.x.KOM.03` (Kl 7) [dims —]: Die Handlungsdimension umfasst die Bereiche Wissen organisieren, Erkenntnisse gewinnen und Konsequenzen ziehen. Deskriptoren in den einzelnen Bereichen beschreiben, wie Schülerinnen und Schüler mit den Inhalten umgehen können sollen.
-
-### Konsequenzen ziehen: Bewerten, Entscheiden, Handeln
-- `CHE.OS.x.KON.01` (Kl 7) [dims —]: Fachlich begründete Bewertungskriterien wiedergeben
-- `CHE.OS.x.KON.02` (Kl 7) [dims —]: Chemische Fragestellungen und Argumentationen erkennen
-- `CHE.OS.x.KON.03` (Kl 7) [dims —]: Konkurrierende Interpretationsmöglichkeiten gegeneinander abwägen und auf dieser Basis Entscheidungen treffen
-- `CHE.OS.x.KON.04` (Kl 7) [dims —]: Daten, Fakten und Ergebnisse aus verschiedenen Quellen sowie Schlussfolgerungen kritisch hinterfragen und Gründe für deren Annahme oder Verwerfung angeben
-- `CHE.OS.x.KON.05` (Kl 7) [dims —]: Einen Problemlöseprozess oder ein Modell kritisch reflektieren und gegebenenfalls Alternativen entwickeln
-- `CHE.OS.x.KON.06` (Kl 7) [dims —]: Bedeutung, Chancen und Risiken der Anwendungen von naturwissenschaftlichen Erkenntnissen für sich persönlich und für die Gesellschaft einschätzen
-- `CHE.OS.x.KON.07` (Kl 7) [dims —]: Entscheidungen in gesellschaftlich relevanten Fragen aus naturwissenschaftlicher Sicht begründen und bewerten
-- `CHE.OS.x.KON.08` (Kl 7) [dims —]: Die Anforderungsdimension umfasst Niveau 1, auf dem Schülerinnen und Schüler angeleitet durch eine Aufgabe geführt werden, und Niveau 2, auf dem sie weitgehend selbstständig arbeiten.
-
-### Modellbildung
-- `CHE.OS.7.MOD.01` (Kl 7) [dims —]: Die erfahrbaren Phänomene der stofflichen Welt und deren Deutung auf der Teilchenebene konsequent unterscheiden (Stoff-Teilchen-Konzept).
-- `CHE.OS.7.MOD.02` (Kl 7) [dims —]: An Hand der Modelle vom Aufbau der Atome Einsicht in das Wesen und die Entwicklung chemiespezifischer Modellvorstellungen gewinnen und diese darstellen.
-- `CHE.OS.7.MOD.03` (Kl 7) [dims —]: Mit Hilfe des wellenmechanischen Atommodells die Aufbauprinzipien des Periodensystems der Elemente erläutern.
-- `CHE.OS.7.MOD.04` (Kl 7) [dims —]: Die Modelle der chemischen Bindung (inkl. delokalisierter Elektronensysteme) und der Wechselwirkungen zwischen Teilchen beschreiben und vergleichen.
-
-### Struktur und Reaktion
-- `CHE.OS.8.STR2.01` (Kl 8) [dims —]: Zusammenhänge von Strukturen und Eigenschaften am Beispiel von Kohlenstoffverbindungen inklusive funktioneller Gruppen und Arten der Isomerie beschreiben.
-- `CHE.OS.8.STR2.02` (Kl 8) [dims —]: Donator-Akzeptor-Wechselwirkungen als grundlegendes Prinzip zur Erklärung von Reaktionen organischer Moleküle anwenden.
-- `CHE.OS.8.STR2.03` (Kl 8) [dims —]: Zusätzlich im Realgymnasium mit vertiefendem Unterricht in Biologie, Chemie und Physik: Mechanismen von Reaktionen in der organischen Chemie beschreiben.
-
-### Strukturen
-- `CHE.OS.7.STR.01` (Kl 7) [dims —]: Eigenschaften von Stoffen durch Art, Anordnung und Wechselwirkung der Teilchen erklären (Struktur-Eigenschafts-Konzept).
-- `CHE.OS.7.STR.02` (Kl 7) [dims —]: Durch Kombination von Hypothesenbildung und experimenteller Überprüfung an Hand von Stoffen mit kovalenten Bindungen Zusammenhänge zwischen Strukturen und Eigenschaften der Stoffe herstellen.
-- `CHE.OS.7.STR.03` (Kl 7) [dims —]: Kenntnis der Modellvorstellungen über Molekülgeometrien und Hybridisierung anwenden.
-
-### Substanz und Energie
-- `CHE.OS.7.SUB.01` (Kl 7) [dims —]: Stoff- und Energieumsätze bei chemischen Reaktionen quantitativ beschreiben (Energiekonzept, Größenkonzept).
-- `CHE.OS.7.SUB.02` (Kl 7) [dims —]: Die Beziehungen zwischen stofflichen und energetischen Veränderungen an Hand der Energiebilanz chemischer Reaktionen (inkl. katalytischer Vorgänge) erläutern.
-- `CHE.OS.7.SUB.03` (Kl 7) [dims —]: An einfachen Beispielen aus der Stöchiometrie die Möglichkeiten quantitativer Betrachtungsweisen von Stoff- und Energieumsätzen aufzeigen.
-- `CHE.OS.7.SUB.04` (Kl 7) [dims —]: Die Verwendung von fossilen Rohstoffen als Energieträger beurteilen.
-- `CHE.OS.8.SUB.01` (Kl 8) [dims —]: Herstellung und Verwendung wichtiger organisch-chemischer Grundprodukte darstellen.
-- `CHE.OS.8.SUB.02` (Kl 8) [dims —]: Ausgewählte Stoffwechselprozesse skizzieren.
-- `CHE.OS.8.SUB.03` (Kl 8) [dims —]: Gewinnung, Verwendung und Wiederverwertung von makromolekularen Stoffen darstellen.
-- `CHE.OS.8.SUB.04` (Kl 8) [dims —]: Zusätzlich im Realgymnasium mit vertiefendem Unterricht in Biologie, Chemie und Physik: Nachwachsende Rohstoffe angeben und mit fossilen Rohstoffen vergleichen.
-
-### Umgang mit Materie
-- `CHE.OS.7.UMG.01` (Kl 7) [dims —]: Die Umwandlung von Naturprodukten und die Synthese von wichtigen anorganisch-chemischen Grundprodukten sowie ihre Verwendung beschreiben.
-- `CHE.OS.7.UMG.02` (Kl 7) [dims —]: Potentielle Risiken am Beispiel ausgewählter Stoffe benennen.
-- `CHE.OS.7.UMG.03` (Kl 7) [dims —]: Funktion und Vernetzung natürlicher und anthropogener Stoffkreisläufe erklären.
-- `CHE.OS.7.UMG.04` (Kl 7) [dims —]: Den Umgang mit materiellen und energetischen Ressourcen bewerten und dabei regionale und europäische Besonderheiten berücksichtigen.
-- `CHE.OS.7.UMG.05` (Kl 7) [dims —]: Entstehung und Wirkung von Schadstoffen beschreiben.
-- `CHE.OS.7.UMG.06` (Kl 7) [dims —]: Chemische Vorgänge im Haushalt in Abhängigkeit von den beteiligten Substanzen erklären.
-- `CHE.OS.7.UMG.07` (Kl 7) [dims —]: Gewinnung und Verwendung von Metallen und keramischen Stoffen sowie Wiederverwertung von Metallen darstellen.
-- `CHE.OS.7.UMG.08` (Kl 7) [dims —]: Ausgewählte chemische Analysenmethoden durchführen und die Ergebnisse interpretieren.
-
-### Wissen organisieren: Recherchieren, Darstellen, Kommunizieren
-- `CHE.OS.x.WIS.01` (Kl 7) [dims —]: Unterschiedliche, relevante Quellen ausfindig machen und daraus fachspezifische Informationen entnehmen
-- `CHE.OS.x.WIS.02` (Kl 7) [dims —]: Daten sowie Vorgänge und Phänomene in Natur und Technik in verschiedenen Formen (Text, Grafik, Tabelle, Bild, Diagramm, Modell, …) unter Verwendung der chemischen Fachsprache adressatengerecht darstellen und erläutern
-- `CHE.OS.x.WIS.03` (Kl 7) [dims —]: Fachlich und fachsprachlich korrekt und folgerichtig argumentieren
-- `CHE.OS.x.WIS.04` (Kl 7) [dims —]: Wissen, Fähigkeiten und Fertigkeiten aus anderen Disziplinen heranziehen, um chemisches Wissen zu organisieren
-- `CHE.OS.x.WIS.05` (Kl 7) [dims —]: Die Bedeutung naturwissenschaftlicher Erkenntnisse und Modelle für die Entwicklung von Zivilisation und Kultur darstellen, erläutern und diskutieren
-- `CHE.OS.x.WIS.06` (Kl 7) [dims —]: Die Bedeutung chemischer Vorgänge und Phänomene darstellen, erläutern und diskutieren
-
-### Übertragung
-- `CHE.OS.7.UBE.01` (Kl 7) [dims —]: Säure-Base-, Redox- und Komplexbildungsreaktionen als Übertragungs- bzw. Verschiebungsprozesse beschreiben (Donator-Akzeptor-Konzept)
-- `CHE.OS.7.UBE.02` (Kl 7) [dims —]: Donator-Akzeptor-Wechselwirkungen als grundlegendes Prinzip chemischer Reaktionen am Beispiel von Protolysegleichgewichten und Redoxreaktionen erläutern
-- `CHE.OS.7.UBE.03` (Kl 7) [dims —]: Kenntnisse über Redoxreaktionen auf Aufgabenstellungen zu elektrochemischen Vorgängen anwenden
-- `CHE.OS.7.UBE.04` (Kl 7) [dims —]: Zusätzlich im Realgymnasium mit vertiefendem Unterricht in Biologie, Chemie und Physik: Gleichgewichtsreaktionen und elektrochemische Prozesse quantitativ beschreiben
+### —
+- `CHE.US.x.ALL.01` (Kl 4) [dims —]: Vorgänge und Phänomene in Natur, Umwelt und Technik sowie deren Auswirkungen beobachten, erfassen, beschreiben und benennen.
+- `CHE.US.x.ALL.02` (Kl 4) [dims —]: unterschiedlichen Medien und Quellen fachspezifische Informationen entnehmen.
+- `CHE.US.x.ALL.03` (Kl 4) [dims —]: Vorgänge und Phänomene in Natur, Umwelt und Technik in verschiedenen Formen (Grafik, Tabelle, Bild, Diagramm, …) darstellen, erklären und adressatengerecht kommunizieren.
 
 ## Erlaubte Dimensionen (`dimensions`, primäre zuerst — Teilmenge dieser Codes)
-- `WO` — Wissen organisieren: Recherchieren, Darstellen, Kommunizieren
-- `EG` — Erkenntnisse gewinnen: Fragen, Untersuchen, Interpretieren
-- `KZ` — Konsequenzen ziehen: Bewerten, Entscheiden, Handeln
+- `W` — Wissen aneignen und kommunizieren
+- `E` — Erkenntnisse gewinnen und interpretieren
+- `S` — Standpunkte begründen, Entscheidungen treffen und reflektiert handeln
 
 ## Erlaubte Aufgaben-`kind`-Werte
-calculation, create_produce, data_interpretation, decision_scenario, experiment_protocol, matching, multiple_choice, open_response, ordering, puzzle, source_critique, table_fill, true_false_justify
+create_produce, data_interpretation, decision_scenario, experiment_protocol, matching, multiple_choice, open_response, ordering, puzzle, source_critique, table_fill, true_false_justify
+
+## Anwendungsbereiche (Themen-Ideen für die Kernfragen)
+- Kl 4: Aggregatzustände und Eigenschaften von Stoffen · Aufbau von Atomen und Periodensystem · Bindungsmodelle, Strukturen und Wechselwirkungen · Symbolische und grafische Darstellungen auf Teilchenebene · Kennzeichen chemischer Reaktionen: stoffliche und energetische Veränderungen · Darstellung chemischer Reaktionen: Wort- und Formelgleichungen, modellhafte Darstellungen · Typen chemischer Reaktionen: Säure-Base-Reaktionen, Reduktions-Oxidations-Reaktionen, einfache organische Reaktionen · Planen, Durchführen, Beobachten, Erfassen, Auswerten und Dokumentieren von Untersuchungen: ua. Trennverfahren, einfache Nachweise, Synthesen und Analysen
 ## Verankerung
 Jede Kernfrage gehört zu **einem** Kompetenzbereich; setze im JSON `"kompetenzbereich": "<exakter KB-Name>"` und die passende `klasse` (eine Klasse, in der dieser KB Kompetenzen hat). Alle Aufgaben dieser Kernfrage dienen Kompetenzen aus diesem (KB, Klasse).
 
@@ -183,12 +131,12 @@ true_false_justify `{"kind":"true_false_justify","statements":[...]}` · orderin
 matching `{"kind":"matching","left":[...],"right":[...]}` · decision_scenario `{"kind":"decision_scenario","stem":"..."}`
 
 ## Ausgabe
-Schreibe **2 Dateien**, eine pro Kernfrage, nach `runs/ingest/gen_os_2/CHE_1.json` … `runs/ingest/gen_os_2/CHE_2.json`.
+Schreibe **2 Dateien**, eine pro Kernfrage, nach `runs/ingest/gen_us_2/CHE_1.json` … `runs/ingest/gen_us_2/CHE_2.json`.
 Jede Datei ist **ausschließlich** dieses JSON (kein Fließtext, keine ``` Zäune):
 
 ```json
 {
-  "subject": "Chemie", "klasse": <5-8, eine Klasse mit Kompetenzen im gewählten Bereich>,
+  "subject": "Chemie", "klasse": <1-4, eine Klasse mit Kompetenzen im gewählten Bereich>,
   "kompetenzbereich": "<KB-Name>",
   "title": "<prägnanter Titel>", "kernfrage": "<eine Schüler-Kernfrage in Du-Form>",
   "body": {
@@ -197,7 +145,7 @@ Jede Datei ist **ausschließlich** dieses JSON (kein Fließtext, keine ``` Zäun
     "assets": [ /* nur Struktur-Figuren: {"id":"abb2","role":"figure","generator":"matplotlib:function_graph","spec":{"m":2,"b":1}} */ ],
     "sections": [ { "id":"s1","title":"...","throughline":"...","talking_points":["..."],"extensions":["..."],
       "blocks":[ {"role":"task","id":"t1","kind":"<kind>","prompt":"...","payload":null,
-        "response":{"mode":"lines","n":3},"cognitive_level":"understand","dimensions":["WO"],
+        "response":{"mode":"lines","n":3},"cognitive_level":"understand","dimensions":["W"],
         "serves":[{"competence_id":"<ID>","relation":"exercises"}],"est_minutes":7,"asset_refs":[],
         "answer_key":"...","acceptable_reasoning":null,"watch_outs":["..."],"rubric":[]} ] } ]
   }

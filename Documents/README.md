@@ -39,6 +39,7 @@ rules. *(Maintained by hand — add a line here when you add a doc; see CLAUDE.m
 
 | doc | topic |
 |---|---|
+| [`content-campaign-workflow.md`](content-campaign-workflow.md) | **Operator runbook for a breadth generation pass** — briefs (Korpus-Kontext) → fan-out → `campaign_status` → dry-run gate → persist; invariants + failure-recovery lessons. |
 | [`rendering-handoff-brief.md`](rendering-handoff-brief.md) | The renderer-swap contract (entry points, the three projection rules, what's free to change). |
 | [`matura-operators.md`](matura-operators.md) | The SRDP Operatoren grounding — decision rule + full write-up. |
 | [`matura-calibration.md`](matura-calibration.md) | cognitive_level → AFB → difficulty, calibrated against the exam archive (model holds). |
