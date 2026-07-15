@@ -1,0 +1,332 @@
+{
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Geometrische Objekte und ihre Eigenschaften",
+  "title": "Punkte im Raum — das räumliche Koordinatensystem",
+  "kernfrage": "Wie legst du einen Punkt im Raum mit drei Zahlen eindeutig fest — und wie findest du ihn damit wieder?",
+  "body": {
+    "intro": [],
+    "data_figures": [],
+    "assets": [
+      {
+        "id": "abb_kasten",
+        "role": "figure",
+        "generator": "matplotlib:axonometric_solid",
+        "spec": {
+          "kind": "quader",
+          "a": 4,
+          "b": 3,
+          "c": 2,
+          "labels": {
+            "a": "a = 4",
+            "b": "b = 3",
+            "c": "c = 2"
+          },
+          "show_measures": true,
+          "title": "Quader im Schrägriss — eine Ecke im Ursprung"
+        }
+      },
+      {
+        "id": "abb_grund",
+        "role": "figure",
+        "generator": "matplotlib:coordinate_plane",
+        "spec": {
+          "points": [
+            {
+              "x": 2,
+              "y": 1,
+              "label": "P"
+            },
+            {
+              "x": 5,
+              "y": 3,
+              "label": "Q"
+            },
+            {
+              "x": 3,
+              "y": 4,
+              "label": "R"
+            }
+          ],
+          "xmin": 0,
+          "xmax": 6,
+          "ymin": 0,
+          "ymax": 6,
+          "title": "Grundriss — Draufsicht von oben"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Vom Blatt in den Raum: drei Zahlen für jeden Punkt",
+        "throughline": "Von der Ebene (zwei Zahlen) in den Raum (drei Zahlen): Koordinaten machen die Lage eines Punktes eindeutig und ohne Bild mitteilbar — die Grundlage jeder CAD-Beschreibung.",
+        "talking_points": [
+          "Die feste Reihenfolge x, y, z ist eine Vereinbarung — ohne sie wäre dieselbe Zahlengruppe mehrdeutig (Aufgabe 5).",
+          "Der Grundriss trägt nur x und y, niemals die Höhe z — das ist die Brücke zu den Rissen.",
+          "Ein Körper wird durch die Koordinaten seiner Eckpunkte vollständig und bildlos beschreibbar (Aufgaben 3 und 6)."
+        ],
+        "extensions": [
+          "Punkte mit negativen Koordinaten einführen und die Achsen über den Ursprung hinaus verlängern.",
+          "Die acht Eckkoordinaten des Quaders in GeoGebra 3D oder einem CAD-Programm nachbauen.",
+          "Den Mittelpunkt einer Raumdiagonale als Mittelwert der beiden Eckkoordinaten bestimmen (Ausblick)."
+        ],
+        "blocks": [
+          {
+            "role": "info",
+            "id": "i1",
+            "kind": "key_fact",
+            "content": "Auf dem ebenen Zeichenblatt genügen zwei Zahlen, um einen Punkt festzulegen: P(x|y). Im Raum brauchst du eine dritte Zahl, die Höhe: P(x|y|z). Die drei Werte stehen immer in derselben Reihenfolge — zuerst x (nach rechts), dann y (nach hinten), dann z (nach oben). Stell dir die drei Kanten, die von einer Ecke des Quaders ausgehen, als die Achsen x, y und z vor; die gemeinsame Ecke ist der Ursprung O(0|0|0).",
+            "callout_role": "note",
+            "asset_refs": [
+              "abb_kasten"
+            ],
+            "watch_outs": [
+              "Die Reihenfolge x, y, z ist fix — vertauschst du sie, zeigt dieselbe Zahlengruppe auf einen anderen Punkt."
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "matching",
+            "prompt": "Ordne jedem Begriff seine Bedeutung im räumlichen Koordinatensystem zu.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "x-Wert",
+                "y-Wert",
+                "z-Wert",
+                "O(0|0|0)"
+              ],
+              "right": [
+                "nach oben (Höhe)",
+                "der Ursprung — Ausgangspunkt aller Achsen",
+                "nach rechts",
+                "nach hinten (Tiefe)"
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "remember",
+            "dimensions": [
+              "H1"
+            ],
+            "serves": [
+              {
+                "competence_id": "GEZ.US.4.GEO.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 5,
+            "asset_refs": [],
+            "answer_key": "x-Wert — nach rechts; y-Wert — nach hinten (Tiefe); z-Wert — nach oben (Höhe); O(0|0|0) — der Ursprung, Ausgangspunkt aller Achsen.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "z ist immer die Höhe, nicht die Tiefe — häufig werden y (Tiefe) und z (Höhe) vertauscht."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "table_fill",
+            "prompt": "Im Grundriss (Abbildung) siehst du die Punkte P, Q und R von oben. Lies ihre x- und y-Werte am Gitter ab. Die Höhen sind gegeben: P ist 3 Kästchen hoch, Q 2 Kästchen, R 4 Kästchen. Trage x, y und z ein und schreibe jeden Punkt zusätzlich in der Form P(x|y|z).",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Punkt",
+                "x",
+                "y",
+                "z",
+                "Schreibweise (x|y|z)"
+              ],
+              "rows": 3
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "H3",
+              "H2"
+            ],
+            "serves": [
+              {
+                "competence_id": "GEZ.US.4.GEO.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "asset_refs": [
+              "abb_grund"
+            ],
+            "answer_key": "P(2|1|3), Q(5|3|2), R(3|4|4). Die x- und y-Werte werden am Gitter abgelesen, der z-Wert stammt aus der Angabe.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Erst x (waagrecht), dann y (senkrecht) ablesen — nicht vertauschen.",
+              "Der Grundriss zeigt die Höhe nicht; z steht nur in der Angabe."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "cad_model",
+            "prompt": "Der abgebildete Quader liegt mit einer Ecke im Ursprung O(0|0|0); seine Kanten verlaufen entlang der Achsen und sind a = 4 (in x-Richtung), b = 3 (in y-Richtung) und c = 2 (in z-Richtung) lang. Gib die Koordinaten aller acht Eckpunkte an.",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Ecke",
+                "x",
+                "y",
+                "z"
+              ],
+              "rows": 8
+            },
+            "cognitive_level": "apply",
+            "dimensions": [
+              "H2"
+            ],
+            "serves": [
+              {
+                "competence_id": "GEZ.US.4.GEO.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [
+              "abb_kasten"
+            ],
+            "answer_key": "Unten (z = 0): (0|0|0), (4|0|0), (4|3|0), (0|3|0). Oben (z = 2): (0|0|2), (4|0|2), (4|3|2), (0|3|2). Jede Koordinate ist entweder 0 oder die Kantenlänge in dieser Richtung.",
+            "acceptable_reasoning": "Die Reihenfolge der acht Ecken ist egal, solange alle acht verschieden und korrekt sind.",
+            "watch_outs": [
+              "Die vier oberen Ecken unterscheiden sich von den unteren nur im z-Wert (0 wird zu 2).",
+              "Kein Wert ist größer als die Kantenlänge — alle Ecken sind Kombinationen aus 0/4, 0/3 und 0/2."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "open_response",
+            "prompt": "Zwei Punkte haben im Grundriss genau dieselbe Stelle (gleiche x- und y-Werte), im Raum sind sie aber verschieden. Erkläre, wie das möglich ist, und gib zwei passende Punkte als Beispiel in Koordinatenschreibweise an.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 45
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "H1",
+              "H3"
+            ],
+            "serves": [
+              {
+                "competence_id": "GEZ.US.4.GEO.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 7,
+            "asset_refs": [],
+            "answer_key": "Die beiden Punkte unterscheiden sich in der Höhe z. Beispiel: A(2|1|3) und B(2|1|6) stehen senkrecht übereinander — gleicher Grundriss, verschiedene Höhe. Genau deshalb genügen im Raum zwei Zahlen nicht.",
+            "acceptable_reasoning": "Jedes Beispiel ist richtig, dessen zwei Punkte in x und y übereinstimmen und sich nur im z-Wert unterscheiden.",
+            "watch_outs": [
+              "Die beiden Beispielpunkte müssen in x und y gleich sein und dürfen sich nur in z unterscheiden."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "decision_scenario",
+            "prompt": "Tom liest die Koordinaten eines Punktes als (3|5|2), Mara liest (5|3|2). Beide schauen auf dieselbe Zeichnung. Kann das sein? Wer hat den Fehler gemacht und woran erkennst du ihn? Begründe.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "(3|5|2) oder (5|3|2) — welche Lesart stimmt, und warum kann nur eine richtig sein?"
+            },
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "H3",
+              "H1"
+            ],
+            "serves": [
+              {
+                "competence_id": "GEZ.US.4.GEO.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "Nur eine Lesart stimmt, weil die Reihenfolge x, y, z fest vereinbart ist. Wer die x- und die y-Achse vertauscht, erhält (5|3|2) statt (3|5|2). Den Fehler findet man, indem man jeden Wert an der richtigen Achse kontrolliert: den x-Wert an der waagrechten, den y-Wert an der senkrechten Achse. Ohne feste Achsen-Reihenfolge wäre die Angabe mehrdeutig.",
+            "acceptable_reasoning": "Entscheidend ist die Einsicht, dass gleiche Zahlen in anderer Reihenfolge auf einen anderen Punkt zeigen; welche der beiden konkret stimmt, hängt von der Achsenbeschriftung ab und ist mit Bezug darauf begründbar.",
+            "watch_outs": [
+              "Es geht nicht ums Rechnen, sondern um die Vereinbarung: gleiche Zahlen + andere Reihenfolge = anderer Punkt."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "create_produce",
+            "prompt": "Denk dir einen einfachen Körper aus, den man aus zwei oder drei gleich großen Würfeln zusammensetzt (zum Beispiel eine kleine Treppe). Beschreibe ihn nur mit Koordinaten so vollständig, dass eine Mitschülerin ihn ohne dein Bild nachbauen kann. Gib für jeden Würfel die Koordinaten seiner vorderen unteren linken Ecke und die Kantenlänge an.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 70
+            },
+            "cognitive_level": "create",
+            "dimensions": [
+              "H2",
+              "H1"
+            ],
+            "serves": [
+              {
+                "competence_id": "GEZ.US.4.GEO.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "Beispiel (Treppe aus drei Würfeln der Kante 2): Würfel A mit vorderer unterer linker Ecke (0|0|0); Würfel B (2|0|0); Würfel C sitzt auf B: (2|0|2). Mit diesen drei Ecken und der Kantenlänge 2 ist die Treppe eindeutig nachbaubar. Jeder andere sinnvolle Körper ist ebenso richtig, sofern jede Position durch Koordinaten festliegt.",
+            "acceptable_reasoning": "Bewertet wird nicht die Idee, sondern ob jede Teil-Lage eindeutig durch Koordinaten festgelegt und die Schreibweise korrekt ist.",
+            "watch_outs": [
+              "Eine Kantenlänge allein genügt nicht — ohne die Lage jeder Ecke ist der Körper nicht eindeutig.",
+              "Alle Würfel müssen im selben Koordinatensystem beschrieben werden."
+            ],
+            "rubric": [
+              {
+                "criterion": "Vollständigkeit",
+                "levels": [
+                  "nur ein Würfel oder Angaben fehlen",
+                  "Körper erkennbar, aber eine Lage oder Kantenlänge fehlt",
+                  "alle Würfel mit Eckpunkt und Kantenlänge angegeben"
+                ]
+              },
+              {
+                "criterion": "Eindeutigkeit",
+                "levels": [
+                  "Lage bleibt unklar",
+                  "teilweise mehrdeutig",
+                  "jede Lage ist durch Koordinaten eindeutig festgelegt"
+                ]
+              },
+              {
+                "criterion": "Schreibweise",
+                "levels": [
+                  "Koordinaten fehlerhaft oder uneinheitlich",
+                  "kleine Formfehler",
+                  "durchgehend korrekte Form (x|y|z)"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

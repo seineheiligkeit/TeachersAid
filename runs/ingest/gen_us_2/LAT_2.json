@@ -1,0 +1,301 @@
+{
+  "subject": "Latein",
+  "klasse": 3,
+  "kompetenzbereich": "Sprach- und textbezogene Kompetenzen",
+  "title": "Kleine Wörter, große Wirkung: Konnektoren im lateinischen Text",
+  "kernfrage": "Wie zeigen dir kleine Verbindungswörter, ob ein lateinischer Satz etwas hinzufügt, gegenüberstellt, begründet oder eine Folge ausdrückt?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Kleine Wörter, große Wirkung",
+        "throughline": "Die Schüler:innen lernen die häufigsten lateinischen Konnektoren (et, sed, nam, quod, itaque, tamen) mit ihrer Bedeutung UND ihrer Funktion (Verbindung, Gegensatz, Grund, Folge) kennen. Sie erkennen sie in einem kurzen zusammenhängenden Text, setzen sie logisch richtig ein und bauen schließlich selbst zusammenhängende Sätze. Der rote Faden: Konnektoren sind die Wegweiser, die zeigen, wie Aussagen logisch zusammenhängen.",
+        "talking_points": [
+          "Konnektoren steuern das Textverständnis: Wer „sed“, „nam“ oder „itaque“ übersieht, kann den Sinn eines Satzes verdrehen. Deshalb lohnt es sich, sie beim Lesen bewusst zu markieren.",
+          "Bedeutung UND Funktion trennen: „nam“ (denn) und „quod“ (weil) geben beide einen Grund an, aber „nam“ verbindet zwei Hauptsätze, „quod“ leitet einen Nebensatz ein — ein erster Schritt zur Unterscheidung Haupt-/Gliedsatz.",
+          "„sed“ (aber) und „tamen“ (dennoch) sind beide Gegensatz-Signale; „itaque“ (daher) ist das Folge-Signal — die häufigste Verwechslung ist tamen ↔ itaque.",
+          "Von der Wortebene zur Textebene: Konnektoren sind der Übergang vom Einzelsatz zum zusammenhängenden Text."
+        ],
+        "extensions": [
+          "Markier-Übung an einem kurzen Lehrbuchtext: alle Konnektoren farbig nach Funktion markieren (grün = Grund, rot = Gegensatz, blau = Folge).",
+          "Kontrastive Sprachbetrachtung: dieselben Funktionen im Deutschen (denn/weil, aber/dennoch, daher) — wann steht welches, und wo steht das Verb?",
+          "Erweiterung um weitere Konnektoren (ergo, autem, enim, -que) für schnellere Gruppen."
+        ],
+        "timing_notes": "Etwa 45 Minuten. Der Text und die Aufgaben 1–3 bilden die Erarbeitung (ca. 20 Min.); Aufgabe 4 ist die Kernübung, 5 die Sicherung, 6 der kreative Transfer oder eine Hausübung.",
+        "blocks": [
+          {
+            "role": "info",
+            "id": "i1",
+            "kind": "prose",
+            "content": "Marcus im Garten\n\nLies den kurzen Text. Die Sätze sind nummeriert.\n\n1. Marcus in horto laborat.\n2. Nam pater agricola est.\n3. Marcus aquam portat, sed fessus est.\n4. Itaque sub arbore sedet.\n5. Amicus venit et Marcum vocat.\n6. Marcus tamen non respondet, quod dormit.\n\nWörter zum Nachschlagen: hortus = Garten · laborare = arbeiten · pater = Vater · agricola = Bauer · aqua = Wasser · portare = tragen · fessus = müde · arbor = Baum · sedere = sitzen · amicus = Freund · venire = kommen · vocare = rufen · respondere = antworten · dormire = schlafen.",
+            "modality": "printable",
+            "watch_outs": []
+          },
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "matching",
+            "prompt": "Ordne jedem Konnektor (Verbindungswort) seine deutsche Bedeutung zu.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "et",
+                "sed",
+                "nam",
+                "quod",
+                "itaque",
+                "tamen"
+              ],
+              "right": [
+                "und",
+                "aber",
+                "denn",
+                "weil",
+                "daher / deshalb",
+                "dennoch / trotzdem"
+              ]
+            },
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Konnektor",
+                "Bedeutung"
+              ],
+              "rows": 6
+            },
+            "cognitive_level": "remember",
+            "dimensions": [
+              "SPR"
+            ],
+            "modality": "printable",
+            "serves": [
+              {
+                "competence_id": "LAT.US.3.SPR.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 4,
+            "answer_key": "et → und; sed → aber; nam → denn; quod → weil; itaque → daher / deshalb; tamen → dennoch / trotzdem.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "„nam“ heißt „denn“ (nicht „nun“).",
+              "„quod“ heißt hier „weil“ — es kann zwar auch „was/das“ bedeuten, tritt hier aber als Konnektor auf.",
+              "„tamen“ heißt „dennoch/trotzdem“, nicht „daher“ — das ist „itaque“."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "table_fill",
+            "prompt": "Konnektoren haben nicht nur eine Bedeutung, sondern auch eine Funktion. Trage für jeden Konnektor die passende Funktion ein: Verbindung, Gegensatz, Grund oder Folge.",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Konnektor",
+                "Funktion (Verbindung / Gegensatz / Grund / Folge)"
+              ],
+              "rows": 6
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "SPR"
+            ],
+            "modality": "printable",
+            "serves": [
+              {
+                "competence_id": "LAT.US.3.SPR.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 5,
+            "answer_key": "et → Verbindung (verbindet / zählt auf); sed → Gegensatz; nam → Grund; quod → Grund; itaque → Folge; tamen → Gegensatz.\n\nVorgegebene erste Spalte: et · sed · nam · quod · itaque · tamen.",
+            "acceptable_reasoning": "Für „et“ ist auch „Aufzählung“ richtig; für „tamen“ auch „Einräumung/Widerspruch“.",
+            "watch_outs": [
+              "„nam“ (denn) und „quod“ (weil) geben beide einen GRUND an — der Unterschied liegt im Satzbau, nicht in der Funktion.",
+              "„sed“ (aber) und „tamen“ (dennoch) drücken beide einen GEGENSATZ aus; „tamen“ betont den Widerspruch stärker.",
+              "Nur „itaque“ drückt hier eine FOLGE aus."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "open_response",
+            "prompt": "Sieh dir den Text „Marcus im Garten“ noch einmal an. Suche alle Konnektoren. Schreibe zu jedem: In welchem Satz steht es, welche Aussagen verbindet es und welche Funktion hat es (Verbindung, Gegensatz, Grund oder Folge)?",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "apply",
+            "dimensions": [
+              "SPR"
+            ],
+            "modality": "printable",
+            "serves": [
+              {
+                "competence_id": "LAT.US.3.SPR.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "„nam“ (Satz 2): gibt den Grund an, warum Marcus im Garten arbeitet — sein Vater ist Bauer (Grund). | „sed“ (Satz 3): stellt gegenüber — Marcus trägt Wasser, ist aber müde (Gegensatz). | „itaque“ (Satz 4): nennt die Folge — weil er müde ist, setzt er sich daher hin (Folge). | „et“ (Satz 5): verbindet zwei Handlungen — der Freund kommt und ruft Marcus (Verbindung). | „tamen“ (Satz 6): Gegensatz — obwohl der Freund ruft, antwortet Marcus dennoch nicht (Gegensatz). | „quod“ (Satz 6): gibt den Grund an — Marcus antwortet nicht, weil er schläft (Grund).",
+            "acceptable_reasoning": "Sinngemäße Angaben zur Funktion genügen; wichtig ist, dass alle sechs Konnektoren gefunden werden.",
+            "watch_outs": [
+              "„et“ wird leicht übersehen, weil es so kurz ist.",
+              "„nam“ steht am Satzanfang und begründet den VORIGEN Satz.",
+              "In Satz 6 stehen ZWEI Konnektoren (tamen und quod) mit verschiedenen Funktionen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "table_fill",
+            "prompt": "Setze die vier Konnektoren „et“, „sed“, „itaque“ und „quod“ ein — jeden genau EINMAL. Achte auf den logischen Zusammenhang. Übersetze dann jeden Satz.\n\na) Marcus ___ Iulia in horto laborant.\nb) Puella cantat, ___ frater dormit.\nc) Pluit; ___ pueri domi manent.\nd) Pueri rident, ___ fabula ridicula est.\n\nWörter: laborare = arbeiten · cantare = singen · frater = Bruder · dormire = schlafen · pluit = es regnet · domi = zu Hause · manere = bleiben · ridere = lachen · fabula = Geschichte · ridiculus = lustig, komisch.",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Satz mit eingesetztem Konnektor",
+                "Übersetzung"
+              ],
+              "rows": 4
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "SPR"
+            ],
+            "modality": "printable",
+            "serves": [
+              {
+                "competence_id": "LAT.US.3.SPR.02",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "LAT.US.3.SPR.06",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "answer_key": "a) „Marcus et Iulia in horto laborant.“ — „Marcus und Iulia arbeiten im Garten.“ (et = Verbindung/Aufzählung) | b) „Puella cantat, sed frater dormit.“ — „Das Mädchen singt, aber der Bruder schläft.“ (sed = Gegensatz) | c) „Pluit; itaque pueri domi manent.“ — „Es regnet; daher bleiben die Jungen zu Hause.“ (itaque = Folge) | d) „Pueri rident, quod fabula ridicula est.“ — „Die Jungen lachen, weil die Geschichte lustig ist.“ (quod = Grund)",
+            "acceptable_reasoning": "Da jeder Konnektor nur einmal gebraucht wird, ist über die vier Beziehungen (Aufzählung, Gegensatz, Folge, Grund) jede Lücke eindeutig lösbar.",
+            "watch_outs": [
+              "In a) verlangt das Verb im Plural (laborant) ein verbindendes „und“ für zwei Subjekte → et.",
+              "In c) ist die Beziehung eindeutig eine Folge (Regen → zu Hause bleiben) → itaque.",
+              "„quod“ leitet den Nebensatz „quod fabula ridicula est“ ein (weil …)."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "true_false_justify",
+            "prompt": "Lies die Aussagen zum Text „Marcus im Garten“ und zu den Konnektoren. Entscheide, ob sie richtig (R) oder falsch (F) sind, und begründe kurz auf Deutsch.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "In Satz 6 bedeutet „tamen“ dasselbe wie „itaque“.",
+                "„Nam“ in Satz 2 begründet, warum Marcus im Garten arbeitet.",
+                "In „Marcus aquam portat, sed fessus est“ (Satz 3) drückt „sed“ eine Folge aus.",
+                "In Satz 4 zeigt „itaque“ die Folge: Weil Marcus müde ist, setzt er sich daher hin."
+              ]
+            },
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Aussage",
+                "R / F",
+                "Begründung"
+              ],
+              "rows": 4
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "SPR"
+            ],
+            "modality": "printable",
+            "serves": [
+              {
+                "competence_id": "LAT.US.3.SPR.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "1. F — „tamen“ heißt „dennoch“ und drückt einen Gegensatz aus; „itaque“ heißt „daher“ und drückt eine Folge aus. Die beiden sind gegensätzlich. | 2. R — „nam“ (denn) gibt den Grund an: Marcus arbeitet im Garten, denn sein Vater ist Bauer. | 3. F — „sed“ (aber) drückt einen Gegensatz aus (er trägt Wasser, ist aber müde), keine Folge. | 4. R — „itaque“ (daher) nennt die Folge der Müdigkeit: Weil Marcus müde ist, setzt er sich daher hin.",
+            "acceptable_reasoning": "Bei den falschen Aussagen ist die richtige Erklärung Teil der Lösung (nicht nur R/F).",
+            "watch_outs": [
+              "„tamen“ (Gegensatz) und „itaque“ (Folge) werden oft verwechselt — das ist die Zielfalle von Aussage 1.",
+              "„sed“ verbindet nie eine Folge, sondern immer einen Gegensatz.",
+              "Bei jeder Aussage die Begründung verlangen, nicht nur R/F."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "create_produce",
+            "prompt": "Schreibe eine kleine Geschichte aus 4 bis 5 lateinischen Sätzen. Verwende mindestens DREI verschiedene Konnektoren (z. B. et, sed, nam, itaque, quod, tamen). Unterstreiche die Konnektoren. Schreibe unter jeden Satz die deutsche Übersetzung.\n\nWortschatz-Hilfe: puer = Junge · puella = Mädchen · canis = Hund · in via = auf der Straße · in schola = in der Schule · laborat = arbeitet · dormit = schläft · ridet = lacht · venit = kommt · vocat = ruft · est = ist · fessus = müde.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 60.0
+            },
+            "cognitive_level": "create",
+            "dimensions": [
+              "SPR"
+            ],
+            "modality": "printable",
+            "serves": [
+              {
+                "competence_id": "LAT.US.3.SPR.06",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "LAT.US.3.SPR.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "answer_key": "Musterlösung (viele Varianten möglich): „Canis in via dormit. Puer venit et canem vocat. Canis tamen non surgit, nam fessus est. Itaque puer discedit.“ — „Der Hund schläft auf der Straße. Ein Junge kommt und ruft den Hund. Der Hund steht aber (dennoch) nicht auf, denn er ist müde. Daher geht der Junge weg.“ (Verwendete Konnektoren: et, tamen, nam, itaque.)",
+            "acceptable_reasoning": "Die Geschichte muss nicht dem Muster entsprechen; entscheidend sind mindestens drei sinnvoll eingesetzte Konnektoren und grammatisch richtige Sätze.",
+            "watch_outs": [
+              "Der lateinische Satzbau muss stimmen (Subjekt im Nominativ, Objekt im Akkusativ, Verb passend).",
+              "„nam“ steht am Satzanfang, „quod“ leitet einen Nebensatz ein.",
+              "Keine erfundenen, nur „lateinisch klingenden“ Wörter — lieber den vorgegebenen Wortschatz nutzen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Konnektoren",
+                "levels": [
+                  "Mindestens drei verschiedene Konnektoren, jeweils sinnvoll und richtig eingesetzt.",
+                  "Konnektoren vorhanden, aber teils unpassend oder nur zwei verschiedene.",
+                  "Weniger als zwei Konnektoren oder durchgehend falsch eingesetzt."
+                ]
+              },
+              {
+                "criterion": "Grammatische Richtigkeit",
+                "levels": [
+                  "Die Sätze sind grammatisch korrekt (Kasus, Verbendungen).",
+                  "Kleinere Endungsfehler, der Sinn bleibt klar.",
+                  "Viele Formfehler, die den Sinn stören."
+                ]
+              },
+              {
+                "criterion": "Übersetzung",
+                "levels": [
+                  "Übersetzung vollständig und sinngemäß richtig.",
+                  "Übersetzung überwiegend richtig, kleine Lücken.",
+                  "Übersetzung fehlt oder ist falsch."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

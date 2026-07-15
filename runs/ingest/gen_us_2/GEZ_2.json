@@ -1,0 +1,325 @@
+{
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Transformationen von Objekten und Relationen zwischen Objekten",
+  "title": "Vereinigung, Differenz, Durchschnitt — Körper verknüpfen",
+  "kernfrage": "Wie entstehen aus einfachen Grundkörpern durch Vereinigung, Differenz und Durchschnitt neue Werkstücke — und wie erkennst du, welche Verknüpfung dahintersteckt?",
+  "body": {
+    "intro": [],
+    "data_figures": [],
+    "assets": [
+      {
+        "id": "abb_wuerfel",
+        "role": "figure",
+        "generator": "matplotlib:axonometric_solid",
+        "spec": {
+          "kind": "quader",
+          "a": 4,
+          "b": 4,
+          "c": 4,
+          "labels": {
+            "a": "4 cm",
+            "b": "4 cm",
+            "c": "4 cm"
+          },
+          "show_measures": true,
+          "title": "Grundkörper 1: Würfel (Kante 4 cm)"
+        }
+      },
+      {
+        "id": "abb_zylinder",
+        "role": "figure",
+        "generator": "matplotlib:axonometric_solid",
+        "spec": {
+          "kind": "cylinder",
+          "r": 1,
+          "h": 5,
+          "labels": {
+            "r": "r = 1 cm",
+            "h": "h = 5 cm"
+          },
+          "show_measures": true,
+          "title": "Grundkörper 2: Drehzylinder"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Grundkörper verknüpfen: aus zwei mach eins",
+        "throughline": "Boolesche Operationen sind Relationen zwischen Körpern: aus einfachen Grundkörpern entstehen durch Vereinigung, Differenz und Durchschnitt neue Werkstücke — die Denkweise jedes CAD-Programms.",
+        "talking_points": [
+          "Die Differenz ist nicht vertauschbar: A ohne B ist etwas anderes als B ohne A — die häufigste Fehlvorstellung (Aufgaben 4 und 5).",
+          "Der Durchschnitt liefert immer den kleineren, gemeinsamen Bereich, die Vereinigung den größeren — aber die Überlappung zählt nur einmal.",
+          "Vom fertigen Werkstück auf die Operation zurückzuschließen (Bohrung bedeutet Differenz) ist die eigentliche Lesekompetenz (Aufgabe 2)."
+        ],
+        "extensions": [
+          "Dasselbe Werkstück in einem CAD-Programm (z. B. TinkerCAD oder FreeCAD) tatsächlich bauen und daraus Grund- und Aufriss ableiten.",
+          "Untersuchen, wann A ohne B doch dasselbe wie B ohne A ergibt (nur wenn sich die Körper gar nicht überlappen).",
+          "Ein Werkstück einmal durch einen ebenen Schnitt und einmal durch eine Boolesche Operation herstellen und die Wege vergleichen."
+        ],
+        "blocks": [
+          {
+            "role": "info",
+            "id": "i1",
+            "kind": "key_fact",
+            "content": "Mit Booleschen Operationen verknüpfst du zwei Körper zu einem neuen Werkstück. Bei der Vereinigung verschmelzen beide Körper zu einem einzigen; der überlappende Bereich zählt nur einmal. Bei der Differenz wird vom ersten Körper der zweite weggeschnitten — so entsteht zum Beispiel eine Bohrung. Beim Durchschnitt bleibt nur der Bereich übrig, der zu beiden Körpern gehört.",
+            "callout_role": "note",
+            "asset_refs": [],
+            "watch_outs": [
+              "Bei der Differenz zählt die Reihenfolge: „A ohne B“ ist etwas anderes als „B ohne A“."
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "matching",
+            "prompt": "Ordne jeder Booleschen Operation die passende Beschreibung zu.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Vereinigung",
+                "Differenz (A ohne B)",
+                "Durchschnitt"
+              ],
+              "right": [
+                "nur der gemeinsame Bereich beider Körper bleibt",
+                "beide Körper verschmelzen zu einem",
+                "vom ersten Körper wird der zweite weggeschnitten"
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 3
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "H3"
+            ],
+            "serves": [
+              {
+                "competence_id": "GEZ.US.4.TRA.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 5,
+            "asset_refs": [],
+            "answer_key": "Vereinigung — beide Körper verschmelzen zu einem; Differenz (A ohne B) — vom ersten Körper wird der zweite weggeschnitten; Durchschnitt — nur der gemeinsame Bereich beider Körper bleibt.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Der Durchschnitt liefert etwas Kleineres (nur die Überlappung), die Vereinigung etwas Größeres."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "multiple_choice",
+            "prompt": "Aus dem Würfel (Grundkörper 1) wird der Drehzylinder (Grundkörper 2) mittig und senkrecht herausgeschnitten, also Würfel ohne Zylinder. Welcher Körper entsteht?",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "ein Würfel mit einem durchgehenden runden Loch (Bohrung)",
+                "ein Drehzylinder",
+                "ein größerer Würfel",
+                "zwei getrennte Halbwürfel"
+              ],
+              "select": "one"
+            },
+            "response": {
+              "mode": "choices",
+              "options": [
+                "ein Würfel mit einem durchgehenden runden Loch (Bohrung)",
+                "ein Drehzylinder",
+                "ein größerer Würfel",
+                "zwei getrennte Halbwürfel"
+              ],
+              "select": "one"
+            },
+            "cognitive_level": "apply",
+            "dimensions": [
+              "H3"
+            ],
+            "serves": [
+              {
+                "competence_id": "GEZ.US.4.TRA.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 5,
+            "asset_refs": [
+              "abb_wuerfel",
+              "abb_zylinder"
+            ],
+            "answer_key": "Ein Würfel mit einem durchgehenden runden Loch (Bohrung). Der Zylinder ist länger als der Würfel dick ist, deshalb geht das Loch ganz durch.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Bei der Differenz bleibt der größere Körper (Würfel) übrig, aus ihm fehlt das Zylindervolumen — es entsteht kein Zylinder.",
+              "Eine mittige Bohrung trennt den Würfel nicht in zwei Teile."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "cad_model",
+            "prompt": "Beschreibe Schritt für Schritt, wie du dieses Werkstück — einen Würfel mit einer durchgehenden runden Bohrung — in einem CAD-Programm aus Grundkörpern aufbaust. Nenne die Grundkörper, ihre Lage zueinander und die Boolesche Operation samt richtiger Reihenfolge.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 60
+            },
+            "cognitive_level": "apply",
+            "dimensions": [
+              "H2"
+            ],
+            "serves": [
+              {
+                "competence_id": "GEZ.US.4.TRA.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "asset_refs": [
+              "abb_wuerfel",
+              "abb_zylinder"
+            ],
+            "answer_key": "1) Würfel als Grundkörper erzeugen. 2) Drehzylinder erzeugen — dünner als die Würfelkante, aber mindestens so lang wie der Würfel dick ist. 3) Den Zylinder mittig und senkrecht durch den Würfel legen. 4) Differenz bilden: Würfel ohne Zylinder (Reihenfolge wichtig — der Zylinder wird abgezogen). Ergebnis: Würfel mit durchgehender Bohrung.",
+            "acceptable_reasoning": "Wesentlich sind drei Punkte: zwei Grundkörper, die mittige Lage des Zylinders und die Differenz in der Reihenfolge Würfel minus Zylinder.",
+            "watch_outs": [
+              "Zylinder ohne Würfel (falsche Reihenfolge) ergäbe nicht das Werkstück.",
+              "Ist der Zylinder zu kurz, entsteht nur ein Sackloch statt einer durchgehenden Bohrung."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "true_false_justify",
+            "prompt": "Entscheide bei jeder Aussage, ob sie stimmt, und begründe kurz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Die Differenz „A ohne B“ liefert denselben Körper wie „B ohne A“.",
+                "Beim Durchschnitt zweier Körper kann ein Körper entstehen, der kleiner ist als jeder der beiden Ausgangskörper.",
+                "Die Vereinigung zweier sich überlappender Körper ist genauso groß wie die beiden Einzelkörper zusammengezählt."
+              ]
+            },
+            "response": {
+              "mode": "box",
+              "min_height_mm": 60
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "H1"
+            ],
+            "serves": [
+              {
+                "competence_id": "GEZ.US.4.TRA.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "asset_refs": [],
+            "answer_key": "1) Falsch — die Reihenfolge zählt: bei „A ohne B“ fehlt B aus A, bei „B ohne A“ fehlt A aus B; das sind verschiedene Körper. 2) Richtig — der Durchschnitt ist nur die Überlappung und daher höchstens so groß wie der kleinere Körper. 3) Falsch — im Überlappungsbereich würde man doppelt zählen; die Vereinigung ist kleiner als die Summe, weil die Überlappung nur einmal zählt.",
+            "acceptable_reasoning": "Die Begründungen sollen auf Reihenfolge (1), „nur der gemeinsame Teil“ (2) und „Überlappung nicht doppelt zählen“ (3) hinauslaufen.",
+            "watch_outs": [
+              "Aussage 3 ist die klassische Falle: das gemeinsame Volumen darf nicht doppelt gezählt werden."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "decision_scenario",
+            "prompt": "Anna und Ben wollen ein Rohr herstellen — einen Zylinder mit einem durchgehenden Loch in der Mitte. Anna bildet die Differenz aus einem großen und einem kleineren, gleich langen Zylinder. Ben bildet den Durchschnitt der beiden. Wer erreicht das Rohr? Begründe und beschreibe, was bei der anderen Wahl herauskommt.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Rohr = großer Zylinder ohne kleinen Zylinder, oder großer Zylinder geschnitten mit kleinem?"
+            },
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "H1",
+              "H3"
+            ],
+            "serves": [
+              {
+                "competence_id": "GEZ.US.4.TRA.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "asset_refs": [],
+            "answer_key": "Anna hat recht: die Differenz (großer ohne kleinen Zylinder) entfernt den inneren Vollzylinder und lässt die Rohrwand übrig. Bens Durchschnitt liefert nur den gemeinsamen Bereich — das ist der kleine Vollzylinder, also ein massiver Stab, kein Rohr.",
+            "acceptable_reasoning": "Kern: die Differenz höhlt aus (Rohr), der Durchschnitt behält nur die Überlappung (Vollzylinder).",
+            "watch_outs": [
+              "Der Durchschnitt zweier ineinanderliegender Zylinder ist der kleinere von beiden — nicht das Rohr.",
+              "Beide Zylinder müssen gleich lang und koaxial sein, damit die Differenz ein durchgehendes Rohr ergibt."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "create_produce",
+            "prompt": "Erfinde ein eigenes Werkstück, das man aus mindestens zwei Grundkörpern mit zwei verschiedenen Booleschen Operationen bauen kann (zum Beispiel zuerst eine Vereinigung, dann eine Differenz). Beschreibe die Grundkörper, die Reihenfolge der Operationen und das fertige Ergebnis so genau, dass es jemand nachbauen kann. Eine kurze Skizze in Worten darfst du dazugeben.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 70
+            },
+            "cognitive_level": "create",
+            "dimensions": [
+              "H2",
+              "H1"
+            ],
+            "serves": [
+              {
+                "competence_id": "GEZ.US.4.TRA.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 11,
+            "asset_refs": [],
+            "answer_key": "Beispiel: Zuerst die Vereinigung eines liegenden Quaders (Griff) mit einem stehenden Zylinder (Achse) zu einem Körper; danach die Differenz mit einem dünnen, durchgehenden Zylinder für eine Schraubenbohrung. Jede Kombination ist richtig, die zwei verschiedene Operationen sinnvoll verkettet und die Lage der Körper eindeutig beschreibt.",
+            "acceptable_reasoning": "Bewertet wird nicht die Idee selbst, sondern ob zwei verschiedene Operationen sinnvoll verkettet und die Körper eindeutig beschrieben sind.",
+            "watch_outs": [
+              "Zwei Differenzen hintereinander sind nur eine Art von Operation — verlangt sind zwei verschiedene.",
+              "Ohne Angabe der Lage der Körper zueinander ist das Werkstück nicht eindeutig."
+            ],
+            "rubric": [
+              {
+                "criterion": "Zwei verschiedene Operationen",
+                "levels": [
+                  "nur eine Operation verwendet",
+                  "zwei Operationen genannt, aber Reihenfolge unklar",
+                  "zwei verschiedene Operationen mit klarer Reihenfolge"
+                ]
+              },
+              {
+                "criterion": "Nachbaubarkeit",
+                "levels": [
+                  "Grundkörper oder Lage fehlen",
+                  "grob beschrieben, Lücken bleiben",
+                  "Grundkörper, Lage und Ergebnis eindeutig beschrieben"
+                ]
+              },
+              {
+                "criterion": "Fachsprache",
+                "levels": [
+                  "Begriffe fehlen oder sind falsch",
+                  "teilweise korrekt",
+                  "Vereinigung, Differenz und Durchschnitt korrekt verwendet"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

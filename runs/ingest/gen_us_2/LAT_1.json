@@ -1,0 +1,305 @@
+{
+  "subject": "Latein",
+  "klasse": 3,
+  "kompetenzbereich": "Inhalts- und themenbezogene Kompetenzen",
+  "title": "Die Götter der Römer und ihre Spuren in unserer Welt",
+  "kernfrage": "Wofür waren die römischen Götter zuständig — und warum begegnen dir ihre Namen noch heute in Planeten, Wochentagen und Wörtern?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Götter und ihre Spuren in unserer Welt",
+        "throughline": "Die Schüler:innen lernen die wichtigsten römischen Götter und ihre Zuständigkeitsbereiche kennen, erschließen einfache lateinische Sätze über sie und entdecken, wie die Götternamen bis heute in Planeten, Wochentagen und einzelnen Wörtern weiterleben. Der rote Faden ist die Verbindung von antiker Vorstellungswelt und heutiger Lebenswelt: Warum begegnen uns diese Namen noch heute?",
+        "talking_points": [
+          "Die römische Götterwelt ist zu großen Teilen von der griechischen übernommen: Iuppiter/Zeus, Neptunus/Poseidon, Minerva/Athene, Mercurius/Hermes — ein guter Anlass, über kulturelle Übernahme zu sprechen.",
+          "Jeder Gott „besetzt“ einen Lebensbereich (Meer, Krieg, Liebe, Weisheit). Das erklärt, warum Dinge nach ihnen benannt sind: der rote Planet nach dem Kriegsgott Mars, das flüssige, bewegliche Metall Quecksilber nach dem flinken Mercurius.",
+          "Die Wochentage sind ein starkes kontrastives Beispiel: romanische Sprachen bewahren die Götter (frz. mardi ← dies Martis, jeudi ← dies Iovis), während Deutsch und Englisch germanische Götter einsetzen (Donnerstag ← Donar/Thor).",
+          "„Warum begegnen uns die Namen noch heute?“ — nicht als Zufall, sondern weil Latein über Jahrhunderte die Sprache der Wissenschaft und Bildung in Europa war."
+        ],
+        "extensions": [
+          "Kleines Rechercheprojekt: Jede:r sucht einen weiteren Götternamen in der Umgebung (Firmenname, Automarke, Sternbild, Vorname) und stellt ihn kurz vor.",
+          "Vergleich Rom–Griechenland: eine Tabelle mit römischem und griechischem Namen desselben Gottes anlegen (Iuppiter–Zeus, Venus–Aphrodite …).",
+          "Fächerübergreifend zu Astronomie: Warum tragen die Planeten Götternamen, und passt die Eigenschaft des Planeten zum Gott (Mars rot = Krieg/Blut)?"
+        ],
+        "timing_notes": "Etwa 45–50 Minuten. Aufgaben 1–3 als Einstieg und Erarbeitung (ca. 20 Min.), 4–5 als Vertiefung im Gespräch, 6 als kreativer Abschluss oder Hausübung.",
+        "blocks": [
+          {
+            "role": "info",
+            "id": "i1",
+            "kind": "prose",
+            "content": "Die Römer verehrten viele Götter. Jeder Gott war für einen bestimmten Bereich des Lebens zuständig — für das Meer, den Krieg, die Liebe oder die Weisheit. Viele dieser Götter hatten die Römer von den Griechen übernommen und ihnen lateinische Namen gegeben. Ihre Namen sind bis heute überall zu finden: in den Namen der Planeten, in den Wochentagen vieler Sprachen und sogar in einzelnen Wörtern. In diesem Arbeitsblatt lernst du die wichtigsten Götter kennen und entdeckst ihre Spuren in unserer Welt.",
+            "modality": "printable",
+            "watch_outs": []
+          },
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "matching",
+            "prompt": "Ordne jedem römischen Gott seinen Zuständigkeitsbereich zu.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Iuppiter",
+                "Neptunus",
+                "Mars",
+                "Venus",
+                "Minerva",
+                "Mercurius"
+              ],
+              "right": [
+                "König der Götter und Gott des Himmels",
+                "Gott des Meeres",
+                "Gott des Krieges",
+                "Göttin der Liebe und der Schönheit",
+                "Göttin der Weisheit und des Handwerks",
+                "Bote der Götter und Gott des Handels"
+              ]
+            },
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Gott",
+                "Zuständigkeit"
+              ],
+              "rows": 6
+            },
+            "cognitive_level": "remember",
+            "dimensions": [
+              "INH"
+            ],
+            "modality": "printable",
+            "serves": [
+              {
+                "competence_id": "LAT.US.3.INH.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 4,
+            "answer_key": "Iuppiter → König der Götter und Gott des Himmels; Neptunus → Gott des Meeres; Mars → Gott des Krieges; Venus → Göttin der Liebe und der Schönheit; Minerva → Göttin der Weisheit und des Handwerks; Mercurius → Bote der Götter und Gott des Handels.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Iuppiter (auch „Jupiter“) ist der oberste Gott, der Göttervater — nicht mit Mars (Krieg) verwechseln.",
+              "Minerva entspricht der griechischen Athene: sie steht für Weisheit UND Handwerk/Kunst.",
+              "Mercurius ist Bote der Götter und zugleich Gott der Händler; für die Zuordnung genügt „Bote / Handel“."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "translation",
+            "prompt": "Lies die kurzen lateinischen Sätze über die Götter und übersetze sie. Schreibe zu jedem Satz dazu, welchen Bereich der Gott hat.\n\n1. Neptunus mare et aquas regit.\n2. Mars bella et arma amat.\n3. Minerva sapientiam et artes docet.\n4. Mercurius verba deorum portat.\n\nWörter: mare = Meer · aqua, aquae = Wasser · regere = beherrschen, lenken · bellum = Krieg · arma = Waffen · amare = lieben · sapientia = Weisheit · ars, artes = Kunst, Handwerk · docere = lehren · verbum, verba = Wort, Worte · deus, deorum = Gott, der Götter · portare = tragen, bringen.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 8
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "INH"
+            ],
+            "modality": "printable",
+            "serves": [
+              {
+                "competence_id": "LAT.US.3.INH.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "answer_key": "1. „Neptun beherrscht das Meer und die Gewässer.“ — Gott des Meeres. | 2. „Mars liebt die Kriege und die Waffen.“ — Gott des Krieges. | 3. „Minerva lehrt die Weisheit und die Künste (das Handwerk).“ — Göttin der Weisheit und des Handwerks. | 4. „Merkur trägt die Worte der Götter.“ — Bote der Götter.",
+            "acceptable_reasoning": "Sinngemäße Übersetzungen akzeptieren (z. B. „regiert“ statt „beherrscht“, „bringt“ statt „trägt“).",
+            "watch_outs": [
+              "„mare“ und „aquas“ sind Akkusativobjekte (Neptun beherrscht WAS?).",
+              "„bella“ und „arma“ sind Neutrum Plural — die Endung -a ist hier KEIN Nominativ Singular femininum, sondern Akkusativ Plural.",
+              "„verba deorum“: „deorum“ ist Genitiv Plural (die Worte DER Götter), nicht Nominativ."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "table_fill",
+            "prompt": "Die Namen der römischen Götter begegnen uns noch heute. Fülle die Tabelle aus: Von welchem Gott stammt der Name — und wofür war dieser Gott zuständig?",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Heutiges Wort / Name",
+                "Römischer Gott",
+                "Bereich des Gottes"
+              ],
+              "rows": 4
+            },
+            "cognitive_level": "apply",
+            "dimensions": [
+              "INH"
+            ],
+            "modality": "printable",
+            "serves": [
+              {
+                "competence_id": "LAT.US.3.INH.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 7,
+            "answer_key": "Planet Mars → Mars → Gott des Krieges. | Planet Neptun → Neptunus → Gott des Meeres. | Planet Merkur → Mercurius → Bote der Götter / Gott des Handels. | Donnerstag (frz. jeudi, ital. giovedì, von lat. dies Iovis) → Iuppiter (Iovis) → König der Götter und Gott des Himmels.\n\nVorgegebene erste Spalte: „Planet Mars“ · „Planet Neptun“ · „Planet Merkur“ · „Donnerstag (frz. jeudi, ital. giovedì, von lat. dies Iovis)“.",
+            "acceptable_reasoning": "Bei der Bereichsangabe genügt ein Kernbegriff (z. B. „Krieg“, „Meer“, „Handel/Bote“, „Himmel/oberster Gott“).",
+            "watch_outs": [
+              "„dies Iovis / jeudi / giovedì“ gehen auf Iuppiter zurück — „Iovis“ ist der Genitiv von Iuppiter.",
+              "Ehrliche Einordnung: Der deutsche Name „Donnerstag“ selbst kommt vom germanischen Gott Donar/Thor; die romanischen Sprachen bewahren dagegen den römischen Gott Iuppiter.",
+              "Merkur ist zugleich der Name eines Planeten UND die alte Bezeichnung für das flüssige Metall Quecksilber."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "open_response",
+            "prompt": "Viele Wörter tragen die Eigenschaften eines Gottes in sich. Erkläre für ZWEI der folgenden Beispiele, warum die heutige Bedeutung gut zum römischen Gott passt:\n(a) „martialisch“ bedeutet „kriegerisch, kämpferisch“ — benannt nach Mars.\n(b) Wer „jovial“ ist, ist gut gelaunt und leutselig — benannt nach Iuppiter (Iovis).\n(c) Das flüssige Metall Quecksilber hieß früher „Mercurius“ — benannt nach Mercurius.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 45.0
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "INH"
+            ],
+            "modality": "printable",
+            "serves": [
+              {
+                "competence_id": "LAT.US.3.INH.02",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "LAT.US.3.INH.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "(a) Mars ist der Kriegsgott — „martialisch“ (= kriegerisch) passt, weil alles Kämpferische mit dem Kriegsgott verbunden wird. (b) Iuppiter ist der oberste, mächtige, aber wohlwollende Göttervater — „jovial“ (freundlich, gut gelaunt) passt zu seiner gütig-herrschaftlichen Art. (c) Mercurius ist der schnelle, bewegliche Botengott — Quecksilber ist ein flüssiges, sehr bewegliches Metall, daher passt der Name zur Beweglichkeit.",
+            "acceptable_reasoning": "Es genügt, wenn die Verbindung Bedeutung ↔ Zuständigkeit des Gottes nachvollziehbar erklärt wird; zwei von drei Beispielen reichen.",
+            "watch_outs": [
+              "Es geht nicht ums Auswendiglernen der Wörter, sondern um die Verbindung: Was hat die heutige Bedeutung mit dem Bereich des Gottes zu tun?",
+              "„jovial“ nicht mit „Jubel“ verwechseln — es kommt von Iuppiter (Iovis).",
+              "„martialisch“ hat nichts mit „Markt“ zu tun, sondern mit Mars."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "decision_scenario",
+            "prompt": "Lies die Aussage deines Freundes. Stimmst du ihm zu? Nimm Stellung und begründe deine Meinung mit mindestens DREI konkreten Beispielen aus diesem Arbeitsblatt (z. B. Planeten, Wochentage, Wörter).",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Ein Freund sagt: „Die römischen Götter sind doch längst vergessen — mit unserem heutigen Leben haben sie nichts mehr zu tun.“"
+            },
+            "response": {
+              "mode": "box",
+              "min_height_mm": 50.0
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "INH"
+            ],
+            "modality": "printable",
+            "serves": [
+              {
+                "competence_id": "LAT.US.3.INH.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "answer_key": "Man sollte dem Freund widersprechen: Die Götternamen leben weiter — in den Planeten (Mars, Venus, Neptun, Merkur), in den Wochentagen romanischer Sprachen (frz. jeudi ← dies Iovis, mardi ← dies Martis) und in Wörtern wie „martialisch“ oder „jovial“. Die Götter sind also nicht „vergessen“, sondern in Sprache und Kultur bis heute gegenwärtig. (Auch eine differenzierte Antwort ist möglich: als Glaubensvorstellung sind sie kaum noch lebendig, in Sprache und Namen aber sehr wohl — sofern das mit Beispielen belegt wird.)",
+            "acceptable_reasoning": "Entscheidend ist die eigene, begründete Stellungnahme MIT mindestens drei verschiedenen, im Arbeitsblatt belegten Beispielen; eine bloße Meinung ohne Belege genügt nicht.",
+            "watch_outs": [
+              "Mindestens drei VERSCHIEDENE Beispiele verlangen (nicht dreimal ein Planet).",
+              "Eine reine Ja/Nein-Antwort ohne Begründung reicht nicht.",
+              "Auch ein differenziertes „teils/teils“ ist eine gute Antwort, wenn es belegt wird."
+            ],
+            "rubric": [
+              {
+                "criterion": "Belege aus dem Arbeitsblatt",
+                "levels": [
+                  "Mindestens drei passende, verschiedene Beispiele genannt.",
+                  "Ein bis zwei Beispiele genannt.",
+                  "Keine oder unpassende Beispiele."
+                ]
+              },
+              {
+                "criterion": "Eigene Stellungnahme",
+                "levels": [
+                  "Klare, begründete Position.",
+                  "Position erkennbar, aber schwach begründet.",
+                  "Keine erkennbare Position."
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "create_produce",
+            "prompt": "Gestalte einen kurzen Steckbrief für einen römischen Gott deiner Wahl (z. B. Iuppiter, Neptunus, Mars, Venus, Minerva, Mercurius). Dein Steckbrief soll enthalten:\n- den lateinischen Namen,\n- den Zuständigkeitsbereich,\n- ein passendes Symbol oder Attribut,\n- EINEN einfachen, richtigen lateinischen Satz über den Gott (Muster: „Neptunus mare regit.“ = „Neptun beherrscht das Meer.“),\n- ein heutiges Wort, einen Planeten oder einen Namen, der an diesen Gott erinnert.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 60.0
+            },
+            "cognitive_level": "create",
+            "dimensions": [
+              "INH"
+            ],
+            "modality": "printable",
+            "serves": [
+              {
+                "competence_id": "LAT.US.3.INH.01",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "LAT.US.3.INH.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "answer_key": "Musterlösung (viele Varianten möglich): „Minerva — Göttin der Weisheit und des Handwerks. Symbol: die Eule. Lateinischer Satz: „Minerva sapientiam docet.“ (= Minerva lehrt die Weisheit.) Heute: die „Minerva-Eule“ als Zeichen der Weisheit.“ — Oder: „Mars — Gott des Krieges. Symbol: Speer und Schild. Satz: „Mars bella amat.“ (= Mars liebt die Kriege.) Heute: der Planet Mars, das Wort „martialisch“.“",
+            "acceptable_reasoning": "Kreative Gestaltung ist erwünscht; entscheidend ist, dass der lateinische Satz grammatisch korrekt ist und alle Bausteine des Steckbriefs vorkommen.",
+            "watch_outs": [
+              "Der lateinische Satz muss grammatisch stimmen: Subjekt im Nominativ, Objekt im Akkusativ, Verb in der 3. Person Singular (Endung -t).",
+              "Symbol/Attribut soll zum Gott passen (Neptun → Dreizack, Minerva → Eule, Mars → Waffen).",
+              "Keine erfundenen, nur „lateinisch klingenden“ Wörter verwenden — lieber bekannten Wortschatz nutzen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Lateinischer Satz",
+                "levels": [
+                  "Ein einfacher, grammatisch korrekter Satz (Nominativ + Akkusativ + Verb).",
+                  "Satz vorhanden, mit kleinem Endungsfehler.",
+                  "Kein Satz oder durchgehend fehlerhaft."
+                ]
+              },
+              {
+                "criterion": "Vollständigkeit des Steckbriefs",
+                "levels": [
+                  "Alle geforderten Bausteine vorhanden.",
+                  "Ein bis zwei Bausteine fehlen.",
+                  "Mehrere Bausteine fehlen."
+                ]
+              },
+              {
+                "criterion": "Verbindung zur Gegenwart",
+                "levels": [
+                  "Ein passendes heutiges Wort/Name genannt.",
+                  "Bezug genannt, aber unpassend.",
+                  "Kein Gegenwartsbezug."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
