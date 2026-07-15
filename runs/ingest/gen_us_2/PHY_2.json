@@ -1,0 +1,363 @@
+{
+  "subject": "Physik",
+  "klasse": 3,
+  "kompetenzbereich": "Elektrizität und Magnetismus",
+  "title": "Von Strom zu Bewegung – und zurück: Magnete, Elektromotor und Generator",
+  "kernfrage": "Wie macht ein Elektromotor aus Strom eine Drehbewegung – und wie holt ein Generator aus Bewegung wieder Strom heraus?",
+  "body": {
+    "intro": [],
+    "data_figures": [],
+    "assets": [
+      {
+        "id": "abb_stromkreis",
+        "role": "figure",
+        "generator": "matplotlib:circuit",
+        "spec": {
+          "net": {
+            "type": "series",
+            "children": [
+              {
+                "type": "resistor",
+                "ohm": 8,
+                "label": "Spule"
+              },
+              {
+                "type": "lamp",
+                "ohm": 4,
+                "label": "Lämpchen"
+              }
+            ]
+          },
+          "volt": 4.5,
+          "title": "Stromkreis für den Elektromagneten"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Magnetismus und der elektrische Strom",
+        "throughline": "Magnete versteht man mit dem Elementarmagnete-Modell; und weil Strom selbst Magnetismus erzeugt, führt der Weg direkt zum schaltbaren Elektromagneten.",
+        "talking_points": [
+          "Elementarmagnete: Jeder Teilmagnet hat zwei Pole – deshalb gibt es keine Monopole.",
+          "Gleichnamige Pole stoßen sich ab, ungleichnamige ziehen sich an.",
+          "Magnetische Wirkung des Stroms (Ørsted-Versuch); Spule und Eisenkern ergeben einen Elektromagneten.",
+          "Der Elektromagnet ist schaltbar – anders als ein Dauermagnet."
+        ],
+        "extensions": [
+          "Die Zahl der Windungen verändern und die Tragkraft (Zahl der angehobenen Büroklammern) vergleichen.",
+          "Untersuchen, ob ein Aluminiumkern genauso wirkt wie ein Eisenkern."
+        ],
+        "blocks": [
+          {
+            "role": "info",
+            "id": "i0",
+            "kind": "key_fact",
+            "content": "Elektrischer Strom und Magnetismus gehören zusammen: 1820 bemerkte der dänische Forscher Hans Christian Ørsted, dass ein stromdurchflossener Draht eine Kompassnadel ablenkt. Strom erzeugt also ein Magnetfeld (die magnetische Wirkung des Stroms). Wickelt man den Draht zu einer Spule und steckt einen Eisennagel hinein, entsteht ein Elektromagnet, den man ein- und ausschalten kann."
+          },
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "true_false_justify",
+            "prompt": "Ein Stabmagnet hat einen Nordpol (N) und einen Südpol (S). Beurteile jede Aussage als richtig oder falsch und begründe mit dem Modell der Elementarmagnete.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Gleichnamige Pole (N und N) ziehen sich an.",
+                "Zersägt man einen Stabmagneten in der Mitte, erhält man ein Stück mit nur einem Nordpol und ein Stück mit nur einem Südpol.",
+                "Nach dem Zersägen hat jedes Teilstück wieder einen Nord- und einen Südpol.",
+                "Im Elementarmagnete-Modell besteht ein Magnet aus vielen winzigen Magneten, die gleich ausgerichtet sind."
+              ]
+            },
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Aussage",
+                "richtig / falsch",
+                "Begründung"
+              ],
+              "rows": 4
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "E"
+            ],
+            "serves": [
+              {
+                "competence_id": "PHY.US.3.ELE.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 7,
+            "asset_refs": [],
+            "answer_key": "1 falsch: Gleichnamige Pole stoßen sich ab, ungleichnamige (N und S) ziehen sich an. 2 falsch: Es gibt keine magnetischen Einzelpole (Monopole). 3 richtig: Jedes Bruchstück ist wieder ein vollständiger Magnet mit Nord- und Südpol – weil schon jeder Elementarmagnet zwei Pole hat. 4 richtig: Im Modell besteht ein Magnet aus vielen gleich ausgerichteten Elementarmagneten; sind sie ungeordnet, wirkt der Körper nach außen unmagnetisch.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Es gibt keinen magnetischen Monopol – Teilen erzeugt immer wieder vollständige Magnete mit zwei Polen.",
+              "‚Gleiches zieht sich an' ist der klassische Fehler – bei Magneten stoßen sich GLEICHnamige Pole ab."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "experiment_protocol",
+            "prompt": "Du sollst untersuchen, ob und wann ein stromdurchflossener Draht magnetisch wirkt. Das Schaltbild zeigt deinen Stromkreis: eine Batterie, die Spule (der um einen Eisennagel gewickelte Draht) und ein kleines Kontroll-Lämpchen. Plane das Experiment: (a) Formuliere eine Vermutung. (b) Nenne das benötigte Material. (c) Beschreibe die Durchführung in Schritten. (d) Womit weist du die magnetische Wirkung nach? (e) Was erwartest du, wenn du den Stromkreis öffnest?",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 90
+            },
+            "cognitive_level": "apply",
+            "dimensions": [
+              "E",
+              "W"
+            ],
+            "serves": [
+              {
+                "competence_id": "PHY.US.3.ELE.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 12,
+            "asset_refs": [
+              "abb_stromkreis"
+            ],
+            "answer_key": "(a) Vermutung, zum Beispiel: ‚Nur wenn Strom fließt, wird die Spule mit dem Nagel magnetisch und zieht Eisen an.' (b) Material: Batterie (zum Beispiel 4,5 V), isolierter Draht, Eisennagel, kleines Lämpchen, Kabel, einige Büroklammern, evtl. ein Kompass. (c) Durchführung: Draht viele Male um den Nagel wickeln (Spule); Spule, Lämpchen und Batterie zu einem geschlossenen Stromkreis verbinden; die Nagelspitze an die Büroklammern halten – einmal bei geschlossenem und einmal bei offenem Stromkreis. (d) Nachweis: Bei geschlossenem Kreis zieht der Nagel Büroklammern an bzw. eine Kompassnadel wird abgelenkt; das Lämpchen leuchtet und zeigt, dass Strom fließt. (e) Öffnet man den Stromkreis, fließt kein Strom mehr – die magnetische Wirkung verschwindet, die Büroklammern fallen ab.",
+            "acceptable_reasoning": "Kontrollierter Vergleich Strom an/aus; die magnetische Wirkung tritt nur bei fließendem Strom auf; Nachweis über das Anziehen von Eisen oder die Ablenkung einer Kompassnadel; das Lämpchen zeigt den Stromfluss an.",
+            "watch_outs": [
+              "Der Nagel bleibt nur magnetisch, solange Strom fließt (Weicheisen) – anders als ein Dauermagnet.",
+              "Mehr Windungen und ein Eisenkern verstärken den Elektromagneten; das Lämpchen beweist nur, dass Strom fließt, nicht die Stärke des Magnetfelds."
+            ],
+            "rubric": [
+              {
+                "criterion": "Vollständigkeit des Protokolls",
+                "levels": [
+                  "nur einzelne Teile vorhanden",
+                  "Vermutung, Durchführung und Beobachtung vorhanden",
+                  "Vermutung, Material, Durchführung, Nachweis und Kontrolle (offen/geschlossen) vollständig"
+                ]
+              },
+              {
+                "criterion": "Aussagekraft des Nachweises",
+                "levels": [
+                  "kein klarer Nachweis",
+                  "Nachweis genannt",
+                  "Nachweis MIT Vergleich Strom an/aus"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Vom Motor zum Generator",
+        "throughline": "Strom in einer Spule und ein Magnetfeld ergeben eine Kraft (Motor); dreht man die Spule im Feld, entsteht Strom (Generator) – gleicher Aufbau, umgekehrte Richtung.",
+        "talking_points": [
+          "Motor: elektrische Energie wird zu Bewegungsenergie; der Kommutator hält die Drehung in Gang.",
+          "Generator: Bewegungsenergie wird zu elektrischer Energie (Induktion).",
+          "Motor und Generator sind im Kern derselbe Aufbau (Spule und Magnet), nur gegenläufig.",
+          "Rekuperation beim E-Auto: Der Motor arbeitet beim Bremsen als Generator.",
+          "Energie wird gewandelt, nicht verbraucht (Energieerhaltung)."
+        ],
+        "extensions": [
+          "Einen Fahrraddynamo öffnen und die Bauteile (Spule, Magnet, Achse) zuordnen.",
+          "Recherchieren, in welchen Geräten im Haushalt überall Elektromotoren stecken."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "ordering",
+            "prompt": "Ein einfacher Elektromotor besteht aus einer drehbaren Spule (Anker) zwischen zwei Dauermagneten und einem Kommutator (Polwender). Bringe die Schritte, die die ständige Drehung erklären, in die richtige Reihenfolge (nummeriere von 1 bis 6).",
+            "payload": {
+              "kind": "ordering",
+              "items": [
+                "Im Feld der Dauermagnete wirkt auf die stromdurchflossene Spule eine Kraft.",
+                "Strom fließt durch die drehbare Spule (Anker).",
+                "Nach einer halben Drehung kehrt der Kommutator die Stromrichtung in der Spule um.",
+                "Die stromdurchflossene Spule wird selbst zu einem Magneten.",
+                "So wirkt die Kraft weiter in dieselbe Drehrichtung – die Spule dreht sich ständig weiter.",
+                "Die Spule beginnt sich zu drehen."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "W",
+              "E"
+            ],
+            "serves": [
+              {
+                "competence_id": "PHY.US.3.ELE.05",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [],
+            "answer_key": "Richtige Reihenfolge: 1) Strom fließt durch die drehbare Spule (Anker). 2) Die stromdurchflossene Spule wird selbst zu einem Magneten. 3) Im Feld der Dauermagnete wirkt auf die Spule eine Kraft. 4) Die Spule beginnt sich zu drehen. 5) Nach einer halben Drehung kehrt der Kommutator die Stromrichtung um. 6) So wirkt die Kraft weiter in dieselbe Drehrichtung – die Spule dreht sich ständig weiter.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Ohne Kommutator (Polwender) würde die Spule nur bis zur Gleichgewichtslage drehen und dann stehen bleiben – er sorgt für die ständige Drehung.",
+              "Ein Motor braucht BEIDES: den Strom in der Spule UND das Feld der Dauermagnete. Fehlt eines, wirkt keine Kraft."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "matching",
+            "prompt": "Motor oder Generator? Ordne jedem Gerät bzw. Vorgang die passende Energiewandlung zu und schreibe die Paare auf.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Elektromotor im Akkuschrauber",
+                "Generator im Wasserkraftwerk",
+                "Fahrraddynamo",
+                "E-Auto bremst und lädt dabei den Akku"
+              ],
+              "right": [
+                "elektrische Energie wird zu Bewegungsenergie (das Werkzeug dreht sich)",
+                "Bewegungsenergie der Turbine wird zu elektrischer Energie",
+                "Bewegung des Rades wird zu elektrischer Energie für die Lampe",
+                "Bewegungsenergie des Autos wird zu elektrischer Energie (der Akku lädt)"
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "W",
+              "E"
+            ],
+            "serves": [
+              {
+                "competence_id": "PHY.US.3.ELE.05",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "PHY.US.3.ELE.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 7,
+            "asset_refs": [],
+            "answer_key": "Elektromotor im Akkuschrauber – elektrische Energie wird zu Bewegungsenergie. Generator im Wasserkraftwerk – Bewegungsenergie der Turbine wird zu elektrischer Energie. Fahrraddynamo – Bewegung des Rades wird zu elektrischer Energie für die Lampe. E-Auto bremst und lädt – Bewegungsenergie des Autos wird zu elektrischer Energie (der Akku lädt). Merke: Der Elektromotor wandelt Strom in Bewegung; Generator, Dynamo und das ladende E-Auto sind die Umkehrung – sie machen aus Bewegung Strom. Ein Generator ist im Kern ein rückwärts betriebener Motor.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Motor und Generator sind fast gleich gebaut – nur die Richtung der Energiewandlung ist umgekehrt.",
+              "Beim Bremsen mit Rekuperation arbeitet der Motor als Generator: Die Bewegungsenergie geht nicht als Wärme verloren, sondern lädt den Akku."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "source_critique",
+            "prompt": "Auf einer Webseite ohne Autorenangabe steht: „E-Autos sind zu 100 % klimaneutral, weil aus dem Auspuff nichts herauskommt.\" (a) Was stimmt an der Aussage, was ist zu kurz gedacht? (b) Welche Information fehlt, um den Klimaeffekt wirklich zu beurteilen? (c) Woran erkennst du, ob diese Quelle verlässlich ist? (d) Welche Konsequenz ziehst du für dich, wenn du solche Aussagen im Internet liest?",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 8
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "W",
+              "S"
+            ],
+            "serves": [
+              {
+                "competence_id": "PHY.US.3.ELE.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "(a) Richtig ist: Ein E-Auto stößt beim Fahren vor Ort keine Abgase aus (es hat keinen Auspuff mit Verbrennungsabgasen). Zu kurz gedacht: Ob es ‚klimaneutral' ist, hängt davon ab, WIE der Strom erzeugt wurde (Kohle gegenüber Wind, Wasser, Sonne) und wie viel Energie in Herstellung und Akku steckt. (b) Es fehlen: der Strommix (woher kommt der Strom?), die Herstellung und Entsorgung des Akkus, die gesamte Nutzungsdauer. (c) Verlässlichkeit: Wer betreibt die Seite, gibt es einen Autor? Gibt es Quellen, Belege und ein Datum? Ist die Seite neutral oder will sie etwas verkaufen? Stimmt die Aussage mit unabhängigen, seriösen Quellen überein? Eine anonyme Seite mit einem runden ‚100 %'-Versprechen ohne Belege ist wenig verlässlich. (d) Konsequenz: nicht einer einzelnen anonymen Quelle glauben, sondern mehrere seriöse Quellen vergleichen, bevor ich die Aussage weitergebe oder eine Entscheidung darauf stütze.",
+            "acceptable_reasoning": "Lokale Abgasfreiheit stimmt; die Gesamtbilanz hängt vom Strommix und der Herstellung ab. Quellenkritik über Autor, Belege, Datum, Interesse und Abgleich mit anderen Quellen.",
+            "watch_outs": [
+              "‚Kein Auspuff' bedeutet nicht automatisch ‚klimaneutral' – entscheidend sind Stromerzeugung und Herstellung.",
+              "Runde ‚100 %'-Versprechen ohne Beleg und ohne Autor sind ein Warnsignal für eine unzuverlässige Quelle."
+            ],
+            "rubric": [
+              {
+                "criterion": "Differenzierte Sachbewertung",
+                "levels": [
+                  "nur zugestimmt oder nur pauschal abgelehnt",
+                  "nennt den Strommix ODER die Herstellung",
+                  "nennt die lokale Abgasfreiheit UND Strommix/Herstellung als entscheidend"
+                ]
+              },
+              {
+                "criterion": "Quellenkritik",
+                "levels": [
+                  "kein Kriterium",
+                  "ein Kriterium (zum Beispiel der Autor)",
+                  "mehrere: Autor, Belege/Datum, Interesse, Abgleich mit anderen Quellen"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "create_produce",
+            "prompt": "Zeige, dass du den roten Faden verstanden hast: Erstelle eine beschriftete Übersicht (Skizze oder Wortnetz) mit dem Titel „Strom und Bewegung – hin und zurück\", die Elektromotor und Generator gegenüberstellt. Baue mindestens ein Alltagsbeispiel je Richtung ein und erkläre in ein bis zwei Sätzen, warum beide Geräte im Kern gleich aufgebaut sind, aber gegenläufig arbeiten.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 100
+            },
+            "cognitive_level": "create",
+            "dimensions": [
+              "E",
+              "W"
+            ],
+            "serves": [
+              {
+                "competence_id": "PHY.US.3.ELE.05",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "PHY.US.3.ELE.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "Erwartet: Beide Richtungen werden sichtbar. Motor-Richtung: elektrische Energie wird zu Bewegung (Beispiel Akkuschrauber, E-Auto-Antrieb, Ventilator); Prinzip: Strom in der Spule und das Feld der Dauermagnete ergeben eine Kraft, die Spule dreht sich, der Kommutator hält die Drehung in Gang. Generator-Richtung: Bewegung wird zu elektrischer Energie (Beispiel Wasserkraftwerk, Fahrraddynamo, Rekuperation beim Bremsen); Prinzip: Dreht man die Spule im Magnetfeld, entsteht eine Spannung (Induktion). Kernaussage: Beide bestehen aus Spule und Magnet; der Motor macht aus Strom Bewegung, der Generator aus Bewegung Strom – gleicher Aufbau, nur in umgekehrter Richtung betrieben.",
+            "acceptable_reasoning": "Beide Richtungen mit Prinzip und je einem Beispiel; gemeinsamer Aufbau (Spule und Magnet), gegenläufige Energiewandlung.",
+            "watch_outs": [
+              "Motor und Generator nicht als völlig verschiedene Geräte darstellen – sie sind im Kern gleich aufgebaut und arbeiten nur gegenläufig.",
+              "‚Strom wird verbraucht' ist ungenau: Energie wird gewandelt (elektrisch in Bewegung und zurück), nicht vernichtet (Energieerhaltung)."
+            ],
+            "rubric": [
+              {
+                "criterion": "Fachliche Vollständigkeit",
+                "levels": [
+                  "nur eine Richtung dargestellt",
+                  "beide Richtungen mit je einem Beispiel",
+                  "beide Richtungen, Beispiele UND das gemeinsame Bauprinzip erklärt"
+                ]
+              },
+              {
+                "criterion": "Übersichtlichkeit der Darstellung",
+                "levels": [
+                  "unstrukturiert",
+                  "erkennbar gegliedert",
+                  "klare, beschriftete Gegenüberstellung (Skizze oder Wortnetz)"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
