@@ -1,0 +1,302 @@
+{
+  "subject": "Zweite lebende Fremdsprache",
+  "klasse": 3,
+  "kompetenzbereich": "Lesen",
+  "title": "Les animaux — kurze Texte über Tiere verstehen",
+  "kernfrage": "Kannst du kurzen französischen Texten über Tiere die wichtigsten Informationen entnehmen?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Lire des textes sur les animaux — Informationen entnehmen",
+        "throughline": "Leseverstehen im ersten/zweiten Lernjahr: von globalem (Worum geht es? Welches Tier?) über selektives (Welche konkrete Info?) zu detailliertem und schlussfolgerndem Lesen — durchgehend am vertrauten, konkreten Thema Haustiere. Die Aufgaben steigern sich von „C'est un …“ bis zur textbelegten Entscheidung, sodass Lesen als Informationsentnahme geübt wird und nicht als Wort-für-Wort-Übersetzen.",
+        "talking_points": [
+          "Lesestrategien explizit machen: erst überfliegen (Wer? Welches Tier?), dann gezielt Schlüsselwörter suchen („C'est un …“, „Il aime …“, „Il a … ans“).",
+          "Cognates als Verstehenshilfe nutzen (carotte, salade, tortue) — Schüler:innen ermutigen, Bekanntes zu erschließen statt jedes Wort nachzuschlagen.",
+          "Hinweis-/Verbotsschilder (t4): die Form „Ne pas + Infinitiv“ und feste Wendungen (en laisse) als Lesekonvention besprechen, nicht Wort für Wort.",
+          "„Warum“-Fragen (t5/t6) verlangen eine Schlussfolgerung aus dem Text — Unterschied zwischen „im Text steht“ und „aus dem Text folgt“ bewusst machen."
+        ],
+        "extensions": [
+          "Schüler:innen schreiben selbst eine kurze Anzeige „Mon animal“ (3–4 Sätze) nach dem Muster der Texte — Übergang Lesen → Schreiben.",
+          "Ein echtes, vereinfachtes Tierheim-Schild oder eine Adoptionsanzeige mitbringen und dieselben Lesestrategien anwenden.",
+          "Partnerarbeit: eine:r liest eine Tierbeschreibung leise, beschreibt das Tier mündlich; der/die andere errät es (Lesen → Sprechen)."
+        ],
+        "blocks": [
+          {
+            "role": "info",
+            "id": "i1",
+            "kind": "prose",
+            "content": "Boîte à mots (Wörterkasten): un chien = Hund · un chat = Katze · un lapin = Kaninchen · un oiseau = Vogel · une tortue = Schildkröte · un cheval / des chevaux = Pferd(e) · une poule = Huhn. — il/elle s'appelle … = er/sie heißt … · il a … ans = er/sie ist … Jahre alt · il aime … = er/sie mag … · il mange … = er/sie frisst … · à la campagne = auf dem Land. — mignon = niedlich · drôle = lustig · calme = ruhig · petit / grand = klein / groß · marron = braun.",
+            "watch_outs": []
+          },
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "multiple_choice",
+            "prompt": "Lis le texte, puis réponds à la question.\n\nBonjour ! Je m'appelle Léa. J'ai un animal à la maison. C'est un lapin. Il s'appelle Caramel. Il est petit et il a de longues oreilles. Il est marron et blanc. Il aime manger des carottes et de la salade. Caramel est très mignon !\n\nQuel animal a Léa ?",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "un chat",
+                "un lapin",
+                "un chien",
+                "une tortue"
+              ],
+              "select": "one"
+            },
+            "response": {
+              "mode": "choices",
+              "options": [
+                "un chat",
+                "un lapin",
+                "un chien",
+                "une tortue"
+              ],
+              "select": "one"
+            },
+            "cognitive_level": "remember",
+            "dimensions": [
+              "LES"
+            ],
+            "serves": [
+              {
+                "competence_id": "FS2.US.3.LES.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 5,
+            "answer_key": "un lapin — im Text: „C'est un lapin.“ (Caramel ist ein Kaninchen).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Manche raten anhand von „mignon“ oder „carottes“ — die Schüler:innen sollen gezielt die Struktur „C'est un …“ suchen (selektives Lesen).",
+              "„lapin“ (Kaninchen) nicht mit ähnlich klingenden Wörtern verwechseln; das Schlüsselwort steht direkt hinter „C'est“."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "true_false_justify",
+            "prompt": "Relis le texte sur Léa et Caramel. Vrai (richtig) ou faux (falsch)? Kreuze an und schreibe eine kurze Begründung (Deutsch oder Französisch).",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Caramel est un chien.",
+                "Caramel est marron et blanc.",
+                "Caramel aime les carottes."
+              ]
+            },
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Aussage",
+                "vrai / faux",
+                "Begründung"
+              ],
+              "rows": 3
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "LES"
+            ],
+            "serves": [
+              {
+                "competence_id": "FS2.US.3.LES.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "answer_key": "1. faux — Caramel est un lapin (kein Hund). | 2. vrai — „Il est marron et blanc.“ | 3. vrai — „Il aime manger des carottes …“",
+            "acceptable_reasoning": "Bei „faux“ muss die Begründung den richtigen Sachverhalt nennen (lapin), nicht nur „falsch“ ankreuzen.",
+            "watch_outs": [
+              "Häufig wird nur angekreuzt, ohne den Textbeleg zu nennen — die Begründung ist Teil der Aufgabe.",
+              "„marron“ ist ein Farbwort; hier zählt nur das Leseverständnis, die Begründung darf Deutsch sein."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "table_fill",
+            "prompt": "Lis les deux textes, puis remplis le tableau en français.\n\nTexte A : Voici Minou. C'est le chat de Théo. Minou est noir et blanc. Il a trois ans. Il aime dormir et jouer avec une balle.\n\nTexte B : Voici Rex. C'est le chien de Sophie. Rex est grand et marron. Il a cinq ans. Il aime courir dans le jardin.\n\nZeilen: 1) type d'animal, 2) couleur, 3) âge, 4) il aime.",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": [
+                "",
+                "Minou",
+                "Rex"
+              ],
+              "rows": 4
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "LES"
+            ],
+            "serves": [
+              {
+                "competence_id": "FS2.US.3.LES.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "type d'animal: un chat / un chien | couleur: noir et blanc / marron (grand) | âge: trois ans / cinq ans | il aime: dormir et jouer avec une balle / courir dans le jardin.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Selektives Lesen über zwei Texte: die Infos zu Minou und Rex nicht vermischen.",
+              "„Il a trois ans.“ meint das Alter; manche schreiben nur „trois“ ohne „ans“ — „… ans“ einfordern.",
+              "„grand“ ist eine Größe, keine Farbe — bei „couleur“ nur „marron“ verlangen, „grand“ ist Zusatzinfo."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "matching",
+            "prompt": "Au refuge des animaux (im Tierheim) gibt es kurze Schilder und Mitteilungen. Ordne jedem französischen Schild (1–4) die richtige deutsche Bedeutung (A–D) zu.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Ne pas donner à manger aux animaux.",
+                "Les chiens doivent rester en laisse.",
+                "Ouvert de 10h à 17h.",
+                "Attention : chat qui dort !"
+              ],
+              "right": [
+                "Hunde müssen an der Leine bleiben.",
+                "Geöffnet von 10 bis 17 Uhr.",
+                "Den Tieren nichts zu fressen geben.",
+                "Vorsicht: Hier schläft eine Katze."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 4
+            },
+            "cognitive_level": "apply",
+            "dimensions": [
+              "LES"
+            ],
+            "serves": [
+              {
+                "competence_id": "FS2.US.3.LES.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "answer_key": "1–C (Den Tieren nichts zu fressen geben) | 2–A (Hunde an der Leine) | 3–B (Geöffnet 10–17 Uhr) | 4–D (Vorsicht, schlafende Katze).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "„Ne pas + Infinitiv“ ist die typische Verbotsform auf Schildern (ne pas donner = nicht geben) — nicht als „nicht geben können“ fehldeuten.",
+              "„en laisse“ (an der Leine) ist idiomatisch — nicht Wort für Wort übersetzen.",
+              "„Ouvert de 10h à 17h“ nutzt Uhrzeit-Kurzschreibung; die Öffnungszeit gezielt entnehmen."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "open_response",
+            "prompt": "Lis le texte, puis réponds aux questions en français (en phrases courtes).\n\nSalut ! Je m'appelle Lucas. J'adore les animaux, mais je n'ai pas d'animal à la maison. Mon appartement est trop petit pour un chien. Alors, le week-end, je vais chez ma grand-mère. Elle habite à la campagne et elle a deux chevaux et beaucoup de poules. J'aime beaucoup donner à manger aux poules !\n\n1. Pourquoi est-ce que Lucas n'a pas de chien à la maison ?\n2. Où sont les animaux qu'il aime ?\n3. Qu'est-ce qu'il aime faire chez sa grand-mère ?",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 3
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "LES"
+            ],
+            "serves": [
+              {
+                "competence_id": "FS2.US.3.LES.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "answer_key": "1. Parce que son appartement est trop petit (pour un chien). | 2. Chez sa grand-mère, à la campagne. | 3. Il aime donner à manger aux poules.",
+            "acceptable_reasoning": "Frage 1 verlangt eine Schlussfolgerung (trop petit → deshalb kein Hund); ein „Parce que …“-Satz oder Stichwörter sind beide akzeptabel.",
+            "watch_outs": [
+              "Frage 1 ist eine „Warum“-Frage: die Antwort steht nicht wörtlich, sondern folgt aus „trop petit pour un chien“.",
+              "„donner à manger“ = füttern (nicht „essen geben“); auf die feste Wendung achten.",
+              "Groß-/Kleinschreibung: Nomen wie „poules“ klein, Eigennamen groß."
+            ],
+            "rubric": [
+              {
+                "criterion": "Inhaltliche Richtigkeit (Textbezug)",
+                "levels": [
+                  "Alle drei Antworten stimmen und beziehen sich klar auf den Text",
+                  "Zwei Antworten korrekt",
+                  "Höchstens eine Antwort korrekt"
+                ]
+              },
+              {
+                "criterion": "Sprachliche Form",
+                "levels": [
+                  "Kurze, verständliche französische Sätze mit korrekter Grundstruktur",
+                  "Verständlich, mit kleineren Fehlern (Akzente, Genus)",
+                  "Nur einzelne Wörter oder unverständlich"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "decision_scenario",
+            "prompt": "Familie Weber möchte ein Haustier. Lis les trois annonces du refuge, puis décide.\n\nBruno : un grand chien. Il aime courir et jouer dehors. Il a besoin d'un grand jardin.\nFélix : un chat calme. Il aime dormir et rester à la maison. Il est parfait pour un appartement.\nKiwi : un oiseau. Il chante très fort le matin.\n\nSituation: Familie Weber wohnt in einer kleinen Wohnung ohne Garten. Frau Weber arbeitet nachts und schläft am Morgen. Welches Tier passt am besten? Schreibe deine Entscheidung und begründe sie mit den Anzeigen (Französisch oder Deutsch).",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Quel animal est le meilleur choix pour la famille Weber : Bruno, Félix ou Kiwi ?"
+            },
+            "response": {
+              "mode": "box",
+              "min_height_mm": 40
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "LES"
+            ],
+            "serves": [
+              {
+                "competence_id": "FS2.US.3.LES.02",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "FS2.US.3.LES.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "answer_key": "Félix (le chat). Textbelege: „un chat calme“, „parfait pour un appartement“, „aime rester à la maison“ → passt zur kleinen Wohnung ohne Garten und zum Ruhebedürfnis. Bruno braucht „un grand jardin“ (nicht vorhanden); Kiwi „chante très fort le matin“ → stört Frau Webers Schlaf am Morgen.",
+            "acceptable_reasoning": "Félix ist die einzige Wahl, die alle drei Bedingungen (kleine Wohnung, kein Garten, Ruhe am Morgen) erfüllt; die Begründung muss mindestens zwei Textbelege nennen. Eine andere Wahl ist nur bei klarer, textbelegter Begründung teilweise akzeptabel.",
+            "watch_outs": [
+              "Evaluieren heißt hier: aus mehreren Texten die passende Option wählen UND mit dem Text belegen — eine Wahl ohne Begründung zählt nicht.",
+              "Distraktor Kiwi ist attraktiv (Vogel = klein), aber „chante très fort le matin“ kollidiert mit „schläft am Morgen“ — dieser Widerspruch ist der Kern der Aufgabe.",
+              "Bruno scheitert an „un grand jardin“ (kein Garten vorhanden)."
+            ],
+            "rubric": [
+              {
+                "criterion": "Begründete Entscheidung",
+                "levels": [
+                  "Wählt Félix und belegt mit mindestens zwei passenden Textstellen",
+                  "Wählt Félix mit einem Textbeleg",
+                  "Wahl ohne tragfähigen Textbezug"
+                ]
+              },
+              {
+                "criterion": "Sprachliche Form",
+                "levels": [
+                  "Verständliche Sätze (Französisch oder Deutsch), Kernwortschatz korrekt",
+                  "Kleinere Fehler, Aussage bleibt klar",
+                  "Unverständlich"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
