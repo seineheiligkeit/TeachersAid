@@ -1,0 +1,669 @@
+{
+  "subject": "Technik und Design",
+  "klasse": 2,
+  "kompetenzbereich": "Entwicklung",
+  "title": "Brücken, die tragen: Wie Konstruktionen Lasten aushalten",
+  "kernfrage": "Warum trägt eine Brücke schwere Lasten, ohne einzustürzen — und wie planst und baust du selbst eine Brücke, die viel aushält?",
+  "body": {
+    "intro": [],
+    "data_figures": [],
+    "assets": [
+      {
+        "id": "abb1",
+        "role": "figure",
+        "generator": "matplotlib:labeled_parts",
+        "spec": {
+          "title": "Brücke von der Seite (Schema)",
+          "show_names": false,
+          "shapes": [
+            {
+              "kind": "region",
+              "points": [
+                [
+                  0,
+                  0.4
+                ],
+                [
+                  12,
+                  0.4
+                ],
+                [
+                  12,
+                  1.0
+                ],
+                [
+                  0,
+                  1.0
+                ]
+              ],
+              "color": "#c7b489"
+            },
+            {
+              "kind": "region",
+              "points": [
+                [
+                  0,
+                  1.0
+                ],
+                [
+                  2.2,
+                  1.0
+                ],
+                [
+                  2.2,
+                  3.4
+                ],
+                [
+                  0,
+                  3.4
+                ]
+              ],
+              "color": "#d8c8a0"
+            },
+            {
+              "kind": "region",
+              "points": [
+                [
+                  9.8,
+                  1.0
+                ],
+                [
+                  12,
+                  1.0
+                ],
+                [
+                  12,
+                  3.4
+                ],
+                [
+                  9.8,
+                  3.4
+                ]
+              ],
+              "color": "#d8c8a0"
+            },
+            {
+              "kind": "region",
+              "points": [
+                [
+                  2.2,
+                  1.0
+                ],
+                [
+                  9.8,
+                  1.0
+                ],
+                [
+                  9.8,
+                  2.6
+                ],
+                [
+                  2.2,
+                  2.6
+                ]
+              ],
+              "color": "#a9c9e0"
+            },
+            {
+              "kind": "region",
+              "points": [
+                [
+                  1.3,
+                  3.4
+                ],
+                [
+                  2.4,
+                  3.4
+                ],
+                [
+                  2.4,
+                  5.0
+                ],
+                [
+                  1.3,
+                  5.0
+                ]
+              ],
+              "color": "#c2c7cc"
+            },
+            {
+              "kind": "region",
+              "points": [
+                [
+                  9.6,
+                  3.4
+                ],
+                [
+                  10.7,
+                  3.4
+                ],
+                [
+                  10.7,
+                  5.0
+                ],
+                [
+                  9.6,
+                  5.0
+                ]
+              ],
+              "color": "#c2c7cc"
+            },
+            {
+              "kind": "region",
+              "points": [
+                [
+                  4.2,
+                  1.0
+                ],
+                [
+                  4.8,
+                  1.0
+                ],
+                [
+                  4.8,
+                  5.0
+                ],
+                [
+                  4.2,
+                  5.0
+                ]
+              ],
+              "color": "#b9bec3"
+            },
+            {
+              "kind": "region",
+              "points": [
+                [
+                  7.2,
+                  1.0
+                ],
+                [
+                  7.8,
+                  1.0
+                ],
+                [
+                  7.8,
+                  5.0
+                ],
+                [
+                  7.2,
+                  5.0
+                ]
+              ],
+              "color": "#b9bec3"
+            },
+            {
+              "kind": "region",
+              "points": [
+                [
+                  2.4,
+                  4.55
+                ],
+                [
+                  9.6,
+                  4.55
+                ],
+                [
+                  9.6,
+                  5.0
+                ],
+                [
+                  2.4,
+                  5.0
+                ]
+              ],
+              "color": "#8a929b"
+            },
+            {
+              "kind": "region",
+              "points": [
+                [
+                  1.9,
+                  5.0
+                ],
+                [
+                  10.1,
+                  5.0
+                ],
+                [
+                  10.1,
+                  5.5
+                ],
+                [
+                  1.9,
+                  5.5
+                ]
+              ],
+              "color": "#6f7883"
+            }
+          ],
+          "parts": [
+            {
+              "at": [
+                3.0,
+                5.25
+              ],
+              "name": "Fahrbahn",
+              "side": "left"
+            },
+            {
+              "at": [
+                8.8,
+                4.78
+              ],
+              "name": "Träger",
+              "side": "right"
+            },
+            {
+              "at": [
+                4.5,
+                2.6
+              ],
+              "name": "Pfeiler",
+              "side": "left"
+            },
+            {
+              "at": [
+                10.15,
+                4.2
+              ],
+              "name": "Widerlager",
+              "side": "right"
+            }
+          ]
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Wie eine Brücke ihre Last trägt",
+        "throughline": "Die Schüler:innen lernen, eine Brücke nicht als Ganzes, sondern als Zusammenspiel von Bauteilen und Kräften zu sehen: Sie benennen die tragenden Teile, unterscheiden Druck und Zug und erkennen an eigenen Versuchen, warum die Form (Profil, Dreieck, Bogen) über die Tragfähigkeit entscheidet — die Grundlage, um im zweiten Teil selbst zu planen und zu bauen.",
+        "talking_points": [
+          "Jede Brücke trägt zwei Lasten: ihr eigenes Gewicht (Eigenlast) und das, was darüberfährt oder -geht (Nutzlast).",
+          "Zwei Kräfte stecken in jeder Konstruktion: Druck (etwas wird zusammengedrückt/gestaucht) und Zug (etwas wird auseinandergezogen/gedehnt). Bei einem in der Mitte belasteten Balken wird die Oberseite gedrückt, die Unterseite gezogen.",
+          "Nicht das Material allein entscheidet, sondern die FORM: ein hochkant gestelltes oder gefaltetes Profil, ein Dreiecksverband (Fachwerk) oder ein Bogen trägt viel mehr als eine flache Platte aus demselben Material.",
+          "Fehlvorstellung: 'mehr Material = stärker'. Oft macht eine klügere Form (Faltung, Dreieck) aus wenig Material eine starke Struktur."
+        ],
+        "extensions": [
+          "Rekordbrücken vergleichen: Wie überspannen echte Hängebrücken über 1000 m? (Recherche, Bezug zu den drei Brückenarten.)",
+          "Lastpfad-Spiel: mit dem Finger den Weg der Last vom Fußgänger über Fahrbahn, Träger und Pfeiler bis in den Boden nachfahren.",
+          "Materialtausch: dieselbe Form (z. B. gefalteter Träger) aus Papier, Karton und dünnem Blech vergleichen."
+        ],
+        "blocks": [
+          {
+            "role": "info",
+            "id": "i1",
+            "kind": "key_fact",
+            "content": "Zwei Kräfte in jeder Brücke: Druck presst ein Bauteil zusammen (es wird gestaucht), Zug zieht es auseinander (es wird gedehnt). Belastest du einen geraden Balken in der Mitte, so wird seine Oberseite zusammengedrückt und seine Unterseite gedehnt. Und jede Brücke trägt immer zwei Lasten: ihr eigenes Gewicht (Eigenlast) und das, was sie benutzt — Menschen, Fahrzeuge, Schnee (Nutzlast). Die Last wandert dabei stets denselben Weg: von der Fahrbahn über die Träger und Pfeiler bis hinunter in den Boden."
+          },
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "table_fill",
+            "prompt": "Die Abbildung zeigt eine einfache Brücke von der Seite. Vier Bauteile sind mit Zahlen markiert. Trage in die Tabelle ein, wie jedes Bauteil heißt und welche Aufgabe es beim Tragen der Last hat.",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Nr.",
+                "Name des Bauteils",
+                "Aufgabe beim Tragen der Last"
+              ],
+              "rows": 4
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "ENT"
+            ],
+            "modality": "printable",
+            "serves": [
+              {
+                "competence_id": "TED.US.2.ENT.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "asset_refs": [
+              "abb1"
+            ],
+            "answer_key": "1 Fahrbahn — die Ebene, über die man geht oder fährt; sie nimmt die Nutzlast auf und gibt sie an die Träger weiter. 2 Träger (Tragbalken) — liegt unter der Fahrbahn und überspannt den Abstand zwischen den Stützen; er trägt die Last zu den Pfeilern und Widerlagern. 3 Pfeiler — eine Stütze in der Mitte; sie leitet die Last senkrecht nach unten in den Boden und verkürzt die freie Spannweite. 4 Widerlager — das Auflager am Ufer/Ende; es nimmt die Brücke am Rand auf und leitet die Last in den Untergrund.",
+            "acceptable_reasoning": "Sinngemäße Namen (z. B. 'Fahrbahnplatte' für Fahrbahn, 'Stütze' für Pfeiler, 'Auflager' für Widerlager) sind richtig, wenn die Aufgabe des Bauteils stimmt.",
+            "watch_outs": [
+              "Pfeiler und Widerlager werden oft verwechselt: der Pfeiler steht in der Mitte (z. B. im Fluss), das Widerlager sitzt am Ende bzw. Ufer.",
+              "Die Aufgabe ('nimmt die Last auf und leitet sie nach unten') ist wichtiger als der genaue Name — auf den Weg der Last achten lassen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Bauteile benannt",
+                "levels": [
+                  "Nur teilweise oder falsch zugeordnet",
+                  "Alle vier Bauteile richtig benannt und zugeordnet"
+                ]
+              },
+              {
+                "criterion": "Aufgabe erklärt",
+                "levels": [
+                  "Aufgabe fehlt oder nur 'hält die Brücke'",
+                  "Aufgabe im Sinne des Lastwegs erklärt (aufnehmen / weiterleiten / nach unten)"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "table_fill",
+            "prompt": "Es gibt verschiedene Brückenarten. Untersuche mithilfe deines Schulbuchs oder einer verlässlichen Internetseite drei davon: die Balkenbrücke, die Bogenbrücke und die Hängebrücke. Trage für jede ein, wie sie ihre Last trägt, und nenne ein echtes Beispiel (eine bekannte Brücke oder einen typischen Einsatzort).",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Brückenart",
+                "Wie trägt sie die Last?",
+                "Echtes Beispiel"
+              ],
+              "rows": 3
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "ENT"
+            ],
+            "modality": "printable",
+            "serves": [
+              {
+                "competence_id": "TED.US.2.ENT.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "Balkenbrücke: ein gerader Träger liegt auf Stützen (Pfeilern/Widerlagern); er trägt die Last durch Biegung und gibt sie an die Stützen weiter — für kurze bis mittlere Abstände (z. B. viele Straßen- und Autobahnbrücken). Bogenbrücke: ein Bogen leitet die Last als Druck entlang der Bogenform zu den Widerlagern an den Enden — sehr tragfähig, oft aus Stein oder Beton (z. B. alte Steinbrücken, römische Bogenbrücken). Hängebrücke: die Fahrbahn hängt an Seilen, die über hohe Pylone gespannt sind; die Seile tragen die Last durch Zug zu den Verankerungen — für sehr große Abstände (z. B. Golden Gate Bridge, große Talbrücken). Wichtig ist die Zuordnung Kraft zu Bauart: Bogen = Druck, Seil = Zug.",
+            "acceptable_reasoning": "Andere echte Beispiele sind richtig, solange die Brückenart und die Art des Lasttragens (Druck im Bogen, Zug im Seil, Biegung/Auflage beim Balken) korrekt beschrieben sind.",
+            "watch_outs": [
+              "Quellen prüfen: eine Werbeseite oder ein Forenbeitrag ist keine verlässliche Quelle — Schulbuch, Lexikon oder offizielle Seiten bevorzugen.",
+              "Häufige Verwechslung: Bei der Hängebrücke tragen die SEILE die Last durch Zug, nicht die Pylone allein; im Bogen wirkt Druck, nicht Zug."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "open_response",
+            "prompt": "Nimm zwei gleiche Blätter Papier. Lege das erste flach über den Spalt zwischen zwei gleich hohen Büchern (etwa 12 cm Abstand) und lege vorsichtig Münzen darauf, bis es durchhängt — zähle sie. Falte das zweite Blatt der Länge nach zu einer Ziehharmonika (mehrere Falten) und lege es genauso über den Spalt; belaste auch dieses und zähle die Münzen. (a) Welches Blatt trägt mehr? (b) Erkläre mit eigenen Worten, warum die Faltung so viel ausmacht, obwohl es dasselbe Papier ist.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 45
+            },
+            "cognitive_level": "apply",
+            "dimensions": [
+              "ENT"
+            ],
+            "modality": "enactive",
+            "serves": [
+              {
+                "competence_id": "TED.US.2.ENT.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "(a) Das gefaltete (ziehharmonikaförmige) Blatt trägt deutlich mehr Münzen als das flache. (b) Durch die Faltung entstehen viele hochkant stehende Stege. Ein hochkant stehendes Profil ist gegen Durchbiegen viel steifer als eine flach liegende Platte — die Höhe des Profils zählt. So trägt dieselbe Menge Papier allein durch die Form viel mehr Last. Dasselbe Prinzip nutzen Wellpappe, Wellblech und Doppel-T-Träger.",
+            "acceptable_reasoning": "Kern: nicht mehr Material, sondern die FORM (die hochkant stehenden Falten, das höhere Profil) macht den Träger steifer und tragfähiger.",
+            "watch_outs": [
+              "Fair testen: gleicher Papiertyp, gleicher Spaltabstand, Münzen gleich verteilt — sonst ist der Vergleich nicht aussagekräftig.",
+              "Fehldeutung 'das gefaltete Papier ist dicker, darum stärker' — es ist dasselbe Blatt mit gleicher Masse; entscheidend ist die Form, nicht mehr Material.",
+              "Vorsicht mit vielen Münzen (können rutschen und fallen) — langsam stapeln."
+            ],
+            "rubric": [
+              {
+                "criterion": "Ergebnis richtig festgehalten",
+                "levels": [
+                  "Kein klares Ergebnis notiert",
+                  "Gefaltetes Blatt als tragfähiger erkannt"
+                ]
+              },
+              {
+                "criterion": "Erklärung über die Form",
+                "levels": [
+                  "Erklärung fehlt oder 'dicker/mehr Material'",
+                  "Steifigkeit auf das hochkant stehende, höhere Profil zurückgeführt"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "true_false_justify",
+            "prompt": "Beurteile die folgenden Aussagen über Brücken und Konstruktionen: Stimmt die Aussage oder nicht? Begründe deine Entscheidung jeweils in einem Satz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Ein Dreieck aus fest verbundenen Stäben lässt sich nicht verschieben, ein Viereck aus denselben Stäben schon.",
+                "Ein zusätzlicher Pfeiler in der Mitte verkürzt die freie Spannweite und macht die Brücke tragfähiger.",
+                "Je mehr Material eine Brücke enthält, desto stärker ist sie immer.",
+                "In einer Bogenbrücke wirkt in erster Linie Zug."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 8
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "ENT"
+            ],
+            "modality": "printable",
+            "serves": [
+              {
+                "competence_id": "TED.US.2.ENT.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "asset_refs": [],
+            "answer_key": "1. Stimmt: Ein Dreieck ist formstabil — durch die drei Seitenlängen liegen seine Winkel fest. Ein Viereck kann sich zum Parallelogramm 'verschieben' (schräg stellen), solange keine Diagonale bzw. kein Dreieck es aussteift. Deshalb bestehen Fachwerke aus Dreiecken. 2. Stimmt: Der Pfeiler teilt die Brücke in zwei kürzere Abschnitte; kürzere Spannweiten biegen sich weniger durch und tragen mehr. 3. Stimmt nicht: Nicht die Menge, sondern die Form und Konstruktion entscheidet — ein gefalteter oder dreieckig ausgesteifter Träger trägt mit wenig Material mehr als eine dicke, ungünstig geformte Platte; zu viel Material erhöht außerdem die Eigenlast. 4. Stimmt nicht: Im Bogen wirkt vor allem Druck; er leitet die Last als Druck zu den Widerlagern. Zug ist typisch für die Seile einer Hängebrücke.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Aussage 1 am besten mit vier bzw. drei durch Musterklammern verbundenen Papierstreifen vorführen — das Viereck 'wackelt', das Dreieck nicht.",
+              "Aussage 3 ist die zentrale Fehlvorstellung 'mehr Material = stärker'. Gegenbeispiel: der gefaltete Papierträger aus der vorigen Aufgabe.",
+              "Aussage 4 prüft Druck gegen Zug: Bogen = Druck, Seil = Zug."
+            ],
+            "rubric": []
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Deine Brücke: planen, bauen, testen",
+        "throughline": "Jetzt werden die Schüler:innen selbst zu Konstrukteur:innen: Sie stellen ihre Brücke zuerst maßstäblich dar, planen den Bauablauf in nachvollziehbaren Schritten und setzen ihn in ein belastbares Modell um, das sie testen und gezielt verbessern — der vollständige kleine Entwurfszyklus vom Maß über den Plan zum getesteten Produkt.",
+        "talking_points": [
+          "Maßstab 1:2 heißt: jede Länge auf dem Papier ist halb so groß wie in Wirklichkeit — aus 30 cm werden 15 cm. Erst den Maßstab festlegen, dann jede Länge umrechnen.",
+          "Ein guter Arbeitsplan macht Reihenfolge und Material für jeden Schritt klar — so kann man ihn nachbauen und Fehler früh erkennen.",
+          "Testen heißt messen und vergleichen: Wie viel trägt die Brücke, und WO gibt sie zuerst nach? Die Schwachstelle zeigt, was zu verbessern ist."
+        ],
+        "extensions": [
+          "Wettbewerb: Welche Gruppe baut mit 20 Spaghetti (oder 3 Blatt Papier) die tragfähigste Brücke über 30 cm?",
+          "Effizienz messen: Modellmasse und getragene Last wiegen und ins Verhältnis setzen (getragene Last je Gramm Modell).",
+          "Zweite Runde: nach dem Test genau EIN gezielter Verbesserungsschritt und erneuter Test — steigt die Tragkraft?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "create_produce",
+            "prompt": "Deine Modellbrücke soll eine Lücke von 30 cm zwischen zwei Tischen überspannen und an der höchsten Stelle 8 cm hoch sein. Zeichne die Brücke von der Seite maßstäblich im Maßstab 1:2 (halb so groß wie in Wirklichkeit) in das Feld. (a) Rechne zuerst aus, wie lang und wie hoch deine Zeichnung wird. (b) Zeichne die Seitenansicht und schreibe die WIRKLICHEN Maße (in cm) an die Brücke.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 95
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "ENT"
+            ],
+            "modality": "printable",
+            "serves": [
+              {
+                "competence_id": "TED.US.2.ENT.05",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "TED.US.2.ENT.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 15,
+            "asset_refs": [],
+            "answer_key": "(a) Im Maßstab 1:2 wird jede Länge halbiert: die 30 cm breite Lücke ergibt 15 cm auf dem Papier, die 8 cm Höhe ergeben 4 cm. (b) Die Seitenansicht ist also etwa 15 cm breit (plus etwas für die Auflager an beiden Enden) und 4 cm hoch; an der Brücke stehen die WIRKLICHEN Maße (30 cm Spannweite, 8 cm Höhe), nicht die Papiermaße. Wer eine Mittelstütze einplant, zeichnet auch deren Höhe halbiert.",
+            "acceptable_reasoning": "Entscheidend ist, dass konsequent jede Länge durch 2 geteilt wird und die eingetragenen Maße die wirklichen Längen angeben; die genaue Brückenform darf frei gewählt sein.",
+            "watch_outs": [
+              "Häufiger Fehler: die Maße gar nicht umrechnen oder nur eine Länge halbieren — im Maßstab 1:2 werden ALLE Längen halbiert (Breite und Höhe).",
+              "An die Zeichnung gehören die wirklichen Maße (30 cm, 8 cm), nicht die gemessenen Papierlängen (15 cm, 4 cm).",
+              "Maßstab 1:2 nicht mit 'doppelt so groß' verwechseln — 1:2 bedeutet verkleinern auf die Hälfte."
+            ],
+            "rubric": [
+              {
+                "criterion": "Maßstab richtig angewendet",
+                "levels": [
+                  "Maße nicht oder falsch umgerechnet",
+                  "Alle Längen korrekt halbiert (30 zu 15, 8 zu 4)"
+                ]
+              },
+              {
+                "criterion": "Bemaßung",
+                "levels": [
+                  "Keine oder falsche Maße eingetragen",
+                  "Wirkliche Maße richtig an der Zeichnung angeschrieben"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "create_produce",
+            "prompt": "Bevor du baust, erstelle einen Arbeitsplan für deine Brücke (Material z. B. 20 Spaghetti und Klebeband, oder 3 Blätter Papier und Kleber). Schreibe die Bauschritte in der richtigen Reihenfolge auf. Notiere zu jedem Schritt kurz, was du tust und welches Material oder Werkzeug du brauchst. Zeichne zu mindestens zwei Schritten eine kleine Skizze daneben.",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Schritt",
+                "Was ich tue (mit kleiner Skizze)",
+                "Material / Werkzeug"
+              ],
+              "rows": 5
+            },
+            "cognitive_level": "create",
+            "dimensions": [
+              "ENT"
+            ],
+            "modality": "printable",
+            "serves": [
+              {
+                "competence_id": "TED.US.2.ENT.04",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "TED.US.2.ENT.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 12,
+            "asset_refs": [],
+            "answer_key": "Ein guter Plan steht in sinnvoller Reihenfolge und ist nachvollziehbar, z. B.: 1) Material zuschneiden und bereitlegen; 2) Dreiecke bzw. gefaltete Träger als tragende Elemente herstellen (Aussteifung!); 3) die zwei Seitenteile bauen; 4) beide Seiten mit Querstreben zu einem stabilen Körper verbinden; 5) die Fahrbahn auflegen und befestigen. Zu jedem Schritt ist Material bzw. Werkzeug genannt (Spaghetti, Klebeband/Kleber, Schere, Lineal). Wichtiger als die genaue Lösung ist, dass tragende Formen (Dreiecke, Faltungen) bewusst eingeplant sind und die Schritte aufeinander aufbauen.",
+            "acceptable_reasoning": "Jeder Plan ist gut, dessen Schritte in sinnvoller Reihenfolge stehen, zu jedem Schritt Material bzw. Werkzeug nennen und der eine tragende Form (Dreieck, Bogen, gefalteter Träger) bewusst vorsieht.",
+            "watch_outs": [
+              "Eine reine Aufzählung ohne Reihenfolge ('kleben, schneiden, fertig') genügt nicht — die Schritte sollen aufeinander aufbauen.",
+              "Die tragende Idee (Dreiecke, Faltung, Bogen) soll schon im Plan auftauchen, nicht erst zufällig beim Bauen entstehen.",
+              "Skizzen dürfen einfach sein; sie sollen die Form zeigen, nicht schön aussehen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Sinnvolle Reihenfolge",
+                "levels": [
+                  "Schritte ungeordnet",
+                  "Schritte bauen nachvollziehbar aufeinander auf"
+                ]
+              },
+              {
+                "criterion": "Material/Werkzeug je Schritt",
+                "levels": [
+                  "Fehlt meist",
+                  "Zu den Schritten passend genannt"
+                ]
+              },
+              {
+                "criterion": "Tragende Form eingeplant",
+                "levels": [
+                  "Keine tragende Form erkennbar",
+                  "Dreieck, Bogen oder Faltung bewusst vorgesehen"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "make_artifact",
+            "prompt": "Baue deine Brücke nach deinem Plan. Teste dann, wie viel sie trägt: Belaste die Mitte langsam (z. B. mit Büchern oder Gewichten), bis sie nachgibt. (a) Wie viel hat deine Brücke getragen? (b) WO hat sie zuerst nachgegeben (die Schwachstelle)? (c) Überlege eine gezielte Verbesserung genau an dieser Stelle, baue sie ein und teste erneut. Beschreibe, was du geändert hast und ob die Brücke danach mehr getragen hat — und begründe, warum deine Änderung hilft.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 70
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "ENT"
+            ],
+            "modality": "enactive",
+            "serves": [
+              {
+                "competence_id": "TED.US.2.ENT.03",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "TED.US.2.ENT.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 20,
+            "asset_refs": [],
+            "answer_key": "Es gibt keine einzige richtige Zahl — bewertet wird das Vorgehen. Erwartet: (a) eine gemessene oder gezählte Tragkraft; (b) eine benannte Schwachstelle (typisch: eine Klebestelle löst sich, ein Träger knickt seitlich weg, die Fahrbahn biegt durch); (c) eine gezielte, zur Schwachstelle passende Verbesserung — z. B. die Knickstelle mit einem zusätzlichen Dreieck oder einer Querstrebe aussteifen, eine Klebeverbindung überlappend verstärken, den Träger höher (hochkant) ausführen — plus ein erneuter Test und eine Begründung, die auf Druck/Zug, Aussteifung oder Profilhöhe Bezug nimmt. Gut ist, wenn die Verbesserung genau dort ansetzt, wo die Brücke nachgegeben hat, und die Wirkung mit einem zweiten Test überprüft wird.",
+            "acceptable_reasoning": "Stark ist die Antwort, wenn die Schwachstelle richtig lokalisiert, die Verbesserung gezielt an dieser Stelle gewählt und mit einem technischen Grund (Aussteifung durch ein Dreieck, stärkere Verbindung, höheres Profil) begründet und durch einen zweiten Test überprüft wird.",
+            "watch_outs": [
+              "Die Verbesserung 'überall mehr Kleber/Material' ist kein gezielter Eingriff — die Änderung soll genau an der Schwachstelle ansetzen.",
+              "Fair vergleichen: gleiche Belastungsart und -stelle vor und nach der Änderung, sonst sagt der zweite Test wenig aus.",
+              "Sicherheit beim Belasten: Gewichte langsam aufbringen, Finger und Füße aus dem Fallbereich, nicht mit dem Gesicht direkt über der Brücke."
+            ],
+            "rubric": [
+              {
+                "criterion": "Schwachstelle erkannt",
+                "levels": [
+                  "Keine klare Schwachstelle benannt",
+                  "Schwachstelle genau lokalisiert"
+                ]
+              },
+              {
+                "criterion": "Gezielte Verbesserung",
+                "levels": [
+                  "Beliebige oder unpassende Änderung",
+                  "Verbesserung passt genau zur Schwachstelle"
+                ]
+              },
+              {
+                "criterion": "Begründung und Nachtest",
+                "levels": [
+                  "Ohne Begründung oder ohne zweiten Test",
+                  "Technisch begründet und mit zweitem Test überprüft"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
