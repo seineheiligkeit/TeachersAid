@@ -1,0 +1,71 @@
+{
+  "id": "c0246.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Entscheide bei jeder Aussage, ob sie stimmt, und begründe kurz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Die Differenz „A ohne B“ liefert denselben Körper wie „B ohne A“.",
+        "Beim Durchschnitt zweier Körper kann ein Körper entstehen, der kleiner ist als jeder der beiden Ausgangskörper.",
+        "Die Vereinigung zweier sich überlappender Körper ist genauso groß wie die beiden Einzelkörper zusammengezählt."
+      ]
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "H1"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GEZ.US.4.TRA.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "1) Falsch — die Reihenfolge zählt: bei „A ohne B“ fehlt B aus A, bei „B ohne A“ fehlt A aus B; das sind verschiedene Körper. 2) Richtig — der Durchschnitt ist nur die Überlappung und daher höchstens so groß wie der kleinere Körper. 3) Falsch — im Überlappungsbereich würde man doppelt zählen; die Vereinigung ist kleiner als die Summe, weil die Überlappung nur einmal zählt.",
+    "acceptable_reasoning": "Die Begründungen sollen auf Reihenfolge (1), „nur der gemeinsame Teil“ (2) und „Überlappung nicht doppelt zählen“ (3) hinauslaufen.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Aussage 3 ist die klassische Falle: das gemeinsame Volumen darf nicht doppelt gezählt werden."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Transformationen von Objekten und Relationen zwischen Objekten (I2)",
+  "competences": [
+    "GEZ.US.4.TRA.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "H1"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0246",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:41+00:00",
+  "updated_at": "2026-07-15T13:55:41+00:00"
+}

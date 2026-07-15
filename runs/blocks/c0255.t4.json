@@ -1,0 +1,76 @@
+{
+  "id": "c0255.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Zerlege 60 und 90 jeweils vollständig in Primfaktoren. Bestimme daraus den ggT (Produkt der gemeinsamen Primfaktoren) und das kgV. Erkläre in einem Satz, warum du für den ggT nur die gemeinsamen Primfaktoren brauchst, für das kgV aber jeden Primfaktor so oft, wie er höchstens vorkommt.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "OPE",
+      "BEG"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.2.ZAH.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "60 = 2 · 2 · 3 · 5 (also 2² · 3 · 5). 90 = 2 · 3 · 3 · 5 (also 2 · 3² · 5). Gemeinsam mit der jeweils kleineren Anzahl: 2 · 3 · 5 = 30, also ggT(60, 90) = 30. Für das kgV jeden Primfaktor mit der größten Anzahl: 2 · 2 · 3 · 3 · 5 = 4 · 9 · 5 = 180, also kgV(60, 90) = 180. Der ggT muss beide Zahlen teilen, deshalb nur die gemeinsamen Faktoren; das kgV muss Vielfaches von beiden sein, deshalb jeder Faktor so oft, wie er in einer der beiden Zahlen höchstens auftritt.",
+    "acceptable_reasoning": "Die Zerlegung darf in beliebiger Reihenfolge oder mit einem Faktorbaum notiert werden; entscheidend sind die richtigen Primfaktoren mit der richtigen Anzahl.",
+    "rubric": [
+      {
+        "criterion": "Primfaktorzerlegung und Ableiten von ggT und kgV",
+        "levels": [
+          "Zerlegung unvollständig oder falsch",
+          "richtige Zerlegung, aber ggT/kgV falsch abgeleitet",
+          "richtige Zerlegung und ggT/kgV korrekt begründet"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Beim ggT die Primfaktoren nur so oft nehmen, wie sie in BEIDEN vorkommen (kleinere Anzahl); beim kgV die größere Anzahl.",
+      "60 wird manchmal unvollständig zerlegt (zum Beispiel 6 · 10 stehen gelassen) – bis zu den Primzahlen weiterzerlegen."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Mathematik",
+  "klasse": 2,
+  "kompetenzbereich": "1: Zahlen und Maße",
+  "competences": [
+    "MAT.US.2.ZAH.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "OPE",
+    "BEG"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0255",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:42+00:00",
+  "updated_at": "2026-07-15T13:55:42+00:00"
+}

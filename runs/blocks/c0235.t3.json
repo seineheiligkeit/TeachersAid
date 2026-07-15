@@ -1,0 +1,96 @@
+{
+  "id": "c0235.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "experiment_protocol",
+    "prompt": "Du gibst gleichzeitig je einen Teebeutel (oder einen Tropfen Tinte) in ein Glas mit kaltem und in ein Glas mit heißem Wasser — ohne umzurühren. Plane diese Untersuchung und protokolliere sie. Halte fest: (a) deine Vermutung mit kurzer Begründung, (b) was du gleich hältst und welche einzige Größe du veränderst, (c) deine erwartete Beobachtung, (d) deine Deutung mit dem Teilchenmodell.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 70.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.US.x.ERK.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "CHE.US.x.ERK.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "(a) Vermutung: Im heißen Wasser verteilt sich die Farbe schneller. Begründung: Wärmere Teilchen bewegen sich schneller. (b) Gleich halten: Wassermenge, Glasgröße, Menge des Teebeutels/der Tinte, kein Umrühren, gleicher Startzeitpunkt. Verändern (einzige Größe): nur die Wassertemperatur. (c) Beobachtung: Im heißen Glas breitet sich die Färbung deutlich schneller und weiter aus als im kalten. (d) Deutung: Die Wasserteilchen sind ständig in Bewegung und stoßen die Farbteilchen umher (Diffusion). Bei höherer Temperatur bewegen sie sich schneller, deshalb vermischt sich die Farbe rascher — ganz ohne Rühren.",
+    "acceptable_reasoning": "Entscheidend ist, dass nur EINE Größe (die Temperatur) verändert und alles andere gleich gehalten wird (faire Untersuchung), und dass die schnellere Durchmischung mit der schnelleren Teilchenbewegung gedeutet wird.",
+    "rubric": [
+      {
+        "criterion": "Faire Untersuchung (nur eine Größe verändert)",
+        "levels": [
+          "Konstant gehaltene Größen und die eine veränderte Größe klar benannt",
+          "Ansatz erkennbar, aber unvollständig",
+          "Variablen nicht getrennt"
+        ]
+      },
+      {
+        "criterion": "Deutung mit dem Teilchenmodell",
+        "levels": [
+          "Schnellere Durchmischung schlüssig auf schnellere Teilchenbewegung zurückgeführt",
+          "Teilweise korrekt",
+          "Keine tragfähige Deutung"
+        ]
+      },
+      {
+        "criterion": "Beobachtung von Deutung getrennt",
+        "levels": [
+          "Klar getrennt",
+          "Ansatzweise",
+          "Vermischt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Häufiger Planungsfehler: mehrere Dinge gleichzeitig verändern (z. B. auch die Wassermenge) — dann lässt sich die Ursache nicht mehr eindeutig zuordnen.",
+      "Fehldeutung: „Das heiße Wasser zieht die Farbe an.“ Es gibt keine Anziehung zur Wärme; die Farbe verteilt sich durch die Eigenbewegung der Teilchen (Diffusion).",
+      "Beobachtung und Deutung trennen: „Es wird schneller braun“ ist die Beobachtung; „die Teilchen bewegen sich schneller“ ist die Deutung."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "experiment_protocol",
+  "subject": "Chemie",
+  "klasse": 4,
+  "kompetenzbereich": "Erkenntnisse gewinnen und interpretieren (E)",
+  "competences": [
+    "CHE.US.x.ERK.02",
+    "CHE.US.x.ERK.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0235",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:38+00:00",
+  "updated_at": "2026-07-15T13:55:38+00:00"
+}

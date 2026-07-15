@@ -1,0 +1,654 @@
+{
+  "id": "c0252",
+  "stage": "content",
+  "status": "pending",
+  "source": "generated",
+  "created_at": "2026-07-15T13:55:42+00:00",
+  "updated_at": "2026-07-15T13:55:42+00:00",
+  "title": "Kunst und Gestaltung 4. Kl. — Ist das wirklich Kunst? — Wenn Alltagsdinge und Handlungen ins Museum kommen (generiert)",
+  "note": "",
+  "request": {
+    "subject": "Kunst und Gestaltung",
+    "klasse": 4,
+    "stufe": "Unterstufe",
+    "schulform": null,
+    "topic_raw": "Ist das wirklich Kunst? — Wenn Alltagsdinge und Handlungen ins Museum kommen",
+    "envelope": "doppelstunde",
+    "options": {},
+    "anchor_mode": "competence",
+    "anchor_uet": null
+  },
+  "resolution": {
+    "fassung": {
+      "kurztitel": "AHS-Lehrplan (konsolidiert)",
+      "bgbl": "BGBl. II Nr. 204/2024",
+      "doknr": "NOR40264237",
+      "valid_from": "2024-09-01",
+      "valid_to": "2026-08-31"
+    },
+    "subject": "Kunst und Gestaltung",
+    "klasse": 4,
+    "matched_kompetenzbereiche": [
+      "Wahrnehmen und Reflektieren"
+    ],
+    "grade_check": true,
+    "competences": [
+      {
+        "id": "KUG.US.4.WAH.01",
+        "kompetenzbereich": "Wahrnehmen und Reflektieren",
+        "klasse": 4,
+        "text": "Genres, Bildmotive, Darstellungsweisen erfassen sowie unterschiedliche Funktionen und Zwecke ausgewählter bildnerischer Gestaltungen unterscheiden und analysieren.",
+        "source_ref": "KUNST UND GESTALTUNG / 4. Klasse / Wahrnehmen und Reflektieren",
+        "dimensions": [
+          "WAH"
+        ],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      },
+      {
+        "id": "KUG.US.4.WAH.02",
+        "kompetenzbereich": "Wahrnehmen und Reflektieren",
+        "klasse": 4,
+        "text": "eigene Arbeiten und jene von Mitschülerinnen und Mitschülern reflektieren und analysieren.",
+        "source_ref": "KUNST UND GESTALTUNG / 4. Klasse / Wahrnehmen und Reflektieren",
+        "dimensions": [
+          "WAH"
+        ],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      },
+      {
+        "id": "KUG.US.4.WAH.03",
+        "kompetenzbereich": "Wahrnehmen und Reflektieren",
+        "klasse": 4,
+        "text": "anhand von Beispielen aus Kunst und Alltagsästhetik Funktionen sowie Bildabsichten und Wirkungen untersuchen und begründet beurteilen sowie komplexe Zusammenhänge herstellen.",
+        "source_ref": "KUNST UND GESTALTUNG / 4. Klasse / Wahrnehmen und Reflektieren",
+        "dimensions": [
+          "WAH"
+        ],
+        "uebergreifende_themen": [],
+        "semester": null,
+        "kompetenzmodul": null,
+        "kind": null
+      }
+    ],
+    "notes": []
+  },
+  "plan": null,
+  "content": {
+    "meta": {
+      "title": "Ist das wirklich Kunst? — Wenn Alltagsdinge und Handlungen ins Museum kommen",
+      "subtitle": "LLM-Entwurf — Erstprüfung",
+      "subject": "Kunst und Gestaltung",
+      "stufe": "Unterstufe",
+      "klasse": 4,
+      "kernfrage": "Wann wird ein ganz gewöhnlicher Gegenstand — oder sogar eine Handlung — zu Kunst, und wer entscheidet das eigentlich?",
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "lehrplan_label": "Kunst und Gestaltung · 4. Klasse · Wahrnehmen und Reflektieren",
+      "content_language": "de",
+      "subject_models": []
+    },
+    "subject_model": {
+      "subject": "Kunst und Gestaltung",
+      "stufe": "Unterstufe",
+      "dimensions": [
+        {
+          "id": "BIL",
+          "label": "Bildnerische Praxis",
+          "note": null,
+          "modality": "enactive"
+        },
+        {
+          "id": "WAH",
+          "label": "Wahrnehmen und Reflektieren",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "BK",
+          "label": "Bildsprachen und Kommunizieren",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "content_areas": [
+        {
+          "id": "BKU",
+          "label": "bildende Kunst",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "GEU",
+          "label": "gestaltete Umwelt",
+          "note": null,
+          "modality": "printable"
+        },
+        {
+          "id": "VIK",
+          "label": "visuelle Kommunikation",
+          "note": null,
+          "modality": "printable"
+        }
+      ],
+      "task_kind_extensions": [
+        "make_artifact",
+        "image_analysis"
+      ]
+    },
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Wenn Alltagsdinge ins Museum kommen",
+        "teacher_overview": {
+          "throughline": "Die Schülerinnen und Schüler erschließen, dass sich der Kunstbegriff im 20. Jahrhundert geöffnet hat: Nicht nur Gemälde und Skulpturen, auch ausgewählte Alltagsgegenstände, Handlungen und ganze Orte können als Kunst gelten. Sie unterscheiden Darstellungsformen (Objektkunst, Performance, Installation) und arbeiten heraus, dass oft die Idee und der Kontext — nicht die handwerkliche Herstellung — das Werk ausmachen.",
+          "talking_points": [
+            "Der Schlüsselgedanke des Ready-made: Nicht das Herstellen, sondern das Auswählen, Benennen und Zeigen macht hier das Kunstwerk aus.",
+            "Kontext verändert Bedeutung: Dasselbe Objekt wirkt auf der Straße anders als auf einem Sockel im Museum.",
+            "Alle Beispiele sind echt und gut belegt (Duchamp 1917, Meret Oppenheim 1936, Christo und Jeanne-Claude 1995, Erwin Wurm) — keine erfundenen Werke."
+          ],
+          "extensions": [
+            "Recherchiert ein aktuelles Beispiel aus einem Museum in eurer Nähe: Gibt es dort Objektkunst, Installationen oder Performances?",
+            "Diskutiert den erweiterten Kunstbegriff: Kann auch ein Alltagshandeln (Kochen, Gärtnern) Kunst sein — und unter welchen Bedingungen?",
+            "Vergleicht ein klassisches Ölgemälde mit einem Ready-made: Welche unterschiedlichen Fragen stellen beide an die Betrachtenden?"
+          ],
+          "differentiation": null,
+          "timing_notes": null
+        },
+        "blocks": [
+          {
+            "id": "i1",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "info",
+            "kind": "prose",
+            "content": "Lange Zeit galt vor allem als Kunst, was gemalt oder gemeißelt war. Vor rund hundert Jahren begannen Künstlerinnen und Künstler, auch **Alltagsgegenstände**, **Handlungen** und ganze **Orte** als Kunst zu zeigen. Damit wurde eine neue Frage wichtig — und sie beschäftigt uns bis heute: **Was macht etwas eigentlich zu Kunst?** In diesem Blatt untersuchst du echte Beispiele und bildest dir ein begründetes Urteil.",
+            "callout_role": null,
+            "teacher_note": null,
+            "watch_outs": [],
+            "numbered": true,
+            "backdrop_asset_ref": null
+          },
+          {
+            "id": "t1",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "matching",
+            "prompt": "Ordne jedes echte Kunstwerk der Darstellungsform zu, die am besten passt. Lies die Kurzbeschreibungen genau.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Marcel Duchamp reichte 1917 ein handelsübliches Urinal — um 90 Grad gedreht und mit „R. Mutt“ signiert — unter dem Titel „Fountain“ bei einer Kunstausstellung ein.",
+                "Meret Oppenheim überzog 1936 eine Tasse, eine Untertasse und einen Löffel vollständig mit Pelz.",
+                "Der österreichische Künstler Erwin Wurm bittet Betrachterinnen und Betrachter, einer kurzen Anweisung zu folgen und für eine Minute mit Alltagsgegenständen eine Pose zu halten.",
+                "Christo und Jeanne-Claude verhüllten 1995 den Berliner Reichstag zwei Wochen lang mit silbrigem Stoff."
+              ],
+              "right": [
+                "Ready-made: ein nahezu unverändert ausgewählter Alltagsgegenstand wird zum Kunstwerk erklärt.",
+                "Objektkunst: ein Alltagsding wird verfremdet und dadurch verwandelt.",
+                "Performance / Aktion: die Handlung selbst ist das Kunstwerk.",
+                "Installation / Intervention: ein ganzer Ort wird für eine Zeit verwandelt."
+              ]
+            },
+            "response": {
+              "mode": "none"
+            },
+            "cognitive_level": "understand",
+            "difficulty": null,
+            "dimensions": [
+              "WAH"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "KUG.US.4.WAH.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "answer_key": "1 → Ready-made (Duchamp wählt das Urinal nur aus und erklärt es zur Kunst). 2 → Objektkunst (Oppenheim verfremdet das Alltagsding durch den Pelz). 3 → Performance/Aktion (bei Erwin Wurm ist die kurze Handlung/Pose das Werk). 4 → Installation/Intervention (Christo und Jeanne-Claude verwandeln einen ganzen Ort, das Gebäude).",
+            "acceptable_reasoning": null,
+            "rubric": [],
+            "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
+            "watch_outs": [
+              "Ready-made und Objektkunst liegen nah beieinander: Beim Ready-made bleibt der Gegenstand nahezu unverändert (nur ausgewählt), bei Oppenheim wird er verfremdet (mit Pelz überzogen).",
+              "Bei Erwin Wurm entsteht kein bleibendes Objekt — das Werk ist die Aktion, die nur eine Minute dauert."
+            ],
+            "self_check": null,
+            "scaffold": null
+          },
+          {
+            "id": "t2",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "image_analysis",
+            "prompt": "Betrachte Duchamps „Fountain“ genauer: Er hat das Urinal nicht selbst hergestellt. Er hat es ausgewählt, gedreht, mit „R. Mutt“ signiert, ihm einen Titel gegeben und es bei einer Ausstellung eingereicht. Untersuche: Wo steckt hier das Kunstwerk — im Gegenstand selbst oder in der Entscheidung, ihn als Kunst zu zeigen? Nenne mindestens zwei Handlungen Duchamps, die aus dem Gebrauchsgegenstand ein Kunstwerk machen sollen.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 5
+            },
+            "cognitive_level": "analyze",
+            "difficulty": null,
+            "dimensions": [
+              "WAH"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "KUG.US.4.WAH.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Das Besondere ist, dass nicht das Herstellen zählt: Duchamp hat den Gegenstand ausgewählt, aus dem Alltag herausgelöst, umgedreht (neue Ansicht), signiert, benannt (Fountain) und in den Kunst-Kontext (Ausstellung) gestellt. Das Kunstwerk liegt daher vor allem in der Idee und der Entscheidung, nicht im Objekt allein. Zwei solcher Handlungen genügen (z. B. Auswählen + Benennen oder Signieren + Einreichen).",
+            "acceptable_reasoning": "Gefordert sind zwei nachvollziehbare Handlungen und die Einsicht, dass Auswahl/Kontext/Idee hier wichtiger sind als das handwerkliche Machen.",
+            "rubric": [],
+            "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
+            "watch_outs": [
+              "Nicht „er hat es schön gemacht“ schreiben — Duchamp hat gerade NICHTS am Objekt handwerklich gestaltet; das ist der Kern.",
+              "Signatur und Titel sind keine Nebensache: Sie verändern den Blick auf den Gegenstand."
+            ],
+            "self_check": null,
+            "scaffold": null
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Wer entscheidet, was Kunst ist?",
+        "teacher_overview": {
+          "throughline": "Die Klasse verschiebt den Blick von „Was ist das?“ zu „Wer erklärt es zur Kunst — und mit welchen Mitteln?“. An klaren Aussagen und einem schulnahen Streitfall wägen die Schülerinnen und Schüler ab und formulieren begründete Urteile statt reiner Geschmacksurteile.",
+          "talking_points": [
+            "Kunststatus ist selten eine Ja/Nein-Frage — er entsteht im Zusammenspiel von Absicht, Kontext und Anerkennung.",
+            "Der Titel als gestalterisches Mittel: Wörter lenken die Wahrnehmung eines Objekts.",
+            "Ein Streit über „ist das Kunst“ ist produktiv, wenn beide Seiten Argumente statt bloßer Geschmacksurteile bringen."
+          ],
+          "extensions": [
+            "Rollenspiel: Museumsdirektorin, Künstler, skeptische Besucherin und Kritiker diskutieren den Fall des ausgestellten Fahrrads.",
+            "Sucht in Zeitungen oder online eine echte Schlagzeile vom Typ „Ist das Kunst?“ und prüft die Argumente beider Seiten."
+          ],
+          "differentiation": null,
+          "timing_notes": null
+        },
+        "blocks": [
+          {
+            "id": "t3",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "true_false_justify",
+            "prompt": "Entscheide für jede Aussage, ob sie richtig oder falsch ist, und begründe deine Entscheidung jeweils in einem Satz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Ein Gegenstand ist automatisch Kunst, sobald er in einem Museum steht.",
+                "Kunst muss von der Künstlerin oder dem Künstler mit der Hand selbst hergestellt sein.",
+                "Ein Titel kann verändern, wie wir einen Gegenstand sehen.",
+                "Ob etwas als Kunst gilt, hängt auch davon ab, wer es zeigt und wer darüber spricht."
+              ]
+            },
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Aussage",
+                "Richtig / Falsch",
+                "Begründung"
+              ],
+              "rows": 4
+            },
+            "cognitive_level": "evaluate",
+            "difficulty": null,
+            "dimensions": [
+              "WAH"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "KUG.US.4.WAH.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "answer_key": "1. FALSCH — der Ort allein macht nichts zur Kunst; entscheidend sind Auswahl, Idee, Kontext und die Zuschreibung durch Künstler:in, Institution und Publikum. 2. FALSCH — Ready-mades und Konzeptkunst zeigen, dass Auswählen, Benennen und Zeigen genügen kann; handwerkliches Herstellen ist nicht zwingend. 3. RICHTIG — ein Titel lenkt Blick und Bedeutung (z. B. Fountain für ein Urinal). 4. RICHTIG — ob etwas als Kunst anerkannt wird, entscheidet sich im Zusammenspiel von Künstler:in, Museum/Galerie, Publikum und Markt.",
+            "acceptable_reasoning": "Aussagen 1 und 2 müssen als FALSCH erkannt werden. Bei 3 und 4 genügt eine knappe, sachlich richtige Begründung.",
+            "rubric": [
+              {
+                "criterion": "Einschätzung",
+                "levels": [
+                  "Alle 4 korrekt bewertet",
+                  "3 von 4 korrekt",
+                  "Weniger als 3 korrekt"
+                ]
+              },
+              {
+                "criterion": "Begründung",
+                "levels": [
+                  "Begründungen sachlich, mit Bezug auf Auswahl/Kontext/Zuschreibung",
+                  "Teils vage oder unvollständig",
+                  "Kaum tragfähige Begründungen"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
+            "watch_outs": [
+              "Aussage 1 verführt zum „richtig“ — das Museum verstärkt eine Zuschreibung, erzeugt sie aber nicht allein.",
+              "Aussage 2 prüft die Kernidee des Ready-made: Nicht das Machen, sondern das Entscheiden kann das Werk sein."
+            ],
+            "self_check": null,
+            "scaffold": null
+          },
+          {
+            "id": "t4",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "decision_scenario",
+            "prompt": "In eurer Schule stellt jemand ein verrostetes, verbogenes Fahrrad aus dem Schulhof in die Aula, auf einen Sockel, mit einem Titelschild: „Stillstand, Nr. 3“. Manche sagen: „Das ist doch kein Kunstwerk!“ Beziehe begründet Stellung: Kann das als Kunst gelten? Wer entscheidet das hier — und was müsste passieren, damit du deine Meinung änderst? Nenne mindestens ein Argument dafür und eines dagegen.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Ein Alltagsgegenstand (das alte Fahrrad) wird ausgewählt, betitelt und im Kontext Ausstellung auf einen Sockel gestellt — genau die Mittel, die auch Duchamp benutzt hat."
+            },
+            "response": {
+              "mode": "box",
+              "min_height_mm": 55.0
+            },
+            "cognitive_level": "evaluate",
+            "difficulty": null,
+            "dimensions": [
+              "WAH"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "KUG.US.4.WAH.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "answer_key": "Eine tragfähige Antwort erkennt, dass hier dieselben Mittel wie beim Ready-made wirken (Auswahl, Titel, Sockel, Ausstellungs-Kontext), und wägt ab. Dafür: Idee und Kontext können ein Alltagsding zum Kunstwerk erklären; der Titel gibt ihm Bedeutung. Dagegen: Ohne erkennbare Absicht und ohne Anerkennung durch Publikum/Institution bleibt es vielleicht bloß ein altes Rad. Wer entscheidet: die ausstellende Person, die Schule als Institution, das mitredende Publikum. Bedingungen für einen Meinungswechsel: eine überzeugende Idee/Absicht, eine Erklärung, Anerkennung durch andere. Es gibt kein einzig richtiges Urteil — die Begründung zählt.",
+            "acceptable_reasoning": "Je ein Argument dafür und dagegen, ein Bezug zu wer entscheidet und eine benannte Bedingung für einen Meinungswechsel genügen. Beide Urteile (ist Kunst / ist keine Kunst) sind zulässig, wenn sie begründet sind.",
+            "rubric": [
+              {
+                "criterion": "Begründete Position",
+                "levels": [
+                  "Klare Position mit Argument dafür UND dagegen",
+                  "Position mit nur einer Seite begründet",
+                  "Position ohne tragfähige Begründung"
+                ]
+              },
+              {
+                "criterion": "Wer entscheidet",
+                "levels": [
+                  "Rolle mehrerer Beteiligter erkannt",
+                  "Eine beteiligte Seite genannt",
+                  "Frage nicht bearbeitet"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
+            "watch_outs": [
+              "„Das ist einfach Müll“ oder „das ist einfach Kunst“ ohne Begründung reicht nicht — der Kern ist die Abwägung.",
+              "Die Frage wer entscheidet nicht übergehen: Kunststatus entsteht im Zusammenspiel mehrerer, nicht durch eine Person allein."
+            ],
+            "self_check": null,
+            "scaffold": null
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "Selbst ausprobieren und beurteilen",
+        "teacher_overview": {
+          "throughline": "Vom Urteilen zum eigenen Tun: Die Schülerinnen und Schüler erproben eine kurze Aktion und einen kuratorischen Text. Indem sie selbst auswählen, benennen und begründen, erfahren sie von innen, wodurch etwas zum Kunstwerk erklärt wird — und reflektieren die eigene Arbeit mit Fachblick.",
+          "talking_points": [
+            "Bei der Ein-Minuten-Skulptur wird spürbar, dass eine Handlung ein Werk sein kann, das keinen bleibenden Gegenstand hinterlässt.",
+            "Der Wandtext übt die Sprache der Vermittlung: erklären, einordnen, zum Nachdenken anregen — und Gegenstimmen zulassen.",
+            "Sicherheit und Respekt gehen bei Körper-Aktionen vor."
+          ],
+          "extensions": [
+            "Fotografiert die Ein-Minuten-Skulpturen (mit Einverständnis) und kuratiert eine kleine Klassen-Ausstellung mit Wandtexten.",
+            "Vergleicht zwei Wandtexte zum selben Werk: Welcher überzeugt mehr und warum?"
+          ],
+          "differentiation": null,
+          "timing_notes": null
+        },
+        "blocks": [
+          {
+            "id": "t5",
+            "optional": false,
+            "modality": "enactive",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "make_artifact",
+            "prompt": "Probiere selbst eine Aktion aus — angelehnt an Erwin Wurms Ein-Minuten-Skulpturen. Schreibe eine kurze, klare Anweisung (zwei bis drei Sätze) für eine Ein-Minuten-Skulptur mit einem Alltagsgegenstand (z. B. Sessel, Buch, Jacke). Führt sie zu zweit aus: Eine oder einer hält die Pose eine Minute, die andere Person beobachtet. Untersucht danach gemeinsam: Was war hier das Kunstwerk — der Gegenstand, deine Haltung, die Anweisung oder der kurze Moment? Halte euer Ergebnis in zwei bis drei Sätzen fest.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "create",
+            "difficulty": null,
+            "dimensions": [
+              "WAH"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "KUG.US.4.WAH.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 12,
+            "answer_key": "Erwartet werden (a) eine klare, ausführbare Anweisung, (b) die tatsächliche Durchführung und (c) eine gemeinsame Reflexion. Gute Reflexionen erkennen, dass das Werk nicht der Gegenstand allein ist, sondern im Zusammenspiel von Anweisung, Körperhaltung und dem kurzen, vergänglichen Moment entsteht — ähnlich wie bei Wurm. Es gibt keine einzige richtige Antwort; die begründete Beobachtung zählt.",
+            "acceptable_reasoning": "Anweisung ausführbar + eine begründete Aussage darüber, was das Werk ausmacht (Handlung/Moment statt bleibendes Objekt).",
+            "rubric": [
+              {
+                "criterion": "Anweisung",
+                "levels": [
+                  "Klar, ausführbar, mit Alltagsgegenstand",
+                  "Grob verständlich",
+                  "Unklar oder nicht ausführbar"
+                ]
+              },
+              {
+                "criterion": "Reflexion",
+                "levels": [
+                  "Erkennt Handlung/Moment als Werk, begründet",
+                  "Ansatz erkennbar, aber vage",
+                  "Keine tragfähige Reflexion"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
+            "watch_outs": [
+              "Es geht nicht um eine möglichst lustige Pose, sondern um die Frage, wodurch die Aktion zur Kunst wird — die Reflexion ist der Kern.",
+              "Respektvoll bleiben: Anweisungen dürfen niemanden bloßstellen oder gefährden.",
+              "Festhalten, dass hier nichts Bleibendes entsteht — das unterscheidet die Aktion vom Gemälde oder der Skulptur."
+            ],
+            "self_check": null,
+            "scaffold": null
+          },
+          {
+            "id": "t6",
+            "optional": false,
+            "modality": "printable",
+            "flags": null,
+            "asset_refs": [],
+            "provenance": null,
+            "role": "task",
+            "kind": "create_produce",
+            "prompt": "Du bist in der Jury eines Museums und sollst eines der Werke von diesem Blatt vorstellen (Duchamps „Fountain“, Oppenheims Pelztasse, Erwin Wurms Ein-Minuten-Skulptur oder Christos und Jeanne-Claudes verhülltem Reichstag). Schreibe einen kurzen Museums-Wandtext (drei bis fünf Sätze), der Besucherinnen und Besuchern erklärt: Warum kann dieses Werk als Kunst gelten, und welche Frage regt es an? Nenne am Ende ein ehrliches Gegenargument — warum manche es NICHT als Kunst sehen.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 60.0
+            },
+            "cognitive_level": "create",
+            "difficulty": null,
+            "dimensions": [
+              "WAH"
+            ],
+            "content_area": null,
+            "serves": [
+              {
+                "competence_id": "KUG.US.4.WAH.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "answer_key": "Ein gelungener Wandtext benennt das Werk korrekt, erklärt verständlich, wodurch es zum Kunstwerk wird (Auswahl, Idee, Verfremdung, Kontext oder Aktion — je nach Werk), formuliert die angeregte Frage (z. B. Was macht etwas zu Kunst?, Wem gehört der öffentliche Raum?) und nennt ein faires Gegenargument (z. B. Es ist ja nur ein Alltagsgegenstand; das könnte jede und jeder). Sachliche Richtigkeit über das gewählte Werk ist Bedingung.",
+            "acceptable_reasoning": "Korrekte Werkangabe + eine nachvollziehbare Begründung des Kunststatus + eine angeregte Frage + ein ehrliches Gegenargument.",
+            "rubric": [
+              {
+                "criterion": "Begründung des Kunststatus",
+                "levels": [
+                  "Klar und werkgerecht begründet",
+                  "Teilweise begründet",
+                  "Kaum begründet"
+                ]
+              },
+              {
+                "criterion": "Angeregte Frage und Gegenargument",
+                "levels": [
+                  "Beide vorhanden und passend",
+                  "Nur eines vorhanden",
+                  "Fehlen weitgehend"
+                ]
+              }
+            ],
+            "solution_steps": [],
+            "solution_paths": [],
+            "solution_asset_refs": [],
+            "watch_outs": [
+              "Keine erfundenen Fakten über das Werk ergänzen — nur nutzen, was auf dem Blatt steht oder gesichert bekannt ist.",
+              "Das Gegenargument nicht vergessen: Ein guter Wandtext nimmt Zweifel ernst, statt sie zu übergehen."
+            ],
+            "self_check": null,
+            "scaffold": null
+          }
+        ]
+      }
+    ],
+    "assets": [],
+    "anchor_mode": "competence",
+    "anchor_uet": null,
+    "theme_asset": null,
+    "nachweis": {
+      "fassung": {
+        "kurztitel": "AHS-Lehrplan (konsolidiert)",
+        "bgbl": "BGBl. II Nr. 204/2024",
+        "doknr": "NOR40264237",
+        "valid_from": "2024-09-01",
+        "valid_to": "2026-08-31"
+      },
+      "anchor_mode": "competence",
+      "anchor_label": "Lehrplan-Kompetenzen",
+      "statement": "Diese Materialien adressieren 3 von 3 verbatim Kompetenzen des Lehrplans, gebunden an BGBl. II Nr. 204/2024 (DokNr NOR40264237).",
+      "competence_coverage": [
+        {
+          "competence_id": "KUG.US.4.WAH.01",
+          "exercised_by": [
+            "t1",
+            "t2"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "KUG.US.4.WAH.02",
+          "exercised_by": [
+            "t5"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        },
+        {
+          "competence_id": "KUG.US.4.WAH.03",
+          "exercised_by": [
+            "t3",
+            "t4",
+            "t6"
+          ],
+          "prerequisite_by": [],
+          "covered": true
+        }
+      ],
+      "gaps": [],
+      "zentrale_konzepte": [
+        "Wahrnehmen und Reflektieren"
+      ],
+      "uebergreifende_themen": []
+    },
+    "depth_profile": {
+      "by_level": {
+        "understand": 1,
+        "analyze": 1,
+        "evaluate": 2,
+        "create": 2
+      },
+      "by_dimension": {
+        "WAH": 6
+      },
+      "by_difficulty": {
+        "1": 1,
+        "2": 1,
+        "3": 4
+      },
+      "minutes_total": 54,
+      "minutes_resource_independent": 54
+    },
+    "mixer_profile": null,
+    "mixer_lint": null,
+    "glossary": [],
+    "rack": null
+  },
+  "artifacts": null,
+  "verify_problems": [],
+  "verify_warnings": [
+    "t3: Schwierigkeit — berechnete Stufe 2 weicht von der hinterlegten Stufe 3 (aus Anforderungsbereich abgeleitet) ab; Aufgabe wirkt einfacher. Einstufung als Prüf-Hinweis überdenken, keine Korrektur (maßgeblich: Textlast, Aufgabentyp)."
+  ],
+  "parent_id": null,
+  "feedback": [],
+  "error": null
+}

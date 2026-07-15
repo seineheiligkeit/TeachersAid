@@ -1,0 +1,89 @@
+{
+  "id": "c0260.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Zeige, dass du den roten Faden verstanden hast: Erstelle eine beschriftete Übersicht (Skizze oder Wortnetz) mit dem Titel „Strom und Bewegung – hin und zurück\", die Elektromotor und Generator gegenüberstellt. Baue mindestens ein Alltagsbeispiel je Richtung ein und erkläre in ein bis zwei Sätzen, warum beide Geräte im Kern gleich aufgebaut sind, aber gegenläufig arbeiten.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 100.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "E",
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.3.ELE.05",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.US.3.ELE.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Erwartet: Beide Richtungen werden sichtbar. Motor-Richtung: elektrische Energie wird zu Bewegung (Beispiel Akkuschrauber, E-Auto-Antrieb, Ventilator); Prinzip: Strom in der Spule und das Feld der Dauermagnete ergeben eine Kraft, die Spule dreht sich, der Kommutator hält die Drehung in Gang. Generator-Richtung: Bewegung wird zu elektrischer Energie (Beispiel Wasserkraftwerk, Fahrraddynamo, Rekuperation beim Bremsen); Prinzip: Dreht man die Spule im Magnetfeld, entsteht eine Spannung (Induktion). Kernaussage: Beide bestehen aus Spule und Magnet; der Motor macht aus Strom Bewegung, der Generator aus Bewegung Strom – gleicher Aufbau, nur in umgekehrter Richtung betrieben.",
+    "acceptable_reasoning": "Beide Richtungen mit Prinzip und je einem Beispiel; gemeinsamer Aufbau (Spule und Magnet), gegenläufige Energiewandlung.",
+    "rubric": [
+      {
+        "criterion": "Fachliche Vollständigkeit",
+        "levels": [
+          "nur eine Richtung dargestellt",
+          "beide Richtungen mit je einem Beispiel",
+          "beide Richtungen, Beispiele UND das gemeinsame Bauprinzip erklärt"
+        ]
+      },
+      {
+        "criterion": "Übersichtlichkeit der Darstellung",
+        "levels": [
+          "unstrukturiert",
+          "erkennbar gegliedert",
+          "klare, beschriftete Gegenüberstellung (Skizze oder Wortnetz)"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Motor und Generator nicht als völlig verschiedene Geräte darstellen – sie sind im Kern gleich aufgebaut und arbeiten nur gegenläufig.",
+      "‚Strom wird verbraucht' ist ungenau: Energie wird gewandelt (elektrisch in Bewegung und zurück), nicht vernichtet (Energieerhaltung)."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Physik",
+  "klasse": 3,
+  "kompetenzbereich": "Elektrizität und Magnetismus",
+  "competences": [
+    "PHY.US.3.ELE.05",
+    "PHY.US.3.ELE.03"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "E",
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0260",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:44+00:00",
+  "updated_at": "2026-07-15T13:55:44+00:00"
+}

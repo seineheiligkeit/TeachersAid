@@ -1,0 +1,88 @@
+{
+  "id": "c0254.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne jedem Konnektor (Verbindungswort) seine deutsche Bedeutung zu.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "et",
+        "sed",
+        "nam",
+        "quod",
+        "itaque",
+        "tamen"
+      ],
+      "right": [
+        "und",
+        "aber",
+        "denn",
+        "weil",
+        "daher / deshalb",
+        "dennoch / trotzdem"
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Konnektor",
+        "Bedeutung"
+      ],
+      "rows": 6
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "SPR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "LAT.US.3.SPR.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 4,
+    "answer_key": "et → und; sed → aber; nam → denn; quod → weil; itaque → daher / deshalb; tamen → dennoch / trotzdem.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "„nam“ heißt „denn“ (nicht „nun“).",
+      "„quod“ heißt hier „weil“ — es kann zwar auch „was/das“ bedeuten, tritt hier aber als Konnektor auf.",
+      "„tamen“ heißt „dennoch/trotzdem“, nicht „daher“ — das ist „itaque“."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Latein",
+  "klasse": 3,
+  "kompetenzbereich": "Sprach- und textbezogene Kompetenzen",
+  "competences": [
+    "LAT.US.3.SPR.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "SPR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0254",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:42+00:00",
+  "updated_at": "2026-07-15T13:55:42+00:00"
+}

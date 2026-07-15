@@ -1,0 +1,80 @@
+{
+  "id": "c0243.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Au refuge des animaux (im Tierheim) gibt es kurze Schilder und Mitteilungen. Ordne jedem französischen Schild (1–4) die richtige deutsche Bedeutung (A–D) zu.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Ne pas donner à manger aux animaux.",
+        "Les chiens doivent rester en laisse.",
+        "Ouvert de 10h à 17h.",
+        "Attention : chat qui dort !"
+      ],
+      "right": [
+        "Hunde müssen an der Leine bleiben.",
+        "Geöffnet von 10 bis 17 Uhr.",
+        "Den Tieren nichts zu fressen geben.",
+        "Vorsicht: Hier schläft eine Katze."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "LES"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS2.US.3.LES.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "1–C (Den Tieren nichts zu fressen geben) | 2–A (Hunde an der Leine) | 3–B (Geöffnet 10–17 Uhr) | 4–D (Vorsicht, schlafende Katze).",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "„Ne pas + Infinitiv“ ist die typische Verbotsform auf Schildern (ne pas donner = nicht geben) — nicht als „nicht geben können“ fehldeuten.",
+      "„en laisse“ (an der Leine) ist idiomatisch — nicht Wort für Wort übersetzen.",
+      "„Ouvert de 10h à 17h“ nutzt Uhrzeit-Kurzschreibung; die Öffnungszeit gezielt entnehmen."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Zweite lebende Fremdsprache",
+  "klasse": 3,
+  "kompetenzbereich": "Lesen",
+  "competences": [
+    "FS2.US.3.LES.01"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "LES"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0243",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:39+00:00",
+  "updated_at": "2026-07-15T13:55:39+00:00"
+}

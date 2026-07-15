@@ -1,0 +1,84 @@
+{
+  "id": "c0260.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "source_critique",
+    "prompt": "Auf einer Webseite ohne Autorenangabe steht: „E-Autos sind zu 100 % klimaneutral, weil aus dem Auspuff nichts herauskommt.\" (a) Was stimmt an der Aussage, was ist zu kurz gedacht? (b) Welche Information fehlt, um den Klimaeffekt wirklich zu beurteilen? (c) Woran erkennst du, ob diese Quelle verlässlich ist? (d) Welche Konsequenz ziehst du für dich, wenn du solche Aussagen im Internet liest?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 8
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.3.ELE.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "(a) Richtig ist: Ein E-Auto stößt beim Fahren vor Ort keine Abgase aus (es hat keinen Auspuff mit Verbrennungsabgasen). Zu kurz gedacht: Ob es ‚klimaneutral' ist, hängt davon ab, WIE der Strom erzeugt wurde (Kohle gegenüber Wind, Wasser, Sonne) und wie viel Energie in Herstellung und Akku steckt. (b) Es fehlen: der Strommix (woher kommt der Strom?), die Herstellung und Entsorgung des Akkus, die gesamte Nutzungsdauer. (c) Verlässlichkeit: Wer betreibt die Seite, gibt es einen Autor? Gibt es Quellen, Belege und ein Datum? Ist die Seite neutral oder will sie etwas verkaufen? Stimmt die Aussage mit unabhängigen, seriösen Quellen überein? Eine anonyme Seite mit einem runden ‚100 %'-Versprechen ohne Belege ist wenig verlässlich. (d) Konsequenz: nicht einer einzelnen anonymen Quelle glauben, sondern mehrere seriöse Quellen vergleichen, bevor ich die Aussage weitergebe oder eine Entscheidung darauf stütze.",
+    "acceptable_reasoning": "Lokale Abgasfreiheit stimmt; die Gesamtbilanz hängt vom Strommix und der Herstellung ab. Quellenkritik über Autor, Belege, Datum, Interesse und Abgleich mit anderen Quellen.",
+    "rubric": [
+      {
+        "criterion": "Differenzierte Sachbewertung",
+        "levels": [
+          "nur zugestimmt oder nur pauschal abgelehnt",
+          "nennt den Strommix ODER die Herstellung",
+          "nennt die lokale Abgasfreiheit UND Strommix/Herstellung als entscheidend"
+        ]
+      },
+      {
+        "criterion": "Quellenkritik",
+        "levels": [
+          "kein Kriterium",
+          "ein Kriterium (zum Beispiel der Autor)",
+          "mehrere: Autor, Belege/Datum, Interesse, Abgleich mit anderen Quellen"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "‚Kein Auspuff' bedeutet nicht automatisch ‚klimaneutral' – entscheidend sind Stromerzeugung und Herstellung.",
+      "Runde ‚100 %'-Versprechen ohne Beleg und ohne Autor sind ein Warnsignal für eine unzuverlässige Quelle."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "source_critique",
+  "subject": "Physik",
+  "klasse": 3,
+  "kompetenzbereich": "Elektrizität und Magnetismus",
+  "competences": [
+    "PHY.US.3.ELE.04"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "W",
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0260",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:44+00:00",
+  "updated_at": "2026-07-15T13:55:44+00:00"
+}

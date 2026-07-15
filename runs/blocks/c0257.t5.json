@@ -1,0 +1,73 @@
+{
+  "id": "c0257.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Richtig oder falsch? Entscheide bei jeder Aussage und begründe deine Entscheidung jeweils in einem Satz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Der Puls wird schneller, wenn im Rhythmus viele kurze Töne vorkommen.",
+        "In einem Marsch liegt die Betonung meist so, dass man gut gleichmäßig dazu gehen kann.",
+        "Ein Walzer steht im Dreiertakt.",
+        "Metrum und Rhythmus sind genau dasselbe."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 8
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "TAN"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MUS.US.2.TAN.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "1 falsch – der Puls bleibt gleich; nur der Rhythmus darüber wird dichter (mehr kurze Töne pro Grundschlag). 2 richtig – der Marsch ist geradtaktig (Zweier-/Vierertakt) mit klarer Betonung, deshalb kann man bequem im Gleichschritt gehen. 3 richtig – der Walzer steht immer im Dreiertakt (schwer–leicht–leicht). 4 falsch – das Metrum ist das gleichmäßige Muster aus betonten und unbetonten Schlägen; der Rhythmus ist die Abfolge langer und kurzer Töne darüber.",
+    "acceptable_reasoning": "Bei Aussage 1 genügt der Kern: Tempo (Puls) und Rhythmus sind unabhängig. Bei 4 genügt, dass Metrum als Betonungsraster und Rhythmus als Tondauern unterschieden werden.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Aussage 1 ist die zentrale Falle: Viele glauben, dichter Rhythmus bedeute schnelleres Tempo. Puls und Rhythmus sind unabhängig.",
+      "Bei Aussage 4 nicht „beides hat mit Zeit zu tun, also gleich“ gelten lassen – gefragt ist der Unterschied Betonungsraster gegenüber Tondauer."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Musik",
+  "klasse": 2,
+  "kompetenzbereich": "Tanzen, Bewegen und Darstellen",
+  "competences": [
+    "MUS.US.2.TAN.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "TAN"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0257",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:42+00:00",
+  "updated_at": "2026-07-15T13:55:42+00:00"
+}

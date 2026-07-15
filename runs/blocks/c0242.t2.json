@@ -1,0 +1,75 @@
+{
+  "id": "c0242.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "ordering",
+    "prompt": "These sentences tell the story of a school trip, but they are mixed up. Put them in the correct order (1 = first, 5 = last). The time words (First, Then, ...) will help you.",
+    "payload": {
+      "kind": "ordering",
+      "items": [
+        "A — Then we took the bus to the science museum.",
+        "B — Finally, we came back to school at four o'clock, tired but happy.",
+        "C — First, we all met at the school at eight o'clock.",
+        "D — After lunch, we watched a short film about space.",
+        "E — At the museum, we saw a huge dinosaur skeleton."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "SCH"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS1.US.3.SCH.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Correct order: C, A, E, D, B (1 = C 'First ... met'; 2 = A 'Then ... bus'; 3 = E 'At the museum ... skeleton'; 4 = D 'After lunch ... film'; 5 = B 'Finally ... back to school').",
+    "acceptable_reasoning": "Die Signalwörter machen die Reihenfolge eindeutig: First, Then, At the museum, After lunch, Finally.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Zeit-Signalwörter sind der Schlüssel — vor dem Ordnen markieren lassen.",
+      "Alle Sätze stehen in der Vergangenheit (met, took, saw, watched, came) — nebenbei die Formen sichern.",
+      "After lunch vor Finally ist die häufigste Verwechslung; die Uhrzeiten (eight o clock ... four o clock) helfen zusätzlich."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "ordering",
+  "subject": "Erste lebende Fremdsprache",
+  "klasse": 3,
+  "kompetenzbereich": "Schreiben",
+  "competences": [
+    "FS1.US.3.SCH.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "SCH"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0242",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:39+00:00",
+  "updated_at": "2026-07-15T13:55:39+00:00"
+}

@@ -1,0 +1,89 @@
+{
+  "id": "c0259.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "source_critique",
+    "prompt": "In einem Internet-Forum liest du: „Die Mondphasen entstehen, weil die Erde ihren Schatten auf den Mond wirft. Ein Halbmond ist also ein zur Hälfte vom Erdschatten verdeckter Mond.\" Prüfe diese Behauptung. (a) Ist sie richtig oder falsch? (b) Widerlege oder bestätige sie mit dem richtigen Modell und nenne mindestens ein Gegenargument aus deiner eigenen Himmelsbeobachtung. (c) Bei welchem Ereignis wirft die Erde tatsächlich ihren Schatten auf den Mond? (d) Woran erkennst du, ob eine solche Quelle verlässlich ist?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 7
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "E",
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.2.SEH.04",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.US.2.SEH.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "(a) Falsch. (b) Mondphasen entstehen dadurch, welchen Teil der von der Sonne beleuchteten Mondhälfte wir gerade sehen – je nach Stellung von Sonne, Erde und Mond. Gegenargumente gegen den Erdschatten: (1) Die schmale Mondsichel steht am Abend nahe bei der Sonne; der Erdschatten zeigt aber immer von der Sonne WEG und kann dort gar nicht auf dem Mond liegen. (2) Der Erdschatten erreicht den Mond nur bei Vollmond – und das ist selten (dann gibt es eine Mondfinsternis). (c) Nur bei einer Mondfinsternis (Vollmond, Erde zwischen Sonne und Mond) fällt der Erdschatten auf den Mond. (d) Verlässlichkeit prüfen: Wer hat es geschrieben (Fachleute, zum Beispiel Sternwarte oder Universität)? Gibt es nachvollziehbare Belege oder Quellen? Stimmt die Aussage mit anderen verlässlichen Quellen überein? Ein anonymer Forenbeitrag ohne Belege ist wenig verlässlich.",
+    "acceptable_reasoning": "Zentrale Widerlegung: Phasen zeigen den sichtbaren Teil der beleuchteten Hälfte, nicht den Erdschatten; der Erdschatten trifft den Mond nur bei der Mondfinsternis. Quellenkritik über Autor, Belege und Abgleich mit anderen Quellen.",
+    "rubric": [
+      {
+        "criterion": "Fachliche Widerlegung",
+        "levels": [
+          "nennt nur ‚falsch' ohne Begründung",
+          "widerlegt mit dem Beleuchtungsmodell",
+          "widerlegt mit dem Modell UND einem eigenen Beobachtungsargument, klar abgegrenzt gegen die Mondfinsternis"
+        ]
+      },
+      {
+        "criterion": "Quellenbewertung",
+        "levels": [
+          "kein Kriterium genannt",
+          "ein sinnvolles Kriterium (zum Beispiel der Autor)",
+          "mehrere Kriterien: Autor, Belege, Abgleich mit anderen Quellen"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Die Mondfinsternis (Erdschatten auf dem Mond) NICHT als Erklärung für die alltäglichen Mondphasen benutzen – genau das ist der Denkfehler.",
+      "‚Klingt plausibel' ist kein Verlässlichkeitskriterium – es zählen Autor, Belege und Übereinstimmung mit anderen Quellen."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "source_critique",
+  "subject": "Physik",
+  "klasse": 2,
+  "kompetenzbereich": "Sehen und Hören",
+  "competences": [
+    "PHY.US.2.SEH.04",
+    "PHY.US.2.SEH.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "E",
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0259",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:43+00:00",
+  "updated_at": "2026-07-15T13:55:43+00:00"
+}

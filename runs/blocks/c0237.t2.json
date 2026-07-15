@@ -1,0 +1,82 @@
+{
+  "id": "c0237.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "multiple_choice",
+    "prompt": "Eine Stellungnahme beginnt mit einer Behauptung: einer Meinung, über die man streiten kann. Welcher Satz ist eine solche Behauptung — und nicht bloß eine Tatsache oder eine Frage?",
+    "payload": {
+      "kind": "multiple_choice",
+      "options": [
+        "Unsere Schule hat vier Stockwerke.",
+        "In der großen Pause sollte der Schulhof für alle geöffnet sein.",
+        "Wann beginnt die zweite Pause?",
+        "Gestern hat es in der Früh geregnet."
+      ],
+      "select": "one"
+    },
+    "response": {
+      "mode": "choices",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "select": "one"
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "SCH",
+      "SPR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DEU.US.4.SCH.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "B. „In der großen Pause sollte der Schulhof für alle geöffnet sein.“ ist eine strittige Meinung, über die man verschiedener Ansicht sein kann und die man begründen muss. A und D sind überprüfbare Tatsachen (wahr oder falsch, kein Streit), C ist eine Frage — sie behauptet nichts.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Häufig wird eine Tatsache für eine Behauptung gehalten: Test — kann man ihr WIDERSPRECHEN und müsste man sie BEGRÜNDEN? Nur dann ist es eine Behauptung.",
+      "Das Wort „sollte“ (Forderung/Wertung) ist ein gutes Erkennungszeichen für eine Behauptung."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "multiple_choice",
+  "subject": "Deutsch",
+  "klasse": 4,
+  "kompetenzbereich": "Schreiben",
+  "competences": [
+    "DEU.US.4.SCH.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "SCH",
+    "SPR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0237",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:38+00:00",
+  "updated_at": "2026-07-15T13:55:38+00:00"
+}

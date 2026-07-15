@@ -1,0 +1,77 @@
+{
+  "id": "c0240.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Dein Smartphone ist drei Jahre alt und funktioniert, aber der Akku hält kaum noch einen halben Tag. Eine Freundin sagt: „Kauf dir das neueste Modell!“ Eine Werbung verspricht dir dazu einen Rabatt. Wäge ab: neuer Akku (Reparatur) oder neues Gerät? Triff eine Entscheidung und begründe sie mit Blick auf deinen Bedarf UND auf die Umwelt.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Alter Akku – reparieren oder neu kaufen?"
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "G"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DGB.US.3.HAN.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "Eine gut begründete Antwort erkennt: Wenn nur der Akku schwach ist und das Gerät sonst reicht, ist der Akkutausch meist die umweltfreundlichere und günstigere Wahl – sie spart die Rohstoffe und die Herstellungs-Energie eines ganzen neuen Geräts und vermeidet Elektroschrott. Ein Neukauf ist eher sinnvoll, wenn das Gerät keine Sicherheits-Updates mehr bekommt oder wirklich nicht mehr ausreicht. Werbung und Gruppendruck ('neuestes Modell') sind KEIN sachliches Argument. Beide Entscheidungen sind gültig, wenn Bedarf und Umweltfolgen abgewogen werden.",
+    "acceptable_reasoning": "Es gibt keine einzige richtige Wahl – bewertet wird das Abwägen von tatsächlichem Bedarf gegen den ökologischen Preis (Rohstoffe, Herstellung, Elektroschrott) und das Durchschauen von Werbung/Gruppendruck.",
+    "rubric": [
+      {
+        "criterion": "Abwägung Bedarf und Umwelt",
+        "levels": [
+          "entscheidet ohne Begründung oder nur nach Werbung",
+          "nennt einen Aspekt (Bedarf ODER Umwelt)",
+          "wägt Bedarf UND Umweltfolgen ab und begründet die Entscheidung"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "'Neu ist immer besser' ungeprüft übernehmen – Werbung ist kein sachlicher Grund.",
+      "Nur den Preis betrachten und die Umweltfolgen (Rohstoffe, Elektroschrott) vergessen."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Digitale Grundbildung",
+  "klasse": 3,
+  "kompetenzbereich": "Handeln: Angebote und Handlungsmöglichkeiten in einer von Digitalisierung geprägten Welt einschätzen und verantwortungsvoll nutzen",
+  "competences": [
+    "DGB.US.3.HAN.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "G"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0240",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:39+00:00",
+  "updated_at": "2026-07-15T13:55:39+00:00"
+}

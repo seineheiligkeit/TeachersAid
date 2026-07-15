@@ -1,0 +1,80 @@
+{
+  "id": "c0241.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "multiple_choice",
+    "prompt": "Choose the best answer. What is the main purpose of this text?",
+    "payload": {
+      "kind": "multiple_choice",
+      "options": [
+        "A — to tell a story about a summer holiday",
+        "B — to invite young people to a sports camp and give them the important details",
+        "C — to explain the rules of football and basketball",
+        "D — to advertise a restaurant near the train station"
+      ],
+      "select": "one"
+    },
+    "response": {
+      "mode": "choices",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "select": "one"
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "LES"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS1.US.2.LES.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "B — the text is a flyer that invites young people to join the camp and gives the key details (dates, place, cost, what to bring, how to join).",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Distraktor D greift ein echtes Detail auf (Green Street / train station), meint aber ein Restaurant — wer nur nach bekannten Wörtern sucht, wählt es leicht.",
+      "Es geht um die GESAMT-Aussage (Textsorte und Zweck), nicht um ein Einzeldetail — kurz besprechen, woran man einen Flyer erkennt (Überschrift, fett, Aufzählungen, \"How to join\")."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "multiple_choice",
+  "subject": "Erste lebende Fremdsprache",
+  "klasse": 2,
+  "kompetenzbereich": "Lesen",
+  "competences": [
+    "FS1.US.2.LES.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "LES"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0241",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:39+00:00",
+  "updated_at": "2026-07-15T13:55:39+00:00"
+}

@@ -1,0 +1,85 @@
+{
+  "id": "c0233.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Lies die Situation. Entscheide, welche Vorführung nach den Kriterien Synchronität, Körperspannung und Ausdruck insgesamt gelungener ist, und begründe deine Entscheidung mit diesen Kriterien.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Zwei Teams zeigen eine kurze Bewegungsfolge aus Turnen und Tanz. Team A turnt sehr synchron, aber langsam und ohne klare Körperspannung. Team B zeigt viel Körperspannung und Ausdruck, patzt aber zweimal im Takt."
+    },
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "FAC"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BUS.US.4.FAC.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Beide Teams haben Stärken und Schwächen: Team A überzeugt bei Synchronität, verliert bei Körperspannung und Ausdruck; Team B umgekehrt. Gewertet wird nicht die „richtige“ Wahl, sondern eine Entscheidung, die klar auf allen drei Kriterien abwägt und begründet.",
+    "acceptable_reasoning": "Beide Entscheidungen sind vertretbar, solange sie an den drei Kriterien abgewogen werden – nicht die Wahl, sondern die kriterienbezogene Begründung zählt.",
+    "rubric": [
+      {
+        "criterion": "Kriterienbezug",
+        "levels": [
+          "nennt kein Kriterium",
+          "nennt ein Kriterium",
+          "wägt mit allen drei Kriterien ab"
+        ]
+      },
+      {
+        "criterion": "Begründung",
+        "levels": [
+          "nur Behauptung",
+          "teilweise begründet",
+          "klar und nachvollziehbar begründet"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Bewertung nach Sympathie statt nach Kriterien („hat mir besser gefallen“).",
+      "Nur ein Kriterium betrachten und die anderen weglassen."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Bewegung und Sport",
+  "klasse": 4,
+  "kompetenzbereich": "Fachkompetenz",
+  "competences": [
+    "BUS.US.4.FAC.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "FAC"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0233",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:38+00:00",
+  "updated_at": "2026-07-15T13:55:38+00:00"
+}

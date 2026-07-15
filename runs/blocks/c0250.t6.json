@@ -1,0 +1,94 @@
+{
+  "id": "c0250.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Entscheide für jede Aussage, ob sie richtig oder falsch ist, und begründe deine Entscheidung jeweils in einem Satz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Wenn ich Verpackungen richtig trenne, lassen sich die Wertstoffe leichter wiederverwerten.",
+        "Recycling macht Rohstoffe unbegrenzt verfügbar, deshalb muss man Abfall nicht vermeiden.",
+        "Auch Wiederverwenden – etwa eine Mehrwegflasche – spart Rohstoffe, nicht nur das Recyceln."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "Richtig / Falsch",
+        "Begründung"
+      ],
+      "rows": 3
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.2.NAC.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1. RICHTIG – Sauber getrennte Verpackungen lassen sich leichter und in besserer Qualität zu neuen Produkten verarbeiten. 2. FALSCH – Recycling hat Verluste und Grenzen (nicht jedes Material beliebig oft, es kostet Energie); deshalb steht Vermeiden an erster Stelle. 3. RICHTIG – Auch Wiederverwenden (z. B. eine Mehrwegflasche) spart Rohstoffe, weil das Produkt ohne Einschmelzen erneut genutzt wird.",
+    "acceptable_reasoning": "Aussage 2 muss als FALSCH erkannt werden; Begründung: Recycling macht Rohstoffe nicht unbegrenzt.",
+    "rubric": [
+      {
+        "criterion": "Einschätzung",
+        "levels": [
+          "Alle 3 korrekt bewertet",
+          "2 von 3 korrekt",
+          "Weniger als 2 korrekt"
+        ]
+      },
+      {
+        "criterion": "Begründung",
+        "levels": [
+          "Alle Begründungen sachlich tragfähig",
+          "Teils vage",
+          "Kaum tragfähige Begründungen"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Aussage 2 ist die Kernfalle: Recycling ersetzt nicht das Vermeiden.",
+      "Keine bloßen „richtig/falsch“ ohne Begründung akzeptieren."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 2,
+  "kompetenzbereich": "Nachhaltiger Umgang mit Energie und Ressourcen",
+  "competences": [
+    "GWB.US.2.NAC.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0250",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:42+00:00",
+  "updated_at": "2026-07-15T13:55:42+00:00"
+}

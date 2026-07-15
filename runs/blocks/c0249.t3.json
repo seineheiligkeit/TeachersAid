@@ -1,0 +1,72 @@
+{
+  "id": "c0249.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Berechne die Teuerung in Prozent. Die folgenden Preise sind erfundene Übungswerte. Verwende die Formel: Teuerung (%) = (neuer Preis − alter Preis) ÷ alter Preis × 100.\nWaren: Kinokarte 8,00 € → 11,00 € · Semmel 0,40 € → 0,50 € · Butter (250 g) 1,20 € → 2,40 € · Straßenbahnticket 2,00 € → 2,40 €.",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Ware",
+        "alter Preis",
+        "neuer Preis",
+        "Teuerung in %"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "OK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.ENT.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Kinokarte: (11,00 − 8,00) ÷ 8,00 × 100 = +37,5 % · Semmel: (0,50 − 0,40) ÷ 0,40 × 100 = +25 % · Butter: (2,40 − 1,20) ÷ 1,20 × 100 = +100 % (Verdopplung) · Straßenbahnticket: (2,40 − 2,00) ÷ 2,00 × 100 = +20 %.",
+    "acceptable_reasoning": "Kleine Rundungen sind in Ordnung. Wichtig ist, dass durch den ALTEN Preis geteilt und mit 100 multipliziert wird.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Typischer Fehler: durch den neuen statt durch den alten Preis teilen.",
+      "Die Multiplikation mit 100 nicht vergessen (sonst 0,375 statt 37,5 %).",
+      "+100 % bedeutet „doppelt so teuer“, nicht „100 Euro teurer“ – Prozent und Euro trennen."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Entwicklungen am Wirtschaftsstandort Österreich",
+  "competences": [
+    "GWB.US.3.ENT.04"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "OK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0249",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:42+00:00",
+  "updated_at": "2026-07-15T13:55:42+00:00"
+}

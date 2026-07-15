@@ -1,0 +1,86 @@
+{
+  "id": "c0261.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Deine Modellbrücke soll eine Lücke von 30 cm zwischen zwei Tischen überspannen und an der höchsten Stelle 8 cm hoch sein. Zeichne die Brücke von der Seite maßstäblich im Maßstab 1:2 (halb so groß wie in Wirklichkeit) in das Feld. (a) Rechne zuerst aus, wie lang und wie hoch deine Zeichnung wird. (b) Zeichne die Seitenansicht und schreibe die WIRKLICHEN Maße (in cm) an die Brücke.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 95.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "ENT"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "TED.US.2.ENT.05",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "TED.US.2.ENT.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 15,
+    "answer_key": "(a) Im Maßstab 1:2 wird jede Länge halbiert: die 30 cm breite Lücke ergibt 15 cm auf dem Papier, die 8 cm Höhe ergeben 4 cm. (b) Die Seitenansicht ist also etwa 15 cm breit (plus etwas für die Auflager an beiden Enden) und 4 cm hoch; an der Brücke stehen die WIRKLICHEN Maße (30 cm Spannweite, 8 cm Höhe), nicht die Papiermaße. Wer eine Mittelstütze einplant, zeichnet auch deren Höhe halbiert.",
+    "acceptable_reasoning": "Entscheidend ist, dass konsequent jede Länge durch 2 geteilt wird und die eingetragenen Maße die wirklichen Längen angeben; die genaue Brückenform darf frei gewählt sein.",
+    "rubric": [
+      {
+        "criterion": "Maßstab richtig angewendet",
+        "levels": [
+          "Maße nicht oder falsch umgerechnet",
+          "Alle Längen korrekt halbiert (30 zu 15, 8 zu 4)"
+        ]
+      },
+      {
+        "criterion": "Bemaßung",
+        "levels": [
+          "Keine oder falsche Maße eingetragen",
+          "Wirkliche Maße richtig an der Zeichnung angeschrieben"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Häufiger Fehler: die Maße gar nicht umrechnen oder nur eine Länge halbieren — im Maßstab 1:2 werden ALLE Längen halbiert (Breite und Höhe).",
+      "An die Zeichnung gehören die wirklichen Maße (30 cm, 8 cm), nicht die gemessenen Papierlängen (15 cm, 4 cm).",
+      "Maßstab 1:2 nicht mit 'doppelt so groß' verwechseln — 1:2 bedeutet verkleinern auf die Hälfte."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Technik und Design",
+  "klasse": 2,
+  "kompetenzbereich": "Entwicklung",
+  "competences": [
+    "TED.US.2.ENT.05",
+    "TED.US.2.ENT.04"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "ENT"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0261",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:44+00:00",
+  "updated_at": "2026-07-15T13:55:44+00:00"
+}

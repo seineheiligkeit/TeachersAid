@@ -1,0 +1,102 @@
+{
+  "id": "c0258.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Du bist Filmkomponistin oder Filmkomponist. Plane die Musik für eine kurze Szene in zwei Teilen: Teil 1 – ein Kind läuft nachts allein durch einen dunklen Wald; Teil 2 – der Wald lichtet sich und die Sonne geht auf. Entscheide für jeden Teil, welche Mittel du einsetzt (Tempo, Dynamik, Instrumente/Klangfarbe, Dur oder Moll) und welche Wirkung du erzielen willst. Trage deinen Plan in die Tabelle ein. Zusatz (freiwillig): Erzeugt in der Gruppe mit Stimme, Körper und Alltagsgegenständen einen kurzen Soundscape zu einem der beiden Teile und führt ihn vor.",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Szenenteil",
+        "Tempo & Dynamik",
+        "Instrumente / Klangfarbe",
+        "Dur oder Moll",
+        "gewünschte Wirkung"
+      ],
+      "rows": 2
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "HOR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MUS.US.3.HOR.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "MUS.US.3.HOR.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Sinnvoll ist ein deutlicher Kontrast zwischen den Teilen. Teil 1 (dunkler Wald): langsames Tempo, leise bis anschwellende Dynamik, tiefe und dunkle Klangfarben (z. B. tiefe Streicher, einzelne Paukenschläge), eher Moll – Wirkung: unheimlich, angespannt. Teil 2 (Sonnenaufgang): allmählich schneller und lauter werdend, hellere Klangfarben (z. B. Flöte, hohe Streicher, Harfe), Wechsel nach Dur – Wirkung: erleichternd, warm, hoffnungsvoll. Der Wechsel von Moll und dunkel zu Dur und hell trägt die Wende der Szene.",
+    "acceptable_reasoning": "Viele Lösungen sind richtig. Entscheidend ist, dass die gewählten Mittel zur beschriebenen Wirkung passen und die beiden Teile klar kontrastieren (dunkel/unheimlich gegenüber hell/erleichternd).",
+    "rubric": [
+      {
+        "criterion": "Musikalische Mittel passen zur gewünschten Wirkung",
+        "levels": [
+          "Mittel und Wirkung passen nicht zusammen",
+          "teilweise stimmig",
+          "durchgehend stimmig begründet"
+        ]
+      },
+      {
+        "criterion": "Kontrast zwischen Teil 1 und Teil 2",
+        "levels": [
+          "kaum Unterschied",
+          "erkennbarer Unterschied",
+          "klarer, gestalteter Kontrast (z. B. Moll zu Dur, dunkel zu hell)"
+        ]
+      },
+      {
+        "criterion": "Fachvokabular verwendet (Tempo, Dynamik, Klangfarbe, Dur/Moll)",
+        "levels": [
+          "kaum Fachbegriffe",
+          "einige Fachbegriffe",
+          "durchgehend passende Fachbegriffe"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Häufige Lücke: Beide Teile klingen gleich – der Reiz liegt im Kontrast zwischen Teil 1 und Teil 2.",
+      "Ein Mittel ohne Wirkung („viele Instrumente“) genügt nicht – jedes Mittel soll eine beabsichtigte Wirkung haben."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Musik",
+  "klasse": 3,
+  "kompetenzbereich": "Hören und Erfassen",
+  "competences": [
+    "MUS.US.3.HOR.01",
+    "MUS.US.3.HOR.02"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "HOR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0258",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:42+00:00",
+  "updated_at": "2026-07-15T13:55:42+00:00"
+}

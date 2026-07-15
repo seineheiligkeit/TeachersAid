@@ -1,0 +1,81 @@
+{
+  "id": "c0256.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "modelling_task",
+    "prompt": "Zwei Verleihstationen bieten E-Scooter an. Station A verlangt 5 Euro Grundgebühr und zusätzlich 0,10 Euro pro Minute. Station B verlangt 2 Euro Grundgebühr und 0,20 Euro pro Minute. (a) Stelle für jede Station eine Gleichung für die Kosten y (in Euro) bei x Minuten Fahrzeit auf. (b) Bei welcher Fahrzeit kosten beide Stationen gleich viel? Löse durch Gleichsetzen. (c) Welche Station ist für eine Fahrt von 40 Minuten günstiger?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "MOD",
+      "OPE"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.4.VAR.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "MAT.US.4.VAR.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "(a) A: y = 5 + 0,10 · x;  B: y = 2 + 0,20 · x. (b) Gleichsetzen: 5 + 0,10 · x = 2 + 0,20 · x. Das ergibt 5 - 2 = 0,20 · x - 0,10 · x, also 3 = 0,10 · x und damit x = 30. Nach 30 Minuten kosten beide gleich viel, nämlich y = 5 + 0,10 · 30 = 8 Euro. (c) Für 40 Minuten: A kostet 5 + 0,10 · 40 = 9 Euro, B kostet 2 + 0,20 · 40 = 10 Euro. Also ist Station A günstiger. Ab 30 Minuten lohnt sich Station A.",
+    "acceptable_reasoning": "Auch das Lösen über eine Wertetabelle mit anschließender Bestätigung ist zulässig, solange x = 30 Minuten und y = 8 Euro klar begründet werden.",
+    "rubric": [
+      {
+        "criterion": "Modellieren und Lösen des Kostenvergleichs",
+        "levels": [
+          "Gleichungen fehlerhaft aufgestellt",
+          "Gleichungen korrekt, Lösung fehlerhaft",
+          "Gleichungen korrekt aufgestellt, Schnittpunkt richtig berechnet und gedeutet"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Grundgebühr (fester Betrag) und Minutenpreis (mal x) nicht vertauschen – der feste Betrag steht ohne x.",
+      "Sorgfältig mit Dezimalzahlen rechnen und die Einheiten (Euro, Minuten) mitführen."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "modelling_task",
+  "subject": "Mathematik",
+  "klasse": 4,
+  "kompetenzbereich": "2: Variablen und Funktionen",
+  "competences": [
+    "MAT.US.4.VAR.01",
+    "MAT.US.4.VAR.04"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "MOD",
+    "OPE"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0256",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:42+00:00",
+  "updated_at": "2026-07-15T13:55:42+00:00"
+}

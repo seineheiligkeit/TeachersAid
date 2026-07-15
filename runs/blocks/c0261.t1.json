@@ -1,0 +1,364 @@
+{
+  "id": "c0261.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Die Abbildung zeigt eine einfache Brücke von der Seite. Vier Bauteile sind mit Zahlen markiert. Trage in die Tabelle ein, wie jedes Bauteil heißt und welche Aufgabe es beim Tragen der Last hat.",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Nr.",
+        "Name des Bauteils",
+        "Aufgabe beim Tragen der Last"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "ENT"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "TED.US.2.ENT.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1 Fahrbahn — die Ebene, über die man geht oder fährt; sie nimmt die Nutzlast auf und gibt sie an die Träger weiter. 2 Träger (Tragbalken) — liegt unter der Fahrbahn und überspannt den Abstand zwischen den Stützen; er trägt die Last zu den Pfeilern und Widerlagern. 3 Pfeiler — eine Stütze in der Mitte; sie leitet die Last senkrecht nach unten in den Boden und verkürzt die freie Spannweite. 4 Widerlager — das Auflager am Ufer/Ende; es nimmt die Brücke am Rand auf und leitet die Last in den Untergrund.",
+    "acceptable_reasoning": "Sinngemäße Namen (z. B. 'Fahrbahnplatte' für Fahrbahn, 'Stütze' für Pfeiler, 'Auflager' für Widerlager) sind richtig, wenn die Aufgabe des Bauteils stimmt.",
+    "rubric": [
+      {
+        "criterion": "Bauteile benannt",
+        "levels": [
+          "Nur teilweise oder falsch zugeordnet",
+          "Alle vier Bauteile richtig benannt und zugeordnet"
+        ]
+      },
+      {
+        "criterion": "Aufgabe erklärt",
+        "levels": [
+          "Aufgabe fehlt oder nur 'hält die Brücke'",
+          "Aufgabe im Sinne des Lastwegs erklärt (aufnehmen / weiterleiten / nach unten)"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Pfeiler und Widerlager werden oft verwechselt: der Pfeiler steht in der Mitte (z. B. im Fluss), das Widerlager sitzt am Ende bzw. Ufer.",
+      "Die Aufgabe ('nimmt die Last auf und leitet sie nach unten') ist wichtiger als der genaue Name — auf den Weg der Last achten lassen."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Technik und Design",
+  "klasse": 2,
+  "kompetenzbereich": "Entwicklung",
+  "competences": [
+    "TED.US.2.ENT.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "ENT"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "lane": null,
+      "intended_claim": null,
+      "medium": "visual",
+      "generator": "matplotlib:labeled_parts",
+      "spec": {
+        "title": "Brücke von der Seite (Schema)",
+        "show_names": false,
+        "shapes": [
+          {
+            "kind": "region",
+            "points": [
+              [
+                0,
+                0.4
+              ],
+              [
+                12,
+                0.4
+              ],
+              [
+                12,
+                1.0
+              ],
+              [
+                0,
+                1.0
+              ]
+            ],
+            "color": "#c7b489"
+          },
+          {
+            "kind": "region",
+            "points": [
+              [
+                0,
+                1.0
+              ],
+              [
+                2.2,
+                1.0
+              ],
+              [
+                2.2,
+                3.4
+              ],
+              [
+                0,
+                3.4
+              ]
+            ],
+            "color": "#d8c8a0"
+          },
+          {
+            "kind": "region",
+            "points": [
+              [
+                9.8,
+                1.0
+              ],
+              [
+                12,
+                1.0
+              ],
+              [
+                12,
+                3.4
+              ],
+              [
+                9.8,
+                3.4
+              ]
+            ],
+            "color": "#d8c8a0"
+          },
+          {
+            "kind": "region",
+            "points": [
+              [
+                2.2,
+                1.0
+              ],
+              [
+                9.8,
+                1.0
+              ],
+              [
+                9.8,
+                2.6
+              ],
+              [
+                2.2,
+                2.6
+              ]
+            ],
+            "color": "#a9c9e0"
+          },
+          {
+            "kind": "region",
+            "points": [
+              [
+                1.3,
+                3.4
+              ],
+              [
+                2.4,
+                3.4
+              ],
+              [
+                2.4,
+                5.0
+              ],
+              [
+                1.3,
+                5.0
+              ]
+            ],
+            "color": "#c2c7cc"
+          },
+          {
+            "kind": "region",
+            "points": [
+              [
+                9.6,
+                3.4
+              ],
+              [
+                10.7,
+                3.4
+              ],
+              [
+                10.7,
+                5.0
+              ],
+              [
+                9.6,
+                5.0
+              ]
+            ],
+            "color": "#c2c7cc"
+          },
+          {
+            "kind": "region",
+            "points": [
+              [
+                4.2,
+                1.0
+              ],
+              [
+                4.8,
+                1.0
+              ],
+              [
+                4.8,
+                5.0
+              ],
+              [
+                4.2,
+                5.0
+              ]
+            ],
+            "color": "#b9bec3"
+          },
+          {
+            "kind": "region",
+            "points": [
+              [
+                7.2,
+                1.0
+              ],
+              [
+                7.8,
+                1.0
+              ],
+              [
+                7.8,
+                5.0
+              ],
+              [
+                7.2,
+                5.0
+              ]
+            ],
+            "color": "#b9bec3"
+          },
+          {
+            "kind": "region",
+            "points": [
+              [
+                2.4,
+                4.55
+              ],
+              [
+                9.6,
+                4.55
+              ],
+              [
+                9.6,
+                5.0
+              ],
+              [
+                2.4,
+                5.0
+              ]
+            ],
+            "color": "#8a929b"
+          },
+          {
+            "kind": "region",
+            "points": [
+              [
+                1.9,
+                5.0
+              ],
+              [
+                10.1,
+                5.0
+              ],
+              [
+                10.1,
+                5.5
+              ],
+              [
+                1.9,
+                5.5
+              ]
+            ],
+            "color": "#6f7883"
+          }
+        ],
+        "parts": [
+          {
+            "at": [
+              3.0,
+              5.25
+            ],
+            "name": "Fahrbahn",
+            "side": "left"
+          },
+          {
+            "at": [
+              8.8,
+              4.78
+            ],
+            "name": "Träger",
+            "side": "right"
+          },
+          {
+            "at": [
+              4.5,
+              2.6
+            ],
+            "name": "Pfeiler",
+            "side": "left"
+          },
+          {
+            "at": [
+              10.15,
+              4.2
+            ],
+            "name": "Widerlager",
+            "side": "right"
+          }
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0261",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:44+00:00",
+  "updated_at": "2026-07-15T13:55:44+00:00"
+}

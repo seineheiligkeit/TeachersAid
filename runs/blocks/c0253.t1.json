@@ -1,0 +1,88 @@
+{
+  "id": "c0253.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne jedem römischen Gott seinen Zuständigkeitsbereich zu.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Iuppiter",
+        "Neptunus",
+        "Mars",
+        "Venus",
+        "Minerva",
+        "Mercurius"
+      ],
+      "right": [
+        "König der Götter und Gott des Himmels",
+        "Gott des Meeres",
+        "Gott des Krieges",
+        "Göttin der Liebe und der Schönheit",
+        "Göttin der Weisheit und des Handwerks",
+        "Bote der Götter und Gott des Handels"
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Gott",
+        "Zuständigkeit"
+      ],
+      "rows": 6
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "INH"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "LAT.US.3.INH.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 4,
+    "answer_key": "Iuppiter → König der Götter und Gott des Himmels; Neptunus → Gott des Meeres; Mars → Gott des Krieges; Venus → Göttin der Liebe und der Schönheit; Minerva → Göttin der Weisheit und des Handwerks; Mercurius → Bote der Götter und Gott des Handels.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Iuppiter (auch „Jupiter“) ist der oberste Gott, der Göttervater — nicht mit Mars (Krieg) verwechseln.",
+      "Minerva entspricht der griechischen Athene: sie steht für Weisheit UND Handwerk/Kunst.",
+      "Mercurius ist Bote der Götter und zugleich Gott der Händler; für die Zuordnung genügt „Bote / Handel“."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Latein",
+  "klasse": 3,
+  "kompetenzbereich": "Inhalts- und themenbezogene Kompetenzen",
+  "competences": [
+    "LAT.US.3.INH.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "INH"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0253",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:42+00:00",
+  "updated_at": "2026-07-15T13:55:42+00:00"
+}

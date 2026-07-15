@@ -1,0 +1,70 @@
+{
+  "id": "c0246.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Anna und Ben wollen ein Rohr herstellen — einen Zylinder mit einem durchgehenden Loch in der Mitte. Anna bildet die Differenz aus einem großen und einem kleineren, gleich langen Zylinder. Ben bildet den Durchschnitt der beiden. Wer erreicht das Rohr? Begründe und beschreibe, was bei der anderen Wahl herauskommt.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Rohr = großer Zylinder ohne kleinen Zylinder, oder großer Zylinder geschnitten mit kleinem?"
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "H1",
+      "H3"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GEZ.US.4.TRA.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "Anna hat recht: die Differenz (großer ohne kleinen Zylinder) entfernt den inneren Vollzylinder und lässt die Rohrwand übrig. Bens Durchschnitt liefert nur den gemeinsamen Bereich — das ist der kleine Vollzylinder, also ein massiver Stab, kein Rohr.",
+    "acceptable_reasoning": "Kern: die Differenz höhlt aus (Rohr), der Durchschnitt behält nur die Überlappung (Vollzylinder).",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Der Durchschnitt zweier ineinanderliegender Zylinder ist der kleinere von beiden — nicht das Rohr.",
+      "Beide Zylinder müssen gleich lang und koaxial sein, damit die Differenz ein durchgehendes Rohr ergibt."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Transformationen von Objekten und Relationen zwischen Objekten (I2)",
+  "competences": [
+    "GEZ.US.4.TRA.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "H1",
+    "H3"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0246",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:41+00:00",
+  "updated_at": "2026-07-15T13:55:41+00:00"
+}

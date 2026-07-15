@@ -1,0 +1,77 @@
+{
+  "id": "c0239.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Für ein Referat suchst du, wie viel Jugendliche schlafen. Seite A (ein Matratzen-Shop) schreibt: „Über 80 % der Jugendlichen schlafen viel zu wenig!“ Seite B (eine Universitäts-Studie) nennt genaue Zahlen mit Datum und der Anzahl der Befragten. Welcher Quelle vertraust du eher? Begründe mit mindestens drei Prüf-Fragen, die du an beide Quellen stellst.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Zwei Webseiten, zwei widersprüchliche Zahlen – welcher glaubst du?"
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "I"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DGB.US.3.INF.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "Eher Seite B. Prüf-Fragen und Begründung: (1) Wer steht dahinter und wer profitiert? Ein Matratzen-Shop verdient daran, wenn du 'zu wenig Schlaf' glaubst – ein Interessenkonflikt; eine Universität verfolgt eher ein Forschungsinteresse. (2) Woher stammen die Zahlen? B nennt Anzahl der Befragten und Vorgehen, A nur eine dramatische Prozentzahl ohne Beleg. (3) Wie aktuell ist die Quelle? Ein Datum zeigt, ob die Daten noch gelten. Zusatz: mehrere unabhängige Quellen vergleichen, bevor man sich festlegt.",
+    "acceptable_reasoning": "Andere sinnvolle Prüf-Fragen sind gültig (z. B. Impressum, Nachprüfbarkeit, Werbung auf der Seite), solange Absender/Interesse, Beleg und Aktualität vorkommen.",
+    "rubric": [
+      {
+        "criterion": "Quellenkritische Prüf-Fragen",
+        "levels": [
+          "nennt keine oder nur oberflächliche Kriterien",
+          "nennt zwei sinnvolle Prüf-Fragen",
+          "nennt mindestens drei Prüf-Fragen (u. a. Interesse/Absender, Beleg/Stichprobe, Aktualität) und begründet die Entscheidung"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Der dramatischeren oder der erstgereihten Aussage glauben, statt die belegte zu prüfen.",
+      "'Im Internet gefunden' schon als Beleg akzeptieren."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Digitale Grundbildung",
+  "klasse": 3,
+  "kompetenzbereich": "Information: mit Daten, Informationen und Informationssystemen verantwortungsvoll umgehen",
+  "competences": [
+    "DGB.US.3.INF.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "I"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0239",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:39+00:00",
+  "updated_at": "2026-07-15T13:55:39+00:00"
+}

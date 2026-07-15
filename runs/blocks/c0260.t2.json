@@ -1,0 +1,122 @@
+{
+  "id": "c0260.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb_stromkreis"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "experiment_protocol",
+    "prompt": "Du sollst untersuchen, ob und wann ein stromdurchflossener Draht magnetisch wirkt. Das Schaltbild zeigt deinen Stromkreis: eine Batterie, die Spule (der um einen Eisennagel gewickelte Draht) und ein kleines Kontroll-Lämpchen. Plane das Experiment: (a) Formuliere eine Vermutung. (b) Nenne das benötigte Material. (c) Beschreibe die Durchführung in Schritten. (d) Womit weist du die magnetische Wirkung nach? (e) Was erwartest du, wenn du den Stromkreis öffnest?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 90.0
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "E",
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.3.ELE.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "(a) Vermutung, zum Beispiel: ‚Nur wenn Strom fließt, wird die Spule mit dem Nagel magnetisch und zieht Eisen an.' (b) Material: Batterie (zum Beispiel 4,5 V), isolierter Draht, Eisennagel, kleines Lämpchen, Kabel, einige Büroklammern, evtl. ein Kompass. (c) Durchführung: Draht viele Male um den Nagel wickeln (Spule); Spule, Lämpchen und Batterie zu einem geschlossenen Stromkreis verbinden; die Nagelspitze an die Büroklammern halten – einmal bei geschlossenem und einmal bei offenem Stromkreis. (d) Nachweis: Bei geschlossenem Kreis zieht der Nagel Büroklammern an bzw. eine Kompassnadel wird abgelenkt; das Lämpchen leuchtet und zeigt, dass Strom fließt. (e) Öffnet man den Stromkreis, fließt kein Strom mehr – die magnetische Wirkung verschwindet, die Büroklammern fallen ab.",
+    "acceptable_reasoning": "Kontrollierter Vergleich Strom an/aus; die magnetische Wirkung tritt nur bei fließendem Strom auf; Nachweis über das Anziehen von Eisen oder die Ablenkung einer Kompassnadel; das Lämpchen zeigt den Stromfluss an.",
+    "rubric": [
+      {
+        "criterion": "Vollständigkeit des Protokolls",
+        "levels": [
+          "nur einzelne Teile vorhanden",
+          "Vermutung, Durchführung und Beobachtung vorhanden",
+          "Vermutung, Material, Durchführung, Nachweis und Kontrolle (offen/geschlossen) vollständig"
+        ]
+      },
+      {
+        "criterion": "Aussagekraft des Nachweises",
+        "levels": [
+          "kein klarer Nachweis",
+          "Nachweis genannt",
+          "Nachweis MIT Vergleich Strom an/aus"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Der Nagel bleibt nur magnetisch, solange Strom fließt (Weicheisen) – anders als ein Dauermagnet.",
+      "Mehr Windungen und ein Eisenkern verstärken den Elektromagneten; das Lämpchen beweist nur, dass Strom fließt, nicht die Stärke des Magnetfelds."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "experiment_protocol",
+  "subject": "Physik",
+  "klasse": 3,
+  "kompetenzbereich": "Elektrizität und Magnetismus",
+  "competences": [
+    "PHY.US.3.ELE.01"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "E",
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb_stromkreis",
+      "role": "figure",
+      "lane": null,
+      "intended_claim": null,
+      "medium": "visual",
+      "generator": "matplotlib:circuit",
+      "spec": {
+        "net": {
+          "type": "series",
+          "children": [
+            {
+              "type": "resistor",
+              "ohm": 8,
+              "label": "Spule"
+            },
+            {
+              "type": "lamp",
+              "ohm": 4,
+              "label": "Lämpchen"
+            }
+          ]
+        },
+        "volt": 4.5,
+        "title": "Stromkreis für den Elektromagneten"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0260",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:44+00:00",
+  "updated_at": "2026-07-15T13:55:44+00:00"
+}

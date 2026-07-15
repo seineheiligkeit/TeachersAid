@@ -1,0 +1,76 @@
+{
+  "id": "c0255.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Erfinde für deine Sitznachbarin oder deinen Sitznachbarn ein Zahlenrätsel: Denke dir eine Zahl zwischen 1 und 100 aus und beschreibe sie mit GENAU drei Hinweisen über Teiler, Vielfache oder Teilbarkeit, sodass am Ende nur DEINE Zahl übrig bleibt. Schreibe zuerst die drei Hinweise auf und darunter die Lösung. Prüfe selbst, ob wirklich nur eine einzige Zahl passt.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "MOD",
+      "BEG"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.2.ZAH.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Individuelle Lösung. Beispiel mit den Hinweisen „durch 5 teilbar“, „Vielfaches von 6“ und „Quersumme 9“: Die Zahl muss durch 5 und durch 6, also durch 30 teilbar sein (möglich sind 30, 60, 90) und die Quersumme 9 haben – das trifft nur auf 90 zu. Prüfkriterium: Genau eine Zahl zwischen 1 und 100 darf alle drei Hinweise erfüllen.",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Eindeutigkeit des selbst erfundenen Rätsels",
+        "levels": [
+          "mehrere Zahlen oder keine Zahl passen",
+          "Rätsel fast eindeutig, kleine Unschärfe",
+          "genau eine Zahl passt, Hinweise korrekt und selbst geprüft"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Zu wenige oder zu unscharfe Hinweise lassen mehrere Zahlen zu; ein weiterer Hinweis (zum Beispiel die Quersumme) macht die Lösung eindeutig.",
+      "Die eigene Lösung immer gegenprüfen: Passt wirklich KEINE andere Zahl?"
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Mathematik",
+  "klasse": 2,
+  "kompetenzbereich": "1: Zahlen und Maße",
+  "competences": [
+    "MAT.US.2.ZAH.01"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "MOD",
+    "BEG"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0255",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:42+00:00",
+  "updated_at": "2026-07-15T13:55:42+00:00"
+}

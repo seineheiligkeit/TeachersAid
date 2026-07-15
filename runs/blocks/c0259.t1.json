@@ -1,0 +1,80 @@
+{
+  "id": "c0259.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "multiple_choice",
+    "prompt": "Der Mond leuchtet nachts hell – trotzdem sagen Fachleute, er sei kein selbst leuchtender Körper. Welche Erklärung ist richtig?",
+    "payload": {
+      "kind": "multiple_choice",
+      "options": [
+        "Der Mond erzeugt eigenes Licht, ähnlich wie eine Glühbirne.",
+        "Der Mond wirft das Licht der Sonne zurück; ein Teil davon gelangt in unser Auge.",
+        "Der Mond speichert tagsüber Sonnenlicht und strahlt es nachts als eigenes Licht ab.",
+        "Wir sehen den Mond nur, weil unsere Augen im Dunkeln selbst Licht aussenden."
+      ],
+      "select": "one"
+    },
+    "response": {
+      "mode": "choices",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "select": "one"
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.2.SEH.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 4,
+    "answer_key": "Richtig ist B. Der Mond leuchtet nicht selbst; er wirft (streut) das Sonnenlicht zurück, und ein Teil davon gelangt in unser Auge (Sender-Empfänger: die Sonne ist die Lichtquelle, der Mond wirft zurück, das Auge ist der Empfänger). A ist falsch (keine eigene Lichtquelle), C ist ein verbreiteter Irrtum (der Mond speichert kein Licht), D ist falsch (das Auge sendet kein Licht aus, es empfängt nur).",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Häufiger Irrtum: Der Mond ‚speichere' Sonnenlicht und gebe es nachts wieder ab.",
+      "Das Auge ist ein Empfänger, keine Lichtquelle – wir sehen nur, was Licht in unser Auge schickt."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "multiple_choice",
+  "subject": "Physik",
+  "klasse": 2,
+  "kompetenzbereich": "Sehen und Hören",
+  "competences": [
+    "PHY.US.2.SEH.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0259",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:43+00:00",
+  "updated_at": "2026-07-15T13:55:43+00:00"
+}

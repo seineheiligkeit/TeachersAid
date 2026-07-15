@@ -1,0 +1,80 @@
+{
+  "id": "c0256.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "multiple_choice",
+    "prompt": "Gegeben ist das Gleichungssystem  I: x + y = 10  und  II: 2x - y = 2. Welches Zahlenpaar (x | y) löst BEIDE Gleichungen? Mach bei jedem Vorschlag die Probe in beiden Gleichungen.",
+    "payload": {
+      "kind": "multiple_choice",
+      "options": [
+        "(3 | 7)",
+        "(4 | 6)",
+        "(6 | 4)",
+        "(5 | 5)"
+      ],
+      "select": "one"
+    },
+    "response": {
+      "mode": "choices",
+      "options": [
+        "(3 | 7)",
+        "(4 | 6)",
+        "(6 | 4)",
+        "(5 | 5)"
+      ],
+      "select": "one"
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "OPE"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.4.VAR.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Richtig ist (4 | 6). Probe: I: 4 + 6 = 10 (stimmt); II: 2 · 4 - 6 = 8 - 6 = 2 (stimmt). Bei allen anderen Paaren stimmt zwar Gleichung I, aber nicht Gleichung II: zum Beispiel ergibt II bei (3 | 7) den Wert 2 · 3 - 7 = -1, nicht 2.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Ein Paar, das nur EINE Gleichung erfüllt, ist keine Lösung des Systems – immer beide Gleichungen prüfen.",
+      "(3 | 7) erfüllt Gleichung I und ist eine typische Falle, wenn man Gleichung II vergisst."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "multiple_choice",
+  "subject": "Mathematik",
+  "klasse": 4,
+  "kompetenzbereich": "2: Variablen und Funktionen",
+  "competences": [
+    "MAT.US.4.VAR.04"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "OPE"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0256",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:42+00:00",
+  "updated_at": "2026-07-15T13:55:42+00:00"
+}

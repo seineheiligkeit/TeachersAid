@@ -1,0 +1,77 @@
+{
+  "id": "c0240.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Auf dem Familien-Tablet erscheint plötzlich eine grelle Meldung: „Ihr Gerät ist mit 3 Viren infiziert! Jetzt sofort reinigen – hier klicken!“ Kurz darauf bekommst du eine E-Mail mit dem Betreff „Rechnung“ und einer Datei „Rechnung.exe“ im Anhang, von einer unbekannten Adresse. Was tust du bei jedem der beiden Ereignisse – und warum? Nenne außerdem zwei Vorkehrungen, die dich generell vor solchen Angriffen schützen.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Warnmeldung und verdächtiger Anhang – was tust du?"
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "I"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DGB.US.3.HAN.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "Meldung: NICHT auf 'hier klicken' tippen – diese Angst-Meldung ist selbst die Falle (Scareware); das Fenster bzw. den Browser-Tab schließen, notfalls das Tablet neu starten, und mit dem WIRKLICH installierten Virenschutz prüfen. E-Mail: den Anhang nicht öffnen – eine '.exe' ist ein Programm, das sich beim Öffnen selbst ausführt; die Mail einer unbekannten Adresse mit Standard-Betreff ist verdächtig, also löschen bzw. als Spam melden. Bei Unsicherheit eine erwachsene Person fragen. Vorkehrungen (zwei genügen): Updates aktuell halten, Virenschutz nutzen, regelmäßige Backups, unbekannte Anhänge/Links grundsätzlich meiden.",
+    "acceptable_reasoning": "Kern ist: die Warnmeldung NICHT anklicken und den .exe-Anhang NICHT öffnen, jeweils mit sinnvoller Begründung, plus zwei passende Vorkehrungen.",
+    "rubric": [
+      {
+        "criterion": "Sicheres Handeln begründet",
+        "levels": [
+          "klickt/öffnet oder begründet nicht",
+          "reagiert bei einem der beiden Ereignisse richtig",
+          "reagiert bei beiden richtig, begründet nachvollziehbar und nennt zwei Vorkehrungen"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Aus Schreck auf 'reinigen' klicken – genau das lädt oft erst die Schadsoftware.",
+      "Meinen, eine Datei anzusehen sei harmlos: Eine ausführbare Datei (.exe) startet ein Programm."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Digitale Grundbildung",
+  "klasse": 3,
+  "kompetenzbereich": "Handeln: Angebote und Handlungsmöglichkeiten in einer von Digitalisierung geprägten Welt einschätzen und verantwortungsvoll nutzen",
+  "competences": [
+    "DGB.US.3.HAN.03"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "I"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0240",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:39+00:00",
+  "updated_at": "2026-07-15T13:55:39+00:00"
+}

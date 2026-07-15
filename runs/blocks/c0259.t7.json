@@ -1,0 +1,89 @@
+{
+  "id": "c0259.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Bei einer totalen Mondfinsternis verschwindet der Mond nicht, sondern leuchtet kupferrot – man nennt ihn ‚Blutmond'. Erkläre einem jüngeren Kind (etwa 5. Klasse) mit eigenen Worten und einer beschrifteten Skizze, warum der Mond im Erdschatten rot wird. Verwende dabei die Begriffe geradlinige Lichtausbreitung, Erdatmosphäre und Streuung der Lichtfarben. Tipp: Blaues Licht wird in der Luft viel stärker gestreut als rotes.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 90.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.2.SEH.05",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.US.2.SEH.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Erwartete Kernidee: Bei der Mondfinsternis steht die Erde zwischen Sonne und Mond; der Mond liegt im Erdschatten, direktes Sonnenlicht erreicht ihn nicht. Ein Teil des Sonnenlichts läuft aber am Rand durch die Erdatmosphäre und wird dort zum Mond hin gebrochen. Dabei wird das blaue Licht stark gestreut (deshalb ist tagsüber der Himmel blau), während das rote Licht besser durchkommt. Dieses übrig gebliebene rote Licht beleuchtet den Mond schwach – er erscheint rot. Skizze: Sonne – Erde (mit Lufthülle) – Mond in einer Linie; Randstrahlen laufen durch die Atmosphäre, blau wird weggestreut, rot erreicht den Mond.",
+    "acceptable_reasoning": "Mond im Erdschatten; Restlicht läuft durch die Atmosphäre; Blau wird stärker gestreut, Rot kommt durch und färbt den Mond rot.",
+    "rubric": [
+      {
+        "criterion": "Physikalische Richtigkeit",
+        "levels": [
+          "nennt nur ‚der Mond wird rot'",
+          "erklärt mit Erdschatten und Atmosphäre",
+          "erklärt vollständig: Erdschatten + Restlicht durch die Atmosphäre + Streuung (Blau weg, Rot durch)"
+        ]
+      },
+      {
+        "criterion": "Adressatengerechte Darstellung",
+        "levels": [
+          "Fachbegriffe ohne Erklärung",
+          "verständliche Sprache ODER passende Skizze",
+          "verständliche Sprache UND passende, beschriftete Skizze"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Der Mond wird bei der Finsternis NICHT ganz schwarz – etwas Licht erreicht ihn über den Umweg durch die Atmosphäre.",
+      "Der Mond ist nicht selbst rot; vom Sonnenlicht bleibt nur das rote Licht übrig (Blau wird weggestreut)."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Physik",
+  "klasse": 2,
+  "kompetenzbereich": "Sehen und Hören",
+  "competences": [
+    "PHY.US.2.SEH.05",
+    "PHY.US.2.SEH.04"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "W",
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0259",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:43+00:00",
+  "updated_at": "2026-07-15T13:55:43+00:00"
+}

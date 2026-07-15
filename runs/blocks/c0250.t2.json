@@ -1,0 +1,81 @@
+{
+  "id": "c0250.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne jeden Abfall der richtigen Sammlung zu. Verbinde die passenden Paare.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Altglasflasche (ohne Pfand)",
+        "Zeitung",
+        "PET-Getränkeflasche",
+        "Bananenschale",
+        "alte Batterie"
+      ],
+      "right": [
+        "Altpapier",
+        "Biotonne / Kompost",
+        "Altglascontainer (nach Farben getrennt)",
+        "Problemstoffsammelstelle / Rücknahmebox",
+        "Gelber Sack / Gelbe Tonne (Leichtverpackungen)"
+      ]
+    },
+    "response": {
+      "mode": "none"
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "OK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.2.NAC.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Altglasflasche ohne Pfand → Altglascontainer (nach Farben getrennt) · Zeitung → Altpapier · PET-Getränkeflasche → Gelber Sack / Gelbe Tonne (Leichtverpackungen) · Bananenschale → Biotonne / Kompost · alte Batterie → Problemstoffsammelstelle bzw. Rücknahmebox im Handel.",
+    "acceptable_reasoning": "Regionale Bezeichnungen (z. B. „Gelbe Tonne“ vs. „Gelber Sack“) sind gleichwertig, solange die Trennung stimmt.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Batterien gehören NIE in den Restmüll – sie enthalten Schadstoffe und müssen extra gesammelt werden.",
+      "Trinkgläser und Keramik gehören nicht in den Altglascontainer (anderes Schmelzverhalten).",
+      "Verschmutzte Verpackungen kurz thematisieren – grob entleert reicht, muss aber richtig getrennt werden."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 2,
+  "kompetenzbereich": "Nachhaltiger Umgang mit Energie und Ressourcen",
+  "competences": [
+    "GWB.US.2.NAC.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "OK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0250",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:42+00:00",
+  "updated_at": "2026-07-15T13:55:42+00:00"
+}

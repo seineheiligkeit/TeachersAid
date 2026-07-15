@@ -1,0 +1,119 @@
+{
+  "id": "c0235.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "data_interpretation",
+    "prompt": "Die Grafik (Abb. 1) zeigt, wie sich die Temperatur einer Probe Eis verändert, während sie gleichmäßig erhitzt wird. (a) Bei welchen zwei Temperaturen bleibt die Temperatur eine Zeit lang gleich, obwohl weiter geheizt wird? (b) Was geschieht mit dem Wasser jeweils an diesen „Haltepunkten“? (c) Erkläre mit dem Teilchenmodell, wohin die zugeführte Energie geht, solange die Temperatur nicht steigt.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.US.x.ERK.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "(a) Bei 0 °C und bei 100 °C bleibt die Temperatur jeweils eine Weile konstant. (b) Bei 0 °C schmilzt das Eis (fest wird flüssig), bei 100 °C siedet das Wasser (flüssig wird gasförmig). (c) Während des Schmelzens und Siedens wird die zugeführte Energie gebraucht, um die Anziehung zwischen den Teilchen zu lockern bzw. zu überwinden und ihre Anordnung zu ändern — nicht, um sie schneller zu machen. Deshalb steigt die Temperatur währenddessen nicht. Erst wenn der Zustandswechsel abgeschlossen ist, erhöht weitere Energie wieder die Temperatur.",
+    "acceptable_reasoning": "Kernidee: An den Haltepunkten fließt die Energie in den Zustandswechsel (Lösen der Anziehung zwischen den Teilchen), nicht in eine höhere Temperatur.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Fehlvorstellung: „Beim Sieden hört das Heizen auf zu wirken.“ Es wird weiter Energie zugeführt — sie steckt im Zustandswechsel, nicht in der Temperatur.",
+      "Die Haltepunkte sind Schmelz- und Siedetemperatur des reinen Stoffs (bei Wasser 0 °C bzw. 100 °C auf Meereshöhe).",
+      "Nicht der Zahlenwert der Temperatur ist entscheidend, sondern der waagrechte Verlauf der Kurve."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "data_interpretation",
+  "subject": "Chemie",
+  "klasse": 4,
+  "kompetenzbereich": "Erkenntnisse gewinnen und interpretieren (E)",
+  "competences": [
+    "CHE.US.x.ERK.03"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "lane": null,
+      "intended_claim": null,
+      "medium": "visual",
+      "generator": "matplotlib:line",
+      "spec": {
+        "title": "Temperatur einer Wasserprobe beim gleichmäßigen Erhitzen",
+        "xlabel": "Zeit in Minuten",
+        "ylabel": "Temperatur in °C",
+        "log": false,
+        "categories": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11"
+        ],
+        "values": [
+          -20.0,
+          -10.0,
+          0.0,
+          0.0,
+          0.0,
+          25.0,
+          50.0,
+          75.0,
+          100.0,
+          100.0,
+          100.0,
+          100.0
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": true,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0235",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:38+00:00",
+  "updated_at": "2026-07-15T13:55:38+00:00"
+}

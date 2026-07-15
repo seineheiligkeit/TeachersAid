@@ -1,0 +1,91 @@
+{
+  "id": "c0241.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Read Tom's plan. Look carefully at the flyer. Is everything in Tom's plan possible? Decide, and explain your answer with information from the flyer.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Tom (age 12) reads the flyer and says: \"Great! I will bring my phone to listen to music while we swim, and I will pay £60 in cash on the first morning.\""
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "LES"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS1.US.2.LES.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "FS1.US.2.LES.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "Tom's age is fine (12 is between 10 and 14). But two parts of his plan do not work: (1) he cannot bring his phone to the pool — the flyer says you must NOT bring a mobile phone to the sports activities; (2) he cannot just pay cash on the first morning — a parent must book a place by email before 1 July, and the flyer does not offer paying on arrival. So Tom needs to change his plan.",
+    "acceptable_reasoning": "Entscheidend ist, dass beide Probleme (Handy-Regel UND Anmeldung bzw. Bezahlung) mit dem Flyer belegt werden; das Alter darf NICHT als Problem genannt werden.",
+    "rubric": [
+      {
+        "criterion": "Decision based on the text",
+        "levels": [
+          "Both problems found and justified from the flyer",
+          "One problem found and justified",
+          "Decision without justification"
+        ]
+      },
+      {
+        "criterion": "Avoids the age trap",
+        "levels": [
+          "Treats age 12 as allowed",
+          "Unsure about the age",
+          "Wrongly rejects Tom because of his age"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Das Alter (12) ist ein Ablenker — es ist zulässig; wer Tom wegen des Alters ablehnt, hat 10–14 falsch gelesen.",
+      "Es gibt ZWEI Probleme, nicht eins — viele finden nur die Handy-Regel und übersehen die verpflichtende Anmeldung per E-Mail im Voraus.",
+      "Beleg verlangen: Wo genau steht das im Flyer? Die Antwort soll sich auf konkrete Textstellen stützen."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Erste lebende Fremdsprache",
+  "klasse": 2,
+  "kompetenzbereich": "Lesen",
+  "competences": [
+    "FS1.US.2.LES.02",
+    "FS1.US.2.LES.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "LES"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0241",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:39+00:00",
+  "updated_at": "2026-07-15T13:55:39+00:00"
+}

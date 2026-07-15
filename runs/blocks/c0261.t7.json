@@ -1,0 +1,93 @@
+{
+  "id": "c0261.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "enactive",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "make_artifact",
+    "prompt": "Baue deine Brücke nach deinem Plan. Teste dann, wie viel sie trägt: Belaste die Mitte langsam (z. B. mit Büchern oder Gewichten), bis sie nachgibt. (a) Wie viel hat deine Brücke getragen? (b) WO hat sie zuerst nachgegeben (die Schwachstelle)? (c) Überlege eine gezielte Verbesserung genau an dieser Stelle, baue sie ein und teste erneut. Beschreibe, was du geändert hast und ob die Brücke danach mehr getragen hat — und begründe, warum deine Änderung hilft.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 70.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "ENT"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "TED.US.2.ENT.03",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "TED.US.2.ENT.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 20,
+    "answer_key": "Es gibt keine einzige richtige Zahl — bewertet wird das Vorgehen. Erwartet: (a) eine gemessene oder gezählte Tragkraft; (b) eine benannte Schwachstelle (typisch: eine Klebestelle löst sich, ein Träger knickt seitlich weg, die Fahrbahn biegt durch); (c) eine gezielte, zur Schwachstelle passende Verbesserung — z. B. die Knickstelle mit einem zusätzlichen Dreieck oder einer Querstrebe aussteifen, eine Klebeverbindung überlappend verstärken, den Träger höher (hochkant) ausführen — plus ein erneuter Test und eine Begründung, die auf Druck/Zug, Aussteifung oder Profilhöhe Bezug nimmt. Gut ist, wenn die Verbesserung genau dort ansetzt, wo die Brücke nachgegeben hat, und die Wirkung mit einem zweiten Test überprüft wird.",
+    "acceptable_reasoning": "Stark ist die Antwort, wenn die Schwachstelle richtig lokalisiert, die Verbesserung gezielt an dieser Stelle gewählt und mit einem technischen Grund (Aussteifung durch ein Dreieck, stärkere Verbindung, höheres Profil) begründet und durch einen zweiten Test überprüft wird.",
+    "rubric": [
+      {
+        "criterion": "Schwachstelle erkannt",
+        "levels": [
+          "Keine klare Schwachstelle benannt",
+          "Schwachstelle genau lokalisiert"
+        ]
+      },
+      {
+        "criterion": "Gezielte Verbesserung",
+        "levels": [
+          "Beliebige oder unpassende Änderung",
+          "Verbesserung passt genau zur Schwachstelle"
+        ]
+      },
+      {
+        "criterion": "Begründung und Nachtest",
+        "levels": [
+          "Ohne Begründung oder ohne zweiten Test",
+          "Technisch begründet und mit zweitem Test überprüft"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Die Verbesserung 'überall mehr Kleber/Material' ist kein gezielter Eingriff — die Änderung soll genau an der Schwachstelle ansetzen.",
+      "Fair vergleichen: gleiche Belastungsart und -stelle vor und nach der Änderung, sonst sagt der zweite Test wenig aus.",
+      "Sicherheit beim Belasten: Gewichte langsam aufbringen, Finger und Füße aus dem Fallbereich, nicht mit dem Gesicht direkt über der Brücke."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "make_artifact",
+  "subject": "Technik und Design",
+  "klasse": 2,
+  "kompetenzbereich": "Entwicklung",
+  "competences": [
+    "TED.US.2.ENT.03",
+    "TED.US.2.ENT.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "ENT"
+  ],
+  "modality": "enactive",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0261",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:44+00:00",
+  "updated_at": "2026-07-15T13:55:44+00:00"
+}

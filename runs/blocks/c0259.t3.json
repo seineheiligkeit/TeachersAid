@@ -1,0 +1,80 @@
+{
+  "id": "c0259.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Beurteile jede Aussage zu Tag und Nacht als richtig oder falsch und begründe kurz mit dem passenden Bewegungsablauf.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Es wird Nacht, weil sich die Sonne auf die andere Seite der Erde bewegt.",
+        "Auf der Seite der Erde, die gerade zur Sonne zeigt, ist Tag.",
+        "Die Erde dreht sich in etwa 24 Stunden einmal um ihre eigene Achse.",
+        "Nachts ist die Sonne erloschen und leuchtet nicht."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "richtig / falsch",
+        "Begründung"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "E",
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.2.SEH.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1 falsch: Nicht die Sonne wandert um die Erde – die Erde dreht sich um ihre eigene Achse; die von der Sonne abgewandte Seite hat Nacht. 2 richtig: Die der Sonne zugewandte Seite wird beleuchtet, dort ist Tag. 3 richtig: Eine Umdrehung um die eigene Achse dauert rund 24 Stunden. 4 falsch: Die Sonne leuchtet ununterbrochen weiter; nachts zeigt unser Ort nur von ihr weg.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Weit verbreiteter Irrtum: ‚die Sonne bewegt sich um die Erde'. Beobachtbar ist nur eine scheinbare Bewegung – tatsächlich dreht sich die Erde.",
+      "Tag/Nacht (Erddrehung, etwa 24 Stunden) nicht mit den Jahreszeiten (Erdumlauf um die Sonne, etwa 1 Jahr) verwechseln."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Physik",
+  "klasse": 2,
+  "kompetenzbereich": "Sehen und Hören",
+  "competences": [
+    "PHY.US.2.SEH.04"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "E",
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0259",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:43+00:00",
+  "updated_at": "2026-07-15T13:55:43+00:00"
+}

@@ -1,0 +1,72 @@
+{
+  "id": "c0232.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Bevor du mitdiskutieren kannst, brauchst du die Fakten. Vergleiche konventionelle und biologische Landwirtschaft mithilfe des Infotextes. Bearbeite in der Tabelle diese fünf Merkmale (Zeilen): Düngung, Pflanzenschutz, Anbauweise, Ertrag pro Fläche, Wirkung auf Boden und Vielfalt.",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Merkmal",
+        "konventionelle Landwirtschaft",
+        "biologische Landwirtschaft"
+      ],
+      "rows": 5
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.STA.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Düngung: konventionell mineralischer Kunstdünger erlaubt / biologisch nur organisch (Mist, Kompost), kein mineralischer Stickstoffdünger. Pflanzenschutz: konventionell chemisch-synthetische Pestizide erlaubt / biologisch keine chemisch-synthetischen Pestizide, stattdessen Fruchtfolge, Nützlinge, mechanische Verfahren. Anbauweise: konventionell oft Monokultur auf großen Flächen / biologisch meist abwechslungsreiche Fruchtfolge. Ertrag pro Fläche: konventionell meist höher / biologisch meist niedriger. Wirkung auf Boden und Vielfalt: konventionell höhere Belastung von Boden und Gewässer möglich, oft weniger Vielfalt am Feld / biologisch örtlich geringere Belastung, oft mehr Vielfalt.",
+    "acceptable_reasoning": "Stichworte genügen; entscheidend ist der jeweilige Gegensatz.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Häufiger Fehler: „Bio ganz ohne Pflanzenschutz“. Verboten sind chemisch-synthetische Mittel; bestimmte (meist natürliche) Mittel sind erlaubt.",
+      "Nicht verallgemeinern: „meist/oft“ ist wichtig — es gibt Zwischenformen und Ausnahmen."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 4,
+  "kompetenzbereich": "Standpunkte begründen und reflektiert handeln (S)",
+  "competences": [
+    "BIO.US.x.STA.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "W",
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0232",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:38+00:00",
+  "updated_at": "2026-07-15T13:55:38+00:00"
+}

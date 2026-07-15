@@ -1,0 +1,80 @@
+{
+  "id": "c0244.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "multiple_choice",
+    "prompt": "Höre gut zu. Deine Lehrkraft liest die Anweisung zweimal vor:\n\n« Écoutez bien ! Demain, rendez-vous à sept heures et demie devant l'école. N'oubliez pas votre passeport et une veste. On prend le train à huit heures. »\n\nÀ quelle heure est le rendez-vous devant l'école ?",
+    "payload": {
+      "kind": "multiple_choice",
+      "options": [
+        "à 7h00",
+        "à 7h30",
+        "à 8h00",
+        "à 8h30"
+      ],
+      "select": "one"
+    },
+    "response": {
+      "mode": "choices",
+      "options": [
+        "à 7h00",
+        "à 7h30",
+        "à 8h00",
+        "à 8h30"
+      ],
+      "select": "one"
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "HOR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS2.US.4.HOR.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "à 7h30 — „sept heures et demie“.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Distraktor „à 8h00“ ist die ABFAHRT des Zuges („On prend le train à huit heures“), nicht der Treffpunkt — Anweisung genau zuordnen.",
+      "„demie“ (halb) wird beim Hören leicht überhört; auf die Struktur „… heures et demie“ achten."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "multiple_choice",
+  "subject": "Zweite lebende Fremdsprache",
+  "klasse": 4,
+  "kompetenzbereich": "Hören",
+  "competences": [
+    "FS2.US.4.HOR.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "HOR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0244",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:39+00:00",
+  "updated_at": "2026-07-15T13:55:39+00:00"
+}

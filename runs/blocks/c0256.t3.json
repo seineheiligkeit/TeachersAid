@@ -1,0 +1,81 @@
+{
+  "id": "c0256.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Beim Schulkino zahlen 3 Erwachsene und 2 Kinder zusammen 34 Euro. Eine andere Gruppe aus 2 Erwachsenen und 5 Kindern zahlt 41 Euro. Wie viel kostet eine Erwachsenenkarte, wie viel eine Kinderkarte? Stelle ein Gleichungssystem auf und löse es, zum Beispiel mit dem Additionsverfahren.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 5
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "MOD",
+      "OPE"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.4.VAR.04",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "MAT.US.4.VAR.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "e sei der Preis einer Erwachsenenkarte, k der Preis einer Kinderkarte. I: 3e + 2k = 34;  II: 2e + 5k = 41. Additionsverfahren: I mal 5 ergibt 15e + 10k = 170; II mal 2 ergibt 4e + 10k = 82. Subtrahieren liefert 11e = 88, also e = 8. Einsetzen in I: 3 · 8 + 2k = 34, also 24 + 2k = 34, also 2k = 10 und k = 5. Eine Erwachsenenkarte kostet 8 Euro, eine Kinderkarte 5 Euro. Probe in II: 2 · 8 + 5 · 5 = 16 + 25 = 41 (stimmt).",
+    "acceptable_reasoning": "Das Einsetzungsverfahren (eine Gleichung nach einer Variablen auflösen und einsetzen) führt auf dasselbe Ergebnis und ist gleichwertig.",
+    "rubric": [
+      {
+        "criterion": "Aufstellen und Lösen eines Systems mit zwei Unbekannten",
+        "levels": [
+          "System unvollständig oder falsch aufgestellt",
+          "System korrekt, Rechenfehler beim Lösen",
+          "System korrekt aufgestellt und richtig gelöst, mit Probe"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Vor dem Addieren oder Subtrahieren müssen die Vorzahlen einer Variablen gleich gemacht werden (hier k auf 10 bringen).",
+      "Die beiden Unbekannten klar benennen (e und k), sonst gerät durcheinander, welcher Preis gesucht ist."
+    ],
+    "self_check": "Setze e = 8 und k = 5 in BEIDE Ausgangsgleichungen ein – beide müssen aufgehen.",
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Mathematik",
+  "klasse": 4,
+  "kompetenzbereich": "2: Variablen und Funktionen",
+  "competences": [
+    "MAT.US.4.VAR.04",
+    "MAT.US.4.VAR.01"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "MOD",
+    "OPE"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0256",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:42+00:00",
+  "updated_at": "2026-07-15T13:55:42+00:00"
+}

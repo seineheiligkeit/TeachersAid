@@ -1,0 +1,95 @@
+{
+  "id": "c0252.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Entscheide für jede Aussage, ob sie richtig oder falsch ist, und begründe deine Entscheidung jeweils in einem Satz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Ein Gegenstand ist automatisch Kunst, sobald er in einem Museum steht.",
+        "Kunst muss von der Künstlerin oder dem Künstler mit der Hand selbst hergestellt sein.",
+        "Ein Titel kann verändern, wie wir einen Gegenstand sehen.",
+        "Ob etwas als Kunst gilt, hängt auch davon ab, wer es zeigt und wer darüber spricht."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "Richtig / Falsch",
+        "Begründung"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "WAH"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "KUG.US.4.WAH.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "1. FALSCH — der Ort allein macht nichts zur Kunst; entscheidend sind Auswahl, Idee, Kontext und die Zuschreibung durch Künstler:in, Institution und Publikum. 2. FALSCH — Ready-mades und Konzeptkunst zeigen, dass Auswählen, Benennen und Zeigen genügen kann; handwerkliches Herstellen ist nicht zwingend. 3. RICHTIG — ein Titel lenkt Blick und Bedeutung (z. B. Fountain für ein Urinal). 4. RICHTIG — ob etwas als Kunst anerkannt wird, entscheidet sich im Zusammenspiel von Künstler:in, Museum/Galerie, Publikum und Markt.",
+    "acceptable_reasoning": "Aussagen 1 und 2 müssen als FALSCH erkannt werden. Bei 3 und 4 genügt eine knappe, sachlich richtige Begründung.",
+    "rubric": [
+      {
+        "criterion": "Einschätzung",
+        "levels": [
+          "Alle 4 korrekt bewertet",
+          "3 von 4 korrekt",
+          "Weniger als 3 korrekt"
+        ]
+      },
+      {
+        "criterion": "Begründung",
+        "levels": [
+          "Begründungen sachlich, mit Bezug auf Auswahl/Kontext/Zuschreibung",
+          "Teils vage oder unvollständig",
+          "Kaum tragfähige Begründungen"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Aussage 1 verführt zum „richtig“ — das Museum verstärkt eine Zuschreibung, erzeugt sie aber nicht allein.",
+      "Aussage 2 prüft die Kernidee des Ready-made: Nicht das Machen, sondern das Entscheiden kann das Werk sein."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Kunst und Gestaltung",
+  "klasse": 4,
+  "kompetenzbereich": "Wahrnehmen und Reflektieren",
+  "competences": [
+    "KUG.US.4.WAH.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "WAH"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0252",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:42+00:00",
+  "updated_at": "2026-07-15T13:55:42+00:00"
+}

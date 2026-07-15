@@ -1,0 +1,76 @@
+{
+  "id": "c0246.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne jeder Booleschen Operation die passende Beschreibung zu.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Vereinigung",
+        "Differenz (A ohne B)",
+        "Durchschnitt"
+      ],
+      "right": [
+        "nur der gemeinsame Bereich beider Körper bleibt",
+        "beide Körper verschmelzen zu einem",
+        "vom ersten Körper wird der zweite weggeschnitten"
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 3
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "H3"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GEZ.US.4.TRA.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "Vereinigung — beide Körper verschmelzen zu einem; Differenz (A ohne B) — vom ersten Körper wird der zweite weggeschnitten; Durchschnitt — nur der gemeinsame Bereich beider Körper bleibt.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Der Durchschnitt liefert etwas Kleineres (nur die Überlappung), die Vereinigung etwas Größeres."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Transformationen von Objekten und Relationen zwischen Objekten (I2)",
+  "competences": [
+    "GEZ.US.4.TRA.03"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "H3"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0246",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:41+00:00",
+  "updated_at": "2026-07-15T13:55:41+00:00"
+}

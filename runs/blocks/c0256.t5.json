@@ -1,0 +1,88 @@
+{
+  "id": "c0256.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Beurteile die folgenden Aussagen über die Lösungen linearer Gleichungssysteme. Entscheide jeweils, ob die Aussage stimmt, und begründe mit der Vorstellung von zwei Geraden.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Ein lineares Gleichungssystem aus zwei Gleichungen hat immer genau eine Lösung.",
+        "Wenn die beiden Geraden parallel sind und nicht aufeinanderliegen, hat das System keine Lösung.",
+        "Es kann ein Gleichungssystem geben, das unendlich viele Lösungen hat."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 3
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "BEG",
+      "DAR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.4.VAR.04",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "MAT.US.4.VAR.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "(1) Falsch. Zwei Geraden können sich schneiden (genau eine Lösung), parallel verlaufen (keine Lösung) oder aufeinanderliegen (unendlich viele Lösungen). (2) Wahr. Parallele, verschiedene Geraden haben keinen gemeinsamen Punkt, also gibt es kein Paar (x | y), das beide Gleichungen erfüllt. (3) Wahr. Wenn beide Gleichungen dieselbe Gerade beschreiben (zum Beispiel x + y = 4 und 2x + 2y = 8), liegt jeder Punkt der Geraden auf beiden – dann gibt es unendlich viele Lösungen.",
+    "acceptable_reasoning": "Begründungen über die Geradenlage (Schnitt, parallel, deckungsgleich) ODER über die Gleichungen (Widerspruch bzw. immer wahre Aussage beim Lösen) werden beide anerkannt.",
+    "rubric": [
+      {
+        "criterion": "Beurteilen der Lösungsfälle",
+        "levels": [
+          "Aussagen ohne tragfähige Begründung bewertet",
+          "richtige Bewertung, Begründung lückenhaft",
+          "alle drei richtig bewertet und mit der Geradenlage begründet"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "„Genau eine Lösung“ ist nur der Normalfall (sich schneidende Geraden), nicht die Regel für alle Systeme.",
+      "Parallel und verschieden bedeutet keine Lösung; parallel und deckungsgleich bedeutet unendlich viele – der Unterschied liegt am d."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Mathematik",
+  "klasse": 4,
+  "kompetenzbereich": "2: Variablen und Funktionen",
+  "competences": [
+    "MAT.US.4.VAR.04",
+    "MAT.US.4.VAR.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "BEG",
+    "DAR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0256",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:42+00:00",
+  "updated_at": "2026-07-15T13:55:42+00:00"
+}

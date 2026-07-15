@@ -1,0 +1,88 @@
+{
+  "id": "c0244.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Höre die Nachricht auf dem Anrufbeantworter der Jugendherberge (zweimal). Deine Lehrkraft liest vor:\n\n« Bonjour, c'est Madame Laurent, de l'auberge de jeunesse. Votre chambre est au deuxième étage, chambre numéro douze. Le petit-déjeuner est de sept heures à neuf heures. Attention : à dix heures du soir, il faut faire silence. Bon séjour à Lyon ! »\n\nBeantworte auf Französisch (kurze Sätze):\n1. À quel étage est la chambre ?\n2. Jusqu'à quelle heure peut-on prendre le petit-déjeuner ?\n3. Qu'est-ce qu'il faut faire à dix heures du soir ? Warum wohl? (auf Deutsch)",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 3
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "HOR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS2.US.4.HOR.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "FS2.US.4.HOR.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "1. Au deuxième étage (chambre numéro douze). | 2. Jusqu'à neuf heures (le petit-déjeuner est de 7h à 9h). | 3. Il faut faire silence (leise sein). Grund (erschlossen): damit die anderen Gäste schlafen können / Nachtruhe.",
+    "acceptable_reasoning": "Frage 3 verlangt eine Schlussfolgerung (warum Ruhe? → Nachtruhe/Rücksicht auf andere Gäste); jede plausible, begründete Antwort ist akzeptabel.",
+    "rubric": [
+      {
+        "criterion": "Hörverstehen (Detailinformationen)",
+        "levels": [
+          "Alle drei Angaben korrekt entnommen",
+          "Zwei korrekt",
+          "Höchstens eine korrekt"
+        ]
+      },
+      {
+        "criterion": "Schlussfolgerung (Frage 3)",
+        "levels": [
+          "Nennt eine plausible, begründete Erklärung",
+          "Nennt die Handlung, aber keine Begründung",
+          "Keine tragfähige Antwort"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "„deuxième étage“ = 2. Stock; Ordnungszahlen (premier/deuxième) beim Hören sichern.",
+      "„de sept heures à neuf heures“ — die Aufgabe fragt nach dem ENDE (neuf heures), nicht dem Beginn.",
+      "„il faut faire silence“ = man muss leise sein; „il faut“ als Aufforderung erkennen (HOR.01)."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Zweite lebende Fremdsprache",
+  "klasse": 4,
+  "kompetenzbereich": "Hören",
+  "competences": [
+    "FS2.US.4.HOR.02",
+    "FS2.US.4.HOR.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "HOR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0244",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:39+00:00",
+  "updated_at": "2026-07-15T13:55:39+00:00"
+}

@@ -1,0 +1,77 @@
+{
+  "id": "c0244.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Höre zu: Eine Passantin erklärt den Weg (zweimal). Deine Lehrkraft liest vor:\n\n— Pardon madame, où est la gare ?\n— La gare ? C'est tout droit, puis à gauche.\n— Et la poste, s'il vous plaît ?\n— La poste est à droite, à côté de la boulangerie.\n— Merci ! Et les toilettes ?\n— Les toilettes sont en face du café.\n\nOrdne jedem Ort (1–3) die gehörte Wegangabe (A–C) zu.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "la gare",
+        "la poste",
+        "les toilettes"
+      ],
+      "right": [
+        "tout droit, puis à gauche",
+        "à droite, à côté de la boulangerie",
+        "en face du café"
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 3
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "HOR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS2.US.4.HOR.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "1 (la gare) – A (tout droit, puis à gauche) | 2 (la poste) – B (à droite, à côté de la boulangerie) | 3 (les toilettes) – C (en face du café).",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Ortspräpositionen genau hören: „à gauche / à droite / tout droit / en face de / à côté de“ unterscheiden.",
+      "„à droite“ (rechts) und „tout droit“ (geradeaus) klingen ähnlich — häufige Verwechslung."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Zweite lebende Fremdsprache",
+  "klasse": 4,
+  "kompetenzbereich": "Hören",
+  "competences": [
+    "FS2.US.4.HOR.01"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "HOR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0244",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:39+00:00",
+  "updated_at": "2026-07-15T13:55:39+00:00"
+}

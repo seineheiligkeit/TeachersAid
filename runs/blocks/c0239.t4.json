@@ -1,0 +1,132 @@
+{
+  "id": "c0239.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb2"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Das Streudiagramm zeigt: An Tagen mit mehr verkauftem Eis gibt es auch mehr Sonnenbrände. Verursacht Eisessen den Sonnenbrand? Erkläre, was die beiden wirklich verbindet.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "I"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DGB.US.3.INF.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Nein. Eis essen verursacht keinen Sonnenbrand. Beide Werte steigen gemeinsam, weil eine dritte, gemeinsame Ursache dahintersteckt: heißes, sonniges Wetter. An solchen Tagen kaufen die Menschen mehr Eis UND bekommen mehr Sonnenbrände. Der Zusammenhang im Diagramm ist also echt (eine Korrelation), aber es ist keine Ursache-Wirkung zwischen Eis und Sonnenbrand (keine Kausalität).",
+    "acceptable_reasoning": "Kern ist die Einsicht: Ein gemeinsamer Anstieg beweist keine Ursache; hier gibt es eine gemeinsame Ursache (Hitze/Sonne). Die genaue Formulierung ist frei.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Aus dem gemeinsamen Anstieg voreilig 'Eis verursacht Sonnenbrand' schließen.",
+      "Den Zusammenhang als Zufall abtun – er ist echt, nur nicht ursächlich."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Digitale Grundbildung",
+  "klasse": 3,
+  "kompetenzbereich": "Information: mit Daten, Informationen und Informationssystemen verantwortungsvoll umgehen",
+  "competences": [
+    "DGB.US.3.INF.04"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "I"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb2",
+      "role": "figure",
+      "lane": null,
+      "intended_claim": null,
+      "medium": "visual",
+      "generator": "matplotlib:scatter",
+      "spec": {
+        "points": [
+          [
+            20.0,
+            1.0
+          ],
+          [
+            35.0,
+            3.0
+          ],
+          [
+            50.0,
+            3.0
+          ],
+          [
+            65.0,
+            5.0
+          ],
+          [
+            80.0,
+            7.0
+          ],
+          [
+            95.0,
+            6.0
+          ],
+          [
+            110.0,
+            9.0
+          ],
+          [
+            130.0,
+            11.0
+          ],
+          [
+            150.0,
+            12.0
+          ],
+          [
+            170.0,
+            15.0
+          ]
+        ],
+        "xlabel": "verkaufte Eis-Portionen",
+        "ylabel": "gemeldete Sonnenbrände",
+        "title": "Eisverkauf und Sonnenbrände an zehn Sommertagen (Beispieldaten)",
+        "fit": true
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": true,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0239",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:39+00:00",
+  "updated_at": "2026-07-15T13:55:39+00:00"
+}

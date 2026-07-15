@@ -1,0 +1,90 @@
+{
+  "id": "c0232.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Erstelle für die Pinnwand in der Klasse eine kurze Einkaufs-Checkliste „Umweltbewusst einkaufen“ mit vier konkreten Tipps. Schreibe hinter jeden Tipp in einem Halbsatz, WARUM er der Umwelt hilft. Achte darauf, dass deine Tipps auch mit wenig Geld umsetzbar sind.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 90.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.STA.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Beispielhafte Tipps mit Begründung: (1) Regional und saisonal kaufen — spart lange Transportwege und Energie. (2) Wo möglich Bio wählen, besonders bei Produkten mit hoher Pestizidbelastung — weniger chemisch-synthetische Mittel in Boden und Wasser. (3) Nur so viel kaufen, wie gegessen wird, und Reste verwerten — vermeidet Lebensmittelverschwendung und die dafür verbrauchte Fläche und Energie. (4) Weniger, dafür bewusster tierische Produkte — die Fleischerzeugung braucht viel Fläche und Futter. Weitere gültige Tipps: unverpackt oder wenig Verpackung, pflanzliche Alternativen, Leitungswasser statt Flaschen. Bewertet werden vier umsetzbare Tipps mit jeweils sachlicher Begründung.",
+    "acceptable_reasoning": "Vier konkrete, im Alltag umsetzbare Tipps mit jeweils einer fachlich richtigen Begründung genügen; die Auswahl darf variieren.",
+    "rubric": [
+      {
+        "criterion": "Vier konkrete, umsetzbare Tipps",
+        "levels": [
+          "weniger als vier oder unklar",
+          "vier Tipps, teils zu allgemein",
+          "vier konkrete, alltagstaugliche Tipps"
+        ]
+      },
+      {
+        "criterion": "Sachliche Begründungen",
+        "levels": [
+          "fehlen oder falsch",
+          "teils begründet",
+          "jeder Tipp fachlich richtig begründet"
+        ]
+      },
+      {
+        "criterion": "Leistbarkeit berücksichtigt",
+        "levels": [
+          "ignoriert",
+          "teilweise beachtet",
+          "Tipps sind auch mit wenig Geld umsetzbar"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Tipps müssen konkret und umsetzbar sein („weniger Fleisch, dafür bewusster“ statt „die Umwelt retten“).",
+      "Jede Empfehlung braucht eine Begründung — sonst ist es nur eine Behauptung."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 4,
+  "kompetenzbereich": "Standpunkte begründen und reflektiert handeln (S)",
+  "competences": [
+    "BIO.US.x.STA.03"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0232",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:38+00:00",
+  "updated_at": "2026-07-15T13:55:38+00:00"
+}

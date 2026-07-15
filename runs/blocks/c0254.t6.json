@@ -1,0 +1,96 @@
+{
+  "id": "c0254.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Schreibe eine kleine Geschichte aus 4 bis 5 lateinischen Sätzen. Verwende mindestens DREI verschiedene Konnektoren (z. B. et, sed, nam, itaque, quod, tamen). Unterstreiche die Konnektoren. Schreibe unter jeden Satz die deutsche Übersetzung.\n\nWortschatz-Hilfe: puer = Junge · puella = Mädchen · canis = Hund · in via = auf der Straße · in schola = in der Schule · laborat = arbeitet · dormit = schläft · ridet = lacht · venit = kommt · vocat = ruft · est = ist · fessus = müde.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "SPR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "LAT.US.3.SPR.06",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "LAT.US.3.SPR.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Musterlösung (viele Varianten möglich): „Canis in via dormit. Puer venit et canem vocat. Canis tamen non surgit, nam fessus est. Itaque puer discedit.“ — „Der Hund schläft auf der Straße. Ein Junge kommt und ruft den Hund. Der Hund steht aber (dennoch) nicht auf, denn er ist müde. Daher geht der Junge weg.“ (Verwendete Konnektoren: et, tamen, nam, itaque.)",
+    "acceptable_reasoning": "Die Geschichte muss nicht dem Muster entsprechen; entscheidend sind mindestens drei sinnvoll eingesetzte Konnektoren und grammatisch richtige Sätze.",
+    "rubric": [
+      {
+        "criterion": "Konnektoren",
+        "levels": [
+          "Mindestens drei verschiedene Konnektoren, jeweils sinnvoll und richtig eingesetzt.",
+          "Konnektoren vorhanden, aber teils unpassend oder nur zwei verschiedene.",
+          "Weniger als zwei Konnektoren oder durchgehend falsch eingesetzt."
+        ]
+      },
+      {
+        "criterion": "Grammatische Richtigkeit",
+        "levels": [
+          "Die Sätze sind grammatisch korrekt (Kasus, Verbendungen).",
+          "Kleinere Endungsfehler, der Sinn bleibt klar.",
+          "Viele Formfehler, die den Sinn stören."
+        ]
+      },
+      {
+        "criterion": "Übersetzung",
+        "levels": [
+          "Übersetzung vollständig und sinngemäß richtig.",
+          "Übersetzung überwiegend richtig, kleine Lücken.",
+          "Übersetzung fehlt oder ist falsch."
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Der lateinische Satzbau muss stimmen (Subjekt im Nominativ, Objekt im Akkusativ, Verb passend).",
+      "„nam“ steht am Satzanfang, „quod“ leitet einen Nebensatz ein.",
+      "Keine erfundenen, nur „lateinisch klingenden“ Wörter — lieber den vorgegebenen Wortschatz nutzen."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Latein",
+  "klasse": 3,
+  "kompetenzbereich": "Sprach- und textbezogene Kompetenzen",
+  "competences": [
+    "LAT.US.3.SPR.06",
+    "LAT.US.3.SPR.01"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "SPR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0254",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:42+00:00",
+  "updated_at": "2026-07-15T13:55:42+00:00"
+}

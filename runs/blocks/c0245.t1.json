@@ -1,0 +1,78 @@
+{
+  "id": "c0245.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne jedem Begriff seine Bedeutung im räumlichen Koordinatensystem zu.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "x-Wert",
+        "y-Wert",
+        "z-Wert",
+        "O(0|0|0)"
+      ],
+      "right": [
+        "nach oben (Höhe)",
+        "der Ursprung — Ausgangspunkt aller Achsen",
+        "nach rechts",
+        "nach hinten (Tiefe)"
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "H1"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GEZ.US.4.GEO.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "x-Wert — nach rechts; y-Wert — nach hinten (Tiefe); z-Wert — nach oben (Höhe); O(0|0|0) — der Ursprung, Ausgangspunkt aller Achsen.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "z ist immer die Höhe, nicht die Tiefe — häufig werden y (Tiefe) und z (Höhe) vertauscht."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Geometrische Objekte und ihre Eigenschaften (I1)",
+  "competences": [
+    "GEZ.US.4.GEO.01"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "H1"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0245",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:40+00:00",
+  "updated_at": "2026-07-15T13:55:40+00:00"
+}

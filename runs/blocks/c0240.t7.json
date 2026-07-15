@@ -1,0 +1,88 @@
+{
+  "id": "c0240.t7",
+  "block": {
+    "id": "t7",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Erstelle einen kurzen Ratgeber „Smartes Gerät – aber richtig“ mit drei Tipps: je einen zum klugen NUTZEN (Funktion/Chance), zum SCHÜTZEN (Sicherheit) und zum RESSOURCEN SCHONEN (Umwelt). Schreibe zu jedem Tipp einen kurzen Grund, warum er wichtig ist.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 9
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "T",
+      "G",
+      "I"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DGB.US.3.HAN.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "DGB.US.3.HAN.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "DGB.US.3.HAN.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Ein guter Ratgeber deckt alle drei Bereiche mit je einem Tipp UND einer Begründung ab, z. B.: NUTZEN – 'Stelle in den Einstellungen ein, welche Daten dein Gerät sammeln darf, weil du so nur die Funktionen freigibst, die du wirklich willst.' SCHÜTZEN – 'Installiere Updates und mache regelmäßig ein Backup, weil Updates Sicherheitslücken schließen und ein Backup deine Daten nach einem Angriff rettet.' RESSOURCEN – 'Nutze das Gerät länger und lass es reparieren, weil Herstellung und Rohstoffe die größte Umweltbelastung sind.' Eigene, sinnvolle Formulierungen sind gleichwertig.",
+    "acceptable_reasoning": "Bewertet wird, dass alle drei Bereiche (Nutzen, Schutz, Umwelt) mit je einem konkreten Tipp und einer nachvollziehbaren Begründung vorkommen.",
+    "rubric": [
+      {
+        "criterion": "Drei Bereiche mit Begründung",
+        "levels": [
+          "nur ein Bereich abgedeckt",
+          "zwei Bereiche oder Tipps ohne Begründung",
+          "alle drei Bereiche (Nutzen, Schutz, Umwelt) mit je einem begründeten Tipp"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Nur einen Bereich behandeln (z. B. drei Sicherheitstipps) – gefragt sind alle drei.",
+      "Tipps ohne Begründung – das 'Warum' ist so wichtig wie der Tipp selbst."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Digitale Grundbildung",
+  "klasse": 3,
+  "kompetenzbereich": "Handeln: Angebote und Handlungsmöglichkeiten in einer von Digitalisierung geprägten Welt einschätzen und verantwortungsvoll nutzen",
+  "competences": [
+    "DGB.US.3.HAN.01",
+    "DGB.US.3.HAN.02",
+    "DGB.US.3.HAN.03"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "T",
+    "G",
+    "I"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0240",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:39+00:00",
+  "updated_at": "2026-07-15T13:55:39+00:00"
+}

@@ -1,0 +1,83 @@
+{
+  "id": "c0237.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Sieh dir den Leserbrief oben genau an — du kannst seinen Aufbau später als Vorlage für deinen eigenen Text nutzen. Ordne jedem Baustein einer Stellungnahme die passende Textstelle aus dem Leserbrief zu.",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Behauptung (die strittige Meinung)",
+        "Erste Begründung mit Beispiel",
+        "Zweite Begründung mit Beispiel",
+        "Ein Gegenargument, das ernst genommen wird",
+        "Antwort auf das Gegenargument / Kompromiss",
+        "Appell (Aufforderung am Schluss)"
+      ],
+      "right": [
+        "„… ein Blick auf den Vertretungsplan in der App, damit man nicht vor der falschen Tür wartet.“",
+        "„In den Pausen sollten Handys an unserer Schule erlaubt sein.“",
+        "„… ich bitte die Schulleitung, diese Regel auszuprobieren.“",
+        "„… manche sagen, in der Pause solle man reden und sich bewegen …“",
+        "„… um den Eltern kurz zu schreiben, wenn sich der Bus verspätet.“",
+        "„… Handys nur im Aufenthaltsraum zu erlauben, nicht am ganzen Schulhof.“"
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 3
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "SCH"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DEU.US.4.SCH.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "Behauptung → „In den Pausen sollten Handys … erlaubt sein.“; Erste Begründung → „… um den Eltern kurz zu schreiben, wenn sich der Bus verspätet.“; Zweite Begründung → „… ein Blick auf den Vertretungsplan in der App …“; Gegenargument → „… manche sagen, in der Pause solle man reden und sich bewegen …“; Antwort/Kompromiss → „… Handys nur im Aufenthaltsraum … nicht am ganzen Schulhof.“; Appell → „… ich bitte die Schulleitung, diese Regel auszuprobieren.“",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Begründung und Beispiel werden oft verwechselt: Die Begründung sagt WARUM, das Beispiel macht sie anschaulich — hier stehen sie im selben Satz.",
+      "Der Kompromiss (nur im Aufenthaltsraum) wird leicht für eine dritte Begründung gehalten; er ist aber die Antwort auf das Gegenargument."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Deutsch",
+  "klasse": 4,
+  "kompetenzbereich": "Schreiben",
+  "competences": [
+    "DEU.US.4.SCH.01"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "SCH"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0237",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:38+00:00",
+  "updated_at": "2026-07-15T13:55:38+00:00"
+}

@@ -1,0 +1,73 @@
+{
+  "id": "c0232.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Für eine gute Diskussion musst du sachliche, überprüfbare Aussagen von Meinungen und Werbung unterscheiden. Entscheide bei jeder Aussage: Ist sie naturwissenschaftlich überprüfbar oder eher Meinung/Werbung? Begründe kurz — und gib bei den überprüfbaren an, ob sie stimmt.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "In der biologischen Landwirtschaft sind chemisch-synthetische Pestizide nicht zugelassen.",
+        "Bio-Gemüse enthält garantiert keinen einzigen schädlichen Stoff.",
+        "Bio schmeckt einfach besser.",
+        "Konventioneller Anbau liefert pro Hektar meist höhere Erträge als biologischer."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 8
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.STA.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "1 Naturwissenschaftlich überprüfbar und richtig — das regelt die EU-Bio-Verordnung. 2 Werbung/Pauschalaussage — nicht haltbar: „garantiert kein einziger schädlicher Stoff“ lässt sich nicht belegen, und auch im Biolandbau sind zugelassene Pflanzenschutzmittel möglich; in dieser absoluten Form ist die Aussage falsch. 3 Meinung/Geschmack — nicht allgemein naturwissenschaftlich prüfbar (Geschmack ist subjektiv; höchstens über Verkostungsstudien annäherbar). 4 Naturwissenschaftlich überprüfbar und richtig — Ertragsvergleiche zeigen im Mittel höhere konventionelle Hektarerträge.",
+    "acceptable_reasoning": "Wichtig ist die Trennung: überprüfbare Tatsachenaussage (1, 4) gegenüber pauschaler Werbung (2) und subjektiver Meinung (3).",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Aussage 2 ist die typische Werbefalle: absolute Wörter wie „garantiert“, „kein einziger“, „100 %“ sind ein Warnsignal.",
+      "„Nicht naturwissenschaftlich“ heißt nicht automatisch „falsch“ — eine Geschmacksaussage ist einfach kein Beleg in einer Sachdiskussion."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 4,
+  "kompetenzbereich": "Standpunkte begründen und reflektiert handeln (S)",
+  "competences": [
+    "BIO.US.x.STA.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0232",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:38+00:00",
+  "updated_at": "2026-07-15T13:55:38+00:00"
+}

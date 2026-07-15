@@ -1,0 +1,93 @@
+{
+  "id": "c0235.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Entwirf eine kleine „Teilchen-Bildgeschichte“ in genau drei Feldern, die zeigt, wie aus einem Eiswürfel zuerst flüssiges Wasser und dann Wasserdampf wird. (a) Zeichne in jedes Feld die Teilchen als Kreise so, dass Anordnung und Abstände zum Zustand passen. (b) Schreibe unter jedes Feld einen Satz, der den Zustand benennt und die Teilchen beschreibt. (c) Kennzeichne mit einem Pfeil und einem Stichwort, was zwischen den Feldern zugeführt werden muss.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 70.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.US.x.ALL.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Erwartet: Feld 1 (fest/Eis) — Teilchen dicht und regelmäßig angeordnet, berühren sich, schwingen nur auf der Stelle. Feld 2 (flüssig/Wasser) — Teilchen weiterhin dicht, aber unregelmäßig und gegeneinander verschiebbar. Feld 3 (gasförmig/Wasserdampf) — Teilchen weit auseinander, große leere Zwischenräume, schnelle freie Bewegung. Zwischen den Feldern jeweils ein Pfeil mit „Wärme/Energie zuführen“ (Schmelzen bzw. Verdampfen). Die Anzahl der Teilchen bleibt in allen drei Feldern gleich — es kommen keine dazu und keine gehen verloren.",
+    "acceptable_reasoning": "Wichtig sind drei Dinge: gleiche Teilchenzahl in allen Feldern, zunehmende Abstände von fest zu flüssig zu gasförmig, und die Wärmezufuhr als Auslöser des Zustandswechsels.",
+    "rubric": [
+      {
+        "criterion": "Teilchenabstände passend zum Zustand",
+        "levels": [
+          "fest/flüssig dicht, Gas weit — durchgängig korrekt",
+          "teilweise korrekt",
+          "Abstände unpassend"
+        ]
+      },
+      {
+        "criterion": "Erhaltung der Teilchen (Anzahl und Größe)",
+        "levels": [
+          "in allen drei Feldern gleich viele, gleich große Teilchen",
+          "kleinere Abweichung",
+          "Anzahl oder Größe verändert"
+        ]
+      },
+      {
+        "criterion": "Zustände benannt und Energiezufuhr gekennzeichnet",
+        "levels": [
+          "alle drei Zustände benannt, beide Übergänge mit Wärme markiert",
+          "teilweise",
+          "fehlt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Häufiger Fehler: im Gas-Feld mehr, weniger oder GRÖSSERE Teilchen zeichnen. Anzahl und Größe der Teilchen bleiben gleich — nur die Abstände wachsen.",
+      "Im flüssigen Zustand sind die Teilchen nicht schon halb so weit auseinander wie im Gas: fest und flüssig haben ähnlich kleine Abstände, das Gas hat mit Abstand die größten Zwischenräume.",
+      "Zwischen den Teilchen ist LEERER Raum — dort keine Luft und keine kleinen Punkte einzeichnen."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Chemie",
+  "klasse": 4,
+  "kompetenzbereich": null,
+  "competences": [
+    "CHE.US.x.ALL.03"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "W",
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0235",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:38+00:00",
+  "updated_at": "2026-07-15T13:55:38+00:00"
+}

@@ -1,0 +1,95 @@
+{
+  "id": "c0231.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Baue oder plane ein einfaches Arm-Modell aus Alltagsmaterial: zwei feste Streifen (z. B. Karton) als Knochen, eine Musterklammer oder Büroklammer als Gelenk und zwei Gummibänder als Muskeln. Zeichne dein Modell in den Kasten und beschrifte Knochen, Gelenk, Beugemuskel und Streckmuskel. Erkläre in zwei bis drei Sätzen, was passiert, wenn du an einem der Gummibänder ziehst — und nenne eine Sache, die dein Modell NICHT richtig zeigt (eine Grenze des Modells).",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 95.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.WIS.03",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "BIO.US.x.WIS.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Erwartet: Zwei Streifen (Knochen) sind mit einer Klammer (Gelenk) beweglich verbunden. Ein Gummiband liegt auf der Beugeseite, eines auf der Streckseite. Verkürzt man das Beuge-Gummiband, knickt das Modell im Gelenk ein — der Arm beugt sich; zieht man am anderen, streckt er sich wieder. Grenze des Modells: Ein Gummiband kann ziehen UND gedehnt zurückschnellen, ein echter Muskel kann nur aktiv ziehen (zusammenziehen), nicht schieben; außerdem sitzen echte Muskeln mit Sehnen fest am Knochen.",
+    "acceptable_reasoning": "Die Zeichnung darf unterschiedlich aussehen. Korrekt ist jedes Modell mit zwei Knochen, einem Gelenk und zwei gegenüberliegenden „Muskeln“, das die Beuge- und Streckbewegung erklärt und eine sinnvolle Modellgrenze nennt.",
+    "rubric": [
+      {
+        "criterion": "Modell vollständig (zwei Knochen, Gelenk, zwei Muskeln) und beschriftet",
+        "levels": [
+          "Teile fehlen oder unbeschriftet",
+          "überwiegend vollständig, kleine Lücken",
+          "alle Teile vorhanden und korrekt beschriftet"
+        ]
+      },
+      {
+        "criterion": "Beuge- und Streckbewegung erklärt",
+        "levels": [
+          "nicht erklärt",
+          "eine Richtung erklärt",
+          "beide Richtungen über das Gegenspielerprinzip erklärt"
+        ]
+      },
+      {
+        "criterion": "Eine Grenze des Modells benannt",
+        "levels": [
+          "keine genannt",
+          "genannt, aber unpassend",
+          "sinnvolle Modellgrenze benannt (z. B. Muskel zieht nur)"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Nur ein Gummiband einzubauen ist die häufigste Lücke — dann fehlt der Gegenspieler und das Modell kann sich nicht wieder strecken.",
+      "Modellkritik gehört dazu: Ein gutes Modell zeigt das Prinzip, ist aber nie in allem wie das Original."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 1,
+  "kompetenzbereich": "Wissen aneignen, anwenden und kommunizieren (W)",
+  "competences": [
+    "BIO.US.x.WIS.03",
+    "BIO.US.x.WIS.02"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0231",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:38+00:00",
+  "updated_at": "2026-07-15T13:55:38+00:00"
+}

@@ -1,0 +1,77 @@
+{
+  "id": "c0260.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "ordering",
+    "prompt": "Ein einfacher Elektromotor besteht aus einer drehbaren Spule (Anker) zwischen zwei Dauermagneten und einem Kommutator (Polwender). Bringe die Schritte, die die ständige Drehung erklären, in die richtige Reihenfolge (nummeriere von 1 bis 6).",
+    "payload": {
+      "kind": "ordering",
+      "items": [
+        "Im Feld der Dauermagnete wirkt auf die stromdurchflossene Spule eine Kraft.",
+        "Strom fließt durch die drehbare Spule (Anker).",
+        "Nach einer halben Drehung kehrt der Kommutator die Stromrichtung in der Spule um.",
+        "Die stromdurchflossene Spule wird selbst zu einem Magneten.",
+        "So wirkt die Kraft weiter in dieselbe Drehrichtung – die Spule dreht sich ständig weiter.",
+        "Die Spule beginnt sich zu drehen."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.3.ELE.05",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Richtige Reihenfolge: 1) Strom fließt durch die drehbare Spule (Anker). 2) Die stromdurchflossene Spule wird selbst zu einem Magneten. 3) Im Feld der Dauermagnete wirkt auf die Spule eine Kraft. 4) Die Spule beginnt sich zu drehen. 5) Nach einer halben Drehung kehrt der Kommutator die Stromrichtung um. 6) So wirkt die Kraft weiter in dieselbe Drehrichtung – die Spule dreht sich ständig weiter.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Ohne Kommutator (Polwender) würde die Spule nur bis zur Gleichgewichtslage drehen und dann stehen bleiben – er sorgt für die ständige Drehung.",
+      "Ein Motor braucht BEIDES: den Strom in der Spule UND das Feld der Dauermagnete. Fehlt eines, wirkt keine Kraft."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "ordering",
+  "subject": "Physik",
+  "klasse": 3,
+  "kompetenzbereich": "Elektrizität und Magnetismus",
+  "competences": [
+    "PHY.US.3.ELE.05"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "W",
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0260",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:44+00:00",
+  "updated_at": "2026-07-15T13:55:44+00:00"
+}

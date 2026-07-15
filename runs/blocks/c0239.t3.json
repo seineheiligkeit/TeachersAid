@@ -1,0 +1,106 @@
+{
+  "id": "c0239.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Für den Sonntag wurde noch kein Wert eingetragen. Sag mit Begründung voraus, wie hoch die Bildschirmzeit am Sonntag ungefähr sein könnte – und schreibe dazu, wie sicher du dir sein kannst.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "I"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DGB.US.3.INF.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "Der Sonntag ist ein Wochenendtag, deshalb ist eine hohe Bildschirmzeit zu erwarten – grob in der Größenordnung des Samstags, also etwa 100 bis 130 Minuten. Sicher ist das aber nicht: Die Vorhersage stützt sich nur auf EINE Woche mit wenigen Werten, und ein besonderer Tag (Ausflug, Regen, Besuch) kann den Wert stark verändern.",
+    "acceptable_reasoning": "Gültig ist jede Vorhersage im Bereich hoher Wochenend-Werte, sofern sie mit dem Muster begründet wird UND die Unsicherheit benannt ist.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Eine exakte Zahl als sichere Vorhersage angeben.",
+      "Den Wochenend-Sprung übersehen und einfach den Freitagswert fortschreiben."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Digitale Grundbildung",
+  "klasse": 3,
+  "kompetenzbereich": "Information: mit Daten, Informationen und Informationssystemen verantwortungsvoll umgehen",
+  "competences": [
+    "DGB.US.3.INF.03"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "I"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "lane": null,
+      "intended_claim": null,
+      "medium": "visual",
+      "generator": "matplotlib:line",
+      "spec": {
+        "title": "Tägliche Bildschirmzeit einer Klasse (Beispieldaten)",
+        "xlabel": "Wochentag",
+        "ylabel": "Minuten",
+        "log": false,
+        "categories": [
+          "Mo",
+          "Di",
+          "Mi",
+          "Do",
+          "Fr",
+          "Sa"
+        ],
+        "values": [
+          45.0,
+          55.0,
+          50.0,
+          60.0,
+          85.0,
+          120.0
+        ]
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": true,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0239",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:39+00:00",
+  "updated_at": "2026-07-15T13:55:39+00:00"
+}

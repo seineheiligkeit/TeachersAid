@@ -1,0 +1,82 @@
+{
+  "id": "c0233.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Wähle eine Bewegung, die dir noch nicht sicher gelingt (z. B. Rolle vorwärts, Handstand oder Sprint). Benenne ein konkretes Merkmal, an dem du arbeiten willst, und erfinde eine kleine Übung (2–3 Sätze), mit der du genau dieses Merkmal verbesserst.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "FAC"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BUS.US.4.FAC.05",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Erwartet wird ein konkret benanntes, sichtbares Merkmal und eine kleine Übung, die genau dieses Merkmal trainiert. Beispiel: Merkmal „Kinn zur Brust“ bei der Rolle vorwärts → einen weichen Ball unters Kinn klemmen und ihn beim Abrollen festhalten. Oder Merkmal „Kniehub“ beim Sprint → Skippings mit hohem Knie über kurze Distanz.",
+    "acceptable_reasoning": "Gültig ist jede Übung, deren Bewegung erkennbar das genannte Merkmal fordert – die Passung Übung ↔ Merkmal ist entscheidend, nicht eine bestimmte Musterübung.",
+    "rubric": [
+      {
+        "criterion": "Merkmal",
+        "levels": [
+          "kein klares Merkmal",
+          "Merkmal genannt",
+          "sichtbares Merkmal genau benannt"
+        ]
+      },
+      {
+        "criterion": "Passung der Übung",
+        "levels": [
+          "Übung passt nicht zum Merkmal",
+          "Übung passt teilweise",
+          "Übung trainiert genau das Merkmal"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Zu allgemein („einfach mehr üben“) – die Übung muss zum Merkmal passen.",
+      "Übung und Merkmal dürfen nicht auseinanderlaufen."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Bewegung und Sport",
+  "klasse": 4,
+  "kompetenzbereich": "Fachkompetenz",
+  "competences": [
+    "BUS.US.4.FAC.05"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "FAC"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0233",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:38+00:00",
+  "updated_at": "2026-07-15T13:55:38+00:00"
+}

@@ -1,0 +1,96 @@
+{
+  "id": "c0253.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Gestalte einen kurzen Steckbrief für einen römischen Gott deiner Wahl (z. B. Iuppiter, Neptunus, Mars, Venus, Minerva, Mercurius). Dein Steckbrief soll enthalten:\n- den lateinischen Namen,\n- den Zuständigkeitsbereich,\n- ein passendes Symbol oder Attribut,\n- EINEN einfachen, richtigen lateinischen Satz über den Gott (Muster: „Neptunus mare regit.“ = „Neptun beherrscht das Meer.“),\n- ein heutiges Wort, einen Planeten oder einen Namen, der an diesen Gott erinnert.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "INH"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "LAT.US.3.INH.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "LAT.US.3.INH.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Musterlösung (viele Varianten möglich): „Minerva — Göttin der Weisheit und des Handwerks. Symbol: die Eule. Lateinischer Satz: „Minerva sapientiam docet.“ (= Minerva lehrt die Weisheit.) Heute: die „Minerva-Eule“ als Zeichen der Weisheit.“ — Oder: „Mars — Gott des Krieges. Symbol: Speer und Schild. Satz: „Mars bella amat.“ (= Mars liebt die Kriege.) Heute: der Planet Mars, das Wort „martialisch“.“",
+    "acceptable_reasoning": "Kreative Gestaltung ist erwünscht; entscheidend ist, dass der lateinische Satz grammatisch korrekt ist und alle Bausteine des Steckbriefs vorkommen.",
+    "rubric": [
+      {
+        "criterion": "Lateinischer Satz",
+        "levels": [
+          "Ein einfacher, grammatisch korrekter Satz (Nominativ + Akkusativ + Verb).",
+          "Satz vorhanden, mit kleinem Endungsfehler.",
+          "Kein Satz oder durchgehend fehlerhaft."
+        ]
+      },
+      {
+        "criterion": "Vollständigkeit des Steckbriefs",
+        "levels": [
+          "Alle geforderten Bausteine vorhanden.",
+          "Ein bis zwei Bausteine fehlen.",
+          "Mehrere Bausteine fehlen."
+        ]
+      },
+      {
+        "criterion": "Verbindung zur Gegenwart",
+        "levels": [
+          "Ein passendes heutiges Wort/Name genannt.",
+          "Bezug genannt, aber unpassend.",
+          "Kein Gegenwartsbezug."
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Der lateinische Satz muss grammatisch stimmen: Subjekt im Nominativ, Objekt im Akkusativ, Verb in der 3. Person Singular (Endung -t).",
+      "Symbol/Attribut soll zum Gott passen (Neptun → Dreizack, Minerva → Eule, Mars → Waffen).",
+      "Keine erfundenen, nur „lateinisch klingenden“ Wörter verwenden — lieber bekannten Wortschatz nutzen."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Latein",
+  "klasse": 3,
+  "kompetenzbereich": "Inhalts- und themenbezogene Kompetenzen",
+  "competences": [
+    "LAT.US.3.INH.01",
+    "LAT.US.3.INH.02"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "INH"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0253",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:42+00:00",
+  "updated_at": "2026-07-15T13:55:42+00:00"
+}

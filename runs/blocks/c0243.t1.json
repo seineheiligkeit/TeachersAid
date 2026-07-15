@@ -1,0 +1,80 @@
+{
+  "id": "c0243.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "multiple_choice",
+    "prompt": "Lis le texte, puis réponds à la question.\n\nBonjour ! Je m'appelle Léa. J'ai un animal à la maison. C'est un lapin. Il s'appelle Caramel. Il est petit et il a de longues oreilles. Il est marron et blanc. Il aime manger des carottes et de la salade. Caramel est très mignon !\n\nQuel animal a Léa ?",
+    "payload": {
+      "kind": "multiple_choice",
+      "options": [
+        "un chat",
+        "un lapin",
+        "un chien",
+        "une tortue"
+      ],
+      "select": "one"
+    },
+    "response": {
+      "mode": "choices",
+      "options": [
+        "un chat",
+        "un lapin",
+        "un chien",
+        "une tortue"
+      ],
+      "select": "one"
+    },
+    "cognitive_level": "remember",
+    "difficulty": null,
+    "dimensions": [
+      "LES"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS2.US.3.LES.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "un lapin — im Text: „C'est un lapin.“ (Caramel ist ein Kaninchen).",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Manche raten anhand von „mignon“ oder „carottes“ — die Schüler:innen sollen gezielt die Struktur „C'est un …“ suchen (selektives Lesen).",
+      "„lapin“ (Kaninchen) nicht mit ähnlich klingenden Wörtern verwechseln; das Schlüsselwort steht direkt hinter „C'est“."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "multiple_choice",
+  "subject": "Zweite lebende Fremdsprache",
+  "klasse": 3,
+  "kompetenzbereich": "Lesen",
+  "competences": [
+    "FS2.US.3.LES.02"
+  ],
+  "cognitive_level": "remember",
+  "dimensions": [
+    "LES"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0243",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:39+00:00",
+  "updated_at": "2026-07-15T13:55:39+00:00"
+}

@@ -1,0 +1,96 @@
+{
+  "id": "c0236.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Entwirf für den Putzschrank zu Hause eine kurze „Sicher-Putzen“-Anleitung mit höchstens sechs Regeln für deine Familie. Nutze, was du gelernt hast: Symbole und Signalwörter lesen, Reiniger nicht mischen, sicher aufbewahren, im Notfall richtig handeln. Erkläre bei zwei deiner Regeln kurz, WARUM sie wichtig sind.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.US.x.STA.03",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "CHE.US.x.STA.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Erwartet wird eine sinnvolle, knappe Regelliste, z. B.: (1) Vor dem Gebrauch Symbol, Signalwort und Hinweise lesen. (2) Reiniger niemals mischen (Chlor + Säure ergibt giftiges Gas). (3) Immer in der Originalverpackung mit Etikett lassen, nie in Getränkeflaschen umfüllen. (4) Außer Reichweite von Kindern aufbewahren. (5) Beim Umgang mit ätzenden Mitteln Handschuhe und Augenschutz tragen und lüften. (6) Im Notfall mit viel Wasser spülen und die Vergiftungsinformationszentrale oder den Notruf anrufen. Bei zwei Regeln folgt eine kurze Begründung (z. B. „nicht mischen, weil giftiges Chlorgas entstehen kann“; „nicht umfüllen, weil Kinder es sonst für ein Getränk halten“).",
+    "acceptable_reasoning": "Bewertet wird, ob die Regeln fachlich korrekt sind, das Gelernte bündeln (Symbole/Signalwort, Nichtmischen, Aufbewahrung, Notfall) und ob zwei Regeln stichhaltig begründet sind.",
+    "rubric": [
+      {
+        "criterion": "Fachliche Richtigkeit der Regeln",
+        "levels": [
+          "alle Regeln korrekt und sicher",
+          "überwiegend korrekt",
+          "fachliche Fehler enthalten"
+        ]
+      },
+      {
+        "criterion": "Bündelung des Gelernten (Symbole, Nichtmischen, Aufbewahrung, Notfall)",
+        "levels": [
+          "mehrere Bereiche sinnvoll abgedeckt",
+          "einige Bereiche",
+          "einseitig"
+        ]
+      },
+      {
+        "criterion": "Zwei Regeln stichhaltig begründet",
+        "levels": [
+          "zwei klare, richtige Begründungen",
+          "eine Begründung",
+          "keine tragfähige Begründung"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Reine Verbotslisten ohne Begründung verfehlen das Ziel — mindestens zwei Regeln sollen ein „warum“ enthalten.",
+      "Fachlich falsche Tipps vermeiden, z. B. „bei Verätzung neutralisieren“ statt „mit viel Wasser spülen“.",
+      "Keine Regel darf zum Mischen oder zum Umfüllen in Getränkeflaschen verleiten."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Chemie",
+  "klasse": 4,
+  "kompetenzbereich": "Standpunkte begründen, Entscheidungen treffen und reflektiert handeln (S)",
+  "competences": [
+    "CHE.US.x.STA.03",
+    "CHE.US.x.STA.01"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0236",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:38+00:00",
+  "updated_at": "2026-07-15T13:55:38+00:00"
+}

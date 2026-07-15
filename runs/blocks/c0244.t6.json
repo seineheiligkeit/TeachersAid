@@ -1,0 +1,85 @@
+{
+  "id": "c0244.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Höre die zwei Vorschläge für den Nachmittag (zweimal). Deine Lehrkraft liest vor:\n\nProposition A : « Une visite du musée des sciences. C'est à l'intérieur. Ça dure deux heures. »\nProposition B : « Un tour en bateau sur le fleuve. C'est dehors. Ça dure une heure. »\n\nSituation: Ihr habt zwei Stunden Zeit und es regnet stark. Welcher Vorschlag passt besser? Entscheide und begründe mit dem, was du gehört hast (Französisch oder Deutsch).",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Proposition A (le musée) ou Proposition B (le bateau) ?"
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 40.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "HOR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS2.US.4.HOR.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Proposition A (le musée des sciences). Hörbelege: „c'est à l'intérieur“ (drinnen → bei Regen gut) und „ça dure deux heures“ (passt zu zwei Stunden Zeit). Proposition B ist „dehors“ (draußen) — bei starkem Regen ungünstig.",
+    "acceptable_reasoning": "A ist die tragfähige Wahl, weil beide Bedingungen (Regen → drinnen; zwei Stunden Zeit) erfüllt sind; die Begründung muss auf mindestens eine gehörte Information Bezug nehmen (intérieur ODER durée).",
+    "rubric": [
+      {
+        "criterion": "Begründete Entscheidung (Hörbezug)",
+        "levels": [
+          "Wählt A und begründet mit mindestens einer gehörten Information (intérieur/durée)",
+          "Wählt A ohne klaren Hörbezug",
+          "Wahl ohne tragfähige Begründung"
+        ]
+      },
+      {
+        "criterion": "Sprachliche Form",
+        "levels": [
+          "Verständliche Äußerung (Französisch oder Deutsch), Kernwortschatz korrekt",
+          "Kleinere Fehler, Aussage bleibt klar",
+          "Unverständlich"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Evaluieren heißt: die Optionen an den Bedingungen (Regen, verfügbare Zeit) messen und mit dem Gehörten begründen — bloßes „A“ ohne Begründung genügt nicht.",
+      "Distraktor B ist kürzer (une heure) und zeitlich bequem — aber „dehors“ bei Regen ist der Ausschlussgrund; genaues Hören auf „à l'intérieur / dehors“ entscheidet."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Zweite lebende Fremdsprache",
+  "klasse": 4,
+  "kompetenzbereich": "Hören",
+  "competences": [
+    "FS2.US.4.HOR.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "HOR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0244",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:39+00:00",
+  "updated_at": "2026-07-15T13:55:39+00:00"
+}

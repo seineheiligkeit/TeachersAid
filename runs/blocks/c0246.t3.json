@@ -1,0 +1,125 @@
+{
+  "id": "c0246.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb_cube",
+      "abb_zylinder"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "cad_model",
+    "prompt": "Beschreibe Schritt für Schritt, wie du dieses Werkstück — einen Würfel mit einer durchgehenden runden Bohrung — in einem CAD-Programm aus Grundkörpern aufbaust. Nenne die Grundkörper, ihre Lage zueinander und die Boolesche Operation samt richtiger Reihenfolge.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 60.0
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "H2"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GEZ.US.4.TRA.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "1) Würfel als Grundkörper erzeugen. 2) Drehzylinder erzeugen — dünner als die Würfelkante, aber mindestens so lang wie der Würfel dick ist. 3) Den Zylinder mittig und senkrecht durch den Würfel legen. 4) Differenz bilden: Würfel ohne Zylinder (Reihenfolge wichtig — der Zylinder wird abgezogen). Ergebnis: Würfel mit durchgehender Bohrung.",
+    "acceptable_reasoning": "Wesentlich sind drei Punkte: zwei Grundkörper, die mittige Lage des Zylinders und die Differenz in der Reihenfolge Würfel minus Zylinder.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Zylinder ohne Würfel (falsche Reihenfolge) ergäbe nicht das Werkstück.",
+      "Ist der Zylinder zu kurz, entsteht nur ein Sackloch statt einer durchgehenden Bohrung."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "cad_model",
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Transformationen von Objekten und Relationen zwischen Objekten (I2)",
+  "competences": [
+    "GEZ.US.4.TRA.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "H2"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb_cube",
+      "role": "figure",
+      "lane": null,
+      "intended_claim": null,
+      "medium": "visual",
+      "generator": "matplotlib:axonometric_solid",
+      "spec": {
+        "kind": "quader",
+        "a": 4,
+        "b": 4,
+        "c": 4,
+        "labels": {
+          "a": "4 cm",
+          "b": "4 cm",
+          "c": "4 cm"
+        },
+        "show_measures": true,
+        "title": "Grundkörper 1: Würfel (Kante 4 cm)"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    },
+    {
+      "id": "abb_zylinder",
+      "role": "figure",
+      "lane": null,
+      "intended_claim": null,
+      "medium": "visual",
+      "generator": "matplotlib:axonometric_solid",
+      "spec": {
+        "kind": "cylinder",
+        "r": 1,
+        "h": 5,
+        "labels": {
+          "r": "r = 1 cm",
+          "h": "h = 5 cm"
+        },
+        "show_measures": true,
+        "title": "Grundkörper 2: Drehzylinder"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0246",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:41+00:00",
+  "updated_at": "2026-07-15T13:55:41+00:00"
+}

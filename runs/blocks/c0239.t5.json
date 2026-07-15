@@ -1,0 +1,72 @@
+{
+  "id": "c0239.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Es geht um personalisierte Suche. Entscheide bei jeder Aussage: richtig oder falsch? Begründe jede Antwort in einem Satz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Wenn du und eine Freundin dasselbe Wort in dieselbe Suchmaschine eingebt, seht ihr immer genau dieselben Ergebnisse.",
+        "Personalisierte Ergebnisse können Zeit sparen, weil sie zu deinen früheren Interessen passen.",
+        "Weil dir die Suchmaschine vor allem Passendes zeigt, kann es passieren, dass du andere Sichtweisen kaum noch zu sehen bekommst."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "G"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DGB.US.3.INF.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "1) Falsch – Suchmaschinen personalisieren die Ergebnisse (nach Ort, Gerät, früheren Suchen, angemeldetem Konto), deshalb können zwei Personen unterschiedliche Trefferlisten sehen. 2) Richtig – das ist ein echter Vorteil: passende Treffer sparen Zeit. 3) Richtig – das ist die Kehrseite (Filterblase): eine einseitige Auswahl kann andere Sichtweisen verdecken.",
+    "acceptable_reasoning": "Entscheidend ist, dass Aussage 2 als Vorteil und Aussage 3 als Nachteil derselben Personalisierung erkannt werden.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Vorteil und Nachteil verwechseln – Zeitersparnis ist der Vorteil, die Filterblase der Nachteil.",
+      "Aussage 1 für 'kommt darauf an' halten: technisch werden Ergebnisse personalisiert, also nicht immer gleich."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Digitale Grundbildung",
+  "klasse": 3,
+  "kompetenzbereich": "Information: mit Daten, Informationen und Informationssystemen verantwortungsvoll umgehen",
+  "competences": [
+    "DGB.US.3.INF.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "G"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0239",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:39+00:00",
+  "updated_at": "2026-07-15T13:55:39+00:00"
+}

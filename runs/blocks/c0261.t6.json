@@ -1,0 +1,98 @@
+{
+  "id": "c0261.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Bevor du baust, erstelle einen Arbeitsplan für deine Brücke (Material z. B. 20 Spaghetti und Klebeband, oder 3 Blätter Papier und Kleber). Schreibe die Bauschritte in der richtigen Reihenfolge auf. Notiere zu jedem Schritt kurz, was du tust und welches Material oder Werkzeug du brauchst. Zeichne zu mindestens zwei Schritten eine kleine Skizze daneben.",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Schritt",
+        "Was ich tue (mit kleiner Skizze)",
+        "Material / Werkzeug"
+      ],
+      "rows": 5
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "ENT"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "TED.US.2.ENT.04",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "TED.US.2.ENT.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Ein guter Plan steht in sinnvoller Reihenfolge und ist nachvollziehbar, z. B.: 1) Material zuschneiden und bereitlegen; 2) Dreiecke bzw. gefaltete Träger als tragende Elemente herstellen (Aussteifung!); 3) die zwei Seitenteile bauen; 4) beide Seiten mit Querstreben zu einem stabilen Körper verbinden; 5) die Fahrbahn auflegen und befestigen. Zu jedem Schritt ist Material bzw. Werkzeug genannt (Spaghetti, Klebeband/Kleber, Schere, Lineal). Wichtiger als die genaue Lösung ist, dass tragende Formen (Dreiecke, Faltungen) bewusst eingeplant sind und die Schritte aufeinander aufbauen.",
+    "acceptable_reasoning": "Jeder Plan ist gut, dessen Schritte in sinnvoller Reihenfolge stehen, zu jedem Schritt Material bzw. Werkzeug nennen und der eine tragende Form (Dreieck, Bogen, gefalteter Träger) bewusst vorsieht.",
+    "rubric": [
+      {
+        "criterion": "Sinnvolle Reihenfolge",
+        "levels": [
+          "Schritte ungeordnet",
+          "Schritte bauen nachvollziehbar aufeinander auf"
+        ]
+      },
+      {
+        "criterion": "Material/Werkzeug je Schritt",
+        "levels": [
+          "Fehlt meist",
+          "Zu den Schritten passend genannt"
+        ]
+      },
+      {
+        "criterion": "Tragende Form eingeplant",
+        "levels": [
+          "Keine tragende Form erkennbar",
+          "Dreieck, Bogen oder Faltung bewusst vorgesehen"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Eine reine Aufzählung ohne Reihenfolge ('kleben, schneiden, fertig') genügt nicht — die Schritte sollen aufeinander aufbauen.",
+      "Die tragende Idee (Dreiecke, Faltung, Bogen) soll schon im Plan auftauchen, nicht erst zufällig beim Bauen entstehen.",
+      "Skizzen dürfen einfach sein; sie sollen die Form zeigen, nicht schön aussehen."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Technik und Design",
+  "klasse": 2,
+  "kompetenzbereich": "Entwicklung",
+  "competences": [
+    "TED.US.2.ENT.04",
+    "TED.US.2.ENT.03"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "ENT"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0261",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:44+00:00",
+  "updated_at": "2026-07-15T13:55:44+00:00"
+}

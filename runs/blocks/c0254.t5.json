@@ -1,0 +1,79 @@
+{
+  "id": "c0254.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Lies die Aussagen zum Text „Marcus im Garten“ und zu den Konnektoren. Entscheide, ob sie richtig (R) oder falsch (F) sind, und begründe kurz auf Deutsch.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "In Satz 6 bedeutet „tamen“ dasselbe wie „itaque“.",
+        "„Nam“ in Satz 2 begründet, warum Marcus im Garten arbeitet.",
+        "In „Marcus aquam portat, sed fessus est“ (Satz 3) drückt „sed“ eine Folge aus.",
+        "In Satz 4 zeigt „itaque“ die Folge: Weil Marcus müde ist, setzt er sich daher hin."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "R / F",
+        "Begründung"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "SPR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "LAT.US.3.SPR.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1. F — „tamen“ heißt „dennoch“ und drückt einen Gegensatz aus; „itaque“ heißt „daher“ und drückt eine Folge aus. Die beiden sind gegensätzlich. | 2. R — „nam“ (denn) gibt den Grund an: Marcus arbeitet im Garten, denn sein Vater ist Bauer. | 3. F — „sed“ (aber) drückt einen Gegensatz aus (er trägt Wasser, ist aber müde), keine Folge. | 4. R — „itaque“ (daher) nennt die Folge der Müdigkeit: Weil Marcus müde ist, setzt er sich daher hin.",
+    "acceptable_reasoning": "Bei den falschen Aussagen ist die richtige Erklärung Teil der Lösung (nicht nur R/F).",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "„tamen“ (Gegensatz) und „itaque“ (Folge) werden oft verwechselt — das ist die Zielfalle von Aussage 1.",
+      "„sed“ verbindet nie eine Folge, sondern immer einen Gegensatz.",
+      "Bei jeder Aussage die Begründung verlangen, nicht nur R/F."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Latein",
+  "klasse": 3,
+  "kompetenzbereich": "Sprach- und textbezogene Kompetenzen",
+  "competences": [
+    "LAT.US.3.SPR.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "SPR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0254",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:42+00:00",
+  "updated_at": "2026-07-15T13:55:42+00:00"
+}

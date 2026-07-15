@@ -1,0 +1,83 @@
+{
+  "id": "c0236.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "source_critique",
+    "prompt": "Auf einem Rohrreiniger stehen: das Symbol mit der zerfressenen Fläche, das Signalwort „Gefahr“, der Hinweis „Verursacht schwere Verätzungen der Haut und schwere Augenschäden“ sowie „Schutzhandschuhe und Augenschutz tragen“ und „Bei Kontakt mit den Augen einige Minuten lang behutsam mit Wasser spülen“. Werte dieses Etikett als Informationsquelle aus: (a) Wie gefährlich ist das Mittel, und woran erkennst du das? (b) Welche Schutzmaßnahmen nennt das Etikett? (c) Was tust du, wenn etwas ins Auge spritzt?",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.US.x.STA.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "(a) Sehr gefährlich: Das Signalwort „Gefahr“ (nicht nur „Achtung“) und das Ätzwirkungs-Symbol zeigen, dass das Mittel Haut und Augen stark verätzt. Der H-Satz benennt genau diese Gefahr. (b) Schutzhandschuhe und Augenschutz (Schutzbrille) tragen. (c) Sofort einige Minuten lang mit viel Wasser spülen, dabei das Auge offen halten und nicht reiben; anschließend ärztliche Hilfe holen bzw. die Vergiftungsinformationszentrale anrufen. Genau das steht sinngemäß im P-Satz zum Augenkontakt.",
+    "acceptable_reasoning": "Kern: Das Etikett ist eine verlässliche Quelle — Signalwort und Symbol zeigen die Gefahrenhöhe, der H-Satz die Art der Gefahr, der P-Satz die richtige Reaktion.",
+    "rubric": [
+      {
+        "criterion": "Gefahrenhöhe aus Signalwort und Symbol abgelesen",
+        "levels": [
+          "„Gefahr“ und Ätzsymbol korrekt gedeutet",
+          "teilweise",
+          "nicht erkannt"
+        ]
+      },
+      {
+        "criterion": "Schutzmaßnahmen und Erste Hilfe dem Etikett entnommen",
+        "levels": [
+          "Schutzausrüstung und Augenspülen genannt",
+          "eines von beiden",
+          "fehlt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "„Gefahr“ und „Achtung“ sind festgelegte Signalwörter: „Gefahr“ warnt vor der schwereren Stufe — nicht überlesen.",
+      "H-Sätze sagen, WAS gefährlich ist; P-Sätze, WAS zu tun ist — beide gehören zusammen gelesen.",
+      "Bei einer Verätzung nicht „neutralisieren“ (etwa mit Essig oder Lauge gegensteuern), sondern nur mit viel Wasser spülen."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "source_critique",
+  "subject": "Chemie",
+  "klasse": 4,
+  "kompetenzbereich": "Standpunkte begründen, Entscheidungen treffen und reflektiert handeln (S)",
+  "competences": [
+    "CHE.US.x.STA.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0236",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:38+00:00",
+  "updated_at": "2026-07-15T13:55:38+00:00"
+}

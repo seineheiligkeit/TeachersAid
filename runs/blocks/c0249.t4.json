@@ -1,0 +1,78 @@
+{
+  "id": "c0249.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "cause_effect_match",
+    "prompt": "Verbinde jede Ursache mit ihrer Wirkung auf den Preis. Achtung: Nicht jede Ursache lässt Preise steigen!",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Die Nachfrage nach einem Gut steigt stark, das Angebot bleibt gleich.",
+        "Die Energie- und Rohstoffkosten der Unternehmen steigen.",
+        "Eine besonders gute Ernte lässt das Angebot an Gemüse stark steigen."
+      ],
+      "right": [
+        "Der Preis für Gemüse sinkt.",
+        "Der Preis des Gutes steigt, weil es knapper wird.",
+        "Die Unternehmen geben die höheren Kosten über höhere Preise weiter."
+      ]
+    },
+    "response": {
+      "mode": "none"
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "OK",
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.ENT.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 6,
+    "answer_key": "1 → B: Steigt die Nachfrage bei gleichbleibendem Angebot, wird das Gut knapper und der Preis steigt. 2 → C: Höhere Energie- und Rohstoffkosten geben Unternehmen über höhere Verkaufspreise weiter (Kostendruck). 3 → A: Eine besonders gute Ernte vergrößert das Angebot – der Preis sinkt.",
+    "acceptable_reasoning": "Die Begründung darf knapp sein; entscheidend ist die richtige Zuordnung und das Erkennen, dass ein größeres Angebot den Preis senkt.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Nicht automatisch „alles wird teurer“ ankreuzen – Ursache 3 zeigt, dass mehr Angebot den Preis SENKT.",
+      "Angebot und Nachfrage sauber unterscheiden: Nachfrage = wie viel gekauft werden will; Angebot = wie viel verfügbar ist."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "cause_effect_match",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Entwicklungen am Wirtschaftsstandort Österreich",
+  "competences": [
+    "GWB.US.3.ENT.04"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "OK",
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0249",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:42+00:00",
+  "updated_at": "2026-07-15T13:55:42+00:00"
+}

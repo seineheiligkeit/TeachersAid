@@ -1,0 +1,84 @@
+{
+  "id": "c0262.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Lies die beschriebene Situation im Textilwerkraum. Finde mindestens vier Dinge, die gefährlich sind oder gegen die Werkraumordnung verstoßen, und schreibe zu jedem, wie man es richtig macht.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "In der Nähwerkstatt herrscht Betrieb: Auf Pias Tisch liegt eine offene Stoffschere mit der Spitze zur Tischkante. Neben der laufenden Nähmaschine steht das eingeschaltete Bügeleisen flach auf dem Stoff, sein Kabel hängt über die Tischkante bis zum Boden. Pia näht schnell über die Stecknadeln, statt sie herauszuziehen, und beugt sich dabei mit offenen langen Haaren dicht über die Nadel. Auf dem Boden liegen abgeschnittene Fäden und ein paar heruntergefallene Stecknadeln."
+    },
+    "response": {
+      "mode": "lines",
+      "n": 8
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "HER"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "TED.US.3.HER.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 12,
+    "answer_key": "Gefahren und ihre Behebung (mindestens vier): 1) Offene Schere mit der Spitze zur Kante → Schere geschlossen und mit der Spitze zur Tischmitte ablegen, nicht offen liegen lassen. 2) Bügeleisen eingeschaltet und flach auf dem Stoff → immer auf die Abstellfläche stellen (Brandgefahr), bei Nichtgebrauch ausschalten. 3) Kabel hängt über die Tischkante → Kabel sichern, damit niemand hängen bleibt und das heiße Eisen herunterreißt. 4) Über Stecknadeln nähen → Nadeln vor der Nähnadel herausziehen (die Nadel kann brechen und wegspringen). 5) Offene lange Haare dicht über der Nadel → Haare zusammenbinden und Abstand zur Nadel halten (Haare oder Kleidung können erfasst werden). 6) Fäden und Nadeln am Boden → sofort aufheben bzw. aufkehren (Rutsch- und Stichgefahr), Nadeln ins Nadelkissen.",
+    "acceptable_reasoning": "Vier klar benannte Gefahren mit jeweils passender, richtiger Behebung genügen; Auswahl und Reihenfolge sind frei.",
+    "rubric": [
+      {
+        "criterion": "Gefahren erkannt",
+        "levels": [
+          "Weniger als vier oder unklar",
+          "Mindestens vier Gefahren konkret benannt"
+        ]
+      },
+      {
+        "criterion": "Richtige Behebung",
+        "levels": [
+          "Behebung fehlt oder unpassend",
+          "Zu jeder Gefahr eine richtige Handlung genannt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Manche schreiben nur 'unordentlich' — verlangt ist die konkrete Gefahr UND die richtige Handlung.",
+      "Das eingeschaltete Bügeleisen auf dem Stoff ist die größte Gefahr (Brand) und wird oft übersehen.",
+      "Auch das Kabel über der Tischkante ist gefährlich, weil es das heiße Eisen herunterreißen kann."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Technik und Design",
+  "klasse": 3,
+  "kompetenzbereich": "Herstellung",
+  "competences": [
+    "TED.US.3.HER.03"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "HER"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0262",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:44+00:00",
+  "updated_at": "2026-07-15T13:55:44+00:00"
+}

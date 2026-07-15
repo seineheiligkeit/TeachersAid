@@ -1,0 +1,86 @@
+{
+  "id": "c0259.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "matching",
+    "prompt": "Ordne jeder Stellung bzw. Finsternis die richtige Beschreibung zu. Schreibe die Paare auf (zum Beispiel ‚Sonnenfinsternis – …').",
+    "payload": {
+      "kind": "matching",
+      "left": [
+        "Sonnenfinsternis",
+        "Mondfinsternis",
+        "Neumond",
+        "Vollmond"
+      ],
+      "right": [
+        "Der Mond steht zwischen Sonne und Erde; sein Schatten trifft die Erde.",
+        "Die Erde steht zwischen Sonne und Mond; der Mond taucht in den Schatten der Erde.",
+        "Der Mond steht zwischen Sonne und Erde – seine unbeleuchtete Seite zeigt zu uns, wir sehen ihn kaum.",
+        "Die Erde steht zwischen Sonne und Mond – seine voll beleuchtete Seite zeigt zu uns."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "W",
+      "E"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "PHY.US.2.SEH.03",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "PHY.US.2.SEH.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "Sonnenfinsternis – Der Mond steht zwischen Sonne und Erde; sein Schatten trifft die Erde (nur bei Neumond möglich). Mondfinsternis – Die Erde steht zwischen Sonne und Mond; der Mond taucht in den Erdschatten (nur bei Vollmond). Neumond – Der Mond steht zwischen Sonne und Erde, seine unbeleuchtete Seite zeigt zu uns. Vollmond – Die Erde steht zwischen Sonne und Mond, seine voll beleuchtete Seite zeigt zu uns. Wichtig: Trotzdem gibt es nicht bei jedem Neumond oder Vollmond eine Finsternis, weil die Mondbahn gegen die Erdbahn geneigt ist.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Sonnenfinsternis = Mondschatten auf der Erde; Mondfinsternis = Erdschatten auf dem Mond – die beiden werden oft vertauscht.",
+      "Sonnenfinsternis und gewöhnlicher Neumond haben fast dieselbe Stellung; unterscheide an der Aussage ‚Schatten trifft die Erde' (Finsternis) gegenüber ‚unbeleuchtete Seite zeigt zu uns' (Neumond)."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "matching",
+  "subject": "Physik",
+  "klasse": 2,
+  "kompetenzbereich": "Sehen und Hören",
+  "competences": [
+    "PHY.US.2.SEH.03",
+    "PHY.US.2.SEH.04"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "W",
+    "E"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0259",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:43+00:00",
+  "updated_at": "2026-07-15T13:55:43+00:00"
+}

@@ -1,0 +1,86 @@
+{
+  "id": "c0253.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Lies die Aussage deines Freundes. Stimmst du ihm zu? Nimm Stellung und begründe deine Meinung mit mindestens DREI konkreten Beispielen aus diesem Arbeitsblatt (z. B. Planeten, Wochentage, Wörter).",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Ein Freund sagt: „Die römischen Götter sind doch längst vergessen — mit unserem heutigen Leben haben sie nichts mehr zu tun.“"
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 50.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "INH"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "LAT.US.3.INH.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "Man sollte dem Freund widersprechen: Die Götternamen leben weiter — in den Planeten (Mars, Venus, Neptun, Merkur), in den Wochentagen romanischer Sprachen (frz. jeudi ← dies Iovis, mardi ← dies Martis) und in Wörtern wie „martialisch“ oder „jovial“. Die Götter sind also nicht „vergessen“, sondern in Sprache und Kultur bis heute gegenwärtig. (Auch eine differenzierte Antwort ist möglich: als Glaubensvorstellung sind sie kaum noch lebendig, in Sprache und Namen aber sehr wohl — sofern das mit Beispielen belegt wird.)",
+    "acceptable_reasoning": "Entscheidend ist die eigene, begründete Stellungnahme MIT mindestens drei verschiedenen, im Arbeitsblatt belegten Beispielen; eine bloße Meinung ohne Belege genügt nicht.",
+    "rubric": [
+      {
+        "criterion": "Belege aus dem Arbeitsblatt",
+        "levels": [
+          "Mindestens drei passende, verschiedene Beispiele genannt.",
+          "Ein bis zwei Beispiele genannt.",
+          "Keine oder unpassende Beispiele."
+        ]
+      },
+      {
+        "criterion": "Eigene Stellungnahme",
+        "levels": [
+          "Klare, begründete Position.",
+          "Position erkennbar, aber schwach begründet.",
+          "Keine erkennbare Position."
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Mindestens drei VERSCHIEDENE Beispiele verlangen (nicht dreimal ein Planet).",
+      "Eine reine Ja/Nein-Antwort ohne Begründung reicht nicht.",
+      "Auch ein differenziertes „teils/teils“ ist eine gute Antwort, wenn es belegt wird."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Latein",
+  "klasse": 3,
+  "kompetenzbereich": "Inhalts- und themenbezogene Kompetenzen",
+  "competences": [
+    "LAT.US.3.INH.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "INH"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0253",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:42+00:00",
+  "updated_at": "2026-07-15T13:55:42+00:00"
+}

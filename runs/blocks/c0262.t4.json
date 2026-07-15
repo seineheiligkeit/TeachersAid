@@ -1,0 +1,93 @@
+{
+  "id": "c0262.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "enactive",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Richte die Nähmaschine für einen Geradstich ein und nähe auf einem Stoffrest eine Probenaht (etwa 10 cm, mit gleichem Abstand zur Kante). Verriegle am Anfang und Ende. Halte danach fest: (a) In welcher Reihenfolge hast du die Maschine vorbereitet (z. B. Unterfaden/Spule, Oberfaden, Stoff einlegen, Nähfuß senken)? (b) Wie hast du beim Nähen auf deine Finger und die Stecknadeln geachtet? (c) Wozu dient das Verriegeln?",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "HER"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "TED.US.3.HER.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "TED.US.3.HER.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 15,
+    "answer_key": "(a) Sinnvolle Reihenfolge: Unterfaden/Spule einlegen und den Unterfaden heraufholen, Oberfaden einfädeln, beide Fäden nach hinten legen, Stoff unter den Nähfuß legen, Nähfuß senken, langsam losnähen. (b) Finger neben dem Nähfuß führen (nicht davor), langsam nähen und die Stecknadeln VOR der Nadel herausziehen — nie darübernähen. (c) Das Verriegeln (ein paar Stiche vor und zurück am Anfang und Ende) sichert die Naht, damit sie sich nicht wieder aufzieht.",
+    "acceptable_reasoning": "Die genaue Reihenfolge darf je nach Maschine leicht abweichen; wichtig ist, dass Ober- und Unterfaden vorbereitet werden, der Nähfuß vor dem Nähen gesenkt wird, sicher gearbeitet wird und das Verriegeln als Sicherung der Naht erklärt ist.",
+    "rubric": [
+      {
+        "criterion": "Maschine sachgemäß eingerichtet",
+        "levels": [
+          "Reihenfolge unklar oder fehlerhaft",
+          "Ober- und Unterfaden sowie Nähfuß in sinnvoller Reihenfolge"
+        ]
+      },
+      {
+        "criterion": "Sicheres Arbeiten",
+        "levels": [
+          "Sicherheitsaspekte fehlen",
+          "Finger und Stecknadeln richtig beachtet"
+        ]
+      },
+      {
+        "criterion": "Verriegeln verstanden",
+        "levels": [
+          "Zweck unklar",
+          "Verriegeln als Nahtsicherung erklärt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Klassischer Fehler: Nähfuß nicht gesenkt — dann verheddert sich der Faden und es entsteht ein 'Fadensalat' an der Unterseite.",
+      "Über Stecknadeln zu nähen kann die Nadel brechen lassen; Stecknadeln rechtzeitig entfernen.",
+      "Zu schnelles Nähen führt zu schiefen Nähten und ist gefährlicher — lieber langsam und gleichmäßig."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Technik und Design",
+  "klasse": 3,
+  "kompetenzbereich": "Herstellung",
+  "competences": [
+    "TED.US.3.HER.02",
+    "TED.US.3.HER.03"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "HER"
+  ],
+  "modality": "enactive",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0262",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:44+00:00",
+  "updated_at": "2026-07-15T13:55:44+00:00"
+}

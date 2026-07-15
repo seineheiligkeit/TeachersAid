@@ -1,0 +1,72 @@
+{
+  "id": "c0238.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Hier sind drei Vorschläge für die Lehre der Fabel. Entscheide bei jedem: Passt er gut zur Fabel (Ja) oder nicht (Nein)? Begründe jede Entscheidung kurz mit dem Text.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Wer genau zuhört und beobachtet, erreicht mehr als wer laut und hastig losstürmt.",
+        "Wer am lautesten ist, bekommt am Ende am meisten.",
+        "Man soll niemals um Rat fragen."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "LES"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DEU.US.3.LES.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1. Ja — das ist der Kern: die leise, aufmerksame Amsel hat Erfolg, der laute Specht nicht. 2. Nein — die Fabel zeigt das GEGENTEIL: Der laute Specht findet fast nichts, weil die Käfer den Lärm hören und sich verstecken. 3. Nein — vom „um Rat fragen“ handelt die Fabel gar nicht; der Specht fragt zwar die Amsel, aber darum geht es nicht. Die beste Lehre ist Vorschlag 1.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Vorschlag 2 klingt wie eine „coole“ Lebensweisheit, widerspricht aber der Fabel — genau hinsehen, wer Erfolg hat.",
+      "Vorschlag 3 greift ein Detail (die Frage des Spechts) heraus und macht es zur Lehre — ein Detail ist noch keine Lehre."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Deutsch",
+  "klasse": 3,
+  "kompetenzbereich": "Lesen",
+  "competences": [
+    "DEU.US.3.LES.02"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "LES"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0238",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:38+00:00",
+  "updated_at": "2026-07-15T13:55:38+00:00"
+}

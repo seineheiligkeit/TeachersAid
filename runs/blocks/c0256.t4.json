@@ -1,0 +1,142 @@
+{
+  "id": "c0256.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb1"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Im Koordinatensystem (Abbildung) siehst du die beiden Geraden g und h. (a) Lies die Koordinaten ihres Schnittpunkts ab. (b) Bestimme aus dem Verlauf jede Geradengleichung in der Form y = k · x + d. (c) Erkläre, warum genau der Schnittpunkt die Lösung des Gleichungssystems aus g und h ist, und bestätige das durch Einsetzen.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "DAR",
+      "OPE"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.4.VAR.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "MAT.US.4.VAR.03",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "MAT.US.4.VAR.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "(a) Der Schnittpunkt ist S = (3 | 4). (b) g geht durch (0 | 1) und steigt pro Schritt nach rechts um 1, also g: y = x + 1. h geht durch (0 | 7) und fällt pro Schritt um 1, also h: y = -x + 7. (c) Der Schnittpunkt liegt auf beiden Geraden, deshalb erfüllt sein Zahlenpaar beide Gleichungen gleichzeitig – genau das ist die Bedingung für die Lösung des Systems. Probe: 3 + 1 = 4 (stimmt) und -3 + 7 = 4 (stimmt).",
+    "acceptable_reasoning": "Die Reihenfolge der Teilschritte ist frei; entscheidend sind der richtige Schnittpunkt, beide Geradengleichungen und die Begründung über die gemeinsame Lage auf beiden Geraden.",
+    "rubric": [
+      {
+        "criterion": "Darstellungswechsel vom Graphen zur Gleichung",
+        "levels": [
+          "Schnittpunkt oder Gleichungen fehlerhaft abgelesen",
+          "Schnittpunkt richtig, eine Gleichung fehlerhaft",
+          "Schnittpunkt und beide Gleichungen korrekt, Deutung als Lösung begründet"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Beim Ablesen der Steigung ein sauberes Steigungsdreieck verwenden (ein Schritt nach rechts, wie viele nach oben oder unten).",
+      "Eine fallende Gerade hat eine NEGATIVE Steigung (hier k = -1); das Vorzeichen wird oft vergessen."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Mathematik",
+  "klasse": 4,
+  "kompetenzbereich": "2: Variablen und Funktionen",
+  "competences": [
+    "MAT.US.4.VAR.02",
+    "MAT.US.4.VAR.03",
+    "MAT.US.4.VAR.04"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "DAR",
+    "OPE"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb1",
+      "role": "figure",
+      "lane": null,
+      "intended_claim": null,
+      "medium": "visual",
+      "generator": "matplotlib:coordinate_plane",
+      "spec": {
+        "points": [
+          {
+            "x": 0,
+            "y": 1,
+            "label": "g"
+          },
+          {
+            "x": 6,
+            "y": 7
+          },
+          {
+            "x": 0,
+            "y": 7,
+            "label": "h"
+          },
+          {
+            "x": 6,
+            "y": 1
+          }
+        ],
+        "segments": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "xmin": 0,
+        "xmax": 6,
+        "ymin": 0,
+        "ymax": 8,
+        "title": "Zwei Geraden g und h"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0256",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:42+00:00",
+  "updated_at": "2026-07-15T13:55:42+00:00"
+}

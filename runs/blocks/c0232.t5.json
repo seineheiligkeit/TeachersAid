@@ -1,0 +1,68 @@
+{
+  "id": "c0232.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Entscheide sachlich und begründe deine Empfehlung mit mindestens zwei Kriterien.",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Familie Berger möchte umweltbewusster einkaufen, hat aber nur ein begrenztes Budget. Sie überlegt drei Wege: (A) möglichst alles in Bio-Qualität kaufen; (B) gemischt einkaufen, aber vor allem regional und saisonal; (C) vor allem auf den niedrigsten Preis achten. Welchen Weg empfiehlst du der Familie aus Umweltsicht?"
+    },
+    "response": {
+      "mode": "lines",
+      "n": 6
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.STA.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "Es gibt keine einzig richtige Lösung; bewertet wird die Begründung mit mindestens zwei Kriterien. Fachlich stark ist meist Weg B oder eine Mischung aus A und B: Regionale, saisonale Lebensmittel sparen lange Transportwege, und wo möglich Bio zu wählen senkt die Pestizid- und Düngerbelastung — das ist auch mit begrenztem Budget umsetzbar (z. B. gezielt bei besonders belasteten Produkten auf Bio setzen). Reine Ausrichtung nur auf den Preis (C) blendet Umweltfolgen aus; ausschließlich Bio (A) kann am Budget scheitern und lässt den Transportweg außer Acht. Sinnvolle Kriterien: Transportweg/Regionalität, Pestizid- und Düngereinsatz, Saison, Preis/Leistbarkeit, Tierwohl, Verpackung.",
+    "acceptable_reasoning": "Jede der Optionen ist vertretbar, wenn sie mit mindestens zwei sachlichen Kriterien begründet und gegen die Alternativen abgewogen wird.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Nicht nur ein Kriterium (z. B. nur den Preis) betrachten — eine gute Handlungsempfehlung wägt mehrere Gesichtspunkte ab.",
+      "Leistbarkeit ist ein legitimes Kriterium: Eine Empfehlung, die das Budget ignoriert, ist im Alltag nicht umsetzbar."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 4,
+  "kompetenzbereich": "Standpunkte begründen und reflektiert handeln (S)",
+  "competences": [
+    "BIO.US.x.STA.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0232",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:38+00:00",
+  "updated_at": "2026-07-15T13:55:38+00:00"
+}

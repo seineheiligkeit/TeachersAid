@@ -1,0 +1,70 @@
+{
+  "id": "c0245.i1",
+  "block": {
+    "id": "i1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb_kasten"
+    ],
+    "provenance": null,
+    "role": "info",
+    "kind": "key_fact",
+    "content": "Auf dem ebenen Zeichenblatt genügen zwei Zahlen, um einen Punkt festzulegen: P(x|y). Im Raum brauchst du eine dritte Zahl, die Höhe: P(x|y|z). Die drei Werte stehen immer in derselben Reihenfolge — zuerst x (nach rechts), dann y (nach hinten), dann z (nach oben). Stell dir die drei Kanten, die von einer Ecke des Quaders ausgehen, als die Achsen x, y und z vor; die gemeinsame Ecke ist der Ursprung O(0|0|0).",
+    "callout_role": "note",
+    "teacher_note": null,
+    "watch_outs": [
+      "Die Reihenfolge x, y, z ist fix — vertauschst du sie, zeigt dieselbe Zahlengruppe auf einen anderen Punkt."
+    ],
+    "numbered": true,
+    "backdrop_asset_ref": null
+  },
+  "role": "info",
+  "kind": "key_fact",
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": null,
+  "competences": [],
+  "cognitive_level": null,
+  "dimensions": [],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb_kasten",
+      "role": "figure",
+      "lane": null,
+      "intended_claim": null,
+      "medium": "visual",
+      "generator": "matplotlib:axonometric_solid",
+      "spec": {
+        "kind": "quader",
+        "a": 4,
+        "b": 3,
+        "c": 2,
+        "labels": {
+          "a": "a = 4",
+          "b": "b = 3",
+          "c": "c = 2"
+        },
+        "show_measures": true,
+        "title": "Quader im Schrägriss — eine Ecke im Ursprung"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0245",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:40+00:00",
+  "updated_at": "2026-07-15T13:55:40+00:00"
+}

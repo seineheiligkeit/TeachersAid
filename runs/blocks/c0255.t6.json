@@ -1,0 +1,83 @@
+{
+  "id": "c0255.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Zwei Schüler:innen behaupten etwas über Teilbarkeit. Entscheide bei jeder Aussage, ob sie IMMER stimmt. Wenn ja, begründe kurz; wenn nein, gib ein Gegenbeispiel an.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Jede Zahl, die durch 6 teilbar ist, ist auch durch 3 teilbar.",
+        "Jede Zahl, die durch 4 teilbar ist, ist auch durch 8 teilbar.",
+        "Wenn eine Zahl durch 2 und durch 3 teilbar ist, dann ist sie auch durch 6 teilbar."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 3
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "BEG",
+      "OPE"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.2.ZAH.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "(1) Stimmt immer – jede durch 6 teilbare Zahl enthält den Faktor 6 = 2 · 3 und damit auch den Faktor 3. (2) Stimmt nicht – Gegenbeispiel: 12 ist durch 4 teilbar (12 = 4 · 3), aber nicht durch 8. Weitere Gegenbeispiele sind 20 oder 28. (3) Stimmt immer – 2 und 3 haben außer 1 keinen gemeinsamen Teiler (sie sind teilerfremd); ist eine Zahl durch beide teilbar, dann auch durch das Produkt 2 · 3 = 6.",
+    "acceptable_reasoning": "Für (2) wird jedes korrekte Gegenbeispiel anerkannt (jede durch 4, aber nicht durch 8 teilbare Zahl).",
+    "rubric": [
+      {
+        "criterion": "Begründen und Widerlegen",
+        "levels": [
+          "Entscheidung ohne tragfähige Begründung oder Gegenbeispiel",
+          "richtige Entscheidung, Begründung nur teilweise",
+          "richtige Entscheidung mit stichhaltiger Begründung bzw. gültigem Gegenbeispiel"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Ein einziges Gegenbeispiel genügt, um eine „Jede-Zahl“-Aussage zu widerlegen – man muss nicht alle Fälle prüfen.",
+      "Aussage (3) gilt nur, weil 2 und 3 teilerfremd sind; „durch 2 und durch 4, also durch 8“ wäre falsch (Gegenbeispiel 4)."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Mathematik",
+  "klasse": 2,
+  "kompetenzbereich": "1: Zahlen und Maße",
+  "competences": [
+    "MAT.US.2.ZAH.01"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "BEG",
+    "OPE"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0255",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:42+00:00",
+  "updated_at": "2026-07-15T13:55:42+00:00"
+}

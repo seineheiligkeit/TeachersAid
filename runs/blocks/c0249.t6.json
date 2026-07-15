@@ -1,0 +1,95 @@
+{
+  "id": "c0249.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Entscheide für jede Aussage, ob sie richtig oder falsch ist, und begründe deine Entscheidung jeweils in einem Satz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Wer sein Geld nur zu Hause aufbewahrt, verliert bei Inflation an Kaufkraft.",
+        "Wer einen Kredit mit fest vereinbarten Rückzahlungen hat, kann von Inflation profitieren.",
+        "Inflation trifft alle Menschen gleich stark.",
+        "Wenn die Löhne genauso stark steigen wie die Preise, bleibt die Kaufkraft ungefähr gleich."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "Richtig / Falsch",
+        "Begründung"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "UK"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GWB.US.3.ENT.09",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1. RICHTIG – Bargeld zu Hause verzinst sich nicht; bei steigenden Preisen kann man später weniger dafür kaufen, die Kaufkraft sinkt. 2. RICHTIG – Bei fest vereinbarten Rückzahlungen bleibt die Schuld in Euro gleich, ist aber real weniger wert; wer dabei ein mitsteigendes Einkommen hat, profitiert. 3. FALSCH – Inflation trifft nicht alle gleich: Es kommt darauf an, was man kauft, ob Einkommen oder Pension mitsteigen und ob man Ersparnisse hat. 4. RICHTIG – Steigen Löhne und Preise gleich schnell, bleibt die Kaufkraft ungefähr erhalten.",
+    "acceptable_reasoning": "Bei Aussage 2 genügt der Kern „Schuld wird real weniger wert“. Aussage 3 muss als FALSCH erkannt werden, weil Betroffenheit unterschiedlich ist.",
+    "rubric": [
+      {
+        "criterion": "Einschätzung",
+        "levels": [
+          "Alle 4 korrekt bewertet",
+          "3 von 4 korrekt",
+          "Weniger als 3 korrekt"
+        ]
+      },
+      {
+        "criterion": "Begründung",
+        "levels": [
+          "Alle Begründungen sachlich und mit Bezug zur Kaufkraft",
+          "Begründungen teils vage oder ohne Bezug",
+          "Kaum oder keine tragfähigen Begründungen"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Aussage 3 ist die anspruchsvollste: Viele halten sie für richtig. Über verschiedene Warenkörbe (junge Familie vs. Pensionist:in) sprechen.",
+      "Reine „richtig/falsch“-Antworten ohne Begründung nicht gelten lassen – die Begründung ist der Kern."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Geographie und wirtschaftliche Bildung",
+  "klasse": 3,
+  "kompetenzbereich": "Entwicklungen am Wirtschaftsstandort Österreich",
+  "competences": [
+    "GWB.US.3.ENT.09"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "UK"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0249",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:42+00:00",
+  "updated_at": "2026-07-15T13:55:42+00:00"
+}

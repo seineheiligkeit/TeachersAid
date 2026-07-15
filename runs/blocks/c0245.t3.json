@@ -1,0 +1,103 @@
+{
+  "id": "c0245.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb_kasten"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "cad_model",
+    "prompt": "Der abgebildete Quader liegt mit einer Ecke im Ursprung O(0|0|0); seine Kanten verlaufen entlang der Achsen und sind a = 4 (in x-Richtung), b = 3 (in y-Richtung) und c = 2 (in z-Richtung) lang. Gib die Koordinaten aller acht Eckpunkte an.",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Ecke",
+        "x",
+        "y",
+        "z"
+      ],
+      "rows": 8
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "H2"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GEZ.US.4.GEO.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Unten (z = 0): (0|0|0), (4|0|0), (4|3|0), (0|3|0). Oben (z = 2): (0|0|2), (4|0|2), (4|3|2), (0|3|2). Jede Koordinate ist entweder 0 oder die Kantenlänge in dieser Richtung.",
+    "acceptable_reasoning": "Die Reihenfolge der acht Ecken ist egal, solange alle acht verschieden und korrekt sind.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Die vier oberen Ecken unterscheiden sich von den unteren nur im z-Wert (0 wird zu 2).",
+      "Kein Wert ist größer als die Kantenlänge — alle Ecken sind Kombinationen aus 0/4, 0/3 und 0/2."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "cad_model",
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Geometrische Objekte und ihre Eigenschaften (I1)",
+  "competences": [
+    "GEZ.US.4.GEO.02"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "H2"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb_kasten",
+      "role": "figure",
+      "lane": null,
+      "intended_claim": null,
+      "medium": "visual",
+      "generator": "matplotlib:axonometric_solid",
+      "spec": {
+        "kind": "quader",
+        "a": 4,
+        "b": 3,
+        "c": 2,
+        "labels": {
+          "a": "a = 4",
+          "b": "b = 3",
+          "c": "c = 2"
+        },
+        "show_measures": true,
+        "title": "Quader im Schrägriss — eine Ecke im Ursprung"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0245",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:40+00:00",
+  "updated_at": "2026-07-15T13:55:40+00:00"
+}

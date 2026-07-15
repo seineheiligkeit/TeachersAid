@@ -1,0 +1,88 @@
+{
+  "id": "c0241.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "open_response",
+    "prompt": "Your friend Mia sends you this email:\n\n\"Hi! I really want to join the sports camp with you. Can my little brother come too? He is 8. Is there football every day? And how do we sign up? — Mia\"\n\nAnswer Mia's three questions in English. Use the information from the flyer.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 45.0
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "LES"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS1.US.2.LES.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "FS1.US.2.LES.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "1. No, her brother cannot come — the camp is only for young people aged 10 to 14, and he is 8. 2. Yes, there is football (and basketball) every morning, Monday to Friday. 3. To sign up, a parent has to send an email to camp@riverside.co.uk before 1 July.",
+    "acceptable_reasoning": "Reihenfolge und Formulierung sind frei; alle drei Informationen müssen korrekt aus dem Flyer stammen.",
+    "rubric": [
+      {
+        "criterion": "Uses the flyer correctly",
+        "levels": [
+          "All three answers match the flyer",
+          "Two answers correct",
+          "One or none correct"
+        ]
+      },
+      {
+        "criterion": "Answers Mia's questions",
+        "levels": [
+          "All three questions answered clearly",
+          "Some questions answered",
+          "Off-topic or copied text"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Die Altersfrage ist die Hauptfalle: 8 Jahre liegt UNTER der Grenze 10 — wer nur mit \"yes, he can come\" antwortet, hat E-Mail und Flyer nicht verknüpft.",
+      "Die Angabe \"football every day\" auf \"every morning, Monday to Friday\" präzisieren lassen.",
+      "Bei der Anmeldung sind zwei Dinge wichtig: WER (a parent) und BIS WANN (before 1 July)."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "open_response",
+  "subject": "Erste lebende Fremdsprache",
+  "klasse": 2,
+  "kompetenzbereich": "Lesen",
+  "competences": [
+    "FS1.US.2.LES.01",
+    "FS1.US.2.LES.02"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "LES"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0241",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:39+00:00",
+  "updated_at": "2026-07-15T13:55:39+00:00"
+}

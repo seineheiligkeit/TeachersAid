@@ -1,0 +1,84 @@
+{
+  "id": "c0255.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Entscheide bei jeder Aussage OHNE schriftlich zu dividieren, ob sie stimmt. Schreibe die Teilbarkeitsregel dazu, die du verwendet hast.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "612 ist durch 3 teilbar.",
+        "1250 ist durch 4 teilbar.",
+        "4725 ist durch 9 teilbar.",
+        "830 ist durch 6 teilbar."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "OPE",
+      "BEG"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.2.ZAH.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "(1) stimmt – die Quersumme 6 + 1 + 2 = 9 ist durch 3 teilbar. (2) stimmt nicht – für die Teilbarkeit durch 4 zählen nur die letzten zwei Ziffern: 50 ist nicht durch 4 teilbar. (3) stimmt – die Quersumme 4 + 7 + 2 + 5 = 18 ist durch 9 teilbar. (4) stimmt nicht – durch 6 teilbar heißt durch 2 UND durch 3 teilbar; 830 ist zwar durch 2 teilbar (endet auf 0), aber die Quersumme 8 + 3 + 0 = 11 ist nicht durch 3 teilbar.",
+    "acceptable_reasoning": "Jede Begründung gilt, die die passende Regel korrekt nennt: Quersumme für 3 und 9, letzte zwei Ziffern für 4, Kombination aus 2 und 3 für 6.",
+    "rubric": [
+      {
+        "criterion": "Anwenden der Teilbarkeitsregeln",
+        "levels": [
+          "Regel nicht oder falsch benannt",
+          "Regel genannt, aber Anwendung fehlerhaft",
+          "richtige Entscheidung mit korrekt benannter Regel"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Für die 4er-Regel zählen nur die letzten ZWEI Ziffern, nicht die Quersumme.",
+      "Teilbarkeit durch 6 wird oft mit einer eigenen „6er-Quersumme“ verwechselt – richtig ist: durch 2 und durch 3 zugleich."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Mathematik",
+  "klasse": 2,
+  "kompetenzbereich": "1: Zahlen und Maße",
+  "competences": [
+    "MAT.US.2.ZAH.01"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "OPE",
+    "BEG"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0255",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:42+00:00",
+  "updated_at": "2026-07-15T13:55:42+00:00"
+}

@@ -1,0 +1,92 @@
+{
+  "id": "c0245.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Denk dir einen einfachen Körper aus, den man aus zwei oder drei gleich großen Würfeln zusammensetzt (zum Beispiel eine kleine Treppe). Beschreibe ihn nur mit Koordinaten so vollständig, dass eine Mitschülerin ihn ohne dein Bild nachbauen kann. Gib für jeden Würfel die Koordinaten seiner vorderen unteren linken Ecke und die Kantenlänge an.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 70.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "H2",
+      "H1"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GEZ.US.4.GEO.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 10,
+    "answer_key": "Beispiel (Treppe aus drei Würfeln der Kante 2): Würfel A mit vorderer unterer linker Ecke (0|0|0); Würfel B (2|0|0); Würfel C sitzt auf B: (2|0|2). Mit diesen drei Ecken und der Kantenlänge 2 ist die Treppe eindeutig nachbaubar. Jeder andere sinnvolle Körper ist ebenso richtig, sofern jede Position durch Koordinaten festliegt.",
+    "acceptable_reasoning": "Bewertet wird nicht die Idee, sondern ob jede Teil-Lage eindeutig durch Koordinaten festgelegt und die Schreibweise korrekt ist.",
+    "rubric": [
+      {
+        "criterion": "Vollständigkeit",
+        "levels": [
+          "nur ein Würfel oder Angaben fehlen",
+          "Körper erkennbar, aber eine Lage oder Kantenlänge fehlt",
+          "alle Würfel mit Eckpunkt und Kantenlänge angegeben"
+        ]
+      },
+      {
+        "criterion": "Eindeutigkeit",
+        "levels": [
+          "Lage bleibt unklar",
+          "teilweise mehrdeutig",
+          "jede Lage ist durch Koordinaten eindeutig festgelegt"
+        ]
+      },
+      {
+        "criterion": "Schreibweise",
+        "levels": [
+          "Koordinaten fehlerhaft oder uneinheitlich",
+          "kleine Formfehler",
+          "durchgehend korrekte Form (x|y|z)"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Eine Kantenlänge allein genügt nicht — ohne die Lage jeder Ecke ist der Körper nicht eindeutig.",
+      "Alle Würfel müssen im selben Koordinatensystem beschrieben werden."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Geometrische Objekte und ihre Eigenschaften (I1)",
+  "competences": [
+    "GEZ.US.4.GEO.02"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "H2",
+    "H1"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0245",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:40+00:00",
+  "updated_at": "2026-07-15T13:55:40+00:00"
+}

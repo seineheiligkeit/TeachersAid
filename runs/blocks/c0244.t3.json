@@ -1,0 +1,77 @@
+{
+  "id": "c0244.t3",
+  "block": {
+    "id": "t3",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Höre das kurze Gespräch zwischen zwei Freund:innen (zweimal). Deine Lehrkraft liest vor:\n\n— Qu'est-ce qu'on fait cet après-midi ?\n— On peut visiter le vieux Lyon. C'est très joli.\n— Bonne idée ! Et après, on mange une glace ?\n— D'accord ! Moi, j'adore les glaces au chocolat.\n\nVrai ou faux? Kreuze an und begründe kurz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Les amis visitent un musée cet après-midi.",
+        "Ils veulent manger une glace.",
+        "Un ami adore les glaces au chocolat."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Aussage",
+        "vrai / faux",
+        "Begründung"
+      ],
+      "rows": 3
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "HOR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS2.US.4.HOR.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 7,
+    "answer_key": "1. faux — ils visitent le vieux Lyon (kein Museum). | 2. vrai — „on mange une glace ?“ / „D'accord“. | 3. vrai — „j'adore les glaces au chocolat.“",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "„le vieux Lyon“ ist ein Stadtviertel, kein „musée“ — Distraktor 1 zielt auf oberflächliches Hören.",
+      "„D'accord“ = einverstanden; als Zustimmung erkennen (Gesprächsstrategie)."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Zweite lebende Fremdsprache",
+  "klasse": 4,
+  "kompetenzbereich": "Hören",
+  "competences": [
+    "FS2.US.4.HOR.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "HOR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0244",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:39+00:00",
+  "updated_at": "2026-07-15T13:55:39+00:00"
+}

@@ -1,0 +1,77 @@
+{
+  "id": "c0255.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "calculation",
+    "prompt": "Jetzt wird das Werkzeug angewendet. (a) Kürze den Bruch 60/90 in einem einzigen Schritt vollständig, indem du Zähler und Nenner durch den ggT teilst. (b) Vergleiche die Brüche 5/6 und 7/9: Bringe beide mit dem kgV von 6 und 9 auf einen gemeinsamen Nenner (Hauptnenner) und entscheide, welcher Bruch größer ist.",
+    "payload": null,
+    "response": {
+      "mode": "lines",
+      "n": 4
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "OPE",
+      "DAR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.2.ZAH.03",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "MAT.US.2.ZAH.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "MAT.US.2.ZAH.01",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "(a) ggT(60, 90) = 30, also 60/90 = (60 : 30)/(90 : 30) = 2/3. (b) kgV(6, 9) = 18. Damit wird 5/6 = 15/18 und 7/9 = 14/18. Weil 15 größer als 14 ist, gilt: 5/6 ist größer als 7/9.",
+    "acceptable_reasoning": "Auch schrittweises Kürzen (erst durch 10, dann durch 3) führt auf 2/3 und gilt als richtig; der Weg über den ggT ist nur der kürzere.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Wer 60/90 nur durch 10 kürzt (6/9), ist nicht fertig – mit dem ggT gelingt das vollständige Kürzen in einem Schritt.",
+      "Brüche mit verschiedenen Nennern kann man nicht an den Zählern vergleichen; erst auf den gemeinsamen Nenner bringen."
+    ],
+    "self_check": "Prüfe dein Ergebnis 2/3: Lässt es sich noch weiter kürzen? Da ggT(2, 3) = 1 ist, ist es vollständig gekürzt.",
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "calculation",
+  "subject": "Mathematik",
+  "klasse": 2,
+  "kompetenzbereich": "1: Zahlen und Maße",
+  "competences": [
+    "MAT.US.2.ZAH.03",
+    "MAT.US.2.ZAH.02",
+    "MAT.US.2.ZAH.01"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "OPE",
+    "DAR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0255",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:42+00:00",
+  "updated_at": "2026-07-15T13:55:42+00:00"
+}

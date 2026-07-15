@@ -1,0 +1,81 @@
+{
+  "id": "c0256.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Denke dir selbst eine Sachsituation aus, die auf ein Gleichungssystem mit zwei Unbekannten führt und die Lösung x = 4 und y = 7 hat (zum Beispiel mit Preisen, Mengen oder Anzahlen). Schreibe die Sachaufgabe, die beiden Gleichungen und die Lösung getrennt auf, sodass ein anderes Kind deine Aufgabe rechnen kann. Prüfe selbst, ob dein Zahlenpaar wirklich beide Gleichungen erfüllt.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 70.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "MOD",
+      "BEG"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "MAT.US.4.VAR.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "MAT.US.4.VAR.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "Individuelle Lösung. Beispiel: „In einem Beutel liegen 11 Kugeln, rote und blaue. Es sind um 3 mehr blaue als rote.“ Mit x = Anzahl der roten und y = Anzahl der blauen Kugeln entsteht I: x + y = 11 und II: y = x + 3. Lösung: x = 4, y = 7 (Probe: 4 + 7 = 11 und 7 = 4 + 3, beides stimmt). Prüfkriterium: Die Situation muss auf ZWEI Gleichungen mit zwei Unbekannten führen, und das Paar (4 | 7) muss beide erfüllen.",
+    "acceptable_reasoning": null,
+    "rubric": [
+      {
+        "criterion": "Eigene Modellierung eines Gleichungssystems",
+        "levels": [
+          "keine gültige Situation mit zwei Gleichungen",
+          "Situation mit zwei Gleichungen, Lösung passt nicht genau",
+          "stimmige Situation, zwei Gleichungen und Lösung (4 | 7) passen und sind geprüft"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Die ausgedachte Situation muss WIRKLICH zwei Unbekannte enthalten, sonst entsteht kein Gleichungssystem.",
+      "Zum Schluss die eigene Lösung (4 | 7) in beide selbst aufgestellten Gleichungen einsetzen – sie muss aufgehen."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Mathematik",
+  "klasse": 4,
+  "kompetenzbereich": "2: Variablen und Funktionen",
+  "competences": [
+    "MAT.US.4.VAR.01",
+    "MAT.US.4.VAR.04"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "MOD",
+    "BEG"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0256",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:42+00:00",
+  "updated_at": "2026-07-15T13:55:42+00:00"
+}

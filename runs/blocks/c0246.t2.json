@@ -1,0 +1,140 @@
+{
+  "id": "c0246.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [
+      "abb_cube",
+      "abb_zylinder"
+    ],
+    "provenance": null,
+    "role": "task",
+    "kind": "multiple_choice",
+    "prompt": "Aus dem Würfel (Grundkörper 1) wird der Drehzylinder (Grundkörper 2) mittig und senkrecht herausgeschnitten, also Würfel ohne Zylinder. Welcher Körper entsteht?",
+    "payload": {
+      "kind": "multiple_choice",
+      "options": [
+        "ein Würfel mit einem durchgehenden runden Loch (Bohrung)",
+        "ein Drehzylinder",
+        "ein größerer Würfel",
+        "zwei getrennte Halbwürfel"
+      ],
+      "select": "one"
+    },
+    "response": {
+      "mode": "choices",
+      "options": [
+        "ein Würfel mit einem durchgehenden runden Loch (Bohrung)",
+        "ein Drehzylinder",
+        "ein größerer Würfel",
+        "zwei getrennte Halbwürfel"
+      ],
+      "select": "one"
+    },
+    "cognitive_level": "apply",
+    "difficulty": null,
+    "dimensions": [
+      "H3"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GEZ.US.4.TRA.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "Ein Würfel mit einem durchgehenden runden Loch (Bohrung). Der Zylinder ist länger als der Würfel dick ist, deshalb geht das Loch ganz durch.",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Bei der Differenz bleibt der größere Körper (Würfel) übrig, aus ihm fehlt das Zylindervolumen — es entsteht kein Zylinder.",
+      "Eine mittige Bohrung trennt den Würfel nicht in zwei Teile."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "multiple_choice",
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Transformationen von Objekten und Relationen zwischen Objekten (I2)",
+  "competences": [
+    "GEZ.US.4.TRA.03"
+  ],
+  "cognitive_level": "apply",
+  "dimensions": [
+    "H3"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [
+    {
+      "id": "abb_cube",
+      "role": "figure",
+      "lane": null,
+      "intended_claim": null,
+      "medium": "visual",
+      "generator": "matplotlib:axonometric_solid",
+      "spec": {
+        "kind": "quader",
+        "a": 4,
+        "b": 4,
+        "c": 4,
+        "labels": {
+          "a": "4 cm",
+          "b": "4 cm",
+          "c": "4 cm"
+        },
+        "show_measures": true,
+        "title": "Grundkörper 1: Würfel (Kante 4 cm)"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    },
+    {
+      "id": "abb_zylinder",
+      "role": "figure",
+      "lane": null,
+      "intended_claim": null,
+      "medium": "visual",
+      "generator": "matplotlib:axonometric_solid",
+      "spec": {
+        "kind": "cylinder",
+        "r": 1,
+        "h": 5,
+        "labels": {
+          "r": "r = 1 cm",
+          "h": "h = 5 cm"
+        },
+        "show_measures": true,
+        "title": "Grundkörper 2: Drehzylinder"
+      },
+      "correctness_surface": null,
+      "misleading_in_isolation": false,
+      "intentionally_flawed": null,
+      "machine_generatable": true,
+      "provenance": null,
+      "data_source": null,
+      "illustrative": false,
+      "caption": null
+    }
+  ],
+  "status": "in_review",
+  "provenance": "harvested:c0246",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:41+00:00",
+  "updated_at": "2026-07-15T13:55:41+00:00"
+}

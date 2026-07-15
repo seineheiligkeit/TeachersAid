@@ -1,0 +1,78 @@
+{
+  "id": "c0231.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Beurteile jede Aussage als richtig oder falsch und begründe deine Entscheidung jeweils in einem Satz.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "Ein Muskel kann sich zusammenziehen und dabei ziehen, aber nicht aktiv schieben.",
+        "Knochen sind totes, starres Material ohne eigene Aufgabe im Körper.",
+        "Ein Gelenk ist die bewegliche Verbindung zwischen zwei Knochen.",
+        "Weil man den Bizeps anspannen kann, kann man mit ihm den Arm sowohl beugen als auch strecken."
+      ]
+    },
+    "response": {
+      "mode": "lines",
+      "n": 8
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "W"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "BIO.US.x.WIS.01",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "BIO.US.x.WIS.03",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "1 richtig — Muskeln erzeugen Kraft nur durch Zusammenziehen (Zug), schieben können sie nicht. 2 falsch — Knochen leben: Sie wachsen, können heilen, speichern Mineralstoffe (z. B. Kalzium) und in ihrem Inneren wird Blut gebildet. 3 richtig — genau das ist ein Gelenk: die bewegliche Verbindung zweier Knochen. 4 falsch — der Bizeps ist der Beuger und beugt den Arm; das Strecken übernimmt sein Gegenspieler, der Trizeps.",
+    "acceptable_reasoning": "Bei Aussage 2 genügt ein Beleg dafür, dass Knochen leben (Wachstum, Heilung, Blutbildung oder Speicherung von Mineralstoffen).",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Aussage 2 ist die klassische Falle: Ein Knochenpräparat wirkt tot, doch im lebenden Körper ist Knochen ein aktives, durchblutetes Gewebe.",
+      "Aussage 4 prüft das Gegenspielerprinzip: Ein Muskel bewegt ein Gelenk immer nur in eine Richtung."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Biologie und Umweltbildung",
+  "klasse": 1,
+  "kompetenzbereich": "Wissen aneignen, anwenden und kommunizieren (W)",
+  "competences": [
+    "BIO.US.x.WIS.01",
+    "BIO.US.x.WIS.03"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "W"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0231",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:38+00:00",
+  "updated_at": "2026-07-15T13:55:38+00:00"
+}

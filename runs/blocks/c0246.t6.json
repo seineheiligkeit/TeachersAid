@@ -1,0 +1,92 @@
+{
+  "id": "c0246.t6",
+  "block": {
+    "id": "t6",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "create_produce",
+    "prompt": "Erfinde ein eigenes Werkstück, das man aus mindestens zwei Grundkörpern mit zwei verschiedenen Booleschen Operationen bauen kann (zum Beispiel zuerst eine Vereinigung, dann eine Differenz). Beschreibe die Grundkörper, die Reihenfolge der Operationen und das fertige Ergebnis so genau, dass es jemand nachbauen kann. Eine kurze Skizze in Worten darfst du dazugeben.",
+    "payload": null,
+    "response": {
+      "mode": "box",
+      "min_height_mm": 70.0
+    },
+    "cognitive_level": "create",
+    "difficulty": null,
+    "dimensions": [
+      "H2",
+      "H1"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "GEZ.US.4.TRA.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 11,
+    "answer_key": "Beispiel: Zuerst die Vereinigung eines liegenden Quaders (Griff) mit einem stehenden Zylinder (Achse) zu einem Körper; danach die Differenz mit einem dünnen, durchgehenden Zylinder für eine Schraubenbohrung. Jede Kombination ist richtig, die zwei verschiedene Operationen sinnvoll verkettet und die Lage der Körper eindeutig beschreibt.",
+    "acceptable_reasoning": "Bewertet wird nicht die Idee selbst, sondern ob zwei verschiedene Operationen sinnvoll verkettet und die Körper eindeutig beschrieben sind.",
+    "rubric": [
+      {
+        "criterion": "Zwei verschiedene Operationen",
+        "levels": [
+          "nur eine Operation verwendet",
+          "zwei Operationen genannt, aber Reihenfolge unklar",
+          "zwei verschiedene Operationen mit klarer Reihenfolge"
+        ]
+      },
+      {
+        "criterion": "Nachbaubarkeit",
+        "levels": [
+          "Grundkörper oder Lage fehlen",
+          "grob beschrieben, Lücken bleiben",
+          "Grundkörper, Lage und Ergebnis eindeutig beschrieben"
+        ]
+      },
+      {
+        "criterion": "Fachsprache",
+        "levels": [
+          "Begriffe fehlen oder sind falsch",
+          "teilweise korrekt",
+          "Vereinigung, Differenz und Durchschnitt korrekt verwendet"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Zwei Differenzen hintereinander sind nur eine Art von Operation — verlangt sind zwei verschiedene.",
+      "Ohne Angabe der Lage der Körper zueinander ist das Werkstück nicht eindeutig."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "create_produce",
+  "subject": "Geometrisches Zeichnen",
+  "klasse": 4,
+  "kompetenzbereich": "Transformationen von Objekten und Relationen zwischen Objekten (I2)",
+  "competences": [
+    "GEZ.US.4.TRA.02"
+  ],
+  "cognitive_level": "create",
+  "dimensions": [
+    "H2",
+    "H1"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0246",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:41+00:00",
+  "updated_at": "2026-07-15T13:55:41+00:00"
+}

@@ -1,0 +1,91 @@
+{
+  "id": "c0236.t5",
+  "block": {
+    "id": "t5",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "decision_scenario",
+    "prompt": "Beim Aufräumen findest du unter der Spüle eine unbeschriftete Sprühflasche mit einer gelblichen Flüssigkeit. Deine 5-jährige Schwester ist im Raum. (a) Beschreibe Schritt für Schritt, was du tust und was du bewusst NICHT tust, und begründe jede Entscheidung. (b) An welche Stelle oder welchen Beruf könntest du dich wenden, wenn jemand doch etwas davon abbekommen hat?",
+    "payload": {
+      "kind": "decision_scenario",
+      "stem": "Unbeschriftete Sprühflasche mit gelblicher Flüssigkeit unter der Spüle, ein Kleinkind im Raum — wie handelst du sicher?"
+    },
+    "response": {
+      "mode": "box",
+      "min_height_mm": 55.0
+    },
+    "cognitive_level": "evaluate",
+    "difficulty": null,
+    "dimensions": [
+      "S"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "CHE.US.x.STA.03",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "CHE.US.x.STA.04",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "(a) Sinnvolles Vorgehen: nicht daran riechen, nicht kosten, nichts verspritzen — bei unbekannten Stoffen keine Geruchs- oder Geschmacksprobe (kann ätzend oder giftig sein). Die kleine Schwester weg von der Flasche bringen und die Flasche außer Reichweite von Kindern stellen. Die Flasche geschlossen lassen und nicht umfüllen — schon gar nicht in eine Getränkeflasche. Erwachsene informieren; ist der Inhalt unklar, fachgerecht über die Problemstoffsammelstelle entsorgen, nicht in den Abfluss oder Restmüll. Begründung: Ohne Etikett kennt man Gefahr und richtige Handhabung nicht; das Vorsichtsprinzip schützt vor Verätzung und Vergiftung, besonders Kinder. (b) Im Notfall: die Vergiftungsinformationszentrale (VIZ) in Wien, Tel. +43 1 406 43 43, oder der Euro-Notruf 112; auch die Apotheke oder der Arzt/die Ärztin geben Rat. Beruflich mit gefährlichen Stoffen befasst sind z. B. die Feuerwehr (Gefahrgut), Chemielaborant:innen oder Sicherheitsfachkräfte.",
+    "acceptable_reasoning": "Kern: Bei Unbekanntem gilt das Vorsichtsprinzip (keine Sinnesprobe, außer Reichweite von Kindern, Fachstelle einbeziehen). Mehrere begründete Schutzentscheidungen zählen; bei (b) genügt eine passende Anlaufstelle.",
+    "rubric": [
+      {
+        "criterion": "Vorsichtsprinzip angewandt und begründet",
+        "levels": [
+          "mehrere Schutzschritte klar begründet (keine Sinnesprobe, Kind schützen, Flasche sichern)",
+          "einzelne Schritte, dünn begründet",
+          "unsystematisch oder riskant"
+        ]
+      },
+      {
+        "criterion": "Passende Anlaufstelle im Notfall genannt",
+        "levels": [
+          "Vergiftungsinformationszentrale/Notruf oder gleichwertige Stelle genannt",
+          "vage",
+          "fehlt"
+        ]
+      }
+    ],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Häufiger Reflex: „kurz daran riechen, um zu erkennen, was es ist“. Genau das ist bei unbekannten Chemikalien gefährlich (Reizgase oder ätzende Dämpfe).",
+      "Unbekanntes nicht einfach in den Abfluss kippen — mögliche Reaktionen und Umweltgefahr; richtig ist die Problemstoffsammelstelle.",
+      "Nie in Lebensmittel- oder Getränkeflaschen umfüllen — eine der häufigsten Ursachen für Vergiftungen bei Kindern."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "decision_scenario",
+  "subject": "Chemie",
+  "klasse": 4,
+  "kompetenzbereich": "Standpunkte begründen, Entscheidungen treffen und reflektiert handeln (S)",
+  "competences": [
+    "CHE.US.x.STA.03",
+    "CHE.US.x.STA.04"
+  ],
+  "cognitive_level": "evaluate",
+  "dimensions": [
+    "S"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0236",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:38+00:00",
+  "updated_at": "2026-07-15T13:55:38+00:00"
+}

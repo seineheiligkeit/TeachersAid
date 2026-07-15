@@ -1,0 +1,82 @@
+{
+  "id": "c0238.t2",
+  "block": {
+    "id": "t2",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "multiple_choice",
+    "prompt": "Dieser Text ist eine Fabel. Welche drei Merkmale treffen auf eine Fabel zu? Kreuze GENAU DREI an.",
+    "payload": {
+      "kind": "multiple_choice",
+      "options": [
+        "Tiere handeln und sprechen wie Menschen.",
+        "Die Geschichte ist kurz und läuft auf einen Punkt zu.",
+        "Sie will eine Lehre vermitteln.",
+        "Sie berichtet ein wirklich geschehenes Ereignis mit Datum und Ort.",
+        "Sie erklärt sachlich, wie Vögel ihr Futter suchen."
+      ],
+      "select": "many"
+    },
+    "response": {
+      "mode": "choices",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "select": "many"
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "LES"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "DEU.US.3.LES.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 5,
+    "answer_key": "Richtig sind A, B und C: In einer Fabel handeln und sprechen Tiere wie Menschen (A), die Handlung ist kurz und zugespitzt (B) und sie will eine Lehre vermitteln (C). D ist falsch (eine Fabel ist erfunden, kein Tatsachenbericht mit Datum und Ort), E ist falsch (ein Sachtext würde erklären, eine Fabel erzählt).",
+    "acceptable_reasoning": null,
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "D klingt „seriös“ und wird oft angekreuzt — aber eine Fabel ist erfunden, nicht faktisch.",
+      "E verwechselt Fabel und Sachtext: Beide handeln von Tieren, aber nur der Sachtext will informieren."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "multiple_choice",
+  "subject": "Deutsch",
+  "klasse": 3,
+  "kompetenzbereich": "Lesen",
+  "competences": [
+    "DEU.US.3.LES.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "LES"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0238",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:38+00:00",
+  "updated_at": "2026-07-15T13:55:38+00:00"
+}

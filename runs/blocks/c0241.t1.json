@@ -1,0 +1,80 @@
+{
+  "id": "c0241.t1",
+  "block": {
+    "id": "t1",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "true_false_justify",
+    "prompt": "Read the camp flyer. Are these statements TRUE or FALSE? Write T or F. For every FALSE statement, write the correct information from the flyer.",
+    "payload": {
+      "kind": "true_false_justify",
+      "statements": [
+        "The camp is for young people aged 10 to 14.",
+        "You can go swimming every afternoon.",
+        "Lunch is included in the £60 price.",
+        "You are allowed to use your mobile phone during the sports activities.",
+        "To book a place, a parent must send an email before 1 July."
+      ]
+    },
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Statement",
+        "T / F",
+        "Correct information (if false)"
+      ],
+      "rows": 5
+    },
+    "cognitive_level": "understand",
+    "difficulty": null,
+    "dimensions": [
+      "LES"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "FS1.US.2.LES.02",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 8,
+    "answer_key": "1. T. 2. F — you can only go swimming on Tuesday and Thursday afternoons. 3. T. 4. F — you must NOT bring a mobile phone to the sports activities. 5. T.",
+    "acceptable_reasoning": "Sinngemäße Korrekturen akzeptieren; ein wörtliches Zitat aus dem Flyer ist ebenfalls gültig.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "Aussage 2 (\"every afternoon\") ist die klassische Überflieg-Falle: Der Flyer nennt genau zwei Nachmittage (Tuesday, Thursday). Wer nur \"swimming ... afternoons\" sieht, übersieht die Einschränkung.",
+      "Aussage 4 prüft die Regel \"do NOT bring a mobile phone\" — auf das großgeschriebene NOT als Signal hinweisen.",
+      "Bei falschen Aussagen genügt T/F nicht — die Korrektur ist Teil des Leseziels (die wichtige Information belegen)."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "true_false_justify",
+  "subject": "Erste lebende Fremdsprache",
+  "klasse": 2,
+  "kompetenzbereich": "Lesen",
+  "competences": [
+    "FS1.US.2.LES.02"
+  ],
+  "cognitive_level": "understand",
+  "dimensions": [
+    "LES"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0241",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:39+00:00",
+  "updated_at": "2026-07-15T13:55:39+00:00"
+}

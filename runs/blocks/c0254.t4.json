@@ -1,0 +1,75 @@
+{
+  "id": "c0254.t4",
+  "block": {
+    "id": "t4",
+    "optional": false,
+    "modality": "printable",
+    "flags": null,
+    "asset_refs": [],
+    "provenance": null,
+    "role": "task",
+    "kind": "table_fill",
+    "prompt": "Setze die vier Konnektoren „et“, „sed“, „itaque“ und „quod“ ein — jeden genau EINMAL. Achte auf den logischen Zusammenhang. Übersetze dann jeden Satz.\n\na) Marcus ___ Iulia in horto laborant.\nb) Puella cantat, ___ frater dormit.\nc) Pluit; ___ pueri domi manent.\nd) Pueri rident, ___ fabula ridicula est.\n\nWörter: laborare = arbeiten · cantare = singen · frater = Bruder · dormire = schlafen · pluit = es regnet · domi = zu Hause · manere = bleiben · ridere = lachen · fabula = Geschichte · ridiculus = lustig, komisch.",
+    "payload": null,
+    "response": {
+      "mode": "table",
+      "columns": [
+        "Satz mit eingesetztem Konnektor",
+        "Übersetzung"
+      ],
+      "rows": 4
+    },
+    "cognitive_level": "analyze",
+    "difficulty": null,
+    "dimensions": [
+      "SPR"
+    ],
+    "content_area": null,
+    "serves": [
+      {
+        "competence_id": "LAT.US.3.SPR.02",
+        "relation": "exercises"
+      },
+      {
+        "competence_id": "LAT.US.3.SPR.06",
+        "relation": "exercises"
+      }
+    ],
+    "est_minutes": 9,
+    "answer_key": "a) „Marcus et Iulia in horto laborant.“ — „Marcus und Iulia arbeiten im Garten.“ (et = Verbindung/Aufzählung) | b) „Puella cantat, sed frater dormit.“ — „Das Mädchen singt, aber der Bruder schläft.“ (sed = Gegensatz) | c) „Pluit; itaque pueri domi manent.“ — „Es regnet; daher bleiben die Jungen zu Hause.“ (itaque = Folge) | d) „Pueri rident, quod fabula ridicula est.“ — „Die Jungen lachen, weil die Geschichte lustig ist.“ (quod = Grund)",
+    "acceptable_reasoning": "Da jeder Konnektor nur einmal gebraucht wird, ist über die vier Beziehungen (Aufzählung, Gegensatz, Folge, Grund) jede Lücke eindeutig lösbar.",
+    "rubric": [],
+    "solution_steps": [],
+    "solution_paths": [],
+    "solution_asset_refs": [],
+    "watch_outs": [
+      "In a) verlangt das Verb im Plural (laborant) ein verbindendes „und“ für zwei Subjekte → et.",
+      "In c) ist die Beziehung eindeutig eine Folge (Regen → zu Hause bleiben) → itaque.",
+      "„quod“ leitet den Nebensatz „quod fabula ridicula est“ ein (weil …)."
+    ],
+    "self_check": null,
+    "scaffold": null
+  },
+  "role": "task",
+  "kind": "table_fill",
+  "subject": "Latein",
+  "klasse": 3,
+  "kompetenzbereich": "Sprach- und textbezogene Kompetenzen",
+  "competences": [
+    "LAT.US.3.SPR.02",
+    "LAT.US.3.SPR.06"
+  ],
+  "cognitive_level": "analyze",
+  "dimensions": [
+    "SPR"
+  ],
+  "modality": "printable",
+  "scope": "standard",
+  "family": null,
+  "assets": [],
+  "status": "in_review",
+  "provenance": "harvested:c0254",
+  "source": "ai",
+  "created_at": "2026-07-15T13:55:42+00:00",
+  "updated_at": "2026-07-15T13:55:42+00:00"
+}
