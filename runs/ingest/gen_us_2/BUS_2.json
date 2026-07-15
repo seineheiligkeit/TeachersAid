@@ -1,0 +1,314 @@
+{
+  "subject": "Bewegung und Sport",
+  "klasse": 3,
+  "kompetenzbereich": "Fachkompetenz",
+  "title": "Sicher üben, helfen und Gefahren erkennen",
+  "kernfrage": "Wie sorgst du dafür, dass beim Turnen, beim Rollsport und im kleinen Kampf alle sicher üben können?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Sicherheit von Anfang an",
+        "throughline": "Sicherheit ist kein Zufall, sondern das Ergebnis von Vorbereitung, klaren Regeln und richtigem Sichern – bevor die Bewegung überhaupt beginnt.",
+        "talking_points": [
+          "Schutzausrüstung und Umfeld gehören zusammen: Helm und Schützer schützen den Körper, freie Bahn und feste Geräte das Umfeld.",
+          "Vereinbarte Regeln (z. B. ein Stopp-Signal) schützen gerade den Schwächeren – Stärke gibt niemandem mehr Rechte.",
+          "Sichern heißt mitgehen und stützen, nicht bloß danebenstehen; erst loslassen, wenn die Übung sicher steht."
+        ],
+        "extensions": [
+          "Eine kurze „Sicherheits-Runde“ vor jeder Station einführen: Matte, Gerät, Weg prüfen.",
+          "Helfergriffe an einer leichten Übung bewusst üben und die Rollen tauschen."
+        ],
+        "blocks": [
+          {
+            "role": "info",
+            "id": "i1",
+            "kind": "callout",
+            "callout_role": "warning",
+            "content": "Sichern heißt bereitstehen, um bei einem Sturz sofort zu helfen. Steh nah genug, beobachte die Bewegung und stütze an Hüfte oder Rücken – und lass erst los, wenn die Übung sicher steht. Prüfe vorher: Matte lückenlos, Gerät fest, Weg frei.",
+            "modality": "printable"
+          },
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "matching",
+            "prompt": "Ordne jeder Situation im Rollsport die richtige Maßnahme zu.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Bevor du losfährst",
+                "Auf einer gemeinsamen Rollbrett-Bahn",
+                "Wenn du stürzt"
+              ],
+              "right": [
+                "Helm und Schützer anlegen, Rollen und Schnürsenkel prüfen",
+                "Abstand halten und die Fahrtrichtung absprechen",
+                "zur Seite rollen und aus dem Weg der anderen gehen"
+              ]
+            },
+            "response": {
+              "mode": "none"
+            },
+            "cognitive_level": "remember",
+            "dimensions": [
+              "FAC"
+            ],
+            "serves": [
+              {
+                "competence_id": "BUS.US.3.FAC.06",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 4,
+            "answer_key": "Bevor du losfährst → Helm und Schützer anlegen, Rollen und Schnürsenkel prüfen; auf einer gemeinsamen Bahn → Abstand halten und Fahrtrichtung absprechen; wenn du stürzt → zur Seite rollen und aus dem Weg gehen.",
+            "acceptable_reasoning": null,
+            "rubric": [],
+            "watch_outs": [
+              "Schutzausrüstung ist Pflicht, nicht Deko – Helm gehört immer dazu.",
+              "„Aus dem Weg gehen“ meint zur Seite, nicht regungslos liegen bleiben."
+            ],
+            "modality": "printable",
+            "asset_refs": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "true_false_justify",
+            "prompt": "Entscheide bei jeder Aussage: richtig oder falsch? Begründe jede Antwort kurz.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "Im kleinen Kampf darf man ziehen und schieben, aber nicht am Hals oder an den Gelenken greifen.",
+                "Ein vereinbartes Stopp-Signal, zum Beispiel Abklatschen, muss man sofort beachten.",
+                "Wer stärker ist, darf die Regeln bestimmen."
+              ]
+            },
+            "response": {
+              "mode": "lines",
+              "n": 3
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "FAC"
+            ],
+            "serves": [
+              {
+                "competence_id": "BUS.US.3.FAC.04",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "answer_key": "1) richtig – Griffe an Hals oder Gelenken sind gefährlich und deshalb verboten. 2) richtig – das Stopp-Signal schützt vor Verletzungen und muss sofort befolgt werden. 3) falsch – Regeln gelten für alle gleich; sie schützen gerade die schwächere Person.",
+            "acceptable_reasoning": null,
+            "rubric": [],
+            "watch_outs": [
+              "Häufiger Irrtum: „stärker sein“ erlaubt mehr – falsch, Regeln gelten für alle.",
+              "Das Stopp-Signal darf nie ignoriert werden, auch nicht im Spaß."
+            ],
+            "modality": "printable",
+            "asset_refs": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "movement_task",
+            "prompt": "Übt zu zweit das Sichern: Eine Person turnt langsam eine leichte Übung (z. B. Rolle vorwärts oder Aufhocken auf den Kasten), die andere steht seitlich, geht mit der Bewegung mit und stützt an Rücken oder Hüfte. Lasst erst los, wenn die Übung sicher steht. Tauscht die Rollen und besprecht, was gutes Sichern ausmacht.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 2
+            },
+            "cognitive_level": "apply",
+            "dimensions": [
+              "FAC"
+            ],
+            "serves": [
+              {
+                "competence_id": "BUS.US.3.FAC.05",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Erwartete Leistung: Die sichernde Person steht nah genug und auf der richtigen Seite, folgt der Bewegung mit den Händen, stützt an Rücken oder Hüfte und lässt erst los, wenn die Übung sicher steht. Beide sprechen sich ab (Bereit? Los?). Notiert werden zwei Merkmale guten Sicherns.",
+            "acceptable_reasoning": null,
+            "rubric": [
+              {
+                "criterion": "Position",
+                "levels": [
+                  "zu weit weg",
+                  "in der Nähe",
+                  "nah und auf der richtigen Seite"
+                ]
+              },
+              {
+                "criterion": "Stützen",
+                "levels": [
+                  "greift nicht ein",
+                  "stützt unsicher",
+                  "stützt an Rücken/Hüfte und lässt erst sicher los"
+                ]
+              }
+            ],
+            "watch_outs": [
+              "Nicht bloß danebenstehen – aktiv mitgehen und stützbereit sein.",
+              "Nicht zu früh loslassen und den Weg der turnenden Person freihalten."
+            ],
+            "modality": "enactive",
+            "asset_refs": []
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Gefahren erkennen und klug entscheiden",
+        "throughline": "Sicher handeln heißt vorausschauen: Gefahren früh erkennen, sie benennen und die sichere Entscheidung treffen – auch wenn es dann langsamer geht.",
+        "talking_points": [
+          "Eine Gefahr zu nennen reicht nicht – zu jeder Gefahr gehört die Maßnahme, die sie beseitigt.",
+          "Beim Abwägen gewinnt die Sicherheit gegen den Zeitdruck oder den Mut-Beweis („einmal geht schon“ ist kein Argument).",
+          "Gute Sicherheitsregeln sind kurz, klar und für alle sofort verständlich."
+        ],
+        "extensions": [
+          "Einen echten Stationsaufbau in der Halle gemeinsam auf Gefahren prüfen (Gefahren-Rallye).",
+          "Die selbst geschriebenen Regeln als Plakat an die Station hängen und im Betrieb testen."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "open_response",
+            "prompt": "In der Halle steht eine Turnstation: Zwischen Kasten und Landematte klafft eine Lücke, ein Ball liegt auf dem Anlaufweg, und drei Kinder springen gleichzeitig. Finde drei Gefahren und schreibe zu jeder, wie man sie beseitigt.",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Gefahr",
+                "So wird es sicher"
+              ],
+              "rows": 3
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "FAC"
+            ],
+            "serves": [
+              {
+                "competence_id": "BUS.US.3.FAC.05",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "answer_key": "Lücke zwischen Kasten und Matte → Matten lückenlos zusammenschieben; Ball auf dem Anlaufweg → den Weg frei räumen; drei springen gleichzeitig → nacheinander springen und eine Warteordnung vereinbaren. (Weitere mögliche Gefahr: wackelnder Kasten → feststellen/prüfen.)",
+            "acceptable_reasoning": null,
+            "rubric": [],
+            "watch_outs": [
+              "Nicht nur Gefahren aufzählen – zu jeder gehört die Maßnahme.",
+              "„Passt schon“ ist keine Lösung; die Ursache muss beseitigt werden."
+            ],
+            "modality": "printable",
+            "asset_refs": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "decision_scenario",
+            "prompt": "Lies die Situation und entscheide: Was ist hier die sichere Entscheidung? Begründe mit Sicherheitsgründen.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Dein Freund will zum ersten Mal einen Handstand ausprobieren – am Ende einer schmalen Bank und ohne Helfer, weil es schnell gehen soll."
+            },
+            "response": {
+              "mode": "lines",
+              "n": 3
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "FAC"
+            ],
+            "serves": [
+              {
+                "competence_id": "BUS.US.3.FAC.05",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 6,
+            "answer_key": "Sicher ist: nicht ohne Sicherung und nicht als ersten Versuch auf einer schmalen, erhöhten Bank. Besser zuerst am Boden oder an der Wand üben, mit einer Matte darunter und einer Helferin oder einem Helfer, die/der an Hüfte und Beinen sichert. Gewertet wird die begründete sichere Entscheidung.",
+            "acceptable_reasoning": "Mehrere sichere Wege sind richtig (Wand, Boden, mit Helfer, mit Matte) – entscheidend ist, dass Sicherung und ein geeigneter Ort begründet werden, nicht eine einzige Musterlösung.",
+            "rubric": [
+              {
+                "criterion": "Sichere Entscheidung",
+                "levels": [
+                  "riskant",
+                  "teilweise sicher",
+                  "klar sichere Lösung"
+                ]
+              },
+              {
+                "criterion": "Begründung",
+                "levels": [
+                  "ohne Begründung",
+                  "kurz begründet",
+                  "mit Sicherheitsgründen begründet"
+                ]
+              }
+            ],
+            "watch_outs": [
+              "Mut über Sicherheit stellen („einmal geht schon“).",
+              "Zeitdruck ist kein Grund, die Sicherung wegzulassen."
+            ],
+            "modality": "printable",
+            "asset_refs": []
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "create_produce",
+            "prompt": "Entwirf für eine Rollbrett-Station in der Halle drei bis vier klare Sicherheitsregeln, die vor Unfällen schützen. Schreibe sie so kurz und deutlich, dass sie jede und jeder sofort versteht.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 45
+            },
+            "cognitive_level": "create",
+            "dimensions": [
+              "FAC"
+            ],
+            "serves": [
+              {
+                "competence_id": "BUS.US.3.FAC.06",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 7,
+            "answer_key": "Erwartet werden drei bis vier kurze, klar formulierte Regeln, die echte Gefahren des Rollsports treffen, z. B.: Helm und Schützer tragen; nur nacheinander und mit Abstand fahren; Fahrtrichtung absprechen; die Bahn frei halten; bei einem Sturz sofort zur Seite. Die Regeln sind konkret und verständlich, keine Allgemeinplätze.",
+            "acceptable_reasoning": "Gültig ist jede Regel, die eine reale Gefahr adressiert und klar/umsetzbar formuliert ist – die konkrete Auswahl darf variieren.",
+            "rubric": [
+              {
+                "criterion": "Sicherheitsbezug",
+                "levels": [
+                  "trifft keine echte Gefahr",
+                  "trifft eine Gefahr",
+                  "trifft mehrere reale Gefahren"
+                ]
+              },
+              {
+                "criterion": "Klarheit",
+                "levels": [
+                  "vage („vorsichtig sein“)",
+                  "teils klar",
+                  "kurz, klar und umsetzbar"
+                ]
+              }
+            ],
+            "watch_outs": [
+              "Regeln wie „vorsichtig sein“ sind zu vage – konkret werden.",
+              "Nicht zu viele Regeln; drei bis vier klare genügen."
+            ],
+            "modality": "printable",
+            "asset_refs": []
+          }
+        ]
+      }
+    ]
+  }
+}
