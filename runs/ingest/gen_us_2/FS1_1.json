@@ -1,0 +1,318 @@
+{
+  "subject": "Erste lebende Fremdsprache",
+  "klasse": 2,
+  "kompetenzbereich": "Lesen",
+  "title": "Wichtige Informationen aus englischen Alltagstexten finden",
+  "kernfrage": "Wie findest du in einem englischen Flyer oder einer E-Mail schnell genau die Informationen, die du brauchst?",
+  "body": {
+    "intro": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Reading for Information: The Riverside Sports Camp",
+        "throughline": "Schüler:innen üben das gezielte Lesen von Alltags- und Gebrauchstexten: Sie überfliegen einen Flyer nach konkreten Informationen (scanning), entnehmen Details, verknüpfen zwei Texte (Flyer + E-Mail) und beurteilen, ob jemand den Text richtig gelesen hat. Der rote Faden ist die Frage \"Wo genau steht das?\" — Lesen als Informationssuche, nicht Wort-für-Wort-Übersetzen.",
+        "talking_points": [
+          "Lesestrategie zuerst besprechen: Überschrift und fett/groß Geschriebenes zuerst, dann gezielt nach der gesuchten Information suchen — nicht jedes Wort übersetzen.",
+          "Lesefallen bewusst machen: \"after 5 p.m.\" gehört zum Anruf bei Mrs Baker, nicht zur Anmeldung; \"£60\" gilt für die ganze Woche, nicht pro Tag.",
+          "Der Unterschied zwischen \"was der Text sagt\" und \"was ich erwarte oder annehme\" — belegen statt raten.",
+          "Nützliche Realien und Signale: Datum, Uhrzeit (a.m./p.m.), Preis (£), das großgeschriebene \"do NOT\" als wichtige Regel."
+        ],
+        "extensions": [
+          "Schüler:innen gestalten selbst einen kurzen englischen Flyer für ein Schul-Event und tauschen ihn zum gegenseitigen Beantworten von Scanning-Fragen.",
+          "Telefon-Rollenspiel: eine Person ruft \"Mrs Baker\" an und stellt drei Fragen, die andere beantwortet sie mithilfe des Flyers.",
+          "Echte englische Flyer oder Programme (Kino, Bus, Ferienlager) mitbringen und dieselben \"Wo steht das?\"-Fragen stellen."
+        ],
+        "blocks": [
+          {
+            "role": "info",
+            "id": "i1",
+            "kind": "source_text",
+            "content": "RIVERSIDE SUMMER SPORTS CAMP — for young people aged 10 to 14\n\nWHEN: Monday 8 July to Friday 12 July, 9:00 a.m. to 4:00 p.m.\nWHERE: Riverside Park, Green Street (next to the train station)\nCOST: £60 for the whole week. Lunch is included every day.\n\nWHAT YOU CAN DO:\n- Football and basketball every morning (Monday to Friday)\n- Swimming in the river pool on Tuesday and Thursday afternoons\n- Climbing wall on Wednesday\n- A big games day on Friday\n\nWHAT TO BRING: sports clothes, trainers, a swimsuit and a towel, a water bottle and sun cream.\nPlease do NOT bring a mobile phone to the sports activities.\n\nHOW TO JOIN: Ask a parent to send an email to camp@riverside.co.uk before 1 July. Places are limited, so book early!\n\nQuestions? Call Mrs Baker on 555 0192, Monday to Friday after 5 p.m.",
+            "modality": "printable",
+            "watch_outs": []
+          },
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "true_false_justify",
+            "prompt": "Read the camp flyer. Are these statements TRUE or FALSE? Write T or F. For every FALSE statement, write the correct information from the flyer.",
+            "payload": {
+              "kind": "true_false_justify",
+              "statements": [
+                "The camp is for young people aged 10 to 14.",
+                "You can go swimming every afternoon.",
+                "Lunch is included in the £60 price.",
+                "You are allowed to use your mobile phone during the sports activities.",
+                "To book a place, a parent must send an email before 1 July."
+              ]
+            },
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Statement",
+                "T / F",
+                "Correct information (if false)"
+              ],
+              "rows": 5
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "LES"
+            ],
+            "modality": "printable",
+            "serves": [
+              {
+                "competence_id": "FS1.US.2.LES.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "1. T. 2. F — you can only go swimming on Tuesday and Thursday afternoons. 3. T. 4. F — you must NOT bring a mobile phone to the sports activities. 5. T.",
+            "acceptable_reasoning": "Sinngemäße Korrekturen akzeptieren; ein wörtliches Zitat aus dem Flyer ist ebenfalls gültig.",
+            "watch_outs": [
+              "Aussage 2 (\"every afternoon\") ist die klassische Überflieg-Falle: Der Flyer nennt genau zwei Nachmittage (Tuesday, Thursday). Wer nur \"swimming ... afternoons\" sieht, übersieht die Einschränkung.",
+              "Aussage 4 prüft die Regel \"do NOT bring a mobile phone\" — auf das großgeschriebene NOT als Signal hinweisen.",
+              "Bei falschen Aussagen genügt T/F nicht — die Korrektur ist Teil des Leseziels (die wichtige Information belegen)."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "multiple_choice",
+            "prompt": "Choose the best answer. What is the main purpose of this text?",
+            "payload": {
+              "kind": "multiple_choice",
+              "options": [
+                "A — to tell a story about a summer holiday",
+                "B — to invite young people to a sports camp and give them the important details",
+                "C — to explain the rules of football and basketball",
+                "D — to advertise a restaurant near the train station"
+              ],
+              "select": "one"
+            },
+            "response": {
+              "mode": "choices",
+              "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+              ],
+              "select": "one"
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "LES"
+            ],
+            "modality": "printable",
+            "serves": [
+              {
+                "competence_id": "FS1.US.2.LES.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 5,
+            "answer_key": "B — the text is a flyer that invites young people to join the camp and gives the key details (dates, place, cost, what to bring, how to join).",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Distraktor D greift ein echtes Detail auf (Green Street / train station), meint aber ein Restaurant — wer nur nach bekannten Wörtern sucht, wählt es leicht.",
+              "Es geht um die GESAMT-Aussage (Textsorte und Zweck), nicht um ein Einzeldetail — kurz besprechen, woran man einen Flyer erkennt (Überschrift, fett, Aufzählungen, \"How to join\")."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "table_fill",
+            "prompt": "Plan your week at the camp. The flyer offers these four activities: Football and basketball, Swimming, Climbing wall, Games day. Complete the table: write each activity and the day(s) when it happens.",
+            "payload": null,
+            "response": {
+              "mode": "table",
+              "columns": [
+                "Activity",
+                "Which day(s)?"
+              ],
+              "rows": 4
+            },
+            "cognitive_level": "apply",
+            "dimensions": [
+              "LES"
+            ],
+            "modality": "printable",
+            "serves": [
+              {
+                "competence_id": "FS1.US.2.LES.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 7,
+            "answer_key": "Football and basketball — every morning, Monday to Friday. Swimming — Tuesday and Thursday (afternoons). Climbing wall — Wednesday. Games day — Friday.",
+            "acceptable_reasoning": "Die Tageszeit (morning oder afternoon) ist ein Bonus; verlangt ist die korrekte Tageszuordnung.",
+            "watch_outs": [
+              "Football and basketball gilt für ALLE Tage (Monday to Friday) — hier tragen Schüler:innen oft nur einen Tag ein.",
+              "Swimming: beide Tage (Tuesday UND Thursday) müssen genannt werden; ein Tag allein ist unvollständig.",
+              "Climbing wall nur Wednesday, Games day nur Friday — die Einzeltage nicht mit den täglichen Ballsportarten verwechseln."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "open_response",
+            "prompt": "Your friend Mia sends you this email:\n\n\"Hi! I really want to join the sports camp with you. Can my little brother come too? He is 8. Is there football every day? And how do we sign up? — Mia\"\n\nAnswer Mia's three questions in English. Use the information from the flyer.",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 45.0
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "LES"
+            ],
+            "modality": "printable",
+            "serves": [
+              {
+                "competence_id": "FS1.US.2.LES.01",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "FS1.US.2.LES.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "answer_key": "1. No, her brother cannot come — the camp is only for young people aged 10 to 14, and he is 8. 2. Yes, there is football (and basketball) every morning, Monday to Friday. 3. To sign up, a parent has to send an email to camp@riverside.co.uk before 1 July.",
+            "acceptable_reasoning": "Reihenfolge und Formulierung sind frei; alle drei Informationen müssen korrekt aus dem Flyer stammen.",
+            "watch_outs": [
+              "Die Altersfrage ist die Hauptfalle: 8 Jahre liegt UNTER der Grenze 10 — wer nur mit \"yes, he can come\" antwortet, hat E-Mail und Flyer nicht verknüpft.",
+              "Die Angabe \"football every day\" auf \"every morning, Monday to Friday\" präzisieren lassen.",
+              "Bei der Anmeldung sind zwei Dinge wichtig: WER (a parent) und BIS WANN (before 1 July)."
+            ],
+            "rubric": [
+              {
+                "criterion": "Uses the flyer correctly",
+                "levels": [
+                  "All three answers match the flyer",
+                  "Two answers correct",
+                  "One or none correct"
+                ]
+              },
+              {
+                "criterion": "Answers Mia's questions",
+                "levels": [
+                  "All three questions answered clearly",
+                  "Some questions answered",
+                  "Off-topic or copied text"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "decision_scenario",
+            "prompt": "Read Tom's plan. Look carefully at the flyer. Is everything in Tom's plan possible? Decide, and explain your answer with information from the flyer.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Tom (age 12) reads the flyer and says: \"Great! I will bring my phone to listen to music while we swim, and I will pay £60 in cash on the first morning.\""
+            },
+            "response": {
+              "mode": "box",
+              "min_height_mm": 45.0
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "LES"
+            ],
+            "modality": "printable",
+            "serves": [
+              {
+                "competence_id": "FS1.US.2.LES.02",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "FS1.US.2.LES.01",
+                "relation": "reinforces"
+              }
+            ],
+            "est_minutes": 9,
+            "answer_key": "Tom's age is fine (12 is between 10 and 14). But two parts of his plan do not work: (1) he cannot bring his phone to the pool — the flyer says you must NOT bring a mobile phone to the sports activities; (2) he cannot just pay cash on the first morning — a parent must book a place by email before 1 July, and the flyer does not offer paying on arrival. So Tom needs to change his plan.",
+            "acceptable_reasoning": "Entscheidend ist, dass beide Probleme (Handy-Regel UND Anmeldung bzw. Bezahlung) mit dem Flyer belegt werden; das Alter darf NICHT als Problem genannt werden.",
+            "watch_outs": [
+              "Das Alter (12) ist ein Ablenker — es ist zulässig; wer Tom wegen des Alters ablehnt, hat 10–14 falsch gelesen.",
+              "Es gibt ZWEI Probleme, nicht eins — viele finden nur die Handy-Regel und übersehen die verpflichtende Anmeldung per E-Mail im Voraus.",
+              "Beleg verlangen: Wo genau steht das im Flyer? Die Antwort soll sich auf konkrete Textstellen stützen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Decision based on the text",
+                "levels": [
+                  "Both problems found and justified from the flyer",
+                  "One problem found and justified",
+                  "Decision without justification"
+                ]
+              },
+              {
+                "criterion": "Avoids the age trap",
+                "levels": [
+                  "Treats age 12 as allowed",
+                  "Unsure about the age",
+                  "Wrongly rejects Tom because of his age"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "create_produce",
+            "prompt": "Make a reminder card for the first day of camp. Choose the THREE most important things from the flyer that you must not forget. Write each one as a short English note (about 3 to 6 words).",
+            "payload": null,
+            "response": {
+              "mode": "box",
+              "min_height_mm": 40.0
+            },
+            "cognitive_level": "create",
+            "dimensions": [
+              "LES"
+            ],
+            "modality": "printable",
+            "serves": [
+              {
+                "competence_id": "FS1.US.2.LES.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 7,
+            "answer_key": "Any three important points from the flyer, for example: 1. Bring sports clothes and trainers. 2. Bring a swimsuit and a towel. 3. No mobile phone at the activities! Other correct notes: bring a water bottle and sun cream; Riverside Park, Green Street; camp starts at 9:00 a.m.",
+            "acceptable_reasoning": "Jede Auswahl von drei WICHTIGEN, im Flyer belegten Punkten ist richtig — es gibt keine einzige Musterlösung; die Auswahl selbst ist die Leistung.",
+            "watch_outs": [
+              "Die Notizen müssen aus dem Flyer stammen — Erfundenes (z. B. \"bring money\") ist ein Lesefehler und nicht belegt.",
+              "Die Handy-Regel wird als wichtiger Punkt oft übersehen — guter Anlass, über \"was brauche ich für den ersten Tag WIRKLICH?\" zu sprechen.",
+              "Stichwort- oder Kurzform ist erwünscht — hier zählt die richtige Auswahl, nicht die Satzlänge."
+            ],
+            "rubric": [
+              {
+                "criterion": "Points come from the flyer",
+                "levels": [
+                  "All three are correct and important",
+                  "Two are correct",
+                  "Invented or unimportant points"
+                ]
+              },
+              {
+                "criterion": "Short note form",
+                "levels": [
+                  "Three clear short notes",
+                  "Notes present but too long or unclear",
+                  "Missing notes"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
