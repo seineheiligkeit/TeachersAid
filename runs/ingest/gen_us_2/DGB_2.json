@@ -1,0 +1,345 @@
+{
+  "subject": "Digitale Grundbildung",
+  "klasse": 3,
+  "kompetenzbereich": "Handeln: Angebote und Handlungsmöglichkeiten in einer von Digitalisierung geprägten Welt einschätzen und verantwortungsvoll nutzen",
+  "title": "Smarte Geräte im Alltag – Chancen, Schutz, Verantwortung",
+  "kernfrage": "In immer mehr Alltagsdingen steckt ein kleiner Computer – wie nutzt du sie klug, hältst sie sicher und schonst dabei Ressourcen?",
+  "body": {
+    "intro": [
+      {
+        "role": "info",
+        "id": "i1",
+        "kind": "callout",
+        "callout_role": "note",
+        "content": "In immer mehr Alltagsdingen steckt heute ein kleiner Computer: in Uhr, Türklingel, Kopfhörern oder Auto. Solche Geräte nehmen etwas auf, verarbeiten es im Inneren und geben ein Ergebnis aus – und viele sind mit dem Internet verbunden. Das bringt Vorteile, kostet aber Energie und Rohstoffe und lässt sich angreifen."
+      }
+    ],
+    "data_figures": [],
+    "assets": [],
+    "sections": [
+      {
+        "id": "s1",
+        "title": "Wie smarte Geräte funktionieren – und was sie brauchen",
+        "throughline": "Schüler:innen erkennen, dass in Alltagsgegenständen Computersysteme nach dem Prinzip Eingabe–Verarbeitung–Ausgabe arbeiten, wägen Chancen und Risiken vernetzter Geräte ab und leiten aus dem ökologischen Preis (Energie, Rohstoffe) eigenes Handeln ab.",
+        "talking_points": [
+          "Viele Alltagsgeräte sind versteckte Computer: Sensor (Eingabe) → Prozessor (Verarbeitung) → Aktor/Anzeige (Ausgabe).",
+          "Vernetzung ist Chance UND Risiko: Komfort und neue Funktionen, aber auch Datensammlung und Angreifbarkeit.",
+          "Ein großer Teil des ökologischen Fußabdrucks eines Geräts entsteht schon bei Herstellung und Rohstoffgewinnung, nicht erst beim Nutzen.",
+          "Handeln heißt: länger nutzen, reparieren, gebraucht kaufen, richtig entsorgen – nicht nur 'neu kaufen'."
+        ],
+        "extensions": [
+          "Jede Gruppe zerlegt ein Alltagsgerät gedanklich in Eingabe, Verarbeitung, Ausgabe und stellt es der Klasse vor.",
+          "Recherche: Welche Rohstoffe stecken in einem Smartphone – und woher kommen sie?"
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t1",
+            "kind": "table_fill",
+            "prompt": "In jedem dieser Geräte steckt ein kleiner Computer. Trage für jedes Gerät ein, was es aufnimmt (Eingabe), was der Computer daraus macht (Verarbeitung) und was herauskommt (Ausgabe).",
+            "payload": {
+              "kind": "table_fill",
+              "columns": [
+                "Gerät",
+                "Was nimmt es auf? (Eingabe)",
+                "Was macht der Computer daraus? (Verarbeitung)",
+                "Was gibt es aus? (Ausgabe)"
+              ],
+              "rows": [
+                [
+                  "Sprachassistent (Smart Speaker)",
+                  null,
+                  null,
+                  null
+                ],
+                [
+                  "Fitness-Armband",
+                  null,
+                  null,
+                  null
+                ],
+                [
+                  "Saugroboter",
+                  null,
+                  null,
+                  null
+                ]
+              ]
+            },
+            "response": {
+              "mode": "none"
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "T"
+            ],
+            "serves": [
+              {
+                "competence_id": "DGB.US.3.HAN.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Sprachassistent: Eingabe – die gesprochene Frage (Mikrofon); Verarbeitung – die Sprache wird erkannt und der Befehl ausgewertet; Ausgabe – gesprochene Antwort oder Musik (Lautsprecher). Fitness-Armband: Eingabe – Bewegung und Puls (Sensoren); Verarbeitung – zählt Schritte, berechnet die Herzfrequenz; Ausgabe – Zahlen/Grafik am Display, Vibration. Saugroboter: Eingabe – Abstände und Hindernisse (Sensoren/Kamera); Verarbeitung – berechnet eine Route durch den Raum; Ausgabe – fährt und saugt, zeigt eine Karte in der App. Sinnvolle Varianten sind gültig.",
+            "acceptable_reasoning": "Es kommt auf die richtige Zuordnung zu Eingabe/Verarbeitung/Ausgabe an, nicht auf die exakte Formulierung.",
+            "watch_outs": [
+              "Eingabe und Ausgabe verwechseln: Der Sensor NIMMT etwas auf, die Anzeige/der Aktor GIBT etwas aus.",
+              "Die Verarbeitung überspringen – gerade dieser Rechenschritt macht das Gerät 'smart'."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t2",
+            "kind": "open_response",
+            "prompt": "Wähle EIN vernetztes Alltagsgerät (z. B. smarte Türklingel, Smartwatch oder Sprachassistent). Erkläre in zwei bis drei Sätzen, wie seine Teile zusammen seine Aufgabe erfüllen. Nenne dann je EINE Chance und EIN Risiko, die dadurch entstehen, dass es mit dem Internet verbunden ist.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "T",
+              "G"
+            ],
+            "serves": [
+              {
+                "competence_id": "DGB.US.3.HAN.01",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Beispiel smarte Türklingel: Eine Kamera und ein Bewegungssensor nehmen wahr, wer vor der Tür steht (Eingabe); der kleine Computer verarbeitet das Bild und schickt es übers Internet aufs Handy (Verarbeitung/Übertragung); du siehst und hörst die Person und kannst antworten (Ausgabe). Chance: Du siehst auch von unterwegs, wer läutet, und erhöhst so die Sicherheit/Bequemlichkeit. Risiko: Die Kamera sammelt laufend Bilder auch von Passant:innen, die Daten liegen beim Anbieter und könnten bei einem Angriff oder Leck missbraucht werden. Andere Geräte mit passender Chance/Risiko-Nennung sind gleichwertig.",
+            "acceptable_reasoning": "Gültig ist jedes Gerät, sofern das Zusammenspiel der Teile stimmt und Chance und Risiko konkret auf die Vernetzung/Datensammlung bezogen sind.",
+            "watch_outs": [
+              "Nur Vorteile nennen – die Vernetzung bringt IMMER auch ein Daten- oder Sicherheitsrisiko mit.",
+              "'Risiko' mit 'kaputtgehen' gleichsetzen – gemeint sind Daten, Privatsphäre und Angriffe."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t3",
+            "kind": "open_response",
+            "prompt": "Ein Smartphone verbraucht nicht nur Strom beim Laden. Schon seine Herstellung kostet viel Energie und seltene Rohstoffe (Metalle), und am Ende wird es zu Elektroschrott. Beschreibe das ökologische Problem in eigenen Worten und leite ZWEI konkrete Dinge ab, die DU tun kannst, um es zu verringern.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 6
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "G"
+            ],
+            "serves": [
+              {
+                "competence_id": "DGB.US.3.HAN.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 8,
+            "answer_key": "Problem: Für ein Smartphone werden seltene Metalle abgebaut (mit hohem Energie- und Wasserverbrauch und Eingriffen in die Natur); ein großer Teil des CO2-Ausstoßes entsteht bereits bei der Herstellung. Wird das Gerät schnell ersetzt, wächst der Elektroschrott, in dem wertvolle und giftige Stoffe stecken. Eigenes Handeln (zwei genügen): Geräte länger nutzen statt jährlich zu tauschen; kaputte Teile reparieren lassen (z. B. Akku); gebraucht/refurbished kaufen; Altgeräte NICHT in den Restmüll, sondern zur Sammelstelle oder Rücknahme geben.",
+            "acceptable_reasoning": "Bewertet wird, dass Energie/Rohstoffe/Elektroschrott als Problem benannt und daraus zwei sinnvolle, umsetzbare Handlungen abgeleitet werden.",
+            "watch_outs": [
+              "Nur an den Stromverbrauch beim Laden denken – Herstellung und Rohstoffe wiegen meist schwerer.",
+              "Sehr allgemeine Tipps ('Umwelt schützen') ohne konkreten Bezug zum Gerät."
+            ],
+            "rubric": []
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Geräte schützen und klug entscheiden",
+        "throughline": "Schüler:innen treffen konkrete Vorkehrungen gegen Schadsoftware, erkennen typische Angriffsmaschen und wägen bei einer Kaufentscheidung Bedürfnisse gegen den ökologischen Preis ab – verantwortungsvolles Handeln in einer vernetzten Welt.",
+        "talking_points": [
+          "Schutz ist mehrschichtig: Updates, Virenschutz, starke/einzigartige Passwörter mit Zwei-Faktor, Backups und Vorsicht bei Anhängen/Links.",
+          "Angst-Meldungen ('Ihr Gerät ist infiziert!') sind oft selbst die Falle (Scareware) – nicht klicken, sondern schließen.",
+          "Ein Backup ist die Rettung nach Befall oder Verlust – besonders gegen Erpressungssoftware (Ransomware).",
+          "Verantwortungsvoll entscheiden heißt: Brauche ich neu, oder reicht reparieren? Werbung ist kein Argument."
+        ],
+        "extensions": [
+          "Erstellt gemeinsam eine Checkliste 'So schütze ich mein Gerät' und hängt sie in der Klasse auf.",
+          "Sammelt echte (unschädliche) Beispiele verdächtiger Nachrichten und markiert die Warnzeichen."
+        ],
+        "blocks": [
+          {
+            "role": "task",
+            "id": "t4",
+            "kind": "matching",
+            "prompt": "Ordne jeder Schutzmaßnahme zu, wogegen sie vor allem hilft. Verbinde.",
+            "payload": {
+              "kind": "matching",
+              "left": [
+                "Updates installieren",
+                "Virenschutz / Firewall",
+                "Starkes, einzigartiges Passwort + Zwei-Faktor",
+                "Regelmäßiges Backup",
+                "Vorsicht bei Anhängen und Links"
+              ],
+              "right": [
+                "schließt bekannte Sicherheitslücken im System",
+                "erkennt und blockiert Schadsoftware",
+                "verhindert, dass Fremde in deine Konten kommen",
+                "rettet deine Daten nach Befall oder Verlust",
+                "verhindert, dass du Schadsoftware selbst hereinlässt"
+              ]
+            },
+            "response": {
+              "mode": "none"
+            },
+            "cognitive_level": "understand",
+            "dimensions": [
+              "I"
+            ],
+            "serves": [
+              {
+                "competence_id": "DGB.US.3.HAN.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 5,
+            "answer_key": "Updates → schließen bekannte Sicherheitslücken; Virenschutz/Firewall → erkennt/blockiert Schadsoftware; starkes, einzigartiges Passwort + Zwei-Faktor → verhindert fremden Kontozugriff; regelmäßiges Backup → rettet Daten nach Befall oder Verlust; Vorsicht bei Anhängen/Links → verhindert, dass man Schadsoftware selbst hereinlässt.",
+            "acceptable_reasoning": null,
+            "watch_outs": [
+              "Backup mit Virenschutz verwechseln: Ein Backup VERHINDERT keinen Befall, es macht den Schaden rückgängig.",
+              "Denken, ein einziger Schutz genüge – erst die Kombination schützt wirklich."
+            ],
+            "rubric": []
+          },
+          {
+            "role": "task",
+            "id": "t5",
+            "kind": "decision_scenario",
+            "prompt": "Auf dem Familien-Tablet erscheint plötzlich eine grelle Meldung: „Ihr Gerät ist mit 3 Viren infiziert! Jetzt sofort reinigen – hier klicken!“ Kurz darauf bekommst du eine E-Mail mit dem Betreff „Rechnung“ und einer Datei „Rechnung.exe“ im Anhang, von einer unbekannten Adresse. Was tust du bei jedem der beiden Ereignisse – und warum? Nenne außerdem zwei Vorkehrungen, die dich generell vor solchen Angriffen schützen.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Warnmeldung und verdächtiger Anhang – was tust du?"
+            },
+            "response": {
+              "mode": "box",
+              "min_height_mm": 45
+            },
+            "cognitive_level": "analyze",
+            "dimensions": [
+              "I"
+            ],
+            "serves": [
+              {
+                "competence_id": "DGB.US.3.HAN.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "answer_key": "Meldung: NICHT auf 'hier klicken' tippen – diese Angst-Meldung ist selbst die Falle (Scareware); das Fenster bzw. den Browser-Tab schließen, notfalls das Tablet neu starten, und mit dem WIRKLICH installierten Virenschutz prüfen. E-Mail: den Anhang nicht öffnen – eine '.exe' ist ein Programm, das sich beim Öffnen selbst ausführt; die Mail einer unbekannten Adresse mit Standard-Betreff ist verdächtig, also löschen bzw. als Spam melden. Bei Unsicherheit eine erwachsene Person fragen. Vorkehrungen (zwei genügen): Updates aktuell halten, Virenschutz nutzen, regelmäßige Backups, unbekannte Anhänge/Links grundsätzlich meiden.",
+            "acceptable_reasoning": "Kern ist: die Warnmeldung NICHT anklicken und den .exe-Anhang NICHT öffnen, jeweils mit sinnvoller Begründung, plus zwei passende Vorkehrungen.",
+            "watch_outs": [
+              "Aus Schreck auf 'reinigen' klicken – genau das lädt oft erst die Schadsoftware.",
+              "Meinen, eine Datei anzusehen sei harmlos: Eine ausführbare Datei (.exe) startet ein Programm."
+            ],
+            "rubric": [
+              {
+                "criterion": "Sicheres Handeln begründet",
+                "levels": [
+                  "klickt/öffnet oder begründet nicht",
+                  "reagiert bei einem der beiden Ereignisse richtig",
+                  "reagiert bei beiden richtig, begründet nachvollziehbar und nennt zwei Vorkehrungen"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t6",
+            "kind": "decision_scenario",
+            "prompt": "Dein Smartphone ist drei Jahre alt und funktioniert, aber der Akku hält kaum noch einen halben Tag. Eine Freundin sagt: „Kauf dir das neueste Modell!“ Eine Werbung verspricht dir dazu einen Rabatt. Wäge ab: neuer Akku (Reparatur) oder neues Gerät? Triff eine Entscheidung und begründe sie mit Blick auf deinen Bedarf UND auf die Umwelt.",
+            "payload": {
+              "kind": "decision_scenario",
+              "stem": "Alter Akku – reparieren oder neu kaufen?"
+            },
+            "response": {
+              "mode": "box",
+              "min_height_mm": 45
+            },
+            "cognitive_level": "evaluate",
+            "dimensions": [
+              "G"
+            ],
+            "serves": [
+              {
+                "competence_id": "DGB.US.3.HAN.02",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 9,
+            "answer_key": "Eine gut begründete Antwort erkennt: Wenn nur der Akku schwach ist und das Gerät sonst reicht, ist der Akkutausch meist die umweltfreundlichere und günstigere Wahl – sie spart die Rohstoffe und die Herstellungs-Energie eines ganzen neuen Geräts und vermeidet Elektroschrott. Ein Neukauf ist eher sinnvoll, wenn das Gerät keine Sicherheits-Updates mehr bekommt oder wirklich nicht mehr ausreicht. Werbung und Gruppendruck ('neuestes Modell') sind KEIN sachliches Argument. Beide Entscheidungen sind gültig, wenn Bedarf und Umweltfolgen abgewogen werden.",
+            "acceptable_reasoning": "Es gibt keine einzige richtige Wahl – bewertet wird das Abwägen von tatsächlichem Bedarf gegen den ökologischen Preis (Rohstoffe, Herstellung, Elektroschrott) und das Durchschauen von Werbung/Gruppendruck.",
+            "watch_outs": [
+              "'Neu ist immer besser' ungeprüft übernehmen – Werbung ist kein sachlicher Grund.",
+              "Nur den Preis betrachten und die Umweltfolgen (Rohstoffe, Elektroschrott) vergessen."
+            ],
+            "rubric": [
+              {
+                "criterion": "Abwägung Bedarf und Umwelt",
+                "levels": [
+                  "entscheidet ohne Begründung oder nur nach Werbung",
+                  "nennt einen Aspekt (Bedarf ODER Umwelt)",
+                  "wägt Bedarf UND Umweltfolgen ab und begründet die Entscheidung"
+                ]
+              }
+            ]
+          },
+          {
+            "role": "task",
+            "id": "t7",
+            "kind": "create_produce",
+            "prompt": "Erstelle einen kurzen Ratgeber „Smartes Gerät – aber richtig“ mit drei Tipps: je einen zum klugen NUTZEN (Funktion/Chance), zum SCHÜTZEN (Sicherheit) und zum RESSOURCEN SCHONEN (Umwelt). Schreibe zu jedem Tipp einen kurzen Grund, warum er wichtig ist.",
+            "payload": null,
+            "response": {
+              "mode": "lines",
+              "n": 9
+            },
+            "cognitive_level": "create",
+            "dimensions": [
+              "T",
+              "G",
+              "I"
+            ],
+            "serves": [
+              {
+                "competence_id": "DGB.US.3.HAN.01",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "DGB.US.3.HAN.02",
+                "relation": "exercises"
+              },
+              {
+                "competence_id": "DGB.US.3.HAN.03",
+                "relation": "exercises"
+              }
+            ],
+            "est_minutes": 10,
+            "answer_key": "Ein guter Ratgeber deckt alle drei Bereiche mit je einem Tipp UND einer Begründung ab, z. B.: NUTZEN – 'Stelle in den Einstellungen ein, welche Daten dein Gerät sammeln darf, weil du so nur die Funktionen freigibst, die du wirklich willst.' SCHÜTZEN – 'Installiere Updates und mache regelmäßig ein Backup, weil Updates Sicherheitslücken schließen und ein Backup deine Daten nach einem Angriff rettet.' RESSOURCEN – 'Nutze das Gerät länger und lass es reparieren, weil Herstellung und Rohstoffe die größte Umweltbelastung sind.' Eigene, sinnvolle Formulierungen sind gleichwertig.",
+            "acceptable_reasoning": "Bewertet wird, dass alle drei Bereiche (Nutzen, Schutz, Umwelt) mit je einem konkreten Tipp und einer nachvollziehbaren Begründung vorkommen.",
+            "watch_outs": [
+              "Nur einen Bereich behandeln (z. B. drei Sicherheitstipps) – gefragt sind alle drei.",
+              "Tipps ohne Begründung – das 'Warum' ist so wichtig wie der Tipp selbst."
+            ],
+            "rubric": [
+              {
+                "criterion": "Drei Bereiche mit Begründung",
+                "levels": [
+                  "nur ein Bereich abgedeckt",
+                  "zwei Bereiche oder Tipps ohne Begründung",
+                  "alle drei Bereiche (Nutzen, Schutz, Umwelt) mit je einem begründeten Tipp"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
