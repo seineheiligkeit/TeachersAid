@@ -93,10 +93,22 @@ review (figure-bearing sheets rendered for Vorschau). New review items land in *
 
 - **Uniform breadth** (default): N fresh Kernfragen per subject, agents only avoid the Korpus-Kontext
   titles. Best when a stufe is thin or you want range.
-- **Gap-directed** (available via `stats.campaign_gaps(stufe=, subject=)`): aim Kernfragen at the
-  coverage map's `leer`/`teil` (Klasse·Kompetenzbereich) cells. Best marginal value against an
-  already-populated corpus. To use it, inject the gap cells + their competence ids into the agent
-  prompt as the required targets. *(Not wired as a `breadth_prompt` flag yet — a clean follow-up.)*
+- **Gap-directed** (`--gaps`): aim each brief's Kernfragen at the coverage map's worst
+  `leer`/`teil` (Klasse·Kompetenzbereich) cells for the stufe instead of uniform breadth. Best marginal
+  value against an already-populated corpus. Per subject the tool queries `stats.campaign_gaps`, picks
+  the worst cells **worst-first** (`leer` before `teil`, then by prerequisite leverage
+  `blocks_dependents`), distributes the N Kernfragen over them (`min(N, #cells)` cells, worst cells take
+  any remainder), and injects a `## Ziel-Lücken` section that lists each target cell (Klasse · KB ·
+  Status) **with its verbatim competence ids** and a hard rule: every Kernfrage MUST anchor in its
+  assigned cell (`kompetenzbereich`/`klasse` set, each task `serves` an id from THAT cell), driving the
+  cell toward green. A subject with no open cell is **honestly skipped** (no brief written; recorded in
+  the manifest as `"skipped": true`). The manifest stamps `"targeting": "uniform"|"gaps"` and, per
+  targeted subject, the chosen `targets` (so `campaign_status.py` and the operator see what was aimed
+  at; skipped subjects are excluded from the babysitter's expected set). Uniform output is unchanged.
+
+  ```
+  python tools/breadth_prompt.py --stufe Oberstufe --subjects ETH,MAT --n 3 --gaps --gen-dir gen_os_3
+  ```
 
 ## History
 

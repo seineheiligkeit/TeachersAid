@@ -10,6 +10,12 @@ angles rather than duplicate. Run in the venv:
 
     python tools/breadth_prompt.py --stufe Unterstufe                 # all US subjects, 2 each
     python tools/breadth_prompt.py --stufe Oberstufe --subjects MAT,PHY --n 3 --gen-dir gen_os_3
+    python tools/breadth_prompt.py --stufe Unterstufe --gaps --gen-dir gen_us_gaps  # gap-directed
+
+Two targeting modes: **uniform breadth** (default — N fresh Kernfragen per subject, only
+avoiding the Korpus-Kontext titles) and **gap-directed** (`--gaps` — aim each brief's
+Kernfragen at the coverage map's worst leer/teil (Klasse·Kompetenzbereich) cells and
+hard-anchor them there; a fully-covered subject is honestly skipped).
 
 A pass should always write to a FRESH --gen-dir: review items are created, not upserted,
 so re-ingesting an old dir would duplicate. See Documents/content-campaign-workflow.md.
@@ -91,7 +97,7 @@ Du erzeugst **{n} verschiedene** Arbeitsblatt-Inhalte (je eine eigene **Kernfrag
 **AHS-{stufe_label}** auf österreichischem Lehrplan-Niveau. {niveau_note}
 Wähle **{n} klar unterschiedliche Themen/Bereiche** (Breite!), nicht Varianten desselben Themas.
 
-{korpus_kontext}
+{korpus_kontext}{gap_section}
 ## Kompetenzen (verbatim — `serves.competence_id` MUSS eine dieser IDs sein), gruppiert nach Kompetenzbereich
 {competences}
 
@@ -235,8 +241,87 @@ def _korpus_kontext(subject: str, stufe: str, n: int, cov_subject: dict | None,
     return f"## Korpus-Kontext — was es schon gibt\n{head}\n{rows}{cov}\n"
 
 
-def build(stufe: str, subjects: list[tuple], n: int, gen_subdir: str, *, review_store=None):
-    """Write one grounded brief per subject to runs/ingest/prompt_<CODE>.md + a manifest."""
+# --- Gap-directed targeting (the corpus loop's marginal-value mode) --------------
+# Pure functions over `stats.campaign_gaps(...)` output, so the selection policy and
+# the injected brief section unit-test without any file I/O.
+
+_BAND_LABEL = {1: "leicht", 2: "mittel", 3: "anspruchsvoll"}
+
+
+def select_gap_targets(gaps: list[dict], n: int) -> list[dict]:
+    """Pick and weight the worst coverage gaps for a subject's N Kernfragen.
+
+    `gaps` are `stats.campaign_gaps(...)` rows for ONE subject (each a non-green
+    Klasse·Kompetenzbereich cell carrying `status`, `blocks_dependents`,
+    `missing_bands`, and verbatim `competences`). Worst-first ordering: `leer`
+    before `teil`, then by leverage (`blocks_dependents` desc — a cell that gates
+    more downstream competences matters more than a leaf), then a deterministic
+    (klasse, kompetenzbereich) tiebreak. Returns up to ``min(n, len(gaps))`` cells
+    (shallow copies), each augmented with an ``n_kernfragen`` count; the counts sum
+    to `n`, the worst cells taking the remainder. Empty input (or n<=0) → `[]`,
+    which the caller reads as "nothing to fill — skip this subject" (an empty brief
+    section is never emitted)."""
+    if n <= 0 or not gaps:
+        return []
+    status_rank = {"leer": 0, "teil": 1}
+    ranked = sorted(gaps, key=lambda g: (
+        status_rank.get(g["status"], 2),
+        -int(g.get("blocks_dependents", 0)),
+        g["klasse"], g["kompetenzbereich"],
+    ))
+    k = min(n, len(ranked))
+    base, extra = divmod(n, k)
+    return [{**cell, "n_kernfragen": base + (1 if i < extra else 0)}
+            for i, cell in enumerate(ranked[:k])]
+
+
+def render_gap_section(targets: list[dict]) -> str:
+    """The `## Ziel-Lücken` brief section for gap-directed targeting: each assigned
+    cell (worst-first) with its Klasse·Kompetenzbereich·Status, the verbatim
+    competence ids to anchor in, its per-cell Kernfrage count, and the hard anchor
+    rule. Returns "" for empty `targets` so the uniform path stays byte-identical
+    (no empty section is ever emitted). Pure — no file I/O."""
+    if not targets:
+        return ""
+    total = sum(t["n_kernfragen"] for t in targets)
+    lines = [
+        "## Ziel-Lücken (Lücken-Modus — VERBINDLICH)",
+        (f"Dieser Durchgang füllt gezielt **{len(targets)} Abdeckungslücke(n)** der "
+         f"Abdeckungskarte (Status *leer*/*teilweise*), keine freie Breite. Verteile die "
+         f"**{total} Kernfragen** GENAU so auf die Zellen:"),
+        "",
+    ]
+    for i, t in enumerate(targets, 1):
+        status_word = {"leer": "leer", "teil": "teilweise"}.get(t["status"], t["status"])
+        # For a teil cell, naming the still-missing band(s) is actionable; a leer cell is
+        # missing all three (implied by the status), so the note would only be noise there.
+        missing = [b for b in (t.get("missing_bands") or []) if b in _BAND_LABEL]
+        band_note = (f"; noch fehlende Bänder: {', '.join(_BAND_LABEL[b] for b in missing)}"
+                     if missing and t["status"] == "teil" else "")
+        comp_ids = ", ".join(f"`{cid}`" for cid in t.get("competences", [])) or "—"
+        lines.append(f"{i}. **{t['n_kernfragen']} Kernfrage(n)** → Kl {t['klasse']} · "
+                     f"{t['kompetenzbereich']} (Status: {status_word}{band_note})")
+        lines.append("   - Kompetenz-IDs für DIESE Zelle (verbatim, `serves.competence_id`): "
+                     f"{comp_ids}")
+    lines.append("")
+    lines.append(
+        "**Verbindlich:** Jede Kernfrage MUSS in ihrer zugewiesenen Zelle verankern — "
+        "`kompetenzbereich` = der genannte KB, `klasse` = die genannte Klasse, und JEDE Aufgabe "
+        "`serves` eine der für DIESE Zelle gelisteten IDs. Ziel: die Zelle Richtung grün bringen "
+        "(≥ 4 Aufgaben, alle drei Anforderungsbänder leicht/mittel/anspruchsvoll) — decke gezielt "
+        "die noch fehlenden Bänder ab.")
+    return "\n" + "\n".join(lines) + "\n"
+
+
+def build(stufe: str, subjects: list[tuple], n: int, gen_subdir: str, *,
+          gaps: bool = False, review_store=None, block_store=None):
+    """Write one grounded brief per subject to runs/ingest/prompt_<CODE>.md + a manifest.
+
+    `gaps=True` switches from uniform breadth to gap-directed targeting: each brief
+    aims its N Kernfragen at the coverage map's worst `leer`/`teil` cells for that
+    (stufe, subject) and hard-anchors them there. A subject with no open cell is
+    honestly skipped (no brief, recorded in the manifest). Uniform output is
+    unchanged when `gaps=False`."""
     from teachersaid import stats
     from teachersaid.store.repository import ReviewStore
 
@@ -256,10 +341,29 @@ def build(stufe: str, subjects: list[tuple], n: int, gen_subdir: str, *, review_
         if ccode:
             existing_by_code[ccode].append(
                 (c.meta.klasse, (c.meta.title or "").strip(), (c.meta.kernfrage or "").strip()))
-    cov_by_code = {s["code"]: s for s in stats.coverage_map()["subjects"] if s["stufe"] == stufe}
+    coverage = stats.coverage_map(block_store)
+    cov_by_code = {s["code"]: s for s in coverage["subjects"] if s["stufe"] == stufe}
+    # Gap-directed targeting: group the coverage map's non-green cells (with their verbatim
+    # competence ids) by subject, so each brief can aim its Kernfragen at leer/teil cells.
+    # Empty in uniform mode (nothing queried) — uniform output stays byte-identical.
+    gaps_by_code: dict[str, list[dict]] = defaultdict(list)
+    if gaps:
+        for g in stats.campaign_gaps(coverage=coverage, stufe=stufe):
+            gaps_by_code[g["code"]].append(g)
 
     manifest = []
+    n_written = 0
     for code, subject, anchor, practical, target_language in subjects:
+        targets = select_gap_targets(gaps_by_code.get(code, []), n) if gaps else []
+        if gaps and not targets:  # honest skip — nothing open to fill, no empty brief
+            n_existing = len(existing_by_code.get(code, []))
+            print(f"{code}: übersprungen (Lücken-Modus) — keine offenen Zellen "
+                  f"(alle Kompetenzbereich-Zellen grün); kein Brief geschrieben.")
+            manifest.append({"code": code, "subject": subject, "anchor": anchor, "stufe": stufe,
+                             "target_language": target_language, "gen_dir": gen_subdir, "n": n,
+                             "existing": n_existing, "targeting": "gaps", "skipped": True,
+                             "skip_reason": "keine offenen Lücken (alle Zellen grün)"})
+            continue
         model = ls.get_subject_model(subject, stufe)
         comps_text, anchor_field = _competence_block(subject, anchor, stufe, klassen)
         dims = "\n".join(f"- `{d.id}` — {d.label}" for d in model.dimensions)
@@ -284,6 +388,7 @@ def build(stufe: str, subjects: list[tuple], n: int, gen_subdir: str, *, review_
         data_block = ("\n" + data_brief + "\n") if data_brief else ""
         korpus = _korpus_kontext(subject, stufe, n, cov_by_code.get(code),
                                  existing_by_code.get(code, []))
+        gap_section = render_gap_section(targets)  # "" in uniform mode
         prompt = _TEMPLATE.format(
             subject=subject, n=n, competences=comps_text, dims=dims, kinds=kinds,
             ab_block=_ab_block(subject, stufe, klassen),
@@ -291,20 +396,31 @@ def build(stufe: str, subjects: list[tuple], n: int, gen_subdir: str, *, review_
             modality_note=modality_note, lang_clause=lang_clause, gendir=gen_subdir,
             code=code, anchor_field=anchor_field, dim0=model.dimensions[0].id, recipes=recipes,
             data_block=data_block, stufe_label=stufe, niveau_note=_NIVEAU[stufe],
-            korpus_kontext=korpus, klasse_hint=f"{klassen[0]}-{klassen[-1]}",
+            korpus_kontext=korpus, gap_section=gap_section, klasse_hint=f"{klassen[0]}-{klassen[-1]}",
         )
         (outdir / f"prompt_{code}.md").write_text(prompt, encoding="utf-8")
+        n_written += 1
         n_existing = len(existing_by_code.get(code, []))
-        manifest.append({"code": code, "subject": subject, "anchor": anchor, "stufe": stufe,
-                         "target_language": target_language, "gen_dir": gen_subdir, "n": n,
-                         "existing": n_existing})
+        entry = {"code": code, "subject": subject, "anchor": anchor, "stufe": stufe,
+                 "target_language": target_language, "gen_dir": gen_subdir, "n": n,
+                 "existing": n_existing, "targeting": "gaps" if gaps else "uniform"}
+        if targets:  # the chosen cells, so campaign_status / the operator sees what was aimed at
+            entry["targets"] = [{"klasse": t["klasse"], "kompetenzbereich": t["kompetenzbereich"],
+                                 "status": t["status"], "n_kernfragen": t["n_kernfragen"],
+                                 "competences": t.get("competences", [])} for t in targets]
+        manifest.append(entry)
         n_comp = len({c.id for kl in _klassen(subject, stufe, klassen)
                       for c in ls.competences_for(subject, kl, stufe)})
+        gap_note = (f"  [Lücken: {len(targets)} Zellen, "
+                    f"{sum(t['n_kernfragen'] for t in targets)} Kernfragen]" if targets else "")
         print(f"{code}: {n_comp} competences, {n_existing} existing, "
-              f"{target_language or 'Deutsch'} -> prompt_{code}.md")
+              f"{target_language or 'Deutsch'} -> prompt_{code}.md{gap_note}")
     (outdir / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2),
                                           encoding="utf-8")
-    print(f"\n== {len(manifest)} briefs for {stufe} -> runs/ingest/prompt_*.md "
+    mode = "gap-directed (Lücken)" if gaps else "uniform breadth"
+    skipped = sum(1 for m in manifest if m.get("skipped"))
+    skip_note = f", {skipped} übersprungen (keine Lücken)" if skipped else ""
+    print(f"\n== {n_written} briefs [{mode}] for {stufe} -> runs/ingest/prompt_*.md{skip_note} "
           f"(agents write {n} files each to runs/ingest/{gen_subdir}/) ==")
 
 
@@ -314,6 +430,10 @@ def main():
     ap.add_argument("--subjects", help="comma-separated codes (default: all for the stufe)")
     ap.add_argument("--n", type=int, default=DEFAULT_N, help="Kernfragen per subject")
     ap.add_argument("--gen-dir", help="output subdir under runs/ingest/ (default: gen_<abbr>)")
+    ap.add_argument("--gaps", action="store_true",
+                    help="gap-directed: aim each brief's Kernfragen at the coverage map's worst "
+                         "leer/teil cells for the stufe (default: uniform breadth). Fully-covered "
+                         "subjects are skipped.")
     args = ap.parse_args()
     registry = SUBJECT_SETS[args.stufe]
     if args.subjects:
@@ -323,7 +443,7 @@ def main():
         if missing:
             ap.error(f"unknown codes for {args.stufe}: {', '.join(sorted(missing))}")
     gen_dir = args.gen_dir or ("gen_us" if args.stufe == "Unterstufe" else "gen_os")
-    build(args.stufe, registry, args.n, gen_dir)
+    build(args.stufe, registry, args.n, gen_dir, gaps=args.gaps)
 
 
 if __name__ == "__main__":

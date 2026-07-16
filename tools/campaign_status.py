@@ -39,7 +39,10 @@ def _expected(subjects: str | None, n: int) -> list[tuple[str, int]]:
     manifest = RUNS_DIR / "ingest" / "manifest.json"
     if not manifest.exists():
         raise SystemExit("no manifest.json — pass --subjects explicitly")
-    return [(e["code"], int(e.get("n", n))) for e in json.loads(manifest.read_text("utf-8"))]
+    # gap-directed passes record fully-covered subjects as `skipped` (no brief written,
+    # no agent spawned) — exclude them so they don't read as phantom "missing" files.
+    return [(e["code"], int(e.get("n", n))) for e in json.loads(manifest.read_text("utf-8"))
+            if not e.get("skipped")]
 
 
 def status(gen_dir: Path, expected: list[tuple[str, int]]) -> None:
