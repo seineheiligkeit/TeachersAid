@@ -13,6 +13,7 @@ from datetime import date
 from ..schema.blocks import Gloss, InfoBlock, Serves
 from ..schema.mixer import ParametricMixerProfile, Textlast
 from ..schema.parametric import ParametricTask
+from ..schema.response import LinesResponse
 from ..schema.worksheet import Baustein, TeacherOverview, WorksheetContent, WorksheetMeta
 
 PARAM_TEMPLATES: list[ParametricTask] = [
@@ -540,6 +541,57 @@ PARAM_TEMPLATES.extend([
         ],
         serves=[Serves(competence_id="GWB.US.3.ENT.04", relation="exercises")],
         dimensions=["UK"], cognitive_level="evaluate", kind="decision_scenario", est_minutes=7),
+])
+
+
+# --- Fehlersuche — appended via extend() (append-only). The recipes live in
+#     pipeline/fehlersuche.py (registered into the shared registry): a complete worked solution
+#     with exactly ONE planted, catalogued Fehlermuster (computed + propagated honestly). The
+#     flawed chain is the student-facing object of study (TaskBlock.flawed_solution); the correct
+#     chain (solution_steps), the located step + Fehlermuster name (answer_key) stay teacher-only.
+#     kind = open_response (core; the student names + corrects the error on the lines);
+#     cognitive_level = analyze (Fehleranalyse is genuine AFB-II/III work). Anchored to the same
+#     verbatim MAT.US competences the arithmetic-drill twins use. Design: Documents/fehlersuche-design.md
+PARAM_TEMPLATES.extend([
+    ParametricTask(
+        id="mat-fehlersuche-lineare-gleichung",
+        title="Fehlersuche: lineare Gleichung",
+        subject="Mathematik", klasse=2, kompetenzbereich="2: Variablen und Funktionen",
+        recipe="fehlersuche_linear_equation",
+        prompt_template="Beim Lösen der Gleichung ${eq}$ ist in der Musterlösung genau ein "
+                        "Schritt falsch. Finde den falschen Schritt, gib seine Nummer an und "
+                        "schreibe die richtige Rechnung auf.",
+        context_frame="Eine Rechnung auf Fehler zu prüfen schult den Blick fürs eigene "
+                      "Umformen — man muss jeden Schritt wirklich verstehen.",
+        serves=[Serves(competence_id="MAT.US.2.VAR.02", relation="exercises")],
+        dimensions=["OPE"], cognitive_level="analyze", kind="open_response", est_minutes=5,
+        response=LinesResponse(n=3)),
+    ParametricTask(
+        id="mat-fehlersuche-bruch-addition",
+        title="Fehlersuche: Brüche addieren",
+        subject="Mathematik", klasse=2, kompetenzbereich="1: Zahlen und Maße",
+        recipe="fehlersuche_fraction_add",
+        prompt_template="In der Musterlösung zur Aufgabe ${f1} + {f2}$ steckt genau ein "
+                        "Fehler. Finde den falschen Schritt, gib seine Nummer an und rechne "
+                        "richtig weiter.",
+        context_frame="Fehler in einer vorgelegten Rechnung zu finden schärft das Gespür "
+                      "für die Rechenregeln — hier für das Addieren von Brüchen.",
+        serves=[Serves(competence_id="MAT.US.2.ZAH.03", relation="exercises")],
+        dimensions=["OPE"], cognitive_level="analyze", kind="open_response", est_minutes=5,
+        response=LinesResponse(n=3)),
+    ParametricTask(
+        id="mat-fehlersuche-prozent",
+        title="Fehlersuche: Prozentrechnung",
+        subject="Mathematik", klasse=2, kompetenzbereich="1: Zahlen und Maße",
+        recipe="fehlersuche_percentage",
+        prompt_template="Bei der Berechnung von {pct} % von {base} ist in der Musterlösung "
+                        "genau ein Schritt falsch. Finde den falschen Schritt, gib seine "
+                        "Nummer an und korrigiere die Rechnung.",
+        context_frame="Beim Prüfen einer fremden Rechnung erkennt man typische "
+                      "Stolperstellen — und vermeidet sie in der eigenen.",
+        serves=[Serves(competence_id="MAT.US.2.ZAH.04", relation="exercises")],
+        dimensions=["OPE"], cognitive_level="analyze", kind="open_response", est_minutes=5,
+        response=LinesResponse(n=3)),
 ])
 
 

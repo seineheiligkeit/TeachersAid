@@ -220,6 +220,22 @@ def _solution_step_flowables(steps, S):
     return out
 
 
+def _flawed_chain_flowables(steps, S):
+    """Fehlersuche: the STUDENT-FACING worked solution that contains exactly one planted,
+    catalogued error. Rendered as a numbered, labelled chain on EVERY projection — it IS the
+    object of study (the student critiques it; the teacher guide points at the wrong step via
+    the answer_key + the correct Rechenweg). It never reveals which step is wrong: the located
+    step + the correction live teacher-only on answer_key. Reuses the Rechenweg step layout
+    (text + inline-math expr), so a fraction/equation typesets rather than reading as code."""
+    out = [rb.para("Vorgelegte Lösung — genau ein Schritt ist falsch:", S["label"])]
+    for i, st in enumerate(steps, 1):
+        line = f"({i})  " + rb.richtext_markup(st.text)
+        if st.expr:
+            line += "   " + rb.richtext_markup([InlineRun(text=st.expr, math=True)])
+        out.append(rb.raw_para(line, S["body"]))
+    return out
+
+
 def _scaffold_flowables(scaffold, S):
     """Gerüst (P2): the STUDENT-FACING scaffold box — a leak-free worked first step, a
     misconception warning, and Formulierungshilfen. Renders on the student AND homework
@@ -263,6 +279,11 @@ def _task_flowables(b: TaskBlock, projection: str, S, width, assets, number, cit
         if p:
             out.append(_image(p, width * 0.75))
     out += _citation_flowables(refs, citations, S)
+    # Fehlersuche: the flawed worked chain is the student-facing object of study — render it on
+    # EVERY projection (the teacher guide points at the wrong step via answer_key + the correct
+    # Rechenweg below). It never reveals the located step / correct answer.
+    if b.flawed_solution:
+        out += _flawed_chain_flowables(b.flawed_solution, S)
     # Gerüst (P2): the scaffold is student-facing (the teacher dialled it in for the class),
     # so it renders on student + homework before the answer surface; teacher gets a named line.
     if b.scaffold and projection in ("student", "homework"):

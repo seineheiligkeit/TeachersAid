@@ -117,6 +117,11 @@ class Instance(BaseModel):
     # the misconception each probes — computed by the engine at variant time, never authored.
     # (`Instance` is a pipeline-internal artifact the LLM never emits — no generation view — so
     # these derived fields are derivation-safe by construction.)
+    flawed_solution: list[SolutionStep] = Field(default_factory=list)  # Fehlersuche: the STUDENT-
+    # facing worked chain with exactly one PLANTED, catalogued error (pipeline/fehlersuche.py).
+    # `_instantiate` copies it onto `TaskBlock.flawed_solution`; empty for every other genre. The
+    # located wrong step + the Fehlermuster name + source ride teacher-only on `answer` (→ answer_key),
+    # NOT on watch_outs (which the homework projection would surface as a "Tipp:" and leak the location).
 
     @field_validator("difficulty")
     @classmethod

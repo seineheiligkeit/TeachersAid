@@ -222,6 +222,14 @@ class TaskBlock(BlockBase):
     solution_paths: list[SolutionPath] = Field(default_factory=list)  # alternative strategies
     # (derived; teacher-only) — the "Alternative Lösungswege" the LLM can NEVER emit (absent
     # from GenTaskBlock, like solution_steps). Empty unless a recipe has divergent strategies.
+    flawed_solution: list[SolutionStep] = Field(default_factory=list)  # Fehlersuche: a worked
+    # chain with exactly ONE planted, catalogued error — the STUDENT-FACING object of study
+    # ("Finde und korrigiere den Fehler"). DERIVED by pipeline/fehlersuche.py (the wrong step is
+    # COMPUTED by applying a Fehlermuster to the same drawn values and PROPAGATED honestly, so a
+    # student who follows the flawed logic reproduces the shown numbers); never authored (absent
+    # from GenTaskBlock, like solution_steps/scaffold). Renders on the student AND homework sheet;
+    # the located wrong step + the Fehlermuster name + the fix (all on answer_key) and the correct
+    # chain (solution_steps) stay teacher-only — NOT watch_outs, which homework surfaces as a "Tipp:".
     solution_asset_refs: list[str] = Field(default_factory=list)  # teacher-only solution figures
     # (A5 Rätsel engine): the SOLVED grid of a puzzle. Renders ONLY in the teacher projection —
     # the student sheet shows the empty grid via `asset_refs`. DERIVED/curated, never LLM-authored.

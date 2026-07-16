@@ -209,6 +209,9 @@ def _instantiate(task: ParametricTask, seed: int, *,
         content_area=task.content_area, serves=list(task.serves),
         est_minutes=task.est_minutes, answer_key=inst.answer, solution_steps=inst.steps,
         solution_paths=inst.solution_paths, difficulty=inst.difficulty,
+        # Fehlersuche (pipeline/fehlersuche.py): the student-facing flawed chain (the located wrong
+        # step + Fehlermuster name ride teacher-only on answer_key). Empty for every other genre.
+        flawed_solution=list(inst.flawed_solution),
     )
     if mc is not None and openness != Offenheit.OFFEN:  # native/closed MC projection
         fields.update(mc)
@@ -1446,3 +1449,5 @@ from . import physics as _physics  # noqa: E402,F401
 from . import finanz as _finanz  # noqa: E402,F401
 # Wahl-Werkstatt: d'Hondt seat allocation + coalition arithmetic (GPB, Politische Bildung).
 from . import wahl as _wahl  # noqa: E402,F401
+# Fehlersuche: worked solutions with a planted, catalogued error (see pipeline/fehlersuche.py).
+from . import fehlersuche as _fehlersuche  # noqa: E402,F401
