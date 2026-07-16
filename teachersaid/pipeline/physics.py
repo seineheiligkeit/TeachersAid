@@ -35,14 +35,18 @@ import random
 
 from sympy import Integer, Rational, nsimplify
 from sympy.physics import units as _u
-from sympy.physics.units import Dimension, convert_to
-from sympy.physics.units.systems.si import SI
+from sympy.physics.units import convert_to
 
 from ..grounding.physics import (
     MATERIAL_DENSITIES, STANDARD_GRAVITY, density_material_for,
 )
 from ..schema.blocks import SolutionStep
 from ..schema.parametric import Instance
+# The dimensional guard is a shared primitive (pipeline/dimensions.py) — extracted so the
+# Einheiten-Detektiv can INVERT the very same check this engine uses to PROVE its answers.
+# Re-exported here so callers referencing `physics.DimensionError` / `physics._assert_dimension`
+# keep working.
+from .dimensions import DimensionError, _assert_dimension, _base_dims  # noqa: F401
 from .parametrize import Unsuitable, _recipe
 
 # --- units (local aliases; sympy.physics.units) ------------------------------
@@ -50,30 +54,6 @@ _m, _s, _kg, _g = _u.meter, _u.second, _u.kilogram, _u.gram
 _cm, _h = _u.centimeter, _u.hour
 _N, _V, _A, _Ohm, _W, _J = _u.newton, _u.volt, _u.ampere, _u.ohm, _u.watt, _u.joule
 _kWh = _u.kilo * _u.watt * _u.hour
-
-_DIMSYS = SI.get_dimension_system()
-
-
-# --- dimensional verification (the headline guard) ---------------------------
-class DimensionError(AssertionError):
-    """A computed quantity does not carry the expected physical dimension. Raised by
-    `_assert_dimension` — a structural guarantee that a unit-category error cannot pass."""
-
-
-def _base_dims(expr) -> dict:
-    """Reduce a units expression to its base-SI dimension exponents (a canonical dict),
-    so `R·I` and `volt` compare EQUAL despite different surface forms."""
-    return _DIMSYS.get_dimensional_dependencies(Dimension(SI.get_dimensional_expr(expr)))
-
-
-def _assert_dimension(qty, expected_unit) -> None:
-    """Assert `qty` has the same physical dimension as `expected_unit`, else raise
-    `DimensionError`. This is called in every recipe BEFORE formatting the answer — the
-    point at which a wrong-unit computation is caught by construction."""
-    if _base_dims(qty) != _base_dims(expected_unit):
-        raise DimensionError(
-            f"dimension mismatch: {SI.get_dimensional_expr(qty)} "
-            f"is not {SI.get_dimensional_expr(expected_unit)}")
 
 
 def _mag(qty, unit):

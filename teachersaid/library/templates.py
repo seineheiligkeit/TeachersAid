@@ -595,6 +595,49 @@ PARAM_TEMPLATES.extend([
 ])
 
 
+# --- Einheiten-Detektiv ---
+# Dimensional-analysis puzzles: present candidate formulas for a target quantity, exactly one
+# dimensionally correct, the rest PROVEN wrong at build time by inverting the sympy.physics.units
+# guard (pipeline/einheiten.py). The whole item (target + givens + lettered candidates) lives in
+# the prompt, so every seed's prompt differs; the kind is open_response and the response is ruled
+# lines — the student crosses out the impossible formulas AND justifies each over the units.
+# Non-"phy-us-"/"phy-os-" ids so the locked test_physics exact-set assertions stay green (the
+# templates ride the generic "phy-" family the pack test iterates). Anchored to verbatim Kl.-3
+# PHY competences; the cognitive act is analyse (checking a formula) — AFB II.
+PARAM_TEMPLATES.extend([
+    ParametricTask(
+        id="phy-einheiten-bewegung", title="Einheiten-Detektiv: Bewegung (v = s/t)",
+        subject="Physik", klasse=3, kompetenzbereich="Mechanik",
+        recipe="einheiten_bewegung", prompt_template="{aufgabe}",
+        serves=[Serves(competence_id="PHY.US.3.MEC.01", relation="exercises")],
+        dimensions=["W"], cognitive_level="analyze", kind="open_response", est_minutes=6,
+        response=LinesResponse(n=6),
+        context_frame="Diese Aufgaben schulen den Blick für Einheiten: Eine Formel kann nur "
+                      "stimmen, wenn ihre Einheit zur gesuchten Größe passt — hier bei "
+                      "Weg, Zeit und Geschwindigkeit."),
+    ParametricTask(
+        id="phy-einheiten-elektrik", title="Einheiten-Detektiv: Ohm'sches Gesetz (U = R·I)",
+        subject="Physik", klasse=3, kompetenzbereich="Elektrizität und Magnetismus",
+        recipe="einheiten_elektrik", prompt_template="{aufgabe}",
+        serves=[Serves(competence_id="PHY.US.3.ELE.01", relation="exercises")],
+        dimensions=["E"], cognitive_level="analyze", kind="open_response", est_minutes=6,
+        response=LinesResponse(n=6),
+        context_frame="Diese Aufgaben prüfen den Zusammenhang von Spannung, Stromstärke und "
+                      "Widerstand über die Einheiten: Nur die richtig verknüpfte Formel "
+                      "liefert die gesuchte Einheit."),
+    ParametricTask(
+        id="phy-einheiten-energie", title="Einheiten-Detektiv: Arbeit und Leistung",
+        subject="Physik", klasse=3, kompetenzbereich="Energie",
+        recipe="einheiten_energie", prompt_template="{aufgabe}",
+        serves=[Serves(competence_id="PHY.US.3.ENE.01", relation="exercises")],
+        dimensions=["W"], cognitive_level="analyze", kind="open_response", est_minutes=6,
+        response=LinesResponse(n=6),
+        context_frame="Diese Aufgaben schulen den Blick für Einheiten bei Arbeit und "
+                      "Leistung: Eine Formel kann nur stimmen, wenn ihre Einheit (J bzw. W) "
+                      "zur gesuchten Größe passt."),
+])
+
+
 def find_template(template_id: str) -> ParametricTask | None:
     return next((t for t in PARAM_TEMPLATES if t.id == template_id), None)
 

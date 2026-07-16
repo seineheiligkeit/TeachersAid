@@ -1451,3 +1451,5 @@ from . import finanz as _finanz  # noqa: E402,F401
 from . import wahl as _wahl  # noqa: E402,F401
 # Fehlersuche: worked solutions with a planted, catalogued error (see pipeline/fehlersuche.py).
 from . import fehlersuche as _fehlersuche  # noqa: E402,F401
+# Einheiten-Detektiv: dimensional-analysis puzzles by inverting the units guard (Physik).
+from . import einheiten as _einheiten  # noqa: E402,F401
