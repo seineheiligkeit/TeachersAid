@@ -268,6 +268,26 @@ def seed_finanz(store=None, *, today: date | None = None) -> list:
     return out
 
 
+def seed_fermi(store=None, *, today: date | None = None) -> list:
+    """Stage the Fermi-Werkstatt worksheets (estimation / decomposition-chain modelling) as
+    content items for Gate-2 review. Mirrors `seed_finanz` (`orch.stage_worksheet`): each
+    curated `FermiProblem` becomes a selbstdifferenzierende Schätzaufgabe whose worked chain,
+    point estimate and propagated acceptable range are computed teacher-only (never leaked to
+    the student sheet), anchored to a verbatim MAT modelling competence (dimension MOD). See
+    `pipeline/fermi.py` and `Documents/fermi-design.md`."""
+    from ..grounding import fermi as gfermi
+    from ..pipeline import fermi
+    from ..pipeline import orchestrator as orch
+    from ..store.repository import ReviewStore
+
+    store = store or ReviewStore()
+    out = []
+    for problem in gfermi.list_problems():
+        content, res = fermi.build_worksheet(problem.id, today=today)
+        out.append(orch.stage_worksheet(store, content, res, source="curated"))
+    return out
+
+
 def seed_sachverhalte(store=None, *, status: str = "in_review") -> list:
     """Stage the curated Sachverhalte (library/sachverhalte.py) into the Sachverhalt store
     for HITL review (the content/exposition layer — fact-check the facts + sources before a
