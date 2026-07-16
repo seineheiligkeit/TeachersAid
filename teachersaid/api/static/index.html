@@ -71,6 +71,12 @@
   .fader.off .flabel { color:#aaa; }
   .fader select { padding:4px 6px; }
   .fader .why { grid-column:2; font-size:11px; color:#999; margin:2px 0 0; }
+  .presets { display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin:0 0 9px; }
+  .presets .plabel { font-size:11px; color:#999; text-transform:uppercase; letter-spacing:.04em; }
+  .preset { width:auto; padding:2px 9px; font-size:11.5px; border:1px solid var(--line); border-radius:12px; background:#fff; color:#555; cursor:pointer; }
+  .preset:hover { border-color:var(--ink); color:var(--ink); }
+  .preset.on { background:var(--ink); color:#fff; border-color:var(--ink); }
+  .preset.reset { border-style:dashed; }
 </style>
 </head>
 <body>
@@ -311,17 +317,58 @@ async function loadTemplates(){
 // visible-but-disabled with the honest "warum nicht" as a subtitle + tooltip. The UI holds no
 // state the API doesn't receive: submitting rebuilds the SAME typed mixer_profile from the
 // selects (neutral = omitted → None). Default = every fader neutral / Umfang standard.
-let MIXER_CAPS=null;
+let MIXER_CAPS=null, MIXER_PRESETS=null;
+async function loadPresets(){                // lesson-purpose presets (template-independent, cached)
+  if(MIXER_PRESETS) return MIXER_PRESETS;
+  try{ MIXER_PRESETS=(await jget("/api/mixer/presets")).presets||[]; }
+  catch(e){ MIXER_PRESETS=[]; }
+  return MIXER_PRESETS;
+}
 async function loadMixer(){
   const box=$("#v-mixer"); if(!box) return;
   const tid=$("#v-template").value; MIXER_CAPS=null;
   if(!tid){ box.innerHTML=""; return; }
   box.innerHTML=`<p class="muted">Mischpult lädt…</p>`;
   try{
-    const caps=await jget(`/api/templates/${encodeURIComponent(tid)}/capabilities`);
+    const [caps]=await Promise.all([jget(`/api/templates/${encodeURIComponent(tid)}/capabilities`), loadPresets()]);
     MIXER_CAPS=caps;
-    box.innerHTML=`<h3>Tiefenregler (Mischpult)</h3>`+caps.capabilities.map(faderHTML).join("");
+    box.innerHTML=`<h3>Tiefenregler (Mischpult)</h3>`+presetsHTML()+caps.capabilities.map(faderHTML).join("");
   }catch(e){ box.innerHTML=`<p class="muted">Mischpult nicht ladbar.</p>`; }
+}
+// Lesson-purpose presets: chips that SET the fader selects (a starting point the teacher then
+// tweaks). Applying one intersects with the template's capabilities client-side — a disabled
+// (unsupported) fader is skipped, so the honest "warum nicht" stays and buildMixerProfile still
+// POSTs the SAME typed profile. Never a second source of truth (the table is served, not hard-coded).
+function presetsHTML(){
+  if(!MIXER_PRESETS||!MIXER_PRESETS.length) return "";
+  const chips=MIXER_PRESETS.map(p=>
+    `<button type="button" class="preset" data-preset="${esc(p.id)}" title="${esc(p.description)}" onclick="applyPreset('${esc(p.id)}')">${esc(p.name)}</button>`
+  ).join("");
+  return `<div class="presets"><span class="plabel">Voreinstellung</span>${chips}`
+    +`<button type="button" class="preset reset" title="alle Regler auf neutral" onclick="resetMixer()">zurücksetzen</button></div>`;
+}
+function applyPreset(pid){
+  if(!MIXER_CAPS||!MIXER_PRESETS) return;
+  const preset=MIXER_PRESETS.find(p=>p.id===pid); if(!preset) return;
+  const f=preset.faders||{};
+  for(const c of MIXER_CAPS.capabilities){
+    const el=$(`#mix-${c.fader}`); if(!el) continue;
+    if(!c.optional){ el.value=(c.fader in f)?f[c.fader]:c.default; }   // Umfang: always settable
+    else if(!el.disabled){ el.value=(c.fader in f)?f[c.fader]:""; }    // supported → set or neutral
+    // an unsupported optional fader is left disabled (its honest "warum nicht" stays)
+  }
+  markPreset(pid);
+}
+function resetMixer(){                        // clear the Mischpult back to fully neutral
+  if(!MIXER_CAPS) return;
+  for(const c of MIXER_CAPS.capabilities){
+    const el=$(`#mix-${c.fader}`); if(!el||el.disabled) continue;
+    el.value=c.optional?"":c.default;
+  }
+  markPreset(null);
+}
+function markPreset(pid){                      // highlight the active chip (pure presentation)
+  document.querySelectorAll("#v-mixer .preset").forEach(b=>b.classList.toggle("on", b.dataset.preset===pid));
 }
 function faderHTML(c){
   const id=`mix-${c.fader}`;

@@ -209,6 +209,18 @@ def template_capabilities(template_id: str):
     return discover_capabilities(t).model_dump()
 
 
+@app.get("/api/mixer/presets")
+def mixer_presets():
+    """The curated lesson-PURPOSE presets (Wiederholung vor der Schularbeit · Vertiefungsstunde ·
+    Vertretungsstunde · Hausübung) as PARTIAL bundles over the ONE typed profile. The dashboard
+    applies a preset to the fader selects and intersects it with the template's discovered
+    capabilities CLIENT-side — a preset never bypasses discovery, and the typed `mixer_profile`
+    stays the only thing POSTed. Single source of truth (never duplicated in JS)."""
+    from ..schema.mixer import lesson_presets_payload
+
+    return {"presets": lesson_presets_payload()}
+
+
 @app.post("/api/variants")
 def variants(body: VariantsBody):
     """Stage N deterministic, correct-by-construction variants for Gate-2 review."""

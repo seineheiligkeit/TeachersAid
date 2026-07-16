@@ -191,3 +191,93 @@ class TemplateCapabilities(BaseModel):
     klasse: int
     title: str
     capabilities: list[FaderCapability] = Field(default_factory=list)
+
+
+# --- Lesson-purpose presets (curated bundles over the ONE typed profile) ------------------
+# A preset is a lesson PURPOSE, not a student level (roadmap steer; tiefenregler-design §9).  It
+# is a curated, SME-vetted PARTIAL `ParametricMixerProfile`: it pins Umfang plus only the
+# OPTIONAL faders whose ACTIVE endpoint serves that purpose; every other fader stays neutral
+# (None).  The dashboard applies a preset by SETTING the fader selects and then rebuilds the SAME
+# typed profile from them — so a preset NEVER bypasses capability discovery: a fader the picked
+# template does not support is simply not set (its honest "warum nicht" still shows), and the
+# typed `mixer_profile` stays the only thing POSTed.  The table below is the single source of
+# truth (served by `GET /api/mixer/presets`); the dashboard holds no copy of it.
+
+class LessonPreset(BaseModel):
+    """One curated lesson-purpose bundle of Mischpult fader settings (Austrian school register)."""
+
+    model_config = ConfigDict(extra="forbid")
+    id: str
+    name: str                          # German display name = the lesson purpose
+    description: str                   # one line: what this purpose wants didactically
+    profile: ParametricMixerProfile    # the curated bundle (Umfang always; active faders only)
+
+    def set_faders(self) -> dict[str, str]:
+        """The faders this preset actively sets → {field: enum value}.  Umfang is always present
+        (universal); an OPTIONAL fader appears only where the preset moves it off neutral.  This
+        is exactly what the dashboard writes into the selects before intersecting with the
+        template's discovered capabilities (client-side) — never a base/no-op endpoint."""
+        dumped = self.profile.model_dump(mode="json")
+        faders = {"umfang": dumped["umfang"]}
+        for field in ("tiefe", "abstraktion", "offenheit", "geruest", "textlast"):
+            if dumped[field] is not None:
+                faders[field] = dumped[field]
+        return faders
+
+
+# The four lesson purposes.  Each sets ONLY the active endpoints its purpose needs; the rest stay
+# neutral so the template's discovered capabilities decide what actually moves (rationales +
+# "deliberately out" in tiefenregler-design §9 — the SME vets both the German and the didactics).
+LESSON_PRESETS: list[LessonPreset] = [
+    LessonPreset(
+        id="wiederholung",
+        name="Wiederholung vor der Schularbeit",
+        description="Prüfungsnahe Wiederholung: mehr Varianten und offene Produktion mit "
+                    "Rechenweg wie in der Schularbeit.",
+        # rationale: tiefenregler-design §9 (rehearse in the exam's own format, more reps)
+        profile=ParametricMixerProfile(umfang=Umfang.ERWEITERT, offenheit=Offenheit.OFFEN),
+    ),
+    LessonPreset(
+        id="vertiefung",
+        name="Vertiefungsstunde",
+        description="Weniger Aufgaben, dafür tiefer: Strategien vergleichen, formal "
+                    "darstellen und offen begründen.",
+        # rationale: tiefenregler-design §9 (depth over breadth; supported subset activates)
+        profile=ParametricMixerProfile(
+            umfang=Umfang.KOMPAKT,
+            tiefe=Tiefe.STRATEGIEN_VERGLEICHEN,
+            abstraktion=Abstraktion.FORMAL,
+            offenheit=Offenheit.OFFEN,
+        ),
+    ),
+    LessonPreset(
+        id="vertretung",
+        name="Vertretungsstunde",
+        description="Selbsttragende Stunde: viel Gerüst und vereinfachte Angabe, damit die "
+                    "Klasse ohne Fachlehrkraft arbeiten kann.",
+        # rationale: tiefenregler-design §9 (self-running; Offenheit stays neutral by design)
+        profile=ParametricMixerProfile(
+            umfang=Umfang.STANDARD,
+            geruest=Geruest.GESTUETZT,
+            textlast=Textlast.EINFACH,
+        ),
+    ),
+    LessonPreset(
+        id="hausuebung",
+        name="Hausübung",
+        description="Kurze, selbstständige Übung für daheim: kompakter Umfang mit Gerüst "
+                    "zum Nicht-Steckenbleiben.",
+        # rationale: tiefenregler-design §9 (short + scaffolded; full register kept)
+        profile=ParametricMixerProfile(umfang=Umfang.KOMPAKT, geruest=Geruest.GESTUETZT),
+    ),
+]
+
+
+def lesson_presets_payload() -> list[dict]:
+    """The served preset table: id + German name/description + the PARTIAL fader bundle.
+    The single source of truth for `GET /api/mixer/presets`; the dashboard applies these to the
+    fader selects (intersecting with the discovered capabilities), never a hard-coded copy."""
+    return [
+        {"id": p.id, "name": p.name, "description": p.description, "faders": p.set_faders()}
+        for p in LESSON_PRESETS
+    ]

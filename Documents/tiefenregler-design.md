@@ -1,7 +1,9 @@
 # Tiefenregler („Mischpult") — derivation contract
 
-Status: **P1 + P2 + P3 + P4 built**. P4 is capability discovery + the dashboard Mischpult
-(§8); it adds no new fader. The composer was deliberately left untouched (§8, reasoned).
+Status: **P1 + P2 + P3 + P4 built**, plus **lesson-purpose presets (§9)**. P4 is capability
+discovery + the dashboard Mischpult (§8); it adds no new fader. The presets are a curated table +
+a dashboard affordance over the SAME typed profile — no new engine. The composer was deliberately
+left untouched (§8, reasoned).
 
 ## 1. Product rule
 
@@ -278,3 +280,74 @@ declined for two independent reasons:
 
 So the composer is left untouched. Should blocks ever gain parametric-grade computed data (per-block
 solution paths / MC specs / figure twins), this section is where that reopens — but not before.
+
+## 9. Lesson-purpose presets — contract
+
+Status: **built**. A **curated table + a dashboard affordance, no new engine.** A preset is a
+convenience that sets the fader UI to a good starting point; it adds no fader, no projection, no lint.
+
+**Product rule — presets are lesson PURPOSES, not student levels.** A preset names *why* the sheet is
+being made (Wiederholung vor der Schularbeit · Vertiefungsstunde · Vertretungsstunde · Hausübung) and
+carries a **curated, SME-vetted PARTIAL `ParametricMixerProfile`**: it pins Umfang plus only the OPTIONAL
+faders whose ACTIVE endpoint serves that purpose; every other fader stays neutral (`None`). It never
+encodes a difficulty axis — the same preset produces different sheets on different templates, decided by
+each template's capabilities, not by the preset.
+
+**Typed seam (single source of truth).** `schema/mixer.py` owns `LessonPreset` (id · German
+`name`/`description` · a validated `ParametricMixerProfile`), the `LESSON_PRESETS` table, and
+`lesson_presets_payload()` (→ `{id, name, description, faders}`, where `faders` is the non-neutral subset
+`set_faders()` returns — Umfang always, an optional fader only where the preset moves it off neutral).
+`GET /api/mixer/presets` returns that payload verbatim (a sibling of `GET /api/templates`). **The table
+lives in code, served once; the dashboard holds no copy.** Because each bundle *is* a
+`ParametricMixerProfile`, it round-trips through the one profile currency by construction (no second
+schema); `tests/test_mixer_presets.py` locks that round-trip and that every fader a preset sets is a
+real profile field set to its ACTIVE endpoint.
+
+**Client-side intersection (the shape that keeps ONE source of truth).** Applying a preset is a pure UI
+action: the dashboard **writes the preset's values into the fader `<select>`s**, then the *unchanged*
+`buildMixerProfile()` rebuilds and POSTs the SAME typed `mixer_profile`. Because `applyPreset` skips any
+disabled (unsupported) fader and `buildMixerProfile` already omits disabled/neutral faders, **the
+intersection with the template's discovered capabilities happens for free through the existing
+UI→profile path** — no server-side `preset × template` resolver, no duplicated capability logic, no
+second source of truth. A preset therefore **never bypasses capability discovery**: an unsupported fader
+is simply not set and keeps its honest „warum nicht“; only supported, non-neutral faders (plus Umfang)
+enter the profile; an all-neutral result behaves exactly like the untouched plain path (no profile
+stamp). `zurücksetzen` clears every fader back to neutral. (Server-side intersection was rejected: it
+would re-implement the discovery it must already match, and duplicate the served capabilities the client
+already has.)
+
+**Why each purpose sets what it sets** (the SME vets both the German and the didactics):
+
+| Preset (German name) | Active bundle | Didactic rationale |
+|---|---|---|
+| **Wiederholung vor der Schularbeit** | `umfang=erweitert`, `offenheit=offen` | Rehearse in the exam's own format — open production with Rechenweg (drop the MC crutch where the template is MC-based) — with more reps across the variant range. No new depth, no scaffold, no simplified text: the Schularbeit has none of those. |
+| **Vertiefungsstunde** | `umfang=kompakt`, `tiefe=strategien_vergleichen`, `abstraktion=formal`, `offenheit=offen` | Depth over breadth: fewer items, compare solution strategies, formalise the representation, justify openly. On a given template only the supported subset activates. |
+| **Vertretungsstunde** | `umfang=standard`, `geruest=gestuetzt`, `textlast=einfach` | Maximally self-running for a non-specialist substitute (or the class alone): full scaffold + simplified Angabe; standard size fills the hour. **Offenheit stays neutral** so the self-checking MC base survives where the template has one — raising `offen` would demand expert marking, the opposite of self-running. |
+| **Hausübung** | `umfang=kompakt`, `geruest=gestuetzt` | Short and self-supporting at home: compact count (respect the time), scaffold so the student gets unstuck alone. Register stays full — homework continues the class's language. |
+
+**Design principle — only ACTIVE endpoints.** A preset only ever sets an optional fader to its
+sheet-changing (high) endpoint (`strategien_vergleichen`/`formal`/`offen`/`gestuetzt`/`einfach`), never
+its base endpoint (`ueben`/`anschaulich`/`geschlossen`/`ohne`/`voll`). Setting a base endpoint would
+demand the template *support* that fader merely to reproduce the plain sheet — a needless capability
+requirement. So "the purpose wants the base behaviour" is expressed by leaving the fader **neutral**, not
+by setting its low endpoint. (Umfang is exempt — universal, so any of its three values is safe; a preset
+that wants the middle size sets `standard` explicitly, e.g. Vertretung.)
+
+**Deliberately out.**
+- **`ramp`** is not a profile field (it is a separate build flag), so presets do not touch it — they
+  stay strictly "bundles over the SAME typed profile".
+- **The composer** inherits §8: presets are parametric-only (they move faders, and the composer has
+  none beyond the envelope).
+- **The Umfang×n capability boundary (honest, not silent).** The dashboard discovers capabilities once
+  at `DISCOVERY_N` (§8), but Umfang scales the *build* count. A **SOME-quantifier capability** (Gerüst,
+  Abstraktion — "≥1 variant scaffolds / carries a figure") shown at `n=6` can vanish at a
+  `kompakt`-reduced count on a rare late-seed template (measured: **3 cells** — `Hausübung` on
+  `mat-os-kurvendiskussion` / `-lgs2` / `-fa-exponentialmodell`, where the scaffoldable seed is 5th/6th).
+  When it does, the build **hard-fails honestly** — surfaced to the teacher via `item.error`
+  (`compose_variants` catches it), never a crash and never a silent wrong sheet — the *same* pre-existing
+  behaviour as manually pairing `umfang=kompakt` with that fader. The teacher can raise the count or
+  clear the fader. `tests/test_mixer_presets.py` proves the clean invariant (discovery and build at the
+  same `eff_n` → every preset composes on every template, 0 trips) and separately locks that the residual
+  dashboard-flow edge stays a clean `ValueError` (an honest rejection), never any other failure. The
+  ALL-quantifier capabilities (Tiefe "every variant has paths", Offenheit "every variant is MC") and the
+  aggregate-stable Textlast WSTF are n-robust in the shrinking direction and never trip.
