@@ -33,7 +33,7 @@ rendering + the two-stage human-in-the-loop review dashboard).
 ```bash
 pip install -e .                       # deps: pydantic2, fastapi, uvicorn, anthropic, reportlab,
                                        #       matplotlib, pillow, pyyaml, pymupdf, sympy  (pytest for dev)
-python -m pytest -q                    # fully offline, no API key (976 tests)
+python -m pytest -q                    # fully offline, no API key (1056 tests)
 python -m teachersaid seed             # seed the master-library examples into the review queue
 python -m teachersaid                  # dashboard → http://127.0.0.1:8000
 ```
@@ -124,7 +124,13 @@ rejection paths (a registry-wide drift test locks them together); the dashboard 
 supported faders and shows honest German "warum nicht" reasons for the rest, POSTing the same typed
 profile (UI state is never a second source of truth). The composer is deliberately OUT: the envelope
 is its honest size control, and block selection can't honor Umfang's coverage invariance
-(design doc §8). Full contract: `Documents/tiefenregler-design.md`.
+(design doc §8). **Lesson-purpose presets** (`schema/mixer.py`: `LESSON_PRESETS` +
+`lesson_presets_payload`; `GET /api/mixer/presets`) are curated PARTIAL bundles over the SAME typed
+profile — Wiederholung vor der Schularbeit · Vertiefungsstunde · Vertretungsstunde · Hausübung,
+lesson PURPOSES not student levels; the dashboard chips SET the fader selects and intersect with the
+discovered capabilities client-side (unsupported faders keep their „warum nicht"), so a preset never
+bypasses discovery and the typed profile stays the only thing POSTed (design doc §9).
+Full contract: `Documents/tiefenregler-design.md`.
 
 The lints in `verify` (details in their sections/docs): `media_policy` (content-bearing → code-gen or
 vetted-sourced; decorative → content-free), `chart_lint` (misrepresentation: 0/1 data as bars, extreme
@@ -313,7 +319,18 @@ Meeus-grade JD/GMST/alt-az/sun/moon (reference-tested against published worked e
 documented; ISS OUT — live TLE ≠ offline-stable) → `matplotlib:star_chart` (maskable labels, horizon
 ring N/O/S/W) + `matplotlib:moon_phase` (waxing-right/waning-left, northern hemisphere); Mondphasen
 anchors `PHY.US.2.SEH.04` competence-mode, the Sternenhimmel sheet is the **first real `horizont`
-flagship**.
+flagship**. **Fermi-Werkstatt** (`schema/fermi.py` + `grounding/fermi.py` + `pipeline/fermi.py`):
+estimation as a curated decomposition chain — the archetype of a selbstdifferenzierende
+Modellierungsaufgabe. A `FermiAnchor` = value + honest `[low, high]` + unit + provenance (exactly one
+of dataset-selected · cited · authored-then-vetted estimate with rationale — **no bare invented
+fact**); a `FermiProblem` chains anchors via typed multiply/divide/add steps, each flagged
+given-vs-estimated. `evaluate_chain` derives the worked Rechenweg + point estimate + the acceptable
+range by **interval arithmetic** over the anchor bounds (+ Größenordnung framing; monotone) — all
+teacher-only, judgment support not a grading engine. The student side is a scaffold (Annahmen-Raster)
+that invites decomposition without dictating the chain and leaks neither estimate, range, nor
+to-be-estimated anchor values (leak-guarded on all projections); given facts show. Verbatim MAT
+anchors under MOD, kind `modelling_task`; `library.seed_fermi` stages the six flagships.
+Contract: `Documents/fermi-design.md`.
 - **Grounded facts & data** (`grounding/data/`, `schema/datasets.py`): `SourceRef` (the data analogue of
   `FassungRef`: publisher/title/url/licence/attribution/Stand), `DataRef` (figure → {dataset_id,
   series}), `Dataset` (+ discovery tags: subjects/keywords/competences). Curated CC-BY datasets from
@@ -391,6 +408,30 @@ steps) — the *alternative* Rechenwege beside the primary `solution_steps` (LGS
 Gleichsetzung/Addition; Prozent: Dreisatz/Operator/Formel), each independently derived and asserted
 equal to the answer; **teacher-only**, rendered as "Alternative Lösungswege", absent from generation
 views like `solution_steps`.
+
+**Fehlersuche (`pipeline/fehlersuche.py`)** — the worked-example twin of the misconception-MC engine:
+a complete worked solution with exactly ONE planted, catalogued error („Finde und korrigiere den
+Fehler"). The wrong step is COMPUTED by applying a curated Fehlermuster (`grounding/misconceptions.py`,
+reused; ids validated at import) to the same drawn values and PROPAGATED honestly (following the
+flawed logic reproduces the shown numbers); test-locked: planted ≠ correct step and flawed ≠ correct
+final (post-format), deterministic per seed. Audience split: the flawed chain is the student-facing
+object of study (`TaskBlock.flawed_solution`, rendered on every projection via
+`_flawed_chain_flowables`); the correct chain (`solution_steps`) and the located step + Fehlermuster
+name + fix stay teacher-only **in `answer_key`, never `watch_outs`** (homework renders watch_outs as
+a leaking „Tipp:"). Three `mat-fehlersuche-*` templates, kind `open_response`; the planted location
+varies across a series. Design: `Documents/fehlersuche-design.md`.
+
+**Einheiten-Detektiv (`pipeline/einheiten.py`, `phy-einheiten-*` templates)** — dimensional-analysis
+puzzles that INVERT the physics units guard: a target quantity with candidate formulas, exactly one
+dimensionally correct, the rest produced by a catalogued transform (`TRANSFORM_CATALOG`:
+ratio_inverted · product_for_quotient · quotient_for_product · sum_for_product · factor_dropped ·
+wrongly_squared) and **proven wrong at build time** (`_prove_wrong`: composed dimension ≠ target, or
+additive-slip inhomogeneity; a dimensional coincidence is rejected/resampled). The dimensional guard
+(`_base_dims`/`_assert_dimension`/`DimensionError`) lives in the shared `pipeline/dimensions.py`
+(physics.py re-exports it — one primitive, no import cycle). Answer + per-formula Begründung are
+DERIVED from the computed unit chain; kind `open_response` (candidates lettered in the prompt, ruled
+lines for the unit justification). Anchored to verbatim Kl.-3 PHY (MEC/ELE/ENE.01).
+Design: `Documents/einheiten-detektiv-design.md`.
 
 **Matura pack + figure emission (10 Jul 2026).** Three SRDP-demand recipes joined the registry
 (`exponential_model` [FA — growth/decay/Zinseszins, evaluate/solve-t/find-rate], `boxplot_from_data`
@@ -655,7 +696,12 @@ real generation seam, staged for HITL review.
   dims/kinds, the JSON shape + a worked example, N **distinct Kernfragen**) — plus a **Korpus-Kontext**
   section listing the worksheets already in the review store for that (subject, stufe) so agents pick
   NEW angles + a coverage summary. Per-stufe `SUBJECT_SETS` (anchor kb|grade; `practical` →
-  enactive/oral; `target_language` → target-language *material*, German teacher layer). **The full
+  enactive/oral; `target_language` → target-language *material*, German teacher layer). **`--gaps`
+  switches to gap-directed targeting** — each brief aims its N Kernfragen at the coverage map's worst
+  `leer`/`teil` cells (`leer` before `teil`, then prerequisite leverage), injects a `## Ziel-Lücken`
+  section with the cells' verbatim competence ids + a hard per-cell anchor rule, and honestly skips a
+  fully-green subject (the manifest stamps `targeting` + `targets`; selection/rendering are pure over
+  `stats.campaign_gaps`). **The full
   operator runbook — fan-out contract, `tools/campaign_status.py` babysitter, dry-run gate, persist,
   and the failure-recovery lessons (fresh gen-dir per pass · normalizer-first · salvage partials ·
   commit per subject) — is `Documents/content-campaign-workflow.md`.**

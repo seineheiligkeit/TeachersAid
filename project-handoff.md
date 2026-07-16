@@ -1,12 +1,11 @@
 # Project Handoff — Austrian Lehrplan-anchored Teaching-Material Generator
 
 **Status: design baseline from Session 2 (24 June 2026); see the dated session updates below for the
-current state (latest: Sessions 21–23, 14 July 2026 — an SME review pass: the two ANNO GPB
-Quellenarbeiten rebuilt referenced-only → self-contained (OCR excerpt + page scan crop embedded ON the
-sheet, `fetch_anno` crop mode, `orch.restage_worksheet`); two abstract Physik figures → computed
-physics scenes (`pipeline/geometric_optics.py`: `pinhole_camera`·`shadow_cone`, plus a real
-Sammellinsen-Bildkonstruktion) on `c0192`/`c0193`; the false Biologie „Extremitätenpaare" bar chart →
-a curated `homology_schema` on `c0172`; and a test-isolation fix — suite fully green, 976 tests).**
+current state (latest: Session 24, 16 July 2026 — the 14–15 Jul remote breadth campaigns merged
+(gen_os_2 + gen_us_2, c0203–c0262 staged, 64 items pending in Prüfen; campaign runbook +
+`campaign_status.py`) and the five-track Opus build fleet landed: Fehlersuche engine ·
+Fermi-Werkstatt · Einheiten-Detektiv · Mischpult lesson-purpose presets · `breadth_prompt --gaps` —
+suite fully green, 1056 tests).**
 This is the single read-me-first document for a fresh
 session taking the project over. Working language is English; the *product's* output is German (or a
 target language for Fremdsprache). Read this, then the docs in the order given in §6.
@@ -689,6 +688,37 @@ target language for Fremdsprache). Read this, then the docs in the order given i
 > `AssetStore()`), and the test drives an ISOLATED store BOTH ways — blocks while the dependency is
 > `in_review`, proceeds once it is `approved`. Suite now **fully green: 976 passed, 1 skipped, 0
 > failed**. SME queue: the three reworked figures on `c0172`, `c0192`, `c0193`.
+
+> **Update (Session 24, 16 Jul 2026): the remote breadth campaigns merged + the five-track build
+> fleet.** Two halves. **(a) The un-logged 14–15 Jul remote session landed:** main fast-forwarded to
+> its branch — the 2nd Oberstufe pass (`gen_os_2`, 28 sheets / 14 subjects) AND a full Unterstufe
+> pass (`gen_us_2`, 32 sheets / all 16 subjects), staged **c0203–c0262** (Prüfen now holds 64 pending
+> content items); plus the campaign workflow industrialised (`Documents/content-campaign-workflow.md`
+> runbook · parameterized `breadth_prompt` with Korpus-Kontext · `tools/campaign_status.py`). The
+> grown corpus (1055→1445 task blocks) tripped the difficulty-model anti-rot test exactly as
+> designed → `tools/fit_difficulty.py` re-run (weights untouched, thresholds re-fit, 77 cues).
+> **(b) Five parallel Opus worktree agents built the roadmap's ready list** (merged sequentially,
+> suite green between merges): **Fehlersuche engine** (`pipeline/fehlersuche.py` — worked solution
+> with ONE planted, catalogued, honestly-propagated Fehlermuster; `TaskBlock.flawed_solution`
+> student-facing, location/fix in `answer_key` teacher-only — `watch_outs` would leak onto homework
+> as „Tipp:"; 3 MAT templates, 17 tests); **Fermi-Werkstatt** (`schema/grounding/pipeline/fermi.py` —
+> anchors with dataset/cited/vetted-estimate provenance, typed decomposition chains, interval-
+> propagated acceptable range + Größenordnung framing, leak-guarded on all projections; 6 Austrian
+> problems, 38 tests); **Einheiten-Detektiv** (`pipeline/einheiten.py` + the guard extracted to
+> shared `pipeline/dimensions.py` — catalogued wrong-formula transforms PROVEN wrong at build by the
+> inverted units validator; 3 `phy-einheiten-*` templates, 14 tests); **Mischpult lesson-purpose
+> presets** (`LESSON_PRESETS` over the ONE typed profile + dashboard chips, client-side capability
+> intersection, `tiefenregler-design.md` §9; honest finding: kompakt's 6→4 build count vs
+> `DISCOVERY_N=6` can drop a SOME-quantifier capability on 3 late-seed OS templates — pre-existing
+> P4 property, surfaces as an honest error, documented §9; 7 tests); **gap-directed campaigns**
+> (`breadth_prompt --gaps` — worst-first `leer`/`teil` cell targeting with prerequisite leverage,
+> `## Ziel-Lücken` brief section, honest green-subject skip; uniform mode byte-identical; 5 tests).
+> Merge discipline: worktree branches cherry-picked onto main (linear history), only the two
+> expected end-append conflicts (`templates.py` extend + `parametrize.py` registry imports),
+> duplicate-def/id sanity-checked. Suite **fully green: 1056 passed, 3 skipped**. SME queue adds:
+> the four preset didactic bundles + all new German surfaces (Fehlersuche prompts/steps,
+> Einheiten transforms/prompts, Fermi anchors — 15 vetted-estimate values with bands — and problem
+> prose, preset names/descriptions/UI copy).
 
 ---
 

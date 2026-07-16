@@ -21,7 +21,10 @@ rules. *(Maintained by hand — add a line here when you add a doc; see CLAUDE.m
 |---|---|
 | [`block-library-design.md`](block-library-design.md) | The block as the durable library unit + the composer (phases 1–3 built). |
 | [`difficulty-model.md`](difficulty-model.md) | **Difficulty as a computed ADVISORY** (roadmap C4) — transparent features, anchor-and-nudge weights, the honest "not learnable from this corpus" finding. |
-| [`tiefenregler-design.md`](tiefenregler-design.md) | **Tiefenregler/Mischpult:** one-master derivation contract; P1 parametric computation faders + Regler-Lint built, P2–P4 seams fixed. |
+| [`tiefenregler-design.md`](tiefenregler-design.md) | **Tiefenregler/Mischpult:** one-master derivation contract; P1–P4 built (six faders, capability discovery, dashboard) + lesson-purpose presets (§9); composer documented out (§8). |
+| [`fehlersuche-design.md`](fehlersuche-design.md) | **Fehlersuche genre:** worked solutions with one planted, catalogued error — the worked-example twin of the misconception-MC engine; leak/honesty boundaries. |
+| [`fermi-design.md`](fermi-design.md) | **Fermi-Werkstatt:** estimation as a curated decomposition chain — anchor provenance discipline, interval range-propagation contract, given-vs-estimated leak guard. |
+| [`einheiten-detektiv-design.md`](einheiten-detektiv-design.md) | **Einheiten-Detektiv:** the inverted dimensional validator — transform-catalog discipline, prove-wrong-at-build contract. |
 | [`dramaturgy-design.md`](dramaturgy-design.md) | **The dramaturgy engine (C5, design-only)** — a phase grammar (Einstieg→Erarbeitung→Sicherung→Transfer) over `compose`; phase-affinity on blocks, grammar ordering, bridging prose, coherence measurement. |
 | [`figure-styleguide.md`](figure-styleguide.md) | **The figure engine**: figstyle (semantic colour roles, dash ramp, house font) + the scene engine + the data-figure intent→recipe system. |
 | [`scene3d-geometry-design.md`](scene3d-geometry-design.md) | 3D analytic geometry as projected Schrägriss scenes — validated prototype; promotion path (roadmap A7). |
