@@ -269,9 +269,13 @@ def _population_pyramid(asset: Asset, path: Path) -> None:
 def _timeline(asset: Asset, path: Path) -> None:
     """A horizontal timeline — chronological events on a time axis (GPB history). spec:
     {events:[{"at":num,"label":str}]} or {categories:[label],"values":[year]}; title?. Each label
-    carries its own year and is **measured and lane-packed** above the line with a leader, so
-    clustered dates never overlap and the axis needs no colliding tick labels (the legibility fix —
-    see `pipeline/figtext.py`)."""
+    carries its own year and is **measured and lane-packed** above the line with a leader
+    (see `pipeline/figtext.py`). The vertical layout is computed in TRUE inches (ylim is set so
+    one data-y unit == one inch of axes height, and the figure height derives from the packed
+    lane count) — a lane is exactly as tall as its measured text, so a tower of wrapped labels
+    can never overtop its lane, no matter how many lanes the clustering forces. (The previous
+    fixed lane constant broke down as the lane count grew: text is sized in points, so widening
+    the y-range shrank the lanes but not the text — the c0213/c0214 overlap regression.)"""
     from .figtext import lane_pack, measure_widths
 
     s = asset.spec or {}
@@ -286,35 +290,44 @@ def _timeline(asset: Asset, path: Path) -> None:
         at = e["at"]
         return f"{at:g}" if isinstance(at, (int, float)) else str(at)
 
-    labels = ["\n".join(textwrap.wrap(f"{_stamp(e)} — {e.get('label', '')}", 22)) for e in events]
+    labels = ["\n".join(textwrap.wrap(f"{_stamp(e)} — {e.get('label', '')}", 26)) for e in events]
     with plt.rc_context(_HOUSE()):
-        fig, ax = plt.subplots(figsize=(8.8, 3.2))       # NOT constrained: stable box for measuring
-        fig.subplots_adjust(left=0.03, right=0.97, top=0.88, bottom=0.05)
-        ax.axhline(0, color=fs.PALETTE.ink, lw=1.6, zorder=1)
+        W = 8.8
+        fig, ax = plt.subplots(figsize=(W, 2.0))         # height provisional; resized below
+        fig.subplots_adjust(left=0.03, right=0.97, top=1.0, bottom=0.0)
         ax.set_yticks([])
         ax.set_xticks([])
         for sp in ("left", "right", "top", "bottom"):
             ax.spines[sp].set_visible(False)
         if not xs:
+            ax.axhline(0, color=fs.PALETTE.ink, lw=1.6, zorder=1)
             fig.savefig(path, dpi=150)
             plt.close(fig)
             return
         span = (max(xs) - min(xs)) or 1.0
         ax.set_xlim(min(xs) - span * 0.12, max(xs) + span * 0.12)
-        ax.set_ylim(-0.4, 1.0)                            # provisional; widened after packing
+        ax.set_ylim(0.0, 1.0)                             # provisional; final ylim set below
+        # widths depend only on the horizontal frame (fig width + margins + xlim), which is
+        # final — measure now, then pack
         widths = measure_widths(ax, labels, fontsize=fs.TYPE.annot)
         lanes = lane_pack(xs, widths, gap=span * 0.02)
-        nlanes = (max(lanes) + 1) if lanes else 1
-        max_lines = max((lab.count("\n") + 1 for lab in labels), default=1)
-        lane_h = 0.30 * max_lines + 0.30
-        base = 0.42
-        for i, (x, lab) in enumerate(zip(xs, labels)):
-            y = base + lanes[i] * lane_h
+        # vertical layout in inches: line height incl. leading, per-lane height from the
+        # tallest measured block, figure height from the lane count
+        line_h = fs.TYPE.annot / 72.0 * 1.30
+        lane_h = max(lab.count("\n") + 1 for lab in labels) * line_h + 0.16
+        base, bottom = 0.42, 0.30                         # stem zone above / dot zone below
+        content_h = bottom + base + (max(lanes) + 1) * lane_h + 0.06
+        title_h = 0.55 if s.get("title") else 0.12
+        fig.set_size_inches(W, content_h + title_h, forward=False)
+        fig.subplots_adjust(top=content_h / (content_h + title_h))
+        ax.set_ylim(-bottom, content_h - bottom)          # one data-y unit == one inch
+        ax.axhline(0, color=fs.PALETTE.ink, lw=1.6, zorder=1)
+        for x, lab, lane in zip(xs, labels, lanes):
+            y = base + lane * lane_h
             ax.plot([x], [0], "o", color=fs.PALETTE.focus, ms=7, zorder=3)
-            ax.plot([x, x], [0.05, y - 0.05], color=fs.PALETTE.focus, lw=0.7, zorder=2)
+            ax.plot([x, x], [0.05, y - 0.06], color=fs.PALETTE.focus, lw=0.7, zorder=2)
             ax.annotate(lab, (x, y), ha="center", va="bottom", fontsize=fs.TYPE.annot,
                         color=fs.PALETTE.ink)
-        ax.set_ylim(-0.35, base + (nlanes - 1) * lane_h + 0.30 * max_lines + 0.25)
         if s.get("title"):
             ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 60)), fontsize=fs.TYPE.title)
         fig.savefig(path, dpi=150, bbox_inches="tight")

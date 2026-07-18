@@ -36,6 +36,26 @@ def test_timeline_no_overlap_when_dates_cluster(tmp_path, monkeypatch):
     assert _label_overlaps(monkeypatch, tmp_path, "matplotlib:timeline", spec) == []
 
 
+def test_timeline_no_overlap_with_tall_label_towers(tmp_path, monkeypatch):
+    # the c0213 regression (SME revise, 18 Jul 2026): sentence-length labels wrap to 4–6
+    # lines AND five of seven events cluster at the end of a 425-year span, forcing many
+    # lanes. The old fixed lane constant collapsed here (text is sized in points, so the
+    # widened y-range shrank the lanes but not the text) — labels printed over each other.
+    spec = {"events": [
+        {"at": 1494, "label": "Vertrag von Tordesillas: Aufteilung der überseeischen Welt "
+                              "zwischen Spanien und Portugal"},
+        {"at": 1602, "label": "Gründung der Niederländischen Ostindien-Kompanie (VOC)"},
+        {"at": 1834, "label": "Abschaffung der Sklaverei im Britischen Empire"},
+        {"at": 1857, "label": "Aufstand gegen die britische Herrschaft in Indien"},
+        {"at": 1884, "label": "Berliner Konferenz: Regeln für die Aufteilung Afrikas (bis 1885)"},
+        {"at": 1904, "label": "Kolonialkrieg gegen Herero und Nama in Deutsch-Südwestafrika "
+                              "(bis 1908)"},
+        {"at": 1919, "label": "Neuverteilung der Kolonien als Völkerbundmandate nach dem "
+                              "Ersten Weltkrieg"},
+    ], "title": "Kolonialismus und Imperialismus – Stationen 1494–1919"}
+    assert _label_overlaps(monkeypatch, tmp_path, "matplotlib:timeline", spec) == []
+
+
 def test_choropleth_no_overlap_with_enclave(tmp_path, monkeypatch):
     from teachersaid.grounding import data_store as ds
     dset = ds.get_dataset("statistik_austria_bundeslaender_2024")
