@@ -37,13 +37,34 @@ from .richtext import RichText
 CausalKind = Literal["voraussetzung", "ursache", "verlauf", "folge", "wirkung"]
 
 
+class TimelinePhase(BaseModel):
+    """One curated Periodisierung band on the Zeitband (institutional phases under the axis —
+    "EGKS" / "EWG / EG" / "Europäische Union"). `from_`/`to` are numeric years (JSON key `from`);
+    the `label` is the phase name. Additive (Zeitband redesign, 18 Jul 2026): old JSON has no
+    `timeline_phases`, so nothing loads differently."""
+    model_config = ConfigDict(extra="forbid", populate_by_name=True)
+    from_: int = Field(alias="from")
+    to: int
+    label: str
+
+
 class HistEvent(BaseModel):
     """A dated event → the timeline figure + chronology tasks. `at` is numeric where it
-    can be (it drives the timeline axis); a string allows "um 1500" / an ISO date."""
+    can be (it drives the timeline axis); a string allows "um 1500" / an ISO date.
+
+    Zeitband redesign (18 Jul 2026, all additive — old JSON loads unchanged): `to` makes the
+    event a Zeitraum rendered as a bar `at`..`to` (a string end year is carried through for
+    display but does not place on the axis); `zaesur` marks a turning point drawn as a quiet
+    dashed full-height rule; `strand` assigns the event to one of the module's two
+    `timeline_strands` (Synchronoptik lanes) — validated at the Sachverhalt ingest gate
+    (`pipeline/sachverhalt_lint.py`), never a silent default."""
     model_config = ConfigDict(extra="forbid")
     at: int | str
     label: str
     text: RichText = ""              # one-line description (teacher/context, not the axis)
+    to: int | str | None = None      # Zeitraum end → a bar (a numeric end places on the axis)
+    zaesur: bool = False             # a turning point → a dashed full-height rule
+    strand: str | None = None        # one of the module's timeline_strands (Synchronoptik lane)
     source_ref: str | None = None    # optional key into sources[]
     entity_id: str | None = None     # optional link into the entity registry (grounding/entities)
     # — additive, backward-compatible: existing JSON without it loads unchanged. The registry is
@@ -140,6 +161,12 @@ class Sachverhalt(BaseModel):
     sources: list[ProvenanceSource] = Field(default_factory=list)  # role="facts" mandatory
     # --- the structured substance (facts) ---
     timeline: list[HistEvent] = Field(default_factory=list)
+    # Zeitband redesign (18 Jul 2026, additive): the Synchronoptik lane split — when non-empty
+    # EXACTLY two curated lane names (`[0]` renders above the axis, `[1]` below), and every dated
+    # event must carry a `strand` from this pair (validated at the ingest gate, not silently
+    # defaulted). A curated Periodisierung band under the axis (`timeline_phases`).
+    timeline_strands: list[str] = Field(default_factory=list)
+    timeline_phases: list[TimelinePhase] = Field(default_factory=list)
     actors: list[Actor] = Field(default_factory=list)
     causes: list[CausalLink] = Field(default_factory=list)
     concepts: list[Concept] = Field(default_factory=list)

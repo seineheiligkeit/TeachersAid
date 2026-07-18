@@ -133,11 +133,13 @@ templates/blocks, not fader work.
   gets a dedicated future session (SME decision 11 Jul).
 - **Dramaturgy engine** — `dramaturgy-design.md` is written; awaiting the SME's three ► decisions
   (envelope→arc mapping · phase cardinality · unconfirmed-inference trust). No code before then.
-- **Zeitleiste redesign** — `zeitleiste-design.md` + rendered mockups (`tools/zeitleiste_mockup.py`,
-  SME-praised 18 Jul: Zeitband · Synchronoptik · Lupe · Arbeitsobjekt) are written; awaiting the six
-  ► decisions (label policy · HistEvent spans/strands · Lupe trigger · Arbeitsobjekt default ·
-  migration shape · strand vocabulary). The current recipe's lane-geometry fix + the tall-tower
-  regression test shipped 18 Jul (c0213/c0214 healed); the redesign is the successor form.
+- ✅ **BUILT 18 Jul** · **Zeitleiste redesign → the Zeitband** — mockups SME-praised and greenlit
+  same-day; `pipeline/zeitleiste.py` (computed Scene family, inch-true measured layout) +
+  `matplotlib:zeitband` + additive `HistEvent`/`Sachverhalt` deltas + the hard strand gate; the six
+  ► decisions resolved per the doc's recommendations (recorded inline,
+  [`zeitleiste-design.md`](zeitleiste-design.md)). Still open: the `arbeitsobjekt` default flip ·
+  the years-masked harder variant · the QA-raster overlap lint · German surfaces at the gate. (The
+  legacy recipe's lane-geometry fix shipped first, c0213/c0214 healed.)
 - **Informational Realien** — fact-care genres; design-first (carried).
 - **The far-later shelf** (explicitly not now; product-finish features): Elternbrief-Projektion ·
   Leichte-Sprache/Großdruck accessibility projections · Jahresplaner.
@@ -174,8 +176,9 @@ templates/blocks, not fader work.
   names/descriptions/UI copy · Fehlersuche prompts/step texts/answer_key patterns · the
   Einheiten-Detektiv transform catalog + prompts · the Fermi anchors — 15 vetted-estimate values
   with bands + rationales, the cited household-size figure to spot-check — and the six problems'
-  prose) · **the six Zeitleiste ► decisions** (`zeitleiste-design.md` §7; incl. vetting the M2
-  mockup's four curated Austrian events).
+  prose) · **the Zeitband surfaces** (the M2 mockup's four curated Austrian events · the German
+  strings: „Ereignis-Kärtchen" / „Trage bei jedem Ereignis das passende Jahr ein." / „Lupe: A–B" /
+  the sachverhalt-lint messages · the `arbeitsobjekt`-default call, built OFF).
 
 ## Recently completed (ledger — details in `project-handoff.md`)
 
@@ -187,4 +190,5 @@ the difficulty-label loop · text batch 2 + the 1873 ANNO pair) · Tiefenregler 
 Textlast · capability discovery + dashboard Mischpult; composer documented out) · the 14–15-Jul
 remote breadth campaigns (OS `gen_os_2` 28 sheets + US `gen_us_2` 32 sheets, staged c0203–c0262;
 the campaign runbook + `campaign_status.py`) · the 16-Jul five-track build fleet (Fehlersuche ·
-Fermi-Werkstatt · Einheiten-Detektiv · Mischpult presets · `breadth_prompt --gaps`). Suite at 1056.
+Fermi-Werkstatt · Einheiten-Detektiv · Mischpult presets · `breadth_prompt --gaps`) · the 18-Jul
+Zeitband (legacy lane-geometry fix → mockups → same-day computed Scene family). Suite at 1076.

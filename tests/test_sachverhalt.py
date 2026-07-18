@@ -76,7 +76,7 @@ def test_matches_are_drawn_from_the_factset():
 def test_derived_figures_present_and_build(tmp_path):
     content, _ = build_worksheet(build_sachverhalt())
     gens = {a.generator for a in content.assets}
-    assert {"matplotlib:timeline", "matplotlib:cause_effect"} <= gens
+    assert {"matplotlib:zeitband", "matplotlib:cause_effect"} <= gens
     # both recipes actually render (proves the new cause_effect recipe)
     for a in content.assets:
         p = build_asset(a, outdir=tmp_path / "assets")
@@ -196,7 +196,7 @@ def test_bio_process_figure_and_computed_ordering(tmp_path):
     sv = build_bk()
     content, _ = build_worksheet(sv)
     gens = {a.generator for a in content.assets}
-    assert "matplotlib:process_flow" in gens and "matplotlib:timeline" not in gens
+    assert "matplotlib:process_flow" in gens and "matplotlib:zeitband" not in gens
     proc = next(a for a in content.assets if a.generator == "matplotlib:process_flow")
     assert build_asset(proc, outdir=tmp_path).stat().st_size > 1000        # the new recipe renders
     task = _task(content, "ordering")

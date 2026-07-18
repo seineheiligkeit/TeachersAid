@@ -7,7 +7,8 @@ The content analogue of `pipeline/text_tasks.build_worksheet`: a `Sachverhalt` �
    grounded `BlockProvenance` (`expression_origin="original"`, the module's `role="facts"`
    sources) attached automatically, so the prose-provenance gate passes by construction.
    `bedeutung`/`gegenwartsbezug` → closing `key_fact` blocks.
-2. **DERIVED figures** — `timeline` → `matplotlib:timeline`; `causes` → `matplotlib:cause_effect`
+2. **DERIVED figures** — `timeline` → `matplotlib:zeitband` (the computed Schulbuch-Zeitleiste,
+   `pipeline/zeitleiste.py`); `causes` → `matplotlib:cause_effect`
    (the Wirkungsgefüge); `process` → `matplotlib:process_flow` (Phase 2 — a Bio process/cycle, the
    undated sibling of the timeline). Correct-by-construction: built straight from the structured facts.
 3. **Sachkompetenz tasks** — the load-bearing correctness property: each task's `answer_key`
@@ -134,13 +135,24 @@ def build_worksheet(sv: Sachverhalt, *, klasse: int | None = None,
 
     # 2) DERIVED figures (correct-by-construction, straight from the structured facts)
     if len(sv.timeline) >= 2:
-        events = [{"at": e.at, "label": e.label} for e in _sorted_events(sv)]
+        # the computed Schulbuch-Zeitband (`pipeline/zeitleiste.py`): `label` is the short field,
+        # `to` a Zeitraum → bar, `strand` the Synchronoptik lane, `zaesur` a turning point; strands +
+        # phases are curated (`timeline_strands`/`timeline_phases`); the Lupe auto-triggers on
+        # clustering. A sentence-length `label` auto-demotes to a numbered chip + legend (►1), so old
+        # modules (no new fields) still render the plain M1 form.
+        events = [{"at": e.at, "to": e.to, "label": e.label,
+                   "zaesur": e.zaesur, "strand": e.strand} for e in _sorted_events(sv)]
+        spec = {"events": events, "title": f"Zeitleiste: {sv.topic}", "lupe": "auto"}
+        if sv.timeline_strands:
+            spec["strands"] = list(sv.timeline_strands)
+        if sv.timeline_phases:
+            spec["phases"] = [{"from": p.from_, "to": p.to, "label": p.label}
+                              for p in sv.timeline_phases]
         assets.append(Asset(
-            id="sv-timeline", role="figure", generator="matplotlib:timeline",
-            spec={"events": events, "title": f"Zeitleiste: {sv.topic}"},
+            id="sv-zeitband", role="figure", generator="matplotlib:zeitband", spec=spec,
             caption=f"Zeitleiste: {sv.topic}"))
         blocks.append(InfoBlock(id="sv.fig-timeline", kind="figure",
-                                asset_refs=["sv-timeline"],
+                                asset_refs=["sv-zeitband"],
                                 content=f"Zeitleiste zu „{sv.topic}“."))
     if len(sv.causes) >= 1:
         links = [{"cause": c.cause, "effect": c.effect, "kind": c.kind} for c in sv.causes]

@@ -1,13 +1,19 @@
 # Zeitleiste redesign — from paragraph towers to a Schulbuch-Zeitband
 
-*Status (18 Jul 2026): design + rendered mockups; awaiting the SME ► decisions below. The
-geometry FIX in the current recipe is shipped independently (see §1 — c0213/c0214 heal with it),
-so nothing staged can overlap while the redesign lands. Trigger: SME revise on c0213
-(Kolonialismus) and c0214 (Europäische Integration) — "overlapping again … this is really
-something that has to be properly redesigned."*
+*Status (18 Jul 2026): **BUILT** — same-day, after the SME greenlit the design ("lets build
+this"): `pipeline/zeitleiste.py` (the computed Scene family) + the `matplotlib:zeitband` recipe,
+the additive schema deltas, the Sachverhalt derivation + hard strand gate, 19 tests, engine
+specimens. The ► decisions below were resolved at build per this doc's recommendations —
+resolutions noted inline at each ►. Still with the SME: the German surfaces + the M2 curated
+Austrian events (gate backlog), and the `arbeitsobjekt`-default call (built default-OFF).
+Trigger: SME revise on c0213 (Kolonialismus) and c0214 (Europäische Integration) — "overlapping
+again … this is really something that has to be properly redesigned." The geometry FIX in the
+legacy recipe shipped first and independently (§1), so nothing staged could overlap while the
+redesign landed.*
 
-Mockups: `python -m tools.zeitleiste_mockup` → `runs/specimens/zeitleiste/m{1..4}_*.png` —
-all four rendered over the REAL c0213/c0214 content in house figstyle.
+Design mockups: `python -m tools.zeitleiste_mockup` → `runs/specimens/zeitleiste/m{1..4}_*.png`
+(the REAL c0213/c0214 content in house figstyle). Engine specimens (the built recipe's actual
+output, same cases + demotion): `python -m tools.zeitband_specimen` → `engine_*.png` beside them.
 
 ## 1 · Diagnosis — why the old form kept failing
 
@@ -101,18 +107,35 @@ for free, because student and teacher sides derive from ONE master. The flat
   punctuation)? Fallback when violated: reject at ingest, or auto-demote to numbered chips +
   legend? And: does the sheet get a numbered legend under the figure at all, or do the full
   sentences live only in the Darstellung?
+  — *Resolved: bound 32 (`zeitleiste.LABEL_BOUND`); auto-demotion to numbered chips + a legend
+  under the band built from the same strings (no ingest rejection — normalizer-first); the
+  advisory curation warn lives in `sachverhalt_lint`.*
 - **►2 HistEvent deltas.** `to` / `zaesur` / `strand` (+ per-module `timeline_strands`) as
   proposed?
+  — *Resolved: as proposed, plus curated `timeline_phases` (Periodisierung is judgment, so it is
+  a curated field, not derived). All additive; strand totality is a HARD gate check.*
 - **►3 Lupe trigger.** Auto rule (proposal: ≥ half the events within ≤ a quarter of the
   span → Lupe) vs explicit spec flag only? Max one window?
+  — *Resolved: auto — ≥ 5 events AND the densest ⌈n/2⌉ consecutive events span ≤ ¼ of the full
+  span; the minimal such window, snapped to round years; ONE window max; `lupe:"off"` or an
+  explicit `{from,to}` override.*
 - **►4 Arbeitsobjekt default.** Is M4 the DEFAULT student projection for Sachverhalt-derived
   timelines (the chronology ordering task fuses into the figure — no double-asking), or
   opt-in per sheet? Years-masked variant as the harder Offenheit step?
+  — *Resolved conservatively: built as `variant="arbeitsobjekt"` off the ONE computed layout,
+  default OFF in the derivation — the SME flips it after seeing engine specimens (one line).
+  Years-masked variant deferred (follow-up).*
 - **►5 Migration shape.** Scene-family promotion now (masking/stages/Mischpult from day one)
   vs flat recipe first? And: run `overlap_pairs` on every QA raster as a belt-and-braces
   review flag?
+  — *Resolved: Scene family now (`zeitband_scene` → grouped Scene; inch-true rendering via
+  `zeitband_figure`, not `scene_to_png`, because constrained layout would perturb the measured
+  box). The legacy `matplotlib:timeline` stays for stored specs; `chart_choose` remaps the
+  intent. QA-raster overlap lint deferred (follow-up — the overlap class is test-locked).*
 - **►6 Strand vocabulary.** Free curated 2-name pairs per module (recommended) vs a small
   shared enum (Herrschaft/Widerstand · Europa/Österreich · …)?
+  — *Resolved: free curated pairs (`timeline_strands`, exactly two when present); totality
+  validated at the gate, never silently defaulted.*
 
 ## 8 · Out of scope (deliberately)
 

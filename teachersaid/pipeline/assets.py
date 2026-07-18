@@ -45,6 +45,7 @@ from .figstyle import fmt_de, unit_scale  # noqa: E402
 from .scene3d import axonometric_solid_scene, riss_pair_scene  # noqa: E402
 from .scene import (Canvas, Label, Line, PointMark, Polyline, Region,  # noqa: E402
                     Scene, scene_to_png)
+from .zeitleiste import zeitband_scene, zeitband_to_png  # noqa: E402
 
 # The house style is applied per-figure via `with plt.rc_context(fs.house_rc())` (the scoped
 # scene-renderer pattern) rather than the global `use_house_style()`, so a recipe never leaks
@@ -332,6 +333,16 @@ def _timeline(asset: Asset, path: Path) -> None:
             ax.set_title("\n".join(textwrap.wrap(str(s["title"]), 60)), fontsize=fs.TYPE.title)
         fig.savefig(path, dpi=150, bbox_inches="tight")
         plt.close(fig)
+
+
+@_generator("matplotlib:zeitband")
+def _zeitband(asset: Asset, path: Path) -> None:
+    """The computed Schulbuch-Zeitband (`pipeline/zeitleiste.py`) — the successor to the flat
+    `matplotlib:timeline`. spec: {events:[{at, to?, label, zaesur?, strand?, focus?}], strands?,
+    phases?, lupe?, variant?, title?}. A didactic recipe COMPUTES the Scene (measured + lane-packed,
+    inch-true) — over-long labels auto-demote to numbered chips + a legend, the Lupe auto-triggers on
+    clustering, `variant="arbeitsobjekt"` is the student work-object projection."""
+    zeitband_to_png(zeitband_scene(asset.spec or {}), path, dpi=150)
 
 
 @_generator("matplotlib:climate_diagram")
@@ -1737,6 +1748,17 @@ GENERATION_RECIPES: dict[str, str] = {
         '(false ohne mask → ALLES maskiert),"ask"?:str (Fokus, z. B. "R₂"/"U"/"I"),"title"?}. '
         'Ersatzwiderstand, Ströme und Spannungen werden nach Kirchhoff BERECHNET (sympy, exakt) '
         '— nichts erfunden.',
+    "matplotlib:zeitband":
+        'Zeitband — die Schulbuch-Zeitleiste (chronologische Ereignisse, GPB). '
+        'spec {"events":[{"at":num,"to"?:num (Zeitraum → Balken),"label":str (Stichwort, '
+        '≤ 32 Zeichen — längeres wird automatisch zu einem nummerierten Kärtchen + Legende),'
+        '"zaesur"?:bool (Wendepunkt → strichlierte Linie),"strand"?:str,"focus"?:bool}],'
+        '"strands"?:[str,str] (Synchronoptik: [0] oben, [1] unten),"phases"?:[{"from":num,'
+        '"to":num,"label":str}] (Periodisierungsband),"lupe"?:"auto"|"off","title"?:str}. '
+        'Gleicher Abstand = gleiche Dauer (lineare Achse, Zeitpfeil); die Lupe zoomt bei '
+        'gehäuften Ereignissen ehrlich in ein Fenster. Die Abbildung wird BERECHNET '
+        '(gemessene, nicht geratene Beschriftung) — der Zeitpfeil ist die Nachfolge-Recipe '
+        'der flachen matplotlib:timeline.',
     "matplotlib:timeline":
         'Zeitleiste (chronologische Ereignisse, GPB) — '
         'spec {"events":[{"at":num,"label":str}],"title"?:str,"xlabel"?:str}.',

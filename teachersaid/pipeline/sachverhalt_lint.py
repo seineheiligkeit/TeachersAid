@@ -38,6 +38,42 @@ def _p(rt) -> str:
     return plain_text(rt) if rt else ""
 
 
+# The Zeitband axis-label bound (►1; == `pipeline/zeitleiste.LABEL_BOUND`): a curated `HistEvent.label`
+# over this many characters is not a Stichwort and gets demoted to a numbered chip at render — an
+# ADVISORY signal that curation should shorten it.
+_LABEL_BOUND = 32
+
+
+def _timeline_checks(sv: Sachverhalt) -> tuple[list[str], list[str]]:
+    """Zeitband curation checks (18 Jul 2026). HARD (problems): the Synchronoptik strand split must
+    be TOTAL — declared strands are exactly two, every dated (non-Zäsur) event carries one, and no
+    event names an undeclared strand (curation is never silently defaulted, ►2). ADVISORY (warnings):
+    an axis label over the Stichwort bound (►1; the recipe demotes it to a chip, but curation should
+    shorten)."""
+    problems: list[str] = []
+    warnings: list[str] = []
+    strands = list(sv.timeline_strands)
+    if strands and len(strands) != 2:
+        problems.append(
+            f"timeline_strands: bei Synchronoptik genau ZWEI Bahnen erforderlich (hat {len(strands)}).")
+    strand_set = set(strands)
+    for e in sv.timeline:
+        loc = f"Ereignis „{e.label[:40]}“ ({e.at})"
+        if e.strand is not None and e.strand not in strand_set:
+            problems.append(
+                f"{loc}: strand „{e.strand}“ ist keine der deklarierten timeline_strands "
+                f"{strands or '[]'} — Bahn deklarieren oder korrigieren.")
+        elif strands and not e.zaesur and e.strand is None:
+            problems.append(
+                f"{loc}: timeline_strands sind deklariert, aber diesem Ereignis fehlt eine Bahn — "
+                f"die Zuordnung muss vollständig sein (kein stiller Default).")
+        if len(e.label) > _LABEL_BOUND:
+            warnings.append(
+                f"{loc}: Zeitband-Beschriftung > {_LABEL_BOUND} Zeichen — ein Stichwort kürzen "
+                f"(die Abbildung demotiert es sonst zu einem nummerierten Kärtchen).")
+    return problems, warnings
+
+
 _YEAR_RE = re.compile(r"\b\d{3,4}\b")
 # a multi-word capitalised phrase (allowing lowercase nobiliary/relator particles) — a strong
 # proper-name signal in German, unlike a single capitalised noun.
@@ -107,9 +143,13 @@ def _fact_keys(sv: Sachverhalt) -> set[str]:
 
 
 def lint(sv: Sachverhalt) -> tuple[list[str], list[str]]:
-    """(problems, warnings). Years out-of-set → problem; names/quotes/grounded_by → warnings."""
+    """(problems, warnings). Years out-of-set → problem; names/quotes/grounded_by → warnings;
+    plus the Zeitband curation checks (strand totality HARD, over-long axis labels ADVISORY)."""
     problems: list[str] = []
     warnings: list[str] = []
+    tl_problems, tl_warnings = _timeline_checks(sv)
+    problems += tl_problems
+    warnings += tl_warnings
     vocab = _fact_text(sv)
     fact_years = _fact_years(vocab, sv)
     fact_keys = _fact_keys(sv)

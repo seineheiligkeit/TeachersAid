@@ -202,7 +202,9 @@ def test_bar_small_values_unchanged_but_german(tmp_path, monkeypatch):
 
 def test_chooser_maps_new_intents():
     from teachersaid.schema.chart_choose import choose_representation
-    assert choose_representation("timeline", {"categories": ["A"], "values": [1900]})[0] == "matplotlib:timeline"
+    # the timeline intent now maps to the computed Zeitband (its successor); the flat
+    # matplotlib:timeline recipe stays alive for existing stored specs (test_timeline_and_climate_render).
+    assert choose_representation("timeline", {"categories": ["A"], "values": [1900]})[0] == "matplotlib:zeitband"
     assert choose_representation("climate", {"temp": [1] * 12, "precip": [2] * 12})[0] == "matplotlib:climate_diagram"
     assert choose_representation("demographic", {"male": [1], "female": [2]})[0] == "matplotlib:population_pyramid"
 

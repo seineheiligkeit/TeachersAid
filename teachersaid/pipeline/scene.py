@@ -148,6 +148,7 @@ class Label:
     va: str = "center"
     halo: bool = True
     bold: bool = False
+    italic: bool = False
     z: int = 7
     group: str | None = None
 
@@ -305,7 +306,8 @@ def render_scene(scene: Scene, ax) -> None:
                           "ec": _color(L.edge_role) if L.edge_role else "none"})
         elif isinstance(L, Label):
             ax.text(L.p[0], L.p[1], L.text, fontsize=L.size, color=_color(L.role), ha=L.ha,
-                    va=L.va, fontweight="bold" if L.bold else "normal", zorder=L.z,
+                    va=L.va, fontweight="bold" if L.bold else "normal",
+                    fontstyle="italic" if L.italic else "normal", zorder=L.z,
                     path_effects=_HALO if L.halo else None)
         elif isinstance(L, Arrow):
             col = fs.CATEGORICAL[L.family % len(fs.CATEGORICAL)] if L.family is not None \

@@ -33,7 +33,7 @@ rendering + the two-stage human-in-the-loop review dashboard).
 ```bash
 pip install -e .                       # deps: pydantic2, fastapi, uvicorn, anthropic, reportlab,
                                        #       matplotlib, pillow, pyyaml, pymupdf, sympy  (pytest for dev)
-python -m pytest -q                    # fully offline, no API key (1056 tests)
+python -m pytest -q                    # fully offline, no API key (1076 tests)
 python -m teachersaid seed             # seed the master-library examples into the review queue
 python -m teachersaid                  # dashboard → http://127.0.0.1:8000
 ```
@@ -235,6 +235,23 @@ numbers <120 and years skipped; **advisory lane** — doubles as the anti-rot ch
   fore + two hind limbs; unpaired fish fins stay neutral grey) — the honest replacement for a "count
   the limb pairs" bar chart, which invites "find the differences", the opposite message. Test:
   `test_homology.py`; specimen `tools/homology_specimen.py`.
+- **Zeitband (`pipeline/zeitleiste.py`, `matplotlib:zeitband`):** the computed Schulbuch-Zeitleiste —
+  successor to the flat `matplotlib:timeline` (kept for legacy stored specs; `chart_choose`'s
+  `timeline` intent now maps here). A recipe COMPUTES a grouped `Scene` from `{events[{at,to?,label,
+  zaesur?,strand?,focus?}], strands?, phases?, lupe?, variant?}`: labels measured + lane-packed
+  (figtext) in an **inch-true** layout (one data-y unit == one inch, figure height derived — a lane
+  is exactly as tall as its measured text; the fix class that ended the c0213/c0214 overlaps).
+  Stichwort labels ≤ 32 chars — longer ones **auto-demote to numbered chips + a legend** (breadth
+  sentence labels stay legible); Zeitraum → bar, Zäsur → dashed rule, `phases` → Periodisierungsband;
+  **Synchronoptik `strands`** ([0] above / [1] below — the geometry carries the split, B/W-safe;
+  totality is a HARD `sachverhalt_lint` gate, over-long labels advisory); the **Lupe** (ONE detail
+  window, both bands internally linear, explicit connectors) auto-triggers deterministically on
+  clustering (`lupe:"off"` overrides); `variant="arbeitsobjekt"` is the student work-object
+  projection (year chips + Ereignis-Kärtchen bank) off the SAME computed layout — default OFF in the
+  Sachverhalt derivation. `HistEvent` gains additive `to`/`zaesur`/`strand`; `Sachverhalt` gains
+  `timeline_strands`/`timeline_phases`. Design + resolved ► decisions:
+  `Documents/zeitleiste-design.md`; tests `test_zeitleiste.py`; specimens
+  `tools/zeitband_specimen.py` (design mockups: `tools/zeitleiste_mockup.py`).
 - **Körpernetze (`pipeline/nets.py`):** `cuboid_net` computes a six-face Quader/Würfel net with
   explicit dimensions and exactly five fold adjacencies; `matplotlib:solid_net` is only its scene
   projection (`Region·Line·Label`). Labels are spec-provided and maskable (`"O = ?"`). The

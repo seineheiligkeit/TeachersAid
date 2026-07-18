@@ -58,11 +58,13 @@ def choose_representation(intent: str, data: dict) -> tuple[str, dict]:
             {"age_groups": d.get("age_groups") or cats, "male": d.get("male"),
              "female": d.get("female"), "title": title, "xlabel": xl, "ylabel": yl})
 
-    if intent == "timeline":                   # chronological events → timeline
+    if intent == "timeline":                   # chronological events → the computed Zeitband
         events = d.get("events")
         if not events and cats and vals:
             events = [{"at": v, "label": c} for c, v in zip(cats, vals)]
-        return "matplotlib:timeline", _clean({"events": events, "title": title, "xlabel": xl})
+        # the Zeitband is the successor to the flat matplotlib:timeline: sentence-length generated
+        # labels auto-demote to numbered chips + a legend (►1), so old-shape event lists stay legible.
+        return "matplotlib:zeitband", _clean({"events": events, "title": title})
 
     if intent == "climate":                    # monthly temp + precip → Klimadiagramm
         return "matplotlib:climate_diagram", _clean(
