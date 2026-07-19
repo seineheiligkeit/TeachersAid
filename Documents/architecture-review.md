@@ -93,3 +93,107 @@ cross-referenced `runs/` stores (blocks especially) eventually want SQLite.
 
 Out of scope deliberately: rewriting the stage architecture; a live research agent; migrating the
 read-only catalog; Postgres/a server DB.
+
+---
+
+# Architecture review II — 19 July 2026
+
+**Written after the Session-19–24 feature wave** (Mischpult, Fermi, Zeitband, scene3d, the content
+programs, five breadth campaigns). Grounded in a three-front empirical audit: the import graph,
+the persistence/API layer, and the extension seams (registries, ingest tools, tests). **Verdict up
+front: the June verdict stands — no rewrite. The layered core held under heavy growth.** But two of
+June's predictions have now *fired*, and the new debt is concentrated in three hub files. Six moves,
+in order.
+
+## What held (the good news, verified)
+
+- **`schema/`, `grounding/`, `rendering/` are import-clean** — rendering still imports only schema,
+  exactly as the projection guarantee requires. `pipeline/` is still the only importer of `llm/`.
+- **The recipe/scene domains are a clean star, not a mesh.** `wahl` does not import `finanz`;
+  physics does not import chemistry. All ~22 domain modules (8 recipe domains, 14 scene families)
+  fan in to two hubs (`parametrize`, `assets`) and nothing else. Domains can keep multiplying
+  without cross-contamination — the risk lives entirely in the hubs.
+- **The June store consolidation held with zero drift.** All 10 mutable stores subclass `JsonStore`;
+  the two stores added since (`ImageSourceStore`, `DemandStore`) subclassed rather than copy-pasted.
+
+## What fired since June
+
+- **The scan wall arrived.** Blocks: 592 → **1606** (2.7× in three weeks — breadth campaigns work).
+  Every dashboard call still full-scans with zero caching; `/api/review-queue` scans SEVEN stores
+  per request; the coverage trio each re-scan all blocks independently. June said "drag at low
+  thousands" — we are at low thousands.
+- **The path leak is proven broken, not hypothetical.** 246 store records carry dead absolute
+  artifact paths from *three different machines* (`C:\Users\sebas\…`, `C:\Users\Sebas\…\Claude\…`,
+  `/home/user/…`). The system stays usable only via the lazy self-heal — which re-renders 3 PDFs +
+  rasterises + spins up a *fresh* `AssetStore()` full scan per stale item viewed, then writes the
+  next machine-specific path back in. The self-heal is masking the bug at real compute cost.
+- **The Fassung snapshot bug is now on a 43-day fuse.** Both `_meta.json` say
+  `valid_to: 2026-08-31`. **250 ReviewItems embed a frozen `LehrplanResolution`** (verbatim
+  competence texts); nothing in the codebase ever re-resolves a stored item; `resolve()` only
+  appends a soft German note after expiry — it never blocks or flags. After 1 Sept the corpus
+  silently claims anchoring against an expired catalog. This is a *calendar* bug, independent of
+  corpus size.
+
+## The new debt (from the growth wave)
+
+- **`pipeline/orchestrator.py` is a god-module and the layer-inversion epicenter.** 954 lines,
+  24 public functions, **42 deferred imports** pulling `store/` and `library/` — the documented
+  "top" layers — *down into* pipeline to dodge cycles. Every new content type bolted another
+  `ingest_*`/`compose_*` trio onto it; it grows linearly with content types. `wahl.py` even calls
+  back up into it (`from .orchestrator import stage_worksheet`).
+- **One true layering violation:** `llm/prompts.py:13` imports `pipeline.plan.WorksheetPlan` at top
+  level (plus deferred grounding imports). The one-directional pipeline→llm story is currently false.
+- **The 3-place-edit domain onboarding.** A new parametric domain edits (1) its own module,
+  (2) the `# noqa: E402` side-effect import block at the *bottom* of `parametrize.py`, and (3) the
+  central 731-line `library/templates.py`. Forget #2 and the failure is a *runtime* `ValueError`
+  in `instantiate`, not an import-time error. `assets.py` (1810 lines, 51 generators) has the same
+  centralized-pull shape: scene modules live in their own files but assets.py wraps each in a local
+  `@_generator`, so every new figure still edits the monolith. These two hubs + templates.py are the
+  files every parallel domain effort collides in.
+- **Ingest tools are copy-paste:** `_repair_text` + `_GERMAN_QUOTE_FIX` are byte-identical in 4
+  `tools/ingest_*.py`; each re-implements the normalize/load/dry-run/persist skeleton. The sole
+  reuse is `ingest_arrangements.py` importing from `ingest_batch` via `sys.path` — fragile.
+- **No shared test infrastructure:** 93 test files, no `conftest.py`; ~70 files touch
+  rendering/matplotlib and each re-does its own build setup.
+- **`api/app.py` (76 routes) is accreting domain logic** (`_dataset_figure_asset` ≈ 50 lines of
+  figure-recipe dispatch; the re-render self-heal orchestration lives in HTTP handlers), and
+  `index.html` is a 1184-line vanilla-JS monolith — the client-side twin.
+- **Writes are not atomic** (`write_text`, no tmp+rename) and locks are per-*instance* while several
+  code paths construct fresh store instances — so even single-process locking is weaker than
+  intended; two processes (CLI + server) can clobber.
+
+## Decisions & sequencing
+
+1. **Fassung refresh path — before 1 Sept (highest severity, calendar-bound).** Build a
+   re-resolve pass: a tool + orchestrator function that re-resolves every stored item against the
+   current catalog, diffs competence ids/texts, and flags changed items for SME re-review (the same
+   status-preserving discipline as everywhere else). Make `resolve()` escalate an expired Fassung
+   from a soft note to a verify-visible warning. This is the prerequisite for the 2026/27 re-parse
+   whenever it lands.
+2. **Store insurance — one contained change to `store/base.py` + `store/models.py`.**
+   (a) mtime-keyed in-memory cache for `_list` (kills the scan wall for years at this scale);
+   (b) atomic writes (tmp + `os.replace`); (c) module-level store singletons so the per-instance
+   lock actually guards; (d) **repo-relative artifact paths** (relative to `RUNS_DIR`, resolved at
+   read; one-time migration script for the 246 stale records). Together these keep June's
+   "contained SQLite swap" promise. SQLite itself: still only when a trigger *survives* (a) — the
+   June triggers and the never-migrate-the-catalog rule stand.
+3. **Extract orchestration OUT of pipeline.** New top-level package (e.g. `teachersaid/orch/`)
+   *above* store/library, split per concern (ideation/gate-1 · ingest per content kind · compose ·
+   review transitions). `pipeline/` becomes pure engine again; the 42 deferred imports become
+   ordinary top-level imports in a layer that is *allowed* to see stores; the `wahl → orchestrator`
+   back-edge dies. Mechanical, high-value, enables everything after it.
+4. **Fix the llm back-edge.** Move `WorksheetPlan` (pure data, no behavior that needs pipeline) into
+   `schema/` — `llm/` then depends only downward and the documented discipline is true again. Small.
+5. **Harden the registration seams — before the next domain wave.** (a) pkgutil auto-discovery of
+   recipe/scene domain modules (kills the bottom-of-file import block); (b) domain-owned templates —
+   `wahl.py` already proves the pattern — with `library/templates.py` reduced to an aggregator;
+   (c) an import-time drift test asserting every template's recipe is registered (the
+   capabilities-drift test is the model); (d) split `assets.py` into the registry/dispatch core +
+   `pipeline/figures/*` recipe modules that self-register next to their scene families.
+6. **Small consolidations, opportunistic:** `tools/ingest_common.py` (the shared normalizer +
+   skeleton); move `_dataset_figure_asset` and the self-heal orchestration from `api/app.py` into
+   orch; a shared `tests/conftest.py` with cached build/render fixtures.
+
+**Non-moves (deliberate):** no rewrite; no Postgres; no frontend framework (split `index.html` into
+per-tab scripts at most, only when it actually hurts); grounding catalogs stay read-only files
+forever; no plugin system beyond auto-discovery — the domain star is healthy, don't over-abstract it.
